@@ -1,0 +1,98 @@
+{
+  "Param": "MAP_NAME_TEX_PARAM_ST_DLC02",
+  "Type": "MAP_NAME_TEX_PARAM_ST_DLC02",
+  "Name": "MAP_NAME_TEX_PARAM_ST_DLC02",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "NT版出力から外すか",
+      "Description": "○をつけたパラメータをNT版パッケージでは除外します"
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "パッケージ出力用リザーブ1",
+      "Description": "パッケージ出力用リザーブ1"
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "パッケージ出力用リザーブ2",
+      "Description": "パッケージ出力用リザーブ2"
+    },
+    {
+      "Field": "srcR",
+      "Name": "R",
+      "Description": "変換前の地図画像のカラー情報（R）。RGB値が一致したピクセルとこのパラメータが紐づく"
+    },
+    {
+      "Field": "srcG",
+      "Name": "G",
+      "Description": "変換前の地図画像のカラー情報（G）。RGB値が一致したピクセルとこのパラメータが紐づく"
+    },
+    {
+      "Field": "srcB",
+      "Name": "B",
+      "Description": "変換前の地図画像のカラー情報（B）。RGB値が一致したピクセルとこのパラメータが紐づく"
+    },
+    {
+      "Field": "pad1",
+      "Name": "パッド",
+      "Description": "パッド。一応「画像色情報（A）」用で空けておく"
+    },
+    {
+      "Field": "mapNameId",
+      "Name": "マップ名ID_地名表示用",
+      "Description": "地名表示用のマップ名ID[PlaceName](0:無効値)"
+    },
+    {
+      "Field": "unknown_0xc",
+      "Name": "unknown_0xc",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0x10",
+      "Name": "unknown_0x10",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0x11",
+      "Name": "unknown_0x11",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0x12",
+      "Name": "unknown_0x12",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0x13",
+      "Name": "unknown_0x13",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0x14",
+      "Name": "unknown_0x14",
+      "Description": ""
+    },
+    {
+      "Field": "unknownTextID_1",
+      "Name": "unknownTextID_1",
+      "Description": ""
+    },
+    {
+      "Field": "unknownTextID_2",
+      "Name": "unknownTextID_2",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0x20",
+      "Name": "unknown_0x20",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0x24",
+      "Name": "unknown_0x24",
+      "Description": ""
+    }
+  ]
+}

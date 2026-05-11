@@ -1,0 +1,198 @@
+{
+  "Param": "FOOT_IK_SETUP_PARAM_ST",
+  "Type": "FOOT_IK_SETUP_PARAM_ST",
+  "Name": "FOOT_IK_SETUP_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "kneeAxisType",
+      "Name": "ひざの軸方向",
+      "Description": ""
+    },
+    {
+      "Field": "useFootLocking",
+      "Name": "足/足首をロック（固定？）するか",
+      "Description": ""
+    },
+    {
+      "Field": "useFootEndRay",
+      "Name": "つま先レイキャストする",
+      "Description": ""
+    },
+    {
+      "Field": "heightOffsetUpDir",
+      "Name": "高さ補正を上方向のみ使用",
+      "Description": "逆足などの腰が下に下がると足が窮屈になる場合に使用してください"
+    },
+    {
+      "Field": "padflag",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "pad1",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "originalGroundHeightMS",
+      "Name": "原点から地面への高さ[m]",
+      "Description": ""
+    },
+    {
+      "Field": "minAnkleHeightMS",
+      "Name": "足首を上げられる最低の高さ[m]",
+      "Description": ""
+    },
+    {
+      "Field": "maxAnkleHeightMS",
+      "Name": "足首を上げられる最大の高さ[m]",
+      "Description": ""
+    },
+    {
+      "Field": "cosineMaxKneeAngle",
+      "Name": "ひざを曲げられる最大の角度[度]",
+      "Description": ""
+    },
+    {
+      "Field": "cosineMinKneeAngle",
+      "Name": "ひざを曲げられる最小の角度[度]",
+      "Description": ""
+    },
+    {
+      "Field": "footPlantedAnkleHeightMS",
+      "Name": "足首がこの位置よりも低い場合には足がくっついていると仮定する[m]",
+      "Description": ""
+    },
+    {
+      "Field": "footRaisedAnkleHeightMS",
+      "Name": "足首がこの位置よりも高い場合には足が離れていると仮定する[m]",
+      "Description": ""
+    },
+    {
+      "Field": "raycastDistanceUp",
+      "Name": "足首よりどれぐらい上からレイキャストするか[m]",
+      "Description": ""
+    },
+    {
+      "Field": "raycastDistanceDown",
+      "Name": "足首からどれぐらい下までレイキャストするか[m]",
+      "Description": ""
+    },
+    {
+      "Field": "footEndLS_X",
+      "Name": "つま先位置X[m]",
+      "Description": ""
+    },
+    {
+      "Field": "footEndLS_Y",
+      "Name": "つま先位置Y[m]",
+      "Description": ""
+    },
+    {
+      "Field": "footEndLS_Z",
+      "Name": "つま先位置Z[m]",
+      "Description": ""
+    },
+    {
+      "Field": "maxFootPitchRadians",
+      "Name": "足首上下最大角[度]",
+      "Description": ""
+    },
+    {
+      "Field": "minFootPitchRadians",
+      "Name": "足首上下最小角[度]",
+      "Description": ""
+    },
+    {
+      "Field": "maxFootRollRadians",
+      "Name": "足首左右最大角[度]",
+      "Description": ""
+    },
+    {
+      "Field": "minFootRollRadians",
+      "Name": "足首左右最小角[度]",
+      "Description": ""
+    },
+    {
+      "Field": "heightOffsetLimit",
+      "Name": "FootIKエラー高さ補正制限値",
+      "Description": "この値の±にクランプされます"
+    },
+    {
+      "Field": "heightOffsetOnGain",
+      "Name": "高さ補正ONゲイン値",
+      "Description": "値が大きいほど早く目標高さに補正されます"
+    },
+    {
+      "Field": "heightOffsetOffGain",
+      "Name": "高さ補正OFFゲイン値",
+      "Description": "値が小さいほど早く元の高さに戻ります"
+    },
+    {
+      "Field": "forwardUndulationRate",
+      "Name": "斜面傾き_前後割合",
+      "Description": "斜面傾き時に斜面に対してどのぐらい傾くのかを指定"
+    },
+    {
+      "Field": "sideUndulationRate",
+      "Name": "斜面傾き_左右割合",
+      "Description": "斜面傾き時に斜面に対してどのぐらい傾くのかを指定"
+    },
+    {
+      "Field": "forwardUndulationRateSlide",
+      "Name": "斜面傾き_前後割合(滑り中）",
+      "Description": "斜面傾き時に滑り落ちている時に斜面に対してどのぐらい傾くのかを指定"
+    },
+    {
+      "Field": "sideUndulationRateSlide",
+      "Name": "斜面傾き_左右割合(滑り中）",
+      "Description": "斜面傾き時に滑り落ちている時に斜面に対してどのぐらい傾くのかを指定"
+    },
+    {
+      "Field": "undulationGain",
+      "Name": "斜面傾き_ゲイン値",
+      "Description": "斜面傾きのときの斜面にそうためのゲイン値"
+    },
+    {
+      "Field": "undulationGainSlide",
+      "Name": "斜面傾き_ゲイン値（滑り中）",
+      "Description": "斜面傾きの滑り落ちているときの斜面にそうためのゲイン値"
+    },
+    {
+      "Field": "undulationGainDefaultToSlide",
+      "Name": "斜面傾き_通常から滑り中へのゲイン補正値",
+      "Description": "斜面傾きの通常から滑り落ちるときのゲイン値の補間値（ゲイン値）"
+    },
+    {
+      "Field": "undulationGainSlideToDefault",
+      "Name": "斜面傾き_滑り中から通常へのゲイン補正値",
+      "Description": "斜面傾きの滑り落ちるから通常に戻るときのゲイン値の補間値（ゲイン値）"
+    },
+    {
+      "Field": "lockedDisableMinAngle",
+      "Name": "ロック解除最小角度[度]",
+      "Description": "足/足首をロック（固定？）有効時にロックが解除される膝の最小角度"
+    },
+    {
+      "Field": "lockedDisableMaxAngle",
+      "Name": "ロック解除最大角度[度]",
+      "Description": "足/足首をロック（固定？）有効時にロックが解除される膝の最大角度"
+    },
+    {
+      "Field": "lockedDisableDirAngle",
+      "Name": "ロック解除範囲角度[度]",
+      "Description": "足/足首をロック（固定？）有効時にロックが解除される円錐の角度"
+    },
+    {
+      "Field": "nextLockFactorThreshold",
+      "Name": "ロック解除後の再ロックする際のFactorしきい値",
+      "Description": "足/足首をロック（固定？）有効時に一度ロックが外れてから再度ロックができるようになるまでの係数のしきい値"
+    },
+    {
+      "Field": "pad3",
+      "Name": "パディング",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,163 @@
+{
+  "Param": "WIND_PARAM_ST",
+  "Type": "WIND_PARAM_ST",
+  "Name": "WIND_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "commonCapsuleBeginDmyId",
+      "Name": "共通:発生源ダミポリ番号1",
+      "Description": "共通:発生源ダミポリ番号1"
+    },
+    {
+      "Field": "commonCapsuleEndDmyId",
+      "Name": "共通:発生源ダミポリ番号2",
+      "Description": "共通:発生源ダミポリ番号2"
+    },
+    {
+      "Field": "commonCapsuleRadius",
+      "Name": "共通:発生源半径[m]",
+      "Description": "共通:発生源半径[m]"
+    },
+    {
+      "Field": "commonReserve",
+      "Name": "予約",
+      "Description": "予約"
+    },
+    {
+      "Field": "sfxWindEnable",
+      "Name": "ＳＦＸ風が有効か",
+      "Description": "ＳＦＸ風が有効か"
+    },
+    {
+      "Field": "sfxIgnorePlayerSfx",
+      "Name": "プレイヤＳＦＸ無視か",
+      "Description": "プレイヤＳＦＸ無視か"
+    },
+    {
+      "Field": "sfxIsCollision",
+      "Name": "ＳＦＸコリジョンか",
+      "Description": "ＳＦＸコリジョンか"
+    },
+    {
+      "Field": "sfxPad_0",
+      "Name": "パディング",
+      "Description": "パディング"
+    },
+    {
+      "Field": "sfxDirPitchMin",
+      "Name": "ＳＦＸ:最小Pitch[度]",
+      "Description": "ＳＦＸ:最小Pitch[度]"
+    },
+    {
+      "Field": "sfxDirPitchMax",
+      "Name": "ＳＦＸ:最大Pitch[度]",
+      "Description": "ＳＦＸ:最大Pitch[度]"
+    },
+    {
+      "Field": "sfxDirYawMin",
+      "Name": "ＳＦＸ:最小Yaw[度]",
+      "Description": "ＳＦＸ:最小Yaw[度]"
+    },
+    {
+      "Field": "sfxDirYawMax",
+      "Name": "ＳＦＸ:最大Yaw[度]",
+      "Description": "ＳＦＸ:最大Yaw[度]"
+    },
+    {
+      "Field": "sfxCycleMin",
+      "Name": "ＳＦＸ:最小周期[sec]",
+      "Description": "ＳＦＸ:最小周期[sec]"
+    },
+    {
+      "Field": "sfxCycleMax",
+      "Name": "ＳＦＸ:最大周期[sec]",
+      "Description": "ＳＦＸ:最大周期[sec]"
+    },
+    {
+      "Field": "sfxSpeedMin",
+      "Name": "ＳＦＸ:風の最小速度[m/sec]",
+      "Description": "ＳＦＸ:風の最小速度[m/sec]"
+    },
+    {
+      "Field": "sfxSpeedMax",
+      "Name": "ＳＦＸ:風の最大速度[m/sec]",
+      "Description": "ＳＦＸ:風の最大速度[m/sec]"
+    },
+    {
+      "Field": "sfxMaximumDrag",
+      "Name": "ＳＦＸ:最大の影響度",
+      "Description": "ＳＦＸ:最大の影響度"
+    },
+    {
+      "Field": "sfxReserve",
+      "Name": "予約",
+      "Description": "予約"
+    },
+    {
+      "Field": "clothWindEnable",
+      "Name": "クロス風が有効か",
+      "Description": "クロス風が有効か"
+    },
+    {
+      "Field": "clothVertexWind",
+      "Name": "頂点単位風か",
+      "Description": "頂点単位風か"
+    },
+    {
+      "Field": "clothPad_0",
+      "Name": "パディング",
+      "Description": "パディング"
+    },
+    {
+      "Field": "clothDirPitchMin",
+      "Name": "クロス:最小Pitch[度]",
+      "Description": "クロス:最小Pitch[度]"
+    },
+    {
+      "Field": "clothDirPitchMax",
+      "Name": "クロス:最大Pitch[度]",
+      "Description": "クロス:最大Pitch[度]"
+    },
+    {
+      "Field": "clothDirYawMin",
+      "Name": "クロス:最小Yaw[度]",
+      "Description": "クロス:最小Yaw[度]"
+    },
+    {
+      "Field": "clothDirYawMax",
+      "Name": "クロス:最大Yaw[度]",
+      "Description": "クロス:最大Yaw[度]"
+    },
+    {
+      "Field": "clothCycleMin",
+      "Name": "クロス:最小周期[sec]",
+      "Description": "クロス:最小周期[sec]"
+    },
+    {
+      "Field": "clothCycleMax",
+      "Name": "クロス:最大周期[sec]",
+      "Description": "クロス:最大周期[sec]"
+    },
+    {
+      "Field": "clothSpeedMin",
+      "Name": "クロス:風の最小速度[m/sec]",
+      "Description": "クロス:風の最小速度[m/sec]"
+    },
+    {
+      "Field": "clothSpeedMax",
+      "Name": "クロス:風の最大速度[m/sec]",
+      "Description": "クロス:風の最大速度[m/sec]"
+    },
+    {
+      "Field": "clothMaximumDrag",
+      "Name": "クロス:最大の影響度",
+      "Description": "クロス:最大の影響度"
+    },
+    {
+      "Field": "clothReserve",
+      "Name": "予約",
+      "Description": "予約"
+    }
+  ]
+}

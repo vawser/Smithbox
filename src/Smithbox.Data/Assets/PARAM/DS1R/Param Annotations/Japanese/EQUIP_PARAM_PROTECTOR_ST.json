@@ -1,0 +1,668 @@
+{
+  "Param": "EQUIP_PARAM_PROTECTOR_ST",
+  "Type": "EQUIP_PARAM_PROTECTOR_ST",
+  "Name": "EQUIP_PARAM_PROTECTOR_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "sortId",
+      "Name": "ソートID",
+      "Description": "ソートID"
+    },
+    {
+      "Field": "wanderingEquipId",
+      "Name": "徘徊装備ID",
+      "Description": "徘徊ゴースト用の差し替え装備ID."
+    },
+    {
+      "Field": "vagrantItemLotId",
+      "Name": "ベイグラント時アイテム抽選ID",
+      "Description": "-1：ベイグラントなし 0：抽選なし 1～：抽選あり"
+    },
+    {
+      "Field": "vagrantBonusEneDropItemLotId",
+      "Name": "ベイグラントボーナス敵ドロップアイテム抽選ID",
+      "Description": "-1：ドロップなし 0：抽選なし 1～：抽選あり"
+    },
+    {
+      "Field": "vagrantItemEneDropItemLotId",
+      "Name": "ベイグラントアイテム敵ドロップアイテム抽選ID",
+      "Description": "-1：ドロップなし 0：抽選なし 1～：抽選あり"
+    },
+    {
+      "Field": "fixPrice",
+      "Name": "修理価格",
+      "Description": "修理基本価格"
+    },
+    {
+      "Field": "basicPrice",
+      "Name": "基本価格",
+      "Description": "基本価格"
+    },
+    {
+      "Field": "sellValue",
+      "Name": "販売価格",
+      "Description": "販売価格"
+    },
+    {
+      "Field": "weight",
+      "Name": "重量[kg]",
+      "Description": "重量[kg]."
+    },
+    {
+      "Field": "residentSpEffectId",
+      "Name": "常駐特殊効果ID1",
+      "Description": "常駐特殊効果ID1"
+    },
+    {
+      "Field": "residentSpEffectId2",
+      "Name": "常駐特殊効果ID2",
+      "Description": "常駐特殊効果ID2"
+    },
+    {
+      "Field": "residentSpEffectId3",
+      "Name": "常駐特殊効果ID3",
+      "Description": "常駐特殊効果ID3"
+    },
+    {
+      "Field": "materialSetId",
+      "Name": "素材ID",
+      "Description": "武器強化に必要な素材パラメータID"
+    },
+    {
+      "Field": "partsDamageRate",
+      "Name": "部位ダメージ率",
+      "Description": "部位ダメージ率"
+    },
+    {
+      "Field": "corectSARecover",
+      "Name": "SA回復時間補正値",
+      "Description": "スーパーアーマー回復時間の補正値"
+    },
+    {
+      "Field": "originEquipPro",
+      "Name": "派生元",
+      "Description": "この防具の強化元防具ID"
+    },
+    {
+      "Field": "originEquipPro1",
+      "Name": "派生元 強化+1",
+      "Description": "この防具の強化元防具ID1"
+    },
+    {
+      "Field": "originEquipPro2",
+      "Name": "派生元 強化+2",
+      "Description": "この防具の強化元防具ID2"
+    },
+    {
+      "Field": "originEquipPro3",
+      "Name": "派生元 強化+3",
+      "Description": "この防具の強化元防具ID3"
+    },
+    {
+      "Field": "originEquipPro4",
+      "Name": "派生元 強化+4",
+      "Description": "この防具の強化元防具ID4"
+    },
+    {
+      "Field": "originEquipPro5",
+      "Name": "派生元 強化+5",
+      "Description": "この防具の強化元防具ID5"
+    },
+    {
+      "Field": "originEquipPro6",
+      "Name": "派生元 強化+6",
+      "Description": "この防具の強化元防具ID6"
+    },
+    {
+      "Field": "originEquipPro7",
+      "Name": "派生元 強化+7",
+      "Description": "この防具の強化元防具ID7"
+    },
+    {
+      "Field": "originEquipPro8",
+      "Name": "派生元 強化+8",
+      "Description": "この防具の強化元防具ID8"
+    },
+    {
+      "Field": "originEquipPro9",
+      "Name": "派生元 強化+9",
+      "Description": "この防具の強化元防具ID9"
+    },
+    {
+      "Field": "originEquipPro10",
+      "Name": "派生元 強化+10",
+      "Description": "この防具の強化元防具ID10"
+    },
+    {
+      "Field": "originEquipPro11",
+      "Name": "派生元 強化+11",
+      "Description": "この防具の強化元防具ID11"
+    },
+    {
+      "Field": "originEquipPro12",
+      "Name": "派生元 強化+12",
+      "Description": "この防具の強化元防具ID12"
+    },
+    {
+      "Field": "originEquipPro13",
+      "Name": "派生元 強化+13",
+      "Description": "この防具の強化元防具ID13"
+    },
+    {
+      "Field": "originEquipPro14",
+      "Name": "派生元 強化+14",
+      "Description": "この防具の強化元防具ID14"
+    },
+    {
+      "Field": "originEquipPro15",
+      "Name": "派生元 強化+15",
+      "Description": "この防具の強化元防具ID15"
+    },
+    {
+      "Field": "faceScaleM_ScaleX",
+      "Name": "男横顔拡大スケール",
+      "Description": ""
+    },
+    {
+      "Field": "faceScaleM_ScaleZ",
+      "Name": "男前顔拡大スケール",
+      "Description": ""
+    },
+    {
+      "Field": "faceScaleM_MaxX",
+      "Name": "男横顔拡大最大倍率",
+      "Description": ""
+    },
+    {
+      "Field": "faceScaleM_MaxZ",
+      "Name": "男前顔拡大最大倍率",
+      "Description": ""
+    },
+    {
+      "Field": "faceScaleF_ScaleX",
+      "Name": "女横顔拡大スケール",
+      "Description": ""
+    },
+    {
+      "Field": "faceScaleF_ScaleZ",
+      "Name": "女前顔拡大スケール",
+      "Description": ""
+    },
+    {
+      "Field": "faceScaleF_MaxX",
+      "Name": "女横顔拡大最大倍率",
+      "Description": ""
+    },
+    {
+      "Field": "faceScaleF_MaxZ",
+      "Name": "女前顔拡大最大倍率",
+      "Description": ""
+    },
+    {
+      "Field": "qwcId",
+      "Name": "QWCID",
+      "Description": "QWCのパラメタID"
+    },
+    {
+      "Field": "equipModelId",
+      "Name": "装備モデル番号",
+      "Description": "装備モデルの番号."
+    },
+    {
+      "Field": "iconIdM",
+      "Name": "男用アイコンID",
+      "Description": "男用メニューアイコンID."
+    },
+    {
+      "Field": "iconIdF",
+      "Name": "女用アイコンID",
+      "Description": "女用メニューアイコンID."
+    },
+    {
+      "Field": "knockBack",
+      "Name": "ノックバックカット率",
+      "Description": "ノックバックの減少値."
+    },
+    {
+      "Field": "knockbackBounceRate",
+      "Name": "ノックバック反発率",
+      "Description": "ノックバックの反発率."
+    },
+    {
+      "Field": "durability",
+      "Name": "耐久度",
+      "Description": "初期耐久度."
+    },
+    {
+      "Field": "durabilityMax",
+      "Name": "耐久度最大値",
+      "Description": "新品耐久度."
+    },
+    {
+      "Field": "saDurability",
+      "Name": "SA耐久値",
+      "Description": "スーパーアーマー耐久力"
+    },
+    {
+      "Field": "defFlickPower",
+      "Name": "はじき防御力",
+      "Description": "敵の攻撃のはじき返し判定に利用."
+    },
+    {
+      "Field": "defensePhysics",
+      "Name": "物理防御力",
+      "Description": "物理攻撃のダメージ防御."
+    },
+    {
+      "Field": "defenseMagic",
+      "Name": "魔法防御力",
+      "Description": "魔法攻撃のダメージ防御."
+    },
+    {
+      "Field": "defenseFire",
+      "Name": "炎防御力",
+      "Description": "炎攻撃のダメージ防御."
+    },
+    {
+      "Field": "defenseThunder",
+      "Name": "電撃防御力",
+      "Description": "電撃攻撃のダメージ防御."
+    },
+    {
+      "Field": "defenseSlash",
+      "Name": "斬撃防御力",
+      "Description": "攻撃タイプを見て、斬撃属性のときは、防御力を減少させる"
+    },
+    {
+      "Field": "defenseBlow",
+      "Name": "打撃防御力",
+      "Description": "攻撃属性を見て、打撃属性のときは、防御力を減少させる."
+    },
+    {
+      "Field": "defenseThrust",
+      "Name": "刺突防御力",
+      "Description": "攻撃属性を見て、打撃属性のときは、防御力を減少させる."
+    },
+    {
+      "Field": "resistPoison",
+      "Name": "毒耐性",
+      "Description": "毒状態異常へのかかりにくさ"
+    },
+    {
+      "Field": "resistDisease",
+      "Name": "疫病耐性",
+      "Description": "疫病状態異常へのかかりにくさ"
+    },
+    {
+      "Field": "resistBlood",
+      "Name": "出血耐性",
+      "Description": "出血状態異常へのかかりにくさ"
+    },
+    {
+      "Field": "resistCurse",
+      "Name": "呪耐性",
+      "Description": "呪い状態異常へのかかりにくさ"
+    },
+    {
+      "Field": "reinforceTypeId",
+      "Name": "強化タイプID",
+      "Description": "強化タイプID"
+    },
+    {
+      "Field": "trophySGradeId",
+      "Name": "トロフィー",
+      "Description": "トロフィーシステムに関係あるか？"
+    },
+    {
+      "Field": "shopLv",
+      "Name": "ショップレベル",
+      "Description": "お店で販売できるレベル"
+    },
+    {
+      "Field": "knockbackParamId",
+      "Name": "ノックバックパラメータID",
+      "Description": "ノックバックで使用するパラメータのID"
+    },
+    {
+      "Field": "flickDamageCutRate",
+      "Name": "はじき時ダメージ減衰率[%]",
+      "Description": "はじき時のダメージ減衰率に使用"
+    },
+    {
+      "Field": "equipModelCategory",
+      "Name": "装備モデル種別",
+      "Description": "装備モデルの種別."
+    },
+    {
+      "Field": "equipModelGender",
+      "Name": "装備モデル性別",
+      "Description": "装備モデルの性別."
+    },
+    {
+      "Field": "protectorCategory",
+      "Name": "防具カテゴリ",
+      "Description": "防具のカテゴリ."
+    },
+    {
+      "Field": "defenseMaterial",
+      "Name": "防御材質【SE】",
+      "Description": "移動/防御時のSE用."
+    },
+    {
+      "Field": "defenseMaterialSfx",
+      "Name": "防御材質【SFX】",
+      "Description": "移動/防御時のSFX用."
+    },
+    {
+      "Field": "partsDmgType",
+      "Name": "部位ダメージ適用攻撃",
+      "Description": "部位ダメージ判定を行う攻撃タイプを設定"
+    },
+    {
+      "Field": "defenseMaterial_Weak",
+      "Name": "弱点防御材質【SE】",
+      "Description": "弱点部位ダメージ時のSE用"
+    },
+    {
+      "Field": "defenseMaterialSfx_Weak",
+      "Name": "弱点防御材質【SFX】",
+      "Description": "弱点部位ダメージ時のSFX用"
+    },
+    {
+      "Field": "isDeposit",
+      "Name": "預けれるか",
+      "Description": "倉庫に預けれるか"
+    },
+    {
+      "Field": "headEquip",
+      "Name": "頭装備",
+      "Description": "頭装備か."
+    },
+    {
+      "Field": "bodyEquip",
+      "Name": "胴装備",
+      "Description": "胴装備か."
+    },
+    {
+      "Field": "armEquip",
+      "Name": "腕装備",
+      "Description": "腕装備か."
+    },
+    {
+      "Field": "legEquip",
+      "Name": "脚装備",
+      "Description": "脚装備か."
+    },
+    {
+      "Field": "useFaceScale",
+      "Name": "顔スケールを使用するか",
+      "Description": "顔スケールを使用するか"
+    },
+    {
+      "Field": "invisibleFlag00",
+      "Name": "#00#非表示",
+      "Description": "前髪の先"
+    },
+    {
+      "Field": "invisibleFlag01",
+      "Name": "#01#非表示",
+      "Description": "前髪の根元"
+    },
+    {
+      "Field": "invisibleFlag02",
+      "Name": "#02#非表示",
+      "Description": "もみあげ"
+    },
+    {
+      "Field": "invisibleFlag03",
+      "Name": "#03#非表示",
+      "Description": "頭頂部"
+    },
+    {
+      "Field": "invisibleFlag04",
+      "Name": "#04#非表示",
+      "Description": "頭頂部"
+    },
+    {
+      "Field": "invisibleFlag05",
+      "Name": "#05#非表示",
+      "Description": "後ろ髪"
+    },
+    {
+      "Field": "invisibleFlag06",
+      "Name": "#06#非表示",
+      "Description": "後ろ髪の先"
+    },
+    {
+      "Field": "invisibleFlag07",
+      "Name": "#07#非表示",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag08",
+      "Name": "#08#非表示",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag09",
+      "Name": "#09#非表示",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag10",
+      "Name": "#10#非表示",
+      "Description": "襟"
+    },
+    {
+      "Field": "invisibleFlag11",
+      "Name": "#11#非表示",
+      "Description": "襟回り"
+    },
+    {
+      "Field": "invisibleFlag12",
+      "Name": "#12#非表示",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag13",
+      "Name": "#13#非表示",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag14",
+      "Name": "#14#非表示",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag15",
+      "Name": "#15#非表示",
+      "Description": "頭巾の裾"
+    },
+    {
+      "Field": "invisibleFlag16",
+      "Name": "#16#非表示",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag17",
+      "Name": "#17#非表示",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag18",
+      "Name": "#18#非表示",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag19",
+      "Name": "#19#非表示",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag20",
+      "Name": "#20#非表示",
+      "Description": "袖A"
+    },
+    {
+      "Field": "invisibleFlag21",
+      "Name": "#21#非表示",
+      "Description": "袖B"
+    },
+    {
+      "Field": "invisibleFlag22",
+      "Name": "#22#非表示",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag23",
+      "Name": "#23#非表示",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag24",
+      "Name": "#24#非表示",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag25",
+      "Name": "#25#非表示",
+      "Description": "腕"
+    },
+    {
+      "Field": "invisibleFlag26",
+      "Name": "#26#非表示",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag27",
+      "Name": "#27#非表示",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag28",
+      "Name": "#28#非表示",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag29",
+      "Name": "#29#非表示",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag30",
+      "Name": "#30#非表示",
+      "Description": "ベルト"
+    },
+    {
+      "Field": "invisibleFlag31",
+      "Name": "#31#非表示",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag32",
+      "Name": "#32#非表示",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag33",
+      "Name": "#33#非表示",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag34",
+      "Name": "#34#非表示",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag35",
+      "Name": "#35#非表示",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag36",
+      "Name": "#36#非表示",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag37",
+      "Name": "#37#非表示",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag38",
+      "Name": "#38#非表示",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag39",
+      "Name": "#39#非表示",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag40",
+      "Name": "#40#非表示",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag41",
+      "Name": "#41#非表示",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag42",
+      "Name": "#42#非表示",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag43",
+      "Name": "#43#非表示",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag44",
+      "Name": "#44#非表示",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag45",
+      "Name": "#45#非表示",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag46",
+      "Name": "#46#非表示",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag47",
+      "Name": "#47#非表示",
+      "Description": ""
+    },
+    {
+      "Field": "disableMultiDropShare",
+      "Name": "マルチドロップ共有禁止か",
+      "Description": "マルチドロップ共有禁止か"
+    },
+    {
+      "Field": "simpleModelForDlc",
+      "Name": "DLC用シンプルモデルありか",
+      "Description": "ＤＬＣ用シンプルモデルが存在しているか"
+    },
+    {
+      "Field": "pad_0",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "oldSortId",
+      "Name": "旧ソートID",
+      "Description": "旧ソートID(-1:集めない)"
+    },
+    {
+      "Field": "pad_1",
+      "Name": "パディング",
+      "Description": ""
+    }
+  ]
+}

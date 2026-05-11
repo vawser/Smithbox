@@ -1,0 +1,148 @@
+{
+  "Param": "PLAY_REGION_PARAM_ST",
+  "Type": "PLAY_REGION_PARAM_ST",
+  "Name": "PLAY_REGION_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "multiPlayZoneId",
+      "Name": "マルチプレイ区間ID",
+      "Description": "マルチプレイ区間ID"
+    },
+    {
+      "Field": "multiPlayStartLimitEventFlagId",
+      "Name": "マルチプレイ開始制限イベントフラグID",
+      "Description": "マルチプレイ開始制限イベントフラグID"
+    },
+    {
+      "Field": "otherDisableDistance",
+      "Name": "その他霊侵入不可能距離",
+      "Description": "その他霊侵入不可能距離"
+    },
+    {
+      "Field": "pcPositionSaveLimitEventFlagId",
+      "Name": "PC位置セーブ制限イベントフラグID",
+      "Description": "PC位置セーブ制限イベントフラグID"
+    },
+    {
+      "Field": "multiPlayHostLimitEventFlagId",
+      "Name": "マルチプレイホスト制限イベントフラグ",
+      "Description": "マルチプレイホスト制限イベントフラグ：このフラグがONになるとホストとしてマルチプレイが禁止される。ブロッククリアフラグを入れる想定。0：制限しない"
+    },
+    {
+      "Field": "cultNpcWhiteGhostEntityId_byFree",
+      "Name": "NPC白霊召喚儀式の召還NPCのエンティティIDの自由枠ID",
+      "Description": "NPC白霊召喚儀式の召還NPCのエンティティIDとして使われる自由枠IDの先頭"
+    },
+    {
+      "Field": "bMapGuradianRegion",
+      "Name": "マップ守護領域か？",
+      "Description": "マップ守護領域の枠の増減にするか"
+    },
+    {
+      "Field": "bYellowCostumeRegion",
+      "Name": "黄衣の翁サイン領域か？",
+      "Description": "黄衣の翁サイン領域か？"
+    },
+    {
+      "Field": "isSummonPosStartForRed",
+      "Name": "闇霊スタート方向侵入か？",
+      "Description": "闇霊スタート方向侵入か？"
+    },
+    {
+      "Field": "pad",
+      "Name": "pad",
+      "Description": ""
+    },
+    {
+      "Field": "warpItemUsePermitBonfireId_1",
+      "Name": "ワープアイテム許可篝火ID1",
+      "Description": "ワープアイテムの使用を許可する判定に使う篝火のエンティティID1"
+    },
+    {
+      "Field": "warpItemUsePermitBonfireId_2",
+      "Name": "ワープアイテム許可篝火ID2",
+      "Description": "ワープアイテムの使用を許可する判定に使う篝火のエンティティID2"
+    },
+    {
+      "Field": "warpItemUsePermitBonfireId_3",
+      "Name": "ワープアイテム許可篝火ID3",
+      "Description": "ワープアイテムの使用を許可する判定に使う篝火のエンティティID3"
+    },
+    {
+      "Field": "warpItemUsePermitBonfireId_4",
+      "Name": "ワープアイテム許可篝火ID4",
+      "Description": "ワープアイテムの使用を許可する判定に使う篝火のエンティティID4"
+    },
+    {
+      "Field": "warpItemUsePermitBonfireId_5",
+      "Name": "ワープアイテム許可篝火ID5",
+      "Description": "ワープアイテムの使用を許可する判定に使う篝火のエンティティID5"
+    },
+    {
+      "Field": "warpItemProhibitionEventFlagId_1",
+      "Name": "ワープアイテム禁止イベントフラグID1",
+      "Description": "ワープアイテムの使用禁止を判定するイベントフラグID1。ワープアイテム許可篝火IDによる判定より優先度が上"
+    },
+    {
+      "Field": "warpItemProhibitionEventFlagId_2",
+      "Name": "ワープアイテム禁止イベントフラグID2",
+      "Description": "ワープアイテムの使用禁止を判定するイベントフラグID2。ワープアイテム許可篝火IDによる判定より優先度が上"
+    },
+    {
+      "Field": "warpItemProhibitionEventFlagId_3",
+      "Name": "ワープアイテム禁止イベントフラグID3",
+      "Description": "ワープアイテムの使用禁止を判定するイベントフラグID3。ワープアイテム許可篝火IDによる判定より優先度が上"
+    },
+    {
+      "Field": "warpItemProhibitionEventFlagId_4",
+      "Name": "ワープアイテム禁止イベントフラグID4",
+      "Description": "ワープアイテムの使用禁止を判定するイベントフラグID4。ワープアイテム許可篝火IDによる判定より優先度が上"
+    },
+    {
+      "Field": "warpItemProhibitionEventFlagId_5",
+      "Name": "ワープアイテム禁止イベントフラグID5",
+      "Description": "ワープアイテムの使用禁止を判定するイベントフラグID5。ワープアイテム許可篝火IDによる判定より優先度が上"
+    },
+    {
+      "Field": "enableBloodstain",
+      "Name": "血痕・死亡幻影有効",
+      "Description": "血痕・死亡幻影有効"
+    },
+    {
+      "Field": "enableBloodMessage",
+      "Name": "血文字有効",
+      "Description": "血文字有効"
+    },
+    {
+      "Field": "enableGhost",
+      "Name": "幻影有効",
+      "Description": "幻影有効"
+    },
+    {
+      "Field": "pad3",
+      "Name": "pad3",
+      "Description": ""
+    },
+    {
+      "Field": "pad2",
+      "Name": "pad2",
+      "Description": ""
+    },
+    {
+      "Field": "multiPlayHASHostLimitEventFlagId",
+      "Name": "黄衣の翁ホスト制限イベントフラグ",
+      "Description": "黄衣の翁ホスト制限イベントフラグ：このフラグがONになると黄衣の翁のホストとしてのマルチプレイが禁止される。ブロッククリアフラグを入れる想定。0：制限しない"
+    },
+    {
+      "Field": "returnPointEntityId",
+      "Name": "PC落下時の復帰ポイント",
+      "Description": "PCが落下したときの復帰位置。MapStudioのポイントタイプ「ワープポイント」のエンティティIDを設定する。-1の場合はセーブ位置に復帰する。"
+    },
+    {
+      "Field": "reserve",
+      "Name": "予約領域",
+      "Description": ""
+    }
+  ]
+}

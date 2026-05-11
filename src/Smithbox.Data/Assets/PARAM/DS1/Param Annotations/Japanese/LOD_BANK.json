@@ -1,0 +1,28 @@
+{
+  "Param": "LOD_BANK",
+  "Type": "LOD_BANK",
+  "Name": "LOD_BANK",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "lv01_BorderDist",
+      "Name": "LODレベル0-1境界距離[m]",
+      "Description": "切り替わる中心"
+    },
+    {
+      "Field": "lv01_PlayDist",
+      "Name": "LODレベル0-1遊び距離[m]",
+      "Description": "境界中心で±遊び"
+    },
+    {
+      "Field": "lv12_BorderDist",
+      "Name": "LODレベル1-2境界距離[m]",
+      "Description": "切り替わる中心"
+    },
+    {
+      "Field": "lv12_PlayDist",
+      "Name": "LODレベル1-2遊び距離[m]",
+      "Description": "境界中心で±遊び"
+    }
+  ]
+}

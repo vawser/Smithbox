@@ -1,0 +1,108 @@
+{
+  "Param": "MAGIC_PARAM_ST",
+  "Type": "MAGIC_PARAM_ST",
+  "Name": "MAGIC_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "ezStateBehaviorType",
+      "Name": "カテゴリ",
+      "Description": "並べ替えに使用\u3000＞メニュー用"
+    },
+    {
+      "Field": "refType",
+      "Name": "モーションカテゴリ",
+      "Description": "モーションを指定\u3000＞EzState用"
+    },
+    {
+      "Field": "enable_multi",
+      "Name": "マルチでも使用可能か",
+      "Description": "マルチでも使用できるか。シングル、マルチ両方で使える"
+    },
+    {
+      "Field": "enable_multi_only",
+      "Name": "マルチ専用か",
+      "Description": "マルチ専用か。シングルのときには使えない。マルチのときは使える。"
+    },
+    {
+      "Field": "iconId",
+      "Name": "アイコンID",
+      "Description": "アイコンを指定\u3000＞メニュー用"
+    },
+    {
+      "Field": "behaviorId",
+      "Name": "行動ID",
+      "Description": "行動IDを設定する"
+    },
+    {
+      "Field": "faithForGet",
+      "Name": "必要信仰値",
+      "Description": "習得に必要な信仰値(奇跡のみ)＞メニュー用"
+    },
+    {
+      "Field": "slotLength",
+      "Name": "必要スロット",
+      "Description": "装備に必要なスロット数 ＞メニュー用"
+    },
+    {
+      "Field": "isEnchant",
+      "Name": "エンチャントか",
+      "Description": "エンチャントする魔法か"
+    },
+    {
+      "Field": "sortId",
+      "Name": "SortID",
+      "Description": "ソートID(-1:集めない)"
+    },
+    {
+      "Field": "basicValue",
+      "Name": "基本価格",
+      "Description": "魔法の基本価格"
+    },
+    {
+      "Field": "mtrlItemId",
+      "Name": "必要アイテムID",
+      "Description": "購入に必要なアイテムID"
+    },
+    {
+      "Field": "enable_live",
+      "Name": "生存使用可",
+      "Description": "生存キャラが使用可能か"
+    },
+    {
+      "Field": "enable_gray",
+      "Name": "グレイ使用可",
+      "Description": "グレイキャラが使用可能か"
+    },
+    {
+      "Field": "enable_white",
+      "Name": "白使用可",
+      "Description": "白ゴーストキャラが使用可能か"
+    },
+    {
+      "Field": "enable_black",
+      "Name": "黒使用可",
+      "Description": "黒ゴーストキャラが使用可能か"
+    },
+    {
+      "Field": "yesNoDialogMessageId",
+      "Name": "Yes/NoダイアログメッセージID",
+      "Description": "魔法使用時に出すYes/NoダイアログのメッセージID"
+    },
+    {
+      "Field": "opmeMenuType",
+      "Name": "使用時メニュータイプ",
+      "Description": "魔法使用時に出すメニュータイプ"
+    },
+    {
+      "Field": "disableOffline",
+      "Name": "オフラインで使用不可か",
+      "Description": "オフラインで使用不可か"
+    },
+    {
+      "Field": "pad1",
+      "Name": "パディング",
+      "Description": ""
+    }
+  ]
+}

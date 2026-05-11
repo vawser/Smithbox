@@ -1,0 +1,178 @@
+{
+  "Param": "MAIL_PARAM_ST",
+  "Type": "MAIL_PARAM_ST",
+  "Name": "MAIL_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "NT版出力から外すか",
+      "Description": "NT版から除外するか、除外するものに○をつける"
+    },
+    {
+      "Field": "disableParam_Product",
+      "Name": "製品版出力から外すか",
+      "Description": "製品版から除外するか、除外するものに○をつける"
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "パッケージ出力用リザーブ1",
+      "Description": "パッケージ出力用リザーブ1"
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "パッケージ出力用リザーブ2",
+      "Description": "パッケージ出力用リザーブ2"
+    },
+    {
+      "Field": "senderTextID",
+      "Name": "送信者名テキストID",
+      "Description": "送信者名を FNR_MenuText.xlsm のIDで指定"
+    },
+    {
+      "Field": "reserved1",
+      "Name": "---",
+      "Description": "----"
+    },
+    {
+      "Field": "backImageID",
+      "Name": "背景画像ID",
+      "Description": "背景画像のID"
+    },
+    {
+      "Field": "attachedFile_reserved",
+      "Name": "---",
+      "Description": "----"
+    },
+    {
+      "Field": "attachedFile_type",
+      "Name": "カテゴリ",
+      "Description": "添付ファイルのデータ種別"
+    },
+    {
+      "Field": "attachedFile_ID",
+      "Name": "attachedFile_ID",
+      "Description": "添付ファイルのデータID"
+    },
+    {
+      "Field": "page0_textID",
+      "Name": "テキストID",
+      "Description": "1ページ目：本文のテキストID"
+    },
+    {
+      "Field": "page0_imageID",
+      "Name": "画像ID",
+      "Description": "1ページ目：本文中の画像ID"
+    },
+    {
+      "Field": "page0_layout",
+      "Name": "レイアウト",
+      "Description": "1ページ目：レイアウト"
+    },
+    {
+      "Field": "page0_reserved1",
+      "Name": "予約",
+      "Description": "----"
+    },
+    {
+      "Field": "page0_blockEffect_0",
+      "Name": "ブロック1",
+      "Description": "1ブロック目の負荷演出"
+    },
+    {
+      "Field": "page0_blockEffect_1",
+      "Name": "ブロック2",
+      "Description": "2ブロック目の負荷演出"
+    },
+    {
+      "Field": "page0_blockEffect_2",
+      "Name": "ブロック3",
+      "Description": "3ブロック目の負荷演出"
+    },
+    {
+      "Field": "page0_reserved2",
+      "Name": "予約",
+      "Description": "----"
+    },
+    {
+      "Field": "page1_textID",
+      "Name": "テキストID",
+      "Description": "2ページ目：本文のテキストID"
+    },
+    {
+      "Field": "page1_imageID",
+      "Name": "画像ID",
+      "Description": "2ページ目：本文中の画像ID"
+    },
+    {
+      "Field": "page1_layout",
+      "Name": "レイアウト",
+      "Description": "2ページ目：レイアウト"
+    },
+    {
+      "Field": "page1_reserved1",
+      "Name": "予約",
+      "Description": "----"
+    },
+    {
+      "Field": "page1_blockEffect_0",
+      "Name": "ブロック1",
+      "Description": "1ブロック目の負荷演出"
+    },
+    {
+      "Field": "page1_blockEffect_1",
+      "Name": "ブロック2",
+      "Description": "2ブロック目の負荷演出"
+    },
+    {
+      "Field": "page1_blockEffect_2",
+      "Name": "ブロック3",
+      "Description": "3ブロック目の負荷演出"
+    },
+    {
+      "Field": "page1_reserved2",
+      "Name": "予約",
+      "Description": "----"
+    },
+    {
+      "Field": "page2_textID",
+      "Name": "テキストID",
+      "Description": "3ページ目：本文のテキストID"
+    },
+    {
+      "Field": "page2_imageID",
+      "Name": "画像ID",
+      "Description": "3ページ目：本文中の画像ID"
+    },
+    {
+      "Field": "page2_layout",
+      "Name": "レイアウト",
+      "Description": "3ページ目：レイアウト"
+    },
+    {
+      "Field": "page2_reserved1",
+      "Name": "予約",
+      "Description": "----"
+    },
+    {
+      "Field": "page2_blockEffect_0",
+      "Name": "ブロック1",
+      "Description": "1ブロック目の負荷演出"
+    },
+    {
+      "Field": "page2_blockEffect_1",
+      "Name": "ブロック2",
+      "Description": "2ブロック目の負荷演出"
+    },
+    {
+      "Field": "page2_blockEffect_2",
+      "Name": "ブロック3",
+      "Description": "3ブロック目の負荷演出"
+    },
+    {
+      "Field": "page2_reserved2",
+      "Name": "予約",
+      "Description": "----"
+    }
+  ]
+}

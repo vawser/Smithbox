@@ -1,0 +1,2383 @@
+{
+  "Param": "TENTATIVE_PLAYER_PARAM_ST",
+  "Type": "TENTATIVE_PLAYER_PARAM_ST",
+  "Name": "TENTATIVE_PLAYER_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "PlayerFootEffect_bySFX",
+      "Name": "プレイヤーのフットエフェクトのSFX識別子[3桁]",
+      "Description": "フットエフェクトのSFXIDに使われる識別子です。XYYZZZのZZZにあたります。"
+    },
+    {
+      "Field": "MoveNotchAngleDeg",
+      "Name": "移動方向の段階角度[度]",
+      "Description": "パッド入力方向をこの角度刻みでの入力方向に補正"
+    },
+    {
+      "Field": "MovementGravity",
+      "Name": "移動制御用重力加速度[m/s^2]",
+      "Description": "移動制御で使われる重力加速度"
+    },
+    {
+      "Field": "HighSpeedBrakeStartSpeedKMH",
+      "Name": "この速度以上で高速ブレーキ状態にする[kmh]",
+      "Description": "この速度以上でキャラステートを高速ブレーキに遷移する条件を満たす"
+    },
+    {
+      "Field": "BoostRestartSpeedKMH",
+      "Name": "この速度以上でブースト吹かし直し[km/h]",
+      "Description": "加速方向に速度がこの速度以上になったらブースと吹かし直し速度の条件を満たす"
+    },
+    {
+      "Field": "BrakeStartSpeedKMH",
+      "Name": "この速度以上でブレーキ状態にする[kmh]",
+      "Description": "この速度以上でキャラステートをブレーキに遷移する条件を満たす"
+    },
+    {
+      "Field": "BrakeEndSpeedKMH",
+      "Name": "この速度以下でブレーキ状態を解除する[kmh]",
+      "Description": "この速度以下でキャラステートをブレーキから解除する条件を満たす"
+    },
+    {
+      "Field": "StiffThresholdAltM",
+      "Name": "この高さ以下から落下した時は硬直しない[m]",
+      "Description": "地面を離れてからの最高々度がこの高さ以下なら硬直を発動しない"
+    },
+    {
+      "Field": "TurnStartAngleDeg_90",
+      "Name": "向きとパッドの差がこの角度以上なら90度旋回[度]",
+      "Description": "キャラの向きとパッドの向きがこの角度以上になったら90度旋回条件を満たす"
+    },
+    {
+      "Field": "TurnStartAngleDeg_180",
+      "Name": "向きとパッドの差がこの角度以上なら180度旋回[度]",
+      "Description": "キャラの向きとパッドの向きがこの角度以上になったら180度旋回条件を満たす"
+    },
+    {
+      "Field": "BoostDirSpeedRate_Side",
+      "Name": "ブースト移動時速度率（横）[％]",
+      "Description": "ブースト移動時で射撃しながら横移動した時の最高速度がこの割合になる"
+    },
+    {
+      "Field": "BoostDirSpeedRate_Back",
+      "Name": "ブースト移動時速度率（後ろ）[％]",
+      "Description": "ブースト移動時で射撃しながら後ろ移動した時の最高速度がこの割合になる"
+    },
+    {
+      "Field": "BoostDirAccelRate_Side",
+      "Name": "ブースト移動時加速率（横）[％]",
+      "Description": "ブースト移動時で射撃しながら横移動した時の加速度がこの割合になる"
+    },
+    {
+      "Field": "BoostDirAccelRate_Back",
+      "Name": "ブースト移動時加速率（後ろ）[％]",
+      "Description": "ブースト移動時で射撃しながら後ろ移動した時の加速度がこの割合になる"
+    },
+    {
+      "Field": "BoostDirDownAngleDeg",
+      "Name": "ブースト左右後移動して速度が落ちていると判定する角度[度]",
+      "Description": "前方からこの角度以上の角度でブースト左右移動で速度が落ちている"
+    },
+    {
+      "Field": "pad_03",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "LookTargetLeftTurnAngleDeg",
+      "Name": "旋回開始時の正面方向旋回で左旋回するときの角度[度]",
+      "Description": "旋回開始時の正面方向との角度差がこの角度以下なら左旋回"
+    },
+    {
+      "Field": "LookTargetRightTurnAngleDeg",
+      "Name": "旋回開始時の正面方向旋回で右旋回するときの角度[度]",
+      "Description": "旋回開始時の正面方向との角度差がこの角度以上なら右旋回"
+    },
+    {
+      "Field": "LookTargetLeftTurnAngleDegAtTurning",
+      "Name": "旋回中の正面方向旋回で左旋回するときの角度[度]",
+      "Description": "旋回中の正面方向との角度差がこの角度以下なら左旋回"
+    },
+    {
+      "Field": "LookTargetRightTurnAngleDegAtTurning",
+      "Name": "旋回中の正面方向旋回で右旋回するときの角度[度]",
+      "Description": "旋回中の正面方向との角度差がこの角度以上なら右旋回"
+    },
+    {
+      "Field": "LookTargetLeftLargeTurnAngleDeg",
+      "Name": "旋回開始時の正面方向旋回で左旋回するときの角度（大）[度]",
+      "Description": "旋回開始時の正面方向との角度差がこの角度以下なら左旋回"
+    },
+    {
+      "Field": "LookTargetRightLargeTurnAngleDeg",
+      "Name": "旋回開始時の正面方向旋回で右旋回するときの角度（大）[度]",
+      "Description": "旋回開始時の正面方向との角度差がこの角度以上なら右旋回"
+    },
+    {
+      "Field": "lockRangeHorizontalScreenRatio",
+      "Name": "【通常ロック】ロック範囲水平画面割合[rate]",
+      "Description": "「FNR-8128」「FNR-12304」ロック範囲が画角より小さくしたい場合使用。使用中敵撃破後のロック範囲が無効化される。使用したくない場合は1と設定してください"
+    },
+    {
+      "Field": "lockRangeVerticalScreenRatio",
+      "Name": "【通常ロック】ロック範囲垂直画面割合[rate] \t",
+      "Description": "「FNR-8128」「FNR-12304」ロック範囲が画角より小さくしたい場合使用。使用中敵撃破後のロック範囲が無効化される。使用したくない場合は1と設定してください"
+    },
+    {
+      "Field": "BoostSwitchBackCondAngleDeg",
+      "Name": "ブースト移動で切り返しと判定する角度[度]",
+      "Description": "ブースト移動で切り返しブレーキが働く入力方向と移動方向との角度差"
+    },
+    {
+      "Field": "FourLegFlyMoveSwitchBackCondAngleDeg",
+      "Name": "四脚ホバリングで切り返しと判定する角度[度]",
+      "Description": "四脚ホバリングで切り返しブレーキが働く入力方向と移動方向との角度差"
+    },
+    {
+      "Field": "pad_04",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "PlayerGlideFootEffect_bySFX",
+      "Name": "プレイヤーのフットエフェクト(滑走)のSFX識別子[3桁]",
+      "Description": "滑走時のフットエフェクトのSFXIDに使われる識別子です。XYYZZZのZZZにあたります。"
+    },
+    {
+      "Field": "DelayTurn_MaxTurnAngDegPerSec",
+      "Name": "【遅延旋回】最高旋回速度[deg/sec]",
+      "Description": "遅延旋回時のモデルの最高旋回速度"
+    },
+    {
+      "Field": "UnlockAfterCrossingAngleThreshold",
+      "Name": "【通常ロック】すれ違い時ロック解除用角度閾値[deg]",
+      "Description": "片方向の角度（つまり180度の場合はすれ違い時ロックが解除される機能がOFFになる）"
+    },
+    {
+      "Field": "lookTargetOffsetLerpSpeed",
+      "Name": "【通常ロック】Lookターゲットオフセットの補間速度[rad/sec]",
+      "Description": "Lookターゲットオフセットの補間速度（セミオートロック用）"
+    },
+    {
+      "Field": "freeCameraMaxOffsetTimeForSemiAutoLock",
+      "Name": "【通常ロック】セミオートロック中フリーカメラ状態、最大オフセットまでの時間[sec]",
+      "Description": "右スティック連続入力時間がこの値を越えたらオフセットが中央に戻り始める"
+    },
+    {
+      "Field": "AutoPullCamIfPlayerOutOfScreenLerpRateVertical",
+      "Name": "【カメラ】自機が画面外に出る際カメラ自動引きの戻り補間率垂直(0.0～1.0)",
+      "Description": "カメラが引いてから戻る際にの補間率（自動処理で引いた分だけに適用）"
+    },
+    {
+      "Field": "DisableLockPrevAutoSightingTargetTime",
+      "Name": "【通常ロック】前のオートサイティングターゲットにロックオンできない時間[sec]",
+      "Description": "セミオートロック中右スティックを押し倒してから、この時間の間に、さっきのオートサイティングにロックオンできなくなる"
+    },
+    {
+      "Field": "boosterLocomotionReturnLerpTime",
+      "Name": "ブースターロコモーション回復補間時間[秒]",
+      "Description": "TAEからスラスターSFXの再生が指定された際にブースターが回転するが、TAE終了後デフォルト方向に戻るには必要な補間時間[秒]"
+    },
+    {
+      "Field": "FocusPointMaxDistance",
+      "Name": "【カメラ】フリーカメラ時の注視点の最大距離[m]",
+      "Description": "注視点とはカメラからレーザーを出し衝突したら衝突点、しなかったら最大距離の点。カメラが引く際に注視点を中心に回転することがある。"
+    },
+    {
+      "Field": "AutoPullCamIfPlayerOutOfScreenMaxDistance",
+      "Name": "【カメラ】自機が画面外に出る際カメラ自動引きの最大距離[m]",
+      "Description": "壁に衝突する場合は、壁衝突の結果に従う"
+    },
+    {
+      "Field": "AutoPullCamIfPlayerOutOfScreenMarginHorizontal",
+      "Name": "【カメラ】自機が画面外に出る際カメラ自動引きのマージン(0.0～1.0)(水平)",
+      "Description": "0.0：自機がギリギリ画面の辺界に止まるようにカメラが引く；1.0：自機が画面中央に止まるようにカメラが引く"
+    },
+    {
+      "Field": "AutoPullCamIfPlayerOutOfScreenLerpRateHorizontal",
+      "Name": "【カメラ】自機が画面外に出る際カメラ自動引きの戻り補間率水平(0.0～1.0)",
+      "Description": "カメラが引いてから戻る際にの補間率（自動処理で引いた分だけに適用）"
+    },
+    {
+      "Field": "PadSuperDashReleaseTimeSec",
+      "Name": "猛ダッシュボタンを離してから実際に離した扱いにするまでの時間[s]",
+      "Description": "猛ダッシュボタンを離してからこの時間が経過するまで押している扱い"
+    },
+    {
+      "Field": "PadHoldTimeSec",
+      "Name": "パッド長押し判定時間[s]",
+      "Description": "パッドの長押し判定でこの時間が経過したら長押し扱い"
+    },
+    {
+      "Field": "ShieldChargePadHoldTimeSec",
+      "Name": "シールドチャージでQBをこの時間押したらシールドチャージ[秒]",
+      "Description": "QBを長押しでこの時間押したらシールドチャージボタンも押したことにする"
+    },
+    {
+      "Field": "PadPushL3_ToBoostTimeSec",
+      "Name": "L3押してからブーストダッシュになるまでの時間[s]",
+      "Description": "L3押してからこの時間押し続けるとブーストダッシュになる"
+    },
+    {
+      "Field": "SpConsumeFixedValueAtNormalGuard",
+      "Name": "【無効化中】スタミナ減少固定減衰値_通常ガード",
+      "Description": "【無効化中】通常ガード時のスタミナ減少値の固定減少量"
+    },
+    {
+      "Field": "SpConsumeRateAtNormalGuard",
+      "Name": "【無効化中】スタミナ減少減衰係数_通常ガード",
+      "Description": "【無効化中】通常ガード時にスタミナ減少値にかかる係数"
+    },
+    {
+      "Field": "SpConsumeFixedValueAtActiveGuard",
+      "Name": "【無効化中】スタミナ減少固定減衰値_強ガード",
+      "Description": "【無効化中】強ガード時のスタミナ減少値の固定減少量"
+    },
+    {
+      "Field": "SpConsumeRateAtActiveGuard",
+      "Name": "【無効化中】スタミナ減少減衰係数_強ガード",
+      "Description": "【無効化中】強ガード時にスタミナ減少値にかかる係数"
+    },
+    {
+      "Field": "SpConsumeFixedValueAtShieldBarrier",
+      "Name": "スタミナ減少固定減衰値_SHIELD_BARREIR",
+      "Description": "盾バリアに被弾時のスタミナ減少値の固定減少量"
+    },
+    {
+      "Field": "SpConsumeRateAtShieldBarrier",
+      "Name": "スタミナ減少減衰係数_SHIELD_BARRIER",
+      "Description": "盾バリアに被弾時にスタミナ減少値にかかる係数"
+    },
+    {
+      "Field": "DashStaminaMaxValue",
+      "Name": "ダッシュスタミナの最大値",
+      "Description": "ダッシュスタミナの最大値"
+    },
+    {
+      "Field": "DashStaminaHealValuePerSec",
+      "Name": "1秒間に回復するダッシュスタミナ",
+      "Description": "1秒間に回復するダッシュスタミナの値"
+    },
+    {
+      "Field": "DashStaminaDrainValuePerSec",
+      "Name": "1秒間に消費するダッシュスタミナ",
+      "Description": "1秒間に消費するダッシュスタミナの値"
+    },
+    {
+      "Field": "ChrActCondFallSpeedKMH",
+      "Name": "この速度[km/h]以上の下方向速度でChrActの落下条件を満たす",
+      "Description": "この速度以上の下方向速度でChrActの「落下しているとみなす速度」を満たす"
+    },
+    {
+      "Field": "DashStaminaCoolTimeSec",
+      "Name": "ダッシュしてから次にダッシュできるまでの時間[sec]",
+      "Description": "ダッシュしてからスタミナ回復を始める時間も兼ねている"
+    },
+    {
+      "Field": "flyLimitAlt",
+      "Name": "飛行限界高度[m]",
+      "Description": ""
+    },
+    {
+      "Field": "AimModeTrgettingAreaSearchRayDist",
+      "Name": "エイムモード時索敵視界ターゲット検索レイキャスト距離",
+      "Description": "エイムモード時索敵視界ターゲット検索レイキャスト距離"
+    },
+    {
+      "Field": "reserve_06",
+      "Name": "予約領域",
+      "Description": ""
+    },
+    {
+      "Field": "jumpAltSpMiddelPadRate",
+      "Name": "【高度指定ジャンプ】ジャンプ時に中間角度とみなすパッドの傾き具合  ",
+      "Description": "高度指定ジャンプ開始時に中間角度とみなすパッドの入力具合"
+    },
+    {
+      "Field": "jumpAltSpMaxPadRate",
+      "Name": "【高度指定ジャンプ】ジャンプ時に最大角度とみなすパッドの傾き具合  ",
+      "Description": "高度指定ジャンプ開始時に最大角度とみなすパッドの入力具合"
+    },
+    {
+      "Field": "WallJump_WallMovePadAngDeg",
+      "Name": "【三角飛び】壁方向に移動しようとしているとみなすパッド方向角度差[deg]",
+      "Description": "三角飛びで壁方向に移動しようとしているとみなすパッド方向角度差"
+    },
+    {
+      "Field": "WallJump_MiddlePadAngDeg",
+      "Name": "【三角飛び】方向決定時に中間角度とみなすパッド方向角度差[deg]",
+      "Description": "三角飛びで方向決定時に中間角度とみなすパッド方向角度差"
+    },
+    {
+      "Field": "WallJump_MaxPadAngDeg",
+      "Name": "【三角飛び】方向決定時に最大角度とみなすパッド方向角度差[deg]",
+      "Description": "三角飛びで方向決定時に最大角度とみなすパッド方向角度差"
+    },
+    {
+      "Field": "pad_05",
+      "Name": "予約領域",
+      "Description": ""
+    },
+    {
+      "Field": "pad_06",
+      "Name": "予約領域",
+      "Description": ""
+    },
+    {
+      "Field": "FallThrowActiveFallSpeedKMH",
+      "Name": "落下投げが有効になる落下速度[km/h]",
+      "Description": "この速度以上の速度で落下していたら落下投げ発動可能"
+    },
+    {
+      "Field": "FallBrakeStartSpeedKMH",
+      "Name": "自由落下ブレーキ開始速度[km/h]",
+      "Description": "自由落下時にブレーキが掛かり始める速度"
+    },
+    {
+      "Field": "FallMaxSpeedKMH",
+      "Name": "自由落下最高速度[km/h]",
+      "Description": "自由落下時の最高速度"
+    },
+    {
+      "Field": "PropellerFallBrakeStartSpeedKMH",
+      "Name": "プロペラ時自由落下ブレーキ開始速度[km/h]",
+      "Description": "プロペラ時の自由落下時にブレーキが掛かり始める速度"
+    },
+    {
+      "Field": "PropellerFallMaxSpeedKMH",
+      "Name": "プロペラ時自由落下最高速度[km/h]",
+      "Description": "プロペラ時の自由落下時の最高速度"
+    },
+    {
+      "Field": "stabilityBaseVal",
+      "Name": "安定性能ベース値",
+      "Description": "自機の安定性能ベース値"
+    },
+    {
+      "Field": "RunDelayReleaseTimeSec",
+      "Name": "走行（遅延開放）の入力で開放判定される時間[s]",
+      "Description": "ChrBehaviorでパッド入力の「走行（遅延開放）」を選択した時は走行が解除されてからこの時間経過後に解除扱いになる"
+    },
+    {
+      "Field": "WalkToRunPadRate",
+      "Name": "歩行→走行に切り替えるパッドの傾き具合",
+      "Description": "パッドの傾き具合がこの値以上になると走行ステートに移る条件を満たす（1で最も傾いている）"
+    },
+    {
+      "Field": "ShootActLockCamParamId",
+      "Name": "射撃アクション時のロックカメラパラメータID",
+      "Description": "射撃アクション時のロックカメラパラメータID"
+    },
+    {
+      "Field": "ShootActRumbleId",
+      "Name": "射撃アクション時の振動ID",
+      "Description": "射撃アクション時の振動ID"
+    },
+    {
+      "Field": "TurnBrakeMPSS",
+      "Name": "旋回ブレーキ[m/s^2]",
+      "Description": "自機の向きと加速方向（パッドの入力方向）がずれたときにかかるブレーキの最大値"
+    },
+    {
+      "Field": "TurnBrakeMinAngleDeg",
+      "Name": "旋回ブレーキが効き始めるキャラと加速方向との最小角度差[度]",
+      "Description": "キャラの向きと加速方向がこの角度以上ずれたら旋回ブレーキが効き始める"
+    },
+    {
+      "Field": "TurnBrakeMaxAngleDeg",
+      "Name": "旋回ブレーキが効くキャラと加速方向との最大角度差[度]",
+      "Description": "キャラの向きと加速方向がこの角度以上ずれたら最大旋回ブレーキ"
+    },
+    {
+      "Field": "TurnBrakeMinSpeedKMH",
+      "Name": "旋回ブレーキが効くようになる最低速度[km/h]",
+      "Description": "この速度未満のときは旋回ブレーキが発動しない"
+    },
+    {
+      "Field": "TurnBrakeMinBrakeRate",
+      "Name": "旋回ブレーキの最小ブレーキ率",
+      "Description": "最小角度差を超えたらこの率からブレーキ率がかかり始める"
+    },
+    {
+      "Field": "KeepLockWhenTgtInvisibleTime",
+      "Name": "ターゲットが見えなくになってからロックの維持時間[sec]",
+      "Description": "ロックターゲットが壁に遮られる場合ロックオンの維持時間"
+    },
+    {
+      "Field": "QuickBoostActLockCamParamId",
+      "Name": "QBアクション時のロックカメラパラメータID",
+      "Description": "QBアクション時のロックカメラパラメータID"
+    },
+    {
+      "Field": "CameraHorizontalRotMarginDeg",
+      "Name": "【カメラ】カメラが水平移動を始める角度[deg]",
+      "Description": "画面内を左右に移動する際にカメラが水平移動するまでの中心からの角度"
+    },
+    {
+      "Field": "chrTransChaseRateForNormal",
+      "Name": "【カメラ】通常用キャラ並進追尾率(0.0～1.0)",
+      "Description": "カメラの注視点がキャラを追いかける割合。小さいほど遅く追尾"
+    },
+    {
+      "Field": "lockCamParamLerpRate",
+      "Name": "【カメラ】ロックカメラパラム補間率(0.0～1.0)",
+      "Description": "カメラのパラメータIDが切り替わった際の補間割合。小さいほどゆっくり"
+    },
+    {
+      "Field": "ZTiltStartXSpeedKMH",
+      "Name": "【カメラ】Ｚ回転を開始する横速度[km/h]",
+      "Description": "自機のカメラに対するX方向の速度がこれ以上ならば、カメラが斜めに傾きはじめる"
+    },
+    {
+      "Field": "ZTiltMaxXSpeedKMH",
+      "Name": "【カメラ】Ｚ回転が最大になる横速度[km/h]",
+      "Description": "自機のカメラに対するX方向の速度がこれ以上ならば、カメラが最大まで斜めに傾く"
+    },
+    {
+      "Field": "MaxZTiltAngleDeg",
+      "Name": "【カメラ】Ｚ回転の最大角度[deg]",
+      "Description": "カメラが最大まで斜めに傾いた時の角度"
+    },
+    {
+      "Field": "ZTiltInterpolateFrame",
+      "Name": "【カメラ】Z回転中の補間フレーム",
+      "Description": "カメラを傾ける際の補間フレーム。このフレーム経過すると目標角度に到達する"
+    },
+    {
+      "Field": "ZTiltEndInterpolateFrame",
+      "Name": "【カメラ】Z回転終了時の補間フレーム",
+      "Description": "カメラの傾きを戻す間の補間フレーム。このフレーム経過すると目標角度に到達する"
+    },
+    {
+      "Field": "Camera_rotSpeedRate_onQuickTurn",
+      "Name": "【カメラ】クイックターン中XY軸回転速度倍率[％]",
+      "Description": "クイックターン中にカメラを加速する倍率"
+    },
+    {
+      "Field": "Camera_rotSpeed_Min",
+      "Name": "【カメラ】XY軸回転速度最小値[deg/sec]",
+      "Description": "カメラを横方向にゆっくり回す時の速度の最低値"
+    },
+    {
+      "Field": "Camera_rotSpeed_Max",
+      "Name": "【カメラ】XY軸回転速度最大値[deg/sec]",
+      "Description": "カメラを横方向にゆっくり回す時の速度の最大値"
+    },
+    {
+      "Field": "Camera_rotHiSpeed_Min",
+      "Name": "【カメラ】XY軸高速回転速度最小値[deg/sec]",
+      "Description": "カメラを横方向に大きく回す時の速度の最小値"
+    },
+    {
+      "Field": "Camera_rotHiSpeed_Max",
+      "Name": "【カメラ】XY軸高速回転速度最大値[deg/sec]",
+      "Description": "カメラを横方向に大きく回す時の速度の最大値"
+    },
+    {
+      "Field": "PassiveGuardSpecRate",
+      "Name": "【ガード】受動ガード時のガード性能率",
+      "Description": ""
+    },
+    {
+      "Field": "Camera_BladeHoming_UpAngleDeg",
+      "Name": "【カメラ】ブレホで上方向扱いになるカメラ角度[deg]",
+      "Description": "カメラが上方向にこの角度以上向いたら上方向"
+    },
+    {
+      "Field": "Camera_BladeHoming_DownAngleDeg",
+      "Name": "【カメラ】ブレホで下方向扱いになるカメラ角度[deg]",
+      "Description": "カメラが下方向にこの角度以下向いたら下方向"
+    },
+    {
+      "Field": "isOverShoulderViewOnlyLeftSide",
+      "Name": "【カメラ】肩越し視点時に必ず左に寄せるか？",
+      "Description": "肩越し視点時に必ず左に寄せるか？(1:必ず左 0:左右のどちらか近い方)"
+    },
+    {
+      "Field": "pad_01",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "jumpMaxSpeedInputTimeSec",
+      "Name": "ジャンプ最高速度になるまでのパッド入力時間[sec]",
+      "Description": "ジャンプ入力をこの時間継続すると最高ジャンプ力"
+    },
+    {
+      "Field": "LookAtSpinePerf",
+      "Name": "【LookAt】腰の旋回性能（％/Sec)",
+      "Description": ""
+    },
+    {
+      "Field": "TankGroundMoveAddAnim_MinAccelMPSS",
+      "Name": "【タンク移動加算アニメ】再生する最低加速度[m/s^2]",
+      "Description": "タンク移動加算アニメ制御でこの加速度以上かつ↓を満たしたときにならアニメを再生する"
+    },
+    {
+      "Field": "TankGroundMoveAddAnim_ChangeAccelMPSS",
+      "Name": "【タンク移動加算アニメ】加速度がこの値以上に変化したら再生[m/s^2]",
+      "Description": "タンク移動加算アニメ制御で加速度がこの値以上変化した、かつ↑を満たしたときにならアニメを再生する"
+    },
+    {
+      "Field": "LastPositionInNaviVolume_UpdateDistance",
+      "Name": "【AI】ナビボリュームにいた座標の更新距離[m]",
+      "Description": "前回ナビボリュームにいた位置からこの距離以上に離れたらナビボリュームにいた位置を更新"
+    },
+    {
+      "Field": "LookAtArmPerf",
+      "Name": "【LookAt】腕の旋回性能（％/Sec)",
+      "Description": ""
+    },
+    {
+      "Field": "LookAtLeftClavicleRate",
+      "Name": "【LookAt】左肩の補正率(0.0～1.0)",
+      "Description": ""
+    },
+    {
+      "Field": "LookAtLeftClavicleMin",
+      "Name": "【LookAt】左肩の下の限界角度(-180～180)",
+      "Description": ""
+    },
+    {
+      "Field": "LookAtLeftClavicleMax",
+      "Name": "【LookAt】左肩の上の限界角度(-180～180)",
+      "Description": ""
+    },
+    {
+      "Field": "LookAtLeftUpperArmRate",
+      "Name": "【LookAt】左肩の補正率(0.0～1.0)",
+      "Description": ""
+    },
+    {
+      "Field": "LookAtLeftUpperArmMin",
+      "Name": "【LookAt】左肩の左側の限界角度(-180～180)",
+      "Description": ""
+    },
+    {
+      "Field": "LookAtLeftUpperArmMax",
+      "Name": "【LookAt】左肩の右側の限界角度(-180～180)",
+      "Description": ""
+    },
+    {
+      "Field": "LookAtLeftHandRate",
+      "Name": "【LookAt】左手の補正率(0.0～1.0)",
+      "Description": ""
+    },
+    {
+      "Field": "LookAtLeftHandMin",
+      "Name": "【LookAt】左手の下限限界角度(-180～180)",
+      "Description": ""
+    },
+    {
+      "Field": "LookAtLeftHandMax",
+      "Name": "【LookAt】左手の上限限界角度(-180～180)",
+      "Description": ""
+    },
+    {
+      "Field": "LookAtRightClavicleRate",
+      "Name": "【LookAt】右肩の補正率(0.0～1.0)",
+      "Description": ""
+    },
+    {
+      "Field": "LookAtRightClavicleMin",
+      "Name": "【LookAt】右肩の下の限界角度(-180～180)",
+      "Description": ""
+    },
+    {
+      "Field": "LookAtRightClavicleMax",
+      "Name": "【LookAt】右肩の上の限界角度(-180～180)",
+      "Description": ""
+    },
+    {
+      "Field": "LookAtRightUpperArmRate",
+      "Name": "【LookAt】右肩の補正率(0.0～1.0)",
+      "Description": ""
+    },
+    {
+      "Field": "LookAtRightUpperArmMin",
+      "Name": "【LookAt】右肩の左側の限界角度(-180～180)",
+      "Description": ""
+    },
+    {
+      "Field": "LookAtRightUpperArmMax",
+      "Name": "【LookAt】右肩の右側の限界角度(-180～180)",
+      "Description": ""
+    },
+    {
+      "Field": "LookAtRightHandRate",
+      "Name": "【LookAt】右手の補正率(0.0～1.0)",
+      "Description": ""
+    },
+    {
+      "Field": "LookAtRightHandMin",
+      "Name": "【LookAt】右手の下限限界角度(-180～180)",
+      "Description": ""
+    },
+    {
+      "Field": "LookAtRightHandMax",
+      "Name": "【LookAt】右手の上限限界角度(-180～180)",
+      "Description": ""
+    },
+    {
+      "Field": "PropellerPartsAnimRate",
+      "Name": "プロペラパーツ時の制御の補間率",
+      "Description": ""
+    },
+    {
+      "Field": "knockBackMultiFrameHitIntervalTimeSec",
+      "Name": "ノックバックの多段ヒット時に次のノックバックが発生するまでの時間[秒]",
+      "Description": "ノックバック発生後、同じダメージがヒットし続けたときにこの時間後にノックバックが再び発生"
+    },
+    {
+      "Field": "knockBackRateAtAutoGuard",
+      "Name": "通常ガード時のノックバックする距離の倍率",
+      "Description": ""
+    },
+    {
+      "Field": "knockBackRateAtActiveGuard",
+      "Name": "強ガード時のノックバックする距離の倍率",
+      "Description": ""
+    },
+    {
+      "Field": "knockBackRateInAir",
+      "Name": "空中で被弾した際のノックバックする距離の倍率",
+      "Description": "空中で被弾した場合にノックバック距離にかかる倍率。ガード中の場合、それぞれの倍率にさらにかかる"
+    },
+    {
+      "Field": "bladeHoming_ModelRotAngSpeedDegPerSec",
+      "Name": "ブレホ時モデル上下回転角速度初期値[deg/s]",
+      "Description": "ブレホ時のモデル上下回転角度速度デフォルト値"
+    },
+    {
+      "Field": "unricochetAngle",
+      "Name": "跳弾しない入射角度[deg]",
+      "Description": "設定した数値以上の入射角度を持つ弾のみ跳弾するようになります。[0～180度]"
+    },
+    {
+      "Field": "ricochetProbability",
+      "Name": "跳弾する確率(％)",
+      "Description": "跳弾する確立(％)"
+    },
+    {
+      "Field": "upperAngleAtRicochet",
+      "Name": "跳弾後に飛ぶ上方向のとりえる角度（乱数）[deg]",
+      "Description": "跳弾後の弾の上方向角度[0～90度]"
+    },
+    {
+      "Field": "lowerAngleAtRicochet",
+      "Name": "跳弾後に飛ぶ下方向のとりえる角度（乱数）[deg]",
+      "Description": "跳弾後の弾の下方向角度[0～90度]"
+    },
+    {
+      "Field": "originalVecRateAtRicochet",
+      "Name": "跳弾直後の弾の方向が、盾の真横方向からどれほど元の方向と同じか",
+      "Description": "どれほど跳弾前の方向に弾が似ているか「0.0～1.0」0.0で盾の真横方向、1.0で跳弾前と同じ"
+    },
+    {
+      "Field": "originalVecRateAtLast",
+      "Name": "跳弾後の最終的な弾の方向が、盾の真横方向からどれほど元の方向と同じか",
+      "Description": "どれほど跳弾前の方向に弾が似ているか「0.0～1.0」0.0で盾の真横方向、1.0で跳弾前と同じ"
+    },
+    {
+      "Field": "changeVelocityTimeFromRicochetting",
+      "Name": "跳弾直後の方向から最終的な弾の方向に遷移する時間(秒)",
+      "Description": "何秒かけて跳弾後の最終的な弾の方向に向かうか"
+    },
+    {
+      "Field": "noEquipDummyWepId",
+      "Name": "武器なし用ダミー武器ID \t",
+      "Description": "武器がないときのダミー装備武器ID（手武器以外）"
+    },
+    {
+      "Field": "AimActLockRangeScale",
+      "Name": "エイム時ロック距離補正値",
+      "Description": "エイム時にロック距離(2次ロックも含めて)を伸ばす倍率"
+    },
+    {
+      "Field": "bladehoming_InertiaCondAngleDeg",
+      "Name": "慣性ブレホ発生角度[deg]",
+      "Description": "ChrBehavior「ターゲット方向と水平移動方向のなす角度が慣性ブレホ発生角度以下」の判定角度"
+    },
+    {
+      "Field": "RideAccelRate",
+      "Name": "乗車時の加速率",
+      "Description": "通常の速度 * 値 = 車の速度"
+    },
+    {
+      "Field": "RideSlopeThreshold",
+      "Name": "乗車時に滑り出すスロープ角度",
+      "Description": "滑るようになる坂の角度[0～90度]"
+    },
+    {
+      "Field": "QuickTurnRotAngleDeg",
+      "Name": "クイックターン：旋回角度[deg]",
+      "Description": "クイックターンで何度回転するか"
+    },
+    {
+      "Field": "IsNoShootPredictionRateSubWhenFreeCamera",
+      "Name": "【予測率】カメラ非固定中は予測率を減算しない",
+      "Description": "0: 減算する、1: 減算しない"
+    },
+    {
+      "Field": "IsRicochetNoResetResidualImpactSubTimer",
+      "Name": "【自機】跳弾では残留衝撃値の減少加速タイマーをリセットしない",
+      "Description": "跳弾になったときに残留衝撃値の減少加速タイマーをリセットしないか"
+    },
+    {
+      "Field": "reserve_14",
+      "Name": "予約領域",
+      "Description": ""
+    },
+    {
+      "Field": "QuickTurnRotTimeSec",
+      "Name": "クイックターン：旋回時間[sec]",
+      "Description": "クイックターン実行時間"
+    },
+    {
+      "Field": "QuickTurnInputRate",
+      "Name": "クイックターン：入力しきい値",
+      "Description": "クイックターン発動入力のスティック入力量"
+    },
+    {
+      "Field": "RevLegsQb_MoveRotVertAngDeg",
+      "Name": "逆関節専用_空中QB追加垂直角度[deg]",
+      "Description": "逆脚空中QBの移動角度"
+    },
+    {
+      "Field": "noHandEquipDummyWepId",
+      "Name": "素手用ダミー武器ID \t",
+      "Description": "手武器がないときのダミー装備武器ID"
+    },
+    {
+      "Field": "overShoulderRadLerpRateInQuickCameraTurn",
+      "Name": "【カメラ】クイックカメラターン時カメラ肩越し角度の補間率",
+      "Description": ""
+    },
+    {
+      "Field": "guardSuccessfulBrakingTimeSec",
+      "Name": "ガード成功時に減速する時間[sec]",
+      "Description": "ガード成功時に減速する時間[sec]"
+    },
+    {
+      "Field": "guardSuccessfulBrakeRate",
+      "Name": "ガード成功時に速度にかかる係数",
+      "Description": "ガード成功時に速度にかかる係数。 0で速度ゼロ、1で速度変化無し"
+    },
+    {
+      "Field": "chrHeightMinForCameraWallCheck",
+      "Name": "【カメラ】壁衝突チェック用自機頭部の高さ下限[m]",
+      "Description": "壁衝突チェックは自機頭部の高さを使っているが、自機死亡アニメ時低すぎると地面にぶつかるため、この値で調整"
+    },
+    {
+      "Field": "FlyBoostMove180Turn_StopSpeedKMH",
+      "Name": "空中180度ターンで停止扱いにする速度[km/h]",
+      "Description": "空中180度ターンでこの速度以下になったらブレーキやめて停止扱いに"
+    },
+    {
+      "Field": "padding_03",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "LockTargetMarking_TimeOutSec",
+      "Name": "【ターゲットマーキング】範囲外に出たときに忘れるまでの時間[秒]",
+      "Description": ""
+    },
+    {
+      "Field": "roundDashForceEndTime",
+      "Name": "ダッシュ回りこみの終了時間[sec]",
+      "Description": "ダッシュ回りこみでこの時間が経過したら目標位置に到着してなくても終了"
+    },
+    {
+      "Field": "roundDashGoalOffset",
+      "Name": "ダッシュ回りこみの目標位置をターゲットの位置からこの距離だけ離す[m]",
+      "Description": "ダッシュ回りこみの目標位置をターゲットの位置からこの距離だけ離した位置にする"
+    },
+    {
+      "Field": "roundDashStartRoundAngleDeg",
+      "Name": "ダッシュ回りこみの最初の回りこみ角度[度]",
+      "Description": "ダッシュ回りこみで最初に向かう角度、ターゲット方向からこの角度ずれた方向に移動開始"
+    },
+    {
+      "Field": "roundDashGoalAngleDeg",
+      "Name": "ダッシュ回りこみの最終目標角度[度]",
+      "Description": "ダッシュ回りこみでターゲットへの方向からこの角度を回した角度を目標位置に設定する"
+    },
+    {
+      "Field": "roundDashMaxRoundAngleDeg",
+      "Name": "ダッシュ回りこみで最大回りこみをする角度[度]",
+      "Description": "ダッシュ回りこみでターゲットからの方向からこの角度まで初期回り込み角度になる"
+    },
+    {
+      "Field": "roundDashEndRoundAngleDeg",
+      "Name": "ダッシュ回りこみで目標位置に直進し始める角度[度]",
+      "Description": "ダッシュ回りこみでターゲットからの方向からこの角度まで来た時に目標位置に直進する"
+    },
+    {
+      "Field": "roundDashEndSpeedKMPH",
+      "Name": "ダッシュ回りこみで終了したと判定する速度[km/h]",
+      "Description": "ダッシュ回りこみで目標角度に到着したあとこの速度以下になったら制御終了"
+    },
+    {
+      "Field": "LockTargetMarking_ForgetDist",
+      "Name": "【ターゲットマーキング】この距離以上離れたらマーキング解除",
+      "Description": "【ターゲットマーキング】ターゲットとの距離がこれ以上離れたらマーキングを解除"
+    },
+    {
+      "Field": "LockTargetMarking_ChachDist",
+      "Name": "【ターゲットマーキング】マーキング補足距離",
+      "Description": "【ターゲットマーキング】ターゲットをマーキングする距離。角度と合わせて使う"
+    },
+    {
+      "Field": "LockTargetMarking_ChachAngleDeg",
+      "Name": "【ターゲットマーキング】マーキング補足角度[度]",
+      "Description": "【ターゲットマーキング】ターゲットをマーキングする角度。距離と合わせて使う"
+    },
+    {
+      "Field": "reserve_18",
+      "Name": "予約領域",
+      "Description": ""
+    },
+    {
+      "Field": "LockTargetChangeWaitTimeMouse",
+      "Name": "【マウス】マウス移動によるターゲット切り替え待ち時間[sec]",
+      "Description": "マウス移動によるターゲット切り替え待ち時間[sec]"
+    },
+    {
+      "Field": "LockTargetChangeMouseInputCoefficient",
+      "Name": "【マウス】ターゲット切り替え時マウス入力の係数",
+      "Description": "マウス入力からターゲット切り替え用入力へ変換する時の係数。マウス感度にあんまり影響されないつもり"
+    },
+    {
+      "Field": "unk200",
+      "Name": "unk200",
+      "Description": ""
+    },
+    {
+      "Field": "bladeBrakeTimeScale",
+      "Name": "【ブレホ】ブレーキ時間係数",
+      "Description": "ブレホブレーキの時間にかかる係数"
+    },
+    {
+      "Field": "bladeBrakeDecayRate",
+      "Name": "【ブレホ】ブレーキ減衰係数",
+      "Description": "ブレホブレーキの時間経過による減衰係数"
+    },
+    {
+      "Field": "bladeBrakeGoalSpeedKMH",
+      "Name": "【ブレホ】ブレーキ目標速度[km/h]",
+      "Description": "ブレホブレーキでどこまで速度を落とすか"
+    },
+    {
+      "Field": "reserve_37",
+      "Name": "予約領域",
+      "Description": ""
+    },
+    {
+      "Field": "brakeRandMinRate",
+      "Name": "ブレーキブレ：最小ブレーキ率",
+      "Description": "ブレーキブレ：最小ブレーキ率"
+    },
+    {
+      "Field": "brakeRandMaxRate",
+      "Name": "ブレーキブレ：最大ブレーキ率",
+      "Description": "ブレーキブレ：最大ブレーキ率"
+    },
+    {
+      "Field": "brakeRandGenMinTimeSec",
+      "Name": "ブレーキブレ：ブレ率最小抽選間隔[sec]",
+      "Description": "ブレーキブレ：ブレ率最小抽選間隔[sec]"
+    },
+    {
+      "Field": "brakeRandGenMaxTimeSec",
+      "Name": "ブレーキブレ：ブレ率最大抽選間隔[sec]",
+      "Description": "ブレーキブレ：ブレ率最大抽選間隔[sec]"
+    },
+    {
+      "Field": "endPermanentStunStateValue",
+      "Name": "ハメ抜け発生値[point]",
+      "Description": "ハメ抜け発生値"
+    },
+    {
+      "Field": "chrTransChaseRateForQuickCameraTurnX",
+      "Name": "【カメラ】クイックカメラターン時キャラ追尾率左右(0.0～1.0)",
+      "Description": "クイックカメラターンの間に旋回中心を自機にするためのパラメータ、マイナスで上書きしない"
+    },
+    {
+      "Field": "chrTransChaseRateForQuickCameraTurnX_LerpRate",
+      "Name": "【カメラ】クイックカメラターン時キャラ追尾率（左右）の補間率(0.0～1.0)",
+      "Description": "クイックカメラターンの間に旋回中心を自機にするためのパラメータ、マイナスで上書きしない"
+    },
+    {
+      "Field": "turnFootSfx_MinTurnSpeed",
+      "Name": "旋回時足元SFX：最小旋回速度[deg/sec]",
+      "Description": "旋回時に足元から出すSFX：この旋回速度以上で旋回率が上がり始める"
+    },
+    {
+      "Field": "turnFootSfx_MaxTurnSpeed",
+      "Name": "旋回時足元SFX：最大旋回速度[deg/sec]",
+      "Description": "旋回時に足元から出すSFX：この旋回速度以上で旋回率MAX"
+    },
+    {
+      "Field": "turnFootSfx_SfxId",
+      "Name": "旋回時足元SFX：SFXID",
+      "Description": "旋回時に足元から出すSFXID"
+    },
+    {
+      "Field": "turnFootSfx_MinBrakeRate",
+      "Name": "旋回時足元SFX：最小ブレーキ率",
+      "Description": "旋回時に足元から出すSFX：最小ブレーキ率"
+    },
+    {
+      "Field": "turnFootSfx_MinSpeedKMH",
+      "Name": "旋回時足元SFX：最小速度[km/h]",
+      "Description": "旋回時に足元から出すSFX：この速度以上で速度率が上がり始める"
+    },
+    {
+      "Field": "turnFootSfx_MaxSpeedKMH",
+      "Name": "旋回時足元SFX：最大速度[km/h]",
+      "Description": "旋回時に足元から出すSFX：この速度以上で速度率MAX"
+    },
+    {
+      "Field": "hangWeaponLAttachDmyPolyId",
+      "Name": "格納時吸着ダミポリID(左側)",
+      "Description": "武器格納時につけるオフセット込みのダミポリID（デバッグで有効にしたときのみ使用）"
+    },
+    {
+      "Field": "hangWeaponRAttachDmyPolyId",
+      "Name": "格納時吸着ダミポリID(右側)",
+      "Description": "武器格納時につけるオフセット込みのダミポリID（デバッグで有効にしたときのみ使用）"
+    },
+    {
+      "Field": "jumpableHeightOnBoostMove",
+      "Name": "ブースト移動中にジャンプ可能な地面からの高さ",
+      "Description": "ブースト移動中に不意に浮いたタイミングでジャンプできるための許容する高さ"
+    },
+    {
+      "Field": "partsModelForceMoveTime",
+      "Name": "パーツモデルの破壊後に必ず物理が有効な時間",
+      "Description": ""
+    },
+    {
+      "Field": "partsModelForceStopTime",
+      "Name": "パーツモデルの破壊後に強制的に物理が停止するまでの時間",
+      "Description": ""
+    },
+    {
+      "Field": "heavyWeightAddAnimRightId",
+      "Name": "重量級加算右手用アニメID",
+      "Description": "重量級加算アニメの右手用アニメID"
+    },
+    {
+      "Field": "heavyWeightAddAnimLeftId",
+      "Name": "重量級加算左手用アニメID",
+      "Description": "重量級加算アニメの左手用アニメID"
+    },
+    {
+      "Field": "reserve_41",
+      "Name": "予約領域",
+      "Description": ""
+    },
+    {
+      "Field": "slopeSpine_MaxSpeedKMH",
+      "Name": "【斜面の腰傾き】[ブースト]腰が振られるときの最大速度[km/h]",
+      "Description": ""
+    },
+    {
+      "Field": "slopeSpine_StopRate",
+      "Name": "【斜面の腰傾き】[ブースト]停止時の腰の傾き率",
+      "Description": ""
+    },
+    {
+      "Field": "slopeSpine_MaxSpeedRate",
+      "Name": "【斜面の腰傾き】[ブースト]腰が振られるときの最大速度時の傾き率",
+      "Description": ""
+    },
+    {
+      "Field": "slopeSpine_MinSpeedBlendRate",
+      "Name": "【斜面の腰傾き】[ブースト]停止時の腰のブレンド率",
+      "Description": "毎フレームこのブレンド率で腰が傾いていきます"
+    },
+    {
+      "Field": "slopeSpine_MaxSpeedBlendRate",
+      "Name": "【斜面の腰傾き】[ブースト]腰が振られるときの最大速度時の腰のブレンド率",
+      "Description": "毎フレームこのブレンド率で腰が傾いていきます"
+    },
+    {
+      "Field": "flyLookAt_BeginHeight",
+      "Name": "【空中射撃】空中LookAt開始高さ[m]",
+      "Description": "空中での射撃時に状態を傾けるときの開始の高さ"
+    },
+    {
+      "Field": "flyLookAt_MaxHeight",
+      "Name": "【空中射撃】空中LookAt傾き最大距離[m]",
+      "Description": "空中での射撃時の傾きが開始処理から最大になるまでの移動高さ"
+    },
+    {
+      "Field": "keepShootStandbyTimeAfterTargetDisappear",
+      "Name": "【ビヘイビア】ターゲットがいなくなってから射撃待機を維持する時間[s]",
+      "Description": "ロックターゲットがいた/いなくなったで切り替える時、アニメがパカパカにならないためのもの"
+    },
+    {
+      "Field": "lockRangeDistanceAfterKillClose",
+      "Name": "【通常ロック】敵撃破後ロック対象の選択範囲（近）[m]",
+      "Description": "近距離視野内の敵が優先に選択される、かつ後ろの敵も選択できる"
+    },
+    {
+      "Field": "lockRangeDistanceAfterKillFar",
+      "Name": "【通常ロック】敵撃破後ロック対象の選択範囲（遠）[m]",
+      "Description": "遠距離以外の敵は選択しない"
+    },
+    {
+      "Field": "lockRangeAngleWhenSwitchTarget",
+      "Name": "【通常ロック】手動切り替える時ロック対象の選択範囲角度[deg]（0-180）",
+      "Description": "自機中心の片方の角度で、90であれば前方、180であれば一週"
+    },
+    {
+      "Field": "lockRangeDistanceForBackLock",
+      "Name": "【通常ロック】後ろにも切り替えられる範囲[m]",
+      "Description": "自機中心"
+    },
+    {
+      "Field": "ZTiltInterpolateFrameSlowMagnification",
+      "Name": "【カメラ】Z回転中の補間フレーム遅延倍率",
+      "Description": "【カメラ】Z回転中の補間フレームにかける"
+    },
+    {
+      "Field": "ZTiltEndInterpolateFrameSlowMagnification",
+      "Name": "【カメラ】Z回転終了時の補間フレーム遅延倍率",
+      "Description": "【カメラ】Z回転終了時の補間フレームにかける"
+    },
+    {
+      "Field": "raycastToAboveObjectLength",
+      "Name": "頭上に物があるかチェックするレイキャスト長さ[m]",
+      "Description": ""
+    },
+    {
+      "Field": "raycastToAboveObjectInterval",
+      "Name": "頭上に物があるかチェックする間隔[sec]",
+      "Description": ""
+    },
+    {
+      "Field": "onBarrierdSpeedRate",
+      "Name": "バリア着弾後の速度倍率",
+      "Description": "バリアに当たった際に弾丸の速度にかかる値"
+    },
+    {
+      "Field": "onBarrierdSpeedMin",
+      "Name": "バリア着弾後の最低速度[m/s]",
+      "Description": "バリアに当たった後の弾丸の最低速度[m/s] "
+    },
+    {
+      "Field": "onBarrierdSpeedMax",
+      "Name": "バリア着弾後の最高速度[m/s]",
+      "Description": "バリアに当たった後の弾丸の最高速度[m/s] ※0で最高速度無限"
+    },
+    {
+      "Field": "triggerContinueTimeToMultiLock",
+      "Name": "【ミサイルロック】マルチロックになる長押し時間[s]",
+      "Description": "【ミサイルロック】マルチロックになる長押し時間[s]"
+    },
+    {
+      "Field": "bladeKeepLockTime",
+      "Name": "【ブレホ】カメラロック最低保障時間[sec]",
+      "Description": "ブレホ時のカメラロック最低保障時間"
+    },
+    {
+      "Field": "mouseBaseCoefficient",
+      "Name": "【マウス】感度の基礎係数",
+      "Description": "ベースとしたマウスの感度係数"
+    },
+    {
+      "Field": "mouseCoefficientMin",
+      "Name": "【マウス】感度の下限",
+      "Description": "マウス感度0のときの値"
+    },
+    {
+      "Field": "mouseCoefficientMax",
+      "Name": "【マウス】感度の上限",
+      "Description": "マウス感度10のときの値"
+    },
+    {
+      "Field": "tankTurnOffset_MaxMoveDirFwdDirErrAngDeg",
+      "Name": "【廃止予定】【タンク旋回オフセット】移動方向と速度方向の最大ズレ角度[deg]",
+      "Description": "移動方向と速度方向のズレによるオフセットが最大になる角度"
+    },
+    {
+      "Field": "tankTurnOffset_CenterOffset",
+      "Name": "【廃止予定】【タンク旋回オフセット】旋回の中心位置オフセット",
+      "Description": "タンクの旋回軸のオフセット（前が+）"
+    },
+    {
+      "Field": "tankTurnOffset_MaxFwdOffset",
+      "Name": "【廃止予定】【タンク旋回オフセット】前方向最大オフセット（前移動最高速度時）",
+      "Description": "旋回軸の中心からのオフセット"
+    },
+    {
+      "Field": "tankTurnOffset_MaxBackOffset",
+      "Name": "【廃止予定】【タンク旋回オフセット】後ろ方向最大オフセット（後ろ移動最高速度時）",
+      "Description": "旋回軸の中心からのオフセット"
+    },
+    {
+      "Field": "tankTurnOffset_MaxFwdOffsetSpeedKMH",
+      "Name": "【廃止予定】【タンク旋回オフセット】前方向最大オフセットになる前方向速度[km/h]",
+      "Description": "前方向最大オフセットがかかるようになる最高速度"
+    },
+    {
+      "Field": "tankTurnOffset_MaxBackOffsetSpeedKMH",
+      "Name": "【廃止予定】【タンク旋回オフセット】後ろ方向最大オフセットになる後ろ方向速度[km/h]",
+      "Description": "後ろ方向最大オフセットがかかるようになる最高速度"
+    },
+    {
+      "Field": "chrBehaviorCond_MoveLookAtErrAngDeg",
+      "Name": "「上半身が目標方向に向いているか」の許容角度差[deg]",
+      "Description": "ChrBehaviorの条件「移動関連その他」「上半身が目標方向に向いているか」がtrueになる最大角度差"
+    },
+    {
+      "Field": "assaultBoostGroundAlt",
+      "Name": "アサルトブースト中の地面からの高さ",
+      "Description": "アサブ中の地面からの高さ"
+    },
+    {
+      "Field": "reserve_53",
+      "Name": "予約領域",
+      "Description": ""
+    },
+    {
+      "Field": "unk30c",
+      "Name": "unk30c",
+      "Description": ""
+    },
+    {
+      "Field": "reserve_53_2",
+      "Name": "予約領域",
+      "Description": ""
+    },
+    {
+      "Field": "scanAngle",
+      "Name": "【スキャン】スキャン角度[度]",
+      "Description": "スキャンが有効な角度"
+    },
+    {
+      "Field": "scanSpEffectId",
+      "Name": "【スキャン】壁越しロック特殊効果ID",
+      "Description": "スキャン範囲内にいた敵に適応する特殊効果ID"
+    },
+    {
+      "Field": "scanDist",
+      "Name": "【スキャン】スキャン距離[m]",
+      "Description": "スキャンが有効な角度有効な距離"
+    },
+    {
+      "Field": "scanEffectWaitTime",
+      "Name": "【スキャン】スキャン効果待機時間[s]",
+      "Description": "スキャンが有効になるまでの待機時間(走査線の演出終了待ち)"
+    },
+    {
+      "Field": "reconRange",
+      "Name": "【リコン】認識範囲[m]",
+      "Description": "【リコン】認識範囲[m]"
+    },
+    {
+      "Field": "reserve_51",
+      "Name": "予約領域51",
+      "Description": ""
+    },
+    {
+      "Field": "SpConsumeFixedValueAtPA",
+      "Name": "スタミナ減少固定減衰値_PA",
+      "Description": "PAバリアに被弾時のスタミナ減少値の固定減少量"
+    },
+    {
+      "Field": "SpConsumeRateAtPA",
+      "Name": "スタミナ減少減衰係数_PA",
+      "Description": "PAバリアに被弾時にスタミナ減少値にかかる係数"
+    },
+    {
+      "Field": "slopeDashSpine_MaxSpeedKMH",
+      "Name": "【斜面の腰傾き】[ダッシュ]腰が振られるときの最大速度[km/h]",
+      "Description": ""
+    },
+    {
+      "Field": "slopeDashSpine_StopRate",
+      "Name": "【斜面の腰傾き】[ダッシュ]停止時の腰の傾き率",
+      "Description": ""
+    },
+    {
+      "Field": "slopeDashSpine_MaxSpeedRate",
+      "Name": "【斜面の腰傾き】[ダッシュ]腰が振られるときの最大速度時の傾き率",
+      "Description": ""
+    },
+    {
+      "Field": "slopeDashSpine_MinSpeedBlendRate",
+      "Name": "【斜面の腰傾き】[ダッシュ]停止時の腰のブレンド率",
+      "Description": "毎フレームこのブレンド率で腰が傾いていきます"
+    },
+    {
+      "Field": "slopeDashSpine_MaxSpeedBlendRate",
+      "Name": "【斜面の腰傾き】[ダッシュ]腰が振られるときの最大速度時の腰のブレンド率",
+      "Description": "毎フレームこのブレンド率で腰が傾いていきます"
+    },
+    {
+      "Field": "lookingCameraJudgeThresholdAngleDeg",
+      "Name": "【カメラ】自機がカメラ側を向いていると判定する角度",
+      "Description": "自機がカメラ側を向いている判断するカメラ正面ベクトルと自機正面ベクトルのXZ平面での成す角"
+    },
+    {
+      "Field": "shootTargetOffsetDistanceAtUnlock",
+      "Name": "【射撃地点】キャラからの距離[m] ",
+      "Description": "フリーカメラ時(非ロック時等操作可能な際）に攻撃地点となる箇所までのプレイヤーからの距離"
+    },
+    {
+      "Field": "chrFrontScoreDirectionWeightWhenUnlock",
+      "Name": "【通常ロック】仮ロック時スコア計算に方向部分の重み",
+      "Description": "大きくなると画面中央に一番近い敵が選択される、小さくなると自機一番近い敵が選択される"
+    },
+    {
+      "Field": "completelyInvisibleCheckVerticalAngle",
+      "Name": "【通常ロック】壁はみ出しチェックの角度範囲（垂直）[deg]",
+      "Description": "画面外でも角度以内であればはみ出しチェックを行う。縦画角以上の値に設定すべき。"
+    },
+    {
+      "Field": "reserve_258",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "stealth_ChangeTime",
+      "Name": "【ステルス】切り替え時間[秒]",
+      "Description": "ステルスモードの切り替え演出時間（秒)"
+    },
+    {
+      "Field": "stealth_power",
+      "Name": "【ステルス】性能値",
+      "Description": "レーダー性能と比較して，レーダーによって検知されるかを決める性能値"
+    },
+    {
+      "Field": "deadEffectMaxTime",
+      "Name": "【死亡演出】死亡演出最長時間[s]",
+      "Description": "【死亡演出】死亡演出最長時間[s]"
+    },
+    {
+      "Field": "fallDeadDamageRate",
+      "Name": "【落下死亡床】落下ダメージ割合",
+      "Description": "レーダー性能と比較して，レーダーによって検知されるかを決める性能値"
+    },
+    {
+      "Field": "ShootPredictionRateRecoverRateWhenFreeCamera",
+      "Name": "【予測率】カメラ非固定中予測率回復倍率",
+      "Description": "カメラ非固定中のみ、FCSの予測精度による回復に、この倍率がかかり、回復を早める事ができる"
+    },
+    {
+      "Field": "ShootPredictionRateAddBaseRateByDistWhenFreeCamera",
+      "Name": "【予測率】カメラ非固定中 距離補正底上げ値(加算)",
+      "Description": "カメラ非固定中のみ、FCSの距離補正の値に、この値が ” 加算 ” され、予測の最低値が上昇する"
+    },
+    {
+      "Field": "scanOutlineDisableDistOffset",
+      "Name": "【スキャン】アウトライン非表示距離オフセット[m]",
+      "Description": "カメラと自機の距離＋○mより手前はアウトライン非表示"
+    },
+    {
+      "Field": "scanOutlineFadeDist",
+      "Name": "【スキャン】アウトラインフェード距離[m]",
+      "Description": "カメラと自機の距離＋アウトライン非表示距離オフセットからフェード完了するまでの距離"
+    },
+    {
+      "Field": "scanOutlineDisableDistOffset_forDown",
+      "Name": "【スキャン】下方向アウトライン非表示距離オフセット[m]",
+      "Description": "下を見ている時：カメラと自機の距離＋○mより手前はアウトライン非表示"
+    },
+    {
+      "Field": "scanOutlineFadeDist_forDown",
+      "Name": "【スキャン】下方向アウトラインフェード距離[m]",
+      "Description": "下を見ている時：カメラと自機の距離＋アウトライン非表示距離オフセットからフェード完了するまでの距離"
+    },
+    {
+      "Field": "wireMove_BaseOffsetY",
+      "Name": "【ワイヤー】基準高さオフセット",
+      "Description": "【ワイヤー】基準高さオフセット"
+    },
+    {
+      "Field": "wireMove_MaxDist",
+      "Name": "【ワイヤー】最高距離",
+      "Description": "【ワイヤー】最高距離"
+    },
+    {
+      "Field": "wireMove_MaxAccelDist",
+      "Name": "【ワイヤー】この距離以上でワイヤー引き寄せ力が最大に",
+      "Description": "【ワイヤー】この距離以上でワイヤー引き寄せ力が最大に"
+    },
+    {
+      "Field": "wireMove_MinAccelDist",
+      "Name": "【ワイヤー】この距離以下でワイヤー引き寄せしないように",
+      "Description": "【ワイヤー】この距離以下でワイヤー引き寄せしないように"
+    },
+    {
+      "Field": "wireMove_AccelSubBrakeRatePerSec",
+      "Name": "【ワイヤー】加速中ブレーキ率減少値[/sec]",
+      "Description": "【ワイヤー】加速中ブレーキ率減少値[/sec]"
+    },
+    {
+      "Field": "wireMove_NoAccelAddBrakeRatePerSec",
+      "Name": "【ワイヤー】伸びようとするときのブレーキ率増加値[/sec]",
+      "Description": "【ワイヤー】伸びようとするときのブレーキ率増加値[/sec]"
+    },
+    {
+      "Field": "wireMove_AccelGravityRate",
+      "Name": "【ワイヤー】引寄せ中重力率",
+      "Description": "【ワイヤー】引寄せ中重力率"
+    },
+    {
+      "Field": "wireMove_VerticalOffsetMinAngDeg",
+      "Name": "【ワイヤー】オフセットがかかリ始めるカメラの最小垂直角度[度]",
+      "Description": "【ワイヤー】オフセットがかかリ始めるカメラの最小垂直角度[度]"
+    },
+    {
+      "Field": "wireMove_VerticalOffsetMaxAngDeg",
+      "Name": "【ワイヤー】オフセットが最もかかるカメラの最大垂直角度[度]",
+      "Description": "【ワイヤー】オフセットが最もかかるカメラの最大垂直角度[度]"
+    },
+    {
+      "Field": "wireMove_VerticalOffsetMinWireDist",
+      "Name": "【ワイヤー】オフセットがかからなくなる最低ワイヤー長さ",
+      "Description": "【ワイヤー】オフセットがかからなくなる最低ワイヤー長さ"
+    },
+    {
+      "Field": "wireMove_VerticalOffsetMaxWireDist",
+      "Name": "【ワイヤー】オフセットが最もかかるようになる最高ワイヤー長さ",
+      "Description": "【ワイヤー】オフセットが最もかかるようになる最高ワイヤー長さ"
+    },
+    {
+      "Field": "wireMove_VerticalOffsetDist",
+      "Name": "【ワイヤー】最大オフセット距離",
+      "Description": "【ワイヤー】最大オフセット距離"
+    },
+    {
+      "Field": "camRotSpeedPerOnThrowing",
+      "Name": "【カメラ】投げ演出中のカメラ回転速度倍率[%]",
+      "Description": "【カメラ】投げ演出中のカメラ回転速度倍率[%]"
+    },
+    {
+      "Field": "camReturnLimitDegOnThrowing",
+      "Name": "【カメラ】手動操作から投げ演出に戻すカメラの回転量限界値[deg]",
+      "Description": "【カメラ】手動操作から投げ演出に戻すカメラの回転量限界値[deg]"
+    },
+    {
+      "Field": "hacking_atkpower",
+      "Name": "【ハッキング】ハッキング攻撃力[point/sec] ",
+      "Description": "【ハッキング】ハッキング攻撃力[point/sec] "
+    },
+    {
+      "Field": "hacking_range",
+      "Name": "【ハッキング】ハッキング距離[m] ",
+      "Description": "【ハッキング】ハッキング距離[m] "
+    },
+    {
+      "Field": "normalLock_MaxDist",
+      "Name": "【通常ロック】通常ロック距離[m]",
+      "Description": ""
+    },
+    {
+      "Field": "missileLock_MaxDist",
+      "Name": "【ミサイルロック】ミサイルロック距離[m]",
+      "Description": ""
+    },
+    {
+      "Field": "missileLock_MaxLockNum",
+      "Name": "【ミサイルロック】ミサイルマルチロック数",
+      "Description": ""
+    },
+    {
+      "Field": "multiLockTaretNumMax",
+      "Name": "マルチロックターゲット上限",
+      "Description": "マルチロック時にロックカウントを分散させる上限ターゲット数"
+    },
+    {
+      "Field": "normalLock_1stLockDist",
+      "Name": "1次ロック開始距離[m]",
+      "Description": ""
+    },
+    {
+      "Field": "geomLockEnableRange",
+      "Name": "【ロック】アセットロック可能範囲[m]",
+      "Description": "アセットに対するロック可能範囲"
+    },
+    {
+      "Field": "lockRangeAngleAfterKill",
+      "Name": "【通常ロック】敵撃破後ロック対象の選択角度[deg]（0-180）",
+      "Description": "画面外てもこの角度以内であれば自動ロックオンできる。カメラ中心の片方の角度で、90であれば前方、180であれば一週"
+    },
+    {
+      "Field": "LockSiteHeightScale",
+      "Name": "ロックサイト縦幅倍率",
+      "Description": "ロックサイト縦幅倍率"
+    },
+    {
+      "Field": "LockSiteWidthScale",
+      "Name": "ロックサイト横幅倍率",
+      "Description": "ロックサイト横幅倍率"
+    },
+    {
+      "Field": "EnableSearchDistance",
+      "Name": "探知距離[m]",
+      "Description": "敵を探知可能な距離[m]"
+    },
+    {
+      "Field": "EnableSearchDistanceAfterHack",
+      "Name": "ハッキング後探知距離[m]",
+      "Description": "レーダーをハッキング後の敵を探知可能な距離[m]"
+    },
+    {
+      "Field": "LockOnRangeOutRemineTime",
+      "Name": "ロック範囲外れたあとの追従時間[sec]",
+      "Description": "視点ロック中にロックオン範囲から外れた後も視点ロック対象として追従うする時間"
+    },
+    {
+      "Field": "waitTimeAfterQuickCameraTurn",
+      "Name": "【カメラ】クイックカメラターン後待機時間[sec]",
+      "Description": "ビヘイビア用"
+    },
+    {
+      "Field": "boostMoveModelUpDown_IntpRate",
+      "Name": "【ブースト移動上下補間】補間率",
+      "Description": "ブースト移動で上下の移動をどれくらい補間するか（0：補間なし、1：追従しない）"
+    },
+    {
+      "Field": "boostMoveModelUpDown_LimitDistU",
+      "Name": "【ブースト移動上下補間】最大補間距離・上",
+      "Description": "ブースト移動で上下の移動のカプセルとモデルの限界距離"
+    },
+    {
+      "Field": "boostMoveModelUpDown_LimitDistD",
+      "Name": "【ブースト移動上下補間】最大補間距離・下",
+      "Description": "ブースト移動で上下の移動のカプセルとモデルの限界距離"
+    },
+    {
+      "Field": "boostMoveModelUpDown_SlopeRate",
+      "Name": "【ブースト移動上下補間】坂道補正率",
+      "Description": "ブースト移動で上下の移動の坂道補正率"
+    },
+    {
+      "Field": "reserve_253",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "cover_RayCastLength",
+      "Name": "【カバー】チェック用レイキャスト長さ",
+      "Description": "【カバー】チェック用レイキャストをこの長さ＋キャラ半径分出す"
+    },
+    {
+      "Field": "cover_RayCastSideOffsetRate",
+      "Name": "【カバー】チェックレイ横方向オフセット率",
+      "Description": "【カバー】チェックレイ横方向のキャラサイズに対するオフセット率"
+    },
+    {
+      "Field": "rockonSmokeRatePlayer",
+      "Name": "煙幕時視界倍率_プレイヤー",
+      "Description": "煙幕時視界倍率_プレイヤー"
+    },
+    {
+      "Field": "rockonSmokeRateEnemy",
+      "Name": "煙幕時視界倍率_エネミー",
+      "Description": "煙幕時視界倍率_エネミー"
+    },
+    {
+      "Field": "unk430",
+      "Name": "unk430",
+      "Description": ""
+    },
+    {
+      "Field": "tankTexScroll_FowardScale",
+      "Name": "【タンク】無限軌道の前後のテクスチャスクロールスケール",
+      "Description": "タンクのテクスチャスクロールの速度(Km/h)に対するスケール値"
+    },
+    {
+      "Field": "tankTexScroll_RotationScale",
+      "Name": "【タンク】無限軌道の旋回のテクスチャスクロールスケール",
+      "Description": "タンクのテクスチャスクロールの旋回速度に対するスケール値"
+    },
+    {
+      "Field": "funnelPointInterval",
+      "Name": "【ファンネル】位置更新間隔[sec]",
+      "Description": "【ファンネル】位置更新間隔[sec]"
+    },
+    {
+      "Field": "funnelPointRange_Max",
+      "Name": "【ファンネル】追従上限距離[m]",
+      "Description": "【ファンネル】追従上限距離[m]"
+    },
+    {
+      "Field": "funnelPointRange_Min",
+      "Name": "【ファンネル】追従下限距離[m]",
+      "Description": "【ファンネル】追従下限距離[m]"
+    },
+    {
+      "Field": "funnelPointAngle_Max",
+      "Name": "【ファンネル】追従上限角度[度]",
+      "Description": "【ファンネル】追従上限角度[度]"
+    },
+    {
+      "Field": "funnelPointAngle_Min",
+      "Name": "【ファンネル】追従下限角度[度]",
+      "Description": "【ファンネル】追従下限角度[度]"
+    },
+    {
+      "Field": "funnelReturnTime",
+      "Name": "【ファンネル】戻り開始時間[sec]",
+      "Description": "【ファンネル】戻り開始時間[sec]"
+    },
+    {
+      "Field": "funnelReturnRange",
+      "Name": "【ファンネル】戻り距離[m]",
+      "Description": "【ファンネル】戻り距離[m]"
+    },
+    {
+      "Field": "funnelFinishRange",
+      "Name": "【ファンネル】終了距離[m]",
+      "Description": "【ファンネル】終了距離[m]"
+    },
+    {
+      "Field": "wallJumpInputTime",
+      "Name": "【三角とび】判定時間[sec]",
+      "Description": "【三角とび】判定時間[sec]"
+    },
+    {
+      "Field": "wallJumpKeepTime",
+      "Name": "【三角とび】継続時間[sec]",
+      "Description": "【三角とび】継続時間[sec]"
+    },
+    {
+      "Field": "funnelReturnLifeTime",
+      "Name": "【ファンネル】戻り時間[sec]",
+      "Description": "【ファンネル】戻り時間[sec]"
+    },
+    {
+      "Field": "funnelShootLength",
+      "Name": "【ファンネル】射撃可能距離[m]",
+      "Description": "【ファンネル】射撃可能距離[m]"
+    },
+    {
+      "Field": "funnelPointBrake",
+      "Name": "【ファンネル】目標位置到達時ブレーキ[m/s^2] ",
+      "Description": "【ファンネル】目標位置到達時ブレーキ[m/s^2] "
+    },
+    {
+      "Field": "funnelReturnPointRange_Max",
+      "Name": "【ファンネル】戻り上限距離[m]",
+      "Description": "【ファンネル】戻り上限距離[m]"
+    },
+    {
+      "Field": "funnelReturnPointRange_Min",
+      "Name": "【ファンネル】戻り下限距離[m]",
+      "Description": "【ファンネル】戻り下限距離[m]"
+    },
+    {
+      "Field": "funnelArrivalLength",
+      "Name": "【ファンネル】到達判定距離[m]",
+      "Description": "【ファンネル】到達判定距離[m]"
+    },
+    {
+      "Field": "funnelMoveKeepTime",
+      "Name": "【ファンネル】移動継続時間[sec]",
+      "Description": "【ファンネル】移動継続時間[sec]"
+    },
+    {
+      "Field": "funnelShootStartTime",
+      "Name": "【ファンネル】射撃開始時間[sec]",
+      "Description": "【ファンネル】射撃開始時間[sec]"
+    },
+    {
+      "Field": "reserve_260",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "DeadLockOnDisableWaiteFrame",
+      "Name": "死亡時ロックオン自動解除待機秒数[1/30s]",
+      "Description": "死亡したときにロックを無効化するのを待機するフレーム数"
+    },
+    {
+      "Field": "wallThroughLockRange",
+      "Name": "壁越しロックオン上限距離",
+      "Description": "壁越しにロックオンできる距離"
+    },
+    {
+      "Field": "fpsBarrierDurable",
+      "Name": "【FPSバリア】耐久値 ",
+      "Description": "【FPSバリア】耐久値 "
+    },
+    {
+      "Field": "fpsBarrierTimeSecTillRegene",
+      "Name": "【FPSバリア】回復開始までの時間[sec] ",
+      "Description": "【FPSバリア】回復開始までの時間[sec] "
+    },
+    {
+      "Field": "fpsBarrierTimeSecTillRegeneDanger",
+      "Name": "【FPSバリア】回復開始までの時間(危険域)[sec] ",
+      "Description": "【FPSバリア】回復開始までの時間(危険域)[sec] "
+    },
+    {
+      "Field": "fpsBarrierRegeneAmount",
+      "Name": "【FPSバリア】バリア回復量[point] ",
+      "Description": "【FPSバリア】バリア回復量[point] "
+    },
+    {
+      "Field": "fpsBarrierRegeneAmountDanger",
+      "Name": "【FPSバリア】バリア回復量(危険域)[point] ",
+      "Description": "【FPSバリア】バリア回復量(危険域)[point] "
+    },
+    {
+      "Field": "fpsBarrierRegeneIntervalSec",
+      "Name": "【FPSバリア】バリア回復間隔[sec] ",
+      "Description": "【FPSバリア】バリア回復間隔[sec] "
+    },
+    {
+      "Field": "fpsBarrierRegeneIntervalSecDanger",
+      "Name": "【FPSバリア】バリア回復間隔(危険域)[sec] ",
+      "Description": "【FPSバリア】バリア回復間隔(危険域)[sec] "
+    },
+    {
+      "Field": "fpsBarrierDangerThresholdPercent",
+      "Name": "【FPSバリア】危険域閾値[％]",
+      "Description": "【FPSバリア】危険域閾値[％]"
+    },
+    {
+      "Field": "reserve_261",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "reserve_263",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "hyperQBRollAngle",
+      "Name": "大QB最大左右傾き角度[deg]",
+      "Description": "大QB中左右最大傾き角度[deg]"
+    },
+    {
+      "Field": "hyperQBRollRate",
+      "Name": "大QB左右傾き倍率",
+      "Description": "大QB中左右傾き速度倍率"
+    },
+    {
+      "Field": "hyperQBPitchAngle",
+      "Name": "大QB上昇最大傾き角度[deg]",
+      "Description": "大QB上昇時最大傾き角度[deg]"
+    },
+    {
+      "Field": "hyperQBPitchRate",
+      "Name": "大QB上昇傾き速度倍率",
+      "Description": "大QB上昇時傾き速度倍率"
+    },
+    {
+      "Field": "freeCamParamID",
+      "Name": "【カメラ】フリーカメラのパラムID",
+      "Description": "フリー（肩越しではない）視点カメラ用ロックカメラのパラムID"
+    },
+    {
+      "Field": "overShoulderCamParamID",
+      "Name": "【カメラ】肩越しカメラのパラムID",
+      "Description": "肩越し視点カメラ用ロックカメラのパラムID"
+    },
+    {
+      "Field": "consumeEN_propellerMove",
+      "Name": "プロペラ移動継続EN消費[point/sec]",
+      "Description": "プロペラ移動継続EN消費[point/sec]"
+    },
+    {
+      "Field": "consumeFixedEN_HyperJump",
+      "Name": "大ジャンプ固定EN消費[point]",
+      "Description": "大ジャンプ固定EN消費[point]"
+    },
+    {
+      "Field": "reserve_34",
+      "Name": "予約領域",
+      "Description": ""
+    },
+    {
+      "Field": "EN_MinValue",
+      "Name": "EN下限値",
+      "Description": "EN下限値"
+    },
+    {
+      "Field": "consumeFixedEN_WallJump",
+      "Name": "三角飛び固定EN消費[point]",
+      "Description": "三角飛び固定EN消費[point]"
+    },
+    {
+      "Field": "playerChrHitHeight",
+      "Name": "自機当たり高さ(対キャラ)",
+      "Description": "自機当たり高さ(対キャラ)"
+    },
+    {
+      "Field": "playerChrHitRadius",
+      "Name": "自機当たり半径(対キャラ)",
+      "Description": "自機当たり半径(対キャラ)"
+    },
+    {
+      "Field": "playerMapHitHeight",
+      "Name": "自機当たり高さ(対マップ)",
+      "Description": "自機当たり高さ(対マップ)"
+    },
+    {
+      "Field": "playerMapHitRadius",
+      "Name": "自機当たり半径(対マップ)",
+      "Description": "自機当たり半径(対マップ)"
+    },
+    {
+      "Field": "playerWeight",
+      "Name": "自機重さ",
+      "Description": "自機重さ"
+    },
+    {
+      "Field": "reserve_262",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "consumeFixedEN_Jump",
+      "Name": "ジャンプ固定EN消費[point]",
+      "Description": "ジャンプ固定EN消費[point]"
+    },
+    {
+      "Field": "completelyInvisibleCheckMaxDistance",
+      "Name": "【通常ロック】壁はみ出しチェックの距離範囲[m]",
+      "Description": "距離以内の敵だけに壁はみ出しのチェックを行う。この値が大きすぎるとチェックの間隔時間が増える"
+    },
+    {
+      "Field": "completelyInvisibleCheckHorizontalAngle",
+      "Name": "【通常ロック】壁はみ出しチェックの角度範囲（水平）[deg]",
+      "Description": "画面外でも角度以内であればはみ出しチェックを行う。横画角以上の値に設定すべき。"
+    },
+    {
+      "Field": "camMapHitHeight",
+      "Name": "【カメラ】対マップ当たり球：足元からの高さ",
+      "Description": "【カメラ】対マップ当たり球：足元からの高さ"
+    },
+    {
+      "Field": "camMapHitRadius",
+      "Name": "【カメラ】対マップ当たり球：半径",
+      "Description": "【カメラ】対マップ当たり球：半径"
+    },
+    {
+      "Field": "camOwnerHitHeight",
+      "Name": "【カメラ】対自機当たり球：足元からの高さ",
+      "Description": "【カメラ】対自機当たり球：足元からの高さ"
+    },
+    {
+      "Field": "camOwnerHitRadius",
+      "Name": "【カメラ】対自機当たり球：半径",
+      "Description": "【カメラ】対自機当たり球：半径"
+    },
+    {
+      "Field": "camOwnerHitIntpRate",
+      "Name": "【カメラ】対自機当たり：補間率",
+      "Description": "【カメラ】対自機当たり：補間率"
+    },
+    {
+      "Field": "pointMoveSpeed",
+      "Name": "2点間移動速度",
+      "Description": "2点間移動速度"
+    },
+    {
+      "Field": "cover_RayCastMoveOffset",
+      "Name": "【カバー】進行方向チェック用オフセット距離 ",
+      "Description": "【カバー】移動方向に対して設定した距離分ずらして位置から壁当たり判定を行う。 "
+    },
+    {
+      "Field": "talkId1",
+      "Name": "【会話】ローカルプレイヤーの会話IDその１",
+      "Description": "【会話】ローカルプレイヤーの会話ID その１"
+    },
+    {
+      "Field": "lerpTimeMaxAfterMeleeAttackCam",
+      "Name": "【カメラ】格闘攻撃カメラ後の補間の最大時間[sec]",
+      "Description": "格闘攻撃カメラ終了後徐々に補間する最大時間[sec]"
+    },
+    {
+      "Field": "lerpRateTargetAfterLerpTimeAfterMeleeAttackCam",
+      "Name": "【カメラ】格闘攻撃カメラ後の補間時間が終わってからの補間率の目標値",
+      "Description": "格闘攻撃カメラ終了後徐々に補間する時間が終わってからの補間率"
+    },
+    {
+      "Field": "lerpRateLerpRateAfterLerpTimeAfterMeleeAttackCam",
+      "Name": "【カメラ】格闘攻撃カメラ後の補間時間が終わってからの補間率の補間率",
+      "Description": "格闘攻撃カメラ終了後徐々に補間する時間が終わってからの補間率の補間率"
+    },
+    {
+      "Field": "finishLerpDistanceAfterMeleeAttackCam",
+      "Name": "【カメラ】格闘攻撃カメラ後の補間が完了になる距離閾値[m]",
+      "Description": "格闘攻撃カメラ終了後補間が終わったかどうかの判定距離[m]"
+    },
+    {
+      "Field": "finishLerpAngleAfterMeleeAttackCam",
+      "Name": "【カメラ】格闘攻撃カメラ後の補間が完了になる角度閾値[deg]",
+      "Description": "格闘攻撃カメラ終了後補間が終わったかどうかの判定角度[deg]"
+    },
+    {
+      "Field": "talkId2",
+      "Name": "【会話】ローカルプレイヤーの会話IDその２",
+      "Description": "【会話】ローカルプレイヤーの会話ID その２"
+    },
+    {
+      "Field": "wallJumpLimitCountResetRayBeginOffset",
+      "Name": "【三角跳び】回数制限リセットチェックレイキャストの開始高さオフセット",
+      "Description": "三角跳びの回数リセットチェック用レイキャストの開始高さオフセット"
+    },
+    {
+      "Field": "wallJumpLimitCountResetRayEndOffset",
+      "Name": "【三角跳び】回数制限リセットチェックレイキャストの終点高さオフセット",
+      "Description": "三角跳びの回数リセットチェック用レイキャストの終了高さオフセット"
+    },
+    {
+      "Field": "wallJumpLimitCountResetSpEffectId",
+      "Name": "【三角跳び】回数制限特殊効果ID",
+      "Description": "三角跳びの回数制限でかかる特殊効果ID"
+    },
+    {
+      "Field": "backDmg_BackDmgAngDeg",
+      "Name": "背後ダメージ角度閾値[deg]",
+      "Description": "背後ダメージになる角度の閾値（後ろからの角度）"
+    },
+    {
+      "Field": "backDmg_FwdDmgAngDeg",
+      "Name": "前方ダメージ角度閾値[deg]",
+      "Description": "前方ダメージになる角度の閾値"
+    },
+    {
+      "Field": "backDmg_BackDmgScale",
+      "Name": "背後ダメージ倍率",
+      "Description": "背後ダメージのときのダメージ倍率"
+    },
+    {
+      "Field": "backDmg_BackSpDmgScale",
+      "Name": "背後スタミナダメージ倍率",
+      "Description": "背後ダメージのときのスタミナダメージ倍率"
+    },
+    {
+      "Field": "backDmg_BackSaDmgScale",
+      "Name": "背後SAダメージ倍率",
+      "Description": "背後ダメージのときのSAダメージ倍率"
+    },
+    {
+      "Field": "backDmg_FwdDmgScale",
+      "Name": "前方ダメージ倍率",
+      "Description": "前方ダメージのときのダメージ倍率"
+    },
+    {
+      "Field": "backDmg_FwdSpDmgScale",
+      "Name": "前方スタミナダメージ倍率 ",
+      "Description": "前方ダメージのときのスタミナダメージ倍率"
+    },
+    {
+      "Field": "backDmg_FwdSaDmgScale",
+      "Name": "前方SAダメージ倍率",
+      "Description": "前方ダメージのときのSAダメージ倍率"
+    },
+    {
+      "Field": "backDmg_SideDmgScale",
+      "Name": "側面ダメージ倍率 ",
+      "Description": "側面ダメージのときのダメージ倍率"
+    },
+    {
+      "Field": "backDmg_SideSpDmgScale",
+      "Name": "側面スタミナダメージ倍率",
+      "Description": "側面ダメージのときのスタミナダメージ倍率"
+    },
+    {
+      "Field": "backDmg_SideSaDmgScale",
+      "Name": "側面SAダメージ倍率",
+      "Description": "側面ダメージのときのSAダメージ倍率"
+    },
+    {
+      "Field": "reserve_36",
+      "Name": "予約領域",
+      "Description": ""
+    },
+    {
+      "Field": "bullet_OverRangeDecayRate_P",
+      "Name": "射程超過時の威力減衰率_自機(%)",
+      "Description": "自機の弾丸が射程外になったときの威力割合"
+    },
+    {
+      "Field": "bullet_OverRangeDecayRate_E",
+      "Name": "射程超過時の威力減衰率_敵キャラ(%)",
+      "Description": "敵の弾丸が射程外になったときの威力割合"
+    },
+    {
+      "Field": "slope_UpMoveCancelAngleDeg",
+      "Name": "【斜面】斜面方向への移動が発生しなくなる斜面角度[deg]",
+      "Description": "自機がこの斜面角度以上を登ろうとしたときに加速度と最高速度をカットする"
+    },
+    {
+      "Field": "reserve_270",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "bodyTrunk_BodyGaugePoint",
+      "Name": "本体体幹ゲージ",
+      "Description": "本体体幹ゲージ"
+    },
+    {
+      "Field": "bodyTrunk_ActionGaugePoint",
+      "Name": "アクション体幹ゲージ",
+      "Description": "アクション体幹ゲージ"
+    },
+    {
+      "Field": "talkId3",
+      "Name": "【会話】ローカルプレイヤーの会話IDその３",
+      "Description": "【会話】ローカルプレイヤーの会話ID その３"
+    },
+    {
+      "Field": "talkId4",
+      "Name": "【会話】ローカルプレイヤーの会話IDその４",
+      "Description": "【会話】ローカルプレイヤーの会話ID その４"
+    },
+    {
+      "Field": "talkId5",
+      "Name": "【会話】ローカルプレイヤーの会話IDその５",
+      "Description": "【会話】ローカルプレイヤーの会話ID その５"
+    },
+    {
+      "Field": "talkId6",
+      "Name": "【会話】ローカルプレイヤーの会話IDその６",
+      "Description": "【会話】ローカルプレイヤーの会話ID その６"
+    },
+    {
+      "Field": "talkId7",
+      "Name": "【会話】ローカルプレイヤーの会話IDその７",
+      "Description": "【会話】ローカルプレイヤーの会話ID その７"
+    },
+    {
+      "Field": "talkId8",
+      "Name": "【会話】ローカルプレイヤーの会話IDその８",
+      "Description": "【会話】ローカルプレイヤーの会話ID その８"
+    },
+    {
+      "Field": "talkId9",
+      "Name": "【会話】ローカルプレイヤーの会話IDその９",
+      "Description": "【会話】ローカルプレイヤーの会話ID その９"
+    },
+    {
+      "Field": "talkId10",
+      "Name": "【会話】ローカルプレイヤーの会話IDその１０",
+      "Description": "【会話】ローカルプレイヤーの会話ID その１０"
+    },
+    {
+      "Field": "talkId11",
+      "Name": "【会話】ローカルプレイヤーの会話IDその１１",
+      "Description": "【会話】ローカルプレイヤーの会話ID その１１"
+    },
+    {
+      "Field": "talkId12",
+      "Name": "【会話】ローカルプレイヤーの会話IDその１２",
+      "Description": "【会話】ローカルプレイヤーの会話ID その１２"
+    },
+    {
+      "Field": "reserve_271",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "precedeInput_InputTimeSec",
+      "Name": "先行入力時間[s]",
+      "Description": "先行入力を保持する時間"
+    },
+    {
+      "Field": "addImpactDisableTimeSec",
+      "Name": "衝撃無敵時間[秒]",
+      "Description": "「ステートを抜けたとき、衝撃無敵発動」のステートを抜けたときの衝撃値無効時間"
+    },
+    {
+      "Field": "lockTargetCandidateAngleRangeWhenSwitchWithStick",
+      "Name": "【通常ロック】スティック入力によるロックターゲット切り替え時候補の許容角度[deg]",
+      "Description": "今のロックターゲット→次のターゲットの（画面内の）方向がスティック入力方向となす角度がこの値以内の場合だけ候補として考慮"
+    },
+    {
+      "Field": "bodyTrunk_PointHealWaitTimeSec",
+      "Name": "体幹回復待機時間(sec)",
+      "Description": "体幹回復を待機する時間"
+    },
+    {
+      "Field": "bodyTrunk_PointHealPerSec",
+      "Name": "体幹回復値(point/sec)",
+      "Description": "体幹回復を回復する１秒あたりのポイント"
+    },
+    {
+      "Field": "AirRagister_BrakeRate",
+      "Name": "【調整基準】汎用ブレーキ係数",
+      "Description": "空気抵抗のブレーキ係数"
+    },
+    {
+      "Field": "residualImpactSubSpeed_EnMaxSwitchWaitTimeSec",
+      "Name": "EN最大時の残留衝撃値揮発速度_切り替わり待機時間[s]",
+      "Description": "ENが最大になってから『補正計算グラフパラメータ』の《残留衝撃値_EN減少時揮発速度[point/s]》から《残留衝撃値_EN最大時揮発速度[point/s]》に切り替わるまでの時間"
+    },
+    {
+      "Field": "QB_MassBase",
+      "Name": "【調整基準】機体重量",
+      "Description": "機体重量の調整値"
+    },
+    {
+      "Field": "meleeAttackCamDistanceRange",
+      "Name": "【カメラ】格闘攻撃カメラの有効距離[m]",
+      "Description": "ロックターゲットとの距離がこの値以下の場合だけ格闘攻撃カメラ発動（TAEフラグで上書き可能）"
+    },
+    {
+      "Field": "meleeAttackCamAngleRangeHorizontal",
+      "Name": "【カメラ】格闘攻撃カメラの有効角度（水平）[deg]",
+      "Description": "ロックターゲットとの水平方向角度がこの値以下の場合だけ格闘攻撃カメラ発動（TAEフラグで上書き可能）"
+    },
+    {
+      "Field": "meleeAttackCamAngleRangeVertical",
+      "Name": "【カメラ】格闘攻撃カメラの有効角度（垂直）[deg]",
+      "Description": "ロックターゲットとの垂直方向角度がこの値以下の場合だけ格闘攻撃カメラ発動（TAEフラグで上書き可能）"
+    },
+    {
+      "Field": "coreChargeEnemyDamageDist",
+      "Name": "【コア特殊機能】近距離でダメージを与えたと判定する距離[m]",
+      "Description": "コア特殊機能のチャージで敵にダメージを与えたときに有効な距離"
+    },
+    {
+      "Field": "coreChargeEnemyDamageSpEffectId",
+      "Name": "【コア特殊機能】近距離でダメージを与えたときにかかる特殊効果ID",
+      "Description": "コア特殊機能のチャージで敵にダメージを与えたときにかける特殊効果"
+    },
+    {
+      "Field": "coreChargeEnemyDeadDist",
+      "Name": "【コア特殊機能】近距離で撃破したと判定する距離[m]",
+      "Description": "コア特殊機能のチャージで敵を倒したときに有効な距離"
+    },
+    {
+      "Field": "coreChargeEnemyDeadSpEffectId",
+      "Name": "【コア特殊機能】近距離で撃破したときにかかる特殊効果ID",
+      "Description": "コア特殊機能のチャージで敵に倒したときにかける特殊効果"
+    },
+    {
+      "Field": "resistRecoverPoint_Curse1_Player",
+      "Name": "プレイヤー耐性値回復量_呪1[point/s]",
+      "Description": "プレイヤー耐性値回復量_呪1[point/s]"
+    },
+    {
+      "Field": "resistRecoverPoint_Curse2_Player",
+      "Name": "プレイヤー耐性値回復量_呪2[point/s]",
+      "Description": "プレイヤー耐性値回復量_呪2[point/s]"
+    },
+    {
+      "Field": "resistRecoverPoint_Burn_Player",
+      "Name": "プレイヤー耐性値回復量_炎上[point/s]",
+      "Description": "プレイヤー耐性値回復量_炎上[point/s]"
+    },
+    {
+      "Field": "resistRecoverPoint_Stun_Player",
+      "Name": "プレイヤー耐性値回復量_スタン[point/s]",
+      "Description": "プレイヤー耐性値回復量_スタン[point/s]"
+    },
+    {
+      "Field": "resistRecoverPoint_HighPlasma_Player",
+      "Name": "プレイヤー耐性値回復量_強プラズマ[point/s]",
+      "Description": "プレイヤー耐性値回復量_強プラズマ[point/s]"
+    },
+    {
+      "Field": "resistRecoverPoint_DepletedUraniumToxic_Player",
+      "Name": "プレイヤー耐性値回復量_劣化ウラン毒[point/s]",
+      "Description": "プレイヤー耐性値回復量_劣化ウラン毒[point/s]"
+    },
+    {
+      "Field": "resistRecoverPoint_Curse1_Enemy",
+      "Name": "エネミー耐性値回復量_呪1[point/s]",
+      "Description": "エネミー耐性値回復量_呪1[point/s]"
+    },
+    {
+      "Field": "resistRecoverPoint_Curse2_Enemy",
+      "Name": "エネミー耐性値回復量_呪2[point/s]",
+      "Description": "エネミー耐性値回復量_呪2[point/s]"
+    },
+    {
+      "Field": "resistRecoverPoint_Burn_Enemy",
+      "Name": "エネミー耐性値回復量_炎上[point/s]",
+      "Description": "エネミー耐性値回復量_炎上[point/s]"
+    },
+    {
+      "Field": "resistRecoverPoint_Stun_Enemy",
+      "Name": "エネミー耐性値回復量_スタン[point/s]",
+      "Description": "エネミー耐性値回復量_スタン[point/s]"
+    },
+    {
+      "Field": "resistRecoverPoint_HighPlasma_Enemy",
+      "Name": "エネミー耐性値回復量_強プラズマ[point/s]",
+      "Description": "エネミー耐性値回復量_強プラズマ[point/s]"
+    },
+    {
+      "Field": "resistRecoverPoint_DepletedUraniumToxic_Enemy",
+      "Name": "エネミー耐性値回復量_劣化ウラン毒[point/s]",
+      "Description": "エネミー耐性値回復量_劣化ウラン毒[point/s]"
+    },
+    {
+      "Field": "reserve_110",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "purge_FadeOutTime",
+      "Name": "【パージ】フェードアウト時間時間[s]",
+      "Description": "パージした後のパーツがフェードアウトを開始してから完全に消えるまでの時間[s]"
+    },
+    {
+      "Field": "purge_FadeOutBeginTime",
+      "Name": "【パージ】フェードアウト開始時間[s]",
+      "Description": "パージした後のフェードアウトを開始するまでの時間[s]"
+    },
+    {
+      "Field": "purge_FadeOutDist",
+      "Name": "【パージ】フェードアウト開始距離[m]",
+      "Description": "パージした後の挙動が安定してからフェードアウトを開始するまでのプレイヤーとの距離[m]"
+    },
+    {
+      "Field": "magazine_FadeOutTime",
+      "Name": "【マガジン】フェードアウト時間時間[s]",
+      "Description": "マガジンを排出した後のマガジンがフェードアウトを開始してから完全に消えるまでの時間[s]"
+    },
+    {
+      "Field": "magazine_FadeOutBeginTime",
+      "Name": "【マガジン】フェードアウト開始時間[s]",
+      "Description": "マガジンを排出した後のフェードアウトを開始するまでの時間[s]"
+    },
+    {
+      "Field": "magazine_FadeOutDist",
+      "Name": "【マガジン】フェードアウト開始距離[m]",
+      "Description": "マガジンを排出した後の挙動が安定してからフェードアウトを開始するまでのプレイヤーとの距離[m]"
+    },
+    {
+      "Field": "quickCameraTurnRequestMinInputThreshold",
+      "Name": "【カメラ】クイックカメラターンのために右スティック入力の最小値（0.0～1.0）",
+      "Description": "クイックカメラターンになるために右スティック入力は一瞬でもこの値以上になる必要がある"
+    },
+    {
+      "Field": "quickCameraTurnShortTimeThreshold",
+      "Name": "【カメラ】クイックカメラターンの（スティック）最大入力時間[sec]",
+      "Description": "右スティックを押し倒し始めてから放して０まで戻る間の時間がこの値以下になる場合のみ、クイックカメラターンが発動する"
+    },
+    {
+      "Field": "quickCameraTurnRotateLerpRate",
+      "Name": "【カメラ】クイックカメラターン回転補間率（0.0～1.0）",
+      "Description": "クイックカメラターン旋回時の補間率"
+    },
+    {
+      "Field": "AutoPullCamIfPlayerOutOfScreenMarginVertical",
+      "Name": "【カメラ】自機が画面外に出る際カメラ自動引きのマージン(0.0～1.0)(垂直)",
+      "Description": "0.0：自機がギリギリ画面の辺界に止まるようにカメラが引く；1.0：自機が画面中央に止まるようにカメラが引く"
+    },
+    {
+      "Field": "quickCameraTurnInputRange",
+      "Name": "【カメラ】クイックカメラターンの入力受付角度[deg]",
+      "Description": "クイックカメラターンとして認識できる右スティックの入力方向範囲。下方向を中心に左右両方へ広がる。"
+    },
+    {
+      "Field": "reserve_111",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "asm_AjustMinHeightObjA",
+      "Name": "【アセンブリ】肩武器の第一高さ調節のスライド量下限[m]",
+      "Description": "肩武器装備時の高さ調整する最初の関節の稼働下限"
+    },
+    {
+      "Field": "asm_AjustMaxHeightObjA",
+      "Name": "【アセンブリ】肩武器の第一高さ調節のスライド量上限[m]",
+      "Description": "肩武器装備時の高さ調整する最初の関節の稼働上限"
+    },
+    {
+      "Field": "repair_effectTime",
+      "Name": "【リペア】演出時間[s]",
+      "Description": "回復演出時間"
+    },
+    {
+      "Field": "repair_fadeTime",
+      "Name": "【リペア】フェードイン・アウト時間[s]",
+      "Description": "回復演出する際のフェード時間"
+    },
+    {
+      "Field": "repair_lineEffectTime",
+      "Name": "【リペア】走査線の下から上に行くまでの時間[s]",
+      "Description": "回復演出する際の走査線の下から上に行くまでの時間"
+    },
+    {
+      "Field": "repair_lineAlpha",
+      "Name": "【リペア】走査線の表示強度",
+      "Description": ""
+    },
+    {
+      "Field": "repair_dispRange",
+      "Name": "【リペア】走査線の表示範囲[m]",
+      "Description": ""
+    },
+    {
+      "Field": "repair_UVScaleU",
+      "Name": "【リペア】走査線のUVスケールU",
+      "Description": ""
+    },
+    {
+      "Field": "repair_UVScaleV",
+      "Name": "【リペア】走査線のUVスケールV",
+      "Description": ""
+    },
+    {
+      "Field": "repair_UVScrollSpeedU",
+      "Name": "【リペア】走査線のUVスクロール速度U",
+      "Description": ""
+    },
+    {
+      "Field": "repair_UVScrollSpeedV",
+      "Name": "【リペア】走査線のUVスクロール速度V",
+      "Description": ""
+    },
+    {
+      "Field": "repair_dispFadeRange",
+      "Name": "【リペア】走査線のフェード幅[m]",
+      "Description": ""
+    },
+    {
+      "Field": "fallOutInvincibleTime",
+      "Name": "落下復帰後無敵時間[s]",
+      "Description": ""
+    },
+    {
+      "Field": "onlieArenaRespawnInvincibleTime",
+      "Name": "マルチリスポーン後無敵時間[s]",
+      "Description": ""
+    },
+    {
+      "Field": "camFade_playerModelTargetAlpha",
+      "Name": "【カメラフェード】ディザ強度",
+      "Description": ""
+    },
+    {
+      "Field": "camFade_playerFadeDist",
+      "Name": "【カメラフェード】カメラ距離",
+      "Description": ""
+    },
+    {
+      "Field": "asm_DamageVisualScale",
+      "Name": "【ダメージ表現】ダメージ割合スケール",
+      "Description": "減ったHP割合に対してのスケール値"
+    },
+    {
+      "Field": "tank_RollMaxPerSec",
+      "Name": "【タンク】１秒間に追従できる左右傾き最大角度",
+      "Description": "１秒間での左右への最大傾き角度"
+    },
+    {
+      "Field": "tank_FrontUpMaxPerSec",
+      "Name": "【タンク】１秒間に前方が上に上がるときの追従できる傾き最大角度",
+      "Description": "１秒間での上への最大傾き角度"
+    },
+    {
+      "Field": "tank_FrontDownMaxPerSec",
+      "Name": "【タンク】１秒間に前方が下に下がるときの追従できる傾き最大角度",
+      "Description": "１秒間での下への最大傾き角度"
+    },
+    {
+      "Field": "tank_NormalAvgFrame",
+      "Name": "【タンク】法線の平均化フレーム",
+      "Description": "傾き計算に使用する法線の平均化するフレーム数"
+    },
+    {
+      "Field": "respawn_LineColorR",
+      "Name": "【リスポン】走査線色[R]",
+      "Description": ""
+    },
+    {
+      "Field": "respawn_LineColorG",
+      "Name": "【リスポン】走査線色[G]",
+      "Description": ""
+    },
+    {
+      "Field": "respawn_LineColorB",
+      "Name": "【リスポン】走査線色[B]",
+      "Description": ""
+    },
+    {
+      "Field": "respawn_fadeTime",
+      "Name": "【リスポン】フェードイン・アウト時間[s]",
+      "Description": "リスポン演出する際のフェード時間"
+    },
+    {
+      "Field": "respawn_lineEffectTime",
+      "Name": "【リスポン】走査線の下から上に行くまでの時間[s]",
+      "Description": "リスポン演出する際の走査線の下から上に行くまでの時間"
+    },
+    {
+      "Field": "respawn_lineAlpha",
+      "Name": "【リスポン】走査線の表示強度",
+      "Description": ""
+    },
+    {
+      "Field": "respawn_dispRange",
+      "Name": "【リスポン】走査線の表示範囲[m]",
+      "Description": ""
+    },
+    {
+      "Field": "respawn_UVScaleU",
+      "Name": "【リスポン】走査線のUVスケールU",
+      "Description": ""
+    },
+    {
+      "Field": "respawn_UVScaleV",
+      "Name": "【リスポン】走査線のUVスケールV",
+      "Description": ""
+    },
+    {
+      "Field": "respawn_UVScrollSpeedU",
+      "Name": "【リスポン】走査線のUVスクロール速度U",
+      "Description": ""
+    },
+    {
+      "Field": "respawn_UVScrollSpeedV",
+      "Name": "【リスポン】走査線のUVスクロール速度V",
+      "Description": ""
+    },
+    {
+      "Field": "respawn_dispFadeRange",
+      "Name": "【リスポン】走査線のフェード幅[m]",
+      "Description": ""
+    },
+    {
+      "Field": "fallOutSpEffectDelayTime",
+      "Name": "落下復帰時特殊効果（テキスト演出）ディレイ[s]",
+      "Description": ""
+    },
+    {
+      "Field": "unk_0x6fc",
+      "Name": "unk_0x6fc",
+      "Description": ""
+    },
+    {
+      "Field": "unk_0x700",
+      "Name": "unk_0x700",
+      "Description": ""
+    },
+    {
+      "Field": "unk_0x704",
+      "Name": "unk_0x704",
+      "Description": ""
+    },
+    {
+      "Field": "unk_0x708",
+      "Name": "unk_0x708",
+      "Description": ""
+    },
+    {
+      "Field": "reserve_999",
+      "Name": "予約",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,2068 @@
+{
+  "Param": "GAME_SYSTEM_COMMON_PARAM_ST",
+  "Type": "GAME_SYSTEM_COMMON_PARAM_ST",
+  "Name": "GAME_SYSTEM_COMMON_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "baseToughnessRecoverTime",
+      "Name": "基本強靭度耐久値回復時間",
+      "Description": "強靭度回復時間の基本値です。（秒）"
+    },
+    {
+      "Field": "chrEventTrun_byLeft90",
+      "Name": "キャラのイベント旋回アニメーション（左90°）",
+      "Description": "「キャラの旋回」イベント用の左90°旋回アニメーションです。"
+    },
+    {
+      "Field": "chrEventTrun_byRight90",
+      "Name": "キャラのイベント旋回アニメーション（右90°）",
+      "Description": "「キャラの旋回」イベント用の右90°旋回アニメーションです。"
+    },
+    {
+      "Field": "chrEventTrun_byLeft180",
+      "Name": "キャラのイベント旋回アニメーション（左180°）",
+      "Description": "「キャラの旋回」イベント用の左180°旋回アニメーションです。"
+    },
+    {
+      "Field": "chrEventTrun_byRight180",
+      "Name": "キャラのイベント旋回アニメーション（右180°）",
+      "Description": "「キャラの旋回」イベント用の右180°旋回アニメーションです。"
+    },
+    {
+      "Field": "chrEventTrun_90TurnStartAngle",
+      "Name": "キャラのイベント旋回90°アニメーション開始角度",
+      "Description": "「キャラの旋回」イベント用の90°旋回アニメーションを適用する角度の開始角度。この角度より小さい角度でイベントが始まった場合は、システム旋回が行われます"
+    },
+    {
+      "Field": "chrEventTrun_180TurnStartAngle",
+      "Name": "キャラのイベント旋回180°アニメーション開始角度",
+      "Description": "「キャラの旋回」イベント用の180°旋回アニメーションを適用する角度の開始角度。"
+    },
+    {
+      "Field": "stealthAtkDamageRate",
+      "Name": "ステルス攻撃被ダメージ倍率",
+      "Description": "ステルス攻撃被ダメージ倍率"
+    },
+    {
+      "Field": "flickDamageCutRateSuccessGurad",
+      "Name": "はじかれ時ガード成功時ダメージカット率",
+      "Description": "はじかれ時ガード成功時ダメージカット率。最終ダメージに乗算"
+    },
+    {
+      "Field": "npcTalkAnimBeginDiffAngle",
+      "Name": "NPC会話のアニメ再生開始する差分角度",
+      "Description": "NPC会話の会話中モーションのアニメ再生開始する差分角度です。"
+    },
+    {
+      "Field": "npcTalkAnimEndDiffAngle",
+      "Name": "NPC会話のアニメ再生停止する差分角度",
+      "Description": "NPC会話の会話中モーションのアニメ再生停止する差分角度です。"
+    },
+    {
+      "Field": "sleepCollectorItemActionButtonParamId",
+      "Name": "ネムリアイテム取得範囲_アクションボタンパラID",
+      "Description": "ネムリアイテム取得範囲_アクションボタンパラID。TAEフラグ「イベント＞ネムリアイテム登録」で上書きしないときのデフォルト値として使われる。"
+    },
+    {
+      "Field": "allowUseBuddyItem_sfxInterval",
+      "Name": "バディアイテム許可_SFX発生間隔[s]",
+      "Description": "バディアイテム許可_SFX発生間隔[s]"
+    },
+    {
+      "Field": "allowUseBuddyItem_sfxDmyPolyId",
+      "Name": "バディアイテム許可_SFX発生PCダミポリID",
+      "Description": "バディアイテム許可_SFX発生PCダミポリID"
+    },
+    {
+      "Field": "allowUseBuddyItem_sfxDmyPolyId_horse",
+      "Name": "バディアイテム許可_SFX発生馬ダミポリID_騎乗時",
+      "Description": "バディアイテム許可_SFX発生馬ダミポリID_騎乗時"
+    },
+    {
+      "Field": "allowUseBuddyItem_sfxId",
+      "Name": "バディアイテム許可_発生SFXID",
+      "Description": "バディアイテム許可_発生SFXID"
+    },
+    {
+      "Field": "onBuddySummon_inActivateRange_sfxInterval",
+      "Name": "バディ召喚中_起動範囲内_SFX発生間隔[s]",
+      "Description": "バディ召喚中_起動範囲内_SFX発生間隔[s]"
+    },
+    {
+      "Field": "onBuddySummon_inActivateRange_sfxDmyPolyId",
+      "Name": "バディ召喚中_起動範囲内_SFX発生PCダミポリID",
+      "Description": "バディ召喚中_起動範囲内_SFX発生PCダミポリID"
+    },
+    {
+      "Field": "onBuddySummon_inActivateRange_sfxDmyPolyId_horse",
+      "Name": "バディ召喚中_起動範囲内_SFX発生馬ダミポリID_騎乗時",
+      "Description": "バディ召喚中_起動範囲内_SFX発生馬ダミポリID_騎乗時"
+    },
+    {
+      "Field": "onBuddySummon_inActivateRange_sfxId",
+      "Name": "バディ召喚中_起動範囲内_発生SFXID",
+      "Description": "バディ召喚中_起動範囲内_発生SFXID"
+    },
+    {
+      "Field": "onBuddySummon_inActivateRange_spEffectId_pc",
+      "Name": "バディ召喚中_起動範囲内特殊効果ID_PC用",
+      "Description": "バディ召喚中_起動範囲内特殊効果ID_PC用"
+    },
+    {
+      "Field": "onBuddySummon_inWarnRange_spEffectId_pc",
+      "Name": "バディ召喚中_警告範囲内特殊効果ID_PC用",
+      "Description": "バディ召喚中_警告範囲内特殊効果ID_PC用"
+    },
+    {
+      "Field": "onBuddySummon_atBuddyUnsummon_spEffectId_pc",
+      "Name": "バディ召喚中_バディ帰還時特殊効果ID_PC用",
+      "Description": "バディ召喚中_バディ帰還時特殊効果ID_PC用"
+    },
+    {
+      "Field": "onBuddySummon_inWarnRange_spEffectId_buddy",
+      "Name": "バディ召喚中_警告範囲内特殊効果ID_バディ用",
+      "Description": "バディ召喚中_警告範囲内特殊効果ID_バディ用"
+    },
+    {
+      "Field": "morningIngameHour",
+      "Name": "朝のインゲーム時間（時）",
+      "Description": "朝のインゲーム時間（時）。会話で使用します。"
+    },
+    {
+      "Field": "morningIngameMinute",
+      "Name": "朝のインゲーム時間（分）",
+      "Description": "朝のインゲーム時間（分）。会話で使用します。"
+    },
+    {
+      "Field": "morningIngameSecond",
+      "Name": "朝のインゲーム時間（秒）",
+      "Description": "朝のインゲーム時間（秒）。会話で使用します。"
+    },
+    {
+      "Field": "noonIngameHour",
+      "Name": "昼のインゲーム時間（時）",
+      "Description": "昼のインゲーム時間（時）。会話で使用します。"
+    },
+    {
+      "Field": "noonIngameMinute",
+      "Name": "昼のインゲーム時間（分）",
+      "Description": "昼のインゲーム時間（分）。会話で使用します。"
+    },
+    {
+      "Field": "noonIngameSecond",
+      "Name": "昼のインゲーム時間（秒）",
+      "Description": "昼のインゲーム時間（秒）。会話で使用します。"
+    },
+    {
+      "Field": "nightIngameHour",
+      "Name": "夜のインゲーム時間（時）",
+      "Description": "夜のインゲーム時間（時）。会話で使用します。"
+    },
+    {
+      "Field": "nightIngameMinute",
+      "Name": "夜のインゲーム時間（分）",
+      "Description": "夜のインゲーム時間（分）。会話で使用します。"
+    },
+    {
+      "Field": "nightIngameSecond",
+      "Name": "夜のインゲーム時間（秒）",
+      "Description": "夜のインゲーム時間（秒）。会話で使用します。"
+    },
+    {
+      "Field": "aiSightRateStart_Morning_Hour",
+      "Name": "AI視界倍率_朝_開始時刻(時)",
+      "Description": "AI視界倍率_朝_開始時刻(時)"
+    },
+    {
+      "Field": "aiSightRateStart_Morning_Minute",
+      "Name": "AI視界倍率_朝_開始時刻(分)",
+      "Description": "AI視界倍率_朝_開始時刻(分)"
+    },
+    {
+      "Field": "aiSightRateStart_Noon_Hour",
+      "Name": "AI視界倍率_昼_開始時刻(時)",
+      "Description": "AI視界倍率_昼_開始時刻(時)"
+    },
+    {
+      "Field": "aiSightRateStart_Noon_Minute",
+      "Name": "AI視界倍率_昼_開始時刻(分)",
+      "Description": "AI視界倍率_昼_開始時刻(分)"
+    },
+    {
+      "Field": "aiSightRateStart_Evening_Hour",
+      "Name": "AI視界倍率_夕_開始時刻(時)",
+      "Description": "AI視界倍率_夕_開始時刻(時)"
+    },
+    {
+      "Field": "aiSightRateStart_Evening_Minute",
+      "Name": "AI視界倍率_夕_開始時刻(分)",
+      "Description": "AI視界倍率_夕_開始時刻(分)"
+    },
+    {
+      "Field": "aiSightRateStart_Night_Hour",
+      "Name": "AI視界倍率_夜_開始時刻(時)",
+      "Description": "AI視界倍率_夜_開始時刻(時)"
+    },
+    {
+      "Field": "aiSightRateStart_Night_Minute",
+      "Name": "AI視界倍率_夜_開始時刻(分)",
+      "Description": "AI視界倍率_夜_開始時刻(分)"
+    },
+    {
+      "Field": "aiSightRateStart_Midnight_Hour",
+      "Name": "AI視界倍率_深夜_開始時刻(時)",
+      "Description": "AI視界倍率_深夜_開始時刻(時)"
+    },
+    {
+      "Field": "aiSightRateStart_Midnight_Minute",
+      "Name": "AI視界倍率_深夜_開始時刻(分)",
+      "Description": "AI視界倍率_深夜_開始時刻(分)"
+    },
+    {
+      "Field": "saLargeDamageHitSfx_Threshold",
+      "Name": "SA大ダメージヒット演出SFX_発生条件SAダメージ閾値比率[％]",
+      "Description": "SA大ダメージヒット演出SFX_発生条件SAダメージ閾値比率[％]"
+    },
+    {
+      "Field": "saLargeDamageHitSfx_SfxId",
+      "Name": "SA大ダメージヒット演出SFX_SFXID",
+      "Description": "SA大ダメージヒット演出SFX_SFXID"
+    },
+    {
+      "Field": "unknown_74",
+      "Name": "unknown_74",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_78",
+      "Name": "unknown_78",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_7C",
+      "Name": "unknown_7C",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_80",
+      "Name": "unknown_80",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_84",
+      "Name": "unknown_84",
+      "Description": ""
+    },
+    {
+      "Field": "retryPointAreaRadius",
+      "Name": "リトライエリア半径_デフォルト値(m)",
+      "Description": "リトライエリア半径_デフォルト値(m)。MapStudioのイベントタイプ「リトライポイント」で半径も領域も未設定の場合のデフォルト値として使われる。"
+    },
+    {
+      "Field": "sleepCollectorSpEffectId",
+      "Name": "ネムリアイテム取得可能時に発動する特殊効果ID",
+      "Description": "ネムリアイテム取得可能時に発動する特殊効果ID。TAEフラグ「イベント＞ネムリアイテム登録」で上書きしないときのデフォルト値として使われる。"
+    },
+    {
+      "Field": "recoverBelowMaxHpCompletionNoticeSpEffectId",
+      "Name": "「HP最大以下で回復」特殊効果完了通知特殊効果ID",
+      "Description": "「HP最大以下で回復」が完了したことを通知する特殊効果のID。主にマルチの同期用に使われる。 "
+    },
+    {
+      "Field": "estusFlaskRecovery_AbsorptionProductionSfxId_byHp",
+      "Name": "HPエスト吸収演出SFXID",
+      "Description": "侵入者撃破時などにHPエスト瓶の使用回数を回復する際の吸収演出SFXID"
+    },
+    {
+      "Field": "estusFlaskRecovery_AbsorptionProductionSfxId_byMp",
+      "Name": "MPエスト吸収演出SFXID",
+      "Description": "侵入者撃破時などにMPエスト瓶の使用回数を回復する際の吸収演出SFXID"
+    },
+    {
+      "Field": "respawnSpecialEffectActiveCheckerSpEffectId",
+      "Name": "復活特殊効果発動判定用特殊効果ID",
+      "Description": "復活特殊効果が発動したことを通知する特殊効果のID。主にマルチの同期用に使われる。 "
+    },
+    {
+      "Field": "onBuddySummon_inActivateRange_spEffectId_buddy",
+      "Name": "バディ召喚中_起動範囲内特殊効果ID_バディ用",
+      "Description": "バディ召喚中_起動範囲内特殊効果ID_バディ用"
+    },
+    {
+      "Field": "estusFlaskRecovery_AddEstusTime",
+      "Name": "エスト吸収SFX再生開始からエスト追加処理を行うまでの時間",
+      "Description": "エスト吸収SFX再生開始からエスト追加処理を行うまでの時間"
+    },
+    {
+      "Field": "unknown_A8",
+      "Name": "unknown_A8",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_AC",
+      "Name": "unknown_AC",
+      "Description": ""
+    },
+    {
+      "Field": "defeatMultiModeBossOfSoulCorrectRate_byHost",
+      "Name": "defeatMultiModeBossOfSoulCorrectRate_byHost",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_B4",
+      "Name": "unknown_B4",
+      "Description": ""
+    },
+    {
+      "Field": "enemyHpGaugeScreenOffset_byUp",
+      "Name": "敵キャラのHPゲージが画面上に見切れないようにするためのオフセット",
+      "Description": "敵のHPゲージが画面上に見切れた時に画面内に収めるオフセット値[pixel]（FullHD基準）"
+    },
+    {
+      "Field": "playRegionCollectDist",
+      "Name": "プレイ領域収集半径",
+      "Description": "PC周辺のプレイ領域の収集半径"
+    },
+    {
+      "Field": "enemyDetectionSpEffect_ShootBulletDummypolyId",
+      "Name": "「敵探知」時弾丸発射位置ダミポリID",
+      "Description": "探知弾丸の発射位置ダミポリID"
+    },
+    {
+      "Field": "bigRuneGreaterDemonBreakInGoodsNum",
+      "Name": "大ルーン：グレーターデーモン侵入時付与道具個数",
+      "Description": "大ルーン：グレーターデーモン侵入時付与道具個数"
+    },
+    {
+      "Field": "bigRuneGreaterDemonBreakInGoodsId",
+      "Name": "大ルーン：グレーターデーモン侵入時付与道具アイテムID",
+      "Description": "大ルーン：グレーターデーモン侵入時付与道具アイテムID"
+    },
+    {
+      "Field": "rideJumpRegionDefaultSfxId",
+      "Name": "大ジャンプ領域SFXID",
+      "Description": "騎乗大ジャンプ領域のSFXID"
+    },
+    {
+      "Field": "shopVariationStartFlag",
+      "Name": "shopVariationStartFlag",
+      "Description": ""
+    },
+    {
+      "Field": "shopVariationEndFlag",
+      "Name": "shopVariationEndFlag",
+      "Description": ""
+    },
+    {
+      "Field": "afterEndingMapUid",
+      "Name": "周回保留時マップUID",
+      "Description": "周回保留時マップUID、8桁で入力（例…m60_42_36_00 -> 60423600）"
+    },
+    {
+      "Field": "afterEndingReturnPointEntityId",
+      "Name": "周回保留時復帰ポイント",
+      "Description": "周回保留時復帰ポイントのエンティティID"
+    },
+    {
+      "Field": "enemyDetectionSpEffect_BulletId_byCoopRing_RedHunter",
+      "Name": "「敵探知」時発射弾丸ID_協力指輪_赤狩り",
+      "Description": "敵の勢力/タイプによって飛ばす弾丸のID(マルチ自動発射でも使う)"
+    },
+    {
+      "Field": "enemyDetectionSpEffect_BulletId_byInvadeOrb_None",
+      "Name": "「敵探知」時発射弾丸ID_侵入オーブ_なし",
+      "Description": "敵の勢力/タイプによって飛ばす弾丸のID(マルチ自動発射でも使う)"
+    },
+    {
+      "Field": "unknown_E0",
+      "Name": "unknown_E0",
+      "Description": ""
+    },
+    {
+      "Field": "tutorialFlagOnAccessRetryPoint",
+      "Name": "チュートリアル判定用：リトライポイントにアクセスした時にONにするイベントフラグ",
+      "Description": "チュートリアル判定用：リトライポイントにアクセスした時にONにするイベントフラグ"
+    },
+    {
+      "Field": "tutorialFlagOnGetGroupReward",
+      "Name": "チュートリアル判定用：集団を倒してグループ報酬が入った時にONにするイベントフラグ",
+      "Description": "チュートリアル判定用：集団を倒してグループ報酬が入った時にONにするイベントフラグ"
+    },
+    {
+      "Field": "tutorialFlagOnEnterRideJumpRegion",
+      "Name": "チュートリアル判定用：騎乗大ジャンプポイントに入った時にONにするイベントフラグ",
+      "Description": "チュートリアル判定用：騎乗大ジャンプポイントに入った時にONにするイベントフラグ"
+    },
+    {
+      "Field": "unknown_F0",
+      "Name": "unknown_F0",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_F4",
+      "Name": "unknown_F4",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_F8",
+      "Name": "unknown_F8",
+      "Description": ""
+    },
+    {
+      "Field": "retryPointActivatedDialogTextId",
+      "Name": "リトライポイント起動時のダイアログのテキストID",
+      "Description": "リトライポイント起動時のダイアログのテキストID。EventText_ForMap.xlsm のテキストを設定する。-1の場合はダイアログを出さない。"
+    },
+    {
+      "Field": "signPuddleOpenPcAnimId",
+      "Name": "サイン溜まり起動時のPCアニメID",
+      "Description": "サイン溜まり起動時のPCアニメID。-1の場合は再生しない。"
+    },
+    {
+      "Field": "signPuddleOpenDialogDelayTime",
+      "Name": "サイン溜まり起動時のダイアログ表示の遅延時間[秒]",
+      "Description": "サイン溜まり起動時のダイアログ表示の遅延時間[秒]"
+    },
+    {
+      "Field": "activityOfDeadSpEffect_BulletId",
+      "Name": "「死者の活性」特殊効果発動時弾丸ID",
+      "Description": "「死者の活性」特殊効果が発動したときに発射する弾丸ID"
+    },
+    {
+      "Field": "activityOfDeadSpEffect_ShootBulletDummypolyId",
+      "Name": "「死者の活性」特殊効果発動時弾丸発生位置ダミポリID",
+      "Description": "「死者の活性」特殊効果が発動したときに弾丸が発生する位置のダミポリID"
+    },
+    {
+      "Field": "activityOfDeadSpEffect_DeadFadeOutTime",
+      "Name": "「死者の活性」特殊効果発動時の死体のフェードアウト時間",
+      "Description": "「死者の活性」特殊効果が発動したときに死体がフェードアウトする際のフェード時間"
+    },
+    {
+      "Field": "unknown_114",
+      "Name": "unknown_114",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_118",
+      "Name": "unknown_118",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_11C",
+      "Name": "unknown_11C",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_120",
+      "Name": "unknown_120",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_124",
+      "Name": "unknown_124",
+      "Description": ""
+    },
+    {
+      "Field": "enemyDetectionSpEffect_BulletId_byNpcEnemy",
+      "Name": "「敵探知」時発射弾丸ID_敵対NPC/敵キャラ",
+      "Description": "敵意の探知に失敗したときに敵対NPC/敵キャラに飛ばす弾丸のID"
+    },
+    {
+      "Field": "activityOfDeadTargetSearchSpEffect_OnHitSpEffect",
+      "Name": "「死者の活性ターゲット検索」対象にかける特殊効果ID ",
+      "Description": "検索した対象にかける特殊効果"
+    },
+    {
+      "Field": "activityOfDeadTargetSearchSpEffect_MaxLength",
+      "Name": "「死者の活性ターゲット検索」距離 ",
+      "Description": "検索可能最大距離"
+    },
+    {
+      "Field": "sightRangeLowerPromiseRate",
+      "Name": "視界_最低保証距離[倍率換算]",
+      "Description": "視界_最低保証距離[倍率換算]"
+    },
+    {
+      "Field": "saLargeDamageHitSfx_MinDamage",
+      "Name": "SA大ダメージヒット演出SFX_発生条件SAダメージ必要最低値[pt]",
+      "Description": "SA大ダメージヒット演出SFX_発生条件SAダメージ必要最低値[pt]"
+    },
+    {
+      "Field": "saLargeDamageHitSfx_ForceDamage",
+      "Name": "SA大ダメージヒット演出SFX_発生条件SAダメージ強制発生最低値[pt]",
+      "Description": "SA大ダメージヒット演出SFX_発生条件SAダメージ強制発生最低値[pt]"
+    },
+    {
+      "Field": "unknown_13C",
+      "Name": "unknown_13C",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_13E",
+      "Name": "unknown_13E",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_140",
+      "Name": "unknown_140",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_144",
+      "Name": "unknown_144",
+      "Description": ""
+    },
+    {
+      "Field": "item370_MaxSfxNum",
+      "Name": "七色石の最大設置数",
+      "Description": "七色石の最大設置数"
+    },
+    {
+      "Field": "chrActivateDist_forLeavePC",
+      "Name": "キャラディアクティベート中にアクティベート許可する距離[m]",
+      "Description": "キャラディアクティベート中にアクティベート許可する距離（オープン配置キャラのみ有効）"
+    },
+    {
+      "Field": "unknown_14A",
+      "Name": "unknown_14A",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_14B",
+      "Name": "unknown_14B",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_14C",
+      "Name": "unknown_14C",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_14D",
+      "Name": "unknown_14D",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_14E",
+      "Name": "unknown_14E",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_14F",
+      "Name": "unknown_14F",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_150",
+      "Name": "unknown_150",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_151",
+      "Name": "unknown_151",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_152",
+      "Name": "unknown_152",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_153",
+      "Name": "unknown_153",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_154",
+      "Name": "unknown_154",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_155",
+      "Name": "unknown_155",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_156",
+      "Name": "unknown_156",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_157",
+      "Name": "unknown_157",
+      "Description": ""
+    },
+    {
+      "Field": "machingLevelWhiteSignUpperRel",
+      "Name": "レベルシンク適用判定係数１白",
+      "Description": "レベルシンク適用するかどうかのソウルレベル係数"
+    },
+    {
+      "Field": "machingLevelWhiteSignUpperAbs",
+      "Name": "レベルシンク適用判定係数２白",
+      "Description": "レベルシンク適用するかどうかのソウルレベル係数"
+    },
+    {
+      "Field": "machingLevelRedSignUpperRel",
+      "Name": "レベルシンク適用判定係数１赤",
+      "Description": "レベルシンク適用するかどうかのソウルレベル係数"
+    },
+    {
+      "Field": "machingLevelRedSignUpperAbs",
+      "Name": "レベルシンク適用判定係数２赤",
+      "Description": "レベルシンク適用するかどうかのソウルレベル係数"
+    },
+    {
+      "Field": "machingWeaponLevelUpperWhiteSign_0",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数０白",
+      "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
+    },
+    {
+      "Field": "machingWeaponLevelUpperWhiteSign_1",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数１白",
+      "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
+    },
+    {
+      "Field": "machingWeaponLevelUpperWhiteSign_2",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数２白",
+      "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
+    },
+    {
+      "Field": "machingWeaponLevelUpperWhiteSign_3",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数３白",
+      "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
+    },
+    {
+      "Field": "machingWeaponLevelUpperWhiteSign_4",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数４白",
+      "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
+    },
+    {
+      "Field": "machingWeaponLevelUpperWhiteSign_5",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数５白",
+      "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
+    },
+    {
+      "Field": "machingWeaponLevelUpperWhiteSign_6",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数６白",
+      "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
+    },
+    {
+      "Field": "machingWeaponLevelUpperWhiteSign_7",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数７白",
+      "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
+    },
+    {
+      "Field": "machingWeaponLevelUpperWhiteSign_8",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数８白",
+      "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
+    },
+    {
+      "Field": "machingWeaponLevelUpperWhiteSign_9",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数９白",
+      "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
+    },
+    {
+      "Field": "machingWeaponLevelUpperWhiteSign_10",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数１０白",
+      "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
+    },
+    {
+      "Field": "machingWeaponLevelUpperRedSign_0",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数０赤",
+      "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
+    },
+    {
+      "Field": "machingWeaponLevelUpperRedSign_1",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数１赤",
+      "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
+    },
+    {
+      "Field": "machingWeaponLevelUpperRedSign_2",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数２赤",
+      "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
+    },
+    {
+      "Field": "machingWeaponLevelUpperRedSign_3",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数３赤",
+      "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
+    },
+    {
+      "Field": "machingWeaponLevelUpperRedSign_4",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数４赤",
+      "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
+    },
+    {
+      "Field": "machingWeaponLevelUpperRedSign_5",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数５赤",
+      "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
+    },
+    {
+      "Field": "machingWeaponLevelUpperRedSign_6",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数６赤",
+      "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
+    },
+    {
+      "Field": "machingWeaponLevelUpperRedSign_7",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数７赤",
+      "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
+    },
+    {
+      "Field": "machingWeaponLevelUpperRedSign_8",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数８赤",
+      "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
+    },
+    {
+      "Field": "machingWeaponLevelUpperRedSign_9",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数９赤",
+      "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
+    },
+    {
+      "Field": "machingWeaponLevelUpperRedSign_10",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数１０赤",
+      "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
+    },
+    {
+      "Field": "autoInvadePoint_generateDist",
+      "Name": "侵入ポイントの自動配置間隔",
+      "Description": "侵入ポイントの自動配置間隔"
+    },
+    {
+      "Field": "autoInvadePoint_cancelDist",
+      "Name": "侵入ポイント自動配置取り消し範囲",
+      "Description": "侵入ポイント自動配置取り消し範囲"
+    },
+    {
+      "Field": "sendGlobalEventLogIntervalTime",
+      "Name": "グローバルイベントログの送信間隔",
+      "Description": "グローバルイベントログ をサーバーへ送信する間隔"
+    },
+    {
+      "Field": "addSoloBreakInPoint_White",
+      "Name": "ソロ侵入ポイント加算値_白サイン",
+      "Description": "ソロ侵入ポイント加算値_白サイン"
+    },
+    {
+      "Field": "addSoloBreakInPoint_Black",
+      "Name": "ソロ侵入ポイント加算値_赤サイン",
+      "Description": "ソロ侵入ポイント加算値_赤サイン"
+    },
+    {
+      "Field": "addSoloBreakInPoint_ForceJoin",
+      "Name": "ソロ侵入ポイント加算値_乱入",
+      "Description": "ソロ侵入ポイント加算値_乱入"
+    },
+    {
+      "Field": "addSoloBreakInPoint_VisitorGuardian",
+      "Name": "ソロ侵入ポイント加算値_マップ守護訪問",
+      "Description": "ソロ侵入ポイント加算値_マップ守護訪問"
+    },
+    {
+      "Field": "addSoloBreakInPoint_VisitorRedHunter",
+      "Name": "ソロ侵入ポイント加算値_赤狩り訪問",
+      "Description": "ソロ侵入ポイント加算値_赤狩り訪問"
+    },
+    {
+      "Field": "invincibleTimer_forNetPC_initSync",
+      "Name": "初期同期PC用の無敵タイマー",
+      "Description": "初期同期PC用の無敵タイマー"
+    },
+    {
+      "Field": "invincibleTimer_forNetPC",
+      "Name": "初期同期PC以外用の無敵タイマー",
+      "Description": "初期同期PC以外用の無敵タイマー"
+    },
+    {
+      "Field": "redHunter_HostBossAreaGetSoulRate",
+      "Name": "【赤狩り】ホストが白扉を通過した際にもらえるソウル率",
+      "Description": "ホストが白扉を通過した時に赤狩りがもらえるソウル=赤狩りが一つ前のLvから現在Lvになるために必要なソウル*この倍率"
+    },
+    {
+      "Field": "unknown_188",
+      "Name": "unknown_188",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_18C",
+      "Name": "unknown_18C",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_190",
+      "Name": "unknown_190",
+      "Description": ""
+    },
+    {
+      "Field": "aIJump_DecelerateParam",
+      "Name": "AIジャンプ減速パラメータ",
+      "Description": "AIジャンプ用減速パラメータ(0.0：等速運動、1.0：最大減速、目標地点で速度0)"
+    },
+    {
+      "Field": "buddyDisappearDelaySec",
+      "Name": "バディインスタンス削除保証時間",
+      "Description": "死亡フラグから実際にインスタンスが消滅するまでの時間"
+    },
+    {
+      "Field": "aIJump_AnimYMoveCorrectRate_onJumpOff",
+      "Name": "AIジャンプ飛び降り時Y移動量補正率",
+      "Description": "AIジャンプ飛び降り時Y移動量補正率"
+    },
+    {
+      "Field": "stealthSystemSightRate_NotInStealthRigid_NotSightHide_StealthMode",
+      "Name": "ステルス視界倍率_ステルス効果無しでしゃがみ",
+      "Description": "ステルス視界倍率_ステルス効果無しでしゃがみ"
+    },
+    {
+      "Field": "stealthSystemSightRate_NotInStealthRigid_SightHide_NotStealthMode",
+      "Name": "ステルス視界倍率_ステルスレイ遮蔽地帯で立ち",
+      "Description": "ステルス視界倍率_ステルスレイ遮蔽地帯で立ち"
+    },
+    {
+      "Field": "stealthSystemSightRate_NotInStealthRigid_SightHide_StealthMode",
+      "Name": "ステルス視界倍率_ステルスレイ遮蔽地帯でしゃがみ",
+      "Description": "ステルス視界倍率_ステルスレイ遮蔽地帯でしゃがみ"
+    },
+    {
+      "Field": "unknown_1AC",
+      "Name": "unknown_1AC",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_1B0",
+      "Name": "unknown_1B0",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_1B4",
+      "Name": "unknown_1B4",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_1B8",
+      "Name": "unknown_1B8",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_1BC",
+      "Name": "unknown_1BC",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_1C0",
+      "Name": "unknown_1C0",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_1C4",
+      "Name": "unknown_1C4",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_1C8",
+      "Name": "unknown_1C8",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_1CC",
+      "Name": "unknown_1CC",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_1D0",
+      "Name": "unknown_1D0",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_1D4",
+      "Name": "unknown_1D4",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_1D8",
+      "Name": "unknown_1D8",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_1DC",
+      "Name": "unknown_1DC",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_1E0",
+      "Name": "unknown_1E0",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_1E4",
+      "Name": "unknown_1E4",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_1E8",
+      "Name": "unknown_1E8",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_1EC",
+      "Name": "unknown_1EC",
+      "Description": ""
+    },
+    {
+      "Field": "OldMonkOfYellow_CreateSignSpEffectId",
+      "Name": "黄衣の翁サイン作成時特殊効果ID",
+      "Description": "黄衣の翁サイン作成時特殊効果ID"
+    },
+    {
+      "Field": "unknown_1F4",
+      "Name": "unknown_1F4",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_1F8",
+      "Name": "unknown_1F8",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_1FC",
+      "Name": "unknown_1FC",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_200",
+      "Name": "unknown_200",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_204",
+      "Name": "unknown_204",
+      "Description": ""
+    },
+    {
+      "Field": "buddyWarp_TriggerTimeRayBlocked",
+      "Name": "レイ遮断でバディがプレイヤーにワープする時間[s]",
+      "Description": "レイ遮断でバディがプレイヤーにワープする時間[s]"
+    },
+    {
+      "Field": "buddyWarp_TriggerDistToPlayer",
+      "Name": "直線距離でバディがプレイヤーにワープする距離[m]",
+      "Description": "直線距離でバディがプレイヤーにワープする距離[m]"
+    },
+    {
+      "Field": "buddyWarp_ThresholdTimePathStacked",
+      "Name": "バディがパス移動で詰まった判定する時間[s]",
+      "Description": "バディがパス移動で詰まった判定する時間[s]"
+    },
+    {
+      "Field": "buddyWarp_ThresholdRangePathStacked",
+      "Name": "バディがパス移動で詰まっているとみなす距離[m]",
+      "Description": "バディがパス移動で詰まっているとみなす距離[m]"
+    },
+    {
+      "Field": "aiSightRate_morning",
+      "Name": "[朝]AI視界倍率",
+      "Description": "[朝]AI視界倍率"
+    },
+    {
+      "Field": "aiSightRate_noonA",
+      "Name": "[昼]AI視界倍率",
+      "Description": "[昼]AI視界倍率"
+    },
+    {
+      "Field": "buddyPassThroughTriggerTime",
+      "Name": "バディとプレイヤーがぶつかって、すり抜け始める時間[s]",
+      "Description": "バディとプレイヤーがぶつかって、すり抜け始める時間[s]"
+    },
+    {
+      "Field": "aiSightRate_evening",
+      "Name": "[夕]AI視界倍率",
+      "Description": "[夕]AI視界倍率"
+    },
+    {
+      "Field": "aiSightRate_night",
+      "Name": "[夜]AI視界倍率",
+      "Description": "[夜]AI視界倍率"
+    },
+    {
+      "Field": "aiSightRate_midnightA",
+      "Name": "[深夜]AI視界倍率",
+      "Description": "[深夜]AI視界倍率"
+    },
+    {
+      "Field": "unknown_230",
+      "Name": "unknown_230",
+      "Description": ""
+    },
+    {
+      "Field": "aiSightRate_sunloss_light",
+      "Name": "AI視界倍率_太陽が見えない場所(明るい)",
+      "Description": "AI視界倍率_太陽が見えない場所(明るい)"
+    },
+    {
+      "Field": "aiSightRate_sunloss_dark",
+      "Name": "AI視界倍率_太陽が見えない場所(暗闇)",
+      "Description": "AI視界倍率_太陽が見えない場所(暗闇)"
+    },
+    {
+      "Field": "aiSightRate_sunloss_veryDark",
+      "Name": "AI視界倍率_太陽が見えない場所(真っ暗闇)",
+      "Description": "AI視界倍率_太陽が見えない場所(真っ暗闇)"
+    },
+    {
+      "Field": "stealthSystemSightAngleReduceRate_NotInStealthRigid_NotSightHide_StealthMode",
+      "Name": "ステルス視界角度減衰率_ステルス効果無しでしゃがみ",
+      "Description": "ステルス視界角度減衰率_ステルス効果無しでしゃがみ"
+    },
+    {
+      "Field": "stealthSystemSightAngleReduceRate_NotInStealthRigid_SightHide_NotStealthMode",
+      "Name": "ステルス視界角度減衰率_ステルスレイ遮蔽地帯で立ち",
+      "Description": "ステルス視界角度減衰率_ステルスレイ遮蔽地帯で立ち"
+    },
+    {
+      "Field": "stealthSystemSightAngleReduceRate_NotInStealthRigid_SightHide_StealthMode",
+      "Name": "ステルス視界角度減衰率_ステルスレイ遮蔽地帯でしゃがみ",
+      "Description": "ステルス視界角度減衰率_ステルスレイ遮蔽地帯でしゃがみ"
+    },
+    {
+      "Field": "unknown_24C",
+      "Name": "unknown_24C",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_24E",
+      "Name": "unknown_24E",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_250",
+      "Name": "unknown_250",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_252",
+      "Name": "unknown_252",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_254",
+      "Name": "unknown_254",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_258",
+      "Name": "unknown_258",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_25A",
+      "Name": "unknown_25A",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_25C",
+      "Name": "unknown_25C",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_260",
+      "Name": "unknown_260",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_264",
+      "Name": "unknown_264",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_268",
+      "Name": "unknown_268",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_26C",
+      "Name": "unknown_26C",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_26D",
+      "Name": "unknown_26D",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_26E",
+      "Name": "unknown_26E",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_26F",
+      "Name": "unknown_26F",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_270",
+      "Name": "unknown_270",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_271",
+      "Name": "unknown_271",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_272",
+      "Name": "unknown_272",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_273",
+      "Name": "unknown_273",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_274",
+      "Name": "unknown_274",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_275",
+      "Name": "unknown_275",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_276",
+      "Name": "unknown_276",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_277",
+      "Name": "unknown_277",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_278",
+      "Name": "unknown_278",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_279",
+      "Name": "unknown_279",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_27A",
+      "Name": "unknown_27A",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_27B",
+      "Name": "unknown_27B",
+      "Description": ""
+    },
+    {
+      "Field": "machingWeaponLevelUpperWhiteSign_11",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数１１白",
+      "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
+    },
+    {
+      "Field": "machingWeaponLevelUpperWhiteSign_12",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数１２白",
+      "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
+    },
+    {
+      "Field": "machingWeaponLevelUpperWhiteSign_13",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数１３白",
+      "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
+    },
+    {
+      "Field": "machingWeaponLevelUpperWhiteSign_14",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数１４白",
+      "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
+    },
+    {
+      "Field": "machingWeaponLevelUpperWhiteSign_15",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数１５白",
+      "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
+    },
+    {
+      "Field": "machingWeaponLevelUpperWhiteSign_16",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数１６白",
+      "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
+    },
+    {
+      "Field": "machingWeaponLevelUpperWhiteSign_17",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数１７白",
+      "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
+    },
+    {
+      "Field": "machingWeaponLevelUpperWhiteSign_18",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数１８白",
+      "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
+    },
+    {
+      "Field": "machingWeaponLevelUpperWhiteSign_19",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数１９白",
+      "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
+    },
+    {
+      "Field": "machingWeaponLevelUpperWhiteSign_20",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数２０白",
+      "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
+    },
+    {
+      "Field": "machingWeaponLevelUpperWhiteSign_21",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数２１白",
+      "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
+    },
+    {
+      "Field": "machingWeaponLevelUpperWhiteSign_22",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数２２白",
+      "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
+    },
+    {
+      "Field": "machingWeaponLevelUpperWhiteSign_23",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数２３白",
+      "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
+    },
+    {
+      "Field": "machingWeaponLevelUpperWhiteSign_24",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数２４白",
+      "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
+    },
+    {
+      "Field": "machingWeaponLevelUpperWhiteSign_25",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数２５白",
+      "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
+    },
+    {
+      "Field": "machingWeaponLevelUpperRedSign_11",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数１１赤",
+      "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
+    },
+    {
+      "Field": "machingWeaponLevelUpperRedSign_12",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数１２赤",
+      "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
+    },
+    {
+      "Field": "machingWeaponLevelUpperRedSign_13",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数１３赤",
+      "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
+    },
+    {
+      "Field": "machingWeaponLevelUpperRedSign_14",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数１４赤",
+      "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
+    },
+    {
+      "Field": "machingWeaponLevelUpperRedSign_15",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数１５赤",
+      "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
+    },
+    {
+      "Field": "machingWeaponLevelUpperRedSign_16",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数１６赤",
+      "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
+    },
+    {
+      "Field": "machingWeaponLevelUpperRedSign_17",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数１７赤",
+      "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
+    },
+    {
+      "Field": "machingWeaponLevelUpperRedSign_18",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数１８赤",
+      "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
+    },
+    {
+      "Field": "machingWeaponLevelUpperRedSign_19",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数１９赤",
+      "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
+    },
+    {
+      "Field": "machingWeaponLevelUpperRedSign_20",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数２０赤",
+      "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
+    },
+    {
+      "Field": "machingWeaponLevelUpperRedSign_21",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数２１赤",
+      "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
+    },
+    {
+      "Field": "machingWeaponLevelUpperRedSign_22",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数２２赤",
+      "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
+    },
+    {
+      "Field": "machingWeaponLevelUpperRedSign_23",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数２３赤",
+      "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
+    },
+    {
+      "Field": "unknown_298",
+      "Name": "unknown_298",
+      "Description": ""
+    },
+    {
+      "Field": "menuTimezoneStart_Day1_Hour",
+      "Name": "メニュー用時間帯表示_昼1_開始時刻_時",
+      "Description": "メニュー用時間帯表示_昼1_開始時刻_時(SEQ22108)"
+    },
+    {
+      "Field": "menuTimezoneStart_Day1_Minute",
+      "Name": "メニュー用時間帯表示_昼1_開始時刻_分",
+      "Description": "メニュー用時間帯表示_昼1_開始時刻_分(SEQ22108)"
+    },
+    {
+      "Field": "menuTimezoneStart_Day2_Hour",
+      "Name": "メニュー用時間帯表示_昼2_開始時刻_時",
+      "Description": "メニュー用時間帯表示_昼2_開始時刻_時(SEQ22108)"
+    },
+    {
+      "Field": "menuTimezoneStart_Day2_Minute",
+      "Name": "メニュー用時間帯表示_昼2_開始時刻_分",
+      "Description": "メニュー用時間帯表示_昼2_開始時刻_分(SEQ22108)"
+    },
+    {
+      "Field": "menuTimezoneStart_Evening_Hour",
+      "Name": "メニュー用時間帯表示_夕_開始時刻_時",
+      "Description": "メニュー用時間帯表示_夕_開始時刻_時(SEQ22108)"
+    },
+    {
+      "Field": "menuTimezoneStart_Evening_Minute",
+      "Name": "メニュー用時間帯表示_夕_開始時刻_分",
+      "Description": "メニュー用時間帯表示_夕_開始時刻_分(SEQ22108)"
+    },
+    {
+      "Field": "menuTimezoneStart_Night_Hour",
+      "Name": "メニュー用時間帯表示_夜_開始時刻_時",
+      "Description": "メニュー用時間帯表示_夜_開始時刻_時(SEQ22108)"
+    },
+    {
+      "Field": "menuTimezoneStart_Night_Minute",
+      "Name": "メニュー用時間帯表示_夜_開始時刻_分",
+      "Description": "メニュー用時間帯表示_夜_開始時刻_分(SEQ22108)"
+    },
+    {
+      "Field": "unknown_2A4",
+      "Name": "unknown_2A4",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_2A8",
+      "Name": "unknown_2A8",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_2AA",
+      "Name": "unknown_2AA",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_2AC",
+      "Name": "unknown_2AC",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_2B0",
+      "Name": "unknown_2B0",
+      "Description": ""
+    },
+    {
+      "Field": "worldMapPointReentryExpandRange",
+      "Name": "地図ポイント出場領域のデフォルト拡張距離[m]",
+      "Description": "地図ポイントの出場領域のデフォルトの拡張距離。地図ポイントの\"出場領域 上書き領域\"が無効(-1)のときに、自身の領域から拡張して出場領域が生成される。その拡張距離"
+    },
+    {
+      "Field": "remotePlayerThreatLvNotify_NotifyTime",
+      "Name": "ネットワークPC脅威度通知_通知時間[秒]",
+      "Description": "ネットワークPC脅威度通知_通知時間[秒](SEQ21950)"
+    },
+    {
+      "Field": "breakIn_A_rebreakInGoodsNum",
+      "Name": "侵入時に付与する\"再侵入アイテム\"の付与個数：侵入アイテム_グレーター系（ID102）",
+      "Description": "侵入時に付与する\"再侵入アイテム\"の付与個数：侵入アイテム_グレーター系（ID102）"
+    },
+    {
+      "Field": "breakIn_A_rebreakInGoodsId",
+      "Name": "侵入時に付与する\"再侵入アイテム\"の道具アイテムID：侵入アイテム_グレーター系（ID102）",
+      "Description": "侵入時に付与する\"再侵入アイテム\"の道具アイテムID：侵入アイテム_グレーター系（ID102）"
+    },
+    {
+      "Field": "rideJumpoff_SfxId",
+      "Name": "降りる大ジャンプ_上空SFXID",
+      "Description": "降りる大ジャンプ_上空SFXID"
+    },
+    {
+      "Field": "unknown_2C4",
+      "Name": "unknown_2C4",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_2C8",
+      "Name": "unknown_2C8",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_2CA",
+      "Name": "unknown_2CA",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_2CC",
+      "Name": "unknown_2CC",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_2D0",
+      "Name": "unknown_2D0",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_2D1",
+      "Name": "unknown_2D1",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_2D2",
+      "Name": "unknown_2D2",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_2D3",
+      "Name": "unknown_2D3",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_2D4",
+      "Name": "unknown_2D4",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_2D5",
+      "Name": "unknown_2D5",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_2D6",
+      "Name": "unknown_2D6",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_2D7",
+      "Name": "unknown_2D7",
+      "Description": ""
+    },
+    {
+      "Field": "breakInOnce_A_rebreakInGoodsNum",
+      "Name": "侵入時に付与する\"再侵入アイテム\"の付与個数：侵入アイテム_グレーター系使い捨て（ID111）",
+      "Description": "侵入時に付与する\"再侵入アイテム\"の付与個数：侵入アイテム_グレーター系使い捨て（ID111）"
+    },
+    {
+      "Field": "breakIn_B_rebreakInGoodsNum",
+      "Name": "侵入時に付与する\"再侵入アイテム\"の付与個数：侵入アイテム_火山館系（ID112）",
+      "Description": "侵入時に付与する\"再侵入アイテム\"の付与個数：侵入アイテム_火山館系（ID112）"
+    },
+    {
+      "Field": "unknown_2DC",
+      "Name": "unknown_2DC",
+      "Description": ""
+    },
+    {
+      "Field": "FlaskRechargeTimer",
+      "Name": "FlaskRechargeTimer",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_2E4",
+      "Name": "unknown_2E4",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_2E8",
+      "Name": "unknown_2E8",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_2EC",
+      "Name": "unknown_2EC",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_2F0",
+      "Name": "unknown_2F0",
+      "Description": ""
+    },
+    {
+      "Field": "BossArenaNearDeathDuration",
+      "Name": "BossArenaNearDeathDuration",
+      "Description": ""
+    },
+    {
+      "Field": "nearDeathGracePeriodTimerDefault",
+      "Name": "nearDeathGracePeriodTimerDefault",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_2FC",
+      "Name": "unknown_2FC",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_300",
+      "Name": "unknown_300",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_304",
+      "Name": "unknown_304",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_308",
+      "Name": "unknown_308",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_30C",
+      "Name": "unknown_30C",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_310",
+      "Name": "unknown_310",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_314",
+      "Name": "unknown_314",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_318",
+      "Name": "unknown_318",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_31C",
+      "Name": "unknown_31C",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_320",
+      "Name": "unknown_320",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_324",
+      "Name": "unknown_324",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_328",
+      "Name": "unknown_328",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_32C",
+      "Name": "unknown_32C",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_330",
+      "Name": "unknown_330",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_334",
+      "Name": "unknown_334",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_338",
+      "Name": "unknown_338",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_33C",
+      "Name": "unknown_33C",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_340",
+      "Name": "unknown_340",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_344",
+      "Name": "unknown_344",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_348",
+      "Name": "unknown_348",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_34C",
+      "Name": "unknown_34C",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_350",
+      "Name": "unknown_350",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_354",
+      "Name": "unknown_354",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_358",
+      "Name": "unknown_358",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_35C",
+      "Name": "unknown_35C",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_360",
+      "Name": "unknown_360",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_364",
+      "Name": "unknown_364",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_368",
+      "Name": "unknown_368",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_36C",
+      "Name": "unknown_36C",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_370",
+      "Name": "unknown_370",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_374",
+      "Name": "unknown_374",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_378",
+      "Name": "unknown_378",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_37C",
+      "Name": "unknown_37C",
+      "Description": ""
+    },
+    {
+      "Field": "RequiredReviveProgress_Level1",
+      "Name": "RequiredReviveProgress_Level1",
+      "Description": ""
+    },
+    {
+      "Field": "RequiredReviveProgress_Level2",
+      "Name": "RequiredReviveProgress_Level2",
+      "Description": ""
+    },
+    {
+      "Field": "RequiredReviveProgress_Level3",
+      "Name": "RequiredReviveProgress_Level3",
+      "Description": ""
+    },
+    {
+      "Field": "ReviveRateDecayPercent_Level1",
+      "Name": "ReviveRateDecayPercent_Level1",
+      "Description": ""
+    },
+    {
+      "Field": "ReviveRateDecayPercent_Level2",
+      "Name": "ReviveRateDecayPercent_Level2",
+      "Description": ""
+    },
+    {
+      "Field": "ReviveRateDecayPercent_Level3",
+      "Name": "ReviveRateDecayPercent_Level3",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_398",
+      "Name": "unknown_398",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_39C",
+      "Name": "unknown_39C",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_3A0",
+      "Name": "unknown_3A0",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_3A4",
+      "Name": "unknown_3A4",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_3A6",
+      "Name": "unknown_3A6",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_3A8",
+      "Name": "unknown_3A8",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_3AA",
+      "Name": "unknown_3AA",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_3AC",
+      "Name": "unknown_3AC",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_3AE",
+      "Name": "unknown_3AE",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_3B0",
+      "Name": "unknown_3B0",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_3B4",
+      "Name": "unknown_3B4",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_3B8",
+      "Name": "unknown_3B8",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_3BC",
+      "Name": "unknown_3BC",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_3C0",
+      "Name": "unknown_3C0",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_3C4",
+      "Name": "unknown_3C4",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_3C8",
+      "Name": "unknown_3C8",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_3CC",
+      "Name": "unknown_3CC",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_3D0",
+      "Name": "unknown_3D0",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_3D4",
+      "Name": "unknown_3D4",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_3D8",
+      "Name": "unknown_3D8",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_3DC",
+      "Name": "unknown_3DC",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_3E0",
+      "Name": "unknown_3E0",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_3E4",
+      "Name": "unknown_3E4",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_3E8",
+      "Name": "unknown_3E8",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_3EC",
+      "Name": "unknown_3EC",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_3F0",
+      "Name": "unknown_3F0",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_3F4",
+      "Name": "unknown_3F4",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_3F8",
+      "Name": "unknown_3F8",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_3FC",
+      "Name": "unknown_3FC",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_400",
+      "Name": "unknown_400",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_404",
+      "Name": "unknown_404",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_408",
+      "Name": "unknown_408",
+      "Description": ""
+    },
+    {
+      "Field": "rewardBaseAmount1",
+      "Name": "rewardBaseAmount1",
+      "Description": ""
+    },
+    {
+      "Field": "rewardBaseAmount2",
+      "Name": "rewardBaseAmount2",
+      "Description": ""
+    },
+    {
+      "Field": "rewardBaseAmount3",
+      "Name": "rewardBaseAmount3",
+      "Description": ""
+    },
+    {
+      "Field": "rewardBaseAmount4",
+      "Name": "rewardBaseAmount4",
+      "Description": ""
+    },
+    {
+      "Field": "rewardMultiplierUnknown41C",
+      "Name": "rewardMultiplierUnknown41C",
+      "Description": ""
+    },
+    {
+      "Field": "rewardMultiplierUnknown420",
+      "Name": "rewardMultiplierUnknown420",
+      "Description": ""
+    },
+    {
+      "Field": "rewardMultiplierUnknown424",
+      "Name": "rewardMultiplierUnknown424",
+      "Description": ""
+    },
+    {
+      "Field": "rewardMultiplierTargetBoss0",
+      "Name": "rewardMultiplierTargetBoss0",
+      "Description": ""
+    },
+    {
+      "Field": "rewardMultiplierTargetBoss1",
+      "Name": "rewardMultiplierTargetBoss1",
+      "Description": ""
+    },
+    {
+      "Field": "rewardMultiplierTargetBoss2",
+      "Name": "rewardMultiplierTargetBoss2",
+      "Description": ""
+    },
+    {
+      "Field": "rewardMultiplierTargetBoss3",
+      "Name": "rewardMultiplierTargetBoss3",
+      "Description": ""
+    },
+    {
+      "Field": "rewardMultiplierTargetBoss4",
+      "Name": "rewardMultiplierTargetBoss4",
+      "Description": ""
+    },
+    {
+      "Field": "rewardMultiplierTargetBoss5",
+      "Name": "rewardMultiplierTargetBoss5",
+      "Description": ""
+    },
+    {
+      "Field": "rewardMultiplierTargetBoss6",
+      "Name": "rewardMultiplierTargetBoss6",
+      "Description": ""
+    },
+    {
+      "Field": "rewardMultiplierTargetBoss7",
+      "Name": "rewardMultiplierTargetBoss7",
+      "Description": ""
+    },
+    {
+      "Field": "rewardMultiplierUnknown448",
+      "Name": "rewardMultiplierUnknown448",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_44C",
+      "Name": "unknown_44C",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_450",
+      "Name": "unknown_450",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_454",
+      "Name": "unknown_454",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_458",
+      "Name": "unknown_458",
+      "Description": ""
+    },
+    {
+      "Field": "newArrivalMarkFlag",
+      "Name": "newArrivalMarkFlag",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_460",
+      "Name": "unknown_460",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_464",
+      "Name": "unknown_464",
+      "Description": ""
+    },
+    {
+      "Field": "nightTimeFlag",
+      "Name": "nightTimeFlag",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_46C",
+      "Name": "unknown_46C",
+      "Description": ""
+    },
+    {
+      "Field": "rewardMultiplierSuperTargetBoss0",
+      "Name": "rewardMultiplierSuperTargetBoss0",
+      "Description": ""
+    },
+    {
+      "Field": "rewardMultiplierSuperTargetBoss1",
+      "Name": "rewardMultiplierSuperTargetBoss1",
+      "Description": ""
+    },
+    {
+      "Field": "rewardMultiplierSuperTargetBoss2",
+      "Name": "rewardMultiplierSuperTargetBoss2",
+      "Description": ""
+    },
+    {
+      "Field": "rewardMultiplierSuperTargetBoss3",
+      "Name": "rewardMultiplierSuperTargetBoss3",
+      "Description": ""
+    },
+    {
+      "Field": "rewardMultiplierSuperTargetBoss4",
+      "Name": "rewardMultiplierSuperTargetBoss4",
+      "Description": ""
+    },
+    {
+      "Field": "rewardMultiplierSuperTargetBoss5",
+      "Name": "rewardMultiplierSuperTargetBoss5",
+      "Description": ""
+    },
+    {
+      "Field": "rewardMultiplierSuperTargetBoss6",
+      "Name": "rewardMultiplierSuperTargetBoss6",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_48C",
+      "Name": "unknown_48C",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_490",
+      "Name": "unknown_490",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_494",
+      "Name": "unknown_494",
+      "Description": ""
+    },
+    {
+      "Field": "specialRewardFirstTime",
+      "Name": "specialRewardFirstTime",
+      "Description": ""
+    },
+    {
+      "Field": "trainingCampTutorialFlag",
+      "Name": "trainingCampTutorialFlag",
+      "Description": ""
+    },
+    {
+      "Field": "specialRewardExtraChance1",
+      "Name": "specialRewardExtraChance1",
+      "Description": ""
+    },
+    {
+      "Field": "specialRewardExtraChance2",
+      "Name": "specialRewardExtraChance2",
+      "Description": ""
+    },
+    {
+      "Field": "specialRewardExtraAmount1",
+      "Name": "specialRewardExtraAmount1",
+      "Description": ""
+    },
+    {
+      "Field": "specialRewardExtraAmount2",
+      "Name": "specialRewardExtraAmount2",
+      "Description": ""
+    }
+  ]
+}

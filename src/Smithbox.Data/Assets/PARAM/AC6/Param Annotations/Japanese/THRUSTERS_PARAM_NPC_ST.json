@@ -1,0 +1,1573 @@
+{
+  "Param": "THRUSTERS_PARAM_NPC_ST",
+  "Type": "THRUSTERS_PARAM_NPC_ST",
+  "Name": "THRUSTERS_PARAM_NPC_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "DummyID",
+      "Name": "ダミポリID",
+      "Description": "SFX発生ダミポリ位置(-1:配置位置)ダミポリID。ダミポリID範囲は0～999.1000,10000の位はカテゴリ番号"
+    },
+    {
+      "Field": "main_SFXID",
+      "Name": "main_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "main_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "main_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "main_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "main_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "main_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "main_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "main_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラの移動方向に合わせてダミポリ向きを変更する場合に使用"
+    },
+    {
+      "Field": "main_pad",
+      "Name": "pad:3",
+      "Description": ""
+    },
+    {
+      "Field": "main_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "main_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "main_pad1",
+      "Name": "main_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "main_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "subFront_SFXID",
+      "Name": "subFront_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "subFront_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "subFront_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "subFront_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "subFront_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "subFront_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "subFront_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "subFront_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラの移動方向に合わせてダミポリ向きを変更する場合に使用"
+    },
+    {
+      "Field": "subFront_pad",
+      "Name": "pad:3",
+      "Description": ""
+    },
+    {
+      "Field": "subFront_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "subFront_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "subFront_pad1",
+      "Name": "subFront_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "subFront_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "subBack_SFXID",
+      "Name": "subBack_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "subBack_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "subBack_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "subBack_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "subBack_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "subBack_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "subBack_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "subBack_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラの移動方向に合わせてダミポリ向きを変更する場合に使用"
+    },
+    {
+      "Field": "subBack_pad",
+      "Name": "pad:3",
+      "Description": ""
+    },
+    {
+      "Field": "subBack_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "subBack_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "subBack_pad1",
+      "Name": "subBack_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "subBack_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "subLeft_SFXID",
+      "Name": "subLeft_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "subLeft_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "subLeft_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "subLeft_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "subLeft_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "subLeft_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "subLeft_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "subLeft_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラの移動方向に合わせてダミポリ向きを変更する場合に使用"
+    },
+    {
+      "Field": "subLeft_pad",
+      "Name": "pad:3",
+      "Description": ""
+    },
+    {
+      "Field": "subLeft_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "subLeft_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "subLeft_pad1",
+      "Name": "subLeft_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "subLeft_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "subRight_SFXID",
+      "Name": "subRight_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "subRight_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "subRight_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "subRight_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "subRight_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "subRight_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "subRight_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "subRight_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラの移動方向に合わせてダミポリ向きを変更する場合に使用"
+    },
+    {
+      "Field": "subRight_pad",
+      "Name": "pad:3",
+      "Description": ""
+    },
+    {
+      "Field": "subRight_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "subRight_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "subRight_pad1",
+      "Name": "subRight_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "subRight_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "qbFront_SFXID",
+      "Name": "qbFront_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "qbFront_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "qbFront_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "qbFront_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "qbFront_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "qbFront_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "qbFront_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "qbFront_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラの移動方向に合わせてダミポリ向きを変更する場合に使用"
+    },
+    {
+      "Field": "qbFront_pad",
+      "Name": "pad:3",
+      "Description": ""
+    },
+    {
+      "Field": "qbFront_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "qbFront_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "qbFront_pad1",
+      "Name": "qbFront_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "qbFront_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "qbBack_SFXID",
+      "Name": "qbBack_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "qbBack_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "qbBack_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "qbBack_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "qbBack_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "qbBack_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "qbBack_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "qbBack_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラの移動方向に合わせてダミポリ向きを変更する場合に使用"
+    },
+    {
+      "Field": "qbBack_pad",
+      "Name": "pad:3",
+      "Description": ""
+    },
+    {
+      "Field": "qbBack_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "qbBack_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "qbBack_pad1",
+      "Name": "qbBack_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "qbBack_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "qbLeft_SFXID",
+      "Name": "qbLeft_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "qbLeft_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "qbLeft_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "qbLeft_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "qbLeft_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "qbLeft_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "qbLeft_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "qbLeft_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラの移動方向に合わせてダミポリ向きを変更する場合に使用"
+    },
+    {
+      "Field": "qbLeft_pad",
+      "Name": "pad:3",
+      "Description": ""
+    },
+    {
+      "Field": "qbLeft_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "qbLeft_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "qbLeft_pad1",
+      "Name": "qbLeft_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "qbLeft_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "qbRight_SFXID",
+      "Name": "qbRight_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "qbRight_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "qbRight_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "qbRight_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "qbRight_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "qbRight_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "qbRight_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "qbRight_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラの移動方向に合わせてダミポリ向きを変更する場合に使用"
+    },
+    {
+      "Field": "qbRight_pad",
+      "Name": "pad:3",
+      "Description": ""
+    },
+    {
+      "Field": "qbRight_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "qbRight_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "qbRight_pad1",
+      "Name": "qbRight_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "qbRight_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "lift_SFXID",
+      "Name": "lift_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "lift_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "lift_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "lift_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "lift_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "lift_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "lift_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "lift_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラの移動方向に合わせてダミポリ向きを変更する場合に使用"
+    },
+    {
+      "Field": "lift_pad",
+      "Name": "pad:3",
+      "Description": ""
+    },
+    {
+      "Field": "lift_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "lift_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "lift_pad1",
+      "Name": "lift_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "lift_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "unique01_SFXID",
+      "Name": "unique01_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "unique01_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "unique01_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "unique01_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "unique01_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "unique01_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "unique01_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "unique01_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラの移動方向に合わせてダミポリ向きを変更する場合に使用"
+    },
+    {
+      "Field": "unique01_pad",
+      "Name": "pad:3",
+      "Description": ""
+    },
+    {
+      "Field": "unique01_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "unique01_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "unique01_pad1",
+      "Name": "unique01_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "unique01_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "unique02_SFXID",
+      "Name": "unique02_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "unique02_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "unique02_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "unique02_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "unique02_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "unique02_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "unique02_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "unique02_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラの移動方向に合わせてダミポリ向きを変更する場合に使用"
+    },
+    {
+      "Field": "unique02_pad",
+      "Name": "pad:3",
+      "Description": ""
+    },
+    {
+      "Field": "unique02_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "unique02_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "unique02_pad1",
+      "Name": "unique02_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "unique02_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "unique03_SFXID",
+      "Name": "unique03_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "unique03_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "unique03_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "unique03_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "unique03_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "unique03_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "unique03_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "unique03_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラの移動方向に合わせてダミポリ向きを変更する場合に使用"
+    },
+    {
+      "Field": "unique03_pad",
+      "Name": "pad:3",
+      "Description": ""
+    },
+    {
+      "Field": "unique03_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "unique03_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "unique03_pad1",
+      "Name": "unique03_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "unique03_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "unique04_SFXID",
+      "Name": "unique04_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "unique04_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "unique04_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "unique04_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "unique04_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "unique04_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "unique04_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "unique04_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラの移動方向に合わせてダミポリ向きを変更する場合に使用"
+    },
+    {
+      "Field": "unique04_pad",
+      "Name": "pad:3",
+      "Description": ""
+    },
+    {
+      "Field": "unique04_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "unique04_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "unique04_pad1",
+      "Name": "unique04_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "unique04_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "unique05_SFXID",
+      "Name": "unique05_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "unique05_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "unique05_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "unique05_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "unique05_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "unique05_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "unique05_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "unique05_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラの移動方向に合わせてダミポリ向きを変更する場合に使用"
+    },
+    {
+      "Field": "unique05_pad",
+      "Name": "pad:3",
+      "Description": ""
+    },
+    {
+      "Field": "unique05_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "unique05_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "unique05_pad1",
+      "Name": "unique05_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "unique05_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "unique06_SFXID",
+      "Name": "unique06_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "unique06_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "unique06_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "unique06_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "unique06_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "unique06_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "unique06_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "unique06_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラの移動方向に合わせてダミポリ向きを変更する場合に使用"
+    },
+    {
+      "Field": "unique06_pad",
+      "Name": "pad:3",
+      "Description": ""
+    },
+    {
+      "Field": "unique06_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "unique06_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "unique06_pad1",
+      "Name": "unique06_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "unique06_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "unique07_SFXID",
+      "Name": "unique07_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "unique07_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "unique07_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "unique07_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "unique07_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "unique07_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "unique07_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "unique07_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラの移動方向に合わせてダミポリ向きを変更する場合に使用"
+    },
+    {
+      "Field": "unique07_pad",
+      "Name": "pad:3",
+      "Description": ""
+    },
+    {
+      "Field": "unique07_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "unique07_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "unique07_pad1",
+      "Name": "unique07_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "unique07_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "unique08_SFXID",
+      "Name": "unique08_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "unique08_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "unique08_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "unique08_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "unique08_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "unique08_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "unique08_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "unique08_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラの移動方向に合わせてダミポリ向きを変更する場合に使用"
+    },
+    {
+      "Field": "unique08_pad",
+      "Name": "pad:3",
+      "Description": ""
+    },
+    {
+      "Field": "unique08_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "unique08_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "unique08_pad1",
+      "Name": "unique08_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "unique08_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "unique09_SFXID",
+      "Name": "unique09_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "unique09_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "unique09_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "unique09_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "unique09_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "unique09_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "unique09_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "unique09_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラの移動方向に合わせてダミポリ向きを変更する場合に使用"
+    },
+    {
+      "Field": "unique09_pad",
+      "Name": "pad:3",
+      "Description": ""
+    },
+    {
+      "Field": "unique09_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "unique09_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "unique09_pad1",
+      "Name": "unique09_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "unique09_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "unique10_SFXID",
+      "Name": "unique10_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "unique10_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "unique10_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "unique10_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "unique10_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "unique10_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "unique10_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "unique10_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラの移動方向に合わせてダミポリ向きを変更する場合に使用"
+    },
+    {
+      "Field": "unique10_pad",
+      "Name": "pad:3",
+      "Description": ""
+    },
+    {
+      "Field": "unique10_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "unique10_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "unique10_pad1",
+      "Name": "unique10_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "unique10_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "brakeFront_SFXID",
+      "Name": "brakeFront_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "brakeFront_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "brakeFront_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "brakeFront_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "brakeFront_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "brakeFront_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "brakeFront_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "brakeFront_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラの移動方向に合わせてダミポリ向きを変更する場合に使用"
+    },
+    {
+      "Field": "brakeFront_pad",
+      "Name": "pad:3",
+      "Description": ""
+    },
+    {
+      "Field": "brakeFront_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "brakeFront_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "brakeFront_pad1",
+      "Name": "brakeFront_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "brakeFront_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "brakeBack_SFXID",
+      "Name": "brakeBack_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "brakeBack_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "brakeBack_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "brakeBack_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "brakeBack_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "brakeBack_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "brakeBack_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "brakeBack_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラの移動方向に合わせてダミポリ向きを変更する場合に使用"
+    },
+    {
+      "Field": "brakeBack_pad",
+      "Name": "pad:3",
+      "Description": ""
+    },
+    {
+      "Field": "brakeBack_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "brakeBack_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "brakeBack_pad1",
+      "Name": "brakeBack_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "brakeBack_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "brakeLeft_SFXID",
+      "Name": "brakeLeft_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "brakeLeft_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "brakeLeft_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "brakeLeft_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "brakeLeft_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "brakeLeft_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "brakeLeft_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "brakeLeft_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラの移動方向に合わせてダミポリ向きを変更する場合に使用"
+    },
+    {
+      "Field": "brakeLeft_pad",
+      "Name": "pad:3",
+      "Description": ""
+    },
+    {
+      "Field": "brakeLeft_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "brakeLeft_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "brakeLeft_pad1",
+      "Name": "brakeLeft_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "brakeLeft_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    },
+    {
+      "Field": "brakeRight_SFXID",
+      "Name": "brakeRight_SFXID",
+      "Description": "スラスターのSFXID"
+    },
+    {
+      "Field": "brakeRight_SlotNO",
+      "Name": "管理スロット番号",
+      "Description": "-1:管理なし、管理スロット無しの場合にループSFXを設定しないでください"
+    },
+    {
+      "Field": "brakeRight_useRPCType",
+      "Name": "使用するRPC",
+      "Description": "キャラの水平移動速度に合わせてSFXの大きさ等を変えたい場合などに使用。1 の場合は実際に使用される値が 60000 です。"
+    },
+    {
+      "Field": "brakeRight_IsHorizontal",
+      "Name": "方向を維持",
+      "Description": "0:方向を維持する、1:水平に合わせる"
+    },
+    {
+      "Field": "brakeRight_IsFollowDmyPoly",
+      "Name": "ダミポリに追従",
+      "Description": "ダミポリに追従させるか。0:しない、1:追従させる"
+    },
+    {
+      "Field": "brakeRight_IsEraseActionEnd",
+      "Name": "アクション終了時にSFXを削除",
+      "Description": "アクション終了時にSFXを削除するか。0:しない、1:削除する"
+    },
+    {
+      "Field": "brakeRight_camouFlageShow",
+      "Name": "姿隠しで消さないか",
+      "Description": "姿隠しになってもSFXを消したくない場合に設定。0:消える、1:消さない"
+    },
+    {
+      "Field": "brakeRight_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラの移動方向に合わせてダミポリ向きを変更する場合に使用"
+    },
+    {
+      "Field": "brakeRight_pad",
+      "Name": "pad:3",
+      "Description": ""
+    },
+    {
+      "Field": "brakeRight_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "brakeRight_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "brakeRight_pad1",
+      "Name": "brakeRight_pad1",
+      "Description": ""
+    },
+    {
+      "Field": "brakeRight_Scale",
+      "Name": "スケール",
+      "Description": "SFXのスケール値"
+    }
+  ]
+}

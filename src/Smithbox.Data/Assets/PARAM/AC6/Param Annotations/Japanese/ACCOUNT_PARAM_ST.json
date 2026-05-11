@@ -1,0 +1,23 @@
+{
+  "Param": "ACCOUNT_PARAM_ST",
+  "Type": "ACCOUNT_PARAM_ST",
+  "Name": "ACCOUNT_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "nameTextID",
+      "Name": "名前",
+      "Description": "NPC Character.xlsm のIDを指定\r\n指定IDから下記オフセットでテキストを登録しておくこと\r\n+0…FE機体名\r\n+1…FEパイロット名\r\n+2…メニュー機体名\r\n+3…メニューパイロット名\u3000/\u3000会話話者名\r\n+4…機体名/パイロット名"
+    },
+    {
+      "Field": "emblemImageID",
+      "Name": "エンブレム",
+      "Description": "エンブレムイメージのIDを指定"
+    },
+    {
+      "Field": "reserved",
+      "Name": "予約",
+      "Description": "-----"
+    }
+  ]
+}

@@ -1,0 +1,468 @@
+{
+  "Param": "ITEMLOT_PARAM_ST",
+  "Type": "ITEMLOT_PARAM_ST",
+  "Name": "ITEMLOT_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "lotItemId01",
+      "Name": "１：アイテムID",
+      "Description": "取得できるアイテムのID"
+    },
+    {
+      "Field": "lotItemId02",
+      "Name": "２：アイテムID",
+      "Description": "取得できるアイテムのID"
+    },
+    {
+      "Field": "lotItemId03",
+      "Name": "３：アイテムID",
+      "Description": "取得できるアイテムのID"
+    },
+    {
+      "Field": "lotItemId04",
+      "Name": "４：アイテムID",
+      "Description": "取得できるアイテムのID"
+    },
+    {
+      "Field": "lotItemId05",
+      "Name": "５：アイテムID",
+      "Description": "取得できるアイテムのID"
+    },
+    {
+      "Field": "lotItemId06",
+      "Name": "６：アイテムID",
+      "Description": "取得できるアイテムのID"
+    },
+    {
+      "Field": "lotItemId07",
+      "Name": "７：アイテムID",
+      "Description": "取得できるアイテムのID"
+    },
+    {
+      "Field": "lotItemId08",
+      "Name": "８：アイテムID",
+      "Description": "取得できるアイテムのID"
+    },
+    {
+      "Field": "lotItemCategory01",
+      "Name": "１：アイテムカテゴリ",
+      "Description": "取得できるアイテムのカテゴリ"
+    },
+    {
+      "Field": "lotItemCategory02",
+      "Name": "２：アイテムカテゴリ",
+      "Description": "取得できるアイテムのカテゴリ"
+    },
+    {
+      "Field": "lotItemCategory03",
+      "Name": "３：アイテムカテゴリ",
+      "Description": "取得できるアイテムのカテゴリ"
+    },
+    {
+      "Field": "lotItemCategory04",
+      "Name": "４：アイテムカテゴリ",
+      "Description": "取得できるアイテムのカテゴリ"
+    },
+    {
+      "Field": "lotItemCategory05",
+      "Name": "５：アイテムカテゴリ",
+      "Description": "取得できるアイテムのカテゴリ"
+    },
+    {
+      "Field": "lotItemCategory06",
+      "Name": "６：アイテムカテゴリ",
+      "Description": "取得できるアイテムのカテゴリ"
+    },
+    {
+      "Field": "lotItemCategory07",
+      "Name": "７：アイテムカテゴリ",
+      "Description": "取得できるアイテムのカテゴリ"
+    },
+    {
+      "Field": "lotItemCategory08",
+      "Name": "８：アイテムカテゴリ",
+      "Description": "取得できるアイテムのカテゴリ"
+    },
+    {
+      "Field": "lotItemBasePoint01",
+      "Name": "基本出現ポイント",
+      "Description": "通常時の出現ポイント"
+    },
+    {
+      "Field": "lotItemBasePoint02",
+      "Name": "基本出現ポイント",
+      "Description": "通常時の出現ポイント"
+    },
+    {
+      "Field": "lotItemBasePoint03",
+      "Name": "基本出現ポイント",
+      "Description": "通常時の出現ポイント"
+    },
+    {
+      "Field": "lotItemBasePoint04",
+      "Name": "基本出現ポイント",
+      "Description": "通常時の出現ポイント"
+    },
+    {
+      "Field": "lotItemBasePoint05",
+      "Name": "基本出現ポイント",
+      "Description": "通常時の出現ポイント"
+    },
+    {
+      "Field": "lotItemBasePoint06",
+      "Name": "基本出現ポイント",
+      "Description": "通常時の出現ポイント"
+    },
+    {
+      "Field": "lotItemBasePoint07",
+      "Name": "基本出現ポイント",
+      "Description": "通常時の出現ポイント"
+    },
+    {
+      "Field": "lotItemBasePoint08",
+      "Name": "基本出現ポイント",
+      "Description": "通常時の出現ポイント"
+    },
+    {
+      "Field": "cumulateLotPoint01",
+      "Name": "累積後出現ポイント",
+      "Description": "最大累積時の出現ポイント"
+    },
+    {
+      "Field": "cumulateLotPoint02",
+      "Name": "累積後出現ポイント",
+      "Description": "最大累積時の出現ポイント"
+    },
+    {
+      "Field": "cumulateLotPoint03",
+      "Name": "累積後出現ポイント",
+      "Description": "最大累積時の出現ポイント"
+    },
+    {
+      "Field": "cumulateLotPoint04",
+      "Name": "累積後出現ポイント",
+      "Description": "最大累積時の出現ポイント"
+    },
+    {
+      "Field": "cumulateLotPoint05",
+      "Name": "累積後出現ポイント",
+      "Description": "最大累積時の出現ポイント"
+    },
+    {
+      "Field": "cumulateLotPoint06",
+      "Name": "累積後出現ポイント",
+      "Description": "最大累積時の出現ポイント"
+    },
+    {
+      "Field": "cumulateLotPoint07",
+      "Name": "累積後出現ポイント",
+      "Description": "最大累積時の出現ポイント"
+    },
+    {
+      "Field": "cumulateLotPoint08",
+      "Name": "累積後出現ポイント",
+      "Description": "最大累積時の出現ポイント"
+    },
+    {
+      "Field": "getItemFlagId01",
+      "Name": "別ザクザクフラグID",
+      "Description": "取得済みフラグとザクザク枠兼用(0:共通使用)"
+    },
+    {
+      "Field": "getItemFlagId02",
+      "Name": "別ザクザクフラグID",
+      "Description": "取得済みフラグとザクザク枠兼用(0:共通使用)"
+    },
+    {
+      "Field": "getItemFlagId03",
+      "Name": "別ザクザクフラグID",
+      "Description": "取得済みフラグとザクザク枠兼用(0:共通使用)"
+    },
+    {
+      "Field": "getItemFlagId04",
+      "Name": "別ザクザクフラグID",
+      "Description": "取得済みフラグとザクザク枠兼用(0:共通使用)"
+    },
+    {
+      "Field": "getItemFlagId05",
+      "Name": "別ザクザクフラグID",
+      "Description": "取得済みフラグとザクザク枠兼用(0:共通使用)"
+    },
+    {
+      "Field": "getItemFlagId06",
+      "Name": "別ザクザクフラグID",
+      "Description": "取得済みフラグとザクザク枠兼用(0:共通使用)"
+    },
+    {
+      "Field": "getItemFlagId07",
+      "Name": "別ザクザクフラグID",
+      "Description": "取得済みフラグとザクザク枠兼用(0:共通使用)"
+    },
+    {
+      "Field": "getItemFlagId08",
+      "Name": "別ザクザクフラグID",
+      "Description": "取得済みフラグとザクザク枠兼用(0:共通使用)"
+    },
+    {
+      "Field": "getItemFlagId",
+      "Name": "ザクザクフラグID",
+      "Description": "取得済みフラグとザクザク枠兼用(0:フラグ無効)"
+    },
+    {
+      "Field": "cumulateNumFlagId",
+      "Name": "抽選累積保存フラグID",
+      "Description": "抽選回数保存用(※8フラグ連番使用)"
+    },
+    {
+      "Field": "cumulateNumMax",
+      "Name": "抽選累積最大数",
+      "Description": "抽選累積最大数(0:累積なし)"
+    },
+    {
+      "Field": "lotItem_Rarity",
+      "Name": "レア度上書き",
+      "Description": "宝箱などに、どれくらい貴重なアイテムが入っているかを指定する。-1の時は上書きせず装備品パラのレア度を使用する"
+    },
+    {
+      "Field": "lotItemNum01",
+      "Name": "個数",
+      "Description": "取得できるアイテムの個数"
+    },
+    {
+      "Field": "lotItemNum02",
+      "Name": "個数",
+      "Description": "取得できるアイテムの個数"
+    },
+    {
+      "Field": "lotItemNum03",
+      "Name": "個数",
+      "Description": "取得できるアイテムの個数"
+    },
+    {
+      "Field": "lotItemNum04",
+      "Name": "個数",
+      "Description": "取得できるアイテムの個数"
+    },
+    {
+      "Field": "lotItemNum05",
+      "Name": "個数",
+      "Description": "取得できるアイテムの個数"
+    },
+    {
+      "Field": "lotItemNum06",
+      "Name": "個数",
+      "Description": "取得できるアイテムの個数"
+    },
+    {
+      "Field": "lotItemNum07",
+      "Name": "個数",
+      "Description": "取得できるアイテムの個数"
+    },
+    {
+      "Field": "lotItemNum08",
+      "Name": "個数",
+      "Description": "取得できるアイテムの個数"
+    },
+    {
+      "Field": "enableLuck01",
+      "Name": "運パラメータ有効",
+      "Description": "抽選の確率をプレイヤーの運を反映させるか"
+    },
+    {
+      "Field": "enableLuck02",
+      "Name": "運パラメータ有効",
+      "Description": "抽選の確率をプレイヤーの運を反映させるか"
+    },
+    {
+      "Field": "enableLuck03",
+      "Name": "運パラメータ有効",
+      "Description": "抽選の確率をプレイヤーの運を反映させるか"
+    },
+    {
+      "Field": "enableLuck04",
+      "Name": "運パラメータ有効",
+      "Description": "抽選の確率をプレイヤーの運を反映させるか"
+    },
+    {
+      "Field": "enableLuck05",
+      "Name": "運パラメータ有効",
+      "Description": "抽選の確率をプレイヤーの運を反映させるか"
+    },
+    {
+      "Field": "enableLuck06",
+      "Name": "運パラメータ有効",
+      "Description": "抽選の確率をプレイヤーの運を反映させるか"
+    },
+    {
+      "Field": "enableLuck07",
+      "Name": "運パラメータ有効",
+      "Description": "抽選の確率をプレイヤーの運を反映させるか"
+    },
+    {
+      "Field": "enableLuck08",
+      "Name": "運パラメータ有効",
+      "Description": "抽選の確率をプレイヤーの運を反映させるか"
+    },
+    {
+      "Field": "cumulateReset01",
+      "Name": "累積リセット",
+      "Description": "累積リセットするか"
+    },
+    {
+      "Field": "cumulateReset02",
+      "Name": "累積リセット",
+      "Description": "累積リセットするか"
+    },
+    {
+      "Field": "cumulateReset03",
+      "Name": "累積リセット",
+      "Description": "累積リセットするか"
+    },
+    {
+      "Field": "cumulateReset04",
+      "Name": "累積リセット",
+      "Description": "累積リセットするか"
+    },
+    {
+      "Field": "cumulateReset05",
+      "Name": "累積リセット",
+      "Description": "累積リセットするか"
+    },
+    {
+      "Field": "cumulateReset06",
+      "Name": "累積リセット",
+      "Description": "累積リセットするか"
+    },
+    {
+      "Field": "cumulateReset07",
+      "Name": "累積リセット",
+      "Description": "累積リセットするか"
+    },
+    {
+      "Field": "cumulateReset08",
+      "Name": "累積リセット",
+      "Description": "累積リセットするか"
+    },
+    {
+      "Field": "GameClearOffset",
+      "Name": "X週目以降オフセット",
+      "Description": "周回プレイ時のオフセット"
+    },
+    {
+      "Field": "canExecByFriendlyGhost",
+      "Name": "協力霊でも抽選するか",
+      "Description": "自身が協力霊の時でも抽選するか"
+    },
+    {
+      "Field": "canExecByHostileGhost",
+      "Name": "敵対霊でも抽選するか",
+      "Description": "自身が敵対霊の時でも抽選するか"
+    },
+    {
+      "Field": "PAD1",
+      "Name": "PAD1",
+      "Description": "PAD1"
+    },
+    {
+      "Field": "endPadding",
+      "Name": "endPadding",
+      "Description": ""
+    },
+    {
+      "Field": "midstPadding",
+      "Name": "midstPadding",
+      "Description": ""
+    },
+    {
+      "Field": "lotActionButtonTypeA_01",
+      "Name": "lotActionButtonTypeA_01",
+      "Description": ""
+    },
+    {
+      "Field": "lotActionButtonTypeA_02",
+      "Name": "lotActionButtonTypeA_02",
+      "Description": ""
+    },
+    {
+      "Field": "lotActionButtonTypeA_03",
+      "Name": "lotActionButtonTypeA_03",
+      "Description": ""
+    },
+    {
+      "Field": "lotActionButtonTypeA_04",
+      "Name": "lotActionButtonTypeA_04",
+      "Description": ""
+    },
+    {
+      "Field": "lotActionButtonTypeA_05",
+      "Name": "lotActionButtonTypeA_05",
+      "Description": ""
+    },
+    {
+      "Field": "lotActionButtonTypeA_06",
+      "Name": "lotActionButtonTypeA_06",
+      "Description": ""
+    },
+    {
+      "Field": "lotActionButtonTypeA_07",
+      "Name": "lotActionButtonTypeA_07",
+      "Description": ""
+    },
+    {
+      "Field": "lotActionButtonTypeA_08",
+      "Name": "lotActionButtonTypeA_08",
+      "Description": ""
+    },
+    {
+      "Field": "lotActionButtonTypeB_01",
+      "Name": "lotActionButtonTypeB_01",
+      "Description": ""
+    },
+    {
+      "Field": "lotActionButtonTypeB_02",
+      "Name": "lotActionButtonTypeB_02",
+      "Description": ""
+    },
+    {
+      "Field": "lotActionButtonTypeB_03",
+      "Name": "lotActionButtonTypeB_03",
+      "Description": ""
+    },
+    {
+      "Field": "lotActionButtonTypeB_04",
+      "Name": "lotActionButtonTypeB_04",
+      "Description": ""
+    },
+    {
+      "Field": "lotActionButtonTypeB_05",
+      "Name": "lotActionButtonTypeB_05",
+      "Description": ""
+    },
+    {
+      "Field": "lotActionButtonTypeB_06",
+      "Name": "lotActionButtonTypeB_06",
+      "Description": ""
+    },
+    {
+      "Field": "lotActionButtonTypeB_07",
+      "Name": "lotActionButtonTypeB_07",
+      "Description": ""
+    },
+    {
+      "Field": "lotActionButtonTypeB_08",
+      "Name": "lotActionButtonTypeB_08",
+      "Description": ""
+    },
+    {
+      "Field": "unk_16",
+      "Name": "unk_16",
+      "Description": ""
+    },
+    {
+      "Field": "unk_17",
+      "Name": "unk_17",
+      "Description": ""
+    }
+  ]
+}

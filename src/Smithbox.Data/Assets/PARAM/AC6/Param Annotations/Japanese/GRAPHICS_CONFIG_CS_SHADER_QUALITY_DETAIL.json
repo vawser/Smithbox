@@ -1,0 +1,28 @@
+{
+  "Param": "GRAPHICS_CONFIG_CS_SHADER_QUALITY_DETAIL",
+  "Type": "GRAPHICS_CONFIG_CS_SHADER_QUALITY_DETAIL",
+  "Name": "GRAPHICS_CONFIG_CS_SHADER_QUALITY_DETAIL",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "sssEnabled",
+      "Name": "SSS有効",
+      "Description": "SSS有効"
+    },
+    {
+      "Field": "tessellationEnabled",
+      "Name": "テッセレーション有効",
+      "Description": "テッセレーション有効"
+    },
+    {
+      "Field": "highPrecisionNormalEnabled",
+      "Name": "高精度ノーマル有効",
+      "Description": "高精度ノーマル有効(G-Bufferに格納する法線の精度の設定)"
+    },
+    {
+      "Field": "pad1",
+      "Name": "pad",
+      "Description": ""
+    }
+  ]
+}

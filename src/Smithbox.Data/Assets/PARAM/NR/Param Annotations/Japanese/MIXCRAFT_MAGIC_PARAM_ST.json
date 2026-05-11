@@ -1,0 +1,38 @@
+{
+  "Param": "MIXCRAFT_MAGIC_PARAM_ST",
+  "Type": "MIXCRAFT_MAGIC_PARAM_ST",
+  "Name": "MIXCRAFT_MAGIC_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "element1",
+      "Name": "element1",
+      "Description": ""
+    },
+    {
+      "Field": "element2",
+      "Name": "element2",
+      "Description": ""
+    },
+    {
+      "Field": "element3",
+      "Name": "element3",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_3",
+      "Name": "unknown_3",
+      "Description": ""
+    },
+    {
+      "Field": "magicId",
+      "Name": "magicId",
+      "Description": ""
+    },
+    {
+      "Field": "endPadding",
+      "Name": "endPadding",
+      "Description": ""
+    }
+  ]
+}

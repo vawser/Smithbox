@@ -1,0 +1,173 @@
+{
+  "Param": "BUDDY_PARAM_ST",
+  "Type": "BUDDY_PARAM_ST",
+  "Name": "BUDDY_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "NT版出力から外すか",
+      "Description": "○をつけたパラメータをNT版パッケージでは除外します"
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "パッケージ出力用リザーブ1",
+      "Description": "パッケージ出力用リザーブ1"
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "パッケージ出力用リザーブ2",
+      "Description": "パッケージ出力用リザーブ2"
+    },
+    {
+      "Field": "triggerSpEffectId",
+      "Name": "召喚特殊効果ID",
+      "Description": "召喚条件になる特殊効果IDを設定します "
+    },
+    {
+      "Field": "npcParamId",
+      "Name": "NPCパラメータID",
+      "Description": "召喚されるバディのNPCパラメータIDを設定します"
+    },
+    {
+      "Field": "npcThinkParamId",
+      "Name": "思考パラメータID",
+      "Description": "召喚されるバディのNPC思考パラメータIDを設定します"
+    },
+    {
+      "Field": "activeSpEffectId",
+      "Name": "activeSpEffectId",
+      "Description": ""
+    },
+    {
+      "Field": "inactiveSpEffectId",
+      "Name": "inactiveSpEffectId",
+      "Description": ""
+    },
+    {
+      "Field": "x_offset",
+      "Name": "X：配置座標オフセット[m]",
+      "Description": "バディを召喚ポイントから、X座標にオフセットする距離をメートル単位で設定します"
+    },
+    {
+      "Field": "z_offset",
+      "Name": "Z：配置座標オフセット[m]",
+      "Description": "バディを召喚ポイントから、Z座標にオフセットする距離をメートル単位で設定します"
+    },
+    {
+      "Field": "y_angle",
+      "Name": "Y：自分の配置角度[deg]",
+      "Description": "Y軸を中心に、自分を回転させる角度を設定します"
+    },
+    {
+      "Field": "appearOnAroundSekihi",
+      "Name": "石碑周辺から出現するか？",
+      "Description": "石碑周辺から出現するか？"
+    },
+    {
+      "Field": "disablePCTargetShare",
+      "Name": "PCとのターゲット共有をスキップするか？",
+      "Description": "PCとのターゲット共有をスキップするか？"
+    },
+    {
+      "Field": "pcFollowType",
+      "Name": "PC追従＆ワープタイプ ",
+      "Description": "PC追従＆ワープタイプ "
+    },
+    {
+      "Field": "Reserve",
+      "Name": "リザーブ",
+      "Description": "リザーブ"
+    },
+    {
+      "Field": "dopingSpEffect_lv0",
+      "Name": "+0時ドーピング特殊効果",
+      "Description": "+0時ドーピング特殊効果"
+    },
+    {
+      "Field": "dopingSpEffect_lv1",
+      "Name": "+1時ドーピング特殊効果",
+      "Description": "+0時ドーピング特殊効果"
+    },
+    {
+      "Field": "dopingSpEffect_lv2",
+      "Name": "+2時ドーピング特殊効果",
+      "Description": "+0時ドーピング特殊効果"
+    },
+    {
+      "Field": "dopingSpEffect_lv3",
+      "Name": "+3時ドーピング特殊効果",
+      "Description": "+0時ドーピング特殊効果"
+    },
+    {
+      "Field": "dopingSpEffect_lv4",
+      "Name": "+4時ドーピング特殊効果",
+      "Description": "+0時ドーピング特殊効果"
+    },
+    {
+      "Field": "dopingSpEffect_lv5",
+      "Name": "+5時ドーピング特殊効果",
+      "Description": "+0時ドーピング特殊効果"
+    },
+    {
+      "Field": "dopingSpEffect_lv6",
+      "Name": "+6時ドーピング特殊効果",
+      "Description": "+0時ドーピング特殊効果"
+    },
+    {
+      "Field": "dopingSpEffect_lv7",
+      "Name": "+7時ドーピング特殊効果",
+      "Description": "+0時ドーピング特殊効果"
+    },
+    {
+      "Field": "dopingSpEffect_lv8",
+      "Name": "+8時ドーピング特殊効果",
+      "Description": "+0時ドーピング特殊効果"
+    },
+    {
+      "Field": "dopingSpEffect_lv9",
+      "Name": "+9時ドーピング特殊効果",
+      "Description": "+0時ドーピング特殊効果"
+    },
+    {
+      "Field": "dopingSpEffect_lv10",
+      "Name": "+10時ドーピング特殊効果",
+      "Description": "+0時ドーピング特殊効果"
+    },
+    {
+      "Field": "npcPlayerInitParamId",
+      "Name": "アーキタイプ別初期パラメータID",
+      "Description": "アーキタイプ別初期パラメータID"
+    },
+    {
+      "Field": "generateAnimId",
+      "Name": "ジェネレートアニメID",
+      "Description": "ジェネレートアニメID"
+    },
+    {
+      "Field": "usageShortcutTextId",
+      "Name": "usageShortcutTextId",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_2",
+      "Name": "unknown_2",
+      "Description": ""
+    },
+    {
+      "Field": "iconId",
+      "Name": "iconId",
+      "Description": ""
+    },
+    {
+      "Field": "baseDopingSpEffectId",
+      "Name": "baseDopingSpEffectId",
+      "Description": ""
+    },
+    {
+      "Field": "padding",
+      "Name": "padding",
+      "Description": ""
+    }
+  ]
+}

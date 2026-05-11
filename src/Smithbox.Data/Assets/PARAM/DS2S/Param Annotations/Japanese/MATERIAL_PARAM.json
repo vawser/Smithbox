@@ -1,0 +1,23 @@
+{
+  "Param": "MATERIAL_PARAM",
+  "Type": "MATERIAL_PARAM",
+  "Name": "MATERIAL_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "isLiquid",
+      "Name": "液体か？",
+      "Description": ""
+    },
+    {
+      "Field": "isArrowPenetrate",
+      "Name": "矢が刺さるか？",
+      "Description": ""
+    },
+    {
+      "Field": "padding",
+      "Name": "予約",
+      "Description": ""
+    }
+  ]
+}

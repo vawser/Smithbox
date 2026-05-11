@@ -1,0 +1,43 @@
+{
+  "Param": "BONFIRE_WARP_SUB_CATEGORY_PARAM_ST",
+  "Type": "BONFIRE_WARP_SUB_CATEGORY_PARAM_ST",
+  "Name": "BONFIRE_WARP_SUB_CATEGORY_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "NT版出力から外すか",
+      "Description": "○をつけたパラメータをNT版パッケージでは除外します"
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "パッケージ出力用リザーブ1",
+      "Description": "パッケージ出力用リザーブ1"
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "パッケージ出力用リザーブ2",
+      "Description": "パッケージ出力用リザーブ2"
+    },
+    {
+      "Field": "textId",
+      "Name": "テキストID",
+      "Description": "サブカテゴリの表示名テキストID[MenuText]"
+    },
+    {
+      "Field": "tabId",
+      "Name": "篝火ワープタブID",
+      "Description": "篝火ワープタブID。このサブカテゴリが所属するタブのID"
+    },
+    {
+      "Field": "sortId",
+      "Name": "篝火ワープタブソートID",
+      "Description": "篝火ワープタブソートID。タブの中サブカテゴリの表示順"
+    },
+    {
+      "Field": "pad",
+      "Name": "pad",
+      "Description": ""
+    }
+  ]
+}

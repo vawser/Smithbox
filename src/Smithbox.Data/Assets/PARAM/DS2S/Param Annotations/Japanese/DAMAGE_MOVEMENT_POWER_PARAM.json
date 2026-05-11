@@ -1,0 +1,18 @@
+{
+  "Param": "DAMAGE_MOVEMENT_POWER_PARAM",
+  "Type": "DAMAGE_MOVEMENT_POWER_PARAM",
+  "Name": "DAMAGE_MOVEMENT_POWER_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "power",
+      "Name": "運動量[m/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "break_power",
+      "Name": "破壊時の運動量[m/sec]",
+      "Description": ""
+    }
+  ]
+}

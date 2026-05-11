@@ -1,0 +1,68 @@
+{
+  "Param": "RUNTIME_SOUND_EXPRESSION_PARAM_ST",
+  "Type": "RUNTIME_SOUND_EXPRESSION_PARAM_ST",
+  "Name": "RUNTIME_SOUND_EXPRESSION_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "Expression",
+      "Name": "括弧",
+      "Description": "括弧、または、かつ"
+    },
+    {
+      "Field": "RTPC_OnOff",
+      "Name": "RTPC計算",
+      "Description": "RTPC計算"
+    },
+    {
+      "Field": "dmy3",
+      "Name": "予約領域",
+      "Description": ""
+    },
+    {
+      "Field": "Eval01_Condition",
+      "Name": "条件判定",
+      "Description": "条件判定"
+    },
+    {
+      "Field": "Eval01_MinValue",
+      "Name": "最小値",
+      "Description": "最小値"
+    },
+    {
+      "Field": "Eval01_MaxValue",
+      "Name": "最大値",
+      "Description": "最大値"
+    },
+    {
+      "Field": "Eval01_Dmypoly_A",
+      "Name": "ダミポリID_A",
+      "Description": "ダミポリID_A"
+    },
+    {
+      "Field": "Eval01_Dmypoly_B",
+      "Name": "ダミポリID_B",
+      "Description": "ダミポリID_B"
+    },
+    {
+      "Field": "RTPC_MinValue",
+      "Name": "RTPC最小値",
+      "Description": "RTPC最小値、RTPC最小値からRTPC最大値までの値が０～１００に丸められます。"
+    },
+    {
+      "Field": "RTPC_MaxValue",
+      "Name": "RTPC最大値",
+      "Description": "RTPC最大値、RTPC最小値からRTPC最大値までの値が０～１００に丸められます。"
+    },
+    {
+      "Field": "ConditionID",
+      "Name": "判定用条件ID",
+      "Description": "指定条件の成立状態を取る判定条件ID"
+    },
+    {
+      "Field": "dmy4",
+      "Name": "予約領域",
+      "Description": ""
+    }
+  ]
+}

@@ -28,7 +28,7 @@ public class QuickScript
 
     public static void ApplyQuickScript(ProjectEntry curProject)
     {
-        LoadGparams(curProject);
+        GenerateAnnotations(curProject);
     }
 
     public static void LoadGparams(ProjectEntry curProject)
@@ -167,6 +167,8 @@ public class QuickScript
 
     public static void GenerateAnnotations(ProjectEntry curProject)
     {
+        List<string> TypesConsumed = new();
+
         var type = ProjectUtils.GetGameDirectory(curProject.Descriptor.ProjectType);
 
         var outputFolder = $@"C:\Users\benja\Programming\Reference\Annotations\{type}";
@@ -192,22 +194,31 @@ public class QuickScript
             var def = entry.Value.AppliedParamdef;
             var meta = paramData.GetParamMeta(entry.Value.AppliedParamdef);
 
-            var outputPath = Path.Combine(outputFolder, $"{key}.json");
+            if (TypesConsumed.Contains(def.ParamType))
+                continue;
+
+            TypesConsumed.Add(def.ParamType);
+
+            var outputPath = Path.Combine(outputFolder, $"{def.ParamType}.json");
 
             var annotationEntry = new ParamAnnotationEntry();
 
-            annotationEntry.Param = entry.Key;
+            annotationEntry.Param = def.ParamType;
             annotationEntry.Type = def.ParamType;
-            annotationEntry.Name = entry.Key;
+            annotationEntry.Name = def.ParamType;
             annotationEntry.Description = "";
 
             foreach (var field in def.Fields)
             {
                 var currentEntry = new ParamAnnotationFieldEntry();
 
+                var desc = "";
+                if(field.Description != null)
+                    desc = field.Description;
+
                 currentEntry.Field = field.InternalName;
                 currentEntry.Name = field.DisplayName;
-                currentEntry.Description = "";
+                currentEntry.Description = desc;
 
                 annotationEntry.Fields.Add(currentEntry);
             }

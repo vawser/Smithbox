@@ -1,0 +1,43 @@
+{
+  "Param": "PERMANENT_BUFF_PARAM_ST",
+  "Type": "PERMANENT_BUFF_PARAM_ST",
+  "Name": "PERMANENT_BUFF_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "spEffectId",
+      "Name": "spEffectId",
+      "Description": ""
+    },
+    {
+      "Field": "iconId",
+      "Name": "iconId",
+      "Description": ""
+    },
+    {
+      "Field": "secondaryIconId",
+      "Name": "secondaryIconId",
+      "Description": ""
+    },
+    {
+      "Field": "displayNumericValue",
+      "Name": "displayNumericValue",
+      "Description": ""
+    },
+    {
+      "Field": "displayPercentageSymbol",
+      "Name": "displayPercentageSymbol",
+      "Description": ""
+    },
+    {
+      "Field": "numericValue",
+      "Name": "numericValue",
+      "Description": ""
+    },
+    {
+      "Field": "graceSpEffectId",
+      "Name": "graceSpEffectId",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "Param": "MAP_AREA_PARAM_ST",
+  "Type": "MAP_AREA_PARAM_ST",
+  "Name": "MAP_AREA_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "NT版出力から外すか",
+      "Description": "NT版から除外するか、除外するものに○をつける"
+    },
+    {
+      "Field": "disableParam_Product",
+      "Name": "製品版出力から外すか",
+      "Description": "製品版から除外するか、除外するものに○をつける"
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "パッケージ出力用リザーブ1",
+      "Description": "パッケージ出力用リザーブ1"
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "パッケージ出力用リザーブ2",
+      "Description": "パッケージ出力用リザーブ2"
+    },
+    {
+      "Field": "EnvMapCap00",
+      "Name": "朝",
+      "Description": ""
+    },
+    {
+      "Field": "EnvMapCap01",
+      "Name": "昼A",
+      "Description": ""
+    },
+    {
+      "Field": "EnvMapCap02",
+      "Name": "昼B",
+      "Description": ""
+    },
+    {
+      "Field": "EnvMapCap03",
+      "Name": "夕",
+      "Description": ""
+    },
+    {
+      "Field": "EnvMapCap04",
+      "Name": "夜",
+      "Description": ""
+    },
+    {
+      "Field": "EnvMapCap05",
+      "Name": "深夜A",
+      "Description": ""
+    },
+    {
+      "Field": "EnvMapCap06",
+      "Name": "深夜B",
+      "Description": ""
+    },
+    {
+      "Field": "padding_1",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "Reserve_0",
+      "Name": "リザーブ",
+      "Description": "リザーブ"
+    },
+    {
+      "Field": "SkydomeParam00",
+      "Name": "朝",
+      "Description": ""
+    },
+    {
+      "Field": "SkydomeParam01",
+      "Name": "昼A",
+      "Description": ""
+    },
+    {
+      "Field": "SkydomeParam02",
+      "Name": "昼B",
+      "Description": ""
+    },
+    {
+      "Field": "SkydomeParam03",
+      "Name": "夕",
+      "Description": ""
+    },
+    {
+      "Field": "SkydomeParam04",
+      "Name": "夜",
+      "Description": ""
+    },
+    {
+      "Field": "SkydomeParam05",
+      "Name": "深夜A",
+      "Description": ""
+    },
+    {
+      "Field": "SkydomeParam06",
+      "Name": "深夜B",
+      "Description": ""
+    },
+    {
+      "Field": "Reserve_1",
+      "Name": "リザーブ",
+      "Description": "リザーブ"
+    }
+  ]
+}

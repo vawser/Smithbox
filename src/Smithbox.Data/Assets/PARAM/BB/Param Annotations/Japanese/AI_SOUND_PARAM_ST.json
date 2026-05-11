@@ -1,0 +1,48 @@
+{
+  "Param": "AI_SOUND_PARAM_ST",
+  "Type": "AI_SOUND_PARAM_ST",
+  "Name": "AI_SOUND_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "radius",
+      "Name": "音半径[m]",
+      "Description": "AI音の半径"
+    },
+    {
+      "Field": "lifeFrame",
+      "Name": "消滅時間[秒]",
+      "Description": "AI音が残る時間"
+    },
+    {
+      "Field": "bSpEffectEnable",
+      "Name": "特殊効果からの影響を受けるか",
+      "Description": "特殊効果の”音半径倍率”の影響を受けるかどうか"
+    },
+    {
+      "Field": "type",
+      "Name": "種別",
+      "Description": "AI音の種別"
+    },
+    {
+      "Field": "fakeTargetType",
+      "Name": "偽ターゲット種類",
+      "Description": "偽ターゲットの種類"
+    },
+    {
+      "Field": "interestCategory",
+      "Name": "興味音カテゴリ値",
+      "Description": "興味音カテゴリ値"
+    },
+    {
+      "Field": "useHitDamageTeam",
+      "Name": "可聴条件を攻撃判定にするか",
+      "Description": "AI音が聞こえる対象を攻撃パラメータの対象に合わせる"
+    },
+    {
+      "Field": "pad1",
+      "Name": "パッド",
+      "Description": "pad"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "Param": "ZOOM_BLUR_ST",
+  "Type": "ZOOM_BLUR_ST",
+  "Name": "ZOOM_BLUR_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "Alpha",
+      "Name": "アルファ",
+      "Description": "ズームブラーのかかる強さ"
+    },
+    {
+      "Field": "FixCenter",
+      "Name": "中央固定",
+      "Description": "キャラの位置中心ではなく画面の中央に対してブラーをかけたい場合は１"
+    },
+    {
+      "Field": "flag_reserve",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "reserve0",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "Offset",
+      "Name": "オフセット",
+      "Description": "ズームブラーのずれのオフセット"
+    },
+    {
+      "Field": "CenterThin",
+      "Name": "中央の薄め値",
+      "Description": "-１で中央付近はかからない、１で中央もブラーします"
+    },
+    {
+      "Field": "reserve1",
+      "Name": "ダミー",
+      "Description": ""
+    }
+  ]
+}

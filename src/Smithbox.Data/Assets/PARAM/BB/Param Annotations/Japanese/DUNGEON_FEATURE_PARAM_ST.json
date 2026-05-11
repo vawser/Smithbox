@@ -1,0 +1,68 @@
+{
+  "Param": "DUNGEON_FEATURE_PARAM_ST",
+  "Type": "DUNGEON_FEATURE_PARAM_ST",
+  "Name": "DUNGEON_FEATURE_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "featureNameId",
+      "Name": "特徴名",
+      "Description": "特徴名ID"
+    },
+    {
+      "Field": "subFeatureGroupId",
+      "Name": "サブ特徴グループID",
+      "Description": "サブ特徴グループID"
+    },
+    {
+      "Field": "eventflagId",
+      "Name": "イベントフラグID下２桁",
+      "Description": "イベントフラグID下２桁"
+    },
+    {
+      "Field": "dungeonNamePriority",
+      "Name": "ダンジョン名優先度",
+      "Description": "ダンジョン名優先度"
+    },
+    {
+      "Field": "releaseFlagIdOffset",
+      "Name": "解禁イベントフラグオフセットID",
+      "Description": "解禁イベントフラグオフセットID"
+    },
+    {
+      "Field": "npcParamIdOffset",
+      "Name": "NPCパラオフセット値",
+      "Description": "NPCパラオフセット値"
+    },
+    {
+      "Field": "itemLotParamIdOffset",
+      "Name": "アイテム抽選IDオフセット値",
+      "Description": "アイテム抽選IDオフセット値"
+    },
+    {
+      "Field": "eneSpeffectId",
+      "Name": "敵全体特殊効果ID",
+      "Description": "敵全体特殊効果ID(-1:なし)"
+    },
+    {
+      "Field": "gemDropCorrectParamId",
+      "Name": "魔石ドロップ補正パラメータID",
+      "Description": "魔石ドロップ補正パラメータID(-1:なし)"
+    },
+    {
+      "Field": "gemGenParamIdOffset",
+      "Name": "魔石生成IDオフセット値",
+      "Description": "魔石生成IDオフセット値"
+    },
+    {
+      "Field": "dungeonNameModifierId",
+      "Name": "ダンジョン名修飾語ID",
+      "Description": "ダンジョン名修飾語ID(-1:なし)"
+    },
+    {
+      "Field": "dungeonShortNameId",
+      "Name": "ダンジョン短縮名ID",
+      "Description": "ダンジョン短縮名ID(-1:なし)"
+    }
+  ]
+}

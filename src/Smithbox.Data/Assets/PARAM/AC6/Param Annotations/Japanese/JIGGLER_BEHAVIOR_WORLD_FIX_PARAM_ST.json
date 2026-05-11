@@ -1,0 +1,18 @@
+{
+  "Param": "JIGGLER_BEHAVIOR_WORLD_FIX_PARAM_ST",
+  "Type": "JIGGLER_BEHAVIOR_WORLD_FIX_PARAM_ST",
+  "Name": "JIGGLER_BEHAVIOR_WORLD_FIX_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "rotRate",
+      "Name": "固定する割合",
+      "Description": "ワールドに対して固定する割合"
+    },
+    {
+      "Field": "pad_end",
+      "Name": "パディング",
+      "Description": ""
+    }
+  ]
+}

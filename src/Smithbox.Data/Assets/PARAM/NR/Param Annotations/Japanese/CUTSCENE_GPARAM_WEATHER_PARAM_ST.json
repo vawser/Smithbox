@@ -1,0 +1,283 @@
+{
+  "Param": "CUTSCENE_GPARAM_WEATHER_PARAM_ST",
+  "Type": "CUTSCENE_GPARAM_WEATHER_PARAM_ST",
+  "Name": "CUTSCENE_GPARAM_WEATHER_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "NT版出力から外すか",
+      "Description": "○をつけたパラメータをNT版パッケージでは除外します"
+    },
+    {
+      "Field": "disableParam_Debug",
+      "Name": "デバッグパラメータか",
+      "Description": "○をつけたパラメータは全パッケージから除外します（デバッグ用なので）"
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "パッケージ出力用リザーブ1",
+      "Description": "パッケージ出力用リザーブ1"
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "パッケージ出力用リザーブ2",
+      "Description": "パッケージ出力用リザーブ2"
+    },
+    {
+      "Field": "DstWeather_Sunny",
+      "Name": "晴れ",
+      "Description": "晴れ"
+    },
+    {
+      "Field": "DstWeather_ClearSky",
+      "Name": "快晴",
+      "Description": "快晴"
+    },
+    {
+      "Field": "DstWeather_WeakCloudy",
+      "Name": "薄曇り",
+      "Description": "薄曇り"
+    },
+    {
+      "Field": "DstWeather_Cloud",
+      "Name": "曇り",
+      "Description": "曇り"
+    },
+    {
+      "Field": "DstWeather_Rain",
+      "Name": "雨",
+      "Description": "雨"
+    },
+    {
+      "Field": "DstWeather_HeavyRain",
+      "Name": "豪雨",
+      "Description": "豪雨"
+    },
+    {
+      "Field": "DstWeather_Storm",
+      "Name": "嵐",
+      "Description": "嵐"
+    },
+    {
+      "Field": "DstWeather_StormForBattle",
+      "Name": "嵐（守護者の末裔との戦闘用）",
+      "Description": "嵐（守護者の末裔との戦闘用）"
+    },
+    {
+      "Field": "DstWeather_Snow",
+      "Name": "雪",
+      "Description": "雪"
+    },
+    {
+      "Field": "DstWeather_HeavySnow",
+      "Name": "大雪",
+      "Description": "大雪"
+    },
+    {
+      "Field": "DstWeather_Fog",
+      "Name": "霧",
+      "Description": "霧"
+    },
+    {
+      "Field": "DstWeather_HeavyFog",
+      "Name": "濃霧",
+      "Description": "濃霧"
+    },
+    {
+      "Field": "DstWeather_SandStorm",
+      "Name": "砂嵐",
+      "Description": "砂嵐"
+    },
+    {
+      "Field": "DstWeather_HeavyFogRain",
+      "Name": "濃霧（雨）",
+      "Description": "濃霧（雨）"
+    },
+    {
+      "Field": "PostPlayIngameWeather",
+      "Name": "再生終了時のインゲーム天候指定(未使用、無効)",
+      "Description": "再生終了時のインゲーム天候指定(空白または「無効」の場合は何も行われない。)"
+    },
+    {
+      "Field": "IndoorOutdoorType",
+      "Name": "屋内屋外指定",
+      "Description": "屋内にすると「天候パラメータ.xlsm」の「天候SfxId(屋外)」と「風SfxId(屋外)」で指定されたSFXがカットシーン内で無効になります。"
+    },
+    {
+      "Field": "TakeOverDstWeather_Sunny",
+      "Name": "インゲームの天候SFX引き継ぐか？_晴れ",
+      "Description": "インゲームの天候SFX引き継ぐか？_晴れ"
+    },
+    {
+      "Field": "TakeOverDstWeather_ClearSky",
+      "Name": "インゲームの天候SFX引き継ぐか？_快晴",
+      "Description": "インゲームの天候SFX引き継ぐか？_快晴"
+    },
+    {
+      "Field": "TakeOverDstWeather_WeakCloudy",
+      "Name": "インゲームの天候SFX引き継ぐか？_薄曇り",
+      "Description": "インゲームの天候SFX引き継ぐか？_薄曇り"
+    },
+    {
+      "Field": "TakeOverDstWeather_Cloud",
+      "Name": "インゲームの天候SFX引き継ぐか？_曇り",
+      "Description": "インゲームの天候SFX引き継ぐか？_曇り"
+    },
+    {
+      "Field": "TakeOverDstWeather_Rain",
+      "Name": "インゲームの天候SFX引き継ぐか？_雨",
+      "Description": "インゲームの天候SFX引き継ぐか？_雨"
+    },
+    {
+      "Field": "TakeOverDstWeather_HeavyRain",
+      "Name": "インゲームの天候SFX引き継ぐか？_豪雨",
+      "Description": "インゲームの天候SFX引き継ぐか？_豪雨"
+    },
+    {
+      "Field": "TakeOverDstWeather_Storm",
+      "Name": "インゲームの天候SFX引き継ぐか？_嵐",
+      "Description": "インゲームの天候SFX引き継ぐか？_嵐"
+    },
+    {
+      "Field": "TakeOverDstWeather_StormForBattle",
+      "Name": "インゲームの天候SFX引き継ぐか？_嵐（守護者の末裔との戦闘用）",
+      "Description": "インゲームの天候SFX引き継ぐか？_嵐（守護者の末裔との戦闘用）"
+    },
+    {
+      "Field": "TakeOverDstWeather_Snow",
+      "Name": "インゲームの天候SFX引き継ぐか？_雪",
+      "Description": "インゲームの天候SFX引き継ぐか？_雪"
+    },
+    {
+      "Field": "TakeOverDstWeather_HeavySnow",
+      "Name": "インゲームの天候SFX引き継ぐか？_大雪",
+      "Description": "インゲームの天候SFX引き継ぐか？_大雪"
+    },
+    {
+      "Field": "TakeOverDstWeather_Fog",
+      "Name": "インゲームの天候SFX引き継ぐか？_霧",
+      "Description": "インゲームの天候SFX引き継ぐか？_霧"
+    },
+    {
+      "Field": "TakeOverDstWeather_HeavyFog",
+      "Name": "インゲームの天候SFX引き継ぐか？_濃霧",
+      "Description": "インゲームの天候SFX引き継ぐか？_濃霧"
+    },
+    {
+      "Field": "TakeOverDstWeather_SandStorm",
+      "Name": "インゲームの天候SFX引き継ぐか？_砂嵐",
+      "Description": "インゲームの天候SFX引き継ぐか？_砂嵐"
+    },
+    {
+      "Field": "TakeOverDstWeather_HeavyFogRain",
+      "Name": "インゲームの天候SFX引き継ぐか？_濃霧（雨）",
+      "Description": "インゲームの天候SFX引き継ぐか？_濃霧（雨）"
+    },
+    {
+      "Field": "reserved",
+      "Name": "reserved",
+      "Description": "reserved"
+    },
+    {
+      "Field": "DstWeather_Snowstorm",
+      "Name": "吹雪",
+      "Description": "吹雪"
+    },
+    {
+      "Field": "DstWeather_LightningStorm",
+      "Name": "嵐（雷）",
+      "Description": "予備天候2"
+    },
+    {
+      "Field": "DstWeather_Reserved3",
+      "Name": "雪特殊(予備3)",
+      "Description": "予備天候3"
+    },
+    {
+      "Field": "DstWeather_Reserved4",
+      "Name": "予備天候4",
+      "Description": "予備天候4"
+    },
+    {
+      "Field": "DstWeather_Reserved5",
+      "Name": "予備天候5",
+      "Description": "予備天候5"
+    },
+    {
+      "Field": "DstWeather_Reserved6",
+      "Name": "予備天候6",
+      "Description": "予備天候6"
+    },
+    {
+      "Field": "DstWeather_Reserved7",
+      "Name": "予備天候7",
+      "Description": "予備天候7"
+    },
+    {
+      "Field": "DstWeather_Reserved8",
+      "Name": "予備天候8",
+      "Description": "予備天候8"
+    },
+    {
+      "Field": "TakeOverDstWeather_Snowstorm",
+      "Name": "インゲームの天候SFX引き継ぐか？_吹雪",
+      "Description": "インゲームの天候SFX引き継ぐか？_吹雪"
+    },
+    {
+      "Field": "TakeOverDstWeather_LightningStorm",
+      "Name": "インゲームの天候SFX引き継ぐか？_嵐（雷）",
+      "Description": "インゲームの天候SFX引き継ぐか？_嵐（雷）"
+    },
+    {
+      "Field": "TakeOverDstWeather_Reserved3",
+      "Name": "インゲームの天候SFX引き継ぐか？_雪特殊(予備3)",
+      "Description": "インゲームの天候SFX引き継ぐか？_予備天候3"
+    },
+    {
+      "Field": "TakeOverDstWeather_Reserved4",
+      "Name": "インゲームの天候SFX引き継ぐか？_予備天候4",
+      "Description": "インゲームの天候SFX引き継ぐか？_予備天候4"
+    },
+    {
+      "Field": "TakeOverDstWeather_Reserved5",
+      "Name": "インゲームの天候SFX引き継ぐか？_予備天候5",
+      "Description": "インゲームの天候SFX引き継ぐか？_予備天候5"
+    },
+    {
+      "Field": "TakeOverDstWeather_Reserved6",
+      "Name": "インゲームの天候SFX引き継ぐか？_予備天候6",
+      "Description": "インゲームの天候SFX引き継ぐか？_予備天候6"
+    },
+    {
+      "Field": "TakeOverDstWeather_Reserved7",
+      "Name": "インゲームの天候SFX引き継ぐか？_予備天候7",
+      "Description": "インゲームの天候SFX引き継ぐか？_予備天候7"
+    },
+    {
+      "Field": "TakeOverDstWeather_Reserved8",
+      "Name": "インゲームの天候SFX引き継ぐか？_予備天候8",
+      "Description": "インゲームの天候SFX引き継ぐか？_予備天候8"
+    },
+    {
+      "Field": "IsEnableApplyMapGdRegionIdForGparam",
+      "Name": "天候GparamにMapGD地方IDを適用するか？",
+      "Description": "カットシーン天候Gparamにインゲーム同様MapGD地方IDによる変化を適用するか？(【GR】SEQ30194)"
+    },
+    {
+      "Field": "reserved2",
+      "Name": "reserved1",
+      "Description": "reserved1 ver4->5 64->96へ増量"
+    },
+    {
+      "Field": "OverrideMapGdRegionId",
+      "Name": "天候GparamMapGD用地方ID上書き",
+      "Description": "カットシーン天候Gparamに使用されるIDを上書きする(-1：上書きなし。カットシーン再生時のMapGD地方IDが使用される)。「天候GparamにMapGD地方IDを適用するか？」が×の場合は参照されない"
+    },
+    {
+      "Field": "reserved1",
+      "Name": "reserved1",
+      "Description": "reserved1 ver4->5 64->96へ増量"
+    }
+  ]
+}

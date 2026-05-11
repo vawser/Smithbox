@@ -1,0 +1,23 @@
+{
+  "Param": "EMBLEM_PIECE_SPEC_ST",
+  "Type": "EMBLEM_PIECE_SPEC_ST",
+  "Name": "EMBLEM_PIECE_SPEC_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "PieceID",
+      "Name": "ピースID",
+      "Description": "ピースの識別ID。テクスチャのファイル名 MENU_EmblemPiece_xxxxxxxx に使用"
+    },
+    {
+      "Field": "CategoryID",
+      "Name": "カテゴリID",
+      "Description": "メニューで表示するカテゴリ"
+    },
+    {
+      "Field": "reserved_",
+      "Name": "reserved_[13]",
+      "Description": ""
+    }
+  ]
+}

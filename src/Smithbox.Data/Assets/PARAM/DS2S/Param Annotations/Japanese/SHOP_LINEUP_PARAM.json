@@ -1,0 +1,58 @@
+{
+  "Param": "SHOP_LINEUP_PARAM",
+  "Type": "SHOP_LINEUP_PARAM",
+  "Name": "SHOP_LINEUP_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "saleItem",
+      "Name": "販売アイテムID",
+      "Description": ""
+    },
+    {
+      "Field": "price",
+      "Name": "販売価格",
+      "Description": ""
+    },
+    {
+      "Field": "saleFlag",
+      "Name": "販売開始フラグ",
+      "Description": ""
+    },
+    {
+      "Field": "saleEndFlag",
+      "Name": "販売終了フラグ",
+      "Description": ""
+    },
+    {
+      "Field": "saleFlagItem",
+      "Name": "販売開始条件アイテム",
+      "Description": ""
+    },
+    {
+      "Field": "saleEndFlagItem",
+      "Name": "販売終了条件アイテム",
+      "Description": ""
+    },
+    {
+      "Field": "displayOrder",
+      "Name": "陳列順序",
+      "Description": ""
+    },
+    {
+      "Field": "priceRate",
+      "Name": "価格倍率",
+      "Description": ""
+    },
+    {
+      "Field": "unitSales",
+      "Name": "販売個数",
+      "Description": ""
+    },
+    {
+      "Field": "padding",
+      "Name": "予約",
+      "Description": ""
+    }
+  ]
+}

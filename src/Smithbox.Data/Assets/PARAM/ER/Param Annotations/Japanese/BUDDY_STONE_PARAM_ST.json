@@ -1,0 +1,88 @@
+{
+  "Param": "BUDDY_STONE_PARAM_ST",
+  "Type": "BUDDY_STONE_PARAM_ST",
+  "Name": "BUDDY_STONE_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "NT版出力から外すか",
+      "Description": "○をつけたパラメータをNT版パッケージでは除外します"
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "パッケージ出力用リザーブ1",
+      "Description": "パッケージ出力用リザーブ1"
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "パッケージ出力用リザーブ2",
+      "Description": "パッケージ出力用リザーブ2"
+    },
+    {
+      "Field": "talkChrEntityId",
+      "Name": "会話キャラエンティティID",
+      "Description": "会話から参照する時の外部キーとして使う。"
+    },
+    {
+      "Field": "eliminateTargetEntityId",
+      "Name": "撃破対象リストエンティティID",
+      "Description": "この石碑から召喚した際に、バディの撃破対象になるキャラ/グループのエンティティID"
+    },
+    {
+      "Field": "summonedEventFlagId",
+      "Name": "召喚済みイベントフラグID",
+      "Description": "一度石碑から召喚した際に立つフラグID。このフラグが立っていると、石碑が召喚不可になる。"
+    },
+    {
+      "Field": "isSpecial",
+      "Name": "スペシャルか",
+      "Description": "石碑がSP石碑か汎用石碑か？を区別するbool。"
+    },
+    {
+      "Field": "pad1",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "pad2",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "buddyId",
+      "Name": "バディID",
+      "Description": "バディパラメータのID。「スペシャルか」が○の場合、このバディIDが召喚される。"
+    },
+    {
+      "Field": "dopingSpEffectId",
+      "Name": "ドーピング用特殊効果ID",
+      "Description": "バディ召喚時に、バディにかかる特殊効果ID。"
+    },
+    {
+      "Field": "activateRange",
+      "Name": "バディ起動距離[m]",
+      "Description": "撃破対象のキャラがこの範囲に1体でも居れば、その石碑でバディ召喚が可能になる"
+    },
+    {
+      "Field": "overwriteReturnRange",
+      "Name": "バディ帰巣距離上書き[m]",
+      "Description": "バディの帰巣距離を上書きできる"
+    },
+    {
+      "Field": "overwriteActivateRegionEntityId",
+      "Name": "起動範囲上書き領域エンティティID",
+      "Description": "バディを召喚できる範囲を、指定エンティティIDの領域で上書きできる"
+    },
+    {
+      "Field": "warnRegionEntityId",
+      "Name": "警告範囲上書き領域エンティティID",
+      "Description": "警告領域エンティティID"
+    },
+    {
+      "Field": "pad3",
+      "Name": "パディング",
+      "Description": ""
+    }
+  ]
+}

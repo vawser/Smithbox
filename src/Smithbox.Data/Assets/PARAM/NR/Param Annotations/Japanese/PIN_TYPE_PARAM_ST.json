@@ -1,0 +1,68 @@
+{
+  "Param": "PIN_TYPE_PARAM_ST",
+  "Type": "PIN_TYPE_PARAM_ST",
+  "Name": "PIN_TYPE_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "unknown_0a",
+      "Name": "unknown_0a",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0b",
+      "Name": "unknown_0b",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0c",
+      "Name": "unknown_0c",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0d",
+      "Name": "unknown_0d",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_1",
+      "Name": "unknown_1",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_2",
+      "Name": "unknown_2",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_3",
+      "Name": "unknown_3",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_4",
+      "Name": "unknown_4",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_5",
+      "Name": "unknown_5",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_6",
+      "Name": "unknown_6",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_7",
+      "Name": "unknown_7",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_8",
+      "Name": "unknown_8",
+      "Description": ""
+    }
+  ]
+}

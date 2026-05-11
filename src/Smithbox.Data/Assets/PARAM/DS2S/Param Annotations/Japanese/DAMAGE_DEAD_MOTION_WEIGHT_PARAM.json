@@ -1,0 +1,48 @@
+{
+  "Param": "DAMAGE_DEAD_MOTION_WEIGHT_PARAM",
+  "Type": "DAMAGE_DEAD_MOTION_WEIGHT_PARAM",
+  "Name": "DAMAGE_DEAD_MOTION_WEIGHT_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "noneSize",
+      "Name": "無",
+      "Description": "無"
+    },
+    {
+      "Field": "superSmallSize",
+      "Name": "極小",
+      "Description": "極小"
+    },
+    {
+      "Field": "smallSize",
+      "Name": "小",
+      "Description": "小"
+    },
+    {
+      "Field": "normalSize",
+      "Name": "中",
+      "Description": "中"
+    },
+    {
+      "Field": "largeSize",
+      "Name": "大",
+      "Description": "大"
+    },
+    {
+      "Field": "superLargeSize",
+      "Name": "特大",
+      "Description": "特大"
+    },
+    {
+      "Field": "hyperLargeSize",
+      "Name": "超特大",
+      "Description": "超特大"
+    },
+    {
+      "Field": "ultraLargeSize",
+      "Name": "超超特大",
+      "Description": "超超特大"
+    }
+  ]
+}

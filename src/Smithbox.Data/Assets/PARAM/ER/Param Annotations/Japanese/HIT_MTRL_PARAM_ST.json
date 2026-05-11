@@ -1,0 +1,163 @@
+{
+  "Param": "HIT_MTRL_PARAM_ST",
+  "Type": "HIT_MTRL_PARAM_ST",
+  "Name": "HIT_MTRL_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "aiVolumeRate",
+      "Name": "音半径倍率",
+      "Description": "1倍のときは普通。0にすると音半径が0になる（SEとSFXは無関係のゲーム的なパラメータ）"
+    },
+    {
+      "Field": "spEffectIdOnHit0",
+      "Name": "ヒットマテリアルを踏んだ時にかかる特殊効果0",
+      "Description": "キャラがヒットマテリアルを踏んだ時に、設定した特殊効果0が発揮される"
+    },
+    {
+      "Field": "spEffectIdOnHit1",
+      "Name": "ヒットマテリアルを踏んだ時にかかる特殊効果1",
+      "Description": "キャラがヒットマテリアルを踏んだ時に、設定した特殊効果1が発揮される"
+    },
+    {
+      "Field": "footEffectHeightType",
+      "Name": "フットエフェクトの高さタイプ",
+      "Description": "フットエフェクトを発生させる高さ"
+    },
+    {
+      "Field": "footEffectDirType",
+      "Name": "フットエフェクトの向きタイプ",
+      "Description": "フットエフェクトの発生向き"
+    },
+    {
+      "Field": "floorHeightType",
+      "Name": "地面の高さタイプ",
+      "Description": "水面などアイテムを浮かせるとき用"
+    },
+    {
+      "Field": "disableFallDamage",
+      "Name": "落下ダメージ無効か",
+      "Description": "落下ダメージを受けない床の場合に 1 を設定する"
+    },
+    {
+      "Field": "isHardnessForSoundReverb",
+      "Name": "サウンド反響用硬い材質か？",
+      "Description": "サウンド反響用 硬い材質か？(0:やわらかい,1:かたい)"
+    },
+    {
+      "Field": "hardnessType",
+      "Name": "材質の固さタイプ",
+      "Description": "材質の固さ。剛体のソフトコンタクト処理に使用。"
+    },
+    {
+      "Field": "pad2",
+      "Name": "pad",
+      "Description": "pad"
+    },
+    {
+      "Field": "spEffectIdOnHit0_ClearCount_2",
+      "Name": "ヒットマテリアルを踏んだ時にかかる特殊効果0\u30002周目",
+      "Description": "ヒットマテリアルを踏んだ時にかかる特殊効果0\u30002周目"
+    },
+    {
+      "Field": "spEffectIdOnHit0_ClearCount_3",
+      "Name": "ヒットマテリアルを踏んだ時にかかる特殊効果0\u30003周目",
+      "Description": "ヒットマテリアルを踏んだ時にかかる特殊効果0\u30003周目"
+    },
+    {
+      "Field": "spEffectIdOnHit0_ClearCount_4",
+      "Name": "ヒットマテリアルを踏んだ時にかかる特殊効果0\u30004周目",
+      "Description": "ヒットマテリアルを踏んだ時にかかる特殊効果0\u30004周目"
+    },
+    {
+      "Field": "spEffectIdOnHit0_ClearCount_5",
+      "Name": "ヒットマテリアルを踏んだ時にかかる特殊効果0\u30005周目",
+      "Description": "ヒットマテリアルを踏んだ時にかかる特殊効果0\u30005周目"
+    },
+    {
+      "Field": "spEffectIdOnHit0_ClearCount_6",
+      "Name": "ヒットマテリアルを踏んだ時にかかる特殊効果0\u30006周目",
+      "Description": "ヒットマテリアルを踏んだ時にかかる特殊効果0\u30006周目"
+    },
+    {
+      "Field": "spEffectIdOnHit0_ClearCount_7",
+      "Name": "ヒットマテリアルを踏んだ時にかかる特殊効果0\u30007周目",
+      "Description": "ヒットマテリアルを踏んだ時にかかる特殊効果0\u30007周目"
+    },
+    {
+      "Field": "spEffectIdOnHit0_ClearCount_8",
+      "Name": "ヒットマテリアルを踏んだ時にかかる特殊効果0\u30008周目",
+      "Description": "ヒットマテリアルを踏んだ時にかかる特殊効果0\u30008周目"
+    },
+    {
+      "Field": "spEffectIdOnHit1_ClearCount_2",
+      "Name": "ヒットマテリアルを踏んだ時にかかる特殊効果1\u30002周目",
+      "Description": "ヒットマテリアルを踏んだ時にかかる特殊効果1\u30002周目"
+    },
+    {
+      "Field": "spEffectIdOnHit1_ClearCount_3",
+      "Name": "ヒットマテリアルを踏んだ時にかかる特殊効果1\u30003周目",
+      "Description": "ヒットマテリアルを踏んだ時にかかる特殊効果1\u30003周目"
+    },
+    {
+      "Field": "spEffectIdOnHit1_ClearCount_4",
+      "Name": "ヒットマテリアルを踏んだ時にかかる特殊効果1\u30004周目",
+      "Description": "ヒットマテリアルを踏んだ時にかかる特殊効果1\u30004周目"
+    },
+    {
+      "Field": "spEffectIdOnHit1_ClearCount_5",
+      "Name": "ヒットマテリアルを踏んだ時にかかる特殊効果1\u30005周目",
+      "Description": "ヒットマテリアルを踏んだ時にかかる特殊効果1\u30005周目"
+    },
+    {
+      "Field": "spEffectIdOnHit1_ClearCount_6",
+      "Name": "ヒットマテリアルを踏んだ時にかかる特殊効果1\u30006周目",
+      "Description": "ヒットマテリアルを踏んだ時にかかる特殊効果1\u30006周目"
+    },
+    {
+      "Field": "spEffectIdOnHit1_ClearCount_7",
+      "Name": "ヒットマテリアルを踏んだ時にかかる特殊効果1\u30007周目",
+      "Description": "ヒットマテリアルを踏んだ時にかかる特殊効果1\u30007周目"
+    },
+    {
+      "Field": "spEffectIdOnHit1_ClearCount_8",
+      "Name": "ヒットマテリアルを踏んだ時にかかる特殊効果1\u30008周目",
+      "Description": "ヒットマテリアルを踏んだ時にかかる特殊効果1\u30008周目"
+    },
+    {
+      "Field": "replaceMateiralId_Rain",
+      "Name": "ヒットマテリアル差し替え(雨)",
+      "Description": "天候(雨)によるヒットマテリアル変更先ID(-1：変更を行なわない)"
+    },
+    {
+      "Field": "pad4",
+      "Name": "pad",
+      "Description": "pad"
+    },
+    {
+      "Field": "spEffectId_forWet00",
+      "Name": "濡れ特殊効果ID_00",
+      "Description": "濡れ用特殊効果00"
+    },
+    {
+      "Field": "spEffectId_forWet01",
+      "Name": "濡れ特殊効果ID_01",
+      "Description": "濡れ用特殊効果01"
+    },
+    {
+      "Field": "spEffectId_forWet02",
+      "Name": "濡れ特殊効果ID_02",
+      "Description": "濡れ用特殊効果02"
+    },
+    {
+      "Field": "spEffectId_forWet03",
+      "Name": "濡れ特殊効果ID_03",
+      "Description": "濡れ用特殊効果03"
+    },
+    {
+      "Field": "spEffectId_forWet04",
+      "Name": "濡れ特殊効果ID_04",
+      "Description": "濡れ用特殊効果04"
+    }
+  ]
+}

@@ -1,0 +1,238 @@
+{
+  "Param": "LIGHT_BANK",
+  "Type": "LIGHT_BANK",
+  "Name": "LIGHT_BANK",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "degRotX_0",
+      "Name": "X角度",
+      "Description": "平行光源：０"
+    },
+    {
+      "Field": "degRotY_0",
+      "Name": "Ｙ角度",
+      "Description": "平行光源：０"
+    },
+    {
+      "Field": "colR_0",
+      "Name": "Ｒ",
+      "Description": "平行光源：０"
+    },
+    {
+      "Field": "colG_0",
+      "Name": "Ｇ",
+      "Description": "平行光源：０"
+    },
+    {
+      "Field": "colB_0",
+      "Name": "Ｂ",
+      "Description": "平行光源：０"
+    },
+    {
+      "Field": "colA_0",
+      "Name": "RGB倍率[％]",
+      "Description": "平行光源：０"
+    },
+    {
+      "Field": "degRotX_1",
+      "Name": "X角度",
+      "Description": "平行光源：１"
+    },
+    {
+      "Field": "degRotY_1",
+      "Name": "Ｙ角度",
+      "Description": "平行光源：１"
+    },
+    {
+      "Field": "colR_1",
+      "Name": "Ｒ",
+      "Description": "平行光源：１"
+    },
+    {
+      "Field": "colG_1",
+      "Name": "Ｇ",
+      "Description": "平行光源：１"
+    },
+    {
+      "Field": "colB_1",
+      "Name": "Ｂ",
+      "Description": "平行光源：１"
+    },
+    {
+      "Field": "colA_1",
+      "Name": "RGB倍率[％]",
+      "Description": "平行光源：１"
+    },
+    {
+      "Field": "degRotX_2",
+      "Name": "X角度",
+      "Description": "平行光源：２"
+    },
+    {
+      "Field": "degRotY_2",
+      "Name": "Ｙ角度",
+      "Description": "平行光源：２"
+    },
+    {
+      "Field": "colR_2",
+      "Name": "Ｒ",
+      "Description": "平行光源：２"
+    },
+    {
+      "Field": "colG_2",
+      "Name": "Ｇ",
+      "Description": "平行光源：２"
+    },
+    {
+      "Field": "colB_2",
+      "Name": "Ｂ",
+      "Description": "平行光源：２"
+    },
+    {
+      "Field": "colA_2",
+      "Name": "RGB倍率[％]",
+      "Description": "平行光源：２"
+    },
+    {
+      "Field": "colR_u",
+      "Name": "Ｒ",
+      "Description": "アンビエント上半球"
+    },
+    {
+      "Field": "colG_u",
+      "Name": "Ｇ",
+      "Description": "アンビエント上半球"
+    },
+    {
+      "Field": "colB_u",
+      "Name": "Ｂ",
+      "Description": "アンビエント上半球"
+    },
+    {
+      "Field": "colA_u",
+      "Name": "RGB倍率[％]",
+      "Description": "アンビエント上半球"
+    },
+    {
+      "Field": "colR_d",
+      "Name": "Ｒ",
+      "Description": "アンビエント下半球"
+    },
+    {
+      "Field": "colG_d",
+      "Name": "Ｇ",
+      "Description": "アンビエント下半球"
+    },
+    {
+      "Field": "colB_d",
+      "Name": "Ｂ",
+      "Description": "アンビエント下半球"
+    },
+    {
+      "Field": "colA_d",
+      "Name": "RGB倍率[％]",
+      "Description": "アンビエント下半球"
+    },
+    {
+      "Field": "degRotX_s",
+      "Name": "X角度",
+      "Description": "平行光源：スペキュラ"
+    },
+    {
+      "Field": "degRotY_s",
+      "Name": "Ｙ角度",
+      "Description": "平行光源：スペキュラ"
+    },
+    {
+      "Field": "colR_s",
+      "Name": "Ｒ",
+      "Description": "平行光源：スペキュラ"
+    },
+    {
+      "Field": "colG_s",
+      "Name": "Ｇ",
+      "Description": "平行光源：スペキュラ"
+    },
+    {
+      "Field": "colB_s",
+      "Name": "Ｂ",
+      "Description": "平行光源：スペキュラ"
+    },
+    {
+      "Field": "colA_s",
+      "Name": "RGB倍率[％]",
+      "Description": "平行光源：スペキュラ"
+    },
+    {
+      "Field": "envDif_colR",
+      "Name": "Ｒ",
+      "Description": "環境光源：ディフューズ乗算色"
+    },
+    {
+      "Field": "envDif_colG",
+      "Name": "Ｇ",
+      "Description": "環境光源：ディフューズ乗算色"
+    },
+    {
+      "Field": "envDif_colB",
+      "Name": "Ｂ",
+      "Description": "環境光源：ディフューズ乗算色"
+    },
+    {
+      "Field": "envDif_colA",
+      "Name": "RGB倍率[％]",
+      "Description": "環境光源：ディフューズ乗算色"
+    },
+    {
+      "Field": "envSpc_colR",
+      "Name": "Ｒ",
+      "Description": "環境光源：スペキュラ乗算色"
+    },
+    {
+      "Field": "envSpc_colG",
+      "Name": "Ｇ",
+      "Description": "環境光源：スペキュラ乗算色"
+    },
+    {
+      "Field": "envSpc_colB",
+      "Name": "Ｂ",
+      "Description": "環境光源：スペキュラ乗算色"
+    },
+    {
+      "Field": "envSpc_colA",
+      "Name": "RGB倍率[％]",
+      "Description": "環境光源：スペキュラ乗算色"
+    },
+    {
+      "Field": "envDif",
+      "Name": "環境ディフューズ",
+      "Description": "環境光源：ディフューズテクスチャID"
+    },
+    {
+      "Field": "envSpc_0",
+      "Name": "環境スペキュラ０",
+      "Description": "環境光源：スペキュラ０テクスチャID"
+    },
+    {
+      "Field": "envSpc_1",
+      "Name": "環境スペキュラ１",
+      "Description": "環境光源：スペキュラ１テクスチャID"
+    },
+    {
+      "Field": "envSpc_2",
+      "Name": "環境スペキュラ２",
+      "Description": "環境光源：スペキュラ２テクスチャID"
+    },
+    {
+      "Field": "envSpc_3",
+      "Name": "環境スペキュラ３",
+      "Description": "環境光源：スペキュラ３テクスチャID"
+    },
+    {
+      "Field": "pad",
+      "Name": "パディング",
+      "Description": ""
+    }
+  ]
+}

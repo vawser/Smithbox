@@ -1,0 +1,148 @@
+{
+  "Param": "EQUIP_MTRL_SET_PARAM_ST",
+  "Type": "EQUIP_MTRL_SET_PARAM_ST",
+  "Name": "EQUIP_MTRL_SET_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "materialId01",
+      "Name": "必要素材アイテムID01",
+      "Description": "武具強化に必要な素材アイテムIDです。"
+    },
+    {
+      "Field": "materialId02",
+      "Name": "必要素材アイテムID02",
+      "Description": "武具強化に必要な素材アイテムIDです。"
+    },
+    {
+      "Field": "materialId03",
+      "Name": "必要素材アイテムID03",
+      "Description": "武具強化に必要な素材アイテムIDです。"
+    },
+    {
+      "Field": "materialId04",
+      "Name": "必要素材アイテムID04",
+      "Description": "武具強化に必要な素材アイテムIDです。"
+    },
+    {
+      "Field": "materialId05",
+      "Name": "必要素材アイテムID05",
+      "Description": "武具強化に必要な素材アイテムIDです。"
+    },
+    {
+      "Field": "materialId06",
+      "Name": "必要素材アイテムID06",
+      "Description": "武具強化に必要な素材アイテムIDです。"
+    },
+    {
+      "Field": "pad_id",
+      "Name": "パディング",
+      "Description": "パディング。素材アイテムIDが増えたとき用"
+    },
+    {
+      "Field": "itemNum01",
+      "Name": "必要個数01",
+      "Description": "武具強化に必要な素材アイテムの個数です。"
+    },
+    {
+      "Field": "itemNum02",
+      "Name": "必要個数02",
+      "Description": "武具強化に必要な素材アイテムの個数です。"
+    },
+    {
+      "Field": "itemNum03",
+      "Name": "必要個数03",
+      "Description": "武具強化に必要な素材アイテムの個数です。"
+    },
+    {
+      "Field": "itemNum04",
+      "Name": "必要個数04",
+      "Description": "武具強化に必要な素材アイテムの個数です。"
+    },
+    {
+      "Field": "itemNum05",
+      "Name": "必要個数05",
+      "Description": "武具強化に必要な素材アイテムの個数です。"
+    },
+    {
+      "Field": "itemNum06",
+      "Name": "必要個数06",
+      "Description": "武具強化に必要な素材アイテムの個数です。"
+    },
+    {
+      "Field": "pad_num",
+      "Name": "パディング",
+      "Description": "パディング。アイテムの個数が増えたとき用"
+    },
+    {
+      "Field": "materialCate01",
+      "Name": "必要素材アイテムカテゴリ01",
+      "Description": "武具強化に必要な素材アイテムのカテゴリです。"
+    },
+    {
+      "Field": "materialCate02",
+      "Name": "必要素材アイテムカテゴリ02",
+      "Description": "武具強化に必要な素材アイテムのカテゴリです。"
+    },
+    {
+      "Field": "materialCate03",
+      "Name": "必要素材アイテムカテゴリ03",
+      "Description": "武具強化に必要な素材アイテムのカテゴリです。"
+    },
+    {
+      "Field": "materialCate04",
+      "Name": "必要素材アイテムカテゴリ04",
+      "Description": "武具強化に必要な素材アイテムのカテゴリです。"
+    },
+    {
+      "Field": "materialCate05",
+      "Name": "必要素材アイテムカテゴリ05",
+      "Description": "武具強化に必要な素材アイテムのカテゴリです。"
+    },
+    {
+      "Field": "materialCate06",
+      "Name": "必要素材アイテムカテゴリ06",
+      "Description": "武具強化に必要な素材アイテムのカテゴリです。"
+    },
+    {
+      "Field": "pad_cate",
+      "Name": "パディング",
+      "Description": "パディング。カテゴリが増えたとき用"
+    },
+    {
+      "Field": "isDisableDispNum01",
+      "Name": "個数表示を無効化01",
+      "Description": "個数表示を無効化するか(強化ショップ用)"
+    },
+    {
+      "Field": "isDisableDispNum02",
+      "Name": "個数表示を無効化02",
+      "Description": "個数表示を無効化するか"
+    },
+    {
+      "Field": "isDisableDispNum03",
+      "Name": "個数表示を無効化03",
+      "Description": "個数表示を無効化するか"
+    },
+    {
+      "Field": "isDisableDispNum04",
+      "Name": "個数表示を無効化04",
+      "Description": "個数表示を無効化するか"
+    },
+    {
+      "Field": "isDisableDispNum05",
+      "Name": "個数表示を無効化05",
+      "Description": "個数表示を無効化するか"
+    },
+    {
+      "Field": "isDisableDispNum06",
+      "Name": "個数表示を無効化06",
+      "Description": "個数表示を無効化するか"
+    },
+    {
+      "Field": "pad",
+      "Name": "パディング",
+      "Description": "パディングです。"
+    }
+  ]
+}

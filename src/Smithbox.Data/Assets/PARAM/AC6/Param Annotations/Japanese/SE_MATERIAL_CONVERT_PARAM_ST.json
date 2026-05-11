@@ -1,0 +1,28 @@
+{
+  "Param": "SE_MATERIAL_CONVERT_PARAM_ST",
+  "Type": "SE_MATERIAL_CONVERT_PARAM_ST",
+  "Name": "SE_MATERIAL_CONVERT_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "seMaterialId",
+      "Name": "SE材質ID",
+      "Description": "SFX材質ID（３桁）からSE材質ID（２桁）への変換"
+    },
+    {
+      "Field": "pad1",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "seMaterialNameStr",
+      "Name": "SE材質名文字列[最大16文字]",
+      "Description": "WwiseでSEを呼び出すための最大16文字となる半角文字列"
+    },
+    {
+      "Field": "tailPad",
+      "Name": "末尾パディング",
+      "Description": "末尾パディング"
+    }
+  ]
+}

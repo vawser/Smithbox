@@ -1,0 +1,63 @@
+{
+  "Param": "RAGDOLL_PARAM_ST",
+  "Type": "RAGDOLL_PARAM_ST",
+  "Name": "RAGDOLL_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "hierarchyGain",
+      "Name": "ヒエラルキーゲイン",
+      "Description": "低くすると元のポーズに近づき、大きくするとぐにゃぐにゃになる。"
+    },
+    {
+      "Field": "velocityDamping",
+      "Name": "速度減衰",
+      "Description": "ラグドールの移動スピードの減速率。0に近づくとゆっくり戻り、1に近づくとぱっと戻る"
+    },
+    {
+      "Field": "accelGain",
+      "Name": "加速度ゲイン",
+      "Description": "リジッドの加速度の調整パラメータ。低くすると動きが柔らかくなり、高くすると硬くなる。加速度ゲインよりも低い値にするらしい。"
+    },
+    {
+      "Field": "velocityGain",
+      "Name": "速度ゲイン",
+      "Description": "リジッドの速度の調整パラメータ。低くすると動きが柔らかくなり、高くすると硬くなる。速度ゲインよりも低い値にするらしい。"
+    },
+    {
+      "Field": "positionGain",
+      "Name": "位置ゲイン",
+      "Description": "リジッドの移動位置の調整パラメータ。低くすると動きが柔らかくなり、高くすると硬くなる。"
+    },
+    {
+      "Field": "maxLinerVelocity",
+      "Name": "最大速度",
+      "Description": "リジッドの最大移動速度"
+    },
+    {
+      "Field": "maxAngularVelocity",
+      "Name": "最大角速度",
+      "Description": "リジッドの最大角速度"
+    },
+    {
+      "Field": "snapGain",
+      "Name": "スナップゲイン",
+      "Description": "元のポーズに近づけるための調整値。位置ゲインと似た効果"
+    },
+    {
+      "Field": "enable",
+      "Name": "動くか",
+      "Description": "ダメージラグドール時に動くか"
+    },
+    {
+      "Field": "partsHitMaskNo",
+      "Name": "部位あたりマスク番号",
+      "Description": "部位あたりマスク番号。-1:マスク無効"
+    },
+    {
+      "Field": "pad",
+      "Name": "パディング",
+      "Description": "パディング"
+    }
+  ]
+}

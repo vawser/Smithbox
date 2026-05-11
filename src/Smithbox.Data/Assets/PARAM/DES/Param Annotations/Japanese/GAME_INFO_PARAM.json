@@ -1,0 +1,38 @@
+{
+  "Param": "GAME_INFO_PARAM",
+  "Type": "GAME_INFO_PARAM",
+  "Name": "GAME_INFO_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "titleMsgId",
+      "Name": "タイトルのMsgID",
+      "Description": "タイトル名"
+    },
+    {
+      "Field": "contentMsgId",
+      "Name": "内容のMsgID",
+      "Description": "内容"
+    },
+    {
+      "Field": "value",
+      "Name": "価格",
+      "Description": "価格"
+    },
+    {
+      "Field": "sortId",
+      "Name": "ソートID",
+      "Description": "ソートID"
+    },
+    {
+      "Field": "eventId",
+      "Name": "アクションID",
+      "Description": "販売状況を判断するアクションIDです。"
+    },
+    {
+      "Field": "Pad",
+      "Name": "パディング",
+      "Description": "パディング"
+    }
+  ]
+}

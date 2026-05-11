@@ -1,0 +1,1068 @@
+{
+  "Param": "PLAYER_COMMON_PARAM_ST",
+  "Type": "PLAYER_COMMON_PARAM_ST",
+  "Name": "PLAYER_COMMON_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "playerFootEffect_bySFX",
+      "Name": "プレイヤーの自動フットエフェクトのSFX識別子[3桁]",
+      "Description": "自動フットエフェクトのSFXIDに使われる識別子です。XYYZZZのZZZにあたります。"
+    },
+    {
+      "Field": "snipeModeDrawAlpha_FadeTime",
+      "Name": "精密射撃時プレイヤー非表示フェード時間",
+      "Description": "精密射撃時にプレイヤーを非表示にするときのフェード時間です。単位は秒"
+    },
+    {
+      "Field": "toughnessRecoverCorrection",
+      "Name": "プレイヤー強靭度 回復時間補正値",
+      "Description": "プレイヤーの強靭度回復時間の計算に使われる補正値です。"
+    },
+    {
+      "Field": "baseMagicSlotSize",
+      "Name": "魔法記憶スロット初期値",
+      "Description": "魔法記憶スロット初期値"
+    },
+    {
+      "Field": "baseAccSlotNum",
+      "Name": "タリスマン装備スロット初期値",
+      "Description": "タリスマン装備スロット初期値"
+    },
+    {
+      "Field": "defaultNumberOfItemSlots",
+      "Name": "defaultNumberOfItemSlots",
+      "Description": ""
+    },
+    {
+      "Field": "maxNumberOfItemSlots",
+      "Name": "maxNumberOfItemSlots",
+      "Description": ""
+    },
+    {
+      "Field": "animeID_DropItemPick",
+      "Name": "ドロップアイテム取得アニメーションID",
+      "Description": "ドロップアイテムを拾った時のアニメーションID"
+    },
+    {
+      "Field": "resistRecoverPoint_Sleep_Player",
+      "Name": "プレイヤー耐性値回復量_睡眠[point/s]",
+      "Description": "プレイヤー耐性値回復量_睡眠[point/s]"
+    },
+    {
+      "Field": "flareOverrideHomingAngle",
+      "Name": "フレア上書き誘導性能[deg/s]",
+      "Description": "フレア上書き誘導性能[deg/s](-1:上書きなし)"
+    },
+    {
+      "Field": "flareOverrideHomingStopRange",
+      "Name": "フレア上書き誘導停止距離[m]",
+      "Description": "フレア上書き誘導停止距離[m](-1:上書きなし)"
+    },
+    {
+      "Field": "animeID_SleepCollectorItemPick",
+      "Name": "ネムリアイテム取得時のアニメーションID",
+      "Description": "ネムリアイテム取得時のアニメーションID"
+    },
+    {
+      "Field": "unlockEventFlagBaseId_forWepAttr",
+      "Name": "武器属性解禁イベントフラグベースID",
+      "Description": "武器属性解禁イベントフラグベースID"
+    },
+    {
+      "Field": "systemEnchant_BigRune",
+      "Name": "システム経由大ルーン発動用特殊効果ID",
+      "Description": "システムからの大ルーン発動の際に呼び出す特殊効果Id"
+    },
+    {
+      "Field": "lowStatus_AtkPowDown",
+      "Name": "ステータス不足 基本攻撃力低下量",
+      "Description": "ステータス不足 基本攻撃力低下量"
+    },
+    {
+      "Field": "lowStatus_ConsumeStaminaRate",
+      "Name": "ステータス不足 スタミナ消費倍率",
+      "Description": "ステータス不足 スタミナ消費倍率"
+    },
+    {
+      "Field": "lowStatus_AtkGuardBreak",
+      "Name": "ステータス不足 弾き攻撃力",
+      "Description": "ステータス不足 弾き攻撃力"
+    },
+    {
+      "Field": "guardStatusCorrect_MaxStatusVal",
+      "Name": "盾ステータス補正 判定ステータス最大値",
+      "Description": "盾の性能のステータス補正値を計算するときに使う、性能が上昇する最大ステータス値"
+    },
+    {
+      "Field": "unlockEventFlagStepNum_forWepAttr",
+      "Name": "武器属性解禁イベントフラグステップ数",
+      "Description": "ベースIDから武器属性IDごとにどのぐらい間隔を空けるか。武器属性解禁イベントフラグID＝《武器属性解禁イベントフラグベースID》＋武器属性ID×《武器属性解禁イベントフラグステップ数》"
+    },
+    {
+      "Field": "retributionMagic_damageCountNum",
+      "Name": "因果応報_反撃までの被ダメージ回数",
+      "Description": "因果応報_反撃までの被ダメージ回数"
+    },
+    {
+      "Field": "retributionMagic_damageCountRemainTime",
+      "Name": "因果応報_反撃までの被ダメージ回数存続時間[s]",
+      "Description": "因果応報_反撃までの被ダメージ回数存続時間[s]"
+    },
+    {
+      "Field": "retributionMagic_burstDmypolyId",
+      "Name": "因果応報_反撃魔法ダミポリID",
+      "Description": "因果応報_反撃魔法ダミポリID"
+    },
+    {
+      "Field": "retributionMagic_burstMagicParamId",
+      "Name": "因果応報_反撃魔法パラムID",
+      "Description": "因果応報_反撃魔法パラムID"
+    },
+    {
+      "Field": "chrAimCam_rideOffsetHeight",
+      "Name": "騎乗精密射撃カメラオフセット高さ",
+      "Description": "騎乗精密射撃カメラオフセット高さ"
+    },
+    {
+      "Field": "unknownInt_2",
+      "Name": "unknownInt_2",
+      "Description": ""
+    },
+    {
+      "Field": "arrowCaseWepBindDmypolyId",
+      "Name": "矢筒の吸着ダミポリID",
+      "Description": "矢筒の吸着ダミポリID"
+    },
+    {
+      "Field": "boltPouchWepBindDmypolyId",
+      "Name": "ボルト筒の吸着ダミポリID",
+      "Description": "ボルト筒の吸着ダミポリID（ただしボルト筒単独の場合は矢筒のダミポリIDが使われる）"
+    },
+    {
+      "Field": "estusFlaskAllocateRate",
+      "Name": "マルチ時クライアント瓶補正倍率",
+      "Description": "マルチ時クライアント瓶補正倍率(0.5指定で所持数半分に)"
+    },
+    {
+      "Field": "reserved38",
+      "Name": "予約",
+      "Description": "(dummy8)"
+    },
+    {
+      "Field": "kickAcceptanceDeg",
+      "Name": "プレイヤー正面から見てキックを出せる角度",
+      "Description": "プレイヤー正面から見てキックを出せる角度"
+    },
+    {
+      "Field": "npcPlayerAnalogWeightRate_Light",
+      "Name": "NPCプレイヤー用アナログ重量比率_軽量",
+      "Description": "NPCプレイヤー用アナログ重量比率[%]。軽量。"
+    },
+    {
+      "Field": "npcPlayerAnalogWeightRate_Normal",
+      "Name": "NPCプレイヤー用アナログ重量比率_中量",
+      "Description": "NPCプレイヤー用アナログ重量比率[%]。中量。"
+    },
+    {
+      "Field": "npcPlayerAnalogWeightRate_Heavy",
+      "Name": "NPCプレイヤー用アナログ重量比率_重量",
+      "Description": "NPCプレイヤー用アナログ重量比率[%]。重量。"
+    },
+    {
+      "Field": "npcPlayerAnalogWeightRate_WeightOver",
+      "Name": "NPCプレイヤー用アナログ重量比率_重量過多",
+      "Description": "NPCプレイヤー用アナログ重量比率[%]。重量過多。"
+    },
+    {
+      "Field": "npcPlayerAnalogWeightRate_SuperLight",
+      "Name": "NPCプレイヤー用アナログ重量比率_超軽量",
+      "Description": "NPCプレイヤー用アナログ重量比率[%]。超軽量。"
+    },
+    {
+      "Field": "unknownInt_1",
+      "Name": "unknownInt_1",
+      "Description": ""
+    },
+    {
+      "Field": "clearCountCorrectBaseSpEffectId",
+      "Name": "周回補正特殊効果基準ID",
+      "Description": "周回補正のためにかける特殊効果の基準ID"
+    },
+    {
+      "Field": "arrowBoltModelIdOffset",
+      "Name": "矢、ボルトのモデルIdオフセット",
+      "Description": "矢、ボルトモデルを表示する際に、スロット１に装備された場合のモデルIDに加えるオフセット。（モデルId+オフセット値）"
+    },
+    {
+      "Field": "arrowBoltRemainingNumModelMaskThreshold1",
+      "Name": "矢、ボルトの残量によるモデルマスクの残数閾値_1段階[%]",
+      "Description": "矢、ボルトモデルを表示する際に、本数による表示マスクをかけるときの閾値の１段階判定値[%]。（この値より多ければ１段階表示）"
+    },
+    {
+      "Field": "arrowBoltRemainingNumModelMaskThreshold2",
+      "Name": "矢、ボルトの残量によるモデルマスクの残数閾値_2段階[%]",
+      "Description": "矢、ボルトモデルを表示する際に、本数による表示マスクをかけるときの閾値の２段階判定値[%]。（この値より多ければ２段階表示）"
+    },
+    {
+      "Field": "unknownByte_3",
+      "Name": "unknownByte_3",
+      "Description": ""
+    },
+    {
+      "Field": "unknownByte_4",
+      "Name": "unknownByte_4",
+      "Description": ""
+    },
+    {
+      "Field": "resistRecoverPoint_Poision_Player",
+      "Name": "プレイヤー耐性値回復量_毒[point/s]",
+      "Description": "プレイヤー耐性値回復量_毒[point/s]"
+    },
+    {
+      "Field": "resistRecoverPoint_Desease_Player",
+      "Name": "プレイヤー耐性値回復量_疫病[point/s]",
+      "Description": "プレイヤー耐性値回復量_疫病[point/s]"
+    },
+    {
+      "Field": "resistRecoverPoint_Blood_Player",
+      "Name": "プレイヤー耐性値回復量_出血[point/s]",
+      "Description": "プレイヤー耐性値回復量_出血[point/s]"
+    },
+    {
+      "Field": "resistRecoverPoint_Curse_Player",
+      "Name": "プレイヤー耐性値回復量_呪い[point/s]",
+      "Description": "プレイヤー耐性値回復量_呪い[point/s]"
+    },
+    {
+      "Field": "resistRecoverPoint_Freeze_Player",
+      "Name": "プレイヤー耐性値回復量_冷気[point/s]",
+      "Description": "プレイヤー耐性値回復量_冷気[point/s]"
+    },
+    {
+      "Field": "resistRecoverPoint_Poision_Enemy",
+      "Name": "敵耐性値回復量_毒[point/s]",
+      "Description": "敵耐性値回復量_毒[point/s]"
+    },
+    {
+      "Field": "resistRecoverPoint_Desease_Enemy",
+      "Name": "敵耐性値回復量_疫病[point/s]",
+      "Description": "敵耐性値回復量_疫病[point/s]"
+    },
+    {
+      "Field": "resistRecoverPoint_Blood_Enemy",
+      "Name": "敵耐性値回復量_出血[point/s]",
+      "Description": "敵耐性値回復量_出血[point/s]"
+    },
+    {
+      "Field": "resistRecoverPoint_Curse_Enemy",
+      "Name": "敵耐性値回復量_呪い[point/s]",
+      "Description": "敵耐性値回復量_呪い[point/s]"
+    },
+    {
+      "Field": "resistRecoverPoint_Freeze_Enemy",
+      "Name": "敵耐性値回復量_冷気[point/s]",
+      "Description": "敵耐性値回復量_冷気[point/s]"
+    },
+    {
+      "Field": "requestTimeLeftBothHand",
+      "Name": "左手両手持ちリクエストのボタン長押し時間[s]",
+      "Description": "左手両手持ちするときのボタン入力時間"
+    },
+    {
+      "Field": "resistRecoverPoint_Madness_Player",
+      "Name": "プレイヤー耐性値回復量_発狂[point/s]",
+      "Description": "プレイヤー耐性値回復量_発狂[point/s]"
+    },
+    {
+      "Field": "animeID_MaterialItemPick",
+      "Name": "素材アイテム取得アニメーションID",
+      "Description": "素材アイテムを拾った時のアニメーションID"
+    },
+    {
+      "Field": "hpEstusFlaskAllocateRateForYellowMonk",
+      "Name": "黄衣HPエスト瓶補正倍率 ",
+      "Description": "黄衣HPエスト瓶補正倍率 "
+    },
+    {
+      "Field": "hpEstusFlaskAllocateOffsetForYellowMonk",
+      "Name": "黄衣HPエスト瓶オフセット",
+      "Description": "黄衣HPエスト瓶オフセット"
+    },
+    {
+      "Field": "mpEstusFlaskAllocateRateForYellowMonk",
+      "Name": "黄衣MPエスト瓶補正倍率",
+      "Description": "黄衣MPエスト瓶補正倍率"
+    },
+    {
+      "Field": "mpEstusFlaskAllocateOffsetForYellowMonk",
+      "Name": "黄衣MPエスト瓶オフセット",
+      "Description": "黄衣MPエスト瓶オフセット"
+    },
+    {
+      "Field": "resistRecoverPoint_Sleep_Enemy",
+      "Name": "敵耐性値回復量_睡眠[point/s]",
+      "Description": "敵耐性値回復量_睡眠[point/s]"
+    },
+    {
+      "Field": "resistRecoverPoint_Madness_Enemy",
+      "Name": "敵耐性値回復量_発狂[point/s]",
+      "Description": "敵耐性値回復量_発狂[point/s]"
+    },
+    {
+      "Field": "unknown_1",
+      "Name": "unknown_1",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_2",
+      "Name": "unknown_2",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_3",
+      "Name": "unknown_3",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_4",
+      "Name": "unknown_4",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_5",
+      "Name": "unknown_5",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_6",
+      "Name": "unknown_6",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_7",
+      "Name": "unknown_7",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_8",
+      "Name": "unknown_8",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_9",
+      "Name": "unknown_9",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_10",
+      "Name": "unknown_10",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_11",
+      "Name": "unknown_11",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_12",
+      "Name": "unknown_12",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_13",
+      "Name": "unknown_13",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_14",
+      "Name": "unknown_14",
+      "Description": ""
+    },
+    {
+      "Field": "revenantSummon1_BuddyParamId",
+      "Name": "revenantSummon1_BuddyParamId",
+      "Description": ""
+    },
+    {
+      "Field": "revenantSummon2_BuddyParamId",
+      "Name": "revenantSummon2_BuddyParamId",
+      "Description": ""
+    },
+    {
+      "Field": "revenantSummon3_BuddyParamId",
+      "Name": "revenantSummon3_BuddyParamId",
+      "Description": ""
+    },
+    {
+      "Field": "revenantDesummonDistance",
+      "Name": "revenantDesummonDistance",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_19",
+      "Name": "unknown_19",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_20",
+      "Name": "unknown_20",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_21",
+      "Name": "unknown_21",
+      "Description": ""
+    },
+    {
+      "Field": "executorBeastEffect_unk1",
+      "Name": "executorBeastEffect_unk1",
+      "Description": ""
+    },
+    {
+      "Field": "executorBeastEffect_unk2",
+      "Name": "executorBeastEffect_unk2",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_24",
+      "Name": "unknown_24",
+      "Description": ""
+    },
+    {
+      "Field": "markingAtkParamId",
+      "Name": "markingAtkParamId",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_26",
+      "Name": "unknown_26",
+      "Description": ""
+    },
+    {
+      "Field": "sixthSenseEffectId_Active",
+      "Name": "sixthSenseEffectId_Active",
+      "Description": ""
+    },
+    {
+      "Field": "sixthSenseEffectId_Inactive",
+      "Name": "sixthSenseEffectId_Inactive",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_29",
+      "Name": "unknown_29",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_30",
+      "Name": "unknown_30",
+      "Description": ""
+    },
+    {
+      "Field": "soulbloodSongAttacker_EffectId",
+      "Name": "soulbloodSongAttacker_EffectId",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_32",
+      "Name": "unknown_32",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_33",
+      "Name": "unknown_33",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_34",
+      "Name": "unknown_34",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_35",
+      "Name": "unknown_35",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_36",
+      "Name": "unknown_36",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_37",
+      "Name": "unknown_37",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_38",
+      "Name": "unknown_38",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_39",
+      "Name": "unknown_39",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_40",
+      "Name": "unknown_40",
+      "Description": ""
+    },
+    {
+      "Field": "necromancyTriggerRate",
+      "Name": "necromancyTriggerRate",
+      "Description": ""
+    },
+    {
+      "Field": "necromancyEffectId_1",
+      "Name": "necromancyEffectId_1",
+      "Description": ""
+    },
+    {
+      "Field": "necromancyEffectId_2",
+      "Name": "necromancyEffectId_2",
+      "Description": ""
+    },
+    {
+      "Field": "necromancyEffectId_3",
+      "Name": "necromancyEffectId_3",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_45",
+      "Name": "unknown_45",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_46",
+      "Name": "unknown_46",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_47",
+      "Name": "unknown_47",
+      "Description": ""
+    },
+    {
+      "Field": "tenacityEffectId",
+      "Name": "tenacityEffectId",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_49",
+      "Name": "unknown_49",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_50",
+      "Name": "unknown_50",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_51",
+      "Name": "unknown_51",
+      "Description": ""
+    },
+    {
+      "Field": "tenacityRelicAddEffectId",
+      "Name": "tenacityRelicAddEffectId",
+      "Description": ""
+    },
+    {
+      "Field": "analyseBaseSpeed_unknown",
+      "Name": "analyseBaseSpeed_unknown",
+      "Description": ""
+    },
+    {
+      "Field": "analyseProgressTrigger_Level1",
+      "Name": "analyseProgressTrigger_Level1",
+      "Description": ""
+    },
+    {
+      "Field": "analyseProgressTrigger_Level2",
+      "Name": "analyseProgressTrigger_Level2",
+      "Description": ""
+    },
+    {
+      "Field": "analyseProgressTrigger_Level3",
+      "Name": "analyseProgressTrigger_Level3",
+      "Description": ""
+    },
+    {
+      "Field": "analyseTarget_Level1EffectId",
+      "Name": "analyseTarget_Level1EffectId",
+      "Description": ""
+    },
+    {
+      "Field": "analyseTarget_Level2EffectId",
+      "Name": "analyseTarget_Level2EffectId",
+      "Description": ""
+    },
+    {
+      "Field": "analyseTarget_Level3EffectId",
+      "Name": "analyseTarget_Level3EffectId",
+      "Description": ""
+    },
+    {
+      "Field": "analyseTarget_AllyEffectId",
+      "Name": "analyseTarget_AllyEffectId",
+      "Description": ""
+    },
+    {
+      "Field": "fh_unknown_00",
+      "Name": "fh_unknown_00",
+      "Description": ""
+    },
+    {
+      "Field": "fh_unknown_01",
+      "Name": "fh_unknown_01",
+      "Description": ""
+    },
+    {
+      "Field": "fh_unknown_02",
+      "Name": "fh_unknown_02",
+      "Description": ""
+    },
+    {
+      "Field": "fh_unknown_03",
+      "Name": "fh_unknown_03",
+      "Description": ""
+    },
+    {
+      "Field": "fh_unknown_04",
+      "Name": "fh_unknown_04",
+      "Description": ""
+    },
+    {
+      "Field": "fh_unknown_05",
+      "Name": "fh_unknown_05",
+      "Description": ""
+    },
+    {
+      "Field": "fh_unknown_06",
+      "Name": "fh_unknown_06",
+      "Description": ""
+    },
+    {
+      "Field": "fh_unknown_07",
+      "Name": "fh_unknown_07",
+      "Description": ""
+    },
+    {
+      "Field": "fh_unknown_08",
+      "Name": "fh_unknown_08",
+      "Description": ""
+    },
+    {
+      "Field": "fh_unknown_09",
+      "Name": "fh_unknown_09",
+      "Description": ""
+    },
+    {
+      "Field": "fh_unknown_10",
+      "Name": "fh_unknown_10",
+      "Description": ""
+    },
+    {
+      "Field": "fh_unknown_11",
+      "Name": "fh_unknown_11",
+      "Description": ""
+    },
+    {
+      "Field": "fh_unknown_12",
+      "Name": "fh_unknown_12",
+      "Description": ""
+    },
+    {
+      "Field": "fh_unknown_13",
+      "Name": "fh_unknown_13",
+      "Description": ""
+    },
+    {
+      "Field": "tranceDuration",
+      "Name": "tranceDuration",
+      "Description": ""
+    },
+    {
+      "Field": "tranceEnhanceDuration",
+      "Name": "tranceEnhanceDuration",
+      "Description": ""
+    },
+    {
+      "Field": "fh_unknown_16",
+      "Name": "fh_unknown_16",
+      "Description": ""
+    },
+    {
+      "Field": "tranceEffectId",
+      "Name": "tranceEffectId",
+      "Description": ""
+    },
+    {
+      "Field": "tranceRemoveEffectId",
+      "Name": "tranceRemoveEffectId",
+      "Description": ""
+    },
+    {
+      "Field": "fh_unknown_19",
+      "Name": "fh_unknown_19",
+      "Description": ""
+    },
+    {
+      "Field": "fh_unknown_20",
+      "Name": "fh_unknown_20",
+      "Description": ""
+    },
+    {
+      "Field": "fh_unknown_21",
+      "Name": "fh_unknown_21",
+      "Description": ""
+    },
+    {
+      "Field": "fh_unknown_22",
+      "Name": "fh_unknown_22",
+      "Description": ""
+    },
+    {
+      "Field": "fh_unknown_23",
+      "Name": "fh_unknown_23",
+      "Description": ""
+    },
+    {
+      "Field": "tranceSuccessiveThreshold",
+      "Name": "tranceSuccessiveThreshold",
+      "Description": ""
+    },
+    {
+      "Field": "tranceSuccessiveThreshold_unk",
+      "Name": "tranceSuccessiveThreshold_unk",
+      "Description": ""
+    },
+    {
+      "Field": "tranceEnhanceEffectId",
+      "Name": "tranceEnhanceEffectId",
+      "Description": ""
+    },
+    {
+      "Field": "tranceEnhanceRemoveEffectId",
+      "Name": "tranceEnhanceRemoveEffectId",
+      "Description": ""
+    },
+    {
+      "Field": "tranceBuffEffectId",
+      "Name": "tranceBuffEffectId",
+      "Description": ""
+    },
+    {
+      "Field": "tranceRemoveBuffEffectId",
+      "Name": "tranceRemoveBuffEffectId",
+      "Description": ""
+    },
+    {
+      "Field": "tranceSuccessiveEffectId",
+      "Name": "tranceSuccessiveEffectId",
+      "Description": ""
+    },
+    {
+      "Field": "tranceRemoveBuffEffectId1",
+      "Name": "tranceRemoveBuffEffectId1",
+      "Description": ""
+    },
+    {
+      "Field": "tranceSuccessiveEffectId2",
+      "Name": "tranceSuccessiveEffectId2",
+      "Description": ""
+    },
+    {
+      "Field": "tranceRemoveBuffEffectId2",
+      "Name": "tranceRemoveBuffEffectId2",
+      "Description": ""
+    },
+    {
+      "Field": "bagcraftXp_Level2_Dart",
+      "Name": "bagcraftXp_Level2_Dart",
+      "Description": ""
+    },
+    {
+      "Field": "bagcraftXp_Level3_Dart",
+      "Name": "bagcraftXp_Level3_Dart",
+      "Description": ""
+    },
+    {
+      "Field": "bagcraftXp_Level2_Pot",
+      "Name": "bagcraftXp_Level2_Pot",
+      "Description": ""
+    },
+    {
+      "Field": "bagcraftXp_Level3_Pot",
+      "Name": "bagcraftXp_Level3_Pot",
+      "Description": ""
+    },
+    {
+      "Field": "bagcraftXp_Level2_Bolus",
+      "Name": "bagcraftXp_Level2_Bolus",
+      "Description": ""
+    },
+    {
+      "Field": "bagcraftXp_Level3_Bolus",
+      "Name": "bagcraftXp_Level3_Bolus",
+      "Description": ""
+    },
+    {
+      "Field": "bagcraftXp_Level2_Stone",
+      "Name": "bagcraftXp_Level2_Stone",
+      "Description": ""
+    },
+    {
+      "Field": "bagcraftXp_Level3_Stone",
+      "Name": "bagcraftXp_Level3_Stone",
+      "Description": ""
+    },
+    {
+      "Field": "bagcraftXp_Level2_Tear",
+      "Name": "bagcraftXp_Level2_Tear",
+      "Description": ""
+    },
+    {
+      "Field": "bagcraftXp_Level3_Tear",
+      "Name": "bagcraftXp_Level3_Tear",
+      "Description": ""
+    },
+    {
+      "Field": "bagcraftXp_Level2_Perfume",
+      "Name": "bagcraftXp_Level2_Perfume",
+      "Description": ""
+    },
+    {
+      "Field": "bagcraftXp_Level3_Perfume",
+      "Name": "bagcraftXp_Level3_Perfume",
+      "Description": ""
+    },
+    {
+      "Field": "bagcraftXp_Level2_Grease",
+      "Name": "bagcraftXp_Level2_Grease",
+      "Description": ""
+    },
+    {
+      "Field": "bagcraftXp_Level3_Grease",
+      "Name": "bagcraftXp_Level3_Grease",
+      "Description": ""
+    },
+    {
+      "Field": "bagcraftXp_Level2_Food",
+      "Name": "bagcraftXp_Level2_Food",
+      "Description": ""
+    },
+    {
+      "Field": "bagcraftXp_Level3_Food",
+      "Name": "bagcraftXp_Level3_Food",
+      "Description": ""
+    },
+    {
+      "Field": "bagcraftXp_Level2_Tool",
+      "Name": "bagcraftXp_Level2_Tool",
+      "Description": ""
+    },
+    {
+      "Field": "bagcraftXp_Level3_Tool",
+      "Name": "bagcraftXp_Level3_Tool",
+      "Description": ""
+    },
+    {
+      "Field": "fh_unknown_43a",
+      "Name": "fh_unknown_43a",
+      "Description": ""
+    },
+    {
+      "Field": "fh_unknown_43b",
+      "Name": "fh_unknown_43b",
+      "Description": ""
+    },
+    {
+      "Field": "fh_unknown_44",
+      "Name": "fh_unknown_44",
+      "Description": ""
+    },
+    {
+      "Field": "fh_unknown_45",
+      "Name": "fh_unknown_45",
+      "Description": ""
+    },
+    {
+      "Field": "fh_unknown_46",
+      "Name": "fh_unknown_46",
+      "Description": ""
+    },
+    {
+      "Field": "fh_unknown_47",
+      "Name": "fh_unknown_47",
+      "Description": ""
+    },
+    {
+      "Field": "fh_unknown_48",
+      "Name": "fh_unknown_48",
+      "Description": ""
+    },
+    {
+      "Field": "analyseSelf_Level1EffectId",
+      "Name": "analyseSelf_Level1EffectId",
+      "Description": ""
+    },
+    {
+      "Field": "analyseSelf_Level2EffectId",
+      "Name": "analyseSelf_Level2EffectId",
+      "Description": ""
+    },
+    {
+      "Field": "analyseSelf_Level3EffectId",
+      "Name": "analyseSelf_Level3EffectId",
+      "Description": ""
+    },
+    {
+      "Field": "fh_unknown_52",
+      "Name": "fh_unknown_52",
+      "Description": ""
+    },
+    {
+      "Field": "fh_unknown_53",
+      "Name": "fh_unknown_53",
+      "Description": ""
+    },
+    {
+      "Field": "fh_unknown_54",
+      "Name": "fh_unknown_54",
+      "Description": ""
+    },
+    {
+      "Field": "fh_unknown_55",
+      "Name": "fh_unknown_55",
+      "Description": ""
+    },
+    {
+      "Field": "fh_unknown_56",
+      "Name": "fh_unknown_56",
+      "Description": ""
+    },
+    {
+      "Field": "fh_unknown_57",
+      "Name": "fh_unknown_57",
+      "Description": ""
+    },
+    {
+      "Field": "fh_unknown_58",
+      "Name": "fh_unknown_58",
+      "Description": ""
+    },
+    {
+      "Field": "fh_unknown_59",
+      "Name": "fh_unknown_59",
+      "Description": ""
+    },
+    {
+      "Field": "fh_unknown_60",
+      "Name": "fh_unknown_60",
+      "Description": ""
+    },
+    {
+      "Field": "fh_unknown_61",
+      "Name": "fh_unknown_61",
+      "Description": ""
+    },
+    {
+      "Field": "fh_unknown_62",
+      "Name": "fh_unknown_62",
+      "Description": ""
+    },
+    {
+      "Field": "fh_unknown_63",
+      "Name": "fh_unknown_63",
+      "Description": ""
+    },
+    {
+      "Field": "fh_unknown_64",
+      "Name": "fh_unknown_64",
+      "Description": ""
+    },
+    {
+      "Field": "fh_unknown_65",
+      "Name": "fh_unknown_65",
+      "Description": ""
+    },
+    {
+      "Field": "fh_unknown_66",
+      "Name": "fh_unknown_66",
+      "Description": ""
+    },
+    {
+      "Field": "fh_unknown_67",
+      "Name": "fh_unknown_67",
+      "Description": ""
+    },
+    {
+      "Field": "fh_unknown_68",
+      "Name": "fh_unknown_68",
+      "Description": ""
+    },
+    {
+      "Field": "fh_unknown_69",
+      "Name": "fh_unknown_69",
+      "Description": ""
+    },
+    {
+      "Field": "fh_unknown_70",
+      "Name": "fh_unknown_70",
+      "Description": ""
+    },
+    {
+      "Field": "fh_unknown_71",
+      "Name": "fh_unknown_71",
+      "Description": ""
+    },
+    {
+      "Field": "statusGaugeStackTriggerInterval",
+      "Name": "statusGaugeStackTriggerInterval",
+      "Description": ""
+    },
+    {
+      "Field": "statusGaugeMaxStack",
+      "Name": "statusGaugeMaxStack",
+      "Description": ""
+    },
+    {
+      "Field": "statusGaugeStackEffectId",
+      "Name": "statusGaugeStackEffectId",
+      "Description": ""
+    },
+    {
+      "Field": "statusGaugeEffectId_Vfx",
+      "Name": "statusGaugeEffectId_Vfx",
+      "Description": ""
+    },
+    {
+      "Field": "attackNullifyChance",
+      "Name": "attackNullifyChance",
+      "Description": ""
+    },
+    {
+      "Field": "attackNullifyEffectId_Vfx",
+      "Name": "attackNullifyEffectId_Vfx",
+      "Description": ""
+    },
+    {
+      "Field": "attackNullifyIconEffectId",
+      "Name": "attackNullifyIconEffectId",
+      "Description": ""
+    },
+    {
+      "Field": "fh_unknown_79",
+      "Name": "fh_unknown_79",
+      "Description": ""
+    },
+    {
+      "Field": "fh_unknown_80",
+      "Name": "fh_unknown_80",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,173 @@
+{
+  "Param": "HIT_EFFECT_SFX_CONCEPT_PARAM_ST",
+  "Type": "HIT_EFFECT_SFX_CONCEPT_PARAM_ST",
+  "Name": "HIT_EFFECT_SFX_CONCEPT_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "atkIron_1",
+      "Name": "鉄製：概念１",
+      "Description": "鉄製：概念１（実ブレ、弾丸用）"
+    },
+    {
+      "Field": "atkIron_2",
+      "Name": "鉄製：概念２",
+      "Description": "鉄製：概念２（実ブレ、弾丸用）"
+    },
+    {
+      "Field": "atkFire_1",
+      "Name": "炎：概念１",
+      "Description": "炎：概念１"
+    },
+    {
+      "Field": "atkFire_2",
+      "Name": "炎：概念２",
+      "Description": "炎：概念２"
+    },
+    {
+      "Field": "atkStun_1",
+      "Name": "スタン：概念１",
+      "Description": "スタン：概念１"
+    },
+    {
+      "Field": "atkStun_2",
+      "Name": "スタン：概念２",
+      "Description": "スタン：概念２"
+    },
+    {
+      "Field": "atkEmp_1",
+      "Name": "emp：概念１",
+      "Description": "肉：概念１（生物兵器用）"
+    },
+    {
+      "Field": "atkEmp_2",
+      "Name": "emp：概念２",
+      "Description": "肉：概念２（生物兵器用）"
+    },
+    {
+      "Field": "atkIce_1",
+      "Name": "氷：概念１",
+      "Description": "氷：概念１"
+    },
+    {
+      "Field": "atkIce_2",
+      "Name": "氷：概念２",
+      "Description": "氷：概念２"
+    },
+    {
+      "Field": "atkEnergy_Green_1",
+      "Name": "EN緑：概念１",
+      "Description": "EN緑：概念１（プラズマ、パルス、レーザー、バリア用の青色）"
+    },
+    {
+      "Field": "atkEnergy_Green_2",
+      "Name": "EN緑：概念２",
+      "Description": "EN緑：概念２（プラズマ、パルス、レーザー、バリア用の青色）"
+    },
+    {
+      "Field": "atkNone_1",
+      "Name": "なし：概念１",
+      "Description": "なし：概念１"
+    },
+    {
+      "Field": "atkNone_2",
+      "Name": "なし：概念２",
+      "Description": "なし：概念２"
+    },
+    {
+      "Field": "atkDmy1_1",
+      "Name": "Dmy1：概念１",
+      "Description": "Dmy1：概念１（企画GDさんテスト用）"
+    },
+    {
+      "Field": "atkDmy1_2",
+      "Name": "Dmy1：概念２",
+      "Description": "Dmy1：概念２（企画GDさんテスト用）"
+    },
+    {
+      "Field": "atkDmy2_1",
+      "Name": "Dmy2：概念１",
+      "Description": "Dmy2：概念１（企画GDさんテスト用）"
+    },
+    {
+      "Field": "atkDmy2_2",
+      "Name": "Dmy2：概念２",
+      "Description": "Dmy2：概念２（企画GDさんテスト用）"
+    },
+    {
+      "Field": "atkDmy3_1",
+      "Name": "Dmy3：概念１",
+      "Description": "Dmy3：概念１（企画GDさんテスト用）"
+    },
+    {
+      "Field": "atkDmy3_2",
+      "Name": "Dmy3：概念２",
+      "Description": "Dmy3：概念２（企画GDさんテスト用）"
+    },
+    {
+      "Field": "atkDmy4_1",
+      "Name": "Dmy4：概念１",
+      "Description": "Dmy4：概念１（企画GDさんテスト用）"
+    },
+    {
+      "Field": "atkDmy4_2",
+      "Name": "Dmy4：概念２",
+      "Description": "Dmy4：概念２（企画GDさんテスト用）"
+    },
+    {
+      "Field": "atkMelange_1",
+      "Name": "メランジ：概念１",
+      "Description": "メランジ：概念１（プラズマ、パルス、レーザー、バリア用の赤色）"
+    },
+    {
+      "Field": "atkMelange_2",
+      "Name": "メランジ：概念２",
+      "Description": "メランジ：概念２（プラズマ、パルス、レーザー、バリア用の赤色）"
+    },
+    {
+      "Field": "atkPulse_1",
+      "Name": "パルス：概念１",
+      "Description": "パルス：概念１"
+    },
+    {
+      "Field": "atkPulse_2",
+      "Name": "パルス：概念２",
+      "Description": "パルス：概念２"
+    },
+    {
+      "Field": "atkLaser_1",
+      "Name": "レーザー：概念１",
+      "Description": "レーザー：概念１"
+    },
+    {
+      "Field": "atkLaser_2",
+      "Name": "レーザー：概念２",
+      "Description": "レーザー：概念２"
+    },
+    {
+      "Field": "atkPlusma_1",
+      "Name": "プラズマ：概念１",
+      "Description": "プラズマ：概念１"
+    },
+    {
+      "Field": "atkPlusma_2",
+      "Name": "プラズマ：概念２",
+      "Description": "プラズマ：概念２"
+    },
+    {
+      "Field": "atkAssaultArmor_1",
+      "Name": "アサルトアーマー：概念１",
+      "Description": "アサルトアーマー：概念１"
+    },
+    {
+      "Field": "atkAssaultArmor_2",
+      "Name": "アサルトアーマー：概念２",
+      "Description": "アサルトアーマー：概念２"
+    },
+    {
+      "Field": "reserve",
+      "Name": "予約領域",
+      "Description": ""
+    }
+  ]
+}

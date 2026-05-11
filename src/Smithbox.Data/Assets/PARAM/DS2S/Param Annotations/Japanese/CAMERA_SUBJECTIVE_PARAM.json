@@ -1,0 +1,158 @@
+{
+  "Param": "CAMERA_SUBJECTIVE_PARAM",
+  "Type": "CAMERA_SUBJECTIVE_PARAM",
+  "Name": "CAMERA_SUBJECTIVE_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "cameraType",
+      "Name": "カメラ挙動タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "cameraBasePosType",
+      "Name": "カメラ基準点タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "reserved",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "fovY",
+      "Name": "画角(deg)",
+      "Description": ""
+    },
+    {
+      "Field": "lookAtOffsetX",
+      "Name": "焦点(X軸) オフセット(m)",
+      "Description": ""
+    },
+    {
+      "Field": "lookAtOffsetY",
+      "Name": "焦点(Y軸) オフセット(m)",
+      "Description": ""
+    },
+    {
+      "Field": "lookAtOffsetZ",
+      "Name": "焦点(Z軸) オフセット(m)",
+      "Description": ""
+    },
+    {
+      "Field": "positionOffsetX",
+      "Name": "位置(X軸) オフセット(m)",
+      "Description": ""
+    },
+    {
+      "Field": "positionOffsetY",
+      "Name": "位置(Y軸) オフセット(m)",
+      "Description": ""
+    },
+    {
+      "Field": "positionOffsetZ",
+      "Name": "位置(Z軸) オフセット(m)",
+      "Description": ""
+    },
+    {
+      "Field": "panSpeedLimitMin",
+      "Name": "左右旋回限界速度最小(rad/s)",
+      "Description": ""
+    },
+    {
+      "Field": "panSpeedLimitMax",
+      "Name": "左右旋回限界速度最大(rad/s)",
+      "Description": ""
+    },
+    {
+      "Field": "panSpeedAccelMin",
+      "Name": "左右旋回加速度最小(rad/s)",
+      "Description": ""
+    },
+    {
+      "Field": "panSpeedAccelMax",
+      "Name": "左右旋回加速度最大(rad/s)",
+      "Description": ""
+    },
+    {
+      "Field": "panSpeedBrakeMin",
+      "Name": "左右旋回ブレーキ最小(rad/s)",
+      "Description": ""
+    },
+    {
+      "Field": "panSpeedBrakeMax",
+      "Name": "左右旋回ブレーキ最大(rad/s)",
+      "Description": ""
+    },
+    {
+      "Field": "tiltSpeedLimitMin",
+      "Name": "上下旋回限界速度最小(rad/s)",
+      "Description": ""
+    },
+    {
+      "Field": "tiltSpeedLimitMax",
+      "Name": "上下旋回限界速度最大(rad/s)",
+      "Description": ""
+    },
+    {
+      "Field": "tiltSpeedAccelMin",
+      "Name": "上下旋回加速度最小(rad/s)",
+      "Description": ""
+    },
+    {
+      "Field": "tiltSpeedAccelMax",
+      "Name": "上下旋回加速度最大(rad/s)",
+      "Description": ""
+    },
+    {
+      "Field": "tiltSpeedBrakeMin",
+      "Name": "上下旋回ブレーキ最小(rad/s)",
+      "Description": ""
+    },
+    {
+      "Field": "tiltSpeedBrakeMax",
+      "Name": "上下旋回ブレーキ最大(rad/s)",
+      "Description": ""
+    },
+    {
+      "Field": "tiltUpLimit",
+      "Name": "上限界角度(deg)",
+      "Description": ""
+    },
+    {
+      "Field": "tiltDownLimit",
+      "Name": "下限界角度(deg)",
+      "Description": ""
+    },
+    {
+      "Field": "startTransType",
+      "Name": "切り替え開始時補間タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "endTransType",
+      "Name": "切り替え終了時補間タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "reserved1",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "startTransTime",
+      "Name": "切り替え開始時補間時間",
+      "Description": ""
+    },
+    {
+      "Field": "endTransTime",
+      "Name": "切り替え終了時補間時間",
+      "Description": ""
+    },
+    {
+      "Field": "lensSimuParamId",
+      "Name": "レンズシミュレーションパラメータＩＤ",
+      "Description": ""
+    }
+  ]
+}

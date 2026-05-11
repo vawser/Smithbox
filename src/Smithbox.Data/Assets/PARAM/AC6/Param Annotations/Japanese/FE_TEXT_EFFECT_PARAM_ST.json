@@ -1,0 +1,68 @@
+{
+  "Param": "FE_TEXT_EFFECT_PARAM_ST",
+  "Type": "FE_TEXT_EFFECT_PARAM_ST",
+  "Name": "FE_TEXT_EFFECT_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "ResourceID",
+      "Name": "リソースID",
+      "Description": "メニューリソースのインスタンス名\u3000TextEffect_XXX のID"
+    },
+    {
+      "Field": "reserved_1",
+      "Name": "予約1",
+      "Description": "-----"
+    },
+    {
+      "Field": "TextID_1st",
+      "Name": "テキストID１",
+      "Description": "表示するEventTextのテキストID(1つ目)。-1でテキストなし"
+    },
+    {
+      "Field": "SeID",
+      "Name": "SE ID",
+      "Description": "再生するVoice の SE ID。-1でSE無し"
+    },
+    {
+      "Field": "TextID_2nd",
+      "Name": "テキストID２",
+      "Description": "表示するEventTextのテキストID(2つ目)。-1でテキストなし"
+    },
+    {
+      "Field": "TextID_3rd",
+      "Name": "テキストID３",
+      "Description": "表示するEventTextのテキストID(3つ目)。-1でテキストなし"
+    },
+    {
+      "Field": "DispSlot",
+      "Name": "表示スロット",
+      "Description": "表示スロット"
+    },
+    {
+      "Field": "reserved_2",
+      "Name": "予約2",
+      "Description": "-----"
+    },
+    {
+      "Field": "bMovieSkipEnable",
+      "Name": "スキップ",
+      "Description": "動画のスキップが可能か"
+    },
+    {
+      "Field": "bMovieLoopPlay",
+      "Name": "ループ",
+      "Description": "動画をループ再生するかどうか"
+    },
+    {
+      "Field": "MovieID",
+      "Name": "ID",
+      "Description": "再生する動画のID。0以下で動画無し"
+    },
+    {
+      "Field": "TextID_4th",
+      "Name": "テキストID４",
+      "Description": "表示するEventTextのテキストID(4つ目)。-1でテキストなし"
+    }
+  ]
+}

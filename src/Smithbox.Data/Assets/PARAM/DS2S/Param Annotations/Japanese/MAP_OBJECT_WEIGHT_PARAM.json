@@ -1,0 +1,18 @@
+{
+  "Param": "MAP_OBJECT_WEIGHT_PARAM",
+  "Type": "MAP_OBJECT_WEIGHT_PARAM",
+  "Name": "MAP_OBJECT_WEIGHT_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "speedScale",
+      "Name": "《衝突時速度倍率》",
+      "Description": ""
+    },
+    {
+      "Field": "gravityFactor",
+      "Name": "《重力加速度倍率》",
+      "Description": ""
+    }
+  ]
+}

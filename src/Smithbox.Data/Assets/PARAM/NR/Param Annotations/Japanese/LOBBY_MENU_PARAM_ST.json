@@ -1,0 +1,58 @@
+{
+  "Param": "LOBBY_MENU_PARAM_ST",
+  "Type": "LOBBY_MENU_PARAM_ST",
+  "Name": "LOBBY_MENU_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "unknown_0",
+      "Name": "unknown_0",
+      "Description": ""
+    },
+    {
+      "Field": "nameId",
+      "Name": "nameId",
+      "Description": ""
+    },
+    {
+      "Field": "warpPointEntityId",
+      "Name": "warpPointEntityId",
+      "Description": ""
+    },
+    {
+      "Field": "menuAutoOpenEventFlag",
+      "Name": "menuAutoOpenEventFlag",
+      "Description": ""
+    },
+    {
+      "Field": "appearanceEventFlag",
+      "Name": "appearanceEventFlag",
+      "Description": ""
+    },
+    {
+      "Field": "iconId",
+      "Name": "iconId",
+      "Description": ""
+    },
+    {
+      "Field": "MapLayer",
+      "Name": "MapLayer",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_1",
+      "Name": "unknown_1",
+      "Description": ""
+    },
+    {
+      "Field": "mapPositionEntityId",
+      "Name": "mapPositionEntityId",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_7",
+      "Name": "unknown_7",
+      "Description": ""
+    }
+  ]
+}

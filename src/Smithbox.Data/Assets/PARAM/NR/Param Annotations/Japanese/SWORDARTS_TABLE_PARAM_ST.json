@@ -1,0 +1,23 @@
+{
+  "Param": "SWORDARTS_TABLE_PARAM_ST",
+  "Type": "SWORDARTS_TABLE_PARAM_ST",
+  "Name": "SWORDARTS_TABLE_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "unknown_0",
+      "Name": "unknown_0",
+      "Description": ""
+    },
+    {
+      "Field": "swordArtsId",
+      "Name": "swordArtsId",
+      "Description": ""
+    },
+    {
+      "Field": "chanceWeight",
+      "Name": "chanceWeight",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "Param": "SCRATCHED_PARTS_PARAM_ST",
+  "Type": "SCRATCHED_PARTS_PARAM_ST",
+  "Name": "SCRATCHED_PARTS_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "characterId",
+      "Name": "characterId",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_1",
+      "Name": "unknown_1",
+      "Description": ""
+    },
+    {
+      "Field": "healthPercentDamage",
+      "Name": "healthPercentDamage",
+      "Description": ""
+    },
+    {
+      "Field": "healthPercentTrigger",
+      "Name": "healthPercentTrigger",
+      "Description": ""
+    },
+    {
+      "Field": "damageTakenRate",
+      "Name": "damageTakenRate",
+      "Description": ""
+    },
+    {
+      "Field": "animationId",
+      "Name": "animationId",
+      "Description": ""
+    },
+    {
+      "Field": "dummyPolyId",
+      "Name": "dummyPolyId",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_2",
+      "Name": "unknown_2",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,918 @@
+{
+  "Param": "NPC_THINK_PARAM_ST",
+  "Type": "NPC_THINK_PARAM_ST",
+  "Name": "NPC_THINK_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "NT版出力から外すか",
+      "Description": "NT版から除外するか、除外するものに○をつける"
+    },
+    {
+      "Field": "disableParam_Product",
+      "Name": "製品版出力から外すか",
+      "Description": "製品版から除外するか、除外するものに○をつける"
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "パッケージ出力用リザーブ1",
+      "Description": "パッケージ出力用リザーブ1"
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "パッケージ出力用リザーブ2",
+      "Description": "パッケージ出力用リザーブ2"
+    },
+    {
+      "Field": "logicId",
+      "Name": "ロジックスクリプトID",
+      "Description": "スクリプトで作成したロジックのIDを設定します。"
+    },
+    {
+      "Field": "battleGoalID",
+      "Name": "戦闘ゴールID",
+      "Description": "戦闘ゴールID"
+    },
+    {
+      "Field": "searchEye_dist",
+      "Name": "索敵視覚_距離[m]",
+      "Description": "索敵視覚による索敵範囲."
+    },
+    {
+      "Field": "searchEye_angX",
+      "Name": "索敵視覚_角度（高さ）[deg]",
+      "Description": "索敵視覚による索敵範囲."
+    },
+    {
+      "Field": "searchEye_angY",
+      "Name": "索敵視覚_角度（幅）[deg]",
+      "Description": "索敵視覚による索敵範囲."
+    },
+    {
+      "Field": "scriptType",
+      "Name": "スクリプトタイプ",
+      "Description": "解釈するスクリプトのタイプ情報"
+    },
+    {
+      "Field": "goalAction_CannotGetTarget",
+      "Name": "ゴールアクション：ターゲット再補足不能時",
+      "Description": "ゴールアクション：ターゲットが再補足不能状態になった\t"
+    },
+    {
+      "Field": "coverActionReleaseDist",
+      "Name": "カバーアクション解除距離[m]",
+      "Description": "カバーアクション解除距離[m]"
+    },
+    {
+      "Field": "searchTargetLv1ForgetTime",
+      "Name": "索敵Lv1ターゲット忘れる時間[sec]",
+      "Description": "索敵Lv1ターゲット忘れる時間。"
+    },
+    {
+      "Field": "searchTargetLv2ForgetTime",
+      "Name": "索敵Lv2ターゲット忘れる時間[sec]",
+      "Description": "索敵Lv2ターゲット忘れる時間。"
+    },
+    {
+      "Field": "BackHomeLife_OnHitEneWal",
+      "Name": "敵壁接触時のBackHome時間[sec]",
+      "Description": "ブロックをさえぎる敵壁に接触したとき、BackToHomeゴールの寿命"
+    },
+    {
+      "Field": "SightTargetForgetTime",
+      "Name": "視覚ターゲット忘れる時間[sec]",
+      "Description": "視覚ターゲット忘れる時間。"
+    },
+    {
+      "Field": "idAttackCannotMove",
+      "Name": "動けなくなったときに行うEzState番号",
+      "Description": "破壊可能なオブジェクトによって動きが止まっている場合、自動的に実行する行動。"
+    },
+    {
+      "Field": "ear_dist",
+      "Name": "聴覚_距離[m]",
+      "Description": "聴覚による索敵範囲.。"
+    },
+    {
+      "Field": "callHelp_ActionAnimId",
+      "Name": "仲間呼び 応答アクションアニメID",
+      "Description": "応答する時のアニメID(EzStateAnimID)"
+    },
+    {
+      "Field": "callHelp_CallActionId",
+      "Name": "仲間呼び_仲間呼びアクションID",
+      "Description": "仲間呼ぶときのアクションID(EzStateAnimID)"
+    },
+    {
+      "Field": "eye_dist",
+      "Name": "視覚_距離[m]",
+      "Description": "視覚による索敵範囲."
+    },
+    {
+      "Field": "BackHome_GuardActId",
+      "Name": "帰宅時：ガードアクションID",
+      "Description": "帰宅時、ターゲットの方を見ている時に行うアクション番号（ガードで使う想定、0で無効）"
+    },
+    {
+      "Field": "ear_soundcut_dist",
+      "Name": "聴覚\u3000影響カット距離[m]",
+      "Description": "音源のサイズを小さくする距離。この距離未満の音が聞こえなくなります。"
+    },
+    {
+      "Field": "nose_dist",
+      "Name": "嗅覚_距離[m]",
+      "Description": "嗅覚による索敵範囲."
+    },
+    {
+      "Field": "maxBackhomeDist",
+      "Name": "何があっても帰宅する距離[m]",
+      "Description": "COMMON_SetBattleActLogicの引き数"
+    },
+    {
+      "Field": "backhomeDist",
+      "Name": "戦闘しつつ帰宅する距離[m]",
+      "Description": "COMMON_SetBattleActLogicの引き数"
+    },
+    {
+      "Field": "backhomeBattleDist",
+      "Name": "巣に帰るのをあきらめて戦闘する距離[m]",
+      "Description": "COMMON_SetBattleActLogicの引き数"
+    },
+    {
+      "Field": "nonBattleActLife",
+      "Name": "敵を意識しているときの非戦闘行動時間[sec]",
+      "Description": "COMMON_SetBattleActLogicの引き数"
+    },
+    {
+      "Field": "BackHome_LookTargetTime",
+      "Name": "帰宅時：ターゲットを見ている時間[sec]",
+      "Description": "帰宅時：ターゲットを見ている時間[sec]"
+    },
+    {
+      "Field": "BackHome_LookTargetDist",
+      "Name": "帰宅時：ターゲットを見ている距離[m]",
+      "Description": "帰宅時：ターゲットを見ている距離[m]"
+    },
+    {
+      "Field": "SoundTargetForgetTime",
+      "Name": "音ターゲット忘れる時間[sec]",
+      "Description": "音ターゲット忘れる時間。"
+    },
+    {
+      "Field": "BattleStartDist",
+      "Name": "戦闘開始距離[m]",
+      "Description": ""
+    },
+    {
+      "Field": "callHelp_MyPeerId",
+      "Name": "仲間呼び 自分の仲間グループID",
+      "Description": "自分の仲間グループID"
+    },
+    {
+      "Field": "callHelp_CallPeerId",
+      "Name": "仲間呼び 呼ぶ仲間グループID",
+      "Description": "仲間を呼ぶ対象となる仲間グループID"
+    },
+    {
+      "Field": "targetSys_DmgEffectRate",
+      "Name": "ダメージ影響率[％]",
+      "Description": "ダメージ影響率取得(ターゲットシステム評価情報)"
+    },
+    {
+      "Field": "TeamAttackEffectivity",
+      "Name": "チーム攻撃影響力[0-100]",
+      "Description": "チーム内の同時攻撃人数を決めるための値。値を大きくすると、同時に攻撃参加できる人数が少なくなる。"
+    },
+    {
+      "Field": "eye_angX",
+      "Name": "視覚_角度（高さ）[deg]",
+      "Description": "視覚による索敵範囲."
+    },
+    {
+      "Field": "eye_angY",
+      "Name": "視覚_角度（幅）[deg]",
+      "Description": "視覚による索敵範囲."
+    },
+    {
+      "Field": "disableDark",
+      "Name": "暗闇影響しない",
+      "Description": "警戒視覚_距離、戦闘開始距離が暗闇による影響を受けないようにするか"
+    },
+    {
+      "Field": "caravanRole",
+      "Name": "キャラバンでの役割",
+      "Description": "キャラバンでの役割"
+    },
+    {
+      "Field": "callHelp_CallValidMinDistTarget",
+      "Name": "仲間呼び_ターゲットとの最低距離[m]",
+      "Description": "この値より近い場合は仲間呼びできない."
+    },
+    {
+      "Field": "callHelp_CallValidRange",
+      "Name": "仲間呼び_仲間を呼ぶ有効距離[m]",
+      "Description": "この値より仲間が遠い場合は呼ばない。"
+    },
+    {
+      "Field": "callHelp_ForgetTimeByArrival",
+      "Name": "仲間呼び 応答してから忘れる時間[sec]",
+      "Description": "応答する時間"
+    },
+    {
+      "Field": "callHelp_MinWaitTime",
+      "Name": "応答時の待機最小時間[ssm=>ss．mSec]",
+      "Description": "応答ゴールの最初の待機ゴールでの最小時間[101=>10．1sec]"
+    },
+    {
+      "Field": "callHelp_MaxWaitTime",
+      "Name": "応答時の待機最大時間[ssm=>ss．mSec]",
+      "Description": "応答ゴールの最初の待機ゴールでの最大時間[101=>10．1sec]"
+    },
+    {
+      "Field": "goalAction_ToSearchLv1",
+      "Name": "ゴールアクション：索敵Lv1",
+      "Description": "ゴールアクション：ターゲットが索敵Lv1になった"
+    },
+    {
+      "Field": "goalAction_ToSearchLv2",
+      "Name": "ゴールアクション：索敵Lv2",
+      "Description": "ゴールアクション：ターゲットが索敵Lv2になった"
+    },
+    {
+      "Field": "callHelp_ReplyBehaviorType",
+      "Name": "仲間呼び 応答後の行動タイプ",
+      "Description": "応答後、目標位置までの行動タイプ"
+    },
+    {
+      "Field": "disablePathMove",
+      "Name": "パス移動しない",
+      "Description": "パス移動命令が来てもパスを辿らずに直接移動するか"
+    },
+    {
+      "Field": "skipArrivalVisibleCheck",
+      "Name": "視線による到着判定をスキップするか？",
+      "Description": "視線による到着判定をスキップするか？Onにすると、視線が通っていなくても、到着判定を行う。"
+    },
+    {
+      "Field": "thinkAttr_doAdmirer",
+      "Name": "取巻き役になるか？",
+      "Description": "思考属性：ＯＮにすると取巻き役を演じます。"
+    },
+    {
+      "Field": "enableNaviFlg_Edge",
+      "Name": "フラグ「崖」通れるか？",
+      "Description": "ノード「崖」を通過できるか？(def:1)"
+    },
+    {
+      "Field": "enableNaviFlg_LargeSpace",
+      "Name": "フラグ「広い」通れるか？",
+      "Description": "ノード「広い」を通過できるか？(def:1)"
+    },
+    {
+      "Field": "enableNaviFlg_Ladder",
+      "Name": "フラグ「梯子」通れるか？",
+      "Description": "ノード「梯子」を通過できるか？(def:0)"
+    },
+    {
+      "Field": "enableNaviFlg_Hole",
+      "Name": "フラグ「穴」通れるか？",
+      "Description": "ノード「穴」を通過できるか？(def:0)"
+    },
+    {
+      "Field": "enableNaviFlg_Door",
+      "Name": "フラグ「扉」通れるか？",
+      "Description": "ノード「扉」を通過できるか？(def:0)"
+    },
+    {
+      "Field": "enableNaviFlg_InSideWall",
+      "Name": "フラグ「壁中」通れるか？",
+      "Description": "ノード「壁中」を通過できるか？(def:0)"
+    },
+    {
+      "Field": "enableNaviFlg_pad",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "enableNaviFlg_Edge_Ordinary",
+      "Name": "フラグ「崖」通れるか？（通常／警戒状態）",
+      "Description": "通常／警戒状態でノード「崖」を通過できるか？(def:1)"
+    },
+    {
+      "Field": "enableNaviFlg_reserve1",
+      "Name": "ほんとに予約",
+      "Description": "フラグが新しく必要になったらここにいれます（NotPadding)"
+    },
+    {
+      "Field": "searchThreshold_Lv0toLv1",
+      "Name": "索敵Lv0→Lv1の閾値",
+      "Description": "索敵Lv0→Lv1の閾値"
+    },
+    {
+      "Field": "searchThreshold_Lv1toLv2",
+      "Name": "索敵Lv1→Lv2の閾値",
+      "Description": "索敵Lv1→Lv2の閾値"
+    },
+    {
+      "Field": "platoonReplyTime",
+      "Name": "小隊反応遅延時間[sec]",
+      "Description": "小隊反応遅延時間[sec]"
+    },
+    {
+      "Field": "platoonReplyAddRandomTime",
+      "Name": "小隊反応追加ランダム時間[sec]",
+      "Description": "小隊反応追加ランダム時間[sec]"
+    },
+    {
+      "Field": "cameraEmuLookHalfAngleH",
+      "Name": "仮想カメラ画角横",
+      "Description": "仮想カメラがターゲットを捉えたか判定をする際の角度水平"
+    },
+    {
+      "Field": "cameraEmuLookHalfAngleV",
+      "Name": "仮想カメラ画角縦",
+      "Description": "仮想カメラがターゲットを捉えたか判定をする際の角度垂直"
+    },
+    {
+      "Field": "isCameraEmuLockAt",
+      "Name": "仮想カメラでターゲットを追従",
+      "Description": "仮想カメラをターゲット方向に向ける制御を行うか（ON：追従 OFF：前方固定）"
+    },
+    {
+      "Field": "initialHitResponseType",
+      "Name": "未発見時に被弾した際の反応",
+      "Description": "未発見時に被弾した際の反応"
+    },
+    {
+      "Field": "fixedCannonReleaseDistByDist",
+      "Name": "距離で固定砲台解除距離[m]",
+      "Description": "距離で固定砲台解除距離[m]"
+    },
+    {
+      "Field": "searchTargetDamageForgetTime",
+      "Name": "被弾状態 ターゲットを忘れる時間[sec]",
+      "Description": "被弾状態 ターゲットを忘れる時間[sec]"
+    },
+    {
+      "Field": "keepTargetRaycastDist",
+      "Name": "ターゲット維持用のレイキャスト距離[m]",
+      "Description": "ターゲット維持用のレイキャスト距離[m]"
+    },
+    {
+      "Field": "isUseBoostRiseMove",
+      "Name": "ブースト上昇を利用するか",
+      "Description": "ジャンプ時にシステム移動の代わりにブースト上昇OPを使うか．"
+    },
+    {
+      "Field": "doUseSharedTarget",
+      "Name": "ターゲット共有を受けるか",
+      "Description": "×が設定されていれば、一切のターゲット共有を受けないようになる（索敵・戦闘両方）"
+    },
+    {
+      "Field": "eye_BackOffsetDist",
+      "Name": "視覚_発生距離[m]",
+      "Description": "キャラの中心からこの距離後ろが視角開始位置になる"
+    },
+    {
+      "Field": "eye_BeginDist",
+      "Name": "視覚_カット距離[m]",
+      "Description": "視角発生位置からこの距離は認識しない"
+    },
+    {
+      "Field": "actTypeOnFailedPath",
+      "Name": "パス検索失敗時の行動種別",
+      "Description": "パス検索失敗時、代替パスの終点に到達した際に行うデフォルトの行動種別"
+    },
+    {
+      "Field": "goalAction_ToNormal",
+      "Name": "ゴールアクション：通常時",
+      "Description": "ゴールアクション：通常時の行動"
+    },
+    {
+      "Field": "pathFindCostParamId",
+      "Name": "パス検索コストパラメータID",
+      "Description": "パス検索コストパラメータのID"
+    },
+    {
+      "Field": "actTypeOnNonBtlFailedPath",
+      "Name": "パス検索失敗時の挙動（非戦闘中）",
+      "Description": "ターゲット【なし】時に、現在地点を巣に書き換えた後に取る行動 "
+    },
+    {
+      "Field": "isBuddyAI",
+      "Name": "バディAI",
+      "Description": "バディ用の思考か"
+    },
+    {
+      "Field": "goalAction_ToCaution",
+      "Name": "ゴールアクション：警戒状態/通常音",
+      "Description": "ゴールアクション：ターゲットが通常音の感知により警戒状態になった"
+    },
+    {
+      "Field": "goalAction_ToCautionImportant",
+      "Name": "ゴールアクション：警戒状態/重要音",
+      "Description": "ゴールアクション：ターゲットが重要音の感知により警戒状態になった"
+    },
+    {
+      "Field": "enableJumpMove",
+      "Name": "移動中ジャンプ許可",
+      "Description": "ジャンプ用ユーザーエッジを飛び越えて移動するか"
+    },
+    {
+      "Field": "disableLocalSteering",
+      "Name": "回避移動しない",
+      "Description": "他のキャラクターを回避しながら移動しようとする挙動(ローカルステアリング)をオフにするか？"
+    },
+    {
+      "Field": "goalAction_ToCautionThreat",
+      "Name": "ゴールアクション：警戒状態/脅威音",
+      "Description": "ゴールアクション：ターゲットが脅威音の感知により警戒状態になった"
+    },
+    {
+      "Field": "goalAction_MaxBackHomeAction",
+      "Name": "ゴールアクション：何があっても帰宅",
+      "Description": "ゴールアクション：何が当ても帰宅する状態に入った"
+    },
+    {
+      "Field": "MemoryTargetForgetTime",
+      "Name": "記憶ターゲット忘れる時間[sec]",
+      "Description": "記憶ターゲット忘れる時間。"
+    },
+    {
+      "Field": "goalAction_BackHomeAction",
+      "Name": "ゴールアクション：戦闘しつつ帰宅",
+      "Description": "ゴールアクション：戦闘しながら帰宅する状態に入った"
+    },
+    {
+      "Field": "isSearchEnableReycast",
+      "Name": "索敵視界の遮蔽",
+      "Description": "索敵視界の遮蔽（レイキャスト）が有効か否か。 ON：遮蔽有効（レイキャストする） OFF:遮蔽無効"
+    },
+    {
+      "Field": "isAlwaysEyeSightFromDmyPoly",
+      "Name": "視覚_向きを常時基準ダミポリに合わせる ",
+      "Description": "常に視界をダミポリ基準にするかどうか(ダミポリID:250"
+    },
+    {
+      "Field": "shareTargetType",
+      "Name": "共有ターゲットタイプ",
+      "Description": "共有するターゲットのタイプを設定"
+    },
+    {
+      "Field": "goalAction_ToFind",
+      "Name": "ゴールアクション：発見状態",
+      "Description": "ゴールアクション：ターゲットが発見状態になった"
+    },
+    {
+      "Field": "goalAction_ToSearch",
+      "Name": "ゴールアクション：索敵状態",
+      "Description": "索敵状態時のアクション"
+    },
+    {
+      "Field": "goalAction_ToDisappear",
+      "Name": "ゴールアクション：記憶ターゲット状態",
+      "Description": "ゴールアクション：ターゲットを見失った"
+    },
+    {
+      "Field": "changeStateAction_ToNormal",
+      "Name": "ゴールアクション：通常状態開始",
+      "Description": "通常状態に遷移したときのアクション"
+    },
+    {
+      "Field": "GoalActionID",
+      "Name": "ゴールアクションID",
+      "Description": "非戦闘時の汎用的なAI行動用のID（スクリプトタイプがオペレーションの場合のみ有効）"
+    },
+    {
+      "Field": "soundBehaviorId01",
+      "Name": "振る舞いID1",
+      "Description": "聴くことのできる音ターゲットの振る舞いIDに対応"
+    },
+    {
+      "Field": "soundBehaviorId02",
+      "Name": "振る舞いID2",
+      "Description": "聴くことのできる音ターゲットの振る舞いIDに対応"
+    },
+    {
+      "Field": "soundBehaviorId03",
+      "Name": "振る舞いID3",
+      "Description": "聴くことのできる音ターゲットの振る舞いIDに対応"
+    },
+    {
+      "Field": "soundBehaviorId04",
+      "Name": "振る舞いID4",
+      "Description": "聴くことのできる音ターゲットの振る舞いIDに対応"
+    },
+    {
+      "Field": "soundBehaviorId05",
+      "Name": "振る舞いID5",
+      "Description": "聴くことのできる音ターゲットの振る舞いIDに対応"
+    },
+    {
+      "Field": "soundBehaviorId06",
+      "Name": "振る舞いID6",
+      "Description": "聴くことのできる音ターゲットの振る舞いIDに対応"
+    },
+    {
+      "Field": "soundBehaviorId07",
+      "Name": "振る舞いID7",
+      "Description": "聴くことのできる音ターゲットの振る舞いIDに対応"
+    },
+    {
+      "Field": "soundBehaviorId08",
+      "Name": "振る舞いID8",
+      "Description": "聴くことのできる音ターゲットの振る舞いIDに対応"
+    },
+    {
+      "Field": "enemyMaxDistForBattleThanEventTgt",
+      "Name": "自身と敵の距離がこの距離未満だったらイベントターゲットより戦闘行動を優先する（0～9999ｍ）",
+      "Description": "自身と敵の距離がこの距離未満だったらイベントターゲットより戦闘行動を優先する"
+    },
+    {
+      "Field": "eventTgtMinDistForBattleAndGoToEventTgt",
+      "Name": "自身とイベントターゲットの距離がこの距離以上だったら戦いながらイベントターゲットに向かう（0～9999ｍ）",
+      "Description": "自身とイベントターゲットの距離がこの距離以上だったら戦いながらイベントターゲットに向かう"
+    },
+    {
+      "Field": "eventTgtMinDistForGoToEventTgt",
+      "Name": "自身とイベントターゲットの距離がこの距離以上だったらイベントターゲットへ向かう事を最優先する（0～9999ｍ）",
+      "Description": "自身とイベントターゲットの距離がこの距離以上だったらイベントターゲットへ向かう事を最優先する"
+    },
+    {
+      "Field": "radar_dist",
+      "Name": "レーダー認識範囲[m]",
+      "Description": "レーダー認識範囲"
+    },
+    {
+      "Field": "eye_VerticalMax",
+      "Name": "視覚認識上限高度[m]",
+      "Description": "通常視覚範囲の上限高度"
+    },
+    {
+      "Field": "eye_VerticalMin",
+      "Name": "視覚認識下限高度[m]",
+      "Description": "通常視覚範囲の下限高度"
+    },
+    {
+      "Field": "searchEye_VerticalMax",
+      "Name": "索敵視覚認識上限高度[m]",
+      "Description": "索敵視覚範囲の上限高度"
+    },
+    {
+      "Field": "searchEye_VerticalMin",
+      "Name": "索敵視覚認識下限高度[m]",
+      "Description": "索敵視覚範囲の下限高度"
+    },
+    {
+      "Field": "shareSearchTargetDist",
+      "Name": "索敵ターゲットを共有する距離[m]",
+      "Description": "索敵ターゲットの共有範囲"
+    },
+    {
+      "Field": "shareAttackTargetDist",
+      "Name": "攻撃ターゲットを共有する距離[m]",
+      "Description": "攻撃ターゲットの共有範囲"
+    },
+    {
+      "Field": "shareSearchTargetSpeed",
+      "Name": "索敵ターゲットを共有する速度 [m/s]",
+      "Description": "「索敵ターゲットを共有する距離」を上限、初期値を0mとして時間経過で共有範囲を拡大する。-1は無効値ですぐ最大範囲内共有する"
+    },
+    {
+      "Field": "shareAttackTargetSpeed",
+      "Name": "攻撃ターゲットを共有する速度 [m/s]",
+      "Description": "「攻撃ターゲットを共有する距離」を上限、初期値を0mとして時間経過で共有範囲を拡大する。-1は無効値ですぐ最大範囲内共有する"
+    },
+    {
+      "Field": "enemyMaxDistForBattleThanPlayer",
+      "Name": "自身と敵の距離がこの距離未満だったらプレイヤーより戦闘行動を優先する（0～9999ｍ）",
+      "Description": "自身と敵の距離がこの距離未満だったらプレイヤーより戦闘行動を優先する（0～9999ｍ）"
+    },
+    {
+      "Field": "playerMinDistForBattleAndGoToPlayer",
+      "Name": "自身とプレイヤーの距離がこの距離以上だったら戦いながらプレイヤーに向かう（0～9999ｍ）",
+      "Description": "自身とプレイヤーの距離がこの距離以上だったら戦いながらプレイヤーに向かう（0～9999ｍ）"
+    },
+    {
+      "Field": "playerMinDistForGoToPlayer",
+      "Name": "自身とプレイヤーの距離がこの距離以上だったらプレイヤーへ向かう事を最優先する（0～9999ｍ）",
+      "Description": "自身とプレイヤーの距離がこの距離以上だったらプレイヤーへ向かう事を最優先する（0～9999ｍ）"
+    },
+    {
+      "Field": "fixedCannonReleaseDistByHit",
+      "Name": "被弾で固定砲台解除距離[m]",
+      "Description": "被弾で固定砲台解除距離[m]"
+    },
+    {
+      "Field": "searchEye_BackOffsetDist",
+      "Name": "索敵視覚_発生距離[m]",
+      "Description": "索敵視覚用の視覚発生距離"
+    },
+    {
+      "Field": "searchEye_BeginDist",
+      "Name": "索敵視覚_カット距離[m]",
+      "Description": "索敵視覚用の視覚カット距離"
+    },
+    {
+      "Field": "searchEye2_dist",
+      "Name": "索敵視覚2_距離[m]",
+      "Description": "近距離向け用索敵視覚距離"
+    },
+    {
+      "Field": "searchEye2_angX",
+      "Name": "索敵視覚2_角度（高さ）[deg]",
+      "Description": "近距離向け用索敵視覚角度の高さ"
+    },
+    {
+      "Field": "searchEye2_angY",
+      "Name": "索敵視覚2_角度（幅）[deg]",
+      "Description": "近距離向け用索敵視覚角度の幅"
+    },
+    {
+      "Field": "searchEye2_VerticalMax",
+      "Name": "索敵視覚2_認識上限高度[m]",
+      "Description": "近距離向け用索敵視覚認識上限高度"
+    },
+    {
+      "Field": "searchEye2_VerticalMin",
+      "Name": "索敵視覚2_認識下限高度[m]",
+      "Description": "近距離向け用索敵視覚認識下限高度"
+    },
+    {
+      "Field": "searchEye2_BackOffsetDist",
+      "Name": "索敵視覚2_発生距離[m]",
+      "Description": "近距離向け用索敵視覚発生距離"
+    },
+    {
+      "Field": "searchEye2_BeginDist",
+      "Name": "索敵視覚2_カット距離[m]",
+      "Description": "近距離向け用索敵視覚カット距離"
+    },
+    {
+      "Field": "shareSearchPointTargetDist",
+      "Name": "索敵度を共有する距離[m]",
+      "Description": "キャラの持つ索敵度の値を共有する距離 "
+    },
+    {
+      "Field": "shareCombatPointTargetDist",
+      "Name": "交戦度を共有する距離[m]",
+      "Description": "キャラの持つ交戦度の値を共有する距離"
+    },
+    {
+      "Field": "shareSearchPointRate",
+      "Name": "索敵度共有割合",
+      "Description": "キャラの持つ索敵度の値を共有する割合 "
+    },
+    {
+      "Field": "shareCombatPointRate",
+      "Name": "交戦度共有割合",
+      "Description": "キャラの持つ交戦度の値を共有する割合"
+    },
+    {
+      "Field": "battleEye_dist",
+      "Name": "戦闘視覚_距離[m]",
+      "Description": "戦闘状態用視覚距離"
+    },
+    {
+      "Field": "battleEye_angX",
+      "Name": "戦闘視覚_角度（高さ）[deg]",
+      "Description": "戦闘状態用視覚角度の高さ"
+    },
+    {
+      "Field": "battleEye_angY",
+      "Name": "戦闘視覚_角度（幅）[deg]",
+      "Description": "戦闘状態用視覚角度の幅"
+    },
+    {
+      "Field": "battleEye_VerticalMax",
+      "Name": "戦闘視覚_認識上限高度[m]",
+      "Description": "戦闘状態用視覚認識上限高度"
+    },
+    {
+      "Field": "battleEye_VerticalMin",
+      "Name": "戦闘視覚_認識下限高度[m]",
+      "Description": "戦闘状態用視覚認識下限高度"
+    },
+    {
+      "Field": "battleEye_BackOffsetDist",
+      "Name": "戦闘視覚_発生距離[m]",
+      "Description": "戦闘状態用視覚発生距離"
+    },
+    {
+      "Field": "battleEye_BeginDist",
+      "Name": "戦闘視覚_カット距離[m]",
+      "Description": "戦闘状態用視覚カット距離"
+    },
+    {
+      "Field": "DebugAiThinkParam00",
+      "Name": "デバッグ用AIパラメータ00",
+      "Description": "デバッグ用AIパラメータ00"
+    },
+    {
+      "Field": "DebugAiThinkParam01",
+      "Name": "デバッグ用AIパラメータ01",
+      "Description": "デバッグ用AIパラメータ01"
+    },
+    {
+      "Field": "DebugAiThinkParam02",
+      "Name": "デバッグ用AIパラメータ02",
+      "Description": "デバッグ用AIパラメータ02"
+    },
+    {
+      "Field": "DebugAiThinkParam03",
+      "Name": "デバッグ用AIパラメータ03",
+      "Description": "デバッグ用AIパラメータ03"
+    },
+    {
+      "Field": "DebugAiThinkParam04",
+      "Name": "デバッグ用AIパラメータ04",
+      "Description": "デバッグ用AIパラメータ04"
+    },
+    {
+      "Field": "radar_power",
+      "Name": "レーダー性能",
+      "Description": "ターゲットのステルス性能と比較して，レーダーによって検知できるかを決める性能値"
+    },
+    {
+      "Field": "commonAttack_WeaponPlace",
+      "Name": "汎用攻撃_装備部位",
+      "Description": "汎用攻撃の装備部位設定，AI_WEAPON_PLACE_の数字に応じて，なしなら-1"
+    },
+    {
+      "Field": "doLaunchAiLayer_MOVE01",
+      "Name": "AIレイヤー起動：MOVE01",
+      "Description": "LayerID: 2"
+    },
+    {
+      "Field": "doLaunchAiLayer_MOVETYPE",
+      "Name": "AIレイヤー起動：MOVETYPE",
+      "Description": "LayerID: 3"
+    },
+    {
+      "Field": "doLaunchAiLayer_ATTACK01",
+      "Name": "AIレイヤー起動：ATTACK01",
+      "Description": "LayerID: 4"
+    },
+    {
+      "Field": "doLaunchAiLayer_ATTACK02",
+      "Name": "AIレイヤー起動：ATTACK02",
+      "Description": "LayerID: 5"
+    },
+    {
+      "Field": "doLaunchAiLayer_ATTACK03",
+      "Name": "AIレイヤー起動：ATTACK03",
+      "Description": "LayerID: 6"
+    },
+    {
+      "Field": "doLaunchAiLayer_ATTACK04",
+      "Name": "AIレイヤー起動：ATTACK04",
+      "Description": "LayerID: 7"
+    },
+    {
+      "Field": "doLaunchAiLayer_EXTRA01",
+      "Name": "AIレイヤー起動：EXTRA01",
+      "Description": "LayerID: 8"
+    },
+    {
+      "Field": "doLaunchAiLayer_INTERRUPT",
+      "Name": "AIレイヤー起動：INTERRUPT",
+      "Description": "LayerID: 9"
+    },
+    {
+      "Field": "commonAttack_Dist",
+      "Name": "汎用攻撃_距離[m]",
+      "Description": "汎用攻撃の範囲設定"
+    },
+    {
+      "Field": "coverActionAttackDist",
+      "Name": "カバーアクション攻撃距離[m]",
+      "Description": "カバーアクション攻撃距離[m]"
+    },
+    {
+      "Field": "shareTargetRecognitionLag",
+      "Name": "共有ターゲット認識遅延[sec]",
+      "Description": "共有ターゲットを受け取ってから認識できるまでの遅延時間[sec]"
+    },
+    {
+      "Field": "keepSharingTargetAfterDiedTime",
+      "Name": "死亡時_共有維持時間[sec]",
+      "Description": "キャラ死亡後もターゲット共有処理が最大範囲になってからの維持時間[sec]、０の場合は最大範囲にならなくても死亡後即共有停止"
+    },
+    {
+      "Field": "GeneralAiThinkParam00",
+      "Name": "AI汎用パラメータ00",
+      "Description": "デバッグ用AIパラメータ00から製品版へ移行するためのもの"
+    },
+    {
+      "Field": "GeneralAiThinkParam01",
+      "Name": "AI汎用パラメータ01",
+      "Description": "デバッグ用AIパラメータ01から製品版へ移行するためのもの"
+    },
+    {
+      "Field": "GeneralAiThinkParam02",
+      "Name": "AI汎用パラメータ02",
+      "Description": "デバッグ用AIパラメータ02から製品版へ移行するためのもの"
+    },
+    {
+      "Field": "GeneralAiThinkParam03",
+      "Name": "AI汎用パラメータ03",
+      "Description": "デバッグ用AIパラメータ03から製品版へ移行するためのもの"
+    },
+    {
+      "Field": "GeneralAiThinkParam04",
+      "Name": "AI汎用パラメータ04",
+      "Description": "デバッグ用AIパラメータ04から製品版へ移行するためのもの"
+    },
+    {
+      "Field": "PathSearchWaitTime",
+      "Name": "パス検索待ち時間[sec]",
+      "Description": "パス検索の時間がこれを越えたら強制失敗扱い。-1はHavok任せ"
+    },
+    {
+      "Field": "jumpEdgeEnteredDistOffset",
+      "Name": "始端到達判定距離オフセット[m]",
+      "Description": "ジャンプエッジに入っているかどうかのチェック用。キャラのヒット半径はシステム側で別途加算"
+    },
+    {
+      "Field": "jumpEdgeFinishHeightOffset",
+      "Name": "終端到達判定高度オフセット[m]",
+      "Description": "ジャンプエッジ終了チェック用。許容できる最大高度。キャラのヒット高度はシステム側で別途加算"
+    },
+    {
+      "Field": "jumpEdgeFinishHorizontalDist",
+      "Name": "終端到達判定水平距離[m]",
+      "Description": "ジャンプエッジ終了チェック用。許容できる最大水平距離"
+    },
+    {
+      "Field": "jumpEdgeFinishAngle",
+      "Name": "終端到達判定角度[deg]",
+      "Description": "ジャンプエッジ終了チェック用。現在位置→終端\u3000と\u3000始端→終端\u3000となす角度がこの値を越えたら到達と見なす"
+    },
+    {
+      "Field": "jumpEdgeFinishLandCheckHeightOffset",
+      "Name": "終端到達足元安全確認判定オフセット[m]",
+      "Description": "ジャンプエッジ終了チェック用。レイキャストで足元に地面があるかどうかチェック用。現在位置と終端の高度差はシステム側で別途加算"
+    },
+    {
+      "Field": "jumpEdgeFallHeight",
+      "Name": "落下時判定高度[m]",
+      "Description": "ジャンプエッジで落下する時用。落下とみなす最小高度"
+    },
+    {
+      "Field": "jumpEdgeFallHorizontalDist",
+      "Name": "落下時判定水平距離[m]",
+      "Description": "ジャンプエッジで落下する時用。落下できる最大水平距離"
+    },
+    {
+      "Field": "navimeshNavigatorIterationLimit",
+      "Name": "ナビメッシュのパス検索の最大イテレーション数",
+      "Description": "-1の場合はHavok任せ（10000になる）。大きいほど長距離のパス検索ができるようになるが、地形裏などの到達できないパス検索の場合時間がかかることになる"
+    },
+    {
+      "Field": "navivolumeNavigatorIterationLimit",
+      "Name": "ナビボリュームのパス検索の最大イテレーション数",
+      "Description": "-1の場合はHavok任せ（10000になる）。大きいほど長距離のパス検索ができるようになるが、地形裏などの到達できないパス検索の場合時間がかかることになる"
+    },
+    {
+      "Field": "isSearchDisableRaycastForDummyChr",
+      "Name": "ダミーキャラのターゲットへの視線遮蔽チェックをやめるか",
+      "Description": "OFF：「索敵視界の遮蔽」にお任せ。ON：ダミーキャラに対してレイキャストでの視覚遮蔽チェックをしない"
+    },
+    {
+      "Field": "enableInitialPosInGetLastLandingPoint",
+      "Name": "最終の着地位置に初期位置が使えるか",
+      "Description": "最終着地位置を取得時初期位置をうまく取れないバグの修正用。影響範囲を抑えるためにだけパラメータ化した"
+    },
+    {
+      "Field": "doStayDuringNaviSearchInJumpEdgeMove",
+      "Name": "ジャンプエッジ中のパス検索待ち中待機するか",
+      "Description": "ジャンプエッジ中ブースト上昇OPを使っているが、パス検索中待機命令を出すとキャラが上昇し続けることがあるため修正用。影響範囲を抑えるためにだけパラメータ化した"
+    },
+    {
+      "Field": "unk191_2",
+      "Name": "unk191_2",
+      "Description": ""
+    },
+    {
+      "Field": "pad2",
+      "Name": "pad",
+      "Description": ""
+    },
+    {
+      "Field": "pad1",
+      "Name": "pad",
+      "Description": ""
+    },
+    {
+      "Field": "jumpEdgeFinishRaycastRadius",
+      "Name": "終端到達判定レイキャスト用半径[m]",
+      "Description": "ジャンプエッジ終了チェック用。プラスの値が設定される場合、デフォルトのキャラヒット半径を上書きする"
+    },
+    {
+      "Field": "pad",
+      "Name": "pad",
+      "Description": ""
+    }
+  ]
+}

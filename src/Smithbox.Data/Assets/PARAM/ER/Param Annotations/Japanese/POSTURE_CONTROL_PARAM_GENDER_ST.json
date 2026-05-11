@@ -1,0 +1,148 @@
+{
+  "Param": "POSTURE_CONTROL_PARAM_GENDER_ST",
+  "Type": "POSTURE_CONTROL_PARAM_GENDER_ST",
+  "Name": "POSTURE_CONTROL_PARAM_GENDER_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "a000_rightElbowIO",
+      "Name": "右肘_内外",
+      "Description": "右肘_内外"
+    },
+    {
+      "Field": "a000_leftElbowIO",
+      "Name": "左肘_内外",
+      "Description": "左肘_内外"
+    },
+    {
+      "Field": "a000_bothLegsIO",
+      "Name": "両足_内外",
+      "Description": "両足_内外"
+    },
+    {
+      "Field": "a002_rightElbowIO",
+      "Name": "右肘_内外",
+      "Description": "右肘_内外"
+    },
+    {
+      "Field": "a002_leftElbowIO",
+      "Name": "左肘_内外",
+      "Description": "左肘_内外"
+    },
+    {
+      "Field": "a002_bothLegsIO",
+      "Name": "両足_内外",
+      "Description": "両足_内外"
+    },
+    {
+      "Field": "a003_rightElbowIO",
+      "Name": "右肘_内外",
+      "Description": "右肘_内外"
+    },
+    {
+      "Field": "a003_leftElbowIO",
+      "Name": "左肘_内外",
+      "Description": "左肘_内外"
+    },
+    {
+      "Field": "a003_bothLegsIO",
+      "Name": "両足_内外",
+      "Description": "両足_内外"
+    },
+    {
+      "Field": "a010_rightElbowIO",
+      "Name": "右肘_内外",
+      "Description": "右肘_内外"
+    },
+    {
+      "Field": "a010_leftElbowIO",
+      "Name": "左肘_内外",
+      "Description": "左肘_内外"
+    },
+    {
+      "Field": "a010_bothLegsIO",
+      "Name": "両足_内外",
+      "Description": "両足_内外"
+    },
+    {
+      "Field": "a012_rightElbowIO",
+      "Name": "右肘_内外",
+      "Description": "右肘_内外"
+    },
+    {
+      "Field": "a012_leftElbowIO",
+      "Name": "左肘_内外",
+      "Description": "左肘_内外"
+    },
+    {
+      "Field": "a012_bothLegsIO",
+      "Name": "両足_内外",
+      "Description": "両足_内外"
+    },
+    {
+      "Field": "a013_rightElbowIO",
+      "Name": "右肘_内外",
+      "Description": "右肘_内外"
+    },
+    {
+      "Field": "a013_leftElbowIO",
+      "Name": "左肘_内外",
+      "Description": "左肘_内外"
+    },
+    {
+      "Field": "a013_bothLegsIO",
+      "Name": "両足_内外",
+      "Description": "両足_内外"
+    },
+    {
+      "Field": "a014_rightElbowIO",
+      "Name": "右肘_内外",
+      "Description": "右肘_内外"
+    },
+    {
+      "Field": "a014_leftElbowIO",
+      "Name": "左肘_内外",
+      "Description": "左肘_内外"
+    },
+    {
+      "Field": "a014_bothLegsIO",
+      "Name": "両足_内外",
+      "Description": "両足_内外"
+    },
+    {
+      "Field": "a015_rightElbowIO",
+      "Name": "右肘_内外",
+      "Description": "右肘_内外"
+    },
+    {
+      "Field": "a015_leftElbowIO",
+      "Name": "左肘_内外",
+      "Description": "左肘_内外"
+    },
+    {
+      "Field": "a015_bothLegsIO",
+      "Name": "両足_内外",
+      "Description": "両足_内外"
+    },
+    {
+      "Field": "a016_rightElbowIO",
+      "Name": "右肘_内外",
+      "Description": "右肘_内外"
+    },
+    {
+      "Field": "a016_leftElbowIO",
+      "Name": "左肘_内外",
+      "Description": "左肘_内外"
+    },
+    {
+      "Field": "a016_bothLegsIO",
+      "Name": "両足_内外",
+      "Description": "両足_内外"
+    },
+    {
+      "Field": "pad",
+      "Name": "pad",
+      "Description": ""
+    }
+  ]
+}

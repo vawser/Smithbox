@@ -1,0 +1,188 @@
+{
+  "Param": "LEVELUP_STATUS_CALC_PARAM",
+  "Type": "LEVELUP_STATUS_CALC_PARAM",
+  "Name": "LEVELUP_STATUS_CALC_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "maxHp",
+      "Name": "最大HP(≒回復上限値)",
+      "Description": ""
+    },
+    {
+      "Field": "maxStamina",
+      "Name": "最大スタミナ",
+      "Description": ""
+    },
+    {
+      "Field": "maxLoadWeight",
+      "Name": "最大装備荷重",
+      "Description": ""
+    },
+    {
+      "Field": "spellSlotCount",
+      "Name": "スペルスロット数",
+      "Description": ""
+    },
+    {
+      "Field": "spellChantingSpeed",
+      "Name": "スペル詠唱速度",
+      "Description": ""
+    },
+    {
+      "Field": "powerPhysicalByStrength",
+      "Name": "攻撃力 筋力",
+      "Description": ""
+    },
+    {
+      "Field": "powerPhysicalByDexterity",
+      "Name": "攻撃力 技量",
+      "Description": ""
+    },
+    {
+      "Field": "powerMagic",
+      "Name": "魔力攻撃力",
+      "Description": ""
+    },
+    {
+      "Field": "powerFire",
+      "Name": "炎攻撃力",
+      "Description": ""
+    },
+    {
+      "Field": "powerThunder",
+      "Name": "雷攻撃力",
+      "Description": ""
+    },
+    {
+      "Field": "powerDark",
+      "Name": "闇攻撃力",
+      "Description": ""
+    },
+    {
+      "Field": "powerPoison",
+      "Name": "毒攻撃力",
+      "Description": ""
+    },
+    {
+      "Field": "powerBleed",
+      "Name": "出血攻撃力",
+      "Description": ""
+    },
+    {
+      "Field": "defense",
+      "Name": "防御力",
+      "Description": ""
+    },
+    {
+      "Field": "resistanceMagic",
+      "Name": "魔力耐性",
+      "Description": ""
+    },
+    {
+      "Field": "resistanceFire",
+      "Name": "炎耐性",
+      "Description": ""
+    },
+    {
+      "Field": "resistanceThunder",
+      "Name": "雷耐性",
+      "Description": ""
+    },
+    {
+      "Field": "resistanceDark",
+      "Name": "闇耐性",
+      "Description": ""
+    },
+    {
+      "Field": "resistancePoison",
+      "Name": "毒耐性",
+      "Description": ""
+    },
+    {
+      "Field": "resistanceBleed",
+      "Name": "出血耐性",
+      "Description": ""
+    },
+    {
+      "Field": "resistancePetrify",
+      "Name": "石化耐性",
+      "Description": ""
+    },
+    {
+      "Field": "resistanceCurse",
+      "Name": "呪耐性",
+      "Description": ""
+    },
+    {
+      "Field": "actionSpeed",
+      "Name": "敏捷",
+      "Description": ""
+    },
+    {
+      "Field": "fortitude",
+      "Name": "強靭度",
+      "Description": ""
+    },
+    {
+      "Field": "primaryLeftHand",
+      "Name": "左手第一武器",
+      "Description": ""
+    },
+    {
+      "Field": "secondaryLeftHand",
+      "Name": "左手第二武器",
+      "Description": ""
+    },
+    {
+      "Field": "thirdlyLeftHand",
+      "Name": "左手第三武器",
+      "Description": ""
+    },
+    {
+      "Field": "primaryRightHand",
+      "Name": "右手第一武器",
+      "Description": ""
+    },
+    {
+      "Field": "secondaryRightHand",
+      "Name": "右手第二武器",
+      "Description": ""
+    },
+    {
+      "Field": "thirdlyRightHan",
+      "Name": "右手第三武器",
+      "Description": ""
+    },
+    {
+      "Field": "defenseStrike",
+      "Name": "対打撃",
+      "Description": ""
+    },
+    {
+      "Field": "defenseSlash",
+      "Name": "対斬撃",
+      "Description": ""
+    },
+    {
+      "Field": "defenseThrust",
+      "Name": "対刺突",
+      "Description": ""
+    },
+    {
+      "Field": "defensePoise",
+      "Name": "強靭度",
+      "Description": ""
+    },
+    {
+      "Field": "dummy00",
+      "Name": "ダミー0",
+      "Description": ""
+    },
+    {
+      "Field": "dummy01",
+      "Name": "ダミー1",
+      "Description": ""
+    }
+  ]
+}

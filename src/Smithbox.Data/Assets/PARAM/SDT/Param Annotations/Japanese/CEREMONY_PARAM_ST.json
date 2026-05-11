@@ -1,0 +1,63 @@
+{
+  "Param": "CEREMONY_PARAM_ST",
+  "Type": "CEREMONY_PARAM_ST",
+  "Name": "CEREMONY_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "eventLayerId",
+      "Name": "イベントレイヤーID",
+      "Description": "イベントメーカーのレイヤーID"
+    },
+    {
+      "Field": "mapStudioLayerId",
+      "Name": "MapStudioレイヤーID",
+      "Description": "MapStudioのレイヤーID"
+    },
+    {
+      "Field": "gparamId",
+      "Name": "GparamID",
+      "Description": "レイヤーに適用するGparamID"
+    },
+    {
+      "Field": "overrideGparamId",
+      "Name": "上書きGparamID",
+      "Description": "レイヤーに適用する上書きGparamID"
+    },
+    {
+      "Field": "pointCloudId",
+      "Name": "ポイントクラウドID",
+      "Description": "レイヤーに適用するポイントクラウドID"
+    },
+    {
+      "Field": "giTextureId",
+      "Name": "GIテクスチャID",
+      "Description": "レイヤーに適用するGIテクスチャID"
+    },
+    {
+      "Field": "bakeToolLightId",
+      "Name": "動的ライトグループID ",
+      "Description": "マップに配置されている動的光源のライトグループＩＤです。"
+    },
+    {
+      "Field": "isReload",
+      "Name": "リロードするか?",
+      "Description": "レイヤー切り替え時に、マップのリロードを行うかどうかのフラグ。(○=する、×=しない)"
+    },
+    {
+      "Field": "pad1",
+      "Name": "pad1",
+      "Description": ""
+    },
+    {
+      "Field": "playRegionOffset",
+      "Name": "プレイ領域オフセット",
+      "Description": "プレイ領域ID「AABYPP」の Y の部分。"
+    },
+    {
+      "Field": "pad2",
+      "Name": "pad2",
+      "Description": ""
+    }
+  ]
+}

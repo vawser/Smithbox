@@ -1,0 +1,163 @@
+{
+  "Param": "HIT_EFFECT_SFX_CONCEPT_PARAM_ST",
+  "Type": "HIT_EFFECT_SFX_CONCEPT_PARAM_ST",
+  "Name": "HIT_EFFECT_SFX_CONCEPT_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "atkIron_1",
+      "Name": "鉄製：概念１",
+      "Description": "鉄製：概念１"
+    },
+    {
+      "Field": "atkIron_2",
+      "Name": "鉄製：概念２",
+      "Description": "鉄製：概念２"
+    },
+    {
+      "Field": "atkFire_1",
+      "Name": "炎：概念１",
+      "Description": "炎：概念１"
+    },
+    {
+      "Field": "atkFire_2",
+      "Name": "炎：概念２",
+      "Description": "炎：概念２"
+    },
+    {
+      "Field": "atkWood_1",
+      "Name": "木製：概念１",
+      "Description": "木製：概念１"
+    },
+    {
+      "Field": "atkWood_2",
+      "Name": "木製：概念２",
+      "Description": "木製：概念２"
+    },
+    {
+      "Field": "atkBody_1",
+      "Name": "肉：概念１",
+      "Description": "肉：概念１"
+    },
+    {
+      "Field": "atkBody_2",
+      "Name": "肉：概念２",
+      "Description": "肉：概念２"
+    },
+    {
+      "Field": "atkEclipse_1",
+      "Name": "蝕：概念１",
+      "Description": "蝕：概念１"
+    },
+    {
+      "Field": "atkEclipse_2",
+      "Name": "蝕：概念２",
+      "Description": "蝕：概念２"
+    },
+    {
+      "Field": "atkEnergy_1",
+      "Name": "エネルギー：概念１",
+      "Description": "エネルギー：概念１"
+    },
+    {
+      "Field": "atkEnergy_2",
+      "Name": "エネルギー：概念２",
+      "Description": "エネルギー：概念２"
+    },
+    {
+      "Field": "atkNone_1",
+      "Name": "なし：概念１",
+      "Description": "なし：概念１"
+    },
+    {
+      "Field": "atkNone_2",
+      "Name": "なし：概念２",
+      "Description": "なし：概念２"
+    },
+    {
+      "Field": "atkDmy1_1",
+      "Name": "Dmy1：概念１",
+      "Description": "Dmy1：概念１（企画GDさんテスト用）"
+    },
+    {
+      "Field": "atkDmy1_2",
+      "Name": "Dmy1：概念２",
+      "Description": "Dmy1：概念２（企画GDさんテスト用）"
+    },
+    {
+      "Field": "atkDmy2_1",
+      "Name": "Dmy2：概念１",
+      "Description": "Dmy2：概念１（企画GDさんテスト用）"
+    },
+    {
+      "Field": "atkDmy2_2",
+      "Name": "Dmy2：概念２",
+      "Description": "Dmy2：概念２（企画GDさんテスト用）"
+    },
+    {
+      "Field": "atkDmy3_1",
+      "Name": "Dmy3：概念１",
+      "Description": "Dmy3：概念１（企画GDさんテスト用）"
+    },
+    {
+      "Field": "atkDmy3_2",
+      "Name": "Dmy3：概念２",
+      "Description": "Dmy3：概念２（企画GDさんテスト用）"
+    },
+    {
+      "Field": "atkMaggot_1",
+      "Name": "うじ：概念１",
+      "Description": "うじ：概念１"
+    },
+    {
+      "Field": "atkMaggot_2",
+      "Name": "うじ：概念２",
+      "Description": "うじ：概念２"
+    },
+    {
+      "Field": "atkWax_1",
+      "Name": "蝋：概念１",
+      "Description": "蝋：概念１"
+    },
+    {
+      "Field": "atkWax_2",
+      "Name": "蝋：概念２",
+      "Description": "蝋：概念２"
+    },
+    {
+      "Field": "atkFireFlame_1",
+      "Name": "炎上：概念１",
+      "Description": "炎上：概念１"
+    },
+    {
+      "Field": "atkFireFlame_2",
+      "Name": "炎上：概念２",
+      "Description": "炎上：概念２"
+    },
+    {
+      "Field": "atkEclipseGas_1",
+      "Name": "蝕：気体：概念１",
+      "Description": "蝕：気体：概念１"
+    },
+    {
+      "Field": "atkEclipseGas_2",
+      "Name": "蝕：気体：概念２",
+      "Description": "蝕：気体：概念２"
+    },
+    {
+      "Field": "atkEnergyStrong_1",
+      "Name": "エネルギー（強）：概念１",
+      "Description": "エネルギー（強）：概念１"
+    },
+    {
+      "Field": "atkEnergyStrong_2",
+      "Name": "エネルギー（強）：概念２",
+      "Description": "エネルギー（強）：概念２"
+    },
+    {
+      "Field": "reserve",
+      "Name": "予約領域",
+      "Description": ""
+    }
+  ]
+}

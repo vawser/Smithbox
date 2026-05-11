@@ -1,0 +1,53 @@
+{
+  "Param": "WIRE_VARIATION_ST",
+  "Type": "WIRE_VARIATION_ST",
+  "Name": "WIRE_VARIATION_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "targetMarkerType",
+      "Name": "ターゲットマーカータイプ",
+      "Description": "ターゲット位置に表示するマーカー（FE）のタイプ"
+    },
+    {
+      "Field": "extendWireActionDistance",
+      "Name": "ワイヤーアクション延長距離",
+      "Description": "0以外が設定されるとその距離分ワイヤーアクション（アクション可能・認識）距離を引き伸ばします。グリッドに関係なく検索対象になるので限定的に使われる想定です。"
+    },
+    {
+      "Field": "pad0",
+      "Name": "パディング",
+      "Description": "パディング"
+    },
+    {
+      "Field": "recognitionAngleUp",
+      "Name": "認識範囲_上方向[度]",
+      "Description": "ワイヤーエッジの基準方向を正面として、上側のこの角度以内にいるキャラのみワイヤーアクション可能"
+    },
+    {
+      "Field": "recognitionAngleDown",
+      "Name": "認識範囲_下方向[度]",
+      "Description": "ワイヤーエッジの基準方向を正面として、下側のこの角度以内にいるキャラのみワイヤーアクション可能"
+    },
+    {
+      "Field": "recognitionAngleLeft",
+      "Name": "認識範囲_左方向[度]",
+      "Description": "ワイヤーエッジの基準方向を正面として、左側のこの角度以内にいるキャラのみワイヤーアクション可能"
+    },
+    {
+      "Field": "recognitionAngleRight",
+      "Name": "認識範囲_右方向[度]",
+      "Description": "ワイヤーエッジの基準方向を正面として、右側のこの角度以内にいるキャラのみワイヤーアクション可能"
+    },
+    {
+      "Field": "chrPhysicsHomingIdOffset",
+      "Name": "キャラ物理ホーミングIDオフセット",
+      "Description": "キャラ物理ホーミングパラメータIDをこの値でオフセットする。ワイヤーエッジごとにホーミングする目標位置をずらしたいといったときに使用する"
+    },
+    {
+      "Field": "pad1",
+      "Name": "パディング",
+      "Description": "パディング"
+    }
+  ]
+}

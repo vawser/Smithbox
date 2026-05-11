@@ -1,0 +1,88 @@
+{
+  "Param": "MENU_OFFSCR_REND_PARAM_ST",
+  "Type": "MENU_OFFSCR_REND_PARAM_ST",
+  "Name": "MENU_OFFSCR_REND_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "camAtPosX",
+      "Name": "カメラ注視点X",
+      "Description": "カメラ注視点X"
+    },
+    {
+      "Field": "camAtPosY",
+      "Name": "カメラ注視点Y",
+      "Description": "カメラ注視点Y"
+    },
+    {
+      "Field": "camAtPosZ",
+      "Name": "カメラ注視点Z",
+      "Description": "カメラ注視点Z"
+    },
+    {
+      "Field": "camDist",
+      "Name": "カメラ距離",
+      "Description": "カメラ距離"
+    },
+    {
+      "Field": "camRotX",
+      "Name": "カメラ向きX",
+      "Description": "カメラ向きX"
+    },
+    {
+      "Field": "camRotY",
+      "Name": "カメラ向きY",
+      "Description": "カメラ向きY"
+    },
+    {
+      "Field": "camFov",
+      "Name": "カメラ画角",
+      "Description": "カメラ画角"
+    },
+    {
+      "Field": "camDistMin",
+      "Name": "カメラ操作時最短距離",
+      "Description": "カメラ操作時最短距離"
+    },
+    {
+      "Field": "camDistMax",
+      "Name": "カメラ操作時最長距離",
+      "Description": "カメラ操作時最長距離"
+    },
+    {
+      "Field": "camRotXMin",
+      "Name": "カメラ操作時最小向き",
+      "Description": "カメラ操作時最小向き"
+    },
+    {
+      "Field": "camRotXMax",
+      "Name": "カメラ操作時最大向き",
+      "Description": "カメラ操作時最大向き"
+    },
+    {
+      "Field": "GparamID",
+      "Name": "GparamID",
+      "Description": "GparamID"
+    },
+    {
+      "Field": "envTexId",
+      "Name": "環境マップテクスチャID",
+      "Description": "環境マップテクスチャID。N:\\GR\\data\\Other\\SysEnvTex\\GILM????_rem.dds の数字4桁に対応しています。"
+    },
+    {
+      "Field": "Grapm_ID_forPS4",
+      "Name": "GparamID(PS4用)",
+      "Description": "GparamID(PS4用)"
+    },
+    {
+      "Field": "Grapm_ID_forXB1",
+      "Name": "GparamID(XboxOne用)",
+      "Description": "GparamID(XboxOne用)"
+    },
+    {
+      "Field": "pad",
+      "Name": "予約",
+      "Description": "予約"
+    }
+  ]
+}

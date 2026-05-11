@@ -1,0 +1,113 @@
+{
+  "Param": "CARTRIDGE_BEHAVIOR_PARAM_ST",
+  "Type": "CARTRIDGE_BEHAVIOR_PARAM_ST",
+  "Name": "CARTRIDGE_BEHAVIOR_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "NT版出力から外すか",
+      "Description": "NT版から除外するか、除外するものに○をつける"
+    },
+    {
+      "Field": "disableParam_Product",
+      "Name": "製品版出力から外すか",
+      "Description": "製品版から除外するか、除外するものに○をつける"
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "パッケージ出力用リザーブ1",
+      "Description": "パッケージ出力用リザーブ1"
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "パッケージ出力用リザーブ2",
+      "Description": "パッケージ出力用リザーブ2"
+    },
+    {
+      "Field": "initVelocity",
+      "Name": "初速[m/s]",
+      "Description": "初速度."
+    },
+    {
+      "Field": "initVelocity_RandomRange",
+      "Name": "初速±幅[m/s]",
+      "Description": "±の乱数幅"
+    },
+    {
+      "Field": "chrVelocityTakeoverRate",
+      "Name": "キャラの速度引き継ぎ率",
+      "Description": "キャラの速度引き継ぎ率"
+    },
+    {
+      "Field": "chrVelocityTakeoverRate_RandomRange",
+      "Name": "キャラの速度引き継ぎ率±幅",
+      "Description": "±の乱数幅"
+    },
+    {
+      "Field": "pitch",
+      "Name": "射出角度[度]",
+      "Description": "ダミポリの水平角度基準からの角度(+が↑方向、-が↓方向)"
+    },
+    {
+      "Field": "pitch_RandomRange",
+      "Name": "射出角度±幅[度]",
+      "Description": "±の乱数幅"
+    },
+    {
+      "Field": "gravity",
+      "Name": "重力加速度[m/s^2]",
+      "Description": "重力加速度"
+    },
+    {
+      "Field": "gravity_RandomRange",
+      "Name": "重力加速度±幅[m/s^2]",
+      "Description": "±の乱数幅"
+    },
+    {
+      "Field": "angVelocityX",
+      "Name": "角速度(X)[度/s]",
+      "Description": "回転速度(X軸)"
+    },
+    {
+      "Field": "angVelocityX_RandomRange",
+      "Name": "角速度±幅(X)[度/s]",
+      "Description": "±の乱数幅"
+    },
+    {
+      "Field": "angVelocityY",
+      "Name": "角速度(Y)[度/s]",
+      "Description": "回転速度(Y軸)"
+    },
+    {
+      "Field": "angVelocityY_RandomRange",
+      "Name": "角速度±幅(Y)[度/s]",
+      "Description": "±の乱数幅"
+    },
+    {
+      "Field": "angVelocityZ",
+      "Name": "角速度(Z)[度/s]",
+      "Description": "回転速度(Z軸)"
+    },
+    {
+      "Field": "angVelocityZ_RandomRange",
+      "Name": "角速度±幅(Z)[度/s]",
+      "Description": "±の乱数幅"
+    },
+    {
+      "Field": "yaw",
+      "Name": "射出前後角度[度]",
+      "Description": "ダミポリの水平角度基準からの角度(+がダミポリ右方向、-がダミポリ左方向)"
+    },
+    {
+      "Field": "yaw_RandomRange",
+      "Name": "射出前後角度±幅[度]",
+      "Description": "±の乱数幅"
+    },
+    {
+      "Field": "pad_end",
+      "Name": "パディング",
+      "Description": ""
+    }
+  ]
+}

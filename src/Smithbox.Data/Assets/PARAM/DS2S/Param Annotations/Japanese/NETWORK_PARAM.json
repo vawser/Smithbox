@@ -1,0 +1,673 @@
+{
+  "Param": "NETWORK_PARAM",
+  "Type": "NETWORK_PARAM",
+  "Name": "NETWORK_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "signVerticalOffset",
+      "Name": "サイン高さオフセット[m]",
+      "Description": ""
+    },
+    {
+      "Field": "maxSignPosCorrectionRange",
+      "Name": "サイン位置補正最大距離[m]",
+      "Description": ""
+    },
+    {
+      "Field": "summonTimeoutTime",
+      "Name": "召喚希望タイムアウト時間[秒]",
+      "Description": ""
+    },
+    {
+      "Field": "summonSingKeyGuideRange",
+      "Name": "キーガイド水平範囲[m]",
+      "Description": ""
+    },
+    {
+      "Field": "summonSingKeyGuideHeight",
+      "Name": "キーガイド垂直範囲[m]",
+      "Description": ""
+    },
+    {
+      "Field": "summonSignReloadSignIntervalTime1",
+      "Name": "召喚サイン再取得待機時間(過疎時)[秒]",
+      "Description": ""
+    },
+    {
+      "Field": "summonSignReloadSignIntervalTime2",
+      "Name": "召喚サイン再取得待機時間[秒]",
+      "Description": ""
+    },
+    {
+      "Field": "summonSignReloadSignTotalCount",
+      "Name": "召喚サイン所持可能数上限(全体)",
+      "Description": ""
+    },
+    {
+      "Field": "summonSignReloadSignCellCount",
+      "Name": "召喚サイン所持可能数上限(セル)",
+      "Description": ""
+    },
+    {
+      "Field": "summonSignUpdateSignIntervalTime",
+      "Name": "召喚サイン更新待機時間[秒]",
+      "Description": ""
+    },
+    {
+      "Field": "summonSignBasicExclusiveRange",
+      "Name": "召喚サイン間描画排他水平範囲[m]",
+      "Description": ""
+    },
+    {
+      "Field": "summonSignBasicExclusiveHeight",
+      "Name": "召喚サイン間描画排他垂直範囲[m]",
+      "Description": ""
+    },
+    {
+      "Field": "previewChrWaitingTime",
+      "Name": "召喚サインキャラモデル描画待機時間[秒]",
+      "Description": ""
+    },
+    {
+      "Field": "summonSignVisibleRange",
+      "Name": "召喚サインPC間描画距離[m]",
+      "Description": ""
+    },
+    {
+      "Field": "summonSignCellGroupHorizontalRange",
+      "Name": "召喚サイン取得セル範囲(水平)",
+      "Description": ""
+    },
+    {
+      "Field": "summonSignCellGroupTopRange",
+      "Name": "召喚サイン取得セル範囲(上方向)",
+      "Description": ""
+    },
+    {
+      "Field": "summonSignCellGroupBottomRange",
+      "Name": "召喚サイン取得セル範囲(下方向)",
+      "Description": ""
+    },
+    {
+      "Field": "minWhitePhantomLimitTimeScale",
+      "Name": "白霊サイン表示制限時間下限倍率",
+      "Description": ""
+    },
+    {
+      "Field": "minSmallPhantomLimitTimeScale",
+      "Name": "小霊サイン表示制限時間下限倍率",
+      "Description": ""
+    },
+    {
+      "Field": "whiteKeywordLimitTimeScale",
+      "Name": "白霊サインキーワード延長倍率",
+      "Description": ""
+    },
+    {
+      "Field": "smallKeywordLimitTimeScale",
+      "Name": "小霊サインキーワード延長倍率",
+      "Description": ""
+    },
+    {
+      "Field": "blackKeywordLimitTimeScale",
+      "Name": "闇霊サインキーワード延長倍率",
+      "Description": ""
+    },
+    {
+      "Field": "dragonKeywordLimitTimeScale",
+      "Name": "竜霊サインキーワード延長倍率",
+      "Description": ""
+    },
+    {
+      "Field": "maxBreakInTargetListCount",
+      "Name": "乱入先取得数",
+      "Description": ""
+    },
+    {
+      "Field": "bloodMessageKeyGuideRange",
+      "Name": "キーガイド水平範囲[m]",
+      "Description": ""
+    },
+    {
+      "Field": "bloodMessageKeyGuideHeight",
+      "Name": "キーガイド垂直範囲[m]",
+      "Description": ""
+    },
+    {
+      "Field": "bloodMessageReloadSignTotalCount",
+      "Name": "血文字取得数(全体)",
+      "Description": ""
+    },
+    {
+      "Field": "bloodMessageReloadNewSignCellCount",
+      "Name": "血文字取得数(セル、新順)",
+      "Description": ""
+    },
+    {
+      "Field": "bloodMessageReloadRandomSignCellCount",
+      "Name": "血文字取得数(セル、ランダム )",
+      "Description": ""
+    },
+    {
+      "Field": "bloodMessageMaxSignTotalCount",
+      "Name": "血文字所持可能数上限(全体)",
+      "Description": ""
+    },
+    {
+      "Field": "bloodMessageMaxSignCellCount",
+      "Name": "血文字所持可能数上限(セル)",
+      "Description": ""
+    },
+    {
+      "Field": "bloodMessageBasicExclusiveRange",
+      "Name": "血文字間描画排他水平範囲[m]",
+      "Description": ""
+    },
+    {
+      "Field": "bloodMessageBasicExclusiveHeight",
+      "Name": "血文字間描画排他垂直範囲[m]",
+      "Description": ""
+    },
+    {
+      "Field": "bloodMessageSignVisibleRange",
+      "Name": "血文字PC間描画距離[m]",
+      "Description": ""
+    },
+    {
+      "Field": "bloodMessageMaxWriteSignCount",
+      "Name": "書いた血文字履歴件数上限",
+      "Description": ""
+    },
+    {
+      "Field": "bloodMessageMaxReadSignCount",
+      "Name": "読んだ血文字履歴件数上限",
+      "Description": ""
+    },
+    {
+      "Field": "bloodMessageReloadSignIntervalTime",
+      "Name": "血文字再取得待機時間[秒]",
+      "Description": ""
+    },
+    {
+      "Field": "bloodMessageCellGroupHorizontalRange",
+      "Name": "血文字取得セル範囲(水平)",
+      "Description": ""
+    },
+    {
+      "Field": "bloodMessageCellGroupTopRange",
+      "Name": "血文字取得セル範囲(上方向)",
+      "Description": ""
+    },
+    {
+      "Field": "bloodMessageCellGroupBottomRange",
+      "Name": "血文字取得セル範囲(下方向)",
+      "Description": ""
+    },
+    {
+      "Field": "bloodMessageLifeTime",
+      "Name": "血文字データ保持期間上限[秒]",
+      "Description": ""
+    },
+    {
+      "Field": "areaBloodMessageReloadSignIntervalTime",
+      "Name": "Area blood message reload time interval [sec]",
+      "Description": ""
+    },
+    {
+      "Field": "areaBloodMessageReloadUnknownCount",
+      "Name": "areaBloodMessageReloadUnknownCount",
+      "Description": ""
+    },
+    {
+      "Field": "bloodstainKeyGuideRange",
+      "Name": "キーガイド水平範囲[m]",
+      "Description": ""
+    },
+    {
+      "Field": "bloodstainKeyGuideHeight",
+      "Name": "キーガイド垂直範囲[m]",
+      "Description": ""
+    },
+    {
+      "Field": "bloodstainKeyGuideRangePlayer",
+      "Name": "プレイヤー血痕キーガイド水平範囲[m]",
+      "Description": ""
+    },
+    {
+      "Field": "bloodstainKeyGuideHeightPlayer",
+      "Name": "プレイヤー血痕キーガイド垂直範囲[m]",
+      "Description": ""
+    },
+    {
+      "Field": "bloodstainReloadSignTotalCount",
+      "Name": "血痕取得数(全体)",
+      "Description": ""
+    },
+    {
+      "Field": "bloodstainReloadSignCellCount",
+      "Name": "血痕取得数(セル)",
+      "Description": ""
+    },
+    {
+      "Field": "bloodstainMaxSignTotalCount",
+      "Name": "血痕所持可能数上限(全体)",
+      "Description": ""
+    },
+    {
+      "Field": "bloodstainMaxSignCellCount",
+      "Name": "血痕所持可能数上限(セル)",
+      "Description": ""
+    },
+    {
+      "Field": "bloodstainReloadSignIntervalTime",
+      "Name": "血痕再取得待機時間[秒]",
+      "Description": ""
+    },
+    {
+      "Field": "bloodstainSignVisibleRange",
+      "Name": "血痕PC間描画距離[m]",
+      "Description": ""
+    },
+    {
+      "Field": "bloodstainBasicExclusiveRange",
+      "Name": "血痕間描画排他水平範囲[m]",
+      "Description": ""
+    },
+    {
+      "Field": "bloodstainBasicExclusiveHeight",
+      "Name": "血痕間描画排他垂直範囲[m]",
+      "Description": ""
+    },
+    {
+      "Field": "bloodstainCellGroupHorizontalRange",
+      "Name": "血痕取得セル範囲(水平)",
+      "Description": ""
+    },
+    {
+      "Field": "bloodstainCellGroupTopRange",
+      "Name": "血痕取得セル範囲(上方向)",
+      "Description": ""
+    },
+    {
+      "Field": "bloodstainCellGroupBottomRange",
+      "Name": "血痕取得セル範囲(下方向)",
+      "Description": ""
+    },
+    {
+      "Field": "bloodstainLifeTime",
+      "Name": "血痕データ保持期間上限[秒]",
+      "Description": ""
+    },
+    {
+      "Field": "recordDeadingGhostTotalTime",
+      "Name": "死亡幻影記録合計時間[秒]",
+      "Description": ""
+    },
+    {
+      "Field": "recordDeadingGhostExtensionTime",
+      "Name": "死亡幻影記録延長時間[秒]",
+      "Description": ""
+    },
+    {
+      "Field": "areaBloodstainReloadSignIntervalTime",
+      "Name": "Area bloodstain reload time interval [sec]",
+      "Description": ""
+    },
+    {
+      "Field": "areaBloodstainReloadUnknownCount",
+      "Name": "areaBloodstainReloadUnknownCount",
+      "Description": ""
+    },
+    {
+      "Field": "bloodstainPoolMinCullPriority",
+      "Name": "bloodstainPoolMinCullPriority",
+      "Description": ""
+    },
+    {
+      "Field": "bloodstainPoolMaxSignCount",
+      "Name": "bloodstainPoolMaxSignCount",
+      "Description": ""
+    },
+    {
+      "Field": "bloodstainPoolRadius",
+      "Name": "bloodstainPoolRadius",
+      "Description": ""
+    },
+    {
+      "Field": "reloadGhostTotalCount",
+      "Name": "幻影取得数(全体)",
+      "Description": ""
+    },
+    {
+      "Field": "reloadGhostCellCount",
+      "Name": "幻影取得数(セル)",
+      "Description": ""
+    },
+    {
+      "Field": "maxGhostTotalCount",
+      "Name": "幻影所持可能数上限(全体)",
+      "Description": ""
+    },
+    {
+      "Field": "distanceOfBeginRecordVersus",
+      "Name": "敵対PCリプレイ記録開始距離[m]",
+      "Description": ""
+    },
+    {
+      "Field": "distanceOfEndRecordVersus",
+      "Name": "敵対PCリプレイ記録終了距離[m]",
+      "Description": ""
+    },
+    {
+      "Field": "updateWanderGhostIntervalTime",
+      "Name": "徘徊幻影アップロード間隔[秒]",
+      "Description": ""
+    },
+    {
+      "Field": "updateVersusGhostIntervalTime",
+      "Name": "対戦幻影アップロード間隔[秒]",
+      "Description": ""
+    },
+    {
+      "Field": "recordWanderingGhostTime",
+      "Name": "徘徊幻影記録時間[秒]",
+      "Description": ""
+    },
+    {
+      "Field": "recordVersusGhostTime",
+      "Name": "対戦幻影記録時間[秒]",
+      "Description": ""
+    },
+    {
+      "Field": "updateBonfireGhostIntervalTime",
+      "Name": "篝火幻影アップロード間隔[秒]",
+      "Description": ""
+    },
+    {
+      "Field": "replayGhostRangeOnView",
+      "Name": "幻影再生距離（視野内）[秒]",
+      "Description": ""
+    },
+    {
+      "Field": "replayGhostRangeOutView",
+      "Name": "幻影再生距離（視野外）[秒]",
+      "Description": ""
+    },
+    {
+      "Field": "replayBonfireGhostTime",
+      "Name": "篝火幻影再生時間[秒]",
+      "Description": ""
+    },
+    {
+      "Field": "minBonfireGhostValidRange",
+      "Name": "篝火幻影配置最小距離[秒]",
+      "Description": ""
+    },
+    {
+      "Field": "maxBonfireGhostValidRange",
+      "Name": "篝火幻影配置最大距離[秒]",
+      "Description": ""
+    },
+    {
+      "Field": "minReplayIntervalTime",
+      "Name": "幻影再生間隔下限[秒]",
+      "Description": ""
+    },
+    {
+      "Field": "maxReplayIntervalTime",
+      "Name": "幻影再生間隔上限[秒]",
+      "Description": ""
+    },
+    {
+      "Field": "reloadGhostIntervalTime",
+      "Name": "幻影定期取得間隔[秒]",
+      "Description": ""
+    },
+    {
+      "Field": "cellGroupHorizontalRange",
+      "Name": "幻影取得セル範囲(水平)",
+      "Description": ""
+    },
+    {
+      "Field": "cellGroupTopRange",
+      "Name": "幻影取得セル範囲(上方向)",
+      "Description": ""
+    },
+    {
+      "Field": "cellGroupBottomRange",
+      "Name": "幻影取得セル範囲(下方向)",
+      "Description": ""
+    },
+    {
+      "Field": "replayBonfireModeRange",
+      "Name": "幻影篝火モード再生適用距離",
+      "Description": ""
+    },
+    {
+      "Field": "stopBonfireModeRangeOnView",
+      "Name": "幻影篝火モード停止距離（視野内）[秒]",
+      "Description": ""
+    },
+    {
+      "Field": "stopBonfireModeRangeOutView",
+      "Name": "幻影篝火モード停止距離（視野外）[秒]",
+      "Description": ""
+    },
+    {
+      "Field": "reloadVisitListCoolTime",
+      "Name": "指輪検索間隔[秒]",
+      "Description": ""
+    },
+    {
+      "Field": "maxCoopBlueSummonCount",
+      "Name": "救援青霊出現数上限",
+      "Description": ""
+    },
+    {
+      "Field": "maxBellGuardSummonCount",
+      "Name": "鐘守灰霊出現数上限",
+      "Description": ""
+    },
+    {
+      "Field": "maxVisitListCount",
+      "Name": "指輪検索先取得数",
+      "Description": ""
+    },
+    {
+      "Field": "reloadSearch_CoopBlue_Min",
+      "Name": "救援青霊リロード時間\u3000最小[sec]",
+      "Description": ""
+    },
+    {
+      "Field": "reloadSearch_CoopBlue_Max",
+      "Name": "救援青霊リロード時間\u3000最大[sec]",
+      "Description": ""
+    },
+    {
+      "Field": "reloadSearch_BellGuard_Min",
+      "Name": "鐘守リロード時間\u3000最小[sec]",
+      "Description": ""
+    },
+    {
+      "Field": "reloadSearch_BellGuard_Max",
+      "Name": "鐘守リロード時間\u3000最大[sec]",
+      "Description": ""
+    },
+    {
+      "Field": "reloadSearch_RatKing_Min",
+      "Name": "ネズミの王リロード時間\u3000最小[sec]",
+      "Description": ""
+    },
+    {
+      "Field": "reloadSearch_RatKing_Max",
+      "Name": "ネズミの王リロード時間\u3000最大[sec]",
+      "Description": ""
+    },
+    {
+      "Field": "visitpad00",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "srttMaxLimit",
+      "Name": "SRTT上限[ミリ秒]",
+      "Description": ""
+    },
+    {
+      "Field": "srttMeanLimit",
+      "Name": "SRTT上限(安定時)[ミリ秒]",
+      "Description": ""
+    },
+    {
+      "Field": "srttMeanDeviationLimit",
+      "Name": "RTT平均偏差上限[ミリ秒]",
+      "Description": ""
+    },
+    {
+      "Field": "darkPhantomLimitBoostTime",
+      "Name": "闇霊制限時間加速時間[秒]",
+      "Description": ""
+    },
+    {
+      "Field": "darkPhantomLimitBoostScale",
+      "Name": "闇霊制限時間加速時倍率",
+      "Description": ""
+    },
+    {
+      "Field": "multiplayDisableLifeTime",
+      "Name": "マルチプレイ無効化寿命",
+      "Description": ""
+    },
+    {
+      "Field": "abyssMultiplayLimit",
+      "Name": "深淵霊マルチプレイ回数",
+      "Description": ""
+    },
+    {
+      "Field": "phantomWarpMinimumTime",
+      "Name": "霊体がワープするまでの最低時間[秒]",
+      "Description": ""
+    },
+    {
+      "Field": "phantomReturnDelayTime",
+      "Name": "黒水晶使用後に帰還するまでのディレイ時間[秒]",
+      "Description": ""
+    },
+    {
+      "Field": "terminateTimeoutTime",
+      "Name": "切断待ちのタイムアウト時間",
+      "Description": ""
+    },
+    {
+      "Field": "penaltyPointLanDisconnect",
+      "Name": "LAN抜きによるペナルティ加算値",
+      "Description": ""
+    },
+    {
+      "Field": "penaltyPointSignout",
+      "Name": "サインアウトによるペナルティ加算値",
+      "Description": ""
+    },
+    {
+      "Field": "penaltyPointReboot",
+      "Name": "電源断によるペナルティ加算値",
+      "Description": ""
+    },
+    {
+      "Field": "penaltyPointBeginPenalize",
+      "Name": "ペナルティが発動するペナルティ値",
+      "Description": ""
+    },
+    {
+      "Field": "penaltyForgiveItemLimitTime",
+      "Name": "「線の理」の販売制限時間[秒]",
+      "Description": ""
+    },
+    {
+      "Field": "allAreaSearchRate_CoopBlue",
+      "Name": "全域検索率：救援青霊[0-100]",
+      "Description": ""
+    },
+    {
+      "Field": "allAreaSearchRate_VsBlue",
+      "Name": "全域検索率：報復青霊[0-100]",
+      "Description": ""
+    },
+    {
+      "Field": "allAreaSearchRate_BellGuard",
+      "Name": "全域検索率：鐘守灰霊[0-100]",
+      "Description": ""
+    },
+    {
+      "Field": "bloodMessageEvalHealRate",
+      "Name": "血文字評価時のHP回復割合[0-100]",
+      "Description": ""
+    },
+    {
+      "Field": "smallGoldSuccessHostRewardId",
+      "Name": "小金霊成功帰還ホスト報酬ID",
+      "Description": ""
+    },
+    {
+      "Field": "doorInvalidPlayAreaExtents",
+      "Name": "ドア付近プレイ領域無効化距離[m]",
+      "Description": ""
+    },
+    {
+      "Field": "signDisplayMax",
+      "Name": "サイン最大同時表示数",
+      "Description": ""
+    },
+    {
+      "Field": "bloodStainDisplayMax",
+      "Name": "血痕最大同時表示数",
+      "Description": ""
+    },
+    {
+      "Field": "bloodMessageDisplayMax",
+      "Name": "血文字最大同時表示数",
+      "Description": ""
+    },
+    {
+      "Field": "pad00",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "mirrorKnightSignConvertRate",
+      "Name": "ミラーナイトサイン変換割合[0-100]",
+      "Description": ""
+    },
+    {
+      "Field": "reserveMK",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "reloadMKSignIntervalTime2",
+      "Name": "ミラーナイトサイン再取得待機時間[秒]",
+      "Description": ""
+    },
+    {
+      "Field": "mirrorKnightSignLifetime",
+      "Name": "ミラーナイトサイン寿命[秒]",
+      "Description": ""
+    },
+    {
+      "Field": "reloadMKSignTotalCount",
+      "Name": "ミラーナイトサインサイン所持可能数上限",
+      "Description": ""
+    },
+    {
+      "Field": "reloadMatchingAreaTime",
+      "Name": "reloadMatchingAreaTime",
+      "Description": ""
+    },
+    {
+      "Field": "pad10",
+      "Name": "予約",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,208 @@
+{
+  "Param": "CHR_ACT_TURN_PARAM_ST",
+  "Type": "CHR_ACT_TURN_PARAM_ST",
+  "Name": "CHR_ACT_TURN_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "NT版出力から外すか",
+      "Description": "NT版から除外するか、除外するものに○をつける"
+    },
+    {
+      "Field": "disableParam_Product",
+      "Name": "製品版出力から外すか",
+      "Description": "製品版から除外するか、除外するものに○をつける"
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "パッケージ出力用リザーブ1",
+      "Description": "パッケージ出力用リザーブ1"
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "パッケージ出力用リザーブ2",
+      "Description": "パッケージ出力用リザーブ2"
+    },
+    {
+      "Field": "baseTurnSpeedDPS",
+      "Name": "基準旋回速度[deg/s]",
+      "Description": "通常時旋回の基準旋回速度、この値に速度や時間の旋回率がかかってくる"
+    },
+    {
+      "Field": "speedTurnRate_MinSpeedKMPH",
+      "Name": "速度旋回率 - 最小速度[km/h]",
+      "Description": "この速度以下で最小速度旋回率になる"
+    },
+    {
+      "Field": "speedTurnRate_MaxSpeedKMPH",
+      "Name": "速度旋回率 - 最大速度[km/h]",
+      "Description": "この速度以上で最大速度旋回率になる"
+    },
+    {
+      "Field": "speedTurnRate_MinSpeedTurnRate",
+      "Name": "速度旋回率 - 最小速度旋回率",
+      "Description": "最小速度の時の速度旋回率"
+    },
+    {
+      "Field": "speedTurnRate_MaxSpeedTurnRate",
+      "Name": "速度旋回率 - 最大速度旋回率",
+      "Description": "最大速度の時の速度旋回率"
+    },
+    {
+      "Field": "timeTurnRate_MinTimeSec",
+      "Name": "時間旋回率 - 最小時間[sec]",
+      "Description": "パラメータが切り替わってからこの時間以下で最小時間旋回率になる"
+    },
+    {
+      "Field": "timeTurnRate_MaxTimeSec",
+      "Name": "時間旋回率 - 最大時間[sec]",
+      "Description": "パラメータが切り替わってからこの時間以上で最大時間旋回率になる"
+    },
+    {
+      "Field": "timeTurnRate_MinTimeTurnRate",
+      "Name": "時間旋回率 - 最小時間旋回率",
+      "Description": "最小時間の時の時間旋回率"
+    },
+    {
+      "Field": "timeTurnRate_MaxTimeTurnRate",
+      "Name": "時間旋回率 - 最大時間旋回率",
+      "Description": "最大時間の時の時間旋回率"
+    },
+    {
+      "Field": "lookTargetModeTurnSpeedDPS",
+      "Name": "ターゲットの方向に向くモードの時の旋回速度[deg/s]",
+      "Description": "ターゲットの方向に向くモード時の旋回速度、基準旋回速度は使わない"
+    },
+    {
+      "Field": "lookTargetModeTurnSpeedDPSAtLowDeltaAngle",
+      "Name": "角度差が少ない際のターゲットの方向に向くモードの時の旋回速度[deg/s]",
+      "Description": "角度差が少ないときのターゲットの方向に向くモード時の旋回速度、基準旋回速度は使わない"
+    },
+    {
+      "Field": "judgeTurnSpeedThresholdAngleDeg",
+      "Name": "角度差が少ないと判断する角度（絶対値）[deg]",
+      "Description": "この角度より小さければ角度差が少ないときの旋回速度が有効になる"
+    },
+    {
+      "Field": "pad",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "lookTargetMode_SpeedTurnRate_MinSpeedKMPH",
+      "Name": "速度旋回率 - 最小速度[km/h](ターゲットの方向に向くモード)",
+      "Description": "この速度以下で最小速度旋回率になる"
+    },
+    {
+      "Field": "lookTargetMode_SpeedTurnRate_MaxSpeedKMPH",
+      "Name": "速度旋回率 - 最大速度[km/h](ターゲットの方向に向くモード)",
+      "Description": "この速度以上で最大速度旋回率になる"
+    },
+    {
+      "Field": "lookTargetMode_SpeedTurnRate_MinSpeedTurnRate",
+      "Name": "速度旋回率 - 最小速度旋回率(ターゲットの方向に向くモード)",
+      "Description": "最小速度の時の速度旋回率"
+    },
+    {
+      "Field": "lookTargetMode_SpeedTurnRate_MaxSpeedTurnRate",
+      "Name": "速度旋回率 - 最大速度旋回率(ターゲットの方向に向くモード)",
+      "Description": "最大速度の時の速度旋回率"
+    },
+    {
+      "Field": "lookTargetMode_TimeTurnRate_MinTimeSec",
+      "Name": "時間旋回率 - 最小時間[sec](ターゲットの方向に向くモード)",
+      "Description": "パラメータが切り替わってからこの時間以下で最小時間旋回率になる"
+    },
+    {
+      "Field": "lookTargetMode_TimeTurnRate_MaxTimeSec",
+      "Name": "時間旋回率 - 最大時間[sec](ターゲットの方向に向くモード)",
+      "Description": "パラメータが切り替わってからこの時間以上で最大時間旋回率になる"
+    },
+    {
+      "Field": "lookTargetMode_TimeTurnRate_MinTimeTurnRate",
+      "Name": "時間旋回率 - 最小時間旋回率(ターゲットの方向に向くモード)",
+      "Description": "最小時間の時の時間旋回率"
+    },
+    {
+      "Field": "lookTargetMode_TimeTurnRate_MaxTimeTurnRate",
+      "Name": "時間旋回率 - 最大時間旋回率(ターゲットの方向に向くモード)",
+      "Description": "最大時間の時の時間旋回率"
+    },
+    {
+      "Field": "turnAccelDPSS",
+      "Name": "角加速度[deg/s^2]",
+      "Description": "旋回速度に到達する為の加速度。初めから旋回速度にしたい場合は大きい値にする"
+    },
+    {
+      "Field": "lookTargetMode_LookAheadSecond",
+      "Name": "ターゲットの方向に向く際に何秒後のターゲット位置を見るか[sec]",
+      "Description": "ターゲットの方向に向く際に、ターゲットの何秒後の位置を見ようとするか(AI用）"
+    },
+    {
+      "Field": "timeTurnRate_MinTimeSec_Accel",
+      "Name": "時間角加速度率 - 最小時間[sec]",
+      "Description": "パラメータが切り替わってからこの時間以下で最小時間角加速度率になる"
+    },
+    {
+      "Field": "timeTurnRate_MaxTimeSec_Accel",
+      "Name": "時間角加速度率 - 最大時間[sec]",
+      "Description": "パラメータが切り替わってからこの時間以上で最大時間角加速度率になる"
+    },
+    {
+      "Field": "timeTurnRate_MinTimeTurnAccelRate",
+      "Name": "時間角加速度率 - 最小時間角加速度率",
+      "Description": "最小時間の時の時間角加速度率"
+    },
+    {
+      "Field": "timeTurnRate_MaxTimeTurnAccelRate",
+      "Name": "時間角加速度率 - 最大時間角加速度率",
+      "Description": "最大時間の時の時間角加速度率"
+    },
+    {
+      "Field": "lookTargetMode_TimeTurnRate_MinTimeSec_Accel",
+      "Name": "時間角加速度率 - 最小時間[sec](ターゲットの方向に向くモード)",
+      "Description": "パラメータが切り替わってからこの時間以下で最小時間角加速度率になる"
+    },
+    {
+      "Field": "lookTargetMode_TimeTurnRate_MaxTimeSec_Accel",
+      "Name": "時間角加速度率 - 最大時間[sec](ターゲットの方向に向くモード)",
+      "Description": "パラメータが切り替わってからこの時間以上で最大時間角加速度率になる"
+    },
+    {
+      "Field": "lookTargetMode_TimeTurnRate_MinTimeTurnAccelRate",
+      "Name": "時間角加速度率 - 最小時間角加速度率(ターゲットの方向に向くモード)",
+      "Description": "最小時間の時の時間角加速度率"
+    },
+    {
+      "Field": "lookTargetMode_TimeTurnRate_MaxTimeTurnAccelRate",
+      "Name": "時間角加速度率 - 最大時間角加速度率(ターゲットの方向に向くモード)",
+      "Description": "最大時間の時の時間角加速度率"
+    },
+    {
+      "Field": "pad_2",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "paramEndIntpTimeSec",
+      "Name": "パラメータ終了時の角加速度補間時間[sec]",
+      "Description": "パラメータが切り替わって終了するときに加速度を補間する時間"
+    },
+    {
+      "Field": "reverseTurnBrakeDPSS",
+      "Name": "旋回ブレーキ性能[deg/s^2]",
+      "Description": "逆方向に旋回するときのブレーキ（-1で無効）"
+    },
+    {
+      "Field": "animBlendMaxSpeedDPS_LR",
+      "Name": "左右アニメのブレンド率が1になる角速度[deg/s]",
+      "Description": "角速度がこの速度以上で左右アニメのブレンド率が1になる"
+    },
+    {
+      "Field": "pad_end",
+      "Name": "パディング",
+      "Description": ""
+    }
+  ]
+}

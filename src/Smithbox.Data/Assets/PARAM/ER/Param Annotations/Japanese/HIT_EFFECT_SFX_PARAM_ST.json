@@ -1,0 +1,108 @@
+{
+  "Param": "HIT_EFFECT_SFX_PARAM_ST",
+  "Type": "HIT_EFFECT_SFX_PARAM_ST",
+  "Name": "HIT_EFFECT_SFX_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "Slash_Normal",
+      "Name": "斬撃：標準",
+      "Description": "斬撃：標準"
+    },
+    {
+      "Field": "Slash_S",
+      "Name": "斬撃：小",
+      "Description": "斬撃：小"
+    },
+    {
+      "Field": "Slash_L",
+      "Name": "斬撃：大",
+      "Description": "斬撃：大"
+    },
+    {
+      "Field": "Slash_Specific1",
+      "Name": "斬撃：指定1",
+      "Description": "斬撃：指定1"
+    },
+    {
+      "Field": "Slash_Specific2",
+      "Name": "斬撃：指定2",
+      "Description": "斬撃：指定2"
+    },
+    {
+      "Field": "Blow_Normal",
+      "Name": "打撃：標準",
+      "Description": "打撃：標準"
+    },
+    {
+      "Field": "Blow_S",
+      "Name": "打撃：小",
+      "Description": "打撃：小"
+    },
+    {
+      "Field": "Blow_L",
+      "Name": "打撃：大",
+      "Description": "打撃：大"
+    },
+    {
+      "Field": "Blow_Specific1",
+      "Name": "打撃：指定1",
+      "Description": "打撃：指定1"
+    },
+    {
+      "Field": "Blow_Specific2",
+      "Name": "打撃：指定2",
+      "Description": "打撃：指定2"
+    },
+    {
+      "Field": "Thrust_Normal",
+      "Name": "刺突：標準",
+      "Description": "刺突：標準"
+    },
+    {
+      "Field": "Thrust_S",
+      "Name": "刺突：小",
+      "Description": "刺突：小"
+    },
+    {
+      "Field": "Thrust_L",
+      "Name": "刺突：大",
+      "Description": "刺突：大"
+    },
+    {
+      "Field": "Thrust_Specific1",
+      "Name": "刺突：指定1",
+      "Description": "刺突：指定1"
+    },
+    {
+      "Field": "Thrust_Specific2",
+      "Name": "刺突：指定2",
+      "Description": "刺突：指定2"
+    },
+    {
+      "Field": "Neutral_Normal",
+      "Name": "無属性：標準",
+      "Description": "無属性：標準"
+    },
+    {
+      "Field": "Neutral_S",
+      "Name": "無属性：小",
+      "Description": "無属性：小"
+    },
+    {
+      "Field": "Neutral_L",
+      "Name": "無属性：大",
+      "Description": "無属性：大"
+    },
+    {
+      "Field": "Neutral_Specific1",
+      "Name": "無属性：指定1",
+      "Description": "無属性：指定1"
+    },
+    {
+      "Field": "Neutral_Specific2",
+      "Name": "無属性：指定2",
+      "Description": "無属性：指定2"
+    }
+  ]
+}

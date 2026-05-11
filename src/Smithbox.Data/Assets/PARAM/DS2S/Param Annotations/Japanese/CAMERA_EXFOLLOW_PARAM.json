@@ -1,0 +1,403 @@
+{
+  "Param": "CAMERA_EXFOLLOW_PARAM",
+  "Type": "CAMERA_EXFOLLOW_PARAM",
+  "Name": "CAMERA_EXFOLLOW_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "cameraType",
+      "Name": "カメラ挙動タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "cameraBasePosType",
+      "Name": "カメラ基準点タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "reserved0",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "fovY",
+      "Name": "画角(deg)",
+      "Description": ""
+    },
+    {
+      "Field": "hitCollision",
+      "Name": "コリジョンサイズ",
+      "Description": ""
+    },
+    {
+      "Field": "targetOffsetX",
+      "Name": "基準点(X軸) オフセット(m)",
+      "Description": ""
+    },
+    {
+      "Field": "targetOffsetY",
+      "Name": "基準点(Y軸) オフセット(m)",
+      "Description": ""
+    },
+    {
+      "Field": "targetOffsetZ",
+      "Name": "基準点(Z軸) オフセット(m)",
+      "Description": ""
+    },
+    {
+      "Field": "distance",
+      "Name": "カメラ距離目標[m]",
+      "Description": ""
+    },
+    {
+      "Field": "lrMoveDistanceMax",
+      "Name": "左右移動による視点距離率用最大距離[m]",
+      "Description": ""
+    },
+    {
+      "Field": "lrMoveRateMin",
+      "Name": "左右移動による視点距離率最小値",
+      "Description": ""
+    },
+    {
+      "Field": "lrMoveRateMax",
+      "Name": "左右移動による視点距離率最大値",
+      "Description": ""
+    },
+    {
+      "Field": "fulcrumDistRate",
+      "Name": "支点距離率(1.0:カメラとの距離",
+      "Description": ""
+    },
+    {
+      "Field": "transChaseRate",
+      "Name": "キャラ並進追尾率(0.0～1.0)",
+      "Description": ""
+    },
+    {
+      "Field": "transChaseRateEscapeWall",
+      "Name": "壁回避用キャラ並進追尾率(0.0～1.0)",
+      "Description": ""
+    },
+    {
+      "Field": "targetTransChaseRate",
+      "Name": "ターゲット並進追尾率(0.0～1.0)",
+      "Description": ""
+    },
+    {
+      "Field": "targetRotXChaseRate",
+      "Name": "ターゲットX軸回転追尾率(0.0～1.0)",
+      "Description": ""
+    },
+    {
+      "Field": "targetChaseRateXZForNormal",
+      "Name": "通常用ターゲットＸＺ追尾率(0.0～1.0)",
+      "Description": ""
+    },
+    {
+      "Field": "targetChaseRateXZForEscapeWall",
+      "Name": "壁回避用ターゲットＸＺ追尾率(0.0～1.0)",
+      "Description": ""
+    },
+    {
+      "Field": "targetChaseRateY",
+      "Name": "ターゲットＹ軸追尾率(0.0～1.0)",
+      "Description": ""
+    },
+    {
+      "Field": "targetChaseRateMinAng",
+      "Name": "ターゲット追尾率最小角度[deg]",
+      "Description": ""
+    },
+    {
+      "Field": "targetChaseRateMaxAng",
+      "Name": "ターゲット追尾率最大角度[deg]",
+      "Description": ""
+    },
+    {
+      "Field": "targetChaseDistRate",
+      "Name": "ターゲット距離追尾率(0.0～1.0)",
+      "Description": ""
+    },
+    {
+      "Field": "targetChaseRateAtLockXZ",
+      "Name": "ロック中ターゲットＸＺ追尾率(0.0～1.0)",
+      "Description": ""
+    },
+    {
+      "Field": "targetChaseRateAtLockY",
+      "Name": "ロック中ターゲットＹ追尾率(0.0～1.0)",
+      "Description": ""
+    },
+    {
+      "Field": "targetChaseRateMinAngAtLock",
+      "Name": "ロック中ターゲット追尾率最小角度[deg]",
+      "Description": ""
+    },
+    {
+      "Field": "targetChaseRateMaxAngAtLock",
+      "Name": "ロック中ターゲット追尾率最大角度[deg]",
+      "Description": ""
+    },
+    {
+      "Field": "transChaseByCtrlEndWaitTime",
+      "Name": "操作終了による並進追尾待ち時間[sec]",
+      "Description": ""
+    },
+    {
+      "Field": "transChaseByCtrlEndReleaseTime",
+      "Name": "操作終了による並進追尾解放時間[sec]",
+      "Description": ""
+    },
+    {
+      "Field": "rotCtrlEndWaitTime",
+      "Name": "回転操作終了待ち時間[sec]",
+      "Description": ""
+    },
+    {
+      "Field": "rotCtrlEndReleaseTime",
+      "Name": "回転操作終了解放時間[sec]",
+      "Description": ""
+    },
+    {
+      "Field": "rotHiSpeedRateIncTime",
+      "Name": "高速回転率増加時間[sec]",
+      "Description": ""
+    },
+    {
+      "Field": "rotRangeMinX",
+      "Name": "X軸回転最小値[deg]",
+      "Description": ""
+    },
+    {
+      "Field": "rotRangeMaxX",
+      "Name": "X軸回転最大値[deg]",
+      "Description": ""
+    },
+    {
+      "Field": "rotRangeMinXAtLock",
+      "Name": "ロック中X軸回転最小値[deg]",
+      "Description": ""
+    },
+    {
+      "Field": "rotRangeMaxXAtLock",
+      "Name": "ロック中X軸回転最大値[deg]",
+      "Description": ""
+    },
+    {
+      "Field": "rotRangeLerpBeginHeight",
+      "Name": "ロック中X軸回転補間開始高さ[m]",
+      "Description": ""
+    },
+    {
+      "Field": "rotRangeLerpEndHeight",
+      "Name": "ロック中X軸回転補間終了高さ[m]",
+      "Description": ""
+    },
+    {
+      "Field": "rotSpeedX_Min",
+      "Name": "X軸回転速度[deg/sec]最小値",
+      "Description": ""
+    },
+    {
+      "Field": "rotSpeedX_Max",
+      "Name": "X軸回転速度[deg/sec]最大値",
+      "Description": ""
+    },
+    {
+      "Field": "rotSpeedY_Min",
+      "Name": "Y軸回転速度[deg/sec]最小値",
+      "Description": ""
+    },
+    {
+      "Field": "rotSpeedY_Max",
+      "Name": "Y軸回転速度[deg/sec]最大値",
+      "Description": ""
+    },
+    {
+      "Field": "rotHiSpeedX_Min",
+      "Name": "X軸高速回転速度[deg/sec]最小値",
+      "Description": ""
+    },
+    {
+      "Field": "rotHiSpeedX_Max",
+      "Name": "X軸高速回転速度[deg/sec]最大値",
+      "Description": ""
+    },
+    {
+      "Field": "rotHiSpeedY_Min",
+      "Name": "Y軸高速回転速度[deg/sec]最小値",
+      "Description": ""
+    },
+    {
+      "Field": "rotHiSpeedY_Max",
+      "Name": "Y軸高速回転速度[deg/sec]最大値",
+      "Description": ""
+    },
+    {
+      "Field": "directPitchAng",
+      "Name": "ダイレクトピッチ角度[deg]",
+      "Description": ""
+    },
+    {
+      "Field": "directPitchRate",
+      "Name": "ダイレクトピッチレート(0.0～1.0)",
+      "Description": ""
+    },
+    {
+      "Field": "lockRotChaseRate",
+      "Name": "ロック回転追尾率(0.0～1.0)",
+      "Description": ""
+    },
+    {
+      "Field": "lockRotChasePlayAng",
+      "Name": "ロック回転追尾遊び角度[deg]",
+      "Description": ""
+    },
+    {
+      "Field": "lockRotXShiftRatio",
+      "Name": "ロックX回転シフト率(0.0～1.0)",
+      "Description": ""
+    },
+    {
+      "Field": "forceFrontLockTime",
+      "Name": "強制前方ロック時間[sec]",
+      "Description": ""
+    },
+    {
+      "Field": "updateTargetRotXByLock",
+      "Name": "ロックでターゲットX軸回転を更新するか",
+      "Description": ""
+    },
+    {
+      "Field": "updateTargetRotXByFrontLock",
+      "Name": "前方ロックでターゲットX軸回転を更新するか",
+      "Description": ""
+    },
+    {
+      "Field": "enableLockCamAdjust",
+      "Name": "ロックカメラ調整が有効か",
+      "Description": ""
+    },
+    {
+      "Field": "reserved1",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "lockCamAdjustRotX_Max",
+      "Name": "ロックカメラ調整X軸回転[deg]最大値",
+      "Description": ""
+    },
+    {
+      "Field": "lockCamAdjustRotY_Max",
+      "Name": "ロックカメラ調整Y軸回転[deg]最大値",
+      "Description": ""
+    },
+    {
+      "Field": "lockCamAdjustRotChaseRate",
+      "Name": "ロックカメラ調整回転追尾率",
+      "Description": ""
+    },
+    {
+      "Field": "escapeWallRotAddY",
+      "Name": "壁回避Y軸回転加算値[deg/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "escapeWallRotMaxY",
+      "Name": "壁回避Y軸回転最大値[deg/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "escapeWallRotDampRatio",
+      "Name": "壁回避回転減衰率",
+      "Description": ""
+    },
+    {
+      "Field": "escapeWallWingAngY",
+      "Name": "壁回避羽角度[deg]",
+      "Description": ""
+    },
+    {
+      "Field": "escapeWallWingLen",
+      "Name": "壁回避羽長[m]",
+      "Description": ""
+    },
+    {
+      "Field": "escapeWallWingRadius",
+      "Name": "壁回避羽半径[m]",
+      "Description": ""
+    },
+    {
+      "Field": "escapeWallWingSeparate",
+      "Name": "壁回避羽間隔[m]",
+      "Description": ""
+    },
+    {
+      "Field": "resetMinTime",
+      "Name": "リセットにかかる最小時間[sec]",
+      "Description": ""
+    },
+    {
+      "Field": "resetMaxTime",
+      "Name": "リセットにかかる最大時間[sec]",
+      "Description": ""
+    },
+    {
+      "Field": "resetSpeedChangeRate",
+      "Name": "リセット速度の変化レート",
+      "Description": ""
+    },
+    {
+      "Field": "parameterApplyTime",
+      "Name": "パラメータ適用時間",
+      "Description": ""
+    },
+    {
+      "Field": "transChaseRateLock",
+      "Name": "ロック中キャラ並進追尾率(0.0～1.0)",
+      "Description": ""
+    },
+    {
+      "Field": "targetChaseDistRateLock",
+      "Name": "ロック中ターゲット距離追尾率(0.0～1.0)",
+      "Description": ""
+    },
+    {
+      "Field": "lockRotChaseRateMaxTime",
+      "Name": "ロック回転追尾率適用時間[sec]",
+      "Description": ""
+    },
+    {
+      "Field": "useRotationBrake",
+      "Name": "回転操作にブレーキを使用するか",
+      "Description": ""
+    },
+    {
+      "Field": "useRotationBrakeReverseAdjust",
+      "Name": "回転にブレーキ逆方向時補正を有効にするか",
+      "Description": ""
+    },
+    {
+      "Field": "rotaitionBrakeTimeNormalSpeedX",
+      "Name": "通常Ｘ回転ブレーキ時間[sec]",
+      "Description": ""
+    },
+    {
+      "Field": "rotationBrakeAddTimelHighSpeedX",
+      "Name": "高速時Ｘ回転ブレーキ時間加算量[sec]",
+      "Description": ""
+    },
+    {
+      "Field": "rotaitionBrakeTimeNormalSpeedY",
+      "Name": "通常Ｙ回転ブレーキ時間[sec]",
+      "Description": ""
+    },
+    {
+      "Field": "rotationBrakeAddTimelHighSpeedY",
+      "Name": "高速時Ｙ回転ブレーキ時間加算量[sec]",
+      "Description": ""
+    }
+  ]
+}

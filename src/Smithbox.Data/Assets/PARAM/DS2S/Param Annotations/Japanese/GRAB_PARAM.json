@@ -1,0 +1,183 @@
+{
+  "Param": "GRAB_PARAM",
+  "Type": "GRAB_PARAM",
+  "Name": "GRAB_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "grabAttackDumyPolyId",
+      "Name": "投げる側 ダミポリID",
+      "Description": ""
+    },
+    {
+      "Field": "grabAttackRotationType",
+      "Name": "投げる側 旋回設定",
+      "Description": ""
+    },
+    {
+      "Field": "grabAttackRHandDumyPolyId",
+      "Name": "投げる側 右手IKダミポリID",
+      "Description": ""
+    },
+    {
+      "Field": "grabAttackLHandDumyPolyId",
+      "Name": "投げる側 左手IKダミポリID",
+      "Description": ""
+    },
+    {
+      "Field": "grabAttackRRegDumyPolyId",
+      "Name": "投げる側 右足IKダミポリID",
+      "Description": ""
+    },
+    {
+      "Field": "grabAttackLRegDumyPolyId",
+      "Name": "投げる側 左足IKダミポリID",
+      "Description": ""
+    },
+    {
+      "Field": "grabDefenseDumyPolyId",
+      "Name": "投げられる側 ダミポリID",
+      "Description": ""
+    },
+    {
+      "Field": "grabDefenseRotationType",
+      "Name": "投げられる側 旋回設定",
+      "Description": ""
+    },
+    {
+      "Field": "grabDefenseRHandDumyPolyId",
+      "Name": "投げられる側 右手IKダミポリID",
+      "Description": ""
+    },
+    {
+      "Field": "grabDefenseLHandDumyPolyId",
+      "Name": "投げられる側 左手IKダミポリID",
+      "Description": ""
+    },
+    {
+      "Field": "grabDefenseRRegDumyPolyId",
+      "Name": "投げられる側 右足IKダミポリID",
+      "Description": ""
+    },
+    {
+      "Field": "grabDefenseLRegDumyPolyId",
+      "Name": "投げられる側 左足IKダミポリID",
+      "Description": ""
+    },
+    {
+      "Field": "grabAttachType",
+      "Name": "投げ位置吸着設定",
+      "Description": ""
+    },
+    {
+      "Field": "grabAttachFollow",
+      "Name": "投げ吸着追従設定",
+      "Description": ""
+    },
+    {
+      "Field": "dummy2",
+      "Name": "dummy",
+      "Description": ""
+    },
+    {
+      "Field": "grabDirAttachType",
+      "Name": "投げ向き吸着設定",
+      "Description": ""
+    },
+    {
+      "Field": "dummy1",
+      "Name": "dummy",
+      "Description": ""
+    },
+    {
+      "Field": "grabDirReversal",
+      "Name": "投げ向き反転有効設定",
+      "Description": ""
+    },
+    {
+      "Field": "grabPosOffsetX",
+      "Name": "投げ位置オフセットX",
+      "Description": ""
+    },
+    {
+      "Field": "grabPosOffsetZ",
+      "Name": "投げ位置オフセットZ",
+      "Description": ""
+    },
+    {
+      "Field": "grabBreakHp",
+      "Name": "投げブレイク HP",
+      "Description": ""
+    },
+    {
+      "Field": "grabCameraId",
+      "Name": "投げカメラＩＤ",
+      "Description": ""
+    },
+    {
+      "Field": "grabCastType",
+      "Name": "キャスト基準",
+      "Description": ""
+    },
+    {
+      "Field": "dummy3",
+      "Name": "dummy",
+      "Description": ""
+    },
+    {
+      "Field": "grabRadius",
+      "Name": "キャスト半径",
+      "Description": ""
+    },
+    {
+      "Field": "grabHeight",
+      "Name": "キャスト高さ",
+      "Description": ""
+    },
+    {
+      "Field": "grabLength",
+      "Name": "キャスト長さ",
+      "Description": ""
+    },
+    {
+      "Field": "grabOffsetX",
+      "Name": "キャストオフセット位置 Ｘ",
+      "Description": ""
+    },
+    {
+      "Field": "grabOffsetY",
+      "Name": "キャストオフセット位置 Y",
+      "Description": ""
+    },
+    {
+      "Field": "grabOffsetZ",
+      "Name": "キャストオフセット位置 Z",
+      "Description": ""
+    },
+    {
+      "Field": "grabSideAngle",
+      "Name": "投げ許可左右角度",
+      "Description": ""
+    },
+    {
+      "Field": "grabUpAngle",
+      "Name": "投げ許可上角度",
+      "Description": ""
+    },
+    {
+      "Field": "grabDownAngle",
+      "Name": "投げ許可下角度",
+      "Description": ""
+    },
+    {
+      "Field": "dummy4",
+      "Name": "dummy",
+      "Description": ""
+    },
+    {
+      "Field": "grabAngleDiff",
+      "Name": "Grab angle maximum difference",
+      "Description": ""
+    }
+  ]
+}

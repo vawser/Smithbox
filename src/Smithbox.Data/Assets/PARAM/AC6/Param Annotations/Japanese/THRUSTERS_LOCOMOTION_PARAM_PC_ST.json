@@ -1,0 +1,1183 @@
+{
+  "Param": "THRUSTERS_LOCOMOTION_PARAM_PC_ST",
+  "Type": "THRUSTERS_LOCOMOTION_PARAM_PC_ST",
+  "Name": "THRUSTERS_LOCOMOTION_PARAM_PC_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "RotationBoneName",
+      "Name": "回転関節名",
+      "Description": "パーツ内回転が行う関節名の名前"
+    },
+    {
+      "Field": "AttachDummyID",
+      "Name": "接続ダミポリID",
+      "Description": "スラスター/パーツの接続ダミポリID"
+    },
+    {
+      "Field": "LocomotionRefDummyID",
+      "Name": "ロコモーション参照ダミポリID",
+      "Description": "ロコモーションが参照するダミポリのID"
+    },
+    {
+      "Field": "main_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "main_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "main_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。"
+    },
+    {
+      "Field": "main_pad",
+      "Name": "main_pad",
+      "Description": ""
+    },
+    {
+      "Field": "subFront_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "subFront_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "subFront_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。"
+    },
+    {
+      "Field": "subFront_pad",
+      "Name": "subFront_pad",
+      "Description": ""
+    },
+    {
+      "Field": "subBack_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "subBack_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "subBack_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。"
+    },
+    {
+      "Field": "subBack_pad",
+      "Name": "subBack_pad",
+      "Description": ""
+    },
+    {
+      "Field": "subLeft_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "subLeft_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "subLeft_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。"
+    },
+    {
+      "Field": "subLeft_pad",
+      "Name": "subLeft_pad",
+      "Description": ""
+    },
+    {
+      "Field": "subRight_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "subRight_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "subRight_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。"
+    },
+    {
+      "Field": "subRight_pad",
+      "Name": "subRight_pad",
+      "Description": ""
+    },
+    {
+      "Field": "qbFront_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "qbFront_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "qbFront_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。"
+    },
+    {
+      "Field": "qbFront_pad",
+      "Name": "qbFront_pad",
+      "Description": ""
+    },
+    {
+      "Field": "qbBack_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "qbBack_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "qbBack_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。"
+    },
+    {
+      "Field": "qbBack_pad",
+      "Name": "qbBack_pad",
+      "Description": ""
+    },
+    {
+      "Field": "qbLeft_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "qbLeft_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "qbLeft_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。"
+    },
+    {
+      "Field": "qbLeft_pad",
+      "Name": "qbLeft_pad",
+      "Description": ""
+    },
+    {
+      "Field": "qbRight_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "qbRight_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "qbRight_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。"
+    },
+    {
+      "Field": "qbRight_pad",
+      "Name": "qbRight_pad",
+      "Description": ""
+    },
+    {
+      "Field": "lift_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "lift_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "lift_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。"
+    },
+    {
+      "Field": "lift_pad",
+      "Name": "lift_pad",
+      "Description": ""
+    },
+    {
+      "Field": "tankFront_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "tankFront_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "tankFront_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。"
+    },
+    {
+      "Field": "tankFront_pad",
+      "Name": "tankFront_pad",
+      "Description": ""
+    },
+    {
+      "Field": "tankBack_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "tankBack_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "tankBack_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。"
+    },
+    {
+      "Field": "tankBack_pad",
+      "Name": "tankBack_pad",
+      "Description": ""
+    },
+    {
+      "Field": "tankDriftLeft_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "tankDriftLeft_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "tankDriftLeft_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。"
+    },
+    {
+      "Field": "tankDriftLeft_pad",
+      "Name": "tankDriftLeft_pad",
+      "Description": ""
+    },
+    {
+      "Field": "tankDriftRight_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "tankDriftRight_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "tankDriftRight_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。"
+    },
+    {
+      "Field": "tankDriftRight_pad",
+      "Name": "tankDriftRight_pad",
+      "Description": ""
+    },
+    {
+      "Field": "quickTurnLeft_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "quickTurnLeft_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "quickTurnLeft_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。"
+    },
+    {
+      "Field": "quickTurnLeft_pad",
+      "Name": "quickTurnLeft_pad",
+      "Description": ""
+    },
+    {
+      "Field": "quickTurnRight_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "quickTurnRight_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "quickTurnRight_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。"
+    },
+    {
+      "Field": "quickTurnRight_pad",
+      "Name": "quickTurnRight_pad",
+      "Description": ""
+    },
+    {
+      "Field": "assaultBoost_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "assaultBoost_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "assaultBoost_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。"
+    },
+    {
+      "Field": "assaultBoost_pad",
+      "Name": "assaultBoost_pad",
+      "Description": ""
+    },
+    {
+      "Field": "hoveringStart_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "hoveringStart_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "hoveringStart_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。"
+    },
+    {
+      "Field": "hoveringStart_pad",
+      "Name": "hoveringStart_pad",
+      "Description": ""
+    },
+    {
+      "Field": "hoveringStay_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "hoveringStay_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "hoveringStay_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。"
+    },
+    {
+      "Field": "hoveringStay_pad",
+      "Name": "hoveringStay_pad",
+      "Description": ""
+    },
+    {
+      "Field": "hoveringFront_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "hoveringFront_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "hoveringFront_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。"
+    },
+    {
+      "Field": "hoveringFront_pad",
+      "Name": "hoveringFront_pad",
+      "Description": ""
+    },
+    {
+      "Field": "hoveringBack_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "hoveringBack_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "hoveringBack_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。"
+    },
+    {
+      "Field": "hoveringBack_pad",
+      "Name": "hoveringBack_pad",
+      "Description": ""
+    },
+    {
+      "Field": "hoveringLeft_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "hoveringLeft_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "hoveringLeft_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。"
+    },
+    {
+      "Field": "hoveringLeft_pad",
+      "Name": "hoveringLeft_pad",
+      "Description": ""
+    },
+    {
+      "Field": "hoveringRight_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "hoveringRight_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "hoveringRight_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。"
+    },
+    {
+      "Field": "hoveringRight_pad",
+      "Name": "hoveringRight_pad",
+      "Description": ""
+    },
+    {
+      "Field": "turnLeft_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "turnLeft_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "turnLeft_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。"
+    },
+    {
+      "Field": "turnLeft_pad",
+      "Name": "turnLeft_pad",
+      "Description": ""
+    },
+    {
+      "Field": "turnRight_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "turnRight_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "turnRight_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。"
+    },
+    {
+      "Field": "turnRight_pad",
+      "Name": "turnRight_pad",
+      "Description": ""
+    },
+    {
+      "Field": "mainStart_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "mainStart_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "mainStart_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。"
+    },
+    {
+      "Field": "mainStart_pad",
+      "Name": "mainStart_pad",
+      "Description": ""
+    },
+    {
+      "Field": "assaultBoostFinish_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "assaultBoostFinish_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "assaultBoostFinish_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。"
+    },
+    {
+      "Field": "assaultBoostFinish_pad",
+      "Name": "assaultBoostFinish_pad",
+      "Description": ""
+    },
+    {
+      "Field": "falling_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "falling_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "falling_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。"
+    },
+    {
+      "Field": "falling_pad",
+      "Name": "falling_pad",
+      "Description": ""
+    },
+    {
+      "Field": "boostExhaustFront_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "boostExhaustFront_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "boostExhaustFront_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。"
+    },
+    {
+      "Field": "boostExhaustFront_pad",
+      "Name": "boostExhaustFront_pad",
+      "Description": ""
+    },
+    {
+      "Field": "boostExhaustBack_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "boostExhaustBack_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "boostExhaustBack_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。"
+    },
+    {
+      "Field": "boostExhaustBack_pad",
+      "Name": "boostExhaustBack_pad",
+      "Description": ""
+    },
+    {
+      "Field": "boostExhaustLeft_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "boostExhaustLeft_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "boostExhaustLeft_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。"
+    },
+    {
+      "Field": "boostExhaustLeft_pad",
+      "Name": "boostExhaustLeft_pad",
+      "Description": ""
+    },
+    {
+      "Field": "boostExhaustRight_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "boostExhaustRight_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "boostExhaustRight_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。"
+    },
+    {
+      "Field": "boostExhaustRight_pad",
+      "Name": "boostExhaustRight_pad",
+      "Description": ""
+    },
+    {
+      "Field": "boostExhaustFalling_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "boostExhaustFalling_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "boostExhaustFalling_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。"
+    },
+    {
+      "Field": "boostExhaustFalling_pad",
+      "Name": "boostExhaustFalling_pad",
+      "Description": ""
+    },
+    {
+      "Field": "brakeFront_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "brakeFront_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "brakeFront_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。"
+    },
+    {
+      "Field": "brakeFront_pad",
+      "Name": "brakeFront_pad",
+      "Description": ""
+    },
+    {
+      "Field": "brakeBack_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "brakeBack_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "brakeBack_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。"
+    },
+    {
+      "Field": "brakeBack_pad",
+      "Name": "brakeBack_pad",
+      "Description": ""
+    },
+    {
+      "Field": "brakeLeft_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "brakeLeft_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "brakeLeft_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。"
+    },
+    {
+      "Field": "brakeLeft_pad",
+      "Name": "brakeLeft_pad",
+      "Description": ""
+    },
+    {
+      "Field": "brakeRight_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "brakeRight_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "brakeRight_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。"
+    },
+    {
+      "Field": "brakeRight_pad",
+      "Name": "brakeRight_pad",
+      "Description": ""
+    },
+    {
+      "Field": "brakeFalling_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "brakeFalling_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "brakeFalling_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。"
+    },
+    {
+      "Field": "brakeFalling_pad",
+      "Name": "brakeFalling_pad",
+      "Description": ""
+    },
+    {
+      "Field": "assaultBoostLoop_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "assaultBoostLoop_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "assaultBoostLoop_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。"
+    },
+    {
+      "Field": "assaultBoostLoop_pad",
+      "Name": "assaultBoostLoop_pad",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsWalkFront_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "hover2LegsWalkFront_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "hover2LegsWalkFront_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。"
+    },
+    {
+      "Field": "hover2LegsWalkFront_pad",
+      "Name": "hover2LegsWalkFront_pad",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsWalkBack_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "hover2LegsWalkBack_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "hover2LegsWalkBack_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。"
+    },
+    {
+      "Field": "hover2LegsWalkBack_pad",
+      "Name": "hover2LegsWalkBack_pad",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsWalkLeft_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "hover2LegsWalkLeft_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "hover2LegsWalkLeft_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。"
+    },
+    {
+      "Field": "hover2LegsWalkLeft_pad",
+      "Name": "hover2LegsWalkLeft_pad",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsWalkRight_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "hover2LegsWalkRight_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "hover2LegsWalkRight_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。"
+    },
+    {
+      "Field": "hover2LegsWalkRight_pad",
+      "Name": "hover2LegsWalkRight_pad",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsWalkLeftTurn_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "hover2LegsWalkLeftTurn_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "hover2LegsWalkLeftTurn_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。"
+    },
+    {
+      "Field": "hover2LegsWalkLeftTurn_pad",
+      "Name": "hover2LegsWalkLeftTurn_pad",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsWalkRightTurn_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "hover2LegsWalkRightTurn_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "hover2LegsWalkRightTurn_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。"
+    },
+    {
+      "Field": "hover2LegsWalkRightTurn_pad",
+      "Name": "hover2LegsWalkRightTurn_pad",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsRunFront_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "hover2LegsRunFront_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "hover2LegsRunFront_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。"
+    },
+    {
+      "Field": "hover2LegsRunFront_pad",
+      "Name": "hover2LegsRunFront_pad",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsRunBack_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "hover2LegsRunBack_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "hover2LegsRunBack_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。"
+    },
+    {
+      "Field": "hover2LegsRunBack_pad",
+      "Name": "hover2LegsRunBack_pad",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsRunLeft_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "hover2LegsRunLeft_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "hover2LegsRunLeft_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。"
+    },
+    {
+      "Field": "hover2LegsRunLeft_pad",
+      "Name": "hover2LegsRunLeft_pad",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsRunRight_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "hover2LegsRunRight_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "hover2LegsRunRight_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。"
+    },
+    {
+      "Field": "hover2LegsRunRight_pad",
+      "Name": "hover2LegsRunRight_pad",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsRunLeftTurn_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "hover2LegsRunLeftTurn_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "hover2LegsRunLeftTurn_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。"
+    },
+    {
+      "Field": "hover2LegsRunLeftTurn_pad",
+      "Name": "hover2LegsRunLeftTurn_pad",
+      "Description": ""
+    },
+    {
+      "Field": "hover2LegsRunRightTurn_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "hover2LegsRunRightTurn_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "hover2LegsRunRightTurn_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。"
+    },
+    {
+      "Field": "hover2LegsRunRightTurn_pad",
+      "Name": "hover2LegsRunRightTurn_pad",
+      "Description": ""
+    },
+    {
+      "Field": "tankQbFront_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "tankQbFront_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "tankQbFront_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。"
+    },
+    {
+      "Field": "tankQbFront_pad",
+      "Name": "tankQbFront_pad",
+      "Description": ""
+    },
+    {
+      "Field": "tankQbBack_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "tankQbBack_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "tankQbBack_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。"
+    },
+    {
+      "Field": "tankQbBack_pad",
+      "Name": "tankQbBack_pad",
+      "Description": ""
+    },
+    {
+      "Field": "tankQbLeft_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "tankQbLeft_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "tankQbLeft_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。"
+    },
+    {
+      "Field": "tankQbLeft_pad",
+      "Name": "tankQbLeft_pad",
+      "Description": ""
+    },
+    {
+      "Field": "tankQbRight_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "tankQbRight_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "tankQbRight_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。"
+    },
+    {
+      "Field": "tankQbRight_pad",
+      "Name": "tankQbRight_pad",
+      "Description": ""
+    },
+    {
+      "Field": "hovertTankGround_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "hovertTankGround_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "hovertTankGround_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。"
+    },
+    {
+      "Field": "hovertTankGround_pad",
+      "Name": "hovertTankGround_pad",
+      "Description": ""
+    },
+    {
+      "Field": "hovertTankGroundWater_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "hovertTankGroundWater_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "hovertTankGroundWater_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。"
+    },
+    {
+      "Field": "hovertTankGroundWater_pad",
+      "Name": "hovertTankGroundWater_pad",
+      "Description": ""
+    },
+    {
+      "Field": "hovertTankGroundWaterShallow_TurnMoveDirLimitX",
+      "Name": "補正限界角度（X)",
+      "Description": "移動方向に補正する際の最大角度(X)"
+    },
+    {
+      "Field": "hovertTankGroundWaterShallow_TurnMoveDirLimitY",
+      "Name": "補正限界角度（Y)",
+      "Description": "移動方向に補正する際の最大角度(Y)"
+    },
+    {
+      "Field": "hovertTankGroundWaterShallow_TurnMoveDirType",
+      "Name": "移動にあわせて向きを補正するか",
+      "Description": "キャラが左に移動する際にブースターを右に向けたいであれば、逆方向と設定してください。"
+    },
+    {
+      "Field": "hovertTankGroundWaterShallow_pad",
+      "Name": "hovertTankGroundWaterShallow_pad",
+      "Description": ""
+    }
+  ]
+}

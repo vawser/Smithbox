@@ -1,0 +1,168 @@
+{
+  "Param": "THROW_DIRECTION_SFX_PARAM_ST",
+  "Type": "THROW_DIRECTION_SFX_PARAM_ST",
+  "Name": "THROW_DIRECTION_SFX_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "sfxId_00",
+      "Name": "0",
+      "Description": "使用するSFXのID"
+    },
+    {
+      "Field": "sfxId_01",
+      "Name": "1",
+      "Description": "使用するSFXのID"
+    },
+    {
+      "Field": "sfxId_02",
+      "Name": "2",
+      "Description": "使用するSFXのID"
+    },
+    {
+      "Field": "sfxId_03",
+      "Name": "3",
+      "Description": "使用するSFXのID"
+    },
+    {
+      "Field": "sfxId_04",
+      "Name": "4",
+      "Description": "使用するSFXのID"
+    },
+    {
+      "Field": "sfxId_05",
+      "Name": "5",
+      "Description": "使用するSFXのID"
+    },
+    {
+      "Field": "sfxId_06",
+      "Name": "6",
+      "Description": "使用するSFXのID"
+    },
+    {
+      "Field": "sfxId_07",
+      "Name": "7",
+      "Description": "使用するSFXのID"
+    },
+    {
+      "Field": "sfxId_08",
+      "Name": "8",
+      "Description": "使用するSFXのID"
+    },
+    {
+      "Field": "sfxId_09",
+      "Name": "9",
+      "Description": "使用するSFXのID"
+    },
+    {
+      "Field": "sfxId_10",
+      "Name": "10",
+      "Description": "使用するSFXのID"
+    },
+    {
+      "Field": "sfxId_11",
+      "Name": "11",
+      "Description": "使用するSFXのID"
+    },
+    {
+      "Field": "sfxId_12",
+      "Name": "12",
+      "Description": "使用するSFXのID"
+    },
+    {
+      "Field": "sfxId_13",
+      "Name": "13",
+      "Description": "使用するSFXのID"
+    },
+    {
+      "Field": "sfxId_14",
+      "Name": "14",
+      "Description": "使用するSFXのID"
+    },
+    {
+      "Field": "sfxId_15",
+      "Name": "15",
+      "Description": "使用するSFXのID"
+    },
+    {
+      "Field": "sfxId_16",
+      "Name": "16",
+      "Description": "使用するSFXのID"
+    },
+    {
+      "Field": "sfxId_17",
+      "Name": "17",
+      "Description": "使用するSFXのID"
+    },
+    {
+      "Field": "sfxId_18",
+      "Name": "18",
+      "Description": "使用するSFXのID"
+    },
+    {
+      "Field": "sfxId_19",
+      "Name": "19",
+      "Description": "使用するSFXのID"
+    },
+    {
+      "Field": "sfxId_20",
+      "Name": "20",
+      "Description": "使用するSFXのID"
+    },
+    {
+      "Field": "sfxId_21",
+      "Name": "21",
+      "Description": "使用するSFXのID"
+    },
+    {
+      "Field": "sfxId_22",
+      "Name": "22",
+      "Description": "使用するSFXのID"
+    },
+    {
+      "Field": "sfxId_23",
+      "Name": "23",
+      "Description": "使用するSFXのID"
+    },
+    {
+      "Field": "sfxId_24",
+      "Name": "24",
+      "Description": "使用するSFXのID"
+    },
+    {
+      "Field": "sfxId_25",
+      "Name": "25",
+      "Description": "使用するSFXのID"
+    },
+    {
+      "Field": "sfxId_26",
+      "Name": "26",
+      "Description": "使用するSFXのID"
+    },
+    {
+      "Field": "sfxId_27",
+      "Name": "27",
+      "Description": "使用するSFXのID"
+    },
+    {
+      "Field": "sfxId_28",
+      "Name": "28",
+      "Description": "使用するSFXのID"
+    },
+    {
+      "Field": "sfxId_29",
+      "Name": "29",
+      "Description": "使用するSFXのID"
+    },
+    {
+      "Field": "sfxId_30",
+      "Name": "30",
+      "Description": "使用するSFXのID"
+    },
+    {
+      "Field": "pad1",
+      "Name": "パッド",
+      "Description": "pad"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "Param": "TANK_WHEEL_PARAM",
+  "Type": "TANK_WHEEL_PARAM",
+  "Name": "TANK_WHEEL_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "AttachPos_X",
+      "Name": "接続位置_X[m]",
+      "Description": "ホイールの接続位置"
+    },
+    {
+      "Field": "AttachPos_Y",
+      "Name": "接続位置_Y[m]",
+      "Description": "ホイールの接続位置"
+    },
+    {
+      "Field": "AttachPos_Z",
+      "Name": "接続位置_Z[m]",
+      "Description": "ホイールの接続位置"
+    },
+    {
+      "Field": "radius",
+      "Name": "ホイール半径[m]",
+      "Description": "ホイールの半径"
+    },
+    {
+      "Field": "suspensionLength",
+      "Name": "サスペンション長さ[m]",
+      "Description": "サスペンションの長さ"
+    },
+    {
+      "Field": "splingFactor",
+      "Name": "スプリング強さ",
+      "Description": "スプリングの強さ"
+    },
+    {
+      "Field": "compressPow",
+      "Name": "縮んだときに戻る強さ",
+      "Description": "縮んだときに元の長さに戻ろうとするときの強さ"
+    },
+    {
+      "Field": "relaxPow",
+      "Name": "伸びたときに戻る強さ",
+      "Description": "伸びたときに元の長さに戻ろうとするときの強さ"
+    },
+    {
+      "Field": "pad7",
+      "Name": "予約",
+      "Description": ""
+    }
+  ]
+}

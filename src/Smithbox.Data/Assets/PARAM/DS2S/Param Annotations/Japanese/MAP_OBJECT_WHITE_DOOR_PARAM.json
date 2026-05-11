@@ -1,0 +1,53 @@
+{
+  "Param": "MAP_OBJECT_WHITE_DOOR_PARAM",
+  "Type": "MAP_OBJECT_WHITE_DOOR_PARAM",
+  "Name": "MAP_OBJECT_WHITE_DOOR_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "whiteDoorCategory",
+      "Name": "白扉カテゴリ",
+      "Description": ""
+    },
+    {
+      "Field": "aReserved",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "waitTime",
+      "Name": "待機時間[秒]",
+      "Description": ""
+    },
+    {
+      "Field": "defaultSfxId",
+      "Name": "デフォルトSFXID（白・灰）",
+      "Description": ""
+    },
+    {
+      "Field": "multiPlaySfxId",
+      "Name": "マルチプレイ時SFXID（黒）",
+      "Description": ""
+    },
+    {
+      "Field": "frontKeyGuideParamId",
+      "Name": "前から入る際のキーガイドパラメータID",
+      "Description": ""
+    },
+    {
+      "Field": "backKeyGuideParamId",
+      "Name": "後ろから入る際のキーガイドパラメータID",
+      "Description": ""
+    },
+    {
+      "Field": "passFlagId",
+      "Name": "開通時イベントフラグ",
+      "Description": ""
+    },
+    {
+      "Field": "enableKeyGuideFlagId",
+      "Name": "キーガイド有効フラグ",
+      "Description": ""
+    }
+  ]
+}

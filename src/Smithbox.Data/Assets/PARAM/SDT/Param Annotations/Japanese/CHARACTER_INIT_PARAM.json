@@ -1,0 +1,858 @@
+{
+  "Param": "CHARACTER_INIT_PARAM",
+  "Type": "CHARACTER_INIT_PARAM",
+  "Name": "CHARACTER_INIT_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "baseRec_mp",
+      "Name": "ＭＰ回復速度基本値[s]",
+      "Description": "ＭＰが、1ポイント回復するまでの時間（小数点第一位）"
+    },
+    {
+      "Field": "baseRec_sp",
+      "Name": "スタミナ回復速度基本値[s]",
+      "Description": "スタミナが、1ポイント回復するまでの時間（小数点第一位）"
+    },
+    {
+      "Field": "red_Falldam",
+      "Name": "落下ダメージ軽減補正[%]",
+      "Description": "他のキャラクターに上からのしかかれたときに、クッションとなりえるダメージ軽減量（％）（小数点第一位）"
+    },
+    {
+      "Field": "soul",
+      "Name": "初期ソウル",
+      "Description": "初期に所持しているソウル量"
+    },
+    {
+      "Field": "equip_Wep_Right",
+      "Name": "右手武器",
+      "Description": "装備品パラメータの武器ＩＤ(右手)"
+    },
+    {
+      "Field": "equip_Subwep_Right",
+      "Name": "右手予備武器",
+      "Description": "装備品パラメータの武器ＩＤ(右手予備)"
+    },
+    {
+      "Field": "equip_Wep_Left",
+      "Name": "左手武器",
+      "Description": "装備品パラメータの武器ＩＤ(左手)"
+    },
+    {
+      "Field": "equip_Subwep_Left",
+      "Name": "左手予備武器",
+      "Description": "装備品パラメータの武器ＩＤ(左手予備)"
+    },
+    {
+      "Field": "equip_Helm",
+      "Name": "頭防具",
+      "Description": "装備品パラメータの防具ＩＤ(頭防具)"
+    },
+    {
+      "Field": "equip_Armer",
+      "Name": "胴体防具",
+      "Description": "装備品パラメータの防具ＩＤ(胴体防具)"
+    },
+    {
+      "Field": "equip_Gaunt",
+      "Name": "腕防具",
+      "Description": "装備品パラメータの防具ＩＤ(腕防具)"
+    },
+    {
+      "Field": "equip_Leg",
+      "Name": "脚防具",
+      "Description": "装備品パラメータの防具ＩＤ(脚防具)"
+    },
+    {
+      "Field": "equip_Arrow",
+      "Name": "矢",
+      "Description": "装備品パラメータの武器ＩＤ(矢)"
+    },
+    {
+      "Field": "equip_Bolt",
+      "Name": "ボルト",
+      "Description": "装備品パラメータの武器ＩＤ(ボルト)"
+    },
+    {
+      "Field": "equip_SubArrow",
+      "Name": "予備矢",
+      "Description": "装備品パラメータの武器ＩＤ(矢予備)"
+    },
+    {
+      "Field": "equip_SubBolt",
+      "Name": "予備ボルト",
+      "Description": "装備品パラメータの武器ＩＤ(ボルト予備)"
+    },
+    {
+      "Field": "equip_Accessory01",
+      "Name": "装飾品1",
+      "Description": "装備品パラメータの装飾品ＩＤ01"
+    },
+    {
+      "Field": "equip_Accessory02",
+      "Name": "装飾品2",
+      "Description": "装備品パラメータの装飾品ＩＤ02"
+    },
+    {
+      "Field": "equip_Accessory03",
+      "Name": "装飾品3",
+      "Description": "装備品パラメータの装飾品ＩＤ03"
+    },
+    {
+      "Field": "equip_Accessory04",
+      "Name": "装飾品4",
+      "Description": "装備品パラメータの装飾品ＩＤ04"
+    },
+    {
+      "Field": "equip_Accessory05",
+      "Name": "装飾品5（誓約アミュレット）",
+      "Description": "装備品パラメータの装飾品ＩＤ05（誓約アミュレット）"
+    },
+    {
+      "Field": "equip_Skill_01",
+      "Name": "スキル1",
+      "Description": "初期装備のスキルＩD01"
+    },
+    {
+      "Field": "equip_Skill_02",
+      "Name": "スキル2",
+      "Description": "初期装備のスキルＩD02"
+    },
+    {
+      "Field": "equip_Skill_03",
+      "Name": "スキル3",
+      "Description": "初期装備のスキルＩD03"
+    },
+    {
+      "Field": "equip_Spell_01",
+      "Name": "魔法・奇跡1",
+      "Description": "初期配置の魔法・奇跡ID01"
+    },
+    {
+      "Field": "equip_Spell_02",
+      "Name": "魔法・奇跡2",
+      "Description": "初期配置の魔法・奇跡ID02"
+    },
+    {
+      "Field": "equip_Spell_03",
+      "Name": "魔法・奇跡3",
+      "Description": "初期配置の魔法・奇跡ID03"
+    },
+    {
+      "Field": "equip_Spell_04",
+      "Name": "魔法・奇跡4",
+      "Description": "初期配置の魔法・奇跡ID04"
+    },
+    {
+      "Field": "equip_Spell_05",
+      "Name": "魔法・奇跡5",
+      "Description": "初期配置の魔法・奇跡ID05"
+    },
+    {
+      "Field": "equip_Spell_06",
+      "Name": "魔法・奇跡6",
+      "Description": "初期配置の魔法・奇跡ID06"
+    },
+    {
+      "Field": "equip_Spell_07",
+      "Name": "魔法・奇跡7",
+      "Description": "初期配置の魔法・奇跡ID07"
+    },
+    {
+      "Field": "item_01",
+      "Name": "アイテム01",
+      "Description": "初期所持のアイテムID01"
+    },
+    {
+      "Field": "item_02",
+      "Name": "アイテム02",
+      "Description": "初期所持のアイテムID02"
+    },
+    {
+      "Field": "item_03",
+      "Name": "アイテム03",
+      "Description": "初期所持のアイテムID03"
+    },
+    {
+      "Field": "item_04",
+      "Name": "アイテム04",
+      "Description": "初期所持のアイテムID04"
+    },
+    {
+      "Field": "item_05",
+      "Name": "アイテム05",
+      "Description": "初期所持のアイテムID05"
+    },
+    {
+      "Field": "item_06",
+      "Name": "アイテム06",
+      "Description": "初期所持のアイテムID06"
+    },
+    {
+      "Field": "item_07",
+      "Name": "アイテム07",
+      "Description": "初期所持のアイテムID07"
+    },
+    {
+      "Field": "item_08",
+      "Name": "アイテム08",
+      "Description": "初期所持のアイテムID08"
+    },
+    {
+      "Field": "item_09",
+      "Name": "アイテム09",
+      "Description": "初期所持のアイテムID09"
+    },
+    {
+      "Field": "item_10",
+      "Name": "アイテム10",
+      "Description": "初期所持のアイテムID10"
+    },
+    {
+      "Field": "npcPlayerFaceGenId",
+      "Name": "フェイスジェンパラメータID",
+      "Description": "NPCプレイヤーで使用するフェイスジェンパラメータID。通常プレイヤーでは使用しません。"
+    },
+    {
+      "Field": "npcPlayerThinkId",
+      "Name": "NPCプレイヤーの思考ID",
+      "Description": "NPCプレイヤーで使用するNPC思考パラメータID。通常プレイヤーでは使用しません。"
+    },
+    {
+      "Field": "baseHp",
+      "Name": "ＨＰ基本値",
+      "Description": "ＨＰの基本値（実際は、計算式で補正される）"
+    },
+    {
+      "Field": "baseMp",
+      "Name": "ＭＰ基本値",
+      "Description": "ＭＰの基本値（実際は、計算式で補正される）"
+    },
+    {
+      "Field": "baseSp",
+      "Name": "スタミナ基本値",
+      "Description": "スタミナの基本値（実際は、計算式で補正される）"
+    },
+    {
+      "Field": "arrowNum",
+      "Name": "矢の所持数",
+      "Description": "矢の初期所持数"
+    },
+    {
+      "Field": "boltNum",
+      "Name": "ボルトの所持数",
+      "Description": "ボルトの初期所持数"
+    },
+    {
+      "Field": "subArrowNum",
+      "Name": "予備矢の所持数",
+      "Description": "矢の初期所持数"
+    },
+    {
+      "Field": "subBoltNum",
+      "Name": "予備ボルトの所持数",
+      "Description": "ボルトの初期所持数"
+    },
+    {
+      "Field": "QWC_sb",
+      "Name": "傾向係数\u3000S-B軸",
+      "Description": "基本QWC値(Sword-Bow)"
+    },
+    {
+      "Field": "QWC_mw",
+      "Name": "傾向係数\u3000M-W軸",
+      "Description": "基本QWC値(Mace-Wand)"
+    },
+    {
+      "Field": "QWC_cd",
+      "Name": "傾向係数\u3000C-D軸",
+      "Description": "基本QWC値(理解-拡散)"
+    },
+    {
+      "Field": "soulLv",
+      "Name": "ソウルLv",
+      "Description": "初期Lv"
+    },
+    {
+      "Field": "baseVit",
+      "Name": "体力",
+      "Description": "体力の基本値"
+    },
+    {
+      "Field": "baseWil",
+      "Name": "精神",
+      "Description": "精神の基本値"
+    },
+    {
+      "Field": "baseEnd",
+      "Name": "頑強",
+      "Description": "頑強の基本値"
+    },
+    {
+      "Field": "baseStr",
+      "Name": "筋力",
+      "Description": "筋力の基本値"
+    },
+    {
+      "Field": "baseDex",
+      "Name": "俊敏",
+      "Description": "俊敏の基本値"
+    },
+    {
+      "Field": "baseMag",
+      "Name": "魔力",
+      "Description": "魔力の基本値"
+    },
+    {
+      "Field": "baseFai",
+      "Name": "信仰",
+      "Description": "信仰の基本値"
+    },
+    {
+      "Field": "baseLuc",
+      "Name": "運",
+      "Description": "運の基本値"
+    },
+    {
+      "Field": "baseHeroPoint",
+      "Name": "人間性",
+      "Description": "人間性の基本値"
+    },
+    {
+      "Field": "baseDurability",
+      "Name": "耐久力",
+      "Description": "耐久力の基本値"
+    },
+    {
+      "Field": "itemNum_01",
+      "Name": "アイテム01の所持数",
+      "Description": "初期所持のアイテム個数01"
+    },
+    {
+      "Field": "itemNum_02",
+      "Name": "アイテム02の所持数",
+      "Description": "初期所持のアイテム個数02"
+    },
+    {
+      "Field": "itemNum_03",
+      "Name": "アイテム03の所持数",
+      "Description": "初期所持のアイテム個数03"
+    },
+    {
+      "Field": "itemNum_04",
+      "Name": "アイテム個数04",
+      "Description": "初期所持のアイテム個数04"
+    },
+    {
+      "Field": "itemNum_05",
+      "Name": "アイテム個数05",
+      "Description": "初期所持のアイテム個数05"
+    },
+    {
+      "Field": "itemNum_06",
+      "Name": "アイテム個数06",
+      "Description": "初期所持のアイテム個数06"
+    },
+    {
+      "Field": "itemNum_07",
+      "Name": "アイテム個数07",
+      "Description": "初期所持のアイテム個数07"
+    },
+    {
+      "Field": "itemNum_08",
+      "Name": "アイテム個数08",
+      "Description": "初期所持のアイテム個数08"
+    },
+    {
+      "Field": "itemNum_09",
+      "Name": "アイテム個数09",
+      "Description": "初期所持のアイテム個数09"
+    },
+    {
+      "Field": "itemNum_10",
+      "Name": "アイテム個数10",
+      "Description": "初期所持のアイテム個数10"
+    },
+    {
+      "Field": "bodyScaleHead",
+      "Name": "頭部",
+      "Description": "体型変化用スケール"
+    },
+    {
+      "Field": "bodyScaleBreast",
+      "Name": "胸部",
+      "Description": "体型変化用スケール"
+    },
+    {
+      "Field": "bodyScaleAbdomen",
+      "Name": "腹部",
+      "Description": "体型変化用スケール"
+    },
+    {
+      "Field": "bodyScaleRArm",
+      "Name": "右腕部",
+      "Description": "体型変化用スケール"
+    },
+    {
+      "Field": "bodyScaleRLeg",
+      "Name": "右脚部",
+      "Description": "体型変化用スケール"
+    },
+    {
+      "Field": "gestureId0",
+      "Name": "ジェスチャーID0",
+      "Description": "ジェスチャー0番目(EzStateのジェスチャー0を再生したいなら0)"
+    },
+    {
+      "Field": "gestureId1",
+      "Name": "ジェスチャーID1",
+      "Description": "ジェスチャー1番目(EzStateのジェスチャー0を再生したいなら0)"
+    },
+    {
+      "Field": "gestureId2",
+      "Name": "ジェスチャーID2",
+      "Description": "ジェスチャー2番目(EzStateのジェスチャー0を再生したいなら0)"
+    },
+    {
+      "Field": "gestureId3",
+      "Name": "ジェスチャーID3",
+      "Description": "ジェスチャー3番目(EzStateのジェスチャー0を再生したいなら0)"
+    },
+    {
+      "Field": "gestureId4",
+      "Name": "ジェスチャーID4",
+      "Description": "ジェスチャー4番目(EzStateのジェスチャー0を再生したいなら0)"
+    },
+    {
+      "Field": "gestureId5",
+      "Name": "ジェスチャーID5",
+      "Description": "ジェスチャー5番目(EzStateのジェスチャー0を再生したいなら0)"
+    },
+    {
+      "Field": "gestureId6",
+      "Name": "ジェスチャーID6",
+      "Description": "ジェスチャー6番目(EzStateのジェスチャー0を再生したいなら0)"
+    },
+    {
+      "Field": "npcPlayerType",
+      "Name": "NPCプレイヤーのNPCタイプ",
+      "Description": "NPCプレイヤーで使用するNPCタイプ。通常プレイヤーでは使用しません。"
+    },
+    {
+      "Field": "npcPlayerDrawType",
+      "Name": "NPCプレイヤーの描画タイプ",
+      "Description": "NPCプレイヤーで使用する描画タイプ。通常プレイヤーでは使用しません。"
+    },
+    {
+      "Field": "npcPlayerSex",
+      "Name": "NPCプレイヤーの性別",
+      "Description": "NPCプレイヤーで使用する性別です。通常プレイヤーには反映しません。"
+    },
+    {
+      "Field": "vowType",
+      "Name": "誓約",
+      "Description": "誓約タイプ(なし：0)"
+    },
+    {
+      "Field": "pad1",
+      "Name": "pad",
+      "Description": ""
+    },
+    {
+      "Field": "bodyScaleLArm",
+      "Name": "左腕部",
+      "Description": "体型変化用スケール"
+    },
+    {
+      "Field": "bodyScaleLLeg",
+      "Name": "左脚部",
+      "Description": "体型変化用スケール"
+    },
+    {
+      "Field": "equip_Wep_Right_GenId",
+      "Name": "右手武器生成",
+      "Description": "装備品パラメータの武器生成ＩＤ(右手)"
+    },
+    {
+      "Field": "equip_Subwep_Right_GenId",
+      "Name": "右手予備武器生成",
+      "Description": "装備品パラメータの武器生成ＩＤ(右手予備)"
+    },
+    {
+      "Field": "equip_Wep_Left_GenId",
+      "Name": "左手武器生成",
+      "Description": "装備品パラメータの武器生成ＩＤ(左手)"
+    },
+    {
+      "Field": "equip_Subwep_Left_GenId",
+      "Name": "左手予備武器生成",
+      "Description": "装備品パラメータの武器生成ＩＤ(左手予備)"
+    },
+    {
+      "Field": "equip_Helm_GenId",
+      "Name": "頭防具生成",
+      "Description": "装備品パラメータの防具生成ＩＤ(頭防具)"
+    },
+    {
+      "Field": "equip_Armer_GenId",
+      "Name": "胴体防具生成",
+      "Description": "装備品パラメータの防具生成ＩＤ(胴体防具)"
+    },
+    {
+      "Field": "equip_Gaunt_GenId",
+      "Name": "腕防具生成",
+      "Description": "装備品パラメータの防具生成ＩＤ(腕防具)"
+    },
+    {
+      "Field": "equip_Leg_GenId",
+      "Name": "脚防具生成",
+      "Description": "装備品パラメータの防具生成ＩＤ(脚防具)"
+    },
+    {
+      "Field": "equip_Subwep_Right3",
+      "Name": "右手武器スロット3",
+      "Description": "装備品パラメータの武器ＩＤ(右手スロット３)"
+    },
+    {
+      "Field": "equip_Subwep_Left3",
+      "Name": "左手武器スロット3",
+      "Description": "装備品パラメータの武器ＩＤ(左手スロット３)"
+    },
+    {
+      "Field": "cultSwordId",
+      "Name": "儀式剣ID",
+      "Description": "装備する儀式剣"
+    },
+    {
+      "Field": "secondaryItem_01",
+      "Name": "第二アイテム01",
+      "Description": "第二ショートカット初期所持のアイテムID01"
+    },
+    {
+      "Field": "secondaryItem_02",
+      "Name": "第二アイテム02",
+      "Description": "第二ショートカット初期所持のアイテムID02"
+    },
+    {
+      "Field": "secondaryItem_03",
+      "Name": "第二アイテム03",
+      "Description": "第二ショートカット初期所持のアイテムID03"
+    },
+    {
+      "Field": "secondaryItem_04",
+      "Name": "第二アイテム04",
+      "Description": "第二ショートカット初期所持のアイテムID04"
+    },
+    {
+      "Field": "secondaryItem_05",
+      "Name": "第二アイテム05",
+      "Description": "第二ショートカット初期所持のアイテムID05"
+    },
+    {
+      "Field": "secondaryItem_06",
+      "Name": "第二アイテム06",
+      "Description": "第二ショートカット初期所持のアイテムID06"
+    },
+    {
+      "Field": "secondaryItemNum_01",
+      "Name": "第二アイテム01の所持数",
+      "Description": "第二ショートカット初期所持のアイテム個数01"
+    },
+    {
+      "Field": "secondaryItemNum_02",
+      "Name": "第二アイテム02の所持数",
+      "Description": "第二ショートカット初期所持のアイテム個数02"
+    },
+    {
+      "Field": "secondaryItemNum_03",
+      "Name": "第二アイテム03の所持数",
+      "Description": "第二ショートカット初期所持のアイテム個数03"
+    },
+    {
+      "Field": "secondaryItemNum_04",
+      "Name": "第二アイテム04の所持数",
+      "Description": "第二ショートカット初期所持のアイテム個数04"
+    },
+    {
+      "Field": "secondaryItemNum_05",
+      "Name": "第二アイテム05の所持数",
+      "Description": "第二ショートカット初期所持のアイテム個数05"
+    },
+    {
+      "Field": "secondaryItemNum_06",
+      "Name": "第二アイテム06の所持数",
+      "Description": "第二ショートカット初期所持のアイテム個数06"
+    },
+    {
+      "Field": "HpEstMax",
+      "Name": "HPエスト瓶 所持限界数",
+      "Description": "HPエスト瓶 所持限界数"
+    },
+    {
+      "Field": "MpEstMax",
+      "Name": "MPエスト瓶 所持限界数",
+      "Description": "MPエスト瓶 所持限界数"
+    },
+    {
+      "Field": "inventoryItem_01",
+      "Name": "インベントリアイテム01",
+      "Description": "最初から装備せず所持しているアイテムのID01"
+    },
+    {
+      "Field": "inventoryItem_02",
+      "Name": "インベントリアイテム02",
+      "Description": "最初から装備せず所持しているアイテムのID02"
+    },
+    {
+      "Field": "inventoryItem_03",
+      "Name": "インベントリアイテム03",
+      "Description": "最初から装備せず所持しているアイテムのID03"
+    },
+    {
+      "Field": "inventoryItem_04",
+      "Name": "インベントリアイテム04",
+      "Description": "最初から装備せず所持しているアイテムのID04"
+    },
+    {
+      "Field": "inventoryItem_05",
+      "Name": "インベントリアイテム05",
+      "Description": "最初から装備せず所持しているアイテムのID05"
+    },
+    {
+      "Field": "inventoryItem_06",
+      "Name": "インベントリアイテム06",
+      "Description": "最初から装備せず所持しているアイテムのID06"
+    },
+    {
+      "Field": "inventoryItem_07",
+      "Name": "インベントリアイテム07",
+      "Description": "最初から装備せず所持しているアイテムのID07"
+    },
+    {
+      "Field": "inventoryItem_08",
+      "Name": "インベントリアイテム08",
+      "Description": "最初から装備せず所持しているアイテムのID08"
+    },
+    {
+      "Field": "inventoryItem_09",
+      "Name": "インベントリアイテム09",
+      "Description": "最初から装備せず所持しているアイテムのID09"
+    },
+    {
+      "Field": "inventoryItem_10",
+      "Name": "インベントリアイテム10",
+      "Description": "最初から装備せず所持しているアイテムのID10"
+    },
+    {
+      "Field": "inventoryItemNum_01",
+      "Name": "インベントリアイテム01の所持数",
+      "Description": "最初から装備せず所持しているアイテムの所持数01 "
+    },
+    {
+      "Field": "inventoryItemNum_02",
+      "Name": "インベントリアイテム02の所持数",
+      "Description": "最初から装備せず所持しているアイテムの所持数02"
+    },
+    {
+      "Field": "inventoryItemNum_03",
+      "Name": "インベントリアイテム03の所持数",
+      "Description": "最初から装備せず所持しているアイテムの所持数03"
+    },
+    {
+      "Field": "inventoryItemNum_04",
+      "Name": "インベントリアイテム04の所持数",
+      "Description": "最初から装備せず所持しているアイテムの所持数04"
+    },
+    {
+      "Field": "inventoryItemNum_05",
+      "Name": "インベントリアイテム05の所持数",
+      "Description": "最初から装備せず所持しているアイテムの所持数05"
+    },
+    {
+      "Field": "inventoryItemNum_06",
+      "Name": "インベントリアイテム06の所持数",
+      "Description": "最初から装備せず所持しているアイテムの所持数06"
+    },
+    {
+      "Field": "inventoryItemNum_07",
+      "Name": "インベントリアイテム07の所持数",
+      "Description": "最初から装備せず所持しているアイテムの所持数07"
+    },
+    {
+      "Field": "inventoryItemNum_08",
+      "Name": "インベントリアイテム08の所持数",
+      "Description": "最初から装備せず所持しているアイテムの所持数08"
+    },
+    {
+      "Field": "inventoryItemNum_09",
+      "Name": "インベントリアイテム09の所持数",
+      "Description": "最初から装備せず所持しているアイテムの所持数09"
+    },
+    {
+      "Field": "inventoryItemNum_10",
+      "Name": "インベントリアイテム10の所持数",
+      "Description": "最初から装備せず所持しているアイテムの所持数10"
+    },
+    {
+      "Field": "resourceItemNumA",
+      "Name": "リソースアイテムA所持数 ",
+      "Description": "リソースアイテムAの所持数"
+    },
+    {
+      "Field": "resourceItemNumB",
+      "Name": "リソースアイテムB所持数 ",
+      "Description": "リソースアイテムBの所持数"
+    },
+    {
+      "Field": "resourceItemNumC",
+      "Name": "リソースアイテムC所持数 ",
+      "Description": "リソースアイテムCの所持数"
+    },
+    {
+      "Field": "baseBody",
+      "Name": "身体",
+      "Description": "身体の基本値"
+    },
+    {
+      "Field": "baseTaikan",
+      "Name": "体幹",
+      "Description": "体幹の基本値"
+    },
+    {
+      "Field": "revivalMaxNum",
+      "Name": "最大回生回数",
+      "Description": "所持出来る復活権の最大数（テンポラリ分除く）"
+    },
+    {
+      "Field": "throwSkill01",
+      "Name": "投げ技1",
+      "Description": "初期所持の投げ技ID01"
+    },
+    {
+      "Field": "throwSkill02",
+      "Name": "投げ技2",
+      "Description": "初期所持の投げ技ID02"
+    },
+    {
+      "Field": "throwSkill03",
+      "Name": "投げ技3",
+      "Description": "初期所持の投げ技ID03"
+    },
+    {
+      "Field": "skillLv",
+      "Name": "スキルレベル ",
+      "Description": "初期状態におけるスキルレベル"
+    },
+    {
+      "Field": "pad2",
+      "Name": "pad2",
+      "Description": ""
+    },
+    {
+      "Field": "inventoryWep01",
+      "Name": "インベントリ武器01",
+      "Description": "最初から装備せずに持っている武器"
+    },
+    {
+      "Field": "inventoryWep02",
+      "Name": "インベントリ武器02",
+      "Description": "最初から装備せずに持っている武器"
+    },
+    {
+      "Field": "inventoryWep03",
+      "Name": "インベントリ武器03",
+      "Description": "最初から装備せずに持っている武器"
+    },
+    {
+      "Field": "inventoryWep04",
+      "Name": "インベントリ武器04",
+      "Description": "最初から装備せずに持っている武器"
+    },
+    {
+      "Field": "inventoryWep05",
+      "Name": "インベントリ武器05",
+      "Description": "最初から装備せずに持っている武器"
+    },
+    {
+      "Field": "inventoryWep06",
+      "Name": "インベントリ武器06",
+      "Description": "最初から装備せずに持っている武器"
+    },
+    {
+      "Field": "inventoryWep07",
+      "Name": "インベントリ武器07",
+      "Description": "最初から装備せずに持っている武器"
+    },
+    {
+      "Field": "inventoryWep08",
+      "Name": "インベントリ武器08",
+      "Description": "最初から装備せずに持っている武器"
+    },
+    {
+      "Field": "inventoryWep09",
+      "Name": "インベントリ武器09",
+      "Description": "最初から装備せずに持っている武器"
+    },
+    {
+      "Field": "inventoryWep10",
+      "Name": "インベントリ武器10",
+      "Description": "最初から装備せずに持っている武器"
+    },
+    {
+      "Field": "inventoryWep11",
+      "Name": "インベントリ武器11",
+      "Description": "最初から装備せずに持っている武器"
+    },
+    {
+      "Field": "inventoryWep12",
+      "Name": "インベントリ武器12",
+      "Description": "最初から装備せずに持っている武器"
+    },
+    {
+      "Field": "inventoryWep13",
+      "Name": "インベントリ武器13",
+      "Description": "最初から装備せずに持っている武器"
+    },
+    {
+      "Field": "inventoryWep14",
+      "Name": "インベントリ武器14",
+      "Description": "最初から装備せずに持っている武器"
+    },
+    {
+      "Field": "inventoryWep15",
+      "Name": "インベントリ武器15",
+      "Description": "最初から装備せずに持っている武器"
+    },
+    {
+      "Field": "inventoryWep16",
+      "Name": "インベントリ武器16",
+      "Description": "最初から装備せずに持っている武器"
+    },
+    {
+      "Field": "inventoryWep17",
+      "Name": "インベントリ武器17",
+      "Description": "最初から装備せずに持っている武器"
+    },
+    {
+      "Field": "inventoryWep18",
+      "Name": "インベントリ武器18",
+      "Description": "最初から装備せずに持っている武器"
+    },
+    {
+      "Field": "inventoryWep19",
+      "Name": "インベントリ武器19",
+      "Description": "最初から装備せずに持っている武器"
+    },
+    {
+      "Field": "inventoryWep20",
+      "Name": "インベントリ武器20",
+      "Description": "最初から装備せずに持っている武器"
+    },
+    {
+      "Field": "pad4",
+      "Name": "pad4",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "Param": "PERSONAL_SCENARIO_PARAM_ST",
+  "Type": "PERSONAL_SCENARIO_PARAM_ST",
+  "Name": "PERSONAL_SCENARIO_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "unknown_0",
+      "Name": "unknown_0",
+      "Description": ""
+    },
+    {
+      "Field": "personalScenarioObjectiveId",
+      "Name": "personalScenarioObjectiveId",
+      "Description": ""
+    },
+    {
+      "Field": "objectiveFlagId",
+      "Name": "objectiveFlagId",
+      "Description": ""
+    },
+    {
+      "Field": "personalScenarioTitleId",
+      "Name": "personalScenarioTitleId",
+      "Description": ""
+    },
+    {
+      "Field": "personalScenarioBodyId",
+      "Name": "personalScenarioBodyId",
+      "Description": ""
+    },
+    {
+      "Field": "personalScenarioImageId",
+      "Name": "personalScenarioImageId",
+      "Description": ""
+    },
+    {
+      "Field": "heroId",
+      "Name": "heroId",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_6b",
+      "Name": "unknown_6b",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_6c",
+      "Name": "unknown_6c",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_6d",
+      "Name": "unknown_6d",
+      "Description": ""
+    },
+    {
+      "Field": "flashbackFlagId",
+      "Name": "flashbackFlagId",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_8",
+      "Name": "unknown_8",
+      "Description": ""
+    },
+    {
+      "Field": "spawnpointEntityId",
+      "Name": "spawnpointEntityId",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_10",
+      "Name": "unknown_10",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_11",
+      "Name": "unknown_11",
+      "Description": ""
+    }
+  ]
+}

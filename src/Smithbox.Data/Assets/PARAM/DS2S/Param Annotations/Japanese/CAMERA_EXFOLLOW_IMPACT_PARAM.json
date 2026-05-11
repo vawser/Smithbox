@@ -1,0 +1,48 @@
+{
+  "Param": "CAMERA_EXFOLLOW_IMPACT_PARAM",
+  "Type": "CAMERA_EXFOLLOW_IMPACT_PARAM",
+  "Name": "CAMERA_EXFOLLOW_IMPACT_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "startTime",
+      "Name": "開始にかかる時間[sec]",
+      "Description": ""
+    },
+    {
+      "Field": "frequencyTime",
+      "Name": "開始後揺れる時間[sec]",
+      "Description": ""
+    },
+    {
+      "Field": "endTime",
+      "Name": "終了にかかる時間[sec]",
+      "Description": ""
+    },
+    {
+      "Field": "fovY",
+      "Name": "変動後の画角[％](無しは100)",
+      "Description": ""
+    },
+    {
+      "Field": "distance",
+      "Name": "変動後の距離[％](無しは100)",
+      "Description": ""
+    },
+    {
+      "Field": "frequencyNum",
+      "Name": "揺れる回数",
+      "Description": ""
+    },
+    {
+      "Field": "frequencyFovY",
+      "Name": "揺れた時に変動する画角[％](無しは100)",
+      "Description": ""
+    },
+    {
+      "Field": "frequencyDistance",
+      "Name": "揺れた時に変動する距離[％](無しは100)",
+      "Description": ""
+    }
+  ]
+}

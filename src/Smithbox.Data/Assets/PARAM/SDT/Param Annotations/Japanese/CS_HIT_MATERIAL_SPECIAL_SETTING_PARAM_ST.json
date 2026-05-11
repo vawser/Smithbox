@@ -1,0 +1,28 @@
+{
+  "Param": "CS_HIT_MATERIAL_SPECIAL_SETTING_PARAM_ST",
+  "Type": "CS_HIT_MATERIAL_SPECIAL_SETTING_PARAM_ST",
+  "Name": "CS_HIT_MATERIAL_SPECIAL_SETTING_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "GroundMaterialType",
+      "Name": "GroundMaterialType",
+      "Description": ""
+    },
+    {
+      "Field": "Unk1",
+      "Name": "Unk1",
+      "Description": ""
+    },
+    {
+      "Field": "pad1",
+      "Name": "pad1",
+      "Description": ""
+    },
+    {
+      "Field": "SpEffectId",
+      "Name": "SpEffectId",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "Param": "EQUIP_PARAM_ANTIQUE_ST",
+  "Type": "EQUIP_PARAM_ANTIQUE_ST",
+  "Name": "EQUIP_PARAM_ANTIQUE_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "disableParam_NT",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "disableParamReserve1",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "disableParamReserve2",
+      "Description": ""
+    },
+    {
+      "Field": "relicColor",
+      "Name": "relicColor",
+      "Description": ""
+    },
+    {
+      "Field": "sortGroupId",
+      "Name": "sortGroupId",
+      "Description": ""
+    },
+    {
+      "Field": "isSalable",
+      "Name": "isSalable",
+      "Description": ""
+    },
+    {
+      "Field": "isDeepRelic",
+      "Name": "isDeepRelic",
+      "Description": ""
+    },
+    {
+      "Field": "colorIcon",
+      "Name": "colorIcon",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_2",
+      "Name": "unknown_2",
+      "Description": ""
+    },
+    {
+      "Field": "sortId",
+      "Name": "sortId",
+      "Description": ""
+    },
+    {
+      "Field": "padding",
+      "Name": "padding",
+      "Description": ""
+    },
+    {
+      "Field": "sortId_unk",
+      "Name": "sortId_unk",
+      "Description": ""
+    },
+    {
+      "Field": "attachEffectTableId_1",
+      "Name": "attachEffectTableId_1",
+      "Description": ""
+    },
+    {
+      "Field": "attachEffectTableId_2",
+      "Name": "attachEffectTableId_2",
+      "Description": ""
+    },
+    {
+      "Field": "attachEffectTableId_3",
+      "Name": "attachEffectTableId_3",
+      "Description": ""
+    },
+    {
+      "Field": "iconId",
+      "Name": "iconId",
+      "Description": ""
+    },
+    {
+      "Field": "attachEffectTableId_curse1",
+      "Name": "attachEffectTableId_curse1",
+      "Description": ""
+    },
+    {
+      "Field": "attachEffectTableId_curse2",
+      "Name": "attachEffectTableId_curse2",
+      "Description": ""
+    },
+    {
+      "Field": "attachEffectTableId_curse3",
+      "Name": "attachEffectTableId_curse3",
+      "Description": ""
+    },
+    {
+      "Field": "endPadding",
+      "Name": "endPadding",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "Param": "MAIN_SCENARIO_MENU_PARAM_ST",
+  "Type": "MAIN_SCENARIO_MENU_PARAM_ST",
+  "Name": "MAIN_SCENARIO_MENU_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "unknown_0",
+      "Name": "unknown_0",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_1",
+      "Name": "unknown_1",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_2",
+      "Name": "unknown_2",
+      "Description": ""
+    }
+  ]
+}

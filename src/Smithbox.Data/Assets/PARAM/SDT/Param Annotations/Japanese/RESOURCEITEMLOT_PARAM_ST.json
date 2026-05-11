@@ -1,0 +1,183 @@
+{
+  "Param": "RESOURCEITEMLOT_PARAM_ST",
+  "Type": "RESOURCEITEMLOT_PARAM_ST",
+  "Name": "RESOURCEITEMLOT_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "alreadyGotFlagId",
+      "Name": "取得済みフラグ",
+      "Description": "取得済みかどうかを管理するフラグのID。-1は無効。"
+    },
+    {
+      "Field": "resourceItemCategory01",
+      "Name": "１：リソースアイテムカテゴリ",
+      "Description": "このパラメータに紐付いて、取得するアイテムIDと取得時に発生するSFXが切り替わる。 "
+    },
+    {
+      "Field": "resourceItemCategory02",
+      "Name": "２：リソースアイテムカテゴリ",
+      "Description": "このパラメータに紐付いて、取得するアイテムIDと取得時に発生するSFXが切り替わる。 "
+    },
+    {
+      "Field": "resourceItemCategory03",
+      "Name": "３：リソースアイテムカテゴリ",
+      "Description": "このパラメータに紐付いて、取得するアイテムIDと取得時に発生するSFXが切り替わる。 "
+    },
+    {
+      "Field": "resourceItemCategory04",
+      "Name": "４：リソースアイテムカテゴリ",
+      "Description": "このパラメータに紐付いて、取得するアイテムIDと取得時に発生するSFXが切り替わる。 "
+    },
+    {
+      "Field": "resourceItemCategory05",
+      "Name": "５：リソースアイテムカテゴリ",
+      "Description": "このパラメータに紐付いて、取得するアイテムIDと取得時に発生するSFXが切り替わる。 "
+    },
+    {
+      "Field": "resourceItemCategory06",
+      "Name": "６：リソースアイテムカテゴリ",
+      "Description": "このパラメータに紐付いて、取得するアイテムIDと取得時に発生するSFXが切り替わる。 "
+    },
+    {
+      "Field": "resourceItemCategory07",
+      "Name": "７：リソースアイテムカテゴリ",
+      "Description": "このパラメータに紐付いて、取得するアイテムIDと取得時に発生するSFXが切り替わる。 "
+    },
+    {
+      "Field": "resourceItemCategory08",
+      "Name": "８：リソースアイテムカテゴリ",
+      "Description": "このパラメータに紐付いて、取得するアイテムIDと取得時に発生するSFXが切り替わる。 "
+    },
+    {
+      "Field": "isAddLottery",
+      "Name": "追加抽選か？",
+      "Description": "○ならば、追加抽選特殊効果がPCにかかっている場合に限りこの抽選を実行する。"
+    },
+    {
+      "Field": "pad1",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "lotBasePoint01",
+      "Name": "１：基本出現ポイント",
+      "Description": "[基本出現ポイント/基本出現ポイントの合計]が抽選される確率になる "
+    },
+    {
+      "Field": "lotBasePoint02",
+      "Name": "２：基本出現ポイント",
+      "Description": "[基本出現ポイント/基本出現ポイントの合計]が抽選される確率になる "
+    },
+    {
+      "Field": "lotBasePoint03",
+      "Name": "３：基本出現ポイント",
+      "Description": "[基本出現ポイント/基本出現ポイントの合計]が抽選される確率になる "
+    },
+    {
+      "Field": "lotBasePoint04",
+      "Name": "４：基本出現ポイント",
+      "Description": "[基本出現ポイント/基本出現ポイントの合計]が抽選される確率になる "
+    },
+    {
+      "Field": "lotBasePoint05",
+      "Name": "５：基本出現ポイント",
+      "Description": "[基本出現ポイント/基本出現ポイントの合計]が抽選される確率になる "
+    },
+    {
+      "Field": "lotBasePoint06",
+      "Name": "６：基本出現ポイント",
+      "Description": "[基本出現ポイント/基本出現ポイントの合計]が抽選される確率になる "
+    },
+    {
+      "Field": "lotBasePoint07",
+      "Name": "７：基本出現ポイント",
+      "Description": "[基本出現ポイント/基本出現ポイントの合計]が抽選される確率になる "
+    },
+    {
+      "Field": "lotBasePoint08",
+      "Name": "８：基本出現ポイント",
+      "Description": "[基本出現ポイント/基本出現ポイントの合計]が抽選される確率になる "
+    },
+    {
+      "Field": "itemNum01",
+      "Name": "１：個数",
+      "Description": "取得できるアイテムの個数"
+    },
+    {
+      "Field": "itemNum02",
+      "Name": "２：個数",
+      "Description": "取得できるアイテムの個数"
+    },
+    {
+      "Field": "itemNum03",
+      "Name": "３：個数",
+      "Description": "取得できるアイテムの個数"
+    },
+    {
+      "Field": "itemNum04",
+      "Name": "４：個数",
+      "Description": "取得できるアイテムの個数"
+    },
+    {
+      "Field": "itemNum05",
+      "Name": "５：個数",
+      "Description": "取得できるアイテムの個数"
+    },
+    {
+      "Field": "itemNum06",
+      "Name": "６：個数",
+      "Description": "取得できるアイテムの個数"
+    },
+    {
+      "Field": "itemNum07",
+      "Name": "７：個数",
+      "Description": "取得できるアイテムの個数"
+    },
+    {
+      "Field": "itemNum08",
+      "Name": "８：個数",
+      "Description": "取得できるアイテムの個数"
+    },
+    {
+      "Field": "spLotPointRate01",
+      "Name": "１：特殊効果による出現ポイント補正",
+      "Description": "基本出現ポイントに対する特殊効果からの乗算補正を行うかどうか"
+    },
+    {
+      "Field": "spLotPointRate02",
+      "Name": "２：特殊効果による出現ポイント補正",
+      "Description": "基本出現ポイントに対する特殊効果からの乗算補正を行うかどうか"
+    },
+    {
+      "Field": "spLotPointRate03",
+      "Name": "３：特殊効果による出現ポイント補正",
+      "Description": "基本出現ポイントに対する特殊効果からの乗算補正を行うかどうか"
+    },
+    {
+      "Field": "spLotPointRate04",
+      "Name": "４：特殊効果による出現ポイント補正",
+      "Description": "基本出現ポイントに対する特殊効果からの乗算補正を行うかどうか"
+    },
+    {
+      "Field": "spLotPointRate05",
+      "Name": "５：特殊効果による出現ポイント補正",
+      "Description": "基本出現ポイントに対する特殊効果からの乗算補正を行うかどうか"
+    },
+    {
+      "Field": "spLotPointRate06",
+      "Name": "６：特殊効果による出現ポイント補正",
+      "Description": "基本出現ポイントに対する特殊効果からの乗算補正を行うかどうか"
+    },
+    {
+      "Field": "spLotPointRate07",
+      "Name": "７：特殊効果による出現ポイント補正",
+      "Description": "基本出現ポイントに対する特殊効果からの乗算補正を行うかどうか"
+    },
+    {
+      "Field": "spLotPointRate08",
+      "Name": "８：特殊効果による出現ポイント補正",
+      "Description": "基本出現ポイントに対する特殊効果からの乗算補正を行うかどうか"
+    }
+  ]
+}

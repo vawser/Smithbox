@@ -1,0 +1,28 @@
+{
+  "Param": "TORCH_OFF_CTRL_PARAM",
+  "Type": "TORCH_OFF_CTRL_PARAM",
+  "Name": "TORCH_OFF_CTRL_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "sfxIdSmall",
+      "Name": "SFXID（小）",
+      "Description": "SFXID（小）"
+    },
+    {
+      "Field": "sfxIdNormal",
+      "Name": "SFXID（中）",
+      "Description": "SFXID（中）"
+    },
+    {
+      "Field": "sfxIdLarge",
+      "Name": "SFXID（大）",
+      "Description": "SFXID（大）"
+    },
+    {
+      "Field": "fadeTime",
+      "Name": "フェードアウト時間[sec]",
+      "Description": "松明フェードアウト時間"
+    }
+  ]
+}

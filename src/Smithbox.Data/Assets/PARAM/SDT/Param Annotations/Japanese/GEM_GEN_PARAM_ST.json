@@ -1,0 +1,183 @@
+{
+  "Param": "GEM_GEN_PARAM_ST",
+  "Type": "GEM_GEN_PARAM_ST",
+  "Name": "GEM_GEN_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "isUnique",
+      "Name": "ユニーク魔石か",
+      "Description": "ユニーク魔石か"
+    },
+    {
+      "Field": "iconId",
+      "Name": "アイコンID",
+      "Description": "アイコンID"
+    },
+    {
+      "Field": "nameId",
+      "Name": "名称ID",
+      "Description": "名称ID"
+    },
+    {
+      "Field": "disableSlotRateModify",
+      "Name": "スロット出現率補正無効化",
+      "Description": "スロットタイプ出現率補正を無効化するか(1:する, 0:しない)"
+    },
+    {
+      "Field": "slotTypeRateA",
+      "Name": "スロットタイプＡ出現率",
+      "Description": "スロットタイプＡ出現率(-1:除外)"
+    },
+    {
+      "Field": "slotTypeRateB",
+      "Name": "スロットタイプＢ出現率",
+      "Description": "スロットタイプＢ出現率"
+    },
+    {
+      "Field": "slotTypeRateC",
+      "Name": "スロットタイプＣ出現率",
+      "Description": "スロットタイプＣ出現率"
+    },
+    {
+      "Field": "slotTypeRateD",
+      "Name": "スロットタイプＤ出現率",
+      "Description": "スロットタイプＤ出現率"
+    },
+    {
+      "Field": "slotTypeRateE",
+      "Name": "スロットタイプＥ出現率",
+      "Description": "スロットタイプＥ出現率"
+    },
+    {
+      "Field": "slotTypeRateF",
+      "Name": "スロットタイプＦ出現率",
+      "Description": "スロットタイプＦ出現率"
+    },
+    {
+      "Field": "rankAveModifyRate",
+      "Name": "ランク平均値補正",
+      "Description": "ランク平均値補正(-100:最低, 100:最高)"
+    },
+    {
+      "Field": "gemeffectGenParamType_0",
+      "Name": "０：魔石効果生成パラムタイプ",
+      "Description": "０：魔石効果生成パラムタイプ"
+    },
+    {
+      "Field": "gemeffectGenParam_0",
+      "Name": "０：魔石効果生成パラム",
+      "Description": "０：魔石効果生成パラム"
+    },
+    {
+      "Field": "manifestRate_0",
+      "Name": "０：出現率",
+      "Description": "０：出現率"
+    },
+    {
+      "Field": "negativizeRate_0",
+      "Name": "０：マイナス効果化率",
+      "Description": "０：マイナス効果化率"
+    },
+    {
+      "Field": "gemeffectGenParamType_1",
+      "Name": "１：魔石効果生成パラムタイプ",
+      "Description": "１：魔石効果生成パラムタイプ"
+    },
+    {
+      "Field": "gemeffectGenParam_1",
+      "Name": "１：魔石効果生成パラム",
+      "Description": "１：魔石効果生成パラム"
+    },
+    {
+      "Field": "manifestRate_1",
+      "Name": "１：出現率",
+      "Description": "１：出現率"
+    },
+    {
+      "Field": "negativizeRate_1",
+      "Name": "１：マイナス効果化率",
+      "Description": "１：マイナス効果化率"
+    },
+    {
+      "Field": "gemeffectGenParamType_2",
+      "Name": "２：魔石効果生成パラムタイプ",
+      "Description": "２：魔石効果生成パラムタイプ"
+    },
+    {
+      "Field": "gemeffectGenParam_2",
+      "Name": "２：魔石効果生成パラム",
+      "Description": "２：魔石効果生成パラム"
+    },
+    {
+      "Field": "manifestRate_2",
+      "Name": "２：出現率",
+      "Description": "２：出現率"
+    },
+    {
+      "Field": "negativizeRate_2",
+      "Name": "２：マイナス効果化率",
+      "Description": "２：マイナス効果化率"
+    },
+    {
+      "Field": "gemeffectGenParamType_3",
+      "Name": "３：魔石効果生成パラムタイプ",
+      "Description": "３：魔石効果生成パラムタイプ"
+    },
+    {
+      "Field": "gemeffectGenParam_3",
+      "Name": "３：魔石効果生成パラム",
+      "Description": "３：魔石効果生成パラム"
+    },
+    {
+      "Field": "manifestRate_3",
+      "Name": "３：出現率",
+      "Description": "３：出現率"
+    },
+    {
+      "Field": "negativizeRate_3",
+      "Name": "３：マイナス効果化率",
+      "Description": "３：マイナス効果化率"
+    },
+    {
+      "Field": "gemeffectGenParamType_4",
+      "Name": "４：魔石効果生成パラムタイプ",
+      "Description": "４：魔石効果生成パラムタイプ"
+    },
+    {
+      "Field": "gemeffectGenParam_4",
+      "Name": "４：魔石効果生成パラム",
+      "Description": "４：魔石効果生成パラム"
+    },
+    {
+      "Field": "manifestRate_4",
+      "Name": "４：出現率",
+      "Description": "４：出現率"
+    },
+    {
+      "Field": "negativizeRate_4",
+      "Name": "４：マイナス効果化率",
+      "Description": "４：マイナス効果化率"
+    },
+    {
+      "Field": "gemeffectGenParamType_5",
+      "Name": "５：魔石効果生成パラムタイプ",
+      "Description": "５：魔石効果生成パラムタイプ"
+    },
+    {
+      "Field": "gemeffectGenParam_5",
+      "Name": "５：魔石効果生成パラム",
+      "Description": "５：魔石効果生成パラム"
+    },
+    {
+      "Field": "manifestRate_5",
+      "Name": "５：出現率",
+      "Description": "５：出現率"
+    },
+    {
+      "Field": "negativizeRate_5",
+      "Name": "５：マイナス効果化率",
+      "Description": "５：マイナス効果化率"
+    }
+  ]
+}

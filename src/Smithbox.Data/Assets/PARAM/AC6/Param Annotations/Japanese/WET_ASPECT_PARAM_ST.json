@@ -1,0 +1,73 @@
+{
+  "Param": "WET_ASPECT_PARAM_ST",
+  "Type": "WET_ASPECT_PARAM_ST",
+  "Name": "WET_ASPECT_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "baseColorR",
+      "Name": "ベースカラー 値R",
+      "Description": "ベースカラー色Rです。"
+    },
+    {
+      "Field": "baseColorG",
+      "Name": "ベースカラー 値G",
+      "Description": "ベースカラー色Gです。"
+    },
+    {
+      "Field": "baseColorB",
+      "Name": "ベースカラー 値B",
+      "Description": "ベースカラー色Bです。"
+    },
+    {
+      "Field": "reserve_0",
+      "Name": "予備1",
+      "Description": ""
+    },
+    {
+      "Field": "baseColorA",
+      "Name": "ベースカラー ％",
+      "Description": "ベースカラーのオーバーライド率です。 "
+    },
+    {
+      "Field": "metallic",
+      "Name": "メタリック 値",
+      "Description": "メタリックです。"
+    },
+    {
+      "Field": "reserve_1",
+      "Name": "予備2",
+      "Description": ""
+    },
+    {
+      "Field": "reserve_2",
+      "Name": "予備3",
+      "Description": ""
+    },
+    {
+      "Field": "reserve_3",
+      "Name": "予備4",
+      "Description": ""
+    },
+    {
+      "Field": "metallicRate",
+      "Name": "メタリック ％",
+      "Description": "メタリックのオーバーライド率です。"
+    },
+    {
+      "Field": "shininessRate",
+      "Name": "シャイニネス ％",
+      "Description": "シャイニネスのオーバーライド率です。"
+    },
+    {
+      "Field": "shininess",
+      "Name": "シャイニネス 値",
+      "Description": "シャイニネスです。 "
+    },
+    {
+      "Field": "reserve_4",
+      "Name": "予備5",
+      "Description": ""
+    }
+  ]
+}

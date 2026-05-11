@@ -1,0 +1,368 @@
+{
+  "Param": "ATK_PARAM_ST",
+  "Type": "ATK_PARAM_ST",
+  "Name": "ATK_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "pad12",
+      "Name": "パディング12",
+      "Description": ""
+    },
+    {
+      "Field": "dmgLevel",
+      "Name": "ダメージレベル",
+      "Description": "攻撃したとき、敵にどのダメージモーションを再生するか？を決める."
+    },
+    {
+      "Field": "parryEnableFrame",
+      "Name": "パリィ受付時間[frame]",
+      "Description": "パリィを受けつけられる時間を設定する"
+    },
+    {
+      "Field": "mapHitType",
+      "Name": "マップあたり参照",
+      "Description": "攻撃あたりが、どのマップあたりを見るか？を設定"
+    },
+    {
+      "Field": "enableFlyingDamage",
+      "Name": "吹っ飛びに変化可能か？",
+      "Description": "特定の条件化で、攻撃が吹っ飛び攻撃に変化できるかどうかを指定する"
+    },
+    {
+      "Field": "atkPhys",
+      "Name": "物理攻撃力",
+      "Description": "NPCのみ。物理攻撃の基本ダメージ"
+    },
+    {
+      "Field": "atkMag",
+      "Name": "魔法攻撃力",
+      "Description": "NPCのみ。魔法攻撃の追加ダメージ"
+    },
+    {
+      "Field": "atkFire",
+      "Name": "炎攻撃力",
+      "Description": "NPCのみ。炎攻撃の追加ダメージ"
+    },
+    {
+      "Field": "atkStam",
+      "Name": "スタミナ攻撃力",
+      "Description": "NPCのみ。敵（プレイヤー）のスタミナに対するダメージ量"
+    },
+    {
+      "Field": "atkParry",
+      "Name": "パリィ攻撃力",
+      "Description": "NPCのみ。パリィ判定に使用（高いほどパリィされにくくなる）"
+    },
+    {
+      "Field": "defParry",
+      "Name": "パリィ防御値",
+      "Description": "NPCのみ。パリィ判定に使用"
+    },
+    {
+      "Field": "guardAtkRate",
+      "Name": "はじき攻撃力",
+      "Description": "NPCのみ。はじき値"
+    },
+    {
+      "Field": "guardBreakRate",
+      "Name": "はじき防御力",
+      "Description": "NPCのみ。攻撃がはじかれるかどうかの判定に利用する値"
+    },
+    {
+      "Field": "guardCutCancelRate",
+      "Name": "ガードカット率無効化倍率",
+      "Description": "ガードカット率無効化倍率（－100～100）\u3000→0のとき通常／－100で完全無効化／100で相手の防御効果倍増 \u3000→－50とすれば、100%カットの盾が、50％カットになります "
+    },
+    {
+      "Field": "ignoreAtkType",
+      "Name": "攻撃タイプ無視",
+      "Description": "○無視：×通常。フラグが立っていると、防御側の攻撃タイプ防御を無視できる。例）斬撃の攻撃\u3000→斬撃防御に強い敵。本来斬撃は、ダメージが通りにくいが、この攻撃に限り、ダメージは低くならない。結果として、敵の攻撃タイプ防御に左右されない万能攻撃になる.\r\n"
+    },
+    {
+      "Field": "atkSuperArmor",
+      "Name": "スーパーアーマー攻撃力",
+      "Description": "NPCのみ。スーパーアーマーを崩すための攻撃力"
+    },
+    {
+      "Field": "atkObj",
+      "Name": "オブジェ攻撃力",
+      "Description": "ＯＢＪに対する攻撃力"
+    },
+    {
+      "Field": "pad2",
+      "Name": "パディング2",
+      "Description": "パディング2"
+    },
+    {
+      "Field": "atkPhysCorrection",
+      "Name": "物理攻撃力補正値",
+      "Description": "PCのみ。物理攻撃力基本値に掛ける倍率"
+    },
+    {
+      "Field": "atkMagCorrection",
+      "Name": "魔法攻撃力補正値",
+      "Description": "PCのみ。魔法攻撃力に掛ける倍率（弓の場合は、飛び道具を補正）"
+    },
+    {
+      "Field": "atkFireCorrection",
+      "Name": "炎攻撃力補正値",
+      "Description": "PCのみ。炎攻撃力に掛ける倍率（弓の場合は、飛び道具を補正）"
+    },
+    {
+      "Field": "atkStamCorrection",
+      "Name": "スタミナ攻撃力補正値",
+      "Description": "PCのみ。スタミナ攻撃力に掛ける倍率"
+    },
+    {
+      "Field": "atkParryCorrection",
+      "Name": "パリィ攻撃補正値",
+      "Description": "PCのみ。パリィ攻撃基本値に掛ける倍率（パリィのやぶりやすさ）"
+    },
+    {
+      "Field": "defParryCorrection",
+      "Name": "パリィ防御補正値",
+      "Description": "PCのみ。1のみ"
+    },
+    {
+      "Field": "guardAtkRateCorrection",
+      "Name": "はじき攻撃力補正値",
+      "Description": "PCのみ。1のみ"
+    },
+    {
+      "Field": "guardBreakCorrection",
+      "Name": "はじき防御力補正値",
+      "Description": "PCのみ。攻撃のはじかれ基本値に掛ける倍率"
+    },
+    {
+      "Field": "pad10",
+      "Name": "パディング10",
+      "Description": ""
+    },
+    {
+      "Field": "atkSuperArmorCorrection",
+      "Name": "スーパーアーマー補正値",
+      "Description": "PCのみ。武器に設定された【基本値】にかける補正値"
+    },
+    {
+      "Field": "guardStaminaCutRate",
+      "Name": "ガード時スタミナカット率補正",
+      "Description": "武器パラメータ、ＮＰＣパラメータに設定されている【ガード時スタミナカット率】を補正する"
+    },
+    {
+      "Field": "pad3",
+      "Name": "パディング3",
+      "Description": "パディング3"
+    },
+    {
+      "Field": "disableGuard",
+      "Name": "ガード不可フラグ",
+      "Description": "1の場合、ガード側のガードを無視して、ダメージレベルを入れる"
+    },
+    {
+      "Field": "disableStaminaAttack",
+      "Name": "スタミナ減らない",
+      "Description": "スタミナ攻撃力による「崩され判定」は行うが、実際にスタミナは減らさない"
+    },
+    {
+      "Field": "pad4",
+      "Name": "パディング4",
+      "Description": "パディング4"
+    },
+    {
+      "Field": "guardRate",
+      "Name": "ガード倍率",
+      "Description": "ＮＰＣ、武器パラメータで設定してあるガード性能を一律で補正を掛ける0で、1倍／100で、2倍／－100で、0\u3000にパラメータが増減するようにするガード倍率\u3000=\u3000（ガード倍率/100\u3000+\u30001）"
+    },
+    {
+      "Field": "disableHitSpEffect",
+      "Name": "ヒット時特殊効果無効",
+      "Description": "攻撃ヒットしたときの特殊効果を無効にします。SCEバグ対策"
+    },
+    {
+      "Field": "hitSourceType",
+      "Name": "あたり発生源",
+      "Description": "攻撃あたりのダミポリＩＤをどこから取ってくるか？を指定する"
+    },
+    {
+      "Field": "hit0_DmyPoly1",
+      "Name": "あたり0 ダミポリ1",
+      "Description": "球、カプセル位置のダミポリ"
+    },
+    {
+      "Field": "hit0_DmyPoly2",
+      "Name": "あたり0 ダミポリ2",
+      "Description": "カプセルのもうひとつの点の位置ダミポリ。-1だと球になる"
+    },
+    {
+      "Field": "hit0_Radius",
+      "Name": "あたり0 半径",
+      "Description": "球、カプセルの半径"
+    },
+    {
+      "Field": "hit0_hitType",
+      "Name": "あたり0 部位",
+      "Description": "あたり部位"
+    },
+    {
+      "Field": "hti0_Priority",
+      "Name": "あたり0 優先順位",
+      "Description": "優先度。同時に2つ以上のあたりがあたった場合、優先度が高いほうを採用する。"
+    },
+    {
+      "Field": "hit0_pad",
+      "Name": "あたり0 パディング",
+      "Description": "パディング"
+    },
+    {
+      "Field": "hit1_DmyPoly1",
+      "Name": "あたり1 ダミポリ1",
+      "Description": "球、カプセル位置のダミポリ"
+    },
+    {
+      "Field": "hit1_DmyPoly2",
+      "Name": "あたり1 ダミポリ2",
+      "Description": "カプセルのもうひとつの点の位置ダミポリ。-1だと球になる"
+    },
+    {
+      "Field": "hit1_Radius",
+      "Name": "あたり1 半径",
+      "Description": "球、カプセルの半径"
+    },
+    {
+      "Field": "hit1_hitType",
+      "Name": "あたり1 部位",
+      "Description": "あたり部位"
+    },
+    {
+      "Field": "hti1_Priority",
+      "Name": "あたり1 優先順位",
+      "Description": "優先度。同時に2つ以上のあたりがあたった場合、優先度が高いほうを採用する。"
+    },
+    {
+      "Field": "hit1_pad",
+      "Name": "あたり1 パディング",
+      "Description": "パディング"
+    },
+    {
+      "Field": "hit2_DmyPoly1",
+      "Name": "あたり2 ダミポリ1",
+      "Description": "球、カプセル位置のダミポリ"
+    },
+    {
+      "Field": "hit2_DmyPoly2",
+      "Name": "あたり2 ダミポリ2",
+      "Description": "カプセルのもうひとつの点の位置ダミポリ。-1だと球になる"
+    },
+    {
+      "Field": "hit2_Radius",
+      "Name": "あたり2 半径",
+      "Description": "球、カプセルの半径"
+    },
+    {
+      "Field": "hit2_hitType",
+      "Name": "あたり2 部位",
+      "Description": "あたり部位"
+    },
+    {
+      "Field": "hti2_Priority",
+      "Name": "あたり2 優先順位",
+      "Description": "優先度。同時に2つ以上のあたりがあたった場合、優先度が高いほうを採用する。"
+    },
+    {
+      "Field": "hit2_pad",
+      "Name": "あたり2 パディング",
+      "Description": "パディング"
+    },
+    {
+      "Field": "hit3_DmyPoly1",
+      "Name": "あたり3 ダミポリ1",
+      "Description": "球、カプセル位置のダミポリ"
+    },
+    {
+      "Field": "hit3_DmyPoly2",
+      "Name": "あたり3 ダミポリ2",
+      "Description": "カプセルのもうひとつの点の位置ダミポリ。-1だと球になる"
+    },
+    {
+      "Field": "hit3_Radius",
+      "Name": "あたり3 半径",
+      "Description": "球、カプセルの半径"
+    },
+    {
+      "Field": "hit3_hitType",
+      "Name": "あたり3 部位",
+      "Description": "あたり部位"
+    },
+    {
+      "Field": "hti3_Priority",
+      "Name": "あたり3 優先順位",
+      "Description": "優先度。同時に2つ以上のあたりがあたった場合、優先度が高いほうを採用する。"
+    },
+    {
+      "Field": "hit3_pad",
+      "Name": "あたり3 パディング",
+      "Description": "パディング"
+    },
+    {
+      "Field": "knockbackVellocity",
+      "Name": "ノックバック初速度[m/s]",
+      "Description": "ノックバックの初速度[m/s]"
+    },
+    {
+      "Field": "knocbackContTime",
+      "Name": "ノックバック速度維持時間[s]",
+      "Description": "ノックバックの初速度を維持する時間[s]"
+    },
+    {
+      "Field": "knockbackDecTime",
+      "Name": "ノックバック減速時間[s]",
+      "Description": "ノックバックの速度が減衰し始めてから停止するまでの時間[s]"
+    },
+    {
+      "Field": "disableKnockbackCut",
+      "Name": "ノックバックカット不可フラグ",
+      "Description": "1の場合、ガード側のノックバックカット率を無視する."
+    },
+    {
+      "Field": "pad11",
+      "Name": "パディング11",
+      "Description": ""
+    },
+    {
+      "Field": "IgnoreNotifyMissSwingForAI",
+      "Name": "AIに空振り通知しない",
+      "Description": "AIに空振り通知しない"
+    },
+    {
+      "Field": "spEffectId0",
+      "Name": "特殊効果0",
+      "Description": "特殊効果パラメータで作成したＩＤを入れる"
+    },
+    {
+      "Field": "spEffectId1",
+      "Name": "特殊効果1",
+      "Description": "特殊効果パラメータで作成したＩＤを入れる"
+    },
+    {
+      "Field": "spEffectId2",
+      "Name": "特殊効果2",
+      "Description": "特殊効果パラメータで作成したＩＤを入れる"
+    },
+    {
+      "Field": "spEffectId3",
+      "Name": "特殊効果3",
+      "Description": "特殊効果パラメータで作成したＩＤを入れる"
+    },
+    {
+      "Field": "spEffectId4",
+      "Name": "特殊効果4",
+      "Description": "特殊効果パラメータで作成したＩＤを入れる"
+    },
+    {
+      "Field": "pad8",
+      "Name": "パディング8",
+      "Description": "パディング8"
+    }
+  ]
+}

@@ -1,0 +1,213 @@
+{
+  "Param": "WEATHER_LOT_PARAM_ST",
+  "Type": "WEATHER_LOT_PARAM_ST",
+  "Name": "WEATHER_LOT_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "NT版出力から外すか",
+      "Description": "○をつけたパラメータをNT版パッケージでは除外します"
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "パッケージ出力用リザーブ1",
+      "Description": "パッケージ出力用リザーブ1"
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "パッケージ出力用リザーブ2",
+      "Description": "パッケージ出力用リザーブ2"
+    },
+    {
+      "Field": "weatherType0",
+      "Name": "天候種類0",
+      "Description": "天候種類0"
+    },
+    {
+      "Field": "weatherType1",
+      "Name": "天候種類1",
+      "Description": "天候種類1"
+    },
+    {
+      "Field": "weatherType2",
+      "Name": "天候種類2",
+      "Description": "天候種類2"
+    },
+    {
+      "Field": "weatherType3",
+      "Name": "天候種類3",
+      "Description": "天候種類3"
+    },
+    {
+      "Field": "weatherType4",
+      "Name": "天候種類4",
+      "Description": "天候種類4"
+    },
+    {
+      "Field": "weatherType5",
+      "Name": "天候種類5",
+      "Description": "天候種類5"
+    },
+    {
+      "Field": "weatherType6",
+      "Name": "天候種類6",
+      "Description": "天候種類6"
+    },
+    {
+      "Field": "weatherType7",
+      "Name": "天候種類7",
+      "Description": "天候種類7"
+    },
+    {
+      "Field": "weatherType8",
+      "Name": "天候種類8",
+      "Description": "天候種類8"
+    },
+    {
+      "Field": "weatherType9",
+      "Name": "天候種類9",
+      "Description": "天候種類9"
+    },
+    {
+      "Field": "weatherType10",
+      "Name": "天候種類10",
+      "Description": "天候種類10"
+    },
+    {
+      "Field": "weatherType11",
+      "Name": "天候種類11",
+      "Description": "天候種類11"
+    },
+    {
+      "Field": "weatherType12",
+      "Name": "天候種類12",
+      "Description": "天候種類12"
+    },
+    {
+      "Field": "weatherType13",
+      "Name": "天候種類13",
+      "Description": "天候種類13"
+    },
+    {
+      "Field": "weatherType14",
+      "Name": "天候種類14",
+      "Description": "天候種類14"
+    },
+    {
+      "Field": "weatherType15",
+      "Name": "天候種類15",
+      "Description": "天候種類15"
+    },
+    {
+      "Field": "lotteryWeight0",
+      "Name": "抽選ウェイト0",
+      "Description": "抽選ウェイト0"
+    },
+    {
+      "Field": "lotteryWeight1",
+      "Name": "抽選ウェイト1",
+      "Description": "抽選ウェイト1"
+    },
+    {
+      "Field": "lotteryWeight2",
+      "Name": "抽選ウェイト2",
+      "Description": "抽選ウェイト2"
+    },
+    {
+      "Field": "lotteryWeight3",
+      "Name": "抽選ウェイト3",
+      "Description": "抽選ウェイト3"
+    },
+    {
+      "Field": "lotteryWeight4",
+      "Name": "抽選ウェイト4",
+      "Description": "抽選ウェイト4"
+    },
+    {
+      "Field": "lotteryWeight5",
+      "Name": "抽選ウェイト5",
+      "Description": "抽選ウェイト5"
+    },
+    {
+      "Field": "lotteryWeight6",
+      "Name": "抽選ウェイト6",
+      "Description": "抽選ウェイト6"
+    },
+    {
+      "Field": "lotteryWeight7",
+      "Name": "抽選ウェイト7",
+      "Description": "抽選ウェイト7"
+    },
+    {
+      "Field": "lotteryWeight8",
+      "Name": "抽選ウェイト8",
+      "Description": "抽選ウェイト8"
+    },
+    {
+      "Field": "lotteryWeight9",
+      "Name": "抽選ウェイト9",
+      "Description": "抽選ウェイト9"
+    },
+    {
+      "Field": "lotteryWeight10",
+      "Name": "抽選ウェイト10",
+      "Description": "抽選ウェイト10"
+    },
+    {
+      "Field": "lotteryWeight11",
+      "Name": "抽選ウェイト11",
+      "Description": "抽選ウェイト11"
+    },
+    {
+      "Field": "lotteryWeight12",
+      "Name": "抽選ウェイト12",
+      "Description": "抽選ウェイト12"
+    },
+    {
+      "Field": "lotteryWeight13",
+      "Name": "抽選ウェイト13",
+      "Description": "抽選ウェイト13"
+    },
+    {
+      "Field": "lotteryWeight14",
+      "Name": "抽選ウェイト14",
+      "Description": "抽選ウェイト14"
+    },
+    {
+      "Field": "lotteryWeight15",
+      "Name": "抽選ウェイト15",
+      "Description": "抽選ウェイト15"
+    },
+    {
+      "Field": "timezoneLimit",
+      "Name": "時間帯条件リスト",
+      "Description": "時間帯条件リスト"
+    },
+    {
+      "Field": "timezoneStartHour",
+      "Name": "直接時間指定_開始_時",
+      "Description": "直接時間指定_開始_時"
+    },
+    {
+      "Field": "timezoneStartMinute",
+      "Name": "直接時間指定_開始_分",
+      "Description": "直接時間指定_開始_分"
+    },
+    {
+      "Field": "timezoneEndHour",
+      "Name": "直接時間指定_開始_時",
+      "Description": "直接時間指定_開始_時"
+    },
+    {
+      "Field": "timezoneEndMinute",
+      "Name": "直接時間指定_開始_分",
+      "Description": "直接時間指定_開始_分"
+    },
+    {
+      "Field": "reserve",
+      "Name": "リザーブ",
+      "Description": "予約領域"
+    }
+  ]
+}

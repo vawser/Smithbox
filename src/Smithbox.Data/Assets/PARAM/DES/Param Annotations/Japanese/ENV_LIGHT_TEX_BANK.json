@@ -1,0 +1,478 @@
+{
+  "Param": "ENV_LIGHT_TEX_BANK",
+  "Type": "ENV_LIGHT_TEX_BANK",
+  "Name": "ENV_LIGHT_TEX_BANK",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "isUse",
+      "Name": "使用するか",
+      "Description": "0:しない, 1:する"
+    },
+    {
+      "Field": "autoUpdate",
+      "Name": "自動更新するか",
+      "Description": "0:しない, 1:する"
+    },
+    {
+      "Field": "pad_0",
+      "Name": "パディング",
+      "Description": "ダミー"
+    },
+    {
+      "Field": "invMulCol",
+      "Name": "RGB逆倍率[％]",
+      "Description": "全ての光源色にこの値の逆数を掛けます"
+    },
+    {
+      "Field": "resNameId_Dif0",
+      "Name": "リソース名ID",
+      "Description": "[DIF0] テクスチャファイル名のID(-1:なし)"
+    },
+    {
+      "Field": "invMulCol_Dif0",
+      "Name": "RGB逆倍率[％]",
+      "Description": "[DIF0] 光源色にこの値の逆数を掛けます"
+    },
+    {
+      "Field": "sepcPow_Dif0",
+      "Name": "スペキュラ次数",
+      "Description": "[DIF0] スペキュラ次数"
+    },
+    {
+      "Field": "pad_Dif0",
+      "Name": "パディング",
+      "Description": "[DIF0]  ダミー"
+    },
+    {
+      "Field": "resNameId_Spc0",
+      "Name": "リソース名ID",
+      "Description": "[SPC0] テクスチャファイル名のID(-1:なし)"
+    },
+    {
+      "Field": "invMulCol_Spc0",
+      "Name": "RGB逆倍率[％]",
+      "Description": "[SPC0] 光源色にこの値の逆数を掛けます"
+    },
+    {
+      "Field": "sepcPow_Spc0",
+      "Name": "スペキュラ次数",
+      "Description": "[SPC0] スペキュラ次数"
+    },
+    {
+      "Field": "pad_Spc0",
+      "Name": "パディング",
+      "Description": "[SPC0]  ダミー"
+    },
+    {
+      "Field": "resNameId_Spc1",
+      "Name": "リソース名ID",
+      "Description": "[SPC1] テクスチャファイル名のID(-1:なし)"
+    },
+    {
+      "Field": "invMulCol_Spc1",
+      "Name": "RGB逆倍率[％]",
+      "Description": "[SPC1] 光源色にこの値の逆数を掛けます"
+    },
+    {
+      "Field": "sepcPow_Spc1",
+      "Name": "スペキュラ次数",
+      "Description": "[SPC1] スペキュラ次数"
+    },
+    {
+      "Field": "pad_Spc1",
+      "Name": "パディング",
+      "Description": "[SPC1]  ダミー"
+    },
+    {
+      "Field": "resNameId_Spc2",
+      "Name": "リソース名ID",
+      "Description": "[SPC2] テクスチャファイル名のID(-1:なし)"
+    },
+    {
+      "Field": "invMulCol_Spc2",
+      "Name": "RGB逆倍率[％]",
+      "Description": "[SPC2] 光源色にこの値の逆数を掛けます"
+    },
+    {
+      "Field": "sepcPow_Spc2",
+      "Name": "スペキュラ次数",
+      "Description": "[SPC2] スペキュラ次数"
+    },
+    {
+      "Field": "pad_Spc2",
+      "Name": "パディング",
+      "Description": "[SPC2]  ダミー"
+    },
+    {
+      "Field": "resNameId_Spc3",
+      "Name": "リソース名ID",
+      "Description": "[SPC3] テクスチャファイル名のID(-1:なし)"
+    },
+    {
+      "Field": "invMulCol_Spc3",
+      "Name": "RGB逆倍率[％]",
+      "Description": "[SPC3] 光源色にこの値の逆数を掛けます"
+    },
+    {
+      "Field": "sepcPow_Spc3",
+      "Name": "スペキュラ次数",
+      "Description": "[SPC3] スペキュラ次数"
+    },
+    {
+      "Field": "pad_Spc3",
+      "Name": "パディング",
+      "Description": "[SPC3]  ダミー"
+    },
+    {
+      "Field": "degRotX_00",
+      "Name": "X角度",
+      "Description": "平行光源：００"
+    },
+    {
+      "Field": "degRotY_00",
+      "Name": "Ｙ角度",
+      "Description": "平行光源：００"
+    },
+    {
+      "Field": "colR_00",
+      "Name": "Ｒ",
+      "Description": "平行光源：００"
+    },
+    {
+      "Field": "colG_00",
+      "Name": "Ｇ",
+      "Description": "平行光源：００"
+    },
+    {
+      "Field": "colB_00",
+      "Name": "Ｂ",
+      "Description": "平行光源：００"
+    },
+    {
+      "Field": "colA_00",
+      "Name": "RGB倍率[％]",
+      "Description": "平行光源：００ (0:未使用)"
+    },
+    {
+      "Field": "pad_00",
+      "Name": "パディング",
+      "Description": "平行光源：００"
+    },
+    {
+      "Field": "degRotX_01",
+      "Name": "X角度",
+      "Description": "平行光源：０１"
+    },
+    {
+      "Field": "degRotY_01",
+      "Name": "Ｙ角度",
+      "Description": "平行光源：０１"
+    },
+    {
+      "Field": "colR_01",
+      "Name": "Ｒ",
+      "Description": "平行光源：０１"
+    },
+    {
+      "Field": "colG_01",
+      "Name": "Ｇ",
+      "Description": "平行光源：０１"
+    },
+    {
+      "Field": "colB_01",
+      "Name": "Ｂ",
+      "Description": "平行光源：０１"
+    },
+    {
+      "Field": "colA_01",
+      "Name": "RGB倍率[％]",
+      "Description": "平行光源：０１ (0:未使用)"
+    },
+    {
+      "Field": "pad_01",
+      "Name": "パディング",
+      "Description": "平行光源：０１"
+    },
+    {
+      "Field": "degRotX_02",
+      "Name": "X角度",
+      "Description": "平行光源：０２"
+    },
+    {
+      "Field": "degRotY_02",
+      "Name": "Ｙ角度",
+      "Description": "平行光源：０２"
+    },
+    {
+      "Field": "colR_02",
+      "Name": "Ｒ",
+      "Description": "平行光源：０２"
+    },
+    {
+      "Field": "colG_02",
+      "Name": "Ｇ",
+      "Description": "平行光源：０２"
+    },
+    {
+      "Field": "colB_02",
+      "Name": "Ｂ",
+      "Description": "平行光源：０２"
+    },
+    {
+      "Field": "colA_02",
+      "Name": "RGB倍率[％]",
+      "Description": "平行光源：０２ (0:未使用)"
+    },
+    {
+      "Field": "pad_02",
+      "Name": "パディング",
+      "Description": "平行光源：０２"
+    },
+    {
+      "Field": "degRotX_03",
+      "Name": "X角度",
+      "Description": "平行光源：０３"
+    },
+    {
+      "Field": "degRotY_03",
+      "Name": "Ｙ角度",
+      "Description": "平行光源：０３"
+    },
+    {
+      "Field": "colR_03",
+      "Name": "Ｒ",
+      "Description": "平行光源：０３"
+    },
+    {
+      "Field": "colG_03",
+      "Name": "Ｇ",
+      "Description": "平行光源：０３"
+    },
+    {
+      "Field": "colB_03",
+      "Name": "Ｂ",
+      "Description": "平行光源：０３"
+    },
+    {
+      "Field": "colA_03",
+      "Name": "RGB倍率[％]",
+      "Description": "平行光源：０３ (0:未使用)"
+    },
+    {
+      "Field": "pad_03",
+      "Name": "パディング",
+      "Description": "平行光源：０３"
+    },
+    {
+      "Field": "degRotX_04",
+      "Name": "X角度",
+      "Description": "平行光源：０４"
+    },
+    {
+      "Field": "degRotY_04",
+      "Name": "Ｙ角度",
+      "Description": "平行光源：０４"
+    },
+    {
+      "Field": "colR_04",
+      "Name": "Ｒ",
+      "Description": "平行光源：０４"
+    },
+    {
+      "Field": "colG_04",
+      "Name": "Ｇ",
+      "Description": "平行光源：０４"
+    },
+    {
+      "Field": "colB_04",
+      "Name": "Ｂ",
+      "Description": "平行光源：０４"
+    },
+    {
+      "Field": "colA_04",
+      "Name": "RGB倍率[％]",
+      "Description": "平行光源：０４ (0:未使用)"
+    },
+    {
+      "Field": "pad_04",
+      "Name": "パディング",
+      "Description": "平行光源：０４"
+    },
+    {
+      "Field": "degRotX_05",
+      "Name": "X角度",
+      "Description": "平行光源：０５"
+    },
+    {
+      "Field": "degRotY_05",
+      "Name": "Ｙ角度",
+      "Description": "平行光源：０５"
+    },
+    {
+      "Field": "colR_05",
+      "Name": "Ｒ",
+      "Description": "平行光源：０５"
+    },
+    {
+      "Field": "colG_05",
+      "Name": "Ｇ",
+      "Description": "平行光源：０５"
+    },
+    {
+      "Field": "colB_05",
+      "Name": "Ｂ",
+      "Description": "平行光源：０５"
+    },
+    {
+      "Field": "colA_05",
+      "Name": "RGB倍率[％]",
+      "Description": "平行光源：０５ (0:未使用)"
+    },
+    {
+      "Field": "pad_05",
+      "Name": "パディング",
+      "Description": "平行光源：０５"
+    },
+    {
+      "Field": "degRotX_06",
+      "Name": "X角度",
+      "Description": "平行光源：０６"
+    },
+    {
+      "Field": "degRotY_06",
+      "Name": "Ｙ角度",
+      "Description": "平行光源：０６"
+    },
+    {
+      "Field": "colR_06",
+      "Name": "Ｒ",
+      "Description": "平行光源：０６"
+    },
+    {
+      "Field": "colG_06",
+      "Name": "Ｇ",
+      "Description": "平行光源：０６"
+    },
+    {
+      "Field": "colB_06",
+      "Name": "Ｂ",
+      "Description": "平行光源：０６"
+    },
+    {
+      "Field": "colA_06",
+      "Name": "RGB倍率[％]",
+      "Description": "平行光源：０６ (0:未使用)"
+    },
+    {
+      "Field": "pad_06",
+      "Name": "パディング",
+      "Description": "平行光源：０６"
+    },
+    {
+      "Field": "degRotX_07",
+      "Name": "X角度",
+      "Description": "平行光源：０７"
+    },
+    {
+      "Field": "degRotY_07",
+      "Name": "Ｙ角度",
+      "Description": "平行光源：０７"
+    },
+    {
+      "Field": "colR_07",
+      "Name": "Ｒ",
+      "Description": "平行光源：０７"
+    },
+    {
+      "Field": "colG_07",
+      "Name": "Ｇ",
+      "Description": "平行光源：０７"
+    },
+    {
+      "Field": "colB_07",
+      "Name": "Ｂ",
+      "Description": "平行光源：０７"
+    },
+    {
+      "Field": "colA_07",
+      "Name": "RGB倍率[％]",
+      "Description": "平行光源：０７ (0:未使用)"
+    },
+    {
+      "Field": "pad_07",
+      "Name": "パディング",
+      "Description": "平行光源：０７"
+    },
+    {
+      "Field": "degRotX_08",
+      "Name": "X角度",
+      "Description": "平行光源：０８"
+    },
+    {
+      "Field": "degRotY_08",
+      "Name": "Ｙ角度",
+      "Description": "平行光源：０８"
+    },
+    {
+      "Field": "colR_08",
+      "Name": "Ｒ",
+      "Description": "平行光源：０８"
+    },
+    {
+      "Field": "colG_08",
+      "Name": "Ｇ",
+      "Description": "平行光源：０８"
+    },
+    {
+      "Field": "colB_08",
+      "Name": "Ｂ",
+      "Description": "平行光源：０８"
+    },
+    {
+      "Field": "colA_08",
+      "Name": "RGB倍率[％]",
+      "Description": "平行光源：０８ (0:未使用)"
+    },
+    {
+      "Field": "pad_08",
+      "Name": "パディング",
+      "Description": "平行光源：０８"
+    },
+    {
+      "Field": "degRotX_09",
+      "Name": "X角度",
+      "Description": "平行光源：０９"
+    },
+    {
+      "Field": "degRotY_09",
+      "Name": "Ｙ角度",
+      "Description": "平行光源：０９"
+    },
+    {
+      "Field": "colR_09",
+      "Name": "Ｒ",
+      "Description": "平行光源：０９"
+    },
+    {
+      "Field": "colG_09",
+      "Name": "Ｇ",
+      "Description": "平行光源：０９"
+    },
+    {
+      "Field": "colB_09",
+      "Name": "Ｂ",
+      "Description": "平行光源：０９"
+    },
+    {
+      "Field": "colA_09",
+      "Name": "RGB倍率[％]",
+      "Description": "平行光源：０９ (0:未使用)"
+    },
+    {
+      "Field": "pad_09",
+      "Name": "パディング",
+      "Description": "平行光源：０９"
+    }
+  ]
+}

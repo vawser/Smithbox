@@ -1,0 +1,58 @@
+{
+  "Param": "MENU_PARAM_COLOR_TABLE_ST",
+  "Type": "MENU_PARAM_COLOR_TABLE_ST",
+  "Name": "MENU_PARAM_COLOR_TABLE_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "lerpMode",
+      "Name": "補間方法",
+      "Description": "補間方法"
+    },
+    {
+      "Field": "pad1",
+      "Name": "パッド",
+      "Description": ""
+    },
+    {
+      "Field": "h",
+      "Name": "色相",
+      "Description": "色相。補間では固定値として扱う"
+    },
+    {
+      "Field": "pad2",
+      "Name": "パッド",
+      "Description": ""
+    },
+    {
+      "Field": "s1",
+      "Name": "彩度",
+      "Description": "彩度1。補間の1点目として扱われる"
+    },
+    {
+      "Field": "v1",
+      "Name": "明度",
+      "Description": "明度1。補間の1点目として扱われる"
+    },
+    {
+      "Field": "s2",
+      "Name": "彩度",
+      "Description": "彩度2。補間の2点目として扱われる"
+    },
+    {
+      "Field": "v2",
+      "Name": "明度",
+      "Description": "明度2。補間の2点目として扱われる"
+    },
+    {
+      "Field": "s3",
+      "Name": "彩度",
+      "Description": "彩度3。補間の3点目として扱われる"
+    },
+    {
+      "Field": "v3",
+      "Name": "明度",
+      "Description": "明度3。補間の3点目として扱われる"
+    }
+  ]
+}

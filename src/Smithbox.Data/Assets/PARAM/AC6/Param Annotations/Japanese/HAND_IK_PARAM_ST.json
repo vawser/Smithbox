@@ -1,0 +1,53 @@
+{
+  "Param": "HAND_IK_PARAM_ST",
+  "Type": "HAND_IK_PARAM_ST",
+  "Name": "HAND_IK_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "inInterpolateTime",
+      "Name": "開始時補間時間[sec]",
+      "Description": "開始時補間時間[sec]"
+    },
+    {
+      "Field": "outInterpolateTime",
+      "Name": "終了時補間時間[sec]",
+      "Description": "終了時補間時間[sec]"
+    },
+    {
+      "Field": "normalPosOffset_offsetX",
+      "Name": "位置オフセットX",
+      "Description": "位置オフセットX"
+    },
+    {
+      "Field": "normalPosOffset_offsetY",
+      "Name": "位置オフセットY",
+      "Description": "位置オフセットY"
+    },
+    {
+      "Field": "normalPosOffset_offsetZ",
+      "Name": "位置オフセットZ",
+      "Description": "位置オフセットZ"
+    },
+    {
+      "Field": "normalRotOffset_offsetX",
+      "Name": "角度オフセットX",
+      "Description": "回転オフセットX"
+    },
+    {
+      "Field": "normalRotOffset_offsetY",
+      "Name": "角度オフセットY",
+      "Description": "回転オフセットY"
+    },
+    {
+      "Field": "normalRotOffset_offsetZ",
+      "Name": "角度オフセットZ",
+      "Description": "回転オフセットZ"
+    },
+    {
+      "Field": "reserved",
+      "Name": "パディング",
+      "Description": ""
+    }
+  ]
+}

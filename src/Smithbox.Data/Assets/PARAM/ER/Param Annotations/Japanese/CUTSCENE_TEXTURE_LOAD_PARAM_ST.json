@@ -1,0 +1,108 @@
+{
+  "Param": "CUTSCENE_TEXTURE_LOAD_PARAM_ST",
+  "Type": "CUTSCENE_TEXTURE_LOAD_PARAM_ST",
+  "Name": "CUTSCENE_TEXTURE_LOAD_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "NT版出力から外すか",
+      "Description": "○をつけたパラメータをNT版パッケージでは除外します"
+    },
+    {
+      "Field": "disableParam_Debug",
+      "Name": "デバッグパラメータか",
+      "Description": "○をつけたパラメータは全パッケージから除外します（デバッグ用なので）"
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "パッケージ出力用リザーブ1",
+      "Description": "パッケージ出力用リザーブ1"
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "パッケージ出力用リザーブ2",
+      "Description": "パッケージ出力用リザーブ2"
+    },
+    {
+      "Field": "texName_00",
+      "Name": "テクスチャ名 00",
+      "Description": "テクスチャ名 00"
+    },
+    {
+      "Field": "texName_01",
+      "Name": "テクスチャ名 01",
+      "Description": "テクスチャ名 01"
+    },
+    {
+      "Field": "texName_02",
+      "Name": "テクスチャ名 02",
+      "Description": "テクスチャ名 02"
+    },
+    {
+      "Field": "texName_03",
+      "Name": "テクスチャ名 03",
+      "Description": "テクスチャ名 03"
+    },
+    {
+      "Field": "texName_04",
+      "Name": "テクスチャ名 04",
+      "Description": "テクスチャ名 04"
+    },
+    {
+      "Field": "texName_05",
+      "Name": "テクスチャ名 05",
+      "Description": "テクスチャ名 05"
+    },
+    {
+      "Field": "texName_06",
+      "Name": "テクスチャ名 06",
+      "Description": "テクスチャ名 06"
+    },
+    {
+      "Field": "texName_07",
+      "Name": "テクスチャ名 07",
+      "Description": "テクスチャ名 07"
+    },
+    {
+      "Field": "texName_08",
+      "Name": "テクスチャ名 08",
+      "Description": "テクスチャ名 08"
+    },
+    {
+      "Field": "texName_09",
+      "Name": "テクスチャ名 09",
+      "Description": "テクスチャ名 09"
+    },
+    {
+      "Field": "texName_10",
+      "Name": "テクスチャ名 10",
+      "Description": "テクスチャ名 10"
+    },
+    {
+      "Field": "texName_11",
+      "Name": "テクスチャ名 11",
+      "Description": "テクスチャ名 11"
+    },
+    {
+      "Field": "texName_12",
+      "Name": "テクスチャ名 12",
+      "Description": "テクスチャ名 12"
+    },
+    {
+      "Field": "texName_13",
+      "Name": "テクスチャ名 13",
+      "Description": "テクスチャ名 13"
+    },
+    {
+      "Field": "texName_14",
+      "Name": "テクスチャ名 14",
+      "Description": "テクスチャ名 14"
+    },
+    {
+      "Field": "texName_15",
+      "Name": "テクスチャ名 15",
+      "Description": "テクスチャ名 15"
+    }
+  ]
+}

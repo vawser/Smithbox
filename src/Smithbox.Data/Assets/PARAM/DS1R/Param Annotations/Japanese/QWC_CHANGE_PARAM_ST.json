@@ -1,0 +1,48 @@
+{
+  "Param": "QWC_CHANGE_PARAM_ST",
+  "Type": "QWC_CHANGE_PARAM_ST",
+  "Name": "QWC_CHANGE_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "pcAttrB",
+      "Name": "PC-黒",
+      "Description": "PC黒属性変化値"
+    },
+    {
+      "Field": "pcAttrW",
+      "Name": "PC-白",
+      "Description": "PC白属性変化値"
+    },
+    {
+      "Field": "pcAttrL",
+      "Name": "PC-左",
+      "Description": "PC左属性変化値"
+    },
+    {
+      "Field": "pcAttrR",
+      "Name": "PC-右",
+      "Description": "PC右属性変化値"
+    },
+    {
+      "Field": "areaAttrB",
+      "Name": "エリア-黒",
+      "Description": "エリア黒属性変化値"
+    },
+    {
+      "Field": "areaAttrW",
+      "Name": "エリア-白",
+      "Description": "エリア白属性変化値"
+    },
+    {
+      "Field": "areaAttrL",
+      "Name": "エリア-左",
+      "Description": "エリア左属性変化値"
+    },
+    {
+      "Field": "areaAttrR",
+      "Name": "エリア-右",
+      "Description": "エリア右属性変化値"
+    }
+  ]
+}

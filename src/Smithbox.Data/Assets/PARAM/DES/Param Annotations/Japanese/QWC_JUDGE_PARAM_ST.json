@@ -1,0 +1,48 @@
+{
+  "Param": "QWC_JUDGE_PARAM_ST",
+  "Type": "QWC_JUDGE_PARAM_ST",
+  "Name": "QWC_JUDGE_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "pcJudgeUnderWB",
+      "Name": "PC-黒条件（下限）",
+      "Description": "PC白黒属性条件（下限）"
+    },
+    {
+      "Field": "pcJudgeTopWB",
+      "Name": "PC-白条件（上限）",
+      "Description": "PC白黒属性条件（上限）"
+    },
+    {
+      "Field": "pcJudgeUnderLR",
+      "Name": "PC-左条件（下限）",
+      "Description": "PC左右属性条件（下限）"
+    },
+    {
+      "Field": "pcJudgeTopLR",
+      "Name": "PC-右条件（上限）",
+      "Description": "PC左右属性条件（上限）"
+    },
+    {
+      "Field": "areaJudgeUnderWB",
+      "Name": "エリア-黒条件（下限）",
+      "Description": "エリア白黒属性条件（下限）"
+    },
+    {
+      "Field": "areaJudgeTopWB",
+      "Name": "エリア-白条件（上限）",
+      "Description": "エリア白黒属性条件（上限）"
+    },
+    {
+      "Field": "areaJudgeUnderLR",
+      "Name": "エリア-左条件（下限）",
+      "Description": "エリア左右属性条件（下限）"
+    },
+    {
+      "Field": "areaJudgeTopLR",
+      "Name": "エリア-右条件（上限）",
+      "Description": "エリア左右属性条件（上限）"
+    }
+  ]
+}

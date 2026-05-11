@@ -1,0 +1,128 @@
+{
+  "Param": "MOVEMENT_FLY_ENEMY_PARAM_ST",
+  "Type": "MOVEMENT_FLY_ENEMY_PARAM_ST",
+  "Name": "MOVEMENT_FLY_ENEMY_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "NT版出力から外すか",
+      "Description": "NT版から除外するか、除外するものに○をつける"
+    },
+    {
+      "Field": "disableParam_Product",
+      "Name": "製品版出力から外すか",
+      "Description": "製品版から除外するか、除外するものに○をつける"
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "パッケージ出力用リザーブ1",
+      "Description": "パッケージ出力用リザーブ1"
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "パッケージ出力用リザーブ2",
+      "Description": "パッケージ出力用リザーブ2"
+    },
+    {
+      "Field": "moveMaxSpeedKMPH_H",
+      "Name": "水平方向最高速度[km/h]",
+      "Description": "水平方向の最高速度"
+    },
+    {
+      "Field": "moveAccelMPSS_H",
+      "Name": "水平方向加速度[m/s^2]",
+      "Description": "水平方向の加速度"
+    },
+    {
+      "Field": "moveMaxSpeedKMPH_V",
+      "Name": "垂直方向最高速度[km/h]",
+      "Description": "垂直方向の最高速度"
+    },
+    {
+      "Field": "moveAccelMPSS_V",
+      "Name": "垂直方向加速度[m/s^2]",
+      "Description": "垂直方向の加速度"
+    },
+    {
+      "Field": "flyHorizontalBrakeMPSS",
+      "Name": "空中最高水平速度超過時ブレーキ[m/s^2] ",
+      "Description": "空中で最高水平速度を超えた際に、最高速度へ丸めようとするブレーキ量"
+    },
+    {
+      "Field": "flyVerticalBrakeMPSS",
+      "Name": "空中最高垂直速度超過時ブレーキ[m/s^2] ",
+      "Description": "空中で最高垂直速度を超えた際に、最高速度へ丸めようとするブレーキ量"
+    },
+    {
+      "Field": "realVelocityFeedBackRate",
+      "Name": "実際の移動量を反映する割合",
+      "Description": "この値が小さいほど重量感が増す"
+    },
+    {
+      "Field": "landDeadBrakeMPSS",
+      "Name": "死亡時地上ブレーキ量[m/s^2]",
+      "Description": "死亡しているときの地上ブレーキ量"
+    },
+    {
+      "Field": "flyDeadBrakeMPSS",
+      "Name": "死亡時空中ブレーキ量[m/s^2]",
+      "Description": "死亡しているときの空中ブレーキ量"
+    },
+    {
+      "Field": "damageBrake_BeginBrakeMPSS",
+      "Name": "【ダメージブレーキ】開始時ブレーキ[m/s^2]",
+      "Description": "ダメージブレーキ開始時のブレーキ量"
+    },
+    {
+      "Field": "damageBrake_PeakBrakeMPSS",
+      "Name": "【ダメージブレーキ】ピーク時ブレーキ[m/s^2]",
+      "Description": "ダメージブレーキのピークブレーキ量"
+    },
+    {
+      "Field": "damageBrake_BeginToPeakTimeSec",
+      "Name": "【ダメージブレーキ】開始からピークまでの時間[sec]",
+      "Description": "ダメージブレーキ開始からピークまでかかる時間"
+    },
+    {
+      "Field": "damageBrake_TimerResetDelayTime",
+      "Name": "【ダメージブレーキ】経過時間リセット猶予時間[sec]",
+      "Description": "ノックバック速度が0になってからダメージブレーキ用タイマーがリセットするまでの時間"
+    },
+    {
+      "Field": "minAnimMoveAccelMPSS",
+      "Name": "最低保証アニメ移動加速度[m/s^2]",
+      "Description": "アニメ移動するときの最低保証加速度"
+    },
+    {
+      "Field": "SlowBrakeAnimKMPH",
+      "Name": "低速ブレーキアニメ再生[km/h]",
+      "Description": "この値以下の水平速度のときにで低速用ブレーキアニメ切り替えを行います"
+    },
+    {
+      "Field": "blowDeadBrake_BeginBrakeMPSS",
+      "Name": "【吹っ飛び死亡ブレーキ】開始時ブレーキ[m/s^2]",
+      "Description": "吹っ飛び死亡待機ブレーキ開始時のブレーキ量"
+    },
+    {
+      "Field": "blowDeadBrake_PeakBrakeMPSS",
+      "Name": "【吹っ飛び死亡ブレーキ】ピーク時ブレーキ[m/s^2]",
+      "Description": "吹っ飛び死亡待機ブレーキのピークブレーキ量"
+    },
+    {
+      "Field": "blowDeadBrake_BeginToPeakTimeSec",
+      "Name": "【吹っ飛び死亡ブレーキ】開始からピークまでの時間[sec]",
+      "Description": "吹っ飛び死亡待機ブレーキ開始からピークまでかかる時間"
+    },
+    {
+      "Field": "blowDeadBrake_TimerResetDelayTime",
+      "Name": "【吹っ飛び死亡ブレーキ】経過時間リセット猶予時間[sec]",
+      "Description": "ノックバック速度が0になってから吹っ飛び死亡待機ブレーキ用タイマーがリセットするまでの時間"
+    },
+    {
+      "Field": "pad_end",
+      "Name": "パディング",
+      "Description": ""
+    }
+  ]
+}

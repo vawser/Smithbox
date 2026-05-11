@@ -1,0 +1,493 @@
+{
+  "Param": "EN_AUTO_RECOVERY_CONTROL_PARAM_ALL_TYPES_ST",
+  "Type": "EN_AUTO_RECOVERY_CONTROL_PARAM_ALL_TYPES_ST",
+  "Name": "EN_AUTO_RECOVERY_CONTROL_PARAM_ALL_TYPES_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "entry000_ENRecoveryRate",
+      "Name": "EN回復率[%]",
+      "Description": "スタミナ回復速度×スタミナ回復率×0.01とスタミナ回復率を変化させる"
+    },
+    {
+      "Field": "entry000_ENMax",
+      "Name": "EN上限[%]",
+      "Description": "スタミナの上限割合を指定する"
+    },
+    {
+      "Field": "entry000_ENMin",
+      "Name": "EN下限[%]",
+      "Description": "スタミナの下限割合を指定する。-1なら、システム的に用意されているEN借金の値を使用する"
+    },
+    {
+      "Field": "entry000_DoDelayENRecovery",
+      "Name": "EN回復ディレイあり",
+      "Description": "○：EN回復ディレイをかけつづける、×：何もしない（強制的にEN回復ディレイがなくなるわけではない）"
+    },
+    {
+      "Field": "entry000_pad1",
+      "Name": "pad",
+      "Description": ""
+    },
+    {
+      "Field": "entry000_pad",
+      "Name": "entry000_pad",
+      "Description": ""
+    },
+    {
+      "Field": "entry001_ENRecoveryRate",
+      "Name": "EN回復率[%]",
+      "Description": "スタミナ回復速度×スタミナ回復率×0.01とスタミナ回復率を変化させる"
+    },
+    {
+      "Field": "entry001_ENMax",
+      "Name": "EN上限[%]",
+      "Description": "スタミナの上限割合を指定する"
+    },
+    {
+      "Field": "entry001_ENMin",
+      "Name": "EN下限[%]",
+      "Description": "スタミナの下限割合を指定する。-1なら、システム的に用意されているEN借金の値を使用する"
+    },
+    {
+      "Field": "entry001_DoDelayENRecovery",
+      "Name": "EN回復ディレイあり",
+      "Description": "○：EN回復ディレイをかけつづける、×：何もしない（強制的にEN回復ディレイがなくなるわけではない）"
+    },
+    {
+      "Field": "entry001_pad1",
+      "Name": "pad",
+      "Description": ""
+    },
+    {
+      "Field": "entry001_pad",
+      "Name": "entry001_pad",
+      "Description": ""
+    },
+    {
+      "Field": "entry002_ENRecoveryRate",
+      "Name": "EN回復率[%]",
+      "Description": "スタミナ回復速度×スタミナ回復率×0.01とスタミナ回復率を変化させる"
+    },
+    {
+      "Field": "entry002_ENMax",
+      "Name": "EN上限[%]",
+      "Description": "スタミナの上限割合を指定する"
+    },
+    {
+      "Field": "entry002_ENMin",
+      "Name": "EN下限[%]",
+      "Description": "スタミナの下限割合を指定する。-1なら、システム的に用意されているEN借金の値を使用する"
+    },
+    {
+      "Field": "entry002_DoDelayENRecovery",
+      "Name": "EN回復ディレイあり",
+      "Description": "○：EN回復ディレイをかけつづける、×：何もしない（強制的にEN回復ディレイがなくなるわけではない）"
+    },
+    {
+      "Field": "entry002_pad1",
+      "Name": "pad",
+      "Description": ""
+    },
+    {
+      "Field": "entry002_pad",
+      "Name": "entry002_pad",
+      "Description": ""
+    },
+    {
+      "Field": "entry003_ENRecoveryRate",
+      "Name": "EN回復率[%]",
+      "Description": "スタミナ回復速度×スタミナ回復率×0.01とスタミナ回復率を変化させる"
+    },
+    {
+      "Field": "entry003_ENMax",
+      "Name": "EN上限[%]",
+      "Description": "スタミナの上限割合を指定する"
+    },
+    {
+      "Field": "entry003_ENMin",
+      "Name": "EN下限[%]",
+      "Description": "スタミナの下限割合を指定する。-1なら、システム的に用意されているEN借金の値を使用する"
+    },
+    {
+      "Field": "entry003_DoDelayENRecovery",
+      "Name": "EN回復ディレイあり",
+      "Description": "○：EN回復ディレイをかけつづける、×：何もしない（強制的にEN回復ディレイがなくなるわけではない）"
+    },
+    {
+      "Field": "entry003_pad1",
+      "Name": "pad",
+      "Description": ""
+    },
+    {
+      "Field": "entry003_pad",
+      "Name": "entry003_pad",
+      "Description": ""
+    },
+    {
+      "Field": "entry004_ENRecoveryRate",
+      "Name": "EN回復率[%]",
+      "Description": "スタミナ回復速度×スタミナ回復率×0.01とスタミナ回復率を変化させる"
+    },
+    {
+      "Field": "entry004_ENMax",
+      "Name": "EN上限[%]",
+      "Description": "スタミナの上限割合を指定する"
+    },
+    {
+      "Field": "entry004_ENMin",
+      "Name": "EN下限[%]",
+      "Description": "スタミナの下限割合を指定する。-1なら、システム的に用意されているEN借金の値を使用する"
+    },
+    {
+      "Field": "entry004_DoDelayENRecovery",
+      "Name": "EN回復ディレイあり",
+      "Description": "○：EN回復ディレイをかけつづける、×：何もしない（強制的にEN回復ディレイがなくなるわけではない）"
+    },
+    {
+      "Field": "entry004_pad1",
+      "Name": "pad",
+      "Description": ""
+    },
+    {
+      "Field": "entry004_pad",
+      "Name": "entry004_pad",
+      "Description": ""
+    },
+    {
+      "Field": "entry005_ENRecoveryRate",
+      "Name": "EN回復率[%]",
+      "Description": "スタミナ回復速度×スタミナ回復率×0.01とスタミナ回復率を変化させる"
+    },
+    {
+      "Field": "entry005_ENMax",
+      "Name": "EN上限[%]",
+      "Description": "スタミナの上限割合を指定する"
+    },
+    {
+      "Field": "entry005_ENMin",
+      "Name": "EN下限[%]",
+      "Description": "スタミナの下限割合を指定する。-1なら、システム的に用意されているEN借金の値を使用する"
+    },
+    {
+      "Field": "entry005_DoDelayENRecovery",
+      "Name": "EN回復ディレイあり",
+      "Description": "○：EN回復ディレイをかけつづける、×：何もしない（強制的にEN回復ディレイがなくなるわけではない）"
+    },
+    {
+      "Field": "entry005_pad1",
+      "Name": "pad",
+      "Description": ""
+    },
+    {
+      "Field": "entry005_pad",
+      "Name": "entry005_pad",
+      "Description": ""
+    },
+    {
+      "Field": "entry006_ENRecoveryRate",
+      "Name": "EN回復率[%]",
+      "Description": "スタミナ回復速度×スタミナ回復率×0.01とスタミナ回復率を変化させる"
+    },
+    {
+      "Field": "entry006_ENMax",
+      "Name": "EN上限[%]",
+      "Description": "スタミナの上限割合を指定する"
+    },
+    {
+      "Field": "entry006_ENMin",
+      "Name": "EN下限[%]",
+      "Description": "スタミナの下限割合を指定する。-1なら、システム的に用意されているEN借金の値を使用する"
+    },
+    {
+      "Field": "entry006_DoDelayENRecovery",
+      "Name": "EN回復ディレイあり",
+      "Description": "○：EN回復ディレイをかけつづける、×：何もしない（強制的にEN回復ディレイがなくなるわけではない）"
+    },
+    {
+      "Field": "entry006_pad1",
+      "Name": "pad",
+      "Description": ""
+    },
+    {
+      "Field": "entry006_pad",
+      "Name": "entry006_pad",
+      "Description": ""
+    },
+    {
+      "Field": "entry007_ENRecoveryRate",
+      "Name": "EN回復率[%]",
+      "Description": "スタミナ回復速度×スタミナ回復率×0.01とスタミナ回復率を変化させる"
+    },
+    {
+      "Field": "entry007_ENMax",
+      "Name": "EN上限[%]",
+      "Description": "スタミナの上限割合を指定する"
+    },
+    {
+      "Field": "entry007_ENMin",
+      "Name": "EN下限[%]",
+      "Description": "スタミナの下限割合を指定する。-1なら、システム的に用意されているEN借金の値を使用する"
+    },
+    {
+      "Field": "entry007_DoDelayENRecovery",
+      "Name": "EN回復ディレイあり",
+      "Description": "○：EN回復ディレイをかけつづける、×：何もしない（強制的にEN回復ディレイがなくなるわけではない）"
+    },
+    {
+      "Field": "entry007_pad1",
+      "Name": "pad",
+      "Description": ""
+    },
+    {
+      "Field": "entry007_pad",
+      "Name": "entry007_pad",
+      "Description": ""
+    },
+    {
+      "Field": "entry008_ENRecoveryRate",
+      "Name": "EN回復率[%]",
+      "Description": "スタミナ回復速度×スタミナ回復率×0.01とスタミナ回復率を変化させる"
+    },
+    {
+      "Field": "entry008_ENMax",
+      "Name": "EN上限[%]",
+      "Description": "スタミナの上限割合を指定する"
+    },
+    {
+      "Field": "entry008_ENMin",
+      "Name": "EN下限[%]",
+      "Description": "スタミナの下限割合を指定する。-1なら、システム的に用意されているEN借金の値を使用する"
+    },
+    {
+      "Field": "entry008_DoDelayENRecovery",
+      "Name": "EN回復ディレイあり",
+      "Description": "○：EN回復ディレイをかけつづける、×：何もしない（強制的にEN回復ディレイがなくなるわけではない）"
+    },
+    {
+      "Field": "entry008_pad1",
+      "Name": "pad",
+      "Description": ""
+    },
+    {
+      "Field": "entry008_pad",
+      "Name": "entry008_pad",
+      "Description": ""
+    },
+    {
+      "Field": "entry009_ENRecoveryRate",
+      "Name": "EN回復率[%]",
+      "Description": "スタミナ回復速度×スタミナ回復率×0.01とスタミナ回復率を変化させる"
+    },
+    {
+      "Field": "entry009_ENMax",
+      "Name": "EN上限[%]",
+      "Description": "スタミナの上限割合を指定する"
+    },
+    {
+      "Field": "entry009_ENMin",
+      "Name": "EN下限[%]",
+      "Description": "スタミナの下限割合を指定する。-1なら、システム的に用意されているEN借金の値を使用する"
+    },
+    {
+      "Field": "entry009_DoDelayENRecovery",
+      "Name": "EN回復ディレイあり",
+      "Description": "○：EN回復ディレイをかけつづける、×：何もしない（強制的にEN回復ディレイがなくなるわけではない）"
+    },
+    {
+      "Field": "entry009_pad1",
+      "Name": "pad",
+      "Description": ""
+    },
+    {
+      "Field": "entry009_pad",
+      "Name": "entry009_pad",
+      "Description": ""
+    },
+    {
+      "Field": "entry010_ENRecoveryRate",
+      "Name": "EN回復率[%]",
+      "Description": "スタミナ回復速度×スタミナ回復率×0.01とスタミナ回復率を変化させる"
+    },
+    {
+      "Field": "entry010_ENMax",
+      "Name": "EN上限[%]",
+      "Description": "スタミナの上限割合を指定する"
+    },
+    {
+      "Field": "entry010_ENMin",
+      "Name": "EN下限[%]",
+      "Description": "スタミナの下限割合を指定する。-1なら、システム的に用意されているEN借金の値を使用する"
+    },
+    {
+      "Field": "entry010_DoDelayENRecovery",
+      "Name": "EN回復ディレイあり",
+      "Description": "○：EN回復ディレイをかけつづける、×：何もしない（強制的にEN回復ディレイがなくなるわけではない）"
+    },
+    {
+      "Field": "entry010_pad1",
+      "Name": "pad",
+      "Description": ""
+    },
+    {
+      "Field": "entry010_pad",
+      "Name": "entry010_pad",
+      "Description": ""
+    },
+    {
+      "Field": "entry011_ENRecoveryRate",
+      "Name": "EN回復率[%]",
+      "Description": "スタミナ回復速度×スタミナ回復率×0.01とスタミナ回復率を変化させる"
+    },
+    {
+      "Field": "entry011_ENMax",
+      "Name": "EN上限[%]",
+      "Description": "スタミナの上限割合を指定する"
+    },
+    {
+      "Field": "entry011_ENMin",
+      "Name": "EN下限[%]",
+      "Description": "スタミナの下限割合を指定する。-1なら、システム的に用意されているEN借金の値を使用する"
+    },
+    {
+      "Field": "entry011_DoDelayENRecovery",
+      "Name": "EN回復ディレイあり",
+      "Description": "○：EN回復ディレイをかけつづける、×：何もしない（強制的にEN回復ディレイがなくなるわけではない）"
+    },
+    {
+      "Field": "entry011_pad1",
+      "Name": "pad",
+      "Description": ""
+    },
+    {
+      "Field": "entry011_pad",
+      "Name": "entry011_pad",
+      "Description": ""
+    },
+    {
+      "Field": "entry012_ENRecoveryRate",
+      "Name": "EN回復率[%]",
+      "Description": "スタミナ回復速度×スタミナ回復率×0.01とスタミナ回復率を変化させる"
+    },
+    {
+      "Field": "entry012_ENMax",
+      "Name": "EN上限[%]",
+      "Description": "スタミナの上限割合を指定する"
+    },
+    {
+      "Field": "entry012_ENMin",
+      "Name": "EN下限[%]",
+      "Description": "スタミナの下限割合を指定する。-1なら、システム的に用意されているEN借金の値を使用する"
+    },
+    {
+      "Field": "entry012_DoDelayENRecovery",
+      "Name": "EN回復ディレイあり",
+      "Description": "○：EN回復ディレイをかけつづける、×：何もしない（強制的にEN回復ディレイがなくなるわけではない）"
+    },
+    {
+      "Field": "entry012_pad1",
+      "Name": "pad",
+      "Description": ""
+    },
+    {
+      "Field": "entry012_pad",
+      "Name": "entry012_pad",
+      "Description": ""
+    },
+    {
+      "Field": "entry013_ENRecoveryRate",
+      "Name": "EN回復率[%]",
+      "Description": "スタミナ回復速度×スタミナ回復率×0.01とスタミナ回復率を変化させる"
+    },
+    {
+      "Field": "entry013_ENMax",
+      "Name": "EN上限[%]",
+      "Description": "スタミナの上限割合を指定する"
+    },
+    {
+      "Field": "entry013_ENMin",
+      "Name": "EN下限[%]",
+      "Description": "スタミナの下限割合を指定する。-1なら、システム的に用意されているEN借金の値を使用する"
+    },
+    {
+      "Field": "entry013_DoDelayENRecovery",
+      "Name": "EN回復ディレイあり",
+      "Description": "○：EN回復ディレイをかけつづける、×：何もしない（強制的にEN回復ディレイがなくなるわけではない）"
+    },
+    {
+      "Field": "entry013_pad1",
+      "Name": "pad",
+      "Description": ""
+    },
+    {
+      "Field": "entry013_pad",
+      "Name": "entry013_pad",
+      "Description": ""
+    },
+    {
+      "Field": "entry014_ENRecoveryRate",
+      "Name": "EN回復率[%]",
+      "Description": "スタミナ回復速度×スタミナ回復率×0.01とスタミナ回復率を変化させる"
+    },
+    {
+      "Field": "entry014_ENMax",
+      "Name": "EN上限[%]",
+      "Description": "スタミナの上限割合を指定する"
+    },
+    {
+      "Field": "entry014_ENMin",
+      "Name": "EN下限[%]",
+      "Description": "スタミナの下限割合を指定する。-1なら、システム的に用意されているEN借金の値を使用する"
+    },
+    {
+      "Field": "entry014_DoDelayENRecovery",
+      "Name": "EN回復ディレイあり",
+      "Description": "○：EN回復ディレイをかけつづける、×：何もしない（強制的にEN回復ディレイがなくなるわけではない）"
+    },
+    {
+      "Field": "entry014_pad1",
+      "Name": "pad",
+      "Description": ""
+    },
+    {
+      "Field": "entry014_pad",
+      "Name": "entry014_pad",
+      "Description": ""
+    },
+    {
+      "Field": "entry015_ENRecoveryRate",
+      "Name": "EN回復率[%]",
+      "Description": "スタミナ回復速度×スタミナ回復率×0.01とスタミナ回復率を変化させる"
+    },
+    {
+      "Field": "entry015_ENMax",
+      "Name": "EN上限[%]",
+      "Description": "スタミナの上限割合を指定する"
+    },
+    {
+      "Field": "entry015_ENMin",
+      "Name": "EN下限[%]",
+      "Description": "スタミナの下限割合を指定する。-1なら、システム的に用意されているEN借金の値を使用する"
+    },
+    {
+      "Field": "entry015_DoDelayENRecovery",
+      "Name": "EN回復ディレイあり",
+      "Description": "○：EN回復ディレイをかけつづける、×：何もしない（強制的にEN回復ディレイがなくなるわけではない）"
+    },
+    {
+      "Field": "entry015_pad1",
+      "Name": "pad",
+      "Description": ""
+    },
+    {
+      "Field": "entry015_pad",
+      "Name": "entry015_pad",
+      "Description": ""
+    },
+    {
+      "Field": "pad_end",
+      "Name": "pad_end[32]",
+      "Description": ""
+    }
+  ]
+}

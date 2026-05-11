@@ -1,0 +1,93 @@
+{
+  "Param": "ENV_OBJ_LOT_PARAM_ST",
+  "Type": "ENV_OBJ_LOT_PARAM_ST",
+  "Name": "ENV_OBJ_LOT_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "AssetId_0",
+      "Name": "AssetId_0",
+      "Description": "AssetId_0 (-1：無視)"
+    },
+    {
+      "Field": "AssetId_1",
+      "Name": "AssetId_1",
+      "Description": "AssetId_1 (-1：無視)"
+    },
+    {
+      "Field": "AssetId_2",
+      "Name": "AssetId_2",
+      "Description": "AssetId_2 (-1：無視)"
+    },
+    {
+      "Field": "AssetId_3",
+      "Name": "AssetId_3",
+      "Description": "AssetId_3 (-1：無視)"
+    },
+    {
+      "Field": "AssetId_4",
+      "Name": "AssetId_4",
+      "Description": "AssetId_4 (-1：無視)"
+    },
+    {
+      "Field": "AssetId_5",
+      "Name": "AssetId_5",
+      "Description": "AssetId_5 (-1：無視)"
+    },
+    {
+      "Field": "AssetId_6",
+      "Name": "AssetId_6",
+      "Description": "AssetId_6 (-1：無視) "
+    },
+    {
+      "Field": "AssetId_7",
+      "Name": "AssetId_7",
+      "Description": "AssetId_7 (-1：無視)"
+    },
+    {
+      "Field": "CreateWeight_0",
+      "Name": "出現ウェイト_0",
+      "Description": "出現の比率ポイント(ウェイト)_0: 0だと無視"
+    },
+    {
+      "Field": "CreateWeight_1",
+      "Name": "出現ウェイト_1",
+      "Description": "出現の比率ポイント(ウェイト)_1"
+    },
+    {
+      "Field": "CreateWeight_2",
+      "Name": "出現ウェイト_2",
+      "Description": "出現の比率ポイント(ウェイト)_2"
+    },
+    {
+      "Field": "CreateWeight_3",
+      "Name": "出現ウェイト_3",
+      "Description": "出現の比率ポイント(ウェイト)_3"
+    },
+    {
+      "Field": "CreateWeight_4",
+      "Name": "出現ウェイト_4",
+      "Description": "出現の比率ポイント(ウェイト)_4"
+    },
+    {
+      "Field": "CreateWeight_5",
+      "Name": "出現ウェイト_5",
+      "Description": "出現の比率ポイント(ウェイト)_5"
+    },
+    {
+      "Field": "CreateWeight_6",
+      "Name": "出現ウェイト_6",
+      "Description": "出現の比率ポイント(ウェイト)_6"
+    },
+    {
+      "Field": "CreateWeight_7",
+      "Name": "出現ウェイト_7",
+      "Description": "出現の比率ポイント(ウェイト)_7"
+    },
+    {
+      "Field": "Reserve_0",
+      "Name": "リザーブ",
+      "Description": "リザーブ"
+    }
+  ]
+}

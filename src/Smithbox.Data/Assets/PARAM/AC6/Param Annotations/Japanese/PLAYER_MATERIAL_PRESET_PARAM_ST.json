@@ -1,0 +1,53 @@
+{
+  "Param": "PLAYER_MATERIAL_PRESET_PARAM_ST",
+  "Type": "PLAYER_MATERIAL_PRESET_PARAM_ST",
+  "Name": "PLAYER_MATERIAL_PRESET_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "Shininess",
+      "Name": "光沢感",
+      "Description": ""
+    },
+    {
+      "Field": "Metalness",
+      "Name": "金属感",
+      "Description": ""
+    },
+    {
+      "Field": "Glow",
+      "Name": "光量",
+      "Description": "光沢感専用のパラメータでも光量は１に設定しておくようにしてください、設定しないと真っ黒になります"
+    },
+    {
+      "Field": "TexIdLayer0",
+      "Name": "1層目素材（基本鉄など）",
+      "Description": "1層目素材（基本鉄など）で参照するテクスチャのID（AEGXXX_YYY）の6桁"
+    },
+    {
+      "Field": "TexIdLayer1",
+      "Name": "2層目素材(基本ベースペイント）",
+      "Description": "2層目素材(基本ベースペイント）で参照するテクスチャのID（AEGXXX_YYY）の6桁"
+    },
+    {
+      "Field": "TexIdLayer2",
+      "Name": "3層目素材(基本塗装後の状態）",
+      "Description": "3層目素材(基本塗装後の状態）で参照するテクスチャのID（AEGXXX_YYY）の6桁"
+    },
+    {
+      "Field": "MaterialTex_Albedo",
+      "Name": "アルベドテクスチャ",
+      "Description": "カラーリングごとのマテリアル差し替え用の参照テクスチャID"
+    },
+    {
+      "Field": "MaterialTex_Normal_Shininess",
+      "Name": "ノーマル、シャイネステクスチャ",
+      "Description": "カラーリングごとのマテリアル差し替え用の参照テクスチャID"
+    },
+    {
+      "Field": "pad_end",
+      "Name": "------",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "Param": "CHR_MODEL_PARAM_ST",
+  "Type": "CHR_MODEL_PARAM_ST",
+  "Name": "CHR_MODEL_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "NT版出力から外すか",
+      "Description": "NT版から除外するか、除外するものに○をつける"
+    },
+    {
+      "Field": "disableParam_Product",
+      "Name": "製品版出力から外すか",
+      "Description": "製品版から除外するか、除外するものに○をつける"
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "パッケージ出力用リザーブ1",
+      "Description": "パッケージ出力用リザーブ1"
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "パッケージ出力用リザーブ2",
+      "Description": "パッケージ出力用リザーブ2"
+    },
+    {
+      "Field": "modelMemoryType",
+      "Name": "モデルの使用メモリタイプ",
+      "Description": "モデルの使用メモリタイプ"
+    },
+    {
+      "Field": "texMemoryType",
+      "Name": "テクスチャの使用メモリタイプ",
+      "Description": "テクスチャの使用メモリタイプ"
+    },
+    {
+      "Field": "cameraDitherFadeId",
+      "Name": "カメラフェードパラメータID",
+      "Description": "カメラフェードパラメータID（-1：マテリアルを参照、0：消えない、1～：パラメータID）"
+    },
+    {
+      "Field": "isNoRayTracing",
+      "Name": "レイトレーシングシーンに登録しないか",
+      "Description": "レイトレーシングシーンに登録しないか。(1:登録しない 0:登録する)"
+    },
+    {
+      "Field": "rayTracingCullingMode",
+      "Name": "レイトレーシングカリングモード",
+      "Description": "レイトレーシング描画時に適用されるカリングモード。「自動」の場合は、プログラム上で設定されたデフォルト値になります。"
+    },
+    {
+      "Field": "reserve",
+      "Name": "リザーブ",
+      "Description": ""
+    }
+  ]
+}

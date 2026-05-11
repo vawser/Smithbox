@@ -1,0 +1,153 @@
+{
+  "Param": "MENUPROPERTY_SPEC",
+  "Type": "MENUPROPERTY_SPEC",
+  "Name": "MENUPROPERTY_SPEC",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "CaptionTextID",
+      "Name": "項目名テキストID",
+      "Description": ""
+    },
+    {
+      "Field": "IconID",
+      "Name": "項目アイコンID",
+      "Description": ""
+    },
+    {
+      "Field": "RequiredPropertyID",
+      "Name": "必要スキル",
+      "Description": ""
+    },
+    {
+      "Field": "CompareType",
+      "Name": "優劣判定",
+      "Description": ""
+    },
+    {
+      "Field": "FormatType",
+      "Name": "書式",
+      "Description": ""
+    },
+    {
+      "Field": "AdhocCaption",
+      "Name": "項目名仮テキスト",
+      "Description": ""
+    },
+    {
+      "Field": "HelpTextID",
+      "Name": "ヘルプテキストID",
+      "Description": ""
+    },
+    {
+      "Field": "EditType",
+      "Name": "編集タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "EditParamBool",
+      "Name": "ブール値",
+      "Description": "スライダー：ループするか"
+    },
+    {
+      "Field": "IndexRefParamID",
+      "Name": "インデックス参照パラメータ",
+      "Description": ""
+    },
+    {
+      "Field": "ExtractedParamOperaion",
+      "Name": "抽出パラ演算",
+      "Description": "抽出パラ0 と 抽出パラ1 の演算"
+    },
+    {
+      "Field": "reserved1",
+      "Name": "予約",
+      "Description": "----"
+    },
+    {
+      "Field": "EditParam2",
+      "Name": "パラメータ2",
+      "Description": "スライダー：増減値"
+    },
+    {
+      "Field": "EditParam0",
+      "Name": "パラメータ0",
+      "Description": "スライダー：最小値\u3000その他：使用しない"
+    },
+    {
+      "Field": "EditParam1",
+      "Name": "パラメータ1",
+      "Description": "スライダー：最大値"
+    },
+    {
+      "Field": "extract0_Target",
+      "Name": "対象",
+      "Description": "抽出対象パラメータ"
+    },
+    {
+      "Field": "extract0_MemberType",
+      "Name": "型",
+      "Description": "抽出型(数式で自動入力するので編集厳禁)"
+    },
+    {
+      "Field": "extract0_Operation",
+      "Name": "補正式",
+      "Description": "抽出したパラメータの補正方法"
+    },
+    {
+      "Field": "extract0_MemberTailOffset",
+      "Name": "位置",
+      "Description": "抽出位置(数式で自動入力するので編集厳禁)"
+    },
+    {
+      "Field": "extract0_Constant0",
+      "Name": "補正用定数0",
+      "Description": "抽出したパラメータの補正用定数0"
+    },
+    {
+      "Field": "extract0_Constant1",
+      "Name": "補正用定数1",
+      "Description": "抽出したパラメータの補正用定数1"
+    },
+    {
+      "Field": "extract0_reserved",
+      "Name": "予約",
+      "Description": "----"
+    },
+    {
+      "Field": "extract1_Target",
+      "Name": "対象",
+      "Description": "抽出対象パラメータ"
+    },
+    {
+      "Field": "extract1_MemberType",
+      "Name": "型",
+      "Description": "抽出型(数式で自動入力するので編集厳禁)"
+    },
+    {
+      "Field": "extract1_Operation",
+      "Name": "補正式",
+      "Description": "抽出したパラメータの補正方法"
+    },
+    {
+      "Field": "extract1_MemberTailOffset",
+      "Name": "位置",
+      "Description": "抽出位置(数式で自動入力するので編集厳禁)"
+    },
+    {
+      "Field": "extract1_Constant0",
+      "Name": "補正用定数0",
+      "Description": "抽出したパラメータの補正用定数0"
+    },
+    {
+      "Field": "extract1_Constant1",
+      "Name": "補正用定数1",
+      "Description": "抽出したパラメータの補正用定数1"
+    },
+    {
+      "Field": "extract1_reserved",
+      "Name": "予約",
+      "Description": "----"
+    }
+  ]
+}

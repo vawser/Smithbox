@@ -1,0 +1,43 @@
+{
+  "Param": "FACE_EDIT_PARAM_MONTAGE_CAMERA",
+  "Type": "FACE_EDIT_PARAM_MONTAGE_CAMERA",
+  "Name": "FACE_EDIT_PARAM_MONTAGE_CAMERA",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "fov",
+      "Name": "画角",
+      "Description": "画角"
+    },
+    {
+      "Field": "positionX",
+      "Name": "カメラ位置X",
+      "Description": "カメラ位置X"
+    },
+    {
+      "Field": "positionY",
+      "Name": "カメラ位置Y",
+      "Description": "カメラ位置Y"
+    },
+    {
+      "Field": "positionZ",
+      "Name": "カメラ位置Z",
+      "Description": "カメラ位置Z"
+    },
+    {
+      "Field": "lookAtX",
+      "Name": "カメラ焦点X",
+      "Description": "カメラ焦点X"
+    },
+    {
+      "Field": "lookAtY",
+      "Name": "カメラ焦点Y",
+      "Description": "カメラ焦点Y"
+    },
+    {
+      "Field": "lookAtZ",
+      "Name": "カメラ焦点Z",
+      "Description": "カメラ焦点Z"
+    }
+  ]
+}

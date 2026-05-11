@@ -1,0 +1,908 @@
+{
+  "Param": "CAMERA_SET_PARAM_ST",
+  "Type": "CAMERA_SET_PARAM_ST",
+  "Name": "CAMERA_SET_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "lockParamId0",
+      "Name": "ロックカメラパラメータID",
+      "Description": "識別子１：ロックカメラParamのデータID"
+    },
+    {
+      "Field": "camParamId0",
+      "Name": "カメラパラメータID",
+      "Description": "識別子１：カメラParamのデータID"
+    },
+    {
+      "Field": "beginTime0",
+      "Name": "予約１",
+      "Description": "予約１"
+    },
+    {
+      "Field": "endTime0",
+      "Name": "予約２",
+      "Description": "予約２"
+    },
+    {
+      "Field": "lockParamId1",
+      "Name": "ロックカメラパラメータID",
+      "Description": "識別子２：ロックオンParamのデータID"
+    },
+    {
+      "Field": "camParamId1",
+      "Name": "カメラパラメータID",
+      "Description": "識別子２：カメラParamのデータID"
+    },
+    {
+      "Field": "beginTime1",
+      "Name": "開始時補間時間[sec]",
+      "Description": "識別子２：このカメラセットを開始する際の補間時間"
+    },
+    {
+      "Field": "endTime1",
+      "Name": "終了時補間時間[sec]",
+      "Description": "識別子２：このカメラセットを終了する際の補間時間"
+    },
+    {
+      "Field": "lockParamId2",
+      "Name": "ロックカメラパラメータID",
+      "Description": "識別子３：ロックオンParamのデータID"
+    },
+    {
+      "Field": "camParamId2",
+      "Name": "カメラパラメータID",
+      "Description": "識別子３：カメラParamのデータID"
+    },
+    {
+      "Field": "beginTime2",
+      "Name": "開始時補間時間[sec]",
+      "Description": "識別子３：このカメラセットを開始する際の補間時間"
+    },
+    {
+      "Field": "endTime2",
+      "Name": "終了時補間時間[sec]",
+      "Description": "識別子３：このカメラセットを終了する際の補間時間"
+    },
+    {
+      "Field": "lockParamId3",
+      "Name": "ロックカメラパラメータID",
+      "Description": "識別子４：ロックオンParamのデータID"
+    },
+    {
+      "Field": "camParamId3",
+      "Name": "カメラパラメータID",
+      "Description": "識別子４：カメラParamのデータID"
+    },
+    {
+      "Field": "beginTime3",
+      "Name": "開始時補間時間[sec]",
+      "Description": "識別子４：このカメラセットを開始する際の補間時間"
+    },
+    {
+      "Field": "endTime3",
+      "Name": "終了時補間時間[sec]",
+      "Description": "識別子４：このカメラセットを終了する際の補間時間"
+    },
+    {
+      "Field": "lockParamId4",
+      "Name": "ロックカメラパラメータID",
+      "Description": "識別子５：ロックオンParamのデータID"
+    },
+    {
+      "Field": "camParamId4",
+      "Name": "カメラパラメータID",
+      "Description": "識別子５：カメラParamのデータID"
+    },
+    {
+      "Field": "beginTime4",
+      "Name": "開始時補間時間[sec]",
+      "Description": "識別子５：このカメラセットを開始する際の補間時間"
+    },
+    {
+      "Field": "endTime4",
+      "Name": "終了時補間時間[sec]",
+      "Description": "識別子５：このカメラセットを終了する際の補間時間"
+    },
+    {
+      "Field": "lockParamId5",
+      "Name": "ロックカメラパラメータID",
+      "Description": "識別子６：ロックオンParamのデータID"
+    },
+    {
+      "Field": "camParamId5",
+      "Name": "カメラパラメータID",
+      "Description": "識別子６：カメラParamのデータID"
+    },
+    {
+      "Field": "beginTime5",
+      "Name": "開始時補間時間[sec]",
+      "Description": "識別子６：このカメラセットを開始する際の補間時間"
+    },
+    {
+      "Field": "endTime5",
+      "Name": "終了時補間時間[sec]",
+      "Description": "識別子６：このカメラセットを終了する際の補間時間"
+    },
+    {
+      "Field": "lockParamId6",
+      "Name": "ロックカメラパラメータID",
+      "Description": "識別子７：ロックオンParamのデータID"
+    },
+    {
+      "Field": "camParamId6",
+      "Name": "カメラパラメータID",
+      "Description": "識別子７：カメラParamのデータID"
+    },
+    {
+      "Field": "beginTime6",
+      "Name": "開始時補間時間[sec]",
+      "Description": "識別子７：このカメラセットを開始する際の補間時間"
+    },
+    {
+      "Field": "endTime6",
+      "Name": "終了時補間時間[sec]",
+      "Description": "識別子７：このカメラセットを終了する際の補間時間"
+    },
+    {
+      "Field": "lockParamId7",
+      "Name": "ロックカメラパラメータID",
+      "Description": "識別子８：ロックオンParamのデータID"
+    },
+    {
+      "Field": "camParamId7",
+      "Name": "カメラパラメータID",
+      "Description": "識別子８：カメラParamのデータID"
+    },
+    {
+      "Field": "beginTime7",
+      "Name": "開始時補間時間[sec]",
+      "Description": "識別子８：このカメラセットを開始する際の補間時間"
+    },
+    {
+      "Field": "endTime7",
+      "Name": "終了時補間時間[sec]",
+      "Description": "識別子８：このカメラセットを終了する際の補間時間"
+    },
+    {
+      "Field": "lockParamId8",
+      "Name": "ロックカメラパラメータID",
+      "Description": "識別子９：ロックオンParamのデータID"
+    },
+    {
+      "Field": "camParamId8",
+      "Name": "カメラパラメータID",
+      "Description": "識別子９：カメラParamのデータID"
+    },
+    {
+      "Field": "beginTime8",
+      "Name": "開始時補間時間[sec]",
+      "Description": "識別子９：このカメラセットを開始する際の補間時間"
+    },
+    {
+      "Field": "endTime8",
+      "Name": "終了時補間時間[sec]",
+      "Description": "識別子９：このカメラセットを終了する際の補間時間"
+    },
+    {
+      "Field": "lockParamId9",
+      "Name": "ロックカメラパラメータID",
+      "Description": "識別子１０：ロックオンParamのデータID"
+    },
+    {
+      "Field": "camParamId9",
+      "Name": "カメラパラメータID",
+      "Description": "識別子１０：カメラParamのデータID"
+    },
+    {
+      "Field": "beginTime9",
+      "Name": "開始時補間時間[sec]",
+      "Description": "識別子１０：このカメラセットを開始する際の補間時間"
+    },
+    {
+      "Field": "endTime9",
+      "Name": "終了時補間時間[sec]",
+      "Description": "識別子１０：このカメラセットを終了する際の補間時間"
+    },
+    {
+      "Field": "lockParamId10",
+      "Name": "ロックカメラパラメータID",
+      "Description": "識別子１１：ロックオンParamのデータID"
+    },
+    {
+      "Field": "camParamId10",
+      "Name": "カメラパラメータID",
+      "Description": "識別子１１：カメラParamのデータID"
+    },
+    {
+      "Field": "beginTime10",
+      "Name": "開始時補間時間[sec]",
+      "Description": "識別子１１：このカメラセットを開始する際の補間時間"
+    },
+    {
+      "Field": "endTime10",
+      "Name": "終了時補間時間[sec]",
+      "Description": "識別子１１：このカメラセットを終了する際の補間時間"
+    },
+    {
+      "Field": "lockParamId11",
+      "Name": "ロックカメラパラメータID",
+      "Description": "識別子１２：ロックオンParamのデータID"
+    },
+    {
+      "Field": "camParamId11",
+      "Name": "カメラパラメータID",
+      "Description": "識別子１２：カメラParamのデータID"
+    },
+    {
+      "Field": "beginTime11",
+      "Name": "開始時補間時間[sec]",
+      "Description": "識別子１２：このカメラセットを開始する際の補間時間"
+    },
+    {
+      "Field": "endTime11",
+      "Name": "終了時補間時間[sec]",
+      "Description": "識別子１２：このカメラセットを終了する際の補間時間"
+    },
+    {
+      "Field": "lockParamId12",
+      "Name": "ロックカメラパラメータID",
+      "Description": "識別子１３：ロックオンParamのデータID"
+    },
+    {
+      "Field": "camParamId12",
+      "Name": "カメラパラメータID",
+      "Description": "識別子１３：カメラParamのデータID"
+    },
+    {
+      "Field": "beginTime12",
+      "Name": "開始時補間時間[sec]",
+      "Description": "識別子１３：このカメラセットを開始する際の補間時間"
+    },
+    {
+      "Field": "endTime12",
+      "Name": "終了時補間時間[sec]",
+      "Description": "識別子１３：このカメラセットを終了する際の補間時間"
+    },
+    {
+      "Field": "lockParamId13",
+      "Name": "ロックカメラパラメータID",
+      "Description": "識別子１４：ロックオンParamのデータID"
+    },
+    {
+      "Field": "camParamId13",
+      "Name": "カメラパラメータID",
+      "Description": "識別子１４：カメラParamのデータID"
+    },
+    {
+      "Field": "beginTime13",
+      "Name": "開始時補間時間[sec]",
+      "Description": "識別子１４：このカメラセットを開始する際の補間時間"
+    },
+    {
+      "Field": "endTime13",
+      "Name": "終了時補間時間[sec]",
+      "Description": "識別子１４：このカメラセットを終了する際の補間時間"
+    },
+    {
+      "Field": "lockParamId14",
+      "Name": "ロックカメラパラメータID",
+      "Description": "識別子１５：ロックオンParamのデータID"
+    },
+    {
+      "Field": "camParamId14",
+      "Name": "カメラパラメータID",
+      "Description": "識別子１５：カメラParamのデータID"
+    },
+    {
+      "Field": "beginTime14",
+      "Name": "開始時補間時間[sec]",
+      "Description": "識別子１５：このカメラセットを開始する際の補間時間"
+    },
+    {
+      "Field": "endTime14",
+      "Name": "終了時補間時間[sec]",
+      "Description": "識別子１５：このカメラセットを終了する際の補間時間"
+    },
+    {
+      "Field": "lockParamId15",
+      "Name": "ロックカメラパラメータID",
+      "Description": "識別子１６：ロックオンParamのデータID"
+    },
+    {
+      "Field": "camParamId15",
+      "Name": "カメラパラメータID",
+      "Description": "識別子１６：カメラParamのデータID"
+    },
+    {
+      "Field": "beginTime15",
+      "Name": "開始時補間時間[sec]",
+      "Description": "識別子１６：このカメラセットを開始する際の補間時間"
+    },
+    {
+      "Field": "endTime15",
+      "Name": "終了時補間時間[sec]",
+      "Description": "識別子１６：このカメラセットを終了する際の補間時間"
+    },
+    {
+      "Field": "lockParamId16",
+      "Name": "ロックカメラパラメータID",
+      "Description": "識別子１７：ロックオンParamのデータID"
+    },
+    {
+      "Field": "camParamId16",
+      "Name": "カメラパラメータID",
+      "Description": "識別子１７：カメラParamのデータID"
+    },
+    {
+      "Field": "beginTime16",
+      "Name": "開始時補間時間[sec]",
+      "Description": "識別子１７：このカメラセットを開始する際の補間時間"
+    },
+    {
+      "Field": "endTime16",
+      "Name": "終了時補間時間[sec]",
+      "Description": "識別子１７：このカメラセットを終了する際の補間時間"
+    },
+    {
+      "Field": "lockParamId17",
+      "Name": "ロックカメラパラメータID",
+      "Description": "識別子１８：ロックオンParamのデータID"
+    },
+    {
+      "Field": "camParamId17",
+      "Name": "カメラパラメータID",
+      "Description": "識別子１８：カメラParamのデータID"
+    },
+    {
+      "Field": "beginTime17",
+      "Name": "開始時補間時間[sec]",
+      "Description": "識別子１８：このカメラセットを開始する際の補間時間"
+    },
+    {
+      "Field": "endTime17",
+      "Name": "終了時補間時間[sec]",
+      "Description": "識別子１８：このカメラセットを終了する際の補間時間"
+    },
+    {
+      "Field": "lockParamId18",
+      "Name": "ロックカメラパラメータID",
+      "Description": "識別子１９：ロックオンParamのデータID"
+    },
+    {
+      "Field": "camParamId18",
+      "Name": "カメラパラメータID",
+      "Description": "識別子１９：カメラParamのデータID"
+    },
+    {
+      "Field": "beginTime18",
+      "Name": "開始時補間時間[sec]",
+      "Description": "識別子１９：このカメラセットを開始する際の補間時間"
+    },
+    {
+      "Field": "endTime18",
+      "Name": "終了時補間時間[sec]",
+      "Description": "識別子１９：このカメラセットを終了する際の補間時間"
+    },
+    {
+      "Field": "lockParamId19",
+      "Name": "ロックカメラパラメータID",
+      "Description": "識別子２０：ロックオンParamのデータID"
+    },
+    {
+      "Field": "camParamId19",
+      "Name": "カメラパラメータID",
+      "Description": "識別子２０：カメラParamのデータID"
+    },
+    {
+      "Field": "beginTime19",
+      "Name": "開始時補間時間[sec]",
+      "Description": "識別子２０：このカメラセットを開始する際の補間時間"
+    },
+    {
+      "Field": "endTime19",
+      "Name": "終了時補間時間[sec]",
+      "Description": "識別子２０：このカメラセットを終了する際の補間時間"
+    },
+    {
+      "Field": "lockParamId20",
+      "Name": "ロックカメラパラメータID",
+      "Description": "識別子２１：ロックカメラParamのデータID"
+    },
+    {
+      "Field": "camParamId20",
+      "Name": "カメラパラメータID",
+      "Description": "識別子２１：カメラParamのデータID"
+    },
+    {
+      "Field": "beginTime20",
+      "Name": "開始時補間時間[sec]",
+      "Description": "識別子２１：このカメラセットを開始する際の補間時間"
+    },
+    {
+      "Field": "endTime20",
+      "Name": "終了時補間時間[sec]",
+      "Description": "識別子２１：このカメラセットを終了する際の補間時間"
+    },
+    {
+      "Field": "lockParamId21",
+      "Name": "ロックカメラパラメータID",
+      "Description": "識別子２２：ロックオンParamのデータID"
+    },
+    {
+      "Field": "camParamId21",
+      "Name": "カメラパラメータID",
+      "Description": "識別子２２：カメラParamのデータID"
+    },
+    {
+      "Field": "beginTime21",
+      "Name": "開始時補間時間[sec]",
+      "Description": "識別子２２：このカメラセットを開始する際の補間時間"
+    },
+    {
+      "Field": "endTime21",
+      "Name": "終了時補間時間[sec]",
+      "Description": "識別子２２：このカメラセットを終了する際の補間時間"
+    },
+    {
+      "Field": "lockParamId22",
+      "Name": "ロックカメラパラメータID",
+      "Description": "識別子２３：ロックオンParamのデータID"
+    },
+    {
+      "Field": "camParamId22",
+      "Name": "カメラパラメータID",
+      "Description": "識別子２３：カメラParamのデータID"
+    },
+    {
+      "Field": "beginTime22",
+      "Name": "開始時補間時間[sec]",
+      "Description": "識別子２３：このカメラセットを開始する際の補間時間"
+    },
+    {
+      "Field": "endTime22",
+      "Name": "終了時補間時間[sec]",
+      "Description": "識別子２３：このカメラセットを終了する際の補間時間"
+    },
+    {
+      "Field": "lockParamId23",
+      "Name": "ロックカメラパラメータID",
+      "Description": "識別子２４：ロックオンParamのデータID"
+    },
+    {
+      "Field": "camParamId23",
+      "Name": "カメラパラメータID",
+      "Description": "識別子２４：カメラParamのデータID"
+    },
+    {
+      "Field": "beginTime23",
+      "Name": "開始時補間時間[sec]",
+      "Description": "識別子２４：このカメラセットを開始する際の補間時間"
+    },
+    {
+      "Field": "endTime23",
+      "Name": "終了時補間時間[sec]",
+      "Description": "識別子２４：このカメラセットを終了する際の補間時間"
+    },
+    {
+      "Field": "lockParamId24",
+      "Name": "ロックカメラパラメータID",
+      "Description": "識別子２５：ロックオンParamのデータID"
+    },
+    {
+      "Field": "camParamId24",
+      "Name": "カメラパラメータID",
+      "Description": "識別子２５：カメラParamのデータID"
+    },
+    {
+      "Field": "beginTime24",
+      "Name": "開始時補間時間[sec]",
+      "Description": "識別子２５：このカメラセットを開始する際の補間時間"
+    },
+    {
+      "Field": "endTime24",
+      "Name": "終了時補間時間[sec]",
+      "Description": "識別子２５：このカメラセットを終了する際の補間時間"
+    },
+    {
+      "Field": "lockParamId25",
+      "Name": "ロックカメラパラメータID",
+      "Description": "識別子２６：ロックオンParamのデータID"
+    },
+    {
+      "Field": "camParamId25",
+      "Name": "カメラパラメータID",
+      "Description": "識別子２６：カメラParamのデータID"
+    },
+    {
+      "Field": "beginTime25",
+      "Name": "開始時補間時間[sec]",
+      "Description": "識別子２６：このカメラセットを開始する際の補間時間"
+    },
+    {
+      "Field": "endTime25",
+      "Name": "終了時補間時間[sec]",
+      "Description": "識別子２６：このカメラセットを終了する際の補間時間"
+    },
+    {
+      "Field": "lockParamId26",
+      "Name": "ロックカメラパラメータID",
+      "Description": "識別子２７：ロックオンParamのデータID"
+    },
+    {
+      "Field": "camParamId26",
+      "Name": "カメラパラメータID",
+      "Description": "識別子２７：カメラParamのデータID"
+    },
+    {
+      "Field": "beginTime26",
+      "Name": "開始時補間時間[sec]",
+      "Description": "識別子２７：このカメラセットを開始する際の補間時間"
+    },
+    {
+      "Field": "endTime26",
+      "Name": "終了時補間時間[sec]",
+      "Description": "識別子２７：このカメラセットを終了する際の補間時間"
+    },
+    {
+      "Field": "lockParamId27",
+      "Name": "ロックカメラパラメータID",
+      "Description": "識別子２８：ロックオンParamのデータID"
+    },
+    {
+      "Field": "camParamId27",
+      "Name": "カメラパラメータID",
+      "Description": "識別子２８：カメラParamのデータID"
+    },
+    {
+      "Field": "beginTime27",
+      "Name": "開始時補間時間[sec]",
+      "Description": "識別子２８：このカメラセットを開始する際の補間時間"
+    },
+    {
+      "Field": "endTime27",
+      "Name": "終了時補間時間[sec]",
+      "Description": "識別子２８：このカメラセットを終了する際の補間時間"
+    },
+    {
+      "Field": "lockParamId28",
+      "Name": "ロックカメラパラメータID",
+      "Description": "識別子２９：ロックオンParamのデータID"
+    },
+    {
+      "Field": "camParamId28",
+      "Name": "カメラパラメータID",
+      "Description": "識別子２９：カメラParamのデータID"
+    },
+    {
+      "Field": "beginTime28",
+      "Name": "開始時補間時間[sec]",
+      "Description": "識別子２９：このカメラセットを開始する際の補間時間"
+    },
+    {
+      "Field": "endTime28",
+      "Name": "終了時補間時間[sec]",
+      "Description": "識別子２９：このカメラセットを終了する際の補間時間"
+    },
+    {
+      "Field": "lockParamId29",
+      "Name": "ロックカメラパラメータID",
+      "Description": "識別子３０：ロックオンParamのデータID"
+    },
+    {
+      "Field": "camParamId29",
+      "Name": "カメラパラメータID",
+      "Description": "識別子３０：カメラParamのデータID"
+    },
+    {
+      "Field": "beginTime29",
+      "Name": "開始時補間時間[sec]",
+      "Description": "識別子３０：このカメラセットを開始する際の補間時間"
+    },
+    {
+      "Field": "endTime29",
+      "Name": "終了時補間時間[sec]",
+      "Description": "識別子３０：このカメラセットを終了する際の補間時間"
+    },
+    {
+      "Field": "lockParamId30",
+      "Name": "ロックカメラパラメータID",
+      "Description": "識別子３１：ロックカメラParamのデータID"
+    },
+    {
+      "Field": "camParamId30",
+      "Name": "カメラパラメータID",
+      "Description": "識別子３１：カメラParamのデータID"
+    },
+    {
+      "Field": "beginTime30",
+      "Name": "開始時補間時間[sec]",
+      "Description": "識別子３１：このカメラセットを開始する際の補間時間"
+    },
+    {
+      "Field": "endTime30",
+      "Name": "終了時補間時間[sec]",
+      "Description": "識別子３１：このカメラセットを終了する際の補間時間"
+    },
+    {
+      "Field": "lockParamId31",
+      "Name": "ロックカメラパラメータID",
+      "Description": "識別子３２：ロックオンParamのデータID"
+    },
+    {
+      "Field": "camParamId31",
+      "Name": "カメラパラメータID",
+      "Description": "識別子３２：カメラParamのデータID"
+    },
+    {
+      "Field": "beginTime31",
+      "Name": "開始時補間時間[sec]",
+      "Description": "識別子３２：このカメラセットを開始する際の補間時間"
+    },
+    {
+      "Field": "endTime31",
+      "Name": "終了時補間時間[sec]",
+      "Description": "識別子３２：このカメラセットを終了する際の補間時間"
+    },
+    {
+      "Field": "lockParamId32",
+      "Name": "ロックカメラパラメータID",
+      "Description": "識別子３３：ロックオンParamのデータID"
+    },
+    {
+      "Field": "camParamId32",
+      "Name": "カメラパラメータID",
+      "Description": "識別子３３：カメラParamのデータID"
+    },
+    {
+      "Field": "beginTime32",
+      "Name": "開始時補間時間[sec]",
+      "Description": "識別子３３：このカメラセットを開始する際の補間時間"
+    },
+    {
+      "Field": "endTime32",
+      "Name": "終了時補間時間[sec]",
+      "Description": "識別子３３：このカメラセットを終了する際の補間時間"
+    },
+    {
+      "Field": "lockParamId33",
+      "Name": "ロックカメラパラメータID",
+      "Description": "識別子３４：ロックオンParamのデータID"
+    },
+    {
+      "Field": "camParamId33",
+      "Name": "カメラパラメータID",
+      "Description": "識別子３４：カメラParamのデータID"
+    },
+    {
+      "Field": "beginTime33",
+      "Name": "開始時補間時間[sec]",
+      "Description": "識別子３４：このカメラセットを開始する際の補間時間"
+    },
+    {
+      "Field": "endTime33",
+      "Name": "終了時補間時間[sec]",
+      "Description": "識別子３４：このカメラセットを終了する際の補間時間"
+    },
+    {
+      "Field": "lockParamId34",
+      "Name": "ロックカメラパラメータID",
+      "Description": "識別子３５：ロックオンParamのデータID"
+    },
+    {
+      "Field": "camParamId34",
+      "Name": "カメラパラメータID",
+      "Description": "識別子３５：カメラParamのデータID"
+    },
+    {
+      "Field": "beginTime34",
+      "Name": "開始時補間時間[sec]",
+      "Description": "識別子３５：このカメラセットを開始する際の補間時間"
+    },
+    {
+      "Field": "endTime34",
+      "Name": "終了時補間時間[sec]",
+      "Description": "識別子３５：このカメラセットを終了する際の補間時間"
+    },
+    {
+      "Field": "lockParamId35",
+      "Name": "ロックカメラパラメータID",
+      "Description": "識別子３６：ロックオンParamのデータID"
+    },
+    {
+      "Field": "camParamId35",
+      "Name": "カメラパラメータID",
+      "Description": "識別子３６：カメラParamのデータID"
+    },
+    {
+      "Field": "beginTime35",
+      "Name": "開始時補間時間[sec]",
+      "Description": "識別子３６：このカメラセットを開始する際の補間時間"
+    },
+    {
+      "Field": "endTime35",
+      "Name": "終了時補間時間[sec]",
+      "Description": "識別子３６：このカメラセットを終了する際の補間時間"
+    },
+    {
+      "Field": "lockParamId36",
+      "Name": "ロックカメラパラメータID",
+      "Description": "識別子３７：ロックオンParamのデータID"
+    },
+    {
+      "Field": "camParamId36",
+      "Name": "カメラパラメータID",
+      "Description": "識別子３７：カメラParamのデータID"
+    },
+    {
+      "Field": "beginTime36",
+      "Name": "開始時補間時間[sec]",
+      "Description": "識別子３７：このカメラセットを開始する際の補間時間"
+    },
+    {
+      "Field": "endTime36",
+      "Name": "終了時補間時間[sec]",
+      "Description": "識別子３７：このカメラセットを終了する際の補間時間"
+    },
+    {
+      "Field": "lockParamId37",
+      "Name": "ロックカメラパラメータID",
+      "Description": "識別子３８：ロックオンParamのデータID"
+    },
+    {
+      "Field": "camParamId37",
+      "Name": "カメラパラメータID",
+      "Description": "識別子３８：カメラParamのデータID"
+    },
+    {
+      "Field": "beginTime37",
+      "Name": "開始時補間時間[sec]",
+      "Description": "識別子３８：このカメラセットを開始する際の補間時間"
+    },
+    {
+      "Field": "endTime37",
+      "Name": "終了時補間時間[sec]",
+      "Description": "識別子３８：このカメラセットを終了する際の補間時間"
+    },
+    {
+      "Field": "lockParamId38",
+      "Name": "ロックカメラパラメータID",
+      "Description": "識別子３９：ロックオンParamのデータID"
+    },
+    {
+      "Field": "camParamId38",
+      "Name": "カメラパラメータID",
+      "Description": "識別子３９：カメラParamのデータID"
+    },
+    {
+      "Field": "beginTime38",
+      "Name": "開始時補間時間[sec]",
+      "Description": "識別子３９：このカメラセットを開始する際の補間時間"
+    },
+    {
+      "Field": "endTime38",
+      "Name": "終了時補間時間[sec]",
+      "Description": "識別子３９：このカメラセットを終了する際の補間時間"
+    },
+    {
+      "Field": "lockParamId39",
+      "Name": "ロックカメラパラメータID",
+      "Description": "識別子４０：ロックオンParamのデータID"
+    },
+    {
+      "Field": "camParamId39",
+      "Name": "カメラパラメータID",
+      "Description": "識別子４０：カメラParamのデータID"
+    },
+    {
+      "Field": "beginTime39",
+      "Name": "開始時補間時間[sec]",
+      "Description": "識別子４０：このカメラセットを開始する際の補間時間"
+    },
+    {
+      "Field": "endTime39",
+      "Name": "終了時補間時間[sec]",
+      "Description": "識別子４０：このカメラセットを終了する際の補間時間"
+    },
+    {
+      "Field": "lockParamId40",
+      "Name": "ロックカメラパラメータID",
+      "Description": "識別子４１：ロックカメラParamのデータID"
+    },
+    {
+      "Field": "camParamId40",
+      "Name": "カメラパラメータID",
+      "Description": "識別子４１：カメラParamのデータID"
+    },
+    {
+      "Field": "beginTime40",
+      "Name": "開始時補間時間[sec]",
+      "Description": "識別子４１：このカメラセットを開始する際の補間時間"
+    },
+    {
+      "Field": "endTime40",
+      "Name": "終了時補間時間[sec]",
+      "Description": "識別子４１：このカメラセットを終了する際の補間時間"
+    },
+    {
+      "Field": "lockParamId41",
+      "Name": "ロックカメラパラメータID",
+      "Description": "識別子４２：ロックオンParamのデータID"
+    },
+    {
+      "Field": "camParamId41",
+      "Name": "カメラパラメータID",
+      "Description": "識別子４２：カメラParamのデータID"
+    },
+    {
+      "Field": "beginTime41",
+      "Name": "開始時補間時間[sec]",
+      "Description": "識別子４２：このカメラセットを開始する際の補間時間"
+    },
+    {
+      "Field": "endTime41",
+      "Name": "終了時補間時間[sec]",
+      "Description": "識別子４２：このカメラセットを終了する際の補間時間"
+    },
+    {
+      "Field": "lockParamId42",
+      "Name": "ロックカメラパラメータID",
+      "Description": "識別子４３：ロックオンParamのデータID"
+    },
+    {
+      "Field": "camParamId42",
+      "Name": "カメラパラメータID",
+      "Description": "識別子４３：カメラParamのデータID"
+    },
+    {
+      "Field": "beginTime42",
+      "Name": "開始時補間時間[sec]",
+      "Description": "識別子４３：このカメラセットを開始する際の補間時間"
+    },
+    {
+      "Field": "endTime42",
+      "Name": "終了時補間時間[sec]",
+      "Description": "識別子４３：このカメラセットを終了する際の補間時間"
+    },
+    {
+      "Field": "lockParamId43",
+      "Name": "ロックカメラパラメータID",
+      "Description": "識別子４４：ロックオンParamのデータID"
+    },
+    {
+      "Field": "camParamId43",
+      "Name": "カメラパラメータID",
+      "Description": "識別子４４：カメラParamのデータID"
+    },
+    {
+      "Field": "beginTime43",
+      "Name": "開始時補間時間[sec]",
+      "Description": "識別子４４：このカメラセットを開始する際の補間時間"
+    },
+    {
+      "Field": "endTime43",
+      "Name": "終了時補間時間[sec]",
+      "Description": "識別子４４：このカメラセットを終了する際の補間時間"
+    },
+    {
+      "Field": "lockParamId44",
+      "Name": "ロックカメラパラメータID",
+      "Description": "識別子４５：ロックオンParamのデータID"
+    },
+    {
+      "Field": "camParamId44",
+      "Name": "カメラパラメータID",
+      "Description": "識別子４５：カメラParamのデータID"
+    },
+    {
+      "Field": "beginTime44",
+      "Name": "開始時補間時間[sec]",
+      "Description": "識別子４５：このカメラセットを開始する際の補間時間"
+    },
+    {
+      "Field": "endTime44",
+      "Name": "終了時補間時間[sec]",
+      "Description": "識別子４５：このカメラセットを終了する際の補間時間"
+    }
+  ]
+}

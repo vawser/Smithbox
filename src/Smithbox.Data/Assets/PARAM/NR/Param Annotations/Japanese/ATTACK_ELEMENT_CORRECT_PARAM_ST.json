@@ -1,0 +1,393 @@
+{
+  "Param": "ATTACK_ELEMENT_CORRECT_PARAM_ST",
+  "Type": "ATTACK_ELEMENT_CORRECT_PARAM_ST",
+  "Name": "ATTACK_ELEMENT_CORRECT_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "isStrengthCorrect_byPhysics",
+      "Name": "筋力補正するか（物理）",
+      "Description": ""
+    },
+    {
+      "Field": "isDexterityCorrect_byPhysics",
+      "Name": "技量補正するか（物理）",
+      "Description": ""
+    },
+    {
+      "Field": "isMagicCorrect_byPhysics",
+      "Name": "理力補正するか（物理）",
+      "Description": ""
+    },
+    {
+      "Field": "isFaithCorrect_byPhysics",
+      "Name": "信仰補正するか（物理）",
+      "Description": ""
+    },
+    {
+      "Field": "isLuckCorrect_byPhysics",
+      "Name": "運補正するか（物理）",
+      "Description": ""
+    },
+    {
+      "Field": "isStrengthCorrect_byMagic",
+      "Name": "筋力補正するか（魔法）",
+      "Description": ""
+    },
+    {
+      "Field": "isDexterityCorrect_byMagic",
+      "Name": "技量補正するか（魔法）",
+      "Description": ""
+    },
+    {
+      "Field": "isMagicCorrect_byMagic",
+      "Name": "理力補正するか（魔法）",
+      "Description": ""
+    },
+    {
+      "Field": "isFaithCorrect_byMagic",
+      "Name": "信仰補正するか（魔法）",
+      "Description": ""
+    },
+    {
+      "Field": "isLuckCorrect_byMagic",
+      "Name": "運補正するか（魔法）",
+      "Description": ""
+    },
+    {
+      "Field": "isStrengthCorrect_byFire",
+      "Name": "筋力補正するか（炎）",
+      "Description": ""
+    },
+    {
+      "Field": "isDexterityCorrect_byFire",
+      "Name": "技量補正するか（炎）",
+      "Description": ""
+    },
+    {
+      "Field": "isMagicCorrect_byFire",
+      "Name": "理力補正するか（炎）",
+      "Description": ""
+    },
+    {
+      "Field": "isFaithCorrect_byFire",
+      "Name": "信仰補正するか（炎）",
+      "Description": ""
+    },
+    {
+      "Field": "isLuckCorrect_byFire",
+      "Name": "運補正するか（炎）",
+      "Description": ""
+    },
+    {
+      "Field": "isStrengthCorrect_byThunder",
+      "Name": "筋力補正するか（雷）",
+      "Description": ""
+    },
+    {
+      "Field": "isDexterityCorrect_byThunder",
+      "Name": "技量補正するか（雷）",
+      "Description": ""
+    },
+    {
+      "Field": "isMagicCorrect_byThunder",
+      "Name": "理力補正するか（雷）",
+      "Description": ""
+    },
+    {
+      "Field": "isFaithCorrect_byThunder",
+      "Name": "信仰補正するか（雷）",
+      "Description": ""
+    },
+    {
+      "Field": "isLuckCorrect_byThunder",
+      "Name": "運補正するか（雷）",
+      "Description": ""
+    },
+    {
+      "Field": "isStrengthCorrect_byDark",
+      "Name": "筋力補正するか（闇）",
+      "Description": ""
+    },
+    {
+      "Field": "isDexterityCorrect_byDark",
+      "Name": "技量補正するか（闇）",
+      "Description": ""
+    },
+    {
+      "Field": "isMagicCorrect_byDark",
+      "Name": "理力補正するか（闇）",
+      "Description": ""
+    },
+    {
+      "Field": "isFaithCorrect_byDark",
+      "Name": "信仰補正するか（闇）",
+      "Description": ""
+    },
+    {
+      "Field": "isLuckCorrect_byDark",
+      "Name": "運補正するか（闇）",
+      "Description": ""
+    },
+    {
+      "Field": "pad1",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "overwriteStrengthCorrectRate_byPhysics",
+      "Name": "筋力補正値上書き（物理）",
+      "Description": ""
+    },
+    {
+      "Field": "overwriteDexterityCorrectRate_byPhysics",
+      "Name": "技量補正値上書き（物理）",
+      "Description": ""
+    },
+    {
+      "Field": "overwriteMagicCorrectRate_byPhysics",
+      "Name": "理力補正値上書き（物理）",
+      "Description": ""
+    },
+    {
+      "Field": "overwriteFaithCorrectRate_byPhysics",
+      "Name": "信仰補正値上書き（物理）",
+      "Description": ""
+    },
+    {
+      "Field": "overwriteLuckCorrectRate_byPhysics",
+      "Name": "運補正値上書き（物理）",
+      "Description": ""
+    },
+    {
+      "Field": "overwriteStrengthCorrectRate_byMagic",
+      "Name": "筋力補正値上書き（魔法）",
+      "Description": ""
+    },
+    {
+      "Field": "overwriteDexterityCorrectRate_byMagic",
+      "Name": "技量補正値上書き（魔法）",
+      "Description": ""
+    },
+    {
+      "Field": "overwriteMagicCorrectRate_byMagic",
+      "Name": "理力補正値上書き（魔法）",
+      "Description": ""
+    },
+    {
+      "Field": "overwriteFaithCorrectRate_byMagic",
+      "Name": "信仰補正値上書き（魔法）",
+      "Description": ""
+    },
+    {
+      "Field": "overwriteLuckCorrectRate_byMagic",
+      "Name": "運補正値上書き（魔法）",
+      "Description": ""
+    },
+    {
+      "Field": "overwriteStrengthCorrectRate_byFire",
+      "Name": "筋力補正値上書き（炎）",
+      "Description": ""
+    },
+    {
+      "Field": "overwriteDexterityCorrectRate_byFire",
+      "Name": "技量補正値上書き（炎）",
+      "Description": ""
+    },
+    {
+      "Field": "overwriteMagicCorrectRate_byFire",
+      "Name": "理力補正値上書き（炎）",
+      "Description": ""
+    },
+    {
+      "Field": "overwriteFaithCorrectRate_byFire",
+      "Name": "信仰補正値上書き（炎）",
+      "Description": ""
+    },
+    {
+      "Field": "overwriteLuckCorrectRate_byFire",
+      "Name": "運補正値上書き（炎）",
+      "Description": ""
+    },
+    {
+      "Field": "overwriteStrengthCorrectRate_byThunder",
+      "Name": "筋力補正値上書き（雷）",
+      "Description": ""
+    },
+    {
+      "Field": "overwriteDexterityCorrectRate_byThunder",
+      "Name": "技量補正値上書き（雷）",
+      "Description": ""
+    },
+    {
+      "Field": "overwriteMagicCorrectRate_byThunder",
+      "Name": "理力補正値上書き（雷）",
+      "Description": ""
+    },
+    {
+      "Field": "overwriteFaithCorrectRate_byThunder",
+      "Name": "信仰補正値上書き（雷）",
+      "Description": ""
+    },
+    {
+      "Field": "overwriteLuckCorrectRate_byThunder",
+      "Name": "運補正値上書き（雷）",
+      "Description": ""
+    },
+    {
+      "Field": "overwriteStrengthCorrectRate_byDark",
+      "Name": "筋力補正値上書き（闇）",
+      "Description": ""
+    },
+    {
+      "Field": "overwriteDexterityCorrectRate_byDark",
+      "Name": "技量補正値上書き（闇）",
+      "Description": ""
+    },
+    {
+      "Field": "overwriteMagicCorrectRate_byDark",
+      "Name": "理力補正値上書き（闇）",
+      "Description": ""
+    },
+    {
+      "Field": "overwriteFaithCorrectRate_byDark",
+      "Name": "信仰補正値上書き（闇）",
+      "Description": ""
+    },
+    {
+      "Field": "overwriteLuckCorrectRate_byDark",
+      "Name": "運補正値上書き（闇）",
+      "Description": ""
+    },
+    {
+      "Field": "InfluenceStrengthCorrectRate_byPhysics",
+      "Name": "筋力補正値影響率（物理）",
+      "Description": "補正率の影響割合。"
+    },
+    {
+      "Field": "InfluenceDexterityCorrectRate_byPhysics",
+      "Name": "技量補正値影響率（物理）",
+      "Description": "補正率の影響割合。"
+    },
+    {
+      "Field": "InfluenceMagicCorrectRate_byPhysics",
+      "Name": "理力補正値影響率（物理）",
+      "Description": "補正率の影響割合。"
+    },
+    {
+      "Field": "InfluenceFaithCorrectRate_byPhysics",
+      "Name": "信仰補正値影響率（物理）",
+      "Description": "補正率の影響割合。"
+    },
+    {
+      "Field": "InfluenceLuckCorrectRate_byPhysics",
+      "Name": "運補正値影響率（物理）",
+      "Description": "補正率の影響割合。"
+    },
+    {
+      "Field": "InfluenceStrengthCorrectRate_byMagic",
+      "Name": "筋力補正値影響率（魔法）",
+      "Description": "補正率の影響割合。"
+    },
+    {
+      "Field": "InfluenceDexterityCorrectRate_byMagic",
+      "Name": "技量補正値影響率（魔法）",
+      "Description": "補正率の影響割合。"
+    },
+    {
+      "Field": "InfluenceMagicCorrectRate_byMagic",
+      "Name": "理力補正値影響率（魔法）",
+      "Description": "補正率の影響割合。"
+    },
+    {
+      "Field": "InfluenceFaithCorrectRate_byMagic",
+      "Name": "信仰補正値影響率（魔法）",
+      "Description": "補正率の影響割合。"
+    },
+    {
+      "Field": "InfluenceLuckCorrectRate_byMagic",
+      "Name": "運補正値影響率（魔法）",
+      "Description": "補正率の影響割合。"
+    },
+    {
+      "Field": "InfluenceStrengthCorrectRate_byFire",
+      "Name": "筋力補正値影響率（炎）",
+      "Description": "補正率の影響割合。"
+    },
+    {
+      "Field": "InfluenceDexterityCorrectRate_byFire",
+      "Name": "技量補正値影響率（炎）",
+      "Description": "補正率の影響割合。"
+    },
+    {
+      "Field": "InfluenceMagicCorrectRate_byFire",
+      "Name": "理力補正値影響率（炎）",
+      "Description": "補正率の影響割合。"
+    },
+    {
+      "Field": "InfluenceFaithCorrectRate_byFire",
+      "Name": "信仰補正値影響率（炎）",
+      "Description": "補正率の影響割合。"
+    },
+    {
+      "Field": "InfluenceLuckCorrectRate_byFire",
+      "Name": "運補正値影響率（炎）",
+      "Description": "補正率の影響割合。"
+    },
+    {
+      "Field": "InfluenceStrengthCorrectRate_byThunder",
+      "Name": "筋力補正値影響率（雷）",
+      "Description": "補正率の影響割合。"
+    },
+    {
+      "Field": "InfluenceDexterityCorrectRate_byThunder",
+      "Name": "技量補正値影響率（雷）",
+      "Description": "補正率の影響割合。"
+    },
+    {
+      "Field": "InfluenceMagicCorrectRate_byThunder",
+      "Name": "理力補正値影響率（雷）",
+      "Description": "補正率の影響割合。"
+    },
+    {
+      "Field": "InfluenceFaithCorrectRate_byThunder",
+      "Name": "信仰補正値影響率（雷）",
+      "Description": "補正率の影響割合。"
+    },
+    {
+      "Field": "InfluenceLuckCorrectRate_byThunder",
+      "Name": "運補正値影響率（雷）",
+      "Description": "補正率の影響割合。"
+    },
+    {
+      "Field": "InfluenceStrengthCorrectRate_byDark",
+      "Name": "筋力補正値影響率（闇）",
+      "Description": "補正率の影響割合。"
+    },
+    {
+      "Field": "InfluenceDexterityCorrectRate_byDark",
+      "Name": "技量補正値影響率（闇）",
+      "Description": "補正率の影響割合。"
+    },
+    {
+      "Field": "InfluenceMagicCorrectRate_byDark",
+      "Name": "理力補正値影響率（闇）",
+      "Description": "補正率の影響割合。"
+    },
+    {
+      "Field": "InfluenceFaithCorrectRate_byDark",
+      "Name": "信仰補正値影響率（闇）",
+      "Description": "補正率の影響割合。"
+    },
+    {
+      "Field": "InfluenceLuckCorrectRate_byDark",
+      "Name": "運補正値影響率（闇）",
+      "Description": "補正率の影響割合。"
+    },
+    {
+      "Field": "pad2",
+      "Name": "パディング",
+      "Description": ""
+    }
+  ]
+}

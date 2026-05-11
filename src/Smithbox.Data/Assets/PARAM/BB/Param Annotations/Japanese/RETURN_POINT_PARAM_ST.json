@@ -1,0 +1,43 @@
+{
+  "Param": "RETURN_POINT_PARAM_ST",
+  "Type": "RETURN_POINT_PARAM_ST",
+  "Name": "RETURN_POINT_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "areaNo",
+      "Name": "Area番号",
+      "Description": "Area番号"
+    },
+    {
+      "Field": "blockNo",
+      "Name": "Block番号",
+      "Description": "Block番号"
+    },
+    {
+      "Field": "returnPointEntityId",
+      "Name": "復活ポイントEntityId",
+      "Description": "復活ポイントEntityId"
+    },
+    {
+      "Field": "returnAnimId",
+      "Name": "復活アニメId",
+      "Description": "復活アニメId"
+    },
+    {
+      "Field": "isRegistDeadReturn",
+      "Name": "ワープ時、死亡時の復活場所として登録するか?",
+      "Description": "ワープ時、死亡時の復活場所として登録するか?"
+    },
+    {
+      "Field": "warpChairNo",
+      "Name": "ワープ椅子識別番号",
+      "Description": "ワープ椅子識別番号"
+    },
+    {
+      "Field": "pad1",
+      "Name": "パディング",
+      "Description": "pad"
+    }
+  ]
+}

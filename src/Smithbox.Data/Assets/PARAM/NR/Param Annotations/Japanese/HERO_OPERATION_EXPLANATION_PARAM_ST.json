@@ -1,0 +1,53 @@
+{
+  "Param": "HERO_OPERATION_EXPLANATION_PARAM_ST",
+  "Type": "HERO_OPERATION_EXPLANATION_PARAM_ST",
+  "Name": "HERO_OPERATION_EXPLANATION_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "disableParam_NT",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "disableParamReserve1",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "disableParamReserve2",
+      "Description": ""
+    },
+    {
+      "Field": "heroId",
+      "Name": "heroId",
+      "Description": ""
+    },
+    {
+      "Field": "displaySlot",
+      "Name": "displaySlot",
+      "Description": ""
+    },
+    {
+      "Field": "midPadding",
+      "Name": "midPadding",
+      "Description": ""
+    },
+    {
+      "Field": "hintTextId",
+      "Name": "hintTextId",
+      "Description": ""
+    },
+    {
+      "Field": "spEffectId",
+      "Name": "spEffectId",
+      "Description": ""
+    },
+    {
+      "Field": "shortcutTextId",
+      "Name": "shortcutTextId",
+      "Description": ""
+    }
+  ]
+}

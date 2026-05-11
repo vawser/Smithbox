@@ -1,0 +1,33 @@
+{
+  "Param": "CS_LIGHTING_QUALITY_DETAIL",
+  "Type": "CS_LIGHTING_QUALITY_DETAIL",
+  "Name": "CS_LIGHTING_QUALITY_DETAIL",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "localLightDistFactor",
+      "Name": "ローカルライト有効距離係数",
+      "Description": "ローカルライト有効距離係数(小さくすると、近い距離で消える)"
+    },
+    {
+      "Field": "localLightShadowEnabled",
+      "Name": "ローカルライトシャドウ有効",
+      "Description": "ローカルライトシャドウ有効"
+    },
+    {
+      "Field": "forwardPassLightingEnabled",
+      "Name": "フォワードパスライティング有効",
+      "Description": "フォワードパスライティング有効"
+    },
+    {
+      "Field": "localLightShadowSpecLevelMax",
+      "Name": "ローカルライトシャドウスペックレベル",
+      "Description": "ローカルライトシャドウスペックレベル。大きいほど、より多くの光源にシャドウが設定される"
+    },
+    {
+      "Field": "dmy",
+      "Name": "dmy",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "Param": "CHR_ACTIVATE_CONDITION_PARAM_ST",
+  "Type": "CHR_ACTIVATE_CONDITION_PARAM_ST",
+  "Name": "CHR_ACTIVATE_CONDITION_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "weatherSunny",
+      "Name": "出現条件_晴れ",
+      "Description": "天候が「晴れ」のときに出現するか"
+    },
+    {
+      "Field": "weatherClearSky",
+      "Name": "出現条件_快晴",
+      "Description": "天候が「快晴」のときに出現するか"
+    },
+    {
+      "Field": "weatherWeakCloudy",
+      "Name": "出現条件_薄曇り",
+      "Description": "天候が「薄曇り」のときに出現するか"
+    },
+    {
+      "Field": "weatherCloudy",
+      "Name": "出現条件_曇り",
+      "Description": "天候が「曇り」のときに出現するか"
+    },
+    {
+      "Field": "weatherRain",
+      "Name": "出現条件_雨",
+      "Description": "天候が「雨」のときに出現するか"
+    },
+    {
+      "Field": "weatherHeavyRain",
+      "Name": "出現条件_豪雨",
+      "Description": "天候が「豪雨」のときに出現するか"
+    },
+    {
+      "Field": "weatherStorm",
+      "Name": "出現条件_嵐",
+      "Description": "天候が「嵐」のときに出現するか"
+    },
+    {
+      "Field": "weatherStormForBattle",
+      "Name": "出現条件_嵐（守護者の末裔との戦闘用）",
+      "Description": "天候が「嵐（守護者の末裔との戦闘用）」のときに出現するか"
+    },
+    {
+      "Field": "weatherSnow",
+      "Name": "出現条件_雪",
+      "Description": "天候が「雪」のときに出現するか"
+    },
+    {
+      "Field": "weatherHeavySnow",
+      "Name": "出現条件_大雪",
+      "Description": "天候が「大雪」のときに出現するか"
+    },
+    {
+      "Field": "weatherFog",
+      "Name": "出現条件_霧",
+      "Description": "天候が「霧」のときに出現するか"
+    },
+    {
+      "Field": "weatherHeavyFog",
+      "Name": "出現条件_濃霧",
+      "Description": "天候が「濃霧」のときに出現するか"
+    },
+    {
+      "Field": "weatherHeavyFogRain",
+      "Name": "出現条件_濃霧（雨）",
+      "Description": "天候が「濃霧（雨）」のときに出現するか"
+    },
+    {
+      "Field": "weatherSandStorm",
+      "Name": "出現条件_砂嵐",
+      "Description": "天候が「砂嵐」のときに出現するか"
+    },
+    {
+      "Field": "pad1",
+      "Name": "pad",
+      "Description": ""
+    },
+    {
+      "Field": "timeStartHour",
+      "Name": "出現開始インゲーム時間_時",
+      "Description": "出現開始インゲーム時間_時"
+    },
+    {
+      "Field": "timeStartMin",
+      "Name": "出現開始インゲーム時間_分",
+      "Description": "出現開始インゲーム時間_分"
+    },
+    {
+      "Field": "timeEndHour",
+      "Name": "出現終了インゲーム時間_時",
+      "Description": "出現終了インゲーム時間_時"
+    },
+    {
+      "Field": "timeEndMin",
+      "Name": "出現終了インゲーム時間_分",
+      "Description": "出現終了インゲーム時間_分"
+    },
+    {
+      "Field": "pad2",
+      "Name": "pad",
+      "Description": ""
+    }
+  ]
+}

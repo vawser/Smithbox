@@ -1,0 +1,43 @@
+{
+  "Param": "MISSION_MANAGEMENT_PARAM_ST",
+  "Type": "MISSION_MANAGEMENT_PARAM_ST",
+  "Name": "MISSION_MANAGEMENT_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "disableParam_NT",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "disableParamReserve1",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "disableParamReserve2",
+      "Description": ""
+    },
+    {
+      "Field": "missionId",
+      "Name": "missionId",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_1b",
+      "Name": "unknown_1b",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_2",
+      "Name": "unknown_2",
+      "Description": ""
+    },
+    {
+      "Field": "mapPatternMapLotConditionId",
+      "Name": "mapPatternMapLotConditionId",
+      "Description": ""
+    }
+  ]
+}

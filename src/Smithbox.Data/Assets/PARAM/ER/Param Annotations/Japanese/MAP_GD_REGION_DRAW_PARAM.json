@@ -1,0 +1,28 @@
+{
+  "Param": "MAP_GD_REGION_DRAW_PARAM",
+  "Type": "MAP_GD_REGION_DRAW_PARAM",
+  "Name": "MAP_GD_REGION_DRAW_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "NT版出力から外すか",
+      "Description": "○をつけたパラメータをNT版パッケージでは除外します"
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "パッケージ出力用リザーブ1",
+      "Description": "パッケージ出力用リザーブ1"
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "パッケージ出力用リザーブ2",
+      "Description": "パッケージ出力用リザーブ2"
+    },
+    {
+      "Field": "overrideIVLocalLightScale",
+      "Name": "IV撮影時のローカルライトスケール上書き値",
+      "Description": "IV撮影時のローカルライトスケール値(0以下：上書きなし) 【GR】SEQ13338 【イラディアンスボリューム】SFX光源のインダイレクトスケールを一律に変更したい"
+    }
+  ]
+}

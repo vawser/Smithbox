@@ -1,0 +1,98 @@
+{
+  "Param": "SHOP_LINEUP_PARAM",
+  "Type": "SHOP_LINEUP_PARAM",
+  "Name": "SHOP_LINEUP_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "equipId",
+      "Name": "装備ID",
+      "Description": "販売している装備品のID"
+    },
+    {
+      "Field": "value",
+      "Name": "価格",
+      "Description": "上書きする販売価格(-1:上書きしない)"
+    },
+    {
+      "Field": "mtrlId",
+      "Name": "購入に必要な素材ID",
+      "Description": "購入に必要な素材ID(-1:なし)"
+    },
+    {
+      "Field": "eventFlag_forStock",
+      "Name": "個数保持イベントフラグ",
+      "Description": "個数を保持してあるイベントフラグ値"
+    },
+    {
+      "Field": "eventFlag_forRelease",
+      "Name": "販売解禁イベントフラグ",
+      "Description": "販売解禁イベントフラグ"
+    },
+    {
+      "Field": "sellQuantity",
+      "Name": "販売個数",
+      "Description": "販売個数"
+    },
+    {
+      "Field": "pad3",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "equipType",
+      "Name": "装備タイプ",
+      "Description": "販売している装備品の種類"
+    },
+    {
+      "Field": "costType",
+      "Name": "価格タイプ",
+      "Description": "価格の種類。販売価格を上書きするときだけ適用される"
+    },
+    {
+      "Field": "pad1",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "setNum",
+      "Name": "販売セット数",
+      "Description": "販売セット数。1回の購入で手に入る個数（デフォルト: 1）"
+    },
+    {
+      "Field": "value_Add",
+      "Name": "加算",
+      "Description": "装備品の販売価格に対する補正（加算）。装備品パラの販売価格×倍率＋加算"
+    },
+    {
+      "Field": "value_Magnification",
+      "Name": "倍率",
+      "Description": "装備品の販売価格に対する補正（倍率）。装備品パラの販売価格×倍率＋加算"
+    },
+    {
+      "Field": "iconId",
+      "Name": "アイコンID",
+      "Description": "メニュー表示用_アイコンID(-1:上書きしない)"
+    },
+    {
+      "Field": "nameMsgId",
+      "Name": "テキストID",
+      "Description": "メニュー表示用_テキストID(-1:上書きしない)"
+    },
+    {
+      "Field": "menuTitleMsgId",
+      "Name": "メニュータイトルテキストID",
+      "Description": "ショップのメニュータイトルのテキストID(-1:上書きしない)。ショップを起動するときに渡されたパラID範囲の中で最初に見つかったパラのこの値が参照されます"
+    },
+    {
+      "Field": "menuIconId",
+      "Name": "メニューアイコンID",
+      "Description": "ショップのメニューアイコンID(-1:上書きしない)。ショップを起動するときに渡されたパラID範囲の中で最初に見つかったパラのこの値が参照されます"
+    },
+    {
+      "Field": "pad2",
+      "Name": "パディング",
+      "Description": ""
+    }
+  ]
+}

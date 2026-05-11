@@ -1,0 +1,93 @@
+{
+  "Param": "TANK_BASE_PARAM",
+  "Type": "TANK_BASE_PARAM",
+  "Name": "TANK_BASE_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "texScrollForwardSpeedScale",
+      "Name": "前後移動速度に対するアニメ速度係数",
+      "Description": "スクロールが１周するまでの移動速度（Km/h)"
+    },
+    {
+      "Field": "texScrollAngleSpeedScale",
+      "Name": "旋回速度に対するアニメ速度係数",
+      "Description": "スクロールが１周するまでの旋回速度（rad/frame)"
+    },
+    {
+      "Field": "paramL_texScrollmaterialID",
+      "Name": "テクスチャスクロールのマテリアルID（左）",
+      "Description": "Matxmlで指定するマテリアルID"
+    },
+    {
+      "Field": "paramL_texScrollMaterialParamID",
+      "Name": "テクスチャスクロールのパラメータID（左）",
+      "Description": "マテリアル拡張パラメータ.xlsmのパラメータID"
+    },
+    {
+      "Field": "paramL_forwardAnimID",
+      "Name": "前進アニメID（左）",
+      "Description": "前進移動するときの車輪部分のアニメID"
+    },
+    {
+      "Field": "paramL_backAnimID",
+      "Name": "後退アニメID（左）",
+      "Description": "後退移動するときの車輪部分のアニメID"
+    },
+    {
+      "Field": "paramR_texScrollmaterialID",
+      "Name": "テクスチャスクロールのマテリアルID（右）",
+      "Description": "Matxmlで指定するマテリアルID"
+    },
+    {
+      "Field": "paramR_texScrollMaterialParamID",
+      "Name": "テクスチャスクロールのパラメータID（右）",
+      "Description": "マテリアル拡張パラメータ.xlsmのパラメータID"
+    },
+    {
+      "Field": "paramR_forwardAnimID",
+      "Name": "前進アニメID（右）",
+      "Description": "前進移動するときの車輪部分のアニメID"
+    },
+    {
+      "Field": "paramR_backAnimID",
+      "Name": "後退アニメID（右）",
+      "Description": "後退移動するときの車輪部分のアニメID"
+    },
+    {
+      "Field": "WheelLeftBackIndex",
+      "Name": "ホイール左の一番後位置のインデックス",
+      "Description": "ホイール内部制御パラメータで一番左後ろになるインデックス"
+    },
+    {
+      "Field": "WheelRightBackIndex",
+      "Name": "ホイール右の一番後位置のインデックス",
+      "Description": "ホイール内部制御パラメータで一番右後ろになるインデックス"
+    },
+    {
+      "Field": "pad6",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "texScrollForwardTexSpeedScale",
+      "Name": "前後移動速度に対するテクスチャスクロール係数",
+      "Description": "スクロールが１周するまでの移動速度（Km/h)"
+    },
+    {
+      "Field": "texScrollAngleTexSpeedScale",
+      "Name": "旋回速度に対するテクスチャスクロール係数",
+      "Description": "スクロールが１周するまでの旋回速度（rad/frame)"
+    },
+    {
+      "Field": "footIKChangeTime",
+      "Name": "FootIK有効無効切り替えたときのアニメの補間時間[s]",
+      "Description": "FootIKが有効無効切り替わったときにホイールやベルト部分のアニメの補間時間"
+    },
+    {
+      "Field": "pad7",
+      "Name": "パディング",
+      "Description": ""
+    }
+  ]
+}

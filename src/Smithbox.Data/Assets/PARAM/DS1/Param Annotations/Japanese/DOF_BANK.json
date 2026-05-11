@@ -1,0 +1,53 @@
+{
+  "Param": "DOF_BANK",
+  "Type": "DOF_BANK",
+  "Name": "DOF_BANK",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "farDofBegin",
+      "Name": "遠方開始距離[m]",
+      "Description": "被写界深度で遠くがぼけ始める距離"
+    },
+    {
+      "Field": "farDofEnd",
+      "Name": "遠方終了距離[m]",
+      "Description": "被写界深度で遠くがぼけ終わる距離"
+    },
+    {
+      "Field": "farDofMul",
+      "Name": "遠方強度[％]",
+      "Description": "被写界深度のぼけ具合(0でぼけなくなります)"
+    },
+    {
+      "Field": "pad_0",
+      "Name": "パディング",
+      "Description": "ダミー"
+    },
+    {
+      "Field": "nearDofBegin",
+      "Name": "近傍開始距離[m]",
+      "Description": "被写界深度で近くがぼけ始める距離(終了距離より遠くします)"
+    },
+    {
+      "Field": "nearDofEnd",
+      "Name": "近傍終了距離[m]",
+      "Description": "被写界深度で近くがぼけ終わる距離(開始距離より近くします)"
+    },
+    {
+      "Field": "nearDofMul",
+      "Name": "近傍強度[％]",
+      "Description": "被写界深度のぼけ具合(0でぼけなくなります)"
+    },
+    {
+      "Field": "pad_1",
+      "Name": "パディング",
+      "Description": "ダミー"
+    },
+    {
+      "Field": "dispersionSq",
+      "Name": "ボケの大きさ",
+      "Description": "値を大きくすると被写界深度のボケが強くなります"
+    }
+  ]
+}

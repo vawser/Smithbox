@@ -1,0 +1,103 @@
+{
+  "Param": "OBJECT_PARAM_ST",
+  "Type": "OBJECT_PARAM_ST",
+  "Name": "OBJECT_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "hp",
+      "Name": "HP",
+      "Description": "破壊までの耐久力(-1:破壊不可)"
+    },
+    {
+      "Field": "defense",
+      "Name": "防御力",
+      "Description": "この値以下の攻撃力はダメージなし"
+    },
+    {
+      "Field": "extRefTexId",
+      "Name": "外部参照テクスチャID",
+      "Description": "mAA/mAA_????.tpf(-1:なし)(AA:エリア番号)"
+    },
+    {
+      "Field": "materialId",
+      "Name": "材質ID",
+      "Description": "マテリアルID。床材質と同じ扱い。-1のときは今までと同じ挙動"
+    },
+    {
+      "Field": "animBreakIdMax",
+      "Name": "アニメ破壊ID最大値",
+      "Description": "アニメ破壊IDが0番から何番までか"
+    },
+    {
+      "Field": "isCamHit",
+      "Name": "カメラが当たるか",
+      "Description": "カメラが当たるか(0:当たらない, 1:当たる)"
+    },
+    {
+      "Field": "isBreakByPlayerCollide",
+      "Name": "プレイヤ衝突で壊れるか",
+      "Description": "プレイヤが接触したときに壊れ(0:ない, 1:る)"
+    },
+    {
+      "Field": "isAnimBreak",
+      "Name": "アニメ破壊か",
+      "Description": "アニメ破壊か(0:物理破壊, 1:アニメ破壊)"
+    },
+    {
+      "Field": "isPenetrationBulletHit",
+      "Name": "貫通弾丸が当たるか",
+      "Description": "貫通弾丸が当たるか(0:当たらない, 1:当たる)"
+    },
+    {
+      "Field": "isChrHit",
+      "Name": "キャラが当たるか",
+      "Description": "キャラが当たるか(0:当たらない, 1:当たる)"
+    },
+    {
+      "Field": "isAttackBacklash",
+      "Name": "攻撃を弾くか",
+      "Description": "攻撃を弾くか(0:弾かない, 1:弾く)"
+    },
+    {
+      "Field": "isDisableBreakForFirstAppear",
+      "Name": "初期出現用破壊禁止",
+      "Description": "プレイヤの初期出現で壊れ(0:る, 1:ない)"
+    },
+    {
+      "Field": "isLadder",
+      "Name": "ハシゴか",
+      "Description": "ハシゴか(0:ちがう, 1:そう)"
+    },
+    {
+      "Field": "isAnimPauseOnRemoPlay",
+      "Name": "ポリ劇中アニメを停止するか",
+      "Description": "ポリ劇中アニメを停止するか(0:しない, 1:する)"
+    },
+    {
+      "Field": "isDamageNoHit",
+      "Name": "ダメージが当たらないか",
+      "Description": "ダメージが当たらない(0:当たる, 1:当たらない)"
+    },
+    {
+      "Field": "isMoveObj",
+      "Name": "移動オブジェか",
+      "Description": "移動オブジェか(0:ちがう, 1:そう)"
+    },
+    {
+      "Field": "pad_1",
+      "Name": "パディング",
+      "Description": "pad"
+    },
+    {
+      "Field": "defaultLodParamId",
+      "Name": "デフォルトLODパラムID",
+      "Description": "デフォルトLODパラムID(-1：なし)"
+    },
+    {
+      "Field": "breakSfxId",
+      "Name": "破壊時SFXID",
+      "Description": "オブジェ破壊時のSFXID(-1:デフォルト(80))"
+    }
+  ]
+}

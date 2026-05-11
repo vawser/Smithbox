@@ -1,0 +1,23 @@
+{
+  "Param": "ESTUS_FLASK_LV_DATA_PARAM",
+  "Type": "ESTUS_FLASK_LV_DATA_PARAM",
+  "Name": "ESTUS_FLASK_LV_DATA_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "spEffectId",
+      "Name": "特殊効果ID",
+      "Description": ""
+    },
+    {
+      "Field": "usableCount",
+      "Name": "使用回数",
+      "Description": ""
+    },
+    {
+      "Field": "padding",
+      "Name": "パディング",
+      "Description": ""
+    }
+  ]
+}

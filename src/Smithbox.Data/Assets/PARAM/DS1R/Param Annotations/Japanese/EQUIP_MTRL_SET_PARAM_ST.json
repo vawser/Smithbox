@@ -1,0 +1,88 @@
+{
+  "Param": "EQUIP_MTRL_SET_PARAM_ST",
+  "Type": "EQUIP_MTRL_SET_PARAM_ST",
+  "Name": "EQUIP_MTRL_SET_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "materialId01",
+      "Name": "必要素材アイテムID01",
+      "Description": "武具強化に必要な素材アイテムIDです。"
+    },
+    {
+      "Field": "materialId02",
+      "Name": "必要素材アイテムID02",
+      "Description": "武具強化に必要な素材アイテムIDです。"
+    },
+    {
+      "Field": "materialId03",
+      "Name": "必要素材アイテムID03",
+      "Description": "武具強化に必要な素材アイテムIDです。"
+    },
+    {
+      "Field": "materialId04",
+      "Name": "必要素材アイテムID04",
+      "Description": "武具強化に必要な素材アイテムIDです。"
+    },
+    {
+      "Field": "materialId05",
+      "Name": "必要素材アイテムID05",
+      "Description": "武具強化に必要な素材アイテムIDです。"
+    },
+    {
+      "Field": "itemNum01",
+      "Name": "必要個数01",
+      "Description": "武具強化に必要な素材アイテムの個数です。"
+    },
+    {
+      "Field": "itemNum02",
+      "Name": "必要個数02",
+      "Description": "武具強化に必要な素材アイテムの個数です。"
+    },
+    {
+      "Field": "itemNum03",
+      "Name": "必要個数03",
+      "Description": "武具強化に必要な素材アイテムの個数です。"
+    },
+    {
+      "Field": "itemNum04",
+      "Name": "必要個数04",
+      "Description": "武具強化に必要な素材アイテムの個数です。"
+    },
+    {
+      "Field": "itemNum05",
+      "Name": "必要個数05",
+      "Description": "武具強化に必要な素材アイテムの個数です。"
+    },
+    {
+      "Field": "isDisableDispNum01",
+      "Name": "個数表示を無効化01",
+      "Description": "個数表示を無効化するか(強化ショップ用)"
+    },
+    {
+      "Field": "isDisableDispNum02",
+      "Name": "個数表示を無効化02",
+      "Description": "個数表示を無効化するか"
+    },
+    {
+      "Field": "isDisableDispNum03",
+      "Name": "個数表示を無効化03",
+      "Description": "個数表示を無効化するか"
+    },
+    {
+      "Field": "isDisableDispNum04",
+      "Name": "個数表示を無効化04",
+      "Description": "個数表示を無効化するか"
+    },
+    {
+      "Field": "isDisableDispNum05",
+      "Name": "個数表示を無効化05",
+      "Description": "個数表示を無効化するか"
+    },
+    {
+      "Field": "pad",
+      "Name": "パディング",
+      "Description": "パディングです。"
+    }
+  ]
+}

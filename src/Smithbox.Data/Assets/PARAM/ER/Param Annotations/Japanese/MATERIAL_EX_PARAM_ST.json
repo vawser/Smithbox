@@ -1,0 +1,48 @@
+{
+  "Param": "MATERIAL_EX_PARAM_ST",
+  "Type": "MATERIAL_EX_PARAM_ST",
+  "Name": "MATERIAL_EX_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "paramName",
+      "Name": "マテリアルパラメータ名",
+      "Description": "マテリアルのパラメータ名を設定する。最大31文字まで"
+    },
+    {
+      "Field": "materialId",
+      "Name": "対象マテリアルID",
+      "Description": "NPCパラ：常駐マテリアル拡張パラID用設定\u3000-1なら全マテリアル対象"
+    },
+    {
+      "Field": "materialParamValue0",
+      "Name": "上書き値1(R)",
+      "Description": "NPCパラ：常駐マテリアル拡張パラID用設定"
+    },
+    {
+      "Field": "materialParamValue1",
+      "Name": "上書き値2(G)",
+      "Description": "NPCパラ：常駐マテリアル拡張パラID用設定"
+    },
+    {
+      "Field": "materialParamValue2",
+      "Name": "上書き値3(B)",
+      "Description": "NPCパラ：常駐マテリアル拡張パラID用設定"
+    },
+    {
+      "Field": "materialParamValue3",
+      "Name": "上書き値4(A)",
+      "Description": "NPCパラ：常駐マテリアル拡張パラID用設定"
+    },
+    {
+      "Field": "materialParamValue4",
+      "Name": "上書き値5(I)",
+      "Description": "NPCパラ：常駐マテリアル拡張パラID用設定"
+    },
+    {
+      "Field": "pad",
+      "Name": "パディング",
+      "Description": "パディング"
+    }
+  ]
+}

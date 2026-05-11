@@ -1,0 +1,93 @@
+{
+  "Param": "KNOCKBACK_PARAM_ST",
+  "Type": "KNOCKBACK_PARAM_ST",
+  "Name": "KNOCKBACK_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "damage_No",
+      "Name": "ダメージアニメなし_ノックバック倍率",
+      "Description": "ダメージアニメなし_ノックバック倍率"
+    },
+    {
+      "Field": "damage_Min",
+      "Name": "極小ダメージ_ノックバック倍率",
+      "Description": "極小ダメージ_ノックバック倍率"
+    },
+    {
+      "Field": "damage_S",
+      "Name": "小ダメージ_ノックバック倍率",
+      "Description": "小ダメージ_ノックバック倍率"
+    },
+    {
+      "Field": "damage_M",
+      "Name": "中ダメージ_ノックバック倍率",
+      "Description": "中ダメージ_ノックバック倍率"
+    },
+    {
+      "Field": "damage_L",
+      "Name": "大ダメージ_ノックバック倍率",
+      "Description": "大ダメージ_ノックバック倍率"
+    },
+    {
+      "Field": "damage_Blow",
+      "Name": "吹っ飛びダメージ_ノックバック倍率",
+      "Description": "吹っ飛びダメージ_ノックバック倍率"
+    },
+    {
+      "Field": "guard_Min",
+      "Name": "ガード受け極小ダメージ_ノックバック倍率",
+      "Description": "ガード受け極小ダメージ_ノックバック倍率"
+    },
+    {
+      "Field": "guard_S",
+      "Name": "ガード受け小ダメージ_ノックバック倍率",
+      "Description": "ガード受け小ダメージ_ノックバック倍率"
+    },
+    {
+      "Field": "guard_M",
+      "Name": "ガード受け中ダメージ_ノックバック倍率",
+      "Description": "ガード受け中ダメージ_ノックバック倍率"
+    },
+    {
+      "Field": "guard_L",
+      "Name": "ガード受け大ダメージ_ノックバック倍率",
+      "Description": "ガード受け大ダメージ_ノックバック倍率"
+    },
+    {
+      "Field": "trunk_Brake",
+      "Name": "体幹ブレイクダメージ_ノックバック倍率",
+      "Description": "体幹ブレイクダメージ_ノックバック倍率"
+    },
+    {
+      "Field": "guard_Brake",
+      "Name": "ガードブレイクダメージ_ノックバック倍率",
+      "Description": "ガードブレイクダメージ_ノックバック倍率"
+    },
+    {
+      "Field": "dl1_Rate",
+      "Name": "DL1_ノックバック倍率",
+      "Description": "ダメージレベル１のダメージでの ノックバック倍率"
+    },
+    {
+      "Field": "dl2_Rate",
+      "Name": "DL2_ノックバック倍率",
+      "Description": "ダメージレベル１のダメージでの ノックバック倍率"
+    },
+    {
+      "Field": "dl1_Blade_Rate",
+      "Name": "DL1(ブレード用)_ノックバック倍率",
+      "Description": "ダメージレベル１のダメージでの ノックバック倍率"
+    },
+    {
+      "Field": "dl2_Blade_Rate",
+      "Name": "DL2(ブレード用)_ノックバック倍率",
+      "Description": "ダメージレベル１のダメージでの ノックバック倍率"
+    },
+    {
+      "Field": "pad",
+      "Name": "pading",
+      "Description": ""
+    }
+  ]
+}

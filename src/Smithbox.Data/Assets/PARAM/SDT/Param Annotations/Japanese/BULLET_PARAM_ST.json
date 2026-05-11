@@ -1,0 +1,593 @@
+{
+  "Param": "BULLET_PARAM_ST",
+  "Type": "BULLET_PARAM_ST",
+  "Name": "BULLET_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "atkId_Bullet",
+      "Name": "攻撃ID",
+      "Description": "攻撃パラメータのＩＤをそれぞれ登録する.→攻撃タイプ／攻撃材質／物理攻撃力／魔法攻撃力／スタミナ攻撃力／ノックバック距離."
+    },
+    {
+      "Field": "sfxId_Bullet",
+      "Name": "SFXID【弾】",
+      "Description": "SFX IDを入れる。"
+    },
+    {
+      "Field": "sfxId_Hit",
+      "Name": "SFXID【着弾】",
+      "Description": "着弾SFXID。-1は発生しない。"
+    },
+    {
+      "Field": "sfxId_Flick",
+      "Name": "SFXID【ガード/ジャスガ】",
+      "Description": "ガードもしくはジャスガ時SFXID。-1は発生しない。旧はじき時SFXID。"
+    },
+    {
+      "Field": "life",
+      "Name": "寿命[s]",
+      "Description": "飛び道具が存在し続けられる時間（-1なら無限）."
+    },
+    {
+      "Field": "dist",
+      "Name": "射程距離[m]",
+      "Description": "減衰が開始される距離（実際の飛距離ではない）."
+    },
+    {
+      "Field": "shootInterval",
+      "Name": "発射間隔[s]",
+      "Description": "飛び道具を何秒間隔で発射するかを指定."
+    },
+    {
+      "Field": "gravityInRange",
+      "Name": "射程距離内重力[m/s^2]",
+      "Description": "射程距離内での下向きにかかる重力."
+    },
+    {
+      "Field": "gravityOutRange",
+      "Name": "射程距離外重力[m/s^2]",
+      "Description": "減衰がはじまったときの下向きにかかる重力（ポトンと落ちる感じを表現."
+    },
+    {
+      "Field": "hormingStopRange",
+      "Name": "誘導停止距離[m]",
+      "Description": "誘導を停止するターゲットとの距離。誘導弾で当たり過ぎないようにするパラメータ。"
+    },
+    {
+      "Field": "initVellocity",
+      "Name": "初速[m/s]",
+      "Description": "ＳＦＸの初速度."
+    },
+    {
+      "Field": "accelInRange",
+      "Name": "射程距離内加速度[m/s^2]",
+      "Description": "ＳＦＸの射程内の加速度."
+    },
+    {
+      "Field": "accelOutRange",
+      "Name": "射程距離外加速度[m/s^2]",
+      "Description": "ＳＦＸが射程距離外に出たときの加速度."
+    },
+    {
+      "Field": "maxVellocity",
+      "Name": "最高速度[m/s]",
+      "Description": "最高速度."
+    },
+    {
+      "Field": "minVellocity",
+      "Name": "最低速度[m/s]",
+      "Description": "最低保証速度."
+    },
+    {
+      "Field": "accelTime",
+      "Name": "加速開始時間[s]",
+      "Description": "この時間までは、加速しない（ロケット弾みたいな魔法を撃つことができるようにしておく）."
+    },
+    {
+      "Field": "homingBeginDist",
+      "Name": "誘導開始距離[m]",
+      "Description": "何ｍ進んだ地点から誘導を開始するか."
+    },
+    {
+      "Field": "hitRadius",
+      "Name": "初期弾半径[m]",
+      "Description": "当たり球の半径を設定する."
+    },
+    {
+      "Field": "hitRadiusMax",
+      "Name": "最大弾半径[m]",
+      "Description": "あたり球の最大半径（－1の場合、初期半径と同じにする／デフォルト）"
+    },
+    {
+      "Field": "spreadTime",
+      "Name": "範囲拡散時間[s]",
+      "Description": "範囲半径が細大にまで広がる時間."
+    },
+    {
+      "Field": "expDelay",
+      "Name": "発動遅延[s]",
+      "Description": "着弾後、爆発までの時間（０の場合はすぐに爆発）."
+    },
+    {
+      "Field": "hormingOffsetRange",
+      "Name": "誘導ずらし量[m]",
+      "Description": "０だと正確。射撃時にXYZ各成分を、この量だけずらして狙うようにする。"
+    },
+    {
+      "Field": "dmgHitRecordLifeTime",
+      "Name": "ダメージヒット履歴の生存時間[s]",
+      "Description": "ダメージヒット履歴の生存時間[sec](<=0.0f：無期限)"
+    },
+    {
+      "Field": "externalForce",
+      "Name": "外力[m/s^2]",
+      "Description": "射撃時の方向にかかる外力.(Y軸は抜いている)"
+    },
+    {
+      "Field": "spEffectIDForShooter",
+      "Name": "射撃した人にかける特殊効果",
+      "Description": "射撃した人にかける特殊効果"
+    },
+    {
+      "Field": "autoSearchNPCThinkID",
+      "Name": "ファンネルNPC思考ID",
+      "Description": "ファンネルがターゲットの検索使用するパラメータ"
+    },
+    {
+      "Field": "HitBulletID",
+      "Name": "発生弾丸ID",
+      "Description": "弾丸パラメータから、新しく弾丸パラメータを発生させるときにＩＤを指定する"
+    },
+    {
+      "Field": "spEffectId0",
+      "Name": "特殊効果ID0",
+      "Description": "特殊効果パラメータのＩＤをそれぞれ登録する.→特殊効果全般."
+    },
+    {
+      "Field": "spEffectId1",
+      "Name": "特殊効果ID1",
+      "Description": "特殊効果パラメータのＩＤをそれぞれ登録する.→特殊効果全般."
+    },
+    {
+      "Field": "spEffectId2",
+      "Name": "特殊効果ID2",
+      "Description": "特殊効果パラメータのＩＤをそれぞれ登録する.→特殊効果全般."
+    },
+    {
+      "Field": "spEffectId3",
+      "Name": "特殊効果ID3",
+      "Description": "特殊効果パラメータのＩＤをそれぞれ登録する.→特殊効果全般."
+    },
+    {
+      "Field": "spEffectId4",
+      "Name": "特殊効果ID4",
+      "Description": "特殊効果パラメータのＩＤをそれぞれ登録する.→特殊効果全般."
+    },
+    {
+      "Field": "numShoot",
+      "Name": "発射数",
+      "Description": "一度に発射する飛び道具の数."
+    },
+    {
+      "Field": "homingAngle",
+      "Name": "誘導性能[deg/s]",
+      "Description": "1秒間に何度まで補正するか？."
+    },
+    {
+      "Field": "shootAngle",
+      "Name": "発射角度[deg]",
+      "Description": "飛び道具を前方何度に向かって発射するかを指定."
+    },
+    {
+      "Field": "shootAngleInterval",
+      "Name": "発射角度間隔[deg]",
+      "Description": "飛び道具を複数発射する場合、何度間隔で発射するかを指定.(Y軸)"
+    },
+    {
+      "Field": "shootAngleXInterval",
+      "Name": "発射仰角間隔[deg]",
+      "Description": "飛び道具を複数発射する場合、何度間隔で発射するかを指定.(X軸)"
+    },
+    {
+      "Field": "damageDamp",
+      "Name": "物理攻撃力減衰率[%/s]",
+      "Description": "減衰距離以降、1秒間に減少する補正値."
+    },
+    {
+      "Field": "spelDamageDamp",
+      "Name": "魔法攻撃力減衰率[%/s]",
+      "Description": "減衰距離以降、1秒間に減少する補正値."
+    },
+    {
+      "Field": "fireDamageDamp",
+      "Name": "炎攻撃力減衰率[%/s]",
+      "Description": "減衰距離以降、1秒間に減少する補正値."
+    },
+    {
+      "Field": "thunderDamageDamp",
+      "Name": "電撃攻撃力減衰率[%/s]",
+      "Description": "減衰距離以降、1秒間に減少する補正値."
+    },
+    {
+      "Field": "staminaDamp",
+      "Name": "スタミナダメージ減衰率[%/s]",
+      "Description": "減衰距離以降、1秒間に減少する補正値."
+    },
+    {
+      "Field": "knockbackDamp",
+      "Name": "ノックバック減衰率[%/s]",
+      "Description": "減衰距離以降、1秒間に減少する補正値."
+    },
+    {
+      "Field": "shootAngleXZ",
+      "Name": "発射仰角[deg]",
+      "Description": "水平方向からの追加仰角。"
+    },
+    {
+      "Field": "lockShootLimitAng",
+      "Name": "ロック方向制限角度",
+      "Description": "ロック方向を向かせるときの制限角度"
+    },
+    {
+      "Field": "isPenetrate",
+      "Name": "キャラ・OBJを貫通？",
+      "Description": "ＰＣ、ＮＰＣ、ＯＢＪに当たったときに、寿命まで消滅しないかどうか？を設定"
+    },
+    {
+      "Field": "prevVelocityDirRate",
+      "Name": "前回の移動方向加算率[%]",
+      "Description": "滑る弾が壁にヒット時に前回の移動方向を今の方向へ加算する比率"
+    },
+    {
+      "Field": "atkAttribute",
+      "Name": "物理属性",
+      "Description": "弾丸に設定する物理属性を設定"
+    },
+    {
+      "Field": "spAttribute",
+      "Name": "特殊属性",
+      "Description": "弾丸に設定する特殊属性を設定"
+    },
+    {
+      "Field": "Material_AttackType",
+      "Name": "SFX材質 攻撃タイプ",
+      "Description": "攻撃属性が何かを指定する"
+    },
+    {
+      "Field": "Material_AttackMaterial_forSfx",
+      "Name": "攻撃材質[SFX]",
+      "Description": "攻撃時のSFXに使用"
+    },
+    {
+      "Field": "Material_Size",
+      "Name": "SFX材質 サイズ",
+      "Description": "攻撃時のSFX/ＳＥに使用（予備／デフォルト0）"
+    },
+    {
+      "Field": "launchConditionType",
+      "Name": "発生条件",
+      "Description": "着弾・寿命消滅時に弾を発生させるか判定する条件を指定"
+    },
+    {
+      "Field": "FollowType",
+      "Name": "追従タイプ",
+      "Description": "追従タイプ。「追従しない」がデフォルト。"
+    },
+    {
+      "Field": "pad7",
+      "Name": "パディング7",
+      "Description": "pad7"
+    },
+    {
+      "Field": "isAttackSFX",
+      "Name": "刺さったままになるか",
+      "Description": "矢などの弾丸が、キャラクターに刺さったままになるかどうかを設定する"
+    },
+    {
+      "Field": "isEndlessHit",
+      "Name": "あたり続けるか？",
+      "Description": "あたり続けるか？"
+    },
+    {
+      "Field": "isPenetrateMap",
+      "Name": "マップを貫通？",
+      "Description": "マップを貫通するか？"
+    },
+    {
+      "Field": "isHitBothTeam",
+      "Name": "敵味方共にあたる？",
+      "Description": "敵味方共にあたるか？（徘徊ゴーストにはあたらない）"
+    },
+    {
+      "Field": "isUseSharedHitList",
+      "Name": "ヒットリストを共有するか？",
+      "Description": "ヒットリストを共有するかを指定"
+    },
+    {
+      "Field": "isUseMultiDmyPolyIfPlace",
+      "Name": "複数のダミポリを使うか？",
+      "Description": "弾配置時に同一ダミポリIDを複数使うか？"
+    },
+    {
+      "Field": "isSendShootInterrupt",
+      "Name": "AIへの割り込み通知",
+      "Description": "AIへ割り込み通知を行うか（INTERUPT_FLAG_Shoot）"
+    },
+    {
+      "Field": "isHowitzer",
+      "Name": "曲射補正の適用",
+      "Description": "曲射補正の適用"
+    },
+    {
+      "Field": "isHitForceMagic",
+      "Name": "フォース魔法に当たるか",
+      "Description": "フォース魔法に当たるか"
+    },
+    {
+      "Field": "isIgnoreSfxIfHitWater",
+      "Name": "水面衝突時のエフェクト無視するか",
+      "Description": "水面に当たった場合はエフェクト無視するか"
+    },
+    {
+      "Field": "isIgnoreMoveStateIfHitWater",
+      "Name": "水面衝突時の状態遷移を無視するか",
+      "Description": "水に当たっても状態遷移を無視するか"
+    },
+    {
+      "Field": "isHitDarkForceMagic",
+      "Name": "闇フォース魔法に当たるか",
+      "Description": "闇フォース魔法に当たるか"
+    },
+    {
+      "Field": "dmgCalcSide",
+      "Name": "ダメージ計算サイド",
+      "Description": "ダメージ計算サイド。\u3000マルチプレイ時に、ダメージの計算を、与えた側 or 受けた側を切り替えるためのもの。"
+    },
+    {
+      "Field": "isEnableAutoHoming",
+      "Name": "弾丸自動捕捉許可",
+      "Description": "非ロックオン時に自動追従するか"
+    },
+    {
+      "Field": "isSyncBulletCulcDumypolyPos",
+      "Name": "同期弾丸の場合、ダミポリ位置での再計算を行うか",
+      "Description": "同期生成された弾丸の場合、弾丸生成時にダミポリ位置による姿勢の再計算を行わず、同期時のエミッタ姿勢を使用する。"
+    },
+    {
+      "Field": "isIntervalCreateTargetLockOn",
+      "Name": "間隔指定弾丸の場合ターゲットに向けて飛ばすか",
+      "Description": "一定間隔で作成される弾丸の場合ターゲットに向けて飛ばすか。OFFなら親姿勢の方に飛ばす。"
+    },
+    {
+      "Field": "isInheritSfxToChild",
+      "Name": "子弾にSFXを引き継ぐか",
+      "Description": "親弾のSFXを引き継ぐ。子弾に設定されたSFXIDは無視する "
+    },
+    {
+      "Field": "darkDamageDamp",
+      "Name": "闇攻撃力減衰率[%/s]",
+      "Description": "減衰距離以降、1秒間に減少する補正値."
+    },
+    {
+      "Field": "bulletSfxDeleteType_byHit",
+      "Name": "着弾時の弾丸SFX消滅タイプ",
+      "Description": "着弾or弾き時の弾丸SFX消滅タイプ"
+    },
+    {
+      "Field": "bulletSfxDeleteType_byLifeDead",
+      "Name": "寿命時の弾丸SFX消滅タイプ",
+      "Description": "寿命時の弾丸SFX消滅タイプ"
+    },
+    {
+      "Field": "targetYOffsetRange",
+      "Name": "目標上下オフセット[m]",
+      "Description": "着弾位置の上下オフセット。発射時とホーミング中のターゲット位置を上下にずらす。（-n～n）"
+    },
+    {
+      "Field": "shootAngleYMaxRandom",
+      "Name": "発射角度乱数[deg]",
+      "Description": "発射角度乱数の上限（0～360）"
+    },
+    {
+      "Field": "shootAngleXMaxRandom",
+      "Name": "発射仰角乱数[deg]",
+      "Description": "発射仰角乱数の上限（0～360）"
+    },
+    {
+      "Field": "intervalCreateBulletId",
+      "Name": "間隔指定発生弾丸ID",
+      "Description": "一定間隔で弾丸を作る時に使う、弾丸のID"
+    },
+    {
+      "Field": "intervalCreateTimeMin",
+      "Name": "発生間隔：最小時間[s]",
+      "Description": "一定間隔で弾丸を作る間隔の最小（0～n）"
+    },
+    {
+      "Field": "intervalCreateTimeMax",
+      "Name": "発生間隔：最大時間[s]",
+      "Description": "一定間隔で弾丸を作る間隔の最大（0～n 0なら機能無効）"
+    },
+    {
+      "Field": "predictionShootObserveTime",
+      "Name": "予測射撃の速度観測時間[s]",
+      "Description": "予測射撃機能の平均速度観測時間（0～4 0なら機能無効）"
+    },
+    {
+      "Field": "intervalCreateWaitTime",
+      "Name": "間隔指定発生開始待ち時間[s]",
+      "Description": "一定間隔で弾丸を作り始めるまでの待ち時間"
+    },
+    {
+      "Field": "sfxPostureType",
+      "Name": "弾丸から発生したSFXの姿勢のタイプ",
+      "Description": "弾丸から作成されたSFXまたは子弾丸の初期姿勢を設定する"
+    },
+    {
+      "Field": "createLimitGroupId",
+      "Name": "作成制限グループId",
+      "Description": "0なら未使用。同一のグループIdに設定された弾丸を作成するときに上限に達していたらその弾丸を作成しない。（ネットワークで同期作成された弾は関係なく出る）"
+    },
+    {
+      "Field": "guardRangeType",
+      "Name": "ガード判定位置",
+      "Description": "弾丸をガードした時、どことガード成功判定位置をとるか"
+    },
+    {
+      "Field": "isInheritSpeedToChild",
+      "Name": "子弾に速度を引き継ぐか",
+      "Description": "子弾に差し替わるタイミングの速度を引き継ぐ。子弾に設定された速度は無視する"
+    },
+    {
+      "Field": "isDisableHitSfx_byChrAndObj",
+      "Name": "キャラ・OBJヒット時着弾SFXを再生しない",
+      "Description": "ONの時、キャラクター/オブジェクトに着弾しても弾丸パラメータの「着弾SFX」を再生しない"
+    },
+    {
+      "Field": "isCheckWall_byCenterRay",
+      "Name": "発射位置壁めり込み判定をキャラ中心を平行に結ぶレイを飛ばして行う",
+      "Description": "弾丸発射時めり込み判定に不具合があったので、それのエラーハンドリング用。SEQ23101 【自キャラ】ロックオン位置の高いキャラに密着してソウルの短矢、強いソウルの短矢を使うと弾丸の方向が反転する"
+    },
+    {
+      "Field": "isHitOtherBulletForceEraseA",
+      "Name": "他弾強制消去Aに当たるか",
+      "Description": "他弾強制消去Aに当たるか"
+    },
+    {
+      "Field": "isUseBulletWallFilter",
+      "Name": "原始魔法アタリを使うか？",
+      "Description": "原始魔法アタリを使うか？原始魔法専用アタリに当たるフィルタに変わります。"
+    },
+    {
+      "Field": "isUseParentAngForlockShootLimitAng",
+      "Name": "親弾丸の向きを使って制限角度を計算する",
+      "Description": "ロック方向を向かせるときの制限角度の基準方向を親弾丸の向きにする"
+    },
+    {
+      "Field": "isNonDependenceMagicForFunnleNum",
+      "Name": "PCのファンネル数が理力で変動しない",
+      "Description": "PCのファンネル数が理力で変動しない。発射数になる"
+    },
+    {
+      "Field": "pad1",
+      "Name": "パディング2",
+      "Description": "pad3"
+    },
+    {
+      "Field": "randomCreateRadius",
+      "Name": "ランダム発生時の発生範囲(半径)[m]",
+      "Description": "発生源タイプがランダムな位置に発生する設定の場合に利用される、弾丸の発生範囲。"
+    },
+    {
+      "Field": "generateObjId",
+      "Name": "動的生成するオブジェクトID ",
+      "Description": "動的に発生させるオブジェクトのID。エリア番号とオブジェ番号であらわされるオブジェクトIDを設定してください。発生タイミングは「オブジェクトの動的生成タイミング」で指定してください。"
+    },
+    {
+      "Field": "lifeRandomRange",
+      "Name": "寿命乱数[s]",
+      "Description": "「寿命[s]」に対して、設定した時間の振れ幅を持つ乱数秒を加える"
+    },
+    {
+      "Field": "Material_AttackMaterial_forSe",
+      "Name": "攻撃材質[SE]",
+      "Description": "攻撃時のSEに使用"
+    },
+    {
+      "Field": "staminaPhysicsAttribute",
+      "Name": "スタミナ物理属性",
+      "Description": "防御者のどのスタミナダメージ倍率を参照するか決める。例) 斬撃に設定すると、防御側の斬撃スタミナダメージ倍率を参照する。"
+    },
+    {
+      "Field": "attachEffectType",
+      "Name": "アタッチ効果タイプ",
+      "Description": "アタッチする効果タイプ"
+    },
+    {
+      "Field": "objGenerateTiming",
+      "Name": "オブジェクトの動的生成タイミング",
+      "Description": "「動的生成するオブジェクトID」で指定したオブジェクトを生成するタイミング"
+    },
+    {
+      "Field": "sfxId_ForceErase",
+      "Name": "SFXID【強制消去時】",
+      "Description": "強制消去時SFXID。-1は発生しない。"
+    },
+    {
+      "Field": "bulletSfxDeleteType_byForceErase",
+      "Name": "強制消去時の弾丸SFX消滅タイプ",
+      "Description": "強制消去時の弾丸SFX消滅タイプ"
+    },
+    {
+      "Field": "pad3",
+      "Name": "パディング3",
+      "Description": "pad3"
+    },
+    {
+      "Field": "homingAngleX",
+      "Name": "誘導性能（X軸個別）[deg/s]",
+      "Description": "誘導性能のX軸成分だけを変えます。-1で変えません"
+    },
+    {
+      "Field": "shootYOffsetRange",
+      "Name": "発射位置上下オフセット[m]",
+      "Description": "発射時の高さをオフセットします。発生源タイプが「ダミポリから上下オフセット」の時にしか効きません"
+    },
+    {
+      "Field": "generationMaxDistWhenOwner",
+      "Name": "発生限界距離[m] ",
+      "Description": "弾丸の発生位置が、オーナーの位置よりこの距離以上離れていると出さない。（0は無効値） "
+    },
+    {
+      "Field": "elevationMinAngle",
+      "Name": "曲射補正用_最低発射仰角[deg] ",
+      "Description": "曲射補正用_最低発射仰角[deg] "
+    },
+    {
+      "Field": "elevationMaxAngle",
+      "Name": "曲射補正用_最高発射仰角[deg] ",
+      "Description": "曲射補正用_最高発射仰角[deg] "
+    },
+    {
+      "Field": "initMinVellocity",
+      "Name": "曲射補正用_最低初速[m/s] ",
+      "Description": "曲射補正用_最低初速[m/s] "
+    },
+    {
+      "Field": "initMaxVellocity",
+      "Name": "曲射補正用_最高初速[m/s] ",
+      "Description": "曲射補正用_最高初速[m/s] "
+    },
+    {
+      "Field": "isHitOtherBulletForceEraseB",
+      "Name": "他弾強制消去Bに当たるか",
+      "Description": "他弾強制消去Bに当たるか"
+    },
+    {
+      "Field": "pad4",
+      "Name": "パディング4",
+      "Description": ""
+    },
+    {
+      "Field": "pad5",
+      "Name": "パディング5",
+      "Description": "pad5"
+    },
+    {
+      "Field": "EmittePosType",
+      "Name": "発生源タイプ",
+      "Description": "発生源タイプ。ダミポリからが通常。（メテオを判定するために導入）"
+    },
+    {
+      "Field": "disappearDistanceToTarget",
+      "Name": "接近消滅距離[m]",
+      "Description": "弾丸が誘導対象から指定した値(m)まで接近したら弾丸を消滅させる。（0は無効値） "
+    },
+    {
+      "Field": "pad6",
+      "Name": "パディング6",
+      "Description": "pad6"
+    }
+  ]
+}

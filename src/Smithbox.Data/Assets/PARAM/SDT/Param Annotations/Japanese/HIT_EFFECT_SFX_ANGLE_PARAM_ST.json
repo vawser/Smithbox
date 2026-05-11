@@ -1,0 +1,93 @@
+{
+  "Param": "HIT_EFFECT_SFX_ANGLE_PARAM_ST",
+  "Type": "HIT_EFFECT_SFX_ANGLE_PARAM_ST",
+  "Name": "HIT_EFFECT_SFX_ANGLE_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "XAxisAngle_AttackDirUpper",
+      "Name": "X軸回転量：攻撃方向上",
+      "Description": "X軸回転量：攻撃方向上"
+    },
+    {
+      "Field": "YAxisAngle_AttackDirUpper",
+      "Name": "Y軸回転量：攻撃方向上",
+      "Description": "Y軸回転量：攻撃方向上"
+    },
+    {
+      "Field": "ZAxisAngle_AttackDirUpper",
+      "Name": "Z軸回転量：攻撃方向上",
+      "Description": "Z軸回転量：攻撃方向上"
+    },
+    {
+      "Field": "XAxisAngle_AttackDirBottom",
+      "Name": "X軸回転量：攻撃方向下",
+      "Description": "X軸回転量：攻撃方向下"
+    },
+    {
+      "Field": "YAxisAngle_AttackDirBottom",
+      "Name": "Y軸回転量：攻撃方向下",
+      "Description": "Y軸回転量：攻撃方向下"
+    },
+    {
+      "Field": "ZAxisAngle_AttackDirBottom",
+      "Name": "Z軸回転量：攻撃方向下",
+      "Description": "Z軸回転量：攻撃方向下"
+    },
+    {
+      "Field": "XAxisAngle_AttackDirLeft",
+      "Name": "X軸回転量：攻撃方向左",
+      "Description": "X軸回転量：攻撃方向左"
+    },
+    {
+      "Field": "YAxisAngle_AttackDirLeft",
+      "Name": "Y軸回転量：攻撃方向左",
+      "Description": "Y軸回転量：攻撃方向左"
+    },
+    {
+      "Field": "ZAxisAngle_AttackDirLeft",
+      "Name": "Z軸回転量：攻撃方向左",
+      "Description": "Z軸回転量：攻撃方向左"
+    },
+    {
+      "Field": "XAxisAngle_AttackDirRight",
+      "Name": "X軸回転量：攻撃方向右",
+      "Description": "X軸回転量：攻撃方向右"
+    },
+    {
+      "Field": "YAxisAngle_AttackDirRight",
+      "Name": "Y軸回転量：攻撃方向右",
+      "Description": "Y軸回転量：攻撃方向右"
+    },
+    {
+      "Field": "ZAxisAngle_AttackDirRight",
+      "Name": "Z軸回転量：攻撃方向右",
+      "Description": "Z軸回転量：攻撃方向右"
+    },
+    {
+      "Field": "atkDirUpper",
+      "Name": "概念差し替え：攻撃方向上 ",
+      "Description": "攻撃方向[SFX]が上のとき、この概念を参照する"
+    },
+    {
+      "Field": "atkDirBottom",
+      "Name": "概念差し替え：攻撃方向下",
+      "Description": "攻撃方向[SFX]が下のとき、この概念を参照する"
+    },
+    {
+      "Field": "atkDirLeft",
+      "Name": "概念差し替え：攻撃方向左",
+      "Description": "攻撃方向[SFX]が左のとき、この概念を参照する"
+    },
+    {
+      "Field": "atkDirRight",
+      "Name": "概念差し替え：攻撃方向右",
+      "Description": "攻撃方向[SFX]が右のとき、この概念を参照する"
+    },
+    {
+      "Field": "reserve",
+      "Name": "予約",
+      "Description": ""
+    }
+  ]
+}

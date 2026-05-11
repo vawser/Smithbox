@@ -1,0 +1,123 @@
+{
+  "Param": "REINFORCE_PARAM_PROTECTOR_ST",
+  "Type": "REINFORCE_PARAM_PROTECTOR_ST",
+  "Name": "REINFORCE_PARAM_PROTECTOR_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "NT版出力から外すか",
+      "Description": "NT版から除外するか、除外するものに○をつける"
+    },
+    {
+      "Field": "disableParam_Product",
+      "Name": "製品版出力から外すか",
+      "Description": "製品版から除外するか、除外するものに○をつける"
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "パッケージ出力用リザーブ1",
+      "Description": "パッケージ出力用リザーブ1"
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "パッケージ出力用リザーブ2",
+      "Description": "パッケージ出力用リザーブ2"
+    },
+    {
+      "Field": "physicsDefRate",
+      "Name": "実弾防御力",
+      "Description": "実弾防御力の補正値"
+    },
+    {
+      "Field": "magicDefRate",
+      "Name": "EN防御力",
+      "Description": "EN防御力の補正値"
+    },
+    {
+      "Field": "fireDefRate",
+      "Name": "炎防御力",
+      "Description": "炎防御力の補正値"
+    },
+    {
+      "Field": "thunderDefRate",
+      "Name": "電撃防御力",
+      "Description": "電撃防御力の補正値"
+    },
+    {
+      "Field": "slashDefRate",
+      "Name": "斬撃防御力",
+      "Description": "斬撃防御力の補正値"
+    },
+    {
+      "Field": "blowDefRate",
+      "Name": "打撃防御力",
+      "Description": "打撃防御力の補正値"
+    },
+    {
+      "Field": "thrustDefRate",
+      "Name": "刺突防御力",
+      "Description": "刺突防御力の補正値"
+    },
+    {
+      "Field": "resistBurnRate",
+      "Name": "炎上耐性",
+      "Description": "炎上耐性の補正値"
+    },
+    {
+      "Field": "resistStunRate",
+      "Name": "スタン耐性",
+      "Description": "スタン耐性の補正値"
+    },
+    {
+      "Field": "resistHighPlasmaRate",
+      "Name": "強プラズマ耐性",
+      "Description": "強プラズマ耐性の補正値"
+    },
+    {
+      "Field": "resistCurseRate",
+      "Name": "呪耐性",
+      "Description": "呪耐性の補正値"
+    },
+    {
+      "Field": "residentSpEffectId1",
+      "Name": "常駐特殊効果ID1",
+      "Description": "常駐特殊効果ID1の加算補正値"
+    },
+    {
+      "Field": "residentSpEffectId2",
+      "Name": "常駐特殊効果ID2",
+      "Description": "常駐特殊効果ID2の加算補正値"
+    },
+    {
+      "Field": "residentSpEffectId3",
+      "Name": "常駐特殊効果ID3",
+      "Description": "常駐特殊効果ID3の加算補正値"
+    },
+    {
+      "Field": "materialSetId",
+      "Name": "素材ID加算値",
+      "Description": "素材パラメータIDの加算補正値"
+    },
+    {
+      "Field": "darkDefRate",
+      "Name": "闇防御力",
+      "Description": "闇防御力の補正値"
+    },
+    {
+      "Field": "resistDepletedUraniumToxicRate",
+      "Name": "劣化ウラン毒耐性",
+      "Description": "劣化ウラン毒耐性の補正値"
+    },
+    {
+      "Field": "ApRate",
+      "Name": "AP",
+      "Description": "AP の補正値"
+    },
+    {
+      "Field": "pad",
+      "Name": "pading",
+      "Description": ""
+    }
+  ]
+}

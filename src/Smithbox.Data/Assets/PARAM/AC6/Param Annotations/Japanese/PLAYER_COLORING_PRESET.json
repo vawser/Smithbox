@@ -1,0 +1,1688 @@
+{
+  "Param": "PLAYER_COLORING_PRESET",
+  "Type": "PLAYER_COLORING_PRESET",
+  "Name": "PLAYER_COLORING_PRESET",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "slot0_PatternID",
+      "Name": "0_PatternID",
+      "Description": ""
+    },
+    {
+      "Field": "slot0_MaterialProperty_0",
+      "Name": "0_MaterialProperty_0",
+      "Description": ""
+    },
+    {
+      "Field": "slot0_MaterialProperty_1",
+      "Name": "0_MaterialProperty_1",
+      "Description": ""
+    },
+    {
+      "Field": "slot0_reserved_",
+      "Name": "0_reserved_[5]",
+      "Description": ""
+    },
+    {
+      "Field": "slot0_BaseR",
+      "Name": "0_BaseR",
+      "Description": ""
+    },
+    {
+      "Field": "slot0_BaseG",
+      "Name": "0_BaseG",
+      "Description": ""
+    },
+    {
+      "Field": "slot0_BaseB",
+      "Name": "0_BaseB",
+      "Description": ""
+    },
+    {
+      "Field": "slot0_BaseA",
+      "Name": "0_BaseA",
+      "Description": ""
+    },
+    {
+      "Field": "slot0_SubR",
+      "Name": "0_SubR",
+      "Description": ""
+    },
+    {
+      "Field": "slot0_SubG",
+      "Name": "0_SubG",
+      "Description": ""
+    },
+    {
+      "Field": "slot0_SubB",
+      "Name": "0_SubB",
+      "Description": ""
+    },
+    {
+      "Field": "slot0_SubA",
+      "Name": "0_SubA",
+      "Description": ""
+    },
+    {
+      "Field": "slot0_SupportR",
+      "Name": "0_SupportR",
+      "Description": ""
+    },
+    {
+      "Field": "slot0_SupportG",
+      "Name": "0_SupportG",
+      "Description": ""
+    },
+    {
+      "Field": "slot0_SupportB",
+      "Name": "0_SupportB",
+      "Description": ""
+    },
+    {
+      "Field": "slot0_SupportA",
+      "Name": "0_SupportA",
+      "Description": ""
+    },
+    {
+      "Field": "slot0_OptionalR",
+      "Name": "0_OptionalR",
+      "Description": ""
+    },
+    {
+      "Field": "slot0_OptionalG",
+      "Name": "0_OptionalG",
+      "Description": ""
+    },
+    {
+      "Field": "slot0_OptionalB",
+      "Name": "0_OptionalB",
+      "Description": ""
+    },
+    {
+      "Field": "slot0_OptionalA",
+      "Name": "0_OptionalA",
+      "Description": ""
+    },
+    {
+      "Field": "slot0_DeviceR",
+      "Name": "0_DeviceR",
+      "Description": ""
+    },
+    {
+      "Field": "slot0_DeviceG",
+      "Name": "0_DeviceG",
+      "Description": ""
+    },
+    {
+      "Field": "slot0_DeviceB",
+      "Name": "0_DeviceB",
+      "Description": ""
+    },
+    {
+      "Field": "slot0_DeviceA",
+      "Name": "0_DeviceA",
+      "Description": ""
+    },
+    {
+      "Field": "slot1_PatternID",
+      "Name": "1_PatternID",
+      "Description": ""
+    },
+    {
+      "Field": "slot1_MaterialProperty_0",
+      "Name": "1_MaterialProperty_0",
+      "Description": ""
+    },
+    {
+      "Field": "slot1_MaterialProperty_1",
+      "Name": "1_MaterialProperty_1",
+      "Description": ""
+    },
+    {
+      "Field": "slot1_reserved_",
+      "Name": "1_reserved_[5]",
+      "Description": ""
+    },
+    {
+      "Field": "slot1_BaseR",
+      "Name": "1_BaseR",
+      "Description": ""
+    },
+    {
+      "Field": "slot1_BaseG",
+      "Name": "1_BaseG",
+      "Description": ""
+    },
+    {
+      "Field": "slot1_BaseB",
+      "Name": "1_BaseB",
+      "Description": ""
+    },
+    {
+      "Field": "slot1_BaseA",
+      "Name": "1_BaseA",
+      "Description": ""
+    },
+    {
+      "Field": "slot1_SubR",
+      "Name": "1_SubR",
+      "Description": ""
+    },
+    {
+      "Field": "slot1_SubG",
+      "Name": "1_SubG",
+      "Description": ""
+    },
+    {
+      "Field": "slot1_SubB",
+      "Name": "1_SubB",
+      "Description": ""
+    },
+    {
+      "Field": "slot1_SubA",
+      "Name": "1_SubA",
+      "Description": ""
+    },
+    {
+      "Field": "slot1_SupportR",
+      "Name": "1_SupportR",
+      "Description": ""
+    },
+    {
+      "Field": "slot1_SupportG",
+      "Name": "1_SupportG",
+      "Description": ""
+    },
+    {
+      "Field": "slot1_SupportB",
+      "Name": "1_SupportB",
+      "Description": ""
+    },
+    {
+      "Field": "slot1_SupportA",
+      "Name": "1_SupportA",
+      "Description": ""
+    },
+    {
+      "Field": "slot1_OptionalR",
+      "Name": "1_OptionalR",
+      "Description": ""
+    },
+    {
+      "Field": "slot1_OptionalG",
+      "Name": "1_OptionalG",
+      "Description": ""
+    },
+    {
+      "Field": "slot1_OptionalB",
+      "Name": "1_OptionalB",
+      "Description": ""
+    },
+    {
+      "Field": "slot1_OptionalA",
+      "Name": "1_OptionalA",
+      "Description": ""
+    },
+    {
+      "Field": "slot1_DeviceR",
+      "Name": "1_DeviceR",
+      "Description": ""
+    },
+    {
+      "Field": "slot1_DeviceG",
+      "Name": "1_DeviceG",
+      "Description": ""
+    },
+    {
+      "Field": "slot1_DeviceB",
+      "Name": "1_DeviceB",
+      "Description": ""
+    },
+    {
+      "Field": "slot1_DeviceA",
+      "Name": "1_DeviceA",
+      "Description": ""
+    },
+    {
+      "Field": "slot2_PatternID",
+      "Name": "2_PatternID",
+      "Description": ""
+    },
+    {
+      "Field": "slot2_MaterialProperty_0",
+      "Name": "2_MaterialProperty_0",
+      "Description": ""
+    },
+    {
+      "Field": "slot2_MaterialProperty_1",
+      "Name": "2_MaterialProperty_1",
+      "Description": ""
+    },
+    {
+      "Field": "slot2_reserved_",
+      "Name": "2_reserved_[5]",
+      "Description": ""
+    },
+    {
+      "Field": "slot2_BaseR",
+      "Name": "2_BaseR",
+      "Description": ""
+    },
+    {
+      "Field": "slot2_BaseG",
+      "Name": "2_BaseG",
+      "Description": ""
+    },
+    {
+      "Field": "slot2_BaseB",
+      "Name": "2_BaseB",
+      "Description": ""
+    },
+    {
+      "Field": "slot2_BaseA",
+      "Name": "2_BaseA",
+      "Description": ""
+    },
+    {
+      "Field": "slot2_SubR",
+      "Name": "2_SubR",
+      "Description": ""
+    },
+    {
+      "Field": "slot2_SubG",
+      "Name": "2_SubG",
+      "Description": ""
+    },
+    {
+      "Field": "slot2_SubB",
+      "Name": "2_SubB",
+      "Description": ""
+    },
+    {
+      "Field": "slot2_SubA",
+      "Name": "2_SubA",
+      "Description": ""
+    },
+    {
+      "Field": "slot2_SupportR",
+      "Name": "2_SupportR",
+      "Description": ""
+    },
+    {
+      "Field": "slot2_SupportG",
+      "Name": "2_SupportG",
+      "Description": ""
+    },
+    {
+      "Field": "slot2_SupportB",
+      "Name": "2_SupportB",
+      "Description": ""
+    },
+    {
+      "Field": "slot2_SupportA",
+      "Name": "2_SupportA",
+      "Description": ""
+    },
+    {
+      "Field": "slot2_OptionalR",
+      "Name": "2_OptionalR",
+      "Description": ""
+    },
+    {
+      "Field": "slot2_OptionalG",
+      "Name": "2_OptionalG",
+      "Description": ""
+    },
+    {
+      "Field": "slot2_OptionalB",
+      "Name": "2_OptionalB",
+      "Description": ""
+    },
+    {
+      "Field": "slot2_OptionalA",
+      "Name": "2_OptionalA",
+      "Description": ""
+    },
+    {
+      "Field": "slot2_DeviceR",
+      "Name": "2_DeviceR",
+      "Description": ""
+    },
+    {
+      "Field": "slot2_DeviceG",
+      "Name": "2_DeviceG",
+      "Description": ""
+    },
+    {
+      "Field": "slot2_DeviceB",
+      "Name": "2_DeviceB",
+      "Description": ""
+    },
+    {
+      "Field": "slot2_DeviceA",
+      "Name": "2_DeviceA",
+      "Description": ""
+    },
+    {
+      "Field": "slot3_PatternID",
+      "Name": "3_PatternID",
+      "Description": ""
+    },
+    {
+      "Field": "slot3_MaterialProperty_0",
+      "Name": "3_MaterialProperty_0",
+      "Description": ""
+    },
+    {
+      "Field": "slot3_MaterialProperty_1",
+      "Name": "3_MaterialProperty_1",
+      "Description": ""
+    },
+    {
+      "Field": "slot3_reserved_",
+      "Name": "3_reserved_[5]",
+      "Description": ""
+    },
+    {
+      "Field": "slot3_BaseR",
+      "Name": "3_BaseR",
+      "Description": ""
+    },
+    {
+      "Field": "slot3_BaseG",
+      "Name": "3_BaseG",
+      "Description": ""
+    },
+    {
+      "Field": "slot3_BaseB",
+      "Name": "3_BaseB",
+      "Description": ""
+    },
+    {
+      "Field": "slot3_BaseA",
+      "Name": "3_BaseA",
+      "Description": ""
+    },
+    {
+      "Field": "slot3_SubR",
+      "Name": "3_SubR",
+      "Description": ""
+    },
+    {
+      "Field": "slot3_SubG",
+      "Name": "3_SubG",
+      "Description": ""
+    },
+    {
+      "Field": "slot3_SubB",
+      "Name": "3_SubB",
+      "Description": ""
+    },
+    {
+      "Field": "slot3_SubA",
+      "Name": "3_SubA",
+      "Description": ""
+    },
+    {
+      "Field": "slot3_SupportR",
+      "Name": "3_SupportR",
+      "Description": ""
+    },
+    {
+      "Field": "slot3_SupportG",
+      "Name": "3_SupportG",
+      "Description": ""
+    },
+    {
+      "Field": "slot3_SupportB",
+      "Name": "3_SupportB",
+      "Description": ""
+    },
+    {
+      "Field": "slot3_SupportA",
+      "Name": "3_SupportA",
+      "Description": ""
+    },
+    {
+      "Field": "slot3_OptionalR",
+      "Name": "3_OptionalR",
+      "Description": ""
+    },
+    {
+      "Field": "slot3_OptionalG",
+      "Name": "3_OptionalG",
+      "Description": ""
+    },
+    {
+      "Field": "slot3_OptionalB",
+      "Name": "3_OptionalB",
+      "Description": ""
+    },
+    {
+      "Field": "slot3_OptionalA",
+      "Name": "3_OptionalA",
+      "Description": ""
+    },
+    {
+      "Field": "slot3_DeviceR",
+      "Name": "3_DeviceR",
+      "Description": ""
+    },
+    {
+      "Field": "slot3_DeviceG",
+      "Name": "3_DeviceG",
+      "Description": ""
+    },
+    {
+      "Field": "slot3_DeviceB",
+      "Name": "3_DeviceB",
+      "Description": ""
+    },
+    {
+      "Field": "slot3_DeviceA",
+      "Name": "3_DeviceA",
+      "Description": ""
+    },
+    {
+      "Field": "slot4_PatternID",
+      "Name": "4_PatternID",
+      "Description": ""
+    },
+    {
+      "Field": "slot4_MaterialProperty_0",
+      "Name": "4_MaterialProperty_0",
+      "Description": ""
+    },
+    {
+      "Field": "slot4_MaterialProperty_1",
+      "Name": "4_MaterialProperty_1",
+      "Description": ""
+    },
+    {
+      "Field": "slot4_reserved_",
+      "Name": "4_reserved_[5]",
+      "Description": ""
+    },
+    {
+      "Field": "slot4_BaseR",
+      "Name": "4_BaseR",
+      "Description": ""
+    },
+    {
+      "Field": "slot4_BaseG",
+      "Name": "4_BaseG",
+      "Description": ""
+    },
+    {
+      "Field": "slot4_BaseB",
+      "Name": "4_BaseB",
+      "Description": ""
+    },
+    {
+      "Field": "slot4_BaseA",
+      "Name": "4_BaseA",
+      "Description": ""
+    },
+    {
+      "Field": "slot4_SubR",
+      "Name": "4_SubR",
+      "Description": ""
+    },
+    {
+      "Field": "slot4_SubG",
+      "Name": "4_SubG",
+      "Description": ""
+    },
+    {
+      "Field": "slot4_SubB",
+      "Name": "4_SubB",
+      "Description": ""
+    },
+    {
+      "Field": "slot4_SubA",
+      "Name": "4_SubA",
+      "Description": ""
+    },
+    {
+      "Field": "slot4_SupportR",
+      "Name": "4_SupportR",
+      "Description": ""
+    },
+    {
+      "Field": "slot4_SupportG",
+      "Name": "4_SupportG",
+      "Description": ""
+    },
+    {
+      "Field": "slot4_SupportB",
+      "Name": "4_SupportB",
+      "Description": ""
+    },
+    {
+      "Field": "slot4_SupportA",
+      "Name": "4_SupportA",
+      "Description": ""
+    },
+    {
+      "Field": "slot4_OptionalR",
+      "Name": "4_OptionalR",
+      "Description": ""
+    },
+    {
+      "Field": "slot4_OptionalG",
+      "Name": "4_OptionalG",
+      "Description": ""
+    },
+    {
+      "Field": "slot4_OptionalB",
+      "Name": "4_OptionalB",
+      "Description": ""
+    },
+    {
+      "Field": "slot4_OptionalA",
+      "Name": "4_OptionalA",
+      "Description": ""
+    },
+    {
+      "Field": "slot4_DeviceR",
+      "Name": "4_DeviceR",
+      "Description": ""
+    },
+    {
+      "Field": "slot4_DeviceG",
+      "Name": "4_DeviceG",
+      "Description": ""
+    },
+    {
+      "Field": "slot4_DeviceB",
+      "Name": "4_DeviceB",
+      "Description": ""
+    },
+    {
+      "Field": "slot4_DeviceA",
+      "Name": "4_DeviceA",
+      "Description": ""
+    },
+    {
+      "Field": "slot5_PatternID",
+      "Name": "5_PatternID",
+      "Description": ""
+    },
+    {
+      "Field": "slot5_MaterialProperty_0",
+      "Name": "5_MaterialProperty_0",
+      "Description": ""
+    },
+    {
+      "Field": "slot5_MaterialProperty_1",
+      "Name": "5_MaterialProperty_1",
+      "Description": ""
+    },
+    {
+      "Field": "slot5_reserved_",
+      "Name": "5_reserved_[5]",
+      "Description": ""
+    },
+    {
+      "Field": "slot5_BaseR",
+      "Name": "5_BaseR",
+      "Description": ""
+    },
+    {
+      "Field": "slot5_BaseG",
+      "Name": "5_BaseG",
+      "Description": ""
+    },
+    {
+      "Field": "slot5_BaseB",
+      "Name": "5_BaseB",
+      "Description": ""
+    },
+    {
+      "Field": "slot5_BaseA",
+      "Name": "5_BaseA",
+      "Description": ""
+    },
+    {
+      "Field": "slot5_SubR",
+      "Name": "5_SubR",
+      "Description": ""
+    },
+    {
+      "Field": "slot5_SubG",
+      "Name": "5_SubG",
+      "Description": ""
+    },
+    {
+      "Field": "slot5_SubB",
+      "Name": "5_SubB",
+      "Description": ""
+    },
+    {
+      "Field": "slot5_SubA",
+      "Name": "5_SubA",
+      "Description": ""
+    },
+    {
+      "Field": "slot5_SupportR",
+      "Name": "5_SupportR",
+      "Description": ""
+    },
+    {
+      "Field": "slot5_SupportG",
+      "Name": "5_SupportG",
+      "Description": ""
+    },
+    {
+      "Field": "slot5_SupportB",
+      "Name": "5_SupportB",
+      "Description": ""
+    },
+    {
+      "Field": "slot5_SupportA",
+      "Name": "5_SupportA",
+      "Description": ""
+    },
+    {
+      "Field": "slot5_OptionalR",
+      "Name": "5_OptionalR",
+      "Description": ""
+    },
+    {
+      "Field": "slot5_OptionalG",
+      "Name": "5_OptionalG",
+      "Description": ""
+    },
+    {
+      "Field": "slot5_OptionalB",
+      "Name": "5_OptionalB",
+      "Description": ""
+    },
+    {
+      "Field": "slot5_OptionalA",
+      "Name": "5_OptionalA",
+      "Description": ""
+    },
+    {
+      "Field": "slot5_DeviceR",
+      "Name": "5_DeviceR",
+      "Description": ""
+    },
+    {
+      "Field": "slot5_DeviceG",
+      "Name": "5_DeviceG",
+      "Description": ""
+    },
+    {
+      "Field": "slot5_DeviceB",
+      "Name": "5_DeviceB",
+      "Description": ""
+    },
+    {
+      "Field": "slot5_DeviceA",
+      "Name": "5_DeviceA",
+      "Description": ""
+    },
+    {
+      "Field": "slot6_PatternID",
+      "Name": "6_PatternID",
+      "Description": ""
+    },
+    {
+      "Field": "slot6_MaterialProperty_0",
+      "Name": "6_MaterialProperty_0",
+      "Description": ""
+    },
+    {
+      "Field": "slot6_MaterialProperty_1",
+      "Name": "6_MaterialProperty_1",
+      "Description": ""
+    },
+    {
+      "Field": "slot6_reserved_",
+      "Name": "6_reserved_[5]",
+      "Description": ""
+    },
+    {
+      "Field": "slot6_BaseR",
+      "Name": "6_BaseR",
+      "Description": ""
+    },
+    {
+      "Field": "slot6_BaseG",
+      "Name": "6_BaseG",
+      "Description": ""
+    },
+    {
+      "Field": "slot6_BaseB",
+      "Name": "6_BaseB",
+      "Description": ""
+    },
+    {
+      "Field": "slot6_BaseA",
+      "Name": "6_BaseA",
+      "Description": ""
+    },
+    {
+      "Field": "slot6_SubR",
+      "Name": "6_SubR",
+      "Description": ""
+    },
+    {
+      "Field": "slot6_SubG",
+      "Name": "6_SubG",
+      "Description": ""
+    },
+    {
+      "Field": "slot6_SubB",
+      "Name": "6_SubB",
+      "Description": ""
+    },
+    {
+      "Field": "slot6_SubA",
+      "Name": "6_SubA",
+      "Description": ""
+    },
+    {
+      "Field": "slot6_SupportR",
+      "Name": "6_SupportR",
+      "Description": ""
+    },
+    {
+      "Field": "slot6_SupportG",
+      "Name": "6_SupportG",
+      "Description": ""
+    },
+    {
+      "Field": "slot6_SupportB",
+      "Name": "6_SupportB",
+      "Description": ""
+    },
+    {
+      "Field": "slot6_SupportA",
+      "Name": "6_SupportA",
+      "Description": ""
+    },
+    {
+      "Field": "slot6_OptionalR",
+      "Name": "6_OptionalR",
+      "Description": ""
+    },
+    {
+      "Field": "slot6_OptionalG",
+      "Name": "6_OptionalG",
+      "Description": ""
+    },
+    {
+      "Field": "slot6_OptionalB",
+      "Name": "6_OptionalB",
+      "Description": ""
+    },
+    {
+      "Field": "slot6_OptionalA",
+      "Name": "6_OptionalA",
+      "Description": ""
+    },
+    {
+      "Field": "slot6_DeviceR",
+      "Name": "6_DeviceR",
+      "Description": ""
+    },
+    {
+      "Field": "slot6_DeviceG",
+      "Name": "6_DeviceG",
+      "Description": ""
+    },
+    {
+      "Field": "slot6_DeviceB",
+      "Name": "6_DeviceB",
+      "Description": ""
+    },
+    {
+      "Field": "slot6_DeviceA",
+      "Name": "6_DeviceA",
+      "Description": ""
+    },
+    {
+      "Field": "slot7_PatternID",
+      "Name": "7_PatternID",
+      "Description": ""
+    },
+    {
+      "Field": "slot7_MaterialProperty_0",
+      "Name": "7_MaterialProperty_0",
+      "Description": ""
+    },
+    {
+      "Field": "slot7_MaterialProperty_1",
+      "Name": "7_MaterialProperty_1",
+      "Description": ""
+    },
+    {
+      "Field": "slot7_reserved_",
+      "Name": "7_reserved_[5]",
+      "Description": ""
+    },
+    {
+      "Field": "slot7_BaseR",
+      "Name": "7_BaseR",
+      "Description": ""
+    },
+    {
+      "Field": "slot7_BaseG",
+      "Name": "7_BaseG",
+      "Description": ""
+    },
+    {
+      "Field": "slot7_BaseB",
+      "Name": "7_BaseB",
+      "Description": ""
+    },
+    {
+      "Field": "slot7_BaseA",
+      "Name": "7_BaseA",
+      "Description": ""
+    },
+    {
+      "Field": "slot7_SubR",
+      "Name": "7_SubR",
+      "Description": ""
+    },
+    {
+      "Field": "slot7_SubG",
+      "Name": "7_SubG",
+      "Description": ""
+    },
+    {
+      "Field": "slot7_SubB",
+      "Name": "7_SubB",
+      "Description": ""
+    },
+    {
+      "Field": "slot7_SubA",
+      "Name": "7_SubA",
+      "Description": ""
+    },
+    {
+      "Field": "slot7_SupportR",
+      "Name": "7_SupportR",
+      "Description": ""
+    },
+    {
+      "Field": "slot7_SupportG",
+      "Name": "7_SupportG",
+      "Description": ""
+    },
+    {
+      "Field": "slot7_SupportB",
+      "Name": "7_SupportB",
+      "Description": ""
+    },
+    {
+      "Field": "slot7_SupportA",
+      "Name": "7_SupportA",
+      "Description": ""
+    },
+    {
+      "Field": "slot7_OptionalR",
+      "Name": "7_OptionalR",
+      "Description": ""
+    },
+    {
+      "Field": "slot7_OptionalG",
+      "Name": "7_OptionalG",
+      "Description": ""
+    },
+    {
+      "Field": "slot7_OptionalB",
+      "Name": "7_OptionalB",
+      "Description": ""
+    },
+    {
+      "Field": "slot7_OptionalA",
+      "Name": "7_OptionalA",
+      "Description": ""
+    },
+    {
+      "Field": "slot7_DeviceR",
+      "Name": "7_DeviceR",
+      "Description": ""
+    },
+    {
+      "Field": "slot7_DeviceG",
+      "Name": "7_DeviceG",
+      "Description": ""
+    },
+    {
+      "Field": "slot7_DeviceB",
+      "Name": "7_DeviceB",
+      "Description": ""
+    },
+    {
+      "Field": "slot7_DeviceA",
+      "Name": "7_DeviceA",
+      "Description": ""
+    },
+    {
+      "Field": "slot8_PatternID",
+      "Name": "8_PatternID",
+      "Description": ""
+    },
+    {
+      "Field": "slot8_MaterialProperty_0",
+      "Name": "8_MaterialProperty_0",
+      "Description": ""
+    },
+    {
+      "Field": "slot8_MaterialProperty_1",
+      "Name": "8_MaterialProperty_1",
+      "Description": ""
+    },
+    {
+      "Field": "slot8_reserved_",
+      "Name": "8_reserved_[5]",
+      "Description": ""
+    },
+    {
+      "Field": "slot8_BaseR",
+      "Name": "8_BaseR",
+      "Description": ""
+    },
+    {
+      "Field": "slot8_BaseG",
+      "Name": "8_BaseG",
+      "Description": ""
+    },
+    {
+      "Field": "slot8_BaseB",
+      "Name": "8_BaseB",
+      "Description": ""
+    },
+    {
+      "Field": "slot8_BaseA",
+      "Name": "8_BaseA",
+      "Description": ""
+    },
+    {
+      "Field": "slot8_SubR",
+      "Name": "8_SubR",
+      "Description": ""
+    },
+    {
+      "Field": "slot8_SubG",
+      "Name": "8_SubG",
+      "Description": ""
+    },
+    {
+      "Field": "slot8_SubB",
+      "Name": "8_SubB",
+      "Description": ""
+    },
+    {
+      "Field": "slot8_SubA",
+      "Name": "8_SubA",
+      "Description": ""
+    },
+    {
+      "Field": "slot8_SupportR",
+      "Name": "8_SupportR",
+      "Description": ""
+    },
+    {
+      "Field": "slot8_SupportG",
+      "Name": "8_SupportG",
+      "Description": ""
+    },
+    {
+      "Field": "slot8_SupportB",
+      "Name": "8_SupportB",
+      "Description": ""
+    },
+    {
+      "Field": "slot8_SupportA",
+      "Name": "8_SupportA",
+      "Description": ""
+    },
+    {
+      "Field": "slot8_OptionalR",
+      "Name": "8_OptionalR",
+      "Description": ""
+    },
+    {
+      "Field": "slot8_OptionalG",
+      "Name": "8_OptionalG",
+      "Description": ""
+    },
+    {
+      "Field": "slot8_OptionalB",
+      "Name": "8_OptionalB",
+      "Description": ""
+    },
+    {
+      "Field": "slot8_OptionalA",
+      "Name": "8_OptionalA",
+      "Description": ""
+    },
+    {
+      "Field": "slot8_DeviceR",
+      "Name": "8_DeviceR",
+      "Description": ""
+    },
+    {
+      "Field": "slot8_DeviceG",
+      "Name": "8_DeviceG",
+      "Description": ""
+    },
+    {
+      "Field": "slot8_DeviceB",
+      "Name": "8_DeviceB",
+      "Description": ""
+    },
+    {
+      "Field": "slot8_DeviceA",
+      "Name": "8_DeviceA",
+      "Description": ""
+    },
+    {
+      "Field": "slot9_PatternID",
+      "Name": "9_PatternID",
+      "Description": ""
+    },
+    {
+      "Field": "slot9_MaterialProperty_0",
+      "Name": "9_MaterialProperty_0",
+      "Description": ""
+    },
+    {
+      "Field": "slot9_MaterialProperty_1",
+      "Name": "9_MaterialProperty_1",
+      "Description": ""
+    },
+    {
+      "Field": "slot9_reserved_",
+      "Name": "9_reserved_[5]",
+      "Description": ""
+    },
+    {
+      "Field": "slot9_BaseR",
+      "Name": "9_BaseR",
+      "Description": ""
+    },
+    {
+      "Field": "slot9_BaseG",
+      "Name": "9_BaseG",
+      "Description": ""
+    },
+    {
+      "Field": "slot9_BaseB",
+      "Name": "9_BaseB",
+      "Description": ""
+    },
+    {
+      "Field": "slot9_BaseA",
+      "Name": "9_BaseA",
+      "Description": ""
+    },
+    {
+      "Field": "slot9_SubR",
+      "Name": "9_SubR",
+      "Description": ""
+    },
+    {
+      "Field": "slot9_SubG",
+      "Name": "9_SubG",
+      "Description": ""
+    },
+    {
+      "Field": "slot9_SubB",
+      "Name": "9_SubB",
+      "Description": ""
+    },
+    {
+      "Field": "slot9_SubA",
+      "Name": "9_SubA",
+      "Description": ""
+    },
+    {
+      "Field": "slot9_SupportR",
+      "Name": "9_SupportR",
+      "Description": ""
+    },
+    {
+      "Field": "slot9_SupportG",
+      "Name": "9_SupportG",
+      "Description": ""
+    },
+    {
+      "Field": "slot9_SupportB",
+      "Name": "9_SupportB",
+      "Description": ""
+    },
+    {
+      "Field": "slot9_SupportA",
+      "Name": "9_SupportA",
+      "Description": ""
+    },
+    {
+      "Field": "slot9_OptionalR",
+      "Name": "9_OptionalR",
+      "Description": ""
+    },
+    {
+      "Field": "slot9_OptionalG",
+      "Name": "9_OptionalG",
+      "Description": ""
+    },
+    {
+      "Field": "slot9_OptionalB",
+      "Name": "9_OptionalB",
+      "Description": ""
+    },
+    {
+      "Field": "slot9_OptionalA",
+      "Name": "9_OptionalA",
+      "Description": ""
+    },
+    {
+      "Field": "slot9_DeviceR",
+      "Name": "9_DeviceR",
+      "Description": ""
+    },
+    {
+      "Field": "slot9_DeviceG",
+      "Name": "9_DeviceG",
+      "Description": ""
+    },
+    {
+      "Field": "slot9_DeviceB",
+      "Name": "9_DeviceB",
+      "Description": ""
+    },
+    {
+      "Field": "slot9_DeviceA",
+      "Name": "9_DeviceA",
+      "Description": ""
+    },
+    {
+      "Field": "slot10_PatternID",
+      "Name": "10_PatternID",
+      "Description": ""
+    },
+    {
+      "Field": "slot10_MaterialProperty_0",
+      "Name": "10_MaterialProperty_0",
+      "Description": ""
+    },
+    {
+      "Field": "slot10_MaterialProperty_1",
+      "Name": "10_MaterialProperty_1",
+      "Description": ""
+    },
+    {
+      "Field": "slot10_reserved_",
+      "Name": "10_reserved_[5]",
+      "Description": ""
+    },
+    {
+      "Field": "slot10_BaseR",
+      "Name": "10_BaseR",
+      "Description": ""
+    },
+    {
+      "Field": "slot10_BaseG",
+      "Name": "10_BaseG",
+      "Description": ""
+    },
+    {
+      "Field": "slot10_BaseB",
+      "Name": "10_BaseB",
+      "Description": ""
+    },
+    {
+      "Field": "slot10_BaseA",
+      "Name": "10_BaseA",
+      "Description": ""
+    },
+    {
+      "Field": "slot10_SubR",
+      "Name": "10_SubR",
+      "Description": ""
+    },
+    {
+      "Field": "slot10_SubG",
+      "Name": "10_SubG",
+      "Description": ""
+    },
+    {
+      "Field": "slot10_SubB",
+      "Name": "10_SubB",
+      "Description": ""
+    },
+    {
+      "Field": "slot10_SubA",
+      "Name": "10_SubA",
+      "Description": ""
+    },
+    {
+      "Field": "slot10_SupportR",
+      "Name": "10_SupportR",
+      "Description": ""
+    },
+    {
+      "Field": "slot10_SupportG",
+      "Name": "10_SupportG",
+      "Description": ""
+    },
+    {
+      "Field": "slot10_SupportB",
+      "Name": "10_SupportB",
+      "Description": ""
+    },
+    {
+      "Field": "slot10_SupportA",
+      "Name": "10_SupportA",
+      "Description": ""
+    },
+    {
+      "Field": "slot10_OptionalR",
+      "Name": "10_OptionalR",
+      "Description": ""
+    },
+    {
+      "Field": "slot10_OptionalG",
+      "Name": "10_OptionalG",
+      "Description": ""
+    },
+    {
+      "Field": "slot10_OptionalB",
+      "Name": "10_OptionalB",
+      "Description": ""
+    },
+    {
+      "Field": "slot10_OptionalA",
+      "Name": "10_OptionalA",
+      "Description": ""
+    },
+    {
+      "Field": "slot10_DeviceR",
+      "Name": "10_DeviceR",
+      "Description": ""
+    },
+    {
+      "Field": "slot10_DeviceG",
+      "Name": "10_DeviceG",
+      "Description": ""
+    },
+    {
+      "Field": "slot10_DeviceB",
+      "Name": "10_DeviceB",
+      "Description": ""
+    },
+    {
+      "Field": "slot10_DeviceA",
+      "Name": "10_DeviceA",
+      "Description": ""
+    },
+    {
+      "Field": "slot11_PatternID",
+      "Name": "11_PatternID",
+      "Description": ""
+    },
+    {
+      "Field": "slot11_MaterialProperty_0",
+      "Name": "11_MaterialProperty_0",
+      "Description": ""
+    },
+    {
+      "Field": "slot11_MaterialProperty_1",
+      "Name": "11_MaterialProperty_1",
+      "Description": ""
+    },
+    {
+      "Field": "slot11_reserved_",
+      "Name": "11_reserved_[5]",
+      "Description": ""
+    },
+    {
+      "Field": "slot11_BaseR",
+      "Name": "11_BaseR",
+      "Description": ""
+    },
+    {
+      "Field": "slot11_BaseG",
+      "Name": "11_BaseG",
+      "Description": ""
+    },
+    {
+      "Field": "slot11_BaseB",
+      "Name": "11_BaseB",
+      "Description": ""
+    },
+    {
+      "Field": "slot11_BaseA",
+      "Name": "11_BaseA",
+      "Description": ""
+    },
+    {
+      "Field": "slot11_SubR",
+      "Name": "11_SubR",
+      "Description": ""
+    },
+    {
+      "Field": "slot11_SubG",
+      "Name": "11_SubG",
+      "Description": ""
+    },
+    {
+      "Field": "slot11_SubB",
+      "Name": "11_SubB",
+      "Description": ""
+    },
+    {
+      "Field": "slot11_SubA",
+      "Name": "11_SubA",
+      "Description": ""
+    },
+    {
+      "Field": "slot11_SupportR",
+      "Name": "11_SupportR",
+      "Description": ""
+    },
+    {
+      "Field": "slot11_SupportG",
+      "Name": "11_SupportG",
+      "Description": ""
+    },
+    {
+      "Field": "slot11_SupportB",
+      "Name": "11_SupportB",
+      "Description": ""
+    },
+    {
+      "Field": "slot11_SupportA",
+      "Name": "11_SupportA",
+      "Description": ""
+    },
+    {
+      "Field": "slot11_OptionalR",
+      "Name": "11_OptionalR",
+      "Description": ""
+    },
+    {
+      "Field": "slot11_OptionalG",
+      "Name": "11_OptionalG",
+      "Description": ""
+    },
+    {
+      "Field": "slot11_OptionalB",
+      "Name": "11_OptionalB",
+      "Description": ""
+    },
+    {
+      "Field": "slot11_OptionalA",
+      "Name": "11_OptionalA",
+      "Description": ""
+    },
+    {
+      "Field": "slot11_DeviceR",
+      "Name": "11_DeviceR",
+      "Description": ""
+    },
+    {
+      "Field": "slot11_DeviceG",
+      "Name": "11_DeviceG",
+      "Description": ""
+    },
+    {
+      "Field": "slot11_DeviceB",
+      "Name": "11_DeviceB",
+      "Description": ""
+    },
+    {
+      "Field": "slot11_DeviceA",
+      "Name": "11_DeviceA",
+      "Description": ""
+    },
+    {
+      "Field": "slot12_PatternID",
+      "Name": "12_PatternID",
+      "Description": ""
+    },
+    {
+      "Field": "slot12_MaterialProperty_0",
+      "Name": "12_MaterialProperty_0",
+      "Description": ""
+    },
+    {
+      "Field": "slot12_MaterialProperty_1",
+      "Name": "12_MaterialProperty_1",
+      "Description": ""
+    },
+    {
+      "Field": "slot12_reserved_",
+      "Name": "12_reserved_[5]",
+      "Description": ""
+    },
+    {
+      "Field": "slot12_BaseR",
+      "Name": "12_BaseR",
+      "Description": ""
+    },
+    {
+      "Field": "slot12_BaseG",
+      "Name": "12_BaseG",
+      "Description": ""
+    },
+    {
+      "Field": "slot12_BaseB",
+      "Name": "12_BaseB",
+      "Description": ""
+    },
+    {
+      "Field": "slot12_BaseA",
+      "Name": "12_BaseA",
+      "Description": ""
+    },
+    {
+      "Field": "slot12_SubR",
+      "Name": "12_SubR",
+      "Description": ""
+    },
+    {
+      "Field": "slot12_SubG",
+      "Name": "12_SubG",
+      "Description": ""
+    },
+    {
+      "Field": "slot12_SubB",
+      "Name": "12_SubB",
+      "Description": ""
+    },
+    {
+      "Field": "slot12_SubA",
+      "Name": "12_SubA",
+      "Description": ""
+    },
+    {
+      "Field": "slot12_SupportR",
+      "Name": "12_SupportR",
+      "Description": ""
+    },
+    {
+      "Field": "slot12_SupportG",
+      "Name": "12_SupportG",
+      "Description": ""
+    },
+    {
+      "Field": "slot12_SupportB",
+      "Name": "12_SupportB",
+      "Description": ""
+    },
+    {
+      "Field": "slot12_SupportA",
+      "Name": "12_SupportA",
+      "Description": ""
+    },
+    {
+      "Field": "slot12_OptionalR",
+      "Name": "12_OptionalR",
+      "Description": ""
+    },
+    {
+      "Field": "slot12_OptionalG",
+      "Name": "12_OptionalG",
+      "Description": ""
+    },
+    {
+      "Field": "slot12_OptionalB",
+      "Name": "12_OptionalB",
+      "Description": ""
+    },
+    {
+      "Field": "slot12_OptionalA",
+      "Name": "12_OptionalA",
+      "Description": ""
+    },
+    {
+      "Field": "slot12_DeviceR",
+      "Name": "12_DeviceR",
+      "Description": ""
+    },
+    {
+      "Field": "slot12_DeviceG",
+      "Name": "12_DeviceG",
+      "Description": ""
+    },
+    {
+      "Field": "slot12_DeviceB",
+      "Name": "12_DeviceB",
+      "Description": ""
+    },
+    {
+      "Field": "slot12_DeviceA",
+      "Name": "12_DeviceA",
+      "Description": ""
+    },
+    {
+      "Field": "slot13_PatternID",
+      "Name": "13_PatternID",
+      "Description": ""
+    },
+    {
+      "Field": "slot13_MaterialProperty_0",
+      "Name": "13_MaterialProperty_0",
+      "Description": ""
+    },
+    {
+      "Field": "slot13_MaterialProperty_1",
+      "Name": "13_MaterialProperty_1",
+      "Description": ""
+    },
+    {
+      "Field": "slot13_reserved_",
+      "Name": "13_reserved_[5]",
+      "Description": ""
+    },
+    {
+      "Field": "slot13_BaseR",
+      "Name": "13_BaseR",
+      "Description": ""
+    },
+    {
+      "Field": "slot13_BaseG",
+      "Name": "13_BaseG",
+      "Description": ""
+    },
+    {
+      "Field": "slot13_BaseB",
+      "Name": "13_BaseB",
+      "Description": ""
+    },
+    {
+      "Field": "slot13_BaseA",
+      "Name": "13_BaseA",
+      "Description": ""
+    },
+    {
+      "Field": "slot13_SubR",
+      "Name": "13_SubR",
+      "Description": ""
+    },
+    {
+      "Field": "slot13_SubG",
+      "Name": "13_SubG",
+      "Description": ""
+    },
+    {
+      "Field": "slot13_SubB",
+      "Name": "13_SubB",
+      "Description": ""
+    },
+    {
+      "Field": "slot13_SubA",
+      "Name": "13_SubA",
+      "Description": ""
+    },
+    {
+      "Field": "slot13_SupportR",
+      "Name": "13_SupportR",
+      "Description": ""
+    },
+    {
+      "Field": "slot13_SupportG",
+      "Name": "13_SupportG",
+      "Description": ""
+    },
+    {
+      "Field": "slot13_SupportB",
+      "Name": "13_SupportB",
+      "Description": ""
+    },
+    {
+      "Field": "slot13_SupportA",
+      "Name": "13_SupportA",
+      "Description": ""
+    },
+    {
+      "Field": "slot13_OptionalR",
+      "Name": "13_OptionalR",
+      "Description": ""
+    },
+    {
+      "Field": "slot13_OptionalG",
+      "Name": "13_OptionalG",
+      "Description": ""
+    },
+    {
+      "Field": "slot13_OptionalB",
+      "Name": "13_OptionalB",
+      "Description": ""
+    },
+    {
+      "Field": "slot13_OptionalA",
+      "Name": "13_OptionalA",
+      "Description": ""
+    },
+    {
+      "Field": "slot13_DeviceR",
+      "Name": "13_DeviceR",
+      "Description": ""
+    },
+    {
+      "Field": "slot13_DeviceG",
+      "Name": "13_DeviceG",
+      "Description": ""
+    },
+    {
+      "Field": "slot13_DeviceB",
+      "Name": "13_DeviceB",
+      "Description": ""
+    },
+    {
+      "Field": "slot13_DeviceA",
+      "Name": "13_DeviceA",
+      "Description": ""
+    }
+  ]
+}

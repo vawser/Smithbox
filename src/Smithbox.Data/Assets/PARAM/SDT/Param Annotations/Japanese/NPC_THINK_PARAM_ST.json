@@ -1,0 +1,463 @@
+{
+  "Param": "NPC_THINK_PARAM_ST",
+  "Type": "NPC_THINK_PARAM_ST",
+  "Name": "NPC_THINK_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "logicId",
+      "Name": "ロジックスクリプトID",
+      "Description": "スクリプトで作成したロジックのIDを設定します。"
+    },
+    {
+      "Field": "battleGoalID",
+      "Name": "戦闘ゴールID",
+      "Description": "戦闘ゴールID"
+    },
+    {
+      "Field": "eye_dist_perceive",
+      "Name": "視覚_距離[m] （認識）",
+      "Description": "視覚による索敵範囲.（認識）"
+    },
+    {
+      "Field": "eye_ang_upper_perceive",
+      "Name": "視覚_上方向[deg] （認識）",
+      "Description": "視野範囲の上方向角度（deg）（認識）"
+    },
+    {
+      "Field": "eye_ang_bottom_perceive",
+      "Name": "視覚_下方向[deg] （認識）",
+      "Description": "視野範囲の下方向角度（deg）（認識）"
+    },
+    {
+      "Field": "eye_ang_left_perceive",
+      "Name": "視覚_左方向[deg] （認識）",
+      "Description": "視野範囲の左方向角度（deg）（認識）"
+    },
+    {
+      "Field": "eye_ang_right_perceive",
+      "Name": "視覚_右方向[deg] （認識）",
+      "Description": "視野範囲の右方向角度（deg）（認識）"
+    },
+    {
+      "Field": "eye_BackOffsetDist_perceive",
+      "Name": "視覚_発生距離[m] （認識）",
+      "Description": "キャラの中心からこの距離後ろが視角開始位置になる（認識）"
+    },
+    {
+      "Field": "eye_BeginDist_perceive",
+      "Name": "視覚_カット距離[m] （認識）",
+      "Description": "視角発生位置からこの距離は認識しない（認識）"
+    },
+    {
+      "Field": "corpse_eye_dist_rate",
+      "Name": "視覚_死体視覚倍率[%]",
+      "Description": "死体索敵時の索敵範囲\u3000\"視覚_距離[m] （通常）\"に対する倍率"
+    },
+    {
+      "Field": "CorpseTargetForgetTime",
+      "Name": "死体ターゲット忘れる時間[sec]",
+      "Description": "死体ターゲット忘れる時間。"
+    },
+    {
+      "Field": "BackHomeLife_OnHitEneWal",
+      "Name": "敵壁接触時のBackHome時間[sec]",
+      "Description": "ブロックをさえぎる敵壁に接触したとき、BackToHomeゴールの寿命"
+    },
+    {
+      "Field": "SightTargetForgetTime",
+      "Name": "視覚ターゲット忘れる時間[sec]",
+      "Description": "視覚ターゲット忘れる時間。"
+    },
+    {
+      "Field": "idAttackCannotMove",
+      "Name": "動けなくなったときに行うEzState番号",
+      "Description": "破壊可能なオブジェクトによって動きが止まっている場合、自動的に実行する行動。"
+    },
+    {
+      "Field": "ear_dist",
+      "Name": "聴覚_距離[m]",
+      "Description": "聴覚による索敵範囲.。"
+    },
+    {
+      "Field": "callHelp_ActionAnimId",
+      "Name": "仲間呼び 応答アクションアニメID",
+      "Description": "応答する時のアニメID(EzStateAnimID)"
+    },
+    {
+      "Field": "callHelp_CallActionId",
+      "Name": "仲間呼び_仲間呼びアクションID",
+      "Description": "仲間呼ぶときのアクションID(EzStateAnimID)"
+    },
+    {
+      "Field": "eye_dist_normal",
+      "Name": "視覚_距離[m] （通常）",
+      "Description": "視覚による索敵範囲.（通常）"
+    },
+    {
+      "Field": "BackHome_GuardActId",
+      "Name": "帰宅時：ガードアクションID",
+      "Description": "帰宅時、ターゲットの方を見ている時に行うアクション番号（ガードで使う想定、0で無効）"
+    },
+    {
+      "Field": "ear_soundcut_dist",
+      "Name": "聴覚\u3000影響カット距離[m]",
+      "Description": "音源のサイズを小さくする距離。この距離未満の音が聞こえなくなります。"
+    },
+    {
+      "Field": "nose_dist",
+      "Name": "嗅覚_距離[m]",
+      "Description": "嗅覚による索敵範囲."
+    },
+    {
+      "Field": "maxBackhomeDist",
+      "Name": "何があっても帰宅する距離[m]",
+      "Description": "COMMON_SetBattleActLogicの引き数"
+    },
+    {
+      "Field": "backhomeDist",
+      "Name": "戦闘しつつ帰宅する距離[m]",
+      "Description": "COMMON_SetBattleActLogicの引き数"
+    },
+    {
+      "Field": "backhomeBattleDist",
+      "Name": "巣に帰るのをあきらめて戦闘する距離[m]",
+      "Description": "COMMON_SetBattleActLogicの引き数"
+    },
+    {
+      "Field": "nonBattleActLife",
+      "Name": "敵を意識しているときの非戦闘行動時間[sec]",
+      "Description": "COMMON_SetBattleActLogicの引き数"
+    },
+    {
+      "Field": "BackHome_LookTargetTime",
+      "Name": "帰宅時：ターゲットを見ている時間[sec]",
+      "Description": "帰宅時：ターゲットを見ている時間[sec]"
+    },
+    {
+      "Field": "BackHome_LookTargetDist",
+      "Name": "帰宅時：ターゲットを見ている距離[m]",
+      "Description": "帰宅時：ターゲットを見ている距離[m]"
+    },
+    {
+      "Field": "SoundTargetForgetTime",
+      "Name": "音ターゲット忘れる時間[sec]",
+      "Description": "音ターゲット忘れる時間。"
+    },
+    {
+      "Field": "BattleStartDist",
+      "Name": "戦闘開始距離[m]",
+      "Description": ""
+    },
+    {
+      "Field": "callHelp_MyPeerId",
+      "Name": "仲間呼び 自分の仲間グループID",
+      "Description": "自分の仲間グループID"
+    },
+    {
+      "Field": "callHelp_CallPeerId",
+      "Name": "仲間呼び 呼ぶ仲間グループID",
+      "Description": "仲間を呼ぶ対象となる仲間グループID"
+    },
+    {
+      "Field": "targetSys_DmgEffectRate",
+      "Name": "ダメージ影響率[％]",
+      "Description": "ダメージ影響率取得(ターゲットシステム評価情報)"
+    },
+    {
+      "Field": "TeamAttackEffectivity",
+      "Name": "チーム攻撃影響力[0-100]",
+      "Description": "チーム内の同時攻撃人数を決めるための値。値を大きくすると、同時に攻撃参加できる人数が少なくなる。"
+    },
+    {
+      "Field": "useWanderedOffPathInterrupt",
+      "Name": "パスから外れ続けている割り込みを使用するか",
+      "Description": "一定時間にパスから外れてリパスした回数が規定値を超えるとAIScriptに割り込みを発生させるか"
+    },
+    {
+      "Field": "pad8",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "disableDark",
+      "Name": "暗闇影響しない",
+      "Description": "視覚_距離、戦闘開始距離が暗闇による影響を受けないようにするか"
+    },
+    {
+      "Field": "goalAction_ToCautionIndicationTarget",
+      "Name": "ゴールアクション：警戒状態/気配位置",
+      "Description": "ゴールアクション：ターゲットが気配位置の感知により警戒状態になった"
+    },
+    {
+      "Field": "callHelp_CallValidMinDistTarget",
+      "Name": "仲間呼び_ターゲットとの最低距離[m]",
+      "Description": "この値より近い場合は仲間呼びできない."
+    },
+    {
+      "Field": "callHelp_CallValidRange",
+      "Name": "仲間呼び_仲間を呼ぶ有効距離[m]",
+      "Description": "この値より仲間が遠い場合は呼ばない。"
+    },
+    {
+      "Field": "callHelp_ForgetTimeByArrival",
+      "Name": "仲間呼び 応答してから忘れる時間[sec]",
+      "Description": "応答する時間"
+    },
+    {
+      "Field": "callHelp_MinWaitTime",
+      "Name": "応答時の待機最小時間[ssm=>ss．mSec]",
+      "Description": "応答ゴールの最初の待機ゴールでの最小時間[101=>10．1sec]"
+    },
+    {
+      "Field": "callHelp_MaxWaitTime",
+      "Name": "応答時の待機最大時間[ssm=>ss．mSec]",
+      "Description": "応答ゴールの最初の待機ゴールでの最大時間[101=>10．1sec]"
+    },
+    {
+      "Field": "goalAction_ToCaution",
+      "Name": "ゴールアクション：警戒状態/通常音",
+      "Description": "ゴールアクション：ターゲットが通常音の感知により警戒状態になった"
+    },
+    {
+      "Field": "goalAction_ToFind",
+      "Name": "ゴールアクション：発見状態",
+      "Description": "ゴールアクション：ターゲットが発見状態になった"
+    },
+    {
+      "Field": "callHelp_ReplyBehaviorType",
+      "Name": "仲間呼び 応答後の行動タイプ",
+      "Description": "応答後、目標位置までの行動タイプ"
+    },
+    {
+      "Field": "disablePathMove",
+      "Name": "パス移動しない",
+      "Description": "パス移動命令が来てもパスを辿らずに直接移動するか"
+    },
+    {
+      "Field": "skipArrivalVisibleCheck",
+      "Name": "視線による到着判定をスキップするか？",
+      "Description": "視線による到着判定をスキップするか？Onにすると、視線が通っていなくても、到着判定を行う。"
+    },
+    {
+      "Field": "thinkAttr_doAdmirer",
+      "Name": "取巻き役になるか？",
+      "Description": "思考属性：ＯＮにすると取巻き役を演じます。"
+    },
+    {
+      "Field": "enableNaviFlg_Edge",
+      "Name": "フラグ「崖」通れるか？",
+      "Description": "ノード「崖」を通過できるか？(def:1)"
+    },
+    {
+      "Field": "enableNaviFlg_LargeSpace",
+      "Name": "フラグ「広い」通れるか？",
+      "Description": "ノード「広い」を通過できるか？(def:1)"
+    },
+    {
+      "Field": "enableNaviFlg_Ladder",
+      "Name": "フラグ「梯子」通れるか？",
+      "Description": "ノード「梯子」を通過できるか？(def:0)"
+    },
+    {
+      "Field": "enableNaviFlg_Hole",
+      "Name": "フラグ「穴」通れるか？",
+      "Description": "ノード「穴」を通過できるか？(def:0)"
+    },
+    {
+      "Field": "enableNaviFlg_Door",
+      "Name": "フラグ「扉」通れるか？",
+      "Description": "ノード「扉」を通過できるか？(def:0)"
+    },
+    {
+      "Field": "enableNaviFlg_InSideWall",
+      "Name": "フラグ「壁中」通れるか？",
+      "Description": "ノード「壁中」を通過できるか？(def:0)"
+    },
+    {
+      "Field": "enableNaviFlg_Underfloor",
+      "Name": "フラグ「床下」通れるか？",
+      "Description": "ノード「床下」を通過出来るか？（def:0）"
+    },
+    {
+      "Field": "enableNaviFlg_Edge_Ordinary",
+      "Name": "フラグ「崖」通れるか？（通常／警戒状態）",
+      "Description": "通常／警戒状態でノード「崖」を通過できるか？(def:1)"
+    },
+    {
+      "Field": "enableNaviFlg_Jump",
+      "Name": "フラグ「ジャンプ」通れるか？",
+      "Description": "ノード「ジャンプ」通れるか？（def:0）"
+    },
+    {
+      "Field": "enableNaviFlg_pad",
+      "Name": "パディング",
+      "Description": "パディング"
+    },
+    {
+      "Field": "enableNaviFlg_reserve1",
+      "Name": "ほんとに予約",
+      "Description": "フラグが新しく必要になったらここにいれます（NotPadding)"
+    },
+    {
+      "Field": "eye_ang_upper_normal",
+      "Name": "視覚_上方向[deg] （通常）",
+      "Description": "視野範囲の上方向角度（deg）（通常）"
+    },
+    {
+      "Field": "eye_ang_bottom_normal",
+      "Name": "視覚_下方向[deg] （通常）",
+      "Description": "視野範囲の下方向角度（deg）（通常）"
+    },
+    {
+      "Field": "eye_ang_left_normal",
+      "Name": "視覚_左方向[deg] （通常）",
+      "Description": "視野範囲の左方向角度（deg）（通常）"
+    },
+    {
+      "Field": "eye_ang_right_normal",
+      "Name": "視覚_右方向[deg] （通常）",
+      "Description": "視野範囲の右方向角度（deg）（通常）"
+    },
+    {
+      "Field": "aroundTargetIncrementPoint",
+      "Name": "1秒間に増加する発見ポイント[point/s]",
+      "Description": "1秒間に増加する発見ポイント[point/s]"
+    },
+    {
+      "Field": "platoonReplyTime",
+      "Name": "小隊反応遅延時間[sec]",
+      "Description": "小隊反応遅延時間[sec]"
+    },
+    {
+      "Field": "platoonReplyAddRandomTime",
+      "Name": "小隊反応追加ランダム時間[sec]",
+      "Description": "小隊反応追加ランダム時間[sec]"
+    },
+    {
+      "Field": "eye_dist_around",
+      "Name": "視覚_距離[m] （周辺）",
+      "Description": "視覚による索敵範囲.（周辺）"
+    },
+    {
+      "Field": "eye_ang_upper_around",
+      "Name": "視覚_上方向[deg] （周辺）",
+      "Description": "視野範囲の上方向角度（deg）（周辺）"
+    },
+    {
+      "Field": "eye_ang_bottom_around",
+      "Name": "視覚_下方向[deg] （周辺）",
+      "Description": "視野範囲の下方向角度（deg）（周辺）"
+    },
+    {
+      "Field": "eye_ang_left_around",
+      "Name": "視覚_左方向[deg] （周辺）",
+      "Description": "視野範囲の左方向角度（deg）（周辺）"
+    },
+    {
+      "Field": "eye_ang_right_around",
+      "Name": "視覚_右方向[deg] （周辺）",
+      "Description": "視野範囲の右方向角度（deg）（周辺）"
+    },
+    {
+      "Field": "eye_BackOffsetDist_around",
+      "Name": "視覚_発生距離[m] （周辺）",
+      "Description": "キャラの中心からこの距離後ろが視角開始位置になる（周辺）"
+    },
+    {
+      "Field": "eye_BeginDist_around",
+      "Name": "視覚_カット距離[m] （周辺）",
+      "Description": "視角発生位置からこの距離は認識しない（周辺）"
+    },
+    {
+      "Field": "ignoreStealthTime",
+      "Name": "視界による戦闘ターゲットの強制認識時間[sec]",
+      "Description": "設定している時間続けて敵を見失うまで対象のステルス機能（視線レイキャストチェック、視覚カット）を無効化する。[sec]"
+    },
+    {
+      "Field": "IndicationTargetForgetTime",
+      "Name": "気配位置ターゲット忘れる時間[sec]",
+      "Description": "気配位置を忘れる時間"
+    },
+    {
+      "Field": "IndicationTargetIncrementPoint",
+      "Name": "1秒間に増加する発見ポイント[point/s]（気配位置）",
+      "Description": "1秒間に増加する発見ポイント[point/s]（気配位置）"
+    },
+    {
+      "Field": "pad4",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "eye_BackOffsetDist_normal",
+      "Name": "視覚_発生距離[m] （通常）",
+      "Description": "キャラの中心からこの距離後ろが視角開始位置になる（通常）"
+    },
+    {
+      "Field": "eye_BeginDist_normal",
+      "Name": "視覚_カット距離[m] （通常）",
+      "Description": "視角発生位置からこの距離は認識しない（通常）"
+    },
+    {
+      "Field": "actTypeOnFailedPath",
+      "Name": "パス検索失敗時の行動種別",
+      "Description": "パス検索失敗時、代替パスの終点に到達した際に行うデフォルトの行動種別"
+    },
+    {
+      "Field": "goalAction_ToCautionImportant",
+      "Name": "ゴールアクション：警戒状態/重要音",
+      "Description": "ゴールアクション：ターゲットが重要音の感知により警戒状態になった"
+    },
+    {
+      "Field": "pad1",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "actTypeOnNonBtlFailedPath",
+      "Name": "パス検索失敗時の挙動（非戦闘中）",
+      "Description": "ターゲット【なし】時に、現在地点を巣に書き換えた後に取る行動 "
+    },
+    {
+      "Field": "skipRaycastWhenAroundSearch",
+      "Name": "周辺視野でレイキャスト判定しない",
+      "Description": "周辺視野索敵時にレイキャストを使用しない"
+    },
+    {
+      "Field": "pad7",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "goalAction_ToCautionCorpseTarget",
+      "Name": "ゴールアクション：警戒状態/死体位置",
+      "Description": "ゴールアクション：ターゲットが死体の発見により警戒状態になった"
+    },
+    {
+      "Field": "disableLocalSteering",
+      "Name": "回避移動しない",
+      "Description": "他のキャラクターを回避しながら移動しようとする挙動(ローカルステアリング)をオフにするか？"
+    },
+    {
+      "Field": "goalAction_ToDisappear",
+      "Name": "ゴールアクション：記憶ターゲット状態",
+      "Description": "ゴールアクション：ターゲットを見失った"
+    },
+    {
+      "Field": "changeStateAction_ToNormal",
+      "Name": "ゴールアクション：通常状態開始",
+      "Description": "通常状態に遷移したときのアクション"
+    },
+    {
+      "Field": "MemoryTargetForgetTime",
+      "Name": "記憶ターゲット忘れる時間[sec]",
+      "Description": "記憶ターゲット忘れる時間。"
+    },
+    {
+      "Field": "pad3",
+      "Name": "パディング",
+      "Description": "pad"
+    }
+  ]
+}

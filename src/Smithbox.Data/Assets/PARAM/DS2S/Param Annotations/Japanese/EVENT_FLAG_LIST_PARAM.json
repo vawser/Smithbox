@@ -1,0 +1,13 @@
+{
+  "Param": "EVENT_FLAG_LIST_PARAM",
+  "Type": "EVENT_FLAG_LIST_PARAM",
+  "Name": "EVENT_FLAG_LIST_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "flagId",
+      "Name": "フラグID",
+      "Description": ""
+    }
+  ]
+}

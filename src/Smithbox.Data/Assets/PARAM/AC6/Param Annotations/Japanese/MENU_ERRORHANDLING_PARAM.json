@@ -1,0 +1,28 @@
+{
+  "Param": "MENU_ERRORHANDLING_PARAM",
+  "Type": "MENU_ERRORHANDLING_PARAM",
+  "Name": "MENU_ERRORHANDLING_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "ErrorCode",
+      "Name": "エラーコード",
+      "Description": "エラーコード"
+    },
+    {
+      "Field": "MsgID",
+      "Name": "メッセージID",
+      "Description": "エラーメッセージのID"
+    },
+    {
+      "Field": "MsgCategory",
+      "Name": "カテゴリ",
+      "Description": "エラーメッセージのカテゴリ"
+    },
+    {
+      "Field": "reserved",
+      "Name": "----",
+      "Description": "予約"
+    }
+  ]
+}

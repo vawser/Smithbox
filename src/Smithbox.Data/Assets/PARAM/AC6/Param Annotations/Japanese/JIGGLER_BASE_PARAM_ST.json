@@ -1,0 +1,163 @@
+{
+  "Param": "JIGGLER_BASE_PARAM_ST",
+  "Type": "JIGGLER_BASE_PARAM_ST",
+  "Name": "JIGGLER_BASE_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "ctrlType",
+      "Name": "設定方法",
+      "Description": "Jigglerをどこに設定するか"
+    },
+    {
+      "Field": "calcType",
+      "Name": "計算順",
+      "Description": "計算順序"
+    },
+    {
+      "Field": "reserved1",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "dmyPolyId",
+      "Name": "ダミポリID",
+      "Description": "適用するダミポリID（設定方法がダミポリの場合のみ有効）"
+    },
+    {
+      "Field": "strCtrlBoneName",
+      "Name": "制御ボーン名",
+      "Description": "適用するボーン名（設定方法がスケルトンの場合のみ有効）"
+    },
+    {
+      "Field": "reserved2",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "axisX",
+      "Name": "X軸として扱う軸",
+      "Description": "X軸として扱う軸（他の軸とかぶらないように）"
+    },
+    {
+      "Field": "axisY",
+      "Name": "Y軸として扱う軸",
+      "Description": "Y軸として扱う軸（他の軸とかぶらないように）"
+    },
+    {
+      "Field": "axisZ",
+      "Name": "重心の軸",
+      "Description": "重心となる軸（他の軸とかぶらないように）"
+    },
+    {
+      "Field": "bUseFollowBaseBone",
+      "Name": "【自機EO】EO制御にするか",
+      "Description": "自機EOの制御にするか（EOのルート関節でのみON）"
+    },
+    {
+      "Field": "limitAngleDeg_MinX",
+      "Name": "【回転】X軸最小角度[度]",
+      "Description": "X軸の最小角度"
+    },
+    {
+      "Field": "limitAngleDeg_MaxX",
+      "Name": "【回転】X軸最大角度[度]",
+      "Description": "X軸の最大角度"
+    },
+    {
+      "Field": "limitAngleDeg_MinY",
+      "Name": "【回転】Y軸最小角度[度]",
+      "Description": "Y軸の最小角度"
+    },
+    {
+      "Field": "limitAngleDeg_MaxY",
+      "Name": "【回転】Y軸最大角度[度]",
+      "Description": "Y軸の最大角度"
+    },
+    {
+      "Field": "behaviorParamId",
+      "Name": "Jiggler回転挙動パラメータID",
+      "Description": "回転挙動パラメータのID"
+    },
+    {
+      "Field": "behaviorSlideParamId",
+      "Name": "Jiggler移動挙動パラメータID",
+      "Description": "移動挙動パラメータのID"
+    },
+    {
+      "Field": "limitOffset_MinX",
+      "Name": "【位置】X軸最小オフセット",
+      "Description": "X軸の最小オフセット"
+    },
+    {
+      "Field": "limitOffset_MaxX",
+      "Name": "【位置】X軸最大オフセット",
+      "Description": "X軸の最大オフセット"
+    },
+    {
+      "Field": "limitOffset_MinY",
+      "Name": "【位置】Y軸最小オフセット",
+      "Description": "Y軸の最小オフセット"
+    },
+    {
+      "Field": "limitOffset_MaxY",
+      "Name": "【位置】Y軸最大オフセット",
+      "Description": "Y軸の最大オフセット"
+    },
+    {
+      "Field": "limitOffset_MinZ",
+      "Name": "【位置】Z軸最小オフセット",
+      "Description": "Z軸の最小オフセット"
+    },
+    {
+      "Field": "limitOffset_MaxZ",
+      "Name": "【位置】Z軸最大オフセット",
+      "Description": "Z軸の最大オフセット"
+    },
+    {
+      "Field": "behaviorWorldFixParamId",
+      "Name": "Jigglerワールドに対して固定パラメータID",
+      "Description": "ワールドに対して固定パラメータのID"
+    },
+    {
+      "Field": "behaviorTargetBoneRateParamId",
+      "Name": "Jiggler指定関節からの割合パラメータID",
+      "Description": "指定関節からの割合パラメータのID"
+    },
+    {
+      "Field": "pad",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "followBaseBone_SpineFollowRateRot",
+      "Name": "【自機EO】Spineへの追従率（回転）",
+      "Description": "\"Spine\"の回転後位置への追従率"
+    },
+    {
+      "Field": "followBaseBone_SpineFollowRatePos",
+      "Name": "【自機EO】Spineへの追従率（位置）",
+      "Description": "\"Spine\"の位置追従率"
+    },
+    {
+      "Field": "followBaseBone_OffsetX",
+      "Name": "【自機EO】追従基準位置オフセットX",
+      "Description": "\"Spine\"からのオフセット位置"
+    },
+    {
+      "Field": "followBaseBone_OffsetY",
+      "Name": "【自機EO】追従基準位置オフセットY",
+      "Description": "\"Spine\"からのオフセット位置"
+    },
+    {
+      "Field": "followBaseBone_OffsetZ",
+      "Name": "【自機EO】追従基準位置オフセットZ",
+      "Description": "\"Spine\"からのオフセット位置"
+    },
+    {
+      "Field": "reserved4",
+      "Name": "パディング3",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "Param": "USER_DISP_LOG_PARAM_ST",
+  "Type": "USER_DISP_LOG_PARAM_ST",
+  "Name": "USER_DISP_LOG_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "textId_1",
+      "Name": "textId_1",
+      "Description": ""
+    },
+    {
+      "Field": "iconId",
+      "Name": "iconId",
+      "Description": ""
+    },
+    {
+      "Field": "textId_2",
+      "Name": "textId_2",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_3a",
+      "Name": "unknown_3a",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_3b",
+      "Name": "unknown_3b",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_3c",
+      "Name": "unknown_3c",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_3d",
+      "Name": "unknown_3d",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_4a",
+      "Name": "unknown_4a",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_4b",
+      "Name": "unknown_4b",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_4c",
+      "Name": "unknown_4c",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_4d",
+      "Name": "unknown_4d",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_5a",
+      "Name": "unknown_5a",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_5b",
+      "Name": "unknown_5b",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_5c",
+      "Name": "unknown_5c",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_5d",
+      "Name": "unknown_5d",
+      "Description": ""
+    },
+    {
+      "Field": "seId_1",
+      "Name": "seId_1",
+      "Description": ""
+    },
+    {
+      "Field": "seId_2",
+      "Name": "seId_2",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,168 @@
+{
+  "Param": "DECAL_PARAM_ST",
+  "Type": "DECAL_PARAM_ST",
+  "Name": "DECAL_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "textureId",
+      "Name": "テクスチャID",
+      "Description": "テクスチャID"
+    },
+    {
+      "Field": "dmypolyId",
+      "Name": "ダミポリID",
+      "Description": "ダミポリID"
+    },
+    {
+      "Field": "pitchAngle",
+      "Name": "基準角度オフセット_上下[deg]",
+      "Description": "基準角度オフセット_上下[deg]"
+    },
+    {
+      "Field": "yawAngle",
+      "Name": "基準角度オフセット_左右[deg]",
+      "Description": "基準角度オフセット_左右[deg]"
+    },
+    {
+      "Field": "nearDistance",
+      "Name": "貼り付け開始距離[m]",
+      "Description": "貼り付け開始距離[m]"
+    },
+    {
+      "Field": "farDistance",
+      "Name": "貼り付け終了距離[m]",
+      "Description": "貼り付け終了距離[m]"
+    },
+    {
+      "Field": "nearSize",
+      "Name": "開始距離での大きさ[m]",
+      "Description": "開始距離での大きさ[m]"
+    },
+    {
+      "Field": "farSize",
+      "Name": "終了距離での大きさ[m]",
+      "Description": "終了距離での大きさ[m]"
+    },
+    {
+      "Field": "maskSpeffectId",
+      "Name": "監視特殊効果ID",
+      "Description": "監視特殊効果ID"
+    },
+    {
+      "Field": "randomVariationNum",
+      "Name": "ランダムバリエーション数",
+      "Description": "ランダムバリエーション数"
+    },
+    {
+      "Field": "replaceTextureId_byMaterial",
+      "Name": "材質によるテクスチャ差し替え",
+      "Description": "材質によるテクスチャ差し替え"
+    },
+    {
+      "Field": "dmypolyCategory",
+      "Name": "ダミポリ検索場所",
+      "Description": "ダミポリ検索場所"
+    },
+    {
+      "Field": "decalShapeType",
+      "Name": "デカル形状タイプ",
+      "Description": "デカル形状タイプ"
+    },
+    {
+      "Field": "useDeferredDecal",
+      "Name": "デファード",
+      "Description": "デファード"
+    },
+    {
+      "Field": "usePaintDecal",
+      "Name": "ペイント",
+      "Description": "ペイント"
+    },
+    {
+      "Field": "targetAttackChr",
+      "Name": "デカル対象：攻撃キャラ",
+      "Description": "デカル対象：攻撃キャラ"
+    },
+    {
+      "Field": "targetDamageChr",
+      "Name": "デカル対象：ダメージキャラ",
+      "Description": "デカル対象：ダメージキャラ"
+    },
+    {
+      "Field": "targetOtherChr",
+      "Name": "デカル対象：その他キャラ",
+      "Description": "デカル対象：その他キャラ"
+    },
+    {
+      "Field": "targetMapObj",
+      "Name": "デカル対象：背景",
+      "Description": "デカル対象：背景"
+    },
+    {
+      "Field": "usePom",
+      "Name": "POMを有効にするか",
+      "Description": "POMを有効にするか"
+    },
+    {
+      "Field": "randomSizeMin",
+      "Name": "ランダムスケール最小値[％]",
+      "Description": "ランダムスケール最小値[％]"
+    },
+    {
+      "Field": "randomSizeMax",
+      "Name": "ランダムスケール最大値[％]",
+      "Description": "ランダムスケール最大値[％]"
+    },
+    {
+      "Field": "randomRollMin",
+      "Name": "ランダム角度_ひねり最小値[deg]",
+      "Description": "ランダム角度_ひねり最小値[deg]"
+    },
+    {
+      "Field": "randomRollMax",
+      "Name": "ランダム角度_ひねり最大値[deg]",
+      "Description": "ランダム角度_ひねり最大値[deg]"
+    },
+    {
+      "Field": "randomPitchMin",
+      "Name": "ランダム角度_上下最小値[deg]",
+      "Description": "ランダム角度_上下最小値[deg]"
+    },
+    {
+      "Field": "randomPitchMax",
+      "Name": "ランダム角度_上下最大値[deg]",
+      "Description": "ランダム角度_上下最大値[deg]"
+    },
+    {
+      "Field": "randomYawMin",
+      "Name": "ランダム角度_左右最小値[deg]",
+      "Description": "ランダム角度_左右最小値[deg]"
+    },
+    {
+      "Field": "randomYawMax",
+      "Name": "ランダム角度_左右最大値[deg]",
+      "Description": "ランダム角度_左右最大値[deg]"
+    },
+    {
+      "Field": "pomHightScale",
+      "Name": "POM高さスケール",
+      "Description": "POM高さスケール"
+    },
+    {
+      "Field": "pomSampleMin",
+      "Name": "POM最小サンプル数",
+      "Description": "POM最小サンプル数"
+    },
+    {
+      "Field": "pomSampleMax",
+      "Name": "POM最大サンプル数",
+      "Description": "POM最大サンプル数"
+    },
+    {
+      "Field": "pad_00",
+      "Name": "パディング",
+      "Description": "パディング"
+    }
+  ]
+}

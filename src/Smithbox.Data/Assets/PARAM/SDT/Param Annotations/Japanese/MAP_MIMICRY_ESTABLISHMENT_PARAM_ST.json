@@ -1,0 +1,73 @@
+{
+  "Param": "MAP_MIMICRY_ESTABLISHMENT_PARAM_ST",
+  "Type": "MAP_MIMICRY_ESTABLISHMENT_PARAM_ST",
+  "Name": "MAP_MIMICRY_ESTABLISHMENT_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "mimicryEstablishment0",
+      "Name": "擬態重み0",
+      "Description": "擬態重み0"
+    },
+    {
+      "Field": "mimicryEstablishment1",
+      "Name": "擬態重み1",
+      "Description": "擬態重み1"
+    },
+    {
+      "Field": "mimicryEstablishment2",
+      "Name": "擬態重み2",
+      "Description": "擬態重み2"
+    },
+    {
+      "Field": "mimicryBeginSfxId0",
+      "Name": "擬態0 SFXID 前振り",
+      "Description": "擬態0 SFXID 前振り"
+    },
+    {
+      "Field": "mimicrySfxId0",
+      "Name": "擬態0 SFXID 本体",
+      "Description": "擬態0 SFXID 本体"
+    },
+    {
+      "Field": "mimicryEndSfxId0",
+      "Name": "擬態0 SFXID 解除",
+      "Description": "擬態0 SFXID 解除"
+    },
+    {
+      "Field": "mimicryBeginSfxId1",
+      "Name": "擬態1 SFXID 前振り",
+      "Description": "擬態1 SFXID 前振り"
+    },
+    {
+      "Field": "mimicrySfxId1",
+      "Name": "擬態1 SFXID 本体",
+      "Description": "擬態1 SFXID 本体"
+    },
+    {
+      "Field": "mimicryEndSfxId1",
+      "Name": "擬態1 SFXID 解除",
+      "Description": "擬態1 SFXID 解除"
+    },
+    {
+      "Field": "mimicryBeginSfxId2",
+      "Name": "擬態2 SFXID 前振り",
+      "Description": "擬態2 SFXID 前振り"
+    },
+    {
+      "Field": "mimicrySfxId2",
+      "Name": "擬態2 SFXID 本体",
+      "Description": "擬態2 SFXID 本体"
+    },
+    {
+      "Field": "mimicryEndSfxId2",
+      "Name": "擬態2 SFXID 解除",
+      "Description": "擬態2 SFXID 解除"
+    },
+    {
+      "Field": "pad1",
+      "Name": "パッド",
+      "Description": "pad"
+    }
+  ]
+}

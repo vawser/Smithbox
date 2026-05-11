@@ -1,0 +1,33 @@
+{
+  "Param": "JIGGLER_BEHAVIOR_TARGET_BONE_RATE_PARAM_ST",
+  "Type": "JIGGLER_BEHAVIOR_TARGET_BONE_RATE_PARAM_ST",
+  "Name": "JIGGLER_BEHAVIOR_TARGET_BONE_RATE_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "strTargetBoneName",
+      "Name": "ターゲットボーン名",
+      "Description": "ターゲットとなるボーン名"
+    },
+    {
+      "Field": "selfRotRateX",
+      "Name": "自分のX軸回転割合",
+      "Description": "自分の回転量の割合（0の場合はターゲットボーンの姿勢になる）"
+    },
+    {
+      "Field": "selfRotRateY",
+      "Name": "自分のY軸回転割合",
+      "Description": "自分の回転量の割合（0の場合はターゲットボーンの姿勢になる）"
+    },
+    {
+      "Field": "selfRotRateZ",
+      "Name": "自分のZ軸回転割合",
+      "Description": "自分の回転量の割合（0の場合はターゲットボーンの姿勢になる）"
+    },
+    {
+      "Field": "pad_end",
+      "Name": "パディング",
+      "Description": ""
+    }
+  ]
+}

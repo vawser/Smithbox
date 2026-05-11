@@ -1,0 +1,478 @@
+{
+  "Param": "LOCK_CAM_PARAM_ST",
+  "Type": "LOCK_CAM_PARAM_ST",
+  "Name": "LOCK_CAM_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "camDistTarget",
+      "Name": "カメラ距離目標[m]",
+      "Description": "カメラ用"
+    },
+    {
+      "Field": "rotRangeMinX",
+      "Name": "X軸回転最小値[deg]",
+      "Description": "カメラ用"
+    },
+    {
+      "Field": "lockRotXShiftRatio_Base",
+      "Name": "ロックX回転シフト率の基準値(-1.0～1.0)",
+      "Description": "0.0 の時はロックオンターゲットが画面の中心、1.0 の時は画面の一番上、-1.0 の時は画面の一番下。"
+    },
+    {
+      "Field": "chrOrgOffset_Y",
+      "Name": "キャラ基点オフセット(キャラ空間)",
+      "Description": "カメラの注視点の高さ（キャラのルート位置から）（接地時）"
+    },
+    {
+      "Field": "chrLockRangeMaxRadius",
+      "Name": "キャラ範囲最大半径[m]",
+      "Description": "ロック用"
+    },
+    {
+      "Field": "camFovY",
+      "Name": "縦画角[deg]",
+      "Description": "カメラ用"
+    },
+    {
+      "Field": "chrTransChaseRateForNormalX",
+      "Name": "通常時キャラ追尾率左右(0.0～1.0)",
+      "Description": "カメラ用"
+    },
+    {
+      "Field": "chrTransChaseRateForNormalU",
+      "Name": "キャラ追尾率上(0.0～1.0)",
+      "Description": "カメラ用"
+    },
+    {
+      "Field": "chrTransChaseRateForNormalF",
+      "Name": "通常時キャラ追尾率前(0.0～1.0)",
+      "Description": "カメラ用"
+    },
+    {
+      "Field": "chrTransChaseRateForNormalB",
+      "Name": "通常時キャラ追尾率後(0.0～1.0)",
+      "Description": "カメラ用"
+    },
+    {
+      "Field": "lockRotXShiftRatio_LerpRate",
+      "Name": "ロックX回転シフト率の補間率(0.0～1.0)",
+      "Description": "距離と関係なくロックX軸回転シフト率を補間する"
+    },
+    {
+      "Field": "shoulderOverDeg",
+      "Name": "肩越し視点角度[deg]",
+      "Description": "0以外の場合に肩越し視点になります。正の値なら自機が画面の左側、負の値なら右側になります"
+    },
+    {
+      "Field": "lockCamParamLerpRate",
+      "Name": "パラメータ補間率(0.0～1.0)",
+      "Description": "カメラ用"
+    },
+    {
+      "Field": "shoulderOverChangeDirectionMethod",
+      "Name": "肩越し視点旋回方法",
+      "Description": "仕様テスト用、後は削除予定"
+    },
+    {
+      "Field": "pad2",
+      "Name": "pad2[3]",
+      "Description": ""
+    },
+    {
+      "Field": "shoulderOverChangeDirectionSpeed",
+      "Name": "肩越し視点旋回方法_押し続ける（角度）_スピード(0.0～1.0)",
+      "Description": "肩越し視点旋回方法押し続ける（角度）用。視点の変化スピード。0の場合変化しない。"
+    },
+    {
+      "Field": "shoulderOverChangeDirectionTimeThreshold",
+      "Name": "肩越し視点旋回方法_押し続ける（時間）_時間閾値[sec]",
+      "Description": "肩越し視点旋回方法「押し続ける（時間）」用。視点変換の閾値（秒）。"
+    },
+    {
+      "Field": "shoulderOverChangeDirectionLerpRate",
+      "Name": "肩越し視点旋回時補間率(0.0～1.0)",
+      "Description": "肩越し視点旋回時の補間率（共通）。（酔わないためにうまく調整する必要がある）"
+    },
+    {
+      "Field": "chrTransChaseRateParam_AccelMaxX",
+      "Name": "キャラ追尾率（左右）が最低になるX方向加速度[m/s^2]",
+      "Description": "左右方向への加速度がこの値以上だと、左右の追尾率が最も低くなる"
+    },
+    {
+      "Field": "chrTransChaseRateParam_ChaseRateDecreaseMaxX",
+      "Name": "加速度（左右）による追尾率（左右）の減少量の最大値",
+      "Description": "加速度がある時、追尾率が下がる（加速感が出るために）。この値は減少量の最大値"
+    },
+    {
+      "Field": "chrTransChaseRateForNormalX_LerpRate",
+      "Name": "キャラ追尾率（左右）の補間率(0.0～1.0)",
+      "Description": "追尾率が上がる場合だけ補間される"
+    },
+    {
+      "Field": "shoulderOverChangeDirectionShortTimeThreshold",
+      "Name": "肩越し視点旋回方法_短く弾く_時間閾値[sec]",
+      "Description": "肩越し視点旋回方法「短く弾く」用。視点変換の閾値（秒）。1フレーム以下の場合はどうなるかはわからない。"
+    },
+    {
+      "Field": "chrTransChaseRateParam_AccelMaxY",
+      "Name": "キャラ追尾率（上下）が最低になるY方向加速度[m/s^2]",
+      "Description": "上下方向への加速度がこの値以上だと、上下の追尾率が最も低くなる"
+    },
+    {
+      "Field": "chrTransChaseRateParam_ChaseRateDecreaseMaxY",
+      "Name": "加速度（上下）による追尾率（上下）の減少量の最大値",
+      "Description": "加速度がある時、追尾率が下がる（加速感が出るために）。この値は減少量の最大値"
+    },
+    {
+      "Field": "chrTransChaseRateForNormalY_LerpRate",
+      "Name": "キャラ追尾率（上下）の補間率(0.0～1.0)",
+      "Description": "追尾率が上がる場合だけ補間される"
+    },
+    {
+      "Field": "shoulderOverChangeDirectionMinAngleThreshold",
+      "Name": "肩越し視点旋回方法_短く弾く_回転入力最小閾値[rad]",
+      "Description": "肩越し視点旋回方法「短く弾く」用。ミスで触ってしまうのを避けるために、この値以上にスティック入力する場合だけ方向変換"
+    },
+    {
+      "Field": "lockRotChaseRate",
+      "Name": "ロック回転追尾率(0.0～1.0)",
+      "Description": "ロックした相手にカメラを向ける際の追尾率"
+    },
+    {
+      "Field": "rotSpeed_Min_X",
+      "Name": "X軸回転速度最小値[deg/sec]",
+      "Description": "X軸回転速度最小値[deg/sec]"
+    },
+    {
+      "Field": "rotSpeed_Max_X",
+      "Name": "X軸回転速度最大値[deg/sec]",
+      "Description": "X軸回転速度最大値[deg/sec]"
+    },
+    {
+      "Field": "rotHiSpeed_Min_X",
+      "Name": "X軸高速回転速度最小値[deg/sec]",
+      "Description": "X軸高速回転速度最小値[deg/sec]"
+    },
+    {
+      "Field": "rotHiSpeed_Max_X",
+      "Name": "X軸高速回転速度最大値[deg/sec]",
+      "Description": "X軸高速回転速度最大値[deg/sec]"
+    },
+    {
+      "Field": "priority",
+      "Name": "優先度",
+      "Description": "パラメータが適用される優先度。同じ優先度の場合はシステム側で決めている優先度"
+    },
+    {
+      "Field": "doInverseTurnDirection",
+      "Name": "旋回方向を反転するか",
+      "Description": "0: 反転しない（自機が画面の左側にいる時左へ旋回すると肩越し方向を切り替える）、1: 反転する（自機が画面の左側にいる時右へ旋回すると肩越し方向を切り替える）"
+    },
+    {
+      "Field": "doUseOverShoulderViewWhenLockOn",
+      "Name": "ロックオン時は肩越し視点にするかどうか",
+      "Description": "0: フリーカメラ 1: 肩越し視点"
+    },
+    {
+      "Field": "doUseOverShoulderViewWhenNotLockOn",
+      "Name": "ロックオンではない時は肩越し視点にするかどうか",
+      "Description": "0: フリーカメラ 1: 肩越し視点"
+    },
+    {
+      "Field": "doIgnoreOptionRotSpeedRate",
+      "Name": "オプションの回転速度率を無視するか",
+      "Description": "0:オプションの回転速度率が適用される 1:オプションの回転速度率を無視する（5と見なす）"
+    },
+    {
+      "Field": "padding0",
+      "Name": "パディング0",
+      "Description": ""
+    },
+    {
+      "Field": "padding01",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "locksiteMoveFactor",
+      "Name": "ロックサイト先回り係数",
+      "Description": "ロックサイトがどれくらい速く先周り移動するか、移動速度にかける係数"
+    },
+    {
+      "Field": "rotRangeMaxX",
+      "Name": "X軸回転最大値[deg] ",
+      "Description": "射撃姿勢時のカメラ制御用"
+    },
+    {
+      "Field": "rotRangeMinY",
+      "Name": "Y軸回転最小値[deg] ",
+      "Description": "射撃姿勢時のカメラ制御用"
+    },
+    {
+      "Field": "rotRangeMaxY",
+      "Name": "Y軸回転最大値[deg] ",
+      "Description": "射撃姿勢時のカメラ制御用"
+    },
+    {
+      "Field": "chrTransChaseRateForNormalD",
+      "Name": "キャラ追尾率下(0.0～1.0)",
+      "Description": "カメラ用"
+    },
+    {
+      "Field": "lockRotXShiftRatio_Min",
+      "Name": "ロックX回転シフト率の最小値(-1.0～1.0)",
+      "Description": "0.0 の時はロックオンターゲットが画面の中心、1.0 の時は画面の一番上、-1.0 の時は画面の一番下。"
+    },
+    {
+      "Field": "lockRotXShiftRatio_Max",
+      "Name": "ロックX回転シフト率の最大値(-1.0～1.0)",
+      "Description": "0.0 の時はロックオンターゲットが画面の中心、1.0 の時は画面の一番上、-1.0 の時は画面の一番下。"
+    },
+    {
+      "Field": "lockRotXShiftRatio_LerpMinDist",
+      "Name": "ロックX回転シフト率の補間距離(近)",
+      "Description": "ターゲットがこの距離以内になると、ロックX回転シフト率が最大値になる。以外になると補間"
+    },
+    {
+      "Field": "lockRotXShiftRatio_LerpMidMinDist",
+      "Name": "ロックX回転シフト率の補間距離(中近)",
+      "Description": "ターゲットがこの距離以外になると、ロックX回転シフト率が基準値になる。以内になると補間"
+    },
+    {
+      "Field": "lockRotXShiftRatio_LerpMidMaxDist",
+      "Name": "ロックX回転シフト率の補間距離(中遠)",
+      "Description": "ターゲットがこの距離以内になると、ロックX回転シフト率が基準値になる。以外になると補間"
+    },
+    {
+      "Field": "lockRotXShiftRatio_LerpMaxDist",
+      "Name": "ロックX回転シフト率の補間距離(遠)",
+      "Description": "ターゲットがこの距離以外になると、ロックX回転シフト率が最小値になる。以内になると補間"
+    },
+    {
+      "Field": "chrTransChaseRateParam_ChaseRateDecreaseBySpeedMaxX",
+      "Name": "速度（左右）によるキャラ追尾率（左右）の減少量の最大値",
+      "Description": "QBとブースト中のスピード感を出したい"
+    },
+    {
+      "Field": "chrTransChaseRateParam_MaxHorizontalSpeed",
+      "Name": "キャラ追尾率（水平）が最低になる水平方向速度[m/s]",
+      "Description": "速度が最大値以下の場合、追尾率の減少量と速度とは線形関係"
+    },
+    {
+      "Field": "chrTransChaseRateParam_ChaseRateDecreaseBySpeedMaxFront",
+      "Name": "速度（前）によるキャラ追尾率（前）の減少量の最大値",
+      "Description": "QBとブースト中のスピード感を出したい"
+    },
+    {
+      "Field": "chrTransChaseRateParam_ChaseRateDecreaseBySpeedMaxBack",
+      "Name": "速度（後）によるキャラ追尾率（後）の減少量の最大値",
+      "Description": "QBとブースト中のスピード感を出したい"
+    },
+    {
+      "Field": "closeToTargetDistance",
+      "Name": "ロックオンターゲットにの近すぎる距離[m]",
+      "Description": "自機とターゲットとの距離がこの範囲内になると実装都合に肩越し角度とX軸回転に特殊処理が入っている"
+    },
+    {
+      "Field": "overShoulderRadLerpRate",
+      "Name": "肩越し角度の補間率(0.0～1.0)",
+      "Description": "肩越し角度の補間率、パラメータ補間率から独立した"
+    },
+    {
+      "Field": "overShoulderRadLerpRateWhenLockOnOff",
+      "Name": "ロックオンオフの切り替える時の肩越し角度の補間率(0.0～1.0)",
+      "Description": "ロックオンオフの切り替える時用肩越し角度の補間率"
+    },
+    {
+      "Field": "overShoulderRadLerpRateLerpRate",
+      "Name": "肩越し角度の補間率の補間率(0.0～1.0)",
+      "Description": "肩越し角度の補間率の補間率（補間率が急に変わることを避けるために補間する）"
+    },
+    {
+      "Field": "chrTransChaseRateForQBX",
+      "Name": "QB時キャラ追尾率（左右）(0.0～1.0)",
+      "Description": ""
+    },
+    {
+      "Field": "chrTransChaseRateForQBF",
+      "Name": "QB時キャラ追尾率（前）(0.0～1.0)",
+      "Description": ""
+    },
+    {
+      "Field": "chrTransChaseRateForQBB",
+      "Name": "QB時キャラ追尾率（後）(0.0～1.0)",
+      "Description": ""
+    },
+    {
+      "Field": "chrTransChaseRateForBoostX",
+      "Name": "ブースト時キャラ追尾率（左右）(0.0～1.0)",
+      "Description": ""
+    },
+    {
+      "Field": "chrTransChaseRateForBoostF",
+      "Name": "ブースト時キャラ追尾率（前）(0.0～1.0)",
+      "Description": ""
+    },
+    {
+      "Field": "chrTransChaseRateForBoostB",
+      "Name": "ブースト時キャラ追尾率（後）(0.0～1.0)",
+      "Description": ""
+    },
+    {
+      "Field": "chrTransChaseRateForNormalF_LerpRate",
+      "Name": "キャラ追尾率（前）の補間率(0.0～1.0)",
+      "Description": "追尾率が上がる場合だけ補間される"
+    },
+    {
+      "Field": "chrTransChaseRateForNormalB_LerpRate",
+      "Name": "キャラ追尾率（後）の補間率(0.0～1.0)",
+      "Description": "追尾率が上がる場合だけ補間される"
+    },
+    {
+      "Field": "shootTargetLookUpAngAtUnlock",
+      "Name": "非ロック時射撃地点カメラ俯角[deg] ",
+      "Description": "フリーカメラ時(非ロック時等操作可能な際）にカメラが俯く角度"
+    },
+    {
+      "Field": "shootTargetLookUpAngAtLock",
+      "Name": "ロック時射撃地点カメラ俯角[deg] ",
+      "Description": "ロック時にカメラが俯く角度"
+    },
+    {
+      "Field": "lockRotChasePlayAngHorizontal",
+      "Name": "ロック回転追尾遊び角度(水平)[deg]",
+      "Description": "ロックオンターゲットの遊び角度(水平方向)"
+    },
+    {
+      "Field": "camLookupOffsetY",
+      "Name": "見上げ：注視点補正Y(高さ)[m]",
+      "Description": ""
+    },
+    {
+      "Field": "camLookupOffsetZ",
+      "Name": "見上げ：注視点補正Z(前後)[m]",
+      "Description": ""
+    },
+    {
+      "Field": "camLookdownOffsetY",
+      "Name": "見下し：注視点補正Y(高さ)[m]",
+      "Description": ""
+    },
+    {
+      "Field": "camLookdownOffsetZ",
+      "Name": "見下し：注視点補正Z(前後)[m]",
+      "Description": ""
+    },
+    {
+      "Field": "lockRotChaseRateRecoverRateAfterCrossing",
+      "Name": "すれ違い後ロック回転追尾率の回復率(0.0～1.0)",
+      "Description": "大きいほどすれ違い後カメラの（ターゲットへの）回転が速くなる"
+    },
+    {
+      "Field": "crossingLockRotChaseRate",
+      "Name": "すれ違い時のロック回転追尾率(0.0～1.0)",
+      "Description": "すれ違い効果中適用されるロック回転追尾率、小さいほど自機の運動が直線になる"
+    },
+    {
+      "Field": "crossingLastTime",
+      "Name": "すれ違い効果の持続時間[sec]",
+      "Description": ""
+    },
+    {
+      "Field": "crossingHorizontalDistanceThreshold",
+      "Name": "すれ違いの水平距離の閾値[m]",
+      "Description": "自機とロックオンターゲットとの距離が閾値以上になる場合だけすれ違いが可能"
+    },
+    {
+      "Field": "crossingRelativeVelocityThreshold",
+      "Name": "すれ違いの相対速度の閾値[m/s]",
+      "Description": "自機とロックオンターゲットとの水平相対速度が閾値以上になる場合だけすれ違い可能"
+    },
+    {
+      "Field": "lockRotChasePlayAngVertical",
+      "Name": "ロック回転追尾遊び角度(垂直)[deg]",
+      "Description": "ロックオンターゲットの遊び角度(垂直方向)"
+    },
+    {
+      "Field": "lockRotChasePlayAngHorizontalReturnLerpRate",
+      "Name": "ロック回転追尾遊び角度(水平)の戻り補間率(0.0～1.0)",
+      "Description": "ロックオンターゲットが遊び角度から徐々に画面中央に戻る際にの補間率"
+    },
+    {
+      "Field": "lockRotChasePlayAngVerticalReturnLerpRate",
+      "Name": "ロック回転追尾遊び角度(垂直)の戻り補間率(0.0～1.0)",
+      "Description": "ロックオンターゲットが遊び角度から徐々に画面中央に戻る際にの補間率"
+    },
+    {
+      "Field": "camAutoPullWhenLookUpRotXThreshold",
+      "Name": "カメラが上に見る際に自動引くが発生するX軸回転角度の閾値[deg]",
+      "Description": "カメラのX軸回転角度がこの値以上になるとカメラを自動上げる効果が効く。-1と設定される場合はカメラが自機の足元の高さまで降りてくる場合効く。無効にしたければ最大値の90に設定してください。"
+    },
+    {
+      "Field": "camAutoPullWhenLookUpWeight",
+      "Name": "カメラが上に見る際に自動引き効果の重み(0.0～1.0)",
+      "Description": "大きいほどカメラの回転を下げます。つまり自機の足元まで見えるようになります。小さくすると、敵の全体が見えるようになります。"
+    },
+    {
+      "Field": "camAutoPullWhenLookUpCamDistWeight",
+      "Name": "カメラが上に見る際に自動引き距離の倍率",
+      "Description": "大きいほどカメラがより引きます"
+    },
+    {
+      "Field": "camAutoPullWhenLookUpCamDistMax",
+      "Name": "カメラが上に見る際に自動引きの最大距離[m]",
+      "Description": ""
+    },
+    {
+      "Field": "chrOrgOffset_Y_Up",
+      "Name": "キャラ基点オフセット（空中上昇中）[m]",
+      "Description": "カメラの注視点の高さ（キャラのルート位置から）（空中上昇中）"
+    },
+    {
+      "Field": "chrOrgOffset_Y_Down",
+      "Name": "キャラ基点オフセット（空中落下中）[m]",
+      "Description": "カメラの注視点の高さ（キャラのルート位置から）（空中落下中）"
+    },
+    {
+      "Field": "chrOrgOffset_Y_LerpRate",
+      "Name": "キャラ基点オフセット補間率(0.0～1.0)",
+      "Description": ""
+    },
+    {
+      "Field": "chrOrgOffset_Y_MuteAirLerpRate",
+      "Name": "キャラ基点オフセット（空中）無効化前後の補間率(0.0～1.0)",
+      "Description": "TAEフラグの「カメラ空中オフセットを無効化(PC用)」の前後のオフセットの補間率"
+    },
+    {
+      "Field": "playerFadeDist",
+      "Name": "プレイヤーのディザフェード距離",
+      "Description": "ディザフェードが有効になるカメラと操作キャラの距離"
+    },
+    {
+      "Field": "rotSpeed_Min_Y",
+      "Name": "Y軸回転速度最小値[deg/sec]",
+      "Description": "Y軸回転速度最小値[deg/sec]"
+    },
+    {
+      "Field": "rotSpeed_Max_Y",
+      "Name": "Y軸回転速度最大値[deg/sec]",
+      "Description": "Y軸回転速度最大値[deg/sec]"
+    },
+    {
+      "Field": "rotHiSpeed_Min_Y",
+      "Name": "Y軸高速回転速度最小値[deg/sec]",
+      "Description": "Y軸高速回転速度最小値[deg/sec]"
+    },
+    {
+      "Field": "rotHiSpeed_Max_Y",
+      "Name": "Y軸高速回転速度最大値[deg/sec]",
+      "Description": "Y軸高速回転速度最大値[deg/sec]"
+    },
+    {
+      "Field": "reserve031",
+      "Name": "予約31",
+      "Description": ""
+    }
+  ]
+}

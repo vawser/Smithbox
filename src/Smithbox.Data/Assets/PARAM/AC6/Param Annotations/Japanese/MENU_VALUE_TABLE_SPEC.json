@@ -1,0 +1,28 @@
+{
+  "Param": "MENU_VALUE_TABLE_SPEC",
+  "Type": "MENU_VALUE_TABLE_SPEC",
+  "Name": "MENU_VALUE_TABLE_SPEC",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "value",
+      "Name": "比較する値",
+      "Description": "比較する値"
+    },
+    {
+      "Field": "textId",
+      "Name": "変換後のテキストID",
+      "Description": "変換後のテキストID(負の値=SystemMessageのID)"
+    },
+    {
+      "Field": "compareType",
+      "Name": "比較タイプ",
+      "Description": "比較タイプ"
+    },
+    {
+      "Field": "padding",
+      "Name": "パディング",
+      "Description": "パディング"
+    }
+  ]
+}

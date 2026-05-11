@@ -1,0 +1,358 @@
+{
+  "Param": "BEHAVIOR_PARAM_ST",
+  "Type": "BEHAVIOR_PARAM_ST",
+  "Name": "BEHAVIOR_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "NT版出力から外すか",
+      "Description": "NT版から除外するか、除外するものに○をつける"
+    },
+    {
+      "Field": "disableParam_Product",
+      "Name": "製品版出力から外すか",
+      "Description": "製品版から除外するか、除外するものに○をつける"
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "パッケージ出力用リザーブ1",
+      "Description": "パッケージ出力用リザーブ1"
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "パッケージ出力用リザーブ2",
+      "Description": "パッケージ出力用リザーブ2"
+    },
+    {
+      "Field": "variationId",
+      "Name": "行動バリエーションID",
+      "Description": "攻撃パラメータ用のIDを算出する際に使用します。実機上では直接使用しません。"
+    },
+    {
+      "Field": "behaviorJudgeId",
+      "Name": "行動判定ID",
+      "Description": "攻撃パラメータ用のIDを算出する際に使用します。このIDはTimeActEditorで入力される行動判定IDと一致させます。実機上では直接使用しません。"
+    },
+    {
+      "Field": "ezStateBehaviorType_old",
+      "Name": "IDルール用",
+      "Description": "ID算出ルール用"
+    },
+    {
+      "Field": "refType",
+      "Name": "参照IDタイプ",
+      "Description": "参照IDを間違わないように指定."
+    },
+    {
+      "Field": "consumeSA",
+      "Name": "消費SA",
+      "Description": "行動時の消費SA量を設定."
+    },
+    {
+      "Field": "refId",
+      "Name": "参照ID",
+      "Description": "攻撃力、飛び道具、特殊効果パラメータのID、refTypeによって使い分けられる。"
+    },
+    {
+      "Field": "sfxVariationId",
+      "Name": "SFX バリエーションID",
+      "Description": "ＳＦＸのバリエーションを指定（TimeActEditorのＩＤと組み合わせて、ＳＦＸを特定するのに使用する）"
+    },
+    {
+      "Field": "stamina",
+      "Name": "消費スタミナ",
+      "Description": "行動時の消費スタミナ量を設定."
+    },
+    {
+      "Field": "energy",
+      "Name": "消費EN",
+      "Description": "行動時の消費EN量を設定"
+    },
+    {
+      "Field": "mp",
+      "Name": "消費MP",
+      "Description": "行動時の消費MP量を設定."
+    },
+    {
+      "Field": "category",
+      "Name": "カテゴリ",
+      "Description": "スキルや、魔法、アイテムなどで、パラメータが変動する効果（エンチャントウェポンなど）があるので、│定した効果が、「武器攻撃のみをパワーアップする」といった効果に対応できるように行動ごとに設定するバリスタなど、設定の必要のないものは「なし」を設定する\r\n"
+    },
+    {
+      "Field": "heroPoint",
+      "Name": "消費人間性",
+      "Description": "行動時の消費人間性量を設定"
+    },
+    {
+      "Field": "pad1",
+      "Name": "パディング1",
+      "Description": "パディング1."
+    },
+    {
+      "Field": "shootDmyPolyId",
+      "Name": "射撃ダミポリID",
+      "Description": "射撃ダミポリのID"
+    },
+    {
+      "Field": "shootEndDmyPolyId",
+      "Name": "射撃終了ダミポリID",
+      "Description": "射撃終了ダミポリのID"
+    },
+    {
+      "Field": "shootAngle",
+      "Name": "発射角度[deg]",
+      "Description": "飛び道具を前方何度に向かって発射するかを指定."
+    },
+    {
+      "Field": "shootAngleInterval",
+      "Name": "発射角度間隔[deg]",
+      "Description": "飛び道具を複数発射する場合、何度間隔で発射するかを指定.(Y軸)"
+    },
+    {
+      "Field": "shootAngleXZ",
+      "Name": "発射仰角[deg]",
+      "Description": "水平方向からの追加仰角。"
+    },
+    {
+      "Field": "bUseNumShootBullet",
+      "Name": "同時発射数分弾丸を消費するか ",
+      "Description": "同時発射数分弾丸を消費する"
+    },
+    {
+      "Field": "isSequenceShootWhenSameTimeShoot",
+      "Name": "同時発射でも連番発射するか",
+      "Description": "複数ダミポリを使用する連番発射の際に、同時発射の弾丸も連番発射の対象とするか"
+    },
+    {
+      "Field": "isShootAngOffsetDisable",
+      "Name": "誘導目標にのみオフセットを適用",
+      "Description": "OFFで射撃時の角度にもオフセットを適用、ONでオフセット無効"
+    },
+    {
+      "Field": "pad2",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "pad3",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "shootAngleXInterval",
+      "Name": "発射仰角間隔[deg]",
+      "Description": "飛び道具を複数発射する場合、何度間隔で発射するかを指定.(X軸)"
+    },
+    {
+      "Field": "shootAngleZ",
+      "Name": "発射Z軸回転[deg]",
+      "Description": "飛び道具発射時にZ軸方向へ何度回転させるかを指定."
+    },
+    {
+      "Field": "shootAngleZInterval",
+      "Name": "発射Z軸回転間隔[deg]",
+      "Description": "飛び道具を複数発射する場合、何度間隔で発射するかを指定.(Z軸)"
+    },
+    {
+      "Field": "bulletRollAngleZ",
+      "Name": "発射ねじり角[deg]",
+      "Description": "錐揉み方向の追加角度(Z軸)"
+    },
+    {
+      "Field": "bulletRollAngleZInterbal",
+      "Name": "発射ねじり角間隔[deg]",
+      "Description": "飛び道具を複数発射する場合、何度間隔で発射するかを指定.(Z軸)"
+    },
+    {
+      "Field": "bulletRollAngleZRandom",
+      "Name": "発射ねじり角乱数[deg]",
+      "Description": "発射ねじり角乱数の上限（0～360）"
+    },
+    {
+      "Field": "shootTargetXOffset",
+      "Name": "目標左右オフセット[m]",
+      "Description": "着弾位置の左右オフセット。発射時とホーミング中のターゲット位置を左右にずらす。（-n～n）"
+    },
+    {
+      "Field": "targetYOffsetRange",
+      "Name": "目標上下オフセット[m]",
+      "Description": "着弾位置の上下オフセット。発射時とホーミング中のターゲット位置を上下にずらす。（-n～n）"
+    },
+    {
+      "Field": "shootTargetZOffset",
+      "Name": "目標手前奥オフセット[m]",
+      "Description": "着弾位置の前後オフセット。発射時とホーミング中のターゲット位置を手前、奥にずらす。（-n～n）"
+    },
+    {
+      "Field": "numShoot",
+      "Name": "同時発射数",
+      "Description": "薬莢(エミッタ)1つあたりに生成される弾数。弾薬消費には影響しない"
+    },
+    {
+      "Field": "numContinueShoot",
+      "Name": "連続発射数",
+      "Description": "継続して発射する回数。発射する弾の総数は、同時発射数×連続発射数\u3000となる"
+    },
+    {
+      "Field": "cupsleRotationDeg",
+      "Name": "横向きカプセル初期ロール角度[deg]",
+      "Description": "横向きカプセルの回転角度"
+    },
+    {
+      "Field": "shootInterval",
+      "Name": "連続発射間隔[s]",
+      "Description": "連続発射時に、何秒間隔で撃つかの秒数"
+    },
+    {
+      "Field": "reloadTimeSecond",
+      "Name": "1回撃ってから次に撃てるまでのインターバル",
+      "Description": "１回撃ってから次に撃てるまでのインターバル"
+    },
+    {
+      "Field": "targetZOffsetRange",
+      "Name": "曲射目標位置手前奥オフセット[m]",
+      "Description": "曲射用着弾位置の前後オフセット。発射時とホーミング中のターゲット位置を手前、奥にずらす。（-n～n）"
+    },
+    {
+      "Field": "targetXOffsetRange",
+      "Name": "曲射目標位置左右オフセット[m]",
+      "Description": "曲射用着弾位置の左右オフセット。発射時とホーミング中のターゲット位置を左右にずらす。（-n～n）"
+    },
+    {
+      "Field": "bTargetAutoOffset",
+      "Name": "目標位置自動オフセット",
+      "Description": "目標位置自動オフセットを使うか"
+    },
+    {
+      "Field": "pad4",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "targetAutoOffsetBaseDmyPolyId",
+      "Name": "目標位置自動オフセット 基準ダミポリ",
+      "Description": "目標位置自動オフセットで使う基準ダミポリID"
+    },
+    {
+      "Field": "pa_DrainVal",
+      "Name": "消費PA",
+      "Description": "消費PAゲージ"
+    },
+    {
+      "Field": "pad5",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "pa_OverwriteDelayTimeSec",
+      "Name": "PA回復ディレイ時間上書き[sec]",
+      "Description": "PAの回復時間を上書きする量(-1で上書きなし)"
+    },
+    {
+      "Field": "consumeBulletNum",
+      "Name": "消費弾数",
+      "Description": "攻撃発生時に消費する弾丸数"
+    },
+    {
+      "Field": "recoilBlurAddVal",
+      "Name": "攻撃反動ブレ蓄積量",
+      "Description": "攻撃反動ブレ蓄積量"
+    },
+    {
+      "Field": "lockTimeSec",
+      "Name": "ロック時間[sec]",
+      "Description": "二次ロックまでの時間"
+    },
+    {
+      "Field": "maxMissileLockNum",
+      "Name": "最大ロック数",
+      "Description": "ミサイルロックの最大数"
+    },
+    {
+      "Field": "shootEnableLockNum",
+      "Name": "発射可能ロック数",
+      "Description": "ロックカウント数が指定値未満の場合は発射不可とする"
+    },
+    {
+      "Field": "pad6",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "HdPadRumble_Atk_Id",
+      "Name": "攻撃発生時振動",
+      "Description": "ハプティックフィードバック用の振動ID"
+    },
+    {
+      "Field": "HdPadRumble_Hit_Id",
+      "Name": "着弾時振動",
+      "Description": "ハプティックフィードバック用の着弾時振動ID"
+    },
+    {
+      "Field": "HdPadRumble_Priority",
+      "Name": "振動優先度",
+      "Description": "ハプティックフィードバック用の再生優先度(0が優先度低、10が優先度高)"
+    },
+    {
+      "Field": "pad7",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "shotgunParamId",
+      "Name": "散弾制御パラメータID",
+      "Description": ""
+    },
+    {
+      "Field": "shotgunBaseDist",
+      "Name": "拡散基準距離(m)",
+      "Description": ""
+    },
+    {
+      "Field": "heat_AddValue",
+      "Name": "ヒート値蓄積量[point] \t",
+      "Description": "弾一発ごとに蓄積するヒート値"
+    },
+    {
+      "Field": "targetShotgunParamId",
+      "Name": "目標位置オフセット_散弾制御パラメータID",
+      "Description": "目標位置に対するオフセット計算"
+    },
+    {
+      "Field": "chargeDelayTimeSec",
+      "Name": "チャージ開始ディレイ時間[s]",
+      "Description": "行動パラ参照後チャージ開始までのディレイ時間"
+    },
+    {
+      "Field": "continueShootConsumeBulletMaxTimeSec",
+      "Name": "継続消費弾数_最大時間[s]",
+      "Description": "継続消費で消費する弾丸の最大時間"
+    },
+    {
+      "Field": "continueShootConsumeBulletMaxNum",
+      "Name": "継続消費弾数_最大弾数",
+      "Description": "継続消費で消費する最大弾丸数"
+    },
+    {
+      "Field": "continueShootAddHeatMaxTimeSec",
+      "Name": "継続ヒート値蓄積_最大時間[s]",
+      "Description": "継続消費で蓄積する熱量の最大時間"
+    },
+    {
+      "Field": "continueShootAddHeatMaxValue",
+      "Name": "継続ヒート値蓄積_最大ヒート値[point]",
+      "Description": "継続消費で蓄積する最大熱量"
+    },
+    {
+      "Field": "lockCountUpTimeSec",
+      "Name": "カウントアップ時間[sec]",
+      "Description": "ミサイルのロックカウントアップ時間（2ロック目からのロック時間）"
+    },
+    {
+      "Field": "pad_end",
+      "Name": "パディング",
+      "Description": ""
+    }
+  ]
+}

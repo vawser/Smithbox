@@ -1,0 +1,1028 @@
+{
+  "Param": "GAME_SYSTEM_PARAM_ST",
+  "Type": "GAME_SYSTEM_PARAM_ST",
+  "Name": "GAME_SYSTEM_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "BaseToughnessRecoverTime",
+      "Name": "基本強靭度耐久値回復時間",
+      "Description": "強靭度回復時間の基本値です。（秒）"
+    },
+    {
+      "Field": "ChrEventTrun_byLeft90",
+      "Name": "キャラのイベント旋回アニメーション（左90°）",
+      "Description": "「キャラの旋回」イベント用の左90°旋回アニメーションです。"
+    },
+    {
+      "Field": "ChrEventTrun_byRight90",
+      "Name": "キャラのイベント旋回アニメーション（右90°）",
+      "Description": "「キャラの旋回」イベント用の右90°旋回アニメーションです。"
+    },
+    {
+      "Field": "ChrEventTrun_byLeft180",
+      "Name": "キャラのイベント旋回アニメーション（左180°）",
+      "Description": "「キャラの旋回」イベント用の左180°旋回アニメーションです。"
+    },
+    {
+      "Field": "ChrEventTrun_byRight180",
+      "Name": "キャラのイベント旋回アニメーション（右180°）",
+      "Description": "「キャラの旋回」イベント用の右180°旋回アニメーションです。"
+    },
+    {
+      "Field": "ChrEventTrun_90TurnStartAngle",
+      "Name": "キャラのイベント旋回90°アニメーション開始角度",
+      "Description": "「キャラの旋回」イベント用の90°旋回アニメーションを適用する角度の開始角度。この角度より小さい角度でイベントが始まった場合は、システム旋回が行われます"
+    },
+    {
+      "Field": "ChrEventTrun_180TurnStartAngle",
+      "Name": "キャラのイベント旋回180°アニメーション開始角度",
+      "Description": "「キャラの旋回」イベント用の180°旋回アニメーションを適用する角度の開始角度。"
+    },
+    {
+      "Field": "DeptDeceasedItemId",
+      "Name": "負債亡者度アイテムId",
+      "Description": "負債亡者度の判定用アイテムのID。０以下だと無効値として負債を扱いません"
+    },
+    {
+      "Field": "FlickDamageCutRateSuccessGurad",
+      "Name": "はじかれ時ガード成功時ダメージカット率",
+      "Description": "はじかれ時ガード成功時ダメージカット率。最終ダメージに乗算"
+    },
+    {
+      "Field": "NpcTalkAnimBeginDiffAngle",
+      "Name": "NPC会話のアニメ再生開始する差分角度",
+      "Description": "NPC会話の会話中モーションのアニメ再生開始する差分角度です。"
+    },
+    {
+      "Field": "NpcTalkAnimEndDiffAngle",
+      "Name": "NPC会話のアニメ再生停止する差分角度",
+      "Description": "NPC会話の会話中モーションのアニメ再生停止する差分角度です。"
+    },
+    {
+      "Field": "CultDeadSpEffectId_Optional",
+      "Name": "儀式死体化時特殊効果_任意",
+      "Description": "プレイヤーが装備している儀式剣から決定する儀式死体のときの特殊効果。"
+    },
+    {
+      "Field": "CultDeadSpEffectId_LevelUp",
+      "Name": "儀式死体化時特殊効果_レベルアップ",
+      "Description": "レベルアップ儀式死体のときの特殊効果"
+    },
+    {
+      "Field": "CultDeadSpEffectId_StatusReroll",
+      "Name": "儀式死体化時特殊効果_ステータス振りなおし",
+      "Description": "ステータス振りなおし儀式死体のときの特殊効果"
+    },
+    {
+      "Field": "CultDeadSpEffectId_DeadLevelReset",
+      "Name": "儀式死体化時特殊効果_亡者度リセット",
+      "Description": "亡者度リセット儀式死体のときの特殊効果"
+    },
+    {
+      "Field": "CultDeadSpEffectId_Atonement",
+      "Name": "儀式死体化時特殊効果_贖罪",
+      "Description": "贖罪儀式死体のときの特殊効果"
+    },
+    {
+      "Field": "CultDeadSpEffectId_NpcWhiteGhost",
+      "Name": "儀式死体化時特殊効果_NPC白霊召喚",
+      "Description": "NPC白霊召喚儀式死体のときの特殊効果"
+    },
+    {
+      "Field": "CultDeadSpEffectId_Bomb",
+      "Name": "儀式死体化時特殊効果_ボム",
+      "Description": "ボム儀式死体のときの特殊効果"
+    },
+    {
+      "Field": "CultDeadSpEffectId_NoInvasion",
+      "Name": "儀式死体化時特殊効果_侵入禁止",
+      "Description": "侵入禁止儀式死体のときの特殊効果"
+    },
+    {
+      "Field": "CultSwordItemId_LevelUp",
+      "Name": "レベルアップ儀式剣のId",
+      "Description": "レベルアップ儀式に対応する儀式剣の道具ParamId"
+    },
+    {
+      "Field": "CultSwordItemId_StatusReroll",
+      "Name": "ステータス振りなおし儀式剣のId",
+      "Description": "ステータス振りなおし儀式に対応する儀式剣の道具ParamId"
+    },
+    {
+      "Field": "CultSwordItemId_DeadLevelReset",
+      "Name": "亡者度リセット儀式剣のId",
+      "Description": "亡者度リセット儀式に対応する儀式剣の道具ParamId"
+    },
+    {
+      "Field": "CultSwordItemId_Atonement",
+      "Name": "贖罪儀式剣のId",
+      "Description": "贖罪儀式に対応する儀式剣の道具ParamId"
+    },
+    {
+      "Field": "CultSwordItemId_NpcWhiteGhost",
+      "Name": "NPC白霊召喚儀式剣のId",
+      "Description": "NPC白霊召喚儀式に対応する儀式剣の道具ParamId"
+    },
+    {
+      "Field": "CultSwordItemId_Bomb",
+      "Name": "ボム儀式剣のId",
+      "Description": "ボム儀式に対応する儀式剣の道具ParamId"
+    },
+    {
+      "Field": "CultSwordItemId_NoInvasion",
+      "Name": "侵入禁止儀式剣のId",
+      "Description": "侵入禁止儀式に対応する儀式剣の道具ParamId"
+    },
+    {
+      "Field": "ImpossibleCultDialogId_LevelUp",
+      "Name": "レベルアップ儀式不可能ダイアログId",
+      "Description": "レベルアップ儀式が不可能な時に出るダイアログId"
+    },
+    {
+      "Field": "ImpossibleCultDialogId_StatusReroll",
+      "Name": "ステータス振りなおし儀式不可能ダイアログId",
+      "Description": "ステータス振りなおし儀式が不可能な時に出るダイアログId"
+    },
+    {
+      "Field": "ImpossibleCultDialogId_DeadLevelReset",
+      "Name": "亡者度リセット儀式不可能ダイアログId",
+      "Description": "亡者度リセット儀式が不可能な時に出るダイアログId"
+    },
+    {
+      "Field": "ImpossibleCultDialogId_Atonement",
+      "Name": "贖罪儀式不可能ダイアログId",
+      "Description": "贖罪儀式が不可能な時に出るダイアログId"
+    },
+    {
+      "Field": "ImpossibleCultDialogId_NpcWhiteGhost_MaxChr",
+      "Name": "NPC白霊召喚（空席なし）儀式不可能ダイアログId",
+      "Description": "NPC白霊召喚（空席なし）儀式が不可能な時に出るダイアログId"
+    },
+    {
+      "Field": "ImpossibleCultDialogId_NpcWhiteGhost_AreaOut",
+      "Name": "NPC白霊召喚（エリア外）儀式不可能ダイアログId",
+      "Description": "NPC白霊召喚（エリア外）儀式が不可能な時に出るダイアログId"
+    },
+    {
+      "Field": "ImpossibleCultDialogId_NpcWhiteGhost_AreaClear",
+      "Name": "NPC白霊召喚（攻略済み）儀式不可能ダイアログId",
+      "Description": "NPC白霊召喚（攻略済み）儀式が不可能な時に出るダイアログId"
+    },
+    {
+      "Field": "ImpossibleCultDialogId_Bomb",
+      "Name": "ボム儀式不可能ダイアログId",
+      "Description": "ボム儀式が不可能な時に出るダイアログId"
+    },
+    {
+      "Field": "ImpossibleCultDialogId_NoInvasion",
+      "Name": "侵入禁止儀式不可能ダイアログId",
+      "Description": "侵入禁止儀式が不可能な時に出るダイアログId"
+    },
+    {
+      "Field": "AcquittalTargetNpcEventFlagId",
+      "Name": "免罪対象になるNPCがいるか？イベントフラグId",
+      "Description": "免罪対象になるNPCがいるかを持つイベントフラグId"
+    },
+    {
+      "Field": "ActiveCultAtonementEventFlagId",
+      "Name": "贖罪イベント起動イベントフラグId",
+      "Description": "贖罪儀式を行ったことをイベントに通知するためのイベントフラグID"
+    },
+    {
+      "Field": "RecoverBelowMaxHpCompletionNoticeSpEffectId",
+      "Name": "「HP最大以下で回復」特殊効果完了通知特殊効果ID",
+      "Description": "「HP最大以下で回復」が完了したことを通知する特殊効果のID。主にマルチの同期用に使われる。 "
+    },
+    {
+      "Field": "EstusFlaskRecovery_AbsorptionProductionSfxId_byHp",
+      "Name": "HPエスト吸収演出SFXID",
+      "Description": "侵入者撃破時などにHPエスト瓶の使用回数を回復する際の吸収演出SFXID"
+    },
+    {
+      "Field": "EstusFlaskRecovery_AbsorptionProductionSfxId_byMp",
+      "Name": "MPエスト吸収演出SFXID",
+      "Description": "侵入者撃破時などにMPエスト瓶の使用回数を回復する際の吸収演出SFXID"
+    },
+    {
+      "Field": "RespawnSpecialEffectActiveCheckerSpEffectId",
+      "Name": "復活特殊効果発動判定用特殊効果ID",
+      "Description": "復活特殊効果が発動したことを通知する特殊効果のID。主にマルチの同期用に使われる。 "
+    },
+    {
+      "Field": "DefeatHostilityGhostOfSoulCorrectRate_byHost",
+      "Name": "敵対霊撃破時取得ソウル補正値_ホスト",
+      "Description": "マルチプレイで敵対霊を撃破した時のホストの取得ソウル量の補正値"
+    },
+    {
+      "Field": "DefeatHostilityGhostOfSoulCorrectRate_byTeamGhost",
+      "Name": "敵対霊撃破時取得ソウル補正値_協力霊",
+      "Description": "マルチプレイで敵対霊を撃破した時の協力霊の取得ソウル量の補正値"
+    },
+    {
+      "Field": "DefeatMultiModeEnemyOfSoulCorrectRate_byHost",
+      "Name": "マルチ時エネミー撃破時取得ソウル補正値_ホスト",
+      "Description": "マルチプレイで通常敵を撃破した時のホストの取得ソウル量の補正値"
+    },
+    {
+      "Field": "DefeatMultiModeEnemyOfSoulCorrectRate_byTeamGhost",
+      "Name": "マルチ時エネミー撃破時取得ソウル補正値_協力霊",
+      "Description": "マルチプレイで通常敵を撃破した時の協力霊の取得ソウル量の補正値"
+    },
+    {
+      "Field": "DefeatMultiModeBossOfSoulCorrectRate_byHost",
+      "Name": "マルチ時ボス撃破時取得ソウル補正値_ホスト",
+      "Description": "マルチプレイでボスを撃破した時のホストの取得ソウル量の補正値"
+    },
+    {
+      "Field": "DefeatMultiModeBossOfSoulCorrectRate_byTeamGhost",
+      "Name": "マルチ時ボス撃破時取得ソウル補正値_協力霊",
+      "Description": "マルチプレイでボスを撃破した時の協力霊の取得ソウル量の補正値"
+    },
+    {
+      "Field": "EnemyHpGaugeScreenOffset_byUp",
+      "Name": "敵キャラのHPゲージが画面上に見切れないようにするためのオフセット",
+      "Description": "敵のHPゲージが画面上に見切れた時に画面内に収めるオフセット値[pixel]（FullHD基準）"
+    },
+    {
+      "Field": "pad_01",
+      "Name": "パディング",
+      "Description": "パディング"
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_ShootBulletDummypolyId",
+      "Name": "「敵探知」時弾丸発射位置ダミポリID",
+      "Description": "探知弾丸の発射位置ダミポリID"
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_MaxDetectionNum",
+      "Name": "「敵探知」時最大探知数 ",
+      "Description": "同時に探知出来る敵の最大数（飛ばす弾丸の上限）"
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_MaxDetectionLength",
+      "Name": "「敵探知」時最大探知距離",
+      "Description": "探知可能な最大距離"
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_BulletId_byCoopHost",
+      "Name": "「敵探知」時発射弾丸ID_協力ホスト",
+      "Description": "敵の勢力/タイプによって飛ばす弾丸のID"
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_BulletId_byCoopSign_None",
+      "Name": "「敵探知」時発射弾丸ID_協力サイン_なし",
+      "Description": "敵の勢力/タイプによって飛ばす弾丸のID"
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_BulletId_byCoopSign_Umbasa",
+      "Name": "「敵探知」時発射弾丸ID_協力サイン_太陽",
+      "Description": "敵の勢力/タイプによって飛ばす弾丸のID"
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_BulletId_byCoopSign_Berserker",
+      "Name": "「敵探知」時発射弾丸ID_協力サイン_バーサーカー",
+      "Description": "敵の勢力/タイプによって飛ばす弾丸のID"
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_BulletId_byCoopSign_Sinners",
+      "Name": "「敵探知」時発射弾丸ID_協力サイン_罪人",
+      "Description": "敵の勢力/タイプによって飛ばす弾丸のID"
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_BulletId_byCoopRing_RedHunter",
+      "Name": "「敵探知」時発射弾丸ID_協力指輪_赤狩り",
+      "Description": "敵の勢力/タイプによって飛ばす弾丸のID(マルチ自動発射でも使う)"
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_BulletId_byInvadeOrb_None",
+      "Name": "「敵探知」時発射弾丸ID_侵入オーブ_なし",
+      "Description": "敵の勢力/タイプによって飛ばす弾丸のID(マルチ自動発射でも使う)"
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_BulletId_byInvadeOrb_Umbasa",
+      "Name": "「敵探知」時発射弾丸ID_侵入オーブ_太陽",
+      "Description": "敵の勢力/タイプによって飛ばす弾丸のID"
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_BulletId_byInvadeOrb_Berserker",
+      "Name": "「敵探知」時発射弾丸ID_侵入オーブ_バーサーカー",
+      "Description": "敵の勢力/タイプによって飛ばす弾丸のID"
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_BulletId_byInvadeOrb_Sinners",
+      "Name": "「敵探知」時発射弾丸ID_侵入オーブ_罪人",
+      "Description": "敵の勢力/タイプによって飛ばす弾丸のID"
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_BulletId_byInvadeSign_None",
+      "Name": "「敵探知」時発射弾丸ID_侵入サイン_なし",
+      "Description": "敵の勢力/タイプによって飛ばす弾丸のID"
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_BulletId_byInvadeSign_Umbasa",
+      "Name": "「敵探知」時発射弾丸ID_侵入サイン_太陽",
+      "Description": "敵の勢力/タイプによって飛ばす弾丸のID"
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_BulletId_byInvadeSign_Berserker",
+      "Name": "「敵探知」時発射弾丸ID_侵入サイン_バーサーカー",
+      "Description": "敵の勢力/タイプによって飛ばす弾丸のID"
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_BulletId_byInvadeSign_Sinners",
+      "Name": "「敵探知」時発射弾丸ID_侵入サイン_罪人",
+      "Description": "敵の勢力/タイプによって飛ばす弾丸のID"
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_BulletId_byInvadeRing_Sinners",
+      "Name": "「敵探知」時発射弾丸ID_侵入指輪_罪人",
+      "Description": "敵の勢力/タイプによって飛ばす弾丸のID"
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_BulletId_byInvadeRing_GuardianOfBoss",
+      "Name": "「敵探知」時発射弾丸ID_侵入指輪_ボス守護者",
+      "Description": "敵の勢力/タイプによって飛ばす弾丸のID"
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_BulletId_byInvadeRing_GuardianOfMap",
+      "Name": "「敵探知」時発射弾丸ID_侵入指輪_マップ守護者",
+      "Description": "敵の勢力/タイプによって飛ばす弾丸のID"
+    },
+    {
+      "Field": "ActivityOfDeadSpEffect_BulletId",
+      "Name": "「死者の活性」特殊効果発動時弾丸ID",
+      "Description": "「死者の活性」特殊効果が発動したときに発射する弾丸ID"
+    },
+    {
+      "Field": "ActivityOfDeadSpEffect_ShootBulletDummypolyId",
+      "Name": "「死者の活性」特殊効果発動時弾丸発生位置ダミポリID",
+      "Description": "「死者の活性」特殊効果が発動したときに弾丸が発生する位置のダミポリID"
+    },
+    {
+      "Field": "ActivityOfDeadSpEffect_DeadFadeOutTime",
+      "Name": "「死者の活性」特殊効果発動時の死体のフェードアウト時間",
+      "Description": "「死者の活性」特殊効果が発動したときに死体がフェードアウトする際のフェード時間"
+    },
+    {
+      "Field": "IgnorNetStateSyncTime_ForThrow",
+      "Name": "投げ開始時のネットワーク情報による遷移を無視する時間",
+      "Description": "投げ開始時のネットワーク情報による遷移を無視する時間"
+    },
+    {
+      "Field": "NetPenaltyPointLanDisconnect",
+      "Name": "マルチプレペナルティ：LAN切断",
+      "Description": "マルチプレペナルティ：LAN切断"
+    },
+    {
+      "Field": "NetPenaltyPointProfileSignout",
+      "Name": "マルチプレペナルティ：プロフィールサインアウト",
+      "Description": "マルチプレペナルティ：プロフィールサインアウト"
+    },
+    {
+      "Field": "NetPenaltyPointReboot",
+      "Name": "マルチプレペナルティ：電源断",
+      "Description": "マルチプレペナルティ：電源断"
+    },
+    {
+      "Field": "NetPnaltyPointSuspend",
+      "Name": "マルチプレペナルティ：サスペンド・一時停止",
+      "Description": "マルチプレペナルティ：サスペンド・一時停止"
+    },
+    {
+      "Field": "NetPenaltyForgiveItemLimitTime",
+      "Name": "マルチプレペナルティ：理の骨の生成（販売）開始待ち時間",
+      "Description": "マルチプレペナルティ：理の骨の生成（販売）開始待ち時間(秒)"
+    },
+    {
+      "Field": "NetPenaltyPointThreshold",
+      "Name": "マルチプレペナルティ：ペナルティ判定ポイント",
+      "Description": "マルチプレペナルティ：ペナルティ判定ポイント"
+    },
+    {
+      "Field": "UncontrolledMoveThresholdTime",
+      "Name": "未操作判定時間",
+      "Description": "マルチで一定期間操作ない人を退出させるためのもの。単位は秒。"
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_BulletId_byNpcEnemy",
+      "Name": "「敵探知」時発射弾丸ID_敵対NPC/敵キャラ",
+      "Description": "敵意の探知に失敗したときに敵対NPC/敵キャラに飛ばす弾丸のID"
+    },
+    {
+      "Field": "ActivityOfDeadTargetSearchSpEffect_OnHitSpEffect",
+      "Name": "「死者の活性ターゲット検索」対象にかける特殊効果ID ",
+      "Description": "検索した対象にかける特殊効果"
+    },
+    {
+      "Field": "ActivityOfDeadTargetSearchSpEffect_MaxLength",
+      "Name": "「死者の活性ターゲット検索」距離 ",
+      "Description": "検索可能最大距離"
+    },
+    {
+      "Field": "NetFpsCheck_fpsThreshold",
+      "Name": "低FPSチェック_FPS条件",
+      "Description": "低FPSチェック_FPS条件"
+    },
+    {
+      "Field": "NetFpsCheck_lowfpsTImeThreshold",
+      "Name": "低FPSチェック_低FPS継続時間",
+      "Description": "低FPSチェック_低FPS継続時間"
+    },
+    {
+      "Field": "SoloBreakInMaxPoint",
+      "Name": "ソロ侵入最大ポイント",
+      "Description": "ソロ侵入ポイントの最大値。この値を越えたときにソロで侵入されるようになる"
+    },
+    {
+      "Field": "NpcTalkTimeOutThreshold",
+      "Name": "NPC会話のボイス再生タイムアウト時間",
+      "Description": "NPC会話のボイス再生タイムアウト時間。この時間経過してもボイス再生が終わらない場合は次のメッセージへ進む"
+    },
+    {
+      "Field": "SendPlayLogIntervalTime",
+      "Name": "プレイログの送信間隔",
+      "Description": "アイテム使用ログ などをサーバーへ送信する間隔"
+    },
+    {
+      "Field": "Item370_MaxSfxNum",
+      "Name": "七色石の最大設置数",
+      "Description": "七色石の最大設置数"
+    },
+    {
+      "Field": "pad_02",
+      "Name": "パディング",
+      "Description": "パディング"
+    },
+    {
+      "Field": "SummonDataCoopMatchingLevelUpperAbs",
+      "Name": "マルチ弱体化レベル補正係数１",
+      "Description": "マルチ時ステータス弱体化。ホストのレベル加算補正"
+    },
+    {
+      "Field": "SummonDataCoopMatchingLevelUpperRel",
+      "Name": "マルチ弱体化レベル補正係数２",
+      "Description": "マルチ時ステータス弱体化。ホストのレベル倍率補正"
+    },
+    {
+      "Field": "SummonDataCoopMatchingWepLevelMul",
+      "Name": "マルチ弱体化最大武器補正係数",
+      "Description": "マルチ時ステータス弱体化。最大武器強化レベル補正"
+    },
+    {
+      "Field": "PickUpBerserkerSignSpEffectBulletId",
+      "Name": "バーサーカーサインを拾った時のまたたび効果用弾丸ID",
+      "Description": "サイン位置に特殊効果用の弾丸を発生させる際の弾丸ID"
+    },
+    {
+      "Field": "SucceedBerserkerSelfKillingEffectId",
+      "Name": "バーサーカーがPC自力殺害に成功演出用特殊効果ID",
+      "Description": "バーサーカーがPC自力殺害に成功した際に専用の演出を再生する特殊効果"
+    },
+    {
+      "Field": "MachingLevelWhiteSignUpperRel",
+      "Name": "レベルシンク適用判定係数１白",
+      "Description": "レベルシンク適用するかどうかのソウルレベル係数"
+    },
+    {
+      "Field": "MachingLevelWhiteSignUpperAbs",
+      "Name": "レベルシンク適用判定係数２白",
+      "Description": "レベルシンク適用するかどうかのソウルレベル係数"
+    },
+    {
+      "Field": "MachingLevelRedSignUpperRel",
+      "Name": "レベルシンク適用判定係数１赤",
+      "Description": "レベルシンク適用するかどうかのソウルレベル係数"
+    },
+    {
+      "Field": "MachingLevelRedSignUpperAbs",
+      "Name": "レベルシンク適用判定係数２赤",
+      "Description": "レベルシンク適用するかどうかのソウルレベル係数"
+    },
+    {
+      "Field": "MachingWeaponLevelUpperWhiteSign_0",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数０白",
+      "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
+    },
+    {
+      "Field": "MachingWeaponLevelUpperWhiteSign_1",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数１白",
+      "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
+    },
+    {
+      "Field": "MachingWeaponLevelUpperWhiteSign_2",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数２白",
+      "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
+    },
+    {
+      "Field": "MachingWeaponLevelUpperWhiteSign_3",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数３白",
+      "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
+    },
+    {
+      "Field": "MachingWeaponLevelUpperWhiteSign_4",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数４白",
+      "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
+    },
+    {
+      "Field": "MachingWeaponLevelUpperWhiteSign_5",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数５白",
+      "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
+    },
+    {
+      "Field": "MachingWeaponLevelUpperWhiteSign_6",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数６白",
+      "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
+    },
+    {
+      "Field": "MachingWeaponLevelUpperWhiteSign_7",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数７白",
+      "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
+    },
+    {
+      "Field": "MachingWeaponLevelUpperWhiteSign_8",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数８白",
+      "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
+    },
+    {
+      "Field": "MachingWeaponLevelUpperWhiteSign_9",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数９白",
+      "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
+    },
+    {
+      "Field": "MachingWeaponLevelUpperWhiteSign_10",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数１０白",
+      "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
+    },
+    {
+      "Field": "MachingWeaponLevelUpperRedSign_0",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数０赤",
+      "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
+    },
+    {
+      "Field": "MachingWeaponLevelUpperRedSign_1",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数１赤",
+      "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
+    },
+    {
+      "Field": "MachingWeaponLevelUpperRedSign_2",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数２赤",
+      "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
+    },
+    {
+      "Field": "MachingWeaponLevelUpperRedSign_3",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数３赤",
+      "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
+    },
+    {
+      "Field": "MachingWeaponLevelUpperRedSign_4",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数４赤",
+      "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
+    },
+    {
+      "Field": "MachingWeaponLevelUpperRedSign_5",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数５赤",
+      "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
+    },
+    {
+      "Field": "MachingWeaponLevelUpperRedSign_6",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数６赤",
+      "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
+    },
+    {
+      "Field": "MachingWeaponLevelUpperRedSign_7",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数７赤",
+      "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
+    },
+    {
+      "Field": "MachingWeaponLevelUpperRedSign_8",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数８赤",
+      "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
+    },
+    {
+      "Field": "MachingWeaponLevelUpperRedSign_9",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数９赤",
+      "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
+    },
+    {
+      "Field": "MachingWeaponLevelUpperRedSign_10",
+      "Name": "レベルシンク適用判定最大武器強化レベル係数１０赤",
+      "Description": "レベルシンク適用するかどうかの最大武器強化レベル係数"
+    },
+    {
+      "Field": "pad_03",
+      "Name": "パディング",
+      "Description": "パディング"
+    },
+    {
+      "Field": "SendGlobalEventLogIntervalTime",
+      "Name": "グローバルイベントログの送信間隔",
+      "Description": "グローバルイベントログ をサーバーへ送信する間隔"
+    },
+    {
+      "Field": "AddSoloBreakInPoint_White",
+      "Name": "ソロ侵入ポイント加算値_白サイン",
+      "Description": "ソロ侵入ポイント加算値_白サイン"
+    },
+    {
+      "Field": "AddSoloBreakInPoint_Black",
+      "Name": "ソロ侵入ポイント加算値_赤サイン",
+      "Description": "ソロ侵入ポイント加算値_赤サイン"
+    },
+    {
+      "Field": "AddSoloBreakInPoint_ForceJoin",
+      "Name": "ソロ侵入ポイント加算値_乱入",
+      "Description": "ソロ侵入ポイント加算値_乱入"
+    },
+    {
+      "Field": "AddSoloBreakInPoint_VisitorGuardian",
+      "Name": "ソロ侵入ポイント加算値_マップ守護訪問",
+      "Description": "ソロ侵入ポイント加算値_マップ守護訪問"
+    },
+    {
+      "Field": "AddSoloBreakInPoint_VisitorRedHunter",
+      "Name": "ソロ侵入ポイント加算値_赤狩り訪問",
+      "Description": "ソロ侵入ポイント加算値_赤狩り訪問"
+    },
+    {
+      "Field": "CorpseRedrawingDistance",
+      "Name": "死体再描画距離（m）",
+      "Description": "「死体再描画距離(m)」以上離れていた場合再度、描画距離内に入っても以後は死体の再描画を行わない距離"
+    },
+    {
+      "Field": "RedHunter_HostBossAreaGetSoulRate",
+      "Name": "【赤狩り】ホストが白扉を通過した際にもらえるソウル率",
+      "Description": "ホストが白扉を通過した時に赤狩りがもらえるソウル=赤狩りが一つ前のLvから現在Lvになるために必要なソウル*この倍率"
+    },
+    {
+      "Field": "StealthSystemSightCutRate_SightHide_NotStealthMode",
+      "Name": "エネミー視界カット：PCに特殊効果ID：150なし、草むらで隠れている;",
+      "Description": "エネミー視界カット：PCに特殊効果ID：150なし、草むらで隠れている;"
+    },
+    {
+      "Field": "StealthSystemSightCutRate_NotSightHide_StealthMode",
+      "Name": "エネミー視界カット：PCに特殊効果ID：150あり、草むらに隠れていない;",
+      "Description": "エネミー視界カット：PCに特殊効果ID：150あり、草むらに隠れていない;"
+    },
+    {
+      "Field": "StealthSystemSightCutRate_SightHide_StealthMode",
+      "Name": "エネミー視界カット：PCに特殊効果ID：150あり、草むらに隠れている;",
+      "Description": "エネミー視界カット：PCに特殊効果ID：150あり、草むらに隠れている;"
+    },
+    {
+      "Field": "pad_04",
+      "Name": "パディング",
+      "Description": "パディング"
+    },
+    {
+      "Field": "Damage_ImpactLifeTimeSec",
+      "Name": "衝撃力寿命[s]",
+      "Description": "ダメージを受けたときの衝撃力の寿命"
+    },
+    {
+      "Field": "HitStopAddDamageAnimScale",
+      "Name": "ヒットストップ加算ダメージ時アニメ再生速度割合[%]",
+      "Description": "ヒットストップ加算ダメージの時にアニメ再生速度をこの割合にする"
+    },
+    {
+      "Field": "HitStopAddDamageAnimTimeF",
+      "Name": "ヒットストップ加算ダメージ時アニメ再生速度変更時間[1/30 s]",
+      "Description": "ヒットストップ加算ダメージの時のアニメ再生速度変更時間"
+    },
+    {
+      "Field": "HardHitStopTimeRatePercent",
+      "Name": "ハードヒット時の再生速度率[%]",
+      "Description": "ハードヒット時の再生速度割合（0で完全停止、TAEが動かなくなる）"
+    },
+    {
+      "Field": "CoverCheckRayDist",
+      "Name": "カバー判定の壁をチェックするレイの長さ",
+      "Description": "カバー時にどちらに向くかの判定をするための壁チェックレイキャストの長さ"
+    },
+    {
+      "Field": "pad_05",
+      "Name": "パディング",
+      "Description": "パディング"
+    },
+    {
+      "Field": "DamageLevel_LevelUpCount",
+      "Name": "崩れまでのよろけ回数",
+      "Description": "崩れまでのよろけ回数"
+    },
+    {
+      "Field": "pad_06",
+      "Name": "パディング",
+      "Description": "パディング"
+    },
+    {
+      "Field": "DamageLevel_LevelUpCountResetTimeSec",
+      "Name": "よろけ回数リセットまでの時間[s]",
+      "Description": "よろけ回数リセットまでの時間[s]"
+    },
+    {
+      "Field": "GrabAttachIntpFrame",
+      "Name": "掴み吸着補間フレーム",
+      "Description": "掴み吸着時に掴み対象を吸着するまでのフレーム"
+    },
+    {
+      "Field": "DeadEffectMaxTime",
+      "Name": "【死亡演出】死亡演出最長時間[s]",
+      "Description": "【死亡演出】死亡演出最長時間[s]"
+    },
+    {
+      "Field": "WallBackrash_CeilingAngleDeg",
+      "Name": "【壁弾かれ】天井と判定する角度[deg]",
+      "Description": "壁弾かれの天井判定角度"
+    },
+    {
+      "Field": "WallBackrash_WallHitLimitAngleDeg",
+      "Name": "【壁弾かれ】攻撃側キャラ正面と判定する角度[deg]",
+      "Description": "壁弾かれの判定角度"
+    },
+    {
+      "Field": "WallBackrash_FloorAngleDeg",
+      "Name": "【壁弾かれ】床と判定する角度[deg]",
+      "Description": "壁弾かれの床判定角度"
+    },
+    {
+      "Field": "outRangeThresholdMaxDist",
+      "Name": "跳弾閾値最大補正距離[m]",
+      "Description": "跳弾閾値最大補正距離"
+    },
+    {
+      "Field": "outRangeDamageDecayPercent",
+      "Name": "跳弾時ダメージ減衰率[%]",
+      "Description": "跳弾時ダメージ減衰率"
+    },
+    {
+      "Field": "pad_08",
+      "Name": "パディング",
+      "Description": "パディング"
+    },
+    {
+      "Field": "NerveLoad_EffectLevel1_Threshold",
+      "Name": "【神経負荷】演出１段閾値",
+      "Description": "演出的に画面効果を跳ね上げる閾値"
+    },
+    {
+      "Field": "NerveLoad_EffectLevel1_AddRate",
+      "Name": "【神経負荷】演出１段加算率",
+      "Description": "跳ね上げる際の加算値"
+    },
+    {
+      "Field": "NerveLoad_EffectLevel1_Time",
+      "Name": "【神経負荷】演出１段減衰時間",
+      "Description": "跳ね上げた数値の減衰時間"
+    },
+    {
+      "Field": "NerveLoad_EffectLevel2_Threshold",
+      "Name": "【神経負荷】演出2段閾値",
+      "Description": "演出的に画面効果を跳ね上げる閾値"
+    },
+    {
+      "Field": "NerveLoad_EffectLevel2_AddRate",
+      "Name": "【神経負荷】演出2段加算率",
+      "Description": "跳ね上げる際の加算値"
+    },
+    {
+      "Field": "NerveLoad_EffectLevel2_Time",
+      "Name": "【神経負荷】演出2段減衰時間",
+      "Description": "跳ね上げた数値の減衰時間"
+    },
+    {
+      "Field": "NerveLoad_EffectLevel3_Threshold",
+      "Name": "【神経負荷】演出3段閾値",
+      "Description": "演出的に画面効果を跳ね上げる閾値"
+    },
+    {
+      "Field": "NerveLoad_EffectLevel3_AddRate",
+      "Name": "【神経負荷】演出3段加算率",
+      "Description": "跳ね上げる際の加算値"
+    },
+    {
+      "Field": "NerveLoad_EffectLevel3_Time",
+      "Name": "【神経負荷】演出3段減衰時間",
+      "Description": "跳ね上げた数値の減衰時間"
+    },
+    {
+      "Field": "NerveLoad_GParamChangeTime",
+      "Name": "【神経負荷】逆負荷切り替わり時間",
+      "Description": "逆負荷効果発動後の画面が切り替わるまでの時間"
+    },
+    {
+      "Field": "NerveLoad_InverseCompRate",
+      "Name": "【神経負荷】逆負荷演出最終値",
+      "Description": "逆負荷状態のひび割れの最終表示値"
+    },
+    {
+      "Field": "NerveLoad_InverseCompTime",
+      "Name": "【神経負荷】逆負荷演出時間",
+      "Description": "逆負荷状態になってから【神経負荷】逆負荷演出最終値までの時間"
+    },
+    {
+      "Field": "NerveLoad_NoiseUpdateRate",
+      "Name": "【神経負荷】ノイズ減少率",
+      "Description": "ノイズ発生後の画面演出の減少率"
+    },
+    {
+      "Field": "NerveLoad_MenuRequestRate",
+      "Name": "【神経負荷】メニュー呼び出し時加算率",
+      "Description": "メニューからの呼び出しでのエフェクトの演出加算率"
+    },
+    {
+      "Field": "NerveLoad_MenuSubRate",
+      "Name": "【神経負荷】メニュー呼び出し時減衰時間",
+      "Description": "メニューからの呼び出しでのエフェクトの演出時間"
+    },
+    {
+      "Field": "NerveLoad_FadeOutWaitTime",
+      "Name": "【神経負荷】ワンショットフェードアウト時間[s]",
+      "Description": "神経負荷のワンショット演出のフェードアウト開始までの待機時間"
+    },
+    {
+      "Field": "NerveLoad_FadeOutTime",
+      "Name": "【神経負荷】フェードアウト待機時間[s]",
+      "Description": "神経負荷（ワンショット、ループ共に）のフェードアウト時間"
+    },
+    {
+      "Field": "pad_09",
+      "Name": "パディング",
+      "Description": "パディング"
+    },
+    {
+      "Field": "blowWallHit_DamageSpeedKMH",
+      "Name": "吹っ飛び壁激突許容速度[km/h]",
+      "Description": "吹っ飛び壁激突許容速度"
+    },
+    {
+      "Field": "blowWallHit_DamageAngDegH",
+      "Name": "吹っ飛び壁激突許容水平角度差[deg]",
+      "Description": "吹っ飛び壁激突許容水平角度差"
+    },
+    {
+      "Field": "blowWallHit_DamageAngDegV",
+      "Name": "吹っ飛び壁激突許容垂直角度差[deg]",
+      "Description": "吹っ飛び壁激突許容垂直角度差"
+    },
+    {
+      "Field": "blowWallHit_BehaviorId_Player",
+      "Name": "吹っ飛び壁激突時に発生する行動パラメータID（自機）",
+      "Description": "吹っ飛び壁激突時に発生する高度パラメータのID"
+    },
+    {
+      "Field": "blowWallHit_BehaviorId_Enemy",
+      "Name": "吹っ飛び壁激突時に発生する行動パラメータID（敵）",
+      "Description": "吹っ飛び壁激突時に発生する高度パラメータのID"
+    },
+    {
+      "Field": "DeadFadeOutTimeSec",
+      "Name": "死亡後フェードアウト時間[s]",
+      "Description": "死亡後フェードアウトするキャラのフェードアウト時間"
+    },
+    {
+      "Field": "HackingContinueRadius",
+      "Name": "【ハッキング】持続領域半径追加[m]",
+      "Description": "【ハッキング】持続領域半径追加[m]"
+    },
+    {
+      "Field": "HackingContinueHeight",
+      "Name": "【ハッキング】持続領域高さ追加[m]",
+      "Description": "【ハッキング】持続領域高さ追加[m]"
+    },
+    {
+      "Field": "HackingContinueBottom",
+      "Name": "【ハッキング】持続領域底面高さオフセット追加[m]",
+      "Description": "【ハッキング】持続領域底面高さオフセット追加[m]"
+    },
+    {
+      "Field": "pad_10",
+      "Name": "パディング",
+      "Description": "パディング"
+    },
+    {
+      "Field": "PhotModeMoveDist",
+      "Name": "【フォトモード】移動可能距離[m]",
+      "Description": "フォトモード時にプレイヤーを中心にした移動可能な距離"
+    },
+    {
+      "Field": "PhotModeCamHitRadius",
+      "Name": "【フォトモード】カメラのあたり半径[m]",
+      "Description": "フォモード時のカメラヒット球の半径"
+    },
+    {
+      "Field": "HDRumble_Small_Id",
+      "Name": "【振動】部切替時(小)の振動ID",
+      "Description": "部切替時のハプティックフィードバック振動の振動ID(左基準で右は+1した値)"
+    },
+    {
+      "Field": "HDRumble_Large_Id",
+      "Name": "【振動】部切替時(大)の振動ID",
+      "Description": "部切替時のハプティックフィードバック振動の振動ID(左基準で右は+1した値)"
+    },
+    {
+      "Field": "Cartridge_Size",
+      "Name": "【薬莢】あたり半径[m]",
+      "Description": "薬莢のカプセルあたりの半径"
+    },
+    {
+      "Field": "Cartridge_Length",
+      "Name": "【薬莢】あたり長さ[m]",
+      "Description": "薬莢のカプセルあたりの長さ(半径よりも大きくしてください)"
+    },
+    {
+      "Field": "Cartridge_Friction",
+      "Name": "【薬莢】摩擦係数",
+      "Description": "薬莢の摩擦係数（値を上げると止まりやすくなります)"
+    },
+    {
+      "Field": "Cartridge_Restitution",
+      "Name": "【薬莢】反発係数",
+      "Description": "薬莢の反発係数(値を上げるとよく跳ねるようになります)"
+    },
+    {
+      "Field": "Cartridge_EnableDist",
+      "Name": "【薬莢】有効距離[m]",
+      "Description": "薬莢の有効距離（プレイヤーとの距離)"
+    },
+    {
+      "Field": "Cartridge_IsChrRagdollHit",
+      "Name": "【薬莢】ラグドールにもヒットするか",
+      "Description": "薬莢がキャラのラグドールにもヒットするか"
+    },
+    {
+      "Field": "pad_11",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "Cartridge_DecelerateBeginTime",
+      "Name": "【薬莢】減速開始時間[秒]",
+      "Description": "薬莢の水平速度減速開始時間"
+    },
+    {
+      "Field": "Cartridge_DecelerateTime",
+      "Name": "【薬莢】減速遷移時間[秒]",
+      "Description": "薬莢の水平速度減速開始後減速率が最大になるまでの時間"
+    },
+    {
+      "Field": "Cartridge_DecelerateRate",
+      "Name": "【薬莢】水平減速率",
+      "Description": "薬莢の最大減速率（値を下げると急激に減速するようになります）"
+    },
+    {
+      "Field": "Net_MapHitSfxOmitteDist",
+      "Name": "【対戦】対マップ着弾SFXオミット距離[m]",
+      "Description": "対戦時のパフォーマンス確保のためマップへの着弾SFXをこの距離以上のときは発生しない"
+    },
+    {
+      "Field": "Net_MyTeamHitSfxOmitteCpuExecRate",
+      "Name": "【対戦】味方の対マップ着弾SFXオミット処理負荷",
+      "Description": "対戦時のパフォーマンス確保のため味方のマップへの着弾SFXのオミットCPU負荷\r\n現在の処理時間/目標の処理時間の値と比較"
+    },
+    {
+      "Field": "HavokGabageCollectionIntervalTime",
+      "Name": "【Havok】ガベージコレクション実施間隔[s]",
+      "Description": "Havokのメモリ断片化対策でのガベージコレクション呼び出し間隔"
+    },
+    {
+      "Field": "PhotModeMoveScale",
+      "Name": "【フォトモード】カメラ移動スケール",
+      "Description": "フォトモード時にカメラ移動についてパッドの入力に対してのスケール"
+    },
+    {
+      "Field": "PhotModeTurnScale",
+      "Name": "【フォトモード】カメラ旋回スケール",
+      "Description": "フォトモード時にカメラ旋回についてパッドの入力に対してのスケール"
+    },
+    {
+      "Field": "PhotModeMoveIpo",
+      "Name": "【フォトモード】カメラ移動補間率",
+      "Description": "フォトモード時にカメラ移動についてパッドの入力方向に対して前フレームの入力との補間"
+    },
+    {
+      "Field": "PhotModeTurnIop",
+      "Name": "【フォトモード】カメラ旋回補間率",
+      "Description": "フォモード時にカメラ旋回についてパッドの入力方向に対して前フレームの入力との補間"
+    },
+    {
+      "Field": "PhotModeCamSpeedMin",
+      "Name": "【フォトモード】カメラ移動速度倍率最低値",
+      "Description": "フォトモード時のオプションによって変更されるカメラの移動速度倍率"
+    },
+    {
+      "Field": "PhotModeCamSpeedMax",
+      "Name": "【フォトモード】カメラ移動速度倍率最高値",
+      "Description": "フォトモード時のオプションによって変更されるカメラの移動速度倍率"
+    },
+    {
+      "Field": "OsTuning_ResetCost",
+      "Name": "【OS強化】リセット費用/レベル",
+      "Description": "OS強化のリセット費用(1レベルあたり)"
+    },
+    {
+      "Field": "reserved_for_menu",
+      "Name": "メニュー関連用予約",
+      "Description": "メニュー関連用予約"
+    }
+  ]
+}

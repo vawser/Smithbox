@@ -1,0 +1,48 @@
+{
+  "Param": "GRAPHICS_CONFIG_CS_SHADOW_QUALITY_DETAIL",
+  "Type": "GRAPHICS_CONFIG_CS_SHADOW_QUALITY_DETAIL",
+  "Name": "GRAPHICS_CONFIG_CS_SHADOW_QUALITY_DETAIL",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "enabled",
+      "Name": "シャドウが有効",
+      "Description": "シャドウが有効"
+    },
+    {
+      "Field": "maxFilterLevel",
+      "Name": "許可される最大のフィルタ品質",
+      "Description": "許可される最大のフィルタ品質"
+    },
+    {
+      "Field": "pad1",
+      "Name": "pad",
+      "Description": ""
+    },
+    {
+      "Field": "textureSizeScaler",
+      "Name": "設定されたシャドウマップ解像度のスケーラ",
+      "Description": "設定されたシャドウマップ解像度のスケーラ"
+    },
+    {
+      "Field": "textureSizeDivider",
+      "Name": "設定されたシャドウマップ解像度を除算",
+      "Description": "設定されたシャドウマップ解像度を除算"
+    },
+    {
+      "Field": "textureMinSize",
+      "Name": "解像度最小",
+      "Description": "解像度をクランプ"
+    },
+    {
+      "Field": "textureMaxSize",
+      "Name": "解像度最大",
+      "Description": "解像度をクランプ。カスケード毎の解像度判定になります"
+    },
+    {
+      "Field": "blurCountBias",
+      "Name": "ブラーカウントバイアス",
+      "Description": "ブラーカウントバイアス(設定されたカウントのバイアス。0で変更なし)"
+    }
+  ]
+}

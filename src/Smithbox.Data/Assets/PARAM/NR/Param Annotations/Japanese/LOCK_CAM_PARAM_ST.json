@@ -1,0 +1,113 @@
+{
+  "Param": "LOCK_CAM_PARAM_ST",
+  "Type": "LOCK_CAM_PARAM_ST",
+  "Name": "LOCK_CAM_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "camDistTarget",
+      "Name": "カメラ距離目標[m]",
+      "Description": "カメラ距離目標"
+    },
+    {
+      "Field": "rotRangeMinX",
+      "Name": "X軸回転最小値[deg]",
+      "Description": "X軸回転最小値"
+    },
+    {
+      "Field": "lockRotXShiftRatio",
+      "Name": "ロックX回転シフト率(0.0～1.0)",
+      "Description": "ロックX回転シフト率"
+    },
+    {
+      "Field": "chrOrgOffset_Y",
+      "Name": "キャラ基点オフセット(キャラ空間)",
+      "Description": "キャラ基点オフセット"
+    },
+    {
+      "Field": "chrLockRangeMaxRadius",
+      "Name": "キャラ範囲最大半径[m]",
+      "Description": "キャラ範囲最大半径"
+    },
+    {
+      "Field": "camFovY",
+      "Name": "縦画角[deg]",
+      "Description": "縦画角"
+    },
+    {
+      "Field": "chrLockRangeMaxRadius_forD",
+      "Name": "暗闇用キャラ範囲最大半径[m]",
+      "Description": "暗いところでのキャラのロック可能範囲"
+    },
+    {
+      "Field": "chrLockRangeMaxRadius_forPD",
+      "Name": "真っ暗闇用キャラ範囲最大半径[m]",
+      "Description": "真っ暗闇でのキャラのロック可能範囲"
+    },
+    {
+      "Field": "closeMaxHeight",
+      "Name": "近接攻撃自動捕捉 上限高さ[m]",
+      "Description": "非ロックオン時の自動ロックオン判定高さ上限\u3000近接"
+    },
+    {
+      "Field": "closeMinHeight",
+      "Name": "近接攻撃自動捕捉 下限高さ[m]",
+      "Description": "非ロックオン時の自動ロックオン判定高さ下限\u3000近接"
+    },
+    {
+      "Field": "closeAngRange",
+      "Name": "近接攻撃自動捕捉 角度範囲 左右[deg]",
+      "Description": "非ロックオン時の自動ロックオン判定左右角度[deg]\u3000近接"
+    },
+    {
+      "Field": "closeMaxRadius",
+      "Name": "近接攻撃自動捕捉 キャラ範囲最大半径[m]",
+      "Description": "非ロックオン時の自動ロックオン判定距離\u3000近接"
+    },
+    {
+      "Field": "closeMaxRadius_forD",
+      "Name": "近接攻撃自動捕捉 暗闇用キャラ範囲最大半径[m]",
+      "Description": "非ロックオン時の自動ロックオン判定距離_暗闇\u3000近接"
+    },
+    {
+      "Field": "closeMaxRadius_forPD",
+      "Name": "近接攻撃自動捕捉 真っ暗闇用キャラ範囲最大半径[m]",
+      "Description": "非ロックオン時の自動ロックオン_真っ暗\u3000近接"
+    },
+    {
+      "Field": "bulletMaxRadius",
+      "Name": "弾丸自動捕捉 キャラ範囲最大半径[m]",
+      "Description": "非ロックオン時の自動ロックオン判定距離\u3000弾丸"
+    },
+    {
+      "Field": "bulletMaxRadius_forD",
+      "Name": "弾丸自動捕捉 暗闇用キャラ範囲最大半径[m]",
+      "Description": "非ロックオン時の自動ロックオン判定距離_暗闇\u3000弾丸"
+    },
+    {
+      "Field": "bulletMaxRadius_forPD",
+      "Name": "弾丸自動捕捉 真っ暗闇用キャラ範囲最大半径[m]",
+      "Description": "非ロックオン時の自動ロックオン判定距離_真っ暗\u3000弾丸"
+    },
+    {
+      "Field": "bulletAngRange",
+      "Name": "弾丸自動捕捉 角度範囲 左右[deg]",
+      "Description": "非ロックオン時の自動ロックオン左右角度\u3000弾丸"
+    },
+    {
+      "Field": "lockTgtKeepTime",
+      "Name": "ロック条件を満たさなくてもロック継続する時間[s]",
+      "Description": "ロック条件を満たさなくてもロック継続する時間(0.0で無効)"
+    },
+    {
+      "Field": "chrTransChaseRateForNormal",
+      "Name": "通常用キャラ並進追尾率",
+      "Description": "通常用キャラ並進追尾率(-1.0で無効)"
+    },
+    {
+      "Field": "pad",
+      "Name": "パディング",
+      "Description": ""
+    }
+  ]
+}

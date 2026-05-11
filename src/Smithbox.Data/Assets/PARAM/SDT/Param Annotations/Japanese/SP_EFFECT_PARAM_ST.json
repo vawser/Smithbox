@@ -1,0 +1,2048 @@
+{
+  "Param": "SP_EFFECT_PARAM_ST",
+  "Type": "SP_EFFECT_PARAM_ST",
+  "Name": "SP_EFFECT_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "iconId",
+      "Name": "アイコンID",
+      "Description": "アイコンID(-1の時は、アイコン必要なし)"
+    },
+    {
+      "Field": "conditionHp",
+      "Name": "発動条件\u3000残りHP比率[%]",
+      "Description": "残りHPが、maxHPの何%になったら発動するかを設定"
+    },
+    {
+      "Field": "effectEndurance",
+      "Name": "効果持続時間\u3000時間[s]",
+      "Description": "変化持続時間\u3000/-1で永続 /0で瞬間1回限り"
+    },
+    {
+      "Field": "motionInterval",
+      "Name": "発動間隔[s]",
+      "Description": "何秒間隔で発生するのかを設定"
+    },
+    {
+      "Field": "maxHpRate",
+      "Name": "最大HP倍率[%]",
+      "Description": "最大HPに補正をかける"
+    },
+    {
+      "Field": "maxMpRate",
+      "Name": "最大MP倍率[%]",
+      "Description": "最大MPに補正をかける"
+    },
+    {
+      "Field": "maxStaminaRate",
+      "Name": "最大スタミナ倍率[%]",
+      "Description": "最大SPに補正をかける"
+    },
+    {
+      "Field": "slashDamageCutRate",
+      "Name": "防御側：斬撃ダメージ倍率",
+      "Description": "斬撃ダメージ倍率：算出したダメージに×○倍で補正をかける。１が通常。"
+    },
+    {
+      "Field": "lightHitDamageCutRate",
+      "Name": "防御側：軽打ダメージ倍率",
+      "Description": "軽打ダメージ倍率：算出したダメージに×○倍で補正をかける。１が通常。"
+    },
+    {
+      "Field": "thrustDamageCutRate",
+      "Name": "防御側：刺突ダメージ倍率",
+      "Description": "刺突ダメージ倍率：算出したダメージに×○倍で補正をかける。１が通常。"
+    },
+    {
+      "Field": "neutralDamageCutRate",
+      "Name": "防御側：無属性ダメージ倍率",
+      "Description": "無属性ダメージ倍率：算出したダメージに×○倍で補正をかける。１が通常。"
+    },
+    {
+      "Field": "magicDamageCutRate",
+      "Name": "防御側：魔法ダメージ倍率",
+      "Description": "魔法ダメージ倍率：算出したダメージに×○倍で補正をかける。１が通常。"
+    },
+    {
+      "Field": "fireDamageCutRate",
+      "Name": "防御側：炎ダメージ倍率",
+      "Description": "炎ダメージ倍率：算出したダメージに×○倍で補正をかける。１が通常。"
+    },
+    {
+      "Field": "thunderDamageCutRate",
+      "Name": "防御側：電撃ダメージ倍率",
+      "Description": "電撃ダメージ倍率：算出したダメージに×○倍で補正をかける。１が通常。"
+    },
+    {
+      "Field": "physicsAttackRate",
+      "Name": "攻撃側：物理ダメージ倍率",
+      "Description": "物理ダメージ倍率：算出したダメージに×○倍で補正をかける。１が通常。"
+    },
+    {
+      "Field": "magicAttackRate",
+      "Name": "攻撃側：魔法ダメージ倍率",
+      "Description": "魔法ダメージ倍率：算出したダメージに×○倍で補正をかける。１が通常。"
+    },
+    {
+      "Field": "fireAttackRate",
+      "Name": "攻撃側：炎ダメージ倍率",
+      "Description": "炎ダメージ倍率：算出したダメージに×○倍で補正をかける。１が通常。"
+    },
+    {
+      "Field": "thunderAttackRate",
+      "Name": "攻撃側：電撃ダメージ倍率",
+      "Description": "電撃ダメージ倍率：算出したダメージに×○倍で補正をかける。１が通常。"
+    },
+    {
+      "Field": "physicsAttackPowerRate",
+      "Name": "物理攻撃力倍率",
+      "Description": "物理攻撃力に設定した数値をかけます"
+    },
+    {
+      "Field": "magicAttackPowerRate",
+      "Name": "魔法攻撃力倍率",
+      "Description": "魔法攻撃力に設定した数値をかけます"
+    },
+    {
+      "Field": "fireAttackPowerRate",
+      "Name": "炎攻撃力倍率",
+      "Description": "炎攻撃力に設定した数値をかけます"
+    },
+    {
+      "Field": "thunderAttackPowerRate",
+      "Name": "電撃攻撃力倍率",
+      "Description": "電撃攻撃力に設定した数値をかけます"
+    },
+    {
+      "Field": "physicsAttackPower",
+      "Name": "物理攻撃力[point]",
+      "Description": "物理攻撃力に設定した数値を加減算する"
+    },
+    {
+      "Field": "magicAttackPower",
+      "Name": "魔法攻撃力[point]",
+      "Description": "魔法攻撃力に設定した数値を加減算する"
+    },
+    {
+      "Field": "fireAttackPower",
+      "Name": "炎攻撃力[point]",
+      "Description": "炎攻撃力に設定した数値を加減算する"
+    },
+    {
+      "Field": "thunderAttackPower",
+      "Name": "電撃攻撃力[point]",
+      "Description": "電撃攻撃力に設定した数値を加減算する"
+    },
+    {
+      "Field": "physicsDiffenceRate",
+      "Name": "物理防御力倍率",
+      "Description": "物理防御力に設定した数値をかけます"
+    },
+    {
+      "Field": "magicDiffenceRate",
+      "Name": "魔法防御力倍率",
+      "Description": "魔法防御力に設定した数値をかけます"
+    },
+    {
+      "Field": "fireDiffenceRate",
+      "Name": "炎防御力倍率",
+      "Description": "炎防御力に設定した数値をかけます"
+    },
+    {
+      "Field": "thunderDiffenceRate",
+      "Name": "電撃防御力倍率",
+      "Description": "電撃防御力に設定した数値をかけます"
+    },
+    {
+      "Field": "physicsDiffence",
+      "Name": "物理防御力[point]",
+      "Description": "物理防御力に設定した数値を加減算する"
+    },
+    {
+      "Field": "magicDiffence",
+      "Name": "魔法防御力[point]",
+      "Description": "魔法防御力に設定した数値を加減算する"
+    },
+    {
+      "Field": "fireDiffence",
+      "Name": "炎防御力[point]",
+      "Description": "炎防御力に設定した数値を加減算する"
+    },
+    {
+      "Field": "thunderDiffence",
+      "Name": "電撃防御力[point]",
+      "Description": "電撃防御力に設定した数値を加減算する"
+    },
+    {
+      "Field": "NoGuardDamageRate",
+      "Name": "隙ダメージ倍率",
+      "Description": "隙のときのダメージ倍率を、設定した数値に置き換える（ダメージ側に設定）"
+    },
+    {
+      "Field": "vitalSpotChangeRate",
+      "Name": "スィートスポット倍率",
+      "Description": "スィートスポットのダメージ計算を指定した数値に差し替える(急所ダメージ補正) -1.0で無効"
+    },
+    {
+      "Field": "normalSpotChangeRate",
+      "Name": "ノーマルヒット倍率",
+      "Description": "ノーマルヒットのダメージ計算を指定した数値に差し替える  -1.0で無効"
+    },
+    {
+      "Field": "maxHpChangeRate",
+      "Name": "最大HP変化倍率",
+      "Description": "最大HPに対して、設定された倍率をかけて増減させる"
+    },
+    {
+      "Field": "behaviorId",
+      "Name": "行動ID指定枠",
+      "Description": "特殊効果から行動IDを使ってダメージを与える場合に指定-1で無効"
+    },
+    {
+      "Field": "changeHpRate",
+      "Name": "HPダメージ量[%]",
+      "Description": "一度の発動で最大HPの何%分を加算（または減算）するかを設定"
+    },
+    {
+      "Field": "changeHpPoint",
+      "Name": "HPダメージ[point]",
+      "Description": "一度の発動で何ポイント加算（または減算）するかを設定"
+    },
+    {
+      "Field": "changeMpRate",
+      "Name": "MPダメージ量[%]",
+      "Description": "一度の発動で最大MPの何%分を加算（または減算）するかを設定"
+    },
+    {
+      "Field": "changeMpPoint",
+      "Name": "MPダメージ[point]",
+      "Description": "一度の発動で何ポイント加算（または減算）するかを設定"
+    },
+    {
+      "Field": "mpRecoverChangeSpeed",
+      "Name": "MP回復速度変化[point]",
+      "Description": "回復速度を変化させる。回復計算式の基準回復速度、初期回復速度に加減算する。"
+    },
+    {
+      "Field": "changeStaminaRate",
+      "Name": "スタミナダメージ量[%]",
+      "Description": "一度の発動で最大スタミナの何%分を加算（または減算）するかを設定"
+    },
+    {
+      "Field": "changeStaminaPoint",
+      "Name": "スタミナダメージ[point]",
+      "Description": "一度の発動で何ポイント加算（または減算）するかを設定"
+    },
+    {
+      "Field": "staminaRecoverChangeSpeed",
+      "Name": "スタミナ回復速度変化[point]",
+      "Description": "回復速度を変化させる。回復計算式の基準回復速度、初期回復速度に加減算する。"
+    },
+    {
+      "Field": "magicEffectTimeChange",
+      "Name": "魔法効果時間変化",
+      "Description": "効果持続時間に0.1秒以上設定されている魔法のみ、効果持続時間に設定されている時間を加減算する"
+    },
+    {
+      "Field": "insideDurability",
+      "Name": "耐久度変化：内部損耗度[point]",
+      "Description": "内部損耗度に数値分を加減算する"
+    },
+    {
+      "Field": "maxDurability",
+      "Name": "耐久度変化：最大損耗度変化[point]",
+      "Description": "耐久度の内部損耗度の最大値に、設定された数値を加算する"
+    },
+    {
+      "Field": "staminaAttackRate",
+      "Name": "スタミナ攻撃力倍率",
+      "Description": "スタミナ攻撃力に、倍率をかける(1.0 1倍 0.5 半分）"
+    },
+    {
+      "Field": "poizonAttackPower",
+      "Name": "毒耐性攻撃力[point]",
+      "Description": "ヒットした時に、対象の【毒耐性値】に加算する数値"
+    },
+    {
+      "Field": "registIllness",
+      "Name": "疫病耐性攻撃力[point]",
+      "Description": "ヒットした時に、対象の【疫病耐性値】に加算する数値"
+    },
+    {
+      "Field": "registBlood",
+      "Name": "出血耐性攻撃力[point]",
+      "Description": "ヒットした時に、対象の【出血耐性値】に加算する数値"
+    },
+    {
+      "Field": "registCurse",
+      "Name": "呪耐性攻撃力[point]",
+      "Description": "ヒットした時に、対象の【呪耐性値】に加算する数値"
+    },
+    {
+      "Field": "fallDamageRate",
+      "Name": "落下ダメージ倍率",
+      "Description": "落下時のダメージ計算に倍率をかける"
+    },
+    {
+      "Field": "soulRate",
+      "Name": "取得ソウル倍率",
+      "Description": "敵を倒した時の取得ソウル量が、指定倍数分上乗せされる"
+    },
+    {
+      "Field": "equipWeightChangeRate",
+      "Name": "装備重量変化倍率",
+      "Description": "最大装備重量に、設定された倍率をかける"
+    },
+    {
+      "Field": "allItemWeightChangeRate",
+      "Name": "所持重量変化倍率",
+      "Description": "最大所持重量に、設定された倍率をかける"
+    },
+    {
+      "Field": "soul",
+      "Name": "ソウル加算",
+      "Description": "所持ソウルに、設定値を加算する"
+    },
+    {
+      "Field": "animIdOffset",
+      "Name": "アニメIDオフセット(無効-1)",
+      "Description": "アニメIDオフセット(無効-1)"
+    },
+    {
+      "Field": "haveSoulRate",
+      "Name": "所持ソウル率",
+      "Description": "敵周回効果用。設定されているキャラから外にソウルが出て行く時に適用されます。"
+    },
+    {
+      "Field": "targetPriority",
+      "Name": "ターゲット優先度加算分",
+      "Description": "マルチプレイ時、敵から優先的にターゲットとして狙われるようになる。プライオリティの加算。０がデフォルト。プラス値でよく狙われるようになる。マイナスは、－１まで。"
+    },
+    {
+      "Field": "sightSearchEnemyCut",
+      "Name": "見られる方：視覚距離カット率",
+      "Description": "見られる方にかける。見る方のAIの視覚索敵対象から外れやすくなる。０がデフォルト。"
+    },
+    {
+      "Field": "aroundSightPointAddRate",
+      "Name": "見られる方：発見ポイント増加倍率",
+      "Description": "見られる方にかける。見る方の周辺視野で貯まる発見ポイントの増加倍率"
+    },
+    {
+      "Field": "mapVisibilityOverrideGood",
+      "Name": "対象のマップ視界タイプ上書き_良好",
+      "Description": "ロック判定やAI視認判定を行う際、対象となるキャラの立っているヒットのマップ視界タイプが「良好」ならこの値に置き換えた上で判定を行う。"
+    },
+    {
+      "Field": "mapVisibilityOverrideDark",
+      "Name": "対象のマップ視界タイプ上書き_暗闇",
+      "Description": "ロック判定やAI視認判定を行う際、対象となるキャラの立っているヒットのマップ視界タイプが「暗闇」ならこの値に置き換えた上で判定を行う。"
+    },
+    {
+      "Field": "mapVisibilityOverridePitchDark",
+      "Name": "対象のマップ視界タイプ上書き_真っ暗闇",
+      "Description": "ロック判定やAI視認判定を行う際、対象となるキャラの立っているヒットのマップ視界タイプが「真っ暗闇」ならこの値に置き換えた上で判定を行う。 "
+    },
+    {
+      "Field": "sightCutLimitType",
+      "Name": "見られる方：制限タイプ ",
+      "Description": "見られる方にかける。見る方の視覚索敵カットが効果を発揮する条件タイプ"
+    },
+    {
+      "Field": "hearingSearchEnemyRate",
+      "Name": "聞かせる方：AI音半径倍率",
+      "Description": "聞かせる方にかける。自身の発生する音半径の倍率。1がデフォルト。"
+    },
+    {
+      "Field": "grabityRate",
+      "Name": "グラビティ率",
+      "Description": "グラビティ率"
+    },
+    {
+      "Field": "registPoizonChangeRate",
+      "Name": "毒耐性変化倍率",
+      "Description": "毒耐性値に設定された倍率をかける"
+    },
+    {
+      "Field": "registIllnessChangeRate",
+      "Name": "疫病耐性変化倍率",
+      "Description": "疫病耐性値に設定された倍率をかける"
+    },
+    {
+      "Field": "registBloodChangeRate",
+      "Name": "出血耐性変化倍率",
+      "Description": "出血耐性値に設定された倍率をかける"
+    },
+    {
+      "Field": "registCurseChangeRate",
+      "Name": "呪耐性変化倍率",
+      "Description": "呪耐性値に設定された倍率をかける"
+    },
+    {
+      "Field": "soulStealRate",
+      "Name": "ソウルスティール係数",
+      "Description": "NPCがソウルスティールで奪われるHPに対する防御力"
+    },
+    {
+      "Field": "lifeReductionRate",
+      "Name": "防御：寿命係数",
+      "Description": ""
+    },
+    {
+      "Field": "hpRecoverRate",
+      "Name": "HP回復量係数",
+      "Description": "HPが減るときは、効かない。"
+    },
+    {
+      "Field": "replaceSpEffectId",
+      "Name": "差し替える特殊効果",
+      "Description": "寿命が尽きた時に追加される特殊効果ID(-1は無視)"
+    },
+    {
+      "Field": "cycleOccurrenceSpEffectId",
+      "Name": "周期発生特殊効果",
+      "Description": "発動周期毎に発生する特殊効果ID(-1は無視)"
+    },
+    {
+      "Field": "atkOccurrenceSpEffectId",
+      "Name": "攻撃発生特殊効果",
+      "Description": "攻撃Hit時に発生する特殊効果ID(-1は無視)"
+    },
+    {
+      "Field": "guardDefFlickPowerRate",
+      "Name": "ガード時はじき防御力アップ倍率",
+      "Description": "ガード時のはじき防御力補正値"
+    },
+    {
+      "Field": "guardStaminaCutRate",
+      "Name": "ガード時スタミナカット倍率",
+      "Description": "ガード時のスタミナカット率補正値"
+    },
+    {
+      "Field": "eyeAngUpper_Perceive",
+      "Name": "見る方：認識視覚角度（高さ_上）上書き[deg]",
+      "Description": "見る方にかける。見る方の上方向の認識視覚角度[deg]"
+    },
+    {
+      "Field": "eyeAngBottom_Perceive",
+      "Name": "見る方：認識視覚角度（高さ_下）上書き[deg]",
+      "Description": "見る方にかける。見る方の下方向の認識視覚角度[deg]"
+    },
+    {
+      "Field": "changeSuperArmorPoint",
+      "Name": "SA値[point]",
+      "Description": "スーパーアーマー値に加算する値"
+    },
+    {
+      "Field": "bowDistRate",
+      "Name": "弓飛距離補正[％]",
+      "Description": "武器の飛距離補正に加算される補正値"
+    },
+    {
+      "Field": "spCategory",
+      "Name": "特殊効果カテゴリ",
+      "Description": "特殊効果の上書きなどの挙動を決めるカテゴリ"
+    },
+    {
+      "Field": "categoryPriority",
+      "Name": "カテゴリ内優先度",
+      "Description": "同一カテゴリ内での優先度（低い方が優先）"
+    },
+    {
+      "Field": "saveCategory",
+      "Name": "保存カテゴリ",
+      "Description": "特殊効果を保存するカテゴリ"
+    },
+    {
+      "Field": "changeMagicSlot",
+      "Name": "魔法登録枠変化\u3000魔法スロット",
+      "Description": "魔法登録枠を指定数増やすことが出来る"
+    },
+    {
+      "Field": "changeMiracleSlot",
+      "Name": "奇跡登録枠変化\u3000奇跡スロット",
+      "Description": "軌跡登録枠を指定数増やすことが出来る"
+    },
+    {
+      "Field": "heroPointDamage",
+      "Name": "人間性ダメージ値",
+      "Description": "人間性値に与えるダメージ値"
+    },
+    {
+      "Field": "defFlickPower",
+      "Name": "はじき防御力_上書き",
+      "Description": "はじき防御力を上書きする値を設定"
+    },
+    {
+      "Field": "flickDamageCutRate",
+      "Name": "はじき時ダメージ減衰率[%]_上書き",
+      "Description": "はじき時のダメージ減衰率を上書きする値を設定"
+    },
+    {
+      "Field": "bloodDamageRate",
+      "Name": "出血発動時のHPダメージ補正倍率",
+      "Description": "出血発動時のHPダメージ補正倍率"
+    },
+    {
+      "Field": "dmgLv_None",
+      "Name": "DL_ダメージなし（0）",
+      "Description": "ダメージLv0を差し替えるタイプを指定"
+    },
+    {
+      "Field": "dmgLv_S",
+      "Name": "DL_小（1）",
+      "Description": "ダメージLv1を差し替えるタイプを指定"
+    },
+    {
+      "Field": "dmgLv_M",
+      "Name": "DL_中（2）",
+      "Description": "ダメージLv2を差し替えるタイプを指定"
+    },
+    {
+      "Field": "dmgLv_L",
+      "Name": "DL_大（3）",
+      "Description": "ダメージLv3を差し替えるタイプを指定"
+    },
+    {
+      "Field": "dmgLv_BlowM",
+      "Name": "DL_吹っ飛び（4）",
+      "Description": "ダメージLv4を差し替えるタイプを指定"
+    },
+    {
+      "Field": "dmgLv_Push",
+      "Name": "DL_プッシュ（5）",
+      "Description": "ダメージLv5を差し替えるタイプを指定"
+    },
+    {
+      "Field": "dmgLv_Strike",
+      "Name": "DL_叩きつけ（6）",
+      "Description": "ダメージLv6を差し替えるタイプを指定"
+    },
+    {
+      "Field": "dmgLv_BlowS",
+      "Name": "DL_小吹っ飛び（7）",
+      "Description": "ダメージLv7を差し替えるタイプを指定"
+    },
+    {
+      "Field": "dmgLv_Min",
+      "Name": "DL_極小（8）",
+      "Description": "ダメージLv8を差し替えるタイプを指定"
+    },
+    {
+      "Field": "dmgLv_Uppercut",
+      "Name": "DL_打ち上げ（9）",
+      "Description": "ダメージLv9を差し替えるタイプを指定"
+    },
+    {
+      "Field": "dmgLv_BlowLL",
+      "Name": "DL_特大吹っ飛び(10)",
+      "Description": "ダメージLv10を差し替えるタイプを指定"
+    },
+    {
+      "Field": "dmgLv_Breath",
+      "Name": "DL_ブレス(11)",
+      "Description": "ダメージLv11を差し替えるタイプを指定"
+    },
+    {
+      "Field": "atkAttribute",
+      "Name": "物理属性",
+      "Description": "特殊効果に設定する物理属性"
+    },
+    {
+      "Field": "spAttribute",
+      "Name": "特殊属性",
+      "Description": "特殊効果に設定する特殊属性"
+    },
+    {
+      "Field": "stateInfo",
+      "Name": "状態変化タイプ",
+      "Description": "状態変化の判定フラグ"
+    },
+    {
+      "Field": "wepParamChange",
+      "Name": "対武器パラメータ変化",
+      "Description": "どの武器に対して効果を発揮するかを指定する。制限無しの場合は敵も含めた全ての攻撃・防御が対象"
+    },
+    {
+      "Field": "moveType",
+      "Name": "移動タイプ",
+      "Description": "移動タイプ。移動速度を変更する。"
+    },
+    {
+      "Field": "lifeReductionType",
+      "Name": "防御：寿命減少タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "throwCondition",
+      "Name": "投げ条件",
+      "Description": "投げ条件。投げマスクに影響する。"
+    },
+    {
+      "Field": "addBehaviorJudgeId_condition",
+      "Name": "行動判定IDに加算する条件値",
+      "Description": "行動判定ＩＤに値を加算する条件値(Def:-1)"
+    },
+    {
+      "Field": "freezeDamageRate",
+      "Name": "冷気発動時のHPダメージ補正倍率",
+      "Description": "状態変化タイプ[冷気]のPointダメージ、％ダメージの時のみ使用される補正値"
+    },
+    {
+      "Field": "effectTargetSelf",
+      "Name": "効果対象：所属\u3000自分",
+      "Description": "この判定にチェックが入っている対象のみ効果を発揮する、デフォルトは×"
+    },
+    {
+      "Field": "effectTargetFriend",
+      "Name": "効果対象：所属\u3000味方",
+      "Description": "この判定にチェックが入っている対象のみ効果を発揮する、デフォルトは×"
+    },
+    {
+      "Field": "effectTargetEnemy",
+      "Name": "効果対象：所属\u3000敵",
+      "Description": "この判定にチェックが入っている対象のみ効果を発揮する、デフォルトは×"
+    },
+    {
+      "Field": "effectTargetPlayer",
+      "Name": "効果対象：操作\u3000PC",
+      "Description": "この判定にチェックが入っている対象のみ効果を発揮する、デフォルトは×"
+    },
+    {
+      "Field": "effectTargetAI",
+      "Name": "効果対象：操作\u3000AI",
+      "Description": "この判定にチェックが入っている対象のみ効果を発揮する、デフォルトは×"
+    },
+    {
+      "Field": "effectTargetLive",
+      "Name": "効果対象：状態\u3000生存",
+      "Description": "この判定にチェックが入っている対象のみ効果を発揮する、デフォルトは×"
+    },
+    {
+      "Field": "effectTargetGhost",
+      "Name": "効果対象：状態\u3000全ゴースト",
+      "Description": "この判定にチェックが入っている対象のみ効果を発揮する、デフォルトは×"
+    },
+    {
+      "Field": "effectTargetWhiteGhost",
+      "Name": "効果対象：状態\u3000白ゴースト",
+      "Description": "この判定にチェックが入っている対象のみ効果を発揮する、デフォルトは×"
+    },
+    {
+      "Field": "effectTargetBlackGhost",
+      "Name": "効果対象：状態\u3000黒ゴースト",
+      "Description": "この判定にチェックが入っている対象のみ効果を発揮する、デフォルトは×"
+    },
+    {
+      "Field": "effectTargetAttacker",
+      "Name": "効果対象：攻撃者に発動",
+      "Description": "ダメージ後に攻撃者に特殊効果を適用（防御側には入れない）"
+    },
+    {
+      "Field": "dispIconNonactive",
+      "Name": "発動してなくてもアイコン表示",
+      "Description": "発動待ちの状態でもアイコンを表示する。"
+    },
+    {
+      "Field": "useSpEffectEffect",
+      "Name": "特殊効果エフェクトを使用するか（未使用）",
+      "Description": "特殊効果エフェクトを使用するか"
+    },
+    {
+      "Field": "bAdjustMagicAblity",
+      "Name": "魔力補正するか？",
+      "Description": "魔力補正するか？"
+    },
+    {
+      "Field": "bAdjustFaithAblity",
+      "Name": "信仰補正するか？",
+      "Description": "信仰補正するか？"
+    },
+    {
+      "Field": "bGameClearBonus",
+      "Name": "周回ボーナス用か？",
+      "Description": "ゲームクリア周回ボーナス用かどうか。"
+    },
+    {
+      "Field": "magParamChange",
+      "Name": "対魔法パラメータ変化",
+      "Description": "魔法に対して効果を発揮するかしないかを設定する"
+    },
+    {
+      "Field": "miracleParamChange",
+      "Name": "対奇跡パラメータ変化",
+      "Description": "奇跡に対して効果を発揮するかしないかを設定する"
+    },
+    {
+      "Field": "clearSoul",
+      "Name": "所持ソウルクリアするか",
+      "Description": "所持ソウルが0になります。"
+    },
+    {
+      "Field": "requestSOS",
+      "Name": "SOSサイン\u3000判定フラグ",
+      "Description": "チェックが付いている場合、発動時にSOSサイン要求を発行"
+    },
+    {
+      "Field": "requestBlackSOS",
+      "Name": "ブラックSOSサイン\u3000判定フラグ",
+      "Description": "チェックが付いている場合、発動時にブラックSOSサイン要求を発行"
+    },
+    {
+      "Field": "requestForceJoinBlackSOS",
+      "Name": "ブラック強制参加SOSサイン\u3000判定フラグ",
+      "Description": "チェックが付いている場合、発動時にブラック強制参加SOSサイン要求を発行"
+    },
+    {
+      "Field": "requestKickSession",
+      "Name": "キック\u3000判定フラグ",
+      "Description": "チェックが付いている場合、発動時にキック要求を発行"
+    },
+    {
+      "Field": "requestLeaveSession",
+      "Name": "退出\u3000判定フラグ",
+      "Description": "チェックが付いている場合、発動時に退出要求を発行"
+    },
+    {
+      "Field": "requestNpcInveda",
+      "Name": "NPCへの侵入\u3000判定フラグ",
+      "Description": "チェックが付いている場合、発動時にNPCへの侵入要求を発行"
+    },
+    {
+      "Field": "noDead",
+      "Name": "成仏不可\u3000判定フラグ",
+      "Description": "死体状態になれるかどうか。このチェックが付いていると、死亡状態にならない"
+    },
+    {
+      "Field": "bCurrHPIndependeMaxHP",
+      "Name": "最大HPが増減しても、現在HPは影響しないか？",
+      "Description": "最大HPが増減しても、現在HPは影響しないか？"
+    },
+    {
+      "Field": "corrosionIgnore",
+      "Name": "腐食無視",
+      "Description": "【状態変化タイプ】が【腐食】による【耐久度】減少を無視する"
+    },
+    {
+      "Field": "sightSearchCutIgnore",
+      "Name": "見る方：視覚索敵カット無視",
+      "Description": "見る方にかける。見られる方に設定された視覚索敵カットを無視する"
+    },
+    {
+      "Field": "hearingSearchCutIgnore",
+      "Name": "聞く方：聴覚索敵カット無視",
+      "Description": "聞く方にかける。聞かれる方に設定された聴覚索敵カットを無視する"
+    },
+    {
+      "Field": "antiMagicIgnore",
+      "Name": "アンチマジック無効",
+      "Description": "アンチマジック範囲でも魔法を使用できる"
+    },
+    {
+      "Field": "fakeTargetIgnore",
+      "Name": "偽ターゲット無効",
+      "Description": "発生した偽ターゲットに引っかからなくなる"
+    },
+    {
+      "Field": "fakeTargetIgnoreUndead",
+      "Name": "偽ターゲット無効_不死系",
+      "Description": "発生した不死系の偽ターゲットに引っかからなくなる"
+    },
+    {
+      "Field": "fakeTargetIgnoreAnimal",
+      "Name": "偽ターゲット無効_獣系",
+      "Description": "発生した獣系の偽ターゲットに引っかからなくなる"
+    },
+    {
+      "Field": "grabityIgnore",
+      "Name": "グラビティ無効",
+      "Description": "グラビティ効果無効"
+    },
+    {
+      "Field": "disablePoison",
+      "Name": "毒無効",
+      "Description": "この効果がかかっていると毒にかからなくなる"
+    },
+    {
+      "Field": "disableDisease",
+      "Name": "疫病無効",
+      "Description": "この効果がかかっていると疫病にかからなくなる"
+    },
+    {
+      "Field": "disableBlood",
+      "Name": "出血無効",
+      "Description": "この効果がかかっていると出血にかからなくなる"
+    },
+    {
+      "Field": "disableCurse",
+      "Name": "呪無効",
+      "Description": "この効果がかかっていると呪いにかからなくなる"
+    },
+    {
+      "Field": "enableCharm",
+      "Name": "魅了有効",
+      "Description": "この効果がかかっていると魅了にかかるようになる"
+    },
+    {
+      "Field": "enableLifeTime",
+      "Name": "TAEフラグの寿命延長可能か？",
+      "Description": "TAEによるフラグ設定時に寿命延長するか？"
+    },
+    {
+      "Field": "effectTargetPCOnlyTarget",
+      "Name": "効果対象：PCのみ",
+      "Description": "この判定にチェックが入っている対象のみ効果を発揮する、デフォルトは×"
+    },
+    {
+      "Field": "isFireDamageCancel",
+      "Name": "解除条件:炎ダメージ",
+      "Description": "炎ダメージによる特殊効果の解除を行うか？"
+    },
+    {
+      "Field": "isExtendSpEffectLife",
+      "Name": "寿命延長効果で延長するか？",
+      "Description": "寿命延長効果が掛かっている時に延長対象になるかどうか"
+    },
+    {
+      "Field": "requestLeaveColiseumSession",
+      "Name": "闘技場退出\u3000判定フラグ",
+      "Description": "チェックが付いている場合、発動時に闘技場退出要求を発行"
+    },
+    {
+      "Field": "bAdjustStrengthAblity",
+      "Name": "筋力補正するか？",
+      "Description": "筋力補正するか？"
+    },
+    {
+      "Field": "bAdjustAgilityAblity",
+      "Name": "技量補正するか？",
+      "Description": "技量補正するか？"
+    },
+    {
+      "Field": "chargeAttackParamChange",
+      "Name": "対溜めパラメータ変化",
+      "Description": "溜め攻撃に対して効果を発揮するかしないかを設定する"
+    },
+    {
+      "Field": "throwAttackParamChange",
+      "Name": "対投げパラメータ変化",
+      "Description": "投げ攻撃に対して効果を発揮するかしないかを設定する"
+    },
+    {
+      "Field": "vowType0",
+      "Name": "誓約0",
+      "Description": "誓約0"
+    },
+    {
+      "Field": "vowType1",
+      "Name": "誓約1",
+      "Description": "誓約1"
+    },
+    {
+      "Field": "vowType2",
+      "Name": "誓約2",
+      "Description": "誓約2"
+    },
+    {
+      "Field": "vowType3",
+      "Name": "誓約3",
+      "Description": "誓約3"
+    },
+    {
+      "Field": "vowType4",
+      "Name": "誓約4",
+      "Description": "誓約4"
+    },
+    {
+      "Field": "vowType5",
+      "Name": "誓約5",
+      "Description": "誓約5"
+    },
+    {
+      "Field": "vowType6",
+      "Name": "誓約6",
+      "Description": "誓約6"
+    },
+    {
+      "Field": "vowType7",
+      "Name": "誓約7",
+      "Description": "誓約7"
+    },
+    {
+      "Field": "vowType8",
+      "Name": "誓約8",
+      "Description": "誓約8"
+    },
+    {
+      "Field": "vowType9",
+      "Name": "誓約9",
+      "Description": "誓約9"
+    },
+    {
+      "Field": "vowType10",
+      "Name": "誓約10",
+      "Description": "誓約10"
+    },
+    {
+      "Field": "vowType11",
+      "Name": "誓約11",
+      "Description": "誓約11"
+    },
+    {
+      "Field": "vowType12",
+      "Name": "誓約12",
+      "Description": "誓約12"
+    },
+    {
+      "Field": "vowType13",
+      "Name": "誓約13",
+      "Description": "誓約13"
+    },
+    {
+      "Field": "vowType14",
+      "Name": "誓約14",
+      "Description": "誓約14"
+    },
+    {
+      "Field": "vowType15",
+      "Name": "誓約15",
+      "Description": "誓約15"
+    },
+    {
+      "Field": "repAtkDmgLv",
+      "Name": "攻撃側ダメージレベル差し替え",
+      "Description": "攻撃側のダメージレベルがこの値に指し換わる"
+    },
+    {
+      "Field": "sightSearchRate",
+      "Name": "見る方：視覚距離倍率",
+      "Description": "見る方にかける。自身のAI視覚距離に、設定された倍率をかける"
+    },
+    {
+      "Field": "effectTargetOpposeTarget",
+      "Name": "効果対象：●敵対",
+      "Description": "この判定にチェックが入っている対象のみ効果を発揮する、デフォルトは×"
+    },
+    {
+      "Field": "effectTargetFriendlyTarget",
+      "Name": "効果対象：○味方",
+      "Description": "この判定にチェックが入っている対象のみ効果を発揮する、デフォルトは×"
+    },
+    {
+      "Field": "effectTargetSelfTarget",
+      "Name": "効果対象：自分",
+      "Description": "この判定にチェックが入っている対象のみ効果を発揮する、デフォルトは×"
+    },
+    {
+      "Field": "changeTeamType",
+      "Name": "チームタイプ変更",
+      "Description": "指定したチームタイプに上書きする"
+    },
+    {
+      "Field": "dmypolyId",
+      "Name": "ダミポリID",
+      "Description": "ダミポリID。ダミポリID範囲は0～999.1000,10000の位はカテゴリ番号."
+    },
+    {
+      "Field": "vfxId",
+      "Name": "特殊効果VfxId_０",
+      "Description": "特殊効果VfxId(-1無効)"
+    },
+    {
+      "Field": "accumuOverFireId",
+      "Name": "元気玉上限時発動特殊効果Id",
+      "Description": "元気玉上限時発動特殊効果Id"
+    },
+    {
+      "Field": "accumuOverVal",
+      "Name": "元気玉上限値",
+      "Description": "元気玉上限値"
+    },
+    {
+      "Field": "accumuUnderFireId",
+      "Name": "元気玉下限時発動特殊効果Id",
+      "Description": "元気玉下限時発動特殊効果Id"
+    },
+    {
+      "Field": "accumuUnderVal",
+      "Name": "元気玉下限値",
+      "Description": "元気玉下限値"
+    },
+    {
+      "Field": "accumuVal",
+      "Name": "元気玉蓄積値",
+      "Description": "元気玉蓄積値"
+    },
+    {
+      "Field": "hearingSearchEnemyCut",
+      "Name": "聞く方：AI音半径カット率",
+      "Description": "聞く方にかける。発生している音半径の倍率。０がデフォルト。"
+    },
+    {
+      "Field": "eyeAngLeft_Perceive",
+      "Name": "見る方：認識視覚角度（幅_左）上書き[deg]",
+      "Description": "見る方にかける。見る方の左方向の認識視覚角度[deg]"
+    },
+    {
+      "Field": "eyeAngRight_Perceive",
+      "Name": "見る方：認識視覚角度（幅_右）上書き[deg]",
+      "Description": "見る方にかける。見る方の右方向の認識視覚角度[deg]"
+    },
+    {
+      "Field": "addDeceasedLv",
+      "Name": "亡者度 変更",
+      "Description": "この値分亡者度を加算する"
+    },
+    {
+      "Field": "vfxId1",
+      "Name": "特殊効果VfxId_１",
+      "Description": "特殊効果VfxId１(-1無効)"
+    },
+    {
+      "Field": "vfxId2",
+      "Name": "特殊効果VfxId_２",
+      "Description": "特殊効果VfxId２(-1無効)"
+    },
+    {
+      "Field": "vfxId3",
+      "Name": "特殊効果VfxId_３",
+      "Description": "特殊効果VfxId３(-1無効)"
+    },
+    {
+      "Field": "vfxId4",
+      "Name": "特殊効果VfxId_４",
+      "Description": "特殊効果VfxId４(-1無効)"
+    },
+    {
+      "Field": "vfxId5",
+      "Name": "特殊効果VfxId_５",
+      "Description": "特殊効果VfxId５(-1無効)"
+    },
+    {
+      "Field": "vfxId6",
+      "Name": "特殊効果VfxId_６",
+      "Description": "特殊効果VfxId６(-1無効)"
+    },
+    {
+      "Field": "vfxId7",
+      "Name": "特殊効果VfxId_７",
+      "Description": "特殊効果VfxId７(-1無効)"
+    },
+    {
+      "Field": "registFreeze",
+      "Name": "冷気耐性攻撃力[point]",
+      "Description": "ヒットした時に、対象の【冷気耐性値】に加算する数値"
+    },
+    {
+      "Field": "AppearAiSoundId",
+      "Name": "弾丸着弾時発生AI音ID",
+      "Description": "ソウルコインや幻聴で使うAI音のID。弾丸着弾時に発動。誘い頭蓋骨など"
+    },
+    {
+      "Field": "addFootEffectSfxId",
+      "Name": "追加フットエフェクト識別子",
+      "Description": "特殊効果時に追加で発生させるフットエフェクトの識別子。XYYZZZのZZZ"
+    },
+    {
+      "Field": "postEffectType",
+      "Name": "画面効果タイプ",
+      "Description": "適用する画面効果"
+    },
+    {
+      "Field": "isForceVisibleFootEffect",
+      "Name": "姿隠し中\u3000フットエフェクト強制表示",
+      "Description": "姿隠し中\u3000フットエフェクト強制表示"
+    },
+    {
+      "Field": "toughnessDamageCutRate",
+      "Name": "強靭度 被ダメージ倍率",
+      "Description": "強靭度版カット率"
+    },
+    {
+      "Field": "weakDmgRateA",
+      "Name": "特攻Aダメージ倍率補正",
+      "Description": "特攻Aダメージ倍率に補正をかけます。１が通常。"
+    },
+    {
+      "Field": "weakDmgRateB",
+      "Name": "特攻Bダメージ倍率補正",
+      "Description": "特攻Bダメージ倍率に補正をかけます。１が通常。"
+    },
+    {
+      "Field": "weakDmgRateC",
+      "Name": "特攻Cダメージ倍率補正",
+      "Description": "特攻Cダメージ倍率に補正をかけます。１が通常。"
+    },
+    {
+      "Field": "weakDmgRateD",
+      "Name": "特攻Dダメージ倍率補正",
+      "Description": "特攻Dダメージ倍率に補正をかけます。１が通常。"
+    },
+    {
+      "Field": "weakDmgRateE",
+      "Name": "特攻Eダメージ倍率補正",
+      "Description": "特攻Eダメージ倍率に補正をかけます。１が通常。"
+    },
+    {
+      "Field": "weakDmgRateF",
+      "Name": "特攻Fダメージ倍率補正",
+      "Description": "特攻Fダメージ倍率に補正をかけます。１が通常。"
+    },
+    {
+      "Field": "darkDamageCutRate",
+      "Name": "防御側：闇ダメージ倍率",
+      "Description": "闇ダメージ倍率：算出したダメージに×○倍で補正をかける。１が通常。"
+    },
+    {
+      "Field": "darkDiffenceRate",
+      "Name": "闇防御力倍率",
+      "Description": "闇防御力に設定した数値をかけます"
+    },
+    {
+      "Field": "darkDiffence",
+      "Name": "闇防御力[point]",
+      "Description": "闇防御力に設定した数値を加減算する"
+    },
+    {
+      "Field": "darkAttackRate",
+      "Name": "攻撃側：闇ダメージ倍率",
+      "Description": "闇ダメージ倍率：算出したダメージに×○倍で補正をかける。１が通常。"
+    },
+    {
+      "Field": "darkAttackPowerRate",
+      "Name": "闇攻撃力倍率",
+      "Description": "闇攻撃力に設定した数値をかけます"
+    },
+    {
+      "Field": "darkAttackPower",
+      "Name": "闇攻撃力[point]",
+      "Description": "闇攻撃力に設定した数値を加減算する"
+    },
+    {
+      "Field": "antiDarkSightRadius",
+      "Name": "暗闇丸見え半径[m]",
+      "Description": "暗闇丸見え半径[m]。この距離内にいる場合は暗所でも通常距離で見えるようになります"
+    },
+    {
+      "Field": "antiDarkSightDmypolyId",
+      "Name": "暗闇丸見えダミポリID",
+      "Description": "暗闇丸見えダミポリID(-1:マスター)。このダミポリを中心に丸見え領域を作成します"
+    },
+    {
+      "Field": "conditionHpRate",
+      "Name": "発動条件\u3000残りHP比率が一定以上[%]",
+      "Description": "指定された値以上のHPを持っている時にしか発動しない"
+    },
+    {
+      "Field": "consumeStaminaRate",
+      "Name": "消費スタミナ倍率",
+      "Description": "行動パラメータの消費スタミナの値にかける倍率"
+    },
+    {
+      "Field": "itemDropRate",
+      "Name": "アイテムドロップ補正",
+      "Description": "設定された値が【アイテムドロップ補正】に加算される "
+    },
+    {
+      "Field": "hearingSearchRate",
+      "Name": "AI聴覚距離倍率",
+      "Description": "AI聴覚距離に、設定された倍率をかける"
+    },
+    {
+      "Field": "changePoisonResistPoint",
+      "Name": "毒耐性変化[point]",
+      "Description": "状態耐性値を増減させる"
+    },
+    {
+      "Field": "changeDiseaseResistPoint",
+      "Name": "疫病耐性変化[point]",
+      "Description": "状態耐性値を増減させる"
+    },
+    {
+      "Field": "changeBloodResistPoint",
+      "Name": "出血耐性変化[point]",
+      "Description": "状態耐性値を増減させる"
+    },
+    {
+      "Field": "changeCurseResistPoint",
+      "Name": "呪耐性変化[point]",
+      "Description": "状態耐性値を増減させる"
+    },
+    {
+      "Field": "changeFreezeResistPoint",
+      "Name": "冷気耐性変化[point]",
+      "Description": "状態耐性値を増減させる"
+    },
+    {
+      "Field": "slashAttackRate",
+      "Name": "攻撃側：斬撃ダメージ倍率",
+      "Description": "斬撃ダメージ倍率：算出したダメージに×○倍で補正をかける。１が通常。"
+    },
+    {
+      "Field": "lightHitAttackRate",
+      "Name": "攻撃側：軽打ダメージ倍率",
+      "Description": "軽打ダメージ倍率：算出したダメージに×○倍で補正をかける。１が通常。"
+    },
+    {
+      "Field": "thrustAttackRate",
+      "Name": "攻撃側：刺突ダメージ倍率",
+      "Description": "刺突ダメージ倍率：算出したダメージに×○倍で補正をかける。１が通常。"
+    },
+    {
+      "Field": "neutralAttackRate",
+      "Name": "攻撃側：無属性ダメージ倍率",
+      "Description": "無属性ダメージ倍率：算出したダメージに×○倍で補正をかける。１が通常。"
+    },
+    {
+      "Field": "slashAttackPowerRate",
+      "Name": "斬撃攻撃力倍率",
+      "Description": "斬撃攻撃力に設定した数値をかけます"
+    },
+    {
+      "Field": "lightHitAttackPowerRate",
+      "Name": "軽打攻撃力倍率",
+      "Description": "軽打攻撃力に設定した数値をかけます"
+    },
+    {
+      "Field": "thrustAttackPowerRate",
+      "Name": "刺突攻撃力倍率",
+      "Description": "刺突攻撃力に設定した数値をかけます"
+    },
+    {
+      "Field": "neutralAttackPowerRate",
+      "Name": "無属性攻撃力倍率",
+      "Description": "無属性攻撃力に設定した数値をかけます"
+    },
+    {
+      "Field": "slashAttackPower",
+      "Name": "斬撃攻撃力[point]",
+      "Description": "斬撃攻撃力に設定した数値を加減算する"
+    },
+    {
+      "Field": "lightHitAttackPower",
+      "Name": "軽打攻撃力[point]",
+      "Description": "軽打攻撃力に設定した数値を加減算する"
+    },
+    {
+      "Field": "thrustAttackPower",
+      "Name": "刺突攻撃力[point]",
+      "Description": "刺突攻撃力に設定した数値を加減算する"
+    },
+    {
+      "Field": "neutralAttackPower",
+      "Name": "無属性攻撃力[point]",
+      "Description": "無属性攻撃力に設定した数値を加減算する"
+    },
+    {
+      "Field": "changeStrengthPoint",
+      "Name": "筋力補正変化[point]",
+      "Description": "武器の補正値を加減算する"
+    },
+    {
+      "Field": "changeAgilityPoint",
+      "Name": "俊敏補正変化[point]",
+      "Description": "武器の補正値を加減算する"
+    },
+    {
+      "Field": "changeMagicPoint",
+      "Name": "魔力補正変化[point]",
+      "Description": "武器の補正値を加減算する"
+    },
+    {
+      "Field": "changeFaithPoint",
+      "Name": "信仰補正変化[point]",
+      "Description": "武器の補正値を加減算する"
+    },
+    {
+      "Field": "changeLuckPoint",
+      "Name": "運補正変化[point]",
+      "Description": "武器の補正値を加減算する"
+    },
+    {
+      "Field": "recoverArtsPoint_Str",
+      "Name": "アーツポイント回復 筋力系",
+      "Description": "アーツポイント筋力を回復させる"
+    },
+    {
+      "Field": "recoverArtsPoint_Dex",
+      "Name": "アーツポイント回復 技量系",
+      "Description": "アーツポイント技量を回復させる"
+    },
+    {
+      "Field": "recoverArtsPoint_Magic",
+      "Name": "アーツポイント回復 魔法系",
+      "Description": "アーツポイント魔法を回復させる"
+    },
+    {
+      "Field": "recoverArtsPoint_Miracle",
+      "Name": "アーツポイント回復 奇跡系",
+      "Description": "アーツポイント奇跡を回復させる"
+    },
+    {
+      "Field": "overrideThrowTypeId",
+      "Name": "投げタイプID",
+      "Description": "通常投げ時に、このタイプIDに差し替える。SEQ00005 【投げシステム】特殊効果に応じて、実行される通常投げ（PC）を変更する"
+    },
+    {
+      "Field": "sightSearchLeftAngleCut",
+      "Name": "見られる方：視覚角度（幅_左）カット率",
+      "Description": "見られる方にかける。見る方のAIの視覚索敵幅(左方向)のカット率。０がデフォルト。"
+    },
+    {
+      "Field": "sightSearchRightAngleCut",
+      "Name": "見られる方：視覚角度（幅_右）カット率",
+      "Description": "見られる方にかける。見る方のAIの視覚索敵幅(右方向)のカット率。０がデフォルト。"
+    },
+    {
+      "Field": "sightSearchUpperAngleCut",
+      "Name": "見られる方：視覚角度（高さ_上）カット率",
+      "Description": "見られる方にかける。見る方のAIの視覚索敵幅(上方向)のカット率。０がデフォルト。"
+    },
+    {
+      "Field": "sightSearchBottomAngleCut",
+      "Name": "見られる方：視覚角度（高さ_下）カット率",
+      "Description": "見られる方にかける。見る方のAIの視覚索敵幅(下方向)のカット率。０がデフォルト。"
+    },
+    {
+      "Field": "eyeAngUpper",
+      "Name": "見る方：視覚角度（高さ_上）上書き[deg]",
+      "Description": "見る方にかける。見る方の上方向の視覚角度[deg]"
+    },
+    {
+      "Field": "eyeAngBottom",
+      "Name": "見る方：視覚角度（高さ_下）上書き[deg]",
+      "Description": "見る方にかける。見る方の下方向の視覚角度[deg]"
+    },
+    {
+      "Field": "eyeAngLeft",
+      "Name": "見る方：視覚角度（幅_左）上書き[deg]",
+      "Description": "見る方にかける。見る方の左方向の視覚角度[deg]"
+    },
+    {
+      "Field": "eyeAngRight",
+      "Name": "見る方：視覚角度（幅_右）上書き[deg]",
+      "Description": "見る方にかける。見る方の右方向の視覚角度[deg]"
+    },
+    {
+      "Field": "wetConditionType",
+      "Name": "濡れタイプ",
+      "Description": "濡れの見た目の種類。デカールIDの算出などに使われる。"
+    },
+    {
+      "Field": "disableFreeze",
+      "Name": "冷気無効",
+      "Description": "この効果がかかっていると冷気にかからなくなる"
+    },
+    {
+      "Field": "isUseStatusAilmentAtkPowerCorrect",
+      "Name": "状態異常攻撃力倍率補正を適応するか",
+      "Description": "○なら攻撃パラの状態異常攻撃力倍率補正を適応します。"
+    },
+    {
+      "Field": "isUseAtkParamAtkPowerCorrect",
+      "Name": "攻撃パラメータの攻撃力倍率補正を適応するか",
+      "Description": "○なら攻撃パラの攻撃力倍率補正を適応します。"
+    },
+    {
+      "Field": "effectTargetPcDeceased",
+      "Name": "効果対象：PC亡者のみ",
+      "Description": "この判定にチェックが入っている対象のみ効果を発揮する、デフォルトは×"
+    },
+    {
+      "Field": "isContractSpEffectLife",
+      "Name": "寿命短縮効果で短縮するか？",
+      "Description": "寿命短縮効果が掛かっている時に短縮対象になるかどうか"
+    },
+    {
+      "Field": "isWaitModeDelete",
+      "Name": "待ち状態に入ると削除",
+      "Description": "待ち状態になった瞬間に削除するか？"
+    },
+    {
+      "Field": "isIgnoreNoDamage",
+      "Name": "無敵時でも発動するか",
+      "Description": "状態変化タイプ「無敵時でも発動機能を適応」が掛かっているときのみ、無敵状態でもこの特殊効果からのダメージを適応するか"
+    },
+    {
+      "Field": "isDisableNetSync",
+      "Name": "ネット同期しない",
+      "Description": "ネット同期しない。ローカルに掛けるようになる、という意味ではなく、単にネット送信しない。例えばリモートキャラはローカル発動しないので、その場合何も起こらない。"
+    },
+    {
+      "Field": "eyeAngUpper_Around",
+      "Name": "見る方：周辺視覚角度（高さ_上）上書き[deg]",
+      "Description": "見る方にかける。見る方の上方向の周辺視覚角度[deg]"
+    },
+    {
+      "Field": "eyeAngBottom_Around",
+      "Name": "見る方：周辺視覚角度（高さ_下）上書き[deg]",
+      "Description": "見る方にかける。見る方の下方向の周辺視覚角度[deg]"
+    },
+    {
+      "Field": "saReceiveDamageRate",
+      "Name": "SA値_被ダメージ倍率",
+      "Description": "SAダメージかかる倍率"
+    },
+    {
+      "Field": "defPlayerDmgCorrectRate_Physics",
+      "Name": "防御側 プレイヤー 物理ダメージ補正倍率",
+      "Description": "プレイヤーから受けるダメージ値に対するダメージ補正。"
+    },
+    {
+      "Field": "defPlayerDmgCorrectRate_Magic",
+      "Name": "防御側 プレイヤー 魔法ダメージ補正倍率",
+      "Description": "プレイヤーから受けるダメージ値に対するダメージ補正。"
+    },
+    {
+      "Field": "defPlayerDmgCorrectRate_Fire",
+      "Name": "防御側 プレイヤー 炎ダメージ補正倍率",
+      "Description": "プレイヤーから受けるダメージ値に対するダメージ補正。"
+    },
+    {
+      "Field": "defPlayerDmgCorrectRate_Thunder",
+      "Name": "防御側 プレイヤー 雷ダメージ補正倍率",
+      "Description": "プレイヤーから受けるダメージ値に対するダメージ補正。"
+    },
+    {
+      "Field": "defPlayerDmgCorrectRate_Dark",
+      "Name": "防御側 プレイヤー 闇ダメージ補正倍率",
+      "Description": "プレイヤーから受けるダメージ値に対するダメージ補正。"
+    },
+    {
+      "Field": "defEnemyDmgCorrectRate_Physics",
+      "Name": "防御側 敵 物理ダメージ補正倍率",
+      "Description": "敵から受けるダメージ値に対するダメージ補正。"
+    },
+    {
+      "Field": "defEnemyDmgCorrectRate_Magic",
+      "Name": "防御側 敵 魔法ダメージ補正倍率",
+      "Description": "敵から受けるダメージ値に対するダメージ補正。"
+    },
+    {
+      "Field": "defEnemyDmgCorrectRate_Fire",
+      "Name": "防御側 敵 炎ダメージ補正倍率",
+      "Description": "敵から受けるダメージ値に対するダメージ補正。"
+    },
+    {
+      "Field": "defEnemyDmgCorrectRate_Thunder",
+      "Name": "防御側 敵 雷ダメージ補正倍率",
+      "Description": "敵から受けるダメージ値に対するダメージ補正。"
+    },
+    {
+      "Field": "defEnemyDmgCorrectRate_Dark",
+      "Name": "防御側 敵 闇ダメージ補正倍率",
+      "Description": "敵から受けるダメージ値に対するダメージ補正。"
+    },
+    {
+      "Field": "defObjDmgCorrectRate",
+      "Name": "防御側 オブジェクトダメージ補正倍率",
+      "Description": "OBJから受けるダメージ値に対するダメージ補正。"
+    },
+    {
+      "Field": "atkPlayerDmgCorrectRate_Physics",
+      "Name": "攻撃側 プレイヤー 物理ダメージ補正倍率",
+      "Description": "プレイヤーに与えるダメージ値に対するダメージ補正。"
+    },
+    {
+      "Field": "atkPlayerDmgCorrectRate_Magic",
+      "Name": "攻撃側 プレイヤー 魔法ダメージ補正倍率",
+      "Description": "プレイヤーに与えるダメージ値に対するダメージ補正。"
+    },
+    {
+      "Field": "atkPlayerDmgCorrectRate_Fire",
+      "Name": "攻撃側 プレイヤー 炎ダメージ補正倍率",
+      "Description": "プレイヤーに与えるダメージ値に対するダメージ補正。"
+    },
+    {
+      "Field": "atkPlayerDmgCorrectRate_Thunder",
+      "Name": "攻撃側 プレイヤー 雷ダメージ補正倍率",
+      "Description": "プレイヤーに与えるダメージ値に対するダメージ補正。"
+    },
+    {
+      "Field": "atkPlayerDmgCorrectRate_Dark",
+      "Name": "攻撃側 プレイヤー 闇ダメージ補正倍率",
+      "Description": "プレイヤーに与えるダメージ値に対するダメージ補正。"
+    },
+    {
+      "Field": "atkEnemyDmgCorrectRate_Physics",
+      "Name": "攻撃側 敵 物理ダメージ補正倍率",
+      "Description": "敵に与えるダメージ値に対するダメージ補正。"
+    },
+    {
+      "Field": "atkEnemyDmgCorrectRate_Magic",
+      "Name": "攻撃側 敵 魔法ダメージ補正倍率",
+      "Description": "敵に与えるダメージ値に対するダメージ補正。"
+    },
+    {
+      "Field": "atkEnemyDmgCorrectRate_Fire",
+      "Name": "攻撃側 敵 炎ダメージ補正倍率",
+      "Description": "敵に与えるダメージ値に対するダメージ補正。"
+    },
+    {
+      "Field": "atkEnemyDmgCorrectRate_Thunder",
+      "Name": "攻撃側 敵 雷ダメージ補正倍率",
+      "Description": "敵に与えるダメージ値に対するダメージ補正。"
+    },
+    {
+      "Field": "atkEnemyDmgCorrectRate_Dark",
+      "Name": "攻撃側 敵 闇ダメージ補正倍率",
+      "Description": "敵に与えるダメージ値に対するダメージ補正。"
+    },
+    {
+      "Field": "registFreezeChangeRate",
+      "Name": "冷気耐性変化倍率",
+      "Description": "冷気耐性値に設定された倍率をかける"
+    },
+    {
+      "Field": "invocationConditionsStateChange1",
+      "Name": "発動条件状態変化タイプ1",
+      "Description": "発動条件状態変化タイプ1"
+    },
+    {
+      "Field": "invocationConditionsStateChange2",
+      "Name": "発動条件状態変化タイプ2",
+      "Description": "発動条件状態変化タイプ2"
+    },
+    {
+      "Field": "invocationConditionsStateChange3",
+      "Name": "発動条件状態変化タイプ3",
+      "Description": "発動条件状態変化タイプ3"
+    },
+    {
+      "Field": "shamanParamChange",
+      "Name": "対呪術パラメータ変化",
+      "Description": "呪術に対して効果を発揮するかしないかを設定する"
+    },
+    {
+      "Field": "dexterityCancelSystemOnlyAddDexterity",
+      "Name": "技量キャンセル用仮想ステータス",
+      "Description": "「技量キャンセル」のTAEフラグの終了タイミングを計算する時に、この値を追加して計算する"
+    },
+    {
+      "Field": "value_Magnification",
+      "Name": "販売価格補正：倍率",
+      "Description": "販売価格補正：倍率"
+    },
+    {
+      "Field": "artsConsumptionRate",
+      "Name": "アーツ消費MP倍率",
+      "Description": "アーツ消費MP倍率[%]"
+    },
+    {
+      "Field": "magicConsumptionRate",
+      "Name": "魔法消費MP倍率",
+      "Description": "魔法消費MP倍率[%]"
+    },
+    {
+      "Field": "shamanConsumptionRate",
+      "Name": "呪術消費MP倍率",
+      "Description": "呪術消費MP倍率[%]"
+    },
+    {
+      "Field": "miracleConsumptionRate",
+      "Name": "奇跡消費MP倍率",
+      "Description": "奇跡消費MP倍率[%]"
+    },
+    {
+      "Field": "changeHpEstusFlaskRate",
+      "Name": "エスト瓶HPダメージ量[%]",
+      "Description": "一度の発動で最大HPの何%分を加算（または減算）するかを設定"
+    },
+    {
+      "Field": "changeHpEstusFlaskPoint",
+      "Name": "エスト瓶HPダメージ量[point]",
+      "Description": "一度の発動で何ポイント加算（または減算）するかを設定"
+    },
+    {
+      "Field": "changeMpEstusFlaskRate",
+      "Name": "エスト瓶MPダメージ量[%] ",
+      "Description": "一度の発動で最大MPの何%分を加算（または減算）するかを設定"
+    },
+    {
+      "Field": "changeMpEstusFlaskPoint",
+      "Name": "エスト瓶MPダメージ量[point] ",
+      "Description": "一度の発動で何ポイント加算（または減算）するかを設定"
+    },
+    {
+      "Field": "changeHpEstusFlaskCorrectRate",
+      "Name": "エスト瓶HPダメージ倍率 ",
+      "Description": "HPエスト瓶のダメージ量に対して補正をかける"
+    },
+    {
+      "Field": "changeMpEstusFlaskCorrectRate",
+      "Name": "エスト瓶MPダメージ倍率 ",
+      "Description": "MPエスト瓶のダメージ量に対して補正をかける"
+    },
+    {
+      "Field": "applyIdOnGetSoul",
+      "Name": "HPドレイン発動特殊効果",
+      "Description": "状態変化タイプ「HPドレイン」の特殊効果が有効の時に、敵を倒した際に同じ特殊効果の「HPドレイン発動特殊効果」に設定されている特殊効果IDを呼び出す(0：無視)"
+    },
+    {
+      "Field": "extendLifeRate",
+      "Name": "寿命延長倍率",
+      "Description": "状態変化タイプ「寿命延長」の延長係数"
+    },
+    {
+      "Field": "contractLifeRate",
+      "Name": "寿命短縮倍率",
+      "Description": "状態変化タイプ「寿命短縮」の短縮係数"
+    },
+    {
+      "Field": "addBehaviorJudgeId_add",
+      "Name": "行動判定IDに加算する加算値",
+      "Description": "行動判定IDの加算値 ０の場合は行動を切り替えるのではなく、行動しなくなります。"
+    },
+    {
+      "Field": "effectEndDeleteDecalGroupId",
+      "Name": "特殊効果消失時にキャラのペイントデカールを削除するグループID",
+      "Description": "特殊効果が消失した時（寿命/何かに上書きされる/消される…など）に、同じグループIDの特殊効果がかかっていなければペイントデカールを削除する。"
+    },
+    {
+      "Field": "defObjectAttackPowerRate",
+      "Name": "被ダメージ オブジェクト攻撃力倍率",
+      "Description": "OBJから受けるダメージに対して攻撃力を補正する。（ダメージ補正ではない）"
+    },
+    {
+      "Field": "addLifeForceStatus",
+      "Name": "生命力追加値",
+      "Description": "成長ステータスに値を加える"
+    },
+    {
+      "Field": "addWillpowerStatus",
+      "Name": "精神力追加値",
+      "Description": "成長ステータスに値を加える"
+    },
+    {
+      "Field": "addEndureStatus",
+      "Name": "持久力追加値",
+      "Description": "成長ステータスに値を加える"
+    },
+    {
+      "Field": "addVitalityStatus",
+      "Name": "体力追加値",
+      "Description": "成長ステータスに値を加える"
+    },
+    {
+      "Field": "addStrengthStatus",
+      "Name": "筋力追加値",
+      "Description": "成長ステータスに値を加える"
+    },
+    {
+      "Field": "addDexterityStatus",
+      "Name": "技量追加値",
+      "Description": "成長ステータスに値を加える"
+    },
+    {
+      "Field": "addMagicStatus",
+      "Name": "理力追加値",
+      "Description": "成長ステータスに値を加える"
+    },
+    {
+      "Field": "addFaithStatus",
+      "Name": "信仰追加値",
+      "Description": "成長ステータスに値を加える"
+    },
+    {
+      "Field": "addLuckStatus",
+      "Name": "運追加値",
+      "Description": "成長ステータスに値を加える"
+    },
+    {
+      "Field": "staminaPhysicsAttribute",
+      "Name": "スタミナ物理属性",
+      "Description": "防御者のどのスタミナダメージ倍率を参照するか決める。例) 斬撃に設定すると、防御側の斬撃スタミナダメージ倍率を参照する。"
+    },
+    {
+      "Field": "behaviorRefFlag_checkAliveFlagForBehavior",
+      "Name": "Behavior参照フラグ_Behavior用生存フラグを見るか",
+      "Description": "該当の特殊効果をenv( \"特殊効果発動中か_Behavior参照ID\", int )で参照した場合に、○なら特殊効果が存在していてもBehavior用生存フラグがfalseならFALSEを返す。特殊効果が存在し、Behavior用生存フラグがtrueならTRUEを返す。×なら特殊効果が存在していればTRUEを返す。存在しなければFALSEを返す。同じBehavior参照IDの特殊効果が複数存在している場合、\u3000すべての特殊効果が○かつすべての特殊効果のBehavior用生存フラグがfalseならFALSEを返す。いずれかの特殊効果が×、もしくはいずれかの特殊効果のBehavior用生存フラグがtrueならTRUEを返す。詳細は下記資料に記載。alienbrain://SERVER-AB6/NTC:596/doc/Plan/02_システム/01_PC/030-110_TAEで設定した特殊効果がBehaviorスクリプトから見て1フレーム長く生存する問題とその対策について.xlsx"
+    },
+    {
+      "Field": "recoveRremainNinsatsuNum",
+      "Name": "必要忍殺回数回復",
+      "Description": "設定した必要忍殺回数を回復させる。最大値以上にはならない。"
+    },
+    {
+      "Field": "defSlashStaminaDmgRate",
+      "Name": "防御側：斬撃スタミナダメージ倍率",
+      "Description": "スタミナ物理属性が斬撃のときにスタミナダメージに乗算する"
+    },
+    {
+      "Field": "defLightHitStaminaDmgRate",
+      "Name": "防御側：軽打スタミナダメージ倍率",
+      "Description": "スタミナ物理属性が軽打のときにスタミナダメージに乗算する"
+    },
+    {
+      "Field": "defThrustStaminaDmgRate",
+      "Name": "防御側：刺突スタミナダメージ倍率",
+      "Description": "スタミナ物理属性が刺突のときにスタミナダメージに乗算する"
+    },
+    {
+      "Field": "defNeutralStaminaDmgRate",
+      "Name": "防御側：無属性スタミナダメージ倍率",
+      "Description": "スタミナ物理属性が無属性のときにスタミナダメージに乗算する"
+    },
+    {
+      "Field": "defNinsatuStaminaDmgRate",
+      "Name": "防御側：忍殺スタミナダメージ倍率",
+      "Description": "スタミナ物理属性が忍殺のときにスタミナダメージに乗算する"
+    },
+    {
+      "Field": "defHeavyHitStaminaDmgRate",
+      "Name": "防御側：重打スタミナダメージ倍率",
+      "Description": "スタミナ物理属性が重打のときにスタミナダメージに乗算する"
+    },
+    {
+      "Field": "defAntiGroundStaminaDmgRate",
+      "Name": "防御側：対地スタミナダメージ倍率",
+      "Description": "スタミナ物理属性が対地のときにスタミナダメージに乗算する"
+    },
+    {
+      "Field": "defAntiAirStaminaDmgRate",
+      "Name": "防御側：対空スタミナダメージ倍率",
+      "Description": "スタミナ物理属性が対空のときにスタミナダメージに乗算する"
+    },
+    {
+      "Field": "defLightShootStaminaDmgRate",
+      "Name": "防御側：軽射スタミナダメージ倍率",
+      "Description": "スタミナ物理属性が軽射のときにスタミナダメージに乗算する"
+    },
+    {
+      "Field": "atkNinsatsuDmgRate",
+      "Name": "攻撃側：忍殺ダメージ倍率",
+      "Description": "忍殺ダメージ倍率：算出したダメージに×○倍で補正をかける。１が通常。"
+    },
+    {
+      "Field": "atkHeavyHitDmgRate",
+      "Name": "攻撃側：重打ダメージ倍率",
+      "Description": "重打ダメージ倍率：算出したダメージに×○倍で補正をかける。１が通常。"
+    },
+    {
+      "Field": "atkAntiGroundDmgRate",
+      "Name": "攻撃側：対地ダメージ倍率",
+      "Description": "対地ダメージ倍率：算出したダメージに×○倍で補正をかける。１が通常。"
+    },
+    {
+      "Field": "atkAntiAirDmgRate",
+      "Name": "攻撃側：対空ダメージ倍率",
+      "Description": "対空ダメージ倍率：算出したダメージに×○倍で補正をかける。１が通常。"
+    },
+    {
+      "Field": "atkLightShootDmgRate",
+      "Name": "攻撃側：軽射ダメージ倍率",
+      "Description": "軽射ダメージ倍率：算出したダメージに×○倍で補正をかける。１が通常。"
+    },
+    {
+      "Field": "ninsatsuAttackPowerRate",
+      "Name": "忍殺攻撃力倍率",
+      "Description": "忍殺攻撃力に設定した数値をかけます"
+    },
+    {
+      "Field": "heavyHitAttackPowerRate",
+      "Name": "重打攻撃力倍率",
+      "Description": "重打攻撃力に設定した数値をかけます"
+    },
+    {
+      "Field": "antiGroundAttackPowerRate",
+      "Name": "対地攻撃力倍率",
+      "Description": "対地攻撃力に設定した数値をかけます"
+    },
+    {
+      "Field": "antiAirAttackPowerRate",
+      "Name": "対空攻撃力倍率",
+      "Description": "対空攻撃力に設定した数値をかけます"
+    },
+    {
+      "Field": "lightShootAttackPowerRate",
+      "Name": "軽射攻撃力倍率",
+      "Description": "軽射攻撃力に設定した数値をかけます"
+    },
+    {
+      "Field": "ninsatsuAttackPower",
+      "Name": "忍殺攻撃力[point]",
+      "Description": "忍殺攻撃力に設定した数値を加減算する"
+    },
+    {
+      "Field": "heavyHitAttackPower",
+      "Name": "重打攻撃力[point]",
+      "Description": "重打攻撃力に設定した数値を加減算する"
+    },
+    {
+      "Field": "antiGroundAttackPower",
+      "Name": "対地攻撃力[point]",
+      "Description": "対地攻撃力に設定した数値を加減算する"
+    },
+    {
+      "Field": "antiAirAttackPower",
+      "Name": "対空攻撃力[point]",
+      "Description": "対空攻撃力に設定した数値を加減算する"
+    },
+    {
+      "Field": "lightShootAttackPower",
+      "Name": "軽射攻撃力[point]",
+      "Description": "軽射攻撃力に設定した数値を加減算する"
+    },
+    {
+      "Field": "defNinsatsuDmgRate",
+      "Name": "防御側：忍殺ダメージ倍率",
+      "Description": "忍殺ダメージ倍率：算出したダメージに×○倍で補正をかける。１が通常。"
+    },
+    {
+      "Field": "defHeavyHitDmgRate",
+      "Name": "防御側：重打ダメージ倍率",
+      "Description": "重打ダメージ倍率：算出したダメージに×○倍で補正をかける。１が通常。"
+    },
+    {
+      "Field": "defAntiGroundDmgRate",
+      "Name": "防御側：対地ダメージ倍率",
+      "Description": "対地ダメージ倍率：算出したダメージに×○倍で補正をかける。１が通常。"
+    },
+    {
+      "Field": "defAntiAirDmgRate",
+      "Name": "防御側：対空ダメージ倍率",
+      "Description": "対空ダメージ倍率：算出したダメージに×○倍で補正をかける。１が通常。"
+    },
+    {
+      "Field": "defLightShootDmgRate",
+      "Name": "防御側：軽射ダメージ倍率",
+      "Description": "軽射ダメージ倍率：算出したダメージに×○倍で補正をかける。１が通常。"
+    },
+    {
+      "Field": "throwChangeIdOffset",
+      "Name": "投げ変化IDオフセット",
+      "Description": "投げ変化IDオフセット"
+    },
+    {
+      "Field": "agingFadeTime",
+      "Name": "老化フェード時間[s]",
+      "Description": "老化モデル差し替え時のクロスフェード時間[s]"
+    },
+    {
+      "Field": "defStaminaAttackRate",
+      "Name": "受動スタミナ攻撃力倍率",
+      "Description": "ジャスガが成立したとき、ジャスガした側のこのパラメータの倍率をジャスガされた側の攻撃パラメータの《被スタミナダメージ_攻撃側_弾き負け》に乗算する"
+    },
+    {
+      "Field": "attackHitParryStaminaAttackRate",
+      "Name": "攻撃接触パリィ時スタミナ攻撃力倍率",
+      "Description": "見切りが成立したとき、見切りした側のこのパラメータの倍率を見切りされた側の攻撃パラメータの《攻撃接触パリィ時被スタミナダメージ》に乗算する"
+    },
+    {
+      "Field": "maxHpIncrease",
+      "Name": "最大HP増減量[point]",
+      "Description": "最大HPにこの値を加算する"
+    },
+    {
+      "Field": "maxSpIncrease",
+      "Name": "最大スタミナ増減量[point]",
+      "Description": "最大SPにこの値を加算する"
+    },
+    {
+      "Field": "counterSpEffectId",
+      "Name": "カウンター特殊効果ID",
+      "Description": "カウンター特殊効果発動条件を満たしたときに攻撃者にかける特殊効果のID "
+    },
+    {
+      "Field": "counterSpEffectCondition",
+      "Name": "カウンター特殊効果発動条件",
+      "Description": "受けた攻撃の《カウンター特殊効果発動用識別値》と一致することで条件を満たす。"
+    },
+    {
+      "Field": "teamOffenseEffectivity",
+      "Name": "チーム攻撃影響力_上書き",
+      "Description": "対象の【チーム攻撃影響力】の値を、上書きして変更する。デフォルト値（-1）のときは変更しない。"
+    },
+    {
+      "Field": "unlockThresholdCamouflage",
+      "Name": "姿隠しロック不可になるα値[%] ",
+      "Description": "姿隠し中にロック不可能になるα値"
+    },
+    {
+      "Field": "camouflageHitPartsGroup",
+      "Name": "偽装先ダメージ部位",
+      "Description": "ダメージを受けた時、実際のヒット部位に関わらずここで指定した部位にダメージを受けたことにして部位によるダメージの減少や伝搬率補正を行う"
+    },
+    {
+      "Field": "chrWireVariationNo",
+      "Name": "キャラワイヤーバリエーション番号",
+      "Description": "キャラに特殊効果がかかっている間、このバリエーションIDでワイヤーのターゲッティング＆アクションを有効にする。-1なら無効。 "
+    },
+    {
+      "Field": "chrWireTargetDmypolyId",
+      "Name": "キャラワイヤーターゲットダミポリID",
+      "Description": "このIDのダミポリ位置にワイヤーエッジを生成する。-1なら原点に生成。 "
+    },
+    {
+      "Field": "chrWireLandingPointDmypolyId",
+      "Name": "キャラワイヤーランディングポイントダミポリID",
+      "Description": "このIDのダミポリ位置にランディングポイントを生成する。-1なら原点に生成。 "
+    },
+    {
+      "Field": "behaviorRefId",
+      "Name": "Behavior参照ID",
+      "Description": "異なる特殊効果をまとめてビヘイビアスクリプトから発動中かどうか判別するためのID "
+    },
+    {
+      "Field": "defPoisonResistDamageRate",
+      "Name": "防御側：毒耐性ダメージ倍率",
+      "Description": "特殊効果の毒耐性攻撃力[point]に対して倍率をかける"
+    },
+    {
+      "Field": "defDiseaseResistDamageRate",
+      "Name": "防御側：疫病耐性ダメージ倍率",
+      "Description": "特殊効果の疫病耐性攻撃力[point]に対して倍率をかける"
+    },
+    {
+      "Field": "defBloodResistDamageRate",
+      "Name": "防御側：出血耐性ダメージ倍率",
+      "Description": "特殊効果の出血耐性攻撃力[point]に対して倍率をかける"
+    },
+    {
+      "Field": "defCurseResistDamageRate",
+      "Name": "防御側：呪耐性ダメージ倍率",
+      "Description": "特殊効果の呪耐性攻撃力[point]に対して倍率をかける"
+    },
+    {
+      "Field": "defFreezeResistDamageRate",
+      "Name": "防御側：冷気耐性ダメージ倍率",
+      "Description": "特殊効果の冷気耐性攻撃力[point]に対して倍率をかける"
+    },
+    {
+      "Field": "defAttriAStaminaDmgRate",
+      "Name": "防御側：属性Aスタミナダメージ倍率",
+      "Description": "スタミナ物理属性が属性Aのときにスタミナダメージに乗算する"
+    },
+    {
+      "Field": "defAttriBStaminaDmgRate",
+      "Name": "防御側：属性Bスタミナダメージ倍率",
+      "Description": "スタミナ物理属性が属性Bのときにスタミナダメージに乗算する"
+    },
+    {
+      "Field": "defAttriCStaminaDmgRate",
+      "Name": "防御側：属性Cスタミナダメージ倍率",
+      "Description": "スタミナ物理属性が属性Cのときにスタミナダメージに乗算する"
+    },
+    {
+      "Field": "attriAAttackRate",
+      "Name": "攻撃側：属性Aダメージ倍率",
+      "Description": "属性Aダメージ倍率：算出したダメージに×○倍で補正をかける。１が通常。"
+    },
+    {
+      "Field": "attriBAttackRate",
+      "Name": "攻撃側：属性Bダメージ倍率",
+      "Description": "属性Bダメージ倍率：算出したダメージに×○倍で補正をかける。１が通常。"
+    },
+    {
+      "Field": "attriCAttackRate",
+      "Name": "攻撃側：属性Cダメージ倍率",
+      "Description": "属性Cダメージ倍率：算出したダメージに×○倍で補正をかける。１が通常。"
+    },
+    {
+      "Field": "attriAAttackPowerRate",
+      "Name": "属性A攻撃力倍率",
+      "Description": "属性A攻撃力に設定した数値をかけます"
+    },
+    {
+      "Field": "attriBAttackPowerRate",
+      "Name": "属性B攻撃力倍率",
+      "Description": "属性B攻撃力に設定した数値をかけます"
+    },
+    {
+      "Field": "attriCAttackPowerRate",
+      "Name": "属性C攻撃力倍率",
+      "Description": "属性C攻撃力に設定した数値をかけます"
+    },
+    {
+      "Field": "attriAAttackPower",
+      "Name": "属性A攻撃力[point]",
+      "Description": "属性A攻撃力に設定した数値を加減算する"
+    },
+    {
+      "Field": "attriBAttackPower",
+      "Name": "属性B攻撃力[point]",
+      "Description": "属性B攻撃力に設定した数値を加減算する"
+    },
+    {
+      "Field": "attriCAttackPower",
+      "Name": "属性C攻撃力[point]",
+      "Description": "属性C攻撃力に設定した数値を加減算する"
+    },
+    {
+      "Field": "attriADamageCutRate",
+      "Name": "防御側：属性Aダメージ倍率",
+      "Description": "属性Aダメージ倍率：算出したダメージに×○倍で補正をかける。１が通常。"
+    },
+    {
+      "Field": "attriBDamageCutRate",
+      "Name": "防御側：属性Bダメージ倍率",
+      "Description": "属性Bダメージ倍率：算出したダメージに×○倍で補正をかける。１が通常。"
+    },
+    {
+      "Field": "attriCDamageCutRate",
+      "Name": "防御側：属性Cダメージ倍率",
+      "Description": "属性Cダメージ倍率：算出したダメージに×○倍で補正をかける。１が通常。"
+    },
+    {
+      "Field": "resourceItemDropRate",
+      "Name": "リソースアイテムドロップ補正",
+      "Description": "この値（重ねがけしたときは合計値）を補正倍率として基本出現ポイントに乗算する "
+    },
+    {
+      "Field": "revivalRecastDamage",
+      "Name": "復活リキャストポイントダメージ[point]",
+      "Description": "発動時、復活リキャストポイントからこの値を減算する。"
+    },
+    {
+      "Field": "haveSkillPointRate",
+      "Name": "所持スキル経験値率",
+      "Description": "敵周回効果用。設定されているキャラから外にスキル経験値が出て行く時に適用されます。"
+    },
+    {
+      "Field": "skillPoint",
+      "Name": "スキル経験値加算",
+      "Description": "所持スキル経験値に、設定値を加算する"
+    },
+    {
+      "Field": "staminaRecoverSpeedRate",
+      "Name": "スタミナ回復速度変化倍率",
+      "Description": "スタミナ回復速度に対して乗算する値"
+    },
+    {
+      "Field": "atkPlayerDmgCorrectRate_Stamina",
+      "Name": "攻撃側 プレイヤー スタミナダメージ補正倍率",
+      "Description": "プレイヤーに与えるスタミナ値に対する補正。"
+    },
+    {
+      "Field": "atkEnemyDmgCorrectRate_Stamina",
+      "Name": "攻撃側 敵 スタミナダメージ補正倍率",
+      "Description": "敵に与えるスタミナ値に対する補正。"
+    },
+    {
+      "Field": "defPlayerDmgCorrectRate_Stamina",
+      "Name": "防御側 プレイヤー スタミナダメージ補正倍率",
+      "Description": "プレイヤーから受けるスタミナ値に対する補正。"
+    },
+    {
+      "Field": "defEnemyDmgCorrectRate_Stamina",
+      "Name": "防御側 敵 スタミナダメージ補正倍率",
+      "Description": "敵から受けるスタミナ値に対する補正。"
+    },
+    {
+      "Field": "eyeAngLeft_Around",
+      "Name": "見る方：周辺視覚角度（幅_左）上書き[deg]",
+      "Description": "見る方にかける。見る方の左方向の周辺視覚角度[deg]"
+    },
+    {
+      "Field": "eyeAngRight_Around",
+      "Name": "見る方：周辺視覚角度（幅_右）上書き[deg]",
+      "Description": "見る方にかける。見る方の右方向の周辺視覚角度[deg]"
+    },
+    {
+      "Field": "pad3",
+      "Name": "pad",
+      "Description": ""
+    }
+  ]
+}

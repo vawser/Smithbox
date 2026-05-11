@@ -1,0 +1,108 @@
+{
+  "Param": "NIGHT_BOSS_MENU_PARAM_ST",
+  "Type": "NIGHT_BOSS_MENU_PARAM_ST",
+  "Name": "NIGHT_BOSS_MENU_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "unknown_0",
+      "Name": "unknown_0",
+      "Description": ""
+    },
+    {
+      "Field": "expeditionNameId",
+      "Name": "expeditionNameId",
+      "Description": ""
+    },
+    {
+      "Field": "bossIconId",
+      "Name": "bossIconId",
+      "Description": ""
+    },
+    {
+      "Field": "unlockEventFlag",
+      "Name": "unlockEventFlag",
+      "Description": ""
+    },
+    {
+      "Field": "defeatEventFlag",
+      "Name": "defeatEventFlag",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_5",
+      "Name": "unknown_5",
+      "Description": ""
+    },
+    {
+      "Field": "bossNameId",
+      "Name": "bossNameId",
+      "Description": ""
+    },
+    {
+      "Field": "defeatedBossIconId",
+      "Name": "defeatedBossIconId",
+      "Description": ""
+    },
+    {
+      "Field": "sortId",
+      "Name": "sortId",
+      "Description": ""
+    },
+    {
+      "Field": "descriptionId",
+      "Name": "descriptionId",
+      "Description": ""
+    },
+    {
+      "Field": "expeditionBackgroundId",
+      "Name": "expeditionBackgroundId",
+      "Description": ""
+    },
+    {
+      "Field": "effectiveAffinity1",
+      "Name": "effectiveAffinity1",
+      "Description": ""
+    },
+    {
+      "Field": "effectiveAffinity2",
+      "Name": "effectiveAffinity2",
+      "Description": ""
+    },
+    {
+      "Field": "depth1ChanceWeight",
+      "Name": "depth1ChanceWeight",
+      "Description": ""
+    },
+    {
+      "Field": "depth2ChanceWeight",
+      "Name": "depth2ChanceWeight",
+      "Description": ""
+    },
+    {
+      "Field": "depth3ChanceWeight",
+      "Name": "depth3ChanceWeight",
+      "Description": ""
+    },
+    {
+      "Field": "depth4ChanceWeight",
+      "Name": "depth4ChanceWeight",
+      "Description": ""
+    },
+    {
+      "Field": "depth5ChanceWeight",
+      "Name": "depth5ChanceWeight",
+      "Description": ""
+    },
+    {
+      "Field": "largeBossIconId",
+      "Name": "largeBossIconId",
+      "Description": ""
+    },
+    {
+      "Field": "unk_00",
+      "Name": "unk_00",
+      "Description": ""
+    }
+  ]
+}

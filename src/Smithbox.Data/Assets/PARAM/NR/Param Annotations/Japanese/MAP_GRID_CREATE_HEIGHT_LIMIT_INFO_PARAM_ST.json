@@ -1,0 +1,23 @@
+{
+  "Param": "MAP_GRID_CREATE_HEIGHT_LIMIT_INFO_PARAM_ST",
+  "Type": "MAP_GRID_CREATE_HEIGHT_LIMIT_INFO_PARAM_ST",
+  "Name": "MAP_GRID_CREATE_HEIGHT_LIMIT_INFO_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "GridEnableCreateHeightMin",
+      "Name": "グリッド構築可能高さMin[m]",
+      "Description": "グリッド構築可能高さ最小値[m]。(LOD2単位)"
+    },
+    {
+      "Field": "GridEnableCreateHeightMax",
+      "Name": "グリッド構築可能高さMax[m]",
+      "Description": "グリッド構築可能高さ最大値[m]。(LOD2単位)"
+    },
+    {
+      "Field": "Reserve",
+      "Name": "リザーブ",
+      "Description": "リザーブ"
+    }
+  ]
+}

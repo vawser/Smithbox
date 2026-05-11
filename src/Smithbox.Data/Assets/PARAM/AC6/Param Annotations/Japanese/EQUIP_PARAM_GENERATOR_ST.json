@@ -1,0 +1,218 @@
+{
+  "Param": "EQUIP_PARAM_GENERATOR_ST",
+  "Type": "EQUIP_PARAM_GENERATOR_ST",
+  "Name": "EQUIP_PARAM_GENERATOR_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "NT版出力から外すか",
+      "Description": "NT版から除外するか、除外するものに○をつける"
+    },
+    {
+      "Field": "disableParam_Product",
+      "Name": "製品版出力から外すか",
+      "Description": "製品版から除外するか、除外するものに○をつける"
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "パッケージ出力用リザーブ1",
+      "Description": "パッケージ出力用リザーブ1"
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "パッケージ出力用リザーブ2",
+      "Description": "パッケージ出力用リザーブ2"
+    },
+    {
+      "Field": "iconId",
+      "Name": "アイコンID",
+      "Description": "メニューアイコンID."
+    },
+    {
+      "Field": "modelId",
+      "Name": "モデルID",
+      "Description": "アセンブリの詳細表示で表示するモデルID"
+    },
+    {
+      "Field": "sortId",
+      "Name": "ソートID",
+      "Description": "ソートID(プログラム内で強化レベルを加味しているので s32 では７桁が限界)"
+    },
+    {
+      "Field": "weight",
+      "Name": "重量[kg]",
+      "Description": "重量[kg]."
+    },
+    {
+      "Field": "energyMax",
+      "Name": "EN上限値",
+      "Description": "EN上限値"
+    },
+    {
+      "Field": "energyRecoveryPerSec",
+      "Name": "EN回復量_通常時[EN値/sec] ",
+      "Description": "EN回復量_通常時[EN値/sec]"
+    },
+    {
+      "Field": "consumeEN",
+      "Name": "EN消費量_通常時[EN値/sec] ",
+      "Description": "EN消費量_通常時[EN値/sec] "
+    },
+    {
+      "Field": "energyRecoveryDelayTimeSec",
+      "Name": "EN回復待機時間[sec] ",
+      "Description": "EN回復待機時間[sec] "
+    },
+    {
+      "Field": "energyRecoveryDelayTimeForEmptySec",
+      "Name": "EN回復待機時間_借金時[sec] ",
+      "Description": "ENが空っぽのときのEN回復待機時間[sec] "
+    },
+    {
+      "Field": "energyRecoverValForEmpty",
+      "Name": "緊急時EN回復量[point]",
+      "Description": "緊急時EN回復量[point]"
+    },
+    {
+      "Field": "AppropriateType_Energy",
+      "Name": "EN武器適性",
+      "Description": "EN武器適性"
+    },
+    {
+      "Field": "pad_end",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "Maker",
+      "Name": "企業",
+      "Description": "製造元"
+    },
+    {
+      "Field": "sellValue",
+      "Name": "売却価格",
+      "Description": "売却価格"
+    },
+    {
+      "Field": "saleValue",
+      "Name": "販売価格",
+      "Description": "販売価格"
+    },
+    {
+      "Field": "computed_f00",
+      "Name": "【表示用】Float_00",
+      "Description": "メニュー表示用算出値00"
+    },
+    {
+      "Field": "computed_f01",
+      "Name": "【表示用】Float_01",
+      "Description": "メニュー表示用算出値01"
+    },
+    {
+      "Field": "computed_f02",
+      "Name": "【表示用】Float_02",
+      "Description": "メニュー表示用算出値02"
+    },
+    {
+      "Field": "computed_f03",
+      "Name": "【表示用】Float_03",
+      "Description": "メニュー表示用算出値03"
+    },
+    {
+      "Field": "computed_f04",
+      "Name": "【表示用】Float_04",
+      "Description": "メニュー表示用算出値04"
+    },
+    {
+      "Field": "computed_f05",
+      "Name": "【表示用】Float_05",
+      "Description": "メニュー表示用算出値05"
+    },
+    {
+      "Field": "computed_f06",
+      "Name": "【表示用】Float_06",
+      "Description": "メニュー表示用算出値06"
+    },
+    {
+      "Field": "computed_f07",
+      "Name": "【表示用】Float_07",
+      "Description": "メニュー表示用算出値07"
+    },
+    {
+      "Field": "computed_f08",
+      "Name": "【表示用】Float_08",
+      "Description": "メニュー表示用算出値08"
+    },
+    {
+      "Field": "computed_f09",
+      "Name": "【表示用】Float_09",
+      "Description": "メニュー表示用算出値09"
+    },
+    {
+      "Field": "computed_f10",
+      "Name": "【表示用】Float_10",
+      "Description": "メニュー表示用算出値10"
+    },
+    {
+      "Field": "computed_f11",
+      "Name": "【表示用】Float_11",
+      "Description": "メニュー表示用算出値11"
+    },
+    {
+      "Field": "computed_f12",
+      "Name": "【表示用】Float_12",
+      "Description": "メニュー表示用算出値12"
+    },
+    {
+      "Field": "computed_f13",
+      "Name": "【表示用】Float_13",
+      "Description": "メニュー表示用算出値13"
+    },
+    {
+      "Field": "computed_f14",
+      "Name": "【表示用】Float_14",
+      "Description": "メニュー表示用算出値14"
+    },
+    {
+      "Field": "computed_f_last",
+      "Name": "【表示用】Float_15",
+      "Description": "メニュー表示用算出値15"
+    },
+    {
+      "Field": "pad_end2",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "criticalDefSfxMaterial",
+      "Name": "クリティカル時追加SFX防御材質",
+      "Description": "クリティカルを受けたときの防御材質（SFX用）"
+    },
+    {
+      "Field": "thrustersColorType",
+      "Name": "スラスターカラータイプ",
+      "Description": "スラスターのSFX差し替えタイプ"
+    },
+    {
+      "Field": "pad07",
+      "Name": "pad",
+      "Description": ""
+    },
+    {
+      "Field": "refId",
+      "Name": "別ジェネレーターパラ参照ID",
+      "Description": "設定されていると別ジェネレーターパラを参照します"
+    },
+    {
+      "Field": "pad08",
+      "Name": "pad",
+      "Description": ""
+    },
+    {
+      "Field": "pad_end3",
+      "Name": "パディング",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "Param": "FE_SCROLL_SPEED_PARAM",
+  "Type": "FE_SCROLL_SPEED_PARAM",
+  "Name": "FE_SCROLL_SPEED_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "scrollSpeed",
+      "Name": "スクロール速度（ピクセル/秒）",
+      "Description": ""
+    }
+  ]
+}

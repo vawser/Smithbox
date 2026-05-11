@@ -1,0 +1,83 @@
+{
+  "Param": "WEAPON_GEN_PARAM_ST",
+  "Type": "WEAPON_GEN_PARAM_ST",
+  "Name": "WEAPON_GEN_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "wepParamId",
+      "Name": "武器パラムID",
+      "Description": "装備品_武器パラメータのID"
+    },
+    {
+      "Field": "gemSlotType_0",
+      "Name": "０：魔石スロットタイプ",
+      "Description": "０：魔石スロットタイプ"
+    },
+    {
+      "Field": "gemGenId_0",
+      "Name": "０：魔石生成ID",
+      "Description": "０：魔石生成ID"
+    },
+    {
+      "Field": "gemSlotType_1",
+      "Name": "１：魔石スロットタイプ",
+      "Description": "１：魔石スロットタイプ"
+    },
+    {
+      "Field": "gemGenId_1",
+      "Name": "１：魔石生成ID",
+      "Description": "１：魔石生成ID"
+    },
+    {
+      "Field": "gemSlotType_2",
+      "Name": "２：魔石スロットタイプ",
+      "Description": "２：魔石スロットタイプ"
+    },
+    {
+      "Field": "gemGenId_2",
+      "Name": "２：魔石生成ID",
+      "Description": "２：魔石生成ID"
+    },
+    {
+      "Field": "gemSlotType_3",
+      "Name": "３：魔石スロットタイプ",
+      "Description": "３：魔石スロットタイプ"
+    },
+    {
+      "Field": "gemGenId_3",
+      "Name": "３：魔石生成ID",
+      "Description": "３：魔石生成ID"
+    },
+    {
+      "Field": "gemSlotType_4",
+      "Name": "４：魔石スロットタイプ",
+      "Description": "４：魔石スロットタイプ"
+    },
+    {
+      "Field": "gemGenId_4",
+      "Name": "４：魔石生成ID",
+      "Description": "４：魔石生成ID"
+    },
+    {
+      "Field": "equipableGemSegmentMask",
+      "Name": "装着可能魔石分類マスク",
+      "Description": "装着可能魔石分類マスク"
+    },
+    {
+      "Field": "reserveGemSlotNo_0",
+      "Name": "０：予約魔石スロット",
+      "Description": "０：予約魔石スロット"
+    },
+    {
+      "Field": "reserveGemSlotNo_1",
+      "Name": "１：予約魔石スロット",
+      "Description": "１：予約魔石スロット"
+    },
+    {
+      "Field": "reserveGemSlotNo_2",
+      "Name": "２：予約魔石スロット",
+      "Description": "２：予約魔石スロット"
+    }
+  ]
+}

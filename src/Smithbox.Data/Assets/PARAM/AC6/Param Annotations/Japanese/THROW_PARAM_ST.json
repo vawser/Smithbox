@@ -1,0 +1,243 @@
+{
+  "Param": "THROW_PARAM_ST",
+  "Type": "THROW_PARAM_ST",
+  "Name": "THROW_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "NT版出力から外すか",
+      "Description": "NT版から除外するか、除外するものに○をつける"
+    },
+    {
+      "Field": "disableParam_Product",
+      "Name": "製品版出力から外すか",
+      "Description": "製品版から除外するか、除外するものに○をつける"
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "パッケージ出力用リザーブ1",
+      "Description": "パッケージ出力用リザーブ1"
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "パッケージ出力用リザーブ2",
+      "Description": "パッケージ出力用リザーブ2"
+    },
+    {
+      "Field": "AtkChrId",
+      "Name": "投げ側キャラID",
+      "Description": "投げ側キャラID"
+    },
+    {
+      "Field": "DefChrId",
+      "Name": "受け側キャラID",
+      "Description": "受け側キャラID"
+    },
+    {
+      "Field": "Dist",
+      "Name": "有効距離[m]",
+      "Description": "この値より近い距離じゃないと投げない[m]"
+    },
+    {
+      "Field": "DiffAngMin",
+      "Name": "自分の向きと相手の向きの角度差範囲min",
+      "Description": "投げ側と受け側の角度差(Y軸)がこの角度より大きくないと投げない"
+    },
+    {
+      "Field": "DiffAngMax",
+      "Name": "自分の向きと相手の向きの角度差範囲max",
+      "Description": "投げ側と受け側の角度差(Y軸)がこの角度より小さくないと投げない"
+    },
+    {
+      "Field": "upperYRange",
+      "Name": "高さ範囲上[m]",
+      "Description": "投げ側から受け側のY軸の相対距離がこの値より小さくないと投げない"
+    },
+    {
+      "Field": "lowerYRange",
+      "Name": "高さ範囲下[m]",
+      "Description": "投げ側から受け側のY軸の相対距離がこの値より小さくないと投げない"
+    },
+    {
+      "Field": "diffAngMyToDef",
+      "Name": "自分の向きと自分から相手への方向の角度差",
+      "Description": "自分の正面のベクトルと、自分から相手への方向のベクトルの角度差。この値より大きいと投げない"
+    },
+    {
+      "Field": "throwTypeId",
+      "Name": "投げタイプID",
+      "Description": "投げの種類を特定するID(攻撃パラメタと紐付け)"
+    },
+    {
+      "Field": "atkAnimId",
+      "Name": "投げ側アニメID",
+      "Description": "攻撃アニメIDを設定(EzStateと紐付け)"
+    },
+    {
+      "Field": "defAnimId",
+      "Name": "受け側アニメID",
+      "Description": "ダメージアニメIDを設定(EzStateと紐付け)"
+    },
+    {
+      "Field": "escHp",
+      "Name": "投げ抜けHP",
+      "Description": "投げ抜けに耐えられる値"
+    },
+    {
+      "Field": "selfEscCycleTime",
+      "Name": "自力投げ抜けサイクル時間[ms]",
+      "Description": "自力投げ抜けのサイクル時間[ms]"
+    },
+    {
+      "Field": "sphereCastRadiusRateTop",
+      "Name": "スフィアキャスト半径比率_上[1/100Rate]",
+      "Description": "スフィアキャストの上側半径の比率[80->0.8]"
+    },
+    {
+      "Field": "sphereCastRadiusRateLow",
+      "Name": "スフィアキャスト半径比率_下[1/100Rate]",
+      "Description": "スフィアキャストの下側半径の比率[80->0.8]"
+    },
+    {
+      "Field": "PadType",
+      "Name": "操作タイプ",
+      "Description": "操作タイプ"
+    },
+    {
+      "Field": "AtkEnableState",
+      "Name": "投げ側の投げ可能状態タイプ",
+      "Description": "投げ側の投げが可能な状態タイプを設定してください"
+    },
+    {
+      "Field": "atkSorbDmyId_old",
+      "Name": "投げ側 吸着ダミポリID（削除予定）",
+      "Description": "投げ側のどこに受け側を吸着させるか？Uint8 の古いデータ"
+    },
+    {
+      "Field": "defSorbDmyId_old",
+      "Name": "受け側 吸着ダミポリID（削除予定）",
+      "Description": "受け側のどこに投げ側を吸着させるか？Uint8 の古いデータ"
+    },
+    {
+      "Field": "throwType",
+      "Name": "投げ種別",
+      "Description": "投げの種別"
+    },
+    {
+      "Field": "selfEscCycleCnt",
+      "Name": "自力投げ抜けサイクル回数",
+      "Description": "自力投げ抜けのサイクル回数"
+    },
+    {
+      "Field": "dmyHasChrDirType",
+      "Name": "投げ発生時のダミポリ所持キャラの向き",
+      "Description": "投げ発生時のダミポリ所持キャラの向き"
+    },
+    {
+      "Field": "isTurnAtker",
+      "Name": "投げ側が旋回するか？",
+      "Description": "投げ側が旋回するか？"
+    },
+    {
+      "Field": "isSkipWepCate",
+      "Name": "武器カテゴリチェックをスキップするか？",
+      "Description": "攻撃側の武器カテゴリチェックをスキップするか？"
+    },
+    {
+      "Field": "isSkipSphereCast",
+      "Name": "スフィアキャストをスキップするか？",
+      "Description": "スフィアキャストをスキップするか？"
+    },
+    {
+      "Field": "isIgnoreMaphitAdjustThrow",
+      "Name": "投げ吸着時にマップアタリ無効か？",
+      "Description": "投げ位置合わせ中、マップ当たり無効化するかどうか"
+    },
+    {
+      "Field": "isEnableThrowFollowingFallAssist",
+      "Name": "投げ追従解除時の落下を防止するか？",
+      "Description": "追従解除時に段差から落下しないよう、壁抜け防止と同じ処理を落下防止壁に対しても行うか？"
+    },
+    {
+      "Field": "isEnableThrowFollowingFeedback",
+      "Name": "投げ追従中の壁めり込みを抑制するか？",
+      "Description": "追従中壁にめり込んだり段差から落下しそうな見た目にならないよう、ヒットや落下防止壁に接触したときに吸着ダミポリ所持キャラごと戻す処理を行うか？"
+    },
+    {
+      "Field": "pad0",
+      "Name": "pad",
+      "Description": "pad"
+    },
+    {
+      "Field": "atkSorbDmyId",
+      "Name": "投げ側 吸着ダミポリID",
+      "Description": "投げ側のどこに受け側を吸着させるか？"
+    },
+    {
+      "Field": "defSorbDmyId",
+      "Name": "受け側 吸着ダミポリID",
+      "Description": "受け側のどこに投げ側を吸着させるか？"
+    },
+    {
+      "Field": "Dist_start",
+      "Name": "有効距離(投げ開始)[m]",
+      "Description": "この値より近い距離じゃないと投げない[m]\u3000バックスタブ開始時の投げに使われる"
+    },
+    {
+      "Field": "DiffAngMin_start",
+      "Name": "自分の向きと相手の向きの角度差範囲min(投げ開始)",
+      "Description": "投げ側と受け側の角度差(Y軸)がこの角度より大きくないと投げない\u3000バックスタブ開始時の投げに使われる"
+    },
+    {
+      "Field": "DiffAngMax_start",
+      "Name": "自分の向きと相手の向きの角度差範囲max(投げ開始)",
+      "Description": "投げ側と受け側の角度差(Y軸)がこの角度より小さくないと投げない\u3000バックスタブ開始時の投げに使われる"
+    },
+    {
+      "Field": "upperYRange_start",
+      "Name": "高さ範囲上(投げ開始)[m]",
+      "Description": "投げ側から受け側のY軸の相対距離がこの値より小さくないと投げない\u3000バックスタブ開始時の投げに使われる"
+    },
+    {
+      "Field": "lowerYRange_start",
+      "Name": "高さ範囲下(投げ開始)[m]",
+      "Description": "投げ側から受け側のY軸の相対距離がこの値より小さくないと投げない\u3000バックスタブ開始時の投げに使われる"
+    },
+    {
+      "Field": "diffAngMyToDef_start",
+      "Name": "自分の向きと自分から相手への方向の角度差(投げ開始)",
+      "Description": "自分の正面のベクトルと、自分から相手への方向のベクトルの角度差。この値より大きいと投げない\u3000バックスタブ開始時の投げに使われる"
+    },
+    {
+      "Field": "judgeRangeBasePosDmyId1",
+      "Name": "投げ側の投げ範囲判定基準ダミポリId",
+      "Description": "投げ側が、投げ範囲を計算するときに自分の位置と見なすダミポリ。-1ならカプセル原点"
+    },
+    {
+      "Field": "judgeRangeBasePosDmyId2",
+      "Name": "投られ側の投げ範囲判定基準ダミポリId",
+      "Description": "投げられ側が、投げ範囲を計算するときに自分の位置と見なすダミポリ。-1ならカプセル原点"
+    },
+    {
+      "Field": "adsrobModelPosInterpolationTime",
+      "Name": "吸着時モデル位置補間時間[s]",
+      "Description": "カプセルが吸着ダミポリに吸着したあと、キャラモデルが投げアニメデータ通りの位置に補間移動する時間（0を設定した場合はモデル位置の補間が行われず、吸着直後からアニメデータ通りの位置関係で再生開始される）"
+    },
+    {
+      "Field": "defAnimIdOffset",
+      "Name": "受け側アニメオフセット",
+      "Description": "受け側アニメのアニメIDオフセット"
+    },
+    {
+      "Field": "throwFollowingType",
+      "Name": "投げ追従方式",
+      "Description": "投げ実行中、吸着ダミポリ所持キャラにどのように追従するか。※追従期間はTAEアクションでコントロール"
+    },
+    {
+      "Field": "pad1",
+      "Name": "pad",
+      "Description": "pad"
+    }
+  ]
+}

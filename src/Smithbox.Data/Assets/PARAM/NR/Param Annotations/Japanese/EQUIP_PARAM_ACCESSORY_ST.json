@@ -1,0 +1,143 @@
+{
+  "Param": "EQUIP_PARAM_ACCESSORY_ST",
+  "Type": "EQUIP_PARAM_ACCESSORY_ST",
+  "Name": "EQUIP_PARAM_ACCESSORY_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "disableParam_NT",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "disableParamReserve1",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "disableParamReserve2",
+      "Description": ""
+    },
+    {
+      "Field": "weight",
+      "Name": "weight",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_1",
+      "Name": "unknown_1",
+      "Description": ""
+    },
+    {
+      "Field": "sellValue",
+      "Name": "sellValue",
+      "Description": ""
+    },
+    {
+      "Field": "sortId",
+      "Name": "sortId",
+      "Description": ""
+    },
+    {
+      "Field": "iconId",
+      "Name": "iconId",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_2",
+      "Name": "unknown_2",
+      "Description": ""
+    },
+    {
+      "Field": "accessoryGroup",
+      "Name": "accessoryGroup",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_3",
+      "Name": "unknown_3",
+      "Description": ""
+    },
+    {
+      "Field": "rarity",
+      "Name": "rarity",
+      "Description": ""
+    },
+    {
+      "Field": "sortGroupId",
+      "Name": "sortGroupId",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_4",
+      "Name": "unknown_4",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_5a",
+      "Name": "unknown_5a",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_5b",
+      "Name": "unknown_5b",
+      "Description": ""
+    },
+    {
+      "Field": "isDrop",
+      "Name": "isDrop",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_5d",
+      "Name": "unknown_5d",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_5e",
+      "Name": "unknown_5e",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_5f",
+      "Name": "unknown_5f",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_5g",
+      "Name": "unknown_5g",
+      "Description": ""
+    },
+    {
+      "Field": "enableVisualCodex",
+      "Name": "enableVisualCodex",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_6",
+      "Name": "unknown_6",
+      "Description": ""
+    },
+    {
+      "Field": "spEffectId_1",
+      "Name": "spEffectId_1",
+      "Description": ""
+    },
+    {
+      "Field": "spEffectId_2",
+      "Name": "spEffectId_2",
+      "Description": ""
+    },
+    {
+      "Field": "spEffectId_3",
+      "Name": "spEffectId_3",
+      "Description": ""
+    },
+    {
+      "Field": "endPadding",
+      "Name": "endPadding",
+      "Description": ""
+    }
+  ]
+}

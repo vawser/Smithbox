@@ -1,0 +1,203 @@
+{
+  "Param": "PARTS_DRAW_PARAM_ST",
+  "Type": "PARTS_DRAW_PARAM_ST",
+  "Name": "PARTS_DRAW_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "lv01_BorderDist",
+      "Name": "LODレベル0-1境界距離[m]",
+      "Description": "切り替わる中心"
+    },
+    {
+      "Field": "lv01_PlayDist",
+      "Name": "LODレベル0-1遊び距離[m]",
+      "Description": "境界中心で±遊び"
+    },
+    {
+      "Field": "lv12_BorderDist",
+      "Name": "LODレベル1-2境界距離[m]",
+      "Description": "切り替わる中心"
+    },
+    {
+      "Field": "lv12_PlayDist",
+      "Name": "LODレベル1-2遊び距離[m]",
+      "Description": "境界中心で±遊び"
+    },
+    {
+      "Field": "lv23_BorderDist",
+      "Name": "LODレベル2-3境界距離[m]",
+      "Description": "切り替わる中心"
+    },
+    {
+      "Field": "lv23_PlayDist",
+      "Name": "LODレベル2-3遊び距離[m]",
+      "Description": "境界中心で±遊び"
+    },
+    {
+      "Field": "lv34_BorderDist",
+      "Name": "LODレベル3-4境界距離[m]",
+      "Description": "切り替わる中心"
+    },
+    {
+      "Field": "lv34_PlayDist",
+      "Name": "LODレベル3-4遊び距離[m]",
+      "Description": "境界中心で±遊び"
+    },
+    {
+      "Field": "lv45_BorderDist",
+      "Name": "LODレベル4-5境界距離[m]",
+      "Description": "切り替わる中心"
+    },
+    {
+      "Field": "lv45_PlayDist",
+      "Name": "LODレベル4-5遊び距離[m]",
+      "Description": "境界中心で±遊び"
+    },
+    {
+      "Field": "tex_lv01_BorderDist",
+      "Name": "TextureLODレベル0-1境界距離[m]",
+      "Description": "Texture切り替わる中心(0でTexureLOD無効)"
+    },
+    {
+      "Field": "tex_lv01_PlayDist",
+      "Name": "TextureLODレベル0-1遊び距離[m]",
+      "Description": "Texture境界中心で±遊び"
+    },
+    {
+      "Field": "enableCrossFade",
+      "Name": "クロスフェード有効",
+      "Description": "クロスフェード有効か(0:無効,1:有効)"
+    },
+    {
+      "Field": "drawDist",
+      "Name": "描画距離[m]",
+      "Description": "描画最大距離。オープンではアクティベート距離に利用されます"
+    },
+    {
+      "Field": "drawFadeRange",
+      "Name": "フェード範囲[m]",
+      "Description": "描画最大距離から、実際に消えるまでのフェード距離"
+    },
+    {
+      "Field": "shadowDrawDist",
+      "Name": "影描画距離[m]",
+      "Description": "影の描画最大距離"
+    },
+    {
+      "Field": "shadowFadeRange",
+      "Name": "影フェード範囲[m]",
+      "Description": "影の描画最大距離から、実際に消えるまでのフェード距離"
+    },
+    {
+      "Field": "motionBlur_BorderDist",
+      "Name": "モーションブラー描画境界距離[m]",
+      "Description": "モーションブラーが有効になる距離"
+    },
+    {
+      "Field": "isPointLightShadowSrc",
+      "Name": "点光源の影を落とす",
+      "Description": "点光源の影を落とす"
+    },
+    {
+      "Field": "isDirLightShadowSrc",
+      "Name": "平行光源の影を落とす",
+      "Description": "平行光源の影を落とす"
+    },
+    {
+      "Field": "isShadowDst",
+      "Name": "影を受ける",
+      "Description": "影を受ける"
+    },
+    {
+      "Field": "isShadowOnly",
+      "Name": "影描画のみ",
+      "Description": "影描画のみ"
+    },
+    {
+      "Field": "drawByReflectCam",
+      "Name": "映り込む",
+      "Description": "映り込む"
+    },
+    {
+      "Field": "drawOnlyReflectCam",
+      "Name": "映り込み描画のみ",
+      "Description": "映り込み描画のみ"
+    },
+    {
+      "Field": "IncludeLodMapLv",
+      "Name": "どのレベルのLodMapまで含めるか",
+      "Description": "どのレベルのLodMapまで含めるか"
+    },
+    {
+      "Field": "isNoFarClipDraw",
+      "Name": "FarClipしない",
+      "Description": "ファークリップを無効にし、常にクリップ空間の一番奥の深度に描画する。主に天球用"
+    },
+    {
+      "Field": "lodType",
+      "Name": "LODタイプ",
+      "Description": "LOD対象の種類、大きさ"
+    },
+    {
+      "Field": "shadowDrawLodOffset",
+      "Name": "影描画LODレベルオフセット",
+      "Description": "影描画時のLODレベルオフセット値"
+    },
+    {
+      "Field": "isTraceCameraXZ",
+      "Name": "カメラをXZ平面上で追従する",
+      "Description": "カメラをXZ平面上で追従する(GR SEQ09242)"
+    },
+    {
+      "Field": "isSkydomeDrawPhase",
+      "Name": "天球描画フェイズに切り替え",
+      "Description": "描画フェイズを天球に設定する(GR SEQ09242)"
+    },
+    {
+      "Field": "DistantViewModel_BorderDist",
+      "Name": "遠景切り替え距離[m]",
+      "Description": "遠景切り替え距離[m]"
+    },
+    {
+      "Field": "DistantViewModel_PlayDist",
+      "Name": "遠景切り替え遊び距離[m]",
+      "Description": "遠景切り替え遊び距離[m]"
+    },
+    {
+      "Field": "LimtedActivate_BorderDist_forGrid",
+      "Name": "オープン用構築制限距離[m]",
+      "Description": "オープン用構築制限距離[m]。オープンにおいてカメラとの距離がこの距離未満だと構築されないようになります。遠景アセット用の機能です。-1:機能無効(デフォルト)"
+    },
+    {
+      "Field": "LimtedActivate_PlayDist_forGrid",
+      "Name": "オープン用構築制限遊び距離[m]",
+      "Description": "オープン構築制限遊び距離[m]"
+    },
+    {
+      "Field": "zSortOffsetForNoFarClipDraw",
+      "Name": "Zソートオフセット",
+      "Description": "同じ描画フェーズ内でカメラからの距離が同じ場合、半透明系は小さいほうが手前、不透明系は値が大きいほうが手前に描画されます。 オフセットの基点は天球描画フェーズのものは原点。それ以外はModelAABB中心。(GR SEQ09242)"
+    },
+    {
+      "Field": "shadowDrawAlphaTestDist",
+      "Name": "影描画アルファテスト有効距離[m]",
+      "Description": "影描画時にアルファテストを行う距離[m]"
+    },
+    {
+      "Field": "fowardDrawEnvmapBlendType",
+      "Name": "Forward描画物の環境マップブレンドタイプ",
+      "Description": "Forward描画物の環境マップブレンドタイプ"
+    },
+    {
+      "Field": "LBDrawDistScaleParamID",
+      "Name": "描画距離スケールパラメータID",
+      "Description": "ロードバランサー描画距離スケールパラメータID"
+    },
+    {
+      "Field": "resereve",
+      "Name": "予約",
+      "Description": "予約"
+    }
+  ]
+}

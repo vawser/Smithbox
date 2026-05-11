@@ -1,0 +1,468 @@
+{
+  "Param": "WORLD_MAP_POINT_PARAM_ST",
+  "Type": "WORLD_MAP_POINT_PARAM_ST",
+  "Name": "WORLD_MAP_POINT_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "NT版出力から外すか",
+      "Description": "○をつけたパラメータをNT版パッケージでは除外します"
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "パッケージ出力用リザーブ1",
+      "Description": "パッケージ出力用リザーブ1"
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "パッケージ出力用リザーブ2",
+      "Description": "パッケージ出力用リザーブ2"
+    },
+    {
+      "Field": "eventFlagId",
+      "Name": "開放イベントフラグID",
+      "Description": "開放条件のイベントフラグID"
+    },
+    {
+      "Field": "distViewEventFlagId",
+      "Name": "遠見台発見イベントフラグID",
+      "Description": "遠見台で発見した際に立てるイベントフラグID"
+    },
+    {
+      "Field": "iconId",
+      "Name": "アイコンID",
+      "Description": "アイコンID"
+    },
+    {
+      "Field": "bgmPlaceType",
+      "Name": "BGM用場所情報（入場領域内）",
+      "Description": "Bgm場所タイプ"
+    },
+    {
+      "Field": "isAreaIcon",
+      "Name": "範囲アイコンか",
+      "Description": "範囲を表すアイコンか。地図に対して等倍になる"
+    },
+    {
+      "Field": "isOverrideDistViewMarkPos",
+      "Name": "遠見台目印_座標上書きするか",
+      "Description": "遠見台目印として使うときに座標を上書きするか"
+    },
+    {
+      "Field": "isEnableNoText",
+      "Name": "テキストが無いときに表示するか",
+      "Description": "テキストが無いときにも表示するか。基本的にはテキストがなければポイントは表示しない。このフラグが有効なときにはテキストがなくても表示する"
+    },
+    {
+      "Field": "pad3",
+      "Name": "パッド3",
+      "Description": ""
+    },
+    {
+      "Field": "areaNo_forDistViewMark",
+      "Name": "遠見台目印上書き_エリア番号",
+      "Description": "mAA_BB_CC_DD の AA 部分"
+    },
+    {
+      "Field": "gridXNo_forDistViewMark",
+      "Name": "遠見台目印上書き_グリッドX番号",
+      "Description": "mAA_BB_CC_DD の BB 部分"
+    },
+    {
+      "Field": "gridZNo_forDistViewMark",
+      "Name": "遠見台目印上書き_グリッドZ番号",
+      "Description": "mAA_BB_CC_DD の CC 部分"
+    },
+    {
+      "Field": "clearedEventFlagId",
+      "Name": "クリア済イベントフラグID",
+      "Description": "クリア済みイベントフラグID(0:常にクリア済み扱い)"
+    },
+    {
+      "Field": "dispMask00",
+      "Name": "表示設定M00",
+      "Description": "M00で表示するか"
+    },
+    {
+      "Field": "dispMask01",
+      "Name": "表示設定M01",
+      "Description": "M01で表示するか"
+    },
+    {
+      "Field": "pad2_0",
+      "Name": "pad2_0",
+      "Description": ""
+    },
+    {
+      "Field": "dispMask02",
+      "Name": "dispMask02",
+      "Description": ""
+    },
+    {
+      "Field": "pad2_0",
+      "Name": "パッド",
+      "Description": "pad2_0"
+    },
+    {
+      "Field": "pad2",
+      "Name": "パッド",
+      "Description": "pad2"
+    },
+    {
+      "Field": "distViewIconId",
+      "Name": "遠見台発見時アイコンID",
+      "Description": "遠見台発見時アイコンID"
+    },
+    {
+      "Field": "angle",
+      "Name": "アイコン角度[deg]",
+      "Description": "表示アイコンの回転角度[deg]"
+    },
+    {
+      "Field": "areaNo",
+      "Name": "エリア番号",
+      "Description": "mAA_BB_CC_DD の AA 部分"
+    },
+    {
+      "Field": "gridXNo",
+      "Name": "グリッドX番号",
+      "Description": "mAA_BB_CC_DD の BB 部分"
+    },
+    {
+      "Field": "gridZNo",
+      "Name": "グリッドZ番号",
+      "Description": "mAA_BB_CC_DD の CC 部分"
+    },
+    {
+      "Field": "pad",
+      "Name": "パディング",
+      "Description": "パディング"
+    },
+    {
+      "Field": "posX",
+      "Name": "X座標",
+      "Description": "X座標"
+    },
+    {
+      "Field": "posY",
+      "Name": "Y座標",
+      "Description": "Y座標（使っていない）"
+    },
+    {
+      "Field": "posZ",
+      "Name": "Z座標",
+      "Description": "Z座標"
+    },
+    {
+      "Field": "textId1",
+      "Name": "テキストID",
+      "Description": "表示するテキストID。無効値(-1)なら、何も表示しない"
+    },
+    {
+      "Field": "textEnableFlagId1",
+      "Name": "出現イベントフラグID",
+      "Description": "テキストの表示イベントフラグID。イベントフラグがOnなら表示する。無効なイベントフラグID(0)なら、On扱いされる"
+    },
+    {
+      "Field": "textDisableFlagId1",
+      "Name": "非表示イベントフラグID",
+      "Description": "テキストの非表示イベントフラグID。イベントフラグがOnなら表示しない。表示イベントフラグIDよりも優先される。無効なイベントフラグID(0)なら、Off扱いされる"
+    },
+    {
+      "Field": "textId2",
+      "Name": "テキストID",
+      "Description": "表示するテキストID。無効値(-2)なら、何も表示しない"
+    },
+    {
+      "Field": "textEnableFlagId2",
+      "Name": "出現イベントフラグID",
+      "Description": "テキストの表示イベントフラグID。イベントフラグがOnなら表示する。無効なイベントフラグID(1)なら、On扱いされる"
+    },
+    {
+      "Field": "textDisableFlagId2",
+      "Name": "非表示イベントフラグID",
+      "Description": "テキストの非表示イベントフラグID。イベントフラグがOnなら表示しない。表示イベントフラグIDよりも優先される。無効なイベントフラグID(1)なら、Off扱いされる"
+    },
+    {
+      "Field": "textId3",
+      "Name": "テキストID",
+      "Description": "表示するテキストID。無効値(-3)なら、何も表示しない"
+    },
+    {
+      "Field": "textEnableFlagId3",
+      "Name": "出現イベントフラグID",
+      "Description": "テキストの表示イベントフラグID。イベントフラグがOnなら表示する。無効なイベントフラグID(2)なら、On扱いされる"
+    },
+    {
+      "Field": "textDisableFlagId3",
+      "Name": "非表示イベントフラグID",
+      "Description": "テキストの非表示イベントフラグID。イベントフラグがOnなら表示しない。表示イベントフラグIDよりも優先される。無効なイベントフラグID(2)なら、Off扱いされる"
+    },
+    {
+      "Field": "textId4",
+      "Name": "テキストID",
+      "Description": "表示するテキストID。無効値(-4)なら、何も表示しない"
+    },
+    {
+      "Field": "textEnableFlagId4",
+      "Name": "出現イベントフラグID",
+      "Description": "テキストの表示イベントフラグID。イベントフラグがOnなら表示する。無効なイベントフラグID(3)なら、On扱いされる"
+    },
+    {
+      "Field": "textDisableFlagId4",
+      "Name": "非表示イベントフラグID",
+      "Description": "テキストの非表示イベントフラグID。イベントフラグがOnなら表示しない。表示イベントフラグIDよりも優先される。無効なイベントフラグID(3)なら、Off扱いされる"
+    },
+    {
+      "Field": "textId5",
+      "Name": "テキストID",
+      "Description": "表示するテキストID。無効値(-5)なら、何も表示しない"
+    },
+    {
+      "Field": "textEnableFlagId5",
+      "Name": "出現イベントフラグID",
+      "Description": "テキストの表示イベントフラグID。イベントフラグがOnなら表示する。無効なイベントフラグID(4)なら、On扱いされる"
+    },
+    {
+      "Field": "textDisableFlagId5",
+      "Name": "非表示イベントフラグID",
+      "Description": "テキストの非表示イベントフラグID。イベントフラグがOnなら表示しない。表示イベントフラグIDよりも優先される。無効なイベントフラグID(4)なら、Off扱いされる"
+    },
+    {
+      "Field": "textId6",
+      "Name": "テキストID",
+      "Description": "表示するテキストID。無効値(-6)なら、何も表示しない"
+    },
+    {
+      "Field": "textEnableFlagId6",
+      "Name": "出現イベントフラグID",
+      "Description": "テキストの表示イベントフラグID。イベントフラグがOnなら表示する。無効なイベントフラグID(5)なら、On扱いされる"
+    },
+    {
+      "Field": "textDisableFlagId6",
+      "Name": "非表示イベントフラグID",
+      "Description": "テキストの非表示イベントフラグID。イベントフラグがOnなら表示しない。表示イベントフラグIDよりも優先される。無効なイベントフラグID(5)なら、Off扱いされる"
+    },
+    {
+      "Field": "textId7",
+      "Name": "テキストID",
+      "Description": "表示するテキストID。無効値(-7)なら、何も表示しない"
+    },
+    {
+      "Field": "textEnableFlagId7",
+      "Name": "出現イベントフラグID",
+      "Description": "テキストの表示イベントフラグID。イベントフラグがOnなら表示する。無効なイベントフラグID(6)なら、On扱いされる"
+    },
+    {
+      "Field": "textDisableFlagId7",
+      "Name": "非表示イベントフラグID",
+      "Description": "テキストの非表示イベントフラグID。イベントフラグがOnなら表示しない。表示イベントフラグIDよりも優先される。無効なイベントフラグID(6)なら、Off扱いされる"
+    },
+    {
+      "Field": "textId8",
+      "Name": "テキストID",
+      "Description": "表示するテキストID。無効値(-8)なら、何も表示しない"
+    },
+    {
+      "Field": "textEnableFlagId8",
+      "Name": "出現イベントフラグID",
+      "Description": "テキストの表示イベントフラグID。イベントフラグがOnなら表示する。無効なイベントフラグID(7)なら、On扱いされる"
+    },
+    {
+      "Field": "textDisableFlagId8",
+      "Name": "非表示イベントフラグID",
+      "Description": "テキストの非表示イベントフラグID。イベントフラグがOnなら表示しない。表示イベントフラグIDよりも優先される。無効なイベントフラグID(7)なら、Off扱いされる"
+    },
+    {
+      "Field": "textType1",
+      "Name": "テキスト種別",
+      "Description": "テキストの種別(地名,NPC名,...)"
+    },
+    {
+      "Field": "textType2",
+      "Name": "テキスト種別",
+      "Description": "テキストの種別(地名,NPC名,...)"
+    },
+    {
+      "Field": "textType3",
+      "Name": "テキスト種別",
+      "Description": "テキストの種別(地名,NPC名,...)"
+    },
+    {
+      "Field": "textType4",
+      "Name": "テキスト種別",
+      "Description": "テキストの種別(地名,NPC名,...)"
+    },
+    {
+      "Field": "textType5",
+      "Name": "テキスト種別",
+      "Description": "テキストの種別(地名,NPC名,...)"
+    },
+    {
+      "Field": "textType6",
+      "Name": "テキスト種別",
+      "Description": "テキストの種別(地名,NPC名,...)"
+    },
+    {
+      "Field": "textType7",
+      "Name": "テキスト種別",
+      "Description": "テキストの種別(地名,NPC名,...)"
+    },
+    {
+      "Field": "textType8",
+      "Name": "テキスト種別",
+      "Description": "テキストの種別(地名,NPC名,...)"
+    },
+    {
+      "Field": "distViewId",
+      "Name": "遠見台ID0",
+      "Description": "遠見台ID"
+    },
+    {
+      "Field": "posX_forDistViewMark",
+      "Name": "遠見台目印上書き_X座標",
+      "Description": "X座標"
+    },
+    {
+      "Field": "posY_forDistViewMark",
+      "Name": "遠見台目印上書きY座標",
+      "Description": "Y座標"
+    },
+    {
+      "Field": "posZ_forDistViewMark",
+      "Name": "遠見台目印上書きZ座標",
+      "Description": "Z座標"
+    },
+    {
+      "Field": "distViewId1",
+      "Name": "遠見台ID1",
+      "Description": "遠見台ID"
+    },
+    {
+      "Field": "distViewId2",
+      "Name": "遠見台ID2",
+      "Description": "遠見台ID"
+    },
+    {
+      "Field": "distViewId3",
+      "Name": "遠見台ID3",
+      "Description": "遠見台ID"
+    },
+    {
+      "Field": "dispMinZoomStep",
+      "Name": "表示ズームステップ",
+      "Description": "地図ポイントを表示するズームステップ（一番ズームアウトした状態が0、ズームするごとに+1）。「《表示ズームステップ》≦ 現在のズームステップ 」のときに表示される。デフォルトは 0（常に表示）"
+    },
+    {
+      "Field": "selectMinZoomStep",
+      "Name": "選択可能ズームステップ",
+      "Description": "地図ポイントを選択可能なズームステップ（一番ズームアウトした状態が0、ズームするごとに+1）。「《選択可能ズームステップ》≦ 現在の拡大段階 」のときに選択可能。デフォルトは 0（常に選択可能）"
+    },
+    {
+      "Field": "entryFEType",
+      "Name": "入場表示形式",
+      "Description": "入場表示形式。入場時に表示する地図ポイント入場FEの種類"
+    },
+    {
+      "Field": "pad4_old",
+      "Name": "pad4_old",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0xb7",
+      "Name": "unknown_0xb7",
+      "Description": ""
+    },
+    {
+      "Field": "altIconId",
+      "Name": "altIconId",
+      "Description": ""
+    },
+    {
+      "Field": "pad4",
+      "Name": "パッド",
+      "Description": "pad3"
+    },
+    {
+      "Field": "textEnableFlag2Id1",
+      "Name": "textEnableFlag2Id1",
+      "Description": ""
+    },
+    {
+      "Field": "textEnableFlag2Id2",
+      "Name": "textEnableFlag2Id2",
+      "Description": ""
+    },
+    {
+      "Field": "textEnableFlag2Id3",
+      "Name": "textEnableFlag2Id3",
+      "Description": ""
+    },
+    {
+      "Field": "textEnableFlag2Id4",
+      "Name": "textEnableFlag2Id4",
+      "Description": ""
+    },
+    {
+      "Field": "textEnableFlag2Id5",
+      "Name": "textEnableFlag2Id5",
+      "Description": ""
+    },
+    {
+      "Field": "textEnableFlag2Id6",
+      "Name": "textEnableFlag2Id6",
+      "Description": ""
+    },
+    {
+      "Field": "textEnableFlag2Id7",
+      "Name": "textEnableFlag2Id7",
+      "Description": ""
+    },
+    {
+      "Field": "textEnableFlag2Id8",
+      "Name": "textEnableFlag2Id8",
+      "Description": ""
+    },
+    {
+      "Field": "textDisableFlag2Id1",
+      "Name": "textDisableFlag2Id1",
+      "Description": ""
+    },
+    {
+      "Field": "textDisableFlag2Id2",
+      "Name": "textDisableFlag2Id2",
+      "Description": ""
+    },
+    {
+      "Field": "textDisableFlag2Id3",
+      "Name": "textDisableFlag2Id3",
+      "Description": ""
+    },
+    {
+      "Field": "textDisableFlag2Id4",
+      "Name": "textDisableFlag2Id4",
+      "Description": ""
+    },
+    {
+      "Field": "textDisableFlag2Id5",
+      "Name": "textDisableFlag2Id5",
+      "Description": ""
+    },
+    {
+      "Field": "textDisableFlag2Id6",
+      "Name": "textDisableFlag2Id6",
+      "Description": ""
+    },
+    {
+      "Field": "textDisableFlag2Id7",
+      "Name": "textDisableFlag2Id7",
+      "Description": ""
+    },
+    {
+      "Field": "textDisableFlag2Id8",
+      "Name": "textDisableFlag2Id8",
+      "Description": ""
+    }
+  ]
+}

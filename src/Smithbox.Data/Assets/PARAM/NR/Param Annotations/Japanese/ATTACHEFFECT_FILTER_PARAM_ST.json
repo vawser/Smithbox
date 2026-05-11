@@ -1,0 +1,43 @@
+{
+  "Param": "ATTACHEFFECT_FILTER_PARAM_ST",
+  "Type": "ATTACHEFFECT_FILTER_PARAM_ST",
+  "Name": "ATTACHEFFECT_FILTER_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "disableParam_NT",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "disableParamReserve1",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "disableParamReserve2",
+      "Description": ""
+    },
+    {
+      "Field": "filterTextId",
+      "Name": "filterTextId",
+      "Description": ""
+    },
+    {
+      "Field": "attachEffectFilterCategory",
+      "Name": "attachEffectFilterCategory",
+      "Description": ""
+    },
+    {
+      "Field": "filterValue",
+      "Name": "filterValue",
+      "Description": ""
+    },
+    {
+      "Field": "eventFlagForDisplay",
+      "Name": "eventFlagForDisplay",
+      "Description": ""
+    }
+  ]
+}

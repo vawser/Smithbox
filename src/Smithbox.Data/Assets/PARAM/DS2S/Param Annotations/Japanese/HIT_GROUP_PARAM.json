@@ -1,0 +1,348 @@
+{
+  "Param": "HIT_GROUP_PARAM",
+  "Type": "HIT_GROUP_PARAM",
+  "Name": "HIT_GROUP_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "gameBright0",
+      "Name": "明るさ設定_スロット0",
+      "Description": ""
+    },
+    {
+      "Field": "gameBright1",
+      "Name": "明るさ設定_スロット1",
+      "Description": ""
+    },
+    {
+      "Field": "generateMaxNum",
+      "Name": "最大敵生成数",
+      "Description": ""
+    },
+    {
+      "Field": "aReserved",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "groundMaterial240_0",
+      "Name": "GM_240_スロット0",
+      "Description": ""
+    },
+    {
+      "Field": "groundMaterial240_1",
+      "Name": "GM_240_スロット1",
+      "Description": ""
+    },
+    {
+      "Field": "groundMaterial240_2",
+      "Name": "GM_240_スロット2",
+      "Description": ""
+    },
+    {
+      "Field": "groundMaterial240_3",
+      "Name": "GM_240_スロット3",
+      "Description": ""
+    },
+    {
+      "Field": "groundMaterial241_0",
+      "Name": "GM_241_スロット0",
+      "Description": ""
+    },
+    {
+      "Field": "groundMaterial241_1",
+      "Name": "GM_241_スロット1",
+      "Description": ""
+    },
+    {
+      "Field": "groundMaterial241_2",
+      "Name": "GM_241_スロット2",
+      "Description": ""
+    },
+    {
+      "Field": "groundMaterial241_3",
+      "Name": "GM_241_スロット3",
+      "Description": ""
+    },
+    {
+      "Field": "groundMaterial242_0",
+      "Name": "GM_242_スロット0",
+      "Description": ""
+    },
+    {
+      "Field": "groundMaterial242_1",
+      "Name": "GM_242_スロット1",
+      "Description": ""
+    },
+    {
+      "Field": "groundMaterial242_2",
+      "Name": "GM_242_スロット2",
+      "Description": ""
+    },
+    {
+      "Field": "groundMaterial242_3",
+      "Name": "GM_242_スロット3",
+      "Description": ""
+    },
+    {
+      "Field": "groundMaterial243_0",
+      "Name": "GM_243_スロット0",
+      "Description": ""
+    },
+    {
+      "Field": "groundMaterial243_1",
+      "Name": "GM_243_スロット1",
+      "Description": ""
+    },
+    {
+      "Field": "groundMaterial243_2",
+      "Name": "GM_243_スロット2",
+      "Description": ""
+    },
+    {
+      "Field": "groundMaterial243_3",
+      "Name": "GM_243_スロット3",
+      "Description": ""
+    },
+    {
+      "Field": "groundMaterial244_0",
+      "Name": "GM_244_スロット0",
+      "Description": ""
+    },
+    {
+      "Field": "groundMaterial244_1",
+      "Name": "GM_244_スロット1",
+      "Description": ""
+    },
+    {
+      "Field": "groundMaterial244_2",
+      "Name": "GM_244_スロット2",
+      "Description": ""
+    },
+    {
+      "Field": "groundMaterial244_3",
+      "Name": "GM_244_スロット3",
+      "Description": ""
+    },
+    {
+      "Field": "groundMaterial245_0",
+      "Name": "GM_245_スロット0",
+      "Description": ""
+    },
+    {
+      "Field": "groundMaterial245_1",
+      "Name": "GM_245_スロット1",
+      "Description": ""
+    },
+    {
+      "Field": "groundMaterial245_2",
+      "Name": "GM_245_スロット2",
+      "Description": ""
+    },
+    {
+      "Field": "groundMaterial245_3",
+      "Name": "GM_245_スロット3",
+      "Description": ""
+    },
+    {
+      "Field": "groundMaterial246_0",
+      "Name": "GM_246_スロット0",
+      "Description": ""
+    },
+    {
+      "Field": "groundMaterial246_1",
+      "Name": "GM_246_スロット1",
+      "Description": ""
+    },
+    {
+      "Field": "groundMaterial246_2",
+      "Name": "GM_246_スロット2",
+      "Description": ""
+    },
+    {
+      "Field": "groundMaterial246_3",
+      "Name": "GM_246_スロット3",
+      "Description": ""
+    },
+    {
+      "Field": "groundMaterial247_0",
+      "Name": "GM_247_スロット0",
+      "Description": ""
+    },
+    {
+      "Field": "groundMaterial247_1",
+      "Name": "GM_247_スロット1",
+      "Description": ""
+    },
+    {
+      "Field": "groundMaterial247_2",
+      "Name": "GM_247_スロット2",
+      "Description": ""
+    },
+    {
+      "Field": "groundMaterial247_3",
+      "Name": "GM_247_スロット3",
+      "Description": ""
+    },
+    {
+      "Field": "groundMaterial248_0",
+      "Name": "GM_248_スロット0",
+      "Description": ""
+    },
+    {
+      "Field": "groundMaterial248_1",
+      "Name": "GM_248_スロット1",
+      "Description": ""
+    },
+    {
+      "Field": "groundMaterial248_2",
+      "Name": "GM_248_スロット2",
+      "Description": ""
+    },
+    {
+      "Field": "groundMaterial248_3",
+      "Name": "GM_248_スロット3",
+      "Description": ""
+    },
+    {
+      "Field": "groundMaterial249_0",
+      "Name": "GM_249_スロット0",
+      "Description": ""
+    },
+    {
+      "Field": "groundMaterial249_1",
+      "Name": "GM_249_スロット1",
+      "Description": ""
+    },
+    {
+      "Field": "groundMaterial249_2",
+      "Name": "GM_249_スロット2",
+      "Description": ""
+    },
+    {
+      "Field": "groundMaterial249_3",
+      "Name": "GM_249_スロット3",
+      "Description": ""
+    },
+    {
+      "Field": "groundMaterial250_0",
+      "Name": "GM_250_スロット0",
+      "Description": ""
+    },
+    {
+      "Field": "groundMaterial250_1",
+      "Name": "GM_250_スロット1",
+      "Description": ""
+    },
+    {
+      "Field": "groundMaterial250_2",
+      "Name": "GM_250_スロット2",
+      "Description": ""
+    },
+    {
+      "Field": "groundMaterial250_3",
+      "Name": "GM_250_スロット3",
+      "Description": ""
+    },
+    {
+      "Field": "groundMaterial251_0",
+      "Name": "GM_251_スロット0",
+      "Description": ""
+    },
+    {
+      "Field": "groundMaterial251_1",
+      "Name": "GM_251_スロット1",
+      "Description": ""
+    },
+    {
+      "Field": "groundMaterial251_2",
+      "Name": "GM_251_スロット2",
+      "Description": ""
+    },
+    {
+      "Field": "groundMaterial251_3",
+      "Name": "GM_251_スロット3",
+      "Description": ""
+    },
+    {
+      "Field": "groundMaterial252_0",
+      "Name": "GM_252_スロット0",
+      "Description": ""
+    },
+    {
+      "Field": "groundMaterial252_1",
+      "Name": "GM_252_スロット1",
+      "Description": ""
+    },
+    {
+      "Field": "groundMaterial252_2",
+      "Name": "GM_252_スロット2",
+      "Description": ""
+    },
+    {
+      "Field": "groundMaterial252_3",
+      "Name": "GM_252_スロット3",
+      "Description": ""
+    },
+    {
+      "Field": "groundMaterial253_0",
+      "Name": "GM_253_スロット0",
+      "Description": ""
+    },
+    {
+      "Field": "groundMaterial253_1",
+      "Name": "GM_253_スロット1",
+      "Description": ""
+    },
+    {
+      "Field": "groundMaterial253_2",
+      "Name": "GM_253_スロット2",
+      "Description": ""
+    },
+    {
+      "Field": "groundMaterial253_3",
+      "Name": "GM_253_スロット3",
+      "Description": ""
+    },
+    {
+      "Field": "groundMaterial254_0",
+      "Name": "GM_254_スロット0",
+      "Description": ""
+    },
+    {
+      "Field": "groundMaterial254_1",
+      "Name": "GM_254_スロット1",
+      "Description": ""
+    },
+    {
+      "Field": "groundMaterial254_2",
+      "Name": "GM_254_スロット2",
+      "Description": ""
+    },
+    {
+      "Field": "groundMaterial254_3",
+      "Name": "GM_254_スロット3",
+      "Description": ""
+    },
+    {
+      "Field": "groundMaterial255_0",
+      "Name": "GM_255_スロット0",
+      "Description": ""
+    },
+    {
+      "Field": "groundMaterial255_1",
+      "Name": "GM_255_スロット1",
+      "Description": ""
+    },
+    {
+      "Field": "groundMaterial255_2",
+      "Name": "GM_255_スロット2",
+      "Description": ""
+    },
+    {
+      "Field": "groundMaterial255_3",
+      "Name": "GM_255_スロット3",
+      "Description": ""
+    }
+  ]
+}

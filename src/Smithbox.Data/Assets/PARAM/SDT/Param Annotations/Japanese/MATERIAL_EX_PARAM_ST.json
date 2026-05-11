@@ -1,0 +1,23 @@
+{
+  "Param": "MATERIAL_EX_PARAM_ST",
+  "Type": "MATERIAL_EX_PARAM_ST",
+  "Name": "MATERIAL_EX_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "paramName",
+      "Name": "マテリアルパラメータ名",
+      "Description": "マテリアルのパラメータ名を設定する。最大31文字まで"
+    },
+    {
+      "Field": "mtlModifyingId",
+      "Name": "マテリアルID",
+      "Description": "パラメータ変更対象のマテリアルのIDを指定する。-1の場合は全てを対象とする"
+    },
+    {
+      "Field": "pad",
+      "Name": "パディング",
+      "Description": "パディング"
+    }
+  ]
+}

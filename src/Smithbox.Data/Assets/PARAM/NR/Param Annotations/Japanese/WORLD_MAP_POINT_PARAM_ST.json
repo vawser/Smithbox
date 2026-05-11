@@ -1,0 +1,293 @@
+{
+  "Param": "WORLD_MAP_POINT_PARAM_ST",
+  "Type": "WORLD_MAP_POINT_PARAM_ST",
+  "Name": "WORLD_MAP_POINT_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "NT版出力から外すか",
+      "Description": "○をつけたパラメータをNT版パッケージでは除外します"
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "パッケージ出力用リザーブ1",
+      "Description": "パッケージ出力用リザーブ1"
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "パッケージ出力用リザーブ2",
+      "Description": "パッケージ出力用リザーブ2"
+    },
+    {
+      "Field": "eventFlagId0",
+      "Name": "開放イベントフラグID",
+      "Description": "開放条件のイベントフラグID"
+    },
+    {
+      "Field": "eventFlagId1",
+      "Name": "遠見台発見イベントフラグID",
+      "Description": "遠見台で発見した際に立てるイベントフラグID"
+    },
+    {
+      "Field": "eventFlagId5",
+      "Name": "eventFlagId5",
+      "Description": ""
+    },
+    {
+      "Field": "isAreaIcon",
+      "Name": "範囲アイコンか",
+      "Description": "範囲を表すアイコンか。地図に対して等倍になる"
+    },
+    {
+      "Field": "isOverrideDistViewMarkPos",
+      "Name": "遠見台目印_座標上書きするか",
+      "Description": "遠見台目印として使うときに座標を上書きするか"
+    },
+    {
+      "Field": "isEnableNoText",
+      "Name": "テキストが無いときに表示するか",
+      "Description": "テキストが無いときにも表示するか。基本的にはテキストがなければポイントは表示しない。このフラグが有効なときにはテキストがなくても表示する"
+    },
+    {
+      "Field": "unknown_10_3",
+      "Name": "unknown_10_3",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_10_4",
+      "Name": "unknown_10_4",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_10_5",
+      "Name": "unknown_10_5",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_10_6",
+      "Name": "unknown_10_6",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_10_7",
+      "Name": "unknown_10_7",
+      "Description": ""
+    },
+    {
+      "Field": "areaNo_forDistViewMark",
+      "Name": "遠見台目印上書き_エリア番号",
+      "Description": "mAA_BB_CC_DD の AA 部分"
+    },
+    {
+      "Field": "gridXNo_forDistViewMark",
+      "Name": "遠見台目印上書き_グリッドX番号",
+      "Description": "mAA_BB_CC_DD の BB 部分"
+    },
+    {
+      "Field": "gridZNo_forDistViewMark",
+      "Name": "遠見台目印上書き_グリッドZ番号",
+      "Description": "mAA_BB_CC_DD の CC 部分"
+    },
+    {
+      "Field": "worldMapPointIconId",
+      "Name": "worldMapPointIconId",
+      "Description": ""
+    },
+    {
+      "Field": "dispMask00",
+      "Name": "表示設定M00",
+      "Description": "M00で表示するか"
+    },
+    {
+      "Field": "dispMask01",
+      "Name": "表示設定M01",
+      "Description": "M01で表示するか"
+    },
+    {
+      "Field": "pad2_0",
+      "Name": "pad2_0",
+      "Description": ""
+    },
+    {
+      "Field": "pad2",
+      "Name": "パッド",
+      "Description": "pad2"
+    },
+    {
+      "Field": "distViewIconId",
+      "Name": "遠見台発見時アイコンID",
+      "Description": "遠見台発見時アイコンID"
+    },
+    {
+      "Field": "areaNo",
+      "Name": "エリア番号",
+      "Description": "mAA_BB_CC_DD の AA 部分"
+    },
+    {
+      "Field": "gridXNo",
+      "Name": "グリッドX番号",
+      "Description": "mAA_BB_CC_DD の BB 部分"
+    },
+    {
+      "Field": "gridZNo",
+      "Name": "グリッドZ番号",
+      "Description": "mAA_BB_CC_DD の CC 部分"
+    },
+    {
+      "Field": "pad",
+      "Name": "パディング",
+      "Description": "パディング"
+    },
+    {
+      "Field": "posX",
+      "Name": "X座標",
+      "Description": "X座標"
+    },
+    {
+      "Field": "posY",
+      "Name": "Y座標",
+      "Description": "Y座標（使っていない）"
+    },
+    {
+      "Field": "posZ",
+      "Name": "Z座標",
+      "Description": "Z座標"
+    },
+    {
+      "Field": "detailIcon1",
+      "Name": "detailIcon1",
+      "Description": ""
+    },
+    {
+      "Field": "detailIcon2",
+      "Name": "detailIcon2",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_30",
+      "Name": "unknown_30",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_34",
+      "Name": "unknown_34",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_38",
+      "Name": "unknown_38",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_3C",
+      "Name": "unknown_3C",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_3E",
+      "Name": "unknown_3E",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_40",
+      "Name": "unknown_40",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_42",
+      "Name": "unknown_42",
+      "Description": ""
+    },
+    {
+      "Field": "eventFlagId2",
+      "Name": "eventFlagId2",
+      "Description": ""
+    },
+    {
+      "Field": "eventFlagId3",
+      "Name": "eventFlagId3",
+      "Description": ""
+    },
+    {
+      "Field": "eventFlagId4",
+      "Name": "eventFlagId4",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_50",
+      "Name": "unknown_50",
+      "Description": ""
+    },
+    {
+      "Field": "variationIconId",
+      "Name": "variationIconId",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_56",
+      "Name": "unknown_56",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_58",
+      "Name": "unknown_58",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_5A",
+      "Name": "unknown_5A",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_5C",
+      "Name": "unknown_5C",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_5E",
+      "Name": "unknown_5E",
+      "Description": ""
+    },
+    {
+      "Field": "eventFlagId6",
+      "Name": "eventFlagId6",
+      "Description": ""
+    },
+    {
+      "Field": "eventFlagId7",
+      "Name": "eventFlagId7",
+      "Description": ""
+    },
+    {
+      "Field": "unk_00",
+      "Name": "unk_00",
+      "Description": ""
+    },
+    {
+      "Field": "eventFlagId8",
+      "Name": "eventFlagId8",
+      "Description": ""
+    },
+    {
+      "Field": "fh_unknown_00",
+      "Name": "fh_unknown_00",
+      "Description": ""
+    },
+    {
+      "Field": "fh_unknown_01",
+      "Name": "fh_unknown_01",
+      "Description": ""
+    },
+    {
+      "Field": "fh_unknown_02",
+      "Name": "fh_unknown_02",
+      "Description": ""
+    },
+    {
+      "Field": "fh_unknown_03",
+      "Name": "fh_unknown_03",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "Param": "RUNTIME_BONE_CONTROL_PARAM_ST",
+  "Type": "RUNTIME_BONE_CONTROL_PARAM_ST",
+  "Name": "RUNTIME_BONE_CONTROL_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "chrId",
+      "Name": "キャラID",
+      "Description": "キャラID"
+    },
+    {
+      "Field": "ctrlType",
+      "Name": "制御タイプ",
+      "Description": "制御タイプ"
+    },
+    {
+      "Field": "pad",
+      "Name": "pad",
+      "Description": ""
+    },
+    {
+      "Field": "applyBone",
+      "Name": "適用関節",
+      "Description": "適用関節"
+    },
+    {
+      "Field": "targetBone1",
+      "Name": "ターゲット関節１",
+      "Description": "ターゲット関節１"
+    },
+    {
+      "Field": "targetBone2",
+      "Name": "ターゲット関節２",
+      "Description": "ターゲット関節２"
+    }
+  ]
+}

@@ -1,0 +1,188 @@
+{
+  "Param": "LOOK_AT_PARAM_ST",
+  "Type": "LOOK_AT_PARAM_ST",
+  "Name": "LOOK_AT_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "strCtrlBoneName",
+      "Name": "制御ボーン名",
+      "Description": "制御するボーン名"
+    },
+    {
+      "Field": "bRotEnableX",
+      "Name": "X軸（上下方向）の回転有効",
+      "Description": "X軸回転を有効にするかどうか"
+    },
+    {
+      "Field": "bRotEnableY",
+      "Name": "Y軸（左右方向）の回転有効",
+      "Description": "Y軸回転を有効にするかどうか"
+    },
+    {
+      "Field": "bRotInverse",
+      "Name": "正面を180度反転",
+      "Description": "回転時に正面を180度反転するかどうか"
+    },
+    {
+      "Field": "bDirPosShootOffsetEnable",
+      "Name": "LookAt方向を銃口位置で補正",
+      "Description": "LookAt方向を回転軸と銃口位置とのズレの分補正するか"
+    },
+    {
+      "Field": "upLimitAngleDeg",
+      "Name": "上方向限界角度[度]",
+      "Description": "上方向の限界角度"
+    },
+    {
+      "Field": "downLimitAngleDeg",
+      "Name": "下方向限界角度[度]",
+      "Description": "下方向の限界角度"
+    },
+    {
+      "Field": "maxRotSpeedDegPerSecX",
+      "Name": "1秒間のX軸最高旋回角度[度]",
+      "Description": "X軸の最高角速度"
+    },
+    {
+      "Field": "turnAccelDPSS_X",
+      "Name": "X軸回転の角加速度[deg/s^2]",
+      "Description": "X軸回転の角加速度"
+    },
+    {
+      "Field": "offsetBaseDmyPolyId",
+      "Name": "オフセット基準ダミポリ(手動入力用)",
+      "Description": "LookAt方向を回転軸と銃口位置とのズレの分補正するときに使うダミポリID（-1で武器の射撃ダミポリ）"
+    },
+    {
+      "Field": "leftLimitAngleDeg",
+      "Name": "左方向限界角度[度]",
+      "Description": "左方向の限界角度"
+    },
+    {
+      "Field": "rightLimitAngleDeg",
+      "Name": "右方向限界角度[度]",
+      "Description": "右方向の限界角度"
+    },
+    {
+      "Field": "maxRotSpeedDegPerSecY",
+      "Name": "1秒間のY軸最高旋回角度[度]",
+      "Description": "Y軸の最高角速度"
+    },
+    {
+      "Field": "turnAccelDPSS_Y",
+      "Name": "Y軸回転の角加速度[deg/s^2]",
+      "Description": "Y軸回転の角加速度"
+    },
+    {
+      "Field": "lookAheadSecond_Y",
+      "Name": "【廃止予定】最小でも何秒後のターゲット位置を見るか[sec]",
+      "Description": "【無効中】最小でも何秒後のターゲット位置を見るか[sec]"
+    },
+    {
+      "Field": "basePosOffsetY",
+      "Name": "基準位置高さオフセット",
+      "Description": "方向計算時の基準位置を回転軸からY方向にこの値だけずらした場所にする"
+    },
+    {
+      "Field": "predictionShootObserveTime",
+      "Name": "【廃止予定】ターゲット予測の速度観測時間[sec]",
+      "Description": "【無効中】ターゲット予測の速度観測時間[sec]"
+    },
+    {
+      "Field": "predictionBulletId",
+      "Name": "【廃止予定】ターゲット予測に用いる弾丸ID",
+      "Description": "ターゲット予測に用いる弾丸ID"
+    },
+    {
+      "Field": "predictionMaxTime",
+      "Name": "【廃止予定】最大でも何秒後のターゲット位置まで見るか[sec]",
+      "Description": "【無効中】最大でも何秒後のターゲット位置まで見るか[sec]"
+    },
+    {
+      "Field": "predictionWepSlotIndex",
+      "Name": "武器スロット番号",
+      "Description": "武器（攻撃アクション）の装備スロット番号（-1でデフォルト）"
+    },
+    {
+      "Field": "bFollowOrbitMode",
+      "Name": "自機EOの制御にするか",
+      "Description": "自機についてくるオービットの制御モードにするか"
+    },
+    {
+      "Field": "pad01",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "fadeOutTime",
+      "Name": "フェードアウト時間[sec]",
+      "Description": "LookAtが無効化されたときのフェードアウト時間"
+    },
+    {
+      "Field": "deflectType",
+      "Name": "偏差射撃タイプ",
+      "Description": "偏差射撃タイプ。弾丸パラメータにも設定口があるので注意"
+    },
+    {
+      "Field": "bLookAtPosFollowTargetMode",
+      "Name": "LookAtの目標位置をターゲットに追従するモード",
+      "Description": "LookAtのターゲット位置を速度、加速度を使って追従するモードか"
+    },
+    {
+      "Field": "bWorldFixRotX",
+      "Name": "X軸（上下方向）回転をワールドに対して固定する",
+      "Description": "X軸回転をワールドに対して固定するか"
+    },
+    {
+      "Field": "bWorldFixRotY",
+      "Name": "Y軸（左右方向）回転をワールド（キャラの向き）に対して固定する",
+      "Description": "Y軸回転をワールド（キャラの向き）に対して固定するか"
+    },
+    {
+      "Field": "worldFixRotOffsetAngleDegX",
+      "Name": "X軸（上下方向）ワールド固定オフセット角度[度]",
+      "Description": "X軸回転をワールドに対して固定するときのオフセット角度"
+    },
+    {
+      "Field": "worldFixRotOffsetAngleDegY",
+      "Name": "Y軸（左右方向）ワールド固定オフセット角度[度]",
+      "Description": "Y軸回転をワールドに対して固定するときのオフセット角度"
+    },
+    {
+      "Field": "lookAtPosFollowTarget_BaseDmyId",
+      "Name": "目標位置ターゲット追従モードの基準ダミポリ",
+      "Description": "ターゲット追従モードのときの基準ダミポリID"
+    },
+    {
+      "Field": "lookAtPosFollowTarget_AcellMPSS",
+      "Name": "目標位置ターゲット追従モードの加速度[m/s^2]",
+      "Description": "ターゲット追従モードのときのターゲット方向への加速度"
+    },
+    {
+      "Field": "lookAtPosFollowTarget_BrakeMPSS",
+      "Name": "目標位置ターゲット追従モードのブレーキ[m/s^2]",
+      "Description": "ターゲット追従モードのときのターゲット方向以外の移動ブレーキ"
+    },
+    {
+      "Field": "lookAtPosFollowTarget_MaxSpeedKMH",
+      "Name": "目標位置ターゲット追従モードの最高速度[km/h]",
+      "Description": "ターゲット追従モードのときのターゲット方向への移動最高速度"
+    },
+    {
+      "Field": "rotRate_X",
+      "Name": "X軸回転割合",
+      "Description": "X軸回転の回転割合（1でターゲット方向、親関節からの累計になる）"
+    },
+    {
+      "Field": "rotRate_Y",
+      "Name": "Y軸回転割合",
+      "Description": "Y軸回転の回転割合（1でターゲット方向、親関節からの累計になる）"
+    },
+    {
+      "Field": "pad_end",
+      "Name": "パディング3",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "Param": "MOVEMENT_RIDE_OBJ_PARAM_ST",
+  "Type": "MOVEMENT_RIDE_OBJ_PARAM_ST",
+  "Name": "MOVEMENT_RIDE_OBJ_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "NT版出力から外すか",
+      "Description": "NT版から除外するか、除外するものに○をつける"
+    },
+    {
+      "Field": "disableParam_Product",
+      "Name": "製品版出力から外すか",
+      "Description": "製品版から除外するか、除外するものに○をつける"
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "パッケージ出力用リザーブ1",
+      "Description": "パッケージ出力用リザーブ1"
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "パッケージ出力用リザーブ2",
+      "Description": "パッケージ出力用リザーブ2"
+    },
+    {
+      "Field": "moveMaxSpeedKMPH",
+      "Name": "最高速度[km/h]",
+      "Description": "最高速度"
+    },
+    {
+      "Field": "moveAccelMPSS",
+      "Name": "加速度[m/s^2]",
+      "Description": "加速度"
+    },
+    {
+      "Field": "landingHorizontalBrakeUseSlowKMH",
+      "Name": "この速度以下で低速接地ブレーキ[km/h]",
+      "Description": "この速度以下になると低速接地ブレーキが使われる"
+    },
+    {
+      "Field": "landingHorizontalBrakeUseFastKMH",
+      "Name": "この速度以上で高速接地ブレーキ[km/h]",
+      "Description": "この速度以上になると高速接地ブレーキが使われる"
+    },
+    {
+      "Field": "landingHorizontalSlowBrakeMPSS",
+      "Name": "低速接地水平ブレーキ[m/s^2]",
+      "Description": "低速時の接地ブレーキ"
+    },
+    {
+      "Field": "landingHorizontalFastBrakeMPSS",
+      "Name": "高速接地水平ブレーキ[m/s^2]",
+      "Description": "高速時の接地ブレーキ"
+    },
+    {
+      "Field": "flyHorizontalBrakeMPSS",
+      "Name": "空中最高水平速度超過時ブレーキ[m/s^2] ",
+      "Description": "空中で最高水平速度を超えた際に、最高速度へ丸めようとするブレーキ量"
+    },
+    {
+      "Field": "flyVerticalBrakeMPSS",
+      "Name": "空中最高垂直速度超過時ブレーキ[m/s^2] ",
+      "Description": "空中で最高垂直速度を超えた際に、最高速度へ丸めようとするブレーキ量"
+    },
+    {
+      "Field": "realVelocityFeedBackRate",
+      "Name": "実際の移動量を反映する割合",
+      "Description": "この値が小さいほど重量感が増す"
+    },
+    {
+      "Field": "minAnimMoveAccelMPSS",
+      "Name": "最低保証アニメ移動加速度[m/s^2]",
+      "Description": "アニメ移動するときの最低保証加速度"
+    },
+    {
+      "Field": "SlowBrakeAnimKMPH",
+      "Name": "低速ブレーキアニメ再生[km/h]",
+      "Description": "この値以下の水平速度のときにで低速用ブレーキアニメ切り替えを行います"
+    },
+    {
+      "Field": "pad",
+      "Name": "パディング",
+      "Description": ""
+    }
+  ]
+}

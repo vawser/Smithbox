@@ -1,0 +1,53 @@
+{
+  "Param": "PLAYER_WEATHERING_TEX_PRESET_PARAM_ST",
+  "Type": "PLAYER_WEATHERING_TEX_PRESET_PARAM_ST",
+  "Name": "PLAYER_WEATHERING_TEX_PRESET_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "TexIdLayer3",
+      "Name": "塗装剥がれTex",
+      "Description": "AETXXX_XXX"
+    },
+    {
+      "Field": "Peeling_Int",
+      "Name": "塗装剥がれ強度",
+      "Description": "塗装剥がれ強度"
+    },
+    {
+      "Field": "Rust_Int",
+      "Name": "錆強度",
+      "Description": "錆強度"
+    },
+    {
+      "Field": "CHG_1stlayer_Shininess",
+      "Name": "塗装剥がれ_シャイネス",
+      "Description": "1層目(塗装剥がれ用）のシャインネスの強度調整用"
+    },
+    {
+      "Field": "CHG_1stlayer_Metalness",
+      "Name": "塗装剥がれ_メタルネス",
+      "Description": "1層目(塗装剥がれ用）のメタルネスの強度調整用"
+    },
+    {
+      "Field": "CHG_3rdlayer_Shininess",
+      "Name": "錆_シャイネス",
+      "Description": "2層目(錆用)のシャインネスの強度調整用"
+    },
+    {
+      "Field": "CHG_3rdlayer_Metalness",
+      "Name": "錆_メタルネス",
+      "Description": "2層目(錆用)のメタルネスの強度調整用"
+    },
+    {
+      "Field": "TexIdLayer4",
+      "Name": "錆Tex",
+      "Description": "AETXXX_XXX"
+    },
+    {
+      "Field": "pad",
+      "Name": "パディング",
+      "Description": ""
+    }
+  ]
+}

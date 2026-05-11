@@ -1,0 +1,23 @@
+{
+  "Param": "MAP_STATEACT_PARAM",
+  "Type": "MAP_STATEACT_PARAM",
+  "Name": "MAP_STATEACT_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "Unk00",
+      "Name": "Unk00",
+      "Description": ""
+    },
+    {
+      "Field": "Unk04",
+      "Name": "Unk04",
+      "Description": ""
+    },
+    {
+      "Field": "Unk08",
+      "Name": "Unk08",
+      "Description": ""
+    }
+  ]
+}

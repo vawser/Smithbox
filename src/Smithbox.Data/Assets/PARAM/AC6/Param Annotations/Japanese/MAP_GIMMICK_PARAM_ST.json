@@ -1,0 +1,18 @@
+{
+  "Param": "MAP_GIMMICK_PARAM_ST",
+  "Type": "MAP_GIMMICK_PARAM_ST",
+  "Name": "MAP_GIMMICK_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "gimmickType",
+      "Name": "ギミックタイプ",
+      "Description": "EzStateやemsの関連付けを行う数値"
+    },
+    {
+      "Field": "pad",
+      "Name": "パディング",
+      "Description": ""
+    }
+  ]
+}

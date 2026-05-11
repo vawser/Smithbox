@@ -1,0 +1,28 @@
+{
+  "Param": "SOUNDID_SPATIAL_SETTING",
+  "Type": "SOUNDID_SPATIAL_SETTING",
+  "Name": "SOUNDID_SPATIAL_SETTING",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "SoundID_Type",
+      "Name": "対象サウンドID(タイプ)",
+      "Description": "対象サウンドID(タイプ)"
+    },
+    {
+      "Field": "SoundID_No",
+      "Name": "対象サウンドID(番号)",
+      "Description": "対象サウンドID(番号)"
+    },
+    {
+      "Field": "ReflectLv",
+      "Name": "反響レベル",
+      "Description": "反響レベル"
+    },
+    {
+      "Field": "pad_last",
+      "Name": "パディング",
+      "Description": "パディング"
+    }
+  ]
+}

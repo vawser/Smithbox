@@ -1,0 +1,63 @@
+{
+  "Param": "LOAD_BALANCER_NEW_DRAW_DIST_SCALE_PARAM_ST",
+  "Type": "LOAD_BALANCER_NEW_DRAW_DIST_SCALE_PARAM_ST",
+  "Name": "LOAD_BALANCER_NEW_DRAW_DIST_SCALE_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "DrawDist_LvBegin",
+      "Name": "発動レベル(開始)",
+      "Description": "描画距離スケール発動レベル(開始)"
+    },
+    {
+      "Field": "DrawDist_LvEnd",
+      "Name": "発動レベル(終了)",
+      "Description": "描画距離スケール発動レベル(修了)"
+    },
+    {
+      "Field": "reserve0",
+      "Name": "予備",
+      "Description": "予備"
+    },
+    {
+      "Field": "DrawDist_ScaleBegin",
+      "Name": "スケール（開始）",
+      "Description": "描画距離スケール（開始）"
+    },
+    {
+      "Field": "DrawDist_ScaleEnd",
+      "Name": "スケール（終了）",
+      "Description": "描画距離スケール（修了）"
+    },
+    {
+      "Field": "ShadwDrawDist_LvBegin",
+      "Name": "発動レベル(開始)",
+      "Description": "影描画距離スケール発動レベル(開始)"
+    },
+    {
+      "Field": "ShadwDrawDist_LvEnd",
+      "Name": "発動レベル(終了)",
+      "Description": "影描画距離スケール発動レベル(修了)"
+    },
+    {
+      "Field": "reserve1",
+      "Name": "予備",
+      "Description": "予備"
+    },
+    {
+      "Field": "ShadwDrawDist_ScaleBegin",
+      "Name": "スケール（開始）",
+      "Description": "影描画距離スケール（開始）"
+    },
+    {
+      "Field": "ShadwDrawDist_ScaleEnd",
+      "Name": "スケール（終了）",
+      "Description": "影描画距離スケール（修了）"
+    },
+    {
+      "Field": "reserve2",
+      "Name": "予備",
+      "Description": "予備"
+    }
+  ]
+}

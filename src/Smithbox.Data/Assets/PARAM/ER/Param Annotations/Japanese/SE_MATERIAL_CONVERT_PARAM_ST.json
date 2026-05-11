@@ -1,0 +1,18 @@
+{
+  "Param": "SE_MATERIAL_CONVERT_PARAM_ST",
+  "Type": "SE_MATERIAL_CONVERT_PARAM_ST",
+  "Name": "SE_MATERIAL_CONVERT_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "seMaterialId",
+      "Name": "SE材質ID",
+      "Description": "SFX材質ID（３桁）からSE材質ID（２桁）への変換"
+    },
+    {
+      "Field": "pad",
+      "Name": "パディング",
+      "Description": "パディング"
+    }
+  ]
+}

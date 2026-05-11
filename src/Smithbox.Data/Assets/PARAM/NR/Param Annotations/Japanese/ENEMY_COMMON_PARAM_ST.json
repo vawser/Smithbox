@@ -1,0 +1,203 @@
+{
+  "Param": "ENEMY_COMMON_PARAM_ST",
+  "Type": "ENEMY_COMMON_PARAM_ST",
+  "Name": "ENEMY_COMMON_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "reserved0",
+      "Name": "予約",
+      "Description": "(dummy8)"
+    },
+    {
+      "Field": "soundTargetTryApproachTime",
+      "Name": "音ターゲットに対して接近を試みる時間",
+      "Description": ""
+    },
+    {
+      "Field": "searchTargetTryApproachTime",
+      "Name": "索敵ターゲットに対して接近を試みる時間",
+      "Description": ""
+    },
+    {
+      "Field": "memoryTargetTryApproachTime",
+      "Name": "記憶ターゲットに対して接近を試みる時間",
+      "Description": ""
+    },
+    {
+      "Field": "reserved5",
+      "Name": "予約",
+      "Description": "(dummy8)"
+    },
+    {
+      "Field": "activateChrByTime_PhantomId",
+      "Name": "特定時間帯配置のエネミーの出現・消滅に演出に使うファントムシェーダID",
+      "Description": "出現・消滅の演出でファントムシェーダをフェイドする、"
+    },
+    {
+      "Field": "findUnfavorableFailedPointDist",
+      "Name": "パス終端まで行くと敵が見切れそうなことがわかったインタラプト、を発生させる距離",
+      "Description": "Unreachパス時、終端と対象がこの距離以内ならインタラプトを発生させる"
+    },
+    {
+      "Field": "findUnfavorableFailedPointHeight",
+      "Name": "パス終端まで行くと敵が見切れそうなことがわかったインタラプト、を発生させる高さ",
+      "Description": "Unreachパス時、終端と対象がこの距離以上ならインタラプトを発生させる"
+    },
+    {
+      "Field": "unknown_1",
+      "Name": "unknown_1",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_2",
+      "Name": "unknown_2",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_3",
+      "Name": "unknown_3",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_4",
+      "Name": "unknown_4",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_5",
+      "Name": "unknown_5",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_6",
+      "Name": "unknown_6",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_7",
+      "Name": "unknown_7",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_8",
+      "Name": "unknown_8",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_9",
+      "Name": "unknown_9",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_10",
+      "Name": "unknown_10",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_11",
+      "Name": "unknown_11",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_12",
+      "Name": "unknown_12",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_13",
+      "Name": "unknown_13",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_14",
+      "Name": "unknown_14",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_15",
+      "Name": "unknown_15",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_16",
+      "Name": "unknown_16",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_17",
+      "Name": "unknown_17",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_18",
+      "Name": "unknown_18",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_19",
+      "Name": "unknown_19",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_20",
+      "Name": "unknown_20",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_21",
+      "Name": "unknown_21",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_22",
+      "Name": "unknown_22",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_23",
+      "Name": "unknown_23",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_24",
+      "Name": "unknown_24",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_25",
+      "Name": "unknown_25",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_26",
+      "Name": "unknown_26",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_27",
+      "Name": "unknown_27",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_28",
+      "Name": "unknown_28",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_29",
+      "Name": "unknown_29",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_30",
+      "Name": "unknown_30",
+      "Description": ""
+    },
+    {
+      "Field": "reserved18",
+      "Name": "予約",
+      "Description": "(dummy8)"
+    }
+  ]
+}

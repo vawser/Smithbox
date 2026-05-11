@@ -1,0 +1,28 @@
+{
+  "Param": "SIGN_PUDDLE_TAB_PARAM_ST",
+  "Type": "SIGN_PUDDLE_TAB_PARAM_ST",
+  "Name": "SIGN_PUDDLE_TAB_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "isDlcTab",
+      "Name": "isDlcTab",
+      "Description": ""
+    },
+    {
+      "Field": "tabTextId",
+      "Name": "tabTextId",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0x8",
+      "Name": "unknown_0x8",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0xc",
+      "Name": "unknown_0xc",
+      "Description": ""
+    }
+  ]
+}

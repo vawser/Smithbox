@@ -1,0 +1,63 @@
+{
+  "Param": "SMALLBASE_LOT_MAP_COMBINATION_PARAM_ST",
+  "Type": "SMALLBASE_LOT_MAP_COMBINATION_PARAM_ST",
+  "Name": "SMALLBASE_LOT_MAP_COMBINATION_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "unknown_0",
+      "Name": "unknown_0",
+      "Description": ""
+    },
+    {
+      "Field": "patternId",
+      "Name": "patternId",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_2",
+      "Name": "unknown_2",
+      "Description": ""
+    },
+    {
+      "Field": "mapId1",
+      "Name": "mapId1",
+      "Description": ""
+    },
+    {
+      "Field": "mapId2",
+      "Name": "mapId2",
+      "Description": ""
+    },
+    {
+      "Field": "mapId3",
+      "Name": "mapId3",
+      "Description": ""
+    },
+    {
+      "Field": "mapId4",
+      "Name": "mapId4",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_5a",
+      "Name": "unknown_5a",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_5b",
+      "Name": "unknown_5b",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_5c",
+      "Name": "unknown_5c",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_5d",
+      "Name": "unknown_5d",
+      "Description": ""
+    }
+  ]
+}

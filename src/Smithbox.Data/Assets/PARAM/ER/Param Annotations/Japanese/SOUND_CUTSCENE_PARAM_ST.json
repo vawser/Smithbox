@@ -1,0 +1,93 @@
+{
+  "Param": "SOUND_CUTSCENE_PARAM_ST",
+  "Type": "SOUND_CUTSCENE_PARAM_ST",
+  "Name": "SOUND_CUTSCENE_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "NT版出力から外すか",
+      "Description": "○をつけたパラメータをNT版パッケージでは除外します"
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "パッケージ出力用リザーブ1",
+      "Description": "パッケージ出力用リザーブ1"
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "パッケージ出力用リザーブ2",
+      "Description": "パッケージ出力用リザーブ2"
+    },
+    {
+      "Field": "ReverbType",
+      "Name": "カットシーン中のリバーブタイプ",
+      "Description": "カットシーン中に適応するリバーブタイプを指定します"
+    },
+    {
+      "Field": "pad0",
+      "Name": "pad0",
+      "Description": ""
+    },
+    {
+      "Field": "BgmBehaviorTypeOnStart",
+      "Name": "カットシーン開始時通常BGM挙動",
+      "Description": "カットシーン開始時通常BGM挙動を指定します"
+    },
+    {
+      "Field": "OneShotBgmBehaviorOnStart",
+      "Name": "カットシーン開始時ワンショットBGM挙動",
+      "Description": "カットシーン開始時ワンショットBGM挙動を指定します"
+    },
+    {
+      "Field": "PostPlaySeId",
+      "Name": "カットシーン終了時にポストするSEID（カテゴリ：p)指定(-1:ポストしない)",
+      "Description": "カットシーン終了時にポストするSEID（カテゴリ：p)指定(-1:ポストしない)"
+    },
+    {
+      "Field": "PostPlaySeIdForSkip",
+      "Name": "カットシーン終了時にポストするSEID_スキップ時（カテゴリ：p)指定(-1:ポストしない)",
+      "Description": "カットシーン終了時にポストするSEID_スキップ時用（カテゴリ：p)指定(-1:ポストしない)"
+    },
+    {
+      "Field": "EnterMapMuteStopTimeOnDrawCutscene",
+      "Name": "入場直後ミュート解除するカットシーン描画時間[秒](0より小さい：描画時間で解除しない)",
+      "Description": "入場直後のミュート解除するカットシーン描画時間[秒](0より小さい：描画時間で解除しない)"
+    },
+    {
+      "Field": "reserved_old",
+      "Name": "reserved_old",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0x18",
+      "Name": "unknown_0x18",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0x19",
+      "Name": "unknown_0x19",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0x1a",
+      "Name": "unknown_0x1a",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0x1b",
+      "Name": "unknown_0x1b",
+      "Description": ""
+    },
+    {
+      "Field": "reserved",
+      "Name": "リザーブ",
+      "Description": "リザーブ"
+    },
+    {
+      "Field": "reserved2",
+      "Name": "reserved2",
+      "Description": ""
+    }
+  ]
+}

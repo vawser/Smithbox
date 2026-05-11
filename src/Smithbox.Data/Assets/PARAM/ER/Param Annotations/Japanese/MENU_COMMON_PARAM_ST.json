@@ -1,0 +1,373 @@
+{
+  "Param": "MENU_COMMON_PARAM_ST",
+  "Type": "MENU_COMMON_PARAM_ST",
+  "Name": "MENU_COMMON_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "soloPlayDeath_ToFadeOutTime",
+      "Name": "ソロプレイ死亡時フェードアウト開始時間[秒]",
+      "Description": "ソロプレイ死亡時で「YOU DIED」表示後、何秒経過したらフェードアウトを開始するか"
+    },
+    {
+      "Field": "partyGhostDeath_ToFadeOutTime",
+      "Name": "ホワイト、ブラックゴースト死亡時フェードアウト開始時間[秒]",
+      "Description": "ホワイト、ブラックゴースト死亡時で「YOU DIED」表示後、何秒経過したらフェードアウトを開始するか"
+    },
+    {
+      "Field": "playerMaxHpLimit",
+      "Name": "プレイヤー最大HPの上限",
+      "Description": "HPゲージ表示の際に、リソースで用意されたゲージの長さの何％を使うかを算出するために使われます。"
+    },
+    {
+      "Field": "playerMaxMpLimit",
+      "Name": "プレイヤー最大MPの上限",
+      "Description": "MPゲージ表示の際に、リソースで用意されたゲージの長さの何％を使うかを算出するために使われます。"
+    },
+    {
+      "Field": "playerMaxSpLimit",
+      "Name": "プレイヤー最大SPの上限",
+      "Description": "SPゲージ表示の際に、リソースで用意されたゲージの長さの何％を使うかを算出するために使われます。"
+    },
+    {
+      "Field": "actionPanelChangeThreshold_Vel",
+      "Name": "アクションパネル切り替え判定_プレイヤー速度[m/sec]",
+      "Description": "アクションパネル切り替え可能なプレイヤーの速度。この速度以下なら切り替え可能"
+    },
+    {
+      "Field": "actionPanelChangeThreshold_PassTime",
+      "Name": "アクションパネル切り替え判定_プレイヤー速度判定時間[sec]",
+      "Description": "アクションパネル切り替え可能なプレイヤーの速度を出すための考慮時間。この時間の平均速度を使う(システム的に最大４秒)"
+    },
+    {
+      "Field": "kgIconVspace",
+      "Name": "キーガイドアイコンの上下位置",
+      "Description": "キーガイドアイコンの上下位置(+:上, -:下)"
+    },
+    {
+      "Field": "worldMapCursorSelectRadius",
+      "Name": "カーソルの選択半径[px]",
+      "Description": "カーソル位置がこの半径以内にあれば選択していることになる"
+    },
+    {
+      "Field": "reserved8",
+      "Name": "予約",
+      "Description": "(dummy8)"
+    },
+    {
+      "Field": "decalPosOffsetX",
+      "Name": "デカールオフセット（左右）",
+      "Description": "デカールの表示位置オフセット左右方向"
+    },
+    {
+      "Field": "decalPosOffsetY",
+      "Name": "デカールオフセット（上下）",
+      "Description": "デカールの表示位置オフセット上下方向"
+    },
+    {
+      "Field": "targetStateSearchDurationTime",
+      "Name": "見つかりそうFE：Searchアイコンの表示時間[秒]",
+      "Description": "見つかりそうFEのSearchアイコンがフェードインし始めてから、フェードアウトされ始めるまでの秒数"
+    },
+    {
+      "Field": "targetStateBattleDurationTime",
+      "Name": "見つかりそうFE：Battleアイコンの表示時間[秒]",
+      "Description": "見つかりそうFEのBattleアイコンがフェードインし始めてから、フェードアウトされ始めるまでの秒数"
+    },
+    {
+      "Field": "worldMapCursorSpeed",
+      "Name": "カーソルの移動スピード[px/sec]",
+      "Description": "スムーズに移動するときの移動スピード"
+    },
+    {
+      "Field": "worldMapCursorFirstDistance",
+      "Name": "カーソルの１回目の移動距離[px]",
+      "Description": "最初の入力のときに、カッと一度だけ移動する距離"
+    },
+    {
+      "Field": "worldMapCursorFirstDelay",
+      "Name": "カーソルの1回目の移動の遅延時間[sec]",
+      "Description": "最初の入力のときに、カッと一度だけ移動するときにかかる時間"
+    },
+    {
+      "Field": "worldMapCursorWaitTime",
+      "Name": "カーソルの移動までのウェイト[sec]",
+      "Description": "入力してから、スムーズに移動するまでの待機時間"
+    },
+    {
+      "Field": "worldMapCursorSnapRadius",
+      "Name": "カーソルのスナップ半径[px]",
+      "Description": "この半径よりも近くにカーソルを移動すると吸着を開始する（スナップモード用）"
+    },
+    {
+      "Field": "worldMapCursorSnapTime",
+      "Name": "カーソルのスナップ時間[sec]",
+      "Description": "吸着を開始して、完了するまでにかかる時間"
+    },
+    {
+      "Field": "itemGetLogAliveTime",
+      "Name": "アイテム取得ログ：１行の表示時間[sec]",
+      "Description": "１行分のログを追加してフェードアウトするまでの時間。行ごとにタイマーがある"
+    },
+    {
+      "Field": "playerMaxSaLimit",
+      "Name": "プレイヤー最大SA（体幹値）の上限",
+      "Description": "SAゲージ表示の際に、リソースで用意されたゲージの長さの何％を使うかを算出するために使われます。"
+    },
+    {
+      "Field": "worldMap_IsChangeableLayerEventFlagId",
+      "Name": "地下地図切り替え可能イベントフラグID",
+      "Description": "地下地図に切り替え可能かを管理するイベントフラグIDを指定する。このイベントフラグIDがONのときに、地下地図への切り替えが可能になる"
+    },
+    {
+      "Field": "worldMap_TravelMargin",
+      "Name": "踏破範囲の追加解禁距離[m]",
+      "Description": "プレイヤーを中心として4方向へ拡張する距離(m)。この範囲を踏破したことにする"
+    },
+    {
+      "Field": "systemAnnounceScrollBufferTime",
+      "Name": "スクロール前後の待機時間[sec]",
+      "Description": "運営告知の長い文章をスクロールする前後に待機する秒数。例えば3秒なら前と後ろとで合計6秒待機する"
+    },
+    {
+      "Field": "systemAnnounceScrollSpeed",
+      "Name": "スクロールする速度[px/sec]",
+      "Description": "運営告知の長い文章をスクロールするときのスクロール速度（ピクセル/秒）。画面サイズに依存しない。メニュー全体を1920x1080として考える"
+    },
+    {
+      "Field": "systemAnnounceNoScrollWaitTime",
+      "Name": "スクロールしないときの表示時間[sec]",
+      "Description": "運営告知のスクロールを必要としない短い文章だったときに表示する秒数"
+    },
+    {
+      "Field": "systemAnnounceScrollCount",
+      "Name": "スクロールする回数",
+      "Description": "運営告知の長い文章をスクロールするときに繰り返す回数"
+    },
+    {
+      "Field": "reserved17",
+      "Name": "予約",
+      "Description": "(dummy8)"
+    },
+    {
+      "Field": "compassMemoDispDistance",
+      "Name": "表示距離_メモマーカー[m]",
+      "Description": "コンパスに表示するメモマーカーの表示距離[m]。この距離よりも近いものは表示される"
+    },
+    {
+      "Field": "compassBonfireDispDistance",
+      "Name": "表示距離_篝火[m]",
+      "Description": "コンパスに表示する篝火の表示距離[m]。この距離よりも近いものは表示される"
+    },
+    {
+      "Field": "markerGoalThreshold",
+      "Name": "目的地マーカーのゴール判定距離[m]",
+      "Description": "目的地マーカーのゴール判定距離[m]。この距離よりも近付いたときに目的地マーカーは消える"
+    },
+    {
+      "Field": "svSliderStep",
+      "Name": "彩度・明度スライダーの移動量[%/sec]",
+      "Description": "カラーコントロールの彩度・明度スライダーの移動量[%/sec]。それぞれの値を0%～100%としたときに1秒で移動する最大量。アナログスティックで操作するため、入力値で割合になる"
+    },
+    {
+      "Field": "preOpeningMovie_WaitSec",
+      "Name": "OPムービー前のウェイト[sec]",
+      "Description": "OPムービー再生前のウェイト時間。＞SEQ 15261"
+    },
+    {
+      "Field": "kgIconScale",
+      "Name": "キーガイドアイコンのスケール[%]",
+      "Description": "キーガイドアイコンのスケール値。100%がテクスチャサイズそのまま"
+    },
+    {
+      "Field": "kgIconScale_forTable",
+      "Name": "パッド操作一覧用のキーガイドアイコンのスケール[%]",
+      "Description": "パッド操作一覧用のキーガイドアイコンのスケール値。100%がテクスチャサイズそのまま"
+    },
+    {
+      "Field": "kgIconVspace_forTable",
+      "Name": "パッド操作一覧用のキーガイドアイコンの上下位置",
+      "Description": "パッド操作一覧用のキーガイドアイコンの上下位置(+:上, -:下)"
+    },
+    {
+      "Field": "kgIconScale_forConfig",
+      "Name": "キーコンフィグ用のキーガイドアイコンのスケール[%]",
+      "Description": "キーコンフィグ用のキーガイドアイコンのスケール値。100%がテクスチャサイズそのまま"
+    },
+    {
+      "Field": "kgIconVspace_forConfig",
+      "Name": "キーコンフィグ用のキーガイドアイコンの上下位置",
+      "Description": "キーコンフィグ用のキーガイドアイコンの上下位置(+:上, -:下)"
+    },
+    {
+      "Field": "worldMap_SearchRadius",
+      "Name": "未探索マスク_探索済み範囲[m]",
+      "Description": "未探索マスクを探索済みにする範囲[m]（半径）。プレイヤーを中心とした円形を探索済みとする"
+    },
+    {
+      "Field": "tutorialDisplayTime",
+      "Name": "トースト表示時間[sec]",
+      "Description": "チュートリアル（トースト通知）の表示時間[sec]。この時間が経過したら自動的に閉じられる"
+    },
+    {
+      "Field": "compassFriendHostInnerDistance",
+      "Name": "表示距離_協力/救援ゲスト側：ホスト",
+      "Description": "コンパスに表示する他プレイヤー（味方ホスト）の表示距離[m]。この距離以上離れているとコンパスに表示される"
+    },
+    {
+      "Field": "compassEnemyHostInnerDistance",
+      "Name": "表示距離_敵対ゲスト側：ホスト",
+      "Description": "コンパスに表示する他プレイヤー（敵ホスト）の表示距離[m]。この距離以上離れているとコンパスに表示される"
+    },
+    {
+      "Field": "compassFriendGuestInnerDistance",
+      "Name": "表示距離_ホスト/協力/救援ホスト側：協力/救援ゲスト",
+      "Description": "コンパスに表示する他プレイヤー（味方ゲスト）の表示距離[m]。この距離以上離れているとコンパスに表示される"
+    },
+    {
+      "Field": "cutsceneKeyGuideAliveTime",
+      "Name": "カットシーンのキーガイド表示時間[秒]",
+      "Description": "カットシーンスキップの事前入力があってからキーガイドを表示し続ける時間。キーガイドを表示中しかスキップ入力は受け付けないため、スキップ入力受付時間とも言える"
+    },
+    {
+      "Field": "autoHideHpThresholdRatio",
+      "Name": "HPゲージ：常に表示する割合[%]",
+      "Description": "[HUD:Auto設定]HP割合。HP割合がこの数値以下なら、HPゲージを常に表示する。割合と現在値はOR条件（どちらかを満たせば表示）"
+    },
+    {
+      "Field": "autoHideHpThresholdValue",
+      "Name": "HPゲージ：常に表示する現在値",
+      "Description": "[HUD:Auto設定]HP現在値。HP現在値がこの数値以下なら、HPゲージを常に表示する。割合と現在値はOR条件（どちらかを満たせば表示）"
+    },
+    {
+      "Field": "autoHideMpThresholdRatio",
+      "Name": "MPゲージ：常に表示する割合[%]",
+      "Description": "[HUD:Auto設定]MP割合。MP割合がこの数値以下なら、MPゲージを常に表示する。割合と現在値はOR条件（どちらかを満たせば表示）"
+    },
+    {
+      "Field": "autoHideMpThresholdValue",
+      "Name": "MPゲージ：常に表示する現在値",
+      "Description": "[HUD:Auto設定]MP現在値。MP現在値がこの数値以下なら、MPゲージを常に表示する。割合と現在値はOR条件（どちらかを満たせば表示）"
+    },
+    {
+      "Field": "autoHideSpThresholdRatio",
+      "Name": "SPゲージ：常に表示する割合[%]",
+      "Description": "[HUD:Auto設定]SP割合。SP割合がこの数値以下なら、SPゲージを常に表示する。割合と現在値はOR条件（どちらかを満たせば表示）"
+    },
+    {
+      "Field": "autoHideSpThresholdValue",
+      "Name": "SPゲージ：常に表示する現在値",
+      "Description": "[HUD:Auto設定]SP現在値。SP現在値がこの数値以下なら、SPゲージを常に表示する。割合と現在値はOR条件（どちらかを満たせば表示）"
+    },
+    {
+      "Field": "worldMapZoomAnimationTime",
+      "Name": "ズームアニメーション時間[秒]",
+      "Description": "世界地図：ズームアニメーションをする時間[秒]"
+    },
+    {
+      "Field": "worldMapIconScaleMin",
+      "Name": "最小アイコン表示倍率",
+      "Description": "世界地図：ズームステップ0のときの地図ポイントアイコンの表示倍率(0.0～1.0)。ズームステップ2のときに等倍(1.0)。そこから拡大率に合わせてアイコン倍率も補間される"
+    },
+    {
+      "Field": "worldMap_TravelMargin_Point",
+      "Name": "地図ポイント単位踏破範囲解禁時の追加解禁距離[m]",
+      "Description": "世界地図：地図ポイント単位踏破範囲解禁時の追加解禁距離[m]。遠見台など地図ポイントが解禁されたときに踏破範囲を解禁する。地図ポイントを中心に4方向に追加で拡張する距離"
+    },
+    {
+      "Field": "enemyTagSafeLeft",
+      "Name": "表示可能領域（左端）",
+      "Description": "敵HPゲージの中心座標がどこまで左端にいけるか。中心座標なのでゲージ本体のサイズも含む"
+    },
+    {
+      "Field": "enemyTagSafeRight",
+      "Name": "表示可能領域（右端）",
+      "Description": "敵HPゲージの中心座標がどこまで右端にいけるか。中心座標なのでゲージ本体のサイズも含む"
+    },
+    {
+      "Field": "enemyTagSafeTop",
+      "Name": "表示可能領域（上端）",
+      "Description": "敵HPゲージの中心座標がどこまで上端にいけるか。中心座標なのでゲージ本体のサイズも含む"
+    },
+    {
+      "Field": "enemyTagSafeBottom",
+      "Name": "表示可能領域（下端）",
+      "Description": "敵HPゲージの中心座標がどこまで下端にいけるか。中心座標なのでゲージ本体のサイズも含む"
+    },
+    {
+      "Field": "pcHorseHpRecoverDispThreshold",
+      "Name": "表示回復量の閾値",
+      "Description": "回復時にPC馬HPゲージを表示するかの閾値。「一度に一定値以上増加したらHPバーを表示する」の”一定値”"
+    },
+    {
+      "Field": "reserved33_old",
+      "Name": "reserved33_old",
+      "Description": ""
+    },
+    {
+      "Field": "worldMap_DlcLayerEventFlagId",
+      "Name": "worldMap_DlcLayerEventFlagId",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0xe4",
+      "Name": "unknown_0xe4",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0xe5",
+      "Name": "unknown_0xe5",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0xe6",
+      "Name": "unknown_0xe6",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0xe7",
+      "Name": "unknown_0xe7",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0xe8",
+      "Name": "unknown_0xe8",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0xe9",
+      "Name": "unknown_0xe9",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0xea",
+      "Name": "unknown_0xea",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0xeb",
+      "Name": "unknown_0xeb",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0xec",
+      "Name": "unknown_0xec",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0xed",
+      "Name": "unknown_0xed",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0xee",
+      "Name": "unknown_0xee",
+      "Description": ""
+    },
+    {
+      "Field": "reserved33",
+      "Name": "予約",
+      "Description": "(dummy8)"
+    }
+  ]
+}

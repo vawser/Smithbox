@@ -1,0 +1,538 @@
+{
+  "Param": "SP_EFFECT_PARAM_ST",
+  "Type": "SP_EFFECT_PARAM_ST",
+  "Name": "SP_EFFECT_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "iconId",
+      "Name": "アイコンID",
+      "Description": "アイコンID(-1の時は、アイコン必要なし)"
+    },
+    {
+      "Field": "stateInfo",
+      "Name": "状態変化タイプ",
+      "Description": "状態変化の判定フラグ"
+    },
+    {
+      "Field": "effectTargetSelf",
+      "Name": "効果対象：所属\u3000自分",
+      "Description": "この判定にチェックが入っている対象のみ効果を発揮する、デフォルトは×"
+    },
+    {
+      "Field": "effectTargetFriend",
+      "Name": "効果対象：所属\u3000味方",
+      "Description": "この判定にチェックが入っている対象のみ効果を発揮する、デフォルトは×"
+    },
+    {
+      "Field": "effectTargetEnemy",
+      "Name": "効果対象：所属\u3000敵",
+      "Description": "この判定にチェックが入っている対象のみ効果を発揮する、デフォルトは×"
+    },
+    {
+      "Field": "effectTargetPlayer",
+      "Name": "効果対象：操作\u3000PC",
+      "Description": "この判定にチェックが入っている対象のみ効果を発揮する、デフォルトは×"
+    },
+    {
+      "Field": "effectTargetAI",
+      "Name": "効果対象：操作\u3000AI",
+      "Description": "この判定にチェックが入っている対象のみ効果を発揮する、デフォルトは×"
+    },
+    {
+      "Field": "effectTargetLive",
+      "Name": "効果対象：状態\u3000生存",
+      "Description": "この判定にチェックが入っている対象のみ効果を発揮する、デフォルトは×"
+    },
+    {
+      "Field": "effectTargetGhost",
+      "Name": "効果対象：状態\u3000全ゴースト",
+      "Description": "この判定にチェックが入っている対象のみ効果を発揮する、デフォルトは×"
+    },
+    {
+      "Field": "effectTargetWhiteGhost",
+      "Name": "効果対象：状態\u3000白ゴースト",
+      "Description": "この判定にチェックが入っている対象のみ効果を発揮する、デフォルトは×"
+    },
+    {
+      "Field": "effectTargetBlackGhost",
+      "Name": "効果対象：状態\u3000黒ゴースト",
+      "Description": "この判定にチェックが入っている対象のみ効果を発揮する、デフォルトは×"
+    },
+    {
+      "Field": "effectTargetAttacker",
+      "Name": "効果対象：攻撃者に発動",
+      "Description": "ダメージ後に攻撃者に特殊効果を適用（防御側には入れない）"
+    },
+    {
+      "Field": "dispIconNonactive",
+      "Name": "発動してなくてもアイコン表示",
+      "Description": "発動待ちの状態でもアイコンを表示する。"
+    },
+    {
+      "Field": "pad1",
+      "Name": "パディング１",
+      "Description": ""
+    },
+    {
+      "Field": "bAdjustMagicAblity",
+      "Name": "魔力補正するか？",
+      "Description": "魔力補正するか？"
+    },
+    {
+      "Field": "bAdjustFaithAblity",
+      "Name": "信仰補正するか？",
+      "Description": "信仰補正するか？"
+    },
+    {
+      "Field": "bGameClearBonus",
+      "Name": "周回ボーナス用か？",
+      "Description": "ゲームクリア周回ボーナス用かどうか。"
+    },
+    {
+      "Field": "conditionHp",
+      "Name": "発動条件\u3000残りHP比率[%]",
+      "Description": "残りHPが、maxHPの何%になったら発動するかを設定"
+    },
+    {
+      "Field": "effectEndurance",
+      "Name": "効果持続時間\u3000時間[s]",
+      "Description": "変化持続時間\u3000/-1で永続 /0で瞬間1回限り"
+    },
+    {
+      "Field": "motionInterval",
+      "Name": "発動間隔[s]",
+      "Description": "何秒間隔で発生するのかを設定"
+    },
+    {
+      "Field": "maxHpRate",
+      "Name": "最大HP倍率[%]",
+      "Description": "最大HPに補正をかける"
+    },
+    {
+      "Field": "maxMpRate",
+      "Name": "最大MP倍率[%]",
+      "Description": "最大MPに補正をかける"
+    },
+    {
+      "Field": "maxStaminaRate",
+      "Name": "最大スタミナ倍率[%]",
+      "Description": "最大SPに補正をかける"
+    },
+    {
+      "Field": "wepParamChange",
+      "Name": "対武器パラメータ変化",
+      "Description": "どの武器に対して効果を発揮するかを指定する。制限無しの場合は敵も含めた全ての攻撃・防御が対象"
+    },
+    {
+      "Field": "magParamChange",
+      "Name": "対魔法パラメータ変化",
+      "Description": "魔法に対して効果を発揮するかしないかを設定する"
+    },
+    {
+      "Field": "miracleParamChange",
+      "Name": "対奇跡パラメータ変化",
+      "Description": "奇跡に対して効果を発揮するかしないかを設定する"
+    },
+    {
+      "Field": "clearSoul",
+      "Name": "所持ソウルクリアするか",
+      "Description": "所持ソウルが0になります。"
+    },
+    {
+      "Field": "pad2",
+      "Name": "パディング２",
+      "Description": ""
+    },
+    {
+      "Field": "physicsDamageCutRate",
+      "Name": "防御側：物理ダメージ倍率",
+      "Description": "物理ダメージ倍率：算出したダメージに×○倍で補正をかける。１が通常。"
+    },
+    {
+      "Field": "magicDamageCutRate",
+      "Name": "防御側：魔法ダメージ倍率",
+      "Description": "魔法ダメージ倍率：算出したダメージに×○倍で補正をかける。１が通常。"
+    },
+    {
+      "Field": "fireDamageCutRate",
+      "Name": "防御側：炎ダメージ倍率",
+      "Description": "炎ダメージ倍率：算出したダメージに×○倍で補正をかける。１が通常。"
+    },
+    {
+      "Field": "physicsAttackRate",
+      "Name": "攻撃側：物理ダメージ倍率",
+      "Description": "物理ダメージ倍率：算出したダメージに×○倍で補正をかける。１が通常。"
+    },
+    {
+      "Field": "magicAttackRate",
+      "Name": "攻撃側：魔法ダメージ倍率",
+      "Description": "魔法ダメージ倍率：算出したダメージに×○倍で補正をかける。１が通常。"
+    },
+    {
+      "Field": "fireAttackRate",
+      "Name": "攻撃側：炎ダメージ倍率",
+      "Description": "炎ダメージ倍率：算出したダメージに×○倍で補正をかける。１が通常。"
+    },
+    {
+      "Field": "physicsAttackPowerRate",
+      "Name": "物理攻撃力倍率",
+      "Description": "物理攻撃力に設定した数値をかけます"
+    },
+    {
+      "Field": "magicAttackPowerRate",
+      "Name": "魔法攻撃力倍率",
+      "Description": "魔法攻撃力に設定した数値をかけます"
+    },
+    {
+      "Field": "fireAttackPowerRate",
+      "Name": "炎攻撃力倍率",
+      "Description": "炎攻撃力に設定した数値をかけます"
+    },
+    {
+      "Field": "physicsAttackPower",
+      "Name": "物理攻撃力[point]",
+      "Description": "物理攻撃力に設定した数値を加減算する"
+    },
+    {
+      "Field": "magicAttackPower",
+      "Name": "魔法攻撃力[point]",
+      "Description": "魔法攻撃力に設定した数値を加減算する"
+    },
+    {
+      "Field": "fireAttackPower",
+      "Name": "炎攻撃力[point]",
+      "Description": "炎攻撃力に設定した数値を加減算する"
+    },
+    {
+      "Field": "physicsDiffenceRate",
+      "Name": "物理防御力倍率",
+      "Description": "物理防御力に設定した数値をかけます"
+    },
+    {
+      "Field": "magicDiffenceRate",
+      "Name": "魔法防御力倍率",
+      "Description": "魔法防御力に設定した数値をかけます"
+    },
+    {
+      "Field": "fireDiffenceRate",
+      "Name": "炎防御力倍率",
+      "Description": "炎防御力に設定した数値をかけます"
+    },
+    {
+      "Field": "physicsDiffence",
+      "Name": "物理防御力[point]",
+      "Description": "物理防御力に設定した数値を加減算する"
+    },
+    {
+      "Field": "magicDiffence",
+      "Name": "魔法防御力[point]",
+      "Description": "魔法防御力に設定した数値を加減算する"
+    },
+    {
+      "Field": "fireDiffence",
+      "Name": "炎防御力[point]",
+      "Description": "炎防御力に設定した数値を加減算する"
+    },
+    {
+      "Field": "NoGuardDamageRate",
+      "Name": "隙ダメージ倍率",
+      "Description": "隙のときのダメージ倍率を、設定した数値に置き換える（ダメージ側に設定）"
+    },
+    {
+      "Field": "vitalSpotChangeRate",
+      "Name": "スィートスポット倍率",
+      "Description": "スィートスポットのダメージ計算を指定した数値に差し替える(急所ダメージ補正) -1.0で無効"
+    },
+    {
+      "Field": "normalSpotChangeRate",
+      "Name": "ノーマルヒット倍率",
+      "Description": "ノーマルヒットのダメージ計算を指定した数値に差し替える  -1.0で無効"
+    },
+    {
+      "Field": "maxHpChangeRate",
+      "Name": "最大HP変化倍率",
+      "Description": "最大HPに対して、設定された倍率をかけて増減させる"
+    },
+    {
+      "Field": "changeHpRate",
+      "Name": "HPダメージ量[%]",
+      "Description": "最大HPの何%分を毎秒加算（または減算）するかを設定"
+    },
+    {
+      "Field": "changeHpPoint",
+      "Name": "HPダメージ[point]",
+      "Description": "1秒間に何ポイント加算（または減算）するかを設定"
+    },
+    {
+      "Field": "changeMpRate",
+      "Name": "MPダメージ量[%]",
+      "Description": "最大MPの何%分を毎秒加算（または減算）するかを設定"
+    },
+    {
+      "Field": "changeMpPoint",
+      "Name": "MPダメージ[point]",
+      "Description": "1秒間に何ポイント加算（または減算）するかを設定"
+    },
+    {
+      "Field": "mpRecoverChangeSpeed",
+      "Name": "MP回復速度変化[point]",
+      "Description": "回復速度を変化させる。回復計算式の基準回復速度、初期回復速度に加減算する。"
+    },
+    {
+      "Field": "changeStaminaRate",
+      "Name": "スタミナダメージ量[%]",
+      "Description": "最大スタミナの何%分を毎秒加算（または減算）するかを設定"
+    },
+    {
+      "Field": "changeStaminaPoint",
+      "Name": "スタミナダメージ[point]",
+      "Description": "1秒間に何ポイント加算（または減算）するかを設定"
+    },
+    {
+      "Field": "staminaRecoverChangeSpeed",
+      "Name": "スタミナ回復速度変化[point]",
+      "Description": "回復速度を変化させる。回復計算式の基準回復速度、初期回復速度に加減算する。"
+    },
+    {
+      "Field": "magicEffectTimeChange",
+      "Name": "魔法効果時間変化",
+      "Description": "効果持続時間に0.1秒以上設定されている魔法のみ、効果持続時間に設定されている時間を加減算する"
+    },
+    {
+      "Field": "insideDurability",
+      "Name": "耐久度変化：内部損耗度[point]",
+      "Description": "内部損耗度に数値分を加減算する"
+    },
+    {
+      "Field": "maxDurability",
+      "Name": "耐久度変化：最大損耗度変化[point]",
+      "Description": "耐久度の内部損耗度の最大値に、設定された数値を加算する"
+    },
+    {
+      "Field": "staminaAttackRate",
+      "Name": "スタミナ攻撃力倍率",
+      "Description": "スタミナ攻撃力に、倍率をかける(1.0 1倍 0.5 半分）"
+    },
+    {
+      "Field": "pad4",
+      "Name": "パディング４",
+      "Description": ""
+    },
+    {
+      "Field": "poizonAttackPower",
+      "Name": "毒耐性攻撃力[point]",
+      "Description": "ヒットした時に、対象の【毒耐性値】に加算する数値"
+    },
+    {
+      "Field": "registIllness",
+      "Name": "疫病耐性攻撃力[point]",
+      "Description": "ヒットした時に、対象の【疫病耐性値】に加算する数値"
+    },
+    {
+      "Field": "registBlood",
+      "Name": "出血耐性攻撃力[point]",
+      "Description": "ヒットした時に、対象の【出血耐性値】に加算する数値"
+    },
+    {
+      "Field": "fallDamageRate",
+      "Name": "落下ダメージ倍率",
+      "Description": "落下時のダメージ計算に倍率をかける"
+    },
+    {
+      "Field": "soulRate",
+      "Name": "取得ソウル倍率",
+      "Description": "敵を倒した時の取得ソウル量が、指定倍数分上乗せされる"
+    },
+    {
+      "Field": "equipWeightChangeRate",
+      "Name": "装備重量変化倍率",
+      "Description": "最大装備重量に、設定された倍率をかける"
+    },
+    {
+      "Field": "allItemWeightChangeRate",
+      "Name": "所持重量変化倍率",
+      "Description": "最大所持重量に、設定された倍率をかける"
+    },
+    {
+      "Field": "soul",
+      "Name": "ソウル加算",
+      "Description": "所持ソウルに、設定値を加算する"
+    },
+    {
+      "Field": "haveSoulRate",
+      "Name": "所持ソウル率",
+      "Description": "敵周回効果用。設定されているキャラから外にソウルが出て行く時に適用されます。"
+    },
+    {
+      "Field": "targetPriority",
+      "Name": "ターゲット優先度加算分",
+      "Description": "マルチプレイ時、敵から優先的にターゲットとして狙われるようになる。プライオリティの加算。０がデフォルト。プラス値でよく狙われるようになる。マイナスは、－１まで。"
+    },
+    {
+      "Field": "sightSearchEnemyCut",
+      "Name": "視覚索敵カット",
+      "Description": "AIの視覚索敵対象から外れやすくなる。０がデフォルト。"
+    },
+    {
+      "Field": "hearingSearchEnemyCut",
+      "Name": "聴覚索敵カット",
+      "Description": "AIの聴覚索敵対象から外れやすくなる。０がデフォルト。"
+    },
+    {
+      "Field": "requestSOS",
+      "Name": "SOSサイン\u3000判定フラグ",
+      "Description": "チェックが付いている場合、発動時にSOSサイン要求を発行"
+    },
+    {
+      "Field": "requestBlackSOS",
+      "Name": "ブラックSOSサイン\u3000判定フラグ",
+      "Description": "チェックが付いている場合、発動時にブラックSOSサイン要求を発行"
+    },
+    {
+      "Field": "requestForceJoinBlackSOS",
+      "Name": "ブラック強制参加SOSサイン\u3000判定フラグ",
+      "Description": "チェックが付いている場合、発動時にブラック強制参加SOSサイン要求を発行"
+    },
+    {
+      "Field": "requestKickSession",
+      "Name": "キック\u3000判定フラグ",
+      "Description": "チェックが付いている場合、発動時にキック要求を発行"
+    },
+    {
+      "Field": "requestLeaveSession",
+      "Name": "退出\u3000判定フラグ",
+      "Description": "チェックが付いている場合、発動時に退出要求を発行"
+    },
+    {
+      "Field": "noDead",
+      "Name": "成仏不可\u3000判定フラグ",
+      "Description": "死体状態になれるかどうか。このチェックが付いていると、死亡状態にならない"
+    },
+    {
+      "Field": "bCurrHPIndependeMaxHP",
+      "Name": "最大HPが増減しても、現在HPは影響しないか？",
+      "Description": "最大HPが増減しても、現在HPは影響しないか？"
+    },
+    {
+      "Field": "changeMagicSlot",
+      "Name": "魔法登録枠変化\u3000魔法スロット",
+      "Description": "魔法登録枠を指定数増やすことが出来る"
+    },
+    {
+      "Field": "changeMiracleSlot",
+      "Name": "奇跡登録枠変化\u3000奇跡スロット",
+      "Description": "軌跡登録枠を指定数増やすことが出来る"
+    },
+    {
+      "Field": "moveType",
+      "Name": "移動タイプ",
+      "Description": "移動タイプ。移動速度を変更する。"
+    },
+    {
+      "Field": "pad5",
+      "Name": "パディング５",
+      "Description": ""
+    },
+    {
+      "Field": "registPoizonChangeRate",
+      "Name": "毒耐性変化倍率",
+      "Description": "毒耐性値に設定された倍率をかける"
+    },
+    {
+      "Field": "registIllnessChangeRate",
+      "Name": "疫病耐性変化倍率",
+      "Description": "疫病耐性値に設定された倍率をかける"
+    },
+    {
+      "Field": "registBloodChangeRate",
+      "Name": "出血耐性変化倍率",
+      "Description": "出血耐性値に設定された倍率をかける"
+    },
+    {
+      "Field": "soulStealRate",
+      "Name": "ソウルスティール係数",
+      "Description": "NPCがソウルスティールで奪われるHPに対する防御力"
+    },
+    {
+      "Field": "corrosionIgnore",
+      "Name": "腐食無視",
+      "Description": "【状態変化タイプ】が【腐食】による【耐久度】減少を無視する"
+    },
+    {
+      "Field": "sightSearchCutIgnore",
+      "Name": "視覚索敵カット無視",
+      "Description": "視覚索敵無効を無視する"
+    },
+    {
+      "Field": "hearingSearchCutIgnore",
+      "Name": "聴覚索敵カット無視",
+      "Description": "聴覚索敵無効を無視する"
+    },
+    {
+      "Field": "antiMagicIgnore",
+      "Name": "アンチマジック無効",
+      "Description": "アンチマジック範囲でも魔法を使用できる"
+    },
+    {
+      "Field": "forgedTargetIgnore",
+      "Name": "偽ターゲット無効",
+      "Description": "発生した偽ターゲットに引っかからなくなる"
+    },
+    {
+      "Field": "pad11",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "lifeReductionType",
+      "Name": "防御：寿命減少タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "lifeReductionRate",
+      "Name": "防御：寿命係数",
+      "Description": ""
+    },
+    {
+      "Field": "hpRecoverRate",
+      "Name": "HP回復量係数",
+      "Description": "HPが減るときは、効かない。"
+    },
+    {
+      "Field": "disablePoison",
+      "Name": "毒無効",
+      "Description": "この効果がかかっていると毒にかからなくなる"
+    },
+    {
+      "Field": "disableDisease",
+      "Name": "疫病無効",
+      "Description": "この効果がかかっていると疫病にかからなくなる"
+    },
+    {
+      "Field": "disableBlood",
+      "Name": "出血無効",
+      "Description": "この効果がかかっていると出血にかからなくなる"
+    },
+    {
+      "Field": "pad7",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "priority",
+      "Name": "優先度",
+      "Description": ""
+    },
+    {
+      "Field": "category",
+      "Name": "カテゴリ",
+      "Description": ""
+    },
+    {
+      "Field": "pad6",
+      "Name": "パディング６",
+      "Description": ""
+    }
+  ]
+}

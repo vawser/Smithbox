@@ -1,0 +1,88 @@
+{
+  "Param": "MAP_OBJECT_MOMENTUM_SCALE_PARAM",
+  "Type": "MAP_OBJECT_MOMENTUM_SCALE_PARAM",
+  "Name": "MAP_OBJECT_MOMENTUM_SCALE_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "noneObj0",
+      "Name": "《無》",
+      "Description": ""
+    },
+    {
+      "Field": "superSmallObj0",
+      "Name": "《極小》",
+      "Description": ""
+    },
+    {
+      "Field": "smallObj0",
+      "Name": "《小》",
+      "Description": ""
+    },
+    {
+      "Field": "normalObj0",
+      "Name": "《中》",
+      "Description": ""
+    },
+    {
+      "Field": "largeObj0",
+      "Name": "《大》",
+      "Description": ""
+    },
+    {
+      "Field": "superLargeObj0",
+      "Name": "《特大》",
+      "Description": ""
+    },
+    {
+      "Field": "hyperLargeObj0",
+      "Name": "《超特大》",
+      "Description": ""
+    },
+    {
+      "Field": "infiniteObj0",
+      "Name": "《∞》",
+      "Description": ""
+    },
+    {
+      "Field": "noneObj1",
+      "Name": "《無》",
+      "Description": ""
+    },
+    {
+      "Field": "superSmallObj1",
+      "Name": "《極小》",
+      "Description": ""
+    },
+    {
+      "Field": "smallObj1",
+      "Name": "《小》",
+      "Description": ""
+    },
+    {
+      "Field": "normalObj1",
+      "Name": "《中》",
+      "Description": ""
+    },
+    {
+      "Field": "largeObj1",
+      "Name": "《大》",
+      "Description": ""
+    },
+    {
+      "Field": "superLargeObj1",
+      "Name": "《特大》",
+      "Description": ""
+    },
+    {
+      "Field": "hyperLargeObj1",
+      "Name": "《超特大》",
+      "Description": ""
+    },
+    {
+      "Field": "infiniteObj1",
+      "Name": "《∞》",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "Param": "RIDE_PARAM_ST",
+  "Type": "RIDE_PARAM_ST",
+  "Name": "RIDE_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "atkChrId",
+      "Name": "乗る側キャラID",
+      "Description": "騎乗時に「乗る側」のキャラクタを特定するパラメータです"
+    },
+    {
+      "Field": "defChrId",
+      "Name": "乗られる側キャラID",
+      "Description": "騎乗時に「乗られる側」のキャラクタを特定するパラメータです"
+    },
+    {
+      "Field": "rideCamParamId",
+      "Name": "騎乗時カメラID",
+      "Description": "騎乗時のカメラパラメータを専用のカメラに変更するパラメータです。PC専用のパラメータで、敵に設定しても機能しません。"
+    },
+    {
+      "Field": "atkChrAnimId",
+      "Name": "乗る側_騎乗アニメの種類と方向変数値",
+      "Description": "キャラクタアニメ再生を制御しているツール「HavokAnimationTool（HAT）」の「RideOn（騎乗時再生）ステート」内に設定しているvariable（変数）\"RideOnAnimId\"の値を書き換えるパラメータです"
+    },
+    {
+      "Field": "defChrAnimId",
+      "Name": "乗られる側_騎乗アニメの種類と方向変数値",
+      "Description": "キャラクタアニメ再生を制御しているツール「HavokAnimationTool（HAT）」の「RiddenOn（被騎乗時再生）ステート」内に設定しているvariable（変数）\"RiddenOnAnimId\"の値を書き換えるパラメータです"
+    },
+    {
+      "Field": "defAdjustDmyId",
+      "Name": "騎乗アニメ開始時の乗られる側の位置合わせダミポリID",
+      "Description": "乗られる側にのみ必要なダミポリ設定です（乗る側キャラクタには、設定の必要ありません）"
+    },
+    {
+      "Field": "defCheckDmyId",
+      "Name": "騎乗判定_乗られる側の判定基準ダミポリID",
+      "Description": "乗る側のキャラには、ダミポリの設定はとくに必要ありません"
+    },
+    {
+      "Field": "diffAngMyToDef",
+      "Name": "騎乗判定_乗る側の正面判定角度範囲[deg]",
+      "Description": "乗る側の【向き】と、乗られる側の「正面判定ダミポリID」の角度差で判定します。値が大きいほど、「そっぽを向いていても乗れる」ようになります"
+    },
+    {
+      "Field": "dist",
+      "Name": "騎乗判定_有効距離[m]",
+      "Description": "「対象との騎乗可能距離」を決定するパラメータです"
+    },
+    {
+      "Field": "upperYRange",
+      "Name": "騎乗判定_有効高さ上方向[m]",
+      "Description": "乗られる対象が、乗る対象よりどの程度上方にいても騎乗可能か？を、メートル単位で設定します"
+    },
+    {
+      "Field": "lowerYRange",
+      "Name": "騎乗判定_有効高さ下方向[m]",
+      "Description": "乗られる対象が、乗る対象よりどの程度下方にいても騎乗可能か？を、メートル単位で設定します"
+    },
+    {
+      "Field": "diffAngMin",
+      "Name": "騎乗判定_対象間の角度差範囲min[deg]",
+      "Description": "乗る側が、乗られる側のどの範囲(角度)にいれば騎乗できるか？の最小値を設定します"
+    },
+    {
+      "Field": "diffAngMax",
+      "Name": "騎乗判定_対象間の角度差範囲max[deg]",
+      "Description": "乗る側が、乗られる側のどの範囲(角度)にいれば騎乗できるか？の最大値を設定します"
+    },
+    {
+      "Field": "pad",
+      "Name": "予約",
+      "Description": "予約領域"
+    }
+  ]
+}

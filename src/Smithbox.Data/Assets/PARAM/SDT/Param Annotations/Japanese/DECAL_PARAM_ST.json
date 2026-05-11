@@ -1,0 +1,418 @@
+{
+  "Param": "DECAL_PARAM_ST",
+  "Type": "DECAL_PARAM_ST",
+  "Name": "DECAL_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "textureId",
+      "Name": "テクスチャID",
+      "Description": "テクスチャID"
+    },
+    {
+      "Field": "dmypolyId",
+      "Name": "ダミポリID",
+      "Description": "デカール発生基準のダミポリID\r\nTAEで指定している場合はTAEの値になる"
+    },
+    {
+      "Field": "pitchAngle",
+      "Name": "基準角度オフセット_上下[deg]",
+      "Description": "基準角度オフセット_上下[deg]"
+    },
+    {
+      "Field": "yawAngle",
+      "Name": "基準角度オフセット_左右[deg]",
+      "Description": "基準角度オフセット_左右[deg]"
+    },
+    {
+      "Field": "nearDistance",
+      "Name": "貼り付け開始距離[m]",
+      "Description": "貼り付け開始距離[m]"
+    },
+    {
+      "Field": "farDistance",
+      "Name": "貼り付け終了距離[m]",
+      "Description": "貼り付け終了距離[m]"
+    },
+    {
+      "Field": "nearSize",
+      "Name": "開始距離での大きさ[m]",
+      "Description": "開始距離での大きさ[m]"
+    },
+    {
+      "Field": "farSize",
+      "Name": "終了距離での大きさ[m]",
+      "Description": "終了距離での大きさ[m]"
+    },
+    {
+      "Field": "maskSpeffectId",
+      "Name": "監視特殊効果ID",
+      "Description": "監視特殊効果ID"
+    },
+    {
+      "Field": "pad_10",
+      "Name": "パディング",
+      "Description": "パディング"
+    },
+    {
+      "Field": "replaceTextureId_byMaterial",
+      "Name": "材質によるテクスチャ差し替え",
+      "Description": "攻撃のヒットで発生させるときに1で防御材質によってテクスチャを変える\r\n新しいテクスチャID=血材質ID*10000000+元のテクスチャID"
+    },
+    {
+      "Field": "dmypolyCategory",
+      "Name": "ダミポリ検索場所",
+      "Description": "ダミポリ検索場所\r\n0:本体\r\n1:左手武器\r\n2:右手武器"
+    },
+    {
+      "Field": "pad_05",
+      "Name": "パディング",
+      "Description": "パディング"
+    },
+    {
+      "Field": "useDeferredDecal",
+      "Name": "デファード",
+      "Description": "1でデファードデカールとして機能する"
+    },
+    {
+      "Field": "usePaintDecal",
+      "Name": "ペイント",
+      "Description": "1でペイントデカールとして機能する"
+    },
+    {
+      "Field": "bloodTypeEnable",
+      "Name": "流血表現",
+      "Description": "オプションの流血表現の影響を受けるか、マイルドでIDが+1000される、非表示だと貼り付けない"
+    },
+    {
+      "Field": "bUseNormal",
+      "Name": "ノーマル成分を使用するか",
+      "Description": "ノーマル成分を使用するなら1（ノーマルとシャイニネスのテクスチャ統合対応）"
+    },
+    {
+      "Field": "pad_08",
+      "Name": "パディング",
+      "Description": "パディング"
+    },
+    {
+      "Field": "pad_09",
+      "Name": "パディング",
+      "Description": "パディング"
+    },
+    {
+      "Field": "usePom",
+      "Name": "POMを有効にするか",
+      "Description": "POMを有効にするか"
+    },
+    {
+      "Field": "useEmissive",
+      "Name": "エミッシブを更新するか",
+      "Description": "エミッシブを更新するか"
+    },
+    {
+      "Field": "putVertical",
+      "Name": "垂直に貼り付けるか",
+      "Description": "垂直に貼り付けるか"
+    },
+    {
+      "Field": "randomSizeMin",
+      "Name": "ランダムスケール最小値[％]",
+      "Description": "ランダムスケール最小値[％]"
+    },
+    {
+      "Field": "randomSizeMax",
+      "Name": "ランダムスケール最大値[％]",
+      "Description": "ランダムスケール最大値[％]"
+    },
+    {
+      "Field": "randomRollMin",
+      "Name": "ランダム角度_ひねり最小値[deg]",
+      "Description": "ランダム角度_ひねり最小値[deg]"
+    },
+    {
+      "Field": "randomRollMax",
+      "Name": "ランダム角度_ひねり最大値[deg]",
+      "Description": "ランダム角度_ひねり最大値[deg]"
+    },
+    {
+      "Field": "randomPitchMin",
+      "Name": "ランダム角度_上下最小値[deg]",
+      "Description": "ランダム角度_上下最小値[deg]"
+    },
+    {
+      "Field": "randomPitchMax",
+      "Name": "ランダム角度_上下最大値[deg]",
+      "Description": "ランダム角度_上下最大値[deg]"
+    },
+    {
+      "Field": "randomYawMin",
+      "Name": "ランダム角度_左右最小値[deg]",
+      "Description": "ランダム角度_左右最小値[deg]"
+    },
+    {
+      "Field": "randomYawMax",
+      "Name": "ランダム角度_左右最大値[deg]",
+      "Description": "ランダム角度_左右最大値[deg]"
+    },
+    {
+      "Field": "pomHightScale",
+      "Name": "POM高さスケール",
+      "Description": "POM高さスケール"
+    },
+    {
+      "Field": "pomSampleMin",
+      "Name": "POM最小サンプル数",
+      "Description": "POM最小サンプル数"
+    },
+    {
+      "Field": "pomSampleMax",
+      "Name": "POM最大サンプル数",
+      "Description": "POM最大サンプル数"
+    },
+    {
+      "Field": "blendMode",
+      "Name": "ブレンドモード",
+      "Description": "ブレンドモード"
+    },
+    {
+      "Field": "appearDirType",
+      "Name": "デカールを飛ばす基準座標",
+      "Description": "デカールを飛ばす方向を決定する基準座標"
+    },
+    {
+      "Field": "emissiveValueBegin",
+      "Name": "エミッシブ 開始値",
+      "Description": "エミッシブ 開始値"
+    },
+    {
+      "Field": "emissiveValueEnd",
+      "Name": "エミッシブ 終了値",
+      "Description": "エミッシブ 終了値"
+    },
+    {
+      "Field": "emissiveTime",
+      "Name": "エミッシブ 更新時間(秒)",
+      "Description": "開始値～終了値の補間時間"
+    },
+    {
+      "Field": "bIntpEnable",
+      "Name": "補間するか？",
+      "Description": "TAEのデカル発生でバーを伸ばしてる時間発生させるか？"
+    },
+    {
+      "Field": "pad_01",
+      "Name": "パディング",
+      "Description": "パディング"
+    },
+    {
+      "Field": "intpIntervalDist",
+      "Name": "補間間隔[m]",
+      "Description": "補間有効時にTAEのバーの間で発生したデカルを補間する距離"
+    },
+    {
+      "Field": "beginIntpTextureId",
+      "Name": "補間開始時のテクスチャID",
+      "Description": "補間開始時のテクスチャID（-1でテクスチャIDと同じ値を使う）"
+    },
+    {
+      "Field": "endIntpTextureId",
+      "Name": "補間終了時のテクスチャID",
+      "Description": "補間終了時のテクスチャテクスチャID（-1でテクスチャIDと同じ値を使う）"
+    },
+    {
+      "Field": "appearSfxId",
+      "Name": "デカールが貼られた時に出すSFXID",
+      "Description": "デカールが貼られた時に出すSFXID（-1で何も出さない）"
+    },
+    {
+      "Field": "appearSfxOffsetPos",
+      "Name": "SFXのオフセット位置",
+      "Description": "SFX発生位置のオフセット距離"
+    },
+    {
+      "Field": "maskTextureId",
+      "Name": "マスクテクスチャID",
+      "Description": "マスクテクスチャID（-1でテクスチャIDを見る）"
+    },
+    {
+      "Field": "diffuseTextureId",
+      "Name": "アルベドテクスチャID",
+      "Description": "アルベドテクスチャID（-1でテクスチャIDを見る）"
+    },
+    {
+      "Field": "reflecTextureId",
+      "Name": "リフレクテクスチャID",
+      "Description": "リフレクタンステクスチャID（-1でテクスチャIDを見る）"
+    },
+    {
+      "Field": "maskScale",
+      "Name": "マスクの強さ",
+      "Description": "マスクの強さ（現状、デファードデカールでのみ有効）"
+    },
+    {
+      "Field": "normalTextureId",
+      "Name": "ノーマルテクスチャID",
+      "Description": "ノーマルテクスチャID（-1でテクスチャIDを見る）"
+    },
+    {
+      "Field": "heightTextureId",
+      "Name": "ハイトテクスチャID",
+      "Description": "ハイトテクスチャID（-1でテクスチャIDを見る）"
+    },
+    {
+      "Field": "emissiveTextureId",
+      "Name": "エミッシブテクスチャID",
+      "Description": "エミッシブテクスチャID（-1でテクスチャIDを見る）"
+    },
+    {
+      "Field": "diffuseColorR",
+      "Name": "アルベドカラー：R",
+      "Description": "アルベドの色：R"
+    },
+    {
+      "Field": "diffuseColorG",
+      "Name": "アルベドカラー：G",
+      "Description": "アルベドの色：G"
+    },
+    {
+      "Field": "diffuseColorB",
+      "Name": "アルベドカラー：B",
+      "Description": "アルベドの色：B"
+    },
+    {
+      "Field": "pad_03",
+      "Name": "パディング",
+      "Description": "パディング"
+    },
+    {
+      "Field": "reflecColorR",
+      "Name": "リフレクカラー：R",
+      "Description": "リフレクの色：R"
+    },
+    {
+      "Field": "reflecColorG",
+      "Name": "リフレクカラー：G",
+      "Description": "リフレクの色：G"
+    },
+    {
+      "Field": "reflecColorB",
+      "Name": "リフレクカラー：B",
+      "Description": "リフレクの色：B"
+    },
+    {
+      "Field": "bLifeEnable",
+      "Name": "寿命が有効か",
+      "Description": "寿命が有効か"
+    },
+    {
+      "Field": "siniScale",
+      "Name": "シャイニネスの強さ",
+      "Description": "シャイニネスの強さ"
+    },
+    {
+      "Field": "lifeTimeSec",
+      "Name": "寿命[秒]",
+      "Description": "寿命[秒]（デカールが貼られてからの時間、フェードイン時間は関係ない）"
+    },
+    {
+      "Field": "fadeOutTimeSec",
+      "Name": "フェードアウト時間[秒]",
+      "Description": "フェードアウト時間[秒]"
+    },
+    {
+      "Field": "priority",
+      "Name": "優先度",
+      "Description": "この値が大きいほど残りやすい（-1は消滅しない）"
+    },
+    {
+      "Field": "bDistThinOutEnable",
+      "Name": "近くにデカールがあれば間引くか",
+      "Description": "近くにデカールがあれば間引くかどうか"
+    },
+    {
+      "Field": "bAlignedTexRandomVariationEnable",
+      "Name": "ランダムパターンを固定化する",
+      "Description": "「はい」にすると、各バリエーション数が0以外のテクスチャについてランダムに決めた一つのバリエーション番号が適用されるようになります。0以外の各バリエーション数は同じ値に揃える必要があります。"
+    },
+    {
+      "Field": "distThinOutCheckDist",
+      "Name": "この距離以内なら間引き候補",
+      "Description": "この距離以内にデカールがあれば間引き候補"
+    },
+    {
+      "Field": "distThinOutCheckAngleDeg",
+      "Name": "方向の差がこの角度[度]以内なら間引き候補",
+      "Description": "デカールの方向の差がこの角度以内なら間引き候補"
+    },
+    {
+      "Field": "distThinOutMaxNum",
+      "Name": "条件を満たした数がこの数以上なら間引く",
+      "Description": "距離、角度がこの数以上なら間引く"
+    },
+    {
+      "Field": "distThinOutCheckNum",
+      "Name": "直近何個まで間引きチェックするか",
+      "Description": "間引き候補を直近何個まで調べるか"
+    },
+    {
+      "Field": "delayAppearFrame",
+      "Name": "発生するまでの遅延フレーム[フレーム（30FPS換算）]",
+      "Description": "デカールを貼り付けようとしてからこのフレーム後に実際に貼り付けられる"
+    },
+    {
+      "Field": "randVaria_Diffuse",
+      "Name": "アルベド・バリエーション数",
+      "Description": "アルベドテクスチャのランダムバリエーション数（0番目を含む、2でテクスチャ2枚分）"
+    },
+    {
+      "Field": "randVaria_Mask",
+      "Name": "マスク・バリエーション数",
+      "Description": "マスクテクスチャのランダムバリエーション数（0番目を含む、2でテクスチャ2枚分）"
+    },
+    {
+      "Field": "randVaria_Reflec",
+      "Name": "リフレク・バリエーション数",
+      "Description": "リフレクテクスチャのランダムバリエーション数（0番目を含む、2でテクスチャ2枚分）"
+    },
+    {
+      "Field": "pad_12",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "randVaria_Normal",
+      "Name": "ノーマル・バリエーション数",
+      "Description": "ノーマルテクスチャのランダムバリエーション数（0番目を含む、2でテクスチャ2枚分）"
+    },
+    {
+      "Field": "randVaria_Height",
+      "Name": "ハイト・バリエーション数",
+      "Description": "ハイトテクスチャのランダムバリエーション数（0番目を含む、2でテクスチャ2枚分）"
+    },
+    {
+      "Field": "randVaria_Emissive",
+      "Name": "エミッシブ・バリエーション数",
+      "Description": "エミッシブテクスチャのランダムバリエーション数（0番目を含む、2でテクスチャ2枚分）"
+    },
+    {
+      "Field": "pad_11",
+      "Name": "パディング",
+      "Description": "パディング"
+    },
+    {
+      "Field": "fadeInTimeSec",
+      "Name": "フェードイン時間[秒]",
+      "Description": "フェードイン時間[秒]"
+    },
+    {
+      "Field": "maxDecalSfxCreatableSlopeAngleDeg",
+      "Name": "SFX発生上限角度",
+      "Description": "SFX発生上限角度"
+    },
+    {
+      "Field": "pad_02",
+      "Name": "パディング",
+      "Description": "パディング"
+    }
+  ]
+}

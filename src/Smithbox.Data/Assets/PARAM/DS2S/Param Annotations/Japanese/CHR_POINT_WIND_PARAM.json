@@ -1,0 +1,43 @@
+{
+  "Param": "CHR_POINT_WIND_PARAM",
+  "Type": "CHR_POINT_WIND_PARAM",
+  "Name": "CHR_POINT_WIND_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "priority",
+      "Name": "優先度",
+      "Description": ""
+    },
+    {
+      "Field": "radius",
+      "Name": "半径[m]",
+      "Description": ""
+    },
+    {
+      "Field": "minSpeed",
+      "Name": "最小風力[m/s]",
+      "Description": ""
+    },
+    {
+      "Field": "maxSpeed",
+      "Name": "最大風力[m/s]",
+      "Description": ""
+    },
+    {
+      "Field": "frequency",
+      "Name": "周波数",
+      "Description": ""
+    },
+    {
+      "Field": "gainStartDistance",
+      "Name": "減衰開始処理",
+      "Description": ""
+    },
+    {
+      "Field": "fadeInTime",
+      "Name": "フェードイン時間[sec]",
+      "Description": ""
+    }
+  ]
+}

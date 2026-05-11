@@ -1,0 +1,23 @@
+{
+  "Param": "MAP_PARTS_PARAM_ST",
+  "Type": "MAP_PARTS_PARAM_ST",
+  "Name": "MAP_PARTS_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "camDitherFadeMinDist",
+      "Name": "カメラディザフェード最小距離(m)",
+      "Description": "カメラディザフェード最小距離。「カメラディザフェード最小距離」、「カメラディザフェード最大距離」の両方に「0.0」を設定するとカメラディザフェードが無効になります。"
+    },
+    {
+      "Field": "camDitherFadeMaxDist",
+      "Name": "カメラディザフェード最大距離(m)",
+      "Description": "カメラディザフェード最大距離。「カメラディザフェード最小距離」、「カメラディザフェード最大距離」の両方に「0.0」を設定するとカメラディザフェードが無効になります。"
+    },
+    {
+      "Field": "pad",
+      "Name": "パディング",
+      "Description": ""
+    }
+  ]
+}

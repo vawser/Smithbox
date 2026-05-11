@@ -1,0 +1,28 @@
+{
+  "Param": "EVENT_FLAG_USAGE_PARAM_ST",
+  "Type": "EVENT_FLAG_USAGE_PARAM_ST",
+  "Name": "EVENT_FLAG_USAGE_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "usageType",
+      "Name": "用途",
+      "Description": "フラグの用途。"
+    },
+    {
+      "Field": "padding1",
+      "Name": "パディング",
+      "Description": "パディング"
+    },
+    {
+      "Field": "flagNum",
+      "Name": "確保フラグ数",
+      "Description": "実際に確保するフラグの数。「番号～番号+確保フラグ数-1」がその用途として確保される範囲となる。"
+    },
+    {
+      "Field": "padding2",
+      "Name": "パディング",
+      "Description": "パディング"
+    }
+  ]
+}

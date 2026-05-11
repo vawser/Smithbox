@@ -1,0 +1,28 @@
+{
+  "Param": "GAME_PRESENCE_PARAM",
+  "Type": "GAME_PRESENCE_PARAM",
+  "Name": "GAME_PRESENCE_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "canAutoNavigation",
+      "Name": "自動遷移が可能か",
+      "Description": "自動遷移が可能か"
+    },
+    {
+      "Field": "canSystemErrorHandling",
+      "Name": "システムエラーハンドリングが可能か",
+      "Description": "システムエラーハンドリングが可能か"
+    },
+    {
+      "Field": "requestPause",
+      "Name": "ポーズするか",
+      "Description": "ポーズするか"
+    },
+    {
+      "Field": "reserved",
+      "Name": "----",
+      "Description": "予約"
+    }
+  ]
+}

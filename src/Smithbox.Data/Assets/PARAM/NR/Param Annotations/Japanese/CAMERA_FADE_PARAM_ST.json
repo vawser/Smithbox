@@ -1,0 +1,38 @@
+{
+  "Param": "CAMERA_FADE_PARAM_ST",
+  "Type": "CAMERA_FADE_PARAM_ST",
+  "Name": "CAMERA_FADE_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "NearMinDist",
+      "Name": "透明になりきる距離(m)",
+      "Description": "Nearフェード最小距離(m) : α = 0になる距離"
+    },
+    {
+      "Field": "NearMaxDist",
+      "Name": "透明になり始める距離(m)",
+      "Description": "Nearフェード最大距離(m) : α = MiddelAlphaとなる間の開始距離"
+    },
+    {
+      "Field": "FarMinDist",
+      "Name": "半透明状態になりきる距離(m)",
+      "Description": "Farフェードの最小距離(m) : α = MiddleAlphaとなる間の終了距離"
+    },
+    {
+      "Field": "FarMaxDist",
+      "Name": "半透明状態になり始める距離(m)",
+      "Description": "Farフェードの最大距離(m) : α = 1になる距離"
+    },
+    {
+      "Field": "MiddleAlpha",
+      "Name": "半透明状態の濃さ(α値)",
+      "Description": "中間のα値"
+    },
+    {
+      "Field": "dummy",
+      "Name": "ダミー",
+      "Description": ""
+    }
+  ]
+}

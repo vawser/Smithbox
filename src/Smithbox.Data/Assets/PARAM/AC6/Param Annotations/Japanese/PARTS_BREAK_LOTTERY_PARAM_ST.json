@@ -1,0 +1,58 @@
+{
+  "Param": "PARTS_BREAK_LOTTERY_PARAM_ST",
+  "Type": "PARTS_BREAK_LOTTERY_PARAM_ST",
+  "Name": "PARTS_BREAK_LOTTERY_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "pair0_Value",
+      "Name": "判定値",
+      "Description": " -1は無効値"
+    },
+    {
+      "Field": "pair0_Weight",
+      "Name": "重み付け",
+      "Description": ""
+    },
+    {
+      "Field": "pair1_Value",
+      "Name": "判定値",
+      "Description": " -1は無効値"
+    },
+    {
+      "Field": "pair1_Weight",
+      "Name": "重み付け",
+      "Description": ""
+    },
+    {
+      "Field": "pair2_Value",
+      "Name": "判定値",
+      "Description": " -1は無効値"
+    },
+    {
+      "Field": "pair2_Weight",
+      "Name": "重み付け",
+      "Description": ""
+    },
+    {
+      "Field": "pair3_Value",
+      "Name": "判定値",
+      "Description": " -1は無効値"
+    },
+    {
+      "Field": "pair3_Weight",
+      "Name": "重み付け",
+      "Description": ""
+    },
+    {
+      "Field": "pair4_Value",
+      "Name": "判定値",
+      "Description": " -1は無効値"
+    },
+    {
+      "Field": "pair4_Weight",
+      "Name": "重み付け",
+      "Description": ""
+    }
+  ]
+}

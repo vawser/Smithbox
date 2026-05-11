@@ -1,0 +1,53 @@
+{
+  "Param": "MENUPROPERTY_SPEC",
+  "Type": "MENUPROPERTY_SPEC",
+  "Name": "MENUPROPERTY_SPEC",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "CaptionTextID",
+      "Name": "項目名テキストID",
+      "Description": ""
+    },
+    {
+      "Field": "IconID",
+      "Name": "項目アイコンID",
+      "Description": ""
+    },
+    {
+      "Field": "RequiredPropertyID",
+      "Name": "必要スキル",
+      "Description": ""
+    },
+    {
+      "Field": "CompareType",
+      "Name": "優劣判定",
+      "Description": ""
+    },
+    {
+      "Field": "pad2",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "FormatType",
+      "Name": "書式",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_1",
+      "Name": "unknown_1",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_2",
+      "Name": "unknown_2",
+      "Description": ""
+    },
+    {
+      "Field": "pad",
+      "Name": "パディング",
+      "Description": ""
+    }
+  ]
+}

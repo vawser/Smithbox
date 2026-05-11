@@ -1,0 +1,298 @@
+{
+  "Param": "HOLYGRAIL_EX_PARAM_ST",
+  "Type": "HOLYGRAIL_EX_PARAM_ST",
+  "Name": "HOLYGRAIL_EX_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "ritualLv",
+      "Name": "儀式レベル",
+      "Description": "儀式レベル"
+    },
+    {
+      "Field": "attributeId",
+      "Name": "属性ID",
+      "Description": "属性ID"
+    },
+    {
+      "Field": "mapBaseId",
+      "Name": "マップベースID",
+      "Description": "間接指定用マップベースID"
+    },
+    {
+      "Field": "holygrailTypeId",
+      "Name": "聖杯タイプID",
+      "Description": "聖杯タイプID"
+    },
+    {
+      "Field": "variationNum",
+      "Name": "ランダム構造生成数",
+      "Description": "ランダム構造生成数(バリエーション数)"
+    },
+    {
+      "Field": "mainFeature_1",
+      "Name": "メイン特徴①ID",
+      "Description": "メイン特徴①ID"
+    },
+    {
+      "Field": "pad_0",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "dungeonNameBaseId",
+      "Name": "ダンジョン名ベースID",
+      "Description": "ダンジョン名ベースID"
+    },
+    {
+      "Field": "uniqueBaseFlagId",
+      "Name": "ユニークベースフラグID",
+      "Description": "ユニークベースフラグID"
+    },
+    {
+      "Field": "uniqueItem00_head",
+      "Name": "ユニークアイテム00バリエーション番号先頭",
+      "Description": "ユニークアイテム00バリエーション番号先頭"
+    },
+    {
+      "Field": "uniqueItem00_tail",
+      "Name": "ユニークアイテム00バリエーション番号末尾",
+      "Description": "ユニークアイテム00バリエーション番号末尾"
+    },
+    {
+      "Field": "uniqueItem01_head",
+      "Name": "ユニークアイテム01バリエーション番号先頭",
+      "Description": "ユニークアイテム01バリエーション番号先頭"
+    },
+    {
+      "Field": "uniqueItem01_tail",
+      "Name": "ユニークアイテム01バリエーション番号末尾",
+      "Description": "ユニークアイテム01バリエーション番号末尾"
+    },
+    {
+      "Field": "uniqueItem02_head",
+      "Name": "ユニークアイテム02バリエーション番号先頭",
+      "Description": "ユニークアイテム02バリエーション番号先頭"
+    },
+    {
+      "Field": "uniqueItem02_tail",
+      "Name": "ユニークアイテム02バリエーション番号末尾",
+      "Description": "ユニークアイテム02バリエーション番号末尾"
+    },
+    {
+      "Field": "uniqueItem03_head",
+      "Name": "ユニークアイテム03バリエーション番号先頭",
+      "Description": "ユニークアイテム03バリエーション番号先頭"
+    },
+    {
+      "Field": "uniqueItem03_tail",
+      "Name": "ユニークアイテム03バリエーション番号末尾",
+      "Description": "ユニークアイテム03バリエーション番号末尾"
+    },
+    {
+      "Field": "directMapUid",
+      "Name": "直指定マップUID",
+      "Description": "マップUID直指定用(-1:間接指定)"
+    },
+    {
+      "Field": "requiredMaterialId",
+      "Name": "必要素材ID",
+      "Description": "必要素材ID"
+    },
+    {
+      "Field": "groupFrameNameId",
+      "Name": "グループ選択枠名ID",
+      "Description": "グループ選択枠名ID"
+    },
+    {
+      "Field": "uniqueItem04_head",
+      "Name": "ユニークアイテム04バリエーション番号先頭",
+      "Description": "ユニークアイテム04バリエーション番号先頭"
+    },
+    {
+      "Field": "uniqueItem04_tail",
+      "Name": "ユニークアイテム04バリエーション番号末尾",
+      "Description": "ユニークアイテム04バリエーション番号末尾"
+    },
+    {
+      "Field": "uniqueItem05_head",
+      "Name": "ユニークアイテム05バリエーション番号先頭",
+      "Description": "ユニークアイテム05バリエーション番号先頭"
+    },
+    {
+      "Field": "uniqueItem05_tail",
+      "Name": "ユニークアイテム05バリエーション番号末尾",
+      "Description": "ユニークアイテム05バリエーション番号末尾"
+    },
+    {
+      "Field": "uniqueItem06_head",
+      "Name": "ユニークアイテム06バリエーション番号先頭",
+      "Description": "ユニークアイテム06バリエーション番号先頭"
+    },
+    {
+      "Field": "uniqueItem06_tail",
+      "Name": "ユニークアイテム06バリエーション番号末尾",
+      "Description": "ユニークアイテム06バリエーション番号末尾"
+    },
+    {
+      "Field": "uniqueItem07_head",
+      "Name": "ユニークアイテム07バリエーション番号先頭",
+      "Description": "ユニークアイテム07バリエーション番号先頭"
+    },
+    {
+      "Field": "uniqueItem07_tail",
+      "Name": "ユニークアイテム07バリエーション番号末尾",
+      "Description": "ユニークアイテム07バリエーション番号末尾"
+    },
+    {
+      "Field": "uniqueItem08_head",
+      "Name": "ユニークアイテム08バリエーション番号先頭",
+      "Description": "ユニークアイテム08バリエーション番号先頭"
+    },
+    {
+      "Field": "uniqueItem08_tail",
+      "Name": "ユニークアイテム08バリエーション番号末尾",
+      "Description": "ユニークアイテム08バリエーション番号末尾"
+    },
+    {
+      "Field": "uniqueItem09_head",
+      "Name": "ユニークアイテム09バリエーション番号先頭",
+      "Description": "ユニークアイテム09バリエーション番号先頭"
+    },
+    {
+      "Field": "uniqueItem09_tail",
+      "Name": "ユニークアイテム09バリエーション番号末尾",
+      "Description": "ユニークアイテム09バリエーション番号末尾"
+    },
+    {
+      "Field": "uniqueItem10_head",
+      "Name": "ユニークアイテム10バリエーション番号先頭",
+      "Description": "ユニークアイテム10バリエーション番号先頭"
+    },
+    {
+      "Field": "uniqueItem10_tail",
+      "Name": "ユニークアイテム10バリエーション番号末尾",
+      "Description": "ユニークアイテム10バリエーション番号末尾"
+    },
+    {
+      "Field": "uniqueItem11_head",
+      "Name": "ユニークアイテム11バリエーション番号先頭",
+      "Description": "ユニークアイテム11バリエーション番号先頭"
+    },
+    {
+      "Field": "uniqueItem11_tail",
+      "Name": "ユニークアイテム11バリエーション番号末尾",
+      "Description": "ユニークアイテム11バリエーション番号末尾"
+    },
+    {
+      "Field": "uniqueItem12_head",
+      "Name": "ユニークアイテム12バリエーション番号先頭",
+      "Description": "ユニークアイテム12バリエーション番号先頭"
+    },
+    {
+      "Field": "uniqueItem12_tail",
+      "Name": "ユニークアイテム12バリエーション番号末尾",
+      "Description": "ユニークアイテム12バリエーション番号末尾"
+    },
+    {
+      "Field": "uniqueItem13_head",
+      "Name": "ユニークアイテム13バリエーション番号先頭",
+      "Description": "ユニークアイテム13バリエーション番号先頭"
+    },
+    {
+      "Field": "uniqueItem13_tail",
+      "Name": "ユニークアイテム13バリエーション番号末尾",
+      "Description": "ユニークアイテム13バリエーション番号末尾"
+    },
+    {
+      "Field": "fixedSf_1_subFeatureLotId",
+      "Name": "確定枠①サブ特徴抽選ID",
+      "Description": "確定枠①サブ特徴抽選ID"
+    },
+    {
+      "Field": "fixedSf_2_subFeatureLotId",
+      "Name": "確定枠②サブ特徴抽選ID",
+      "Description": "確定枠②サブ特徴抽選ID"
+    },
+    {
+      "Field": "fixedSf_3_subFeatureLotId",
+      "Name": "確定枠③サブ特徴抽選ID",
+      "Description": "確定枠③サブ特徴抽選ID"
+    },
+    {
+      "Field": "fixedSf_4_subFeatureLotId",
+      "Name": "確定枠④サブ特徴抽選ID",
+      "Description": "確定枠④サブ特徴抽選ID"
+    },
+    {
+      "Field": "fixedSf_5_subFeatureLotId",
+      "Name": "確定枠⑤サブ特徴抽選ID",
+      "Description": "確定枠⑤サブ特徴抽選ID"
+    },
+    {
+      "Field": "freeSf_1_subFeatureLotId",
+      "Name": "フリー枠①サブ特徴抽選ID",
+      "Description": "フリー枠①サブ特徴抽選ID"
+    },
+    {
+      "Field": "freeSf_2_subFeatureLotId",
+      "Name": "フリー枠②サブ特徴抽選ID",
+      "Description": "フリー枠②サブ特徴抽選ID"
+    },
+    {
+      "Field": "freeSf_3_subFeatureLotId",
+      "Name": "フリー枠③サブ特徴抽選ID",
+      "Description": "フリー枠③サブ特徴抽選ID"
+    },
+    {
+      "Field": "uniqueItem14_head",
+      "Name": "ユニークアイテム14バリエーション番号先頭",
+      "Description": "ユニークアイテム14バリエーション番号先頭"
+    },
+    {
+      "Field": "uniqueItem14_tail",
+      "Name": "ユニークアイテム14バリエーション番号末尾",
+      "Description": "ユニークアイテム14バリエーション番号末尾"
+    },
+    {
+      "Field": "isGenericHolygrail",
+      "Name": "汎聖杯か",
+      "Description": "汎聖杯か"
+    },
+    {
+      "Field": "releaseFlagIdOffset",
+      "Name": "解禁イベントフラグオフセットID",
+      "Description": "解禁イベントフラグオフセットID"
+    },
+    {
+      "Field": "pad_3",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "groupSf_1_subFeatureLotId",
+      "Name": "グループ枠①サブ特徴抽選ID",
+      "Description": "グループ枠①サブ特徴抽選ID"
+    },
+    {
+      "Field": "groupSf_2_subFeatureLotId",
+      "Name": "グループ枠②サブ特徴抽選ID",
+      "Description": "グループ枠②サブ特徴抽選ID"
+    },
+    {
+      "Field": "groupSf_3_subFeatureLotId",
+      "Name": "グループ枠③サブ特徴抽選ID",
+      "Description": "グループ枠③サブ特徴抽選ID"
+    },
+    {
+      "Field": "groupSf_4_subFeatureLotId",
+      "Name": "グループ枠④サブ特徴抽選ID",
+      "Description": "グループ枠④サブ特徴抽選ID"
+    },
+    {
+      "Field": "groupSf_5_subFeatureLotId",
+      "Name": "グループ枠⑤サブ特徴抽選ID",
+      "Description": "グループ枠⑤サブ特徴抽選ID"
+    }
+  ]
+}

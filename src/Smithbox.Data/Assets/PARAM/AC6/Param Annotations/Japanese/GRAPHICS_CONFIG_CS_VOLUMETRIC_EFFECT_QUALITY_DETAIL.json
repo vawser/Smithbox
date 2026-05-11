@@ -1,0 +1,98 @@
+{
+  "Param": "GRAPHICS_CONFIG_CS_VOLUMETRIC_EFFECT_QUALITY_DETAIL",
+  "Type": "GRAPHICS_CONFIG_CS_VOLUMETRIC_EFFECT_QUALITY_DETAIL",
+  "Name": "GRAPHICS_CONFIG_CS_VOLUMETRIC_EFFECT_QUALITY_DETAIL",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "fogEnabled",
+      "Name": "フォグ有効",
+      "Description": "フォグ有効"
+    },
+    {
+      "Field": "fogShadowEnabled",
+      "Name": "フォグシャドウ許可",
+      "Description": "フォグシャドウ許可"
+    },
+    {
+      "Field": "fogVolumeEdgeCorrectionLevel",
+      "Name": "バイラテラル時のみ行われるエッジ補正レベル",
+      "Description": "バイラテラル時のみ行われるエッジ補正レベル"
+    },
+    {
+      "Field": "fogVolumeResolution",
+      "Name": "フォグボリュームのアップスケール処理解像度",
+      "Description": "配置式フォグボリュームの処理解像度（アップスケール種別の設定を上書き）"
+    },
+    {
+      "Field": "fogShadowSampleCountBias",
+      "Name": "シャドウのサンプルカウントオフセット",
+      "Description": "シャドウのサンプルカウントオフセット。"
+    },
+    {
+      "Field": "fogLocalLightDistScale",
+      "Name": "ローカルライト計算距離スケール",
+      "Description": "0にするとローカルライト計算をしない"
+    },
+    {
+      "Field": "fogVolumeSizeScaler",
+      "Name": "フォグボリュームサイズスケーラ",
+      "Description": "フォグボリュームサイズスケーラ"
+    },
+    {
+      "Field": "fogVolumeSizeDivider",
+      "Name": "フォグボリュームサイズ除算",
+      "Description": "フォグボリュームサイズ除算"
+    },
+    {
+      "Field": "fogVolumeDepthScaler",
+      "Name": "フォグボリューム奥行きスライススケーラ",
+      "Description": "フォグボリューム奥行きスライススケーラ"
+    },
+    {
+      "Field": "fogVolumeDepthDivider",
+      "Name": "フォグボリューム奥行きスライス除算",
+      "Description": "フォグボリューム奥行きスライス除算"
+    },
+    {
+      "Field": "fogVolumeEnabled",
+      "Name": "配置式フォグボリューム有効",
+      "Description": "配置式フォグボリューム有効"
+    },
+    {
+      "Field": "fogVolumeUpScaleType",
+      "Name": "アップスケール種別",
+      "Description": "フォグボリュームのアップスケール種別"
+    },
+    {
+      "Field": "fogVolumeUpScaleInTwoStageEnabled",
+      "Name": "2段階のアップスケール",
+      "Description": "ちらつき軽減のため縮小バッファからのアップスケールを1段階から2段階にします"
+    },
+    {
+      "Field": "fogVolumeShadowEnabled",
+      "Name": "シャドウ許可",
+      "Description": "シャドウ許可"
+    },
+    {
+      "Field": "fogVolumeRayMarcingSampleCountOffset",
+      "Name": "レイマーチング時のサンプリング数のオフセット",
+      "Description": ""
+    },
+    {
+      "Field": "fogVolumeTwoStepUpScalingEnabled",
+      "Name": "2段階アップスケール許可",
+      "Description": ""
+    },
+    {
+      "Field": "fogVolumeForceShadowing",
+      "Name": "シャドウ許可時に設定にかかわらず領域に強制的に影を落とす(陰影処理は影響をうけない)",
+      "Description": ""
+    },
+    {
+      "Field": "pad2",
+      "Name": "pad",
+      "Description": ""
+    }
+  ]
+}

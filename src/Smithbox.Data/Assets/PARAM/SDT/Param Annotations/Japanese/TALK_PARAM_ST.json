@@ -1,0 +1,303 @@
+{
+  "Param": "TALK_PARAM_ST",
+  "Type": "TALK_PARAM_ST",
+  "Name": "TALK_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "textId",
+      "Name": "PC性別が男：テキストID",
+      "Description": "PC性別が男：メッセージを指定->メニュー"
+    },
+    {
+      "Field": "textId_female",
+      "Name": "PC性別が女：テキストID",
+      "Description": "PC性別が女：メッセージを指定->メニュー"
+    },
+    {
+      "Field": "timeout",
+      "Name": "ボイス再生タイムアウト時間 ",
+      "Description": "ボイス再生タイムアウト時間 "
+    },
+    {
+      "Field": "pad",
+      "Name": "padding",
+      "Description": ""
+    },
+    {
+      "Field": "soundId_pc",
+      "Name": "PC：PC性別が男：サウンドID",
+      "Description": "PC：PC性別が男：サウンド（ボイス）ID"
+    },
+    {
+      "Field": "soundId0",
+      "Name": "会話参加者0：PC性別が男：サウンドID",
+      "Description": "会話参加者0：PC性別が男：サウンド（ボイス）ID"
+    },
+    {
+      "Field": "soundId1",
+      "Name": "会話参加者1：PC性別が男：サウンドID",
+      "Description": "会話参加者1：PC性別が男：サウンド（ボイス）ID"
+    },
+    {
+      "Field": "soundId2",
+      "Name": "会話参加者2：PC性別が男：サウンドID",
+      "Description": "会話参加者2：PC性別が男：サウンド（ボイス）ID"
+    },
+    {
+      "Field": "soundId3",
+      "Name": "会話参加者3：PC性別が男：サウンドID",
+      "Description": "会話参加者3：PC性別が男：サウンド（ボイス）ID"
+    },
+    {
+      "Field": "soundId4",
+      "Name": "会話参加者4：PC性別が男：サウンドID",
+      "Description": "会話参加者4：PC性別が男：サウンド（ボイス）ID"
+    },
+    {
+      "Field": "soundId5",
+      "Name": "会話参加者5：PC性別が男：サウンドID",
+      "Description": "会話参加者5：PC性別が男：サウンド（ボイス）ID"
+    },
+    {
+      "Field": "soundId6",
+      "Name": "会話参加者6：PC性別が男：サウンドID",
+      "Description": "会話参加者6：PC性別が男：サウンド（ボイス）ID"
+    },
+    {
+      "Field": "soundId7",
+      "Name": "会話参加者7：PC性別が男：サウンドID",
+      "Description": "会話参加者7：PC性別が男：サウンド（ボイス）ID"
+    },
+    {
+      "Field": "soundId0_pc_female",
+      "Name": "PC：PC性別が女：サウンドID",
+      "Description": "PC：PC性別が女：サウンド（ボイス）ID"
+    },
+    {
+      "Field": "soundId0_female",
+      "Name": "会話参加者0：PC性別が女：サウンドID",
+      "Description": "会話参加者0：PC性別が女：サウンド（ボイス）ID"
+    },
+    {
+      "Field": "soundId1_female",
+      "Name": "会話参加者1：PC性別が女：サウンドID",
+      "Description": "会話参加者1：PC性別が女：サウンド（ボイス）ID"
+    },
+    {
+      "Field": "soundId2_female",
+      "Name": "会話参加者2：PC性別が女：サウンドID",
+      "Description": "会話参加者2：PC性別が女：サウンド（ボイス）ID"
+    },
+    {
+      "Field": "soundId3_female",
+      "Name": "会話参加者3：PC性別が女：サウンドID",
+      "Description": "会話参加者3：PC性別が女：サウンド（ボイス）ID"
+    },
+    {
+      "Field": "soundId4_female",
+      "Name": "会話参加者4：PC性別が女：サウンドID",
+      "Description": "会話参加者4：PC性別が女：サウンド（ボイス）ID"
+    },
+    {
+      "Field": "soundId5_female",
+      "Name": "会話参加者5：PC性別が女：サウンドID",
+      "Description": "会話参加者5：PC性別が女：サウンド（ボイス）ID"
+    },
+    {
+      "Field": "soundId6_female",
+      "Name": "会話参加者6：PC性別が女：サウンドID",
+      "Description": "会話参加者6：PC性別が女：サウンド（ボイス）ID"
+    },
+    {
+      "Field": "soundId7_female",
+      "Name": "会話参加者7：PC性別が女：サウンドID",
+      "Description": "会話参加者7：PC性別が女：サウンド（ボイス）ID"
+    },
+    {
+      "Field": "lookAtTarget_pc",
+      "Name": "PC：LookAt対象",
+      "Description": "PC：LookAt対象"
+    },
+    {
+      "Field": "lookAtTarget0",
+      "Name": "会話参加者0：LookAt対象",
+      "Description": "会話参加者0：LookAt対象"
+    },
+    {
+      "Field": "lookAtTarget1",
+      "Name": "会話参加者1：LookAt対象",
+      "Description": "会話参加者1：LookAt対象"
+    },
+    {
+      "Field": "lookAtTarget2",
+      "Name": "会話参加者2：LookAt対象",
+      "Description": "会話参加者2：LookAt対象"
+    },
+    {
+      "Field": "lookAtTarget3",
+      "Name": "会話参加者3：LookAt対象",
+      "Description": "会話参加者3：LookAt対象"
+    },
+    {
+      "Field": "lookAtTarget4",
+      "Name": "会話参加者4：LookAt対象",
+      "Description": "会話参加者4：LookAt対象"
+    },
+    {
+      "Field": "lookAtTarget5",
+      "Name": "会話参加者5：LookAt対象",
+      "Description": "会話参加者5：LookAt対象"
+    },
+    {
+      "Field": "lookAtTarget6",
+      "Name": "会話参加者6：LookAt対象",
+      "Description": "会話参加者6：LookAt対象"
+    },
+    {
+      "Field": "lookAtTarget7",
+      "Name": "会話参加者7：LookAt対象",
+      "Description": "会話参加者7：LookAt対象"
+    },
+    {
+      "Field": "talkAnimation_pc",
+      "Name": "PC：字幕芝居",
+      "Description": "PC：会話中のアニメーション"
+    },
+    {
+      "Field": "talkAnimation0",
+      "Name": "会話参加者0：字幕芝居",
+      "Description": "会話参加者0：会話中のアニメーション"
+    },
+    {
+      "Field": "talkAnimation1",
+      "Name": "会話参加者1：字幕芝居",
+      "Description": "会話参加者1：会話中のアニメーション"
+    },
+    {
+      "Field": "talkAnimation2",
+      "Name": "会話参加者2：字幕芝居",
+      "Description": "会話参加者2：会話中のアニメーション"
+    },
+    {
+      "Field": "talkAnimation3",
+      "Name": "会話参加者3：字幕芝居",
+      "Description": "会話参加者3：会話中のアニメーション"
+    },
+    {
+      "Field": "talkAnimation4",
+      "Name": "会話参加者4：字幕芝居",
+      "Description": "会話参加者4：会話中のアニメーション"
+    },
+    {
+      "Field": "talkAnimation5",
+      "Name": "会話参加者5：字幕芝居",
+      "Description": "会話参加者5：会話中のアニメーション"
+    },
+    {
+      "Field": "talkAnimation6",
+      "Name": "会話参加者6：字幕芝居",
+      "Description": "会話参加者6：会話中のアニメーション"
+    },
+    {
+      "Field": "talkAnimation7",
+      "Name": "会話参加者7：字幕芝居",
+      "Description": "会話参加者7：会話中のアニメーション"
+    },
+    {
+      "Field": "lipSyncStart_pc",
+      "Name": "PC：口パク開始時間",
+      "Description": "PC：口パク開始時間。-1で口パク無し"
+    },
+    {
+      "Field": "lipSyncStart0",
+      "Name": "会話参加者0：口パク開始時間",
+      "Description": "会話参加者0：口パク開始時間。-1で口パク無し"
+    },
+    {
+      "Field": "lipSyncStart1",
+      "Name": "会話参加者1：口パク開始時間",
+      "Description": "会話参加者1：口パク開始時間。-1で口パク無し"
+    },
+    {
+      "Field": "lipSyncStart2",
+      "Name": "会話参加者2：口パク開始時間",
+      "Description": "会話参加者2：口パク開始時間。-1で口パク無し"
+    },
+    {
+      "Field": "lipSyncStart3",
+      "Name": "会話参加者3：口パク開始時間",
+      "Description": "会話参加者3：口パク開始時間。-2で口パク無し"
+    },
+    {
+      "Field": "lipSyncStart4",
+      "Name": "会話参加者4：口パク開始時間",
+      "Description": "会話参加者4：口パク開始時間。-3で口パク無し"
+    },
+    {
+      "Field": "lipSyncStart5",
+      "Name": "会話参加者5：口パク開始時間",
+      "Description": "会話参加者5：口パク開始時間。-4で口パク無し"
+    },
+    {
+      "Field": "lipSyncStart6",
+      "Name": "会話参加者6：口パク開始時間",
+      "Description": "会話参加者6：口パク開始時間。-5で口パク無し"
+    },
+    {
+      "Field": "lipSyncStart7",
+      "Name": "会話参加者7：口パク開始時間",
+      "Description": "会話参加者7：口パク開始時間。-6で口パク無し"
+    },
+    {
+      "Field": "lipSyncTime_pc",
+      "Name": "PC：口パク継続時間",
+      "Description": "PC：口パク継続時間。-1で口パクずっと継続"
+    },
+    {
+      "Field": "lipSyncTime0",
+      "Name": "会話参加者0：口パク継続時間",
+      "Description": "会話参加者0：口パク継続時間。-1で口パクずっと継続"
+    },
+    {
+      "Field": "lipSyncTime1",
+      "Name": "会話参加者1：口パク継続時間",
+      "Description": "会話参加者1：口パク開始時間。-1で口パクずっと継続"
+    },
+    {
+      "Field": "lipSyncTime2",
+      "Name": "会話参加者2：口パク継続時間",
+      "Description": "会話参加者2：口パク開始時間。-1で口パクずっと継続"
+    },
+    {
+      "Field": "lipSyncTime3",
+      "Name": "会話参加者3：口パク継続時間",
+      "Description": "会話参加者3：口パク開始時間。-1で口パクずっと継続"
+    },
+    {
+      "Field": "lipSyncTime4",
+      "Name": "会話参加者4：口パク継続時間",
+      "Description": "会話参加者4：口パク開始時間。-1で口パクずっと継続"
+    },
+    {
+      "Field": "lipSyncTime5",
+      "Name": "会話参加者5：口パク継続時間",
+      "Description": "会話参加者5：口パク開始時間。-1で口パクずっと継続"
+    },
+    {
+      "Field": "lipSyncTime6",
+      "Name": "会話参加者6：口パク継続時間",
+      "Description": "会話参加者6：口パク開始時間。-1で口パクずっと継続"
+    },
+    {
+      "Field": "lipSyncTime7",
+      "Name": "会話参加者7：口パク継続時間",
+      "Description": "会話参加者7：口パク開始時間。-1で口パクずっと継続"
+    },
+    {
+      "Field": "pad1",
+      "Name": "padding1",
+      "Description": ""
+    }
+  ]
+}

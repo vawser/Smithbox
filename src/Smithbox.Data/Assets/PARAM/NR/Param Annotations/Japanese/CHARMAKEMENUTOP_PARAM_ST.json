@@ -1,0 +1,73 @@
+{
+  "Param": "CHARMAKEMENUTOP_PARAM_ST",
+  "Type": "CHARMAKEMENUTOP_PARAM_ST",
+  "Name": "CHARMAKEMENUTOP_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "commandType",
+      "Name": "コマンドタイプ",
+      "Description": "コマンドの種別"
+    },
+    {
+      "Field": "captionId",
+      "Name": "項目テキストID",
+      "Description": "表示するテキストのID"
+    },
+    {
+      "Field": "faceParamId",
+      "Name": "顔パラムID",
+      "Description": "顔パラムID"
+    },
+    {
+      "Field": "tableId",
+      "Name": "テーブルID（男性）",
+      "Description": "選択するアイテム一覧の先頭ID（男）。コマンドタイプが[スライダー：最小値ラベル(n)と最大値ラベル(n+1)のテキストID、カラー：カラーテーブルのID、グリッド or テキスト：キャラメイクリストアイテムの先頭ID、それ以外：無視]"
+    },
+    {
+      "Field": "viewCondition",
+      "Name": "表示条件",
+      "Description": "このコマンドを表示する条件"
+    },
+    {
+      "Field": "previewMode",
+      "Name": "プレビューモード",
+      "Description": "プレビュー表示しているキャラクターモデルの表示モード"
+    },
+    {
+      "Field": "reserved2",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "tableId2",
+      "Name": "テーブルID（女性）",
+      "Description": "テーブルIDの女用。-1なら男用を参照する"
+    },
+    {
+      "Field": "refFaceParamId",
+      "Name": "参照先の顔パラムID",
+      "Description": "「○○に合わせる」用の合わせ先の顔パラムID"
+    },
+    {
+      "Field": "refTextId",
+      "Name": "参照先テキストID",
+      "Description": "「○○に合わせる」用の表示テキストID"
+    },
+    {
+      "Field": "helpTextId",
+      "Name": "1行ヘルプテキストID（上書き）",
+      "Description": "1行ヘルプのテキストID(-1: 項目テキストIDで1行ヘルプを取得する)。基本的に項目テキストID＝1行ヘルプテキストIDになっているが、一部上書きしたいときにこのパラメータで指定する"
+    },
+    {
+      "Field": "unlockEventFlagId",
+      "Name": "イベントフラグID",
+      "Description": "この項目をアンロックするイベントフラグ(0:無効値)。無効値なら常にアンロックされる"
+    },
+    {
+      "Field": "reserved",
+      "Name": "予約",
+      "Description": ""
+    }
+  ]
+}

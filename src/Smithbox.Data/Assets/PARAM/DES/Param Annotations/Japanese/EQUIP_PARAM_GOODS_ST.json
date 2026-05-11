@@ -1,0 +1,183 @@
+{
+  "Param": "EQUIP_PARAM_GOODS_ST",
+  "Type": "EQUIP_PARAM_GOODS_ST",
+  "Name": "EQUIP_PARAM_GOODS_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "iconId",
+      "Name": "アイコンID",
+      "Description": "メニュー用アイコンID"
+    },
+    {
+      "Field": "goodsType",
+      "Name": "道具のタイプ",
+      "Description": "道具の種類"
+    },
+    {
+      "Field": "pad_0",
+      "Name": "パディング",
+      "Description": "pad"
+    },
+    {
+      "Field": "weight",
+      "Name": "重量[kg]",
+      "Description": "重量[kg]"
+    },
+    {
+      "Field": "modelId",
+      "Name": "モデルID",
+      "Description": "モデルID"
+    },
+    {
+      "Field": "pad_1",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "basicPrice",
+      "Name": "基本価格",
+      "Description": "基本価格"
+    },
+    {
+      "Field": "goodsCategory",
+      "Name": "道具カテゴリ",
+      "Description": "道具カテゴリ"
+    },
+    {
+      "Field": "pad_2",
+      "Name": "パディング",
+      "Description": "pad"
+    },
+    {
+      "Field": "goodsUseAnim",
+      "Name": "道具使用時アニメ",
+      "Description": "道具を使ったときに再生するアニメを設定します"
+    },
+    {
+      "Field": "behaviorId",
+      "Name": "行動ID",
+      "Description": "道具を使ったときに発生する効果を設定します"
+    },
+    {
+      "Field": "enable_live",
+      "Name": "生存使用可",
+      "Description": "生存プレイヤー使用可能か"
+    },
+    {
+      "Field": "enable_gray",
+      "Name": "グレイ使用可",
+      "Description": "グレイゴースト使用可能か"
+    },
+    {
+      "Field": "enable_white",
+      "Name": "白使用可",
+      "Description": "ホワイトゴースト使用可能か"
+    },
+    {
+      "Field": "enable_black",
+      "Name": "黒使用可",
+      "Description": "ブラックゴーストしよう可能か"
+    },
+    {
+      "Field": "enable_multi",
+      "Name": "マルチプレイ可",
+      "Description": "マルチプレイ中に使用可能か？"
+    },
+    {
+      "Field": "disable_offline",
+      "Name": "オフラインで使用不可",
+      "Description": "オフライン中に使用不可か？"
+    },
+    {
+      "Field": "pad_3",
+      "Name": "パディング",
+      "Description": "pad"
+    },
+    {
+      "Field": "isEquip",
+      "Name": "装備可能",
+      "Description": "装備できるかどうか"
+    },
+    {
+      "Field": "isConsume",
+      "Name": "消耗品か",
+      "Description": "使用時に消耗するか(所持数が減るか)"
+    },
+    {
+      "Field": "isAutoEquip",
+      "Name": "自動装備するか？",
+      "Description": "拾った時に自動で装備するか？"
+    },
+    {
+      "Field": "isEstablishment",
+      "Name": "設置型アイテムか？",
+      "Description": "設置型アイテムか？"
+    },
+    {
+      "Field": "shopLv",
+      "Name": "ショップレベル",
+      "Description": "お店で販売できるレベル"
+    },
+    {
+      "Field": "pad_5",
+      "Name": "パディング",
+      "Description": "pad"
+    },
+    {
+      "Field": "isDrop",
+      "Name": "捨てれるか",
+      "Description": "アイテムを捨てれるか？TRUE=捨てれる"
+    },
+    {
+      "Field": "isDisableHand",
+      "Name": "右素手に使えないか",
+      "Description": "右手武器が素手の場合に使用不可か"
+    },
+    {
+      "Field": "pad_6",
+      "Name": "パディング",
+      "Description": "pad"
+    },
+    {
+      "Field": "sortId",
+      "Name": "ソートID",
+      "Description": "ソートID(-1:集めない)"
+    },
+    {
+      "Field": "trophySGradeId",
+      "Name": "トロフィーSグレードID",
+      "Description": "トロフィのＳグレード番号"
+    },
+    {
+      "Field": "pad_7",
+      "Name": "pad",
+      "Description": ""
+    },
+    {
+      "Field": "qwcId",
+      "Name": "QWCID",
+      "Description": "QWCのパラメタiD"
+    },
+    {
+      "Field": "isEnhance",
+      "Name": "エンチャントするか？",
+      "Description": "武器にエンチャントするか？"
+    },
+    {
+      "Field": "opmeMenuType",
+      "Name": "メニュー開くか",
+      "Description": "アイテム使用時に開くメニュータイプ"
+    },
+    {
+      "Field": "pad_8",
+      "Name": "pad",
+      "Description": ""
+    },
+    {
+      "Field": "yesNoDialogMessageId",
+      "Name": "YES/NOメッセージID",
+      "Description": "YesNoダイアログ表示時に使用するメッセージID"
+    }
+  ]
+}

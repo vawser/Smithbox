@@ -1,0 +1,83 @@
+{
+  "Param": "MENU_WINDOW_PARAM_ST",
+  "Type": "MENU_WINDOW_PARAM_ST",
+  "Name": "MENU_WINDOW_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "unknown_0",
+      "Name": "unknown_0",
+      "Description": ""
+    },
+    {
+      "Field": "soundOpen",
+      "Name": "soundOpen",
+      "Description": ""
+    },
+    {
+      "Field": "soundUnk",
+      "Name": "soundUnk",
+      "Description": ""
+    },
+    {
+      "Field": "soundClose",
+      "Name": "soundClose",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_4a",
+      "Name": "unknown_4a",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_4b",
+      "Name": "unknown_4b",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_4c",
+      "Name": "unknown_4c",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_4d",
+      "Name": "unknown_4d",
+      "Description": ""
+    },
+    {
+      "Field": "iconId",
+      "Name": "iconId",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_5b",
+      "Name": "unknown_5b",
+      "Description": ""
+    },
+    {
+      "Field": "textId",
+      "Name": "textId",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_7",
+      "Name": "unknown_7",
+      "Description": ""
+    },
+    {
+      "Field": "menuPropertyLayoutParamId",
+      "Name": "menuPropertyLayoutParamId",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_9",
+      "Name": "unknown_9",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_10",
+      "Name": "unknown_10",
+      "Description": ""
+    }
+  ]
+}

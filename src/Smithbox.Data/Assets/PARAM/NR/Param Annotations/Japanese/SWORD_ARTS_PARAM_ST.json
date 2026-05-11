@@ -1,0 +1,208 @@
+{
+  "Param": "SWORD_ARTS_PARAM_ST",
+  "Type": "SWORD_ARTS_PARAM_ST",
+  "Name": "SWORD_ARTS_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "unknown_1",
+      "Name": "unknown_1",
+      "Description": ""
+    },
+    {
+      "Field": "sortGroupId",
+      "Name": "sortGroupId",
+      "Description": ""
+    },
+    {
+      "Field": "artsSpeedType",
+      "Name": "artsSpeedType",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_3a",
+      "Name": "unknown_3a",
+      "Description": ""
+    },
+    {
+      "Field": "isRefRightArts",
+      "Name": "isRefRightArts",
+      "Description": ""
+    },
+    {
+      "Field": "isGrayOutLeftHand",
+      "Name": "isGrayOutLeftHand",
+      "Description": ""
+    },
+    {
+      "Field": "isGrayOutRightHand",
+      "Name": "isGrayOutRightHand",
+      "Description": ""
+    },
+    {
+      "Field": "isGrayOutBothHand",
+      "Name": "isGrayOutBothHand",
+      "Description": ""
+    },
+    {
+      "Field": "enableSparringGrounds",
+      "Name": "enableSparringGrounds",
+      "Description": ""
+    },
+    {
+      "Field": "swordArtsType",
+      "Name": "swordArtsType",
+      "Description": ""
+    },
+    {
+      "Field": "sortId",
+      "Name": "sortId",
+      "Description": ""
+    },
+    {
+      "Field": "textId",
+      "Name": "テキストID",
+      "Description": "アーツ説明用のテキストID"
+    },
+    {
+      "Field": "useMagicPoint_L1",
+      "Name": "消費MP L1",
+      "Description": "L1によりアーツを出したときに消費するMP"
+    },
+    {
+      "Field": "useMagicPoint_L2",
+      "Name": "消費MP L2",
+      "Description": "L2によりアーツを出したときに消費するMP"
+    },
+    {
+      "Field": "useMagicPoint_R1",
+      "Name": "消費MP R1",
+      "Description": "R1によりアーツを出したときに消費するMP"
+    },
+    {
+      "Field": "useMagicPoint_R2",
+      "Name": "消費MP R2",
+      "Description": "R2によりアーツを出したときに消費するMP"
+    },
+    {
+      "Field": "isStartSkill_Duchess",
+      "Name": "isStartSkill_Duchess",
+      "Description": ""
+    },
+    {
+      "Field": "isStartSkill_Wylder",
+      "Name": "isStartSkill_Wylder",
+      "Description": ""
+    },
+    {
+      "Field": "isStartSkill_Executor",
+      "Name": "isStartSkill_Executor",
+      "Description": ""
+    },
+    {
+      "Field": "isStartSkill_Guardian",
+      "Name": "isStartSkill_Guardian",
+      "Description": ""
+    },
+    {
+      "Field": "isStartSkill_Raider",
+      "Name": "isStartSkill_Raider",
+      "Description": ""
+    },
+    {
+      "Field": "isStartSkill_Revenant",
+      "Name": "isStartSkill_Revenant",
+      "Description": ""
+    },
+    {
+      "Field": "isStartSkill_Ironeye",
+      "Name": "isStartSkill_Ironeye",
+      "Description": ""
+    },
+    {
+      "Field": "isStartSkill_Recluse",
+      "Name": "isStartSkill_Recluse",
+      "Description": ""
+    },
+    {
+      "Field": "defaultWepAttr",
+      "Name": "defaultWepAttr",
+      "Description": ""
+    },
+    {
+      "Field": "iconId",
+      "Name": "iconId",
+      "Description": ""
+    },
+    {
+      "Field": "aiUsageId",
+      "Name": "aiUsageId",
+      "Description": ""
+    },
+    {
+      "Field": "usabilityTextId",
+      "Name": "usabilityTextId",
+      "Description": ""
+    },
+    {
+      "Field": "atkParamId",
+      "Name": "atkParamId",
+      "Description": ""
+    },
+    {
+      "Field": "sparringGroundsWeaponId",
+      "Name": "sparringGroundsWeaponId",
+      "Description": ""
+    },
+    {
+      "Field": "sparringGroundsEventFlagId",
+      "Name": "sparringGroundsEventFlagId",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_4a",
+      "Name": "unknown_4a",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_4b",
+      "Name": "unknown_4b",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_4c",
+      "Name": "unknown_4c",
+      "Description": ""
+    },
+    {
+      "Field": "isStartSkill_Scholar",
+      "Name": "isStartSkill_Scholar",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_4e",
+      "Name": "unknown_4e",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_4f",
+      "Name": "unknown_4f",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_4g",
+      "Name": "unknown_4g",
+      "Description": ""
+    },
+    {
+      "Field": "isStartSkill_Undertaker",
+      "Name": "isStartSkill_Undertaker",
+      "Description": ""
+    },
+    {
+      "Field": "endPadding",
+      "Name": "endPadding",
+      "Description": ""
+    }
+  ]
+}

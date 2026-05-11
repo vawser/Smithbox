@@ -1,0 +1,63 @@
+{
+  "Param": "LENS_FLARE_BANK",
+  "Type": "LENS_FLARE_BANK",
+  "Name": "LENS_FLARE_BANK",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "texId",
+      "Name": "テクスチャID",
+      "Description": "テクスチャ(lensflare_??)"
+    },
+    {
+      "Field": "isFlare",
+      "Name": "フレアか",
+      "Description": "0:ゴースト, 1:フレア"
+    },
+    {
+      "Field": "enableRoll",
+      "Name": "回転有効",
+      "Description": "0:無効, 1:有効"
+    },
+    {
+      "Field": "enableScale",
+      "Name": "スケール有効",
+      "Description": "0:無効, 1:有効"
+    },
+    {
+      "Field": "dummy1",
+      "Name": "ダミー",
+      "Description": "ダミー"
+    },
+    {
+      "Field": "locateDistRate",
+      "Name": "配置距離率",
+      "Description": "0.0:光源位置～1.0:画面中心"
+    },
+    {
+      "Field": "texScale",
+      "Name": "テクスチャスケール",
+      "Description": "テクスチャのスケール"
+    },
+    {
+      "Field": "colR",
+      "Name": "Ｒ",
+      "Description": "テクスチャ乗算色"
+    },
+    {
+      "Field": "colG",
+      "Name": "Ｇ",
+      "Description": "テクスチャ乗算色"
+    },
+    {
+      "Field": "colB",
+      "Name": "Ｂ",
+      "Description": "テクスチャ乗算色"
+    },
+    {
+      "Field": "colA",
+      "Name": "Ａ",
+      "Description": "テクスチャ乗算色"
+    }
+  ]
+}

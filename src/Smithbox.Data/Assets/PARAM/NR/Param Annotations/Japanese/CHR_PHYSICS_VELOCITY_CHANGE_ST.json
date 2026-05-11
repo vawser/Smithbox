@@ -1,0 +1,63 @@
+{
+  "Param": "CHR_PHYSICS_VELOCITY_CHANGE_ST",
+  "Type": "CHR_PHYSICS_VELOCITY_CHANGE_ST",
+  "Name": "CHR_PHYSICS_VELOCITY_CHANGE_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "horizontalVelocityScale",
+      "Name": "horizontalVelocityScale",
+      "Description": ""
+    },
+    {
+      "Field": "verticalVelocityScale",
+      "Name": "verticalVelocityScale",
+      "Description": ""
+    },
+    {
+      "Field": "horizontalVelocityChange",
+      "Name": "horizontalVelocityChange",
+      "Description": ""
+    },
+    {
+      "Field": "verticalVelocityChange",
+      "Name": "verticalVelocityChange",
+      "Description": ""
+    },
+    {
+      "Field": "horizontalVelocityAngle",
+      "Name": "horizontalVelocityAngle",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_1",
+      "Name": "unknown_1",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_2",
+      "Name": "unknown_2",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_3",
+      "Name": "unknown_3",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_4",
+      "Name": "unknown_4",
+      "Description": ""
+    },
+    {
+      "Field": "fallControlParamId",
+      "Name": "fallControlParamId",
+      "Description": ""
+    },
+    {
+      "Field": "pad1",
+      "Name": "pad1",
+      "Description": ""
+    }
+  ]
+}

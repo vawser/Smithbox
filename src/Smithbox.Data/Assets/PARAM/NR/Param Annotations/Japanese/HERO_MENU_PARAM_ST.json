@@ -1,0 +1,88 @@
+{
+  "Param": "HERO_MENU_PARAM_ST",
+  "Type": "HERO_MENU_PARAM_ST",
+  "Name": "HERO_MENU_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "disableParam_NT",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "disableParamReserve1",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "disableParamReserve2",
+      "Description": ""
+    },
+    {
+      "Field": "charaInitParamId",
+      "Name": "charaInitParamId",
+      "Description": ""
+    },
+    {
+      "Field": "characterSelectPoseAnim",
+      "Name": "characterSelectPoseAnim",
+      "Description": ""
+    },
+    {
+      "Field": "characterSelectCameraId",
+      "Name": "characterSelectCameraId",
+      "Description": ""
+    },
+    {
+      "Field": "changeGarbCameraId",
+      "Name": "changeGarbCameraId",
+      "Description": ""
+    },
+    {
+      "Field": "changeGarbPoseAnim",
+      "Name": "changeGarbPoseAnim",
+      "Description": ""
+    },
+    {
+      "Field": "hpGrade",
+      "Name": "hpGrade",
+      "Description": ""
+    },
+    {
+      "Field": "fpGrade",
+      "Name": "fpGrade",
+      "Description": ""
+    },
+    {
+      "Field": "staminaGrade",
+      "Name": "staminaGrade",
+      "Description": ""
+    },
+    {
+      "Field": "strengthGrade",
+      "Name": "strengthGrade",
+      "Description": ""
+    },
+    {
+      "Field": "dexterityGrade",
+      "Name": "dexterityGrade",
+      "Description": ""
+    },
+    {
+      "Field": "intelligenceGrade",
+      "Name": "intelligenceGrade",
+      "Description": ""
+    },
+    {
+      "Field": "faithGrade",
+      "Name": "faithGrade",
+      "Description": ""
+    },
+    {
+      "Field": "arcaneGrade",
+      "Name": "arcaneGrade",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "Param": "FOOT_IK_PARAM_ST",
+  "Type": "FOOT_IK_PARAM_ST",
+  "Name": "FOOT_IK_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "onOffHokanTime",
+      "Name": "IKをオンオフしたときの補間時間[s]",
+      "Description": ""
+    },
+    {
+      "Field": "onOffGain",
+      "Name": "足の接地をオンオフするときのゲイン",
+      "Description": ""
+    },
+    {
+      "Field": "groundAscendingGain",
+      "Name": "地面の高さが高くなったときのゲイン",
+      "Description": ""
+    },
+    {
+      "Field": "groundDescendingGain",
+      "Name": "地面の高さが低くなったときのゲイン",
+      "Description": ""
+    },
+    {
+      "Field": "footRaisedGain",
+      "Name": "足が上がったときのゲイン",
+      "Description": ""
+    },
+    {
+      "Field": "footPlantedGain",
+      "Name": "足が接地したときのゲイン",
+      "Description": ""
+    },
+    {
+      "Field": "footLockingGain",
+      "Name": "足がロック/アンロックしたときのゲイン",
+      "Description": ""
+    },
+    {
+      "Field": "ankleRotationGain",
+      "Name": "足首の角度ゲイン",
+      "Description": ""
+    },
+    {
+      "Field": "twistKneeAxisType",
+      "Name": "ひねり用ひざ関節の回転を無視する軸方向",
+      "Description": ""
+    },
+    {
+      "Field": "footPlacementOn",
+      "Name": "足の接地が有効か",
+      "Description": ""
+    },
+    {
+      "Field": "isSlopeSlideOffset",
+      "Name": "斜面を滑るときの表示調整",
+      "Description": ""
+    },
+    {
+      "Field": "pad2",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "pad3",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "forwardUndulationRate",
+      "Name": "斜面傾き_前後割合",
+      "Description": "斜面傾き時に斜面に対してどのぐらい傾くのかを指定"
+    },
+    {
+      "Field": "sideUndulationRate",
+      "Name": "斜面傾き_左右割合",
+      "Description": "斜面傾き時に斜面に対してどのぐらい傾くのかを指定"
+    },
+    {
+      "Field": "undulationGain",
+      "Name": "斜面傾き_ゲイン値",
+      "Description": "斜面傾きのときの斜面にそうためのゲイン値"
+    },
+    {
+      "Field": "pad4",
+      "Name": "パディング",
+      "Description": ""
+    }
+  ]
+}

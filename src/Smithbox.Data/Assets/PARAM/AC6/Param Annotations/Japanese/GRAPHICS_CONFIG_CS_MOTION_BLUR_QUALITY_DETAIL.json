@@ -1,0 +1,43 @@
+{
+  "Param": "GRAPHICS_CONFIG_CS_MOTION_BLUR_QUALITY_DETAIL",
+  "Type": "GRAPHICS_CONFIG_CS_MOTION_BLUR_QUALITY_DETAIL",
+  "Name": "GRAPHICS_CONFIG_CS_MOTION_BLUR_QUALITY_DETAIL",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "enabled",
+      "Name": "モーションブラー有効",
+      "Description": "モーションブラー有効"
+    },
+    {
+      "Field": "ombEnabled",
+      "Name": "OMB(オブジェクトモーションブラー)有効",
+      "Description": "OMB(オブジェクトモーションブラー)有効"
+    },
+    {
+      "Field": "forceScaleVelocityBuffer",
+      "Name": "内部で使用するベロシティバッファの解像度を下げる",
+      "Description": "内部で使用するベロシティバッファの解像度を下げる。高精度ベロシティバッファを使っていない場合は効果ない"
+    },
+    {
+      "Field": "cheapFilterMode",
+      "Name": "通常、Reconstructionフィルタで処理されるが、軽い処理にダウングレードする",
+      "Description": "通常、Reconstructionフィルタで処理されるが、軽い処理にダウングレードする"
+    },
+    {
+      "Field": "sampleCountBias",
+      "Name": "サンプルカウントにオフセットを与える",
+      "Description": "サンプルカウントにオフセットを与える※2の倍数に設定して下さい"
+    },
+    {
+      "Field": "recurrenceCountBias",
+      "Name": "再帰ブラー回数にオフセットを与える",
+      "Description": "再帰ブラー回数にオフセットを与える"
+    },
+    {
+      "Field": "blurMaxLengthScale",
+      "Name": "ブラー最大長さパラメータに対するスケール値",
+      "Description": "ブラー最大長さパラメータに対するスケール値"
+    }
+  ]
+}

@@ -1,0 +1,388 @@
+{
+  "Param": "NETWORK_PARAM_ST",
+  "Type": "NETWORK_PARAM_ST",
+  "Name": "NETWORK_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "OneOnOneStandbyTextId",
+      "Name": "1vs1ラウンド開始前のテキスト演出ID",
+      "Description": ""
+    },
+    {
+      "Field": "StandbyMinTime",
+      "Name": "1vs1/3vs3ラウンド開始前のテキスト最低待機時間[s]",
+      "Description": ""
+    },
+    {
+      "Field": "OneOnOneRoundStartTextId",
+      "Name": "1vs1ラウンド開始直後のテキスト演出ID",
+      "Description": ""
+    },
+    {
+      "Field": "OneOnOneEnemyDestoryTextId",
+      "Name": "1vs1対戦相手を撃破テキスト演出ID",
+      "Description": ""
+    },
+    {
+      "Field": "OneOnOnePCDeadTextId",
+      "Name": "1vs1PCが死亡テキスト演出ID",
+      "Description": ""
+    },
+    {
+      "Field": "OneOnOnePCFallDeadTextId",
+      "Name": "1vs1PCが落下死亡テキスト演出ID",
+      "Description": ""
+    },
+    {
+      "Field": "OneOnOneResultTextId",
+      "Name": "1vs1勝敗結果テキスト演出ID",
+      "Description": ""
+    },
+    {
+      "Field": "OneOnOneTimeupTextId",
+      "Name": "1vs1タイムアップ時テキスト演出ID",
+      "Description": ""
+    },
+    {
+      "Field": "OneOnOneStartMyTeamCutsceneId",
+      "Name": "1vs1味方(Aチーム)登場カットシーンID",
+      "Description": ""
+    },
+    {
+      "Field": "OneOnOneStarEneTeamCutsceneId",
+      "Name": "1vs1敵(Bチーム)登場カットシーンID",
+      "Description": ""
+    },
+    {
+      "Field": "OneOnOneWinRoundNum",
+      "Name": "1vs1勝利ラウンド数",
+      "Description": ""
+    },
+    {
+      "Field": "pad14",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "OneOnOneRoundTime",
+      "Name": "1vs1制限時間(ソロマッチ)",
+      "Description": ""
+    },
+    {
+      "Field": "AWRoundStandbyTextId",
+      "Name": "3vs3開始前のテキスト演出ID",
+      "Description": ""
+    },
+    {
+      "Field": "AWRoundStartTextId",
+      "Name": "3vs3開始直後のテキスト演出ID",
+      "Description": ""
+    },
+    {
+      "Field": "AWEnemyDestoryTextId",
+      "Name": "3vs3対戦相手を撃破テキスト演出ID",
+      "Description": ""
+    },
+    {
+      "Field": "AWPCDeadTextId",
+      "Name": "3vs3PCが死亡テキスト演出ID",
+      "Description": ""
+    },
+    {
+      "Field": "AWPCFallDeadTextId",
+      "Name": "3vs3PCが落下死亡テキスト演出ID",
+      "Description": ""
+    },
+    {
+      "Field": "AWRespawnTextId",
+      "Name": "3vs3リスポン時テキスト演出ID",
+      "Description": ""
+    },
+    {
+      "Field": "AWTimeupTextId",
+      "Name": "3vs3タイムアップテキスト時テキスト演出ID",
+      "Description": ""
+    },
+    {
+      "Field": "AWResultTextId",
+      "Name": "3vs3勝敗結果テキスト演出ID",
+      "Description": ""
+    },
+    {
+      "Field": "AWStartMyTeamCutsceneId",
+      "Name": "3vs3味方(Aチーム)登場カットシーンID",
+      "Description": ""
+    },
+    {
+      "Field": "AWStarEneTeamCutsceneId",
+      "Name": "3vs3敵(Bチーム)登場カットシーンID",
+      "Description": ""
+    },
+    {
+      "Field": "AWBasePoint",
+      "Name": "3v3基礎ポイント",
+      "Description": ""
+    },
+    {
+      "Field": "AWFinishPoint",
+      "Name": "3v3トドメボーナス",
+      "Description": ""
+    },
+    {
+      "Field": "AWKillLeaderRate",
+      "Name": "3v3キルリーダー係数",
+      "Description": ""
+    },
+    {
+      "Field": "AWKillLeaderKillPoint",
+      "Name": "3v3キルリーダー撃破ボーナス基礎ポイント",
+      "Description": ""
+    },
+    {
+      "Field": "AWRespawnCoolTime",
+      "Name": "3vs3リスポンクールタイム[s]",
+      "Description": ""
+    },
+    {
+      "Field": "ArenaEneNoRespawnDist",
+      "Name": "3v3敵を中心とした円形のリスポーン不可エリア",
+      "Description": ""
+    },
+    {
+      "Field": "ArenaFriPrioritizeDist",
+      "Name": "3v3味方を中心とした円形のリスポーン優先エリア",
+      "Description": ""
+    },
+    {
+      "Field": "ArenaFriNoRespawnDist",
+      "Name": "3v3味方を中心とした円形のリスポーン不可エリア",
+      "Description": ""
+    },
+    {
+      "Field": "SupplyAssetId1",
+      "Name": "3v3補給機アセットID1",
+      "Description": ""
+    },
+    {
+      "Field": "SupplyAssetId2",
+      "Name": "3v3補給機アセットID2",
+      "Description": ""
+    },
+    {
+      "Field": "SupplyAssetId3",
+      "Name": "3v3補給機アセットID3",
+      "Description": ""
+    },
+    {
+      "Field": "SupplyAssetId4",
+      "Name": "3v3補給機アセットID4",
+      "Description": ""
+    },
+    {
+      "Field": "SupplyAssetId5",
+      "Name": "3v3補給機アセットID5",
+      "Description": ""
+    },
+    {
+      "Field": "SupplyAssetId6",
+      "Name": "3v3補給機アセットID6",
+      "Description": ""
+    },
+    {
+      "Field": "SupplyAssetId7",
+      "Name": "3v3補給機アセットID7",
+      "Description": ""
+    },
+    {
+      "Field": "SupplyAssetId8",
+      "Name": "3v3補給機アセットID8",
+      "Description": ""
+    },
+    {
+      "Field": "SupplyCoolTime",
+      "Name": "3v3補給機再利用クールタイム[s]",
+      "Description": ""
+    },
+    {
+      "Field": "pad11",
+      "Name": "3v3クールタイム枠予約",
+      "Description": ""
+    },
+    {
+      "Field": "SupplyRecoverPerSec",
+      "Name": "3v3補給機回復速度[point/s]",
+      "Description": ""
+    },
+    {
+      "Field": "pad12",
+      "Name": "3v3回復速度枠予約",
+      "Description": ""
+    },
+    {
+      "Field": "SupplyActionButtonParamId",
+      "Name": "3v3補給機アクションボタンパラムID",
+      "Description": ""
+    },
+    {
+      "Field": "arenaGameFlowSyncTimeout",
+      "Name": "アリーナ対戦フロー中同期タイムアウト時間[s]",
+      "Description": "対戦開始やラウンドの区切りなどフローの同期タイミングで使用"
+    },
+    {
+      "Field": "ArenaResultMenuTimeout",
+      "Name": "リザルト画面タイムアウト秒数[s]",
+      "Description": ""
+    },
+    {
+      "Field": "RequestPollMatchingTicketInterval",
+      "Name": "RequestPollMatchingTicket間隔[s]",
+      "Description": ""
+    },
+    {
+      "Field": "RequestUpdateRoomTicketInterval",
+      "Name": "RequestUpdateRoom間隔[s]",
+      "Description": ""
+    },
+    {
+      "Field": "RemoteDeltaPosDelayGain",
+      "Name": "リモートキャラ座標遅延ゲイン",
+      "Description": ""
+    },
+    {
+      "Field": "RemoteDeltaPosDelayGainAudience",
+      "Name": "リモートキャラ座標遅延ゲイン(観戦モード)",
+      "Description": ""
+    },
+    {
+      "Field": "RemotePosDelta_Max",
+      "Name": "リモートキャラワープ発動速度[m/s]閾値",
+      "Description": ""
+    },
+    {
+      "Field": "bgmId0",
+      "Name": "BGMID0",
+      "Description": ""
+    },
+    {
+      "Field": "bgmId1",
+      "Name": "BGMID1",
+      "Description": ""
+    },
+    {
+      "Field": "bgmId2",
+      "Name": "BGMID2",
+      "Description": ""
+    },
+    {
+      "Field": "bgmId3",
+      "Name": "BGMID3",
+      "Description": ""
+    },
+    {
+      "Field": "bgmId4",
+      "Name": "BGMID4",
+      "Description": ""
+    },
+    {
+      "Field": "bgmId5",
+      "Name": "BGMID5",
+      "Description": ""
+    },
+    {
+      "Field": "bgmId6",
+      "Name": "BGMID6",
+      "Description": ""
+    },
+    {
+      "Field": "bgmId7",
+      "Name": "BGMID7",
+      "Description": ""
+    },
+    {
+      "Field": "bgmId8",
+      "Name": "BGMID8",
+      "Description": ""
+    },
+    {
+      "Field": "bgmId9",
+      "Name": "BGMID9",
+      "Description": ""
+    },
+    {
+      "Field": "OneOnOneGameToResultWaitTime",
+      "Name": "1vs1撃破/死亡→win/loseへの待機時間",
+      "Description": ""
+    },
+    {
+      "Field": "OneOnOneResultToEndWaitTime",
+      "Name": "1vs1win/lose/draw→暗転への待機時間",
+      "Description": ""
+    },
+    {
+      "Field": "AWTimeupToResultWaitTime",
+      "Name": "3vs3タイムアップ→win/lose/drawへの待機時間",
+      "Description": ""
+    },
+    {
+      "Field": "AWResultToEndWaitTime",
+      "Name": "3vs3win/lose/draw→暗転への待機時間",
+      "Description": ""
+    },
+    {
+      "Field": "AWLimitTime",
+      "Name": "3vs3制限時間(チームマッチ)",
+      "Description": ""
+    },
+    {
+      "Field": "unk134",
+      "Name": "unk134",
+      "Description": ""
+    },
+    {
+      "Field": "unk138",
+      "Name": "unk138",
+      "Description": ""
+    },
+    {
+      "Field": "unk13c",
+      "Name": "unk13c",
+      "Description": ""
+    },
+    {
+      "Field": "unk140",
+      "Name": "unk140",
+      "Description": ""
+    },
+    {
+      "Field": "unk144",
+      "Name": "unk144",
+      "Description": ""
+    },
+    {
+      "Field": "unk148",
+      "Name": "unk148",
+      "Description": ""
+    },
+    {
+      "Field": "unk14c",
+      "Name": "unk14c",
+      "Description": ""
+    },
+    {
+      "Field": "unk150",
+      "Name": "unk150",
+      "Description": ""
+    },
+    {
+      "Field": "unk154",
+      "Name": "unk154",
+      "Description": ""
+    },
+    {
+      "Field": "pad10",
+      "Name": "予約",
+      "Description": ""
+    }
+  ]
+}

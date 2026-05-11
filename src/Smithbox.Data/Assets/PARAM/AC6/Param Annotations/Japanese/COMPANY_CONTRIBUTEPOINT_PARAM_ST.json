@@ -1,0 +1,58 @@
+{
+  "Param": "COMPANY_CONTRIBUTEPOINT_PARAM_ST",
+  "Type": "COMPANY_CONTRIBUTEPOINT_PARAM_ST",
+  "Name": "COMPANY_CONTRIBUTEPOINT_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "NT版出力から外すか",
+      "Description": "NT版から除外するか、除外するものに○をつける"
+    },
+    {
+      "Field": "disableParam_Product",
+      "Name": "製品版出力から外すか",
+      "Description": "製品版から除外するか、除外するものに○をつける"
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "パッケージ出力用リザーブ1",
+      "Description": "パッケージ出力用リザーブ1"
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "パッケージ出力用リザーブ2",
+      "Description": "パッケージ出力用リザーブ2"
+    },
+    {
+      "Field": "point_0",
+      "Name": "企業A",
+      "Description": "企業Aの貢献度加算値"
+    },
+    {
+      "Field": "point_1",
+      "Name": "企業B",
+      "Description": "企業Bの貢献度加算値"
+    },
+    {
+      "Field": "point_2",
+      "Name": "企業C",
+      "Description": "企業Cの貢献度加算値"
+    },
+    {
+      "Field": "point_3",
+      "Name": "企業D",
+      "Description": "企業Dの貢献度加算値"
+    },
+    {
+      "Field": "point_4",
+      "Name": "企業E",
+      "Description": "企業Eの貢献度加算値"
+    },
+    {
+      "Field": "reserved",
+      "Name": "予約",
+      "Description": "----"
+    }
+  ]
+}

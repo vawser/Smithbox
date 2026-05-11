@@ -1,0 +1,68 @@
+{
+  "Param": "RESOURCEITEM_PARAM_ST",
+  "Type": "RESOURCEITEM_PARAM_ST",
+  "Name": "RESOURCEITEM_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "SfxIdOnMap",
+      "Name": "SFXID(マップ配置)",
+      "Description": "SFXID(マップ配置)"
+    },
+    {
+      "Field": "SfxIdFlying",
+      "Name": "SFXID(キャラに飛んでくる)",
+      "Description": "SFXID(キャラに飛んでくる)"
+    },
+    {
+      "Field": "SfxIdOnHit",
+      "Name": "SFXID(キャラに着弾)",
+      "Description": "SFXID(キャラに着弾)"
+    },
+    {
+      "Field": "ItemID",
+      "Name": "アイテムID",
+      "Description": "アイテムID"
+    },
+    {
+      "Field": "ActionUnlockType",
+      "Name": "アクション解禁状況判定",
+      "Description": "指定したアクションが解禁されている（1つでも解禁できるアイテムを持っている）なら取得できる"
+    },
+    {
+      "Field": "pad1",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "GetVelocityMin",
+      "Name": "取得時初速度_最小[m/s]",
+      "Description": "飛んでくる初速の最小速度を設定する。最小初速と最大初速の間からランダムで初速が決まる"
+    },
+    {
+      "Field": "GetVelocityMax",
+      "Name": "取得時初速度_最大[m/s]",
+      "Description": "飛んでくる初速の最大速度を設定する。最小初速と最大初速の間からランダムで初速が決まる"
+    },
+    {
+      "Field": "GetVelocity",
+      "Name": "取得時加速度[m/s]",
+      "Description": "飛んでくる時の加速度を設定する"
+    },
+    {
+      "Field": "GetMaxSpeed",
+      "Name": "取得時最高速度[m/s]",
+      "Description": "飛んでくる時の最高速度を設定する。加速してもこの速度以上にはならない。"
+    },
+    {
+      "Field": "GetTimeoutTime",
+      "Name": "取得タイムアウト時間[s]",
+      "Description": "飛んでくるアイテムがプレイヤーにたどり着かなくても、この時間を経過すると強制的に取得する"
+    },
+    {
+      "Field": "pad",
+      "Name": "パディング",
+      "Description": ""
+    }
+  ]
+}

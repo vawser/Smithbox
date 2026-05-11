@@ -1,0 +1,83 @@
+{
+  "Param": "TONE_MAP_BANK",
+  "Type": "TONE_MAP_BANK",
+  "Name": "TONE_MAP_BANK",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "bloomBegin",
+      "Name": "近傍ブルーム閾値[％]",
+      "Description": ""
+    },
+    {
+      "Field": "bloomMul",
+      "Name": "近傍ブルーム倍率[％]",
+      "Description": ""
+    },
+    {
+      "Field": "bloomBeginFar",
+      "Name": "遠方ブルーム閾値[％]",
+      "Description": ""
+    },
+    {
+      "Field": "bloomMulFar",
+      "Name": "遠方ブルーム倍率[％]",
+      "Description": ""
+    },
+    {
+      "Field": "bloomNearDist",
+      "Name": "ブルーム近傍距離",
+      "Description": "傍のパラメータが適用されます。(m)"
+    },
+    {
+      "Field": "bloomFarDist",
+      "Name": "ブルーム遠方距離",
+      "Description": "方のパラメータが適用されます。(m)"
+    },
+    {
+      "Field": "grayKeyValue",
+      "Name": "トーンマップの基準値",
+      "Description": "と画面が明るくなり小さいと画面が暗くなります"
+    },
+    {
+      "Field": "minAdaptedLum",
+      "Name": "最小適応輝度",
+      "Description": "と暗い場所に適応して見えるようになります"
+    },
+    {
+      "Field": "maxAdapredLum",
+      "Name": "最大適応輝度",
+      "Description": "と明るい場所に適応して見えるようになります"
+    },
+    {
+      "Field": "adaptSpeed",
+      "Name": "適応速度",
+      "Description": "明順応、暗順応の速度が速くなります"
+    },
+    {
+      "Field": "lightShaftBegin",
+      "Name": "ライトシャフト閾値[％]",
+      "Description": "えると光の筋がでます"
+    },
+    {
+      "Field": "pad_0",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "lightShaftPower",
+      "Name": "ライトシャフトの強さ",
+      "Description": "強さです。(0で消えます)"
+    },
+    {
+      "Field": "lightShaftAttenRate",
+      "Name": "ライトシャフトの減衰率",
+      "Description": "減衰率です。小さくすると短くなります"
+    },
+    {
+      "Field": "inverseToneMapMul",
+      "Name": "inverseToneMapMul",
+      "Description": ""
+    }
+  ]
+}

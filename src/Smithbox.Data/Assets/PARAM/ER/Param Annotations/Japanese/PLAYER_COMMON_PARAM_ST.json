@@ -1,0 +1,368 @@
+{
+  "Param": "PLAYER_COMMON_PARAM_ST",
+  "Type": "PLAYER_COMMON_PARAM_ST",
+  "Name": "PLAYER_COMMON_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "playerFootEffect_bySFX",
+      "Name": "プレイヤーの自動フットエフェクトのSFX識別子[3桁]",
+      "Description": "自動フットエフェクトのSFXIDに使われる識別子です。XYYZZZのZZZにあたります。"
+    },
+    {
+      "Field": "snipeModeDrawAlpha_FadeTime",
+      "Name": "精密射撃時プレイヤー非表示フェード時間",
+      "Description": "精密射撃時にプレイヤーを非表示にするときのフェード時間です。単位は秒"
+    },
+    {
+      "Field": "toughnessRecoverCorrection",
+      "Name": "プレイヤー強靭度 回復時間補正値",
+      "Description": "プレイヤーの強靭度回復時間の計算に使われる補正値です。"
+    },
+    {
+      "Field": "baseMagicSlotSize",
+      "Name": "魔法記憶スロット初期値",
+      "Description": "魔法記憶スロット初期値"
+    },
+    {
+      "Field": "baseAccSlotNum",
+      "Name": "タリスマン装備スロット初期値",
+      "Description": "タリスマン装備スロット初期値"
+    },
+    {
+      "Field": "reserved02",
+      "Name": "予約",
+      "Description": "(dummy8)"
+    },
+    {
+      "Field": "animeID_DropItemPick",
+      "Name": "ドロップアイテム取得アニメーションID",
+      "Description": "ドロップアイテムを拾った時のアニメーションID"
+    },
+    {
+      "Field": "resistRecoverPoint_Sleep_Player",
+      "Name": "プレイヤー耐性値回復量_睡眠[point/s]",
+      "Description": "プレイヤー耐性値回復量_睡眠[point/s]"
+    },
+    {
+      "Field": "flareOverrideHomingAngle",
+      "Name": "フレア上書き誘導性能[deg/s]",
+      "Description": "フレア上書き誘導性能[deg/s](-1:上書きなし)"
+    },
+    {
+      "Field": "flareOverrideHomingStopRange",
+      "Name": "フレア上書き誘導停止距離[m]",
+      "Description": "フレア上書き誘導停止距離[m](-1:上書きなし)"
+    },
+    {
+      "Field": "animeID_SleepCollectorItemPick",
+      "Name": "ネムリアイテム取得時のアニメーションID",
+      "Description": "ネムリアイテム取得時のアニメーションID"
+    },
+    {
+      "Field": "unlockEventFlagBaseId_forWepAttr",
+      "Name": "武器属性解禁イベントフラグベースID",
+      "Description": "武器属性解禁イベントフラグベースID"
+    },
+    {
+      "Field": "systemEnchant_BigRune",
+      "Name": "システム経由大ルーン発動用特殊効果ID",
+      "Description": "システムからの大ルーン発動の際に呼び出す特殊効果Id"
+    },
+    {
+      "Field": "lowStatus_AtkPowDown",
+      "Name": "ステータス不足 基本攻撃力低下量",
+      "Description": "ステータス不足 基本攻撃力低下量"
+    },
+    {
+      "Field": "lowStatus_ConsumeStaminaRate",
+      "Name": "ステータス不足 スタミナ消費倍率",
+      "Description": "ステータス不足 スタミナ消費倍率"
+    },
+    {
+      "Field": "lowStatus_AtkGuardBreak",
+      "Name": "ステータス不足 弾き攻撃力",
+      "Description": "ステータス不足 弾き攻撃力"
+    },
+    {
+      "Field": "guardStatusCorrect_MaxStatusVal",
+      "Name": "盾ステータス補正 判定ステータス最大値",
+      "Description": "盾の性能のステータス補正値を計算するときに使う、性能が上昇する最大ステータス値"
+    },
+    {
+      "Field": "unlockEventFlagStepNum_forWepAttr",
+      "Name": "武器属性解禁イベントフラグステップ数",
+      "Description": "ベースIDから武器属性IDごとにどのぐらい間隔を空けるか。武器属性解禁イベントフラグID＝《武器属性解禁イベントフラグベースID》＋武器属性ID×《武器属性解禁イベントフラグステップ数》"
+    },
+    {
+      "Field": "retributionMagic_damageCountNum",
+      "Name": "因果応報_反撃までの被ダメージ回数",
+      "Description": "因果応報_反撃までの被ダメージ回数"
+    },
+    {
+      "Field": "retributionMagic_damageCountRemainTime",
+      "Name": "因果応報_反撃までの被ダメージ回数存続時間[s]",
+      "Description": "因果応報_反撃までの被ダメージ回数存続時間[s]"
+    },
+    {
+      "Field": "retributionMagic_burstDmypolyId",
+      "Name": "因果応報_反撃魔法ダミポリID",
+      "Description": "因果応報_反撃魔法ダミポリID"
+    },
+    {
+      "Field": "retributionMagic_burstMagicParamId",
+      "Name": "因果応報_反撃魔法パラムID",
+      "Description": "因果応報_反撃魔法パラムID"
+    },
+    {
+      "Field": "chrAimCam_rideOffsetHeight",
+      "Name": "騎乗精密射撃カメラオフセット高さ",
+      "Description": "騎乗精密射撃カメラオフセット高さ"
+    },
+    {
+      "Field": "reserved23",
+      "Name": "予約",
+      "Description": "(dummy8)"
+    },
+    {
+      "Field": "arrowCaseWepBindDmypolyId",
+      "Name": "矢筒の吸着ダミポリID",
+      "Description": "矢筒の吸着ダミポリID"
+    },
+    {
+      "Field": "boltPouchWepBindDmypolyId",
+      "Name": "ボルト筒の吸着ダミポリID",
+      "Description": "ボルト筒の吸着ダミポリID（ただしボルト筒単独の場合は矢筒のダミポリIDが使われる）"
+    },
+    {
+      "Field": "estusFlaskAllocateRate",
+      "Name": "マルチ時クライアント瓶補正倍率",
+      "Description": "マルチ時クライアント瓶補正倍率(0.5指定で所持数半分に)"
+    },
+    {
+      "Field": "reserved38",
+      "Name": "予約",
+      "Description": "(dummy8)"
+    },
+    {
+      "Field": "kickAcceptanceDeg",
+      "Name": "プレイヤー正面から見てキックを出せる角度",
+      "Description": "プレイヤー正面から見てキックを出せる角度"
+    },
+    {
+      "Field": "npcPlayerAnalogWeightRate_Light",
+      "Name": "NPCプレイヤー用アナログ重量比率_軽量",
+      "Description": "NPCプレイヤー用アナログ重量比率[%]。軽量。"
+    },
+    {
+      "Field": "npcPlayerAnalogWeightRate_Normal",
+      "Name": "NPCプレイヤー用アナログ重量比率_中量",
+      "Description": "NPCプレイヤー用アナログ重量比率[%]。中量。"
+    },
+    {
+      "Field": "npcPlayerAnalogWeightRate_Heavy",
+      "Name": "NPCプレイヤー用アナログ重量比率_重量",
+      "Description": "NPCプレイヤー用アナログ重量比率[%]。重量。"
+    },
+    {
+      "Field": "npcPlayerAnalogWeightRate_WeightOver",
+      "Name": "NPCプレイヤー用アナログ重量比率_重量過多",
+      "Description": "NPCプレイヤー用アナログ重量比率[%]。重量過多。"
+    },
+    {
+      "Field": "npcPlayerAnalogWeightRate_SuperLight",
+      "Name": "NPCプレイヤー用アナログ重量比率_超軽量",
+      "Description": "NPCプレイヤー用アナログ重量比率[%]。超軽量。"
+    },
+    {
+      "Field": "reserved45",
+      "Name": "予約",
+      "Description": "(dummy8)"
+    },
+    {
+      "Field": "clearCountCorrectBaseSpEffectId",
+      "Name": "周回補正特殊効果基準ID",
+      "Description": "周回補正のためにかける特殊効果の基準ID"
+    },
+    {
+      "Field": "arrowBoltModelIdOffset",
+      "Name": "矢、ボルトのモデルIdオフセット",
+      "Description": "矢、ボルトモデルを表示する際に、スロット１に装備された場合のモデルIDに加えるオフセット。（モデルId+オフセット値）"
+    },
+    {
+      "Field": "arrowBoltRemainingNumModelMaskThreshold1",
+      "Name": "矢、ボルトの残量によるモデルマスクの残数閾値_1段階[%]",
+      "Description": "矢、ボルトモデルを表示する際に、本数による表示マスクをかけるときの閾値の１段階判定値[%]。（この値より多ければ１段階表示）"
+    },
+    {
+      "Field": "arrowBoltRemainingNumModelMaskThreshold2",
+      "Name": "矢、ボルトの残量によるモデルマスクの残数閾値_2段階[%]",
+      "Description": "矢、ボルトモデルを表示する際に、本数による表示マスクをかけるときの閾値の２段階判定値[%]。（この値より多ければ２段階表示）"
+    },
+    {
+      "Field": "reserved27",
+      "Name": "予約",
+      "Description": "(dummy8)"
+    },
+    {
+      "Field": "resistRecoverPoint_Poision_Player",
+      "Name": "プレイヤー耐性値回復量_毒[point/s]",
+      "Description": "プレイヤー耐性値回復量_毒[point/s]"
+    },
+    {
+      "Field": "resistRecoverPoint_Desease_Player",
+      "Name": "プレイヤー耐性値回復量_疫病[point/s]",
+      "Description": "プレイヤー耐性値回復量_疫病[point/s]"
+    },
+    {
+      "Field": "resistRecoverPoint_Blood_Player",
+      "Name": "プレイヤー耐性値回復量_出血[point/s]",
+      "Description": "プレイヤー耐性値回復量_出血[point/s]"
+    },
+    {
+      "Field": "resistRecoverPoint_Curse_Player",
+      "Name": "プレイヤー耐性値回復量_呪い[point/s]",
+      "Description": "プレイヤー耐性値回復量_呪い[point/s]"
+    },
+    {
+      "Field": "resistRecoverPoint_Freeze_Player",
+      "Name": "プレイヤー耐性値回復量_冷気[point/s]",
+      "Description": "プレイヤー耐性値回復量_冷気[point/s]"
+    },
+    {
+      "Field": "resistRecoverPoint_Poision_Enemy",
+      "Name": "敵耐性値回復量_毒[point/s]",
+      "Description": "敵耐性値回復量_毒[point/s]"
+    },
+    {
+      "Field": "resistRecoverPoint_Desease_Enemy",
+      "Name": "敵耐性値回復量_疫病[point/s]",
+      "Description": "敵耐性値回復量_疫病[point/s]"
+    },
+    {
+      "Field": "resistRecoverPoint_Blood_Enemy",
+      "Name": "敵耐性値回復量_出血[point/s]",
+      "Description": "敵耐性値回復量_出血[point/s]"
+    },
+    {
+      "Field": "resistRecoverPoint_Curse_Enemy",
+      "Name": "敵耐性値回復量_呪い[point/s]",
+      "Description": "敵耐性値回復量_呪い[point/s]"
+    },
+    {
+      "Field": "resistRecoverPoint_Freeze_Enemy",
+      "Name": "敵耐性値回復量_冷気[point/s]",
+      "Description": "敵耐性値回復量_冷気[point/s]"
+    },
+    {
+      "Field": "requestTimeLeftBothHand",
+      "Name": "左手両手持ちリクエストのボタン長押し時間[s]",
+      "Description": "左手両手持ちするときのボタン入力時間"
+    },
+    {
+      "Field": "resistRecoverPoint_Madness_Player",
+      "Name": "プレイヤー耐性値回復量_発狂[point/s]",
+      "Description": "プレイヤー耐性値回復量_発狂[point/s]"
+    },
+    {
+      "Field": "animeID_MaterialItemPick",
+      "Name": "素材アイテム取得アニメーションID",
+      "Description": "素材アイテムを拾った時のアニメーションID"
+    },
+    {
+      "Field": "hpEstusFlaskAllocateRateForYellowMonk",
+      "Name": "黄衣HPエスト瓶補正倍率 ",
+      "Description": "黄衣HPエスト瓶補正倍率 "
+    },
+    {
+      "Field": "hpEstusFlaskAllocateOffsetForYellowMonk",
+      "Name": "黄衣HPエスト瓶オフセット",
+      "Description": "黄衣HPエスト瓶オフセット"
+    },
+    {
+      "Field": "mpEstusFlaskAllocateRateForYellowMonk",
+      "Name": "黄衣MPエスト瓶補正倍率",
+      "Description": "黄衣MPエスト瓶補正倍率"
+    },
+    {
+      "Field": "mpEstusFlaskAllocateOffsetForYellowMonk",
+      "Name": "黄衣MPエスト瓶オフセット",
+      "Description": "黄衣MPエスト瓶オフセット"
+    },
+    {
+      "Field": "resistRecoverPoint_Sleep_Enemy",
+      "Name": "敵耐性値回復量_睡眠[point/s]",
+      "Description": "敵耐性値回復量_睡眠[point/s]"
+    },
+    {
+      "Field": "resistRecoverPoint_Madness_Enemy",
+      "Name": "敵耐性値回復量_発狂[point/s]",
+      "Description": "敵耐性値回復量_発狂[point/s]"
+    },
+    {
+      "Field": "resistCurseItemId",
+      "Name": "状態異常_即死_即死アイテムID",
+      "Description": "状態異常_即死_即死アイテムID"
+    },
+    {
+      "Field": "resistCurseItemMaxNum",
+      "Name": "状態異常_即死_即死アイテム最大数",
+      "Description": "状態異常_即死_即死アイテム最大数"
+    },
+    {
+      "Field": "reserved_123",
+      "Name": "予約",
+      "Description": "(dummy8)"
+    },
+    {
+      "Field": "resistCurseItemSpEffectBaseId",
+      "Name": "状態異常_即死_即死アイテム所持特殊効果ベースID",
+      "Description": "状態異常_即死_即死アイテム所持特殊効果ベースID"
+    },
+    {
+      "Field": "resistCurseItemLotParamId_map",
+      "Name": "状態異常_即死_即死時アイテム抽選ID_マップ用",
+      "Description": "状態異常_即死_即死時アイテム抽選ID_マップ用"
+    },
+    {
+      "Field": "reserved41_old",
+      "Name": "reserved41_old",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0xcc",
+      "Name": "unknown_0xcc",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0xd0",
+      "Name": "unknown_0xd0",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0xd4",
+      "Name": "unknown_0xd4",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0xd8",
+      "Name": "unknown_0xd8",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0xdc",
+      "Name": "unknown_0xdc",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0xe0",
+      "Name": "unknown_0xe0",
+      "Description": ""
+    },
+    {
+      "Field": "reserved41",
+      "Name": "予約",
+      "Description": "(dummy8)"
+    }
+  ]
+}

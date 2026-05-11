@@ -1,0 +1,73 @@
+{
+  "Param": "BOOST_PARAM_ST",
+  "Type": "BOOST_PARAM_ST",
+  "Name": "BOOST_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "sfxId0",
+      "Name": "カウンターブーストsfxID0",
+      "Description": "dmyPolyId0\u3000から出るSfxのID"
+    },
+    {
+      "Field": "sfxId1",
+      "Name": "カウンターブーストsfxID1",
+      "Description": "dmyPolyId1\u3000から出るSfxのID"
+    },
+    {
+      "Field": "sfxId2",
+      "Name": "カウンターブーストsfxID2",
+      "Description": "dmyPolyId2\u3000から出るSfxのID"
+    },
+    {
+      "Field": "padding1",
+      "Name": "パディング1",
+      "Description": ""
+    },
+    {
+      "Field": "dmyPolyId0",
+      "Name": "カウンターブーストsfxを出すダミポリID0",
+      "Description": "sfxId0\u3000で指定されたSfxを出すダミポリのID"
+    },
+    {
+      "Field": "dmyPolyId1",
+      "Name": "カウンターブーストsfxを出すダミポリID1",
+      "Description": "sfxId1\u3000で指定されたSfxを出すダミポリのID"
+    },
+    {
+      "Field": "dmyPolyId2",
+      "Name": "カウンターブーストsfxを出すダミポリID2",
+      "Description": "sfxId2\u3000で指定されたSfxを出すダミポリのID"
+    },
+    {
+      "Field": "padding2",
+      "Name": "パディング2",
+      "Description": ""
+    },
+    {
+      "Field": "sfxScale",
+      "Name": "Sfxの大きさ倍率",
+      "Description": "Sfxの大きさの倍率 1.0でそのまま、0.5で半分"
+    },
+    {
+      "Field": "counterBoostActiveAngleDeg",
+      "Name": "カウンターブーストが有効になる角度[Deg]",
+      "Description": "カウンターブーストが有効になる角度の範囲、90で移動方向とダミポリ方向の内積が0以上の時に有効になる"
+    },
+    {
+      "Field": "boostDirLerpRate",
+      "Name": "ブースト方向補間率：通常[Rate/Frame]",
+      "Description": "通常ブースト時のブースターの方向変換の補間率[Rate/Frame]"
+    },
+    {
+      "Field": "counterBoostDirLerpRate",
+      "Name": "ブースト方向補間率：カウンターブースト[Rate/Frame]",
+      "Description": "カウンターブースト時のブースターの方向変換の補間率[Rate/Frame]"
+    },
+    {
+      "Field": "tailPadding",
+      "Name": "末尾パディング",
+      "Description": "末尾パディング"
+    }
+  ]
+}

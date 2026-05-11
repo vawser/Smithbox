@@ -1,0 +1,28 @@
+{
+  "Param": "CHARMAKEMENU_LISTITEM_PARAM_ST",
+  "Type": "CHARMAKEMENU_LISTITEM_PARAM_ST",
+  "Name": "CHARMAKEMENU_LISTITEM_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "value",
+      "Name": "値",
+      "Description": "プログラム側に扱う値。1つのグループ内で通し番号にする"
+    },
+    {
+      "Field": "captionId",
+      "Name": "項目テキストID",
+      "Description": "表示するテキストのID"
+    },
+    {
+      "Field": "iconId",
+      "Name": "アイコンID",
+      "Description": "表示するアイコンのID"
+    },
+    {
+      "Field": "reserved",
+      "Name": "予約",
+      "Description": ""
+    }
+  ]
+}

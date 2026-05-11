@@ -1,0 +1,168 @@
+{
+  "Param": "ATK_NPC_OPERATION_PARTS_PARAM_ST",
+  "Type": "ATK_NPC_OPERATION_PARTS_PARAM_ST",
+  "Name": "ATK_NPC_OPERATION_PARTS_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "parts0",
+      "Name": "武器0",
+      "Description": ""
+    },
+    {
+      "Field": "parts1",
+      "Name": "武器1",
+      "Description": ""
+    },
+    {
+      "Field": "parts2",
+      "Name": "武器2",
+      "Description": ""
+    },
+    {
+      "Field": "parts3",
+      "Name": "武器3",
+      "Description": ""
+    },
+    {
+      "Field": "parts4",
+      "Name": "武器4",
+      "Description": ""
+    },
+    {
+      "Field": "parts5",
+      "Name": "武器5",
+      "Description": ""
+    },
+    {
+      "Field": "parts6",
+      "Name": "武器6",
+      "Description": ""
+    },
+    {
+      "Field": "parts7",
+      "Name": "武器7",
+      "Description": ""
+    },
+    {
+      "Field": "parts8",
+      "Name": "武器8",
+      "Description": ""
+    },
+    {
+      "Field": "parts9",
+      "Name": "武器9",
+      "Description": ""
+    },
+    {
+      "Field": "parts10",
+      "Name": "武器10",
+      "Description": ""
+    },
+    {
+      "Field": "parts11",
+      "Name": "武器11",
+      "Description": ""
+    },
+    {
+      "Field": "parts12",
+      "Name": "武器12",
+      "Description": ""
+    },
+    {
+      "Field": "parts13",
+      "Name": "武器13",
+      "Description": ""
+    },
+    {
+      "Field": "parts14",
+      "Name": "武器14",
+      "Description": ""
+    },
+    {
+      "Field": "parts15",
+      "Name": "武器15",
+      "Description": ""
+    },
+    {
+      "Field": "parts16",
+      "Name": "武器16",
+      "Description": ""
+    },
+    {
+      "Field": "parts17",
+      "Name": "武器17",
+      "Description": ""
+    },
+    {
+      "Field": "parts18",
+      "Name": "武器18",
+      "Description": ""
+    },
+    {
+      "Field": "parts19",
+      "Name": "武器19",
+      "Description": ""
+    },
+    {
+      "Field": "parts20",
+      "Name": "武器20",
+      "Description": ""
+    },
+    {
+      "Field": "parts21",
+      "Name": "武器21",
+      "Description": ""
+    },
+    {
+      "Field": "parts22",
+      "Name": "武器22",
+      "Description": ""
+    },
+    {
+      "Field": "parts23",
+      "Name": "武器23",
+      "Description": ""
+    },
+    {
+      "Field": "parts24",
+      "Name": "武器24",
+      "Description": ""
+    },
+    {
+      "Field": "parts25",
+      "Name": "武器25",
+      "Description": ""
+    },
+    {
+      "Field": "parts26",
+      "Name": "武器26",
+      "Description": ""
+    },
+    {
+      "Field": "parts27",
+      "Name": "武器27",
+      "Description": ""
+    },
+    {
+      "Field": "parts28",
+      "Name": "武器28",
+      "Description": ""
+    },
+    {
+      "Field": "parts29",
+      "Name": "武器29",
+      "Description": ""
+    },
+    {
+      "Field": "parts30",
+      "Name": "武器30",
+      "Description": ""
+    },
+    {
+      "Field": "parts31",
+      "Name": "武器31",
+      "Description": ""
+    }
+  ]
+}

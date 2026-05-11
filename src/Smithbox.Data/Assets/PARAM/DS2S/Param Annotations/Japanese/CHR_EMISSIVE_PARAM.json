@@ -1,0 +1,23 @@
+{
+  "Param": "CHR_EMISSIVE_PARAM",
+  "Type": "CHR_EMISSIVE_PARAM",
+  "Name": "CHR_EMISSIVE_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "frequency",
+      "Name": "速度",
+      "Description": ""
+    },
+    {
+      "Field": "min",
+      "Name": "最小値",
+      "Description": ""
+    },
+    {
+      "Field": "max",
+      "Name": "最大値",
+      "Description": ""
+    }
+  ]
+}

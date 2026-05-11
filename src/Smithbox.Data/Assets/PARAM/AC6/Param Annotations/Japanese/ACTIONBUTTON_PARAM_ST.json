@@ -1,0 +1,203 @@
+{
+  "Param": "ACTIONBUTTON_PARAM_ST",
+  "Type": "ACTIONBUTTON_PARAM_ST",
+  "Name": "ACTIONBUTTON_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "regionType",
+      "Name": "範囲タイプ",
+      "Description": "範囲形状(円柱、角柱、カプセル柱)"
+    },
+    {
+      "Field": "padding1",
+      "Name": "パディング1",
+      "Description": ""
+    },
+    {
+      "Field": "dummyPoly1",
+      "Name": "ダミポリ1",
+      "Description": "範囲の底面の中心となるダミポリIDを指定する\u3000ダミポリがない場合 or -1が入力されている場合は、中心座標が基準になる"
+    },
+    {
+      "Field": "dummyPoly2",
+      "Name": "ダミポリ2",
+      "Description": "範囲タイプがカプセル柱の場合のみ使用\u3000ダミポリ2つで線分を作る追加ダミポリ(カプセル柱)"
+    },
+    {
+      "Field": "radius",
+      "Name": "半径",
+      "Description": "半径(円柱・カプセル柱)"
+    },
+    {
+      "Field": "angle",
+      "Name": "角度",
+      "Description": "角度(円柱)"
+    },
+    {
+      "Field": "depth",
+      "Name": "奥行き",
+      "Description": "奥行き(角柱)"
+    },
+    {
+      "Field": "width",
+      "Name": "幅",
+      "Description": "幅(角柱)"
+    },
+    {
+      "Field": "height",
+      "Name": "高さ",
+      "Description": "高さ(円柱・角柱・カプセル柱)"
+    },
+    {
+      "Field": "baseHeightOffset",
+      "Name": "底面高さオフセット",
+      "Description": "底面のY座標をどれだけ上下させるか"
+    },
+    {
+      "Field": "angleCheckType",
+      "Name": "角度差判定タイプ",
+      "Description": "角度差判定タイプ(円柱・角柱)"
+    },
+    {
+      "Field": "padding2",
+      "Name": "パディング2",
+      "Description": "角度差判定タイプ(点・線)"
+    },
+    {
+      "Field": "allowAngle",
+      "Name": "許容角度差",
+      "Description": "許容角度差"
+    },
+    {
+      "Field": "padding3",
+      "Name": "パディング3",
+      "Description": ""
+    },
+    {
+      "Field": "textBoxType",
+      "Name": "テキストボックスタイプ",
+      "Description": "テキストボックスタイプ"
+    },
+    {
+      "Field": "raycastType",
+      "Name": "遮蔽判定タイプ",
+      "Description": "遮蔽判定タイプ"
+    },
+    {
+      "Field": "actionGroupId",
+      "Name": "実行判定用グループID（Behavior参照）",
+      "Description": "actからグループ単位で有効にするためのID。ぶら下がり中はアイテム取得は出来るが扉は開けられないなど"
+    },
+    {
+      "Field": "execButtonTriangle",
+      "Name": "実行条件：△ボタン",
+      "Description": "△ボタン押下で実行されるか"
+    },
+    {
+      "Field": "isInvalidForRide",
+      "Name": "騎乗時無効か",
+      "Description": "この項目がYESだと騎乗時にアクションボタンが出ず、判定も行われない"
+    },
+    {
+      "Field": "isGrayoutForRide",
+      "Name": "騎乗時グレーアウトか",
+      "Description": "この項目がYESだと騎乗時にアクションボタンがグレーアウトし、判定も行われない"
+    },
+    {
+      "Field": "drawLine",
+      "Name": "ライン表示",
+      "Description": "アイコンから地面へのラインを表示するか"
+    },
+    {
+      "Field": "padding4",
+      "Name": "パディング4",
+      "Description": ""
+    },
+    {
+      "Field": "textId",
+      "Name": "テキストID",
+      "Description": "表示するテキストID"
+    },
+    {
+      "Field": "invalidFlag",
+      "Name": "無効フラグ",
+      "Description": "このフラグがONだとアクションボタンが出ず、判定も行われない"
+    },
+    {
+      "Field": "grayoutFlag",
+      "Name": "グレーアウトフラグ",
+      "Description": "このフラグがONだとアクションボタンがグレーアウトし、判定も行われない"
+    },
+    {
+      "Field": "priority",
+      "Name": "重なり時優先度",
+      "Description": "複数のアクションボタンが重なっていた場合の優先度(0～99、0に近い程優先)"
+    },
+    {
+      "Field": "execInvalidTime",
+      "Name": "実行後無効時間",
+      "Description": "実行後無効時間(-値で無限)"
+    },
+    {
+      "Field": "execButtonCircle",
+      "Name": "実行条件：○ボタン",
+      "Description": "○ボタン押下で実行されるか"
+    },
+    {
+      "Field": "sameCategoryActionDisplay",
+      "Name": "同じカテゴリ内での重なり表示",
+      "Description": "プログラムから指定してるカテゴリが同じアクションボタン同士が重なって表示されるかどうか。"
+    },
+    {
+      "Field": "effectDispDist",
+      "Name": "範囲エフェクト表示距離",
+      "Description": "範囲エフェクト表示距離。-1で表示なし"
+    },
+    {
+      "Field": "execButtonHoldSec",
+      "Name": "押しっぱなしで実行する秒数",
+      "Description": "判定がアクティブな時に、押下キーが記載秒数押されていたら押下したとみなす。0なら押しっぱなしを判定しない。"
+    },
+    {
+      "Field": "iconID",
+      "Name": "アイコンID",
+      "Description": "表示するアイコンID"
+    },
+    {
+      "Field": "pointRadius",
+      "Name": "半径",
+      "Description": "半径(ポイント表示範囲は円柱固定)。-1 でアクション実行可能範囲の数値を参照。"
+    },
+    {
+      "Field": "pointHeight",
+      "Name": "高さ",
+      "Description": "高さ(ポイント表示範囲は円柱固定)。-1 でアクション実行可能範囲の数値を参照。"
+    },
+    {
+      "Field": "pointBaseHeightOffset",
+      "Name": "底面高さオフセット",
+      "Description": "底面のY座標をどれだけ上下させるか"
+    },
+    {
+      "Field": "iconOffsetX",
+      "Name": "表示位置オフセットX",
+      "Description": "ダミポリ1で指定されたダミポリの位置からX軸方向にオフセットする値"
+    },
+    {
+      "Field": "iconOffsetY",
+      "Name": "表示位置オフセットY",
+      "Description": "ダミポリ1で指定されたダミポリの位置からY軸方向にオフセットする値"
+    },
+    {
+      "Field": "iconOffsetZ",
+      "Name": "表示位置オフセットZ",
+      "Description": "ダミポリ1で指定されたダミポリの位置からZ軸方向にオフセットする値"
+    },
+    {
+      "Field": "doneFlag",
+      "Name": "実行済みフラグ",
+      "Description": "実行済みかのフラグ管理用のイベントフラグID（-1:管理イベントフラグなし)"
+    }
+  ]
+}

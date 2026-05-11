@@ -1,0 +1,168 @@
+{
+  "Param": "ENEMY_COMMON_PARAM_ST",
+  "Type": "ENEMY_COMMON_PARAM_ST",
+  "Name": "ENEMY_COMMON_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "TargetNoForget_TargetEne0_LadderHeight",
+      "Name": "TARGET_ENE_0がはしご中でこの高さ[m]以内なら忘れない",
+      "Description": "TARGET_ENE_0がはしご中の時に敵自身との高さの差がこの数値以内ならターゲットを忘れない"
+    },
+    {
+      "Field": "IsIntegrateWithRaycast_CheckRoofLength",
+      "Name": "床インテグレート時天井高さ判定を許可するPCからの距離",
+      "Description": "ローカルプレイヤーからの距離がこの距離以下のときだけ、床インテグレートの持ち上げ高さを天井の高さを考慮して求めるように強化する。"
+    },
+    {
+      "Field": "WallHitInteruptFlag_Angle",
+      "Name": "壁衝突インタラプトフラグ判定_角度[deg]",
+      "Description": "壁の法線と移動方向（の逆方向）となす角度の閾値[deg]"
+    },
+    {
+      "Field": "WallHitInteruptFlag_KeptTime",
+      "Name": "壁衝突インタラプトフラグ判定_継続時間[s]",
+      "Description": "壁衝突が続く時間の閾値[s]（大きくなるとフラグの発行が遅れる、小さくなると誤爆しやすくなる）"
+    },
+    {
+      "Field": "WallHitInteruptFlag_StoppedTime",
+      "Name": "壁衝突インタラプトフラグ判定_許容中断時間[s]",
+      "Description": "システムや地形の都合で壁衝突が途切れ途切れになることがあるため、許容できる最大中断時間[s]"
+    },
+    {
+      "Field": "ForceIntegrateWithRaycastForSlopeTime",
+      "Name": "斜面にハマる時強制持ち上げ／吸着更新にする判定時間[sec]",
+      "Description": "斜面にこの時間以上にハマり続ければNPCパラメータの設定によって強制持ち上げ／吸着更新をする"
+    },
+    {
+      "Field": "reserve",
+      "Name": "pad",
+      "Description": ""
+    },
+    {
+      "Field": "ActivateChrByTime_PhantomId",
+      "Name": "特定時間帯配置のエネミーの出現・消滅に演出に使うファントムシェーダID",
+      "Description": "出現・消滅の演出でファントムシェーダをフェイドする、"
+    },
+    {
+      "Field": "ExcessSubAwarePointIntervalTime",
+      "Name": "索敵度\u3000上限値までの減衰開始時間（s）",
+      "Description": "索敵度\u3000上限値までの減衰開始時間（s）"
+    },
+    {
+      "Field": "SearchToDiscoveryStatePoint",
+      "Name": "索敵度 完全発見状態に移行する索敵度 ",
+      "Description": "索敵度 完全発見状態に移行する索敵度 "
+    },
+    {
+      "Field": "SearchToNomalStatePoint",
+      "Name": "索敵度 通常状態に戻る索敵度 ",
+      "Description": "索敵度 通常状態に戻る索敵度 "
+    },
+    {
+      "Field": "AwarePointDecreaseTime_Normal",
+      "Name": "索敵度減少までの猶予時間_通常時[s]",
+      "Description": "索敵度減少までの猶予時間_通常時[s]"
+    },
+    {
+      "Field": "AwarePointDecreaseTime_Damage",
+      "Name": "索敵度減少までの猶予時間_ダメージ時[s]",
+      "Description": "索敵度減少までの猶予時間_ダメージ時[s]"
+    },
+    {
+      "Field": "AwarePointMax",
+      "Name": "索敵度最大値",
+      "Description": "索敵度最大値"
+    },
+    {
+      "Field": "CombatPointDecreaseTime",
+      "Name": "交戦度減少までの猶予時間[s]",
+      "Description": "交戦度減少までの猶予時間(新仕様では知覚用)[s]"
+    },
+    {
+      "Field": "CombatPointDecreasePoint",
+      "Name": "交戦度減少量",
+      "Description": "秒ごとに減少する交戦度の量"
+    },
+    {
+      "Field": "ShareTargetTime",
+      "Name": "ターゲット共有_猶予時間[s]",
+      "Description": "ターゲットを共有するまでの猶予時間[s]"
+    },
+    {
+      "Field": "CombatPointDecreasePerSec_Sense",
+      "Name": "交戦度減少量（視聴覚・被弾）[point/sec]",
+      "Description": "視聴覚・被弾によって蓄積した交戦度の減少量"
+    },
+    {
+      "Field": "CombatPointDecreasePerSec_Radar",
+      "Name": "交戦度減少量（レーダー）[point/sec]",
+      "Description": "レーダーによって蓄積した交戦度の減少量"
+    },
+    {
+      "Field": "CombatPointDecreaseTime_Radar",
+      "Name": "交戦度減少までの猶予時間(レーダー)[s]",
+      "Description": "交戦度減少までの猶予時間(レーダー)[s]"
+    },
+    {
+      "Field": "AwarePointDescreasePerSec",
+      "Name": "索敵度減少量[point/sec]",
+      "Description": "秒ごとに索敵度の減少量"
+    },
+    {
+      "Field": "bodyTrunk_BodyGaugePoint",
+      "Name": "本体体幹ゲージ",
+      "Description": "本体体幹ゲージ"
+    },
+    {
+      "Field": "bodyTrunk_ActionGaugePoint",
+      "Name": "アクション体幹ゲージ",
+      "Description": "アクション体幹ゲージ"
+    },
+    {
+      "Field": "bodyTrunk_PointHealWaitTimeSec",
+      "Name": "体幹回復待機時間(sec)",
+      "Description": "体幹回復を待機する時間"
+    },
+    {
+      "Field": "bodyTrunk_PointHealPerSec",
+      "Name": "体幹回復値(point/sec)",
+      "Description": "体幹回復を回復する１秒あたりのポイント"
+    },
+    {
+      "Field": "endPermanentStunStateValue",
+      "Name": "ハメ抜け発生値[point]",
+      "Description": "ハメ抜け発生値"
+    },
+    {
+      "Field": "assignRoleEvaluateInterval",
+      "Name": "取り巻き役割評価間隔[s]",
+      "Description": "小隊内取り巻き役割を評価する時間間隔"
+    },
+    {
+      "Field": "assignAttackRoleBattleRange",
+      "Name": "攻撃役戦闘限界距離[m]",
+      "Description": "設定距離内はロックオンされたキャラを優先的に攻撃役を分配する"
+    },
+    {
+      "Field": "SmoothPatrol_routeAdjustRadius",
+      "Name": "なめらか巡回_ルート補正上限半径",
+      "Description": "巡回ルートなめらか処理の補正用半径値"
+    },
+    {
+      "Field": "ShareTargetRecognitionLagError",
+      "Name": "共有ターゲット認識遅延誤差[sec]",
+      "Description": "遅延時間 ＝ 共有ターゲット認識遅延 ＋ random( 0, 共有ターゲット認識遅延誤差 )"
+    },
+    {
+      "Field": "addImpactDisableTimeSec",
+      "Name": "衝撃無敵時間[秒]",
+      "Description": "「ステートを抜けたとき、衝撃無敵発動」のステートを抜けたときの衝撃値無効時間"
+    },
+    {
+      "Field": "pad_01",
+      "Name": "パディング",
+      "Description": "パディング"
+    }
+  ]
+}

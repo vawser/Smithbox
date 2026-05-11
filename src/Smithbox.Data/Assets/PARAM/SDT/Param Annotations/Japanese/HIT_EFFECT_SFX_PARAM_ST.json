@@ -1,0 +1,88 @@
+{
+  "Param": "HIT_EFFECT_SFX_PARAM_ST",
+  "Type": "HIT_EFFECT_SFX_PARAM_ST",
+  "Name": "HIT_EFFECT_SFX_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "Slash_S",
+      "Name": "斬撃：小",
+      "Description": "斬撃：小"
+    },
+    {
+      "Field": "Slash_M",
+      "Name": "斬撃：中",
+      "Description": "斬撃：中"
+    },
+    {
+      "Field": "Slash_L",
+      "Name": "斬撃：大",
+      "Description": "斬撃：大"
+    },
+    {
+      "Field": "Slash_LL",
+      "Name": "斬撃：特大",
+      "Description": "斬撃：特大"
+    },
+    {
+      "Field": "Slash_LLL",
+      "Name": "斬撃：特特大",
+      "Description": "斬撃：特特大"
+    },
+    {
+      "Field": "Thrust_S",
+      "Name": "刺突：小",
+      "Description": "刺突：小"
+    },
+    {
+      "Field": "Thrust_M",
+      "Name": "刺突：中",
+      "Description": "刺突：中"
+    },
+    {
+      "Field": "Thrust_L",
+      "Name": "刺突：大",
+      "Description": "刺突：大"
+    },
+    {
+      "Field": "Thrust_LL",
+      "Name": "刺突：特大",
+      "Description": "刺突：特大"
+    },
+    {
+      "Field": "Thrust_LLL",
+      "Name": "刺突：特特大",
+      "Description": "刺突：特特大"
+    },
+    {
+      "Field": "Blow_S",
+      "Name": "打撃：小",
+      "Description": "打撃：小"
+    },
+    {
+      "Field": "Blow_M",
+      "Name": "打撃：中",
+      "Description": "打撃：中"
+    },
+    {
+      "Field": "Blow_L",
+      "Name": "打撃：大",
+      "Description": "打撃：大"
+    },
+    {
+      "Field": "Blow_LL",
+      "Name": "打撃：特大",
+      "Description": "打撃：特大"
+    },
+    {
+      "Field": "Blow_LLL",
+      "Name": "打撃：特特大",
+      "Description": "打撃：特特大"
+    },
+    {
+      "Field": "reserve",
+      "Name": "予約領域",
+      "Description": ""
+    }
+  ]
+}

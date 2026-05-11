@@ -1,0 +1,43 @@
+{
+  "Param": "CHARMAKEMENUTOP_PARAM_ST",
+  "Type": "CHARMAKEMENUTOP_PARAM_ST",
+  "Name": "CHARMAKEMENUTOP_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "CommandID",
+      "Name": "項目タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "CaptionID",
+      "Name": "項目テキストID",
+      "Description": ""
+    },
+    {
+      "Field": "FaceParamID",
+      "Name": "顔パラムID",
+      "Description": ""
+    },
+    {
+      "Field": "TableID",
+      "Name": "テーブルID",
+      "Description": "タイプが「グリッド」の時は先頭リストアイテムのID、「カラー」の時はカラーパレット先頭のID"
+    },
+    {
+      "Field": "ViewCondition",
+      "Name": "表示条件",
+      "Description": ""
+    },
+    {
+      "Field": "PreviewMode",
+      "Name": "プレビューモード",
+      "Description": ""
+    },
+    {
+      "Field": "reserved",
+      "Name": "予約",
+      "Description": ""
+    }
+  ]
+}

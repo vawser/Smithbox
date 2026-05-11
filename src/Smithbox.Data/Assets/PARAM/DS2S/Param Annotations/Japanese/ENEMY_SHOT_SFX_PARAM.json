@@ -1,0 +1,18 @@
+{
+  "Param": "ENEMY_SHOT_SFX_PARAM",
+  "Type": "ENEMY_SHOT_SFX_PARAM",
+  "Name": "ENEMY_SHOT_SFX_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "sfxId",
+      "Name": "SFX ID",
+      "Description": ""
+    },
+    {
+      "Field": "dummyPolyId",
+      "Name": "生成ダミポリ",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "Param": "THROW_INFO_BANK",
+  "Type": "THROW_INFO_BANK",
+  "Name": "THROW_INFO_BANK",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "AtkChrId",
+      "Name": "投げ側キャラID",
+      "Description": "投げ側キャラID"
+    },
+    {
+      "Field": "DefChrId",
+      "Name": "受け側キャラID",
+      "Description": "受け側キャラID"
+    },
+    {
+      "Field": "pad0",
+      "Name": "パディング0",
+      "Description": ""
+    },
+    {
+      "Field": "PadType",
+      "Name": "操作タイプ",
+      "Description": "操作タイプ"
+    },
+    {
+      "Field": "AtkEnableState",
+      "Name": "投げ側の投げ可能状態タイプ",
+      "Description": "投げ側の投げ可能状態タイプ"
+    },
+    {
+      "Field": "DefEnableState",
+      "Name": "受け側の投げ可能状態タイプ",
+      "Description": "受け側の投げ可能状態タイプ"
+    },
+    {
+      "Field": "isFaceToFace",
+      "Name": "正面で向き合うか",
+      "Description": "1:正面で向き合う。0:二人とも同じ方向になる。"
+    },
+    {
+      "Field": "isMoveAttacker",
+      "Name": "攻撃側が移動するか(1:有効)",
+      "Description": "攻撃側が移動するか(1:有効)"
+    },
+    {
+      "Field": "DisableTurn",
+      "Name": "受け側の旋回無効(1:無効)",
+      "Description": "受け側の旋回無効(1:無効)"
+    },
+    {
+      "Field": "ThrowAtkStateType",
+      "Name": "投げ側状態タイプ",
+      "Description": "投げ側の状態タイプ"
+    },
+    {
+      "Field": "ThrowDefStateType",
+      "Name": "受け側状態タイプ",
+      "Description": "受け側の状態タイプ"
+    },
+    {
+      "Field": "Dist",
+      "Name": "有効距離",
+      "Description": "有効距離"
+    },
+    {
+      "Field": "ValidAngF",
+      "Name": "角度範囲\u3000前面",
+      "Description": "角度範囲\u3000前面"
+    },
+    {
+      "Field": "ValidAngB",
+      "Name": "角度範囲\u3000背面",
+      "Description": "角度範囲\u3000背面"
+    },
+    {
+      "Field": "DiffAngMin",
+      "Name": "相手との向きの角度差範囲min",
+      "Description": "相手との向きの角度差範囲min"
+    },
+    {
+      "Field": "DiffAngMax",
+      "Name": "相手との向きの角度差範囲max",
+      "Description": "相手との向きの角度差範囲max"
+    },
+    {
+      "Field": "MoveDist",
+      "Name": "吸い込み距離",
+      "Description": "吸い込み距離"
+    },
+    {
+      "Field": "upperYRange",
+      "Name": "高さ範囲上[m]",
+      "Description": "相手との高さ範囲上"
+    },
+    {
+      "Field": "lowerYRange",
+      "Name": "高さ範囲下[m]",
+      "Description": "相手との高さ範囲下"
+    },
+    {
+      "Field": "behaviorJudgeId",
+      "Name": "行動判定ID",
+      "Description": "行動判定ID"
+    },
+    {
+      "Field": "pading",
+      "Name": "予約",
+      "Description": "予約"
+    }
+  ]
+}

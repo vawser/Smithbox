@@ -1,0 +1,48 @@
+{
+  "Param": "LOOK_AT_HEAD_PARAM_ST",
+  "Type": "LOOK_AT_HEAD_PARAM_ST",
+  "Name": "LOOK_AT_HEAD_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "lookAtPerf",
+      "Name": "旋回性能（％/Sec)",
+      "Description": "LookAtの有効/無効が切り替わったときの補間性能"
+    },
+    {
+      "Field": "lookAtRateV",
+      "Name": "上下補正率(0.0～1.0)",
+      "Description": "目標角度に対してどれだけ向けるか（上下）"
+    },
+    {
+      "Field": "lookAtRateH",
+      "Name": "左右補正率(0.0～1.0)",
+      "Description": "目標角度に対してどれだけ向けるか（左右）"
+    },
+    {
+      "Field": "minAngDegV",
+      "Name": "下の限界角度",
+      "Description": "下方向の限界角度"
+    },
+    {
+      "Field": "maxAngDegV",
+      "Name": "上の限界角度",
+      "Description": "上方向の限界角度"
+    },
+    {
+      "Field": "minAngDegH",
+      "Name": "左の限界角度",
+      "Description": "左の限界角度"
+    },
+    {
+      "Field": "maxAngDegH",
+      "Name": "右の限界角度",
+      "Description": "右の限界角度"
+    },
+    {
+      "Field": "reserved4",
+      "Name": "パディング",
+      "Description": ""
+    }
+  ]
+}

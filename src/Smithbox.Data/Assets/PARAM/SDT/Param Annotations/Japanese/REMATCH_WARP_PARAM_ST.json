@@ -1,0 +1,188 @@
+{
+  "Param": "REMATCH_WARP_PARAM_ST",
+  "Type": "REMATCH_WARP_PARAM_ST",
+  "Name": "REMATCH_WARP_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "EvdFileOffset",
+      "Name": "EvdFileOffset",
+      "Description": ""
+    },
+    {
+      "Field": "MapFile",
+      "Name": "MapFile",
+      "Description": ""
+    },
+    {
+      "Field": "WarpPointId",
+      "Name": "WarpPointId",
+      "Description": ""
+    },
+    {
+      "Field": "EnemyNameAndImage",
+      "Name": "EnemyNameAndImage",
+      "Description": ""
+    },
+    {
+      "Field": "LocalPlayerWeaponStruct1",
+      "Name": "LocalPlayerWeaponStruct1",
+      "Description": ""
+    },
+    {
+      "Field": "LocalPlayerWeaponStruct2",
+      "Name": "LocalPlayerWeaponStruct2",
+      "Description": ""
+    },
+    {
+      "Field": "LocalPlayerWeaponStruct3",
+      "Name": "LocalPlayerWeaponStruct3",
+      "Description": ""
+    },
+    {
+      "Field": "LocalPlayerWeaponStruct4",
+      "Name": "LocalPlayerWeaponStruct4",
+      "Description": ""
+    },
+    {
+      "Field": "LocalPlayerWeaponStruct5",
+      "Name": "LocalPlayerWeaponStruct5",
+      "Description": ""
+    },
+    {
+      "Field": "LocalPlayerWeaponStruct6",
+      "Name": "LocalPlayerWeaponStruct6",
+      "Description": ""
+    },
+    {
+      "Field": "Unk01",
+      "Name": "Unk01",
+      "Description": ""
+    },
+    {
+      "Field": "Unk02",
+      "Name": "Unk02",
+      "Description": ""
+    },
+    {
+      "Field": "Unk03",
+      "Name": "Unk03",
+      "Description": ""
+    },
+    {
+      "Field": "EventFlagId1",
+      "Name": "EventFlagId1",
+      "Description": ""
+    },
+    {
+      "Field": "EventFlagId2",
+      "Name": "EventFlagId2",
+      "Description": ""
+    },
+    {
+      "Field": "EventFlagId3",
+      "Name": "EventFlagId3",
+      "Description": ""
+    },
+    {
+      "Field": "EventFlagId4",
+      "Name": "EventFlagId4",
+      "Description": ""
+    },
+    {
+      "Field": "EventFlagId5",
+      "Name": "EventFlagId5",
+      "Description": ""
+    },
+    {
+      "Field": "EventFlagId6",
+      "Name": "EventFlagId6",
+      "Description": ""
+    },
+    {
+      "Field": "EventFlagId7",
+      "Name": "EventFlagId7",
+      "Description": ""
+    },
+    {
+      "Field": "EventFlagId8",
+      "Name": "EventFlagId8",
+      "Description": ""
+    },
+    {
+      "Field": "EventFlagId9",
+      "Name": "EventFlagId9",
+      "Description": ""
+    },
+    {
+      "Field": "EventFlagId10",
+      "Name": "EventFlagId10",
+      "Description": ""
+    },
+    {
+      "Field": "EventFlagManByte1",
+      "Name": "EventFlagManByte1",
+      "Description": ""
+    },
+    {
+      "Field": "EventFlagManByte2",
+      "Name": "EventFlagManByte2",
+      "Description": ""
+    },
+    {
+      "Field": "EventFlagManByte3",
+      "Name": "EventFlagManByte3",
+      "Description": ""
+    },
+    {
+      "Field": "EventFlagManByte4",
+      "Name": "EventFlagManByte4",
+      "Description": ""
+    },
+    {
+      "Field": "EventFlagManByte5",
+      "Name": "EventFlagManByte5",
+      "Description": ""
+    },
+    {
+      "Field": "EventFlagManByte6",
+      "Name": "EventFlagManByte6",
+      "Description": ""
+    },
+    {
+      "Field": "EventFlagManByte7",
+      "Name": "EventFlagManByte7",
+      "Description": ""
+    },
+    {
+      "Field": "EventFlagManByte8",
+      "Name": "EventFlagManByte8",
+      "Description": ""
+    },
+    {
+      "Field": "EventFlagManByte9",
+      "Name": "EventFlagManByte9",
+      "Description": ""
+    },
+    {
+      "Field": "EventFlagManByte10",
+      "Name": "EventFlagManByte10",
+      "Description": ""
+    },
+    {
+      "Field": "WeaponStructFlag1",
+      "Name": "WeaponStructFlag1",
+      "Description": ""
+    },
+    {
+      "Field": "WeaponStructFlag2",
+      "Name": "WeaponStructFlag2",
+      "Description": ""
+    },
+    {
+      "Field": "pad",
+      "Name": "pad",
+      "Description": ""
+    }
+  ]
+}

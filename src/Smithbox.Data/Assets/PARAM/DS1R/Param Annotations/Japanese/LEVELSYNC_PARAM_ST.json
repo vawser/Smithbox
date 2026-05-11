@@ -1,0 +1,498 @@
+{
+  "Param": "LEVELSYNC_PARAM_ST",
+  "Type": "LEVELSYNC_PARAM_ST",
+  "Name": "LEVELSYNC_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "SCLUA",
+      "Name": "SCLUA",
+      "Description": "SCLUA"
+    },
+    {
+      "Field": "SDCLUR",
+      "Name": "SDCLUR",
+      "Description": "SDCLUR"
+    },
+    {
+      "Field": "SDCWLM",
+      "Name": "SDCWLM",
+      "Description": "SDCWLM"
+    },
+    {
+      "Field": "MLWSUR",
+      "Name": "MLWSUR",
+      "Description": "MLWSUR"
+    },
+    {
+      "Field": "MLWSUA",
+      "Name": "MLWSUA",
+      "Description": "MLWSUA"
+    },
+    {
+      "Field": "MLRSUR",
+      "Name": "MLRSUR",
+      "Description": ""
+    },
+    {
+      "Field": "MLRSUA",
+      "Name": "MLRSUA",
+      "Description": ""
+    },
+    {
+      "Field": "MWLUWS0",
+      "Name": "MWLUWS0",
+      "Description": ""
+    },
+    {
+      "Field": "MWLUWS1",
+      "Name": "MWLUWS1",
+      "Description": ""
+    },
+    {
+      "Field": "MWLUWS2",
+      "Name": "MWLUWS2",
+      "Description": ""
+    },
+    {
+      "Field": "MWLUWS3",
+      "Name": "MWLUWS3",
+      "Description": ""
+    },
+    {
+      "Field": "MWLUWS4",
+      "Name": "MWLUWS4",
+      "Description": ""
+    },
+    {
+      "Field": "MWLUWS5",
+      "Name": "MWLUWS5",
+      "Description": ""
+    },
+    {
+      "Field": "MWLUWS6",
+      "Name": "MWLUWS6",
+      "Description": ""
+    },
+    {
+      "Field": "MWLUWS7",
+      "Name": "MWLUWS7",
+      "Description": ""
+    },
+    {
+      "Field": "MWLUWS8",
+      "Name": "MWLUWS8",
+      "Description": ""
+    },
+    {
+      "Field": "MWLUWS9",
+      "Name": "MWLUWS9",
+      "Description": ""
+    },
+    {
+      "Field": "MWLUWS10",
+      "Name": "MWLUWS10",
+      "Description": ""
+    },
+    {
+      "Field": "MWLURS0",
+      "Name": "MWLURS0",
+      "Description": ""
+    },
+    {
+      "Field": "MWLURS1",
+      "Name": "MWLURS1",
+      "Description": ""
+    },
+    {
+      "Field": "MWLURS2",
+      "Name": "MWLURS2",
+      "Description": ""
+    },
+    {
+      "Field": "MWLURS3",
+      "Name": "MWLURS3",
+      "Description": ""
+    },
+    {
+      "Field": "MWLURS4",
+      "Name": "MWLURS4",
+      "Description": ""
+    },
+    {
+      "Field": "MWLURS5",
+      "Name": "MWLURS5",
+      "Description": ""
+    },
+    {
+      "Field": "MWLURS6",
+      "Name": "MWLURS6",
+      "Description": ""
+    },
+    {
+      "Field": "MWLURS7",
+      "Name": "MWLURS7",
+      "Description": ""
+    },
+    {
+      "Field": "MWLURS8",
+      "Name": "MWLURS8",
+      "Description": ""
+    },
+    {
+      "Field": "MWLURS9",
+      "Name": "MWLURS9",
+      "Description": ""
+    },
+    {
+      "Field": "MWLURS10",
+      "Name": "MWLURS10",
+      "Description": ""
+    },
+    {
+      "Field": "MWLUA0",
+      "Name": "MWLUA0",
+      "Description": ""
+    },
+    {
+      "Field": "MWLUA1",
+      "Name": "MWLUA1",
+      "Description": ""
+    },
+    {
+      "Field": "MWLUA2",
+      "Name": "MWLUA2",
+      "Description": ""
+    },
+    {
+      "Field": "MWLUA3",
+      "Name": "MWLUA3",
+      "Description": ""
+    },
+    {
+      "Field": "MWLUA4",
+      "Name": "MWLUA4",
+      "Description": ""
+    },
+    {
+      "Field": "MWLUA5",
+      "Name": "MWLUA5",
+      "Description": ""
+    },
+    {
+      "Field": "MWLUA6",
+      "Name": "MWLUA6",
+      "Description": ""
+    },
+    {
+      "Field": "MWLUA7",
+      "Name": "MWLUA7",
+      "Description": ""
+    },
+    {
+      "Field": "MWLUA8",
+      "Name": "MWLUA8",
+      "Description": ""
+    },
+    {
+      "Field": "MWLUA9",
+      "Name": "MWLUA9",
+      "Description": ""
+    },
+    {
+      "Field": "MWLUA10",
+      "Name": "MWLUA10",
+      "Description": ""
+    },
+    {
+      "Field": "MLASUR",
+      "Name": "MLASUR",
+      "Description": ""
+    },
+    {
+      "Field": "MLASUA",
+      "Name": "MLASUA",
+      "Description": ""
+    },
+    {
+      "Field": "Pad",
+      "Name": "Pad[3]",
+      "Description": ""
+    },
+    {
+      "Field": "summonTimeoutTime",
+      "Name": "summonTimeoutTime",
+      "Description": ""
+    },
+    {
+      "Field": "singGetMax",
+      "Name": "singGetMax",
+      "Description": ""
+    },
+    {
+      "Field": "signDownloadSpan",
+      "Name": "signDownloadSpan",
+      "Description": ""
+    },
+    {
+      "Field": "nitoSignDownloadSpan",
+      "Name": "nitoSignDownloadSpan",
+      "Description": ""
+    },
+    {
+      "Field": "signUpdateSpan",
+      "Name": "signUpdateSpan",
+      "Description": ""
+    },
+    {
+      "Field": "maxBreakInTargetListCount",
+      "Name": "maxBreakInTargetListCount",
+      "Description": ""
+    },
+    {
+      "Field": "breakInRequestIntervalTimeSec",
+      "Name": "breakInRequestIntervalTimeSec",
+      "Description": ""
+    },
+    {
+      "Field": "breakInRequestTimeOutSec",
+      "Name": "breakInRequestTimeOutSec",
+      "Description": ""
+    },
+    {
+      "Field": "reloadSignTotalCount_0",
+      "Name": "reloadSignTotalCount_0",
+      "Description": ""
+    },
+    {
+      "Field": "reloadSignIntervalTime_0",
+      "Name": "reloadSignIntervalTime_0",
+      "Description": ""
+    },
+    {
+      "Field": "reloadSignIntervalTime_1",
+      "Name": "reloadSignIntervalTime_1",
+      "Description": ""
+    },
+    {
+      "Field": "reloadSignTotalCount_1",
+      "Name": "reloadSignTotalCount_1",
+      "Description": ""
+    },
+    {
+      "Field": "reloadSignCellCount",
+      "Name": "reloadSignCellCount",
+      "Description": ""
+    },
+    {
+      "Field": "reloadSignIntervalTime_2",
+      "Name": "reloadSignIntervalTime_2",
+      "Description": ""
+    },
+    {
+      "Field": "reloadGhostTotalCount",
+      "Name": "reloadGhostTotalCount",
+      "Description": ""
+    },
+    {
+      "Field": "reloadGhostCellCount",
+      "Name": "reloadGhostCellCount",
+      "Description": ""
+    },
+    {
+      "Field": "maxGhostTotalCount",
+      "Name": "maxGhostTotalCount",
+      "Description": ""
+    },
+    {
+      "Field": "updateWanderGhostIntervalTime",
+      "Name": "updateWanderGhostIntervalTime",
+      "Description": ""
+    },
+    {
+      "Field": "minReplayIntervalTime",
+      "Name": "minReplayIntervalTime",
+      "Description": ""
+    },
+    {
+      "Field": "maxReplayIntervalTime",
+      "Name": "maxReplayIntervalTime",
+      "Description": ""
+    },
+    {
+      "Field": "reloadGhostIntervalTime",
+      "Name": "reloadGhostIntervalTime",
+      "Description": ""
+    },
+    {
+      "Field": "replayBonfireModeRange",
+      "Name": "replayBonfireModeRange",
+      "Description": ""
+    },
+    {
+      "Field": "wanderGhostIntervalLifeTime",
+      "Name": "wanderGhostIntervalLifeTime",
+      "Description": ""
+    },
+    {
+      "Field": "summonMessageInterval",
+      "Name": "summonMessageInterval",
+      "Description": ""
+    },
+    {
+      "Field": "hostRegisterUpdateTime",
+      "Name": "hostRegisterUpdateTime",
+      "Description": ""
+    },
+    {
+      "Field": "requestSearchQuickMatchLimit",
+      "Name": "requestSearchQuickMatchLimit",
+      "Description": ""
+    },
+    {
+      "Field": "myTeamInviteTimeoutTime",
+      "Name": "myTeamInviteTimeoutTime",
+      "Description": ""
+    },
+    {
+      "Field": "VisitorListMax",
+      "Name": "VisitorListMax",
+      "Description": ""
+    },
+    {
+      "Field": "VisitorTimeOutTime",
+      "Name": "VisitorTimeOutTime",
+      "Description": ""
+    },
+    {
+      "Field": "DownloadSpan",
+      "Name": "DownloadSpan",
+      "Description": ""
+    },
+    {
+      "Field": "bonfireLowerBoundCoolTime",
+      "Name": "bonfireLowerBoundCoolTime",
+      "Description": ""
+    },
+    {
+      "Field": "bonfireUpperBoundCoolTime",
+      "Name": "bonfireUpperBoundCoolTime",
+      "Description": ""
+    },
+    {
+      "Field": "resonanceMagicDbDistInterval",
+      "Name": "resonanceMagicDbDistInterval",
+      "Description": ""
+    },
+    {
+      "Field": "inputTimeoutSec",
+      "Name": "inputTimeoutSec",
+      "Description": ""
+    },
+    {
+      "Field": "generalPurposeParam1",
+      "Name": "generalPurposeParam1",
+      "Description": ""
+    },
+    {
+      "Field": "generalPurposeParam2",
+      "Name": "generalPurposeParam2",
+      "Description": ""
+    },
+    {
+      "Field": "generalPurposeParam3",
+      "Name": "generalPurposeParam3",
+      "Description": ""
+    },
+    {
+      "Field": "generalPurposeParam4",
+      "Name": "generalPurposeParam4",
+      "Description": ""
+    },
+    {
+      "Field": "generalPurposeParam5",
+      "Name": "generalPurposeParam5",
+      "Description": ""
+    },
+    {
+      "Field": "MWLUWS_11",
+      "Name": "MWLUWS_11",
+      "Description": ""
+    },
+    {
+      "Field": "MWLUWS_12",
+      "Name": "MWLUWS_12",
+      "Description": ""
+    },
+    {
+      "Field": "MWLUWS_13",
+      "Name": "MWLUWS_13",
+      "Description": ""
+    },
+    {
+      "Field": "MWLUWS_14",
+      "Name": "MWLUWS_14",
+      "Description": ""
+    },
+    {
+      "Field": "MWLUWS_15",
+      "Name": "MWLUWS_15",
+      "Description": ""
+    },
+    {
+      "Field": "MWLURS_11",
+      "Name": "MWLURS_11",
+      "Description": ""
+    },
+    {
+      "Field": "MWLURS_12",
+      "Name": "MWLURS_12",
+      "Description": ""
+    },
+    {
+      "Field": "MWLURS_13",
+      "Name": "MWLURS_13",
+      "Description": ""
+    },
+    {
+      "Field": "MWLURS_14",
+      "Name": "MWLURS_14",
+      "Description": ""
+    },
+    {
+      "Field": "MWLURS_15",
+      "Name": "MWLURS_15",
+      "Description": ""
+    },
+    {
+      "Field": "MWLUAR_11",
+      "Name": "MWLUAR_11",
+      "Description": ""
+    },
+    {
+      "Field": "MWLUAR_12",
+      "Name": "MWLUAR_12",
+      "Description": ""
+    },
+    {
+      "Field": "MWLUAR_13",
+      "Name": "MWLUAR_13",
+      "Description": ""
+    },
+    {
+      "Field": "MWLUAR_14",
+      "Name": "MWLUAR_14",
+      "Description": ""
+    },
+    {
+      "Field": "MWLUAR_15",
+      "Name": "MWLUAR_15",
+      "Description": ""
+    },
+    {
+      "Field": "generalPurposeParam6",
+      "Name": "generalPurposeParam6",
+      "Description": ""
+    }
+  ]
+}

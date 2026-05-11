@@ -1,0 +1,43 @@
+{
+  "Param": "BUOYANCY_PARAM_ST",
+  "Type": "BUOYANCY_PARAM_ST",
+  "Name": "BUOYANCY_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "density",
+      "Name": "水の密度",
+      "Description": "水の密度"
+    },
+    {
+      "Field": "drag",
+      "Name": "水の抗力",
+      "Description": "水の抗力"
+    },
+    {
+      "Field": "velocityX",
+      "Name": "X方向への速度",
+      "Description": "X方向への速度"
+    },
+    {
+      "Field": "velocityZ",
+      "Name": "Z方向への速度",
+      "Description": "Z方向への速度"
+    },
+    {
+      "Field": "waveThickness",
+      "Name": "波の太さ",
+      "Description": "波の太さ"
+    },
+    {
+      "Field": "waveInverval",
+      "Name": "波の間隔",
+      "Description": "波の間隔"
+    },
+    {
+      "Field": "pad",
+      "Name": "パディング",
+      "Description": ""
+    }
+  ]
+}

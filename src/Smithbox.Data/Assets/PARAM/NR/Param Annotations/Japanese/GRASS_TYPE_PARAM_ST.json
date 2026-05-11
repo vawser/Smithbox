@@ -1,0 +1,198 @@
+{
+  "Param": "GRASS_TYPE_PARAM_ST",
+  "Type": "GRASS_TYPE_PARAM_ST",
+  "Name": "GRASS_TYPE_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "lodRange",
+      "Name": "LOD距離",
+      "Description": ""
+    },
+    {
+      "Field": "lod0ClusterType",
+      "Name": "LOD0のクラスタータイプ",
+      "Description": ""
+    },
+    {
+      "Field": "lod1ClusterType",
+      "Name": "LOD1のクラスタータイプ",
+      "Description": ""
+    },
+    {
+      "Field": "lod2ClusterType",
+      "Name": "LOD2のクラスタータイプ",
+      "Description": ""
+    },
+    {
+      "Field": "pad0",
+      "Name": "pad0",
+      "Description": ""
+    },
+    {
+      "Field": "distributionType",
+      "Name": "配置方法",
+      "Description": ""
+    },
+    {
+      "Field": "baseDensity",
+      "Name": "基本密度",
+      "Description": ""
+    },
+    {
+      "Field": "model0Name",
+      "Name": "モデル名（０）",
+      "Description": ""
+    },
+    {
+      "Field": "flatTextureName",
+      "Name": "フラットテクスチャー名",
+      "Description": ""
+    },
+    {
+      "Field": "billboardTextureName",
+      "Name": "ビルボードのテクスチャー名",
+      "Description": ""
+    },
+    {
+      "Field": "normalInfluence",
+      "Name": "傾きの影響（％）",
+      "Description": ""
+    },
+    {
+      "Field": "inclinationMax",
+      "Name": "傾きの最大角度（度）",
+      "Description": ""
+    },
+    {
+      "Field": "inclinationJitter",
+      "Name": "傾斜角のランダム性（度）",
+      "Description": ""
+    },
+    {
+      "Field": "scaleBaseMin",
+      "Name": "幅のスケール範囲(min，％)",
+      "Description": ""
+    },
+    {
+      "Field": "scaleBaseMax",
+      "Name": "幅のスケール範囲(max，％)",
+      "Description": ""
+    },
+    {
+      "Field": "scaleHeightMin",
+      "Name": "高さのスケール範囲(min，％)",
+      "Description": ""
+    },
+    {
+      "Field": "scaleHeightMax",
+      "Name": "高さのスケール範囲(max，％)",
+      "Description": ""
+    },
+    {
+      "Field": "colorShade1_r",
+      "Name": "乗算カラー１ (赤）",
+      "Description": ""
+    },
+    {
+      "Field": "colorShade1_g",
+      "Name": "乗算カラー１ （緑）",
+      "Description": ""
+    },
+    {
+      "Field": "colorShade1_b",
+      "Name": "乗算カラー １（青）",
+      "Description": ""
+    },
+    {
+      "Field": "colorShade2_r",
+      "Name": "乗算カラー２ （赤）",
+      "Description": ""
+    },
+    {
+      "Field": "colorShade2_g",
+      "Name": "乗算カラー２ （緑）",
+      "Description": ""
+    },
+    {
+      "Field": "colorShade2_b",
+      "Name": "乗算カラー ２（青）",
+      "Description": ""
+    },
+    {
+      "Field": "flatSplitType",
+      "Name": "平面の分離",
+      "Description": ""
+    },
+    {
+      "Field": "flatBladeCount",
+      "Name": "平面の枚数",
+      "Description": ""
+    },
+    {
+      "Field": "flatSlant",
+      "Name": "平面の角度（度）",
+      "Description": ""
+    },
+    {
+      "Field": "flatRadius",
+      "Name": "平面の距離",
+      "Description": ""
+    },
+    {
+      "Field": "castShadow",
+      "Name": "影を落とすか",
+      "Description": ""
+    },
+    {
+      "Field": "windAmplitude",
+      "Name": "振幅(揺れの大きさ)",
+      "Description": ""
+    },
+    {
+      "Field": "pad1",
+      "Name": "pad1",
+      "Description": ""
+    },
+    {
+      "Field": "windCycle",
+      "Name": "周期(速度)",
+      "Description": ""
+    },
+    {
+      "Field": "orientationAngle",
+      "Name": "方向（度）",
+      "Description": "-1の場合はランダム"
+    },
+    {
+      "Field": "orientationRange",
+      "Name": "方向の範囲（度）",
+      "Description": ""
+    },
+    {
+      "Field": "spacing",
+      "Name": "モデル間隔",
+      "Description": ""
+    },
+    {
+      "Field": "dithering",
+      "Name": "ディザリング",
+      "Description": ""
+    },
+    {
+      "Field": "pad",
+      "Name": "pad2",
+      "Description": ""
+    },
+    {
+      "Field": "simpleModelName",
+      "Name": "Simpleモデル名",
+      "Description": ""
+    },
+    {
+      "Field": "model1Name",
+      "Name": "モデル名（１）",
+      "Description": ""
+    }
+  ]
+}

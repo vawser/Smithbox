@@ -1,0 +1,38 @@
+{
+  "Param": "GRASS_LOD_RANGE_PARAM_ST",
+  "Type": "GRASS_LOD_RANGE_PARAM_ST",
+  "Name": "GRASS_LOD_RANGE_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "LOD0_range",
+      "Name": "LOD0 - 距離",
+      "Description": "「LOD0のクラスタータイプ」に設定された描画方法(Model, Billboard, FlatTuft など)を切り替える距離"
+    },
+    {
+      "Field": "LOD0_play",
+      "Name": "LOD0 - 遊び",
+      "Description": "フェードし始める距離"
+    },
+    {
+      "Field": "LOD1_range",
+      "Name": "LOD１ - 距離",
+      "Description": "「LOD1のクラスタータイプ」に設定された描画方法(Model, Billboard, FlatTuft など)を切り替える距離"
+    },
+    {
+      "Field": "LOD1_play",
+      "Name": "LOD１ - 遊び",
+      "Description": "フェードし始める距離"
+    },
+    {
+      "Field": "LOD2_range",
+      "Name": "LOD２ - 距離",
+      "Description": "「LOD2のクラスタータイプ」に設定された描画方法(Model, Billboard, FlatTuft など)を切り替える距離"
+    },
+    {
+      "Field": "LOD2_play",
+      "Name": "LOD２ - 遊び",
+      "Description": "フェードし始める距離"
+    }
+  ]
+}

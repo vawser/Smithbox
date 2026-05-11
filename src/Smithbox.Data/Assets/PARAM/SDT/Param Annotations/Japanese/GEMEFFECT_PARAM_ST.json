@@ -1,0 +1,48 @@
+{
+  "Param": "GEMEFFECT_PARAM_ST",
+  "Type": "GEMEFFECT_PARAM_ST",
+  "Name": "GEMEFFECT_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "speffectId",
+      "Name": "特殊効果ID",
+      "Description": "特殊効果パラメータのID"
+    },
+    {
+      "Field": "categoryId",
+      "Name": "カテゴリID",
+      "Description": "カテゴリID"
+    },
+    {
+      "Field": "effectRank",
+      "Name": "効果ランク",
+      "Description": "効果ランク"
+    },
+    {
+      "Field": "rankMin",
+      "Name": "出現ランク_下限",
+      "Description": "出現ランク_下限(-1:下限なし)"
+    },
+    {
+      "Field": "rankMax",
+      "Name": "出現ランク_上限",
+      "Description": "出現ランク_上限(-1:上限なし)"
+    },
+    {
+      "Field": "equipCost",
+      "Name": "装着費",
+      "Description": "装着費"
+    },
+    {
+      "Field": "removeCost",
+      "Name": "脱着費",
+      "Description": "脱着費"
+    },
+    {
+      "Field": "prefixNameId",
+      "Name": "接頭語ID",
+      "Description": "接頭語ID"
+    }
+  ]
+}

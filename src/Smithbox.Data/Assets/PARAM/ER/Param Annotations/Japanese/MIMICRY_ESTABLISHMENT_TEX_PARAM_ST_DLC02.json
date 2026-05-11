@@ -1,0 +1,73 @@
+{
+  "Param": "MIMICRY_ESTABLISHMENT_TEX_PARAM_ST_DLC02",
+  "Type": "MIMICRY_ESTABLISHMENT_TEX_PARAM_ST_DLC02",
+  "Name": "MIMICRY_ESTABLISHMENT_TEX_PARAM_ST_DLC02",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "NT版出力から外すか",
+      "Description": "○をつけたパラメータをNT版パッケージでは除外します"
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "パッケージ出力用リザーブ1",
+      "Description": "パッケージ出力用リザーブ1"
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "パッケージ出力用リザーブ2",
+      "Description": "パッケージ出力用リザーブ2"
+    },
+    {
+      "Field": "srcR",
+      "Name": "R",
+      "Description": "変換前の地図画像のカラー情報（R）。RGB値が一致したピクセルとこのパラメータが紐づく"
+    },
+    {
+      "Field": "srcG",
+      "Name": "G",
+      "Description": "変換前の地図画像のカラー情報（G）。RGB値が一致したピクセルとこのパラメータが紐づく"
+    },
+    {
+      "Field": "srcB",
+      "Name": "B",
+      "Description": "変換前の地図画像のカラー情報（B）。RGB値が一致したピクセルとこのパラメータが紐づく"
+    },
+    {
+      "Field": "pad1",
+      "Name": "パッド",
+      "Description": "パッド。一応「画像色情報（A）」用で空けておく"
+    },
+    {
+      "Field": "mimicryEstablishmentParamId",
+      "Name": "マップ別擬態確率パラメータID",
+      "Description": "マップ別擬態確率パラメータID(-1:設定なし(デフォルト値))。地域はMapStudioと合わせてある"
+    },
+    {
+      "Field": "unknown_0xc",
+      "Name": "unknown_0xc",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0x10",
+      "Name": "unknown_0x10",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0x14",
+      "Name": "unknown_0x14",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0x18",
+      "Name": "unknown_0x18",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0x1c",
+      "Name": "unknown_0x1c",
+      "Description": ""
+    }
+  ]
+}

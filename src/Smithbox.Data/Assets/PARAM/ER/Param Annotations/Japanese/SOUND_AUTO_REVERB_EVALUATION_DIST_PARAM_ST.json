@@ -1,0 +1,48 @@
+{
+  "Param": "SOUND_AUTO_REVERB_EVALUATION_DIST_PARAM_ST",
+  "Type": "SOUND_AUTO_REVERB_EVALUATION_DIST_PARAM_ST",
+  "Name": "SOUND_AUTO_REVERB_EVALUATION_DIST_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "NoHitDist",
+      "Name": "NoHitとする距離[m]",
+      "Description": "この距離[m]以上の衝突点をNoHitとして判定する(0より小さい:無効)"
+    },
+    {
+      "Field": "isCollectNoHitPoint",
+      "Name": "NoHitの衝突点含めるか？",
+      "Description": "NoHitの衝突点含めるか？"
+    },
+    {
+      "Field": "isCollectOutdoorPoint",
+      "Name": "屋外の衝突点含めるか？",
+      "Description": "屋外の衝突点含めるか？"
+    },
+    {
+      "Field": "isCollectFloorPoint",
+      "Name": "床の衝突点含めるか？",
+      "Description": "床の衝突点含めるか？"
+    },
+    {
+      "Field": "distValCalcType",
+      "Name": "評価距離計算タイプ",
+      "Description": "評価距離計算タイプ(0:通常,1:Maxからの平均)"
+    },
+    {
+      "Field": "enableLifeTime",
+      "Name": "有効な衝突点寿命[秒]",
+      "Description": "この寿命[秒]以上の衝突点は無効扱いにする。共通設定の寿命以下に設定すること"
+    },
+    {
+      "Field": "maxDistRecordNum",
+      "Name": "Max衝突点レコード数",
+      "Description": "Max衝突点レコード数"
+    },
+    {
+      "Field": "ignoreDistNumForMax",
+      "Name": "Max距離間引き数",
+      "Description": "Max距離間引き数(0:間引かない)(「Max衝突点レコード数-1」の値に設定する必要がある。不正な値は修正される)"
+    }
+  ]
+}

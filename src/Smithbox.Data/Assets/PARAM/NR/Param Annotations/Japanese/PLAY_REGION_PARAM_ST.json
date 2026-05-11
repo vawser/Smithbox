@@ -1,0 +1,433 @@
+{
+  "Param": "PLAY_REGION_PARAM_ST",
+  "Type": "PLAY_REGION_PARAM_ST",
+  "Name": "PLAY_REGION_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "NT版出力から外すか",
+      "Description": "○をつけたパラメータをNT版パッケージでは除外します"
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "パッケージ出力用リザーブ1",
+      "Description": "パッケージ出力用リザーブ1"
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "パッケージ出力用リザーブ2",
+      "Description": "パッケージ出力用リザーブ2"
+    },
+    {
+      "Field": "matchAreaId",
+      "Name": "簡易マッチエリアID",
+      "Description": "簡易マッチエリアID"
+    },
+    {
+      "Field": "multiPlayStartLimitEventFlagId",
+      "Name": "マルチプレイ開始制限イベントフラグID",
+      "Description": "マルチプレイ開始制限イベントフラグID"
+    },
+    {
+      "Field": "otherDisableDistance",
+      "Name": "その他霊侵入不可能距離",
+      "Description": "その他霊侵入不可能距離。ホスト位置から「その他霊侵入不可能距離」～「その他霊侵入範囲上限」以内の侵入ポイントを対象に侵入位置検索を行う。"
+    },
+    {
+      "Field": "pcPositionSaveLimitEventFlagId",
+      "Name": "PC位置セーブ制限イベントフラグID",
+      "Description": "PC位置セーブ制限イベントフラグID\u3000（フラグON：PC位置セーブ有効\u3000フラグOFF：PC位置セーブ無効\u30000：PC位置セーブ常に有効）"
+    },
+    {
+      "Field": "bossAreaId",
+      "Name": "ボスエリアID",
+      "Description": "このIDが同じものを設定された領域同士は、同一のボスエリアとして扱う。"
+    },
+    {
+      "Field": "cultNpcWhiteGhostEntityId_byFree",
+      "Name": "NPC白霊召喚儀式の召還NPCのエンティティIDの自由枠ID",
+      "Description": "NPC白霊召喚儀式の召還NPCのエンティティIDとして使われる自由枠IDの先頭"
+    },
+    {
+      "Field": "bMapGuradianRegion",
+      "Name": "マップ守護領域か？",
+      "Description": "マップ守護領域の枠の増減にするか"
+    },
+    {
+      "Field": "bYellowCostumeRegion",
+      "Name": "黄衣の翁サイン領域か？",
+      "Description": "黄衣の翁サイン領域か？"
+    },
+    {
+      "Field": "multiPlayStartLimitEventFlagId_targetFlagState",
+      "Name": "制限するフラグ状態",
+      "Description": "「マルチプレイ開始制限イベントフラグID」の制限を行うフラグ状態"
+    },
+    {
+      "Field": "breakInLimitEventFlagId_1_targetFlagState",
+      "Name": "制限するフラグ状態",
+      "Description": "「侵入制限イベントフラグID1」の制限を行うフラグ状態"
+    },
+    {
+      "Field": "whiteSignLimitEventFlagId_1_targetFlagState",
+      "Name": "制限するフラグ状態",
+      "Description": "「白サイン制限イベントフラグID1」の制限を行うフラグ状態"
+    },
+    {
+      "Field": "redSignLimitEventFlagId_1_targetFlagState",
+      "Name": "制限するフラグ状態",
+      "Description": "「赤サイン制限イベントフラグID1」の制限を行うフラグ状態"
+    },
+    {
+      "Field": "breakInLimitEventFlagId_2_targetFlagState",
+      "Name": "制限するフラグ状態",
+      "Description": "「侵入制限イベントフラグID2」の制限を行うフラグ状態"
+    },
+    {
+      "Field": "breakInLimitEventFlagId_3_targetFlagState",
+      "Name": "制限するフラグ状態",
+      "Description": "「侵入制限イベントフラグID3」の制限を行うフラグ状態"
+    },
+    {
+      "Field": "whiteSignLimitEventFlagId_2_targetFlagState",
+      "Name": "制限するフラグ状態",
+      "Description": "「白サイン制限イベントフラグID2」の制限を行うフラグ状態"
+    },
+    {
+      "Field": "warpItemUsePermitBonfireId_1",
+      "Name": "ワープアイテム許可篝火ID1",
+      "Description": "ワープアイテムの使用を許可する判定に使う篝火のエンティティID1"
+    },
+    {
+      "Field": "warpItemUsePermitBonfireId_2",
+      "Name": "ワープアイテム許可篝火ID2",
+      "Description": "ワープアイテムの使用を許可する判定に使う篝火のエンティティID2"
+    },
+    {
+      "Field": "warpItemUsePermitBonfireId_3",
+      "Name": "ワープアイテム許可篝火ID3",
+      "Description": "ワープアイテムの使用を許可する判定に使う篝火のエンティティID3"
+    },
+    {
+      "Field": "warpItemUsePermitBonfireId_4",
+      "Name": "ワープアイテム許可篝火ID4",
+      "Description": "ワープアイテムの使用を許可する判定に使う篝火のエンティティID4"
+    },
+    {
+      "Field": "warpItemUsePermitBonfireId_5",
+      "Name": "ワープアイテム許可篝火ID5",
+      "Description": "ワープアイテムの使用を許可する判定に使う篝火のエンティティID5"
+    },
+    {
+      "Field": "warpItemProhibitionEventFlagId_1",
+      "Name": "ワープアイテム禁止イベントフラグID1",
+      "Description": "ワープアイテムの使用禁止を判定するイベントフラグID1。ワープアイテム許可篝火IDによる判定より優先度が上"
+    },
+    {
+      "Field": "warpItemProhibitionEventFlagId_2",
+      "Name": "ワープアイテム禁止イベントフラグID2",
+      "Description": "ワープアイテムの使用禁止を判定するイベントフラグID2。ワープアイテム許可篝火IDによる判定より優先度が上"
+    },
+    {
+      "Field": "warpItemProhibitionEventFlagId_3",
+      "Name": "ワープアイテム禁止イベントフラグID3",
+      "Description": "ワープアイテムの使用禁止を判定するイベントフラグID3。ワープアイテム許可篝火IDによる判定より優先度が上"
+    },
+    {
+      "Field": "warpItemProhibitionEventFlagId_4",
+      "Name": "ワープアイテム禁止イベントフラグID4",
+      "Description": "ワープアイテムの使用禁止を判定するイベントフラグID4。ワープアイテム許可篝火IDによる判定より優先度が上"
+    },
+    {
+      "Field": "warpItemProhibitionEventFlagId_5",
+      "Name": "ワープアイテム禁止イベントフラグID5",
+      "Description": "ワープアイテムの使用禁止を判定するイベントフラグID5。ワープアイテム許可篝火IDによる判定より優先度が上"
+    },
+    {
+      "Field": "enableBloodstain",
+      "Name": "血痕・死亡幻影有効",
+      "Description": "血痕・死亡幻影有効"
+    },
+    {
+      "Field": "enableBloodMessage",
+      "Name": "血文字有効",
+      "Description": "血文字有効"
+    },
+    {
+      "Field": "enableGhost",
+      "Name": "幻影有効",
+      "Description": "幻影有効"
+    },
+    {
+      "Field": "dispMask00",
+      "Name": "地図表示用_表示設定M00",
+      "Description": "地図M00で表示するか"
+    },
+    {
+      "Field": "dispMask01",
+      "Name": "地図表示用_表示設定M01",
+      "Description": "地図M01で表示するか"
+    },
+    {
+      "Field": "whiteSignLimitEventFlagId_3_targetFlagState",
+      "Name": "制限するフラグ状態",
+      "Description": "「白サイン制限イベントフラグID3」の制限を行うフラグ状態"
+    },
+    {
+      "Field": "redSignLimitEventFlagId_2_targetFlagState",
+      "Name": "制限するフラグ状態",
+      "Description": "「赤サイン制限イベントフラグID2」の制限を行うフラグ状態"
+    },
+    {
+      "Field": "redSignLimitEventFlagId_3_targetFlagState",
+      "Name": "制限するフラグ状態",
+      "Description": "「赤サイン制限イベントフラグID3」の制限を行うフラグ状態"
+    },
+    {
+      "Field": "isAutoIntrudePoint",
+      "Name": "侵入ポイント自動生成か",
+      "Description": "侵入ポイント自動生成か。○にした場合は自動生成された侵入ポイント用のロジックで侵入位置を検索。"
+    },
+    {
+      "Field": "pad1_old",
+      "Name": "pad1_old",
+      "Description": ""
+    },
+    {
+      "Field": "pad2",
+      "Name": "pad2",
+      "Description": ""
+    },
+    {
+      "Field": "multiPlayHASHostLimitEventFlagId",
+      "Name": "黄衣の翁ホスト制限イベントフラグ",
+      "Description": "黄衣の翁ホスト制限イベントフラグ：このフラグがONになると黄衣の翁のホストとしてのマルチプレイが禁止される。ブロッククリアフラグを入れる想定。0：制限しない"
+    },
+    {
+      "Field": "otherMaxDistance",
+      "Name": "その他霊侵入範囲上限",
+      "Description": "その他霊侵入範囲上限。ホスト位置から「その他霊侵入不可能距離」～「その他霊侵入範囲上限」以内の侵入ポイントを対象に侵入位置検索を行う。"
+    },
+    {
+      "Field": "signPuddleOpenEventFlagId",
+      "Name": "サイン溜まり解放イベントフラグID",
+      "Description": "サイン溜まり解放イベントフラグID"
+    },
+    {
+      "Field": "areaNo",
+      "Name": "地図表示用_エリア番号（mXX_00_00_00）",
+      "Description": "エリア番号（mXX_00_00_00）。地図メニューでの表示位置を指定するためのデータ"
+    },
+    {
+      "Field": "gridXNo",
+      "Name": "地図表示用_グリッドX番号（m00_XX_00_00）",
+      "Description": "グリッドX番号（m00_XX_00_00）。地図メニューでの表示位置を指定するためのデータ"
+    },
+    {
+      "Field": "gridZNo",
+      "Name": "地図表示用_グリッドZ番号（m00_00_XX_00）",
+      "Description": "グリッドZ番号（m00_00_XX_00）。地図メニューでの表示位置を指定するためのデータ"
+    },
+    {
+      "Field": "pad4",
+      "Name": "pad4",
+      "Description": ""
+    },
+    {
+      "Field": "posX",
+      "Name": "地図表示用_X座標",
+      "Description": "X座標（指定したマップからの相対座標）。地図メニューでの表示位置を指定するためのデータ"
+    },
+    {
+      "Field": "posY",
+      "Name": "地図表示用_Y座標",
+      "Description": "Y座標（指定したマップからの相対座標）。地図メニューでの表示位置を指定するためのデータ。実際には使われていないがXYZ一揃えにしておく"
+    },
+    {
+      "Field": "posZ",
+      "Name": "地図表示用_Z座標",
+      "Description": "Z座標（指定したマップからの相対座標）。地図メニューでの表示位置を指定するためのデータ"
+    },
+    {
+      "Field": "breakInLimitEventFlagId_1",
+      "Name": "侵入制限イベントフラグID1",
+      "Description": "侵入制限イベントフラグID1"
+    },
+    {
+      "Field": "whiteSignLimitEventFlagId_1",
+      "Name": "白サイン制限イベントフラグID1",
+      "Description": "白サイン制限イベントフラグID1"
+    },
+    {
+      "Field": "matchAreaSignCreateLimitEventFlagId",
+      "Name": "サイン溜まり登録制限イベントフラグID",
+      "Description": "サイン溜まり登録制限イベントフラグID\u3000（フラグON：サイン溜まり登録を許可\u3000フラグOFF：サイン溜まり登録を禁止\u30000：サイン溜まり登録を常に許可）"
+    },
+    {
+      "Field": "signAimId_1",
+      "Name": "マルチ目的ID01",
+      "Description": "目的設定時にリストに表示するマルチ目的ID"
+    },
+    {
+      "Field": "signAimId_2",
+      "Name": "マルチ目的ID02",
+      "Description": "目的設定時にリストに表示するマルチ目的ID"
+    },
+    {
+      "Field": "signAimId_3",
+      "Name": "マルチ目的ID03",
+      "Description": "目的設定時にリストに表示するマルチ目的ID"
+    },
+    {
+      "Field": "signAimId_4",
+      "Name": "マルチ目的ID04",
+      "Description": "目的設定時にリストに表示するマルチ目的ID"
+    },
+    {
+      "Field": "signAimId_5",
+      "Name": "マルチ目的ID05",
+      "Description": "目的設定時にリストに表示するマルチ目的ID"
+    },
+    {
+      "Field": "signAimId_6",
+      "Name": "マルチ目的ID06",
+      "Description": "目的設定時にリストに表示するマルチ目的ID"
+    },
+    {
+      "Field": "signAimId_7",
+      "Name": "マルチ目的ID07",
+      "Description": "目的設定時にリストに表示するマルチ目的ID"
+    },
+    {
+      "Field": "signAimId_8",
+      "Name": "マルチ目的ID08",
+      "Description": "目的設定時にリストに表示するマルチ目的ID"
+    },
+    {
+      "Field": "redSignLimitEventFlagId_1",
+      "Name": "赤サイン制限イベントフラグID1",
+      "Description": "赤サイン制限イベントフラグID1"
+    },
+    {
+      "Field": "breakInLimitEventFlagId_2",
+      "Name": "侵入制限イベントフラグID2",
+      "Description": "侵入制限イベントフラグID2"
+    },
+    {
+      "Field": "breakInLimitEventFlagId_3",
+      "Name": "侵入制限イベントフラグID3",
+      "Description": "侵入制限イベントフラグID3"
+    },
+    {
+      "Field": "whiteSignLimitEventFlagId_2",
+      "Name": "白サイン制限イベントフラグID2",
+      "Description": "白サイン制限イベントフラグID2"
+    },
+    {
+      "Field": "whiteSignLimitEventFlagId_3",
+      "Name": "白サイン制限イベントフラグID3",
+      "Description": "白サイン制限イベントフラグID3"
+    },
+    {
+      "Field": "redSignLimitEventFlagId_2",
+      "Name": "赤サイン制限イベントフラグID2",
+      "Description": "赤サイン制限イベントフラグID2"
+    },
+    {
+      "Field": "redSignLimitEventFlagId_3",
+      "Name": "赤サイン制限イベントフラグID3",
+      "Description": "赤サイン制限イベントフラグID3"
+    },
+    {
+      "Field": "bossId_1",
+      "Name": "領域内ボスID01",
+      "Description": "領域内ボスID。「侵入ポイント自動生成か」が○のときに目的とするボスを選ぶのに使われる。"
+    },
+    {
+      "Field": "bossId_2",
+      "Name": "領域内ボスID02",
+      "Description": "領域内ボスID。「侵入ポイント自動生成か」が○のときに目的とするボスを選ぶのに使われる。"
+    },
+    {
+      "Field": "bossId_3",
+      "Name": "領域内ボスID03",
+      "Description": "領域内ボスID。「侵入ポイント自動生成か」が○のときに目的とするボスを選ぶのに使われる。"
+    },
+    {
+      "Field": "bossId_4",
+      "Name": "領域内ボスID04",
+      "Description": "領域内ボスID。「侵入ポイント自動生成か」が○のときに目的とするボスを選ぶのに使われる。"
+    },
+    {
+      "Field": "bossId_5",
+      "Name": "領域内ボスID05",
+      "Description": "領域内ボスID。「侵入ポイント自動生成か」が○のときに目的とするボスを選ぶのに使われる。"
+    },
+    {
+      "Field": "bossId_6",
+      "Name": "領域内ボスID06",
+      "Description": "領域内ボスID。「侵入ポイント自動生成か」が○のときに目的とするボスを選ぶのに使われる。"
+    },
+    {
+      "Field": "bossId_7",
+      "Name": "領域内ボスID07",
+      "Description": "領域内ボスID。「侵入ポイント自動生成か」が○のときに目的とするボスを選ぶのに使われる。"
+    },
+    {
+      "Field": "bossId_8",
+      "Name": "領域内ボスID08",
+      "Description": "領域内ボスID。「侵入ポイント自動生成か」が○のときに目的とするボスを選ぶのに使われる。"
+    },
+    {
+      "Field": "bossId_9",
+      "Name": "領域内ボスID09",
+      "Description": "領域内ボスID。「侵入ポイント自動生成か」が○のときに目的とするボスを選ぶのに使われる。"
+    },
+    {
+      "Field": "bossId_10",
+      "Name": "領域内ボスID10",
+      "Description": "領域内ボスID。「侵入ポイント自動生成か」が○のときに目的とするボスを選ぶのに使われる。"
+    },
+    {
+      "Field": "bossId_11",
+      "Name": "領域内ボスID11",
+      "Description": "領域内ボスID。「侵入ポイント自動生成か」が○のときに目的とするボスを選ぶのに使われる。"
+    },
+    {
+      "Field": "bossId_12",
+      "Name": "領域内ボスID12",
+      "Description": "領域内ボスID。「侵入ポイント自動生成か」が○のときに目的とするボスを選ぶのに使われる。"
+    },
+    {
+      "Field": "bossId_13",
+      "Name": "領域内ボスID13",
+      "Description": "領域内ボスID。「侵入ポイント自動生成か」が○のときに目的とするボスを選ぶのに使われる。"
+    },
+    {
+      "Field": "bossId_14",
+      "Name": "領域内ボスID14",
+      "Description": "領域内ボスID。「侵入ポイント自動生成か」が○のときに目的とするボスを選ぶのに使われる。"
+    },
+    {
+      "Field": "bossId_15",
+      "Name": "領域内ボスID15",
+      "Description": "領域内ボスID。「侵入ポイント自動生成か」が○のときに目的とするボスを選ぶのに使われる。"
+    },
+    {
+      "Field": "bossId_16",
+      "Name": "領域内ボスID16",
+      "Description": "領域内ボスID。「侵入ポイント自動生成か」が○のときに目的とするボスを選ぶのに使われる。"
+    },
+    {
+      "Field": "mapMenuUnlockEventId",
+      "Name": "地図表示用_イベントフラグID",
+      "Description": "地図表示用_イベントフラグID(0:常に表示)。このイベントフラグが立っているときだけ、マップメニューに賑わい表示される"
+    },
+    {
+      "Field": "pad5",
+      "Name": "pad5",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,288 @@
+{
+  "Param": "BULLET_ATTACH_PARAM",
+  "Type": "BULLET_ATTACH_PARAM",
+  "Name": "BULLET_ATTACH_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "part1DummyPolyId",
+      "Name": "ダミポリID",
+      "Description": ""
+    },
+    {
+      "Field": "dummy",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "part1OffsetPosX",
+      "Name": "位置オフセットＸ",
+      "Description": ""
+    },
+    {
+      "Field": "part1OffsetPosY",
+      "Name": "位置オフセットＹ",
+      "Description": ""
+    },
+    {
+      "Field": "part1OffsetPosZ",
+      "Name": "位置オフセットＺ",
+      "Description": ""
+    },
+    {
+      "Field": "part1OffsetAccuracyPosX",
+      "Name": "位置オフセットＸ精度",
+      "Description": ""
+    },
+    {
+      "Field": "part1OffsetAccuracyPosY",
+      "Name": "位置オフセットＹ精度",
+      "Description": ""
+    },
+    {
+      "Field": "part1OffsetAccuracyPosZ",
+      "Name": "位置オフセットＺ精度",
+      "Description": ""
+    },
+    {
+      "Field": "part1OffsetRotX",
+      "Name": "角度オフセットＸ",
+      "Description": ""
+    },
+    {
+      "Field": "part1OffsetRotY",
+      "Name": "角度オフセットＹ",
+      "Description": ""
+    },
+    {
+      "Field": "part1OffsetRotZ",
+      "Name": "角度オフセットＺ",
+      "Description": ""
+    },
+    {
+      "Field": "part1OffsetAccuracyRotX",
+      "Name": "角度オフセットＸ精度",
+      "Description": ""
+    },
+    {
+      "Field": "part1OffsetAccuracyRotY",
+      "Name": "角度オフセットＹ精度",
+      "Description": ""
+    },
+    {
+      "Field": "part1OffsetAccuracyRotZ",
+      "Name": "角度オフセットＺ精度",
+      "Description": ""
+    },
+    {
+      "Field": "part2DummyPolyId",
+      "Name": "ダミポリID",
+      "Description": ""
+    },
+    {
+      "Field": "dummy1",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "part2OffsetPosX",
+      "Name": "位置オフセットＸ",
+      "Description": ""
+    },
+    {
+      "Field": "part2OffsetPosY",
+      "Name": "位置オフセットＹ",
+      "Description": ""
+    },
+    {
+      "Field": "part2OffsetPosZ",
+      "Name": "位置オフセットＺ",
+      "Description": ""
+    },
+    {
+      "Field": "part2OffsetAccuracyPosX",
+      "Name": "位置オフセットＸ精度",
+      "Description": ""
+    },
+    {
+      "Field": "part2OffsetAccuracyPosY",
+      "Name": "位置オフセットＹ精度",
+      "Description": ""
+    },
+    {
+      "Field": "part2OffsetAccuracyPosZ",
+      "Name": "位置オフセットＺ精度",
+      "Description": ""
+    },
+    {
+      "Field": "part2OffsetRotX",
+      "Name": "角度オフセットＸ",
+      "Description": ""
+    },
+    {
+      "Field": "part2OffsetRotY",
+      "Name": "角度オフセットＹ",
+      "Description": ""
+    },
+    {
+      "Field": "part2OffsetRotZ",
+      "Name": "角度オフセットＺ",
+      "Description": ""
+    },
+    {
+      "Field": "part2OffsetAccuracyRotX",
+      "Name": "角度オフセットＸ精度",
+      "Description": ""
+    },
+    {
+      "Field": "part2OffsetAccuracyRotY",
+      "Name": "角度オフセットＹ精度",
+      "Description": ""
+    },
+    {
+      "Field": "part2OffsetAccuracyRotZ",
+      "Name": "角度オフセットＺ精度",
+      "Description": ""
+    },
+    {
+      "Field": "part3DummyPolyId",
+      "Name": "ダミポリID",
+      "Description": ""
+    },
+    {
+      "Field": "dummy2",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "part3OffsetPosX",
+      "Name": "位置オフセットＸ",
+      "Description": ""
+    },
+    {
+      "Field": "part3OffsetPosY",
+      "Name": "位置オフセットＹ",
+      "Description": ""
+    },
+    {
+      "Field": "part3OffsetPosZ",
+      "Name": "位置オフセットＺ",
+      "Description": ""
+    },
+    {
+      "Field": "part3OffsetAccuracyPosX",
+      "Name": "位置オフセットＸ精度",
+      "Description": ""
+    },
+    {
+      "Field": "part3OffsetAccuracyPosY",
+      "Name": "位置オフセットＹ精度",
+      "Description": ""
+    },
+    {
+      "Field": "part3OffsetAccuracyPosZ",
+      "Name": "位置オフセットＺ精度",
+      "Description": ""
+    },
+    {
+      "Field": "part3OffsetRotX",
+      "Name": "角度オフセットＸ",
+      "Description": ""
+    },
+    {
+      "Field": "part3OffsetRotY",
+      "Name": "角度オフセットＹ",
+      "Description": ""
+    },
+    {
+      "Field": "part3OffsetRotZ",
+      "Name": "角度オフセットＺ",
+      "Description": ""
+    },
+    {
+      "Field": "part3OffsetAccuracyRotX",
+      "Name": "角度オフセットＸ精度",
+      "Description": ""
+    },
+    {
+      "Field": "part3OffsetAccuracyRotY",
+      "Name": "角度オフセットＹ精度",
+      "Description": ""
+    },
+    {
+      "Field": "part3OffsetAccuracyRotZ",
+      "Name": "角度オフセットＺ精度",
+      "Description": ""
+    },
+    {
+      "Field": "part4DummyPolyId",
+      "Name": "ダミポリID",
+      "Description": ""
+    },
+    {
+      "Field": "dummy3",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "part4OffsetPosX",
+      "Name": "位置オフセットＸ",
+      "Description": ""
+    },
+    {
+      "Field": "part4OffsetPosY",
+      "Name": "位置オフセットＹ",
+      "Description": ""
+    },
+    {
+      "Field": "part4OffsetPosZ",
+      "Name": "位置オフセットＺ",
+      "Description": ""
+    },
+    {
+      "Field": "part4OffsetAccuracyPosX",
+      "Name": "位置オフセットＸ精度",
+      "Description": ""
+    },
+    {
+      "Field": "part4OffsetAccuracyPosY",
+      "Name": "位置オフセットＹ精度",
+      "Description": ""
+    },
+    {
+      "Field": "part4OffsetAccuracyPosZ",
+      "Name": "位置オフセットＺ精度",
+      "Description": ""
+    },
+    {
+      "Field": "part4OffsetRotX",
+      "Name": "角度オフセットＸ",
+      "Description": ""
+    },
+    {
+      "Field": "part4OffsetRotY",
+      "Name": "角度オフセットＹ",
+      "Description": ""
+    },
+    {
+      "Field": "part4OffsetRotZ",
+      "Name": "角度オフセットＺ",
+      "Description": ""
+    },
+    {
+      "Field": "part4OffsetAccuracyRotX",
+      "Name": "角度オフセットＸ精度",
+      "Description": ""
+    },
+    {
+      "Field": "part4OffsetAccuracyRotY",
+      "Name": "角度オフセットＹ精度",
+      "Description": ""
+    },
+    {
+      "Field": "part4OffsetAccuracyRotZ",
+      "Name": "角度オフセットＺ精度",
+      "Description": ""
+    }
+  ]
+}

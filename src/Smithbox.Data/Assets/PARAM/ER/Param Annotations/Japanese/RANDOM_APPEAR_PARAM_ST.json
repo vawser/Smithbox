@@ -1,0 +1,513 @@
+{
+  "Param": "RANDOM_APPEAR_PARAM_ST",
+  "Type": "RANDOM_APPEAR_PARAM_ST",
+  "Name": "RANDOM_APPEAR_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "slot0",
+      "Name": "抽選スロットID0",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot1",
+      "Name": "抽選スロットID1",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot2",
+      "Name": "抽選スロットID2",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot3",
+      "Name": "抽選スロットID3",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot4",
+      "Name": "抽選スロットID4",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot5",
+      "Name": "抽選スロットID5",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot6",
+      "Name": "抽選スロットID6",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot7",
+      "Name": "抽選スロットID7",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot8",
+      "Name": "抽選スロットID8",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot9",
+      "Name": "抽選スロットID9",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot10",
+      "Name": "抽選スロットID10",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot11",
+      "Name": "抽選スロットID11",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot12",
+      "Name": "抽選スロットID12",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot13",
+      "Name": "抽選スロットID13",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot14",
+      "Name": "抽選スロットID14",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot15",
+      "Name": "抽選スロットID15",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot16",
+      "Name": "抽選スロットID16",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot17",
+      "Name": "抽選スロットID17",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot18",
+      "Name": "抽選スロットID18",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot19",
+      "Name": "抽選スロットID19",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot20",
+      "Name": "抽選スロットID20",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot21",
+      "Name": "抽選スロットID21",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot22",
+      "Name": "抽選スロットID22",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot23",
+      "Name": "抽選スロットID23",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot24",
+      "Name": "抽選スロットID24",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot25",
+      "Name": "抽選スロットID25",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot26",
+      "Name": "抽選スロットID26",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot27",
+      "Name": "抽選スロットID27",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot28",
+      "Name": "抽選スロットID28",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot29",
+      "Name": "抽選スロットID29",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot30",
+      "Name": "抽選スロットID30",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot31",
+      "Name": "抽選スロットID31",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot32",
+      "Name": "抽選スロットID32",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot33",
+      "Name": "抽選スロットID33",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot34",
+      "Name": "抽選スロットID34",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot35",
+      "Name": "抽選スロットID35",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot36",
+      "Name": "抽選スロットID36",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot37",
+      "Name": "抽選スロットID37",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot38",
+      "Name": "抽選スロットID38",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot39",
+      "Name": "抽選スロットID39",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot40",
+      "Name": "抽選スロットID40",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot41",
+      "Name": "抽選スロットID41",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot42",
+      "Name": "抽選スロットID42",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot43",
+      "Name": "抽選スロットID43",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot44",
+      "Name": "抽選スロットID44",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot45",
+      "Name": "抽選スロットID45",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot46",
+      "Name": "抽選スロットID46",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot47",
+      "Name": "抽選スロットID47",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot48",
+      "Name": "抽選スロットID48",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot49",
+      "Name": "抽選スロットID49",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot50",
+      "Name": "抽選スロットID50",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot51",
+      "Name": "抽選スロットID51",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot52",
+      "Name": "抽選スロットID52",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot53",
+      "Name": "抽選スロットID53",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot54",
+      "Name": "抽選スロットID54",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot55",
+      "Name": "抽選スロットID55",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot56",
+      "Name": "抽選スロットID56",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot57",
+      "Name": "抽選スロットID57",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot58",
+      "Name": "抽選スロットID58",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot59",
+      "Name": "抽選スロットID59",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot60",
+      "Name": "抽選スロットID60",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot61",
+      "Name": "抽選スロットID61",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot62",
+      "Name": "抽選スロットID62",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot63",
+      "Name": "抽選スロットID63",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot64",
+      "Name": "抽選スロットID64",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot65",
+      "Name": "抽選スロットID65",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot66",
+      "Name": "抽選スロットID66",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot67",
+      "Name": "抽選スロットID67",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot68",
+      "Name": "抽選スロットID68",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot69",
+      "Name": "抽選スロットID69",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot70",
+      "Name": "抽選スロットID70",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot71",
+      "Name": "抽選スロットID71",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot72",
+      "Name": "抽選スロットID72",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot73",
+      "Name": "抽選スロットID73",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot74",
+      "Name": "抽選スロットID74",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot75",
+      "Name": "抽選スロットID75",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot76",
+      "Name": "抽選スロットID76",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot77",
+      "Name": "抽選スロットID77",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot78",
+      "Name": "抽選スロットID78",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot79",
+      "Name": "抽選スロットID79",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot80",
+      "Name": "抽選スロットID80",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot81",
+      "Name": "抽選スロットID81",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot82",
+      "Name": "抽選スロットID82",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot83",
+      "Name": "抽選スロットID83",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot84",
+      "Name": "抽選スロットID84",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot85",
+      "Name": "抽選スロットID85",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot86",
+      "Name": "抽選スロットID86",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot87",
+      "Name": "抽選スロットID87",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot88",
+      "Name": "抽選スロットID88",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot89",
+      "Name": "抽選スロットID89",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot90",
+      "Name": "抽選スロットID90",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot91",
+      "Name": "抽選スロットID91",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot92",
+      "Name": "抽選スロットID92",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot93",
+      "Name": "抽選スロットID93",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot94",
+      "Name": "抽選スロットID94",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot95",
+      "Name": "抽選スロットID95",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot96",
+      "Name": "抽選スロットID96",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot97",
+      "Name": "抽選スロットID97",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot98",
+      "Name": "抽選スロットID98",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "slot99",
+      "Name": "抽選スロットID99",
+      "Description": "スロットが当選した場合に出現するか"
+    },
+    {
+      "Field": "pad",
+      "Name": "pad",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "Param": "GRAPHICS_COMMON_PARAM_ST",
+  "Type": "GRAPHICS_COMMON_PARAM_ST",
+  "Name": "GRAPHICS_COMMON_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "hitBulletDecalOffset_HitIns",
+      "Name": "HIT INSに弾丸が当たった時のデカール発生位置オフセット",
+      "Description": "HIT INSに当たった時に発生するデカールの発生位置を法線方向にこの値だけオフセットする"
+    },
+    {
+      "Field": "reserved02",
+      "Name": "予約",
+      "Description": "(dummy8)"
+    },
+    {
+      "Field": "charaWetDecalFadeRange",
+      "Name": "キャラが濡れた時のデカールフェード範囲[m]",
+      "Description": "キャラが濡れた時にデカールを消すフェード範囲[m]"
+    },
+    {
+      "Field": "reserved04",
+      "Name": "予約",
+      "Description": "(dummy8)"
+    }
+  ]
+}

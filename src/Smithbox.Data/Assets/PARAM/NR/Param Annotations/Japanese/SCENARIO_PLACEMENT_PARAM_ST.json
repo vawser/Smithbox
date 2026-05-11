@@ -1,0 +1,68 @@
+{
+  "Param": "SCENARIO_PLACEMENT_PARAM_ST",
+  "Type": "SCENARIO_PLACEMENT_PARAM_ST",
+  "Name": "SCENARIO_PLACEMENT_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "unknown_0",
+      "Name": "unknown_0",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_1a",
+      "Name": "unknown_1a",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_1b",
+      "Name": "unknown_1b",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_1c",
+      "Name": "unknown_1c",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_1d",
+      "Name": "unknown_1d",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_2a",
+      "Name": "unknown_2a",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_2b",
+      "Name": "unknown_2b",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_2c",
+      "Name": "unknown_2c",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_2e",
+      "Name": "unknown_2e",
+      "Description": ""
+    },
+    {
+      "Field": "eventFlag_unk1",
+      "Name": "eventFlag_unk1",
+      "Description": ""
+    },
+    {
+      "Field": "eventFlag_unk2",
+      "Name": "eventFlag_unk2",
+      "Description": ""
+    },
+    {
+      "Field": "charaInitParamId",
+      "Name": "charaInitParamId",
+      "Description": ""
+    }
+  ]
+}

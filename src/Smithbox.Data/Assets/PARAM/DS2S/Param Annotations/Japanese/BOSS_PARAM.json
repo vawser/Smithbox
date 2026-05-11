@@ -1,0 +1,143 @@
+{
+  "Param": "BOSS_PARAM",
+  "Type": "BOSS_PARAM",
+  "Name": "BOSS_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "type",
+      "Name": "ボスタイプ",
+      "Description": ""
+    },
+    {
+      "Field": "isPartialPhysics",
+      "Name": "部位ラグドール有効",
+      "Description": ""
+    },
+    {
+      "Field": "dummy",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "part1Hp",
+      "Name": "部位１ＨＰ",
+      "Description": ""
+    },
+    {
+      "Field": "part1BeakAnimId",
+      "Name": "壊れアニメ番号",
+      "Description": ""
+    },
+    {
+      "Field": "part1BreakObjDummyPolyId",
+      "Name": "壊れOBJ生成ダミポリ番号",
+      "Description": ""
+    },
+    {
+      "Field": "dummy1",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "part1BreakObjId",
+      "Name": "壊れOBJ番号",
+      "Description": ""
+    },
+    {
+      "Field": "part1EventFlag",
+      "Name": "イベントフラグ",
+      "Description": ""
+    },
+    {
+      "Field": "part2Hp",
+      "Name": "部位２ＨＰ",
+      "Description": ""
+    },
+    {
+      "Field": "part2BreakAnimId",
+      "Name": "壊れアニメ番号",
+      "Description": ""
+    },
+    {
+      "Field": "part2BreakObjDummyPolyId",
+      "Name": "壊れOBJ生成ダミポリ番号",
+      "Description": ""
+    },
+    {
+      "Field": "dummy2",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "part2BreakObjId",
+      "Name": "壊れOBJ番号",
+      "Description": ""
+    },
+    {
+      "Field": "part2EventFlag",
+      "Name": "イベントフラグ",
+      "Description": ""
+    },
+    {
+      "Field": "part3Hp",
+      "Name": "部位３ＨＰ",
+      "Description": ""
+    },
+    {
+      "Field": "part3BreakAnimId",
+      "Name": "壊れアニメ番号",
+      "Description": ""
+    },
+    {
+      "Field": "part3BreakObjDummyPolyId",
+      "Name": "壊れOBJ生成ダミポリ番号",
+      "Description": ""
+    },
+    {
+      "Field": "dummy3",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "part3BreakObjId",
+      "Name": "壊れOBJ番号",
+      "Description": ""
+    },
+    {
+      "Field": "part3EventFlag",
+      "Name": "イベントフラグ",
+      "Description": ""
+    },
+    {
+      "Field": "part4Hp",
+      "Name": "部位４ＨＰ",
+      "Description": ""
+    },
+    {
+      "Field": "part4BreakAnimId",
+      "Name": "壊れアニメ番号",
+      "Description": ""
+    },
+    {
+      "Field": "part4BreakObjDummyPolyId",
+      "Name": "壊れOBJ生成ダミポリ番号",
+      "Description": ""
+    },
+    {
+      "Field": "dummy4",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "part4BreakObjId",
+      "Name": "壊れOBJ番号",
+      "Description": ""
+    },
+    {
+      "Field": "part4EventFlag",
+      "Name": "イベントフラグ",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "Param": "KNOWLEDGE_LOADSCREEN_ITEM_PARAM_ST",
+  "Type": "KNOWLEDGE_LOADSCREEN_ITEM_PARAM_ST",
+  "Name": "KNOWLEDGE_LOADSCREEN_ITEM_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "unlockFlagId",
+      "Name": "解禁フラグ",
+      "Description": "解禁フラグ"
+    },
+    {
+      "Field": "invalidFlagId",
+      "Name": "無効フラグ",
+      "Description": "無効フラグ"
+    },
+    {
+      "Field": "msgId",
+      "Name": "テキストID",
+      "Description": "テキストID"
+    },
+    {
+      "Field": "padding",
+      "Name": "予約",
+      "Description": "予約"
+    }
+  ]
+}

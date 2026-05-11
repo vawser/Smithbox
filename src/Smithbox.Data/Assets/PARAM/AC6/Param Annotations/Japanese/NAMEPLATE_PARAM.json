@@ -1,0 +1,28 @@
+{
+  "Param": "NAMEPLATE_PARAM",
+  "Type": "NAMEPLATE_PARAM",
+  "Name": "NAMEPLATE_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "catalogTextID",
+      "Name": "テキストID",
+      "Description": "ショップで表示する名前のメニューテキストID"
+    },
+    {
+      "Field": "price",
+      "Name": "価格",
+      "Description": "販売価格(アリーナポイント)"
+    },
+    {
+      "Field": "unk08",
+      "Name": "unk08",
+      "Description": ""
+    },
+    {
+      "Field": "pad",
+      "Name": "pad",
+      "Description": ""
+    }
+  ]
+}

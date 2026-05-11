@@ -1,0 +1,83 @@
+{
+  "Param": "MULTI_ESTUS_FLASK_BONUS_PARAM_ST",
+  "Type": "MULTI_ESTUS_FLASK_BONUS_PARAM_ST",
+  "Name": "MULTI_ESTUS_FLASK_BONUS_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "host",
+      "Name": "ホスト",
+      "Description": "ホストのエスト回復数"
+    },
+    {
+      "Field": "WhiteGhost_None",
+      "Name": "白霊",
+      "Description": "協力サインの白霊のエスト回復数"
+    },
+    {
+      "Field": "WhiteGhost_Umbasa",
+      "Name": "金霊（太陽）",
+      "Description": "協力サインの金霊のエスト回復数"
+    },
+    {
+      "Field": "WhiteGhost_Berserker",
+      "Name": "白バーサーカー",
+      "Description": "協力サインの白バーサーカーのエスト回復数"
+    },
+    {
+      "Field": "BlackGhost_None_Sign",
+      "Name": "闇霊(ロザリア赤霊)（サイン）",
+      "Description": "敵対サインの闇霊(ロザリア赤霊)のエスト回復数"
+    },
+    {
+      "Field": "BlackGhost_Umbasa_Sign",
+      "Name": "赤金霊（サイン）",
+      "Description": "敵対サインの赤金霊のエスト回復数"
+    },
+    {
+      "Field": "BlackGhost_Berserker_Sign",
+      "Name": "赤バーサーカー（サイン）",
+      "Description": "敵対サインの赤バーサーカーのエスト回復数"
+    },
+    {
+      "Field": "BlackGhost_None_Invade",
+      "Name": "闇霊(ロザリア赤霊)（乱入）",
+      "Description": "侵入オーブの闇霊(ロザリア赤霊)のエスト回復数"
+    },
+    {
+      "Field": "BlackGhost_Umbasa_Invade",
+      "Name": "赤金霊（乱入）",
+      "Description": "侵入オーブの赤金霊のエスト回復数"
+    },
+    {
+      "Field": "BlackGhost_Berserker_Invade",
+      "Name": "赤バーサーカー（乱入）",
+      "Description": "侵入オーブの赤バーサーカーのエスト回復数"
+    },
+    {
+      "Field": "RedHunter1",
+      "Name": "赤狩り霊１",
+      "Description": "赤狩り霊１のエスト回復数"
+    },
+    {
+      "Field": "RedHunter2",
+      "Name": "赤狩り霊２",
+      "Description": "赤狩り霊２のエスト回復数"
+    },
+    {
+      "Field": "GuardianOfForest",
+      "Name": "マップ守護霊(森)",
+      "Description": "マップ守護霊（森）のエスト回復数"
+    },
+    {
+      "Field": "GuardianOfAnor",
+      "Name": "マップ守護霊(アノール)",
+      "Description": "マップ守護霊(アノール)のエスト回復数"
+    },
+    {
+      "Field": "pad1",
+      "Name": "pad",
+      "Description": ""
+    }
+  ]
+}

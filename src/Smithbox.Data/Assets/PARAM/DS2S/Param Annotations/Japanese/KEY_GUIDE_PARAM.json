@@ -1,0 +1,68 @@
+{
+  "Param": "KEY_GUIDE_PARAM",
+  "Type": "KEY_GUIDE_PARAM",
+  "Name": "KEY_GUIDE_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "textId",
+      "Name": "テキストID",
+      "Description": ""
+    },
+    {
+      "Field": "width_radius",
+      "Name": "X軸半長or半径",
+      "Description": ""
+    },
+    {
+      "Field": "height",
+      "Name": "Y軸半長",
+      "Description": ""
+    },
+    {
+      "Field": "depth",
+      "Name": "Z軸半長",
+      "Description": ""
+    },
+    {
+      "Field": "depthOffset",
+      "Name": "Z軸オフセット",
+      "Description": ""
+    },
+    {
+      "Field": "shapeType",
+      "Name": "形状",
+      "Description": ""
+    },
+    {
+      "Field": "angleType",
+      "Name": "ダミポリ方向",
+      "Description": ""
+    },
+    {
+      "Field": "angleDeg",
+      "Name": "許容角度",
+      "Description": ""
+    },
+    {
+      "Field": "bFollow",
+      "Name": "追従",
+      "Description": ""
+    },
+    {
+      "Field": "dummyPolyId",
+      "Name": "ダミポリID",
+      "Description": ""
+    },
+    {
+      "Field": "bEnableActing",
+      "Name": "アクション中表示可能",
+      "Description": ""
+    },
+    {
+      "Field": "posAngleDeg",
+      "Name": "位置許容角度",
+      "Description": ""
+    }
+  ]
+}

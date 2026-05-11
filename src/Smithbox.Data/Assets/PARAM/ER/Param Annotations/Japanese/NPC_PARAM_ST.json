@@ -1,0 +1,1618 @@
+{
+  "Param": "NPC_PARAM_ST",
+  "Type": "NPC_PARAM_ST",
+  "Name": "NPC_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "NT版出力から外すか",
+      "Description": "○をつけたパラメータをNT版パッケージでは除外します"
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "パッケージ出力用リザーブ1",
+      "Description": "パッケージ出力用リザーブ1"
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "パッケージ出力用リザーブ2",
+      "Description": "パッケージ出力用リザーブ2"
+    },
+    {
+      "Field": "behaviorVariationId",
+      "Name": "行動バリエーションID",
+      "Description": "行動IDを算出するときに使用するバリエーションID."
+    },
+    {
+      "Field": "resistCorrectId_poison",
+      "Name": "毒耐性 補正ルールID",
+      "Description": "状態異常の発動時、状態異常耐性補正パラメータの設定値を使って、一時的に最大値を変動させる"
+    },
+    {
+      "Field": "nameId",
+      "Name": "NPC名ID",
+      "Description": "NPC名メッセージパラメータ用ID"
+    },
+    {
+      "Field": "turnVellocity",
+      "Name": "旋回速度[deg/sec]",
+      "Description": "1秒間に旋回できる回転速度[度/秒]."
+    },
+    {
+      "Field": "hitHeight",
+      "Name": "対マップあたりの高さ[m]",
+      "Description": "対キャラ当たりカプセルの高さ."
+    },
+    {
+      "Field": "hitRadius",
+      "Name": "対マップあたりの半径[m]",
+      "Description": "対キャラ当たりカプセルの半径."
+    },
+    {
+      "Field": "weight",
+      "Name": "重量[kg]",
+      "Description": "重量."
+    },
+    {
+      "Field": "hitYOffset",
+      "Name": "表示位置Yオフセット[m]",
+      "Description": "モデル表示位置のY（高さ）方向のオフセット。あたり位置より浮かせることができる。"
+    },
+    {
+      "Field": "hp",
+      "Name": "ＨＰ",
+      "Description": "死亡猶予."
+    },
+    {
+      "Field": "mp",
+      "Name": "ＭＰ",
+      "Description": "魔法使用量."
+    },
+    {
+      "Field": "getSoul",
+      "Name": "ソウル",
+      "Description": "死亡時に、キャラクターが取得できるソウル量."
+    },
+    {
+      "Field": "itemLotId_enemy",
+      "Name": "アイテム抽選ID_エネミー用",
+      "Description": "死亡時に取得するアイテムの抽選ID_エネミー用を指定。どちらか片方のみ設定してください。"
+    },
+    {
+      "Field": "itemLotId_map",
+      "Name": "アイテム抽選ID_マップ用",
+      "Description": "死亡時に取得するアイテムの抽選ID_マップ用を指定。どちらか片方のみ設定してください。"
+    },
+    {
+      "Field": "maxAnkleRollAngle",
+      "Name": "FootIK足首の制限角度_ロール",
+      "Description": "FootIK足首のロールの制限角度（-1：制限なし）"
+    },
+    {
+      "Field": "chrHitGroupAndNavimesh",
+      "Name": "あたりグループと使用ナビメッシュ",
+      "Description": "他のキャラとのあたり判定を設定（ラグドールあたりにすると他のキャラがラグドールに当たるようになる）"
+    },
+    {
+      "Field": "faceIconId",
+      "Name": "NPC顔画像ID",
+      "Description": "NPC顔画像ID(0:無効値(デフォルト))。「サイン閲覧メニュー」「キックメニュー」などで表示する顔画像のIDを指定する。無効値なら着せ替えモデルを表示する"
+    },
+    {
+      "Field": "deactivateDist",
+      "Name": "ディアクティベート距離設定[m]",
+      "Description": "キャラがディアクティベートされる距離（オープン配置キャラのみ有効）"
+    },
+    {
+      "Field": "chrActivateConditionParamId",
+      "Name": "キャラ出現条件パラ",
+      "Description": "キャラ出現条件パラメータID"
+    },
+    {
+      "Field": "footIkErrorHeightLimit",
+      "Name": "FootIK見た目の上下制限値",
+      "Description": "FootIK見た目の上下制限値"
+    },
+    {
+      "Field": "humanityLotId",
+      "Name": "人間性抽選ID",
+      "Description": "死亡時に取得する人間性の抽選IDを指定"
+    },
+    {
+      "Field": "spEffectID0",
+      "Name": "常駐特殊効果0",
+      "Description": "常駐特殊効果0"
+    },
+    {
+      "Field": "spEffectID1",
+      "Name": "常駐特殊効果1",
+      "Description": "常駐特殊効果1"
+    },
+    {
+      "Field": "spEffectID2",
+      "Name": "常駐特殊効果2",
+      "Description": "常駐特殊効果2"
+    },
+    {
+      "Field": "spEffectID3",
+      "Name": "常駐特殊効果3",
+      "Description": "常駐特殊効果3"
+    },
+    {
+      "Field": "spEffectID4",
+      "Name": "常駐特殊効果4",
+      "Description": "常駐特殊効果4"
+    },
+    {
+      "Field": "spEffectID5",
+      "Name": "常駐特殊効果5",
+      "Description": "常駐特殊効果5"
+    },
+    {
+      "Field": "spEffectID6",
+      "Name": "常駐特殊効果6",
+      "Description": "常駐特殊効果6"
+    },
+    {
+      "Field": "spEffectID7",
+      "Name": "常駐特殊効果7",
+      "Description": "常駐特殊効果7"
+    },
+    {
+      "Field": "GameClearSpEffectID",
+      "Name": "周回ボーナス用特殊効果ＩＤ",
+      "Description": "周回ボーナス用特殊効果ＩＤ"
+    },
+    {
+      "Field": "physGuardCutRate",
+      "Name": "物理攻撃カット率[％]",
+      "Description": "ガード時のダメージカット率を各攻撃ごとに設定"
+    },
+    {
+      "Field": "magGuardCutRate",
+      "Name": "魔法攻撃カット率[％]",
+      "Description": "ガード攻撃でない場合は、0を入れる"
+    },
+    {
+      "Field": "fireGuardCutRate",
+      "Name": "炎攻撃力カット率[％]",
+      "Description": "炎攻撃をどれだけカットするか？"
+    },
+    {
+      "Field": "thunGuardCutRate",
+      "Name": "電撃攻撃力カット率[％]",
+      "Description": "電撃攻撃をどれだけカットするか？"
+    },
+    {
+      "Field": "animIdOffset",
+      "Name": "アニメIDオフセット1",
+      "Description": "すべてのアニメをこの数だけずらしたIDで再生します。なければ元のアニメIDを参照します。"
+    },
+    {
+      "Field": "lockGazePoint0",
+      "Name": "ロックダミポリ0の注視点",
+      "Description": "ロックオンダミポリ22Xをロックしている際に指定したダミポリを注視する（-1：無効）"
+    },
+    {
+      "Field": "lockGazePoint1",
+      "Name": "ロックダミポリ1の注視点",
+      "Description": "ロックオンダミポリ22Xをロックしている際に指定したダミポリを注視する（-1：無効）"
+    },
+    {
+      "Field": "lockGazePoint2",
+      "Name": "ロックダミポリ2の注視点",
+      "Description": "ロックオンダミポリ22Xをロックしている際に指定したダミポリを注視する（-1：無効）"
+    },
+    {
+      "Field": "lockGazePoint3",
+      "Name": "ロックダミポリ3の注視点",
+      "Description": "ロックオンダミポリ22Xをロックしている際に指定したダミポリを注視する（-1：無効）"
+    },
+    {
+      "Field": "lockGazePoint4",
+      "Name": "ロックダミポリ4の注視点",
+      "Description": "ロックオンダミポリ22Xをロックしている際に指定したダミポリを注視する（-1：無効）"
+    },
+    {
+      "Field": "lockGazePoint5",
+      "Name": "ロックダミポリ5の注視点",
+      "Description": "ロックオンダミポリ22Xをロックしている際に指定したダミポリを注視する（-1：無効）"
+    },
+    {
+      "Field": "networkWarpDist",
+      "Name": "ネットワークワープ判定距離[m/秒]",
+      "Description": "ネットワークの同期で、補完移動でなくワープさせる距離。スピードの速い人（exドラゴン)は長めにしてあげる必要がある。"
+    },
+    {
+      "Field": "dbgBehaviorR1",
+      "Name": "R1",
+      "Description": "行動パラメータツールからIDを登録し、行動を指定する."
+    },
+    {
+      "Field": "dbgBehaviorL1",
+      "Name": "L1",
+      "Description": "行動パラメータツールからIDを登録し、行動を指定する."
+    },
+    {
+      "Field": "dbgBehaviorR2",
+      "Name": "R2",
+      "Description": "行動パラメータツールからIDを登録し、行動を指定する."
+    },
+    {
+      "Field": "dbgBehaviorL2",
+      "Name": "L2",
+      "Description": "行動パラメータツールからIDを登録し、行動を指定する."
+    },
+    {
+      "Field": "dbgBehaviorRL",
+      "Name": "□",
+      "Description": "行動パラメータツールからIDを登録し、行動を指定する."
+    },
+    {
+      "Field": "dbgBehaviorRR",
+      "Name": "○",
+      "Description": "行動パラメータツールからIDを登録し、行動を指定する."
+    },
+    {
+      "Field": "dbgBehaviorRD",
+      "Name": "×",
+      "Description": "行動パラメータツールからIDを登録し、行動を指定する."
+    },
+    {
+      "Field": "dbgBehaviorRU",
+      "Name": "△",
+      "Description": "行動パラメータツールからIDを登録し、行動を指定する."
+    },
+    {
+      "Field": "dbgBehaviorLL",
+      "Name": "←",
+      "Description": "行動パラメータツールからIDを登録し、行動を指定する."
+    },
+    {
+      "Field": "dbgBehaviorLR",
+      "Name": "→",
+      "Description": "行動パラメータツールからIDを登録し、行動を指定する."
+    },
+    {
+      "Field": "dbgBehaviorLD",
+      "Name": "↓",
+      "Description": "行動パラメータツールからIDを登録し、行動を指定する."
+    },
+    {
+      "Field": "dbgBehaviorLU",
+      "Name": "↑",
+      "Description": "行動パラメータツールからIDを登録し、行動を指定する."
+    },
+    {
+      "Field": "animIdOffset2",
+      "Name": "アニメIDオフセット2",
+      "Description": "すべてのアニメをこの数だけずらしたIDで再生します。なければアニメIDオフセット1のアニメIDを参照します。"
+    },
+    {
+      "Field": "partsDamageRate1",
+      "Name": "ダメージグループ1ダメージ倍率",
+      "Description": "部位1に対するダメージ処理に適応する倍率"
+    },
+    {
+      "Field": "partsDamageRate2",
+      "Name": "ダメージグループ2ダメージ倍率",
+      "Description": "部位2に対するダメージ処理に適応する倍率"
+    },
+    {
+      "Field": "partsDamageRate3",
+      "Name": "ダメージグループ3ダメージ倍率",
+      "Description": "部位3に対するダメージ処理に適応する倍率"
+    },
+    {
+      "Field": "partsDamageRate4",
+      "Name": "ダメージグループ4ダメージ倍率",
+      "Description": "部位4に対するダメージ処理に適応する倍率"
+    },
+    {
+      "Field": "partsDamageRate5",
+      "Name": "ダメージグループ5ダメージ倍率",
+      "Description": "部位5に対するダメージ処理に適応する倍率"
+    },
+    {
+      "Field": "partsDamageRate6",
+      "Name": "ダメージグループ6ダメージ倍率",
+      "Description": "部位6に対するダメージ処理に適応する倍率"
+    },
+    {
+      "Field": "partsDamageRate7",
+      "Name": "ダメージグループ7ダメージ倍率",
+      "Description": "部位7に対するダメージ処理に適応する倍率"
+    },
+    {
+      "Field": "partsDamageRate8",
+      "Name": "ダメージグループ8ダメージ倍率",
+      "Description": "部位8に対するダメージ処理に適応する倍率"
+    },
+    {
+      "Field": "weakPartsDamageRate",
+      "Name": "弱点部位ダメージ倍率",
+      "Description": "弱点部位に対するダメージ処理に適応する倍率"
+    },
+    {
+      "Field": "superArmorRecoverCorrection",
+      "Name": "SA回復時間補正値",
+      "Description": "スーパーアーマー回復時間用の補正値"
+    },
+    {
+      "Field": "superArmorBrakeKnockbackDist",
+      "Name": "SAブレイク時ノックバック距離",
+      "Description": "SAブレイクの時だけに使えるノックバック距離"
+    },
+    {
+      "Field": "stamina",
+      "Name": "スタミナ",
+      "Description": "スタミナ総量."
+    },
+    {
+      "Field": "staminaRecoverBaseVel",
+      "Name": "スタミナ回復基本速度[point/s]",
+      "Description": "スタミナ回復基本速度[point/s]"
+    },
+    {
+      "Field": "def_phys",
+      "Name": "物理防御力",
+      "Description": "物理攻撃に対するダメージ減少基本値."
+    },
+    {
+      "Field": "def_slash",
+      "Name": "斬撃防御力[％]",
+      "Description": "攻撃属性を見て、斬撃属性のときは、防御力を減少させる."
+    },
+    {
+      "Field": "def_blow",
+      "Name": "打撃防御力[％]",
+      "Description": "攻撃属性を見て、打撃属性のときは、防御力を減少させる."
+    },
+    {
+      "Field": "def_thrust",
+      "Name": "刺突防御力[％]",
+      "Description": "攻撃属性を見て、刺突属性のときは、防御力を減少させる."
+    },
+    {
+      "Field": "def_mag",
+      "Name": "魔法防御力",
+      "Description": "魔法攻撃に対するダメージ減少基本値."
+    },
+    {
+      "Field": "def_fire",
+      "Name": "炎防御力",
+      "Description": "炎攻撃に対するダメージ減少基本値."
+    },
+    {
+      "Field": "def_thunder",
+      "Name": "電撃防御力",
+      "Description": "電撃攻撃に対するダメージ減少基本値."
+    },
+    {
+      "Field": "defFlickPower",
+      "Name": "はじき防御力",
+      "Description": "敵の攻撃のはじき判定に使用。//ガード以外の通常攻撃でもはじけるようにするためのものです.//硬い表皮の敵は、何もしなくてもはじかれることがある…みたいな感じ通常の敵なら関係ないです."
+    },
+    {
+      "Field": "resist_poison",
+      "Name": "毒耐性",
+      "Description": "毒状態異常へのかかりにくさ"
+    },
+    {
+      "Field": "resist_desease",
+      "Name": "疫病耐性",
+      "Description": "疫病状態異常へのかかりにくさ"
+    },
+    {
+      "Field": "resist_blood",
+      "Name": "出血耐性",
+      "Description": "出血状態異常へのかかりにくさ"
+    },
+    {
+      "Field": "resist_curse",
+      "Name": "呪耐性",
+      "Description": "呪状態異常へのかかりにくさ"
+    },
+    {
+      "Field": "ghostModelId",
+      "Name": "徘徊ゴースト時差し替えモデルID",
+      "Description": "徘徊ゴースト化したときの差し替えモデル、テクスチャID"
+    },
+    {
+      "Field": "normalChangeResouceId",
+      "Name": "通常時差し替えリソースID",
+      "Description": "通常時のリソースID差し替え（むやみに使わないこと）"
+    },
+    {
+      "Field": "guardAngle",
+      "Name": "ガード範囲[deg]",
+      "Description": "武器のガード時の防御発生範囲角度.保留中"
+    },
+    {
+      "Field": "slashGuardCutRate",
+      "Name": "斬撃攻撃カット率[％]",
+      "Description": "攻撃タイプを見て、斬撃属性のダメージを何％カットするか？を指定"
+    },
+    {
+      "Field": "blowGuardCutRate",
+      "Name": "打撃攻撃カット率[％]",
+      "Description": "攻撃タイプを見て、打撃属性のダメージを何％カットするか？を指定"
+    },
+    {
+      "Field": "thrustGuardCutRate",
+      "Name": "刺突攻撃カット率[％]",
+      "Description": "攻撃タイプを見て、刺突属性のダメージを何％カットするか？を指定"
+    },
+    {
+      "Field": "lockGazePoint6",
+      "Name": "ロックダミポリ6の注視点",
+      "Description": "ロックオンダミポリ22Xをロックしている際に指定したダミポリを注視する（-1：無効）"
+    },
+    {
+      "Field": "normalChangeTexChrId",
+      "Name": "通常時差し替えテクスチャキャラID",
+      "Description": "通常時差し替えテクスチャキャラID（むやみに使わないこと）"
+    },
+    {
+      "Field": "dropType",
+      "Name": "ドロップアイテムの表示形式",
+      "Description": "アイテムドロップ時の表示方法(死体発光orアイテム表示)"
+    },
+    {
+      "Field": "knockbackRate",
+      "Name": "ノックバックカット率[％]",
+      "Description": "ノックバックダメージを受けたときの減少値／具体的には、攻撃側のノックバック初速度をカットする"
+    },
+    {
+      "Field": "knockbackParamId",
+      "Name": "ノックバックパラメータID",
+      "Description": "ノックバック時に使用するパラメータIDを設定"
+    },
+    {
+      "Field": "fallDamageDump",
+      "Name": "落下ダメージ軽減補正[％]",
+      "Description": "落下ダメージ軽減補正[％]"
+    },
+    {
+      "Field": "staminaGuardDef",
+      "Name": "スタミナ攻撃カット率[％]",
+      "Description": "ガード成功時に、敵のスタミナ攻撃に対する防御力"
+    },
+    {
+      "Field": "resist_sleep",
+      "Name": "睡眠耐性",
+      "Description": "睡眠状態異常へのかかりにくさ"
+    },
+    {
+      "Field": "resist_madness",
+      "Name": "発狂耐性",
+      "Description": "発狂状態異常へのかかりにくさ"
+    },
+    {
+      "Field": "sleepGuardResist",
+      "Name": "睡眠攻撃カット率[％]",
+      "Description": "睡眠に対する攻撃力（特殊効果パラメータに設定）をどれだけカットするか"
+    },
+    {
+      "Field": "madnessGuardResist",
+      "Name": "発狂攻撃カット率[％]",
+      "Description": "発狂に対する攻撃力（特殊効果パラメータに設定）をどれだけカットするか"
+    },
+    {
+      "Field": "lockGazePoint7",
+      "Name": "ロックダミポリ7の注視点",
+      "Description": "ロックオンダミポリ22Xをロックしている際に指定したダミポリを注視する（-1：無効）"
+    },
+    {
+      "Field": "mpRecoverBaseVel",
+      "Name": "MP回復基本速度[％/s]",
+      "Description": "MP回復基本速度[％/s]"
+    },
+    {
+      "Field": "flickDamageCutRate",
+      "Name": "はじき時ダメージ減衰率[%]",
+      "Description": "攻撃をはじいた時にダメージを減衰する値を設定"
+    },
+    {
+      "Field": "defaultLodParamId",
+      "Name": "デフォルトLODパラムID",
+      "Description": "デフォルトLODパラムID(-1：なし)"
+    },
+    {
+      "Field": "drawType",
+      "Name": "描画タイプ",
+      "Description": "描画タイプ"
+    },
+    {
+      "Field": "npcType",
+      "Name": "NPCタイプ",
+      "Description": "NPCの種類.ザコ敵/ボス敵が区別されていればOK"
+    },
+    {
+      "Field": "teamType",
+      "Name": "チームタイプ",
+      "Description": "NPCの攻撃が当たる/当たらない、狙う/狙わない設定"
+    },
+    {
+      "Field": "moveType",
+      "Name": "移動タイプ",
+      "Description": "移動方法。これにより制御が変更される."
+    },
+    {
+      "Field": "lockDist",
+      "Name": "ロック距離",
+      "Description": "ロックオンできる距離[m]"
+    },
+    {
+      "Field": "materialSe_Weak1",
+      "Name": "弱点防御材質1【SE】",
+      "Description": "弱点部位ダメージを受けた時に鳴らすSEを判定する。1"
+    },
+    {
+      "Field": "materialSfx_Weak1",
+      "Name": "弱点防御材質1【SFX】",
+      "Description": "弱点部位ダメージを受けた時に発生するSFXを判定する。1"
+    },
+    {
+      "Field": "partsDamageType",
+      "Name": "部位ダメージ適用攻撃",
+      "Description": "部位ダメージを適用する攻撃タイプを設定する"
+    },
+    {
+      "Field": "vowType",
+      "Name": "誓約",
+      "Description": "誓約タイプ"
+    },
+    {
+      "Field": "guardLevel",
+      "Name": "ガードレベル",
+      "Description": "ガードしたとき、敵の攻撃をどのガードモーションで受けるか？を決める"
+    },
+    {
+      "Field": "burnSfxType",
+      "Name": "燃焼SFXタイプ",
+      "Description": "燃焼時のSFXタイプ"
+    },
+    {
+      "Field": "poisonGuardResist",
+      "Name": "毒耐性カット率[％]",
+      "Description": "毒にする攻撃力（特殊効果パラメータに設定）をどれだけカットするか"
+    },
+    {
+      "Field": "diseaseGuardResist",
+      "Name": "疫病攻撃カット率[％]",
+      "Description": "疫病にする攻撃力（特殊効果パラメータに設定）をどれだけカットするか"
+    },
+    {
+      "Field": "bloodGuardResist",
+      "Name": "出血攻撃カット率[％]",
+      "Description": "出血にする攻撃力（特殊効果パラメータに設定）をどれだけカットするか"
+    },
+    {
+      "Field": "curseGuardResist",
+      "Name": "呪攻撃カット率[％]",
+      "Description": "呪にする攻撃力（特殊効果パラメータに設定）をどれだけカットするか"
+    },
+    {
+      "Field": "parryAttack",
+      "Name": "パリィ攻撃力",
+      "Description": "パリィ攻撃力。パリィする側が使用"
+    },
+    {
+      "Field": "parryDefence",
+      "Name": "パリィ防御力",
+      "Description": "パリィ防御力。パリィされる側が使用。"
+    },
+    {
+      "Field": "sfxSize",
+      "Name": "SFXサイズ",
+      "Description": "SFXサイズ"
+    },
+    {
+      "Field": "pushOutCamRegionRadius",
+      "Name": "カメラ押し出し領域半径[m]",
+      "Description": "カメラ押し出し領域半径[m]"
+    },
+    {
+      "Field": "hitStopType",
+      "Name": "ヒットストップするか",
+      "Description": "ヒットストップ処理を行うかどうかの設定"
+    },
+    {
+      "Field": "ladderEndChkOffsetTop",
+      "Name": "はしご上終端オフセット[1/10m]",
+      "Description": "はしご終端判定用オフセット上側"
+    },
+    {
+      "Field": "ladderEndChkOffsetLow",
+      "Name": "はしご下終端オフセット[1/10m]",
+      "Description": "はしご終端判定用オフセット下側"
+    },
+    {
+      "Field": "useRagdollCamHit",
+      "Name": "カメラヒットあたりラグドール",
+      "Description": "敵のラグドールにカメラがあたるか。(プレイヤにも当たるときのみ有効)"
+    },
+    {
+      "Field": "disableClothRigidHit",
+      "Name": "クロスリジッドヒットを無効",
+      "Description": "クロスリジッドが自分に当たらないようにしたければ○"
+    },
+    {
+      "Field": "useUndulationAddAnimFB",
+      "Name": "前後の起伏加算を使用するか",
+      "Description": "前後の起伏加算を使用するか"
+    },
+    {
+      "Field": "isWeakA",
+      "Name": "特攻Aか",
+      "Description": "特攻Aか。特攻Aダメージ倍率が計算に含まれるようになります"
+    },
+    {
+      "Field": "isGhost",
+      "Name": "霊体か",
+      "Description": "相手の攻撃がすり抜けるようになります。武器パラの「対霊武器」が○の武器で攻撃された時のみ攻撃が当たります。徘徊ゴーストと混同しないように注意"
+    },
+    {
+      "Field": "isNoDamageMotion",
+      "Name": "ダメージ0のときにダメージモーションなしか",
+      "Description": "ダメージ0のときにダメージモーションを再生しないか。"
+    },
+    {
+      "Field": "isUnduration",
+      "Name": "起伏に角度をあわせるか",
+      "Description": "キャラの前後回転を地面の起伏に合わせるか。飛行キャラの場合は使用不可"
+    },
+    {
+      "Field": "isChangeWanderGhost",
+      "Name": "徘徊ゴーストになるか",
+      "Description": "プレイヤーがクライアントのときに徘徊ゴーストになるか"
+    },
+    {
+      "Field": "modelDispMask0",
+      "Name": "モデル表示マスク0",
+      "Description": "表示マスクに対応するモデルを表示します。"
+    },
+    {
+      "Field": "modelDispMask1",
+      "Name": "モデル表示マスク1",
+      "Description": "表示マスクに対応するモデルを表示します。"
+    },
+    {
+      "Field": "modelDispMask2",
+      "Name": "モデル表示マスク2",
+      "Description": "表示マスクに対応するモデルを表示します。"
+    },
+    {
+      "Field": "modelDispMask3",
+      "Name": "モデル表示マスク3",
+      "Description": "表示マスクに対応するモデルを表示します。"
+    },
+    {
+      "Field": "modelDispMask4",
+      "Name": "モデル表示マスク4",
+      "Description": "表示マスクに対応するモデルを表示します。"
+    },
+    {
+      "Field": "modelDispMask5",
+      "Name": "モデル表示マスク5",
+      "Description": "表示マスクに対応するモデルを表示します。"
+    },
+    {
+      "Field": "modelDispMask6",
+      "Name": "モデル表示マスク6",
+      "Description": "表示マスクに対応するモデルを表示します。"
+    },
+    {
+      "Field": "modelDispMask7",
+      "Name": "モデル表示マスク7",
+      "Description": "表示マスクに対応するモデルを表示します。"
+    },
+    {
+      "Field": "modelDispMask8",
+      "Name": "モデル表示マスク8",
+      "Description": "表示マスクに対応するモデルを表示します。"
+    },
+    {
+      "Field": "modelDispMask9",
+      "Name": "モデル表示マスク9",
+      "Description": "表示マスクに対応するモデルを表示します。"
+    },
+    {
+      "Field": "modelDispMask10",
+      "Name": "モデル表示マスク10",
+      "Description": "表示マスクに対応するモデルを表示します。"
+    },
+    {
+      "Field": "modelDispMask11",
+      "Name": "モデル表示マスク11",
+      "Description": "表示マスクに対応するモデルを表示します。"
+    },
+    {
+      "Field": "modelDispMask12",
+      "Name": "モデル表示マスク12",
+      "Description": "表示マスクに対応するモデルを表示します。"
+    },
+    {
+      "Field": "modelDispMask13",
+      "Name": "モデル表示マスク13",
+      "Description": "表示マスクに対応するモデルを表示します。"
+    },
+    {
+      "Field": "modelDispMask14",
+      "Name": "モデル表示マスク14",
+      "Description": "表示マスクに対応するモデルを表示します。"
+    },
+    {
+      "Field": "modelDispMask15",
+      "Name": "モデル表示マスク15",
+      "Description": "表示マスクに対応するモデルを表示します。"
+    },
+    {
+      "Field": "isEnableNeckTurn",
+      "Name": "首振り有効にするか",
+      "Description": "パラムウィーバで設定された首振りを有効にするか。"
+    },
+    {
+      "Field": "disableRespawn",
+      "Name": "リスポン禁止か",
+      "Description": "リスポンを禁止するか"
+    },
+    {
+      "Field": "isMoveAnimWait",
+      "Name": "移動アニメを待つか",
+      "Description": "移動アニメをアニメが終わるまで再生するか。（カゲロウ龍の様に。）"
+    },
+    {
+      "Field": "isCrowd",
+      "Name": "群集用処理軽減するか",
+      "Description": "群集時の処理負荷軽減を行なうか。赤子用（できればファランクスも）"
+    },
+    {
+      "Field": "isWeakB",
+      "Name": "特攻Bか",
+      "Description": "特攻Bか。特攻Bダメージ倍率が計算に含まれるようになります"
+    },
+    {
+      "Field": "isWeakC",
+      "Name": "特攻Cか",
+      "Description": "特攻Cか。特攻Cダメージ倍率が計算に含まれるようになります"
+    },
+    {
+      "Field": "isWeakD",
+      "Name": "特攻Dか",
+      "Description": "特攻Dか。特攻Dダメージ倍率が計算に含まれるようになります"
+    },
+    {
+      "Field": "doesAlwaysUseSpecialTurn",
+      "Name": "常時特殊旋回するか",
+      "Description": "常時特殊旋回を実行するか(旋回移動先にナビメッシュがない場合も特殊旋回を継続実行します)"
+    },
+    {
+      "Field": "isRideAtkTarget",
+      "Name": "騎乗特攻か",
+      "Description": "（騎乗中であれば）騎乗特攻の対象になるか"
+    },
+    {
+      "Field": "isEnableStepDispInterpolate",
+      "Name": "段差越え表示補間を使用するか",
+      "Description": "段差越え表示補間を使用するか"
+    },
+    {
+      "Field": "isStealthTarget",
+      "Name": "ステルス攻撃対象か",
+      "Description": "ステルス攻撃対象か"
+    },
+    {
+      "Field": "disableInitializeDead",
+      "Name": "初期死亡しない",
+      "Description": "初期死亡をしない場合にTRUE、殺してセーブしても死体再現されません。"
+    },
+    {
+      "Field": "isHitRumble",
+      "Name": "ヒット時振動するか",
+      "Description": "ヒット時振動をする場合TRUE。亡者など、普通のヒットストップと変えたいときにつかう。"
+    },
+    {
+      "Field": "isSmoothTurn",
+      "Name": "スムーズ旋回するか",
+      "Description": "ルート移動でのノード間旋回時、補間を行うか否か"
+    },
+    {
+      "Field": "isWeakE",
+      "Name": "特攻Eか",
+      "Description": "特攻Eか。特攻Eダメージ倍率が計算に含まれるようになります"
+    },
+    {
+      "Field": "isWeakF",
+      "Name": "特攻Fか",
+      "Description": "特攻Fか。特攻Fダメージ倍率が計算に含まれるようになります"
+    },
+    {
+      "Field": "modelDispMask16",
+      "Name": "モデル表示マスク16",
+      "Description": "表示マスクに対応するモデルを表示します。"
+    },
+    {
+      "Field": "modelDispMask17",
+      "Name": "モデル表示マスク17",
+      "Description": "表示マスクに対応するモデルを表示します。"
+    },
+    {
+      "Field": "modelDispMask18",
+      "Name": "モデル表示マスク18",
+      "Description": "表示マスクに対応するモデルを表示します。"
+    },
+    {
+      "Field": "modelDispMask19",
+      "Name": "モデル表示マスク19",
+      "Description": "表示マスクに対応するモデルを表示します。"
+    },
+    {
+      "Field": "modelDispMask20",
+      "Name": "モデル表示マスク20",
+      "Description": "表示マスクに対応するモデルを表示します。"
+    },
+    {
+      "Field": "modelDispMask21",
+      "Name": "モデル表示マスク21",
+      "Description": "表示マスクに対応するモデルを表示します。"
+    },
+    {
+      "Field": "modelDispMask22",
+      "Name": "モデル表示マスク22",
+      "Description": "表示マスクに対応するモデルを表示します。"
+    },
+    {
+      "Field": "modelDispMask23",
+      "Name": "モデル表示マスク23",
+      "Description": "表示マスクに対応するモデルを表示します。"
+    },
+    {
+      "Field": "modelDispMask24",
+      "Name": "モデル表示マスク24",
+      "Description": "表示マスクに対応するモデルを表示します。"
+    },
+    {
+      "Field": "modelDispMask25",
+      "Name": "モデル表示マスク25",
+      "Description": "表示マスクに対応するモデルを表示します。"
+    },
+    {
+      "Field": "modelDispMask26",
+      "Name": "モデル表示マスク26",
+      "Description": "表示マスクに対応するモデルを表示します。"
+    },
+    {
+      "Field": "modelDispMask27",
+      "Name": "モデル表示マスク27",
+      "Description": "表示マスクに対応するモデルを表示します。"
+    },
+    {
+      "Field": "modelDispMask28",
+      "Name": "モデル表示マスク28",
+      "Description": "表示マスクに対応するモデルを表示します。"
+    },
+    {
+      "Field": "modelDispMask29",
+      "Name": "モデル表示マスク29",
+      "Description": "表示マスクに対応するモデルを表示します。"
+    },
+    {
+      "Field": "modelDispMask30",
+      "Name": "モデル表示マスク30",
+      "Description": "表示マスクに対応するモデルを表示します。"
+    },
+    {
+      "Field": "modelDispMask31",
+      "Name": "モデル表示マスク31",
+      "Description": "表示マスクに対応するモデルを表示します。"
+    },
+    {
+      "Field": "itemSearchRadius",
+      "Name": "ドロップアイテム半径補正",
+      "Description": "通常のItem検索判定の円柱半径に、補正として足し合わせる半径(敵ドロップアイテムに適用。大きなキャラなどで使用する)"
+    },
+    {
+      "Field": "chrHitHeight",
+      "Name": "対キャラあたりの高さ[m]",
+      "Description": "対キャラ当たりカプセルの高さ."
+    },
+    {
+      "Field": "chrHitRadius",
+      "Name": "対キャラあたりの半径[m]",
+      "Description": "対キャラ当たりカプセルの半径."
+    },
+    {
+      "Field": "specialTurnType",
+      "Name": "特殊旋回のタイプ",
+      "Description": "特殊旋回のタイプ"
+    },
+    {
+      "Field": "isSoulGetByBoss",
+      "Name": "ソウルはボス入手か",
+      "Description": "ソウルはボス入手か"
+    },
+    {
+      "Field": "isBulletOwner_byObject",
+      "Name": "オブジェクト扱いの弾丸オーナか",
+      "Description": "弾丸のオーナーとなった場合、弾丸に関連するダメージ計算などをオブジェのものを適用するようにするフラグ。勢力別ダメージ補正で使用。"
+    },
+    {
+      "Field": "isUseLowHitFootIk",
+      "Name": "ロウヒットFootIKを使うか？",
+      "Description": "ロウヒット用のFootIkフィルターを使用するか"
+    },
+    {
+      "Field": "isCalculatePvPDamage",
+      "Name": "PvPのダメージ補正制御を適用するか",
+      "Description": "ダメージ計算時に「プレイヤー」としてダメージ計算するのかを決める。無効の場合は「敵」扱い。"
+    },
+    {
+      "Field": "isHostSyncChr",
+      "Name": "ホスト世界でアクティブ時のみアクティベート可",
+      "Description": "ホスト世界でアクティブ時のみアクティベート可"
+    },
+    {
+      "Field": "isSkipWeakDamageAnim",
+      "Name": "弱点アニメをスキップするか",
+      "Description": "弱点ダメージアニメ再生をスキップするかどうか。アニメを再生しないだけで「部位ダメージ率」「防御材質」は弱点として扱われます。"
+    },
+    {
+      "Field": "isKeepHitOnRide",
+      "Name": "騎乗された時、乗る側のカプセルあたりを有効にするか",
+      "Description": "このパラメータが○のキャラに騎乗する際、騎乗中、キャラのアタリが残ったままになる "
+    },
+    {
+      "Field": "isSpCollide",
+      "Name": "特殊あたりキャラか",
+      "Description": "特殊あたりに当たるキャラか"
+    },
+    {
+      "Field": "def_dark",
+      "Name": "闇防御力",
+      "Description": "闇攻撃に対するダメージ減少基本値."
+    },
+    {
+      "Field": "threatLv",
+      "Name": "脅威度",
+      "Description": "脅威度。0ならPCが見つかっても「見つかりそうFE」を表示しない"
+    },
+    {
+      "Field": "specialTurnDistanceThreshold",
+      "Name": "特殊旋回の使用距離の閾値[m]",
+      "Description": "ターゲットとの距離が設定された閾値以上の場合に、特殊旋回を行う"
+    },
+    {
+      "Field": "autoFootEffectSfxId",
+      "Name": "フットエフェクト識別子",
+      "Description": "自動フットエフェクトで使用するSFX識別子。（XYYZZZのZZZ）"
+    },
+    {
+      "Field": "materialSe1",
+      "Name": "防御材質1【SE】",
+      "Description": "ダメージを受けたときに鳴らすＳＥを判定する。1.見た目で設定してＯＫ."
+    },
+    {
+      "Field": "materialSfx1",
+      "Name": "防御材質1【SFX】",
+      "Description": "ダメージを受けたときに発生するSFXを判定する。1.見た目で設定してＯＫ."
+    },
+    {
+      "Field": "materialSe_Weak2",
+      "Name": "弱点防御材質2【SE】",
+      "Description": "弱点部位ダメージを受けた時に鳴らすSEを判定する。2"
+    },
+    {
+      "Field": "materialSfx_Weak2",
+      "Name": "弱点防御材質2【SFX】",
+      "Description": "弱点部位ダメージを受けた時に発生するSFXを判定する。2"
+    },
+    {
+      "Field": "materialSe2",
+      "Name": "防御材質2【SE】",
+      "Description": "ダメージを受けたときに鳴らすＳＥを判定する。2.見た目で設定してＯＫ."
+    },
+    {
+      "Field": "materialSfx2",
+      "Name": "防御材質2【SFX】",
+      "Description": "ダメージを受けたときに発生するSFXを判定する。2.見た目で設定してＯＫ."
+    },
+    {
+      "Field": "spEffectID8",
+      "Name": "常駐特殊効果8",
+      "Description": "常駐特殊効果8"
+    },
+    {
+      "Field": "spEffectID9",
+      "Name": "常駐特殊効果9",
+      "Description": "常駐特殊効果9"
+    },
+    {
+      "Field": "spEffectID10",
+      "Name": "常駐特殊効果10",
+      "Description": "常駐特殊効果10"
+    },
+    {
+      "Field": "spEffectID11",
+      "Name": "常駐特殊効果11",
+      "Description": "常駐特殊効果11"
+    },
+    {
+      "Field": "spEffectID12",
+      "Name": "常駐特殊効果12",
+      "Description": "常駐特殊効果12"
+    },
+    {
+      "Field": "spEffectID13",
+      "Name": "常駐特殊効果13",
+      "Description": "常駐特殊効果13"
+    },
+    {
+      "Field": "spEffectID14",
+      "Name": "常駐特殊効果14",
+      "Description": "常駐特殊効果14"
+    },
+    {
+      "Field": "spEffectID15",
+      "Name": "常駐特殊効果15",
+      "Description": "常駐特殊効果15"
+    },
+    {
+      "Field": "autoFootEffectDecalBaseId1",
+      "Name": "フットデカール識別子1",
+      "Description": "フットエフェクト発生時に貼られるデカール。床材質も考慮される"
+    },
+    {
+      "Field": "toughness",
+      "Name": "強靭度",
+      "Description": "強靭度の基本値"
+    },
+    {
+      "Field": "toughnessRecoverCorrection",
+      "Name": "強靭度 回復時間補正値",
+      "Description": "強靭度の回復時間用の補正値"
+    },
+    {
+      "Field": "neutralDamageCutRate",
+      "Name": "無属性ダメージ倍率",
+      "Description": "無属性ダメージ倍率。ダメージ計算結果にこの値をかけた値が最終ダメージ値になります。"
+    },
+    {
+      "Field": "slashDamageCutRate",
+      "Name": "斬撃ダメージ倍率",
+      "Description": "斬撃ダメージ倍率。ダメージ計算結果にこの値をかけた値が最終ダメージ値になります。"
+    },
+    {
+      "Field": "blowDamageCutRate",
+      "Name": "打撃ダメージ倍率",
+      "Description": "打撃ダメージ倍率。ダメージ計算結果にこの値をかけた値が最終ダメージ値になります。"
+    },
+    {
+      "Field": "thrustDamageCutRate",
+      "Name": "刺突ダメージ倍率",
+      "Description": "刺突ダメージ倍率。ダメージ計算結果にこの値をかけた値が最終ダメージ値になります。"
+    },
+    {
+      "Field": "magicDamageCutRate",
+      "Name": "魔法ダメージ倍率",
+      "Description": "魔法ダメージ倍率。ダメージ計算結果にこの値をかけた値が最終ダメージ値になります。"
+    },
+    {
+      "Field": "fireDamageCutRate",
+      "Name": "火炎ダメージ倍率",
+      "Description": "火炎ダメージ倍率。ダメージ計算結果にこの値をかけた値が最終ダメージ値になります。"
+    },
+    {
+      "Field": "thunderDamageCutRate",
+      "Name": "電撃ダメージ倍率",
+      "Description": "電撃ダメージ倍率。ダメージ計算結果にこの値をかけた値が最終ダメージ値になります。"
+    },
+    {
+      "Field": "darkDamageCutRate",
+      "Name": "闇ダメージ倍率",
+      "Description": "闇ダメージ倍率。ダメージ計算結果にこの値をかけた値が最終ダメージ値になります。"
+    },
+    {
+      "Field": "darkGuardCutRate",
+      "Name": "闇攻撃力カット率[％]",
+      "Description": "闇攻撃をどれだけカットするか？"
+    },
+    {
+      "Field": "clothUpdateOffset",
+      "Name": "クロス更新優先度オフセット[m]",
+      "Description": "クロス更新優先度オフセット[m]"
+    },
+    {
+      "Field": "npcPlayerWeightType",
+      "Name": "NPCプレイヤー時重量設定",
+      "Description": "NPCプレイヤーのときに適用される装備重量タイプ"
+    },
+    {
+      "Field": "normalChangeModelId",
+      "Name": "通常時差し替えモデルID",
+      "Description": "通常時の差し替えモデル、テクスチャID"
+    },
+    {
+      "Field": "normalChangeAnimChrId",
+      "Name": "通常時差し替えアニメキャラID",
+      "Description": "対象のアニメを指定IDのAnibndで差し替える"
+    },
+    {
+      "Field": "paintRenderTargetSize",
+      "Name": "ペイントレンダーターゲットサイズ[pix]",
+      "Description": "ペイントレンダーターゲットサイズ[pix]"
+    },
+    {
+      "Field": "resistCorrectId_disease",
+      "Name": "疫病耐性 補正ルールID",
+      "Description": "状態異常の発動時、状態異常耐性補正パラメータの設定値を使って、一時的に最大値を変動させる"
+    },
+    {
+      "Field": "phantomShaderId",
+      "Name": "適用シェーダーID",
+      "Description": "適用するファントムパラメータ.xlsmのID"
+    },
+    {
+      "Field": "multiPlayCorrectionParamId",
+      "Name": "マルチプレイ補正パラメータID",
+      "Description": "マルチプレイ補正パラメータID"
+    },
+    {
+      "Field": "maxAnklePitchAngle",
+      "Name": "FootIK足首の制限角度_ピッチ",
+      "Description": "FootIK足首のピッチの制限角度（-1：制限なし）。HATでFoot End L Sを設定していない場合はこの角度がロールと共通で使用される。"
+    },
+    {
+      "Field": "resist_freeze",
+      "Name": "冷気耐性",
+      "Description": "冷気状態異常へのかかりにくさ"
+    },
+    {
+      "Field": "freezeGuardResist",
+      "Name": "冷気攻撃カット率[％]",
+      "Description": "冷気に対する攻撃力（特殊効果パラメータに設定）をどれだけカットするか"
+    },
+    {
+      "Field": "pad1",
+      "Name": "pad",
+      "Description": ""
+    },
+    {
+      "Field": "hpBurnDamageRate",
+      "Name": "hpBurnDamageRate",
+      "Description": ""
+    },
+    {
+      "Field": "lockCameraParamId",
+      "Name": "ロックカメラパラメータID",
+      "Description": "ロックオンされた際にカメラに適用させるロックカメラパラメータのID。最も優先度が高い。-1なら未使用"
+    },
+    {
+      "Field": "spEffectID16",
+      "Name": "常駐特殊効果16",
+      "Description": "常駐特殊効果16"
+    },
+    {
+      "Field": "spEffectID17",
+      "Name": "常駐特殊効果17",
+      "Description": "常駐特殊効果17"
+    },
+    {
+      "Field": "spEffectID18",
+      "Name": "常駐特殊効果18",
+      "Description": "常駐特殊効果18"
+    },
+    {
+      "Field": "spEffectID19",
+      "Name": "常駐特殊効果19",
+      "Description": "常駐特殊効果19"
+    },
+    {
+      "Field": "spEffectID20",
+      "Name": "常駐特殊効果20",
+      "Description": "常駐特殊効果20"
+    },
+    {
+      "Field": "spEffectID21",
+      "Name": "常駐特殊効果21",
+      "Description": "常駐特殊効果21"
+    },
+    {
+      "Field": "spEffectID22",
+      "Name": "常駐特殊効果22",
+      "Description": "常駐特殊効果22"
+    },
+    {
+      "Field": "spEffectID23",
+      "Name": "常駐特殊効果23",
+      "Description": "常駐特殊効果23"
+    },
+    {
+      "Field": "spEffectID24",
+      "Name": "常駐特殊効果24",
+      "Description": "常駐特殊効果24"
+    },
+    {
+      "Field": "spEffectID25",
+      "Name": "常駐特殊効果25",
+      "Description": "常駐特殊効果25"
+    },
+    {
+      "Field": "spEffectID26",
+      "Name": "常駐特殊効果26",
+      "Description": "常駐特殊効果26"
+    },
+    {
+      "Field": "spEffectID27",
+      "Name": "常駐特殊効果27",
+      "Description": "常駐特殊効果27"
+    },
+    {
+      "Field": "spEffectID28",
+      "Name": "常駐特殊効果28",
+      "Description": "常駐特殊効果28"
+    },
+    {
+      "Field": "spEffectID29",
+      "Name": "常駐特殊効果29",
+      "Description": "常駐特殊効果29"
+    },
+    {
+      "Field": "spEffectID30",
+      "Name": "常駐特殊効果30",
+      "Description": "常駐特殊効果30"
+    },
+    {
+      "Field": "spEffectID31",
+      "Name": "常駐特殊効果31",
+      "Description": "常駐特殊効果31"
+    },
+    {
+      "Field": "disableLockOnAng",
+      "Name": "ロック不可領域の中心角[deg]",
+      "Description": "敵の真下に円錐状のロックオン不可領域を作る。円錐の広さの角度。TAEから一時的に変更可能"
+    },
+    {
+      "Field": "clothOffLodLevel",
+      "Name": "クロスOffLODレベル",
+      "Description": "クロスの処理を切るLODレベルを設定する"
+    },
+    {
+      "Field": "isUseFootIKNormalByUnduration",
+      "Name": "起伏にあわせるのにFootIK結果を用いるか",
+      "Description": "キャラを地面の起伏に合わせる際に、FootIK結果を用いるか。飛行キャラの場合は使用不可"
+    },
+    {
+      "Field": "attachHitInitializeDead",
+      "Name": "初期死亡時にカプセル接地するか",
+      "Description": "初期死亡時にカプセル接地するか"
+    },
+    {
+      "Field": "excludeGroupRewardCheck",
+      "Name": "グループ報酬判定から外すか",
+      "Description": "グループ報酬：「全員死亡」の判定において、このパラメータが○のキャラは判定から除外する "
+    },
+    {
+      "Field": "enableAILockDmyPoly_212",
+      "Name": "ロックダミポリ(エネミー用)212が有効か",
+      "Description": "ロックダミポリ(エネミー用)212が有効か"
+    },
+    {
+      "Field": "enableAILockDmyPoly_213",
+      "Name": "ロックダミポリ(エネミー用)213が有効か",
+      "Description": "ロックダミポリ(エネミー用)213が有効か"
+    },
+    {
+      "Field": "enableAILockDmyPoly_214",
+      "Name": "ロックダミポリ(エネミー用)214が有効か",
+      "Description": "ロックダミポリ(エネミー用)214が有効か"
+    },
+    {
+      "Field": "disableActivateOpen_xb1",
+      "Name": "オープン_XB1から除外",
+      "Description": "オープン_XB1から除外"
+    },
+    {
+      "Field": "disableActivateLegacy_xb1",
+      "Name": "レガシー_XB1から除外",
+      "Description": "レガシー_XB1から除外"
+    },
+    {
+      "Field": "estusFlaskRecoveryParamId",
+      "Name": "HPエスト瓶／MPエスト瓶回復数パラメータID",
+      "Description": "キャラクター死亡時に値と同じ エスト使用回数回復パラメータ.xlsm\u3000のデータIDを取得してエスト瓶を回復させる。 -1なら未使用"
+    },
+    {
+      "Field": "roleNameId",
+      "Name": "ロール名テキストID",
+      "Description": "召喚時のロール名を指定する。-1:対象霊体のデフォルトロール名を使用。0:表示なし。1以上:テキストＩＤとして利用。"
+    },
+    {
+      "Field": "estusFlaskLotPoint",
+      "Name": "HP&MPエスト瓶回復 抽選確率",
+      "Description": "敵を倒した際のHP/MPエストの回復確率。10000 を分母とし、分子をNPCパラから取得する。 "
+    },
+    {
+      "Field": "hpEstusFlaskLotPoint",
+      "Name": "HPエスト瓶回復 抽選確率",
+      "Description": "敵を倒した際のMPエストの回復確率。10000 を分母とし、分子をNPCパラから取得する。 "
+    },
+    {
+      "Field": "mpEstusFlaskLotPoint",
+      "Name": "MPエスト瓶回復 抽選確率",
+      "Description": "敵を倒した際のMPエストの回復確率。10000 を分母とし、分子をNPCパラから取得する。 "
+    },
+    {
+      "Field": "estusFlaskRecovery_failedLotPointAdd",
+      "Name": "HP&MPエスト瓶回復 落選時 加算抽選確率",
+      "Description": "HP/MPエスト回復抽選に外れた際の次回確率上昇値。分子の加算値。"
+    },
+    {
+      "Field": "hpEstusFlaskRecovery_failedLotPointAdd",
+      "Name": "HPエスト瓶回復 落選時 加算抽選確率",
+      "Description": "HPエスト回復抽選に外れた際の次回確率上昇値。分子の加算値。"
+    },
+    {
+      "Field": "mpEstusFlaskRecovery_failedLotPointAdd",
+      "Name": "MPエスト瓶回復 落選時 加算抽選確率",
+      "Description": "MPエスト回復抽選に外れた際の次回確率上昇値。分子の加算値。"
+    },
+    {
+      "Field": "WanderGhostPhantomId",
+      "Name": "ファントムシェーダを使用して徘徊ゴーストになるか",
+      "Description": "ゲスト側でだけ指定されたIDのファントムシェーダIDを指定して幻影化"
+    },
+    {
+      "Field": "hearingHeadSize",
+      "Name": "聴覚用 頭のサイズ[m]",
+      "Description": "聴覚判定時のカプセルオフセットの代わりに、設定するオフセットサイズ。0以上が設定されている場合のみ、この値をオフセットとして使用。"
+    },
+    {
+      "Field": "SoundBankId",
+      "Name": "サウンドバンクID",
+      "Description": "サウンドバンクIDが指定できます -1：キャラID(リソース名)のバンクを使用"
+    },
+    {
+      "Field": "forwardUndulationLimit",
+      "Name": "起伏にあわせる最大前後角度",
+      "Description": "起伏に前後の角度を合わせる場合の上限角度。全長が長い場合には低めに設定したほうがよいです。"
+    },
+    {
+      "Field": "sideUndulationLimit",
+      "Name": "起伏にあわせる最大左右角度",
+      "Description": "起伏に左右の角度を合わせる場合の上限角度。全長が長い場合には低めに設定したほうがよいです。"
+    },
+    {
+      "Field": "deactiveMoveSpeed",
+      "Name": "小隊ディアクティブ移動の移動速度[m/s]",
+      "Description": "小隊ディアクティブ移動の移動速度[m/s]"
+    },
+    {
+      "Field": "deactiveMoveDist",
+      "Name": "小隊ディアクティブ移動に切り替わる距離[m]",
+      "Description": "小隊ディアクティブ移動に切り替わる距離[m]"
+    },
+    {
+      "Field": "enableSoundObjDist",
+      "Name": "サウンド音源有効距離[m]",
+      "Description": "キャラ音源が有効なプレイヤーからの距離です。-1：全距離で有効"
+    },
+    {
+      "Field": "undulationCorrectGain",
+      "Name": "起伏にあわせる補正ゲイン値",
+      "Description": "起伏に角度を合わせる際の速度を設定する"
+    },
+    {
+      "Field": "autoFootEffectDecalBaseId2",
+      "Name": "フットデカール識別子2",
+      "Description": "フットエフェクト発生時に貼られるデカール。床材質も考慮される"
+    },
+    {
+      "Field": "autoFootEffectDecalBaseId3",
+      "Name": "フットデカール識別子3",
+      "Description": "フットエフェクト発生時に貼られるデカール。床材質も考慮される"
+    },
+    {
+      "Field": "RetargetReferenceChrId",
+      "Name": "リターゲット参照キャラID",
+      "Description": "モーションのリターゲット先の指定の際に参照するキャラID"
+    },
+    {
+      "Field": "SfxResBankId",
+      "Name": "SFXリソースバンクID",
+      "Description": "SFXリソースバンクIDが指定できます -1：キャラID(リソース名)のバンクを使用"
+    },
+    {
+      "Field": "updateActivatePriolity",
+      "Name": "更新とアクティベイトの優先度",
+      "Description": "アクティベート・更新レベルの決定に使用する。大きいほどプレイヤーから離れていても更新レベルが下がらない。"
+    },
+    {
+      "Field": "chrNavimeshFlag_Alive",
+      "Name": "死亡前ナビメッシュフラグ",
+      "Description": "キャラクターが生存してる間、触れているナビメッシュに値のフラグを設定する。移動に追従しない。"
+    },
+    {
+      "Field": "chrNavimeshFlag_Dead",
+      "Name": "死亡後ナビメッシュフラグ",
+      "Description": "キャラクターが死亡してる間、触れているナビメッシュに値のフラグを設定する。移動に追従しない。"
+    },
+    {
+      "Field": "pad7",
+      "Name": "pad",
+      "Description": ""
+    },
+    {
+      "Field": "isConsideredUndead",
+      "Name": "isConsideredUndead",
+      "Description": ""
+    },
+    {
+      "Field": "wheelRotType",
+      "Name": "車輪制御タイプ",
+      "Description": "車輪制御タイプ"
+    },
+    {
+      "Field": "wheelRotRadius",
+      "Name": "車輪の半径",
+      "Description": "車輪の半径を指定[m]"
+    },
+    {
+      "Field": "retargetMoveRate",
+      "Name": "リターゲット移動量倍率",
+      "Description": "リターゲット時の移動量の倍率"
+    },
+    {
+      "Field": "ladderWarpOffset",
+      "Name": "はしごワープ位置オフセット",
+      "Description": "指定された値でダミポリZ軸方向にオフセットします。正数・負数どちらも指定可能です。"
+    },
+    {
+      "Field": "loadAssetId",
+      "Name": "読み込みアセットID",
+      "Description": "キャラロード時に関連して読み込むアセットID（キャラが動的に生成するなど用。"
+    },
+    {
+      "Field": "overlapCameraDmypolyId",
+      "Name": "オーバーラップカメラ対象ロックダミポリID",
+      "Description": "オーバーラップカメラを有効にするダミポリID(220～227)を設定します。-1の場合は無効になります。"
+    },
+    {
+      "Field": "residentMaterialExParamId00",
+      "Name": "常駐マテリアル拡張パラID0",
+      "Description": "常駐マテリアル拡張パラID0"
+    },
+    {
+      "Field": "residentMaterialExParamId01",
+      "Name": "常駐マテリアル拡張パラID1",
+      "Description": "常駐マテリアル拡張パラID1"
+    },
+    {
+      "Field": "residentMaterialExParamId02",
+      "Name": "常駐マテリアル拡張パラID2",
+      "Description": "常駐マテリアル拡張パラID2"
+    },
+    {
+      "Field": "residentMaterialExParamId03",
+      "Name": "常駐マテリアル拡張パラID3",
+      "Description": "常駐マテリアル拡張パラID3"
+    },
+    {
+      "Field": "residentMaterialExParamId04",
+      "Name": "常駐マテリアル拡張パラID4",
+      "Description": "常駐マテリアル拡張パラID4"
+    },
+    {
+      "Field": "sleepCollectorItemLotId_enemy",
+      "Name": "ネムリ時アイテム抽選ID_エネミー用",
+      "Description": "ネムリ収集時に取得するアイテムの抽選ID_エネミー用を指定。どちらか片方のみ設定してください。"
+    },
+    {
+      "Field": "sleepCollectorItemLotId_map",
+      "Name": "ネムリ時アイテム抽選ID_マップ用",
+      "Description": "ネムリ収集時に取得するアイテムの抽選ID_マップ用を指定。どちらか片方のみ設定してください。"
+    },
+    {
+      "Field": "footIkErrorOnGain",
+      "Name": "FootIK見た目の高さ補正ONゲイン値",
+      "Description": "FootIK見た目の高さ補正ONゲイン値"
+    },
+    {
+      "Field": "footIkErrorOffGain",
+      "Name": "FootIK見た目の高さ補正OFFゲイン値",
+      "Description": "FootIK見た目の高さ補正OFFゲイン値"
+    },
+    {
+      "Field": "SoundAddBankId",
+      "Name": "追加サウンドバンクID",
+      "Description": "追加のサウンドバンクIDが指定できます -1 or 0：追加なし(SEQ16135)"
+    },
+    {
+      "Field": "materialVariationValue",
+      "Name": "防御材質バリエーション値",
+      "Description": "防御材質と組み合わせて状態異常、ダメージSFX,SEのバリエーション分けに使用する値です。SEQ16473"
+    },
+    {
+      "Field": "materialVariationValue_Weak",
+      "Name": "弱点防御材質バリエーション値",
+      "Description": "弱点防御材質と組み合わせて状態異常、ダメージSFX,SEのバリエーション分けに使用する値です。SEQ16473"
+    },
+    {
+      "Field": "superArmorDurability",
+      "Name": "SA耐久力",
+      "Description": "スーパーアーマー耐久値"
+    },
+    {
+      "Field": "saRecoveryRate",
+      "Name": "SA回復速度補正値",
+      "Description": "SA基礎回復量に乗算してSA回復速度を補正する"
+    },
+    {
+      "Field": "saGuardCutRate",
+      "Name": "SA攻撃カット率[％]",
+      "Description": "ガード成功時のSＡダメージのカット率"
+    },
+    {
+      "Field": "resistCorrectId_blood",
+      "Name": "出血耐性 補正ルールID",
+      "Description": "状態異常の発動時、状態異常耐性補正パラメータの設定値を使って、一時的に最大値を変動させる"
+    },
+    {
+      "Field": "resistCorrectId_curse",
+      "Name": "呪耐性 補正ルールID",
+      "Description": "状態異常の発動時、状態異常耐性補正パラメータの設定値を使って、一時的に最大値を変動させる"
+    },
+    {
+      "Field": "resistCorrectId_freeze",
+      "Name": "冷気耐性 補正ルールID",
+      "Description": "状態異常の発動時、状態異常耐性補正パラメータの設定値を使って、一時的に最大値を変動させる"
+    },
+    {
+      "Field": "resistCorrectId_sleep",
+      "Name": "睡眠耐性 補正ルールID",
+      "Description": "状態異常の発動時、状態異常耐性補正パラメータの設定値を使って、一時的に最大値を変動させる"
+    },
+    {
+      "Field": "resistCorrectId_madness",
+      "Name": "発狂耐性 補正ルールID",
+      "Description": "状態異常の発動時、状態異常耐性補正パラメータの設定値を使って、一時的に最大値を変動させる"
+    },
+    {
+      "Field": "chrDeadTutorialFlagId",
+      "Name": "キャラ死亡チュートリアル判定フラグID",
+      "Description": "初めてキャラ倒した時のチュートリアル用のイベントフラグID。キャラ死亡時にフラグON。"
+    },
+    {
+      "Field": "stepDispInterpolateTime",
+      "Name": "段差越え表示補間時間",
+      "Description": "段差越え表示補間時間"
+    },
+    {
+      "Field": "stepDispInterpolateTriggerValue",
+      "Name": "段差越え表示起動判定値",
+      "Description": "段差越え表示起動判定値"
+    },
+    {
+      "Field": "lockScoreOffset",
+      "Name": "ロックスコア補正値",
+      "Description": "ロックスコア補正値"
+    },
+    {
+      "Field": "pad12_old",
+      "Name": "pad12_old",
+      "Description": ""
+    },
+    {
+      "Field": "dlcGameClearSpEffectID",
+      "Name": "dlcGameClearSpEffectID",
+      "Description": ""
+    },
+    {
+      "Field": "pad12",
+      "Name": "パディング12",
+      "Description": ""
+    }
+  ]
+}

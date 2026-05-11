@@ -1,0 +1,128 @@
+{
+  "Param": "CUTSCENE_MAP_ID_PARAM_ST",
+  "Type": "CUTSCENE_MAP_ID_PARAM_ST",
+  "Name": "CUTSCENE_MAP_ID_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "NT版出力から外すか",
+      "Description": "NT版から除外するか、除外するものに○をつける"
+    },
+    {
+      "Field": "disableParam_Product",
+      "Name": "製品版出力から外すか",
+      "Description": "製品版から除外するか、除外するものに○をつける"
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "パッケージ出力用リザーブ1",
+      "Description": "パッケージ出力用リザーブ1"
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "パッケージ出力用リザーブ2",
+      "Description": "パッケージ出力用リザーブ2"
+    },
+    {
+      "Field": "PlayMapId",
+      "Name": "再生を行なうマップ番号",
+      "Description": "再生を行なうマップ番号を8桁の数字で入力して下さい。カットシーンで基準としているマップの番号になります。正しいマップ番号を指定しないと再生位置がずれます。"
+    },
+    {
+      "Field": "RequireMapId0",
+      "Name": "表示に必要なマップ番号１",
+      "Description": "表示に必要なマップ番号を8桁の数字で入力して下さい。このパラメータは、ゲスト側がカットシーンを再生可能か判断するためのリストとして利用します。必要ない場合は、0もしくは未記入で良いです。"
+    },
+    {
+      "Field": "RequireMapId1",
+      "Name": "表示に必要なマップ番号２",
+      "Description": "表示に必要なマップ番号を8桁の数字で入力して下さい。このパラメータは、ゲスト側がカットシーンを再生可能か判断するためのリストとして利用します。必要ない場合は、0もしくは未記入で良いです。"
+    },
+    {
+      "Field": "RequireMapId2",
+      "Name": "表示に必要なマップ番号３",
+      "Description": "表示に必要なマップ番号を8桁の数字で入力して下さい。このパラメータは、ゲスト側がカットシーンを再生可能か判断するためのリストとして利用します。必要ない場合は、0もしくは未記入で良いです。"
+    },
+    {
+      "Field": "RequireMapId3",
+      "Name": "表示に必要なマップ番号４",
+      "Description": "表示に必要なマップ番号を8桁の数字で入力して下さい。このパラメータは、ゲスト側がカットシーンを再生可能か判断するためのリストとして利用します。必要ない場合は、0もしくは未記入で良いです。"
+    },
+    {
+      "Field": "RequireMapId4",
+      "Name": "表示に必要なマップ番号５",
+      "Description": "表示に必要なマップ番号を8桁の数字で入力して下さい。このパラメータは、ゲスト側がカットシーンを再生可能か判断するためのリストとして利用します。必要ない場合は、0もしくは未記入で良いです。"
+    },
+    {
+      "Field": "RequireMapId5",
+      "Name": "表示に必要なマップ番号６",
+      "Description": "表示に必要なマップ番号を8桁の数字で入力して下さい。このパラメータは、ゲスト側がカットシーンを再生可能か判断するためのリストとして利用します。必要ない場合は、0もしくは未記入で良いです。"
+    },
+    {
+      "Field": "RequireMapId6",
+      "Name": "表示に必要なマップ番号７",
+      "Description": "表示に必要なマップ番号を8桁の数字で入力して下さい。このパラメータは、ゲスト側がカットシーンを再生可能か判断するためのリストとして利用します。必要ない場合は、0もしくは未記入で良いです。"
+    },
+    {
+      "Field": "CutsceneId",
+      "Name": "カットシーンID",
+      "Description": "8桁のカットシーンID。この数字は自動入力されます。"
+    },
+    {
+      "Field": "isRetryPlayCancel",
+      "Name": "リトライ時に再生するか",
+      "Description": "ミッションリトライ時に冒頭のカットシーンを再度再生したくないものに設定してください"
+    },
+    {
+      "Field": "SkipPlayerBehaviorState",
+      "Name": "スキップ時の自機開始ステート",
+      "Description": "カットシーンスキップ後のプレイヤーのステートを指定したい場合に設定(FNR-19061)\r\nデフォルトは何もしない"
+    },
+    {
+      "Field": "PlayerBehaviorState",
+      "Name": "カットシーン後の自機開始ステート",
+      "Description": "カットシーン再生後のプレイヤーのステートを指定したい場合に設定(FNR-22275)\r\nデフォルトは待機なので注意"
+    },
+    {
+      "Field": "ToCutsceneFadeoutWhite",
+      "Name": "インゲーム⇒CSのフェードアウト時にホワイトアウトさせるか",
+      "Description": "カットシーン開始時のフェードアウトに黒ではなく白にするか"
+    },
+    {
+      "Field": "isSkipMapLoadWait",
+      "Name": "スキップ時にマップのロード待ちをするか",
+      "Description": "スキップ時にNowLoading画面表示してロード待ちをするか\r\n主にカタパルトのカットシーン向けの設定"
+    },
+    {
+      "Field": "isEventContinue",
+      "Name": "イベントで連続再生されるか",
+      "Description": "連続再生じにFEが一瞬表示されてしまうのでそれの回避のためのフラグ"
+    },
+    {
+      "Field": "isSkipResetToneMap",
+      "Name": "スキップ時に自動露出をリセットするか",
+      "Description": "[FNR-32651] 【6F】【カットシーン】「アッシュ登場」をスキップすると画面が白くなります の対応で自動露出をリセットするようにするか"
+    },
+    {
+      "Field": "isIngameDecalClearRemoDecalVisible",
+      "Name": "インゲームデカールを削除してカットシーンのデカールを優先する",
+      "Description": "[FNR-36964] 【カットシーン】カットシーン上でデカールが表示されない"
+    },
+    {
+      "Field": "reserve",
+      "Name": "reserve",
+      "Description": ""
+    },
+    {
+      "Field": "ToCutsceneFadeoutTime",
+      "Name": "インゲーム⇒CSのフェードアウト時間[s]",
+      "Description": "カットシーン開始時のフェードアウト時間(-1でシステムデフォルト時間）"
+    },
+    {
+      "Field": "ToIngameFadeinTime",
+      "Name": "CS⇒インゲームのフェードイン時間[s]",
+      "Description": "カットシーン終了時のフェードイン時間(-1でシステムデフォルト時間）"
+    }
+  ]
+}

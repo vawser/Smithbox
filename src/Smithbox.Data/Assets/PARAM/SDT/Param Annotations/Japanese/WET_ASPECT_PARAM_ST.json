@@ -1,0 +1,73 @@
+{
+  "Param": "WET_ASPECT_PARAM_ST",
+  "Type": "WET_ASPECT_PARAM_ST",
+  "Name": "WET_ASPECT_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "diffColorR",
+      "Name": "R",
+      "Description": "ディフューズ色Rです。"
+    },
+    {
+      "Field": "diffColorG",
+      "Name": "G",
+      "Description": "ディフューズ色Gです。"
+    },
+    {
+      "Field": "diffColorB",
+      "Name": "B",
+      "Description": "ディフューズ色Bです。"
+    },
+    {
+      "Field": "reserve_0",
+      "Name": "予備1",
+      "Description": ""
+    },
+    {
+      "Field": "diffColorA",
+      "Name": "A",
+      "Description": "ディフューズ色Aです。"
+    },
+    {
+      "Field": "refColorR",
+      "Name": "R",
+      "Description": "リフレクタンス色Rです。"
+    },
+    {
+      "Field": "refColorG",
+      "Name": "G",
+      "Description": "リフレクタンス色Gです。"
+    },
+    {
+      "Field": "refColorB",
+      "Name": "B",
+      "Description": "リフレクタンス色Bです。"
+    },
+    {
+      "Field": "reserve_1",
+      "Name": "予備2",
+      "Description": ""
+    },
+    {
+      "Field": "refColorA",
+      "Name": "A",
+      "Description": "リフレクタンス色Aです。"
+    },
+    {
+      "Field": "shininessRate",
+      "Name": "オーバーライド率",
+      "Description": "シャイニネスのオーバーライド率です。"
+    },
+    {
+      "Field": "shininess",
+      "Name": "オーバーライド",
+      "Description": "シャイニネスのオーバーライドです。"
+    },
+    {
+      "Field": "reserve_2",
+      "Name": "予備3",
+      "Description": ""
+    }
+  ]
+}

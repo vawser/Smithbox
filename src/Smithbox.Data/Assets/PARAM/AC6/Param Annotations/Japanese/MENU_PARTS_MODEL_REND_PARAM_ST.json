@@ -1,0 +1,18 @@
+{
+  "Param": "MENU_PARTS_MODEL_REND_PARAM_ST",
+  "Type": "MENU_PARTS_MODEL_REND_PARAM_ST",
+  "Name": "MENU_PARTS_MODEL_REND_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "initModelDegX",
+      "Name": "モデル初期角度X",
+      "Description": "モデルの初期角度X軸"
+    },
+    {
+      "Field": "initModelDegY",
+      "Name": "モデル初期角度Y",
+      "Description": "モデルの初期角度Y軸"
+    }
+  ]
+}

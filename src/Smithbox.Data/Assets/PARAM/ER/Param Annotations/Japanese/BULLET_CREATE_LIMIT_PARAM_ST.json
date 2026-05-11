@@ -1,0 +1,28 @@
+{
+  "Param": "BULLET_CREATE_LIMIT_PARAM_ST",
+  "Type": "BULLET_CREATE_LIMIT_PARAM_ST",
+  "Name": "BULLET_CREATE_LIMIT_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "limitNum_byGroup",
+      "Name": "グループ内上限弾数",
+      "Description": "同一グループ内での作成上限数"
+    },
+    {
+      "Field": "isLimitEachOwner",
+      "Name": "オーナー毎に制限するか",
+      "Description": "オーナー毎に制限するか"
+    },
+    {
+      "Field": "pad2",
+      "Name": "パディング",
+      "Description": "pad2"
+    },
+    {
+      "Field": "pad",
+      "Name": "パディング",
+      "Description": "pad3"
+    }
+  ]
+}

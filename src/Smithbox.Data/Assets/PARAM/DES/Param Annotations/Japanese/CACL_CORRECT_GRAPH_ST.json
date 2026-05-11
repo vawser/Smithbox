@@ -1,0 +1,118 @@
+{
+  "Param": "CACL_CORRECT_GRAPH_ST",
+  "Type": "CACL_CORRECT_GRAPH_ST",
+  "Name": "CACL_CORRECT_GRAPH_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "stageMaxVal0",
+      "Name": "閾値ポイント0",
+      "Description": "仕様書に「n次閾値[point]」と書いてあるもの"
+    },
+    {
+      "Field": "stageMaxVal1",
+      "Name": "閾値ポイント1",
+      "Description": "仕様書に「n次閾値[point]」と書いてあるもの"
+    },
+    {
+      "Field": "stageMaxVal2",
+      "Name": "閾値ポイント2",
+      "Description": "仕様書に「n次閾値[point]」と書いてあるもの"
+    },
+    {
+      "Field": "stageMaxVal3",
+      "Name": "閾値ポイント3",
+      "Description": "仕様書に「n次閾値[point]」と書いてあるもの"
+    },
+    {
+      "Field": "stageMaxVal4",
+      "Name": "閾値ポイント4",
+      "Description": "仕様書に「n次閾値[point]」と書いてあるもの"
+    },
+    {
+      "Field": "pad0",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "stageMaxGrowVal0",
+      "Name": "閾値係数0",
+      "Description": "仕様書に「n次閾値[係数]」と書いてあるもの"
+    },
+    {
+      "Field": "stageMaxGrowVal1",
+      "Name": "閾値係数1",
+      "Description": "仕様書に「n次閾値[係数]」と書いてあるもの"
+    },
+    {
+      "Field": "stageMaxGrowVal2",
+      "Name": "閾値係数2",
+      "Description": "仕様書に「n次閾値[係数]」と書いてあるもの"
+    },
+    {
+      "Field": "stageMaxGrowVal3",
+      "Name": "閾値係数3",
+      "Description": "仕様書に「n次閾値[係数]」と書いてあるもの"
+    },
+    {
+      "Field": "stageMaxGrowVal4",
+      "Name": "閾値係数4",
+      "Description": "仕様書に「n次閾値[係数]」と書いてあるもの"
+    },
+    {
+      "Field": "pad1",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "adjPt_maxGrowVal0",
+      "Name": "調整係数0",
+      "Description": "調整係数"
+    },
+    {
+      "Field": "adjPt_maxGrowVal1",
+      "Name": "調整係数1",
+      "Description": "調整係数"
+    },
+    {
+      "Field": "adjPt_maxGrowVal2",
+      "Name": "調整係数2",
+      "Description": "調整係数"
+    },
+    {
+      "Field": "adjPt_maxGrowVal3",
+      "Name": "調整係数3",
+      "Description": "調整係数"
+    },
+    {
+      "Field": "adjPt_maxGrowVal4",
+      "Name": "調整係数4",
+      "Description": "調整係数"
+    },
+    {
+      "Field": "init_inclination_soul",
+      "Name": "成長ソウル 初期のグラフの傾きα1",
+      "Description": "成長ソウル 初期のグラフの傾きα1"
+    },
+    {
+      "Field": "adjustment_value",
+      "Name": "成長ソウル 初期のsoul調整α2",
+      "Description": "成長ソウル 初期のsoul調整α2"
+    },
+    {
+      "Field": "boundry_inclination_soul",
+      "Name": "成長ソウル 閾値後のグラフの傾きに影響α3",
+      "Description": "成長ソウル 閾値後のグラフの傾きに影響α3"
+    },
+    {
+      "Field": "boundry_value",
+      "Name": "成長ソウル 閾値 t",
+      "Description": "成長ソウル 閾値 t"
+    },
+    {
+      "Field": "pad2",
+      "Name": "パディング",
+      "Description": ""
+    }
+  ]
+}

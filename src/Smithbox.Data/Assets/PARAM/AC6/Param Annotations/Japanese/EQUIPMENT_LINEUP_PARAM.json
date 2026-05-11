@@ -1,0 +1,48 @@
+{
+  "Param": "EQUIPMENT_LINEUP_PARAM",
+  "Type": "EQUIPMENT_LINEUP_PARAM",
+  "Name": "EQUIPMENT_LINEUP_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "equipId",
+      "Name": "ID",
+      "Description": "装備品のID"
+    },
+    {
+      "Field": "price",
+      "Name": "価格",
+      "Description": "販売価格。0=売却不可"
+    },
+    {
+      "Field": "eventFlag_forRelease",
+      "Name": "解禁フラグ",
+      "Description": "販売解禁用イベントフラグのID"
+    },
+    {
+      "Field": "equipType",
+      "Name": "種類",
+      "Description": "×：未解禁 ○：解禁済・非所持"
+    },
+    {
+      "Field": "pad_0",
+      "Name": "pad",
+      "Description": ""
+    },
+    {
+      "Field": "isTrophyTarget",
+      "Name": "トロフィー対象か",
+      "Description": "トロフィー「全パーツ入手」の対象パーツか"
+    },
+    {
+      "Field": "rewardCondition",
+      "Name": "獲得条件",
+      "Description": "報酬として獲得する条件"
+    },
+    {
+      "Field": "pad_1",
+      "Name": "pad",
+      "Description": ""
+    }
+  ]
+}

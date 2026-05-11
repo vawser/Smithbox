@@ -1,0 +1,988 @@
+{
+  "Param": "NPC_EQUIP_PARTS_PARAM_ST",
+  "Type": "NPC_EQUIP_PARTS_PARAM_ST",
+  "Name": "NPC_EQUIP_PARTS_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "NT版出力から外すか",
+      "Description": "NT版から除外するか、除外するものに○をつける"
+    },
+    {
+      "Field": "disableParam_Product",
+      "Name": "製品版出力から外すか",
+      "Description": "製品版から除外するか、除外するものに○をつける"
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "パッケージ出力用リザーブ1",
+      "Description": "パッケージ出力用リザーブ1"
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "パッケージ出力用リザーブ2",
+      "Description": "パッケージ出力用リザーブ2"
+    },
+    {
+      "Field": "weaponId0",
+      "Name": "モデルID",
+      "Description": "1番目の武器のモデルID"
+    },
+    {
+      "Field": "weaponId1",
+      "Name": "モデルID",
+      "Description": "2番目の武器のモデルID"
+    },
+    {
+      "Field": "weaponId2",
+      "Name": "モデルID",
+      "Description": "3番目の武器のモデルID"
+    },
+    {
+      "Field": "weaponId3",
+      "Name": "モデルID",
+      "Description": "4番目の武器のモデルID"
+    },
+    {
+      "Field": "weaponId4",
+      "Name": "モデルID",
+      "Description": "5番目の武器のモデルID"
+    },
+    {
+      "Field": "weaponId5",
+      "Name": "モデルID",
+      "Description": "6番目の武器のモデルID"
+    },
+    {
+      "Field": "weaponId6",
+      "Name": "モデルID",
+      "Description": "7番目の武器のモデルID"
+    },
+    {
+      "Field": "weaponId7",
+      "Name": "モデルID",
+      "Description": "8番目の武器のモデルID"
+    },
+    {
+      "Field": "weaponId8",
+      "Name": "モデルID",
+      "Description": "9番目の武器のモデルID"
+    },
+    {
+      "Field": "weaponId9",
+      "Name": "モデルID",
+      "Description": "10番目の武器のモデルID"
+    },
+    {
+      "Field": "weaponId10",
+      "Name": "モデルID",
+      "Description": "11番目の武器のモデルID"
+    },
+    {
+      "Field": "weaponId11",
+      "Name": "モデルID",
+      "Description": "12番目の武器のモデルID"
+    },
+    {
+      "Field": "weaponId12",
+      "Name": "モデルID",
+      "Description": "13番目の武器のモデルID"
+    },
+    {
+      "Field": "weaponId13",
+      "Name": "モデルID",
+      "Description": "14番目の武器のモデルID"
+    },
+    {
+      "Field": "weaponId14",
+      "Name": "モデルID",
+      "Description": "15番目の武器のモデルID"
+    },
+    {
+      "Field": "weaponId15",
+      "Name": "モデルID",
+      "Description": "16番目の武器のモデルID"
+    },
+    {
+      "Field": "weaponId16",
+      "Name": "モデルID",
+      "Description": "17番目の武器のモデルID"
+    },
+    {
+      "Field": "weaponId17",
+      "Name": "モデルID",
+      "Description": "18番目の武器のモデルID"
+    },
+    {
+      "Field": "weaponId18",
+      "Name": "モデルID",
+      "Description": "19番目の武器のモデルID"
+    },
+    {
+      "Field": "weaponId19",
+      "Name": "モデルID",
+      "Description": "20番目の武器のモデルID"
+    },
+    {
+      "Field": "weaponId20",
+      "Name": "モデルID",
+      "Description": "21番目の武器のモデルID"
+    },
+    {
+      "Field": "weaponId21",
+      "Name": "モデルID",
+      "Description": "22番目の武器のモデルID"
+    },
+    {
+      "Field": "weaponId22",
+      "Name": "モデルID",
+      "Description": "23番目の武器のモデルID"
+    },
+    {
+      "Field": "weaponId23",
+      "Name": "モデルID",
+      "Description": "24番目の武器のモデルID"
+    },
+    {
+      "Field": "weaponId24",
+      "Name": "モデルID",
+      "Description": "25番目の武器のモデルID"
+    },
+    {
+      "Field": "weaponId25",
+      "Name": "モデルID",
+      "Description": "26番目の武器のモデルID"
+    },
+    {
+      "Field": "weaponId26",
+      "Name": "モデルID",
+      "Description": "27番目の武器のモデルID"
+    },
+    {
+      "Field": "weaponId27",
+      "Name": "モデルID",
+      "Description": "28番目の武器のモデルID"
+    },
+    {
+      "Field": "weaponId28",
+      "Name": "モデルID",
+      "Description": "29番目の武器のモデルID"
+    },
+    {
+      "Field": "weaponId29",
+      "Name": "モデルID",
+      "Description": "30番目の武器のモデルID"
+    },
+    {
+      "Field": "weaponId30",
+      "Name": "モデルID",
+      "Description": "31番目の武器のモデルID"
+    },
+    {
+      "Field": "weaponId31",
+      "Name": "モデルID",
+      "Description": "32番目の武器のモデルID"
+    },
+    {
+      "Field": "weaponDmyId0",
+      "Name": "アタッチダミポリID",
+      "Description": "1番目の武器のアタッチダミポリID"
+    },
+    {
+      "Field": "weaponDmyId1",
+      "Name": "アタッチダミポリID",
+      "Description": "2番目の武器のアタッチダミポリID"
+    },
+    {
+      "Field": "weaponDmyId2",
+      "Name": "アタッチダミポリID",
+      "Description": "3番目の武器のアタッチダミポリID"
+    },
+    {
+      "Field": "weaponDmyId3",
+      "Name": "アタッチダミポリID",
+      "Description": "4番目の武器のアタッチダミポリID"
+    },
+    {
+      "Field": "weaponDmyId4",
+      "Name": "アタッチダミポリID",
+      "Description": "5番目の武器のアタッチダミポリID"
+    },
+    {
+      "Field": "weaponDmyId5",
+      "Name": "アタッチダミポリID",
+      "Description": "6番目の武器のアタッチダミポリID"
+    },
+    {
+      "Field": "weaponDmyId6",
+      "Name": "アタッチダミポリID",
+      "Description": "7番目の武器のアタッチダミポリID"
+    },
+    {
+      "Field": "weaponDmyId7",
+      "Name": "アタッチダミポリID",
+      "Description": "8番目の武器のアタッチダミポリID"
+    },
+    {
+      "Field": "weaponDmyId8",
+      "Name": "アタッチダミポリID",
+      "Description": "9番目の武器のアタッチダミポリID"
+    },
+    {
+      "Field": "weaponDmyId9",
+      "Name": "アタッチダミポリID",
+      "Description": "10番目の武器のアタッチダミポリID"
+    },
+    {
+      "Field": "weaponDmyId10",
+      "Name": "アタッチダミポリID",
+      "Description": "11番目の武器のアタッチダミポリID"
+    },
+    {
+      "Field": "weaponDmyId11",
+      "Name": "アタッチダミポリID",
+      "Description": "12番目の武器のアタッチダミポリID"
+    },
+    {
+      "Field": "weaponDmyId12",
+      "Name": "アタッチダミポリID",
+      "Description": "13番目の武器のアタッチダミポリID"
+    },
+    {
+      "Field": "weaponDmyId13",
+      "Name": "アタッチダミポリID",
+      "Description": "14番目の武器のアタッチダミポリID"
+    },
+    {
+      "Field": "weaponDmyId14",
+      "Name": "アタッチダミポリID",
+      "Description": "15番目の武器のアタッチダミポリID"
+    },
+    {
+      "Field": "weaponDmyId15",
+      "Name": "アタッチダミポリID",
+      "Description": "16番目の武器のアタッチダミポリID"
+    },
+    {
+      "Field": "weaponDmyId16",
+      "Name": "アタッチダミポリID",
+      "Description": "17番目の武器のアタッチダミポリID"
+    },
+    {
+      "Field": "weaponDmyId17",
+      "Name": "アタッチダミポリID",
+      "Description": "18番目の武器のアタッチダミポリID"
+    },
+    {
+      "Field": "weaponDmyId18",
+      "Name": "アタッチダミポリID",
+      "Description": "19番目の武器のアタッチダミポリID"
+    },
+    {
+      "Field": "weaponDmyId19",
+      "Name": "アタッチダミポリID",
+      "Description": "20番目の武器のアタッチダミポリID"
+    },
+    {
+      "Field": "weaponDmyId20",
+      "Name": "アタッチダミポリID",
+      "Description": "21番目の武器のアタッチダミポリID"
+    },
+    {
+      "Field": "weaponDmyId21",
+      "Name": "アタッチダミポリID",
+      "Description": "22番目の武器のアタッチダミポリID"
+    },
+    {
+      "Field": "weaponDmyId22",
+      "Name": "アタッチダミポリID",
+      "Description": "23番目の武器のアタッチダミポリID"
+    },
+    {
+      "Field": "weaponDmyId23",
+      "Name": "アタッチダミポリID",
+      "Description": "24番目の武器のアタッチダミポリID"
+    },
+    {
+      "Field": "weaponDmyId24",
+      "Name": "アタッチダミポリID",
+      "Description": "25番目の武器のアタッチダミポリID"
+    },
+    {
+      "Field": "weaponDmyId25",
+      "Name": "アタッチダミポリID",
+      "Description": "26番目の武器のアタッチダミポリID"
+    },
+    {
+      "Field": "weaponDmyId26",
+      "Name": "アタッチダミポリID",
+      "Description": "27番目の武器のアタッチダミポリID"
+    },
+    {
+      "Field": "weaponDmyId27",
+      "Name": "アタッチダミポリID",
+      "Description": "28番目の武器のアタッチダミポリID"
+    },
+    {
+      "Field": "weaponDmyId28",
+      "Name": "アタッチダミポリID",
+      "Description": "29番目の武器のアタッチダミポリID"
+    },
+    {
+      "Field": "weaponDmyId29",
+      "Name": "アタッチダミポリID",
+      "Description": "30番目の武器のアタッチダミポリID"
+    },
+    {
+      "Field": "weaponDmyId30",
+      "Name": "アタッチダミポリID",
+      "Description": "31番目の武器のアタッチダミポリID"
+    },
+    {
+      "Field": "weaponDmyId31",
+      "Name": "アタッチダミポリID",
+      "Description": "32番目の武器のアタッチダミポリID"
+    },
+    {
+      "Field": "weaponAttachObjId0",
+      "Name": "アタッチ関節パラメータID",
+      "Description": "1番目の武器のアタッチ関節パラメータID"
+    },
+    {
+      "Field": "weaponAttachObjId1",
+      "Name": "アタッチ関節パラメータID",
+      "Description": "2番目の武器のアタッチ関節パラメータID"
+    },
+    {
+      "Field": "weaponAttachObjId2",
+      "Name": "アタッチ関節パラメータID",
+      "Description": "3番目の武器のアタッチ関節パラメータID"
+    },
+    {
+      "Field": "weaponAttachObjId3",
+      "Name": "アタッチ関節パラメータID",
+      "Description": "4番目の武器のアタッチ関節パラメータID"
+    },
+    {
+      "Field": "weaponAttachObjId4",
+      "Name": "アタッチ関節パラメータID",
+      "Description": "5番目の武器のアタッチ関節パラメータID"
+    },
+    {
+      "Field": "weaponAttachObjId5",
+      "Name": "アタッチ関節パラメータID",
+      "Description": "6番目の武器のアタッチ関節パラメータID"
+    },
+    {
+      "Field": "weaponAttachObjId6",
+      "Name": "アタッチ関節パラメータID",
+      "Description": "7番目の武器のアタッチ関節パラメータID"
+    },
+    {
+      "Field": "weaponAttachObjId7",
+      "Name": "アタッチ関節パラメータID",
+      "Description": "8番目の武器のアタッチ関節パラメータID"
+    },
+    {
+      "Field": "weaponAttachObjId8",
+      "Name": "アタッチ関節パラメータID",
+      "Description": "9番目の武器のアタッチ関節パラメータID"
+    },
+    {
+      "Field": "weaponAttachObjId9",
+      "Name": "アタッチ関節パラメータID",
+      "Description": "10番目の武器のアタッチ関節パラメータID"
+    },
+    {
+      "Field": "weaponAttachObjId10",
+      "Name": "アタッチ関節パラメータID",
+      "Description": "11番目の武器のアタッチ関節パラメータID"
+    },
+    {
+      "Field": "weaponAttachObjId11",
+      "Name": "アタッチ関節パラメータID",
+      "Description": "12番目の武器のアタッチ関節パラメータID"
+    },
+    {
+      "Field": "weaponAttachObjId12",
+      "Name": "アタッチ関節パラメータID",
+      "Description": "13番目の武器のアタッチ関節パラメータID"
+    },
+    {
+      "Field": "weaponAttachObjId13",
+      "Name": "アタッチ関節パラメータID",
+      "Description": "14番目の武器のアタッチ関節パラメータID"
+    },
+    {
+      "Field": "weaponAttachObjId14",
+      "Name": "アタッチ関節パラメータID",
+      "Description": "15番目の武器のアタッチ関節パラメータID"
+    },
+    {
+      "Field": "weaponAttachObjId15",
+      "Name": "アタッチ関節パラメータID",
+      "Description": "16番目の武器のアタッチ関節パラメータID"
+    },
+    {
+      "Field": "weaponAttachObjId16",
+      "Name": "アタッチ関節パラメータID",
+      "Description": "17番目の武器のアタッチ関節パラメータID"
+    },
+    {
+      "Field": "weaponAttachObjId17",
+      "Name": "アタッチ関節パラメータID",
+      "Description": "18番目の武器のアタッチ関節パラメータID"
+    },
+    {
+      "Field": "weaponAttachObjId18",
+      "Name": "アタッチ関節パラメータID",
+      "Description": "19番目の武器のアタッチ関節パラメータID"
+    },
+    {
+      "Field": "weaponAttachObjId19",
+      "Name": "アタッチ関節パラメータID",
+      "Description": "20番目の武器のアタッチ関節パラメータID"
+    },
+    {
+      "Field": "weaponAttachObjId20",
+      "Name": "アタッチ関節パラメータID",
+      "Description": "21番目の武器のアタッチ関節パラメータID"
+    },
+    {
+      "Field": "weaponAttachObjId21",
+      "Name": "アタッチ関節パラメータID",
+      "Description": "22番目の武器のアタッチ関節パラメータID"
+    },
+    {
+      "Field": "weaponAttachObjId22",
+      "Name": "アタッチ関節パラメータID",
+      "Description": "23番目の武器のアタッチ関節パラメータID"
+    },
+    {
+      "Field": "weaponAttachObjId23",
+      "Name": "アタッチ関節パラメータID",
+      "Description": "24番目の武器のアタッチ関節パラメータID"
+    },
+    {
+      "Field": "weaponAttachObjId24",
+      "Name": "アタッチ関節パラメータID",
+      "Description": "25番目の武器のアタッチ関節パラメータID"
+    },
+    {
+      "Field": "weaponAttachObjId25",
+      "Name": "アタッチ関節パラメータID",
+      "Description": "26番目の武器のアタッチ関節パラメータID"
+    },
+    {
+      "Field": "weaponAttachObjId26",
+      "Name": "アタッチ関節パラメータID",
+      "Description": "27番目の武器のアタッチ関節パラメータID"
+    },
+    {
+      "Field": "weaponAttachObjId27",
+      "Name": "アタッチ関節パラメータID",
+      "Description": "28番目の武器のアタッチ関節パラメータID"
+    },
+    {
+      "Field": "weaponAttachObjId28",
+      "Name": "アタッチ関節パラメータID",
+      "Description": "29番目の武器のアタッチ関節パラメータID"
+    },
+    {
+      "Field": "weaponAttachObjId29",
+      "Name": "アタッチ関節パラメータID",
+      "Description": "30番目の武器のアタッチ関節パラメータID"
+    },
+    {
+      "Field": "weaponAttachObjId30",
+      "Name": "アタッチ関節パラメータID",
+      "Description": "31番目の武器のアタッチ関節パラメータID"
+    },
+    {
+      "Field": "weaponAttachObjId31",
+      "Name": "アタッチ関節パラメータID",
+      "Description": "32番目の武器のアタッチ関節パラメータID"
+    },
+    {
+      "Field": "bInitVisible0",
+      "Name": "初期表示設定",
+      "Description": "1番目の武器の初期表示状態"
+    },
+    {
+      "Field": "bInitVisible1",
+      "Name": "初期表示設定",
+      "Description": "2番目の武器の初期表示状態"
+    },
+    {
+      "Field": "bInitVisible2",
+      "Name": "初期表示設定",
+      "Description": "3番目の武器の初期表示状態"
+    },
+    {
+      "Field": "bInitVisible3",
+      "Name": "初期表示設定",
+      "Description": "4番目の武器の初期表示状態"
+    },
+    {
+      "Field": "bInitVisible4",
+      "Name": "初期表示設定",
+      "Description": "5番目の武器の初期表示状態"
+    },
+    {
+      "Field": "bInitVisible5",
+      "Name": "初期表示設定",
+      "Description": "6番目の武器の初期表示状態"
+    },
+    {
+      "Field": "bInitVisible6",
+      "Name": "初期表示設定",
+      "Description": "7番目の武器の初期表示状態"
+    },
+    {
+      "Field": "bInitVisible7",
+      "Name": "初期表示設定",
+      "Description": "8番目の武器の初期表示状態"
+    },
+    {
+      "Field": "bInitVisible8",
+      "Name": "初期表示設定",
+      "Description": "9番目の武器の初期表示状態"
+    },
+    {
+      "Field": "bInitVisible9",
+      "Name": "初期表示設定",
+      "Description": "10番目の武器の初期表示状態"
+    },
+    {
+      "Field": "bInitVisible10",
+      "Name": "初期表示設定",
+      "Description": "11番目の武器の初期表示状態"
+    },
+    {
+      "Field": "bInitVisible11",
+      "Name": "初期表示設定",
+      "Description": "12番目の武器の初期表示状態"
+    },
+    {
+      "Field": "bInitVisible12",
+      "Name": "初期表示設定",
+      "Description": "13番目の武器の初期表示状態"
+    },
+    {
+      "Field": "bInitVisible13",
+      "Name": "初期表示設定",
+      "Description": "14番目の武器の初期表示状態"
+    },
+    {
+      "Field": "bInitVisible14",
+      "Name": "初期表示設定",
+      "Description": "15番目の武器の初期表示状態"
+    },
+    {
+      "Field": "bInitVisible15",
+      "Name": "初期表示設定",
+      "Description": "16番目の武器の初期表示状態"
+    },
+    {
+      "Field": "bInitVisible16",
+      "Name": "初期表示設定",
+      "Description": "17番目の武器の初期表示状態"
+    },
+    {
+      "Field": "bInitVisible17",
+      "Name": "初期表示設定",
+      "Description": "18番目の武器の初期表示状態"
+    },
+    {
+      "Field": "bInitVisible18",
+      "Name": "初期表示設定",
+      "Description": "19番目の武器の初期表示状態"
+    },
+    {
+      "Field": "bInitVisible19",
+      "Name": "初期表示設定",
+      "Description": "20番目の武器の初期表示状態"
+    },
+    {
+      "Field": "bInitVisible20",
+      "Name": "初期表示設定",
+      "Description": "21番目の武器の初期表示状態"
+    },
+    {
+      "Field": "bInitVisible21",
+      "Name": "初期表示設定",
+      "Description": "22番目の武器の初期表示状態"
+    },
+    {
+      "Field": "bInitVisible22",
+      "Name": "初期表示設定",
+      "Description": "23番目の武器の初期表示状態"
+    },
+    {
+      "Field": "bInitVisible23",
+      "Name": "初期表示設定",
+      "Description": "24番目の武器の初期表示状態"
+    },
+    {
+      "Field": "bInitVisible24",
+      "Name": "初期表示設定",
+      "Description": "25番目の武器の初期表示状態"
+    },
+    {
+      "Field": "bInitVisible25",
+      "Name": "初期表示設定",
+      "Description": "26番目の武器の初期表示状態"
+    },
+    {
+      "Field": "bInitVisible26",
+      "Name": "初期表示設定",
+      "Description": "27番目の武器の初期表示状態"
+    },
+    {
+      "Field": "bInitVisible27",
+      "Name": "初期表示設定",
+      "Description": "28番目の武器の初期表示状態"
+    },
+    {
+      "Field": "bInitVisible28",
+      "Name": "初期表示設定",
+      "Description": "29番目の武器の初期表示状態"
+    },
+    {
+      "Field": "bInitVisible29",
+      "Name": "初期表示設定",
+      "Description": "30番目の武器の初期表示状態"
+    },
+    {
+      "Field": "bInitVisible30",
+      "Name": "初期表示設定",
+      "Description": "31番目の武器の初期表示状態"
+    },
+    {
+      "Field": "bInitVisible31",
+      "Name": "初期表示設定",
+      "Description": "32番目の武器の初期表示状態"
+    },
+    {
+      "Field": "breakSfxId0",
+      "Name": "破壊時SFXID",
+      "Description": "1番目の武器の破壊時SFXID"
+    },
+    {
+      "Field": "breakSfxId1",
+      "Name": "破壊時SFXID",
+      "Description": "2番目の武器の破壊時SFXID"
+    },
+    {
+      "Field": "breakSfxId2",
+      "Name": "破壊時SFXID",
+      "Description": "3番目の武器の破壊時SFXID"
+    },
+    {
+      "Field": "breakSfxId3",
+      "Name": "破壊時SFXID",
+      "Description": "4番目の武器の破壊時SFXID"
+    },
+    {
+      "Field": "breakSfxId4",
+      "Name": "破壊時SFXID",
+      "Description": "5番目の武器の破壊時SFXID"
+    },
+    {
+      "Field": "breakSfxId5",
+      "Name": "破壊時SFXID",
+      "Description": "6番目の武器の破壊時SFXID"
+    },
+    {
+      "Field": "breakSfxId6",
+      "Name": "破壊時SFXID",
+      "Description": "7番目の武器の破壊時SFXID"
+    },
+    {
+      "Field": "breakSfxId7",
+      "Name": "破壊時SFXID",
+      "Description": "8番目の武器の破壊時SFXID"
+    },
+    {
+      "Field": "breakSfxId8",
+      "Name": "破壊時SFXID",
+      "Description": "9番目の武器の破壊時SFXID"
+    },
+    {
+      "Field": "breakSfxId9",
+      "Name": "破壊時SFXID",
+      "Description": "10番目の武器の破壊時SFXID"
+    },
+    {
+      "Field": "breakSfxId10",
+      "Name": "破壊時SFXID",
+      "Description": "11番目の武器の破壊時SFXID"
+    },
+    {
+      "Field": "breakSfxId11",
+      "Name": "破壊時SFXID",
+      "Description": "12番目の武器の破壊時SFXID"
+    },
+    {
+      "Field": "breakSfxId12",
+      "Name": "破壊時SFXID",
+      "Description": "13番目の武器の破壊時SFXID"
+    },
+    {
+      "Field": "breakSfxId13",
+      "Name": "破壊時SFXID",
+      "Description": "14番目の武器の破壊時SFXID"
+    },
+    {
+      "Field": "breakSfxId14",
+      "Name": "破壊時SFXID",
+      "Description": "15番目の武器の破壊時SFXID"
+    },
+    {
+      "Field": "breakSfxId15",
+      "Name": "破壊時SFXID",
+      "Description": "16番目の武器の破壊時SFXID"
+    },
+    {
+      "Field": "breakSfxId16",
+      "Name": "破壊時SFXID",
+      "Description": "17番目の武器の破壊時SFXID"
+    },
+    {
+      "Field": "breakSfxId17",
+      "Name": "破壊時SFXID",
+      "Description": "18番目の武器の破壊時SFXID"
+    },
+    {
+      "Field": "breakSfxId18",
+      "Name": "破壊時SFXID",
+      "Description": "19番目の武器の破壊時SFXID"
+    },
+    {
+      "Field": "breakSfxId19",
+      "Name": "破壊時SFXID",
+      "Description": "20番目の武器の破壊時SFXID"
+    },
+    {
+      "Field": "breakSfxId20",
+      "Name": "破壊時SFXID",
+      "Description": "21番目の武器の破壊時SFXID"
+    },
+    {
+      "Field": "breakSfxId21",
+      "Name": "破壊時SFXID",
+      "Description": "22番目の武器の破壊時SFXID"
+    },
+    {
+      "Field": "breakSfxId22",
+      "Name": "破壊時SFXID",
+      "Description": "23番目の武器の破壊時SFXID"
+    },
+    {
+      "Field": "breakSfxId23",
+      "Name": "破壊時SFXID",
+      "Description": "24番目の武器の破壊時SFXID"
+    },
+    {
+      "Field": "breakSfxId24",
+      "Name": "破壊時SFXID",
+      "Description": "25番目の武器の破壊時SFXID"
+    },
+    {
+      "Field": "breakSfxId25",
+      "Name": "破壊時SFXID",
+      "Description": "26番目の武器の破壊時SFXID"
+    },
+    {
+      "Field": "breakSfxId26",
+      "Name": "破壊時SFXID",
+      "Description": "27番目の武器の破壊時SFXID"
+    },
+    {
+      "Field": "breakSfxId27",
+      "Name": "破壊時SFXID",
+      "Description": "28番目の武器の破壊時SFXID"
+    },
+    {
+      "Field": "breakSfxId28",
+      "Name": "破壊時SFXID",
+      "Description": "29番目の武器の破壊時SFXID"
+    },
+    {
+      "Field": "breakSfxId29",
+      "Name": "破壊時SFXID",
+      "Description": "30番目の武器の破壊時SFXID"
+    },
+    {
+      "Field": "breakSfxId30",
+      "Name": "破壊時SFXID",
+      "Description": "31番目の武器の破壊時SFXID"
+    },
+    {
+      "Field": "breakSfxId31",
+      "Name": "破壊時SFXID",
+      "Description": "32番目の武器の破壊時SFXID"
+    },
+    {
+      "Field": "breakDmyId0",
+      "Name": "破壊時SFX発生ダミポリID",
+      "Description": "1番目の武器の破壊時SFXの発生ダミポリID"
+    },
+    {
+      "Field": "breakDmyId1",
+      "Name": "破壊時SFX発生ダミポリID",
+      "Description": "2番目の武器の破壊時SFXの発生ダミポリID"
+    },
+    {
+      "Field": "breakDmyId2",
+      "Name": "破壊時SFX発生ダミポリID",
+      "Description": "3番目の武器の破壊時SFXの発生ダミポリID"
+    },
+    {
+      "Field": "breakDmyId3",
+      "Name": "破壊時SFX発生ダミポリID",
+      "Description": "4番目の武器の破壊時SFXの発生ダミポリID"
+    },
+    {
+      "Field": "breakDmyId4",
+      "Name": "破壊時SFX発生ダミポリID",
+      "Description": "5番目の武器の破壊時SFXの発生ダミポリID"
+    },
+    {
+      "Field": "breakDmyId5",
+      "Name": "破壊時SFX発生ダミポリID",
+      "Description": "6番目の武器の破壊時SFXの発生ダミポリID"
+    },
+    {
+      "Field": "breakDmyId6",
+      "Name": "破壊時SFX発生ダミポリID",
+      "Description": "7番目の武器の破壊時SFXの発生ダミポリID"
+    },
+    {
+      "Field": "breakDmyId7",
+      "Name": "破壊時SFX発生ダミポリID",
+      "Description": "8番目の武器の破壊時SFXの発生ダミポリID"
+    },
+    {
+      "Field": "breakDmyId8",
+      "Name": "破壊時SFX発生ダミポリID",
+      "Description": "9番目の武器の破壊時SFXの発生ダミポリID"
+    },
+    {
+      "Field": "breakDmyId9",
+      "Name": "破壊時SFX発生ダミポリID",
+      "Description": "10番目の武器の破壊時SFXの発生ダミポリID"
+    },
+    {
+      "Field": "breakDmyId10",
+      "Name": "破壊時SFX発生ダミポリID",
+      "Description": "11番目の武器の破壊時SFXの発生ダミポリID"
+    },
+    {
+      "Field": "breakDmyId11",
+      "Name": "破壊時SFX発生ダミポリID",
+      "Description": "12番目の武器の破壊時SFXの発生ダミポリID"
+    },
+    {
+      "Field": "breakDmyId12",
+      "Name": "破壊時SFX発生ダミポリID",
+      "Description": "13番目の武器の破壊時SFXの発生ダミポリID"
+    },
+    {
+      "Field": "breakDmyId13",
+      "Name": "破壊時SFX発生ダミポリID",
+      "Description": "14番目の武器の破壊時SFXの発生ダミポリID"
+    },
+    {
+      "Field": "breakDmyId14",
+      "Name": "破壊時SFX発生ダミポリID",
+      "Description": "15番目の武器の破壊時SFXの発生ダミポリID"
+    },
+    {
+      "Field": "breakDmyId15",
+      "Name": "破壊時SFX発生ダミポリID",
+      "Description": "16番目の武器の破壊時SFXの発生ダミポリID"
+    },
+    {
+      "Field": "breakDmyId16",
+      "Name": "破壊時SFX発生ダミポリID",
+      "Description": "17番目の武器の破壊時SFXの発生ダミポリID"
+    },
+    {
+      "Field": "breakDmyId17",
+      "Name": "破壊時SFX発生ダミポリID",
+      "Description": "18番目の武器の破壊時SFXの発生ダミポリID"
+    },
+    {
+      "Field": "breakDmyId18",
+      "Name": "破壊時SFX発生ダミポリID",
+      "Description": "19番目の武器の破壊時SFXの発生ダミポリID"
+    },
+    {
+      "Field": "breakDmyId19",
+      "Name": "破壊時SFX発生ダミポリID",
+      "Description": "20番目の武器の破壊時SFXの発生ダミポリID"
+    },
+    {
+      "Field": "breakDmyId20",
+      "Name": "破壊時SFX発生ダミポリID",
+      "Description": "21番目の武器の破壊時SFXの発生ダミポリID"
+    },
+    {
+      "Field": "breakDmyId21",
+      "Name": "破壊時SFX発生ダミポリID",
+      "Description": "22番目の武器の破壊時SFXの発生ダミポリID"
+    },
+    {
+      "Field": "breakDmyId22",
+      "Name": "破壊時SFX発生ダミポリID",
+      "Description": "23番目の武器の破壊時SFXの発生ダミポリID"
+    },
+    {
+      "Field": "breakDmyId23",
+      "Name": "破壊時SFX発生ダミポリID",
+      "Description": "24番目の武器の破壊時SFXの発生ダミポリID"
+    },
+    {
+      "Field": "breakDmyId24",
+      "Name": "破壊時SFX発生ダミポリID",
+      "Description": "25番目の武器の破壊時SFXの発生ダミポリID"
+    },
+    {
+      "Field": "breakDmyId25",
+      "Name": "破壊時SFX発生ダミポリID",
+      "Description": "26番目の武器の破壊時SFXの発生ダミポリID"
+    },
+    {
+      "Field": "breakDmyId26",
+      "Name": "破壊時SFX発生ダミポリID",
+      "Description": "27番目の武器の破壊時SFXの発生ダミポリID"
+    },
+    {
+      "Field": "breakDmyId27",
+      "Name": "破壊時SFX発生ダミポリID",
+      "Description": "28番目の武器の破壊時SFXの発生ダミポリID"
+    },
+    {
+      "Field": "breakDmyId28",
+      "Name": "破壊時SFX発生ダミポリID",
+      "Description": "29番目の武器の破壊時SFXの発生ダミポリID"
+    },
+    {
+      "Field": "breakDmyId29",
+      "Name": "破壊時SFX発生ダミポリID",
+      "Description": "30番目の武器の破壊時SFXの発生ダミポリID"
+    },
+    {
+      "Field": "breakDmyId30",
+      "Name": "破壊時SFX発生ダミポリID",
+      "Description": "31番目の武器の破壊時SFXの発生ダミポリID"
+    },
+    {
+      "Field": "breakDmyId31",
+      "Name": "破壊時SFX発生ダミポリID",
+      "Description": "32番目の武器の破壊時SFXの発生ダミポリID"
+    }
+  ]
+}

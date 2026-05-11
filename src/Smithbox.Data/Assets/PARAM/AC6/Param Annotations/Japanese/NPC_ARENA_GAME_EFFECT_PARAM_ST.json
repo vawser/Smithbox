@@ -1,0 +1,83 @@
+{
+  "Param": "NPC_ARENA_GAME_EFFECT_PARAM_ST",
+  "Type": "NPC_ARENA_GAME_EFFECT_PARAM_ST",
+  "Name": "NPC_ARENA_GAME_EFFECT_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "startTextId",
+      "Name": "対戦開始時テキスト演出ID",
+      "Description": "対戦開始時テキスト演出ID"
+    },
+    {
+      "Field": "winTextId",
+      "Name": "勝利時時テキスト演出ID",
+      "Description": "勝利時時テキスト演出ID"
+    },
+    {
+      "Field": "loseTextId",
+      "Name": "敗北時テキスト演出ID",
+      "Description": "敗北時テキスト演出ID"
+    },
+    {
+      "Field": "drawTextId",
+      "Name": "引き分け時テキスト演出ID",
+      "Description": "引き分け時テキスト演出ID"
+    },
+    {
+      "Field": "finishTextTiming",
+      "Name": "勝敗テキストタイミング",
+      "Description": "終了時テキストタイミング"
+    },
+    {
+      "Field": "endCutsceneWaitTime",
+      "Name": "終了時カットシーン再生待ち時間[s]",
+      "Description": "終了時カットシーン再生待ち時間"
+    },
+    {
+      "Field": "pad2",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "slowWaitTime",
+      "Name": "スロー演出待ち時間[s]",
+      "Description": "スロー演出待ち時間[s]"
+    },
+    {
+      "Field": "finishTextTime",
+      "Name": "勝敗テキスト待ち時間[s]",
+      "Description": "勝敗テキスト待ち時間[s]"
+    },
+    {
+      "Field": "playerDeadTextId",
+      "Name": "プレイヤー死亡テキスト演出ID",
+      "Description": "プレイヤー死亡テキスト演出ID"
+    },
+    {
+      "Field": "playerDeadTextWaitTime",
+      "Name": "プレイヤー死亡テキスト待ち時間[s]",
+      "Description": "プレイヤー死亡テキスト待ち時間[s]"
+    },
+    {
+      "Field": "enemyDeadTextId",
+      "Name": "エネミー死亡テキスト演出ID",
+      "Description": "エネミー死亡テキスト演出ID"
+    },
+    {
+      "Field": "enemyDeadTextWaitTime",
+      "Name": "エネミー死亡テキスト待ち時間[s]",
+      "Description": "エネミー死亡テキスト待ち時間[s]"
+    },
+    {
+      "Field": "startupCutsceneId",
+      "Name": "スタートアップカットシーンID",
+      "Description": "スタートアップカットシーンID"
+    },
+    {
+      "Field": "pad",
+      "Name": "予約",
+      "Description": ""
+    }
+  ]
+}

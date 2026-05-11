@@ -1,0 +1,38 @@
+{
+  "Param": "EQUIPMENT_MENU_MANAGE_CATEGORY_PARAM_ST",
+  "Type": "EQUIPMENT_MENU_MANAGE_CATEGORY_PARAM_ST",
+  "Name": "EQUIPMENT_MENU_MANAGE_CATEGORY_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "PropertyLayoutID",
+      "Name": "プロパティレイアウトID",
+      "Description": "メニューで表示するパラメータリストを メニュープロパティレイアウト.xlsmのIDで指定"
+    },
+    {
+      "Field": "CategoryNameTextID",
+      "Name": "カテゴリ名ID",
+      "Description": "カテゴリ名(メニューテキスト.xlsm)のID"
+    },
+    {
+      "Field": "CategoryIconID",
+      "Name": "アイコンID",
+      "Description": "カテゴリアイコン(EquipCategory)のID"
+    },
+    {
+      "Field": "SortID",
+      "Name": "ソートID",
+      "Description": "カテゴリの並び順ソート用ID"
+    },
+    {
+      "Field": "HelpID",
+      "Name": "ヘルプID",
+      "Description": "ヘルプ動画のID"
+    },
+    {
+      "Field": "reserved",
+      "Name": "予約",
+      "Description": "-----"
+    }
+  ]
+}

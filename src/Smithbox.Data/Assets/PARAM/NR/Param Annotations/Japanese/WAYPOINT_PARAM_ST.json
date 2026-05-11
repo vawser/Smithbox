@@ -1,0 +1,33 @@
+{
+  "Param": "WAYPOINT_PARAM_ST",
+  "Type": "WAYPOINT_PARAM_ST",
+  "Name": "WAYPOINT_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "attribute1",
+      "Name": "属性1",
+      "Description": ""
+    },
+    {
+      "Field": "attribute2",
+      "Name": "属性2",
+      "Description": ""
+    },
+    {
+      "Field": "attribute3",
+      "Name": "属性3",
+      "Description": ""
+    },
+    {
+      "Field": "attribute4",
+      "Name": "属性4",
+      "Description": ""
+    },
+    {
+      "Field": "padding4",
+      "Name": "パディング4",
+      "Description": ""
+    }
+  ]
+}

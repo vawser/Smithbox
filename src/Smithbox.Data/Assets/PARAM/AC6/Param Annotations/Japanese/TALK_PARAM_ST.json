@@ -1,0 +1,103 @@
+{
+  "Param": "TALK_PARAM_ST",
+  "Type": "TALK_PARAM_ST",
+  "Name": "TALK_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "NT版出力から外すか",
+      "Description": "NT版から除外するか、除外するものに○をつける"
+    },
+    {
+      "Field": "disableParam_Product",
+      "Name": "製品版出力から外すか",
+      "Description": "製品版から除外するか、除外するものに○をつける"
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "パッケージ出力用リザーブ1",
+      "Description": "パッケージ出力用リザーブ1"
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "パッケージ出力用リザーブ2",
+      "Description": "パッケージ出力用リザーブ2"
+    },
+    {
+      "Field": "msgId",
+      "Name": "メッセージID",
+      "Description": "メッセージを指定->メニュー"
+    },
+    {
+      "Field": "voiceId",
+      "Name": "ボイスID",
+      "Description": "ボイスを指定->サウンド"
+    },
+    {
+      "Field": "spEffectId0",
+      "Name": "特殊効果ID0",
+      "Description": "特殊効果を指定->キャラ"
+    },
+    {
+      "Field": "motionId0",
+      "Name": "モーションID0",
+      "Description": "モーションを指定->キャラ"
+    },
+    {
+      "Field": "spEffectId1",
+      "Name": "特殊効果ID1",
+      "Description": "特殊効果を指定->キャラ"
+    },
+    {
+      "Field": "motionId1",
+      "Name": "モーションID1",
+      "Description": "モーションを指定->キャラ"
+    },
+    {
+      "Field": "returnPos",
+      "Name": "復帰位置",
+      "Description": "復帰する会話の相対位置->会話"
+    },
+    {
+      "Field": "reactionId",
+      "Name": "リアクションID",
+      "Description": "復帰時の会話指定->会話"
+    },
+    {
+      "Field": "eventId",
+      "Name": "イベントID",
+      "Description": "イベントID->イベント"
+    },
+    {
+      "Field": "delayTime",
+      "Name": "開始遅延時間[s]",
+      "Description": "テキスト表示/ボイス再生の開始を遅らせる時間(秒)"
+    },
+    {
+      "Field": "beginSE",
+      "Name": "開始SE",
+      "Description": "字幕開始時に再生するSE(-1：自動, 0：無し, 1以上：任意ID)"
+    },
+    {
+      "Field": "endSE",
+      "Name": "終了SE",
+      "Description": "字幕終了時に再生するSE(-1：自動, 0：無し, 1以上：任意ID)"
+    },
+    {
+      "Field": "talkerID",
+      "Name": "話者ID",
+      "Description": "話者のアカウントパラID"
+    },
+    {
+      "Field": "menuEffect",
+      "Name": "通信演出",
+      "Description": "メニューの通信会話中演出"
+    },
+    {
+      "Field": "reserved",
+      "Name": "予約",
+      "Description": "予約"
+    }
+  ]
+}

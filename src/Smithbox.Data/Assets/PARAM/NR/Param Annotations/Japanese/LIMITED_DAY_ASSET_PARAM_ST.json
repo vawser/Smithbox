@@ -1,0 +1,88 @@
+{
+  "Param": "LIMITED_DAY_ASSET_PARAM_ST",
+  "Type": "LIMITED_DAY_ASSET_PARAM_ST",
+  "Name": "LIMITED_DAY_ASSET_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "unknown_0",
+      "Name": "unknown_0",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_1",
+      "Name": "unknown_1",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_2",
+      "Name": "unknown_2",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_3",
+      "Name": "unknown_3",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_4",
+      "Name": "unknown_4",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_5",
+      "Name": "unknown_5",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_6",
+      "Name": "unknown_6",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_7",
+      "Name": "unknown_7",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_8",
+      "Name": "unknown_8",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_9",
+      "Name": "unknown_9",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_10",
+      "Name": "unknown_10",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_11",
+      "Name": "unknown_11",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_12",
+      "Name": "unknown_12",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_13",
+      "Name": "unknown_13",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_14",
+      "Name": "unknown_14",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_15",
+      "Name": "unknown_15",
+      "Description": ""
+    }
+  ]
+}

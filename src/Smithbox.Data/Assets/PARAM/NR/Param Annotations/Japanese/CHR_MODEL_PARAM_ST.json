@@ -1,0 +1,48 @@
+{
+  "Param": "CHR_MODEL_PARAM_ST",
+  "Type": "CHR_MODEL_PARAM_ST",
+  "Name": "CHR_MODEL_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "NT版出力から外すか",
+      "Description": "○をつけたパラメータをNT版パッケージでは除外します"
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "パッケージ出力用リザーブ1",
+      "Description": "パッケージ出力用リザーブ1"
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "パッケージ出力用リザーブ2",
+      "Description": "パッケージ出力用リザーブ2"
+    },
+    {
+      "Field": "modelMemoryType",
+      "Name": "モデルの使用メモリタイプ",
+      "Description": "モデルの使用メモリタイプ"
+    },
+    {
+      "Field": "texMemoryType",
+      "Name": "テクスチャの使用メモリタイプ",
+      "Description": "テクスチャの使用メモリタイプ"
+    },
+    {
+      "Field": "cameraDitherFadeId",
+      "Name": "カメラフェードパラメータID",
+      "Description": "カメラフェードパラメータID（-1：マテリアルを参照、0：消えない、1～：パラメータID）"
+    },
+    {
+      "Field": "reportAnimMemSizeMb",
+      "Name": "報告アニメ容量(MB)",
+      "Description": "この値を超えると報告システムで報告が来る。"
+    },
+    {
+      "Field": "unk",
+      "Name": "Unk",
+      "Description": "Unk (Added in 1.06)"
+    }
+  ]
+}

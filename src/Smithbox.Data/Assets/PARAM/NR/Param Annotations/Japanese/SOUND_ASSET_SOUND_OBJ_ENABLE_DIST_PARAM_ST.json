@@ -1,0 +1,13 @@
+{
+  "Param": "SOUND_ASSET_SOUND_OBJ_ENABLE_DIST_PARAM_ST",
+  "Type": "SOUND_ASSET_SOUND_OBJ_ENABLE_DIST_PARAM_ST",
+  "Name": "SOUND_ASSET_SOUND_OBJ_ENABLE_DIST_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "SoundObjEnableDist",
+      "Name": "アセットサウンド音源有効距離設定[m]",
+      "Description": "アセットサウンド音源有効距離[m](0より小さい:無効)"
+    }
+  ]
+}

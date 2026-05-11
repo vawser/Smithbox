@@ -1,0 +1,88 @@
+{
+  "Param": "ATTACH_OBJ_PARAM_ST",
+  "Type": "ATTACH_OBJ_PARAM_ST",
+  "Name": "ATTACH_OBJ_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "ObjName0",
+      "Name": "関節名",
+      "Description": "アタッチ元になる関節名"
+    },
+    {
+      "Field": "ObjName1",
+      "Name": "関節名",
+      "Description": "アタッチ元になる関節名"
+    },
+    {
+      "Field": "ObjName2",
+      "Name": "関節名",
+      "Description": "アタッチ元になる関節名"
+    },
+    {
+      "Field": "ObjName3",
+      "Name": "関節名",
+      "Description": "アタッチ元になる関節名"
+    },
+    {
+      "Field": "ObjName4",
+      "Name": "関節名",
+      "Description": "アタッチ元になる関節名"
+    },
+    {
+      "Field": "ObjName5",
+      "Name": "関節名",
+      "Description": "アタッチ元になる関節名"
+    },
+    {
+      "Field": "ObjName6",
+      "Name": "関節名",
+      "Description": "アタッチ元になる関節名"
+    },
+    {
+      "Field": "ObjName7",
+      "Name": "関節名",
+      "Description": "アタッチ元になる関節名"
+    },
+    {
+      "Field": "attachDmyId0",
+      "Name": "アタッチダミポリID",
+      "Description": "アタッチ先になるダミポリID"
+    },
+    {
+      "Field": "attachDmyId1",
+      "Name": "アタッチダミポリID",
+      "Description": "アタッチ先になるダミポリID"
+    },
+    {
+      "Field": "attachDmyId2",
+      "Name": "アタッチダミポリID",
+      "Description": "アタッチ先になるダミポリID"
+    },
+    {
+      "Field": "attachDmyId3",
+      "Name": "アタッチダミポリID",
+      "Description": "アタッチ先になるダミポリID"
+    },
+    {
+      "Field": "attachDmyId4",
+      "Name": "アタッチダミポリID",
+      "Description": "アタッチ先になるダミポリID"
+    },
+    {
+      "Field": "attachDmyId5",
+      "Name": "アタッチダミポリID",
+      "Description": "アタッチ先になるダミポリID"
+    },
+    {
+      "Field": "attachDmyId6",
+      "Name": "アタッチダミポリID",
+      "Description": "アタッチ先になるダミポリID"
+    },
+    {
+      "Field": "attachDmyId7",
+      "Name": "アタッチダミポリID",
+      "Description": "アタッチ先になるダミポリID"
+    }
+  ]
+}

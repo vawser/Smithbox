@@ -1,0 +1,78 @@
+{
+  "Param": "ASSET_TRANSCRIPTION_PARAM_ST",
+  "Type": "ASSET_TRANSCRIPTION_PARAM_ST",
+  "Name": "ASSET_TRANSCRIPTION_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "slodConvertType",
+      "Name": "SLOD変換設定",
+      "Description": "SLOD変換で使用する設定、転写実行時のモデルの表示on/offに使用"
+    },
+    {
+      "Field": "imposterCaptureType",
+      "Name": "インポスター撮影方法",
+      "Description": "インポスターの撮影方法"
+    },
+    {
+      "Field": "bakeAssetLodLv",
+      "Name": "転写先のLodLv",
+      "Description": "転写先のモデルのLodLv"
+    },
+    {
+      "Field": "isHemiOctahedral",
+      "Name": "半球撮影か（LockCamBillboardのみ影響）",
+      "Description": "LockCamBillboardの撮影で上半分だけ撮影するか"
+    },
+    {
+      "Field": "pad",
+      "Name": "pad",
+      "Description": "パディング5"
+    },
+    {
+      "Field": "bakeAssetId",
+      "Name": "転写先アセットID",
+      "Description": "SLODの転写先のモデル-1のときは元モデルと同じID"
+    },
+    {
+      "Field": "lockCamBillboard_imposterCamOffset",
+      "Name": "カメラのオフセット距離(cm) ",
+      "Description": "オフセット距離"
+    },
+    {
+      "Field": "lockCamBillboard_imposterTexSize",
+      "Name": "テクスチャ出力解像度",
+      "Description": "一方向撮影での解像度になります、全体のテクスチャサイズはこの解像度x枚数のサイズになります"
+    },
+    {
+      "Field": "lockCamBillboard_imposterTexNum_CapAngle",
+      "Name": "撮影枚数",
+      "Description": "撮影する枚数"
+    },
+    {
+      "Field": "lockCamBillboard_imposterLockCamTexPad",
+      "Name": "テクスチャパディング",
+      "Description": " 余白があるかどうか"
+    },
+    {
+      "Field": "crossBillboard_imposterCamOffset",
+      "Name": "カメラのオフセット距離(cm) ",
+      "Description": "オフセット距離"
+    },
+    {
+      "Field": "crossBillboard_imposterTexSize",
+      "Name": "テクスチャ出力解像度",
+      "Description": "一方向撮影での解像度になります、全体のテクスチャサイズはこの解像度x枚数のサイズになります"
+    },
+    {
+      "Field": "crossBillboard_imposterTexNum_CapAngle",
+      "Name": "撮影角度",
+      "Description": "撮影する角度"
+    },
+    {
+      "Field": "crossBillboard_imposterLockCamTexPad",
+      "Name": "テクスチャパディング",
+      "Description": " 余白があるかどうか"
+    }
+  ]
+}

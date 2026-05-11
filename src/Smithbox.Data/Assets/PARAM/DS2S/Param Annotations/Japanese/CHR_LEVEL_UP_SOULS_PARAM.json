@@ -1,0 +1,28 @@
+{
+  "Param": "CHR_LEVEL_UP_SOULS_PARAM",
+  "Type": "CHR_LEVEL_UP_SOULS_PARAM",
+  "Name": "CHR_LEVEL_UP_SOULS_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "soulLevelThreshold",
+      "Name": "必要ソウル 閾レベル",
+      "Description": ""
+    },
+    {
+      "Field": "dummy",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "increasedSoulsFromThreshold",
+      "Name": "必要ソウル 増加量",
+      "Description": ""
+    },
+    {
+      "Field": "necessarySouls",
+      "Name": "必要ソウル",
+      "Description": ""
+    }
+  ]
+}

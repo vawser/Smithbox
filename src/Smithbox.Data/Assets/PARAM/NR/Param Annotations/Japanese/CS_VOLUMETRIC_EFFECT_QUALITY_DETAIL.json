@@ -1,0 +1,93 @@
+{
+  "Param": "CS_VOLUMETRIC_EFFECT_QUALITY_DETAIL",
+  "Type": "CS_VOLUMETRIC_EFFECT_QUALITY_DETAIL",
+  "Name": "CS_VOLUMETRIC_EFFECT_QUALITY_DETAIL",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "fogEnabled",
+      "Name": "フォグ有効",
+      "Description": "フォグ有効"
+    },
+    {
+      "Field": "fogShadowEnabled",
+      "Name": "フォグシャドウ許可",
+      "Description": "フォグシャドウ許可"
+    },
+    {
+      "Field": "dmy",
+      "Name": "dmy",
+      "Description": "dmy"
+    },
+    {
+      "Field": "fogShadowSampleCountBias",
+      "Name": "シャドウのサンプルカウントオフセット。",
+      "Description": "シャドウのサンプルカウントオフセット。"
+    },
+    {
+      "Field": "fogLocalLightDistScale",
+      "Name": "ローカルライト計算距離スケール (0にするとローカルライト計算をしない)",
+      "Description": "ローカルライト計算距離スケール (0にするとローカルライト計算をしない)"
+    },
+    {
+      "Field": "fogVolueSizeScaler",
+      "Name": "フォグボリュームサイズスケーラ",
+      "Description": "フォグボリュームサイズスケーラ"
+    },
+    {
+      "Field": "fogVolueSizeDivider",
+      "Name": "フォグボリュームサイズ除算",
+      "Description": "フォグボリュームサイズ除算"
+    },
+    {
+      "Field": "fogVolumeDepthScaler",
+      "Name": "フォグボリューム奥行きスライススケーラ",
+      "Description": "フォグボリューム奥行きスライススケーラ"
+    },
+    {
+      "Field": "fogVolumeDepthDivider",
+      "Name": "フォグボリューム奥行きスライス除算",
+      "Description": "フォグボリューム奥行きスライス除算"
+    },
+    {
+      "Field": "fogVolumeEnabled",
+      "Name": "配置式フォグボリューム有効",
+      "Description": "配置式フォグボリューム有効"
+    },
+    {
+      "Field": "fogVolumeUpScaleType",
+      "Name": "アップスケール種別",
+      "Description": "アップスケール時の手法種別"
+    },
+    {
+      "Field": "fogVolumeEdgeCorrectionLevel",
+      "Name": "バイラテラル時のみ行われるエッジ補正レベル",
+      "Description": "バイラテラル時のみ行われるエッジ補正レベル(0:無効,1:1/2x1/2解像度でのエッジ再描画許可,2:1/2x1/2+1x1解像度でパラメータ削減ありのエッジ再描画許可,3:1/2x1/2+1x1解像度でのエッジ再描画許可)"
+    },
+    {
+      "Field": "fogVolumeRayMarcingSampleCountOffset",
+      "Name": "レイマーチング時のサンプリング数のオフセット",
+      "Description": "レイマーチング時のサンプリング数のオフセット"
+    },
+    {
+      "Field": "fogVolumeShadowEnabled",
+      "Name": "シャドウ許可",
+      "Description": "シャドウ許可(領域に影が落ちる、領域内の密度変化による陰影処理を指す)"
+    },
+    {
+      "Field": "fogVolumeForceShadowing",
+      "Name": "シャドウ許可時に設定にかかわらず領域に強制的に影を落とす",
+      "Description": "シャドウ許可時に設定にかかわらず領域に強制的に影を落とす(陰影処理は影響をうけない)"
+    },
+    {
+      "Field": "fogVolumeResolution",
+      "Name": "フォグボリュームのアップスケール処理解像度",
+      "Description": ""
+    },
+    {
+      "Field": "pad2",
+      "Name": "pad",
+      "Description": ""
+    }
+  ]
+}

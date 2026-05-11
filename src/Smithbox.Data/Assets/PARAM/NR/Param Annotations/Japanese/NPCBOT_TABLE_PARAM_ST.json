@@ -1,0 +1,28 @@
+{
+  "Param": "NPCBOT_TABLE_PARAM_ST",
+  "Type": "NPCBOT_TABLE_PARAM_ST",
+  "Name": "NPCBOT_TABLE_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "npcParamId",
+      "Name": "npcParamId",
+      "Description": ""
+    },
+    {
+      "Field": "npcThinkId",
+      "Name": "npcThinkId",
+      "Description": ""
+    },
+    {
+      "Field": "charaInitParamId",
+      "Name": "charaInitParamId",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_3",
+      "Name": "unknown_3",
+      "Description": ""
+    }
+  ]
+}

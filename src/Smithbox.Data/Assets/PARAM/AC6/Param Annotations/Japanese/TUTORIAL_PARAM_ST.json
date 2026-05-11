@@ -1,0 +1,78 @@
+{
+  "Param": "TUTORIAL_PARAM_ST",
+  "Type": "TUTORIAL_PARAM_ST",
+  "Name": "TUTORIAL_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "MenuResourceType",
+      "Name": "メニューリソース",
+      "Description": "使用するメニューリソース"
+    },
+    {
+      "Field": "reserve0",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "ImageID",
+      "Name": "イメージ",
+      "Description": "イメージのID"
+    },
+    {
+      "Field": "reserve1",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "OpenSE",
+      "Name": "開始SE",
+      "Description": "表示時に再生するSE"
+    },
+    {
+      "Field": "CloseSE",
+      "Name": "終了SE",
+      "Description": "非表示時に再生するSE"
+    },
+    {
+      "Field": "RepeatType",
+      "Name": "表示回数",
+      "Description": ""
+    },
+    {
+      "Field": "enableMultiResponseKeyguide",
+      "Name": "複数",
+      "Description": "複数同時のレスポンス表示を許可するか"
+    },
+    {
+      "Field": "reserve_2",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "UnlockEventFlagID",
+      "Name": "表示許可フラグ",
+      "Description": "表示許可用イベントフラグID。指定したイベントフラグが立つまでは表示しません(0：常に表示を許可)"
+    },
+    {
+      "Field": "Keyguide0_ActJudgeParamID",
+      "Name": "1行目",
+      "Description": "キーガイド1行目の入力判定"
+    },
+    {
+      "Field": "Keyguide1_ActJudgeParamID",
+      "Name": "2行目",
+      "Description": "キーガイド2行目の入力判定"
+    },
+    {
+      "Field": "Keyguide2_ActJudgeParamID",
+      "Name": "3行目",
+      "Description": "キーガイド3行目の入力判定"
+    },
+    {
+      "Field": "Keyguide3_ActJudgeParamID",
+      "Name": "4行目",
+      "Description": "キーガイド4行目の入力判定"
+    }
+  ]
+}

@@ -1,0 +1,153 @@
+{
+  "Param": "SMALLBASE_MAP_VARIATION_PARAM_ST",
+  "Type": "SMALLBASE_MAP_VARIATION_PARAM_ST",
+  "Name": "SMALLBASE_MAP_VARIATION_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "disableParam_NT",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "disableParamReserve1",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "disableParamReserve2",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_1a",
+      "Name": "unknown_1a",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_1b",
+      "Name": "unknown_1b",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_2",
+      "Name": "unknown_2",
+      "Description": ""
+    },
+    {
+      "Field": "variationValue_1",
+      "Name": "variationValue_1",
+      "Description": ""
+    },
+    {
+      "Field": "variationValue_2",
+      "Name": "variationValue_2",
+      "Description": ""
+    },
+    {
+      "Field": "variationValue_3",
+      "Name": "variationValue_3",
+      "Description": ""
+    },
+    {
+      "Field": "variationValue_4",
+      "Name": "variationValue_4",
+      "Description": ""
+    },
+    {
+      "Field": "variationValue_5",
+      "Name": "variationValue_5",
+      "Description": ""
+    },
+    {
+      "Field": "variationValue_6",
+      "Name": "variationValue_6",
+      "Description": ""
+    },
+    {
+      "Field": "variationValue_7",
+      "Name": "variationValue_7",
+      "Description": ""
+    },
+    {
+      "Field": "variationValue_8",
+      "Name": "variationValue_8",
+      "Description": ""
+    },
+    {
+      "Field": "variationValue_9",
+      "Name": "variationValue_9",
+      "Description": ""
+    },
+    {
+      "Field": "variationValue_10",
+      "Name": "variationValue_10",
+      "Description": ""
+    },
+    {
+      "Field": "modifier1",
+      "Name": "modifier1",
+      "Description": ""
+    },
+    {
+      "Field": "modifier2",
+      "Name": "modifier2",
+      "Description": ""
+    },
+    {
+      "Field": "modifier3",
+      "Name": "modifier3",
+      "Description": ""
+    },
+    {
+      "Field": "variationIconId_1",
+      "Name": "variationIconId_1",
+      "Description": ""
+    },
+    {
+      "Field": "variationIconId_2",
+      "Name": "variationIconId_2",
+      "Description": ""
+    },
+    {
+      "Field": "variationIconId_3",
+      "Name": "variationIconId_3",
+      "Description": ""
+    },
+    {
+      "Field": "variationIconId_4",
+      "Name": "variationIconId_4",
+      "Description": ""
+    },
+    {
+      "Field": "variationIconId_5",
+      "Name": "variationIconId_5",
+      "Description": ""
+    },
+    {
+      "Field": "variationIconId_6",
+      "Name": "variationIconId_6",
+      "Description": ""
+    },
+    {
+      "Field": "variationIconId_7",
+      "Name": "variationIconId_7",
+      "Description": ""
+    },
+    {
+      "Field": "variationIconId_8",
+      "Name": "variationIconId_8",
+      "Description": ""
+    },
+    {
+      "Field": "variationIconId_9",
+      "Name": "variationIconId_9",
+      "Description": ""
+    },
+    {
+      "Field": "variationIconId_10",
+      "Name": "variationIconId_10",
+      "Description": ""
+    }
+  ]
+}

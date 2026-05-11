@@ -1,0 +1,398 @@
+{
+  "Param": "EQUIP_PARAM_PROTECTOR_ST",
+  "Type": "EQUIP_PARAM_PROTECTOR_ST",
+  "Name": "EQUIP_PARAM_PROTECTOR_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "equipModelCategory",
+      "Name": "装備モデル種別",
+      "Description": "装備モデルの種別."
+    },
+    {
+      "Field": "equipModelGender",
+      "Name": "装備モデル性別",
+      "Description": "装備モデルの性別."
+    },
+    {
+      "Field": "equipModelId",
+      "Name": "装備モデル番号",
+      "Description": "装備モデルの番号."
+    },
+    {
+      "Field": "iconIdM",
+      "Name": "男用アイコンID",
+      "Description": "男用メニューアイコンID."
+    },
+    {
+      "Field": "iconIdF",
+      "Name": "女用アイコンID",
+      "Description": "女用メニューアイコンID."
+    },
+    {
+      "Field": "protectorCategory",
+      "Name": "防具カテゴリ",
+      "Description": "防具のカテゴリ."
+    },
+    {
+      "Field": "headEquip",
+      "Name": "頭装備",
+      "Description": "頭装備か."
+    },
+    {
+      "Field": "bodyEquip",
+      "Name": "胴装備",
+      "Description": "胴装備か."
+    },
+    {
+      "Field": "armEquip",
+      "Name": "腕装備",
+      "Description": "腕装備か."
+    },
+    {
+      "Field": "legEquip",
+      "Name": "脚装備",
+      "Description": "脚装備か."
+    },
+    {
+      "Field": "defenseMaterial",
+      "Name": "防御材質【SE】",
+      "Description": "移動/防御時のSE用."
+    },
+    {
+      "Field": "defenseMaterialSfx",
+      "Name": "防御材質【SFX】",
+      "Description": "移動/防御時のSFX用."
+    },
+    {
+      "Field": "useFaceScale",
+      "Name": "顔スケールを使用するか",
+      "Description": "顔スケールを使用するか"
+    },
+    {
+      "Field": "wanderingEquipId",
+      "Name": "徘徊装備ID",
+      "Description": "徘徊ゴースト用の差し替え装備ID."
+    },
+    {
+      "Field": "weight",
+      "Name": "重量[kg]",
+      "Description": "重量[kg]."
+    },
+    {
+      "Field": "durability",
+      "Name": "耐久度",
+      "Description": "初期耐久度."
+    },
+    {
+      "Field": "durabilityMax",
+      "Name": "耐久度最大値",
+      "Description": "新品耐久度."
+    },
+    {
+      "Field": "defensePhysics",
+      "Name": "物理防御力",
+      "Description": "物理攻撃のダメージ防御."
+    },
+    {
+      "Field": "defenseMagic",
+      "Name": "魔法防御力",
+      "Description": "魔法攻撃のダメージ防御."
+    },
+    {
+      "Field": "defenseFire",
+      "Name": "炎防御力",
+      "Description": "炎攻撃のダメージ防御."
+    },
+    {
+      "Field": "defenseSlash",
+      "Name": "斬撃防御力",
+      "Description": "攻撃タイプを見て、斬撃属性のときは、防御力を減少させる"
+    },
+    {
+      "Field": "defenseBlow",
+      "Name": "打撃防御力",
+      "Description": "攻撃属性を見て、打撃属性のときは、防御力を減少させる."
+    },
+    {
+      "Field": "defenseThrust",
+      "Name": "刺突防御力",
+      "Description": "攻撃属性を見て、打撃属性のときは、防御力を減少させる."
+    },
+    {
+      "Field": "resistPoison",
+      "Name": "毒耐性",
+      "Description": "毒状態異常へのかかりにくさ"
+    },
+    {
+      "Field": "resistDisease",
+      "Name": "疫病耐性",
+      "Description": "疫病状態異常へのかかりにくさ"
+    },
+    {
+      "Field": "resistBlood",
+      "Name": "出欠耐性",
+      "Description": "出血状態異常へのかかりにくさ"
+    },
+    {
+      "Field": "repelVal",
+      "Name": "はじき値",
+      "Description": "敵の攻撃のはじき返し判定に利用."
+    },
+    {
+      "Field": "basicPrice",
+      "Name": "基本価格",
+      "Description": "基本価格"
+    },
+    {
+      "Field": "shopLv",
+      "Name": "ショップレベル",
+      "Description": "お店で販売できるレベル"
+    },
+    {
+      "Field": "knockBack",
+      "Name": "ノックバックカット率",
+      "Description": "ノックバックの減少値."
+    },
+    {
+      "Field": "knockbackBounceRate",
+      "Name": "ノックバック反発率",
+      "Description": "ノックバックの反発率."
+    },
+    {
+      "Field": "pad_4",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "sortId",
+      "Name": "ソートID",
+      "Description": "ソートID"
+    },
+    {
+      "Field": "residentSpEffectBehaviorId",
+      "Name": "常駐特殊効果行動ID0",
+      "Description": "常駐特殊効果ID"
+    },
+    {
+      "Field": "trophySGradeId",
+      "Name": "トロフィー",
+      "Description": "トロフィーシステムに関係あるか？"
+    },
+    {
+      "Field": "pad_5",
+      "Name": "pad",
+      "Description": ""
+    },
+    {
+      "Field": "fixPrice",
+      "Name": "修理価格",
+      "Description": "修理基本価格"
+    },
+    {
+      "Field": "qwcId",
+      "Name": "QWCID",
+      "Description": "QWCのパラメタID"
+    },
+    {
+      "Field": "invisibleFlag00",
+      "Name": "#00#非表示",
+      "Description": "前髪の先"
+    },
+    {
+      "Field": "invisibleFlag01",
+      "Name": "#01#非表示",
+      "Description": "前髪の根元"
+    },
+    {
+      "Field": "invisibleFlag02",
+      "Name": "#02#非表示",
+      "Description": "もみあげ"
+    },
+    {
+      "Field": "invisibleFlag03",
+      "Name": "#03#非表示",
+      "Description": "頭頂部"
+    },
+    {
+      "Field": "invisibleFlag04",
+      "Name": "#04#非表示",
+      "Description": "頭頂部"
+    },
+    {
+      "Field": "invisibleFlag05",
+      "Name": "#05#非表示",
+      "Description": "後ろ髪"
+    },
+    {
+      "Field": "invisibleFlag06",
+      "Name": "#06#非表示",
+      "Description": "後ろ髪の先"
+    },
+    {
+      "Field": "invisibleFlag07",
+      "Name": "#07#非表示",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag08",
+      "Name": "#08#非表示",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag09",
+      "Name": "#09#非表示",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag10",
+      "Name": "#10#非表示",
+      "Description": "襟"
+    },
+    {
+      "Field": "invisibleFlag11",
+      "Name": "#11#非表示",
+      "Description": "襟回り"
+    },
+    {
+      "Field": "invisibleFlag12",
+      "Name": "#12#非表示",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag13",
+      "Name": "#13#非表示",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag14",
+      "Name": "#14#非表示",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag15",
+      "Name": "#15#非表示",
+      "Description": "頭巾の裾"
+    },
+    {
+      "Field": "invisibleFlag16",
+      "Name": "#16#非表示",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag17",
+      "Name": "#17#非表示",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag18",
+      "Name": "#18#非表示",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag19",
+      "Name": "#19#非表示",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag20",
+      "Name": "#20#非表示",
+      "Description": "袖A"
+    },
+    {
+      "Field": "invisibleFlag21",
+      "Name": "#21#非表示",
+      "Description": "袖B"
+    },
+    {
+      "Field": "invisibleFlag22",
+      "Name": "#22#非表示",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag23",
+      "Name": "#23#非表示",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag24",
+      "Name": "#24#非表示",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag25",
+      "Name": "#25#非表示",
+      "Description": "腕"
+    },
+    {
+      "Field": "invisibleFlag26",
+      "Name": "#26#非表示",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag27",
+      "Name": "#27#非表示",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag28",
+      "Name": "#28#非表示",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag29",
+      "Name": "#29#非表示",
+      "Description": ""
+    },
+    {
+      "Field": "invisibleFlag30",
+      "Name": "#30#非表示",
+      "Description": "ベルト"
+    },
+    {
+      "Field": "invisibleFlag31",
+      "Name": "#31#非表示",
+      "Description": ""
+    },
+    {
+      "Field": "faceScaleM_ScaleX",
+      "Name": "男横顔拡大スケール",
+      "Description": ""
+    },
+    {
+      "Field": "faceScaleM_ScaleZ",
+      "Name": "男前顔拡大スケール",
+      "Description": ""
+    },
+    {
+      "Field": "faceScaleM_MaxX",
+      "Name": "男横顔拡大最大倍率",
+      "Description": ""
+    },
+    {
+      "Field": "faceScaleM_MaxZ",
+      "Name": "男前顔拡大最大倍率",
+      "Description": ""
+    },
+    {
+      "Field": "faceScaleF_ScaleX",
+      "Name": "女横顔拡大スケール",
+      "Description": ""
+    },
+    {
+      "Field": "faceScaleF_ScaleZ",
+      "Name": "女前顔拡大スケール",
+      "Description": ""
+    },
+    {
+      "Field": "faceScaleF_MaxX",
+      "Name": "女横顔拡大最大倍率",
+      "Description": ""
+    },
+    {
+      "Field": "faceScaleF_MaxZ",
+      "Name": "女前顔拡大最大倍率",
+      "Description": ""
+    }
+  ]
+}

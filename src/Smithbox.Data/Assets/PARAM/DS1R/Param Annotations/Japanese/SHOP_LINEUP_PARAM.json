@@ -1,0 +1,53 @@
+{
+  "Param": "SHOP_LINEUP_PARAM",
+  "Type": "SHOP_LINEUP_PARAM",
+  "Name": "SHOP_LINEUP_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "equipId",
+      "Name": "販売品の装備ID",
+      "Description": "販売している装備品のID"
+    },
+    {
+      "Field": "value",
+      "Name": "販売価格",
+      "Description": "販売価格"
+    },
+    {
+      "Field": "mtrlId",
+      "Name": "購入に必要な素材ID",
+      "Description": "購入に必要な素材ID"
+    },
+    {
+      "Field": "eventFlag",
+      "Name": "イベントフラグ",
+      "Description": "個数を保持してあるイベントフラグ値"
+    },
+    {
+      "Field": "qwcId",
+      "Name": "QWCパラメタID",
+      "Description": "ＱＷＣパラメータのID"
+    },
+    {
+      "Field": "sellQuantity",
+      "Name": "販売個数",
+      "Description": "販売個数"
+    },
+    {
+      "Field": "shopType",
+      "Name": "ショップタイプ",
+      "Description": "ショップの種類"
+    },
+    {
+      "Field": "equipType",
+      "Name": "販売品の装備タイプ",
+      "Description": "販売している装備品の種類"
+    },
+    {
+      "Field": "pad_0",
+      "Name": "pad",
+      "Description": ""
+    }
+  ]
+}

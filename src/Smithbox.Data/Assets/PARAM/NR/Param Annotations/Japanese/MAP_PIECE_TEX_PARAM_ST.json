@@ -1,0 +1,53 @@
+{
+  "Param": "MAP_PIECE_TEX_PARAM_ST",
+  "Type": "MAP_PIECE_TEX_PARAM_ST",
+  "Name": "MAP_PIECE_TEX_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "NT版出力から外すか",
+      "Description": "○をつけたパラメータをNT版パッケージでは除外します"
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "パッケージ出力用リザーブ1",
+      "Description": "パッケージ出力用リザーブ1"
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "パッケージ出力用リザーブ2",
+      "Description": "パッケージ出力用リザーブ2"
+    },
+    {
+      "Field": "srcR",
+      "Name": "R",
+      "Description": "変換前の地図画像のカラー情報（R）。RGB値が一致したピクセルとこのパラメータが紐づく"
+    },
+    {
+      "Field": "srcG",
+      "Name": "G",
+      "Description": "変換前の地図画像のカラー情報（G）。RGB値が一致したピクセルとこのパラメータが紐づく"
+    },
+    {
+      "Field": "srcB",
+      "Name": "B",
+      "Description": "変換前の地図画像のカラー情報（B）。RGB値が一致したピクセルとこのパラメータが紐づく"
+    },
+    {
+      "Field": "pad1",
+      "Name": "パッド",
+      "Description": "パッド。一応「画像色情報（A）」用で空けておく"
+    },
+    {
+      "Field": "saveMapNameId",
+      "Name": "マップ名ID_セーブデータ表示用",
+      "Description": "セーブデータ表示用のマップ名ID[PlaceName](0:無効値)"
+    },
+    {
+      "Field": "multiPlayAreaId",
+      "Name": "マルチプレイエリアID",
+      "Description": "マルチプレイエリアID(-1:無効値)"
+    }
+  ]
+}

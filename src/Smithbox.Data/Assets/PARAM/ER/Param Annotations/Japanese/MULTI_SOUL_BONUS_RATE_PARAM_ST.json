@@ -1,0 +1,93 @@
+{
+  "Param": "MULTI_SOUL_BONUS_RATE_PARAM_ST",
+  "Type": "MULTI_SOUL_BONUS_RATE_PARAM_ST",
+  "Name": "MULTI_SOUL_BONUS_RATE_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "host",
+      "Name": "ホスト",
+      "Description": "ホストの報酬ソウル倍率"
+    },
+    {
+      "Field": "WhiteGhost_None",
+      "Name": "白サイン",
+      "Description": "協力サインの白霊の報酬ソウル倍率"
+    },
+    {
+      "Field": "WhiteGhost_Umbasa",
+      "Name": "金霊（太陽）",
+      "Description": "協力サインの金霊の報酬ソウル倍率"
+    },
+    {
+      "Field": "WhiteGhost_Berserker",
+      "Name": "白バーサーカー",
+      "Description": "協力サインの白バーサーカーの報酬ソウル倍率"
+    },
+    {
+      "Field": "BlackGhost_None_Sign",
+      "Name": "赤サイン",
+      "Description": "敵対サインの赤霊の報酬ソウル倍率"
+    },
+    {
+      "Field": "BlackGhost_Umbasa_Sign",
+      "Name": "赤金霊（サイン）",
+      "Description": "敵対サインの赤金霊の報酬ソウル倍率"
+    },
+    {
+      "Field": "BlackGhost_Berserker_Sign",
+      "Name": "赤バーサーカー（サイン）",
+      "Description": "敵対サインの赤バーサーカーの報酬ソウル倍率"
+    },
+    {
+      "Field": "BlackGhost_None_Invade",
+      "Name": "侵入",
+      "Description": "侵入の報酬ソウル倍率"
+    },
+    {
+      "Field": "BlackGhost_Umbasa_Invade",
+      "Name": "赤金霊（侵入）",
+      "Description": "侵入オーブの赤金霊の報酬ソウル倍率"
+    },
+    {
+      "Field": "BlackGhost_Berserker_Invade",
+      "Name": "赤バーサーカー（侵入）",
+      "Description": "侵入オーブの赤バーサーカーの報酬ソウル倍率"
+    },
+    {
+      "Field": "RedHunter1",
+      "Name": "救援ゲスト",
+      "Description": "救援ゲストの報酬ソウル倍率"
+    },
+    {
+      "Field": "RedHunter2",
+      "Name": "赤狩り霊２",
+      "Description": "赤狩り霊２の報酬ソウル倍率"
+    },
+    {
+      "Field": "GuardianOfForest",
+      "Name": "マップ守護霊(森)",
+      "Description": "マップ守護霊（森）の報酬ソウル倍率"
+    },
+    {
+      "Field": "GuardianOfAnor",
+      "Name": "マップ守護霊(アノール)",
+      "Description": "マップ守護霊(アノール)の報酬ソウル倍率"
+    },
+    {
+      "Field": "BattleRoyal",
+      "Name": "闘技場",
+      "Description": "闘技場の報酬ソウル倍率"
+    },
+    {
+      "Field": "YellowMonk",
+      "Name": "黄衣の翁",
+      "Description": "黄衣の翁の報酬ソウル倍率"
+    },
+    {
+      "Field": "pad1",
+      "Name": "pad",
+      "Description": ""
+    }
+  ]
+}

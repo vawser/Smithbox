@@ -1,0 +1,143 @@
+{
+  "Param": "THROW_INFO_BANK",
+  "Type": "THROW_INFO_BANK",
+  "Name": "THROW_INFO_BANK",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "AtkChrId",
+      "Name": "投げ側キャラID",
+      "Description": "投げ側キャラID"
+    },
+    {
+      "Field": "DefChrId",
+      "Name": "受け側キャラID",
+      "Description": "受け側キャラID"
+    },
+    {
+      "Field": "Dist",
+      "Name": "有効距離[m]",
+      "Description": "この値より近い距離じゃないと投げない[m]"
+    },
+    {
+      "Field": "DiffAngMin",
+      "Name": "自分の向きと相手の向きの角度差範囲min",
+      "Description": "投げ側と受け側の角度差(Y軸)がこの角度より大きくないと投げない"
+    },
+    {
+      "Field": "DiffAngMax",
+      "Name": "自分の向きと相手の向きの角度差範囲max",
+      "Description": "投げ側と受け側の角度差(Y軸)がこの角度より小さくないと投げない"
+    },
+    {
+      "Field": "upperYRange",
+      "Name": "高さ範囲上[m]",
+      "Description": "投げ側から受け側のY軸の相対距離がこの値より小さくないと投げない"
+    },
+    {
+      "Field": "lowerYRange",
+      "Name": "高さ範囲下[m]",
+      "Description": "投げ側から受け側のY軸の相対距離がこの値より小さくないと投げない"
+    },
+    {
+      "Field": "diffAngMyToDef",
+      "Name": "自分の向きと自分から相手への方向の角度差",
+      "Description": "自分の正面のベクトルと、自分から相手への方向のベクトルの角度差。この値より大きいと投げない"
+    },
+    {
+      "Field": "throwTypeId",
+      "Name": "投げタイプID",
+      "Description": "投げの種類を特定するID(攻撃パラメタと紐付け)"
+    },
+    {
+      "Field": "atkAnimId",
+      "Name": "投げ側アニメID",
+      "Description": "攻撃アニメIDを設定(EzStateと紐付け)"
+    },
+    {
+      "Field": "defAnimId",
+      "Name": "受け側アニメID",
+      "Description": "ダメージアニメIDを設定(EzStateと紐付け)"
+    },
+    {
+      "Field": "escHp",
+      "Name": "投げ抜けHP",
+      "Description": "投げ抜けに耐えられる値"
+    },
+    {
+      "Field": "selfEscCycleTime",
+      "Name": "自力投げ抜けサイクル時間[ms]",
+      "Description": "自力投げ抜けのサイクル時間[ms]"
+    },
+    {
+      "Field": "sphereCastRadiusRateTop",
+      "Name": "スフィアキャスト半径比率_上[1/100Rate]",
+      "Description": "スフィアキャストの上側半径の比率[80->0.8]"
+    },
+    {
+      "Field": "sphereCastRadiusRateLow",
+      "Name": "スフィアキャスト半径比率_下[1/100Rate]",
+      "Description": "スフィアキャストの下側半径の比率[80->0.8]"
+    },
+    {
+      "Field": "PadType",
+      "Name": "操作タイプ",
+      "Description": "操作タイプ"
+    },
+    {
+      "Field": "AtkEnableState",
+      "Name": "投げ側の投げ可能状態タイプ",
+      "Description": "投げ側の投げが可能な状態タイプを設定してください"
+    },
+    {
+      "Field": "atkSorbDmyId",
+      "Name": "投げ側 吸着ダミポリID",
+      "Description": "投げ側のどこに受け側を吸着させるか？"
+    },
+    {
+      "Field": "defSorbDmyId",
+      "Name": "受け側 吸着ダミポリID",
+      "Description": "受け側のどこに投げ側を吸着させるか？"
+    },
+    {
+      "Field": "throwType",
+      "Name": "投げ種別",
+      "Description": "投げの種別"
+    },
+    {
+      "Field": "selfEscCycleCnt",
+      "Name": "自力投げ抜けサイクル回数",
+      "Description": "自力投げ抜けのサイクル回数"
+    },
+    {
+      "Field": "dmyHasChrDirType",
+      "Name": "投げ発生時のダミポリ所持キャラの向き",
+      "Description": "投げ発生時のダミポリ所持キャラの向き"
+    },
+    {
+      "Field": "isTurnAtker",
+      "Name": "投げ側が旋回するか？",
+      "Description": "投げ側が旋回するか？"
+    },
+    {
+      "Field": "isSkipWepCate",
+      "Name": "武器カテゴリチェックをスキップするか？",
+      "Description": "攻撃側の武器カテゴリチェックをスキップするか？"
+    },
+    {
+      "Field": "isSkipSphereCast",
+      "Name": "スフィアキャストをスキップするか？",
+      "Description": "スフィアキャストをスキップするか？"
+    },
+    {
+      "Field": "pad0",
+      "Name": "pad",
+      "Description": "pad"
+    },
+    {
+      "Field": "pad1",
+      "Name": "pad",
+      "Description": "pad"
+    }
+  ]
+}

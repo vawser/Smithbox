@@ -1,0 +1,168 @@
+{
+  "Param": "ROLE_PARAM_ST",
+  "Type": "ROLE_PARAM_ST",
+  "Name": "ROLE_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "teamType",
+      "Name": "チームタイプ",
+      "Description": "チームタイプ"
+    },
+    {
+      "Field": "pad10",
+      "Name": "pad10",
+      "Description": ""
+    },
+    {
+      "Field": "phantomParamId",
+      "Name": "ファントムパラメータID(誓約ランク0)",
+      "Description": "誓約ランクが0のときのファントムパラメータID"
+    },
+    {
+      "Field": "spEffectID0",
+      "Name": "常駐特殊効果0",
+      "Description": "常駐特殊効果0"
+    },
+    {
+      "Field": "spEffectID1",
+      "Name": "常駐特殊効果1",
+      "Description": "常駐特殊効果1"
+    },
+    {
+      "Field": "spEffectID2",
+      "Name": "常駐特殊効果2",
+      "Description": "常駐特殊効果2"
+    },
+    {
+      "Field": "spEffectID3",
+      "Name": "常駐特殊効果3",
+      "Description": "常駐特殊効果3"
+    },
+    {
+      "Field": "spEffectID4",
+      "Name": "常駐特殊効果4",
+      "Description": "常駐特殊効果4"
+    },
+    {
+      "Field": "spEffectID5",
+      "Name": "常駐特殊効果5",
+      "Description": "常駐特殊効果5"
+    },
+    {
+      "Field": "spEffectID6",
+      "Name": "常駐特殊効果6",
+      "Description": "常駐特殊効果6"
+    },
+    {
+      "Field": "spEffectID7",
+      "Name": "常駐特殊効果7",
+      "Description": "常駐特殊効果7"
+    },
+    {
+      "Field": "spEffectID8",
+      "Name": "常駐特殊効果8",
+      "Description": "常駐特殊効果8"
+    },
+    {
+      "Field": "spEffectID9",
+      "Name": "常駐特殊効果9",
+      "Description": "常駐特殊効果9"
+    },
+    {
+      "Field": "sosSignSfxId",
+      "Name": "SOSサインSFX ID",
+      "Description": "他の人が出したSOSサインSFX ID"
+    },
+    {
+      "Field": "mySosSignSfxId",
+      "Name": "自分が出したSOSサインSFX ID",
+      "Description": "自分が出したSOSサインSFX ID"
+    },
+    {
+      "Field": "summonStartAnimId",
+      "Name": "召喚された時のアニメID",
+      "Description": "召喚されてゲーム開始するときに再生するアニメID"
+    },
+    {
+      "Field": "itemlotParamId",
+      "Name": "報酬アイテム抽選ID",
+      "Description": "獲得報酬のアイテム抽選パラメータID(-1でなし)"
+    },
+    {
+      "Field": "voiceChatGroup",
+      "Name": "ボイスチャットグループ",
+      "Description": "ボイスチャットグループ"
+    },
+    {
+      "Field": "roleNameColor",
+      "Name": "ロール名テキストカラー",
+      "Description": "ネットワークPCのFEに表示するロール名テキストの色"
+    },
+    {
+      "Field": "pad1",
+      "Name": "pad1",
+      "Description": ""
+    },
+    {
+      "Field": "roleNameId",
+      "Name": "ロール名テキストID",
+      "Description": "ネットワークPCのFEに表示するロール名のテキストID"
+    },
+    {
+      "Field": "teamTypeByGiantNut",
+      "Name": "チームタイプ(巨人の木の実の種適応後)",
+      "Description": "巨人の木の実の種の効果適応後に刺し変わるチームタイプ"
+    },
+    {
+      "Field": "pad3",
+      "Name": "pad3",
+      "Description": ""
+    },
+    {
+      "Field": "phantomParamId_vowRank1",
+      "Name": "ファントムパラメータID(誓約ランク1)",
+      "Description": "誓約ランクが1のときのファントムパラメータID"
+    },
+    {
+      "Field": "phantomParamId_vowRank2",
+      "Name": "ファントムパラメータID(誓約ランク2)",
+      "Description": "誓約ランクが2のときのファントムパラメータID"
+    },
+    {
+      "Field": "phantomParamId_vowRank3",
+      "Name": "ファントムパラメータID(誓約ランク3)",
+      "Description": "誓約ランクが3のときのファントムパラメータID"
+    },
+    {
+      "Field": "spEffectID_vowRank0",
+      "Name": "SFX用特殊効果ID(誓約ランク0)",
+      "Description": "誓約ランク0のときのSFX用特殊効果ID"
+    },
+    {
+      "Field": "spEffectID_vowRank1",
+      "Name": "SFX用特殊効果ID(誓約ランク1)",
+      "Description": "誓約ランク1のときのSFX用特殊効果ID"
+    },
+    {
+      "Field": "spEffectID_vowRank2",
+      "Name": "SFX用特殊効果ID(誓約ランク2)",
+      "Description": "誓約ランク2のときのSFX用特殊効果ID"
+    },
+    {
+      "Field": "spEffectID_vowRank3",
+      "Name": "SFX用特殊効果ID(誓約ランク3)",
+      "Description": "誓約ランク3のときのSFX用特殊効果ID"
+    },
+    {
+      "Field": "signPhantomId",
+      "Name": "サイン幻影用のファントムID",
+      "Description": "マルチプレイ誓約霊体用\u3000サイン幻影用のファントムID指定"
+    },
+    {
+      "Field": "pad2",
+      "Name": "pad2",
+      "Description": ""
+    }
+  ]
+}

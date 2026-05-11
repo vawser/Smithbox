@@ -1,0 +1,123 @@
+{
+  "Param": "DUNGEON_SUB_FEAT_LOT_PARAM",
+  "Type": "DUNGEON_SUB_FEAT_LOT_PARAM",
+  "Name": "DUNGEON_SUB_FEAT_LOT_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "subFeatureNameId",
+      "Name": "サブ特徴候補名ID",
+      "Description": "サブ特徴候補名ID"
+    },
+    {
+      "Field": "requiredMaterialId",
+      "Name": "必要素材ID",
+      "Description": "必要素材ID"
+    },
+    {
+      "Field": "subFeatureId_1",
+      "Name": "①サブ特徴ID",
+      "Description": "①サブ特徴ID"
+    },
+    {
+      "Field": "subFeatureId_2",
+      "Name": "②サブ特徴ID",
+      "Description": "②サブ特徴ID"
+    },
+    {
+      "Field": "subFeatureId_3",
+      "Name": "③サブ特徴ID",
+      "Description": "③サブ特徴ID"
+    },
+    {
+      "Field": "subFeatureId_4",
+      "Name": "④サブ特徴ID",
+      "Description": "④サブ特徴ID"
+    },
+    {
+      "Field": "subFeatureId_5",
+      "Name": "⑤サブ特徴ID",
+      "Description": "⑤サブ特徴ID"
+    },
+    {
+      "Field": "subFeatureId_6",
+      "Name": "⑥サブ特徴ID",
+      "Description": "⑥サブ特徴ID"
+    },
+    {
+      "Field": "subFeatureId_7",
+      "Name": "⑦サブ特徴ID",
+      "Description": "⑦サブ特徴ID"
+    },
+    {
+      "Field": "subFeatureId_8",
+      "Name": "⑧サブ特徴ID",
+      "Description": "⑧サブ特徴ID"
+    },
+    {
+      "Field": "subFeatureId_9",
+      "Name": "⑨サブ特徴ID",
+      "Description": "⑨サブ特徴ID"
+    },
+    {
+      "Field": "subFeatureId_10",
+      "Name": "⑩サブ特徴ID",
+      "Description": "⑩サブ特徴ID"
+    },
+    {
+      "Field": "pad_0",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "rate_1",
+      "Name": "①確率",
+      "Description": "①確率"
+    },
+    {
+      "Field": "rate_2",
+      "Name": "②確率",
+      "Description": "②確率"
+    },
+    {
+      "Field": "rate_3",
+      "Name": "③確率",
+      "Description": "③確率"
+    },
+    {
+      "Field": "rate_4",
+      "Name": "④確率",
+      "Description": "④確率"
+    },
+    {
+      "Field": "rate_5",
+      "Name": "⑤確率",
+      "Description": "⑤確率"
+    },
+    {
+      "Field": "rate_6",
+      "Name": "⑥確率",
+      "Description": "⑥確率"
+    },
+    {
+      "Field": "rate_7",
+      "Name": "⑦確率",
+      "Description": "⑦確率"
+    },
+    {
+      "Field": "rate_8",
+      "Name": "⑧確率",
+      "Description": "⑧確率"
+    },
+    {
+      "Field": "rate_9",
+      "Name": "⑨確率",
+      "Description": "⑨確率"
+    },
+    {
+      "Field": "rate_10",
+      "Name": "⑩確率",
+      "Description": "⑩確率"
+    }
+  ]
+}

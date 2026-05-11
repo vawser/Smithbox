@@ -1,0 +1,53 @@
+{
+  "Param": "KEY_ASSIGN_DISPLAY_PARAM",
+  "Type": "KEY_ASSIGN_DISPLAY_PARAM",
+  "Name": "KEY_ASSIGN_DISPLAY_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "textID",
+      "Name": "テキスト",
+      "Description": "キー指定あり⇒項目名、1行ヘルプのID。キー指定なし⇒カテゴリ名のID"
+    },
+    {
+      "Field": "key",
+      "Name": "キー",
+      "Description": "割り当て対象のユーザー入力キー。指定が無い時はカテゴリ表示用項目として扱う"
+    },
+    {
+      "Field": "enableUnassign",
+      "Name": "解除",
+      "Description": "割り当ての解除が可能か"
+    },
+    {
+      "Field": "enablePadConfig",
+      "Name": "パッド",
+      "Description": "パッド操作の割り当て変更が可能か"
+    },
+    {
+      "Field": "enableMouseConfig",
+      "Name": "マウス",
+      "Description": "マウス操作の割り当て変更が可能か"
+    },
+    {
+      "Field": "group",
+      "Name": "グループ",
+      "Description": "割り当ての重複判定用グループ。同一グループでは重複不可"
+    },
+    {
+      "Field": "mappingTextID",
+      "Name": "テキスト",
+      "Description": "操作一覧で表示する項目名。0:：一覧に表示しない"
+    },
+    {
+      "Field": "enableDispConfigMenu",
+      "Name": "メニュー表示",
+      "Description": "キーコンフィグメニューに編集項目として表示するかどうか"
+    },
+    {
+      "Field": "reserved",
+      "Name": "予約",
+      "Description": "予約領域"
+    }
+  ]
+}

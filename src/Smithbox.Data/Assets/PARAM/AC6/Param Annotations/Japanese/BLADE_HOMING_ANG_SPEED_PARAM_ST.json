@@ -1,0 +1,68 @@
+{
+  "Param": "BLADE_HOMING_ANG_SPEED_PARAM_ST",
+  "Type": "BLADE_HOMING_ANG_SPEED_PARAM_ST",
+  "Name": "BLADE_HOMING_ANG_SPEED_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "bModelUdTurn",
+      "Name": "モデルを上下移動方向に傾ける",
+      "Description": "モデルを上下移動方向に傾けるか"
+    },
+    {
+      "Field": "bStopForHitTarget",
+      "Name": "ターゲットとの接触時に止まる",
+      "Description": "ターゲットと接触時に止まるか"
+    },
+    {
+      "Field": "bInheritRotAng",
+      "Name": "直前の上下角を引き継ぐ",
+      "Description": "ブレホ開始前の上下角を引き継ぐか"
+    },
+    {
+      "Field": "moveRotType",
+      "Name": "移動方向上下補正方法",
+      "Description": "移動方向の上下補正方法"
+    },
+    {
+      "Field": "turnSpeedDPS",
+      "Name": "追従角速度：左右[deg/s]",
+      "Description": "-1でそのキャラの性能を使用"
+    },
+    {
+      "Field": "turnAccelDPSS",
+      "Name": "追従角加速度：左右[deg/s^2]",
+      "Description": "-1でそのキャラの性能を使用。また、0で無限大扱い(常に角速度そのままの速度が出る)"
+    },
+    {
+      "Field": "udTurnSpeedDPS",
+      "Name": "追従角速度：上下[deg/s]",
+      "Description": "-1の場合は追従角速度：左右と同じ値を使用する"
+    },
+    {
+      "Field": "udTurnAccelDPSS",
+      "Name": "追従角加速度：上下[deg/s^2]",
+      "Description": "-1の場合は追従角加速度：左右と同じ値を使用する"
+    },
+    {
+      "Field": "limitAngDeg_U",
+      "Name": "追従上限角：上[deg]",
+      "Description": "水平基準。この角度までしか曲げないようにする"
+    },
+    {
+      "Field": "limitAngDeg_D",
+      "Name": "追従上限角：下[deg]",
+      "Description": "同上"
+    },
+    {
+      "Field": "modelRotSpeedDegPerSec",
+      "Name": "モデル上下回転角速度[deg/s]",
+      "Description": "-1なら前述のとりパラの値を適用する"
+    },
+    {
+      "Field": "reserved",
+      "Name": "予備",
+      "Description": ""
+    }
+  ]
+}

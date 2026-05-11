@@ -1,0 +1,13 @@
+{
+  "Param": "LOADING_DISPLAY_ITEM_PARAM",
+  "Type": "LOADING_DISPLAY_ITEM_PARAM",
+  "Name": "LOADING_DISPLAY_ITEM_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "globalFlagId",
+      "Name": "表示開始グルーバルフラグ",
+      "Description": ""
+    }
+  ]
+}

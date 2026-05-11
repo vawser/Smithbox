@@ -1,0 +1,33 @@
+{
+  "Param": "SIGN_PUDDLE_SUB_CATEGORY_PARAM_ST",
+  "Type": "SIGN_PUDDLE_SUB_CATEGORY_PARAM_ST",
+  "Name": "SIGN_PUDDLE_SUB_CATEGORY_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "startPad",
+      "Name": "startPad",
+      "Description": ""
+    },
+    {
+      "Field": "signPuddleCategoryText",
+      "Name": "signPuddleCategoryText",
+      "Description": ""
+    },
+    {
+      "Field": "signPuddleTabId",
+      "Name": "signPuddleTabId",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_0xa",
+      "Name": "unknown_0xa",
+      "Description": ""
+    },
+    {
+      "Field": "endPad",
+      "Name": "endPad",
+      "Description": ""
+    }
+  ]
+}

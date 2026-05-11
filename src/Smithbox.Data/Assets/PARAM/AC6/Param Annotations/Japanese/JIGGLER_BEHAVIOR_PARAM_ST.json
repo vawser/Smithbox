@@ -1,0 +1,73 @@
+{
+  "Param": "JIGGLER_BEHAVIOR_PARAM_ST",
+  "Type": "JIGGLER_BEHAVIOR_PARAM_ST",
+  "Name": "JIGGLER_BEHAVIOR_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "minAccelMPSS",
+      "Name": "効き始める最小加速度[m/s^2]",
+      "Description": "回転し始める最小加速度"
+    },
+    {
+      "Field": "maxAccelMPSS",
+      "Name": "効きが最大になる加速度[m/s^2]",
+      "Description": "回転力が最大になる加速度"
+    },
+    {
+      "Field": "minSpeedKMH",
+      "Name": "効き始める最小速度[km/h]",
+      "Description": "回転し始める最小速度"
+    },
+    {
+      "Field": "maxSpeedKMH",
+      "Name": "効きが最大になる速度[km/h]",
+      "Description": "回転力が最大になる速度"
+    },
+    {
+      "Field": "rotAccelScaleX",
+      "Name": "回転力（X軸回転）",
+      "Description": "X軸の速度、加速度を回転させる係数"
+    },
+    {
+      "Field": "rotAccelScaleY",
+      "Name": "回転力（Y軸回転）",
+      "Description": "Y軸の速度、加速度を回転させる係数"
+    },
+    {
+      "Field": "rotDecayValueX",
+      "Name": "減衰力（X軸回転）",
+      "Description": "X軸の角速度を減衰させる係数"
+    },
+    {
+      "Field": "rotDecayValueY",
+      "Name": "減衰力（Y軸回転）",
+      "Description": "Y軸の角速度を減衰させる係数"
+    },
+    {
+      "Field": "limitMinAngReflecRateX",
+      "Name": "X軸回転が最小限界角度になったときの跳ね返り率",
+      "Description": "X軸回転が最小限界角度になったときの跳ね返り率"
+    },
+    {
+      "Field": "limitMaxAngReflecRateX",
+      "Name": "X軸回転が最大限界角度になったときの跳ね返り率",
+      "Description": "X軸回転が最大限界角度になったときの跳ね返り率"
+    },
+    {
+      "Field": "limitMinAngReflecRateY",
+      "Name": "Y軸回転が最小限界角度になったときの跳ね返り率",
+      "Description": "Y軸回転が最小限界角度になったときの跳ね返り率"
+    },
+    {
+      "Field": "limitMaxAngReflecRateY",
+      "Name": "Y軸回転が最大限界角度になったときの跳ね返り率",
+      "Description": "Y軸回転が最大限界角度になったときの跳ね返り率"
+    },
+    {
+      "Field": "reserved3",
+      "Name": "パディング3",
+      "Description": ""
+    }
+  ]
+}

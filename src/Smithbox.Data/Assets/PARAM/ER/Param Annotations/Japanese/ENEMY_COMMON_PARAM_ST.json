@@ -1,0 +1,53 @@
+{
+  "Param": "ENEMY_COMMON_PARAM_ST",
+  "Type": "ENEMY_COMMON_PARAM_ST",
+  "Name": "ENEMY_COMMON_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "reserved0",
+      "Name": "予約",
+      "Description": "(dummy8)"
+    },
+    {
+      "Field": "soundTargetTryApproachTime",
+      "Name": "音ターゲットに対して接近を試みる時間",
+      "Description": ""
+    },
+    {
+      "Field": "searchTargetTryApproachTime",
+      "Name": "索敵ターゲットに対して接近を試みる時間",
+      "Description": ""
+    },
+    {
+      "Field": "memoryTargetTryApproachTime",
+      "Name": "記憶ターゲットに対して接近を試みる時間",
+      "Description": ""
+    },
+    {
+      "Field": "reserved5",
+      "Name": "予約",
+      "Description": "(dummy8)"
+    },
+    {
+      "Field": "activateChrByTime_PhantomId",
+      "Name": "特定時間帯配置のエネミーの出現・消滅に演出に使うファントムシェーダID",
+      "Description": "出現・消滅の演出でファントムシェーダをフェイドする、"
+    },
+    {
+      "Field": "findUnfavorableFailedPointDist",
+      "Name": "パス終端まで行くと敵が見切れそうなことがわかったインタラプト、を発生させる距離",
+      "Description": "Unreachパス時、終端と対象がこの距離以内ならインタラプトを発生させる"
+    },
+    {
+      "Field": "findUnfavorableFailedPointHeight",
+      "Name": "パス終端まで行くと敵が見切れそうなことがわかったインタラプト、を発生させる高さ",
+      "Description": "Unreachパス時、終端と対象がこの距離以上ならインタラプトを発生させる"
+    },
+    {
+      "Field": "reserved18",
+      "Name": "予約",
+      "Description": "(dummy8)"
+    }
+  ]
+}

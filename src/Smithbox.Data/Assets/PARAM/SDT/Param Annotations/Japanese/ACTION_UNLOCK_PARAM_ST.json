@@ -1,0 +1,158 @@
+{
+  "Param": "ACTION_UNLOCK_PARAM_ST",
+  "Type": "ACTION_UNLOCK_PARAM_ST",
+  "Name": "ACTION_UNLOCK_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "action00",
+      "Name": "00_無限呼吸",
+      "Description": "「○」がついた道具を1つでも所持していれば解禁される"
+    },
+    {
+      "Field": "action01",
+      "Name": "01_夜目",
+      "Description": "「○」がついた道具を1つでも所持していれば解禁される"
+    },
+    {
+      "Field": "action02",
+      "Name": "02_復活の術",
+      "Description": "「○」がついた道具を1つでも所持していれば解禁される"
+    },
+    {
+      "Field": "action03",
+      "Name": "03_不死斬り",
+      "Description": "「○」がついた道具を1つでも所持していれば解禁される"
+    },
+    {
+      "Field": "action04",
+      "Name": "04_義手",
+      "Description": "「○」がついた道具を1つでも所持していれば解禁される"
+    },
+    {
+      "Field": "action05",
+      "Name": "05_右手刀",
+      "Description": "「○」がついた道具を1つでも所持していれば解禁される"
+    },
+    {
+      "Field": "action06",
+      "Name": "06_白形代取得 ",
+      "Description": "「○」がついた道具を1つでも所持していれば解禁される"
+    },
+    {
+      "Field": "action07",
+      "Name": "07_赤形代取得",
+      "Description": "「○」がついた道具を1つでも所持していれば解禁される"
+    },
+    {
+      "Field": "action08",
+      "Name": "08_予備",
+      "Description": "「○」がついた道具を1つでも所持していれば解禁される"
+    },
+    {
+      "Field": "action09",
+      "Name": "09_予備",
+      "Description": "「○」がついた道具を1つでも所持していれば解禁される"
+    },
+    {
+      "Field": "action10",
+      "Name": "10_蹴り",
+      "Description": "「○」がついた道具を1つでも所持していれば解禁される"
+    },
+    {
+      "Field": "action11",
+      "Name": "11_蹴り見切り",
+      "Description": "「○」がついた道具を1つでも所持していれば解禁される"
+    },
+    {
+      "Field": "action12",
+      "Name": "12_蹴り強化",
+      "Description": "「○」がついた道具を1つでも所持していれば解禁される"
+    },
+    {
+      "Field": "action13",
+      "Name": "13_崩し裏周り",
+      "Description": "「○」がついた道具を1つでも所持していれば解禁される"
+    },
+    {
+      "Field": "action14",
+      "Name": "14_ワイヤー中アクション",
+      "Description": "「○」がついた道具を1つでも所持していれば解禁される"
+    },
+    {
+      "Field": "action15",
+      "Name": "15_空中ガード",
+      "Description": "「○」がついた道具を1つでも所持していれば解禁される"
+    },
+    {
+      "Field": "action16",
+      "Name": "16_空中義手忍具",
+      "Description": "「○」がついた道具を1つでも所持していれば解禁される"
+    },
+    {
+      "Field": "action17",
+      "Name": "17_刀ジャンプ忍殺",
+      "Description": "「○」がついた道具を1つでも所持していれば解禁される"
+    },
+    {
+      "Field": "action18",
+      "Name": "18_刀対空忍殺",
+      "Description": "「○」がついた道具を1つでも所持していれば解禁される"
+    },
+    {
+      "Field": "action19",
+      "Name": "19_刀溜め",
+      "Description": "「○」がついた道具を1つでも所持していれば解禁される"
+    },
+    {
+      "Field": "action20",
+      "Name": "20_義手忍具連携追い斬り",
+      "Description": "「○」がついた道具を1つでも所持していれば解禁される"
+    },
+    {
+      "Field": "action21",
+      "Name": "21_義手忍具連携追加効果",
+      "Description": "「○」がついた道具を1つでも所持していれば解禁される"
+    },
+    {
+      "Field": "action22",
+      "Name": "22_義手忍具連携連撃",
+      "Description": "「○」がついた道具を1つでも所持していれば解禁される"
+    },
+    {
+      "Field": "action23",
+      "Name": "23_義手忍具連携エンチャ",
+      "Description": "「○」がついた道具を1つでも所持していれば解禁される"
+    },
+    {
+      "Field": "action24",
+      "Name": "24_予備",
+      "Description": "「○」がついた道具を1つでも所持していれば解禁される"
+    },
+    {
+      "Field": "action25",
+      "Name": "25_予備",
+      "Description": "「○」がついた道具を1つでも所持していれば解禁される"
+    },
+    {
+      "Field": "action26",
+      "Name": "26_予備",
+      "Description": "「○」がついた道具を1つでも所持していれば解禁される"
+    },
+    {
+      "Field": "action27",
+      "Name": "27_予備",
+      "Description": "「○」がついた道具を1つでも所持していれば解禁される"
+    },
+    {
+      "Field": "action28",
+      "Name": "28_予備",
+      "Description": "「○」がついた道具を1つでも所持していれば解禁される"
+    },
+    {
+      "Field": "action29",
+      "Name": "29_予備",
+      "Description": "「○」がついた道具を1つでも所持していれば解禁される"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "Param": "LOT_RESULT_PLAYAREA_PARAM_ST",
+  "Type": "LOT_RESULT_PLAYAREA_PARAM_ST",
+  "Name": "LOT_RESULT_PLAYAREA_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "unknown_0",
+      "Name": "unknown_0",
+      "Description": ""
+    },
+    {
+      "Field": "patternId",
+      "Name": "patternId",
+      "Description": ""
+    },
+    {
+      "Field": "playArea1",
+      "Name": "playArea1",
+      "Description": ""
+    },
+    {
+      "Field": "playArea2",
+      "Name": "playArea2",
+      "Description": ""
+    },
+    {
+      "Field": "bossId1",
+      "Name": "bossId1",
+      "Description": ""
+    },
+    {
+      "Field": "bossId2",
+      "Name": "bossId2",
+      "Description": ""
+    },
+    {
+      "Field": "extraBossId1",
+      "Name": "extraBossId1",
+      "Description": ""
+    },
+    {
+      "Field": "extraBossId2",
+      "Name": "extraBossId2",
+      "Description": ""
+    },
+    {
+      "Field": "bossModifier1",
+      "Name": "bossModifier1",
+      "Description": ""
+    },
+    {
+      "Field": "bossModifier2",
+      "Name": "bossModifier2",
+      "Description": ""
+    },
+    {
+      "Field": "extraBossModifier1",
+      "Name": "extraBossModifier1",
+      "Description": ""
+    },
+    {
+      "Field": "extraBossModifier2",
+      "Name": "extraBossModifier2",
+      "Description": ""
+    }
+  ]
+}

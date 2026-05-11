@@ -1,0 +1,68 @@
+{
+  "Param": "CUTSCENE_GPARAM_TIME_PARAM_ST",
+  "Type": "CUTSCENE_GPARAM_TIME_PARAM_ST",
+  "Name": "CUTSCENE_GPARAM_TIME_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "NT版出力から外すか",
+      "Description": "NT版から除外するか、除外するものに○をつける"
+    },
+    {
+      "Field": "disableParam_Product",
+      "Name": "製品版出力から外すか",
+      "Description": "製品版から除外するか、除外するものに○をつける"
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "パッケージ出力用リザーブ1",
+      "Description": "パッケージ出力用リザーブ1"
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "パッケージ出力用リザーブ2",
+      "Description": "パッケージ出力用リザーブ2"
+    },
+    {
+      "Field": "DstTimezone_Morning",
+      "Name": "朝",
+      "Description": "朝(変換時刻はカットシーン時間変換設定シートを参照）"
+    },
+    {
+      "Field": "DstTimezone_Noon",
+      "Name": "昼A",
+      "Description": "昼A(変換時刻はカットシーン時間変換設定シートを参照）"
+    },
+    {
+      "Field": "DstTimezone_AfterNoon",
+      "Name": "昼B",
+      "Description": "昼B(変換時刻はカットシーン時間変換設定シートを参照）"
+    },
+    {
+      "Field": "DstTimezone_Evening",
+      "Name": "夕",
+      "Description": "夕(変換時刻はカットシーン時間変換設定シートを参照）"
+    },
+    {
+      "Field": "DstTimezone_Night",
+      "Name": "夜",
+      "Description": "夜(変換時刻はカットシーン時間変換設定シートを参照）"
+    },
+    {
+      "Field": "DstTimezone_DeepNightA",
+      "Name": "深夜A",
+      "Description": "深夜A(変換時刻はカットシーン時間変換設定シートを参照）"
+    },
+    {
+      "Field": "DstTimezone_DeepNightB",
+      "Name": "深夜B",
+      "Description": "深夜B(変換時刻はカットシーン時間変換設定シートを参照）"
+    },
+    {
+      "Field": "reserved",
+      "Name": "reserved",
+      "Description": "reserved"
+    }
+  ]
+}

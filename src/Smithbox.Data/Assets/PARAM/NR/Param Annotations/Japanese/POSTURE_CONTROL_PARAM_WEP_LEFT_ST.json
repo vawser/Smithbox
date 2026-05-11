@@ -1,0 +1,88 @@
+{
+  "Param": "POSTURE_CONTROL_PARAM_WEP_LEFT_ST",
+  "Type": "POSTURE_CONTROL_PARAM_WEP_LEFT_ST",
+  "Name": "POSTURE_CONTROL_PARAM_WEP_LEFT_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "a000_leftArmFB",
+      "Name": "左腕_前後",
+      "Description": "左腕_前後"
+    },
+    {
+      "Field": "a000_leftArmIO",
+      "Name": "a000_leftArmIO",
+      "Description": ""
+    },
+    {
+      "Field": "a000_leftWristFB",
+      "Name": "左手首_前後",
+      "Description": "左手首_前後"
+    },
+    {
+      "Field": "a000_leftWristIO",
+      "Name": "左手首_内外",
+      "Description": "左手首_内外"
+    },
+    {
+      "Field": "a000_leftWeaponRotation",
+      "Name": "左腕_前後",
+      "Description": "左腕_前後"
+    },
+    {
+      "Field": "a002_leftArmFB",
+      "Name": "左手首_前後",
+      "Description": "左手首_前後"
+    },
+    {
+      "Field": "a002_leftArmIO",
+      "Name": "a002_leftArmIO",
+      "Description": ""
+    },
+    {
+      "Field": "a002_leftWristFB",
+      "Name": "左手首_内外",
+      "Description": "左手首_内外"
+    },
+    {
+      "Field": "a002_leftWristIO",
+      "Name": "左腕_前後",
+      "Description": "左腕_前後"
+    },
+    {
+      "Field": "a002_leftWeaponRotation",
+      "Name": "左手首_前後",
+      "Description": "左手首_前後"
+    },
+    {
+      "Field": "a003_leftArmFB",
+      "Name": "左手首_内外",
+      "Description": "左手首_内外"
+    },
+    {
+      "Field": "a003_leftArmIO",
+      "Name": "a003_leftArmIO",
+      "Description": ""
+    },
+    {
+      "Field": "a003_leftWristFB",
+      "Name": "a003_leftWristFB",
+      "Description": ""
+    },
+    {
+      "Field": "a003_leftWristIO",
+      "Name": "a003_leftWristIO",
+      "Description": ""
+    },
+    {
+      "Field": "a003_leftWeaponRotation",
+      "Name": "a003_leftWeaponRotation",
+      "Description": ""
+    },
+    {
+      "Field": "pad_old",
+      "Name": "pad_old",
+      "Description": ""
+    }
+  ]
+}

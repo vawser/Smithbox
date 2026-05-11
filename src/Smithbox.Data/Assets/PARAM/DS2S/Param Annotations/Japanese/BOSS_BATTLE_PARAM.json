@@ -1,0 +1,128 @@
+{
+  "Param": "BOSS_BATTLE_PARAM",
+  "Type": "BOSS_BATTLE_PARAM",
+  "Name": "BOSS_BATTLE_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "soulValue",
+      "Name": "入手ソウル",
+      "Description": ""
+    },
+    {
+      "Field": "soulBulletId",
+      "Name": "ソウルバレットID",
+      "Description": ""
+    },
+    {
+      "Field": "itemLotId",
+      "Name": "シングル時アイテム抽選ID",
+      "Description": ""
+    },
+    {
+      "Field": "itemLotIdMultiPlay",
+      "Name": "マルチ時アイテム抽選ID",
+      "Description": ""
+    },
+    {
+      "Field": "killedEventId",
+      "Name": "撃破済みイベントフラグ",
+      "Description": ""
+    },
+    {
+      "Field": "onceKilledEventId",
+      "Name": "一度でも撃破済みイベントフラグ",
+      "Description": ""
+    },
+    {
+      "Field": "bonfireEventValueId",
+      "Name": "篝火周回用イベント変数ID",
+      "Description": ""
+    },
+    {
+      "Field": "cameraParamId",
+      "Name": "カメラパラメータID",
+      "Description": ""
+    },
+    {
+      "Field": "lockParamId",
+      "Name": "ロックパラメータID",
+      "Description": ""
+    },
+    {
+      "Field": "hpDispType1",
+      "Name": "HPゲージ表示タイプ1",
+      "Description": ""
+    },
+    {
+      "Field": "hpDispType2",
+      "Name": "HPゲージ表示タイプ2",
+      "Description": ""
+    },
+    {
+      "Field": "hpDispType3",
+      "Name": "HPゲージ表示タイプ3",
+      "Description": ""
+    },
+    {
+      "Field": "killFeType",
+      "Name": "撃破FEタイプ",
+      "Description": ""
+    },
+    {
+      "Field": "genEventGroupId1",
+      "Name": "ジェネレータイベントグループID1",
+      "Description": ""
+    },
+    {
+      "Field": "genEventGroupId2",
+      "Name": "ジェネレータイベントグループID2",
+      "Description": ""
+    },
+    {
+      "Field": "genEventGroupId3",
+      "Name": "ジェネレータイベントグループID3",
+      "Description": ""
+    },
+    {
+      "Field": "roundSoulDropCategory",
+      "Name": "周回ソウルドロップカテゴリ",
+      "Description": ""
+    },
+    {
+      "Field": "bossNameTextId1",
+      "Name": "ボス名テキストID1",
+      "Description": ""
+    },
+    {
+      "Field": "bossNameTextId2",
+      "Name": "ボス名テキストID2",
+      "Description": ""
+    },
+    {
+      "Field": "bossNameTextId3",
+      "Name": "ボス名テキストID3",
+      "Description": ""
+    },
+    {
+      "Field": "feDispWaitTime",
+      "Name": "撃破FEの待機時間",
+      "Description": ""
+    },
+    {
+      "Field": "bonfireId",
+      "Name": "篝火パラメータID",
+      "Description": ""
+    },
+    {
+      "Field": "aReserved3",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "decLimitTime",
+      "Name": "マルチプレイ制限時間減少量",
+      "Description": ""
+    }
+  ]
+}

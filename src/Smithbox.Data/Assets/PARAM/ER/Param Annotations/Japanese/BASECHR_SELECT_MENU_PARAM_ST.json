@@ -1,0 +1,48 @@
+{
+  "Param": "BASECHR_SELECT_MENU_PARAM_ST",
+  "Type": "BASECHR_SELECT_MENU_PARAM_ST",
+  "Name": "BASECHR_SELECT_MENU_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "NT版出力から外すか",
+      "Description": "○をつけたパラメータをNT版パッケージでは除外します"
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "パッケージ出力用リザーブ1",
+      "Description": "パッケージ出力用リザーブ1"
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "パッケージ出力用リザーブ2",
+      "Description": "パッケージ出力用リザーブ2"
+    },
+    {
+      "Field": "chrInitParam",
+      "Name": "アーキタイプID：ベースキャラクター",
+      "Description": "フェイスパラを設定したアーキタイプ別初期パラメータIDを指定する "
+    },
+    {
+      "Field": "originChrInitParam",
+      "Name": "アーキタイプID：素性",
+      "Description": "素性のアーキタイプ別初期パラメータIDを指定する"
+    },
+    {
+      "Field": "imageId",
+      "Name": "イメージID",
+      "Description": "ベースキャラクター選択画面に並ぶ画像。Flaに埋め込まれたリソースのフレーム数を指定"
+    },
+    {
+      "Field": "textId",
+      "Name": "テキストID",
+      "Description": "職業名のメニューテキストID"
+    },
+    {
+      "Field": "reserve",
+      "Name": "リザーブ",
+      "Description": ""
+    }
+  ]
+}

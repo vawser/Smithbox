@@ -1,0 +1,18 @@
+{
+  "Param": "ITEMLOT_LVDEP_PARAM_ST",
+  "Type": "ITEMLOT_LVDEP_PARAM_ST",
+  "Name": "ITEMLOT_LVDEP_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "itemCategory",
+      "Name": "アイテムカテゴリ",
+      "Description": "取得できるアイテムのカテゴリ"
+    },
+    {
+      "Field": "itemId",
+      "Name": "アイテムID",
+      "Description": "取得できるアイテムのID"
+    }
+  ]
+}

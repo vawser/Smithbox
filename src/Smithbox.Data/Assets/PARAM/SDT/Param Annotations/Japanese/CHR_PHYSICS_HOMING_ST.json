@@ -1,0 +1,68 @@
+{
+  "Param": "CHR_PHYSICS_HOMING_ST",
+  "Type": "CHR_PHYSICS_HOMING_ST",
+  "Name": "CHR_PHYSICS_HOMING_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "targetOffsetX",
+      "Name": "目標地点オフセットX[m]",
+      "Description": "基準位置からこの値だけ左右にオフセットした位置を目標地点とする。"
+    },
+    {
+      "Field": "targetOffsetY",
+      "Name": "目標地点オフセットY[m]",
+      "Description": "基準位置からこの値だけ上下にオフセットした位置を目標地点とする。"
+    },
+    {
+      "Field": "targetOffsetZ",
+      "Name": "目標地点オフセットZ[m]",
+      "Description": "基準位置からこの値だけ前後にオフセットした位置を目標地点とする。"
+    },
+    {
+      "Field": "targetBaseDmyPolyId",
+      "Name": "目標地点基準ダミポリ（キャラへのホーミング時のみ）",
+      "Description": "目標地点の基準位置とするキャラのダミポリ。-1ならキャラの原点を使用する。"
+    },
+    {
+      "Field": "fallCorrectionChase",
+      "Name": "落下補正（追尾）",
+      "Description": "移動する目標地点に対して追尾するように落下中の速度に補正をかけるかどうか。"
+    },
+    {
+      "Field": "fallCorrectionTurn",
+      "Name": "ホーミングターゲットをシステム旋回目標にするか？",
+      "Description": "速度変化してからホーミングターゲットが無効になるまでの間、システム旋回の目標をホーミングターゲットに上書き変更するかどうか。\"×\"の場合は通常通り、ロック中のキャラや敵ターゲットに対してシステム旋回する。"
+    },
+    {
+      "Field": "fallCorrectionChaseMaxAcceleration",
+      "Name": "落下補正（追尾）加速度上限[m/s^2]",
+      "Description": "落下補正（追尾）で掛ける加速度の上限値。目標地点の移動に対する追尾性能に影響する。"
+    },
+    {
+      "Field": "initialVelocityCorrection",
+      "Name": "初速補正",
+      "Description": "速度変化パラメータの設定値の代わりに目標地点に到達するような初速をかけるかどうか。なお、初速補正をしない場合、または補正できない場合（補正の計算方法による）は元の速度変化パラメータの設定に従い速度を変化させる。"
+    },
+    {
+      "Field": "fallCorrectionGuaranteeArrival",
+      "Name": "落下補正（到達保証）",
+      "Description": "落下先と目標地点のズレを吸収するよう、落下中の速度に補正をかけるかどうか。"
+    },
+    {
+      "Field": "pad0",
+      "Name": "パディング",
+      "Description": "パディング"
+    },
+    {
+      "Field": "fallCorrectionChaseMaxVelocityRate",
+      "Name": "落下補正（追尾）最大速度割合",
+      "Description": "ホーミング開始時の平面速度に対してこの割合を掛けた値を、落下補正（追尾）有効時に加速できる最大速度とする。"
+    },
+    {
+      "Field": "pad1",
+      "Name": "パディング",
+      "Description": "パディング"
+    }
+  ]
+}

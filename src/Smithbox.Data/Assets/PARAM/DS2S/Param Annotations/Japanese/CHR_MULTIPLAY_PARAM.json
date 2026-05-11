@@ -1,0 +1,98 @@
+{
+  "Param": "CHR_MULTIPLAY_PARAM",
+  "Type": "CHR_MULTIPLAY_PARAM",
+  "Name": "CHR_MULTIPLAY_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "oneClientHpPercent",
+      "Name": "クライアント1名時 エネミー最大HP補正",
+      "Description": ""
+    },
+    {
+      "Field": "oneClientHpDamagePercent",
+      "Name": "クライアント1名時 エネミーHPダメージ補正",
+      "Description": ""
+    },
+    {
+      "Field": "oneClientAilmentDamagePercent",
+      "Name": "クライアント1名時 エネミー耐性ダメージ補正",
+      "Description": ""
+    },
+    {
+      "Field": "oneClientStaminaDamagePercent",
+      "Name": "クライアント1名時 エネミー被スタミナ奪取量補正",
+      "Description": ""
+    },
+    {
+      "Field": "oneClientPoiseDamagePercent",
+      "Name": "クライアント1名時 エネミー被強靭削り値補正",
+      "Description": ""
+    },
+    {
+      "Field": "oneClientStunDamagePercent",
+      "Name": "クライアント1名時 エネミー被気絶値補正",
+      "Description": ""
+    },
+    {
+      "Field": "twoClientsHpPercent",
+      "Name": "クライアント2名時 エネミー最大HP補正",
+      "Description": ""
+    },
+    {
+      "Field": "twoClientsHpDamagePercent",
+      "Name": "クライアント2名時 エネミーHPダメージ補正",
+      "Description": ""
+    },
+    {
+      "Field": "twoClientsAilmentDamagePercent",
+      "Name": "クライアント2名時 エネミー耐性ダメージ補正",
+      "Description": ""
+    },
+    {
+      "Field": "twoClientsStaminaDamagePercent",
+      "Name": "クライアント2名時 エネミー被スタミナ奪取量補正",
+      "Description": ""
+    },
+    {
+      "Field": "twoClientsPoiseDamagePercent",
+      "Name": "クライアント2名時 エネミー被強靭削り値補正",
+      "Description": ""
+    },
+    {
+      "Field": "twoClientsStunDamagePercent",
+      "Name": "クライアント2名時 エネミー被気絶値補正",
+      "Description": ""
+    },
+    {
+      "Field": "threeClientsHpPercent",
+      "Name": "クライアント3名時 エネミー最大HP補正",
+      "Description": ""
+    },
+    {
+      "Field": "threeClientsHpDamagePercent",
+      "Name": "クライアント3名時 エネミーHPダメージ補正",
+      "Description": ""
+    },
+    {
+      "Field": "threeClientsAilmentDamagePercent",
+      "Name": "クライアント3名時 エネミー耐性ダメージ補正",
+      "Description": ""
+    },
+    {
+      "Field": "threeClientsStaminaDamagePercent",
+      "Name": "クライアント3名時 エネミー被スタミナ奪取量補正",
+      "Description": ""
+    },
+    {
+      "Field": "threeClientsPoiseDamagePercent",
+      "Name": "クライアント3名時 エネミー被強靭削り値補正",
+      "Description": ""
+    },
+    {
+      "Field": "threeClientsStunDamagePercent",
+      "Name": "クライアント3名時 エネミー被気絶値補正",
+      "Description": ""
+    }
+  ]
+}

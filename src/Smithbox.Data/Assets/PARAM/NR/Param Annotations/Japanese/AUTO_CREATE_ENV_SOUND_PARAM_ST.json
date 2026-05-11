@@ -1,0 +1,48 @@
+{
+  "Param": "AUTO_CREATE_ENV_SOUND_PARAM_ST",
+  "Type": "AUTO_CREATE_ENV_SOUND_PARAM_ST",
+  "Name": "AUTO_CREATE_ENV_SOUND_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "RangeMin",
+      "Name": "出現距離Min[m]",
+      "Description": "出現距離Min[m]"
+    },
+    {
+      "Field": "RangeMax",
+      "Name": "出現距離Max[m]",
+      "Description": "出現距離Max["
+    },
+    {
+      "Field": "LifeTimeMin",
+      "Name": "寿命Min[秒]",
+      "Description": "寿命Min[秒]"
+    },
+    {
+      "Field": "LifeTimeMax",
+      "Name": "寿命Max[秒]",
+      "Description": "寿命Max[秒]"
+    },
+    {
+      "Field": "DeleteDist",
+      "Name": "削除距離[m]",
+      "Description": "削除距離[m]"
+    },
+    {
+      "Field": "NearDist",
+      "Name": "近傍判定距離[m]",
+      "Description": "近傍判定距離[m]"
+    },
+    {
+      "Field": "LimiteRotateMin",
+      "Name": "生成角度制限Min[度]",
+      "Description": "角度制限Min[度](カメラの前方のY軸角度+-の指定。180なら全方位) "
+    },
+    {
+      "Field": "LimiteRotateMax",
+      "Name": "生成角度制限Max[度]",
+      "Description": "角度制限Max[度](カメラの前方のY軸角度+-の指定。180なら全方位) "
+    }
+  ]
+}

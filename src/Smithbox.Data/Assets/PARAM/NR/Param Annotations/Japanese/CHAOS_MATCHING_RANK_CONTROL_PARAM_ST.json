@@ -1,0 +1,53 @@
+{
+  "Param": "CHAOS_MATCHING_RANK_CONTROL_PARAM_ST",
+  "Type": "CHAOS_MATCHING_RANK_CONTROL_PARAM_ST",
+  "Name": "CHAOS_MATCHING_RANK_CONTROL_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "cursedUncommonRate",
+      "Name": "cursedUncommonRate",
+      "Description": ""
+    },
+    {
+      "Field": "cursedRareRate",
+      "Name": "cursedRareRate",
+      "Description": ""
+    },
+    {
+      "Field": "mapChallengeWeight_Map",
+      "Name": "mapChallengeWeight_Map",
+      "Description": ""
+    },
+    {
+      "Field": "mapChallengeWeight_Nightlord",
+      "Name": "mapChallengeWeight_Nightlord",
+      "Description": ""
+    },
+    {
+      "Field": "mapChallengeWeight_None",
+      "Name": "mapChallengeWeight_None",
+      "Description": ""
+    },
+    {
+      "Field": "cataclysmWeight_0",
+      "Name": "cataclysmWeight_0",
+      "Description": ""
+    },
+    {
+      "Field": "cataclysmWeight_1",
+      "Name": "cataclysmWeight_1",
+      "Description": ""
+    },
+    {
+      "Field": "cataclysmWeight_2",
+      "Name": "cataclysmWeight_2",
+      "Description": ""
+    },
+    {
+      "Field": "endPadding",
+      "Name": "endPadding",
+      "Description": ""
+    }
+  ]
+}

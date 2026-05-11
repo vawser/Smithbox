@@ -1,0 +1,48 @@
+{
+  "Param": "TONE_MAP_BANK",
+  "Type": "TONE_MAP_BANK",
+  "Name": "TONE_MAP_BANK",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "bloomBegin",
+      "Name": "ブルーム閾値[％]",
+      "Description": "輝度が閾値を越えるとにじみ始めます"
+    },
+    {
+      "Field": "bloomMul",
+      "Name": "ブルーム倍率[％]",
+      "Description": "閾値以上の値に掛ける値です(0でにじまなくなります)"
+    },
+    {
+      "Field": "pad_0",
+      "Name": "パディング",
+      "Description": "ダミー"
+    },
+    {
+      "Field": "grayKeyValue",
+      "Name": "トーンマップの基準値",
+      "Description": "この値が大きいと画面が明るくなり小さいと画面が暗くなります"
+    },
+    {
+      "Field": "minAdaptedLum",
+      "Name": "最小適応輝度",
+      "Description": "値を小さくすると暗い場所に適応して見えるようになります"
+    },
+    {
+      "Field": "maxAdapredLum",
+      "Name": "最大適応輝度",
+      "Description": "値を大きくすると明るい場所に適応して見えるようになります"
+    },
+    {
+      "Field": "adaptSpeed",
+      "Name": "適応速度",
+      "Description": "値を大きくする明順応、暗順応の速度が速くなります"
+    },
+    {
+      "Field": "pad_1",
+      "Name": "パディング",
+      "Description": "ダミー"
+    }
+  ]
+}

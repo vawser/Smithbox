@@ -1,0 +1,28 @@
+{
+  "Param": "CHARMAKEMENU_LISTITEM_PARAM_ST",
+  "Type": "CHARMAKEMENU_LISTITEM_PARAM_ST",
+  "Name": "CHARMAKEMENU_LISTITEM_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "Value",
+      "Name": "値",
+      "Description": ""
+    },
+    {
+      "Field": "CaptionID",
+      "Name": "項目テキストID",
+      "Description": ""
+    },
+    {
+      "Field": "IconID",
+      "Name": "アイコンID",
+      "Description": ""
+    },
+    {
+      "Field": "reserved",
+      "Name": "予約",
+      "Description": ""
+    }
+  ]
+}

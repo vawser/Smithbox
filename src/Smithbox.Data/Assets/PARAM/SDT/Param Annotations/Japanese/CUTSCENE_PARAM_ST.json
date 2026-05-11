@@ -1,0 +1,28 @@
+{
+  "Param": "CUTSCENE_PARAM_ST",
+  "Type": "CUTSCENE_PARAM_ST",
+  "Name": "CUTSCENE_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "doPausePrevCutsceneBgm",
+      "Name": "カットシーン前のBGMを一時停止するか",
+      "Description": "一時停止するか"
+    },
+    {
+      "Field": "pad0",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "bgmFadeoutTime",
+      "Name": "BGMフェードアウト時間[sec]",
+      "Description": "BGMフェードアウト時間"
+    },
+    {
+      "Field": "bgmFadeinTime",
+      "Name": "BGMフェードイン時間[sec]",
+      "Description": "BGMフェードイン時間"
+    }
+  ]
+}

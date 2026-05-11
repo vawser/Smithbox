@@ -1,0 +1,458 @@
+{
+  "Param": "THROW_DIRECTION_DECAL_PARAM_ST",
+  "Type": "THROW_DIRECTION_DECAL_PARAM_ST",
+  "Name": "THROW_DIRECTION_DECAL_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "decalId_00",
+      "Name": "0",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_01",
+      "Name": "1",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_02",
+      "Name": "2",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_03",
+      "Name": "3",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_04",
+      "Name": "4",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_05",
+      "Name": "5",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_06",
+      "Name": "6",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_07",
+      "Name": "7",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_08",
+      "Name": "8",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_09",
+      "Name": "9",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_10",
+      "Name": "10",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_11",
+      "Name": "11",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_12",
+      "Name": "12",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_13",
+      "Name": "13",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_14",
+      "Name": "14",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_15",
+      "Name": "15",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_16",
+      "Name": "16",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_17",
+      "Name": "17",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_18",
+      "Name": "18",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_19",
+      "Name": "19",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_20",
+      "Name": "20",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_21",
+      "Name": "21",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_22",
+      "Name": "22",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_23",
+      "Name": "23",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_24",
+      "Name": "24",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_25",
+      "Name": "25",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_26",
+      "Name": "26",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_27",
+      "Name": "27",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_28",
+      "Name": "28",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_29",
+      "Name": "29",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_30",
+      "Name": "30",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_31",
+      "Name": "31",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_32",
+      "Name": "32",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_33",
+      "Name": "33",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_34",
+      "Name": "34",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_35",
+      "Name": "35",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_36",
+      "Name": "36",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_37",
+      "Name": "37",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_38",
+      "Name": "38",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_39",
+      "Name": "39",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_40",
+      "Name": "40",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_41",
+      "Name": "41",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_42",
+      "Name": "42",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_43",
+      "Name": "43",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_44",
+      "Name": "44",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_45",
+      "Name": "45",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_46",
+      "Name": "46",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_47",
+      "Name": "47",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_48",
+      "Name": "48",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_49",
+      "Name": "49",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_50",
+      "Name": "50",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_51",
+      "Name": "51",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_52",
+      "Name": "52",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_53",
+      "Name": "53",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_54",
+      "Name": "54",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_55",
+      "Name": "55",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_56",
+      "Name": "56",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_57",
+      "Name": "57",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_58",
+      "Name": "58",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_59",
+      "Name": "59",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_60",
+      "Name": "60",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_61",
+      "Name": "61",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_62",
+      "Name": "62",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_63",
+      "Name": "63",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_64",
+      "Name": "64",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_65",
+      "Name": "65",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_66",
+      "Name": "66",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_67",
+      "Name": "67",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_68",
+      "Name": "68",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_69",
+      "Name": "69",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_70",
+      "Name": "70",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_71",
+      "Name": "71",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_72",
+      "Name": "72",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_73",
+      "Name": "73",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_74",
+      "Name": "74",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_75",
+      "Name": "75",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_76",
+      "Name": "76",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_77",
+      "Name": "77",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_78",
+      "Name": "78",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_79",
+      "Name": "79",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_80",
+      "Name": "80",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_81",
+      "Name": "81",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_82",
+      "Name": "82",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_83",
+      "Name": "83",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_84",
+      "Name": "84",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_85",
+      "Name": "85",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_86",
+      "Name": "86",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_87",
+      "Name": "87",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_88",
+      "Name": "88",
+      "Description": "使用するデカルのID"
+    },
+    {
+      "Field": "decalId_89",
+      "Name": "89",
+      "Description": "使用するデカルのID"
+    }
+  ]
+}

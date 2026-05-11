@@ -1,0 +1,323 @@
+{
+  "Param": "ITEM_LOT_PARAM2",
+  "Type": "ITEM_LOT_PARAM2",
+  "Name": "ITEM_LOT_PARAM2",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "lotDropType",
+      "Name": "抽選ドロップタイプ",
+      "Description": ""
+    },
+    {
+      "Field": "lotCount",
+      "Name": "抽選回数",
+      "Description": ""
+    },
+    {
+      "Field": "padding",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "itemNum1",
+      "Name": "個数",
+      "Description": ""
+    },
+    {
+      "Field": "itemNum2",
+      "Name": "個数",
+      "Description": ""
+    },
+    {
+      "Field": "itemNum3",
+      "Name": "個数",
+      "Description": ""
+    },
+    {
+      "Field": "itemNum4",
+      "Name": "個数",
+      "Description": ""
+    },
+    {
+      "Field": "itemNum5",
+      "Name": "個数",
+      "Description": ""
+    },
+    {
+      "Field": "itemNum6",
+      "Name": "個数",
+      "Description": ""
+    },
+    {
+      "Field": "itemNum7",
+      "Name": "個数",
+      "Description": ""
+    },
+    {
+      "Field": "itemNum8",
+      "Name": "個数",
+      "Description": ""
+    },
+    {
+      "Field": "itemNum9",
+      "Name": "個数",
+      "Description": ""
+    },
+    {
+      "Field": "itemNum10",
+      "Name": "個数",
+      "Description": ""
+    },
+    {
+      "Field": "reinforceLevel1",
+      "Name": "強化レベル",
+      "Description": ""
+    },
+    {
+      "Field": "reinforceLevel2",
+      "Name": "強化レベル",
+      "Description": ""
+    },
+    {
+      "Field": "reinforceLevel3",
+      "Name": "強化レベル",
+      "Description": ""
+    },
+    {
+      "Field": "reinforceLevel4",
+      "Name": "強化レベル",
+      "Description": ""
+    },
+    {
+      "Field": "reinforceLevel5",
+      "Name": "強化レベル",
+      "Description": ""
+    },
+    {
+      "Field": "reinforceLevel6",
+      "Name": "強化レベル",
+      "Description": ""
+    },
+    {
+      "Field": "reinforceLevel7",
+      "Name": "強化レベル",
+      "Description": ""
+    },
+    {
+      "Field": "reinforceLevel8",
+      "Name": "強化レベル",
+      "Description": ""
+    },
+    {
+      "Field": "reinforceLevel9",
+      "Name": "強化レベル",
+      "Description": ""
+    },
+    {
+      "Field": "reinforceLevel10",
+      "Name": "強化レベル",
+      "Description": ""
+    },
+    {
+      "Field": "attribute1",
+      "Name": "属性",
+      "Description": ""
+    },
+    {
+      "Field": "attribute2",
+      "Name": "属性",
+      "Description": ""
+    },
+    {
+      "Field": "attribute3",
+      "Name": "属性",
+      "Description": ""
+    },
+    {
+      "Field": "attribute4",
+      "Name": "属性",
+      "Description": ""
+    },
+    {
+      "Field": "attribute5",
+      "Name": "属性",
+      "Description": ""
+    },
+    {
+      "Field": "attribute6",
+      "Name": "属性",
+      "Description": ""
+    },
+    {
+      "Field": "attribute7",
+      "Name": "属性",
+      "Description": ""
+    },
+    {
+      "Field": "attribute8",
+      "Name": "属性",
+      "Description": ""
+    },
+    {
+      "Field": "attribute9",
+      "Name": "属性",
+      "Description": ""
+    },
+    {
+      "Field": "attribute10",
+      "Name": "属性",
+      "Description": ""
+    },
+    {
+      "Field": "bExFlag1",
+      "Name": "【通常】再入手可能/【確定取得】抽選終了後",
+      "Description": ""
+    },
+    {
+      "Field": "bExFlag2",
+      "Name": "【通常】再入手可能/【確定取得】抽選終了後",
+      "Description": ""
+    },
+    {
+      "Field": "bExFlag3",
+      "Name": "【通常】再入手可能/【確定取得】抽選終了後",
+      "Description": ""
+    },
+    {
+      "Field": "bExFlag4",
+      "Name": "【通常】再入手可能/【確定取得】抽選終了後",
+      "Description": ""
+    },
+    {
+      "Field": "bExFlag5",
+      "Name": "【通常】再入手可能/【確定取得】抽選終了後",
+      "Description": ""
+    },
+    {
+      "Field": "bExFlag6",
+      "Name": "【通常】再入手可能/【確定取得】抽選終了後",
+      "Description": ""
+    },
+    {
+      "Field": "bExFlag7",
+      "Name": "【通常】再入手可能/【確定取得】抽選終了後",
+      "Description": ""
+    },
+    {
+      "Field": "bExFlag8",
+      "Name": "【通常】再入手可能/【確定取得】抽選終了後",
+      "Description": ""
+    },
+    {
+      "Field": "bExFlag9",
+      "Name": "【通常】再入手可能/【確定取得】抽選終了後",
+      "Description": ""
+    },
+    {
+      "Field": "bExFlag10",
+      "Name": "【通常】再入手可能/【確定取得】抽選終了後",
+      "Description": ""
+    },
+    {
+      "Field": "itemId1",
+      "Name": "アイテムID",
+      "Description": ""
+    },
+    {
+      "Field": "itemId2",
+      "Name": "アイテムID",
+      "Description": ""
+    },
+    {
+      "Field": "itemId3",
+      "Name": "アイテムID",
+      "Description": ""
+    },
+    {
+      "Field": "itemId4",
+      "Name": "アイテムID",
+      "Description": ""
+    },
+    {
+      "Field": "itemId5",
+      "Name": "アイテムID",
+      "Description": ""
+    },
+    {
+      "Field": "itemId6",
+      "Name": "アイテムID",
+      "Description": ""
+    },
+    {
+      "Field": "itemId7",
+      "Name": "アイテムID",
+      "Description": ""
+    },
+    {
+      "Field": "itemId8",
+      "Name": "アイテムID",
+      "Description": ""
+    },
+    {
+      "Field": "itemId9",
+      "Name": "アイテムID",
+      "Description": ""
+    },
+    {
+      "Field": "itemId10",
+      "Name": "アイテムID",
+      "Description": ""
+    },
+    {
+      "Field": "itemWeight1",
+      "Name": "抽選重み",
+      "Description": ""
+    },
+    {
+      "Field": "itemWeight2",
+      "Name": "抽選重み",
+      "Description": ""
+    },
+    {
+      "Field": "itemWeight3",
+      "Name": "抽選重み",
+      "Description": ""
+    },
+    {
+      "Field": "itemWeight4",
+      "Name": "抽選重み",
+      "Description": ""
+    },
+    {
+      "Field": "itemWeight5",
+      "Name": "抽選重み",
+      "Description": ""
+    },
+    {
+      "Field": "itemWeight6",
+      "Name": "抽選重み",
+      "Description": ""
+    },
+    {
+      "Field": "itemWeight7",
+      "Name": "抽選重み",
+      "Description": ""
+    },
+    {
+      "Field": "itemWeight8",
+      "Name": "抽選重み",
+      "Description": ""
+    },
+    {
+      "Field": "itemWeight9",
+      "Name": "抽選重み",
+      "Description": ""
+    },
+    {
+      "Field": "itemWeight10",
+      "Name": "抽選重み",
+      "Description": ""
+    }
+  ]
+}

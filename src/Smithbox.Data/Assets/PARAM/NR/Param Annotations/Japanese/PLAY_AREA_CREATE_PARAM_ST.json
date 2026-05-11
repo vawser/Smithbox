@@ -1,0 +1,113 @@
+{
+  "Param": "PLAY_AREA_CREATE_PARAM_ST",
+  "Type": "PLAY_AREA_CREATE_PARAM_ST",
+  "Name": "PLAY_AREA_CREATE_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "disableParam_NT",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "disableParamReserve1",
+      "Description": ""
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "disableParamReserve2",
+      "Description": ""
+    },
+    {
+      "Field": "areaNo",
+      "Name": "areaNo",
+      "Description": ""
+    },
+    {
+      "Field": "gridXNo",
+      "Name": "gridXNo",
+      "Description": ""
+    },
+    {
+      "Field": "gridZNo",
+      "Name": "gridZNo",
+      "Description": ""
+    },
+    {
+      "Field": "pad",
+      "Name": "pad",
+      "Description": ""
+    },
+    {
+      "Field": "posX",
+      "Name": "posX",
+      "Description": ""
+    },
+    {
+      "Field": "posZ",
+      "Name": "posZ",
+      "Description": ""
+    },
+    {
+      "Field": "day1Flag",
+      "Name": "day1Flag",
+      "Description": ""
+    },
+    {
+      "Field": "day2Flag",
+      "Name": "day2Flag",
+      "Description": ""
+    },
+    {
+      "Field": "requireModifier1",
+      "Name": "requireModifier1",
+      "Description": ""
+    },
+    {
+      "Field": "excludeModifier1",
+      "Name": "excludeModifier1",
+      "Description": ""
+    },
+    {
+      "Field": "excludeModifier2",
+      "Name": "excludeModifier2",
+      "Description": ""
+    },
+    {
+      "Field": "bossAttachPoint",
+      "Name": "bossAttachPoint",
+      "Description": ""
+    },
+    {
+      "Field": "connectColEntityId",
+      "Name": "connectColEntityId",
+      "Description": ""
+    },
+    {
+      "Field": "requireModifier2",
+      "Name": "requireModifier2",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_12",
+      "Name": "unknown_12",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_13",
+      "Name": "unknown_13",
+      "Description": ""
+    },
+    {
+      "Field": "unknown_14",
+      "Name": "unknown_14",
+      "Description": ""
+    },
+    {
+      "Field": "extraBossAttachPoint",
+      "Name": "extraBossAttachPoint",
+      "Description": ""
+    }
+  ]
+}

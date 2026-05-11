@@ -1,0 +1,48 @@
+{
+  "Param": "COOL_TIME_PARAM_ST",
+  "Type": "COOL_TIME_PARAM_ST",
+  "Name": "COOL_TIME_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "limitationTime_0",
+      "Name": "制限時間（協力霊数0）",
+      "Description": "制限時間[sec]（協力霊数0）"
+    },
+    {
+      "Field": "observeTime_0",
+      "Name": "監視時間（協力霊数0）",
+      "Description": "監視時間[sec]（協力霊数0）"
+    },
+    {
+      "Field": "limitationTime_1",
+      "Name": "制限時間（協力霊数1）",
+      "Description": "制限時間[sec]（協力霊数1）"
+    },
+    {
+      "Field": "observeTime_1",
+      "Name": "監視時間（協力霊数1）",
+      "Description": "監視時間[sec]（協力霊数1）"
+    },
+    {
+      "Field": "limitationTime_2",
+      "Name": "制限時間（協力霊数2）",
+      "Description": "制限時間[sec]（協力霊数2）"
+    },
+    {
+      "Field": "observeTime_2",
+      "Name": "監視時間（協力霊数2）",
+      "Description": "監視時間[sec]（協力霊数2）"
+    },
+    {
+      "Field": "limitationTime_3",
+      "Name": "制限時間（協力霊数3）",
+      "Description": "制限時間[sec]（協力霊数3）"
+    },
+    {
+      "Field": "observeTime_3",
+      "Name": "監視時間（協力霊数3）",
+      "Description": "監視時間[sec]（協力霊数3）"
+    }
+  ]
+}

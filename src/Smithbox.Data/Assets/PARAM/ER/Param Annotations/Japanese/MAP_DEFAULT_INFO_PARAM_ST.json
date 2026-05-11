@@ -1,0 +1,138 @@
+{
+  "Param": "MAP_DEFAULT_INFO_PARAM_ST",
+  "Type": "MAP_DEFAULT_INFO_PARAM_ST",
+  "Name": "MAP_DEFAULT_INFO_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "disableParam_NT",
+      "Name": "NT版出力から外すか",
+      "Description": "○をつけたパラメータをNT版パッケージでは除外します"
+    },
+    {
+      "Field": "disableParamReserve1",
+      "Name": "パッケージ出力用リザーブ1",
+      "Description": "パッケージ出力用リザーブ1"
+    },
+    {
+      "Field": "disableParamReserve2",
+      "Name": "パッケージ出力用リザーブ2",
+      "Description": "パッケージ出力用リザーブ2"
+    },
+    {
+      "Field": "EnableFastTravelEventFlagId",
+      "Name": "ファストトラベル許可フラグID",
+      "Description": "ファストトラベル許可フラグID"
+    },
+    {
+      "Field": "WeatherLotTimeOffsetIngameSeconds",
+      "Name": "天候抽選時間オフセット(インゲーム秒)",
+      "Description": "天候抽選時間にかかるオフセット(単位：インゲーム秒)。ゲームプロパティのインゲーム時間スケールで割ると現実時間になります"
+    },
+    {
+      "Field": "WeatherCreateAssetLimitId",
+      "Name": "天候生成アセット生成制限用ID",
+      "Description": "天候アセット生成パラメータ.xlsmで生成されるアセットの生成制限に使うID"
+    },
+    {
+      "Field": "MapAiSightType",
+      "Name": "マップ視界タイプ",
+      "Description": "マップ視界タイプ"
+    },
+    {
+      "Field": "SoundIndoorType",
+      "Name": "サウンド屋内、完全屋内振り分け",
+      "Description": "マップGD設定の「屋内」をサウンド用の「屋内」、「完全屋内」どちらに振り分けるかを設定します(SEQ09833)"
+    },
+    {
+      "Field": "ReverbDefaultType",
+      "Name": "リバーブデフォルト設定",
+      "Description": "このマップのリバーブデフォルトタイプを指定します"
+    },
+    {
+      "Field": "BgmPlaceInfo",
+      "Name": "BGM用場所情報",
+      "Description": "BGM用の場所デフォルト情報を指定します"
+    },
+    {
+      "Field": "EnvPlaceInfo",
+      "Name": "環境音用場所情報",
+      "Description": "環境音用の場所デフォルト情報を指定します"
+    },
+    {
+      "Field": "MapAdditionalSoundBankId",
+      "Name": "マップ追加バンクID",
+      "Description": "追加で読み込むサウンドの「マップ追加バンク」のIDを指定します(-1:マップ追加バンクなし)(SEQ15725)"
+    },
+    {
+      "Field": "MapHeightForSound",
+      "Name": "サウンド用マップ高さ情報[m]",
+      "Description": "サウンド用マップ高さ情報[m](SEQ15727)"
+    },
+    {
+      "Field": "IsEnableBlendTimezoneEnvmap",
+      "Name": "【レガシー用】マップ環境マップ時間ブレンド有効か？",
+      "Description": "環境マップの時間ブレンドを行うかを指定します。0番の時間帯のTexureだけが撮影、使用されます。GPU負荷,メモリが軽減されます。レガシー(m00-m49)のみ有効な設定です(SEQ16464)"
+    },
+    {
+      "Field": "OverrideGIResolution_XSS",
+      "Name": "GI解像度上書き設定_XSSプラット",
+      "Description": "XSS(Xbox SeriesS,Lockhart)で使用するGI解像度上書きします"
+    },
+    {
+      "Field": "MapLoHiChangeBorderDist_XZ",
+      "Name": "マップハイヒット切り替判定AABB_幅奥行き(XZ)[m]",
+      "Description": "マップハイヒット切り替判定AABB_幅奥行き(XZ)[m](SEQ16295)"
+    },
+    {
+      "Field": "MapLoHiChangeBorderDist_Y",
+      "Name": "マップハイヒット切り替え判定AABB_高さ(Y)[m]",
+      "Description": "マップハイヒット切り替え判定AABB_高さ(Y)[m](SEQ16295)"
+    },
+    {
+      "Field": "MapLoHiChangePlayDist",
+      "Name": "マップハイヒット切り替え判定遊び距離[m]",
+      "Description": "マップハイヒット切り替え判定遊び距離[m]。通常はデフォルトでいいはず。小さいAABBの場合は必要に応じて調整してください。遊びがあまりに小さいと頻繁に切り替えが起こります。AABBサイズより大きい場合は想定してません(SEQ16295)"
+    },
+    {
+      "Field": "MapAutoDrawGroupBackFacePixelNum",
+      "Name": "自動描画グループ計算で、裏面判定となるピクセル数",
+      "Description": "自動描画グループ計算で、裏面判定となるピクセル数"
+    },
+    {
+      "Field": "PlayerLigntScale",
+      "Name": "Playerライト強度スケール値",
+      "Description": "このマップでPC、PC馬常駐光源にかけるスケールを指定します(SEQ16562)"
+    },
+    {
+      "Field": "IsEnableTimezonnePlayerLigntScale",
+      "Name": "時間帯によるPlayerライト強度スケール変化をするか？",
+      "Description": "このマップでPC、PC馬常駐光源、時間帯によるPlayerライト強度スケール変化をするか？を指定します(SEQ16562)"
+    },
+    {
+      "Field": "isDisableAutoCliffWind",
+      "Name": "自動崖風SE無効にするか？",
+      "Description": "自動崖風SE無効にするか？(SEQ15729)"
+    },
+    {
+      "Field": "OpenChrActivateThreshold",
+      "Name": "オープンキャラアクティベート制限_評価値閾値",
+      "Description": "オープンキャラアクティベート制限_評価値閾値"
+    },
+    {
+      "Field": "MapMimicryEstablishmentParamId",
+      "Name": "マップ別擬態確率パラメータID",
+      "Description": "マップ別擬態確率パラメータID(SEQ22471)"
+    },
+    {
+      "Field": "OverrideGIResolution_XSX",
+      "Name": "GI解像度上書き設定_XSXプラット",
+      "Description": "XSX(Xbox SeriesX,Anaconda)で使用するGI解像度上書きします"
+    },
+    {
+      "Field": "Reserve",
+      "Name": "リザーブ",
+      "Description": "リザーブ"
+    }
+  ]
+}

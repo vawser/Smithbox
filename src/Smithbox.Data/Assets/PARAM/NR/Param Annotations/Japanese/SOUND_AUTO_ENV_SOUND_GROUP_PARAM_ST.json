@@ -1,0 +1,28 @@
+{
+  "Param": "SOUND_AUTO_ENV_SOUND_GROUP_PARAM_ST",
+  "Type": "SOUND_AUTO_ENV_SOUND_GROUP_PARAM_ST",
+  "Name": "SOUND_AUTO_ENV_SOUND_GROUP_PARAM_ST",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "SoundNo",
+      "Name": "サウンドNo",
+      "Description": "再生するサウンドNo (サウンドタイプはa固定)"
+    },
+    {
+      "Field": "ExpandRange",
+      "Name": "判定拡張距離",
+      "Description": "再生判定領域の拡張距離"
+    },
+    {
+      "Field": "FollowSpeed",
+      "Name": "音源追従スピード",
+      "Description": "実音源の目標位置への追従速度(固定速度)"
+    },
+    {
+      "Field": "FollowRate",
+      "Name": "音源追従率",
+      "Description": "実音源の目標位置への追従速度(差分割合)"
+    }
+  ]
+}
