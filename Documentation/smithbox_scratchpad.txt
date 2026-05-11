@@ -1,24 +1,29 @@
 #---------------------
+# New Feature Ideas
+#---------------------
+- Bullet Simulator
+ - Add primitive simulation of bullet behavior, making use of the primitive draw elements to display the path and projectiles.
+ 
+#---------------------
 # TODO 
 #---------------------
 - General
  - Check backwards compat with keybinds, 2.1.1 usage with newer keybinds store causes CTD.
 
 - Model Editor
- - Mesh visbility/delete not working properly
- 
  - Rendering experiment (TinyFFR)
+ - Mesh visbility/delete not working properly
  
 - Material Editor:
  - Add MATBIN support back
  
+- Text Editor:
+ - Speed up Text import functionality
+ 
 - Param Editor
- - Add ability to save sets of search commands as 'filters' with a specific name + add dropdown to quickly select a 'filter'
  - Finish converting the SDT AlternativeOrders into Field Layouts
  - Translate DS2 meta
+ - Finish AC6 meta
  
-- Bullet Simulator
- - Add primitive simulation of bullet behavior, making use of the primitive draw elements to display the path and projectiles.
-
 - Gparam Editor:
  - Add multi-select for the value list (and to duplicate/delete/export)

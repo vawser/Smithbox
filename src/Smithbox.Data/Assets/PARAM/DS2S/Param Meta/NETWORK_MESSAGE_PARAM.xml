@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PARAMMETA XmlVersion="0">
     <Field>
-        <host />
-        <white />
-        <smallWhite />
-        <gold />
-        <smallGold />
-        <coopBlue />
-        <versusBlue />
-        <blackSign />
-        <blackIntrude />
-        <redSign />
-        <redIntrude />
-        <bellGuard />
-        <ratKing />
-        <dragon />
-        <mirrorKnightSign />
-        <abyssSign />
-        <duelBlue />
-        <duelRed />
-        <dummy01 />
-        <dummy02 />
-        <mirrorKnightIntrude />
-        <abyssIntrude />
+        <host FmgRef="ingamesystem" />
+        <white FmgRef="ingamesystem" />
+        <smallWhite FmgRef="ingamesystem" />
+        <gold FmgRef="ingamesystem" />
+        <smallGold FmgRef="ingamesystem" />
+        <coopBlue FmgRef="ingamesystem" />
+        <versusBlue FmgRef="ingamesystem" />
+        <blackSign FmgRef="ingamesystem" />
+        <blackIntrude FmgRef="ingamesystem" />
+        <redSign FmgRef="ingamesystem" />
+        <redIntrude FmgRef="ingamesystem" />
+        <bellGuard FmgRef="ingamesystem" />
+        <ratKing FmgRef="ingamesystem" />
+        <dragon FmgRef="ingamesystem" />
+        <mirrorKnightSign FmgRef="ingamesystem" />
+        <abyssSign FmgRef="ingamesystem" />
+        <duelBlue FmgRef="ingamesystem" />
+        <duelRed FmgRef="ingamesystem" />
+        <dummy01 Padding="" />
+        <dummy02 Padding="" />
+        <mirrorKnightIntrude FmgRef="ingamesystem" />
+        <abyssIntrude FmgRef="ingamesystem" />
     </Field>
 </PARAMMETA>

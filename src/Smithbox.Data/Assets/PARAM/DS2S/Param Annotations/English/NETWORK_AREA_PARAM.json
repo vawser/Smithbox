@@ -2,71 +2,71 @@
   "Param": "NETWORK_AREA_PARAM",
   "Type": "NETWORK_AREA_PARAM",
   "Name": "NETWORK_AREA_PARAM",
-  "Description": "",
+  "Description": "Defines network region grid settings and multiplayer feature availability within specific world areas, including message, ghost, and invasion systems.",
   "Fields": [
     {
       "Field": "cellSizeX",
-      "Name": "セルサイズX",
-      "Description": ""
+      "Name": "Cell Size: X",
+      "Description": "Width of a single network grid cell."
     },
     {
       "Field": "cellSizeY",
-      "Name": "セルサイズY",
-      "Description": ""
+      "Name": "Cell Size: Y",
+      "Description": "Height of a single network grid cell."
     },
     {
       "Field": "cellSizeZ",
-      "Name": "セルサイズZ",
-      "Description": ""
+      "Name": "Cell Size: Z",
+      "Description": "Depth of a single network grid cell."
     },
     {
       "Field": "cellOffsetX",
-      "Name": "セルオフセットX",
-      "Description": ""
+      "Name": "Cell Offset: X",
+      "Description": "X-axis offset applied to the network grid positioning."
     },
     {
       "Field": "cellOffsetY",
-      "Name": "セルオフセットY",
-      "Description": ""
+      "Name": "Cell Offset: Y",
+      "Description": "Y-axis offset applied to the network grid positioning."
     },
     {
       "Field": "cellOffsetZ",
-      "Name": "セルオフセットZ",
-      "Description": ""
+      "Name": "Cell Offset: Z",
+      "Description": "Z-axis offset applied to the network grid positioning."
     },
     {
       "Field": "enableBloodstain",
-      "Name": "血痕・死亡幻影有効",
-      "Description": ""
+      "Name": "Enable Bloodstains and Death Phantoms",
+      "Description": "Determines whether bloodstains and death replays are visible in this area."
     },
     {
       "Field": "enableBloodMessage",
-      "Name": "血文字有効",
-      "Description": ""
+      "Name": "Enable Blood Messages",
+      "Description": "Determines whether player-written blood messages are visible."
     },
     {
       "Field": "enableGhost",
-      "Name": "幻影有効",
-      "Description": ""
+      "Name": "Enable Ghosts",
+      "Description": "Determines whether ghost replays of other players are shown."
     },
     {
       "Field": "enableMultiPlay",
-      "Name": "マルチプレイ有効",
-      "Description": ""
+      "Name": "Enable Multiplayer",
+      "Description": "Enables or disables multiplayer interactions in this area."
     },
     {
       "Field": "enableRingSearch",
-      "Name": "指輪検索有効",
-      "Description": ""
+      "Name": "Enable Ring Search",
+      "Description": "Allows ring-based matchmaking or search systems in this area."
     },
     {
       "Field": "enableBreakInSearch",
-      "Name": "乱入検索有効",
-      "Description": ""
+      "Name": "Enable Invasion Search",
+      "Description": "Allows matchmaking for invasion-style multiplayer encounters."
     },
     {
       "Field": "dummy",
-      "Name": "ダミー",
+      "Name": "Padding",
       "Description": ""
     }
   ]

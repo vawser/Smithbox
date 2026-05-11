@@ -2,671 +2,671 @@
   "Param": "NETWORK_PARAM",
   "Type": "NETWORK_PARAM",
   "Name": "NETWORK_PARAM",
-  "Description": "",
+  "Description": "Defines global network gameplay tuning parameters for multiplayer systems, including summons, messages, bloodstains, ghost replays, matchmaking, and online limits.",
   "Fields": [
     {
       "Field": "signVerticalOffset",
-      "Name": "サイン高さオフセット[m]",
-      "Description": ""
+      "Name": "Sign Vertical Offset [m]",
+      "Description": "Vertical height offset applied when placing player summon signs."
     },
     {
       "Field": "maxSignPosCorrectionRange",
-      "Name": "サイン位置補正最大距離[m]",
-      "Description": ""
+      "Name": "Max Sign Position Correction Distance [m]",
+      "Description": "Maximum distance allowed for automatic correction of sign placement position."
     },
     {
       "Field": "summonTimeoutTime",
-      "Name": "召喚希望タイムアウト時間[秒]",
-      "Description": ""
+      "Name": "Summon Request Timeout [sec]",
+      "Description": "Time limit before a summon request expires."
     },
     {
       "Field": "summonSingKeyGuideRange",
-      "Name": "キーガイド水平範囲[m]",
-      "Description": ""
+      "Name": "Summon Sign: Key Guide Horizontal Range [m]",
+      "Description": "Horizontal range in which summon key guides are displayed."
     },
     {
       "Field": "summonSingKeyGuideHeight",
-      "Name": "キーガイド垂直範囲[m]",
-      "Description": ""
+      "Name": "Summon Sign: Key Guide Vertical Range [m]",
+      "Description": "Vertical range in which summon key guides are displayed."
     },
     {
       "Field": "summonSignReloadSignIntervalTime1",
-      "Name": "召喚サイン再取得待機時間(過疎時)[秒]",
-      "Description": ""
+      "Name": "Summon Sign Reload Interval (Low Population) [sec]",
+      "Description": "Refresh interval for summon signs in low activity areas."
     },
     {
       "Field": "summonSignReloadSignIntervalTime2",
-      "Name": "召喚サイン再取得待機時間[秒]",
-      "Description": ""
+      "Name": "Summon Sign Reload Interval [sec]",
+      "Description": "Standard refresh interval for summon signs."
     },
     {
       "Field": "summonSignReloadSignTotalCount",
-      "Name": "召喚サイン所持可能数上限(全体)",
-      "Description": ""
+      "Name": "Max Summon Signs (Total)",
+      "Description": "Maximum number of summon signs that can be stored globally."
     },
     {
       "Field": "summonSignReloadSignCellCount",
-      "Name": "召喚サイン所持可能数上限(セル)",
-      "Description": ""
+      "Name": "Max Summon Signs (Cell)",
+      "Description": "Maximum number of summon signs stored per world cell."
     },
     {
       "Field": "summonSignUpdateSignIntervalTime",
-      "Name": "召喚サイン更新待機時間[秒]",
-      "Description": ""
+      "Name": "Summon Sign Update Interval [sec]",
+      "Description": "Interval for updating summon sign data."
     },
     {
       "Field": "summonSignBasicExclusiveRange",
-      "Name": "召喚サイン間描画排他水平範囲[m]",
-      "Description": ""
+      "Name": "Summon Sign Exclusion Range (Horizontal) [m]",
+      "Description": "Horizontal range preventing overlapping summon sign display."
     },
     {
       "Field": "summonSignBasicExclusiveHeight",
-      "Name": "召喚サイン間描画排他垂直範囲[m]",
-      "Description": ""
+      "Name": "Summon Sign Exclusion Range (Vertical) [m]",
+      "Description": "Vertical range preventing overlapping summon sign display."
     },
     {
       "Field": "previewChrWaitingTime",
-      "Name": "召喚サインキャラモデル描画待機時間[秒]",
-      "Description": ""
+      "Name": "Summon Sign Character Preview Delay [sec]",
+      "Description": "Delay before character models appear on summon signs."
     },
     {
       "Field": "summonSignVisibleRange",
-      "Name": "召喚サインPC間描画距離[m]",
-      "Description": ""
+      "Name": "Summon Sign Visibility Distance [m]",
+      "Description": "Maximum distance at which summon signs are visible."
     },
     {
       "Field": "summonSignCellGroupHorizontalRange",
-      "Name": "召喚サイン取得セル範囲(水平)",
-      "Description": ""
+      "Name": "Summon Sign Cell Range (Horizontal)",
+      "Description": "Horizontal cell range used for summon sign search."
     },
     {
       "Field": "summonSignCellGroupTopRange",
-      "Name": "召喚サイン取得セル範囲(上方向)",
-      "Description": ""
+      "Name": "Summon Sign Cell Range (Up)",
+      "Description": "Upper vertical cell range for summon sign search."
     },
     {
       "Field": "summonSignCellGroupBottomRange",
-      "Name": "召喚サイン取得セル範囲(下方向)",
-      "Description": ""
+      "Name": "Summon Sign Cell Range (Down)",
+      "Description": "Lower vertical cell range for summon sign search."
     },
     {
       "Field": "minWhitePhantomLimitTimeScale",
-      "Name": "白霊サイン表示制限時間下限倍率",
-      "Description": ""
+      "Name": "White Phantom Time Limit Minimum Scale",
+      "Description": "Minimum multiplier for white phantom duration limits."
     },
     {
       "Field": "minSmallPhantomLimitTimeScale",
-      "Name": "小霊サイン表示制限時間下限倍率",
-      "Description": ""
+      "Name": "Small Phantom Time Limit Minimum Scale",
+      "Description": "Minimum multiplier for small phantom duration limits."
     },
     {
       "Field": "whiteKeywordLimitTimeScale",
-      "Name": "白霊サインキーワード延長倍率",
-      "Description": ""
+      "Name": "White Phantom Keyword Time Extension Scale",
+      "Description": "Multiplier applied to white phantom duration when keyword conditions are met."
     },
     {
       "Field": "smallKeywordLimitTimeScale",
-      "Name": "小霊サインキーワード延長倍率",
-      "Description": ""
+      "Name": "Small Phantom Keyword Time Extension Scale",
+      "Description": "Multiplier applied to small phantom duration when keyword conditions are met."
     },
     {
       "Field": "blackKeywordLimitTimeScale",
-      "Name": "闇霊サインキーワード延長倍率",
-      "Description": ""
+      "Name": "Black Phantom Keyword Time Extension Scale",
+      "Description": "Multiplier applied to black phantom duration when keyword conditions are met."
     },
     {
       "Field": "dragonKeywordLimitTimeScale",
-      "Name": "竜霊サインキーワード延長倍率",
-      "Description": ""
+      "Name": "Dragon Phantom Keyword Time Extension Scale",
+      "Description": "Multiplier applied to dragon phantom duration when keyword conditions are met."
     },
     {
       "Field": "maxBreakInTargetListCount",
-      "Name": "乱入先取得数",
-      "Description": ""
+      "Name": "Max Invasion Target List Count",
+      "Description": "Maximum number of invasion targets retrieved."
     },
     {
       "Field": "bloodMessageKeyGuideRange",
-      "Name": "キーガイド水平範囲[m]",
-      "Description": ""
+      "Name": "Blood Message: Key Guide Horizontal Range [m]",
+      "Description": "Horizontal range for blood message interaction prompts."
     },
     {
       "Field": "bloodMessageKeyGuideHeight",
-      "Name": "キーガイド垂直範囲[m]",
-      "Description": ""
+      "Name": "Blood Message: Key Guide Vertical Range [m]",
+      "Description": "Vertical range for blood message interaction prompts."
     },
     {
       "Field": "bloodMessageReloadSignTotalCount",
-      "Name": "血文字取得数(全体)",
-      "Description": ""
+      "Name": "Blood Message Reload Count (Total)",
+      "Description": "Total number of blood messages retrieved."
     },
     {
       "Field": "bloodMessageReloadNewSignCellCount",
-      "Name": "血文字取得数(セル、新順)",
-      "Description": ""
+      "Name": "Blood Message Reload Count (Newest First)",
+      "Description": "Number of newly sorted blood messages retrieved per cell."
     },
     {
       "Field": "bloodMessageReloadRandomSignCellCount",
-      "Name": "血文字取得数(セル、ランダム )",
-      "Description": ""
+      "Name": "Blood Message Reload Count (Random)",
+      "Description": "Number of randomly selected blood messages per cell."
     },
     {
       "Field": "bloodMessageMaxSignTotalCount",
-      "Name": "血文字所持可能数上限(全体)",
-      "Description": ""
+      "Name": "Max Blood Messages (Total)",
+      "Description": "Maximum number of blood messages stored globally."
     },
     {
       "Field": "bloodMessageMaxSignCellCount",
-      "Name": "血文字所持可能数上限(セル)",
-      "Description": ""
+      "Name": "Max Blood Messages (Cell)",
+      "Description": "Maximum number of blood messages stored per cell."
     },
     {
       "Field": "bloodMessageBasicExclusiveRange",
-      "Name": "血文字間描画排他水平範囲[m]",
-      "Description": ""
+      "Name": "Blood Message Exclusion Range (Horizontal) [m]",
+      "Description": "Horizontal spacing to prevent overlapping blood messages."
     },
     {
       "Field": "bloodMessageBasicExclusiveHeight",
-      "Name": "血文字間描画排他垂直範囲[m]",
-      "Description": ""
+      "Name": "Blood Message Exclusion Range (Vertical) [m]",
+      "Description": "Vertical spacing to prevent overlapping blood messages."
     },
     {
       "Field": "bloodMessageSignVisibleRange",
-      "Name": "血文字PC間描画距離[m]",
-      "Description": ""
+      "Name": "Blood Message Visibility Distance [m]",
+      "Description": "Maximum distance at which blood messages are visible."
     },
     {
       "Field": "bloodMessageMaxWriteSignCount",
-      "Name": "書いた血文字履歴件数上限",
-      "Description": ""
+      "Name": "Max Written Message History",
+      "Description": "Maximum number of stored written blood messages."
     },
     {
       "Field": "bloodMessageMaxReadSignCount",
-      "Name": "読んだ血文字履歴件数上限",
-      "Description": ""
+      "Name": "Max Read Message History",
+      "Description": "Maximum number of stored read blood messages."
     },
     {
       "Field": "bloodMessageReloadSignIntervalTime",
-      "Name": "血文字再取得待機時間[秒]",
-      "Description": ""
+      "Name": "Blood Message Reload Interval [sec]",
+      "Description": "Time interval between blood message refreshes."
     },
     {
       "Field": "bloodMessageCellGroupHorizontalRange",
-      "Name": "血文字取得セル範囲(水平)",
-      "Description": ""
+      "Name": "Blood Message Cell Range (Horizontal)",
+      "Description": "Horizontal search range for blood messages."
     },
     {
       "Field": "bloodMessageCellGroupTopRange",
-      "Name": "血文字取得セル範囲(上方向)",
-      "Description": ""
+      "Name": "Blood Message Cell Range (Up)",
+      "Description": "Upper vertical search range for blood messages."
     },
     {
       "Field": "bloodMessageCellGroupBottomRange",
-      "Name": "血文字取得セル範囲(下方向)",
-      "Description": ""
+      "Name": "Blood Message Cell Range (Down)",
+      "Description": "Lower vertical search range for blood messages."
     },
     {
       "Field": "bloodMessageLifeTime",
-      "Name": "血文字データ保持期間上限[秒]",
-      "Description": ""
+      "Name": "Blood Message Lifetime [sec]",
+      "Description": "Maximum duration blood messages remain valid."
     },
     {
       "Field": "areaBloodMessageReloadSignIntervalTime",
-      "Name": "Area blood message reload time interval [sec]",
-      "Description": ""
+      "Name": "Area Blood Message Reload Interval [sec]",
+      "Description": "Interval for refreshing area-based blood messages."
     },
     {
       "Field": "areaBloodMessageReloadUnknownCount",
-      "Name": "areaBloodMessageReloadUnknownCount",
-      "Description": ""
+      "Name": "Area Blood Message Reload Unknown Count",
+      "Description": "Undocumented parameter for area blood message refresh logic."
     },
     {
       "Field": "bloodstainKeyGuideRange",
-      "Name": "キーガイド水平範囲[m]",
-      "Description": ""
+      "Name": "Bloodstain: Key Guide Horizontal Range [m]",
+      "Description": "Horizontal interaction range for bloodstains."
     },
     {
       "Field": "bloodstainKeyGuideHeight",
-      "Name": "キーガイド垂直範囲[m]",
-      "Description": ""
+      "Name": "Bloodstain: Key Guide Vertical Range [m]",
+      "Description": "Vertical interaction range for bloodstains."
     },
     {
       "Field": "bloodstainKeyGuideRangePlayer",
-      "Name": "プレイヤー血痕キーガイド水平範囲[m]",
-      "Description": ""
+      "Name": "Player Bloodstain: Key Guide Horizontal Range [m]",
+      "Description": "Interaction range for player-specific bloodstains."
     },
     {
       "Field": "bloodstainKeyGuideHeightPlayer",
-      "Name": "プレイヤー血痕キーガイド垂直範囲[m]",
-      "Description": ""
+      "Name": "Player Bloodstain: Key Guide Vertical Range [m]",
+      "Description": "Vertical interaction range for player-specific bloodstains."
     },
     {
       "Field": "bloodstainReloadSignTotalCount",
-      "Name": "血痕取得数(全体)",
-      "Description": ""
+      "Name": "Bloodstain Reload Count (Total)",
+      "Description": "Total number of bloodstains retrieved."
     },
     {
       "Field": "bloodstainReloadSignCellCount",
-      "Name": "血痕取得数(セル)",
-      "Description": ""
+      "Name": "Bloodstain Reload Count (Cell)",
+      "Description": "Number of bloodstains retrieved per cell."
     },
     {
       "Field": "bloodstainMaxSignTotalCount",
-      "Name": "血痕所持可能数上限(全体)",
-      "Description": ""
+      "Name": "Max Bloodstains (Total)",
+      "Description": "Maximum number of bloodstains stored globally."
     },
     {
       "Field": "bloodstainMaxSignCellCount",
-      "Name": "血痕所持可能数上限(セル)",
-      "Description": ""
+      "Name": "Max Bloodstains (Cell)",
+      "Description": "Maximum number of bloodstains stored per cell."
     },
     {
       "Field": "bloodstainReloadSignIntervalTime",
-      "Name": "血痕再取得待機時間[秒]",
-      "Description": ""
+      "Name": "Bloodstain Reload Interval [sec]",
+      "Description": "Interval between bloodstain refresh cycles."
     },
     {
       "Field": "bloodstainSignVisibleRange",
-      "Name": "血痕PC間描画距離[m]",
-      "Description": ""
+      "Name": "Bloodstain Visibility Distance [m]",
+      "Description": "Maximum distance at which bloodstains are visible."
     },
     {
       "Field": "bloodstainBasicExclusiveRange",
-      "Name": "血痕間描画排他水平範囲[m]",
-      "Description": ""
+      "Name": "Bloodstain Exclusion Range (Horizontal) [m]",
+      "Description": "Horizontal spacing between bloodstains."
     },
     {
       "Field": "bloodstainBasicExclusiveHeight",
-      "Name": "血痕間描画排他垂直範囲[m]",
-      "Description": ""
+      "Name": "Bloodstain Exclusion Range (Vertical) [m]",
+      "Description": "Vertical spacing between bloodstains."
     },
     {
       "Field": "bloodstainCellGroupHorizontalRange",
-      "Name": "血痕取得セル範囲(水平)",
-      "Description": ""
+      "Name": "Bloodstain Cell Range (Horizontal)",
+      "Description": "Horizontal search range for bloodstains."
     },
     {
       "Field": "bloodstainCellGroupTopRange",
-      "Name": "血痕取得セル範囲(上方向)",
-      "Description": ""
+      "Name": "Bloodstain Cell Range (Up)",
+      "Description": "Upper vertical search range for bloodstains."
     },
     {
       "Field": "bloodstainCellGroupBottomRange",
-      "Name": "血痕取得セル範囲(下方向)",
-      "Description": ""
+      "Name": "Bloodstain Cell Range (Down)",
+      "Description": "Lower vertical search range for bloodstains."
     },
     {
       "Field": "bloodstainLifeTime",
-      "Name": "血痕データ保持期間上限[秒]",
-      "Description": ""
+      "Name": "Bloodstain Lifetime [sec]",
+      "Description": "Duration bloodstains remain valid."
     },
     {
       "Field": "recordDeadingGhostTotalTime",
-      "Name": "死亡幻影記録合計時間[秒]",
-      "Description": ""
+      "Name": "Death Ghost Recording Total Time [sec]",
+      "Description": "Total recording duration for death ghosts."
     },
     {
       "Field": "recordDeadingGhostExtensionTime",
-      "Name": "死亡幻影記録延長時間[秒]",
-      "Description": ""
+      "Name": "Death Ghost Recording Extension Time [sec]",
+      "Description": "Additional recording time for death ghosts."
     },
     {
       "Field": "areaBloodstainReloadSignIntervalTime",
-      "Name": "Area bloodstain reload time interval [sec]",
-      "Description": ""
+      "Name": "Area Bloodstain Reload Interval [sec]",
+      "Description": "Refresh interval for area bloodstains."
     },
     {
       "Field": "areaBloodstainReloadUnknownCount",
-      "Name": "areaBloodstainReloadUnknownCount",
-      "Description": ""
+      "Name": "Area Bloodstain Reload Unknown Count",
+      "Description": "Undocumented parameter for area bloodstain refresh logic."
     },
     {
       "Field": "bloodstainPoolMinCullPriority",
-      "Name": "bloodstainPoolMinCullPriority",
-      "Description": ""
+      "Name": "Bloodstain Pool Min Cull Priority",
+      "Description": "Minimum priority used for culling bloodstains."
     },
     {
       "Field": "bloodstainPoolMaxSignCount",
-      "Name": "bloodstainPoolMaxSignCount",
-      "Description": ""
+      "Name": "Bloodstain Pool Max Count",
+      "Description": "Maximum number of bloodstains in pool."
     },
     {
       "Field": "bloodstainPoolRadius",
-      "Name": "bloodstainPoolRadius",
-      "Description": ""
+      "Name": "Bloodstain Pool Radius",
+      "Description": "Radius used for bloodstain pooling system."
     },
     {
       "Field": "reloadGhostTotalCount",
-      "Name": "幻影取得数(全体)",
-      "Description": ""
+      "Name": "Ghost Reload Count (Total)",
+      "Description": "Total number of ghosts retrieved."
     },
     {
       "Field": "reloadGhostCellCount",
-      "Name": "幻影取得数(セル)",
-      "Description": ""
+      "Name": "Ghost Reload Count (Cell)",
+      "Description": "Number of ghosts retrieved per cell."
     },
     {
       "Field": "maxGhostTotalCount",
-      "Name": "幻影所持可能数上限(全体)",
-      "Description": ""
+      "Name": "Max Ghosts (Total)",
+      "Description": "Maximum number of ghosts stored globally."
     },
     {
       "Field": "distanceOfBeginRecordVersus",
-      "Name": "敵対PCリプレイ記録開始距離[m]",
-      "Description": ""
+      "Name": "Start Versus Ghost Recording Distance [m]",
+      "Description": "Distance at which PvP ghost recording begins."
     },
     {
       "Field": "distanceOfEndRecordVersus",
-      "Name": "敵対PCリプレイ記録終了距離[m]",
-      "Description": ""
+      "Name": "End Versus Ghost Recording Distance [m]",
+      "Description": "Distance at which PvP ghost recording ends."
     },
     {
       "Field": "updateWanderGhostIntervalTime",
-      "Name": "徘徊幻影アップロード間隔[秒]",
-      "Description": ""
+      "Name": "Wandering Ghost Upload Interval [sec]",
+      "Description": "Interval for uploading wandering ghost data."
     },
     {
       "Field": "updateVersusGhostIntervalTime",
-      "Name": "対戦幻影アップロード間隔[秒]",
-      "Description": ""
+      "Name": "Versus Ghost Upload Interval [sec]",
+      "Description": "Interval for uploading PvP ghost data."
     },
     {
       "Field": "recordWanderingGhostTime",
-      "Name": "徘徊幻影記録時間[秒]",
-      "Description": ""
+      "Name": "Wandering Ghost Recording Time [sec]",
+      "Description": "Duration of wandering ghost recording."
     },
     {
       "Field": "recordVersusGhostTime",
-      "Name": "対戦幻影記録時間[秒]",
-      "Description": ""
+      "Name": "Versus Ghost Recording Time [sec]",
+      "Description": "Duration of PvP ghost recording."
     },
     {
       "Field": "updateBonfireGhostIntervalTime",
-      "Name": "篝火幻影アップロード間隔[秒]",
-      "Description": ""
+      "Name": "Bonfire Ghost Upload Interval [sec]",
+      "Description": "Interval for bonfire ghost uploads."
     },
     {
       "Field": "replayGhostRangeOnView",
-      "Name": "幻影再生距離（視野内）[秒]",
-      "Description": ""
+      "Name": "Ghost Replay Distance (On Screen) [sec]",
+      "Description": "Distance for ghost replay when visible."
     },
     {
       "Field": "replayGhostRangeOutView",
-      "Name": "幻影再生距離（視野外）[秒]",
-      "Description": ""
+      "Name": "Ghost Replay Distance (Off Screen) [sec]",
+      "Description": "Distance for ghost replay when not visible."
     },
     {
       "Field": "replayBonfireGhostTime",
-      "Name": "篝火幻影再生時間[秒]",
-      "Description": ""
+      "Name": "Bonfire Ghost Replay Time [sec]",
+      "Description": "Duration of bonfire ghost replay."
     },
     {
       "Field": "minBonfireGhostValidRange",
-      "Name": "篝火幻影配置最小距離[秒]",
-      "Description": ""
+      "Name": "Min Bonfire Ghost Placement Distance [sec]",
+      "Description": "Minimum valid placement distance for bonfire ghosts."
     },
     {
       "Field": "maxBonfireGhostValidRange",
-      "Name": "篝火幻影配置最大距離[秒]",
-      "Description": ""
+      "Name": "Max Bonfire Ghost Placement Distance [sec]",
+      "Description": "Maximum valid placement distance for bonfire ghosts."
     },
     {
       "Field": "minReplayIntervalTime",
-      "Name": "幻影再生間隔下限[秒]",
-      "Description": ""
+      "Name": "Min Ghost Replay Interval [sec]",
+      "Description": "Minimum interval between ghost replays."
     },
     {
       "Field": "maxReplayIntervalTime",
-      "Name": "幻影再生間隔上限[秒]",
-      "Description": ""
+      "Name": "Max Ghost Replay Interval [sec]",
+      "Description": "Maximum interval between ghost replays."
     },
     {
       "Field": "reloadGhostIntervalTime",
-      "Name": "幻影定期取得間隔[秒]",
-      "Description": ""
+      "Name": "Ghost Reload Interval [sec]",
+      "Description": "Interval for refreshing ghost data."
     },
     {
       "Field": "cellGroupHorizontalRange",
-      "Name": "幻影取得セル範囲(水平)",
-      "Description": ""
+      "Name": "Ghost Cell Range (Horizontal)",
+      "Description": "Horizontal range for ghost cell grouping."
     },
     {
       "Field": "cellGroupTopRange",
-      "Name": "幻影取得セル範囲(上方向)",
-      "Description": ""
+      "Name": "Ghost Cell Range (Up)",
+      "Description": "Upper vertical range for ghost cell grouping."
     },
     {
       "Field": "cellGroupBottomRange",
-      "Name": "幻影取得セル範囲(下方向)",
-      "Description": ""
+      "Name": "Ghost Cell Range (Down)",
+      "Description": "Lower vertical range for ghost cell grouping."
     },
     {
       "Field": "replayBonfireModeRange",
-      "Name": "幻影篝火モード再生適用距離",
-      "Description": ""
+      "Name": "Bonfire Ghost Mode Replay Range",
+      "Description": "Distance for bonfire mode ghost playback."
     },
     {
       "Field": "stopBonfireModeRangeOnView",
-      "Name": "幻影篝火モード停止距離（視野内）[秒]",
-      "Description": ""
+      "Name": "Stop Bonfire Mode Range (On Screen) [sec]",
+      "Description": "Distance where bonfire mode ghost playback stops when visible."
     },
     {
       "Field": "stopBonfireModeRangeOutView",
-      "Name": "幻影篝火モード停止距離（視野外）[秒]",
-      "Description": ""
+      "Name": "Stop Bonfire Mode Range (Off Screen) [sec]",
+      "Description": "Distance where bonfire mode ghost playback stops when not visible."
     },
     {
       "Field": "reloadVisitListCoolTime",
-      "Name": "指輪検索間隔[秒]",
-      "Description": ""
+      "Name": "Ring Search Cooldown [sec]",
+      "Description": "Cooldown time between ring search queries."
     },
     {
       "Field": "maxCoopBlueSummonCount",
-      "Name": "救援青霊出現数上限",
-      "Description": ""
+      "Name": "Max Co-op Blue Phantoms",
+      "Description": "Maximum number of cooperative blue phantoms."
     },
     {
       "Field": "maxBellGuardSummonCount",
-      "Name": "鐘守灰霊出現数上限",
-      "Description": ""
+      "Name": "Max Bell Keeper Phantoms",
+      "Description": "Maximum number of Bell Keeper phantoms."
     },
     {
       "Field": "maxVisitListCount",
-      "Name": "指輪検索先取得数",
-      "Description": ""
+      "Name": "Max Ring Search Results",
+      "Description": "Maximum number of ring search results."
     },
     {
       "Field": "reloadSearch_CoopBlue_Min",
-      "Name": "救援青霊リロード時間\u3000最小[sec]",
-      "Description": ""
+      "Name": "Co-op Blue Search Reload Min [sec]",
+      "Description": "Minimum reload time for co-op blue search."
     },
     {
       "Field": "reloadSearch_CoopBlue_Max",
-      "Name": "救援青霊リロード時間\u3000最大[sec]",
-      "Description": ""
+      "Name": "Co-op Blue Search Reload Max [sec]",
+      "Description": "Maximum reload time for co-op blue search."
     },
     {
       "Field": "reloadSearch_BellGuard_Min",
-      "Name": "鐘守リロード時間\u3000最小[sec]",
-      "Description": ""
+      "Name": "Bell Keeper Search Reload Min [sec]",
+      "Description": "Minimum reload time for Bell Keeper search."
     },
     {
       "Field": "reloadSearch_BellGuard_Max",
-      "Name": "鐘守リロード時間\u3000最大[sec]",
-      "Description": ""
+      "Name": "Bell Keeper Search Reload Max [sec]",
+      "Description": "Maximum reload time for Bell Keeper search."
     },
     {
       "Field": "reloadSearch_RatKing_Min",
-      "Name": "ネズミの王リロード時間\u3000最小[sec]",
-      "Description": ""
+      "Name": "Rat King Search Reload Min [sec]",
+      "Description": "Minimum reload time for Rat King search."
     },
     {
       "Field": "reloadSearch_RatKing_Max",
-      "Name": "ネズミの王リロード時間\u3000最大[sec]",
-      "Description": ""
+      "Name": "Rat King Search Reload Max [sec]",
+      "Description": "Maximum reload time for Rat King search."
     },
     {
       "Field": "visitpad00",
-      "Name": "予約",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "srttMaxLimit",
-      "Name": "SRTT上限[ミリ秒]",
-      "Description": ""
+      "Name": "SRTT Max Limit [ms]",
+      "Description": "Maximum smoothed round-trip time allowed."
     },
     {
       "Field": "srttMeanLimit",
-      "Name": "SRTT上限(安定時)[ミリ秒]",
-      "Description": ""
+      "Name": "SRTT Stable Limit [ms]",
+      "Description": "Stable threshold for round-trip time."
     },
     {
       "Field": "srttMeanDeviationLimit",
-      "Name": "RTT平均偏差上限[ミリ秒]",
-      "Description": ""
+      "Name": "RTT Mean Deviation Limit [ms]",
+      "Description": "Maximum allowed deviation in latency."
     },
     {
       "Field": "darkPhantomLimitBoostTime",
-      "Name": "闇霊制限時間加速時間[秒]",
-      "Description": ""
+      "Name": "Dark Phantom Limit Boost Time [sec]",
+      "Description": "Duration for accelerated dark phantom limit decay."
     },
     {
       "Field": "darkPhantomLimitBoostScale",
-      "Name": "闇霊制限時間加速時倍率",
-      "Description": ""
+      "Name": "Dark Phantom Limit Boost Scale",
+      "Description": "Multiplier applied during boosted limit decay."
     },
     {
       "Field": "multiplayDisableLifeTime",
-      "Name": "マルチプレイ無効化寿命",
-      "Description": ""
+      "Name": "Multiplayer Disable Lifetime",
+      "Description": "Time before multiplayer restrictions expire."
     },
     {
       "Field": "abyssMultiplayLimit",
-      "Name": "深淵霊マルチプレイ回数",
-      "Description": ""
+      "Name": "Abyss Multiplayer Limit",
+      "Description": "Maximum allowed abyss multiplayer sessions."
     },
     {
       "Field": "phantomWarpMinimumTime",
-      "Name": "霊体がワープするまでの最低時間[秒]",
-      "Description": ""
+      "Name": "Minimum Phantom Warp Time [sec]",
+      "Description": "Minimum delay before phantom warp occurs."
     },
     {
       "Field": "phantomReturnDelayTime",
-      "Name": "黒水晶使用後に帰還するまでのディレイ時間[秒]",
-      "Description": ""
+      "Name": "Black Crystal Return Delay [sec]",
+      "Description": "Delay before returning after black crystal usage."
     },
     {
       "Field": "terminateTimeoutTime",
-      "Name": "切断待ちのタイムアウト時間",
-      "Description": ""
+      "Name": "Disconnect Timeout",
+      "Description": "Timeout before session termination."
     },
     {
       "Field": "penaltyPointLanDisconnect",
-      "Name": "LAN抜きによるペナルティ加算値",
-      "Description": ""
+      "Name": "Penalty (LAN Disconnect)",
+      "Description": "Penalty applied for LAN disconnection."
     },
     {
       "Field": "penaltyPointSignout",
-      "Name": "サインアウトによるペナルティ加算値",
-      "Description": ""
+      "Name": "Penalty (Sign Out)",
+      "Description": "Penalty applied for manual sign-out."
     },
     {
       "Field": "penaltyPointReboot",
-      "Name": "電源断によるペナルティ加算値",
-      "Description": ""
+      "Name": "Penalty (Reboot)",
+      "Description": "Penalty applied for power loss or reboot."
     },
     {
       "Field": "penaltyPointBeginPenalize",
-      "Name": "ペナルティが発動するペナルティ値",
-      "Description": ""
+      "Name": "Penalty Activation Threshold",
+      "Description": "Threshold at which penalties begin to apply."
     },
     {
       "Field": "penaltyForgiveItemLimitTime",
-      "Name": "「線の理」の販売制限時間[秒]",
-      "Description": ""
+      "Name": "Sin Forgiveness Item Limit Time [sec]",
+      "Description": "Time-limited availability for sin forgiveness item."
     },
     {
       "Field": "allAreaSearchRate_CoopBlue",
-      "Name": "全域検索率：救援青霊[0-100]",
-      "Description": ""
+      "Name": "Global Search Rate: Co-op Blue [0-100]",
+      "Description": "Probability of global co-op blue phantom search."
     },
     {
       "Field": "allAreaSearchRate_VsBlue",
-      "Name": "全域検索率：報復青霊[0-100]",
-      "Description": ""
+      "Name": "Global Search Rate: Versus Blue [0-100]",
+      "Description": "Probability of global versus blue phantom search."
     },
     {
       "Field": "allAreaSearchRate_BellGuard",
-      "Name": "全域検索率：鐘守灰霊[0-100]",
-      "Description": ""
+      "Name": "Global Search Rate: Bell Keeper [0-100]",
+      "Description": "Probability of global Bell Keeper phantom search."
     },
     {
       "Field": "bloodMessageEvalHealRate",
-      "Name": "血文字評価時のHP回復割合[0-100]",
-      "Description": ""
+      "Name": "Blood Message Heal Rate [0-100]",
+      "Description": "HP recovery rate when evaluating blood messages."
     },
     {
       "Field": "smallGoldSuccessHostRewardId",
-      "Name": "小金霊成功帰還ホスト報酬ID",
-      "Description": ""
+      "Name": "Small Gold Phantom Success Host Reward ID",
+      "Description": "Reward granted to host when small gold phantom succeeds."
     },
     {
       "Field": "doorInvalidPlayAreaExtents",
-      "Name": "ドア付近プレイ領域無効化距離[m]",
-      "Description": ""
+      "Name": "Door Play Area Disable Distance [m]",
+      "Description": "Distance around doors where gameplay area is disabled."
     },
     {
       "Field": "signDisplayMax",
-      "Name": "サイン最大同時表示数",
-      "Description": ""
+      "Name": "Max Sign Display Count",
+      "Description": "Maximum number of visible summon signs."
     },
     {
       "Field": "bloodStainDisplayMax",
-      "Name": "血痕最大同時表示数",
-      "Description": ""
+      "Name": "Max Bloodstain Display Count",
+      "Description": "Maximum number of visible bloodstains."
     },
     {
       "Field": "bloodMessageDisplayMax",
-      "Name": "血文字最大同時表示数",
-      "Description": ""
+      "Name": "Max Blood Message Display Count",
+      "Description": "Maximum number of visible blood messages."
     },
     {
       "Field": "pad00",
-      "Name": "予約",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "mirrorKnightSignConvertRate",
-      "Name": "ミラーナイトサイン変換割合[0-100]",
-      "Description": ""
+      "Name": "Mirror Knight Sign Conversion Rate [0-100]",
+      "Description": "Chance to convert summon signs into Mirror Knight signs."
     },
     {
       "Field": "reserveMK",
-      "Name": "予約",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "reloadMKSignIntervalTime2",
-      "Name": "ミラーナイトサイン再取得待機時間[秒]",
-      "Description": ""
+      "Name": "Mirror Knight Sign Reload Interval [sec]",
+      "Description": "Time between Mirror Knight sign refreshes."
     },
     {
       "Field": "mirrorKnightSignLifetime",
-      "Name": "ミラーナイトサイン寿命[秒]",
-      "Description": ""
+      "Name": "Mirror Knight Sign Lifetime [sec]",
+      "Description": "Duration Mirror Knight signs remain active."
     },
     {
       "Field": "reloadMKSignTotalCount",
-      "Name": "ミラーナイトサインサイン所持可能数上限",
-      "Description": ""
+      "Name": "Max Mirror Knight Signs",
+      "Description": "Maximum number of Mirror Knight signs stored."
     },
     {
       "Field": "reloadMatchingAreaTime",
-      "Name": "reloadMatchingAreaTime",
-      "Description": ""
+      "Name": "Matching Area Reload Time",
+      "Description": "Interval for updating matchmaking regions."
     },
     {
       "Field": "pad10",
-      "Name": "予約",
+      "Name": "Padding",
       "Description": ""
     }
   ]
