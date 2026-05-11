@@ -2,347 +2,347 @@
   "Param": "HIT_GROUP_PARAM",
   "Type": "HIT_GROUP_PARAM",
   "Name": "HIT_GROUP_PARAM",
-  "Description": "",
+  "Description": "Defines hit group settings including brightness presets, enemy generation limits, and ground material slot mappings.",
   "Fields": [
     {
       "Field": "gameBright0",
-      "Name": "明るさ設定_スロット0",
-      "Description": ""
+      "Name": "Brightness Setting Slot 0",
+      "Description": "Brightness configuration assigned to slot 0."
     },
     {
       "Field": "gameBright1",
-      "Name": "明るさ設定_スロット1",
-      "Description": ""
+      "Name": "Brightness Setting Slot 1",
+      "Description": "Brightness configuration assigned to slot 1."
     },
     {
       "Field": "generateMaxNum",
-      "Name": "最大敵生成数",
-      "Description": ""
+      "Name": "Maximum Enemy Spawn Count",
+      "Description": "Maximum number of enemies that can be generated simultaneously."
     },
     {
       "Field": "aReserved",
-      "Name": "予約",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "groundMaterial240_0",
-      "Name": "GM_240_スロット0",
-      "Description": ""
+      "Name": "Ground Material 240 Slot 0",
+      "Description": "Ground material assignment for material group 240, slot 0."
     },
     {
       "Field": "groundMaterial240_1",
-      "Name": "GM_240_スロット1",
-      "Description": ""
+      "Name": "Ground Material 240 Slot 1",
+      "Description": "Ground material assignment for material group 240, slot 1."
     },
     {
       "Field": "groundMaterial240_2",
-      "Name": "GM_240_スロット2",
-      "Description": ""
+      "Name": "Ground Material 240 Slot 2",
+      "Description": "Ground material assignment for material group 240, slot 2."
     },
     {
       "Field": "groundMaterial240_3",
-      "Name": "GM_240_スロット3",
-      "Description": ""
+      "Name": "Ground Material 240 Slot 3",
+      "Description": "Ground material assignment for material group 240, slot 3."
     },
     {
       "Field": "groundMaterial241_0",
-      "Name": "GM_241_スロット0",
-      "Description": ""
+      "Name": "Ground Material 241 Slot 0",
+      "Description": "Ground material assignment for material group 241, slot 0."
     },
     {
       "Field": "groundMaterial241_1",
-      "Name": "GM_241_スロット1",
-      "Description": ""
+      "Name": "Ground Material 241 Slot 1",
+      "Description": "Ground material assignment for material group 241, slot 1."
     },
     {
       "Field": "groundMaterial241_2",
-      "Name": "GM_241_スロット2",
-      "Description": ""
+      "Name": "Ground Material 241 Slot 2",
+      "Description": "Ground material assignment for material group 241, slot 2."
     },
     {
       "Field": "groundMaterial241_3",
-      "Name": "GM_241_スロット3",
-      "Description": ""
+      "Name": "Ground Material 241 Slot 3",
+      "Description": "Ground material assignment for material group 241, slot 3."
     },
     {
       "Field": "groundMaterial242_0",
-      "Name": "GM_242_スロット0",
-      "Description": ""
+      "Name": "Ground Material 242 Slot 0",
+      "Description": "Ground material assignment for material group 242, slot 0."
     },
     {
       "Field": "groundMaterial242_1",
-      "Name": "GM_242_スロット1",
-      "Description": ""
+      "Name": "Ground Material 242 Slot 1",
+      "Description": "Ground material assignment for material group 242, slot 1."
     },
     {
       "Field": "groundMaterial242_2",
-      "Name": "GM_242_スロット2",
-      "Description": ""
+      "Name": "Ground Material 242 Slot 2",
+      "Description": "Ground material assignment for material group 242, slot 2."
     },
     {
       "Field": "groundMaterial242_3",
-      "Name": "GM_242_スロット3",
-      "Description": ""
+      "Name": "Ground Material 242 Slot 3",
+      "Description": "Ground material assignment for material group 242, slot 3."
     },
     {
       "Field": "groundMaterial243_0",
-      "Name": "GM_243_スロット0",
-      "Description": ""
+      "Name": "Ground Material 243 Slot 0",
+      "Description": "Ground material assignment for material group 243, slot 0."
     },
     {
       "Field": "groundMaterial243_1",
-      "Name": "GM_243_スロット1",
-      "Description": ""
+      "Name": "Ground Material 243 Slot 1",
+      "Description": "Ground material assignment for material group 243, slot 1."
     },
     {
       "Field": "groundMaterial243_2",
-      "Name": "GM_243_スロット2",
-      "Description": ""
+      "Name": "Ground Material 243 Slot 2",
+      "Description": "Ground material assignment for material group 243, slot 2."
     },
     {
       "Field": "groundMaterial243_3",
-      "Name": "GM_243_スロット3",
-      "Description": ""
+      "Name": "Ground Material 243 Slot 3",
+      "Description": "Ground material assignment for material group 243, slot 3."
     },
     {
       "Field": "groundMaterial244_0",
-      "Name": "GM_244_スロット0",
-      "Description": ""
+      "Name": "Ground Material 244 Slot 0",
+      "Description": "Ground material assignment for material group 244, slot 0."
     },
     {
       "Field": "groundMaterial244_1",
-      "Name": "GM_244_スロット1",
-      "Description": ""
+      "Name": "Ground Material 244 Slot 1",
+      "Description": "Ground material assignment for material group 244, slot 1."
     },
     {
       "Field": "groundMaterial244_2",
-      "Name": "GM_244_スロット2",
-      "Description": ""
+      "Name": "Ground Material 244 Slot 2",
+      "Description": "Ground material assignment for material group 244, slot 2."
     },
     {
       "Field": "groundMaterial244_3",
-      "Name": "GM_244_スロット3",
-      "Description": ""
+      "Name": "Ground Material 244 Slot 3",
+      "Description": "Ground material assignment for material group 244, slot 3."
     },
     {
       "Field": "groundMaterial245_0",
-      "Name": "GM_245_スロット0",
-      "Description": ""
+      "Name": "Ground Material 245 Slot 0",
+      "Description": "Ground material assignment for material group 245, slot 0."
     },
     {
       "Field": "groundMaterial245_1",
-      "Name": "GM_245_スロット1",
-      "Description": ""
+      "Name": "Ground Material 245 Slot 1",
+      "Description": "Ground material assignment for material group 245, slot 1."
     },
     {
       "Field": "groundMaterial245_2",
-      "Name": "GM_245_スロット2",
-      "Description": ""
+      "Name": "Ground Material 245 Slot 2",
+      "Description": "Ground material assignment for material group 245, slot 2."
     },
     {
       "Field": "groundMaterial245_3",
-      "Name": "GM_245_スロット3",
-      "Description": ""
+      "Name": "Ground Material 245 Slot 3",
+      "Description": "Ground material assignment for material group 245, slot 3."
     },
     {
       "Field": "groundMaterial246_0",
-      "Name": "GM_246_スロット0",
-      "Description": ""
+      "Name": "Ground Material 246 Slot 0",
+      "Description": "Ground material assignment for material group 246, slot 0."
     },
     {
       "Field": "groundMaterial246_1",
-      "Name": "GM_246_スロット1",
-      "Description": ""
+      "Name": "Ground Material 246 Slot 1",
+      "Description": "Ground material assignment for material group 246, slot 1."
     },
     {
       "Field": "groundMaterial246_2",
-      "Name": "GM_246_スロット2",
-      "Description": ""
+      "Name": "Ground Material 246 Slot 2",
+      "Description": "Ground material assignment for material group 246, slot 2."
     },
     {
       "Field": "groundMaterial246_3",
-      "Name": "GM_246_スロット3",
-      "Description": ""
+      "Name": "Ground Material 246 Slot 3",
+      "Description": "Ground material assignment for material group 246, slot 3."
     },
     {
       "Field": "groundMaterial247_0",
-      "Name": "GM_247_スロット0",
-      "Description": ""
+      "Name": "Ground Material 247 Slot 0",
+      "Description": "Ground material assignment for material group 247, slot 0."
     },
     {
       "Field": "groundMaterial247_1",
-      "Name": "GM_247_スロット1",
-      "Description": ""
+      "Name": "Ground Material 247 Slot 1",
+      "Description": "Ground material assignment for material group 247, slot 1."
     },
     {
       "Field": "groundMaterial247_2",
-      "Name": "GM_247_スロット2",
-      "Description": ""
+      "Name": "Ground Material 247 Slot 2",
+      "Description": "Ground material assignment for material group 247, slot 2."
     },
     {
       "Field": "groundMaterial247_3",
-      "Name": "GM_247_スロット3",
-      "Description": ""
+      "Name": "Ground Material 247 Slot 3",
+      "Description": "Ground material assignment for material group 247, slot 3."
     },
     {
       "Field": "groundMaterial248_0",
-      "Name": "GM_248_スロット0",
-      "Description": ""
+      "Name": "Ground Material 248 Slot 0",
+      "Description": "Ground material assignment for material group 248, slot 0."
     },
     {
       "Field": "groundMaterial248_1",
-      "Name": "GM_248_スロット1",
-      "Description": ""
+      "Name": "Ground Material 248 Slot 1",
+      "Description": "Ground material assignment for material group 248, slot 1."
     },
     {
       "Field": "groundMaterial248_2",
-      "Name": "GM_248_スロット2",
-      "Description": ""
+      "Name": "Ground Material 248 Slot 2",
+      "Description": "Ground material assignment for material group 248, slot 2."
     },
     {
       "Field": "groundMaterial248_3",
-      "Name": "GM_248_スロット3",
-      "Description": ""
+      "Name": "Ground Material 248 Slot 3",
+      "Description": "Ground material assignment for material group 248, slot 3."
     },
     {
       "Field": "groundMaterial249_0",
-      "Name": "GM_249_スロット0",
-      "Description": ""
+      "Name": "Ground Material 249 Slot 0",
+      "Description": "Ground material assignment for material group 249, slot 0."
     },
     {
       "Field": "groundMaterial249_1",
-      "Name": "GM_249_スロット1",
-      "Description": ""
+      "Name": "Ground Material 249 Slot 1",
+      "Description": "Ground material assignment for material group 249, slot 1."
     },
     {
       "Field": "groundMaterial249_2",
-      "Name": "GM_249_スロット2",
-      "Description": ""
+      "Name": "Ground Material 249 Slot 2",
+      "Description": "Ground material assignment for material group 249, slot 2."
     },
     {
       "Field": "groundMaterial249_3",
-      "Name": "GM_249_スロット3",
-      "Description": ""
+      "Name": "Ground Material 249 Slot 3",
+      "Description": "Ground material assignment for material group 249, slot 3."
     },
     {
       "Field": "groundMaterial250_0",
-      "Name": "GM_250_スロット0",
-      "Description": ""
+      "Name": "Ground Material 250 Slot 0",
+      "Description": "Ground material assignment for material group 250, slot 0."
     },
     {
       "Field": "groundMaterial250_1",
-      "Name": "GM_250_スロット1",
-      "Description": ""
+      "Name": "Ground Material 250 Slot 1",
+      "Description": "Ground material assignment for material group 250, slot 1."
     },
     {
       "Field": "groundMaterial250_2",
-      "Name": "GM_250_スロット2",
-      "Description": ""
+      "Name": "Ground Material 250 Slot 2",
+      "Description": "Ground material assignment for material group 250, slot 2."
     },
     {
       "Field": "groundMaterial250_3",
-      "Name": "GM_250_スロット3",
-      "Description": ""
+      "Name": "Ground Material 250 Slot 3",
+      "Description": "Ground material assignment for material group 250, slot 3."
     },
     {
       "Field": "groundMaterial251_0",
-      "Name": "GM_251_スロット0",
-      "Description": ""
+      "Name": "Ground Material 251 Slot 0",
+      "Description": "Ground material assignment for material group 251, slot 0."
     },
     {
       "Field": "groundMaterial251_1",
-      "Name": "GM_251_スロット1",
-      "Description": ""
+      "Name": "Ground Material 251 Slot 1",
+      "Description": "Ground material assignment for material group 251, slot 1."
     },
     {
       "Field": "groundMaterial251_2",
-      "Name": "GM_251_スロット2",
-      "Description": ""
+      "Name": "Ground Material 251 Slot 2",
+      "Description": "Ground material assignment for material group 251, slot 2."
     },
     {
       "Field": "groundMaterial251_3",
-      "Name": "GM_251_スロット3",
-      "Description": ""
+      "Name": "Ground Material 251 Slot 3",
+      "Description": "Ground material assignment for material group 251, slot 3."
     },
     {
       "Field": "groundMaterial252_0",
-      "Name": "GM_252_スロット0",
-      "Description": ""
+      "Name": "Ground Material 252 Slot 0",
+      "Description": "Ground material assignment for material group 252, slot 0."
     },
     {
       "Field": "groundMaterial252_1",
-      "Name": "GM_252_スロット1",
-      "Description": ""
+      "Name": "Ground Material 252 Slot 1",
+      "Description": "Ground material assignment for material group 252, slot 1."
     },
     {
       "Field": "groundMaterial252_2",
-      "Name": "GM_252_スロット2",
-      "Description": ""
+      "Name": "Ground Material 252 Slot 2",
+      "Description": "Ground material assignment for material group 252, slot 2."
     },
     {
       "Field": "groundMaterial252_3",
-      "Name": "GM_252_スロット3",
-      "Description": ""
+      "Name": "Ground Material 252 Slot 3",
+      "Description": "Ground material assignment for material group 252, slot 3."
     },
     {
       "Field": "groundMaterial253_0",
-      "Name": "GM_253_スロット0",
-      "Description": ""
+      "Name": "Ground Material 253 Slot 0",
+      "Description": "Ground material assignment for material group 253, slot 0."
     },
     {
       "Field": "groundMaterial253_1",
-      "Name": "GM_253_スロット1",
-      "Description": ""
+      "Name": "Ground Material 253 Slot 1",
+      "Description": "Ground material assignment for material group 253, slot 1."
     },
     {
       "Field": "groundMaterial253_2",
-      "Name": "GM_253_スロット2",
-      "Description": ""
+      "Name": "Ground Material 253 Slot 2",
+      "Description": "Ground material assignment for material group 253, slot 2."
     },
     {
       "Field": "groundMaterial253_3",
-      "Name": "GM_253_スロット3",
-      "Description": ""
+      "Name": "Ground Material 253 Slot 3",
+      "Description": "Ground material assignment for material group 253, slot 3."
     },
     {
       "Field": "groundMaterial254_0",
-      "Name": "GM_254_スロット0",
-      "Description": ""
+      "Name": "Ground Material 254 Slot 0",
+      "Description": "Ground material assignment for material group 254, slot 0."
     },
     {
       "Field": "groundMaterial254_1",
-      "Name": "GM_254_スロット1",
-      "Description": ""
+      "Name": "Ground Material 254 Slot 1",
+      "Description": "Ground material assignment for material group 254, slot 1."
     },
     {
       "Field": "groundMaterial254_2",
-      "Name": "GM_254_スロット2",
-      "Description": ""
+      "Name": "Ground Material 254 Slot 2",
+      "Description": "Ground material assignment for material group 254, slot 2."
     },
     {
       "Field": "groundMaterial254_3",
-      "Name": "GM_254_スロット3",
-      "Description": ""
+      "Name": "Ground Material 254 Slot 3",
+      "Description": "Ground material assignment for material group 254, slot 3."
     },
     {
       "Field": "groundMaterial255_0",
-      "Name": "GM_255_スロット0",
-      "Description": ""
+      "Name": "Ground Material 255 Slot 0",
+      "Description": "Ground material assignment for material group 255, slot 0."
     },
     {
       "Field": "groundMaterial255_1",
-      "Name": "GM_255_スロット1",
-      "Description": ""
+      "Name": "Ground Material 255 Slot 1",
+      "Description": "Ground material assignment for material group 255, slot 1."
     },
     {
       "Field": "groundMaterial255_2",
-      "Name": "GM_255_スロット2",
-      "Description": ""
+      "Name": "Ground Material 255 Slot 2",
+      "Description": "Ground material assignment for material group 255, slot 2."
     },
     {
       "Field": "groundMaterial255_3",
-      "Name": "GM_255_スロット3",
-      "Description": ""
+      "Name": "Ground Material 255 Slot 3",
+      "Description": "Ground material assignment for material group 255, slot 3."
     }
   ]
 }

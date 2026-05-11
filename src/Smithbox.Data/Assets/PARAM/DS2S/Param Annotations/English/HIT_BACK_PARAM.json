@@ -2,57 +2,57 @@
   "Param": "HIT_BACK_PARAM",
   "Type": "HIT_BACK_PARAM",
   "Name": "HIT_BACK_PARAM",
-  "Description": "",
+  "Description": "Defines recoil distance and stagger duration values for different attack deflection strength levels.",
   "Fields": [
     {
       "Field": "superSmallHitBackDistance",
-      "Name": "攻撃弾き 反動 極小",
-      "Description": ""
+      "Name": "Attack Deflection Recoil Distance: Very Small",
+      "Description": "Recoil movement distance applied for extremely weak attack deflections."
     },
     {
       "Field": "superSmallHitBackDuration",
-      "Name": "攻撃弾き 硬直 極小",
-      "Description": ""
+      "Name": "Attack Deflection Stagger Duration: Very Small",
+      "Description": "Stagger or recovery duration applied for extremely weak attack deflections."
     },
     {
       "Field": "smallHitBackDistance",
-      "Name": "攻撃弾き 反動 小",
-      "Description": ""
+      "Name": "Attack Deflection Recoil Distance: Small",
+      "Description": "Recoil movement distance applied for weak attack deflections."
     },
     {
       "Field": "smallHitBackDuration",
-      "Name": "攻撃弾き 硬直 小",
-      "Description": ""
+      "Name": "Attack Deflection Stagger Duration: Small",
+      "Description": "Stagger or recovery duration applied for weak attack deflections."
     },
     {
       "Field": "normalHitBackDistance",
-      "Name": "攻撃弾き 反動 中",
-      "Description": ""
+      "Name": "Attack Deflection Recoil Distance: Medium",
+      "Description": "Recoil movement distance applied for standard attack deflections."
     },
     {
       "Field": "normalHitBackDuration",
-      "Name": "攻撃弾き 硬直 中",
-      "Description": ""
+      "Name": "Attack Deflection Stagger Duration: Medium",
+      "Description": "Stagger or recovery duration applied for standard attack deflections."
     },
     {
       "Field": "largeHitBackDistance",
-      "Name": "攻撃弾き 反動 大",
-      "Description": ""
+      "Name": "Attack Deflection Recoil Distance: Large",
+      "Description": "Recoil movement distance applied for strong attack deflections."
     },
     {
       "Field": "largeHitBackDuration",
-      "Name": "攻撃弾き 硬直 大",
-      "Description": ""
+      "Name": "Attack Deflection Stagger Duration: Large",
+      "Description": "Stagger or recovery duration applied for strong attack deflections."
     },
     {
       "Field": "superLargeHitBackDistance",
-      "Name": "攻撃弾き 反動 特大",
-      "Description": ""
+      "Name": "Attack Deflection Recoil Distance: Very Large",
+      "Description": "Recoil movement distance applied for extremely strong attack deflections."
     },
     {
       "Field": "superLargeHitBackDuration",
-      "Name": "攻撃弾き 硬直 特大",
-      "Description": ""
+      "Name": "Attack Deflection Stagger Duration: Very Large",
+      "Description": "Stagger or recovery duration applied for extremely strong attack deflections."
     }
   ]
 }

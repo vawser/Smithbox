@@ -2,21 +2,21 @@
   "Param": "INTRUDE_POINT_PARAM",
   "Type": "INTRUDE_POINT_PARAM",
   "Name": "INTRUDE_POINT_PARAM",
-  "Description": "",
+  "Description": "Defines invasion/intrusion point settings used for multiplayer or scripted entry locations.",
   "Fields": [
     {
       "Field": "playAreaId",
-      "Name": "プレイ領域ID",
-      "Description": ""
+      "Name": "Play Area ID",
+      "Description": "ID of the play area or region associated with this intrusion point."
     },
     {
       "Field": "intrudePriority",
-      "Name": "優先度",
-      "Description": ""
+      "Name": "Intrusion Priority",
+      "Description": "Priority value used to determine intrusion point selection order."
     },
     {
       "Field": "aReserved",
-      "Name": "予約",
+      "Name": "Padding",
       "Description": ""
     }
   ]

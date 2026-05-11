@@ -743,6 +743,22 @@ public class ParamFieldWindow
             }
         }
 
+        if(Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        {
+            if(row.Def.ParamType == "ITEM_LOT_PARAM2")
+            {
+                var dropType = row.Columns.FirstOrDefault(e => e.Def.InternalName == "lotDropType");
+                var value = $"{dropType.GetValue(row)}";
+
+                // 3 is Confirmed, meaning the lot always occurs.
+                if (value == "3")
+                {
+                    ImGui.TextColored(UI.Current.ImGui_AliasName_Text, $"This lot will always occur.");
+                    return;
+                }
+            }
+        }
+
         if (curChance == 0)
         {
             ImGui.TextColored(UI.Current.ImGui_AliasName_Text, $"This lot will never occur.");
@@ -776,6 +792,22 @@ public class ParamFieldWindow
                 if (success)
                 {
                     totalChance = totalChance + intVal;
+                }
+            }
+        }
+
+        if (Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        {
+            if (row.Def.ParamType == "ITEM_LOT_PARAM2")
+            {
+                var dropType = row.Columns.FirstOrDefault(e => e.Def.InternalName == "lotDropType");
+                var value = $"{dropType.GetValue(row)}";
+
+                // 3 is Confirmed, meaning the drop always occurs.
+                if (value == "3")
+                {
+                    ImGui.TextColored(UI.Current.ImGui_AliasName_Text, $"This drop will always occur.");
+                    return;
                 }
             }
         }

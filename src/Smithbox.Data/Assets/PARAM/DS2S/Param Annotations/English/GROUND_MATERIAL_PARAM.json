@@ -2,112 +2,112 @@
   "Param": "GROUND_MATERIAL_PARAM",
   "Type": "GROUND_MATERIAL_PARAM",
   "Name": "GROUND_MATERIAL_PARAM",
-  "Description": "",
+  "Description": "Defines movement, sound, environmental, and interaction properties for a ground material type.",
   "Fields": [
     {
       "Field": "material",
-      "Name": "材質",
-      "Description": ""
+      "Name": "Primary Material",
+      "Description": "Primary ground material type used for physics, effects, and audio."
     },
     {
       "Field": "subMaterial",
-      "Name": "第二材質",
-      "Description": ""
+      "Name": "Secondary Material",
+      "Description": "Secondary or blended material type applied to the surface."
     },
     {
       "Field": "moveSpeedRate",
-      "Name": "移動速度影響倍率",
-      "Description": ""
+      "Name": "Movement Speed Multiplier",
+      "Description": "Multiplier affecting character movement speed on this surface."
     },
     {
       "Field": "moveRotateRate",
-      "Name": "旋回速度影響倍率",
-      "Description": ""
+      "Name": "Turn Speed Multiplier",
+      "Description": "Multiplier affecting character turning or rotation speed on this surface."
     },
     {
       "Field": "soundLevel",
-      "Name": "音大きさ\u3000加算値",
-      "Description": ""
+      "Name": "Sound Level Offset",
+      "Description": "Additional noise level generated while moving on this surface."
     },
     {
       "Field": "isTorchOff",
-      "Name": "松明消える",
-      "Description": ""
+      "Name": "Extinguishes Torch",
+      "Description": "Determines whether entering this surface extinguishes the player's torch."
     },
     {
       "Field": "torchOffParam",
-      "Name": "松明消火パラメータＩＤ",
-      "Description": ""
+      "Name": "Torch Extinguish Parameter ID",
+      "Description": "Reference ID for torch extinguishing behavior settings."
     },
     {
       "Field": "isWaterSurface",
-      "Name": "水面",
-      "Description": ""
+      "Name": "Water Surface",
+      "Description": "Indicates whether this material is treated as water."
     },
     {
       "Field": "environment",
-      "Name": "環境タイプ",
-      "Description": ""
+      "Name": "Environment Type",
+      "Description": "Defines the environmental category associated with this surface."
     },
     {
       "Field": "dodgeLimitCategory",
-      "Name": "回避制限カテゴリ",
-      "Description": ""
+      "Name": "Dodge Restriction Category",
+      "Description": "Category controlling dodge movement limitations on this surface."
     },
     {
       "Field": "isDisableIdleDamage",
-      "Name": "待機中はダメージ無効",
-      "Description": ""
+      "Name": "Disable Idle Damage",
+      "Description": "Prevents environmental damage while the character is standing still."
     },
     {
       "Field": "damageId",
-      "Name": "ダメージID",
-      "Description": ""
+      "Name": "Damage ID",
+      "Description": "Reference ID for environmental damage applied by this surface."
     },
     {
       "Field": "fallWaterSfxId",
-      "Name": "水中落下SFX",
-      "Description": ""
+      "Name": "Water Landing SFX",
+      "Description": "Particle effect ID played when falling into this surface."
     },
     {
       "Field": "dodgeLimitDistanceRateRollLight",
-      "Name": "回避減少距離割合ローリング",
-      "Description": ""
+      "Name": "Light Roll Dodge Distance Multiplier",
+      "Description": "Multiplier applied to dodge distance for light rolling on this surface."
     },
     {
       "Field": "dodgeLimitDistanceRateStepLight",
-      "Name": "回避減少距離割合ステップ",
-      "Description": ""
+      "Name": "Light Step Dodge Distance Multiplier",
+      "Description": "Multiplier applied to dodge distance for light step movement on this surface."
     },
     {
       "Field": "dodgeLimitDistanceRateRollHeavy",
-      "Name": "回避減少距離割合重量ローリング",
-      "Description": ""
+      "Name": "Heavy Roll Dodge Distance Multiplier",
+      "Description": "Multiplier applied to dodge distance for heavy rolling on this surface."
     },
     {
       "Field": "dodgeLimitDistanceRateStepHeavy",
-      "Name": "回避減少距離割合重量ステップ",
-      "Description": ""
+      "Name": "Heavy Step Dodge Distance Multiplier",
+      "Description": "Multiplier applied to dodge distance for heavy step movement on this surface."
     },
     {
       "Field": "takeWaterParamId",
-      "Name": "着水SFXパラメータID",
-      "Description": ""
+      "Name": "Water Entry SFX Parameter ID",
+      "Description": "Reference ID for splash and water-entry visual/audio effects."
     },
     {
       "Field": "sfxID0",
-      "Name": "sfxID0",
-      "Description": ""
+      "Name": "SFX ID 0",
+      "Description": "Primary particle effect ID associated with this material."
     },
     {
       "Field": "sfxID1",
-      "Name": "sfxID1",
-      "Description": ""
+      "Name": "SFX ID 1",
+      "Description": "Secondary particle effect ID associated with this material."
     },
     {
       "Field": "sfxDuration",
-      "Name": "sfxDuration",
-      "Description": ""
+      "Name": "SFX Duration",
+      "Description": "Duration that the associated particle effects remain active."
     }
   ]
 }

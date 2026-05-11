@@ -3,6 +3,6 @@
     <Field>
         <playAreaId />
         <intrudePriority />
-        <aReserved />
+        <aReserved Padding="" />
     </Field>
 </PARAMMETA>
