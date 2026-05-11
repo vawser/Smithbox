@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -38,7 +39,7 @@ public class ParamListCategories
     {
         if (ImGui.CollapsingHeader("Param List Categories"))
         {
-            ImGui.BeginChild("ParamListCategories");
+            ImGui.BeginChild("ParamListCategories", ImGuiChildFlags.Borders);
 
             var categories = Project.Handler.ParamData.ParamCategories;
 
@@ -55,7 +56,7 @@ public class ParamListCategories
             UIHelper.WrappedText("Create or modify project-specific param categories.");
             UIHelper.WrappedText("");
 
-            ImGui.Separator();
+            UIHelper.SimpleHeader("Actions", "");
 
             if (ImGui.Button("New Entry"))
             {
@@ -104,9 +105,11 @@ public class ParamListCategories
             }
             UIHelper.Tooltip("Restore the default param categories.");
 
-            // List
-            ImGui.Separator();
+            ImGui.Text("");
 
+            UIHelper.SimpleHeader("List", "");
+
+            ImGui.BeginChild("ParamListCategorySelectionList", new Vector2(0, 250), ImGuiChildFlags.Borders);
             foreach (var category in Project.Handler.ParamData.ParamCategories.Categories)
             {
                 if (ImGui.Selectable($"{category.GetDisplayName()}##userCategory_{category.GetDisplayName()}", category == _selectedUserCategory, ImGuiSelectableFlags.AllowDoubleClick))
@@ -116,14 +119,14 @@ public class ParamListCategories
                     isEditEntryMode = false;
                 }
             }
+            ImGui.EndChild();
 
-            ImGui.Separator();
+            ImGui.Text("");
 
             // New Entry
             if (isNewEntryMode)
             {
-                UIHelper.WrappedText("New Param Category");
-                ImGui.Separator();
+                UIHelper.SimpleHeader("New Param Category Entry", "");
 
                 ImGui.InputText("Name##newEntryName", ref NewEntryName, 255);
                 UIHelper.Tooltip("The name of this param category.");
@@ -140,6 +143,32 @@ public class ParamListCategories
                 }
                 UIHelper.Tooltip("If toggled on, this param category will always appear at the bottom (in alphabetically order with any other categories with the same toggle).");
 
+                if (ImGui.Button("Expand List", DPI.StandardButtonSize))
+                {
+                    NewEntryParams.Add("");
+                    NewEntryParamsCount++;
+                }
+                UIHelper.Tooltip("Add another param entry to fill.");
+
+                ImGui.SameLine();
+
+                if (ImGui.Button("Finalize Entry", DPI.StandardButtonSize))
+                {
+                    isNewEntryMode = false;
+
+                    var nameEntry = new ParamCategoryNameEntry();
+                    nameEntry.Language = CFG.Current.ParamEditor_Annotation_Language;
+                    nameEntry.Name = NewEntryName;
+
+                    var newCategoryEntry = new ParamCategoryEntry();
+                    newCategoryEntry.Key = NewEntryName;
+                    newCategoryEntry.DisplayNames = [nameEntry];
+                    newCategoryEntry.Params = NewEntryParams;
+
+                    Project.Handler.ParamData.ParamCategories.Categories.Add(newCategoryEntry);
+                }
+
+                ImGui.Text("");
                 ImGui.Text("Params to add:");
                 for (int i = 0; i < NewEntryParamsCount; i++)
                 {
@@ -158,40 +187,12 @@ public class ParamListCategories
                         }
                     }
                 }
-
-                ImGui.Text("");
-
-                if (ImGui.Button("Expand List"))
-                {
-                    NewEntryParams.Add("");
-                    NewEntryParamsCount++;
-                }
-                UIHelper.Tooltip("Add another param entry to fill.");
-
-                ImGui.SameLine();
-
-                if (ImGui.Button("Finalize Entry"))
-                {
-                    isNewEntryMode = false;
-
-                    var nameEntry = new ParamCategoryNameEntry();
-                    nameEntry.Language = CFG.Current.ParamEditor_Annotation_Language;
-                    nameEntry.Name = NewEntryName;
-
-                    var newCategoryEntry = new ParamCategoryEntry();
-                    newCategoryEntry.Key = NewEntryName;
-                    newCategoryEntry.DisplayNames = [nameEntry];
-                    newCategoryEntry.Params = NewEntryParams;
-
-                    Project.Handler.ParamData.ParamCategories.Categories.Add(newCategoryEntry);
-                }
             }
 
             // Edit Entry
             if (isEditEntryMode)
             {
-                UIHelper.WrappedText("Edit Param Category");
-                ImGui.Separator();
+                UIHelper.SimpleHeader("Edit Param Category Entry", "");
 
                 if (_selectedUserCategory != null)
                 {
@@ -220,7 +221,7 @@ public class ParamListCategories
                     }
                     UIHelper.Tooltip("If toggled on, this param category will always appear at the bottom (in alphabetically order with any other categories with the same toggle).");
 
-                    if (ImGui.Button("Expand List"))
+                    if (ImGui.Button("Expand List", DPI.StandardButtonSize))
                     {
                         NewEntryParams.Add("");
                         NewEntryParamsCount++;
@@ -229,7 +230,7 @@ public class ParamListCategories
 
                     ImGui.SameLine();
 
-                    if (ImGui.Button("Finalize Entry"))
+                    if (ImGui.Button("Finalize Entry", DPI.StandardButtonSize))
                     {
                         isEditEntryMode = false;
 
@@ -243,6 +244,7 @@ public class ParamListCategories
                         }
                     }
 
+                    ImGui.Text("");
                     ImGui.Text("Params to add:");
                     for (int i = 0; i < NewEntryParamsCount; i++)
                     {

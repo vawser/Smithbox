@@ -282,6 +282,7 @@ public static class UIHelper
             ImGui.EndTable();
         }
     }
+
     public static void ConditionalHeader(string id, string title, string tooltip, Vector4 textColor, ref bool visibilityToggle)
     {
         var tblFlags = ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Borders;

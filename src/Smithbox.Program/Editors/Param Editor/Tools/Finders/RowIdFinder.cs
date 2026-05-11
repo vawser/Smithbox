@@ -147,7 +147,7 @@ public class RowIdFinder
             UIHelper.WrappedText($"Param:");
 
             ImGui.BeginChild($"##resultSection_{imguiID}",
-                new Vector2(EditX, EditY));
+                new Vector2(EditX, EditY), ImGuiChildFlags.Borders);
 
             foreach (var result in Results)
             {

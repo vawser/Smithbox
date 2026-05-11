@@ -85,7 +85,7 @@ public class ParamEditorScreen : EditorScreen
 
         if (activeView != null)
         {
-            activeView.MassEdit.DisplayMassEditPopupWindow();
+            activeView.MassEdit.PopupMenu.Display();
         }
 
         PasteMenu.Display();

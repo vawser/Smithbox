@@ -43,19 +43,21 @@ public class ParamMerger
         // Merge Params
         if (ImGui.CollapsingHeader("Param Merger"))
         {
-            ImGui.BeginChild("ParamMergerToolSection");
+            ImGui.BeginChild("ParamMergerToolSection", ImGuiChildFlags.Borders);
 
             UIHelper.WrappedText("Select a compatible project below to merge into your current project.");
             UIHelper.WrappedText("");
             UIHelper.WrappedText("You will need to create a project for the external mod first, it will then appear below.");
             UIHelper.WrappedText("");
 
+            UIHelper.SimpleHeader("Compatible Projects:", "List of projects you can merge into your current project");
+
             if (ParamMerge_TargetProject != null)
             {
                 // Load
                 if (!paramData.AuxBanks.ContainsKey(ParamMerge_TargetProject.Descriptor.ProjectName))
                 {
-                    if (ImGui.Button("Load##action_Load"))
+                    if (ImGui.Button("Load##action_Load", DPI.StandardButtonSize))
                     {
                         Task<bool> loadTask = paramData.SetupAuxBank(ParamMerge_TargetProject, true);
 
@@ -67,7 +69,7 @@ public class ParamMerger
 
                     ImGui.SameLine();
                     ImGui.BeginDisabled();
-                    if (ImGui.Button("Merge##action_MergeParam"))
+                    if (ImGui.Button("Merge##action_MergeParam", DPI.StandardButtonSize))
                     {
                     }
                     ImGui.EndDisabled();
@@ -75,7 +77,7 @@ public class ParamMerger
                 else
                 {
                     ImGui.BeginDisabled();
-                    if (ImGui.Button("Load##action_Load"))
+                    if (ImGui.Button("Load##action_Load", DPI.StandardButtonSize))
                     {
                     }
                     ImGui.EndDisabled();
@@ -85,14 +87,14 @@ public class ParamMerger
                     if (ParamMerge_InProgress)
                     {
                         ImGui.BeginDisabled();
-                        if (ImGui.Button("Merge##action_MergeParam"))
+                        if (ImGui.Button("Merge##action_MergeParam", DPI.StandardButtonSize))
                         {
                         }
                         ImGui.EndDisabled();
                     }
                     else if (!ParamMerge_InProgress)
                     {
-                        if (ImGui.Button("Merge##action_MergeParam"))
+                        if (ImGui.Button("Merge##action_MergeParam", DPI.StandardButtonSize))
                         {
                             MergeParamHandler();
                         }
@@ -102,9 +104,8 @@ public class ParamMerger
             else
             {
                 ImGui.Text("Select a project from below.");
+                ImGui.Text($"");
             }
-
-            UIHelper.SimpleHeader("Compatible Projects:", "List of projects you can merge into your current project");
 
             var projectList = Smithbox.Orchestrator.Projects;
 

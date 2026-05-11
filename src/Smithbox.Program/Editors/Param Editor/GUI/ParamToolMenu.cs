@@ -194,7 +194,7 @@ public class ParamToolMenu
                 {
                     if (ImGui.CollapsingHeader("Data Finders"))
                     {
-                        ImGui.BeginChild("DataFinderToolSection");
+                        ImGui.BeginChild("DataFinderToolSection", ImGuiChildFlags.Borders);
 
                         if (ImGui.BeginTabBar("dataFinderTabs"))
                         {
@@ -252,28 +252,9 @@ public class ParamToolMenu
                 {
                     if (ImGui.CollapsingHeader("Mass Edit"))
                     {
-                        ImGui.BeginChild("MassEditToolSection");
+                        ImGui.BeginChild("MassEditToolSection", ImGuiChildFlags.Borders);
 
-                        if (ImGui.BeginTabBar("massEditTabs"))
-                        {
-
-                            if (ImGui.BeginTabItem("Command Palette"))
-                            {
-                                activeView.MassEdit.DisplayMassEditMenu();
-
-                                ImGui.EndTabItem();
-                            }
-
-
-                            if (ImGui.BeginTabItem("Templates"))
-                            {
-                                activeView.MassEdit.TemplateMenu.DisplayMenu();
-
-                                ImGui.EndTabItem();
-                            }
-
-                            ImGui.EndTabBar();
-                        }
+                        activeView.MassEdit.ToolMenu.Display();
 
                         ImGui.EndChild();
                     }

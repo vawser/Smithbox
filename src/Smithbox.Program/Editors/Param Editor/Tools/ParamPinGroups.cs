@@ -44,16 +44,14 @@ public class ParamPinGroups
 
         if (ImGui.CollapsingHeader("Pin Groups"))
         {
-            ImGui.BeginChild("PinGroupToolSection");
+            ImGui.BeginChild("PinGroupToolSection", ImGuiChildFlags.Borders);
 
             UpdateGroupList();
 
             UIHelper.WrappedText("Create a pin group from your current pinned params, rows or fields, or select an existing pin group to replace your current pinned params, rows or fields.");
             UIHelper.WrappedText("");
 
-            ImGui.Separator();
-            UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Configuration");
-            ImGui.Separator();
+            UIHelper.SimpleHeader("Configuration", "");
 
             ImGui.Checkbox("Show only pinned params exclusively", ref CFG.Current.Param_PinGroups_ShowOnlyPinnedParams);
             UIHelper.Tooltip($"When enabled, only pinned params will appear in the param list.");
@@ -84,14 +82,11 @@ public class ParamPinGroups
             }
             UIHelper.Tooltip($"Clear current pinned fields.");
 
+            ImGui.Text("");
 
-            ImGui.Separator();
-            UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Group Creation");
-            ImGui.Separator();
+            UIHelper.SimpleHeader("Group Creation", "");
 
-            UIHelper.WrappedText("Name");
-            DPI.ApplyInputWidth(windowWidth);
-            ImGui.InputText("##newGroupName", ref _newGroupName, 255);
+            ImGui.InputText("Name##newGroupName", ref _newGroupName, 255);
 
             if (ImGui.Button("Create Param Group", DPI.ThirdWidthButton(windowWidth, 24)))
             {
@@ -113,9 +108,9 @@ public class ParamPinGroups
             }
             UIHelper.Tooltip($"Create a new pin group from the current pinned fields.");
 
-            ImGui.Separator();
-            UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Group Lists");
-            ImGui.Separator();
+            ImGui.Text("");
+
+            UIHelper.SimpleHeader("Group Lists", "");
 
             if (ImGui.Button("View Param Groups", DPI.ThirdWidthButton(windowWidth, 24)))
             {
@@ -132,23 +127,19 @@ public class ParamPinGroups
                 CurrentDisplayState = ParamPinGroupDisplayState.Field;
             }
 
+            ImGui.Text("");
+
             if (CurrentDisplayState == ParamPinGroupDisplayState.Param)
             {
-                ImGui.Separator();
-                UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Param Groups:");
-                ImGui.Separator();
+                UIHelper.SimpleHeader("Param Groups", "");
             }
             if (CurrentDisplayState == ParamPinGroupDisplayState.Row)
             {
-                ImGui.Separator();
-                UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Row Groups:");
-                ImGui.Separator();
+                UIHelper.SimpleHeader("Row Groups", "");
             }
             if (CurrentDisplayState == ParamPinGroupDisplayState.Field)
             {
-                ImGui.Separator();
-                UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Field Groups:");
-                ImGui.Separator();
+                UIHelper.SimpleHeader("Field Groups", "");
             }
 
             ImGui.Columns(2);

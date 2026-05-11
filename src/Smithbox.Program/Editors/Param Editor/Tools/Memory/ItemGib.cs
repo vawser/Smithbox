@@ -108,6 +108,8 @@ public class ItemGib
 
         if (ImGui.CollapsingHeader("Item Gib"))
         {
+            ImGui.BeginChild("ItemGibSection", ImGuiChildFlags.Borders);
+
             UIHelper.WrappedText("Use this tool to spawn an item in-game.");
             UIHelper.WrappedText("");
 
@@ -204,6 +206,8 @@ public class ItemGib
             {
                 GiveItem();
             }
+
+            ImGui.EndChild();
         }
     }
 

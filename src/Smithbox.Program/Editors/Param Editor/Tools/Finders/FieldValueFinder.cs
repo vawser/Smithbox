@@ -167,6 +167,8 @@ public class FieldValueFinder
             Results.Sort();
         }
 
+        UIHelper.WrappedText("");
+
         // Result List
         if (Results.Count > 0)
         {
@@ -182,7 +184,7 @@ public class FieldValueFinder
             UIHelper.WrappedText($"Param: Row ID: Field Name: Field Value");
 
             ImGui.BeginChild($"##resultSection_{imguiID}",
-                new Vector2(EditX, EditY));
+                new Vector2(EditX, EditY), ImGuiChildFlags.Borders);
 
             foreach (var result in Results)
             {
@@ -266,7 +268,7 @@ public class FieldValueFinder
                     var fieldAnnotation = Editor.Project.Handler.ParamData.GetFieldAnnotation(annotations, field.Def.InternalName);
 
                     fieldName = field.Def.InternalName;
-                    if (fieldMeta != null)
+                    if (fieldMeta != null && fieldAnnotation != null)
                     {
                         fieldDisplayName = fieldAnnotation.Name;
                     }

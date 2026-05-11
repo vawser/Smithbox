@@ -173,7 +173,7 @@ public class FieldNameFinder
             UIHelper.WrappedText($"Param: Row Name");
 
             ImGui.BeginChild($"##resultSection_{imguiID}",
-                new Vector2(EditX, EditY));
+                new Vector2(EditX, EditY), ImGuiChildFlags.Borders);
 
             foreach (var result in Results)
             {
@@ -261,7 +261,7 @@ public class FieldNameFinder
                     }
 
                     // Display Name
-                    if (fieldAnnotation.Name != null && IncludeCommunityNameInSearch)
+                    if (fieldAnnotation != null && fieldAnnotation.Name != null && IncludeCommunityNameInSearch)
                     {
                         var displayNameComponents = fieldAnnotation.Name.Split(" ");
 
@@ -285,7 +285,7 @@ public class FieldNameFinder
                     }
 
                     // Wiki
-                    if (fieldAnnotation.Description != null && IncludeDescriptionInSearch)
+                    if (fieldAnnotation != null && fieldAnnotation.Description != null && IncludeDescriptionInSearch)
                     {
                         var descriptionComponents = fieldAnnotation.Description.Split(" ");
 
@@ -313,7 +313,16 @@ public class FieldNameFinder
                 {
                     var result = new DataSearchResult();
                     result.FieldInternalName = field.InternalName;
-                    result.FieldDisplayName = fieldAnnotation.Name;
+
+                    if (fieldAnnotation == null)
+                    {
+                        result.FieldDisplayName = p.Key;
+                    }
+                    else
+                    {
+                        result.FieldDisplayName = fieldAnnotation.Name;
+                    }
+
                     result.ParamName = p.Key;
 
                     output.Add(result);

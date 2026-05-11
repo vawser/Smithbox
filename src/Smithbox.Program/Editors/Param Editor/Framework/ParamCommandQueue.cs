@@ -122,7 +122,7 @@ public class ParamCommandQueue
                 }
                 else if (args[1] == "massEditRegex")
                 {
-                    activeView.MassEdit.CurrentMenuInput = args.Length > 2 ? args[2] : activeView.MassEdit.CurrentMassEditInput;
+                    activeView.MassEdit.State.CurrentMenuInput = args.Length > 2 ? args[2] : activeView.MassEdit.State.CurrentMassEditInput;
 
                     activeView.MassEdit.OpenMassEditPopup("massEditMenuRegex");
                 }
@@ -132,7 +132,7 @@ public class ParamCommandQueue
                         Editor,
                         Enum.Parse<ParamUpgradeRowGetType>(args[2]));
 
-                    activeView.MassEdit.MassEditOutput_CSV = ParamIO.GenerateCSV(
+                    activeView.MassEdit.State.MassEditOutput_CSV = ParamIO.GenerateCSV(
                         Project,
                         rows,
                         primaryBank.Params[activeView.Selection.GetActiveParam()],
@@ -146,23 +146,23 @@ public class ParamCommandQueue
                 }
                 else if (args[1] == "massEditSingleCSVExport")
                 {
-                    activeView.MassEdit.MassEdit_SingleField_CSV = args[2];
+                    activeView.MassEdit.State.MassEdit_SingleField_CSV = args[2];
 
                     IReadOnlyList<Param.Row> rows = ParamCsvTools.CsvExportGetRows(
                         Editor,
                         Enum.Parse<ParamUpgradeRowGetType>(args[3]));
 
-                    activeView.MassEdit.MassEditOutput_CSV = ParamIO.GenerateSingleCSV(
+                    activeView.MassEdit.State.MassEditOutput_CSV = ParamIO.GenerateSingleCSV(
                         rows,
                         primaryBank.Params[activeView.Selection.GetActiveParam()],
-                        activeView.MassEdit.MassEdit_SingleField_CSV,
+                        activeView.MassEdit.State.MassEdit_SingleField_CSV,
                         delimiter[0]);
 
                     activeView.MassEdit.OpenMassEditPopup("massEditMenuSingleCSVExport");
                 }
                 else if (args[1] == "massEditSingleCSVImport" && args.Length > 2)
                 {
-                    activeView.MassEdit.MassEdit_SingleField_CSV = args[2];
+                    activeView.MassEdit.State.MassEdit_SingleField_CSV = args[2];
 
                     activeView.MassEdit.OpenMassEditPopup("massEditMenuSingleCSVImport");
                 }

@@ -38,7 +38,7 @@ public class ParamUpgrader
 
         if (ImGui.CollapsingHeader("Param Upgrader"))
         {
-            ImGui.BeginChild("ParamUpgraderToolSection");
+            ImGui.BeginChild("ParamUpgraderToolSection", ImGuiChildFlags.Borders);
             UpgraderMenu();
             ImGui.EndChild();
         }
@@ -92,35 +92,9 @@ public class ParamUpgrader
 
         UIHelper.SimpleHeader("Version", "");
 
-        if (ImGui.BeginTable($"upgraderInfo", 2, tblFlags))
-        {
-            ImGui.TableSetupColumn("Title", ImGuiTableColumnFlags.WidthFixed);
-            ImGui.TableSetupColumn("Contents", ImGuiTableColumnFlags.WidthFixed);
-
-            // Primary
-            ImGui.TableNextRow();
-            ImGui.TableSetColumnIndex(0);
-
-            ImGui.AlignTextToFramePadding();
-            ImGui.Text("Primary Param Version");
-
-            ImGui.TableSetColumnIndex(1);
-
-            ImGui.Text($"{primaryBank.ParamVersion}");
-
-            // Source
-            ImGui.TableNextRow();
-            ImGui.TableSetColumnIndex(0);
-
-            ImGui.AlignTextToFramePadding();
-            ImGui.Text("Source Param Version");
-
-            ImGui.TableSetColumnIndex(1);
-
-            ImGui.Text($"{vanillaBank.ParamVersion}");
-
-            ImGui.EndTable();
-        }
+        ImGui.Text($"Primary Param Version: {primaryBank.ParamVersion}");
+        ImGui.Text($"Source Param Version: {vanillaBank.ParamVersion}");
+        ImGui.Text($"");
 
         UIHelper.SimpleHeader("Actions", "");
 

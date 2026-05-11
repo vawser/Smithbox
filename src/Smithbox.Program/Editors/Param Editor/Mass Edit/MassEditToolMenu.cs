@@ -3,7 +3,6 @@ using Microsoft.Extensions.Logging;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Logger;
-using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -13,37 +12,134 @@ using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
-
 namespace StudioCore.Editors.ParamEditor;
 
-
-public class MassEditTemplateMenu
+public class MassEditToolMenu
 {
     public MassEdit Parent;
 
     public bool InitialScriptLoad = false;
 
     public List<MassEditTemplate> ScriptList = new List<MassEditTemplate>();
+    public MassEditTemplate CurrentTemplate;
 
     public string NewScriptName = "";
     public string NewScriptContents = "";
     public bool IsScriptCommon = true;
 
-    public MassEditTemplate CurrentTemplate;
-
-    public MassEditTemplateMenu(MassEdit parent)
+    public MassEditToolMenu(MassEdit parent)
     {
         Parent = parent;
     }
 
-    public void DisplayMenu()
+    public void Display()
+    {
+        MassEditScriptSetup();
+
+        if (ImGui.BeginTabBar("massEditTabs"))
+        {
+            if (ImGui.BeginTabItem("Command Palette"))
+            {
+                DisplayCommandPalette();
+
+                ImGui.EndTabItem();
+            }
+
+
+            if (ImGui.BeginTabItem("Templates"))
+            {
+                DisplayTemplateMenu();
+
+                ImGui.EndTabItem();
+            }
+
+            ImGui.EndTabBar();
+        }
+    }
+
+    private void DisplayCommandPalette()
     {
         var windowWidth = ImGui.GetWindowWidth();
         var inputBoxSize = new Vector2(windowWidth * 0.725f, 32);
 
-        MassEditScriptSetup();
+        var Size = ImGui.GetWindowSize();
+        float EditX = Size.X * 0.92f;
+        float EditY = Size.Y * 0.1f;
 
-        UIHelper.WrappedText("Load and edit mass edit templates here.");
+        UIHelper.WrappedText("Write and execute mass edit commands here.");
+        UIHelper.WrappedText("");
+
+        // AutoFill
+        if (Parent.AutoFill != null)
+        {
+            var res = Parent.AutoFill.MassEditCompleteAutoFill();
+            if (res != null)
+            {
+                Parent.State.CurrentMenuInput = Parent.State.CurrentMenuInput + res;
+            }
+        }
+
+        // Input
+        UIHelper.SimpleHeader("Input", "Type in the mass edit commands you wish to apply here.");
+
+        ImGui.InputTextMultiline("##MEditRegexInput", ref Parent.State.CurrentMenuInput, 65536,
+        new Vector2(EditX, EditY));
+
+        if (ImGui.Button("Apply##action_Selection_MassEdit_Execute", DPI.StandardButtonSize))
+        {
+            Parent.ExecuteMassEdit(
+                Parent.State.CurrentMenuInput,
+                Parent.CurrentView.GetPrimaryBank(),
+                Parent.CurrentView.Selection);
+        }
+
+        ImGui.SameLine();
+
+        if (ImGui.Button("Clear##action_Selection_MassEdit_Clear", DPI.StandardButtonSize))
+        {
+            Parent.State.CurrentMenuInput = "";
+        }
+
+        ImGui.Text("");
+
+        // Templates
+        UIHelper.SimpleHeader("Templates", "");
+
+        if (ImGui.BeginCombo("##massEditScripts", CurrentTemplate.name))
+        {
+            foreach (var script in ScriptList)
+            {
+                if (ImGui.Selectable(script.name, CurrentTemplate.name == script.name))
+                {
+                    CurrentTemplate = script;
+                }
+            }
+
+            ImGui.EndCombo();
+        }
+
+        if (CurrentTemplate != null)
+        {
+            ImGui.SameLine();
+            if (ImGui.Button("Load"))
+            {
+                Parent.State.CurrentMenuInput = GenerateMassedit(CurrentTemplate);
+            }
+        }
+
+        UIHelper.WrappedText("");
+
+        // Output
+        UIHelper.SimpleHeader("Output", "Success state of the Mass Edit command that was previously used.\n\nRemember to handle clipboard state between edits with the 'clear' command");
+        UIHelper.WrappedText($"{Parent.State.MassEditResult}");
+    }
+
+    private void DisplayTemplateMenu()
+    {
+        var windowWidth = ImGui.GetWindowWidth();
+        var inputBoxSize = new Vector2(windowWidth * 0.725f, 32);
+
+        UIHelper.WrappedText("Create and edit mass edit templates here.");
         UIHelper.WrappedText("");
 
         UIHelper.SimpleHeader("Existing Templates", "");
@@ -66,7 +162,7 @@ public class MassEditTemplateMenu
         {
             if (ImGui.Button("Load"))
             {
-                Parent.CurrentMenuInput = GenerateMassedit(CurrentTemplate);
+                Parent.State.CurrentMenuInput = GenerateMassedit(CurrentTemplate);
             }
 
             ImGui.SameLine();
@@ -116,8 +212,7 @@ public class MassEditTemplateMenu
             Process.Start("explorer.exe", projectScriptDir);
         }
     }
-
-    public void MassEditScriptSetup()
+    private void MassEditScriptSetup()
     {
         if (!InitialScriptLoad)
         {
@@ -274,6 +369,4 @@ public class MassEditTemplateMenu
                string.Join('\n', template.args.Select(x => $@"newvar {x[0]}:{x[1]};")) + '\n' +
                string.Join('\n', template.text.Skip(template.args.Count + template.preamble.Count));
     }
-
 }
-

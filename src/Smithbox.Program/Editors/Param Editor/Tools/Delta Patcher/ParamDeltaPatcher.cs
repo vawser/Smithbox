@@ -68,7 +68,7 @@ public class ParamDeltaPatcher
 
         if (ImGui.CollapsingHeader("Param Delta Patcher"))
         {
-            ImGui.BeginChild("ParamDeltaPatcherToolSection");
+            ImGui.BeginChild("ParamDeltaPatcherToolSection", ImGuiChildFlags.Borders);
 
             if (ImGui.BeginTabBar("deltaTabs"))
             {
@@ -103,8 +103,6 @@ public class ParamDeltaPatcher
         }
         UIHelper.Tooltip("If enabled, delta entries for all project types are displayed.");
 
-        ImGui.Separator();
-
         ImGui.Checkbox("Include Modified Rows", ref CFG.Current.ParamEditor_DeltaPatcher_Import_Modified_Rows);
         UIHelper.Tooltip("If enabled, rows considered 'modified' within the delta will be applied. This means the import will modify rows within the primary bank with the same row ID and index as those in the delta.");
 
@@ -114,13 +112,13 @@ public class ParamDeltaPatcher
         ImGui.Checkbox("Include Deleted Rows", ref CFG.Current.ParamEditor_DeltaPatcher_Import_Deleted_Rows);
         UIHelper.Tooltip("If enabled, rows considered 'delete' within the delta will be applied. This means the import will delete these rows from the primary bank.");
 
-        ImGui.Separator();
-
         ImGui.Checkbox("Restrict Row Modification", ref CFG.Current.ParamEditor_DeltaPatcher_Import_Restrict_Row_Modify);
         UIHelper.Tooltip("If enabled, row modifications will only occur if the row hasn't already been modified.");
 
         ImGui.Checkbox("Restrict Row Addition", ref CFG.Current.ParamEditor_DeltaPatcher_Import_Restrict_Row_Add);
         UIHelper.Tooltip("If enabled, row additions will only occur if the row ID doesn't already exist in the primary bank.");
+
+        ImGui.Text("");
 
         UIHelper.SimpleHeader("Actions", "");
 
@@ -141,10 +139,14 @@ public class ParamDeltaPatcher
         }
         UIHelper.Tooltip("Refresh the import entries list.");
 
+        ImGui.Text("");
+
         UIHelper.SimpleHeader("Entries", "");
         ImGui.BeginChild("importEntryList");
 
         DisplayEntryList();
+
+        ImGui.Text("");
 
         ImGui.EndChild();
 
@@ -303,16 +305,18 @@ public class ParamDeltaPatcher
         DPI.ApplyInputWidth();
         ImGui.InputText("##inputFileName", ref Selection.ExportName, 255);
 
+        ImGui.Text("");
+
         UIHelper.SimpleHeader("Tag", "The file tag for the delta file.");
         DPI.ApplyInputWidth();
         ImGui.InputText("##inputFileTag", ref Selection.ExportFileTag, 255);
 
+        ImGui.Text("");
 
         UIHelper.SimpleHeader("Options", "Options to set for the delta builder.");
 
-        ImGui.Text("Export Mode");
         DPI.ApplyInputWidth();
-        if (ImGui.BeginCombo("##inputValue", Selection.CurrentExportMode.GetDisplayName()))
+        if (ImGui.BeginCombo("Export Mode##inputValue", Selection.CurrentExportMode.GetDisplayName()))
         {
             foreach (var entry in Enum.GetValues(typeof(DeltaExportMode)))
             {
@@ -329,6 +333,8 @@ public class ParamDeltaPatcher
         ImGui.Checkbox("Ignore Indexed Params", ref CFG.Current.ParamEditor_DeltaPatcher_Export_Ignore_Indexed_Rows);
         UIHelper.Tooltip("If enabled, indexed params where the rows depending on row index as well as ID will be ignored when producing the delta.");
 
+        ImGui.Text("");
+
         UIHelper.SimpleHeader("Actions", "");
         if (ImGui.Button("Export", DPI.StandardButtonSize))
         {
@@ -344,6 +350,8 @@ public class ParamDeltaPatcher
 
             Process.Start("explorer.exe", storageDir);
         }
+
+        ImGui.Text("");
     }
 
     #endregion

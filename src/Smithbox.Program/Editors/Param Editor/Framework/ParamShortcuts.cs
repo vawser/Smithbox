@@ -130,7 +130,7 @@ public class ParamShortcuts
         // Apply Mass Edit
         if (InputManager.IsPressed(KeybindID.ParamEditor_Apply_Mass_Edit))
         {
-            activeView.MassEdit.ApplyMassEdit(activeView.MassEdit.CurrentMassEditInput);
+            activeView.MassEdit.ApplyMassEdit(activeView.MassEdit.State.CurrentMassEditInput);
         }
 
         // Open Mass Edit Menu
@@ -207,7 +207,7 @@ public class ParamShortcuts
             return false;
         }
 
-        if (curView.MassEdit.DisplayMassEditPopup)
+        if (curView.MassEdit.State.DisplayMassEditPopup)
         {
             return false;
         }

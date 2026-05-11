@@ -91,6 +91,8 @@ public class ParamReloader
         {
             if (ImGui.CollapsingHeader("Param Reloader"))
             {
+                ImGui.BeginChild("ParamReloaderSection", ImGuiChildFlags.Borders);
+
                 UIHelper.WrappedText("WARNING: Param Reloader only works for existing row entries.\nGame must be restarted for new rows and modified row IDs.");
                 UIHelper.WrappedText("");
 
@@ -107,6 +109,8 @@ public class ParamReloader
                     ReloadAllParams();
                 }
                 UIHelper.Tooltip($"{InputManager.GetHint(KeybindID.ParamEditor_Reload_All_Params)}");
+
+                ImGui.EndChild();
             }
         }
     }
