@@ -2182,6 +2182,24 @@ public class ParamBank : IDisposable
         return null;
     }
 
+    public string GetTypeForParam(Param param)
+    {
+        if (Params == null)
+        {
+            return null;
+        }
+
+        foreach (KeyValuePair<string, Param> pair in Params)
+        {
+            if (param == pair.Value)
+            {
+                return pair.Value.ParamType;
+            }
+        }
+
+        return null;
+    }
+
     public Param GetParamFromName(string param)
     {
         if (Params == null)

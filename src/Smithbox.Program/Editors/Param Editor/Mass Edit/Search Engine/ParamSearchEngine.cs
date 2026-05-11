@@ -69,6 +69,18 @@ public class ParamSearchEngine : SearchEngine<bool, (ParamBank, Param)>
                             : auxBank.GetKeyForParam(param.Item2)));
             }, () => auxBanks.Count > 0));
 
+        filterList.Add("paramtype", newCmd(new[] { "param type (regex)" },
+            "Selects all params whose param type matches the given regex", (args, lenient) =>
+            {
+                Regex rx = lenient ? new Regex(args[0], RegexOptions.IgnoreCase) : new Regex($@"^{args[0]}$");
+                return noContext(param =>
+                    param.Item1 != bank
+                        ? false
+                        : rx.IsMatch(bank.GetTypeForParam(param.Item2) == null
+                            ? ""
+                            : bank.GetTypeForParam(param.Item2)));
+            }));
+
         defaultFilter = newCmd(new[] { "param name (regex)" },
             "Selects all params whose name matches the given regex", (args, lenient) =>
             {
