@@ -158,17 +158,17 @@ public class MapPropertyView
         ImGui.EndChild();
     }
 
-    private static readonly PropertyInfo _rowNameProp = typeof(Param.Row).GetProperty("Name");
-    private static readonly PropertyInfo _rowIdProp = typeof(Param.Row).GetProperty("ID");
-
     private void PropEditorParamRow(Entity selection)
     {
         ImGui.Columns(2);
         ImGui.Separator();
         var id = 0;
 
-        PropEditorPropInfoRow(selection.WrappedObject, _rowNameProp, "Name", ref id, selection);
-        PropEditorPropInfoRow(selection.WrappedObject, _rowIdProp, "ID", ref id, selection);
+        PropertyInfo nameProp = selection.WrappedObject.GetType().GetProperty("Name");
+        PropertyInfo idProp = selection.WrappedObject.GetType().GetProperty("ID");
+
+        PropEditorPropInfoRow(selection.WrappedObject, nameProp, "Name", ref id, selection);
+        PropEditorPropInfoRow(selection.WrappedObject, idProp, "ID", ref id, selection);
 
         if (selection.WrappedObject is MergedParamRow mergedRow)
         {
@@ -212,9 +212,12 @@ public class MapPropertyView
         ImGui.Separator();
         var id = 0;
 
+        PropertyInfo nameProp = row.GetType().GetProperty("Name");
+        PropertyInfo idProp = row.GetType().GetProperty("ID");
+
         ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_ParamRow_Text);
-        PropEditorPropInfoRow(row, _rowNameProp, "Name", ref id, null);
-        PropEditorPropInfoRow(row, _rowIdProp, "ID", ref id, null);
+        PropEditorPropInfoRow(row, nameProp, "Name", ref id, null);
+        PropEditorPropInfoRow(row, idProp, "ID", ref id, null);
         ImGui.PopStyleColor();
 
         ImGui.Separator();
