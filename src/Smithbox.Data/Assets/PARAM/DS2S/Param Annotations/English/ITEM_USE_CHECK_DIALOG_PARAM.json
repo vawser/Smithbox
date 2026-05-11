@@ -2,47 +2,47 @@
   "Param": "ITEM_USE_CHECK_DIALOG_PARAM",
   "Type": "ITEM_USE_CHECK_DIALOG_PARAM",
   "Name": "ITEM_USE_CHECK_DIALOG_PARAM",
-  "Description": "",
+  "Description": "Defines conditional confirmation dialogs shown before an item can be used, including multiple check conditions and corresponding localized display text.",
   "Fields": [
     {
       "Field": "checkType1",
-      "Name": "確認タイプ１",
-      "Description": ""
+      "Name": "Check Type 1",
+      "Description": "First condition type used to determine whether a confirmation dialog should be displayed before item use."
     },
     {
       "Field": "checkType2",
-      "Name": "確認タイプ２",
-      "Description": ""
+      "Name": "Check Type 2",
+      "Description": "Second condition type for additional validation before showing the item use confirmation dialog."
     },
     {
       "Field": "checkType3",
-      "Name": "確認タイプ３",
-      "Description": ""
+      "Name": "Check Type 3",
+      "Description": "Third condition type used in multi-stage or extended item usage validation logic."
     },
     {
       "Field": "checkType4",
-      "Name": "確認タイプ４",
-      "Description": ""
+      "Name": "Check Type 4",
+      "Description": "Fourth condition type for advanced or special-case item usage checks."
     },
     {
       "Field": "displayTextId1",
-      "Name": "表示テキストID１",
-      "Description": ""
+      "Name": "Display Text ID 1",
+      "Description": "Text ID used for the first confirmation or warning message shown when check type 1 is triggered."
     },
     {
       "Field": "displayTextId2",
-      "Name": "表示テキストID２",
-      "Description": ""
+      "Name": "Display Text ID 2",
+      "Description": "Text ID used for the second confirmation or warning message associated with check type 2."
     },
     {
       "Field": "displayTextId3",
-      "Name": "表示テキストID３",
-      "Description": ""
+      "Name": "Display Text ID 3",
+      "Description": "Text ID used for the third confirmation or warning message associated with check type 3."
     },
     {
       "Field": "displayTextId4",
-      "Name": "表示テキストID４",
-      "Description": ""
+      "Name": "Display Text ID 4",
+      "Description": "Text ID used for the fourth confirmation or warning message associated with check type 4."
     }
   ]
 }

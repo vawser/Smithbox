@@ -2,77 +2,77 @@
   "Param": "ITEM_USAGE_PARAM",
   "Type": "ITEM_USAGE_PARAM",
   "Name": "ITEM_USAGE_PARAM",
-  "Description": "",
+  "Description": "Defines rules for when and how an item can be used, including environment restrictions, multiplayer permissions, consumption behavior, and conditional usage logic.",
   "Fields": [
     {
       "Field": "eventFlag",
-      "Name": "使用許可するイベントフラグ",
-      "Description": ""
+      "Name": "Usage Permission Event Flag",
+      "Description": "Event flag required to allow item usage."
     },
     {
       "Field": "condition",
-      "Name": "指定状態のみ許可",
-      "Description": ""
+      "Name": "Restricted Condition",
+      "Description": "Defines a specific state or condition required to use the item."
     },
     {
       "Field": "isAllowUseOnLadder",
-      "Name": "はしご中使用許可",
-      "Description": ""
+      "Name": "Allow Use on Ladder",
+      "Description": "Determines whether the item can be used while on a ladder."
     },
     {
       "Field": "isAllowMultipleUse",
-      "Name": "使用個数設定許可",
-      "Description": ""
+      "Name": "Allow Multiple Uses",
+      "Description": "Allows setting or consuming multiple item uses at once."
     },
     {
       "Field": "isConsume",
-      "Name": "消耗品",
-      "Description": ""
+      "Name": "Consumable Item",
+      "Description": "Indicates whether the item is consumed upon use."
     },
     {
       "Field": "isNormalConsumu",
-      "Name": "通常タイミングで消費する",
-      "Description": ""
+      "Name": "Consume on Normal Timing",
+      "Description": "Determines whether the item is consumed during standard usage timing."
     },
     {
       "Field": "permitOnlineSingle",
-      "Name": "オンラインシングルプレイ許可",
-      "Description": ""
+      "Name": "Allow in Online Single Player",
+      "Description": "Allows item usage in online single-player mode."
     },
     {
       "Field": "permitOnlineMulti",
-      "Name": "マルチプレイ許可",
-      "Description": ""
+      "Name": "Allow in Multiplayer",
+      "Description": "Allows item usage in multiplayer sessions."
     },
     {
       "Field": "permitOffline",
-      "Name": "オフライン許可",
-      "Description": ""
+      "Name": "Allow Offline Use",
+      "Description": "Allows item usage in offline mode."
     },
     {
       "Field": "permitOnlineGuest",
-      "Name": "ゲスト時許可",
-      "Description": ""
+      "Name": "Allow as Online Guest",
+      "Description": "Allows item usage while connected as a guest in online sessions."
     },
     {
       "Field": "permitBattlePhantom",
-      "Name": "決闘霊体時許可",
-      "Description": ""
+      "Name": "Allow as Duel Phantom",
+      "Description": "Allows item usage while in phantom or duel-related states."
     },
     {
       "Field": "permitLeave",
-      "Name": "破棄許可",
-      "Description": ""
+      "Name": "Allow Discard",
+      "Description": "Allows the item to be discarded."
     },
     {
       "Field": "permitDrop",
-      "Name": "譲渡許可",
-      "Description": ""
+      "Name": "Allow Drop/Transfer",
+      "Description": "Allows the item to be dropped or given to others."
     },
     {
       "Field": "exEvalFuncID",
-      "Name": "拡張使用許可判定関数ID（仮）",
-      "Description": ""
+      "Name": "Extended Usage Evaluation Function ID",
+      "Description": "Optional custom function used to determine additional usage conditions."
     }
   ]
 }
