@@ -2,13 +2,13 @@
 <PARAMMETA XmlVersion="0">
     <Field>
         <whiteDoorCategory  Enum="OBJ_WHITE_DOOR_CATEGORY_ENUM"/>
-        <aReserved />
+        <aReserved Padding="" />
         <waitTime />
-        <defaultSfxId />
-        <multiPlaySfxId />
+        <defaultSfxId ParticleAlias="" />
+        <multiPlaySfxId ParticleAlias="" />
         <frontKeyGuideParamId  Refs="KeyGuideParam"/>
         <backKeyGuideParamId  Refs="KeyGuideParam"/>
-        <passFlagId />
-        <enableKeyGuideFlagId />
+        <passFlagId FlagAlias="" />
+        <enableKeyGuideFlagId FlagAlias="" />
     </Field>
 </PARAMMETA>

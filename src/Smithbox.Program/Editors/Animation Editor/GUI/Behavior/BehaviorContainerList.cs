@@ -180,16 +180,16 @@ public class BehaviorContainerList
     private void LoadContainerEntry(FileDictionaryEntry fileEntry)
     {
         var entry = Project.Handler.AnimData.BehaviorBank.Behaviors
-                            .FirstOrDefault(e => e.Key.Filename == fileEntry.Filename);
+                            .GetValueOrDefault(fileEntry);
 
-        if (entry.Value != null)
+        if (entry != null)
         {
-            View.Selection.SelectedContainer = entry.Value;
+            View.Selection.SelectedContainer = entry;
             View.Selection.SelectedFile = null;
             View.InvalidateContent();
 
             // Populates the Files list so we can display the list in select view
-            entry.Value.PopulateEntryList();
+            entry.PopulateEntryList();
 
             View.FileList.ApplyAutoSelectPass = true;
         }

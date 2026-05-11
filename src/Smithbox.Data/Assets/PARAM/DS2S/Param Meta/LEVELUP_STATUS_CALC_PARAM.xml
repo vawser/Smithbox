@@ -35,7 +35,7 @@
         <defenseSlash  IsBool=""/>
         <defenseThrust  IsBool=""/>
         <defensePoise  IsBool=""/>
-        <dummy00 />
-        <dummy01 />
+        <dummy00 Padding="" />
+        <dummy01 Padding="" />
     </Field>
 </PARAMMETA>

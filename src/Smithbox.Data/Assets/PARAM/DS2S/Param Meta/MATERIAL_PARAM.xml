@@ -3,6 +3,6 @@
     <Field>
         <isLiquid  IsBool=""/>
         <isArrowPenetrate  IsBool=""/>
-        <padding />
+        <padding Padding="" />
     </Field>
 </PARAMMETA>

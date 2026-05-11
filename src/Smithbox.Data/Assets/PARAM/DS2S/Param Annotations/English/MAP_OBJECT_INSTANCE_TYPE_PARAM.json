@@ -2,72 +2,72 @@
   "Param": "MAP_OBJECT_INSTANCE_TYPE_PARAM",
   "Type": "MAP_OBJECT_INSTANCE_TYPE_PARAM",
   "Name": "MAP_OBJECT_INSTANCE_TYPE_PARAM",
-  "Description": "",
+  "Description": "Defines physical properties, durability, break behavior, and physics response characteristics for different map object instance types.",
   "Fields": [
     {
       "Field": "sizeType",
-      "Name": "《小型/大型》",
-      "Description": ""
+      "Name": "Size Type",
+      "Description": "Defines whether the object is classified as small or large for gameplay and physics handling."
     },
     {
       "Field": "weightType",
-      "Name": "《重量》",
-      "Description": ""
+      "Name": "Weight Type",
+      "Description": "Defines the object's weight category, affecting physics and interaction behavior."
     },
     {
       "Field": "breakAction",
-      "Name": "《破壊可能行動》",
-      "Description": ""
+      "Name": "Breakable Action Type",
+      "Description": "Defines which player actions can break this object type."
     },
     {
       "Field": "durabilityType",
-      "Name": "《荷重限界》",
-      "Description": ""
+      "Name": "Durability Type",
+      "Description": "Defines structural durability of the object."
     },
     {
       "Field": "hp",
-      "Name": "《HP》",
-      "Description": ""
+      "Name": "HP",
+      "Description": "Hit points of the object; determines how much damage it can take before breaking."
     },
     {
       "Field": "dummy",
-      "Name": "ダミー",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "impact",
-      "Name": "《接触衝撃耐性》",
-      "Description": ""
+      "Name": "Impact Resistance",
+      "Description": "Resistance against collision forces and physical impacts."
     },
     {
       "Field": "mass",
-      "Name": "《質量》",
-      "Description": ""
+      "Name": "Mass",
+      "Description": "Physical mass of the object used in physics simulation."
     },
     {
       "Field": "friction",
-      "Name": "《摩擦係数》",
-      "Description": ""
+      "Name": "Friction Coefficient",
+      "Description": "Determines how much the object resists sliding against surfaces."
     },
     {
       "Field": "restitution",
-      "Name": "《反発係数》",
-      "Description": ""
+      "Name": "Bounciness",
+      "Description": "Determines how much the object bounces after impact."
     },
     {
       "Field": "objAttackAttr",
-      "Name": "《ダメージ_攻撃属性》",
-      "Description": ""
+      "Name": "Object Damage Attack Attribute",
+      "Description": "Defines the attack or damage attribute type applied by or to the object."
     },
     {
       "Field": "rumbleScale",
-      "Name": "《ヒット時揺れ最大幅》",
-      "Description": ""
+      "Name": "Hit Rumble Strength",
+      "Description": "Maximum intensity of camera or controller shake when the object is hit."
     },
     {
       "Field": "rumbleTime",
-      "Name": "《ヒット時揺れ時間》",
-      "Description": ""
+      "Name": "Hit Rumble Duration",
+      "Description": "Duration of the rumble/shake effect when the object is hit."
     }
   ]
 }

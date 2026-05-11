@@ -2,27 +2,27 @@
   "Param": "MAP_OBJECT_DOOR_PARAM",
   "Type": "MAP_OBJECT_DOOR_PARAM",
   "Name": "MAP_OBJECT_DOOR_PARAM",
-  "Description": "",
+  "Description": "Defines behavior, interaction types, and UI key guide settings for map doors.",
   "Fields": [
     {
       "Field": "doorType",
-      "Name": "扉タイプ",
-      "Description": ""
+      "Name": "Door Type",
+      "Description": "Specifies the type or behavior category of the door (e.g., sliding, swinging, locked, etc.)."
     },
     {
       "Field": "aReserved",
-      "Name": "予約",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "openKeyGuideParam",
-      "Name": "開く際のキーガイドパラメータID",
-      "Description": ""
+      "Name": "Open Interaction Key Guide Parameter ID",
+      "Description": "ID of the key guide parameter displayed when interacting with the door to open it."
     },
     {
       "Field": "closeKeyGuideParam",
-      "Name": "閉じる際のキーガイドパラメータID",
-      "Description": ""
+      "Name": "Close Interaction Key Guide Parameter ID",
+      "Description": "ID of the key guide parameter displayed when interacting with the door to close it."
     }
   ]
 }

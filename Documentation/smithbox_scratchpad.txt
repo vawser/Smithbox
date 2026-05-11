@@ -7,6 +7,8 @@
 - Model Editor
  - Mesh visbility/delete not working properly
  
+ - Rendering experiment (TinyFFR)
+ 
 - Material Editor:
  - Add MATBIN support back
  

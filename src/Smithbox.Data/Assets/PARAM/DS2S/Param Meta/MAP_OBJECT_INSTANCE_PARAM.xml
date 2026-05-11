@@ -2,8 +2,8 @@
 <PARAMMETA XmlVersion="0">
     <Field>
         <objCtrlId />
-        <bulletId0 />
-        <damageId0 />
+        <bulletId0 RefGroup="bulletparam" />
+        <damageId0 RefGroup="damageparam" />
         <touchRegionScale />
         <movableRange />
         <objType  Refs="MapObjectInstanceTypeParam"/>
@@ -31,12 +31,12 @@
         <usableEnemy  IsBool=""/>
         <onlyEventCanBreak  IsBool=""/>
         <useAltSfx  IsBool=""/>
-        <dummy1 />
+        <dummy1 Padding="" />
         <breakObjMakeStateId />
         <resetType  Enum="OBJ_RESET_TYPE_ENUM"/>
         <tmpBreakObjMakeStateId />
         <iblTextureId />
-        <dummy2 />
-        <itemLotId />
+        <dummy2 Padding="" />
+        <itemLotId RefGroup="itemlot" />
     </Field>
 </PARAMMETA>

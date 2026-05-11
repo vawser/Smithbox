@@ -77,8 +77,9 @@ public class ImportFieldAction : EditorAction
     {
         CurrentGparam = StoredGparam;
 
-        var target = Project.Handler.GparamData.PrimaryBank.Entries.FirstOrDefault(e => e.Key == FileEntry);
-        if (target.Key != null)
+        var target = Project.Handler.GparamData.PrimaryBank.Entries.GetValueOrDefault(FileEntry);
+
+        if (target != null)
         {
             Project.Handler.GparamData.PrimaryBank.Entries[FileEntry] = StoredGparam;
         }

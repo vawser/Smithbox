@@ -29,7 +29,7 @@
         <evasionInvincibleTime />
         <actionSpeed />
         <physicalAttackByAbyss />
-        <dummy1 />
+        <dummy1 Padding="" />
         <equipLoadMax />
     </Field>
 </PARAMMETA>

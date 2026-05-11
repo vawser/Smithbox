@@ -31,8 +31,9 @@ public class ImportGparamAction : EditorAction
 
     public override ActionEvent Execute()
     {
-        var target = Project.Handler.GparamData.PrimaryBank.Entries.FirstOrDefault(e => e.Key == FileEntry);
-        if(target.Key != null)
+        var target = Project.Handler.GparamData.PrimaryBank.Entries.GetValueOrDefault(FileEntry);
+
+        if (target != null)
         {
             Project.Handler.GparamData.PrimaryBank.Entries[FileEntry] = NewGparam;
         }
@@ -44,8 +45,9 @@ public class ImportGparamAction : EditorAction
 
     public override ActionEvent Undo()
     {
-        var target = Project.Handler.GparamData.PrimaryBank.Entries.FirstOrDefault(e => e.Key == FileEntry);
-        if (target.Key != null)
+        var target = Project.Handler.GparamData.PrimaryBank.Entries.GetValueOrDefault(FileEntry);
+
+        if (target != null)
         {
             Project.Handler.GparamData.PrimaryBank.Entries[FileEntry] = StoredGparam;
         }

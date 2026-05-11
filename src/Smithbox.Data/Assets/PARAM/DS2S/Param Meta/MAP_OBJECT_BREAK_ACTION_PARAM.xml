@@ -10,6 +10,6 @@
         <damaged  IsBool=""/>
         <attack  IsBool=""/>
         <fall_attack  IsBool=""/>
-        <dummy />
+        <dummy Padding="" />
     </Field>
 </PARAMMETA>

@@ -2,56 +2,56 @@
   "Param": "MAP_OBJECT_BREAK_ACTION_PARAM",
   "Type": "MAP_OBJECT_BREAK_ACTION_PARAM",
   "Name": "MAP_OBJECT_BREAK_ACTION_PARAM",
-  "Description": "",
+  "Description": "Defines which player movement or action states are capable of breaking destructible map objects.",
   "Fields": [
     {
       "Field": "sideWalk",
-      "Name": "《水平移動で破壊》",
-      "Description": ""
+      "Name": "Breakable While Strafing",
+      "Description": "Determines whether the object can be broken while the player is moving sideways."
     },
     {
       "Field": "walk",
-      "Name": "《歩行で破壊》",
-      "Description": ""
+      "Name": "Breakable While Walking",
+      "Description": "Determines whether the object can be broken while the player is walking."
     },
     {
       "Field": "dash",
-      "Name": "《ダッシュで破壊》",
-      "Description": ""
+      "Name": "Breakable While Dashing",
+      "Description": "Determines whether the object can be broken while the player is dashing or sprinting."
     },
     {
       "Field": "rolling",
-      "Name": "《回避で破壊》",
-      "Description": ""
+      "Name": "Breakable While Rolling",
+      "Description": "Determines whether the object can be broken during an evasive roll."
     },
     {
       "Field": "jump",
-      "Name": "《ジャンプで破壊》",
-      "Description": ""
+      "Name": "Breakable While Jumping",
+      "Description": "Determines whether the object can be broken while the player is jumping."
     },
     {
       "Field": "fall",
-      "Name": "《落下で破壊》",
-      "Description": ""
+      "Name": "Breakable While Falling",
+      "Description": "Determines whether the object can be broken by falling onto it."
     },
     {
       "Field": "damaged",
-      "Name": "《ダメージ中で破壊》",
-      "Description": ""
+      "Name": "Breakable While Taking Damage",
+      "Description": "Determines whether the object can be broken while the player is in a damaged or staggered state."
     },
     {
       "Field": "attack",
-      "Name": "《攻撃中で破壊》",
-      "Description": ""
+      "Name": "Breakable While Attacking",
+      "Description": "Determines whether the object can be broken during attack actions."
     },
     {
       "Field": "fall_attack",
-      "Name": "《落下攻撃中で破壊》",
-      "Description": ""
+      "Name": "Breakable During Plunging Attack",
+      "Description": "Determines whether the object can be broken during a falling or plunging attack."
     },
     {
       "Field": "dummy",
-      "Name": "ダミー",
+      "Name": "Padding",
       "Description": ""
     }
   ]

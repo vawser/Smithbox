@@ -2,11 +2,11 @@
 <PARAMMETA XmlVersion="0">
     <Field>
         <sizeType  Enum="OBJ_SIZE_ENUM"/>
-        <weightType  Refs="MapObjectWeightParam"/>
-        <breakAction  Enum="OBJ_BREAK_ACTION_TYPE_ENUM"/>
+        <weightType Refs="MapObjectWeightParam"/>
+        <breakAction Refs="MapObjectBreakActionParam" />
         <durabilityType  Enum="OBJ_UPPER_DURABILITY_TYPE_ENUM"/>
         <hp />
-        <dummy />
+        <dummy Padding="" />
         <impact />
         <mass />
         <friction />

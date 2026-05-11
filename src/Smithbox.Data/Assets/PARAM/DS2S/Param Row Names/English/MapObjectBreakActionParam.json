@@ -4,67 +4,67 @@
     {
       "ID": 0,
       "Entries": [
-        "UNKNOWN"
+        "Always Broken"
       ]
     },
     {
       "ID": 1,
       "Entries": [
-        "UNKNOWN"
+        "Horizontal Movement"
       ]
     },
     {
       "ID": 2,
       "Entries": [
-        "UNKNOWN"
+        "Walking"
       ]
     },
     {
       "ID": 3,
       "Entries": [
-        "UNKNOWN"
+        "Dash"
       ]
     },
     {
       "ID": 4,
       "Entries": [
-        "UNKNOWN"
+        "Avoidance"
       ]
     },
     {
       "ID": 5,
       "Entries": [
-        "UNKNOWN"
+        "Jump"
       ]
     },
     {
       "ID": 6,
       "Entries": [
-        "UNKNOWN"
+        "Falling"
       ]
     },
     {
       "ID": 7,
       "Entries": [
-        "UNKNOWN"
+        "Damage"
       ]
     },
     {
       "ID": 8,
       "Entries": [
-        "UNKNOWN"
+        "Attack"
       ]
     },
     {
       "ID": 9,
       "Entries": [
-        "UNKNOWN"
+        "Falling Attack"
       ]
     },
     {
       "ID": 10,
       "Entries": [
-        "UNKNOWN"
+        "Unbreakable"
       ]
     }
   ]

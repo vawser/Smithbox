@@ -2,157 +2,157 @@
   "Param": "MENU_STATS_PARAM",
   "Type": "MENU_STATS_PARAM",
   "Name": "MENU_STATS_PARAM",
-  "Description": "",
+  "Description": "Defines how player statistics are displayed in the in-game menu, including offensive power, defenses, resistances, and derived combat attributes.",
   "Fields": [
     {
       "Field": "hpMax",
-      "Name": "メニュー用 最大HP",
-      "Description": ""
+      "Name": "Max HP",
+      "Description": "Maximum health value displayed in the menu."
     },
     {
       "Field": "staminaMax",
-      "Name": "メニュー用 スタミナ",
-      "Description": ""
+      "Name": "Max Stamina",
+      "Description": "Maximum stamina value displayed in the menu."
     },
     {
       "Field": "poise",
-      "Name": "メニュー用 強靭度",
-      "Description": ""
+      "Name": "Poise",
+      "Description": "Displays the player's poise (stagger resistance) in the menu."
     },
     {
       "Field": "spellUsesLevel",
-      "Name": "メニュー用 スペル使用回数レベル",
-      "Description": ""
+      "Name": "Spell Uses Level",
+      "Description": "Determines spell usage scaling level shown in the menu."
     },
     {
       "Field": "spellSlot",
-      "Name": "メニュー用 スペル記憶数",
-      "Description": ""
+      "Name": "Spell Slots",
+      "Description": "Number of available spell memory slots shown in the menu."
     },
     {
       "Field": "chantingTimeCorrectScale",
-      "Name": "メニュー用 スペル詠唱速度",
-      "Description": ""
+      "Name": "Casting Speed",
+      "Description": "Multiplier affecting spell casting speed displayed in the menu."
     },
     {
       "Field": "physicalAttackByStrength",
-      "Name": "メニュー用 物理攻撃力（筋力）",
-      "Description": ""
+      "Name": "Physical Attack (Strength)",
+      "Description": "Strength-based physical attack power displayed in the menu."
     },
     {
       "Field": "physicalAttackByDexterity",
-      "Name": "メニュー用 物理攻撃力（技量）",
-      "Description": ""
+      "Name": "Physical Attack (Dexterity)",
+      "Description": "Dexterity-based physical attack power displayed in the menu."
     },
     {
       "Field": "magicAttack",
-      "Name": "メニュー用 魔力攻撃力",
-      "Description": ""
+      "Name": "Magic Attack",
+      "Description": "Magic attack power displayed in the menu."
     },
     {
       "Field": "fireAttack",
-      "Name": "メニュー用 炎攻撃力",
-      "Description": ""
+      "Name": "Fire Attack",
+      "Description": "Fire-based attack power displayed in the menu."
     },
     {
       "Field": "thunderAttack",
-      "Name": "メニュー用 雷攻撃力",
-      "Description": ""
+      "Name": "Lightning Attack",
+      "Description": "Lightning-based attack power displayed in the menu."
     },
     {
       "Field": "darkAttack",
-      "Name": "メニュー用 闇攻撃力",
-      "Description": ""
+      "Name": "Dark Attack",
+      "Description": "Dark-element attack power displayed in the menu."
     },
     {
       "Field": "poisonAttack",
-      "Name": "メニュー用 毒攻撃力",
-      "Description": ""
+      "Name": "Poison Attack",
+      "Description": "Poison buildup or damage value displayed in the menu."
     },
     {
       "Field": "bleedingAttack",
-      "Name": "メニュー用 出血攻撃力",
-      "Description": ""
+      "Name": "Bleed Attack",
+      "Description": "Bleed buildup or damage value displayed in the menu."
     },
     {
       "Field": "weaponBreakAttack",
-      "Name": "メニュー用 破壊攻撃力",
-      "Description": ""
+      "Name": "Durability Attack",
+      "Description": "Damage value contributing to weapon durability reduction."
     },
     {
       "Field": "defense",
-      "Name": "メニュー用 防御力",
-      "Description": ""
+      "Name": "Defense",
+      "Description": "Overall physical defense value displayed in the menu."
     },
     {
       "Field": "magicResistance",
-      "Name": "メニュー用 魔力耐性",
-      "Description": ""
+      "Name": "Magic Resistance",
+      "Description": "Resistance against magic damage."
     },
     {
       "Field": "fireResistance",
-      "Name": "メニュー用 炎耐性",
-      "Description": ""
+      "Name": "Fire Resistance",
+      "Description": "Resistance against fire damage."
     },
     {
       "Field": "thunderResistance",
-      "Name": "メニュー用 雷耐性",
-      "Description": ""
+      "Name": "Lightning Resistance",
+      "Description": "Resistance against lightning damage."
     },
     {
       "Field": "darkResistance",
-      "Name": "メニュー用 闇耐性",
-      "Description": ""
+      "Name": "Dark Resistance",
+      "Description": "Resistance against dark damage."
     },
     {
       "Field": "poisonResistance",
-      "Name": "メニュー用 毒耐性",
-      "Description": ""
+      "Name": "Poison Resistance",
+      "Description": "Resistance against poison buildup."
     },
     {
       "Field": "bleedingResistance",
-      "Name": "メニュー用 出血耐性",
-      "Description": ""
+      "Name": "Bleed Resistance",
+      "Description": "Resistance against bleed buildup."
     },
     {
       "Field": "weaponBreakResistance",
-      "Name": "メニュー用 武器破壊耐性",
-      "Description": ""
+      "Name": "Durability Resistance",
+      "Description": "Resistance against durability loss from attacks."
     },
     {
       "Field": "petrifactionResistance",
-      "Name": "メニュー用 石化耐性",
-      "Description": ""
+      "Name": "Petrification Resistance",
+      "Description": "Resistance against petrification effects."
     },
     {
       "Field": "curseResistance",
-      "Name": "メニュー用 呪耐性",
-      "Description": ""
+      "Name": "Curse Resistance",
+      "Description": "Resistance against curse status effects."
     },
     {
       "Field": "evasionInvincibleTime",
-      "Name": "メニュー用 回避無敵時間",
-      "Description": ""
+      "Name": "Evasion Invincibility Time",
+      "Description": "Duration of invincibility frames during evasive actions."
     },
     {
       "Field": "actionSpeed",
-      "Name": "メニュー用 各種アクション速度",
-      "Description": ""
+      "Name": "Action Speed",
+      "Description": "Overall speed modifier for various player actions."
     },
     {
       "Field": "physicalAttackByAbyss",
-      "Name": "メニュー用 物理攻撃力(深淵)",
-      "Description": ""
+      "Name": "Physical Attack (Hollow)",
+      "Description": "Physical attack power associated with hollow-related scaling."
     },
     {
       "Field": "dummy1",
-      "Name": "ダミー",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "equipLoadMax",
-      "Name": "メニュー用 装備重量",
-      "Description": ""
+      "Name": "Max Equip Load",
+      "Description": "Maximum equipment weight the player can carry without penalty."
     }
   ]
 }

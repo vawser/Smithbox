@@ -2,47 +2,47 @@
   "Param": "MAP_TARGET_DIRECTION_PARAM",
   "Type": "MAP_TARGET_DIRECTION_PARAM",
   "Name": "MAP_TARGET_DIRECTION_PARAM",
-  "Description": "",
+  "Description": "Defines directional map targeting behavior.",
   "Fields": [
     {
       "Field": "directionX",
-      "Name": "X",
-      "Description": ""
+      "Name": "Direction: X",
+      "Description": "X-axis component of the direction vector."
     },
     {
       "Field": "directionY",
-      "Name": "Y",
-      "Description": ""
+      "Name": "Direction: Y",
+      "Description": "Y-axis component of the direction vector."
     },
     {
       "Field": "directionZ",
-      "Name": "Z",
-      "Description": ""
+      "Name": "Direction: Z",
+      "Description": "Z-axis component of the direction vector."
     },
     {
       "Field": "speedMin",
-      "Name": "最小",
-      "Description": ""
+      "Name": "Minimum Speed",
+      "Description": "Lower bound of speed for the directional behavior."
     },
     {
       "Field": "speedMax",
-      "Name": "最大",
-      "Description": ""
+      "Name": "Maximum Speed",
+      "Description": "Upper bound of speed for the directional behavior."
     },
     {
       "Field": "frequencyMin",
-      "Name": "最小",
-      "Description": ""
+      "Name": "Minimum Frequency",
+      "Description": "Lower bound of frequency for direction updates or oscillation."
     },
     {
       "Field": "frequencyMax",
-      "Name": "最大",
-      "Description": ""
+      "Name": "Maximum Frequency",
+      "Description": "Upper bound of frequency for direction updates or oscillation."
     },
     {
       "Field": "priority",
-      "Name": "優先度",
-      "Description": ""
+      "Name": "Priority",
+      "Description": "Determines the priority level of this directional behavior compared to others."
     }
   ]
 }

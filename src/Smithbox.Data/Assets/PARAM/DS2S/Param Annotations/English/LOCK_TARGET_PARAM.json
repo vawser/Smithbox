@@ -2,17 +2,17 @@
   "Param": "LOCK_TARGET_PARAM",
   "Type": "LOCK_TARGET_PARAM",
   "Name": "LOCK_TARGET_PARAM",
-  "Description": "",
+  "Description": "Defines per-target modifiers that adjust how easily a target can be locked onto by the game's targeting system.",
   "Fields": [
     {
       "Field": "lockOnRangeMaxRate",
-      "Name": "ロックオン最大範囲倍率[%]",
-      "Description": ""
+      "Name": "Maximum Lock-On Range Multiplier",
+      "Description": "Percentage multiplier applied to the maximum lock-on distance for this target."
     },
     {
       "Field": "lockOnRangeRate",
-      "Name": "ロックオン範囲倍率[%]",
-      "Description": ""
+      "Name": "Lock-On Range Multiplier",
+      "Description": "Percentage multiplier applied to the standard lock-on acquisition range for this target."
     }
   ]
 }

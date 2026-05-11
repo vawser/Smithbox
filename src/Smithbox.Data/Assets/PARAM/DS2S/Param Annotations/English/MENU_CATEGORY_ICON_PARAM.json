@@ -2,101 +2,101 @@
   "Param": "MENU_CATEGORY_ICON_PARAM",
   "Type": "MENU_CATEGORY_ICON_PARAM",
   "Name": "MENU_CATEGORY_ICON_PARAM",
-  "Description": "",
+  "Description": "Defines menu category icon mappings and inventory/equipment UI grouping indices used for organizing player menus.",
   "Fields": [
     {
       "Field": "bagSubscript",
-      "Name": "道具袋配列用添字",
-      "Description": ""
+      "Name": "Item Bag Array Index",
+      "Description": "Index used for the item bag category array."
     },
     {
       "Field": "cofferSubscript",
-      "Name": "貴重品箱配列用添字",
-      "Description": ""
+      "Name": "Key Item Box Array Index",
+      "Description": "Index used for the key item box category array."
     },
     {
       "Field": "repositorySubscript",
-      "Name": "倉庫配列用添字",
-      "Description": ""
+      "Name": "Storage Box Array Index",
+      "Description": "Index used for the storage/inventory repository category array."
     },
     {
       "Field": "shopSubscript",
-      "Name": "ショップ配列用添字",
-      "Description": ""
+      "Name": "Shop Array Index",
+      "Description": "Index used for the shop category array."
     },
     {
       "Field": "inventory",
-      "Name": "インベントリ",
-      "Description": ""
+      "Name": "Inventory",
+      "Description": "Is present in the general inventory menu."
     },
     {
       "Field": "equipWeapon",
-      "Name": "武器装備",
-      "Description": ""
+      "Name": "Weapon Equipment",
+      "Description": "Is present for equipping weapons."
     },
     {
       "Field": "equipHelmet",
-      "Name": "兜装備",
-      "Description": ""
+      "Name": "Head Armor Equipment",
+      "Description": "Is present for equipping helmets."
     },
     {
       "Field": "equipArmor",
-      "Name": "鎧装備",
-      "Description": ""
+      "Name": "Chest Armor Equipment",
+      "Description": "Is present for equipping body armor."
     },
     {
       "Field": "equipGauntlet",
-      "Name": "小手装備",
-      "Description": ""
+      "Name": "Arm Armor Equipment",
+      "Description": "Is present for equipping gauntlets or arm protection."
     },
     {
       "Field": "equipLeggings",
-      "Name": "具足装備",
-      "Description": ""
+      "Name": "Leg Armor Equipment",
+      "Description": "Is present for equipping leg armor."
     },
     {
       "Field": "equipRing",
-      "Name": "指輪装備",
-      "Description": ""
+      "Name": "Ring Equipment",
+      "Description": "Is present for equipping rings."
     },
     {
       "Field": "equipArrow",
-      "Name": "矢装備",
-      "Description": ""
+      "Name": "Arrow Equipment",
+      "Description": "Is present for equipping ammunition such as arrows."
     },
     {
       "Field": "equipItem",
-      "Name": "アイテム装備",
-      "Description": ""
+      "Name": "Item Equipment",
+      "Description": "Is present for equippable consumable items."
     },
     {
       "Field": "equipSpell",
-      "Name": "スペル装備",
-      "Description": ""
+      "Name": "Spell Equipment",
+      "Description": "Is present for equipping spells or magic abilities."
     },
     {
       "Field": "equipGesture",
-      "Name": "ジェスチャー装備",
-      "Description": ""
+      "Name": "Gesture Equipment",
+      "Description": "Is present for equipping or assigning gestures/emotes."
     },
     {
       "Field": "repository",
-      "Name": "倉庫",
-      "Description": ""
+      "Name": "Storage",
+      "Description": "Is present in the storage repository."
     },
     {
       "Field": "shop",
-      "Name": "ショップ",
-      "Description": ""
+      "Name": "Shop",
+      "Description": "Is present in shop menus."
     },
     {
       "Field": "equipWeaponArmor",
-      "Name": "武器防具",
-      "Description": ""
+      "Name": "Weapon & Armor Equipment",
+      "Description": "Is present or equipping both weapons and armor."
     },
     {
       "Field": "padding",
-      "Name": "パディング",
+      "Name": "Padding",
       "Description": ""
     }
   ]

@@ -2,22 +2,22 @@
   "Param": "MOVIE_TEXT_PARAM",
   "Type": "MOVIE_TEXT_PARAM",
   "Name": "MOVIE_TEXT_PARAM",
-  "Description": "",
+  "Description": "Defines subtitle or on-screen text timing and content mapping for in-game movies or cutscenes.",
   "Fields": [
     {
       "Field": "begin",
-      "Name": "開始時間",
-      "Description": ""
+      "Name": "Start Time",
+      "Description": "Timestamp at which the text appears during the movie."
     },
     {
       "Field": "end",
-      "Name": "終了時間",
-      "Description": ""
+      "Name": "End Time",
+      "Description": "Timestamp at which the text disappears during the movie."
     },
     {
       "Field": "textId",
-      "Name": "テキストID",
-      "Description": ""
+      "Name": "Text ID",
+      "Description": "Identifier for the localized text entry displayed during the movie."
     }
   ]
 }

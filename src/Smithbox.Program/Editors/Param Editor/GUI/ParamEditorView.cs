@@ -2,11 +2,6 @@
 using Hexa.NET.ImGui;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
-using StudioCore.Keybinds;
-using StudioCore.Utilities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace StudioCore.Editors.ParamEditor;
 
