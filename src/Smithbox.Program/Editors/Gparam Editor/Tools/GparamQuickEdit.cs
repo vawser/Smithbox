@@ -45,31 +45,34 @@ public class GparamQuickEdit
 
     public void DisplayInputWindow()
     {
-        ImGui.Text("File Filter:");
+        ImGui.BeginChild("QuickEditSection", ImGuiChildFlags.Borders);
+
+        UIHelper.SimpleHeader("File Filter", "");
         DPI.ApplyInputWidth();
         ImGui.InputText("##targetParamString", ref _targetFileString, 255);
         UIHelper.Tooltip("Enter target file arguments here.");
 
-        ImGui.Text("Group Filter:");
+        UIHelper.SimpleHeader("Group Filter", "");
         DPI.ApplyInputWidth();
         ImGui.InputText("##targetGroupString", ref _targetGroupString, 255);
         UIHelper.Tooltip("Enter target group arguments here.");
 
-        ImGui.Text("Field Filter:");
+        UIHelper.SimpleHeader("Field Filter", "");
         DPI.ApplyInputWidth();
         ImGui.InputText("##targetFieldString", ref _targetFieldString, 255);
         UIHelper.Tooltip("Enter target field arguments here.");
 
-        ImGui.Text("Value Filter:");
+        UIHelper.SimpleHeader("Value Filter", "");
         DPI.ApplyInputWidth();
         ImGui.InputText("##filterString", ref _valueFilterString, 255);
         UIHelper.Tooltip("Enter value filter arguments here.");
 
-        ImGui.Text("Value Command:");
+        UIHelper.SimpleHeader("Value Command", "");
         DPI.ApplyInputWidth();
         ImGui.InputText("##commandString", ref _valueCommandString, 255);
         UIHelper.Tooltip("Enter value command arguments here. For values represented by a vector, separate each digit with the brackets with the , symbol.");
 
+        UIHelper.SimpleHeader("Actions", "");
         if (ImGui.Button("Fill from Selection", DPI.StandardButtonSize))
         {
             GenerateQuickEditCommands();
@@ -87,6 +90,8 @@ public class GparamQuickEdit
             ExecuteQuickEdit();
         }
         UIHelper.Tooltip("Apply quick edit.");
+
+        ImGui.EndChild();
     }
 
     public void ClearQuickEditCommands()

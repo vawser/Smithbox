@@ -305,13 +305,9 @@ public class ParamDeltaPatcher
         DPI.ApplyInputWidth();
         ImGui.InputText("##inputFileName", ref Selection.ExportName, 255);
 
-        ImGui.Text("");
-
         UIHelper.SimpleHeader("Tag", "The file tag for the delta file.");
         DPI.ApplyInputWidth();
         ImGui.InputText("##inputFileTag", ref Selection.ExportFileTag, 255);
-
-        ImGui.Text("");
 
         UIHelper.SimpleHeader("Options", "Options to set for the delta builder.");
 

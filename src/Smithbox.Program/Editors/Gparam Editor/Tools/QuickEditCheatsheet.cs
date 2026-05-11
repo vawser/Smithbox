@@ -18,7 +18,7 @@ public static class QuickEditCheatsheet
 
     public static void Display()
     {
-        ImGui.BeginChild("CheatSheetSection");
+        ImGui.BeginChild("CheatSheetSection", ImGuiChildFlags.Borders);
 
         UIHelper.ConditionalHeader("fileFilterHeader", "File Filters", "", UI.Current.ImGui_AliasName_Text, ref DisplayFileFilters);
         if (DisplayFileFilters)

@@ -35,25 +35,36 @@ public class GparamDataFinder
     {
         var view = Editor.ViewHandler.ActiveView;
 
-        ImGui.Text("File Filter:");
+        ImGui.BeginChild("DataFinderSection", ImGuiChildFlags.Borders);
+
+        UIHelper.SimpleHeader("File Filter", "");
         DPI.ApplyInputWidth();
         ImGui.InputText("##targetParamString", ref _targetFileString, 255);
         UIHelper.Tooltip("Enter target file arguments here. * for any.");
 
-        ImGui.Text("Group Filter:");
+        UIHelper.SimpleHeader("Group Filter", "");
         DPI.ApplyInputWidth();
         ImGui.InputText("##targetGroupString", ref _targetGroupString, 255);
         UIHelper.Tooltip("Enter target group arguments here. * for any.");
 
-        ImGui.Text("Field Filter:");
+        UIHelper.SimpleHeader("Field Filter", "");
         DPI.ApplyInputWidth();
         ImGui.InputText("##targetFieldString", ref _targetFieldString, 255);
         UIHelper.Tooltip("Enter target field arguments here. * for any.");
 
-        ImGui.Text("Value Filter:");
+        UIHelper.SimpleHeader("Value Filter", "");
         DPI.ApplyInputWidth();
         ImGui.InputText("##filterString", ref _valueFilterString, 255);
         UIHelper.Tooltip("Enter value filter arguments here. * for any.");
+
+        UIHelper.SimpleHeader("Options", "");
+
+        ImGui.Checkbox("Unique Values Only", ref _uniqueValuesOnly);
+        UIHelper.Tooltip("Only show the first result for each distinct value.");
+
+        ImGui.Text("");
+
+        UIHelper.SimpleHeader("Actions", "");
 
         if (ImGui.Button("Fill from Selection", DPI.StandardButtonSize))
         {
@@ -73,16 +84,15 @@ public class GparamDataFinder
         }
         UIHelper.Tooltip("Generate results.");
 
-        ImGui.Checkbox("Unique Values Only", ref _uniqueValuesOnly);
-        UIHelper.Tooltip("Only show the first result for each distinct value.");
-
-        ImGui.Separator();
-
         if (_results.Count == 0)
         {
             ImGui.TextDisabled("No results.");
+
+            ImGui.EndChild();
             return;
         }
+
+        ImGui.Text("");
 
         IEnumerable<GparamSearchResult> displayResults = _results;
 
@@ -95,10 +105,10 @@ public class GparamDataFinder
 
         var displayList = displayResults.ToList();
 
-        ImGui.Text($"Results: {displayList.Count}{(_uniqueValuesOnly ? $" (of {_results.Count})" : "")}");
-        ImGui.Separator();
+        UIHelper.SimpleHeader("Results", "");
+        ImGui.Text($"Number of matches: {displayList.Count}{(_uniqueValuesOnly ? $" (of {_results.Count})" : "")}");
 
-        ImGui.BeginChild("ResultsSection");
+        ImGui.BeginChild("ResultsSection", ImGuiChildFlags.Borders);
         for (int i = 0; i < displayList.Count; i++)
         {
             var result = displayList[i];
@@ -111,6 +121,8 @@ public class GparamDataFinder
             }
             UIHelper.Tooltip($"File: {result.FileEntry.Filename}\nGroup: {result.Group.Name} ({result.Group.Key})\nField: {result.Field.Name} ({result.Field.Key})\nValue ID: {result.Value.ID}");
         }
+        ImGui.EndChild();
+
         ImGui.EndChild();
     }
 
@@ -282,6 +294,9 @@ public class GparamDataFinder
         foreach (var entry in Project.Handler.GparamData.PrimaryBank.Entries)
         {
             GPARAM data = entry.Value;
+
+            if (data == null)
+                continue;
 
             foreach (GPARAM.Param curEntry in data.Params)
             {
