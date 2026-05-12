@@ -184,7 +184,7 @@ public class ParamListWindow
 
         if (pinnedParamKeyList.Count > 0)
         {
-            var height = 6 + (20 * pinnedParamKeyList.Count);
+            var height = 10 + (20 * pinnedParamKeyList.Count);
 
             var searchHeight = new Vector2(0, height) * DPI.UIScale();
             ImGui.BeginChild("ParamFilePinnedSection", searchHeight, ImGuiChildFlags.Borders);
