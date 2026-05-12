@@ -53,6 +53,9 @@ public class ParamRowWindow
     private Param.Row ID_EditRow { get; set; }
     private Param.Row Name_EditRow { get; set; }
 
+    private Param.Row DragSourceRow;
+
+
     public ParamRowWindow(ParamEditorScreen editor, ProjectEntry project, ParamEditorView curView)
     {
         Editor = editor;
@@ -558,6 +561,55 @@ public class ParamRowWindow
                 }
 
                 _arrowKeyPressed = false;
+            }
+
+            // Drag source
+            if (ImGui.BeginDragDropSource(ImGuiDragDropFlags.None))
+            {
+                DragSourceRow = r;
+                unsafe
+                {
+                    byte dummy = 0;
+                    ImGui.SetDragDropPayload("PARAM_ROW", &dummy, 1);
+                }
+                ImGui.Text($"Row {r.ID}");
+                ImGui.EndDragDropSource();
+            }
+
+            // Drop target
+            if (ImGui.BeginDragDropTarget())
+            {
+                unsafe
+                {
+                    var payload = ImGui.AcceptDragDropPayload("PARAM_ROW");
+                    if (!payload.IsNull && DragSourceRow != null && DragSourceRow != r)
+                    {
+                        int dropTargetIndex = Context.CurParam.IndexOfRow(r);
+
+                        if (dropTargetIndex >= 0)
+                        {
+                            List<Param.Row> rowsToMove;
+                            var selectedRows = ParentView.Selection.GetSelectedRows();
+
+                            if (selectedRows.Contains(DragSourceRow))
+                            {
+                                rowsToMove = selectedRows
+                                    .OrderBy(row => Context.CurParam.IndexOfRow(row))
+                                    .ToList();
+                            }
+                            else
+                            {
+                                rowsToMove = new List<Param.Row> { DragSourceRow };
+                            }
+
+                            var action = new ReorderRowAction(Context.CurParam, rowsToMove, dropTargetIndex);
+                            ParentView.Editor.ActionManager.ExecuteAction(action);
+                        }
+
+                        DragSourceRow = null;
+                    }
+                }
+                ImGui.EndDragDropTarget();
             }
 
             DisplayContextMenu("id", r, selectionCacheIndex, isPinned);
