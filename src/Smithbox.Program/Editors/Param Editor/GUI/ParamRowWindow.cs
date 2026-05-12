@@ -78,10 +78,13 @@ public class ParamRowWindow
 
         if (!ParentView.Selection.ActiveParamExists())
         {
+            FocusManager.SetFocus(EditorFocusContext.ParamEditor_RowList);
             ImGui.Text("Select a param to see rows");
         }
         else
         {
+            FocusManager.SetFocus(EditorFocusContext.ParamEditor_RowList);
+
             DisplayHeader();
 
             Context.FmgRowDecorator = ParentView.RowDecorators.GetFmgRowDecorator(activeParam);
@@ -98,7 +101,6 @@ public class ParamRowWindow
             Context.CompareColumn = ParentView.Selection.GetCompareCol();
             Context.CompareColumnProperty = typeof(Param.Cell).GetProperty("Value");
 
-            DisplayHeaderRowList();
             DisplayPinnedRowList();
             DisplayRowList();
         }
@@ -214,70 +216,64 @@ public class ParamRowWindow
         ImGui.EndChild();
     }
 
-    private void DisplayHeaderRowList()
+    private void ListHeader()
     {
-        var tblFlags = ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Resizable | ImGuiTableFlags.Borders;
+        var colFlags = ImGuiTableColumnFlags.WidthStretch;
 
-        var columnCount = 2;
-
-        if (ImGui.BeginTable($"fullRowListHeader", columnCount, tblFlags))
+        ImGui.TableSetupColumn("ID", colFlags, 0.2f);
+        ImGui.TableSetupColumn("Name", colFlags);
+        // Comparison Column
+        if (Context.CompareColumn != null)
         {
-            FocusManager.SetFocus(EditorFocusContext.ParamEditor_RowList);
+            ImGui.TableSetupColumn("Comparison", colFlags);
+        }
 
-            ImGui.TableSetupColumn("ID", ImGuiTableColumnFlags.WidthStretch, 0.2f);
-            ImGui.TableSetupColumn("Name", ImGuiTableColumnFlags.WidthStretch);
-            // Comparison Column
-            if (Context.CompareColumn != null)
+        var columnCount = Context.CompareColumn != null ? 3 : 2;
+        ImGui.TableSetupScrollFreeze(columnCount, 1);
+
+        // ID
+        ImGui.TableNextRow();
+        ImGui.TableSetColumnIndex(0);
+        ImGui.Text("ID");
+
+        // Name
+        ImGui.TableSetColumnIndex(1);
+        ImGui.Text("Name");
+
+        // Comparison Column
+        if (Context.CompareColumn != null)
+        {
+            ImGui.TableSetColumnIndex(2);
+
+            var key = Context.CompareColumn.Def.InternalName;
+            var name = key;
+
+            if (CFG.Current.ParamEditor_FieldNameMode is ParamFieldNameMode.Community)
             {
-                ImGui.TableSetupColumn("Comparison", ImGuiTableColumnFlags.WidthStretch);
+                var fieldAnnotation = Context.CurAnnotation.Fields.FirstOrDefault(e => e.Field == key);
+                if (fieldAnnotation != null)
+                {
+                    name = fieldAnnotation.Name;
+                }
+            }
+            else if (CFG.Current.ParamEditor_FieldNameMode is ParamFieldNameMode.Community_Source)
+            {
+                var fieldAnnotation = Context.CurAnnotation.Fields.FirstOrDefault(e => e.Field == key);
+                if (fieldAnnotation != null)
+                {
+                    name = $"{fieldAnnotation.Name} ({key})";
+                }
+            }
+            else if (CFG.Current.ParamEditor_FieldNameMode is ParamFieldNameMode.Source_Community)
+            {
+                var fieldAnnotation = Context.CurAnnotation.Fields.FirstOrDefault(e => e.Field == key);
+                if (fieldAnnotation != null)
+                {
+                    name = $"{key} ({fieldAnnotation.Name}";
+                }
             }
 
-            // ID
-            ImGui.TableNextRow();
-            ImGui.TableSetColumnIndex(0);
-            ImGui.Text("ID");
-
-            // Name
-            ImGui.TableSetColumnIndex(1);
-            ImGui.Text("Name");
-
-            // Comparison Column
-            if (Context.CompareColumn != null)
-            {
-                ImGui.TableSetColumnIndex(2);
-
-                var key = Context.CompareColumn.Def.InternalName;
-                var name = key;
-
-                if(CFG.Current.ParamEditor_FieldNameMode is ParamFieldNameMode.Community)
-                {
-                    var fieldAnnotation = Context.CurAnnotation.Fields.FirstOrDefault(e => e.Field == key);
-                    if (fieldAnnotation != null)
-                    {
-                        name = fieldAnnotation.Name;
-                    }
-                }
-                else if (CFG.Current.ParamEditor_FieldNameMode is ParamFieldNameMode.Community_Source)
-                {
-                    var fieldAnnotation = Context.CurAnnotation.Fields.FirstOrDefault(e => e.Field == key);
-                    if (fieldAnnotation != null)
-                    {
-                        name = $"{fieldAnnotation.Name} ({key})";
-                    }
-                }
-                else if (CFG.Current.ParamEditor_FieldNameMode is ParamFieldNameMode.Source_Community)
-                {
-                    var fieldAnnotation = Context.CurAnnotation.Fields.FirstOrDefault(e => e.Field == key);
-                    if (fieldAnnotation != null)
-                    {
-                        name = $"{key} ({fieldAnnotation.Name}";
-                    }
-                }
-
-                ImGui.Text(name);
-            }
-
-            ImGui.EndTable();
+            ImGui.Text(name);
         }
     }
 
@@ -288,11 +284,11 @@ public class ParamRowWindow
 
         if (pinnedRowList.Count > 0)
         {
-            var height = (20 * pinnedRowList.Count);
+            var height = 20 + (20 * pinnedRowList.Count);
 
-            ImGui.BeginChild("PinnedRowSection", new Vector2(0, height), ImGuiChildFlags.None);
+            ImGui.BeginChild("PinnedRowSection", new Vector2(0, height), ImGuiChildFlags.None, ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse);
 
-            var tblFlags = ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Resizable;
+            var tblFlags = ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Resizable | ImGuiTableFlags.ScrollY;
 
             if (CFG.Current.ParamEditor_Enable_Table_Borders)
             {
@@ -310,13 +306,7 @@ public class ParamRowWindow
             {
                 FocusManager.SetFocus(EditorFocusContext.ParamEditor_RowList);
 
-                ImGui.TableSetupColumn("ID", ImGuiTableColumnFlags.WidthStretch, 0.2f);
-                ImGui.TableSetupColumn("Name", ImGuiTableColumnFlags.WidthStretch);
-                // Comparison Column
-                if (Context.CompareColumn != null)
-                {
-                    ImGui.TableSetupColumn("Comparison", ImGuiTableColumnFlags.WidthStretch);
-                }
+                ListHeader();
 
                 // Pinned Rows
                 ImGui.PushID("pinned");
@@ -344,7 +334,7 @@ public class ParamRowWindow
 
     private void DisplayRowList()
     {
-        ImGui.BeginChild("FullRowSection", ImGuiChildFlags.None);
+        ImGui.BeginChild("FullRowSection", new Vector2(0, 0), ImGuiChildFlags.None, ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse);
 
         if (InputManager.HasArrowSelection())
         {
@@ -358,7 +348,7 @@ public class ParamRowWindow
             _focusRows = false;
         }
 
-        var tblFlags = ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Resizable;
+        var tblFlags = ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Resizable | ImGuiTableFlags.ScrollY;
 
         if (CFG.Current.ParamEditor_Enable_Table_Borders)
         {
@@ -376,13 +366,7 @@ public class ParamRowWindow
         {
             FocusManager.SetFocus(EditorFocusContext.ParamEditor_RowList);
 
-            ImGui.TableSetupColumn("ID", ImGuiTableColumnFlags.WidthStretch, 0.2f);
-            ImGui.TableSetupColumn("Name", ImGuiTableColumnFlags.WidthStretch);
-            // Comparison Column
-            if (Context.CompareColumn != null)
-            {
-                ImGui.TableSetupColumn("Comparison", ImGuiTableColumnFlags.WidthStretch);
-            }
+            ListHeader();
 
             // All Rows
             var curSearchTerm = ParentView.Selection.GetCurrentRowSearchString();

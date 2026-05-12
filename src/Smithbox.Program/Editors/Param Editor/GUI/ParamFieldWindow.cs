@@ -35,8 +35,7 @@ public class ParamFieldWindow
 
     public void Display(bool isActiveView, string activeParam, Param.Row activeRow)
     {
-        ImGui.Text("Fields");
-        ImGui.Separator();
+        DisplayTitle();
 
         if (activeRow == null)
         {
@@ -82,6 +81,12 @@ public class ParamFieldWindow
 
             ImGui.EndChild();
         }
+    }
+    public void DisplayTitle()
+    {
+        var fieldListTable = "Field List";
+
+        UIHelper.SimpleHeader($"{fieldListTable}", "");
     }
 
     public void DisplayFieldTable(Param.Row curRow, Param.Row vanillaRow, List<(string, Param.Row)> auxRows,
@@ -333,6 +338,9 @@ public class ParamFieldWindow
 
     private void DisplayHeader(bool isActiveView, ref string propSearchString)
     {
+        var searchHeight = new Vector2(0, 36) * DPI.UIScale();
+        ImGui.BeginChild("ParamFieldListHeaderSection", searchHeight, ImGuiChildFlags.Borders);
+
         if (propSearchString != null)
         {
             if (isActiveView && InputManager.IsPressed(KeybindID.ParamEditor_Focus_Searchbar))
@@ -474,6 +482,8 @@ public class ParamFieldWindow
 
             UIHelper.Tooltip($"Toggle the display of the modified background on modified fields.\nCurrent Mode: {rowModifiedBgMode}");
         }
+
+        ImGui.EndChild();
     }
 
     private void DisplayGraph(bool isActiveView, Param.Row row, ParamMeta meta)
