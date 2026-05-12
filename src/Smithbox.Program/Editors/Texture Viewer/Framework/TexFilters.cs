@@ -23,8 +23,7 @@ public class TexFilters
     /// </summary>
     public void DisplayFileFilterSearch()
     {
-        ImGui.InputText($"Search##textureFileFilterSearch", ref FileFilterSearchStr, 255);
-
+        ImGui.InputTextWithHint($"##textureFileFilterSearch", "Search...", ref FileFilterSearchStr, 255);
         UIHelper.Tooltip("Separate terms are split via the + character.");
     }
 
@@ -101,7 +100,7 @@ public class TexFilters
     /// </summary>
     public void DisplayTpfFilterSearch()
     {
-        ImGui.InputText($"Search##tpfListFilterSearch", ref TpfFilterSearchStr, 255);
+        ImGui.InputTextWithHint($"##tpfListFilterSearch", "Search...", ref TpfFilterSearchStr, 255);
         UIHelper.Tooltip("Separate terms are split via the + character.");
     }
 
@@ -161,7 +160,7 @@ public class TexFilters
     /// </summary>
     public void DisplayTextureFilterSearch()
     {
-        ImGui.InputText($"Search##textureListFilterSearch", ref TextureFilterSearchStr, 255);
+        ImGui.InputTextWithHint($"##textureListFilterSearch", "Search...", ref TextureFilterSearchStr, 255);
         UIHelper.Tooltip("Separate terms are split via the + character.");
     }
 

@@ -22,7 +22,13 @@ public class TexTextureFileList
     {
         UIHelper.SimpleHeader("Textures", "");
 
+        var searchHeight = new Vector2(0, 36) * DPI.UIScale();
+        ImGui.BeginChild("TextureViewer_TextureList_Header", searchHeight, ImGuiChildFlags.Borders);
+
         Parent.Filters.DisplayTextureFilterSearch();
+
+        ImGui.EndChild();
+
 
         ImGui.BeginChild("TextureList", new Vector2(width, height), ImGuiChildFlags.Borders);
 

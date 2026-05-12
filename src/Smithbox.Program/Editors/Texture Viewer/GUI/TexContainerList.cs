@@ -26,7 +26,13 @@ public class TexContainerList
     public void Display(float width, float height)
     {
         UIHelper.SimpleHeader("Containers", "");
+
+        var searchHeight = new Vector2(0, 36) * DPI.UIScale();
+        ImGui.BeginChild("TextureViewer_ContainerList_Header", searchHeight, ImGuiChildFlags.Borders);
+
         Parent.Filters.DisplayFileFilterSearch();
+
+        ImGui.EndChild();
 
         ImGui.BeginChild("ContainerList", new Vector2(width, height), ImGuiChildFlags.Borders);
 

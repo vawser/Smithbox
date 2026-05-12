@@ -108,7 +108,7 @@ public class ParamMerger
 
             if (DisplayParamToggles)
             {
-                UIHelper.SinglelineTextInput("paramToggleFilter", ref TargetParamFilter);
+                UIHelper.HintTextInput("paramToggleFilter", ref TargetParamFilter, "Filter param list...");
 
                 UIHelper.MultiButtonInput("paramToggleActions",
                     "toggleAllParams", "Toggle All Params", "", ToggleParamsAction);

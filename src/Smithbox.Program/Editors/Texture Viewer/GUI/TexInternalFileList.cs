@@ -24,7 +24,12 @@ public class TexInternalFileList
     {
         UIHelper.SimpleHeader("Files", "");
 
+        var searchHeight = new Vector2(0, 36) * DPI.UIScale();
+        ImGui.BeginChild("TextureViewer_InternalFileList_Header", searchHeight, ImGuiChildFlags.Borders);
+
         Parent.Filters.DisplayTpfFilterSearch();
+
+        ImGui.EndChild();
 
         ImGui.BeginChild("TpfList", new Vector2(width, height), ImGuiChildFlags.Borders);
 

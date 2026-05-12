@@ -141,7 +141,7 @@ public class ParamRowWindow
         }
 
         ImGui.AlignTextToFramePadding();
-        ImGui.InputText($"##rowSearch", ref ParentView.Selection.GetCurrentRowSearchString(), 256);
+        ImGui.InputTextWithHint($"##rowSearch", "Search...", ref ParentView.Selection.GetCurrentRowSearchString(), 256);
         UIHelper.Tooltip($"Search <{InputManager.GetHint(KeybindID.ParamEditor_Focus_Searchbar)}>");
 
         if (!lastRowSearch.ContainsKey(ParentView.Selection.GetActiveParam())

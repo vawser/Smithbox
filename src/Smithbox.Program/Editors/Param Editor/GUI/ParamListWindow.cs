@@ -102,7 +102,7 @@ public class ParamListWindow
         }
 
         ImGui.AlignTextToFramePadding();
-        ImGui.InputText($"##paramSearch", ref currentParamSearchString, 256);
+        ImGui.InputTextWithHint($"##paramSearch", "Search...", ref currentParamSearchString, 256);
 
         UIHelper.Tooltip($"Search <{InputManager.GetHint(KeybindID.ParamEditor_Focus_Searchbar)}>");
 

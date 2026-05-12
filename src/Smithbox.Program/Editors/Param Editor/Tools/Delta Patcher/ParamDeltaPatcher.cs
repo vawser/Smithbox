@@ -312,10 +312,10 @@ public class ParamDeltaPatcher
         UIHelper.WrappedText("");
 
         UIHelper.SimpleHeader("Filename", "The name assigned to the delta file.");
-        UIHelper.SinglelineTextInput($"inputFileName", ref Selection.ExportName);
+        UIHelper.HintTextInput($"inputFileName", ref Selection.ExportName, "Enter the name for the exported file...");
 
         UIHelper.SimpleHeader("Tags", "The tags assigned to the delta file.");
-        UIHelper.SinglelineTextInput($"inputFileTag", ref Selection.ExportFileTag);
+        UIHelper.HintTextInput($"inputFileTag", ref Selection.ExportFileTag, "Enter the associated tags for the exported file...");
 
 
         UIHelper.SimpleHeader("Export Type", "The type of export performed.");

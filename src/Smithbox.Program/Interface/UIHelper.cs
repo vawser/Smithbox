@@ -474,6 +474,28 @@ public static class UIHelper
     }
 
     // Text Input
+    public static void HintTextInput(string id, ref string input, string hint, string name = "")
+    {
+        var tblFlags = ImGuiTableFlags.SizingFixedFit;
+
+        if (ImGui.BeginTable($"{id}", 1, tblFlags))
+        {
+            ImGui.TableSetupColumn("Title", ImGuiTableColumnFlags.WidthFixed);
+
+            ImGui.TableNextRow();
+            ImGui.TableSetColumnIndex(0);
+
+            var width = ImGui.GetWindowWidth() * 0.5f;
+            if (name == "")
+                width = ImGui.GetWindowWidth();
+
+            ImGui.PushItemWidth(width);
+            ImGui.InputTextWithHint($"{name}##{id}_input", hint, ref input, 255);
+
+            ImGui.EndTable();
+        }
+    }
+
     public static void SinglelineTextInput(string id, ref string input, string name = "")
     {
         var tblFlags = ImGuiTableFlags.SizingFixedFit;

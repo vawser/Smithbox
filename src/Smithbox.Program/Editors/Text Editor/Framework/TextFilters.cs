@@ -30,7 +30,7 @@ public class TextFilters
     /// </summary>
     public void DisplayFileFilterSearch()
     {
-        ImGui.InputText($"Search##fileFilterSearch", ref FileFilterInput, 255);
+        ImGui.InputText($"##fileFilterSearch", ref FileFilterInput, 255);
         UIHelper.WideTooltip("Chain commands by using the + symbol between them.");
 
         ImGui.SameLine();
@@ -98,7 +98,7 @@ public class TextFilters
     /// </summary>
     public void DisplayFmgFilterSearch()
     {
-        ImGui.InputText($"Search##fmgFilterSearch", ref FmgFilterInput, 255);
+        ImGui.InputText($"##fmgFilterSearch", ref FmgFilterInput, 255);
         UIHelper.WideTooltip("Chain commands by using the + symbol between them.");
 
         ImGui.SameLine();
@@ -182,7 +182,7 @@ public class TextFilters
             ImGui.SetKeyboardFocusHere();
         }
 
-        ImGui.InputText($"Search##fmgEntryFilterSearch", ref FmgEntryFilterInput, 255);
+        ImGui.InputText($"##fmgEntryFilterSearch", ref FmgEntryFilterInput, 255);
         UIHelper.WideTooltip("Chain commands by using the + symbol between them.\n\nSpecial commands:\nmodified - Displays rows where the text is different to vanilla.\nunique - Displays rows that are unique to your project.");
 
         // Focus after clearing

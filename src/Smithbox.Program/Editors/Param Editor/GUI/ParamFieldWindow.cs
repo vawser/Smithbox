@@ -170,8 +170,6 @@ public class ParamFieldWindow
                 }
             }
 
-            EditorTableUtils.ImguiTableSeparator();
-
             int infoImGuiID = 1000;
 
             // ID and Name
@@ -364,7 +362,7 @@ public class ParamFieldWindow
 
             // Field search
             ImGui.AlignTextToFramePadding();
-            ImGui.InputText("##fieldSearch", ref propSearchString,
+            ImGui.InputTextWithHint("##fieldSearch", "Search...", ref propSearchString,
                 255);
             UIHelper.Tooltip($"Search <{InputManager.GetHint(KeybindID.ParamEditor_Focus_Searchbar)}>");
 
