@@ -934,6 +934,7 @@ public class CFG
     public bool Interface_FileBrowser_ToolView = true;
 
     public bool Interface_FileBrowser_Tool_GameUnpacker = true;
+    public bool Interface_FileBrowser_Tool_FileExtract = true;
 
     #endregion
 

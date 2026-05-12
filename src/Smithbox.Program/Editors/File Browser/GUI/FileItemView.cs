@@ -19,14 +19,10 @@ public class FileItemView
     public FileEditorView Parent;
     public ProjectEntry Project;
 
-    private string ExtractionPath = "";
-
     public FileItemView(FileEditorView view, ProjectEntry project)
     {
         Parent = view;
         Project = project;
-
-        ExtractionPath = project.Descriptor.ProjectPath;
     }
 
     public void Display()
@@ -49,32 +45,34 @@ public class FileItemView
 
     public void DisplayVfsItem()
     {
-        var sectionWidth = ImGui.GetWindowWidth() * 0.95f;
         var sectionHeight = ImGui.GetWindowHeight() * 0.3f;
-        var sectionSize = new Vector2(sectionWidth * DPI.UIScale(), sectionHeight * DPI.UIScale());
+        var sectionSize = new Vector2(0, sectionHeight * DPI.UIScale());
 
         var entry = Parent.Selection.SelectedVfsFile;
 
         // Main Container
         UIHelper.SimpleHeader("containerFile", "Main File", "", UI.Current.ImGui_Default_Text_Color);
 
+        ImGui.BeginChild("MainFileSection", new Vector2(0, 70) * DPI.UIScale(), ImGuiChildFlags.Borders);
+
         ImGui.Text($"Name: {entry.Filename}");
         ImGui.Text($"Path: {entry.Path}");
-
         ImGui.Text($"");
+
+        ImGui.EndChild();
 
         // Binder Entries
         if (Parent.Selection.InternalFileList.Count > 0)
         {
             UIHelper.SimpleHeader("internalFiles", "Internal Files", "", UI.Current.ImGui_Default_Text_Color);
 
-            ImGui.InputTextWithHint(
-                "##InternalFileSearch",
-                "Search files...",
-                ref _internalFileSearch,
-                256
-            );
-            
+            var searchHeight = new Vector2(0, 36) * DPI.UIScale();
+            ImGui.BeginChild("InternalFileSearchSection", searchHeight, ImGuiChildFlags.Borders);
+
+            ImGui.InputTextWithHint($"##InternalFileSearch", "Search...", ref _internalFileSearch, 255);
+
+            ImGui.EndChild();
+
             ImGui.BeginChild("internalFileSection", sectionSize, ImGuiChildFlags.Borders);
 
             foreach (var file in Parent.Selection.InternalFileList)
@@ -98,6 +96,7 @@ public class FileItemView
                 if (ImGui.Selectable($"{filename}##fileEntry_{file.GetHashCode()}", selected))
                 {
                     Parent.Selection.SelectedInternalFile = file;
+                    Parent.Selection.SelectedInternalTexFile = "";
                 }
             }
 
@@ -109,12 +108,12 @@ public class FileItemView
         {
             UIHelper.SimpleHeader("internalTexFiles", "Texture Files", "", UI.Current.ImGui_Default_Text_Color);
 
-            ImGui.InputTextWithHint(
-                "##textureFileSearch",
-                "Search files...",
-                ref _internalTexFileSearch,
-                256
-            );
+            var searchHeight = new Vector2(0, 36) * DPI.UIScale();
+            ImGui.BeginChild("InternalTexFileSearchSection", searchHeight, ImGuiChildFlags.Borders);
+
+            ImGui.InputTextWithHint($"##InternalTextFileSearch", "Search...", ref _internalTexFileSearch, 255);
+
+            ImGui.EndChild();
 
             ImGui.BeginChild("internalTexFileSection", sectionSize, ImGuiChildFlags.Borders);
 
@@ -154,284 +153,6 @@ public class FileItemView
 
             ImGui.EndChild();
         }
-
-        // Actions
-        UIHelper.SimpleHeader("actions", "Actions", "", UI.Current.ImGui_Default_Text_Color);
-
-        ImGui.Text($"Output Directory: {ExtractionPath}");
-
-        ImGui.SameLine();
-
-        if (ImGui.Button($"{Icons.Bars}##setOutputDir", DPI.IconButtonSize))
-        {
-            var newOutputDir = "";
-            var result = PlatformUtils.Instance.OpenFolderDialog("Select Output Directory", out newOutputDir, ExtractionPath);
-
-            if (result)
-            {
-                ExtractionPath = newOutputDir;
-            }
-        }
-
-        ImGui.Text($"");
-
-        if (ImGui.Button("Extract Main File", DPI.ThirdWidthButton(sectionWidth, 24)))
-        {
-            ExtractMainFile();
-        }
-        UIHelper.Tooltip("Extract the main file. Creates the folder structure it should reside in if missing.");
-
-        if (Parent.Selection.SelectedInternalFile != "" || Parent.Selection.SelectedInternalTexFile != "")
-        {
-            ImGui.SameLine();
-
-            if (ImGui.Button("Extract Selected Internal File", DPI.ThirdWidthButton(sectionWidth, 24)))
-            {
-                ExtractInternalFile();
-            }
-        }
-        UIHelper.Tooltip("Extract selected internal file.");
     }
 
-    public void ExtractMainFile()
-    {
-        var fileEntry = Parent.Selection.SelectedVfsFile;
-
-        try
-        {
-            var data = Project.VFS.VanillaFS.ReadFile(fileEntry.Path);
-            var rawData = (Memory<byte>)data;
-
-            var unpackPath = ExtractionPath;
-
-            var absFolder = $@"{unpackPath}/{fileEntry.Folder}";
-            var absPath = $@"{unpackPath}/{fileEntry.Path}";
-
-            if (!Directory.Exists(absFolder))
-            {
-                Directory.CreateDirectory(absFolder);
-            }
-
-            if (!File.Exists(absPath))
-            {
-                File.WriteAllBytes(absPath, rawData.ToArray());
-
-                Smithbox.Log(this, $"[File Browser] Extracted {absPath}");
-
-                data = null;
-                rawData = null;
-            }
-        }
-        catch (Exception e)
-        {
-            Smithbox.LogError(this, $"[File Browser] Failed to write file: {fileEntry.Path}", LogPriority.High, e);
-        }
-    }
-
-    public void ExtractInternalFile()
-    {
-        var targetFile = Parent.Selection.SelectedVfsFile;
-        var internalFile = Parent.Selection.SelectedInternalFile;
-        var internalTexFile = Parent.Selection.SelectedInternalTexFile;
-
-        var binderType = ModelEditorUtils.GetContainerTypeFromRelativePath(Project, targetFile.Path);
-
-        var extractData = new byte[0];
-
-        if (binderType is ResourceContainerType.None)
-        {
-            var fileData = Project.VFS.VanillaFS.ReadFile(targetFile.Path);
-            if (fileData != null)
-            {
-                if (LocatorUtils.IsTPF(targetFile.Path))
-                {
-                    var tpfData = TPF.Read(fileData.Value);
-                    foreach (var entry in tpfData.Textures)
-                    {
-                        if(Parent.Selection.SelectedInternalTexFile == entry.Name)
-                        {
-                            extractData = entry.Bytes;
-                        }
-                    }
-                }
-            }
-        }
-
-        if (binderType is ResourceContainerType.BND)
-        {
-            if (Project.Descriptor.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES)
-            {
-                try
-                {
-                    var fileData = Project.VFS.VanillaFS.ReadFile(targetFile.Path);
-                    if (fileData != null)
-                    {
-                        var binder = new BND3Reader(fileData.Value);
-                        foreach (var file in binder.Files)
-                        {
-                            if(file.Name.ToLower() == internalFile)
-                            {
-                                extractData = binder.ReadFile(file).ToArray();
-
-                                if (LocatorUtils.IsTPF(file.Name))
-                                {
-                                    var containerData = binder.ReadFile(file).ToArray();
-                                    var tpfData = TPF.Read(containerData);
-                                    foreach (var entry in tpfData.Textures)
-                                    {
-                                        if (Parent.Selection.SelectedInternalTexFile == entry.Name)
-                                        {
-                                            extractData = entry.Bytes;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-                catch (Exception e)
-                {
-                    Smithbox.LogError(this, $"[File Browser] Failed to read {targetFile.Path}.", LogPriority.High, e);
-                }
-            }
-            else
-            {
-                try
-                {
-                    var fileData = Project.VFS.VanillaFS.ReadFile(targetFile.Path);
-                    if (fileData != null)
-                    {
-                        var binder = new BND4Reader(fileData.Value);
-                        foreach (var file in binder.Files)
-                        {
-                            if (file.Name.ToLower() == internalFile)
-                            {
-                                extractData = binder.ReadFile(file).ToArray();
-
-                                if (LocatorUtils.IsTPF(file.Name))
-                                {
-                                    var containerData = binder.ReadFile(file).ToArray();
-                                    var tpfData = TPF.Read(containerData);
-                                    foreach (var entry in tpfData.Textures)
-                                    {
-                                        if (Parent.Selection.SelectedInternalTexFile == entry.Name)
-                                        {
-                                            extractData = entry.Bytes;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-                catch (Exception e)
-                {
-                    Smithbox.LogError(this, $"[File Browser] Failed to read {targetFile.Path}.", LogPriority.High, e);
-                }
-            }
-        }
-
-        if (binderType is ResourceContainerType.BXF)
-        {
-            Memory<byte> bhd = new Memory<byte>();
-            Memory<byte> bdt = new Memory<byte>();
-
-            var targetBhdPath = targetFile.Path;
-            var targetBdtPath = targetFile.Path.Replace("bhd", "bdt");
-
-            try
-            {
-                bhd = (Memory<byte>)Project.VFS.VanillaFS.ReadFile(targetBhdPath);
-            }
-            catch (Exception e)
-            {
-                Smithbox.LogError(this, $"[File Browser] Failed to read {targetFile.Path}.", LogPriority.High, e);
-            }
-
-            try
-            {
-                bdt = (Memory<byte>)Project.VFS.VanillaFS.ReadFile(targetBdtPath);
-            }
-            catch (Exception e)
-            {
-                Smithbox.LogError(this, $"[File Browser] Failed to read {targetFile.Path}.", LogPriority.High, e);
-            }
-
-            if (bhd.Length != 0 && bdt.Length != 0)
-            {
-                if (Project.Descriptor.ProjectType is ProjectType.DES
-                    or ProjectType.DS1
-                    or ProjectType.DS1R)
-                {
-                    var binder = new BXF3Reader(bhd, bdt);
-                    foreach (var file in binder.Files)
-                    {
-                        if (file.Name.ToLower() == internalFile)
-                        {
-                            extractData = binder.ReadFile(file).ToArray();
-
-                            if (LocatorUtils.IsTPF(file.Name))
-                            {
-                                var containerData = binder.ReadFile(file).ToArray();
-                                var tpfData = TPF.Read(containerData);
-                                foreach (var entry in tpfData.Textures)
-                                {
-                                    if (Parent.Selection.SelectedInternalTexFile == entry.Name)
-                                    {
-                                        extractData = entry.Bytes;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-                else
-                {
-                    var binder = new BXF4Reader(bhd, bdt);
-                    foreach (var file in binder.Files)
-                    {
-                        if (file.Name.ToLower() == internalFile)
-                        {
-                            extractData = binder.ReadFile(file).ToArray();
-
-                            if (LocatorUtils.IsTPF(file.Name))
-                            {
-                                var containerData = binder.ReadFile(file).ToArray();
-                                var tpfData = TPF.Read(containerData);
-                                foreach (var entry in tpfData.Textures)
-                                {
-                                    if (Parent.Selection.SelectedInternalTexFile == entry.Name)
-                                    {
-                                        extractData = entry.Bytes;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        if(extractData.Length > 0)
-        {
-            var extension = "";
-            var filename = Path.GetFileName(internalFile);
-            if (internalTexFile != "")
-            {
-                filename = Path.GetFileName(internalTexFile);
-                extension = ".dds";
-            }
-
-            var writePath = Path.Combine(ExtractionPath, filename);
-
-            if(extension != "")
-            {
-                writePath = Path.Combine(ExtractionPath, $"{filename}{extension}");
-            }
-
-            File.WriteAllBytes(writePath, extractData);
-
-            Smithbox.Log(this, $"[Smithbox:File Browser] Extracted {filename}");
-        }
-    }
 }

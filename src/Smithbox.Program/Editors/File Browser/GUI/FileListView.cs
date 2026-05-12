@@ -37,11 +37,16 @@ public class FileListView
 
     private void DisplayVFS()
     {
-        ImGui.InputText("Search##FileSearch",  ref _search, 256);
+        var searchHeight = new Vector2(0, 36) * DPI.UIScale();
+        ImGui.BeginChild("FileSearchSection", searchHeight, ImGuiChildFlags.Borders);
+
+        ImGui.InputTextWithHint($"##fileSearch", "Search...", ref _search, 255);
+
+        ImGui.EndChild();
 
         if (BuiltFolderNodes)
         {
-            ImGui.BeginChild($"vfsList");
+            ImGui.BeginChild($"vfsList", ImGuiChildFlags.Borders);
 
             DrawFolderNode(_root);
 

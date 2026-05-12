@@ -36,6 +36,9 @@ public class FileSelection
         InternalFileList = new();
         InternalTextureList = new();
 
+        Parent.Selection.SelectedInternalFile = "";
+        Parent.Selection.SelectedInternalTexFile = "";
+
         var binderType = ModelEditorUtils.GetContainerTypeFromRelativePath(Project, targetFile.Path);
 
         if (binderType is ResourceContainerType.None)
