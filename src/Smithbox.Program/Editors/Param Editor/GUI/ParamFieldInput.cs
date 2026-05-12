@@ -379,7 +379,7 @@ public class ParamFieldInput
 
                     if (ParentView.ParamTableWindow.IsInTableGroupMode(curParam))
                     {
-                        var curGroup = ParentView.ParamTableWindow.CurrentTableGroup;
+                        var curGroup = ParentView.ParamTableWindow.CurrentTableGroupID;
                         ParentView.ParamTableWindow.UpdateTableGroupSelection(curGroup);
                     }
                 });
@@ -393,7 +393,7 @@ public class ParamFieldInput
 
                     if (ParentView.ParamTableWindow.IsInTableGroupMode(curParam))
                     {
-                        var curGroup = ParentView.ParamTableWindow.CurrentTableGroup;
+                        var curGroup = ParentView.ParamTableWindow.CurrentTableGroupID;
                         ParentView.ParamTableWindow.UpdateTableGroupSelection(curGroup);
                     }
                 });

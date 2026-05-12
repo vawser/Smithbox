@@ -86,7 +86,7 @@ public class ParamCommandQueue
                         // In Table Group mode: set the current Table Group to this ID
                         if (viewToModify.ParamTableWindow.IsInTableGroupMode(curActiveParam))
                         {
-                            viewToModify.ParamTableWindow.CurrentTableGroup = id;
+                            viewToModify.ParamTableWindow.CurrentTableGroupID = id;
                         }
 
                         if (parsed)

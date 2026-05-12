@@ -75,7 +75,7 @@ public static class ParamRowDuplicate
 
                 if (curView.ParamTableWindow.IsInTableGroupMode(curParam))
                 {
-                    var curGroup = curView.ParamTableWindow.CurrentTableGroup;
+                    var curGroup = curView.ParamTableWindow.CurrentTableGroupID;
                     curView.ParamTableWindow.UpdateTableGroupSelection(curGroup);
                 }
             });
@@ -124,7 +124,7 @@ public static class ParamRowDuplicate
 
                 if (curView.ParamTableWindow.IsInTableGroupMode(curParam))
                 {
-                    var curGroup = curView.ParamTableWindow.CurrentTableGroup;
+                    var curGroup = curView.ParamTableWindow.CurrentTableGroupID;
                     curView.ParamTableWindow.UpdateTableGroupSelection(curGroup);
                 }
             });

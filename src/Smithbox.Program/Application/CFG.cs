@@ -535,6 +535,7 @@ public class CFG
     // General
     public string ParamEditor_Annotation_Language = "English";
     public bool ParamEditor_Enable_Compact_Mode = false;
+    public bool ParamEditor_Enable_Table_Borders = true;
 
     public string ParamEditor_Import_Language = "English";
 

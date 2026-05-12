@@ -38,7 +38,7 @@ public class DeleteParamsAction : EditorAction
 
         if (Editor.ViewHandler.ActiveView.ParamTableWindow.IsInTableGroupMode(curParam))
         {
-            var curGroup = Editor.ViewHandler.ActiveView.ParamTableWindow.CurrentTableGroup;
+            var curGroup = Editor.ViewHandler.ActiveView.ParamTableWindow.CurrentTableGroupID;
             Editor.ViewHandler.ActiveView.ParamTableWindow.UpdateTableGroupSelection(curGroup);
             Editor.ViewHandler.ActiveView.ParamTableWindow.UpdateTableSelection();
         }
@@ -61,7 +61,7 @@ public class DeleteParamsAction : EditorAction
 
         if (Editor.ViewHandler.ActiveView.ParamTableWindow.IsInTableGroupMode(curParam))
         {
-            var curGroup = Editor.ViewHandler.ActiveView.ParamTableWindow.CurrentTableGroup;
+            var curGroup = Editor.ViewHandler.ActiveView.ParamTableWindow.CurrentTableGroupID;
             Editor.ViewHandler.ActiveView.ParamTableWindow.UpdateTableGroupSelection(curGroup);
             Editor.ViewHandler.ActiveView.ParamTableWindow.UpdateTableSelection();
         }

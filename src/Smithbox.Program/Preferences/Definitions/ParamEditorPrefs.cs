@@ -111,6 +111,25 @@ public class ParamEditorPrefs
             }
         };
     }
+
+    public static PreferenceItem ParamEditor_Enable_Table_Borders()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 3,
+            Category = PreferenceCategory.ParamEditor,
+            Spacer = true,
+
+            Section = SectionCategory.General,
+
+            Title = "Enable Data Table Cell Borders",
+            Description = "If enabled, data table cells will be given borders.",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Enable_Table_Borders);
+            }
+        };
+    }
     #endregion
 
     #region Regulation

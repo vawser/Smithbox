@@ -214,6 +214,7 @@ public class ParamRowWindow
     private void DisplayHeaderRowList()
     {
         var tblFlags = ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Resizable | ImGuiTableFlags.Borders;
+
         var columnCount = 2;
 
         if (ImGui.BeginTable($"fullRowListHeader", columnCount, tblFlags))
@@ -288,7 +289,13 @@ public class ParamRowWindow
 
             ImGui.BeginChild("PinnedRowSection", new Vector2(0, height), ImGuiChildFlags.None);
 
-            var tblFlags = ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Resizable | ImGuiTableFlags.Borders;
+            var tblFlags = ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Resizable;
+
+            if (CFG.Current.ParamEditor_Enable_Table_Borders)
+            {
+                tblFlags = tblFlags | ImGuiTableFlags.Borders;
+            }
+
             var columnCount = 2;
 
             if (Context.CompareColumn != null)
@@ -348,7 +355,13 @@ public class ParamRowWindow
             _focusRows = false;
         }
 
-        var tblFlags = ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Resizable | ImGuiTableFlags.Borders;
+        var tblFlags = ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Resizable;
+
+        if (CFG.Current.ParamEditor_Enable_Table_Borders)
+        {
+            tblFlags = tblFlags | ImGuiTableFlags.Borders;
+        }
+
         var columnCount = 2;
 
         if (Context.CompareColumn != null)
@@ -397,7 +410,7 @@ public class ParamRowWindow
 
                 if (ParentView.ParamTableWindow.IsInTableGroupMode(Context.ActiveParam))
                 {
-                    if (currentRow.ID == ParentView.ParamTableWindow.CurrentTableGroup)
+                    if (currentRow.ID == ParentView.ParamTableWindow.CurrentTableGroupID)
                     {
                         displayRow = true;
                     }
@@ -514,7 +527,7 @@ public class ParamRowWindow
                         {
                             if (ParentView.ParamTableWindow.IsInTableGroupMode(Context.ActiveParam))
                             {
-                                if (r2.ID == ParentView.ParamTableWindow.CurrentTableGroup)
+                                if (r2.ID == ParentView.ParamTableWindow.CurrentTableGroupID)
                                 {
                                     ClearEditRows();
                                     ParentView.Selection.AddRowToSelection(r2);
@@ -757,7 +770,7 @@ public class ParamRowWindow
                         {
                             if (ParentView.ParamTableWindow.IsInTableGroupMode(Context.ActiveParam))
                             {
-                                if (r2.ID == ParentView.ParamTableWindow.CurrentTableGroup)
+                                if (r2.ID == ParentView.ParamTableWindow.CurrentTableGroupID)
                                 {
                                     ClearEditRows();
                                     ParentView.Selection.AddRowToSelection(r2);
@@ -1169,7 +1182,7 @@ public class ParamRowWindow
         {
             if (ParentView.ParamTableWindow.IsInTableGroupMode(activeParam))
             {
-                if (row.ID == ParentView.ParamTableWindow.CurrentTableGroup)
+                if (row.ID == ParentView.ParamTableWindow.CurrentTableGroupID)
                 {
                     ClearEditRows();
                     ParentView.Selection.AddRowToSelection(row);
