@@ -13,6 +13,9 @@ using System.Reflection;
 
 namespace StudioCore.Editors.ParamEditor;
 
+/// <summary>
+/// The row list context (per frame)
+/// </summary>
 public class RowListContext
 {
     public bool IsActiveView { get; set; }

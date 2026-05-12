@@ -136,6 +136,10 @@ public class ParamReloader
                 ImGui.EndMenu();
             }
         }
+        else
+        {
+            ImGui.TextDisabled("No actions avaliable for this project type.");
+        }
     }
 
 
