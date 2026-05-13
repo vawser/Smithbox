@@ -16,14 +16,15 @@ public class ModelSourceList
     public ModelEditorView View;
     public ProjectEntry Project;
 
-    private string ImguiID = "ModelSourceListView";
+    private string SourceListFilter = "";
+    private string PreviousSourceListFilter = "";
+    private bool ExactSourceListFilter = false;
 
-    public string SearchBarText = "";
-    private string _lastSearchText = "";
+    private HashSet<string> CachedSearchMatches = new HashSet<string>();
 
-    private HashSet<string> _cachedSearchMatches = new HashSet<string>();
+    private bool UpdateModelSourceList = true;
 
-    private bool _updateModelSourceList = true;
+    private ModelListType CurrentTab = ModelListType.Character;
 
     public ModelSourceList(ModelEditorView view, ProjectEntry project)
     {
@@ -35,13 +36,15 @@ public class ModelSourceList
     {
         UIHelper.SimpleHeader("Containers", "");
 
-        ImGui.BeginChild("ContainerList", new System.Numerics.Vector2(width, height), ImGuiChildFlags.Borders);
+        DisplaySearchbar();
+
+        ImGui.BeginChild("ContainerList", new Vector2(width, height), ImGuiChildFlags.Borders);
 
         ImGui.BeginTabBar("sourceTabs");
 
         if (ImGui.BeginTabItem("Characters"))
         {
-            DisplaySearchbar(ModelListType.Character);
+            CurrentTab = ModelListType.Character;
 
             ImGui.BeginChild($"characterSourceList");
 
@@ -59,7 +62,7 @@ public class ModelSourceList
 
         if (ImGui.BeginTabItem($"{name}"))
         {
-            DisplaySearchbar(ModelListType.Asset);
+            CurrentTab = ModelListType.Asset;
 
             ImGui.BeginChild($"assetSourceList");
 
@@ -71,7 +74,7 @@ public class ModelSourceList
 
         if (ImGui.BeginTabItem("Parts"))
         {
-            DisplaySearchbar(ModelListType.Part);
+            CurrentTab = ModelListType.Part;
 
             ImGui.BeginChild($"partsSourceList");
 
@@ -83,7 +86,7 @@ public class ModelSourceList
 
         if (ImGui.BeginTabItem("Map Pieces"))
         {
-            DisplaySearchbar(ModelListType.MapPiece);
+            CurrentTab = ModelListType.MapPiece;
 
             ImGui.BeginChild($"mapPieceSourceList");
 
@@ -98,27 +101,28 @@ public class ModelSourceList
         ImGui.EndChild();
     }
 
-    public void DisplaySearchbar(ModelListType type)
+    public void DisplaySearchbar()
     {
         var windowWidth = ImGui.GetWindowWidth();
 
-        DPI.ApplyInputWidth(windowWidth * 0.75f);
-        ImGui.InputText($"##modelListSearch{ImguiID}", ref SearchBarText, 255);
+        EditorFilters.DisplayFramedListFilter("modelEditor_SourceList",
+            ref SourceListFilter, ref ExactSourceListFilter);
+
         if (ImGui.IsItemDeactivatedAfterEdit())
         {
-            if (_lastSearchText != SearchBarText)
+            if (PreviousSourceListFilter != SourceListFilter)
             {
-                _lastSearchText = SearchBarText;
-                _updateModelSourceList = true;
+                PreviousSourceListFilter = SourceListFilter;
+                UpdateModelSourceList = true;
             }
         }
         UIHelper.Tooltip("Filter the model list entries.");
 
-        if (_updateModelSourceList)
+        if (UpdateModelSourceList)
         {
-            _updateModelSourceList = false;
+            UpdateModelSourceList = false;
 
-            _cachedSearchMatches.Clear();
+            CachedSearchMatches.Clear();
 
             foreach (var entry in Project.Handler.ModelData.PrimaryBank.Models)
             {
@@ -127,33 +131,29 @@ public class ModelSourceList
 
                 if (CFG.Current.ModelEditor_Containers_IncludeAliasInSearch)
                 {
-                    if (type is ModelListType.Character)
+                    if (CurrentTab is ModelListType.Character)
                     {
                         nameAlias = AliasHelper.GetCharacterAlias(Project, modelName);
                     }
-
-                    if (type is ModelListType.Asset)
+                    else if (CurrentTab is ModelListType.Asset)
                     {
                         nameAlias = AliasHelper.GetAssetAlias(Project, modelName);
                     }
-
-                    if (type is ModelListType.Part)
+                    else if (CurrentTab is ModelListType.Part)
                     {
                         nameAlias = AliasHelper.GetPartAlias(Project, modelName);
                     }
-
-                    if (type is ModelListType.MapPiece)
+                    else if (CurrentTab is ModelListType.MapPiece)
                     {
                         nameAlias = AliasHelper.GetMapPieceAlias(Project, modelName);
-
                     }
                 }
 
-                bool isMatch = SearchFilters.IsMapSearchMatch(_lastSearchText, modelName, nameAlias, new List<string>());
+                var isMatch = EditorFilters.IsMatch(SourceListFilter, modelName, ExactSourceListFilter, nameAlias, true, true);
 
-                if (isMatch || _lastSearchText == "")
+                if (isMatch)
                 {
-                    _cachedSearchMatches.Add(modelName);
+                    CachedSearchMatches.Add(modelName);
                 }
             }
         }
@@ -167,7 +167,7 @@ public class ModelSourceList
         {
             var modelName = entry.Filename;
 
-            if (!_cachedSearchMatches.Contains(modelName))
+            if (!CachedSearchMatches.Contains(modelName))
             {
                 continue;
             }

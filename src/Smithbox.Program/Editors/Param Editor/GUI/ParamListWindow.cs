@@ -8,6 +8,7 @@ using StudioCore.Keybinds;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Numerics;
 using System.Text;
@@ -442,57 +443,88 @@ public class ParamListWindow
     {
         if (ImGui.BeginPopupContextItem($"{paramKey}"))
         {
-            ImGui.Text($"Param Type: {param.ParamType}");
-            ImGui.Separator();
-
-            if (ImGui.Selectable("Copy Name"))
+            // Information
+            if(ImGui.BeginMenu("Information"))
             {
-                PlatformUtils.Instance.SetClipboardText(paramKey);
-            }
-            UIHelper.Tooltip($"Copy the name of the current param selection to the clipboard.");
+                ImGui.Text($"Param Type: {param.ParamType}");
 
-            // Pin
-            if (!isPinnedEntry)
-            {
-                if (ImGui.Selectable($"Pin"))
+                if (ImGui.Selectable("Copy Name"))
                 {
-                    List<string> pinned = Editor.Project.Descriptor.PinnedParams;
-
-                    if (!pinned.Contains(paramKey))
-                    {
-                        pinned.Add(paramKey);
-                    }
+                    PlatformUtils.Instance.SetClipboardText(paramKey);
                 }
-                UIHelper.Tooltip($"Pin the current param selection to the top of the param list.");
-            }
-            // Unpin
-            else if (isPinnedEntry)
-            {
-                if (ImGui.Selectable($"Unpin"))
+
+                if (ImGui.Selectable("Copy Type"))
                 {
-                    List<string> pinned = Editor.Project.Descriptor.PinnedParams;
-
-                    if (pinned.Contains(paramKey))
-                    {
-                        pinned.Remove(paramKey);
-                    }
+                    PlatformUtils.Instance.SetClipboardText(param.ParamType);
                 }
-                UIHelper.Tooltip($"Unpin the current param selection from the top of the param list.");
+
+                ImGui.EndMenu();
             }
 
+            // Pinning
+            if (ImGui.BeginMenu("Pinning"))
+            {
+                if (!isPinnedEntry)
+                {
+                    if (ImGui.Selectable($"Pin"))
+                    {
+                        List<string> pinned = Editor.Project.Descriptor.PinnedParams;
+
+                        if (!pinned.Contains(paramKey))
+                        {
+                            pinned.Add(paramKey);
+                        }
+                    }
+                    UIHelper.Tooltip($"Pin the current param selection to the top of the param list.");
+                }
+                else if (isPinnedEntry)
+                {
+                    if (ImGui.Selectable($"Unpin"))
+                    {
+                        List<string> pinned = Editor.Project.Descriptor.PinnedParams;
+
+                        if (pinned.Contains(paramKey))
+                        {
+                            pinned.Remove(paramKey);
+                        }
+                    }
+                    UIHelper.Tooltip($"Unpin the current param selection from the top of the param list.");
+                }
+
+                ImGui.EndMenu();
+            }
+
+            // Export
+            if (ImGui.BeginMenu("Export"))
+            {
+                if (ImGui.Selectable("Export Param as Loose File"))
+                {
+                    ExportParam(paramKey);
+                }
+                UIHelper.Tooltip($"Extracts this param and saves it as a loose .PARAM file. ");
+
+                ImGui.EndMenu();
+            }
+
+            // Wiki
             if (CFG.Current.Developer_Enable_Tools)
             {
-                if (ImGui.Selectable("Copy Param List"))
+                if (ImGui.BeginMenu("Wiki"))
                 {
-                    ParamDebugTools.OutputParamTableInformation(Editor, Project);
-                }
-                UIHelper.Tooltip($"Export the param list table for the SoulsModding wiki to the clipboard.");
+                    if (ImGui.Selectable("Copy Param List"))
+                    {
+                        ParamDebugTools.OutputParamTableInformation(Editor, Project);
+                    }
+                    UIHelper.Tooltip($"Export the param list table for the SoulsModding wiki to the clipboard.");
 
-                if (ImGui.Selectable("Copy Param Field List"))
-                {
-                    ParamDebugTools.OutputParamInformation(Editor, Project, paramKey);
+                    if (ImGui.Selectable("Copy Param Field List"))
+                    {
+                        ParamDebugTools.OutputParamInformation(Editor, Project, paramKey);
+                    }
+                    UIHelper.Tooltip($"Export the param field list table for the SoulsModding wiki for this param to the clipboard.");
+
+                    ImGui.EndMenu();
                 }
-                UIHelper.Tooltip($"Export the param field list table for the SoulsModding wiki for this param to the clipboard.");
             }
 
             ImGui.EndPopup();
@@ -510,5 +542,30 @@ public class ParamListWindow
         ParentView.RowDecorators.SetupFmgDecorators(paramKey);
 
         Smithbox.TextureManager.IconManager.PurgeCache();
+    }
+
+    private void ExportParam(string paramKey)
+    {
+        var paramData = Editor.Project.Handler.ParamData.PrimaryBank.Params.GetValueOrDefault(paramKey);
+
+        if(paramData == null)
+        {
+            Smithbox.LogError<ParamListWindow>($"Failed to find valid param data for {paramKey}");
+            return;
+        }
+
+        var exportDir = Path.Combine(Project.Descriptor.ProjectPath, "param");
+        var savePath = ProjectUtils.NormalizePath($"{exportDir}\\{paramKey}.param");
+
+        if(!Directory.Exists(exportDir))
+        {
+            Directory.CreateDirectory(exportDir);
+        }
+
+        var saveData = paramData.Write();
+
+        File.WriteAllBytes(savePath, saveData);
+
+        Smithbox.Log<ParamListWindow>($"Exported param to {savePath}");
     }
 }
