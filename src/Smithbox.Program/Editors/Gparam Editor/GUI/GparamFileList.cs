@@ -14,6 +14,9 @@ public class GparamFileList
     private GparamEditorView Parent;
     private ProjectEntry Project;
 
+    private string FileListFilter = "";
+    private bool ExactFileListFilter = false;
+
     public GparamFileList(GparamEditorView view, ProjectEntry project)
     {
         Parent = view;
@@ -42,7 +45,8 @@ public class GparamFileList
         var searchHeight = new Vector2(0, 36) * DPI.UIScale();
         ImGui.BeginChild("GparamFileSearchSection", searchHeight, ImGuiChildFlags.Borders);
 
-        Parent.Filters.DisplayFileFilterSearch();
+        EditorFilters.DisplayListFilter("gparamEditor_FileList",
+            ref FileListFilter, ref ExactFileListFilter);
 
         ImGui.SameLine();
 
@@ -108,7 +112,10 @@ public class GparamFileList
     {
         var alias = AliasHelper.GetGparamAliasName(Parent.Project, fileEntry.Filename);
 
-        if (!Parent.Filters.IsFileFilterMatch(fileEntry.Filename, alias))
+        var isMatch = EditorFilters.IsMatch(
+            FileListFilter, fileEntry.Filename, ExactFileListFilter, alias, false, true);
+
+        if (!isMatch)
             return;
 
         ImGui.BeginGroup();

@@ -19,6 +19,12 @@ public class FileItemView
     public FileEditorView Parent;
     public ProjectEntry Project;
 
+    private string InternalFileListFilter = "";
+    private bool ExactInternalFileListFilter = false;
+
+    private string TextureFileListFilter = "";
+    private bool ExactTextureFileListFilter = false;
+
     public FileItemView(FileEditorView view, ProjectEntry project)
     {
         Parent = view;
@@ -39,9 +45,6 @@ public class FileItemView
             DisplayVfsItem();
         }
     }
-
-    private string _internalFileSearch = "";
-    private string _internalTexFileSearch = "";
 
     public void DisplayVfsItem()
     {
@@ -66,12 +69,8 @@ public class FileItemView
         {
             UIHelper.SimpleHeader("internalFiles", "Internal Files", "", UI.Current.ImGui_Default_Text_Color);
 
-            var searchHeight = new Vector2(0, 36) * DPI.UIScale();
-            ImGui.BeginChild("InternalFileSearchSection", searchHeight, ImGuiChildFlags.Borders);
-
-            ImGui.InputTextWithHint($"##InternalFileSearch", "Search...", ref _internalFileSearch, 255);
-
-            ImGui.EndChild();
+            EditorFilters.DisplayFramedListFilter("fileBrowser_InternalFileList",
+                ref InternalFileListFilter, ref ExactInternalFileListFilter);
 
             ImGui.BeginChild("internalFileSection", sectionSize, ImGuiChildFlags.Borders);
 
@@ -79,13 +78,10 @@ public class FileItemView
             {
                 var filename = file;
 
-                if (_internalFileSearch != "")
-                {
-                    if (!filename.Contains(_internalFileSearch))
-                    {
-                        continue;
-                    }
-                }
+                var isMatch = EditorFilters.IsMatch(InternalFileListFilter, filename, ExactInternalFileListFilter);
+
+                if (!isMatch)
+                    continue;
 
                 var selected = false;
                 if (file == Parent.Selection.SelectedInternalFile)
@@ -108,12 +104,8 @@ public class FileItemView
         {
             UIHelper.SimpleHeader("internalTexFiles", "Texture Files", "", UI.Current.ImGui_Default_Text_Color);
 
-            var searchHeight = new Vector2(0, 36) * DPI.UIScale();
-            ImGui.BeginChild("InternalTexFileSearchSection", searchHeight, ImGuiChildFlags.Borders);
-
-            ImGui.InputTextWithHint($"##InternalTextFileSearch", "Search...", ref _internalTexFileSearch, 255);
-
-            ImGui.EndChild();
+            EditorFilters.DisplayFramedListFilter("fileBrowser_TextureFileList",
+                ref TextureFileListFilter, ref ExactTextureFileListFilter);
 
             ImGui.BeginChild("internalTexFileSection", sectionSize, ImGuiChildFlags.Borders);
 
@@ -130,13 +122,10 @@ public class FileItemView
 
                 foreach (var tex in texNames)
                 {
-                    if (_internalTexFileSearch != "")
-                    {
-                        if (!tex.Contains(_internalTexFileSearch))
-                        {
-                            continue;
-                        }
-                    }
+                    var isMatch = EditorFilters.IsMatch(TextureFileListFilter, tex, ExactTextureFileListFilter);
+
+                    if (!isMatch)
+                        continue;
 
                     var selected = false;
                     if (tex == Parent.Selection.SelectedInternalTexFile)

@@ -19,6 +19,8 @@
  
 - Text Editor:
  - Speed up Text import functionality
+ - Add split ID / Entry Text (similar to Param Editor) for the Entry List
+ - Add reorder functionality on drag (+ sort entry list action)
  
 - Param Editor
  - Finish converting the SDT AlternativeOrders into Field Layouts

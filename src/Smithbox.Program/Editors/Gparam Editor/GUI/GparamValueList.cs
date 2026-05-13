@@ -17,6 +17,9 @@ public class GparamValueList
     private GparamEditorView Parent;
     private ProjectEntry Project;
 
+    private string ValueListFilter = "";
+    private bool ExactValueListFilter = false;
+
     public GparamValueList(GparamEditorView view, ProjectEntry project)
     {
         Parent = view;
@@ -45,7 +48,8 @@ public class GparamValueList
         var searchHeight = new Vector2(0, 36) * DPI.UIScale();
         ImGui.BeginChild("GparamFieldSearchSection", searchHeight, ImGuiChildFlags.Borders);
 
-        Parent.Filters.DisplayFieldValueFilterSearch();
+        EditorFilters.DisplayListFilter("gparamEditor_ValueList",
+            ref ValueListFilter, ref ExactValueListFilter);
 
         // Time of Day Toggle
         ImGui.SameLine();
@@ -132,9 +136,9 @@ public class GparamValueList
             if (value == null)
                 continue;
 
-            var display = Parent.Filters.IsFieldValueFilterMatch(value.ID.ToString(), "");
+            var isMatch = EditorFilters.IsMatch(ValueListFilter, value.ID.ToString(), ExactValueListFilter);
 
-            if (!display)
+            if (!isMatch)
                 continue;
 
             GparamProperty_Row(fileEntry, data, group, field, value, i);
@@ -176,9 +180,9 @@ public class GparamValueList
             if (value == null)
                 continue;
 
-            var display = Parent.Filters.IsFieldValueFilterMatch(value.ID.ToString(), "");
+            var isMatch = EditorFilters.IsMatch(ValueListFilter, value.ID.ToString(), ExactValueListFilter);
 
-            if (!display)
+            if (!isMatch)
                 continue;
 
             GparamProperty_ID(data, group, field, value, i);
@@ -211,9 +215,9 @@ public class GparamValueList
             if (value == null)
                 continue;
 
-            var display = Parent.Filters.IsFieldValueFilterMatch(value.ID.ToString(), "");
+            var isMatch = EditorFilters.IsMatch(ValueListFilter, value.ID.ToString(), ExactValueListFilter);
 
-            if (!display)
+            if (!isMatch)
                 continue;
 
             GparamProperty_TimeOfDay(data, group, field, value, i);
@@ -241,9 +245,9 @@ public class GparamValueList
             if (value == null)
                 continue;
 
-            var display = Parent.Filters.IsFieldValueFilterMatch(value.ID.ToString(), "");
+            var isMatch = EditorFilters.IsMatch(ValueListFilter, value.ID.ToString(), ExactValueListFilter);
 
-            if (!display)
+            if (!isMatch)
                 continue;
 
             GparamProperty_Value(data, group, field, value, i);

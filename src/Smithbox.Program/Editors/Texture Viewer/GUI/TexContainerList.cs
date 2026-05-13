@@ -14,6 +14,9 @@ public class TexContainerList
     public TexEditorView Parent;
     public ProjectEntry Project;
 
+    private string FileListFilter = "";
+    private bool ExactFileListFilter = false;
+
     public TexContainerList(TexEditorView view, ProjectEntry project)
     {
         Parent = view;
@@ -27,12 +30,8 @@ public class TexContainerList
     {
         UIHelper.SimpleHeader("Containers", "");
 
-        var searchHeight = new Vector2(0, 36) * DPI.UIScale();
-        ImGui.BeginChild("TextureViewer_ContainerList_Header", searchHeight, ImGuiChildFlags.Borders);
-
-        Parent.Filters.DisplayFileFilterSearch();
-
-        ImGui.EndChild();
+        EditorFilters.DisplayFramedListFilter("textureViewer_ContainerList",
+            ref FileListFilter, ref ExactFileListFilter);
 
         ImGui.BeginChild("ContainerList", new Vector2(width, height), ImGuiChildFlags.Borders);
 
@@ -107,7 +106,10 @@ public class TexContainerList
                     var rawName = entry.Key.Filename.ToLower();
                     var aliasName = GetAlias(rawName);
 
-                    if (Parent.Filters.IsFileFilterMatch(entry.Key.Path, aliasName))
+                    var isMatch = EditorFilters.IsMatch(
+                        FileListFilter, entry.Key.Path, ExactFileListFilter, aliasName, true, true);
+
+                    if (isMatch)
                     {
                         if (!CFG.Current.TextureViewer_File_List_Display_Low_Detail_Entries)
                         {

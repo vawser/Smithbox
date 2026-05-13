@@ -5,6 +5,7 @@ using StudioCore.Keybinds;
 using StudioCore.Utilities;
 using System;
 using System.Linq;
+using System.Numerics;
 
 namespace StudioCore.Editors.TextEditor;
 
@@ -15,6 +16,9 @@ public class TextContainerList
 {
     private TextEditorView Parent;
     private ProjectEntry Project;
+
+    private string ContainerListFilter = "";
+    private bool ExactContainerListFilter = false;
 
     public TextContainerList(TextEditorView view, ProjectEntry project)
     {
@@ -29,9 +33,29 @@ public class TextContainerList
     {
         UIHelper.SimpleHeader("Containers", "");
 
-        Parent.Filters.DisplayFileFilterSearch();
+        var searchHeight = new Vector2(0, 36) * DPI.UIScale();
+        ImGui.BeginChild($"textEditor_ContainerList_Header", searchHeight, ImGuiChildFlags.Borders);
 
-        ImGui.BeginChild("CategoryList", new System.Numerics.Vector2(width, height), ImGuiChildFlags.Borders);
+        EditorFilters.DisplayListFilter("textEditor_ContainerList",
+            ref ContainerListFilter, ref ExactContainerListFilter);
+
+        // Toggle Primary Display Only
+        ImGui.SameLine();
+
+        if (ImGui.Button($"{Icons.Bars}##displayPrimaryCategoryOnlyToggle"))
+        {
+            CFG.Current.TextEditor_Container_List_Display_Primary_Category_Only = !CFG.Current.TextEditor_Container_List_Display_Primary_Category_Only;
+        }
+
+        var isPrimaryOnly = "Primary Category Only";
+        if (!CFG.Current.TextEditor_Container_List_Display_Primary_Category_Only)
+            isPrimaryOnly = "All Categories";
+
+        UIHelper.Tooltip($"Toggle which categories appear in the list.\nCurrent Mode: {isPrimaryOnly}");
+
+        ImGui.EndChild();
+
+        ImGui.BeginChild("CategoryList", new Vector2(width, height), ImGuiChildFlags.Borders);
 
         // Categories
         foreach (TextContainerCategory category in Enum.GetValues(typeof(TextContainerCategory)))
@@ -180,7 +204,9 @@ public class TextContainerList
             }
         }
 
-        if (Parent.Filters.IsFileFilterMatch(displayName, "", wrapper))
+        var isMatch = EditorFilters.IsMatch(ContainerListFilter, displayName, ExactContainerListFilter);
+
+        if (isMatch)
         {
             // Script row
             if (ImGui.Selectable($"{displayName}##{wrapper.FileEntry.Filename}{index}", index == Parent.Selection.SelectedContainerKey))

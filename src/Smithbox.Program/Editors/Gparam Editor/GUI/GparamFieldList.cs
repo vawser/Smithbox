@@ -15,6 +15,9 @@ public class GparamFieldList
     private GparamEditorView Parent;
     private ProjectEntry Project;
 
+    private string FieldListFilter = "";
+    private bool ExactFieldListFilter = false;
+
     public GparamFieldList(GparamEditorView view, ProjectEntry project)
     {
         Parent = view;
@@ -44,7 +47,8 @@ public class GparamFieldList
         var searchHeight = new Vector2(0, 36) * DPI.UIScale();
         ImGui.BeginChild("GparamFieldSearchSection", searchHeight, ImGuiChildFlags.Borders);
 
-        Parent.Filters.DisplayFieldFilterSearch();
+        EditorFilters.DisplayListFilter("gparamEditor_FieldList",
+            ref FieldListFilter, ref ExactFieldListFilter);
 
         ImGui.EndChild();
     }
@@ -90,7 +94,10 @@ public class GparamFieldList
         var fieldName = GetFieldName(field);
         var fieldDesc = GetFieldDescription(field);
 
-        if (!Parent.Filters.IsFieldFilterMatch(field.Name, ""))
+        var isMatch = EditorFilters.IsMatch(
+            FieldListFilter, field.Name, ExactFieldListFilter, fieldName);
+
+        if (!isMatch)
             return;
 
         ImGui.BeginGroup();

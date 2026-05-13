@@ -52,6 +52,8 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
 
             ToolView.DisplayMenubar();
 
+            OptionsMenu();
+
             ImGui.EndMenuBar();
         }
 
@@ -138,6 +140,55 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
             ImGui.Separator();
 
             ViewHandler.DisplayMenu();
+
+            ImGui.EndMenu();
+        }
+    }
+
+    public void OptionsMenu()
+    {
+        if (ImGui.BeginMenu("Options"))
+        {
+            if (ImGui.BeginMenu("Display"))
+            {
+                ImGui.SliderFloat("Containers##containersDisplayPercentage", ref CFG.Current.TextureViewer_Display_ContainerList_Percentage, 0.01f, 0.99f);
+                if (ImGui.IsItemDeactivatedAfterEdit())
+                {
+                    var remainder = 1f - CFG.Current.TextureViewer_Display_ContainerList_Percentage;
+
+                    StudioMath.Redistribute(
+                        ref CFG.Current.TextureViewer_Display_InternalFileList_Percentage,
+                        ref CFG.Current.TextureViewer_Display_FileList_Percentage,
+                        remainder);
+                }
+                UIHelper.Tooltip("The percentage of the window the Containers section occupies.");
+
+                ImGui.SliderFloat("Files##internalFilesDisplayPercentage", ref CFG.Current.TextureViewer_Display_InternalFileList_Percentage, 0.01f, 0.99f);
+                if (ImGui.IsItemDeactivatedAfterEdit())
+                {
+                    var remainder = 1f - CFG.Current.TextureViewer_Display_InternalFileList_Percentage;
+
+                    StudioMath.Redistribute(
+                        ref CFG.Current.TextureViewer_Display_ContainerList_Percentage,
+                        ref CFG.Current.TextureViewer_Display_FileList_Percentage,
+                        remainder);
+                }
+                UIHelper.Tooltip("The percentage of the window the Files section occupies.");
+
+                ImGui.SliderFloat("Textures##filesDisplayPercentage", ref CFG.Current.TextureViewer_Display_FileList_Percentage, 0.01f, 0.99f);
+                if (ImGui.IsItemDeactivatedAfterEdit())
+                {
+                    var remainder = 1f - CFG.Current.TextureViewer_Display_FileList_Percentage;
+
+                    StudioMath.Redistribute(
+                        ref CFG.Current.TextureViewer_Display_ContainerList_Percentage,
+                        ref CFG.Current.TextureViewer_Display_InternalFileList_Percentage,
+                        remainder);
+                }
+                UIHelper.Tooltip("The percentage of the window the Textures section occupies.");
+
+                ImGui.EndMenu();
+            }
 
             ImGui.EndMenu();
         }

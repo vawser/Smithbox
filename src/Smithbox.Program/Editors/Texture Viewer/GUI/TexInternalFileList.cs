@@ -11,6 +11,9 @@ public class TexInternalFileList
     public TexEditorView Parent;
     public ProjectEntry Project;
 
+    private string TpfFileListFilter = "";
+    private bool ExactTpfFileListFilter = false;
+
     public TexInternalFileList(TexEditorView view, ProjectEntry project)
     {
         Parent = view;
@@ -24,12 +27,7 @@ public class TexInternalFileList
     {
         UIHelper.SimpleHeader("Files", "");
 
-        var searchHeight = new Vector2(0, 36) * DPI.UIScale();
-        ImGui.BeginChild("TextureViewer_InternalFileList_Header", searchHeight, ImGuiChildFlags.Borders);
-
-        Parent.Filters.DisplayTpfFilterSearch();
-
-        ImGui.EndChild();
+        EditorFilters.DisplayFramedListFilter("textureViewer_TpfList", ref TpfFileListFilter, ref ExactTpfFileListFilter);
 
         ImGui.BeginChild("TpfList", new Vector2(width, height), ImGuiChildFlags.Borders);
 
@@ -42,7 +40,10 @@ public class TexInternalFileList
                 var file = entry.Key;
                 var tpfEntry = entry.Value;
 
-                if (Parent.Filters.IsTpfFilterMatch(file.Name))
+                var isMatch = EditorFilters.IsMatch(
+                    TpfFileListFilter, file.Name, ExactTpfFileListFilter, "", true);
+
+                if (isMatch)
                 {
                     var displayName = file.Name;
 

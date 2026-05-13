@@ -2,6 +2,7 @@
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Keybinds;
+using static HKLib.hk2018.hkSerialize.CompatTypeParentInfo;
 
 namespace StudioCore.Editors.TextEditor;
 
@@ -126,7 +127,19 @@ public class TextShortcuts
                         {
                             var tEntry = fmg.Entries[j];
 
-                            if (activeView.Filters.IsFmgEntryFilterMatch(tEntry))
+                            var input = activeView.TextEntryList.EntryListFilter;
+                            var exactMatch = activeView.TextEntryList.ExactEntryListFilter;
+
+                            var isMatch = EditorFilters.IsMatch(
+                                input, tEntry.ID.ToString(), exactMatch, tEntry.Text);
+
+                            // Ignore normal match if a special conditional commands has been used
+                            if (activeView.TextEntryList.UsedMatchCommands(input))
+                            {
+                                isMatch = activeView.TextEntryList.HandleMatchCommands(input, tEntry);
+                            }
+
+                            if (isMatch)
                             {
                                 multiselect.StoredEntries.Add(j, tEntry);
                             }

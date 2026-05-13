@@ -1,5 +1,6 @@
 ﻿using SoulsFormats;
 using StudioCore.Application;
+using StudioCore.Editors.Common;
 using StudioCore.Keybinds;
 using System.Collections.Generic;
 
@@ -54,7 +55,20 @@ public class TextMultiselection
                         if (k < Parent.Selection.SelectedFmgWrapper.File.Entries.Count)
                         {
                             var curEntry = Parent.Selection.SelectedFmgWrapper.File.Entries[k];
-                            if (Parent.Filters.IsFmgEntryFilterMatch(curEntry))
+
+                            var input = Parent.TextEntryList.EntryListFilter;
+                            var exactMatch = Parent.TextEntryList.ExactEntryListFilter;
+
+                            var isMatch = EditorFilters.IsMatch(
+                                input, curEntry.ID.ToString(), exactMatch, curEntry.Text);
+
+                            // Ignore normal match if a special conditional commands has been used
+                            if (Parent.TextEntryList.UsedMatchCommands(input))
+                            {
+                                isMatch = Parent.TextEntryList.HandleMatchCommands(input, curEntry);
+                            }
+
+                            if (isMatch)
                             {
                                 StoredEntries.Add(k, curEntry);
                             }

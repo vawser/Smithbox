@@ -6,6 +6,7 @@ using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Reflection;
 using static SoulsFormats.MTD;
 
@@ -16,7 +17,8 @@ public class MaterialProperties
     public MaterialEditorView Parent;
     public ProjectEntry Project;
 
-    private string PropertySearch = "";
+    private string PropertyListFilter = "";
+    private bool ExactPropertyListFilter = false;
 
     public MaterialProperties(MaterialEditorView view, ProjectEntry project)
     {
@@ -28,14 +30,14 @@ public class MaterialProperties
     {
         var scale = DPI.UIScale();
 
-        UIHelper.SimpleHeader("Contents", "");
-
-        ImGui.BeginChild("MaterialProperties", ImGuiChildFlags.Borders);
+        UIHelper.SimpleHeader("Properties", "");
 
         // Header
-        ImGui.AlignTextToFramePadding();
-        ImGui.InputText("##materialPropertySearch", ref PropertySearch, 255);
-        UIHelper.Tooltip("Filter the properties by field names that exactly or partially match your input.");
+        var searchHeight = new Vector2(0, 36) * DPI.UIScale();
+        ImGui.BeginChild("MaterialPropertySectionHeader", searchHeight, ImGuiChildFlags.Borders);
+
+        EditorFilters.DisplayListFilter("materialEditor_PropertyList",
+            ref PropertyListFilter, ref ExactPropertyListFilter);
 
         // Toggle Community Field Names
         ImGui.SameLine();
@@ -51,10 +53,9 @@ public class MaterialProperties
 
         UIHelper.Tooltip($"Toggle field name display type between Internal and Community.\nCurrent Mode: {communityFieldNameMode}");
 
-        ImGui.Separator();
+        ImGui.EndChild();
 
-        // Properties
-        ImGui.BeginChild("materialPropEdit");
+        ImGui.BeginChild("MaterialProperties", ImGuiChildFlags.Borders);
 
         // var meta = Editor.Project.MaterialData.Meta.GetMeta(type, false);
 
@@ -99,8 +100,6 @@ public class MaterialProperties
 
         ImGui.EndChild();
 
-        ImGui.EndChild();
-
         ProcessListActions();
     }
 
@@ -140,14 +139,12 @@ public class MaterialProperties
             //}
 
             // Filter by Search
-            var filterTerm = PropertySearch.ToLower();
+            var valueStr = $"{prop.GetValue(obj)}";
+            var isMatch = EditorFilters.IsMatch(PropertyListFilter, fieldName, ExactPropertyListFilter, valueStr);
 
-            if (PropertySearch != "")
+            if (!isMatch)
             {
-                if (!prop.Name.ToLower().Contains(filterTerm))
-                {
-                    continue;
-                }
+                continue;
             }
 
             var ignoreProp = prop.GetCustomAttribute<IgnoreInMaterialEditor>();

@@ -1,7 +1,9 @@
 ﻿using Hexa.NET.ImGui;
+using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Keybinds;
+using System.Numerics;
 
 namespace StudioCore.Editors.TextEditor;
 
@@ -12,6 +14,9 @@ public class TextEntryList
 {
     private TextEditorView Parent;
     private ProjectEntry Project;
+
+    public string EntryListFilter = "";
+    public bool ExactEntryListFilter = false;
 
     public TextEntryList(TextEditorView view, ProjectEntry project)
     {
@@ -24,17 +29,7 @@ public class TextEntryList
     /// </summary>
     public void Display()
     {
-        UIHelper.SimpleHeader("Entries", "");
-
-        Parent.Filters.DisplayFmgEntryFilterSearch();
-
-        ImGui.SameLine();
-
-        if(ImGui.Button($"{Icons.Eye}##fmgFocusSelection", DPI.IconButtonSize))
-        {
-            Parent.Selection.FocusFmgEntrySelection = true;
-        }
-        UIHelper.Tooltip($"Focus the currently selected entry.\nShortcut: {InputManager.GetHint(KeybindID.Jump)}");
+        DisplayHeader();
 
         ImGui.BeginChild("FmgEntriesList", ImGuiChildFlags.Borders);
 
@@ -47,7 +42,16 @@ public class TextEntryList
                 var id = entry.ID;
                 var contents = entry.Text;
 
-                if (Parent.Filters.IsFmgEntryFilterMatch(entry))
+                var isMatch = EditorFilters.IsMatch(
+                    EntryListFilter, entry.ID.ToString(), ExactEntryListFilter, entry.Text);
+
+                // Ignore normal match if a special conditional commands has been used
+                if (UsedMatchCommands(EntryListFilter))
+                {
+                    isMatch = HandleMatchCommands(EntryListFilter, entry);
+                }
+
+                if (isMatch)
                 {
                     var displayedText = contents;
 
@@ -129,5 +133,97 @@ public class TextEntryList
         }
 
         ImGui.EndChild();
+    }
+
+    public void DisplayHeader()
+    {
+        UIHelper.SimpleHeader("Entries", "");
+
+        var searchHeight = new Vector2(0, 36) * DPI.UIScale();
+        ImGui.BeginChild($"textEditor_EntryList_Section_Header", searchHeight, ImGuiChildFlags.Borders);
+
+        if (InputManager.IsPressed(KeybindID.TextEditor_Focus_Searchbar))
+        {
+            ImGui.SetKeyboardFocusHere();
+        }
+
+        EditorFilters.DisplayListFilter("textEditor_EntryList",
+            ref EntryListFilter, ref ExactEntryListFilter);
+
+        // Focus after clearing
+        if (ImGui.IsItemEdited())
+        {
+            if (EntryListFilter == "")
+            {
+                Parent.Selection.FocusFmgEntrySelection = true;
+            }
+        }
+        // Focus after clicking off
+        if (ImGui.IsItemDeactivated())
+        {
+            Parent.Selection.FocusFmgEntrySelection = true;
+        }
+
+        ImGui.SameLine();
+
+        if (ImGui.Button($"{Icons.Eye}##fmgFocusSelection", DPI.IconButtonSize))
+        {
+            Parent.Selection.FocusFmgEntrySelection = true;
+        }
+        UIHelper.Tooltip($"Focus the currently selected entry.\nShortcut: {InputManager.GetHint(KeybindID.Jump)}");
+
+        ImGui.EndChild();
+    }
+
+    public bool UsedMatchCommands(string rawInput)
+    {
+        bool isValid = true;
+
+        if (rawInput == null)
+            return isValid;
+
+        var input = rawInput.Trim().ToLower();
+
+        if (input == "modified")
+        {
+            return true;
+        }
+        else if (input == "unique")
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    public bool HandleMatchCommands(string rawInput, FMG.Entry curEntry)
+    {
+        bool isValid = true;
+
+        if (rawInput == null)
+            return isValid;
+
+        var input = rawInput.Trim().ToLower();
+
+        if (input == "modified")
+        {
+            if (Parent.DifferenceManager.IsDifferentToVanilla(curEntry))
+            {
+                return true;
+            }
+
+            return false;
+        }
+        else if (input == "unique")
+        {
+            if (Parent.DifferenceManager.IsUniqueToProject(curEntry))
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        return false;
     }
 }

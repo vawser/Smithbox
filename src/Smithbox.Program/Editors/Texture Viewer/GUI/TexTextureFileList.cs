@@ -12,6 +12,9 @@ public class TexTextureFileList
     public TexEditorView Parent;
     public ProjectEntry Project;
 
+    private string TextureFileListFilter = "";
+    private bool ExactTextureFileListFilter = false;
+
     public TexTextureFileList(TexEditorView view, ProjectEntry project)
     {
         Parent = view;
@@ -22,13 +25,7 @@ public class TexTextureFileList
     {
         UIHelper.SimpleHeader("Textures", "");
 
-        var searchHeight = new Vector2(0, 36) * DPI.UIScale();
-        ImGui.BeginChild("TextureViewer_TextureList_Header", searchHeight, ImGuiChildFlags.Borders);
-
-        Parent.Filters.DisplayTextureFilterSearch();
-
-        ImGui.EndChild();
-
+        EditorFilters.DisplayFramedListFilter("textureViewer_TextureList", ref TextureFileListFilter, ref ExactTextureFileListFilter);
 
         ImGui.BeginChild("TextureList", new Vector2(width, height), ImGuiChildFlags.Borders);
 
@@ -38,7 +35,10 @@ public class TexTextureFileList
 
             foreach (var entry in Parent.Selection.SelectedTpf.Textures)
             {
-                if (Parent.Filters.IsTextureFilterMatch(entry.Name))
+                var isMatch = EditorFilters.IsMatch(
+                    TextureFileListFilter, entry.Name, ExactTextureFileListFilter, "", true);
+
+                if (isMatch)
                 {
                     var displayName = entry.Name;
 

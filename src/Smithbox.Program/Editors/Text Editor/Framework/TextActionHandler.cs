@@ -397,7 +397,19 @@ public class TextActionHandler
                         {
                             var entry = Parent.Selection.SelectedFmgWrapper.File.Entries[i];
 
-                            if (Parent.Filters.IsFmgEntryFilterMatch(entry))
+                            var input = Parent.TextEntryList.EntryListFilter;
+                            var exactMatch = Parent.TextEntryList.ExactEntryListFilter;
+
+                            var isMatch = EditorFilters.IsMatch(
+                                input, entry.ID.ToString(), exactMatch, entry.Text);
+
+                            // Ignore normal match if a special conditional commands has been used
+                            if (Parent.TextEntryList.UsedMatchCommands(input))
+                            {
+                                isMatch = Parent.TextEntryList.HandleMatchCommands(input, entry);
+                            }
+
+                            if (isMatch)
                             {
                                 if (Parent.Selection.FmgEntryMultiselect.IsMultiselected(i))
                                 {

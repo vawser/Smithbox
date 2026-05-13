@@ -38,51 +38,41 @@ public class GparamDataFinder
         ImGui.BeginChild("DataFinderSection", ImGuiChildFlags.Borders);
 
         UIHelper.SimpleHeader("File Filter", "");
-        DPI.ApplyInputWidth();
-        ImGui.InputText("##targetParamString", ref _targetFileString, 255);
-        UIHelper.Tooltip("Enter target file arguments here. * for any.");
+
+        UIHelper.SinglelineTextInput("targetParamString", ref _targetFileString);
+        UIHelper.Tooltip("Enter target file arguments here.");
 
         UIHelper.SimpleHeader("Group Filter", "");
-        DPI.ApplyInputWidth();
-        ImGui.InputText("##targetGroupString", ref _targetGroupString, 255);
-        UIHelper.Tooltip("Enter target group arguments here. * for any.");
+
+        UIHelper.SinglelineTextInput("targetGroupString", ref _targetGroupString);
+        UIHelper.Tooltip("Enter target group arguments here.");
 
         UIHelper.SimpleHeader("Field Filter", "");
-        DPI.ApplyInputWidth();
-        ImGui.InputText("##targetFieldString", ref _targetFieldString, 255);
-        UIHelper.Tooltip("Enter target field arguments here. * for any.");
+
+        UIHelper.SinglelineTextInput("targetFieldString", ref _targetFieldString);
+        UIHelper.Tooltip("Enter target field arguments here.");
 
         UIHelper.SimpleHeader("Value Filter", "");
-        DPI.ApplyInputWidth();
-        ImGui.InputText("##filterString", ref _valueFilterString, 255);
-        UIHelper.Tooltip("Enter value filter arguments here. * for any.");
 
+        UIHelper.SinglelineTextInput("filterString", ref _valueFilterString);
+        UIHelper.Tooltip("Enter value filter arguments here.");
+
+        UIHelper.Spacer();
         UIHelper.SimpleHeader("Options", "");
 
         ImGui.Checkbox("Unique Values Only", ref _uniqueValuesOnly);
         UIHelper.Tooltip("Only show the first result for each distinct value.");
 
-        ImGui.Text("");
-
+        UIHelper.Spacer();
         UIHelper.SimpleHeader("Actions", "");
 
-        if (ImGui.Button("Fill from Selection", DPI.StandardButtonSize))
-        {
-            FillInputs(view);
-        }
-        UIHelper.Tooltip("Automatically fill the filter input based on current selection.");
+        UIHelper.MultiButtonInput("quickEditActions",
+            "fillFromSelection", "Fill from Selection", "", FillInputs,
+            "clearInputs", "Clear", "", ClearInputs,
+            "generateResults", "Generate", "", CollateResults);
 
-        if (ImGui.Button("Clear", DPI.StandardButtonSize))
-        {
-            ClearInputs();
-        }
-        UIHelper.Tooltip("Clear form.");
-
-        if (ImGui.Button("Generate Results", DPI.StandardButtonSize))
-        {
-            CollateResults(view);
-        }
-        UIHelper.Tooltip("Generate results.");
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader("Results", "");
 
         if (_results.Count == 0)
         {
@@ -91,8 +81,6 @@ public class GparamDataFinder
             ImGui.EndChild();
             return;
         }
-
-        ImGui.Text("");
 
         IEnumerable<GparamSearchResult> displayResults = _results;
 
@@ -104,8 +92,7 @@ public class GparamDataFinder
         }
 
         var displayList = displayResults.ToList();
-
-        UIHelper.SimpleHeader("Results", "");
+        
         ImGui.Text($"Number of matches: {displayList.Count}{(_uniqueValuesOnly ? $" (of {_results.Count})" : "")}");
 
         ImGui.BeginChild("ResultsSection", ImGuiChildFlags.Borders);
@@ -197,8 +184,10 @@ public class GparamDataFinder
         _valueFilterString = "";
     }
 
-    public void FillInputs(GparamEditorView view)
+    public void FillInputs()
     {
+        var view = Editor.ViewHandler.ActiveView;
+
         _targetFileString = "";
         _targetGroupString = "";
         _targetFieldString = "";
@@ -270,8 +259,10 @@ public class GparamDataFinder
             : $"index:[{index}]";
     }
 
-    public void CollateResults(GparamEditorView view)
+    public void CollateResults()
     {
+        var view = Editor.ViewHandler.ActiveView;
+
         _results.Clear();
 
         List<Task<bool>> loadTasks = new List<Task<bool>>();

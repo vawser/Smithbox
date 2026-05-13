@@ -48,48 +48,37 @@ public class GparamQuickEdit
         ImGui.BeginChild("QuickEditSection", ImGuiChildFlags.Borders);
 
         UIHelper.SimpleHeader("File Filter", "");
-        DPI.ApplyInputWidth();
-        ImGui.InputText("##targetParamString", ref _targetFileString, 255);
+
+        UIHelper.SinglelineTextInput("targetParamString", ref _targetFileString);
         UIHelper.Tooltip("Enter target file arguments here.");
 
         UIHelper.SimpleHeader("Group Filter", "");
-        DPI.ApplyInputWidth();
-        ImGui.InputText("##targetGroupString", ref _targetGroupString, 255);
+
+        UIHelper.SinglelineTextInput("targetGroupString", ref _targetGroupString);
         UIHelper.Tooltip("Enter target group arguments here.");
 
         UIHelper.SimpleHeader("Field Filter", "");
-        DPI.ApplyInputWidth();
-        ImGui.InputText("##targetFieldString", ref _targetFieldString, 255);
+
+        UIHelper.SinglelineTextInput("targetFieldString", ref _targetFieldString);
         UIHelper.Tooltip("Enter target field arguments here.");
 
         UIHelper.SimpleHeader("Value Filter", "");
-        DPI.ApplyInputWidth();
-        ImGui.InputText("##filterString", ref _valueFilterString, 255);
+
+        UIHelper.SinglelineTextInput("filterString", ref _valueFilterString);
         UIHelper.Tooltip("Enter value filter arguments here.");
 
         UIHelper.SimpleHeader("Value Command", "");
-        DPI.ApplyInputWidth();
-        ImGui.InputText("##commandString", ref _valueCommandString, 255);
+
+        UIHelper.SinglelineTextInput("commandString", ref _valueCommandString);
         UIHelper.Tooltip("Enter value command arguments here. For values represented by a vector, separate each digit with the brackets with the , symbol.");
 
+        UIHelper.Spacer();
         UIHelper.SimpleHeader("Actions", "");
-        if (ImGui.Button("Fill from Selection", DPI.StandardButtonSize))
-        {
-            GenerateQuickEditCommands();
-        }
-        UIHelper.Tooltip("Automatically fill the filter input based on current selection.");
 
-        if (ImGui.Button("Clear", DPI.StandardButtonSize))
-        {
-            ClearQuickEditCommands();
-        }
-        UIHelper.Tooltip("Clear quick edit form.");
-
-        if (ImGui.Button("Execute", DPI.StandardButtonSize))
-        {
-            ExecuteQuickEdit();
-        }
-        UIHelper.Tooltip("Apply quick edit.");
+        UIHelper.MultiButtonInput("quickEditActions",
+            "fillFromSelection", "Fill from Selection", "", GenerateQuickEditCommands,
+            "clearInputs", "Clear", "", ClearQuickEditCommands,
+            "executeInputs", "Execute", "", ExecuteQuickEdit);
 
         ImGui.EndChild();
     }

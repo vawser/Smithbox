@@ -17,6 +17,9 @@ public class TextFileList
 
     private List<EntryGroupAssociation> Groupings;
 
+    public string FmgListFilter = "";
+    public bool ExactFmgListFilter = false;
+
     public TextFileList(TextEditorView view, ProjectEntry project)
     {
         Parent = view;
@@ -30,7 +33,27 @@ public class TextFileList
     {
         UIHelper.SimpleHeader("Files", "");
 
-        Parent.Filters.DisplayFmgFilterSearch();
+        var searchHeight = new Vector2(0, 36) * DPI.UIScale();
+        ImGui.BeginChild($"textEditor_FileList_Header", searchHeight, ImGuiChildFlags.Borders);
+
+        EditorFilters.DisplayListFilter("textEditor_FmgList",
+            ref FmgListFilter, ref ExactFmgListFilter);
+
+        // Toggle Display Mode
+        ImGui.SameLine();
+
+        if (ImGui.Button($"{Icons.Bars}##toggleDisplayMode"))
+        {
+            CFG.Current.TextEditor_Text_File_List_Grouped_Display = !CFG.Current.TextEditor_Text_File_List_Grouped_Display;
+        }
+
+        var displayMode = "Grouped Display";
+        if (!CFG.Current.TextEditor_Text_File_List_Grouped_Display)
+            displayMode = "Individual Display";
+
+        UIHelper.Tooltip($"Toggle if all the individual files are displayed, or they are grouped under a common file.\nCurrent Mode: {displayMode}");
+
+        ImGui.EndChild();
 
         ImGui.BeginChild("FmgFileList", new Vector2(width, height), ImGuiChildFlags.Borders);
 
@@ -283,7 +306,10 @@ public class TextFileList
         var displayName = TextUtils.GetFmgDisplayName(Project, Parent.Selection.SelectedContainerWrapper, id, fmgName);
         var dlcGroupingName = TextUtils.GetFmgDlcGrouping(Project, Parent.Selection.SelectedContainerWrapper, id, fmgName);
 
-        if (Parent.Filters.IsFmgFilterMatch(fmgName, displayName, id))
+        var isMatch = EditorFilters.IsMatch(
+            FmgListFilter, fmgName, ExactFmgListFilter, displayName, false, false, id.ToString());
+
+        if (isMatch)
         {
             var selectableName = $"{displayName}";
 

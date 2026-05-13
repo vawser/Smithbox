@@ -4,6 +4,7 @@ using StudioCore.Editors.Common;
 using StudioCore.Keybinds;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 
 namespace StudioCore.Editors.MaterialEditor;
 
@@ -15,6 +16,9 @@ public class MaterialFileList
     public MaterialEditorView Parent;
     public ProjectEntry Project;
 
+    private string FileListFilter = "";
+    private bool ExactFileListFilter = false;
+
     public MaterialFileList(MaterialEditorView view, ProjectEntry project)
     {
         Parent = view;
@@ -24,9 +28,10 @@ public class MaterialFileList
     {
         UIHelper.SimpleHeader("Files", "");
 
-        Parent.Filters.DisplayFileFilterSearch();
+        EditorFilters.DisplayFramedListFilter("materialEditor_FileList",
+            ref FileListFilter, ref ExactFileListFilter);
 
-        ImGui.BeginChild("FileList", new System.Numerics.Vector2(width, height), ImGuiChildFlags.Borders);
+        ImGui.BeginChild("FileList", new Vector2(width, height), ImGuiChildFlags.Borders);
 
         // MTD
         if (Parent.Selection.SourceType is MaterialSourceType.MTD && Parent.Selection.MTDWrapper != null)
@@ -36,7 +41,9 @@ public class MaterialFileList
             var filteredEntries = new List<string>();
             foreach (var entry in files)
             {
-                if (Parent.Filters.IsFileFilterMatch(entry.Key))
+                var isMatch = EditorFilters.IsMatch(FileListFilter, entry.Key, ExactFileListFilter);
+
+                if (isMatch)
                 {
                     filteredEntries.Add(entry.Key);
                 }
@@ -92,7 +99,9 @@ public class MaterialFileList
                 var filteredEntries = new List<string>();
                 foreach (var entry in files)
                 {
-                    if (Parent.Filters.IsFileFilterMatch(entry.Key))
+                    var isMatch = EditorFilters.IsMatch(FileListFilter, entry.Key, ExactFileListFilter);
+
+                    if (isMatch)
                     {
                         filteredEntries.Add(entry.Key);
                     }

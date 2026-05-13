@@ -15,6 +15,9 @@ public class FileListView
     public FileEditorView Parent;
     public ProjectEntry Project;
 
+    private string FileListFilter = "";
+    private bool ExactFileListFilter = false;
+
     public FileListView(FileEditorView view, ProjectEntry project)
     {
         Parent = view;
@@ -33,16 +36,10 @@ public class FileListView
     private bool BuiltFolderNodes = false;
     private FolderNode _root = new() { Name = "/" };
 
-    private string _search = string.Empty;
-
     private void DisplayVFS()
     {
-        var searchHeight = new Vector2(0, 36) * DPI.UIScale();
-        ImGui.BeginChild("FileSearchSection", searchHeight, ImGuiChildFlags.Borders);
-
-        ImGui.InputTextWithHint($"##fileSearch", "Search...", ref _search, 255);
-
-        ImGui.EndChild();
+        EditorFilters.DisplayFramedListFilter("fileBrowser_FileList",
+            ref FileListFilter, ref ExactFileListFilter);
 
         if (BuiltFolderNodes)
         {
@@ -58,12 +55,12 @@ public class FileListView
     {
         foreach (var folder in node.Children)
         {
-            bool hasMatch = FolderHasMatch(folder, _search);
-            bool searchActive = !string.IsNullOrWhiteSpace(_search);
+            bool hasMatch = FolderHasMatch(folder, FileListFilter.Trim().ToLower());
+            bool searchActive = !string.IsNullOrWhiteSpace(FileListFilter.Trim().ToLower());
 
             // Skip non-matching folders during search
             if (searchActive && !hasMatch &&
-                !folder.Name.Contains(_search, StringComparison.OrdinalIgnoreCase))
+                !folder.Name.ToLower().Contains(FileListFilter.Trim().ToLower(), StringComparison.OrdinalIgnoreCase))
                 continue;
 
             bool folderSelected = ReferenceEquals(Parent.Selection.SelectedVfsFolder, folder);
@@ -94,9 +91,8 @@ public class FileListView
             foreach (var file in folder.Files)
             {
                 string filename = $"{file.Filename}.{file.Extension}";
-                bool fileMatches =
-                    string.IsNullOrWhiteSpace(_search) ||
-                    filename.Contains(_search, StringComparison.OrdinalIgnoreCase);
+
+                var fileMatches = EditorFilters.IsMatch(FileListFilter, filename, ExactFileListFilter);
 
                 if (!fileMatches)
                     continue;
@@ -112,7 +108,7 @@ public class FileListView
                     fileFlags |= ImGuiTreeNodeFlags.Selected;
 
                 // Highlight matching files
-                if (searchActive && filename.Contains(_search, StringComparison.OrdinalIgnoreCase))
+                if (searchActive && filename.ToLower().Contains(FileListFilter.Trim().ToLower(), StringComparison.OrdinalIgnoreCase))
                     ImGui.PushStyleColor(ImGuiCol.Text, new Vector4(1f, 1f, 0.4f, 1f));
 
                 ImGui.TreeNodeEx(
@@ -125,7 +121,7 @@ public class FileListView
                     Parent.Selection.UpdateVfsFileSelection(file);
                 }
 
-                if (searchActive && filename.Contains(_search, StringComparison.OrdinalIgnoreCase))
+                if (searchActive && filename.ToLower().Contains(FileListFilter.Trim().ToLower(), StringComparison.OrdinalIgnoreCase))
                     ImGui.PopStyleColor();
             }
 

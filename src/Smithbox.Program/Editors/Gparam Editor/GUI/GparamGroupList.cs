@@ -19,6 +19,9 @@ public class GparamGroupList
     private GparamEditorView Parent;
     private ProjectEntry Project;
 
+    private string GroupListFilter = "";
+    private bool ExactGroupListFilter = false;
+
     public GparamGroupList(GparamEditorView view, ProjectEntry project)
     {
         Parent = view;
@@ -48,7 +51,8 @@ public class GparamGroupList
         var searchHeight = new Vector2(0, 36) * DPI.UIScale();
         ImGui.BeginChild("GparamGroupSearchSection", searchHeight, ImGuiChildFlags.Borders);
 
-        Parent.Filters.DisplayGroupFilterSearch();
+        EditorFilters.DisplayListFilter("gparamEditor_GroupList",
+            ref GroupListFilter, ref ExactGroupListFilter);
 
         ImGui.SameLine();
 
@@ -104,7 +108,9 @@ public class GparamGroupList
         if (!DisplayEmptyGroup(group))
             return;
 
-        if (!Parent.Filters.IsGroupFilterMatch(group.Name, ""))
+        var isMatch = EditorFilters.IsMatch(GroupListFilter, group.Name, ExactGroupListFilter, groupName);
+
+        if (!isMatch)
             return;
 
         ImGui.BeginGroup();

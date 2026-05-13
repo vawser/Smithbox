@@ -122,6 +122,15 @@ public static class UIHelper
         }
     }
 
+    public static void Spacer()
+    {
+        var size = ImGui.GetWindowSize();
+
+        ImGui.PushTextWrapPos(size.X);
+        ImGui.TextUnformatted("");
+        ImGui.PopTextWrapPos();
+    }
+
     public static void WrappedText(string text)
     {
         var size = ImGui.GetWindowSize();
