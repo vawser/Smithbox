@@ -11,7 +11,7 @@ namespace StudioCore.Editors.ModelEditor;
 /// <summary>
 /// Select the individual FLVER to load
 /// </summary>
-public class ModelSelectionList
+public class ModelFileList
 {
     public ModelEditorView View;
     public ProjectEntry Project;
@@ -19,7 +19,10 @@ public class ModelSelectionList
     public bool ApplyAutoSelectPass = false;
     public bool ApplyAutoLoadFirst = false;
 
-    public ModelSelectionList(ModelEditorView view, ProjectEntry project)
+    private string FileListFilter = "";
+    private bool ExactFileListFilter = false;
+
+    public ModelFileList(ModelEditorView view, ProjectEntry project)
     {
         View = view;
         Project = project;
@@ -29,7 +32,10 @@ public class ModelSelectionList
     {
         UIHelper.SimpleHeader("Files", "");
 
-        ImGui.BeginChild($"FileSection", new System.Numerics.Vector2(width, height), ImGuiChildFlags.Borders);
+        EditorFilters.DisplayFramedListFilter("modelEditor_fileList",
+            ref FileListFilter, ref ExactFileListFilter);
+
+        ImGui.BeginChild($"FileSection", new Vector2(width, height), ImGuiChildFlags.Borders);
 
         DisplayModelSelectionList();
 
@@ -43,19 +49,27 @@ public class ModelSelectionList
 
         var container = View.Selection.SelectedModelContainerWrapper;
 
-        int i = 0;
-        foreach(var wrapper in container.Models)
+        for(int i = 0; i < container.Models.Count; i++)
         {
+            var curWrapper = container.Models[i];
+
             bool selected = false;
+
             if (View.Selection.SelectedModelWrapper != null)
             {
-                if (View.Selection.SelectedModelWrapper.Name == wrapper.Name)
+                if (View.Selection.SelectedModelWrapper.Name == curWrapper.Name)
                 {
                     selected = true;
                 }
             }
 
-            var displayedName = $"{wrapper.Name}";
+            var displayedName = $"{curWrapper.Name}";
+
+            var isMatch = EditorFilters.IsMatch(
+                FileListFilter, displayedName, ExactFileListFilter);
+
+            if (!isMatch)
+                continue;
 
             if (ImGui.Selectable($"{displayedName}##modelSelectListEntry{i}", selected, ImGuiSelectableFlags.AllowDoubleClick))
             {
@@ -66,19 +80,16 @@ public class ModelSelectionList
                         View.Selection.SelectedModelWrapper.Unload();
                     }
 
-                    View.Selection.SelectedModelWrapper = wrapper;
+                    View.Selection.SelectedModelWrapper = curWrapper;
 
                     View.ViewportActionManager.Clear();
                     View.ActionManager.Clear();
 
-                    wrapper.Load();
+                    curWrapper.Load();
                 }
             }
 
-            // Context Menu
-            DisplayContextMenu(wrapper);
-
-            i++;
+            DisplayContextMenu(curWrapper);
         }
 
         if (ApplyAutoLoadFirst)

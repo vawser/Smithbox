@@ -33,8 +33,8 @@ public class ModelEditorView
     public ModelUniverse Universe;
 
     public ModelViewportWindow ViewportWindow;
-    public ModelSourceList SourceList;
-    public ModelSelectionList SelectionList;
+    public ModelContainerList SourceList;
+    public ModelFileList SelectionList;
     public ModelContents Contents;
     public ModelProperties Properties;
 

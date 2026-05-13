@@ -24,7 +24,8 @@ public class ModelContents : IActionEventHandler
     private ISelectable _pendingClick;
     private HashSet<Entity> _treeOpenEntities = new();
 
-    public string SearchInput = "";
+    private string ContentTreeFilter = "";
+    private bool ExactContentTreeFilter = false;
 
     public ModelContents(ModelEditorView view, ProjectEntry project)
     {
@@ -39,14 +40,19 @@ public class ModelContents : IActionEventHandler
     {
         UIHelper.SimpleHeader("Contents", "");
 
-        ImGui.BeginChild("ModelContents", new System.Numerics.Vector2(width, height), ImGuiChildFlags.Borders);
+        var searchHeight = new Vector2(0, 36) * DPI.UIScale();
+        ImGui.BeginChild($"framedListFilter_modelEditor_ContentTree", searchHeight, ImGuiChildFlags.Borders);
+
+        DisplaySearchbar();
+        DisplayButtons();
+
+        ImGui.EndChild();
+
+        ImGui.BeginChild("ModelContents", new Vector2(width, height), ImGuiChildFlags.Borders);
 
         if (View.Selection.SelectedModelWrapper != null && 
             View.Selection.SelectedModelWrapper.FLVER != null)
         {
-            DisplaySearchbar();
-            DisplayButtons();
-
             treeImGuiId = 0;
 
             var container = View.Selection.SelectedModelWrapper.Container;
@@ -60,19 +66,14 @@ public class ModelContents : IActionEventHandler
         {
             ImGui.Text("No FLVER has been loaded yet.");
         }
-        ImGui.EndChild();
 
+        ImGui.EndChild();
     }
 
     public void DisplaySearchbar()
     {
-        var wrapper = View.Selection.SelectedModelWrapper;
-
-        var windowWidth = ImGui.GetWindowWidth();
-
-        DPI.ApplyInputWidth(windowWidth * 0.6f);
-        ImGui.InputText($"##contentFilterSearch_{wrapper.Name}", ref SearchInput, 255);
-        UIHelper.Tooltip($"Filter the content tree.");
+        EditorFilters.DisplayListFilter("modelEditor_ContentTree",
+            ref ContentTreeFilter, ref ExactContentTreeFilter);
     }
 
     public bool CanDisplayModelObject(ModelContainer container, ModelEntity entity)
@@ -84,18 +85,18 @@ public class ModelContents : IActionEventHandler
     {
         var wrapper = View.Selection.SelectedModelWrapper;
 
-        if (wrapper.Container == null)
-            return;
-
         ImGui.SameLine();
 
         // Show All
         ImGui.SameLine();
         if (ImGui.Button($"{Icons.Eye}", DPI.IconButtonSize))
         {
-            foreach (var entry in wrapper.Container.Objects)
+            if (wrapper != null && wrapper.Container != null)
             {
-                entry.EditorVisible = true;
+                foreach (var entry in wrapper.Container.Objects)
+                {
+                    entry.EditorVisible = true;
+                }
             }
         }
         UIHelper.Tooltip("Force all model objects to be shown.");
@@ -104,9 +105,12 @@ public class ModelContents : IActionEventHandler
         ImGui.SameLine();
         if (ImGui.Button($"{Icons.EyeSlash}", DPI.IconButtonSize))
         {
-            foreach (var entry in wrapper.Container.Objects)
+            if (wrapper != null && wrapper.Container != null)
             {
-                entry.EditorVisible = false;
+                foreach (var entry in wrapper.Container.Objects)
+                {
+                    entry.EditorVisible = false;
+                }
             }
         }
         UIHelper.Tooltip("Force all model objects to be hidden.");
@@ -114,8 +118,6 @@ public class ModelContents : IActionEventHandler
 
     public void DisplayContentTree(ModelContainer container)
     {
-        ImGui.BeginChild($"modelContentsTree_{ImguiID}");
-
         Entity modelRoot = container?.RootObject;
         ObjectContainerReference modelRef = new(container.Name);
 
@@ -133,7 +135,6 @@ public class ModelContents : IActionEventHandler
 
         var nodeopen = false;
         var unsaved = container != null && container.HasUnsavedChanges ? "*" : "";
-
 
         ImGui.BeginGroup();
 
@@ -170,17 +171,20 @@ public class ModelContents : IActionEventHandler
             ImGui.PopStyleVar();
             ImGui.TreePop();
         }
-
-        ImGui.EndChild();
     }
 
     private void DisplayTopContextMenu(ModelContainer map, bool selected)
     {
         if (ImGui.BeginPopupContextItem($@"modelTopContext_{map.Name}"))
         {
-            if (ImGui.Selectable("Copy Model Name"))
+            if (ImGui.BeginMenu("Information"))
             {
-                PlatformUtils.Instance.SetClipboardText(map.Name);
+                if (ImGui.Selectable("Copy Model Name"))
+                {
+                    PlatformUtils.Instance.SetClipboardText(map.Name);
+                }
+
+                ImGui.EndMenu();
             }
 
             ImGui.EndPopup();
@@ -423,10 +427,10 @@ public class ModelContents : IActionEventHandler
 
         var arrowKeySelect = false;
 
-        DisplayVisibilityButton(e, container, key, index);
-
         if (hierarchial && e.Children.Count > 0)
         {
+            DisplayVisibilityButton(e, container, key, index);
+
             ImGuiTreeNodeFlags treeflags = ImGuiTreeNodeFlags.OpenOnArrow | ImGuiTreeNodeFlags.SpanAvailWidth | ImGuiTreeNodeFlags.DefaultOpen;
             if (View.ViewportSelection.GetSelection().Contains(e))
             {
@@ -455,31 +459,37 @@ public class ModelContents : IActionEventHandler
 
             var displayName = key;
 
-            if (ImGui.Selectable($"{displayName}##{treeImGuiId}", View.ViewportSelection.GetSelection().Contains(e), selectableFlags))
-            {
-                doSelect = true;
+            var isMatch = EditorFilters.IsMatch(ContentTreeFilter, displayName, ExactContentTreeFilter);
 
-                // If double clicked frame the selection in the viewport
-                if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
-                {
-                    if (e.RenderSceneMesh != null)
-                    {
-                        View.FrameAction.FrameCurrentEntity(e);
-                    }
-                }
-            }
-
-            if (ImGui.IsItemFocused())
+            if (isMatch)
             {
-                if (InputManager.HasArrowSelection())
+                DisplayVisibilityButton(e, container, key, index);
+
+                if (ImGui.Selectable($"{displayName}##{treeImGuiId}", View.ViewportSelection.GetSelection().Contains(e), selectableFlags))
                 {
                     doSelect = true;
-                    arrowKeySelect = true;
+
+                    // If double clicked frame the selection in the viewport
+                    if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
+                    {
+                        if (e.RenderSceneMesh != null)
+                        {
+                            View.FrameAction.FrameCurrentEntity(e);
+                        }
+                    }
                 }
+
+                if (ImGui.IsItemFocused())
+                {
+                    if (InputManager.HasArrowSelection())
+                    {
+                        doSelect = true;
+                        arrowKeySelect = true;
+                    }
+                }
+
+                DisplayModelObjectContextMenu(container, e, treeImGuiId);
             }
-
-            DisplayModelObjectContextMenu(container, e, treeImGuiId);
-
         }
 
         if (ImGui.IsItemClicked(ImGuiMouseButton.Left))

@@ -2,6 +2,7 @@
 using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Application;
+using StudioCore.Editors.ModelEditor;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.TextEditor;
 using StudioCore.Editors.TextureViewer;
@@ -15,6 +16,15 @@ namespace StudioCore.Editors.Common;
 /// </summary>
 public static class AliasHelper
 {
+    public static string GetAlias(ProjectEntry project, string name, ModelListType type) => type switch
+    {
+        ModelListType.Character => GetCharacterAlias(project, name),
+        ModelListType.Asset => GetAssetAlias(project, name),
+        ModelListType.Part => GetPartAlias(project, name),
+        ModelListType.MapPiece => GetMapPieceAlias(project, name),
+        _ => ""
+    };
+
     public static string GetAliasName(List<AliasEntry> aliases, string id)
     {
         var alias = aliases.FirstOrDefault(e => e.ID == id);
