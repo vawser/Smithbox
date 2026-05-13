@@ -29,7 +29,7 @@ public class AnimEditorScreen : EditorScreen
     public AnimToolWindow ToolMenu;
 
     public ResourceLoadWindow LoadingModal;
-    public ResourceListWindow ResourceList;
+    public ResourceListTool ResourceList;
 
     public AnimEditorScreen(ProjectEntry project)
     {
@@ -83,10 +83,6 @@ public class AnimEditorScreen : EditorScreen
 
             LoadingModal.DisplayWindow(activeView.ViewportWindow.Viewport.Width, activeView.ViewportWindow.Viewport.Height);
 
-            if (CFG.Current.Interface_AnimEditor_ResourceList)
-            {
-                ResourceList.DisplayWindow("animResourceList", activeView.Universe, CFG.Current.Interface_ModelEditor_ScreenshotMode);
-            }
         }
     }
 

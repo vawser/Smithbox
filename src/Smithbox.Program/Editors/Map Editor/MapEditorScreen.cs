@@ -30,7 +30,7 @@ public class MapEditorScreen : EditorScreen
     public MapToolWindow ToolWindow;
 
     public ResourceLoadWindow LoadingModal;
-    public ResourceListWindow ResourceList;
+    public ResourceListTool ResourceList;
 
     public MapEditorScreen(ProjectEntry project)
     {
@@ -91,7 +91,7 @@ public class MapEditorScreen : EditorScreen
 
             if (CFG.Current.Interface_MapEditor_ResourceList)
             {
-                ResourceList.DisplayWindow("mapResourceList", activeView.Universe);
+                ResourceList.Display("mapResourceList", activeView.Universe);
             }
         }
     }

@@ -64,6 +64,11 @@ public class ModelToolWindow
             {
                 activeView.ModelMaskToggler.OnToolWindow();
             }
+
+            if (CFG.Current.Interface_ModelEditor_Tool_ResourceMonitor)
+            {
+                activeView.ResourceListTool.Display("modelEditor", activeView.Universe);
+            }
         }
 
         ImGui.End();

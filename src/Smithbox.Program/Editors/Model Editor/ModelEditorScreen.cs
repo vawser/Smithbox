@@ -24,7 +24,6 @@ public class ModelEditorScreen : EditorScreen
     public ModelToolWindow ToolMenu;
 
     public ResourceLoadWindow LoadingModal;
-    public ResourceListWindow ResourceList;
 
     public ModelEditorScreen(ProjectEntry project)
     {
@@ -36,7 +35,6 @@ public class ModelEditorScreen : EditorScreen
         Shortcuts = new ModelShortcuts(this, project);
 
         LoadingModal = new();
-        ResourceList = new();
 
         ToolMenu = new ModelToolWindow(this, project);
     }
@@ -78,11 +76,6 @@ public class ModelEditorScreen : EditorScreen
             ToolMenu.Display();
 
             LoadingModal.DisplayWindow(activeView.ViewportWindow.Viewport.Width, activeView.ViewportWindow.Viewport.Height);
-
-            if (CFG.Current.Interface_ModelEditor_ResourceList)
-            {
-                ResourceList.DisplayWindow("modelResourceList", activeView.Universe, CFG.Current.Interface_ModelEditor_ScreenshotMode);
-            }
         }
     }
 
@@ -195,12 +188,6 @@ public class ModelEditorScreen : EditorScreen
                 CFG.Current.Interface_ModelEditor_ToolWindow = !CFG.Current.Interface_ModelEditor_ToolWindow;
             }
             UIHelper.ShowActiveStatus(CFG.Current.Interface_ModelEditor_ToolWindow);
-
-            if (ImGui.MenuItem("Resource List"))
-            {
-                CFG.Current.Interface_ModelEditor_ResourceList = !CFG.Current.Interface_ModelEditor_ResourceList;
-            }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_ModelEditor_ResourceList);
 
             // Hides the non-Viewport windows
             if (ImGui.MenuItem("Screenshot Mode"))

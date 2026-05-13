@@ -40,29 +40,31 @@ public class ModelInstanceFinder
 
         if (ImGui.CollapsingHeader("Model Instance Finder"))
         {
-            ImGui.BeginChild("ModelInstanceFinderToolSection");
+            ImGui.BeginChild("ModelInstanceFinderToolSection", ImGuiChildFlags.Borders);
 
             UIHelper.WrappedText("Search through all maps for usage of the specificed model name.");
-            UIHelper.WrappedText("");
 
-            UIHelper.WrappedText("Model Name:");
+            UIHelper.Spacer();
+            UIHelper.SimpleHeader("Model Name", "");
             ImGui.InputText("##modelNameInput", ref _searchInput, 255);
 
-            UIHelper.WrappedText("");
+            UIHelper.Spacer();
+            UIHelper.SimpleHeader("Options", "");
+
             ImGui.Checkbox("Target Project Files", ref _targetProjectFiles);
             UIHelper.Tooltip("Uses the project map files instead of game root.");
+
             ImGui.Checkbox("Loose Name Match", ref _looseModelNameMatch);
             UIHelper.Tooltip("Only require the Model Name field to contain the search string, instead of requiring an exact match.");
 
-            UIHelper.WrappedText("");
+            UIHelper.Spacer();
+            UIHelper.SimpleHeader("Actions", "");
 
-            if (ImGui.Button("Search", DPI.WholeWidthButton(windowWidth, 24)))
-            {
-                SearchMaps();
-            }
-            UIHelper.Tooltip("Initial usage will be slow as all maps have to be loaded. Subsequent usage will be instant.");
+            UIHelper.MultiButtonInput("instanceActions",
+                "search", "Search", "", SearchMaps);
 
-            UIHelper.WrappedText("");
+            UIHelper.Spacer();
+            UIHelper.SimpleHeader("Results", "");
 
             DisplayInstances();
 
@@ -74,10 +76,6 @@ public class ModelInstanceFinder
     {
         if (Matches.Count > 0)
         {
-            ImGui.Separator();
-            UIHelper.WrappedText($"Instances of {_searchInput}:");
-            ImGui.Separator();
-
             ImGui.BeginChild("ModelInstanceList");
 
             foreach (var entry in Matches)
@@ -93,6 +91,10 @@ public class ModelInstanceFinder
             }
 
             ImGui.EndChild();
+        }
+        else
+        {
+            UIHelper.WrappedText("No results.");
         }
     }
 

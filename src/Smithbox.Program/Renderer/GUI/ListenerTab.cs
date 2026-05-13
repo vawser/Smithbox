@@ -1,5 +1,6 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
+using StudioCore.Editors.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,9 +15,9 @@ public class ListenerTab
 
     public bool DisplayEmptyListeners = false;
 
-    private ResourceListWindow ListWindow;
+    private ResourceListTool ListWindow;
 
-    public ListenerTab(ResourceListWindow listWindow)
+    public ListenerTab(ResourceListTool listWindow)
     {
         ListWindow = listWindow;
     }
@@ -25,7 +26,7 @@ public class ListenerTab
     {
         var resDatabase = ResourceManager.GetResourceDatabase();
 
-        var tableFlags = ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Borders;
+        var tableFlags = ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Resizable | ImGuiTableFlags.Borders;
 
         var imguiId = 0;
 
@@ -76,10 +77,10 @@ public class ListenerTab
                 var resName = item.Key;
                 var resHandle = item.Value;
 
-                if (ListWindow.SearchFilter != "" && !resName.Contains(ListWindow.SearchFilter))
-                {
+                var isMatch = EditorFilters.IsMatch(ListWindow.ResourceListFilter, resName, ListWindow.ExactResourceListFilter);
+
+                if (!isMatch)
                     continue;
-                }
 
                 ImGui.TableNextRow();
                 ImGui.TableSetColumnIndex(0);

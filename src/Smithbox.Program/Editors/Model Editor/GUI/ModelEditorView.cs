@@ -44,6 +44,7 @@ public class ModelEditorView
     public ModelInstanceFinder ModelInstanceFinder;
     public ModelMaskToggler ModelMaskToggler;
     public ModelInsightHelper ModelInsightHelper;
+    public ResourceListTool ResourceListTool;
 
     // Actions
     public CreateAction CreateAction;
@@ -53,7 +54,6 @@ public class ModelEditorView
     public GotoAction GotoAction;
     public PullToCameraAction PullToCameraAction;
     public ReorderAction ReorderAction;
-
 
     public ModelEditorView(ModelEditorScreen editor, ProjectEntry project, int imguiId)
     {
@@ -82,6 +82,7 @@ public class ModelEditorView
         ModelInsightMenu = new ModelInsightView(this, Project);
         ModelInstanceFinder = new ModelInstanceFinder(this, Project);
         ModelMaskToggler = new ModelMaskToggler(this, Project);
+        ResourceListTool = new ResourceListTool();
 
         // Actions
         CreateAction = new CreateAction(this, Project);
@@ -111,9 +112,14 @@ public class ModelEditorView
                     Editor.ViewHandler.ActiveView = this;
                 }
 
+                var adjustmentPercent = 0.78f;
+
                 SourceList.Display(width, height * CFG.Current.ModelEditor_Display_SourceList_Percentage);
                 SelectionList.Display(width, height * CFG.Current.ModelEditor_Display_SelectionList_Percentage);
-                Contents.Display(width, height * CFG.Current.ModelEditor_Display_Contents_Percentage);
+                Contents.Display(width, height * CFG.Current.ModelEditor_Display_Contents_Percentage * adjustmentPercent);
+
+                // adjustmnetPercent to account for the spacing since this editor
+                // has a separate window rather than a table layout as the other sod.
             }
 
             ImGui.End();

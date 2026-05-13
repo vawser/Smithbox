@@ -36,17 +36,17 @@ public class ModelProperties
 
     public bool Focus = false;
 
-    private string PropertySearch = "";
-
+    private string PropertyListFilter = "";
+    private bool ExactPropertyListFilter = false;
 
     public void Display()
     {
         HashSet<Entity> entSelection = View.ViewportSelection.GetFilteredSelection<Entity>();
 
-        // Header
-        ImGui.AlignTextToFramePadding();
-        ImGui.InputText("##modelPropertySearch", ref PropertySearch, 255);
-        UIHelper.Tooltip("Filter the properties by field names that exactly or partially match your input.");
+        var searchHeight = new Vector2(0, 36) * DPI.UIScale();
+        ImGui.BeginChild($"framedListFilter_modelEditor_Properties", searchHeight, ImGuiChildFlags.Borders);
+
+        EditorFilters.DisplayListFilter("modelEditor_Properties", ref PropertyListFilter, ref ExactPropertyListFilter);
 
         // Toggle Community Field Names
         ImGui.SameLine();
@@ -62,10 +62,10 @@ public class ModelProperties
 
         UIHelper.Tooltip($"Toggle field name display type between Internal and Community.\nCurrent Mode: {communityFieldNameMode}");
 
-        ImGui.Separator();
+        ImGui.EndChild();
 
         // Properties
-        ImGui.BeginChild("propedit");
+        ImGui.BeginChild("propedit", ImGuiChildFlags.Borders);
 
         if(View.Selection.SelectedModelWrapper != null && View.Selection.SelectedModelWrapper.Container != null)
         {
@@ -184,14 +184,11 @@ public class ModelProperties
             //}
 
             // Filter by Search
-            var filterTerm = PropertySearch.ToLower();
+            var isMatch = EditorFilters.IsMatch(PropertyListFilter, prop.Name, ExactPropertyListFilter);
 
-            if (PropertySearch != "")
+            if(!isMatch)
             {
-                if (!prop.Name.ToLower().Contains(filterTerm))
-                {
-                    continue;
-                }
+                continue;
             }
 
             var ignoreProp = prop.GetCustomAttribute<IgnoreInModelEditor>();

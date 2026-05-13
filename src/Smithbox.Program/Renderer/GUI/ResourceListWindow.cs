@@ -7,56 +7,51 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Numerics;
 
 namespace StudioCore.Renderer;
 
-public class ResourceListWindow
+public class ResourceListTool
 {
-    public string SearchFilter = "";
+    public string ResourceListFilter = "";
+    public bool ExactResourceListFilter = false;
 
     private ListenerTab ListenerTab;
     private MeshProviderTab MeshProviderTab;
 
-    public ResourceListWindow()
+    public ResourceListTool()
     {
         ListenerTab = new(this);
         MeshProviderTab = new(this);
     }
 
-    public void DisplayWindow(string menuId, IUniverse owner, bool hide = false)
+    public void Display(string menuId, IUniverse owner)
     {
-        if (hide)
-            return;
-
-        if (!ImGui.Begin($"Resource List##{menuId}"))
+        if (ImGui.CollapsingHeader("Resource Monitor"))
         {
-            ImGui.End();
-            return;
+            ImGui.BeginChild($"resourceTable_{menuId}", ImGuiChildFlags.Borders);
+
+            EditorFilters.DisplayListFilter("resourceMonitor", ref ResourceListFilter, ref ExactResourceListFilter);
+
+            ImGui.BeginTabBar("##resourceTabs");
+
+            if (ImGui.BeginTabItem("Listeners"))
+            {
+                ListenerTab.Display();
+
+                ImGui.EndTabItem();
+            }
+
+            if (ImGui.BeginTabItem("Mesh Providers"))
+            {
+                MeshProviderTab.Display();
+
+                ImGui.EndTabItem();
+            }
+
+            ImGui.EndTabBar();
+
+            ImGui.EndChild();
         }
-
-        var windowWidth = ImGui.GetWindowWidth();
-
-        DPI.ApplyInputWidth(windowWidth * 0.5f);
-        ImGui.InputText("##resourceTableFilter", ref SearchFilter, 255);
-
-        ImGui.BeginTabBar("##resourceTabs");
-
-        if (ImGui.BeginTabItem("Listeners"))
-        {
-            ListenerTab.Display();
-
-            ImGui.EndTabItem();
-        }
-
-        if (ImGui.BeginTabItem("Mesh Providers"))
-        {
-            MeshProviderTab.Display();
-
-            ImGui.EndTabItem();
-        }
-
-        ImGui.EndTabBar();
-
-        ImGui.End();
     }
 }
