@@ -2,6 +2,7 @@
 using Octokit;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,14 +23,15 @@ public class MassEditPopupMenu
 
     public void Display()
     {
-        var size = UIHelper.GetSmallPopupSize();
+        var smallSize = UIHelper.GetSmallPopupSize();
+        var mediumSize = UIHelper.GetMediumPopupSize();
         var popupFlags = ImGuiWindowFlags.NoTitleBar | ImGuiWindowFlags.AlwaysAutoResize;
 
         var delimiter = CFG.Current.Param_Export_Delimiter[0];
 
         if (ImGui.BeginPopup("massEditMenuRegex", popupFlags))
         {
-            ImGui.BeginChild("massEditMenuRegexChild", size, ImGuiChildFlags.Borders);
+            ImGui.BeginChild("massEditMenuRegexChild", smallSize, ImGuiChildFlags.Borders);
             DisplayMassEditMenu();
             ImGui.EndChild();
 
@@ -37,7 +39,7 @@ public class MassEditPopupMenu
         }
         else if (ImGui.BeginPopup("massEditMenuCSVExport", popupFlags))
         {
-            ImGui.BeginChild("massEditMenuCSVExportChild", size, ImGuiChildFlags.Borders);
+            ImGui.BeginChild("massEditMenuCSVExportChild", smallSize, ImGuiChildFlags.Borders);
             DisplayCsvExportMenu();
             ImGui.EndChild();
 
@@ -45,7 +47,7 @@ public class MassEditPopupMenu
         }
         else if (ImGui.BeginPopup("massEditMenuSingleCSVExport", popupFlags))
         {
-            ImGui.BeginChild("massEditMenuSingleCSVExportChild", size, ImGuiChildFlags.Borders);
+            ImGui.BeginChild("massEditMenuSingleCSVExportChild", smallSize, ImGuiChildFlags.Borders);
             DisplaySingleCsvExportMenu();
             ImGui.EndChild();
 
@@ -53,7 +55,7 @@ public class MassEditPopupMenu
         }
         else if (ImGui.BeginPopup("massEditMenuCSVImport", popupFlags))
         {
-            ImGui.BeginChild("massEditMenuCSVImportChild", size, ImGuiChildFlags.Borders);
+            ImGui.BeginChild("massEditMenuCSVImportChild", mediumSize, ImGuiChildFlags.Borders);
             DisplayCsvImportMenu();
             ImGui.EndChild();
 
@@ -61,7 +63,7 @@ public class MassEditPopupMenu
         }
         else if (ImGui.BeginPopup("massEditMenuSingleCSVImport", popupFlags))
         {
-            ImGui.BeginChild("massEditMenuSingleCSVImportChild", size, ImGuiChildFlags.Borders);
+            ImGui.BeginChild("massEditMenuSingleCSVImportChild", mediumSize, ImGuiChildFlags.Borders);
             DisplaySingleCsvImportMenu();
             ImGui.EndChild();
 
@@ -104,80 +106,120 @@ public class MassEditPopupMenu
 
     public void DisplayCsvExportMenu()
     {
-        ImGui.InputTextMultiline("##MEditOutput", ref Parent.State.MassEditOutput_CSV, UIHelper.GetTextInputBuffer(Parent.State.MassEditOutput_CSV),
-            new Vector2(1024, ImGui.GetTextLineHeightWithSpacing() * 4), ImGuiInputTextFlags.ReadOnly);
+        UIHelper.SimpleHeader("CSV Export", "");
+
+        UIHelper.MultilineTextInput("csvExportText", ref Parent.State.MassEditOutput_CSV);
+
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader("Actions", "");
+        UIHelper.MultiButtonInput("csvExportActions",
+            "copyCsvOutput", "Copy to Clipboard", "", CopyCsvOutput);
     }
 
     public void DisplaySingleCsvExportMenu()
     {
-        ImGui.Text(Parent.State.MassEdit_SingleField_CSV);
-        ImGui.InputTextMultiline("##MEditOutput", ref Parent.State.MassEditOutput_CSV, UIHelper.GetTextInputBuffer(Parent.State.MassEditOutput_CSV),
-            new Vector2(1024, ImGui.GetTextLineHeightWithSpacing() * 4), ImGuiInputTextFlags.ReadOnly);
+        UIHelper.SimpleHeader($"CSV Export ({Parent.State.MassEdit_SingleField_CSV})", "");
+
+        UIHelper.MultilineTextInput("csvExportText", ref Parent.State.MassEditOutput_CSV);
+
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader("Actions", "");
+        UIHelper.MultiButtonInput("csvExportActions",
+            "copyCsvOutput", "Copy to Clipboard", "", CopyCsvOutput);
     }
 
     public void DisplayCsvImportMenu()
     {
-        var delimiter = CFG.Current.Param_Export_Delimiter[0];
+        UIHelper.SimpleHeader("CSV Import", "");
 
-        ImGui.InputTextMultiline("##MEditRegexInput", ref Parent.State.MassEditInput_CSV, 256 * 65536,
-                new Vector2(1024, ImGui.GetTextLineHeightWithSpacing() * 4));
-        ImGui.Checkbox("Append new rows instead of ID based insertion (this will create out-of-order IDs)",
-            ref Parent.State.MassEdit_CSV_AppendOnly);
+        UIHelper.MultilineTextInput("csvImportText", ref Parent.State.MassEditInput_CSV);
+
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader("Delimiter", "");
+        MassEditUtils.DelimiterInputText();
+
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader("Options", "");
+        ImGui.Checkbox("Append Mode", ref Parent.State.MassEdit_CSV_AppendOnly);
+        UIHelper.Tooltip("Append new rows instead of ID based insertion (this will create out-of-order IDs)");
 
         if (Parent.State.MassEdit_CSV_AppendOnly)
         {
-            ImGui.Checkbox("Replace existing rows instead of updating them (they will be moved to the end)",
-                ref Parent.State.MassEdit_CSV_ReplaceRows);
+            ImGui.Checkbox("Replace Existing Rows", ref Parent.State.MassEdit_CSV_ReplaceRows);
+            UIHelper.Tooltip("Replace existing rows instead of updating them (they will be moved to the end)");
         }
 
-        MassEditUtils.DelimiterInputText();
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader("Actions", "");
 
-        if (ImGui.Selectable("Submit", false, ImGuiSelectableFlags.NoAutoClosePopups))
-        {
-            (var result, CompoundAction action) = ParamIO.ApplyCSV(Parent.Project, Parent.CurrentView.GetPrimaryBank(),
-                Parent.State.MassEditInput_CSV, Parent.CurrentView.Selection.GetActiveParam(), Parent.State.MassEdit_CSV_AppendOnly,
-                Parent.State.MassEdit_CSV_AppendOnly && Parent.State.MassEdit_CSV_ReplaceRows, delimiter);
+        UIHelper.MultiButtonInput("csvImportActions",
+            "importCsv", "Import", "", ImportCsv);
 
-            if (action != null)
-            {
-                if (action.HasActions)
-                {
-                    Parent.CurrentView.Editor.ActionManager.ExecuteAction(action);
-                }
-
-                Parent.CurrentView.GetParamData().RefreshParamDifferenceCacheTask();
-            }
-
-            Parent.State.MassEditResult_CSV = result;
-        }
-
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader("Result", "");
         ImGui.Text(Parent.State.MassEditResult_CSV);
     }
 
     public void DisplaySingleCsvImportMenu()
     {
-        var delimiter = CFG.Current.Param_Export_Delimiter[0];
+        UIHelper.SimpleHeader($"CSV Import ({Parent.State.MassEdit_SingleField_CSV}", "");
 
-        ImGui.Text(Parent.State.MassEdit_SingleField_CSV);
-        ImGui.InputTextMultiline("##MEditRegexInput", ref Parent.State.MassEditInput_CSV, 256 * 65536,
-            new Vector2(1024, ImGui.GetTextLineHeightWithSpacing() * 4));
+        UIHelper.MultilineTextInput("csvImportText", ref Parent.State.MassEditInput_CSV);
 
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader("Delimiter", "");
         MassEditUtils.DelimiterInputText();
 
-        if (ImGui.Selectable("Submit", false, ImGuiSelectableFlags.NoAutoClosePopups))
-        {
-            (var result, CompoundAction action) = ParamIO.ApplySingleCSV(Parent.Project, Parent.CurrentView.GetPrimaryBank(),
-                Parent.State.MassEditInput_CSV, Parent.CurrentView.Selection.GetActiveParam(), Parent.State.MassEdit_SingleField_CSV,
-                delimiter, false);
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader("Actions", "");
 
-            if (action != null)
+        UIHelper.MultiButtonInput("csvImportActions",
+            "importCsv", "Import", "", ImportSingleCsv);
+
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader("Result", "");
+        ImGui.Text(Parent.State.MassEditResult_CSV);
+    }
+
+    public void CopyCsvOutput()
+    {
+        PlatformUtils.Instance.SetClipboardText(Parent.State.MassEditOutput_CSV);
+    }
+
+    public void ImportCsv()
+    {
+        var delimiter = CFG.Current.Param_Export_Delimiter[0];
+
+        (var result, CompoundAction action) = ParamIO.ApplyCSV(Parent.Project, Parent.CurrentView.GetPrimaryBank(),
+                Parent.State.MassEditInput_CSV, Parent.CurrentView.Selection.GetActiveParam(), Parent.State.MassEdit_CSV_AppendOnly,
+                Parent.State.MassEdit_CSV_AppendOnly && Parent.State.MassEdit_CSV_ReplaceRows, delimiter);
+
+        if (action != null)
+        {
+            if (action.HasActions)
             {
                 Parent.CurrentView.Editor.ActionManager.ExecuteAction(action);
             }
 
-            Parent.State.MassEditResult_CSV = result;
+            Parent.CurrentView.GetParamData().RefreshParamDifferenceCacheTask();
         }
 
-        ImGui.Text(Parent.State.MassEditResult_CSV);
+        Parent.State.MassEditResult_CSV = result;
+    }
+
+    public void ImportSingleCsv()
+    {
+        var delimiter = CFG.Current.Param_Export_Delimiter[0];
+
+        (var result, CompoundAction action) = ParamIO.ApplySingleCSV(Parent.Project, Parent.CurrentView.GetPrimaryBank(),
+                Parent.State.MassEditInput_CSV, Parent.CurrentView.Selection.GetActiveParam(), Parent.State.MassEdit_SingleField_CSV,
+                delimiter, false);
+
+        if (action != null)
+        {
+            Parent.CurrentView.Editor.ActionManager.ExecuteAction(action);
+        }
+
+        Parent.State.MassEditResult_CSV = result;
     }
 }

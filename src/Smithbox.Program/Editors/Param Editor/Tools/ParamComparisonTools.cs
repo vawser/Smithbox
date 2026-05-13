@@ -490,7 +490,7 @@ public class ParamComparisonTools
 
     public void HandleReportModal()
     {
-        var size = UIHelper.GetStandardPopupSize();
+        var size = UIHelper.GetMediumPopupSize();
 
         if (ShowReportModal)
         {

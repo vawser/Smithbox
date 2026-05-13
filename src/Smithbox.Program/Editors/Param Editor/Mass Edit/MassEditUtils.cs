@@ -21,12 +21,27 @@ public static class MassEditUtils
             displayDelimiter = "\\t";
         }
 
-        if (ImGui.InputText("Delimiter", ref displayDelimiter, 2))
-        {
-            if (displayDelimiter == "\\t")
-                displayDelimiter = "\t";
+        var tblFlags = ImGuiTableFlags.SizingFixedFit;
 
-            CFG.Current.Param_Export_Delimiter = displayDelimiter;
+        if (ImGui.BeginTable($"delimiterInput", 1, tblFlags))
+        {
+            ImGui.TableSetupColumn("Title", ImGuiTableColumnFlags.WidthFixed);
+
+            ImGui.TableNextRow();
+            ImGui.TableSetColumnIndex(0);
+
+            var width = ImGui.GetWindowWidth() * 0.5f;
+
+            ImGui.PushItemWidth(width);
+            if (ImGui.InputTextWithHint("Delimiter", "Define the delimiter symbol...", ref displayDelimiter, 2))
+            {
+                if (displayDelimiter == "\\t")
+                    displayDelimiter = "\t";
+
+                CFG.Current.Param_Export_Delimiter = displayDelimiter;
+            }
+
+            ImGui.EndTable();
         }
     }
 

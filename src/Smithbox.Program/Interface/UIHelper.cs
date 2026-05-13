@@ -478,7 +478,7 @@ public static class UIHelper
         return new Vector2(width * 0.25f, height * 0.3f);
     }
 
-    public static Vector2 GetStandardPopupSize()
+    public static Vector2 GetMediumPopupSize()
     {
         var width = ImGui.GetWindowWidth();
         var height = ImGui.GetWindowHeight();
