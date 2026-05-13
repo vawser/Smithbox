@@ -30,11 +30,6 @@ public static class DPI
     {
         ImGui.SetNextItemWidth((width * 0.93f) * UIScale());
     }
-    public static void ApplyStandardInputWidth()
-    {
-        ImGui.SetNextItemWidth((ImGui.GetWindowWidth() * 0.5f) * UIScale());
-    }
-
     /// <summary>
     /// The button size for auto-adjust buttons 
     /// that take 97.5% of the width of their owner window.

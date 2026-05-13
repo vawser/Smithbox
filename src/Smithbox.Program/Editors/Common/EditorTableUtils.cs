@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.ImGui;
+using StudioCore.Application;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ namespace StudioCore.Editors.ParamEditor;
 
 public static class EditorTableUtils
 {
-    public static bool ImGuiTableStdColumns(string id, int cols, bool fixVerticalPadding)
+    public static bool ImGuiTableStdColumns(string id, int cols, bool fixVerticalPadding, bool ignoreBorderType = false)
     {
         Vector2 oldPad = ImGui.GetStyle().CellPadding;
         if (fixVerticalPadding)
@@ -18,8 +19,15 @@ public static class EditorTableUtils
             ImGui.GetStyle().CellPadding = new Vector2(oldPad.X, 0);
         }
 
+        var borderType = ImGuiTableFlags.BordersInnerV;
+        if (CFG.Current.ParamEditor_Enable_Table_Borders)
+            borderType = ImGuiTableFlags.Borders;
+
+        if (ignoreBorderType)
+            borderType = ImGuiTableFlags.BordersInnerV;
+
         var v = ImGui.BeginTable(id, cols,
-            ImGuiTableFlags.Resizable | ImGuiTableFlags.BordersInnerV | ImGuiTableFlags.SizingStretchSame |
+            ImGuiTableFlags.Resizable | borderType | ImGuiTableFlags.SizingStretchSame |
             ImGuiTableFlags.ScrollY);
 
         if (fixVerticalPadding)

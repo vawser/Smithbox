@@ -305,13 +305,10 @@ public class ParamComparisonTools
 
     public void Display()
     {
-        var windowWidth = 800f;
-        var windowHeight = 600f;
-
         var paramData = Editor.Project.Handler.ParamData;
 
-        UIHelper.WrappedText("Comparison Report");
-        ImGui.Separator();
+        UIHelper.SimpleHeader("Comparison Report", "");
+
         UIHelper.WrappedText($"Primary Bank - Param Version: {paramData.PrimaryBank.ParamVersion}");
 
         if (TargetProjectName == "Vanilla")
@@ -339,6 +336,9 @@ public class ParamComparisonTools
 
         var projectList = Smithbox.Orchestrator.Projects;
 
+        UIHelper.SimpleHeader("Project to Compare", "");
+
+        UIHelper.SetInputWidth();
         if (ImGui.BeginCombo("##targetProjectComparison", TargetProjectName))
         {
             // Special-case for pointing to the vanilla bank
@@ -377,11 +377,11 @@ public class ParamComparisonTools
             ImGui.EndCombo();
         }
 
-        ImGui.Separator();
-
+        UIHelper.SimpleHeader("Options", "");
         ImGui.Checkbox("Import Row Names on Report Generation for Primary Bank", ref ImportNamesOnGeneration_Primary);
         ImGui.Checkbox("Import Row Names on Report Generation for Comparison Bank", ref ImportNamesOnGeneration_Compare);
 
+        UIHelper.Spacer();
         UIHelper.SimpleHeader("Targeted Params", "Leave blank to target all params.");
 
         // Add
@@ -438,15 +438,35 @@ public class ParamComparisonTools
 
         ImGui.Separator();
 
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader("Actions", "");
+
+        UIHelper.MultiButtonInput("reportActions",
+            "generateReport", "Generate Report", "", StartReportGeneration,
+            "copyReport", "Copy Report to Clipboard", "", CopyToClipboard,
+            "closeReport", "Close Report", "", CloseReport);
+
         if (IsReportGenerated)
         {
+            UIHelper.Spacer();
             UIHelper.SimpleHeader("Report", "");
 
-            ImGui.InputTextMultiline("##reportText", ref ReportText, UIHelper.GetTextInputBuffer(ReportText), new Vector2(windowWidth, windowHeight), ImGuiInputTextFlags.ReadOnly);
+            var size = ImGui.GetContentRegionAvail();
+            if (size.Y < 0)
+                size.Y = 250f;
 
-            if (ImGui.Button("Re-generate"))
-            {
-                TaskManager.LiveTask task = new(
+            ImGui.InputTextMultiline("##reportText", ref ReportText, UIHelper.GetTextInputBuffer(ReportText), size, ImGuiInputTextFlags.ReadOnly);
+        }
+        else if (IsGeneratingReport)
+        {
+            ImGui.Text("Report is being generated...");
+            ImGui.Text($"Current Param: {CurrentParamProcessing}");
+        }
+    }
+
+    public void StartReportGeneration()
+    {
+        TaskManager.LiveTask task = new(
                     "paramEditor_generateComparisonReport",
                     "[Param Editor]",
                     "Comparison report has been generated.",
@@ -455,55 +475,23 @@ public class ParamComparisonTools
                     false,
                     GenerateReport);
 
-                TaskManager.Run(task);
-            }
-            ImGui.SameLine();
-            if (ImGui.Button("Copy"))
-            {
-                PlatformUtils.Instance.SetClipboardText(ReportText);
-            }
-            ImGui.SameLine();
-            if (ImGui.Button("Close"))
-            {
-                ShowReportModal = false;
-            }
-        }
-        else if (IsGeneratingReport)
-        {
-            ImGui.Text("Report is being generated...");
-            ImGui.Text($"Current Param: {CurrentParamProcessing}");
+        TaskManager.Run(task);
+    }
 
-            if (ImGui.Button("Close"))
-            {
-                ShowReportModal = false;
-            }
-        }
-        else
-        {
-            if (ImGui.Button("Generate"))
-            {
-                TaskManager.LiveTask task = new(
-                    "paramEditor_generateComparisonReport",
-                    "[Param Editor]",
-                    "Comparison report has been generated.",
-                    "Comparison report failed to be generated.",
-                    TaskManager.RequeueType.None,
-                    false,
-                    GenerateReport
-                );
+    public void CopyToClipboard()
+    {
+        PlatformUtils.Instance.SetClipboardText(ReportText);
+    }
 
-                TaskManager.Run(task);
-            }
-            ImGui.SameLine();
-            if (ImGui.Button("Close"))
-            {
-                ShowReportModal = false;
-            }
-        }
+    public void CloseReport()
+    {
+        ShowReportModal = false;
     }
 
     public void HandleReportModal()
     {
+        var size = UIHelper.GetStandardPopupSize();
+
         if (ShowReportModal)
         {
             ImGui.OpenPopup("Param Comparison Report");
@@ -511,7 +499,9 @@ public class ParamComparisonTools
 
         if (ImGui.BeginPopupModal("Param Comparison Report", ref ShowReportModal, ImGuiWindowFlags.NoTitleBar | ImGuiWindowFlags.AlwaysAutoResize))
         {
+            ImGui.BeginChild("ReportSection", size, ImGuiChildFlags.Borders);
             Display();
+            ImGui.EndChild();
 
             ImGui.EndPopup();
         }

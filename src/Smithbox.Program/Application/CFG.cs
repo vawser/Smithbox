@@ -634,8 +634,6 @@ public class CFG
     public bool ParamEditor_Row_Context_Display_Proliferate_Name = true;
     public bool ParamEditor_Row_Context_Display_Inherit_Name = true;
     public bool ParamEditor_Row_Context_Display_Row_Name_Tools = true;
-    public bool ParamEditor_Row_Context_Display_Finder_Quick_Option = false;
-    public bool ParamEditor_Row_Context_Display_Advanced_Options = true;
 
     public bool ParamEditor_Field_Context_Split = false;
     public bool ParamEditor_Field_Context_Display_Field_Name = false;

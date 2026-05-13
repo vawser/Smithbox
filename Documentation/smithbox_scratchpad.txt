@@ -8,7 +8,7 @@
 # TODO 
 #---------------------
 - General
- - Check backwards compat with keybinds, 2.1.1 usage with newer keybinds store causes CTD.
+ - Add Basic Usage guide to the Tool window for each editor that covers basic functionality, shortcuts and small elements a user might miss.
 
 - Model Editor
  - Rendering experiment (TinyFFR)

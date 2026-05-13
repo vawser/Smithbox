@@ -221,6 +221,14 @@ public class ParamSelection
             s.compareRow = row;
         }
     }
+    public void ClearCompareRow()
+    {
+        if (_activeParam != null)
+        {
+            ParamSelectionState s = _paramStates[_activeParam];
+            s.compareRow = null;
+        }
+    }
 
     public void SetCompareCol(Param.Column col)
     {
@@ -228,6 +236,14 @@ public class ParamSelection
         {
             ParamSelectionState s = _paramStates[_activeParam];
             s.compareCol = col;
+        }
+    }
+    public void ClearCompareCol()
+    {
+        if (_activeParam != null)
+        {
+            ParamSelectionState s = _paramStates[_activeParam];
+            s.compareCol = null;
         }
     }
 

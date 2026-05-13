@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 using System.Reflection;
+using System.Text.RegularExpressions;
 
 namespace StudioCore.Editors.ParamEditor;
 
@@ -967,191 +968,265 @@ public class ParamRowWindow
             }
             UIHelper.Tooltip($"Duplicate the current row selection into the chosen target param.");
 
-            // Revert to Default
-            if (ImGui.Selectable(@$"Revert to Default", false,
+            // Jump
+            if (HasJumpOption())
+            {
+                if (ImGui.BeginMenu("Jump"))
+                {
+                    // Decorator Options (e.g. Go to Text)
+                    if (Context.FmgRowDecorator != null)
+                    {
+                        Context.FmgRowDecorator.DecorateContextMenuItems(r);
+                    }
+
+                    ImGui.EndMenu();
+                }
+            }
+
+            // Value
+            if (ImGui.BeginMenu("Value"))
+            {
+                // Revert to Default
+                if (ImGui.Selectable(@$"Revert to Default", false,
                     ParentView.Selection.RowSelectionExists()
                         ? ImGuiSelectableFlags.None
                         : ImGuiSelectableFlags.Disabled))
-            {
-                ParamRowOperations.SetRowToDefault(ParentView);
-            }
-            UIHelper.Tooltip($"Revert the current row selection field values to the vanilla field values.");
-
-            ImGui.Separator();
-
-            // Pin
-            if (!isPinned)
-            {
-                if (ImGui.Selectable($"Pin"))
                 {
-                    if (!Editor.Project.Descriptor.PinnedRows.ContainsKey(Context.ActiveParam))
-                    {
-                        Editor.Project.Descriptor.PinnedRows.Add(Context.ActiveParam, new List<int>());
-                    }
+                    ParamRowOperations.SetRowToDefault(ParentView);
+                }
+                UIHelper.Tooltip($"Revert the current row selection field values to the vanilla field values.");
 
-                    List<int> pinned = Editor.Project.Descriptor.PinnedRows[Context.ActiveParam];
+                ImGui.EndMenu();
+            }
 
-                    foreach (var entry in ParentView.Selection.GetSelectedRows())
+            // Mass Edit
+            if (ImGui.BeginMenu("Mass Edit"))
+            {
+                if (ImGui.Selectable("Command Palette"))
+                {
+                    EditorCommandQueue.AddCommand(
+                        $@"param/menu/massEditRegex/selection: ");
+                }
+                UIHelper.Tooltip("Open the floating command palette.");
+
+                if (ImGui.BeginMenu("Autofill"))
+                {
+                    if (ParentView.MassEdit.AutoFill != null)
                     {
-                        if (!pinned.Contains(entry.ID))
+                        var res = ParentView.MassEdit.AutoFill.MassEditCompleteAutoFill();
+                        if (res != null)
                         {
-                            pinned.Add(entry.ID);
+                            EditorCommandQueue.AddCommand(
+                                $@"{res}");
                         }
                     }
+
+                    ImGui.EndMenu();
                 }
-                UIHelper.Tooltip($"Pin the current row selection to the top of the row list.");
+                UIHelper.Tooltip("Open the autofill menu.");
+
+                ImGui.EndMenu();
             }
-            // Unpin
-            else if (isPinned)
+
+            // Pinning
+            if (ImGui.BeginMenu("Pinning"))
             {
-                if (ImGui.Selectable($"Unpin"))
+                if (!isPinned)
                 {
-                    if (!Editor.Project.Descriptor.PinnedRows.ContainsKey(Context.ActiveParam))
+                    if (ImGui.Selectable($"Pin"))
                     {
-                        Editor.Project.Descriptor.PinnedRows.Add(Context.ActiveParam, new List<int>());
-                    }
-
-                    List<int> pinned = Editor.Project.Descriptor.PinnedRows[Context.ActiveParam];
-
-                    foreach (var entry in ParentView.Selection.GetSelectedRows())
-                    {
-                        if (pinned.Contains(entry.ID))
+                        if (!Editor.Project.Descriptor.PinnedRows.ContainsKey(Context.ActiveParam))
                         {
-                            pinned.Remove(entry.ID);
+                            Editor.Project.Descriptor.PinnedRows.Add(Context.ActiveParam, new List<int>());
+                        }
+
+                        List<int> pinned = Editor.Project.Descriptor.PinnedRows[Context.ActiveParam];
+
+                        foreach (var entry in ParentView.Selection.GetSelectedRows())
+                        {
+                            if (!pinned.Contains(entry.ID))
+                            {
+                                pinned.Add(entry.ID);
+                            }
                         }
                     }
+                    UIHelper.Tooltip($"Pin the current row selection to the top of the row list.");
                 }
-                UIHelper.Tooltip($"Unpin the current row selection from top of the row list.");
-            }
-
-            // Decorator Options (e.g. Go to Text)
-            if (Context.FmgRowDecorator != null)
-            {
-                Context.FmgRowDecorator.DecorateContextMenuItems(r);
-            }
-
-            // Advanced Contextual Actions
-            if (CFG.Current.ParamEditor_Row_Context_Display_Advanced_Options)
-            {
-                // Quick Search
-                if (CFG.Current.ParamEditor_Row_Context_Display_Finder_Quick_Option)
+                // Unpin
+                else if (isPinned)
                 {
-                    ParamRowTools.ParamQuickSearch(ParentView, Context.ActiveParam, r.ID);
+                    if (ImGui.Selectable($"Unpin"))
+                    {
+                        if (!Editor.Project.Descriptor.PinnedRows.ContainsKey(Context.ActiveParam))
+                        {
+                            Editor.Project.Descriptor.PinnedRows.Add(Context.ActiveParam, new List<int>());
+                        }
+
+                        List<int> pinned = Editor.Project.Descriptor.PinnedRows[Context.ActiveParam];
+
+                        foreach (var entry in ParentView.Selection.GetSelectedRows())
+                        {
+                            if (pinned.Contains(entry.ID))
+                            {
+                                pinned.Remove(entry.ID);
+                            }
+                        }
+                    }
+                    UIHelper.Tooltip($"Unpin the current row selection from top of the row list.");
                 }
 
-                // Comparison Options
-                if (ImGui.Selectable("Compare Row"))
+                if (ImGui.Selectable($"Unpin All"))
+                {
+                    Editor.Project.Descriptor.PinnedRows.Clear();
+                }
+
+                ImGui.EndMenu();
+            }
+
+            // Search
+            if (ImGui.BeginMenu("Search"))
+            {
+                ParamRowTools.ParamQuickSearch(ParentView, Context.ActiveParam, r.ID);
+
+                ParamRowTools.ParamReverseLookup_Value(ParentView, Context.ActiveParam, r.ID);
+
+                ImGui.EndMenu();
+            }
+
+            // Comparison
+            if (ImGui.BeginMenu("Comparison"))
+            {
+                if (ImGui.Selectable("Set Compare Row"))
                 {
                     ParentView.Selection.SetCompareRow(r);
                 }
                 UIHelper.Tooltip($"Set this row as the row comparison target within the field window.");
 
-                // Reverse Lookup Options
-                ParamRowTools.ParamReverseLookup_Value(ParentView, Context.ActiveParam, r.ID);
-
-                ImGui.Separator();
-
-                if (ImGui.BeginMenu("Row Name Inherit Actions"))
+                if (ImGui.Selectable("Clear Compare Row"))
                 {
-                    // Proliferate name to references
-                    if (ImGui.Selectable(@$"Proliferate name to references", false,
-                        ParentView.Selection.RowSelectionExists()
-                            ? ImGuiSelectableFlags.None
-                            : ImGuiSelectableFlags.Disabled))
-                    {
-                        ParamRowOperations.ProliferateRowName(ParentView, TargetField);
-                    }
-                    UIHelper.Tooltip($"Proliferate the name of this row to the references pointed to by the named field within this row.");
-
-                    // Inherit Name from reference
-                    if (ImGui.Selectable(@$"Inherit name from reference", false,
-                            ParentView.Selection.RowSelectionExists()
-                                ? ImGuiSelectableFlags.None
-                                : ImGuiSelectableFlags.Disabled))
-                    {
-                        ParamRowOperations.InheritRowName(ParentView, TargetField);
-                    }
-                    UIHelper.Tooltip($"Inherit the name of the referenced row connected to via the target field.");
-
-                    // Inherit Name from text
-                    if (ImGui.Selectable(@$"Inherit name from text", false,
-                            ParentView.Selection.RowSelectionExists()
-                                ? ImGuiSelectableFlags.None
-                                : ImGuiSelectableFlags.Disabled))
-                    {
-                        ParamRowOperations.InheritRowNameFromFMG(ParentView, TargetField);
-                    }
-                    UIHelper.Tooltip($"Inherit the name of the referenced FMG connected to via the target field.");
-
-                    // Inherit Name from alias
-                    if (ImGui.Selectable(@$"Inherit name from alias", false,
-                            ParentView.Selection.RowSelectionExists()
-                                ? ImGuiSelectableFlags.None
-                                : ImGuiSelectableFlags.Disabled))
-                    {
-                        ParamRowOperations.InheritRowNameFromAlias(ParentView, TargetField);
-                    }
-                    UIHelper.Tooltip($"Inherit the name of the referenced Alias connected to via the target field.");
-
-                    ImGui.InputText("Inherit Name Field##targetField", ref TargetField, 255);
-                    UIHelper.Tooltip("The internal name of the field to target for the inherit name actions.");
-
-                    ImGui.EndMenu();
+                    ParentView.Selection.ClearCompareRow();
                 }
 
-                if (ImGui.BeginMenu("Row Name Adjustment Actions"))
-                {
-                    if (ImGui.Selectable(@$"Clear text from name", false,
-                        ParentView.Selection.RowSelectionExists()
-                            ? ImGuiSelectableFlags.None
-                            : ImGuiSelectableFlags.Disabled))
-                    {
-                        ParamRowOperations.AdjustRowName(ParentView, NameAdjustment, ParamRowNameAdjustType.Clear);
-                    }
-                    UIHelper.Tooltip($"Prepend text to the names of all currently selected rows.");
-
-                    if (ImGui.Selectable(@$"Prepend text to name", false,
-                        ParentView.Selection.RowSelectionExists()
-                            ? ImGuiSelectableFlags.None
-                            : ImGuiSelectableFlags.Disabled))
-                    {
-                        ParamRowOperations.AdjustRowName(ParentView, NameAdjustment, ParamRowNameAdjustType.Prepend);
-                    }
-                    UIHelper.Tooltip($"Prepend text to the names of all currently selected rows.");
-
-                    if (ImGui.Selectable(@$"Postpend text to name", false,
-                            ParentView.Selection.RowSelectionExists()
-                                ? ImGuiSelectableFlags.None
-                                : ImGuiSelectableFlags.Disabled))
-                    {
-                        ParamRowOperations.AdjustRowName(ParentView, NameAdjustment, ParamRowNameAdjustType.Postpend);
-                    }
-                    UIHelper.Tooltip($"Postpend text to the names of all currently selected rows.");
-
-                    if (ImGui.Selectable(@$"Remove text from name", false,
-                            ParentView.Selection.RowSelectionExists()
-                                ? ImGuiSelectableFlags.None
-                                : ImGuiSelectableFlags.Disabled))
-                    {
-                        ParamRowOperations.AdjustRowName(ParentView, NameAdjustment, ParamRowNameAdjustType.Remove);
-                    }
-                    UIHelper.Tooltip($"Remove text from the names of all currently selected rows.");
-
-                    ImGui.InputText("Text to Apply##nameAdjustment", ref NameAdjustment, 255);
-                    UIHelper.Tooltip("The string to pre or post pend to the existing name.");
-
-                    ImGui.EndMenu();
-
-                }
-
-                ImGui.Separator();
-
-                var selectedRowCount = ParentView.Selection.GetSelectedRows().Count;
-                ImGui.Text($"{selectedRowCount} rows selected currently.");
+                ImGui.EndMenu();
             }
+
+            if (imguiKey == "name")
+            {
+                if (ImGui.BeginMenu("Name Manipulation"))
+                {
+
+                    if (ImGui.BeginMenu("Adjust"))
+                    {
+                        if (ImGui.Selectable(@$"Clear text from name", false,
+                            ParentView.Selection.RowSelectionExists()
+                                ? ImGuiSelectableFlags.None
+                                : ImGuiSelectableFlags.Disabled))
+                        {
+                            ParamRowOperations.AdjustRowName(ParentView, NameAdjustment, ParamRowNameAdjustType.Clear);
+                        }
+                        UIHelper.Tooltip($"Prepend text to the names of all currently selected rows.");
+
+                        if (ImGui.Selectable(@$"Prepend text to name", false,
+                            ParentView.Selection.RowSelectionExists()
+                                ? ImGuiSelectableFlags.None
+                                : ImGuiSelectableFlags.Disabled))
+                        {
+                            ParamRowOperations.AdjustRowName(ParentView, NameAdjustment, ParamRowNameAdjustType.Prepend);
+                        }
+                        UIHelper.Tooltip($"Prepend text to the names of all currently selected rows.");
+
+                        if (ImGui.Selectable(@$"Postpend text to name", false,
+                                ParentView.Selection.RowSelectionExists()
+                                    ? ImGuiSelectableFlags.None
+                                    : ImGuiSelectableFlags.Disabled))
+                        {
+                            ParamRowOperations.AdjustRowName(ParentView, NameAdjustment, ParamRowNameAdjustType.Postpend);
+                        }
+                        UIHelper.Tooltip($"Postpend text to the names of all currently selected rows.");
+
+                        if (ImGui.Selectable(@$"Remove text from name", false,
+                                ParentView.Selection.RowSelectionExists()
+                                    ? ImGuiSelectableFlags.None
+                                    : ImGuiSelectableFlags.Disabled))
+                        {
+                            ParamRowOperations.AdjustRowName(ParentView, NameAdjustment, ParamRowNameAdjustType.Remove);
+                        }
+                        UIHelper.Tooltip($"Remove text from the names of all currently selected rows.");
+
+                        ImGui.InputText("Text to Apply##nameAdjustment", ref NameAdjustment, 255);
+                        UIHelper.Tooltip("The string to pre or post pend to the existing name.");
+
+                        ImGui.EndMenu();
+
+                    }
+
+                    if (ImGui.BeginMenu("Inherit"))
+                    {
+                        // Proliferate name to references
+                        if (ImGui.Selectable(@$"Proliferate name to references", false,
+                            ParentView.Selection.RowSelectionExists()
+                                ? ImGuiSelectableFlags.None
+                                : ImGuiSelectableFlags.Disabled))
+                        {
+                            ParamRowOperations.ProliferateRowName(ParentView, TargetField);
+                        }
+                        UIHelper.Tooltip($"Proliferate the name of this row to the references pointed to by the named field within this row.");
+
+                        // Inherit Name from reference
+                        if (ImGui.Selectable(@$"Inherit name from reference", false,
+                                ParentView.Selection.RowSelectionExists()
+                                    ? ImGuiSelectableFlags.None
+                                    : ImGuiSelectableFlags.Disabled))
+                        {
+                            ParamRowOperations.InheritRowName(ParentView, TargetField);
+                        }
+                        UIHelper.Tooltip($"Inherit the name of the referenced row connected to via the target field.");
+
+                        // Inherit Name from text
+                        if (ImGui.Selectable(@$"Inherit name from text", false,
+                                ParentView.Selection.RowSelectionExists()
+                                    ? ImGuiSelectableFlags.None
+                                    : ImGuiSelectableFlags.Disabled))
+                        {
+                            ParamRowOperations.InheritRowNameFromFMG(ParentView, TargetField);
+                        }
+                        UIHelper.Tooltip($"Inherit the name of the referenced FMG connected to via the target field.");
+
+                        // Inherit Name from alias
+                        if (ImGui.Selectable(@$"Inherit name from alias", false,
+                                ParentView.Selection.RowSelectionExists()
+                                    ? ImGuiSelectableFlags.None
+                                    : ImGuiSelectableFlags.Disabled))
+                        {
+                            ParamRowOperations.InheritRowNameFromAlias(ParentView, TargetField);
+                        }
+                        UIHelper.Tooltip($"Inherit the name of the referenced Alias connected to via the target field.");
+
+                        ImGui.InputText("Inherit Name Field##targetField", ref TargetField, 255);
+                        UIHelper.Tooltip("The internal name of the field to target for the inherit name actions.");
+
+                        ImGui.EndMenu();
+                    }
+
+                    ImGui.EndMenu();
+                }
+            }
+
+            ImGui.Separator();
+
+            var selectedRowCount = ParentView.Selection.GetSelectedRows().Count;
+            ImGui.Text($"{selectedRowCount} rows selected currently.");
 
             ImGui.EndPopup();
         }
+    }
+
+    private bool HasJumpOption()
+    {
+        if (Context.FmgRowDecorator != null)
+            return true;
+
+        return false;
     }
 
     /// <summary>

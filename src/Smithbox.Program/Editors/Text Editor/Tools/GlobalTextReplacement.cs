@@ -48,7 +48,7 @@ public class GlobalTextReplacement
 
         UIHelper.SimpleHeader("Filter Type", "");
 
-        DPI.ApplyStandardInputWidth();
+        UIHelper.SetInputWidth();
         if (ImGui.BeginCombo("##searchFilterType", filterType.GetDisplayName()))
         {
             foreach (var entry in Enum.GetValues(typeof(SearchFilterType)))
@@ -67,7 +67,7 @@ public class GlobalTextReplacement
 
         UIHelper.SimpleHeader("Match Type", "");
 
-        DPI.ApplyStandardInputWidth();
+        UIHelper.SetInputWidth();
         if (ImGui.BeginCombo("##searchMatchType", matchType.GetDisplayName()))
         {
             foreach (var entry in Enum.GetValues(typeof(SearchMatchType)))

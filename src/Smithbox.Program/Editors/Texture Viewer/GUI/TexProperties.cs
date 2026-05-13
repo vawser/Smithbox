@@ -26,11 +26,11 @@ public class TexProperties
     {
         ImGui.BeginChild("TextureProperties", new Vector2(0, 0), ImGuiChildFlags.Borders);
 
+        UIHelper.SimpleHeader($"Properties of {Parent.Selection.SelectedTextureKey}", "");
+
         UIHelper.WrappedText($"Hold Left-Control and scroll the mouse wheel to zoom in and out.");
         UIHelper.WrappedText($"Press {InputManager.GetHint(KeybindID.TextureViewer_Reset_Zoom_Level)} to reset zoom level to 100%.");
         UIHelper.WrappedText("");
-
-        UIHelper.SimpleHeader($"Properties of {Parent.Selection.SelectedTextureKey}", "");
 
         float sizeX = -1;
         float sizeY = -1;

@@ -1368,24 +1368,6 @@ public class ParamEditorPrefs
     #endregion
 
     #region Row Context Menu
-    public static PreferenceItem ParamEditor_Row_Context_Display_Advanced_Options()
-    {
-        return new PreferenceItem
-        {
-            OrderID = 0,
-            Category = PreferenceCategory.ParamEditor,
-            Spacer = true,
-
-            Section = SectionCategory.ParamEditor_Row_Context_Menu,
-
-            Title = "Display Advanced Options",
-            Description = "If enabled, the advanced options in the row context menu will be displayed.",
-
-            Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Row_Context_Display_Advanced_Options);
-            }
-        };
-    }
     public static PreferenceItem ParamEditor_Row_Context_Display_Row_Name_Input()
     {
         return new PreferenceItem
@@ -1534,24 +1516,6 @@ public class ParamEditorPrefs
     #endregion
 
     #region Field Context Menu
-    public static PreferenceItem ParamEditor_Field_Context_Split()
-    {
-        return new PreferenceItem
-        {
-            OrderID = 0,
-            Category = PreferenceCategory.ParamEditor,
-            Spacer = true,
-
-            Section = SectionCategory.ParamEditor_Field_Context_Menu,
-
-            Title = "Split Menu",
-            Description = "If enabled, the context menu is adjusted if the right-click is done on name text or a value input.",
-
-            Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Field_Context_Split);
-            }
-        };
-    }
     public static PreferenceItem ParamEditor_Field_Context_Display_Field_Name()
     {
         return new PreferenceItem
@@ -1711,38 +1675,6 @@ public class ParamEditorPrefs
 
             Draw = () => {
                 ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Field_Context_Display_Reference_Search);
-            }
-        };
-    }
-    public static PreferenceItem ParamEditor_Field_List_Context_Mass_Edit_Display_Mode()
-    {
-        return new PreferenceItem
-        {
-            OrderID = 10,
-            Category = PreferenceCategory.ParamEditor,
-            Spacer = true,
-            InlineName = false,
-
-            Section = SectionCategory.ParamEditor_Field_List,
-
-            Title = "Mass Edit Display Mode",
-            Description = "Determines how the mass edit input is displayed in the field context menu.",
-
-            Draw = () => {
-                DPI.ApplyInputWidth();
-                if (ImGui.BeginCombo("##inputValue", CFG.Current.ParamEditor_Field_List_Context_Mass_Edit_Display_Mode.GetDisplayName()))
-                {
-                    foreach (var entry in Enum.GetValues(typeof(ParamFieldMassEditMode)))
-                    {
-                        var type = (ParamFieldMassEditMode)entry;
-
-                        if (ImGui.Selectable(type.GetDisplayName()))
-                        {
-                            CFG.Current.ParamEditor_Field_List_Context_Mass_Edit_Display_Mode = (ParamFieldMassEditMode)entry;
-                        }
-                    }
-                    ImGui.EndCombo();
-                }
             }
         };
     }

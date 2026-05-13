@@ -1,4 +1,5 @@
 ﻿using Andre.Formats;
+using Google.Protobuf.WellKnownTypes;
 using Hexa.NET.ImGui;
 using Hexa.NET.ImPlot;
 using Microsoft.AspNetCore.Components.Forms;
@@ -145,14 +146,7 @@ public class ParamFieldDecorators
 
             if (ImGui.IsItemClicked(ImGuiMouseButton.Right))
             {
-                if (CFG.Current.ParamEditor_Field_Context_Split)
-                {
-                    ImGui.OpenPopup("ParamRowNameMenu");
-                }
-                else
-                {
-                    ImGui.OpenPopup("ParamRowCommonMenu");
-                }
+                ImGui.OpenPopup("ParamRowNameMenu");
             }
         }
     }
@@ -721,7 +715,8 @@ public static class FieldTooltipHelper
 #region Enum Helper
 public static class EnumHelper
 {
-    public static string enumSearchStr = "";
+    private static string EnumListFilter = "";
+    private static bool ExactEnumListFilter = false;
 
     public static void Label(ParamEditorView curView, ParamEnum pEnum)
     {
@@ -748,23 +743,21 @@ public static class EnumHelper
 
     public static bool ContextMenu(ParamEditorView curView, ParamEnum en, object oldval, ref object newval)
     {
-        ImGui.InputText("##enumSearch", ref enumSearchStr, 255);
+        EditorFilters.DisplayFramedListFilter("enumListFilter", ref EnumListFilter, ref ExactEnumListFilter);
 
         var count = 1;
         if (en.Values.Count > 0)
             count = en.Values.Count;
 
-        var listHeight = ImGui.GetTextLineHeightWithSpacing() * Math.Min(12, count) * 1f;
-
-        if (ImGui.BeginChild("EnumList", new Vector2(350f, listHeight)))
+        if (ImGui.BeginChild("EnumList", new Vector2(350f, UIHelper.GetEnumListHeight(count)), ImGuiChildFlags.Borders))
         {
             try
             {
                 foreach (KeyValuePair<string, string> option in en.Values)
                 {
-                    if (ParamSearchFilters.IsEditorSearchMatch(enumSearchStr, option.Key, " ")
-                        || ParamSearchFilters.IsEditorSearchMatch(enumSearchStr, option.Value, " ")
-                        || enumSearchStr == "")
+                    var isMatch = EditorFilters.IsMatch(EnumListFilter, option.Key, ExactEnumListFilter, option.Value);
+
+                    if (isMatch)
                     {
                         if (ImGui.Selectable($"{option.Key}: {option.Value}"))
                         {
@@ -790,7 +783,8 @@ public static class EnumHelper
 #region Project Enum Helper
 public static class ProjectEnumHelper
 {
-    public static string enumSearchStr = "";
+    private static string EnumListFilter = "";
+    private static bool ExactEnumListFilter = false;
 
     public static void Label(ParamEditorView curView, string enumType)
     {
@@ -833,23 +827,21 @@ public static class ProjectEnumHelper
 
     public static bool ContextMenu(ParamEditorView curView, ParamEnumEntry en, object oldval, ref object newval)
     {
-        ImGui.InputText("##enumSearch", ref enumSearchStr, 255);
+        EditorFilters.DisplayFramedListFilter("enumListFilter", ref EnumListFilter, ref ExactEnumListFilter);
 
         var count = 1;
         if (en.Options.Count > 0)
             count = en.Options.Count;
 
-        var listHeight = ImGui.GetTextLineHeightWithSpacing() * Math.Min(12, count) * 1f;
-
-        if (ImGui.BeginChild("EnumList", new Vector2(350f, listHeight)))
+        if (ImGui.BeginChild("EnumList", new Vector2(350f, UIHelper.GetEnumListHeight(count)), ImGuiChildFlags.Borders))
         {
             try
             {
                 foreach (var option in en.Options)
                 {
-                    if (ParamSearchFilters.IsEditorSearchMatch(enumSearchStr, option.Key, " ")
-                        || ParamSearchFilters.IsEditorSearchMatch(enumSearchStr, option.GetName(), " ")
-                        || enumSearchStr == "")
+                    var isMatch = EditorFilters.IsMatch(EnumListFilter, option.Key, ExactEnumListFilter, option.GetName());
+
+                    if (isMatch)
                     {
                         if (ImGui.Selectable($"{option.Key}: {option.GetName()}"))
                         {
@@ -875,7 +867,8 @@ public static class ProjectEnumHelper
 #region Alias Enum Helper
 public static class AliasEnumHelper
 {
-    public static string enumSearchStr = "";
+    private static string EnumListFilter = "";
+    private static bool ExactEnumListFilter = false;
 
     public static void Label(ParamEditorView curView, string name)
     {
@@ -945,15 +938,13 @@ public static class AliasEnumHelper
 
     public static bool ContextMenu(ParamEditorView curView, List<AliasEntry> entries, object oldval, ref object newval)
     {
-        ImGui.InputText("##enumSearch", ref enumSearchStr, 255);
+        EditorFilters.DisplayFramedListFilter("enumListFilter", ref EnumListFilter, ref ExactEnumListFilter);
 
         var count = 1;
         if (entries.Count > 0)
             count = entries.Count;
 
-        var listHeight = ImGui.GetTextLineHeightWithSpacing() * Math.Min(12, count) * 1f;
-
-        if (ImGui.BeginChild("EnumList", new Vector2(350f, listHeight)))
+        if (ImGui.BeginChild("EnumList", new Vector2(350f, UIHelper.GetEnumListHeight(count)), ImGuiChildFlags.Borders))
         {
             try
             {
@@ -961,9 +952,9 @@ public static class AliasEnumHelper
                 {
                     var id = entry.ID.Replace("c", "");
 
-                    if (ParamSearchFilters.IsEditorSearchMatch(enumSearchStr, id, " ")
-                        || ParamSearchFilters.IsEditorSearchMatch(enumSearchStr, entry.Name, " ")
-                        || enumSearchStr == "")
+                    var isMatch = EditorFilters.IsMatch(EnumListFilter, entry.ID, ExactEnumListFilter, entry.Name);
+
+                    if (isMatch)
                     {
                         if (ImGui.Selectable($"{id}: {entry.Name}"))
                         {
@@ -989,7 +980,8 @@ public static class AliasEnumHelper
 #region Conditional Alias Enum Helper
 public static class ConditionalAliasEnumHelper
 {
-    public static string enumSearchStr = "";
+    private static string EnumListFilter = "";
+    private static bool ExactEnumListFilter = false;
 
     public static void Label(ParamEditorView curView, string name, Param.Row row, string limitField, string limitValue)
     {
@@ -1058,15 +1050,13 @@ public static class ConditionalAliasEnumHelper
 
     public static bool ContextMenu(ParamEditorView curView, List<AliasEntry> entries, object oldval, ref object newval)
     {
-        ImGui.InputText("##enumSearch", ref enumSearchStr, 255);
+        EditorFilters.DisplayFramedListFilter("enumListFilter", ref EnumListFilter, ref ExactEnumListFilter);
 
         var count = 1;
         if (entries.Count > 0)
             count = entries.Count;
 
-        var listHeight = ImGui.GetTextLineHeightWithSpacing() * Math.Min(12, count) * 1f;
-
-        if (ImGui.BeginChild("EnumList", new Vector2(350f, listHeight)))
+        if (ImGui.BeginChild("EnumList", new Vector2(350f, UIHelper.GetEnumListHeight(count)), ImGuiChildFlags.Borders))
         {
             try
             {
@@ -1074,9 +1064,9 @@ public static class ConditionalAliasEnumHelper
                 {
                     var id = entry.ID.Replace("c", "");
 
-                    if (ParamSearchFilters.IsEditorSearchMatch(enumSearchStr, id, " ")
-                        || ParamSearchFilters.IsEditorSearchMatch(enumSearchStr, entry.Name, " ")
-                        || enumSearchStr == "")
+                    var isMatch = EditorFilters.IsMatch(EnumListFilter, entry.ID, ExactEnumListFilter, entry.Name);
+
+                    if (isMatch)
                     {
                         if (ImGui.Selectable($"{id}: {entry.Name}"))
                         {
@@ -1102,8 +1092,6 @@ public static class ConditionalAliasEnumHelper
 #region Param Reference Helper
 public static class ParamReferenceHelper
 {
-    private static string _refContextCurrentAutoComplete = "";
-
     public static void Label(ParamEditorView curView, List<ParamRef> paramRefs, Param.Row context)
     {
         if (!CFG.Current.ParamEditor_Field_List_Display_References)
@@ -1231,6 +1219,8 @@ public static class ParamReferenceHelper
             return false;
         }
 
+        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_AliasName_Text);
+
         // Add Goto statements
         List<(string, Param.Row, string)> refs = ParamReferenceResolver.ResolveParamReferences(curView, reftypes, context, oldval);
 
@@ -1271,62 +1261,7 @@ public static class ParamReferenceHelper
             index++;
         }
 
-        // Add searchbar for named editing
-        ImGui.InputTextWithHint("##value", "Search...", ref _refContextCurrentAutoComplete, 128);
-
-        // This should be replaced by a proper search box with a scroll and everything
-        if (_refContextCurrentAutoComplete != "")
-        {
-            foreach (ParamRef rf in reftypes)
-            {
-                var rt = rf.ParamName;
-
-                if (!curView.GetPrimaryBank().Params.ContainsKey(rt))
-                {
-                    continue;
-                }
-
-                var meta = curView.GetParamData().GetParamMeta(curView.GetPrimaryBank().Params[rt].AppliedParamdef);
-
-                var maxResultsPerRefType = 15 / reftypes.Count;
-
-                List<Param.Row> rows = curView.MassEdit.RSE.Search((curView.GetPrimaryBank(), curView.GetPrimaryBank().Params[rt]),
-                    _refContextCurrentAutoComplete, true, true);
-
-                foreach (Param.Row r in rows)
-                {
-                    if (maxResultsPerRefType <= 0)
-                    {
-                        break;
-                    }
-
-                    if (ImGui.Selectable($@"({rt}){r.ID}: {r.Name}"))
-                    {
-                        try
-                        {
-                            if (meta != null && meta.FixedOffset != 0)
-                            {
-                                newval = Convert.ChangeType(r.ID - meta.FixedOffset - rf.Offset, oldval.GetType());
-                            }
-                            else
-                            {
-                                newval = Convert.ChangeType(r.ID - rf.Offset, oldval.GetType());
-                            }
-
-                            _refContextCurrentAutoComplete = "";
-                            return true;
-                        }
-                        catch (Exception e)
-                        {
-                            Smithbox.Log(typeof(ParamReferenceHelper), "Unable to convert value into param field's type'", LogLevel.Warning,
-                                LogPriority.Normal, e);
-                        }
-                    }
-
-                    maxResultsPerRefType--;
-                }
-            }
-        }
+        ImGui.PopStyleColor();
 
         return false;
     }
@@ -1405,6 +1340,8 @@ public static class VirtualParamReferenceHelper
     public static bool ContextMenu(ParamEditorView curView, string virtualRefName, object searchValue,
         Param.Row context, string fieldName)
     {
+        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Benefit_Text_Color);
+
         // Add Goto statements
         if (curView.GetPrimaryBank().Params != null)
         {
@@ -1438,6 +1375,8 @@ public static class VirtualParamReferenceHelper
             }
         }
 
+        ImGui.PopStyleColor();
+
         return false;
     }
 }
@@ -1449,6 +1388,8 @@ public static class ExternalReferenceHelper
     public static bool ContextMenu(ParamEditorView curView, string virtualRefName, object searchValue,
         Param.Row context, string fieldName, List<ExtRef> ExtRefs)
     {
+        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Benefit_Text_Color);
+
         if (ExtRefs != null)
         {
             foreach (ExtRef currentRef in ExtRefs)
@@ -1461,6 +1402,8 @@ public static class ExternalReferenceHelper
                 Item(curView, context, fieldName, $"vanilla {currentRef.name}", matchedExtRefPath, curView.Project.Descriptor.DataPath);
             }
         }
+
+        ImGui.PopStyleColor();
 
         return false;
     }
@@ -1636,6 +1579,8 @@ public static class TextReferenceHelper
     public static bool ContextMenu(ParamEditorView curView, List<FMGRef> reftypes, Param.Row context, dynamic oldval,
         ActionManager executor, string roleOverride = "")
     {
+        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_AliasName_Text);
+
         List<TextResult> refs = ParamReferenceResolver.ResolveTextReferences(curView, reftypes, context, oldval);
 
         var language = CFG.Current.TextEditor_Primary_Category;
@@ -1681,6 +1626,8 @@ public static class TextReferenceHelper
                 }
             }
         }
+
+        ImGui.PopStyleColor();
 
         return false;
     }
@@ -2463,6 +2410,9 @@ public static class GroupReferenceHelper
             return false;
         }
 
+        ImGui.Separator();
+        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_AliasName_Text);
+
         int index = 0;
 
         foreach (var entry in refCache)
@@ -2496,6 +2446,8 @@ public static class GroupReferenceHelper
                 index++;
             }
         }
+
+        ImGui.PopStyleColor();
 
         return false;
     }

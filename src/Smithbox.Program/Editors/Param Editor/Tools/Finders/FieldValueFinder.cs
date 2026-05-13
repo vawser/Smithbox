@@ -52,9 +52,6 @@ public class FieldValueFinder
         // Search Configuration
         UIHelper.SimpleHeader("Options", "");
 
-        ImGui.Checkbox("Display Row Context Action", ref CFG.Current.ParamEditor_Row_Context_Display_Finder_Quick_Option);
-        UIHelper.Tooltip("If enabled, a quick search option will appear in the right-click Row Context menu within the Row List.");
-
         // Checkbox: Enable Range Search
         ImGui.Checkbox($"Enable Range Search##rangeMode_{imguiID}", ref UseRangeMatchMode);
 

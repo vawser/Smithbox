@@ -426,6 +426,11 @@ public static class UIHelper
         return flags;
     }
 
+    public static float GetEnumListHeight(int count)
+    {
+        return 20 + (ImGui.GetTextLineHeightWithSpacing() * Math.Min(12, count) * 1f);
+    }
+
     public static void SetupPopupWindow()
     {
         var viewport = ImGui.GetMainViewport();
@@ -457,6 +462,28 @@ public static class UIHelper
             pMax,
             ImGui.ColorConvertFloat4ToU32(color)
         );
+    }
+
+    // Sizing
+    public static void SetInputWidth()
+    {
+        ImGui.SetNextItemWidth((ImGui.GetWindowWidth() * 0.5f) * DPI.UIScale());
+    }
+
+    public static Vector2 GetSmallPopupSize()
+    {
+        var width = ImGui.GetWindowWidth();
+        var height = ImGui.GetWindowHeight();
+
+        return new Vector2(width * 0.25f, height * 0.3f);
+    }
+
+    public static Vector2 GetStandardPopupSize()
+    {
+        var width = ImGui.GetWindowWidth();
+        var height = ImGui.GetWindowHeight();
+
+        return new Vector2(width * 0.25f, height * 0.5f);
     }
 
     // Int Input
@@ -752,6 +779,8 @@ public static class UIHelper
             ImGui.EndTable();
         }
     }
+
+
 }
 
 public class InputTextHandler
