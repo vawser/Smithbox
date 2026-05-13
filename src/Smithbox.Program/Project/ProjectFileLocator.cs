@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DotNext.Collections.Generic;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -255,7 +256,7 @@ public class ProjectFileLocator : IDisposable
                  .Where(p => p != null),
             StringComparer.OrdinalIgnoreCase);
 
-        combined.Entries.AddRange(first.Entries);
+        combined.Entries.AddAll(first.Entries);
 
         foreach (var entry in second.Entries)
         {
@@ -267,7 +268,7 @@ public class ProjectFileLocator : IDisposable
             }
         }
 
-        combined.Entries = combined.Entries.OrderBy(e => e.Filename).ToList();
+        combined.Entries = combined.Entries.OrderBy(e => e.Filename).ToHashSet();
         return combined;
     }
 
@@ -286,27 +287,27 @@ public class ProjectFileLocator : IDisposable
         var projectType = Project.Descriptor.ProjectType;
 
         // Initialize all lists
-        var mapFiles = new List<FileDictionaryEntry>();
-        var chrFiles = new List<FileDictionaryEntry>();
-        var assetFiles = new List<FileDictionaryEntry>();
-        var partFiles = new List<FileDictionaryEntry>();
-        var collisionFiles = new List<FileDictionaryEntry>();
-        var mapPieceFiles = new List<FileDictionaryEntry>();
-        var lightFiles = new List<FileDictionaryEntry>();
-        var ds2LightFiles = new List<FileDictionaryEntry>();
-        var navmeshFiles = new List<FileDictionaryEntry>();
-        var autoInvadeFiles = new List<FileDictionaryEntry>();
-        var lightAtlasFiles = new List<FileDictionaryEntry>();
-        var lightProbeFiles = new List<FileDictionaryEntry>();
-        var gparamFiles = new List<FileDictionaryEntry>();
-        var textFiles = new List<FileDictionaryEntry>();
-        var mtdFiles = new List<FileDictionaryEntry>();
-        var matbinFiles = new List<FileDictionaryEntry>();
-        var textureFiles = new List<FileDictionaryEntry>();
-        var texturePackedFiles = new List<FileDictionaryEntry>();
-        var shoeboxFiles = new List<FileDictionaryEntry>();
-        var timeActFiles = new List<FileDictionaryEntry>();
-        var behaviorFiles = new List<FileDictionaryEntry>();
+        var mapFiles = new HashSet<FileDictionaryEntry>();
+        var chrFiles = new HashSet<FileDictionaryEntry>();
+        var assetFiles = new HashSet<FileDictionaryEntry>();
+        var partFiles = new HashSet<FileDictionaryEntry>();
+        var collisionFiles = new HashSet<FileDictionaryEntry>();
+        var mapPieceFiles = new HashSet<FileDictionaryEntry>();
+        var lightFiles = new HashSet<FileDictionaryEntry>();
+        var ds2LightFiles = new HashSet<FileDictionaryEntry>();
+        var navmeshFiles = new HashSet<FileDictionaryEntry>();
+        var autoInvadeFiles = new HashSet<FileDictionaryEntry>();
+        var lightAtlasFiles = new HashSet<FileDictionaryEntry>();
+        var lightProbeFiles = new HashSet<FileDictionaryEntry>();
+        var gparamFiles = new HashSet<FileDictionaryEntry>();
+        var textFiles = new HashSet<FileDictionaryEntry>();
+        var mtdFiles = new HashSet<FileDictionaryEntry>();
+        var matbinFiles = new HashSet<FileDictionaryEntry>();
+        var textureFiles = new HashSet<FileDictionaryEntry>();
+        var texturePackedFiles = new HashSet<FileDictionaryEntry>();
+        var shoeboxFiles = new HashSet<FileDictionaryEntry>();
+        var timeActFiles = new HashSet<FileDictionaryEntry>();
+        var behaviorFiles = new HashSet<FileDictionaryEntry>();
 
         // Single pass - check each entry once
         foreach (var entry in allEntries)
@@ -343,25 +344,25 @@ public class ProjectFileLocator : IDisposable
                 mapPieceFiles.Add(entry);
 
             // Light files
-            if (isMap && ext == "btl")
+            if (isMap && ext == "btl" && !isSd)
                 lightFiles.Add(entry);
 
             // Navmesh
-            if (isMap && ext == "nva")
+            if (isMap && ext == "nva" && !isSd)
                 navmeshFiles.Add(entry);
 
             // Auto invade
-            if (folder.StartsWith("/other") && ext == "aipbnd")
+            if (folder.StartsWith("/other") && ext == "aipbnd" && !isSd)
                 autoInvadeFiles.Add(entry);
 
             // Light atlas/probe
-            if (isMap && ext == "btab")
+            if (isMap && ext == "btab" && !isSd)
                 lightAtlasFiles.Add(entry);
-            if (isMap && ext == "btpb")
+            if (isMap && ext == "btpb" && !isSd)
                 lightProbeFiles.Add(entry);
 
             // DS2 Light/Light Atlas/Light Probe
-            if (isDs2Map && ext == "gibhd")
+            if (isDs2Map && ext == "gibhd" && !isSd)
             {
                 ds2LightFiles.Add(entry);
                 lightAtlasFiles.Add(entry);
@@ -369,47 +370,48 @@ public class ProjectFileLocator : IDisposable
             }
 
             // Gparam
-            if (folder.StartsWith("/param") && ext == "gparam")
+            if (folder.StartsWith("/param") && ext == "gparam" && !isSd)
                 gparamFiles.Add(entry);
 
             if (projectType is ProjectType.BB)
             {
-                if (folder.StartsWith("/param") && ext == "gparambnd")
+                if (folder.StartsWith("/param") && ext == "gparambnd" && !isSd)
                     gparamFiles.Add(entry);
             }
 
             if (projectType is ProjectType.DS2 or ProjectType.DS2S)
             {
-                if (folder.StartsWith("/filter") && ext == "fltparam")
+                if (folder.StartsWith("/filter") && ext == "fltparam" && !isSd)
                     gparamFiles.Add(entry);
             }
 
             // Text files
-            if (folder.StartsWith("/msg") && ext == "msgbnd")
+            if (folder.StartsWith("/msg") && ext == "msgbnd" && !isSd)
                 textFiles.Add(entry);
-            if (projectType is ProjectType.DS2 or ProjectType.DS2S && folder.StartsWith("/menu") && ext == "fmg")
+
+            if (projectType is ProjectType.DS2 or ProjectType.DS2S && folder.StartsWith("/menu") && ext == "fmg" && !isSd)
                 textFiles.Add(entry);
 
             // Materials
-            if (ShouldAddToMtdFiles(entry, projectType))
+            if (ShouldAddToMtdFiles(entry, projectType) && !isSd)
                 mtdFiles.Add(entry);
 
-            if (folder.StartsWith("/material") && ext == "matbinbnd")
+            if (folder.StartsWith("/material") && ext == "matbinbnd" && !isSd)
                 matbinFiles.Add(entry);
 
             // Textures
-            if (ShouldAddToTextureFiles(entry, projectType))
+            if (ShouldAddToTextureFiles(entry, projectType) && !isSd)
                 textureFiles.Add(entry);
 
-            if (ext == "tpfbhd")
+            if (ext == "tpfbhd" && !isSd)
                 texturePackedFiles.Add(entry);
-            if (ext == "sblytbnd")
+            if (ext == "sblytbnd" && !isSd)
                 shoeboxFiles.Add(entry);
 
             // Animation
-            if (ext == "anibnd")
+            if (ext == "anibnd" && !isSd)
                 timeActFiles.Add(entry);
-            if (ext == "behbnd")
+            if (ext == "behbnd" && !isSd)
                 behaviorFiles.Add(entry);
         }
 
@@ -443,7 +445,7 @@ public class ProjectFileLocator : IDisposable
                 .ThenBy(e => e.Filename.Contains("dlc02"))
                 .ThenBy(e => e.Filename.Contains("dlc01"))
                 .ThenBy(e => e.Filename)
-                .ToList();
+                .ToHashSet();
         }
         else
         {

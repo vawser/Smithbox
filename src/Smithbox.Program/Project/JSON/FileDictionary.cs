@@ -8,33 +8,15 @@ namespace StudioCore.Application;
 
 public class FileDictionary
 {
-    public List<FileDictionaryEntry> Entries { get; set; } = new();
+    public HashSet<FileDictionaryEntry> Entries { get; set; } = new();
 }
+
 public class FileDictionaryEntry : IComparable
 {
-    /// <summary>
-    /// The archive this entry belongs to.
-    /// </summary>
     public string Archive { get; set; }
-
-    /// <summary>
-    /// The relative path for this entry
-    /// </summary>
     public string Path { get; set; }
-
-    /// <summary>
-    /// The folder path for this entry (excludes the filename and extension)
-    /// </summary>
     public string Folder { get; set; }
-
-    /// <summary>
-    /// The file name for this entry (excludes extension)
-    /// </summary>
     public string Filename { get; set; }
-
-    /// <summary>
-    /// The extension for this entry (ignoring .dcx)
-    /// </summary>
     public string Extension { get; set; }
 
     public int CompareTo(object obj)
@@ -46,5 +28,27 @@ public class FileDictionaryEntry : IComparable
     public FileDictionaryEntry Clone()
     {
         return (FileDictionaryEntry)this.MemberwiseClone();
+    }
+
+    public override bool Equals(object obj)
+    {
+        if (obj is not FileDictionaryEntry other) return false;
+        return string.Equals(Archive, other.Archive, StringComparison.OrdinalIgnoreCase)
+            && string.Equals(Path, other.Path, StringComparison.OrdinalIgnoreCase)
+            && string.Equals(Folder, other.Folder, StringComparison.OrdinalIgnoreCase)
+            && string.Equals(Filename, other.Filename, StringComparison.OrdinalIgnoreCase)
+            && string.Equals(Extension, other.Extension, StringComparison.OrdinalIgnoreCase);
+    }
+
+    public override int GetHashCode()
+    {
+        var comparer = StringComparer.OrdinalIgnoreCase;
+        return HashCode.Combine(
+            comparer.GetHashCode(Archive ?? string.Empty),
+            comparer.GetHashCode(Path ?? string.Empty),
+            comparer.GetHashCode(Folder ?? string.Empty),
+            comparer.GetHashCode(Filename ?? string.Empty),
+            comparer.GetHashCode(Extension ?? string.Empty)
+        );
     }
 }

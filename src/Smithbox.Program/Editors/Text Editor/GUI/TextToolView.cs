@@ -10,10 +10,18 @@ public class TextToolView
     private TextEditorScreen Editor;
     private ProjectEntry Project;
 
+    public GlobalTextSearch TextSearch;
+    public GlobalTextReplacement TextReplace;
+    public TextMerge TextMerge;
+
     public TextToolView(TextEditorScreen editor, ProjectEntry project)
     {
         Editor = editor;
         Project = project;
+
+        TextSearch = new GlobalTextSearch(editor, project);
+        TextReplace = new GlobalTextReplacement(editor, project);
+        TextMerge = new TextMerge(editor, project);
     }
 
     public void Display()
@@ -39,7 +47,7 @@ public class TextToolView
             {
                 if (ImGui.CollapsingHeader("Text Search"))
                 {
-                    GlobalTextSearch.Display(activeView);
+                    TextSearch.Display();
                 }
             }
 
@@ -48,7 +56,7 @@ public class TextToolView
             {
                 if (ImGui.CollapsingHeader("Text Replacement"))
                 {
-                    GlobalTextReplacement.Display(activeView);
+                    TextReplace.Display();
                 }
             }
 
@@ -57,7 +65,7 @@ public class TextToolView
             {
                 if (ImGui.CollapsingHeader("Text Merge"))
                 {
-                    TextMerge.Display(activeView);
+                    TextMerge.Display();
                 }
             }
         }

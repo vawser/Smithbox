@@ -4,216 +4,118 @@ using StudioCore.Editors.Common;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
+using System.Numerics;
 using System.Text.RegularExpressions;
 
 namespace StudioCore.Editors.TextEditor;
 
-public static class GlobalTextReplacement
+public class GlobalTextReplacement
 {
-    private static string _globalSearchInput = "";
-    private static string _globalReplaceInput = "";
-    private static SearchFilterType FilterType = SearchFilterType.PrimaryCategory;
-    private static SearchMatchType MatchType = SearchMatchType.All;
+    public TextEditorScreen Editor;
+    public ProjectEntry Project;
 
-    private static List<ReplacementResult> ReplacementResults = new();
+    private string searchTerm = "";
+    private string replaceTerm = "";
+    private SearchFilterType filterType = SearchFilterType.PrimaryCategory;
+    private SearchMatchType matchType = SearchMatchType.All;
 
-    private static bool IgnoreCase = false;
-    private static bool MultilineRegex = false;
-    private static bool SinglelineRegex = false;
-    private static bool IgnorePatternWhitespace = false;
+    private List<ReplacementResult> replacementResults = new();
 
-    private static bool HasSearched = false;
-    public static void Display(TextEditorView view)
+    private bool ignoreCase = false;
+    private bool applyMultilineRegex = false;
+    private bool applySinglelineRegex = false;
+    private bool ignorePatternWhitespace = false;
+
+    private bool hasAlreadySearched = false;
+
+    public GlobalTextReplacement(TextEditorScreen editor, ProjectEntry project)
     {
-        ImGui.BeginChild("TextReplacementToolSection");
+        Editor = editor;
+        Project = project;
+    }
 
-        var windowWidth = ImGui.GetWindowWidth();
+    public void Display()
+    {
+        var curView = Editor.ViewHandler.ActiveView;
 
-        if (ImGui.BeginTable($"globalReplacementTable", 2, ImGuiTableFlags.SizingFixedFit))
+        ImGui.BeginChild("TextReplaceSection", ImGuiChildFlags.Borders);
+
+        UIHelper.SimpleHeader("Search Filter", "The term to find.\n\nCan use regular expressions.");
+        UIHelper.SinglelineTextInput("textSearchInput", ref searchTerm);
+
+        UIHelper.SimpleHeader("Replacement Filter", "The term the found term is replaced with.\n\nCan use regular expressions.");
+        UIHelper.SinglelineTextInput("textReplaceInput", ref replaceTerm);
+
+        UIHelper.SimpleHeader("Filter Type", "");
+
+        DPI.ApplyStandardInputWidth();
+        if (ImGui.BeginCombo("##searchFilterType", filterType.GetDisplayName()))
         {
-            ImGui.TableSetupColumn("Title", ImGuiTableColumnFlags.WidthFixed);
-            ImGui.TableSetupColumn("Contents", ImGuiTableColumnFlags.WidthStretch);
-            //ImGui.TableHeadersRow();
-
-            // Row 1
-            ImGui.TableNextRow();
-            ImGui.TableSetColumnIndex(0);
-
-            ImGui.Text("Conditional Input");
-            UIHelper.Tooltip("The regex you want to match with.");
-
-            ImGui.TableSetColumnIndex(1);
-
-            DPI.ApplyInputWidth();
-            ImGui.InputText("##globalSearchInput", ref _globalSearchInput, 255);
-
-            // Row 2
-            ImGui.TableNextRow();
-            ImGui.TableSetColumnIndex(0);
-
-            ImGui.Text("Replacement Input");
-            UIHelper.Tooltip("The regex you want to replace with.");
-
-            ImGui.TableSetColumnIndex(1);
-
-            DPI.ApplyInputWidth();
-            ImGui.InputText("##globalReplaceInput", ref _globalReplaceInput, 255);
-
-            // Row 3
-            ImGui.TableNextRow();
-            ImGui.TableSetColumnIndex(0);
-
-            ImGui.Text("Filter Type");
-
-            ImGui.TableSetColumnIndex(1);
-
-            DPI.ApplyInputWidth();
-            if (ImGui.BeginCombo("##searchFilterType", FilterType.GetDisplayName()))
+            foreach (var entry in Enum.GetValues(typeof(SearchFilterType)))
             {
-                foreach (var entry in Enum.GetValues(typeof(SearchFilterType)))
+                var filterEntry = (SearchFilterType)entry;
+
+                if (ImGui.Selectable(filterEntry.GetDisplayName()))
                 {
-                    var filterEntry = (SearchFilterType)entry;
-
-                    if (ImGui.Selectable(filterEntry.GetDisplayName()))
-                    {
-                        FilterType = filterEntry;
-                    }
+                    filterType = filterEntry;
                 }
-
-                ImGui.EndCombo();
             }
-            UIHelper.Tooltip("The search filter to use.");
 
-            // Row 4
-            ImGui.TableNextRow();
-            ImGui.TableSetColumnIndex(0);
+            ImGui.EndCombo();
+        }
+        UIHelper.Tooltip("The search filter to use.");
 
-            ImGui.Text("Match Type");
+        UIHelper.SimpleHeader("Match Type", "");
 
-            ImGui.TableSetColumnIndex(1);
-
-            DPI.ApplyInputWidth();
-            if (ImGui.BeginCombo("##searchMatchType", MatchType.GetDisplayName()))
+        DPI.ApplyStandardInputWidth();
+        if (ImGui.BeginCombo("##searchMatchType", matchType.GetDisplayName()))
+        {
+            foreach (var entry in Enum.GetValues(typeof(SearchMatchType)))
             {
-                foreach (var entry in Enum.GetValues(typeof(SearchMatchType)))
+                var matchType = (SearchMatchType)entry;
+
+                if (ImGui.Selectable(matchType.GetDisplayName()))
                 {
-                    var matchType = (SearchMatchType)entry;
-
-                    if (ImGui.Selectable(matchType.GetDisplayName()))
-                    {
-                        MatchType = matchType;
-                    }
+                    this.matchType = matchType;
                 }
-
-                ImGui.EndCombo();
             }
-            UIHelper.Tooltip("The contents to match with.");
 
-            // Row 5
-            ImGui.TableNextRow();
-            ImGui.TableSetColumnIndex(0);
-
-            ImGui.Text("Ignore Case");
-
-            ImGui.TableSetColumnIndex(1);
-
-            ImGui.Checkbox("##ignoreCase", ref IgnoreCase);
-            UIHelper.Tooltip("Specifies case-insensitive matching for regex.");
-
-            // Row 6
-            ImGui.TableNextRow();
-            ImGui.TableSetColumnIndex(0);
-
-            ImGui.Text("Multi-line Regex");
-
-            ImGui.TableSetColumnIndex(1);
-
-            ImGui.Checkbox("##multilineRegex", ref MultilineRegex);
-            UIHelper.Tooltip("Multiline mode for regex. Changes the meaning of ^ and $ so they match at the beginning and end, respectively, of any line, and not just the beginning and end of the entire string.");
-
-            // Row 7
-            ImGui.TableNextRow();
-            ImGui.TableSetColumnIndex(0);
-
-            ImGui.Text("Single-line Regex");
-
-            ImGui.TableSetColumnIndex(1);
-
-            ImGui.Checkbox("##singleLineRegex", ref SinglelineRegex);
-            UIHelper.Tooltip("Specifies single-line mode for regex. Changes the meaning of the dot (.) so it matches every character (instead of every character except \\n).");
-
-            // Row 8
-            ImGui.TableNextRow();
-            ImGui.TableSetColumnIndex(0);
-
-            ImGui.Text("Ignore Pattern Whitespace");
-
-            ImGui.TableSetColumnIndex(1);
-
-            ImGui.Checkbox("##ignorePatternWhitespace", ref IgnorePatternWhitespace);
-            UIHelper.Tooltip("Eliminates unescaped white space from the pattern and enables comments marked with #. However, this value does not affect or eliminate white space in character classes, numeric quantifiers, or tokens that mark the beginning of individual regular expression language elements.");
-
-            ImGui.EndTable();
+            ImGui.EndCombo();
         }
+        UIHelper.Tooltip("The contents to match with.");
 
-        if (ImGui.Button("Preview Edit##executeSearch", DPI.HalfWidthButton(windowWidth, 24)))
+        UIHelper.SimpleHeader("Options", "");
+
+        ImGui.Checkbox("Ignore Case##ignoreCase", ref ignoreCase);
+        UIHelper.Tooltip("Specifies case-insensitive matching for regex.");
+
+        ImGui.Checkbox("Use Multi-line Regex##multilineRegex", ref applyMultilineRegex);
+        UIHelper.Tooltip("Multiline mode for regex. Changes the meaning of ^ and $ so they match at the beginning and end, respectively, of any line, and not just the beginning and end of the entire string.");
+
+        ImGui.Checkbox("Use Single-line Regex##singleLineRegex", ref applySinglelineRegex);
+        UIHelper.Tooltip("Specifies single-line mode for regex. Changes the meaning of the dot (.) so it matches every character (instead of every character except \\n).");
+
+        ImGui.Checkbox("Ignore Pattern Whitespace##ignorePatternWhitespace", ref ignorePatternWhitespace);
+        UIHelper.Tooltip("Eliminates unescaped white space from the pattern and enables comments marked with #. However, this value does not affect or eliminate white space in character classes, numeric quantifiers, or tokens that mark the beginning of individual regular expression language elements.");
+
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader("Actions", "");
+
+        UIHelper.MultiButtonInput("replaceActions",
+            "previewEdit", "Preview Edit", "", PreviewEdit,
+            "clearPreview", "Clear Preview", "", ClearPreview,
+            "applyReplacement", "Apply Replace", "All the entries listed in the list below will have the Replacement Input regex applied to them.", ApplyReplacement);
+
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader("Entries to Edit", "");
+
+        ImGui.BeginChild("previewSection", new Vector2(0, 0), ImGuiChildFlags.Borders);
+
+        if (replacementResults.Count > 0)
         {
-            HasSearched = true;
-            ReplacementResults = TextFinder.GetReplacementResult(view, _globalSearchInput, FilterType, MatchType, IgnoreCase);
-        }
-        UIHelper.Tooltip("Populate the edit preview list.");
-        ImGui.SameLine();
-        if (ImGui.Button("Clear Preview##clearSearchResults", DPI.HalfWidthButton(windowWidth, 24)))
-        {
-            HasSearched = false;
-            ReplacementResults.Clear();
-        }
-        UIHelper.Tooltip("Clear the edit preview list.");
-
-        ImGui.Separator();
-
-        if (ReplacementResults.Count > 0)
-        {
-            RegexOptions options = RegexOptions.CultureInvariant | RegexOptions.ExplicitCapture;
-
-            if (IgnoreCase)
-            {
-                options = options | RegexOptions.IgnoreCase;
-            }
-            if (MultilineRegex)
-            {
-                options = options | RegexOptions.Multiline;
-            }
-            if (SinglelineRegex)
-            {
-                options = options | RegexOptions.Singleline;
-            }
-            if (IgnorePatternWhitespace)
-            {
-                options = options | RegexOptions.IgnorePatternWhitespace;
-            }
-
-            if (ImGui.Button("Apply Replacement", DPI.WholeWidthButton(windowWidth, 24)))
-            {
-                List<EditorAction> actions = new List<EditorAction>();
-
-                string searchText = _globalSearchInput;
-                string replaceText = _globalReplaceInput;
-
-                foreach (var result in ReplacementResults)
-                {
-                    var newText = Regex.Replace(result.Entry.Text, searchText, replaceText, options);
-                    actions.Add(new ChangeFmgEntryText(view, result.ContainerWrapper, result.Entry, newText));
-                }
-
-                var groupedAction = new FmgGroupedAction(actions);
-                view.ActionManager.ExecuteAction(groupedAction);
-            }
-            UIHelper.Tooltip("All the entries listed in the list below will have the Replacement Input regex applied to them.");
-
             UIHelper.WrappedText("Entries that will be affected:");
 
-            foreach (var result in ReplacementResults)
+            foreach (var result in replacementResults)
             {
                 // Ignore results from unused containers if in Simple mode
                 if (CFG.Current.TextEditor_Container_List_Hide_Unused_Containers)
@@ -251,7 +153,7 @@ public static class GlobalTextReplacement
                 var fmgName = result.FmgName;
                 if (CFG.Current.TextEditor_Text_File_List_Display_Community_Names)
                 {
-                    fmgName = TextUtils.GetFmgDisplayName(view.Project, result.ContainerWrapper, result.FmgID, result.FmgName);
+                    fmgName = TextUtils.GetFmgDisplayName(curView.Project, result.ContainerWrapper, result.FmgID, result.FmgName);
                 }
 
                 var displayText = $"{containerName} - {fmgName} - {result.Entry.ID}: {foundText}";
@@ -262,11 +164,65 @@ public static class GlobalTextReplacement
                 }
             }
         }
-        else if (HasSearched)
+        else if (hasAlreadySearched)
         {
             UIHelper.WrappedText("No text entries found matching the filter.");
         }
 
         ImGui.EndChild();
+
+        ImGui.EndChild();
+    }
+
+    public void PreviewEdit()
+    {
+        var curView = Editor.ViewHandler.ActiveView;
+
+        hasAlreadySearched = true;
+        replacementResults = TextFinder.GetReplacementResult(curView, searchTerm, filterType, matchType, ignoreCase);
+    }
+
+    public void ClearPreview()
+    {
+        hasAlreadySearched = false;
+        replacementResults.Clear();
+    }
+
+    public void ApplyReplacement()
+    {
+        RegexOptions options = RegexOptions.CultureInvariant | RegexOptions.ExplicitCapture;
+
+        if (ignoreCase)
+        {
+            options = options | RegexOptions.IgnoreCase;
+        }
+        if (applyMultilineRegex)
+        {
+            options = options | RegexOptions.Multiline;
+        }
+        if (applySinglelineRegex)
+        {
+            options = options | RegexOptions.Singleline;
+        }
+        if (ignorePatternWhitespace)
+        {
+            options = options | RegexOptions.IgnorePatternWhitespace;
+        }
+
+        var curView = Editor.ViewHandler.ActiveView;
+
+        List<EditorAction> actions = new List<EditorAction>();
+
+        string searchText = searchTerm;
+        string replaceText = replaceTerm;
+
+        foreach (var result in replacementResults)
+        {
+            var newText = Regex.Replace(result.Entry.Text, searchText, replaceText, options);
+            actions.Add(new ChangeFmgEntryText(curView, result.ContainerWrapper, result.Entry, newText));
+        }
+
+        var groupedAction = new FmgGroupedAction(actions);
+        curView.ActionManager.ExecuteAction(groupedAction);
     }
 }

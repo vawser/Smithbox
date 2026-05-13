@@ -185,7 +185,7 @@ public class FileUnpackTool
 
         var newFileDictionary = new FileDictionary();
         newFileDictionary.Entries = BaseFileDictionary.Entries
-            .Where(e => IsFolderSelected(e.Folder)).ToList();
+            .Where(e => IsFolderSelected(e.Folder)).ToHashSet();
 
         _ = UnpackGameAsync(newFileDictionary);
     }

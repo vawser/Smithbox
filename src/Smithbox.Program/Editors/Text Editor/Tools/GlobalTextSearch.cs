@@ -10,127 +10,94 @@ using System.Text.Json;
 
 namespace StudioCore.Editors.TextEditor;
 
-public static class GlobalTextSearch
+public class GlobalTextSearch
 {
-    private static string _globalSearchInput = "";
-    private static bool IgnoreCase = false;
-    private static SearchFilterType FilterType = SearchFilterType.PrimaryCategory;
-    private static SearchMatchType MatchType = SearchMatchType.All;
+    public TextEditorScreen Editor;
+    public ProjectEntry Project;
 
-    private static List<TextResult> SearchResults = new();
+    private string searchTerm = "";
+    private bool ignoreCase = false;
+    private SearchFilterType filterType = SearchFilterType.PrimaryCategory;
+    private SearchMatchType matchType = SearchMatchType.All;
 
-    private static bool HasSearched = false;
+    private List<TextResult> searchResults = new();
 
-    public static void Display(TextEditorView view)
+    private bool hasAlreadySearched = false;
+
+    public GlobalTextSearch(TextEditorScreen editor, ProjectEntry project)
     {
-        ImGui.BeginChild("TextFinderToolSection");
+        Editor = editor;
+        Project = project;
+    }
 
-        var windowSize = DPI.GetWindowSize(Smithbox.Instance._context);
-        var sectionWidth = ImGui.GetWindowWidth() * 0.95f;
+    public void Display()
+    {
+        var curView = Editor.ViewHandler.ActiveView;
 
-        var resultSectionSize = new Vector2(sectionWidth * DPI.UIScale(), windowSize.Y * 0.6f * DPI.UIScale());
-        var exportSectionSize = new Vector2(sectionWidth * DPI.UIScale(), windowSize.Y * 0.2f * DPI.UIScale());
+        ImGui.BeginChild("TextSearchSection", ImGuiChildFlags.Borders);
 
-        if (ImGui.BeginTable($"globalSearchTable", 2, ImGuiTableFlags.SizingFixedFit))
+        UIHelper.SimpleHeader("Search Filter", "");
+        UIHelper.SinglelineTextInput("textSearchInput", ref searchTerm);
+
+        UIHelper.SimpleHeader("Filter Type", "");
+
+        DPI.ApplyStandardInputWidth();
+        if (ImGui.BeginCombo("##searchFilterType", filterType.GetDisplayName()))
         {
-            ImGui.TableSetupColumn("Title", ImGuiTableColumnFlags.WidthFixed);
-            ImGui.TableSetupColumn("Contents", ImGuiTableColumnFlags.WidthStretch);
-            //ImGui.TableHeadersRow();
-
-            // Row 1
-            ImGui.TableNextRow();
-            ImGui.TableSetColumnIndex(0);
-
-            ImGui.Text("Search Filter");
-
-            ImGui.TableSetColumnIndex(1);
-
-            DPI.ApplyInputWidth();
-            ImGui.InputText("##globalSearchInput", ref _globalSearchInput, 255);
-
-            // Row 2
-            ImGui.TableNextRow();
-            ImGui.TableSetColumnIndex(0);
-
-            ImGui.Text("Filter Type");
-
-            ImGui.TableSetColumnIndex(1);
-
-            DPI.ApplyInputWidth();
-            if (ImGui.BeginCombo("##searchFilterType", FilterType.GetDisplayName()))
+            foreach (var entry in Enum.GetValues(typeof(SearchFilterType)))
             {
-                foreach (var entry in Enum.GetValues(typeof(SearchFilterType)))
+                var filterEntry = (SearchFilterType)entry;
+
+                if (ImGui.Selectable(filterEntry.GetDisplayName()))
                 {
-                    var filterEntry = (SearchFilterType)entry;
-
-                    if (ImGui.Selectable(filterEntry.GetDisplayName()))
-                    {
-                        FilterType = filterEntry;
-                    }
+                    filterType = filterEntry;
                 }
-
-                ImGui.EndCombo();
             }
-            UIHelper.Tooltip("The search filter to use.");
 
-            // Row 3
-            ImGui.TableNextRow();
-            ImGui.TableSetColumnIndex(0);
+            ImGui.EndCombo();
+        }
+        UIHelper.Tooltip("The search filter to use.");
 
-            ImGui.Text("Match Type");
+        UIHelper.SimpleHeader("Match Type", "");
 
-            ImGui.TableSetColumnIndex(1);
-
-            DPI.ApplyInputWidth();
-            if (ImGui.BeginCombo("##searchMatchType", MatchType.GetDisplayName()))
+        DPI.ApplyStandardInputWidth();
+        if (ImGui.BeginCombo("##searchMatchType", matchType.GetDisplayName()))
+        {
+            foreach (var entry in Enum.GetValues(typeof(SearchMatchType)))
             {
-                foreach (var entry in Enum.GetValues(typeof(SearchMatchType)))
+                var matchType = (SearchMatchType)entry;
+
+                if (ImGui.Selectable(matchType.GetDisplayName()))
                 {
-                    var matchType = (SearchMatchType)entry;
-
-                    if (ImGui.Selectable(matchType.GetDisplayName()))
-                    {
-                        MatchType = matchType;
-                    }
+                    this.matchType = matchType;
                 }
-
-                ImGui.EndCombo();
             }
-            UIHelper.Tooltip("The contents to match with.");
 
-            // Row 4
-            ImGui.TableNextRow();
-            ImGui.TableSetColumnIndex(0);
-
-            ImGui.Text("Ignore Case");
-
-            ImGui.TableSetColumnIndex(1);
-
-            ImGui.Checkbox("##ignoreCase", ref IgnoreCase);
-            UIHelper.Tooltip("Ignore case sensitivity if enabled.");
-
-            ImGui.EndTable();
+            ImGui.EndCombo();
         }
+        UIHelper.Tooltip("The contents to match with.");
 
-        if (ImGui.Button("Search##executeSearch", DPI.HalfWidthButton(sectionWidth, 24)))
+        UIHelper.SimpleHeader("Options", "");
+
+        ImGui.Checkbox("Ignore Case##ignoreCase", ref ignoreCase);
+        UIHelper.Tooltip("Ignore case sensitivity if enabled.");
+
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader("Actions", "");
+
+        UIHelper.MultiButtonInput("searchActions",
+            "searchText", "Search", "", SearchText,
+            "clearResults", "Clear Results", "", ClearResults,
+            "copyResults", "Copy Results to Clipboard", "", CopyResultsToClipboard);
+
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader("Results", "");
+
+        ImGui.BeginChild("resultsSection", new Vector2(0, 0), ImGuiChildFlags.Borders);
+
+        if (searchResults.Count > 0)
         {
-            HasSearched = true;
-            SearchResults = TextFinder.GetGlobalTextResult(view, _globalSearchInput, FilterType, MatchType, IgnoreCase);
-        }
-        ImGui.SameLine();
-        if (ImGui.Button("Clear##clearSearchResults", DPI.HalfWidthButton(sectionWidth, 24)))
-        {
-            HasSearched = false;
-            SearchResults.Clear();
-        }
-
-        ImGui.Separator();
-
-        ImGui.BeginChild("resultsSection", resultSectionSize, ImGuiChildFlags.Borders);
-
-        if (SearchResults.Count > 0)
-        {
-            foreach (var result in SearchResults)
+            foreach (var result in searchResults)
             {
                 // Ignore results from unused containers if in Simple mode
                 if (CFG.Current.TextEditor_Container_List_Hide_Unused_Containers)
@@ -168,7 +135,7 @@ public static class GlobalTextSearch
                 var fmgName = result.FmgName;
                 if (CFG.Current.TextEditor_Text_File_List_Display_Community_Names)
                 {
-                    fmgName = TextUtils.GetFmgDisplayName(view.Project, result.ContainerWrapper, result.FmgID, result.FmgName);
+                    fmgName = TextUtils.GetFmgDisplayName(Project, result.ContainerWrapper, result.FmgID, result.FmgName);
                 }
 
                 var displayText = $"{containerName} - {fmgName} - {result.Entry.ID}: {foundText}";
@@ -179,7 +146,7 @@ public static class GlobalTextSearch
                 }
             }
         }
-        else if(HasSearched)
+        else if(hasAlreadySearched)
         {
             UIHelper.WrappedText("No text entries found matching the filter.");
         }
@@ -187,41 +154,60 @@ public static class GlobalTextSearch
         ImGui.EndChild();
 
 
-        ImGui.BeginChild("exportSection", exportSectionSize, ImGuiChildFlags.Borders);
+        ImGui.EndChild();
+    }
 
-        if (SearchResults.Count > 0)
+    public void SearchText()
+    {
+        var curView = Editor.ViewHandler.ActiveView;
+
+        if (searchTerm == "")
         {
-            if (ImGui.Button("Copy to Clipboard##copyToClipboardAction", DPI.HalfWidthButton(sectionWidth, 24)))
-            {
-                var list = new TextExportList();
-                list.Entries = new();
-
-                foreach (var result in SearchResults)
-                {
-                    var textExportEntry = new TextExportEntry();
-                    textExportEntry.ContainerName = result.ContainerName;
-                    textExportEntry.FmgName = result.FmgName;
-                    textExportEntry.EntryID = result.Entry.ID;
-                    textExportEntry.EntryText = result.Entry.Text;
-
-                    list.Entries.Add(textExportEntry);
-                }
-
-                var options = new JsonSerializerOptions
-                {
-                    Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
-                    WriteIndented = true,
-                    IncludeFields = true
-                };
-
-                var jsonText = JsonSerializer.Serialize(list, typeof(TextExportList), options);
-
-                PlatformUtils.Instance.SetClipboardText(jsonText);
-            }
+            Smithbox.LogError<GlobalTextSearch>("No search term specified.");
+            return;
         }
 
-        ImGui.EndChild();
+        hasAlreadySearched = true;
+        searchResults = TextFinder.GetGlobalTextResult(curView, searchTerm, filterType, matchType, ignoreCase);
+    }
 
-        ImGui.EndChild();
+    public void ClearResults()
+    {
+        hasAlreadySearched = false;
+        searchResults.Clear();
+    }
+
+    public void CopyResultsToClipboard()
+    {
+        if (searchResults.Count == 0)
+        {
+            Smithbox.LogError<GlobalTextSearch>("No results to copy.");
+            return;
+        }
+
+        var list = new TextExportList();
+        list.Entries = new();
+
+        foreach (var result in searchResults)
+        {
+            var textExportEntry = new TextExportEntry();
+            textExportEntry.ContainerName = result.ContainerName;
+            textExportEntry.FmgName = result.FmgName;
+            textExportEntry.EntryID = result.Entry.ID;
+            textExportEntry.EntryText = result.Entry.Text;
+
+            list.Entries.Add(textExportEntry);
+        }
+
+        var options = new JsonSerializerOptions
+        {
+            Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
+            WriteIndented = true,
+            IncludeFields = true
+        };
+
+        var jsonText = JsonSerializer.Serialize(list, typeof(TextExportList), options);
+
+        PlatformUtils.Instance.SetClipboardText(jsonText);
     }
 }

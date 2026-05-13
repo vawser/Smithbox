@@ -30,10 +30,9 @@ public static class DPI
     {
         ImGui.SetNextItemWidth((width * 0.93f) * UIScale());
     }
-
-    public static Vector2 ListSize(float width, float height)
+    public static void ApplyStandardInputWidth()
     {
-        return new Vector2(width * UIScale(), height * UIScale());
+        ImGui.SetNextItemWidth((ImGui.GetWindowWidth() * 0.5f) * UIScale());
     }
 
     /// <summary>
