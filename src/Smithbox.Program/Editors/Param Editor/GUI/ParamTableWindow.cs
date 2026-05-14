@@ -144,6 +144,10 @@ public class ParamTableWindow
         {
             tblFlags = tblFlags | ImGuiTableFlags.Borders;
         }
+        else
+        {
+            tblFlags = tblFlags | ImGuiTableFlags.BordersOuterH | ImGuiTableFlags.BordersOuterV;
+        }
 
         var columnCount = 2;
 

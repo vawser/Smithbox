@@ -40,7 +40,7 @@ public class ModelEditorView
 
     // Tools
     public ModelGridConfiguration ModelGridTool;
-    public ModelInsightView ModelInsightMenu;
+    //public ModelInsightView ModelInsightMenu;
     public ModelInstanceFinder ModelInstanceFinder;
     public ModelMaskToggler ModelMaskToggler;
     public ModelInsightHelper ModelInsightHelper;
@@ -79,7 +79,7 @@ public class ModelEditorView
 
         // Tools
         ModelGridTool = new ModelGridConfiguration(this, Project);
-        ModelInsightMenu = new ModelInsightView(this, Project);
+        //ModelInsightMenu = new ModelInsightView(this, Project);
         ModelInstanceFinder = new ModelInstanceFinder(this, Project);
         ModelMaskToggler = new ModelMaskToggler(this, Project);
         ResourceListTool = new ResourceListTool();

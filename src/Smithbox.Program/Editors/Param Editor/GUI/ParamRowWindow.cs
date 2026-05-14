@@ -289,14 +289,18 @@ public class ParamRowWindow
 
             ImGui.BeginChild("PinnedRowSection", new Vector2(0, height), ImGuiChildFlags.None, ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse);
 
-            var tblFlags = ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Resizable | ImGuiTableFlags.ScrollY;
+            var tblFlags = ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Resizable | ImGuiTableFlags.ScrollY ;
 
             if (CFG.Current.ParamEditor_Enable_Table_Borders)
             {
                 tblFlags = tblFlags | ImGuiTableFlags.Borders;
             }
+            else
+            {
+                tblFlags = tblFlags | ImGuiTableFlags.BordersOuterH | ImGuiTableFlags.BordersOuterV;
+            }
 
-            var columnCount = 2;
+                var columnCount = 2;
 
             if (Context.CompareColumn != null)
             {
@@ -354,6 +358,10 @@ public class ParamRowWindow
         if (CFG.Current.ParamEditor_Enable_Table_Borders)
         {
             tblFlags = tblFlags | ImGuiTableFlags.Borders;
+        }
+        else
+        {
+            tblFlags = tblFlags | ImGuiTableFlags.BordersOuterH | ImGuiTableFlags.BordersOuterV;
         }
 
         var columnCount = 2;

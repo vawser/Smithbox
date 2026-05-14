@@ -29,9 +29,9 @@ public class ResourceListTool
     {
         if (ImGui.CollapsingHeader("Resource Monitor"))
         {
-            ImGui.BeginChild($"resourceTable_{menuId}", ImGuiChildFlags.Borders);
+            EditorFilters.DisplayFramedListFilter("resourceMonitor", ref ResourceListFilter, ref ExactResourceListFilter);
 
-            EditorFilters.DisplayListFilter("resourceMonitor", ref ResourceListFilter, ref ExactResourceListFilter);
+            ImGui.BeginChild($"resourceTable_{menuId}", ImGuiChildFlags.Borders);
 
             ImGui.BeginTabBar("##resourceTabs");
 

@@ -43,6 +43,7 @@ public class ParamFieldWindow
 
             FocusManager.SetFocus(EditorFocusContext.ParamEditor_FieldList);
 
+            ImGui.AlignTextToFramePadding();
             ImGui.Text("Select a row to see properties");
             ImGui.EndChild();
         }
@@ -148,12 +149,14 @@ public class ParamFieldWindow
                 // Main
                 if (ImGui.TableNextColumn())
                 {
+                    ImGui.AlignTextToFramePadding();
                     ImGui.Text("Current");
                 }
 
                 // Vanilla
                 if (CFG.Current.Param_ShowVanillaColumn && ImGui.TableNextColumn())
                 {
+                    ImGui.AlignTextToFramePadding();
                     ImGui.Text("Vanilla");
                 }
 
@@ -164,6 +167,7 @@ public class ParamFieldWindow
                     {
                         if (ImGui.TableNextColumn())
                         {
+                            ImGui.AlignTextToFramePadding();
                             ImGui.Text(name);
                         }
                     }
@@ -231,7 +235,6 @@ public class ParamFieldWindow
         // Field Table
         if (EditorTableUtils.ImGuiTableGroupedColumns("ParamFieldsT", columnCount))
         {
-
             if (CFG.Current.ParamEditor_Field_List_Pinned_Stay_Visible)
             {
                 ImGui.TableSetupScrollFreeze(columnCount, (showParamCompare ? 3 : 2) + (1 + pinnedFields?.Count ?? 0));
@@ -244,12 +247,14 @@ public class ParamFieldWindow
                 // Main
                 if (ImGui.TableNextColumn())
                 {
+                    ImGui.AlignTextToFramePadding();
                     ImGui.Text("Current");
                 }
 
                 // Vanilla
                 if (CFG.Current.Param_ShowVanillaColumn && ImGui.TableNextColumn())
                 {
+                    ImGui.AlignTextToFramePadding();
                     ImGui.Text("Vanilla");
                 }
 
@@ -260,13 +265,12 @@ public class ParamFieldWindow
                     {
                         if (ImGui.TableNextColumn())
                         {
+                            ImGui.AlignTextToFramePadding();
                             ImGui.Text(name);
                         }
                     }
                 }
             }
-
-            EditorTableUtils.ImguiTableSeparator();
 
             int infoImGuiID = 1000;
 
@@ -770,6 +774,7 @@ public class ParamFieldWindow
                 // 3 is Confirmed, meaning the lot always occurs.
                 if (value == "3")
                 {
+                    ImGui.AlignTextToFramePadding();
                     ImGui.TextColored(UI.Current.ImGui_AliasName_Text, $"This lot will always occur.");
                     return;
                 }
@@ -778,12 +783,14 @@ public class ParamFieldWindow
 
         if (curChance == 0)
         {
+            ImGui.AlignTextToFramePadding();
             ImGui.TextColored(UI.Current.ImGui_AliasName_Text, $"This lot will never occur.");
             return;
         }
 
         var chance = Math.Round((curChance / totalChance) * 100, 2);
 
+        ImGui.AlignTextToFramePadding();
         ImGui.TextColored(UI.Current.ImGui_AliasName_Text, $"This lot has a {chance}%% chance to occur.");
     }
 
@@ -823,6 +830,7 @@ public class ParamFieldWindow
                 // 3 is Confirmed, meaning the drop always occurs.
                 if (value == "3")
                 {
+                    ImGui.AlignTextToFramePadding();
                     ImGui.TextColored(UI.Current.ImGui_AliasName_Text, $"This drop will always occur.");
                     return;
                 }
@@ -831,6 +839,7 @@ public class ParamFieldWindow
 
         if (totalChance == 0)
         {
+            ImGui.AlignTextToFramePadding();
             ImGui.TextColored(UI.Current.ImGui_AliasName_Text, $"This drop will never occur.");
             return;
         }
@@ -838,6 +847,7 @@ public class ParamFieldWindow
         if (totalChance > 100)
             totalChance = 100;
 
+        ImGui.AlignTextToFramePadding();
         ImGui.TextColored(UI.Current.ImGui_AliasName_Text, $"This drop has a {totalChance}%% chance to occur.");
     }
 
@@ -1324,6 +1334,7 @@ public class ParamFieldWindow
     {
         if (colVal == null)
         {
+            ImGui.AlignTextToFramePadding();
             ImGui.TextUnformatted("");
         }
         else
@@ -1339,6 +1350,7 @@ public class ParamFieldWindow
                 value = colVal.ToString();
             }
 
+            ImGui.AlignTextToFramePadding();
             ImGui.InputText("##colval" + imguiSuffix, ref value, 256, ImGuiInputTextFlags.ReadOnly);
 
             // Hints
@@ -1401,6 +1413,7 @@ public class ParamFieldWindow
             printedName = $"{fieldOffset} {printedName}";
         }
 
+        ImGui.AlignTextToFramePadding();
         ImGui.TextUnformatted(printedName);
     }
 
@@ -1427,10 +1440,12 @@ public class ParamFieldWindow
                 {
                     if (metaContext.Description != null)
                     {
+                        ImGui.AlignTextToFramePadding();
                         ImGui.TextColored(new Vector4(.4f, .7f, 1f, 1f), $"{metaContext.Description}");
                     }
                     else
                     {
+                        ImGui.AlignTextToFramePadding();
                         ImGui.TextColored(new Vector4(1.0f, 1.0f, 1.0f, 0.7f),
                             "Info regarding this field has not been written.");
                     }
@@ -1438,6 +1453,7 @@ public class ParamFieldWindow
             }
             else
             {
+                ImGui.AlignTextToFramePadding();
                 ImGui.TextColored(new Vector4(1.0f, 0.7f, 0.4f, 1.0f), Utils.ImGuiEscape(internalName, "", true));
             }
 

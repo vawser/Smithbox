@@ -1103,6 +1103,8 @@ public static class ParamReferenceHelper
         }
 
         ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(0, ImGui.GetStyle().ItemSpacing.Y));
+
+        ImGui.AlignTextToFramePadding();
         ImGui.TextUnformatted(@"   <");
 
         List<string> inactiveRefs = new();
@@ -1138,10 +1140,12 @@ public static class ParamReferenceHelper
                 if (first)
                 {
                     ImGui.SameLine();
+                    ImGui.AlignTextToFramePadding();
                     ImGui.TextUnformatted(r.ParamName);
                 }
                 else
                 {
+                    ImGui.AlignTextToFramePadding();
                     ImGui.TextUnformatted("    " + r.ParamName);
                 }
 
@@ -1156,10 +1160,12 @@ public static class ParamReferenceHelper
             ImGui.SameLine();
             if (first)
             {
+                ImGui.AlignTextToFramePadding();
                 ImGui.TextUnformatted("!" + inactive);
             }
             else
             {
+                ImGui.AlignTextToFramePadding();
                 ImGui.TextUnformatted("!" + inactive);
             }
 
@@ -1170,6 +1176,7 @@ public static class ParamReferenceHelper
 
         ImGui.SameLine();
 
+        ImGui.AlignTextToFramePadding();
         ImGui.TextUnformatted(">");
 
         ImGui.PopStyleVar();
@@ -1197,6 +1204,7 @@ public static class ParamReferenceHelper
 
         foreach ((var param, Param.Row row, var adjName) in matches)
         {
+            ImGui.AlignTextToFramePadding();
             ImGui.TextUnformatted(adjName);
         }
 
@@ -1204,7 +1212,9 @@ public static class ParamReferenceHelper
         if (!entryFound)
         {
             ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_ParamRefMissing_Text);
-            ImGui.TextUnformatted("___");
+
+            ImGui.AlignTextToFramePadding();
+            ImGui.TextUnformatted("---");
             ImGui.PopStyleColor();
         }
 
@@ -1450,6 +1460,7 @@ public static class TextReferenceHelper
 
         if (overrideName == "")
         {
+            ImGui.AlignTextToFramePadding();
             ImGui.TextUnformatted(@"   [");
 
             List<string> inactiveRefs = new();
@@ -1468,10 +1479,12 @@ public static class TextReferenceHelper
                     if (first)
                     {
                         ImGui.SameLine();
+                        ImGui.AlignTextToFramePadding();
                         ImGui.TextUnformatted(r.fmg);
                     }
                     else
                     {
+                        ImGui.AlignTextToFramePadding();
                         ImGui.TextUnformatted("    " + r.fmg);
                     }
 
@@ -1485,10 +1498,12 @@ public static class TextReferenceHelper
                 ImGui.SameLine();
                 if (first)
                 {
+                    ImGui.AlignTextToFramePadding();
                     ImGui.TextUnformatted("!" + inactive);
                 }
                 else
                 {
+                    ImGui.AlignTextToFramePadding();
                     ImGui.TextUnformatted("!" + inactive);
                 }
 
@@ -1498,10 +1513,12 @@ public static class TextReferenceHelper
             ImGui.PopStyleColor();
 
             ImGui.SameLine();
+            ImGui.AlignTextToFramePadding();
             ImGui.TextUnformatted("]");
         }
         else
         {
+            ImGui.AlignTextToFramePadding();
             ImGui.TextUnformatted($@"   [{overrideName}]");
         }
 
@@ -1530,10 +1547,12 @@ public static class TextReferenceHelper
         {
             if (string.IsNullOrWhiteSpace(text))
             {
+                ImGui.AlignTextToFramePadding();
                 ImGui.TextUnformatted("%null%");
             }
             else
             {
+                ImGui.AlignTextToFramePadding();
                 ImGui.TextUnformatted(text);
             }
         }
@@ -1701,6 +1720,7 @@ public static class TextureReferenceHelper
             return;
 
         ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(0, 0));
+        ImGui.AlignTextToFramePadding();
         ImGui.TextUnformatted(@"   [Icon]");
         ImGui.PopStyleVar();
     }
@@ -1745,8 +1765,11 @@ public static class AC6_FieldOffsetHelper
         if (activeParam == "MenuPropertySpecParam")
         {
             ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(0, ImGui.GetStyle().ItemSpacing.Y));
+            ImGui.AlignTextToFramePadding();
             ImGui.TextUnformatted(@"   <PARAM>");
+            ImGui.AlignTextToFramePadding();
             ImGui.TextUnformatted(@"   <FIELD>");
+            ImGui.AlignTextToFramePadding();
             ImGui.TextUnformatted(@"   <NAME>");
             ImGui.PopStyleVar();
         }
@@ -1862,8 +1885,11 @@ public static class AC6_FieldOffsetHelper
 
             ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_AliasName_Text);
 
+            ImGui.AlignTextToFramePadding();
             ImGui.TextUnformatted($"{paramString}:");
+            ImGui.AlignTextToFramePadding();
             ImGui.TextUnformatted($"{internalName}");
+            ImGui.AlignTextToFramePadding();
             ImGui.TextUnformatted($"{displayName}");
 
             ImGui.PopStyleColor();
@@ -1950,6 +1976,7 @@ public static class CalcCorrectGraphHelper
 
                 if (!validAxis_X || !validAxis_Y)
                 {
+                    ImGui.AlignTextToFramePadding();
                     ImGui.Text("Invalid axis limits.");
                     ImGui.Unindent();
                     return;
@@ -1958,6 +1985,7 @@ public static class CalcCorrectGraphHelper
                 // Length Validation
                 if (values.Length != xValues.Length || values.Length < 2)
                 {
+                    ImGui.AlignTextToFramePadding();
                     ImGui.Text("Mismatched graph data.");
                     ImGui.Unindent();
                     return;
@@ -1966,6 +1994,7 @@ public static class CalcCorrectGraphHelper
                 // Value Validation
                 if (!ImPlotHelper.SanitizeSeries(values))
                 {
+                    ImGui.AlignTextToFramePadding();
                     ImGui.Text("Graph contains invalid values.");
                     ImGui.Unindent();
                     return;
@@ -2022,7 +2051,9 @@ public static class CalcCorrectGraphHelper
         }
         catch (Exception e)
         {
+            ImGui.AlignTextToFramePadding();
             ImGui.TextColored(new Vector4(1, 0, 0, 1), "Unable to draw graph");
+            ImGui.AlignTextToFramePadding();
             ImGui.TextUnformatted(e.Message);
         }
 
@@ -2064,6 +2095,7 @@ public static class TileReferenceHelper
         if (!CFG.Current.ParamEditor_Field_List_Display_Enums)
             return;
 
+        ImGui.AlignTextToFramePadding();
         ImGui.TextUnformatted($@"   <Tile>");
     }
 
@@ -2096,6 +2128,7 @@ public static class TileReferenceHelper
             if (resultID != "")
             {
                 ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_AliasName_Text);
+                ImGui.AlignTextToFramePadding();
                 ImGui.TextUnformatted(resultName);
                 ImGui.PopStyleColor(1);
             }
@@ -2369,10 +2402,12 @@ public static class GroupReferenceHelper
         {
             if (CFG.Current.ParamEditor_Field_List_GroupReference_DisplayCommunityName)
             {
+                ImGui.AlignTextToFramePadding();
                 ImGui.TextUnformatted($"  <{entry.DisplayName}>");
             }
             else
             {
+                ImGui.AlignTextToFramePadding();
                 ImGui.TextUnformatted($"  <{entry.Param}>");
             }
         }
@@ -2396,6 +2431,7 @@ public static class GroupReferenceHelper
             if (entry.Row.ID == oldval)
             {
                 ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_ParamRef_Text);
+                ImGui.AlignTextToFramePadding();
                 ImGui.TextUnformatted(entry.Hint);
                 ImGui.PopStyleColor();
             }

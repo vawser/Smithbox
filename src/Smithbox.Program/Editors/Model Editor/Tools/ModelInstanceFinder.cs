@@ -46,7 +46,8 @@ public class ModelInstanceFinder
 
             UIHelper.Spacer();
             UIHelper.SimpleHeader("Model Name", "");
-            ImGui.InputText("##modelNameInput", ref _searchInput, 255);
+
+            UIHelper.SinglelineTextInput("ModelNameInput", ref _searchInput);
 
             UIHelper.Spacer();
             UIHelper.SimpleHeader("Options", "");

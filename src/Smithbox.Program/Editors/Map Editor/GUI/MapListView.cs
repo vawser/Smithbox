@@ -26,7 +26,6 @@ public class MapListView : IActionEventHandler
         Project = project;
     }
 
-
     public void Display(float width, float height)
     {
         UIHelper.SimpleHeader("Map List", "");

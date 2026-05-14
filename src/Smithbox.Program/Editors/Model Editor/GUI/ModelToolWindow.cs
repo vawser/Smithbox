@@ -52,7 +52,7 @@ public class ModelToolWindow
 
             if (CFG.Current.Interface_ModelEditor_Tool_ModelInsight)
             {
-                activeView.ModelInsightMenu.OnToolWindow();
+                //activeView.ModelInsightMenu.OnToolWindow();
             }
 
             if (CFG.Current.Interface_ModelEditor_Tool_ModelInstanceFinder)

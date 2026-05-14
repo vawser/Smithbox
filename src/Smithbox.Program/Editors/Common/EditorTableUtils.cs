@@ -19,9 +19,7 @@ public static class EditorTableUtils
             ImGui.GetStyle().CellPadding = new Vector2(oldPad.X, 0);
         }
 
-        var borderType = ImGuiTableFlags.BordersInnerV;
-        if (CFG.Current.ParamEditor_Enable_Table_Borders)
-            borderType = ImGuiTableFlags.Borders;
+        var borderType = ImGuiTableFlags.BordersOuterH | ImGuiTableFlags.BordersOuterV;
 
         if (ignoreBorderType)
             borderType = ImGuiTableFlags.BordersInnerV;
@@ -41,12 +39,12 @@ public static class EditorTableUtils
     public static bool ImGuiTableStdColumnsNoScroll(string id, int cols)
     {
         return ImGui.BeginTable(id, cols,
-            ImGuiTableFlags.Resizable | ImGuiTableFlags.BordersInnerV | ImGuiTableFlags.SizingStretchSame);
+            ImGuiTableFlags.Resizable | ImGuiTableFlags.BordersOuterH | ImGuiTableFlags.BordersOuterV |ImGuiTableFlags.BordersInnerV | ImGuiTableFlags.SizingStretchSame);
     }
 
     public static bool ImGuiTableGroupedColumns(string id, int cols)
     {
-        return ImGui.BeginTable(id, cols, ImGuiTableFlags.Resizable | ImGuiTableFlags.BordersInnerV | ImGuiTableFlags.SizingStretchSame);
+        return ImGui.BeginTable(id, cols, ImGuiTableFlags.Resizable | ImGuiTableFlags.BordersOuterH | ImGuiTableFlags.BordersOuterV |ImGuiTableFlags.BordersInnerV | ImGuiTableFlags.SizingStretchSame);
     }
 
     public static bool ImguiTableSeparator()
