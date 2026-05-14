@@ -1086,8 +1086,8 @@ namespace SoulsFormats
                 if (version < GparamVersion.V6)
                 {
                     type = (int)br.AssertByte((byte)Type);
-                    Capacity = br.ReadSByte();
-                    Unk = br.AssertInt16(0);
+                    Capacity = br.ReadByte();
+                    Unk = br.ReadInt16();
 
                 }
                 else
@@ -1119,7 +1119,7 @@ namespace SoulsFormats
                     objArray[index] = ReadValue(br, version);
                 }
 
-                br.Position =(baseOffsets.ValueIds + valueIdsOffset);
+                br.Position = (baseOffsets.ValueIds + valueIdsOffset);
 
                 Values = new List<FieldValue<T>>(capacity);
 
@@ -1140,7 +1140,7 @@ namespace SoulsFormats
                 if (version < GparamVersion.V6)
                 {
                     bw.WriteByte((byte)Type);
-                    bw.WriteSByte((sbyte)Capacity);
+                    bw.WriteByte((byte)Capacity);
                     bw.WriteInt16(Unk);
                 }
                 else
