@@ -1,19 +1,12 @@
 ﻿using Hexa.NET.ImGui;
-using Octokit;
 using SoulsFormats;
 using StudioCore.Application;
-using StudioCore.Editors.ParamEditor;
 using StudioCore.Utilities;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
 using System.Numerics;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.GparamEditor;
 
