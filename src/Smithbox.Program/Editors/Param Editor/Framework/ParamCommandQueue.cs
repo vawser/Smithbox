@@ -128,8 +128,7 @@ public class ParamCommandQueue
                 }
                 else if (args[1] == "massEditCSVExport")
                 {
-                    IReadOnlyList<Param.Row> rows = ParamCsvTools.CsvExportGetRows(
-                        Editor,
+                    IReadOnlyList<Param.Row> rows = Editor.ToolMenu.DataConverterTool.CsvExportGetRows(
                         Enum.Parse<ParamUpgradeRowGetType>(args[2]));
 
                     activeView.MassEdit.State.MassEditOutput_CSV = ParamIO.GenerateCSV(
@@ -148,8 +147,7 @@ public class ParamCommandQueue
                 {
                     activeView.MassEdit.State.MassEdit_SingleField_CSV = args[2];
 
-                    IReadOnlyList<Param.Row> rows = ParamCsvTools.CsvExportGetRows(
-                        Editor,
+                    IReadOnlyList<Param.Row> rows = Editor.ToolMenu.DataConverterTool.CsvExportGetRows(
                         Enum.Parse<ParamUpgradeRowGetType>(args[3]));
 
                     activeView.MassEdit.State.MassEditOutput_CSV = ParamIO.GenerateSingleCSV(

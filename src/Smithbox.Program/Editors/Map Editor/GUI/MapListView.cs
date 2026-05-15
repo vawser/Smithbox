@@ -30,38 +30,28 @@ public class MapListView : IActionEventHandler
     {
         UIHelper.SimpleHeader("Map List", "");
 
-        ImGui.BeginChild("MapList", new System.Numerics.Vector2(width, height), ImGuiChildFlags.Borders);
-
-        FocusManager.SetFocus(EditorFocusContext.MapEditor_FileList);
-
         DisplaySearchbar();
 
-        if (View.Project.Descriptor.ProjectType is ProjectType.BB)
-        {
-            ImGui.SameLine();
-            DisplayChaliceToggleButton();
-        }
+        ImGui.BeginChild("MapListSection", new Vector2(width, height), ImGuiChildFlags.Borders);
 
-        ImGui.BeginChild($"mapListSection");
+        FocusManager.SetFocus(EditorFocusContext.MapEditor_FileList);
 
         DisplayMapList(MapContentLoadState.Loaded);
         DisplayMapList(MapContentLoadState.Unloaded);
 
         ImGui.EndChild();
-
-        ImGui.EndChild();
     }
 
-    private string _lastSearchText = "";
     private HashSet<string> _cachedSearchMatches = new HashSet<string>();
     private Dictionary<string, string> _cachedMapNameAliases = new Dictionary<string, string>();
-    private Dictionary<string, List<string>> _cachedMapTags = new Dictionary<string, List<string>>();
     private bool _updateMapList = true;
+
+    private string FileListFilter = "";
+    private bool ExactFileListFilter = false;
 
     public void UpdateMapList(List<string> mapList)
     {
         SearchBarText = string.Join("|", mapList);
-        _lastSearchText = SearchBarText;
         _updateMapList = true;
     }
 
@@ -70,19 +60,21 @@ public class MapListView : IActionEventHandler
     /// </summary>
     public void DisplaySearchbar()
     {
-        var windowWidth = ImGui.GetWindowWidth();
+        var searchHeight = new Vector2(0, 36) * DPI.UIScale();
+        ImGui.BeginChild($"framedListFilter_mapEditor_ListView", searchHeight, ImGuiChildFlags.Borders);
 
-        DPI.ApplyInputWidth(windowWidth * 0.75f);
-        ImGui.InputText($"##mapListSearch_{ImguiID}", ref SearchBarText, 255);
-        if(ImGui.IsItemEdited())
+        EditorFilters.DisplayListFilter("mapEditor_ListView", ref FileListFilter, ref ExactFileListFilter);
+        if(ImGui.IsItemDeactivatedAfterEdit())
         {
-            if (_lastSearchText != SearchBarText)
-            {
-                _lastSearchText = SearchBarText;
-                _updateMapList = true;
-            }
+            _updateMapList = true;
         }
         UIHelper.Tooltip("Filter the map list entries.");
+
+        if (View.Project.Descriptor.ProjectType is ProjectType.BB)
+        {
+            ImGui.SameLine();
+            DisplayChaliceToggleButton();
+        }
 
         if (_updateMapList)
         {
@@ -90,26 +82,25 @@ public class MapListView : IActionEventHandler
 
             _cachedSearchMatches.Clear();
             _cachedMapNameAliases.Clear();
-            _cachedMapTags.Clear();
 
             foreach (var entry in Project.Locator.MapFiles.Entries)
             {
                 var mapID = entry.Filename;
 
                 var nameAlias = AliasHelper.GetMapNameAlias(View.Project, mapID);
-                var tags = AliasHelper.GetMapTags(View.Project, mapID);
 
                 _cachedMapNameAliases[mapID] = nameAlias;
-                _cachedMapTags[mapID] = tags;
 
-                bool isMatch = SearchFilters.IsMapSearchMatch(_lastSearchText, mapID, nameAlias, tags);
+                var isMatch = EditorFilters.IsMatch(FileListFilter, mapID, ExactFileListFilter, nameAlias, true, true);
 
-                if (isMatch || _lastSearchText == "")
+                if (isMatch)
                 {
                     _cachedSearchMatches.Add(mapID);
                 }
             }
         }
+
+        ImGui.EndChild();
     }
 
     /// <summary>

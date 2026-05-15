@@ -124,7 +124,7 @@ public class ParamShortcuts
         // Sort Rows
         if (InputManager.IsPressed(KeybindID.ParamEditor_RowList_Sort_Rows))
         {
-            ParamRowTools.SortRows(activeView);
+            Editor.ToolMenu.SortTool.SortRows();
         }
 
         // Apply Mass Edit

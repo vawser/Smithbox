@@ -1,4 +1,5 @@
-﻿using Hexa.NET.ImGui;
+﻿using CsvHelper.Configuration.Attributes;
+using Hexa.NET.ImGui;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using System.Numerics;
@@ -20,7 +21,10 @@ public class ParamToolMenu
     public IdSetFinder IdSetFinder;
 
     // Param Utilities
-    public ParamComparisonTools ParamComparisonTools;
+    public ParamRowNameTool RowNameTool;
+    public ParamDataTransferTool DataConverterTool;
+    public ParamSortTool SortTool;
+    public ParamComparisonTool ParamComparisonTool;
     public ParamReloader ParamReloader;
     public ParamMerger ParamMerger;
     public ItemGib ItemGib;
@@ -41,7 +45,11 @@ public class ParamToolMenu
         ValueSetFinder = new(editor, project);
         IdSetFinder = new(editor, project);
 
-        ParamComparisonTools = new(editor, project);
+        RowNameTool = new(editor, project);
+        DataConverterTool = new(editor, project);
+        SortTool = new(editor, project);
+
+        ParamComparisonTool = new(editor, project);
         ParamReloader = new(editor, project);
         ParamMerger = new(editor, project);
         ItemGib = new(editor, project);
@@ -57,14 +65,35 @@ public class ParamToolMenu
 
         if (ImGui.BeginMenu("Tools"))
         {
-            if (ImGui.MenuItem("Sort Rows"))
+            SortTool.DisplayDropDown();
+
+            if (ImGui.BeginMenu("Data Comparison"))
             {
-                if (activeView.Selection.ActiveParamExists())
-                {
-                    ParamRowTools.SortRows(activeView);
-                }
+                ParamComparisonTool.DisplayDropdown();
+
+                ImGui.EndMenu();
             }
-            UIHelper.Tooltip("This will sort the rows by ID. WARNING: this is not recommended as row index can be important.");
+
+            if (ImGui.BeginMenu("Data Transfer"))
+            {
+                DataConverterTool.DisplayDropdown();
+
+                ImGui.EndMenu();
+            }
+
+            if (ImGui.BeginMenu("Row Names"))
+            {
+                RowNameTool.DisplayDropdown();
+
+                ImGui.EndMenu();
+            }
+
+            if (ImGui.BeginMenu("Memory"))
+            {
+                ParamReloader.DisplayDropdown();
+
+                ImGui.EndMenu();
+            }
 
             ImGui.EndMenu();
         }
@@ -83,6 +112,30 @@ public class ParamToolMenu
             {
                 if (ImGui.BeginMenu("View"))
                 {
+                    if (ImGui.MenuItem("Sort Rows"))
+                    {
+                        CFG.Current.ParamEditor_Show_Tool_Sort_Rows = !CFG.Current.ParamEditor_Show_Tool_Sort_Rows;
+                    }
+                    UIHelper.ShowActiveStatus(CFG.Current.ParamEditor_Show_Tool_Sort_Rows);
+
+                    if (ImGui.MenuItem("Row Names"))
+                    {
+                        CFG.Current.ParamEditor_Show_Tool_Row_Names = !CFG.Current.ParamEditor_Show_Tool_Row_Names;
+                    }
+                    UIHelper.ShowActiveStatus(CFG.Current.ParamEditor_Show_Tool_Row_Names);
+
+                    if (ImGui.MenuItem("Data Transfer"))
+                    {
+                        CFG.Current.ParamEditor_Show_Tool_Data_Converter = !CFG.Current.ParamEditor_Show_Tool_Data_Converter;
+                    }
+                    UIHelper.ShowActiveStatus(CFG.Current.ParamEditor_Show_Tool_Data_Converter);
+
+                    if (ImGui.MenuItem("Data Comparison"))
+                    {
+                        CFG.Current.ParamEditor_Show_Tool_Data_Comparison = !CFG.Current.ParamEditor_Show_Tool_Data_Comparison;
+                    }
+                    UIHelper.ShowActiveStatus(CFG.Current.ParamEditor_Show_Tool_Data_Comparison);
+
                     if (ImGui.MenuItem("Data Finders"))
                     {
                         CFG.Current.ParamEditor_Show_Tool_Data_Finders = !CFG.Current.ParamEditor_Show_Tool_Data_Finders;
@@ -149,6 +202,23 @@ public class ParamToolMenu
 
             if (activeView != null)
             {
+                if (CFG.Current.ParamEditor_Show_Tool_Sort_Rows)
+                {
+                    SortTool.Display();
+                }
+                if (CFG.Current.ParamEditor_Show_Tool_Row_Names)
+                {
+                    RowNameTool.Display();
+                }
+                if (CFG.Current.ParamEditor_Show_Tool_Data_Converter)
+                {
+                    DataConverterTool.Display();
+                }
+                if (CFG.Current.ParamEditor_Show_Tool_Data_Comparison)
+                {
+                    ParamComparisonTool.Display();
+                }
+
                 if (CFG.Current.ParamEditor_Show_Tool_Param_Upgrader)
                 {
                     ParamUpgrader.Display();

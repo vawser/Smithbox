@@ -2,18 +2,17 @@
 using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Application;
+using StudioCore.Editors.GparamEditor;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 using System.Text;
-using System.Threading.Tasks;
+using Veldrid.MetalBindings;
 
 namespace StudioCore.Editors.ParamEditor;
-
-
-public class ParamComparisonTools
+public class ParamComparisonTool
 {
     public ParamEditorScreen Editor;
     public ProjectEntry Project;
@@ -34,99 +33,355 @@ public class ParamComparisonTools
 
     private readonly StringBuilder _reportBuilder = new StringBuilder();
 
-    public ParamComparisonTools(ParamEditorScreen editor, ProjectEntry project)
+    public ProjectEntry TargetLoadedProject = null;
+    public ProjectEntry TargetProject = null;
+    public string TargetProjectName = "";
+    public bool AllowGenerate = true;
+    public bool LoadAuxBank = false;
+
+    public string TargetParamComparison = "";
+
+
+    public ParamComparisonTool(ParamEditorScreen editor, ProjectEntry project)
     {
         Editor = editor;
         Project = project;
     }
 
-    public void ComparisonMenu(ParamEditorView curView)
+    public void Display()
     {
-        if (ImGui.MenuItem("View comparison report"))
+        if (ImGui.CollapsingHeader("Data Comparison"))
         {
-            ViewReport();
+            ImGui.BeginChild("ComparisonSection", ImGuiChildFlags.Borders);
+
+            ImGui.BeginTabBar("dataComparisonTabs");
+
+            ComparisonReportTab();
+            ParamComparisonTab();
+            RowComparisonTab();
+            FieldComparisonTab();
+
+            ImGui.EndTabBar();
+
+            ImGui.EndChild();
         }
-        UIHelper.Tooltip("View a text report that details the differences between the current project params and the vanilla params.");
+    }
 
-        if (ImGui.MenuItem("Toggle vanilla param column"))
+    public void ComparisonReportTab()
+    {
+        if (ImGui.BeginTabItem($"Comparison Report"))
         {
-            CFG.Current.Param_ShowVanillaColumn = !CFG.Current.Param_ShowVanillaColumn;
+            DisplayComparisonReport(false);
+
+            ImGui.EndTabItem();
         }
+    }
 
-        if (ImGui.MenuItem("Clear current row comparison"))
+    public void ParamComparisonTab()
+    {
+        var projectList = Smithbox.Orchestrator.Projects;
+        var paramData = Project.Handler.ParamData;
+
+        if (ImGui.BeginTabItem($"Param Comparison"))
         {
-            if (curView != null && curView.Selection.GetCompareRow() != null)
-            {
-                curView.Selection.SetCompareRow(null);
-            }
-        }
+            UIHelper.SimpleHeader("Loaded Projects", "There projects have been loaded and are displayed in the comparison column(s).");
 
-        if (ImGui.MenuItem("Clear current field comparison"))
-        {
-            if (curView != null && curView.Selection.GetCompareCol() != null)
-            {
-                curView.Selection.SetCompareCol(null);
-            }
-        }
+            ImGui.BeginChild("loadedProjectsSection", new Vector2(0, 100), ImGuiChildFlags.Borders);
 
-        if (ImGui.MenuItem("Clear all param comparisons"))
-        {
-            if (Project.Handler.ParamData.AuxBanks.Count > 0)
-            {
-                Project.Handler.ParamData.AuxBanks = new Dictionary<string, ParamBank>();
-            }
-        }
-
-        if (ImGui.BeginMenu("Select project for param comparison"))
-        {
-            var projectList = Smithbox.Orchestrator.Projects;
-
-            // Display compatible projects
             foreach (var proj in projectList)
             {
                 if (proj == null)
                     continue;
 
-                if (proj.Descriptor.ProjectType != Project.Descriptor.ProjectType)
+                if (proj.Descriptor.ProjectType != Editor.Project.Descriptor.ProjectType)
                     continue;
 
-                if (proj == Smithbox.Orchestrator.SelectedProject)
+                if (proj == Editor.Project)
+                    continue;
+
+                if (!paramData.AuxBanks.ContainsKey(proj.Descriptor.ProjectName))
                     continue;
 
                 var isSelected = false;
 
+                if (TargetLoadedProject != null)
+                {
+                    isSelected = TargetLoadedProject.Descriptor.ProjectName == proj.Descriptor.ProjectName;
+                }
+
                 if (ImGui.Selectable($"{proj.Descriptor.ProjectName}", isSelected))
                 {
-                    LoadComparisonParams(proj);
+                    TargetLoadedProject = proj;
+                }
+
+                if (isSelected)
+                {
+                    if (ImGui.BeginPopupContextItem($"context_{proj.Descriptor.ProjectGUID}"))
+                    {
+                        if (ImGui.Selectable("Unload"))
+                        {
+                            TargetParamComparison = TargetLoadedProject.Descriptor.ProjectName;
+                            ClearTargetParamComparison();
+                        }
+
+                        ImGui.EndPopup();
+                    }
                 }
             }
+
+            ImGui.EndChild();
+
+            UIHelper.Spacer();
+            UIHelper.SimpleHeader("Avaliable Projects", "These projects can be loaded.");
+
+            ImGui.BeginChild("avaliableProjectsSection", new Vector2(0, 200), ImGuiChildFlags.Borders);
+
+            foreach (var proj in projectList)
+            {
+                if (proj == null)
+                    continue;
+
+                if (proj.Descriptor.ProjectType != Editor.Project.Descriptor.ProjectType)
+                    continue;
+
+                if (proj == Editor.Project)
+                    continue;
+
+                var isSelected = false;
+
+                if (TargetProject != null)
+                {
+                    isSelected = TargetProject.Descriptor.ProjectName == proj.Descriptor.ProjectName;
+                }
+
+                if (ImGui.Selectable($"{proj.Descriptor.ProjectName}", isSelected))
+                {
+                    TargetProject = proj;
+                    TargetProjectName = proj.Descriptor.ProjectName;
+                    LoadParamBank = true;
+                }
+            }
+
+            ImGui.EndChild();
+
+            UIHelper.SetInputWidth();
+
+            UIHelper.Spacer();
+            UIHelper.SimpleHeader("Options", "");
+            ImGui.Checkbox("Import Row Names on Report Generation for Primary Bank", ref ImportNamesOnGeneration_Primary);
+            ImGui.Checkbox("Import Row Names on Report Generation for Comparison Bank", ref ImportNamesOnGeneration_Compare);
+
+            UIHelper.Spacer();
+            UIHelper.SimpleHeader("Actions", "");
+
+            UIHelper.MultiButtonInput("paramComparisonActions",
+                "clearParamComparisons", "Clear All", "", ClearAllParamComparisons);
+
+            ImGui.EndTabItem();
+        }
+    }
+
+    public void RowComparisonTab()
+    {
+        var activeView = Editor.ViewHandler.ActiveView;
+
+        var compareRow = activeView.Selection.GetCompareRow();
+
+        if (ImGui.BeginTabItem($"Row Comparison"))
+        {
+            UIHelper.SimpleHeader("Current Row Comparison", "");
+
+            if (compareRow == null)
+            {
+                UIHelper.WrappedText("No row comparison target set.");
+            }
+            else
+            {
+                UIHelper.WrappedText($"{compareRow.ID} {compareRow.Name}");
+            }
+
+            UIHelper.Spacer();
+            UIHelper.SimpleHeader("Actions", "");
+
+            UIHelper.MultiButtonInput("rowComparisonActions",
+                "clearRowComparison", "Clear", "", ClearRowComparison);
+
+            ImGui.EndTabItem();
+        }
+    }
+
+    public void FieldComparisonTab()
+    {
+        var activeView = Editor.ViewHandler.ActiveView;
+
+        var compareCol = activeView.Selection.GetCompareCol();
+
+        if (ImGui.BeginTabItem($"Field Comparison"))
+        {
+            UIHelper.SimpleHeader("Current Field Comparison", "");
+
+            if (compareCol == null)
+            {
+                UIHelper.WrappedText("No field comparison target set.");
+            }
+            else
+            {
+                UIHelper.WrappedText($"{compareCol.Def.InternalName}");
+            }
+
+            UIHelper.Spacer();
+            UIHelper.SimpleHeader("Actions", "");
+
+            UIHelper.MultiButtonInput("fieldComparisonActions",
+                "clearFieldComparison", "Clear", "", ClearFieldComparison);
+
+            ImGui.EndTabItem();
+        }
+    }
+
+    public void DisplayDropdown()
+    {
+        var activeView = Editor.ViewHandler.ActiveView;
+        var paramData = Project.Handler.ParamData;
+
+        // Comparison Report
+        if (ImGui.BeginMenu("Comparison Report"))
+        {
+            if (ImGui.MenuItem("View"))
+            {
+                ViewReport();
+            }
+            UIHelper.Tooltip("View a text report that details the differences between the current project params and the vanilla params.");
 
             ImGui.EndMenu();
         }
 
-        ImGui.Separator();
-
-        var paramData = Project.Handler.ParamData;
-
-        if (ImGui.BeginMenu("Clear param comparison...", paramData.AuxBanks.Count > 0))
+        // Param Comparison
+        if (ImGui.BeginMenu("Param Comparison"))
         {
-            for (var i = 0; i < paramData.AuxBanks.Count; i++)
+            if (ImGui.BeginMenu("Select project for param comparison"))
             {
-                KeyValuePair<string, ParamBank> pb = paramData.AuxBanks.ElementAt(i);
-                if (ImGui.MenuItem(pb.Key))
+                var projectList = Smithbox.Orchestrator.Projects;
+
+                // Display compatible projects
+                foreach (var proj in projectList)
                 {
-                    paramData.AuxBanks.Remove(pb.Key);
-                    break;
+                    if (proj == null)
+                        continue;
+
+                    if (proj.Descriptor.ProjectType != Project.Descriptor.ProjectType)
+                        continue;
+
+                    if (proj == Smithbox.Orchestrator.SelectedProject)
+                        continue;
+
+                    var isSelected = false;
+
+                    if (ImGui.Selectable($"{proj.Descriptor.ProjectName}", isSelected))
+                    {
+                        TargetProject = proj;
+                        LoadComparisonParams();
+                    }
                 }
+
+                ImGui.EndMenu();
             }
+
+            if (ImGui.BeginMenu("Clear specific param comparison", paramData.AuxBanks.Count > 0))
+            {
+                for (var i = 0; i < paramData.AuxBanks.Count; i++)
+                {
+                    KeyValuePair<string, ParamBank> pb = paramData.AuxBanks.ElementAt(i);
+
+                    if (ImGui.MenuItem(pb.Key))
+                    {
+                        TargetParamComparison = pb.Key;
+                        ClearTargetParamComparison();
+                        break;
+                    }
+                }
+
+                ImGui.EndMenu();
+            }
+
+            if (ImGui.MenuItem("Clear all"))
+            {
+                ClearAllParamComparisons();
+            }
+            UIHelper.Tooltip("Unloads all comparison param banks.");
+
+            ImGui.EndMenu();
+        }
+
+        // Row Comparison
+        if (ImGui.BeginMenu("Row Comparison"))
+        {
+            if (ImGui.MenuItem("Clear"))
+            {
+                ClearRowComparison();
+            }
+            UIHelper.Tooltip("Clears the current row comparison target.");
+
+            ImGui.EndMenu();
+        }
+
+        // Field Comparison
+        if (ImGui.BeginMenu("Field Comparison"))
+        {
+            if (ImGui.MenuItem("Clear"))
+            {
+                ClearFieldComparison();
+            }
+            UIHelper.Tooltip("Clears the current field comparison target.");
 
             ImGui.EndMenu();
         }
     }
 
-    public async void LoadComparisonParams(ProjectEntry proj)
+    public void ClearTargetParamComparison()
     {
-        await Project.Handler.ParamData.SetupAuxBank(proj, true);
+        var paramData = Project.Handler.ParamData;
+
+        if (TargetParamComparison != "")
+        {
+            if (paramData.AuxBanks.ContainsKey(TargetParamComparison))
+            {
+                paramData.AuxBanks.Remove(TargetParamComparison);
+            }
+        }
+    }
+
+    public void ClearAllParamComparisons()
+    {
+        if (Project.Handler.ParamData.AuxBanks.Count > 0)
+        {
+            Project.Handler.ParamData.AuxBanks = new Dictionary<string, ParamBank>();
+        }
+    }
+
+    public void ClearRowComparison()
+    {
+        var activeView = Editor.ViewHandler.ActiveView;
+
+        if (activeView != null && activeView.Selection.GetCompareRow() != null)
+        {
+            activeView.Selection.SetCompareRow(null);
+        }
+    }
+
+    public void ClearFieldComparison()
+    {
+        var activeView = Editor.ViewHandler.ActiveView;
+
+        if (activeView != null && activeView.Selection.GetCompareCol() != null)
+        {
+            activeView.Selection.SetCompareCol(null);
+        }
+    }
+
+    public async void LoadComparisonParams()
+    {
+        await Project.Handler.ParamData.SetupAuxBank(TargetProject, true);
     }
 
     public void ViewReport()
@@ -298,12 +553,7 @@ public class ParamComparisonTools
         _reportBuilder.AppendLine(text);
     }
 
-    public ProjectEntry TargetProject;
-    public string TargetProjectName = "";
-    public bool AllowGenerate = true;
-    public bool LoadAuxBank = false;
-
-    public void Display()
+    public void DisplayComparisonReport(bool isPopup = true)
     {
         var paramData = Editor.Project.Handler.ParamData;
 
@@ -336,6 +586,7 @@ public class ParamComparisonTools
 
         var projectList = Smithbox.Orchestrator.Projects;
 
+        UIHelper.Spacer();
         UIHelper.SimpleHeader("Project to Compare", "");
 
         UIHelper.SetInputWidth();
@@ -441,10 +692,19 @@ public class ParamComparisonTools
         UIHelper.Spacer();
         UIHelper.SimpleHeader("Actions", "");
 
-        UIHelper.MultiButtonInput("reportActions",
-            "generateReport", "Generate Report", "", StartReportGeneration,
-            "copyReport", "Copy Report to Clipboard", "", CopyToClipboard,
-            "closeReport", "Close Report", "", CloseReport);
+        if (isPopup)
+        {
+            UIHelper.MultiButtonInput("reportActions",
+                "generateReport", "Generate Report", "", StartReportGeneration,
+                "copyReport", "Copy Report to Clipboard", "", CopyToClipboard,
+                "closeReport", "Close Report", "", CloseReport);
+        }
+        else
+        {
+            UIHelper.MultiButtonInput("reportActions",
+                "generateReport", "Generate Report", "", StartReportGeneration,
+                "copyReport", "Copy Report to Clipboard", "", CopyToClipboard);
+        }
 
         if (IsReportGenerated)
         {
@@ -500,7 +760,7 @@ public class ParamComparisonTools
         if (ImGui.BeginPopupModal("Param Comparison Report", ref ShowReportModal, ImGuiWindowFlags.NoTitleBar | ImGuiWindowFlags.AlwaysAutoResize))
         {
             ImGui.BeginChild("ReportSection", size, ImGuiChildFlags.Borders);
-            Display();
+            DisplayComparisonReport();
             ImGui.EndChild();
 
             ImGui.EndPopup();

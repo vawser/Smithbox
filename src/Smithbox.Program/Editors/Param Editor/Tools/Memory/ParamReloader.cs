@@ -96,26 +96,18 @@ public class ParamReloader
                 UIHelper.WrappedText("WARNING: Param Reloader only works for existing row entries.\nGame must be restarted for new rows and modified row IDs.");
                 UIHelper.WrappedText("");
 
-                if (ImGui.Button("Reload Current Param"))
-                {
-                    ReloadCurrentParam();
-                }
-                UIHelper.Tooltip($"{InputManager.GetHint(KeybindID.ParamEditor_Reload_Selected_Param)}");
+                UIHelper.SimpleHeader("Actions", "");
 
-                ImGui.SameLine();
-
-                if (ImGui.Button("Reload All Params"))
-                {
-                    ReloadAllParams();
-                }
-                UIHelper.Tooltip($"{InputManager.GetHint(KeybindID.ParamEditor_Reload_All_Params)}");
+                UIHelper.MultiButtonInput("reloaderActions",
+                    "reloadCurrent", "Reload Currently Selected Param", $"{InputManager.GetHint(KeybindID.ParamEditor_Reload_Selected_Param)}", ReloadCurrentParam,
+                    "reloadAll", "Reload All Params", $"{InputManager.GetHint(KeybindID.ParamEditor_Reload_All_Params)}", ReloadAllParams);
 
                 ImGui.EndChild();
             }
         }
     }
 
-    public void DisplayMenuOptions()
+    public void DisplayDropdown()
     {
         if (ParamReloadSupported(Project.Descriptor.ProjectType))
         {

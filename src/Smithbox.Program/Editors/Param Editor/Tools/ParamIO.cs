@@ -13,10 +13,14 @@ namespace StudioCore.Editors.ParamEditor;
 
 public class ParamIO
 {
-    public static string GenerateColumnLabels(ProjectEntry project, Param param, char separator)
+    private static readonly StringBuilder _reportBuilder = new StringBuilder();
+
+    public static string GenerateCSV(ProjectEntry project, IReadOnlyList<Param.Row> rows, Param param, char separator)
     {
-        var str = "";
-        str += $@"ID{separator}Name{separator}";
+        _reportBuilder.Clear();
+
+        // Columns
+        _reportBuilder.AppendLine($@"ID{separator}Name{separator}");
 
         var paramdef = param.AppliedParamdef;
 
@@ -24,56 +28,53 @@ public class ParamIO
         {
             foreach (PARAMDEF.Field f in paramdef.Fields.FindAll(f => f.IsValidForRegulationVersion(project.Handler.ParamData.PrimaryBank.ParamVersion)))
             {
-                str += $@"{f.InternalName}{separator}";
+                _reportBuilder.Append($@"{f.InternalName}{separator}");
             }
         }
 
-        return str + "\n";
-    }
+        _reportBuilder.Append("\n");
 
-    public static string GenerateCSV(ProjectEntry project, IReadOnlyList<Param.Row> rows, Param param, char separator)
-    {
-        var gen = "";
-        gen += GenerateColumnLabels(project, param, separator);
-
+        // Data
         foreach (Param.Row row in rows)
         {
             var name = row.Name == null ? "null" : row.Name.Replace(separator, '-');
-            var rowgen = $@"{row.ID}{separator}{name}";
+            _reportBuilder.Append($@"{row.ID}{separator}{name}");
 
             foreach (Param.Column cell in row.Columns)
             {
-                rowgen += $@"{separator}{row[cell].Value.ToParamEditorString()}";
+                _reportBuilder.Append($@"{separator}{row[cell].Value.ToParamEditorString()}");
             }
 
-            gen += rowgen + "\n";
+            _reportBuilder.Append("\n");
         }
 
-        return gen;
+        return _reportBuilder.ToString();
     }
 
     public static string GenerateSingleCSV(IReadOnlyList<Param.Row> rows, Param param, string field, char separator)
     {
-        var gen = $@"ID{separator}{field}" + "\n";
+        _reportBuilder.Clear();
+
+        _reportBuilder.Append($@"ID{separator}{field}" + "\n");
+
         foreach (Param.Row row in rows)
         {
-            string rowgen;
             if (field.Equals("Name"))
             {
                 var name = row.Name == null ? "null" : row.Name.Replace(separator, '-');
-                rowgen = $@"{row.ID}{separator}{name}";
+                _reportBuilder.Append($@"{row.ID}{separator}{name}");
             }
             else
             {
                 var fieldValue = ParamUtils.GetFieldExportString(row, field);
 
-                rowgen = $@"{row.ID}{separator}{fieldValue}";
+                _reportBuilder.Append($@"{row.ID}{separator}{fieldValue}");
             }
 
-            gen += rowgen + "\n";
+            _reportBuilder.Append("\n");
         }
 
-        return gen;
+        return _reportBuilder.ToString();
     }
 
     public static (string, CompoundAction) ApplyCSV(ProjectEntry project, ParamBank bank, string csvString, string param,

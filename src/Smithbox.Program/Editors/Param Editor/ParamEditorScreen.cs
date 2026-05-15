@@ -70,10 +70,6 @@ public class ParamEditorScreen : EditorScreen
             FileMenu();
             EditMenu();
             ViewMenu();
-            MemoryMenu();
-            NamesMenu();
-            DataMenu();
-            ComparisonMenu();
 
             ToolMenu.DisplayMenu();
             ToolMenu.ParamUpgrader.ParamUpgradeWarning();
@@ -90,7 +86,7 @@ public class ParamEditorScreen : EditorScreen
 
         PasteMenu.Display();
         StatisticsMenu.Display();
-        ToolMenu.ParamComparisonTools.HandleReportModal();
+        ToolMenu.ParamComparisonTool.HandleReportModal();
 
         if (CFG.Current.ParamEditor_Enable_Compact_Mode)
         {
@@ -300,68 +296,6 @@ public class ParamEditorScreen : EditorScreen
             ImGui.Separator();
 
             ViewHandler.DisplayMenu();
-
-            ImGui.EndMenu();
-        }
-    }
-
-    public void DataMenu()
-    {
-        var activeParamExists = ViewHandler.ActiveView.Selection.ActiveParamExists();
-
-        if (ImGui.BeginMenu("Data"))
-        {
-            if (ImGui.BeginMenu("Export CSV", activeParamExists))
-            {
-                ParamCsvTools.ExportMenu(ViewHandler.ActiveView);
-
-                ImGui.EndMenu();
-            }
-
-            if (ImGui.BeginMenu("Import CSV", activeParamExists))
-            {
-                ParamCsvTools.ImportMenu(ViewHandler.ActiveView);
-
-                ImGui.EndMenu();
-            }
-
-            if (ImGui.BeginMenu("CSV Settings", activeParamExists))
-            {
-                ParamCsvTools.SettingMenu(ViewHandler.ActiveView);
-
-                ImGui.EndMenu();
-            }
-
-            ImGui.EndMenu();
-        }
-    }
-
-    public void ComparisonMenu()
-    {
-        if (ImGui.BeginMenu("Comparison"))
-        {
-            ToolMenu.ParamComparisonTools.ComparisonMenu(ViewHandler.ActiveView);
-
-            ImGui.EndMenu();
-        }
-    }
-
-    public void NamesMenu()
-    {
-        if (ImGui.BeginMenu("Row Names"))
-        {
-            NameImporterMenu.Display(Project);
-            NameExporterMenu.Display(Project);
-
-            ImGui.EndMenu();
-        }
-    }
-
-    public void MemoryMenu()
-    {
-        if (ImGui.BeginMenu("Game"))
-        {
-            ToolMenu.ParamReloader.DisplayMenuOptions();
 
             ImGui.EndMenu();
         }

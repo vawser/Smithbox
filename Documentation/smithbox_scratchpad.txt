@@ -9,6 +9,7 @@
 #---------------------
 - General
  - Add Basic Usage guide to the Tool window for each editor that covers basic functionality, shortcuts and small elements a user might miss.
+ - Add tool dropdown only features to the Tool windows of their respective editors
 
 - Model Editor
  - Rendering experiment (TinyFFR)

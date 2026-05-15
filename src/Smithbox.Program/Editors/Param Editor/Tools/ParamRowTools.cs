@@ -133,37 +133,4 @@ public static class ParamRowTools
     }
 
     #endregion
-
-    #region Sort Rows
-    public static void SortRows(ParamEditorView activeView)
-    {
-        if (activeView.Selection.ActiveParamExists())
-        {
-            var action = SortRowsAction(
-                activeView,
-                activeView.GetPrimaryBank(),
-                activeView.Selection.GetActiveParam());
-
-            activeView.Editor.ActionManager.ExecuteAction(action);
-
-            Smithbox.Log(typeof(ParamRowTools), $"Param rows sorted for " +
-                $"{activeView.Selection.GetActiveParam()}");
-        }
-    }
-
-    public static ReorderRowAction SortRowsAction(ParamEditorView curView, ParamBank bank, string paramName)
-    {
-        Param param = bank.Params[paramName];
-
-        // OrderBy is a stable sort: rows that share the same ID retain their
-        // original relative order, so no rows are merged or lost.
-        List<Param.Row> sortedRows = param.Rows
-            .OrderBy(r => r.ID)
-            .ToList();
-
-        // ReorderRowAction replaces the entire row list in one undoable step.
-        // Pass -1 as the drop-target index to signal a full replacement.
-        return new ReorderRowAction(param, sortedRows, fullReplace: true);
-    }
-    #endregion
 }

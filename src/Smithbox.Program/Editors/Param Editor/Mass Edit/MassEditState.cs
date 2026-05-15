@@ -25,8 +25,6 @@ public class MassEditState
     public string MassEditOutput_CSV = "";
     public string MassEdit_SingleField_CSV = "";
 
-    public bool MassEdit_CSV_AppendOnly;
-    public bool MassEdit_CSV_ReplaceRows;
     public string MassEditResult_CSV = "";
 
     public bool DisplayMassEditPopup;

@@ -37,7 +37,7 @@ public class MapContentView
     {
         UIHelper.SimpleHeader("Contents", "");
 
-        ImGui.BeginChild("MapContents", new System.Numerics.Vector2(width, height), ImGuiChildFlags.Borders);
+        ImGui.BeginChild("MapContents", new Vector2(width, height), ImGuiChildFlags.Borders);
 
         if (View.Selection.SelectedMapContainer != null)
         {

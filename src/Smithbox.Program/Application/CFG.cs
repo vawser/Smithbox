@@ -691,6 +691,10 @@ public class CFG
     public bool Interface_ParamEditor_ToolWindow = true;
 
     // Tools
+    public bool ParamEditor_Show_Tool_Sort_Rows = true;
+    public bool ParamEditor_Show_Tool_Row_Names = true;
+    public bool ParamEditor_Show_Tool_Data_Converter = true;
+    public bool ParamEditor_Show_Tool_Data_Comparison = true;
     public bool ParamEditor_Show_Tool_Mass_Edit = true;
     public bool ParamEditor_Show_Tool_Data_Finders = true;
     public bool ParamEditor_Show_Tool_Param_List_Categories = true;
@@ -856,6 +860,7 @@ public class CFG
 
     // Tools
     public bool Interface_GparamEditor_ToolWindow = true;
+    public bool Interface_GparamEditor_Tool_DataTransfer = true;
     public bool Interface_GparamEditor_Tool_QuickEdit = true;
     public bool Interface_GparamEditor_Tool_Finder = true;
 

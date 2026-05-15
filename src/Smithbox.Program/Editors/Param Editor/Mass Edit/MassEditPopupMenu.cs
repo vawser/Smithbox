@@ -140,12 +140,12 @@ public class MassEditPopupMenu
 
         UIHelper.Spacer();
         UIHelper.SimpleHeader("Options", "");
-        ImGui.Checkbox("Append Mode", ref Parent.State.MassEdit_CSV_AppendOnly);
+        ImGui.Checkbox("Append Mode", ref CFG.Current.Param_CSV_Append_Only);
         UIHelper.Tooltip("Append new rows instead of ID based insertion (this will create out-of-order IDs)");
 
-        if (Parent.State.MassEdit_CSV_AppendOnly)
+        if (CFG.Current.Param_CSV_Append_Only)
         {
-            ImGui.Checkbox("Replace Existing Rows", ref Parent.State.MassEdit_CSV_ReplaceRows);
+            ImGui.Checkbox("Replace Existing Rows", ref CFG.Current.Param_CSV_Replace_Row);
             UIHelper.Tooltip("Replace existing rows instead of updating them (they will be moved to the end)");
         }
 
@@ -191,8 +191,8 @@ public class MassEditPopupMenu
         var delimiter = CFG.Current.Param_Export_Delimiter[0];
 
         (var result, CompoundAction action) = ParamIO.ApplyCSV(Parent.Project, Parent.CurrentView.GetPrimaryBank(),
-                Parent.State.MassEditInput_CSV, Parent.CurrentView.Selection.GetActiveParam(), Parent.State.MassEdit_CSV_AppendOnly,
-                Parent.State.MassEdit_CSV_AppendOnly && Parent.State.MassEdit_CSV_ReplaceRows, delimiter);
+                Parent.State.MassEditInput_CSV, Parent.CurrentView.Selection.GetActiveParam(), CFG.Current.Param_CSV_Append_Only,
+                CFG.Current.Param_CSV_Append_Only && CFG.Current.Param_CSV_Replace_Row, delimiter);
 
         if (action != null)
         {
