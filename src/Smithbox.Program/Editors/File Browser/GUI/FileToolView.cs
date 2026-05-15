@@ -51,7 +51,7 @@ public class FileToolView
 
         if (CFG.Current.Interface_FileBrowser_Tool_GameUnpacker)
         {
-            if (ImGui.CollapsingHeader("Unpacker"))
+            if (ImGui.CollapsingHeader("File Unpacker"))
             {
                 UnpackTool.Display();
             }
@@ -59,7 +59,7 @@ public class FileToolView
 
         if (CFG.Current.Interface_FileBrowser_Tool_FileExtract)
         {
-            if (ImGui.CollapsingHeader("Extract File"))
+            if (ImGui.CollapsingHeader("File Export"))
             {
                 ExtractTool.Display();
             }

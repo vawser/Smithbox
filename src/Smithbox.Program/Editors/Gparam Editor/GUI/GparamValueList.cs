@@ -414,7 +414,7 @@ public class GparamValueList
                 // Import
                 if (ImGui.Selectable("Import"))
                 {
-                    GparamDataImport.ImportValue(Project, Parent, fileEntry, data, group, field, value, overwrite);
+                    Parent.Editor.ToolView.DataTransferTool.ImportValue(Project, Parent, fileEntry, data, group, field, value, overwrite);
                 }
                 UIHelper.Tooltip("Import a GPARAM Value json to overwrite this entry.");
 
@@ -426,7 +426,7 @@ public class GparamValueList
 
                     if (ImGui.Selectable("Export File"))
                     {
-                        GparamDataExport.ExportValue(fileEntry, data, group, field, value, OverrideFileName);
+                        Parent.Editor.ToolView.DataTransferTool.ExportValueFile(fileEntry, data, group, field, value, OverrideFileName);
                     }
 
                     ImGui.EndMenu();

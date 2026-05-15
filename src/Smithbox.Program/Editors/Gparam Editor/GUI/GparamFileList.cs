@@ -197,7 +197,7 @@ public class GparamFileList
 
             if (ImGui.Selectable("Import"))
             {
-                GparamDataImport.ImportGPARAM(Project, Parent, fileEntry, curGparam);
+                Parent.Editor.ToolView.DataTransferTool.ImportGPARAM(Project, Parent, fileEntry, curGparam);
             }
             UIHelper.Tooltip("Import a GPARAM json to overwrite this entry.");
 
@@ -208,7 +208,7 @@ public class GparamFileList
 
                 if (ImGui.Selectable("Export File"))
                 {
-                    GparamDataExport.ExportGPARAM(fileEntry, curGparam, OverrideFileName);
+                    Parent.Editor.ToolView.DataTransferTool.ExportGparamFile(fileEntry, curGparam, OverrideFileName);
                 }
 
                 ImGui.EndMenu();

@@ -12,17 +12,28 @@ public class GparamToolView
 
     private GparamDataFinder DataFinder;
 
+    public GparamDataTransferTool DataTransferTool;
+
     public GparamToolView(GparamEditorScreen editor, ProjectEntry project)
     {
         Editor = editor;
         Project = project;
 
         DataFinder = new(editor, project);
+
+        DataTransferTool = new(editor, project);
     }
 
-    /// <summary>
-    /// The main UI for this view
-    /// </summary>
+    public void DisplayDropdown()
+    {
+        if (ImGui.BeginMenu("Tools"))
+        {
+            DataTransferTool.DisplayDropdown();
+
+            ImGui.EndMenu();
+        }
+    }
+
     public void Display()
     {
         if (!CFG.Current.Interface_GparamEditor_ToolWindow)
@@ -45,6 +56,22 @@ public class GparamToolView
 
             if (activeView != null)
             {
+                if (CFG.Current.Interface_GparamEditor_Tool_DataTransfer)
+                {
+                    if (ImGui.CollapsingHeader("Data Transfer"))
+                    {
+                        DataTransferTool.Display();
+                    }
+                }
+
+                if (CFG.Current.Interface_GparamEditor_Tool_Finder)
+                {
+                    if (ImGui.CollapsingHeader("Data Finder"))
+                    {
+                        DataFinder.Display();
+                    }
+                }
+
                 if (CFG.Current.Interface_GparamEditor_Tool_QuickEdit)
                 {
                     if (ImGui.CollapsingHeader("Quick Edit"))
@@ -58,13 +85,6 @@ public class GparamToolView
                     }
                 }
 
-                if (CFG.Current.Interface_GparamEditor_Tool_Finder)
-                {
-                    if (ImGui.CollapsingHeader("Data Finder"))
-                    {
-                        DataFinder.Display();
-                    }
-                }
             }
 
         }

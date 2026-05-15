@@ -818,6 +818,8 @@ public class CFG
     public bool Interface_TextEditor_ToolWindow = true;
 
     // Tools
+    public bool Interface_TextEditor_Tool_DataTransfer = true;
+    public bool Interface_TextEditor_Tool_LanguageSync = true;
     public bool Interface_TextEditor_Tool_TextSearch = true;
     public bool Interface_TextEditor_Tool_TextReplacement = true;
     public bool Interface_TextEditor_Tool_TextMerge = true;

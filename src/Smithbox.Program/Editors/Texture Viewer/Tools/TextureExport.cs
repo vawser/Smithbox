@@ -25,7 +25,7 @@ public class TextureExport
     {
         var windowWidth = ImGui.GetWindowWidth();
 
-        if (ImGui.CollapsingHeader("Export Texture"))
+        if (ImGui.CollapsingHeader("Data Export"))
         {
             ImGui.BeginChild("TextureExportToolSection", ImGuiChildFlags.Borders);
 

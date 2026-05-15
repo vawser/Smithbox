@@ -57,7 +57,8 @@ public class GparamEditorScreen : EditorScreen
             FileMenu();
             EditMenu();
             ViewMenu();
-            DataMenu();
+
+            ToolView.DisplayDropdown();
 
             ImGui.EndMenuBar();
         }
@@ -226,17 +227,6 @@ public class GparamEditorScreen : EditorScreen
             ImGui.Separator();
 
             ViewHandler.DisplayMenu();
-
-            ImGui.EndMenu();
-        }
-    }
-
-    public void DataMenu()
-    {
-        if (ImGui.BeginMenu("Data"))
-        {
-            GparamDataImport.DisplayMenu(ViewHandler.ActiveView);
-            GparamDataExport.DisplayMenu(ViewHandler.ActiveView);
 
             ImGui.EndMenu();
         }

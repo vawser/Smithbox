@@ -197,7 +197,7 @@ public class GparamGroupList
 
             if (ImGui.Selectable("Import"))
             {
-                GparamDataImport.ImportGroup(Project, Parent, fileEntry, data, group);
+                Parent.Editor.ToolView.DataTransferTool.ImportGroup(Project, Parent, fileEntry, data, group);
             }
             UIHelper.Tooltip("Import a GPARAM Group json to overwrite this entry.");
 
@@ -208,7 +208,7 @@ public class GparamGroupList
 
                 if (ImGui.Selectable("Export File"))
                 {
-                    GparamDataExport.ExportGroup(fileEntry, data, group, OverrideFileName);
+                    Parent.Editor.ToolView.DataTransferTool.ExportGroupFile(fileEntry, data, group, OverrideFileName);
                 }
 
                 ImGui.EndMenu();

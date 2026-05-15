@@ -9,6 +9,7 @@ using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Numerics;
@@ -413,7 +414,8 @@ public class ParamDataTransferTool
             UIHelper.SinglelineTextInput("csvExportDir", ref ExportDirectory);
 
             UIHelper.MultiButtonInput("csvExportDir",
-                "setDirectory", "Set Export Directory", "", SetExportDirectory);
+                "setDirectory", "Set Export Directory", "", SetExportDirectory,
+                "openDirectory", "Open Export Directory", "", OpenExportDirectory);
 
             UIHelper.Spacer();
             UIHelper.SimpleHeader("Export Filename", "The filename to export the CSV data under (if blank the param name is used)");
@@ -459,6 +461,11 @@ public class ParamDataTransferTool
         {
             ExportDirectory = path;
         }
+    }
+
+    public void OpenExportDirectory()
+    {
+        Process.Start("explorer.exe", ExportDirectory);
     }
 
     public void CopyOutputToClipboard()
