@@ -7,6 +7,7 @@ using StudioCore.Logger;
 using StudioCore.Utilities;
 using System;
 using System.Numerics;
+using static HKLib.hk2018.hkSerialize.CompatTypeParentInfo;
 
 namespace StudioCore.Editors.TextEditor;
 
@@ -70,6 +71,8 @@ public class TextEditorScreen : EditorScreen
         {
             ToolView.Display();
         }
+
+        ToolView.LanguageSyncTool.OnGui();
     }
 
     public void FileMenu()
@@ -207,29 +210,25 @@ public class TextEditorScreen : EditorScreen
 
         if (activeView != null)
         {
-            if (ImGui.BeginMenu("Data"))
+            if (ImGui.BeginMenu("Tools"))
             {
-                activeView.FmgImporter.MenubarOptions();
+                if (ImGui.BeginMenu("Data Transfer"))
+                {
+                    activeView.FmgImporter.MenubarOptions();
 
-                ImGui.Separator();
+                    ImGui.Separator();
 
-                activeView.FmgExporter.MenubarOptions();
+                    activeView.FmgExporter.MenubarOptions();
 
-                ImGui.Separator();
+                    ImGui.Separator();
 
-                activeView.FmgDumper.MenubarOptions();
+                    activeView.FmgDumper.MenubarOptions();
+
+                    ImGui.EndMenu();
+                }
 
                 ImGui.EndMenu();
             }
-
-            if (ImGui.BeginMenu("Language Sync"))
-            {
-                activeView.LanguageSync.DisplayMenubarOptions();
-
-                ImGui.EndMenu();
-            }
-
-            activeView.LanguageSync.OnGui();
         }
     }
 

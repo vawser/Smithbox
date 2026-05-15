@@ -22,7 +22,7 @@ public class TextContextMenu
     {
         if (ImGui.BeginPopupContextItem($"FileContext##FileContext{info.FileEntry.Filename}"))
         {
-            Parent.LanguageSync.DisplaySyncOptions();
+            Parent.Editor.ToolView.LanguageSyncTool.DisplaySyncOptions();
 
             Parent.FmgImporter.FileContextMenuOptions();
             Parent.FmgExporter.FileContextMenuOptions();
@@ -39,7 +39,7 @@ public class TextContextMenu
         if (ImGui.BeginPopupContextItem($"FmgContext##FmgContext{fmgInfo.ID}"))
         {
             // TODO: with grouped FMGs, this will only sync the header FMG, not the associated sub-FMGs, should be fixed.
-            Parent.LanguageSync.DisplaySyncOptions(Parent.Selection.SelectedFmgKey);
+            Parent.Editor.ToolView.LanguageSyncTool.DisplaySyncOptions(Parent.Selection.SelectedFmgKey);
 
             Parent.FmgImporter.FmgContextMenuOptions();
             Parent.FmgExporter.FmgContextMenuOptions();

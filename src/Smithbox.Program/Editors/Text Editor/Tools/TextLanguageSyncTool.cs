@@ -1,21 +1,18 @@
 ﻿using Hexa.NET.ImGui;
-using Microsoft.AspNetCore.Components.Forms;
 using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Utilities;
 using System.Collections.Generic;
 using System.Linq;
-using System.Numerics;
 
 namespace StudioCore.Editors.TextEditor;
 
-public class LanguageSync
+public class TextLanguageSyncTool
 {
-    public TextEditorView Parent;
+    public TextEditorScreen Editor;
     public ProjectEntry Project;
 
-    public bool DisplayMassLanguageSyncWindow = false;
     public TextContainerCategory CurrentSourceLanguage = TextContainerCategory.None;
 
     public Dictionary<TextContainerCategory, bool> TargetLanguages = new();
@@ -24,15 +21,103 @@ public class LanguageSync
     public bool DisplayTargetLanguagesSection = true;
     public bool DisplayOptionsLanguagesSection = true;
 
-    public LanguageSync(TextEditorView view, ProjectEntry project)
+    public TextLanguageSyncTool(TextEditorScreen editor, ProjectEntry project)
     {
-        Parent = view;
+        Editor = editor;
         Project = project;
+    }
+
+    public void Display()
+    {
+        ImGui.BeginChild("LanguageSync", ImGuiChildFlags.Borders);
+
+        UIHelper.WrappedText($"Use this to sync changes made to your source language to all other languages instantly.");
+
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader("Source Language", "The language text to apply to the sync process against the target languages.");
+
+        DPI.ApplyInputWidth();
+        if (ImGui.BeginCombo("##sourceLanguagePicker", CurrentSourceLanguage.GetDisplayName()))
+        {
+            foreach (var entry in TextUtils.GetSupportedLanguages(Project))
+            {
+                var curType = (TextContainerCategory)entry;
+
+                if (ImGui.Selectable($"{curType.GetDisplayName()}"))
+                {
+                    CurrentSourceLanguage = curType;
+
+                    // Set the new source language to false in the target language truth list
+                    TargetLanguages[CurrentSourceLanguage] = false;
+                }
+            }
+            ImGui.EndCombo();
+        }
+
+        UIHelper.Spacer();
+        UIHelper.ConditionalHeader("Target Languages", "The target languages to sync to.", ref DisplayTargetLanguagesSection);
+
+        if (CurrentSourceLanguage is TextContainerCategory.None)
+        {
+            UIHelper.WrappedText("Select a source language first.");
+        }
+        else if (DisplayTargetLanguagesSection)
+        {
+            if (SetupTargetLanguageDict)
+            {
+                foreach (var entry in TargetLanguages)
+                {
+                    if (entry.Key == CurrentSourceLanguage)
+                        continue;
+
+                    var curState = entry.Value;
+                    ImGui.Checkbox($"{entry.Key.GetDisplayName()}", ref curState);
+                    if (ImGui.IsItemDeactivatedAfterEdit())
+                    {
+                        TargetLanguages[entry.Key] = curState;
+                    }
+                    UIHelper.Tooltip("If enabled, this language will be synced to.");
+                }
+            }
+        }
+
+        UIHelper.Spacer();
+        UIHelper.ConditionalHeader("Options", "The sync options.", ref DisplayOptionsLanguagesSection);
+
+        if (DisplayOptionsLanguagesSection)
+        {
+            ImGui.Checkbox("Include Default Entries", ref CFG.Current.TextEditor_LanguageSync_IncludeDefaultEntries);
+            UIHelper.Tooltip("If enabled, all entries will be synced.");
+
+            ImGui.Checkbox("Include Added Entries", ref CFG.Current.TextEditor_LanguageSync_IncludeUniqueEntries);
+            UIHelper.Tooltip("If enabled, added entries will be synced.");
+
+            ImGui.Checkbox("Include Modified Entries", ref CFG.Current.TextEditor_LanguageSync_IncludeModifiedEntries);
+            UIHelper.Tooltip("If enabled, modified entries will be synced.");
+
+            ImGui.Checkbox("Apply Prefix to Synced Text", ref CFG.Current.TextEditor_Language_Sync_Apply_Prefix);
+            UIHelper.Tooltip("The prefix to apply to the synced text.");
+        }
+
+        if (CFG.Current.TextEditor_Language_Sync_Apply_Prefix)
+        {
+            UIHelper.Spacer();
+            UIHelper.SimpleHeader("Sync Prefix", "The prefix to apply to text that has been synced.");
+            UIHelper.SinglelineTextInput("##prefixTextInput", ref CFG.Current.TextEditor_Language_Sync_Prefix);
+        }
+
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader("Actions", "");
+
+        UIHelper.MultiButtonInput("languageSyncActions",
+            "syncLanguages", "Sync", "", ApplyMassSync);
+
+        ImGui.EndChild();
     }
 
     public void OnGui()
     {
-        if(!SetupTargetLanguageDict)
+        if (!SetupTargetLanguageDict)
         {
             TargetLanguages = new();
 
@@ -45,135 +130,21 @@ public class LanguageSync
 
             SetupTargetLanguageDict = true;
         }
-
-        DisplayMassSync();
-    }
-
-    public void DisplayMassSync()
-    {
-        var flags = ImGuiWindowFlags.NoResize | ImGuiWindowFlags.AlwaysAutoResize | ImGuiWindowFlags.NoCollapse;
-
-        var viewport = ImGui.GetMainViewport();
-        Vector2 center = viewport.Pos + viewport.Size / 2;
-
-        if (DisplayMassLanguageSyncWindow)
-        {
-            var windowWidth = 500f;
-            ImGui.SetNextWindowPos(center, ImGuiCond.Appearing, new Vector2(0.5f, 0.5f));
-
-            ImGui.PushStyleColor(ImGuiCol.WindowBg, UI.Current.ImGui_MainBg);
-
-            if (ImGui.Begin("Mass Language Sync##massLanguageSyncWindow", ref DisplayMassLanguageSyncWindow, flags))
-            {
-                UIHelper.SimpleHeader("srcLanguageHeader", "Source Language", "The language text to apply to the sync process against the target languages.", UI.Current.ImGui_AliasName_Text);
-
-                DPI.ApplyInputWidth();
-                if (ImGui.BeginCombo("##sourceLanguagePicker", CurrentSourceLanguage.GetDisplayName()))
-                {
-                    foreach (var entry in TextUtils.GetSupportedLanguages(Project))
-                    {
-                        var curType = (TextContainerCategory)entry;
-
-                        if (ImGui.Selectable($"{curType.GetDisplayName()}"))
-                        {
-                            CurrentSourceLanguage = curType;
-
-                            // Set the new source language to false in the target language truth list
-                            TargetLanguages[CurrentSourceLanguage] = false;
-                        }
-                    }
-                    ImGui.EndCombo();
-                }
-
-                UIHelper.ConditionalHeader("targetLanguageHeader", "Target Languages", "The target languages to sync to.", UI.Current.ImGui_AliasName_Text, ref DisplayTargetLanguagesSection);
-
-                if (CurrentSourceLanguage is TextContainerCategory.None)
-                {
-                    UIHelper.WrappedText("Select a source language first.");
-                }
-                else if(DisplayTargetLanguagesSection)
-                {
-                    if (SetupTargetLanguageDict)
-                    {
-                        foreach (var entry in TargetLanguages)
-                        {
-                            if (entry.Key == CurrentSourceLanguage)
-                                continue;
-
-                            var curState = entry.Value;
-                            ImGui.Checkbox($"{entry.Key.GetDisplayName()}", ref curState);
-                            if (ImGui.IsItemDeactivatedAfterEdit())
-                            {
-                                TargetLanguages[entry.Key] = curState;
-                            }
-                            UIHelper.Tooltip("If enabled, this language will be synced to.");
-                        }
-                    }
-                }
-
-                UIHelper.ConditionalHeader("optionsHeader", "Options", "The sync options.", UI.Current.ImGui_AliasName_Text, ref DisplayOptionsLanguagesSection);
-
-                if (DisplayOptionsLanguagesSection)
-                {
-                    ImGui.Checkbox("Include Default Entries", ref CFG.Current.TextEditor_LanguageSync_IncludeDefaultEntries);
-                    UIHelper.Tooltip("If enabled, all entries will be synced.");
-
-                    ImGui.Checkbox("Include Added Entries", ref CFG.Current.TextEditor_LanguageSync_IncludeUniqueEntries);
-                    UIHelper.Tooltip("If enabled, added entries will be synced.");
-
-                    ImGui.Checkbox("Include Modified Entries", ref CFG.Current.TextEditor_LanguageSync_IncludeModifiedEntries);
-                    UIHelper.Tooltip("If enabled, modified entries will be synced.");
-
-                    ImGui.Checkbox("Apply Prefix to Synced Text", ref CFG.Current.TextEditor_Language_Sync_Apply_Prefix);
-                    ImGui.InputText("##prefixTextInput", ref CFG.Current.TextEditor_Language_Sync_Prefix, 255);
-                    UIHelper.Tooltip("The prefix to apply to the synced text.");
-                }
-
-                if (CurrentSourceLanguage is TextContainerCategory.None)
-                {
-                    ImGui.BeginDisabled();
-                    if (ImGui.Button("Sync", DPI.HalfWidthButton(windowWidth, 24)))
-                    {
-                        DisplayMassLanguageSyncWindow = false;
-                    }
-                    ImGui.EndDisabled();
-
-                    ImGui.SameLine();
-
-                    if (ImGui.Button("Close", DPI.HalfWidthButton(windowWidth, 24)))
-                    {
-                        DisplayMassLanguageSyncWindow = false;
-                    }
-                }
-                else
-                {
-                    if(ImGui.Button("Sync", DPI.HalfWidthButton(windowWidth, 24)))
-                    {
-                        ApplyMassSync();
-
-                        DisplayMassLanguageSyncWindow = false;
-                    }
-
-                    ImGui.SameLine();
-
-                    if (ImGui.Button("Close", DPI.HalfWidthButton(windowWidth, 24)))
-                    {
-                        DisplayMassLanguageSyncWindow = false;
-                    }
-                }
-
-                ImGui.End();
-            }
-
-            ImGui.PopStyleColor(1);
-        }
     }
 
     public void ApplyMassSync()
     {
+        if (CurrentSourceLanguage is TextContainerCategory.None)
+        {
+            Smithbox.LogError<TextLanguageSyncTool>("No source language has been selected.");
+            return; 
+        }
+
+        var activeView = Editor.ViewHandler.ActiveView;
+
         List<EditorAction> actions = new();
 
-        foreach(var entry in Project.Handler.TextData.PrimaryBank.Containers)
+        foreach (var entry in Project.Handler.TextData.PrimaryBank.Containers)
         {
             var container = entry.Value;
 
@@ -212,63 +183,27 @@ public class LanguageSync
         }
 
         var compandAction = new CompoundAction(actions);
-        Parent.ActionManager.ExecuteAction(compandAction);
+        activeView.ActionManager.ExecuteAction(compandAction);
     }
 
-    public void DisplayMenubarOptions()
-    {
-        if (ImGui.Selectable("Open Mass Language Sync"))
-        {
-            DisplayMassLanguageSyncWindow = !DisplayMassLanguageSyncWindow;
-        }
-
-        ImGui.Separator();
-
-        if (ImGui.MenuItem("Sync Default Entries"))
-        {
-            CFG.Current.TextEditor_LanguageSync_IncludeDefaultEntries = !CFG.Current.TextEditor_LanguageSync_IncludeDefaultEntries;
-        }
-        UIHelper.Tooltip($"If enabled, non-modified entries will be synced into another language.");
-        UIHelper.ShowActiveStatus(CFG.Current.TextEditor_LanguageSync_IncludeDefaultEntries);
-
-        if (ImGui.MenuItem("Sync Modified Entries"))
-        {
-            CFG.Current.TextEditor_LanguageSync_IncludeModifiedEntries = !CFG.Current.TextEditor_LanguageSync_IncludeModifiedEntries;
-        }
-        UIHelper.Tooltip($"If enabled, modified entries will be synced into another language.");
-        UIHelper.ShowActiveStatus(CFG.Current.TextEditor_LanguageSync_IncludeModifiedEntries);
-
-        if (ImGui.MenuItem("Sync Added Entries"))
-        {
-            CFG.Current.TextEditor_LanguageSync_IncludeUniqueEntries = !CFG.Current.TextEditor_LanguageSync_IncludeUniqueEntries;
-        }
-        UIHelper.Tooltip($"If enabled, added entries will be synced into another language.");
-        UIHelper.ShowActiveStatus(CFG.Current.TextEditor_LanguageSync_IncludeUniqueEntries);
-
-        if (ImGui.MenuItem("Apply Prefix to Added Entries"))
-        {
-            CFG.Current.TextEditor_Language_Sync_Apply_Prefix = !CFG.Current.TextEditor_Language_Sync_Apply_Prefix;
-        }
-        UIHelper.Tooltip($"If enabled, {CFG.Current.TextEditor_Language_Sync_Prefix} will be added to the text contents of any added entries that are synced into another language.");
-        UIHelper.ShowActiveStatus(CFG.Current.TextEditor_Language_Sync_Apply_Prefix);
-    }
-
-    /// <summary>
-    /// Options to sync to
-    /// </summary>
     public void DisplaySyncOptions(int targetFmgId = -1)
     {
-        var syncTargetWrapper = Parent.Selection.SelectedContainerWrapper;
+        var activeView = Editor.ViewHandler.ActiveView;
+
+        var syncTargetWrapper = activeView.Selection.SelectedContainerWrapper;
+
+        if (syncTargetWrapper == null)
+            return;
 
         if (ImGui.BeginMenu("Sync With"))
         {
-            foreach(var entry in Project.Handler.TextData.PrimaryBank.Containers)
+            foreach (var entry in Project.Handler.TextData.PrimaryBank.Containers)
             {
                 var syncSrcWrapper = entry.Value;
 
                 var proceed = false;
 
-                if(syncSrcWrapper.FileEntry.Filename == syncTargetWrapper.FileEntry.Filename &&
+                if (syncSrcWrapper.FileEntry.Filename == syncTargetWrapper.FileEntry.Filename &&
                    syncSrcWrapper.ContainerDisplayCategory != syncTargetWrapper.ContainerDisplayCategory)
                 {
                     proceed = true;
@@ -315,7 +250,7 @@ public class LanguageSync
                         var actions = SyncLanguage(syncTargetWrapper, syncSrcWrapper, targetFmgId);
 
                         var compandAction = new CompoundAction(actions);
-                        Parent.ActionManager.ExecuteAction(compandAction);
+                        activeView.ActionManager.ExecuteAction(compandAction);
                     }
                 }
             }
@@ -325,11 +260,10 @@ public class LanguageSync
         UIHelper.Tooltip("Sync all unique changes from another category into this category.");
     }
 
-    /// <summary>
-    /// Sync currently selected category into chosen category
-    /// </summary>
     private List<EditorAction> SyncLanguage(TextContainerWrapper syncTargetContainerWrapper, TextContainerWrapper syncSrcContainerWrapper, int targetFmgId = -1)
     {
+        var activeView = Editor.ViewHandler.ActiveView;
+
         List<EditorAction> actions = new();
 
         if (syncTargetContainerWrapper.FmgWrappers == null || syncTargetContainerWrapper.FmgWrappers.Count == 0)
@@ -347,7 +281,7 @@ public class LanguageSync
 
             foreach (var syncSrcWrapper in syncSrcContainerWrapper.FmgWrappers)
             {
-                if(targetFmgId == -1 && syncTargetWrapper.ID == syncSrcWrapper.ID 
+                if (targetFmgId == -1 && syncTargetWrapper.ID == syncSrcWrapper.ID
                     || targetFmgId == syncTargetWrapper.ID && targetFmgId == syncSrcWrapper.ID)
                 {
                     // Get the added/modified entries, comparing the sync source with its vanilla version
@@ -355,7 +289,7 @@ public class LanguageSync
 
                     if (vanillaSrcWrapper != null)
                     {
-                        var result = FmgDifferenceFinder.GetFmgDifferenceResult(Parent, vanillaSrcWrapper, syncSrcWrapper);
+                        var result = FmgDifferenceFinder.GetFmgDifferenceResult(activeView, vanillaSrcWrapper, syncSrcWrapper);
 
                         foreach (var syncSrcEntry in syncSrcWrapper.File.Entries)
                         {
@@ -366,18 +300,13 @@ public class LanguageSync
                             {
                                 var newText = result.AdditionCache[syncSrcEntry.ID];
 
-                                if (CFG.Current.TextEditor_Language_Sync_Apply_Prefix)
-                                {
-                                    newText = $"{CFG.Current.TextEditor_Language_Sync_Prefix}{newText}";
-                                }
-
                                 // Guard against multiple usage, if the entry ID already exists, we can assume the addition has already occured
                                 if (!syncTargetWrapper.File.Entries.Any(e => e.ID == syncSrcEntry.ID))
                                 {
                                     var newEntry = new FMG.Entry(syncTargetWrapper.File, syncSrcEntry.ID, newText);
 
                                     actions.Add(
-                                        new AddFmgEntry(Parent, syncTargetContainerWrapper, parentEntry, newEntry, syncSrcEntry.ID));
+                                        new AddFmgEntry(activeView, syncTargetContainerWrapper, parentEntry, newEntry, syncSrcEntry.ID));
                                 }
                                 // If already added, handle like a modified entry
                                 else
@@ -387,7 +316,7 @@ public class LanguageSync
                                     if (targetEntry != null)
                                     {
                                         actions.Add(
-                                            new ChangeFmgEntryText(Parent, syncTargetContainerWrapper, targetEntry, result.AdditionCache[syncSrcEntry.ID]));
+                                            new ChangeFmgEntryText(activeView, syncTargetContainerWrapper, targetEntry, result.AdditionCache[syncSrcEntry.ID], true));
                                     }
                                 }
                             }
@@ -399,7 +328,7 @@ public class LanguageSync
                                 if (targetEntry != null)
                                 {
                                     actions.Add(
-                                        new ChangeFmgEntryText(Parent, syncTargetContainerWrapper, targetEntry, result.ModifiedCache[syncSrcEntry.ID]));
+                                        new ChangeFmgEntryText(activeView, syncTargetContainerWrapper, targetEntry, result.ModifiedCache[syncSrcEntry.ID], true));
                                 }
                             }
                             // Any
@@ -410,7 +339,7 @@ public class LanguageSync
                                 if (targetEntry != null)
                                 {
                                     actions.Add(
-                                        new ChangeFmgEntryText(Parent, syncTargetContainerWrapper, targetEntry, result.DefaultCache[syncSrcEntry.ID]));
+                                        new ChangeFmgEntryText(activeView, syncTargetContainerWrapper, targetEntry, result.DefaultCache[syncSrcEntry.ID], true));
                                 }
                             }
                         }

@@ -1,4 +1,5 @@
 ﻿using SoulsFormats;
+using StudioCore.Application;
 using StudioCore.Editors.Common;
 
 namespace StudioCore.Editors.TextEditor;
@@ -12,18 +13,30 @@ public class ChangeFmgEntryText : EditorAction
 
     private TextContainerWrapper Info;
 
-    public ChangeFmgEntryText(TextEditorView view, TextContainerWrapper info, FMG.Entry entry, string newText)
+    private bool IsSyncAction = false;
+
+    public ChangeFmgEntryText(TextEditorView view, TextContainerWrapper info, FMG.Entry entry, string newText, bool isSyncAction = false)
     {
         Parent = view;
         Info = info;
         Entry = entry;
         NewText = newText;
         OldText = entry.Text;
+
+        IsSyncAction = isSyncAction;
     }
 
     public override ActionEvent Execute()
     {
         Entry.Text = NewText;
+        if (IsSyncAction)
+        {
+            if (CFG.Current.TextEditor_Language_Sync_Apply_Prefix)
+            {
+                Entry.Text = $"{CFG.Current.TextEditor_Language_Sync_Prefix}{NewText}";
+            }
+        }
+
         Info.IsModified = true;
 
         Parent.DifferenceManager.TrackFmgDifferences();

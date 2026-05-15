@@ -40,7 +40,6 @@ public class TextEditorView
 
     public FmgExporter FmgExporter;
     public FmgImporter FmgImporter;
-    public LanguageSync LanguageSync;
     public FmgDumper FmgDumper;
 
     public TextEditorView(TextEditorScreen editor, ProjectEntry project, int imguiId)
@@ -68,7 +67,6 @@ public class TextEditorView
 
         FmgExporter = new FmgExporter(this, Project);
         FmgImporter = new FmgImporter(this, Project);
-        LanguageSync = new LanguageSync(this, Project);
 
         FmgDumper = new FmgDumper(this, Project);
     }

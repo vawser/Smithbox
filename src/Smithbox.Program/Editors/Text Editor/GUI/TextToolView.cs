@@ -14,14 +14,20 @@ public class TextToolView
     public GlobalTextReplacement TextReplace;
     public TextMerge TextMerge;
 
+    public TextLanguageSyncTool LanguageSyncTool;
+    public TextDataTransferTool DataTransferTool;
+
     public TextToolView(TextEditorScreen editor, ProjectEntry project)
     {
         Editor = editor;
         Project = project;
 
-        TextSearch = new GlobalTextSearch(editor, project);
-        TextReplace = new GlobalTextReplacement(editor, project);
-        TextMerge = new TextMerge(editor, project);
+        TextSearch = new(editor, project);
+        TextReplace = new(editor, project);
+        TextMerge = new(editor, project);
+
+        LanguageSyncTool = new(editor, project);
+        DataTransferTool = new(editor, project);
     }
 
     public void Display()
@@ -40,6 +46,24 @@ public class TextToolView
                 ViewMenu();
 
                 ImGui.EndMenuBar();
+            }
+
+            // Data Transfer
+            if (CFG.Current.Interface_TextEditor_Tool_DataTransfer)
+            {
+                if (ImGui.CollapsingHeader("Data Transfer"))
+                {
+                    DataTransferTool.Display();
+                }
+            }
+
+            // Data Transfer
+            if (CFG.Current.Interface_TextEditor_Tool_LanguageSync)
+            {
+                if (ImGui.CollapsingHeader("Language Sync"))
+                {
+                    LanguageSyncTool.Display();
+                }
             }
 
             // Global Text Search
@@ -76,6 +100,18 @@ public class TextToolView
     {
         if (ImGui.BeginMenu("View"))
         {
+            if (ImGui.MenuItem("Data Transfer"))
+            {
+                CFG.Current.Interface_TextEditor_Tool_DataTransfer = !CFG.Current.Interface_TextEditor_Tool_DataTransfer;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_TextEditor_Tool_DataTransfer);
+
+            if (ImGui.MenuItem("Language Sync"))
+            {
+                CFG.Current.Interface_TextEditor_Tool_LanguageSync = !CFG.Current.Interface_TextEditor_Tool_LanguageSync;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_TextEditor_Tool_LanguageSync);
+
             if (ImGui.MenuItem("Text Search"))
             {
                 CFG.Current.Interface_TextEditor_Tool_TextSearch = !CFG.Current.Interface_TextEditor_Tool_TextSearch;
