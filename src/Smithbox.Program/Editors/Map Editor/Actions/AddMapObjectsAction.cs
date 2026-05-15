@@ -54,27 +54,21 @@ public class AddMapObjectsAction : ViewportAction
                 }
 
                 MsbEntity ent = Added[i];
-                MapContainer m;
 
                 AddedMaps.Add(Map);
 
-                if (TargetMap != null)
+                // Prefab-specific
+                if (CFG.Current.Prefab_ApplyUniqueInstanceID)
                 {
-                    m = View.Selection.GetMapContainerFromMapID(TargetMap.Name);
-
-                    // Prefab-specific
-                    if (CFG.Current.Prefab_ApplyUniqueInstanceID)
-                    {
-                        MapEditorActionHelper.SetUniqueInstanceID(View, ent, m);
-                    }
-                    if (CFG.Current.Prefab_ApplyUniqueEntityID)
-                    {
-                        MapEditorActionHelper.SetUniqueEntityID(View, ent, m);
-                    }
-                    if (CFG.Current.Prefab_ApplySpecificEntityGroupID)
-                    {
-                        MapEditorActionHelper.SetSpecificEntityGroupID(View, ent, m);
-                    }
+                    MapEditorActionHelper.SetUniqueInstanceID(View, ent, Map);
+                }
+                if (CFG.Current.Prefab_ApplyUniqueEntityID)
+                {
+                    MapEditorActionHelper.SetUniqueEntityID(View, ent, Map);
+                }
+                if (CFG.Current.Prefab_ApplySpecificEntityGroupID)
+                {
+                    MapEditorActionHelper.SetSpecificEntityGroupID(View, ent, Map);
                 }
             }
             else

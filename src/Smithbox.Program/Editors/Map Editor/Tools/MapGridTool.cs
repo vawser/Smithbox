@@ -32,6 +32,7 @@ public class MapGridTool
                 "toggleGrid", "Toggle Grid Visibility", "", TogglePrimaryGrid);
 
             // Position
+            UIHelper.Spacer();
             UIHelper.SimpleHeader("Grid Position", "The position configuration for the grid.");
 
             ImGui.InputFloat("X##gridPosX", ref CFG.Current.MapEditor_PrimaryGrid_Position_X);
@@ -44,6 +45,7 @@ public class MapGridTool
             UIHelper.Tooltip("The position of the grid on the Z-axis.");
 
             // Rotation
+            UIHelper.Spacer();
             UIHelper.SimpleHeader("Grid Rotation", "The rotation configuration for the grid.");
 
             ImGui.InputFloat("X##gridRotX", ref CFG.Current.MapEditor_PrimaryGrid_Rotation_X);
@@ -56,6 +58,7 @@ public class MapGridTool
             UIHelper.Tooltip("The rotation of the grid on the Z-axis.");
 
             // Color
+            UIHelper.Spacer();
             UIHelper.SimpleHeader("Grid Color", "The color configuration for the grid.");
 
             ImGui.ColorEdit3("##Color", ref CFG.Current.MapEditor_PrimaryGrid_Color);
@@ -66,6 +69,7 @@ public class MapGridTool
             UIHelper.Tooltip("The color of the grid.");
 
             // Square Size
+            UIHelper.Spacer();
             UIHelper.SimpleHeader("Square Size", "The size configuration for the grid.");
 
             ImGui.InputFloat("##SquareSize", ref CFG.Current.MapEditor_PrimaryGrid_SectionSize);
@@ -76,6 +80,7 @@ public class MapGridTool
             UIHelper.Tooltip("The size of an individual grid square.");
 
             // Grid Size
+            UIHelper.Spacer();
             UIHelper.SimpleHeader("Grid Size", "The size configuration for the grid.");
 
             ImGui.InputInt("##GridSize", ref CFG.Current.MapEditor_PrimaryGrid_Size);
@@ -95,6 +100,7 @@ public class MapGridTool
                 "toggleGrid", "Toggle Grid Visibility", "", ToggleSecondaryGrid);
 
             // Position
+            UIHelper.Spacer();
             UIHelper.SimpleHeader("Grid Position", "The position configuration for the grid.");
 
             ImGui.InputFloat("X##gridPosX", ref CFG.Current.MapEditor_SecondaryGrid_Position_X);
@@ -107,6 +113,7 @@ public class MapGridTool
             UIHelper.Tooltip("The position of the grid on the Z-axis.");
 
             // Rotation
+            UIHelper.Spacer();
             UIHelper.SimpleHeader("Grid Rotation", "The rotation configuration for the grid.");
 
             ImGui.InputFloat("X##gridRotX", ref CFG.Current.MapEditor_SecondaryGrid_Rotation_X);
@@ -119,6 +126,7 @@ public class MapGridTool
             UIHelper.Tooltip("The rotation of the grid on the Z-axis.");
 
             // Color
+            UIHelper.Spacer();
             UIHelper.SimpleHeader("Grid Color", "The color configuration for the grid.");
 
             ImGui.ColorEdit3("##Color", ref CFG.Current.MapEditor_SecondaryGrid_Color);
@@ -129,6 +137,7 @@ public class MapGridTool
             UIHelper.Tooltip("The color of the grid.");
 
             // Square Size
+            UIHelper.Spacer();
             UIHelper.SimpleHeader("Square Size", "The size configuration for the grid.");
 
             ImGui.InputFloat("##SquareSize", ref CFG.Current.MapEditor_SecondaryGrid_SectionSize);
@@ -139,6 +148,7 @@ public class MapGridTool
             UIHelper.Tooltip("The size of an individual grid square.");
 
             // Grid Size
+            UIHelper.Spacer();
             UIHelper.SimpleHeader("Grid Size", "The size configuration for the grid.");
 
             ImGui.InputInt("##GridSize", ref CFG.Current.MapEditor_SecondaryGrid_Size);
@@ -158,6 +168,7 @@ public class MapGridTool
                 "toggleGrid", "Toggle Grid Visibility", "", ToggleTertiaryGrid);
 
             // Position
+            UIHelper.Spacer();
             UIHelper.SimpleHeader("Grid Position", "The position configuration for the grid.");
 
             ImGui.InputFloat("X##gridPosX", ref CFG.Current.MapEditor_TertiaryGrid_Position_X);
@@ -170,6 +181,7 @@ public class MapGridTool
             UIHelper.Tooltip("The position of the grid on the Z-axis.");
 
             // Rotation
+            UIHelper.Spacer();
             UIHelper.SimpleHeader("Grid Rotation", "The rotation configuration for the grid.");
 
             ImGui.InputFloat("X##gridRotX", ref CFG.Current.MapEditor_TertiaryGrid_Rotation_X);
@@ -182,6 +194,7 @@ public class MapGridTool
             UIHelper.Tooltip("The rotation of the grid on the Z-axis.");
 
             // Color
+            UIHelper.Spacer();
             UIHelper.SimpleHeader("Grid Color", "The color configuration for the grid.");
 
             ImGui.ColorEdit3("##Color", ref CFG.Current.MapEditor_TertiaryGrid_Color);
@@ -192,6 +205,7 @@ public class MapGridTool
             UIHelper.Tooltip("The color of the grid.");
 
             // Square Size
+            UIHelper.Spacer();
             UIHelper.SimpleHeader("Square Size", "The size configuration for the grid.");
 
             ImGui.InputFloat("##SquareSize", ref CFG.Current.MapEditor_TertiaryGrid_SectionSize);
@@ -202,6 +216,7 @@ public class MapGridTool
             UIHelper.Tooltip("The size of an individual grid square.");
 
             // Grid Size
+            UIHelper.Spacer();
             UIHelper.SimpleHeader("Grid Size", "The size configuration for the grid.");
 
             ImGui.InputInt("##GridSize", ref CFG.Current.MapEditor_TertiaryGrid_Size);
@@ -212,6 +227,7 @@ public class MapGridTool
             UIHelper.Tooltip("The number of grid squares that make up the grid.");
         }
 
+        UIHelper.Spacer();
         UIHelper.SimpleHeader("Actions", "");
 
         UIHelper.MultiButtonInput("gridActions",

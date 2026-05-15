@@ -134,6 +134,9 @@ public class EntityIdentifierTool
     {
         var map = View.Selection.SelectedMapContainer;
 
+        if (map == null)
+            return;
+
         Dictionary<string, Entity> cacheEntry = new Dictionary<string, Entity>();
 
         if (EntityCache.ContainsKey(map.Name))
