@@ -1,4 +1,6 @@
 ﻿using Hexa.NET.ImGui;
+using SoulsFormats;
+using SoulsFormats.KF4;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Keybinds;
@@ -37,21 +39,32 @@ public class MapContentView
     {
         UIHelper.SimpleHeader("Contents", "");
 
+        DisplaySearchbar();
+
         ImGui.BeginChild("MapContents", new Vector2(width, height), ImGuiChildFlags.Borders);
 
         if (View.Selection.SelectedMapContainer != null)
         {
             var map = View.Selection.SelectedMapContainer;
 
-            View.MapContentFilter.DisplaySearch(map);
-
-            DisplayQuickActionButtons(map);
-
             // Reset this every frame, otherwise the map object selectables won't work correctly
             treeImGuiId = 0;
 
             DisplayContentTree(map);
         }
+
+        ImGui.EndChild();
+    }
+
+    public void DisplaySearchbar()
+    {
+        var map = View.Selection.SelectedMapContainer;
+
+        var searchHeight = new Vector2(0, 36) * DPI.UIScale();
+        ImGui.BeginChild($"framedListFilter_mapContentTree", searchHeight, ImGuiChildFlags.Borders);
+
+        View.MapContentFilter.DisplaySearch(map);
+        DisplayQuickActionButtons(map);
 
         ImGui.EndChild();
     }
@@ -86,12 +99,12 @@ public class MapContentView
         UIHelper.Tooltip("Force all map objects within this map to be hidden.");
 
         // Refresh Textures
-        ImGui.SameLine();
-        if (ImGui.Button($"{Icons.Refresh}", DPI.IconButtonSize))
-        {
-            MapEditorUtils.UpdateAllEntityModels(Smithbox.Orchestrator.SelectedProject);
-        }
-        UIHelper.Tooltip("Update all map object meshes and textures.");
+        //ImGui.SameLine();
+        //if (ImGui.Button($"{Icons.Refresh}", DPI.IconButtonSize))
+        //{
+        //    MapEditorUtils.UpdateAllEntityModels(Smithbox.Orchestrator.SelectedProject);
+        //}
+        //UIHelper.Tooltip("Update all map object meshes and textures.");
     }
 
     /// <summary>
@@ -268,6 +281,7 @@ public class MapContentView
             View.DuplicateAction.OnContext();
             View.DeleteAction.OnContext();
             View.DuplicateToMapAction.OnContext();
+            View.TranslateAction.OnContext();
             View.RotateAction.OnContext();
             View.ScrambleAction.OnContext(ent);
             View.ReplicateAction.OnContext(ent);

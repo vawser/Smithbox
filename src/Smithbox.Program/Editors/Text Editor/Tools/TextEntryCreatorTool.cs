@@ -79,7 +79,10 @@ public class TextEntryCreatorTool
         var entry = Parent.Selection._selectedFmgEntry;
 
         if (entry == null)
+        {
+            UIHelper.WrappedText("Select a text entry first.");
             return;
+        }
 
         var fmgEntryGroup = Parent.EntryGroupManager.GetEntryGroup(entry);
 

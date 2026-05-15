@@ -399,13 +399,10 @@ public class CFG
     public bool Interface_MapEditor_ResourceList = true;
 
     // Tools
-    public bool Interface_MapEditor_Tool_Create = true;
-    public bool Interface_MapEditor_Tool_Duplicate = true;
-    public bool Interface_MapEditor_Tool_DuplicateToMap = true;
-    public bool Interface_MapEditor_Tool_PullToCamera = true;
-    public bool Interface_MapEditor_Tool_Rotate = true;
-    public bool Interface_MapEditor_Tool_Scramble = true;
-    public bool Interface_MapEditor_Tool_Replicate = true;
+    public bool Interface_MapEditor_Tool_Common_Action = true;
+    public bool Interface_MapEditor_Tool_Viewport = true;
+    public bool Interface_MapEditor_Tool_Data_Transfer = true;
+
     public bool Interface_MapEditor_Tool_Prefab = true;
     public bool Interface_MapEditor_Tool_SelectionGroups = true;
     public bool Interface_MapEditor_Tool_MovementIncrements = true;

@@ -6,6 +6,7 @@ using StudioCore.Renderer;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Numerics;
 
@@ -15,6 +16,8 @@ public class RotateAction
 {
     public MapEditorView View;
     public ProjectEntry Project;
+
+    public RotationAxis RotationAxis = RotationAxis.X;
 
     public RotateAction(MapEditorView view, ProjectEntry project)
     {
@@ -75,6 +78,16 @@ public class RotateAction
             SetSelectionToFixedRotation(new Vector3(0, 0, 0));
         }
 
+        // Only apply in Map Editor screen
+        if (InputManager.IsPressed(KeybindID.MapEditor_Rotation_Increment_Cycle_Type))
+        {
+            CycleIncrementType();
+        }
+
+        if (InputManager.IsPressed(KeybindID.MapEditor_Rotation_Increment_Cycle_Type_Backwards))
+        {
+            CycleIncrementType(true);
+        }
     }
 
     /// <summary>
@@ -200,64 +213,99 @@ public class RotateAction
     /// </summary>
     public void OnToolWindow()
     {
-        var windowWidth = ImGui.GetWindowWidth();
+        ImGui.BeginChild("RotateToolSection", ImGuiChildFlags.Borders);
 
-        if (ImGui.CollapsingHeader("Rotate"))
-        {
-            ImGui.BeginChild("RotateToolSection");
+        DisplayMenu();
 
-            DisplayMenu();
-
-            ImGui.EndChild();
-        }
+        ImGui.EndChild();
     }
 
-    /// <summary>
-    /// Menu
-    /// </summary>
     public void DisplayMenu()
     {
-        var windowWidth = ImGui.GetWindowWidth();
+        UIHelper.WrappedText("Use this to incrementally rotate a map object, and to configure how the rotate shortcut functions.");
 
-        UIHelper.SimpleHeader("Rotation Axis", "Rotation Axis", "The axis of rotation to use.", UI.Current.ImGui_Default_Text_Color);
+        var currentIncrement = "";
 
-        if (ImGui.Checkbox("X", ref CFG.Current.Toolbar_Rotate_X))
+        switch (CFG.Current.Toolbar_Rotate_IncrementType)
         {
-            CFG.Current.Toolbar_Rotate_Y = false;
-            CFG.Current.Toolbar_Rotate_Y_Pivot = false;
-            CFG.Current.Toolbar_Fixed_Rotate = false;
+            case 0:
+                currentIncrement = $"Degree Increment 0: {CFG.Current.Toolbar_Rotate_Increment_0}°";
+                break;
+            case 1:
+                currentIncrement = $"Degree Increment 1: {CFG.Current.Toolbar_Rotate_Increment_1}°";
+                break;
+            case 2:
+                currentIncrement = $"Degree Increment 2: {CFG.Current.Toolbar_Rotate_Increment_2}°";
+                break;
+            case 3:
+                currentIncrement = $"Degree Increment 3: {CFG.Current.Toolbar_Rotate_Increment_3}°";
+                break;
+            case 4:
+                currentIncrement = $"Degree Increment 4: {CFG.Current.Toolbar_Rotate_Increment_4}°";
+                break;
         }
-        UIHelper.Tooltip("Set the rotation axis to X.");
 
-        ImGui.SameLine();
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader($"Current Rotation Increment: {currentIncrement}", $"Press {InputManager.GetHint(KeybindID.MapEditor_Rotation_Increment_Cycle_Type)} to cycle the degree increment used by Rotate Selection on X/Y Axis.");
 
-        if (ImGui.Checkbox("Y", ref CFG.Current.Toolbar_Rotate_Y))
+        UIHelper.MultiButtonInput("rotShiftActions",
+            "cycleIncrementType",
+            "Cycle Increment",
+            $"Press {InputManager.GetHint(KeybindID.MapEditor_Rotation_Increment_Cycle_Type)} to cycle the degree increment used by Rotate Selection on X/Y Axis.",
+            CycleIncrementTypeAction);
+
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader("Options", "");
+
+        ImGui.Checkbox("Display rotation increment in viewport", ref CFG.Current.Viewport_DisplayRotationIncrement);
+        UIHelper.Tooltip("Display the current degree increment type you are using in the information panel.");
+
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader("Rotation Axis", "The axis of rotation to use.");
+
+        UIHelper.SetInputWidth();
+        if (ImGui.BeginCombo("##rotationAxisSelect", RotationAxis.GetDisplayName()))
         {
-            CFG.Current.Toolbar_Rotate_X = false;
-            CFG.Current.Toolbar_Rotate_Y_Pivot = false;
-            CFG.Current.Toolbar_Fixed_Rotate = false;
+            foreach (var entry in Enum.GetValues(typeof(RotationAxis)))
+            {
+                var axisType = (RotationAxis)entry;
+
+                if (ImGui.Selectable(axisType.GetDisplayName(), axisType == RotationAxis))
+                {
+                    RotationAxis = axisType;
+
+                    switch(RotationAxis)
+                    {
+                        case RotationAxis.X:
+                            CFG.Current.Toolbar_Rotate_X = true;
+                            CFG.Current.Toolbar_Rotate_Y = false;
+                            CFG.Current.Toolbar_Rotate_Y_Pivot = false;
+                            CFG.Current.Toolbar_Fixed_Rotate = false;
+                            break;
+                        case RotationAxis.Y:
+                            CFG.Current.Toolbar_Rotate_X = false;
+                            CFG.Current.Toolbar_Rotate_Y = true;
+                            CFG.Current.Toolbar_Rotate_Y_Pivot = false;
+                            CFG.Current.Toolbar_Fixed_Rotate = false;
+                            break;
+                        case RotationAxis.Y_Pivot:
+                            CFG.Current.Toolbar_Rotate_X = false;
+                            CFG.Current.Toolbar_Rotate_Y = false;
+                            CFG.Current.Toolbar_Rotate_Y_Pivot = true;
+                            CFG.Current.Toolbar_Fixed_Rotate = false;
+                            break;
+                        case RotationAxis.Fixed_Angle:
+                            CFG.Current.Toolbar_Rotate_X = false;
+                            CFG.Current.Toolbar_Rotate_Y = false;
+                            CFG.Current.Toolbar_Rotate_Y_Pivot = false;
+                            CFG.Current.Toolbar_Fixed_Rotate = true;
+                            break;
+                    }
+                }
+            }
+
+            ImGui.EndCombo();
         }
-        UIHelper.Tooltip("Set the rotation axis to Y.");
-
-        ImGui.SameLine();
-
-        if (ImGui.Checkbox("Y Pivot", ref CFG.Current.Toolbar_Rotate_Y_Pivot))
-        {
-            CFG.Current.Toolbar_Rotate_Y = false;
-            CFG.Current.Toolbar_Rotate_X = false;
-            CFG.Current.Toolbar_Fixed_Rotate = false;
-        }
-        UIHelper.Tooltip("Set the rotation axis to Y and pivot with respect to others within the selection.");
-
-        ImGui.SameLine();
-
-        if (ImGui.Checkbox("Fixed Rotation", ref CFG.Current.Toolbar_Fixed_Rotate))
-        {
-            CFG.Current.Toolbar_Rotate_Y = false;
-            CFG.Current.Toolbar_Rotate_X = false;
-            CFG.Current.Toolbar_Rotate_Y_Pivot = false;
-        }
-        UIHelper.Tooltip("Set the rotation axis to specified values below.");
 
         if (CFG.Current.Toolbar_Fixed_Rotate)
         {
@@ -291,12 +339,71 @@ public class RotateAction
             CFG.Current.Toolbar_Rotate_FixedAngle = new Vector3(x, y, z);
         }
 
-        UIHelper.WrappedText("");
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader("Rotation Increment: 0", "");
 
-        if (ImGui.Button("Rotate Selection", DPI.WholeWidthButton(windowWidth, 24)))
+        UIHelper.SetInputWidth();
+
+        var rot0 = CFG.Current.Toolbar_Rotate_Increment_0;
+        if (ImGui.SliderFloat("##degreeIncrement0", ref rot0, -360.0f, 360.0f))
         {
-            ApplyRotation();
+            CFG.Current.Toolbar_Rotate_Increment_0 = Math.Clamp(rot0, -360.0f, 360.0f);
         }
+        UIHelper.Tooltip("Press Ctrl+Left Click to input directly.\nSet the angle increment amount used by the rotation.");
+
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader("Rotation Increment: 1", "");
+
+        UIHelper.SetInputWidth();
+
+        var rot1 = CFG.Current.Toolbar_Rotate_Increment_1;
+        if (ImGui.SliderFloat("##degreeIncrement1", ref rot1, -360.0f, 360.0f))
+        {
+            CFG.Current.Toolbar_Rotate_Increment_1 = Math.Clamp(rot1, -360.0f, 360.0f);
+        }
+        UIHelper.Tooltip("Press Ctrl+Left Click to input directly.\nSet the angle increment amount used by the rotation.");
+
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader("Rotation Increment: 2", "");
+
+        UIHelper.SetInputWidth();
+
+        var rot2 = CFG.Current.Toolbar_Rotate_Increment_2;
+        if (ImGui.SliderFloat("##degreeIncrement2", ref rot2, -360.0f, 360.0f))
+        {
+            CFG.Current.Toolbar_Rotate_Increment_2 = Math.Clamp(rot2, -360.0f, 360.0f);
+        }
+        UIHelper.Tooltip("Press Ctrl+Left Click to input directly.\nSet the angle increment amount used by the rotation.");
+
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader("Rotation Increment: 3", "");
+
+        UIHelper.SetInputWidth();
+
+        var rot3 = CFG.Current.Toolbar_Rotate_Increment_3;
+        if (ImGui.SliderFloat("##degreeIncrement3", ref rot3, -360.0f, 360.0f))
+        {
+            CFG.Current.Toolbar_Rotate_Increment_3 = Math.Clamp(rot3, -360.0f, 360.0f);
+        }
+        UIHelper.Tooltip("Press Ctrl+Left Click to input directly.\nSet the angle increment amount used by the rotation.");
+
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader("Rotation Increment: 4", "");
+
+        UIHelper.SetInputWidth();
+
+        var rot4 = CFG.Current.Toolbar_Rotate_Increment_4;
+        if (ImGui.SliderFloat("##degreeIncrement4", ref rot4, -360.0f, 360.0f))
+        {
+            CFG.Current.Toolbar_Rotate_Increment_4 = Math.Clamp(rot4, -360.0f, 360.0f);
+        }
+        UIHelper.Tooltip("Press Ctrl+Left Click to input directly.\nSet the angle increment amount used by the rotation.");
+
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader("Actions", "");
+
+        UIHelper.MultiButtonInput("rotateActions",
+            "applyRotate", "Apply Rotation to Selection", "", ApplyRotation);
     }
 
     /// <summary>
@@ -330,6 +437,7 @@ public class RotateAction
 
         View.DelayPicking();
     }
+
     public void ArbitraryRotation_Selection(Vector3 axis, bool pivot)
     {
         List<ViewportAction> actlist = new();
@@ -357,7 +465,7 @@ public class RotateAction
 
             if (axis.X != 0)
             {
-                radianRotateAmount = View.RotationIncrementTool.GetRadianRotateAmount();
+                radianRotateAmount = GetRadianRotateAmount();
                 // Makes radian rotate amount negative if axis X argument is negative
                 radianRotateAmount = (axis.X < 0) ? -radianRotateAmount : radianRotateAmount;
                 rot_x = objT.EulerRotation.X + radianRotateAmount;
@@ -365,7 +473,7 @@ public class RotateAction
 
             if (axis.Y != 0)
             {
-                radianRotateAmount = View.RotationIncrementTool.GetRadianRotateAmount();
+                radianRotateAmount = GetRadianRotateAmount();
                 // Makes radian rotate amount negative if axis Y argument is negative
                 radianRotateAmount = (axis.Y < 0) ? -radianRotateAmount : radianRotateAmount;
                 rot_y = objT.EulerRotation.Y + radianRotateAmount;
@@ -413,4 +521,89 @@ public class RotateAction
             View.ViewportActionManager.ExecuteAction(action);
         }
     }
+
+    public void CycleIncrementTypeAction()
+    {
+        CycleIncrementType();
+    }
+    public void CycleIncrementType(bool decrement = false)
+    {
+        if (decrement)
+        {
+            CFG.Current.Toolbar_Rotate_IncrementType -= 1;
+            if (CFG.Current.Toolbar_Rotate_IncrementType < 0)
+            {
+                CFG.Current.Toolbar_Rotate_IncrementType = 4;
+            }
+        }
+        else
+        {
+            CFG.Current.Toolbar_Rotate_IncrementType += 1;
+            if (CFG.Current.Toolbar_Rotate_IncrementType > 4)
+            {
+                CFG.Current.Toolbar_Rotate_IncrementType = 0;
+            }
+        }
+    }
+
+    public void DisplayViewportHint()
+    {
+        switch (CFG.Current.Toolbar_Rotate_IncrementType)
+        {
+            case 0:
+                UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Degree Increment: {CFG.Current.Toolbar_Rotate_Increment_0}°");
+                break;
+            case 1:
+                UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Degree Increment: {CFG.Current.Toolbar_Rotate_Increment_1}°");
+                break;
+            case 2:
+                UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Degree Increment: {CFG.Current.Toolbar_Rotate_Increment_2}°");
+                break;
+            case 3:
+                UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Degree Increment: {CFG.Current.Toolbar_Rotate_Increment_3}°");
+                break;
+            case 4:
+                UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Degree Increment: {CFG.Current.Toolbar_Rotate_Increment_4}°");
+                break;
+        }
+        UIHelper.Tooltip($"Press {InputManager.GetHint(KeybindID.MapEditor_Rotation_Increment_Cycle_Type)} to cycle the degree increment used by Rotate Selection on X/Y Axis.");
+    }
+
+    public float GetRadianRotateAmount()
+    {
+        var amount = (float)Math.PI / 180 * CFG.Current.Toolbar_Rotate_Increment_0;
+
+        switch (CFG.Current.Toolbar_Rotate_IncrementType)
+        {
+            case 0:
+                amount = (float)Math.PI / 180 * CFG.Current.Toolbar_Rotate_Increment_0;
+                break;
+            case 1:
+                amount = (float)Math.PI / 180 * CFG.Current.Toolbar_Rotate_Increment_1;
+                break;
+            case 2:
+                amount = (float)Math.PI / 180 * CFG.Current.Toolbar_Rotate_Increment_2;
+                break;
+            case 3:
+                amount = (float)Math.PI / 180 * CFG.Current.Toolbar_Rotate_Increment_3;
+                break;
+            case 4:
+                amount = (float)Math.PI / 180 * CFG.Current.Toolbar_Rotate_Increment_4;
+                break;
+        }
+
+        return amount;
+    }
+}
+
+public enum RotationAxis
+{
+    [Display(Name = "X")]
+    X,
+    [Display(Name = "Y")]
+    Y,
+    [Display(Name = "Y Pivot")]
+    Y_Pivot,
+    [Display(Name = "Fixed Angle")]
+    Fixed_Angle
 }

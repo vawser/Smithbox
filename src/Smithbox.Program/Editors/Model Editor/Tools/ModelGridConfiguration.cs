@@ -9,7 +9,7 @@ public class ModelGridConfiguration
     public ModelEditorView View;
     public ProjectEntry Project;
 
-    private TargetMapGridType CurrentModelGridType = TargetMapGridType.Primary;
+    private TargetMapGridType CurrentGridType = TargetMapGridType.Primary;
 
     public ModelGridConfiguration(ModelEditorView view, ProjectEntry project)
     {
@@ -24,7 +24,7 @@ public class ModelGridConfiguration
             ImGui.BeginChild("ModelGridToolSection", ImGuiChildFlags.Borders);
 
             // Primary Configuration
-            if (CurrentModelGridType is TargetMapGridType.Primary)
+            if (CurrentGridType is TargetMapGridType.Primary)
             {
                 UIHelper.SimpleHeader("Current Grid (Primary)", "");
 
@@ -87,7 +87,7 @@ public class ModelGridConfiguration
             }
 
             // Secondary Configuration
-            if (CurrentModelGridType is TargetMapGridType.Secondary)
+            if (CurrentGridType is TargetMapGridType.Secondary)
             {
                 UIHelper.SimpleHeader("Current Grid (Secondary)", "");
 
@@ -150,7 +150,7 @@ public class ModelGridConfiguration
             }
 
             // Tertiary Configuration
-            if (CurrentModelGridType is TargetMapGridType.Tertiary)
+            if (CurrentGridType is TargetMapGridType.Tertiary)
             {
                 UIHelper.SimpleHeader("Current Grid (Tertiary)", "");
 
@@ -225,15 +225,15 @@ public class ModelGridConfiguration
 
     public void ViewPrimaryGrid()
     {
-        CurrentModelGridType = TargetMapGridType.Primary;
+        CurrentGridType = TargetMapGridType.Primary;
     }
     public void ViewSecondaryGrid()
     {
-        CurrentModelGridType = TargetMapGridType.Secondary;
+        CurrentGridType = TargetMapGridType.Secondary;
     }
     public void ViewTertiaryGrid()
     {
-        CurrentModelGridType = TargetMapGridType.Tertiary;
+        CurrentGridType = TargetMapGridType.Tertiary;
     }
 
     public void TogglePrimaryGrid()

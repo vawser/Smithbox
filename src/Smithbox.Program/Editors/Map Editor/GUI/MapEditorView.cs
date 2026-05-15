@@ -3,7 +3,6 @@ using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.Viewport;
 using StudioCore.Keybinds;
-using StudioCore.Renderer;
 using StudioCore.Utilities;
 using Veldrid;
 using Veldrid.Sdl2;
@@ -59,6 +58,7 @@ public class MapEditorView
     public GotoAction GotoAction;
     public FrameAction FrameAction;
     public PullToCameraAction PullToCameraAction;
+    public TranslateAction TranslateAction;
     public RotateAction RotateAction;
     public ScrambleAction ScrambleAction;
     public ReplicateAction ReplicateAction;
@@ -75,8 +75,6 @@ public class MapEditorView
 
     // Tools
     public MassEditTool MassEditTool;
-    public RotationIncrementTool RotationIncrementTool;
-    public PositionIncrementTool PositionIncrementTool;
     public ModelSelectorTool ModelSelectorTool;
     public DisplayGroupTool DisplayGroupTool;
     public SelectionGroupTool SelectionGroupTool;
@@ -144,6 +142,7 @@ public class MapEditorView
         GotoAction = new GotoAction(this, project);
         FrameAction = new FrameAction(this, project);
         PullToCameraAction = new PullToCameraAction(this, project);
+        TranslateAction = new TranslateAction(this, project);
         RotateAction = new RotateAction(this, project);
         ScrambleAction = new ScrambleAction(this, project);
         ReplicateAction = new ReplicateAction(this, project);
@@ -160,8 +159,6 @@ public class MapEditorView
 
         // Tools
         MassEditTool = new MassEditTool(this, project);
-        RotationIncrementTool = new RotationIncrementTool(this, project);
-        PositionIncrementTool = new PositionIncrementTool(this, project);
         AutomaticPreviewTool = new AutomaticPreviewTool(this, project);
         DisplayGroupTool = new DisplayGroupTool(this, project);
         GlobalSearchTool = new GlobalSearchTool(this, project);

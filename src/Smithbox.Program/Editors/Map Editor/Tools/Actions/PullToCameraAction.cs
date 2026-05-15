@@ -69,34 +69,31 @@ public class PullToCameraAction
     /// </summary>
     public void OnToolWindow()
     {
-        var windowWidth = ImGui.GetWindowWidth();
+        ImGui.BeginChild("PullToCameraToolSection", ImGuiChildFlags.Borders);
 
-        if (ImGui.CollapsingHeader("Pull to Camera"))
+        UIHelper.WrappedText("Configure how the pull to camera action works.");
+
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader("Camera Offset Distance", "Camera Offset Distance", "", UI.Current.ImGui_Default_Text_Color);
+
+        UIHelper.SetInputWidth();
+        if (ImGui.SliderFloat("##Offset distance", ref CFG.Current.Toolbar_Move_to_Camera_Offset, 0, 100))
         {
-            ImGui.BeginChild("PullToCameraToolSection");
+            if (CFG.Current.Toolbar_Move_to_Camera_Offset < 0)
+                CFG.Current.Toolbar_Move_to_Camera_Offset = 0;
 
-            UIHelper.SimpleHeader("Camera Offset Distance", "Camera Offset Distance", "", UI.Current.ImGui_Default_Text_Color);
-
-            DPI.ApplyInputWidth(windowWidth);
-            if (ImGui.SliderFloat("##Offset distance", ref CFG.Current.Toolbar_Move_to_Camera_Offset, 0, 100))
-            {
-                if (CFG.Current.Toolbar_Move_to_Camera_Offset < 0)
-                    CFG.Current.Toolbar_Move_to_Camera_Offset = 0;
-
-                if (CFG.Current.Toolbar_Move_to_Camera_Offset > 100)
-                    CFG.Current.Toolbar_Move_to_Camera_Offset = 100;
-            }
-            UIHelper.Tooltip("Press Ctrl+Left Click to input directly.\nSet the distance at which the current selection is offset from the camera when this action is used.");
-
-            UIHelper.WrappedText("");
-
-            if (ImGui.Button("Pull Selection", DPI.WholeWidthButton(windowWidth, 24)))
-            {
-                ApplyMoveToCamera();
-            }
-
-            ImGui.EndChild();
+            if (CFG.Current.Toolbar_Move_to_Camera_Offset > 100)
+                CFG.Current.Toolbar_Move_to_Camera_Offset = 100;
         }
+        UIHelper.Tooltip("Press Ctrl+Left Click to input directly.\nSet the distance at which the current selection is offset from the camera when this action is used.");
+
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader("Actions", "");
+
+        UIHelper.MultiButtonInput("pullToCameraActions",
+            "applyPull", "Pull Selection", "", ApplyMoveToCamera);
+
+        ImGui.EndChild();
     }
 
     /// <summary>

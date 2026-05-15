@@ -1,21 +1,20 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
-using StudioCore.Editors.TextEditor;
-using StudioCore.Utilities;
+using StudioCore.Editors.MaterialEditor;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.Editors.MaterialEditor;
+namespace StudioCore.Editors.MapEditor;
 
-public class MatDataTransferTool
+public class MapDataTransferTool
 {
-    public MaterialEditorScreen Editor;
+    public MapEditorScreen Editor;
     public ProjectEntry Project;
 
-    public MatDataTransferTool(MaterialEditorScreen editor, ProjectEntry project)
+    public MapDataTransferTool(MapEditorScreen editor, ProjectEntry project)
     {
         Editor = editor;
         Project = project;

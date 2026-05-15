@@ -208,6 +208,7 @@ public class MapViewportView
                 View.DuplicateAction.OnContext();
                 View.DeleteAction.OnContext();
                 View.DuplicateToMapAction.OnContext();
+                View.TranslateAction.OnContext();
                 View.RotateAction.OnContext();
 
                 if (targetedEnt != null)

@@ -82,6 +82,7 @@ public class MapShortcuts
             activeView.DuplicateAction.OnShortcut();
             activeView.DeleteAction.OnShortcut();
             activeView.DuplicateToMapAction.OnShortcut();
+            activeView.TranslateAction.OnShortcut();
             activeView.RotateAction.OnShortcut();
             activeView.ScrambleAction.OnShortcut();
             activeView.ReplicateAction.OnShortcut();
@@ -110,8 +111,6 @@ public class MapShortcuts
         activeView.DisplayGroupTool.OnShortcut();
         activeView.PrefabTool.OnShortcut();
         activeView.SelectionGroupTool.OnShortcut();
-        activeView.RotationIncrementTool.OnShortcut();
-        activeView.PositionIncrementTool.OnShortcut();
         activeView.PatrolDrawManager.OnShortcut();
 
         GizmoState.OnShortcut();

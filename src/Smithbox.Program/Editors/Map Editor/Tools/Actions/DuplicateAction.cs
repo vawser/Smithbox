@@ -63,14 +63,9 @@ public class DuplicateAction
     /// </summary>
     public void OnToolWindow()
     {
-        var windowWidth = ImGui.GetWindowWidth();
-
-        if (ImGui.CollapsingHeader("Duplicate"))
-        {
-            ImGui.BeginChild("DuplicateToolSection");
-            DisplayMenu();
-            ImGui.EndChild();
-        }
+        ImGui.BeginChild("DuplicateToolSection", ImGuiChildFlags.Borders);
+        DisplayMenu();
+        ImGui.EndChild();
     }
 
     /// <summary>
@@ -78,9 +73,10 @@ public class DuplicateAction
     /// </summary>
     public void DisplayMenu()
     {
-        var windowWidth = ImGui.GetWindowWidth();
+        UIHelper.WrappedText("Configure how the duplicate action works.");
 
-        UIHelper.SimpleHeader("Options", "Options", "", UI.Current.ImGui_Default_Text_Color);
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader("Options", "");
 
         if (View.Project.Descriptor.ProjectType != ProjectType.DS2S && View.Project.Descriptor.ProjectType != ProjectType.DS2)
         {
@@ -124,12 +120,11 @@ public class DuplicateAction
         ImGui.Checkbox("Place at List End", ref CFG.Current.Toolbar_Duplicate_Place_at_List_End);
         UIHelper.Tooltip("When enabled, a duplicated map object is placed at the end of its category list, rather than after its source map object.");
 
-        UIHelper.WrappedText("");
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader("Actions", "");
 
-        if (ImGui.Button("Duplicate Selection", DPI.WholeWidthButton(windowWidth, 24)))
-        {
-            ApplyDuplicate();
-        }
+        UIHelper.MultiButtonInput("duplicateActions",
+            "applyDuplicate", "Duplicate Selection", "", ApplyDuplicate);
     }
 
     /// <summary>

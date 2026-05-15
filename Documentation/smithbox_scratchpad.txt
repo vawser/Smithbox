@@ -19,7 +19,6 @@
  - Add MATBIN support back
  
 - Text Editor:
- - Speed up Text import functionality
  - Add split ID / Entry Text (similar to Param Editor) for the Entry List
  - Add reorder functionality on drag (+ sort entry list action)
  

@@ -96,11 +96,22 @@ public class CloneMapObjectsAction : ViewportAction
 
                     var categoryList = targetMapContainer.Objects.Where(e => e.WrappedObject.GetType() == type).ToList();
 
-                    var insertEnt = categoryList.Last();
+                    if (categoryList.Count > 0)
+                    {
+                        var insertEnt = categoryList.Last();
 
-                    mapInsertIndex = TargetMap == null
-                    ? targetMapContainer.Objects.IndexOf(insertEnt) + 1
-                    : targetMapContainer.Objects.Count;
+                        mapInsertIndex = TargetMap == null
+                        ? targetMapContainer.Objects.IndexOf(insertEnt) + 1
+                        : targetMapContainer.Objects.Count;
+                    }
+                    else
+                    {
+                        var insertEnt = targetMapContainer.Objects.Last();
+
+                        mapInsertIndex = TargetMap == null
+                        ? targetMapContainer.Objects.IndexOf(insertEnt) + 1
+                        : targetMapContainer.Objects.Count;
+                    }
                 }
 
                 // Determine parent

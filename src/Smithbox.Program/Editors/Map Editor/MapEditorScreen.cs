@@ -66,7 +66,7 @@ public class MapEditorScreen : EditorScreen
             EditMenu();
             ViewMenu();
 
-            ToolWindow.DisplayMenu();
+            ToolWindow.DisplayDropdown();
 
             ImGui.EndMenuBar();
         }
@@ -80,7 +80,7 @@ public class MapEditorScreen : EditorScreen
 
         if (activeView != null)
         {
-            ToolWindow.OnGui();
+            ToolWindow.Display();
 
             var curViewport = activeView.ViewportHandler.ActiveViewport;
 
@@ -278,6 +278,7 @@ public class MapEditorScreen : EditorScreen
 
                 activeView.DuplicateAction.OnMenu();
                 activeView.DeleteAction.OnMenu();
+                activeView.TranslateAction.OnMenu();
                 activeView.RotateAction.OnMenu();
                 activeView.ScrambleAction.OnMenu();
                 activeView.ReplicateAction.OnMenu();

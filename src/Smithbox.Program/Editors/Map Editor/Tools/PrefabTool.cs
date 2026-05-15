@@ -43,27 +43,42 @@ public class PrefabTool
     /// </summary>
     public void OnToolWindow()
     {
-        var windowWidth = ImGui.GetWindowWidth();
+        ImGui.BeginTabBar("prefabTabs");
 
-        if (ImGui.CollapsingHeader("Import Prefab"))
+        if (ImGui.BeginTabItem("Import"))
         {
-            ImGui.BeginChild("PrefabImportToolSection");
+            DisplayImportMenu();
 
-            ImportPrefabMenu();
-            PrefabTree("import");
-
-            ImGui.EndChild();
+            ImGui.EndTabItem();
         }
 
-        if (ImGui.CollapsingHeader("Export Prefab"))
+        if (ImGui.BeginTabItem("Export"))
         {
-            ImGui.BeginChild("PrefabExportToolSection");
-
-            ExportPrefabMenu();
-            PrefabTree("export");
-
-            ImGui.EndChild();
+            DisplayExportMenu();
+            ImGui.EndTabItem();
         }
+
+        ImGui.EndTabBar();
+    }
+
+    public void DisplayImportMenu()
+    {
+        ImGui.BeginChild("PrefabImportToolSection");
+
+        ImportPrefabMenu();
+        PrefabTree("import");
+
+        ImGui.EndChild();
+    }
+
+    public void DisplayExportMenu()
+    {
+        ImGui.BeginChild("PrefabExportToolSection");
+
+        ExportPrefabMenu();
+        PrefabTree("export");
+
+        ImGui.EndChild();
     }
 
     public Prefab GetLoadedPrefab(string name)

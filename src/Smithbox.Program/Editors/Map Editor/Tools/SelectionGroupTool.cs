@@ -158,148 +158,145 @@ public class SelectionGroupTool
         if (View.Project.Handler.MapData.MapObjectSelections.Resources == null)
             return;
 
-        if (ImGui.CollapsingHeader("Selection Groups"))
+        ImGui.BeginChild("SelectionGroupToolSection");
+
+        var windowSize = DPI.GetWindowSize(Smithbox.Instance._context);
+        var sectionWidth = ImGui.GetWindowWidth() * 0.95f;
+        var topSectionHeight = windowSize.Y * 0.1f;
+        var bottomSectionHeight = windowSize.Y * 0.3f;
+        var topSectionSize = new Vector2(sectionWidth * DPI.UIScale(), topSectionHeight * DPI.UIScale());
+        var bottomSectionSize = new Vector2(sectionWidth * DPI.UIScale(), bottomSectionHeight * DPI.UIScale());
+
+        var windowWidth = ImGui.GetWindowWidth();
+
+        if (ImGui.BeginPopup("##selectionGroupModalInternal"))
         {
-            ImGui.BeginChild("SelectionGroupToolSection");
+            DisplayCreationModal();
 
-            var windowSize = DPI.GetWindowSize(Smithbox.Instance._context);
-            var sectionWidth = ImGui.GetWindowWidth() * 0.95f;
-            var topSectionHeight = windowSize.Y * 0.1f;
-            var bottomSectionHeight = windowSize.Y * 0.3f;
-            var topSectionSize = new Vector2(sectionWidth * DPI.UIScale(), topSectionHeight * DPI.UIScale());
-            var bottomSectionSize = new Vector2(sectionWidth * DPI.UIScale(), bottomSectionHeight * DPI.UIScale());
+            ImGui.EndPopup();
+        }
 
-            var windowWidth = ImGui.GetWindowWidth();
+        UIHelper.SimpleHeader("Selection Groups", "Selection Groups", "", UI.Current.ImGui_Default_Text_Color);
 
-            if (ImGui.BeginPopup("##selectionGroupModalInternal"))
+        ImGui.BeginChild("##selectionGroupList", topSectionSize, ImGuiChildFlags.Borders);
+
+        ImGui.InputText($"##selectionGroupFilter", ref _searchInput, 255);
+        UIHelper.Tooltip("Filter the selection group list. Separate terms are split via the + character.");
+
+        ImGui.Separator();
+
+        foreach (var entry in View.Project.Handler.MapData.MapObjectSelections.Resources)
+        {
+            var displayName = $"{entry.Name}";
+
+            if (CFG.Current.MapEditor_Selection_Group_Show_Keybind)
             {
-                DisplayCreationModal();
+                if (entry.SelectionGroupKeybind != -1)
+                {
+                    var hint = GetSelectionGroupKeyBind(entry.SelectionGroupKeybind);
+                    if (hint != "None")
+                    {
+                        displayName = $"{displayName} [{hint}]";
+                    }
+                }
+            }
+
+            if (CFG.Current.MapEditor_Selection_Group_Show_Tags)
+            {
+                if (entry.Tags.Count > 0)
+                {
+                    var tagString = string.Join(" ", entry.Tags);
+                    displayName = $"{displayName} {{ {tagString} }}";
+                }
+            }
+
+            if (SearchFilters.IsSelectionSearchMatch(_searchInput, entry.Name, entry.Tags))
+            {
+                if (ImGui.Selectable(displayName, selectedResourceName == entry.Name))
+                {
+                    selectedResourceName = entry.Name;
+                    selectedResourceTags = entry.Tags;
+                    selectedResourceContents = entry.Selection;
+                    selectedResourceKeybind = entry.SelectionGroupKeybind;
+
+                    editPromptOldGroupName = entry.Name;
+                    editPromptGroupName = entry.Name;
+                    editPromptTags = AliasHelper.GetTagListString(entry.Tags);
+                    editPromptKeybind = entry.SelectionGroupKeybind;
+
+                    if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
+                    {
+                        SelectSelectionGroup();
+                    }
+                }
+            }
+        }
+        ImGui.EndChild();
+
+        if (ImGui.Button("Create New Selection Group", DPI.WholeWidthButton(windowWidth, 24)))
+        {
+            CreateSelectionGroup("Internal");
+        }
+        UIHelper.Tooltip($"Shortcut: {InputManager.GetHint(KeybindID.MapEditor_Create_Selection_Group)}\nBring up the selection group creation menu to assign your current selection to a selection group.");
+
+
+        UIHelper.SimpleHeader("Current Selection Group", "Current Selection Group", "", UI.Current.ImGui_Default_Text_Color);
+
+        ImGui.BeginChild("##selectionGroupActions", bottomSectionSize, ImGuiChildFlags.Borders);
+
+        if (selectedResourceName != "")
+        {
+            if (ImGui.Button("Select", DPI.ThirdWidthButton(bottomSectionSize.X, 24)))
+            {
+                SelectSelectionGroup();
+            }
+            UIHelper.Tooltip("Select the map objects listed by your currently selected group.");
+
+            ImGui.SameLine();
+
+            if (ImGui.Button("Edit", DPI.ThirdWidthButton(bottomSectionSize.X, 24)))
+            {
+                ImGui.OpenPopup($"##selectionGroupModalEdit");
+            }
+            UIHelper.Tooltip("Edit the name, tags and keybind for the selected group.");
+
+            ImGui.SameLine();
+
+            if (ImGui.Button("Delete", DPI.ThirdWidthButton(bottomSectionSize.X, 24)))
+            {
+                DeleteSelectionGroup();
+            }
+            UIHelper.Tooltip("Delete this selected group.");
+
+            if (ImGui.BeginPopup("##selectionGroupModalEdit"))
+            {
+                DisplayEditModal();
 
                 ImGui.EndPopup();
             }
 
-            UIHelper.SimpleHeader("Selection Groups", "Selection Groups", "", UI.Current.ImGui_Default_Text_Color);
-
-            ImGui.BeginChild("##selectionGroupList", topSectionSize, ImGuiChildFlags.Borders);
-
-            ImGui.InputText($"##selectionGroupFilter", ref _searchInput, 255);
-            UIHelper.Tooltip("Filter the selection group list. Separate terms are split via the + character.");
-
-            ImGui.Separator();
-
-            foreach (var entry in View.Project.Handler.MapData.MapObjectSelections.Resources)
+            if (selectedResourceTags.Count > 0)
             {
-                var displayName = $"{entry.Name}";
-
-                if (CFG.Current.MapEditor_Selection_Group_Show_Keybind)
+                var tagString = string.Join(" ", selectedResourceTags);
+                if (tagString != "")
                 {
-                    if (entry.SelectionGroupKeybind != -1)
-                    {
-                        var hint = GetSelectionGroupKeyBind(entry.SelectionGroupKeybind);
-                        if (hint != "None")
-                        {
-                            displayName = $"{displayName} [{hint}]";
-                        }
-                    }
-                }
-
-                if (CFG.Current.MapEditor_Selection_Group_Show_Tags)
-                {
-                    if (entry.Tags.Count > 0)
-                    {
-                        var tagString = string.Join(" ", entry.Tags);
-                        displayName = $"{displayName} {{ {tagString} }}";
-                    }
-                }
-
-                if (SearchFilters.IsSelectionSearchMatch(_searchInput, entry.Name, entry.Tags))
-                {
-                    if (ImGui.Selectable(displayName, selectedResourceName == entry.Name))
-                    {
-                        selectedResourceName = entry.Name;
-                        selectedResourceTags = entry.Tags;
-                        selectedResourceContents = entry.Selection;
-                        selectedResourceKeybind = entry.SelectionGroupKeybind;
-
-                        editPromptOldGroupName = entry.Name;
-                        editPromptGroupName = entry.Name;
-                        editPromptTags = AliasHelper.GetTagListString(entry.Tags);
-                        editPromptKeybind = entry.SelectionGroupKeybind;
-
-                        if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
-                        {
-                            SelectSelectionGroup();
-                        }
-                    }
-                }
-            }
-            ImGui.EndChild();
-
-            if (ImGui.Button("Create New Selection Group", DPI.WholeWidthButton(windowWidth, 24)))
-            {
-                CreateSelectionGroup("Internal");
-            }
-            UIHelper.Tooltip($"Shortcut: {InputManager.GetHint(KeybindID.MapEditor_Create_Selection_Group)}\nBring up the selection group creation menu to assign your current selection to a selection group.");
-
-
-            UIHelper.SimpleHeader("Current Selection Group", "Current Selection Group", "", UI.Current.ImGui_Default_Text_Color);
-
-            ImGui.BeginChild("##selectionGroupActions", bottomSectionSize, ImGuiChildFlags.Borders);
-
-            if (selectedResourceName != "")
-            {
-                if (ImGui.Button("Select", DPI.ThirdWidthButton(bottomSectionSize.X, 24)))
-                {
-                    SelectSelectionGroup();
-                }
-                UIHelper.Tooltip("Select the map objects listed by your currently selected group.");
-
-                ImGui.SameLine();
-
-                if (ImGui.Button("Edit", DPI.ThirdWidthButton(bottomSectionSize.X, 24)))
-                {
-                    ImGui.OpenPopup($"##selectionGroupModalEdit");
-                }
-                UIHelper.Tooltip("Edit the name, tags and keybind for the selected group.");
-
-                ImGui.SameLine();
-
-                if (ImGui.Button("Delete", DPI.ThirdWidthButton(bottomSectionSize.X, 24)))
-                {
-                    DeleteSelectionGroup();
-                }
-                UIHelper.Tooltip("Delete this selected group.");
-
-                if (ImGui.BeginPopup("##selectionGroupModalEdit"))
-                {
-                    DisplayEditModal();
-
-                    ImGui.EndPopup();
-                }
-
-                if (selectedResourceTags.Count > 0)
-                {
-                    var tagString = string.Join(" ", selectedResourceTags);
-                    if (tagString != "")
-                    {
-                        UIHelper.WrappedText("");
-                        UIHelper.WrappedText("Tags:");
-                        UIHelper.WrappedTextColored(UI.Current.ImGui_Default_Text_Color, tagString);
-                        UIHelper.WrappedText("");
-                    }
-                }
-
-                UIHelper.WrappedText("Contents:");
-                foreach (var entry in selectedResourceContents)
-                {
-                    UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, entry);
+                    UIHelper.WrappedText("");
+                    UIHelper.WrappedText("Tags:");
+                    UIHelper.WrappedTextColored(UI.Current.ImGui_Default_Text_Color, tagString);
+                    UIHelper.WrappedText("");
                 }
             }
 
-            ImGui.EndChild();
-
-            ImGui.EndChild();
+            UIHelper.WrappedText("Contents:");
+            foreach (var entry in selectedResourceContents)
+            {
+                UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, entry);
+            }
         }
+
+        ImGui.EndChild();
+
+        ImGui.EndChild();
     }
 
     private void DisplayCreationModal()

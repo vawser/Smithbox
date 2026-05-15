@@ -42,11 +42,11 @@ public class ViewportOverlay
         {
             if (CFG.Current.Viewport_DisplayRotationIncrement)
             {
-                mapUniverse.View.RotationIncrementTool.DisplayViewportRotateIncrement();
+                mapUniverse.View.RotateAction.DisplayViewportHint();
             }
             if (CFG.Current.Viewport_DisplayPositionIncrement)
             {
-                mapUniverse.View.PositionIncrementTool.DisplayViewportMovementIncrement();
+                mapUniverse.View.TranslateAction.DisplayViewportHint();
             }
         }
 

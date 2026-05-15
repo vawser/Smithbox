@@ -74,7 +74,7 @@ public class ModelDataTransferTool
     {
         if (ImGui.BeginTabItem($"Export"))
         {
-            UIHelper.WrappedText("Use this section to import JSON data, applying the data to your current project.");
+            UIHelper.WrappedText("Use this section to export JSON data from your current project.");
 
             // TODO
 

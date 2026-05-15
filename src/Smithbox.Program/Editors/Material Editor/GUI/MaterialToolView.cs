@@ -46,13 +46,13 @@ public class MaterialToolWindow
             }
 
             // Data Transfer
-            if(CFG.Current.MaterialEditor_Tool_Data_Transfer)
-            {
-                if (ImGui.CollapsingHeader("Data Transfer"))
-                {
-                    DataTransferTool.Display();
-                }
-            }
+            //if(CFG.Current.MaterialEditor_Tool_Data_Transfer)
+            //{
+            //    if (ImGui.CollapsingHeader("Data Transfer"))
+            //    {
+            //        DataTransferTool.Display();
+            //    }
+            //}
         }
 
         ImGui.End();

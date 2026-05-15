@@ -2,6 +2,8 @@
 using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Editors.GparamEditor;
+using StudioCore.Editors.TextEditor;
 using StudioCore.Keybinds;
 using System.Collections.Generic;
 using System.Linq;
@@ -89,14 +91,9 @@ public class DuplicateToMapAction
     /// </summary>
     public void OnToolWindow()
     {
-        var windowWidth = ImGui.GetWindowWidth();
-
-        if (ImGui.CollapsingHeader("Duplicate to Map"))
-        {
-            ImGui.BeginChild("DuplicateToMapToolSection");
-            DisplayMenu();
-            ImGui.EndChild();
-        }
+        ImGui.BeginChild("DuplicateToMapToolSection", ImGuiChildFlags.Borders);
+        DisplayMenu();
+        ImGui.EndChild();
     }
 
 
@@ -105,47 +102,44 @@ public class DuplicateToMapAction
     /// </summary>
     public void DisplayMenu()
     {
-        var windowSize = new Vector2(800f, 500f);
-        var sectionWidth = ImGui.GetWindowWidth() * 0.95f;
-        var sectionHeight = windowSize.Y * 0.25f;
-        var sectionSize = new Vector2(sectionWidth * DPI.UIScale(), sectionHeight * DPI.UIScale());
+        UIHelper.WrappedText("Use this to duplicate an existing map object into a different loaded map.");
 
-        UIHelper.SimpleHeader("Target Map", "Target Map", "The target map to duplicate the current selection to.", UI.Current.ImGui_Default_Text_Color);
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader("Target Map", "The target map to duplicate the current selection to.");
 
-        ImGui.BeginChild("##mapSelectionSection", sectionSize, ImGuiChildFlags.Borders);
-
-        foreach (var entry in Project.Handler.MapData.PrimaryBank.Maps)
+        UIHelper.SetInputWidth();
+        if (ImGui.BeginCombo("##targetMapSelect", TargetMap.Item1))
         {
-            var mapID = entry.Key.Filename;
-            var map = entry.Value.MapContainer;
-
-            if (map != null)
+            foreach (var entry in Project.Handler.MapData.PrimaryBank.Maps)
             {
-                if (ImGui.Selectable(mapID, TargetMap.Item1 == mapID))
+                var map = entry.Value.MapContainer;
+
+                if (map == null)
+                    continue;
+
+                var mapID = entry.Key.Filename;
+                var mapName = AliasHelper.GetMapNameAlias(View.Project, mapID);
+                var displayName = $"{mapID}: {mapName}";
+
+                if (ImGui.Selectable(displayName, TargetMap.Item1 == mapID))
                 {
                     TargetMap = (mapID, map);
                 }
-
-                var mapName = AliasHelper.GetMapNameAlias(View.Project, mapID);
-                UIHelper.DisplayAlias(mapName);
             }
+
+            ImGui.EndCombo();
         }
 
-        ImGui.EndChild();
-
-        if (TargetMap.Item2 == null)
-        {
-            UIHelper.WrappedText("No map has been loaded or targeted.");
-        }
-        else
+        if (TargetMap != (null, null))
         {
             MapContainer targetMap = (MapContainer)TargetMap.Item2;
-
             var sel = View.ViewportSelection.GetFilteredSelection<MsbEntity>().ToList();
 
             if (sel.Any(e => e.WrappedObject is BTL.Light))
             {
-                if (ImGui.BeginCombo("Targeted BTL", TargetBTL.Item1))
+                UIHelper.SimpleHeader("Target Lights", "The target BTL to duplicate the current selection to.");
+
+                if (ImGui.BeginCombo("##TargetBTL", TargetBTL.Item1))
                 {
                     foreach (Entity btl in targetMap.BTLParents)
                     {
@@ -165,11 +159,20 @@ public class DuplicateToMapAction
                 }
             }
 
-            if (ImGui.Button("Duplicate##dupeToMapAction", DPI.WholeWidthButton(sectionWidth, 24)))
-            {
-                DuplicateToMap(sel, targetMap, TargetBTL.Item2);
-            }
+            UIHelper.Spacer();
+            UIHelper.SimpleHeader("Actions", "");
+
+            UIHelper.MultiButtonInput("extDuplicateActions",
+                "duplicateMap", "Duplicate to Map", "", DuplicateToMapActions);
         }
+    }
+
+    public void DuplicateToMapActions()
+    {
+        MapContainer targetMap = (MapContainer)TargetMap.Item2;
+        var sel = View.ViewportSelection.GetFilteredSelection<MsbEntity>().ToList();
+
+        DuplicateToMap(sel, targetMap, TargetBTL.Item2);
     }
 
     /// <summary>
