@@ -68,7 +68,7 @@ public class TextShortcuts
             // Create
             if (InputManager.IsPressed(KeybindID.TextEditor_Create_New_Entry))
             {
-                activeView.NewEntryModal.ShowModal = true;
+                activeView.TextEntryCreator.ShowModal = true;
             }
 
             // TODO: remove this if we add Copy/Paste functionality

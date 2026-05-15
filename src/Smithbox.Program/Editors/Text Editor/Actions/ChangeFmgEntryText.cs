@@ -14,8 +14,9 @@ public class ChangeFmgEntryText : EditorAction
     private TextContainerWrapper Info;
 
     private bool IsSyncAction = false;
+    private bool IgnoreDiffCheck = false;
 
-    public ChangeFmgEntryText(TextEditorView view, TextContainerWrapper info, FMG.Entry entry, string newText, bool isSyncAction = false)
+    public ChangeFmgEntryText(TextEditorView view, TextContainerWrapper info, FMG.Entry entry, string newText, bool isSyncAction = false, bool ignoreDiffCheck = false)
     {
         Parent = view;
         Info = info;
@@ -24,6 +25,7 @@ public class ChangeFmgEntryText : EditorAction
         OldText = entry.Text;
 
         IsSyncAction = isSyncAction;
+        IgnoreDiffCheck = ignoreDiffCheck;
     }
 
     public override ActionEvent Execute()
@@ -39,7 +41,10 @@ public class ChangeFmgEntryText : EditorAction
 
         Info.IsModified = true;
 
-        Parent.DifferenceManager.TrackFmgDifferences();
+        if (!IgnoreDiffCheck)
+        {
+            Parent.DifferenceManager.TrackFmgDifferences();
+        }
 
         return ActionEvent.NoEvent;
     }
@@ -49,7 +54,10 @@ public class ChangeFmgEntryText : EditorAction
         Entry.Text = OldText;
         Info.IsModified = false;
 
-        Parent.DifferenceManager.TrackFmgDifferences();
+        if (!IgnoreDiffCheck)
+        {
+            Parent.DifferenceManager.TrackFmgDifferences();
+        }
 
         return ActionEvent.NoEvent;
     }

@@ -34,7 +34,7 @@ public class TextEditorView
     public TextEntryList TextEntryList;
     public TextContents TextContents;
 
-    public TextNewEntryModal NewEntryModal;
+    public TextEntryCreatorTool TextEntryCreator;
     public TextExporterModal TextExportModal;
     public TextDuplicatePopup TextDuplicatePopup;
 
@@ -61,7 +61,7 @@ public class TextEditorView
         TextEntryList = new TextEntryList(this, Project);
         TextContents = new TextContents(this, Project);
 
-        NewEntryModal = new TextNewEntryModal(this, Project);
+        TextEntryCreator = new TextEntryCreatorTool(this, Project);
         TextExportModal = new TextExporterModal(this, Project);
         TextDuplicatePopup = new TextDuplicatePopup(this, Project);
 
@@ -137,8 +137,9 @@ public class TextEditorView
             ImGui.EndTable();
         }
 
-        NewEntryModal.Display();
+        TextEntryCreator.Display();
         TextDuplicatePopup.Display();
+        FmgImporter.OnGui();
         FmgExporter.OnGui();
     }
 }

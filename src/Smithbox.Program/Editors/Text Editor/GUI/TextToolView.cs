@@ -48,6 +48,15 @@ public class TextToolView
                 ImGui.EndMenuBar();
             }
 
+            // Entry Creator
+            if (CFG.Current.Interface_TextEditor_Tool_EntryCreator)
+            {
+                if (ImGui.CollapsingHeader("Text Entry Creator"))
+                {
+                    activeView.TextEntryCreator.DisplayTool();
+                }
+            }
+
             // Data Transfer
             if (CFG.Current.Interface_TextEditor_Tool_DataTransfer)
             {

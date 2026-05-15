@@ -1,6 +1,6 @@
 ﻿namespace StudioCore.Editors.TextEditor;
 
-public enum ImportType
+public enum FmgImportType
 {
     Container,
     FMG,

@@ -57,7 +57,7 @@ public class TextContextMenu
             // Create
             if(ImGui.Selectable("Create"))
             {
-                Parent.NewEntryModal.ShowModal = true;
+                Parent.TextEntryCreator.ShowModal = true;
             }
 
             // Duplicate

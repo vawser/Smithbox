@@ -170,7 +170,7 @@ public class ParamIO
 
                         actions.AppendParamEditAction(row, (ParamEditorPseudoColumn.None, col), newval);
                     }
-                    catch(FormatException ex)
+                    catch(FormatException)
                     {
                         return ($"Failed to convert CSV string to value.", null);
                     }
@@ -308,7 +308,7 @@ public class ParamIO
                             actions.AppendParamEditAction(row, (ParamEditorPseudoColumn.None, col), newval);
                         }
                     }
-                    catch (FormatException ex)
+                    catch (FormatException)
                     {
                         return ($"Failed to convert CSV string to value.", null);
                     }

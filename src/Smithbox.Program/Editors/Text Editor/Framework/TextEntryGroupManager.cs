@@ -122,6 +122,12 @@ public class TextEntryGroupManager
 
     public FmgEntryGroup GetEntryGroup(FMG.Entry entry)
     {
+        if (Parent.Selection.SelectedContainerWrapper == null)
+            return null;
+
+        if (Parent.Selection.SelectedFmgWrapper == null)
+            return null;
+
         return new FmgEntryGroup(this,
             Parent.Selection.SelectedContainerWrapper,
             Parent.Selection.SelectedFmgWrapper, entry);

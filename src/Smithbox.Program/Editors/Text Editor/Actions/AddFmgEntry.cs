@@ -13,7 +13,9 @@ public class AddFmgEntry : EditorAction
 
     private TextContainerWrapper Info;
 
-    public AddFmgEntry(TextEditorView view, TextContainerWrapper info, FMG.Entry sourceEntry, FMG.Entry newEntry, int newID)
+    private bool IgnoreDiffCheck = false;
+
+    public AddFmgEntry(TextEditorView view, TextContainerWrapper info, FMG.Entry sourceEntry, FMG.Entry newEntry, int newID, bool ignoreDiffCheck = false)
     {
         Parent = view;
         Info = info;
@@ -21,6 +23,8 @@ public class AddFmgEntry : EditorAction
         NewEntry = newEntry;
         NewEntry.ID = newID;
         InsertionIndex = -1;
+
+        IgnoreDiffCheck = ignoreDiffCheck;
 
         for (int i = 0; i < Fmg.Entries.Count; i++)
         {
@@ -48,7 +52,10 @@ public class AddFmgEntry : EditorAction
 
         Info.IsModified = true;
 
-        Parent.DifferenceManager.TrackFmgDifferences();
+        if (!IgnoreDiffCheck)
+        {
+            Parent.DifferenceManager.TrackFmgDifferences();
+        }
 
         return ActionEvent.NoEvent;
     }
@@ -66,7 +73,10 @@ public class AddFmgEntry : EditorAction
 
         Info.IsModified = false;
 
-        Parent.DifferenceManager.TrackFmgDifferences();
+        if (!IgnoreDiffCheck)
+        {
+            Parent.DifferenceManager.TrackFmgDifferences();
+        }
 
         return ActionEvent.NoEvent;
     }

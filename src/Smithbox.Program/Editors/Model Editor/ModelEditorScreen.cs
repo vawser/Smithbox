@@ -58,7 +58,7 @@ public class ModelEditorScreen : EditorScreen
             FileMenu();
             EditMenu();
             ViewMenu();
-            ToolMenu.OnMenubar();
+            ToolMenu.DisplayDropdown();
             OptionsMenu();
 
             ImGui.EndMenuBar();

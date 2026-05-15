@@ -1,5 +1,6 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
+using System.Numerics;
 
 namespace StudioCore.Editors.TextEditor;
 
@@ -22,7 +23,7 @@ public class TextExporterModal
     {
         if (ShowModal)
         {
-            ImGui.OpenPopup("Export Text");
+            ImGui.OpenPopup("Text Exporter");
         }
 
         ExportMenu();
@@ -31,36 +32,46 @@ public class TextExporterModal
 
     public void ExportMenu()
     {
-        if (ImGui.BeginPopupModal("Export Text", ref ShowModal, ImGuiWindowFlags.AlwaysAutoResize))
+        if (ImGui.BeginPopupModal("Text Exporter", ref ShowModal, ImGuiWindowFlags.AlwaysAutoResize))
         {
-            var windowWidth = 520f;
+            ImGui.BeginChild("TextExporterSection", new Vector2(200f * DPI.UIScale(), 0f),
+                ImGuiChildFlags.Borders | ImGuiChildFlags.AutoResizeY);
 
-            ImGui.Text("Name");
-            DPI.ApplyInputWidth(windowWidth);
-            ImGui.InputText("##wrapperName", ref WrapperName, 255);
+            UIHelper.SimpleHeader("Filename", "");
 
-            if(WrapperName == "")
-            {
-                ImGui.BeginDisabled();
-            }
-            if (ImGui.Button("Export", DPI.HalfWidthButton(windowWidth, 24)))
-            {
-                ShowModal = false;
-                Parent.FmgExporter.ProcessExport(WrapperName);
-            }
-            if (WrapperName == "")
-            {
-                ImGui.EndDisabled();
-            }
+            UIHelper.SinglelineTextInput("WrapperFilename", ref WrapperName);
 
-            ImGui.SameLine();
-            if (ImGui.Button("Close", DPI.HalfWidthButton(windowWidth, 24)))
-            {
-                ShowModal = false;
-            }
+            UIHelper.MultiButtonInput("exportModalActions",
+                "exportFile", "Export", "", ExportWrapper,
+                "closeModal", "Close", "", CloseModal);
 
+            ImGui.EndChild();
 
             ImGui.EndPopup();
         }
+    }
+
+    public void ExportWrapper()
+    {
+        if(WrapperName == "")
+        {
+            Smithbox.LogError<TextExporterModal>("Filename is empty");
+            return;
+        }
+
+        var outputWrapper = Parent.FmgExporter.ProcessExport(WrapperName);
+
+        var exportDir = TextUtils.GetStoredTextDirectory(Project);
+        if (Parent.Editor.ToolView.DataTransferTool.ExportDirectory != "")
+            exportDir = Parent.Editor.ToolView.DataTransferTool.ExportDirectory;
+
+        Parent.FmgExporter.WriteWrapper(exportDir, WrapperName, outputWrapper);
+
+        ShowModal = false;
+    }
+
+    public void CloseModal()
+    {
+        ShowModal = false;
     }
 }

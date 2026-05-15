@@ -160,7 +160,7 @@ public class TextEditorScreen : EditorScreen
                 // Create
                 if (ImGui.MenuItem("Create", InputManager.GetHint(KeybindID.TextEditor_Create_New_Entry)))
                 {
-                    activeView.NewEntryModal.ShowModal = true;
+                    activeView.TextEntryCreator.ShowModal = true;
                 }
                 UIHelper.Tooltip($"Create new text entries.");
 
@@ -212,20 +212,7 @@ public class TextEditorScreen : EditorScreen
         {
             if (ImGui.BeginMenu("Tools"))
             {
-                if (ImGui.BeginMenu("Data Transfer"))
-                {
-                    activeView.FmgImporter.MenubarOptions();
-
-                    ImGui.Separator();
-
-                    activeView.FmgExporter.MenubarOptions();
-
-                    ImGui.Separator();
-
-                    activeView.FmgDumper.MenubarOptions();
-
-                    ImGui.EndMenu();
-                }
+                ToolView.DataTransferTool.DisplayDropdown();
 
                 ImGui.EndMenu();
             }

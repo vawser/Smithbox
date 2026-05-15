@@ -45,14 +45,17 @@ public class TextContents
     {
         var fmgEntryGroup = Parent.EntryGroupManager.GetEntryGroup(Parent.Selection._selectedFmgEntry);
 
-        // Display normally if entry has no groups, or it has been disabled
-        if(!fmgEntryGroup.SupportsGrouping || !CFG.Current.TextEditor_Text_Entry_Enable_Grouped_Entries)
+        if (fmgEntryGroup != null)
         {
-            DisplayBasicTextInput(Parent.Selection._selectedFmgEntry);
-        }
-        else
-        {
-            DisplayGroupedTextInput(Parent.Selection._selectedFmgEntry, fmgEntryGroup);
+            // Display normally if entry has no groups, or it has been disabled
+            if (!fmgEntryGroup.SupportsGrouping || !CFG.Current.TextEditor_Text_Entry_Enable_Grouped_Entries)
+            {
+                DisplayBasicTextInput(Parent.Selection._selectedFmgEntry);
+            }
+            else
+            {
+                DisplayGroupedTextInput(Parent.Selection._selectedFmgEntry, fmgEntryGroup);
+            }
         }
     }
 

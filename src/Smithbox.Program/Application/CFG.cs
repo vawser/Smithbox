@@ -509,6 +509,7 @@ public class CFG
     public bool Interface_ModelEditor_Tool_ModelInstanceFinder = true;
     public bool Interface_ModelEditor_Tool_ModelMaskToggler = true;
     public bool Interface_ModelEditor_Tool_ResourceMonitor = true;
+    public bool Interface_ModelEditor_Tool_Data_Transfer = true;
 
     // Saving
     public bool ModelEditor_AutomaticSave_IncludeFLVER = true;
@@ -785,11 +786,11 @@ public class CFG
 
     public int TextEditor_CreationModal_CreationCount = 1;
     public int TextEditor_CreationModal_IncrementCount = 1;
-    public bool TextEditor_CreationModal_UseIncrementalTitling = false;
+    public bool TextEditor_CreationModal_UseIncrementalNaming = false;
     public string TextEditor_CreationModal_IncrementalTitling_Prefix = "+";
     public string TextEditor_CreationModal_IncrementalTitling_Postfix = "";
 
-    public bool TextEditor_CreationModal_UseIncrementalNaming = false;
+    public bool TextEditor_CreationModal_UseTemplateNaming = false;
     public string TextEditor_CreationModal_IncrementalNaming_Template = "";
 
     public bool TextEditor_Text_Entry_List_Ignore_ID_Check = false;
@@ -818,6 +819,7 @@ public class CFG
     public bool Interface_TextEditor_ToolWindow = true;
 
     // Tools
+    public bool Interface_TextEditor_Tool_EntryCreator = true;
     public bool Interface_TextEditor_Tool_DataTransfer = true;
     public bool Interface_TextEditor_Tool_LanguageSync = true;
     public bool Interface_TextEditor_Tool_TextSearch = true;
@@ -919,6 +921,7 @@ public class CFG
     public bool Interface_MaterialEditor_ToolWindow = true;
 
     // Tools
+    public bool MaterialEditor_Tool_Data_Transfer = true;
 
     // Saving
     public bool Project_Automatic_Save_Include_Material_Editor = false;

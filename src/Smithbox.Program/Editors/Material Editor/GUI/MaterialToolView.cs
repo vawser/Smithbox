@@ -16,10 +16,14 @@ public class MaterialToolWindow
     public MaterialEditorScreen Editor;
     public ProjectEntry Project;
 
+    public MatDataTransferTool DataTransferTool;
+
     public MaterialToolWindow(MaterialEditorScreen editor, ProjectEntry project)
     {
         Editor = editor;
         Project = project;
+
+        DataTransferTool = new(editor, project);
     }
 
     public void Draw()
@@ -41,6 +45,14 @@ public class MaterialToolWindow
                 ImGui.EndMenuBar();
             }
 
+            // Data Transfer
+            if(CFG.Current.MaterialEditor_Tool_Data_Transfer)
+            {
+                if (ImGui.CollapsingHeader("Data Transfer"))
+                {
+                    DataTransferTool.Display();
+                }
+            }
         }
 
         ImGui.End();
@@ -50,6 +62,11 @@ public class MaterialToolWindow
     {
         if (ImGui.BeginMenu("View"))
         {
+            if (ImGui.MenuItem("Data Transfer"))
+            {
+                CFG.Current.MaterialEditor_Tool_Data_Transfer = !CFG.Current.MaterialEditor_Tool_Data_Transfer;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.MaterialEditor_Tool_Data_Transfer);
 
             ImGui.EndMenu();
         }
@@ -59,14 +76,10 @@ public class MaterialToolWindow
     {
         if (ImGui.BeginMenu("Tools"))
         {
+            DataTransferTool.DisplayDropdown();
 
             ImGui.EndMenu();
         }
-    }
-
-    public void OnMenubar()
-    {
-
     }
 }
 

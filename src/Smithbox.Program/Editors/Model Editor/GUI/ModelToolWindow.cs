@@ -10,10 +10,24 @@ public class ModelToolWindow
     public ModelEditorScreen Editor;
     public ProjectEntry Project;
 
+    public ModelDataTransferTool DataTransferTool;
+
     public ModelToolWindow(ModelEditorScreen editor, ProjectEntry project)
     {
         Editor = editor;
         Project = project;
+
+        DataTransferTool = new(editor, project);
+    }
+
+    public void DisplayDropdown()
+    {
+        if (ImGui.BeginMenu("Tools"))
+        {
+            DataTransferTool.DisplayDropdown();
+
+            ImGui.EndMenu();
+        }
     }
 
     public void Display()
@@ -38,6 +52,14 @@ public class ModelToolWindow
                 ViewMenu();
 
                 ImGui.EndMenuBar();
+            }
+
+            if (CFG.Current.MaterialEditor_Tool_Data_Transfer)
+            {
+                if (ImGui.CollapsingHeader("Data Transfer"))
+                {
+                    DataTransferTool.Display();
+                }
             }
 
             if (CFG.Current.Interface_ModelEditor_Tool_CreateAction)
@@ -78,6 +100,12 @@ public class ModelToolWindow
     {
         if (ImGui.BeginMenu("View"))
         {
+            if (ImGui.MenuItem("Data Transfer"))
+            {
+                CFG.Current.MaterialEditor_Tool_Data_Transfer = !CFG.Current.MaterialEditor_Tool_Data_Transfer;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.MaterialEditor_Tool_Data_Transfer);
+
             if (ImGui.MenuItem("Create"))
             {
                 CFG.Current.Interface_ModelEditor_Tool_CreateAction = !CFG.Current.Interface_ModelEditor_Tool_CreateAction;
@@ -110,11 +138,6 @@ public class ModelToolWindow
 
             ImGui.EndMenu();
         }
-    }
-
-    public void OnMenubar()
-    {
-
     }
 }
 
