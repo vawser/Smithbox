@@ -35,9 +35,14 @@
       "Description": "Z-axis rotation (roll) of the generator."
     },
     {
-      "Field": "aReserved1",
-      "Name": "Padding",
+      "Field": "Unk18",
+      "Name": "Unknown",
       "Description": ""
+    },
+    {
+      "Field": "InheritInstanceParamId",
+      "Name": "Inherit Instance Param ID",
+      "Description": "Inherit the instance param properties from the target ID."
     },
     {
       "Field": "maxRespawnNum",

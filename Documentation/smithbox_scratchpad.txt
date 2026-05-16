@@ -1,16 +1,6 @@
 #---------------------
-# New Feature Ideas
-#---------------------
-- Bullet Simulator
- - Add primitive simulation of bullet behavior, making use of the primitive draw elements to display the path and projectiles.
- 
-#---------------------
 # TODO 
 #---------------------
-- General
- - Add Basic Usage guide to the Tool window for each editor that covers basic functionality, shortcuts and small elements a user might miss.
- - Add tool dropdown only features to the Tool windows of their respective editors
-
 - Model Editor
  - Rendering experiment (TinyFFR)
  - Mesh visbility/delete not working properly
@@ -18,14 +8,17 @@
 - Material Editor:
  - Add MATBIN support back
  
-- Text Editor:
- - Add split ID / Entry Text (similar to Param Editor) for the Entry List
- - Add reorder functionality on drag (+ sort entry list action)
- 
 - Param Editor
  - Finish converting the SDT AlternativeOrders into Field Layouts
  - Translate DS2 meta
  - Finish AC6 meta
  
+- Text Editor:
+ - Add split ID / Entry Text (similar to Param Editor) for the Entry List
+ - Add reorder functionality on drag (+ sort entry list action)
+ 
 - Gparam Editor:
  - Add multi-select for the value list (and to duplicate/delete/export)
+ 
+- Map Editor
+ - Add visibility tool section: include the LOD visibility toggle
