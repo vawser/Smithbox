@@ -136,7 +136,7 @@ public class ReorderAction
         }
         else
         {
-            PlatformUtils.Instance.MessageBox("No object selected.", "Smithbox", MessageBoxButtons.OK);
+            Smithbox.LogError<ReorderAction>("No object selected.");
         }
 
         View.DelayPicking();

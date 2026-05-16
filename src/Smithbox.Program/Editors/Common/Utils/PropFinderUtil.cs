@@ -37,7 +37,7 @@ public static class PropFinderUtil
             else
             {
                 if (p.MetadataToken == prop.MetadataToken)
-                    return new PropData(prop, obj);
+                    return new PropData(p, obj);
             }
 
             if (p.PropertyType.IsNested)

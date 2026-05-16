@@ -29,134 +29,160 @@ public class MapModelInsightView
 
     public void OnToolWindow()
     {
-        if (ImGui.CollapsingHeader("Model Insight"))
+        var selection = View.ViewportSelection.GetSelection();
+
+        if (selection == null)
         {
-            var curEntity = View.ViewportSelection.GetSelection().FirstOrDefault();
-
-            if (curEntity == null)
-                return;
-
-            ImGui.BeginChild("ModelInsightToolSection");
-
-            var mapEntity = (Entity)curEntity;
-
-            var curModelData = View.ModelInsightTool.Entries.FirstOrDefault(e => e.Key == View.Selection.SelectedMapID);
-
-            if (curModelData.Value != null && curModelData.Value != View.ModelInsightTool.SelectedDataEntry)
-            {
-                View.ModelInsightTool.SelectedDataEntry = curModelData.Value;
-            }
-
-            if (View.ModelInsightTool.SelectedDataEntry == null)
-                return;
-
-            var propValue = mapEntity.GetPropertyValue("ModelName");
-
-            if (propValue == null)
-                return;
-
-            var modelName = propValue.ToString();
-
-            var flverEntry = View.ModelInsightTool.SelectedDataEntry.Models.FirstOrDefault(
-            e => e.Name == modelName);
-
-            if (flverEntry != null && flverEntry != View.ModelInsightTool.SelectedFlverEntry)
-            {
-                View.ModelInsightTool.SelectedFlverEntry = flverEntry;
-            }
-
-            Display();
-
-            ImGui.EndChild();
+            ImGui.TextWrapped("No model selected 1.");
+            return;
         }
+
+        if (selection.Count == 0)
+        {
+            ImGui.TextWrapped("No model selected 2.");
+            return;
+        }
+
+        var curEntity = View.ViewportSelection.GetSelection().FirstOrDefault();
+
+        if (curEntity == null)
+        {
+            ImGui.TextWrapped("No model selected 3.");
+            return;
+        }
+
+        var mapEntity = (Entity)curEntity;
+
+        var curModelData = View.ModelInsightTool.Entries.FirstOrDefault(e => e.Key == View.Selection.SelectedMapID);
+
+        if (curModelData.Value != null && curModelData.Value != View.ModelInsightTool.SelectedDataEntry)
+        {
+            View.ModelInsightTool.SelectedDataEntry = curModelData.Value;
+        }
+
+        if (View.ModelInsightTool.SelectedDataEntry == null)
+        {
+            ImGui.TextWrapped("No model selected 4.");
+            return;
+        }
+
+        var propValue = mapEntity.GetPropertyValue("ModelName");
+
+        if (propValue == null)
+        {
+            ImGui.TextWrapped("No model selected 5.");
+            return;
+        }
+
+        var modelName = propValue.ToString();
+
+        var flverEntry = View.ModelInsightTool.SelectedDataEntry.Models.FirstOrDefault(
+        e => e.Name == modelName);
+
+        if (flverEntry != null && flverEntry != View.ModelInsightTool.SelectedFlverEntry)
+        {
+            View.ModelInsightTool.SelectedFlverEntry = flverEntry;
+        }
+
+        Display();
     }
 
     public void Display()
     {
-        var windowWidth = ImGui.GetWindowWidth();
+        if (View.ModelInsightTool.SelectedFlverEntry == null)
+            return;
 
-        if (View.ModelInsightTool.SelectedFlverEntry != null)
+        var entry = View.ModelInsightTool.SelectedFlverEntry;
+
+        UIHelper.WrappedText("Use this to extract the currently selected model and/or textures.");
+
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader("Export Directory", "The directory to export the model/texture data to.");
+        UIHelper.SinglelineTextInput("extractDir", ref CFG.Current.MapEditor_ModelDataExtraction_DefaultOutputFolder);
+
+        UIHelper.MultiButtonInput("extractDirActions",
+            "setDirectory", "Set Export Directory", "", SetExportDirectory,
+            "openDirectory", "Open Export Directory", "", OpenExportDirectory);
+
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader("Extraction Type", "");
+
+        UIHelper.SetInputWidth();
+        if (ImGui.BeginCombo("##extractTypeSelect", CFG.Current.MapEditor_ModelDataExtraction_Type.GetDisplayName()))
         {
-            var entry = View.ModelInsightTool.SelectedFlverEntry;
-
-            UIHelper.SimpleHeader("actHeader", "Actions", "", UI.Current.ImGui_AliasName_Text);
-
-            var outputDirectory = Path.Combine(Project.Descriptor.ProjectPath, CFG.Current.MapEditor_ModelDataExtraction_DefaultOutputFolder);
-
-            if (!Directory.Exists(outputDirectory))
+            foreach (var typ in Enum.GetValues(typeof(ResourceExtractionType)))
             {
-                Directory.CreateDirectory(outputDirectory);
-            }
+                var curEntry = (ResourceExtractionType)typ;
 
-            if (ImGui.Button($"{Icons.EnvelopeOpen}##openOutputDir", DPI.IconButtonSize))
-            {
-                Process.Start("explorer.exe", outputDirectory);
-            }
-
-            ImGui.SameLine();
-
-            ImGui.Text($"Output Directory: {outputDirectory}");
-
-            ImGui.Separator();
-
-            if (ImGui.BeginCombo("Extraction Type##extractTypeSelect", CFG.Current.MapEditor_ModelDataExtraction_Type.GetDisplayName()))
-            {
-                foreach (var typ in Enum.GetValues(typeof(ResourceExtractionType)))
+                if (ImGui.Selectable(curEntry.GetDisplayName()))
                 {
-                    var curEntry = (ResourceExtractionType)typ;
-
-                    if (ImGui.Selectable(curEntry.GetDisplayName()))
-                    {
-                        CFG.Current.MapEditor_ModelDataExtraction_Type = (ResourceExtractionType)typ;
-                    }
+                    CFG.Current.MapEditor_ModelDataExtraction_Type = (ResourceExtractionType)typ;
                 }
-
-                ImGui.EndCombo();
-            }
-            if (CFG.Current.MapEditor_ModelDataExtraction_Type is ResourceExtractionType.Loose)
-            {
-                UIHelper.Tooltip("Files when extracted will be extracted loose and outside of the container files they normally reside in.");
-            }
-            if (CFG.Current.MapEditor_ModelDataExtraction_Type is ResourceExtractionType.Contained)
-            {
-                UIHelper.Tooltip("Files when extracted will be contained with the container files they belong to.");
             }
 
-            ImGui.Checkbox("Include Folder", ref CFG.Current.MapEditor_ModelDataExtraction_IncludeFolder);
-            UIHelper.Tooltip("If enabled, a folder will be created to contain the files, titled with the name of the FLVER model.");
+            ImGui.EndCombo();
+        }
+        if (CFG.Current.MapEditor_ModelDataExtraction_Type is ResourceExtractionType.Loose)
+        {
+            UIHelper.Tooltip("Files when extracted will be extracted loose and outside of the container files they normally reside in.");
+        }
+        if (CFG.Current.MapEditor_ModelDataExtraction_Type is ResourceExtractionType.Contained)
+        {
+            UIHelper.Tooltip("Files when extracted will be contained with the container files they belong to.");
+        }
 
-            ImGui.Separator();
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader("Options", "");
 
-            if (ImGui.Button("Extract FLVER", DPI.ThirdWidthButton(windowWidth, 24)))
+        ImGui.Checkbox("Include Folder", ref CFG.Current.MapEditor_ModelDataExtraction_IncludeFolder);
+        UIHelper.Tooltip("If enabled, a folder will be created to contain the files, titled with the name of the FLVER model.");
+
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader("Actions", "");
+
+        UIHelper.MultiButtonInput("extractActions",
+            "extractModel", "Extract Model", "Extract the FLVER model for the current selection.", ExtractFlverAction,
+            "extractTexture", "Extract Textures", "Extract the DDS texture files for the current selection.", ExtractTextureAction,
+            "extractMaterial", "Extract Materials", "Extract the MTD or MATBIN that the textures are linked to for this current selection.", ExtractMaterialAction);
+
+        DisplaySelectionInfo();
+    }
+
+    public void DisplaySelectionInfo()
+    {
+        var entry = View.ModelInsightTool.SelectedFlverEntry;
+
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader("flverHeader", "Model", "", UI.Current.ImGui_AliasName_Text);
+
+        ImGui.Text($"Name: {entry.Name}");
+        ImGui.Text($"Virtual Path: {entry.VirtualPath}");
+
+        if (ResourceManager.ResourceDatabase.ContainsKey(entry.VirtualPath))
+        {
+            var listener = ResourceManager.ResourceDatabase[entry.VirtualPath];
+
+            if (listener.IsLoaded())
             {
-                ExtractFLVER(Project, entry, outputDirectory);
+                UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, "LOADED");
             }
-            UIHelper.Tooltip("Extract the FLVER model for the current selection.");
-
-            ImGui.SameLine();
-
-            if (ImGui.Button("Extract DDS", DPI.ThirdWidthButton(windowWidth, 24)))
+            else
             {
-                ExtractDDS(Project, entry, outputDirectory);
+                UIHelper.WrappedTextColored(UI.Current.ImGui_Invalid_Text_Color, "UNLOADED");
             }
-            UIHelper.Tooltip("Extract the DDS texture files for the current selection.");
+        }
 
-            ImGui.SameLine();
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader("texHeader", "Textures", "", UI.Current.ImGui_AliasName_Text);
 
-            if (ImGui.Button("Extract Materials", DPI.ThirdWidthButton(windowWidth, 24)))
+        foreach (var tex in entry.Entries)
+        {
+            ImGui.Text($"Name: {tex.Name}");
+            ImGui.Text($"Virtual Path: {tex.VirtualPath}");
+
+            if (ResourceManager.ResourceDatabase.ContainsKey(tex.VirtualPath))
             {
-                ExtractMaterial(Project, entry, outputDirectory);
-            }
-            UIHelper.Tooltip("Extract the MTD or MATBIN that the textures are linked to for this current selection.");
-
-            UIHelper.SimpleHeader("flverHeader", "FLVER", "", UI.Current.ImGui_AliasName_Text);
-
-            ImGui.Text($"Name: {entry.Name}");
-            ImGui.Text($"Virtual Path: {entry.VirtualPath}");
-
-            if (ResourceManager.ResourceDatabase.ContainsKey(entry.VirtualPath))
-            {
-                var listener = ResourceManager.ResourceDatabase[entry.VirtualPath];
+                var listener = ResourceManager.ResourceDatabase[tex.VirtualPath];
 
                 if (listener.IsLoaded())
                 {
@@ -168,30 +194,83 @@ public class MapModelInsightView
                 }
             }
 
-            UIHelper.SimpleHeader("texHeader", "Textures", "", UI.Current.ImGui_AliasName_Text);
-
-            foreach (var tex in entry.Entries)
-            {
-                ImGui.Text($"Name: {tex.Name}");
-                ImGui.Text($"Virtual Path: {tex.VirtualPath}");
-
-                if (ResourceManager.ResourceDatabase.ContainsKey(tex.VirtualPath))
-                {
-                    var listener = ResourceManager.ResourceDatabase[tex.VirtualPath];
-
-                    if (listener.IsLoaded())
-                    {
-                        UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, "LOADED");
-                    }
-                    else
-                    {
-                        UIHelper.WrappedTextColored(UI.Current.ImGui_Invalid_Text_Color, "UNLOADED");
-                    }
-                }
-
-                ImGui.Separator();
-            }
+            ImGui.Separator();
         }
+    }
+
+    public void ExtractFlverAction()
+    {
+        var entry = View.ModelInsightTool.SelectedFlverEntry;
+        var outputFolder = CFG.Current.MapEditor_ModelDataExtraction_DefaultOutputFolder;
+
+        if(outputFolder == "")
+        {
+            Smithbox.LogError<MapModelInsightView>("Export directory is empty.");
+            return;
+        }
+
+        if (!Directory.Exists(outputFolder))
+        {
+            Smithbox.LogError<MapModelInsightView>("Export directory is invalid.");
+            return;
+        }
+
+        ExtractFLVER(Project, entry, outputFolder);
+    }
+
+    public void ExtractTextureAction()
+    {
+        var entry = View.ModelInsightTool.SelectedFlverEntry;
+        var outputFolder = CFG.Current.MapEditor_ModelDataExtraction_DefaultOutputFolder;
+
+        if (outputFolder == "")
+        {
+            Smithbox.LogError<MapModelInsightView>("Export directory is empty.");
+            return;
+        }
+
+        if (!Directory.Exists(outputFolder))
+        {
+            Smithbox.LogError<MapModelInsightView>("Export directory is invalid.");
+            return;
+        }
+
+        ExtractDDS(Project, entry, outputFolder);
+    }
+
+    public void ExtractMaterialAction()
+    {
+        var entry = View.ModelInsightTool.SelectedFlverEntry;
+        var outputFolder = CFG.Current.MapEditor_ModelDataExtraction_DefaultOutputFolder;
+
+        if (outputFolder == "")
+        {
+            Smithbox.LogError<MapModelInsightView>("Export directory is empty.");
+            return;
+        }
+
+        if (!Directory.Exists(outputFolder))
+        {
+            Smithbox.LogError<MapModelInsightView>("Export directory is invalid.");
+            return;
+        }
+
+        ExtractMaterial(Project, entry, outputFolder);
+    }
+
+    public void SetExportDirectory()
+    {
+        string path;
+        var result = PlatformUtils.Instance.OpenFolderDialog("Select Export Destination", out path);
+        if (result)
+        {
+            CFG.Current.MapEditor_ModelDataExtraction_DefaultOutputFolder = path;
+        }
+    }
+
+    public void OpenExportDirectory()
+    {
+        Process.Start("explorer.exe", CFG.Current.MapEditor_ModelDataExtraction_DefaultOutputFolder);
     }
 
     public void ExtractFLVER(ProjectEntry project, MapFlverInsightEntry entry, string outputDirectory)

@@ -182,7 +182,7 @@ public class GameVisibilityAction
         }
         else
         {
-            PlatformUtils.Instance.MessageBox("No object selected.", "Smithbox", MessageBoxButtons.OK);
+            Smithbox.LogError<GameVisibilityAction>("No object selected.");
         }
 
         View.DelayPicking();

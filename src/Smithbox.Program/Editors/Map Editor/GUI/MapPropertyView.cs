@@ -373,12 +373,9 @@ public class MapPropertyView
                 }
             }
 
-            if (View.GlobalSearchTool.IsOpen)
+            if (ImGui.Selectable("Add to Property Filter"))
             {
-                if (ImGui.Selectable("Add to Property Filter"))
-                {
-                    View.GlobalSearchTool.AddPropertyFilterInput(prop, arrayIndex);
-                }
+                View.GlobalSearchTool.AddPropertyFilterInput(prop, arrayIndex);
             }
 
             ImGui.EndPopup();

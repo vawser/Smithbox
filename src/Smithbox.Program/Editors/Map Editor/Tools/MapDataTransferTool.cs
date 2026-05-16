@@ -32,12 +32,21 @@ public class MapDataTransferTool
     }
     public void Display()
     {
+        var activeView = Editor.ViewHandler.ActiveView;
+
         ImGui.BeginChild("DataTransferSection", ImGuiChildFlags.Borders);
 
         ImGui.BeginTabBar("dataTransferTabs");
 
-        ImportTab();
-        ExportTab();
+        //ImportTab();
+        //ExportTab();
+
+        if (ImGui.BeginTabItem("Extraction"))
+        {
+            activeView.MapModelInsightTool.OnToolWindow();
+
+            ImGui.EndTabItem();
+        }
 
         ImGui.EndTabBar();
 

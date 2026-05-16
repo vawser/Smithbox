@@ -83,12 +83,9 @@ public class DisplayGroupTool
 
         if (View.ViewportHandler.ActiveViewport.RenderScene != null)
         {
-            if (ImGui.CollapsingHeader("Render Groups"))
-            {
-                ImGui.BeginChild("RenderGroupToolSection");
-                DisplayGroupsGUI(sdrawgroups, sdispgroups, sels);
-                ImGui.EndChild();
-            }
+            ImGui.BeginChild("RenderGroupToolSection", ImGuiChildFlags.Borders);
+            DisplayGroupsGUI(sdrawgroups, sdispgroups, sels);
+            ImGui.EndChild();
         }
     }
 
@@ -107,8 +104,48 @@ public class DisplayGroupTool
             dg.AlwaysVisible = false;
         }
 
-        // Targeted Entities
-        DisplayHeaderSection(sels);
+        void DisplayTargetEntities()
+        {
+            // Help
+            if (ImGui.Button($"{Icons.LightbulbO}##renderGroupHelpText", DPI.IconButtonSize))
+            {
+            }
+            UIHelper.Tooltip(
+                "Render Groups are used by the game to determine what should render and what shouldn't.\n" +
+                "They consist of Display Groups and Draw Groups.\n" +
+                //"Display Groups: Determines which DrawGroups should render.\n" +
+                //"Draw Groups: Determines if things will render when a DispGroup is active.\n" +
+                "When a Display Group is active, Map Objects with that Draw Group will render.\n" +
+                "\n" +
+                "If a Map Object uses the CollisionName field, they will inherit Draw Groups from the referenced Map Object.\n" +
+                "Also, CollisionName references will be targeted by Smithbox when using `Set Selection`/`Get Selection` instead of your actual selection.\n" +
+                "When a character walks on top of a piece of collision, they will use its DispGroups and DrawGroups.\n" +
+                "\n" +
+                "Color indicates which Render Groups selected Map Object is using.\n" +
+                "Red = Selection uses this Display Group.\n" +
+                "Green = Selection uses this Draw Group.\n" +
+                "Yellow = Selection uses both.\n" +
+                "\n" +
+                "(Note: there are unknown differences in Sekiro/ER/AC6)");
+            ImGui.SameLine();
+
+            string affectedEntsStr = string.Join(", ", sels.Select(s => s.RenderGroupRefName != "" ? s.RenderGroupRefName : s.Name));
+
+            ImGui.Text($"Targets: {Utils.ImGui_WordWrapString(affectedEntsStr, ImGui.GetWindowWidth(), 99)}");
+            ImGui.Separator();
+        }
+
+        if (sels.Count <= 5)
+        {
+            DisplayTargetEntities();
+        }
+        else
+        {
+            if (ImGui.CollapsingHeader("Targets##DisplayGroup"))
+            {
+                DisplayTargetEntities();
+            }
+        }
 
         // Render Group Table
         DisplayGroupTable(dg, sdrawgroups, sdispgroups);
@@ -179,161 +216,138 @@ public class DisplayGroupTool
 
     public void DisplayFooterSection(DrawGroup dg, uint[] sdrawgroups, uint[] sdispgroups, HashSet<Entity> sels)
     {
-        var scale = DPI.UIScale();
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader("Actions", "");
 
-        // Show All
-        if (ImGui.Button($"Show All", DPI.StandardButtonSize))
+        UIHelper.MultiButtonInput("dispGroupActions",
+            "showAll", "Show All", $"Show all display groups.\n{InputManager.GetHint(KeybindID.MapEditor_Show_All_Display_Groups)}", ShowAll,
+            "hideAll", "Hide All", $"Hide all display groups.\n{InputManager.GetHint(KeybindID.MapEditor_Hide_All_Display_Groups)}", HideAll,
+            "getDisplayGroup", "Get Display Group", $"Get display group for current selection.\n{InputManager.GetHint(KeybindID.MapEditor_View_Display_Group)}", GetDisplayGroup,
+            "getDrawGroup", "Get Draw Group", $"Get draw group for current selection.\n{InputManager.GetHint(KeybindID.MapEditor_View_Draw_Group)}", GetDrawGroup,
+            "assignDisplayGroup", "Assign Display Group", $"Assign display group for current selection.\n{InputManager.GetHint(KeybindID.MapEditor_Apply_Display_Group)}", AssignDisplayGroup,
+            "assignDrawGroup", "Assing Draw Group", $"Assign draw group for current selection.\n{InputManager.GetHint(KeybindID.MapEditor_Apply_Draw_Group)}", AssignDrawGroup,
+            "selectHighlights", "Select Highlights", $"Select highlighted. Right-click to highlight a checkbox within the table section.\n{InputManager.GetHint(KeybindID.MapEditor_Select_Display_Group_Highlights)}", SelectHighlights,
+            "clearHighlights", "Clear Highlights", $"Select highlighted. Right-click to highlight a checkbox within the table section.\n{InputManager.GetHint(KeybindID.MapEditor_Select_Display_Group_Highlights)}", ClearHighlights);
+    }
+
+    public void ShowAll()
+    {
+        DrawGroup dg = View.ViewportHandler.ActiveViewport.RenderScene.DisplayGroup;
+
+        for (var i = 0; i < _dispGroupCount; i++)
         {
-            for (var i = 0; i < _dispGroupCount; i++)
-            {
-                dg.RenderGroups[i] = 0xFFFFFFFF;
-            }
-        }
-        UIHelper.Tooltip($"Show all display groups.\n{InputManager.GetHint(KeybindID.MapEditor_Show_All_Display_Groups)}");
-
-        ImGui.SameLine();
-
-        // Hide All
-        if (ImGui.Button($"Hide All", DPI.StandardButtonSize))
-        {
-            for (var i = 0; i < _dispGroupCount; i++)
-            {
-                dg.RenderGroups[i] = 0;
-            }
-        }
-        UIHelper.Tooltip($"Hide all display groups.\n{InputManager.GetHint(KeybindID.MapEditor_Hide_All_Display_Groups)}");
-
-        // Get Display Group
-        if (sdispgroups == null)
-        {
-            ImGui.BeginDisabled();
-        }
-
-        if (ImGui.Button($"Get Display Group", DPI.StandardButtonSize) && sdispgroups != null)
-        {
-            for (var i = 0; i < _dispGroupCount; i++)
-            {
-                dg.RenderGroups[i] = sdispgroups[i];
-            }
-        }
-        UIHelper.Tooltip($"Get display group for current selection.\n{InputManager.GetHint(KeybindID.MapEditor_View_Display_Group)}");
-
-        ImGui.SameLine();
-
-        // Get Draw Group
-        if (ImGui.Button($"Get Draw Group", DPI.StandardButtonSize) && sdispgroups != null)
-        {
-            for (var i = 0; i < _dispGroupCount; i++)
-            {
-                dg.RenderGroups[i] = sdrawgroups[i];
-            }
-        }
-        UIHelper.Tooltip($"Get draw group for current selection.\n{InputManager.GetHint(KeybindID.MapEditor_View_Draw_Group)}");
-
-        // Assign Display Group
-        if (ImGui.Button($"Assign Display Group", DPI.StandardButtonSize) && sdispgroups != null)
-        {
-            IEnumerable<uint[]> selDispGroups = sels.Select(s => s.Dispgroups);
-            ArrayPropertyCopyAction action = new(dg.RenderGroups, selDispGroups);
-
-            View.ViewportActionManager.ExecuteAction(action);
-        }
-        UIHelper.Tooltip($"Assign display group for current selection.\n{InputManager.GetHint(KeybindID.MapEditor_Apply_Display_Group)}");
-
-        ImGui.SameLine();
-
-        // Assign Draw Group
-        if (ImGui.Button($"Assign Draw Group", DPI.StandardButtonSize) && sdispgroups != null)
-        {
-            IEnumerable<uint[]> selDrawGroups = sels.Select(s => s.Drawgroups);
-            ArrayPropertyCopyAction action = new(dg.RenderGroups, selDrawGroups);
-
-            View.ViewportActionManager.ExecuteAction(action);
-        }
-        UIHelper.Tooltip($"Assign draw group for current selection.\n{InputManager.GetHint(KeybindID.MapEditor_Apply_Draw_Group)}");
-
-        // Select Highlights
-        if (sdispgroups == null)
-        {
-            ImGui.EndDisabled();
-        }
-
-        if (!HighlightedGroups.Any())
-        {
-            ImGui.BeginDisabled();
-        }
-
-        if (ImGui.Button("Select Highlights", DPI.StandardButtonSize))
-        {
-            selectHighlightsOperation = true;
-        }
-        UIHelper.Tooltip($"Select highlighted. Right-click to highlight a checkbox within the table section.\n{InputManager.GetHint(KeybindID.MapEditor_Select_Display_Group_Highlights)}");
-
-        ImGui.SameLine();
-
-        // Clear Highlights
-        if (ImGui.Button("Clear Highlights", DPI.StandardButtonSize))
-        {
-            HighlightedGroups.Clear();
-        }
-        else if (!HighlightedGroups.Any())
-        {
-            ImGui.EndDisabled();
-        }
-
-        if (DisplayHelpText)
-        {
-            ImGui.Separator();
-
-            UIHelper.WrappedText(
-                "Render Groups are used by the game to determine what should render and what shouldn't.\n" +
-                "They consist of Display Groups and Draw Groups.\n" +
-                //"Display Groups: Determines which DrawGroups should render.\n" +
-                //"Draw Groups: Determines if things will render when a DispGroup is active.\n" +
-                "When a Display Group is active, Map Objects with that Draw Group will render.\n" +
-                "\n" +
-                "If a Map Object uses the CollisionName field, they will inherit Draw Groups from the referenced Map Object.\n" +
-                "Also, CollisionName references will be targeted by Smithbox when using `Set Selection`/`Get Selection` instead of your actual selection.\n" +
-                "When a character walks on top of a piece of collision, they will use its DispGroups and DrawGroups.\n" +
-                "\n" +
-                "Color indicates which Render Groups selected Map Object is using.\n" +
-                "Red = Selection uses this Display Group.\n" +
-                "Green = Selection uses this Draw Group.\n" +
-                "Yellow = Selection uses both.\n" +
-                "\n" +
-                "(Note: there are unknown differences in Sekiro/ER/AC6)");
+            dg.RenderGroups[i] = 0xFFFFFFFF;
         }
     }
 
-    public void DisplayHeaderSection(HashSet<Entity> sels)
+    public void HideAll()
     {
-        void DisplayTargetEntities()
+        DrawGroup dg = View.ViewportHandler.ActiveViewport.RenderScene.DisplayGroup;
+
+        for (var i = 0; i < _dispGroupCount; i++)
         {
-            // Help
-            if (ImGui.Button($"{Icons.LightbulbO}##renderGroupHelpText", DPI.IconButtonSize))
-            {
-                DisplayHelpText = !DisplayHelpText;
-            }
-            UIHelper.Tooltip("Toggle the help section.");
-            ImGui.SameLine();
+            dg.RenderGroups[i] = 0;
+        }
+    }
 
-            string affectedEntsStr = string.Join(", ", sels.Select(s => s.RenderGroupRefName != "" ? s.RenderGroupRefName : s.Name));
+    public void GetDisplayGroup()
+    {
+        DrawGroup dg = View.ViewportHandler.ActiveViewport.RenderScene.DisplayGroup;
 
-            ImGui.Text($"Targets: {Utils.ImGui_WordWrapString(affectedEntsStr, ImGui.GetWindowWidth(), 99)}");
-            ImGui.Separator();
+        var sels = View.ViewportSelection.GetFilteredSelection<Entity>(e => e.HasRenderGroups);
+
+        if (!sels.Any())
+        {
+            Smithbox.LogError<DisplayGroupTool>("No selection present.");
+            return;
         }
 
-        if (sels.Count <= 5)
+        var sdrawgroups = sels.First().Drawgroups;
+        var sdispgroups = sels.First().Dispgroups;
+
+        for (var i = 0; i < _dispGroupCount; i++)
         {
-            DisplayTargetEntities();
+            dg.RenderGroups[i] = sdispgroups[i];
         }
-        else
+    }
+
+    public void GetDrawGroup()
+    {
+        DrawGroup dg = View.ViewportHandler.ActiveViewport.RenderScene.DisplayGroup;
+
+        var sels = View.ViewportSelection.GetFilteredSelection<Entity>(e => e.HasRenderGroups);
+
+        if (!sels.Any())
         {
-            if (ImGui.CollapsingHeader("Targets##DisplayGroup"))
-            {
-                DisplayTargetEntities();
-            }
+            Smithbox.LogError<DisplayGroupTool>("No selection present.");
+            return;
         }
+
+        var sdrawgroups = sels.First().Drawgroups;
+        var sdispgroups = sels.First().Dispgroups;
+
+        for (var i = 0; i < _dispGroupCount; i++)
+        {
+            dg.RenderGroups[i] = sdrawgroups[i];
+        }
+    }
+
+    public void AssignDisplayGroup()
+    {
+        DrawGroup dg = View.ViewportHandler.ActiveViewport.RenderScene.DisplayGroup;
+
+        var sels = View.ViewportSelection.GetFilteredSelection<Entity>(e => e.HasRenderGroups);
+
+        if (!sels.Any())
+        {
+            Smithbox.LogError<DisplayGroupTool>("No selection present.");
+            return;
+        }
+
+        IEnumerable<uint[]> selDispGroups = sels.Select(s => s.Dispgroups);
+        ArrayPropertyCopyAction action = new(dg.RenderGroups, selDispGroups);
+
+        View.ViewportActionManager.ExecuteAction(action);
+    }
+
+    public void AssignDrawGroup()
+    {
+        DrawGroup dg = View.ViewportHandler.ActiveViewport.RenderScene.DisplayGroup;
+
+        var sels = View.ViewportSelection.GetFilteredSelection<Entity>(e => e.HasRenderGroups);
+
+        if (!sels.Any())
+        {
+            Smithbox.LogError<DisplayGroupTool>("No selection present.");
+            return;
+        }
+
+        IEnumerable<uint[]> selDrawGroups = sels.Select(s => s.Drawgroups);
+        ArrayPropertyCopyAction action = new(dg.RenderGroups, selDrawGroups);
+
+        View.ViewportActionManager.ExecuteAction(action);
+    }
+
+    public void SelectHighlights()
+    {
+        if (!HighlightedGroups.Any())
+        {
+            Smithbox.LogError<DisplayGroupTool>("No groups are highlighted.");
+            return;
+        }
+
+        selectHighlightsOperation = true;
+    }
+
+    public void ClearHighlights()
+    {
+        if (!HighlightedGroups.Any())
+        {
+            Smithbox.LogError<DisplayGroupTool>("No groups are highlighted.");
+            return;
+        }
+
+        HighlightedGroups.Clear();
     }
 
     public void DisplayGroupTable(DrawGroup dg, uint[] sdrawgroups, uint[] sdispgroups)

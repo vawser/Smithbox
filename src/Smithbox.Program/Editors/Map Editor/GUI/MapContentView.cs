@@ -256,12 +256,9 @@ public class MapContentView
                 var mapName = AliasHelper.GetMapNameAlias(View.Project, map.Name);
                 PlatformUtils.Instance.SetClipboardText(mapName);
             }
-            if (View.GlobalSearchTool.IsOpen)
+            if (ImGui.Selectable("Add to Map Filter"))
             {
-                if (ImGui.Selectable("Add to Map Filter"))
-                {
-                    View.GlobalSearchTool.AddMapFilterInput(map.Name);
-                }
+                View.GlobalSearchTool.AddMapFilterInput(map.Name);
             }
 
             ImGui.EndPopup();
@@ -296,10 +293,6 @@ public class MapContentView
 
             View.EditorVisibilityAction.OnContext();
             View.GameVisibilityAction.OnContext();
-
-            ImGui.Separator();
-
-            View.SelectionGroupTool.OnContext();
 
             ImGui.Separator();
 

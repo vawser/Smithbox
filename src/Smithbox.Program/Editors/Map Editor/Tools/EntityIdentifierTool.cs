@@ -13,11 +13,13 @@ public class EntityIdentifierTool
     private MapEditorView View;
     private ProjectEntry Project;
 
-    private string SearchText = "";
     private bool HideUnassigned = false;
     private EntityIdBlockSeperatorType BlockSeperatorType = EntityIdBlockSeperatorType.None;
 
     private string SelectedIdentifier = "";
+
+    public string EntityIdSearch = "";
+    public bool ExactEntityIdSearch = false;
 
     public EntityIdentifierTool(MapEditorView view, ProjectEntry project)
     {
@@ -36,65 +38,65 @@ public class EntityIdentifierTool
             return;
         }
 
-        if (ImGui.CollapsingHeader("Entity Identifiers"))
+        ImGui.BeginChild("EntityIdToolSection", ImGuiChildFlags.Borders);
+
+        UIHelper.WrappedText("Use this to determine the entity ids the map objects have for the current loaded map.");
+
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader("Actions", "");
+
+        UIHelper.MultiButtonInput("entityIdActions",
+            "refreshList", "Refresh", "Refresh the data cache for the currently loaded map.", SetupEntityCache);
+
+
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader("List", "");
+
+        var searchHeight = new Vector2(0, 36) * DPI.UIScale();
+        ImGui.BeginChild($"framedListFilter_EntityIdTool", searchHeight, ImGuiChildFlags.Borders);
+
+        EditorFilters.DisplayListFilter("EntityIdTool", ref EntityIdSearch, ref ExactEntityIdSearch);
+
+        ImGui.SameLine();
+
+        if (ImGui.Button($"{Icons.Eye}##hideUnassigned", DPI.IconButtonSize))
         {
-            ImGui.BeginChild("EntityIdToolSection");
-            var windowWidth = ImGui.GetWindowWidth();
-
-            var windowSize = DPI.GetWindowSize(Smithbox.Instance._context);
-            var sectionWidth = ImGui.GetWindowWidth() * 0.95f;
-            var sectionHeight = windowSize.Y * 0.25f;
-            var sectionSize = new Vector2(sectionWidth * DPI.UIScale(), sectionHeight * DPI.UIScale());
-
-            ImGui.InputText("##EIO_filter", ref SearchText, 255);
-            UIHelper.Tooltip("Filter the list.");
-
-            ImGui.SameLine();
-
-            if (ImGui.Button($"{Icons.Eye}##hideUnassigned", DPI.IconButtonSize))
-            {
-                HideUnassigned = !HideUnassigned;
-            }
-            UIHelper.Tooltip("Toggle the display of unassigned identifiers.");
-
-            ImGui.SameLine();
-
-            if (ImGui.Button($"{Icons.Bars}##toggleBlockSeperators", DPI.IconButtonSize))
-            {
-                if (BlockSeperatorType is EntityIdBlockSeperatorType.None)
-                {
-                    BlockSeperatorType = EntityIdBlockSeperatorType.Thousands;
-                }
-                else if (BlockSeperatorType is EntityIdBlockSeperatorType.Thousands)
-                {
-                    BlockSeperatorType = EntityIdBlockSeperatorType.Hundreds;
-                }
-                else if (BlockSeperatorType is EntityIdBlockSeperatorType.Hundreds)
-                {
-                    BlockSeperatorType = EntityIdBlockSeperatorType.None;
-                }
-            }
-            UIHelper.Tooltip("Toggle the block separator display within the list (none, every 1000, every 100).");
-
-            if (ImGui.Button("Refresh", DPI.StandardButtonSize))
-            {
-                SetupEntityCache();
-            }
-            UIHelper.Tooltip("Refresh the data cache for the currently loaded map.");
-
-            ImGui.Separator();
-
-            ImGui.BeginChild($"EIO_Overview", sectionSize, ImGuiChildFlags.Borders);
-
-            if (View.Selection.SelectedMapID == "")
-                ImGui.Text("No map has been loaded and selected yet.");
-
-            DisplayEIOList();
-
-            ImGui.EndChild();
-
-            ImGui.EndChild();
+            HideUnassigned = !HideUnassigned;
         }
+        UIHelper.Tooltip("Toggle the display of unassigned identifiers.");
+
+        ImGui.SameLine();
+
+        if (ImGui.Button($"{Icons.Bars}##toggleBlockSeperators", DPI.IconButtonSize))
+        {
+            if (BlockSeperatorType is EntityIdBlockSeperatorType.None)
+            {
+                BlockSeperatorType = EntityIdBlockSeperatorType.Thousands;
+            }
+            else if (BlockSeperatorType is EntityIdBlockSeperatorType.Thousands)
+            {
+                BlockSeperatorType = EntityIdBlockSeperatorType.Hundreds;
+            }
+            else if (BlockSeperatorType is EntityIdBlockSeperatorType.Hundreds)
+            {
+                BlockSeperatorType = EntityIdBlockSeperatorType.None;
+            }
+        }
+        UIHelper.Tooltip("Toggle the block separator display within the list (none, every 1000, every 100).");
+
+        ImGui.EndChild();
+
+
+        ImGui.BeginChild($"EIO_Overview", ImGuiChildFlags.Borders);
+
+        if (View.Selection.SelectedMapID == "")
+            ImGui.Text("No map has been loaded and selected yet.");
+
+        DisplayEIOList();
+
+        ImGui.EndChild();
+
+        ImGui.EndChild();
     }
 
     private Dictionary<string, Dictionary<string, Entity>> EntityCache = new();
@@ -187,13 +189,8 @@ public class EntityIdentifierTool
                     }
                 }
 
-                if (SearchText != "")
-                {
-                    if (!$"{id}".Contains(SearchText))
-                    {
-                        continue;
-                    }
-                }
+                if (!EditorFilters.IsMatch(EntityIdSearch, $"{id}", ExactEntityIdSearch))
+                    continue;
 
                 if (HideUnassigned)
                 {
@@ -239,13 +236,36 @@ public class EntityIdentifierTool
                     }
                 }
 
+                var actualAlias = "";
+
                 if (entity == null)
                 {
                     UIHelper.DisplayColoredAlias("Not assigned", UI.Current.ImGui_Invalid_Text_Color);
                 }
                 else
                 {
-                    UIHelper.DisplayAlias($"{entity.Name}");
+                    var aliasStr = $"{entity.Name}";
+                    var inputName = entity.Name.Split("_").First();
+
+                    if (EntityHelper.IsPartEnemy(entity) || EntityHelper.IsPartDummyEnemy(entity))
+                    {
+                        actualAlias = AliasHelper.GetAlias(Project, inputName, ModelEditor.ModelListType.Character);
+                    }
+                    else if (EntityHelper.IsPartAsset(entity) || EntityHelper.IsPartDummyAsset(entity))
+                    {
+                        actualAlias = AliasHelper.GetAlias(Project, inputName, ModelEditor.ModelListType.Asset);
+                    }
+                    else if (EntityHelper.IsPartMapPiece(entity))
+                    {
+                        actualAlias = AliasHelper.GetAlias(Project, inputName, ModelEditor.ModelListType.MapPiece);
+                    }
+
+                    if (actualAlias != "")
+                    {
+                        aliasStr = $"{entity.Name} ({actualAlias})";
+                    }
+
+                    UIHelper.DisplayAlias(aliasStr);
                 }
             }
         }

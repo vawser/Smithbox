@@ -228,10 +228,6 @@ public class MapViewportView
                 View.EditorVisibilityAction.OnContext();
                 View.GameVisibilityAction.OnContext();
 
-                ImGui.Separator();
-
-                View.SelectionGroupTool.OnContext();
-
                 if (targetedEnt != null)
                 {
                     ImGui.Separator();

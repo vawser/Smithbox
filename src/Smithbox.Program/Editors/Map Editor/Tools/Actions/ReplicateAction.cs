@@ -302,7 +302,7 @@ public class ReplicateAction
         }
         else
         {
-            PlatformUtils.Instance.MessageBox("No object selected.", "Smithbox", MessageBoxButtons.OK);
+            Smithbox.LogError<ReplicateAction>("No object selected.");
         }
 
         View.DelayPicking();

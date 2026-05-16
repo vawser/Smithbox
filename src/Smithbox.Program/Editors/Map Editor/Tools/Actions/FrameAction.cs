@@ -128,7 +128,7 @@ public class FrameAction
         }
         else
         {
-            PlatformUtils.Instance.MessageBox("No object selected.", "Smithbox", MessageBoxButtons.OK);
+            Smithbox.LogError<FrameAction>("No object selected.");
         }
 
         View.DelayPicking();

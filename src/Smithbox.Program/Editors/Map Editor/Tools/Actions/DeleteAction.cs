@@ -80,7 +80,7 @@ public class DeleteAction
         }
         else
         {
-            PlatformUtils.Instance.MessageBox("No object selected.", "Smithbox", MessageBoxButtons.OK);
+            Smithbox.LogError<DeleteAction>("No object selected.");
         }
 
         View.DelayPicking();

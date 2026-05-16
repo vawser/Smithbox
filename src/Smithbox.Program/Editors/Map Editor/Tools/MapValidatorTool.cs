@@ -33,129 +33,135 @@ public class MapValidatorTool
 
     public void OnToolWindow()
     {
-        if (ImGui.CollapsingHeader("Map Validator"))
+        ImGui.BeginChild("MapValidatorToolSection", ImGuiChildFlags.Borders);
+
+        var windowWidth = ImGui.GetWindowWidth();
+
+        var windowSize = DPI.GetWindowSize(Smithbox.Instance._context);
+        var sectionWidth = ImGui.GetWindowWidth() * 0.95f;
+        var sectionHeight = windowSize.Y * 0.25f;
+        var sectionSize = new Vector2(sectionWidth * DPI.UIScale(), sectionHeight * DPI.UIScale());
+
+        UIHelper.WrappedText("Validate the currently loaded map.");
+        UIHelper.WrappedText("");
+
+        UIHelper.MultiButtonInput("validateActions",
+            "validateMap", "Validate", "", ValidateMap);
+
+        if (ValidationEntries.Count > 0)
         {
-            ImGui.BeginChild("MapValidatorToolSection");
+            UIHelper.Spacer();
+            UIHelper.SimpleHeader("Results", "");
 
-            var windowWidth = ImGui.GetWindowWidth();
+            ImGui.BeginChild("ValidationTabs", ImGuiChildFlags.Borders);
 
-            var windowSize = DPI.GetWindowSize(Smithbox.Instance._context);
-            var sectionWidth = ImGui.GetWindowWidth() * 0.95f;
-            var sectionHeight = windowSize.Y * 0.25f;
-            var sectionSize = new Vector2(sectionWidth * DPI.UIScale(), sectionHeight * DPI.UIScale());
+            ImGui.BeginTabBar("##mapValidationTabBar");
 
-            UIHelper.WrappedText("Validate the currently loaded map.");
-            UIHelper.WrappedText("");
+            DisplayEntityID();
 
-            if (ImGui.Button("Validate", DPI.WholeWidthButton(sectionWidth, 24)))
-            {
-                ValidationEntries = new();
+            DisplayCommonMatches(
+                "Collision Name", "collisionName", 
+                "refers to a collision name that doesn't exist:",
+                MapValidationType.CollisionName);
 
-                var mapContainer = View.Selection.SelectedMapContainer;
+            DisplayCommonMatches(
+                "Walk Route", "walkRoute",
+                "refers to a walk route name that doesn't exist:",
+                MapValidationType.WalkRoute);
 
-                if(mapContainer != null)
-                {
-                    // Entity ID
-                    ValidateEntityID(mapContainer);
+            DisplayCommonMatches(
+                "Part Name", "partName",
+                "refers to a part name entry that doesn't exist:",
+                MapValidationType.PartNames);
 
-                    // Collision Name
-                    if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
-                    {
-                        ValidateReferenceProperty(mapContainer, "CollisionPartName", MapValidationType.CollisionName, true);
+            DisplayCommonMatches(
+                "NPC Think", "npcThink",
+                "refers to a NpcThinkParam entry that doesn't exist:",
+                MapValidationType.ThinkParamID);
 
-                        ValidateReferenceProperty(mapContainer, "CollisionName", MapValidationType.CollisionName, true);
-                    }
-                    else
-                    {
-                        ValidateReferenceProperty(mapContainer, "CollisionName", MapValidationType.CollisionName, true);
+            DisplayCommonMatches(
+                "NPC Param", "npcParam",
+                "refers to a NpcParam entry that doesn't exist:",
+                MapValidationType.NPCParamID);
 
-                        ValidateReferenceProperty(mapContainer, "UnkHitName", MapValidationType.CollisionName, true);
-                    }
+            DisplayCommonMatches(
+                "Character Init", "charaInit",
+                "refers to a CharaInitParam entry that doesn't exist:",
+                MapValidationType.CharaInitID);
 
-                    // Walk Route
-                    ValidateReferenceProperty(mapContainer, "WalkRouteName", 
-                        MapValidationType.WalkRoute, true);
+            DisplayCommonMatches(
+                "Chameleon Param", "chameleonParam",
+                "refers to a MapMimicryEstablishmentParam entry that doesn't exist:",
+                MapValidationType.ChameleonParamID);
 
-                    // Part Names
-                    if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
-                    {
-                        ValidateStringArrayReferenceProperty(mapContainer, "PartNames", MapValidationType.PartNames, true);
-
-                        ValidateReferenceProperty(mapContainer, "UnkT54PartName",
-                            MapValidationType.PartNames, true);
-                    }
-
-                    // Params
-                    ValidateParamProperty(mapContainer, "NpcThinkParam", "ThinkParamID",
-                    MapValidationType.ThinkParamID, [-1]);
-
-                    ValidateParamProperty(mapContainer, "NpcParam", "NPCParamID",
-                        MapValidationType.NPCParamID, [-1]);
-
-                    ValidateParamProperty(mapContainer, "CharaInitParam", "CharaInitID",
-                        MapValidationType.CharaInitID, [-1]);
-
-                    ValidateParamProperty(mapContainer, "MapMimicryEstablishmentParam", "ChameleonParamID",
-                        MapValidationType.ChameleonParamID, [-1]);
-                }
-
-                FirstValidate = true;
-            }
-
-            if (ValidationEntries.Count > 0)
-            {
-                ImGui.BeginChild("ValidationTabs");
-
-                ImGui.BeginTabBar("##mapValidationTabBar");
-
-                DisplayEntityID();
-
-                DisplayCommonMatches(
-                    "Collision Name", "collisionName", 
-                    "refers to a collision name that doesn't exist:",
-                    MapValidationType.CollisionName);
-
-                DisplayCommonMatches(
-                    "Walk Route", "walkRoute",
-                    "refers to a walk route name that doesn't exist:",
-                    MapValidationType.WalkRoute);
-
-                DisplayCommonMatches(
-                    "Part Name", "partName",
-                    "refers to a part name entry that doesn't exist:",
-                    MapValidationType.PartNames);
-
-                DisplayCommonMatches(
-                    "NPC Think", "npcThink",
-                    "refers to a NpcThinkParam entry that doesn't exist:",
-                    MapValidationType.ThinkParamID);
-
-                DisplayCommonMatches(
-                    "NPC Param", "npcParam",
-                    "refers to a NpcParam entry that doesn't exist:",
-                    MapValidationType.NPCParamID);
-
-                DisplayCommonMatches(
-                    "Character Init", "charaInit",
-                    "refers to a CharaInitParam entry that doesn't exist:",
-                    MapValidationType.CharaInitID);
-
-                DisplayCommonMatches(
-                    "Chameleon Param", "chameleonParam",
-                    "refers to a MapMimicryEstablishmentParam entry that doesn't exist:",
-                    MapValidationType.ChameleonParamID);
-
-                ImGui.EndTabBar();
-
-                ImGui.EndChild();
-            }
-            else if(FirstValidate && ValidationEntries.Count == 0)
-            {
-                UIHelper.WrappedText("No issues found.");
-            }
+            ImGui.EndTabBar();
 
             ImGui.EndChild();
         }
+        else if(FirstValidate && ValidationEntries.Count == 0)
+        {
+            UIHelper.Spacer();
+            UIHelper.SimpleHeader("Results", "");
+
+            UIHelper.WrappedText("No issues found.");
+        }
+
+        ImGui.EndChild();
+    }
+
+    public void ValidateMap()
+    {
+        ValidationEntries = new();
+
+        var mapContainer = View.Selection.SelectedMapContainer;
+
+        if (mapContainer != null)
+        {
+            // Entity ID
+            ValidateEntityID(mapContainer);
+
+            // Collision Name
+            if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+            {
+                ValidateReferenceProperty(mapContainer, "CollisionPartName", MapValidationType.CollisionName, true);
+
+                ValidateReferenceProperty(mapContainer, "CollisionName", MapValidationType.CollisionName, true);
+            }
+            else
+            {
+                ValidateReferenceProperty(mapContainer, "CollisionName", MapValidationType.CollisionName, true);
+
+                ValidateReferenceProperty(mapContainer, "UnkHitName", MapValidationType.CollisionName, true);
+            }
+
+            // Walk Route
+            ValidateReferenceProperty(mapContainer, "WalkRouteName",
+                MapValidationType.WalkRoute, true);
+
+            // Part Names
+            if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+            {
+                ValidateStringArrayReferenceProperty(mapContainer, "PartNames", MapValidationType.PartNames, true);
+
+                ValidateReferenceProperty(mapContainer, "UnkT54PartName",
+                    MapValidationType.PartNames, true);
+            }
+
+            // Params
+            ValidateParamProperty(mapContainer, "NpcThinkParam", "ThinkParamID",
+            MapValidationType.ThinkParamID, [-1]);
+
+            ValidateParamProperty(mapContainer, "NpcParam", "NPCParamID",
+                MapValidationType.NPCParamID, [-1]);
+
+            ValidateParamProperty(mapContainer, "CharaInitParam", "CharaInitID",
+                MapValidationType.CharaInitID, [-1]);
+
+            ValidateParamProperty(mapContainer, "MapMimicryEstablishmentParam", "ChameleonParamID",
+                MapValidationType.ChameleonParamID, [-1]);
+        }
+
+        FirstValidate = true;
     }
 
     public void DisplayEntityID()

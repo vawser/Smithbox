@@ -75,7 +75,7 @@ public class GotoAction
         }
         else
         {
-            PlatformUtils.Instance.MessageBox("No object selected.", "Smithbox", MessageBoxButtons.OK);
+            Smithbox.LogError<GotoAction>("No object selected.");
         }
     }
 }

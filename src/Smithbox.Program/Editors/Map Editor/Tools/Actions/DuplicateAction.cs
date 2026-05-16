@@ -139,7 +139,7 @@ public class DuplicateAction
         }
         else
         {
-            PlatformUtils.Instance.MessageBox("No object selected.", "Smithbox", MessageBoxButtons.OK);
+            Smithbox.LogError<DuplicateAction>("No object selected.");
         }
 
         View.DelayPicking();

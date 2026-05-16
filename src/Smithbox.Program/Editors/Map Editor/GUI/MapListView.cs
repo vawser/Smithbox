@@ -343,12 +343,9 @@ public class MapListView : IActionEventHandler
                 var mapName = AliasHelper.GetMapNameAlias(View.Project, mapWrapper.Name);
                 PlatformUtils.Instance.SetClipboardText(mapName);
             }
-            if (View.GlobalSearchTool.IsOpen)
+            if (ImGui.Selectable("Add to Map Filter"))
             {
-                if (ImGui.Selectable("Add to Map Filter"))
-                {
-                    View.GlobalSearchTool.AddMapFilterInput(mapWrapper.Name);
-                }
+                View.GlobalSearchTool.AddMapFilterInput(mapWrapper.Name);
             }
 
             ImGui.EndPopup();

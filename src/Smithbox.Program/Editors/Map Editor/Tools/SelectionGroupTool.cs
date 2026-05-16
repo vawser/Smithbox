@@ -5,9 +5,9 @@ using StudioCore.Keybinds;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Numerics;
-using static StudioCore.Keybinds.InputManager;
 
 namespace StudioCore.Editors.MapEditor;
 
@@ -15,6 +15,9 @@ public class SelectionGroupTool
 {
     public MapEditorView View;
     public ProjectEntry Project;
+
+    public string ListFilter = "";
+    public bool ExactListFilter = false;
 
     public SelectionGroupTool(MapEditorView view, ProjectEntry project)
     {
@@ -36,41 +39,12 @@ public class SelectionGroupTool
 
     private string editPromptOldGroupName = "";
 
-    private string _searchInput = "";
-
     private int currentKeyBindOption = -1;
     private List<int> keyBindOptions = new List<int>() { -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
-    public bool OpenPopup = false;
+    public bool DisplayNewGroupForm = true;
 
-    /// <summary>
-    /// Update Loop
-    /// </summary>
-    public void DisplayPopup()
-    {
-        if (View.Project.Descriptor.ProjectType == ProjectType.Undefined)
-            return;
-
-        if (View.Project.Handler.MapData.MapObjectSelections == null)
-            return;
-
-        if (View.Project.Handler.MapData.MapObjectSelections.Resources == null)
-            return;
-
-        if (OpenPopup)
-        {
-            CreateSelectionGroup("External");
-            OpenPopup = false;
-        }
-
-        // This exposes the pop-up to the map editor
-        if (ImGui.BeginPopup("##selectionGroupModalExternal"))
-        {
-            DisplayCreationModal();
-
-            ImGui.EndPopup();
-        }
-    }
+    public SelectionGroupMode Mode = SelectionGroupMode.View;
 
     /// <summary>
     /// Shortcuts
@@ -79,12 +53,6 @@ public class SelectionGroupTool
     {
         if (CFG.Current.MapEditor_Selection_Group_Enable_Shortcuts)
         {
-            // Selection Groups
-            if (InputManager.IsPressed(KeybindID.MapEditor_Create_Selection_Group))
-            {
-                CreateSelectionGroup("External");
-            }
-
             if (InputManager.IsPressed(KeybindID.MapEditor_Select_Group_0))
             {
                 ShortcutSelectGroup(0);
@@ -133,18 +101,6 @@ public class SelectionGroupTool
     }
 
     /// <summary>
-    /// Context Menu
-    /// </summary>
-    public void OnContext()
-    {
-        if (ImGui.Selectable("Create Selection Group"))
-        {
-            OpenPopup = true;
-        }
-        UIHelper.Tooltip($"Create a selection group from the current selection.\n\nShortcut: {InputManager.GetHint(KeybindID.MapEditor_Create_Selection_Group)}");
-    }
-
-    /// <summary>
     /// Tool Window
     /// </summary>
     public void OnToolWindow()
@@ -158,36 +114,21 @@ public class SelectionGroupTool
         if (View.Project.Handler.MapData.MapObjectSelections.Resources == null)
             return;
 
-        ImGui.BeginChild("SelectionGroupToolSection");
+        ImGui.BeginChild("SelectionGroupToolSection", ImGuiChildFlags.Borders);
 
-        var windowSize = DPI.GetWindowSize(Smithbox.Instance._context);
-        var sectionWidth = ImGui.GetWindowWidth() * 0.95f;
-        var topSectionHeight = windowSize.Y * 0.1f;
-        var bottomSectionHeight = windowSize.Y * 0.3f;
-        var topSectionSize = new Vector2(sectionWidth * DPI.UIScale(), topSectionHeight * DPI.UIScale());
-        var bottomSectionSize = new Vector2(sectionWidth * DPI.UIScale(), bottomSectionHeight * DPI.UIScale());
+        UIHelper.WrappedText("Use this to define groups of map objects under a name. You can then quickly re-select the group via this tool.");
 
-        var windowWidth = ImGui.GetWindowWidth();
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader("Selection Groups", "");
 
-        if (ImGui.BeginPopup("##selectionGroupModalInternal"))
-        {
-            DisplayCreationModal();
+        EditorFilters.DisplayFramedListFilter("selectionGroupFilter", ref ListFilter, ref ExactListFilter);
 
-            ImGui.EndPopup();
-        }
-
-        UIHelper.SimpleHeader("Selection Groups", "Selection Groups", "", UI.Current.ImGui_Default_Text_Color);
-
-        ImGui.BeginChild("##selectionGroupList", topSectionSize, ImGuiChildFlags.Borders);
-
-        ImGui.InputText($"##selectionGroupFilter", ref _searchInput, 255);
-        UIHelper.Tooltip("Filter the selection group list. Separate terms are split via the + character.");
-
-        ImGui.Separator();
+        ImGui.BeginChild("##selectionGroupList", new Vector2(0, 250f), ImGuiChildFlags.Borders);
 
         foreach (var entry in View.Project.Handler.MapData.MapObjectSelections.Resources)
         {
             var displayName = $"{entry.Name}";
+            var tagString = "";
 
             if (CFG.Current.MapEditor_Selection_Group_Show_Keybind)
             {
@@ -205,75 +146,65 @@ public class SelectionGroupTool
             {
                 if (entry.Tags.Count > 0)
                 {
-                    var tagString = string.Join(" ", entry.Tags);
+                    tagString = string.Join(" ", entry.Tags);
                     displayName = $"{displayName} {{ {tagString} }}";
                 }
             }
 
-            if (SearchFilters.IsSelectionSearchMatch(_searchInput, entry.Name, entry.Tags))
+            var isMatch = EditorFilters.IsMatch(ListFilter, entry.Name, ExactListFilter, tagString);
+
+            if (!isMatch)
+                continue;
+
+            if (ImGui.Selectable(displayName, selectedResourceName == entry.Name))
             {
-                if (ImGui.Selectable(displayName, selectedResourceName == entry.Name))
+                selectedResourceName = entry.Name;
+                selectedResourceTags = entry.Tags;
+                selectedResourceContents = entry.Selection;
+                selectedResourceKeybind = entry.SelectionGroupKeybind;
+
+                editPromptOldGroupName = entry.Name;
+                editPromptGroupName = entry.Name;
+                editPromptTags = AliasHelper.GetTagListString(entry.Tags);
+                editPromptKeybind = entry.SelectionGroupKeybind;
+
+                if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
                 {
-                    selectedResourceName = entry.Name;
-                    selectedResourceTags = entry.Tags;
-                    selectedResourceContents = entry.Selection;
-                    selectedResourceKeybind = entry.SelectionGroupKeybind;
-
-                    editPromptOldGroupName = entry.Name;
-                    editPromptGroupName = entry.Name;
-                    editPromptTags = AliasHelper.GetTagListString(entry.Tags);
-                    editPromptKeybind = entry.SelectionGroupKeybind;
-
-                    if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
-                    {
-                        SelectSelectionGroup();
-                    }
+                    SelectSelectionGroup();
                 }
             }
         }
         ImGui.EndChild();
 
-        if (ImGui.Button("Create New Selection Group", DPI.WholeWidthButton(windowWidth, 24)))
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader("Mode", "Determines if we are creating a new group, or editing an existing one.");
+
+        UIHelper.SetInputWidth();
+        if (ImGui.BeginCombo("##modeType", Mode.GetDisplayName()))
         {
-            CreateSelectionGroup("Internal");
+            foreach (var entry in Enum.GetValues(typeof(SelectionGroupMode)))
+            {
+                var curMode = (SelectionGroupMode)entry;
+
+                if (ImGui.Selectable($"{curMode.GetDisplayName()}", curMode == Mode))
+                {
+                    Mode = curMode;
+                }
+            }
+
+            ImGui.EndCombo();
         }
-        UIHelper.Tooltip($"Shortcut: {InputManager.GetHint(KeybindID.MapEditor_Create_Selection_Group)}\nBring up the selection group creation menu to assign your current selection to a selection group.");
 
-
-        UIHelper.SimpleHeader("Current Selection Group", "Current Selection Group", "", UI.Current.ImGui_Default_Text_Color);
-
-        ImGui.BeginChild("##selectionGroupActions", bottomSectionSize, ImGuiChildFlags.Borders);
-
-        if (selectedResourceName != "")
+        if (Mode is SelectionGroupMode.View)
         {
-            if (ImGui.Button("Select", DPI.ThirdWidthButton(bottomSectionSize.X, 24)))
-            {
-                SelectSelectionGroup();
-            }
-            UIHelper.Tooltip("Select the map objects listed by your currently selected group.");
+            UIHelper.Spacer();
+            UIHelper.SimpleHeader("Actions", "");
 
-            ImGui.SameLine();
+            UIHelper.MultiButtonInput("viewActions",
+                "selectGroup", "Select", "", SelectSelectionGroup);
 
-            if (ImGui.Button("Edit", DPI.ThirdWidthButton(bottomSectionSize.X, 24)))
-            {
-                ImGui.OpenPopup($"##selectionGroupModalEdit");
-            }
-            UIHelper.Tooltip("Edit the name, tags and keybind for the selected group.");
-
-            ImGui.SameLine();
-
-            if (ImGui.Button("Delete", DPI.ThirdWidthButton(bottomSectionSize.X, 24)))
-            {
-                DeleteSelectionGroup();
-            }
-            UIHelper.Tooltip("Delete this selected group.");
-
-            if (ImGui.BeginPopup("##selectionGroupModalEdit"))
-            {
-                DisplayEditModal();
-
-                ImGui.EndPopup();
-            }
+            UIHelper.Spacer();
+            UIHelper.SimpleHeader("Group Contents", "");
 
             if (selectedResourceTags.Count > 0)
             {
@@ -287,7 +218,119 @@ public class SelectionGroupTool
                 }
             }
 
-            UIHelper.WrappedText("Contents:");
+            foreach (var entry in selectedResourceContents)
+            {
+                UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, entry);
+            }
+        }
+
+        if (Mode is SelectionGroupMode.Create)
+        {
+            UIHelper.Spacer();
+            UIHelper.SimpleHeader("New Group Name", "");
+
+            UIHelper.HintTextInput("Group Name", ref createPromptGroupName, "Enter the name of the group...");
+
+            UIHelper.Spacer();
+            UIHelper.SimpleHeader("New Group Tags", "");
+
+            UIHelper.HintTextInput("Tags", ref createPromptTags, "Enter the tags associated with the group, split with the , character...");
+
+            UIHelper.Spacer();
+            UIHelper.SimpleHeader("New Group Keybind", "");
+
+            var previewString = GetSelectionGroupKeyBind(currentKeyBindOption);
+
+            if (ImGui.BeginCombo("##keybindCombo", previewString))
+            {
+                foreach (var entry in keyBindOptions)
+                {
+                    var nameString = GetSelectionGroupKeyBind(entry);
+
+                    bool isSelected = currentKeyBindOption == entry;
+
+                    if (ImGui.Selectable($"{nameString}##{entry}", isSelected))
+                    {
+                        currentKeyBindOption = entry;
+                    }
+                    if (isSelected)
+                    {
+                        ImGui.SetItemDefaultFocus();
+                    }
+                }
+
+                ImGui.EndCombo();
+            }
+            UIHelper.Tooltip("The keybind to quickly select the contents of this selection group.");
+
+            UIHelper.Spacer();
+            UIHelper.SimpleHeader("Actions", "");
+
+            UIHelper.MultiButtonInput("createActions",
+                "createGroup", "Create Group", "", CreateSelectionGroup);
+        }
+
+        if(Mode is SelectionGroupMode.Edit)
+        {
+            UIHelper.Spacer();
+            UIHelper.SimpleHeader("Edit Group Name", "");
+
+            UIHelper.HintTextInput("Group Name", ref editPromptGroupName, "Enter the name of the group...");
+
+            UIHelper.Spacer();
+            UIHelper.SimpleHeader("Edit Group Tags", "");
+
+            UIHelper.HintTextInput("Tags", ref editPromptTags, "Enter the tags associated with the group, split with the , character...");
+
+            UIHelper.Spacer();
+            UIHelper.SimpleHeader("Edit Group Keybind", "");
+
+            var previewString = GetSelectionGroupKeyBind(editPromptKeybind);
+
+            if (ImGui.BeginCombo("##keybindCombo", previewString))
+            {
+                foreach (var entry in keyBindOptions)
+                {
+                    var nameString = GetSelectionGroupKeyBind(entry);
+
+                    bool isSelected = editPromptKeybind == entry;
+
+                    if (ImGui.Selectable($"{nameString}##{entry}", isSelected))
+                    {
+                        editPromptKeybind = entry;
+                    }
+                    if (isSelected)
+                    {
+                        ImGui.SetItemDefaultFocus();
+                    }
+                }
+
+                ImGui.EndCombo();
+            }
+            UIHelper.Tooltip("The keybind to quickly select the contents of this selection group.");
+
+            UIHelper.Spacer();
+            UIHelper.SimpleHeader("Actions", "");
+
+            UIHelper.MultiButtonInput("editActions",
+                "editGroup", "Finalize Edit", "", EditSelectionGroup,
+                "deleteGroup", "Delete", "", DeleteSelectionGroup);
+
+            UIHelper.Spacer();
+            UIHelper.SimpleHeader("Group Contents", "");
+
+            if (selectedResourceTags.Count > 0)
+            {
+                var tagString = string.Join(" ", selectedResourceTags);
+                if (tagString != "")
+                {
+                    UIHelper.WrappedText("");
+                    UIHelper.WrappedText("Tags:");
+                    UIHelper.WrappedTextColored(UI.Current.ImGui_Default_Text_Color, tagString);
+                    UIHelper.WrappedText("");
+                }
+            }
+
             foreach (var entry in selectedResourceContents)
             {
                 UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, entry);
@@ -295,97 +338,7 @@ public class SelectionGroupTool
         }
 
         ImGui.EndChild();
-
-        ImGui.EndChild();
     }
-
-    private void DisplayCreationModal()
-    {
-        var windowWidth = ImGui.GetWindowWidth();
-
-        ImGui.InputText("Group Name##selectionGroup_GroupName", ref createPromptGroupName, 255);
-        UIHelper.Tooltip("The name of the selection group.");
-        ImGui.InputText("Tags##selectionGroup_Tags", ref createPromptTags, 255);
-        UIHelper.Tooltip("Separate each tag with the , character as a delimiter.");
-
-        var previewString = GetSelectionGroupKeyBind(currentKeyBindOption);
-
-        if (ImGui.BeginCombo("Keybind##keybindCombo", previewString))
-        {
-            foreach (var entry in keyBindOptions)
-            {
-                var nameString = GetSelectionGroupKeyBind(entry);
-
-                bool isSelected = currentKeyBindOption == entry;
-
-                if (ImGui.Selectable($"{nameString}##{entry}", isSelected))
-                {
-                    currentKeyBindOption = entry;
-                }
-                if (isSelected)
-                {
-                    ImGui.SetItemDefaultFocus();
-                }
-            }
-
-            ImGui.EndCombo();
-        }
-        UIHelper.Tooltip("The keybind to quickly select the contents of this selection group.");
-
-        if (ImGui.Button("Create Group", DPI.WholeWidthButton(windowWidth, 24)))
-        {
-            AmendSelectionGroupBank();
-            ImGui.CloseCurrentPopup();
-        }
-    }
-
-    private void DisplayEditModal()
-    {
-        var windowWidth = ImGui.GetWindowWidth();
-
-        ImGui.InputText("Group Name##selectionGroup_GroupName", ref editPromptGroupName, 255);
-        UIHelper.Tooltip("The name of the selection group.");
-        ImGui.InputText("Tags##selectionGroup_Tags", ref editPromptTags, 255);
-        UIHelper.Tooltip("Separate each tag with the , character as a delimiter.");
-
-        var previewString = GetSelectionGroupKeyBind(editPromptKeybind);
-        
-        if (ImGui.BeginCombo("Keybind##keybindCombo", previewString))
-        {
-            foreach (var entry in keyBindOptions)
-            {
-                var nameString = GetSelectionGroupKeyBind(entry);
-
-                bool isSelected = editPromptKeybind == entry;
-
-                if (ImGui.Selectable($"{nameString}##{entry}", isSelected))
-                {
-                    editPromptKeybind = entry;
-                }
-                if (isSelected)
-                {
-                    ImGui.SetItemDefaultFocus();
-                }
-            }
-
-            ImGui.EndCombo();
-        }
-        UIHelper.Tooltip("The keybind to quickly select the contents of this selection group.");
-
-        if (ImGui.Button("Edit Group", DPI.WholeWidthButton(windowWidth, 24)))
-        {
-            createPromptGroupName = editPromptGroupName;
-            createPromptTags = editPromptTags;
-            currentKeyBindOption = editPromptKeybind;
-
-            AmendSelectionGroupBank(true);
-            ImGui.CloseCurrentPopup();
-        }
-    }
-
-    /// <summary>
-    /// Effect
-    /// </summary>
 
     public bool DeleteSelectionGroup(string currentResourceName)
     {
@@ -449,23 +402,6 @@ public class SelectionGroupTool
 
         return false;
     }
-    public void CreateSelectionGroup(string type)
-    {
-        if (CFG.Current.MapEditor_Selection_Group_Enable_Quick_Creation)
-        {
-            if (View.ViewportSelection.GetSelection().Count != 0)
-            {
-                var ent = (Entity)View.ViewportSelection.GetSelection().First();
-                createPromptGroupName = ent.Name;
-                createPromptTags = "";
-                AmendSelectionGroupBank();
-            }
-        }
-        else
-        {
-            ImGui.OpenPopup($"##selectionGroupModal{type}");
-        }
-    }
 
     private void DeleteSelectionGroup()
     {
@@ -490,6 +426,12 @@ public class SelectionGroupTool
 
     private void SelectSelectionGroup()
     {
+        if(selectedResourceContents == null || selectedResourceContents.Count == 0)
+        {
+            Smithbox.LogError<SelectionGroupTool>("No group has been selected.");
+            return;
+        }
+
         View.ViewportSelection.ClearSelection();
 
         List<Entity> entities = new List<Entity>();
@@ -522,25 +464,35 @@ public class SelectionGroupTool
         }
     }
 
-    private void AmendSelectionGroupBank(bool isEdit = false)
+    private void CreateSelectionGroup()
     {
         List<string> tagList = AliasHelper.GetTagList(createPromptTags);
         List<string> selectionList = new List<string>();
 
-        if (isEdit)
+        foreach (var entry in View.ViewportSelection.GetSelection())
         {
-            selectionList = selectedResourceContents;
-        }
-        else
-        {
-            foreach (var entry in View.ViewportSelection.GetSelection())
-            {
-                var ent = (Entity)entry;
-                selectionList.Add(ent.Name);
-            }
+            var ent = (Entity)entry;
+            selectionList.Add(ent.Name);
         }
 
-        if (AddSelectionGroup(createPromptGroupName, tagList, selectionList, currentKeyBindOption, isEdit, editPromptOldGroupName))
+        if (AddSelectionGroup(createPromptGroupName, tagList, selectionList, currentKeyBindOption, false, editPromptOldGroupName))
+        {
+            View.Project.Handler.MapData.SaveMapObjectSelections();
+        }
+    }
+
+    private void EditSelectionGroup()
+    {
+        createPromptGroupName = editPromptGroupName;
+        createPromptTags = editPromptTags;
+        currentKeyBindOption = editPromptKeybind;
+
+        List<string> tagList = AliasHelper.GetTagList(createPromptTags);
+        List<string> selectionList = new List<string>();
+
+        selectionList = selectedResourceContents;
+
+        if (AddSelectionGroup(createPromptGroupName, tagList, selectionList, currentKeyBindOption, true, editPromptOldGroupName))
         {
             View.Project.Handler.MapData.SaveMapObjectSelections();
         }
@@ -587,4 +539,14 @@ public class SelectionGroupTool
             default: return "None";
         }
     }
+}
+
+public enum SelectionGroupMode
+{
+    [Display(Name = "View")]
+    View,
+    [Display(Name = "Create")]
+    Create,
+    [Display(Name = "Edit")]
+    Edit
 }

@@ -230,7 +230,7 @@ public class SelectAllAction
         }
         else
         {
-            PlatformUtils.Instance.MessageBox("No object selected.", "Smithbox", MessageBoxButtons.OK);
+            Smithbox.LogError<SelectAllAction>("No object selected.");
         }
 
         View.DelayPicking();
@@ -273,7 +273,7 @@ public class SelectAllAction
         }
         else
         {
-            PlatformUtils.Instance.MessageBox("No object selected.", "Smithbox", MessageBoxButtons.OK);
+            Smithbox.LogError<SelectAllAction>("No object selected.");
         }
 
         View.DelayPicking();
@@ -321,7 +321,7 @@ public class SelectAllAction
         }
         else
         {
-            PlatformUtils.Instance.MessageBox("No object selected.", "Smithbox", MessageBoxButtons.OK);
+            Smithbox.LogError<SelectAllAction>("No object selected.");
         }
 
         View.DelayPicking();

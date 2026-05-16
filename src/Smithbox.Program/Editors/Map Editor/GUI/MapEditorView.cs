@@ -3,6 +3,7 @@ using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.Viewport;
 using StudioCore.Keybinds;
+using StudioCore.Renderer;
 using StudioCore.Utilities;
 using Veldrid;
 using Veldrid.Sdl2;
@@ -93,6 +94,8 @@ public class MapEditorView
     public AutomaticPreviewTool AutomaticPreviewTool;
     public PatrolDrawManager PatrolDrawManager;
 
+    public ResourceListTool ResourceListTool;
+
     public MapEditorView(MapEditorScreen editor, ProjectEntry project, int imguiId)
     {
         Editor = editor;
@@ -177,6 +180,8 @@ public class MapEditorView
         ModelInsightTool = new MapModelInsightHelper(this, project);
         PatrolDrawManager = new PatrolDrawManager(this);
 
+        ResourceListTool = new ResourceListTool();
+
         ViewportActionManager.AddEventHandler(MapListView);
     }
 
@@ -222,7 +227,6 @@ public class MapEditorView
         MapListFilterTool.Update();
         LocalSearchView.Update();
 
-        SelectionGroupTool.DisplayPopup();
         WorldMapTool.DisplayPopup();
 
         ViewportSelection.ClearGotoTarget();

@@ -29,7 +29,7 @@ public class ResourceListTool
     {
         if (ImGui.CollapsingHeader("Resource Monitor"))
         {
-            EditorFilters.DisplayFramedListFilter("resourceMonitor", ref ResourceListFilter, ref ExactResourceListFilter);
+            EditorFilters.DisplayFramedListFilter($"resourceMonitor_{menuId}", ref ResourceListFilter, ref ExactResourceListFilter);
 
             ImGui.BeginChild($"resourceTable_{menuId}", ImGuiChildFlags.Borders);
 

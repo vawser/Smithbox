@@ -188,6 +188,7 @@ public class CFG
     // Options
     public bool MapEditor_Model_Selector_Update_Name = true;
     public bool MapEditor_Model_Selector_Update_Instance_ID = true;
+    public bool MapEditor_Model_Selector_Update_NpcParams = true;
 
     public EntityNameDisplayType MapEditor_MapContentList_EntryNameDisplayType = EntityNameDisplayType.Internal_FMG;
 
@@ -253,7 +254,7 @@ public class CFG
 
     public bool MapEditor_ModelDataExtraction_IncludeFolder = true;
     public ResourceExtractionType MapEditor_ModelDataExtraction_Type = ResourceExtractionType.Loose;
-    public string MapEditor_ModelDataExtraction_DefaultOutputFolder = ".output";
+    public string MapEditor_ModelDataExtraction_DefaultOutputFolder = "";
 
     public bool MapEditor_LightAtlas_AutomaticAdd = true;
     public bool MapEditor_LightAtlas_AutomaticDelete = false;
@@ -405,19 +406,15 @@ public class CFG
 
     public bool Interface_MapEditor_Tool_Prefab = true;
     public bool Interface_MapEditor_Tool_SelectionGroups = true;
-    public bool Interface_MapEditor_Tool_MovementIncrements = true;
-    public bool Interface_MapEditor_Tool_RotationIncrements = true;
-    public bool Interface_MapEditor_Tool_LocalPropertySearch = true;
-    public bool Interface_MapEditor_Tool_GlobalPropertySearch = true;
+    public bool Interface_MapEditor_Tool_Search = true;
+
     public bool Interface_MapEditor_Tool_PropertyMassEdit = true;
     public bool Interface_MapEditor_Tool_TreasureMaker = false;
     public bool Interface_MapEditor_Tool_WorldMapLayoutGenerator = false;
     public bool Interface_MapEditor_Tool_GridConfiguration = true;
     public bool Interface_MapEditor_Tool_ModelSelector = true;
     public bool Interface_MapEditor_Tool_DisplayGroups = true;
-    public bool Interface_MapEditor_Tool_EntityIdentifier = true;
-    public bool Interface_MapEditor_Tool_MapValidator = true;
-    public bool Interface_MapEditor_Tool_MapModelInsight = true;
+    public bool Interface_MapEditor_Tool_Validation = true;
 
     // Saving
     public bool Project_Automatic_Save_Include_Map_Editor = true;

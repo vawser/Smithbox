@@ -33,6 +33,10 @@ public class LocalSearchTool
 
     public bool FocusLocalPropertySearch = false;
 
+    public bool ExplicitPropertyInput = false;
+
+    public PropertyInfo TargetProp = null;
+
     public LocalSearchTool(MapEditorView view, ProjectEntry project)
     {
         View = view;
@@ -50,12 +54,11 @@ public class LocalSearchTool
             ImGui.SetNextItemOpen(true);
         }
 
-        if (ImGui.CollapsingHeader("Local Property Search"))
-        {
-            ImGui.BeginChild("LocalPropSearchToolSection");
-            Display();
-            ImGui.EndChild();
-        }
+        ImGui.BeginChild("LocalPropSearchToolSection", ImGuiChildFlags.Borders);
+
+        Display();
+
+        ImGui.EndChild();
     }
 
     public void Display()
@@ -73,164 +76,101 @@ public class LocalSearchTool
         }
         else
         {
-            UIHelper.SimpleHeader("Target Property", $"Target Property", $"The internal type of the current selection is {selection.WrappedObject.GetType().Name}", UI.Current.ImGui_Default_Text_Color);
+            UIHelper.SimpleHeader("Target Property", $"The internal type of the current selection is {selection.WrappedObject.GetType().Name}");
 
-            if (ImGui.BeginCombo("##SearchPropCombo", "Select property..."))
+            if (!ExplicitPropertyInput)
             {
-                var props = View.MapPropertyCache.GetCachedFields(selection.WrappedObject);
-                foreach (var prop in props)
+                var previewName = "";
+                if (TargetProp != null)
+                    previewName = TargetProp.Name;
+
+                if (ImGui.BeginCombo("##SearchPropCombo", previewName))
                 {
-                    if (ImGui.Selectable(prop.Name))
+                    var props = View.MapPropertyCache.GetCachedFields(selection.WrappedObject);
+                    foreach (var prop in props)
                     {
-                        Property = prop;
-                        ValidType = InitializeSearchValue();
-                        newSearch = true;
-                        _propertyNameSearchString = "";
-                        break;
+                        if (ImGui.Selectable(prop.Name))
+                        {
+                            TargetProp = prop;
+                            Property = prop;
+                            ValidType = InitializeSearchValue();
+                            newSearch = true;
+                            _propertyNameSearchString = "";
+                            break;
+                        }
                     }
+                    ImGui.EndCombo();
                 }
-                ImGui.EndCombo();
+                UIHelper.Tooltip("The target property to search across.");
             }
-            UIHelper.Tooltip("The target property to search across.");
+            else if(ExplicitPropertyInput)
+            {
+                UIHelper.SinglelineTextInput("PropertyName", ref _propertyNameSearchString, "The target property to search across.");
+            }
 
-            ImGui.InputText("Property Name", ref _propertyNameSearchString, 255);
-            UIHelper.Tooltip("The target property to search across.");
+            ImGui.SameLine();
+
+            if (ImGui.Button($"{Icons.Bars}##propertyInputSwitch", DPI.IconButtonSize))
+            {
+                ExplicitPropertyInput = !ExplicitPropertyInput;
+            }
         }
 
-        var curType = "";
-
-        if (selection != null)
-        {
-            curType = $"{selection.WrappedObject.GetType().Name}";
-        }
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader("Options", "");
 
         if (ImGui.Checkbox("Include properties with same name", ref _propSearchMatchNameOnly))
         {
             newSearch = true;
         }
+        UIHelper.Tooltip("Includes properties that share the same name in the search.");
 
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader("Target Property", "");
 
-        if (ImGui.Button("Search", DPI.WholeWidthButton(windowWidth, 24)))
+        if (Property != null)
         {
-            Property = null;
-            PropertyType = null;
-
-            // Find the first property that matches the given name.
-            // Definitely replace this (along with everything else, really).
-            HashSet<Type> typeCache = new();
-            foreach (var entry in View.Project.Handler.MapData.PrimaryBank.Maps)
-            {
-                if (entry.Value.MapContainer == null)
-                {
-                    continue;
-                }
-
-                foreach (Entity o in entry.Value.MapContainer.Objects)
-                {
-                    Type typ = o.WrappedObject.GetType();
-                    if (typeCache.Contains(typ))
-                        continue;
-                    var prop = PropFinderUtil.FindProperty(_propertyNameSearchString, o.WrappedObject);
-                    if (prop != null)
-                    {
-                        Property = prop;
-                        ValidType = InitializeSearchValue();
-                        _propSearchMatchNameOnly = true;
-                        newSearch = true;
-                        goto end;
-                    }
-                    typeCache.Add(o.WrappedObject.GetType());
-                }
-            }
-        end:;
+            ImGui.TextWrapped($"{Property.Name}");
+        }
+        else
+        {
+            ImGui.TextWrapped($"None");
         }
 
-        UIHelper.SimpleHeader("Entries", $"Entries", $"The map objects that use the specified property.", UI.Current.ImGui_Default_Text_Color);
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader("Target Property Type", "");
 
-        ImGui.Columns(2);
-
-        if (Property != null && ValidType)
+        if (PropertyType != null)
         {
-            ImGui.Text("Property Name");
-            ImGui.NextColumn();
-            ImGui.Text(Property.Name);
-            ImGui.NextColumn();
+            ImGui.TextWrapped($"{PropertyType.Name}");
+        }
+        else
+        {
+            ImGui.TextWrapped($"None");
+        }
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader("Target Value", "");
 
-            ImGui.Text("Type");
-            ImGui.NextColumn();
-            ImGui.Text(PropertyType.Name);
-            ImGui.NextColumn();
-
-            if (SearchValue(newSearch))
-            {
-                FoundObjects.Clear();
-                foreach (var entry in View.Project.Handler.MapData.PrimaryBank.Maps)
-                {
-                    if (entry.Value.MapContainer == null)
-                    {
-                        continue;
-                    }
-
-                    if (entry.Value.MapContainer is MapContainer m)
-                    {
-                        foreach (Entity ob in m.Objects)
-                        {
-                            if (ob is MsbEntity e)
-                            {
-                                var value = PropFinderUtil.FindPropertyValue(Property, ob.WrappedObject, _propSearchMatchNameOnly);
-
-                                if (value == null)
-                                {
-                                    // Object does not contain target property.
-                                    continue;
-                                }
-
-                                if (PropertyType.IsArray && value.GetType().IsArray)
-                                {
-                                    // Property is an array, scan through each index for value matches.
-                                    foreach (var p in (Array)value)
-                                    {
-                                        if (p != null && p.Equals(PropertyValue))
-                                        {
-                                            if (!FoundObjects.ContainsKey(e.ContainingMap.Name))
-                                            {
-                                                FoundObjects.Add(e.ContainingMap.Name, new List<WeakReference<Entity>>());
-                                            }
-                                            FoundObjects[e.ContainingMap.Name].Add(new WeakReference<Entity>(e));
-                                            break;
-                                        }
-                                    }
-                                }
-                                else
-                                {
-                                    if (value.Equals(PropertyValue))
-                                    {
-                                        if (!FoundObjects.ContainsKey(e.ContainingMap.Name))
-                                        {
-                                            FoundObjects.Add(e.ContainingMap.Name,
-                                                new List<WeakReference<Entity>>());
-                                        }
-
-                                        FoundObjects[e.ContainingMap.Name].Add(new WeakReference<Entity>(e));
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+        if (Property != null && PropertyType != null)
+        {
+            SearchValue(newSearch);
+        }
+        else
+        {
+            ImGui.TextWrapped($"No property has been specified yet.");
         }
 
-        ImGui.Columns(1);
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader("Actions", "");
 
-        var windowSize = DPI.GetWindowSize(Smithbox.Instance._context);
-        var sectionWidth = ImGui.GetWindowWidth() * 0.95f;
-        var sectionHeight = windowSize.Y * 0.3f;
-        var sectionSize = new Vector2(sectionWidth * DPI.UIScale(), sectionHeight * DPI.UIScale());
+        UIHelper.MultiButtonInput("localSearchActions",
+            "searchProperty", "Search", "", SearchForPropertyValue);
 
-        UIHelper.SimpleHeader("Results", $"Results", $"", UI.Current.ImGui_Default_Text_Color);
 
-        ImGui.BeginChild("##localSearchResultsList", sectionSize, ImGuiChildFlags.Borders);
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader("Results", "");
+
+        ImGui.BeginChild("##localSearchResultsList", ImGuiChildFlags.Borders);
 
         if (FoundObjects.Count > 0)
         {
@@ -256,9 +196,10 @@ public class LocalSearchTool
                                     ImGuiSelectableFlags.AllowDoubleClick))
                             {
                                 selected = true;
+                                MsbUtils.EntitySelectionHandler(View, View.ViewportSelection, obj, selected, itemFocused, f.Value);
+                                View.FrameAction.ApplyViewportFrame();
                             }
 
-                            MsbUtils.EntitySelectionHandler(View, View.ViewportSelection, obj, selected, itemFocused, f.Value);
                         }
                     }
 
@@ -273,6 +214,118 @@ public class LocalSearchTool
         }
 
         ImGui.EndChild();
+    }
+
+    public void SearchOccured()
+    {
+        if (PropertyType == null)
+            return;
+
+
+        FoundObjects.Clear();
+        foreach (var entry in View.Project.Handler.MapData.PrimaryBank.Maps)
+        {
+            if (entry.Value.MapContainer == null)
+            {
+                continue;
+            }
+
+            if (entry.Value.MapContainer is MapContainer m)
+            {
+                foreach (Entity ob in m.Objects)
+                {
+                    if (ob is MsbEntity e)
+                    {
+                        var value = PropFinderUtil.FindPropertyValue(Property, ob.WrappedObject, _propSearchMatchNameOnly);
+
+                        if (value == null)
+                        {
+                            // Object does not contain target property.
+                            continue;
+                        }
+
+                        if (PropertyType.IsArray && value.GetType().IsArray)
+                        {
+                            // Property is an array, scan through each index for value matches.
+                            foreach (var p in (Array)value)
+                            {
+                                if (p != null && (PropertyType == typeof(string[]) ? ((string)p).Contains((string)PropertyValue, StringComparison.OrdinalIgnoreCase) : p.Equals(PropertyValue)))
+                                {
+                                    if (!FoundObjects.ContainsKey(e.ContainingMap.Name))
+                                    {
+                                        FoundObjects.Add(e.ContainingMap.Name, new List<WeakReference<Entity>>());
+                                    }
+                                    FoundObjects[e.ContainingMap.Name].Add(new WeakReference<Entity>(e));
+                                    break;
+                                }
+                            }
+                        }
+                        else
+                        {
+                            if (PropertyType == typeof(string) || PropertyType == typeof(string[]) ? ((string)value).Contains((string)PropertyValue, StringComparison.OrdinalIgnoreCase) : value.Equals(PropertyValue))
+                            {
+                                if (!FoundObjects.ContainsKey(e.ContainingMap.Name))
+                                {
+                                    FoundObjects.Add(e.ContainingMap.Name,
+                                        new List<WeakReference<Entity>>());
+                                }
+
+                                FoundObjects[e.ContainingMap.Name].Add(new WeakReference<Entity>(e));
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    public void PopulateForProperty()
+    {
+        Property = null;
+        PropertyType = null;
+
+        bool endProcess = false;
+
+        // Find the first property that matches the given name.
+        // Definitely replace this (along with everything else, really).
+        HashSet<Type> typeCache = new();
+
+        foreach (var entry in View.Project.Handler.MapData.PrimaryBank.Maps)
+        {
+            if (endProcess)
+                break;
+
+            if (entry.Value.MapContainer == null)
+            {
+                continue;
+            }
+
+            foreach (Entity o in entry.Value.MapContainer.Objects)
+            {
+                if (endProcess)
+                    break;
+
+                Type typ = o.WrappedObject.GetType();
+                if (typeCache.Contains(typ))
+                    continue;
+                var prop = PropFinderUtil.FindProperty(_propertyNameSearchString, o.WrappedObject);
+                if (prop != null)
+                {
+                    Property = prop;
+                    ValidType = InitializeSearchValue();
+                    _propSearchMatchNameOnly = true;
+                    newSearch = true;
+                    endProcess = true;
+                    continue;
+                }
+                typeCache.Add(o.WrappedObject.GetType());
+            }
+        }
+    }
+
+    public void SearchForPropertyValue()
+    {
+        SearchOccured();
     }
 
     public bool newSearch = false;
@@ -414,8 +467,6 @@ public class LocalSearchTool
 
     public bool SearchValue(bool searchFieldchanged)
     {
-        ImGui.Text("Value");
-        ImGui.NextColumn();
         var ret = false;
         if (PropertyType == typeof(bool) || PropertyType == typeof(bool[]))
         {
@@ -587,8 +638,6 @@ public class LocalSearchTool
         {
             ImGui.Text("Value type not implemented");
         }
-
-        ImGui.NextColumn();
 
         return ret;
     }

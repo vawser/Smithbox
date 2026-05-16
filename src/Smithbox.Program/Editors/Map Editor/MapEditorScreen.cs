@@ -88,11 +88,6 @@ public class MapEditorScreen : EditorScreen
             {
                 LoadingModal.DisplayWindow(curViewport.Viewport.Width, curViewport.Viewport.Height);
             }
-
-            if (CFG.Current.Interface_MapEditor_ResourceList)
-            {
-                ResourceList.Display("mapResourceList", activeView.Universe);
-            }
         }
     }
 

@@ -258,7 +258,6 @@ public static class DefaultKeyBindings
         InputManager.Bind(KeybindID.MapEditor_SelectAll_ModelName, new() { Key = Key.Unknown });
         InputManager.Bind(KeybindID.MapEditor_SelectAll_Ceremony, new() { Key = Key.Unknown });
 
-        InputManager.Bind(KeybindID.MapEditor_Create_Selection_Group, new() { Key = Key.Unknown });
         InputManager.Bind(KeybindID.MapEditor_Select_Group_0, new() { Key = Key.Number0, Alt = true });
         InputManager.Bind(KeybindID.MapEditor_Select_Group_1, new() { Key = Key.Number1, Alt = true });
         InputManager.Bind(KeybindID.MapEditor_Select_Group_2, new() { Key = Key.Number2, Alt = true });
@@ -636,10 +635,6 @@ public static class KeybindMetadata
             "Select All (Ceremony)",
             ""
         ) },
-        { KeybindID.MapEditor_Create_Selection_Group, (
-            "Create Selection Group",
-            ""
-        ) },
         { KeybindID.MapEditor_Select_Group_0, (
             "Select Selection Group 0",
             ""
@@ -963,7 +958,6 @@ public static class KeybindMetadata
         { KeybindID.MapEditor_SelectAll_ObjectType, InputCategory.MapEditor },
         { KeybindID.MapEditor_SelectAll_ModelName, InputCategory.MapEditor },
         { KeybindID.MapEditor_SelectAll_Ceremony, InputCategory.MapEditor },
-        { KeybindID.MapEditor_Create_Selection_Group, InputCategory.MapEditor },
         { KeybindID.MapEditor_Select_Group_0, InputCategory.MapEditor },
         { KeybindID.MapEditor_Select_Group_1, InputCategory.MapEditor },
         { KeybindID.MapEditor_Select_Group_2, InputCategory.MapEditor },

@@ -310,7 +310,7 @@ public class ScrambleAction
         }
         else
         {
-            PlatformUtils.Instance.MessageBox("No object selected.", "Smithbox", MessageBoxButtons.OK);
+            Smithbox.LogError<ScrambleAction>("No object selected.");
         }
 
         View.DelayPicking();

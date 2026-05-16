@@ -355,7 +355,7 @@ public class AdjustToGridAction
         }
         else
         {
-            PlatformUtils.Instance.MessageBox("No object selected.", "Smithbox", MessageBoxButtons.OK);
+            Smithbox.LogError<AdjustToGridAction>("No object selected.");
         }
     }
 

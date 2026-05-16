@@ -432,7 +432,7 @@ public class RotateAction
         }
         else
         {
-            PlatformUtils.Instance.MessageBox("No object selected.", "Smithbox", MessageBoxButtons.OK);
+            Smithbox.LogError<RotateAction>("No object selected.");
         }
 
         View.DelayPicking();
