@@ -163,6 +163,7 @@ public class KeybindsMenu
     private void DisplayKeybindRebindSection()
     {
         var grouped = InputManager.Bindings
+            .Where(kv => KeybindMetadata.Category.ContainsKey(kv.Key))
             .GroupBy(kv => KeybindMetadata.Category[kv.Key])
             .OrderBy(g => g.Key);
 
