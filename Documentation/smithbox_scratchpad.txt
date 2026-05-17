@@ -5,6 +5,9 @@
  - Rendering experiment (TinyFFR)
  - Mesh visbility/delete not working properly
  
+- Map Editor
+ - Add visualisation (via primitive meshes) of enemy AI radiuses (sight, listen, smell)
+ 
 - Material Editor:
  - Add MATBIN support back
  
@@ -21,6 +24,3 @@
 - Gparam Editor:
  - Add multi-select for the value list (and to duplicate/delete/export)
  
-- Map Editor
- - Add visualisation (via primitive meshes) of enemy AI radiuses (sight, listen, smell)
- - Add visibility tool section: include the LOD visibility toggle

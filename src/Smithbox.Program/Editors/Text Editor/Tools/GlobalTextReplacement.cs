@@ -16,6 +16,7 @@ public class GlobalTextReplacement
 
     private string searchTerm = "";
     private string replaceTerm = "";
+
     private SearchFilterType filterType = SearchFilterType.PrimaryCategory;
     private SearchMatchType matchType = SearchMatchType.All;
 
@@ -41,6 +42,7 @@ public class GlobalTextReplacement
         ImGui.BeginChild("TextReplaceSection", ImGuiChildFlags.Borders);
 
         UIHelper.SimpleHeader("Search Filter", "The term to find.\n\nCan use regular expressions.");
+
         UIHelper.SinglelineTextInput("textSearchInput", ref searchTerm);
 
         UIHelper.SimpleHeader("Replacement Filter", "The term the found term is replaced with.\n\nCan use regular expressions.");
@@ -177,6 +179,26 @@ public class GlobalTextReplacement
     public void PreviewEdit()
     {
         var curView = Editor.ViewHandler.ActiveView;
+
+        try
+        {
+            var match = Regex.Match("example", searchTerm);
+        }
+        catch (Exception ex)
+        {
+            Smithbox.LogError<GlobalTextReplacement>("Invalid regex in search filter", ex);
+            return;
+        }
+
+        try
+        {
+            var match = Regex.Match("example", replaceTerm);
+        }
+        catch (Exception ex)
+        {
+            Smithbox.LogError<GlobalTextReplacement>("Invalid regex in replacement filter.", ex);
+            return;
+        }
 
         hasAlreadySearched = true;
         replacementResults = TextFinder.GetReplacementResult(curView, searchTerm, filterType, matchType, ignoreCase);

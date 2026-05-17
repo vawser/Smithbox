@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Numerics;
 using System.Text.Encodings.Web;
 using System.Text.Json;
+using System.Text.RegularExpressions;
 
 namespace StudioCore.Editors.TextEditor;
 
@@ -166,6 +167,17 @@ public class GlobalTextSearch
             Smithbox.LogError<GlobalTextSearch>("No search term specified.");
             return;
         }
+
+        try
+        {
+            var match = Regex.Match("example", searchTerm);
+        }
+        catch (Exception ex)
+        {
+            Smithbox.LogError<GlobalTextReplacement>("Invalid regex in search filter", ex);
+            return;
+        }
+
 
         hasAlreadySearched = true;
         searchResults = TextFinder.GetGlobalTextResult(curView, searchTerm, filterType, matchType, ignoreCase);
