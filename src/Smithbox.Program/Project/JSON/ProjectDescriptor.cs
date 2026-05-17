@@ -158,6 +158,20 @@ public class ProjectDescriptor
         clone.ProjectGUID = Guid.NewGuid();
         return clone;
     }
+
+    public void EnableAllEditors()
+    {
+        EnableMapEditor = true;
+        EnableModelEditor = true;
+        EnableTextEditor = true;
+        EnableParamEditor = true;
+        EnableGparamEditor = true;
+        EnableTextureViewer = true;
+        EnableMaterialEditor = true;
+        EnableFileBrowser = true;
+        EnableAnimEditor = true;
+        EnableExternalMaterialData = true;
+    }
 }
 
 public class LegacyProjectDescriptor

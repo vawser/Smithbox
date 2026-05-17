@@ -15,7 +15,6 @@ public class ModelSelectorTool
     public MapEditorView View;
     public ProjectEntry Project;
 
-    private string _searchInput = "";
     private string _selectedEntry = "";
 
     private bool SelectNextEntry = false;

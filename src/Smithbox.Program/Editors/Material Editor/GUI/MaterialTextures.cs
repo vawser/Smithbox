@@ -12,8 +12,6 @@ public class MaterialTextures
     public MaterialEditorView Parent;
     public ProjectEntry Project;
 
-    private string TextureSearch = "";
-
     public MaterialTextures(MaterialEditorView view, ProjectEntry project)
     {
         Parent = view;

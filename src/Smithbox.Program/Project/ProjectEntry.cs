@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Hexa.NET.ImGui;
+using Microsoft.Extensions.Logging;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.GparamEditor;
 using StudioCore.Editors.MapEditor;

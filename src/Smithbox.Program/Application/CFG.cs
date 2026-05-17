@@ -112,6 +112,9 @@ public class CFG
 
     public bool Param_Editor_Enable_Graph_Annotation_Override = false;
     public bool Param_Editor_Enable_Graph_Annotation_Addition = true;
+
+    public float Project_Display_LoadedProjectList = 0.2f;
+    public float Project_Display_AvailableProjectList = 0.8f;
     #endregion
 
     #region Interface

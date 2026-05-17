@@ -136,6 +136,8 @@ public enum EditorFocusContext
 {
     None,
 
+    Project,
+
     FileBrowser_None,
     FileBrowser_FileList,
     FileBrowser_Item,

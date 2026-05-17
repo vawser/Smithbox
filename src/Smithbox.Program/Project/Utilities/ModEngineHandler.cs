@@ -9,6 +9,9 @@ public static class ModEngineHandler
 
     public static bool IsME3Project(ProjectEntry curProject)
     {
+        if (curProject.Descriptor == null)
+            return false;
+
         if (curProject.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.SDT or ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
         {
             return true;

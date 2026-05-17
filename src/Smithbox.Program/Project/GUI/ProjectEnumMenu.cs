@@ -7,60 +7,44 @@ using System.IO;
 using System.Numerics;
 using System.Text.Encodings.Web;
 using System.Text.Json;
-using static SoulsFormats.MQB;
 
 namespace StudioCore.Application;
 
 public class ProjectEnumMenu
 {
-    public bool IsDisplayed = false;
-    public ProjectOrchestrator Orchestrator;
-
     private ParamEnumEntry CurrentEnum;
     private ParamEnumOption CurrentOption;
 
     private string OptionEntryFilter = "";
-    private bool InitialLayout = false;
 
-    public ProjectEnumMenu(ProjectOrchestrator orchestrator)
-    {
-        Orchestrator = orchestrator;
-    }
+    public ProjectEnumMenu() { }
 
     public void Draw()
     {
-        if (!IsDisplayed)
+        if (Smithbox.Orchestrator.IsProjectLoading)
             return;
 
-        if (!InitialLayout)
+        if (Smithbox.Orchestrator.ProjectEditor.SelectedLoadedEntry == null)
         {
-            UIHelper.SetupPopupWindow();
-            InitialLayout = true;
-        }
-
-        if (!ImGui.Begin("Project Enums", ref IsDisplayed, UIHelper.GetEditorPopupWindowFlags()))
-        {
-            ImGui.End();
+            UIHelper.WrappedText("A loaded project must be selected to use this editor.");
             return;
         }
 
-        ImGui.BeginMenuBar();
-        if (ImGui.BeginMenu("File"))
+        if (Smithbox.Orchestrator.SelectedProject.Descriptor == null)
         {
-            if (ImGui.MenuItem("Save Enums"))
-            {
-                IsDisplayed = false;
-                Save();
-            }
-            UIHelper.Tooltip("Save alias changes to the project");
-
-            ImGui.EndMenu();
+            UIHelper.WrappedText("A valid project must be selected to use this editor.");
+            return;
         }
-        ImGui.EndMenuBar();
+
+        UIHelper.SimpleHeader("Actions", "");
+
+        UIHelper.MultiButtonInput("enumActions",
+            "saveEnums", "Save Enums", "", Save);
+
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader("Enums", "");
 
         DrawMainLayout();
-
-        ImGui.End();
     }
 
     #region Layout
@@ -91,7 +75,8 @@ public class ProjectEnumMenu
         ImGui.Text("Enums");
         ImGui.Separator();
 
-        foreach (var entry in Orchestrator.SelectedProject.Handler.ParamData.Enums.List)
+
+        foreach (var entry in Smithbox.Orchestrator.SelectedProject.Handler.ParamData.Enums.List)
         {
             bool selected = entry == CurrentEnum;
 
@@ -191,7 +176,7 @@ public class ProjectEnumMenu
                 {
                     if (ImGui.Selectable("Duplicate"))
                     {
-                        Orchestrator.ActionManager.ExecuteAction(
+                        Smithbox.Orchestrator.ActionManager.ExecuteAction(
                             new ChangeEnumList(
                                 CurrentEnum,
                                 option,
@@ -202,7 +187,7 @@ public class ProjectEnumMenu
 
                     if (ImGui.Selectable("Remove"))
                     {
-                        Orchestrator.ActionManager.ExecuteAction(
+                        Smithbox.Orchestrator.ActionManager.ExecuteAction(
                             new ChangeEnumList(
                                 CurrentEnum,
                                 option,
@@ -272,7 +257,7 @@ public class ProjectEnumMenu
 
         if (ImGui.IsItemDeactivatedAfterEdit() && original != value)
         {
-            Orchestrator.ActionManager.ExecuteAction(
+            Smithbox.Orchestrator.ActionManager.ExecuteAction(
                 new ChangeEnumField(CurrentEnum, original, value, field));
         }
 
@@ -309,7 +294,7 @@ public class ProjectEnumMenu
 
         if (ImGui.IsItemDeactivatedAfterEdit() && original != value)
         {
-            Orchestrator.ActionManager.ExecuteAction(
+            Smithbox.Orchestrator.ActionManager.ExecuteAction(
                 new ChangeEnumOptionField(CurrentOption, original, value, field));
         }
 
@@ -322,9 +307,9 @@ public class ProjectEnumMenu
 
     public void Save()
     {
-        var projectFolder = Path.Join(Orchestrator.SelectedProject.Descriptor.ProjectPath, ".smithbox", "Assets", "PARAM", ProjectUtils.GetGameDirectory(Orchestrator.SelectedProject.Descriptor.ProjectType), "Param Enums");
+        var projectFolder = Path.Join(Smithbox.Orchestrator.SelectedProject.Descriptor.ProjectPath, ".smithbox", "Assets", "PARAM", ProjectUtils.GetGameDirectory(Smithbox.Orchestrator.SelectedProject.Descriptor.ProjectType), "Param Enums");
 
-        var enums = Orchestrator.SelectedProject.Handler.ParamData.Enums;
+        var enums = Smithbox.Orchestrator.SelectedProject.Handler.ParamData.Enums;
 
         if (!Directory.Exists(projectFolder))
             Directory.CreateDirectory(projectFolder);
@@ -343,6 +328,8 @@ public class ProjectEnumMenu
             var json = JsonSerializer.Serialize(entry, typeof(ParamEnumEntry), options);
 
             File.WriteAllText(filePath, json);
+
+            Smithbox.Log<ProjectEnumMenu>("Saved project enums.");
         }
     }
 

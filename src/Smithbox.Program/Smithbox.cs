@@ -538,13 +538,6 @@ public class Smithbox
 
         if (ImGui.BeginMainMenuBar())
         {
-            if (ImGui.BeginMenu("Projects"))
-            {
-                Orchestrator.DisplayMenuOptions();
-
-                ImGui.EndMenu();
-            }
-
             // Preferences
             if (ImGui.MenuItem("Preferences"))
             {
