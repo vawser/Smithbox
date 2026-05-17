@@ -91,9 +91,7 @@ public class DuplicateToMapAction
     /// </summary>
     public void OnToolWindow()
     {
-        ImGui.BeginChild("DuplicateToMapToolSection", ImGuiChildFlags.Borders);
         DisplayMenu();
-        ImGui.EndChild();
     }
 
 

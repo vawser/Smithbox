@@ -32,7 +32,6 @@ public class ViewportMenu
         RenderMenu();
         FilterMenu();
         GizmoMenu();
-        SelectionMenu();
 
         ImGui.EndMenuBar();
     }
@@ -441,79 +440,6 @@ public class ViewportMenu
         }
     }
 
-    public void SelectionMenu()
-    {
-        if (ImGui.BeginMenu("Selection"))
-        {
-            if (ImGui.MenuItem("Enable Box Selection"))
-            {
-                CFG.Current.Viewport_Enable_Box_Selection = !CFG.Current.Viewport_Enable_Box_Selection;
-                Parent.DelayPicking();
-            }
-            UIHelper.ShowActiveStatus(CFG.Current.Viewport_Enable_Box_Selection);
-            UIHelper.Tooltip($"Toggle the usage of box selection.\nHold Ctrl, Alt and left click to make a box selection.");
-
-            UIHelper.SimpleHeader("Box Selection Targets", "Which map objects will be selected by the box select.");
-
-            if (ImGui.MenuItem("Map Pieces"))
-            {
-                CFG.Current.Viewport_Enable_Box_Selection_MapPiece = !CFG.Current.Viewport_Enable_Box_Selection_MapPiece;
-                Parent.DelayPicking();
-            }
-            UIHelper.ShowActiveStatus(CFG.Current.Viewport_Enable_Box_Selection_MapPiece);
-
-            var name = "Objects";
-            if(Smithbox.Orchestrator.SelectedProject.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
-            {
-                name = "Assets";
-            }
-
-            if (ImGui.MenuItem(name))
-            {
-                CFG.Current.Viewport_Enable_Box_Selection_Asset = !CFG.Current.Viewport_Enable_Box_Selection_Asset;
-                Parent.DelayPicking();
-            }
-            UIHelper.ShowActiveStatus(CFG.Current.Viewport_Enable_Box_Selection_Asset);
-
-            if (ImGui.MenuItem("Enemy"))
-            {
-                CFG.Current.Viewport_Enable_Box_Selection_Enemy = !CFG.Current.Viewport_Enable_Box_Selection_Enemy;
-                Parent.DelayPicking();
-            }
-            UIHelper.ShowActiveStatus(CFG.Current.Viewport_Enable_Box_Selection_Enemy);
-
-            if (ImGui.MenuItem("Player"))
-            {
-                CFG.Current.Viewport_Enable_Box_Selection_Player = !CFG.Current.Viewport_Enable_Box_Selection_Player;
-                Parent.DelayPicking();
-            }
-            UIHelper.ShowActiveStatus(CFG.Current.Viewport_Enable_Box_Selection_Player);
-
-            if (ImGui.MenuItem("Collision"))
-            {
-                CFG.Current.Viewport_Enable_Box_Selection_Collision = !CFG.Current.Viewport_Enable_Box_Selection_Collision;
-                Parent.DelayPicking();
-            }
-            UIHelper.ShowActiveStatus(CFG.Current.Viewport_Enable_Box_Selection_Collision);
-
-            if (ImGui.MenuItem("Light"))
-            {
-                CFG.Current.Viewport_Enable_Box_Selection_Light = !CFG.Current.Viewport_Enable_Box_Selection_Light;
-                Parent.DelayPicking();
-            }
-            UIHelper.ShowActiveStatus(CFG.Current.Viewport_Enable_Box_Selection_Light);
-
-            if (ImGui.MenuItem("Region"))
-            {
-                CFG.Current.Viewport_Enable_Box_Selection_Region = !CFG.Current.Viewport_Enable_Box_Selection_Region;
-                Parent.DelayPicking();
-            }
-            UIHelper.ShowActiveStatus(CFG.Current.Viewport_Enable_Box_Selection_Region);
-
-
-            ImGui.EndMenu();
-        }
-    }
 
     public void SettingsMenu()
     {

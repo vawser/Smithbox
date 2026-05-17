@@ -47,6 +47,8 @@ public class PrefabTool
     /// </summary>
     public void OnToolWindow()
     {
+        ImGui.BeginChild("prefabSection", ImGuiChildFlags.Borders);
+
         ImGui.BeginTabBar("prefabTabs");
 
         if (ImGui.BeginTabItem("Import"))
@@ -64,12 +66,12 @@ public class PrefabTool
         }
 
         ImGui.EndTabBar();
+
+        ImGui.EndChild();
     }
 
     public void DisplayImportMenu()
     {
-        ImGui.BeginChild("PrefabImportToolSection", ImGuiChildFlags.Borders);
-
         UIHelper.WrappedText("Use this to import a set of pre-defined map objects into the target loaded map.");
 
         UIHelper.Spacer();
@@ -153,14 +155,10 @@ public class PrefabTool
             "importPrefabFromFile", "Import from File", "Import a prefab from an external prefab JSON file.", ImportPrefabFromFileAction);
 
         PrefabTree("import");
-
-        ImGui.EndChild();
     }
 
     public void DisplayExportMenu()
     {
-        ImGui.BeginChild("PrefabExportToolSection", ImGuiChildFlags.Borders);
-
         UIHelper.WrappedText("Use this to export a set of pre-defined map objects.");
 
         UIHelper.Spacer();
@@ -191,8 +189,6 @@ public class PrefabTool
             "replacePrefab", "Replace", "Replace the contents currently selected prefab in the Prefabs list with the current selection of map objects.", ReplaceSelectedPrefab);
 
         PrefabTree("export");
-
-        ImGui.EndChild();
     }
 
     public void CreateExportedPrefabAction()

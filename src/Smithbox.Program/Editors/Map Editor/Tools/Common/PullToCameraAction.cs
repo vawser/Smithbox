@@ -69,8 +69,6 @@ public class PullToCameraAction
     /// </summary>
     public void OnToolWindow()
     {
-        ImGui.BeginChild("PullToCameraToolSection", ImGuiChildFlags.Borders);
-
         UIHelper.WrappedText("Configure how the pull to camera action works.");
 
         UIHelper.Spacer();
@@ -92,8 +90,6 @@ public class PullToCameraAction
 
         UIHelper.MultiButtonInput("pullToCameraActions",
             "applyPull", "Pull Selection", "", ApplyMoveToCamera);
-
-        ImGui.EndChild();
     }
 
     /// <summary>

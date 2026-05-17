@@ -33,8 +33,6 @@ public class MapValidatorTool
 
     public void OnToolWindow()
     {
-        ImGui.BeginChild("MapValidatorToolSection", ImGuiChildFlags.Borders);
-
         var windowWidth = ImGui.GetWindowWidth();
 
         var windowSize = DPI.GetWindowSize(Smithbox.Instance._context);
@@ -105,8 +103,6 @@ public class MapValidatorTool
 
             UIHelper.WrappedText("No issues found.");
         }
-
-        ImGui.EndChild();
     }
 
     public void ValidateMap()

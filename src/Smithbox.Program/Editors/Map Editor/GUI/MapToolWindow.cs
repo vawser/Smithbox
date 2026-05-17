@@ -11,6 +11,8 @@ public class MapToolWindow
     private ProjectEntry Project;
 
     public CommonActionTool CommonActionTool;
+    public SelectActionTool SelectActionTool;
+    public VisibilityActionTool VisibilityActionTool;
     public MapDataTransferTool DataTransferTool;
 
     public MapToolWindow(MapEditorScreen editor, ProjectEntry project)
@@ -19,6 +21,8 @@ public class MapToolWindow
         Project = project;
 
         CommonActionTool = new(editor, project);
+        SelectActionTool = new(editor, project);
+        VisibilityActionTool = new(editor, project);
         DataTransferTool = new(editor, project);
     }
 
@@ -111,35 +115,19 @@ public class MapToolWindow
                 }
             }
 
-            if (CFG.Current.Interface_MapEditor_Tool_DisplayGroups)
+            if (CFG.Current.Interface_MapEditor_Tool_Select_Action)
             {
-                if (ImGui.CollapsingHeader("Render Groups"))
+                if (ImGui.CollapsingHeader("Selection"))
                 {
-                    activeView.DisplayGroupTool.OnToolWindow();
+                    SelectActionTool.Display();
                 }
             }
 
-            if (CFG.Current.Interface_MapEditor_Tool_Prefab)
+            if (CFG.Current.Interface_MapEditor_Tool_Visbility_Action)
             {
-                if (ImGui.CollapsingHeader("Prefabs"))
+                if (ImGui.CollapsingHeader("Visibility"))
                 {
-                    activeView.PrefabTool.OnToolWindow();
-                }
-            }
-
-            if (CFG.Current.Interface_MapEditor_Tool_SelectionGroups)
-            {
-                if (ImGui.CollapsingHeader("Selection Groups"))
-                {
-                    activeView.SelectionGroupTool.OnToolWindow();
-                }
-            }
-
-            if (CFG.Current.Interface_MapEditor_Tool_Data_Transfer)
-            {
-                if (ImGui.CollapsingHeader("Data Transfer"))
-                {
-                    DataTransferTool.Display();
+                    VisibilityActionTool.Display();
                 }
             }
 
@@ -147,6 +135,8 @@ public class MapToolWindow
             {
                 if (ImGui.CollapsingHeader("Search"))
                 {
+                    ImGui.BeginChild("searchSection", ImGuiChildFlags.Borders);
+
                     ImGui.BeginTabBar("searchTabs");
 
                     if (ImGui.BeginTabItem("Local##localSearch"))
@@ -164,6 +154,8 @@ public class MapToolWindow
                     }
 
                     ImGui.EndTabBar();
+
+                    ImGui.EndChild();
                 }
             }
 
@@ -172,6 +164,30 @@ public class MapToolWindow
                 if (ImGui.CollapsingHeader("Mass Edit"))
                 {
                     activeView.MassEditTool.OnToolWindow();
+                }
+            }
+
+            if (CFG.Current.Interface_MapEditor_Tool_DisplayGroups)
+            {
+                if (ImGui.CollapsingHeader("Render Groups"))
+                {
+                    activeView.DisplayGroupTool.OnToolWindow();
+                }
+            }
+
+            if (CFG.Current.Interface_MapEditor_Tool_Prefab)
+            {
+                if (ImGui.CollapsingHeader("Prefabs"))
+                {
+                    activeView.PrefabTool.OnToolWindow();
+                }
+            }
+
+            if (CFG.Current.Interface_MapEditor_Tool_Data_Transfer)
+            {
+                if (ImGui.CollapsingHeader("Data Transfer"))
+                {
+                    DataTransferTool.Display();
                 }
             }
 
@@ -195,6 +211,8 @@ public class MapToolWindow
             {
                 if (ImGui.CollapsingHeader("Validation"))
                 {
+                    ImGui.BeginChild("validationSection", ImGuiChildFlags.Borders);
+
                     ImGui.BeginTabBar("validationTabs");
 
                     if (ImGui.BeginTabItem("Entity ID##entityIdSearch"))
@@ -212,6 +230,8 @@ public class MapToolWindow
                     }
 
                     ImGui.EndTabBar();
+
+                    ImGui.EndChild();
                 }
             }
 
@@ -219,6 +239,8 @@ public class MapToolWindow
             {
                 activeView.ResourceListTool.Display("mapEditor", activeView.Universe);
             }
+
+            // TODO: Rendering tab is we ever overhaul the rendering
         }
 
         ImGui.End();

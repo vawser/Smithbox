@@ -2,6 +2,7 @@
 using Hexa.NET.ImGui;
 using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.Extensions.Logging;
+using Octokit;
 using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
@@ -15,6 +16,7 @@ using System.Drawing;
 using System.Linq;
 using System.Numerics;
 using System.Reflection;
+using static HKLib.hk2018.hkaiUserEdgeUtils;
 
 namespace StudioCore.Editors.MapEditor;
 
@@ -37,7 +39,8 @@ public class MapPropertyView
 
     public bool Focus = false;
 
-    private string msbFieldSearch = "";
+    private string MapPropFilter = "";
+    private bool ExactMapPropFilter = false;
 
     public MapPropertyView(MapEditorView view, ProjectEntry project)
     {
@@ -49,10 +52,10 @@ public class MapPropertyView
     {
         HashSet<Entity> entSelection = View.ViewportSelection.GetFilteredSelection<Entity>();
 
-        // Header
-        ImGui.AlignTextToFramePadding();
-        ImGui.InputText("##msbFieldSearch", ref msbFieldSearch, 255);
-        UIHelper.Tooltip("Filter the properties by field names that exactly or partially match your input.");
+        var searchHeight = new Vector2(0, 36) * DPI.UIScale();
+        ImGui.BeginChild($"framedList_MapProperties", searchHeight, ImGuiChildFlags.Borders);
+
+        EditorFilters.DisplayListFilter("MapPropSearch", ref MapPropFilter, ref ExactMapPropFilter);
 
         // Toggle Community Field Names
         ImGui.SameLine();
@@ -97,10 +100,10 @@ public class MapPropertyView
 
         UIHelper.Tooltip($"Toggle the display of padding field.\nCurrent Mode: {fieldPaddingMode}");
 
-        ImGui.Separator();
+        ImGui.EndChild();
 
         // Properties
-        ImGui.BeginChild("propedit");
+        ImGui.BeginChild("propedit", ImGuiChildFlags.Borders);
 
         if (View.Universe.HasProcessedMapLoad && entSelection.Count > 1)
         {
@@ -118,8 +121,11 @@ public class MapPropertyView
                 " Editing Multiple Objects.\n Changes will be applied to all selected objects.");
             ImGui.Separator();
             ImGui.PushStyleColor(ImGuiCol.FrameBg, UI.Current.ImGui_MultipleInput_Background);
+
             ImGui.BeginChild("MSB_EditingMultipleObjsChild");
+
             PropEditorSelectedEntities(View.ViewportSelection);
+
             ImGui.PopStyleColor();
 
             ImGui.EndChild();
@@ -245,14 +251,11 @@ public class MapPropertyView
 
     private void PropEditorPropCellRow(MapEntityPropertyFieldMeta meta, ParamAnnotationFieldEntry fieldAnnotation, Param.Cell cell, ref int id, Entity nullableSelection, int rowID)
     {
-        var filterTerm = msbFieldSearch.ToLower();
-        if (msbFieldSearch != "")
-        {
-            if (!cell.Def.InternalName.ToLower().Contains(filterTerm) && meta != null && !meta.AltName.ToLower().Contains(filterTerm))
-            {
-                return;
-            }
-        }
+        var fieldName = cell.Def.InternalName;
+        var isMatch = EditorFilters.IsMatch(MapPropFilter, fieldName, ExactMapPropFilter, fieldAnnotation.Name);
+
+        if (!isMatch)
+            return;
 
         PropEditorPropRow(meta, fieldAnnotation, cell.Value, ref id, cell.Def.InternalName, cell.Value.GetType(), null,
             cell.Def.InternalName, cell.GetType().GetProperty("Value"), cell, nullableSelection, rowID);
@@ -761,9 +764,72 @@ public class MapPropertyView
         }
     }
 
-    /// <summary>
-    /// Map Object Property column
-    /// </summary>
+    public bool DisplayProperty(object propObj, PropertyInfo prop, Type type, MapEntityPropertyFieldMeta meta)
+    {
+        var propName = prop.Name;
+
+        // Automatic conditions that hide the property
+
+        if (!prop.CanWrite && !prop.PropertyType.IsArray)
+        {
+            return false;
+        }
+
+        // IMsbEntry.Name needs special handling to keep it unique
+        if (typeof(IMsbEntry).IsAssignableFrom(type) && prop.Name == "Name")
+            return false;
+
+        // Index Properties are hidden by default
+        if (meta != null && meta.IndexProperty)
+            return false;
+
+        if (!CFG.Current.MapEditor_Properties_Display_Unknown_Properties)
+        {
+            // Rough heuristic since all unknown fields start with Unk
+            if (propName.ToLower().StartsWith("unk"))
+            {
+                return false;
+            }
+        }
+
+        // Normal filter
+        var isMatch = EditorFilters.IsMatch(MapPropFilter, propName, ExactMapPropFilter, meta.AltName);
+        var isValueMatch = false;
+
+        if (MapPropFilter.StartsWith("val:"))
+            isValueMatch = true;
+
+        if (!isMatch && !isValueMatch)
+        {
+            return false;
+        }
+        else if (isValueMatch)
+        {
+            // TODO: currently doesn't match correctly with array list values
+            var valStr = MapPropFilter.Replace("val:", "");
+
+            var propVal = prop.GetValue(propObj);
+
+            if (propVal != null)
+            {
+                var value = $"{propVal}";
+
+                if (ExactMapPropFilter)
+                {
+                    if (valStr != value)
+                        return false;
+                }
+                else
+                {
+                    if (!value.Contains(valStr))
+                        return false;
+                }
+            }
+        }
+
+        return true;
+    }
+
     private void PropEditorGeneric(
         ViewportSelection selection,
         IEnumerable<Entity> entSelection,
@@ -806,46 +872,9 @@ public class MapPropertyView
                 fieldDescription = meta.Wiki;
             }
 
-            // Filter by Search
-            var filterTerm = msbFieldSearch.ToLower();
-            if (msbFieldSearch != "")
-            {
-                if (!prop.Name.ToLower().Contains(filterTerm))
-                {
-                    continue;
-                }
-            }
-
-            if (!meta.IsEmpty && msbFieldSearch != "")
-            {
-                if (!meta.AltName.ToLower().Contains(filterTerm))
-                {
-                    continue;
-                }
-            }
-
-            if (!prop.CanWrite && !prop.PropertyType.IsArray)
-            {
+            // Handle property display (and search filtering)
+            if (!DisplayProperty(obj, prop, type, meta))
                 continue;
-            }
-
-            // IMsbEntry.Name needs special handling to keep it unique
-            if (typeof(IMsbEntry).IsAssignableFrom(type) && prop.Name == "Name")
-                continue;
-
-            // Index Properties are hidden by default
-            if (meta != null && meta.IndexProperty)
-                continue;
-
-            if (!CFG.Current.MapEditor_Properties_Display_Unknown_Properties)
-            {
-                // Rough heuristic since all unknown fields start with Unk
-                var propName = prop.Name.ToLower();
-                if (propName.StartsWith("unk"))
-                {
-                    continue;
-                }
-            }
 
             ImGui.PushID(id);
             ImGui.AlignTextToFramePadding();

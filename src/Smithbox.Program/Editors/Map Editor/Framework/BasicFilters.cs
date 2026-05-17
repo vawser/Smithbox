@@ -127,17 +127,17 @@ public class BasicFilters
         }
 
         // Light Probe
-        if (View.Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.BB)
-        {
-            if (ImGui.MenuItem("Light Probes"))
-            {
-                View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.LightProbe);
-                View.DelayPicking();
-            }
-            ticked = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.LightProbe);
-            UIHelper.ShowActiveStatus(ticked);
-            UIHelper.Tooltip($"Toggle the display of map objects classified as 'Light Probes'.");
-        }
+        //if (View.Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.BB)
+        //{
+        //    if (ImGui.MenuItem("Light Probes"))
+        //    {
+        //        View.ViewportHandler.ActiveViewport.RenderScene.ToggleDrawFilter(RenderFilter.LightProbe);
+        //        View.DelayPicking();
+        //    }
+        //    ticked = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.LightProbe);
+        //    UIHelper.ShowActiveStatus(ticked);
+        //    UIHelper.Tooltip($"Toggle the display of map objects classified as 'Light Probes'.");
+        //}
 
         // Debug
         //if (ImGui.MenuItem("Debug"))

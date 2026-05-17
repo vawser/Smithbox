@@ -71,9 +71,7 @@ public class CreateAction
     /// </summary>
     public void OnToolWindow()
     {
-        ImGui.BeginChild("CreateToolSection", ImGuiChildFlags.Borders);
         DisplayMenu();
-        ImGui.EndChild();
     }
 
     /// <summary>

@@ -69,8 +69,6 @@ public class ReplicateAction
     /// </summary>
     public void OnToolWindow()
     {
-        ImGui.BeginChild("ReplicateToolSection", ImGuiChildFlags.Borders);
-
         UIHelper.WrappedText("Configure how the replicate action works.");
 
         UIHelper.Spacer();
@@ -285,8 +283,6 @@ public class ReplicateAction
 
         UIHelper.MultiButtonInput("replicateActions",
             "replicate", "Replicate Selection", "", ApplyReplicate);
-
-        ImGui.EndChild();
     }
 
     /// <summary>

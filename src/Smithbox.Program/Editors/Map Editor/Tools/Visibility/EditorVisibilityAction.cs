@@ -5,6 +5,7 @@ using StudioCore.Keybinds;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Veldrid.MetalBindings;
 
 namespace StudioCore.Editors.MapEditor;
 
@@ -174,9 +175,79 @@ public class EditorVisibilityAction
     /// </summary>
     public void OnToolWindow()
     {
-        var windowWidth = ImGui.GetWindowWidth();
+        UIHelper.WrappedText("Use these actions to adjust the in-editor visibility of map objects.");
 
-        // Not shown here
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader("Selection", "Actions that affect the current selection of map objects.");
+
+        UIHelper.MultiButtonInput("visActions",
+            "toggleVis", "Toggle Visibility", "Toggles the current visibility state to the opposite.", ToggleVisLocalAction,
+            "enableVis", "Make Visible", "Force the current visibility state to visible.", MakeVisibleLocalAction,
+            "disableVis", "Make Invisible", "Force the current visibility state to invisible.", MakeInvisibleLocalAction);
+
+
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader("Global", "Actions that affect all currently loaded map objects.");
+
+        UIHelper.MultiButtonInput("globalVisActions",
+            "toggleVis", "Toggle Visibility", "Toggles the current visibility state to the opposite.", ToggleVisGlobalAction,
+            "enableVis", "Make Visible", "Force the current visibility state to visible.", MakeVisibleGlobalAction,
+            "disableVis", "Make Invisible", "Force the current visibility state to invisible.", MakeInvisibleGlobalAction);
+
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader("Target Tag", "Toggle the visibility of map objects with the associated alias tag (i.e. LOD).");
+
+        UIHelper.HintTextInput("TagToggleInput", ref CFG.Current.Toolbar_Tag_Visibility_Target, "Enter the tag you want to target...");
+
+        UIHelper.MultiButtonInput("tagActions",
+            "enableVis", "Make Visible", "Force the current visibility state to visible.", MakeVisibleTagAction,
+            "disableVis", "Make Invisible", "Force the current visibility state to invisible.", MakeInvisibleTagAction);
+    }
+
+    public void ToggleVisLocalAction()
+    {
+        ApplyEditorVisibilityChange(EditorVisibilityType.Selected, EditorVisibilityState.Flip);
+    }
+
+    public void MakeVisibleLocalAction()
+    {
+        ApplyEditorVisibilityChange(EditorVisibilityType.Selected, EditorVisibilityState.Enable);
+    }
+
+    public void MakeInvisibleLocalAction()
+    {
+        ApplyEditorVisibilityChange(EditorVisibilityType.Selected, EditorVisibilityState.Disable);
+    }
+
+    public void ToggleVisGlobalAction()
+    {
+        ApplyEditorVisibilityChange(EditorVisibilityType.All, EditorVisibilityState.Flip);
+    }
+
+    public void MakeVisibleGlobalAction()
+    {
+        ApplyEditorVisibilityChange(EditorVisibilityType.All, EditorVisibilityState.Enable);
+    }
+
+    public void MakeInvisibleGlobalAction()
+    {
+        ApplyEditorVisibilityChange(EditorVisibilityType.All, EditorVisibilityState.Disable);
+    }
+
+    public void MakeVisibleTagAction()
+    {
+        CFG.Current.Toolbar_Tag_Visibility_State_Enabled = true;
+        CFG.Current.Toolbar_Tag_Visibility_State_Disabled = false;
+
+        ApplyEditorVisibilityChangeByTag();
+    }
+
+    public void MakeInvisibleTagAction()
+    {
+        CFG.Current.Toolbar_Tag_Visibility_State_Enabled = false;
+        CFG.Current.Toolbar_Tag_Visibility_State_Disabled = true;
+
+        ApplyEditorVisibilityChangeByTag();
     }
 
     /// <summary>
@@ -187,6 +258,12 @@ public class EditorVisibilityAction
         if (targetType == EditorVisibilityType.Selected)
         {
             HashSet<Entity> selected = View.ViewportSelection.GetFilteredSelection<Entity>();
+
+            if(selected.Count == 0)
+            {
+                Smithbox.LogError<EditorVisibilityAction>("No map object selected.");
+                return;
+            }
 
             foreach (Entity s in selected)
             {
@@ -207,6 +284,7 @@ public class EditorVisibilityAction
             {
                 if (entry.Value.MapContainer == null)
                 {
+                    Smithbox.LogError<EditorVisibilityAction>("No map loaded.");
                     continue;
                 }
 
@@ -232,6 +310,7 @@ public class EditorVisibilityAction
         {
             if (entry.Value.MapContainer == null)
             {
+                Smithbox.LogError<EditorVisibilityAction>("No map loaded.");
                 continue;
             }
 

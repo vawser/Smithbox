@@ -63,9 +63,7 @@ public class DuplicateAction
     /// </summary>
     public void OnToolWindow()
     {
-        ImGui.BeginChild("DuplicateToolSection", ImGuiChildFlags.Borders);
         DisplayMenu();
-        ImGui.EndChild();
     }
 
     /// <summary>

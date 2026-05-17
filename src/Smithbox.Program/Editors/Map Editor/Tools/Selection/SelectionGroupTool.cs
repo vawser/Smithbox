@@ -114,8 +114,6 @@ public class SelectionGroupTool
         if (View.Project.Handler.MapData.MapObjectSelections.Resources == null)
             return;
 
-        ImGui.BeginChild("SelectionGroupToolSection", ImGuiChildFlags.Borders);
-
         UIHelper.WrappedText("Use this to define groups of map objects under a name. You can then quickly re-select the group via this tool.");
 
         UIHelper.Spacer();
@@ -336,8 +334,6 @@ public class SelectionGroupTool
                 UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, entry);
             }
         }
-
-        ImGui.EndChild();
     }
 
     public bool DeleteSelectionGroup(string currentResourceName)

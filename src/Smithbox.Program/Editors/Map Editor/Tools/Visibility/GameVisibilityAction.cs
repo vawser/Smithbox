@@ -126,9 +126,44 @@ public class GameVisibilityAction
     /// </summary>
     public void OnToolWindow()
     {
-        var windowWidth = ImGui.GetWindowWidth();
+        UIHelper.WrappedText("Use these actions to adjust the in-game visibility of map objects.");
 
-        // Not shown here
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader("Dummy", "Toggle the dummy state type for selected map objects. Note: conversion into a dummy type will cause property data loss.");
+
+        UIHelper.MultiButtonInput("dummyActions",
+            "makeDummy", "Convert to Dummy Type", "", MakeObjectDummy,
+            "makeNormal", "Convert to Normal Type", "", MakeObjectNormal);
+
+        if (Project.Descriptor.ProjectType is ProjectType.ER)
+        {
+            UIHelper.Spacer();
+            UIHelper.SimpleHeader("Game Presence", "Toggle the game presence type for selected map objects. Game Presence can be used to hide a map object without losing property data.");
+
+            UIHelper.MultiButtonInput("gamePresActions",
+                "makeVisible", "Make Visible", "", EnableObjectGamePresence,
+                "makeHidden", "Make Hidden", "", DisableObjectGamePresence);
+        }
+    }
+
+    public void MakeObjectDummy()
+    {
+        ApplyGameVisibilityChange(GameVisibilityType.DummyObject, GameVisibilityState.Disable);
+    }
+
+    public void MakeObjectNormal()
+    {
+        ApplyGameVisibilityChange(GameVisibilityType.DummyObject, GameVisibilityState.Enable);
+    }
+
+    public void EnableObjectGamePresence()
+    {
+        ApplyGameVisibilityChange(GameVisibilityType.GameEditionDisable, GameVisibilityState.Enable);
+    }
+
+    public void DisableObjectGamePresence()
+    {
+        ApplyGameVisibilityChange(GameVisibilityType.GameEditionDisable, GameVisibilityState.Disable);
     }
 
     /// <summary>
@@ -147,7 +182,7 @@ public class GameVisibilityAction
                     {
                         if (View.Project.Descriptor.ProjectType == ProjectType.ER)
                         {
-                            s.SetPropertyValue("GameEditionDisable", 1);
+                            s.SetPropertyValue("GameEditionDisable", (uint)1);
                         }
                     }
                 }
@@ -158,7 +193,7 @@ public class GameVisibilityAction
                     {
                         if (View.Project.Descriptor.ProjectType == ProjectType.ER)
                         {
-                            s.SetPropertyValue("GameEditionDisable", 0);
+                            s.SetPropertyValue("GameEditionDisable", (uint)0);
                         }
                     }
                 }

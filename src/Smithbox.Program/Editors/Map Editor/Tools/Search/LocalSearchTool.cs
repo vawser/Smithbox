@@ -54,11 +54,7 @@ public class LocalSearchTool
             ImGui.SetNextItemOpen(true);
         }
 
-        ImGui.BeginChild("LocalPropSearchToolSection", ImGuiChildFlags.Borders);
-
         Display();
-
-        ImGui.EndChild();
     }
 
     public void Display()

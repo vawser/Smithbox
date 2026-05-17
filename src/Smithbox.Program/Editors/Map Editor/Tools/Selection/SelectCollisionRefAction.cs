@@ -52,7 +52,6 @@ public class SelectCollisionRefAction
         // Only supported for these types
         if (EntityHelper.IsPartCollision(ent))
         {
-            // Move Up
             if (ImGui.Selectable("Select Referencing Parts"))
             {
                 SelectCollisionReferences();
@@ -63,7 +62,6 @@ public class SelectCollisionRefAction
         // Only supported for these types
         if (EntityHelper.IsPart(ent) && !EntityHelper.IsPartCollision(ent) && !EntityHelper.IsPartConnectCollision(ent))
         {
-            // Move Up
             if (ImGui.Selectable("Select Referenced Collision"))
             {
                 SelectReferencedCollision();
@@ -85,7 +83,36 @@ public class SelectCollisionRefAction
     /// </summary>
     public void OnToolWindow()
     {
-        // Not shown here
+        UIHelper.WrappedText("Use this to select referenced collision when a part is selected, or referenced parts when a collision is selected.");
+
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader("Actions", "");
+
+        if (View.ViewportSelection.IsSelection())
+        {
+            var selection = View.ViewportSelection.GetFilteredSelection<MsbEntity>().First();
+
+            if (EntityHelper.IsPartCollision(selection))
+            {
+                UIHelper.MultiButtonInput("colRefActions_1",
+                "selectRefParts", "Select Referenced Parts", "", SelectCollisionReferences);
+            }
+            else if (EntityHelper.IsPart(selection) && 
+                !EntityHelper.IsPartCollision(selection) && 
+                !EntityHelper.IsPartConnectCollision(selection))
+            {
+                UIHelper.MultiButtonInput("colRefActions_2",
+                "selectRefCol", "Select Referenced Collision", "", SelectReferencedCollision);
+            }
+            else
+            {
+                UIHelper.WrappedText("No valid map object has been selected.");
+            }
+        }
+        else
+        {
+            UIHelper.WrappedText("No map object has been selected.");
+        }
     }
 
 
@@ -94,24 +121,29 @@ public class SelectCollisionRefAction
     /// </summary>
     public void SelectCollisionReferences()
     {
+        var hasRef = false;
+
         if (View.ViewportSelection.IsSelection())
         {
-            var selection = View.ViewportSelection.GetFilteredSelection<MsbEntity>().ToList();
+            var sel = View.ViewportSelection.GetFilteredSelection<MsbEntity>().First();
 
-            foreach(var sel in selection)
+            if(EntityHelper.IsPartCollision(sel))
             {
-                if(EntityHelper.IsPartCollision(sel))
+                foreach (Entity refEnt in sel.GetReferencingObjects())
                 {
-                    foreach (Entity refEnt in sel.GetReferencingObjects())
-                    {
-                        View.ViewportSelection.AddSelection(refEnt);
-                    }
+                    View.ViewportSelection.AddSelection(refEnt);
+                    hasRef = true;
                 }
+            }
+
+            if(!hasRef)
+            {
+                Smithbox.Log<SelectCollisionRefAction>("No part references found.");
             }
         }
         else
         {
-            PlatformUtils.Instance.MessageBox("No collision selected.", "Smithbox", MessageBoxButtons.OK);
+            Smithbox.Log<SelectCollisionRefAction>("No collision selected.");
         }
 
         View.DelayPicking();
@@ -119,33 +151,38 @@ public class SelectCollisionRefAction
 
     public void SelectReferencedCollision()
     {
+        var hasRef = false;
+
         if (View.ViewportSelection.IsSelection())
         {
-            var selection = View.ViewportSelection.GetFilteredSelection<MsbEntity>().ToList();
+            var sel = View.ViewportSelection.GetFilteredSelection<MsbEntity>().First();
 
-            foreach (var sel in selection)
+            if (EntityHelper.IsPart(sel) && !EntityHelper.IsPartCollision(sel) && !EntityHelper.IsPartConnectCollision(sel))
             {
-                if (EntityHelper.IsPart(sel) && !EntityHelper.IsPartCollision(sel) && !EntityHelper.IsPartConnectCollision(sel))
+                foreach (KeyValuePair<string, object[]> m in sel.References)
                 {
-                    foreach (KeyValuePair<string, object[]> m in sel.References)
+                    foreach (var n in m.Value)
                     {
-                        foreach (var n in m.Value)
+                        if (n is MsbEntity e)
                         {
-                            if (n is MsbEntity e)
+                            if (EntityHelper.IsPartCollision(e))
                             {
-                                if (EntityHelper.IsPartCollision(e))
-                                {
-                                    View.ViewportSelection.AddSelection(e);
-                                }
+                                View.ViewportSelection.AddSelection(e);
+                                hasRef = true;
                             }
                         }
                     }
+                }
+
+                if (!hasRef)
+                {
+                    Smithbox.Log<SelectCollisionRefAction>("No collision reference found.");
                 }
             }
         }
         else
         {
-            PlatformUtils.Instance.MessageBox("No parts selected.", "Smithbox", MessageBoxButtons.OK);
+            Smithbox.Log<SelectCollisionRefAction>("No part selected.");
         }
 
         View.DelayPicking();

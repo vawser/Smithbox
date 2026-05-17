@@ -213,11 +213,7 @@ public class RotateAction
     /// </summary>
     public void OnToolWindow()
     {
-        ImGui.BeginChild("RotateToolSection", ImGuiChildFlags.Borders);
-
         DisplayMenu();
-
-        ImGui.EndChild();
     }
 
     public void DisplayMenu()

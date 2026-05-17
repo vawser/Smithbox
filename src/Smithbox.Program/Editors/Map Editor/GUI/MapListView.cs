@@ -14,8 +14,6 @@ public class MapListView : IActionEventHandler
     public MapEditorView View;
     public ProjectEntry Project;
 
-    private string ImguiID = "MapListView";
-
     public string SearchBarText = "";
 
     private bool DisplayChaliceDungeons = true;

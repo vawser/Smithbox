@@ -144,11 +144,7 @@ public class TranslateAction
 
     public void OnToolWindow()
     {
-        ImGui.BeginChild("TranslateToolSection", ImGuiChildFlags.Borders);
-
         DisplayMenu();
-
-        ImGui.EndChild();
     }
 
     public void DisplayMenu()

@@ -404,6 +404,8 @@ public class CFG
 
     // Tools
     public bool Interface_MapEditor_Tool_Common_Action = true;
+    public bool Interface_MapEditor_Tool_Select_Action = true;
+    public bool Interface_MapEditor_Tool_Visbility_Action = true;
     public bool Interface_MapEditor_Tool_Viewport = true;
     public bool Interface_MapEditor_Tool_Data_Transfer = true;
 

@@ -1,4 +1,5 @@
-﻿using Hexa.NET.ImGui;
+﻿using CsvHelper.Configuration.Attributes;
+using Hexa.NET.ImGui;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.Viewport;
@@ -73,6 +74,8 @@ public class MapEditorView
     public EntityIdCheckAction EntityIdCheckAction;
     public EntityRenameAction EntityRenameAction;
     public SelectCollisionRefAction SelectCollisionRefAction;
+    public ViewportFiltersAction ViewportFiltersAction;
+    public BoxSelectionAction BoxSelectionAction;
 
     // Tools
     public MassEditTool MassEditTool;
@@ -159,6 +162,8 @@ public class MapEditorView
         EntityIdCheckAction = new EntityIdCheckAction(this, project);
         EntityRenameAction = new EntityRenameAction(this, project);
         SelectCollisionRefAction = new SelectCollisionRefAction(this, project);
+        ViewportFiltersAction = new ViewportFiltersAction(this, project);
+        BoxSelectionAction = new BoxSelectionAction(this, project);
 
         // Tools
         MassEditTool = new MassEditTool(this, project);

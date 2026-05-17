@@ -38,8 +38,6 @@ public class EntityIdentifierTool
             return;
         }
 
-        ImGui.BeginChild("EntityIdToolSection", ImGuiChildFlags.Borders);
-
         UIHelper.WrappedText("Use this to determine the entity ids the map objects have for the current loaded map.");
 
         UIHelper.Spacer();
@@ -93,8 +91,6 @@ public class EntityIdentifierTool
             ImGui.Text("No map has been loaded and selected yet.");
 
         DisplayEIOList();
-
-        ImGui.EndChild();
 
         ImGui.EndChild();
     }

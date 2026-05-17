@@ -64,8 +64,6 @@ public class GlobalSearchTool : IMapQueryEngine
     {
         var windowWidth = ImGui.GetWindowWidth();
 
-        ImGui.BeginChild("GlobalPropSearchToolSection", ImGuiChildFlags.Borders);
-
         if (!Bank.MapBankInitialized && !UserLoadedData)
         {
             if (ImGui.Button("Load Map Data", DPI.WholeWidthButton(windowWidth, 24)))
@@ -77,8 +75,6 @@ public class GlobalSearchTool : IMapQueryEngine
         DisplayInput();
 
         DisplayResults();
-
-        ImGui.EndChild();
     }
 
     public void DisplayInput()
