@@ -105,7 +105,7 @@ public class DeleteModelObjectAction : ViewportAction
                 Container = e.Container,
                 ContainerIndex = e.Container?.Objects.IndexOf(e) ?? -1,
                 Parent = e.Parent,
-                ParentIndex = e.Parent != null ? e.Parent.Children.IndexOf(e) : -1,
+                ParentIndex = e.Parent != null ? e.Parent.ChildIndex(e) : -1,
                 HadRenderMesh = e.RenderSceneMesh != null
             };
 
@@ -119,7 +119,7 @@ public class DeleteModelObjectAction : ViewportAction
 
         if (r.Parent != null)
         {
-            r.Parent.Children.Remove(e);
+            r.Parent.RemoveChild(e);
             e.Parent = null;
         }
 
@@ -149,7 +149,7 @@ public class DeleteModelObjectAction : ViewportAction
 
         if (r.Parent != null)
         {
-            r.Parent.Children.Insert(r.ParentIndex, e);
+            r.Parent.AddChild(e, r.ParentIndex);
             e.Parent = r.Parent;
         }
 

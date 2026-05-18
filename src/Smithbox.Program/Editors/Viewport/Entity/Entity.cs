@@ -24,17 +24,12 @@ public class Entity : ISelectable, IDisposable
     /// <summary>
     /// Internal. Visibility of the entity.
     /// </summary>
-    public bool _EditorVisible = true;
+    private bool _EditorVisible = true;
 
     /// <summary>
     /// Internal. Associated render scene mesh for the entity.
     /// </summary>
-    public RenderableProxy _renderSceneMesh;
-
-    /// <summary>
-    /// Cached name for the entity.
-    /// </summary>
-    public string CachedName;
+    private RenderableProxy _renderSceneMesh;
 
     /// <summary>
     /// Cached name for the entity.
@@ -49,7 +44,7 @@ public class Entity : ISelectable, IDisposable
     /// <summary>
     /// Internal. Bool to track if render scene mesh has been disposed of.
     /// </summary>
-    public bool disposedValue;
+    private bool disposedValue;
 
     /// <summary>
     /// Objects referencing the entity.
@@ -59,12 +54,12 @@ public class Entity : ISelectable, IDisposable
     /// <summary>
     /// Temporary Transform used by the entity.
     /// </summary>
-    public Transform TempTransform = Transform.Default;
+    private Transform TempTransform = Transform.Default;
 
     /// <summary>
     /// Bool to track if Temporary Transform is used.
     /// </summary>
-    public bool UseTempTransform;
+    private bool UseTempTransform;
 
     public bool ForceModelRefresh = false;
 
@@ -106,7 +101,9 @@ public class Entity : ISelectable, IDisposable
     /// <summary>
     /// A list that contains all the children of this entity.
     /// </summary>
-    public List<Entity> Children { get; set; } = new();
+    public IReadOnlyList<Entity> Children => _children;
+
+    private readonly List<Entity> _children = new();
 
     /// <summary>
     /// A map that contains references for each property.
@@ -137,7 +134,10 @@ public class Entity : ISelectable, IDisposable
     /// <summary>
     /// A bool to track if this entity has render groups.
     /// </summary>
-    [XmlIgnore] public bool HasRenderGroups { get; private set; } = true;
+    [XmlIgnore] 
+    public bool HasRenderGroups { get; private set; } = true;
+
+    private string _name = null;
 
     /// <summary>
     /// The name of this entity.
@@ -147,38 +147,36 @@ public class Entity : ISelectable, IDisposable
     {
         get
         {
-            if (CachedName != null)
+            if (_name != null)
             {
-                return CachedName;
+                return _name;
             }
 
             if (WrappedObject != null)
             {
-                if (WrappedObject.GetType().GetProperty("Name") != null)
+                var propInfo = WrappedObject.GetType().GetProperty("Name");
+
+                if (propInfo != null)
                 {
-                    CachedName = (string)WrappedObject.GetType().GetProperty("Name").GetValue(WrappedObject, null);
-                }
-                else
-                {
-                    CachedName = "null";
+                    _name = (string)propInfo.GetValue(WrappedObject, null);
                 }
             }
 
-            return CachedName;
+            return _name;
         }
         set
         {
             if (value == null)
             {
-                CachedName = null;
+                _name = null;
             }
             else
             {
-                var name = WrappedObject.GetType().GetProperty("Name");
-                if (name != null)
+                var propInfo = WrappedObject.GetType().GetProperty("Name");
+                if (propInfo != null)
                 {
-                    WrappedObject.GetType().GetProperty("Name").SetValue(WrappedObject, value);
-                    CachedName = value;
+                    propInfo.SetValue(WrappedObject, value);
+                    _name = value;
                 }
             }
         }
@@ -280,7 +278,7 @@ public class Entity : ISelectable, IDisposable
     {
         if (child.Parent != null)
         {
-            child.Parent.Children.Remove(child);
+            child.Parent._children.Remove(child);
         }
 
         child.Parent = this;
@@ -291,7 +289,7 @@ public class Entity : ISelectable, IDisposable
             child.Container = Container;
         }
 
-        Children.Add(child);
+        _children.Add(child);
         child.UpdateRenderModel();
     }
 
@@ -302,11 +300,18 @@ public class Entity : ISelectable, IDisposable
     {
         if (child.Parent != null)
         {
-            child.Parent.Children.Remove(child);
+            child.Parent._children.Remove(child);
         }
 
         child.Parent = this;
-        Children.Insert(index, child);
+
+        // Update the containing map for map entities.
+        if (Container.GetType() == typeof(MapContainer) && child.Container.GetType() == typeof(MapContainer))
+        {
+            child.Container = Container;
+        }
+
+        _children.Insert(index, child);
         child.UpdateRenderModel();
     }
 
@@ -336,7 +341,7 @@ public class Entity : ISelectable, IDisposable
             if (Children[i] == child)
             {
                 Children[i].Parent = null;
-                Children.RemoveAt(i);
+                _children.RemoveAt(i);
                 return i;
             }
         }
@@ -403,6 +408,7 @@ public class Entity : ISelectable, IDisposable
         {
             // Otherwise use standard constructor and abuse reflection
             constructor = typ.GetConstructor(Type.EmptyTypes);
+
             clone = constructor.Invoke(null);
         }
 
@@ -458,6 +464,8 @@ public class Entity : ISelectable, IDisposable
         return obj;
     }
 
+    private Dictionary<string, PropertyInfo> _cachedProperties = new();
+
     /// <summary>
     /// Return the value of the passed property string.
     /// </summary>
@@ -466,6 +474,13 @@ public class Entity : ISelectable, IDisposable
         if (WrappedObject == null)
         {
             return null;
+        }
+
+        if(_cachedProperties.ContainsKey(prop))
+        {
+            var propVal = _cachedProperties[prop];
+
+            return propVal.GetValue(WrappedObject, null);
         }
 
         if (WrappedObject is Param.Row row)
@@ -485,10 +500,14 @@ public class Entity : ISelectable, IDisposable
             }
         }
 
-        PropertyInfo p = WrappedObject.GetType()
-            .GetProperty(prop, BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance);
+        PropertyInfo p = WrappedObject.GetType().GetProperty(prop, BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance);
         if (p != null)
         {
+            if(!_cachedProperties.ContainsKey(prop))
+            {
+                _cachedProperties.Add(prop, p);
+            }
+
             return p.GetValue(WrappedObject, null);
         }
 
@@ -546,7 +565,14 @@ public class Entity : ISelectable, IDisposable
             return false;
         }
 
-        return WrappedObject.GetType().GetProperty(prop).GetCustomAttribute<RotationXZY>() != null;
+        var propInfo = WrappedObject.GetType().GetProperty(prop);
+
+        if (propInfo != null)
+        {
+            return propInfo.GetCustomAttribute<RotationXZY>() != null;
+        }
+
+        return false;
     }
 
     /// <summary>
@@ -1035,7 +1061,7 @@ public class Entity : ISelectable, IDisposable
                     }
                 }
                 // AIP for ER
-                else if (rx == null && ry == null)
+                else if (rx == null && ry != null)
                 {
                     t.EulerRotation = new Vector3(0, Utils.DegToRadians((float)ry), 0);
                 }
@@ -1233,7 +1259,7 @@ public class Entity : ISelectable, IDisposable
     {
         PropertiesChangedAction act = new(WrappedObject);
         PropertyInfo prop = WrappedObject.GetType().GetProperty("Scale");
-        act.AddPropertyChange(prop, CFG.Current.SavedPosition);
+        act.AddPropertyChange(prop, CFG.Current.SavedScale);
 
         act.SetPostExecutionAction(undo =>
         {

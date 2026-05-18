@@ -175,7 +175,7 @@ public class CloneMapObjectsAction : ViewportAction
                 if (idx > record.Parent.Children.Count)
                     idx = record.Parent.Children.Count;
 
-                record.Parent.Children.Insert(idx, record.Clone);
+                record.Parent.AddChild(record.Clone, idx);
                 record.Clone.Parent = record.Parent;
             }
         }
@@ -256,7 +256,7 @@ public class CloneMapObjectsAction : ViewportAction
         // Remove from hierarchy
         foreach (var record in Records.Where(r => r.Parent != null))
         {
-            record.Parent.Children.Remove(record.Clone);
+            record.Parent.RemoveChild(record.Clone);
             record.Clone.Parent = null;
         }
 

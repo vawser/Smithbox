@@ -392,6 +392,9 @@ public class CFG
     // Param Properties
     public bool MapEditor_Field_List_Display_Padding = false;
 
+    public float MapEditor_Display_ContainerList_Percentage = 0.3f;
+    public float MapEditor_Display_ContentList_Percentage = 0.7f;
+
     // Windows
     public bool Interface_MapEditor_Viewport_Grid = true;
     public bool Interface_MapEditor_MapList = true;

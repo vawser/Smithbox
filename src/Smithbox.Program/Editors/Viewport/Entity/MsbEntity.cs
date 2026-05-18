@@ -295,8 +295,7 @@ public class MsbEntity : Entity
                 break;
         }
 
-        _renderSceneMesh.Dispose();
-        _renderSceneMesh = null;
+        this.RenderSceneMesh.Dispose();
 
         IsSwitchingRenderType = false;
     }
@@ -319,41 +318,41 @@ public class MsbEntity : Entity
             if (Type == MsbEntityType.DS2Generator)
             {
             }
-            else if (Type == MsbEntityType.DS2EventLocation && _renderSceneMesh == null)
+            else if (Type == MsbEntityType.DS2EventLocation && this.RenderSceneMesh == null)
             {
-                if (_renderSceneMesh != null)
+                if (this.RenderSceneMesh != null)
                 {
-                    _renderSceneMesh.Dispose();
+                    this.RenderSceneMesh.Dispose();
                 }
 
-                _renderSceneMesh = DrawableHelper.GetDS2EventLocationDrawable(universe.GetCurrentScene(), ContainingMap, this);
+                this.RenderSceneMesh = DrawableHelper.GetDS2EventLocationDrawable(universe.GetCurrentScene(), ContainingMap, this);
             }
-            else if (Type == MsbEntityType.Region && _renderSceneMesh == null)
+            else if (Type == MsbEntityType.Region && this.RenderSceneMesh == null)
             {
-                if (_renderSceneMesh != null)
+                if (this.RenderSceneMesh != null)
                 {
-                    _renderSceneMesh.Dispose();
+                    this.RenderSceneMesh.Dispose();
                 }
 
-                _renderSceneMesh = DrawableHelper.GetRegionDrawable(universe.GetCurrentScene(), ContainingMap, this, EntityRenderType);
+                this.RenderSceneMesh = DrawableHelper.GetRegionDrawable(universe.GetCurrentScene(), ContainingMap, this, EntityRenderType);
             }
-            else if (Type == MsbEntityType.Light && _renderSceneMesh == null)
+            else if (Type == MsbEntityType.Light && this.RenderSceneMesh == null)
             {
-                if (_renderSceneMesh != null)
+                if (this.RenderSceneMesh != null)
                 {
-                    _renderSceneMesh.Dispose();
+                    this.RenderSceneMesh.Dispose();
                 }
 
-                _renderSceneMesh = DrawableHelper.GetLightDrawable(universe.GetCurrentScene(), ContainingMap, this, EntityRenderType);
+                this.RenderSceneMesh = DrawableHelper.GetLightDrawable(universe.GetCurrentScene(), ContainingMap, this, EntityRenderType);
             }
-            else if (Type == MsbEntityType.AutoInvadePoint && _renderSceneMesh == null)
+            else if (Type == MsbEntityType.AutoInvadePoint && this.RenderSceneMesh == null)
             {
-                if (_renderSceneMesh != null)
+                if (this.RenderSceneMesh != null)
                 {
-                    _renderSceneMesh.Dispose();
+                    this.RenderSceneMesh.Dispose();
                 }
 
-                _renderSceneMesh = DrawableHelper.GetAutoInvadeDrawable(universe.GetCurrentScene(), ContainingMap, this, EntityRenderType);
+                this.RenderSceneMesh = DrawableHelper.GetAutoInvadeDrawable(universe.GetCurrentScene(), ContainingMap, this, EntityRenderType);
             }
             else
             {
@@ -381,9 +380,9 @@ public class MsbEntity : Entity
                         ForceModelRefresh = false;
 
                         //model name has been changed or this is the initial check
-                        if (_renderSceneMesh != null)
+                        if (this.RenderSceneMesh != null)
                         {
-                            _renderSceneMesh.Dispose();
+                            this.RenderSceneMesh.Dispose();
                         }
 
                         CurrentModelName = model;
@@ -391,7 +390,7 @@ public class MsbEntity : Entity
                         // Get model
                         if (model != null)
                         {
-                            _renderSceneMesh = DrawableHelper.GetModelDrawable(Owner, universe.GetCurrentScene(), ContainingMap, this, model, true, ModelMasks);
+                            this.RenderSceneMesh = DrawableHelper.GetModelDrawable(Owner, universe.GetCurrentScene(), ContainingMap, this, model, true, ModelMasks);
                         }
 
                         if (universe.View.ViewportSelection.IsSelected(this))
@@ -412,15 +411,15 @@ public class MsbEntity : Entity
         {
             var universe = (MapUniverse)Owner;
 
-            if (_renderSceneMesh != null)
+            if (this.RenderSceneMesh != null)
             {
-                _renderSceneMesh.Dispose();
+                this.RenderSceneMesh.Dispose();
             }
 
             // Get model
             if (CurrentModelName != null)
             {
-                _renderSceneMesh = DrawableHelper.GetModelDrawable(Owner, universe.GetCurrentScene(), ContainingMap, this, CurrentModelName, true, ModelMasks, true);
+                this.RenderSceneMesh = DrawableHelper.GetModelDrawable(Owner, universe.GetCurrentScene(), ContainingMap, this, CurrentModelName, true, ModelMasks, true);
             }
 
             if (universe.View.ViewportSelection.IsSelected(this))

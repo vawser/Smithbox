@@ -183,13 +183,13 @@ public class MapToolWindow
                 }
             }
 
-            if (CFG.Current.Interface_MapEditor_Tool_Data_Transfer)
-            {
-                if (ImGui.CollapsingHeader("Data Transfer"))
-                {
-                    DataTransferTool.Display();
-                }
-            }
+            //if (CFG.Current.Interface_MapEditor_Tool_Data_Transfer)
+            //{
+            //    if (ImGui.CollapsingHeader("Data Transfer"))
+            //    {
+            //        DataTransferTool.Display();
+            //    }
+            //}
 
             if (CFG.Current.Interface_MapEditor_Tool_GridConfiguration)
             {
@@ -215,11 +215,14 @@ public class MapToolWindow
 
                     ImGui.BeginTabBar("validationTabs");
 
-                    if (ImGui.BeginTabItem("Entity ID##entityIdSearch"))
+                    if (!(activeView.Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S))
                     {
-                        activeView.EntityIdentifierTool.OnToolWindow();
+                        if (ImGui.BeginTabItem("Entity ID##entityIdSearch"))
+                        {
+                            activeView.EntityIdentifierTool.OnToolWindow();
 
-                        ImGui.EndTabItem();
+                            ImGui.EndTabItem();
+                        }
                     }
 
                     if (ImGui.BeginTabItem("MSB Validation##msbValidation"))

@@ -30,7 +30,7 @@ public class PlacementEntity : Entity
 
             if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan)
             {
-                _renderSceneMesh = DrawableHelper.GetPlacementOrbDrawable(universe.GetCurrentScene(), this);
+                this.RenderSceneMesh = DrawableHelper.GetPlacementOrbDrawable(universe.GetCurrentScene(), this);
             }
         }
     }
@@ -50,19 +50,19 @@ public class PlacementEntity : Entity
         {
             var universe = (MapUniverse)Owner;
 
-            if (_renderSceneMesh != null)
+            if (this.RenderSceneMesh != null)
             {
                 if (CFG.Current.DisplayPlacementOrb)
                 {
-                    _renderSceneMesh.Visible = true;
+                    this.RenderSceneMesh.Visible = true;
                 }
                 else
                 {
-                    _renderSceneMesh.Visible = false;
+                    this.RenderSceneMesh.Visible = false;
                 }
 
                 // Update position of the placement orb
-                _renderSceneMesh.World = universe.View.ViewportWindow.GetPlacementTransform();
+                this.RenderSceneMesh.World = universe.View.ViewportWindow.GetPlacementTransform();
             }
         }
 

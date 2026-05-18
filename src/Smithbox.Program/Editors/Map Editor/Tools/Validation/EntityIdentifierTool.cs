@@ -32,12 +32,6 @@ public class EntityIdentifierTool
     /// </summary>
     public void OnToolWindow()
     {
-        // DS2 is not supported currently since it uses Entity IDs differently to the other games.
-        if(View.Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
-        {
-            return;
-        }
-
         UIHelper.WrappedText("Use this to determine the entity ids the map objects have for the current loaded map.");
 
         UIHelper.Spacer();

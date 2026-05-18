@@ -39,7 +39,7 @@ public class DeleteMapObjectsAction : ViewportAction
             int parentIndex = -1;
 
             if (parent != null)
-                parentIndex = parent.Children.IndexOf(obj);
+                parentIndex = parent.ChildIndex(obj);
 
             Records.Add(new DeleteRecord
             {
@@ -77,7 +77,7 @@ public class DeleteMapObjectsAction : ViewportAction
 
             if (r.Parent != null)
             {
-                r.Parent.Children.Remove(r.Entity);
+                r.Parent.RemoveChild(r.Entity);
                 r.Entity.Parent = null;
             }
         }
@@ -125,10 +125,10 @@ public class DeleteMapObjectsAction : ViewportAction
                     idx = r.Parent.Children.Count;
 
                 if (r.Entity.Parent != null)
-                    r.Entity.Parent.Children.Remove(r.Entity);
+                    r.Entity.Parent.RemoveChild(r.Entity);
 
                 r.Entity.Parent = r.Parent;
-                r.Parent.Children.Insert(idx, r.Entity);
+                r.Parent.AddChild(r.Entity, idx);
                 r.Entity.UpdateRenderModel();
             }
         }
