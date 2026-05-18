@@ -694,7 +694,8 @@ public class Entity : ISelectable, IDisposable
 
     public string[] CollectReferenceNames()
     {
-        if (WrappedObject == null) return Array.Empty<string>();
+        if (WrappedObject == null) 
+            return Array.Empty<string>();
         var type = WrappedObject.GetType();
         var refProps = s_refPropsCache.GetOrAdd(type, t =>
             t.GetProperties(BindingFlags.Instance | BindingFlags.Public)

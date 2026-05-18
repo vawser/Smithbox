@@ -821,9 +821,6 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
             sub.Dispose();
 
             _submeshes.RemoveAt(i);
-        }
-
-        _submeshes.Clear();
-        _submeshes.Add(selected);
+        };
     }
 }

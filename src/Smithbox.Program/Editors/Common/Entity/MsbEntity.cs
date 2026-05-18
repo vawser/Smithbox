@@ -585,31 +585,4 @@ public class MsbEntity : Entity
         c.Type = Type;
         return c;
     }
-
-    /// <summary>
-    /// Seralize this entity.
-    /// </summary>
-    public MapSerializationEntity Serialize(Dictionary<Entity, int> idmap)
-    {
-        MapSerializationEntity e = new();
-        e.Name = Name;
-        if (HasTransform)
-        {
-            e.Transform = GetLocalTransform();
-        }
-
-        e.Type = Type;
-        e.Children = new List<MapSerializationEntity>();
-        if (idmap.ContainsKey(this))
-        {
-            e.Msbidx = idmap[this];
-        }
-
-        foreach (Entity c in Children)
-        {
-            e.Children.Add(((MsbEntity)c).Serialize(idmap));
-        }
-
-        return e;
-    }
 }

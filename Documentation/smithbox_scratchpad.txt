@@ -4,6 +4,7 @@
 - Model Editor
  - Rendering experiment (TinyFFR)
  - Mesh visbility/delete not working properly
+  - Race condition in the model mesh -> provider flow? Sometimes the submeshes are associated, sometimes not.
  
 - Map Editor
  - Add visualisation (via primitive meshes) of enemy AI radiuses (sight, listen, smell)
@@ -11,16 +12,16 @@
 - Material Editor:
  - Add MATBIN support back
  
-- Param Editor
- - Validate the padding in new DS2 defs is empty (if values are present, cross-check with old defs and restore)
- - Finish converting the SDT AlternativeOrders into Field Layouts
- - Translate DS2 meta
- - Finish AC6 meta
- 
 - Text Editor:
  - Add split ID / Entry Text (similar to Param Editor) for the Entry List
  - Add reorder functionality on drag (+ sort entry list action)
  
 - Gparam Editor:
  - Add multi-select for the value list (and to duplicate/delete/export)
+ 
+- Param Editor
+ - Validate the padding in new DS2 defs is empty (if values are present, cross-check with old defs and restore)
+ - Finish converting the SDT AlternativeOrders into Field Layouts
+ - Translate DS2 meta
+ - Finish AC6 meta
  

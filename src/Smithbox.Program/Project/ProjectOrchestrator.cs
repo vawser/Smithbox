@@ -205,6 +205,8 @@ public class ProjectOrchestrator : IDisposable
 
                             ProjectEditor.SelectedLoadedEntry = projectEntry;
                             ProjectEditor.SelectedAvaliableEntry = projectEntry;
+
+                            ProjectEditor.ConfigureMenu.SetupForEdit(projectEntry);
                         }
                     }
                 }

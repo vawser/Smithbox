@@ -1359,16 +1359,4 @@ public class MapContainer : ObjectContainer
 
         return true;
     }
-
-    public MapSerializationEntity SerializeHierarchy()
-    {
-        Dictionary<Entity, int> idmap = new();
-        for (var i = 0; i < Objects.Count; i++)
-        {
-            idmap.Add(Objects[i], i);
-        }
-
-        return ((MsbEntity)RootObject).Serialize(idmap);
-    }
-
 }

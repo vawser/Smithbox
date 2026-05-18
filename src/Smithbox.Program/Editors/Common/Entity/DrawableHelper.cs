@@ -127,13 +127,6 @@ public static class DrawableHelper
                 }
 
                 Task task = job.Complete();
-                if (curUniverse != null)
-                {
-                    if (curUniverse.HasProcessedMapLoad)
-                    {
-                        task.Wait();
-                    }
-                }
             }
 
             return mesh;
@@ -161,13 +154,6 @@ public static class DrawableHelper
                 }
 
                 Task task = job.Complete();
-                if (curUniverse != null)
-                {
-                    if (curUniverse.HasProcessedMapLoad)
-                    {
-                        task.Wait();
-                    }
-                }
             }
 
             return mesh;
@@ -213,13 +199,6 @@ public static class DrawableHelper
             }
 
             Task task = job.Complete();
-            if (curUniverse != null)
-            {
-                if (curUniverse.HasProcessedMapLoad)
-                {
-                    task.Wait();
-                }
-            }
         }
 
         return model;
