@@ -534,7 +534,7 @@ public class MapContainer : ObjectContainer
 
     private void AddModelDeS(IMsb m, MSBD.Model model, string name)
     {
-        if (LoadedModels[name] != null)
+        if (LoadedModels.TryGetValue(name, out var existing))
         {
             m.Models.Add(LoadedModels[name]);
             return;
@@ -567,7 +567,7 @@ public class MapContainer : ObjectContainer
 
     private void AddModelDS1(IMsb m, MSB1.Model model, string name)
     {
-        if (LoadedModels[name] != null)
+        if (LoadedModels.TryGetValue(name, out var existing))
         {
             m.Models.Add(LoadedModels[name]);
             return;
@@ -600,7 +600,7 @@ public class MapContainer : ObjectContainer
 
     private void AddModelDS2(IMsb m, MSB2.Model model, string name)
     {
-        if (LoadedModels[name] != null)
+        if (LoadedModels.TryGetValue(name, out var existing))
         {
             m.Models.Add(LoadedModels[name]);
             return;
@@ -612,7 +612,7 @@ public class MapContainer : ObjectContainer
 
     private void AddModelBB(IMsb m, MSBB.Model model, string name)
     {
-        if (LoadedModels[name] != null)
+        if (LoadedModels.TryGetValue(name, out var existing))
         {
             m.Models.Add(LoadedModels[name]);
             return;
@@ -659,7 +659,7 @@ public class MapContainer : ObjectContainer
 
     private void AddModelDS3(IMsb m, MSB3.Model model, string name)
     {
-        if (LoadedModels[name] != null)
+        if (LoadedModels.TryGetValue(name, out var existing))
         {
             m.Models.Add(LoadedModels[name]);
             return;
@@ -692,7 +692,7 @@ public class MapContainer : ObjectContainer
 
     private void AddModelSekiro(IMsb m, MSBS.Model model, string name)
     {
-        if (LoadedModels[name] != null)
+        if (LoadedModels.TryGetValue(name, out var existing))
         {
             m.Models.Add(LoadedModels[name]);
             return;
@@ -725,7 +725,7 @@ public class MapContainer : ObjectContainer
 
     private void AddModelER(IMsb m, MSBE.Model model, string name)
     {
-        if (LoadedModels[name] != null)
+        if (LoadedModels.TryGetValue(name, out var existing))
         {
             m.Models.Add(LoadedModels[name]);
             return;
@@ -757,7 +757,7 @@ public class MapContainer : ObjectContainer
     }
     private void AddModelNR(IMsb m, MSB_NR.Model model, string name)
     {
-        if (LoadedModels[name] != null)
+        if (LoadedModels.TryGetValue(name, out var existing))
         {
             m.Models.Add(LoadedModels[name]);
             return;
@@ -791,7 +791,7 @@ public class MapContainer : ObjectContainer
 
     private void AddModelAC6(IMsb m, MSB_AC6.Model model, string name)
     {
-        if (LoadedModels[name] != null)
+        if (LoadedModels.TryGetValue(name, out var existing))
         {
             m.Models.Add(LoadedModels[name]);
             return;

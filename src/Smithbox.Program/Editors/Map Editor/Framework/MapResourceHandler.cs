@@ -152,7 +152,7 @@ public class MapResourceHandler
         }
     }
 
-    public void SetupTexturelLoadLists()
+    public void SetupTextureLoadLists()
     {
         // MAP
         foreach (ResourceDescriptor asset in TextureLocator.GetMapTextureVirtualPaths(View.Project, AdjustedMapID))

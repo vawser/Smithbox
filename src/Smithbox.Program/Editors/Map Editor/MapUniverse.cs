@@ -27,20 +27,13 @@ public class MapUniverse : IUniverse
     public MapEditorView View;
     public ProjectEntry Project;
 
-    /// <summary>
-    /// Holds exception dispatches that can occur during map loading
-    /// </summary>
     public ExceptionDispatchInfo LoadMapExceptions = null;
 
-    /// <summary>
-    /// True after or before a map load. False if a map load is on-going.
-    /// </summary>
-    public bool HasProcessedMapLoad;
+    public volatile bool HasProcessedMapLoad;
+    public volatile bool IsLoading = false;
 
-    /// <summary>
-    /// Task list for the async map loads
-    /// </summary>
-    private List<Task> Tasks = new();
+    public string ModelDataMapID { get; set; }
+
 
     public MapUniverse(MapEditorView view, ProjectEntry project)
     {
@@ -55,6 +48,12 @@ public class MapUniverse : IUniverse
 
     public bool LoadMap(string mapid, bool selectOnLoad = false, bool ignoreHavokLoad = false)
     {
+        if(IsLoading)
+        {
+            Smithbox.LogError<MapUniverse>("A map is already in the process of loading.");
+            return false;
+        }
+
         if (View.Project.Descriptor.ProjectType is ProjectType.DS2S or ProjectType.DS2)
         {
             if (Project.Handler.ParamEditor == null)
@@ -88,30 +87,29 @@ public class MapUniverse : IUniverse
 
         Profiler.TracyFiberLeave();
 
-        LoadMapAsync(mapid, selectOnLoad);
+        _ = LoadMapAsync(mapid, selectOnLoad);
 
         return true;
     }
 
-    public string ModelDataMapID { get; set; }
-
-    /// <summary>
-    /// Load a map asynchronously based on the passed map ID
-    /// </summary>
-    public async void LoadMapAsync(string mapid, bool selectOnLoad = false)
+    public async Task<bool> LoadMapAsync(string mapid, bool selectOnLoad = false)
     {
+        IsLoading = true;
         View.Editor.LoadingModal.AllowDisplay = true;
+
         Profiler.TracyFiberEnter("loadMapAsync");
         using var __loadMapZone = Profiler.TracyZoneAuto();
 
         var fileEntry = View.Selection.GetFileEntryFromMapID(mapid);
         var existingMap = View.Selection.GetMapContainerFromMapID(mapid);
 
-        if (existingMap != null && existingMap.LoadState is MapContentLoadState.Loaded)
+        if (existingMap != null && 
+            existingMap.LoadState is MapContentLoadState.Loaded)
         {
             Smithbox.Log(this, $"Map \"{mapid}\" is already loaded",
                 LogLevel.Information, LogPriority.Normal);
-            return;
+
+            return false;
         }
 
         try
@@ -121,15 +119,15 @@ public class MapUniverse : IUniverse
             var newMap = new MapContainer(View, mapid);
 
             ModelDataMapID = newMap.Name;
-            View.ModelInsightTool.AddEntry(newMap);
 
+            View.ModelInsightTool.AddEntry(newMap);
             View.DisplayGroupTool.SetupDrawgroupCount();
 
             MapResourceHandler resourceHandler = new MapResourceHandler(View, mapid);
+
             Profiler.TracyFiberLeave();
             await resourceHandler.ReadMap(mapid);
             Profiler.TracyFiberEnter("loadMapAsync");
-
 
             if (resourceHandler.Msb != null)
             {
@@ -138,12 +136,15 @@ public class MapUniverse : IUniverse
                 if (CFG.Current.Viewport_Enable_Rendering)
                 {
                     resourceHandler.SetupHumanEnemySubstitute();
+
                     using var __resScope = Profiler.TracyZoneAuto();
                     resourceHandler.SetupModelLoadLists();
                     __resScope.Dispose();
+
                     using var __texScope = Profiler.TracyZoneAuto();
-                    resourceHandler.SetupTexturelLoadLists();
+                    resourceHandler.SetupTextureLoadLists();
                     __texScope.Dispose();
+
                     using var __maskScope = Profiler.TracyZoneAuto();
                     resourceHandler.SetupModelMasks(newMap);
                     __maskScope.Dispose();
@@ -157,6 +158,7 @@ public class MapUniverse : IUniverse
                 View.LightProbeBank.LoadBTPB(newMap);
 
                 __lightScope.Dispose();
+
                 using var __navScope = Profiler.TracyZoneAuto();
                 View.HavokNavmeshBank.LoadHavokNVA(newMap, resourceHandler);
                 __navScope.Dispose();
@@ -205,18 +207,20 @@ public class MapUniverse : IUniverse
                     LoadDS2Generators(resourceHandler.AdjustedMapID, newMap);
                 }
 
+                var tasks = new List<Task>();
+
                 if (CFG.Current.Viewport_Enable_Rendering)
                 {
-                    Tasks = resourceHandler.LoadTextures(Tasks, newMap);
+                    tasks = resourceHandler.LoadTextures(tasks, newMap);
 
                     Profiler.TracyFiberLeave();
-                    await Task.WhenAll(Tasks);
+                    await Task.WhenAll(tasks);
                     Profiler.TracyFiberEnter("loadMapAsync");
 
-                    Tasks = resourceHandler.LoadModels(Tasks, newMap);
+                    tasks = resourceHandler.LoadModels(tasks, newMap);
 
                     Profiler.TracyFiberLeave();
-                    await Task.WhenAll(Tasks);
+                    await Task.WhenAll(tasks);
                     Profiler.TracyFiberEnter("loadMapAsync");
 
                     ScheduleTextureRefresh();
@@ -224,7 +228,7 @@ public class MapUniverse : IUniverse
 
                 // After everything loads, do some additional checks:
                 Profiler.TracyFiberLeave();
-                await Task.WhenAll(Tasks);
+                await Task.WhenAll(tasks);
                 Profiler.TracyFiberEnter("loadMapAsync");
                 HasProcessedMapLoad = true;
 
@@ -275,9 +279,12 @@ public class MapUniverse : IUniverse
         {
             __loadMapZone.Dispose();
             Profiler.TracyFiberLeave();
+
+            View.Editor.LoadingModal.AllowDisplay = false;
+            IsLoading = false;
         }
 
-        View.Editor.LoadingModal.AllowDisplay = false;
+        return true;
     }
 
     public void UnloadMap(string mapID, bool clearFromList = false)
@@ -543,10 +550,6 @@ public class MapUniverse : IUniverse
         //map.SaveMapTransform();
     }
 
-
-    /// <summary>
-    ///
-    /// </summary>
     public void LoadDS2Generators(string mapid, MapContainer map)
     {
         Dictionary<long, Param.Row> registParams = new();
@@ -1033,9 +1036,6 @@ public class MapUniverse : IUniverse
         return DCX.Type.None;
     }
 
-    /// <summary>
-    ///     Save BTL light data
-    /// </summary>
     public void SaveBTL(MapEditorView view, MapContainer map)
     {
         var fileEntries = View.Project.Locator.LightFiles.Entries;

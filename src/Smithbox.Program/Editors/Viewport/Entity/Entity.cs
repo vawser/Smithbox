@@ -3,8 +3,6 @@ using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.MapEditor;
-using StudioCore.Editors.ModelEditor;
-using StudioCore.Editors.ParamEditor;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
 using System;
@@ -14,8 +12,6 @@ using System.Linq;
 using System.Numerics;
 using System.Reflection;
 using System.Xml.Serialization;
-using Tracy;
-using static SoulsFormats.NVA;
 using PropertiesChangedAction = StudioCore.Editors.MapEditor.PropertiesChangedAction;
 
 namespace StudioCore.Editors.Common;
@@ -710,13 +706,17 @@ public class Entity : ISelectable, IDisposable
     /// </summary>
     public static void BuildReferenceMaps(IEnumerable<Entity> entities)
     {
-        if (entities == null) return;
+        if (entities == null) 
+            return;
 
         // Group entities by container
         var containerGroups = new Dictionary<ObjectContainer, List<Entity>>();
+
         foreach (var entity in entities)
         {
-            if (entity == null) continue;
+            if (entity == null) 
+                continue;
+
             if (!containerGroups.TryGetValue(entity.Container, out var list))
             {
                 list = new List<Entity>();
@@ -728,7 +728,9 @@ public class Entity : ISelectable, IDisposable
         foreach (var kvp in containerGroups)
         {
             var list = kvp.Value;
-            if (list.Count == 0) continue;
+
+            if (list.Count == 0) 
+                continue;
 
             // Clear existing forward/back references
             foreach (var e in list)
@@ -739,42 +741,57 @@ public class Entity : ISelectable, IDisposable
 
             // Build name -> entity lookup
             var nameLookup = new Dictionary<string, List<Entity>>(StringComparer.Ordinal);
+
             foreach (var entity in list)
             {
-                if (string.IsNullOrEmpty(entity.Name)) continue;
+                if (string.IsNullOrEmpty(entity.Name)) 
+                    continue;
 
                 if (!nameLookup.TryGetValue(entity.Name, out var entityList))
                 {
                     entityList = new List<Entity>();
                     nameLookup[entity.Name] = entityList;
                 }
+
                 entityList.Add(entity);
             }
 
             // Resolve references for each entity
             foreach (var e in list)
             {
-                if (e.WrappedObject == null) continue;
+                if (e.WrappedObject == null) 
+                    continue;
+
                 var refNames = e.CollectReferenceNames();
-                if (refNames == null || refNames.Length == 0) continue;
+
+                if (refNames == null || refNames.Length == 0) 
+                    continue;
 
                 var localRefs = new Dictionary<string, List<Entity>>(StringComparer.Ordinal);
+
                 foreach (var rname in refNames)
                 {
-                    if (string.IsNullOrEmpty(rname)) continue;
+                    if (string.IsNullOrEmpty(rname)) 
+                        continue;
+
                     if (!nameLookup.TryGetValue(rname, out var targets)) continue;
 
                     foreach (var tgt in targets)
                     {
-                        if (tgt == e) continue;
+                        if (tgt == e) 
+                            continue;
+
                         if (!localRefs.TryGetValue(rname, out var lst))
                         {
                             lst = new List<Entity>();
                             localRefs[rname] = lst;
                         }
+
                         lst.Add(tgt);
+
                         if (tgt.ReferencingObjects == null)
                             tgt.ReferencingObjects = new HashSet<Entity>();
+
                         tgt.ReferencingObjects.Add(e);
                     }
                 }

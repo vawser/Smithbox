@@ -24,3 +24,8 @@
 - Gparam Editor:
  - Add multi-select for the value list (and to duplicate/delete/export)
  
+# Entity / Model flow:
+
+- LoadMapAsync: starts process
+ - MapContainer.LoadMSB: iterate over each map object, create the entities
+ - MapResourceHandler.Setup<x>LoadLists: builds the descriptors to send to the resource manager
