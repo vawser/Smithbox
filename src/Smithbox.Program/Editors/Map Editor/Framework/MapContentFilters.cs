@@ -109,7 +109,7 @@ public class MapContentFilters
                 ImGui.TableSetColumnIndex(1);
 
                 ImGui.AlignTextToFramePadding();
-                ImGui.Text("prop: <property name> [<index>] <comparator> <value>");
+                ImGui.Text("prop:<property name> [<index>] <comparator> <value>");
 
                 // Description
                 ImGui.TableNextRow();

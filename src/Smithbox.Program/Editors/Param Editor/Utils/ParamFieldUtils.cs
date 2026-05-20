@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace StudioCore.Editors.ParamEditor;
-public class ParamFieldUtils
+public static class ParamFieldUtils
 {
     public static string ImGui_InputFloatFormat(float f, int min = 3, int max = 6)
     {

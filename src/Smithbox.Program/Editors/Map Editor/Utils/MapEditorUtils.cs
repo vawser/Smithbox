@@ -4,12 +4,11 @@ using System.Collections.Generic;
 
 namespace StudioCore.Editors.MapEditor;
 
-public class MapEditorUtils
+public static class MapEditorUtils
 {
     /// <summary>
     /// Update the model state for all loaded entities.
     /// </summary>
-    /// <param name="baseEditor"></param>
     /// <param name="projectEntry"></param>
     public static void UpdateAllEntityModels(ProjectEntry projectEntry)
     {

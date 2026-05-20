@@ -4,7 +4,7 @@ using System.Numerics;
 
 namespace StudioCore.Editors.ParamEditor;
 
-public class ParamEditorHints
+public static class ParamEditorHints
 {
     public static string MassEditHint =
         @"For help with regex or examples, consult the main help menu.

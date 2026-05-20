@@ -14,7 +14,7 @@ namespace StudioCore.Editors.MapEditor;
 /// <summary>
 /// Business logic for cross-map connections in ER.
 /// </summary>
-internal class MapConnections_ER
+public static class MapConnections_ER
 {
     private static Dictionary<string, TileDefinition> eldenRingOffsets;
 

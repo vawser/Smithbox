@@ -4,7 +4,7 @@ using System.Text;
 
 namespace StudioCore.Memory;
 
-public class RequestFileReload
+public static class RequestFileReload
 {
     public enum ReloadType
     {

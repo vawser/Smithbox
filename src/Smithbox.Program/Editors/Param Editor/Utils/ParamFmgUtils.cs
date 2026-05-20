@@ -13,7 +13,7 @@ using Veldrid;
 namespace StudioCore.Editors.ParamEditor;
 
 
-public class ParamFmgUtils
+public static class ParamFmgUtils
 {
     public static List<FMG.Entry> GetRowDecoratorFmgEntries(ParamEditorScreen editor, string paramName)
     {

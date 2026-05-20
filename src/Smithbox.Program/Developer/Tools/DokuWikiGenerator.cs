@@ -1,26 +1,33 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Utilities;
 using System.Linq;
+using System.Numerics;
 
 namespace StudioCore.Application;
 
-public static class DokuWikiGenerator
+public class DokuWikiGenerator
 {
-    public static void Display(ProjectEntry project)
+    public DokuWikiGenerator() { }
+
+    public void Display()
     {
+        var project = Smithbox.Orchestrator.SelectedProject;
+
         if (project == null)
             return;
 
         if (project.Handler.ParamEditor == null)
             return;
 
-        if (ImGui.Button("Output Param Table Information", DPI.StandardButtonSize))
-        {
-            OutputParamTableInformation(project);
-        }
+        UIHelper.SimpleHeader("Actions", "");
 
-        UIHelper.SimpleHeader("paramList", "Specific Param Information", "", UI.Current.ImGui_AliasName_Text);
+        UIHelper.MultiButtonInput("dokuActions",
+            "exportInfo", "Export Table Information", "", OutputParamTableInformation);
 
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader("Specific Param Information", "");
+
+        ImGui.BeginChild("specificParamSection", new Vector2(0, 200), ImGuiChildFlags.Borders);
         foreach (var param in project.Handler.ParamData.PrimaryBank.Params)
         {
             var paramKey = param.Key;
@@ -30,10 +37,13 @@ public static class DokuWikiGenerator
                 OutputParamInformation(project, paramKey);
             }
         }
+        ImGui.EndChild();
     }
 
-    public static void OutputParamTableInformation(ProjectEntry curProject)
+    public void OutputParamTableInformation()
     {
+        var curProject = Smithbox.Orchestrator.SelectedProject;
+
         var editor = Smithbox.Orchestrator.SelectedProject.Handler.ParamEditor;
 
         var output = "^ Param ^ Description ^\n";
@@ -50,7 +60,7 @@ public static class DokuWikiGenerator
         PlatformUtils.Instance.SetClipboardText(output);
     }
 
-    public static void OutputParamInformation(ProjectEntry project, string paramKey)
+    public void OutputParamInformation(ProjectEntry project, string paramKey)
     {
         var editor = Smithbox.Orchestrator.SelectedProject.Handler.ParamEditor;
 

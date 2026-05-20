@@ -2,6 +2,7 @@
 using System.Reflection;
 
 namespace StudioCore.Editors.Common;
+
 public static class PropFinderUtil
 {
     /// <summary>
@@ -19,7 +20,6 @@ public static class PropFinderUtil
     /// <param name="classIndex"></param>
     /// <param name="onlyCheckPropName">If true, search only checks property name. Otherwise, it checks unique MetadataToken.</param>
     /// <returns>PropData that has the property if found, otherwise null.</returns>
-    /// <summary>
     private static PropData GetPropData(PropertyInfo prop, object obj, int arrayIndex = -1, int classIndex = -1, bool onlyCheckPropName = false)
     {
         if (obj == null) return null;
@@ -31,7 +31,7 @@ public static class PropFinderUtil
 
             if (onlyCheckPropName)
             {
-                if (p.Name.ToLower() == prop.Name.ToLower())
+                if (string.Equals(p.Name, prop.Name, StringComparison.OrdinalIgnoreCase))
                     return new PropData(p, obj);
             }
             else

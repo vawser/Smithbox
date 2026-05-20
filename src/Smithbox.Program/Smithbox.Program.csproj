@@ -91,6 +91,10 @@
     <PackageReference Include="Octokit" Version="14.0.0" />
     <PackageReference Include="Pfim" Version="0.11.4" />
     <PackageReference Include="ProcessMemoryUtilities.Net" Version="1.3.4" />
+    <PackageReference Include="Roslynator.Analyzers" Version="4.15.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Silk.NET.OpenGL" Version="2.21.0" />
     <PackageReference Include="Silk.NET.SDL" Version="2.22.0" />
     <PackageReference Include="SixLabors.ImageSharp" Version="3.1.12" />

@@ -2,7 +2,7 @@
 
 namespace StudioCore.Editors.MaterialEditor;
 
-public class MaterialUtils
+public static class MaterialUtils
 {
     public static bool SupportsMATBIN(ProjectEntry project)
     {

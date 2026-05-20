@@ -4,7 +4,7 @@
 
 namespace StudioCore.Application;
 
-public class Icons
+public static class Icons
 {
     public const string FontIconFileName = "forkawesome-webfont.ttf";
 

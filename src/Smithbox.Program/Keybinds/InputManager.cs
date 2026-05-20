@@ -98,7 +98,10 @@ public static class InputManager
             {
                 LoadKeybinds(KeybindPath);
             }
-            catch (Exception) { }
+            catch (Exception ex) 
+            {
+                Smithbox.LogError<Smithbox>("Failed to load keybinds JSON.", ex);
+            }
         }
 
         MousebindPath = Path.Combine(folder, "Mousebinds.json");
@@ -111,7 +114,10 @@ public static class InputManager
             {
                 LoadMousebinds(MousebindPath);
             }
-            catch (Exception) { }
+            catch (Exception ex)
+            {
+                Smithbox.LogError<Smithbox>("Failed to load mousebinds JSON.", ex);
+            }
         }
 
         SaveKeybinds();

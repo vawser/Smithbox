@@ -11,14 +11,18 @@ using System.Linq;
 
 namespace StudioCore.Application;
 
-public static class ParamValidator
+public class ParamValidator
 {
-    private static Dictionary<string, PARAMDEF> _paramdefs = new Dictionary<string, PARAMDEF>();
-    private static Dictionary<string, Param> _params = new Dictionary<string, Param>();
-    private static ulong _paramVersion;
+    private Dictionary<string, PARAMDEF> _paramdefs = new Dictionary<string, PARAMDEF>();
+    private Dictionary<string, Param> _params = new Dictionary<string, Param>();
+    private ulong _paramVersion;
 
-    public static void Display(ProjectEntry project)
+    public ParamValidator() { }
+
+    public void Display()
     {
+        var project = Smithbox.Orchestrator.SelectedProject;
+
         if (project == null)
             return;
 
@@ -28,29 +32,45 @@ public static class ParamValidator
             return;
         }
 
-        ImGui.Text("This tool will validate the PARAMDEF and padding values. Issues will be printed to the Logger.");
-        ImGui.Text("");
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader("Actions", "");
 
-        if (ImGui.Button("Validate PARAMDEF", DPI.StandardButtonSize))
-        {
-            ValidateParamdef(project);
-        }
-        UIHelper.Tooltip("Validate that the current PARAMDEF works with the old-style SF PARAM class.");
+        UIHelper.MultiButtonInput("paramActions",
+            "validateParamdef",
+            "Validate PARAMDEF",
+            "Validate that the current PARAMDEF works with the old-style SF PARAM class.",
+            ValidateParamdefAction,
 
-        if (ImGui.Button("Validate Padding (for selected param)", DPI.StandardButtonSize))
-        {
-            ValidatePadding(project);
-        }
-        UIHelper.Tooltip("Validate that there are no non-zero values within padding fields.");
+            "validatePadding_all",
+            "Validate Padding (for all params)",
+            "Validate that there are no non-zero values within padding fields.",
+            ValidateAllPaddingAction,
 
-        if (ImGui.Button("Validate Padding (for all params)", DPI.StandardButtonSize))
-        {
-            ValidatePadding(project, true);
-        }
-        UIHelper.Tooltip("Validate that there are no non-zero values within padding fields.");
+            "validatePadding_selected",
+            "Validate Padding (for selected param)",
+            "Validate that there are no non-zero values within padding fields.",
+            ValidateSelectedPaddingAction);
     }
 
-    public static void ValidatePadding(ProjectEntry project, bool allParams = false)
+    public void ValidateParamdefAction()
+    {
+        var project = Smithbox.Orchestrator.SelectedProject;
+        ValidateParamdef(project);
+    }
+
+    public void ValidateSelectedPaddingAction()
+    {
+        var project = Smithbox.Orchestrator.SelectedProject;
+        ValidatePadding(project);
+    }
+
+    public void ValidateAllPaddingAction()
+    {
+        var project = Smithbox.Orchestrator.SelectedProject;
+        ValidatePadding(project, true);
+    }
+
+    public void ValidatePadding(ProjectEntry project, bool allParams = false)
     {
         if (allParams)
         {
@@ -70,7 +90,7 @@ public static class ParamValidator
         }
     }
 
-    public static void ValidatePaddingForParam(ProjectEntry project, string selectedParamName)
+    public void ValidatePaddingForParam(ProjectEntry project, string selectedParamName)
     {
         var currentParam = project.Handler.ParamData.VanillaBank.Params[selectedParamName];
         var currentRow = 0;
@@ -126,7 +146,7 @@ public static class ParamValidator
         TaskManager.Run(task);
     }
 
-    public static void ValidateParamdef(ProjectEntry curProject)
+    public void ValidateParamdef(ProjectEntry curProject)
     {
         // Read params from regulation.bin via SF PARAM impl
         _paramdefs = curProject.Handler.ParamData.ParamDefs;
@@ -221,7 +241,7 @@ public static class ParamValidator
         }
     }
 
-    private static void LoadParamFromBinder(IBinder parambnd, ref Dictionary<string, Param> paramBank, out ulong version,
+    private void LoadParamFromBinder(IBinder parambnd, ref Dictionary<string, Param> paramBank, out ulong version,
         bool checkVersion = false, bool validatePadding = false)
     {
         var success = ulong.TryParse(parambnd.Version, out version);
@@ -235,7 +255,7 @@ public static class ParamValidator
         {
             var paramName = Path.GetFileNameWithoutExtension(f.Name);
 
-            if (!f.Name.ToUpper().EndsWith(".PARAM"))
+            if (!f.Name.EndsWith(".PARAM", StringComparison.OrdinalIgnoreCase))
             {
                 continue;
             }

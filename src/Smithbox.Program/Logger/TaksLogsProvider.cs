@@ -28,14 +28,14 @@ namespace StudioCore.Logger
             _getScopes = getScopes;
         }
 
-        public IDisposable BeginScope<TState>(TState state)
+        IDisposable ILogger.BeginScope<TState>(TState state)
         {
             var scopes = _getScopes();
             return scopes?.Push(state) ?? NullScope.Instance;
         }
-        public bool IsEnabled(LogLevel logLevel) => true;
+        bool ILogger.IsEnabled(LogLevel logLevel) => true;
 
-        public void Log<TState>(
+        void ILogger.Log<TState>(
             LogLevel logLevel,
             EventId eventId,
             TState state,

@@ -422,7 +422,7 @@ public static class ParamMapReferences
             {
                 foreach (var entry in AssetList)
                 {
-                    if (entry.Filename.ToLower() == assetID.ToLower())
+                    if (entry.Filename.Equals(assetID, System.StringComparison.OrdinalIgnoreCase))
                     {
                         var aliasName = AliasHelper.GetAssetAlias(editor.Project, assetID.ToLower());
 

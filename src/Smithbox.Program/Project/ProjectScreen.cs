@@ -165,14 +165,6 @@ public class ProjectScreen
 
         EditorFilters.DisplayFramedListFilter("availableProjectsFilter", ref AvailableListFilter, ref ExactAvailableListFilter);
 
-        if (SelectedAvaliableEntry != null)
-        {
-            if (!SelectedAvaliableEntry.Initialized)
-            {
-                UIHelper.MultiButtonInput("availableProjectActions",
-                    "loadSelectedProject", "Load Selected Project", "", LoadSelectedProjectAction);
-            }
-        }
         ImGui.BeginChild("availableProjectList", new Vector2(width, height * CFG.Current.Project_Display_AvailableProjectList), ImGuiChildFlags.Borders);
 
         DisplayAvailableProjectEntries();

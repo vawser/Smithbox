@@ -9,22 +9,22 @@ namespace StudioCore.Application;
 /// <summary>
 /// Used to generate the .layout file that drives the World Map feature
 /// </summary>
-public static class WorldMapLayoutGenerator
+public class WorldMapLayoutGenerator
 {
     // Small Tiles - Row IDs
-    public static List<int> smallRows = new List<int>()
+    public List<int> smallRows = new List<int>()
     {
         32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59
     };
 
     // Small Tiles - Col IDs
-    public static List<int> smallCols = new List<int>()
+    public List<int> smallCols = new List<int>()
     {
         63, 62, 61, 60, 59, 58, 57, 56, 55, 54, 53, 52, 51, 50, 49, 48, 47, 46, 45, 44, 43, 42, 41, 40, 39, 38, 37, 36, 35, 34, 33, 32, 31, 30
     };
 
     // Small Tiles - Truth Table for when to add a layout entry
-    public static Dictionary<int, List<int>> smallTileDict = new Dictionary<int, List<int>>()
+    public Dictionary<int, List<int>> smallTileDict = new Dictionary<int, List<int>>()
     {
         {  1, new List<int> { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }},
         {  2, new List<int> { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0 }},
@@ -63,17 +63,17 @@ public static class WorldMapLayoutGenerator
     };
 
     // Medium Tiles
-    public static List<int> mediumRows = new List<int>()
+    public List<int> mediumRows = new List<int>()
     {
         16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29
     };
 
-    public static List<int> mediumCols = new List<int>()
+    public List<int> mediumCols = new List<int>()
     {
         31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15
     };
 
-    public static Dictionary<int, List<int>> mediumTileDict = new Dictionary<int, List<int>>()
+    public Dictionary<int, List<int>> mediumTileDict = new Dictionary<int, List<int>>()
     {
         {  1, new List<int> { 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0 }},
         {  2, new List<int> { 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 }},
@@ -95,17 +95,17 @@ public static class WorldMapLayoutGenerator
     };
 
     // Large Tiles
-    public static List<int> largeRows = new List<int>()
+    public List<int> largeRows = new List<int>()
     {
         8, 9, 10, 11, 12, 13, 14
     };
 
-    public static List<int> largeCols = new List<int>()
+    public List<int> largeCols = new List<int>()
     {
         15, 14, 13, 12, 11, 10, 9, 8, 7
     };
 
-    public static Dictionary<int, List<int>> largeTileDict = new Dictionary<int, List<int>>()
+    public Dictionary<int, List<int>> largeTileDict = new Dictionary<int, List<int>>()
     {
         {  1, new List<int> { 0, 0, 1, 1, 1, 1, 1 }},
         {  2, new List<int> { 0, 1, 1, 1, 1, 1, 1 }},
@@ -118,72 +118,61 @@ public static class WorldMapLayoutGenerator
         {  9, new List<int> { 0, 0, 1, 1, 0, 0, 0 }},
     };
 
-    public static string _folderPath = "";
-#if WINDOWS
-    public static string exportPath = $"F:\\SteamLibrary\\steamapps\\common\\ELDEN RING\\Game\\layout_export.txt";
-#else
-    public static string exportPath = $"{Environment.GetFolderPath(Environment.SpecialFolder.UserProfile)}/SteamLibrary/steamapps/common/ELDEN RING/Game/layout_export.txt";
-#endif
+    public string _folderPath = "";
 
-    public static bool GenerateDLC = false;
+    public string exportPath = $"F:\\SteamLibrary\\steamapps\\common\\ELDEN RING\\Game\\layout_export.txt";
 
-    public static void Display(ProjectEntry project)
+    public bool GenerateDLC = false;
+
+    public WorldMapLayoutGenerator() { }
+
+    public void Display()
     {
-        if (ImGui.BeginTable($"worldMapGenTable", 3, ImGuiTableFlags.SizingFixedFit))
+        UIHelper.SimpleHeader("Export Directory", "");
+
+        UIHelper.SinglelineTextInput("ExportDirectory", ref _folderPath);
+
+        UIHelper.MultiButtonInput("exportActions",
+            "setExportDir", "Select Export Directory", "", SetExportDirectory);
+
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader("Options", "");
+
+        ImGui.Checkbox("Generate DLC Map", ref GenerateDLC);
+
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader("Actions", "");
+
+        UIHelper.MultiButtonInput("genActions",
+            "generateMap", "Generate Map", "", GenerateMap);
+    }
+
+    public void SetExportDirectory()
+    {
+        var newFolderPath = "";
+        var result = PlatformUtils.Instance.OpenFolderDialog("Select Export Folder", out newFolderPath);
+
+        if (result)
         {
-            ImGui.TableSetupColumn("Title", ImGuiTableColumnFlags.WidthFixed);
-            ImGui.TableSetupColumn("Input", ImGuiTableColumnFlags.WidthFixed);
-            ImGui.TableSetupColumn("Action", ImGuiTableColumnFlags.WidthStretch);
-
-            // Project Path
-            ImGui.TableNextRow();
-            ImGui.TableSetColumnIndex(0);
-
-            ImGui.AlignTextToFramePadding();
-            ImGui.Text("Export Path");
-            UIHelper.Tooltip("The folder path to place the exported world map.");
-
-            ImGui.TableSetColumnIndex(1);
-
-            DPI.ApplyInputWidth();
-            ImGui.InputText("##exportFolderPath", ref _folderPath, 255);
-
-            ImGui.TableSetColumnIndex(2);
-
-            if (ImGui.Button("Select##exportFolderPathSelect", DPI.StandardButtonSize))
-            {
-                var newFolderPath = "";
-                var result = PlatformUtils.Instance.OpenFolderDialog("Select Export Folder", out newFolderPath);
-
-                if (result)
-                {
-                    _folderPath = newFolderPath;
-                    exportPath = $"{_folderPath}//layout_export.txt";
-                }
-            }
-
-            ImGui.EndTable();
-        }
-
-        if (File.Exists(_folderPath))
-        {
-            ImGui.Checkbox("Generate DLC Map", ref GenerateDLC);
-
-            if (ImGui.Button("Generate World Map", DPI.StandardButtonSize))
-            {
-                if(GenerateDLC)
-                {
-                    CalcSOTEWorldMapLayout();
-                }
-                else
-                {
-                    CalcWorldMapLayout();
-                }
-            }
+            _folderPath = newFolderPath;
+            exportPath = $"{_folderPath}//layout_export.txt";
         }
     }
 
-    public static void CalcSOTEWorldMapLayout()
+    public void GenerateMap()
+    {
+        if (GenerateDLC)
+        {
+            CalcSOTEWorldMapLayout();
+        }
+        else
+        {
+            CalcWorldMapLayout();
+        }
+    }
+
+
+    public void CalcSOTEWorldMapLayout()
     {
         var xOffset = 350; // 
         var yOffset = 1150; // 
@@ -199,7 +188,7 @@ public static class WorldMapLayoutGenerator
     /// <summary>
     /// Builds a .layout file for the ER World Map
     /// </summary>
-    public static void CalcWorldMapLayout()
+    public void CalcWorldMapLayout()
     {
         var printStr = "";
         printStr = printStr + BuildTileLayout(480, 55, "60", printStr, "02", 496, largeTileDict, largeCols, largeRows);
@@ -209,7 +198,7 @@ public static class WorldMapLayoutGenerator
         File.WriteAllText(exportPath, printStr);
     }
 
-    private static string BuildTileLayout(int xOffset, int yOffset, string mapPrefix, string existingStr, string postfix, int size, Dictionary<int, List<int>> dict, List<int> cols, List<int> rows, bool respectTruthTable = true)
+    private string BuildTileLayout(int xOffset, int yOffset, string mapPrefix, string existingStr, string postfix, int size, Dictionary<int, List<int>> dict, List<int> cols, List<int> rows, bool respectTruthTable = true)
     {
         var xOff = xOffset;
         var yOff = yOffset;
@@ -251,7 +240,7 @@ public static class WorldMapLayoutGenerator
         return existingStr;
     }
 
-    private static string PadNumber(int num)
+    private string PadNumber(int num)
     {
         if (num < 10)
         {

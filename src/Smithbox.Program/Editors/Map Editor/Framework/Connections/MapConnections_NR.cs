@@ -10,7 +10,7 @@ namespace StudioCore.Editors.MapEditor;
 /// <summary>
 /// Business logic for cross-map connections in NR.
 /// </summary>
-internal class MapConnections_NR
+public static class MapConnections_NR
 {
     private static Dictionary<string, TileDefinition> NightreignOffsets;
 

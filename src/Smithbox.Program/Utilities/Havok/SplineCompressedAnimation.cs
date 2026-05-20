@@ -24,7 +24,7 @@ using System.Numerics;
 
 namespace StudioCore.Utilities;
 
-public class SplineCompressedAnimation
+public static class SplineCompressedAnimation
 {
     [Flags]
     public enum FlagOffset : byte

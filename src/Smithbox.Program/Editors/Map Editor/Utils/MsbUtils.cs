@@ -10,7 +10,7 @@ using System.Reflection;
 
 namespace StudioCore.Editors.MapEditor;
 
-public class MsbUtils
+public static class MsbUtils
 {
     public static void EntitySelectionHandler(MapEditorView view, ViewportSelection selection, Entity entity,
         bool itemSelected, bool isItemFocused, List<WeakReference<Entity>> filteredEntityList = null)

@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace StudioCore.Memory;
 
-public class Kernel32
+public static class Kernel32
 {
     [DllImport("kernel32.dll")]
     public static extern IntPtr VirtualAlloc(IntPtr lpAddress, int dwSize, int flAllocationType, int flProtect);

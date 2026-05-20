@@ -22,6 +22,6 @@
 - Param Editor
  - Validate the padding in new DS2 defs is empty (if values are present, cross-check with old defs and restore)
  - Finish converting the SDT AlternativeOrders into Field Layouts
- - Translate DS2 meta
  - Finish AC6 meta
+ - Translate DS2 meta
  

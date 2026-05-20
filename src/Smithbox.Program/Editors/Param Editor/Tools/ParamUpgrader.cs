@@ -566,7 +566,7 @@ public class ParamUpgrader
         {
             var paramName = Path.GetFileNameWithoutExtension(f.Name);
 
-            if (!f.Name.ToUpper().EndsWith(".PARAM"))
+            if (!f.Name.EndsWith(".PARAM", StringComparison.OrdinalIgnoreCase))
             {
                 continue;
             }

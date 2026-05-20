@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace StudioCore.Editors.ParamEditor;
 
 
-public class ParamIO
+public static class ParamIO
 {
     private static readonly StringBuilder _reportBuilder = new StringBuilder();
 

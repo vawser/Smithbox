@@ -13,4 +13,12 @@ public class SavingFailedException : Exception
         Filename = fname;
         Wrapped = wrapped;
     }
+
+    public SavingFailedException() : base()
+    {
+    }
+
+    public SavingFailedException(string message) : base(message)
+    {
+    }
 }

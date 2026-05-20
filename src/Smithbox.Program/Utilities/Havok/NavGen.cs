@@ -6,7 +6,7 @@ namespace StudioCore.Utilities;
 /// <summary>
 ///     Binding to Navgen recast based navmesh generation library
 /// </summary>
-internal class NavGen
+internal static class NavGen
 {
     [DllImport("NavGen.dll")]
     public static extern bool SetNavmeshBuildParams(float cs, float ch, float slope, float aheight, float aclimb,

@@ -14,7 +14,7 @@ using Vortice.Vulkan;
 
 namespace StudioCore.Renderer;
 
-public class SceneRenderer
+public static class SceneRenderer
 {
     public enum DefaultTexture
     {

@@ -5,12 +5,13 @@ using System.Linq;
 
 namespace StudioCore.Application;
 
-public static class TaskViewer
+public class TaskViewer
 {
-    public static void Display(ProjectEntry project)
+    public TaskViewer() { }
+
+    public void Display()
     {
-        ImGui.Text("Currently running tasks:");
-        ImGui.Text("");
+        UIHelper.SimpleHeader("Running Tasks", "");
 
         if (TaskManager.GetLiveThreads().Count > 0)
         {
@@ -24,13 +25,14 @@ public static class TaskViewer
             }
         }
 
-        if (ImGui.CollapsingHeader("Soapstone Server"))
-        {
-            var running = SoapstoneServer.GetRunningPort() is int port
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader("Soapstone Server", "");
+
+        var running = SoapstoneServer.GetRunningPort() is int port
                 ? $"running on port {port}"
                 : "not running";
-            ImGui.Text(
-                $"The server is {running}.\nIt is not accessible over the network, only to other programs on this computer.\nPlease restart the program for changes to take effect.");
-        }
+
+        ImGui.Text(
+            $"The server is {running}.\nIt is not accessible over the network, only to other programs on this computer.\nPlease restart the program for changes to take effect.");
     }
 }

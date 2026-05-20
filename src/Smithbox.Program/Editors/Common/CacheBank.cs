@@ -7,7 +7,7 @@ using Veldrid.MetalBindings;
 
 namespace StudioCore.Editors.Common;
 
-public class CacheBank
+public static class CacheBank
 {
     private static readonly ConcurrentDictionary<(EditorScreen, object, string), object> caches = new();
 

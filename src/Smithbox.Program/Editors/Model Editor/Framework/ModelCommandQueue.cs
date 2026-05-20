@@ -41,7 +41,7 @@ public class ModelCommandQueue
         var filename = commands[1];
 
         var entry = Project.Handler.ModelData.PrimaryBank.Models
-            .FirstOrDefault(e => e.Key.Filename.ToLower() == filename.ToLower());
+            .FirstOrDefault(e => e.Key.Filename.Equals(filename, System.StringComparison.OrdinalIgnoreCase));
 
         if (entry.Value == null)
             return;

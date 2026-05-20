@@ -869,7 +869,7 @@ public class MassEditTool
                 // Otherwise do string comparison
                 else
                 {
-                    if (targetValue.ToLower() == $"{targetProp_Value}".ToLower())
+                    if (targetValue.Equals($"{targetProp_Value}", StringComparison.OrdinalIgnoreCase))
                     {
                         isValid = true;
                     }

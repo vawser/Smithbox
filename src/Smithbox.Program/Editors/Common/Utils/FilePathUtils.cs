@@ -3,7 +3,7 @@ using System.IO;
 
 namespace StudioCore.Editors.Common;
 
-public class FilePathUtils
+public static class FilePathUtils
 {
     /// <summary>
     /// Checks if the filename is valid for Windows and doesn't contain non-ASCII characters.

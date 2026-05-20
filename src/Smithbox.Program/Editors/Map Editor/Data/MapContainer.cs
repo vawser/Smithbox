@@ -827,27 +827,23 @@ public class MapContainer : ObjectContainer
         foreach (KeyValuePair<string, IMsbModel> mk in LoadedModels.OrderBy(q => q.Key))
         {
             var m = mk.Key;
-            if (m.StartsWith("m"))
+            if (m.StartsWith("m", StringComparison.OrdinalIgnoreCase))
             {
                 AddModelDeS(msb, new MSBD.Model.MapPiece(), m);
             }
-
-            if (m.StartsWith("h"))
+            else if (m.StartsWith("h", StringComparison.OrdinalIgnoreCase))
             {
                 AddModelDeS(msb, new MSBD.Model.Collision(), m);
             }
-
-            if (m.StartsWith("o"))
+            else if (m.StartsWith("o", StringComparison.OrdinalIgnoreCase))
             {
                 AddModelDeS(msb, new MSBD.Model.Object(), m);
             }
-
-            if (m.StartsWith("c"))
+            else if (m.StartsWith("c", StringComparison.OrdinalIgnoreCase))
             {
                 AddModelDeS(msb, new MSBD.Model.Enemy(), m);
             }
-
-            if (m.StartsWith("n"))
+            else if (m.StartsWith("n", StringComparison.OrdinalIgnoreCase))
             {
                 AddModelDeS(msb, new MSBD.Model.Navmesh(), m);
             }
@@ -859,27 +855,23 @@ public class MapContainer : ObjectContainer
         foreach (KeyValuePair<string, IMsbModel> mk in LoadedModels.OrderBy(q => q.Key))
         {
             var m = mk.Key;
-            if (m.StartsWith("m"))
+            if (m.StartsWith("m", StringComparison.OrdinalIgnoreCase))
             {
                 AddModelDS1(msb, new MSB1.Model.MapPiece(), m);
             }
-
-            if (m.StartsWith("h"))
+            else if (m.StartsWith("h", StringComparison.OrdinalIgnoreCase))
             {
                 AddModelDS1(msb, new MSB1.Model.Collision(), m);
             }
-
-            if (m.StartsWith("o"))
+            else if (m.StartsWith("o", StringComparison.OrdinalIgnoreCase))
             {
                 AddModelDS1(msb, new MSB1.Model.Object(), m);
             }
-
-            if (m.StartsWith("c"))
+            else if (m.StartsWith("c", StringComparison.OrdinalIgnoreCase))
             {
                 AddModelDS1(msb, new MSB1.Model.Enemy(), m);
             }
-
-            if (m.StartsWith("n"))
+            else if (m.StartsWith("n", StringComparison.OrdinalIgnoreCase))
             {
                 AddModelDS1(msb, new MSB1.Model.Navmesh(), m);
             }
@@ -891,22 +883,19 @@ public class MapContainer : ObjectContainer
         foreach (KeyValuePair<string, IMsbModel> mk in LoadedModels.OrderBy(q => q.Key))
         {
             var m = mk.Key;
-            if (m.StartsWith("m"))
+            if (m.StartsWith("m", StringComparison.OrdinalIgnoreCase))
             {
                 AddModelDS2(msb, new MSB2.Model.MapPiece(), m);
             }
-
-            if (m.StartsWith("h"))
+            else if (m.StartsWith("h", StringComparison.OrdinalIgnoreCase))
             {
                 AddModelDS2(msb, new MSB2.Model.Collision(), m);
             }
-
-            if (m.StartsWith("o"))
+            else if (m.StartsWith("o", StringComparison.OrdinalIgnoreCase))
             {
                 AddModelDS2(msb, new MSB2.Model.Object(), m);
             }
-
-            if (m.StartsWith("n"))
+            else if (m.StartsWith("n", StringComparison.OrdinalIgnoreCase))
             {
                 AddModelDS2(msb, new MSB2.Model.Navmesh(), m);
             }
@@ -918,27 +907,23 @@ public class MapContainer : ObjectContainer
         foreach (KeyValuePair<string, IMsbModel> mk in LoadedModels.OrderBy(q => q.Key))
         {
             var m = mk.Key;
-            if (m.StartsWith("m"))
+            if (m.StartsWith("m", StringComparison.OrdinalIgnoreCase))
             {
                 AddModelBB(msb, new MSBB.Model.MapPiece { Name = m }, m);
             }
-
-            if (m.StartsWith("h"))
+            else if (m.StartsWith("h", StringComparison.OrdinalIgnoreCase))
             {
                 AddModelBB(msb, new MSBB.Model.Collision { Name = m }, m);
             }
-
-            if (m.StartsWith("o"))
+            else if (m.StartsWith("o", StringComparison.OrdinalIgnoreCase))
             {
                 AddModelBB(msb, new MSBB.Model.Object { Name = m }, m);
             }
-
-            if (m.StartsWith("c"))
+            else if (m.StartsWith("c", StringComparison.OrdinalIgnoreCase))
             {
                 AddModelBB(msb, new MSBB.Model.Enemy { Name = m }, m);
             }
-
-            if (m.StartsWith("n"))
+            else if (m.StartsWith("n", StringComparison.OrdinalIgnoreCase))
             {
                 AddModelBB(msb, new MSBB.Model.Navmesh { Name = m }, m);
             }
@@ -950,22 +935,19 @@ public class MapContainer : ObjectContainer
         foreach (KeyValuePair<string, IMsbModel> mk in LoadedModels.OrderBy(q => q.Key))
         {
             var m = mk.Key;
-            if (m.StartsWith("m"))
+            if (m.StartsWith("m", StringComparison.OrdinalIgnoreCase))
             {
                 AddModelDS3(msb, new MSB3.Model.MapPiece { Name = m }, m);
             }
-
-            if (m.StartsWith("h"))
+            else if (m.StartsWith("h", StringComparison.OrdinalIgnoreCase))
             {
                 AddModelDS3(msb, new MSB3.Model.Collision { Name = m }, m);
             }
-
-            if (m.StartsWith("o"))
+            else if (m.StartsWith("o", StringComparison.OrdinalIgnoreCase))
             {
                 AddModelDS3(msb, new MSB3.Model.Object { Name = m }, m);
             }
-
-            if (m.StartsWith("c"))
+            else if (m.StartsWith("c", StringComparison.OrdinalIgnoreCase))
             {
                 AddModelDS3(msb, new MSB3.Model.Enemy { Name = m }, m);
             }
@@ -977,22 +959,19 @@ public class MapContainer : ObjectContainer
         foreach (KeyValuePair<string, IMsbModel> mk in LoadedModels.OrderBy(q => q.Key))
         {
             var m = mk.Key;
-            if (m.StartsWith("m"))
+            if (m.StartsWith("m", StringComparison.OrdinalIgnoreCase))
             {
                 AddModelSekiro(msb, new MSBS.Model.MapPiece { Name = m }, m);
             }
-
-            if (m.StartsWith("h"))
+            else if (m.StartsWith("h", StringComparison.OrdinalIgnoreCase))
             {
                 AddModelSekiro(msb, new MSBS.Model.Collision { Name = m }, m);
             }
-
-            if (m.StartsWith("o"))
+            else if (m.StartsWith("o", StringComparison.OrdinalIgnoreCase))
             {
                 AddModelSekiro(msb, new MSBS.Model.Object { Name = m }, m);
             }
-
-            if (m.StartsWith("c"))
+            else if (m.StartsWith("c", StringComparison.OrdinalIgnoreCase))
             {
                 AddModelSekiro(msb, new MSBS.Model.Enemy { Name = m }, m);
             }
@@ -1004,25 +983,22 @@ public class MapContainer : ObjectContainer
         foreach (KeyValuePair<string, IMsbModel> mk in LoadedModels.OrderBy(q => q.Key))
         {
             var m = mk.Key;
-            if (m.ToLower().StartsWith("m"))
+            if (m.StartsWith("m", StringComparison.OrdinalIgnoreCase))
             {
                 AddModelER(msb, new MSBE.Model.MapPiece { Name = m }, m);
                 continue;
             }
-
-            if (m.ToLower().StartsWith("h"))
+            else if (m.StartsWith("h", StringComparison.OrdinalIgnoreCase))
             {
                 AddModelER(msb, new MSBE.Model.Collision { Name = m }, m);
                 continue;
             }
-
-            if (m.ToLower().StartsWith("aeg"))
+            else if (m.StartsWith("aeg", StringComparison.OrdinalIgnoreCase))
             {
                 AddModelER(msb, new MSBE.Model.Asset { Name = m }, m);
                 continue;
             }
-
-            if (m.ToLower().StartsWith("c"))
+            else if (m.StartsWith("c", StringComparison.OrdinalIgnoreCase))
             {
                 AddModelER(msb, new MSBE.Model.Enemy { Name = m }, m);
                 continue;
@@ -1034,25 +1010,22 @@ public class MapContainer : ObjectContainer
         foreach (KeyValuePair<string, IMsbModel> mk in LoadedModels.OrderBy(q => q.Key))
         {
             var m = mk.Key;
-            if (m.ToLower().StartsWith("m"))
+            if (m.StartsWith("m", StringComparison.OrdinalIgnoreCase))
             {
                 AddModelNR(msb, new MSB_NR.Model.MapPiece { Name = m }, m);
                 continue;
             }
-
-            if (m.ToLower().StartsWith("h"))
+            else if (m.StartsWith("h", StringComparison.OrdinalIgnoreCase))
             {
                 AddModelNR(msb, new MSB_NR.Model.Collision { Name = m }, m);
                 continue;
             }
-
-            if (m.ToLower().StartsWith("aeg"))
+            else if (m.StartsWith("aeg", StringComparison.OrdinalIgnoreCase))
             {
                 AddModelNR(msb, new MSB_NR.Model.Asset { Name = m }, m);
                 continue;
             }
-
-            if (m.ToLower().StartsWith("c"))
+            else if (m.StartsWith("c", StringComparison.OrdinalIgnoreCase))
             {
                 AddModelNR(msb, new MSB_NR.Model.Enemy { Name = m }, m);
                 continue;
@@ -1065,25 +1038,22 @@ public class MapContainer : ObjectContainer
         foreach (KeyValuePair<string, IMsbModel> mk in LoadedModels.OrderBy(q => q.Key))
         {
             var m = mk.Key;
-            if (m.ToLower().StartsWith("m"))
+            if (m.StartsWith("m", StringComparison.OrdinalIgnoreCase))
             {
                 AddModelAC6(msb, new MSB_AC6.Model.MapPiece { Name = m }, m);
                 continue;
             }
-
-            if (m.ToLower().StartsWith("h"))
+            else if (m.StartsWith("h", StringComparison.OrdinalIgnoreCase))
             {
                 AddModelAC6(msb, new MSB_AC6.Model.Collision { Name = m }, m);
                 continue;
             }
-
-            if (m.ToLower().StartsWith("aeg"))
+            else if (m.StartsWith("aeg", StringComparison.OrdinalIgnoreCase))
             {
                 AddModelAC6(msb, new MSB_AC6.Model.Asset { Name = m }, m);
                 continue;
             }
-
-            if (m.ToLower().StartsWith("c"))
+            else if (m.StartsWith("c", StringComparison.OrdinalIgnoreCase))
             {
                 AddModelAC6(msb, new MSB_AC6.Model.Enemy { Name = m }, m);
                 continue;

@@ -4,6 +4,7 @@ using Octokit;
 using SoapstoneLib;
 using SoulsFormats;
 using StudioCore.Application;
+using StudioCore.Developer;
 using StudioCore.Keybinds;
 using StudioCore.Logger;
 using StudioCore.Logger.GUI;
@@ -46,7 +47,7 @@ public class Smithbox
 
     public SoapstoneService _soapstoneService;
 
-    public DeveloperTools DebugTools;
+    public DeveloperPanel DeveloperPanel;
 
     public PreferencesMenu PreferencesMenu = new();
     public KeybindsMenu KeybindsMenu = new();
@@ -147,7 +148,7 @@ public class Smithbox
 
         KeybindsMenu = new();
         PreferencesMenu = new();
-        DebugTools = new();
+        DeveloperPanel = new();
 
         _soapstoneService = new(version);
 
@@ -578,7 +579,7 @@ public class Smithbox
 
                 if (CFG.Current.Developer_Enable_Tools)
                 {
-                    DebugTools.DisplayMenu();
+                    DeveloperPanel.DisplayDropdown();
                 }
 
                 ImGui.EndMenu();
@@ -600,7 +601,7 @@ public class Smithbox
 
         Orchestrator.Update(deltaseconds);
 
-        DebugTools.Display();
+        DeveloperPanel.Display();
 
         KeybindsMenu.Draw();
         PreferencesMenu.Draw();
@@ -683,7 +684,10 @@ public class Smithbox
                 _releaseUrl = release.HtmlUrl;
             }
         }
-        catch (Exception) { }
+        catch (Exception ex)
+        {
+            Smithbox.LogError<Smithbox>("Failed to find Smithbox repository.", ex);
+        }
     }
 
 #nullable enable

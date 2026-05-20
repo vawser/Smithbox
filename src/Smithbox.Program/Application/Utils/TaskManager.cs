@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Application;
 
-public class TaskManager
+public static class TaskManager
 {
     /// <summary>
     ///     Behavior of a LiveTask when the same task ID is already running.

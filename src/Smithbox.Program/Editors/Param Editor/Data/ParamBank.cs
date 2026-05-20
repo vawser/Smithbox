@@ -174,7 +174,7 @@ public class ParamBank : IDisposable
         {
             var paramName = Path.GetFileNameWithoutExtension(f.Name.Replace('\\', Path.DirectorySeparatorChar));
 
-            if (!f.Name.ToUpper().EndsWith(".PARAM"))
+            if (!f.Name.EndsWith(".PARAM", StringComparison.OrdinalIgnoreCase))
             {
                 continue;
             }
@@ -1100,7 +1100,7 @@ public class ParamBank : IDisposable
             foreach (BinderFile p in paramBnd.Files)
             {
                 // Strip params from regulation bnd
-                if (!p.Name.ToUpper().Contains(".PARAM"))
+                if (!p.Name.Contains(".PARAM", StringComparison.OrdinalIgnoreCase))
                 {
                     newFiles.Add(p);
                 }

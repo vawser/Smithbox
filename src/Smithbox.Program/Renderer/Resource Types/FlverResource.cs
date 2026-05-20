@@ -3,8 +3,10 @@ using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using SoulsFormats.Utilities;
 using StudioCore.Application;
+using StudioCore.Developer;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ModelEditor;
+using StudioCore.Editors.Viewport;
 using StudioCore.Logger;
 using StudioCore.Utilities;
 using System;
@@ -90,6 +92,12 @@ public class FlverResource : IResource, IDisposable
     /// </summary>
     public bool _Load(Memory<byte> bytes, AccessLevel al, string virtPath)
     {
+        if (CFG.Current.Developer_Enable_Tools)
+        {
+            ResourceViewer.ProcessedMeshes.Add(virtPath);
+            ResourceViewer.MeshConsumptionSize += bytes.Length;
+        }
+
         VirtPath = virtPath;
 
         if (Smithbox.Orchestrator.SelectedProject != null)

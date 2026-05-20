@@ -786,7 +786,7 @@ public class MapPropertyView
         if (!CFG.Current.MapEditor_Properties_Display_Unknown_Properties)
         {
             // Rough heuristic since all unknown fields start with Unk
-            if (propName.ToLower().StartsWith("unk"))
+            if (propName.StartsWith("unk", StringComparison.OrdinalIgnoreCase))
             {
                 return false;
             }

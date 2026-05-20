@@ -80,9 +80,12 @@ public class MapContentView
         ImGui.SameLine();
         if (ImGui.Button($"{Icons.Eye}", DPI.IconButtonSize))
         {
-            foreach (var entry in map.Objects)
+            if (map != null)
             {
-                entry.EditorVisible = true;
+                foreach (var entry in map.Objects)
+                {
+                    entry.EditorVisible = true;
+                }
             }
         }
         UIHelper.Tooltip("Force all map objects within this map to be shown.");
@@ -91,9 +94,12 @@ public class MapContentView
         ImGui.SameLine();
         if (ImGui.Button($"{Icons.EyeSlash}", DPI.IconButtonSize))
         {
-            foreach (var entry in map.Objects)
+            if (map != null)
             {
-                entry.EditorVisible = false;
+                foreach (var entry in map.Objects)
+                {
+                    entry.EditorVisible = false;
+                }
             }
         }
         UIHelper.Tooltip("Force all map objects within this map to be hidden.");

@@ -53,6 +53,10 @@ public class TextureResource : IResource, IDisposable
 
         if (Texture.Platform == TPF.TPFPlatform.PC || Texture.Platform == TPF.TPFPlatform.PS3)
         {
+            var capturedTexture = Texture;
+            var capturedIndex = TPFIndex;
+            Texture = null;
+
             SceneRenderer.AddLowPriorityBackgroundUploadTask((d, cl) =>
             {
                 if (GPUTexture == null)
@@ -61,19 +65,21 @@ public class TextureResource : IResource, IDisposable
                 }
 
                 // Intercept unsupported DDS textures here
-                if (TPFIndex < Texture.Textures.Count)
+                if (capturedIndex < capturedTexture.Textures.Count)
                 {
-                    if (Texture.Textures[TPFIndex] != null)
+                    if (capturedTexture.Textures[capturedIndex] != null)
                     {
-                        GPUTexture.FillWithTPF(d, cl, Texture.Platform, Texture.Textures[TPFIndex], Texture.Textures[TPFIndex].Name);
+                        GPUTexture.FillWithTPF(d, cl, capturedTexture.Platform, capturedTexture.Textures[capturedIndex], capturedTexture.Textures[capturedIndex].Name);
                     }
                 }
-
-                Texture = null;
             });
         }
         else if (Texture.Platform == TPF.TPFPlatform.PS4)
         {
+            var capturedTexture = Texture;
+            var capturedIndex = TPFIndex;
+            Texture = null;
+
             SceneRenderer.AddLowPriorityBackgroundUploadTask((d, cl) =>
             {
                 if (GPUTexture == null)
@@ -81,9 +87,8 @@ public class TextureResource : IResource, IDisposable
                     return;
                 }
 
-                GPUTexture.FillWithPS4TPF(d, cl, Texture.Platform, Texture.Textures[TPFIndex],
-                    Texture.Textures[TPFIndex].Name);
-                Texture = null;
+                GPUTexture.FillWithPS4TPF(d, cl, capturedTexture.Platform, capturedTexture.Textures[capturedIndex],
+                    capturedTexture.Textures[capturedIndex].Name);
             });
         }
 
