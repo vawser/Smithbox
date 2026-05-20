@@ -1,13 +1,10 @@
 ﻿using Hexa.NET.ImGui;
-using Microsoft.AspNetCore.Components.Forms;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Keybinds;
 using StudioCore.Logger;
-using StudioCore.Utilities;
 using System;
 using System.Numerics;
-using static HKLib.hk2018.hkSerialize.CompatTypeParentInfo;
 
 namespace StudioCore.Editors.TextEditor;
 

@@ -283,29 +283,33 @@ public class ParamUpgrader
 
         SpEffectData.Clear();
 
-        var spEffectParam = paramData.PrimaryBank.Params["SpEffectParam"];
-        var spEffectParamVanilla = paramData.VanillaBank.Params["SpEffectParam"];
-
-        foreach (var row in spEffectParam.Rows)
+        if (paramData.PrimaryBank.Params.ContainsKey("SpEffectParam") &&
+             paramData.VanillaBank.Params.ContainsKey("SpEffectParam"))
         {
-            // Only add 'added' rows, the default mass edit covers the vanilla ones
-            if (spEffectParamVanilla.Rows.Any(e => e.ID == row.ID))
-                continue;
+            var spEffectParam = paramData.PrimaryBank.Params["SpEffectParam"];
+            var spEffectParamVanilla = paramData.VanillaBank.Params["SpEffectParam"];
 
-            var frostInflict = row["frostInflictRate_old"];
-            var sleepInflict = row["sleepInflictRate_old"];
-            var madnessInflict = row["madnessInflictRate_old"];
-            var applyOnKillSp = row["applyIdOnKillSp_old"];
-
-            if (!SpEffectData.ContainsKey(row.ID))
+            foreach (var row in spEffectParam.Rows)
             {
-                SpEffectData.Add(row.ID, new());
-            }
+                // Only add 'added' rows, the default mass edit covers the vanilla ones
+                if (spEffectParamVanilla.Rows.Any(e => e.ID == row.ID))
+                    continue;
 
-            SpEffectData[row.ID].Add("frostInflictRate", frostInflict.Value.Value);
-            SpEffectData[row.ID].Add("sleepInflictRate", sleepInflict.Value.Value);
-            SpEffectData[row.ID].Add("madnessInflictRate", madnessInflict.Value.Value);
-            SpEffectData[row.ID].Add("applyIdOnKillSp", applyOnKillSp.Value.Value);
+                var frostInflict = row["frostInflictRate_old"];
+                var sleepInflict = row["sleepInflictRate_old"];
+                var madnessInflict = row["madnessInflictRate_old"];
+                var applyOnKillSp = row["applyIdOnKillSp_old"];
+
+                if (!SpEffectData.ContainsKey(row.ID))
+                {
+                    SpEffectData.Add(row.ID, new());
+                }
+
+                SpEffectData[row.ID].Add("frostInflictRate", frostInflict.Value.Value);
+                SpEffectData[row.ID].Add("sleepInflictRate", sleepInflict.Value.Value);
+                SpEffectData[row.ID].Add("madnessInflictRate", madnessInflict.Value.Value);
+                SpEffectData[row.ID].Add("applyIdOnKillSp", applyOnKillSp.Value.Value);
+            }
         }
 
         return true;
