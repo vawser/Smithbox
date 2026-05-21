@@ -141,23 +141,10 @@ public class MapDataEditorScreen : EditorScreen
     {
         if (ImGui.BeginMenu("Options"))
         {
-            if (ImGui.BeginMenu("Display"))
+            if (ImGui.BeginMenu("Saving"))
             {
-                ImGui.SliderFloat("Sub-Editor List##subeditorListDisplayPercentage", ref CFG.Current.MapDataEditor_Display_SubeditorList_Percentage, 0.01f, 0.99f);
-                if (ImGui.IsItemDeactivatedAfterEdit())
-                {
-                    // Auto-adjust the other var so the ratio remains 100%
-                    CFG.Current.MapDataEditor_Display_SourceList_Percentage = 1 - CFG.Current.MapDataEditor_Display_SubeditorList_Percentage;
-                }
-                UIHelper.Tooltip("The percentage of the window the Editor Mode section occupies.");
-
-                ImGui.SliderFloat("Source List##sourceListDisplayPercentage", ref CFG.Current.MapDataEditor_Display_SourceList_Percentage, 0.01f, 0.99f);
-                if (ImGui.IsItemDeactivatedAfterEdit())
-                {
-                    // Auto-adjust the other var so the ratio remains 100%
-                    CFG.Current.MapDataEditor_Display_SubeditorList_Percentage = 1 - CFG.Current.MapDataEditor_Display_SourceList_Percentage;
-                }
-                UIHelper.Tooltip("The percentage of the window the Source Files section occupies.");
+                ImGui.Checkbox("Save Selected Only", ref CFG.Current.MapDataEditor_SaveSelectedOnly);
+                UIHelper.Tooltip("If enabled, only the selected map, entry list, etc will be saved (by default all loaded resources will be saved)");
 
                 ImGui.EndMenu();
             }
@@ -182,8 +169,18 @@ public class MapDataEditorScreen : EditorScreen
                 if (entry.Value == null)
                     continue;
 
+                if (CFG.Current.MapDataEditor_SaveSelectedOnly)
+                {
+                    if (activeView.Selection.SelectedMapDescriptor != entry.Key)
+                        continue;
+                }
+
                 // TODO: add dirty check so we only save maps that have been edited
-                _ = mapDataHandler.PrimaryBank_MSB.SaveMap(activeView, entry.Key);
+                var saveTask = mapDataHandler.PrimaryBank_MSB.SaveMap(activeView, entry.Key);
+                if(saveTask.Result)
+                {
+                    Smithbox.Log<MsbEditor>($"Saved map: {entry.Key.Filename}");
+                }
             }
         }
 
@@ -195,8 +192,18 @@ public class MapDataEditorScreen : EditorScreen
                 if (entry.Value == null)
                     continue;
 
+                if(CFG.Current.MapDataEditor_SaveSelectedOnly)
+                {
+                    if (activeView.Selection.SelectedListDescriptor != entry.Key)
+                        continue;
+                }
+
                 // TODO: add dirty check so we only save maps that have been edited
-                _ = mapDataHandler.PrimaryBank_ENFL.SaveEntryFileList(activeView, entry.Key);
+                var saveTask = mapDataHandler.PrimaryBank_ENFL.SaveEntryFileList(activeView, entry.Key);
+                if (saveTask.Result)
+                {
+                    Smithbox.Log<MsbEditor>($"Saved entry file list: {entry.Key.Filename}");
+                }
             }
         }
 

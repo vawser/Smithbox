@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Editors.MapDataEditor;
 
-public class MapDataEnflEditor
+public class EnflEditor
 {
     public MapDataEditorView View;
     public ProjectEntry Project;
@@ -19,7 +19,7 @@ public class MapDataEnflEditor
     private string FileListFilter = "";
     private bool ExactFileListFilter = false;
 
-    public MapDataEnflEditor(MapDataEditorView view, ProjectEntry project)
+    public EnflEditor(MapDataEditorView view, ProjectEntry project)
     {
         View = view;
         Project = project;
@@ -49,7 +49,7 @@ public class MapDataEnflEditor
                 var loadTask = primaryBank.LoadEntryFileList(entry.Key);
                 if (loadTask.Result)
                 {
-                    Smithbox.Log<MapDataMsbEditor>($"Loaded entry file list: {entry.Key.Filename}");
+                    Smithbox.Log<MsbEditor>($"Loaded entry file list: {entry.Key.Filename}");
                 }
             }
 
@@ -63,7 +63,7 @@ public class MapDataEnflEditor
                 var loadTask = primaryBank.LoadEntryFileList(entry.Key);
                 if (loadTask.Result)
                 {
-                    Smithbox.Log<MapDataMsbEditor>($"Loaded entry file list: {entry.Key.Filename}");
+                    Smithbox.Log<MsbEditor>($"Loaded entry file list: {entry.Key.Filename}");
                 }
             }
 

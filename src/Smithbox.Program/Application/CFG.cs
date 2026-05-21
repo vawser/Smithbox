@@ -685,6 +685,7 @@ public class CFG
 
     public bool ParamEditor_DeltaPatcher_Import_Restrict_Row_Modify = false;
     public bool ParamEditor_DeltaPatcher_Import_Restrict_Row_Add = false;
+    public bool ParamEditor_DeltaPatcher_Import_Allow_Row_Overwrite = false;
 
     public bool ParamEditor_DeltaPatcher_Export_Selected_Rows_Only = false;
     public bool ParamEditor_DeltaPatcher_Export_Ignore_Indexed_Rows = true;
@@ -955,6 +956,7 @@ public class CFG
     /// Map Data Editor
     ///------------------------------------------------------------
     // General
+    public bool MapDataEditor_SaveSelectedOnly = true;
     public bool MapDataEditor_CacheLoadedMaps = false;
 
     // Windows

@@ -381,7 +381,7 @@ public class ParamDeltaExporter
         var rowDelta = new RowDelta();
         rowDelta.ID = row.ID;
         rowDelta.Name = row.Name;
-        rowDelta.State = RowDeltaState.Modified;
+        rowDelta.State = RowDeltaState.Added;
         rowDelta.Fields = new List<FieldDelta>();
 
         foreach (var primaryCol in row.Columns)

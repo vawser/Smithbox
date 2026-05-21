@@ -111,8 +111,12 @@ public class ParamDeltaImporter
         HashSet<int> vanillaDiffCache = Patcher.Project.Handler.ParamData.PrimaryBank.GetVanillaDiffRows(paramName);
         var diffVanilla = vanillaDiffCache.Contains(rowDelta.ID);
 
-        if (addRows &&
-            rowDelta.State is RowDeltaState.Added)
+        var rowStateIsAdded = rowDelta.State is RowDeltaState.Added;
+
+        if (Patcher.ImportMode is DeltaImportMode.Simple)
+            rowStateIsAdded = true;
+
+        if (addRows && rowStateIsAdded)
         {
             var newRow = new Param.Row(srcRow);
 
@@ -121,18 +125,36 @@ public class ParamDeltaImporter
             // Apply the fields from the delta to the new row
             HandleFieldImport(newRow, rowDelta);
 
-            var insertRow = srcParam.Rows.FirstOrDefault(e => e.ID == rowDelta.ID);
-            if (insertRow != null)
+            if (CFG.Current.ParamEditor_DeltaPatcher_Import_Allow_Row_Overwrite)
             {
-                if (!restrictRowAdd)
+                var matchRow = srcParam.Rows.FirstOrDefault(e => e.ID == rowDelta.ID);
+                if (matchRow != null)
                 {
-                    var insertIndex = srcParam.Rows.ToList().IndexOf(insertRow);
+                    var insertIndex = srcParam.Rows.ToList().IndexOf(matchRow);
+
                     srcParam.InsertRow(insertIndex, newRow);
+                    srcParam.RemoveRow(matchRow);
+                }
+                else
+                {
+                    srcParam.AddRow(newRow);
                 }
             }
             else
             {
-                srcParam.AddRow(newRow);
+                var insertRow = srcParam.Rows.FirstOrDefault(e => e.ID == rowDelta.ID);
+                if (insertRow != null)
+                {
+                    if (!restrictRowAdd)
+                    {
+                        var insertIndex = srcParam.Rows.ToList().IndexOf(insertRow);
+                        srcParam.InsertRow(insertIndex, newRow);
+                    }
+                }
+                else
+                {
+                    srcParam.AddRow(newRow);
+                }
             }
         }
         else if (rowDelta.State is RowDeltaState.Deleted or RowDeltaState.Modified)

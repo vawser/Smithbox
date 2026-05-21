@@ -22,8 +22,8 @@ public class MapDataEditorView
 
     public MapDataCommonView CommonView;
 
-    public MapDataMsbEditor MsbEditor;
-    public MapDataEnflEditor EnflEditor;
+    public MsbEditor MsbEditor;
+    public EnflEditor EnflEditor;
 
     public int ViewIndex;
 

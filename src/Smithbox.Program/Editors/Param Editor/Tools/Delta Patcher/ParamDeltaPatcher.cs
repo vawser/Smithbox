@@ -5,6 +5,8 @@ using HKLib.hk2018.hkSerialize.Note;
 using Microsoft.Extensions.FileSystemGlobbing;
 using SoulsFormats;
 using StudioCore.Application;
+using StudioCore.Editors.GparamEditor;
+using StudioCore.Editors.TextEditor;
 using StudioCore.Keybinds;
 using StudioCore.Utilities;
 using System;
@@ -38,6 +40,8 @@ public class ParamDeltaPatcher
 
     public ParamImportPreviewModal ImportPreviewModal;
     public ParamExportPreviewModal ExportPreviewModal;
+
+    public DeltaImportMode ImportMode = DeltaImportMode.Complex;
 
     public ParamDeltaPatcher(ParamEditorScreen editor, ProjectEntry project)
     {
@@ -98,7 +102,26 @@ public class ParamDeltaPatcher
         UIHelper.WrappedText("Import a param delta file here.");
         UIHelper.WrappedText("");
 
+        UIHelper.SimpleHeader("Import Mode", "Determines the internal logic used during import.");
+
+        UIHelper.SetInputWidth();
+        if (ImGui.BeginCombo("##importMode", ImportMode.GetDisplayName()))
+        {
+            foreach (var entry in Enum.GetValues(typeof(DeltaImportMode)))
+            {
+                var curType = (DeltaImportMode)entry;
+
+                if (ImGui.Selectable($"{curType.GetDisplayName()}", curType == ImportMode))
+                {
+                    ImportMode = curType;
+                }
+            }
+
+            ImGui.EndCombo();
+        }
+
         // Options
+        UIHelper.Spacer();
         UIHelper.SimpleHeader("Options", "Options to set for the delta import.");
 
         ImGui.Checkbox("Display All Entries", ref CFG.Current.ParamEditor_DeltaPatcher_Import_Display_All_Entries);
@@ -122,6 +145,9 @@ public class ParamDeltaPatcher
 
         ImGui.Checkbox("Restrict Row Addition", ref CFG.Current.ParamEditor_DeltaPatcher_Import_Restrict_Row_Add);
         UIHelper.Tooltip("If enabled, row additions will only occur if the row ID doesn't already exist in the primary bank.");
+
+        ImGui.Checkbox("Allow Row Overwrite", ref CFG.Current.ParamEditor_DeltaPatcher_Import_Allow_Row_Overwrite);
+        UIHelper.Tooltip("If enabled, row additions that collide with an existing row ID will overwrite it (rather than being inserted alongside of).");
 
         ImGui.Text("");
         UIHelper.SimpleHeader("Actions", "");
@@ -468,4 +494,12 @@ public enum DeltaExportMode
     Modified,
     [Display(Name = "Selected")]
     Selected
+}
+
+public enum DeltaImportMode
+{
+    [Display(Name = "Insert and Overwrite")]
+    Simple,
+    [Display(Name = "Conditional on Row Delta")]
+    Complex
 }

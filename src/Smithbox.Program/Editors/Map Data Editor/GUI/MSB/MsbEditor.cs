@@ -2,18 +2,11 @@
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Keybinds;
-using System;
-using System.Collections.Generic;
-using System.Formats.Tar;
-using System.Linq;
 using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
-using static HKLib.hk2018.hkSerialize.CompatTypeParentInfo;
 
 namespace StudioCore.Editors.MapDataEditor;
 
-public class MapDataMsbEditor
+public class MsbEditor
 {
     public MapDataEditorView View;
     public ProjectEntry Project;
@@ -21,7 +14,7 @@ public class MapDataMsbEditor
     private string FileListFilter = "";
     private bool ExactFileListFilter = false;
 
-    public MapDataMsbEditor(MapDataEditorView view, ProjectEntry project)
+    public MsbEditor(MapDataEditorView view, ProjectEntry project)
     {
         View = view;
         Project = project;
@@ -77,7 +70,7 @@ public class MapDataMsbEditor
                 var loadTask = primaryBank.LoadMap(entry.Key);
                 if(loadTask.Result)
                 {
-                    Smithbox.Log<MapDataMsbEditor>($"Loaded map: {entry.Key.Filename}");
+                    Smithbox.Log<MsbEditor>($"Loaded map: {entry.Key.Filename}");
                 }
             }
 
@@ -96,7 +89,7 @@ public class MapDataMsbEditor
                 var loadTask = primaryBank.LoadMap(entry.Key);
                 if (loadTask.Result)
                 {
-                    Smithbox.Log<MapDataMsbEditor>($"Loaded map: {entry.Key.Filename}");
+                    Smithbox.Log<MsbEditor>($"Loaded map: {entry.Key.Filename}");
                 }
             }
 
