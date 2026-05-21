@@ -47,7 +47,7 @@ public class MapEditorScreen : EditorScreen
         ToolWindow = new MapToolWindow(this, project);
     }
 
-    public string EditorName => "Map Editor";
+    public string EditorName => "Visual Map Editor";
     public string CommandEndpoint => "map";
     public string SaveType => "Maps";
     public string WindowName => "";

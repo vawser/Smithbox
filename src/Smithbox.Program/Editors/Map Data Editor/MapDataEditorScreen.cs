@@ -1,0 +1,210 @@
+﻿using Hexa.NET.ImGui;
+using StudioCore.Application;
+using StudioCore.Editors.Common;
+using StudioCore.Editors.MaterialEditor;
+using StudioCore.Keybinds;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Numerics;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace StudioCore.Editors.MapDataEditor;
+
+public class MapDataEditorScreen : EditorScreen
+{
+    private ProjectEntry Project;
+
+    public MapDataViewHandler ViewHandler;
+
+    public MapDataCommandQueue CommandQueue;
+
+    public MapDataToolView ToolWindow;
+
+    public MapDataEditorScreen(ProjectEntry project)
+    {
+        Project = project;
+
+        ViewHandler = new MapDataViewHandler(this, project);
+
+        CommandQueue = new(this, project);
+
+        ToolWindow = new(this, project);
+    }
+
+    public string EditorName => "Map Data Editor";
+    public string CommandEndpoint => "mapdata";
+    public string SaveType => "Map Data";
+    public string WindowName => "";
+    public bool HasDocked { get; set; }
+
+    public void OnGUI(string[] commands)
+    {
+        var scale = DPI.UIScale();
+
+        CommandQueue.Parse(commands);
+
+        if (ImGui.BeginMenuBar())
+        {
+            FileMenu();
+            EditMenu();
+            ViewMenu();
+            ToolWindow.ToolMenu();
+            OptionsMenu();
+
+            ImGui.EndMenuBar();
+        }
+
+        var dsid = ImGui.GetID("DockSpace_MapDataEditor");
+        ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
+
+        ViewHandler.HandleViews();
+
+        if (ViewHandler.ActiveView != null)
+        {
+            ToolWindow.Draw();
+        }
+    }
+
+    public void FileMenu()
+    {
+        if (ImGui.BeginMenu("File"))
+        {
+            if (ImGui.MenuItem($"Save", $"{InputManager.GetHint(KeybindID.Save)}"))
+            {
+                Save();
+            }
+
+            ImGui.EndMenu();
+        }
+    }
+    public void EditMenu()
+    {
+        var activeView = ViewHandler.ActiveView;
+
+        if (ImGui.BeginMenu("Edit"))
+        {
+            if (activeView != null)
+            {
+                // Undo
+                if (ImGui.MenuItem($"Undo", $"{InputManager.GetHint(KeybindID.Undo)} / {InputManager.GetHint(KeybindID.Undo_Repeat)}"))
+                {
+                    if (activeView.ActionManager.CanUndo())
+                    {
+                        activeView.ActionManager.UndoAction();
+                    }
+                }
+
+                // Undo All
+                if (ImGui.MenuItem($"Undo All"))
+                {
+                    if (activeView.ActionManager.CanUndo())
+                    {
+                        activeView.ActionManager.UndoAllAction();
+                    }
+                }
+
+                // Redo
+                if (ImGui.MenuItem($"Redo", $"{InputManager.GetHint(KeybindID.Redo)} / {InputManager.GetHint(KeybindID.Redo_Repeat)}"))
+                {
+                    if (activeView.ActionManager.CanRedo())
+                    {
+                        activeView.ActionManager.RedoAction();
+                    }
+                }
+            }
+
+            ImGui.EndMenu();
+        }
+    }
+    public void ViewMenu()
+    {
+        if (ImGui.BeginMenu("View"))
+        {
+            if (ImGui.MenuItem("Tools"))
+            {
+                CFG.Current.Interface_MapDataEditor_ToolWindow = !CFG.Current.Interface_MapDataEditor_ToolWindow;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_MapDataEditor_ToolWindow);
+
+            ImGui.Separator();
+
+            ViewHandler.DisplayMenu();
+
+            ImGui.EndMenu();
+        }
+    }
+
+    public void OptionsMenu()
+    {
+        if (ImGui.BeginMenu("Options"))
+        {
+            if (ImGui.BeginMenu("Display"))
+            {
+                ImGui.SliderFloat("Sub-Editor List##subeditorListDisplayPercentage", ref CFG.Current.MapDataEditor_Display_SubeditorList_Percentage, 0.01f, 0.99f);
+                if (ImGui.IsItemDeactivatedAfterEdit())
+                {
+                    // Auto-adjust the other var so the ratio remains 100%
+                    CFG.Current.MapDataEditor_Display_SourceList_Percentage = 1 - CFG.Current.MapDataEditor_Display_SubeditorList_Percentage;
+                }
+                UIHelper.Tooltip("The percentage of the window the Editor Mode section occupies.");
+
+                ImGui.SliderFloat("Source List##sourceListDisplayPercentage", ref CFG.Current.MapDataEditor_Display_SourceList_Percentage, 0.01f, 0.99f);
+                if (ImGui.IsItemDeactivatedAfterEdit())
+                {
+                    // Auto-adjust the other var so the ratio remains 100%
+                    CFG.Current.MapDataEditor_Display_SubeditorList_Percentage = 1 - CFG.Current.MapDataEditor_Display_SourceList_Percentage;
+                }
+                UIHelper.Tooltip("The percentage of the window the Source Files section occupies.");
+
+                ImGui.EndMenu();
+            }
+
+            ImGui.EndMenu();
+        }
+    }
+
+    public async void Save(bool autoSave = false)
+    {
+        var mapDataHandler = Project.Handler.MapDataHandler;
+        var activeView = ViewHandler.ActiveView;
+
+        if (activeView == null)
+            return;
+
+        // MSB
+        if(activeView.Selection.SubEditorMode is SubEditorType.MSB)
+        {
+            foreach(var entry in mapDataHandler.PrimaryBank_MSB.Maps)
+            {
+                if (entry.Value == null)
+                    continue;
+
+                // TODO: add dirty check so we only save maps that have been edited
+                _ = mapDataHandler.PrimaryBank_MSB.SaveMap(activeView, entry.Key);
+            }
+        }
+
+        // ENFL
+        if (activeView.Selection.SubEditorMode is SubEditorType.ENFL)
+        {
+            foreach (var entry in mapDataHandler.PrimaryBank_ENFL.EntryFileLists)
+            {
+                if (entry.Value == null)
+                    continue;
+
+                // TODO: add dirty check so we only save maps that have been edited
+                _ = mapDataHandler.PrimaryBank_ENFL.SaveEntryFileList(activeView, entry.Key);
+            }
+        }
+
+        // Save the configuration JSONs
+        Smithbox.Instance.SaveConfiguration();
+    }
+
+    public void OnDefocus()
+    {
+    }
+}

@@ -1,31 +1,34 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Numerics;
-using Veldrid;
-using Veldrid.Sdl2;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace StudioCore.Editors.MapEditor;
+namespace StudioCore.Editors.MapDataEditor;
 
-public class MapEditorStub : IEditorStub
+public class MapDataEditorStub : IEditorStub
 {
     public ProjectEntry Project;
 
-    public MapEditorStub(ProjectEntry project)
+    public MapDataEditorStub(ProjectEntry project)
     {
         Project = project;
     }
 
-    public string EditorName = "Visual Map Editor";
+    public string EditorName = "Map Data Editor";
 
-    public string CommandEndpoint = "map";
+    public string CommandEndpoint = "mapdata";
 
     public unsafe void Display(float dt, string[] commands)
     {
-        if (!Project.Descriptor.EnableMapEditor)
+        if (!Project.Descriptor.EnableMapDataEditor)
             return;
 
-        if (!ProjectUtils.SupportsMapEditor(Project.Descriptor.ProjectType))
+        if (!ProjectUtils.SupportsMapDataEditor(Project.Descriptor.ProjectType))
             return;
 
         if (commands != null && commands[0] == CommandEndpoint)
@@ -50,9 +53,9 @@ public class MapEditorStub : IEditorStub
             ImGui.PopStyleColor(1);
             ImGui.PopStyleVar(1);
 
-            if(Project.Handler.MapEditor != null)
+            if (Project.Handler.MapDataEditor != null)
             {
-                Project.Handler.MapEditor.OnGUI(commands);
+                Project.Handler.MapDataEditor.OnGUI(commands);
             }
             else
             {
@@ -62,33 +65,21 @@ public class MapEditorStub : IEditorStub
 
             ImGui.End();
 
-            if (Project.Handler.MapEditor != null)
+            if (Project.Handler.MapDataEditor != null)
             {
-                Project.Handler.FocusedEditor = Project.Handler.MapEditor;
-                Project.Handler.MapEditor.Update(dt);
+                Project.Handler.FocusedEditor = Project.Handler.MapDataEditor;
             }
         }
         else
         {
+            if (Project.Handler.MapDataEditor != null)
+            {
+                Project.Handler.MapDataEditor.OnDefocus();
+            }
+
             ImGui.PopStyleColor(1);
             ImGui.PopStyleVar(1);
             ImGui.End();
-        }
-    }
-
-    public void EditorResized(Sdl2Window window, GraphicsDevice device)
-    {
-        if (Project.Handler.MapEditor != null && Project.Handler.FocusedEditor is MapEditorScreen)
-        {
-            Project.Handler.MapEditor.EditorResized(window, device);
-        }
-    }
-
-    public void Draw(GraphicsDevice device, CommandList cl)
-    {
-        if (Project.Handler.MapEditor != null && Project.Handler.FocusedEditor is MapEditorScreen)
-        {
-            Project.Handler.MapEditor.Draw(device, cl);
         }
     }
 }

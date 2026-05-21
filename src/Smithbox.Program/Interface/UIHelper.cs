@@ -467,7 +467,7 @@ public static class UIHelper
     // Sizing
     public static void SetInputWidth()
     {
-        ImGui.SetNextItemWidth((ImGui.GetWindowWidth() * 0.5f) * DPI.UIScale());
+        ImGui.SetNextItemWidth((ImGui.GetWindowWidth() * 0.75f) * DPI.UIScale());
     }
 
     public static Vector2 GetSmallPopupSize()

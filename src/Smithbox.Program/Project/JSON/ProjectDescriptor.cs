@@ -31,6 +31,7 @@ public class ProjectDescriptor
     public bool EnableTextureViewer = false;
     public bool EnableFileBrowser = false;
     public bool EnableAnimEditor = false;
+    public bool EnableMapDataEditor = false;
 
     public List<string> PinnedParams { get; set; } = new();
     public Dictionary<string, List<int>> PinnedRows { get; set; } = new();
@@ -58,6 +59,7 @@ public class ProjectDescriptor
         EnableMaterialEditor = newDescriptor.EnableMaterialEditor;
         EnableFileBrowser = newDescriptor.EnableFileBrowser;
         EnableAnimEditor = newDescriptor.EnableAnimEditor;
+        EnableMapDataEditor = newDescriptor.EnableMapDataEditor;
         EnableExternalMaterialData = newDescriptor.EnableExternalMaterialData;
 
         FolderTag = newDescriptor.FolderTag;
@@ -83,6 +85,7 @@ public class ProjectDescriptor
         EnableMaterialEditor = true;
         EnableFileBrowser = true;
         EnableAnimEditor = true;
+        EnableMapDataEditor = true;
 
         EnableExternalMaterialData = true;
 
@@ -108,6 +111,7 @@ public class ProjectDescriptor
         EnableMaterialEditor = true;
         EnableFileBrowser = true;
         EnableAnimEditor = true;
+        EnableMapDataEditor = true;
 
         EnableExternalMaterialData = true;
 
@@ -136,6 +140,7 @@ public class ProjectDescriptor
             EnableMaterialEditor = this.EnableMaterialEditor,
             EnableFileBrowser = this.EnableFileBrowser,
             EnableAnimEditor = this.EnableAnimEditor,
+            EnableMapDataEditor = this.EnableMapDataEditor,
             EnableExternalMaterialData = this.EnableExternalMaterialData,
 
             FolderTag = this.FolderTag,
@@ -170,6 +175,7 @@ public class ProjectDescriptor
         EnableMaterialEditor = true;
         EnableFileBrowser = true;
         EnableAnimEditor = true;
+        EnableMapDataEditor = true;
         EnableExternalMaterialData = true;
     }
 }

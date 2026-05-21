@@ -363,6 +363,10 @@ public class ProjectUtils
 
         return false;
     }
+    public static bool SupportsMapDataEditor(ProjectType curType)
+    {
+        return true;
+    }
 
     public static List<string> GetBackupFiles(string rootDirectory)
     {

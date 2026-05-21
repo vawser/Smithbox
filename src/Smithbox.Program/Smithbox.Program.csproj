@@ -135,6 +135,9 @@
     <Folder Include="Editors\File Browser\Actions\" />
     <Folder Include="Editors\File Browser\Data\" />
     <Folder Include="Editors\File Browser\Utils\" />
+    <Folder Include="Editors\Map Data Editor\Actions\" />
+    <Folder Include="Editors\Map Data Editor\JSON\" />
+    <Folder Include="Editors\Map Data Editor\Tools\" />
   </ItemGroup>
 
 </Project>

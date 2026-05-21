@@ -2,7 +2,7 @@
   "Param": "NPC_EVENT_PARAM",
   "Type": "NPC_EVENT_PARAM",
   "Name": "NPC_EVENT_PARAM",
-  "Description": "",
+  "Description": "Defines NPC interaction menus, services, shop data, covenant functions, and related event behavior.",
   "Fields": [
     {
       "Field": "bShop",

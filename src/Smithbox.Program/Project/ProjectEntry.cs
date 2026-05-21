@@ -81,6 +81,9 @@ public class ProjectEntry
         if (Handler.AnimEditorStub != null)
             Handler.AnimEditorStub.Display(dt, commands);
 
+        if (Handler.MapDataEditorStub != null)
+            Handler.MapDataEditorStub.Display(dt, commands);
+
         // Auto-Save
         AutomaticSaveInterval = (int)CFG.Current.Project_Automatic_Save_Interval;
 

@@ -949,6 +949,26 @@ public class CFG
 
     #endregion
 
+
+    #region Map Data Editor
+    ///------------------------------------------------------------
+    /// Map Data Editor
+    ///------------------------------------------------------------
+    // General
+    public bool MapDataEditor_CacheLoadedMaps = false;
+
+    // Windows
+    public bool Interface_MapDataEditor_ToolWindow = true;
+
+    public float MapDataEditor_Display_SubeditorList_Percentage = 0.2f;
+    public float MapDataEditor_Display_SourceList_Percentage = 0.8f;
+
+    // Tools
+
+    // Saving
+    public bool Project_Automatic_Save_Include_Map_Data_Editor = false;
+    #endregion
+
     #region Viewport
     ///------------------------------------------------------------
     /// Viewport

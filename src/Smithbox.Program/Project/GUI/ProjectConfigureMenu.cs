@@ -222,8 +222,15 @@ public class ProjectConfigureMenu
         // Map Editor
         if (ProjectUtils.SupportsMapEditor(Descriptor.ProjectType))
         {
-            ImGui.Checkbox("Map Editor", ref Descriptor.EnableMapEditor);
-            UIHelper.Tooltip("If true, the Map Editor and associated data will be initialized for this project.");
+            ImGui.Checkbox("Visual Map Editor", ref Descriptor.EnableMapEditor);
+            UIHelper.Tooltip("If true, the Visual Map Editor and associated data will be initialized for this project.");
+        }
+
+        // Map Param Editor
+        if (ProjectUtils.SupportsMapDataEditor(Descriptor.ProjectType))
+        {
+            ImGui.Checkbox("Map Data Editor", ref Descriptor.EnableMapDataEditor);
+            UIHelper.Tooltip("If true, the Map Data Editor and associated data will be initialized for this project.");
         }
 
         // Model Editor

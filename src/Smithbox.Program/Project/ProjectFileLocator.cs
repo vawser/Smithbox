@@ -28,6 +28,8 @@ public class ProjectFileLocator : IDisposable
     public FileDictionary LightAtlasFiles = new();
     public FileDictionary LightProbeFiles = new();
 
+    public FileDictionary EntryFileListFiles = new();
+
     public FileDictionary GparamFiles = new();
     public FileDictionary TextFiles = new();
 
@@ -308,6 +310,7 @@ public class ProjectFileLocator : IDisposable
         var shoeboxFiles = new HashSet<FileDictionaryEntry>();
         var timeActFiles = new HashSet<FileDictionaryEntry>();
         var behaviorFiles = new HashSet<FileDictionaryEntry>();
+        var entryFileListFiles = new HashSet<FileDictionaryEntry>();
 
         // Single pass - check each entry once
         foreach (var entry in allEntries)
@@ -369,9 +372,18 @@ public class ProjectFileLocator : IDisposable
                 lightProbeFiles.Add(entry);
             }
 
+            // Entry File List
+            if (projectType is ProjectType.DS3 or ProjectType.BB or ProjectType.SDT or ProjectType.ER or ProjectType.AC6)
+            {
+                if (ext == "entryfilelist" && !isSd)
+                {
+                    entryFileListFiles.Add(entry);
+                }
+            }
+
             // Gparam
             if (folder.StartsWith("/param") && ext == "gparam" && !isSd)
-                gparamFiles.Add(entry);
+            gparamFiles.Add(entry);
 
             if (projectType is ProjectType.BB)
             {
@@ -436,6 +448,7 @@ public class ProjectFileLocator : IDisposable
         ShoeboxFiles.Entries = shoeboxFiles;
         TimeActFiles.Entries = timeActFiles;
         BehaviorFiles.Entries = behaviorFiles;
+        EntryFileListFiles.Entries = entryFileListFiles;
 
         // Special handling for text files
         if (projectType == ProjectType.ER && textFiles.Count > 0)

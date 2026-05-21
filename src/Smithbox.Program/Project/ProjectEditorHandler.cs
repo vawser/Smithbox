@@ -3,6 +3,7 @@ using StudioCore.Editors.AnimEditor;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.FileBrowser;
 using StudioCore.Editors.GparamEditor;
+using StudioCore.Editors.MapDataEditor;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.MaterialEditor;
 using StudioCore.Editors.ModelEditor;
@@ -71,6 +72,11 @@ public class ProjectEditorHandler : IDisposable
     public AnimEditorScreen AnimEditor;
     public AnimEditorStub AnimEditorStub;
 
+    // Map Param Editor
+    public MapDataHandler MapDataHandler;
+    public MapDataEditorScreen MapDataEditor;
+    public MapDataEditorStub MapDataEditorStub;
+
 
     // Data tasks
     private Task<bool> _projectDataTask;
@@ -82,6 +88,7 @@ public class ProjectEditorHandler : IDisposable
     private Task<bool> _materialDataTask;
     private Task<bool> _textureDataTask;
     private Task<bool> _animDataTask;
+    private Task<bool> _mapDataDataTask;
 
     public ProjectEditorHandler(ProjectEntry project)
     {
@@ -99,6 +106,7 @@ public class ProjectEditorHandler : IDisposable
         TextureViewerStub = new(Project);
         FileBrowserStub = new(Project);
         AnimEditorStub = new(Project);
+        MapDataEditorStub = new(Project);
     }
 
     public async Task<bool> InitializeData(ProjectInitType initType, bool silent)
@@ -178,6 +186,15 @@ public class ProjectEditorHandler : IDisposable
             tasks.Add(_animDataTask);
         }
 
+        // Map Data
+        if (Project.Descriptor.EnableMapDataEditor &&
+            initType is ProjectInitType.ProjectDefined)
+        {
+            MapDataHandler = new(Project);
+            _mapDataDataTask = MapDataHandler.Setup();
+            tasks.Add(_mapDataDataTask);
+        }
+
         bool[] results = await Task.WhenAll(tasks);
 
         if (!silent)
@@ -195,8 +212,8 @@ public class ProjectEditorHandler : IDisposable
 
         if (_mapDataTask != null)
             Smithbox.Log(this, _mapDataTask.Result
-                ? "[Map Editor] Setup Map Data Banks."
-                : "[Map Editor] Failed to setup Map Data Banks.");
+                ? "[Visual Map Editor] Setup Map Data Banks."
+                : "[Visual Map Editor] Failed to setup Map Data Banks.");
 
         if (_modelDataTask != null)
             Smithbox.Log(this, _modelDataTask.Result
@@ -232,6 +249,11 @@ public class ProjectEditorHandler : IDisposable
             Smithbox.Log(this, _animDataTask.Result
                 ? "[Animation Editor] Setup Animation Bank."
                 : "[Animation Editor] Failed to setup Animation Bank.");
+
+        if (_mapDataDataTask != null)
+            Smithbox.Log(this, _mapDataDataTask.Result
+                ? "[Map Data Editor] Setup Map Data Banks."
+                : "[Map Data Editor] Failed to setup Map Data Banks.");
     }
 
     public void InitializeEditors(ProjectInitType initType)
@@ -294,6 +316,12 @@ public class ProjectEditorHandler : IDisposable
             firstEditor ??= AnimEditor;
         }
 
+        if (MapDataHandler != null)
+        {
+            MapDataEditor = new MapDataEditorScreen(Project);
+            firstEditor ??= MapDataEditor;
+        }
+
         FocusedEditor = firstEditor;
     }
 
@@ -310,6 +338,7 @@ public class ProjectEditorHandler : IDisposable
         GparamData?.Dispose();
         MaterialData?.Dispose();
         TextureData?.Dispose();
+        MapDataHandler?.Dispose();
     }
     #endregion
 }

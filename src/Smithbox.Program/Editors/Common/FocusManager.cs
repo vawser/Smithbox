@@ -130,6 +130,18 @@ public static class FocusManager
 
         return false;
     }
+
+    public static bool IsInMapDataEditor()
+    {
+        if (Focus is EditorFocusContext.MapDataEditor_None
+            or EditorFocusContext.MapDataEditor_CommonView
+            or EditorFocusContext.MapDataEditor_MsbEditor
+            or EditorFocusContext.MapDataEditor_EnflEditor
+            or EditorFocusContext.MapDataEditor_Tools)
+            return true;
+
+        return false;
+    }
 }
 
 public enum EditorFocusContext
@@ -192,4 +204,10 @@ public enum EditorFocusContext
     AnimEditor_BehaviorProperties,
     AnimEditor_Viewport,
     AnimEditor_Tools,
+
+    MapDataEditor_None,
+    MapDataEditor_CommonView,
+    MapDataEditor_MsbEditor,
+    MapDataEditor_EnflEditor,
+    MapDataEditor_Tools,
 }

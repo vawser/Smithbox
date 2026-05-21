@@ -74,6 +74,9 @@ public class MapViewportView
     {
         foreach (var viewport in View.ViewportHandler.Viewports)
         {
+            if (viewport == null)
+                continue;
+
             if (viewport == View.ViewportHandler.ActiveViewport)
             {
                 ViewportUsingKeyboard = viewport.Viewport.Update(View.Window, deltatime);
