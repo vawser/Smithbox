@@ -1,21 +1,4 @@
 #---------------------
-# BUGS
-#---------------------
-- Map Editor: 
-    - fix ER NVA so saves are BP correct (currently the Write side is quite off)
-    - DS3 navmeshes position seems off in some maps (Undead Settlement)
-
-- Model Editor: 
-    - Make the mesh entries use the sub-meshes properly
-    - Fix property editing for the sub-classes (FaceSet, Texture, etc)
-    - dummy duplicate doesn't stick
-    - bone position cannot be changed (resets itself on gizmo move)
-    - DS2 chrs loading badly, parts + map pieces failed to find
-
-- Param Editor: 
-    - adjust the difference checker to account for row index
-
-#---------------------
 # FEATURES
 #---------------------
 
@@ -31,9 +14,14 @@
     - Add progress modal to the prefab import/export
     - Make the prefab import much quicker (so we can support whole map imports)
 
+ - Add visualisation (via primitive meshes) of enemy AI radiuses (sight, listen, smell)
+ 
 - Model Editor 
     - Add simple JSON export/import for elements of FLVER
-
+    - Rendering experiment (TinyFFR)
+    - Mesh visbility/delete not working properly
+        - Race condition in the model mesh -> provider flow? Sometimes the submeshes are associated, sometimes not.
+        
 - Param Editor: 
     - Table Group column should have difference highlighting if any of the internal rows are highlighted as different
 x
@@ -60,6 +48,24 @@ x
 - Animation Editor:
  - Add basic HKX editor for DS3
  
+#---------------------
+# BUGS
+#---------------------
+- Map Editor: 
+    - fix ER NVA so saves are BP correct (currently the Write side is quite off)
+    - DS3 navmeshes position seems off in some maps (Undead Settlement)
+
+- Model Editor: 
+    - Make the mesh entries use the sub-meshes properly
+    - Fix property editing for the sub-classes (FaceSet, Texture, etc)
+    - dummy duplicate doesn't stick
+    - bone position cannot be changed (resets itself on gizmo move)
+    - DS2 chrs loading badly, parts + map pieces failed to find
+
+- Param Editor: 
+    - adjust the difference checker to account for row index
+
+
 #---------------------
 # DOCUMENTATION
 #---------------------

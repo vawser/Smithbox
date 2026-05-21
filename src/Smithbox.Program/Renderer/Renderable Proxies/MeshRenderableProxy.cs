@@ -320,9 +320,11 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
     {
         if (_meshProvider.IsAtomic())
         {
-            foreach (MeshRenderableProxy c in _submeshes)
+            for(int i = 0; i < _submeshes.Count; i++)
             {
-                c.UnregisterAndRelease();
+                var curSubmesh = _submeshes[i];
+
+                curSubmesh.UnregisterAndRelease();
             }
 
             _submeshes.Clear();

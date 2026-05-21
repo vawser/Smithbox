@@ -101,7 +101,10 @@ public class LocalSearchTool
             }
             else if(ExplicitPropertyInput)
             {
-                UIHelper.SinglelineTextInput("PropertyName", ref _propertyNameSearchString, "The target property to search across.");
+                UIHelper.SinglelineTextInput("PropertyName", ref _propertyNameSearchString, "Property");
+
+                UIHelper.MultiButtonInput("manualInputAction",
+                    "populateProperty", "Populate", "", PopulateForProperty);
             }
 
             ImGui.SameLine();
