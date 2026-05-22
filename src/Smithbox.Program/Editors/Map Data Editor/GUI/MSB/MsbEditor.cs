@@ -142,7 +142,7 @@ public class MsbEditor
             // Properties
             ImGui.TableSetColumnIndex(2);
 
-            //PropertyView.Display();
+            PropertyView.Display();
 
             ImGui.EndTable();
         }

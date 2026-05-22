@@ -1,4 +1,6 @@
-﻿using StudioCore.Application;
+﻿using Octokit;
+using StudioCore.Application;
+using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.MaterialEditor;
 using System;
 using System.Collections.Generic;
@@ -14,6 +16,8 @@ public class MapDataHandler : IDisposable
 
     public MsbBank PrimaryBank_MSB;
     public EnflBank PrimaryBank_ENFL;
+
+    public MsbMeta MsbMeta;
 
     public MapDataHandler(ProjectEntry project)
     {
@@ -51,6 +55,21 @@ public class MapDataHandler : IDisposable
         else
         {
             Smithbox.Log(this, $"[Map Data Editor] Setup the Primary ENFL Bank.");
+        }
+
+        // Msb META
+        MsbMeta = new MsbMeta(Project);
+
+        Task<bool> metaTask = MsbMeta.Setup();
+        bool metaTaskResult = await metaTask;
+
+        if (!metaTaskResult)
+        {
+            Smithbox.LogError(this, $"[Map Data Editor] Failed to setup the MSB meta.");
+        }
+        else
+        {
+            Smithbox.Log(this, $"[Map Data Editor] Setup the MSB meta.");
         }
 
         return true;

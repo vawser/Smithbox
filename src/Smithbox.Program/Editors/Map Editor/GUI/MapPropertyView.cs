@@ -71,7 +71,7 @@ public class MapPropertyView
 
         UIHelper.Tooltip($"Toggle field name display type between Internal and Community.\nCurrent Mode: {communityFieldNameMode}");
 
-        // Toggle Field Padding
+        // Toggle Unknown Properties
         ImGui.SameLine();
 
         if (ImGui.Button($"{Icons.Eye}", DPI.IconButtonSize))
