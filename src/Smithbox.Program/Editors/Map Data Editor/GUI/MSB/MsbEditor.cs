@@ -14,10 +14,18 @@ public class MsbEditor
     private string FileListFilter = "";
     private bool ExactFileListFilter = false;
 
+    public MsbCategoryView CategoryView;
+    public MsbEntryView EntryView;
+    public MsbPropertyView PropertyView;
+
     public MsbEditor(MapDataEditorView view, ProjectEntry project)
     {
         View = view;
         Project = project;
+
+        CategoryView = new(view, project);
+        EntryView = new(view, project);
+        PropertyView = new(view, project);
     }
 
     public void DisplayHeader()
@@ -65,11 +73,12 @@ public class MsbEditor
             if(ImGui.Selectable($"{mapKey}", isSelected))
             {
                 View.Selection.SelectedMapDescriptor = entry.Key;
-                View.Selection.SelectedMap = entry.Value;
 
                 var loadTask = primaryBank.LoadMap(entry.Key);
                 if(loadTask.Result)
                 {
+                    View.Selection.SelectedMap = primaryBank.Maps[entry.Key];
+                    View.Selection.ResetMsbSelection();
                     Smithbox.Log<MsbEditor>($"Loaded map: {entry.Key.Filename}");
                 }
             }
@@ -84,11 +93,12 @@ public class MsbEditor
             {
                 View.Selection.SelectMapEntry = false;
                 View.Selection.SelectedMapDescriptor = entry.Key;
-                View.Selection.SelectedMap = entry.Value;
 
                 var loadTask = primaryBank.LoadMap(entry.Key);
                 if (loadTask.Result)
                 {
+                    View.Selection.SelectedMap = primaryBank.Maps[entry.Key];
+                    View.Selection.ResetMsbSelection();
                     Smithbox.Log<MsbEditor>($"Loaded map: {entry.Key.Filename}");
                 }
             }
@@ -106,5 +116,61 @@ public class MsbEditor
     public void Draw()
     {
         UIHelper.SimpleHeader("Current Map", "");
+
+        var columnCount = 3;
+
+        if (ImGui.BeginTable($"mapDataEditorTable", columnCount,
+            ImGuiTableFlags.Resizable |
+            ImGuiTableFlags.SizingStretchProp |
+            ImGuiTableFlags.BordersInnerV))
+        {
+            ImGui.TableSetupColumn("CategoriesCol", ImGuiTableColumnFlags.WidthStretch, 0.2f);
+            ImGui.TableSetupColumn("EntryCol", ImGuiTableColumnFlags.WidthStretch, 0.4f);
+            ImGui.TableSetupColumn("PropertiesCol", ImGuiTableColumnFlags.WidthStretch, 0.4f);
+
+            // Categories
+            ImGui.TableNextRow();
+            ImGui.TableSetColumnIndex(0);
+
+            CategoryView.Display();
+
+            // Entries
+            ImGui.TableSetColumnIndex(1);
+
+            EntryView.Display();
+
+            // Properties
+            ImGui.TableSetColumnIndex(2);
+
+            //PropertyView.Display();
+
+            ImGui.EndTable();
+        }
+    }
+
+    public void Shortcuts()
+    {
+        if (FocusManager.IsFocus(EditorFocusContext.MapDataEditor_MsbEditor))
+        {
+            // Duplicate
+            if (InputManager.IsPressed(KeybindID.Duplicate))
+            {
+                var action = new MsbEntryDuplicate(View, Project);
+                View.ActionManager.ExecuteAction(action);
+            }
+
+            // Delete
+            if (InputManager.IsPressed(KeybindID.Delete))
+            {
+                var action = new MsbEntryDelete(View, Project);
+                View.ActionManager.ExecuteAction(action);
+            }
+
+            // Focus Selected Entry
+            if (InputManager.IsPressed(KeybindID.Jump))
+            {
+                // TODO
+            }
+        }
     }
 }

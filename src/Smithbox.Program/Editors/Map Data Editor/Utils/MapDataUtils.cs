@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Editors.MapParamEditor;
 
-public static class MapParamEditorUtils
+public static class MapDataUtils
 {
     public static bool SupportsMSB(ProjectEntry curProject)
     {

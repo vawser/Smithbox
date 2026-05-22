@@ -31,12 +31,12 @@ public class MapDataCommonView
             {
                 var curType = (SubEditorType)entry;
 
-                if (curType is SubEditorType.MSB && !MapParamEditorUtils.SupportsMSB(Project))
+                if (curType is SubEditorType.MSB && !MapDataUtils.SupportsMSB(Project))
                 {
                     continue;
                 }
 
-                if (curType is SubEditorType.ENFL && !MapParamEditorUtils.SupportsENFL(Project))
+                if (curType is SubEditorType.ENFL && !MapDataUtils.SupportsENFL(Project))
                 {
                     continue;
                 }

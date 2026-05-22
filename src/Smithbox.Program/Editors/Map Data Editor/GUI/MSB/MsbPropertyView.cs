@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StudioCore.Application;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,4 +12,20 @@ namespace StudioCore.Editors.MapDataEditor;
 /// </summary>
 public class MsbPropertyView
 {
+    public MapDataEditorView View;
+    public ProjectEntry Project;
+
+    private string PropertyListFilter = "";
+    private bool ExactPropertyListFilter = false;
+
+    public MsbPropertyView(MapDataEditorView view, ProjectEntry project)
+    {
+        View = view;
+        Project = project;
+    }
+
+    public void Display()
+    {
+
+    }
 }

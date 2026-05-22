@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.ImGui;
+using Microsoft.AspNetCore.Components.Forms;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.MaterialEditor;
@@ -45,6 +46,7 @@ public class MapDataEditorScreen : EditorScreen
         var scale = DPI.UIScale();
 
         CommandQueue.Parse(commands);
+        Shortcuts();
 
         if (ImGui.BeginMenuBar())
         {
@@ -65,6 +67,61 @@ public class MapDataEditorScreen : EditorScreen
         if (ViewHandler.ActiveView != null)
         {
             ToolWindow.Draw();
+        }
+    }
+
+    public void Shortcuts()
+    {
+        var activeView = ViewHandler.ActiveView;
+
+        // Save
+        if (InputManager.IsPressed(KeybindID.Save))
+        {
+            Save();
+        }
+
+        if (InputManager.IsPressed(KeybindID.Toggle_Tools_Menu))
+        {
+            CFG.Current.Interface_MapDataEditor_ToolWindow = !CFG.Current.Interface_MapDataEditor_ToolWindow;
+        }
+
+        if (activeView != null)
+        {
+            // Undo
+            if (activeView.ActionManager.CanUndo())
+            {
+                if (InputManager.IsPressed(KeybindID.Undo))
+                {
+                    activeView.ActionManager.UndoAction();
+                }
+
+                if (InputManager.IsPressedOrRepeated(KeybindID.Undo_Repeat))
+                {
+                    activeView.ActionManager.UndoAction();
+                }
+            }
+
+            // Redo
+            if (activeView.ActionManager.CanRedo())
+            {
+                if (InputManager.IsPressed(KeybindID.Redo))
+                {
+                    activeView.ActionManager.RedoAction();
+                }
+
+                if (InputManager.IsPressedOrRepeated(KeybindID.Redo_Repeat))
+                {
+                    activeView.ActionManager.RedoAction();
+                }
+            }
+
+            // MSB Editor
+            if (activeView.Selection.SubEditorMode is SubEditorType.MSB)
+            {
+                activeView.MsbEditor.Shortcuts();
+            }
+
+            // ENFL Editor
         }
     }
 
