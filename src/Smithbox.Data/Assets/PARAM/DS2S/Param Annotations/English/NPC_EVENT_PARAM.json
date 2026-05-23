@@ -6,188 +6,188 @@
   "Fields": [
     {
       "Field": "bShop",
-      "Name": "ショップメニュー",
-      "Description": ""
+      "Name": "Shop Menu",
+      "Description": "Enables the NPC shop interface."
     },
     {
       "Field": "bPointReplace",
-      "Name": "ポイント振り直し",
-      "Description": ""
+      "Name": "Stat Reallocation",
+      "Description": "Allows the player to respec or redistribute stat points."
     },
     {
       "Field": "bRepair",
-      "Name": "装備修理メニュー",
-      "Description": ""
+      "Name": "Equipment Repair Menu",
+      "Description": "Enables equipment repair services."
     },
     {
       "Field": "bFortify",
-      "Name": "装備強化メニュー",
-      "Description": ""
+      "Name": "Equipment Upgrade Menu",
+      "Description": "Enables weapon or armor reinforcement."
     },
     {
       "Field": "bPledge",
-      "Name": "誓約メニュー",
-      "Description": ""
+      "Name": "Covenant Menu",
+      "Description": "Allows the player to join or interact with a covenant."
     },
     {
       "Field": "bVotive",
-      "Name": "奉納メニュー",
-      "Description": ""
+      "Name": "Offering Menu",
+      "Description": "Allows item offerings or covenant donations."
     },
     {
       "Field": "bUptrade",
-      "Name": "下取りメニュー",
-      "Description": ""
+      "Name": "Trade-In Menu",
+      "Description": "Enables exchanging items for rewards."
     },
     {
       "Field": "bBarter",
-      "Name": "物々交換メニュー",
-      "Description": ""
+      "Name": "Barter Menu",
+      "Description": "Allows item trading or item-for-item exchanges."
     },
     {
       "Field": "bDecriminalize",
-      "Name": "免罪メニュー",
-      "Description": ""
+      "Name": "Absolution Menu",
+      "Description": "Allows the player to remove sin or hostility penalties."
     },
     {
       "Field": "bContractKickout",
-      "Name": "誓約破棄メニュー",
-      "Description": ""
+      "Name": "Leave Covenant Menu",
+      "Description": "Allows the player to abandon a covenant."
     },
     {
       "Field": "bGesture",
-      "Name": "ジェスチャー",
-      "Description": ""
+      "Name": "Gesture",
+      "Description": "Allows the NPC to teach or grant a gesture."
     },
     {
       "Field": "bLadder",
-      "Name": "はしごを掛けるメニュー",
-      "Description": ""
+      "Name": "Ladder Placement Menu",
+      "Description": "Allows interaction for placing or unlocking ladders."
     },
     {
       "Field": "bRootChange",
-      "Name": "ルートチェンジメニュー",
-      "Description": ""
+      "Name": "Route Change Menu",
+      "Description": "Enables route or progression branch selection."
     },
     {
       "Field": "bPresent",
-      "Name": "○○を渡すメニュー",
-      "Description": ""
+      "Name": "Give Item Menu",
+      "Description": "Allows the player to present a required item."
     },
     {
       "Field": "bPledgeView",
-      "Name": "誓約一覧メニュー",
-      "Description": ""
+      "Name": "Covenant List Menu",
+      "Description": "Displays covenant information or rankings."
     },
     {
       "Field": "pledgeType",
-      "Name": "契約のタイプ",
-      "Description": ""
+      "Name": "Contract Type",
+      "Description": "Specifies the covenant or contract category."
     },
     {
       "Field": "bTalk",
-      "Name": "話すメニュー",
-      "Description": ""
+      "Name": "Talk Menu",
+      "Description": "Enables standard dialogue interaction."
     },
     {
       "Field": "bEstusFlaskFortify",
-      "Name": "エスト瓶強化",
-      "Description": ""
+      "Name": "Estus Flask Reinforcement",
+      "Description": "Allows Estus Flask upgrades."
     },
     {
       "Field": "bLevelUp",
-      "Name": "レベルアップ",
-      "Description": ""
+      "Name": "Level Up",
+      "Description": "Allows character level increases."
     },
     {
       "Field": "bAttributeFortify",
-      "Name": "変質強化",
-      "Description": ""
+      "Name": "Infusion Reinforcement",
+      "Description": "Allows elemental or attribute infusion upgrades."
     },
     {
       "Field": "bPresentArmor",
-      "Name": "装備を渡す",
-      "Description": ""
+      "Name": "Give Equipment",
+      "Description": "Allows equipment items to be handed over."
     },
     {
       "Field": "bPyromancyFortify",
-      "Name": "呪術の炎を強化",
-      "Description": ""
+      "Name": "Upgrade Pyromancy Flame",
+      "Description": "Allows pyromancy flame reinforcement."
     },
     {
       "Field": "bSpellDecrementState",
-      "Name": "必要能力値引き下げメニュー",
-      "Description": ""
+      "Name": "Required Stat Reduction Menu",
+      "Description": "Enables reduction of spell or equipment stat requirements."
     },
     {
       "Field": "reserved",
-      "Name": "予約",
+      "Name": "Reserved",
       "Description": ""
     },
     {
       "Field": "shopIdBegin",
-      "Name": "ラインナップ開始ID",
-      "Description": ""
+      "Name": "Shop Lineup Start ID",
+      "Description": "First entry ID for the NPC shop inventory."
     },
     {
       "Field": "shopIdEnd",
-      "Name": "ラインナップ終了ID",
-      "Description": ""
+      "Name": "Shop Lineup End ID",
+      "Description": "Last entry ID for the NPC shop inventory."
     },
     {
       "Field": "fortifyTyoe",
-      "Name": "強化タイプ",
-      "Description": ""
+      "Name": "Upgrade Type",
+      "Description": "Specifies the type of reinforcement service provided."
     },
     {
       "Field": "votiveItemId",
-      "Name": "奉納アイテムID",
-      "Description": ""
+      "Name": "Offering Item ID",
+      "Description": "Item required for offerings or covenant donations."
     },
     {
       "Field": "barterParamBeginId",
-      "Name": "ラインナップ開始ID（物々交換）",
-      "Description": ""
+      "Name": "Barter Lineup Start ID",
+      "Description": "First barter entry ID."
     },
     {
       "Field": "gestureId",
-      "Name": "ジェスチャーID",
-      "Description": ""
+      "Name": "Gesture ID",
+      "Description": "Gesture granted or referenced by this interaction."
     },
     {
       "Field": "npcId",
-      "Name": "NPCキャラID",
-      "Description": ""
+      "Name": "NPC Character ID",
+      "Description": "References the associated NPC character."
     },
     {
       "Field": "aReserved",
-      "Name": "予約",
+      "Name": "Reserved",
       "Description": ""
     },
     {
       "Field": "eventValueChangeType",
-      "Name": "イベント変数変更タイプ",
-      "Description": ""
+      "Name": "Event Value Change Type",
+      "Description": "Specifies how an event value is modified."
     },
     {
       "Field": "eventValueId",
-      "Name": "イベント変数ID",
-      "Description": ""
+      "Name": "Event Value ID",
+      "Description": "References the event variable affected by this interaction."
     },
     {
       "Field": "pluralSelectIdBegin",
-      "Name": "N択選択肢開始ID",
-      "Description": ""
+      "Name": "Multi-Choice Start ID",
+      "Description": "First ID for multi-selection dialogue choices."
     },
     {
       "Field": "pluralSelectIdEnd",
-      "Name": "N択選択肢終了ID",
-      "Description": ""
+      "Name": "Multi-Choice End ID",
+      "Description": "Last ID for multi-selection dialogue choices."
     },
     {
       "Field": "barterParamEndId",
-      "Name": "ラインナップ終了ID（物々交換）",
-      "Description": ""
+      "Name": "Barter Lineup End ID",
+      "Description": "Last barter entry ID."
     }
   ]
 }

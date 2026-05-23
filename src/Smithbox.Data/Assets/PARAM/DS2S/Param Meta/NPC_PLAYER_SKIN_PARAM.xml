@@ -2,7 +2,7 @@
 <PARAMMETA XmlVersion="0">
     <Field>
         <skinNo />
-        <dummy />
+        <dummy Padding="" />
         <skinR />
         <skinG />
         <skinB />

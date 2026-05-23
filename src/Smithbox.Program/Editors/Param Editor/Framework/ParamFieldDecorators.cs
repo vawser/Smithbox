@@ -253,7 +253,7 @@ public class ParamFieldDecorators
                 if (Editor.Project.Handler.ProjectData.Aliases.TryGetValue(
                     ProjectAliasType.Characters, out List<AliasEntry> characters))
                 {
-                    AliasEnumHelper.Hint(ParentView, characters, oldval.ToString());
+                    AliasEnumHelper.Hint(ParentView, characters, oldval.ToString(), true);
                 }
             }
 

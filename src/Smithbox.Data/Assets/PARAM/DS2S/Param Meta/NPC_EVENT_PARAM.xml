@@ -24,15 +24,15 @@
         <bPresentArmor  IsBool=""/>
         <bPyromancyFortify  IsBool=""/>
         <bSpellDecrementState  IsBool=""/>
-        <reserved />
-        <shopIdBegin />
+        <reserved Padding="" />
+        <shopIdBegin Refs="ShopLineupParam" />
         <shopIdEnd />
         <fortifyTyoe />
-        <votiveItemId />
-        <barterParamBeginId />
+        <votiveItemId Refs="ItemParam" />
+        <barterParamBeginId Refs="ShopLineupParam" />
         <gestureId />
-        <npcId />
-        <aReserved />
+        <npcId CharacterAlias="" />
+        <aReserved Padding="" />
         <eventValueChangeType  Enum="NPC_EVENT_CHANGE_VALUE_TYPE"/>
         <eventValueId  Enum="EVENT_VALUE_global"/>
         <pluralSelectIdBegin />
