@@ -190,13 +190,25 @@ public class MsbEntryView
         foreach (var mapProp in Selection.SelectedMap.GetType()
                      .GetProperties(BindingFlags.Public | BindingFlags.Instance))
         {
+            // Skip indexed properties (e.g. IList.Item indexers)
+            if (mapProp.GetIndexParameters().Length > 0)
+                continue;
+
             var paramObject = mapProp.GetValue(Selection.SelectedMap);
             if (paramObject is null)
+                continue;
+
+            // Skip flat lists sitting directly on the MSB (e.g. PartPoses)
+            if (paramObject is IList)
                 continue;
 
             foreach (var prop in paramObject.GetType()
                          .GetProperties(BindingFlags.Public | BindingFlags.Instance))
             {
+                // Same guard for indexed properties on the param object
+                if (prop.GetIndexParameters().Length > 0)
+                    continue;
+
                 if (prop.GetValue(paramObject) is not IList list)
                     continue;
 
@@ -266,19 +278,34 @@ public class MsbEntryView
             return null;
 
         var targetType = Selection.SelectedBaseCategoryType;
+        var mapType = Selection.SelectedMap.GetType();
 
-        foreach (var prop in Selection.SelectedMap.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance))
+        // Normal path: find a param property whose type matches.
+        foreach (var prop in mapType.GetProperties(BindingFlags.Public | BindingFlags.Instance))
         {
-            // Exact match first — the concrete property (e.g. ModelParam Models).
+            if (prop.GetIndexParameters().Length > 0) continue;
             if (prop.PropertyType == targetType)
                 return prop.GetValue(Selection.SelectedMap);
         }
 
-        // Fallback: accept a subclass in case a game-specific MSB subclasses the param.
-        foreach (var prop in Selection.SelectedMap.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance))
+        foreach (var prop in mapType.GetProperties(BindingFlags.Public | BindingFlags.Instance))
         {
+            if (prop.GetIndexParameters().Length > 0) continue;
             if (targetType.IsAssignableFrom(prop.PropertyType))
                 return prop.GetValue(Selection.SelectedMap);
+        }
+
+        // Flat-list fallback: the MSB root itself owns a List<T> whose element
+        // type matches (e.g. List<PartPose>). Return the map as the param object
+        // so FindMutableEntryList can locate the list directly on it.
+        foreach (var prop in mapType.GetProperties(BindingFlags.Public | BindingFlags.Instance))
+        {
+            if (prop.GetIndexParameters().Length > 0) continue;
+            var pt = prop.PropertyType;
+            if (!pt.IsGenericType) continue;
+            var args = pt.GetGenericArguments();
+            if (args.Length == 1 && targetType.IsAssignableFrom(args[0]))
+                return Selection.SelectedMap;
         }
 
         return null;
@@ -291,6 +318,10 @@ public class MsbEntryView
         foreach (var prop in paramObject.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance))
         {
             var propType = prop.PropertyType;
+
+            if (prop.GetIndexParameters().Length > 0) 
+                continue;
+
             if (!propType.IsGenericType)
                 continue;
 

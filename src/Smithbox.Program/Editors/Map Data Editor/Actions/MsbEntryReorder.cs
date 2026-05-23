@@ -38,6 +38,7 @@ public class MsbEntryReorder : EditorAction
         return ActionEvent.NoEvent;
     }
 
+    // TODO: doesn't work currently
     public override ActionEvent Undo()
     {
         if (_movedIndices is null) 
