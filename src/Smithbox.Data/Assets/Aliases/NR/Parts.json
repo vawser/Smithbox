@@ -60,6 +60,16 @@
     "Tags": []
   },
   {
+    "ID": "bd_m_5080",
+    "Name": "Scholar",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5090",
+    "Name": "Undertaker",
+    "Tags": []
+  },
+  {
     "ID": "bd_m_5100",
     "Name": "Wylder (Dawn)",
     "Tags": []
@@ -100,6 +110,16 @@
     "Tags": []
   },
   {
+    "ID": "bd_m_5180",
+    "Name": "Scholar (Dawn)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5190",
+    "Name": "Undertaker (Dawn)",
+    "Tags": []
+  },
+  {
     "ID": "bd_m_5200",
     "Name": "Wylder (Darkness)",
     "Tags": []
@@ -137,6 +157,16 @@
   {
     "ID": "bd_m_5270",
     "Name": "Executor (Darkness)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5280",
+    "Name": "Scholar (Darkness)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5290",
+    "Name": "Undertaker (Darkness)",
     "Tags": []
   },
   {
@@ -185,6 +215,16 @@
     "Tags": []
   },
   {
+    "ID": "bd_m_5380",
+    "Name": "Scholar (Remembrance)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5390",
+    "Name": "Undertaker (Remembrance)",
+    "Tags": []
+  },
+  {
     "ID": "bd_m_5500",
     "Name": "Wylder (Abysswalker)",
     "Tags": []
@@ -225,6 +265,16 @@
     "Tags": []
   },
   {
+    "ID": "bd_m_5580",
+    "Name": "Scholar (Pardoner)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5590",
+    "Name": "Undertaker (Brass)",
+    "Tags": []
+  },
+  {
     "ID": "bd_m_5600",
     "Name": "Wylder (Lion Knight)",
     "Tags": []
@@ -262,6 +312,16 @@
   {
     "ID": "bd_m_5670",
     "Name": "Executor (Sable Church)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5680",
+    "Name": "Scholar (Xanthous)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5690",
+    "Name": "Undertaker (Lord's Blade)",
     "Tags": []
   }
 ]
