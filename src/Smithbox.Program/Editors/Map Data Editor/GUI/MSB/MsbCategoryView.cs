@@ -42,12 +42,33 @@ public class MsbCategoryView
 
         DisplayBaseCategoryList(baseCategories);
 
+        UIHelper.SimpleHeader("Sub Categories", "");
+
         DisplaySubCategoryList(subCategories);
     }
 
     private void DisplayBaseCategoryList(Dictionary<string, Type> baseCategories)
     {
-        EditorFilters.DisplayFramedListFilter("BaseCategoryFilter", ref BaseCategoryListFilter, ref ExactBaseCategoryListFilter);
+        var searchHeight = new Vector2(0, 36) * DPI.UIScale();
+        ImGui.BeginChild($"framedListFilter_BaseCategoryFilter", searchHeight, ImGuiChildFlags.Borders);
+
+        EditorFilters.DisplayListFilter("BaseCategoryFilter", ref BaseCategoryListFilter, ref ExactBaseCategoryListFilter);
+
+        // Toggle Empty Display
+        ImGui.SameLine();
+
+        if (ImGui.Button($"{Icons.Bars}"))
+        {
+            CFG.Current.MapDataEditor_CategoryView_Display_Empty_Base_Categories = !CFG.Current.MapDataEditor_CategoryView_Display_Empty_Base_Categories;
+        }
+
+        var emptyBaseDisplay = "Hide Empty Base Categories";
+        if (CFG.Current.MapDataEditor_CategoryView_Display_Empty_Base_Categories)
+            emptyBaseDisplay = "Display Empty Base Categories";
+
+        UIHelper.Tooltip($"Toggle the display of base categories with no entries.\nCurrent Mode: {emptyBaseDisplay}");
+
+        ImGui.EndChild();
 
         // List box
         ImGui.BeginChild("##BaseCategoryList", new Vector2(0, 200), ImGuiChildFlags.Borders);
@@ -63,6 +84,17 @@ public class MsbCategoryView
                 if (!EditorFilters.IsMatch(BaseCategoryListFilter, name, ExactBaseCategoryListFilter, type.ToString()))
                 {
                     continue;
+                }
+
+                // Skip empty base categories if the toggle is off
+                if (!CFG.Current.MapDataEditor_CategoryView_Display_Empty_Base_Categories)
+                {
+                    var subCats = MsbCategories.GetSubCategories(Project, name);
+                    bool anyEntries = subCats.Any(kvp => View.MsbEditor.EntryView.GetCachedEntryCount(kvp.Value) > 0);
+
+                    // Also count the base itself for direct categories
+                    if (!anyEntries && View.MsbEditor.EntryView.GetCachedEntryCount(type) == 0)
+                        continue;
                 }
 
                 bool selected = Selection.SelectedBaseCategory == name;
@@ -122,7 +154,26 @@ public class MsbCategoryView
 
     private void DisplaySubCategoryList(Dictionary<string, Type> subCategories)
     {
-        EditorFilters.DisplayFramedListFilter("SubCategoryFilter", ref SubCategoryListFilter, ref ExactSubCategoryListFilter);
+        var searchHeight = new Vector2(0, 36) * DPI.UIScale();
+        ImGui.BeginChild($"framedListFilter_SubCategoryFilter", searchHeight, ImGuiChildFlags.Borders);
+
+        EditorFilters.DisplayListFilter("SubCategoryFilter", ref SubCategoryListFilter, ref ExactSubCategoryListFilter);
+
+        // Toggle Empty Display
+        ImGui.SameLine();
+
+        if (ImGui.Button($"{Icons.Bars}"))
+        {
+            CFG.Current.MapDataEditor_CategoryView_Display_Empty_Sub_Categories = !CFG.Current.MapDataEditor_CategoryView_Display_Empty_Sub_Categories;
+        }
+
+        var emptyBaseDisplay = "Hide Empty Sub Categories";
+        if (CFG.Current.MapDataEditor_CategoryView_Display_Empty_Sub_Categories)
+            emptyBaseDisplay = "Display Empty Sub Categories";
+
+        UIHelper.Tooltip($"Toggle the display of base categories with no entries.\nCurrent Mode: {emptyBaseDisplay}");
+
+        ImGui.EndChild();
 
         float listHeight = ImGui.GetContentRegionAvail().Y;
         ImGui.BeginChild("##SubCategoryList", new Vector2(0, listHeight), ImGuiChildFlags.Borders);
@@ -141,6 +192,13 @@ public class MsbCategoryView
                 if (!EditorFilters.IsMatch(SubCategoryListFilter, name, ExactSubCategoryListFilter, type.ToString()))
                 {
                     continue;
+                }
+
+                // Skip empty sub-categories if the toggle is off
+                if (!CFG.Current.MapDataEditor_CategoryView_Display_Empty_Sub_Categories)
+                {
+                    if (View.MsbEditor.EntryView.GetCachedEntryCount(type) == 0)
+                        continue;
                 }
 
                 bool selected = Selection.SelectedSubCategory == name;

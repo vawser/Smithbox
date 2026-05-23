@@ -79,6 +79,7 @@ public class MsbEditor
                 {
                     View.Selection.SelectedMap = primaryBank.Maps[entry.Key];
                     View.Selection.ResetMsbSelection();
+                    EntryView.RebuildMapEntryCountCache();
                     Smithbox.Log<MsbEditor>($"Loaded map: {entry.Key.Filename}");
                 }
             }
@@ -99,6 +100,7 @@ public class MsbEditor
                 {
                     View.Selection.SelectedMap = primaryBank.Maps[entry.Key];
                     View.Selection.ResetMsbSelection();
+                    EntryView.RebuildMapEntryCountCache();
                     Smithbox.Log<MsbEditor>($"Loaded map: {entry.Key.Filename}");
                 }
             }

@@ -8,32 +8,20 @@ using System.Reflection;
 
 namespace StudioCore.Editors.MapDataEditor;
 
-/// <summary>
-/// Undoable/redoable duplication of one or more MSB entries.
-///
-/// The target list and source entries are both resolved at construction time
-/// so that subsequent selection changes do not affect Execute() or Undo().
-/// Each selected entry is shallow-cloned via MemberwiseClone and inserted
-/// immediately after its source, with " - Copy" appended to its Name.
-/// </summary>
 public class MsbEntryDuplicate : EditorAction
 {
     private readonly MapDataEditorView _view;
 
-    // The live backing list inside the MSB param — captured once at construction.
     private readonly IList _targetList;
 
-    // Source entries snapshotted at construction time.
     private readonly List<(int Index, object Entry)> _sourceEntries;
 
-    // Populated during Execute(); used by Undo() to remove by reference identity.
     private readonly List<(int InsertedIndex, object Clone)> _clonedEntries = new();
 
     public MsbEntryDuplicate(MapDataEditorView view, ProjectEntry project)
     {
         _view = view;
 
-        // Resolve the list immediately while the selection is still valid.
         var entryView = view.MsbEditor.EntryView;
         object paramObj = entryView.GetParamObject();
         _targetList = paramObj is not null ? entryView.FindMutableEntryList(paramObj) : null;
@@ -51,8 +39,6 @@ public class MsbEntryDuplicate : EditorAction
 
         _clonedEntries.Clear();
 
-        // Build clone list first, then insert from back to front so that
-        // inserting at a higher index doesn't shift lower indices.
         var toInsert = _sourceEntries
             .Select(s => (InsertAfter: s.Index, Clone: CloneEntry(s.Entry)))
             .ToList();
@@ -61,14 +47,16 @@ public class MsbEntryDuplicate : EditorAction
         {
             var (insertAfter, clone) = toInsert[i];
             int insertAt = Math.Clamp(insertAfter + 1, 0, _targetList.Count);
+
             _targetList.Insert(insertAt, clone);
-            _clonedEntries.Insert(0, (insertAt, clone)); // keep ascending order
+            _clonedEntries.Insert(0, (insertAt, clone));
         }
 
-        // Select the newly created clones.
         _view.Selection.ResetMsbEntrySelection();
         foreach (var (insertedIndex, clone) in _clonedEntries)
+        {
             _view.Selection.SelectedEntries.TryAdd(insertedIndex, clone);
+        }
 
         _view.MsbEditor.EntryView.RebuildEntryCache();
 
@@ -80,8 +68,6 @@ public class MsbEntryDuplicate : EditorAction
         if (_targetList is null)
             return ActionEvent.NoEvent;
 
-        // Remove by reference identity from the back so earlier clones are
-        // unaffected by each removal.
         foreach (var (_, clone) in Enumerable.Reverse(_clonedEntries))
         {
             for (int i = _targetList.Count - 1; i >= 0; i--)
@@ -94,7 +80,6 @@ public class MsbEntryDuplicate : EditorAction
             }
         }
 
-        // Restore selection to the original source entries.
         _view.Selection.ResetMsbEntrySelection();
         foreach (var (index, entry) in _sourceEntries)
             _view.Selection.SelectedEntries.TryAdd(index, entry);
@@ -104,25 +89,10 @@ public class MsbEntryDuplicate : EditorAction
         return ActionEvent.ObjectAddedRemoved;
     }
 
-    // ── Clone logic ───────────────────────────────────────────────────────────
-
-    /// <summary>
-    /// Clones <paramref name="source"/> by preferring its own <c>DeepCopy()</c>
-    /// method, which every SoulsFormats entry type provides and which correctly
-    /// deep-copies nested reference-type structs (gparam configs, shapes, etc.).
-    /// Falls back to <c>MemberwiseClone</c> only for types that don't expose
-    /// <c>DeepCopy()</c>, and logs a warning in that case so it can be caught
-    /// during testing.
-    ///
-    /// After cloning, " - Copy" is appended to the <c>Name</c> property so the
-    /// duplicate is visually distinct in the entry list.
-    /// </summary>
     private static object CloneEntry(object source)
     {
         object clone;
 
-        // Every SoulsFormats MSB entry (Part, Region, Event, Model, Route) exposes
-        // a public DeepCopy() that handles nested structs correctly.  Use it.
         var deepCopyMethod = source.GetType().GetMethod("DeepCopy",
             BindingFlags.Public | BindingFlags.Instance,
             binder: null,
@@ -135,9 +105,6 @@ public class MsbEntryDuplicate : EditorAction
         }
         else
         {
-            // Fallback for any future entry type that hasn't yet implemented DeepCopy().
-            // MemberwiseClone is shallow, so reference-type fields will be shared —
-            // flag this so it can be fixed in SoulsFormats.
             Smithbox.LogError<MsbEditor>($"[Map Data Editor] {source.GetType().FullName} has no DeepCopy() " +
                 $"method; falling back to MemberwiseClone. Nested reference fields will be shared.");
 
@@ -146,7 +113,6 @@ public class MsbEntryDuplicate : EditorAction
             clone = memberwiseClone!.Invoke(source, null);
         }
 
-        // Patch the Name so the duplicate is identifiable in the list.
         var nameProp = clone.GetType().GetProperty("Name",
             BindingFlags.Public | BindingFlags.Instance);
 

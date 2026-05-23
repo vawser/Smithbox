@@ -4,6 +4,7 @@ using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
@@ -25,8 +26,6 @@ public class MsbPropertyView
 
     private string PropertyListFilter = "";
     private bool ExactPropertyListFilter = false;
-
-    private readonly Dictionary<string, PropertyInfo[]> PropCache = new();
 
     public MsbPropertyView(MapDataEditorView view, ProjectEntry project)
     {
@@ -122,7 +121,7 @@ public class MsbPropertyView
 
     public void DisplayPropertyTable()
     {
-        var tblFlags = ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Borders | ImGuiTableFlags.Resizable;
+        var tblFlags = ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Borders | ImGuiTableFlags.Resizable | ImGuiTableFlags.BordersOuter;
 
         if (ImGui.BeginTable($"propertyTable", 2, tblFlags))
         {
@@ -154,121 +153,117 @@ public class MsbPropertyView
             return;
 
         Type type = targetEntry.Value.GetType();
-        var properties = GetCachedProperties(type);
 
-        // Direct
+        DisplayObjectProperties(type, targetEntry.Value, prefix: "", postfix: "");
+    }
+
+    private void DisplayObjectProperties(Type type, object entry, string prefix, string postfix)
+    {
+        var properties = ReflectionHelper.GetCachedProperties(type);
+
         foreach (PropertyInfo prop in properties)
         {
-            var isArray = IsPropertyArray(type, targetEntry, prop);
-            var isList = IsPropertyList(type, targetEntry, prop);
-            var isShape = IsPropertyShape(type, targetEntry, prop);
-            var isClass = IsPropertyClass(type, targetEntry, prop);
-
-            if (!isArray && !isList && !isShape && !isClass)
+            // Arrays and lists must be checked before IsPropertyClass because List<T> is also a class.
+            if (ReflectionHelper.IsPropertyArray(type, entry, prop))
             {
-                DisplayPropertyEntry(type, targetEntry.Value, prop);
+                DisplayArrayPropertyEntries(type, entry, prop, prefix, postfix);
+            }
+            else if (ReflectionHelper.IsPropertyList(type, entry, prop))
+            {
+                DisplayListPropertyEntries(type, entry, prop, prefix, postfix);
+            }
+            else if (ReflectionHelper.IsPropertyClass(type, entry, prop))
+            {
+                // Sub-classes (including Shape subclasses): recurse with a prefixed label.
+                var subValue = prop.GetValue(entry);
+                if (subValue != null)
+                {
+                    var subType = subValue.GetType();
+                    DisplayObjectProperties(subType, subValue, prefix, postfix);
+                }
+            }
+            else
+            {
+                DisplayPropertyEntry(type, entry, prop, prefix, postfix);
             }
         }
     }
 
-    public void DisplayPropertyEntry(Type type, object entry, PropertyInfo prop)
+    private void DisplayArrayPropertyEntries(Type type, object entry, PropertyInfo prop, string prefix, string postfix)
+    {
+        var array = prop.GetValue(entry) as Array;
+        if (array == null)
+            return;
+
+        for (int i = 0; i < array.Length; i++)
+        {
+            var element = array.GetValue(i);
+            if (element == null)
+                continue;
+
+            var elementType = element.GetType();
+
+            if (ReflectionHelper.IsScalarType(elementType))
+            {
+                DisplayPropertyEntry(elementType, element, prop, prefix, postfix: $"[{i}]", true);
+            }
+            else
+            {
+                // Recurse into the element's own properties.
+                DisplayObjectProperties(elementType, element, prefix, postfix: $"[{i}]");
+            }
+        }
+    }
+
+    private void DisplayListPropertyEntries(Type type, object entry, PropertyInfo prop, string prefix, string postfix)
+    {
+        var list = prop.GetValue(entry) as IList;
+        if (list == null)
+            return;
+
+        for (int i = 0; i < list.Count; i++)
+        {
+            var element = list[i];
+            if (element == null)
+                continue;
+
+            var elementType = element.GetType();
+
+            if (ReflectionHelper.IsScalarType(elementType))
+            {
+                DisplayPropertyEntry(elementType, element, prop, prefix, postfix: $"[{i}]", true);
+            }
+            else
+            {
+                DisplayObjectProperties(elementType, element, prefix, postfix: $"[{i}]");
+            }
+        }
+    }
+
+    public void DisplayPropertyEntry(Type type, object entry, PropertyInfo prop, string prefix, string postfix, bool isScalar = false)
     {
         if (CanDisplayPropertyRow(type, entry, prop))
         {
             ImGui.TableNextRow();
 
             ImGui.TableSetColumnIndex(0);
-            HandlePropertyTitle(type, entry, prop);
+            HandlePropertyTitle(type, entry, prop, prefix, postfix, isScalar);
 
             ImGui.TableSetColumnIndex(1);
-            HandlePropertyValue(type, entry, prop);
-        }
-    }
-
-    public void HandlePropertyTitle(Type type, object entry, PropertyInfo prop)
-    {
-        var meta = View.Project.Handler.MapDataHandler.MsbMeta.GetFieldMeta(prop.Name, type);
-
-        // Field Name
-        var fieldName = prop.Name;
-
-        if (CFG.Current.MapEditor_Properties_Enable_Commmunity_Names && !meta.IsEmpty)
-        {
-            fieldName = meta.AltName;
+            HandlePropertyValue(type, entry, prop, prefix, postfix, isScalar);
         }
 
-        // Field Description
-        var fieldDescription = "";
-        if (!meta.IsEmpty)
-        {
-            fieldDescription = meta.Wiki;
-        }
+        // Metadata row
+        //if(true)
+        //{
+        //    ImGui.TableNextRow();
 
-        UIHelper.WrappedText($"{fieldName}");
-        UIHelper.Tooltip(fieldDescription);
-    }
+        //    ImGui.TableSetColumnIndex(0);
+        //    UIHelper.WrappedText("ENUM");
 
-    public void HandlePropertyValue(Type type, object entry, PropertyInfo prop)
-    {
-        var curValue = prop.GetValue(entry);
-        var propType = prop.PropertyType;
-
-        if (curValue != null)
-        {
-            UIHelper.WrappedText($"{curValue.ToString()}");
-        }
-    }
-
-    public bool IsPropertyArray(Type type, object entry, PropertyInfo prop)
-    {
-        var curValue = prop.GetValue(entry);
-        var propType = prop.PropertyType;
-
-        if (propType.IsArray)
-        {
-            return true;
-        }
-
-        return false;
-    }
-
-    public bool IsPropertyList(Type type, object entry, PropertyInfo prop)
-    {
-        var curValue = prop.GetValue(entry);
-        var propType = prop.PropertyType;
-
-        if (propType.IsGenericType && propType.GetGenericTypeDefinition() == typeof(List<>))
-        {
-            return true;
-        }
-
-        return false;
-    }
-
-    public bool IsPropertyShape(Type type, object entry, PropertyInfo prop)
-    {
-        var curValue = prop.GetValue(entry);
-        var propType = prop.PropertyType;
-
-        if (propType.IsClass && propType == typeof(MSB.Shape))
-        {
-            return true;
-        }
-
-        return false;
-    }
-
-    public bool IsPropertyClass(Type type, object entry, PropertyInfo prop)
-    {
-        var curValue = prop.GetValue(entry);
-        var propType = prop.PropertyType;
-
-        if (propType.IsClass && propType != typeof(string) && !propType.IsArray)
-        {
-            return true;
-        }
-
-        return false;
+        //    ImGui.TableSetColumnIndex(1);
+        //    UIHelper.WrappedText("TEST");
+        //}
     }
 
     public bool CanDisplayPropertyRow(Type type, object entry, PropertyInfo prop)
@@ -313,7 +308,6 @@ public class MsbPropertyView
         }
         else if (isValueMatch)
         {
-            // TODO: currently doesn't match correctly with array list values
             var valStr = PropertyListFilter.Replace("val:", "");
 
             var propVal = prop.GetValue(entry);
@@ -338,20 +332,49 @@ public class MsbPropertyView
         return true;
     }
 
-    public PropertyInfo[] GetCachedFields(object obj)
+    public void HandlePropertyTitle(Type type, object entry, PropertyInfo prop, string prefix, string postfix, bool isScalar = false)
     {
-        return GetCachedProperties(obj.GetType());
-    }
+        var meta = View.Project.Handler.MapDataHandler.MsbMeta.GetFieldMeta(prop.Name, type);
 
-    public PropertyInfo[] GetCachedProperties(Type type)
-    {
-        if (!PropCache.TryGetValue(type.FullName, out PropertyInfo[] props))
+        // Field Name — community name replaces only the leaf name; the prefix is always structural.
+        var fieldName = prop.Name;
+
+        if (CFG.Current.MapEditor_Properties_Enable_Commmunity_Names && !meta.IsEmpty)
         {
-            props = type.GetProperties(BindingFlags.Instance | BindingFlags.Public);
-            props = props.OrderBy(p => p.MetadataToken).ToArray();
-            PropCache.Add(type.FullName, props);
+            fieldName = meta.AltName;
         }
 
-        return props;
+        // Field Description
+        var fieldDescription = "";
+        if (!meta.IsEmpty)
+        {
+            fieldDescription = meta.Wiki;
+        }
+
+        UIHelper.WrappedText($"{prefix}{fieldName}{postfix}");
+        UIHelper.Tooltip(fieldDescription);
     }
+
+    public void HandlePropertyValue(Type type, object entry, PropertyInfo prop, string prefix, string postfix, bool isScalar = false)
+    {
+        if (isScalar)
+        {
+            if (entry != null)
+            {
+                UIHelper.WrappedText($"{entry.ToString()}");
+            }
+        }
+        else
+        {
+            var curValue = prop.GetValue(entry);
+            var propType = prop.PropertyType;
+
+            if (curValue != null)
+            {
+                UIHelper.WrappedText($"{curValue.ToString()}");
+            }
+        }
+    }
+
+
 }
