@@ -959,6 +959,9 @@ public class CFG
     public bool MapDataEditor_SaveSelectedOnly = true;
     public bool MapDataEditor_CacheLoadedMaps = false;
 
+    public bool MapDataEditor_CategoryView_Display_Empty_Base_Categories = true;
+    public bool MapDataEditor_CategoryView_Display_Empty_Sub_Categories = true;
+
     // Windows
     public bool Interface_MapDataEditor_ToolWindow = true;
 
