@@ -141,7 +141,7 @@ public class MsbEntryView
 
                             if (!selectedIndices.Contains(toIndex))
                             {
-                                var action = new MsbEntryReorder(liveList, selectedIndices, toIndex);
+                                var action = new MsbEntryReorder(View, liveList, selectedIndices, toIndex);
                                 View.ActionManager.ExecuteAction(action);
 
                                 RemapSelectionAfterReorder(action);

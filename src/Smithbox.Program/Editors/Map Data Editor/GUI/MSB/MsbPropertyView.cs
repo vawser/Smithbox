@@ -3,9 +3,12 @@ using Octokit;
 using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Editors.MapEditor;
+using StudioCore.Utilities;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Numerics;
 using System.Reflection;
@@ -105,7 +108,7 @@ public class MsbPropertyView
         float listHeight = ImGui.GetContentRegionAvail().Y;
         ImGui.BeginChild("##msbEntryProperties", new Vector2(0, listHeight));
 
-        if(View.Selection.SelectedEntries.Count == 0)
+        if (View.Selection.SelectedEntries.Count == 0)
         {
             ImGui.BeginChild("##disabledSection", ImGuiChildFlags.Borders);
             ImGui.TextDisabled("No entry has been selected.");
@@ -132,11 +135,13 @@ public class MsbPropertyView
             ImGui.TableNextRow();
             ImGui.TableSetColumnIndex(0);
 
+            ImGui.AlignTextToFramePadding();
             UIHelper.WrappedText($"Property");
 
             // Value
             ImGui.TableSetColumnIndex(1);
 
+            ImGui.AlignTextToFramePadding();
             UIHelper.WrappedText($"Value");
 
             HandlePropertyEntries();
@@ -154,10 +159,11 @@ public class MsbPropertyView
 
         Type type = targetEntry.Value.GetType();
 
-        DisplayObjectProperties(type, targetEntry.Value, prefix: "", postfix: "");
+        var index = 0;
+        DisplayObjectProperties(ref index, type, targetEntry.Value, prefix: "", postfix: "");
     }
 
-    private void DisplayObjectProperties(Type type, object entry, string prefix, string postfix)
+    private void DisplayObjectProperties(ref int index, Type type, object entry, string prefix, string postfix)
     {
         var properties = ReflectionHelper.GetCachedProperties(type);
 
@@ -166,11 +172,11 @@ public class MsbPropertyView
             // Arrays and lists must be checked before IsPropertyClass because List<T> is also a class.
             if (ReflectionHelper.IsPropertyArray(type, entry, prop))
             {
-                DisplayArrayPropertyEntries(type, entry, prop, prefix, postfix);
+                DisplayArrayPropertyEntries(ref index, type, entry, prop, prefix, postfix);
             }
             else if (ReflectionHelper.IsPropertyList(type, entry, prop))
             {
-                DisplayListPropertyEntries(type, entry, prop, prefix, postfix);
+                DisplayListPropertyEntries(ref index, type, entry, prop, prefix, postfix);
             }
             else if (ReflectionHelper.IsPropertyClass(type, entry, prop))
             {
@@ -179,17 +185,19 @@ public class MsbPropertyView
                 if (subValue != null)
                 {
                     var subType = subValue.GetType();
-                    DisplayObjectProperties(subType, subValue, prefix, postfix);
+                    DisplayObjectProperties(ref index, subType, subValue, prefix, postfix);
                 }
             }
             else
             {
-                DisplayPropertyEntry(type, entry, prop, prefix, postfix);
+                DisplayPropertyEntry(ref index, type, entry, prop, prefix, postfix);
             }
+
+            index++;
         }
     }
 
-    private void DisplayArrayPropertyEntries(Type type, object entry, PropertyInfo prop, string prefix, string postfix)
+    private void DisplayArrayPropertyEntries(ref int index, Type type, object entry, PropertyInfo prop, string prefix, string postfix)
     {
         var array = prop.GetValue(entry) as Array;
         if (array == null)
@@ -205,17 +213,19 @@ public class MsbPropertyView
 
             if (ReflectionHelper.IsScalarType(elementType))
             {
-                DisplayPropertyEntry(elementType, element, prop, prefix, postfix: $"[{i}]", true);
+                DisplayPropertyEntry(ref index, elementType, element, prop, prefix, postfix: $"[{i}]", true);
             }
             else
             {
                 // Recurse into the element's own properties.
-                DisplayObjectProperties(elementType, element, prefix, postfix: $"[{i}]");
+                DisplayObjectProperties(ref index, elementType, element, prefix, postfix: $"[{i}]");
             }
+
+            index++;
         }
     }
 
-    private void DisplayListPropertyEntries(Type type, object entry, PropertyInfo prop, string prefix, string postfix)
+    private void DisplayListPropertyEntries(ref int index, Type type, object entry, PropertyInfo prop, string prefix, string postfix)
     {
         var list = prop.GetValue(entry) as IList;
         if (list == null)
@@ -231,26 +241,28 @@ public class MsbPropertyView
 
             if (ReflectionHelper.IsScalarType(elementType))
             {
-                DisplayPropertyEntry(elementType, element, prop, prefix, postfix: $"[{i}]", true);
+                DisplayPropertyEntry(ref index, elementType, element, prop, prefix, postfix: $"[{i}]", true);
             }
             else
             {
-                DisplayObjectProperties(elementType, element, prefix, postfix: $"[{i}]");
+                DisplayObjectProperties(ref index, elementType, element, prefix, postfix: $"[{i}]");
             }
+
+            index++;
         }
     }
 
-    public void DisplayPropertyEntry(Type type, object entry, PropertyInfo prop, string prefix, string postfix, bool isScalar = false)
+    public void DisplayPropertyEntry(ref int index, Type type, object entry, PropertyInfo prop, string prefix, string postfix, bool isScalar = false)
     {
         if (CanDisplayPropertyRow(type, entry, prop))
         {
             ImGui.TableNextRow();
 
             ImGui.TableSetColumnIndex(0);
-            HandlePropertyTitle(type, entry, prop, prefix, postfix, isScalar);
+            HandlePropertyTitle(index, type, entry, prop, prefix, postfix, isScalar);
 
             ImGui.TableSetColumnIndex(1);
-            HandlePropertyValue(type, entry, prop, prefix, postfix, isScalar);
+            HandlePropertyValue(index, type, entry, prop, prefix, postfix, isScalar);
         }
 
         // Metadata row
@@ -332,7 +344,7 @@ public class MsbPropertyView
         return true;
     }
 
-    public void HandlePropertyTitle(Type type, object entry, PropertyInfo prop, string prefix, string postfix, bool isScalar = false)
+    public void HandlePropertyTitle(int index, Type type, object entry, PropertyInfo prop, string prefix, string postfix, bool isScalar = false)
     {
         var meta = View.Project.Handler.MapDataHandler.MsbMeta.GetFieldMeta(prop.Name, type);
 
@@ -351,17 +363,25 @@ public class MsbPropertyView
             fieldDescription = meta.Wiki;
         }
 
+        ImGui.AlignTextToFramePadding();
         UIHelper.WrappedText($"{prefix}{fieldName}{postfix}");
         UIHelper.Tooltip(fieldDescription);
     }
 
-    public void HandlePropertyValue(Type type, object entry, PropertyInfo prop, string prefix, string postfix, bool isScalar = false)
+    public void HandlePropertyValue(int index, Type type, object entry, PropertyInfo prop, string prefix, string postfix, bool isScalar = false)
     {
         if (isScalar)
         {
             if (entry != null)
             {
-                UIHelper.WrappedText($"{entry.ToString()}");
+                //UIHelper.WrappedText($"{entry.ToString()}");
+
+                object newval;
+
+                (bool, bool) propEditResults = PropertyRow(index, type, entry, out newval, prop);
+
+                var changed = propEditResults.Item1;
+                var committed = propEditResults.Item2;
             }
         }
         else
@@ -371,10 +391,433 @@ public class MsbPropertyView
 
             if (curValue != null)
             {
-                UIHelper.WrappedText($"{curValue.ToString()}");
+                //UIHelper.WrappedText($"{curValue.ToString()}");
+
+                object newval;
+
+                (bool, bool) propEditResults = PropertyRow(index, propType, curValue, out newval, prop);
+
+                var changed = propEditResults.Item1;
+                var committed = propEditResults.Item2;
             }
         }
     }
 
 
+    private (bool, bool) PropertyRow(int index, Type typ, object oldval, out object newval, PropertyInfo prop)
+    {
+        ImGui.PushID(index);
+        var meta = View.Project.Handler.MapDataHandler.MsbMeta.GetFieldMeta(prop.Name, typ);
+
+        ImGui.SetNextItemWidth(-1);
+        ImGui.AlignTextToFramePadding();
+
+        newval = null;
+        var isChanged = false;
+        if (typ == typeof(long))
+        {
+            var val = (long)oldval;
+            var strval = $@"{val}";
+
+            var input = new InputTextHandler(strval);
+
+            if (input.Draw("##value", out string newValue))
+            {
+                var res = long.TryParse(newValue, out val);
+                if (res)
+                {
+                    newval = val;
+                    isChanged = true;
+                }
+            }
+        }
+        else if (typ == typeof(int))
+        {
+            var val = (int)oldval;
+
+            if (meta != null && meta.IsBool)
+            {
+                bool bVar = false;
+
+                if (val > 0)
+                    bVar = true;
+
+                if (ImGui.Checkbox("##value", ref bVar))
+                {
+                    if (bVar == true)
+                        val = 1;
+                    else
+                        val = 0;
+
+                    newval = val;
+                    isChanged = true;
+                }
+            }
+            else
+            {
+                if (ImGui.InputInt("##value", ref val))
+                {
+                    newval = val;
+                    isChanged = true;
+                }
+            }
+        }
+        else if (typ == typeof(uint))
+        {
+            var val = (uint)oldval;
+            var strval = $@"{val}";
+
+            if (meta != null && meta.IsBool)
+            {
+                bool bVar = false;
+
+                if (val > 0)
+                    bVar = true;
+
+                if (ImGui.Checkbox("##value", ref bVar))
+                {
+                    if (bVar == true)
+                        val = 1;
+                    else
+                        val = 0;
+
+                    newval = val;
+                    isChanged = true;
+                }
+            }
+            else
+            {
+                var input = new InputTextHandler(strval);
+
+                if (input.Draw("##value", out string newValue))
+                {
+                    var res = uint.TryParse(newValue, out val);
+                    if (res)
+                    {
+                        newval = val;
+                        isChanged = true;
+                    }
+                }
+            }
+        }
+        else if (typ == typeof(short))
+        {
+            int val = (short)oldval;
+
+            if (meta != null && meta.IsBool)
+            {
+                bool bVar = false;
+
+                if (val > 0)
+                    bVar = true;
+
+                if (ImGui.Checkbox("##value", ref bVar))
+                {
+                    if (bVar == true)
+                        val = 1;
+                    else
+                        val = 0;
+
+                    newval = (short)val;
+                    isChanged = true;
+                }
+            }
+            else
+            {
+                if (ImGui.InputInt("##value", ref val))
+                {
+                    newval = (short)val;
+                    isChanged = true;
+                }
+            }
+        }
+        else if (typ == typeof(ushort))
+        {
+            var val = (ushort)oldval;
+            var strval = $@"{val}";
+
+            if (meta != null && meta.IsBool)
+            {
+                bool bVar = false;
+
+                if (val > 0)
+                    bVar = true;
+
+                if (ImGui.Checkbox("##value", ref bVar))
+                {
+                    if (bVar == true)
+                        val = 1;
+                    else
+                        val = 0;
+
+                    newval = val;
+                    isChanged = true;
+                }
+            }
+            else
+            {
+                var input = new InputTextHandler(strval);
+
+                if (input.Draw("##value", out string newValue))
+                {
+                    var res = ushort.TryParse(newValue, out val);
+                    if (res)
+                    {
+                        newval = val;
+                        isChanged = true;
+                    }
+                }
+            }
+        }
+        else if (typ == typeof(sbyte))
+        {
+            int val = (sbyte)oldval;
+
+            if (meta != null && meta.IsBool)
+            {
+                bool bVar = false;
+
+                if (val > 0)
+                    bVar = true;
+
+                if (ImGui.Checkbox("##value", ref bVar))
+                {
+                    if (bVar == true)
+                        val = 1;
+                    else
+                        val = 0;
+
+                    newval = (sbyte)val;
+                    isChanged = true;
+                }
+            }
+            else
+            {
+                if (ImGui.InputInt("##value", ref val))
+                {
+                    newval = (sbyte)val;
+                    isChanged = true;
+                }
+            }
+        }
+        else if (typ == typeof(byte))
+        {
+            var val = (byte)oldval;
+            var strval = $@"{val}";
+
+            if (meta != null && meta.IsBool)
+            {
+                bool bVar = false;
+
+                if (val > 0)
+                    bVar = true;
+
+                if (ImGui.Checkbox("##value", ref bVar))
+                {
+                    if (bVar == true)
+                        val = 1;
+                    else
+                        val = 0;
+
+                    newval = val;
+                    isChanged = true;
+                }
+            }
+            else
+            {
+                var input = new InputTextHandler(strval);
+
+                if (input.Draw("##value", out string newValue))
+                {
+                    var res = byte.TryParse(newValue, out val);
+                    if (res)
+                    {
+                        newval = val;
+                        isChanged = true;
+                    }
+                }
+            }
+        }
+        else if (typ == typeof(bool))
+        {
+            var val = (bool)oldval;
+            if (ImGui.Checkbox("##value", ref val))
+            {
+                newval = val;
+                isChanged = true;
+            }
+        }
+        else if (typ == typeof(float))
+        {
+            var val = (float)oldval;
+            if (ImGui.DragFloat("##value", ref val, 0.1f, float.MinValue, float.MaxValue,
+                    Utils.ImGui_InputFloatFormat(val)))
+            {
+                newval = val;
+                isChanged = true;
+            }
+        }
+        else if (typ == typeof(string))
+        {
+            var val = (string)oldval;
+            if (val == null)
+            {
+                val = "";
+            }
+
+            var input = new InputTextHandler(val);
+
+            if (input.Draw("##value", out string newValue))
+            {
+                newval = newValue;
+                isChanged = true;
+            }
+        }
+        else if (typ == typeof(Vector2))
+        {
+            var val = (Vector2)oldval;
+            if (ImGui.DragFloat2("##value", ref val, 0.1f))
+            {
+                newval = val;
+                isChanged = true;
+            }
+        }
+        else if (typ == typeof(Vector3))
+        {
+            var val = (Vector3)oldval;
+
+            if (ImGui.DragFloat3("##value", ref val, 0.1f))
+            {
+                newval = val;
+                isChanged = true;
+            }
+        }
+        else if (typ.BaseType == typeof(Enum))
+        {
+            Array enumVals = typ.GetEnumValues();
+            var enumNames = typ.GetEnumNames();
+            var intVals = new int[enumVals.Length];
+
+            if (typ.GetEnumUnderlyingType() == typeof(byte))
+            {
+                for (var i = 0; i < enumVals.Length; i++)
+                {
+                    intVals[i] = (byte)enumVals.GetValue(i);
+                }
+
+                if (Utils.EnumEditor(enumVals, enumNames, oldval, out var val, intVals))
+                {
+                    newval = val;
+                    isChanged = true;
+                }
+            }
+            else if (typ.GetEnumUnderlyingType() == typeof(sbyte))
+            {
+                for (var i = 0; i < enumVals.Length; i++)
+                {
+                    intVals[i] = (sbyte)enumVals.GetValue(i);
+                }
+
+                if (Utils.EnumEditor(enumVals, enumNames, oldval, out var val, intVals))
+                {
+                    newval = val;
+                    isChanged = true;
+                }
+            }
+            else if (typ.GetEnumUnderlyingType() == typeof(int))
+            {
+                for (var i = 0; i < enumVals.Length; i++)
+                {
+                    intVals[i] = (int)enumVals.GetValue(i);
+                }
+
+                if (Utils.EnumEditor(enumVals, enumNames, oldval, out var val, intVals))
+                {
+                    newval = val;
+                    isChanged = true;
+                }
+            }
+            else if (typ.GetEnumUnderlyingType() == typeof(uint))
+            {
+                for (var i = 0; i < enumVals.Length; i++)
+                {
+                    intVals[i] = (int)(uint)enumVals.GetValue(i);
+                }
+
+                if (Utils.EnumEditor(enumVals, enumNames, oldval, out var val, intVals))
+                {
+                    newval = val;
+                    isChanged = true;
+                }
+            }
+            else
+            {
+                ImGui.Text("ImplementMe");
+            }
+        }
+        else if (typ == typeof(Color))
+        {
+            var att = prop?.GetCustomAttribute<SupportsAlphaAttribute>();
+            if (att != null)
+            {
+                if (att.Supports == false)
+                {
+                    var color = (Color)oldval;
+                    Vector3 val = new(color.R / 255.0f, color.G / 255.0f, color.B / 255.0f);
+                    if (ImGui.ColorEdit3("##value", ref val))
+                    {
+                        Color newColor = Color.FromArgb((int)(val.X * 255.0f), (int)(val.Y * 255.0f),
+                            (int)(val.Z * 255.0f));
+                        newval = newColor;
+                        isChanged = true;
+                    }
+                }
+                else
+                {
+                    var color = (Color)oldval;
+                    Vector4 val = new(color.R / 255.0f, color.G / 255.0f, color.B / 255.0f, color.A / 255.0f);
+
+                    var flags = ImGuiColorEditFlags.AlphaOpaque;
+
+                    if (ImGui.ColorEdit4("##value", ref val, flags))
+                    {
+                        Color newColor = Color.FromArgb((int)(val.W * 255.0f), (int)(val.X * 255.0f),
+                            (int)(val.Y * 255.0f), (int)(val.Z * 255.0f));
+                        newval = newColor;
+                        isChanged = true;
+                    }
+                }
+            }
+            else
+            {
+                // SoulsFormats does not define if alpha should be exposed. Expose alpha by default.
+                //Smithbox.Log(this,
+                //    $"Color property in \"{prop.DeclaringType}\" does not declare if it supports Alpha. Alpha will be exposed by default",
+                //    LogLevel.Warning, LogPriority.Low);
+
+                var color = (Color)oldval;
+                Vector4 val = new(color.R / 255.0f, color.G / 255.0f, color.B / 255.0f, color.A / 255.0f);
+
+                var flags = ImGuiColorEditFlags.AlphaOpaque;
+
+                if (ImGui.ColorEdit4("##value", ref val, flags))
+                {
+                    Color newColor = Color.FromArgb((int)(val.W * 255.0f), (int)(val.X * 255.0f),
+                        (int)(val.Y * 255.0f), (int)(val.Z * 255.0f));
+                    newval = newColor;
+                    isChanged = true;
+                }
+            }
+        }
+        else
+        {
+            ImGui.Text("ImplementMe");
+        }
+
+        var isDeactivatedAfterEdit = ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive();
+
+        ImGui.PopID();
+
+        return (isChanged, isDeactivatedAfterEdit);
+    }
 }

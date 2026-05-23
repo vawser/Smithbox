@@ -25,7 +25,9 @@ public class MsbEntryDelete : EditorAction
 
         _deletedEntries = view.Selection.SelectedEntries
             .OrderBy(kv => kv.Key)
-            .Select(kv => (kv.Key, kv.Value))
+            .Select(kv => (kv.Key, _targetList is not null && kv.Key >= 0 && kv.Key < _targetList.Count
+                ? _targetList[kv.Key]
+                : kv.Value))
             .ToList();
     }
 

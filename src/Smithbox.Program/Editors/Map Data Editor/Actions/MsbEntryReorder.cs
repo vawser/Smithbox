@@ -15,6 +15,8 @@ namespace StudioCore.Editors.MapDataEditor;
 /// </summary>
 public class MsbEntryReorder : EditorAction
 {
+    private readonly MapDataEditorView View;
+
     private readonly IList _list;
 
     private readonly List<int> _originalIndices;
@@ -25,8 +27,9 @@ public class MsbEntryReorder : EditorAction
 
     public IReadOnlyList<int> MovedIndices => _movedIndices;
 
-    public MsbEntryReorder(IList list, IEnumerable<int> selectedIndices, int toIndex)
+    public MsbEntryReorder(MapDataEditorView view, IList list, IEnumerable<int> selectedIndices, int toIndex)
     {
+        View = view;
         _list = list;
         _originalIndices = selectedIndices.OrderBy(x => x).ToList();
         _toIndex = toIndex;
@@ -38,7 +41,6 @@ public class MsbEntryReorder : EditorAction
         return ActionEvent.NoEvent;
     }
 
-    // TODO: doesn't work currently
     public override ActionEvent Undo()
     {
         if (_movedIndices is null) 
@@ -46,6 +48,8 @@ public class MsbEntryReorder : EditorAction
 
         MoveBlock(_movedIndices, _originalIndices[0]);
         _movedIndices = null;
+
+        View.MsbEditor.EntryView.RebuildEntryCache();
 
         return ActionEvent.NoEvent;
     }
