@@ -4,6 +4,12 @@
 - Map Editor
  - Check BTL saving (for DS2)
  
+- Map Data Editor
+ - Implement property edit
+ - Port over Local/Global Search and Mass Edit
+ - Implement ENFL sub-editor
+ - Add drag to re-order
+ 
 - Gparam Editor:
  - Add multi-select for the value list (and to duplicate/delete/export)
  

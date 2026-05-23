@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 using System.Reflection;
+using System.Text;
 using System.Text.RegularExpressions;
 
 namespace StudioCore.Editors.ParamEditor;
@@ -1218,6 +1219,48 @@ public class ParamRowWindow
 
                     ImGui.EndMenu();
                 }
+            }
+
+            // Information
+            if (ImGui.BeginMenu("Information"))
+            {
+                if(ImGui.Selectable("Copy ID"))
+                {
+                    var selection = ParentView.Selection.GetSelectedRows();
+                    StringBuilder _builder = new();
+                    foreach(var entry in selection)
+                    {
+                        _builder.AppendLine($"{entry.ID.ToString()}");
+                    }
+
+                    PlatformUtils.Instance.SetClipboardText(_builder.ToString());
+                }
+
+                if (ImGui.Selectable("Copy Name"))
+                {
+                    var selection = ParentView.Selection.GetSelectedRows();
+                    StringBuilder _builder = new();
+                    foreach (var entry in selection)
+                    {
+                        _builder.AppendLine(entry.Name.ToString());
+                    }
+
+                    PlatformUtils.Instance.SetClipboardText(_builder.ToString());
+                }
+
+                if (ImGui.Selectable("Copy ID and Name"))
+                {
+                    var selection = ParentView.Selection.GetSelectedRows();
+                    StringBuilder _builder = new();
+                    foreach (var entry in selection)
+                    {
+                        _builder.AppendLine($"{entry.ID.ToString()};{entry.Name.ToString()}");
+                    }
+
+                    PlatformUtils.Instance.SetClipboardText(_builder.ToString());
+                }
+
+                ImGui.EndMenu();
             }
 
             ImGui.Separator();

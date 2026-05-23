@@ -218,16 +218,16 @@ public static class DataFinderUtil
             case PARAMDEF.DefType.f32:
                 if (isRangeSearch)
                 {
-                    double floatStartVal;
-                    double floatEndVal;
+                    float floatStartVal;
+                    float floatEndVal;
 
-                    startSuccess = double.TryParse(startValue, out floatStartVal);
-                    endSuccess = double.TryParse(endValue, out floatEndVal);
+                    startSuccess = float.TryParse(startValue, out floatStartVal);
+                    endSuccess = float.TryParse(endValue, out floatEndVal);
 
                     if (startSuccess && endSuccess)
                     {
-                        if (((double)field.Value >= floatStartVal) &&
-                            ((double)field.Value <= floatEndVal))
+                        if (((float)field.Value >= floatStartVal) &&
+                            ((float)field.Value <= floatEndVal))
                         {
                             return (true, $"{field.Value}");
                         }
