@@ -25,6 +25,23 @@ You can find helpful information and guides/tutorials about Smithbox at [soulsmo
 ## Support
 If you enjoy Smithbox, feel free to support me (Vawser) via [Ko-fi](https://ko-fi.com/vawser)!
 
+## Troubleshooting
+### My game is telling me there is a 'Save Corruption' error when I launch my mod.
+
+This is an issue with your mod launch setup. For most modern games, it is recommended that you use [ME3](https://github.com/garyttierney/me3) to launch your mods. Smithbox has support for creating a ME3 profile built-in.
+
+For DS1, DS2 and pre 1.15.2 DS3, you will still need to use ModEngine2 or other mod launching solutions. In this case, you typically need to run the game with vanilla once when creating a new character. And then enable any mods. 
+
+### Smithbox starts and then immediately closes
+
+This is likely due to your graphics card lacking support for Vulkan. By default Smithbox will launch and try and use the Vulkan backend. 
+
+If this occurs, you can go to %AppData%\Local\Smithbox\Configuration, open the Configuration.json file with a text editor, and then change the System_RenderingBackend variable to 0. This will make Smithbox use the OpenGL backend, which is supported by almost all graphics cards (however it will disable viewport functionality).
+
+### Smithbox displays an error message box when I do X action
+
+If you experience a crash, please report it to the [Smithbox Discord](https://discord.gg/5p9bRKkK4J) or post the error message in the Issues tab in this repository. This will help me find and fix the causes of such crashes.
+
 ## Credits (Smithbox)
 * Vawser 
 * ivi 
