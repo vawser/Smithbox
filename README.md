@@ -26,7 +26,7 @@ You can find helpful information and guides/tutorials about Smithbox at [soulsmo
 ### Unpacking Files
 If you want to unpack games files, you should use [Nuxe](https://github.com/JKAnderson/Nuxe/releases).
 
-## Scripts
+### Scripts
 If you want to edit EMEVD scripts, you should use [DarkScript3](https://github.com/AinTunez/DarkScript3).
 
 If you want to edit ESD scripts, you should use [ESDLang](github.com/thefifthmatt/ESDLang) or [ESDStudio](https://github.com/GompDS/E) if you want a GUI interface.
