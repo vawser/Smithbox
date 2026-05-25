@@ -2,342 +2,342 @@
   "Param": "NPC_PLAYER_STATUS_PARAM",
   "Type": "NPC_PLAYER_STATUS_PARAM",
   "Name": "NPC_PLAYER_STATUS_PARAM",
-  "Description": "",
+  "Description": "Defines a player-style NPC's appearance, stats, covenant data, equipment loadout, spell setup, and inventory configuration.",
   "Fields": [
     {
       "Field": "genderType",
-      "Name": "性別",
-      "Description": ""
+      "Name": "Gender",
+      "Description": "Specifies the character's gender."
     },
     {
       "Field": "livingType",
-      "Name": "生死",
-      "Description": ""
+      "Name": "Living State",
+      "Description": "Defines whether the character is alive, undead, hollow, or another life state."
     },
     {
       "Field": "bodyType",
-      "Name": "体型",
-      "Description": ""
+      "Name": "Body Type",
+      "Description": "Specifies the character's physique or body build."
     },
     {
       "Field": "faceType",
-      "Name": "顔タイプ",
-      "Description": ""
+      "Name": "Face Type",
+      "Description": "Determines the facial structure category."
     },
     {
       "Field": "faceId",
-      "Name": "顔ID",
-      "Description": ""
+      "Name": "Face ID",
+      "Description": "References the selected face preset or facial data."
     },
     {
       "Field": "vowType",
-      "Name": "誓約",
-      "Description": ""
+      "Name": "Covenant",
+      "Description": "Specifies the covenant affiliation."
     },
     {
       "Field": "vowLevel",
-      "Name": "誓約レベル",
-      "Description": ""
+      "Name": "Covenant Level",
+      "Description": "Defines the character's covenant rank or progression level."
     },
     {
       "Field": "lifeForceLevel",
-      "Name": "生命力",
-      "Description": ""
+      "Name": "Vigor",
+      "Description": "Character level for maximum HP and survivability."
     },
     {
       "Field": "stayingPowerLevel",
-      "Name": "持久力",
-      "Description": ""
+      "Name": "Endurance",
+      "Description": "Character level affecting stamina capacity."
     },
     {
       "Field": "attunementLevel",
-      "Name": "記憶力",
-      "Description": ""
+      "Name": "Attunement",
+      "Description": "Character level affecting spell slots and spell usage."
     },
     {
       "Field": "vitalityLevel",
-      "Name": "体力",
-      "Description": ""
+      "Name": "Vitality",
+      "Description": "Character level affecting equipment load and defense."
     },
     {
       "Field": "strengthLevel",
-      "Name": "筋力",
-      "Description": ""
+      "Name": "Strength",
+      "Description": "Character strength stat level."
     },
     {
       "Field": "dexterityLevel",
-      "Name": "技量",
-      "Description": ""
+      "Name": "Dexterity",
+      "Description": "Character dexterity stat level."
     },
     {
       "Field": "intelligenceLevel",
-      "Name": "理力",
-      "Description": ""
+      "Name": "Intelligence",
+      "Description": "Character intelligence stat level."
     },
     {
       "Field": "faithLevel",
-      "Name": "信仰",
-      "Description": ""
+      "Name": "Faith",
+      "Description": "Character faith stat level."
     },
     {
       "Field": "enduranceLevel",
-      "Name": "耐久力",
-      "Description": ""
+      "Name": "Durability",
+      "Description": "Character durability or equipment degradation resistance stat."
     },
     {
       "Field": "quicknessLevel",
-      "Name": "敏捷",
-      "Description": ""
+      "Name": "Adaptability",
+      "Description": "Character agility or quickness-related stat."
     },
     {
       "Field": "luckLevel",
-      "Name": "運",
-      "Description": ""
+      "Name": "Luck",
+      "Description": "Character luck stat affecting item discovery or related mechanics."
     },
     {
       "Field": "pad00",
-      "Name": "パディング00",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "loadWeightPercent",
-      "Name": "荷重割合 [%]",
-      "Description": ""
+      "Name": "Equipment Load Percentage [%]",
+      "Description": "Current equipment burden as a percentage of maximum load."
     },
     {
       "Field": "evasionInvincibleTimePercent",
-      "Name": "回避無敵期間割合 [%]",
-      "Description": ""
+      "Name": "Evasion Invincibility Percentage [%]",
+      "Description": "Modifier affecting invincibility frames during dodges."
     },
     {
       "Field": "beltItem01",
-      "Name": "ベルトスロット 01 [アイテム]",
-      "Description": ""
+      "Name": "Belt Slot 01 [Item]",
+      "Description": "Assigned quick-access belt item slot."
     },
     {
       "Field": "beltItem02",
-      "Name": "ベルトスロット 02 [アイテム]",
-      "Description": ""
+      "Name": "Belt Slot 02 [Item]",
+      "Description": "Assigned quick-access belt item slot."
     },
     {
       "Field": "beltItem03",
-      "Name": "ベルトスロット 03 [アイテム]",
-      "Description": ""
+      "Name": "Belt Slot 03 [Item]",
+      "Description": "Assigned quick-access belt item slot."
     },
     {
       "Field": "beltItem04",
-      "Name": "ベルトスロット 04 [アイテム]",
-      "Description": ""
+      "Name": "Belt Slot 04 [Item]",
+      "Description": "Assigned quick-access belt item slot."
     },
     {
       "Field": "beltItem05",
-      "Name": "ベルトスロット 05 [アイテム]",
-      "Description": ""
+      "Name": "Belt Slot 05 [Item]",
+      "Description": "Assigned quick-access belt item slot."
     },
     {
       "Field": "beltItem06",
-      "Name": "ベルトスロット 06 [アイテム]",
-      "Description": ""
+      "Name": "Belt Slot 06 [Item]",
+      "Description": "Assigned quick-access belt item slot."
     },
     {
       "Field": "beltItem07",
-      "Name": "ベルトスロット 07 [アイテム]",
-      "Description": ""
+      "Name": "Belt Slot 07 [Item]",
+      "Description": "Assigned quick-access belt item slot."
     },
     {
       "Field": "beltItem08",
-      "Name": "ベルトスロット 08 [アイテム]",
-      "Description": ""
+      "Name": "Belt Slot 08 [Item]",
+      "Description": "Assigned quick-access belt item slot."
     },
     {
       "Field": "beltItem09",
-      "Name": "ベルトスロット 09 [アイテム]",
-      "Description": ""
+      "Name": "Belt Slot 09 [Item]",
+      "Description": "Assigned quick-access belt item slot."
     },
     {
       "Field": "beltItem10",
-      "Name": "ベルトスロット 10 [アイテム]",
-      "Description": ""
+      "Name": "Belt Slot 10 [Item]",
+      "Description": "Assigned quick-access belt item slot."
     },
     {
       "Field": "spellSlotItem01",
-      "Name": "スペルスロット 01 アイテム",
-      "Description": ""
+      "Name": "Spell Slot 01",
+      "Description": "Spell assigned to spell slot 1."
     },
     {
       "Field": "spellSlotItem02",
-      "Name": "スペルスロット 02 アイテム",
-      "Description": ""
+      "Name": "Spell Slot 02",
+      "Description": "Spell assigned to spell slot 2."
     },
     {
       "Field": "spellSlotItem03",
-      "Name": "スペルスロット 03 アイテム",
-      "Description": ""
+      "Name": "Spell Slot 03",
+      "Description": "Spell assigned to spell slot 3."
     },
     {
       "Field": "spellSlotItem04",
-      "Name": "スペルスロット 04 アイテム",
-      "Description": ""
+      "Name": "Spell Slot 04",
+      "Description": "Spell assigned to spell slot 4."
     },
     {
       "Field": "spellSlotItem05",
-      "Name": "スペルスロット 05 アイテム",
-      "Description": ""
+      "Name": "Spell Slot 05",
+      "Description": "Spell assigned to spell slot 5."
     },
     {
       "Field": "spellSlotItem06",
-      "Name": "スペルスロット 06 アイテム",
-      "Description": ""
+      "Name": "Spell Slot 06",
+      "Description": "Spell assigned to spell slot 6."
     },
     {
       "Field": "spellSlotItem07",
-      "Name": "スペルスロット 07 アイテム",
-      "Description": ""
+      "Name": "Spell Slot 07",
+      "Description": "Spell assigned to spell slot 7."
     },
     {
       "Field": "spellSlotItem08",
-      "Name": "スペルスロット 08 アイテム",
-      "Description": ""
+      "Name": "Spell Slot 08",
+      "Description": "Spell assigned to spell slot 8."
     },
     {
       "Field": "spellSlotItem09",
-      "Name": "スペルスロット 09 アイテム",
-      "Description": ""
+      "Name": "Spell Slot 09",
+      "Description": "Spell assigned to spell slot 9."
     },
     {
       "Field": "spellSlotItem10",
-      "Name": "スペルスロット 10 アイテム",
-      "Description": ""
+      "Name": "Spell Slot 10",
+      "Description": "Spell assigned to spell slot 10."
     },
     {
       "Field": "rightWeapon01",
-      "Name": "右武器 01",
-      "Description": ""
+      "Name": "Right Weapon 01",
+      "Description": "Primary right-hand weapon slot."
     },
     {
       "Field": "rightWeapon02",
-      "Name": "右武器 02",
-      "Description": ""
+      "Name": "Right Weapon 02",
+      "Description": "Secondary right-hand weapon slot."
     },
     {
       "Field": "rightWeapon03",
-      "Name": "右武器 03",
-      "Description": ""
+      "Name": "Right Weapon 03",
+      "Description": "Tertiary right-hand weapon slot."
     },
     {
       "Field": "leftWeapon01",
-      "Name": "左武器 01",
-      "Description": ""
+      "Name": "Left Weapon 01",
+      "Description": "Primary left-hand weapon slot."
     },
     {
       "Field": "leftWeapon02",
-      "Name": "左武器 02",
-      "Description": ""
+      "Name": "Left Weapon 02",
+      "Description": "Secondary left-hand weapon slot."
     },
     {
       "Field": "leftWeapon03",
-      "Name": "左武器 03",
-      "Description": ""
+      "Name": "Left Weapon 03",
+      "Description": "Tertiary left-hand weapon slot."
     },
     {
       "Field": "headArmor",
-      "Name": "頭防具",
-      "Description": ""
+      "Name": "Head Armor",
+      "Description": "Equipped helmet or head armor."
     },
     {
       "Field": "bodyArmor",
-      "Name": "胴防具",
-      "Description": ""
+      "Name": "Body Armor",
+      "Description": "Equipped chest armor."
     },
     {
       "Field": "armArmor",
-      "Name": "腕防具",
-      "Description": ""
+      "Name": "Arm Armor",
+      "Description": "Equipped gauntlets or arm armor."
     },
     {
       "Field": "legArmor",
-      "Name": "足防具",
-      "Description": ""
+      "Name": "Leg Armor",
+      "Description": "Equipped leggings or leg armor."
     },
     {
       "Field": "ringSlot01",
-      "Name": "指輪 01 ID",
-      "Description": ""
+      "Name": "Ring 01",
+      "Description": "Ring equipped in slot 1."
     },
     {
       "Field": "ringSlot02",
-      "Name": "指輪 02 ID",
-      "Description": ""
+      "Name": "Ring 02",
+      "Description": "Ring equipped in slot 2."
     },
     {
       "Field": "ringSlot03",
-      "Name": "指輪 03 ID",
-      "Description": ""
+      "Name": "Ring 03",
+      "Description": "Ring equipped in slot 3."
     },
     {
       "Field": "ringSlot04",
-      "Name": "指輪 04 ID",
-      "Description": ""
+      "Name": "Ring 04",
+      "Description": "Ring equipped in slot 4."
     },
     {
       "Field": "arrowSlot01",
-      "Name": "矢 01 ID",
-      "Description": ""
+      "Name": "Arrow 01",
+      "Description": "Arrow ammunition slot 1."
     },
     {
       "Field": "arrowSlot02",
-      "Name": "矢 02 ID",
-      "Description": ""
+      "Name": "Arrow 02",
+      "Description": "Arrow ammunition slot 2."
     },
     {
       "Field": "boltSlot01",
-      "Name": "ボルト 01 ID",
-      "Description": ""
+      "Name": "Bolt 01",
+      "Description": "Bolt ammunition slot 1."
     },
     {
       "Field": "boltSlot02",
-      "Name": "ボルト 02 ID",
-      "Description": ""
+      "Name": "Bolt 02",
+      "Description": "Bolt ammunition slot 2."
     },
     {
       "Field": "gestureSlot01",
-      "Name": "ジェスチャー 01 ID",
-      "Description": ""
+      "Name": "Gesture 01",
+      "Description": "Assigned gesture slot 1."
     },
     {
       "Field": "gestureSlot02",
-      "Name": "ジェスチャー 02 ID",
-      "Description": ""
+      "Name": "Gesture 02",
+      "Description": "Assigned gesture slot 2."
     },
     {
       "Field": "gestureSlot03",
-      "Name": "ジェスチャー 03 ID",
-      "Description": ""
+      "Name": "Gesture 03",
+      "Description": "Assigned gesture slot 3."
     },
     {
       "Field": "gestureSlot04",
-      "Name": "ジェスチャー 04 ID",
-      "Description": ""
+      "Name": "Gesture 04",
+      "Description": "Assigned gesture slot 4."
     },
     {
       "Field": "gestureSlot05",
-      "Name": "ジェスチャー 05 ID",
-      "Description": ""
+      "Name": "Gesture 05",
+      "Description": "Assigned gesture slot 5."
     },
     {
       "Field": "gestureSlot06",
-      "Name": "ジェスチャー 06 ID",
-      "Description": ""
+      "Name": "Gesture 06",
+      "Description": "Assigned gesture slot 6."
     },
     {
       "Field": "gestureSlot07",
-      "Name": "ジェスチャー 07 ID",
-      "Description": ""
+      "Name": "Gesture 07",
+      "Description": "Assigned gesture slot 7."
     },
     {
       "Field": "gestureSlot08",
-      "Name": "ジェスチャー 08 ID",
-      "Description": ""
+      "Name": "Gesture 08",
+      "Description": "Assigned gesture slot 8."
     }
   ]
 }

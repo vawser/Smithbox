@@ -1,7259 +1,7299 @@
 [
   {
     "ID": "o00_0001",
-    "Name": "",
+    "Name": "Ground for Model Viewer",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0100",
-    "Name": "",
+    "Name": "Bonfire",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0101",
-    "Name": "",
+    "Name": "Bonfire (Unused?)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0200",
-    "Name": "",
+    "Name": "Wooden Treasure Chest",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0202",
-    "Name": "",
+    "Name": "Wooden Treasure Chest (Trap)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0210",
-    "Name": "",
+    "Name": "Iron Treasure Chest",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0230",
-    "Name": "",
+    "Name": "Stone Treasure Chest",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0240",
-    "Name": "",
+    "Name": "Treasure Corpse (Hollow)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0241",
-    "Name": "",
+    "Name": "Treasure Corpse (Supplicant)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0242",
-    "Name": "",
+    "Name": "Treasure Corpse (Foreigner)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0243",
-    "Name": "",
+    "Name": "Treasure Corpse (Tseldoran Settler)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0244",
-    "Name": "",
+    "Name": "Treasure Corpse (Infantry)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0245",
-    "Name": "",
+    "Name": "Treasure Corpse (Peasant)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0246",
-    "Name": "",
+    "Name": "Treasure Corpse (Varangian)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0247",
-    "Name": "",
+    "Name": "Treasure Corpse (Soldier)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0248",
-    "Name": "",
+    "Name": "Treasure Corpse (Prisoner)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0249",
-    "Name": "",
+    "Name": "Treasure Corpse (Pyromancer)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0250",
-    "Name": "",
+    "Name": "Treasure Corpse (Knight)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0251",
-    "Name": "",
+    "Name": "Treasure Corpse (Hunter)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0252",
-    "Name": "",
+    "Name": "Treasure Corpse (Warrior)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0253",
-    "Name": "",
+    "Name": "Treasure Corpse (Elite Knight)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0254",
-    "Name": "",
+    "Name": "Treasure Corpse (Dragon Acolyte)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0255",
-    "Name": "",
+    "Name": "Treasure Corpse (Saulden)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0256",
-    "Name": "",
+    "Name": "Treasure Corpse (Skeleton)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0257",
-    "Name": "",
+    "Name": "Treasure Corpse (Human Skull)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0258",
-    "Name": "",
+    "Name": "Treasure Corpse (Bone Pile)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0259",
-    "Name": "",
+    "Name": "Cow Skeleton",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0260",
-    "Name": "",
+    "Name": "Goat Skull",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0290",
-    "Name": "",
+    "Name": "Petrified Corpse",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0300",
-    "Name": "",
+    "Name": "Wooden Door",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0301",
-    "Name": "",
+    "Name": "Wooden Door",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0302",
-    "Name": "",
+    "Name": "Wooden Door - Things Betwixt",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0303",
-    "Name": "",
+    "Name": "Wooden Door (Old)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0304",
-    "Name": "",
+    "Name": "Wooden Door (Round Top)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0305",
-    "Name": "",
+    "Name": "Wooden Door",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0306",
-    "Name": "",
+    "Name": "Wooden Door",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0307",
-    "Name": "",
+    "Name": "Lattice Gate",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0308",
-    "Name": "",
+    "Name": "Iron Door",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0310",
-    "Name": "",
+    "Name": "Wooden Door - Unused",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0311",
-    "Name": "",
+    "Name": "Wooden Door - Unused",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0312",
-    "Name": "",
+    "Name": "Wooden Door - Unused",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0314",
-    "Name": "",
+    "Name": "Soldier Door (Destructible)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0315",
-    "Name": "",
+    "Name": "Soldier Door",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0316",
-    "Name": "",
+    "Name": "Prison Door - The Lost Bastille",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0317",
-    "Name": "",
+    "Name": "A-san House Key Door -- \u3010\u6C4E\u7528\u3011\uFF21\u3055\u3093\u5B85\u306E\u9375\u6249",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0318",
-    "Name": "",
+    "Name": "King\u0027s Ring Door -- \u3010\u6C4E\u7528\u3011\u738B\u306E\u6307\u8F2A\u306E\u6249",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0319",
-    "Name": "",
+    "Name": "Royal Soldier Door -- \u738B\u5175\u306E\u6249",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0320",
-    "Name": "",
+    "Name": "Door \u0022Unbreakable\u0022 -- \u58CA\u308C\u306A\u3044",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0321",
-    "Name": "",
+    "Name": "Door \u0022Unbreakable\u0022 -- \u58CA\u308C\u306A\u3044",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0322",
-    "Name": "",
+    "Name": "Door \u0022Unbreakable\u0022 -- \u58CA\u308C\u306A\u3044",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0323",
-    "Name": "",
+    "Name": "Door (Old) \u0022Unbreakable\u0022 -- \u58CA\u308C\u306A\u3044",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0324",
-    "Name": "",
+    "Name": "Door (Round Top) \u0022Unbreakable\u0022 -- \u58CA\u308C\u306A\u3044",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0325",
-    "Name": "",
+    "Name": "Door \u0022Unbreakable\u0022 -- \u58CA\u308C\u306A\u3044",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0326",
-    "Name": "",
+    "Name": "Door \u0022Unbreakable\u0022 -- \u58CA\u308C\u306A\u3044",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0327",
-    "Name": "",
+    "Name": "Lattice Gate \u0022Unbreakable\u0022 -- \u58CA\u308C\u306A\u3044",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0329",
-    "Name": "",
+    "Name": "Iron Bars Door - Drangleic Castle",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0330",
-    "Name": "",
+    "Name": "Iron Bars Door",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0370",
-    "Name": "",
+    "Name": "Wooden Door",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0372",
-    "Name": "",
+    "Name": "Wooden Door",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0373",
-    "Name": "",
+    "Name": "Iron Door",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0374",
-    "Name": "",
+    "Name": "Iron Bars Door",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0375",
-    "Name": "",
+    "Name": "Iron Door - Drangleic Castle",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0400",
-    "Name": "",
+    "Name": "Wood Door -- \u3010\u6C4E\u7528\u3011\u6728\u306E\u4E21\u6249\u3000\u8EFD",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0471",
-    "Name": "",
+    "Name": "Large Iron Door",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0472",
-    "Name": "",
+    "Name": "Heavy Stone Door -- \u3010\u6C4E\u7528\u3011\u77F3\u306E\u4E21\u6249\u3000\u91CD",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0473",
-    "Name": "",
+    "Name": "Heavy Iron Door",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0474",
-    "Name": "",
+    "Name": "Heavy Stone Door",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0475",
-    "Name": "",
+    "Name": "Heavy Stone Door (Old) -- \u3010\u6C4E\u7528\u3011\u77F3\u306E\u4E21\u6249\u3000\u91CD\uFF08\u53E4\u3073\u305F\u6249\uFF09",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0476",
-    "Name": "",
+    "Name": "King\u0027s Door",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0500",
-    "Name": "",
+    "Name": "Fog Gate (Small)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0501",
-    "Name": "",
+    "Name": "Fog Gate (Medium)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0502",
-    "Name": "",
+    "Name": "Fog Gate (Large)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0503",
-    "Name": "",
+    "Name": "Fog Gate (Shaded Woods)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0504",
-    "Name": "",
+    "Name": "Fog Gate (Drangleic Castle)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0505",
-    "Name": "",
+    "Name": "Fog Gate (Undead Crypt)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0600",
-    "Name": "",
+    "Name": "Vertical Lever",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0640",
-    "Name": "",
+    "Name": "Floor Lever (Multiple uses)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0660",
-    "Name": "",
+    "Name": "Floor Lever (One use only)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0680",
-    "Name": "",
+    "Name": "Floor Lever (Hold to use)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0700",
-    "Name": "",
+    "Name": "Floor Switch",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0720",
-    "Name": "",
+    "Name": "Wall Lever",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0721",
-    "Name": "",
+    "Name": "Wall Lever",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0760",
-    "Name": "",
+    "Name": "Strap Switch",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0780",
-    "Name": "",
+    "Name": "Valve",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0800",
-    "Name": "",
+    "Name": "Rope (Test)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0801",
-    "Name": "",
+    "Name": "Rope 6m",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0802",
-    "Name": "",
+    "Name": "Rope 12m",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0803",
-    "Name": "",
+    "Name": "Rope 15m",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0804",
-    "Name": "",
+    "Name": "Rope 18m",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0805",
-    "Name": "",
+    "Name": "Rope 21m",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0806",
-    "Name": "",
+    "Name": "Rope 12m",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0807",
-    "Name": "",
+    "Name": "Rope 24m",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0808",
-    "Name": "",
+    "Name": "Rope 27m",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0809",
-    "Name": "",
+    "Name": "Rope 30m",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0810",
-    "Name": "",
+    "Name": "Rope 40m",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0900",
-    "Name": "",
+    "Name": "Ladder (3.8m)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0901",
-    "Name": "",
+    "Name": "Ladder (4.6m)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0902",
-    "Name": "",
+    "Name": "Ladder (5.0m)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0903",
-    "Name": "",
+    "Name": "Ladder (6.2m)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0904",
-    "Name": "",
+    "Name": "Ladder (7.4m)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0905",
-    "Name": "",
+    "Name": "Ladder (7.8m)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0906",
-    "Name": "",
+    "Name": "Ladder (8.6m)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0907",
-    "Name": "",
+    "Name": "Ladder (9.8m)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0908",
-    "Name": "",
+    "Name": "Ladder (10.2m)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0909",
-    "Name": "",
+    "Name": "Ladder (11m)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0910",
-    "Name": "",
+    "Name": "Ladder (12.2m)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0911",
-    "Name": "",
+    "Name": "Ladder (12.6m)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0912",
-    "Name": "",
+    "Name": "Ladder (13.4m)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0913",
-    "Name": "",
+    "Name": "Ladder (14.6m)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0914",
-    "Name": "",
+    "Name": "Ladder (15m)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0915",
-    "Name": "",
+    "Name": "Ladder (15.8m)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0916",
-    "Name": "",
+    "Name": "Ladder (16.6m)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0917",
-    "Name": "",
+    "Name": "Ladder (17.4m)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0918",
-    "Name": "",
+    "Name": "Ladder (18.2m)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0919",
-    "Name": "",
+    "Name": "Ladder (19m)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0920",
-    "Name": "",
+    "Name": "Ladder (20.2m)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0921",
-    "Name": "",
+    "Name": "Ladder (21.6m)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0922",
-    "Name": "",
+    "Name": "Ladder (22.4m)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0923",
-    "Name": "",
+    "Name": "Wooden Ladder (7.4m)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0924",
-    "Name": "",
+    "Name": "Wooden Ladder (8.6m)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0925",
-    "Name": "",
+    "Name": "Wooden Ladder (9.8m)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0926",
-    "Name": "",
+    "Name": "Wooden Ladder (11m)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0927",
-    "Name": "",
+    "Name": "Wooden Ladder (12.2m)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0928",
-    "Name": "",
+    "Name": "Wooden Ladder (13.4m)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0929",
-    "Name": "",
+    "Name": "Wooden Ladder (14.6m)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0930",
-    "Name": "",
+    "Name": "Wooden Ladder (15.8m)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0931",
-    "Name": "",
+    "Name": "Ladder (28.6m)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0932",
-    "Name": "",
+    "Name": "Ladder (29.4m)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0933",
-    "Name": "",
+    "Name": "Ladder (30.2m)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_0940",
-    "Name": "",
+    "Name": "NPC sets up a ladder -- \uFF2E\uFF30\uFF23\u304C\u68AF\u5B50\u304B\u3051",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_1000",
-    "Name": "",
+    "Name": "Tree",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_1010",
-    "Name": "",
+    "Name": "Brazier",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_1011",
-    "Name": "",
+    "Name": "Lockstone Brazier -- \u866B\u9375\u306E\u706F\u706B\u53F0",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_1020",
-    "Name": "",
+    "Name": "Bonfire for Invasion Event -- \u3010\u6C4E\u7528\u3011\u8972\u6483\u30A4\u30D9\u30F3\u30C8\u7528\u304B\u304C\u308A\u706B",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_1030",
-    "Name": "",
+    "Name": "Skeleton (Breakable)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_1040",
-    "Name": "",
+    "Name": "Bones that crack when stepped on",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_1060",
-    "Name": "",
+    "Name": "Saw Blade",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_1061",
-    "Name": "",
+    "Name": "Saw Blade",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_1062",
-    "Name": "",
+    "Name": "Wall Trap (Vertical)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_1063",
-    "Name": "",
+    "Name": "Wall Switch",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_1064",
-    "Name": "",
+    "Name": "Wall Trap (Horizontal)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_1080",
-    "Name": "",
+    "Name": "DLC Key Shrine",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_1100",
-    "Name": "",
+    "Name": "Brazier (For PG Test) -- \u7A2E\u706B\u706F\u706B\u53F0\uFF08PG\u30C6\u30B9\u30C8\u7528\uFF09",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_1810",
-    "Name": "",
+    "Name": "Pharros Contraption - Shrine of Amana",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_1900",
-    "Name": "",
+    "Name": "Brazier",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_1901",
-    "Name": "",
+    "Name": "Brazier (Stone)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_1930",
-    "Name": "",
+    "Name": "Wall Torch",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_1960",
-    "Name": "",
+    "Name": "Brazier that can be lit -- \u3010\u5C0F\u578B\u5E8A\u8A2D\u7F6E\u30BF\u30A4\u30D7\u3011\u706B\u3092\u4ED8\u3051\u3089\u308C\u308B\u706F\u706B\u53F0\uFF08\u57CE)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2000",
-    "Name": "",
+    "Name": "Barrel",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2001",
-    "Name": "",
+    "Name": "Cart",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2002",
-    "Name": "",
+    "Name": "Barrel with stand",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2003",
-    "Name": "",
+    "Name": "Barrel (2 pieces)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2004",
-    "Name": "",
+    "Name": "Barrel (3 pieces)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2010",
-    "Name": "",
+    "Name": "Box",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2011",
-    "Name": "",
+    "Name": "Box Stack",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2012",
-    "Name": "",
+    "Name": "Box (3 pieces)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2013",
-    "Name": "",
+    "Name": "Box (4 pieces)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2015",
-    "Name": "",
+    "Name": "Torch Box \u677E\u660E,\u7BB1 -- \u3010\u6C4E\u7528\u3011\u7BB1\u305F\u3044\u307E\u3064",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2020",
-    "Name": "",
+    "Name": "Bones",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2030",
-    "Name": "",
+    "Name": "Table",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2040",
-    "Name": "",
+    "Name": "Chair",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2050",
-    "Name": "",
+    "Name": "Bucket",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2060",
-    "Name": "",
+    "Name": "Basket",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2070",
-    "Name": "",
+    "Name": "Sand Bag",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2080",
-    "Name": "",
+    "Name": "Bag",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2090",
-    "Name": "",
+    "Name": "Shelf",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2100",
-    "Name": "",
+    "Name": "Vase",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2110",
-    "Name": "",
+    "Name": "Skull",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2111",
-    "Name": "",
+    "Name": "Falling Painting 1 - Aldia\u0027s Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2112",
-    "Name": "",
+    "Name": "Falling Painting 2 - Aldia\u0027s Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2113",
-    "Name": "",
+    "Name": "Falling Painting 3 - Aldia\u0027s Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2114",
-    "Name": "",
+    "Name": "Falling Painting 4 - Aldia\u0027s Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2120",
-    "Name": "",
+    "Name": "Fruit Basket",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2130",
-    "Name": "",
+    "Name": "Filth Water Jar",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2200",
-    "Name": "",
+    "Name": "Barrel",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2210",
-    "Name": "",
+    "Name": "Barrel",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2220",
-    "Name": "",
+    "Name": "Wooden Barrel",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2230",
-    "Name": "",
+    "Name": "Wooden Chair",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2240",
-    "Name": "",
+    "Name": "Explosive Barrel",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2241",
-    "Name": "",
+    "Name": "Explosive Barrel with stand",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2242",
-    "Name": "",
+    "Name": "Explosive Barrel with stand (3 pieces)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2243",
-    "Name": "",
+    "Name": "Explosive Barrels (2 pieces)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2244",
-    "Name": "",
+    "Name": "Explosive Barrels (3 pieces)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2245",
-    "Name": "",
+    "Name": "Explosive Barrels with high stand",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2250",
-    "Name": "",
+    "Name": "Barrel Stack",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2260",
-    "Name": "",
+    "Name": "Box Stack",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2270",
-    "Name": "",
+    "Name": "Table",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2280",
-    "Name": "",
+    "Name": "Jar",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2290",
-    "Name": "",
+    "Name": "Wooden Plank",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2300",
-    "Name": "",
+    "Name": "Pot",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2310",
-    "Name": "",
+    "Name": "Weapon Rack (Empty)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2313",
-    "Name": "",
+    "Name": "Weapon Rack (Halberd)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2315",
-    "Name": "",
+    "Name": "Armor Stand (Knight)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2320",
-    "Name": "",
+    "Name": "Tableware 1",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2370",
-    "Name": "",
+    "Name": "Brazier A",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2380",
-    "Name": "",
+    "Name": "Brazier B",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2390",
-    "Name": "",
+    "Name": "Wall Torch",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2400",
-    "Name": "",
+    "Name": "Wall Torch",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2410",
-    "Name": "",
+    "Name": "Bamboo Torch (Handy Type)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2420",
-    "Name": "",
+    "Name": "Old Bench",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2430",
-    "Name": "",
+    "Name": "Long Bench",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2440",
-    "Name": "",
+    "Name": "Church Bench",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2445",
-    "Name": "",
+    "Name": "Cart Wheel",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2450",
-    "Name": "",
+    "Name": "Chair (Wood Carvings)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2460",
-    "Name": "",
+    "Name": "Folding Chair",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2470",
-    "Name": "",
+    "Name": "Folding Chair",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2480",
-    "Name": "",
+    "Name": "Folding Chair",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2490",
-    "Name": "",
+    "Name": "Stool",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2500",
-    "Name": "",
+    "Name": "Chair",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2510",
-    "Name": "",
+    "Name": "Fancy Chair with painting",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2520",
-    "Name": "",
+    "Name": "Fancy Chair",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2530",
-    "Name": "",
+    "Name": "Chair (NPC only)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2540",
-    "Name": "",
+    "Name": "Chair with wheels",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2550",
-    "Name": "",
+    "Name": "Desk",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2560",
-    "Name": "",
+    "Name": "Desk with drawers",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2570",
-    "Name": "",
+    "Name": "Storage Box 1",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2580",
-    "Name": "",
+    "Name": "Storage Box 2",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2590",
-    "Name": "",
+    "Name": "Storage Box 3",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2600",
-    "Name": "",
+    "Name": "Storage Box 4",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2601",
-    "Name": "",
+    "Name": "Storage Box 5",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2611",
-    "Name": "",
+    "Name": "Small Wooden Box 1",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2612",
-    "Name": "",
+    "Name": "Small Wooden Box 2",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2613",
-    "Name": "",
+    "Name": "Small Wooden Box 3",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2620",
-    "Name": "",
+    "Name": "Candle Stand 1",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2630",
-    "Name": "",
+    "Name": "Candle Stand 2",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2640",
-    "Name": "",
+    "Name": "Candle Stand 3",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2650",
-    "Name": "",
+    "Name": "Candle Stand 4 (Wall)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2660",
-    "Name": "",
+    "Name": "Bucket",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2670",
-    "Name": "",
+    "Name": "Tableware 2",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2680",
-    "Name": "",
+    "Name": "Tableware 3",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2690",
-    "Name": "",
+    "Name": "Tableware 4",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2700",
-    "Name": "",
+    "Name": "Barricade",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2720",
-    "Name": "",
+    "Name": "Box",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2730",
-    "Name": "",
+    "Name": "Desk",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2740",
-    "Name": "",
+    "Name": "Antique Vase",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2750",
-    "Name": "",
+    "Name": "Old Vase",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2970",
-    "Name": "",
+    "Name": "Destruction Test (Wall) -- \u3010\u6C4E\u7528\u3011\u30C6\u30B9\u30C8\u7834\u58CA\uFF08\u58C1\uFF09",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2980",
-    "Name": "",
+    "Name": "Destruction Test (Handrail) -- \u30C6\u30B9\u30C8\u7834\u58CA\uFF08\u624B\u3059\u308A\uFF09",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2990",
-    "Name": "",
+    "Name": "Destruction Test (Wall) -- \u3010\u6C4E\u7528\u3011\u30C6\u30B9\u30C8\u7834\u58CA\uFF08\u58C1\uFF09",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2991",
-    "Name": "",
+    "Name": "Destruction Test (Handrail) -- \u3010\u6C4E\u7528\u3011\u30C6\u30B9\u30C8\u7834\u58CA\uFF08\u5E8A\uFF09",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2992",
-    "Name": "",
+    "Name": "Destruction Test (Floor) -- \u3010\u6C4E\u7528\u3011\u30C6\u30B9\u30C8\u7834\u58CA\uFF08\u5E8A\uFF09",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2993",
-    "Name": "",
+    "Name": "Shelf",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2994",
-    "Name": "",
+    "Name": "Sundial",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2995",
-    "Name": "",
+    "Name": "Bookshelf",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2996",
-    "Name": "",
+    "Name": "Storage Shelf",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2997",
-    "Name": "",
+    "Name": "Storage Shelf",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2998",
-    "Name": "",
+    "Name": "Poison Jar (Test)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_2999",
-    "Name": "",
+    "Name": "Poison Jar",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_3001",
-    "Name": "",
+    "Name": "Oil Jar",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_3002",
-    "Name": "",
+    "Name": "Curse Jar -- \u3010\u6C4E\u7528\u3011\u3060\u3089\u3060\u3089\u58FA",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_3003",
-    "Name": "",
+    "Name": "Corrosive Jar (Big)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_3004",
-    "Name": "",
+    "Name": "Corrosive Jar",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_3005",
-    "Name": "",
+    "Name": "Poison Jar (Small)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_3006",
-    "Name": "",
+    "Name": "Poison Jar (Medium)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_3007",
-    "Name": "",
+    "Name": "Oil Jar -- \u3010\u6C4E\u7528\u3011\u6CB9\u58FA",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_3010",
-    "Name": "",
+    "Name": "Flying Dragon\u0027s Egg -- \u98DB\u7ADC\u306E\u5375",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_3015",
-    "Name": "",
+    "Name": "Jar (Small)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_3016",
-    "Name": "",
+    "Name": "Jar (Medium)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_3020",
-    "Name": "",
+    "Name": "Collapsing Floor -- \u3010\u6C4E\u7528\u3011\u58CA\u308C\u308B\u5E8A",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_4900",
-    "Name": "",
+    "Name": "[No Mesh] Petrified Giant Guard Captain",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_4901",
-    "Name": "",
+    "Name": "[No Mesh] Petrified Giant Guard Captain (616 pieces)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_4902",
-    "Name": "",
+    "Name": "[No Mesh] Petrified Giant Guard Captain (408 pieces)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_4903",
-    "Name": "",
+    "Name": "[No Mesh] Petrified Giant Guard Captain (209 pieces)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_4904",
-    "Name": "",
+    "Name": "Petrified Demon of Song",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_4905",
-    "Name": "",
+    "Name": "Demon of Song Tail",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_4907",
-    "Name": "",
+    "Name": "Petrified Covetous Demon",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_4908",
-    "Name": "",
+    "Name": "Covetous Demon Tail",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_4913",
-    "Name": "",
+    "Name": "Najka\u0027s Right Tail",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_4914",
-    "Name": "",
+    "Name": "Najka\u0027s Left Tail",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_4915",
-    "Name": "",
+    "Name": "The Duke\u0027s Dear Freja Head",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_4917",
-    "Name": "",
+    "Name": "Mytha, the Baneful Queen Tail",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_4918",
-    "Name": "",
+    "Name": "Guardian Dragon Tail",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_5000",
-    "Name": "",
+    "Name": "Apple",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_5010",
-    "Name": "",
+    "Name": "Box that shifts-- \u30BA\u30EC\u308B\u7BB1",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_6000",
-    "Name": "",
+    "Name": "Rat",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_6001",
-    "Name": "",
+    "Name": "Goat Skull",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_6002",
-    "Name": "",
+    "Name": "Cow Skeleton",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_6010",
-    "Name": "",
+    "Name": "Brown Chicken",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_6011",
-    "Name": "",
+    "Name": "White Chicken",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_6020",
-    "Name": "",
+    "Name": "Skeleton",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_6030",
-    "Name": "",
+    "Name": "Fish",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_6031",
-    "Name": "",
+    "Name": "Fish",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_6040",
-    "Name": "",
+    "Name": "Spiders",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_6050",
-    "Name": "",
+    "Name": "Poison Moth",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_6060",
-    "Name": "",
+    "Name": "Wraith\u0027s Crow",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_6070",
-    "Name": "",
+    "Name": "Skeleton Lord",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_6090",
-    "Name": "",
+    "Name": "The Pursuer\u0027s Hawk",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_7000",
-    "Name": "",
+    "Name": "Swaying Grass",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_7100",
-    "Name": "",
+    "Name": "Screaming Tree -- \u3010\u6C4E\u7528\u3011\u53EB\u3076\u6728",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_9000",
-    "Name": "",
+    "Name": "Alignment Dummy",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_9010",
-    "Name": "",
+    "Name": "Wall Torch",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_9011",
-    "Name": "",
+    "Name": "Wall Torch",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_9012",
-    "Name": "",
+    "Name": "Skull Candle",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_9013",
-    "Name": "",
+    "Name": "Lit Candles",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_9014",
-    "Name": "",
+    "Name": "Candles",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_9015",
-    "Name": "",
+    "Name": "Hanging Torch",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_9016",
-    "Name": "",
+    "Name": "Hanging Lamp",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_9017",
-    "Name": "",
+    "Name": "Wall Lamp",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_9020",
-    "Name": "",
+    "Name": "Wall Torch",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_9040",
-    "Name": "",
+    "Name": "Tree of a Giant",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_9050",
-    "Name": "",
+    "Name": "Tombstone",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_9060",
-    "Name": "",
+    "Name": "Decoy Object -- \u3010\u6C4E\u7528\u3011\u30C7\u30B3\u30A4OBJ",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_9070",
-    "Name": "",
+    "Name": "Tree of a Giant (For warping)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_9105",
-    "Name": "",
+    "Name": "Bird Nest",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_9110",
-    "Name": "",
+    "Name": "Early Drangleic Castle (Distant view)",
     "Tags": [
       ""
     ]
   },
   {
+    "ID": "o00_9111",
+    "Name": "Early Giant Lord",
+    "Tags": []
+  },
+  {
     "ID": "o00_9112",
-    "Name": "",
+    "Name": "The Lost Sinner",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_9113",
-    "Name": "",
+    "Name": "Tar Pool",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_9114",
-    "Name": "",
+    "Name": "Furnace Lid -- \u3010\u6C4E\u7528\u3011\u7089\u5185\u306E\u5185\u84CB",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_9115",
-    "Name": "",
+    "Name": "Drawbridge Lever -- \u3010\u6C4E\u7528\u3011\u30EC\u30D0\u30FC\u8D77\u52D5\u8DF3\u306D\u6A4B",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_9116",
-    "Name": "",
+    "Name": "Valve -- \u3010\u6C4E\u7528\u3011\u4EEE\u30CF\u30F3\u30C9\u30EB",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_9117",
-    "Name": "",
+    "Name": "Bell Keeper\u0027s Bell -- \u9418\u5B88\u308A\u306E\u9418",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_9118",
-    "Name": "",
+    "Name": "Bell that rises enemies from the grave -- \u3010\u6C4E\u7528\u3011\u5893\u304B\u3089\u306E\u6575\u8D77\u3053\u3059\u9418",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_9119",
-    "Name": "",
+    "Name": "Pitfall Cover -- \u3010\u6C4E\u7528\u3011\u843D\u3068\u3057\u7A74\u306E\u84CB",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_9123",
-    "Name": "",
+    "Name": "Burnt Tar Pool",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_9150",
-    "Name": "",
+    "Name": "Heide\u0027s Tower of Flame (Distant view)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_9200",
-    "Name": "",
+    "Name": "Arrow Trap",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_9240",
-    "Name": "",
+    "Name": "Test sphere",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_9250",
-    "Name": "",
+    "Name": "Tar Pool",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_9300",
-    "Name": "",
+    "Name": "Broken Lord Vessel -- \u3010\u6C4E\u7528\u3011\u58CA\u308C\u305F\u738B\u306E\u5668",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_9400",
-    "Name": "",
+    "Name": "Rat Statue -- \u3010\u6C4E\u7528\u3011\u30CD\u30BA\u30DF\u306E\u50CF",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_9403",
-    "Name": "",
+    "Name": "Covenant Level 3 Door -- \u3010\u6C4E\u7528\u3011\u8A93\u7D04\u30EC\u30D9\u30EB3\u3067\u958B\u304F\u6249",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_9500",
-    "Name": "",
+    "Name": "Ship -- \u3010\u6C4E\u7528\u3011\u8239",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_9602",
-    "Name": "",
+    "Name": "Magic Circle",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_9700",
-    "Name": "",
+    "Name": "Dummy for Character Placement",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_9800",
-    "Name": "",
+    "Name": "\u3010Test\u3011Dark Area -- \u3010\u30C6\u30B9\u30C8\u3011\u6697\u3044\u30A8\u30EA\u30A2",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_9801",
-    "Name": "",
+    "Name": "\u3010Test\u3011Hole -- \u3010\u30C6\u30B9\u30C8\u3011\u7A74",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_9802",
-    "Name": "",
+    "Name": "\u3010Test\u3011Important Hole -- \u3010\u30C6\u30B9\u30C8\u3011\u8981\u4EF6\u30BA\u30EC",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_9803",
-    "Name": "",
+    "Name": "\u3010Test\u3011Consideration -- \u3010\u30C6\u30B9\u30C8\u3011\u8981\u691C\u8A0E",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_9804",
-    "Name": "",
+    "Name": "\u3010Test\u3011Confirmation required -- \u3010\u30C6\u30B9\u30C8\u3011\u8981\u78BA\u8A8D",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_9805",
-    "Name": "",
+    "Name": "\u3010Test\u3011Under repair -- \u3010\u30C6\u30B9\u30C8\u3011\u8ABF\u6574\u4E2D",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_9806",
-    "Name": "",
+    "Name": "\u3010Test\u3011Gimmick here -- \u3010\u30C6\u30B9\u30C8\u3011\u3053\u3053\u30AE\u30DF\u30C3\u30AF",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_9807",
-    "Name": "",
+    "Name": "\u3010Test\u3011Bright here -- \u3010\u30C6\u30B9\u30C8\u3011\u3053\u3053\u660E\u308B\u3044",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_9808",
-    "Name": "",
+    "Name": "\u3010Test\u3011Wide here -- \u3010\u30C6\u30B9\u30C8\u3011\u3053\u3053\u5E83\u304F",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_9809",
-    "Name": "",
+    "Name": "\u3010Test\u3011Narrow here -- \u3010\u30C6\u30B9\u30C8\u3011\u3053\u3053\u72ED\u304F",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_9810",
-    "Name": "",
+    "Name": "\u3010Test\u3011Ceiling adjustment here -- \u3010\u30C6\u30B9\u30C8\u3011\u3053\u3053\u5929\u4E95\u8ABF\u6574",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_9811",
-    "Name": "",
+    "Name": "\u3010Test\u3011Long interval -- \u3010\u30C6\u30B9\u30C8\u3011\u9593\u304C\u9577\u3044",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_9812",
-    "Name": "",
+    "Name": "Empty box for triggering events -- \u3010\u30C6\u30B9\u30C8\u3011\u30A4\u30D9\u30F3\u30C8\u767A\u751F\u7528\u7A7A\u30DC\u30C3\u30AF\u30B9",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_9900",
-    "Name": "",
+    "Name": "Aldia (Medium size)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_9901",
-    "Name": "",
+    "Name": "Aldia (Very small size)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_9902",
-    "Name": "",
+    "Name": "Aldia (Small size)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o00_9903",
-    "Name": "",
+    "Name": "Aldia (Large size)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o02_0001",
-    "Name": "",
+    "Name": "Dummy for Character Placement - Things Betwixt",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o02_0300",
-    "Name": "",
+    "Name": "Wooden Door - Things Betwixt",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o02_0900",
-    "Name": "",
+    "Name": "Extendable Wooden Ladder - Things Betwixt",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o02_0901",
-    "Name": "",
+    "Name": "Ladder (3.8m) - Things Betwixt",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o02_0902",
-    "Name": "",
+    "Name": "Ladder (12.2m) - Things Betwixt",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o02_1000",
-    "Name": "",
+    "Name": "Branch that breaks -- \u3010\u5316\u77F3\u306E\u68EE\u3011\u4E57\u308B\u3068\u58CA\u308C\u308B\u679D",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o02_1010",
-    "Name": "",
+    "Name": "Broken Bridge -- \u3010\u5316\u77F3\u306E\u68EE\u3011\u58CA\u308C\u308B\u6A4B",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o02_1030",
-    "Name": "",
+    "Name": "Falling Tree - Things Betwixt",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o02_1050",
-    "Name": "",
+    "Name": "Stone Tablet - Things Betwixt",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o02_2000",
-    "Name": "",
+    "Name": "Stone Pillar - Things Betwixt",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o02_2001",
-    "Name": "",
+    "Name": "Street Light - Things Betwixt",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o02_8500",
-    "Name": "",
+    "Name": "Human Effigy Model - Things Betwixt",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o02_8501",
-    "Name": "",
+    "Name": "Wooden Cup - Things Betwixt",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o02_8502",
-    "Name": "",
+    "Name": "Wooden Tray - Things Betwixt",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o02_8510",
-    "Name": "",
+    "Name": "Chair - Things Betwixt",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o02_8511",
-    "Name": "",
+    "Name": "Rocking Chair - Things Betwixt",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o02_8520",
-    "Name": "",
+    "Name": "Candle - Things Betwixt",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o02_8521",
-    "Name": "",
+    "Name": "Wall Candle Holder - Things Betwixt",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o02_8522",
-    "Name": "",
+    "Name": "Window Curtain - Things Betwixt",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o02_9000",
-    "Name": "",
+    "Name": "Candle - Things Betwixt",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o02_9010",
-    "Name": "",
+    "Name": "Kneeling Elite Knight - Things Betwixt",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o02_9020",
-    "Name": "",
+    "Name": "Bird Nest - Things Betwixt",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o02_9100",
-    "Name": "",
+    "Name": "Coffin - Things Betwixt",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o03_0000",
-    "Name": "",
+    "Name": "Rat",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o03_0370",
-    "Name": "",
+    "Name": "Door",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o03_0371",
-    "Name": "",
+    "Name": "Iron Bars Door (Old)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o03_0640",
-    "Name": "",
+    "Name": "Floor Lever",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o03_1000",
-    "Name": "",
+    "Name": "Candle",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o03_1900",
-    "Name": "",
+    "Name": "Covenant Vessel - Dark Chasm of Old",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o03_2000",
-    "Name": "",
+    "Name": "Table",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o03_2010",
-    "Name": "",
+    "Name": "Boarded Door Frame",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o03_2020",
-    "Name": "",
+    "Name": "Wood Board",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o03_5000",
-    "Name": "",
+    "Name": "Skull Pile",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o03_9000",
-    "Name": "",
+    "Name": "Elevator - Dark Chasm of Old",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o03_9010",
-    "Name": "",
+    "Name": "Candle",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o03_9020",
-    "Name": "",
+    "Name": "Brazier",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o03_9030",
-    "Name": "",
+    "Name": "Rags",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o03_9040",
-    "Name": "",
+    "Name": "Rags",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o03_9050",
-    "Name": "",
+    "Name": "Gwyndolin\u0027s Dress",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o03_9060",
-    "Name": "",
+    "Name": "Wind Rags",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o03_9070",
-    "Name": "",
+    "Name": "Rope",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o03_9080",
-    "Name": "",
+    "Name": "Branch with corpses",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o03_9090",
-    "Name": "",
+    "Name": "Cloth in patient room",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o03_9400",
-    "Name": "",
+    "Name": "Dummy for SFX 1",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o03_9410",
-    "Name": "",
+    "Name": "Dummy for SFX 2",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o03_9510",
-    "Name": "",
+    "Name": "Ancient Dragon\u0027s Eyelid",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o03_9520",
-    "Name": "",
+    "Name": "Waving Ivy",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o04_0230",
-    "Name": "",
+    "Name": "Unique Treasure Chest - Majula",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o04_0240",
-    "Name": "",
+    "Name": "Hanged Treasure Corpse - Majula",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o04_0400",
-    "Name": "",
+    "Name": "Lattice Gate - Majula",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o04_0470",
-    "Name": "",
+    "Name": "Large Stone Door (Forgotten Key)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o04_0900",
-    "Name": "",
+    "Name": "Event Ladder (Medium) - Majula",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o04_0910",
-    "Name": "",
+    "Name": "Event Ladder (Short) - Majula",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o04_0920",
-    "Name": "",
+    "Name": "Event Ladder (Long) - Majula",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o04_0930",
-    "Name": "",
+    "Name": "Iron Ladder - Majula",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o04_0940",
-    "Name": "",
+    "Name": "Wooden Ladder (Maughlin\u0027s Shop) - Majula",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o04_1000",
-    "Name": "",
+    "Name": "Rotunda Door - Majula",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o04_1010",
-    "Name": "",
+    "Name": "Victor\u0027s Stone - Majula",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o04_1020",
-    "Name": "",
+    "Name": "Dummy - Majula",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o04_1030",
-    "Name": "",
+    "Name": "Shanalotte\u0027s Rock - Majula",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o04_1031",
-    "Name": "",
+    "Name": "Rock for NPCs - Majula",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o04_1040",
-    "Name": "",
+    "Name": "Rotunda Switch - Majula",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o04_1110",
-    "Name": "",
+    "Name": "Object used to hit the rock down the well",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o04_1111",
-    "Name": "",
+    "Name": "Chair for NPCs - Majula",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o04_2020",
-    "Name": "",
+    "Name": "Kokeshi - Majula",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o04_2030",
-    "Name": "",
+    "Name": "Collapse Scaffolding - Majula",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o04_2040",
-    "Name": "",
+    "Name": "Chair (Shalquoir\u0027s House) - Majula",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o04_2270",
-    "Name": "",
+    "Name": "Table (Shalquoir\u0027s House) - Majula",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o04_2280",
-    "Name": "",
+    "Name": "Jar (Shalquoir\u0027s House) - Majula",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o04_2300",
-    "Name": "",
+    "Name": "Pot (Shalquoir\u0027s House) - Majula",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o04_2310",
-    "Name": "",
+    "Name": "Weapon Rack (Shalquoir\u0027s House) - Majula",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o04_2560",
-    "Name": "",
+    "Name": "Desk with drawers (Shalquoir\u0027s House) - Majula",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o04_9000",
-    "Name": "",
+    "Name": "Tent (Lenigrast\u0027s House) - Majula",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o04_9010",
-    "Name": "",
+    "Name": "Tent A - Majula",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o04_9020",
-    "Name": "",
+    "Name": "Tent B - Majula",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o04_9040",
-    "Name": "",
+    "Name": "Wind Rags - Majula",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o04_9080",
-    "Name": "",
+    "Name": "Elevator",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o04_9090",
-    "Name": "",
+    "Name": "Heavy Stone - Majula",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o04_9110",
-    "Name": "",
+    "Name": "Rock blocking the water source - Majula",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o04_9120",
-    "Name": "",
+    "Name": "Rock blocking the Dungeon of Time - Majula",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o04_9130",
-    "Name": "",
+    "Name": "Rock blocking the way",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o04_9200",
-    "Name": "",
+    "Name": "Stones around the obelisk - Majula",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o04_9300",
-    "Name": "",
+    "Name": "Dummy for obelisk interaction - Majula",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o04_9500",
-    "Name": "",
+    "Name": "Drangleic Map - Majula",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o04_9501",
-    "Name": "",
+    "Name": "Tree - Majula",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o04_9502",
-    "Name": "",
+    "Name": "Tree - Majula",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o04_9503",
-    "Name": "",
+    "Name": "Wooden Eaves - Majula",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o04_9504",
-    "Name": "",
+    "Name": "Wooden Eaves - Majula",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o04_9505",
-    "Name": "",
+    "Name": "Wooden Eaves - Majula",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o04_9506",
-    "Name": "",
+    "Name": "Big Tree - Majula",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o04_9507",
-    "Name": "",
+    "Name": "Ruins A - Majula",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o04_9508",
-    "Name": "",
+    "Name": "Ruins B - Majula",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o04_9509",
-    "Name": "",
+    "Name": "Wooden Frame - Majula",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o04_9510",
-    "Name": "",
+    "Name": "Box (Maughlin\u0027s House) - Majula",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o04_9511",
-    "Name": "",
+    "Name": "Box (Maughlin\u0027s House) - Majula",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_0330",
-    "Name": "",
+    "Name": "Door - Forest of Fallen Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_0340",
-    "Name": "",
+    "Name": "Lattice Door",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_0430",
-    "Name": "",
+    "Name": "Heavy Door 00 -- \u3010\u62B5\u6297\u306E\u7826\u3011\u4E21\u624900",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_0440",
-    "Name": "",
+    "Name": "Large Iron Door - Forest of Fallen Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_0450",
-    "Name": "",
+    "Name": "Wooden Door - Forest of Fallen Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_0476",
-    "Name": "",
+    "Name": "King\u0027s Door - Forest of Fallen Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_0500",
-    "Name": "",
+    "Name": "Fog Gate 00 -- \u3010\u62B5\u6297\u306E\u7826\u3011\u767D\u624900",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_0501",
-    "Name": "",
+    "Name": "Fog Gate 01 -- \u3010\u62B5\u6297\u306E\u7826\u3011\u767D\u624901",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_0502",
-    "Name": "",
+    "Name": "Fog Gate 02 -- \u3010\u62B5\u6297\u306E\u7826\u3011\u767D\u624902",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_0503",
-    "Name": "",
+    "Name": "Fog Gate 03 -- \u3010\u62B5\u6297\u306E\u7826\u3011\u767D\u624903",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_0600",
-    "Name": "",
+    "Name": "Lever -- \u3010\u62B5\u6297\u306E\u7826\u3011\u30EC\u30D0\u30FC",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_0900",
-    "Name": "",
+    "Name": "Ladder - Forest of Fallen Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_0901",
-    "Name": "",
+    "Name": "Ladder 01 - Forest of Fallen Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_0902",
-    "Name": "",
+    "Name": "Ladder 02 - Forest of Fallen Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_0903",
-    "Name": "",
+    "Name": "Ladder 03 - Forest of Fallen Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_0904",
-    "Name": "",
+    "Name": "Ladder 04 - Forest of Fallen Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_0905",
-    "Name": "",
+    "Name": "Ladder 05 - Forest of Fallen Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_0906",
-    "Name": "",
+    "Name": "Ladder 06 - Forest of Fallen Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_0907",
-    "Name": "",
+    "Name": "Ladder 07 - Forest of Fallen Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_0908",
-    "Name": "",
+    "Name": "Ladder 08 - Forest of Fallen Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_0909",
-    "Name": "",
+    "Name": "Ladder 09 - Forest of Fallen Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_0910",
-    "Name": "",
+    "Name": "Ladder 10 - Forest of Fallen Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_0911",
-    "Name": "",
+    "Name": "Ladder 11 - Forest of Fallen Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_0912",
-    "Name": "",
+    "Name": "Ladder 12 - Forest of Fallen Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_0913",
-    "Name": "",
+    "Name": "Ladder 13 - Forest of Fallen Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_0914",
-    "Name": "",
+    "Name": "Ladder 14 - Forest of Fallen Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_0915",
-    "Name": "",
+    "Name": "Ladder 15 - Forest of Fallen Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_0916",
-    "Name": "",
+    "Name": "Ladder 16 - Forest of Fallen Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_0920",
-    "Name": "",
+    "Name": "Wooden Ladder 00 - Forest of Fallen Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_0921",
-    "Name": "",
+    "Name": "Wooden Ladder 01 - Forest of Fallen Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_0922",
-    "Name": "",
+    "Name": "Wooden Ladder 02 - Forest of Fallen Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_0923",
-    "Name": "",
+    "Name": "Wooden Ladder 03 - Forest of Fallen Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_0924",
-    "Name": "",
+    "Name": "Wooden Ladder 04 - Forest of Fallen Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_0925",
-    "Name": "",
+    "Name": "Wooden Ladder 05 - Forest of Fallen Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_0926",
-    "Name": "",
+    "Name": "Wooden Ladder 06 - Forest of Fallen Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_0927",
-    "Name": "",
+    "Name": "Wooden Ladder 00 - Memory of Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_0928",
-    "Name": "",
+    "Name": "Wooden Ladder 01 - Memory of Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_1000",
-    "Name": "",
+    "Name": "Door held by soldiers -- \u3010\u62B5\u6297\u306E\u7826\u3011\u5175\u58EB\u304C\u6291\u3048\u3066\u3044\u308B\u6249",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_1001",
-    "Name": "",
+    "Name": "Iron Bars - Forest of Fallen Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_1005",
-    "Name": "",
+    "Name": "Pharros Wall - Forest of Fallen Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_1010",
-    "Name": "",
+    "Name": "Ballista",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_1011",
-    "Name": "",
+    "Name": "Ballista -- \u3010\u62B5\u6297\u306E\u7826\u3011\u30D0\u30EA\u30B9\u30BF\uFF08\u9023\u5C04\u578B\uFF09",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_1012",
-    "Name": "",
+    "Name": "Ballista (Fire Bolts) -- \u3010\u62B5\u6297\u306E\u7826\u3011\u30D0\u30EA\u30B9\u30BF\uFF08\u706B\u77E2\u578B\uFF09",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_1020",
-    "Name": "",
+    "Name": "Destroyed Arch Bridge -- \u3010\u62B5\u6297\u306E\u7826\u3011\u7834\u58CA\u3055\u308C\u308B\u30A2\u30FC\u30C1\u6A4B",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_1030",
-    "Name": "",
+    "Name": "Lever Door -- \u3010\u62B5\u6297\u306E\u7826\u3011\u30EC\u30D0\u30FC\u3067\u958B\u304F\u6249",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_1040",
-    "Name": "",
+    "Name": "Doors on wall - Forest of Fallen Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_1050",
-    "Name": "",
+    "Name": "Stone Statue - Memory of Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_1060",
-    "Name": "",
+    "Name": "Fireball that hits the stone statue",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_1070",
-    "Name": "",
+    "Name": "Puzzle bridge that collapses -- \u3010\u62B5\u6297\u306E\u7826\u3011\u58CA\u308C\u308B\u8B0E\u306E\u6A4B",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_1080",
-    "Name": "",
+    "Name": "Iron Bars Gate -- \u3010\u62B5\u6297\u306E\u7826\u3011\u30EC\u30D0\u30FC\u3067\u958B\u304F\u9244\u683C\u5B5001",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_1090",
-    "Name": "",
+    "Name": "Iron Bars Gate -- \u3010\u62B5\u6297\u306E\u7826\u3011\u30EC\u30D0\u30FC\u3067\u958B\u304F\u9244\u683C\u5B5002",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_1100",
-    "Name": "",
+    "Name": "Destructible Ship -- \u3010\u62B5\u6297\u306E\u7826\u3011\u58CA\u308C\u3066\u6C88\u6CA1\u3059\u308B\u8239",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_1110",
-    "Name": "",
+    "Name": "Fireball that destroys the bridge -- \u3010\u62B5\u6297\u306E\u7826\u3011\u6728\u306E\u6A4B\u3092\u58CA\u3059\u706B\u7403",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_1113",
-    "Name": "",
+    "Name": "Dummy for Salamander flames - Forest of Fallen Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_1120",
-    "Name": "",
+    "Name": "Rolling Boulder - Forest of Fallen Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_1140",
-    "Name": "",
+    "Name": "Seed of a Tree of Giants - Forest of Fallen Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_1150",
-    "Name": "",
+    "Name": "Pharros Wall - Memory of Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_1160",
-    "Name": "",
+    "Name": "Pharros Wall - Memory of Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_1161",
-    "Name": "",
+    "Name": "Illusory Wall - Forest of Fallen Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_1171",
-    "Name": "",
+    "Name": "Destroyed Ladder - Memory of Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_1180",
-    "Name": "",
+    "Name": "Fire Damage Object - Memory of Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_1800",
-    "Name": "",
+    "Name": "Pharros Contraption - Forest of Fallen Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_2000",
-    "Name": "",
+    "Name": "Barrel - Forest of Fallen Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_2010",
-    "Name": "",
+    "Name": "Box - Forest of Fallen Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_2030",
-    "Name": "",
+    "Name": "Wooden Bench",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_2040",
-    "Name": "",
+    "Name": "Wooden Bench (Early)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_2050",
-    "Name": "",
+    "Name": "Chair (Early)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_2060",
-    "Name": "",
+    "Name": "Table (Early)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_2080",
-    "Name": "",
+    "Name": "Shelf (Early)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_2100",
-    "Name": "",
+    "Name": "Cart - Forest of Fallen Giants / Memory of Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_2110",
-    "Name": "",
+    "Name": "Explosive Barrel - Forest of Fallen Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_2120",
-    "Name": "",
+    "Name": "Wooden Fence - Memory of Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_2130",
-    "Name": "",
+    "Name": "Pillar - Memory of Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_2140",
-    "Name": "",
+    "Name": "Wooden Tower (Destructible) - Forest of Fallen Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_2150",
-    "Name": "",
+    "Name": "Barrel with ballista bolts - Memory of Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_2160",
-    "Name": "",
+    "Name": "Broken Ballista - Memory of Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_2170",
-    "Name": "",
+    "Name": "Crane - Memory of Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_2171",
-    "Name": "",
+    "Name": "Crane Holder - Memory of Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_2180",
-    "Name": "",
+    "Name": "Cart \u002B Wooden Boxes - Memory of Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_2190",
-    "Name": "",
+    "Name": "Barrel Fence -- \u3010\u62B5\u6297\u306E\u7826\u3011\u6A3D\u7559\u3081",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_2200",
-    "Name": "",
+    "Name": "Boss room ceiling (center) -- \u3010\u62B5\u6297\u306E\u7826\u3011\u30DC\u30B9\u90E8\u5C4B\u5929\u4E95\uFF08\u4E2D\u592E\uFF09",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_2210",
-    "Name": "",
+    "Name": "Boss room ceiling A -- \u3010\u62B5\u6297\u306E\u7826\u3011\u30DC\u30B9\u90E8\u5C4B\u5929\u4E95\uFF21",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_2220",
-    "Name": "",
+    "Name": "Boss room ceiling B -- \u3010\u62B5\u6297\u306E\u7826\u3011\u30DC\u30B9\u90E8\u5C4B\u5929\u4E95\uFF22",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_2230",
-    "Name": "",
+    "Name": "Boss room ceiling C -- \u3010\u62B5\u6297\u306E\u7826\u3011\u30DC\u30B9\u90E8\u5C4B\u5929\u4E95\uFF23",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_2240",
-    "Name": "",
+    "Name": "Boss room ceiling D -- \u3010\u62B5\u6297\u306E\u7826\u3011\u30DC\u30B9\u90E8\u5C4B\u5929\u4E95\uFF24",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_2249",
-    "Name": "",
+    "Name": "Destructible Wall (Cardinal Tower) - Forest of Fallen Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_2250",
-    "Name": "",
+    "Name": "Destructible Wall A - Forest of Fallen Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_2260",
-    "Name": "",
+    "Name": "Destructible Wall B - Forest of Fallen Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_2340",
-    "Name": "",
+    "Name": "Wooden Eaves - Forest of Fallen Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_2350",
-    "Name": "",
+    "Name": "Petrified Infantry - Forest of Fallen Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_2360",
-    "Name": "",
+    "Name": "Pillar (Destructible) - Forest of Fallen Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_2370",
-    "Name": "",
+    "Name": "Destructible Wall C (Unused?) - Forest of Fallen Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_2380",
-    "Name": "",
+    "Name": "Wall (Destructible) - Memory of Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_2400",
-    "Name": "",
+    "Name": "Cracked Tunnel Wall - Memory of Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_6000",
-    "Name": "",
+    "Name": "The Last Giant Arm - Forest of Fallen Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_6010",
-    "Name": "",
+    "Name": "Corpse of Captain Drummond -- \u738B\u56FD\u968A\u9577\u306E\u6B7B\u4F53",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_7000",
-    "Name": "",
+    "Name": "Tree with leaves - Forest of Fallen Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_7001",
-    "Name": "",
+    "Name": "Tree with no leaves - Forest of Fallen Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_7010",
-    "Name": "",
+    "Name": "Coniferous tree - Forest of Fallen Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_8500",
-    "Name": "",
+    "Name": "Stone Statue parts for cutscene - Forest of Fallen Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_8510",
-    "Name": "",
+    "Name": "Stone parts for cutscene - Forest of Fallen Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_8520",
-    "Name": "",
+    "Name": "The Pursuer\u0027s Sword for cutscene - Forest of Fallen Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_9000",
-    "Name": "",
+    "Name": "Hanging Lamp",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_9001",
-    "Name": "",
+    "Name": "Dummy for Giant Fireballs - Memory of Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_9010",
-    "Name": "",
+    "Name": "Cloth",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_9020",
-    "Name": "",
+    "Name": "Chandelier - Memory of Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_9030",
-    "Name": "",
+    "Name": "Drangleic Flag - Memory of Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_9040",
-    "Name": "",
+    "Name": "Ballista Bolt (SFX)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_9050",
-    "Name": "",
+    "Name": "Giants in the sea - Memory of Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_9060",
-    "Name": "",
+    "Name": "Floating ships in the sea - Memory of Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_9070",
-    "Name": "",
+    "Name": "Wall Torch - Forest of Fallen Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_9080",
-    "Name": "",
+    "Name": "Tall Candle Holder",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_9085",
-    "Name": "",
+    "Name": "Hanging Lamp - Forest of Fallen Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_9090",
-    "Name": "",
+    "Name": "Candles - Forest of Fallen Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_9100",
-    "Name": "",
+    "Name": "Royal Soldier Corpse",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_9110",
-    "Name": "",
+    "Name": "Lantern - Memory of Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_9120",
-    "Name": "",
+    "Name": "Flag (Large) - Memory of Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_9130",
-    "Name": "",
+    "Name": "Barricade 01",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_9140",
-    "Name": "",
+    "Name": "Barricade 02",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_9150",
-    "Name": "",
+    "Name": "Dummy for target -- \u3010\u62B5\u6297\u306E\u7826\u3011\u30BF\u30FC\u30B2\u30C3\u30C8\u7528\u306E\u30C0\u30DF\u30FC",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_9160",
-    "Name": "",
+    "Name": "Flag (Small) - Memory of Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_9170",
-    "Name": "",
+    "Name": "Hanging Lamp",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_9180",
-    "Name": "",
+    "Name": "Patches\u0027 pitfall trap -- \u3010\u62B5\u6297\u306E\u7826\u3011\u30D1\u30C3\u30C1\u306E\u7F60\u7528\u30CB\u30BB\u843D\u3068\u3057\u7A74",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_9190",
-    "Name": "",
+    "Name": "Phantom Human -- \u3010\u62B5\u6297\u306E\u7826\u3011\u5E7B\u5F71\u4EBA\u9593",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_9200",
-    "Name": "",
+    "Name": "Giant Guard Captain -- \u3010\u62B5\u6297\u306E\u7826\u3011\u5E7B\u5F71\u5DE8\u4EBA\u89AA\u885B\u968A\u9577",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_9210",
-    "Name": "",
+    "Name": "Elevator - Forest of Fallen Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_9230",
-    "Name": "",
+    "Name": "Early Giant Lord",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_9240",
-    "Name": "",
+    "Name": "Rolling Boulder - Forest of Fallen Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_9250",
-    "Name": "",
+    "Name": "Giant Lord Ground Rubble -- \u5DE8\u4EBA\u738B\u767B\u5834\u5730\u5272\u308C\u74E6\u792B",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_9260",
-    "Name": "",
+    "Name": "Corpse of a Giant 1 - Memory of Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_9270",
-    "Name": "",
+    "Name": "Corpse of a Giant 2 - Memory of Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_9280",
-    "Name": "",
+    "Name": "Brightbugs - Forest of Fallen Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_9290",
-    "Name": "",
+    "Name": "Hanging Cross Lamp - Forest of Fallen Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_9300",
-    "Name": "",
+    "Name": "Red Barrel (Chameleon object) - Forest of Fallen Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_9400",
-    "Name": "",
+    "Name": "SFX103 - Memory of Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_9401",
-    "Name": "",
+    "Name": "SFX104 - Memory of Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_9402",
-    "Name": "",
+    "Name": "SFX107 - Memory of Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_9403",
-    "Name": "",
+    "Name": "SFX108 - Memory of Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_9404",
-    "Name": "",
+    "Name": "SFX110 - Memory of Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_9405",
-    "Name": "",
+    "Name": "SFX111 - Memory of Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_9406",
-    "Name": "",
+    "Name": "SFX135 - Memory of Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_9407",
-    "Name": "",
+    "Name": "SFX136 - Memory of Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_9408",
-    "Name": "",
+    "Name": "SFX139 - Memory of Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_9409",
-    "Name": "",
+    "Name": "SFX140 - Memory of Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_9410",
-    "Name": "",
+    "Name": "SFX141 - Memory of Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_9411",
-    "Name": "",
+    "Name": "SFX142 - Memory of Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_9412",
-    "Name": "",
+    "Name": "SFX143 - Memory of Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_9413",
-    "Name": "",
+    "Name": "SFX144 - Memory of Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_9414",
-    "Name": "",
+    "Name": "SFX145 - Memory of Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_9415",
-    "Name": "",
+    "Name": "SFX146 - Memory of Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_9416",
-    "Name": "",
+    "Name": "SFX153 - Memory of Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_9417",
-    "Name": "",
+    "Name": "SFX163 - Memory of Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_9418",
-    "Name": "",
+    "Name": "SFX171 - Memory of Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_9419",
-    "Name": "",
+    "Name": "SFX192 - Memory of Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_9420",
-    "Name": "",
+    "Name": "SFX3041 - Memory of Giants",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o10_9421",
-    "Name": "",
+    "Name": "SFX (Unused?)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o11_0300",
-    "Name": "",
+    "Name": "Door with frame - Shrine of Amana",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o11_0400",
-    "Name": "",
+    "Name": "Door of the Living - Shrine of Amana",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o11_0410",
-    "Name": "",
+    "Name": "Door of the Dead - Shrine of Amana",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o11_0420",
-    "Name": "",
+    "Name": "Ancient Door - Shrine of Amana",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o11_0640",
-    "Name": "",
+    "Name": "Floor Lever - Shrine of Amana",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o11_1005",
-    "Name": "",
+    "Name": "Pharros Wall - Shrine of Amana",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o11_1030",
-    "Name": "",
+    "Name": "Dummy for the altar\u0027s flames - Shrine of Amana",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o11_1810",
-    "Name": "",
+    "Name": "Pharros Contraption - Shrine of Amana",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o11_1900",
-    "Name": "",
+    "Name": "Torch Pillar - Shrine of Amana",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o11_2000",
-    "Name": "",
+    "Name": "Tree Roots - Shrine of Amana",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o11_2032",
-    "Name": "",
+    "Name": "Fallen Tree -- \u3010\u5996\u7CBE\u306E\u307B\u3068\u308A\u3011\u6B69\u304F\u3068\u58CA\u308C\u308B\u5012\u6728",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o11_2040",
-    "Name": "",
+    "Name": "Tree Branch (falling corpse) - Shrine of Amana",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o11_2050",
-    "Name": "",
+    "Name": "Altar Candles - Shrine of Amana",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o11_2100",
-    "Name": "",
+    "Name": "Curse Jar - Shrine of Amana",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o11_2530",
-    "Name": "",
+    "Name": "Chair - Shrine of Amana",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o11_9001",
-    "Name": "",
+    "Name": "Brightbugs - Shrine of Amana",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o11_9012",
-    "Name": "",
+    "Name": "Elevator - Shrine of Amana",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o11_9300",
-    "Name": "",
+    "Name": "Eryngii Mushroom (Chameleon object)- Shrine of Amana",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o14_0300",
-    "Name": "",
+    "Name": "Door - Brightstone Cove Tseldora",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o14_0301",
-    "Name": "",
+    "Name": "Door (Indestructible) - Brightstone Cove Tseldora",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o14_0302",
-    "Name": "",
+    "Name": "Partially Destroyed Door - Brightstone Cove Tseldora",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o14_0303",
-    "Name": "",
+    "Name": "Wooden Door - Brightstone Cove Tseldora",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o14_0304",
-    "Name": "",
+    "Name": "Lower Half Door - Brightstone Cove Tseldora",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o14_0370",
-    "Name": "",
+    "Name": "Iron Door - Brightstone Cove Tseldora",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o14_0371",
-    "Name": "",
+    "Name": "Wooden Door (Den Key) - Brightstone Cove Tseldora",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o14_0372",
-    "Name": "",
+    "Name": "Iron Door - Brightstone Cove Tseldora",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o14_0373",
-    "Name": "",
+    "Name": "Iron Frame Door - Brightstone Cove Tseldora",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o14_0400",
-    "Name": "",
+    "Name": "Heavy Wooden Door - Brightstone Cove Tseldora",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o14_0410",
-    "Name": "",
+    "Name": "Door (Indestructible) - Brightstone Cove Tseldora",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o14_0420",
-    "Name": "",
+    "Name": "Spider Door - Brightstone Cove Tseldora",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o14_0470",
-    "Name": "",
+    "Name": "Heavy Spider Door - Brightstone Cove Tseldora",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o14_0600",
-    "Name": "",
+    "Name": "Lever -- \u3010\u8718\u86DB\u306E\u8857\u3011\u7E26\u30EC\u30D0\u30FC\uFF1A\u81EA\u52D5\u3067\u623B\u308B",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o14_0640",
-    "Name": "",
+    "Name": "Floor Lever - Brightstone Cove Tseldora",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o14_0900",
-    "Name": "",
+    "Name": "Ladder A - Brightstone Cove Tseldora",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o14_0902",
-    "Name": "",
+    "Name": "Ladder B - Brightstone Cove Tseldora",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o14_0904",
-    "Name": "",
+    "Name": "Ladder C - Brightstone Cove Tseldora",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o14_0907",
-    "Name": "",
+    "Name": "Ladder D - Brightstone Cove Tseldora",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o14_1000",
-    "Name": "",
+    "Name": "Sand Door - Brightstone Cove Tseldora",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o14_1010",
-    "Name": "",
+    "Name": "Dummy for sand explosion - Brightstone Cove Tseldora",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o14_1020",
-    "Name": "",
+    "Name": "Dummy for sand door damage - Brightstone Cove Tseldora",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o14_1030",
-    "Name": "",
+    "Name": "Cracked Floor - Brightstone Cove Tseldora",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o14_1040",
-    "Name": "",
+    "Name": "Tree Branch - Brightstone Cove Tseldora",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o14_1050",
-    "Name": "",
+    "Name": "Collapsing Platform - Brightstone Cove Tseldora",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o14_1060",
-    "Name": "",
+    "Name": "After destroying the sand door - Brightstone Cove Tseldora",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o14_1082",
-    "Name": "",
+    "Name": "Spider Cocoon - Brightstone Cove Tseldora",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o14_1092",
-    "Name": "",
+    "Name": "Spider Cocoon - Brightstone Cove Tseldora",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o14_1120",
-    "Name": "",
+    "Name": "Bridge that breaks -- \u3010\u8718\u86DB\u306E\u8857\u3011\u4E57\u308B\u3068\u58CA\u308C\u308B\u6A4B",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o14_1160",
-    "Name": "",
+    "Name": "Goddess Statue - Brightstone Cove Tseldora",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o14_1190",
-    "Name": "",
+    "Name": "Destructible Balcony - Brightstone Cove Tseldora",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o14_1200",
-    "Name": "",
+    "Name": "Swinging Coccon - Brightstone Cove Tseldora",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o14_1210",
-    "Name": "",
+    "Name": "Wooden Eaves - Brightstone Cove Tseldora",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o14_1220",
-    "Name": "",
+    "Name": "Collapsed Balcony - Brightstone Cove Tseldora",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o14_1250",
-    "Name": "",
+    "Name": "Branches - Brightstone Cove Tseldora",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o14_1260",
-    "Name": "",
+    "Name": "Destructible Floor -- \u3010\u8718\u86DB\u306E\u8857\u3011\u7834\u58CA\u3067\u304D\u308B\u5E8A",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o14_1280",
-    "Name": "",
+    "Name": "Iron Door in Solaire\u0027s room -- \u3010\u8718\u86DB\u306E\u8857\u3011\u30BD\u30E9\u30FC\u30EB\u90E8\u5C4B\u306E\u9244\u6249",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o14_1290",
-    "Name": "",
+    "Name": "Great Moth - Brightstone Cove Tseldora",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o14_1300",
-    "Name": "",
+    "Name": "Prison Bell - Brightstone Cove Tseldora",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o14_1340",
-    "Name": "",
+    "Name": "Illusory Wall - Brightstone Cove Tseldora",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o14_1350",
-    "Name": "",
+    "Name": "Moving Platform - Brightstone Cove Tseldora",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o14_1360",
-    "Name": "",
+    "Name": "Dragon Memories warp object - Brightstone Cove Tseldora",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o14_1370",
-    "Name": "",
+    "Name": "Dragon Memories warp dummy - Brightstone Cove Tseldora",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o14_1380",
-    "Name": "",
+    "Name": "Mushrooms - Brightstone Cove Tseldora",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o14_1381",
-    "Name": "",
+    "Name": "Mushrooms dummy - Brightstone Cove Tseldora",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o14_1900",
-    "Name": "",
+    "Name": "Lamp - Brightstone Cove Tseldora",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o14_1920",
-    "Name": "",
+    "Name": "Primal Bonfire - Brightstone Cove Tseldora",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o14_2000",
-    "Name": "",
+    "Name": "Chair - Brightstone Cove Tseldora",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o14_2010",
-    "Name": "",
+    "Name": "Table - Brightstone Cove Tseldora",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o14_2020",
-    "Name": "",
+    "Name": "Shelf - Brightstone Cove Tseldora",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o14_2030",
-    "Name": "",
+    "Name": "Well Roof",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o14_2050",
-    "Name": "",
+    "Name": "Church Bench",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o14_2060",
-    "Name": "",
+    "Name": "Wooden Fence -- \u3010\u8718\u86DB\u306E\u8857\u3011\u6728\u67F5",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o14_2080",
-    "Name": "",
+    "Name": "Armor Stand (Royal Soldier)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o14_2090",
-    "Name": "",
+    "Name": "Wooden Barricade - Brightstone Cove Tseldora",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o14_2100",
-    "Name": "",
+    "Name": "Rope Post - Brightstone Cove Tseldora",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o14_2110",
-    "Name": "",
+    "Name": "Water Jar - Brightstone Cove Tseldora",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o14_2120",
-    "Name": "",
+    "Name": "Big Pot (for a treasure corpse)- Brightstone Cove Tseldora",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o14_2121",
-    "Name": "",
+    "Name": "Big Pot - Brightstone Cove Tseldora",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o14_2130",
-    "Name": "",
+    "Name": "Watchtower A - Brightstone Cove Tseldora",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o14_2140",
-    "Name": "",
+    "Name": "Watchtower B - Brightstone Cove Tseldora",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o14_2150",
-    "Name": "",
+    "Name": "Watchtower C - Brightstone Cove Tseldora",
     "Tags": [
       ""
     ]
   },
   {
+    "ID": "o14_6000",
+    "Name": "[No Mesh] Dead Ancient Dragon",
+    "Tags": []
+  },
+  {
     "ID": "o14_7000",
-    "Name": "",
+    "Name": "Tree - Brightstone Cove Tseldora",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o14_9000",
-    "Name": "",
+    "Name": "Cloth - Brightstone Cove Tseldora",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o14_9010",
-    "Name": "",
+    "Name": "Tent Cloth A - Brightstone Cove Tseldora",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o14_9030",
-    "Name": "",
+    "Name": "Tent Cloth B - Brightstone Cove Tseldora",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o14_9040",
-    "Name": "",
+    "Name": "Rolling Boulder - Brightstone Cove Tseldora",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o14_9050",
-    "Name": "",
+    "Name": "Wind Rags - Brightstone Cove Tseldora",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o14_9060",
-    "Name": "",
+    "Name": "Gate - Brightstone Cove Tseldora",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o14_9061",
-    "Name": "",
+    "Name": "Statue - Brightstone Cove Tseldora",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o14_9070",
-    "Name": "",
+    "Name": "Lamp (Small) - Brightstone Cove Tseldora",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o14_9080",
-    "Name": "",
+    "Name": "Hanging Lamp - Brightstone Cove Tseldora",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o15_0300",
-    "Name": "",
+    "Name": "Wooden Door - Aldia\u0027s Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o15_0470",
-    "Name": "",
+    "Name": "Entrance Door - Aldia\u0027s Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o15_0471",
-    "Name": "",
+    "Name": "Iron Door (Ogre) - Aldia\u0027s Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o15_0476",
-    "Name": "",
+    "Name": "King\u0027s Door - Aldia\u0027s Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o15_0620",
-    "Name": "",
+    "Name": "Vertical Lever - Aldia\u0027s Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o15_0640",
-    "Name": "",
+    "Name": "Floor Lever - Aldia\u0027s Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o15_1000",
-    "Name": "",
+    "Name": "Vengarl\u0027s Head (Correct answer)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o15_1001",
-    "Name": "",
+    "Name": "Vengarl\u0027s Head (Incorrect answer)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o15_1002",
-    "Name": "",
+    "Name": "Vengarl\u0027s Head (Incorrect answer)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o15_1003",
-    "Name": "",
+    "Name": "Vengarl\u0027s Head (Incorrect answer)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o15_1004",
-    "Name": "",
+    "Name": "Vengarl\u0027s Head (Incorrect answer)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o15_1010",
-    "Name": "",
+    "Name": "Hanging Torch - Aldia\u0027s Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o15_1020",
-    "Name": "",
+    "Name": "Hanging Torch that falls - Aldia\u0027s Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o15_1030",
-    "Name": "",
+    "Name": "Illusory Wall - Aldia\u0027s Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o15_1040",
-    "Name": "",
+    "Name": "Petrified \u0022Stop\u0022 Wall -- \u30B9\u30C8\u30C3\u30D7\u58C1",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o15_1050",
-    "Name": "",
+    "Name": "Illusory Wall - Aldia\u0027s Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o15_1060",
-    "Name": "",
+    "Name": "Iron Door - Aldia\u0027s Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o15_1800",
-    "Name": "",
+    "Name": "Pharros Contraption - Aldia\u0027s Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o15_2000",
-    "Name": "",
+    "Name": "Book Stand",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o15_2001",
-    "Name": "",
+    "Name": "Destroyable Wall A - Aldia\u0027s Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o15_2002",
-    "Name": "",
+    "Name": "Destroyable Wall B - Aldia\u0027s Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o15_2003",
-    "Name": "",
+    "Name": "Destroyable Wall C - Aldia\u0027s Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o15_2005",
-    "Name": "",
+    "Name": "Painting with an enemy behind - Aldia\u0027s Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o15_2010",
-    "Name": "",
+    "Name": "Destructible Wall - Aldia\u0027s Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o15_2020",
-    "Name": "",
+    "Name": "Antique Desk",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o15_2030",
-    "Name": "",
+    "Name": "Antique Chair",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o15_2040",
-    "Name": "",
+    "Name": "Trestle Table",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o15_2050",
-    "Name": "",
+    "Name": "Knife Rack - Aldia\u0027s Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o15_7000",
-    "Name": "",
+    "Name": "Tree - Aldia\u0027s Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o15_9000",
-    "Name": "",
+    "Name": "Cage Wagon (old version) - Aldia\u0027s Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o15_9001",
-    "Name": "",
+    "Name": "Torture Table - Aldia\u0027s Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o15_9002",
-    "Name": "",
+    "Name": "The Embedded - Aldia\u0027s Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o15_9003",
-    "Name": "",
+    "Name": "Tall Candle Holder",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o15_9004",
-    "Name": "",
+    "Name": "Candlestick (Small)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o15_9005",
-    "Name": "",
+    "Name": "Candles A",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o15_9006",
-    "Name": "",
+    "Name": "Candles B",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o15_9007",
-    "Name": "",
+    "Name": "Medicine Shelf - Aldia\u0027s Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o15_9008",
-    "Name": "",
+    "Name": "Medicine Vials - Aldia\u0027s Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o15_9009",
-    "Name": "",
+    "Name": "Experiment equipment - Aldia\u0027s Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o15_9011",
-    "Name": "",
+    "Name": "Cloth - Aldia\u0027s Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o15_9012",
-    "Name": "",
+    "Name": "Wind Rags - Aldia\u0027s Keep",
     "Tags": [
       ""
     ]
   },
   {
+    "ID": "o15_9013",
+    "Name": "Wall Torch - Aldia\u0027s Keep",
+    "Tags": []
+  },
+  {
     "ID": "o15_9020",
-    "Name": "",
+    "Name": "Small Cage - Aldia\u0027s Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o15_9021",
-    "Name": "",
+    "Name": "Cage that falls - Aldia\u0027s Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o15_9022",
-    "Name": "",
+    "Name": "Cage - Aldia\u0027s Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o15_9030",
-    "Name": "",
+    "Name": "Curtain - Aldia\u0027s Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o15_9040",
-    "Name": "",
+    "Name": "Cage Wagon - Aldia\u0027s Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o15_9050",
-    "Name": "",
+    "Name": "Mirror - Aldia\u0027s Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o15_9060",
-    "Name": "",
+    "Name": "Elevator - Aldia\u0027s Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o15_9070",
-    "Name": "",
+    "Name": "Spike Damage Object - Aldia\u0027s Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o15_9080",
-    "Name": "",
+    "Name": "Magic Barrier - Aldia\u0027s Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o15_9090",
-    "Name": "",
+    "Name": "Basilisk Cage - Aldia\u0027s Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o15_9100",
-    "Name": "",
+    "Name": "Wall Candle Holder - Aldia\u0027s Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o15_9110",
-    "Name": "",
+    "Name": "Stool - Aldia\u0027s Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o16_0370",
-    "Name": "",
+    "Name": "Iron Door (one use)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o16_0371",
-    "Name": "",
+    "Name": "Iron Door",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o16_0400",
-    "Name": "",
+    "Name": "Iron Bars",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o16_0410",
-    "Name": "",
+    "Name": "Large Iron Bars Gate",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o16_0420",
-    "Name": "",
+    "Name": "Pointy Iron Bars",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o16_0470",
-    "Name": "",
+    "Name": "Large Iron Door",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o16_0640",
-    "Name": "",
+    "Name": "Floor Lever",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o16_0900",
-    "Name": "",
+    "Name": "Ladder (3.8m) - Lost Bastille",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o16_0901",
-    "Name": "",
+    "Name": "Ladder (4.6m) - Lost Bastille",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o16_0902",
-    "Name": "",
+    "Name": "Ladder (5.0m) - Lost Bastille",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o16_0903",
-    "Name": "",
+    "Name": "Ladder (6.2m) - Lost Bastille",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o16_0906",
-    "Name": "",
+    "Name": "Ladder (8.6m) - Lost Bastille",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o16_0907",
-    "Name": "",
+    "Name": "Ladder (9.8m) - Lost Bastille",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o16_0908",
-    "Name": "",
+    "Name": "Ladder (10.2m) - Lost Bastille",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o16_0910",
-    "Name": "",
+    "Name": "Ladder (12.2m) - Lost Bastille",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o16_0913",
-    "Name": "",
+    "Name": "Ladder (14.6m) - Lost Bastille",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o16_1012",
-    "Name": "",
+    "Name": "McDuff\u0027s sitting blocks - Lost Bastille",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o16_1020",
-    "Name": "",
+    "Name": "Illusory Wall - Lost Bastille",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o16_1040",
-    "Name": "",
+    "Name": "Pharros\u0027 Wall - Lost Bastille",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o16_1050",
-    "Name": "",
+    "Name": "Illusory Wall - Lost Bastille",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o16_1060",
-    "Name": "",
+    "Name": "Illusory Wall - Lost Bastille",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o16_1070",
-    "Name": "",
+    "Name": "Illusory Wall - Lost Bastille",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o16_1080",
-    "Name": "",
+    "Name": "Illusory Wall - Lost Bastille",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o16_1090",
-    "Name": "",
+    "Name": "Illusory Wall - Lost Bastille",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o16_1100",
-    "Name": "",
+    "Name": "Illusory Wall - Lost Bastille",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o16_1110",
-    "Name": "",
+    "Name": "Illusory Wall - Lost Bastille",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o16_1120",
-    "Name": "",
+    "Name": "Illusory Wall - Sinners\u0027 Rise",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o16_1140",
-    "Name": "",
+    "Name": "Cage in the well - Lost Bastille",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o16_1141",
-    "Name": "",
+    "Name": "Heavy Stone - Lost Bastille",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o16_1170",
-    "Name": "",
+    "Name": "Pharros\u0027 Wall - Lost Bastille",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o16_1180",
-    "Name": "",
+    "Name": "Pharros\u0027 Wall - Lost Bastille",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o16_1185",
-    "Name": "",
+    "Name": "Illusory Wall (Double-sided opening) - Lost Bastille",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o16_1200",
-    "Name": "",
+    "Name": "Bell - Lost Bastille",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o16_1210",
-    "Name": "",
+    "Name": "Pillar (Boss Arena) - Lost Bastille",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o16_1220",
-    "Name": "",
+    "Name": "Groaning Corpse",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o16_1230",
-    "Name": "",
+    "Name": "Iron Bars (Boss Arena) - Lost Bastille",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o16_1250",
-    "Name": "",
+    "Name": "Object used to hit the rock down the well",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o16_1300",
-    "Name": "",
+    "Name": "Matryoshka 1 - Lost Bastille",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o16_1303",
-    "Name": "",
+    "Name": "Matryoshka 2 - Lost Bastille",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o16_1304",
-    "Name": "",
+    "Name": "Matryoshka 3 - Lost Bastille",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o16_1305",
-    "Name": "",
+    "Name": "Matryoshka 4 - Lost Bastille",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o16_1310",
-    "Name": "",
+    "Name": "Belfry Door - Lost Bastille",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o16_1400",
-    "Name": "",
+    "Name": "Barrel Shelf - Lost Bastille",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o16_1600",
-    "Name": "",
+    "Name": "Cage Elevator - Lost Bastille",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o16_1800",
-    "Name": "",
+    "Name": "Pharros Contraption - Lost Bastille",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o16_1900",
-    "Name": "",
+    "Name": "Lost Sinner Torch - Lost Bastille",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o16_1910",
-    "Name": "",
+    "Name": "Brazier (Metal Spikes)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o16_1920",
-    "Name": "",
+    "Name": "Primal Bonfire - Lost Bastille",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o16_2000",
-    "Name": "",
+    "Name": "Explosive Barrel",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o16_2001",
-    "Name": "",
+    "Name": "Wooden Planks - Lost Bastille",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o16_2002",
-    "Name": "",
+    "Name": "Cracked Wall - Lost Bastille",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o16_2003",
-    "Name": "",
+    "Name": "Wooden Tower - Lost Bastille",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o16_2005",
-    "Name": "",
+    "Name": "Wooden Tower (Small) - Lost Bastille",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o16_2006",
-    "Name": "",
+    "Name": "Wooden Tower for treasure corpse - Lost Bastille",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o16_2010",
-    "Name": "",
+    "Name": "Rolling Explosive Barrel - Lost Bastille",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o16_8500",
-    "Name": "",
+    "Name": "Izalith Seedling Core",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o16_8501",
-    "Name": "",
+    "Name": "Izalith Bug Core",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o16_9000",
-    "Name": "",
+    "Name": "Cloth 1",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o16_9001",
-    "Name": "",
+    "Name": "Cloth 2 - Lost Bastille",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o16_9002",
-    "Name": "",
+    "Name": "Elevator - Sinners\u0027 Rise",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o16_9005",
-    "Name": "",
+    "Name": "Elevator - Lost Bastille",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o16_9006",
-    "Name": "",
+    "Name": "Elevator - Lost Bastille",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o16_9010",
-    "Name": "",
+    "Name": "Gargoyle Statue (Headless) - Lost Bastille",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o16_9020",
-    "Name": "",
+    "Name": "Cracked Wall - Lost Bastille",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o16_9030",
-    "Name": "",
+    "Name": "Cloth in boss room - Lost Bastille",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o16_9040",
-    "Name": "",
+    "Name": "SFX Dummy - Lost Bastille",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o16_9050",
-    "Name": "",
+    "Name": "Sound Dummy - Lost Bastille",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o17_0000",
-    "Name": "",
+    "Name": "Gear A -- \u3010\u70AD\u9271\u306E\u6751\u3011\u6B6F\u8ECAA",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o17_0330",
-    "Name": "",
+    "Name": "Iron Bars Gate",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o17_0400",
-    "Name": "",
+    "Name": "Wooden Gate - Harvest Valley",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o17_0410",
-    "Name": "",
+    "Name": "Iron Bars Gate - Harvest Valley",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o17_0620",
-    "Name": "",
+    "Name": "Vertical Lever - Harvest Valley",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o17_0780",
-    "Name": "",
+    "Name": "Valve -- \u3010\u6E9C\u307E\u308A\u306E\u8C37\u3011\u30D0\u30EB\u30D6",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o17_0900",
-    "Name": "",
+    "Name": "Gilligan\u0027s Ladder - Harvest Valley",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o17_0901",
-    "Name": "",
+    "Name": "Ladder (3.8m) - Harvest Valley",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o17_0902",
-    "Name": "",
+    "Name": "Ladder (4.6m) - Harvest Valley",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o17_0903",
-    "Name": "",
+    "Name": "Ladder (5.0m) - Harvest Valley",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o17_0904",
-    "Name": "",
+    "Name": "Ladder (6.2m) - Harvest Valley",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o17_0905",
-    "Name": "",
+    "Name": "Ladder (8.6m) - Harvest Valley",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o17_0906",
-    "Name": "",
+    "Name": "Broken Ladder - Harvest Valley",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o17_1000",
-    "Name": "",
+    "Name": "Iron Bars Gate - Harvest Valley",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o17_1010",
-    "Name": "",
+    "Name": "Insect Faucet -- \u3010\u70AD\u9271\u306E\u6751\u3011\u866B\u306E\u86C7\u53E3",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o17_1020",
-    "Name": "",
+    "Name": "Illusory Wall - Harvest Valley",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o17_1030",
-    "Name": "",
+    "Name": "Illusory Wall - Harvest Valley",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o17_1040",
-    "Name": "",
+    "Name": "Illusory Wall - Harvest Valley",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o17_1060",
-    "Name": "",
+    "Name": "Poison Pool (Boss Arena) - Harvest Valley",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o17_1061",
-    "Name": "",
+    "Name": "Poison Hall - Harvest Valley",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o17_1062",
-    "Name": "",
+    "Name": "Poison pool in front of Mytha - Harvest Valley",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o17_1063",
-    "Name": "",
+    "Name": "Poison pool at the start - Harvest Valley",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o17_1090",
-    "Name": "",
+    "Name": "Pharros\u0027 Wall - Harvest Valley",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o17_1100",
-    "Name": "",
+    "Name": "Poison pool at the start of Earthen Peak",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o17_1250",
-    "Name": "",
+    "Name": "Object used by a Manikin to pull the lever",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o17_1300",
-    "Name": "",
+    "Name": "Healing Fountain (Poison)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o17_1301",
-    "Name": "",
+    "Name": "Healing Fountain (Water)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o17_1310",
-    "Name": "",
+    "Name": "Altar of Sunlight - Harvest Valley",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o17_1800",
-    "Name": "",
+    "Name": "Pharros Contraption - Harvest Valley",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o17_2000",
-    "Name": "",
+    "Name": "A bridge that collapses when 3 people stand on it -- \u3010\u70AD\u9271\u306E\u6751\u30113\u4EBA\u4E57\u308B\u3068\u5D29\u308C\u308B\u6A4B",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o17_2001",
-    "Name": "",
+    "Name": "Collapsing Platform - Harvest Valley",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o17_2002",
-    "Name": "",
+    "Name": "Wooden Fence - Harvest Valley",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o17_2010",
-    "Name": "",
+    "Name": "Hanging Poison Jar - Harvest Valley",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o17_2011",
-    "Name": "",
+    "Name": "Hanging Jar (Boss Arena) - Harvest Valley",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o17_2020",
-    "Name": "",
+    "Name": "Barricade - Harvest Valley",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o17_2021",
-    "Name": "",
+    "Name": "Wooden Planks - Harvest Valley",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o17_2030",
-    "Name": "",
+    "Name": "Poison Jar (Large) - Harvest Valley",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o17_2040",
-    "Name": "",
+    "Name": "Poison Jar (Small) - Harvest Valley",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o17_2050",
-    "Name": "",
+    "Name": "Poison Jar - Harvest Valley",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o17_3000",
-    "Name": "",
+    "Name": "Insect Jar (Fly) -- \u3010\u6E9C\u307E\u308A\u306E\u8C37\u3011\u866B\u58FA\uFF08\u30CF\u30A8\uFF09",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o17_3003",
-    "Name": "",
+    "Name": "Insect Jar (Multiple Enemies) -- \u3010\u6E9C\u307E\u308A\u306E\u8C37\u3011\u866B\u58FA(\u6575\u8907\u6570\u4F53)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o17_3004",
-    "Name": "",
+    "Name": "Insect Jar (Sinlge Enemy) -- \u3010\u6E9C\u307E\u308A\u306E\u8C37\u3011\u866B\u58FA(\u6575\u5358\u4F53)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o17_9000",
-    "Name": "",
+    "Name": "Waterwheel Tower Gear A -- \u3010\u70AD\u9271\u306E\u6751\u3011\u6C34\u8ECA\u306E\u5854\u6B6F\u8ECA\u30BB\u30C3\u30C8A",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o17_9001",
-    "Name": "",
+    "Name": "Waterwheel Tower_Windmill Shaft -- \u3010\u70AD\u9271\u306E\u6751\u3011\u6C34\u8ECA\u306E\u5854_\u98A8\u8ECA\u52D5\u529B\u30B7\u30E3\u30D5\u30C8",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o17_9002",
-    "Name": "",
+    "Name": "Waterwheel Tower_Windmill Core -- \u3010\u70AD\u9271\u306E\u6751\u3011\u6C34\u8ECA\u306E\u5854_\u98A8\u8ECA\u7528\u30B3\u30A2\u52D5\u529B",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o17_9003",
-    "Name": "",
+    "Name": "Waterwheel Tower_Left Gear set -- \u3010\u70AD\u9271\u306E\u6751\u3011\u6C34\u8ECA\u306E\u5854_\u5DE6\u58C1\u6B6F\u8ECA\u30BB\u30C3\u30C8",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o17_9004",
-    "Name": "",
+    "Name": "Waterwheel Tower_Left Sub-Gear -- \u3010\u70AD\u9271\u306E\u6751\u3011\u6C34\u8ECA\u306E\u5854_\u5DE6\u58C1\u30B5\u30D6\u6B6F\u8ECA\u30BB\u30C3\u30C8",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o17_9005",
-    "Name": "",
+    "Name": "Waterwheel Tower_Gears near the shaft -- \u3010\u70AD\u9271\u306E\u6751\u3011\u6C34\u8ECA\u306E\u5854_\u30B7\u30E3\u30D5\u30C8\u4ED8\u8FD1\u306E\u6B6F\u8ECA",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o17_9010",
-    "Name": "",
+    "Name": "Circular Gear - Harvest Valley",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o17_9020",
-    "Name": "",
+    "Name": "Windmill Shaft - Harvest Valley",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o17_9030",
-    "Name": "",
+    "Name": "Vertical rotating gear -- \u3010\u70AD\u9271\u306E\u6751\u3011\u6C34\u8ECA\u306E\u5854_\u7E26\u56DE\u8EE2\u306E\u6B6F\u8ECAA",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o17_9040",
-    "Name": "",
+    "Name": "Moving Platform - Harvest Valley",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o17_9050",
-    "Name": "",
+    "Name": "Half Circle Gear B -- \u3010\u70AD\u9271\u306E\u6751\u3011\u6C34\u8ECA\u306E\u5854_\u534A\u5186\u306E\u6B6F\u8ECAB",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o17_9060",
-    "Name": "",
+    "Name": "Scarecrow -- \u3010\u70AD\u9271\u306E\u6751\u3011\u6848\u5C71\u5B50",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o17_9070",
-    "Name": "",
+    "Name": "Wind Rags - Harvest Valley",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o17_9080",
-    "Name": "",
+    "Name": "Windmill Sail - Harvest Valley",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o17_9081",
-    "Name": "",
+    "Name": "Windmill - Harvest Valley",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o17_9082",
-    "Name": "",
+    "Name": "Windmill Vane - Harvest Valley",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o17_9090",
-    "Name": "",
+    "Name": "Hanging Chains - Harvest Valley",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o17_9100",
-    "Name": "",
+    "Name": "Elevator - Harvest Valley",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o17_9110",
-    "Name": "",
+    "Name": "Chloanne\u0027s Rock - Harvest Valley",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o17_9120",
-    "Name": "",
+    "Name": "Gears inside Earthen Peak",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o17_9130",
-    "Name": "",
+    "Name": "Wooden Support - Harvest Valley",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o17_9140",
-    "Name": "",
+    "Name": "Chained Poison Jar - Harvest Valley",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o17_9150",
-    "Name": "",
+    "Name": "Chained Poison Jar (Floor) - Harvest Valley",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o17_9200",
-    "Name": "",
+    "Name": "Small Windmill - Harvest Valley",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o17_9201",
-    "Name": "",
+    "Name": "Small Windmill (Copy)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o17_9202",
-    "Name": "",
+    "Name": "Small Windmill (Copy)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o17_9203",
-    "Name": "",
+    "Name": "Small Windmill (Copy)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o17_9204",
-    "Name": "",
+    "Name": "Small Windmill (Copy)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o17_9300",
-    "Name": "",
+    "Name": "Gear Shaft (Collision Only) -- \u3010\u6E9C\u308A\u306E\u8C37\u3011\u6B6F\u8ECA\u306E\u30B7\u30E3\u30D5\u30C8\uFF08\u30A2\u30BF\u30EA\u306E\u307F\uFF09",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o18_0600",
-    "Name": "",
+    "Name": "Vertical Lever - No-man\u0027s Wharf",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o18_0650",
-    "Name": "",
+    "Name": "Elevator Lever -- \u3010\u96A0\u308C\u6E2F\u3011\u30EC\u30D0\u30FC\u30EA\u30D5\u30C8\u7528",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o18_0660",
-    "Name": "",
+    "Name": "Floor Lever",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o18_0900",
-    "Name": "",
+    "Name": "Ship Ladder -- No-man\u0027s Wharf",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o18_1000",
-    "Name": "",
+    "Name": "Giant Fire Torch",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o18_1010",
-    "Name": "",
+    "Name": "Ship -- No-man\u0027s Wharf",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o18_1020",
-    "Name": "",
+    "Name": "Water Surface (Boss Arena) -- No-man\u0027s Wharf",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o18_1030",
-    "Name": "",
+    "Name": "Iron Bars Gate -- No-man\u0027s Wharf",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o18_1040",
-    "Name": "",
+    "Name": "Illusory Wall -- No-man\u0027s Wharf",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o18_1050",
-    "Name": "",
+    "Name": "Bell",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o18_1060",
-    "Name": "",
+    "Name": "Navigation Table - No-man\u0027s Wharf",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o18_1070",
-    "Name": "",
+    "Name": "Ship Fence - No-man\u0027s Wharf",
     "Tags": [
       ""
     ]
   },
   {
+    "ID": "o18_1080",
+    "Name": "Falling Bridge - No-man\u0027s Wharf",
+    "Tags": []
+  },
+  {
+    "ID": "o18_1303",
+    "Name": "Matryoshka - No-man\u0027s Wharf",
+    "Tags": []
+  },
+  {
     "ID": "o18_1800",
-    "Name": "",
+    "Name": "Pharros Contraption",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o18_1810",
-    "Name": "",
+    "Name": "Pharros Contraption - No-man\u0027s Wharf",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o18_1900",
-    "Name": "",
+    "Name": "Brazier (Chains)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o18_2000",
-    "Name": "",
+    "Name": "House Wall - No-man\u0027s Wharf",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o18_2010",
-    "Name": "",
+    "Name": "Table",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o18_2020",
-    "Name": "",
+    "Name": "Wooden Bench",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o18_2030",
-    "Name": "",
+    "Name": "Boarded Window - No-man\u0027s Wharf",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o18_2040",
-    "Name": "",
+    "Name": "Poison Jar (Large)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o18_2050",
-    "Name": "",
+    "Name": "Destructible Wall - No-man\u0027s Wharf",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o18_2060",
-    "Name": "",
+    "Name": "Barrel - No-man\u0027s Wharf",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o18_2061",
-    "Name": "",
+    "Name": "Box - No-man\u0027s Wharf",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o18_2070",
-    "Name": "",
+    "Name": "Collapsing Platform - No-man\u0027s Wharf",
     "Tags": [
       ""
     ]
   },
   {
+    "ID": "o18_2090",
+    "Name": "Wooden Barricade - No-man\u0027s Wharf",
+    "Tags": []
+  },
+  {
     "ID": "o18_9000",
-    "Name": "",
+    "Name": "Tattered Ship Sail",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o18_9010",
-    "Name": "",
+    "Name": "Elevator -- \u3010\u96A0\u308C\u6E2F\u3011\u6607\u964D\u6A5F",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o19_0370",
-    "Name": "",
+    "Name": "Iron Door",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o19_0371",
-    "Name": "",
+    "Name": "Adorned Iron Door",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o19_0640",
-    "Name": "",
+    "Name": "Floor Lever (Multiple uses)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o19_0660",
-    "Name": "",
+    "Name": "Floor Lever (One use only)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o19_0700",
-    "Name": "",
+    "Name": "Floor Switch - Iron Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o19_0900",
-    "Name": "",
+    "Name": "Ladder (3.8m) - Iron Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o19_0902",
-    "Name": "",
+    "Name": "Ladder (5m) - Iron Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o19_0903",
-    "Name": "",
+    "Name": "Ladder (6.2m) - Iron Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o19_0906",
-    "Name": "",
+    "Name": "Ladder (8.6m) - Iron Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o19_0909",
-    "Name": "",
+    "Name": "Ladder (11m) - Iron Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o19_0910",
-    "Name": "",
+    "Name": "Ladder (12.2m) - Iron Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o19_0912",
-    "Name": "",
+    "Name": "Ladder (13.4m) - Iron Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o19_0915",
-    "Name": "",
+    "Name": "Ladder (15.8m) - Iron Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o19_1000",
-    "Name": "",
+    "Name": "Idol\u0027s Head - Iron Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o19_1001",
-    "Name": "",
+    "Name": "Idol\u0027s Torso - Iron Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o19_1002",
-    "Name": "",
+    "Name": "Furnace\u0027s Shutter - Iron Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o19_1003",
-    "Name": "",
+    "Name": "Iron Crucible - Iron Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o19_1004",
-    "Name": "",
+    "Name": "Flowing Molten Iron - Iron Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o19_1010",
-    "Name": "",
+    "Name": "Idol\u0027s Arm - Iron Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o19_1015",
-    "Name": "",
+    "Name": "Ballista - Iron Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o19_1020",
-    "Name": "",
+    "Name": "Bull-Headed Statue - Iron Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o19_1030",
-    "Name": "",
+    "Name": "Iron Bridge Platorm - Iron Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o19_1040",
-    "Name": "",
+    "Name": "Iron Drawbridge - Iron Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o19_1050",
-    "Name": "",
+    "Name": "Object used to hit the rotating statue",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o19_1051",
-    "Name": "",
+    "Name": "Dummy for fire breath SFX - Iron Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o19_1052",
-    "Name": "",
+    "Name": "Dummy for fire breath SFX - Iron Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o19_1053",
-    "Name": "",
+    "Name": "Dummy for fire breath SFX - Iron Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o19_1054",
-    "Name": "",
+    "Name": "Dummy for fire breath SFX - Iron Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o19_1055",
-    "Name": "",
+    "Name": "Dummy for fire breath SFX - Iron Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o19_1056",
-    "Name": "",
+    "Name": "Dummy for fire breath SFX - Iron Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o19_1057",
-    "Name": "",
+    "Name": "Dummy for fire breath SFX - Iron Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o19_1058",
-    "Name": "",
+    "Name": "Dummy for fire breath SFX - Iron Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o19_1059",
-    "Name": "",
+    "Name": "Dummy for fire breath SFX - Iron Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o19_1060",
-    "Name": "",
+    "Name": "Illusory Wall - Iron Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o19_1061",
-    "Name": "",
+    "Name": "Dummy for fire breath SFX - Iron Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o19_1062",
-    "Name": "",
+    "Name": "Dummy for fire breath SFX - Iron Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o19_1063",
-    "Name": "",
+    "Name": "Dummy for fire breath SFX - Iron Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o19_1064",
-    "Name": "",
+    "Name": "Dummy for fire breath SFX - Iron Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o19_1065",
-    "Name": "",
+    "Name": "Dummy for fire breath SFX - Iron Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o19_1066",
-    "Name": "",
+    "Name": "Dummy for fire breath SFX - Iron Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o19_1070",
-    "Name": "",
+    "Name": "Water Jar - Iron Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o19_1080",
-    "Name": "",
+    "Name": "Navigation Table \u0022Provisional\u0022",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o19_1090",
-    "Name": "",
+    "Name": "Furnace (Destructible) - Iron Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o19_1101",
-    "Name": "",
+    "Name": "[No Mesh] Idol\u0027s Head for destruction -- \u3010\u706B\u5C71\u306E\u88FD\u9244\u6240\u3011\u725B\u982D\u306E\u50CF\u306E\u982D\u90E8\u3010\u7834\u58CA_\u30DD\u30EA\u5287\u7528\u3011",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o19_1110",
-    "Name": "",
+    "Name": "Statue in Smelter Demon\u0027s arena",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o19_1111",
-    "Name": "",
+    "Name": "[No Mesh] Idol\u0027s Torso for destruction -- \u3010\u706B\u5C71\u306E\u88FD\u9244\u6240\u3011\u725B\u982D\u306E\u50CF\u306E\u80F4\u4F53\u3010\u7834\u58CA_\u30DD\u30EA\u5287\u7528\u3011",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o19_1120",
-    "Name": "",
+    "Name": "Illusory Wall - Iron Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o19_1130",
-    "Name": "",
+    "Name": "Illusory Wall - Iron Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o19_1140",
-    "Name": "",
+    "Name": "Pharros Wall - Iron Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o19_1141",
-    "Name": "",
+    "Name": "Pharros Wall - Iron Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o19_1142",
-    "Name": "",
+    "Name": "Bellfry Door - Iron Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o19_1150",
-    "Name": "",
+    "Name": "Bell - Iron Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o19_1151",
-    "Name": "",
+    "Name": "Bell (sound model) - Iron Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o19_1160",
-    "Name": "",
+    "Name": "Floor that can be destroyed by the boss -- \u3010\u7194\u9244\u57CE\u3011\u30DC\u30B9\u304C\u7834\u58CA\u3067\u304D\u308B\u5E8A",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o19_1301",
-    "Name": "",
+    "Name": "Healing Fountain - Iron Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o19_1400",
-    "Name": "",
+    "Name": "Guillotine Door - Iron Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o19_1700",
-    "Name": "",
+    "Name": "Spire - Iron Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o19_1800",
-    "Name": "",
+    "Name": "Pharros Contraption - Iron Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o19_1900",
-    "Name": "",
+    "Name": "Primal Bonfire - Iron Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o19_8500",
-    "Name": "",
+    "Name": "Lava (Boss Cutscene) - Iron Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o19_9000",
-    "Name": "",
+    "Name": "Elevator 1_1 -- \u3010\u706B\u5C71\u306E\u88FD\u9244\u6240\u3011\u30A8\u30EC\u30D9\u30FC\u30BF1_1",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o19_9001",
-    "Name": "",
+    "Name": "Elevator 1_2 -- \u3010\u706B\u5C71\u306E\u88FD\u9244\u6240\u3011\u30A8\u30EC\u30D9\u30FC\u30BF1_2",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o19_9002",
-    "Name": "",
+    "Name": "Elevator 2 -- \u3010\u706B\u5C71\u306E\u88FD\u9244\u6240\u3011\u30A8\u30EC\u30D9\u30FC\u30BF2",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o19_9004",
-    "Name": "",
+    "Name": "Moving Platform - Iron Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o19_9005",
-    "Name": "",
+    "Name": "Moving Platform (submerged) - Iron Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o19_9006",
-    "Name": "",
+    "Name": "Dropping Platform - Iron Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o19_9010",
-    "Name": "",
+    "Name": "Stone Torch - Iron Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o19_9020",
-    "Name": "",
+    "Name": "Spiked Wall - Iron Keep",
     "Tags": [
       ""
     ]
   },
   {
+    "ID": "o19_9021",
+    "Name": "Object used to hit the rotating statue",
+    "Tags": []
+  },
+  {
+    "ID": "o19_9030",
+    "Name": "Rotating Bull Statue - Iron Keep",
+    "Tags": []
+  },
+  {
     "ID": "o19_9300",
-    "Name": "",
+    "Name": "Bull-Headed Statue (Chamelon object) - Iron Keep",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o21_0300",
-    "Name": "",
+    "Name": "Iron Door - Drangleic Castle",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o21_0330",
-    "Name": "",
+    "Name": "Small Door 00 -- \u3010\u5CA9\u5CF0\u57CE\u3011\u7247\u6249\u5C0F00",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o21_0340",
-    "Name": "",
+    "Name": "Medium Door -- \u3010\u5CA9\u5CF0\u57CE\u3011\u7247\u6249\u4E2D00",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o21_0350",
-    "Name": "",
+    "Name": "Iron Bars Door",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o21_0370",
-    "Name": "",
+    "Name": "Basement Door -- \u3010\u5CA9\u5CF0\u57CE\u3011\u7247\u6249\u5730\u4E0B\u7528",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o21_0430",
-    "Name": "",
+    "Name": "Medium Heavy Doors -- \u3010\u5CA9\u5CF0\u57CE\u3011\u4E21\u6249\u4E2D00",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o21_0440",
-    "Name": "",
+    "Name": "Balcony Door -- \u3010\u5CA9\u5CF0\u57CE\u3011\u4E21\u6249\u30D0\u30EB\u30B3\u30CB\u30FC\u7528",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o21_0470",
-    "Name": "",
+    "Name": "Large Heavy Doors -- \u3010\u5CA9\u5CF0\u57CE\u3011\u4E21\u6249\u592701",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o21_0476",
-    "Name": "",
+    "Name": "King\u0027s Door - Drangleic Castle",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o21_0480",
-    "Name": "",
+    "Name": "Throne Room Door",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o21_0481",
-    "Name": "",
+    "Name": "Basement Door",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o21_0482",
-    "Name": "",
+    "Name": "Large Door - Drangleic Castle",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o21_0640",
-    "Name": "",
+    "Name": "Floor Lever - Drangleic Castle",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o21_0900",
-    "Name": "",
+    "Name": "Ladder - Drangleic Castle",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o21_1000",
-    "Name": "",
+    "Name": "Vengarl\u0027s Head (Correct answer) -- \u3010\u5CA9\u5CF0\u57CE\u3011\u30C7\u30E5\u30E9\u30CF\u30F3\u306E\u751F\u9996\u3000\u6B63\u89E3",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o21_1001",
-    "Name": "",
+    "Name": "Vengarl\u0027s Head (Incorrect answer) -- \u3010\u5CA9\u5CF0\u57CE\u3011\u30C7\u30E5\u30E9\u30CF\u30F3\u306E\u751F\u9996\u3000\u9593\u9055\u3044",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o21_1002",
-    "Name": "",
+    "Name": "Vengarl\u0027s Head (Incorrect answer) -- \u3010\u5CA9\u5CF0\u57CE\u3011\u30C7\u30E5\u30E9\u30CF\u30F3\u306E\u751F\u9996\u3000\u9593\u9055\u3044",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o21_1003",
-    "Name": "",
+    "Name": "Vengarl\u0027s Head (Incorrect answer) -- \u3010\u5CA9\u5CF0\u57CE\u3011\u30C7\u30E5\u30E9\u30CF\u30F3\u306E\u751F\u9996\u3000\u9593\u9055\u3044",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o21_1004",
-    "Name": "",
+    "Name": "Vengarl\u0027s Head (Incorrect answer) -- \u3010\u5CA9\u5CF0\u57CE\u3011\u30C7\u30E5\u30E9\u30CF\u30F3\u306E\u751F\u9996\u3000\u9593\u9055\u3044",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o21_1010",
-    "Name": "",
+    "Name": "Dragon Statue",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o21_1020",
-    "Name": "",
+    "Name": "Golem",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o21_1030",
-    "Name": "",
+    "Name": "Golem Door",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o21_1040",
-    "Name": "",
+    "Name": "Stone Knight Head",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o21_1050",
-    "Name": "",
+    "Name": "Altar of the Abyss - Drangleic Castle",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o21_1100",
-    "Name": "",
+    "Name": "Queen\u0027s Painting - Drangleic Castle",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o21_1130",
-    "Name": "",
+    "Name": "Queen\u0027s Throne - Drangleic Castle",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o21_1150",
-    "Name": "",
+    "Name": "Golem Switch - Drangleic Castle",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o21_1190",
-    "Name": "",
+    "Name": "The Embedded - Drangleic Castle",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o21_1200",
-    "Name": "",
+    "Name": "Golem\u0027s Torch - Drangleic Castle",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o21_2000",
-    "Name": "",
+    "Name": "Pillar (Boss Arena) - Drangleic Castle",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o21_5000",
-    "Name": "",
+    "Name": "Ladder - Drangleic Castle",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o21_9000",
-    "Name": "",
+    "Name": "Kingdom Banner - Drangleic Castle",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o21_9010",
-    "Name": "",
+    "Name": "Chandelier - Drangleic Castle",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o21_9020",
-    "Name": "",
+    "Name": "Throne - Drangleic Castle",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o21_9030",
-    "Name": "",
+    "Name": "Queen\u0027s Chair - Drangleic Castle",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o21_9035",
-    "Name": "",
+    "Name": "Collapsing Floor - Drangleic Castle",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o21_9036",
-    "Name": "",
+    "Name": "Mask 1 - Drangleic Castle",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o21_9037",
-    "Name": "",
+    "Name": "Mask 2 - Drangleic Castle",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o21_9038",
-    "Name": "",
+    "Name": "Mask 3 - Drangleic Castle",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o21_9040",
-    "Name": "",
+    "Name": "Hanging Lamp - Drangleic Castle",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o21_9045",
-    "Name": "",
+    "Name": "Elevator - Drangleic Castle",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o21_9050",
-    "Name": "",
+    "Name": "Entrance Statue -- \u3010\u5CA9\u5CF0\u57CE\u3011\u30A8\u30F3\u30C8\u30E9\u30F3\u30B9\u5F6B\u50CF",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o21_9051",
-    "Name": "",
+    "Name": "Mirror - Drangleic Castle",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o21_9055",
-    "Name": "",
+    "Name": "Illusory Wall - Drangleic Castle",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o21_9060",
-    "Name": "",
+    "Name": "Chandelier -- \u3010\u5CA9\u5CF0\u57CE\u3011\u30B7\u30E3\u30F3\u30C7\u30EA\u30A2(\u4E2D)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o21_9065",
-    "Name": "",
+    "Name": "Wooden Door (Round Top) - Drangleic Castle",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o21_9066",
-    "Name": "",
+    "Name": "Iron Bars Gate - Drangleic Castle",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o21_9070",
-    "Name": "",
+    "Name": "Tall Candle Holder - Drangleic Castle",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o21_9075",
-    "Name": "",
+    "Name": "Large Door (Key to King\u0027s Passage) - Drangleic Castle",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o21_9080",
-    "Name": "",
+    "Name": "Stone Knight Statue - Drangleic Castle",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o21_9085",
-    "Name": "",
+    "Name": "Golem Entrance Gate - Drangleic Castle",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o21_9090",
-    "Name": "",
+    "Name": "Elevator - Drangleic Castle",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o21_9100",
-    "Name": "",
+    "Name": "Pillar with fire - Drangleic Castle",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o21_9110",
-    "Name": "",
+    "Name": "Platform in Dragonrider\u0027s arena - Drangleic Castle",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o21_9200",
-    "Name": "",
+    "Name": "Nashandra (Provisional model)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o21_9300",
-    "Name": "",
+    "Name": "Pillar (Main Hall) - Drangleic Castle",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o21_9310",
-    "Name": "",
+    "Name": "Arch - Drangleic Castle",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o21_9330",
-    "Name": "",
+    "Name": "Pillar (Exterior) - Drangleic Castle",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o21_9400",
-    "Name": "",
+    "Name": "Dummy for Lightning SFX - Drangleic Castle",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o21_9401",
-    "Name": "",
+    "Name": "Dummy for Lightning SFX - Drangleic Castle",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o21_9402",
-    "Name": "",
+    "Name": "Dummy for Lightning SFX - Drangleic Castle",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o21_9403",
-    "Name": "",
+    "Name": "Dummy for Lightning SFX - Drangleic Castle",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o21_9404",
-    "Name": "",
+    "Name": "Dummy for Lightning SFX - Drangleic Castle",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o21_9405",
-    "Name": "",
+    "Name": "Dummy for Rain SFX - Drangleic Castle",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o21_9406",
-    "Name": "",
+    "Name": "Dummy for Rain SFX - Drangleic Castle",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o21_9407",
-    "Name": "",
+    "Name": "Dummy for Fire SFX - Drangleic Castle",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o21_9408",
-    "Name": "",
+    "Name": "Dummy for Rain Drops SFX - Drangleic Castle",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o21_9409",
-    "Name": "",
+    "Name": "Dummy for Ending 1 SFX - Drangleic Castle",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o21_9410",
-    "Name": "",
+    "Name": "Dummy for Ending 2 SFX - Drangleic Castle",
     "Tags": [
       ""
     ]
@@ -7281,1183 +7321,1203 @@
   },
   {
     "ID": "o21_9600",
-    "Name": "",
+    "Name": "Original Golem - Drangleic Castle",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o21_9700",
-    "Name": "",
+    "Name": "The Throne of Want - Drangleic Castle",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o21_9750",
-    "Name": "",
+    "Name": "Brightbugs - Drangleic Castle",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o23_0000",
-    "Name": "",
+    "Name": "Elizabeth? [c4140]",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o23_0620",
-    "Name": "",
+    "Name": "Vertical Lever - Huntsman\u0027s Copse",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o23_0640",
-    "Name": "",
+    "Name": "Floor Lever (multiple uses) - Huntsman\u0027s Copse",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o23_0660",
-    "Name": "",
+    "Name": "Floor Lever (one use only) - Huntsman\u0027s Copse",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o23_1000",
-    "Name": "",
+    "Name": "Whip (Executioner\u0027s Chariot)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o23_1001",
-    "Name": "",
+    "Name": "Executioner (Executioner\u0027s Chariot)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o23_1002",
-    "Name": "",
+    "Name": "Chariot (Executioner\u0027s Chariot)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o23_1010",
-    "Name": "",
+    "Name": "Arch Gate (Executioner\u0027s Chariot)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o23_1020",
-    "Name": "",
+    "Name": "Falling Tree - Huntsman\u0027s Copse",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o23_1030",
-    "Name": "",
+    "Name": "Collapsing Beams -- \u3010\u62F7\u554F\u5834\u3011\u58CA\u308C\u308B\u6881",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o23_1040",
-    "Name": "",
+    "Name": "Iron Bars Gate - Hunstman\u0027s Copse",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o23_1045",
-    "Name": "",
+    "Name": "Iron Bars Gate (PVP arenas) - Hunstman\u0027s Copse",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o23_1050",
-    "Name": "",
+    "Name": "Cage Elevator - Hunstman\u0027s Copse",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o23_1060",
-    "Name": "",
+    "Name": "Illusory Wall - Hunstman\u0027s Copse",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o23_1070",
-    "Name": "",
+    "Name": "Illusory Wall - Hunstman\u0027s Copse",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o23_1080",
-    "Name": "",
+    "Name": "PVP covenant interaction - Hunstman\u0027s Copse",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o23_1090",
-    "Name": "",
+    "Name": "Guillotine Door - Hunstman\u0027s Copse",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o23_2000",
-    "Name": "",
+    "Name": "Boarded Window - Hunstman\u0027s Copse",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o23_2010",
-    "Name": "",
+    "Name": "Skeleton Throne A - Hunstman\u0027s Copse",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o23_2011",
-    "Name": "",
+    "Name": "Skeleton Throne B - Hunstman\u0027s Copse",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o23_2020",
-    "Name": "",
+    "Name": "Candles - Undead Purgatory",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o23_2530",
-    "Name": "",
+    "Name": "Felkin\u0027s Chair - Hunstman\u0027s Copse",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o23_7000",
-    "Name": "",
+    "Name": "Coniferous Tree - Hunstman\u0027s Copse",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o23_7001",
-    "Name": "",
+    "Name": "Forked Tree - Hunstman\u0027s Copse",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o23_7002",
-    "Name": "",
+    "Name": "Curved Tree - Hunstman\u0027s Copse",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o23_7003",
-    "Name": "",
+    "Name": "Bent Tree - Hunstman\u0027s Copse",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o23_7004",
-    "Name": "",
+    "Name": "Tree with leaves - Hunstman\u0027s Copse",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o23_7005",
-    "Name": "",
+    "Name": "Tree for shadows - Hunstman\u0027s Copse",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o23_7006",
-    "Name": "",
+    "Name": "Tree for shadows - Hunstman\u0027s Copse",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o23_7010",
-    "Name": "",
+    "Name": "Coniferous Tree (90\uFF05 scale) - Hunstman\u0027s Copse",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o23_7011",
-    "Name": "",
+    "Name": "Coniferous Tree (80\uFF05 scale) - Hunstman\u0027s Copse",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o23_7012",
-    "Name": "",
+    "Name": "Coniferous Tree (70\uFF05 scale) - Hunstman\u0027s Copse",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o23_7020",
-    "Name": "",
+    "Name": "Forked Tree (135\uFF05 scale) - Hunstman\u0027s Copse",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o23_7030",
-    "Name": "",
+    "Name": "Curved Tree (60\uFF05 scale - Z only) - Hunstman\u0027s Copse",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o23_7031",
-    "Name": "",
+    "Name": "Curved Tree (150 scale) - Hunstman\u0027s Copse",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o23_7032",
-    "Name": "",
+    "Name": "Curved Tree (170 scale) - Hunstman\u0027s Copse",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o23_7033",
-    "Name": "",
+    "Name": "Curved Tree (200 scale) - Hunstman\u0027s Copse",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o23_7040",
-    "Name": "",
+    "Name": "Tree with leaves (50 scale) - Hunstman\u0027s Copse",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o23_9001",
-    "Name": "",
+    "Name": "Flag -- \u3010\u62F7\u554F\u5834\u3011\u65D7",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o23_9003",
-    "Name": "",
+    "Name": "Curse Jar - Hunstman\u0027s Copse",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o23_9004",
-    "Name": "",
+    "Name": "Chained Torch - Hunstman\u0027s Copse",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o23_9005",
-    "Name": "",
+    "Name": "Hanging Torch - Hunstman\u0027s Copse",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o23_9010",
-    "Name": "",
+    "Name": "Moving Bridge - Hunstman\u0027s Copse",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o23_9015",
-    "Name": "",
+    "Name": "Rotating Bridge (Tentative) -- \u3010\u62F7\u554F\u5834\u3011\u30DE\u30C3\u30D7\u63A5\u7D9A\u7528\u56DE\u8EE2\u53EF\u52D5\u6A4B\uFF08\u4EEE\uFF09",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o23_9020",
-    "Name": "",
+    "Name": "Gate Decoration - Hunstman\u0027s Copse",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o23_9030",
-    "Name": "",
+    "Name": "Cloth A - Hunstman\u0027s Copse",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o23_9031",
-    "Name": "",
+    "Name": "Cloth B - Hunstman\u0027s Copse",
     "Tags": [
       ""
     ]
   },
   {
+    "ID": "o23_9050",
+    "Name": "Executioner\u0027s Chariot",
+    "Tags": []
+  },
+  {
     "ID": "o23_9300",
-    "Name": "",
+    "Name": "Cage (Chameleon object) - Hunstman\u0027s Copse",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o23_9800",
-    "Name": "",
+    "Name": "PL Hiding Spot (Tentative) -- \u3010\u62F7\u554F\u5834\u3011PL\u304C\u96A0\u308C\u308B\u9699\u9593(\u4EEE)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o24_0300",
-    "Name": "",
+    "Name": "Iron Bars Door -- \u3010\u6C34\u6CA1\u57CE\u3011\u9244\u683C\u5B50\u306E\u7247\u6249\uFF08\u6C34\u6CA1\u57CE\u5C02\u7528\uFF09",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o24_0620",
-    "Name": "",
+    "Name": "Vertical Lever",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o24_0660",
-    "Name": "",
+    "Name": "Floor Lever",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o24_0900",
-    "Name": "",
+    "Name": "Broken Ladder",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o24_1000",
-    "Name": "",
+    "Name": "Search Light -- \u3010\u6C34\u6CA1\u57CE\u3011\u30B5\u30FC\u30C1\u30E9\u30A4\u30C8\u3010\u5149\u306E\u7B4B\u3011",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o24_1010",
-    "Name": "",
+    "Name": "Search Light -- \u3010\u6C34\u6CA1\u57CE\u3011\u30B5\u30FC\u30C1\u30E9\u30A4\u30C8\u3010\u5149\u306E\u7B4B\u3011",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o24_1020",
-    "Name": "",
+    "Name": "Search Light -- \u3010\u6C34\u6CA1\u57CE\u3011\u30B5\u30FC\u30C1\u30E9\u30A4\u30C8\u3010\u5149\u306E\u7B4B\u3011",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o24_1030",
-    "Name": "",
+    "Name": "Search Light -- \u3010\u6C34\u6CA1\u57CE\u3011\u30B5\u30FC\u30C1\u30E9\u30A4\u30C8\u3010\u5149\u306E\u7B4B\u3011",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o24_1040",
-    "Name": "",
+    "Name": "Search Light -- \u3010\u6C34\u6CA1\u57CE\u3011\u30B5\u30FC\u30C1\u30E9\u30A4\u30C8\u3010\u5149\u306E\u7B4B\u3011",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o24_1050",
-    "Name": "",
+    "Name": "Search Light -- \u3010\u6C34\u6CA1\u57CE\u3011\u30B5\u30FC\u30C1\u30E9\u30A4\u30C8\u3010\u5149\u306E\u7B4B\u3011",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o24_1060",
-    "Name": "",
+    "Name": "Search Light -- \u3010\u6C34\u6CA1\u57CE\u3011\u30B5\u30FC\u30C1\u30E9\u30A4\u30C8\u3010\u5149\u306E\u7B4B\u3011",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o24_1070",
-    "Name": "",
+    "Name": "Search Light -- \u3010\u6C34\u6CA1\u57CE\u3011\u30B5\u30FC\u30C1\u30E9\u30A4\u30C8\u3010\u5149\u306E\u7B4B\u3011",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o24_1080",
-    "Name": "",
+    "Name": "Search Light -- \u3010\u6C34\u6CA1\u57CE\u3011\u30B5\u30FC\u30C1\u30E9\u30A4\u30C8\u3010\u5149\u306E\u7B4B\u3011",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o24_1090",
-    "Name": "",
+    "Name": "Search Light -- \u3010\u6C34\u6CA1\u57CE\u3011\u30B5\u30FC\u30C1\u30E9\u30A4\u30C8\u3010\u5149\u306E\u7B4B\u3011",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o24_1100",
-    "Name": "",
+    "Name": "Shortcut Bridge - Undead Crypt",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o24_1110",
-    "Name": "",
+    "Name": "Bell - Undead Crypt",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o24_1120",
-    "Name": "",
+    "Name": "Illusory Wall - Undead Crypt",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o24_1130",
-    "Name": "",
+    "Name": "Pharros Wall - Undead Crypt",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o24_1140",
-    "Name": "",
+    "Name": "Illusory Wall - Undead Crypt",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o24_1500",
-    "Name": "",
+    "Name": "Undead Coffin -- \u3010\u6C34\u6CA1\u57CE\u3011\u4E0D\u6B7B\u65CF\u306E\u68FA\u6876",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o24_1800",
-    "Name": "",
+    "Name": "Pharros Contraption - Undead Crypt",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o24_1900",
-    "Name": "",
+    "Name": "Brazier (Undead Crypt)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o24_1901",
-    "Name": "",
+    "Name": "Goddess Brazier - Undead Crypt",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o24_2000",
-    "Name": "",
+    "Name": "Statue with flame SFX -- \u3010\u6C34\u6CA1\u57CE\u3011\u708E\u306ESFX\u4ED8\u304D\u5F6B\u50CF",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o24_2010",
-    "Name": "",
+    "Name": "Hanging Torch - Undead Crypt",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o24_2020",
-    "Name": "",
+    "Name": "Pillar (Boss Arena) - Undead Crypt",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o24_2030",
-    "Name": "",
+    "Name": "Vendrick\u0027s Armor - Undead Crypt",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o24_9000",
-    "Name": "",
+    "Name": "Tombstone - Undead Crypt",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o24_9002",
-    "Name": "",
+    "Name": "Large Tomb - Undead Crypt",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o24_9005",
-    "Name": "",
+    "Name": "Small Tomb -- \u3010\u970A\u5EDF\u3011\u5C0F\u7D30\u5893",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o24_9006",
-    "Name": "",
+    "Name": "Candles - Undead Crypt",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o24_9007",
-    "Name": "",
+    "Name": "Candles - Undead Crypt",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o24_9500",
-    "Name": "",
+    "Name": "Dummy for SFX 1 - Undead Crypt",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o24_9510",
-    "Name": "",
+    "Name": "Dummy for SFX 2 - Undead Crypt",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o24_9520",
-    "Name": "",
+    "Name": "Dummy for SFX 3 - Undead Crypt",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o25_0200",
-    "Name": "",
+    "Name": "Burning Treasure Chest",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o25_0250",
-    "Name": "",
+    "Name": "Skeleton",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o25_0300",
-    "Name": "",
+    "Name": "Wooden Door - Unused",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o25_0470",
-    "Name": "",
+    "Name": "Large Stone Door (Forgotten Key)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o25_0900",
-    "Name": "",
+    "Name": "Ladder (3.8m) - The Gutter",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o25_0902",
-    "Name": "",
+    "Name": "Ladder (5.0m) - The Gutter",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o25_0903",
-    "Name": "",
+    "Name": "Ladder (6.2m) - The Gutter",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o25_0904",
-    "Name": "",
+    "Name": "Ladder (7.4m) - The Gutter",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o25_0907",
-    "Name": "",
+    "Name": "Ladder (9.8m) - The Gutter",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o25_0909",
-    "Name": "",
+    "Name": "Ladder (11m) - The Gutter",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o25_0910",
-    "Name": "",
+    "Name": "Ladder (12.2m) - The Gutter",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o25_0915",
-    "Name": "",
+    "Name": "Ladder (15.8m) - The Gutter",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o25_0929",
-    "Name": "",
+    "Name": "Ladder (14.6m) - The Gutter",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o25_1000",
-    "Name": "",
+    "Name": "Collapsing Platform 1 - The Gutter",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o25_1010",
-    "Name": "",
+    "Name": "Collapsing Platform 2 - The Gutter",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o25_1020",
-    "Name": "",
+    "Name": "Cage Elevator - The Gutter",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o25_1030",
-    "Name": "",
+    "Name": "Altar of the Abyss (Broken) - The Gutter",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o25_1031",
-    "Name": "",
+    "Name": "Altar Pillar - The Gutter",
     "Tags": [
       ""
     ]
   },
   {
+    "ID": "o25_1060",
+    "Name": "Navigation Table (Provisional)",
+    "Tags": []
+  },
+  {
+    "ID": "o25_1061",
+    "Name": "Navigation Table (Provisional)",
+    "Tags": []
+  },
+  {
     "ID": "o25_1900",
-    "Name": "",
+    "Name": "Brazier (Kokeshi) (Debris) - The Gutter",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o25_1901",
-    "Name": "",
+    "Name": "Brazier (Kokeshi) - The Gutter",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o25_1920",
-    "Name": "",
+    "Name": "Primordial Bonfire - The Gutter",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o25_2000",
-    "Name": "",
+    "Name": "Curse Jar - The Gutter",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o25_2001",
-    "Name": "",
+    "Name": "Wooden Planks - The Gutter",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o25_2010",
-    "Name": "",
+    "Name": "Kokeshi - The Gutter",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o25_2011",
-    "Name": "",
+    "Name": "Kokeshi with moss 1 - The Gutter",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o25_2012",
-    "Name": "",
+    "Name": "Kokeshi with moss 2 - The Gutter",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o25_2013",
-    "Name": "",
+    "Name": "Kokeshi with moss 3 - The Gutter",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o25_2015",
-    "Name": "",
+    "Name": "Hanging Kokeshi - The Gutter",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o25_2020",
-    "Name": "",
+    "Name": "Kokeshi - The Gutter",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o25_2021",
-    "Name": "",
+    "Name": "Kokeshi with moss 1 - The Gutter",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o25_2022",
-    "Name": "",
+    "Name": "Kokeshi with moss 2 - The Gutter",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o25_2023",
-    "Name": "",
+    "Name": "Kokeshi with moss 3 - The Gutter",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o25_2030",
-    "Name": "",
+    "Name": "Kokeshi (Cutscene) - The Gutter",
     "Tags": [
       ""
     ]
   },
   {
+    "ID": "o25_2035",
+    "Name": "Praying Statue (Curse)",
+    "Tags": []
+  },
+  {
     "ID": "o25_2040",
-    "Name": "",
+    "Name": "Kokeshi Fragment (Cutscene) - The Gutter",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o25_2050",
-    "Name": "",
+    "Name": "Destroyed Kokeshi (Cutscene)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o25_2061",
-    "Name": "",
+    "Name": "Collapsing Platform A - The Gutter",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o25_2062",
-    "Name": "",
+    "Name": "Wooden planks - The Gutter",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o25_2063",
-    "Name": "",
+    "Name": "Collapsing Platform B - The Gutter",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o25_2064",
-    "Name": "",
+    "Name": "Collapsing Platform C - The Gutter",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o25_2120",
-    "Name": "",
+    "Name": "Big Pot (for a treasure corpse) - The Gutter",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o25_2121",
-    "Name": "",
+    "Name": "Big Pot - The Gutter",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o25_3003",
-    "Name": "",
+    "Name": "Insect Jar (multiple enemies) -- \u3010\u30AF\u30BA\u5E95\u3011\u866B\u58FA(\u6575\u8907\u6570\u4F53)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o25_3004",
-    "Name": "",
+    "Name": "Corrosive Jar - The Gutter",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o25_6000",
-    "Name": "",
+    "Name": "The Rotten\u0027s Right Arm",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o25_6001",
-    "Name": "",
+    "Name": "The Rotten\u0027s Left Arm",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o25_6002",
-    "Name": "",
+    "Name": "The Rotten\u0027s Left Arm Corpse",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o25_9300",
-    "Name": "",
+    "Name": "Kokeshi (Chameleon object) - The Gutter",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o26_1000",
-    "Name": "",
+    "Name": "Dummy for warping - Dragon Memories",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o26_2000",
-    "Name": "",
+    "Name": "Explosive Barrel",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o26_2010",
-    "Name": "",
+    "Name": "Box",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o27_0370",
-    "Name": "",
+    "Name": "Wooden Door",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o27_0800",
-    "Name": "",
+    "Name": "Rope - Dragon Aerie",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o27_0801",
-    "Name": "",
+    "Name": "Rope - Dragon Aerie",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o27_0900",
-    "Name": "",
+    "Name": "Extendable Iron Ladder",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o27_1000",
-    "Name": "",
+    "Name": "Suspension Bridge - Dragon Aerie",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o27_1010",
-    "Name": "",
+    "Name": "Boss room platform -- \u3010\u9F8D\u306E\u7960\u796D\u5834\u3011\u30DC\u30B9\u90E8\u5C4B\u7A81\u304D\u51FA\u308B\u8DB3\u5834",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o27_1040",
-    "Name": "",
+    "Name": "Pharros Wall - Dragon Aerie",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o27_1810",
-    "Name": "",
+    "Name": "Pharros Contraption - Dragon Aerie",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o27_2000",
-    "Name": "",
+    "Name": "Dragon Egg",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o27_6000",
-    "Name": "",
+    "Name": "Flying Dragon - Dragon Aerie",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o27_6001",
-    "Name": "",
+    "Name": "Flying Dragon - Dragon Aerie",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o27_9000",
-    "Name": "",
+    "Name": "Wind Rags - Dragon Aerie",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o27_9010",
-    "Name": "",
+    "Name": "Dummy for Petrified Egg",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o27_9020",
-    "Name": "",
+    "Name": "Dummy for Clouds SFX - Dragon Aerie",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o29_1000",
-    "Name": "",
+    "Name": "Iron Gate - Path to Shaded Woods",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o29_1001",
-    "Name": "",
+    "Name": "Iron Gate - Path to Shaded Woods",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o29_7000",
-    "Name": "",
+    "Name": "Tree with leaves - Path to Shaded Woods",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o29_7001",
-    "Name": "",
+    "Name": "Tree with no leaves - Path to Shaded Woods",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o30_0640",
-    "Name": "",
+    "Name": "Floor Lever - Path to Heide",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o30_9000",
-    "Name": "",
+    "Name": "Elevator - Path to Heide",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o31_0329",
-    "Name": "",
+    "Name": "Iron Bars Gate (PVP arenas) - Heide\u0027s Tower of Flame",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o31_0400",
-    "Name": "",
+    "Name": "Moving Gate - Heide\u0027s Tower of Flame",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o31_0620",
-    "Name": "",
+    "Name": "Vertical Lever - Heide\u0027s Tower of Flame",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o31_0660",
-    "Name": "",
+    "Name": "Floor Lever - Heide\u0027s Tower of Flame",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o31_1000",
-    "Name": "",
+    "Name": "Drawbridge - Heide\u0027s Tower of Flame",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o31_1010",
-    "Name": "",
+    "Name": "Rising Platform - Heide\u0027s Tower of Flame",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o31_1020",
-    "Name": "",
+    "Name": "Lever Hole - Heide\u0027s Tower of Flame",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o31_1030",
-    "Name": "",
+    "Name": "Pillar (Boss Arena) - Heide\u0027s Tower of Flame",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o31_1040",
-    "Name": "",
+    "Name": "Church Bench - Heide\u0027s Tower of Flame",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o31_1050",
-    "Name": "",
+    "Name": "Pillar - Heide\u0027s Tower of Flame",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o31_1060",
-    "Name": "",
+    "Name": "Railing - Heide\u0027s Tower of Flame",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o31_1070",
-    "Name": "",
+    "Name": "Pillar - Heide\u0027s Tower of Flame",
     "Tags": [
       ""
     ]
@@ -8471,231 +8531,231 @@
   },
   {
     "ID": "o31_9004",
-    "Name": "",
+    "Name": "Chained Torch - Heide\u0027s Tower of Flame",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o31_9010",
-    "Name": "",
+    "Name": "Covenant Statue - Heide\u0027s Tower of Flame",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o31_9020",
-    "Name": "",
+    "Name": "Wall Candle Holder - Heide\u0027s Tower of Flame",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o32_0370",
-    "Name": "",
+    "Name": "Wooden Door (Round Top)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o32_0470",
-    "Name": "",
+    "Name": "King\u0027s Door -- \u738B\u306E\u6249",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o32_0476",
-    "Name": "",
+    "Name": "King\u0027s Door - Shaded Woods",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o32_0480",
-    "Name": "",
+    "Name": "Shrine Door - Shrine of Winter",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o32_1000",
-    "Name": "",
+    "Name": "Gimmick Door - \u3010\u865A\u308D\u306E\u5F71\u306E\u68EE\u3011\u30AE\u30DF\u30C3\u30AF\u4E0A\u304C\u308A\u6249",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o32_1010",
-    "Name": "",
+    "Name": "Tree (Boss Arena) - Shaded Woods",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o32_1020",
-    "Name": "",
+    "Name": "Big Barrel - Shaded Woods",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o32_1030",
-    "Name": "",
+    "Name": "Spiked Wheels -- \u3010\u865A\u308D\u306E\u5F71\u306E\u68EE\u3011\u68D8\u8ECA\u8F2A\u3000",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o32_1040",
-    "Name": "",
+    "Name": "Altar of the Abyss - Shaded Woods",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o32_1041",
-    "Name": "",
+    "Name": "Altar Pillar - Shaded Woods",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o32_2000",
-    "Name": "",
+    "Name": "Curse Jar - Shaded Woods",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o32_2010",
-    "Name": "",
+    "Name": "Pillar A - Shaded Woods",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o32_2011",
-    "Name": "",
+    "Name": "Pillar B - Shaded Woods",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o32_7000",
-    "Name": "",
+    "Name": "Tree with leaves - Shaded Woods",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o32_7001",
-    "Name": "",
+    "Name": "Large Tree - Shaded Woods",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o32_7002",
-    "Name": "",
+    "Name": "Tree in the distance - Shaded Woods",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o32_7003",
-    "Name": "",
+    "Name": "Small Withered Tree - Shaded Woods",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o32_7004",
-    "Name": "",
+    "Name": "Small Tree - Shaded Woods",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o32_7005",
-    "Name": "",
+    "Name": "Withered Tree - Shaded Woods",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o32_7006",
-    "Name": "",
+    "Name": "Tree - Shaded Woods",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o32_7007",
-    "Name": "",
+    "Name": "Small Withered Tree (Boss Arena) - Shaded Woods",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o32_9000",
-    "Name": "",
+    "Name": "Cloth - Shaded Woods",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o32_9001",
-    "Name": "",
+    "Name": "Cloth? - Shaded Woods",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o32_9002",
-    "Name": "",
+    "Name": "Enemy spawn gate -- \u3010\u7363\u4EBA\u306E\u68EE\u3011\u6575\u51FA\u73FE\u30B2\u30FC\u30C8",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o32_9003",
-    "Name": "",
+    "Name": "Gate\u0027s Stone Statue -- \u3010\u7363\u4EBA\u306E\u68EE\u3011\u30B2\u30FC\u30C8\u306E\u77F3\u50CF",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o32_9010",
-    "Name": "",
+    "Name": "Forest Guardian -- \u68EE\u306E\u756A\u4EBA\uFF08\u691C\u8A3C\u7528\uFF09",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o32_9020",
-    "Name": "",
+    "Name": "Human-Faced Tree - Shaded Woods",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o32_9021",
-    "Name": "",
+    "Name": "White Tree - Shaded Woods",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o32_9030",
-    "Name": "",
+    "Name": "Pitfall Trap (Small) -- \u3010\u7363\u4EBA\u306E\u68EE\u3011\u843D\u3068\u3057\u7A74\u7528\u677F\uFF08\u5C0F\uFF09",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o32_9031",
-    "Name": "",
+    "Name": "Pitfall Trap (Large) -- \u3010\u7363\u4EBA\u306E\u68EE\u3011\u843D\u3068\u3057\u7A74\u7528\u677F\uFF08\u5927\uFF09",
     "Tags": [
       ""
     ]
@@ -8709,245 +8769,245 @@
   },
   {
     "ID": "o32_9300",
-    "Name": "",
+    "Name": "Flowers (Chamelon object) - Shaded Woods",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o32_9400",
-    "Name": "",
+    "Name": "Corrosive pool light source - Shaded Woods",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o33_0906",
-    "Name": "",
+    "Name": "Ladder (8.6m)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o33_1050",
-    "Name": "",
+    "Name": "Stone Gate 1 - Doors of Pharros",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o33_1051",
-    "Name": "",
+    "Name": "Stone Gate 2 - Doors of Pharros",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o33_1060",
-    "Name": "",
+    "Name": "Stone Wall - Doors of Pharros",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o33_1063",
-    "Name": "",
+    "Name": "Botton - Doors of Pharros",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o33_1065",
-    "Name": "",
+    "Name": "Door Section A - Doors of Pharros",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o33_1066",
-    "Name": "",
+    "Name": "Door Section B - Doors of Pharros",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o33_1067",
-    "Name": "",
+    "Name": "Door Section C - Doors of Pharros",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o33_1800",
-    "Name": "",
+    "Name": "Pharros Contraption - Doors of Pharros",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o33_1810",
-    "Name": "",
+    "Name": "Pharros Contraption - Doors of Pharros",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o33_1900",
-    "Name": "",
+    "Name": "Brazier (Gyrm) - Doors of Pharros",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o33_1930",
-    "Name": "",
+    "Name": "Wall Torch - Doors of Pharros",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o33_2000",
-    "Name": "",
+    "Name": "Kokeshi - Doors of Pharros",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o33_9100",
-    "Name": "",
+    "Name": "Wall Spikes 1 - Doors of Pharros",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o33_9101",
-    "Name": "",
+    "Name": "Wall Spikes 2 - Doors of Pharros",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o33_9402",
-    "Name": "",
+    "Name": "Gyrm Statue - Doors of Pharros",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o34_0900",
-    "Name": "",
+    "Name": "Ladder (3.8m) - Grave of Saints",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o34_0902",
-    "Name": "",
+    "Name": "Ladder (5.0m) - Grave of Saints",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o34_0909",
-    "Name": "",
+    "Name": "Broken Ladder - Grave of Saints",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o34_1000",
-    "Name": "",
+    "Name": "Drawbridge - Grave of Saints",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o34_1010",
-    "Name": "",
+    "Name": "Stairs - Grave of Saints",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o34_1800",
-    "Name": "",
+    "Name": "Pharros Contraption - Grave of Saints",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o34_1801",
-    "Name": "",
+    "Name": "Pharros Contraption (Tentative) -- \u866B\u9375\uFF08\u4EEE\uFF09",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o34_1802",
-    "Name": "",
+    "Name": "Pharros Contraption (Tentative) -- \u866B\u9375\uFF08\u4EEE\uFF09",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o34_1810",
-    "Name": "",
+    "Name": "Pharros Contraption - Grave of Saints",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o34_9000",
-    "Name": "",
+    "Name": "Candles - Grave of Saints",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o34_9001",
-    "Name": "",
+    "Name": "Rat Statue - Grave of Saints",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o34_9002",
-    "Name": "",
+    "Name": "Poison Pool - Grave of Saints",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o34_9003",
-    "Name": "",
+    "Name": "Dummy for SFX - Grave of Saints",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o34_9004",
-    "Name": "",
+    "Name": "Rat Statue - Grave of Saints",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o34_9010",
-    "Name": "",
+    "Name": "Dummy for torch SFX (Top) - Grave of Saints",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o34_9011",
-    "Name": "",
+    "Name": "Dummy for torch SFX (Bottom) - Grave of Saints",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o34_9012",
-    "Name": "",
+    "Name": "Dummy for candle SFX - Grave of Saints",
     "Tags": [
       ""
     ]
@@ -8975,7 +9035,7 @@
   },
   {
     "ID": "o35_0480",
-    "Name": "",
+    "Name": "DLC Entrance Door",
     "Tags": [
       ""
     ]
@@ -9021,6 +9081,11 @@
     "Tags": [
       ""
     ]
+  },
+  {
+    "ID": "o35_0711",
+    "Name": "",
+    "Tags": []
   },
   {
     "ID": "o35_0720",
@@ -9619,7 +9684,7 @@
   },
   {
     "ID": "o35_9058",
-    "Name": "",
+    "Name": "Dummy for messages - Crown of the Sunken King",
     "Tags": [
       ""
     ]
@@ -10417,7 +10482,7 @@
   },
   {
     "ID": "o36_9058",
-    "Name": "",
+    "Name": "Dummy for messages - Crown of the Old Iron King",
     "Tags": [
       ""
     ]
@@ -11047,14 +11112,14 @@
   },
   {
     "ID": "o37_9000",
-    "Name": "",
+    "Name": "Dummy for messages - Crown of the Ivory King",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o37_9001",
-    "Name": "",
+    "Name": "Dummy for messages - Crown of the Ivory King",
     "Tags": [
       ""
     ]
@@ -11201,23 +11266,53 @@
   },
   {
     "ID": "o38_2000",
-    "Name": "",
+    "Name": "Ruler\u0027s Sword",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o38_2001",
-    "Name": "",
+    "Name": "King\u0027s Shield",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "o38_8500",
-    "Name": "",
+    "Name": "King\u0027s Crown",
     "Tags": [
       ""
     ]
+  },
+  {
+    "ID": "o99_0004",
+    "Name": "Old Knight",
+    "Tags": []
+  },
+  {
+    "ID": "o99_0005",
+    "Name": "Drakekeeper",
+    "Tags": []
+  },
+  {
+    "ID": "o99_0010",
+    "Name": "Velstadt, the Royal Aegis",
+    "Tags": []
+  },
+  {
+    "ID": "o99_0036",
+    "Name": "Poison Kokeshi Lizard",
+    "Tags": []
+  },
+  {
+    "ID": "o99_0037",
+    "Name": "Early Imperfect",
+    "Tags": []
+  },
+  {
+    "ID": "o99_0040",
+    "Name": "Elana, the Squalid Queen",
+    "Tags": []
   }
 ]

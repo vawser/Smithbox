@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PARAMMETA XmlVersion="0">
+  <ColorEdit>
+    <ColorEditor Name="Diffuse" Fields="diffuseR,diffuseG,diffuseB" PlacedField="diffuseB" />
+    <ColorEditor Name="Specular" Fields="specularR,specularG,specularB" PlacedField="specularB" />
+  </ColorEdit>
     <Field>
         <offsetX />
         <offsetY />
@@ -7,11 +11,11 @@
         <diffuseR />
         <diffuseG />
         <diffuseB />
-        <dummy0 />
+        <dummy0 Padding="" />
         <specularR />
         <specularG />
         <specularB />
-        <dummy1 />
+        <dummy1 Padding="" />
         <diffuseA />
         <specularA />
         <radius />
@@ -26,6 +30,6 @@
         <windBlinkPower />
         <enableShadow  IsBool=""/>
         <enableWind  IsBool=""/>
-        <dummy3 />
+        <dummy3 Padding="" />
     </Field>
 </PARAMMETA>

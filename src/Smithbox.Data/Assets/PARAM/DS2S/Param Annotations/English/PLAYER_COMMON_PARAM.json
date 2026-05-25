@@ -2,457 +2,457 @@
   "Param": "PLAYER_COMMON_PARAM",
   "Type": "PLAYER_COMMON_PARAM",
   "Name": "PLAYER_COMMON_PARAM",
-  "Description": "",
+  "Description": "Defines core player movement, combat input timing, stamina/motion behavior, and various gameplay tuning values affecting player controls and interactions.",
   "Fields": [
     {
       "Field": "parallelWalkMaxInput",
-      "Name": "平行移動 入力感度 最大 [%]",
-      "Description": ""
+      "Name": "Parallel Movement Input Sensitivity Max [%]",
+      "Description": "Maximum input sensitivity threshold for parallel (strafe) movement."
     },
     {
       "Field": "parallelWalkKeepInputTime",
-      "Name": "平行移動 発生入力時間 [sec]",
-      "Description": ""
+      "Name": "Parallel Movement Input Hold Time [sec]",
+      "Description": "Time window required to trigger parallel movement behavior."
     },
     {
       "Field": "dodgeInputTime",
-      "Name": "回避 入力判定時間[sec]",
-      "Description": ""
+      "Name": "Dodge Input Window [sec]",
+      "Description": "Time window in which dodge input is recognized."
     },
     {
       "Field": "keepDashFinishStateTime",
-      "Name": "ダッシュ 継続時間 [sec]",
-      "Description": ""
+      "Name": "Dash Duration [sec]",
+      "Description": "Duration the player remains in dash finish state."
     },
     {
       "Field": "dashIntervalTime",
-      "Name": "ダッシュ インターバル [sec]",
-      "Description": ""
+      "Name": "Dash Cooldown Interval [sec]",
+      "Description": "Minimum time between consecutive dash actions."
     },
     {
       "Field": "keepDashEndMoveMaxInput",
-      "Name": "ダッシュ終了移動 入力感度 最大 [%]",
-      "Description": ""
+      "Name": "Post-Dash Movement Input Sensitivity Max [%]",
+      "Description": "Maximum input sensitivity allowed after dash ends."
     },
     {
       "Field": "keepDashEndMoveStateTime",
-      "Name": "ダッシュ終了移動 継続時間 [sec]",
-      "Description": ""
+      "Name": "Post-Dash Movement Duration [sec]",
+      "Description": "Time window for movement control after dash ends."
     },
     {
       "Field": "jumpTriggerMinSpeed",
-      "Name": "ジャンプ可能速度 [m/sec]",
-      "Description": ""
+      "Name": "Minimum Jump Speed [m/s]",
+      "Description": "Minimum movement speed required to trigger a jump."
     },
     {
       "Field": "standJumpTriggerMaxSpeed",
-      "Name": "スタンドジャンプ可能速度 [m/sec]",
-      "Description": ""
+      "Name": "Maximum Standing Jump Speed [m/s]",
+      "Description": "Maximum speed at which a standing jump can be triggered."
     },
     {
       "Field": "turnTriggerMinAngleIdleAndWalk",
-      "Name": "待機＆歩き急旋回 入力角度 [deg]",
-      "Description": ""
+      "Name": "Idle/Walk Turn Trigger Angle [deg]",
+      "Description": "Minimum input angle required to trigger sharp turning while idle or walking."
     },
     {
       "Field": "turnTriggerMinAngleJog",
-      "Name": "走り急旋回 入力角度 [deg]",
-      "Description": ""
+      "Name": "Jog Turn Trigger Angle [deg]",
+      "Description": "Minimum input angle required to trigger sharp turning while jogging."
     },
     {
       "Field": "turnTriggerMinAngleDash",
-      "Name": "ダッシュ急旋回 入力角度 [deg]",
-      "Description": ""
+      "Name": "Dash Turn Trigger Angle [deg]",
+      "Description": "Minimum input angle required to trigger sharp turning while dashing."
     },
     {
       "Field": "turnWalkSpeedPercentage",
-      "Name": "待機＆歩き急旋回 速度割合 [%]",
-      "Description": ""
+      "Name": "Turn Walk Speed Modifier [%]",
+      "Description": "Speed percentage applied during sharp turns while walking or idle."
     },
     {
       "Field": "atkEndTurnTriggerMinAngleWalk",
-      "Name": "攻撃後歩き出し時 待機＆歩き急旋回 入力角度 [deg]",
-      "Description": ""
+      "Name": "Post-Attack Walk Turn Angle [deg]",
+      "Description": "Minimum turn angle after attack when transitioning to walking."
     },
     {
       "Field": "atkEndTurnTriggerMinAngleJog",
-      "Name": "攻撃後歩き出し時 走り急旋回 入力角度 [deg]",
-      "Description": ""
+      "Name": "Post-Attack Jog Turn Angle [deg]",
+      "Description": "Minimum turn angle after attack when transitioning to jogging."
     },
     {
       "Field": "atkEndTurnTriggerMinAngleDash",
-      "Name": "攻撃後歩き出し時 ダッシュ急旋回 入力角度 [deg]",
-      "Description": ""
+      "Name": "Post-Attack Dash Turn Angle [deg]",
+      "Description": "Minimum turn angle after attack when transitioning to dashing."
     },
     {
       "Field": "atkEndTurnWalkSpeedPercentage",
-      "Name": "攻撃後歩き出し時 待機＆歩き急旋回 速度割合 [%]",
-      "Description": ""
+      "Name": "Post-Attack Turn Speed Modifier [%]",
+      "Description": "Speed modifier applied during turning after attacking."
     },
     {
       "Field": "ladderGraspAngleMax",
-      "Name": "はしご つかみ発生 左右角度 [deg]",
-      "Description": ""
+      "Name": "Ladder Grasp Max Horizontal Angle [deg]",
+      "Description": "Maximum angle at which the player can grab a ladder horizontally."
     },
     {
       "Field": "ladderGraspHeightMax",
-      "Name": "はしご つかみ発生 上下高さ [m]",
-      "Description": ""
+      "Name": "Ladder Grasp Max Vertical Height [m]",
+      "Description": "Maximum vertical distance for initiating a ladder grab."
     },
     {
       "Field": "ladderGraspInputTime",
-      "Name": "はしご つかみ発生 必要入力時間 [sec]",
-      "Description": ""
+      "Name": "Ladder Grasp Input Time [sec]",
+      "Description": "Time required to hold input to initiate ladder grab."
     },
     {
       "Field": "ladderGraspTimeLimit",
-      "Name": "はしご つかみ発生 制限時間 [sec]",
-      "Description": ""
+      "Name": "Ladder Grasp Time Limit [sec]",
+      "Description": "Maximum time allowed to complete ladder grab input."
     },
     {
       "Field": "ladderMoveInputTime",
-      "Name": "はしご 移動発生 必要入力時間 [sec]",
-      "Description": ""
+      "Name": "Ladder Movement Input Time [sec]",
+      "Description": "Input duration required to start moving on a ladder."
     },
     {
       "Field": "ladderFallInputTime",
-      "Name": "はしご落下 入力判定時間 [sec]",
-      "Description": ""
+      "Name": "Ladder Fall Input Window [sec]",
+      "Description": "Input window for triggering ladder fall action."
     },
     {
       "Field": "nearDeathAnimMaxBlendHpRate",
-      "Name": "瀕死アニメ 最大ブレンド HP割合 [%]",
-      "Description": ""
+      "Name": "Near-Death Animation Max Blend HP [%]",
+      "Description": "HP percentage at which near-death animation blending reaches maximum intensity."
     },
     {
       "Field": "nearDeathAnimMinBlendHpRate",
-      "Name": "瀕死アニメ 最小ブレンド HP割合 [%]",
-      "Description": ""
+      "Name": "Near-Death Animation Min Blend HP [%]",
+      "Description": "HP percentage at which near-death animation blending begins."
     },
     {
       "Field": "precedingCmdKeepTime",
-      "Name": "入力 保持時間 [sec]",
-      "Description": ""
+      "Name": "Input Buffer Time [sec]",
+      "Description": "Duration that input commands are stored for buffered execution."
     },
     {
       "Field": "flickInputKeepTime",
-      "Name": "弾き入力 保持時間 [sec]",
-      "Description": ""
+      "Name": "Flick Input Hold Time [sec]",
+      "Description": "Duration flick inputs remain valid."
     },
     {
       "Field": "flickInputFrame",
-      "Name": "弾き入力 弾き感知入力フレーム数",
-      "Description": ""
+      "Name": "Flick Input Detection Frames",
+      "Description": "Number of frames used to detect flick input."
     },
     {
       "Field": "flickInputPower",
-      "Name": "弾き入力 弾き感知入力強度",
-      "Description": ""
+      "Name": "Flick Input Strength Threshold",
+      "Description": "Minimum input strength required to register a flick."
     },
     {
       "Field": "flickNeutralKeepTime",
-      "Name": "弾き入力 ニュートラル時間[sec]",
-      "Description": ""
+      "Name": "Flick Neutral Time [sec]",
+      "Description": "Time input must remain neutral between flicks."
     },
     {
       "Field": "flickAngleMax",
-      "Name": "弾き入力 判定角度[deg]",
-      "Description": ""
+      "Name": "Flick Input Max Angle [deg]",
+      "Description": "Maximum angle allowed for flick input detection."
     },
     {
       "Field": "reviveInputTime",
-      "Name": "蘇生確定入力時間 [sec]",
-      "Description": ""
+      "Name": "Revive Confirmation Input Time [sec]",
+      "Description": "Time required to confirm revival input."
     },
     {
       "Field": "twoHandedInputTime",
-      "Name": "両手持ち 入力判定時間 [sec]",
-      "Description": ""
+      "Name": "Two-Handed Weapon Input Time [sec]",
+      "Description": "Input window required to switch to two-handed mode."
     },
     {
       "Field": "dashAttackTriggerMinSpeed",
-      "Name": "ダッシュ攻撃可能速度 [m/sec]",
-      "Description": ""
+      "Name": "Dash Attack Minimum Speed [m/s]",
+      "Description": "Minimum speed required to trigger a dash attack."
     },
     {
       "Field": "dashAttackMinSpeedAnimScale",
-      "Name": "ダッシュ攻撃 最小速度 アニメ速度倍率",
-      "Description": ""
+      "Name": "Dash Attack Min Speed Animation Scale",
+      "Description": "Animation speed multiplier at minimum dash attack speed."
     },
     {
       "Field": "dashAttackMaxSpeedAnimScale",
-      "Name": "ダッシュ攻撃 最大速度 アニメ速度倍率",
-      "Description": ""
+      "Name": "Dash Attack Max Speed Animation Scale",
+      "Description": "Animation speed multiplier at maximum dash attack speed."
     },
     {
       "Field": "autoPivotRotateNeutoralTime",
-      "Name": "向き変更旋回 ニュートラル時間",
-      "Description": ""
+      "Name": "Auto Pivot Neutral Time",
+      "Description": "Time required in neutral state before auto-rotation triggers."
     },
     {
       "Field": "autoPivotInputTime",
-      "Name": "向き変更旋回 入力判定時間",
-      "Description": ""
+      "Name": "Auto Pivot Input Time",
+      "Description": "Input duration required to trigger automatic pivot rotation."
     },
     {
       "Field": "dashBlendWeightMax",
-      "Name": "ダッシュブレンド最大値",
-      "Description": ""
+      "Name": "Dash Blend Weight Max",
+      "Description": "Maximum blending weight applied during dash transitions."
     },
     {
       "Field": "dashBlendInSpeed",
-      "Name": "ダッシュブレンド入り速度",
-      "Description": ""
+      "Name": "Dash Blend In Speed",
+      "Description": "Speed at which dash blending transitions in."
     },
     {
       "Field": "dashBlendOutSpeed",
-      "Name": "ダッシュブレンド戻り速度",
-      "Description": ""
+      "Name": "Dash Blend Out Speed",
+      "Description": "Speed at which dash blending transitions out."
     },
     {
       "Field": "dashBlendInWalkSpeed",
-      "Name": "ダッシュブレンド入り判定速度（通常） [m/sec]",
-      "Description": ""
+      "Name": "Dash Blend In Walk Speed Threshold [m/s]",
+      "Description": "Movement speed threshold for enabling dash blending during walking."
     },
     {
       "Field": "dashBlendInLockOnWalkSpeed",
-      "Name": "ダッシュブレンド入り判定速度（ロック移動）[m/sec]",
-      "Description": ""
+      "Name": "Dash Blend In Lock-On Walk Speed Threshold [m/s]",
+      "Description": "Movement speed threshold for dash blending while locked on."
     },
     {
       "Field": "quickStopSpeed",
-      "Name": "急停止判定速度[m/sec]",
-      "Description": ""
+      "Name": "Quick Stop Speed Threshold [m/s]",
+      "Description": "Speed at which quick stopping behavior is triggered."
     },
     {
       "Field": "quickStopDelay",
-      "Name": "急停止判定時間[sec]",
-      "Description": ""
+      "Name": "Quick Stop Delay [sec]",
+      "Description": "Delay before quick stop is applied."
     },
     {
       "Field": "equipDurabilityRateMin",
-      "Name": "装備耐久値 減少量 補正倍率 最小[倍]",
-      "Description": ""
+      "Name": "Equipment Durability Loss Rate Min [x]",
+      "Description": "Minimum multiplier for equipment durability loss."
     },
     {
       "Field": "equipDurabilityRateMax",
-      "Name": "装備耐久値 減少量 補正倍率 最大[倍]",
-      "Description": ""
+      "Name": "Equipment Durability Loss Rate Max [x]",
+      "Description": "Maximum multiplier for equipment durability loss."
     },
     {
       "Field": "torchFireLowSwichHeight",
-      "Name": "松明 点火アニメ切替高さ[m]",
-      "Description": ""
+      "Name": "Torch Fire Switch Height [m]",
+      "Description": "Height threshold for switching torch ignition animation."
     },
     {
       "Field": "noTargetAttackMaxUpperAngle",
-      "Name": "攻撃時上半身角度 上制限",
-      "Description": ""
+      "Name": "No-Target Attack Upper Angle Limit",
+      "Description": "Maximum upward angle for attacks without a target."
     },
     {
       "Field": "noTargetAttackMaxLowerAngle",
-      "Name": "攻撃時上半身角度 下制限",
-      "Description": ""
+      "Name": "No-Target Attack Lower Angle Limit",
+      "Description": "Maximum downward angle for attacks without a target."
     },
     {
       "Field": "torchTimeFirst",
-      "Name": "松明加算時間 初回 [sec]",
-      "Description": ""
+      "Name": "Torch Initial Time [sec]",
+      "Description": "Initial duration added when torch is first ignited."
     },
     {
       "Field": "torchTimeAddition",
-      "Name": "松明加算時間 追加 [sec]",
-      "Description": ""
+      "Name": "Torch Additional Time [sec]",
+      "Description": "Additional time added per torch refill or extension."
     },
     {
       "Field": "torchMaxTime",
-      "Name": "松明の最大時間 [sec]",
-      "Description": ""
+      "Name": "Torch Maximum Time [sec]",
+      "Description": "Maximum duration the torch can remain lit."
     },
     {
       "Field": "darkAttackWeaponIntPercent",
-      "Name": "闇攻撃力反映割合 理力 武器 [%]",
-      "Description": ""
+      "Name": "Dark Attack Scaling (Weapon INT %) ",
+      "Description": "Contribution of Intelligence to dark attack power via weapons."
     },
     {
       "Field": "darkAttackWeaponFaithPercent",
-      "Name": "闇攻撃力反映割合 信仰 武器 [%]",
-      "Description": ""
+      "Name": "Dark Attack Scaling (Weapon FTH %)",
+      "Description": "Contribution of Faith to dark attack power via weapons."
     },
     {
       "Field": "darkAttackMagicIntPercent",
-      "Name": "闇攻撃力反映割合 理力 闇魔術 [%]",
-      "Description": ""
+      "Name": "Dark Magic Scaling (INT %)",
+      "Description": "Intelligence scaling for dark magic attacks."
     },
     {
       "Field": "darkAttackMagicFaithPercent",
-      "Name": "闇攻撃力反映割合 信仰 闇魔術 [%]",
-      "Description": ""
+      "Name": "Dark Magic Scaling (FTH %)",
+      "Description": "Faith scaling for dark magic attacks."
     },
     {
       "Field": "darkAttackMiracleIntPercent",
-      "Name": "闇攻撃力反映割合 理力 闇奇蹟 [%]",
-      "Description": ""
+      "Name": "Dark Miracle Scaling (INT %)",
+      "Description": "Intelligence scaling for dark miracle effects."
     },
     {
       "Field": "darkAttackMiracleFaithPercent",
-      "Name": "闇攻撃力反映割合 信仰 闇奇蹟 [%]",
-      "Description": ""
+      "Name": "Dark Miracle Scaling (FTH %)",
+      "Description": "Faith scaling for dark miracle effects."
     },
     {
       "Field": "darkResistIntPercent",
-      "Name": "闇抵抗反映割合 理力 [%]",
-      "Description": ""
+      "Name": "Dark Resistance Scaling (INT %)",
+      "Description": "Intelligence contribution to dark resistance."
     },
     {
       "Field": "darkResistFaithPercent",
-      "Name": "闇抵抗反映割合 信仰 [%]",
-      "Description": ""
+      "Name": "Dark Resistance Scaling (FTH %)",
+      "Description": "Faith contribution to dark resistance."
     },
     {
       "Field": "fLookAtRotationLeftMax",
-      "Name": "LookAt 旋回限界角度 左 [deg]",
-      "Description": ""
+      "Name": "LookAt Rotation Left Limit [deg]",
+      "Description": "Maximum left rotation angle for camera/look-at system."
     },
     {
       "Field": "fLookAtRotationRightMax",
-      "Name": "LookAt 旋回限界角度 右 [deg]",
-      "Description": ""
+      "Name": "LookAt Rotation Right Limit [deg]",
+      "Description": "Maximum right rotation angle for camera/look-at system."
     },
     {
       "Field": "fLookAtRotationUpperMax",
-      "Name": "LookAt 旋回限界角度 上 [deg]",
-      "Description": ""
+      "Name": "LookAt Rotation Upper Limit [deg]",
+      "Description": "Maximum upward rotation angle for camera/look-at system."
     },
     {
       "Field": "fLookAtRotationLownerMax",
-      "Name": "LookAt 旋回限界角度 下 [deg]",
-      "Description": ""
+      "Name": "LookAt Rotation Lower Limit [deg]",
+      "Description": "Maximum downward rotation angle for camera/look-at system."
     },
     {
       "Field": "fLookAtVisibilitySideMax",
-      "Name": "LookAt 認識限界角度 左右 [deg]",
-      "Description": ""
+      "Name": "LookAt Visibility Side Limit [deg]",
+      "Description": "Side angle limit for target visibility detection."
     },
     {
       "Field": "fLookAtVisibilityUpperMax",
-      "Name": "LookAt 認識限界角度 上下 [deg]",
-      "Description": ""
+      "Name": "LookAt Visibility Upper/Lower Limit [deg]",
+      "Description": "Vertical angle limit for target visibility detection."
     },
     {
       "Field": "fLookAtRotationSideSpeedMax",
-      "Name": "LookAt 左右旋回速度 [deg/sec]",
-      "Description": ""
+      "Name": "LookAt Rotation Speed Horizontal [deg/sec]",
+      "Description": "Maximum horizontal rotation speed for look-at system."
     },
     {
       "Field": "fLookAtRotationUpperSpeedMax",
-      "Name": "LookAt 上下旋回速度 [deg/sec]",
-      "Description": ""
+      "Name": "LookAt Rotation Speed Vertical [deg/sec]",
+      "Description": "Maximum vertical rotation speed for look-at system."
     },
     {
       "Field": "itemDropRevisedLotValueRound1",
-      "Name": "アイテム抽選補正 １周目",
-      "Description": ""
+      "Name": "Item Drop Adjustment Round 1",
+      "Description": "Drop rate adjustment multiplier for New Game cycle 1."
     },
     {
       "Field": "itemDropRevisedLotValueRound2",
-      "Name": "アイテム抽選補正 ２周目",
-      "Description": ""
+      "Name": "Item Drop Adjustment Round 2",
+      "Description": "Drop rate adjustment multiplier for New Game cycle 2."
     },
     {
       "Field": "itemDropRevisedLotValueRound3",
-      "Name": "アイテム抽選補正 ３周目",
-      "Description": ""
+      "Name": "Item Drop Adjustment Round 3",
+      "Description": "Drop rate adjustment multiplier for New Game cycle 3."
     },
     {
       "Field": "itemDropRevisedLotValueRound4",
-      "Name": "アイテム抽選補正 ４周目",
-      "Description": ""
+      "Name": "Item Drop Adjustment Round 4",
+      "Description": "Drop rate adjustment multiplier for New Game cycle 4."
     },
     {
       "Field": "itemDropRevisedLotValueRound5",
-      "Name": "アイテム抽選補正 ５周目",
-      "Description": ""
+      "Name": "Item Drop Adjustment Round 5",
+      "Description": "Drop rate adjustment multiplier for New Game cycle 5."
     },
     {
       "Field": "itemDropRevisedLotValueRound6",
-      "Name": "アイテム抽選補正 ６周目",
-      "Description": ""
+      "Name": "Item Drop Adjustment Round 6",
+      "Description": "Drop rate adjustment multiplier for New Game cycle 6."
     },
     {
       "Field": "itemDropRevisedLotValueRound7",
-      "Name": "アイテム抽選補正 ７周目",
-      "Description": ""
+      "Name": "Item Drop Adjustment Round 7",
+      "Description": "Drop rate adjustment multiplier for New Game cycle 7."
     },
     {
       "Field": "itemDropRevisedLotValueRound8",
-      "Name": "アイテム抽選補正 ８周目",
-      "Description": ""
+      "Name": "Item Drop Adjustment Round 8",
+      "Description": "Drop rate adjustment multiplier for New Game cycle 8."
     },
     {
       "Field": "equipDurabilityCoverRate",
-      "Name": "装備耐久値 肩代わり時 減少量 補正倍率 [倍]",
-      "Description": ""
+      "Name": "Equipment Durability Cover Rate [x]",
+      "Description": "Multiplier applied when durability loss is partially covered."
     },
     {
       "Field": "wallHeight",
-      "Name": "壁判定高さ[m]",
-      "Description": ""
+      "Name": "Wall Detection Height [m]",
+      "Description": "Maximum height used for wall collision detection."
     },
     {
       "Field": "repairCostUpRate",
-      "Name": "装備修理コスト上昇倍率",
-      "Description": ""
+      "Name": "Repair Cost Increase Rate",
+      "Description": "Multiplier for increasing equipment repair costs."
     },
     {
       "Field": "shieldCutBonusS",
-      "Name": "盾カット率ボーナス倍率 S",
-      "Description": ""
+      "Name": "Shield Cut Bonus: S",
+      "Description": "Damage reduction bonus multiplier for S-grade shields."
     },
     {
       "Field": "shieldCutBonusA",
-      "Name": "盾カット率ボーナス倍率 A",
-      "Description": ""
+      "Name": "Shield Cut Bonus: A",
+      "Description": "Damage reduction bonus multiplier for A-grade shields."
     },
     {
       "Field": "shieldCutBonusB",
-      "Name": "盾カット率ボーナス倍率 B",
-      "Description": ""
+      "Name": "Shield Cut Bonus: B",
+      "Description": "Damage reduction bonus multiplier for B-grade shields."
     },
     {
       "Field": "shieldCutBonusC",
-      "Name": "盾カット率ボーナス倍率 C",
-      "Description": ""
+      "Name": "Shield Cut Bonus: C",
+      "Description": "Damage reduction bonus multiplier for C-grade shields."
     },
     {
       "Field": "shieldCutBonusD",
-      "Name": "盾カット率ボーナス倍率 D",
-      "Description": ""
+      "Name": "Shield Cut Bonus: D",
+      "Description": "Damage reduction bonus multiplier for D-grade shields."
     },
     {
       "Field": "shieldCutBonusE",
-      "Name": "盾カット率ボーナス倍率 E",
-      "Description": ""
+      "Name": "Shield Cut Bonus: E",
+      "Description": "Damage reduction bonus multiplier for E-grade shields."
     },
     {
       "Field": "hitDurabilitySubValue",
-      "Name": "近接攻撃時武器耐久減少量",
-      "Description": ""
+      "Name": "Melee Hit Durability Loss",
+      "Description": "Durability reduction when performing melee attacks."
     },
     {
       "Field": "guardDurabilitySubValue",
-      "Name": "ガード時武器耐久減少量",
-      "Description": ""
+      "Name": "Guard Durability Loss",
+      "Description": "Durability reduction when blocking attacks."
     },
     {
       "Field": "shootDurabilitySubValue",
-      "Name": "射撃時武器耐久減少量",
-      "Description": ""
+      "Name": "Ranged Attack Durability Loss",
+      "Description": "Durability reduction when firing ranged weapons."
     },
     {
       "Field": "meleeShootDurabilitySubValue",
-      "Name": "近接攻撃バレット発射時武器耐久減少量",
-      "Description": ""
+      "Name": "Melee Projectile Durability Loss",
+      "Description": "Durability reduction when melee attacks spawn projectiles."
     },
     {
       "Field": "unk164",
@@ -491,18 +491,18 @@
     },
     {
       "Field": "pcBackstabDamageRate",
-      "Name": "pcBackstabDamageRate",
-      "Description": ""
+      "Name": "Backstab Damage Rate",
+      "Description": "Damage multiplier for player backstabs."
     },
     {
       "Field": "pcParryBreakStabDamageRate",
-      "Name": "pcParryBreakStabDamageRate",
-      "Description": ""
+      "Name": "Parry Break Stab Damage Rate",
+      "Description": "Damage multiplier for attacks following a successful parry break."
     },
     {
       "Field": "pcGuardBreakStabDamageRate",
-      "Name": "pcGuardBreakStabDamageRate",
-      "Description": ""
+      "Name": "Guard Break Stab Damage Rate",
+      "Description": "Damage multiplier for attacks following a guard break."
     },
     {
       "Field": "Unk18C",

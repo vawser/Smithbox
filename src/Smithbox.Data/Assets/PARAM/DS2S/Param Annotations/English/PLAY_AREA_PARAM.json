@@ -2,56 +2,56 @@
   "Param": "PLAY_AREA_PARAM",
   "Type": "PLAY_AREA_PARAM",
   "Name": "PLAY_AREA_PARAM",
-  "Description": "",
+  "Description": "Defines multiplayer area rules, invasion/search behavior, and restrictions for different online interaction types within a zone.",
   "Fields": [
     {
       "Field": "multiPlayZoneId",
-      "Name": "マルチプレイ区間ID",
-      "Description": ""
+      "Name": "Multiplayer Zone ID",
+      "Description": "Identifier for the multiplayer-enabled zone or region."
     },
     {
       "Field": "coopBlueDisableDistance",
-      "Name": "救援青霊侵入不可能距離",
-      "Description": ""
+      "Name": "Cooperative Blue Phantom Disable Distance",
+      "Description": "Distance within which cooperative blue phantoms are prevented from entering or spawning."
     },
     {
       "Field": "otherDisableDistance",
-      "Name": "その他霊侵入不可能距離",
-      "Description": ""
+      "Name": "Other Phantom Disable Distance",
+      "Description": "Distance restriction for other phantom types entering the area."
     },
     {
       "Field": "multiPlayType",
-      "Name": "領域タイプ",
-      "Description": ""
+      "Name": "Area Type",
+      "Description": "Defines the type of multiplayer area behavior applied to this zone."
     },
     {
       "Field": "enableSearchBellGuard",
-      "Name": "鐘守検索有効",
-      "Description": ""
+      "Name": "Enable Bell Keeper Search",
+      "Description": "Determines whether Bell Keeper-type enemies can search or invade in this area."
     },
     {
       "Field": "enableSearchCoopBlue",
-      "Name": "救援青霊検索有効",
-      "Description": ""
+      "Name": "Enable Cooperative Blue Phantom Search",
+      "Description": "Allows matching and spawning of cooperative blue phantoms in this area."
     },
     {
       "Field": "enableSearchVsBlue",
-      "Name": "報復青霊検索有効",
-      "Description": ""
+      "Name": "Enable Adversarial Blue Phantom Search",
+      "Description": "Allows hostile/reciprocal blue phantom matchmaking in this area."
     },
     {
       "Field": "enableSearchAbyss",
-      "Name": "深淵霊検索有効",
-      "Description": ""
+      "Name": "Enable Abyss Phantom Search",
+      "Description": "Enables spawning or matchmaking for abyss-related invaders."
     },
     {
       "Field": "enableBossCheck",
-      "Name": "エリアボス判定有効",
-      "Description": ""
+      "Name": "Enable Boss Presence Check",
+      "Description": "Determines whether boss presence is checked to control multiplayer availability."
     },
     {
       "Field": "dummy",
-      "Name": "パディング",
+      "Name": "Padding",
       "Description": ""
     }
   ]

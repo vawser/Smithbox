@@ -2,57 +2,57 @@
   "Param": "POISE_DAMAGE_PARAM",
   "Type": "POISE_DAMAGE_PARAM",
   "Name": "POISE_DAMAGE_PARAM",
-  "Description": "",
+  "Description": "Defines poise (posture) damage values applied based on attack strength categories.",
   "Fields": [
     {
       "Field": "damageMinimum",
-      "Name": "ダメージ削り値 発生ダメージ極小",
-      "Description": ""
+      "Name": "Poise Damage Reduction (Very Small Hit)",
+      "Description": "Poise damage applied when receiving a very small attack."
     },
     {
       "Field": "damageSmall",
-      "Name": "ダメージ削り値 発生ダメージ小",
-      "Description": ""
+      "Name": "Poise Damage Reduction (Small Hit)",
+      "Description": "Poise damage applied when receiving a small attack."
     },
     {
       "Field": "damageMiddle",
-      "Name": "ダメージ削り値 発生ダメージ中",
-      "Description": ""
+      "Name": "Poise Damage Reduction (Medium Hit)",
+      "Description": "Poise damage applied when receiving a medium-strength attack."
     },
     {
       "Field": "damageHeavy",
-      "Name": "ダメージ削り値 発生ダメージ大",
-      "Description": ""
+      "Name": "Poise Damage Reduction (Heavy Hit)",
+      "Description": "Poise damage applied when receiving a heavy attack."
     },
     {
       "Field": "damageSuperHeavy",
-      "Name": "ダメージ削り値 発生ダメージ特大",
-      "Description": ""
+      "Name": "Poise Damage Reduction (Very Heavy Hit)",
+      "Description": "Poise damage applied when receiving a very heavy or high-impact attack."
     },
     {
       "Field": "addValueMinimum",
-      "Name": "ダメージ削り値 極小",
-      "Description": ""
+      "Name": "Poise Damage Value (Very Small)",
+      "Description": "Base poise damage value for very small attacks."
     },
     {
       "Field": "addValueSmall",
-      "Name": "ダメージ削り値 小",
-      "Description": ""
+      "Name": "Poise Damage Value (Small)",
+      "Description": "Base poise damage value for small attacks."
     },
     {
       "Field": "addValueMiddle",
-      "Name": "ダメージ削り値 中",
-      "Description": ""
+      "Name": "Poise Damage Value (Medium)",
+      "Description": "Base poise damage value for medium attacks."
     },
     {
       "Field": "addValueHeavy",
-      "Name": "ダメージ削り値 大",
-      "Description": ""
+      "Name": "Poise Damage Value (Heavy)",
+      "Description": "Base poise damage value for heavy attacks."
     },
     {
       "Field": "addValueSuperHeavy",
-      "Name": "ダメージ削り値 特大",
-      "Description": ""
+      "Name": "Poise Damage Value (Very Heavy)",
+      "Description": "Base poise damage value for very heavy attacks."
     }
   ]
 }

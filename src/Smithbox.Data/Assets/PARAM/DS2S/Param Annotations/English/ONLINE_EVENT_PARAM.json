@@ -2,26 +2,26 @@
   "Param": "ONLINE_EVENT_PARAM",
   "Type": "ONLINE_EVENT_PARAM",
   "Name": "ONLINE_EVENT_PARAM",
-  "Description": "",
+  "Description": "Controls the state and configuration of online events, including multiplayer events and item distribution campaigns.",
   "Fields": [
     {
       "Field": "newMoon",
-      "Name": "新月イベント開催中か",
-      "Description": ""
+      "Name": "New Moon Event Active",
+      "Description": "Indicates whether the New Moon event is currently active."
     },
     {
       "Field": "multiPlayEvent",
-      "Name": "マルチプレイイベント開催中か",
-      "Description": ""
+      "Name": "Multiplayer Event Active",
+      "Description": "Indicates whether a multiplayer event is currently active."
     },
     {
       "Field": "itemPresentEventId",
-      "Name": "アイテム配布宝箱イベント世代ID",
-      "Description": ""
+      "Name": "Item Distribution Chest Event Generation ID",
+      "Description": "Generation ID used for item distribution treasure chest events."
     },
     {
       "Field": "dummy",
-      "Name": "ダミー",
+      "Name": "Padding",
       "Description": ""
     }
   ]

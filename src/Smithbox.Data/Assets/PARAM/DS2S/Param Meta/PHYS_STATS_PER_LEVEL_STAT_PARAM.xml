@@ -41,7 +41,7 @@
         <misfireChestTrapTicketCount />
         <criticalTicketCount />
         <additionalHp />
-        <dummy1 />
+        <dummy1 Padding="" />
         <physicalAttackByAbyss />
         <poise />
     </Field>

@@ -2,222 +2,222 @@
   "Param": "PHYS_STATS_PER_LEVEL_STAT_PARAM",
   "Type": "PHYS_STATS_PER_LEVEL_STAT_PARAM",
   "Name": "PHYS_STATS_PER_LEVEL_STAT_PARAM",
-  "Description": "",
+  "Description": "Defines character statistics, attack power, resistances, and gameplay modifiers granted at each level or stat value.",
   "Fields": [
     {
       "Field": "levelStatusValue",
-      "Name": "レベルステータス値",
-      "Description": ""
+      "Name": "Level Status Value",
+      "Description": "The level or stat value associated with this parameter entry."
     },
     {
       "Field": "spellSlot",
-      "Name": "スペルスロット",
-      "Description": ""
+      "Name": "Spell Slots",
+      "Description": "Number of available spell attunement slots."
     },
     {
       "Field": "spellUsesLevel",
-      "Name": "スペル使用回数レベル",
-      "Description": ""
+      "Name": "Spell Uses Level",
+      "Description": "Determines spell usage capacity or spell cast count scaling."
     },
     {
       "Field": "hpMax",
-      "Name": "最大HP",
-      "Description": ""
+      "Name": "Maximum HP",
+      "Description": "Maximum health points granted at this level."
     },
     {
       "Field": "staminaMax",
-      "Name": "スタミナ",
-      "Description": ""
+      "Name": "Stamina",
+      "Description": "Maximum stamina value."
     },
     {
       "Field": "equipLoadMax",
-      "Name": "装備重量 [kg]",
-      "Description": ""
+      "Name": "Maximum Equip Load [kg]",
+      "Description": "Maximum equipment weight the character can carry."
     },
     {
       "Field": "physicalAttackByStrength",
-      "Name": "筋力 物理攻撃力",
-      "Description": ""
+      "Name": "Strength Physical Attack",
+      "Description": "Physical attack power scaling derived from Strength."
     },
     {
       "Field": "physicalAttackByDexterity",
-      "Name": "技量 物理攻撃力",
-      "Description": ""
+      "Name": "Dexterity Physical Attack",
+      "Description": "Physical attack power scaling derived from Dexterity."
     },
     {
       "Field": "magicAttack",
-      "Name": "魔力 攻撃力",
-      "Description": ""
+      "Name": "Magic Attack",
+      "Description": "Magic attack power value."
     },
     {
       "Field": "flameAttack",
-      "Name": "炎 攻撃力",
-      "Description": ""
+      "Name": "Fire Attack",
+      "Description": "Fire attack power value."
     },
     {
       "Field": "lightningAttack",
-      "Name": "雷 攻撃力",
-      "Description": ""
+      "Name": "Lightning Attack",
+      "Description": "Lightning attack power value."
     },
     {
       "Field": "darkAttack",
-      "Name": "闇 攻撃力",
-      "Description": ""
+      "Name": "Dark Attack",
+      "Description": "Dark attack power value."
     },
     {
       "Field": "weaponBreakAdditionalEffect",
-      "Name": "武器破壊 追加効果攻撃力",
-      "Description": ""
+      "Name": "Weapon Break Additional Effect Attack",
+      "Description": "Additional effect attack power related to weapon durability damage."
     },
     {
       "Field": "bleedingAdditionalEffect",
-      "Name": "出血 追加効果攻撃力",
-      "Description": ""
+      "Name": "Bleed Additional Effect Attack",
+      "Description": "Additional effect attack power for bleed buildup."
     },
     {
       "Field": "poisonAdditionalEffect",
-      "Name": "毒 追加効果攻撃力",
-      "Description": ""
+      "Name": "Poison Additional Effect Attack",
+      "Description": "Additional effect attack power for poison buildup."
     },
     {
       "Field": "curseAdditionalEffect",
-      "Name": "呪 追加効果攻撃力",
-      "Description": ""
+      "Name": "Curse Additional Effect Attack",
+      "Description": "Additional effect attack power for curse buildup."
     },
     {
       "Field": "chantingTimeCorrectScale",
-      "Name": "詠唱時間 補正倍率",
-      "Description": ""
+      "Name": "Casting Time Correction Scale",
+      "Description": "Multiplier affecting spell casting speed."
     },
     {
       "Field": "criticalAttackCorrectScale",
-      "Name": "クリティカル 補正倍率",
-      "Description": ""
+      "Name": "Critical Attack Correction Scale",
+      "Description": "Multiplier affecting critical attack damage."
     },
     {
       "Field": "fluctuationCorrectScaleMin",
-      "Name": "揺らぎ補正倍率 最小",
-      "Description": ""
+      "Name": "Minimum Variation Correction Scale",
+      "Description": "Minimum multiplier for variation-based corrections."
     },
     {
       "Field": "fluctuationCorrectScaleMax",
-      "Name": "揺らぎ補正倍率 最大",
-      "Description": ""
+      "Name": "Maximum Variation Correction Scale",
+      "Description": "Maximum multiplier for variation-based corrections."
     },
     {
       "Field": "weaponBreakResistance",
-      "Name": "武器破壊 耐性値[%]",
-      "Description": ""
+      "Name": "Weapon Break Resistance [%]",
+      "Description": "Resistance against weapon durability damage effects."
     },
     {
       "Field": "bleedingResistance",
-      "Name": "出血 耐性値 [%]",
-      "Description": ""
+      "Name": "Bleed Resistance [%]",
+      "Description": "Resistance against bleed buildup."
     },
     {
       "Field": "poisonResistance",
-      "Name": "毒 耐性値 [%]",
-      "Description": ""
+      "Name": "Poison Resistance [%]",
+      "Description": "Resistance against poison buildup."
     },
     {
       "Field": "petrifactionResistance",
-      "Name": "石化 耐性値 [%]",
-      "Description": ""
+      "Name": "Petrification Resistance [%]",
+      "Description": "Resistance against petrification effects."
     },
     {
       "Field": "curseResistance",
-      "Name": "呪 耐性値 [%]",
-      "Description": ""
+      "Name": "Curse Resistance [%]",
+      "Description": "Resistance against curse effects."
     },
     {
       "Field": "magicResistance",
-      "Name": "魔力 抵抗力 [%]",
-      "Description": ""
+      "Name": "Magic Resistance [%]",
+      "Description": "Resistance against magic damage."
     },
     {
       "Field": "flameResistance",
-      "Name": "炎 抵抗力 [%]",
-      "Description": ""
+      "Name": "Fire Resistance [%]",
+      "Description": "Resistance against fire damage."
     },
     {
       "Field": "lightningResistance",
-      "Name": "雷 抵抗力 [%]",
-      "Description": ""
+      "Name": "Lightning Resistance [%]",
+      "Description": "Resistance against lightning damage."
     },
     {
       "Field": "darkResistance",
-      "Name": "闇 抵抗力 [%]",
-      "Description": ""
+      "Name": "Dark Resistance [%]",
+      "Description": "Resistance against dark damage."
     },
     {
       "Field": "stepInvincibleTimeRate",
-      "Name": "ステップ 無敵時間割合 [%]",
-      "Description": ""
+      "Name": "Step Invincibility Time Ratio [%]",
+      "Description": "Percentage modifier applied to invincibility frames during stepping."
     },
     {
       "Field": "rollingInvincibleTimeRate",
-      "Name": "ローリング 無敵時間割合 [%]",
-      "Description": ""
+      "Name": "Rolling Invincibility Time Ratio [%]",
+      "Description": "Percentage modifier applied to invincibility frames during rolling."
     },
     {
       "Field": "jumpInvincibleTimeRate",
-      "Name": "ジャンプ 無敵時間割合 [%]",
-      "Description": ""
+      "Name": "Jump Invincibility Time Ratio [%]",
+      "Description": "Percentage modifier applied to invincibility frames during jumping."
     },
     {
       "Field": "changeEquipSpeedScale",
-      "Name": "装備切替 速度倍率 [倍]",
-      "Description": ""
+      "Name": "Equipment Change Speed Scale [%]",
+      "Description": "Multiplier affecting the speed of equipment switching."
     },
     {
       "Field": "useItemSpeedScale",
-      "Name": "アイテム使用 速度倍率 [倍]",
-      "Description": ""
+      "Name": "Item Use Speed Scale [%]",
+      "Description": "Multiplier affecting the speed of item usage."
     },
     {
       "Field": "blockSpeedScale",
-      "Name": "ガード構え 速度倍率 [倍]",
-      "Description": ""
+      "Name": "Guard Speed Scale [%]",
+      "Description": "Multiplier affecting the speed of entering a guarding stance."
     },
     {
       "Field": "defense",
-      "Name": "防御力",
-      "Description": ""
+      "Name": "Defense",
+      "Description": "Overall defensive power value."
     },
     {
       "Field": "itemDropTicketCount",
-      "Name": "アイテムドロップ チケット枚数分母 [枚]",
-      "Description": ""
+      "Name": "Item Drop Ticket Count Denominator",
+      "Description": "Controls item drop probability using a ticket-based system."
     },
     {
       "Field": "misfireChestTrapTicketCount",
-      "Name": "宝箱トラップ不発 チケット枚数分母 [枚]",
-      "Description": ""
+      "Name": "Chest Trap Misfire Ticket Count Denominator",
+      "Description": "Controls the probability of treasure chest traps failing to activate."
     },
     {
       "Field": "criticalTicketCount",
-      "Name": "クリティカル チケット枚数分母 [枚]",
-      "Description": ""
+      "Name": "Critical Ticket Count Denominator",
+      "Description": "Controls critical hit probability using a ticket-based system."
     },
     {
       "Field": "additionalHp",
-      "Name": "追加最大HP",
-      "Description": ""
+      "Name": "Additional Maximum HP",
+      "Description": "Additional bonus HP added on top of the base maximum HP."
     },
     {
       "Field": "dummy1",
-      "Name": "ダミー",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "physicalAttackByAbyss",
-      "Name": "深淵攻撃力",
-      "Description": ""
+      "Name": "Abyss Attack Power",
+      "Description": "Attack power related to abyss-type damage or effects."
     },
     {
       "Field": "poise",
-      "Name": "強靭度",
-      "Description": ""
+      "Name": "Poise",
+      "Description": "Determines resistance to staggering and interruption."
     }
   ]
 }
