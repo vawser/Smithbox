@@ -44,9 +44,11 @@ If you experience a crash, please report it to the [Smithbox Discord](https://di
 
 ### How do I use the latest build of Smithbox
 
-To download the latest build of Smithbox, outside of the official releases, click on the green tick next to the latest commit when viewing the repository. Click on Details, and then on Summary. Scroll down, and you will see a link like this: Smithbox-SHAdbf88939399b35bca369a07e7899d10a3ec808aa, click on it to download the latest  build. Note: you will need a Github account to be able to navigate into the Github Actions page and download the build.
+To download the latest build of Smithbox, outside of the official releases, click on the green tick next to the latest commit when viewing the repository. Click on Details, and then on Summary. Scroll down, and you will see a link starting with: Smithbox-SHA, click on it to download the latest  build. 
 
-The latest build may be incomplete, as it is the in-development build of Smithbox, but it does allow you to immediately benefit from new additions and changes, whereas the official builds are only created when a substantial amount of changes has been done.
+Note: you will need a Github account to be able to navigate into the Github Actions page and download the build.
+
+The latest build may be incomplete, as it is the in-development build of Smithbox, but it does allow you to immediately benefit from new additions and changes, whereas the official builds are only created when a substantial amount of changes has been finished.
 
 ## Credits (Smithbox)
 * Vawser 
