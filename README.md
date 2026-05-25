@@ -20,7 +20,16 @@ You no longer need to unpack a game for any of the editors.
 ## Links
 Smithbox is a fork of the [DSMapStudio repository](https://github.com/soulsmods/DSMapStudio).
 
+### Smithbox Tutorials
 You can find helpful information and guides/tutorials about Smithbox at [soulsmodding.com](https://www.soulsmodding.com/doku.php?id=smithbox).
+
+### Unpacking Files
+If you want to unpack games files, you should use [Nuxe](https://github.com/JKAnderson/Nuxe/releases).
+
+## Scripts
+If you want to edit EMEVD scripts, you should use [DarkScript3](https://github.com/AinTunez/DarkScript3).
+
+If you want to edit ESD scripts, you should use [ESDLang](github.com/thefifthmatt/ESDLang) or [ESDStudio](https://github.com/GompDS/E) if you want a GUI interface.
 
 ## Support
 If you enjoy Smithbox, feel free to support me (Vawser) via [Ko-fi](https://ko-fi.com/vawser)!
