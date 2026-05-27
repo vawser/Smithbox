@@ -2,27 +2,27 @@
   "Param": "TORCH_OFF_CTRL_PARAM",
   "Type": "TORCH_OFF_CTRL_PARAM",
   "Name": "TORCH_OFF_CTRL_PARAM",
-  "Description": "",
+  "Description": "Defines torch extinguish behavior, including size-based effects and fade-out timing.",
   "Fields": [
     {
       "Field": "sfxIdSmall",
-      "Name": "SFXID（小）",
-      "Description": ""
+      "Name": "SFX ID (Small)",
+      "Description": "Visual effect ID used when a small torch is extinguished."
     },
     {
       "Field": "sfxIdNormal",
-      "Name": "SFXID（中）",
-      "Description": ""
+      "Name": "SFX ID (Normal)",
+      "Description": "Visual effect ID used when a normal-sized torch is extinguished."
     },
     {
       "Field": "sfxIdLarge",
-      "Name": "SFXID（大）",
-      "Description": ""
+      "Name": "SFX ID (Large)",
+      "Description": "Visual effect ID used when a large torch is extinguished."
     },
     {
       "Field": "fadeTime",
-      "Name": "フェードアウト時間[sec]",
-      "Description": ""
+      "Name": "Fade-Out Time (Seconds)",
+      "Description": "Duration of the fade-out effect when the torch is turned off."
     }
   ]
 }

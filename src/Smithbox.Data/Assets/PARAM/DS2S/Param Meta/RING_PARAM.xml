@@ -5,6 +5,6 @@
         <durability />
         <repairCost />
         <itemDropWeight />
-        <dummy0 />
+        <dummy0 Padding="" />
     </Field>
 </PARAMMETA>

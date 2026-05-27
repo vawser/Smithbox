@@ -2,442 +2,442 @@
   "Param": "SPELL_PARAM",
   "Type": "SPELL_PARAM",
   "Name": "SPELL_PARAM",
-  "Description": "",
+  "Description": "Defines spell behavior, including casting requirements, animations, stamina costs, usage counts, movement restrictions, and audiovisual effects across different weapon handling modes.",
   "Fields": [
     {
       "Field": "spellCategory",
-      "Name": "スペルカテゴリ",
-      "Description": ""
+      "Name": "Spell Category",
+      "Description": "Category classification of the spell (e.g., sorcery, miracle, etc.)."
     },
     {
       "Field": "isDual2HandedSpellAllowed",
-      "Name": "二刀流両手スペル許可",
-      "Description": ""
+      "Name": "Allow Dual-Wield Two-Handed Casting",
+      "Description": "Determines whether the spell can be cast while dual-wielding in a two-handed configuration."
     },
     {
       "Field": "availableCondition",
-      "Name": "使用可能条件",
-      "Description": ""
+      "Name": "Usage Condition",
+      "Description": "Conditions that must be met for the spell to be usable."
     },
     {
       "Field": "dummy0",
-      "Name": "ダミー",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "intelligence",
-      "Name": "必要ステータス 理力",
-      "Description": ""
+      "Name": "Required Intelligence",
+      "Description": "Minimum intelligence required to cast the spell."
     },
     {
       "Field": "faith",
-      "Name": "必要ステータス 信仰",
-      "Description": ""
+      "Name": "Required Faith",
+      "Description": "Minimum faith required to cast the spell."
     },
     {
       "Field": "baseSpellBulletId",
-      "Name": "ベースバレットID",
-      "Description": ""
+      "Name": "Base Bullet ID",
+      "Description": "ID of the base projectile used by the spell."
     },
     {
       "Field": "baseSpellDamageId",
-      "Name": "ベースダメージID",
-      "Description": ""
+      "Name": "Base Damage ID",
+      "Description": "ID of the base damage profile used by the spell."
     },
     {
       "Field": "single1HNormalChantTimeScale",
-      "Name": "詠唱時間 補正倍率 片手 弱 [sec]",
-      "Description": ""
+      "Name": "1H Normal Cast Time Scale",
+      "Description": "Casting time multiplier for normal one-handed spell casting."
     },
     {
       "Field": "single1HNormalHoldCastTime",
-      "Name": "発動時間 片手 弱 [sec]",
-      "Description": ""
+      "Name": "1H Normal Cast Hold Time",
+      "Description": "Duration of the casting hold phase for normal one-handed casting."
     },
     {
       "Field": "single1HNormalAnimIdSpellChanting",
-      "Name": "アニメ設定 詠唱 片手 弱",
-      "Description": ""
+      "Name": "1H Normal Chant Animation ID",
+      "Description": "Animation ID used during chanting for normal one-handed casting."
     },
     {
       "Field": "single1HNormalAnimIdSpellCasting",
-      "Name": "アニメ設定 発動 片手 弱",
-      "Description": ""
+      "Name": "1H Normal Cast Animation ID",
+      "Description": "Animation ID used when releasing a normal one-handed spell."
     },
     {
       "Field": "single1HNormalStaminaCostScale",
-      "Name": "スタミナ消費量 倍率 片手 弱 [倍]",
-      "Description": ""
+      "Name": "1H Normal Stamina Cost Multiplier",
+      "Description": "Stamina cost multiplier for normal one-handed casting."
     },
     {
       "Field": "single1HStrongChantTimeScale",
-      "Name": "詠唱時間 補正倍率 片手 強 [sec]",
-      "Description": ""
+      "Name": "1H Strong Cast Time Scale",
+      "Description": "Casting time multiplier for strong one-handed casting."
     },
     {
       "Field": "single1HStrongHoldCastTime",
-      "Name": "発動時間 片手 強 [sec]",
-      "Description": ""
+      "Name": "1H Strong Cast Hold Time",
+      "Description": "Hold duration for strong one-handed casting."
     },
     {
       "Field": "single1HStrongAnimIdSpellChanting",
-      "Name": "アニメ設定 詠唱 片手 強",
-      "Description": ""
+      "Name": "1H Strong Chant Animation ID",
+      "Description": "Chant animation used for strong one-handed casting."
     },
     {
       "Field": "single1HStrongAnimIdSpellCasting",
-      "Name": "アニメ設定 発動 片手 強",
-      "Description": ""
+      "Name": "1H Strong Cast Animation ID",
+      "Description": "Cast animation used for strong one-handed casting."
     },
     {
       "Field": "single1HStrongStaminaCostScale",
-      "Name": "スタミナ消費量 倍率 片手 強 [倍]",
-      "Description": ""
+      "Name": "1H Strong Stamina Cost Multiplier",
+      "Description": "Stamina cost multiplier for strong one-handed casting."
     },
     {
       "Field": "single2HNormalChantTimeScale",
-      "Name": "詠唱時間 補正倍率 両手 弱 [sec]",
-      "Description": ""
+      "Name": "2H Normal Cast Time Scale",
+      "Description": "Casting time multiplier for normal two-handed casting."
     },
     {
       "Field": "single2HNormalHoldCastTime",
-      "Name": "発動時間 両手 弱 [sec]",
-      "Description": ""
+      "Name": "2H Normal Cast Hold Time",
+      "Description": "Hold duration for normal two-handed casting."
     },
     {
       "Field": "single2HNormalAnimIdSpellChanting",
-      "Name": "アニメ設定 詠唱 両手 弱",
-      "Description": ""
+      "Name": "2H Normal Chant Animation ID",
+      "Description": "Chant animation for normal two-handed casting."
     },
     {
       "Field": "single2HNormalAnimIdSpellCasting",
-      "Name": "アニメ設定 発動 両手 弱",
-      "Description": ""
+      "Name": "2H Normal Cast Animation ID",
+      "Description": "Cast animation for normal two-handed casting."
     },
     {
       "Field": "single2HNormalStaminaCostScale",
-      "Name": "スタミナ消費量 倍率 両手 弱 [倍]",
-      "Description": ""
+      "Name": "2H Normal Stamina Cost Multiplier",
+      "Description": "Stamina cost multiplier for normal two-handed casting."
     },
     {
       "Field": "single2HStrongChantTimeScale",
-      "Name": "詠唱時間 補正倍率 両手 強 [sec]",
-      "Description": ""
+      "Name": "2H Strong Cast Time Scale",
+      "Description": "Casting time multiplier for strong two-handed casting."
     },
     {
       "Field": "single2HHoldCastTime",
-      "Name": "発動時間 両手 強 [sec]",
-      "Description": ""
+      "Name": "2H Strong Cast Hold Time",
+      "Description": "Hold duration for strong two-handed casting."
     },
     {
       "Field": "single2HAnimIdSpellChanting",
-      "Name": "アニメ設定 詠唱 両手 強",
-      "Description": ""
+      "Name": "2H Strong Chant Animation ID",
+      "Description": "Chant animation for strong two-handed casting."
     },
     {
       "Field": "single2HAnimIdSpellCasting",
-      "Name": "アニメ設定 発動 両手 強",
-      "Description": ""
+      "Name": "2H Strong Cast Animation ID",
+      "Description": "Cast animation for strong two-handed casting."
     },
     {
       "Field": "single2HStaminaCostScale",
-      "Name": "スタミナ消費量 倍率 両手 強 [倍]",
-      "Description": ""
+      "Name": "2H Strong Stamina Cost Multiplier",
+      "Description": "Stamina cost multiplier for strong two-handed casting."
     },
     {
       "Field": "dual1HNormalChantTimeScale",
-      "Name": "詠唱時間 補正倍率 二刀流片手 弱 [sec]",
-      "Description": ""
+      "Name": "Dual-Wield 1H Normal Cast Time Scale",
+      "Description": "Casting time multiplier for normal dual-wield one-handed casting."
     },
     {
       "Field": "dual1HNormalHoldCastTime",
-      "Name": "発動時間 二刀流片手 弱 [sec]",
-      "Description": ""
+      "Name": "Dual-Wield 1H Normal Hold Time",
+      "Description": "Hold duration for normal dual-wield casting."
     },
     {
       "Field": "dual1HNormalAnimIdSpellChanting",
-      "Name": "アニメ設定 詠唱 二刀流片手 弱",
-      "Description": ""
+      "Name": "Dual-Wield 1H Normal Chant Animation ID",
+      "Description": "Chant animation for dual-wield normal casting."
     },
     {
       "Field": "dual1HNormalAnimIdSpellCasting",
-      "Name": "アニメ設定 発動 二刀流片手 弱",
-      "Description": ""
+      "Name": "Dual-Wield 1H Normal Cast Animation ID",
+      "Description": "Cast animation for dual-wield normal casting."
     },
     {
       "Field": "dual1HNormalStaminaCostScale",
-      "Name": "スタミナ消費量 倍率 二刀流片手 弱 [倍]",
-      "Description": ""
+      "Name": "Dual-Wield 1H Normal Stamina Cost Multiplier",
+      "Description": "Stamina cost multiplier for dual-wield normal casting."
     },
     {
       "Field": "dual1HStrongChantTimeScale",
-      "Name": "詠唱時間 補正倍率 二刀流片手 強 [sec]",
-      "Description": ""
+      "Name": "Dual-Wield 1H Strong Cast Time Scale",
+      "Description": "Casting time multiplier for strong dual-wield casting."
     },
     {
       "Field": "dual1HStrongHoldCastTime",
-      "Name": "発動時間 二刀流片手 強 [sec]",
-      "Description": ""
+      "Name": "Dual-Wield 1H Strong Hold Time",
+      "Description": "Hold duration for strong dual-wield casting."
     },
     {
       "Field": "dual1HStrongAnimIdSpellChanting",
-      "Name": "アニメ設定 詠唱 二刀流片手 強",
-      "Description": ""
+      "Name": "Dual-Wield 1H Strong Chant Animation ID",
+      "Description": "Chant animation for strong dual-wield casting."
     },
     {
       "Field": "dual1HStrongAnimIdSpellCasting",
-      "Name": "アニメ設定 発動 二刀流片手 強",
-      "Description": ""
+      "Name": "Dual-Wield 1H Strong Cast Animation ID",
+      "Description": "Cast animation for strong dual-wield casting."
     },
     {
       "Field": "dual1HStrongStaminaCostScale",
-      "Name": "スタミナ消費量 倍率 二刀流片手 強 [倍]",
-      "Description": ""
+      "Name": "Dual-Wield 1H Strong Stamina Cost Multiplier",
+      "Description": "Stamina cost multiplier for strong dual-wield casting."
     },
     {
       "Field": "dual2HNormalChantTimeScale",
-      "Name": "詠唱時間 補正倍率 二刀流両手 弱 [sec]",
-      "Description": ""
+      "Name": "Dual-Wield 2H Normal Cast Time Scale",
+      "Description": "Casting time multiplier for normal dual-wield two-handed casting."
     },
     {
       "Field": "dual2HNormalHoldCastTime",
-      "Name": "発動時間 二刀流両手 弱 [sec]",
-      "Description": ""
+      "Name": "Dual-Wield 2H Normal Hold Time",
+      "Description": "Hold duration for normal dual-wield two-handed casting."
     },
     {
       "Field": "dual2HNormalAnimIdSpellChanting",
-      "Name": "アニメ設定 詠唱 二刀流両手 弱",
-      "Description": ""
+      "Name": "Dual-Wield 2H Normal Chant Animation ID",
+      "Description": "Chant animation for dual-wield two-handed normal casting."
     },
     {
       "Field": "dual2HNormalAnimIdSpellCasting",
-      "Name": "アニメ設定 発動 二刀流両手 弱",
-      "Description": ""
+      "Name": "Dual-Wield 2H Normal Cast Animation ID",
+      "Description": "Cast animation for dual-wield two-handed normal casting."
     },
     {
       "Field": "dual2HNormalStaminaCostScale",
-      "Name": "スタミナ消費量 倍率 二刀流両手 弱 [倍]",
-      "Description": ""
+      "Name": "Dual-Wield 2H Normal Stamina Cost Multiplier",
+      "Description": "Stamina cost multiplier for dual-wield normal casting."
     },
     {
       "Field": "dual2HStrongChantTimeScale",
-      "Name": "詠唱時間 補正倍率 二刀流両手 強 [sec]",
-      "Description": ""
+      "Name": "Dual-Wield 2H Strong Cast Time Scale",
+      "Description": "Casting time multiplier for strong dual-wield two-handed casting."
     },
     {
       "Field": "dual2HStrongHoldCastTime",
-      "Name": "発動時間 二刀流両手 強 [sec]",
-      "Description": ""
+      "Name": "Dual-Wield 2H Strong Hold Time",
+      "Description": "Hold duration for strong dual-wield casting."
     },
     {
       "Field": "dual2HStrongAnimIdSpellChanting",
-      "Name": "アニメ設定 詠唱 二刀流両手 強",
-      "Description": ""
+      "Name": "Dual-Wield 2H Strong Chant Animation ID",
+      "Description": "Chant animation for strong dual-wield two-handed casting."
     },
     {
       "Field": "dual2HStrongAnimIdSpellCasting",
-      "Name": "アニメ設定 発動 二刀流両手 強",
-      "Description": ""
+      "Name": "Dual-Wield 2H Strong Cast Animation ID",
+      "Description": "Cast animation for strong dual-wield two-handed casting."
     },
     {
       "Field": "dual2HStrongStaminaCostScale",
-      "Name": "スタミナ消費量 倍率 二刀流両手 強 [倍]",
-      "Description": ""
+      "Name": "Dual-Wield 2H Strong Stamina Cost Multiplier",
+      "Description": "Stamina cost multiplier for strong dual-wield casting."
     },
     {
       "Field": "lockonAvailableDistanceScale",
-      "Name": "ロックオン 攻撃有効距離 補正倍率 [倍]",
-      "Description": ""
+      "Name": "Lock-On Effective Range Scale",
+      "Description": "Multiplier affecting effective attack distance while locked on."
     },
     {
       "Field": "canMove",
-      "Name": "移動許可フラグ",
-      "Description": ""
+      "Name": "Can Move",
+      "Description": "Determines whether movement is allowed while casting."
     },
     {
       "Field": "canWaitShoot",
-      "Name": "発射待ち許可フラグ",
-      "Description": ""
+      "Name": "Can Delay Shot",
+      "Description": "Allows holding the spell before release."
     },
     {
       "Field": "canPredictShot",
-      "Name": "予測射撃許可フラグ",
-      "Description": ""
+      "Name": "Can Predict Shot",
+      "Description": "Enables predictive targeting for projectiles."
     },
     {
       "Field": "dummy1",
-      "Name": "ダミー",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "se0Id",
-      "Name": "詠唱中SE0 ID",
-      "Description": ""
+      "Name": "Chant Sound ID: 0",
+      "Description": "Sound effect ID played during chanting phase (slot 0)."
     },
     {
       "Field": "sfx0Id",
-      "Name": "詠唱中SFX0 ID",
-      "Description": ""
+      "Name": "Chant SFX ID: 0",
+      "Description": "Visual effect ID played during chanting phase (slot 0)."
     },
     {
       "Field": "sfx0AttachTarget",
-      "Name": "詠唱中SFX0 アタッチ対象",
-      "Description": ""
+      "Name": "Chant SFX Attach Target: 0",
+      "Description": "Target location for attaching SFX0."
     },
     {
       "Field": "sfx0AttachDummyPolyIdRight",
-      "Name": "詠唱中SFX0 右装備 ダミポリID",
-      "Description": ""
+      "Name": "Chant SFX Right Hand Dummy Poly ID: 0",
+      "Description": "Attachment point for right-hand weapon SFX0."
     },
     {
       "Field": "sfx0AttachDummyPolyIdLeft",
-      "Name": "詠唱中SFX0 左装備 ダミポリID",
-      "Description": ""
+      "Name": "Chant SFX Left Hand Dummy Poly ID: 0",
+      "Description": "Attachment point for left-hand weapon SFX0."
     },
     {
       "Field": "sfx0DisableEraseFade",
-      "Name": "詠唱SFX0 即削除",
-      "Description": ""
+      "Name": "Chant SFX Immediate Removal: 0",
+      "Description": "Determines whether SFX0 is removed instantly without fade."
     },
     {
       "Field": "se1Id",
-      "Name": "詠唱中SE1 ID",
-      "Description": ""
+      "Name": "Chant SE ID: 1",
+      "Description": "Sound effect ID for secondary chanting audio."
     },
     {
       "Field": "sfx1Id",
-      "Name": "詠唱中SFX1 ID",
-      "Description": ""
+      "Name": "Chant SFX ID: 1",
+      "Description": "Secondary visual effect ID for chanting."
     },
     {
       "Field": "sfx1AttachTarget",
-      "Name": "詠唱中SFX1 アタッチ対象",
-      "Description": ""
+      "Name": "Chant SFX Attach Target: 1",
+      "Description": "Attachment target for SFX1."
     },
     {
       "Field": "sfx1AttachDummyPolyIdRight",
-      "Name": "詠唱中SFX1 右装備 ダミポリID",
-      "Description": ""
+      "Name": "Chant SFX Right Hand Dummy Poly ID: 1",
+      "Description": "Right-hand attachment point for SFX1."
     },
     {
       "Field": "sfx1AttachDummyPolyIdLeft",
-      "Name": "詠唱中SFX1 左装備 ダミポリID",
-      "Description": ""
+      "Name": "Chant SFX Left Hand Dummy Poly ID: 1",
+      "Description": "Left-hand attachment point for SFX1."
     },
     {
       "Field": "sfx1DisableEraseFade",
-      "Name": "詠唱SFX1 即削除",
-      "Description": ""
+      "Name": "Chant SFX Immediate Removal: 1",
+      "Description": "Determines whether SFX1 is removed instantly without fade."
     },
     {
       "Field": "decreaseSpeedRateParallelWalk",
-      "Name": "スペル詠唱移動速度 減少割合 平行移動 [%]",
-      "Description": ""
+      "Name": "Parallel Movement Speed Reduction [%]",
+      "Description": "Movement speed reduction while strafing during casting."
     },
     {
       "Field": "decreaseSpeedRateWalk",
-      "Name": "スペル詠唱移動速度 減少割合 歩行 [%]",
-      "Description": ""
+      "Name": "Walk Speed Reduction [%]",
+      "Description": "Movement speed reduction while walking during casting."
     },
     {
       "Field": "decreaseSpeedRateLockOnWalk",
-      "Name": "スペル詠唱移動速度 減少割合 ロックオン移動 [%]",
-      "Description": ""
+      "Name": "Lock-On Walk Speed Reduction [%]",
+      "Description": "Movement speed reduction while walking with lock-on during casting."
     },
     {
       "Field": "startPlaySpeed",
-      "Name": "スペル開始部 アニメ再生倍率 [倍]",
-      "Description": ""
+      "Name": "Spell Start Animation Speed [%]",
+      "Description": "Playback speed multiplier for spell start animation."
     },
     {
       "Field": "endPlaySpeed",
-      "Name": "スペル終了部 アニメ再生倍率 [倍]",
-      "Description": ""
+      "Name": "Spell End Animation Speed [%]",
+      "Description": "Playback speed multiplier for spell end animation."
     },
     {
       "Field": "toughnessPeriodScale",
-      "Name": "強靭度期間 倍率 [倍]",
-      "Description": ""
+      "Name": "Poise Duration [%]",
+      "Description": "Multiplier affecting poise/tenacity duration during casting."
     },
     {
       "Field": "shootSeCategory",
-      "Name": "発射SE カテゴリ",
-      "Description": ""
+      "Name": "Casting Sound Category",
+      "Description": "Category used to select spell casting sound effects."
     },
     {
       "Field": "equipSlotNum",
-      "Name": "装備に必要なスロット数",
-      "Description": ""
+      "Name": "Required Equip Slots",
+      "Description": "Number of equip slots required to use the spell."
     },
     {
       "Field": "usageCountLv1",
-      "Name": "使用回数Lv1",
-      "Description": ""
+      "Name": "Usage Count Level 1",
+      "Description": "Number of uses available at level 1."
     },
     {
       "Field": "usageCountLv2",
-      "Name": "使用回数Lv2",
-      "Description": ""
+      "Name": "Usage Count Level 2",
+      "Description": "Number of uses available at level 2."
     },
     {
       "Field": "usageCountLv3",
-      "Name": "使用回数Lv3",
-      "Description": ""
+      "Name": "Usage Count Level 3",
+      "Description": "Number of uses available at level 3."
     },
     {
       "Field": "usageCountLv4",
-      "Name": "使用回数Lv4",
-      "Description": ""
+      "Name": "Usage Count Level 4",
+      "Description": "Number of uses available at level 4."
     },
     {
       "Field": "usageCountLv5",
-      "Name": "使用回数Lv5",
-      "Description": ""
+      "Name": "Usage Count Level 5",
+      "Description": "Number of uses available at level 5."
     },
     {
       "Field": "usageCountLv6",
-      "Name": "使用回数Lv6",
-      "Description": ""
+      "Name": "Usage Count Level 6",
+      "Description": "Number of uses available at level 6."
     },
     {
       "Field": "usageCountLv7",
-      "Name": "使用回数Lv7",
-      "Description": ""
+      "Name": "Usage Count Level 7",
+      "Description": "Number of uses available at level 7."
     },
     {
       "Field": "usageCountLv8",
-      "Name": "使用回数Lv8",
-      "Description": ""
+      "Name": "Usage Count Level 8",
+      "Description": "Number of uses available at level 8."
     },
     {
       "Field": "usageCountLv9",
-      "Name": "使用回数Lv9",
-      "Description": ""
+      "Name": "Usage Count Level 9",
+      "Description": "Number of uses available at level 9."
     },
     {
       "Field": "usageCountLv10",
-      "Name": "使用回数Lv10",
-      "Description": ""
+      "Name": "Usage Count Level 10",
+      "Description": "Number of uses available at level 10."
     },
     {
       "Field": "dummy2",
-      "Name": "ダミー",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "soulConsumeParamId",
-      "Name": "ソウル消費ID",
-      "Description": ""
+      "Name": "Soul Consumption Param ID",
+      "Description": "Reference to soul cost configuration for casting or usage."
     },
     {
       "Field": "baseLeftHandSpellBulletId",
-      "Name": "ベースバレットID(左手)",
-      "Description": ""
+      "Name": "Left-Hand Base Bullet ID",
+      "Description": "Base projectile ID used when casting with left hand."
     },
     {
       "Field": "baseLeftHandSpellDamageId",
-      "Name": "ベースダメージID(左手)",
-      "Description": ""
+      "Name": "Left-Hand Base Damage ID",
+      "Description": "Base damage profile ID used for left-hand casting."
     }
   ]
 }

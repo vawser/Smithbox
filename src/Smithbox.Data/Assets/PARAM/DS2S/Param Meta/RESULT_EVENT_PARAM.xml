@@ -5,9 +5,9 @@
         <msgType  Enum="RESULT_EVENT_MSG_TYPE_ENUM"/>
         <vowContribute />
         <endType  Enum="RESULT_EVENT_END_TYPE_ENUM"/>
-        <msgId />
-        <rewardItemId01 />
-        <exRewardItemId01 />
-        <dummy />
+        <msgId FmgRef="ingamesystem" />
+        <rewardItemId01 RefGroup="itemlot" />
+        <exRewardItemId01 RefGroup="itemlot"  />
+        <dummy Padding="" />
     </Field>
 </PARAMMETA>

@@ -26,7 +26,7 @@
     },
     {
       "Field": "staminaMax",
-      "Name": "Stamina",
+      "Name": "Maximum Stamina",
       "Description": "Maximum stamina value."
     },
     {
@@ -186,17 +186,17 @@
     },
     {
       "Field": "itemDropTicketCount",
-      "Name": "Item Drop Ticket Count Denominator",
+      "Name": "Item Drop Ticket Count",
       "Description": "Controls item drop probability using a ticket-based system."
     },
     {
       "Field": "misfireChestTrapTicketCount",
-      "Name": "Chest Trap Misfire Ticket Count Denominator",
+      "Name": "Chest Trap Misfire Ticket Count",
       "Description": "Controls the probability of treasure chest traps failing to activate."
     },
     {
       "Field": "criticalTicketCount",
-      "Name": "Critical Ticket Count Denominator",
+      "Name": "Critical Ticket Count",
       "Description": "Controls critical hit probability using a ticket-based system."
     },
     {

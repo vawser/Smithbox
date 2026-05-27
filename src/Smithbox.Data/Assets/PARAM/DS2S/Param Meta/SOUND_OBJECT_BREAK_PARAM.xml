@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PARAMMETA XmlVersion="0">
     <Field>
-        <type  Enum="SOUND_OBJECT_BREAK_TYPE"/>
-        <aReserved />
+        <type Enum="SOUND_OBJECT_BREAK_TYPE"/>
+        <aReserved Padding="" />
     </Field>
 </PARAMMETA>

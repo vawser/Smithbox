@@ -2,46 +2,46 @@
   "Param": "RESULT_EVENT_PARAM",
   "Type": "RESULT_EVENT_PARAM",
   "Name": "RESULT_EVENT_PARAM",
-  "Description": "",
+  "Description": "Defines result screen event behavior, including presentation type, messages, rewards, and covenant contribution changes.",
   "Fields": [
     {
       "Field": "feType",
-      "Name": "演出タイプ",
-      "Description": ""
+      "Name": "Presentation Type",
+      "Description": "Determines the type of result screen presentation or visual effect."
     },
     {
       "Field": "msgType",
-      "Name": "メッセージタイプ",
-      "Description": ""
+      "Name": "Message Type",
+      "Description": "Defines the category of message shown on the result screen."
     },
     {
       "Field": "vowContribute",
-      "Name": "誓約貢献増減値",
-      "Description": ""
+      "Name": "Covenant Contribution Change",
+      "Description": "Amount added or removed from covenant contribution upon completion."
     },
     {
       "Field": "endType",
-      "Name": "終了タイプ",
-      "Description": ""
+      "Name": "End Type",
+      "Description": "Defines how the result event concludes (e.g., normal end, forced end, special end)."
     },
     {
       "Field": "msgId",
-      "Name": "メッセージId",
-      "Description": ""
+      "Name": "Message ID",
+      "Description": "Reference ID for the displayed result message."
     },
     {
       "Field": "rewardItemId01",
-      "Name": "勝利報酬アイテム抽選ID",
-      "Description": ""
+      "Name": "Victory Reward Item Lottery ID",
+      "Description": "Item lottery ID used to determine victory rewards."
     },
     {
       "Field": "exRewardItemId01",
-      "Name": "運営イベント追加報酬アイテム抽選ID",
-      "Description": ""
+      "Name": "Event Bonus Reward Item Lottery ID",
+      "Description": "Additional reward item lottery ID used for special or live event bonuses."
     },
     {
       "Field": "dummy",
-      "Name": "予約",
+      "Name": "Padding",
       "Description": ""
     }
   ]

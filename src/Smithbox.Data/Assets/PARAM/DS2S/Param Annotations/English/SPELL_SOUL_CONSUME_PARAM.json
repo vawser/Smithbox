@@ -2,72 +2,72 @@
   "Param": "SPELL_SOUL_CONSUME_PARAM",
   "Type": "SPELL_SOUL_CONSUME_PARAM",
   "Name": "SPELL_SOUL_CONSUME_PARAM",
-  "Description": "",
+  "Description": "Defines soul consumption behavior for spells, including cost calculation type and associated bullet/damage mappings for both right and left-hand casting.",
   "Fields": [
     {
       "Field": "consumeType",
-      "Name": "計算式",
-      "Description": ""
+      "Name": "Calculation Type",
+      "Description": "Defines the formula or method used to calculate soul consumption."
     },
     {
       "Field": "dummy0",
-      "Name": "パディング用ダミー",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "consumeSoul",
-      "Name": "消費ソウル量",
-      "Description": ""
+      "Name": "Soul Cost",
+      "Description": "Base amount of souls consumed when casting the spell."
     },
     {
       "Field": "bulletAndDamageId01",
-      "Name": "バレット&ダメージID 1",
-      "Description": ""
+      "Name": "Bullet & Damage ID 1",
+      "Description": "Reference pair linking bullet and damage behavior for configuration slot 1."
     },
     {
       "Field": "bulletAndDamageId02",
-      "Name": "バレット&ダメージID 2",
-      "Description": ""
+      "Name": "Bullet & Damage ID 2",
+      "Description": "Reference pair linking bullet and damage behavior for configuration slot 2."
     },
     {
       "Field": "bulletAndDamageId03",
-      "Name": "バレット&ダメージID 3",
-      "Description": ""
+      "Name": "Bullet & Damage ID 3",
+      "Description": "Reference pair linking bullet and damage behavior for configuration slot 3."
     },
     {
       "Field": "bulletAndDamageId04",
-      "Name": "バレット&ダメージID 4",
-      "Description": ""
+      "Name": "Bullet & Damage ID 4",
+      "Description": "Reference pair linking bullet and damage behavior for configuration slot 4."
     },
     {
       "Field": "bulletAndDamageId05",
-      "Name": "バレット&ダメージID 5",
-      "Description": ""
+      "Name": "Bullet & Damage ID 5",
+      "Description": "Reference pair linking bullet and damage behavior for configuration slot 5."
     },
     {
       "Field": "bulletAndDamageLeftId01",
-      "Name": "バレット&ダメージID 左1",
-      "Description": ""
+      "Name": "Left-Hand Bullet & Damage ID 1",
+      "Description": "Left-hand casting configuration linking bullet and damage behavior for slot 1."
     },
     {
       "Field": "bulletAndDamageLeftId02",
-      "Name": "バレット&ダメージID 左2",
-      "Description": ""
+      "Name": "Left-Hand Bullet & Damage ID 2",
+      "Description": "Left-hand casting configuration linking bullet and damage behavior for slot 2."
     },
     {
       "Field": "bulletAndDamageLeftId03",
-      "Name": "バレット&ダメージID 左3",
-      "Description": ""
+      "Name": "Left-Hand Bullet & Damage ID 3",
+      "Description": "Left-hand casting configuration linking bullet and damage behavior for slot 3."
     },
     {
       "Field": "bulletAndDamageLeftId04",
-      "Name": "バレット&ダメージID 左4",
-      "Description": ""
+      "Name": "Left-Hand Bullet & Damage ID 4",
+      "Description": "Left-hand casting configuration linking bullet and damage behavior for slot 4."
     },
     {
       "Field": "bulletAndDamageLeftId05",
-      "Name": "バレット&ダメージID 左5",
-      "Description": ""
+      "Name": "Left-Hand Bullet & Damage ID 5",
+      "Description": "Left-hand casting configuration linking bullet and damage behavior for slot 5."
     }
   ]
 }

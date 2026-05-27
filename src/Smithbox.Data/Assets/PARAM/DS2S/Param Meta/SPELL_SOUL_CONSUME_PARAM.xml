@@ -2,17 +2,17 @@
 <PARAMMETA XmlVersion="0">
     <Field>
         <consumeType  Enum="SPELL_SOUL_CONSUME_TYPE"/>
-        <dummy0 />
+        <dummy0 Padding="" />
         <consumeSoul />
-        <bulletAndDamageId01 />
-        <bulletAndDamageId02 />
-        <bulletAndDamageId03 />
-        <bulletAndDamageId04 />
-        <bulletAndDamageId05 />
-        <bulletAndDamageLeftId01 />
-        <bulletAndDamageLeftId02 />
-        <bulletAndDamageLeftId03 />
-        <bulletAndDamageLeftId04 />
-        <bulletAndDamageLeftId05 />
+        <bulletAndDamageId01 Refs="PlayerDamageParam,BulletParam" />
+        <bulletAndDamageId02 Refs="PlayerDamageParam,BulletParam" />
+        <bulletAndDamageId03 Refs="PlayerDamageParam,BulletParam" />
+        <bulletAndDamageId04 Refs="PlayerDamageParam,BulletParam" />
+        <bulletAndDamageId05 Refs="PlayerDamageParam,BulletParam" />
+        <bulletAndDamageLeftId01 Refs="PlayerDamageParam,BulletParam" />
+        <bulletAndDamageLeftId02 Refs="PlayerDamageParam,BulletParam" />
+        <bulletAndDamageLeftId03 Refs="PlayerDamageParam,BulletParam" />
+        <bulletAndDamageLeftId04 Refs="PlayerDamageParam,BulletParam" />
+        <bulletAndDamageLeftId05 Refs="PlayerDamageParam,BulletParam" />
     </Field>
 </PARAMMETA>

@@ -2,26 +2,26 @@
   "Param": "VOW_PARAM",
   "Type": "VOW_PARAM",
   "Name": "VOW_PARAM",
-  "Description": "",
+  "Description": "Defines covenant progression requirements based on contribution thresholds for each covenant level.",
   "Fields": [
     {
       "Field": "requiredContributionLv1",
-      "Name": "誓約レベル1 必要貢献度",
-      "Description": ""
+      "Name": "Required Contribution (Level 1)",
+      "Description": "Minimum contribution required to reach covenant level 1."
     },
     {
       "Field": "requiredContributionLv2",
-      "Name": "誓約レベル2 必要貢献度",
-      "Description": ""
+      "Name": "Required Contribution (Level 2)",
+      "Description": "Minimum contribution required to reach covenant level 2."
     },
     {
       "Field": "requiredContributionLv3",
-      "Name": "誓約レベル3 必要貢献度",
-      "Description": ""
+      "Name": "Required Contribution (Level 3)",
+      "Description": "Minimum contribution required to reach covenant level 3."
     },
     {
       "Field": "padding0",
-      "Name": "パディング用のダミー",
+      "Name": "Padding",
       "Description": ""
     }
   ]
