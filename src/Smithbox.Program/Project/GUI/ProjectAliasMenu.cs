@@ -26,6 +26,9 @@ public class ProjectAliasMenu
         if (Smithbox.Orchestrator.IsProjectLoading)
             return;
 
+        if (Smithbox.Orchestrator.SelectedProject == null)
+            return;
+
         if (Smithbox.Orchestrator.ProjectEditor.SelectedLoadedEntry == null)
         {
             UIHelper.WrappedText("A loaded project must be selected to use this editor.");
