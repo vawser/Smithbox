@@ -4,139 +4,139 @@
     {
       "ID": 1,
       "Entries": [
-        "Item switching test A"
+        ""
       ]
     },
     {
       "ID": 2,
       "Entries": [
-        "Item switching test b"
+        ""
       ]
     },
     {
       "ID": 100,
       "Entries": [
-        "Dark Ring"
+        "Hunter's Mark"
       ]
     },
     {
       "ID": 111,
       "Entries": [
-        "Parting shot"
+        "Silencing Blank"
       ]
     },
     {
       "ID": 120,
       "Entries": [
-        "bell"
+        "Notebook"
       ]
     },
     {
       "ID": 130,
       "Entries": [
-        "Bloodline ranking viewing item"
+        "Vileblood Register"
       ]
     },
     {
       "ID": 131,
       "Entries": [
-        "Federation ranking viewing item"
+        "League Staff"
       ]
     },
     {
       "ID": 200,
       "Entries": [
-        "Regular cooperation request"
+        "Beckoning Bell"
       ]
     },
     {
       "ID": 201,
       "Entries": [
-        "Regular cooperation request _ Not available"
+        "Summon Request Not Available"
       ]
     },
     {
       "ID": 205,
       "Entries": [
-        "Regular cooperation wanted"
+        "Small Resonant Bell"
       ]
     },
     {
       "ID": 206,
       "Entries": [
-        "Regular cooperation wanted _ Not available"
+        "Be Summoned Request Not Available"
       ]
     },
     {
       "ID": 225,
       "Entries": [
-        "Normal invasion request"
+        "Sinister Resonant Bell"
       ]
     },
     {
       "ID": 226,
       "Entries": [
-        "Normal invasion request _ Not available"
+        "Invasion Request Not Available"
       ]
     },
     {
       "ID": 700,
       "Entries": [
-        "Gascoigne's Music Box"
+        "Tiny Music Box"
       ]
     },
     {
       "ID": 701,
       "Entries": [
-        "Whore's Blood"
+        "Blood of Arianna"
       ]
     },
     {
       "ID": 702,
       "Entries": [
-        "Captive Nun's Blood"
+        "Blood of Adella"
       ]
     },
     {
       "ID": 703,
       "Entries": [
-        "Female doctor's medicine"
+        "Iosefka's Blood Vial"
       ]
     },
     {
       "ID": 704,
       "Entries": [
-        "Bloody Baby"
+        "Blood Dreg"
       ]
     },
     {
       "ID": 705,
       "Entries": [
-        "Queen's Blood"
+        "Queenly Blood"
       ]
     },
     {
       "ID": 706,
       "Entries": [
-        "Clock Tower Doctor's Blood"
+        "Blood of Adeline"
       ]
     },
     {
       "ID": 800,
       "Entries": [
-        "Point forward"
+        "Point Forward"
       ]
     },
     {
       "ID": 801,
       "Entries": [
-        "Bow (male/light)"
+        "Hunter's Salutation"
       ]
     },
     {
       "ID": 802,
       "Entries": [
-        "Let's go"
+        "Conviction"
       ]
     },
     {
@@ -148,25 +148,25 @@
     {
       "ID": 804,
       "Entries": [
-        "Turning the cape"
+        "Shake off Cape"
       ]
     },
     {
       "ID": 805,
       "Entries": [
-        "A bow (male/polite)"
+        "Church Bow (Male)"
       ]
     },
     {
       "ID": 806,
       "Entries": [
-        "Bow (female/light)"
+        "Curtsy"
       ]
     },
     {
       "ID": 807,
       "Entries": [
-        "One bow (female/polite)"
+        "Church Bow (Female)"
       ]
     },
     {
@@ -178,151 +178,151 @@
     {
       "ID": 809,
       "Entries": [
-        "pray"
+        "Pray"
       ]
     },
     {
       "ID": 810,
       "Entries": [
-        "Wait!"
+        "Wait"
       ]
     },
     {
       "ID": 811,
       "Entries": [
-        "Quietly"
+        "Shh!"
       ]
     },
     {
       "ID": 812,
       "Entries": [
-        "Hey hey hey"
+        "Hunter's Rally"
       ]
     },
     {
       "ID": 813,
       "Entries": [
-        "Fist pump"
+        "Triumph"
       ]
     },
     {
       "ID": 814,
       "Entries": [
-        "Praise"
+        "Approval"
       ]
     },
     {
       "ID": 815,
       "Entries": [
-        "roar"
+        "Roar"
       ]
     },
     {
       "ID": 816,
       "Entries": [
-        "Pleading for your life"
+        "Beg for Life"
       ]
     },
     {
       "ID": 817,
       "Entries": [
-        "Dust off"
+        "Brush off Dust"
       ]
     },
     {
       "ID": 818,
       "Entries": [
-        "religion A (Simple)"
+        "Respect"
       ]
     },
     {
       "ID": 819,
       "Entries": [
-        "religion A (polite)"
+        "Deep Respect"
       ]
     },
     {
       "ID": 820,
       "Entries": [
-        "religion B"
+        "Make Contact"
       ]
     },
     {
       "ID": 821,
       "Entries": [
-        "sit"
+        "Sit Down"
       ]
     },
     {
       "ID": 822,
       "Entries": [
-        "Federation"
+        "League Oath"
       ]
     },
     {
       "ID": 900,
       "Entries": [
-        "bullet【 PG Direct specification】"
+        "Quicksilver Bullets"
       ]
     },
     {
       "ID": 901,
       "Entries": [
-        "Temporary Bullet PG Direct specification】"
+        "Blood Bullets"
       ]
     },
     {
       "ID": 910,
       "Entries": [
-        "Bullet Recovery"
+        ""
       ]
     },
     {
       "ID": 999,
       "Entries": [
-        "E3 Reset item for version"
+        ""
       ]
     },
     {
       "ID": 1000,
       "Entries": [
-        "HP recovery【 PG Direct specification】"
+        "Blood Vial"
       ]
     },
     {
       "ID": 1100,
       "Entries": [
-        "Poison/bleeding recovery potion"
+        "Antidote"
       ]
     },
     {
       "ID": 1101,
       "Entries": [
-        "Madness/Beast Transformation Recovery Potion"
+        "Sedative"
       ]
     },
     {
       "ID": 1110,
       "Entries": [
-        "Beastification Potion"
+        "Beast Blood Pellet"
       ]
     },
     {
       "ID": 1120,
       "Entries": [
-        "Stone Hat"
+        "Blue Elixir"
       ]
     },
     {
       "ID": 1200,
       "Entries": [
-        "Flame Pot"
+        "Molotov Cocktail"
       ]
     },
     {
       "ID": 1201,
       "Entries": [
-        "Timed Explosion Bottle"
+        "Delayed Molotov"
       ]
     },
     {
@@ -334,13 +334,13 @@
     {
       "ID": 1220,
       "Entries": [
-        "Oil bottle"
+        "Oil Urn"
       ]
     },
     {
       "ID": 1230,
       "Entries": [
-        "Stone"
+        "Pebble"
       ]
     },
     {
@@ -352,1423 +352,1423 @@
     {
       "ID": 1250,
       "Entries": [
-        "Rear Flame Pot"
+        "Rope Molotov Cocktail"
       ]
     },
     {
       "ID": 1251,
       "Entries": [
-        "Timed explosion bottle behind"
+        "Delayed Rope Molotov"
       ]
     },
     {
       "ID": 1260,
       "Entries": [
-        "Beast Seduction"
+        "Pungent Blood Cocktail"
       ]
     },
     {
       "ID": 1270,
       "Entries": [
-        "HP Unrecoverable"
+        "Numbing Mist"
       ]
     },
     {
       "ID": 1300,
       "Entries": [
-        "Enchantment [Fire]"
+        "Fire Paper"
       ]
     },
     {
       "ID": 1310,
       "Entries": [
-        "Enchantment [Magic]"
+        "Empty Phantasm Shell"
       ]
     },
     {
       "ID": 1320,
       "Entries": [
-        "Enchantment [Lightning]"
+        "Bolt Paper"
       ]
     },
     {
       "ID": 1330,
       "Entries": [
-        "Gun power up"
+        "Bone Marrow Ash"
       ]
     },
     {
       "ID": 1400,
       "Entries": [
-        "Return"
+        "Bold Hunter's Mark"
       ]
     },
     {
       "ID": 1410,
       "Entries": [
-        "Signpost"
+        "Shining Coins"
       ]
     },
     {
       "ID": 1411,
       "Entries": [
-        "telescope"
+        "Monocular"
       ]
     },
     {
       "ID": 1412,
       "Entries": [
-        "lanthanum"
+        "Hand Lantern"
       ]
     },
     {
       "ID": 1500,
       "Entries": [
-        "SAN Value Recovery + 1"
+        "Madman's Knowledge"
       ]
     },
     {
       "ID": 1501,
       "Entries": [
-        "SAN Value Recovery + 2"
+        "Great One's Wisdom"
       ]
     },
     {
       "ID": 1510,
       "Entries": [
-        "Seoul 0 】"
+        "Coldblood Dew (1)"
       ]
     },
     {
       "ID": 1511,
       "Entries": [
-        "Seoul 1 】"
+        "Coldblood Dew (2)"
       ]
     },
     {
       "ID": 1512,
       "Entries": [
-        "Seoul 2 】"
+        "Coldblood Dew (3)"
       ]
     },
     {
       "ID": 1513,
       "Entries": [
-        "Seoul 3 】"
+        "Thick Coldblood (4)"
       ]
     },
     {
       "ID": 1514,
       "Entries": [
-        "Seoul 4 】"
+        "Thick Coldblood (5)"
       ]
     },
     {
       "ID": 1515,
       "Entries": [
-        "Seoul 5 】"
+        "Thick Coldblood (6)"
       ]
     },
     {
       "ID": 1516,
       "Entries": [
-        "Seoul 6 】"
+        "Frenzied Coldblood (7)"
       ]
     },
     {
       "ID": 1517,
       "Entries": [
-        "Seoul 7 】"
+        "Frenzied Coldblood (8)"
       ]
     },
     {
       "ID": 1518,
       "Entries": [
-        "Seoul 8 】"
+        "Frenzied Coldblood (9)"
       ]
     },
     {
       "ID": 1519,
       "Entries": [
-        "Seoul 9 】"
+        "Kin Coldblood (10)"
       ]
     },
     {
       "ID": 1590,
       "Entries": [
-        "Seoul 10 】"
+        "Kin Coldblood (11)"
       ]
     },
     {
       "ID": 1591,
       "Entries": [
-        "Seoul 11 】"
+        "Kin Coldblood (12)"
       ]
     },
     {
       "ID": 1592,
       "Entries": [
-        "Seoul 12 】"
+        "Great One Coldblood"
       ]
     },
     {
       "ID": 1593,
       "Entries": [
-        "Seoul 13 】"
+        "Old Great One Coldblood"
       ]
     },
     {
       "ID": 1594,
       "Entries": [
-        "Seoul 14 】"
+        "Revered Great One Coldblood"
       ]
     },
     {
       "ID": 1600,
       "Entries": [
-        "BJ The rough diamond of \"clockwise perversion\""
+        ""
       ]
     },
     {
       "ID": 1601,
       "Entries": [
-        "BJ The rough diamond of \"counterclockwise perversion\""
+        ""
       ]
     },
     {
       "ID": 1602,
       "Entries": [
-        "BJ The raw stone of \"Communion\""
+        ""
       ]
     },
     {
       "ID": 1603,
       "Entries": [
-        "BJ The raw stone of \"Odon's Fellowship\""
+        ""
       ]
     },
     {
       "ID": 1604,
       "Entries": [
-        "BJ The \"Lake\" Gemstone"
+        ""
       ]
     },
     {
       "ID": 1605,
       "Entries": [
-        "BJ Deep Sea Gemstones"
+        ""
       ]
     },
     {
       "ID": 1606,
       "Entries": [
-        "BJ The raw material of the \"Destroyer\""
+        ""
       ]
     },
     {
       "ID": 1607,
       "Entries": [
-        "BJ The raw material of the \"Reveler\""
+        ""
       ]
     },
     {
       "ID": 1608,
       "Entries": [
-        "BJ The raw material of \"the one who interacts\""
+        ""
       ]
     },
     {
       "ID": 1609,
       "Entries": [
-        "BJ The raw material of the \"successor\""
+        ""
       ]
     },
     {
       "ID": 1610,
       "Entries": [
-        "BJ The Beast's Gemstone"
+        ""
       ]
     },
     {
       "ID": 1611,
       "Entries": [
-        "BJ The Moon's Gemstone"
+        ""
       ]
     },
     {
       "ID": 1612,
       "Entries": [
-        "BJThe raw stone of \"eyes\""
+        ""
       ]
     },
     {
       "ID": 1650,
       "Entries": [
-        "Radiation Magic Stone Ore Level 1"
+        ""
       ]
     },
     {
       "ID": 1651,
       "Entries": [
-        "Radiation Magic Stone Ore Level 2"
+        ""
       ]
     },
     {
       "ID": 1652,
       "Entries": [
-        "Radiation Magic Stone Ore Level 3"
+        ""
       ]
     },
     {
       "ID": 1653,
       "Entries": [
-        "Radiation Magic Stone Ore Level 4"
+        ""
       ]
     },
     {
       "ID": 1654,
       "Entries": [
-        "Radiation Magic Stone Ore Level 5"
+        ""
       ]
     },
     {
       "ID": 1655,
       "Entries": [
-        "Radiation Magic Stone Ore Level 6"
+        ""
       ]
     },
     {
       "ID": 1656,
       "Entries": [
-        "Radiation Magic Stone Ore Level 7"
+        ""
       ]
     },
     {
       "ID": 1657,
       "Entries": [
-        "Triangular Magic Stone Ore Level 1"
+        ""
       ]
     },
     {
       "ID": 1658,
       "Entries": [
-        "Triangular Magic Stone Ore Level 2"
+        ""
       ]
     },
     {
       "ID": 1659,
       "Entries": [
-        "Triangular Magic Stone Ore Level 3"
+        ""
       ]
     },
     {
       "ID": 1660,
       "Entries": [
-        "Triangular Magic Stone Ore Level 4"
+        ""
       ]
     },
     {
       "ID": 1661,
       "Entries": [
-        "Triangular Magic Stone Ore Level 5"
+        ""
       ]
     },
     {
       "ID": 1662,
       "Entries": [
-        "Triangular Magic Stone Ore Level 6"
+        ""
       ]
     },
     {
       "ID": 1663,
       "Entries": [
-        "Triangular Magic Stone Ore Level 7"
+        ""
       ]
     },
     {
       "ID": 1664,
       "Entries": [
-        "Defective Magic Stone Ore Level 1"
+        ""
       ]
     },
     {
       "ID": 1665,
       "Entries": [
-        "Defective Magic Stone Ore Level 2"
+        ""
       ]
     },
     {
       "ID": 1666,
       "Entries": [
-        "Defective Magic Stone Ore Level 3"
+        ""
       ]
     },
     {
       "ID": 1667,
       "Entries": [
-        "Defective Magic Stone Ore Level 4"
+        ""
       ]
     },
     {
       "ID": 1668,
       "Entries": [
-        "Defective Magic Stone Ore Level 5"
+        ""
       ]
     },
     {
       "ID": 1669,
       "Entries": [
-        "Defective Magic Stone Ore Level 6"
+        ""
       ]
     },
     {
       "ID": 1670,
       "Entries": [
-        "Defective Magic Stone Ore Level 7"
+        ""
       ]
     },
     {
       "ID": 1671,
       "Entries": [
-        "Round Magic Stone Ore Level 1"
+        ""
       ]
     },
     {
       "ID": 1672,
       "Entries": [
-        "Round Magic Stone Ore Level 2"
+        ""
       ]
     },
     {
       "ID": 1673,
       "Entries": [
-        "Round Magic Stone Ore Level 3"
+        ""
       ]
     },
     {
       "ID": 1674,
       "Entries": [
-        "Round Magic Stone Ore Level 4"
+        ""
       ]
     },
     {
       "ID": 1675,
       "Entries": [
-        "Round Magic Stone Ore Level 5"
+        ""
       ]
     },
     {
       "ID": 1676,
       "Entries": [
-        "Round Magic Stone Ore Level 6"
+        ""
       ]
     },
     {
       "ID": 1677,
       "Entries": [
-        "Round Magic Stone Ore Level 7"
+        ""
       ]
     },
     {
       "ID": 1678,
       "Entries": [
-        "Droplet-shaped Magic Stone Ore Level 1"
+        ""
       ]
     },
     {
       "ID": 1679,
       "Entries": [
-        "Droplet-shaped Magic Stone Ore Level 2"
+        ""
       ]
     },
     {
       "ID": 1680,
       "Entries": [
-        "Droplet-shaped Magic Stone Ore Level 3"
+        ""
       ]
     },
     {
       "ID": 1681,
       "Entries": [
-        "Droplet-shaped Magic Stone Ore Level 4"
+        ""
       ]
     },
     {
       "ID": 1682,
       "Entries": [
-        "Droplet-shaped Magic Stone Ore Level 5"
+        ""
       ]
     },
     {
       "ID": 1683,
       "Entries": [
-        "Droplet-shaped Magic Stone Ore Level 6"
+        ""
       ]
     },
     {
       "ID": 1684,
       "Entries": [
-        "Droplet-shaped Magic Stone Ore Level 7"
+        ""
       ]
     },
     {
       "ID": 1700,
       "Entries": [
-        "Stagnation of blood"
+        "Vermin"
       ]
     },
     {
       "ID": 2000,
       "Entries": [
-        "Tentacle Summoning"
+        "Augur of Ebrietas"
       ]
     },
     {
       "ID": 2010,
       "Entries": [
-        "Space Summoning"
+        "A Call Beyond"
       ]
     },
     {
       "ID": 2020,
       "Entries": [
-        "Reflect Wall"
+        "Beast Roar"
       ]
     },
     {
       "ID": 2030,
       "Entries": [
-        "Slippery"
+        "Lead Elixir"
       ]
     },
     {
       "ID": 2050,
       "Entries": [
-        "Area Recovery"
+        "Choir Bell"
       ]
     },
     {
       "ID": 2060,
       "Entries": [
-        "acceleration"
+        "Old Hunter Bone"
       ]
     },
     {
       "ID": 2070,
       "Entries": [
-        "Cain's Impact"
+        "Tiny Tonitrus"
       ]
     },
     {
       "ID": 2080,
       "Entries": [
-        "Guided missile"
+        "Executioner's Gloves"
       ]
     },
     {
       "ID": 2090,
       "Entries": [
-        "Friendly Fire"
+        "Shaman Bone Blade"
       ]
     },
     {
       "ID": 2110,
       "Entries": [
-        "Messenger Mimicry"
+        "Messenger's Gift"
       ]
     },
     {
       "ID": 2120,
       "Entries": [
-        "Cosmic Arrow"
+        "Blacksky Eye"
       ]
     },
     {
       "ID": 2130,
       "Entries": [
-        "Ghost Bullet"
+        "Accursed Brew"
       ]
     },
     {
       "ID": 2140,
       "Entries": [
-        "Snake Summoning"
+        "Madaras Whistle"
       ]
     },
     {
       "ID": 3000,
       "Entries": [
-        "Weapon Enhancement Material [Common]"
+        "Blood Stone Shard"
       ]
     },
     {
       "ID": 3010,
       "Entries": [
-        "Weapon upgrade material [Uncommon]"
+        "Twin Blood Stone Shards"
       ]
     },
     {
       "ID": 3020,
       "Entries": [
-        "Weapon strengthening material [Rare]"
+        "Blood Stone Chunk"
       ]
     },
     {
       "ID": 3030,
       "Entries": [
-        "Weapon strengthening material S rare】"
+        "Blood Rock"
       ]
     },
     {
       "ID": 4000,
       "Entries": [
-        "Cathedral Quarter B Key"
+        "Oedon Tomb Key"
       ]
     },
     {
       "ID": 4001,
       "Entries": [
-        "Gold pendants"
+        "Gold Pendant"
       ]
     },
     {
       "ID": 4003,
       "Entries": [
-        "Invitation to the Castle"
+        "Cainhurst Summons"
       ]
     },
     {
       "ID": 4006,
       "Entries": [
-        "Cathedral Quarter C Orphanage 1F Key"
+        "Orphanage Key"
       ]
     },
     {
       "ID": 4009,
       "Entries": [
-        "Evil Eye Bridge Key"
+        "Iron Door Key"
       ]
     },
     {
       "ID": 4010,
       "Entries": [
-        "Cathedral Quarter C Key to"
+        "Upper Cathedral Key"
       ]
     },
     {
       "ID": 4011,
       "Entries": [
-        "Keys to the Old Town"
+        "Hunter Chief Emblem"
       ]
     },
     {
       "ID": 4012,
       "Entries": [
-        "Nightmare Classroom Key"
+        "Lecture Theatre Key"
       ]
     },
     {
       "ID": 4013,
       "Entries": [
-        "Veranda key"
+        "Lunarium Key"
       ]
     },
     {
       "ID": 4014,
       "Entries": [
-        "Parishioner Ω Startup Items"
+        "Laurence's Skull"
       ]
     },
     {
       "ID": 4015,
       "Entries": [
-        "Clock Tower: Dungeon Key"
+        "Underground Cell Inner Chamber Key"
       ]
     },
     {
       "ID": 4016,
       "Entries": [
-        "Observation Board Key"
+        ""
       ]
     },
     {
       "ID": 4017,
       "Entries": [
-        "Altar elevator activation item"
+        "Eye Pendant"
       ]
     },
     {
       "ID": 4018,
       "Entries": [
-        "Normal Dungeon Door Key"
+        "Underground Cell Key"
       ]
     },
     {
       "ID": 4019,
       "Entries": [
-        "Clock Tower Door Key"
+        "Balcony Key"
       ]
     },
     {
       "ID": 4020,
       "Entries": [
-        "Clock Tower Hunter Room (Boss Room) Key"
+        "Astral Clocktower Key"
       ]
     },
     {
       "ID": 4021,
       "Entries": [
-        "Clock Face Activation Item"
+        "Celestial Dial"
       ]
     },
     {
       "ID": 4102,
       "Entries": [
-        "Weapon Enhancement Unlocking Items"
+        "Workshop Haze Extractor"
       ]
     },
     {
       "ID": 4103,
       "Entries": [
-        "Magic stone removal unlock item"
+        "Blood Gem Workshop Tool"
       ]
     },
     {
       "ID": 4104,
       "Entries": [
-        "Body gem removable items"
+        "Rune Workshop Tool"
       ]
     },
     {
       "ID": 4105,
       "Entries": [
-        "Quick Dungeon Unlocking Items"
+        "Short Ritual Root Chalice"
       ]
     },
     {
       "ID": 4110,
       "Entries": [
-        "Shop Opening Workshop Shop A"
+        "Saw Hunter Badge"
       ]
     },
     {
       "ID": 4111,
       "Entries": [
-        "Shop Opening Workshop Shop D"
+        "Crown Hunter Badge"
       ]
     },
     {
       "ID": 4112,
       "Entries": [
-        "Shop Opening Workshop Shop B"
+        "Powder Keg Hunter Badge"
       ]
     },
     {
       "ID": 4113,
       "Entries": [
-        "Shop Opening Workshop Shop C"
+        "Old Hunter Badge"
       ]
     },
     {
       "ID": 4114,
       "Entries": [
-        "Shop Opening Church Shop A"
+        "Sword Hunter Badge"
       ]
     },
     {
       "ID": 4115,
       "Entries": [
-        "Shop Opening Church Shop B"
+        "Radiant Sword Hunter Badge"
       ]
     },
     {
       "ID": 4116,
       "Entries": [
-        "Shop Opening Church Shop C"
+        "Wheel Hunter Badge"
       ]
     },
     {
       "ID": 4117,
       "Entries": [
-        "Shop Opening Vampire"
+        "Cainhurst Badge"
       ]
     },
     {
       "ID": 4118,
       "Entries": [
-        "Shop Opening Workshop Shop E"
+        "Spark Hunter Badge"
       ]
     },
     {
       "ID": 4119,
       "Entries": [
-        "Shop Opening Church Shop D"
+        "Cosmic Eye Watcher Badge"
       ]
     },
     {
       "ID": 4120,
       "Entries": [
-        "Shop Unlocked Old Hunter Badge"
+        "Firing Hammer Badge"
       ]
     },
     {
       "ID": 4121,
       "Entries": [
-        "Shop Unlocked: Clock Tower Hunter Badge"
+        ""
       ]
     },
     {
       "ID": 4300,
       "Entries": [
-        "Things related to dolls"
+        "Small Hair Ornament"
       ]
     },
     {
       "ID": 4301,
       "Entries": [
-        "Doll's Tears"
+        "Tear Stone"
       ]
     },
     {
       "ID": 4304,
       "Entries": [
-        "Engagement Rings"
+        "Ring of Betrothal"
       ]
     },
     {
       "ID": 4305,
       "Entries": [
-        "Pink meat"
+        "Queenly Flesh"
       ]
     },
     {
       "ID": 4306,
       "Entries": [
-        "Bright red brooch"
+        "Red Jeweled Brooch"
       ]
     },
     {
       "ID": 4308,
       "Entries": [
-        "Invitation to an Old Castle (Anonymous)"
+        "Unopened Summons"
       ]
     },
     {
       "ID": 4310,
       "Entries": [
-        "An item that allows you to warp back to your hometown by throwing the evil god."
+        "Tonsil Stone"
       ]
     },
     {
       "ID": 4311,
       "Entries": [
-        "[ DLC 】Cathedral Ward with Evil God Throw D Items that can warp to"
+        "Eye of a Blood-drunk Hunter"
       ]
     },
     {
       "ID": 4312,
       "Entries": [
-        "[ DLC 】 NPCSummoning Items"
+        "Old Hunter Bell"
       ]
     },
     {
       "ID": 4313,
       "Entries": [
-        "[ DLC 】Federation Staff"
+        ""
       ]
     },
     {
       "ID": 4320,
       "Entries": [
-        "3 The umbilical cord of the real thing A"
+        "One Third of Umbilical Cord (Workshop)"
       ]
     },
     {
       "ID": 4321,
       "Entries": [
-        "3 The umbilical cord of the real thing B"
+        "One Third of Umbilical Cord (Arianna)"
       ]
     },
     {
       "ID": 4322,
       "Entries": [
-        "3 The umbilical cord of the real thing A"
+        "One Third of Umbilical Cord (Iosefka)"
       ]
     },
     {
       "ID": 4323,
       "Entries": [
-        "3 The umbilical cord of the real thing B"
+        "One Third of Umbilical Cord (Mergo)"
       ]
     },
     {
       "ID": 4330,
       "Entries": [
-        "The Final Holy Grail of the Deep Beyond"
+        "Yharnam Stone"
       ]
     },
     {
       "ID": 4340,
       "Entries": [
-        "Brain fluid A"
+        "Brain Fluid"
       ]
     },
     {
       "ID": 4341,
       "Entries": [
-        "Brain fluid B"
+        "Brain Fluid"
       ]
     },
     {
       "ID": 4342,
       "Entries": [
-        "Brain fluid C"
+        "Brain Fluid"
       ]
     },
     {
       "ID": 4900,
       "Entries": [
-        "Messenger equipment (hat A )"
+        "Yharnam Messenger Hat"
       ]
     },
     {
       "ID": 4901,
       "Entries": [
-        "Messenger equipment (hat B )"
+        "Worn Messenger Top Hat"
       ]
     },
     {
       "ID": 4902,
       "Entries": [
-        "Messenger equipment (bandages)"
+        "Messenger Head Bandage"
       ]
     },
     {
       "ID": 4903,
       "Entries": [
-        "Messenger equipment (white ribbon)"
+        "White Messenger Ribbon"
       ]
     },
     {
       "ID": 4904,
       "Entries": [
-        "Messenger Gear (White Ribbon Covered in Guts)"
+        "Red Messenger Ribbon"
       ]
     },
     {
       "ID": 4905,
       "Entries": [
-        "Messenger Gear (Messenger's Solid Top (Not Frayed Top Hat))"
+        "Messenger Top Hat"
       ]
     },
     {
       "ID": 4906,
       "Entries": [
-        "Messenger equipment (Messenger Church Hat)"
+        "Black Messenger Hat"
       ]
     },
     {
       "ID": 4907,
       "Entries": [
-        "Messenger equipment (messenger's bloody bandages)"
+        "Bloody Messenger Head Bandage"
       ]
     },
     {
       "ID": 4908,
       "Entries": [
-        "Messenger Equipment (Messenger Pot Festival)"
+        "Messenger Urn Festival"
       ]
     },
     {
       "ID": 6100,
       "Entries": [
-        "Automatically generated chalice [Level 1 】Thumel"
+        "Pthumeru Root Chalice"
       ]
     },
     {
       "ID": 6109,
       "Entries": [
-        "Fixed Grail [Level 1 】Thumel"
+        "Pthumeru Chalice"
       ]
     },
     {
       "ID": 6200,
       "Entries": [
-        "Automatically generated chalice [Level 2】Thumel"
+        "Central Pthumeru Root Chalice"
       ]
     },
     {
       "ID": 6209,
       "Entries": [
-        "Fixed Grail [Level 2 】Thumel"
+        "Central Pthumeru Chalice"
       ]
     },
     {
       "ID": 6210,
       "Entries": [
-        "Automatically generated chalice [Level 2 】 Remote Grave"
+        "Huntertomb Root Chalice"
       ]
     },
     {
       "ID": 6219,
       "Entries": [
-        "Fixed Grail [Level 2 】 Remote Grave"
+        "Hintertomb Chalice"
       ]
     },
     {
       "ID": 6300,
       "Entries": [
-        "Automatically generated chalice [Level 3 】Thumel"
+        "Lower Pthumeru Root Chalice"
       ]
     },
     {
       "ID": 6302,
       "Entries": [
-        "Automatically generated chalice [Level 3 】Thumel _ Multi"
+        "Sinister Lower Pthumeru Root Chalice"
       ]
     },
     {
       "ID": 6309,
       "Entries": [
-        "Fixed Grail [Level 3 】Thumel"
+        "Lower Pthumeru Chalice"
       ]
     },
     {
       "ID": 6310,
       "Entries": [
-        "Automatically generated chalice [Level 3 】 Remote Grave"
+        "Lower Hintertomb Root Chalice"
       ]
     },
     {
       "ID": 6312,
       "Entries": [
-        "Automatically generated chalice [Level 3 】 Remote Grave _ Multi"
+        "Sinister Hintertomb Root Chalice"
       ]
     },
     {
       "ID": 6319,
       "Entries": [
-        "Fixed Grail [Level 3 】 Remote Grave"
+        "Lower Hintertomb Root Chalice"
       ]
     },
     {
       "ID": 6401,
       "Entries": [
-        "Automatically generated chalice [Level 4 】Thumel _ curse"
+        "Cursed and Defiled Root Chalice"
       ]
     },
     {
       "ID": 6409,
       "Entries": [
-        "Fixed Grail [Level 4 】Thumel _ curse"
+        "Defiled Chalice"
       ]
     },
     {
       "ID": 6420,
       "Entries": [
-        "Automatically generated chalice [Level 4 】 Laurent"
+        "Ailing Loran Root Chalice"
       ]
     },
     {
       "ID": 6429,
       "Entries": [
-        "Fixed Grail [Level 4 】 Laurent"
+        "Ailing Loran Chalice"
       ]
     },
     {
       "ID": 6500,
       "Entries": [
-        "Automatically generated chalice [Level 5 】Thumel"
+        "Pthumeru Ihyll Root Chalice"
       ]
     },
     {
       "ID": 6502,
       "Entries": [
-        "Automatically generated chalice [Level 5】Thumel _ Multi"
+        "Sinister Pthumeru Ihyll Root Chalice"
       ]
     },
     {
       "ID": 6509,
       "Entries": [
-        "Fixed Grail [Level 5 】Thumel"
+        "Great Pthumeru Ihyll Root Chalice"
       ]
     },
     {
       "ID": 6520,
       "Entries": [
-        "Automatically generated chalice [Level 5 】 Laurent"
+        "Lower Ailing Loran Root Chalice"
       ]
     },
     {
       "ID": 6522,
       "Entries": [
-        "Automatically generated chalice [Level 5 】 Laurent _ Multi"
+        "Sinister Lower Loran Root Chalice"
       ]
     },
     {
       "ID": 6529,
       "Entries": [
-        "Fixed Grail [Level 5 】 Laurent"
+        "Lower Loran Chalice"
       ]
     },
     {
       "ID": 6530,
       "Entries": [
-        "Automatically generated chalice [Level 5 】Is"
+        "Isz Root Chalice"
       ]
     },
     {
       "ID": 6532,
       "Entries": [
-        "Automatically generated chalice [Level 5 】Is _ Multi"
+        "Sinister Isz Root Chalice"
       ]
     },
     {
       "ID": 6539,
       "Entries": [
-        "Fixed Grail [Level 5 】Is"
+        "Great Isz Chalice"
       ]
     },
     {
       "ID": 7000,
       "Entries": [
-        "Ritual Materials [Common A 】level 1"
+        "Ritual Blood (1)"
       ]
     },
     {
       "ID": 7001,
       "Entries": [
-        "Ritual Materials [Common A 】level 2"
+        "Ritual Blood (2)"
       ]
     },
     {
       "ID": 7002,
       "Entries": [
-        "Ritual Materials [Common A 】level 3"
+        "Ritual Blood (3)"
       ]
     },
     {
       "ID": 7003,
       "Entries": [
-        "Ritual Materials [Common A 】level 4"
+        "Ritual Blood (4)"
       ]
     },
     {
       "ID": 7004,
       "Entries": [
-        "Ritual Materials [Common A 】level 5"
+        "Ritual Blood (5)"
       ]
     },
     {
       "ID": 7012,
       "Entries": [
-        "Ritual Materials [Common B 】level 3"
+        "Coldblood Flowerbud"
       ]
     },
     {
       "ID": 7013,
       "Entries": [
-        "Ritual Materials [Common B 】level 4"
+        "Coldblood Flower Bulb"
       ]
     },
     {
       "ID": 7014,
       "Entries": [
-        "Ritual Materials [Common B】level 5"
+        "Blooming Coldblood Flower"
       ]
     },
     {
       "ID": 7020,
       "Entries": [
-        "Ritual Materials [Common C 】level 1"
+        "Tomb Mold (1)"
       ]
     },
     {
       "ID": 7021,
       "Entries": [
-        "Ritual Materials [Common C 】level 2"
+        "Tomb Mold (2)"
       ]
     },
     {
       "ID": 7022,
       "Entries": [
-        "Ritual Materials [Common C 】level 3"
+        "Tomb Mold (3)"
       ]
     },
     {
       "ID": 7023,
       "Entries": [
-        "Ritual Materials [Common C 】level 4"
+        "Tomb Mold (4)"
       ]
     },
     {
       "ID": 7024,
       "Entries": [
-        "Ritual Materials [Common C 】level 5"
+        "Tomb Mold (5)"
       ]
     },
     {
       "ID": 7050,
       "Entries": [
-        "Ritual Material Fragment"
+        "Arcane Haze"
       ]
     },
     {
       "ID": 7100,
       "Entries": [
-        "Ritual Materials [Uncommon A 】level 1"
+        "Pearl Slug"
       ]
     },
     {
       "ID": 7110,
       "Entries": [
-        "Ritual Materials [Uncommon B 】level 1"
+        "Red Jelly"
       ]
     },
     {
       "ID": 7120,
       "Entries": [
-        "Ritual Materials [Uncommon C 】level 1"
+        "Sage's Wrist"
       ]
     },
     {
       "ID": 7121,
       "Entries": [
-        "Ritual Materials [Uncommon C 】level 2"
+        "Sage's Hair"
       ]
     },
     {
       "ID": 7130,
       "Entries": [
-        "Ritual Materials [Uncommon D 】level 1"
+        "Inflicted Organ"
       ]
     },
     {
       "ID": 7131,
       "Entries": [
-        "Ritual Materials [Uncommon D 】level 2"
+        "Yellow Backbone"
       ]
     },
     {
       "ID": 7140,
       "Entries": [
-        "Ritual Materials [Uncommon E 】level 1"
+        "Bastard of Loran"
       ]
     },
     {
       "ID": 7150,
       "Entries": [
-        "Ritual Materials [Uncommon F 】level 1"
+        "Bloodshot Eyeball"
       ]
     },
     {
       "ID": 7200,
       "Entries": [
-        "Ritual materials A5 rock】"
+        "Living String"
       ]
     },
     {
       "ID": 10900,
       "Entries": [
-        "bullet【 PG Direct specification】"
+        ""
       ]
     },
     {
       "ID": 10910,
       "Entries": [
-        "Bullet Recovery"
+        ""
       ]
     },
     {
       "ID": 11000,
       "Entries": [
-        "HP recovery【 PG Direct specification】"
+        ""
       ]
     },
     {
       "ID": 11100,
       "Entries": [
-        "Poison/bleeding recovery potion"
+        ""
       ]
     },
     {
       "ID": 11101,
       "Entries": [
-        "Madness/Beast Transformation Recovery Potion"
+        ""
       ]
     },
     {
       "ID": 11110,
       "Entries": [
-        "Beastification Potion"
+        ""
       ]
     },
     {
       "ID": 11130,
       "Entries": [
-        "Regain Up"
+        ""
       ]
     },
     {
       "ID": 11200,
       "Entries": [
-        "Flame Pot"
+        ""
       ]
     },
     {
       "ID": 11201,
       "Entries": [
-        "Timed Explosion Bottle"
+        ""
       ]
     },
     {
       "ID": 11210,
       "Entries": [
-        "Poison Knife"
+        ""
       ]
     },
     {
       "ID": 11220,
       "Entries": [
-        "Oil bottle"
+        ""
       ]
     },
     {
       "ID": 11230,
       "Entries": [
-        "Stone"
+        ""
       ]
     },
     {
       "ID": 11240,
       "Entries": [
-        "Throwing Knife"
+        ""
       ]
     },
     {
       "ID": 11250,
       "Entries": [
-        "Rear Flame Pot"
+        ""
       ]
     },
     {
       "ID": 11251,
       "Entries": [
-        "Timed explosion bottle behind"
+        ""
       ]
     },
     {
       "ID": 11260,
       "Entries": [
-        "Beast Seduction"
+        ""
       ]
     },
     {
       "ID": 11270,
       "Entries": [
-        "HP Unrecoverable"
+        ""
       ]
     },
     {
       "ID": 11300,
       "Entries": [
-        "Enchantment [Fire]"
+        ""
       ]
     },
     {
       "ID": 11310,
       "Entries": [
-        "Enchantment [Magic]"
+        ""
       ]
     },
     {
       "ID": 11320,
       "Entries": [
-        "Enchantment [Lightning]"
+        ""
       ]
     },
     {
       "ID": 11330,
       "Entries": [
-        "Gun power up"
+        ""
       ]
     },
     {
       "ID": 12000,
       "Entries": [
-        "Tentacle Summoning"
+        ""
       ]
     },
     {
       "ID": 12010,
       "Entries": [
-        "Space Summoning"
+        ""
       ]
     },
     {
       "ID": 12020,
       "Entries": [
-        "Reflect Wall"
+        ""
       ]
     },
     {
       "ID": 12030,
       "Entries": [
-        "Slippery"
+        ""
       ]
     },
     {
       "ID": 12050,
       "Entries": [
-        "Area Recovery"
+        ""
       ]
     },
     {
       "ID": 12060,
       "Entries": [
-        "acceleration"
+        ""
       ]
     },
     {
       "ID": 12070,
       "Entries": [
-        "Ground-Crawling Magic"
+        ""
       ]
     },
     {
       "ID": 12080,
       "Entries": [
-        "Guided missile"
+        ""
       ]
     },
     {
       "ID": 12090,
       "Entries": [
-        "Friendly Fire"
+        ""
       ]
     },
     {
       "ID": 12110,
       "Entries": [
-        "Messenger Mimicry"
+        ""
       ]
     },
     {
       "ID": 12120,
       "Entries": [
-        "Cosmic Arrow"
+        ""
       ]
     },
     {
       "ID": 12130,
       "Entries": [
-        "Ghost Bullet"
+        ""
       ]
     },
     {
       "ID": 12140,
       "Entries": [
-        "Snake Summoning"
+        ""
       ]
     }
   ]
