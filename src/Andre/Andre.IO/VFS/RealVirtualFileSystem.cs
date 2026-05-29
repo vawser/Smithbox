@@ -133,8 +133,12 @@ namespace Andre.IO.VFS
                 {
                     return file;
                 }
-                if (isReadOnly) throw ThrowWriteNotSupported();
+
+                if (isReadOnly) 
+                    throw ThrowWriteNotSupported();
+
                 File.Create(filePath).Dispose();
+
                 if (!TryGetFile(fileName, out file))
                 {
                     throw new($"Failed to create file \"{filePath}\"... somehow?");
@@ -144,7 +148,8 @@ namespace Andre.IO.VFS
 
             public override IEnumerable<(string, VirtualDirectory)> EnumerateDirectories()
             {
-                return EnumerateDirectoryNames().Select(s => (s, new RealVirtualDirectory(s, isReadOnly) as VirtualDirectory));
+                return EnumerateDirectoryNames().Select(s =>
+                    (s, new RealVirtualDirectory(Path.Combine(path, s), isReadOnly) as VirtualDirectory));
             }
 
             public override IEnumerable<string> EnumerateDirectoryNames()
@@ -159,7 +164,7 @@ namespace Andre.IO.VFS
 
             public override IEnumerable<(string, VirtualFile)> EnumerateFiles()
             {
-                return EnumerateFileNames().Select(s => (s, new RealVirtualFile(s, isReadOnly) as VirtualFile));
+                return EnumerateFileNames().Select(s => (s, new RealVirtualFile(Path.Combine(path, s), isReadOnly) as VirtualFile));
             }
         }
 
