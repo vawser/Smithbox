@@ -4,157 +4,157 @@
     {
       "ID": 0,
       "Entries": [
-        "Basic"
+        "Standard"
       ]
     },
     {
       "ID": 100,
       "Entries": [
-        "Basic +1"
+        "Standard +1"
       ]
     },
     {
       "ID": 200,
       "Entries": [
-        "Base +2"
+        "Standard +2"
       ]
     },
     {
       "ID": 300,
       "Entries": [
-        "Basic +3"
+        "Standard +3"
       ]
     },
     {
       "ID": 400,
       "Entries": [
-        "Base +4"
+        "Standard +4"
       ]
     },
     {
       "ID": 500,
       "Entries": [
-        "Basic +5"
+        "Standard +5"
       ]
     },
     {
       "ID": 600,
       "Entries": [
-        "Base +6"
+        "Standard +6"
       ]
     },
     {
       "ID": 700,
       "Entries": [
-        "Basic +7"
+        "Standard +7"
       ]
     },
     {
       "ID": 800,
       "Entries": [
-        "Basic +8"
+        "Standard +8"
       ]
     },
     {
       "ID": 900,
       "Entries": [
-        "Basic +9"
+        "Standard +9"
       ]
     },
     {
       "ID": 1000,
       "Entries": [
-        "Base +10"
+        "Standard +10"
       ]
     },
     {
       "ID": 2000,
       "Entries": [
-        "Tentacle Summoning"
+        "Augur of Ebrietas"
       ]
     },
     {
       "ID": 2010,
       "Entries": [
-        "Space Summoning"
+        " Space Summoning"
       ]
     },
     {
       "ID": 2020,
       "Entries": [
-        "Reflect Wall"
+        " Reflect Wall"
       ]
     },
     {
       "ID": 2030,
       "Entries": [
-        "Slippery"
+        " Slippery"
       ]
     },
     {
       "ID": 2040,
       "Entries": [
-        "Light"
+        " Light"
       ]
     },
     {
       "ID": 2050,
       "Entries": [
-        "Area Recovery"
+        " Area Recovery"
       ]
     },
     {
       "ID": 2060,
       "Entries": [
-        "acceleration"
+        " acceleration"
       ]
     },
     {
       "ID": 2070,
       "Entries": [
-        "Ground-Crawling Magic"
+        " Ground-Crawling Magic"
       ]
     },
     {
       "ID": 2080,
       "Entries": [
-        "Guided missile"
+        " Guided missile"
       ]
     },
     {
       "ID": 2090,
       "Entries": [
-        "Friendly Fire"
+        " Friendly Fire"
       ]
     },
     {
       "ID": 2100,
       "Entries": [
-        "Messenger Bomb"
+        " Messenger Bomb"
       ]
     },
     {
       "ID": 2110,
       "Entries": [
-        "Messenger Mimicry"
+        " Messenger Mimicry"
       ]
     },
     {
       "ID": 2500,
       "Entries": [
-        "Pistol _ bullet"
+        " Pistol _ bullet"
       ]
     },
     {
       "ID": 2600,
       "Entries": [
-        "Long gun _ bullet"
+        " Long gun _ bullet"
       ]
     },
     {
       "ID": 2700,
       "Entries": [
-        "Large canister _ bullet"
+        " Large canister _ bullet"
       ]
     }
   ]
