@@ -1,0 +1,158 @@
+{
+  "Param": "CUSTOM_ATTR_COST_PARAM",
+  "Type": "CUSTOM_ATTR_COST_PARAM",
+  "Name": "CUSTOM_ATTR_COST_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "physicalSoul",
+      "Name": "必要ソウル",
+      "Description": ""
+    },
+    {
+      "Field": "fireSoul",
+      "Name": "必要ソウル",
+      "Description": ""
+    },
+    {
+      "Field": "magicSoul",
+      "Name": "必要ソウル",
+      "Description": ""
+    },
+    {
+      "Field": "thunderSoul",
+      "Name": "必要ソウル",
+      "Description": ""
+    },
+    {
+      "Field": "darkSoul",
+      "Name": "必要ソウル",
+      "Description": ""
+    },
+    {
+      "Field": "poisonSoul",
+      "Name": "必要ソウル",
+      "Description": ""
+    },
+    {
+      "Field": "bleedSoul",
+      "Name": "必要ソウル",
+      "Description": ""
+    },
+    {
+      "Field": "physicalByCrudeSoul",
+      "Name": "必要ソウル",
+      "Description": ""
+    },
+    {
+      "Field": "physicalByEnchantedSoul",
+      "Name": "必要ソウル",
+      "Description": ""
+    },
+    {
+      "Field": "physicalByAbyssSoul",
+      "Name": "必要ソウル",
+      "Description": ""
+    },
+    {
+      "Field": "physicalItemID",
+      "Name": "必要アイテムID",
+      "Description": ""
+    },
+    {
+      "Field": "fireItemID",
+      "Name": "必要アイテムID",
+      "Description": ""
+    },
+    {
+      "Field": "magicItemID",
+      "Name": "必要アイテムID",
+      "Description": ""
+    },
+    {
+      "Field": "thunderItemID",
+      "Name": "必要アイテムID",
+      "Description": ""
+    },
+    {
+      "Field": "darkItemID",
+      "Name": "必要アイテムID",
+      "Description": ""
+    },
+    {
+      "Field": "poisonItemID",
+      "Name": "必要アイテムID",
+      "Description": ""
+    },
+    {
+      "Field": "bleedItemID",
+      "Name": "必要アイテムID",
+      "Description": ""
+    },
+    {
+      "Field": "physicalByCrudeItemID",
+      "Name": "必要アイテムID",
+      "Description": ""
+    },
+    {
+      "Field": "physicalByEnchantedItemID",
+      "Name": "必要アイテムID",
+      "Description": ""
+    },
+    {
+      "Field": "physicalByAbyssItemID",
+      "Name": "必要アイテムID",
+      "Description": ""
+    },
+    {
+      "Field": "physicalItemNumber",
+      "Name": "必要アイテム数",
+      "Description": ""
+    },
+    {
+      "Field": "fireItemNumber",
+      "Name": "必要アイテム数",
+      "Description": ""
+    },
+    {
+      "Field": "magicItemNumber",
+      "Name": "必要アイテム数",
+      "Description": ""
+    },
+    {
+      "Field": "thunderItemNumber",
+      "Name": "必要アイテム数",
+      "Description": ""
+    },
+    {
+      "Field": "darkItemNumber",
+      "Name": "必要アイテム数",
+      "Description": ""
+    },
+    {
+      "Field": "poisonItemNumber",
+      "Name": "必要アイテム数",
+      "Description": ""
+    },
+    {
+      "Field": "bleedItemNumber",
+      "Name": "必要アイテム数",
+      "Description": ""
+    },
+    {
+      "Field": "physicalByCrudeItemNumber",
+      "Name": "必要アイテム数",
+      "Description": ""
+    },
+    {
+      "Field": "physicalByEnchantedItemNumber",
+      "Name": "必要アイテム数",
+      "Description": ""
+    },
+    {
+      "Field": "physicalByAbyssItemNumber",
+      "Name": "必要アイテム数",
+      "Description": ""
+    }
+  ]
+}

@@ -3,6 +3,6 @@
     <Field>
         <begin />
         <end />
-        <textId />
+        <textId FmgRef="prologue" />
     </Field>
 </PARAMMETA>

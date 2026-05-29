@@ -1,0 +1,523 @@
+{
+  "Param": "BULLET_PARAM",
+  "Type": "BULLET_PARAM",
+  "Name": "BULLET_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "bulletSfxId",
+      "Name": "バレットSFXID",
+      "Description": ""
+    },
+    {
+      "Field": "emitEntityType",
+      "Name": "生成基準",
+      "Description": ""
+    },
+    {
+      "Field": "emitteType",
+      "Name": "発生源タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "netSync",
+      "Name": "通信同期タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "enableAutoHoming",
+      "Name": "オートホーミング許可",
+      "Description": ""
+    },
+    {
+      "Field": "shootOffsetY",
+      "Name": "発生位置オフセットＹ",
+      "Description": ""
+    },
+    {
+      "Field": "shootOffsetX",
+      "Name": "発生位置オフセットＸ",
+      "Description": ""
+    },
+    {
+      "Field": "shootOffsetZ",
+      "Name": "発生位置オフセットＺ",
+      "Description": ""
+    },
+    {
+      "Field": "shootAngle",
+      "Name": "Ｙ方向への加算角度",
+      "Description": ""
+    },
+    {
+      "Field": "shootAngleXZ",
+      "Name": "ＸＺ方向への加算角度",
+      "Description": ""
+    },
+    {
+      "Field": "upDownCorrectAngle",
+      "Name": "補正角度（上下）",
+      "Description": ""
+    },
+    {
+      "Field": "rightleftCorrectAngle",
+      "Name": "補正角度（左右）",
+      "Description": ""
+    },
+    {
+      "Field": "upDownAccuracy",
+      "Name": "方向精度(上下)",
+      "Description": ""
+    },
+    {
+      "Field": "rightLeftAccuracy",
+      "Name": "方向精度(左右)",
+      "Description": ""
+    },
+    {
+      "Field": "upDownEstimateFuture",
+      "Name": "位置予測する（上下）",
+      "Description": ""
+    },
+    {
+      "Field": "rightLeftEstimateFuture",
+      "Name": "位置予測する（左右）",
+      "Description": ""
+    },
+    {
+      "Field": "simultaneouslyNum",
+      "Name": "同時発射数",
+      "Description": ""
+    },
+    {
+      "Field": "automaticShootNum",
+      "Name": "連続発射数",
+      "Description": ""
+    },
+    {
+      "Field": "simultaneouslyAngleY",
+      "Name": "同時発射間隔Ｙ角度",
+      "Description": ""
+    },
+    {
+      "Field": "simultaneouslyAngleXZ",
+      "Name": "同時発射間隔ＸＺ角度",
+      "Description": ""
+    },
+    {
+      "Field": "automaticInterval",
+      "Name": "連続発射間隔[sec]",
+      "Description": ""
+    },
+    {
+      "Field": "automaticAngleY",
+      "Name": "連続発射間隔Ｙ角度",
+      "Description": ""
+    },
+    {
+      "Field": "automaticAngleXZ",
+      "Name": "連続発射間隔ＸＺ角度",
+      "Description": ""
+    },
+    {
+      "Field": "simultaneouslyLoopMax",
+      "Name": "同時発射ダミポリＩＤループ設定",
+      "Description": ""
+    },
+    {
+      "Field": "automaticLoopMax",
+      "Name": "連続発射ダミポリＩＤループ設定",
+      "Description": ""
+    },
+    {
+      "Field": "enableSimultaneouslyMuzzleFlash",
+      "Name": "同時発射マズルフラッシュ許可",
+      "Description": ""
+    },
+    {
+      "Field": "enableAutomaticMuzzleFlash",
+      "Name": "連続発射マズルフラッシュ許可",
+      "Description": ""
+    },
+    {
+      "Field": "bulletLife",
+      "Name": "バレット寿命",
+      "Description": ""
+    },
+    {
+      "Field": "initialVelocity",
+      "Name": "初速",
+      "Description": ""
+    },
+    {
+      "Field": "acceleStartTime",
+      "Name": "加速度開始時間",
+      "Description": ""
+    },
+    {
+      "Field": "acceleration",
+      "Name": "加速度",
+      "Description": ""
+    },
+    {
+      "Field": "maxSpeed",
+      "Name": "最高速度",
+      "Description": ""
+    },
+    {
+      "Field": "weight",
+      "Name": "重量[kg]",
+      "Description": ""
+    },
+    {
+      "Field": "downStartTime",
+      "Name": "落下開始時間",
+      "Description": ""
+    },
+    {
+      "Field": "gravityValue",
+      "Name": "落下重力倍率",
+      "Description": ""
+    },
+    {
+      "Field": "externalForce",
+      "Name": "外力[m/s]",
+      "Description": ""
+    },
+    {
+      "Field": "updownRotateSpeed",
+      "Name": "上下旋回初速度",
+      "Description": ""
+    },
+    {
+      "Field": "updownRotateStartTime",
+      "Name": "上下旋回開始時間",
+      "Description": ""
+    },
+    {
+      "Field": "updownRotateAccel",
+      "Name": "上下旋回加速度",
+      "Description": ""
+    },
+    {
+      "Field": "updownRotateMaxAngle",
+      "Name": "上下旋回最高角度",
+      "Description": ""
+    },
+    {
+      "Field": "leftrightRotateSpeed",
+      "Name": "左右旋回初速度",
+      "Description": ""
+    },
+    {
+      "Field": "leftrightRotateStartTime",
+      "Name": "左右旋回開始時間",
+      "Description": ""
+    },
+    {
+      "Field": "leftrightRotateAccel",
+      "Name": "左右旋回加速度",
+      "Description": ""
+    },
+    {
+      "Field": "leftrightRotateMaxAngle",
+      "Name": "左右旋回最高角度",
+      "Description": ""
+    },
+    {
+      "Field": "homingUDType",
+      "Name": "追尾方向上下設定",
+      "Description": ""
+    },
+    {
+      "Field": "homingLRType",
+      "Name": "追尾方向左右設定",
+      "Description": ""
+    },
+    {
+      "Field": "pad1",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "homingStopDistance",
+      "Name": "追尾停止距離",
+      "Description": ""
+    },
+    {
+      "Field": "homingStopAngle",
+      "Name": "追尾停止角度",
+      "Description": ""
+    },
+    {
+      "Field": "homingAngle",
+      "Name": "追尾角度",
+      "Description": ""
+    },
+    {
+      "Field": "homingOffDisableTime",
+      "Name": "追尾OFF禁止時間",
+      "Description": ""
+    },
+    {
+      "Field": "homingStartTime",
+      "Name": "追尾開始時間",
+      "Description": ""
+    },
+    {
+      "Field": "quickCorrectTime",
+      "Name": "補正開始時間",
+      "Description": ""
+    },
+    {
+      "Field": "quickCorrectUDAngle",
+      "Name": "補正上下角度範囲",
+      "Description": ""
+    },
+    {
+      "Field": "quickCorrectLRAngle",
+      "Name": "補正左右角度範囲",
+      "Description": ""
+    },
+    {
+      "Field": "penetration",
+      "Name": "キャラ貫通設定",
+      "Description": ""
+    },
+    {
+      "Field": "penetrationMap",
+      "Name": "マップ貫通設定",
+      "Description": ""
+    },
+    {
+      "Field": "penetrationObj",
+      "Name": "OBJ貫通設定",
+      "Description": ""
+    },
+    {
+      "Field": "penetrationWater",
+      "Name": "水貫通設定",
+      "Description": ""
+    },
+    {
+      "Field": "muzzleFlashSfxId",
+      "Name": "マズルフラッシュSFXID",
+      "Description": ""
+    },
+    {
+      "Field": "isSfxEraseRoot",
+      "Name": "SFX即削除する",
+      "Description": ""
+    },
+    {
+      "Field": "isDefenderHitNetSync",
+      "Name": "防御側ヒット判定にする",
+      "Description": ""
+    },
+    {
+      "Field": "explosionOffsetUpDown",
+      "Name": "着弾位置補正（上下）",
+      "Description": ""
+    },
+    {
+      "Field": "explosionOffsetRightLeft",
+      "Name": "着弾位置補正（左右）",
+      "Description": ""
+    },
+    {
+      "Field": "explosionSfxId",
+      "Name": "着弾SFXID",
+      "Description": ""
+    },
+    {
+      "Field": "attachSfxId",
+      "Name": "刺さるSFXID",
+      "Description": ""
+    },
+    {
+      "Field": "attachLife",
+      "Name": "刺さる時間[sec]",
+      "Description": ""
+    },
+    {
+      "Field": "attachOffset",
+      "Name": "刺さる深さ[m]",
+      "Description": ""
+    },
+    {
+      "Field": "attachParam",
+      "Name": "刺さる生成設定",
+      "Description": ""
+    },
+    {
+      "Field": "isAttachDisableBulletDir",
+      "Name": "刺さる時に方向を引き継がない",
+      "Description": ""
+    },
+    {
+      "Field": "explosionForceUp",
+      "Name": "着弾を上向に固定",
+      "Description": ""
+    },
+    {
+      "Field": "isDeleteEqualBulletId",
+      "Name": "同一IDのバレットを削除する",
+      "Description": ""
+    },
+    {
+      "Field": "pad4",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "childeBulletId",
+      "Name": "子バレットID１",
+      "Description": ""
+    },
+    {
+      "Field": "childeDamageId",
+      "Name": "子バレットダメージID１",
+      "Description": ""
+    },
+    {
+      "Field": "childeBulletId02",
+      "Name": "子バレットID２",
+      "Description": ""
+    },
+    {
+      "Field": "childeDamageId02",
+      "Name": "子バレットダメージID２",
+      "Description": ""
+    },
+    {
+      "Field": "childeBulletId03",
+      "Name": "子バレットID３",
+      "Description": ""
+    },
+    {
+      "Field": "childeDamageId03",
+      "Name": "子バレットダメージID３",
+      "Description": ""
+    },
+    {
+      "Field": "isChildeExplosion",
+      "Name": "子バレット着弾生成",
+      "Description": ""
+    },
+    {
+      "Field": "isChildeLife",
+      "Name": "子バレット寿命生成",
+      "Description": ""
+    },
+    {
+      "Field": "isChildeArea",
+      "Name": "子バレット範囲侵入生成",
+      "Description": ""
+    },
+    {
+      "Field": "isChildeContinue",
+      "Name": "子バレット一定間隔生成",
+      "Description": ""
+    },
+    {
+      "Field": "childeAreaRange",
+      "Name": "判定距離",
+      "Description": ""
+    },
+    {
+      "Field": "childeAreaUDAngle",
+      "Name": "判定角度（上下）",
+      "Description": ""
+    },
+    {
+      "Field": "childeAreaLRAngle",
+      "Name": "判定角度（左右）",
+      "Description": ""
+    },
+    {
+      "Field": "childeDelay",
+      "Name": "遅延時間",
+      "Description": ""
+    },
+    {
+      "Field": "decalId",
+      "Name": "デカール貼り付けID",
+      "Description": ""
+    },
+    {
+      "Field": "isSpellParry",
+      "Name": "スペルパリィ可能",
+      "Description": ""
+    },
+    {
+      "Field": "isSpellParryNoDamageThrough",
+      "Name": "スペルパリィ発生\u3000ダメージ維持",
+      "Description": ""
+    },
+    {
+      "Field": "onDamageType",
+      "Name": "叩き落し",
+      "Description": ""
+    },
+    {
+      "Field": "hitbackType",
+      "Name": "弾かれ可能",
+      "Description": ""
+    },
+    {
+      "Field": "spellParryAngleX",
+      "Name": "スペルパリィ発生\u3000弾かれ角度Ｘ",
+      "Description": ""
+    },
+    {
+      "Field": "spellParryAngleY",
+      "Name": "スペルパリィ発生\u3000弾かれ角度Ｙ",
+      "Description": ""
+    },
+    {
+      "Field": "spellParryAngleZ",
+      "Name": "スペルパリィ発生\u3000弾かれ角度Ｚ",
+      "Description": ""
+    },
+    {
+      "Field": "hitbackSfxId",
+      "Name": "弾かれSFXID",
+      "Description": ""
+    },
+    {
+      "Field": "parryAngleAccuracyX",
+      "Name": "弾かれ角度Ｘ\u3000精度",
+      "Description": ""
+    },
+    {
+      "Field": "parryAngleAccuracyY",
+      "Name": "弾かれ角度Ｙ\u3000精度",
+      "Description": ""
+    },
+    {
+      "Field": "parryAngleAccuracyZ",
+      "Name": "弾かれ角度Ｚ\u3000精度",
+      "Description": ""
+    },
+    {
+      "Field": "parryAccelSpeed",
+      "Name": "弾かれ時\u3000加算速度",
+      "Description": ""
+    },
+    {
+      "Field": "childeInterval",
+      "Name": "発射間隔",
+      "Description": ""
+    },
+    {
+      "Field": "homingStopTargetDistance",
+      "Name": "追尾停止する対ターゲット距離[m]",
+      "Description": ""
+    },
+    {
+      "Field": "pad5",
+      "Name": "予約",
+      "Description": ""
+    }
+  ]
+}

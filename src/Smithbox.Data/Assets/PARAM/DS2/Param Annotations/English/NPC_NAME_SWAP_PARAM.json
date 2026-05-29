@@ -2,17 +2,17 @@
   "Param": "NPC_NAME_SWAP_PARAM",
   "Type": "NPC_NAME_SWAP_PARAM",
   "Name": "NPC_NAME_SWAP_PARAM",
-  "Description": "",
+  "Description": "Controls conditional NPC name replacement based on event flags.",
   "Fields": [
     {
       "Field": "changeNameFlagId",
-      "Name": "差し替えフラグ",
-      "Description": ""
+      "Name": "Name Swap Flag",
+      "Description": "Event flag that triggers the NPC name replacement."
     },
     {
       "Field": "beforeNameTextId",
-      "Name": "差し替え前名前テキストID",
-      "Description": ""
+      "Name": "Original Name Text ID",
+      "Description": "Text ID for the NPC name used before the name swap occurs."
     }
   ]
 }

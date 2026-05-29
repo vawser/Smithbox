@@ -1,0 +1,223 @@
+{
+  "Param": "FOOT_EFFECT_SFX_PARAM",
+  "Type": "FOOT_EFFECT_SFX_PARAM",
+  "Name": "FOOT_EFFECT_SFX_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "none",
+      "Name": "なし",
+      "Description": "なし"
+    },
+    {
+      "Field": "metal",
+      "Name": "鉄",
+      "Description": "鉄"
+    },
+    {
+      "Field": "heavymetal",
+      "Name": "重鉄",
+      "Description": "重鉄"
+    },
+    {
+      "Field": "wood",
+      "Name": "木",
+      "Description": "木"
+    },
+    {
+      "Field": "water",
+      "Name": "水",
+      "Description": "水"
+    },
+    {
+      "Field": "swamp",
+      "Name": "沼",
+      "Description": "沼"
+    },
+    {
+      "Field": "lumber",
+      "Name": "木材",
+      "Description": "木材"
+    },
+    {
+      "Field": "meat",
+      "Name": "生者肉",
+      "Description": "生者肉"
+    },
+    {
+      "Field": "deadmeat",
+      "Name": "亡者肉",
+      "Description": "亡者肉"
+    },
+    {
+      "Field": "insect",
+      "Name": "虫",
+      "Description": "虫"
+    },
+    {
+      "Field": "giant",
+      "Name": "巨人",
+      "Description": "巨人"
+    },
+    {
+      "Field": "bone",
+      "Name": "骨",
+      "Description": "骨"
+    },
+    {
+      "Field": "copper",
+      "Name": "銅",
+      "Description": "銅"
+    },
+    {
+      "Field": "energy",
+      "Name": "エネルギー",
+      "Description": "エネルギー"
+    },
+    {
+      "Field": "fire",
+      "Name": "炎",
+      "Description": "炎"
+    },
+    {
+      "Field": "thunder",
+      "Name": "雷",
+      "Description": "雷"
+    },
+    {
+      "Field": "dark",
+      "Name": "闇",
+      "Description": "闇"
+    },
+    {
+      "Field": "magic",
+      "Name": "魔力",
+      "Description": "魔力"
+    },
+    {
+      "Field": "stone",
+      "Name": "石",
+      "Description": "石"
+    },
+    {
+      "Field": "dirt",
+      "Name": "土",
+      "Description": "土"
+    },
+    {
+      "Field": "carpet",
+      "Name": "カーペット",
+      "Description": "カーペット"
+    },
+    {
+      "Field": "grass",
+      "Name": "草",
+      "Description": "草"
+    },
+    {
+      "Field": "gravel",
+      "Name": "砂利",
+      "Description": "砂利"
+    },
+    {
+      "Field": "cloth",
+      "Name": "布",
+      "Description": "布"
+    },
+    {
+      "Field": "sand",
+      "Name": "砂",
+      "Description": "砂"
+    },
+    {
+      "Field": "ash",
+      "Name": "灰",
+      "Description": "灰"
+    },
+    {
+      "Field": "poisonswamp",
+      "Name": "毒沼",
+      "Description": "毒沼"
+    },
+    {
+      "Field": "oil",
+      "Name": "油",
+      "Description": "油"
+    },
+    {
+      "Field": "coaltar",
+      "Name": "コールタール",
+      "Description": "コールタール"
+    },
+    {
+      "Field": "lava",
+      "Name": "溶岩",
+      "Description": "溶岩"
+    },
+    {
+      "Field": "string",
+      "Name": "蜘蛛の糸",
+      "Description": "蜘蛛の糸"
+    },
+    {
+      "Field": "sulfurcrystal",
+      "Name": "硫黄結晶",
+      "Description": "硫黄結晶"
+    },
+    {
+      "Field": "footEffect33",
+      "Name": "Foot effect 33",
+      "Description": "Foot effect 33"
+    },
+    {
+      "Field": "footEffect34",
+      "Name": "Foot effect 34",
+      "Description": "Foot effect 34"
+    },
+    {
+      "Field": "footEffect35",
+      "Name": "Foot effect 35",
+      "Description": "Foot effect 35"
+    },
+    {
+      "Field": "footEffect36",
+      "Name": "Foot effect 36",
+      "Description": "Foot effect 36"
+    },
+    {
+      "Field": "footEffect37",
+      "Name": "Foot effect 37",
+      "Description": "Foot effect 37"
+    },
+    {
+      "Field": "footEffect38",
+      "Name": "Foot effect 38",
+      "Description": "Foot effect 38"
+    },
+    {
+      "Field": "footEffect39",
+      "Name": "Foot effect 39",
+      "Description": "Foot effect 39"
+    },
+    {
+      "Field": "footEffect40",
+      "Name": "Foot effect 40",
+      "Description": "Foot effect 40"
+    },
+    {
+      "Field": "footEffect41",
+      "Name": "Foot effect 41",
+      "Description": "Foot effect 41"
+    },
+    {
+      "Field": "footEffect42",
+      "Name": "Foot effect 42",
+      "Description": "Foot effect 42"
+    },
+    {
+      "Field": "footEffect43",
+      "Name": "Foot effect 43",
+      "Description": "Foot effect 43"
+    }
+  ]
+}

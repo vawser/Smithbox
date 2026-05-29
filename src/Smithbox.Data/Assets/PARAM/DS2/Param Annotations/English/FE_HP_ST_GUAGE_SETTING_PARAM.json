@@ -2,72 +2,72 @@
   "Param": "FE_HP_ST_GUAGE_SETTING_PARAM",
   "Type": "FE_HP_ST_GUAGE_SETTING_PARAM",
   "Name": "FE_HP_ST_GUAGE_SETTING_PARAM",
-  "Description": "",
+  "Description": "Controls front-end HP and stamina gauge behavior, including depletion speed, animation timing, and UI sizing based on stats.",
   "Fields": [
     {
       "Field": "HpGainPar",
-      "Name": "体力減少速度",
-      "Description": ""
+      "Name": "HP Decrease Rate",
+      "Description": "Controls the rate at which the HP gauge decreases."
     },
     {
       "Field": "StGainPar",
-      "Name": "スタミナ減少速度",
-      "Description": ""
+      "Name": "Stamina Decrease Rate",
+      "Description": "Controls the rate at which the stamina gauge decreases."
     },
     {
       "Field": "HpGainAnimLimit",
-      "Name": "体力減少演出開始閾値",
-      "Description": ""
+      "Name": "HP Decrease Animation Threshold",
+      "Description": "Threshold at which HP decrease animation begins."
     },
     {
       "Field": "StGainAnimLimit",
-      "Name": "スタミナ減少演出開始閾値",
-      "Description": ""
+      "Name": "Stamina Decrease Animation Threshold",
+      "Description": "Threshold at which stamina decrease animation begins."
     },
     {
       "Field": "HpGainDelay",
-      "Name": "体力減少演出開始遅延時間",
-      "Description": ""
+      "Name": "HP Decrease Animation Delay",
+      "Description": "Delay before HP decrease animation starts."
     },
     {
       "Field": "StGainDelay",
-      "Name": "スタミナ減少演出開始遅延時間",
-      "Description": ""
+      "Name": "Stamina Decrease Animation Delay",
+      "Description": "Delay before stamina decrease animation starts."
     },
     {
       "Field": "EnemyHpGainPar",
-      "Name": "敵体力減少速度",
-      "Description": ""
+      "Name": "Enemy HP Decrease Rate",
+      "Description": "Controls how quickly enemy HP gauge decreases."
     },
     {
       "Field": "EnemyHpGainAnimLimit",
-      "Name": "敵体力減少演出開始閾値",
-      "Description": ""
+      "Name": "Enemy HP Decrease Animation Threshold",
+      "Description": "Threshold for triggering enemy HP decrease animation."
     },
     {
       "Field": "EnemyHpGainDelay",
-      "Name": "敵体力減少演出開始遅延時間",
-      "Description": ""
+      "Name": "Enemy HP Decrease Animation Delay",
+      "Description": "Delay before enemy HP decrease animation begins."
     },
     {
       "Field": "HpMinSize",
-      "Name": "最小ステータス時の体力ゲージの長さ",
-      "Description": ""
+      "Name": "Minimum HP Gauge Size",
+      "Description": "Minimum visual length of the HP gauge at lowest stats."
     },
     {
       "Field": "StMinSize",
-      "Name": "最小ステータス時のスタミナゲージの長さ",
-      "Description": ""
+      "Name": "Minimum Stamina Gauge Size",
+      "Description": "Minimum visual length of the stamina gauge at lowest stats."
     },
     {
       "Field": "HpMaxSize",
-      "Name": "最大ステータス時の体力ゲージの長さ体力",
-      "Description": ""
+      "Name": "Maximum HP Gauge Size",
+      "Description": "Maximum visual length of the HP gauge at highest stats."
     },
     {
       "Field": "StMaxSize",
-      "Name": "最大ステータス時のスタミナゲージの長さスタミナ",
-      "Description": ""
+      "Name": "Maximum Stamina Gauge Size",
+      "Description": "Maximum visual length of the stamina gauge at highest stats."
     }
   ]
 }

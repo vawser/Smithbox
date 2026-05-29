@@ -2,322 +2,322 @@
   "Param": "ITEM_LOT_PARAM2",
   "Type": "ITEM_LOT_PARAM2",
   "Name": "ITEM_LOT_PARAM2",
-  "Description": "",
+  "Description": "Defines item lot tables used for randomized or guaranteed item rewards, including quantities, reinforcement levels, attributes, weights, and acquisition behavior.",
   "Fields": [
     {
       "Field": "lotDropType",
-      "Name": "抽選ドロップタイプ",
-      "Description": ""
+      "Name": "Drop Type",
+      "Description": "Specifies the item lot drop behavior or lottery type."
     },
     {
       "Field": "lotCount",
-      "Name": "抽選回数",
-      "Description": ""
+      "Name": "Lottery Count",
+      "Description": "Number of times the item lot lottery is rolled."
     },
     {
       "Field": "padding",
-      "Name": "パディング",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "itemNum1",
-      "Name": "個数",
-      "Description": ""
+      "Name": "Item Quantity: 1",
+      "Description": "Quantity of item slot 1 granted when selected."
     },
     {
       "Field": "itemNum2",
-      "Name": "個数",
-      "Description": ""
+      "Name": "Item Quantity: 2",
+      "Description": "Quantity of item slot 2 granted when selected."
     },
     {
       "Field": "itemNum3",
-      "Name": "個数",
-      "Description": ""
+      "Name": "Item Quantity: 3",
+      "Description": "Quantity of item slot 3 granted when selected."
     },
     {
       "Field": "itemNum4",
-      "Name": "個数",
-      "Description": ""
+      "Name": "Item Quantity: 4",
+      "Description": "Quantity of item slot 4 granted when selected."
     },
     {
       "Field": "itemNum5",
-      "Name": "個数",
-      "Description": ""
+      "Name": "Item Quantity: 5",
+      "Description": "Quantity of item slot 5 granted when selected."
     },
     {
       "Field": "itemNum6",
-      "Name": "個数",
-      "Description": ""
+      "Name": "Item Quantity: 6",
+      "Description": "Quantity of item slot 6 granted when selected."
     },
     {
       "Field": "itemNum7",
-      "Name": "個数",
-      "Description": ""
+      "Name": "Item Quantity: 7",
+      "Description": "Quantity of item slot 7 granted when selected."
     },
     {
       "Field": "itemNum8",
-      "Name": "個数",
-      "Description": ""
+      "Name": "Item Quantity: 8",
+      "Description": "Quantity of item slot 8 granted when selected."
     },
     {
       "Field": "itemNum9",
-      "Name": "個数",
-      "Description": ""
+      "Name": "Item Quantity: 9",
+      "Description": "Quantity of item slot 9 granted when selected."
     },
     {
       "Field": "itemNum10",
-      "Name": "個数",
-      "Description": ""
+      "Name": "Item Quantity: 10",
+      "Description": "Quantity of item slot 10 granted when selected."
     },
     {
       "Field": "reinforceLevel1",
-      "Name": "強化レベル",
-      "Description": ""
+      "Name": "Reinforcement Level: 1",
+      "Description": "Upgrade or reinforcement level applied to item slot 1."
     },
     {
       "Field": "reinforceLevel2",
-      "Name": "強化レベル",
-      "Description": ""
+      "Name": "Reinforcement Level: 2",
+      "Description": "Upgrade or reinforcement level applied to item slot 2."
     },
     {
       "Field": "reinforceLevel3",
-      "Name": "強化レベル",
-      "Description": ""
+      "Name": "Reinforcement Level: 3",
+      "Description": "Upgrade or reinforcement level applied to item slot 3."
     },
     {
       "Field": "reinforceLevel4",
-      "Name": "強化レベル",
-      "Description": ""
+      "Name": "Reinforcement Level: 4",
+      "Description": "Upgrade or reinforcement level applied to item slot 4."
     },
     {
       "Field": "reinforceLevel5",
-      "Name": "強化レベル",
-      "Description": ""
+      "Name": "Reinforcement Level: 5",
+      "Description": "Upgrade or reinforcement level applied to item slot 5."
     },
     {
       "Field": "reinforceLevel6",
-      "Name": "強化レベル",
-      "Description": ""
+      "Name": "Reinforcement Level: 6",
+      "Description": "Upgrade or reinforcement level applied to item slot 6."
     },
     {
       "Field": "reinforceLevel7",
-      "Name": "強化レベル",
-      "Description": ""
+      "Name": "Reinforcement Level: 7",
+      "Description": "Upgrade or reinforcement level applied to item slot 7."
     },
     {
       "Field": "reinforceLevel8",
-      "Name": "強化レベル",
-      "Description": ""
+      "Name": "Reinforcement Level: 8",
+      "Description": "Upgrade or reinforcement level applied to item slot 8."
     },
     {
       "Field": "reinforceLevel9",
-      "Name": "強化レベル",
-      "Description": ""
+      "Name": "Reinforcement Level: 9",
+      "Description": "Upgrade or reinforcement level applied to item slot 9."
     },
     {
       "Field": "reinforceLevel10",
-      "Name": "強化レベル",
-      "Description": ""
+      "Name": "Reinforcement Level: 10",
+      "Description": "Upgrade or reinforcement level applied to item slot 10."
     },
     {
       "Field": "attribute1",
-      "Name": "属性",
-      "Description": ""
+      "Name": "Infusion: 1",
+      "Description": "Infusion applied to item slot 1."
     },
     {
       "Field": "attribute2",
-      "Name": "属性",
-      "Description": ""
+      "Name": "Infusion: 2",
+      "Description": "Infusion applied to item slot 2."
     },
     {
       "Field": "attribute3",
-      "Name": "属性",
-      "Description": ""
+      "Name": "Infusion: 3",
+      "Description": "Infusion applied to item slot 3."
     },
     {
       "Field": "attribute4",
-      "Name": "属性",
-      "Description": ""
+      "Name": "Infusion: 4",
+      "Description": "Infusion applied to item slot 4."
     },
     {
       "Field": "attribute5",
-      "Name": "属性",
-      "Description": ""
+      "Name": "Infusion: 5",
+      "Description": "Infusion applied to item slot 5."
     },
     {
       "Field": "attribute6",
-      "Name": "属性",
-      "Description": ""
+      "Name": "Infusion: 6",
+      "Description": "Infusion applied to item slot 6."
     },
     {
       "Field": "attribute7",
-      "Name": "属性",
-      "Description": ""
+      "Name": "Infusion: 7",
+      "Description": "Infusion applied to item slot 7."
     },
     {
       "Field": "attribute8",
-      "Name": "属性",
-      "Description": ""
+      "Name": "Infusion: 8",
+      "Description": "Infusion applied to item slot 8."
     },
     {
       "Field": "attribute9",
-      "Name": "属性",
-      "Description": ""
+      "Name": "Infusion: 9",
+      "Description": "Infusion applied to item slot 9."
     },
     {
       "Field": "attribute10",
-      "Name": "属性",
-      "Description": ""
+      "Name": "Infusion: 10",
+      "Description": "Infusion applied to item slot 10."
     },
     {
       "Field": "bExFlag1",
-      "Name": "【通常】再入手可能/【確定取得】抽選終了後",
-      "Description": ""
+      "Name": "Repeat Acquisition / Lottery End Flag: 1",
+      "Description": "Controls repeat acquisition behavior for item slot 1 or whether the lottery ends after guaranteed acquisition."
     },
     {
       "Field": "bExFlag2",
-      "Name": "【通常】再入手可能/【確定取得】抽選終了後",
-      "Description": ""
+      "Name": "Repeat Acquisition / Lottery End Flag: 2",
+      "Description": "Controls repeat acquisition behavior for item slot 2 or whether the lottery ends after guaranteed acquisition."
     },
     {
       "Field": "bExFlag3",
-      "Name": "【通常】再入手可能/【確定取得】抽選終了後",
-      "Description": ""
+      "Name": "Repeat Acquisition / Lottery End Flag: 3",
+      "Description": "Controls repeat acquisition behavior for item slot 3 or whether the lottery ends after guaranteed acquisition."
     },
     {
       "Field": "bExFlag4",
-      "Name": "【通常】再入手可能/【確定取得】抽選終了後",
-      "Description": ""
+      "Name": "Repeat Acquisition / Lottery End Flag: 4",
+      "Description": "Controls repeat acquisition behavior for item slot 4 or whether the lottery ends after guaranteed acquisition."
     },
     {
       "Field": "bExFlag5",
-      "Name": "【通常】再入手可能/【確定取得】抽選終了後",
-      "Description": ""
+      "Name": "Repeat Acquisition / Lottery End Flag: 5",
+      "Description": "Controls repeat acquisition behavior for item slot 5 or whether the lottery ends after guaranteed acquisition."
     },
     {
       "Field": "bExFlag6",
-      "Name": "【通常】再入手可能/【確定取得】抽選終了後",
-      "Description": ""
+      "Name": "Repeat Acquisition / Lottery End Flag: 6",
+      "Description": "Controls repeat acquisition behavior for item slot 6 or whether the lottery ends after guaranteed acquisition."
     },
     {
       "Field": "bExFlag7",
-      "Name": "【通常】再入手可能/【確定取得】抽選終了後",
-      "Description": ""
+      "Name": "Repeat Acquisition / Lottery End Flag: 7",
+      "Description": "Controls repeat acquisition behavior for item slot 7 or whether the lottery ends after guaranteed acquisition."
     },
     {
       "Field": "bExFlag8",
-      "Name": "【通常】再入手可能/【確定取得】抽選終了後",
-      "Description": ""
+      "Name": "Repeat Acquisition / Lottery End Flag: 8",
+      "Description": "Controls repeat acquisition behavior for item slot 8 or whether the lottery ends after guaranteed acquisition."
     },
     {
       "Field": "bExFlag9",
-      "Name": "【通常】再入手可能/【確定取得】抽選終了後",
-      "Description": ""
+      "Name": "Repeat Acquisition / Lottery End Flag: 9",
+      "Description": "Controls repeat acquisition behavior for item slot 9 or whether the lottery ends after guaranteed acquisition."
     },
     {
       "Field": "bExFlag10",
-      "Name": "【通常】再入手可能/【確定取得】抽選終了後",
-      "Description": ""
+      "Name": "Repeat Acquisition / Lottery End Flag: 10",
+      "Description": "Controls repeat acquisition behavior for item slot 10 or whether the lottery ends after guaranteed acquisition."
     },
     {
       "Field": "itemId1",
-      "Name": "アイテムID",
-      "Description": ""
+      "Name": "Item ID: 1",
+      "Description": "ID of the item assigned to slot 1."
     },
     {
       "Field": "itemId2",
-      "Name": "アイテムID",
-      "Description": ""
+      "Name": "Item ID: 2",
+      "Description": "ID of the item assigned to slot 2."
     },
     {
       "Field": "itemId3",
-      "Name": "アイテムID",
-      "Description": ""
+      "Name": "Item ID: 3",
+      "Description": "ID of the item assigned to slot 3."
     },
     {
       "Field": "itemId4",
-      "Name": "アイテムID",
-      "Description": ""
+      "Name": "Item ID: 4",
+      "Description": "ID of the item assigned to slot 4."
     },
     {
       "Field": "itemId5",
-      "Name": "アイテムID",
-      "Description": ""
+      "Name": "Item ID: 5",
+      "Description": "ID of the item assigned to slot 5."
     },
     {
       "Field": "itemId6",
-      "Name": "アイテムID",
-      "Description": ""
+      "Name": "Item ID: 6",
+      "Description": "ID of the item assigned to slot 6."
     },
     {
       "Field": "itemId7",
-      "Name": "アイテムID",
-      "Description": ""
+      "Name": "Item ID: 7",
+      "Description": "ID of the item assigned to slot 7."
     },
     {
       "Field": "itemId8",
-      "Name": "アイテムID",
-      "Description": ""
+      "Name": "Item ID: 8",
+      "Description": "ID of the item assigned to slot 8."
     },
     {
       "Field": "itemId9",
-      "Name": "アイテムID",
-      "Description": ""
+      "Name": "Item ID: 9",
+      "Description": "ID of the item assigned to slot 9."
     },
     {
       "Field": "itemId10",
-      "Name": "アイテムID",
-      "Description": ""
+      "Name": "Item ID: 10",
+      "Description": "ID of the item assigned to slot 10."
     },
     {
       "Field": "itemWeight1",
-      "Name": "抽選重み",
-      "Description": ""
+      "Name": "Lottery Weight: 1",
+      "Description": "Relative selection weight for item slot 1 during random rolls."
     },
     {
       "Field": "itemWeight2",
-      "Name": "抽選重み",
-      "Description": ""
+      "Name": "Lottery Weight: 2",
+      "Description": "Relative selection weight for item slot 2 during random rolls."
     },
     {
       "Field": "itemWeight3",
-      "Name": "抽選重み",
-      "Description": ""
+      "Name": "Lottery Weight: 3",
+      "Description": "Relative selection weight for item slot 3 during random rolls."
     },
     {
       "Field": "itemWeight4",
-      "Name": "抽選重み",
-      "Description": ""
+      "Name": "Lottery Weight: 4",
+      "Description": "Relative selection weight for item slot 4 during random rolls."
     },
     {
       "Field": "itemWeight5",
-      "Name": "抽選重み",
-      "Description": ""
+      "Name": "Lottery Weight: 5",
+      "Description": "Relative selection weight for item slot 5 during random rolls."
     },
     {
       "Field": "itemWeight6",
-      "Name": "抽選重み",
-      "Description": ""
+      "Name": "Lottery Weight: 6",
+      "Description": "Relative selection weight for item slot 6 during random rolls."
     },
     {
       "Field": "itemWeight7",
-      "Name": "抽選重み",
-      "Description": ""
+      "Name": "Lottery Weight: 7",
+      "Description": "Relative selection weight for item slot 7 during random rolls."
     },
     {
       "Field": "itemWeight8",
-      "Name": "抽選重み",
-      "Description": ""
+      "Name": "Lottery Weight: 8",
+      "Description": "Relative selection weight for item slot 8 during random rolls."
     },
     {
       "Field": "itemWeight9",
-      "Name": "抽選重み",
-      "Description": ""
+      "Name": "Lottery Weight: 9",
+      "Description": "Relative selection weight for item slot 9 during random rolls."
     },
     {
       "Field": "itemWeight10",
-      "Name": "抽選重み",
-      "Description": ""
+      "Name": "Lottery Weight: 10",
+      "Description": "Relative selection weight for item slot 10 during random rolls."
     }
   ]
 }

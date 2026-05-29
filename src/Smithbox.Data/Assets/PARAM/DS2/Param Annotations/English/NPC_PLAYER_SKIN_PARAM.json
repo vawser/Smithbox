@@ -2,32 +2,32 @@
   "Param": "NPC_PLAYER_SKIN_PARAM",
   "Type": "NPC_PLAYER_SKIN_PARAM",
   "Name": "NPC_PLAYER_SKIN_PARAM",
-  "Description": "",
+  "Description": "Defines skin texture selection and skin tone color values for player-like NPCs.",
   "Fields": [
     {
       "Field": "skinNo",
-      "Name": "肌番号",
-      "Description": ""
+      "Name": "Skin Number",
+      "Description": "Selects the base skin texture variation."
     },
     {
       "Field": "dummy",
-      "Name": "dummy",
+      "Name": "Dummy",
       "Description": ""
     },
     {
       "Field": "skinR",
-      "Name": "肌R",
-      "Description": ""
+      "Name": "Skin Red",
+      "Description": "Red color component used for skin tone customization."
     },
     {
       "Field": "skinG",
-      "Name": "肌G",
-      "Description": ""
+      "Name": "Skin Green",
+      "Description": "Green color component used for skin tone customization."
     },
     {
       "Field": "skinB",
-      "Name": "肌B",
-      "Description": ""
+      "Name": "Skin Blue",
+      "Description": "Blue color component used for skin tone customization."
     }
   ]
 }

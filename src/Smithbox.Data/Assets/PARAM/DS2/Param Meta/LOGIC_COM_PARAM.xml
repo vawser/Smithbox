@@ -16,9 +16,9 @@
         <platoonWeight  Enum="LOGIC_WEIGHT_IN_PLATOON_TYPE"/>
         <platoonPriority  Enum="LOGIC_PRIORITY_IN_PLATOON_TYPE"/>
         <viewingBrightnessType  Enum="LOGIC_EYESIGHT_BASE_TYPE"/>
-        <useDoor />
-        <useLadder />
-        <useRope />
+        <useDoor IsBool="" />
+        <useLadder IsBool="" />
+        <useRope IsBool="" />
         <upperRunNum />
         <damageAfterActionPriority  Enum="LOGIC_ACTION_PRIORITY_TYPE"/>
         <roundLv2 />
@@ -32,7 +32,7 @@
         <guardPursuitActionNo />
         <backAttackTable  Enum="LOGIC_PROBABILITY_TABLE_TYPE"/>
         <backAttackActionNo />
-        <dummy />
+        <dummy Padding="" />
         <itemPursuitDistance />
         <guardPursuitDistance />
         <backAttackDistance />
@@ -49,6 +49,6 @@
         <itemAlluringSkullType  Enum="LOGIC_DECOY_ENABLE_TYPE"/>
         <spellNostalgiaType  Enum="LOGIC_DECOY_ENABLE_TYPE"/>
         <bLongAiCandidate  IsBool=""/>
-        <pad00 />
+        <pad00 Padding="" />
     </Field>
 </PARAMMETA>

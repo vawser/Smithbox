@@ -3,6 +3,6 @@
     <Field>
         <modelId />
         <type  Enum="SOUND_FOOT_TYPE"/>
-        <aReserved />
+        <aReserved Padding="" />
     </Field>
 </PARAMMETA>

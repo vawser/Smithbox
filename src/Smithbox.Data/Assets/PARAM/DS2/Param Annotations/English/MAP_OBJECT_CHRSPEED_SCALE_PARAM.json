@@ -2,12 +2,12 @@
   "Param": "MAP_OBJECT_CHRSPEED_SCALE_PARAM",
   "Type": "MAP_OBJECT_CHRSPEED_SCALE_PARAM",
   "Name": "MAP_OBJECT_CHRSPEED_SCALE_PARAM",
-  "Description": "",
+  "Description": "Defines a scaling factor applied to character movement speed when interacting with or affected by specific map objects.",
   "Fields": [
     {
       "Field": "scale",
-      "Name": "《倍率》",
-      "Description": ""
+      "Name": "Speed Multiplier",
+      "Description": "Multiplier applied to character movement speed."
     }
   ]
 }

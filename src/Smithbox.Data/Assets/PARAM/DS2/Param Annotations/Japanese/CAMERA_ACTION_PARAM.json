@@ -1,0 +1,58 @@
+{
+  "Param": "CAMERA_ACTION_PARAM",
+  "Type": "CAMERA_ACTION_PARAM",
+  "Name": "CAMERA_ACTION_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "cameraType",
+      "Name": "カメラ挙動タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "cameraBasePosType",
+      "Name": "カメラ基準点タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "reserved",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "fovY",
+      "Name": "画角(deg)",
+      "Description": ""
+    },
+    {
+      "Field": "lookAtOffsetX",
+      "Name": "焦点(X軸) オフセット(m)",
+      "Description": ""
+    },
+    {
+      "Field": "lookAtOffsetY",
+      "Name": "焦点(Y軸) オフセット(m)",
+      "Description": ""
+    },
+    {
+      "Field": "lookAtOffsetZ",
+      "Name": "焦点(Z軸) オフセット(m)",
+      "Description": ""
+    },
+    {
+      "Field": "positionOffsetX",
+      "Name": "位置(X軸) オフセット(m)",
+      "Description": ""
+    },
+    {
+      "Field": "positionOffsetY",
+      "Name": "位置(Y軸) オフセット(m)",
+      "Description": ""
+    },
+    {
+      "Field": "positionOffsetZ",
+      "Name": "位置(Z軸) オフセット(m)",
+      "Description": ""
+    }
+  ]
+}

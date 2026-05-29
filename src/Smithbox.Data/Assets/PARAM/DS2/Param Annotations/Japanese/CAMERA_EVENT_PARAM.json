@@ -1,0 +1,118 @@
+{
+  "Param": "CAMERA_EVENT_PARAM",
+  "Type": "CAMERA_EVENT_PARAM",
+  "Name": "CAMERA_EVENT_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "cameraType",
+      "Name": "カメラ挙動タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "cameraBasePosType",
+      "Name": "カメラ基準点タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "reserved",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "fovY",
+      "Name": "画角(deg)",
+      "Description": ""
+    },
+    {
+      "Field": "axisOffsetX",
+      "Name": "位置(X軸) オフセット(m)",
+      "Description": ""
+    },
+    {
+      "Field": "axisOffsetY",
+      "Name": "位置(Y軸) オフセット(m)",
+      "Description": ""
+    },
+    {
+      "Field": "axisOffsetZ",
+      "Name": "位置(Z軸) オフセット(m)",
+      "Description": ""
+    },
+    {
+      "Field": "rayWidth",
+      "Name": "レイ太さ",
+      "Description": ""
+    },
+    {
+      "Field": "hitCollision",
+      "Name": "コリジョンサイズ",
+      "Description": ""
+    },
+    {
+      "Field": "positionOffsetZ",
+      "Name": "追加旋回半径(m)",
+      "Description": ""
+    },
+    {
+      "Field": "fulcrumRate",
+      "Name": "支点位置(0 目標～1\u3000基準点)\u3000",
+      "Description": ""
+    },
+    {
+      "Field": "rotationX",
+      "Name": "X軸回転量(deg)",
+      "Description": ""
+    },
+    {
+      "Field": "rotationY",
+      "Name": "Ｙ軸回転量(deg)",
+      "Description": ""
+    },
+    {
+      "Field": "startTransTime",
+      "Name": "切り替え開始時補間時間",
+      "Description": ""
+    },
+    {
+      "Field": "endTransTime",
+      "Name": "切り替え終了時補間時間",
+      "Description": ""
+    },
+    {
+      "Field": "startTransType",
+      "Name": "切り替え開始時補間タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "endTransType",
+      "Name": "切り替え終了時補間タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "enableYReverse",
+      "Name": "左右反転の許可",
+      "Description": ""
+    },
+    {
+      "Field": "enableZReverse",
+      "Name": "前後反転の許可",
+      "Description": ""
+    },
+    {
+      "Field": "keepXAngle",
+      "Name": "カメラの傾きを維持するか",
+      "Description": ""
+    },
+    {
+      "Field": "addXAngleAxis",
+      "Name": "軸の傾きを加算するか",
+      "Description": ""
+    },
+    {
+      "Field": "reserved1",
+      "Name": "ダミー",
+      "Description": ""
+    }
+  ]
+}

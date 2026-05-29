@@ -641,633 +641,633 @@
     },
     {
       "Field": "fLookAtRotationSideSpeedMax",
-      "Name": "LookAt 左右旋回速度 [deg/sec]",
-      "Description": ""
+      "Name": "Focus: Horizontal Turn Speed",
+      "Description": "The horizontal turning speed (in degrees per second) when focusing a target."
     },
     {
       "Field": "fLookAtRotationUpperSpeedMax",
-      "Name": "LookAt 上下旋回速度 [deg/sec]",
-      "Description": ""
+      "Name": "Focus: Vertical Turn Speed",
+      "Description": "The vertical turning speed (in degrees per second) when focusing a target."
     },
     {
       "Field": "isLookAtDummyPolyBasePos",
-      "Name": "LookAt ダミポリ位置を基準にする",
-      "Description": ""
+      "Name": "Focus: Use Dummy Polygon as Reference",
+      "Description": "If enabled, the dummy polygon is used as the reference position."
     },
     {
       "Field": "lookAtDummy",
-      "Name": "ダミー",
+      "Name": "",
       "Description": ""
     },
     {
       "Field": "fShootingLookAtRotationLeftMax",
-      "Name": "射撃 LookAt 旋回限界角度 左 [deg]",
-      "Description": ""
+      "Name": "Shoot Focus: Left Rotation Limit",
+      "Description": "The left rotation limit (in degrees) when focusing a target whilst shooting."
     },
     {
       "Field": "fShootingLookAtRotationRightMax",
-      "Name": "射撃 LookAt 旋回限界角度 右 [deg]",
-      "Description": ""
+      "Name": "Shoot Focus: Right Rotation Limit",
+      "Description": "The right rotation limit (in degrees) when focusing a target whilst shooting."
     },
     {
       "Field": "fShootingLookAtRotationUpperMax",
-      "Name": "射撃 LookAt 旋回限界角度 上 [deg]",
-      "Description": ""
+      "Name": "Shoot Focus: Upper Rotation Limit",
+      "Description": "The upper rotation limit (in degrees) when focusing a target whilst shooting."
     },
     {
       "Field": "fShootingLookAtRotationLownerMax",
-      "Name": "射撃 LookAt 旋回限界角度 下 [deg]",
-      "Description": ""
+      "Name": "Shoot Focus: Lower Rotation Limit",
+      "Description": "The lower rotation limit (in degrees) when focusing a target whilst shooting."
     },
     {
       "Field": "fShootingLookAtVisibilitySideMax",
-      "Name": "射撃 LookAt 認識限界角度 左右 [deg]",
-      "Description": ""
+      "Name": "Shoot Focus: Horizontal Limit",
+      "Description": "The horizontal rotation limit (in degrees) when focusing a target whilst shooting."
     },
     {
       "Field": "fShootingLookAtVisibilityUpperMax",
-      "Name": "射撃 LookAt 認識限界角度 上下 [deg]",
-      "Description": ""
+      "Name": "Shoot Focus: Vertical Limit",
+      "Description": "The vertical rotation limit (in degrees) when focusing a target whilst shooting."
     },
     {
       "Field": "fShootingLookAtRotationSideSpeedMax",
-      "Name": "射撃 LookAt 左右旋回速度 [deg/sec]",
-      "Description": ""
+      "Name": "Shoot Focus: Horizontal Turn Speed",
+      "Description": "The horizontal turning speed (in degrees per second) when focusing a target whilst shooting."
     },
     {
       "Field": "fShootingLookAtRotationUpperSpeedMax",
-      "Name": "射撃 LookAt 上下旋回速度 [deg/sec]",
-      "Description": ""
+      "Name": "Shoot Focus: Vertical Turn Speed",
+      "Description": "The vertical turning speed (in degrees per second) when focusing a target whilst shooting."
     },
     {
       "Field": "shootingIsLookAtDummyPolyBasePos",
-      "Name": "射撃 LookAt ダミポリ位置を基準にする",
-      "Description": ""
+      "Name": "Shoot Focus: Use Dummy Polygon as Reference",
+      "Description": "If enabled, the dummy polygon is used as the reference position."
     },
     {
       "Field": "shootingLookAtDummy",
-      "Name": "ダミー",
+      "Name": "",
       "Description": ""
     },
     {
       "Field": "footDummyPoly001",
-      "Name": "足裏ダミポリ番号1",
-      "Description": ""
+      "Name": "Foot: Dummy Polygon ID: 1",
+      "Description": "The dummy polygon ID used for a foot."
     },
     {
       "Field": "footDummyPoly002",
-      "Name": "足裏ダミポリ番号2",
-      "Description": ""
+      "Name": "Foot: Dummy Polygon ID: 2",
+      "Description": "The dummy polygon ID used for a foot."
     },
     {
       "Field": "footDummyPoly003",
-      "Name": "足裏ダミポリ番号3",
-      "Description": ""
+      "Name": "Foot: Dummy Polygon ID: 3",
+      "Description": "The dummy polygon ID used for a foot."
     },
     {
       "Field": "footDummyPoly004",
-      "Name": "足裏ダミポリ番号4",
-      "Description": ""
+      "Name": "Foot: Dummy Polygon ID: 4",
+      "Description": "The dummy polygon ID used for a foot."
     },
     {
       "Field": "footDummyPoly005",
-      "Name": "足裏ダミポリ番号5",
-      "Description": ""
+      "Name": "Foot: Dummy Polygon ID: 5",
+      "Description": "The dummy polygon ID used for a foot."
     },
     {
       "Field": "footDummyPoly006",
-      "Name": "足裏ダミポリ番号6",
-      "Description": ""
+      "Name": "Foot: Dummy Polygon ID: 6",
+      "Description": "The dummy polygon ID used for a foot."
     },
     {
       "Field": "footDummyPoly007",
-      "Name": "足裏ダミポリ番号7",
-      "Description": ""
+      "Name": "Foot: Dummy Polygon ID: 7",
+      "Description": "The dummy polygon ID used for a foot."
     },
     {
       "Field": "footDummyPoly008",
-      "Name": "足裏ダミポリ番号8",
-      "Description": ""
+      "Name": "Foot: Dummy Polygon ID: 8",
+      "Description": "The dummy polygon ID used for a foot."
     },
     {
       "Field": "footEffectOffset",
-      "Name": "足エフェクト前後オフセット",
-      "Description": ""
+      "Name": "Foot Effect: Effect: Front/Back Offset",
+      "Description": "The front/back offset for a foot effect."
     },
     {
       "Field": "footEffectOffsetMoveRate",
-      "Name": "足エフェクト移動量オフセット倍率",
-      "Description": ""
+      "Name": "Foot Effect: Movement Offset %",
+      "Description": "The movement amount offset multiplier for a foot effect."
     },
     {
       "Field": "footRayMargin",
-      "Name": "足エフェクト余白",
-      "Description": ""
+      "Name": "Foot Effect: Ray Margin",
+      "Description": "The margin for the foot effect ray."
     },
     {
       "Field": "footRayMinLength",
-      "Name": "足エフェクト判定レイキャスト最短",
-      "Description": ""
+      "Name": "Foot Effect: Minimum Ray Duration",
+      "Description": "The shortest duration used for the foot effect raycast."
     },
     {
       "Field": "footRayMaxLength",
-      "Name": "足エフェクト判定レイキャスト最長（上り坂）",
-      "Description": ""
+      "Name": "Foot Effect: Maximum Ray Duration",
+      "Description": "The longest duration used for the foot effect raycast."
     },
     {
       "Field": "footRayMaxDownHillLength",
-      "Name": "足エフェクト判定レイキャスト最長（下り坂）",
-      "Description": ""
+      "Name": "Foot Effect: Maximum Ray Duration for Down Slope",
+      "Description": "The longest duration used for the foot effect raycast when going downhill."
     },
     {
       "Field": "footRayUpDownMargin",
-      "Name": "足エフェクト判定上下変化許容量",
-      "Description": ""
+      "Name": "Foot Effect: Vertical Tolerance",
+      "Description": "The amount of vertical change tolerance for the foot effect raycast."
     },
     {
       "Field": "footRunSpeedRate",
-      "Name": "走り足音判定速度割合[%]",
-      "Description": ""
+      "Name": "Foot: Running Sound Detection Speed Ratio",
+      "Description": "The running sound detection speed ratio rate."
     },
     {
       "Field": "footSoundLevelSuperSmall",
-      "Name": "音大きさ\u3000極小",
-      "Description": ""
+      "Name": "Foot: Sound Level: Very Small",
+      "Description": "The foot sound level when the character is considered 'very small'."
     },
     {
       "Field": "footSoundLevelSmall",
-      "Name": "音大きさ\u3000小",
-      "Description": ""
+      "Name": "Foot: Sound Level: Small",
+      "Description": "The foot sound level when the character is considered 'small'."
     },
     {
       "Field": "footSoundLevelNormal",
-      "Name": "音大きさ\u3000中",
-      "Description": ""
+      "Name": "Foot: Sound Level: Normal",
+      "Description": "The foot sound level when the character is considered 'normal'."
     },
     {
       "Field": "footSoundLevelLarge",
-      "Name": "音大きさ\u3000大",
-      "Description": ""
+      "Name": "Foot: Sound Level: Large",
+      "Description": "The foot sound level when the character is considered 'large'."
     },
     {
       "Field": "footSoundLevelSuperLarge",
-      "Name": "音大きさ\u3000特大",
-      "Description": ""
+      "Name": "Foot: Sound Level: Very Large",
+      "Description": "The foot sound level when the character is considered 'very large'."
     },
     {
       "Field": "footSoundDummy",
-      "Name": "ダミー",
+      "Name": "",
       "Description": ""
     },
     {
       "Field": "single1HandNormal",
-      "Name": "詠唱時間 片手 弱 [sec]",
-      "Description": ""
+      "Name": "Casting Time: Normal 1H",
+      "Description": "The casting time (in seconds) for a normal one-handed action."
     },
     {
       "Field": "single1HandStrong",
-      "Name": "詠唱時間 片手 強 [sec]",
-      "Description": ""
+      "Name": "Casting Time: Heavy 1H",
+      "Description": "The casting time (in seconds) for a heavy one-handed action."
     },
     {
       "Field": "single2HandedNormal",
-      "Name": "詠唱時間 両手 弱 [sec]",
-      "Description": ""
+      "Name": "Casting Time: Normal 2H",
+      "Description": "The casting time (in seconds) for a normal two-handed action."
     },
     {
       "Field": "single2HandedStrong",
-      "Name": "詠唱時間 両手 強 [sec]",
-      "Description": ""
+      "Name": "Casting Time: Heavy 2H",
+      "Description": "The casting time (in seconds) for a heavy two-handed action."
     },
     {
       "Field": "dual1HandNormal",
-      "Name": "詠唱時間 二刀流 弱 [sec]",
-      "Description": ""
+      "Name": "Casting Time: Normal 1H Dual-Wield",
+      "Description": "The casting time (in seconds) for a normal one-handed dual-wield action."
     },
     {
       "Field": "dual1HandStrong",
-      "Name": "詠唱時間 二刀流 強 [sec]",
-      "Description": ""
+      "Name": "Casting Time: Heavy 1H Dual-Wield",
+      "Description": "The casting time (in seconds) for a heavy one-handed dual-wield action."
     },
     {
       "Field": "dual2HandedNormal",
-      "Name": "詠唱時間 二刀流両手 弱 [sec]",
-      "Description": ""
+      "Name": "Casting Time: Normal 2H Dual-Wield",
+      "Description": "The casting time (in seconds) for a normal two-handed dual-wield action."
     },
     {
       "Field": "dual2HandedStrong",
-      "Name": "詠唱時間 二刀流両手 強 [sec]",
-      "Description": ""
+      "Name": "Casting Time: Heavy 2H Dual-Wield",
+      "Description": "The casting time (in seconds) for a heavy two-handed dual-wield action."
     },
     {
       "Field": "bladePartsDamage",
-      "Name": "ブレード部位ダメージ有効設定",
-      "Description": ""
+      "Name": "Allow Blade Parts Damage",
+      "Description": "If enabled, allow blade parts damage."
     },
     {
       "Field": "partsDummy",
-      "Name": "ダミー",
+      "Name": "",
       "Description": ""
     },
     {
       "Field": "damageAdjustPartsRateSuperSmall",
-      "Name": "部位ダメージ倍率\u3000極小",
-      "Description": ""
+      "Name": "Part Damage %: Very Small",
+      "Description": "The part damage multiplier when the character is considered 'very small'."
     },
     {
       "Field": "damageAdjustPartsRateSmall",
-      "Name": "部位ダメージ倍率\u3000小",
-      "Description": ""
+      "Name": "Part Damage %: Small",
+      "Description": "The part damage multiplier when the character is considered 'small'."
     },
     {
       "Field": "damageAdjustPartsRateNormal",
-      "Name": "部位ダメージ倍率\u3000中",
-      "Description": ""
+      "Name": "Part Damage %: Normal",
+      "Description": "The part damage multiplier when the character is considered 'normal'."
     },
     {
       "Field": "damageAdjustPartsRateLarge",
-      "Name": "部位ダメージ倍率\u3000大",
-      "Description": ""
+      "Name": "Part Damage %: Large",
+      "Description": "The part damage multiplier when the character is considered 'large'."
     },
     {
       "Field": "damageAdjustPartsRateSuperLarge",
-      "Name": "部位ダメージ倍率\u3000特大",
-      "Description": ""
+      "Name": "Part Damage %: Very Large",
+      "Description": "The part damage multiplier when the character is considered 'very large'."
     },
     {
       "Field": "grabAttackDamageRate",
-      "Name": "投げ中ダメージ倍率",
-      "Description": ""
+      "Name": "Grab Damage %",
+      "Description": "The damage multiplier applied during grab attacks for the character."
     },
     {
       "Field": "receiveSlashDamageRate",
-      "Name": "通常物理 被ダメージ倍率 斬撃",
-      "Description": ""
+      "Name": "Received Damage %: Slash",
+      "Description": "The damage multiplier applied to incoming slash damage for the character."
     },
     {
       "Field": "receiveThrustDamageRate",
-      "Name": "通常物理 被ダメージ倍率 刺突",
-      "Description": ""
+      "Name": "Received Damage %: Thrust",
+      "Description": "The damage multiplier applied to incoming thrust damage for the character."
     },
     {
       "Field": "receiveStrikeDamageRate",
-      "Name": "通常物理 被ダメージ倍率 打撃",
-      "Description": ""
+      "Name": "Received Damage %: Strike",
+      "Description": "The damage multiplier applied to incoming strike damage for the character."
     },
     {
       "Field": "fallStrikeFallDist",
-      "Name": "落下攻撃 発生落下高度",
-      "Description": ""
+      "Name": "Drop Attack Distance",
+      "Description": "The distance (in metres) fell after which an attack becomes a drop attack."
     },
     {
       "Field": "jumpFallStrikeHeight",
-      "Name": "ジャンプ落下攻撃 発生落下高度",
-      "Description": ""
+      "Name": "Jump Drop Attack Height",
+      "Description": "The height for a jump drop attack to originate from."
     },
     {
       "Field": "isSlopeAdjust",
-      "Name": "常に傾斜に沿う",
-      "Description": ""
+      "Name": "Follow Slope",
+      "Description": "If enabled, this character will follow slopes."
     },
     {
       "Field": "slopeAdjustDummy",
-      "Name": "ダミー",
+      "Name": "",
       "Description": ""
     },
     {
       "Field": "slopeAdjustPitchMax",
-      "Name": "傾斜最大ピッチ角度",
-      "Description": ""
+      "Name": "Slope Adjustment: Pitch Maximum",
+      "Description": "The maximum pitch used during a slope adjustment."
     },
     {
       "Field": "slopeAdjustRollMax",
-      "Name": "傾斜最大ロール角度",
-      "Description": ""
+      "Name": "Slope Adjustment: Roll Maximum",
+      "Description": "The maximum roll used during a slope adjustment."
     },
     {
       "Field": "slopeAdjustPitchSpeed",
-      "Name": "傾斜ピッチ補正速度",
-      "Description": ""
+      "Name": "Slope Adjustment: Pitch Correction Speed",
+      "Description": "The speed at which the pitch correction occurs during a slope adjustment."
     },
     {
       "Field": "slopeAdjustRollSpeed",
-      "Name": "傾斜ロール補正速度",
-      "Description": ""
+      "Name": "Slope Adjustment: Roll Correction Speed",
+      "Description": "The speed at which the roll correction occurs during a slope adjustment."
     },
     {
       "Field": "fallStabSlashAnim",
-      "Name": "落下投げアニメID 斬り",
-      "Description": ""
+      "Name": "Drop Attack: Animation ID: Slash",
+      "Description": "The throw animation used for a slash drop attack."
     },
     {
       "Field": "fallStabStabAnim",
-      "Name": "落下投げアニメID 突き",
-      "Description": ""
+      "Name": "Drop Attack: Animation ID: Thrust",
+      "Description": "The throw animation used for a thrust drop attack."
     },
     {
       "Field": "fallStabGrabParamId",
-      "Name": "落下投げ 投げパラメータID",
-      "Description": ""
+      "Name": "Drop Attack: Throw ID",
+      "Description": "The throw ID used for a drop attack."
     },
     {
       "Field": "fallStabDummyPolyId",
-      "Name": "落下投げ 基準ダミポリID",
-      "Description": ""
+      "Name": "Drop Attack: Dummy Polygon ID",
+      "Description": "The dummy polygon ID the throw animation is applied to."
     },
     {
       "Field": "fallStabDummyPolyReverse",
-      "Name": "落下投げ 向き反転",
-      "Description": ""
+      "Name": "Reverse Drop Attack Direction",
+      "Description": "If enabled, the direction of the throw animation is reversed."
     },
     {
       "Field": "fallStabDummy",
-      "Name": "ダミー",
+      "Name": "",
       "Description": ""
     },
     {
       "Field": "fallStabDistance",
-      "Name": "落下投げ 距離[m]",
-      "Description": ""
+      "Name": "Drop Attack: Distance",
+      "Description": "The distance (in metres) of the drop attack."
     },
     {
       "Field": "fallStabAngle",
-      "Name": "落下投げ 角度[deg]",
-      "Description": ""
+      "Name": "Drop Attack: Angle",
+      "Description": "The angle (in degrees) of the drop attack."
     },
     {
       "Field": "poisonRecoverTimeMin",
-      "Name": "状態異常 毒 ゲージ回復時間 最小値[sec]",
-      "Description": ""
+      "Name": "Poison Recovery Duration: Minimum",
+      "Description": "The minimum recovery duration for poison recovery."
     },
     {
       "Field": "poisonRecoverTimeMax",
-      "Name": "状態異常 毒 ゲージ回復時間 最大値[sec]",
-      "Description": ""
+      "Name": "Poison Recovery Duration: Maximum",
+      "Description": "The maximum recovery duration for poison recovery."
     },
     {
       "Field": "burningRecoverTimeMin",
-      "Name": "状態異常 燃焼 ゲージ回復時間 最小値[sec]",
-      "Description": ""
+      "Name": "Burn Recovery Duration: Minimum",
+      "Description": "The minimum recovery duration for burn recovery."
     },
     {
       "Field": "burningRecoverTimeMax",
-      "Name": "状態異常 燃焼 ゲージ回復時間 最大値[sec]",
-      "Description": ""
+      "Name": "Burn Recovery Duration: Maximum",
+      "Description": "The maximum recovery duration for burn recovery."
     },
     {
       "Field": "bleedingRecoverTimeMin",
-      "Name": "状態異常 出血 ゲージ回復時間 最小値[sec]",
-      "Description": ""
+      "Name": "Bleed Recovery Duration: Minimum",
+      "Description": "The minimum recovery duration for bleed recovery."
     },
     {
       "Field": "bleedingRecoverTimeMax",
-      "Name": "状態異常 出血 ゲージ回復時間 最大値[sec]",
-      "Description": ""
+      "Name": "Bleed Recovery Duration: Maximum",
+      "Description": "The maximum recovery duration for bleed recovery."
     },
     {
       "Field": "curseRecoverTimeMin",
-      "Name": "状態異常 呪死 ゲージ回復時間 最小値[sec]",
-      "Description": ""
+      "Name": "Curse Recovery Duration: Minimum",
+      "Description": "The minimum recovery duration for curse recovery."
     },
     {
       "Field": "curseRecoverTimeMax",
-      "Name": "状態異常 呪死 ゲージ回復時間 最大値[sec]",
-      "Description": ""
+      "Name": "Curse Recovery Duration: Maximum",
+      "Description": "The maximum recovery duration for curse recovery."
     },
     {
       "Field": "weaponBreakRecoverTimeMin",
-      "Name": "状態異常 武器破損 ゲージ回復時間 最小値[sec]",
-      "Description": ""
+      "Name": "Corrosion Recovery Duration: Minimum",
+      "Description": "The minimum recovery duration for corrosion recovery."
     },
     {
       "Field": "weaponBreakRecoverTimeMax",
-      "Name": "状態異常 武器破損 ゲージ回復時間 最大値[sec]",
-      "Description": ""
+      "Name": "Corrosion Recovery Duration: Maximum",
+      "Description": "The maximum recovery duration for corrosion recovery."
     },
     {
       "Field": "petrifiedRecoverTimeMin",
-      "Name": "状態異常 石化 ゲージ回復時間 最小値[sec]",
-      "Description": ""
+      "Name": "Petrification Recovery Duration: Minimum",
+      "Description": "The minimum recovery duration for petrification recovery."
     },
     {
       "Field": "petrifiedRecoverTimeMax",
-      "Name": "状態異常 石化 ゲージ回復時間 最大値[sec]",
-      "Description": ""
+      "Name": "Petrification Recovery Duration: Maximum",
+      "Description": "The maximum recovery duration for petrification recovery."
     },
     {
       "Field": "poisonWetEffectTimeMin",
-      "Name": "毒濡れ 効果時間 最小値[sec]",
-      "Description": ""
+      "Name": "Poison: Wet Effect Duration: Minimum",
+      "Description": "The minimum duration for the wet effect applied by poison."
     },
     {
       "Field": "poisonWetEffectTimeMax",
-      "Name": "毒濡れ 効果時間 最大値[sec]",
-      "Description": ""
+      "Name": "Poison: Wet Effect Duration: Maximum",
+      "Description": "The maximum duration for the wet effect applied by poison."
     },
     {
       "Field": "oilWetEffectTimeMin",
-      "Name": "油濡れ 効果時間 最小値[sec]",
-      "Description": ""
+      "Name": "Oil: Wet Effect Duration: Minimum",
+      "Description": "The minimum duration for the wet effect applied by oil."
     },
     {
       "Field": "oilWetEffectTimeMax",
-      "Name": "油濡れ 効果時間 最大値[sec]",
-      "Description": ""
+      "Name": "Oil: Wet Effect Duration: Maximum",
+      "Description": "The maximum duration for the wet effect applied by oil."
     },
     {
       "Field": "WatierWetEffectTimeMin",
-      "Name": "水濡れ 効果時間 最小値[sec]",
-      "Description": ""
+      "Name": "Water: Wet Effect Duration: Minimum",
+      "Description": "The minimum duration for the wet effect applied by water."
     },
     {
       "Field": "WatierWetEffectTimeMax",
-      "Name": "水濡れ 効果時間 最大値[sec]",
-      "Description": ""
+      "Name": "Water: Wet Effect Duration: Maximum",
+      "Description": "The maximum duration for the wet effect applied by water."
     },
     {
       "Field": "itemAnimSpeedRateMin",
-      "Name": "アイテムアニメ速度 補正倍率 最小[倍]",
-      "Description": ""
+      "Name": "Item Animation Speed %: Minimum",
+      "Description": "The minimum speed multiplier for item animation."
     },
     {
       "Field": "itemAnimSpeedRateMax",
-      "Name": "アイテムアニメ速度 補正倍率 最大[倍]",
-      "Description": ""
+      "Name": "Item Animation Speed %: Maximum",
+      "Description": "The maximum speed multiplier for item animation."
     },
     {
       "Field": "downStiffRate",
-      "Name": "ダウン硬直時間\u3000倍率[倍]",
-      "Description": ""
+      "Name": "Poise Stun: Duration %",
+      "Description": "The stun duration multiplier after poise break."
     },
     {
       "Field": "downShorteningTime",
-      "Name": "ダウン硬直時間\u3000ＰＡＤ入力 短縮時間[sec]",
-      "Description": ""
+      "Name": "Poise Stun: Input Reduction Time",
+      "Description": "The input reduction time (in seconds) after poise break."
     },
     {
       "Field": "damageUpperRotationAngleY",
-      "Name": "ダメージ上半身捻り範囲 Y",
-      "Description": ""
+      "Name": "Damage Blend: Upper Body Twist Range: Y",
+      "Description": "The upper body twist range on the y-axis for damage blend."
     },
     {
       "Field": "damageUpperRotationAngleX",
-      "Name": "ダメージ上半身捻り範囲 X",
-      "Description": ""
+      "Name": "Damage Blend: Upper Body Twist Range: X",
+      "Description": "The upper body twist range on the x-axis for damage blend."
     },
     {
       "Field": "damageUpperRotationAngleZ",
-      "Name": "ダメージ上半身捻り範囲 Z",
-      "Description": ""
+      "Name": "Damage Blend: Upper Body Twist Range: Z",
+      "Description": "The upper body twist range on the z-axis for damage blend."
     },
     {
       "Field": "damageUpperRotationAngleCenter",
-      "Name": "ダメージ上半身捻り範囲\u3000中央",
-      "Description": ""
+      "Name": "Damage Blend: Upper Body Twist Range: Center",
+      "Description": "The upper body twist range on the center point for damage blend."
     },
     {
       "Field": "environmentSfxRain",
-      "Name": "環境SFX：雨",
-      "Description": ""
+      "Name": "Environmental SFX: Rain",
+      "Description": "The SFX used for rain."
     },
     {
       "Field": "environmentSfxWaterFall",
-      "Name": "環境SFX：滝",
-      "Description": ""
+      "Name": "Environmental SFX: Waterfall",
+      "Description": "The SFX used for waterfalls."
     },
     {
       "Field": "moveWindParamSmall",
-      "Name": "移動風：小",
-      "Description": ""
+      "Name": "Wind Movement ID: Small",
+      "Description": "The wind movement parameters for small characters."
     },
     {
       "Field": "moveWindParamMedium",
-      "Name": "移動風：中",
-      "Description": ""
+      "Name": "Wind Movement ID: Medium",
+      "Description": "The wind movement parameters for medium characters."
     },
     {
       "Field": "moveWindParamLarge",
-      "Name": "移動風：大",
-      "Description": ""
+      "Name": "Wind Movement ID: Large",
+      "Description": "The wind movement parameters for large characters."
     },
     {
       "Field": "atkAutoHomingDistance",
-      "Name": "接近オートホーミング 距離[m]",
-      "Description": ""
+      "Name": "Approach: Auto-Homing Distance",
+      "Description": "The auto-homing distance (in metres) for approach."
     },
     {
       "Field": "atkAutoHomingSdAngle",
-      "Name": "接近オートホーミング 左右角度[deg]",
-      "Description": ""
+      "Name": "Approach: Auto-Homing Horizontal Angle",
+      "Description": "The auto-homing horizontal angle (in degrees) for approach."
     },
     {
       "Field": "atkAutoHomingUdAngle",
-      "Name": "接近オートホーミング 上下角度[deg]",
-      "Description": ""
+      "Name": "Approach: Auto-Homing Vertical Angle",
+      "Description": "The auto-homing vertical angle (in degrees) for approach."
     },
     {
       "Field": "shotAutoHomingDistance",
-      "Name": "射撃オートホーミング 距離[m]",
-      "Description": ""
+      "Name": "Shot: Auto-Homing Range",
+      "Description": "The range of auto-homing (in metres) when shooting."
     },
     {
       "Field": "shotAutoHomingSdAngle",
-      "Name": "射撃オートホーミング 左右角度[deg]",
-      "Description": ""
+      "Name": "Shot: Auto-Homing Horizontal Angle",
+      "Description": "The horizontal angle of auto-homing (in degrees) when shooting."
     },
     {
       "Field": "shotAutoHomingUdAngle",
-      "Name": "射撃オートホーミング 上下角度[deg]",
-      "Description": ""
+      "Name": "Shot: Auto-Homing Vertical Angle",
+      "Description": "The vertical angle of auto-homing (in degrees) when shooting."
     },
     {
       "Field": "footEffectSize",
-      "Name": "足エフェクトサイズ",
-      "Description": ""
+      "Name": "Foot Effect Size",
+      "Description": "The size offset used for the foot effect SFX."
     },
     {
       "Field": "grabDamageRateSlash",
-      "Name": "投げ 被ダメージ倍率 斬撃",
-      "Description": ""
+      "Name": "Throw Damage %: Slash",
+      "Description": "The damage multiplier applied to throws from a slash attack."
     },
     {
       "Field": "grabDamageRateBlow",
-      "Name": "投げ 被ダメージ倍率 打撃",
-      "Description": ""
+      "Name": "Throw Damage %: Strike",
+      "Description": "The damage multiplier applied to throws from a strike attack."
     },
     {
       "Field": "grabDamageRateStab",
-      "Name": "投げ 被ダメージ倍率刺突",
-      "Description": ""
+      "Name": "Throw Damage %: Pierce",
+      "Description": "The damage multiplier applied to throws from a pierce attack."
     },
     {
       "Field": "grabDamageRateBullet",
-      "Name": "投げ 被ダメージ倍率 弾",
-      "Description": ""
+      "Name": "Throw Damage %: Bullet",
+      "Description": "The damage multiplier applied to throws from a bullet."
     },
     {
       "Field": "disallowDamageDecrementDist",
-      "Name": "距離減衰無効距離",
-      "Description": ""
+      "Name": "Distance Attenuation Ineffectivity Distance",
+      "Description": "The distance (in metres) at which distance attenuation becomes ineffective."
     },
     {
       "Field": "lockInvisibleReleaseTime",
-      "Name": "不可視ロック解除時間[sec]",
-      "Description": ""
+      "Name": "Invisible Unlock Time",
+      "Description": "The duration (in seconds) for invisible unlock."
     },
     {
       "Field": "fHitOffsetX",
-      "Name": "移動コリジョンオフセット左右 [m]",
-      "Description": ""
+      "Name": "Movement Collision: Left/Right Offset",
+      "Description": "The left/right offset (in metres) for movement collision."
     },
     {
       "Field": "fHitOffsetZ",
-      "Name": "移動コリジョンオフセット前後[m]",
-      "Description": ""
+      "Name": "Movement Collision: Front/Back Offset",
+      "Description": "The front/back offset (in metres) for movement collision."
     },
     {
       "Field": "takeWaterHeightLow",
-      "Name": "着水判定高さ足首",
-      "Description": ""
+      "Name": "Water Landing Detection Height: Ankle",
+      "Description": "The detection height for a water landing in ankle-deep water."
     },
     {
       "Field": "takeWaterHeightMiddle",
-      "Name": "着水判定高さ股下",
-      "Description": ""
+      "Name": "Water Landing Detection Height: Crotch",
+      "Description": "The detection height for a water landing in crotch-deep water."
     },
     {
       "Field": "takeWaterType",
-      "Name": "着水タイプ",
-      "Description": ""
+      "Name": "Water Landing Type",
+      "Description": "The water landing type for this character."
     },
     {
       "Field": "takeWaterDummy",
-      "Name": "ダミー",
+      "Name": "",
       "Description": ""
     },
     {
       "Field": "bulletDamageRatePhysical",
-      "Name": "Bullet damage rate [Physical]",
-      "Description": ""
+      "Name": "Bullet Damage %: Physical",
+      "Description": "The damage multiplier used for physical-type bullets."
     },
     {
       "Field": "bulletDamageRateMagic",
-      "Name": "Bullet damage rate [Magic]",
-      "Description": ""
+      "Name": "Bullet Damage %: Magic",
+      "Description": "The damage multiplier used for magic-type bullets."
     },
     {
       "Field": "bulletDamageRateMiracle",
-      "Name": "Bullet damage rate [Miracle]",
-      "Description": ""
+      "Name": "Bullet Damage %: Miracle",
+      "Description": "The damage multiplier used for miracle-type bullets."
     },
     {
       "Field": "bulletDamageRatePyromancy",
-      "Name": "Bullet damage rate [Pytomancy]",
-      "Description": ""
+      "Name": "Bullet Damage %: Pyromancy",
+      "Description": "The damage multiplier used for pyromancy-type bullets."
     },
     {
       "Field": "bulletDamageRateDark",
-      "Name": "Bullet damage rate [Hex]",
-      "Description": ""
+      "Name": "Bullet Damage %: Hex",
+      "Description": "The damage multiplier used for hex-type bullets."
     }
   ]
 }

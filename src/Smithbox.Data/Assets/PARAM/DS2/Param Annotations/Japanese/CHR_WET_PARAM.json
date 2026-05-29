@@ -1,0 +1,33 @@
+{
+  "Param": "CHR_WET_PARAM",
+  "Type": "CHR_WET_PARAM",
+  "Name": "CHR_WET_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "dryRate",
+      "Name": "割合減少率(通常部)",
+      "Description": ""
+    },
+    {
+      "Field": "metalDryRate",
+      "Name": "割合減少率(金属部)",
+      "Description": ""
+    },
+    {
+      "Field": "wetParamId",
+      "Name": "濡れ種類",
+      "Description": ""
+    },
+    {
+      "Field": "dryType",
+      "Name": "乾燥種類",
+      "Description": ""
+    },
+    {
+      "Field": "aReserved",
+      "Name": "予約領域",
+      "Description": ""
+    }
+  ]
+}

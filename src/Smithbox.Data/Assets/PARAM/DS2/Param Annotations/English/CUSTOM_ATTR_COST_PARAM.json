@@ -1,158 +1,158 @@
 {
   "Param": "CUSTOM_ATTR_COST_PARAM",
   "Type": "CUSTOM_ATTR_COST_PARAM",
-  "Name": "CUSTOM_ATTR_COST_PARAM",
-  "Description": "",
+  "Name": "Custom Attribute Cost Parameters",
+  "Description": "Defines soul costs, required item IDs, and required item quantities for custom weapon attribute upgrades and infusions.",
   "Fields": [
     {
       "Field": "physicalSoul",
-      "Name": "必要ソウル",
-      "Description": ""
+      "Name": "Required Souls: Physical",
+      "Description": "Soul cost required for the standard physical upgrade path."
     },
     {
       "Field": "fireSoul",
-      "Name": "必要ソウル",
-      "Description": ""
+      "Name": "Required Souls: Fire",
+      "Description": "Soul cost required for the fire upgrade path."
     },
     {
       "Field": "magicSoul",
-      "Name": "必要ソウル",
-      "Description": ""
+      "Name": "Required Souls: Magic",
+      "Description": "Soul cost required for the magic upgrade path."
     },
     {
       "Field": "thunderSoul",
-      "Name": "必要ソウル",
-      "Description": ""
+      "Name": "Required Souls: Lightning",
+      "Description": "Soul cost required for the lightning upgrade path."
     },
     {
       "Field": "darkSoul",
-      "Name": "必要ソウル",
-      "Description": ""
+      "Name": "Required Souls: Dark",
+      "Description": "Soul cost required for the dark upgrade path."
     },
     {
       "Field": "poisonSoul",
-      "Name": "必要ソウル",
-      "Description": ""
+      "Name": "Required Souls: Poison",
+      "Description": "Soul cost required for the poison upgrade path."
     },
     {
       "Field": "bleedSoul",
-      "Name": "必要ソウル",
-      "Description": ""
+      "Name": "Required Souls: Bleed",
+      "Description": "Soul cost required for the bleed upgrade path."
     },
     {
       "Field": "physicalByCrudeSoul",
-      "Name": "必要ソウル",
-      "Description": ""
+      "Name": "Required Souls: Raw",
+      "Description": "Soul cost required for the raw physical upgrade path."
     },
     {
       "Field": "physicalByEnchantedSoul",
-      "Name": "必要ソウル",
-      "Description": ""
+      "Name": "Required Souls: Enchanted",
+      "Description": "Soul cost required for the enchanted physical upgrade path."
     },
     {
       "Field": "physicalByAbyssSoul",
-      "Name": "必要ソウル",
-      "Description": ""
+      "Name": "Required Souls: Mundane",
+      "Description": "Soul cost required for the mundane physical upgrade path."
     },
     {
       "Field": "physicalItemID",
-      "Name": "必要アイテムID",
-      "Description": ""
+      "Name": "Required Item ID: Physical",
+      "Description": "Item ID required for the standard physical upgrade path."
     },
     {
       "Field": "fireItemID",
-      "Name": "必要アイテムID",
-      "Description": ""
+      "Name": "Required Item ID: Fire",
+      "Description": "Item ID required for the fire upgrade path."
     },
     {
       "Field": "magicItemID",
-      "Name": "必要アイテムID",
-      "Description": ""
+      "Name": "Required Item ID: Magic",
+      "Description": "Item ID required for the magic upgrade path."
     },
     {
       "Field": "thunderItemID",
-      "Name": "必要アイテムID",
-      "Description": ""
+      "Name": "Required Item ID: Lightning",
+      "Description": "Item ID required for the lightning upgrade path."
     },
     {
       "Field": "darkItemID",
-      "Name": "必要アイテムID",
-      "Description": ""
+      "Name": "Required Item ID: Dark",
+      "Description": "Item ID required for the dark upgrade path."
     },
     {
       "Field": "poisonItemID",
-      "Name": "必要アイテムID",
-      "Description": ""
+      "Name": "Required Item ID: Poison",
+      "Description": "Item ID required for the poison upgrade path."
     },
     {
       "Field": "bleedItemID",
-      "Name": "必要アイテムID",
-      "Description": ""
+      "Name": "Required Item ID: Bleed",
+      "Description": "Item ID required for the bleed upgrade path."
     },
     {
       "Field": "physicalByCrudeItemID",
-      "Name": "必要アイテムID",
-      "Description": ""
+      "Name": "Required Item ID: Raw",
+      "Description": "Item ID required for the raw physical upgrade path."
     },
     {
       "Field": "physicalByEnchantedItemID",
-      "Name": "必要アイテムID",
-      "Description": ""
+      "Name": "Required Item ID: Enchanted",
+      "Description": "Item ID required for the enchanted physical upgrade path."
     },
     {
       "Field": "physicalByAbyssItemID",
-      "Name": "必要アイテムID",
-      "Description": ""
+      "Name": "Required Item ID: Mundane",
+      "Description": "Item ID required for the mundane physical upgrade path."
     },
     {
       "Field": "physicalItemNumber",
-      "Name": "必要アイテム数",
-      "Description": ""
+      "Name": "Required Item Count: Physical",
+      "Description": "Quantity of items required for the standard physical upgrade path."
     },
     {
       "Field": "fireItemNumber",
-      "Name": "必要アイテム数",
-      "Description": ""
+      "Name": "Required Item Count: Fire",
+      "Description": "Quantity of items required for the fire upgrade path."
     },
     {
       "Field": "magicItemNumber",
-      "Name": "必要アイテム数",
-      "Description": ""
+      "Name": "Required Item Count: Magic",
+      "Description": "Quantity of items required for the magic upgrade path."
     },
     {
       "Field": "thunderItemNumber",
-      "Name": "必要アイテム数",
-      "Description": ""
+      "Name": "Required Item Count: Lightning",
+      "Description": "Quantity of items required for the lightning upgrade path."
     },
     {
       "Field": "darkItemNumber",
-      "Name": "必要アイテム数",
-      "Description": ""
+      "Name": "Required Item Count: Dark",
+      "Description": "Quantity of items required for the dark upgrade path."
     },
     {
       "Field": "poisonItemNumber",
-      "Name": "必要アイテム数",
-      "Description": ""
+      "Name": "Required Item Count: Poison",
+      "Description": "Quantity of items required for the poison upgrade path."
     },
     {
       "Field": "bleedItemNumber",
-      "Name": "必要アイテム数",
-      "Description": ""
+      "Name": "Required Item Count: Bleed",
+      "Description": "Quantity of items required for the bleed upgrade path."
     },
     {
       "Field": "physicalByCrudeItemNumber",
-      "Name": "必要アイテム数",
-      "Description": ""
+      "Name": "Required Item Count: Raw",
+      "Description": "Quantity of items required for the raw physical upgrade path."
     },
     {
       "Field": "physicalByEnchantedItemNumber",
-      "Name": "必要アイテム数",
-      "Description": ""
+      "Name": "Required Item Count: Enchanted",
+      "Description": "Quantity of items required for the enchanted physical upgrade path."
     },
     {
       "Field": "physicalByAbyssItemNumber",
-      "Name": "必要アイテム数",
-      "Description": ""
+      "Name": "Required Item Count: Mundane",
+      "Description": "Quantity of items required for the mundane physical upgrade path."
     }
   ]
 }

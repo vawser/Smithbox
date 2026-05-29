@@ -2,117 +2,117 @@
   "Param": "DEMO_PARAM",
   "Type": "DEMO_PARAM",
   "Name": "DEMO_PARAM",
-  "Description": "",
+  "Description": "Controls rendering and visual configuration for cutscenes, including grouping masks, image color multipliers, filtering, and environment mapping settings.",
   "Fields": [
     {
       "Field": "groupMask",
-      "Name": "表示グループマスク",
-      "Description": ""
+      "Name": "Display Group Mask",
+      "Description": "Bitmask controlling which object groups are visible in the scene."
     },
     {
       "Field": "memoryBlock",
-      "Name": "メモリブロック",
-      "Description": ""
+      "Name": "Memory Block",
+      "Description": "Reserved memory block identifier used for demo configuration data."
     },
     {
       "Field": "addGroupMask",
-      "Name": "オブジェクト表示グループマスク",
-      "Description": ""
+      "Name": "Object Display Group Mask",
+      "Description": "Additional bitmask controlling visibility of object groups."
     },
     {
       "Field": "iblTextureId",
-      "Name": "環境マップテクスチャID",
-      "Description": ""
+      "Name": "Environment Map Texture ID",
+      "Description": "Texture ID used for image-based lighting (IBL) environment reflections."
     },
     {
       "Field": "img0MulColorR",
-      "Name": "img0乗算色R",
-      "Description": ""
+      "Name": "Image 0: Multiply Color (Red)",
+      "Description": "Red channel multiplier applied to Image 0."
     },
     {
       "Field": "img0MulColorG",
-      "Name": "img0乗算色G",
-      "Description": ""
+      "Name": "Image 0: Multiply Color (Green)",
+      "Description": "Green channel multiplier applied to Image 0."
     },
     {
       "Field": "img0MulColorB",
-      "Name": "img0乗算色B",
-      "Description": ""
+      "Name": "Image 0: Multiply Color (Blue)",
+      "Description": "Blue channel multiplier applied to Image 0."
     },
     {
       "Field": "filterId",
-      "Name": "フィルタID",
-      "Description": ""
+      "Name": "Filter ID",
+      "Description": "Identifier for the post-processing or image filter applied to the scene."
     },
     {
       "Field": "alpha0Factor",
-      "Name": "α0係数",
-      "Description": ""
+      "Name": "Image 0: Alpha Factor",
+      "Description": "Opacity scaling factor applied to Image 0."
     },
     {
       "Field": "img1MulColorR",
-      "Name": "img1乗算色R",
-      "Description": ""
+      "Name": "Image 1: Multiply Color (Red)",
+      "Description": "Red channel multiplier applied to Image 1."
     },
     {
       "Field": "img1MulColorG",
-      "Name": "img1乗算色G",
-      "Description": ""
+      "Name": "Image 1: Multiply Color (Green)",
+      "Description": "Green channel multiplier applied to Image 1."
     },
     {
       "Field": "img1MulColorB",
-      "Name": "img1乗算色B",
-      "Description": ""
+      "Name": "Image 1: Multiply Color (Blue)",
+      "Description": "Blue channel multiplier applied to Image 1."
     },
     {
       "Field": "reserved0",
-      "Name": "予約領域",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "alpha1Factor",
-      "Name": "α1係数",
-      "Description": ""
+      "Name": "Image 1: Alpha Factor",
+      "Description": "Opacity scaling factor applied to Image 1."
     },
     {
       "Field": "positionFactor",
-      "Name": "位置係数",
-      "Description": ""
+      "Name": "Position Factor",
+      "Description": "Scaling factor applied to positional transformations."
     },
     {
       "Field": "scaleFactor",
-      "Name": "スケール係数",
-      "Description": ""
+      "Name": "Scale Factor",
+      "Description": "Multiplier applied to object scaling."
     },
     {
       "Field": "uvFactor",
-      "Name": "UV係数",
-      "Description": ""
+      "Name": "UV Factor",
+      "Description": "Scaling factor applied to texture UV coordinates."
     },
     {
       "Field": "disableLightId0",
-      "Name": "ID1",
-      "Description": ""
+      "Name": "Disable Light ID 1",
+      "Description": "Identifier for the first light source that is disabled."
     },
     {
       "Field": "disableLightId1",
-      "Name": "ID2",
-      "Description": ""
+      "Name": "Disable Light ID 2",
+      "Description": "Identifier for the second light source that is disabled."
     },
     {
       "Field": "disableSfxId0",
-      "Name": "ID1",
-      "Description": ""
+      "Name": "Disable SFX ID 1",
+      "Description": "Identifier for the first special effect that is disabled."
     },
     {
       "Field": "disableSfxId1",
-      "Name": "ID2",
-      "Description": ""
+      "Name": "Disable SFX ID 2",
+      "Description": "Identifier for the second special effect that is disabled."
     },
     {
       "Field": "lodFactorScale",
-      "Name": "LOD係数のスケーラ",
-      "Description": ""
+      "Name": "LOD Factor Scale",
+      "Description": "Scaling multiplier for level-of-detail transitions."
     }
   ]
 }

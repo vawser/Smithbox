@@ -2,56 +2,56 @@
   "Param": "SHOP_LINEUP_PARAM",
   "Type": "SHOP_LINEUP_PARAM",
   "Name": "SHOP_LINEUP_PARAM",
-  "Description": "",
+  "Description": "Defines a shop inventory entry, including item availability conditions, pricing, and display ordering.",
   "Fields": [
     {
       "Field": "saleItem",
-      "Name": "販売アイテムID",
-      "Description": ""
+      "Name": "Item ID for Sale",
+      "Description": "ID of the item available for purchase in the shop."
     },
     {
       "Field": "price",
-      "Name": "販売価格",
-      "Description": ""
+      "Name": "Price",
+      "Description": "Base purchase price of the item."
     },
     {
       "Field": "saleFlag",
-      "Name": "販売開始フラグ",
-      "Description": ""
+      "Name": "Sale Start Flag",
+      "Description": "Flag that enables the item to become available for sale."
     },
     {
       "Field": "saleEndFlag",
-      "Name": "販売終了フラグ",
-      "Description": ""
+      "Name": "Sale End Flag",
+      "Description": "Flag that disables the item from being sold."
     },
     {
       "Field": "saleFlagItem",
-      "Name": "販売開始条件アイテム",
-      "Description": ""
+      "Name": "Sale Unlock Item Condition",
+      "Description": "Item condition required to unlock the sale of this product."
     },
     {
       "Field": "saleEndFlagItem",
-      "Name": "販売終了条件アイテム",
-      "Description": ""
+      "Name": "Sale End Condition Item",
+      "Description": "Item condition that triggers removal of this product from sale."
     },
     {
       "Field": "displayOrder",
-      "Name": "陳列順序",
-      "Description": ""
+      "Name": "Display Order",
+      "Description": "Order in which the item appears in the shop list."
     },
     {
       "Field": "priceRate",
-      "Name": "価格倍率",
-      "Description": ""
+      "Name": "Price Multiplier",
+      "Description": "Multiplier applied to the base price."
     },
     {
       "Field": "unitSales",
-      "Name": "販売個数",
-      "Description": ""
+      "Name": "Stock Quantity",
+      "Description": "Number of units available for purchase."
     },
     {
       "Field": "padding",
-      "Name": "予約",
+      "Name": "Padding",
       "Description": ""
     }
   ]

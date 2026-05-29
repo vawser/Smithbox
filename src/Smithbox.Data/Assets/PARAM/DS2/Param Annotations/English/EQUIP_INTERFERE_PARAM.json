@@ -2,732 +2,732 @@
   "Param": "EQUIP_INTERFERE_PARAM",
   "Type": "EQUIP_INTERFERE_PARAM",
   "Name": "EQUIP_INTERFERE_PARAM",
-  "Description": "",
+  "Description": "Defines how equipped items interfere with character body parts and rendering behavior. Controls culling priorities, visibility thresholds, cloth simulation settings, and group-based rendering/interaction rules for different equipment regions and configurations.",
   "Fields": [
     {
       "Field": "interfereId0",
-      "Name": "干渉設定ID",
-      "Description": ""
+      "Name": "Interference Setup ID",
+      "Description": "Identifier for this equipment interference configuration preset."
     },
     {
       "Field": "cullingPriorityNeck0",
-      "Name": "首-表示優先度",
-      "Description": ""
+      "Name": "Group 0: Neck Visibility Priority",
+      "Description": "Rendering priority for the neck region when resolving culling conflicts."
     },
     {
       "Field": "cullingPriorityElbowRight0",
-      "Name": "右腕-表示優先度",
-      "Description": ""
+      "Name": "Group 0: Right Arm Visibility Priority",
+      "Description": "Rendering priority for the right elbow/arm region."
     },
     {
       "Field": "cullingValueElbowRight0",
-      "Name": "右腕-カリング値",
-      "Description": ""
+      "Name": "Group 0: Right Arm Culling Value",
+      "Description": "Threshold/value used to determine culling behavior for the right arm."
     },
     {
       "Field": "cullingPriorityElbowLeft0",
-      "Name": "左腕-表示優先度",
-      "Description": ""
+      "Name": "Group 0: Left Arm Visibility Priority",
+      "Description": "Rendering priority for the left elbow/arm region."
     },
     {
       "Field": "cullingValueElbowLeft0",
-      "Name": "左腕-カリング値",
-      "Description": ""
+      "Name": "Group 0: Left Arm Culling Value",
+      "Description": "Threshold/value used to determine culling behavior for the left arm."
     },
     {
       "Field": "cullingPriorityWaist0",
-      "Name": "腰-表示優先度",
-      "Description": ""
+      "Name": "Group 0: Waist Visibility Priority",
+      "Description": "Rendering priority for the waist region."
     },
     {
       "Field": "cullingValueWaist0",
-      "Name": "腰-カリング値",
-      "Description": ""
+      "Name": "Group 0: Waist Culling Value",
+      "Description": "Threshold/value used to determine culling behavior for the waist."
     },
     {
       "Field": "clothCtrlType0",
-      "Name": "クロス制御設定",
-      "Description": ""
+      "Name": "Group 0: Cloth Control Type",
+      "Description": "Defines how cloth simulation or cloth rendering is controlled for this equipment setup."
     },
     {
       "Field": "cullingGroup00_0",
-      "Name": "カリンググループ０",
-      "Description": ""
+      "Name": "Group 0: Culling Group 0",
+      "Description": "Bitmask/flag indicating membership in culling group 0."
     },
     {
       "Field": "cullingGroup01_0",
-      "Name": "カリンググループ１",
-      "Description": ""
+      "Name": "Group 0: Culling Group 1",
+      "Description": "Bitmask/flag indicating membership in culling group 1."
     },
     {
       "Field": "cullingGroup02_0",
-      "Name": "カリンググループ２",
-      "Description": ""
+      "Name": "Group 0: Culling Group 2",
+      "Description": "Bitmask/flag indicating membership in culling group 2."
     },
     {
       "Field": "cullingGroup03_0",
-      "Name": "カリンググループ３",
-      "Description": ""
+      "Name": "Group 0: Culling Group 3",
+      "Description": "Bitmask/flag indicating membership in culling group 3."
     },
     {
       "Field": "cullingGroup04_0",
-      "Name": "カリンググループ４",
-      "Description": ""
+      "Name": "Group 0: Culling Group 4",
+      "Description": "Bitmask/flag indicating membership in culling group 4."
     },
     {
       "Field": "cullingGroup05_0",
-      "Name": "カリンググループ５",
-      "Description": ""
+      "Name": "Group 0: Culling Group 5",
+      "Description": "Bitmask/flag indicating membership in culling group 5."
     },
     {
       "Field": "cullingGroup06_0",
-      "Name": "カリンググループ６",
-      "Description": ""
+      "Name": "Group 0: Culling Group 6",
+      "Description": "Bitmask/flag indicating membership in culling group 6."
     },
     {
       "Field": "cullingGroup07_0",
-      "Name": "カリンググループ７",
-      "Description": ""
+      "Name": "Group 0: Culling Group 7",
+      "Description": "Bitmask/flag indicating membership in culling group 7."
     },
     {
       "Field": "cullingGroup08_0",
-      "Name": "カリンググループ８",
-      "Description": ""
+      "Name": "Group 0: Culling Group 8",
+      "Description": "Bitmask/flag indicating membership in culling group 8."
     },
     {
       "Field": "cullingGroup09_0",
-      "Name": "カリンググループ９",
-      "Description": ""
+      "Name": "Group 0: Culling Group 9",
+      "Description": "Bitmask/flag indicating membership in culling group 9."
     },
     {
       "Field": "cullingGroup10_0",
-      "Name": "カリンググループ１０",
-      "Description": ""
+      "Name": "Group 0: Culling Group 10",
+      "Description": "Bitmask/flag indicating membership in culling group 10."
     },
     {
       "Field": "cullingGroup11_0",
-      "Name": "カリンググループ１１",
-      "Description": ""
+      "Name": "Group 0: Culling Group 11",
+      "Description": "Bitmask/flag indicating membership in culling group 11."
     },
     {
       "Field": "cullingGroup12_0",
-      "Name": "カリンググループ１２",
-      "Description": ""
+      "Name": "Group 0: Culling Group 12",
+      "Description": "Bitmask/flag indicating membership in culling group 12."
     },
     {
       "Field": "cullingGroup13_0",
-      "Name": "カリンググループ１３",
-      "Description": ""
+      "Name": "Group 0: Culling Group 13",
+      "Description": "Bitmask/flag indicating membership in culling group 13."
     },
     {
       "Field": "cullingGroup14_0",
-      "Name": "カリンググループ１４",
-      "Description": ""
+      "Name": "Group 0: Culling Group 14",
+      "Description": "Bitmask/flag indicating membership in culling group 14."
     },
     {
       "Field": "cullingGroup15_0",
-      "Name": "カリンググループ１５",
-      "Description": ""
+      "Name": "Group 0: Culling Group 15",
+      "Description": "Bitmask/flag indicating membership in culling group 15."
     },
     {
       "Field": "cullingGroup16_0",
-      "Name": "カリンググループ１６",
-      "Description": ""
+      "Name": "Group 0: Culling Group 16",
+      "Description": "Bitmask/flag indicating membership in culling group 16."
     },
     {
       "Field": "cullingGroup17_0",
-      "Name": "カリンググループ１７",
-      "Description": ""
+      "Name": "Group 0: Culling Group 17",
+      "Description": "Bitmask/flag indicating membership in culling group 17."
     },
     {
       "Field": "cullingGroup18_0",
-      "Name": "カリンググループ１８",
-      "Description": ""
+      "Name": "Group 0: Culling Group 18",
+      "Description": "Bitmask/flag indicating membership in culling group 18."
     },
     {
       "Field": "cullingGroup19_0",
-      "Name": "カリンググループ１９",
-      "Description": ""
+      "Name": "Group 0: Culling Group 19",
+      "Description": "Bitmask/flag indicating membership in culling group 19."
     },
     {
       "Field": "cullingGroup20_0",
-      "Name": "カリンググループ２０",
-      "Description": ""
+      "Name": "Group 0: Culling Group 20",
+      "Description": "Bitmask/flag indicating membership in culling group 20."
     },
     {
       "Field": "cullingGroup21_0",
-      "Name": "カリンググループ２１",
-      "Description": ""
+      "Name": "Group 0: Culling Group 21",
+      "Description": "Bitmask/flag indicating membership in culling group 21."
     },
     {
       "Field": "cullingGroup22_0",
-      "Name": "カリンググループ２２",
-      "Description": ""
+      "Name": "Group 0: Culling Group 22",
+      "Description": "Bitmask/flag indicating membership in culling group 22."
     },
     {
       "Field": "cullingGroup23_0",
-      "Name": "カリンググループ２３",
-      "Description": ""
+      "Name": "Group 0: Culling Group 23",
+      "Description": "Bitmask/flag indicating membership in culling group 23."
     },
     {
       "Field": "cullingGroup24_0",
-      "Name": "カリンググループ２４",
-      "Description": ""
+      "Name": "Group 0: Culling Group 24",
+      "Description": "Bitmask/flag indicating membership in culling group 24."
     },
     {
       "Field": "cullingGroup25_0",
-      "Name": "カリンググループ２５",
-      "Description": ""
+      "Name": "Group 0: Culling Group 25",
+      "Description": "Bitmask/flag indicating membership in culling group 25."
     },
     {
       "Field": "cullingGroup26_0",
-      "Name": "カリンググループ２６",
-      "Description": ""
+      "Name": "Group 0: Culling Group 26",
+      "Description": "Bitmask/flag indicating membership in culling group 26."
     },
     {
       "Field": "cullingGroup27_0",
-      "Name": "カリンググループ２７",
-      "Description": ""
+      "Name": "Group 0: Culling Group 27",
+      "Description": "Bitmask/flag indicating membership in culling group 27."
     },
     {
       "Field": "cullingGroup28_0",
-      "Name": "カリンググループ２８",
-      "Description": ""
+      "Name": "Group 0: Culling Group 28",
+      "Description": "Bitmask/flag indicating membership in culling group 28."
     },
     {
       "Field": "cullingGroup29_0",
-      "Name": "カリンググループ２９",
-      "Description": ""
+      "Name": "Group 0: Culling Group 29",
+      "Description": "Bitmask/flag indicating membership in culling group 29."
     },
     {
       "Field": "cullingGroup30_0",
-      "Name": "カリンググループ３０",
-      "Description": ""
+      "Name": "Group 0: Culling Group 30",
+      "Description": "Bitmask/flag indicating membership in culling group 30."
     },
     {
       "Field": "cullingGroup31_0",
-      "Name": "カリンググループ３１",
-      "Description": ""
+      "Name": "Group 0: Culling Group 31",
+      "Description": "Bitmask/flag indicating membership in culling group 31."
     },
     {
       "Field": "cullingGroup32_0",
-      "Name": "カリンググループ３２",
-      "Description": ""
+      "Name": "Group 0: Culling Group 32",
+      "Description": "Bitmask/flag indicating membership in culling group 32."
     },
     {
       "Field": "cullingGroup33_0",
-      "Name": "カリンググループ３３",
-      "Description": ""
+      "Name": "Group 0: Culling Group 33",
+      "Description": "Bitmask/flag indicating membership in culling group 33."
     },
     {
       "Field": "cullingGroup34_0",
-      "Name": "カリンググループ３４",
-      "Description": ""
+      "Name": "Group 0: Culling Group 34",
+      "Description": "Bitmask/flag indicating membership in culling group 34."
     },
     {
       "Field": "cullingGroup35_0",
-      "Name": "カリンググループ３５",
-      "Description": ""
+      "Name": "Group 0: Culling Group 35",
+      "Description": "Bitmask/flag indicating membership in culling group 35."
     },
     {
       "Field": "cullingGroup36_0",
-      "Name": "カリンググループ３６",
-      "Description": ""
+      "Name": "Group 0: Culling Group 36",
+      "Description": "Bitmask/flag indicating membership in culling group 36."
     },
     {
       "Field": "cullingGroup37_0",
-      "Name": "カリンググループ３７",
-      "Description": ""
+      "Name": "Group 0: Culling Group 37",
+      "Description": "Bitmask/flag indicating membership in culling group 37."
     },
     {
       "Field": "cullingGroup38_0",
-      "Name": "カリンググループ３８",
-      "Description": ""
+      "Name": "Group 0: Culling Group 38",
+      "Description": "Bitmask/flag indicating membership in culling group 38."
     },
     {
       "Field": "cullingGroup39_0",
-      "Name": "カリンググループ３９",
-      "Description": ""
+      "Name": "Group 0: Culling Group 39",
+      "Description": "Bitmask/flag indicating membership in culling group 39."
     },
     {
       "Field": "cullingGroup40_0",
-      "Name": "カリンググループ４０",
-      "Description": ""
+      "Name": "Group 0: Culling Group 40",
+      "Description": "Bitmask/flag indicating membership in culling group 40."
     },
     {
       "Field": "cullingGroup41_0",
-      "Name": "カリンググループ４１",
-      "Description": ""
+      "Name": "Group 0: Culling Group 41",
+      "Description": "Bitmask/flag indicating membership in culling group 41."
     },
     {
       "Field": "cullingGroup42_0",
-      "Name": "カリンググループ４２",
-      "Description": ""
+      "Name": "Group 0: Culling Group 42",
+      "Description": "Bitmask/flag indicating membership in culling group 42."
     },
     {
       "Field": "cullingGroup43_0",
-      "Name": "カリンググループ４３",
-      "Description": ""
+      "Name": "Group 0: Culling Group 43",
+      "Description": "Bitmask/flag indicating membership in culling group 43."
     },
     {
       "Field": "cullingGroup44_0",
-      "Name": "カリンググループ４４",
-      "Description": ""
+      "Name": "Group 0: Culling Group 44",
+      "Description": "Bitmask/flag indicating membership in culling group 44."
     },
     {
       "Field": "cullingGroup45_0",
-      "Name": "カリンググループ４５",
-      "Description": ""
+      "Name": "Group 0: Culling Group 45",
+      "Description": "Bitmask/flag indicating membership in culling group 45."
     },
     {
       "Field": "cullingGroup46_0",
-      "Name": "カリンググループ４６",
-      "Description": ""
+      "Name": "Group 0: Culling Group 46",
+      "Description": "Bitmask/flag indicating membership in culling group 46."
     },
     {
       "Field": "cullingGroup47_0",
-      "Name": "カリンググループ４７",
-      "Description": ""
+      "Name": "Group 0: Culling Group 47",
+      "Description": "Bitmask/flag indicating membership in culling group 47."
     },
     {
       "Field": "cullingGroup48_0",
-      "Name": "カリンググループ４８",
-      "Description": ""
+      "Name": "Group 0: Culling Group 48",
+      "Description": "Bitmask/flag indicating membership in culling group 48."
     },
     {
       "Field": "cullingGroup49_0",
-      "Name": "カリンググループ４９",
-      "Description": ""
+      "Name": "Group 0: Culling Group 49",
+      "Description": "Bitmask/flag indicating membership in culling group 49."
     },
     {
       "Field": "cullingGroup50_0",
-      "Name": "カリンググループ５０",
-      "Description": ""
+      "Name": "Group 0: Culling Group 50",
+      "Description": "Bitmask/flag indicating membership in culling group 50."
     },
     {
       "Field": "cullingGroup51_0",
-      "Name": "カリンググループ５１",
-      "Description": ""
+      "Name": "Group 0: Culling Group 51",
+      "Description": "Bitmask/flag indicating membership in culling group 51."
     },
     {
       "Field": "cullingGroup52_0",
-      "Name": "カリンググループ５２",
-      "Description": ""
+      "Name": "Group 0: Culling Group 52",
+      "Description": "Bitmask/flag indicating membership in culling group 52."
     },
     {
       "Field": "cullingGroup53_0",
-      "Name": "カリンググループ５３",
-      "Description": ""
+      "Name": "Group 0: Culling Group 53",
+      "Description": "Bitmask/flag indicating membership in culling group 53."
     },
     {
       "Field": "cullingGroup54_0",
-      "Name": "カリンググループ５４",
-      "Description": ""
+      "Name": "Group 0: Culling Group 54",
+      "Description": "Bitmask/flag indicating membership in culling group 54."
     },
     {
       "Field": "cullingGroup55_0",
-      "Name": "カリンググループ５５",
-      "Description": ""
+      "Name": "Group 0: Culling Group 55",
+      "Description": "Bitmask/flag indicating membership in culling group 56."
     },
     {
       "Field": "cullingGroup56_0",
-      "Name": "カリンググループ５６",
-      "Description": ""
+      "Name": "Group 0: Culling Group 56",
+      "Description": "Bitmask/flag indicating membership in culling group 56."
     },
     {
       "Field": "cullingGroup57_0",
-      "Name": "カリンググループ５７",
-      "Description": ""
+      "Name": "Group 0: Culling Group 57",
+      "Description": "Bitmask/flag indicating membership in culling group 57."
     },
     {
       "Field": "cullingGroup58_0",
-      "Name": "カリンググループ５８",
-      "Description": ""
+      "Name": "Group 0: Culling Group 58",
+      "Description": "Bitmask/flag indicating membership in culling group 58."
     },
     {
       "Field": "cullingGroup59_0",
-      "Name": "カリンググループ５９",
-      "Description": ""
+      "Name": "Group 0: Culling Group 59",
+      "Description": "Bitmask/flag indicating membership in culling group 59."
     },
     {
       "Field": "cullingGroup60_0",
-      "Name": "カリンググループ６０",
-      "Description": ""
+      "Name": "Group 0: Culling Group 60",
+      "Description": "Bitmask/flag indicating membership in culling group 60."
     },
     {
       "Field": "cullingGroup61_0",
-      "Name": "カリンググループ６１",
-      "Description": ""
+      "Name": "Group 0: Culling Group 61",
+      "Description": "Bitmask/flag indicating membership in culling group 61."
     },
     {
       "Field": "cullingGroup62_0",
-      "Name": "カリンググループ６２",
-      "Description": ""
+      "Name": "Group 0: Culling Group 62",
+      "Description": "Bitmask/flag indicating membership in culling group 62."
     },
     {
       "Field": "cullingGroup63_0",
-      "Name": "カリンググループ６３",
-      "Description": ""
+      "Name": "Group 0: Culling Group 63",
+      "Description": "Bitmask/flag indicating membership in culling group 63."
     },
     {
       "Field": "cullingPriorityNeck1",
-      "Name": "首-表示優先度",
-      "Description": ""
+      "Name": "Group 1: Neck Visibility Priority",
+      "Description": "Rendering priority for the neck region when resolving culling conflicts."
     },
     {
       "Field": "cullingPriorityElbowRight1",
-      "Name": "右腕-表示優先度",
-      "Description": ""
+      "Name": "Group 1: Right Arm Visibility Priority",
+      "Description": "Rendering priority for the right elbow/arm region."
     },
     {
       "Field": "cullingValueElbowRight1",
-      "Name": "右腕-カリング値",
-      "Description": ""
+      "Name": "Group 1: Right Arm Culling Value",
+      "Description": "Threshold/value used to determine culling behavior for the right arm."
     },
     {
       "Field": "cullingPriorityElbowLeft1",
-      "Name": "左腕-表示優先度",
-      "Description": ""
+      "Name": "Group 1: Left Arm Visibility Priority",
+      "Description": "Rendering priority for the left elbow/arm region."
     },
     {
       "Field": "cullingValueElbowLeft1",
-      "Name": "左腕-カリング値",
-      "Description": ""
+      "Name": "Group 1: Left Arm Culling Value",
+      "Description": "Threshold/value used to determine culling behavior for the left arm."
     },
     {
       "Field": "cullingPriorityWaist1",
-      "Name": "腰-表示優先度",
-      "Description": ""
+      "Name": "Group 1: Waist Visibility Priority",
+      "Description": "Rendering priority for the waist region."
     },
     {
       "Field": "cullingValueWaist1",
-      "Name": "腰-カリング値",
-      "Description": ""
+      "Name": "Group 1: Waist Culling Value",
+      "Description": "Threshold/value used to determine culling behavior for the waist."
     },
     {
       "Field": "clothCtrlType1",
-      "Name": "クロス制御設定",
-      "Description": ""
+      "Name": "Group 1: Cloth Control Type",
+      "Description": "Defines how cloth simulation or cloth rendering is controlled for this equipment setup."
     },
     {
       "Field": "cullingGroup00_1",
-      "Name": "カリンググループ０",
-      "Description": ""
+      "Name": "Group 1: Culling Group 1",
+      "Description": "Bitmask/flag indicating membership in culling group 0."
     },
     {
       "Field": "cullingGroup01_1",
-      "Name": "カリンググループ１",
-      "Description": ""
+      "Name": "Group 1: Culling Group 1",
+      "Description": "Bitmask/flag indicating membership in culling group 1."
     },
     {
       "Field": "cullingGroup02_1",
-      "Name": "カリンググループ２",
-      "Description": ""
+      "Name": "Group 1: Culling Group 2",
+      "Description": "Bitmask/flag indicating membership in culling group 2."
     },
     {
       "Field": "cullingGroup03_1",
-      "Name": "カリンググループ３",
-      "Description": ""
+      "Name": "Group 1: Culling Group 3",
+      "Description": "Bitmask/flag indicating membership in culling group 3."
     },
     {
       "Field": "cullingGroup04_1",
-      "Name": "カリンググループ４",
-      "Description": ""
+      "Name": "Group 1: Culling Group 4",
+      "Description": "Bitmask/flag indicating membership in culling group 4."
     },
     {
       "Field": "cullingGroup05_1",
-      "Name": "カリンググループ５",
-      "Description": ""
+      "Name": "Group 1: Culling Group 5",
+      "Description": "Bitmask/flag indicating membership in culling group 5."
     },
     {
       "Field": "cullingGroup06_1",
-      "Name": "カリンググループ６",
-      "Description": ""
+      "Name": "Group 1: Culling Group 6",
+      "Description": "Bitmask/flag indicating membership in culling group 6."
     },
     {
       "Field": "cullingGroup07_1",
-      "Name": "カリンググループ７",
-      "Description": ""
+      "Name": "Group 1: Culling Group 7",
+      "Description": "Bitmask/flag indicating membership in culling group 7."
     },
     {
       "Field": "cullingGroup08_1",
-      "Name": "カリンググループ８",
-      "Description": ""
+      "Name": "Group 1: Culling Group 8",
+      "Description": "Bitmask/flag indicating membership in culling group 8."
     },
     {
       "Field": "cullingGroup09_1",
-      "Name": "カリンググループ９",
-      "Description": ""
+      "Name": "Group 1: Culling Group 9",
+      "Description": "Bitmask/flag indicating membership in culling group 9."
     },
     {
       "Field": "cullingGroup10_1",
-      "Name": "カリンググループ１０",
-      "Description": ""
+      "Name": "Group 1: Culling Group 11",
+      "Description": "Bitmask/flag indicating membership in culling group 10."
     },
     {
       "Field": "cullingGroup11_1",
-      "Name": "カリンググループ１１",
-      "Description": ""
+      "Name": "Group 1: Culling Group 11",
+      "Description": "Bitmask/flag indicating membership in culling group 11."
     },
     {
       "Field": "cullingGroup12_1",
-      "Name": "カリンググループ１２",
-      "Description": ""
+      "Name": "Group 1: Culling Group 12",
+      "Description": "Bitmask/flag indicating membership in culling group 12."
     },
     {
       "Field": "cullingGroup13_1",
-      "Name": "カリンググループ１３",
-      "Description": ""
+      "Name": "Group 1: Culling Group 13",
+      "Description": "Bitmask/flag indicating membership in culling group 13."
     },
     {
       "Field": "cullingGroup14_1",
-      "Name": "カリンググループ１４",
-      "Description": ""
+      "Name": "Group 1: Culling Group 14",
+      "Description": "Bitmask/flag indicating membership in culling group 14."
     },
     {
       "Field": "cullingGroup15_1",
-      "Name": "カリンググループ１５",
-      "Description": ""
+      "Name": "Group 1: Culling Group 15",
+      "Description": "Bitmask/flag indicating membership in culling group 15."
     },
     {
       "Field": "cullingGroup16_1",
-      "Name": "カリンググループ１６",
-      "Description": ""
+      "Name": "Group 1: Culling Group 16",
+      "Description": "Bitmask/flag indicating membership in culling group 16."
     },
     {
       "Field": "cullingGroup17_1",
-      "Name": "カリンググループ１７",
-      "Description": ""
+      "Name": "Group 1: Culling Group 17",
+      "Description": "Bitmask/flag indicating membership in culling group 17."
     },
     {
       "Field": "cullingGroup18_1",
-      "Name": "カリンググループ１８",
-      "Description": ""
+      "Name": "Group 1: Culling Group 18",
+      "Description": "Bitmask/flag indicating membership in culling group 18."
     },
     {
       "Field": "cullingGroup19_1",
-      "Name": "カリンググループ１９",
-      "Description": ""
+      "Name": "Group 1: Culling Group 19",
+      "Description": "Bitmask/flag indicating membership in culling group 19."
     },
     {
       "Field": "cullingGroup20_1",
-      "Name": "カリンググループ２０",
-      "Description": ""
+      "Name": "Group 1: Culling Group 21",
+      "Description": "Bitmask/flag indicating membership in culling group 20."
     },
     {
       "Field": "cullingGroup21_1",
-      "Name": "カリンググループ２１",
-      "Description": ""
+      "Name": "Group 1: Culling Group 21",
+      "Description": "Bitmask/flag indicating membership in culling group 21."
     },
     {
       "Field": "cullingGroup22_1",
-      "Name": "カリンググループ２２",
-      "Description": ""
+      "Name": "Group 1: Culling Group 22",
+      "Description": "Bitmask/flag indicating membership in culling group 22."
     },
     {
       "Field": "cullingGroup23_1",
-      "Name": "カリンググループ２３",
-      "Description": ""
+      "Name": "Group 1: Culling Group 23",
+      "Description": "Bitmask/flag indicating membership in culling group 23."
     },
     {
       "Field": "cullingGroup24_1",
-      "Name": "カリンググループ２４",
-      "Description": ""
+      "Name": "Group 1: Culling Group 24",
+      "Description": "Bitmask/flag indicating membership in culling group 24."
     },
     {
       "Field": "cullingGroup25_1",
-      "Name": "カリンググループ２５",
-      "Description": ""
+      "Name": "Group 1: Culling Group 25",
+      "Description": "Bitmask/flag indicating membership in culling group 25."
     },
     {
       "Field": "cullingGroup26_1",
-      "Name": "カリンググループ２６",
-      "Description": ""
+      "Name": "Group 1: Culling Group 26",
+      "Description": "Bitmask/flag indicating membership in culling group 26."
     },
     {
       "Field": "cullingGroup27_1",
-      "Name": "カリンググループ２７",
-      "Description": ""
+      "Name": "Group 1: Culling Group 27",
+      "Description": "Bitmask/flag indicating membership in culling group 27."
     },
     {
       "Field": "cullingGroup28_1",
-      "Name": "カリンググループ２８",
-      "Description": ""
+      "Name": "Group 1: Culling Group 28",
+      "Description": "Bitmask/flag indicating membership in culling group 28."
     },
     {
       "Field": "cullingGroup29_1",
-      "Name": "カリンググループ２９",
-      "Description": ""
+      "Name": "Group 1: Culling Group 29",
+      "Description": "Bitmask/flag indicating membership in culling group 29."
     },
     {
       "Field": "cullingGroup30_1",
-      "Name": "カリンググループ３０",
-      "Description": ""
+      "Name": "Group 1: Culling Group 31",
+      "Description": "Bitmask/flag indicating membership in culling group 30."
     },
     {
       "Field": "cullingGroup31_1",
-      "Name": "カリンググループ３１",
-      "Description": ""
+      "Name": "Group 1: Culling Group 31",
+      "Description": "Bitmask/flag indicating membership in culling group 31."
     },
     {
       "Field": "cullingGroup32_1",
-      "Name": "カリンググループ３２",
-      "Description": ""
+      "Name": "Group 1: Culling Group 32",
+      "Description": "Bitmask/flag indicating membership in culling group 32."
     },
     {
       "Field": "cullingGroup33_1",
-      "Name": "カリンググループ３３",
-      "Description": ""
+      "Name": "Group 1: Culling Group 33",
+      "Description": "Bitmask/flag indicating membership in culling group 33."
     },
     {
       "Field": "cullingGroup34_1",
-      "Name": "カリンググループ３４",
-      "Description": ""
+      "Name": "Group 1: Culling Group 34",
+      "Description": "Bitmask/flag indicating membership in culling group 34."
     },
     {
       "Field": "cullingGroup35_1",
-      "Name": "カリンググループ３５",
-      "Description": ""
+      "Name": "Group 1: Culling Group 35",
+      "Description": "Bitmask/flag indicating membership in culling group 35."
     },
     {
       "Field": "cullingGroup36_1",
-      "Name": "カリンググループ３６",
-      "Description": ""
+      "Name": "Group 1: Culling Group 36",
+      "Description": "Bitmask/flag indicating membership in culling group 36."
     },
     {
       "Field": "cullingGroup37_1",
-      "Name": "カリンググループ３７",
-      "Description": ""
+      "Name": "Group 1: Culling Group 37",
+      "Description": "Bitmask/flag indicating membership in culling group 37."
     },
     {
       "Field": "cullingGroup38_1",
-      "Name": "カリンググループ３８",
-      "Description": ""
+      "Name": "Group 1: Culling Group 38",
+      "Description": "Bitmask/flag indicating membership in culling group 38."
     },
     {
       "Field": "cullingGroup39_1",
-      "Name": "カリンググループ３９",
-      "Description": ""
+      "Name": "Group 1: Culling Group 39",
+      "Description": "Bitmask/flag indicating membership in culling group 39."
     },
     {
       "Field": "cullingGroup40_1",
-      "Name": "カリンググループ４０",
-      "Description": ""
+      "Name": "Group 1: Culling Group 41",
+      "Description": "Bitmask/flag indicating membership in culling group 40."
     },
     {
       "Field": "cullingGroup41_1",
-      "Name": "カリンググループ４１",
-      "Description": ""
+      "Name": "Group 1: Culling Group 41",
+      "Description": "Bitmask/flag indicating membership in culling group 41."
     },
     {
       "Field": "cullingGroup42_1",
-      "Name": "カリンググループ４２",
-      "Description": ""
+      "Name": "Group 1: Culling Group 42",
+      "Description": "Bitmask/flag indicating membership in culling group 42."
     },
     {
       "Field": "cullingGroup43_1",
-      "Name": "カリンググループ４３",
-      "Description": ""
+      "Name": "Group 1: Culling Group 43",
+      "Description": "Bitmask/flag indicating membership in culling group 43."
     },
     {
       "Field": "cullingGroup44_1",
-      "Name": "カリンググループ４４",
-      "Description": ""
+      "Name": "Group 1: Culling Group 44",
+      "Description": "Bitmask/flag indicating membership in culling group 44."
     },
     {
       "Field": "cullingGroup45_1",
-      "Name": "カリンググループ４５",
-      "Description": ""
+      "Name": "Group 1: Culling Group 45",
+      "Description": "Bitmask/flag indicating membership in culling group 45."
     },
     {
       "Field": "cullingGroup46_1",
-      "Name": "カリンググループ４６",
-      "Description": ""
+      "Name": "Group 1: Culling Group 46",
+      "Description": "Bitmask/flag indicating membership in culling group 46."
     },
     {
       "Field": "cullingGroup47_1",
-      "Name": "カリンググループ４７",
-      "Description": ""
+      "Name": "Group 1: Culling Group 47",
+      "Description": "Bitmask/flag indicating membership in culling group 47."
     },
     {
       "Field": "cullingGroup48_1",
-      "Name": "カリンググループ４８",
-      "Description": ""
+      "Name": "Group 1: Culling Group 48",
+      "Description": "Bitmask/flag indicating membership in culling group 48."
     },
     {
       "Field": "cullingGroup49_1",
-      "Name": "カリンググループ４９",
-      "Description": ""
+      "Name": "Group 1: Culling Group 49",
+      "Description": "Bitmask/flag indicating membership in culling group 49."
     },
     {
       "Field": "cullingGroup50_1",
-      "Name": "カリンググループ５０",
-      "Description": ""
+      "Name": "Group 1: Culling Group 51",
+      "Description": "Bitmask/flag indicating membership in culling group 50."
     },
     {
       "Field": "cullingGroup51_1",
-      "Name": "カリンググループ５１",
-      "Description": ""
+      "Name": "Group 1: Culling Group 51",
+      "Description": "Bitmask/flag indicating membership in culling group 51."
     },
     {
       "Field": "cullingGroup52_1",
-      "Name": "カリンググループ５２",
-      "Description": ""
+      "Name": "Group 1: Culling Group 52",
+      "Description": "Bitmask/flag indicating membership in culling group 52."
     },
     {
       "Field": "cullingGroup53_1",
-      "Name": "カリンググループ５３",
-      "Description": ""
+      "Name": "Group 1: Culling Group 53",
+      "Description": "Bitmask/flag indicating membership in culling group 53."
     },
     {
       "Field": "cullingGroup54_1",
-      "Name": "カリンググループ５４",
-      "Description": ""
+      "Name": "Group 1: Culling Group 54",
+      "Description": "Bitmask/flag indicating membership in culling group 54."
     },
     {
       "Field": "cullingGroup55_1",
-      "Name": "カリンググループ５５",
-      "Description": ""
+      "Name": "Group 1: Culling Group 55",
+      "Description": "Bitmask/flag indicating membership in culling group 56."
     },
     {
       "Field": "cullingGroup56_1",
-      "Name": "カリンググループ５６",
-      "Description": ""
+      "Name": "Group 1: Culling Group 56",
+      "Description": "Bitmask/flag indicating membership in culling group 56."
     },
     {
       "Field": "cullingGroup57_1",
-      "Name": "カリンググループ５７",
-      "Description": ""
+      "Name": "Group 1: Culling Group 57",
+      "Description": "Bitmask/flag indicating membership in culling group 57."
     },
     {
       "Field": "cullingGroup58_1",
-      "Name": "カリンググループ５８",
-      "Description": ""
+      "Name": "Group 1: Culling Group 58",
+      "Description": "Bitmask/flag indicating membership in culling group 58."
     },
     {
       "Field": "cullingGroup59_1",
-      "Name": "カリンググループ５９",
-      "Description": ""
+      "Name": "Group 1: Culling Group 59",
+      "Description": "Bitmask/flag indicating membership in culling group 59."
     },
     {
       "Field": "cullingGroup60_1",
-      "Name": "カリンググループ６０",
-      "Description": ""
+      "Name": "Group 1: Culling Group 61",
+      "Description": "Bitmask/flag indicating membership in culling group 60."
     },
     {
       "Field": "cullingGroup61_1",
-      "Name": "カリンググループ６１",
-      "Description": ""
+      "Name": "Group 1: Culling Group 61",
+      "Description": "Bitmask/flag indicating membership in culling group 61."
     },
     {
       "Field": "cullingGroup62_1",
-      "Name": "カリンググループ６２",
-      "Description": ""
+      "Name": "Group 1: Culling Group 62",
+      "Description": "Bitmask/flag indicating membership in culling group 62."
     },
     {
       "Field": "cullingGroup63_1",
-      "Name": "カリンググループ６３",
-      "Description": ""
+      "Name": "Group 1: Culling Group 63",
+      "Description": "Bitmask/flag indicating membership in culling group 63."
     }
   ]
 }

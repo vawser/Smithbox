@@ -21,9 +21,7 @@
  
 - Param Editor
  - Look into making row merges for tabulated params functional and simple
- - Validate the padding in new DS2 defs is empty (if values are present, cross-check with old defs and restore)
  - Finish converting the SDT AlternativeOrders into Field Layouts
  - Finish AC6 meta
- - Translate DS2 meta
  
 

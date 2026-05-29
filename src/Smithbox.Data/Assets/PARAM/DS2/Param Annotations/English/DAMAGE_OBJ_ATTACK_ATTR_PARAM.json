@@ -2,16 +2,16 @@
   "Param": "DAMAGE_OBJ_ATTACK_ATTR_PARAM",
   "Type": "DAMAGE_OBJ_ATTACK_ATTR_PARAM",
   "Name": "DAMAGE_OBJ_ATTACK_ATTR_PARAM",
-  "Description": "",
+  "Description": "Defines object destruction attack attributes and their priority handling behavior.",
   "Fields": [
     {
       "Field": "priority",
-      "Name": "破壊優先度",
-      "Description": ""
+      "Name": "Destruction Priority",
+      "Description": "Priority level used when determining how this attack interacts with destructible objects."
     },
     {
       "Field": "dummy",
-      "Name": "ダミー",
+      "Name": "Padding",
       "Description": ""
     }
   ]

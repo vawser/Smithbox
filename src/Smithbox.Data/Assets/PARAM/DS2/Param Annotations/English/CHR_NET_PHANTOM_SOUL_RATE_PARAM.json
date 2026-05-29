@@ -6,93 +6,93 @@
   "Fields": [
     {
       "Field": "none",
-      "Name": "ホスト",
-      "Description": ""
+      "Name": "Host",
+      "Description": "The soul absorption multiplier for a client of this type."
     },
     {
       "Field": "white",
-      "Name": "白霊",
-      "Description": ""
+      "Name": "White Spirit (White Sign)",
+      "Description": "The soul absorption multiplier for a client of this type."
     },
     {
       "Field": "smallWhite",
-      "Name": "小白霊",
-      "Description": ""
+      "Name": "White Spirit (Small White Sign)",
+      "Description": "The soul absorption multiplier for a client of this type."
     },
     {
       "Field": "gold",
-      "Name": "金霊",
-      "Description": ""
+      "Name": "Gold Phantom (White Sign)",
+      "Description": "The soul absorption multiplier for a client of this type."
     },
     {
       "Field": "smallGold",
-      "Name": "小金霊",
-      "Description": ""
+      "Name": "Gold Phantom (Small White Sign)",
+      "Description": "The soul absorption multiplier for a client of this type."
     },
     {
       "Field": "coopBlue",
-      "Name": "救援青霊",
-      "Description": ""
+      "Name": "Blue Phantom (Coop)",
+      "Description": "The soul absorption multiplier for a client of this type."
     },
     {
       "Field": "versusBlue",
-      "Name": "報復青霊",
-      "Description": ""
+      "Name": "Blue Phantom (PVP)",
+      "Description": "The soul absorption multiplier for a client of this type."
     },
     {
       "Field": "signBlack",
-      "Name": "闇霊（サイン）",
-      "Description": ""
+      "Name": "Dark Spirit (Sign)",
+      "Description": "The soul absorption multiplier for a client of this type."
     },
     {
       "Field": "intrudeBlack",
-      "Name": "闇霊（乱入）",
-      "Description": ""
+      "Name": "Dark Spirit (Invasion)",
+      "Description": "The soul absorption multiplier for a client of this type."
     },
     {
       "Field": "signRed",
-      "Name": "赤霊（サイン）",
-      "Description": ""
+      "Name": "Red Phantom (Sign)",
+      "Description": "The soul absorption multiplier for a client of this type."
     },
     {
       "Field": "intrudeRed",
-      "Name": "赤霊（乱入）",
-      "Description": ""
+      "Name": "Red Phantom (Invasion)",
+      "Description": "The soul absorption multiplier for a client of this type."
     },
     {
       "Field": "bellGuard",
-      "Name": "鐘守灰霊",
-      "Description": ""
+      "Name": "Bell Keeper",
+      "Description": "The soul absorption multiplier for a client of this type."
     },
     {
       "Field": "ratKing",
-      "Name": "ねずみの王灰霊",
-      "Description": ""
+      "Name": "Rat Trespasser",
+      "Description": "The soul absorption multiplier for a client of this type."
     },
     {
       "Field": "dragon",
-      "Name": "竜霊",
-      "Description": ""
+      "Name": "Dragon Remnant",
+      "Description": "The soul absorption multiplier for a client of this type."
     },
     {
       "Field": "mirrorKnight",
-      "Name": "ミラーナイト霊",
-      "Description": ""
+      "Name": "Mirror Phantom",
+      "Description": "The soul absorption multiplier for a client of this type."
     },
     {
       "Field": "abyss",
-      "Name": "深淵霊",
-      "Description": ""
+      "Name": "Pilgrim of Dark",
+      "Description": "The soul absorption multiplier for a client of this type."
     },
     {
       "Field": "duelBlue",
-      "Name": "決闘青霊",
-      "Description": ""
+      "Name": "Blue Phantom (Duel)",
+      "Description": "The soul absorption multiplier for a client of this type."
     },
     {
       "Field": "duelRed",
-      "Name": "決闘赤霊",
-      "Description": ""
+      "Name": "Red Phantom (Duel)",
+      "Description": "The soul absorption multiplier for a client of this type."
     }
   ]
 }

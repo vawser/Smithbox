@@ -14,7 +14,7 @@
         <deadCullingFilterId />
         <deadDisableParts  Enum="CHR_PARTS_CATEGORY_TYPE"/>
         <deadIsNoConstraint  IsBool=""/>
-        <deadIsChrSe />
-        <deadSoulBulletId />
+        <deadIsChrSe IsBool="" />
+        <deadSoulBulletId RefGroup="bulletparam" />
     </Field>
 </PARAMMETA>

@@ -2,47 +2,47 @@
   "Param": "LOCK_ON_PARAM",
   "Type": "LOCK_ON_PARAM",
   "Name": "LOCK_ON_PARAM",
-  "Description": "",
+  "Description": "Defines the targeting range, angle limits, and screen-space constraints used by the lock-on targeting system.",
   "Fields": [
     {
       "Field": "lockOnRangeMax",
-      "Name": "ロックオン最大距離[m]",
-      "Description": ""
+      "Name": "Maximum Lock-On Distance",
+      "Description": "Maximum distance at which a target can be locked onto. In metres."
     },
     {
       "Field": "lockOnRangeAttack",
-      "Name": "ロックオン攻撃有効距離[m]",
-      "Description": ""
+      "Name": "Lock-On Attack Effective Distance",
+      "Description": "Maximum distance at which attacks remain effective while locked onto a target. In metres."
     },
     {
       "Field": "lockOnRange",
-      "Name": "ロックオン距離[m]",
-      "Description": ""
+      "Name": "Lock-On Distance",
+      "Description": "Standard range used for acquiring and maintaining target lock-on. In metres."
     },
     {
       "Field": "lockAreaHeight",
-      "Name": "ロックエリア縦[%]",
-      "Description": ""
+      "Name": "Lock Area Height",
+      "Description": "Vertical percentage of the screen or detection region used for valid lock-on targeting."
     },
     {
       "Field": "lockAreaWidth",
-      "Name": "ロックエリア横[%]",
-      "Description": ""
+      "Name": "Lock Area Width",
+      "Description": "Horizontal percentage of the screen or detection region used for valid lock-on targeting."
     },
     {
       "Field": "lockAngleUD",
-      "Name": "ロック最大上下角度",
-      "Description": ""
+      "Name": "Maximum Vertical Lock Angle",
+      "Description": "Maximum upward and downward angle allowed for maintaining target lock-on."
     },
     {
       "Field": "lockAngleLR",
-      "Name": "ロック最大左右角度",
-      "Description": ""
+      "Name": "Maximum Horizontal Lock Angle",
+      "Description": "Maximum left and right angle allowed for maintaining target lock-on."
     },
     {
       "Field": "lockOutsideRange",
-      "Name": "視界外ロック距離[m]",
-      "Description": ""
+      "Name": "Out-of-View Lock Distance",
+      "Description": "Distance at which targets outside the camera view can still be locked onto. In metres."
     }
   ]
 }

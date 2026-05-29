@@ -2,6 +2,6 @@
 <PARAMMETA XmlVersion="0">
     <Field>
         <priority />
-        <dummy />
+        <dummy Padding="" />
     </Field>
 </PARAMMETA>

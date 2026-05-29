@@ -2,32 +2,32 @@
   "Param": "FE_WEAPON_THRESHOLD_PARAM",
   "Type": "FE_WEAPON_THRESHOLD_PARAM",
   "Name": "FE_WEAPON_THRESHOLD_PARAM",
-  "Description": "",
+  "Description": "Defines rating thresholds used for weapon evaluation grading in the front-end system.",
   "Fields": [
     {
       "Field": "thresholdA",
-      "Name": "A以上評価の閾値",
-      "Description": ""
+      "Name": "A-Rank Threshold",
+      "Description": "Minimum value required to achieve A-rank rating or higher."
     },
     {
       "Field": "thresholdB",
-      "Name": "B以上評価の閾値",
-      "Description": ""
+      "Name": "B-Rank Threshold",
+      "Description": "Minimum value required to achieve B-rank rating or higher."
     },
     {
       "Field": "thresholdC",
-      "Name": "C以上評価の閾値",
-      "Description": ""
+      "Name": "C-Rank Threshold",
+      "Description": "Minimum value required to achieve C-rank rating or higher."
     },
     {
       "Field": "thresholdD",
-      "Name": "D以上評価の閾値",
-      "Description": ""
+      "Name": "D-Rank Threshold",
+      "Description": "Minimum value required to achieve D-rank rating or higher."
     },
     {
       "Field": "thresholdE",
-      "Name": "E以上評価の閾値",
-      "Description": ""
+      "Name": "E-Rank Threshold",
+      "Description": "Minimum value required to achieve E-rank rating or higher."
     }
   ]
 }

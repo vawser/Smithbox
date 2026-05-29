@@ -2,22 +2,22 @@
   "Param": "FE_CONTROLLER_SETTING_PARAM",
   "Type": "FE_CONTROLLER_SETTING_PARAM",
   "Name": "FE_CONTROLLER_SETTING_PARAM",
-  "Description": "",
+  "Description": "Defines controller input sensitivity and UI cursor movement behavior for the front-end interface.",
   "Fields": [
     {
       "Field": "StartReactionLine",
-      "Name": "入力最低感度",
-      "Description": ""
+      "Name": "Minimum Input Sensitivity Threshold",
+      "Description": "Defines the lowest input sensitivity level required before input begins to register."
     },
     {
       "Field": "StartMoveSpeedRatio",
-      "Name": "最低移動倍率",
-      "Description": ""
+      "Name": "Minimum Movement Speed Multiplier",
+      "Description": "Sets the base multiplier applied to movement speed at minimum input levels."
     },
     {
       "Field": "MaxSpeed",
-      "Name": "設定カーソル移動速度",
-      "Description": ""
+      "Name": "Cursor Maximum Speed",
+      "Description": "Defines the maximum speed at which the UI cursor can move."
     }
   ]
 }

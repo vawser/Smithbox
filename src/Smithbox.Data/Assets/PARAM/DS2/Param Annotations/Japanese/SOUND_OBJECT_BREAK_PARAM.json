@@ -1,0 +1,18 @@
+{
+  "Param": "SOUND_OBJECT_BREAK_PARAM",
+  "Type": "SOUND_OBJECT_BREAK_PARAM",
+  "Name": "SOUND_OBJECT_BREAK_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "type",
+      "Name": "種類",
+      "Description": ""
+    },
+    {
+      "Field": "aReserved",
+      "Name": "予約領域",
+      "Description": ""
+    }
+  ]
+}

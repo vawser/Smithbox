@@ -2,32 +2,32 @@
   "Param": "SLIDE_FLOOR_PARAM",
   "Type": "SLIDE_FLOOR_PARAM",
   "Name": "SLIDE_FLOOR_PARAM",
-  "Description": "",
+  "Description": "Defines movement physics for slippery floor surfaces, including acceleration, deceleration, and speed thresholds.",
   "Fields": [
     {
       "Field": "maxSpeed",
-      "Name": "最大速度[m/s]",
-      "Description": ""
+      "Name": "Maximum Speed (m/s)",
+      "Description": "Maximum movement speed while on this surface."
     },
     {
       "Field": "startSpeed",
-      "Name": "初速度[m/s]",
-      "Description": ""
+      "Name": "Initial Speed (m/s)",
+      "Description": "Starting speed when entering or beginning movement on the surface."
     },
     {
       "Field": "accel",
-      "Name": "加速度[m/s^2]",
-      "Description": ""
+      "Name": "Acceleration (m/s²)",
+      "Description": "Rate of speed increase while moving on the surface."
     },
     {
       "Field": "decel",
-      "Name": "減速度[m/s^2]",
-      "Description": ""
+      "Name": "Deceleration (m/s²)",
+      "Description": "Rate at which speed decreases when not accelerating on the surface."
     },
     {
       "Field": "slideSpeed",
-      "Name": "すべる判定速度[m/s]",
-      "Description": ""
+      "Name": "Slip Threshold Speed (m/s)",
+      "Description": "Minimum speed required for the character to be considered sliding."
     }
   ]
 }

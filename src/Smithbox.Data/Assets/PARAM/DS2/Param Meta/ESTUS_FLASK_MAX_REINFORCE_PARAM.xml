@@ -3,6 +3,6 @@
     <Field>
         <minLv />
         <maxLv />
-        <padding />
+        <padding Padding="" />
     </Field>
 </PARAMMETA>

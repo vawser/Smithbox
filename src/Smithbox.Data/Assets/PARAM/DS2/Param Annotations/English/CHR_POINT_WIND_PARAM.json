@@ -2,42 +2,42 @@
   "Param": "CHR_POINT_WIND_PARAM",
   "Type": "CHR_POINT_WIND_PARAM",
   "Name": "CHR_POINT_WIND_PARAM",
-  "Description": "",
+  "Description": "Defines a localized point-based wind effect, controlling strength, range, and temporal behavior for environmental or character-influenced wind simulation.",
   "Fields": [
     {
       "Field": "priority",
-      "Name": "優先度",
-      "Description": ""
+      "Name": "Priority",
+      "Description": "Determines the evaluation priority when multiple wind sources overlap."
     },
     {
       "Field": "radius",
-      "Name": "半径[m]",
-      "Description": ""
+      "Name": "Effect Radius",
+      "Description": "Radius of influence for the wind effect in meters. In metres."
     },
     {
       "Field": "minSpeed",
-      "Name": "最小風力[m/s]",
-      "Description": ""
+      "Name": "Minimum Wind Speed",
+      "Description": "Lowest wind strength applied within the effect area. In metres per second."
     },
     {
       "Field": "maxSpeed",
-      "Name": "最大風力[m/s]",
-      "Description": ""
+      "Name": "Maximum Wind Speed",
+      "Description": "Highest wind strength applied within the effect area. In metres per second."
     },
     {
       "Field": "frequency",
-      "Name": "周波数",
-      "Description": ""
+      "Name": "Wind Oscillation Frequency",
+      "Description": "Controls how rapidly the wind strength fluctuates over time."
     },
     {
       "Field": "gainStartDistance",
-      "Name": "減衰開始処理",
-      "Description": ""
+      "Name": "Attenuation Start Distance",
+      "Description": "Distance at which wind intensity begins to fade out from its full strength."
     },
     {
       "Field": "fadeInTime",
-      "Name": "フェードイン時間[sec]",
-      "Description": ""
+      "Name": "Fade-In Time",
+      "Description": "Time it takes for the wind effect to reach full strength. In seconds."
     }
   ]
 }

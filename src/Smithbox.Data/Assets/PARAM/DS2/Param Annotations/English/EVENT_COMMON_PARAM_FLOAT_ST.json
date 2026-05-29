@@ -2,12 +2,12 @@
   "Param": "EVENT_COMMON_PARAM_FLOAT_ST",
   "Type": "EVENT_COMMON_PARAM_FLOAT_ST",
   "Name": "EVENT_COMMON_PARAM_FLOAT_ST",
-  "Description": "",
+  "Description": "Stores a shared floating-point parameter value used by event scripts or common event systems.",
   "Fields": [
     {
       "Field": "value",
-      "Name": "パラメータ値",
-      "Description": ""
+      "Name": "Parameter Value",
+      "Description": "Floating-point value referenced by events, scripts, or common gameplay systems."
     }
   ]
 }

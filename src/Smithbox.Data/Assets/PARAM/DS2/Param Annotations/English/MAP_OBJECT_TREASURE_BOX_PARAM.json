@@ -2,42 +2,42 @@
   "Param": "MAP_OBJECT_TREASURE_BOX_PARAM",
   "Type": "MAP_OBJECT_TREASURE_BOX_PARAM",
   "Name": "MAP_OBJECT_TREASURE_BOX_PARAM",
-  "Description": "",
+  "Description": "Defines treasure chest behavior, including trap activation rules, trap damage effects, and enemy generation settings.",
   "Fields": [
     {
       "Field": "forceTrapEnable",
-      "Name": "《トラップ強制発動》",
-      "Description": ""
+      "Name": "Force Trap Activation",
+      "Description": "Forces the chest trap to activate regardless of normal conditions."
     },
     {
       "Field": "aReserved1",
-      "Name": "予約",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "trapGasDamageId",
-      "Name": "《トラップ ガス：ダメージ》",
-      "Description": ""
+      "Name": "Gas Trap Damage ID",
+      "Description": "Damage parameter ID used for poison or toxic gas traps."
     },
     {
       "Field": "trapHealDamageId",
-      "Name": "《トラップ ガス：回復》",
-      "Description": ""
+      "Name": "Healing Gas Trap Damage ID",
+      "Description": "Damage parameter ID used for healing or restorative gas effects triggered by traps."
     },
     {
       "Field": "trapBurstDamageId",
-      "Name": "《トラップ 爆発》",
-      "Description": ""
+      "Name": "Explosion Trap Damage ID",
+      "Description": "Damage parameter ID used for explosive chest traps."
     },
     {
       "Field": "trapArrowDamageId",
-      "Name": "《トラップ 連続矢》",
-      "Description": ""
+      "Name": "Arrow Barrage Trap Damage ID",
+      "Description": "Damage parameter ID used for continuous arrow-firing traps."
     },
     {
       "Field": "trapEnemy",
-      "Name": "《トラップ ジェネレート：エネミー》",
-      "Description": ""
+      "Name": "Trap Enemy Spawn",
+      "Description": "Defines whether interacting with the chest spawns an enemy as a trap."
     }
   ]
 }

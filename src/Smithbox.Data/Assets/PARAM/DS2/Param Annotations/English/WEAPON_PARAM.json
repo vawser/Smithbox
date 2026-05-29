@@ -2,277 +2,277 @@
   "Param": "WEAPON_PARAM",
   "Type": "WEAPON_PARAM",
   "Name": "WEAPON_PARAM",
-  "Description": "",
+  "Description": "Defines core weapon properties including requirements, scaling modifiers, damage multipliers, animation categories, stamina costs, and interaction behavior such as parry, grab, and hit detection.",
   "Fields": [
     {
       "Field": "weaponId",
-      "Name": "武器ID",
-      "Description": ""
+      "Name": "Weapon ID",
+      "Description": "Unique identifier for the weapon."
     },
     {
       "Field": "weaponModelId",
-      "Name": "武器モデルID",
-      "Description": ""
+      "Name": "Weapon Model ID",
+      "Description": "References the 3D model used for the weapon."
     },
     {
       "Field": "weaponReinforceId",
-      "Name": "武器成長設定",
-      "Description": ""
+      "Name": "Upgrade Data ID",
+      "Description": "Links to reinforcement/upgrade scaling configuration."
     },
     {
       "Field": "weaponActionCategoryId",
-      "Name": "武器アクションカテゴリ設定",
-      "Description": ""
+      "Name": "Weapon Action Category ID",
+      "Description": "Defines the set of attack animations used by this weapon."
     },
     {
       "Field": "weaponTypeId",
-      "Name": "武器タイプ",
-      "Description": ""
+      "Name": "Weapon Type",
+      "Description": "Defines the weapon class/type (e.g., sword, spear, etc.)."
     },
     {
       "Field": "isAtkAutoHoming",
-      "Name": "接近オートホーミング",
-      "Description": ""
+      "Name": "Is Auto Homing Attack",
+      "Description": "Enables automatic target tracking during attacks."
     },
     {
       "Field": "weaponCategory",
-      "Name": "武器系統",
-      "Description": ""
+      "Name": "Weapon Category",
+      "Description": "Broad classification of weapon family."
     },
     {
       "Field": "clothCollidableId",
-      "Name": "クロスコリジョンID",
-      "Description": ""
+      "Name": "Cloth Collision ID",
+      "Description": "References cloth simulation collision data."
     },
     {
       "Field": "requiredStrength",
-      "Name": "必要ステータス 筋力",
-      "Description": ""
+      "Name": "Required Strength",
+      "Description": "Minimum strength required to use the weapon."
     },
     {
       "Field": "requiredDexterity",
-      "Name": "必要ステータス 技量",
-      "Description": ""
+      "Name": "Required Dexterity",
+      "Description": "Minimum dexterity required to use the weapon."
     },
     {
       "Field": "requiredIntelligence",
-      "Name": "必要ステータス 理力",
-      "Description": ""
+      "Name": "Required Intelligence",
+      "Description": "Minimum intelligence required to use the weapon."
     },
     {
       "Field": "requiredFaith",
-      "Name": "必要ステータス 信仰",
-      "Description": ""
+      "Name": "Required Faith",
+      "Description": "Minimum faith required to use the weapon."
     },
     {
       "Field": "weight",
-      "Name": "パラメータ\u3000重量 [kg]",
-      "Description": ""
+      "Name": "Weight (kg)",
+      "Description": "Physical weight of the weapon affecting equip load."
     },
     {
       "Field": "adjustBalanceWeight",
-      "Name": "パラメータ 分散重量 [kg]",
-      "Description": ""
+      "Name": "Adjusted Weight",
+      "Description": "Weight adjustment used for balancing calculations."
     },
     {
       "Field": "durability",
-      "Name": "パラメータ\u3000耐久値",
-      "Description": ""
+      "Name": "Durability",
+      "Description": "Weapon durability before breaking."
     },
     {
       "Field": "repairCost",
-      "Name": "パラメータ 修理コスト [soul]",
-      "Description": ""
+      "Name": "Repair Cost (Souls)",
+      "Description": "Cost required to repair the weapon."
     },
     {
       "Field": "materialId",
-      "Name": "パラメータ\u3000材質",
-      "Description": ""
+      "Name": "Material ID",
+      "Description": "Defines the weapon's material type."
     },
     {
       "Field": "meleeAttackBaseCost",
-      "Name": "攻撃消費スタミナ 近接攻撃ベース値",
-      "Description": ""
+      "Name": "Melee Stamina Cost (Base)",
+      "Description": "Base stamina consumption for melee attacks."
     },
     {
       "Field": "rangedAttackBaseCost",
-      "Name": "攻撃消費スタミナ 射撃攻撃ベース値",
-      "Description": ""
+      "Name": "Ranged Stamina Cost (Base)",
+      "Description": "Base stamina consumption for ranged attacks."
     },
     {
       "Field": "costCategoryId",
-      "Name": "攻撃消費スタミナ 倍率カテゴリ",
-      "Description": ""
+      "Name": "Stamina Cost Category ID",
+      "Description": "Defines scaling category for stamina usage."
     },
     {
       "Field": "lockonAvailableDistanceScale",
-      "Name": "ロックオン 攻撃有効距離 補正倍率 [倍]",
-      "Description": ""
+      "Name": "Lock-On Distance Scale",
+      "Description": "Adjusts effective attack range when locked onto a target."
     },
     {
       "Field": "grabMotionRate",
-      "Name": "投げつかみ 再生倍率 [倍]",
-      "Description": ""
+      "Name": "Grab Motion Rate",
+      "Description": "Animation speed multiplier for grab attacks."
     },
     {
       "Field": "grabRotationSpeed",
-      "Name": "投げつかみ 旋回加速度 [deg/sec]",
-      "Description": ""
+      "Name": "Grab Rotation Speed [deg/s]",
+      "Description": "Angular acceleration during grab attacks."
     },
     {
       "Field": "grabRotationMaxSpeed",
-      "Name": "投げつかみ 最大旋回速度 [deg/sec]",
-      "Description": ""
+      "Name": "Max Grab Rotation Speed [deg/s]",
+      "Description": "Maximum rotational speed during grab attacks."
     },
     {
       "Field": "backStabAttackDamageSmallId",
-      "Name": "投げ掴み バックスタブ投げ掴み[小]ダメージID",
-      "Description": ""
+      "Name": "Backstab Damage ID (Small)",
+      "Description": "Damage configuration for small-scale backstab grabs."
     },
     {
       "Field": "backStabAttackDamageMiddleId",
-      "Name": "投げ掴み バックスタブ投げ掴み[中]ダメージID",
-      "Description": ""
+      "Name": "Backstab Damage ID (Medium)",
+      "Description": "Damage configuration for medium-scale backstab grabs."
     },
     {
       "Field": "backStabAttackDamageLargeId",
-      "Name": "投げ掴み バックスタブ投げ掴み[大]ダメージID",
-      "Description": ""
+      "Name": "Backstab Damage ID (Large)",
+      "Description": "Damage configuration for large-scale backstab grabs."
     },
     {
       "Field": "gdBreakStabAttackDamageSmallId",
-      "Name": "投げ掴み ガードブレイクスタブ投げ掴み[小]ダメージID",
-      "Description": ""
+      "Name": "Guard Break Stab Damage ID (Small)",
+      "Description": "Damage for small guard-break grab attacks."
     },
     {
       "Field": "gdBreakStabAttackDamageMiddleId",
-      "Name": "投げ掴み ガードブレイクスタブ投げ掴み[中]ダメージID",
-      "Description": ""
+      "Name": "Guard Break Stab Damage ID (Medium)",
+      "Description": "Damage for medium guard-break grab attacks."
     },
     {
       "Field": "gdBreakStabAttackDamageLargeId",
-      "Name": "投げ掴み ガードブレイクスタブ投げ掴み[大]ダメージID",
-      "Description": ""
+      "Name": "Guard Break Stab Damage ID (Large)",
+      "Description": "Damage for large guard-break grab attacks."
     },
     {
       "Field": "parryStabAttackDamageSmallId",
-      "Name": "投げ掴み パリィブレイクスタブ投げ掴み[小]ダメージID",
-      "Description": ""
+      "Name": "Parry Stab Damage ID (Small)",
+      "Description": "Damage for small parry counter grabs."
     },
     {
       "Field": "parryStabAttackDamageMiddleId",
-      "Name": "投げ掴み パリィブレイクスタブ投げ掴み[中]ダメージID",
-      "Description": ""
+      "Name": "Parry Stab Damage ID (Medium)",
+      "Description": "Damage for medium parry counter grabs."
     },
     {
       "Field": "parryStabAttackDamageLargeId",
-      "Name": "投げ掴み パリィブレイクスタブ投げ掴み[大]ダメージID",
-      "Description": ""
+      "Name": "Parry Stab Damage ID (Large)",
+      "Description": "Damage for large parry counter grabs."
     },
     {
       "Field": "parryEnableRate",
-      "Name": "パリィ発生期間 有効割合",
-      "Description": ""
+      "Name": "Parry Window Rate",
+      "Description": "Active duration ratio during which parry is effective."
     },
     {
       "Field": "brokenSfxId",
-      "Name": "武器破損 SFXID",
-      "Description": ""
+      "Name": "Broken Weapon SFX ID",
+      "Description": "Sound effect played when weapon breaks."
     },
     {
       "Field": "brokenSoundType",
-      "Name": "武器破損 サウンドタイプ",
-      "Description": ""
+      "Name": "Broken Weapon Sound Type",
+      "Description": "Category of sound played when weapon breaks."
     },
     {
       "Field": "damageScale",
-      "Name": "ダメージ 倍率",
-      "Description": ""
+      "Name": "Damage Scale",
+      "Description": "Multiplier applied to all weapon damage."
     },
     {
       "Field": "staminaDamageScale",
-      "Name": "スタミナ奪取量 倍率",
-      "Description": ""
+      "Name": "Stamina Damage Scale",
+      "Description": "Multiplier for stamina depletion inflicted."
     },
     {
       "Field": "durabilityDamageScale",
-      "Name": "耐久削り値 倍率",
-      "Description": ""
+      "Name": "Durability Damage Scale",
+      "Description": "Multiplier for durability loss per hit."
     },
     {
       "Field": "ignorePoiseRateScale",
-      "Name": "強靭度無効化割合 倍率",
-      "Description": ""
+      "Name": "Poise Ignore Scale",
+      "Description": "Multiplier affecting ability to bypass enemy poise."
     },
     {
       "Field": "ignoreDamageCutRateScale",
-      "Name": "盾カット率無効化割合 倍率",
-      "Description": ""
+      "Name": "Damage Cut Ignore Scale",
+      "Description": "Multiplier affecting shield/defense bypass."
     },
     {
       "Field": "stunDamageScale",
-      "Name": "気絶値 倍率",
-      "Description": ""
+      "Name": "Stun Damage Scale",
+      "Description": "Multiplier for stun buildup."
     },
     {
       "Field": "damageHitRadiusScale",
-      "Name": "HIT 半径 倍率",
-      "Description": ""
+      "Name": "Hit Radius Scale",
+      "Description": "Adjusts hit detection radius."
     },
     {
       "Field": "damageHitLengthScale",
-      "Name": "HIT 長さ 倍率",
-      "Description": ""
+      "Name": "Hit Length Scale",
+      "Description": "Adjusts hit detection length."
     },
     {
       "Field": "recoilHitRaduisScale",
-      "Name": "弾きHIT 半径 倍率",
-      "Description": ""
+      "Name": "Recoil Hit Radius Scale",
+      "Description": "Hit radius for recoil interactions."
     },
     {
       "Field": "recoilHitLengthScale",
-      "Name": "弾きHIT 長さ 倍率",
-      "Description": ""
+      "Name": "Recoil Hit Length Scale",
+      "Description": "Hit length for recoil interactions."
     },
     {
       "Field": "menuAttackCategory1",
-      "Name": "メニュー用 攻撃属性1",
-      "Description": ""
+      "Name": "Menu Attack Category 1",
+      "Description": "Primary attack attribute shown in UI."
     },
     {
       "Field": "menuAttackCategory2",
-      "Name": "メニュー用 攻撃属性2",
-      "Description": ""
+      "Name": "Menu Attack Category 2",
+      "Description": "Secondary attack attribute shown in UI."
     },
     {
       "Field": "menuPoiseDamage",
-      "Name": "メニュー用 強靭削り値",
-      "Description": ""
+      "Name": "Menu Poise Damage",
+      "Description": "Displayed poise damage value in UI."
     },
     {
       "Field": "menuCounterScale",
-      "Name": "メニュー用 カウンター補正値",
-      "Description": ""
+      "Name": "Menu Counter Scaling",
+      "Description": "Displayed counter-attack scaling value."
     },
     {
       "Field": "menuSpellChantSpeed",
-      "Name": "メニュー用 スペル詠唱速度",
-      "Description": ""
+      "Name": "Menu Spell Cast Speed",
+      "Description": "Displayed spell casting speed modifier."
     },
     {
       "Field": "poiseDamageScalePlayer",
-      "Name": "強靭削り値補正倍率（対プレイヤー）",
-      "Description": ""
+      "Name": "Poise Damage Scale (Player)",
+      "Description": "Adjusts poise damage against players."
     },
     {
       "Field": "poiseDamageScaleEnemy",
-      "Name": "強靭削り値補正倍率（対エネミー）",
-      "Description": ""
+      "Name": "Poise Damage Scale (Enemy)",
+      "Description": "Adjusts poise damage against enemies."
     },
     {
       "Field": "uninterruptibleRate",
-      "Name": "Uninterruptible poise damage rate",
-      "Description": ""
+      "Name": "Uninterruptible Rate",
+      "Description": "Determines how often attacks cannot be interrupted by poise damage."
     }
   ]
 }

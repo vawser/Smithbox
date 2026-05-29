@@ -6,93 +6,93 @@
   "Fields": [
     {
       "Field": "oneClientHpPercent",
-      "Name": "クライアント1名時 エネミー最大HP補正",
-      "Description": ""
+      "Name": "Enemy Adjustment: 1 Client - Maximum HP %",
+      "Description": "The maximum HP applied when 1 client is present."
     },
     {
       "Field": "oneClientHpDamagePercent",
-      "Name": "クライアント1名時 エネミーHPダメージ補正",
-      "Description": ""
+      "Name": "Enemy Adjustment: 1 Client - HP Damage %",
+      "Description": "The HP damage correction applied when 1 client is present."
     },
     {
       "Field": "oneClientAilmentDamagePercent",
-      "Name": "クライアント1名時 エネミー耐性ダメージ補正",
-      "Description": ""
+      "Name": "Enemy Adjustment: 1 Client - Status Damage %",
+      "Description": "The status damage correction applied when 1 client is present."
     },
     {
       "Field": "oneClientStaminaDamagePercent",
-      "Name": "クライアント1名時 エネミー被スタミナ奪取量補正",
-      "Description": ""
+      "Name": "Enemy Adjustment: 1 Client - Stamina Damage %",
+      "Description": "The stamina damage correction applied when 1 client is present."
     },
     {
       "Field": "oneClientPoiseDamagePercent",
-      "Name": "クライアント1名時 エネミー被強靭削り値補正",
-      "Description": ""
+      "Name": "Enemy Adjustment: 1 Client - Poise Damage %",
+      "Description": "The poise damage correction applied when 1 client is present."
     },
     {
       "Field": "oneClientStunDamagePercent",
-      "Name": "クライアント1名時 エネミー被気絶値補正",
-      "Description": ""
+      "Name": "Enemy Adjustment: 1 Client - Poise Stun Damage %",
+      "Description": "The poise stun damage correction applied when 1 client is present."
     },
     {
       "Field": "twoClientsHpPercent",
-      "Name": "クライアント2名時 エネミー最大HP補正",
-      "Description": ""
+      "Name": "Enemy Adjustment: 2 Clients - Maximum HP %",
+      "Description": "The maximum HP applied when 2 clients are present."
     },
     {
       "Field": "twoClientsHpDamagePercent",
-      "Name": "クライアント2名時 エネミーHPダメージ補正",
-      "Description": ""
+      "Name": "Enemy Adjustment: 2 Clients - HP Damage %",
+      "Description": "The HP damage correction applied when 2 clients are present."
     },
     {
       "Field": "twoClientsAilmentDamagePercent",
-      "Name": "クライアント2名時 エネミー耐性ダメージ補正",
-      "Description": ""
+      "Name": "Enemy Adjustment: 2 Clients - Status Damage %",
+      "Description": "The status damage correction applied when 2 clients are present."
     },
     {
       "Field": "twoClientsStaminaDamagePercent",
-      "Name": "クライアント2名時 エネミー被スタミナ奪取量補正",
-      "Description": ""
+      "Name": "Enemy Adjustment: 2 Clients - Stamina Damage %",
+      "Description": "The stamina damage correction applied when 2 clients are present."
     },
     {
       "Field": "twoClientsPoiseDamagePercent",
-      "Name": "クライアント2名時 エネミー被強靭削り値補正",
-      "Description": ""
+      "Name": "Enemy Adjustment: 2 Clients - Poise Damage %",
+      "Description": "The poise damage correction applied when 2 clients are present."
     },
     {
       "Field": "twoClientsStunDamagePercent",
-      "Name": "クライアント2名時 エネミー被気絶値補正",
-      "Description": ""
+      "Name": "Enemy Adjustment: 2 Clients - Poise Stun Damage %",
+      "Description": "The poise stun damage correction applied when 2 clients are present."
     },
     {
       "Field": "threeClientsHpPercent",
-      "Name": "クライアント3名時 エネミー最大HP補正",
-      "Description": ""
+      "Name": "Enemy Adjustment: 3 Clients - Maximum HP %",
+      "Description": "The maximum HP applied when 3 clients are present."
     },
     {
       "Field": "threeClientsHpDamagePercent",
-      "Name": "クライアント3名時 エネミーHPダメージ補正",
-      "Description": ""
+      "Name": "Enemy Adjustment: 3 Clients - HP Damage %",
+      "Description": "The HP damage correction applied when 3 clients are present."
     },
     {
       "Field": "threeClientsAilmentDamagePercent",
-      "Name": "クライアント3名時 エネミー耐性ダメージ補正",
-      "Description": ""
+      "Name": "Enemy Adjustment: 3 Clients - Status Damage %",
+      "Description": "The status damage correction applied when 3 clients are present."
     },
     {
       "Field": "threeClientsStaminaDamagePercent",
-      "Name": "クライアント3名時 エネミー被スタミナ奪取量補正",
-      "Description": ""
+      "Name": "Enemy Adjustment: 3 Clients - Stamina Damage %",
+      "Description": "The stamina damage correction applied when 3 clients are present."
     },
     {
       "Field": "threeClientsPoiseDamagePercent",
-      "Name": "クライアント3名時 エネミー被強靭削り値補正",
-      "Description": ""
+      "Name": "Enemy Adjustment: 3 Clients - Poise Damage %",
+      "Description": "The poise damage correction applied when 3 clients are present."
     },
     {
       "Field": "threeClientsStunDamagePercent",
-      "Name": "クライアント3名時 エネミー被気絶値補正",
-      "Description": ""
+      "Name": "Enemy Adjustment: 3 Clients - Poise Stun Damage %",
+      "Description": "The poise stun damage correction applied when 3 clients are present."
     }
   ]
 }

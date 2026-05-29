@@ -1,0 +1,203 @@
+{
+  "Param": "BOSS_PARTS_MODEL_PARAM",
+  "Type": "BOSS_PARTS_MODEL_PARAM",
+  "Name": "BOSS_PARTS_MODEL_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "baseCulling",
+      "Name": "通常カリンググループ",
+      "Description": ""
+    },
+    {
+      "Field": "breakCulling",
+      "Name": "壊れ時カリンググループ",
+      "Description": ""
+    },
+    {
+      "Field": "disableRagdollParts",
+      "Name": "壊れ時無効ラグドール部位",
+      "Description": ""
+    },
+    {
+      "Field": "disableHitParts1",
+      "Name": "壊れ時無効ヒット部位１",
+      "Description": ""
+    },
+    {
+      "Field": "disableHitParts2",
+      "Name": "壊れ時無効ヒット部位２",
+      "Description": ""
+    },
+    {
+      "Field": "disableHitParts3",
+      "Name": "壊れ時無効ヒット部位３",
+      "Description": ""
+    },
+    {
+      "Field": "disableHitParts4",
+      "Name": "壊れ時無効ヒット部位４",
+      "Description": ""
+    },
+    {
+      "Field": "disableResidentSfxNo",
+      "Name": "壊れ時無効にする常駐SFXグループ番号",
+      "Description": ""
+    },
+    {
+      "Field": "enableWeapon1",
+      "Name": "装備１：有効",
+      "Description": ""
+    },
+    {
+      "Field": "enableWeapon2",
+      "Name": "装備２：有効",
+      "Description": ""
+    },
+    {
+      "Field": "enableWeapon3",
+      "Name": "装備３：有効",
+      "Description": ""
+    },
+    {
+      "Field": "enableWeapon4",
+      "Name": "装備４：有効",
+      "Description": ""
+    },
+    {
+      "Field": "enableWeapon5",
+      "Name": "装備５：有効",
+      "Description": ""
+    },
+    {
+      "Field": "enableWeapon6",
+      "Name": "装備６：有効",
+      "Description": ""
+    },
+    {
+      "Field": "disableDamageDpId1",
+      "Name": "無効ダミポリID（ダメージ）",
+      "Description": ""
+    },
+    {
+      "Field": "disableDamageDpId2",
+      "Name": "無効ダミポリID（ダメージ）",
+      "Description": ""
+    },
+    {
+      "Field": "disableDamageDpId3",
+      "Name": "無効ダミポリID（ダメージ）",
+      "Description": ""
+    },
+    {
+      "Field": "disableDamageDpId4",
+      "Name": "無効ダミポリID（ダメージ）",
+      "Description": ""
+    },
+    {
+      "Field": "disableDamageDpId5",
+      "Name": "無効ダミポリID（ダメージ）",
+      "Description": ""
+    },
+    {
+      "Field": "disableDamageDpId6",
+      "Name": "無効ダミポリID（ダメージ）",
+      "Description": ""
+    },
+    {
+      "Field": "disableDamageDpId7",
+      "Name": "無効ダミポリID（ダメージ）",
+      "Description": ""
+    },
+    {
+      "Field": "disableDamageDpId8",
+      "Name": "無効ダミポリID（ダメージ）",
+      "Description": ""
+    },
+    {
+      "Field": "disableSfxDpId1",
+      "Name": "無効ダミポリID（SFX）",
+      "Description": ""
+    },
+    {
+      "Field": "disableSfxDpId2",
+      "Name": "無効ダミポリID（SFX）",
+      "Description": ""
+    },
+    {
+      "Field": "disableSfxDpId3",
+      "Name": "無効ダミポリID（SFX）",
+      "Description": ""
+    },
+    {
+      "Field": "disableSfxDpId4",
+      "Name": "無効ダミポリID（SFX）",
+      "Description": ""
+    },
+    {
+      "Field": "disableSfxDpId5",
+      "Name": "無効ダミポリID（SFX）",
+      "Description": ""
+    },
+    {
+      "Field": "disableSfxDpId6",
+      "Name": "無効ダミポリID（SFX）",
+      "Description": ""
+    },
+    {
+      "Field": "disableSfxDpId7",
+      "Name": "無効ダミポリID（SFX）",
+      "Description": ""
+    },
+    {
+      "Field": "disableSfxDpId8",
+      "Name": "無効ダミポリID（SFX）",
+      "Description": ""
+    },
+    {
+      "Field": "disableSoundDpId1",
+      "Name": "無効ダミポリID（サウンド）",
+      "Description": ""
+    },
+    {
+      "Field": "disableSoundDpId2",
+      "Name": "無効ダミポリID（サウンド）",
+      "Description": ""
+    },
+    {
+      "Field": "disableSoundDpId3",
+      "Name": "無効ダミポリID（サウンド）",
+      "Description": ""
+    },
+    {
+      "Field": "disableSoundDpId4",
+      "Name": "無効ダミポリID（サウンド）",
+      "Description": ""
+    },
+    {
+      "Field": "disableSoundDpId5",
+      "Name": "無効ダミポリID（サウンド）",
+      "Description": ""
+    },
+    {
+      "Field": "disableSoundDpId6",
+      "Name": "無効ダミポリID（サウンド）",
+      "Description": ""
+    },
+    {
+      "Field": "disableSoundDpId7",
+      "Name": "無効ダミポリID（サウンド）",
+      "Description": ""
+    },
+    {
+      "Field": "disableSoundDpId8",
+      "Name": "無効ダミポリID（サウンド）",
+      "Description": ""
+    },
+    {
+      "Field": "dummy",
+      "Name": "ダミー",
+      "Description": ""
+    }
+  ]
+}

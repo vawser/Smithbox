@@ -2,77 +2,77 @@
   "Param": "MAP_OBJECT_PARAM",
   "Type": "MAP_OBJECT_PARAM",
   "Name": "MAP_OBJECT_PARAM",
-  "Description": "",
+  "Description": "Defines core behavioral, animation, material, movement, navigation, and interaction settings for general map objects.",
   "Fields": [
     {
       "Field": "animSpeedBaseRate",
-      "Name": "《アニメ速度ベース》",
-      "Description": ""
+      "Name": "Base Animation Speed",
+      "Description": "Default playback speed multiplier for object animations."
     },
     {
       "Field": "animSpeedOverwrteRate",
-      "Name": "《アニメ速度可変》",
-      "Description": ""
+      "Name": "Animation Speed Override Rate",
+      "Description": "Multiplier that overrides or modifies the base animation speed."
     },
     {
       "Field": "animSpeedSharplyRate",
-      "Name": "《急開放アクション アニメ再生速度倍率》",
-      "Description": ""
+      "Name": "Rapid Action Animation Speed Multiplier",
+      "Description": "Speed multiplier applied during sudden or fast-opening actions."
     },
     {
       "Field": "material",
-      "Name": "《材質》",
-      "Description": ""
+      "Name": "Material Type",
+      "Description": "Defines the physical and visual material properties of the object."
     },
     {
       "Field": "moveDumyPolyId",
-      "Name": "《位置修正 ダミポリID》",
-      "Description": ""
+      "Name": "Movement Correction Dummy Poly ID",
+      "Description": "Dummy polygon used to adjust or correct object positioning during movement."
     },
     {
       "Field": "moveType",
-      "Name": "《移動設定》",
-      "Description": ""
+      "Name": "Movement Type",
+      "Description": "Defines how the object moves or behaves in motion."
     },
     {
       "Field": "weaponStorage",
-      "Name": "《武器収納設定》",
-      "Description": ""
+      "Name": "Weapon Storage Setting",
+      "Description": "Defines whether or how weapons can be stored or attached to the object."
     },
     {
       "Field": "rotationType",
-      "Name": "《旋回設定》",
-      "Description": ""
+      "Name": "Rotation Type",
+      "Description": "Defines how the object rotates or pivots in the world."
     },
     {
       "Field": "timeActId",
-      "Name": "《タイムアクトID》",
-      "Description": ""
+      "Name": "Time Act ID",
+      "Description": "Identifier for time-based scripted behavior or animation sequences."
     },
     {
       "Field": "breakLogicSoundVolume",
-      "Name": "《破壊時音量》",
-      "Description": ""
+      "Name": "Break Sound Volume",
+      "Description": "Volume level of sound effects triggered when the object breaks."
     },
     {
       "Field": "naviCtrlType",
-      "Name": "《ナビ制御タイプ》",
-      "Description": ""
+      "Name": "Navigation Control Type",
+      "Description": "Defines how AI navigation interacts with or perceives this object."
     },
     {
       "Field": "sharplyAnimEnable",
-      "Name": "《急開放アクション許可》",
-      "Description": ""
+      "Name": "Enable Rapid Action Animation",
+      "Description": "Allows the object to use accelerated animation during specific actions."
     },
     {
       "Field": "enableDecal",
-      "Name": "《デカール貼り付けを許可》",
-      "Description": ""
+      "Name": "Enable Decal Application",
+      "Description": "Determines whether decals (e.g. blood, scorch marks) can be applied to this object."
     },
     {
       "Field": "unk1C",
-      "Name": "unk1C",
-      "Description": ""
+      "Name": "Unknown Field 1C",
+      "Description": "Unidentified or unused parameter; purpose not yet determined."
     }
   ]
 }

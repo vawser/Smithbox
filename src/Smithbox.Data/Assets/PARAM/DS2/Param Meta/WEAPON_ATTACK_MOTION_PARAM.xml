@@ -3,7 +3,7 @@
     <Field>
         <attackAnim  Enum="PLAYER_NORMAL_ATTACK_MOTION"/>
         <controlType  Enum="WEAPON_ACTION_CONTROL_TYPES"/>
-        <dummy0 />
+        <dummy0 Padding="" />
         <startPlaySpeed />
         <endPlaySpeed />
         <rotationSpeedScale />
@@ -13,14 +13,14 @@
         <staggerHandMaxBlendWeight />
         <staggerPelvisMaxBlendWeight />
         <attackPushBackRate />
-        <damageId01  Refs="EnemyDamageParam, PlayerDamageParam, SystemDamageParam"/>
-        <damageId02  Refs="EnemyDamageParam, PlayerDamageParam, SystemDamageParam"/>
-        <damageId03  Refs="EnemyDamageParam, PlayerDamageParam, SystemDamageParam"/>
-        <bulletId01  Refs="BulletParam, EnemyBulletParam, SystemBulletParam"/>
-        <bulletDamageId01  Refs="EnemyDamageParam, PlayerDamageParam, SystemDamageParam"/>
-        <bulletId02  Refs="BulletParam, EnemyBulletParam, SystemBulletParam"/>
-        <bulletDamageId02  Refs="EnemyDamageParam, PlayerDamageParam, SystemDamageParam"/>
-        <bulletId03  Refs="BulletParam, EnemyBulletParam, SystemBulletParam"/>
-        <bulletDamageId03  Refs="EnemyDamageParam, PlayerDamageParam, SystemDamageParam"/>
+        <damageId01 RefGroup="damageparam" />
+        <damageId02 RefGroup="damageparam" />
+        <damageId03 RefGroup="damageparam" />
+        <bulletId01 RefGroup="bulletparam" />
+        <bulletDamageId01 RefGroup="damageparam"/>
+        <bulletId02 RefGroup="bulletparam" />
+        <bulletDamageId02 RefGroup="damageparam"/>
+        <bulletId03 RefGroup="bulletparam" />
+        <bulletDamageId03 RefGroup="damageparam"/>
     </Field>
 </PARAMMETA>

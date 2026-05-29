@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PARAMMETA XmlVersion="0">
-    <Field>
+    <Self FieldLayout="EnemyCullingParam" />
+    <Field >
         <pattern0CullingId0 />
         <pattern0CullingId1 />
         <pattern0CullingId2 />

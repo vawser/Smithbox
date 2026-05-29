@@ -2,12 +2,12 @@
   "Param": "FE_SCROLL_SPEED_PARAM",
   "Type": "FE_SCROLL_SPEED_PARAM",
   "Name": "FE_SCROLL_SPEED_PARAM",
-  "Description": "",
+  "Description": "Defines UI scrolling speed for front-end menus in pixels per second.",
   "Fields": [
     {
       "Field": "scrollSpeed",
-      "Name": "スクロール速度（ピクセル/秒）",
-      "Description": ""
+      "Name": "Scroll Speed (pixels/sec)",
+      "Description": "Controls the speed at which UI elements scroll, measured in pixels per second."
     }
   ]
 }

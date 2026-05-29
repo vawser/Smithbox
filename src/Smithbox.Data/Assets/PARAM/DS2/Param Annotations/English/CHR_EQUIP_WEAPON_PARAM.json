@@ -6,208 +6,208 @@
   "Fields": [
     {
       "Field": "behaviorId",
-      "Name": "行動パラメータＩＤ",
-      "Description": ""
+      "Name": "Behavior ID",
+      "Description": "The behavior used for this weapon."
     },
     {
       "Field": "cullingId00",
-      "Name": "カリンググループID1",
-      "Description": ""
+      "Name": "Culling Group ID: 1",
+      "Description": "The culling group for slot 1."
     },
     {
       "Field": "cullingId01",
-      "Name": "カリンググループID2",
-      "Description": ""
+      "Name": "Culling Group ID: 2",
+      "Description": "The culling group for slot 2."
     },
     {
       "Field": "reserved00",
-      "Name": "予備",
+      "Name": "",
       "Description": ""
     },
     {
       "Field": "durability",
-      "Name": "耐久度",
-      "Description": ""
+      "Name": "Durability",
+      "Description": "The durability of this weapon."
     },
     {
       "Field": "material",
-      "Name": "材質",
-      "Description": ""
+      "Name": "Hit Material",
+      "Description": "The hit material used by this weapon."
     },
     {
       "Field": "rightBrokenSfxId",
-      "Name": "破損SFXID 右手",
-      "Description": ""
+      "Name": "Right-Hand: Broken Weapon SFX ID",
+      "Description": "The broken weapon SFX to use when this weapon is wielded in the right-hand."
     },
     {
       "Field": "leftBrokenSfxId",
-      "Name": "破損SFXID 左手",
-      "Description": ""
+      "Name": "Left-Hand: Broken Weapon SFX ID",
+      "Description": "The broken weapon SFX to use when this weapon is wielded in the left-hand."
     },
     {
       "Field": "rightBrokenDummyPolyId",
-      "Name": "破損SFXダミポリID 右手",
-      "Description": ""
+      "Name": "Right-Hand: SFX Dummy Polygon ID",
+      "Description": "The dummy polygon to use for the broken weapon SFX."
     },
     {
       "Field": "leftBrokenDummyPolyId",
-      "Name": "破損SFXダミポリID 左手",
-      "Description": ""
+      "Name": "Left-Hand: SFX Dummy Polygon ID",
+      "Description": "The dummy polygon to use for the broken weapon SFX."
     },
     {
       "Field": "emissiveType",
-      "Name": "自己照明種類",
-      "Description": ""
+      "Name": "Emissive Type",
+      "Description": "The emissiveness type to use for this weapon."
     },
     {
       "Field": "reserved01",
-      "Name": "予備",
+      "Name": "",
       "Description": ""
     },
     {
       "Field": "brokenSoundType",
-      "Name": "破損サウンドタイプ",
-      "Description": ""
+      "Name": "Broken Weapon Sound Type",
+      "Description": "The sound type to use when this weapon is broken."
     },
     {
       "Field": "residentSfxId00",
-      "Name": "常駐SFXID",
-      "Description": ""
+      "Name": "0: SFX ID",
+      "Description": "The SFX to use for this weapon (slot 0)."
     },
     {
       "Field": "residentSfxId01",
-      "Name": "常駐SFXID",
-      "Description": ""
+      "Name": "1: SFX ID",
+      "Description": "The SFX to use for this weapon (slot 1)."
     },
     {
       "Field": "residentSfxId02",
-      "Name": "常駐SFXID",
-      "Description": ""
+      "Name": "2: SFX ID",
+      "Description": "The SFX to use for this weapon (slot 2)."
     },
     {
       "Field": "residentSfxId03",
-      "Name": "常駐SFXID",
-      "Description": ""
+      "Name": "3: SFX ID",
+      "Description": "The SFX to use for this weapon (slot 3)."
     },
     {
       "Field": "residentSfxAttachType00",
-      "Name": "常駐SFX追従タイプ",
-      "Description": ""
+      "Name": "0: SFX Attach Type",
+      "Description": "The attachment type to use for the SFX (slot 0)."
     },
     {
       "Field": "residentSfxAttachType01",
-      "Name": "常駐SFX追従タイプ",
-      "Description": ""
+      "Name": "1: SFX Attach Type",
+      "Description": "The attachment type to use for the SFX (slot 1)."
     },
     {
       "Field": "residentSfxAttachType02",
-      "Name": "常駐SFX追従タイプ",
-      "Description": ""
+      "Name": "2: SFX Attach Type",
+      "Description": "The attachment type to use for the SFX (slot 2)."
     },
     {
       "Field": "residentSfxAttachType03",
-      "Name": "常駐SFX追従タイプ",
-      "Description": ""
+      "Name": "3: SFX Attach Type",
+      "Description": "The attachment type to use for the SFX (slot 3)."
     },
     {
       "Field": "residentSfxDummyPolyId00",
-      "Name": "常駐SFX開始ID",
-      "Description": ""
+      "Name": "0: SFX Start Dummy Polygon ID",
+      "Description": "The start ID for the dummy polygon range used for the SFX (slot 0)."
     },
     {
       "Field": "residentSfxDummyPolyId01",
-      "Name": "常駐SFX開始ID",
-      "Description": ""
+      "Name": "1: SFX Start Dummy Polygon ID",
+      "Description": "The start ID for the dummy polygon range used for the SFX (slot 1)."
     },
     {
       "Field": "residentSfxDummyPolyId02",
-      "Name": "常駐SFX開始ID",
-      "Description": ""
+      "Name": "2: SFX Start Dummy Polygon ID",
+      "Description": "The start ID for the dummy polygon range used for the SFX (slot 2)."
     },
     {
       "Field": "residentSfxDummyPolyId03",
-      "Name": "常駐SFX開始ID",
-      "Description": ""
+      "Name": "3: SFX Start Dummy Polygon ID",
+      "Description": "The start ID for the dummy polygon range used for the SFX (slot 3)."
     },
     {
       "Field": "residentSfxDummyPolyIdEnd00",
-      "Name": "常駐SFX終了ID",
-      "Description": ""
+      "Name": "0: SFX End Dummy Polygon ID",
+      "Description": "The end ID for the dummy polygon range used for the SFX (slot 0)."
     },
     {
       "Field": "residentSfxDummyPolyIdEnd01",
-      "Name": "常駐SFX終了ID",
-      "Description": ""
+      "Name": "1: SFX End Dummy Polygon ID",
+      "Description": "The end ID for the dummy polygon range used for the SFX (slot 1)."
     },
     {
       "Field": "residentSfxDummyPolyIdEnd02",
-      "Name": "常駐SFX終了ID",
-      "Description": ""
+      "Name": "2: SFX End Dummy Polygon ID",
+      "Description": "The end ID for the dummy polygon range used for the SFX (slot 2)."
     },
     {
       "Field": "residentSfxDummyPolyIdEnd03",
-      "Name": "常駐SFX終了ID",
-      "Description": ""
+      "Name": "3: SFX End Dummy Polygon ID",
+      "Description": "The end ID for the dummy polygon range used for the SFX (slot 3)."
     },
     {
       "Field": "residentSfxIdInterval00",
-      "Name": "常駐SFX 追従ID間隔",
-      "Description": ""
+      "Name": "0: SFX Tracking ID Interval",
+      "Description": "The tracking ID interval to use for the SFX (slot 0)."
     },
     {
       "Field": "residentSfxIdInterval01",
-      "Name": "常駐SFX 追従ID間隔",
-      "Description": ""
+      "Name": "1: SFX Tracking ID Interval",
+      "Description": "The tracking ID interval to use for the SFX (slot 1)."
     },
     {
       "Field": "residentSfxIdInterval02",
-      "Name": "常駐SFX 追従ID間隔",
-      "Description": ""
+      "Name": "2: SFX Tracking ID Interval",
+      "Description": "The tracking ID interval to use for the SFX (slot 2)."
     },
     {
       "Field": "residentSfxIdInterval03",
-      "Name": "常駐SFX 追従ID間隔",
-      "Description": ""
+      "Name": "3: SFX Tracking ID Interval",
+      "Description": "The tracking ID interval to use for the SFX (slot 3)."
     },
     {
       "Field": "residentSfxSetType00",
-      "Name": "常駐SFX開始",
-      "Description": ""
+      "Name": "0: SFX Start Set Type",
+      "Description": "The start set type for the SFX (slot 0)."
     },
     {
       "Field": "residentSfxSetType01",
-      "Name": "常駐SFX開始",
-      "Description": ""
+      "Name": "1: SFX Start Set Type",
+      "Description": "The start set type for the SFX (slot 1)."
     },
     {
       "Field": "residentSfxSetType02",
-      "Name": "常駐SFX開始",
-      "Description": ""
+      "Name": "2: SFX Start Set Type",
+      "Description": "The start set type for the SFX (slot 2)."
     },
     {
       "Field": "residentSfxSetType03",
-      "Name": "常駐SFX開始",
-      "Description": ""
+      "Name": "3: SFX Start Set Type",
+      "Description": "The start set type for the SFX (slot 3)."
     },
     {
       "Field": "residentSfxEndType00",
-      "Name": "常駐SFX終了",
-      "Description": ""
+      "Name": "0: SFX End Set Type",
+      "Description": "The end set type for the SFX (slot 0)."
     },
     {
       "Field": "residentSfxEndType01",
-      "Name": "常駐SFX終了",
-      "Description": ""
+      "Name": "1: SFX End Set Type",
+      "Description": "The end set type for the SFX (slot 1)."
     },
     {
       "Field": "residentSfxEndType02",
-      "Name": "常駐SFX終了",
-      "Description": ""
+      "Name": "2: SFX End Set Type",
+      "Description": "The end set type for the SFX (slot 2)."
     },
     {
       "Field": "residentSfxEndType03",
-      "Name": "常駐SFX終了",
-      "Description": ""
+      "Name": "3: SFX End Set Type",
+      "Description": "The end set type for the SFX (slot 3)."
     }
   ]
 }

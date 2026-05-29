@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PARAMMETA XmlVersion="0">
+  <Self FieldLayout="ItemLotParam" />
     <Field>
         <lotDropType  Enum="ITEM_LOT_DROP_TYPE"/>
         <lotCount />
-        <padding />
+        <padding Padding="" />
         <itemNum1 />
         <itemNum2 />
         <itemNum3 />

@@ -2,46 +2,46 @@
   "Param": "MODEL_LINK_LOD_TYPE_PARAM",
   "Type": "MODEL_LINK_LOD_TYPE_PARAM",
   "Name": "MODEL_LINK_LOD_TYPE_PARAM",
-  "Description": "",
+  "Description": "Defines level-of-detail (LOD) switching distances and rendering thresholds for linked model systems, including draw, shadow, and motion blur visibility ranges.",
   "Fields": [
     {
       "Field": "LodTypeParam_Lv1",
-      "Name": "LOD切り替え距離Lv1",
-      "Description": ""
+      "Name": "LOD Switch Distance Level 1",
+      "Description": "Distance at which the model switches to LOD level 1."
     },
     {
       "Field": "LodTypeParam_Lv2",
-      "Name": "LOD切り替え距離Lv2",
-      "Description": ""
+      "Name": "LOD Switch Distance Level 2",
+      "Description": "Distance at which the model switches to LOD level 2."
     },
     {
       "Field": "LodTypeParam_Lv3",
-      "Name": "LOD切り替え距離Lv3",
-      "Description": ""
+      "Name": "LOD Switch Distance Level 3",
+      "Description": "Distance at which the model switches to LOD level 3."
     },
     {
       "Field": "LodTypeParam_Lv4",
-      "Name": "LOD切り替え距離Lv4",
-      "Description": ""
+      "Name": "LOD Switch Distance Level 4",
+      "Description": "Distance at which the model switches to LOD level 4."
     },
     {
       "Field": "DrawDist",
-      "Name": "描画距離",
-      "Description": ""
+      "Name": "Draw Distance",
+      "Description": "Maximum distance at which the model is rendered."
     },
     {
       "Field": "ShadowCastDist",
-      "Name": "影を落とす距離",
-      "Description": ""
+      "Name": "Shadow Cast Distance",
+      "Description": "Maximum distance at which the model casts shadows."
     },
     {
       "Field": "BlurDist",
-      "Name": "モーションブラー有効距離",
-      "Description": ""
+      "Name": "Motion Blur Enable Distance",
+      "Description": "Distance at which motion blur effects become active for the model."
     },
     {
       "Field": "pading",
-      "Name": "予約領域",
+      "Name": "Padding",
       "Description": ""
     }
   ]

@@ -2,47 +2,47 @@
   "Param": "DAMAGE_MOTION_WEIGHT_PARAM",
   "Type": "DAMAGE_MOTION_WEIGHT_PARAM",
   "Name": "DAMAGE_MOTION_WEIGHT_PARAM",
-  "Description": "",
+  "Description": "Defines weight thresholds used to determine damage reaction animations based on attack impact strength or target size category.",
   "Fields": [
     {
       "Field": "noneSize",
-      "Name": "無",
-      "Description": ""
+      "Name": "None",
+      "Description": "No damage motion weight applied."
     },
     {
       "Field": "superSmallSize",
-      "Name": "極小",
-      "Description": ""
+      "Name": "Tiny",
+      "Description": "Damage motion weight value for extremely small impacts."
     },
     {
       "Field": "smallSize",
-      "Name": "小",
-      "Description": ""
+      "Name": "Small",
+      "Description": "Damage motion weight value for small impacts."
     },
     {
       "Field": "normalSize",
-      "Name": "中",
-      "Description": ""
+      "Name": "Medium",
+      "Description": "Damage motion weight value for standard or medium impacts."
     },
     {
       "Field": "largeSize",
-      "Name": "大",
-      "Description": ""
+      "Name": "Large",
+      "Description": "Damage motion weight value for large impacts."
     },
     {
       "Field": "superLargeSize",
-      "Name": "特大",
-      "Description": ""
+      "Name": "Very Large",
+      "Description": "Damage motion weight value for very large impacts."
     },
     {
       "Field": "hyperLargeSize",
-      "Name": "超特大",
-      "Description": ""
+      "Name": "Huge",
+      "Description": "Damage motion weight value for extremely large impacts."
     },
     {
       "Field": "ultraLargeSize",
-      "Name": "超超特大",
-      "Description": ""
+      "Name": "Massive",
+      "Description": "Damage motion weight value for the largest possible impacts."
     }
   ]
 }

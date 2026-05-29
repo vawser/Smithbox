@@ -2,42 +2,42 @@
   "Param": "GUARD_LEVEL_MOTION_PARAM",
   "Type": "GUARD_LEVEL_MOTION_PARAM",
   "Name": "GUARD_LEVEL_MOTION_PARAM",
-  "Description": "",
+  "Description": "Defines guard impact levels and their corresponding guard reaction motion categories.",
   "Fields": [
     {
       "Field": "superSmallGuardLevel",
-      "Name": "極小",
-      "Description": ""
+      "Name": "Reaction: Very Small",
+      "Description": "Guard reaction level used for extremely weak impacts."
     },
     {
       "Field": "smallGuardLevel",
-      "Name": "小",
-      "Description": ""
+      "Name": "Reaction: Small",
+      "Description": "Guard reaction level used for light impacts."
     },
     {
       "Field": "mediumGuardLevel",
-      "Name": "中",
-      "Description": ""
+      "Name": "Reaction: Medium",
+      "Description": "Guard reaction level used for standard or medium-strength impacts."
     },
     {
       "Field": "largeGuardLvel",
-      "Name": "大",
-      "Description": ""
+      "Name": "Reaction: Large",
+      "Description": "Guard reaction level used for strong impacts."
     },
     {
       "Field": "superLargeGuardLevel",
-      "Name": "特大",
-      "Description": ""
+      "Name": "Reaction: Very Large",
+      "Description": "Guard reaction level used for very powerful impacts."
     },
     {
       "Field": "ultraLargeGuardLevel",
-      "Name": "特特大",
-      "Description": ""
+      "Name": "Reaction: Massive",
+      "Description": "Guard reaction level used for extremely powerful or overwhelming impacts."
     },
     {
       "Field": "flipGuardLevel",
-      "Name": "弾き",
-      "Description": ""
+      "Name": "Reaction: Deflect",
+      "Description": "Guard reaction level used when an attack is deflected or bounces off the guard."
     }
   ]
 }

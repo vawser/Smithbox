@@ -2,186 +2,186 @@
   "Param": "LEVELUP_STATUS_CALC_PARAM",
   "Type": "LEVELUP_STATUS_CALC_PARAM",
   "Name": "LEVELUP_STATUS_CALC_PARAM",
-  "Description": "",
+  "Description": "Defines how character attributes and derived combat statistics scale when leveling up.",
   "Fields": [
     {
       "Field": "maxHp",
-      "Name": "最大HP(≒回復上限値)",
-      "Description": ""
+      "Name": "Maximum HP",
+      "Description": "Determines the character's maximum health value and healing capacity."
     },
     {
       "Field": "maxStamina",
-      "Name": "最大スタミナ",
-      "Description": ""
+      "Name": "Maximum Stamina",
+      "Description": "Determines the maximum stamina available for actions such as attacking, dodging, and blocking."
     },
     {
       "Field": "maxLoadWeight",
-      "Name": "最大装備荷重",
-      "Description": ""
+      "Name": "Maximum Equip Load",
+      "Description": "Defines the maximum equipment weight the character can carry before movement penalties occur."
     },
     {
       "Field": "spellSlotCount",
-      "Name": "スペルスロット数",
-      "Description": ""
+      "Name": "Spell Slot Count",
+      "Description": "Determines the number of available spell attunement or memory slots."
     },
     {
       "Field": "spellChantingSpeed",
-      "Name": "スペル詠唱速度",
-      "Description": ""
+      "Name": "Spell Casting Speed",
+      "Description": "Controls how quickly spells and incantations can be cast."
     },
     {
       "Field": "powerPhysicalByStrength",
-      "Name": "攻撃力 筋力",
-      "Description": ""
+      "Name": "Physical Attack Power from Strength",
+      "Description": "Physical attack scaling contribution gained from the Strength attribute."
     },
     {
       "Field": "powerPhysicalByDexterity",
-      "Name": "攻撃力 技量",
-      "Description": ""
+      "Name": "Physical Attack Power from Dexterity",
+      "Description": "Physical attack scaling contribution gained from the Dexterity attribute."
     },
     {
       "Field": "powerMagic",
-      "Name": "魔力攻撃力",
-      "Description": ""
+      "Name": "Magic Attack Power",
+      "Description": "Determines the effectiveness of magic-based attacks."
     },
     {
       "Field": "powerFire",
-      "Name": "炎攻撃力",
-      "Description": ""
+      "Name": "Fire Attack Power",
+      "Description": "Determines the effectiveness of fire-element attacks."
     },
     {
       "Field": "powerThunder",
-      "Name": "雷攻撃力",
-      "Description": ""
+      "Name": "Lightning Attack Power",
+      "Description": "Determines the effectiveness of lightning-element attacks."
     },
     {
       "Field": "powerDark",
-      "Name": "闇攻撃力",
-      "Description": ""
+      "Name": "Dark Attack Power",
+      "Description": "Determines the effectiveness of dark-element attacks."
     },
     {
       "Field": "powerPoison",
-      "Name": "毒攻撃力",
-      "Description": ""
+      "Name": "Poison Attack Power",
+      "Description": "Determines the buildup or effectiveness of poison-inflicting attacks."
     },
     {
       "Field": "powerBleed",
-      "Name": "出血攻撃力",
-      "Description": ""
+      "Name": "Bleed Attack Power",
+      "Description": "Determines the buildup or effectiveness of bleed-inflicting attacks."
     },
     {
       "Field": "defense",
-      "Name": "防御力",
-      "Description": ""
+      "Name": "Defense",
+      "Description": "General defensive value that reduces incoming physical damage."
     },
     {
       "Field": "resistanceMagic",
-      "Name": "魔力耐性",
-      "Description": ""
+      "Name": "Magic Resistance",
+      "Description": "Reduces damage taken from magic attacks."
     },
     {
       "Field": "resistanceFire",
-      "Name": "炎耐性",
-      "Description": ""
+      "Name": "Fire Resistance",
+      "Description": "Reduces damage taken from fire attacks."
     },
     {
       "Field": "resistanceThunder",
-      "Name": "雷耐性",
-      "Description": ""
+      "Name": "Lightning Resistance",
+      "Description": "Reduces damage taken from lightning attacks."
     },
     {
       "Field": "resistanceDark",
-      "Name": "闇耐性",
-      "Description": ""
+      "Name": "Dark Resistance",
+      "Description": "Reduces damage taken from dark-element attacks."
     },
     {
       "Field": "resistancePoison",
-      "Name": "毒耐性",
-      "Description": ""
+      "Name": "Poison Resistance",
+      "Description": "Increases resistance against poison status buildup."
     },
     {
       "Field": "resistanceBleed",
-      "Name": "出血耐性",
-      "Description": ""
+      "Name": "Bleed Resistance",
+      "Description": "Increases resistance against bleed status buildup."
     },
     {
       "Field": "resistancePetrify",
-      "Name": "石化耐性",
-      "Description": ""
+      "Name": "Petrification Resistance",
+      "Description": "Increases resistance against petrification effects."
     },
     {
       "Field": "resistanceCurse",
-      "Name": "呪耐性",
-      "Description": ""
+      "Name": "Curse Resistance",
+      "Description": "Increases resistance against curse effects."
     },
     {
       "Field": "actionSpeed",
-      "Name": "敏捷",
-      "Description": ""
+      "Name": "Agility",
+      "Description": "Affects animation responsiveness, evasive actions, or general movement speed."
     },
     {
       "Field": "fortitude",
-      "Name": "強靭度",
-      "Description": ""
+      "Name": "Poise",
+      "Description": "Determines resistance to stagger and interruption during attacks."
     },
     {
       "Field": "primaryLeftHand",
-      "Name": "左手第一武器",
-      "Description": ""
+      "Name": "Primary Left-Hand Weapon",
+      "Description": "Stat contribution or slot modifier for the first left-hand weapon slot."
     },
     {
       "Field": "secondaryLeftHand",
-      "Name": "左手第二武器",
-      "Description": ""
+      "Name": "Secondary Left-Hand Weapon",
+      "Description": "Stat contribution or slot modifier for the second left-hand weapon slot."
     },
     {
       "Field": "thirdlyLeftHand",
-      "Name": "左手第三武器",
-      "Description": ""
+      "Name": "Third Left-Hand Weapon",
+      "Description": "Stat contribution or slot modifier for the third left-hand weapon slot."
     },
     {
       "Field": "primaryRightHand",
-      "Name": "右手第一武器",
-      "Description": ""
+      "Name": "Primary Right-Hand Weapon",
+      "Description": "Stat contribution or slot modifier for the first right-hand weapon slot."
     },
     {
       "Field": "secondaryRightHand",
-      "Name": "右手第二武器",
-      "Description": ""
+      "Name": "Secondary Right-Hand Weapon",
+      "Description": "Stat contribution or slot modifier for the second right-hand weapon slot."
     },
     {
       "Field": "thirdlyRightHan",
-      "Name": "右手第三武器",
-      "Description": ""
+      "Name": "Third Right-Hand Weapon",
+      "Description": "Stat contribution or slot modifier for the third right-hand weapon slot."
     },
     {
       "Field": "defenseStrike",
-      "Name": "対打撃",
-      "Description": ""
+      "Name": "Strike Defense",
+      "Description": "Reduces damage taken from strike or blunt attacks."
     },
     {
       "Field": "defenseSlash",
-      "Name": "対斬撃",
-      "Description": ""
+      "Name": "Slash Defense",
+      "Description": "Reduces damage taken from slashing attacks."
     },
     {
       "Field": "defenseThrust",
-      "Name": "対刺突",
-      "Description": ""
+      "Name": "Thrust Defense",
+      "Description": "Reduces damage taken from thrusting or piercing attacks."
     },
     {
       "Field": "defensePoise",
-      "Name": "強靭度",
-      "Description": ""
+      "Name": "Poise Defense",
+      "Description": "Improves resistance against stagger and knockback effects."
     },
     {
       "Field": "dummy00",
-      "Name": "ダミー0",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "dummy01",
-      "Name": "ダミー1",
+      "Name": "Padding",
       "Description": ""
     }
   ]

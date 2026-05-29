@@ -7,18 +7,18 @@
         <isLoopAnim  IsBool=""/>
         <isBreakable  IsBool=""/>
         <isPrefab  IsBool=""/>
-        <pad1 />
+        <pad1 Padding="" />
         <cameraHit  Enum="OBJ_CAMERA_HIT_ENUM"/>
         <emissiveScale0 />
         <emissiveScale1 />
-        <pad2 />
-        <sfxId0 />
-        <sfxId1 />
-        <sfxId2 />
-        <sfxId3 />
-        <sfxId4 />
-        <sfxId5 />
-        <sfxIdBreak0 />
+        <pad2 Padding="" />
+        <sfxId0 ParticleAlias="" />
+        <sfxId1 ParticleAlias="" />
+        <sfxId2 ParticleAlias="" />
+        <sfxId3 ParticleAlias="" />
+        <sfxId4 ParticleAlias="" />
+        <sfxId5 ParticleAlias="" />
+        <sfxIdBreak0 ParticleAlias="" />
         <sfxPoint0  Enum="OBJ_RESIDENT_SFX_POINT_ENUM"/>
         <sfxPoint1  Enum="OBJ_RESIDENT_SFX_POINT_ENUM"/>
         <sfxPoint2  Enum="OBJ_RESIDENT_SFX_POINT_ENUM"/>

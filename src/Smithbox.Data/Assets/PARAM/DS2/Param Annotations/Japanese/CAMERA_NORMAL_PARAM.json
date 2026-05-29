@@ -1,0 +1,128 @@
+{
+  "Param": "CAMERA_NORMAL_PARAM",
+  "Type": "CAMERA_NORMAL_PARAM",
+  "Name": "CAMERA_NORMAL_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "cameraType",
+      "Name": "カメラ挙動タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "cameraBasePosType",
+      "Name": "カメラ基準点タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "reserved",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "fovY",
+      "Name": "画角(deg)",
+      "Description": ""
+    },
+    {
+      "Field": "fulcrumOffsetX",
+      "Name": "支点(X軸) オフセット(m)",
+      "Description": ""
+    },
+    {
+      "Field": "fulcrumOffsetY",
+      "Name": "支点(Y軸) オフセット(m)",
+      "Description": ""
+    },
+    {
+      "Field": "fulcrumOffsetZ",
+      "Name": "支点(Z軸) オフセット(m)",
+      "Description": ""
+    },
+    {
+      "Field": "fulcrumMoveRate",
+      "Name": "支点追尾強さ",
+      "Description": ""
+    },
+    {
+      "Field": "lookAtOffsetX",
+      "Name": "焦点(X軸) オフセット(m)",
+      "Description": ""
+    },
+    {
+      "Field": "lookAtOffsetY",
+      "Name": "焦点(Y軸) オフセット(m)",
+      "Description": ""
+    },
+    {
+      "Field": "lookAtOffsetZ",
+      "Name": "焦点(Z軸) オフセット(m)",
+      "Description": ""
+    },
+    {
+      "Field": "lookAtMoveRate",
+      "Name": "焦点追尾強さ",
+      "Description": ""
+    },
+    {
+      "Field": "positionOffsetX",
+      "Name": "位置(X軸) オフセット(m)",
+      "Description": ""
+    },
+    {
+      "Field": "positionOffsetY",
+      "Name": "位置(Y軸) オフセット(m)",
+      "Description": ""
+    },
+    {
+      "Field": "positionOffsetZ",
+      "Name": "位置(Z軸) オフセット(m)",
+      "Description": ""
+    },
+    {
+      "Field": "positionMoveRate",
+      "Name": "位置追尾強さ",
+      "Description": ""
+    },
+    {
+      "Field": "panSpeedMax",
+      "Name": "左右旋回最大速度(rad/s)",
+      "Description": ""
+    },
+    {
+      "Field": "panSpeedAccel",
+      "Name": "左右旋回加速度(rad/s)",
+      "Description": ""
+    },
+    {
+      "Field": "panSpeedBrake",
+      "Name": "左右旋回ブレーキ(rad/s)",
+      "Description": ""
+    },
+    {
+      "Field": "tiltSpeedMax",
+      "Name": "上下旋回最大速度(rad/s)",
+      "Description": ""
+    },
+    {
+      "Field": "tiltSpeedAccel",
+      "Name": "上下旋回加速度(rad/s)",
+      "Description": ""
+    },
+    {
+      "Field": "tiltSpeedBrake",
+      "Name": "上下旋回ブレーキ(rad/s)",
+      "Description": ""
+    },
+    {
+      "Field": "tiltUpLimit",
+      "Name": "上限界角度(deg)",
+      "Description": ""
+    },
+    {
+      "Field": "tiltDownLimit",
+      "Name": "下限界角度(deg)",
+      "Description": ""
+    }
+  ]
+}

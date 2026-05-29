@@ -2,197 +2,197 @@
   "Param": "MAP_OBJECT_GD_PARAM",
   "Type": "MAP_OBJECT_GD_PARAM",
   "Name": "MAP_OBJECT_GD_PARAM",
-  "Description": "",
+  "Description": "Defines animation, VFX/SFX behavior, emissive effects, and breakable object presentation settings for map objects.",
   "Fields": [
     {
       "Field": "animId",
-      "Name": "アニメID",
-      "Description": ""
+      "Name": "Animation ID",
+      "Description": "Identifier for the animation used by this map object."
     },
     {
       "Field": "initialFrameHead",
-      "Name": "【開始】初期フレーム",
-      "Description": ""
+      "Name": "Initial Frame Start",
+      "Description": "Starting frame of the initial animation range."
     },
     {
       "Field": "initialFrameTail",
-      "Name": "【終了】初期フレーム",
-      "Description": ""
+      "Name": "Initial Frame End",
+      "Description": "Ending frame of the initial animation range."
     },
     {
       "Field": "isLoopAnim",
-      "Name": "ループ再生するか",
-      "Description": ""
+      "Name": "Loop Animation",
+      "Description": "Determines whether the animation should loop continuously."
     },
     {
       "Field": "isBreakable",
-      "Name": "破壊可能か",
-      "Description": ""
+      "Name": "Is Breakable",
+      "Description": "Determines whether this object can be destroyed."
     },
     {
       "Field": "isPrefab",
-      "Name": "プレハブか",
-      "Description": ""
+      "Name": "Is Prefab",
+      "Description": "Indicates whether this object is a prefab instance."
     },
     {
       "Field": "pad1",
-      "Name": "パディング",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "cameraHit",
-      "Name": "カメラ当たり時挙動",
-      "Description": ""
+      "Name": "Camera Collision Behavior",
+      "Description": "Defines behavior when the camera collides or intersects with the object."
     },
     {
       "Field": "emissiveScale0",
-      "Name": "エミッシブスケール0",
-      "Description": ""
+      "Name": "Emissive Scale 0",
+      "Description": "Intensity multiplier for the first emissive lighting effect."
     },
     {
       "Field": "emissiveScale1",
-      "Name": "エミッシブスケール1",
-      "Description": ""
+      "Name": "Emissive Scale 1",
+      "Description": "Intensity multiplier for the second emissive lighting effect."
     },
     {
       "Field": "pad2",
-      "Name": "パディング",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "sfxId0",
-      "Name": "SFX ID",
-      "Description": ""
+      "Name": "SFX ID 0",
+      "Description": "Effect identifier for effect slot 0."
     },
     {
       "Field": "sfxId1",
-      "Name": "SFX ID",
-      "Description": ""
+      "Name": "SFX ID 1",
+      "Description": "Effect identifier for effect slot 1."
     },
     {
       "Field": "sfxId2",
-      "Name": "SFX ID",
-      "Description": ""
+      "Name": "SFX ID 2",
+      "Description": "Effect identifier for effect slot 2."
     },
     {
       "Field": "sfxId3",
-      "Name": "SFX ID",
-      "Description": ""
+      "Name": "SFX ID 3",
+      "Description": "Effect identifier for effect slot 3."
     },
     {
       "Field": "sfxId4",
-      "Name": "SFX ID",
-      "Description": ""
+      "Name": "SFX ID 4",
+      "Description": "Effect identifier for effect slot 4."
     },
     {
       "Field": "sfxId5",
-      "Name": "SFX ID",
-      "Description": ""
+      "Name": "SFX ID 5",
+      "Description": "Effect identifier for effect slot 5."
     },
     {
       "Field": "sfxIdBreak0",
-      "Name": "SFX ID",
-      "Description": ""
+      "Name": "Break SFX ID 0",
+      "Description": "Effect played when the object is broken (slot 0)."
     },
     {
       "Field": "sfxPoint0",
-      "Name": "発生地点",
-      "Description": ""
+      "Name": "SFX Spawn Point 0",
+      "Description": "Attachment point for spawning effect 0."
     },
     {
       "Field": "sfxPoint1",
-      "Name": "発生地点",
-      "Description": ""
+      "Name": "SFX Spawn Point 1",
+      "Description": "Attachment point for spawning effect 1."
     },
     {
       "Field": "sfxPoint2",
-      "Name": "発生地点",
-      "Description": ""
+      "Name": "SFX Spawn Point 2",
+      "Description": "Attachment point for spawning effect 2."
     },
     {
       "Field": "sfxPoint3",
-      "Name": "発生地点",
-      "Description": ""
+      "Name": "SFX Spawn Point 3",
+      "Description": "Attachment point for spawning effect 3."
     },
     {
       "Field": "sfxPoint4",
-      "Name": "発生地点",
-      "Description": ""
+      "Name": "SFX Spawn Point 4",
+      "Description": "Attachment point for spawning effect 4."
     },
     {
       "Field": "sfxPoint5",
-      "Name": "発生地点",
-      "Description": ""
+      "Name": "SFX Spawn Point 5",
+      "Description": "Attachment point for spawning effect 5."
     },
     {
       "Field": "sfxPointBreak0",
-      "Name": "発生地点",
-      "Description": ""
+      "Name": "Break SFX Spawn Point 0",
+      "Description": "Attachment point for break effect 0."
     },
     {
       "Field": "sfxDmyPolyId0",
-      "Name": "ダミポリID",
-      "Description": ""
+      "Name": "Dummy Poly ID 0",
+      "Description": "Identifier for dummy polygon used as SFX emission source 0."
     },
     {
       "Field": "sfxDmyPolyId1",
-      "Name": "ダミポリID",
-      "Description": ""
+      "Name": "Dummy Poly ID 1",
+      "Description": "Identifier for dummy polygon used as SFX emission source 1."
     },
     {
       "Field": "sfxDmyPolyId2",
-      "Name": "ダミポリID",
-      "Description": ""
+      "Name": "Dummy Poly ID 2",
+      "Description": "Identifier for dummy polygon used as SFX emission source 2."
     },
     {
       "Field": "sfxDmyPolyId3",
-      "Name": "ダミポリID",
-      "Description": ""
+      "Name": "Dummy Poly ID 3",
+      "Description": "Identifier for dummy polygon used as SFX emission source 3."
     },
     {
       "Field": "sfxDmyPolyId4",
-      "Name": "ダミポリID",
-      "Description": ""
+      "Name": "Dummy Poly ID 4",
+      "Description": "Identifier for dummy polygon used as SFX emission source 4."
     },
     {
       "Field": "sfxDmyPolyId5",
-      "Name": "ダミポリID",
-      "Description": ""
+      "Name": "Dummy Poly ID 5",
+      "Description": "Identifier for dummy polygon used as SFX emission source 5."
     },
     {
       "Field": "sfxDmyPolyIdBreak0",
-      "Name": "ダミポリID",
-      "Description": ""
+      "Name": "Break Dummy Poly ID 0",
+      "Description": "Dummy polygon identifier used for break SFX emission."
     },
     {
       "Field": "doesFollow0",
-      "Name": "追従する",
-      "Description": ""
+      "Name": "Follows Object 0",
+      "Description": "Determines whether SFX or effects follow the object for slot 0."
     },
     {
       "Field": "doesFollow1",
-      "Name": "追従する",
-      "Description": ""
+      "Name": "Follows Object 1",
+      "Description": "Determines whether SFX or effects follow the object for slot 1."
     },
     {
       "Field": "doesFollow2",
-      "Name": "追従する",
-      "Description": ""
+      "Name": "Follows Object 2",
+      "Description": "Determines whether SFX or effects follow the object for slot 2."
     },
     {
       "Field": "doesFollow3",
-      "Name": "追従する",
-      "Description": ""
+      "Name": "Follows Object 3",
+      "Description": "Determines whether SFX or effects follow the object for slot 3."
     },
     {
       "Field": "doesFollow4",
-      "Name": "追従する",
-      "Description": ""
+      "Name": "Follows Object 4",
+      "Description": "Determines whether SFX or effects follow the object for slot 4."
     },
     {
       "Field": "doesFollow5",
-      "Name": "追従する",
-      "Description": ""
+      "Name": "Follows Object 5",
+      "Description": "Determines whether SFX or effects follow the object for slot 5."
     }
   ]
 }

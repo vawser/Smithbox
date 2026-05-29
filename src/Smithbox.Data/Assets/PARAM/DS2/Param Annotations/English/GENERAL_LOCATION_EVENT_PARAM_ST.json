@@ -2,92 +2,92 @@
   "Param": "GENERAL_LOCATION_EVENT_PARAM_ST",
   "Type": "GENERAL_LOCATION_EVENT_PARAM_ST",
   "Name": "GENERAL_LOCATION_EVENT_PARAM_ST",
-  "Description": "",
+  "Description": "Defines a general spatial event or trigger volume with position, rotation, shape, and categorization metadata.",
   "Fields": [
     {
       "Field": "PositionX",
-      "Name": "位置Ｘ",
-      "Description": ""
+      "Name": "Position: X",
+      "Description": "World-space X coordinate of the event location."
     },
     {
       "Field": "PositionY",
-      "Name": "位置Ｙ",
-      "Description": ""
+      "Name": "Position: Y",
+      "Description": "World-space Y coordinate of the event location."
     },
     {
       "Field": "PositionZ",
-      "Name": "位置Ｚ",
-      "Description": ""
+      "Name": "Position: Z",
+      "Description": "World-space Z coordinate of the event location."
     },
     {
       "Field": "RotationX",
-      "Name": "角度Ｘ",
-      "Description": ""
+      "Name": "Rotation: X",
+      "Description": "Rotation around the X-axis (pitch) in degrees or engine units."
     },
     {
       "Field": "RotationY",
-      "Name": "角度Ｙ",
-      "Description": ""
+      "Name": "Rotation: Y",
+      "Description": "Rotation around the Y-axis (yaw) in degrees or engine units."
     },
     {
       "Field": "RotationZ",
-      "Name": "角度Ｚ",
-      "Description": ""
+      "Name": "Rotation: Z",
+      "Description": "Rotation around the Z-axis (roll) in degrees or engine units."
     },
     {
       "Field": "formType",
-      "Name": "形状",
-      "Description": ""
+      "Name": "Shape Type",
+      "Description": "Defines the geometric shape of the event area (e.g., sphere, box, capsule)."
     },
     {
       "Field": "colorR",
-      "Name": "色Ｒ",
-      "Description": ""
+      "Name": "Color: R",
+      "Description": "Red component of the debug or visualization color (0–255 or normalized)."
     },
     {
       "Field": "colorG",
-      "Name": "色Ｇ",
-      "Description": ""
+      "Name": "Color: G",
+      "Description": "Green component of the debug or visualization color."
     },
     {
       "Field": "colorB",
-      "Name": "色Ｂ",
-      "Description": ""
+      "Name": "Color: B",
+      "Description": "Blue component of the debug or visualization color."
     },
     {
-      "Field": "radius",
-      "Name": "半径・X幅",
-      "Description": ""
+      "Field": "ScaleX",
+      "Name": "Scale: X",
+      "Description": "Primary horizontal scale or radius of the event volume."
     },
     {
-      "Field": "height",
-      "Name": "高さ・Y幅",
-      "Description": ""
+      "Field": "ScaleY",
+      "Name": "Scale: Y",
+      "Description": "Vertical extent of the event volume."
     },
     {
-      "Field": "depth",
-      "Name": "Ｚ幅",
-      "Description": ""
+      "Field": "ScaleZ",
+      "Name": "Scale: Z",
+      "Description": "Secondary horizontal scale or depth of the event volume."
     },
     {
       "Field": "aReserved",
-      "Name": "予約",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "memoryBlockId",
-      "Name": "メモリブロックID",
-      "Description": ""
+      "Name": "Memory Block ID",
+      "Description": "Identifier linking this event to a memory or streaming block system."
     },
     {
       "Field": "categoryType",
-      "Name": "カテゴリ",
-      "Description": ""
+      "Name": "Category Type",
+      "Description": "High-level classification of the event group or system."
     },
     {
       "Field": "categoryId",
-      "Name": "カテゴリ内ID",
-      "Description": ""
+      "Name": "Category ID",
+      "Description": "Specific identifier within the category type."
     }
   ]
 }

@@ -2,82 +2,82 @@
   "Param": "MAP_OBJECT_BONFIRE_PARAM",
   "Type": "MAP_OBJECT_BONFIRE_PARAM",
   "Name": "MAP_OBJECT_BONFIRE_PARAM",
-  "Description": "",
+  "Description": "Defines bonfire/map object behavior, menu functionality, multiplayer restrictions, and related event settings.",
   "Fields": [
     {
       "Field": "mapId",
-      "Name": "配置マップID",
-      "Description": ""
+      "Name": "Placement Map ID",
+      "Description": "The map ID where this bonfire or map object is placed."
     },
     {
       "Field": "menuAreaID",
-      "Name": "メニュー用エリアID",
-      "Description": ""
+      "Name": "Menu Area ID",
+      "Description": "Area ID used for displaying this bonfire in travel or interaction menus."
     },
     {
       "Field": "enemyDisableDistance",
-      "Name": "敵接近時使用禁止距離",
-      "Description": ""
+      "Name": "Enemy Proximity Disable Distance",
+      "Description": "Maximum horizontal distance at which nearby enemies prevent bonfire usage."
     },
     {
       "Field": "enemyDisableHeight",
-      "Name": "敵接近時使用禁止高さ",
-      "Description": ""
+      "Name": "Enemy Proximity Disable Height",
+      "Description": "Maximum vertical height difference at which nearby enemies prevent bonfire usage."
     },
     {
       "Field": "eventCameraIdBegin",
-      "Name": "イベントカメラ開始ID",
-      "Description": ""
+      "Name": "Event Camera Start ID",
+      "Description": "Camera event ID used when beginning interaction with the bonfire."
     },
     {
       "Field": "eventCameraIdEnd",
-      "Name": "イベントカメラ終了ID",
-      "Description": ""
+      "Name": "Event Camera End ID",
+      "Description": "Camera event ID used when ending interaction with the bonfire."
     },
     {
       "Field": "decLimitTime",
-      "Name": "マルチプレイ制限時間減少量",
-      "Description": ""
+      "Name": "Multiplayer Limit Time Reduction",
+      "Description": "Amount by which multiplayer session time is reduced or adjusted."
     },
     {
       "Field": "multiPlayAreaid",
-      "Name": "マルチプレイ区間ID",
-      "Description": ""
+      "Name": "Multiplayer Area ID",
+      "Description": "Identifier for the multiplayer region or session area associated with this bonfire."
     },
     {
       "Field": "isUseReGenerateItem",
-      "Name": "再生の種火くべる可能",
-      "Description": ""
+      "Name": "Can Burn Bonfire Ascetic",
+      "Description": "Determines whether the player can use a Bonfire Ascetic at this bonfire."
     },
     {
       "Field": "isUseDisableNetworkItem",
-      "Name": "人間の像くべる可能",
-      "Description": ""
+      "Name": "Can Burn Human Effigy",
+      "Description": "Determines whether the player can use a Human Effigy at this bonfire to disable online multiplayer."
     },
     {
       "Field": "isUseLevelUpEstusFlaskItem",
-      "Name": "エスト瓶強化くべる可能",
-      "Description": ""
+      "Name": "Can Burn Estus Flask Upgrade Item",
+      "Description": "Determines whether Estus Flask reinforcement items can be used at this bonfire."
     },
     {
       "Field": "menuSortID",
-      "Name": "メニューソート用ID",
-      "Description": ""
+      "Name": "Menu Sort ID",
+      "Description": "Controls the ordering of this bonfire within menus."
     },
     {
       "Field": "rootFlagId",
-      "Name": "再生の種火使用可能フラグ",
-      "Description": ""
+      "Name": "Bonfire Ascetic Availability Flag",
+      "Description": "Flag controlling whether Bonfire Ascetics can be used at this bonfire."
     },
     {
       "Field": "bossKillCountValId",
-      "Name": "ボスを殺した回数カウント用変数ID",
-      "Description": ""
+      "Name": "Boss Kill Count Variable ID",
+      "Description": "Variable ID used to track the number of boss defeats associated with this area or bonfire."
     },
     {
       "Field": "bossKillCountValId2",
-      "Name": "ボスを殺した回数カウント用変数ID2",
-      "Description": ""
+      "Name": "Boss Kill Count Variable ID 2",
+      "Description": "Secondary variable ID used to track boss defeat counts."
     }
   ]
 }

@@ -2,12 +2,12 @@
   "Param": "EVENT_COMMON_PARAM_ST",
   "Type": "EVENT_COMMON_PARAM_ST",
   "Name": "EVENT_COMMON_PARAM_ST",
-  "Description": "",
+  "Description": "Stores a shared integer parameter value used by event scripts or common gameplay systems.",
   "Fields": [
     {
       "Field": "value",
-      "Name": "パラメータ値",
-      "Description": ""
+      "Name": "Parameter Value",
+      "Description": "Integer value referenced by events, scripts, or other common game systems."
     }
   ]
 }

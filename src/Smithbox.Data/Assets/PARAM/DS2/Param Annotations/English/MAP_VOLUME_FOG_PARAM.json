@@ -2,37 +2,37 @@
   "Param": "MAP_VOLUME_FOG_PARAM",
   "Type": "MAP_VOLUME_FOG_PARAM",
   "Name": "MAP_VOLUME_FOG_PARAM",
-  "Description": "",
+  "Description": "Defines volumetric fog properties for map areas, including color, density, and distance falloff settings.",
   "Fields": [
     {
       "Field": "colorR",
-      "Name": "R",
-      "Description": ""
+      "Name": "Red Channel",
+      "Description": "Red component of the fog color."
     },
     {
       "Field": "colorG",
-      "Name": "G",
-      "Description": ""
+      "Name": "Green Channel",
+      "Description": "Green component of the fog color."
     },
     {
       "Field": "colorB",
-      "Name": "B",
-      "Description": ""
+      "Name": "Blue Channel",
+      "Description": "Blue component of the fog color."
     },
     {
       "Field": "colorA",
-      "Name": "A",
-      "Description": ""
+      "Name": "Alpha Channel",
+      "Description": "Opacity component of the fog color."
     },
     {
       "Field": "dist",
-      "Name": "フォグの距離",
-      "Description": ""
+      "Name": "Fog Distance",
+      "Description": "Distance at which fog begins to fully affect visibility."
     },
     {
       "Field": "density",
-      "Name": "フォグの強さ",
-      "Description": ""
+      "Name": "Fog Density",
+      "Description": "Overall intensity or thickness of the fog effect."
     }
   ]
 }

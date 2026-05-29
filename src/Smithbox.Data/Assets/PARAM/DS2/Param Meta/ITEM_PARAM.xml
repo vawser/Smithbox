@@ -3,9 +3,9 @@
     <Field>
         <iconId />
         <specialEffectId />
-        <startSfxId />
-        <actionSfxId />
-        <effectSfxId />
+        <startSfxId ParticleAlias="" />
+        <actionSfxId ParticleAlias="" />
+        <effectSfxId ParticleAlias="" />
         <weaponParamId  Refs="WeaponParam"/>
         <armorParamId  Refs="ArmorParam"/>
         <arrowParamId  Refs="ArrowParam"/>
@@ -19,7 +19,7 @@
         <weight />
         <itemTypeParamId  Refs="ItemTypeParam"/>
         <itemUsageParamId  Refs="ItemUsageParam"/>
-        <getFrag />
+        <getFrag FlagAlias="" />
         <maxNum />
         <spEffectTargetRegion  Enum="SP_EFFECT_TARGET_REGION"/>
         <spEffectDuplication  Enum="SP_EFFECT_DUPLICATION"/>
@@ -31,6 +31,6 @@
         <isOnlyOneUtilGameClear  IsBool=""/>
         <isTakeOver  IsBool=""/>
         <canGet_WhenGetAllItem  IsBool=""/>
-        <padding />
+        <padding Padding="" />
     </Field>
 </PARAMMETA>

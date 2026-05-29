@@ -2,16 +2,16 @@
   "Param": "SOUND_OBJECT_BREAK_PARAM",
   "Type": "SOUND_OBJECT_BREAK_PARAM",
   "Name": "SOUND_OBJECT_BREAK_PARAM",
-  "Description": "",
+  "Description": "Defines sound behavior for object break events, including categorization of break types for audio playback.",
   "Fields": [
     {
       "Field": "type",
-      "Name": "種類",
-      "Description": ""
+      "Name": "Type",
+      "Description": "Category of object break sound used to select the appropriate audio effect."
     },
     {
       "Field": "aReserved",
-      "Name": "予約領域",
+      "Name": "Padding",
       "Description": ""
     }
   ]

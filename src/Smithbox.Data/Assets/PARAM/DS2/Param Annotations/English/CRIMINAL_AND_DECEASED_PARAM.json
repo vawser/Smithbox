@@ -2,66 +2,66 @@
   "Param": "CRIMINAL_AND_DECEASED_PARAM",
   "Type": "CRIMINAL_AND_DECEASED_PARAM",
   "Name": "CRIMINAL_AND_DECEASED_PARAM",
-  "Description": "",
+  "Description": "Controls criminal status, deceased/hollow progression, threshold levels, and HP limits associated with these states.",
   "Fields": [
     {
       "Field": "criminalUpNetwork",
-      "Name": "《罪人カウンター加算値（ネットワーク）》",
-      "Description": ""
+      "Name": "Criminal Counter Increase (Network)",
+      "Description": "Amount added to the criminal counter through online/network-related actions."
     },
     {
       "Field": "criminalDownNetwork",
-      "Name": "《罪人カウンター減算値（ネットワーク）》",
-      "Description": ""
+      "Name": "Criminal Counter Decrease (Network)",
+      "Description": "Amount removed from the criminal counter through online/network-related actions."
     },
     {
       "Field": "criminalUpNpc",
-      "Name": "《罪人カウンター加算値（NPC）》",
-      "Description": ""
+      "Name": "Criminal Counter Increase (NPC)",
+      "Description": "Amount added to the criminal counter when committing crimes against NPCs."
     },
     {
       "Field": "criminalThreshold1",
-      "Name": "《罪人レベル閾値（一般⇔罪人）》",
-      "Description": ""
+      "Name": "Criminal Level Threshold (Normal -> Criminal)",
+      "Description": "Threshold value at which a character transitions between normal and criminal status."
     },
     {
       "Field": "criminalThreshold2",
-      "Name": "《大罪人レベル閾値（罪人⇔大罪人）》",
-      "Description": ""
+      "Name": "Major Criminal Level Threshold (Criminal -> Major Criminal)",
+      "Description": "Threshold value at which a criminal becomes a major criminal."
     },
     {
       "Field": "deceasedUpNormal",
-      "Name": "《亡者カウンター加算値（通常）》",
-      "Description": ""
+      "Name": "Deceased Counter Increase (Normal)",
+      "Description": "Amount added to the deceased/hollow counter from standard death."
     },
     {
       "Field": "deceasedUpCursed",
-      "Name": "《亡者カウンター加算値（呪死）》",
-      "Description": ""
+      "Name": "Deceased Counter Increase (Cursed Death)",
+      "Description": "Amount added to the deceased/hollow counter from cursed death."
     },
     {
       "Field": "deceasedThreshold1",
-      "Name": "《亡者レベル閾値（亡者⇔すごい亡者）》",
-      "Description": ""
+      "Name": "Deceased Level Threshold (Deceased -> Advanced Deceased)",
+      "Description": "Threshold value at which the deceased/hollow state advances to a more severe stage."
     },
     {
       "Field": "hpLowerBound1",
-      "Name": "《HP下限%（一般/罪人）》",
-      "Description": ""
+      "Name": "HP Lower Bound % (Normal / Criminal)",
+      "Description": "Minimum HP percentage limit applied while in normal or criminal state."
     },
     {
       "Field": "hpLowerBound2",
-      "Name": "《HP下限%（大罪人）》",
-      "Description": ""
+      "Name": "HP Lower Bound % (Major Criminal)",
+      "Description": "Minimum HP percentage limit applied while in major criminal state."
     },
     {
       "Field": "hpUpperBound1",
-      "Name": "《HP上限%（呪い）》",
-      "Description": ""
+      "Name": "HP Upper Bound % (Curse)",
+      "Description": "Maximum HP percentage limit applied while under curse effects."
     },
     {
       "Field": "padding",
-      "Name": "dummy",
+      "Name": "Padding",
       "Description": ""
     }
   ]

@@ -2,327 +2,327 @@
   "Param": "WEAPON_ACTION_CATEGORY_PARAM",
   "Type": "WEAPON_ACTION_CATEGORY_PARAM",
   "Name": "WEAPON_ACTION_CATEGORY_PARAM",
-  "Description": "",
+  "Description": "Defines weapon action animation mappings for different combat contexts, including stance (1H/2H/dual), attack type, and special situations such as rolling, jumping, and guard interactions.",
   "Fields": [
     {
       "Field": "atkIdSingle1HandNormal1st",
-      "Name": "攻撃アニメ 片手 弱1段目",
-      "Description": ""
+      "Name": "1H Normal Attack 1st",
+      "Description": "Animation ID for the first light attack in one-handed stance."
     },
     {
       "Field": "atkIdSingle1HandNormal2nd",
-      "Name": "攻撃アニメ 片手 弱2段目",
-      "Description": ""
+      "Name": "1H Normal Attack 2nd",
+      "Description": "Animation ID for the second light attack in one-handed stance."
     },
     {
       "Field": "atkIdSingle1HandStrong1st",
-      "Name": "攻撃アニメ 片手 強1段目",
-      "Description": ""
+      "Name": "1H Strong Attack 1st",
+      "Description": "Animation ID for the first heavy attack in one-handed stance."
     },
     {
       "Field": "atkIdSingle1HandStrong2nd",
-      "Name": "攻撃アニメ 片手 強2段目",
-      "Description": ""
+      "Name": "1H Strong Attack 2nd",
+      "Description": "Animation ID for the second heavy attack in one-handed stance."
     },
     {
       "Field": "atkIdSingle1HandDash",
-      "Name": "攻撃アニメ 片手 ダッシュ",
-      "Description": ""
+      "Name": "1H Dash Attack",
+      "Description": "Animation ID for a dash attack while in one-handed stance."
     },
     {
       "Field": "atkIdSingle1HandRolling",
-      "Name": "攻撃アニメ 片手 ローリング",
-      "Description": ""
+      "Name": "1H Rolling Attack",
+      "Description": "Animation ID for a rolling attack in one-handed stance."
     },
     {
       "Field": "atkIdSingle1HandStep",
-      "Name": "攻撃アニメ 片手 ステップ",
-      "Description": ""
+      "Name": "1H Step Attack",
+      "Description": "Animation ID for a step attack in one-handed stance."
     },
     {
       "Field": "atkIdSingle1HandDown",
-      "Name": "攻撃アニメ 片手 ダウン",
-      "Description": ""
+      "Name": "1H Downed Attack",
+      "Description": "Animation ID used when attacking while downed in one-handed stance."
     },
     {
       "Field": "atkIdSingle1HandFall",
-      "Name": "攻撃アニメ 片手 落下",
-      "Description": ""
+      "Name": "1H Falling Attack",
+      "Description": "Animation ID for attacking while falling in one-handed stance."
     },
     {
       "Field": "atkIdSingle1HandJump",
-      "Name": "攻撃アニメ 片手 ジャンプ",
-      "Description": ""
+      "Name": "1H Jump Attack",
+      "Description": "Animation ID for jumping attack in one-handed stance."
     },
     {
       "Field": "atkIdSingle2HandNormal1st",
-      "Name": "攻撃アニメ 両手 弱１段目",
-      "Description": ""
+      "Name": "2H Normal Attack 1st",
+      "Description": "Animation ID for first light attack in two-handed stance."
     },
     {
       "Field": "atkIdSingle2HandNormal2nd",
-      "Name": "攻撃アニメ 両手 弱２段目",
-      "Description": ""
+      "Name": "2H Normal Attack 2nd",
+      "Description": "Animation ID for second light attack in two-handed stance."
     },
     {
       "Field": "atkIdSingle2HandStrong1st",
-      "Name": "攻撃アニメ 両手 強１段目",
-      "Description": ""
+      "Name": "2H Strong Attack 1st",
+      "Description": "Animation ID for first heavy attack in two-handed stance."
     },
     {
       "Field": "atkIdSingle2HandStrong2nd",
-      "Name": "攻撃アニメ 両手 強２段目",
-      "Description": ""
+      "Name": "2H Strong Attack 2nd",
+      "Description": "Animation ID for second heavy attack in two-handed stance."
     },
     {
       "Field": "atkIdSingle2HandDash",
-      "Name": "攻撃アニメ 両手 ダッシュ",
-      "Description": ""
+      "Name": "2H Dash Attack",
+      "Description": "Animation ID for dash attack in two-handed stance."
     },
     {
       "Field": "atkIdSingle2HandRolling",
-      "Name": "攻撃アニメ 両手 ローリング",
-      "Description": ""
+      "Name": "2H Rolling Attack",
+      "Description": "Animation ID for rolling attack in two-handed stance."
     },
     {
       "Field": "atkIdSingle2HandStep",
-      "Name": "攻撃アニメ 両手 ステップ",
-      "Description": ""
+      "Name": "2H Step Attack",
+      "Description": "Animation ID for step attack in two-handed stance."
     },
     {
       "Field": "atkIdSingle2HandDown",
-      "Name": "攻撃アニメ 両手 ダウン",
-      "Description": ""
+      "Name": "2H Downed Attack",
+      "Description": "Animation ID for attacking while downed in two-handed stance."
     },
     {
       "Field": "atkIdSingle2HandFall",
-      "Name": "攻撃アニメ 両手 落下",
-      "Description": ""
+      "Name": "2H Falling Attack",
+      "Description": "Animation ID for attacking while falling in two-handed stance."
     },
     {
       "Field": "atkIdSingle2HandJump",
-      "Name": "攻撃アニメ 両手 ジャンプ",
-      "Description": ""
+      "Name": "2H Jump Attack",
+      "Description": "Animation ID for jumping attack in two-handed stance."
     },
     {
       "Field": "atkIdDual1HandNormal1st",
-      "Name": "攻撃アニメ 二刀流 弱1段目",
-      "Description": ""
+      "Name": "Dual 1H Normal Attack 1st",
+      "Description": "First light attack animation in dual-wield one-handed mode."
     },
     {
       "Field": "atkIdDual1HandNormal2nd",
-      "Name": "攻撃アニメ 二刀流 弱2段目",
-      "Description": ""
+      "Name": "Dual 1H Normal Attack 2nd",
+      "Description": "Second light attack animation in dual-wield one-handed mode."
     },
     {
       "Field": "atkIdDual1HandStrong1st",
-      "Name": "攻撃アニメ 二刀流 強1段目",
-      "Description": ""
+      "Name": "Dual 1H Strong Attack 1st",
+      "Description": "First heavy attack animation in dual-wield one-handed mode."
     },
     {
       "Field": "atkIdDual1HandStrong2nd",
-      "Name": "攻撃アニメ 二刀流 強2段目",
-      "Description": ""
+      "Name": "Dual 1H Strong Attack 2nd",
+      "Description": "Second heavy attack animation in dual-wield one-handed mode."
     },
     {
       "Field": "atkIdDual1HandDash",
-      "Name": "攻撃アニメ 二刀流 ダッシュ",
-      "Description": ""
+      "Name": "Dual 1H Dash Attack",
+      "Description": "Dash attack animation in dual-wield one-handed mode."
     },
     {
       "Field": "atkIdDual1HandRolling",
-      "Name": "攻撃アニメ 二刀流 ローリング",
-      "Description": ""
+      "Name": "Dual 1H Rolling Attack",
+      "Description": "Rolling attack animation in dual-wield one-handed mode."
     },
     {
       "Field": "atkIdDual1HandStep",
-      "Name": "攻撃アニメ 二刀流 ステップ",
-      "Description": ""
+      "Name": "Dual 1H Step Attack",
+      "Description": "Step attack animation in dual-wield one-handed mode."
     },
     {
       "Field": "atkIdDual1HandDown",
-      "Name": "攻撃アニメ 二刀流 ダウン",
-      "Description": ""
+      "Name": "Dual 1H Downed Attack",
+      "Description": "Attack while downed in dual-wield one-handed mode."
     },
     {
       "Field": "atkIdDual1HandFall",
-      "Name": "攻撃アニメ 二刀流 落下",
-      "Description": ""
+      "Name": "Dual 1H Falling Attack",
+      "Description": "Attack while falling in dual-wield one-handed mode."
     },
     {
       "Field": "atkIdDual1HandJump",
-      "Name": "攻撃アニメ 二刀流 ジャンプ",
-      "Description": ""
+      "Name": "Dual 1H Jump Attack",
+      "Description": "Jump attack in dual-wield one-handed mode."
     },
     {
       "Field": "atkIdDual2HandNormal1st",
-      "Name": "攻撃アニメ 二刀流両手 弱1段目",
-      "Description": ""
+      "Name": "Dual 2H Normal Attack 1st",
+      "Description": "First light attack in dual-wield two-handed mode."
     },
     {
       "Field": "atkIdDual2HandNormal2nd",
-      "Name": "攻撃アニメ 二刀流両手 弱2段目",
-      "Description": ""
+      "Name": "Dual 2H Normal Attack 2nd",
+      "Description": "Second light attack in dual-wield two-handed mode."
     },
     {
       "Field": "atkIdDual2HandStrong1st",
-      "Name": "攻撃アニメ 二刀流両手 強1段目",
-      "Description": ""
+      "Name": "Dual 2H Strong Attack 1st",
+      "Description": "First heavy attack in dual-wield two-handed mode."
     },
     {
       "Field": "atkIdDual2HandStrong2nd",
-      "Name": "攻撃アニメ 二刀流両手 強2段目",
-      "Description": ""
+      "Name": "Dual 2H Strong Attack 2nd",
+      "Description": "Second heavy attack in dual-wield two-handed mode."
     },
     {
       "Field": "atkIdDual2HandDash",
-      "Name": "攻撃アニメ 二刀流両手 ダッシュ",
-      "Description": ""
+      "Name": "Dual 2H Dash Attack",
+      "Description": "Dash attack in dual-wield two-handed mode."
     },
     {
       "Field": "atkIdDual2HandRolling",
-      "Name": "攻撃アニメ 二刀流両手 ローリング",
-      "Description": ""
+      "Name": "Dual 2H Rolling Attack",
+      "Description": "Rolling attack in dual-wield two-handed mode."
     },
     {
       "Field": "atkIdDual2HandStep",
-      "Name": "攻撃アニメ 二刀流両手 ステップ",
-      "Description": ""
+      "Name": "Dual 2H Step Attack",
+      "Description": "Step attack in dual-wield two-handed mode."
     },
     {
       "Field": "atkIdDual2HandDown",
-      "Name": "攻撃アニメ 二刀流両手 ダウン",
-      "Description": ""
+      "Name": "Dual 2H Downed Attack",
+      "Description": "Attack while downed in dual-wield two-handed mode."
     },
     {
       "Field": "atkIdDual2HandFall",
-      "Name": "攻撃アニメ 二刀流両手 落下",
-      "Description": ""
+      "Name": "Dual 2H Falling Attack",
+      "Description": "Attack while falling in dual-wield two-handed mode."
     },
     {
       "Field": "atkIdDual2HandJump",
-      "Name": "攻撃アニメ 二刀流両手 ジャンプ",
-      "Description": ""
+      "Name": "Dual 2H Jump Attack",
+      "Description": "Jump attack in dual-wield two-handed mode."
     },
     {
       "Field": "atkIdLeft1HandNormal1st",
-      "Name": "攻撃アニメ 左片手 弱1段目",
-      "Description": ""
+      "Name": "Left Hand 1H Normal Attack 1st",
+      "Description": "First light attack using left-hand one-handed stance."
     },
     {
       "Field": "atkIdLeft1HandNormal2nd",
-      "Name": "攻撃アニメ 左片手 弱2段目",
-      "Description": ""
+      "Name": "Left Hand 1H Normal Attack 2nd",
+      "Description": "Second light attack using left-hand one-handed stance."
     },
     {
       "Field": "atkIdLeft1HandStrong1st",
-      "Name": "攻撃アニメ 左片手 強1段目",
-      "Description": ""
+      "Name": "Left Hand 1H Strong Attack 1st",
+      "Description": "First heavy attack using left-hand one-handed stance."
     },
     {
       "Field": "atkIdLeft1HandStrong2nd",
-      "Name": "攻撃アニメ 左片手 強2段目",
-      "Description": ""
+      "Name": "Left Hand 1H Strong Attack 2nd",
+      "Description": "Second heavy attack using left-hand one-handed stance."
     },
     {
       "Field": "atkIdLeft1HandDash",
-      "Name": "攻撃アニメ 左片手 ダッシュ",
-      "Description": ""
+      "Name": "Left Hand 1H Dash Attack",
+      "Description": "Dash attack using left-hand one-handed stance."
     },
     {
       "Field": "atkIdLeft1HandRolling",
-      "Name": "攻撃アニメ 左片手 ローリング",
-      "Description": ""
+      "Name": "Left Hand 1H Rolling Attack",
+      "Description": "Rolling attack using left-hand one-handed stance."
     },
     {
       "Field": "atkIdLeft1HandStep",
-      "Name": "攻撃アニメ 左片手 ステップ",
-      "Description": ""
+      "Name": "Left Hand 1H Step Attack",
+      "Description": "Step attack using left-hand one-handed stance."
     },
     {
       "Field": "atkIdLeft1HandDown",
-      "Name": "攻撃アニメ 左片手 ダウン",
-      "Description": ""
+      "Name": "Left Hand 1H Downed Attack",
+      "Description": "Attack while downed using left-hand one-handed stance."
     },
     {
       "Field": "atkIdLeft1HandFall",
-      "Name": "攻撃アニメ 左片手 落下",
-      "Description": ""
+      "Name": "Left Hand 1H Falling Attack",
+      "Description": "Attack while falling using left-hand one-handed stance."
     },
     {
       "Field": "atkIdLeft1HandJump",
-      "Name": "攻撃アニメ 左片手 ジャンプ",
-      "Description": ""
+      "Name": "Left Hand 1H Jump Attack",
+      "Description": "Jump attack using left-hand one-handed stance."
     },
     {
       "Field": "atkIdOppositeSingle2HandNormal",
-      "Name": "攻撃アニメ 両手逆腕 弱",
-      "Description": ""
+      "Name": "Opposite Arm 2H Normal Attack",
+      "Description": "Normal attack using opposite-arm two-handed configuration."
     },
     {
       "Field": "atkIdOppositeSingle2HandStrong",
-      "Name": "攻撃アニメ 両手逆腕 強",
-      "Description": ""
+      "Name": "Opposite Arm 2H Strong Attack",
+      "Description": "Strong attack using opposite-arm two-handed configuration."
     },
     {
       "Field": "atkIdOppositeDual2HandNormal1st",
-      "Name": "攻撃アニメ 二刀流両手逆腕 弱1",
-      "Description": ""
+      "Name": "Opposite Arm Dual 2H Normal 1st",
+      "Description": "First normal attack in opposite-arm dual two-handed configuration."
     },
     {
       "Field": "atkIdOppositeDual2HandNormal2nd",
-      "Name": "攻撃アニメ 二刀流両手逆腕 弱2",
-      "Description": ""
+      "Name": "Opposite Arm Dual 2H Normal 2nd",
+      "Description": "Second normal attack in opposite-arm dual two-handed configuration."
     },
     {
       "Field": "atkIdOppositeDual2HandStrong",
-      "Name": "攻撃アニメ 二刀流両手逆腕 強",
-      "Description": ""
+      "Name": "Opposite Arm Dual 2H Strong Attack",
+      "Description": "Strong attack in opposite-arm dual two-handed configuration."
     },
     {
       "Field": "atkIdGuardBreak1Hand",
-      "Name": "攻撃アニメ 片手 ガード崩し",
-      "Description": ""
+      "Name": "1H Guard Break Attack",
+      "Description": "Attack animation triggered when breaking guard in one-handed stance."
     },
     {
       "Field": "atkIdGuardBreak2Hand",
-      "Name": "攻撃アニメ 両手 ガード崩し",
-      "Description": ""
+      "Name": "2H Guard Break Attack",
+      "Description": "Attack animation triggered when breaking guard in two-handed stance."
     },
     {
       "Field": "atkIdGuardNormal1st",
-      "Name": "攻撃アニメ ガード構え 弱1段目",
-      "Description": ""
+      "Name": "Guard Stance Normal Attack 1st",
+      "Description": "First normal attack while in guard stance."
     },
     {
       "Field": "atkIdGuardNormal2nd",
-      "Name": "攻撃アニメ ガード構え 弱2段目",
-      "Description": ""
+      "Name": "Guard Stance Normal Attack 2nd",
+      "Description": "Second normal attack while in guard stance."
     },
     {
       "Field": "atkIdGuardStrong1st",
-      "Name": "攻撃アニメ ガード構え 強1段目",
-      "Description": ""
+      "Name": "Guard Stance Strong Attack 1st",
+      "Description": "First strong attack while in guard stance."
     },
     {
       "Field": "atkIdGuardStrong2nd",
-      "Name": "攻撃アニメ ガード構え 強2段目",
-      "Description": ""
+      "Name": "Guard Stance Strong Attack 2nd",
+      "Description": "Second strong attack while in guard stance."
     },
     {
       "Field": "atkIdParryBreakStab",
-      "Name": "攻撃アニメ パリィブレイクスタブ",
-      "Description": ""
+      "Name": "Parry Break Stab",
+      "Description": "Stab animation used after breaking an enemy parry guard."
     },
     {
       "Field": "atkIdGuardBreakStab",
-      "Name": "攻撃アニメ ガードブレイクスタブ",
-      "Description": ""
+      "Name": "Guard Break Stab",
+      "Description": "Stab animation used after breaking an enemy guard."
     },
     {
       "Field": "atkIdBackStab",
-      "Name": "攻撃アニメ バックスタブ",
-      "Description": ""
+      "Name": "Backstab",
+      "Description": "Backstab execution animation."
     }
   ]
 }

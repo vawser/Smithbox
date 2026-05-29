@@ -20,7 +20,7 @@
         <maximumPetrifaction />
         <maximumCurse />
         <maxLevel />
-        <dummy />
+        <dummy Padding="" />
         <statsAffectId  Refs="WeaponStatsAffectParam"/>
         <physical />
         <magic />

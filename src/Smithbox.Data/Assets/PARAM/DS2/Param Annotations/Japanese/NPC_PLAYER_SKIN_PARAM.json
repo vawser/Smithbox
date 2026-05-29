@@ -1,0 +1,33 @@
+{
+  "Param": "NPC_PLAYER_SKIN_PARAM",
+  "Type": "NPC_PLAYER_SKIN_PARAM",
+  "Name": "NPC_PLAYER_SKIN_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "skinNo",
+      "Name": "肌番号",
+      "Description": ""
+    },
+    {
+      "Field": "dummy",
+      "Name": "dummy",
+      "Description": ""
+    },
+    {
+      "Field": "skinR",
+      "Name": "肌R",
+      "Description": ""
+    },
+    {
+      "Field": "skinG",
+      "Name": "肌G",
+      "Description": ""
+    },
+    {
+      "Field": "skinB",
+      "Name": "肌B",
+      "Description": ""
+    }
+  ]
+}

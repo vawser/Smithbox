@@ -42,8 +42,8 @@
         <bloodMessageCellGroupTopRange />
         <bloodMessageCellGroupBottomRange />
         <bloodMessageLifeTime />
-        <unkA4/>
-        <unkA8/>
+        <areaBloodMessageReloadSignIntervalTime/>
+        <areaBloodMessageReloadUnknownCount/>
         <bloodstainKeyGuideRange />
         <bloodstainKeyGuideHeight />
         <bloodstainKeyGuideRangePlayer />
@@ -62,11 +62,10 @@
         <bloodstainLifeTime />
         <recordDeadingGhostTotalTime />
         <recordDeadingGhostExtensionTime />
-        <unkF4/>
-        <unkF8/>
-        <unkFC/>
-        <unk100/>
-        <unk104/>
+        <areaBloodstainReloadUnknownCount/>
+        <bloodstainPoolMinCullPriority/>
+        <bloodstainPoolMaxSignCount/>
+        <bloodstainPoolRadius/>
         <reloadGhostTotalCount />
         <reloadGhostCellCount />
         <maxGhostTotalCount />
@@ -101,7 +100,7 @@
         <reloadSearch_BellGuard_Max />
         <reloadSearch_RatKing_Min />
         <reloadSearch_RatKing_Max />
-        <visitpad00 />
+        <visitpad00 Padding="" />
         <srttMaxLimit />
         <srttMeanLimit />
         <srttMeanDeviationLimit />
@@ -126,13 +125,13 @@
         <signDisplayMax />
         <bloodStainDisplayMax />
         <bloodMessageDisplayMax />
-        <pad00 />
+        <pad00 Padding="" />
         <mirrorKnightSignConvertRate />
-        <reserveMK />
+        <reserveMK Padding="" />
         <reloadMKSignIntervalTime2 />
         <mirrorKnightSignLifetime />
         <reloadMKSignTotalCount />
         <unk1E0/>
-        <pad10 />
+        <pad10 Padding="" />
     </Field>
 </PARAMMETA>

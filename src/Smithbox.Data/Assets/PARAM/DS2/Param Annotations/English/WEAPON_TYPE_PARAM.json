@@ -2,541 +2,541 @@
   "Param": "WEAPON_TYPE_PARAM",
   "Type": "WEAPON_TYPE_PARAM",
   "Name": "WEAPON_TYPE_PARAM",
-  "Description": "",
+  "Description": "Defines configuration values that control weapon behavior, animations, combat interactions, and stat scaling across different weapon types.",
   "Fields": [
     {
       "Field": "allowMagic",
-      "Name": "使用許可スペル 魔術",
-      "Description": ""
+      "Name": "Spell Usage Allowed: Sorcery",
+      "Description": "Determines whether this weapon type can be used to cast sorceries."
     },
     {
       "Field": "allowMiracle",
-      "Name": "使用許可スペル 奇蹟",
-      "Description": ""
+      "Name": "Spell Usage Allowed: Miracles",
+      "Description": "Determines whether this weapon type can be used to cast miracles."
     },
     {
       "Field": "allowPyromancy",
-      "Name": "使用許可スペル 呪術",
-      "Description": ""
+      "Name": "Spell Usage Allowed: Pyromancy",
+      "Description": "Determines whether this weapon type can be used to cast pyromancies."
     },
     {
       "Field": "allowDarkMagic",
-      "Name": "使用許可スペル 闇魔術",
-      "Description": ""
+      "Name": "Spell Usage Allowed: Dark Magic",
+      "Description": "Determines whether this weapon type can be used to cast dark sorceries or hexes."
     },
     {
       "Field": "rightStance1HMotionId",
-      "Name": "装備アニメ 片手 右手 構え",
-      "Description": ""
+      "Name": "Equip Animation: 1H RH Stance",
+      "Description": "Animation ID used when holding a weapon 1H in the RH."
     },
     {
       "Field": "leftStance1HMotionId",
-      "Name": "装備アニメ 片手 左手 構え",
-      "Description": ""
+      "Name": "Equip Animation: 1H LH Stance",
+      "Description": "Animation ID used when holding a weapon 1H in the LH."
     },
     {
       "Field": "rightStance2HMotionId",
-      "Name": "装備アニメ 両手 右手 構え",
-      "Description": ""
+      "Name": "Equip Animation: 2H RH Stance",
+      "Description": "Animation ID used when 2Hing a weapon primarily held in the RH."
     },
     {
       "Field": "leftStance2HMotionId",
-      "Name": "装備アニメ 両手 左手 構え",
-      "Description": ""
+      "Name": "Equip Animation: 2H LH Stance",
+      "Description": "Animation ID used when 2Hing a weapon primarily held in the LH."
     },
     {
       "Field": "rightStanceDual1HMotionId",
-      "Name": "装備アニメ 二刀流 片手 右手 構え",
-      "Description": ""
+      "Name": "Equip Animation: DW 1H RH Stance",
+      "Description": "Animation ID for RH weapon stance when DWing 1H weapons."
     },
     {
       "Field": "leftStanceDual1HMotionId",
-      "Name": "装備アニメ 二刀流 片手 左手 構え",
-      "Description": ""
+      "Name": "Equip Animation: DW 1H LH Stance",
+      "Description": "Animation ID for LH weapon stance when DWing 1H weapons."
     },
     {
       "Field": "rightStanceDual2HMotionId",
-      "Name": "装備アニメ 二刀流 両手 右手 構え",
-      "Description": ""
+      "Name": "Equip Animation: DW 2H RH Stance",
+      "Description": "Animation ID for RH stance when DWing with 2H style."
     },
     {
       "Field": "leftStanceDual2HMotionId",
-      "Name": "装備アニメ 二刀流 両手 左手 構え",
-      "Description": ""
+      "Name": "Equip Animation: DW 2H LH Stance",
+      "Description": "Animation ID for LH stance when DWing with 2H style."
     },
     {
       "Field": "changeWeaponAnim",
-      "Name": "装備アニメ 装備切替",
-      "Description": ""
+      "Name": "Equip Animation: Weapon Swap",
+      "Description": "Animation played when switching or equipping weapons."
     },
     {
       "Field": "dmyPolyId1HandStanceRightChr",
-      "Name": "ダミポリID 片手構え 右手 キャラ",
-      "Description": ""
+      "Name": "Dummy Poly ID: 1H Stance RH Character",
+      "Description": "Reference ID for character model positioning in RH 1H stance."
     },
     {
       "Field": "dmyPolyId1HandStanceRightWeapon",
-      "Name": "ダミポリID 片手構え 右手 武器",
-      "Description": ""
+      "Name": "Dummy Poly ID: 1H Stance RH Weapon",
+      "Description": "Reference ID for weapon model positioning in RH 1H stance."
     },
     {
       "Field": "dmyPolyId1HandStanceLeftChr",
-      "Name": "ダミポリID 片手構え 左手 キャラ",
-      "Description": ""
+      "Name": "Dummy Poly ID: 1H Stance LH Character",
+      "Description": "Reference ID for character model positioning in LH 1H stance."
     },
     {
       "Field": "dmyPolyId1HandStanceLeftWeapon",
-      "Name": "ダミポリID 片手構え 左手 武器",
-      "Description": ""
+      "Name": "Dummy Poly ID: 1H Stance LH Weapon",
+      "Description": "Reference ID for weapon model positioning in LH 1H stance."
     },
     {
       "Field": "dmyPolyIdR2HandStanceChrMain",
-      "Name": "ダミポリID 右両手構え 右手 キャラ",
-      "Description": ""
+      "Name": "Dummy Poly ID: Right 2H Stance Main Character",
+      "Description": "Character alignment reference for RH 2H stance."
     },
     {
       "Field": "dmyPolyIdR2HandStanceWeaponMain",
-      "Name": "ダミポリID 右両手構え 右手 武器",
-      "Description": ""
+      "Name": "Dummy Poly ID: Right 2H Stance Main Weapon",
+      "Description": "Weapon alignment reference for RH 2H 2H stance."
     },
     {
       "Field": "dmyPolyIdR2HandStanceChrSub",
-      "Name": "ダミポリID 右両手構え 左手 キャラ",
-      "Description": ""
+      "Name": "Dummy Poly ID: Right 2H Stance Sub Character",
+      "Description": "Secondary character alignment for RH 2H stance."
     },
     {
       "Field": "dmyPolyIdR2HandStanceWeaponSub",
-      "Name": "ダミポリID 右両手構え 左手 武器",
-      "Description": ""
+      "Name": "Dummy Poly ID: Right 2H Stance Sub Weapon",
+      "Description": "Secondary weapon alignment for RH 2H stance."
     },
     {
       "Field": "dmyPolyIdL2HandStanceChrMain",
-      "Name": "ダミポリID 左両手構え 右手 キャラ",
-      "Description": ""
+      "Name": "Dummy Poly ID: Left 2H Stance Main Character",
+      "Description": "Character alignment reference for LH 2H stance."
     },
     {
       "Field": "dmyPolyIdL2HandStanceWeaponMain",
-      "Name": "ダミポリID 左両手構え 右手 武器",
-      "Description": ""
+      "Name": "Dummy Poly ID: Left 2H Stance Main Weapon",
+      "Description": "Weapon alignment reference for LH 2H stance."
     },
     {
       "Field": "dmyPolyIdL2HandStanceChrSub",
-      "Name": "ダミポリID 左両手構え 左手 キャラ",
-      "Description": ""
+      "Name": "Dummy Poly ID: Left 2H Stance Sub Character",
+      "Description": "Secondary character alignment for LH 2H stance."
     },
     {
       "Field": "dmyPolyIdL2HandStanceWeaponSub",
-      "Name": "ダミポリID 左両手構え 左手 武器",
-      "Description": ""
+      "Name": "Dummy Poly ID: Left 2H Stance Sub Weapon",
+      "Description": "Secondary weapon alignment for LH 2H stance."
     },
     {
       "Field": "dmyPolyIdRightStoreChr",
-      "Name": "ダミポリID 収納場所 右手 キャラ",
-      "Description": ""
+      "Name": "Dummy Poly ID: RH Storage Character",
+      "Description": "Character positioning reference when weapon is stowed in RH slot."
     },
     {
       "Field": "dmyPolyIdRightStoreWeapon",
-      "Name": "ダミポリID 収納場所 右手 武器",
-      "Description": ""
+      "Name": "Dummy Poly ID: RH Storage Weapon",
+      "Description": "Weapon positioning reference when stowed in RH slot."
     },
     {
       "Field": "dmyPolyIdLeftStoreChr",
-      "Name": "ダミポリID 収納場所 左手 キャラ",
-      "Description": ""
+      "Name": "Dummy Poly ID: LH Storage Character",
+      "Description": "Character positioning reference when weapon is stowed in LH slot."
     },
     {
       "Field": "dmyPolyIdLeftStoreWeapon",
-      "Name": "ダミポリID 収納場所 左手 武器",
-      "Description": ""
+      "Name": "Dummy Poly ID: LH Storage Weapon",
+      "Description": "Weapon positioning reference when stowed in LH slot."
     },
     {
       "Field": "shootCategory",
-      "Name": "装備設定 射撃設定",
-      "Description": ""
+      "Name": "Equipment Setting: Shooting Category",
+      "Description": "Defines the shooting behavior category for ranged weapons."
     },
     {
       "Field": "weaponType",
-      "Name": "装備設定 武器種別",
-      "Description": ""
+      "Name": "Equipment Setting: Weapon Type",
+      "Description": "Specifies the classification of the weapon type."
     },
     {
       "Field": "attackSeCategory",
-      "Name": "装備設定 攻撃SEカテゴリ",
-      "Description": ""
+      "Name": "Equipment Setting: Attack Sound Effect Category",
+      "Description": "Determines the sound effect group used for weapon attacks."
     },
     {
       "Field": "dualWieldingPermission",
-      "Name": "装備設定 二刀流許可",
-      "Description": ""
+      "Name": "Equipment Setting: Duel-Wielding Permission",
+      "Description": "Indicates whether the weapon supports DWing."
     },
     {
       "Field": "weaponStabilizeBlengWeight",
-      "Name": "装備揺れ押さえ 反映割合[%]",
-      "Description": ""
+      "Name": "Weapon Sway Reduction Blend Weight [%]",
+      "Description": "Controls how strongly weapon sway is reduced during movement."
     },
     {
       "Field": "weaponSpineTwistBlendWeight",
-      "Name": "装備上半身捻り 反映割合[%]",
-      "Description": ""
+      "Name": "Upper Body Twist Blend Weight [%]",
+      "Description": "Controls the influence of upper body twisting while handling the weapon."
     },
     {
       "Field": "parryStabYawCorrectAngle",
-      "Name": "スタブ 左右角度補正値 パリィブレイクスタブ [deg]",
-      "Description": ""
+      "Name": "Stab Angle Correction: Parry Break [deg]",
+      "Description": "Yaw correction angle applied during parry break stab attacks."
     },
     {
       "Field": "guardBreakStabYawCorrectAngle",
-      "Name": "スタブ 左右角度補正値 ガードブレイクスタブ [deg]",
-      "Description": ""
+      "Name": "Stab Angle Correction: Guard Break [deg]",
+      "Description": "Yaw correction angle applied during guard break stab attacks."
     },
     {
       "Field": "backStabYawCorrectAngle",
-      "Name": "スタブ 左右角度補正値 バックスタブ [deg]",
-      "Description": ""
+      "Name": "Stab Angle Correction: Backstab [deg]",
+      "Description": "Yaw correction angle applied during backstab attacks."
     },
     {
       "Field": "guardPassiveLevelType",
-      "Name": "ガード ガードレベル",
-      "Description": ""
+      "Name": "Guard Level Type",
+      "Description": "Defines the defensive guard strength level."
     },
     {
       "Field": "guardReleaseSpeedCategory",
-      "Name": "ガード ガード解除速度",
-      "Description": ""
+      "Name": "Guard Release Speed Category",
+      "Description": "Controls how quickly a guard stance is released."
     },
     {
       "Field": "parryType",
-      "Name": "パリィ パリィ種類",
-      "Description": ""
+      "Name": "Parry Type",
+      "Description": "Defines the parry behavior type for the weapon."
     },
     {
       "Field": "allowDarkMiracle",
-      "Name": "使用許可スペル 闇奇蹟",
-      "Description": ""
+      "Name": "Spell Usage Allowed: Dark Miracles",
+      "Description": "Determines whether dark miracles can be used with this weapon type."
     },
     {
       "Field": "leftDamageScale",
-      "Name": "左装備時 ダメージ 補正倍率 [倍]",
-      "Description": ""
+      "Name": "LH Damage Scaling %",
+      "Description": "Damage multiplier applied when weapon is used in the LH."
     },
     {
       "Field": "leftStaminaDamageScale",
-      "Name": "左装備時 スタミナ奪取量 補正倍率 [倍]",
-      "Description": ""
+      "Name": "LH Stamina Damage Scaling %",
+      "Description": "Stamina damage multiplier for LH usage."
     },
     {
       "Field": "leftDurabilityDamageScale",
-      "Name": "左装備時 耐久削り値 補正倍率 [倍]",
-      "Description": ""
+      "Name": "LH Durability Damage Scaling %",
+      "Description": "Durability damage multiplier for LH usage."
     },
     {
       "Field": "rightDamageScale",
-      "Name": "右装備時 ダメージ 補正倍率 [倍]",
-      "Description": ""
+      "Name": "RH Damage Scaling %",
+      "Description": "Damage multiplier applied when weapon is used in the RH."
     },
     {
       "Field": "rightDtaminaDamageScale",
-      "Name": "右装備時 スタミナ奪取量 補正倍率 [倍]",
-      "Description": ""
+      "Name": "RH Stamina Damage Scaling %",
+      "Description": "Stamina damage multiplier for RH usage."
     },
     {
       "Field": "rightDurabilityDamageScale",
-      "Name": "右装備時 耐久削り値 補正倍率 [倍]",
-      "Description": ""
+      "Name": "RH Durability Damage Scaling %",
+      "Description": "Durability damage multiplier for RH usage."
     },
     {
       "Field": "counterDamageScale",
-      "Name": "カウンターダメージ\u3000補正倍率[倍]",
-      "Description": ""
+      "Name": "Counter Damage Scaling %",
+      "Description": "Multiplier applied to counterattack damage."
     },
     {
       "Field": "fallStrikeFallDistRate",
-      "Name": "落下攻撃 発生落下高度 倍率",
-      "Description": ""
+      "Name": "Fall Attack Trigger Height %",
+      "Description": "Determines required fall distance for fall attacks to trigger."
     },
     {
       "Field": "jumpAttackVerticalSpeedRate",
-      "Name": "ジャンプ攻撃 上昇速度 補正倍率[倍]",
-      "Description": ""
+      "Name": "Jump Attack Vertical Speed %",
+      "Description": "Controls upward velocity during jump attacks."
     },
     {
       "Field": "jumpAttackSideDistMinRate",
-      "Name": "ジャンプ攻撃 水平速度 最少距離 補正倍率[倍]",
-      "Description": ""
+      "Name": "Jump Attack Minimum Horizontal Distance %",
+      "Description": "Minimum horizontal movement distance during jump attacks."
     },
     {
       "Field": "jumpAttackSideDistMaxRate",
-      "Name": "ジャンプ攻撃 水平速度 最大距離 補正倍率[倍]",
-      "Description": ""
+      "Name": "Jump Attack Maximum Horizontal Distance %",
+      "Description": "Maximum horizontal movement distance during jump attacks."
     },
     {
       "Field": "jumpAttackSideSpeedMinRate",
-      "Name": "ジャンプ攻撃 水平速度 最少 補正倍率[倍]",
-      "Description": ""
+      "Name": "Jump Attack Minimum Horizontal Speed %",
+      "Description": "Minimum horizontal speed during jump attacks."
     },
     {
       "Field": "jumpAttackSideSpeedMaxRate",
-      "Name": "ジャンプ攻撃 水平速度 最大 補正倍率[倍]",
-      "Description": ""
+      "Name": "Jump Attack Maximum Horizontal Speed %",
+      "Description": "Maximum horizontal speed during jump attacks."
     },
     {
       "Field": "jumpFallAttackFallDistRate",
-      "Name": "ジャンプ落下攻撃 発生落下高度 倍率",
-      "Description": ""
+      "Name": "Jump Falling Attack Trigger Height %",
+      "Description": "Required fall distance for jump falling attacks."
     },
     {
       "Field": "jumpFallAttackVerticalSpeedRate",
-      "Name": "ジャンプ落下攻撃 上昇速度 補正倍率[倍]",
-      "Description": ""
+      "Name": "Jump Falling Attack Vertical Speed %",
+      "Description": "Vertical speed modifier for jump falling attacks."
     },
     {
       "Field": "jumpFallAttackSideDistMinRate",
-      "Name": "ジャンプ落下攻撃 水平速度 最少距離 補正倍率[倍]",
-      "Description": ""
+      "Name": "Jump Falling Attack Minimum Horizontal Distance %",
+      "Description": "Minimum horizontal distance for jump falling attacks."
     },
     {
       "Field": "jumpFallAttackSideDistMaxRate",
-      "Name": "ジャンプ落下攻撃 水平速度 最大距離 補正倍率[倍]",
-      "Description": ""
+      "Name": "Jump Falling Attack Maximum Horizontal Distance %",
+      "Description": "Maximum horizontal distance for jump falling attacks."
     },
     {
       "Field": "jumpFallAttackSideSpeedMinRate",
-      "Name": "ジャンプ落下攻撃 水平速度 最少 補正倍率[倍]",
-      "Description": ""
+      "Name": "Jump Falling Attack Minimum Horizontal Speed %",
+      "Description": "Minimum horizontal speed for jump falling attacks."
     },
     {
       "Field": "jumpFallAttackSideSpeedMaxRate",
-      "Name": "ジャンプ落下攻撃 水平速度 最大 補正倍率[倍]",
-      "Description": ""
+      "Name": "Jump Falling Attack Maximum Horizontal Speed %",
+      "Description": "Maximum horizontal speed for jump falling attacks."
     },
     {
       "Field": "fallStabType",
-      "Name": "落下投げ種類",
-      "Description": ""
+      "Name": "Falling Stab Type",
+      "Description": "Defines the type of stab used during falling attacks."
     },
     {
       "Field": "damageWeaponType",
-      "Name": "ダメージ武器タイプ",
-      "Description": ""
+      "Name": "Damage Weapon Type",
+      "Description": "Specifies how the weapon calculates or categorizes damage type."
     },
     {
       "Field": "menuShotRange",
-      "Name": "メニュー用 射程距離",
-      "Description": ""
+      "Name": "Menu Display: Shot Range",
+      "Description": "Range value displayed in menus for ranged weapons."
     },
     {
       "Field": "backStabAttackAnimId",
-      "Name": "投げ掴み バックスタブ投げ掴み[中]アニメID",
-      "Description": ""
+      "Name": "Grab Attack Animation ID: Backstab",
+      "Description": "Animation ID used for backstab grab attack."
     },
     {
       "Field": "gdBreakStabAttackAnimId",
-      "Name": "投げ掴み ガードブレイクスタブ投げ掴み[中]アニメID",
-      "Description": ""
+      "Name": "Grab Attack Animation ID: Guard Break Stab",
+      "Description": "Animation ID used for guard break stab grab attack."
     },
     {
       "Field": "lookAtRotationLeftRate",
-      "Name": "攻撃時LookAt 旋回限界角度 左 補正倍率[倍]",
-      "Description": ""
+      "Name": "Attack LookAt Rotation Limit Left %",
+      "Description": "Limits leftward rotation while aiming during attacks."
     },
     {
       "Field": "lookAtRotationRightRate",
-      "Name": "攻撃時LookAt 旋回限界角度 右 補正倍率[倍]",
-      "Description": ""
+      "Name": "Attack LookAt Rotation Limit Right %",
+      "Description": "Limits rightward rotation while aiming during attacks."
     },
     {
       "Field": "lookAtRotationUpperRate",
-      "Name": "攻撃時LookAt 旋回限界角度 上 補正倍率[倍]",
-      "Description": ""
+      "Name": "Attack LookAt Rotation Limit Up %",
+      "Description": "Limits upward rotation while aiming during attacks."
     },
     {
       "Field": "lookAtRotationLowerRate",
-      "Name": "攻撃時LookAt 旋回限界角度 下 補正倍率[倍]",
-      "Description": ""
+      "Name": "Attack LookAt Rotation Limit Down %",
+      "Description": "Limits downward rotation while aiming during attacks."
     },
     {
       "Field": "lookAtVisibilitySideRate",
-      "Name": "攻撃時LookAt 認識限界角度 左右 補正倍率[倍]",
-      "Description": ""
+      "Name": "Attack LookAt Visibility Angle Side %",
+      "Description": "Controls horizontal visibility range while attacking."
     },
     {
       "Field": "lookAtVisibilityUpperRate",
-      "Name": "攻撃時LookAt 認識限界角度 上下 補正倍率[倍]",
-      "Description": ""
+      "Name": "Attack LookAt Visibility Angle Vertical %",
+      "Description": "Controls vertical visibility range while attacking."
     },
     {
       "Field": "lookAtRotationSideSpeedRate",
-      "Name": "攻撃時LookAt 左右旋回速度 補正倍率[倍]",
-      "Description": ""
+      "Name": "Attack LookAt Horizontal Rotation Speed %",
+      "Description": "Controls horizontal turning speed during attacks."
     },
     {
       "Field": "lookAtRotationUpperSpeedRate",
-      "Name": "攻撃時LookAt 上下旋回速度 補正倍率[倍]",
-      "Description": ""
+      "Name": "Attack LookAt Vertical Rotation Speed %",
+      "Description": "Controls vertical turning speed during attacks."
     },
     {
       "Field": "staminaRecoveryScale",
-      "Name": "ガード時 スタミナ回復値 倍率",
-      "Description": ""
+      "Name": "Guard Stamina Recovery %",
+      "Description": "Multiplier for stamina recovery while guarding."
     },
     {
       "Field": "stabilityAddRateSingle1Hand",
-      "Name": "受け能力 加算補正値 片手 [%]",
-      "Description": ""
+      "Name": "Poise Add Rate: 1H [%]",
+      "Description": "Additional poise value when using 1H stance."
     },
     {
       "Field": "stabilityAddRateSingle2Handed",
-      "Name": "受け能力 加算補正値 両手 [%]",
-      "Description": ""
+      "Name": "Poise Add Rate: 2H [%]",
+      "Description": "Additional poise value when using 2H stance."
     },
     {
       "Field": "stabilityAddRateDual1Hand",
-      "Name": "受け能力 加算補正値 二刀流 [%]",
-      "Description": ""
+      "Name": "Poise Add Rate: DW 1H [%]",
+      "Description": "Additional poise value when DWing 1H."
     },
     {
       "Field": "stabilityAddRateDual2Handed",
-      "Name": "受け能力 加算補正値 二刀流両手 [%]",
-      "Description": ""
+      "Name": "Poise Add Rate: DW 2H [%]",
+      "Description": "Additional poise value when DWing 2H."
     },
     {
       "Field": "meleeAutoPivotRotationSpeedScale",
-      "Name": "旋回ホーミング 速度 補正倍率 [倍]",
-      "Description": ""
+      "Name": "Melee Auto Pivot Rotation Speed %",
+      "Description": "Controls automatic rotation speed during melee targeting."
     },
     {
       "Field": "meleeAutoPivotLimitAngleScale",
-      "Name": "旋回ホーミング 限界角度 補正倍率 [倍]",
-      "Description": ""
+      "Name": "Melee Auto Pivot Angle Limit %",
+      "Description": "Limits automatic rotation angle during melee combat."
     },
     {
       "Field": "manualPivotRotationSpeedScale",
-      "Name": "任意旋回 速度 補正倍率 [倍]",
-      "Description": ""
+      "Name": "Manual Pivot Rotation Speed %",
+      "Description": "Controls player-driven rotation speed."
     },
     {
       "Field": "manualPivotLimitAngleScale",
-      "Name": "任意旋回 限界角度 補正倍率 [倍]",
-      "Description": ""
+      "Name": "Manual Pivot Angle Limit %",
+      "Description": "Limits manual rotation angle."
     },
     {
       "Field": "moveAccelerationScale",
-      "Name": "向き変更 加速度 補正倍率 [倍]",
-      "Description": ""
+      "Name": "Movement Acceleration %",
+      "Description": "Adjusts acceleration while changing direction."
     },
     {
       "Field": "moveMaxSpeedScale",
-      "Name": "向き変更 最大速度 補正倍率 [倍]",
-      "Description": ""
+      "Name": "Movement Max Speed %",
+      "Description": "Adjusts maximum movement speed."
     },
     {
       "Field": "moveDecelerationScale",
-      "Name": "向き変更 減速度 補正倍率 [倍]",
-      "Description": ""
+      "Name": "Movement Deceleration %",
+      "Description": "Adjusts slowing speed while moving."
     },
     {
       "Field": "moveRotationSpeedScale",
-      "Name": "向き変更 旋回速度 補正倍率 [倍]",
-      "Description": ""
+      "Name": "Movement Rotation Speed %",
+      "Description": "Adjusts turning speed during movement."
     },
     {
       "Field": "canPredictShot",
-      "Name": "予測射撃許可フラグ",
-      "Description": ""
+      "Name": "Allow Predictive Shooting",
+      "Description": "Determines whether predictive aiming is enabled for ranged attacks."
     },
     {
       "Field": "shotSeCategory",
-      "Name": "発射SEカテゴリ",
-      "Description": ""
+      "Name": "Shot Sound Effect Category",
+      "Description": "Defines sound effects used for projectile firing."
     },
     {
       "Field": "dummy",
-      "Name": "ダミー",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "rangedAutoPivotRotationSpeedScale",
-      "Name": "自動旋回 速度 補正倍率 [倍]",
-      "Description": ""
+      "Name": "Ranged Auto Pivot Rotation Speed %",
+      "Description": "Controls automatic rotation speed for ranged weapons."
     },
     {
       "Field": "rangedManualPivotRotationSpeedScale",
-      "Name": "その場旋回 速度 補正倍率 [倍]",
-      "Description": ""
+      "Name": "Ranged Manual Pivot Rotation Speed %",
+      "Description": "Controls manual rotation speed for ranged aiming."
     },
     {
       "Field": "spellChantTimeScale",
-      "Name": "詠唱時間 倍率 [倍]",
-      "Description": ""
+      "Name": "Spell Chant Time %",
+      "Description": "Adjusts casting time for spells."
     },
     {
       "Field": "toughnessPeriodScale",
-      "Name": "強靭度期間 倍率 [倍]",
-      "Description": ""
+      "Name": "Toughness Duration %",
+      "Description": "Adjusts duration of poise/toughness effect."
     },
     {
       "Field": "decreaseSpeedRateParallelWalk",
-      "Name": "射撃構え移動 速度減少割合 平行移動 [%]",
-      "Description": ""
+      "Name": "Shooting Movement Speed Reduction: Strafe [%]",
+      "Description": "Speed reduction while moving sideways during shooting stance."
     },
     {
       "Field": "decreaseSpeedRateWalk",
-      "Name": "射撃構え移動 速度減少割合 歩行 [%]",
-      "Description": ""
+      "Name": "Shooting Movement Speed Reduction: Walk [%]",
+      "Description": "Speed reduction while walking in shooting stance."
     },
     {
       "Field": "decreaseSpeedRateLockOnWalk",
-      "Name": "射撃構え移動 速度減少割合 ロックオン移動 [%]",
-      "Description": ""
+      "Name": "Shooting Movement Speed Reduction: Lock-On Walk [%]",
+      "Description": "Speed reduction while lock-on walking in shooting stance."
     },
     {
       "Field": "afterAttackAccelerationScale",
-      "Name": "攻撃後 歩き出し 加速度 補正倍率 [倍]",
-      "Description": ""
+      "Name": "Post-Attack Acceleration %",
+      "Description": "Controls acceleration after performing an attack."
     },
     {
       "Field": "afterAttackMaxSpeedScale",
-      "Name": "攻撃後 歩き出し 速度 最大 補正倍率 [倍]",
-      "Description": ""
+      "Name": "Post-Attack Max Speed %",
+      "Description": "Controls maximum speed after attacking."
     },
     {
       "Field": "afterAttackDecelerationScale",
-      "Name": "攻撃後 歩き出し 減速度 補正倍率 [倍]",
-      "Description": ""
+      "Name": "Post-Attack Deceleration %",
+      "Description": "Controls deceleration after attacking."
     },
     {
       "Field": "afterAttackRotationSpeedScale",
-      "Name": "攻撃後 歩き出し 旋回速度 補正倍率 [倍]",
-      "Description": ""
+      "Name": "Post-Attack Rotation Speed %",
+      "Description": "Controls turning speed after attacking."
     },
     {
       "Field": "weaponMenuCategory",
-      "Name": "(メニュー用)カテゴリ",
-      "Description": ""
+      "Name": "Menu Category",
+      "Description": "Category used for organizing weapons in menus."
     },
     {
       "Field": "snipeCameraParamId",
-      "Name": "精密射撃カメラID",
-      "Description": ""
+      "Name": "Precision Shot Camera ID",
+      "Description": "Camera parameter ID used for sniping or precision aiming."
     },
     {
       "Field": "canGuardAttack",
-      "Name": "ガード付き攻撃許可",
-      "Description": ""
+      "Name": "Allow Guard Attack",
+      "Description": "Determines whether attacks can be performed while guarding."
     },
     {
       "Field": "unk138",
-      "Name": "unk138",
-      "Description": ""
+      "Name": "Unknown 138",
+      "Description": "Unidentified or unused parameter."
     },
     {
       "Field": "abyssRate",
-      "Name": "Mundane damage rate",
-      "Description": ""
+      "Name": "Mundane Damage Rate",
+      "Description": "Multiplier affecting a special damage type (previously labeled abyss damage)."
     },
     {
       "Field": "dummy1",
-      "Name": "ダミー",
+      "Name": "Padding",
       "Description": ""
     }
   ]

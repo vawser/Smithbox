@@ -1,0 +1,218 @@
+{
+  "Param": "CAMERA_MENU_PARAM",
+  "Type": "CAMERA_MENU_PARAM",
+  "Name": "CAMERA_MENU_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "cameraType",
+      "Name": "カメラ挙動タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "cameraBasePosType",
+      "Name": "カメラ基準点タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "reserved",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "fovY",
+      "Name": "画角(deg)",
+      "Description": ""
+    },
+    {
+      "Field": "hitCollision",
+      "Name": "コリジョンサイズ",
+      "Description": ""
+    },
+    {
+      "Field": "fulcrumOffsetX",
+      "Name": "支点(X軸) オフセット(m)",
+      "Description": ""
+    },
+    {
+      "Field": "fulcrumOffsetY",
+      "Name": "支点(Y軸) オフセット(m)",
+      "Description": ""
+    },
+    {
+      "Field": "fulcrumOffsetZ",
+      "Name": "支点(Z軸) オフセット(m)",
+      "Description": ""
+    },
+    {
+      "Field": "lookAtOffsetX",
+      "Name": "焦点(X軸) オフセット(m)",
+      "Description": ""
+    },
+    {
+      "Field": "lookAtOffsetY",
+      "Name": "焦点(Y軸) オフセット(m)",
+      "Description": ""
+    },
+    {
+      "Field": "lookAtOffsetZ",
+      "Name": "焦点(Z軸) オフセット(m)",
+      "Description": ""
+    },
+    {
+      "Field": "positionOffsetX",
+      "Name": "位置(X軸) オフセット(m)",
+      "Description": ""
+    },
+    {
+      "Field": "positionOffsetY",
+      "Name": "位置(Y軸) オフセット(m)",
+      "Description": ""
+    },
+    {
+      "Field": "positionOffsetZ",
+      "Name": "位置(Z軸) オフセット(m)",
+      "Description": ""
+    },
+    {
+      "Field": "rotHiSpeedRateIncTime",
+      "Name": "高速回転率増加時間[sec]",
+      "Description": ""
+    },
+    {
+      "Field": "rotRangeMinX",
+      "Name": "X軸回転最小値[deg]",
+      "Description": ""
+    },
+    {
+      "Field": "rotRangeMaxX",
+      "Name": "X軸回転最大値[deg]",
+      "Description": ""
+    },
+    {
+      "Field": "rotSpeedX_Min",
+      "Name": "X軸回転速度[deg/sec]最小値",
+      "Description": ""
+    },
+    {
+      "Field": "rotSpeedX_Max",
+      "Name": "X軸回転速度[deg/sec]最大値",
+      "Description": ""
+    },
+    {
+      "Field": "rotSpeedY_Min",
+      "Name": "Y軸回転速度[deg/sec]最小値",
+      "Description": ""
+    },
+    {
+      "Field": "rotSpeedY_Max",
+      "Name": "Y軸回転速度[deg/sec]最大値",
+      "Description": ""
+    },
+    {
+      "Field": "rotHiSpeedX_Min",
+      "Name": "X軸高速回転速度[deg/sec]最小値",
+      "Description": ""
+    },
+    {
+      "Field": "rotHiSpeedX_Max",
+      "Name": "X軸高速回転速度[deg/sec]最大値",
+      "Description": ""
+    },
+    {
+      "Field": "rotHiSpeedY_Min",
+      "Name": "Y軸高速回転速度[deg/sec]最小値",
+      "Description": ""
+    },
+    {
+      "Field": "rotHiSpeedY_Max",
+      "Name": "Y軸高速回転速度[deg/sec]最大値",
+      "Description": ""
+    },
+    {
+      "Field": "directPitchAng",
+      "Name": "ダイレクトピッチ角度[deg]",
+      "Description": ""
+    },
+    {
+      "Field": "directPitchRate",
+      "Name": "ダイレクトピッチレート(0.0～1.0)",
+      "Description": ""
+    },
+    {
+      "Field": "escapeWallRotAddY",
+      "Name": "壁回避Y軸回転加算値[deg/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "escapeWallRotMaxY",
+      "Name": "壁回避Y軸回転最大値[deg/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "escapeWallRotDampRatio",
+      "Name": "壁回避回転減衰率",
+      "Description": ""
+    },
+    {
+      "Field": "escapeWallWingAngY",
+      "Name": "壁回避羽角度[deg]",
+      "Description": ""
+    },
+    {
+      "Field": "escapeWallWingLen",
+      "Name": "壁回避羽長[m]",
+      "Description": ""
+    },
+    {
+      "Field": "escapeWallWingRadius",
+      "Name": "壁回避羽半径[m]",
+      "Description": ""
+    },
+    {
+      "Field": "escapeWallWingSeparate",
+      "Name": "壁回避羽間隔[m]",
+      "Description": ""
+    },
+    {
+      "Field": "resetMinTime",
+      "Name": "リセットにかかる最小時間[sec]",
+      "Description": ""
+    },
+    {
+      "Field": "resetMaxTime",
+      "Name": "リセットにかかる最大時間[sec]",
+      "Description": ""
+    },
+    {
+      "Field": "resetSpeedChangeRate",
+      "Name": "リセット速度の変化レート",
+      "Description": ""
+    },
+    {
+      "Field": "startTransType",
+      "Name": "切り替え開始時補間タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "endTransType",
+      "Name": "切り替え終了時補間タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "reserved1",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "startTransTime",
+      "Name": "切り替え開始時補間時間",
+      "Description": ""
+    },
+    {
+      "Field": "endTransTime",
+      "Name": "切り替え終了時補間時間",
+      "Description": ""
+    }
+  ]
+}

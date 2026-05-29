@@ -2,226 +2,226 @@
   "Param": "DAMAGE_EFFECT_SE_PARAM",
   "Type": "DAMAGE_EFFECT_SE_PARAM",
   "Name": "DAMAGE_EFFECT_SE_PARAM",
-  "Description": "",
+  "Description": "Defines sound effect IDs associated with damage interactions for different material and surface types.",
   "Fields": [
     {
       "Field": "materialNone",
-      "Name": "なし",
-      "Description": ""
+      "Name": "None",
+      "Description": "Sound effect used when no material type is specified."
     },
     {
       "Field": "materialMetal",
-      "Name": "鉄",
-      "Description": ""
+      "Name": "Iron",
+      "Description": "Sound effect used for impacts against iron or metal materials."
     },
     {
       "Field": "materialHeavyMetal",
-      "Name": "重鉄",
-      "Description": ""
+      "Name": "Heavy Iron",
+      "Description": "Sound effect used for impacts against heavy metal materials."
     },
     {
       "Field": "materialWood",
-      "Name": "木",
-      "Description": ""
+      "Name": "Wood",
+      "Description": "Sound effect used for impacts against wood materials."
     },
     {
       "Field": "materialWater",
-      "Name": "水",
-      "Description": ""
+      "Name": "Water",
+      "Description": "Sound effect used for impacts involving water surfaces."
     },
     {
       "Field": "materialSwamp",
-      "Name": "沼",
-      "Description": ""
+      "Name": "Swamp",
+      "Description": "Sound effect used for impacts involving swamp surfaces."
     },
     {
       "Field": "materialLumber",
-      "Name": "木材",
-      "Description": ""
+      "Name": "Lumber",
+      "Description": "Sound effect used for impacts against processed wood or lumber materials."
     },
     {
       "Field": "materialMeat",
-      "Name": "生者肉",
-      "Description": ""
+      "Name": "Living Flesh",
+      "Description": "Sound effect used for impacts against living flesh."
     },
     {
       "Field": "materialDeadMeat",
-      "Name": "亡者肉",
-      "Description": ""
+      "Name": "Undead Flesh",
+      "Description": "Sound effect used for impacts against undead or decayed flesh."
     },
     {
       "Field": "materialInsect",
-      "Name": "虫",
-      "Description": ""
+      "Name": "Insect",
+      "Description": "Sound effect used for impacts against insect-type materials or enemies."
     },
     {
       "Field": "materialGiant",
-      "Name": "巨人",
-      "Description": ""
+      "Name": "Giant",
+      "Description": "Sound effect used for impacts against giant-type enemies or materials."
     },
     {
       "Field": "materialBone",
-      "Name": "骨",
-      "Description": ""
+      "Name": "Bone",
+      "Description": "Sound effect used for impacts against bone materials."
     },
     {
       "Field": "materialCopper",
-      "Name": "銅",
-      "Description": ""
+      "Name": "Copper",
+      "Description": "Sound effect used for impacts against copper materials."
     },
     {
       "Field": "materialEnergy",
-      "Name": "エネルギー",
-      "Description": ""
+      "Name": "Energy",
+      "Description": "Sound effect used for impacts involving energy-based materials or attacks."
     },
     {
       "Field": "materialFire",
-      "Name": "炎",
-      "Description": ""
+      "Name": "Fire",
+      "Description": "Sound effect used for fire-element interactions."
     },
     {
       "Field": "materialThunder",
-      "Name": "雷",
-      "Description": ""
+      "Name": "Lightning",
+      "Description": "Sound effect used for lightning-element interactions."
     },
     {
       "Field": "materialDark",
-      "Name": "闇",
-      "Description": ""
+      "Name": "Dark",
+      "Description": "Sound effect used for dark-element interactions."
     },
     {
       "Field": "materialMagicalPower",
-      "Name": "魔力",
-      "Description": ""
+      "Name": "Magic",
+      "Description": "Sound effect used for magic-element interactions."
     },
     {
       "Field": "materialStone",
-      "Name": "石",
-      "Description": ""
+      "Name": "Stone",
+      "Description": "Sound effect used for impacts against stone materials."
     },
     {
       "Field": "materialDirt",
-      "Name": "土",
-      "Description": ""
+      "Name": "Dirt",
+      "Description": "Sound effect used for impacts against dirt or soil surfaces."
     },
     {
       "Field": "materialCarpet",
-      "Name": "カーペット",
-      "Description": ""
+      "Name": "Carpet",
+      "Description": "Sound effect used for impacts against carpeted surfaces."
     },
     {
       "Field": "materialGrass",
-      "Name": "草",
-      "Description": ""
+      "Name": "Grass",
+      "Description": "Sound effect used for impacts against grassy surfaces."
     },
     {
       "Field": "materialBallast",
-      "Name": "砂利",
-      "Description": ""
+      "Name": "Gravel",
+      "Description": "Sound effect used for impacts against gravel surfaces."
     },
     {
       "Field": "materialCloth",
-      "Name": "布",
-      "Description": ""
+      "Name": "Cloth",
+      "Description": "Sound effect used for impacts against cloth materials."
     },
     {
       "Field": "materialSand",
-      "Name": "砂",
-      "Description": ""
+      "Name": "Sand",
+      "Description": "Sound effect used for impacts against sandy surfaces."
     },
     {
       "Field": "materialAsh",
-      "Name": "灰",
-      "Description": ""
+      "Name": "Ash",
+      "Description": "Sound effect used for impacts against ash-covered surfaces."
     },
     {
       "Field": "materialPoisonSwamp",
-      "Name": "毒沼",
-      "Description": ""
+      "Name": "Poison Swamp",
+      "Description": "Sound effect used for impacts involving poisonous swamp surfaces."
     },
     {
       "Field": "materialOil",
-      "Name": "油",
-      "Description": ""
+      "Name": "Oil",
+      "Description": "Sound effect used for impacts involving oily surfaces."
     },
     {
       "Field": "materialCoalTar",
-      "Name": "コールタール",
-      "Description": ""
+      "Name": "Coal Tar",
+      "Description": "Sound effect used for impacts involving coal tar or tar-like surfaces."
     },
     {
       "Field": "materialLava",
-      "Name": "溶岩",
-      "Description": ""
+      "Name": "Lava",
+      "Description": "Sound effect used for impacts involving lava surfaces."
     },
     {
       "Field": "materialThread",
-      "Name": "蜘蛛の糸",
-      "Description": ""
+      "Name": "Spider Web",
+      "Description": "Sound effect used for impacts involving spider webs or thread-like materials."
     },
     {
       "Field": "materialCrystal",
-      "Name": "硫黄結晶",
-      "Description": ""
+      "Name": "Sulfur Crystal",
+      "Description": "Sound effect used for impacts against sulfur crystal materials."
     },
     {
       "Field": "materialSoul",
-      "Name": "ソウル",
-      "Description": ""
+      "Name": "Soul",
+      "Description": "Sound effect used for soul-related or spiritual interactions."
     },
     {
       "Field": "materialFrog",
-      "Name": "美声カエル",
-      "Description": ""
+      "Name": "Singing Frog",
+      "Description": "Sound effect used for interactions involving the Singing Frog material category."
     },
     {
       "Field": "unkMaterial0",
-      "Name": "美声カエル",
-      "Description": ""
+      "Name": "Unknown Material 0",
+      "Description": "Sound effect assigned to an unknown or unidentified material category."
     },
     {
       "Field": "unkMaterial1",
-      "Name": "美声カエル [1]",
-      "Description": ""
+      "Name": "Unknown Material 1",
+      "Description": "Sound effect assigned to an unknown or unidentified material category."
     },
     {
       "Field": "unkMaterial2",
-      "Name": "美声カエル [2]",
-      "Description": ""
+      "Name": "Unknown Material 2",
+      "Description": "Sound effect assigned to an unknown or unidentified material category."
     },
     {
       "Field": "unkMaterial3",
-      "Name": "美声カエル [3]",
-      "Description": ""
+      "Name": "Unknown Material 3",
+      "Description": "Sound effect assigned to an unknown or unidentified material category."
     },
     {
       "Field": "unkMaterial4",
-      "Name": "美声カエル [4]",
-      "Description": ""
+      "Name": "Unknown Material 4",
+      "Description": "Sound effect assigned to an unknown or unidentified material category."
     },
     {
       "Field": "unkMaterial5",
-      "Name": "美声カエル [5]",
-      "Description": ""
+      "Name": "Unknown Material 5",
+      "Description": "Sound effect assigned to an unknown or unidentified material category."
     },
     {
       "Field": "unkMaterial6",
-      "Name": "美声カエル [6]",
-      "Description": ""
+      "Name": "Unknown Material 6",
+      "Description": "Sound effect assigned to an unknown or unidentified material category."
     },
     {
       "Field": "unkMaterial7",
-      "Name": "美声カエル [7]",
-      "Description": ""
+      "Name": "Unknown Material 7",
+      "Description": "Sound effect assigned to an unknown or unidentified material category."
     },
     {
       "Field": "unkMaterial8",
-      "Name": "美声カエル [8]",
-      "Description": ""
+      "Name": "Unknown Material 8",
+      "Description": "Sound effect assigned to an unknown or unidentified material category."
     },
     {
       "Field": "dummy",
-      "Name": "予約領域",
+      "Name": "Padding",
       "Description": ""
     }
   ]

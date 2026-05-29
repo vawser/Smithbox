@@ -3,10 +3,10 @@
     <Field>
         <graveGenerateTime />
         <deadTimeValueId  Enum="EVENT_VALUE_global"/>
-        <deadFlagId  Enum="EVENT_FLAG_GLOBAL_EVENT"/>
+        <deadFlagId FlagAlias="" />
         <graveSoulValue />
-        <chrNameTextId />
-        <aReserved1 />
+        <chrNameTextId FmgRef="npcmenu" />
+        <aReserved1 Padding="" />
         <value0 />
         <value1 />
         <value2 />

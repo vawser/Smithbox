@@ -2,47 +2,47 @@
   "Param": "PHYSICS_TEXTURE_PARAM",
   "Type": "PHYSICS_TEXTURE_PARAM",
   "Name": "PHYSICS_TEXTURE_PARAM",
-  "Description": "",
+  "Description": "Defines physically-based rendering (PBR) texture properties such as refraction, reflectance, and surface roughness.",
   "Fields": [
     {
       "Field": "layerType",
-      "Name": "レイヤータイプ",
-      "Description": ""
+      "Name": "Layer Type",
+      "Description": "Defines the material or rendering layer type used for physics-based shading."
     },
     {
       "Field": "dummy0",
-      "Name": "ダミー0",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "refractiveReal",
-      "Name": "屈折率",
-      "Description": ""
+      "Name": "Refractive Index (Real Part)",
+      "Description": "Real component of the refractive index used for light bending calculations."
     },
     {
       "Field": "refractiveImag",
-      "Name": "屈折率の虚数部",
-      "Description": ""
+      "Name": "Refractive Index (Imaginary Part)",
+      "Description": "Imaginary component of the refractive index representing absorption or attenuation of light."
     },
     {
       "Field": "fresnel",
-      "Name": "垂直反射率",
-      "Description": ""
+      "Name": "Normal Reflectance",
+      "Description": "Reflectance value at normal incidence used in Fresnel equations."
     },
     {
       "Field": "fresnelInt",
-      "Name": "垂直反射率(255基準)",
-      "Description": ""
+      "Name": "Normal Reflectance (Int Scale)",
+      "Description": "Same as normal reflectance but stored using an 8-bit (0–255) scale."
     },
     {
       "Field": "roughness",
-      "Name": "滑らかさ",
-      "Description": ""
+      "Name": "Roughness",
+      "Description": "Controls surface microfacet roughness affecting light scattering and blur."
     },
     {
       "Field": "roughnessInt",
-      "Name": "滑らかさ(255基準)",
-      "Description": ""
+      "Name": "Roughness (Int Scale)",
+      "Description": "Roughness value represented on an 8-bit (0–255) scale."
     }
   ]
 }

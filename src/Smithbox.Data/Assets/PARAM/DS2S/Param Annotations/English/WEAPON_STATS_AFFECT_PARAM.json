@@ -2,512 +2,512 @@
   "Param": "WEAPON_STATS_AFFECT_PARAM",
   "Type": "WEAPON_STATS_AFFECT_PARAM",
   "Name": "WEAPON_STATS_AFFECT_PARAM",
-  "Description": "",
+  "Description": "Defines reinforcement scaling multipliers that modify how weapon damage and status effects are affected by attributes at each upgrade tier.",
   "Fields": [
     {
       "Field": "baseValueScale",
-      "Name": "強化ベース値 倍率",
-      "Description": ""
+      "Name": "Base Value Scaling",
+      "Description": "Multiplier applied to the weapon's base attack value during reinforcement calculations."
     },
     {
       "Field": "menuBaseValueScale",
-      "Name": "メニュー用 強化ベース値 倍率",
-      "Description": ""
+      "Name": "Menu Base Value Scaling",
+      "Description": "Multiplier applied to the displayed base attack value in menus."
     },
     {
       "Field": "physicalByStrength0",
-      "Name": "ステータス影響倍率 物理 筋力 0",
-      "Description": ""
+      "Name": "Physical Strength Scaling: 0",
+      "Description": "Multiplier applied to physical damage scaling from Strength. Tier 0."
     },
     {
       "Field": "physicalByDexterity0",
-      "Name": "ステータス影響倍率 物理 技量 0",
-      "Description": ""
+      "Name": "Physical Dexterity Scaling: 0",
+      "Description": "Multiplier applied to physical damage scaling from Dexterity. Tier 0."
     },
     {
       "Field": "magic0",
-      "Name": "ステータス影響倍率 魔力 0",
-      "Description": ""
+      "Name": "Magic Scaling: 0",
+      "Description": "Multiplier applied to magic damage scaling. Tier 0."
     },
     {
       "Field": "thunder0",
-      "Name": "ステータス影響倍率 雷 0",
-      "Description": ""
+      "Name": "Lightning Scaling: 0",
+      "Description": "Multiplier applied to lightning damage scaling. Tier 0."
     },
     {
       "Field": "fire0",
-      "Name": "ステータス影響倍率 炎 0",
-      "Description": ""
+      "Name": "Fire Scaling: 0",
+      "Description": "Multiplier applied to fire damage scaling. Tier 0."
     },
     {
       "Field": "dark0",
-      "Name": "ステータス影響倍率 闇 0",
-      "Description": ""
+      "Name": "Dark Scaling: 0",
+      "Description": "Multiplier applied to dark damage scaling. Tier 0."
     },
     {
       "Field": "poison0",
-      "Name": "ステータス影響倍率 毒 0",
-      "Description": ""
+      "Name": "Poison Scaling: 0",
+      "Description": "Multiplier applied to poison buildup scaling. Tier 0."
     },
     {
       "Field": "bleeding0",
-      "Name": "ステータス影響倍率 出血 0",
-      "Description": ""
+      "Name": "Bleed Scaling: 0",
+      "Description": "Multiplier applied to bleed buildup scaling. Tier 0."
     },
     {
       "Field": "physicalByEnchant0",
-      "Name": "ステータス影響倍率 物理 魔力 0",
-      "Description": ""
+      "Name": "Physical Enhancted Scaling: 0",
+      "Description": "Multiplier applied to physical damage scaling derived from enchanted attribute. Tier 0."
     },
     {
       "Field": "physicalByStrength1",
-      "Name": "ステータス影響倍率 物理 筋力 1",
-      "Description": ""
+      "Name": "Physical Strength Scaling: 1",
+      "Description": "Multiplier applied to physical damage scaling from Strength. Tier 1."
     },
     {
       "Field": "physicalByDexterity1",
-      "Name": "ステータス影響倍率 物理 技量 1",
-      "Description": ""
+      "Name": "Physical Dexterity Scaling: 1",
+      "Description": "Multiplier applied to physical damage scaling from Dexterity. Tier 1."
     },
     {
       "Field": "magic1",
-      "Name": "ステータス影響倍率 魔力 1",
-      "Description": ""
+      "Name": "Magic Scaling: 1",
+      "Description": "Multiplier applied to magic damage scaling. Tier 1."
     },
     {
       "Field": "thunder1",
-      "Name": "ステータス影響倍率 雷 1",
-      "Description": ""
+      "Name": "Lightning Scaling: 1",
+      "Description": "Multiplier applied to lightning damage scaling. Tier 1."
     },
     {
       "Field": "fire1",
-      "Name": "ステータス影響倍率 炎 1",
-      "Description": ""
+      "Name": "Fire Scaling: 1",
+      "Description": "Multiplier applied to fire damage scaling. Tier 1."
     },
     {
       "Field": "dark1",
-      "Name": "ステータス影響倍率 闇 1",
-      "Description": ""
+      "Name": "Dark Scaling: 1",
+      "Description": "Multiplier applied to dark damage scaling. Tier 1."
     },
     {
       "Field": "poison1",
-      "Name": "ステータス影響倍率 毒 1",
-      "Description": ""
+      "Name": "Poison Scaling: 1",
+      "Description": "Multiplier applied to poison buildup scaling. Tier 1."
     },
     {
       "Field": "bleeding1",
-      "Name": "ステータス影響倍率 出血 1",
-      "Description": ""
+      "Name": "Bleed Scaling: 1",
+      "Description": "Multiplier applied to bleed buildup scaling. Tier 1."
     },
     {
       "Field": "physicalByEnchant1",
-      "Name": "ステータス影響倍率 物理 魔力 1",
-      "Description": ""
+      "Name": "Physical Enhancted Scaling: 1",
+      "Description": "Multiplier applied to physical damage scaling derived from enchanted attributes. Tier 1."
     },
     {
       "Field": "physicalByStrength2",
-      "Name": "ステータス影響倍率 物理 筋力 2",
-      "Description": ""
+      "Name": "Physical Strength Scaling: 2",
+      "Description": "Multiplier applied to physical damage scaling from Strength. Tier 2."
     },
     {
       "Field": "physicalByDexterity2",
-      "Name": "ステータス影響倍率 物理 技量 2",
-      "Description": ""
+      "Name": "Physical Dexterity Scaling: 2",
+      "Description": "Multiplier applied to physical damage scaling from Dexterity. Tier 2."
     },
     {
       "Field": "magic2",
-      "Name": "ステータス影響倍率 魔力 2",
-      "Description": ""
+      "Name": "Magic Scaling: 2",
+      "Description": "Multiplier applied to magic damage scaling. Tier 2."
     },
     {
       "Field": "thunder2",
-      "Name": "ステータス影響倍率 雷 2",
-      "Description": ""
+      "Name": "Lightning Scaling: 2",
+      "Description": "Multiplier applied to lightning damage scaling. Tier 2."
     },
     {
       "Field": "fire2",
-      "Name": "ステータス影響倍率 炎 2",
-      "Description": ""
+      "Name": "Fire Scaling: 2",
+      "Description": "Multiplier applied to fire damage scaling. Tier 2."
     },
     {
       "Field": "dark2",
-      "Name": "ステータス影響倍率 闇 2",
-      "Description": ""
+      "Name": "Dark Scaling: 2",
+      "Description": "Multiplier applied to dark damage scaling. Tier 2."
     },
     {
       "Field": "poison2",
-      "Name": "ステータス影響倍率 毒 2",
-      "Description": ""
+      "Name": "Poison Scaling: 2",
+      "Description": "Multiplier applied to poison buildup scaling. Tier 2."
     },
     {
       "Field": "bleeding2",
-      "Name": "ステータス影響倍率 出血 2",
-      "Description": ""
+      "Name": "Bleed Scaling: 2",
+      "Description": "Multiplier applied to bleed buildup scaling. Tier 2."
     },
     {
       "Field": "physicalByEnchant2",
-      "Name": "ステータス影響倍率 物理 魔力 2",
-      "Description": ""
+      "Name": "Physical Enhancted Scaling: 2",
+      "Description": "Multiplier applied to physical damage scaling derived from enchanted attributes. Tier 2."
     },
     {
       "Field": "physicalByStrength3",
-      "Name": "ステータス影響倍率 物理 筋力 3",
-      "Description": ""
+      "Name": "Physical Strength Scaling: 3",
+      "Description": "Multiplier applied to physical damage scaling from Strength. Tier 3."
     },
     {
       "Field": "physicalByDexterity3",
-      "Name": "ステータス影響倍率 物理 技量 3",
-      "Description": ""
+      "Name": "Physical Dexterity Scaling: 3",
+      "Description": "Multiplier applied to physical damage scaling from Dexterity. Tier 3."
     },
     {
       "Field": "magic3",
-      "Name": "ステータス影響倍率 魔力 3",
-      "Description": ""
+      "Name": "Magic Scaling: 3",
+      "Description": "Multiplier applied to magic damage scaling. Tier 3."
     },
     {
       "Field": "thunder3",
-      "Name": "ステータス影響倍率 雷 3",
-      "Description": ""
+      "Name": "Lightning Scaling: 3",
+      "Description": "Multiplier applied to lightning damage scaling. Tier 3."
     },
     {
       "Field": "fire3",
-      "Name": "ステータス影響倍率 炎 3",
-      "Description": ""
+      "Name": "Fire Scaling: 3",
+      "Description": "Multiplier applied to fire damage scaling. Tier 3."
     },
     {
       "Field": "dark3",
-      "Name": "ステータス影響倍率 闇 3",
-      "Description": ""
+      "Name": "Dark Scaling: 3",
+      "Description": "Multiplier applied to dark damage scaling. Tier 3."
     },
     {
       "Field": "poison3",
-      "Name": "ステータス影響倍率 毒 3",
-      "Description": ""
+      "Name": "Poison Scaling: 3",
+      "Description": "Multiplier applied to poison buildup scaling. Tier 3."
     },
     {
       "Field": "bleeding3",
-      "Name": "ステータス影響倍率 出血 3",
-      "Description": ""
+      "Name": "Bleed Scaling: 3",
+      "Description": "Multiplier applied to bleed buildup scaling. Tier 3."
     },
     {
       "Field": "physicalByEnchant3",
-      "Name": "ステータス影響倍率 物理 魔力 3",
-      "Description": ""
+      "Name": "Physical Enhancted Scaling: 3",
+      "Description": "Multiplier applied to physical damage scaling derived from enchanted attributes. Tier 3."
     },
     {
       "Field": "physicalByStrength4",
-      "Name": "ステータス影響倍率 物理 筋力 4",
-      "Description": ""
+      "Name": "Physical Strength Scaling: 4",
+      "Description": "Multiplier applied to physical damage scaling from Strength. Tier 4."
     },
     {
       "Field": "physicalByDexterity4",
-      "Name": "ステータス影響倍率 物理 技量 4",
-      "Description": ""
+      "Name": "Physical Dexterity Scaling: 4",
+      "Description": "Multiplier applied to physical damage scaling from Dexterity. Tier 4."
     },
     {
       "Field": "magic4",
-      "Name": "ステータス影響倍率 魔力 4",
-      "Description": ""
+      "Name": "Magic Scaling: 4",
+      "Description": "Multiplier applied to magic damage scaling. Tier 4."
     },
     {
       "Field": "thunder4",
-      "Name": "ステータス影響倍率 雷 4",
-      "Description": ""
+      "Name": "Lightning Scaling: 4",
+      "Description": "Multiplier applied to lightning damage scaling. Tier 4."
     },
     {
       "Field": "fire4",
-      "Name": "ステータス影響倍率 炎 4",
-      "Description": ""
+      "Name": "Fire Scaling: 4",
+      "Description": "Multiplier applied to fire damage scaling. Tier 4."
     },
     {
       "Field": "dark4",
-      "Name": "ステータス影響倍率 闇 4",
-      "Description": ""
+      "Name": "Dark Scaling: 4",
+      "Description": "Multiplier applied to dark damage scaling. Tier 4."
     },
     {
       "Field": "poison4",
-      "Name": "ステータス影響倍率 毒 4",
-      "Description": ""
+      "Name": "Poison Scaling: 4",
+      "Description": "Multiplier applied to poison buildup scaling. Tier 4."
     },
     {
       "Field": "bleeding4",
-      "Name": "ステータス影響倍率 出血 4",
-      "Description": ""
+      "Name": "Bleed Scaling: 4",
+      "Description": "Multiplier applied to bleed buildup scaling. Tier 4."
     },
     {
       "Field": "physicalByEnchant4",
-      "Name": "ステータス影響倍率 物理 魔力 4",
-      "Description": ""
+      "Name": "Physical Enhancted Scaling: 4",
+      "Description": "Multiplier applied to physical damage scaling derived from enchanted attributes. Tier 4."
     },
     {
       "Field": "physicalByStrength5",
-      "Name": "ステータス影響倍率 物理 筋力 5",
-      "Description": ""
+      "Name": "Physical Strength Scaling: 5",
+      "Description": "Multiplier applied to physical damage scaling from Strength. Tier 5."
     },
     {
       "Field": "physicalByDexterity5",
-      "Name": "ステータス影響倍率 物理 技量 5",
-      "Description": ""
+      "Name": "Physical Dexterity Scaling: 5",
+      "Description": "Multiplier applied to physical damage scaling from Dexterity. Tier 5."
     },
     {
       "Field": "magic5",
-      "Name": "ステータス影響倍率 魔力 5",
-      "Description": ""
+      "Name": "Magic Scaling: 5",
+      "Description": "Multiplier applied to magic damage scaling. Tier 5."
     },
     {
       "Field": "thunder5",
-      "Name": "ステータス影響倍率 雷 5",
-      "Description": ""
+      "Name": "Lightning Scaling: 5",
+      "Description": "Multiplier applied to lightning damage scaling. Tier 5."
     },
     {
       "Field": "fire5",
-      "Name": "ステータス影響倍率 炎 5",
-      "Description": ""
+      "Name": "Fire Scaling: 5",
+      "Description": "Multiplier applied to fire damage scaling. Tier 5."
     },
     {
       "Field": "dark5",
-      "Name": "ステータス影響倍率 闇 5",
-      "Description": ""
+      "Name": "Dark Scaling: 5",
+      "Description": "Multiplier applied to dark damage scaling. Tier 5."
     },
     {
       "Field": "poison5",
-      "Name": "ステータス影響倍率 毒 5",
-      "Description": ""
+      "Name": "Poison Scaling: 5",
+      "Description": "Multiplier applied to poison buildup scaling. Tier 5."
     },
     {
       "Field": "bleeding5",
-      "Name": "ステータス影響倍率 出血 5",
-      "Description": ""
+      "Name": "Bleed Scaling: 5",
+      "Description": "Multiplier applied to bleed buildup scaling. Tier 5."
     },
     {
       "Field": "physicalByEnchant5",
-      "Name": "ステータス影響倍率 物理 魔力 5",
-      "Description": ""
+      "Name": "Physical Enhancted Scaling: 5",
+      "Description": "Multiplier applied to physical damage scaling derived from enchanted attributes. Tier 5."
     },
     {
       "Field": "physicalByStrength6",
-      "Name": "ステータス影響倍率 物理 筋力 6",
-      "Description": ""
+      "Name": "Physical Strength Scaling: 6",
+      "Description": "Multiplier applied to physical damage scaling from Strength. Tier 6."
     },
     {
       "Field": "physicalByDexterity6",
-      "Name": "ステータス影響倍率 物理 技量 6",
-      "Description": ""
+      "Name": "Physical Dexterity Scaling: 6",
+      "Description": "Multiplier applied to physical damage scaling from Dexterity. Tier 6."
     },
     {
       "Field": "magic6",
-      "Name": "ステータス影響倍率 魔力 6",
-      "Description": ""
+      "Name": "Magic Scaling: 6",
+      "Description": "Multiplier applied to magic damage scaling. Tier 6."
     },
     {
       "Field": "thunder6",
-      "Name": "ステータス影響倍率 雷 6",
-      "Description": ""
+      "Name": "Lightning Scaling: 6",
+      "Description": "Multiplier applied to lightning damage scaling. Tier 6."
     },
     {
       "Field": "fire6",
-      "Name": "ステータス影響倍率 炎 6",
-      "Description": ""
+      "Name": "Fire Scaling: 6",
+      "Description": "Multiplier applied to fire damage scaling. Tier 6."
     },
     {
       "Field": "dark6",
-      "Name": "ステータス影響倍率 闇 6",
-      "Description": ""
+      "Name": "Dark Scaling: 6",
+      "Description": "Multiplier applied to dark damage scaling. Tier 6."
     },
     {
       "Field": "poison6",
-      "Name": "ステータス影響倍率 毒 6",
-      "Description": ""
+      "Name": "Poison Scaling: 6",
+      "Description": "Multiplier applied to poison buildup scaling. Tier 6."
     },
     {
       "Field": "bleeding6",
-      "Name": "ステータス影響倍率 出血 6",
-      "Description": ""
+      "Name": "Bleed Scaling: 6",
+      "Description": "Multiplier applied to bleed buildup scaling. Tier 6."
     },
     {
       "Field": "physicalByEnchant6",
-      "Name": "ステータス影響倍率 物理 魔力 6",
-      "Description": ""
+      "Name": "Physical Enhancted Scaling: 6",
+      "Description": "Multiplier applied to physical damage scaling derived from enchanted attributes. Tier 6."
     },
     {
       "Field": "physicalByStrength7",
-      "Name": "ステータス影響倍率 物理 筋力 7",
-      "Description": ""
+      "Name": "Physical Strength Scaling: 7",
+      "Description": "Multiplier applied to physical damage scaling from Strength. Tier 7."
     },
     {
       "Field": "physicalByDexterity7",
-      "Name": "ステータス影響倍率 物理 技量 7",
-      "Description": ""
+      "Name": "Physical Dexterity Scaling: 7",
+      "Description": "Multiplier applied to physical damage scaling from Dexterity. Tier 7."
     },
     {
       "Field": "magic7",
-      "Name": "ステータス影響倍率 魔力 7",
-      "Description": ""
+      "Name": "Magic Scaling: 7",
+      "Description": "Multiplier applied to magic damage scaling. Tier 7."
     },
     {
       "Field": "thunder7",
-      "Name": "ステータス影響倍率 雷 7",
-      "Description": ""
+      "Name": "Lightning Scaling: 7",
+      "Description": "Multiplier applied to lightning damage scaling. Tier 7."
     },
     {
       "Field": "fire7",
-      "Name": "ステータス影響倍率 炎 7",
-      "Description": ""
+      "Name": "Fire Scaling: 7",
+      "Description": "Multiplier applied to fire damage scaling. Tier 7."
     },
     {
       "Field": "dark7",
-      "Name": "ステータス影響倍率 闇 7",
-      "Description": ""
+      "Name": "Dark Scaling: 7",
+      "Description": "Multiplier applied to dark damage scaling. Tier 7."
     },
     {
       "Field": "poison7",
-      "Name": "ステータス影響倍率 毒 7",
-      "Description": ""
+      "Name": "Poison Scaling: 7",
+      "Description": "Multiplier applied to poison buildup scaling. Tier 7."
     },
     {
       "Field": "bleeding7",
-      "Name": "ステータス影響倍率 出血 7",
-      "Description": ""
+      "Name": "Bleed Scaling: 7",
+      "Description": "Multiplier applied to bleed buildup scaling. Tier 7."
     },
     {
       "Field": "physicalByEnchant7",
-      "Name": "ステータス影響倍率 物理 魔力 7",
-      "Description": ""
+      "Name": "Physical Enhancted Scaling: 7",
+      "Description": "Multiplier applied to physical damage scaling derived from enchanted attributes. Tier 7."
     },
     {
       "Field": "physicalByStrength8",
-      "Name": "ステータス影響倍率 物理 筋力 8",
-      "Description": ""
+      "Name": "Physical Strength Scaling: 8",
+      "Description": "Multiplier applied to physical damage scaling from Strength. Tier 8."
     },
     {
       "Field": "physicalByDexterity8",
-      "Name": "ステータス影響倍率 物理 技量 8",
-      "Description": ""
+      "Name": "Physical Dexterity Scaling: 8",
+      "Description": "Multiplier applied to physical damage scaling from Dexterity. Tier 8."
     },
     {
       "Field": "magic8",
-      "Name": "ステータス影響倍率 魔力 8",
-      "Description": ""
+      "Name": "Magic Scaling: 8",
+      "Description": "Multiplier applied to magic damage scaling. Tier 8."
     },
     {
       "Field": "thunder8",
-      "Name": "ステータス影響倍率 雷 8",
-      "Description": ""
+      "Name": "Lightning Scaling: 8",
+      "Description": "Multiplier applied to lightning damage scaling. Tier 8."
     },
     {
       "Field": "fire8",
-      "Name": "ステータス影響倍率 炎 8",
-      "Description": ""
+      "Name": "Fire Scaling: 8",
+      "Description": "Multiplier applied to fire damage scaling. Tier 8."
     },
     {
       "Field": "dark8",
-      "Name": "ステータス影響倍率 闇 8",
-      "Description": ""
+      "Name": "Dark Scaling: 8",
+      "Description": "Multiplier applied to dark damage scaling. Tier 8."
     },
     {
       "Field": "poison8",
-      "Name": "ステータス影響倍率 毒 8",
-      "Description": ""
+      "Name": "Poison Scaling: 8",
+      "Description": "Multiplier applied to poison buildup scaling. Tier 8."
     },
     {
       "Field": "bleeding8",
-      "Name": "ステータス影響倍率 出血 8",
-      "Description": ""
+      "Name": "Bleed Scaling: 8",
+      "Description": "Multiplier applied to bleed buildup scaling. Tier 8."
     },
     {
       "Field": "physicalByEnchant8",
-      "Name": "ステータス影響倍率 物理 魔力 8",
-      "Description": ""
+      "Name": "Physical Enhancted Scaling: 8",
+      "Description": "Multiplier applied to physical damage scaling derived from enchanted attributes. Tier 8."
     },
     {
       "Field": "physicalByStrength9",
-      "Name": "ステータス影響倍率 物理 筋力 9",
-      "Description": ""
+      "Name": "Physical Strength Scaling: 9",
+      "Description": "Multiplier applied to physical damage scaling from Strength. Tier 9."
     },
     {
       "Field": "physicalByDexterity9",
-      "Name": "ステータス影響倍率 物理 技量 9",
-      "Description": ""
+      "Name": "Physical Dexterity Scaling: 9",
+      "Description": "Multiplier applied to physical damage scaling from Dexterity. Tier 9."
     },
     {
       "Field": "magic9",
-      "Name": "ステータス影響倍率 魔力 9",
-      "Description": ""
+      "Name": "Magic Scaling: 9",
+      "Description": "Multiplier applied to magic damage scaling. Tier 9."
     },
     {
       "Field": "thunder9",
-      "Name": "ステータス影響倍率 雷 9",
-      "Description": ""
+      "Name": "Lightning Scaling: 9",
+      "Description": "Multiplier applied to lightning damage scaling. Tier 9."
     },
     {
       "Field": "fire9",
-      "Name": "ステータス影響倍率 炎 9",
-      "Description": ""
+      "Name": "Fire Scaling: 9",
+      "Description": "Multiplier applied to fire damage scaling. Tier 9."
     },
     {
       "Field": "dark9",
-      "Name": "ステータス影響倍率 闇 9",
-      "Description": ""
+      "Name": "Dark Scaling: 9",
+      "Description": "Multiplier applied to dark damage scaling. Tier 9."
     },
     {
       "Field": "poison9",
-      "Name": "ステータス影響倍率 毒 9",
-      "Description": ""
+      "Name": "Poison Scaling: 9",
+      "Description": "Multiplier applied to poison buildup scaling. Tier 9."
     },
     {
       "Field": "bleeding9",
-      "Name": "ステータス影響倍率 出血 9",
-      "Description": ""
+      "Name": "Bleed Scaling: 9",
+      "Description": "Multiplier applied to bleed buildup scaling. Tier 9."
     },
     {
       "Field": "physicalByEnchant9",
-      "Name": "ステータス影響倍率 物理 魔力 9",
-      "Description": ""
+      "Name": "Physical Enhancted Scaling: 9",
+      "Description": "Multiplier applied to physical damage scaling derived from enchanted attributes. Tier 9."
     },
     {
       "Field": "physicalByStrength10",
-      "Name": "ステータス影響倍率 物理 筋力 10",
-      "Description": ""
+      "Name": "Physical Strength Scaling: 10",
+      "Description": "Multiplier applied to physical damage scaling from Strength. Tier 10."
     },
     {
       "Field": "physicalByDexterity10",
-      "Name": "ステータス影響倍率 物理 技量 10",
-      "Description": ""
+      "Name": "Physical Dexterity Scaling: 10",
+      "Description": "Multiplier applied to physical damage scaling from Dexterity. Tier 10."
     },
     {
       "Field": "magic10",
-      "Name": "ステータス影響倍率 魔力 10",
-      "Description": ""
+      "Name": "Magic Scaling: 10",
+      "Description": "Multiplier applied to magic damage scaling. Tier 10."
     },
     {
       "Field": "thunder10",
-      "Name": "ステータス影響倍率 雷 10",
-      "Description": ""
+      "Name": "Lightning Scaling: 10",
+      "Description": "Multiplier applied to lightning damage scaling. Tier 10."
     },
     {
       "Field": "fire10",
-      "Name": "ステータス影響倍率 炎 10",
-      "Description": ""
+      "Name": "Fire Scaling: 10",
+      "Description": "Multiplier applied to fire damage scaling. Tier 10."
     },
     {
       "Field": "dark10",
-      "Name": "ステータス影響倍率 闇 10",
-      "Description": ""
+      "Name": "Dark Scaling: 10",
+      "Description": "Multiplier applied to dark damage scaling. Tier 10."
     },
     {
       "Field": "poison10",
-      "Name": "ステータス影響倍率 毒 10",
-      "Description": ""
+      "Name": "Poison Scaling: 10",
+      "Description": "Multiplier applied to poison buildup scaling. Tier 10."
     },
     {
       "Field": "bleeding10",
-      "Name": "ステータス影響倍率 出血 10",
-      "Description": ""
+      "Name": "Bleed Scaling: 10",
+      "Description": "Multiplier applied to bleed buildup scaling. Tier 10."
     },
     {
       "Field": "physicalByEnchant10",
-      "Name": "ステータス影響倍率 物理 魔力 10",
-      "Description": ""
+      "Name": "Physical Enhancted Scaling: 10",
+      "Description": "Multiplier applied to physical damage scaling derived from enchanted attributes. Tier 10."
     }
   ]
 }

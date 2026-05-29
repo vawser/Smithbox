@@ -1,0 +1,158 @@
+{
+  "Param": "ARROW_PARAM",
+  "Type": "ARROW_PARAM",
+  "Name": "ARROW_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "sfxId",
+      "Name": "構え中表示弾SFXID",
+      "Description": ""
+    },
+    {
+      "Field": "lightBulletId0",
+      "Name": "弱バレットID",
+      "Description": ""
+    },
+    {
+      "Field": "heavyBulletId0",
+      "Name": "強バレットID",
+      "Description": ""
+    },
+    {
+      "Field": "lightDamageId0",
+      "Name": "弱ダメージID",
+      "Description": ""
+    },
+    {
+      "Field": "heavyDamageId0",
+      "Name": "強ダメージID",
+      "Description": ""
+    },
+    {
+      "Field": "lightBulletId1",
+      "Name": "弱バレットID",
+      "Description": ""
+    },
+    {
+      "Field": "heavyBulletId1",
+      "Name": "強バレットID",
+      "Description": ""
+    },
+    {
+      "Field": "lightDamageId1",
+      "Name": "弱ダメージID",
+      "Description": ""
+    },
+    {
+      "Field": "heavyDamageId1",
+      "Name": "強ダメージID",
+      "Description": ""
+    },
+    {
+      "Field": "lightBulletId2",
+      "Name": "弱バレットID",
+      "Description": ""
+    },
+    {
+      "Field": "heavyBulletId2",
+      "Name": "強バレットID",
+      "Description": ""
+    },
+    {
+      "Field": "lightDamageId2",
+      "Name": "弱ダメージID",
+      "Description": ""
+    },
+    {
+      "Field": "heavyDamageId2",
+      "Name": "強ダメージID",
+      "Description": ""
+    },
+    {
+      "Field": "lightBulletId3",
+      "Name": "弱バレットID",
+      "Description": ""
+    },
+    {
+      "Field": "heavyBulletId3",
+      "Name": "強バレットID",
+      "Description": ""
+    },
+    {
+      "Field": "lightDamageId3",
+      "Name": "弱ダメージID",
+      "Description": ""
+    },
+    {
+      "Field": "heavyDamageId3",
+      "Name": "強ダメージID",
+      "Description": ""
+    },
+    {
+      "Field": "modelIdInQuiver",
+      "Name": "矢筒の中の矢モデルID",
+      "Description": ""
+    },
+    {
+      "Field": "menuPhysicalAttack",
+      "Name": "物理攻撃力",
+      "Description": ""
+    },
+    {
+      "Field": "menuMagicAttack",
+      "Name": "魔力攻撃力",
+      "Description": ""
+    },
+    {
+      "Field": "menuThunderAttack",
+      "Name": "雷攻撃力",
+      "Description": ""
+    },
+    {
+      "Field": "menufireAttack",
+      "Name": "炎攻撃力",
+      "Description": ""
+    },
+    {
+      "Field": "menudarkAttack",
+      "Name": "闇攻撃力",
+      "Description": ""
+    },
+    {
+      "Field": "menuPoisonAttack",
+      "Name": "毒攻撃力",
+      "Description": ""
+    },
+    {
+      "Field": "menuBleedAttack",
+      "Name": "出血攻撃力",
+      "Description": ""
+    },
+    {
+      "Field": "menuWeaponBreakAttack",
+      "Name": "武器破壊攻撃力",
+      "Description": ""
+    },
+    {
+      "Field": "arrowType",
+      "Name": "矢の種類",
+      "Description": ""
+    },
+    {
+      "Field": "menuAttackCategory1",
+      "Name": "攻撃属性1",
+      "Description": ""
+    },
+    {
+      "Field": "menuAttackCategory2",
+      "Name": "攻撃属性2",
+      "Description": ""
+    },
+    {
+      "Field": "padding",
+      "Name": "パディング",
+      "Description": ""
+    }
+  ]
+}

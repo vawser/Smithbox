@@ -1,0 +1,158 @@
+{
+  "Param": "ARMOR_REINFORCE_PARAM",
+  "Type": "ARMOR_REINFORCE_PARAM",
+  "Name": "ARMOR_REINFORCE_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "minSlash",
+      "Name": "強化ベース値 最小 斬撃",
+      "Description": ""
+    },
+    {
+      "Field": "minThrust",
+      "Name": "強化ベース値 最小 刺突",
+      "Description": ""
+    },
+    {
+      "Field": "minStrike",
+      "Name": "強化ベース値 最小 打撃",
+      "Description": ""
+    },
+    {
+      "Field": "minPhysical",
+      "Name": "強化ベース値 最小 物理",
+      "Description": ""
+    },
+    {
+      "Field": "minMagic",
+      "Name": "強化ベース値 最小 魔力",
+      "Description": ""
+    },
+    {
+      "Field": "minThunder",
+      "Name": "強化ベース値 最小 雷",
+      "Description": ""
+    },
+    {
+      "Field": "minFire",
+      "Name": "強化ベース値 最小 炎",
+      "Description": ""
+    },
+    {
+      "Field": "minDark",
+      "Name": "強化ベース値 最小 闇",
+      "Description": ""
+    },
+    {
+      "Field": "minPoison",
+      "Name": "強化ベース値 最小 毒",
+      "Description": ""
+    },
+    {
+      "Field": "minBleeding",
+      "Name": "強化ベース値 最小 出血",
+      "Description": ""
+    },
+    {
+      "Field": "minPetrifaction",
+      "Name": "強化ベース値 最小 石化",
+      "Description": ""
+    },
+    {
+      "Field": "minCurse",
+      "Name": "強化ベース値 最小 呪",
+      "Description": ""
+    },
+    {
+      "Field": "maxSlash",
+      "Name": "強化ベース値 最大 斬撃",
+      "Description": ""
+    },
+    {
+      "Field": "maxThrust",
+      "Name": "強化ベース値 最大 刺突",
+      "Description": ""
+    },
+    {
+      "Field": "maxStrike",
+      "Name": "強化ベース値 最大 打撃",
+      "Description": ""
+    },
+    {
+      "Field": "maxPhysical",
+      "Name": "強化ベース値 最大 物理",
+      "Description": ""
+    },
+    {
+      "Field": "maxMagic",
+      "Name": "強化ベース値 最大 魔力",
+      "Description": ""
+    },
+    {
+      "Field": "maxThunder",
+      "Name": "強化ベース値 最大 雷",
+      "Description": ""
+    },
+    {
+      "Field": "maxFire",
+      "Name": "強化ベース値 最大 炎",
+      "Description": ""
+    },
+    {
+      "Field": "maxDark",
+      "Name": "強化ベース値 最大 闇",
+      "Description": ""
+    },
+    {
+      "Field": "maxPoison",
+      "Name": "強化ベース値 最大 毒",
+      "Description": ""
+    },
+    {
+      "Field": "maxBleeding",
+      "Name": "強化ベース値 最大 出血",
+      "Description": ""
+    },
+    {
+      "Field": "maxPetrifaction",
+      "Name": "強化ベース値 最大 石化",
+      "Description": ""
+    },
+    {
+      "Field": "maxCurse",
+      "Name": "強化ベース値 最大 呪",
+      "Description": ""
+    },
+    {
+      "Field": "maxLevel",
+      "Name": "強化最大レベル",
+      "Description": ""
+    },
+    {
+      "Field": "dummy",
+      "Name": "ダミー",
+      "Description": ""
+    },
+    {
+      "Field": "menuResistanceScale",
+      "Name": "メニュー表示用 属性防御力補正倍率 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "attrSpec",
+      "Name": "属性強化可否",
+      "Description": ""
+    },
+    {
+      "Field": "attrCost",
+      "Name": "属性強化コスト",
+      "Description": ""
+    },
+    {
+      "Field": "reinforceCost",
+      "Name": "Lv強化コスト",
+      "Description": ""
+    }
+  ]
+}

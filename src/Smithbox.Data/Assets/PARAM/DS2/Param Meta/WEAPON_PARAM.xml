@@ -3,8 +3,8 @@
     <Field>
         <weaponId />
         <weaponModelId />
-        <weaponReinforceId />
-        <weaponActionCategoryId />
+        <weaponReinforceId Refs="WeaponReinforceParam" />
+        <weaponActionCategoryId Refs="WeaponActionCategoryParam" />
         <weaponTypeId  Refs="WeaponTypeParam"/>
         <isAtkAutoHoming  IsBool=""/>
         <weaponCategory  Enum="WEAPON_SIMPLE_CATEGORY"/>
@@ -25,17 +25,17 @@
         <grabMotionRate />
         <grabRotationSpeed />
         <grabRotationMaxSpeed />
-        <backStabAttackDamageSmallId />
-        <backStabAttackDamageMiddleId />
-        <backStabAttackDamageLargeId />
-        <gdBreakStabAttackDamageSmallId />
-        <gdBreakStabAttackDamageMiddleId />
-        <gdBreakStabAttackDamageLargeId />
-        <parryStabAttackDamageSmallId />
-        <parryStabAttackDamageMiddleId />
-        <parryStabAttackDamageLargeId />
+        <backStabAttackDamageSmallId RefGroup="damageparam" />
+        <backStabAttackDamageMiddleId RefGroup="damageparam" />
+        <backStabAttackDamageLargeId RefGroup="damageparam" />
+        <gdBreakStabAttackDamageSmallId RefGroup="damageparam" />
+        <gdBreakStabAttackDamageMiddleId RefGroup="damageparam" />
+        <gdBreakStabAttackDamageLargeId RefGroup="damageparam" />
+        <parryStabAttackDamageSmallId RefGroup="damageparam" />
+        <parryStabAttackDamageMiddleId RefGroup="damageparam" />
+        <parryStabAttackDamageLargeId RefGroup="damageparam" />
         <parryEnableRate />
-        <brokenSfxId />
+        <brokenSfxId ParticleAlias="" />
         <brokenSoundType  Enum="EQUIP_BREAK_SOUND_MATERIAL_TYPE"/>
         <damageScale />
         <staminaDamageScale />

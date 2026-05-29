@@ -1,0 +1,13 @@
+{
+  "Param": "MAP_OBJECT_CHRSPEED_SCALE_PARAM",
+  "Type": "MAP_OBJECT_CHRSPEED_SCALE_PARAM",
+  "Name": "MAP_OBJECT_CHRSPEED_SCALE_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "scale",
+      "Name": "《倍率》",
+      "Description": ""
+    }
+  ]
+}

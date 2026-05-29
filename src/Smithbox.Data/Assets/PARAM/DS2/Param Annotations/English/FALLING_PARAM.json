@@ -2,47 +2,47 @@
   "Param": "FALLING_PARAM",
   "Type": "FALLING_PARAM",
   "Name": "FALLING_PARAM",
-  "Description": "",
+  "Description": "Defines fall damage thresholds and mitigation values for different landing conditions and protective effects.",
   "Fields": [
     {
       "Field": "fallingDamageSafety",
-      "Name": "《着地 落下ダメージ 安全》",
-      "Description": ""
+      "Name": "Falling Damage (Safe Landing)",
+      "Description": "Damage threshold for safe landings where no significant fall damage is applied."
     },
     {
       "Field": "fallingDamageNormal",
-      "Name": "《着地 落下ダメージ 通常》",
-      "Description": ""
+      "Name": "Falling Damage (Normal)",
+      "Description": "Standard fall damage applied under normal landing conditions."
     },
     {
       "Field": "fallingDamageDanger",
-      "Name": "《着地 落下ダメージ 危険》",
-      "Description": ""
+      "Name": "Falling Damage (Danger)",
+      "Description": "High fall damage threshold indicating severe impact risk."
     },
     {
       "Field": "fallingDamageDead",
-      "Name": "《着地 落下ダメージ 死亡》",
-      "Description": ""
+      "Name": "Falling Damage (Lethal)",
+      "Description": "Fall damage threshold at which the character dies from impact."
     },
     {
       "Field": "fallingDamageMitigationDodge",
-      "Name": "《着地 落下ダメージ軽減 回避》",
-      "Description": ""
+      "Name": "Fall Damage Reduction (Dodge)",
+      "Description": "Reduces fall damage when landing during or after a dodge action."
     },
     {
       "Field": "fallingDamageMitigationMagic",
-      "Name": "《着地 落下ダメージ軽減 魔法》",
-      "Description": ""
+      "Name": "Fall Damage Reduction (Magic)",
+      "Description": "Reduces fall damage through magical effects or buffs."
     },
     {
       "Field": "fallingDamageMitigationRing",
-      "Name": "《着地 落下ダメージ軽減 指輪》",
-      "Description": ""
+      "Name": "Fall Damage Reduction (Ring)",
+      "Description": "Reduces fall damage when equipping specific rings or accessories."
     },
     {
       "Field": "fallingDamageMitigationTramp",
-      "Name": "《着地 落下ダメージ軽減 踏み付け》",
-      "Description": ""
+      "Name": "Fall Damage Reduction (Stomp/Impact)",
+      "Description": "Reduces fall damage from impact-based actions or ground interaction mechanics."
     }
   ]
 }

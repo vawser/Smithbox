@@ -21,7 +21,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Melee attack [on the spot]"
+          "Text": "Melee Attack: On the Spot"
         }
       ]
     },
@@ -30,7 +30,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Melee attack [pursuit turn]"
+          "Text": "Melee Attack: Pursuit Turn"
         }
       ]
     },
@@ -39,7 +39,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Melee attack [direction change]"
+          "Text": "Melee Attack: Direction Change"
         }
       ]
     },
@@ -48,7 +48,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Melee attack [Shield ready]"
+          "Text": "Melee Attack: Shield Ready"
         }
       ]
     },
@@ -57,7 +57,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Melee attack [Shield stance possible & turning homing]"
+          "Text": "Melee Attack: Ready Shield Stance + Homing Turn"
         }
       ]
     },
@@ -66,7 +66,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Melee attack [Turning & tracking not possible]"
+          "Text": "Melee Attack: No Turning or Tracking"
         }
       ]
     },
@@ -75,7 +75,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Melee attack [Jump]"
+          "Text": "Melee Attack: Jump"
         }
       ]
     },
@@ -84,7 +84,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Shooting attack [two-handed bow]"
+          "Text": "Ranged attack: Bow"
         }
       ]
     },
@@ -93,7 +93,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Shooting attack [two-handed longbow]"
+          "Text": "Ranged attack: Greatbow"
         }
       ]
     },
@@ -102,7 +102,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Shooting attack [one-handed crossbow]"
+          "Text": "Ranged attack: Crossbow"
         }
       ]
     },
@@ -111,7 +111,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Shooting attack [dual wield two-handed crossbow]"
+          "Text": "Ranged attack: Duel-wield Crossbow"
         }
       ]
     },
@@ -156,7 +156,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Precision shooting"
+          "Text": "Aim down Sight"
         }
       ]
     },

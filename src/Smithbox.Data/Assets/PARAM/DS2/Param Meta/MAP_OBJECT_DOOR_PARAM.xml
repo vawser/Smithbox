@@ -2,8 +2,8 @@
 <PARAMMETA XmlVersion="0">
     <Field>
         <doorType  Enum="DOOR_TYPE_ENUM"/>
-        <aReserved />
-        <openKeyGuideParam  Enum="KEY_GUIDE_PARAM_TYPE"/>
-        <closeKeyGuideParam  Enum="KEY_GUIDE_PARAM_TYPE"/>
+        <aReserved Padding="" />
+        <openKeyGuideParam  Refs="KeyGuideParam" />
+        <closeKeyGuideParam  Refs="KeyGuideParam" />
     </Field>
 </PARAMMETA>

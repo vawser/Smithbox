@@ -2,26 +2,26 @@
   "Param": "DAMAGE_SFX_TRACE_DP_COLOR_PARAM",
   "Type": "DAMAGE_SFX_TRACE_DP_COLOR_PARAM",
   "Name": "DAMAGE_SFX_TRACE_DP_COLOR_PARAM",
-  "Description": "",
+  "Description": "Defines RGB color values used for damage trace visual effects.",
   "Fields": [
     {
       "Field": "colorR",
-      "Name": "R",
-      "Description": ""
+      "Name": "Red Channel",
+      "Description": "Red component of trace color."
     },
     {
       "Field": "colorG",
-      "Name": "G",
-      "Description": ""
+      "Name": "Green Channel",
+      "Description": "Green component of trace color."
     },
     {
       "Field": "colorB",
-      "Name": "B",
-      "Description": ""
+      "Name": "Blue Channel",
+      "Description": "Blue component of trace color."
     },
     {
       "Field": "reserved",
-      "Name": "予約領域",
+      "Name": "Padding",
       "Description": ""
     }
   ]

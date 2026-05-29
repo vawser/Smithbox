@@ -4,6 +4,6 @@
         <newMoon  IsBool=""/>
         <multiPlayEvent  IsBool=""/>
         <itemPresentEventId />
-        <dummy />
+        <dummy Padding="" />
     </Field>
 </PARAMMETA>

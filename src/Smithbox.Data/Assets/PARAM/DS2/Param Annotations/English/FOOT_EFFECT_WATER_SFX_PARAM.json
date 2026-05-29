@@ -2,112 +2,112 @@
   "Param": "FOOT_EFFECT_WATER_SFX_PARAM",
   "Type": "FOOT_EFFECT_WATER_SFX_PARAM",
   "Name": "FOOT_EFFECT_WATER_SFX_PARAM",
-  "Description": "",
+  "Description": "Defines water-related footstep SFX variations based on movement type, speed, and body immersion depth.",
   "Fields": [
     {
       "Field": "standbyLowSfxId",
-      "Name": "足首",
-      "Description": ""
+      "Name": "Ankle Depth (Idle)",
+      "Description": "SFX played when standing still in water at ankle depth."
     },
     {
       "Field": "standbyMiddleSfxId",
-      "Name": "股下",
-      "Description": ""
+      "Name": "Knee Depth (Idle)",
+      "Description": "SFX played when standing still in water at knee/thigh depth."
     },
     {
       "Field": "standbyHighSfxId",
-      "Name": "腰",
-      "Description": ""
+      "Name": "Waist Depth (Idle)",
+      "Description": "SFX played when standing still in water at waist depth."
     },
     {
       "Field": "lowSpeedLowSfxId",
-      "Name": "足首",
-      "Description": ""
+      "Name": "Ankle Depth (Slow Movement)",
+      "Description": "SFX for slow movement through shallow water."
     },
     {
       "Field": "lowSpeedMiddleSfxId",
-      "Name": "股下",
-      "Description": ""
+      "Name": "Knee Depth (Slow Movement)",
+      "Description": "SFX for slow movement through mid-depth water."
     },
     {
       "Field": "lowSpeedHighSfxId",
-      "Name": "腰",
-      "Description": ""
+      "Name": "Waist Depth (Slow Movement)",
+      "Description": "SFX for slow movement through deep water."
     },
     {
       "Field": "middleSpeedLowSfxId",
-      "Name": "足首",
-      "Description": ""
+      "Name": "Ankle Depth (Normal Movement)",
+      "Description": "SFX for normal movement through shallow water."
     },
     {
       "Field": "middleSpeedMiddleSfxId",
-      "Name": "股下",
-      "Description": ""
+      "Name": "Knee Depth (Normal Movement)",
+      "Description": "SFX for normal movement through mid-depth water."
     },
     {
       "Field": "middleSpeedHighSfxId",
-      "Name": "腰",
-      "Description": ""
+      "Name": "Waist Depth (Normal Movement)",
+      "Description": "SFX for normal movement through deep water."
     },
     {
       "Field": "highSpeedLowSfxId",
-      "Name": "足首",
-      "Description": ""
+      "Name": "Ankle Depth (Fast Movement)",
+      "Description": "SFX for fast movement through shallow water."
     },
     {
       "Field": "highSpeedMiddleSfxId",
-      "Name": "股下",
-      "Description": ""
+      "Name": "Knee Depth (Fast Movement)",
+      "Description": "SFX for fast movement through mid-depth water."
     },
     {
       "Field": "highSpeedHighSfxId",
-      "Name": "腰",
-      "Description": ""
+      "Name": "Waist Depth (Fast Movement)",
+      "Description": "SFX for fast movement through deep water."
     },
     {
       "Field": "stepLowSfxId",
-      "Name": "足首",
-      "Description": ""
+      "Name": "Ankle Step",
+      "Description": "SFX triggered by stepping in shallow water."
     },
     {
       "Field": "stepSpeedMiddleSfxId",
-      "Name": "股下",
-      "Description": ""
+      "Name": "Knee Step",
+      "Description": "SFX triggered by stepping in mid-depth water."
     },
     {
       "Field": "stepSpeedHighSfxId",
-      "Name": "腰",
-      "Description": ""
+      "Name": "Waist Step",
+      "Description": "SFX triggered by stepping in deep water."
     },
     {
       "Field": "rollingLowSfxId",
-      "Name": "足首",
-      "Description": ""
+      "Name": "Ankle Roll",
+      "Description": "SFX triggered when rolling or dodging in shallow water."
     },
     {
       "Field": "rollingMiddleSfxId",
-      "Name": "股下",
-      "Description": ""
+      "Name": "Knee Roll",
+      "Description": "SFX triggered when rolling or dodging in mid-depth water."
     },
     {
       "Field": "rollingHighSfxId",
-      "Name": "腰",
-      "Description": ""
+      "Name": "Waist Roll",
+      "Description": "SFX triggered when rolling or dodging in deep water."
     },
     {
       "Field": "jumpLowSfxId",
-      "Name": "足首",
-      "Description": ""
+      "Name": "Ankle Jump",
+      "Description": "SFX triggered when jumping in shallow water."
     },
     {
       "Field": "jumpMiddleSfxId",
-      "Name": "股下",
-      "Description": ""
+      "Name": "Knee Jump",
+      "Description": "SFX triggered when jumping in mid-depth water."
     },
     {
       "Field": "jumpHighSfxId",
-      "Name": "腰",
-      "Description": ""
+      "Name": "Waist Jump",
+      "Description": "SFX triggered when jumping in deep water."
     }
   ]
 }

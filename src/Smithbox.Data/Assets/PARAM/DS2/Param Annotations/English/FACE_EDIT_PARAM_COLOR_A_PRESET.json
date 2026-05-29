@@ -2,27 +2,27 @@
   "Param": "FACE_EDIT_PARAM_COLOR_A_PRESET",
   "Type": "FACE_EDIT_PARAM_COLOR_A_PRESET",
   "Name": "FACE_EDIT_PARAM_COLOR_A_PRESET",
-  "Description": "",
+  "Description": "Defines an RGBA color preset used by the facial customization and character creation system.",
   "Fields": [
     {
       "Field": "red",
-      "Name": "赤",
-      "Description": ""
+      "Name": "Red",
+      "Description": "Red color channel intensity value for the preset."
     },
     {
       "Field": "green",
-      "Name": "緑",
-      "Description": ""
+      "Name": "Green",
+      "Description": "Green color channel intensity value for the preset."
     },
     {
       "Field": "blue",
-      "Name": "青",
-      "Description": ""
+      "Name": "Blue",
+      "Description": "Blue color channel intensity value for the preset."
     },
     {
       "Field": "alpha",
-      "Name": "α値",
-      "Description": ""
+      "Name": "Alpha Value",
+      "Description": "Alpha or transparency value associated with the color preset."
     }
   ]
 }

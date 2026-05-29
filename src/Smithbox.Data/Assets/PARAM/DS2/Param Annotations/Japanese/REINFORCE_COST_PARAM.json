@@ -1,0 +1,158 @@
+{
+  "Param": "REINFORCE_COST_PARAM",
+  "Type": "REINFORCE_COST_PARAM",
+  "Name": "REINFORCE_COST_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "lv1Soul",
+      "Name": "必要ソウル",
+      "Description": ""
+    },
+    {
+      "Field": "lv2Soul",
+      "Name": "必要ソウル",
+      "Description": ""
+    },
+    {
+      "Field": "lv3Soul",
+      "Name": "必要ソウル",
+      "Description": ""
+    },
+    {
+      "Field": "lv4Soul",
+      "Name": "必要ソウル",
+      "Description": ""
+    },
+    {
+      "Field": "lv5Soul",
+      "Name": "必要ソウル",
+      "Description": ""
+    },
+    {
+      "Field": "lv6Soul",
+      "Name": "必要ソウル",
+      "Description": ""
+    },
+    {
+      "Field": "lv7Soul",
+      "Name": "必要ソウル",
+      "Description": ""
+    },
+    {
+      "Field": "lv8Soul",
+      "Name": "必要ソウル",
+      "Description": ""
+    },
+    {
+      "Field": "lv9Soul",
+      "Name": "必要ソウル",
+      "Description": ""
+    },
+    {
+      "Field": "lv10Soul",
+      "Name": "必要ソウル",
+      "Description": ""
+    },
+    {
+      "Field": "lv1ItemID",
+      "Name": "必要アイテムID",
+      "Description": ""
+    },
+    {
+      "Field": "lv2ItemID",
+      "Name": "必要アイテムID",
+      "Description": ""
+    },
+    {
+      "Field": "lv3ItemID",
+      "Name": "必要アイテムID",
+      "Description": ""
+    },
+    {
+      "Field": "lv4ItemID",
+      "Name": "必要アイテムID",
+      "Description": ""
+    },
+    {
+      "Field": "lv5ItemID",
+      "Name": "必要アイテムID",
+      "Description": ""
+    },
+    {
+      "Field": "lv6ItemID",
+      "Name": "必要アイテムID",
+      "Description": ""
+    },
+    {
+      "Field": "lv7ItemID",
+      "Name": "必要アイテムID",
+      "Description": ""
+    },
+    {
+      "Field": "lv8ItemID",
+      "Name": "必要アイテムID",
+      "Description": ""
+    },
+    {
+      "Field": "lv9ItemID",
+      "Name": "必要アイテムID",
+      "Description": ""
+    },
+    {
+      "Field": "lv10ItemID",
+      "Name": "必要アイテムID",
+      "Description": ""
+    },
+    {
+      "Field": "lv1ItemCount",
+      "Name": "必要アイテム数",
+      "Description": ""
+    },
+    {
+      "Field": "lv2ItemCount",
+      "Name": "必要アイテム数",
+      "Description": ""
+    },
+    {
+      "Field": "lv3ItemCount",
+      "Name": "必要アイテム数",
+      "Description": ""
+    },
+    {
+      "Field": "lv4ItemCount",
+      "Name": "必要アイテム数",
+      "Description": ""
+    },
+    {
+      "Field": "lv5ItemCount",
+      "Name": "必要アイテム数",
+      "Description": ""
+    },
+    {
+      "Field": "lv6ItemCount",
+      "Name": "必要アイテム数",
+      "Description": ""
+    },
+    {
+      "Field": "lv7ItemCount",
+      "Name": "必要アイテム数",
+      "Description": ""
+    },
+    {
+      "Field": "lv8ItemCount",
+      "Name": "必要アイテム数",
+      "Description": ""
+    },
+    {
+      "Field": "lv9ItemCount",
+      "Name": "必要アイテム数",
+      "Description": ""
+    },
+    {
+      "Field": "lv10ItemCount",
+      "Name": "必要アイテム数",
+      "Description": ""
+    }
+  ]
+}

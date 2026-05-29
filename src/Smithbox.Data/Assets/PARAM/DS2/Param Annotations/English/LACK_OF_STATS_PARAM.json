@@ -2,27 +2,27 @@
   "Param": "LACK_OF_STATS_PARAM",
   "Type": "LACK_OF_STATS_PARAM",
   "Name": "LACK_OF_STATS_PARAM",
-  "Description": "",
+  "Description": "Defines scaling limits and penalties applied when the player lacks the required stats or stamina to properly use equipment, actions, or abilities.",
   "Fields": [
     {
       "Field": "minValueByStats",
-      "Name": "ST不足 最小値",
-      "Description": ""
+      "Name": "Minimum Value When Stats Are Insufficient",
+      "Description": "Lower bound applied when character attributes are below the required values."
     },
     {
       "Field": "maxValueByStats",
-      "Name": "ST不足 最大値",
-      "Description": ""
+      "Name": "Maximum Value When Stats Are Insufficient",
+      "Description": "Upper bound applied when character attributes are below the required values."
     },
     {
       "Field": "minValueByStamina",
-      "Name": "スタミナ不足 最小値",
-      "Description": ""
+      "Name": "Minimum Value When Stamina Is Insufficient",
+      "Description": "Lower bound applied when stamina is too low to perform an action effectively."
     },
     {
       "Field": "maxValueByStamina",
-      "Name": "スタミナ不足 最大値",
-      "Description": ""
+      "Name": "Maximum Value When Stamina Is Insufficient",
+      "Description": "Upper bound applied when stamina is too low to perform an action effectively."
     }
   ]
 }

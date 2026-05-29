@@ -2,26 +2,26 @@
   "Param": "MAP_OBJECT_TORCH_PARAM",
   "Type": "MAP_OBJECT_TORCH_PARAM",
   "Name": "MAP_OBJECT_TORCH_PARAM",
-  "Description": "",
+  "Description": "Defines behavior and timing for torch-based map objects, including fire duration and initial activation state.",
   "Fields": [
     {
       "Field": "fireTime",
-      "Name": "火の付いている時間[秒]",
-      "Description": ""
+      "Name": "Fire Duration",
+      "Description": "Duration (in seconds) that the torch remains lit."
     },
     {
       "Field": "motionDummyPolyId",
-      "Name": "モーション基準ダミポリ",
-      "Description": ""
+      "Name": "Motion Reference Dummy Poly ID",
+      "Description": "Dummy polygon used as a reference point for torch motion or animation alignment."
     },
     {
       "Field": "bFirstEnable",
-      "Name": "最初から有効か",
-      "Description": ""
+      "Name": "Enabled Initially",
+      "Description": "Determines whether the torch starts in an active (lit) state when the map loads."
     },
     {
       "Field": "aReserved",
-      "Name": "予約",
+      "Name": "Padding",
       "Description": ""
     }
   ]

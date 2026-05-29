@@ -2,317 +2,317 @@
   "Param": "WEAPON_REINFORCE_PARAM",
   "Type": "WEAPON_REINFORCE_PARAM",
   "Name": "WEAPON_REINFORCE_PARAM",
-  "Description": "",
+  "Description": "Defines weapon upgrade progression, including attack power ranges, damage reduction values, scaling modifiers, elemental reinforcement behavior, and upgrade costs.",
   "Fields": [
     {
       "Field": "minimumPhysical",
-      "Name": "物理攻撃力の最小値",
-      "Description": ""
+      "Name": "Minimum Physical Attack",
+      "Description": "Minimum physical attack power for this reinforcement level."
     },
     {
       "Field": "minimumMagic",
-      "Name": "魔力攻撃力の最小値",
-      "Description": ""
+      "Name": "Minimum Magic Attack",
+      "Description": "Minimum magic attack power for this reinforcement level."
     },
     {
       "Field": "minimumThunder",
-      "Name": "雷攻撃力の最小値",
-      "Description": ""
+      "Name": "Minimum Lightning Attack",
+      "Description": "Minimum lightning attack power for this reinforcement level."
     },
     {
       "Field": "minimumFire",
-      "Name": "炎攻撃力の最小値",
-      "Description": ""
+      "Name": "Minimum Fire Attack",
+      "Description": "Minimum fire attack power for this reinforcement level."
     },
     {
       "Field": "minimumDark",
-      "Name": "闇攻撃力の最小値",
-      "Description": ""
+      "Name": "Minimum Dark Attack",
+      "Description": "Minimum dark attack power for this reinforcement level."
     },
     {
       "Field": "minimumPoison",
-      "Name": "毒攻撃力の最小値",
-      "Description": ""
+      "Name": "Minimum Poison Attack",
+      "Description": "Minimum poison buildup value for this reinforcement level."
     },
     {
       "Field": "minimumBleeding",
-      "Name": "出血攻撃力の最小値",
-      "Description": ""
+      "Name": "Minimum Bleed Attack",
+      "Description": "Minimum bleed buildup value for this reinforcement level."
     },
     {
       "Field": "minimumPetrifaction",
-      "Name": "石化攻撃力の最小値",
-      "Description": ""
+      "Name": "Minimum Petrification Attack",
+      "Description": "Minimum petrification buildup value for this reinforcement level."
     },
     {
       "Field": "minimumCurse",
-      "Name": "呪攻撃力の最小値",
-      "Description": ""
+      "Name": "Minimum Curse Attack",
+      "Description": "Minimum curse buildup value for this reinforcement level."
     },
     {
       "Field": "maximumPhysical",
-      "Name": "物理攻撃力の最大値",
-      "Description": ""
+      "Name": "Maximum Physical Attack",
+      "Description": "Maximum physical attack power for this reinforcement level."
     },
     {
       "Field": "maximumMagic",
-      "Name": "魔力攻撃力の最大値",
-      "Description": ""
+      "Name": "Maximum Magic Attack",
+      "Description": "Maximum magic attack power for this reinforcement level."
     },
     {
       "Field": "maximumThunder",
-      "Name": "雷攻撃力の最大値",
-      "Description": ""
+      "Name": "Maximum Lightning Attack",
+      "Description": "Maximum lightning attack power for this reinforcement level."
     },
     {
       "Field": "maximumFire",
-      "Name": "炎攻撃力の最大値",
-      "Description": ""
+      "Name": "Maximum Fire Attack",
+      "Description": "Maximum fire attack power for this reinforcement level."
     },
     {
       "Field": "maximumDark",
-      "Name": "闇攻撃力の最大値",
-      "Description": ""
+      "Name": "Maximum Dark Attack",
+      "Description": "Maximum dark attack power for this reinforcement level."
     },
     {
       "Field": "maximumPoison",
-      "Name": "毒攻撃力の最大値",
-      "Description": ""
+      "Name": "Maximum Poison Attack",
+      "Description": "Maximum poison buildup value for this reinforcement level."
     },
     {
       "Field": "maximumBleeding",
-      "Name": "出血攻撃力の最大値",
-      "Description": ""
+      "Name": "Maximum Bleed Attack",
+      "Description": "Maximum bleed buildup value for this reinforcement level."
     },
     {
       "Field": "maximumPetrifaction",
-      "Name": "石化攻撃力の最大値",
-      "Description": ""
+      "Name": "Maximum Petrification Attack",
+      "Description": "Maximum petrification buildup value for this reinforcement level."
     },
     {
       "Field": "maximumCurse",
-      "Name": "呪攻撃力の最大値",
-      "Description": ""
+      "Name": "Maximum Curse Attack",
+      "Description": "Maximum curse buildup value for this reinforcement level."
     },
     {
       "Field": "maxLevel",
-      "Name": "強化最大レベル",
-      "Description": ""
+      "Name": "Maximum Reinforcement Level",
+      "Description": "Highest upgrade level supported by this reinforcement path."
     },
     {
       "Field": "dummy",
-      "Name": "ダミー",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "statsAffectId",
-      "Name": "ステータス影響倍率設定",
-      "Description": ""
+      "Name": "Stat Scaling Configuration ID",
+      "Description": "References the scaling multiplier configuration applied to weapon attributes."
     },
     {
       "Field": "physical",
-      "Name": "物理カット率 [%]",
-      "Description": ""
+      "Name": "Guard: Physical Damage Reduction (%)",
+      "Description": "Percentage of physical damage blocked while guarding."
     },
     {
       "Field": "magic",
-      "Name": "魔力カット率 [%]",
-      "Description": ""
+      "Name": "Guard: Magic Damage Reduction (%)",
+      "Description": "Percentage of magic damage blocked while guarding."
     },
     {
       "Field": "thunder",
-      "Name": "雷カット率 [%]",
-      "Description": ""
+      "Name": "Guard: Lightning Damage Reduction (%)",
+      "Description": "Percentage of lightning damage blocked while guarding."
     },
     {
       "Field": "fire",
-      "Name": "炎カット率 [%]",
-      "Description": ""
+      "Name": "Guard: Fire Damage Reduction (%)",
+      "Description": "Percentage of fire damage blocked while guarding."
     },
     {
       "Field": "dark",
-      "Name": "闇カット率 [%]",
-      "Description": ""
+      "Name": "Guard: Dark Damage Reduction (%)",
+      "Description": "Percentage of dark damage blocked while guarding."
     },
     {
       "Field": "poison",
-      "Name": "毒カット率 [%]",
-      "Description": ""
+      "Name": "Guard: Poison Resistance (%)",
+      "Description": "Percentage reduction to poison buildup while guarding."
     },
     {
       "Field": "bleeding",
-      "Name": "出血カット率 [%]",
-      "Description": ""
+      "Name": "Guard: Bleed Resistance (%)",
+      "Description": "Percentage reduction to bleed buildup while guarding."
     },
     {
       "Field": "petrifaction",
-      "Name": "石化カット率 [%]",
-      "Description": ""
+      "Name": "Guard: Petrification Resistance (%)",
+      "Description": "Percentage reduction to petrification buildup while guarding."
     },
     {
       "Field": "curse",
-      "Name": "呪カット率 [%]",
-      "Description": ""
+      "Name": "Guard: Curse Resistance (%)",
+      "Description": "Percentage reduction to curse buildup while guarding."
     },
     {
       "Field": "stabilityRate0",
-      "Name": "受け能力 0",
-      "Description": ""
+      "Name": "Guard Stability Rate: 0",
+      "Description": "Guard stability value for reinforcement level 0."
     },
     {
       "Field": "stabilityRate1",
-      "Name": "受け能力 1",
-      "Description": ""
+      "Name": "Guard Stability Rate: 1",
+      "Description": "Guard stability value for reinforcement level 1."
     },
     {
       "Field": "stabilityRate2",
-      "Name": "受け能力 2",
-      "Description": ""
+      "Name": "Guard Stability Rate: 2",
+      "Description": "Guard stability value for reinforcement level 2."
     },
     {
       "Field": "stabilityRate3",
-      "Name": "受け能力 3",
-      "Description": ""
+      "Name": "Guard Stability Rate: 3",
+      "Description": "Guard stability value for reinforcement level 3."
     },
     {
       "Field": "stabilityRate4",
-      "Name": "受け能力 4",
-      "Description": ""
+      "Name": "Guard Stability Rate: 4",
+      "Description": "Guard stability value for reinforcement level 4."
     },
     {
       "Field": "stabilityRate5",
-      "Name": "受け能力 5",
-      "Description": ""
+      "Name": "Guard Stability Rate: 5",
+      "Description": "Guard stability value for reinforcement level 5."
     },
     {
       "Field": "stabilityRate6",
-      "Name": "受け能力 6",
-      "Description": ""
+      "Name": "Guard Stability Rate: 6",
+      "Description": "Guard stability value for reinforcement level 6."
     },
     {
       "Field": "stabilityRate7",
-      "Name": "受け能力 7",
-      "Description": ""
+      "Name": "Guard Stability Rate: 7",
+      "Description": "Guard stability value for reinforcement level 7."
     },
     {
       "Field": "stabilityRate8",
-      "Name": "受け能力 8",
-      "Description": ""
+      "Name": "Guard Stability Rate: 8",
+      "Description": "Guard stability value for reinforcement level 8."
     },
     {
       "Field": "stabilityRate9",
-      "Name": "受け能力 9",
-      "Description": ""
+      "Name": "Guard Stability Rate: 9",
+      "Description": "Guard stability value for reinforcement level 9."
     },
     {
       "Field": "stabilityRate10",
-      "Name": "受け能力 10",
-      "Description": ""
+      "Name": "Guard Stability Rate: 10",
+      "Description": "Guard stability value for reinforcement level 10."
     },
     {
       "Field": "physicalRate",
-      "Name": "初期属性値 物理",
-      "Description": ""
+      "Name": "Base Physical Attribute Rate",
+      "Description": "Base physical attribute multiplier applied before elemental modification."
     },
     {
       "Field": "magicRate",
-      "Name": "初期属性値 魔力",
-      "Description": ""
+      "Name": "Base Magic Attribute Rate",
+      "Description": "Base magic attribute multiplier applied before elemental modification."
     },
     {
       "Field": "thunderRate",
-      "Name": "初期属性値 雷",
-      "Description": ""
+      "Name": "Base Lightning Attribute Rate",
+      "Description": "Base lightning attribute multiplier applied before elemental modification."
     },
     {
       "Field": "fireRate",
-      "Name": "初期属性値 炎",
-      "Description": ""
+      "Name": "Base Fire Attribute Rate",
+      "Description": "Base fire attribute multiplier applied before elemental modification."
     },
     {
       "Field": "darkRate",
-      "Name": "初期属性値 闇",
-      "Description": ""
+      "Name": "Base Dark Attribute Rate",
+      "Description": "Base dark attribute multiplier applied before elemental modification."
     },
     {
       "Field": "poisonRate",
-      "Name": "初期属性値 毒",
-      "Description": ""
+      "Name": "Base Poison Attribute Rate",
+      "Description": "Base poison attribute multiplier applied before elemental modification."
     },
     {
       "Field": "bleedingRate",
-      "Name": "初期属性値 出血",
-      "Description": ""
+      "Name": "Base Bleed Attribute Rate",
+      "Description": "Base bleed attribute multiplier applied before elemental modification."
     },
     {
       "Field": "petrifactionRate",
-      "Name": "初期属性値 石化",
-      "Description": ""
+      "Name": "Base Petrification Attribute Rate",
+      "Description": "Base petrification attribute multiplier applied before elemental modification."
     },
     {
       "Field": "curseRate",
-      "Name": "初期属性値 呪",
-      "Description": ""
+      "Name": "Base Curse Attribute Rate",
+      "Description": "Base curse attribute multiplier applied before elemental modification."
     },
     {
       "Field": "addMagicRate",
-      "Name": "属性変動値 魔法",
-      "Description": ""
+      "Name": "Magic Infusion Modifier",
+      "Description": "Attribute multiplier adjustment applied by magic infusion."
     },
     {
       "Field": "addThunderRate",
-      "Name": "属性変動値 雷",
-      "Description": ""
+      "Name": "Lightning Infusion Modifier",
+      "Description": "Attribute multiplier adjustment applied by lightning infusion."
     },
     {
       "Field": "addFireRate",
-      "Name": "属性変動値 炎",
-      "Description": ""
+      "Name": "Fire Infusion Modifier",
+      "Description": "Attribute multiplier adjustment applied by fire infusion."
     },
     {
       "Field": "addDarkRate",
-      "Name": "属性変動値 闇",
-      "Description": ""
+      "Name": "Dark Infusion Modifier",
+      "Description": "Attribute multiplier adjustment applied by dark infusion."
     },
     {
       "Field": "addPoisonRate",
-      "Name": "属性変動値 毒",
-      "Description": ""
+      "Name": "Poison Infusion Modifier",
+      "Description": "Attribute multiplier adjustment applied by poison infusion."
     },
     {
       "Field": "addBleedRate",
-      "Name": "属性変動値 出血",
-      "Description": ""
+      "Name": "Bleed Infusion Modifier",
+      "Description": "Attribute multiplier adjustment applied by bleed infusion."
     },
     {
       "Field": "addPhysicalRateByCrude",
-      "Name": "属性変動値 物理(粗製)",
-      "Description": ""
+      "Name": "Raw Physical Modifier",
+      "Description": "Physical attribute multiplier adjustment applied by Raw infusion."
     },
     {
       "Field": "addPhysicalRateByEnchanted",
-      "Name": "属性変動値 物理(魔力)",
-      "Description": ""
+      "Name": "Enchanted Physical Modifier",
+      "Description": "Physical attribute multiplier adjustment applied by Enchanted infusion."
     },
     {
       "Field": "addPhysicalRateByAbyss",
-      "Name": "属性変動値 物理(深淵)",
-      "Description": ""
+      "Name": "Mundane Physical Modifier",
+      "Description": "Physical attribute multiplier adjustment applied by Mundane infusion."
     },
     {
       "Field": "attrSpec",
-      "Name": "属性強化可否",
-      "Description": ""
+      "Name": "Infusion Configuration",
+      "Description": "Determines which infusions are permitted."
     },
     {
       "Field": "attrCost",
-      "Name": "属性強化コスト",
-      "Description": ""
+      "Name": "Infusion Cost",
+      "Description": "Cost required to apply an infusion."
     },
     {
       "Field": "reinforceCost",
-      "Name": "Lv強化コスト",
-      "Description": ""
+      "Name": "Reinforcement Cost",
+      "Description": "Cost required to upgrade the weapon to this reinforcement level."
     }
   ]
 }

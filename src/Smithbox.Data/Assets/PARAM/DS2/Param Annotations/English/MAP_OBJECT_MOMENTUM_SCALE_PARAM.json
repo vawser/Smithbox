@@ -2,87 +2,87 @@
   "Param": "MAP_OBJECT_MOMENTUM_SCALE_PARAM",
   "Type": "MAP_OBJECT_MOMENTUM_SCALE_PARAM",
   "Name": "MAP_OBJECT_MOMENTUM_SCALE_PARAM",
-  "Description": "",
+  "Description": "Defines momentum scaling factors applied to map objects based on size categories and two separate object channels or instances.",
   "Fields": [
     {
       "Field": "noneObj0",
-      "Name": "《無》",
-      "Description": ""
+      "Name": "None (Obj 0)",
+      "Description": "No momentum scaling applied for object slot 0."
     },
     {
       "Field": "superSmallObj0",
-      "Name": "《極小》",
-      "Description": ""
+      "Name": "Super Small (Obj 0)",
+      "Description": "Momentum scaling for extremely small objects in slot 0."
     },
     {
       "Field": "smallObj0",
-      "Name": "《小》",
-      "Description": ""
+      "Name": "Small (Obj 0)",
+      "Description": "Momentum scaling for small objects in slot 0."
     },
     {
       "Field": "normalObj0",
-      "Name": "《中》",
-      "Description": ""
+      "Name": "Normal (Obj 0)",
+      "Description": "Momentum scaling for medium-sized objects in slot 0."
     },
     {
       "Field": "largeObj0",
-      "Name": "《大》",
-      "Description": ""
+      "Name": "Large (Obj 0)",
+      "Description": "Momentum scaling for large objects in slot 0."
     },
     {
       "Field": "superLargeObj0",
-      "Name": "《特大》",
-      "Description": ""
+      "Name": "Super Large (Obj 0)",
+      "Description": "Momentum scaling for very large objects in slot 0."
     },
     {
       "Field": "hyperLargeObj0",
-      "Name": "《超特大》",
-      "Description": ""
+      "Name": "Hyper Large (Obj 0)",
+      "Description": "Momentum scaling for extremely large objects in slot 0."
     },
     {
       "Field": "infiniteObj0",
-      "Name": "《∞》",
-      "Description": ""
+      "Name": "Infinite (Obj 0)",
+      "Description": "Momentum scaling treated as effectively infinite for slot 0."
     },
     {
       "Field": "noneObj1",
-      "Name": "《無》",
-      "Description": ""
+      "Name": "None (Obj 1)",
+      "Description": "No momentum scaling applied for object slot 1."
     },
     {
       "Field": "superSmallObj1",
-      "Name": "《極小》",
-      "Description": ""
+      "Name": "Super Small (Obj 1)",
+      "Description": "Momentum scaling for extremely small objects in slot 1."
     },
     {
       "Field": "smallObj1",
-      "Name": "《小》",
-      "Description": ""
+      "Name": "Small (Obj 1)",
+      "Description": "Momentum scaling for small objects in slot 1."
     },
     {
       "Field": "normalObj1",
-      "Name": "《中》",
-      "Description": ""
+      "Name": "Normal (Obj 1)",
+      "Description": "Momentum scaling for medium-sized objects in slot 1."
     },
     {
       "Field": "largeObj1",
-      "Name": "《大》",
-      "Description": ""
+      "Name": "Large (Obj 1)",
+      "Description": "Momentum scaling for large objects in slot 1."
     },
     {
       "Field": "superLargeObj1",
-      "Name": "《特大》",
-      "Description": ""
+      "Name": "Super Large (Obj 1)",
+      "Description": "Momentum scaling for very large objects in slot 1."
     },
     {
       "Field": "hyperLargeObj1",
-      "Name": "《超特大》",
-      "Description": ""
+      "Name": "Hyper Large (Obj 1)",
+      "Description": "Momentum scaling for extremely large objects in slot 1."
     },
     {
       "Field": "infiniteObj1",
-      "Name": "《∞》",
-      "Description": ""
+      "Name": "Infinite (Obj 1)",
+      "Description": "Momentum scaling treated as effectively infinite for slot 1."
     }
   ]
 }

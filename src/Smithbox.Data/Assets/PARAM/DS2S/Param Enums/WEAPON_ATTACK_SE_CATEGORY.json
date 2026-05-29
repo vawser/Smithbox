@@ -12,7 +12,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Sword type"
+          "Text": "Sword"
         }
       ]
     },
@@ -21,7 +21,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Extra large sword type"
+          "Text": "Greatsword"
         }
       ]
     },
@@ -30,7 +30,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Dagger type"
+          "Text": "Dagger"
         }
       ]
     },
@@ -39,7 +39,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Fist type"
+          "Text": "Fist"
         }
       ]
     },
@@ -48,7 +48,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Ax type"
+          "Text": "Axe"
         }
       ]
     },
@@ -57,7 +57,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Hammer type"
+          "Text": "Hammer"
         }
       ]
     },
@@ -66,7 +66,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Spear type"
+          "Text": "Spear"
         }
       ]
     },
@@ -75,7 +75,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Whip system"
+          "Text": "Whip"
         }
       ]
     },
@@ -84,7 +84,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Bow type"
+          "Text": "Bow"
         }
       ]
     },
@@ -93,7 +93,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Crossbow type"
+          "Text": "Crossbow"
         }
       ]
     },
@@ -102,7 +102,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Cane type"
+          "Text": "Staff"
         }
       ]
     },
@@ -111,7 +111,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Bell type"
+          "Text": "Chime"
         }
       ]
     }

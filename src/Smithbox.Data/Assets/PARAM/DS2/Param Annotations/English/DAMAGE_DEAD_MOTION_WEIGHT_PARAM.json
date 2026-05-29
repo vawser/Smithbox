@@ -2,47 +2,47 @@
   "Param": "DAMAGE_DEAD_MOTION_WEIGHT_PARAM",
   "Type": "DAMAGE_DEAD_MOTION_WEIGHT_PARAM",
   "Name": "DAMAGE_DEAD_MOTION_WEIGHT_PARAM",
-  "Description": "",
+  "Description": "Defines weighting values used to determine death animations or death reaction behavior based on attack size or impact category.",
   "Fields": [
     {
       "Field": "noneSize",
-      "Name": "無",
-      "Description": ""
+      "Name": "None",
+      "Description": "Weight value used when no attack size category is applied."
     },
     {
       "Field": "superSmallSize",
-      "Name": "極小",
-      "Description": ""
+      "Name": "Extremely Small",
+      "Description": "Weight value used for extremely small attack impact categories."
     },
     {
       "Field": "smallSize",
-      "Name": "小",
-      "Description": ""
+      "Name": "Small",
+      "Description": "Weight value used for small attack impact categories."
     },
     {
       "Field": "normalSize",
-      "Name": "中",
-      "Description": ""
+      "Name": "Medium",
+      "Description": "Weight value used for standard or medium attack impact categories."
     },
     {
       "Field": "largeSize",
-      "Name": "大",
-      "Description": ""
+      "Name": "Large",
+      "Description": "Weight value used for large attack impact categories."
     },
     {
       "Field": "superLargeSize",
-      "Name": "特大",
-      "Description": ""
+      "Name": "Very Large",
+      "Description": "Weight value used for very large attack impact categories."
     },
     {
       "Field": "hyperLargeSize",
-      "Name": "超特大",
-      "Description": ""
+      "Name": "Extremely Large",
+      "Description": "Weight value used for extremely large attack impact categories."
     },
     {
       "Field": "ultraLargeSize",
-      "Name": "超超特大",
-      "Description": ""
+      "Name": "Massive",
+      "Description": "Weight value used for the largest attack impact categories."
     }
   ]
 }

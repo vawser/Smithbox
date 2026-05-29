@@ -2,36 +2,36 @@
   "Param": "PLURSL_SELECT_MENU_PARAM",
   "Type": "PLURSL_SELECT_MENU_PARAM",
   "Name": "PLURSL_SELECT_MENU_PARAM",
-  "Description": "",
+  "Description": "Parameter set defining a selectable menu entry with associated costs, conditions, and event triggers.",
   "Fields": [
     {
       "Field": "displayTextId",
-      "Name": "表示テキストID",
-      "Description": ""
+      "Name": "Display Text ID",
+      "Description": "ID referencing the text entry displayed in the menu UI."
     },
     {
       "Field": "consumptionSoul",
-      "Name": "選択時消費ソウル",
-      "Description": ""
+      "Name": "Soul Cost on Selection",
+      "Description": "Amount of soul resource consumed when this option is selected."
     },
     {
       "Field": "kickEventId",
-      "Name": "選択時キックイベントID",
-      "Description": ""
+      "Name": "Selection Kick Event ID",
+      "Description": "Event ID triggered when this menu option is selected."
     },
     {
       "Field": "checkEventFlagId",
-      "Name": "表示確認用イベントID",
-      "Description": ""
+      "Name": "Visibility Check Event Flag ID",
+      "Description": "Event flag ID used to determine whether this option should be shown."
     },
     {
       "Field": "enableFlagType",
-      "Name": "項目を消すフラグの状態",
-      "Description": ""
+      "Name": "Visibility Flag State Type",
+      "Description": "Defines the flag state condition that controls whether this item is hidden or shown."
     },
     {
       "Field": "dummy",
-      "Name": "予約領域",
+      "Name": "Padding",
       "Description": ""
     }
   ]

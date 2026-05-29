@@ -1,0 +1,413 @@
+{
+  "Param": "FACE_EDIT_PARAM_RACE_PRESET",
+  "Type": "FACE_EDIT_PARAM_RACE_PRESET",
+  "Name": "FACE_EDIT_PARAM_RACE_PRESET",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "Face_age",
+      "Name": "年齢",
+      "Description": "年齢"
+    },
+    {
+      "Field": "Face_gender",
+      "Name": "性別",
+      "Description": "性別"
+    },
+    {
+      "Field": "Face_caricature_geometry",
+      "Name": "形状誇張",
+      "Description": "形状誇張"
+    },
+    {
+      "Field": "Face_caricature_texture",
+      "Name": "色誇張",
+      "Description": "色誇張"
+    },
+    {
+      "Field": "Face_blow_nose_chin_ratio",
+      "Name": "眉、鼻、顎の比率",
+      "Description": "眉、鼻、顎の比率"
+    },
+    {
+      "Field": "Face_forehead_nose_ratio",
+      "Name": "額付近の比率",
+      "Description": "額付近の比率"
+    },
+    {
+      "Field": "Face_heavy_light",
+      "Name": "顔幅",
+      "Description": "顔幅"
+    },
+    {
+      "Field": "Face_round_gaunt",
+      "Name": "顔の丸み",
+      "Description": "顔の丸み"
+    },
+    {
+      "Field": "Face_tall_short",
+      "Name": "顔パーツバランス",
+      "Description": "顔パーツバランス"
+    },
+    {
+      "Field": "Face_up_down",
+      "Name": "顔パーツ傾き上下",
+      "Description": "顔パーツ傾き上下"
+    },
+    {
+      "Field": "Face_wide_thin",
+      "Name": "顔パーツバランス左右",
+      "Description": "顔パーツバランス左右"
+    },
+    {
+      "Field": "Skin_Flushed_Pale",
+      "Name": "肌の色 紅潮 蒼白",
+      "Description": "肌の色 紅潮 蒼白"
+    },
+    {
+      "Field": "Skin_Shade_Dark_Light",
+      "Name": "色 肌色 暗 明",
+      "Description": "色 肌色 暗 明"
+    },
+    {
+      "Field": "Skin_Tint_Orange_Blue",
+      "Name": "色 肌の色 橙青",
+      "Description": "色 肌の色 橙青"
+    },
+    {
+      "Field": "Skin_Tint_Purple_Yellow",
+      "Name": "色 肌の色 紫黄",
+      "Description": "色 肌の色 紫黄"
+    },
+    {
+      "Field": "Skin_Tint_Red_Green",
+      "Name": "色 肌の色 赤緑",
+      "Description": "色 肌の色 赤緑"
+    },
+    {
+      "Field": "Nose_Pale_Red",
+      "Name": "色 鼻筋の色 蒼白 赤",
+      "Description": "色 鼻筋の色 蒼白 赤"
+    },
+    {
+      "Field": "Cheek_Blush_Light_Red",
+      "Name": "色 頬色 光 赤",
+      "Description": "色 頬色 光 赤"
+    },
+    {
+      "Field": "Forehead_small_large",
+      "Name": "眉間の幅",
+      "Description": "眉間の幅"
+    },
+    {
+      "Field": "Forehead_tall_short",
+      "Name": "眉間の深さ",
+      "Description": "眉間の深さ"
+    },
+    {
+      "Field": "Forehead_tilt_foward_back",
+      "Name": "眉間の位置",
+      "Description": "眉間の位置"
+    },
+    {
+      "Field": "Nose_sellion_down_up",
+      "Name": "眉間の高さ",
+      "Description": "眉間の高さ"
+    },
+    {
+      "Field": "Nose_sellion_shallow_deep",
+      "Name": "鼻筋、上部の凹凸",
+      "Description": "鼻筋、上部の凹凸"
+    },
+    {
+      "Field": "Nose_sellion_shallow_deep2",
+      "Name": "鼻筋、上部の凹凸",
+      "Description": "鼻筋、上部の凹凸"
+    },
+    {
+      "Field": "Nose_sellion_thin_wide",
+      "Name": "眉間の幅",
+      "Description": "眉間の幅"
+    },
+    {
+      "Field": "Brow_Ridge_high_low",
+      "Name": "眉の高さ",
+      "Description": "眉の高さ"
+    },
+    {
+      "Field": "Brow_Ridge_Inner_down_up",
+      "Name": "眉の内端",
+      "Description": "眉の内端"
+    },
+    {
+      "Field": "Brow_Ridge_Outer_up_down",
+      "Name": "眉の外端",
+      "Description": "眉の外端"
+    },
+    {
+      "Field": "Eyes_down_up",
+      "Name": "眼の位置",
+      "Description": "眼の位置"
+    },
+    {
+      "Field": "Eyes_small_large",
+      "Name": "眼の大きさ",
+      "Description": "眼の大きさ"
+    },
+    {
+      "Field": "Eyes_tilt_inward_outward",
+      "Name": "眼の傾き",
+      "Description": "眼の傾き"
+    },
+    {
+      "Field": "Eyes_apart_together",
+      "Name": "眼の間隔",
+      "Description": "眼の間隔"
+    },
+    {
+      "Field": "Eye_Sockets_Bruised_Bright",
+      "Name": "色 眼窩の色 アザ 明",
+      "Description": "色 眼窩の色 アザ 明"
+    },
+    {
+      "Field": "Eye_Sockets_Dark_Light",
+      "Name": "色 眼窩の色 暗 明",
+      "Description": "色 眼窩の色 暗 明"
+    },
+    {
+      "Field": "Eyelids_Light_Dark",
+      "Name": "色 まぶた 明 暗",
+      "Description": "色 まぶた 明 暗"
+    },
+    {
+      "Field": "Eyelids_Pale_Red",
+      "Name": "色 まぶた 青 赤",
+      "Description": "色 まぶた 青 赤"
+    },
+    {
+      "Field": "Eyeliner_Light_Dark",
+      "Name": "色 アイライナー 明 暗",
+      "Description": "色 アイライナー 明 暗"
+    },
+    {
+      "Field": "Eyeshadow_Light_Dark",
+      "Name": "色 アイシャドー 明 暗",
+      "Description": "色 アイシャドー 明 暗"
+    },
+    {
+      "Field": "Nose_bridge_shallow_deep",
+      "Name": "鼻筋の深さ",
+      "Description": "鼻筋の深さ"
+    },
+    {
+      "Field": "Nose_bridge_short_long",
+      "Name": "鼻筋の長さ",
+      "Description": "鼻筋の長さ"
+    },
+    {
+      "Field": "Nose_down_up",
+      "Name": "鼻の長さ",
+      "Description": "鼻の長さ"
+    },
+    {
+      "Field": "Nose_flat_pointed",
+      "Name": "鼻の高さ",
+      "Description": "鼻の高さ"
+    },
+    {
+      "Field": "Nose_region_concave_convex",
+      "Name": "鼻の凹凸",
+      "Description": "鼻の凹凸"
+    },
+    {
+      "Field": "Nose_short_long",
+      "Name": "鼻の高さ",
+      "Description": "鼻の高さ"
+    },
+    {
+      "Field": "Nose_tilt_down_up",
+      "Name": "小鼻の上下",
+      "Description": "小鼻の上下"
+    },
+    {
+      "Field": "Nose_nostril_tilt_down_up",
+      "Name": "小鼻の傾斜",
+      "Description": "小鼻の傾斜"
+    },
+    {
+      "Field": "Nose_nostrils_small_large",
+      "Name": "小鼻の大きさ",
+      "Description": "小鼻の大きさ"
+    },
+    {
+      "Field": "Nose_nostrils_wide_thin",
+      "Name": "小鼻の幅",
+      "Description": "小鼻の幅"
+    },
+    {
+      "Field": "Nares_Small_Large",
+      "Name": "鼻孔の大きさ",
+      "Description": "鼻孔の大きさ"
+    },
+    {
+      "Field": "Cheekbones_low_high",
+      "Name": "頬骨の高さ",
+      "Description": "頬骨の高さ"
+    },
+    {
+      "Field": "Cheekbones_shallow_pronounced",
+      "Name": "頬骨の深み",
+      "Description": "頬骨の深み"
+    },
+    {
+      "Field": "Cheekbones_thin_wide",
+      "Name": "頬骨の広さ",
+      "Description": "頬骨の広さ"
+    },
+    {
+      "Field": "Cheeks_concave_convex",
+      "Name": "頬の凹凸",
+      "Description": "頬の凹凸"
+    },
+    {
+      "Field": "Cheeks_round_gaunt",
+      "Name": "頬",
+      "Description": "頬"
+    },
+    {
+      "Field": "Naso_Labial_Lines_Light_Dark",
+      "Name": "頬のしわライン",
+      "Description": "頬のしわライン"
+    },
+    {
+      "Field": "Mouth_drawn_pursed",
+      "Name": "唇の形",
+      "Description": "唇の形"
+    },
+    {
+      "Field": "Mouth_happy_sad",
+      "Name": "口元の表情、喜_悲",
+      "Description": "口元の表情、喜_悲"
+    },
+    {
+      "Field": "Mouth_Lips_deflated_inflated",
+      "Name": "唇の膨らみ",
+      "Description": "唇の膨らみ"
+    },
+    {
+      "Field": "Mouth_Lips_large_small",
+      "Name": "唇の大きさ",
+      "Description": "唇の大きさ"
+    },
+    {
+      "Field": "Mouth_Lips_puckered_retracted",
+      "Name": "唇の形",
+      "Description": "唇の形"
+    },
+    {
+      "Field": "Mouth_Lips_thin_thicks",
+      "Name": "唇の厚さ",
+      "Description": "唇の厚さ"
+    },
+    {
+      "Field": "Mouth_puckered_retracted",
+      "Name": "口の凹凸",
+      "Description": "口の凹凸"
+    },
+    {
+      "Field": "Mouth_tilt_up_down",
+      "Name": "口元",
+      "Description": "口元"
+    },
+    {
+      "Field": "Mouth_underbite_overbite",
+      "Name": "唇の形",
+      "Description": "唇の形"
+    },
+    {
+      "Field": "Mouth_up_down",
+      "Name": "口の位置",
+      "Description": "口の位置"
+    },
+    {
+      "Field": "Mouth_wide_thin",
+      "Name": "口の幅",
+      "Description": "口の幅"
+    },
+    {
+      "Field": "Mouth_Chin_distance_short_long",
+      "Name": "口から顎の距離",
+      "Description": "口から顎の距離"
+    },
+    {
+      "Field": "Lips_Flushed_Pale",
+      "Name": "色 唇の色 紅潮 蒼白",
+      "Description": "色 唇の色 紅潮 蒼白"
+    },
+    {
+      "Field": "Lipstick_Dark_Red_Light_Blue",
+      "Name": "色 口紅 黒赤 白青",
+      "Description": "色 口紅 黒赤 白青"
+    },
+    {
+      "Field": "Lipstick_Dark_Blue_Light_Red",
+      "Name": "色 口紅 黒青 白赤",
+      "Description": "色 口紅 黒青 白赤"
+    },
+    {
+      "Field": "Chin_foward_backward",
+      "Name": "顎の前後",
+      "Description": "顎の前後"
+    },
+    {
+      "Field": "Chin_pronounced_recessed",
+      "Name": "顎の縦の長さ_",
+      "Description": "顎の縦の長さ_"
+    },
+    {
+      "Field": "Chin_retracted_jutting",
+      "Name": "顎の突き出し_",
+      "Description": "顎の突き出し_"
+    },
+    {
+      "Field": "Chin_shallow_deep",
+      "Name": "顎の深さ",
+      "Description": "顎の深さ"
+    },
+    {
+      "Field": "Chin_small_large",
+      "Name": "顎の大きさ",
+      "Description": "顎の大きさ"
+    },
+    {
+      "Field": "Chin_tall_short",
+      "Name": "顎の高さ",
+      "Description": "顎の高さ"
+    },
+    {
+      "Field": "Chin_wide_thin",
+      "Name": "顎の広さ",
+      "Description": "顎の広さ"
+    },
+    {
+      "Field": "Jaw_retracted_jutting",
+      "Name": "顎の突き出し",
+      "Description": "顎の突き出し"
+    },
+    {
+      "Field": "Jaw_wide_thin",
+      "Name": "顎の幅",
+      "Description": "顎の幅"
+    },
+    {
+      "Field": "Jaw_Neck_slope_high_low",
+      "Name": "顎下部",
+      "Description": "顎下部"
+    },
+    {
+      "Field": "Jawline_concave_convex",
+      "Name": "顎のライン",
+      "Description": "顎のライン"
+    }
+  ]
+}

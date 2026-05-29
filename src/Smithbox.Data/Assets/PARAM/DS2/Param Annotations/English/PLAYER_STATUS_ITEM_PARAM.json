@@ -2,207 +2,207 @@
   "Param": "PLAYER_STATUS_ITEM_PARAM",
   "Type": "PLAYER_STATUS_ITEM_PARAM",
   "Name": "PLAYER_STATUS_ITEM_PARAM",
-  "Description": "",
+  "Description": "Defines fixed player inventory/status item slots and their quantities used for initial loadout, default items, or status-based item assignment.",
   "Fields": [
     {
       "Field": "item01",
-      "Name": "アイテム 01",
-      "Description": ""
+      "Name": "Item 01",
+      "Description": "Item ID assigned to slot 01."
     },
     {
       "Field": "item02",
-      "Name": "アイテム 02",
-      "Description": ""
+      "Name": "Item 02",
+      "Description": "Item ID assigned to slot 02."
     },
     {
       "Field": "item03",
-      "Name": "アイテム 03",
-      "Description": ""
+      "Name": "Item 03",
+      "Description": "Item ID assigned to slot 03."
     },
     {
       "Field": "item04",
-      "Name": "アイテム 04",
-      "Description": ""
+      "Name": "Item 04",
+      "Description": "Item ID assigned to slot 04."
     },
     {
       "Field": "item05",
-      "Name": "アイテム 05",
-      "Description": ""
+      "Name": "Item 05",
+      "Description": "Item ID assigned to slot 05."
     },
     {
       "Field": "item06",
-      "Name": "アイテム 06",
-      "Description": ""
+      "Name": "Item 06",
+      "Description": "Item ID assigned to slot 06."
     },
     {
       "Field": "item07",
-      "Name": "アイテム 07",
-      "Description": ""
+      "Name": "Item 07",
+      "Description": "Item ID assigned to slot 07."
     },
     {
       "Field": "item08",
-      "Name": "アイテム 08",
-      "Description": ""
+      "Name": "Item 08",
+      "Description": "Item ID assigned to slot 08."
     },
     {
       "Field": "item09",
-      "Name": "アイテム 09",
-      "Description": ""
+      "Name": "Item 09",
+      "Description": "Item ID assigned to slot 09."
     },
     {
       "Field": "item10",
-      "Name": "アイテム 10",
-      "Description": ""
+      "Name": "Item 10",
+      "Description": "Item ID assigned to slot 10."
     },
     {
       "Field": "item11",
-      "Name": "アイテム 11",
-      "Description": ""
+      "Name": "Item 11",
+      "Description": "Item ID assigned to slot 11."
     },
     {
       "Field": "item12",
-      "Name": "アイテム 12",
-      "Description": ""
+      "Name": "Item 12",
+      "Description": "Item ID assigned to slot 12."
     },
     {
       "Field": "item13",
-      "Name": "アイテム 13",
-      "Description": ""
+      "Name": "Item 13",
+      "Description": "Item ID assigned to slot 13."
     },
     {
       "Field": "item14",
-      "Name": "アイテム 14",
-      "Description": ""
+      "Name": "Item 14",
+      "Description": "Item ID assigned to slot 14."
     },
     {
       "Field": "item15",
-      "Name": "アイテム 15",
-      "Description": ""
+      "Name": "Item 15",
+      "Description": "Item ID assigned to slot 15."
     },
     {
       "Field": "item16",
-      "Name": "アイテム 16",
-      "Description": ""
+      "Name": "Item 16",
+      "Description": "Item ID assigned to slot 16."
     },
     {
       "Field": "item17",
-      "Name": "アイテム 17",
-      "Description": ""
+      "Name": "Item 17",
+      "Description": "Item ID assigned to slot 17."
     },
     {
       "Field": "item18",
-      "Name": "アイテム 18",
-      "Description": ""
+      "Name": "Item 18",
+      "Description": "Item ID assigned to slot 18."
     },
     {
       "Field": "item19",
-      "Name": "アイテム 19",
-      "Description": ""
+      "Name": "Item 19",
+      "Description": "Item ID assigned to slot 19."
     },
     {
       "Field": "item20",
-      "Name": "アイテム 20",
-      "Description": ""
+      "Name": "Item 20",
+      "Description": "Item ID assigned to slot 20."
     },
     {
       "Field": "item01Num",
-      "Name": "アイテム数 01",
-      "Description": ""
+      "Name": "Item 01 Quantity",
+      "Description": "Quantity of item in slot 01."
     },
     {
       "Field": "item02Num",
-      "Name": "アイテム数 02",
-      "Description": ""
+      "Name": "Item 02 Quantity",
+      "Description": "Quantity of item in slot 02."
     },
     {
       "Field": "item03Num",
-      "Name": "アイテム数 03",
-      "Description": ""
+      "Name": "Item 03 Quantity",
+      "Description": "Quantity of item in slot 03."
     },
     {
       "Field": "item04Num",
-      "Name": "アイテム数 04",
-      "Description": ""
+      "Name": "Item 04 Quantity",
+      "Description": "Quantity of item in slot 04."
     },
     {
       "Field": "item05Num",
-      "Name": "アイテム数 05",
-      "Description": ""
+      "Name": "Item 05 Quantity",
+      "Description": "Quantity of item in slot 05."
     },
     {
       "Field": "item06Num",
-      "Name": "アイテム数 06",
-      "Description": ""
+      "Name": "Item 06 Quantity",
+      "Description": "Quantity of item in slot 06."
     },
     {
       "Field": "item07Num",
-      "Name": "アイテム数 07",
-      "Description": ""
+      "Name": "Item 07 Quantity",
+      "Description": "Quantity of item in slot 07."
     },
     {
       "Field": "item08Num",
-      "Name": "アイテム数 08",
-      "Description": ""
+      "Name": "Item 08 Quantity",
+      "Description": "Quantity of item in slot 08."
     },
     {
       "Field": "item09Num",
-      "Name": "アイテム数 09",
-      "Description": ""
+      "Name": "Item 09 Quantity",
+      "Description": "Quantity of item in slot 09."
     },
     {
       "Field": "item10Num",
-      "Name": "アイテム数 10",
-      "Description": ""
+      "Name": "Item 10 Quantity",
+      "Description": "Quantity of item in slot 10."
     },
     {
       "Field": "item11Num",
-      "Name": "アイテム数 11",
-      "Description": ""
+      "Name": "Item 11 Quantity",
+      "Description": "Quantity of item in slot 11."
     },
     {
       "Field": "item12Num",
-      "Name": "アイテム数 12",
-      "Description": ""
+      "Name": "Item 12 Quantity",
+      "Description": "Quantity of item in slot 12."
     },
     {
       "Field": "item13Num",
-      "Name": "アイテム数 13",
-      "Description": ""
+      "Name": "Item 13 Quantity",
+      "Description": "Quantity of item in slot 13."
     },
     {
       "Field": "item14Num",
-      "Name": "アイテム数 14",
-      "Description": ""
+      "Name": "Item 14 Quantity",
+      "Description": "Quantity of item in slot 14."
     },
     {
       "Field": "item15Num",
-      "Name": "アイテム数 15",
-      "Description": ""
+      "Name": "Item 15 Quantity",
+      "Description": "Quantity of item in slot 15."
     },
     {
       "Field": "item16Num",
-      "Name": "アイテム数 16",
-      "Description": ""
+      "Name": "Item 16 Quantity",
+      "Description": "Quantity of item in slot 16."
     },
     {
       "Field": "item17Num",
-      "Name": "アイテム数 17",
-      "Description": ""
+      "Name": "Item 17 Quantity",
+      "Description": "Quantity of item in slot 17."
     },
     {
       "Field": "item18Num",
-      "Name": "アイテム数 18",
-      "Description": ""
+      "Name": "Item 18 Quantity",
+      "Description": "Quantity of item in slot 18."
     },
     {
       "Field": "item19Num",
-      "Name": "アイテム数 19",
-      "Description": ""
+      "Name": "Item 19 Quantity",
+      "Description": "Quantity of item in slot 19."
     },
     {
       "Field": "item20Num",
-      "Name": "アイテム数 20",
-      "Description": ""
+      "Name": "Item 20 Quantity",
+      "Description": "Quantity of item in slot 20."
     }
   ]
 }

@@ -14,6 +14,6 @@
         <naviCtrlType  Enum="OBJ_NAVI_CTRL_TYPE_ENUM"/>
         <sharplyAnimEnable  IsBool=""/>
         <enableDecal  IsBool=""/>
-        <unk1C/>
+        <unk1C />
     </Field>
 </PARAMMETA>

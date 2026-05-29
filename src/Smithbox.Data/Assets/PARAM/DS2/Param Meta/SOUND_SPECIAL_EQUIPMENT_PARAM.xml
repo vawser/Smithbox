@@ -2,6 +2,6 @@
 <PARAMMETA XmlVersion="0">
     <Field>
         <type  Enum="SOUND_SPECIAL_EQUIPMENT_TYPE"/>
-        <aReserved />
+        <aReserved Padding="" />
     </Field>
 </PARAMMETA>

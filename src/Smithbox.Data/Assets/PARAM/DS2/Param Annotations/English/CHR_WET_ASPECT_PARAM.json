@@ -2,47 +2,47 @@
   "Param": "CHR_WET_ASPECT_PARAM",
   "Type": "CHR_WET_ASPECT_PARAM",
   "Name": "CHR_WET_ASPECT_PARAM",
-  "Description": "",
+  "Description": "Controls the visual wetness appearance of a character, including specular response, Fresnel behavior, and color tinting used to simulate moisture effects.",
   "Fields": [
     {
       "Field": "colorR",
-      "Name": "R",
-      "Description": ""
+      "Name": "Wet Tint: Red",
+      "Description": "Red channel of the wet surface tint color."
     },
     {
       "Field": "colorG",
-      "Name": "G",
-      "Description": ""
+      "Name": "Wet Tint: Green",
+      "Description": "Green channel of the wet surface tint color."
     },
     {
       "Field": "colorB",
-      "Name": "B",
-      "Description": ""
+      "Name": "Wet Tint: Blue",
+      "Description": "Blue channel of the wet surface tint color."
     },
     {
       "Field": "colorA",
-      "Name": "A",
-      "Description": ""
+      "Name": "Wet Tint: Alpha",
+      "Description": "Opacity of the wet surface tint effect."
     },
     {
       "Field": "shiness",
-      "Name": "オーバーライド",
-      "Description": ""
+      "Name": "Specular Override",
+      "Description": "Overrides the base specular intensity for wet surface rendering (controls shininess strength)."
     },
     {
       "Field": "shinessRate",
-      "Name": "オーバーライド率",
-      "Description": ""
+      "Name": "Specular Override Strength",
+      "Description": "Blending ratio determining how strongly the specular override affects the final result."
     },
     {
       "Field": "fresnel",
-      "Name": "オーバーライド",
-      "Description": ""
+      "Name": "Fresnel Override",
+      "Description": "Overrides Fresnel reflection intensity used for edge-based wet highlights."
     },
     {
       "Field": "fresnelRate",
-      "Name": "オーバーライド率",
-      "Description": ""
+      "Name": "Fresnel Override Strength",
+      "Description": "Blending ratio controlling how strongly the Fresnel override is applied."
     }
   ]
 }

@@ -2,251 +2,251 @@
   "Param": "LOGIC_COM_PARAM",
   "Type": "LOGIC_COM_PARAM",
   "Name": "LOGIC_COM_PARAM",
-  "Description": "",
+  "Description": "Defines core AI behavior settings including perception, pursuit, combat behavior, environmental interaction, and tactical decision-making logic used by enemies and NPCs.",
   "Fields": [
     {
       "Field": "id",
-      "Name": "LogicID",
-      "Description": ""
+      "Name": "Logic ID",
+      "Description": "Unique identifier for this AI logic configuration."
     },
     {
       "Field": "viewingDistanceMax",
-      "Name": "視界距離最大",
-      "Description": ""
+      "Name": "Maximum Vision Distance",
+      "Description": "Maximum distance at which the AI can visually detect targets."
     },
     {
       "Field": "viewingDistanceMin",
-      "Name": "視界距離最小",
-      "Description": ""
+      "Name": "Minimum Vision Distance",
+      "Description": "Minimum guaranteed visual detection range."
     },
     {
       "Field": "viewingBackDistance",
-      "Name": "後方視界距離",
-      "Description": ""
+      "Name": "Rear Vision Distance",
+      "Description": "Distance at which the AI can detect targets behind itself."
     },
     {
       "Field": "viewingAngleLR",
-      "Name": "視界左右角度",
-      "Description": ""
+      "Name": "Horizontal Vision Angle",
+      "Description": "Left and right field-of-view angle for visual target detection."
     },
     {
       "Field": "viewingAngleUD",
-      "Name": "視界上下角度",
-      "Description": ""
+      "Name": "Vertical Vision Angle",
+      "Description": "Upward and downward field-of-view angle for visual target detection."
     },
     {
       "Field": "nightBlindRate",
-      "Name": "暗闇倍率",
-      "Description": ""
+      "Name": "Darkness Modifier",
+      "Description": "Multiplier affecting visibility or detection performance in dark environments."
     },
     {
       "Field": "chaseDistance",
-      "Name": "追尾距離",
-      "Description": ""
+      "Name": "Chase Distance",
+      "Description": "Maximum distance the AI will pursue a target."
     },
     {
       "Field": "hearingDistance",
-      "Name": "音認識範囲倍率",
-      "Description": ""
+      "Name": "Hearing Range Multiplier",
+      "Description": "Multiplier affecting the distance at which sounds can be detected."
     },
     {
       "Field": "hearingSensitivity",
-      "Name": "音認識感度",
-      "Description": ""
+      "Name": "Hearing Sensitivity",
+      "Description": "Controls how sensitive the AI is to sound-based events."
     },
     {
       "Field": "obstacleTime",
-      "Name": "障害判定時間",
-      "Description": ""
+      "Name": "Obstacle Detection Time",
+      "Description": "Time interval used for obstacle detection and path obstruction evaluation."
     },
     {
       "Field": "obstacleRate",
-      "Name": "障害判定速度",
-      "Description": ""
+      "Name": "Obstacle Detection Speed",
+      "Description": "Rate or responsiveness of obstacle detection processing."
     },
     {
       "Field": "platoonWeight",
-      "Name": "小隊内重み",
-      "Description": ""
+      "Name": "Squad Weight",
+      "Description": "Relative weighting value used within coordinated squad AI behavior."
     },
     {
       "Field": "platoonPriority",
-      "Name": "小隊内優先度",
-      "Description": ""
+      "Name": "Squad Priority",
+      "Description": "Priority level assigned to this AI within squad coordination."
     },
     {
       "Field": "viewingBrightnessType",
-      "Name": "明るさによる変化",
-      "Description": ""
+      "Name": "Brightness Visibility Behavior",
+      "Description": "Defines how lighting conditions affect visual detection."
     },
     {
       "Field": "useDoor",
-      "Name": "ドアを使用するか",
-      "Description": ""
+      "Name": "Can Use Doors",
+      "Description": "Determines whether the AI can interact with and open doors."
     },
     {
       "Field": "useLadder",
-      "Name": "はしごを使用するか",
-      "Description": ""
+      "Name": "Can Use Ladders",
+      "Description": "Determines whether the AI can climb ladders."
     },
     {
       "Field": "useRope",
-      "Name": "ロープを使用するか",
-      "Description": ""
+      "Name": "Can Use Ropes",
+      "Description": "Determines whether the AI can interact with rope traversal systems."
     },
     {
       "Field": "upperRunNum",
-      "Name": "上位ロジック多重起動数",
-      "Description": ""
+      "Name": "Upper Logic Concurrent Instances",
+      "Description": "Maximum number of simultaneously active upper-level AI logic routines."
     },
     {
       "Field": "damageAfterActionPriority",
-      "Name": "ダメージ後優先行動指定",
-      "Description": ""
+      "Name": "Post-Damage Priority Action",
+      "Description": "Specifies the AI's preferred behavior after taking damage."
     },
     {
       "Field": "roundLv2",
-      "Name": "LV2になる周回数",
-      "Description": ""
+      "Name": "NG+ Level 2 Threshold",
+      "Description": "New Game Plus cycle count required for AI difficulty level 2."
     },
     {
       "Field": "roundLv3",
-      "Name": "LV3になる周回数",
-      "Description": ""
+      "Name": "NG+ Level 3 Threshold",
+      "Description": "New Game Plus cycle count required for AI difficulty level 3."
     },
     {
       "Field": "roundLv4",
-      "Name": "LV4になる周回数",
-      "Description": ""
+      "Name": "NG+ Level 4 Threshold",
+      "Description": "New Game Plus cycle count required for AI difficulty level 4."
     },
     {
       "Field": "roundLv5",
-      "Name": "LV5になる周回数",
-      "Description": ""
+      "Name": "NG+ Level 5 Threshold",
+      "Description": "New Game Plus cycle count required for AI difficulty level 5."
     },
     {
       "Field": "distanceCheckType",
-      "Name": "攻撃時距離測定精度",
-      "Description": ""
+      "Name": "Attack Distance Check Precision",
+      "Description": "Defines the accuracy or method used for attack range evaluation."
     },
     {
       "Field": "itemPursuitTable",
-      "Name": "アイテム追撃テーブル",
-      "Description": ""
+      "Name": "Item Pursuit Table",
+      "Description": "Reference table used for AI pursuit behavior triggered by items."
     },
     {
       "Field": "itemPursuitActionNo",
-      "Name": "アイテム追撃行動",
-      "Description": ""
+      "Name": "Item Pursuit Action",
+      "Description": "Action performed when pursuing an item-related target."
     },
     {
       "Field": "guardBreakPursuitTable",
-      "Name": "ガード崩れ追撃テーブル",
-      "Description": ""
+      "Name": "Guard Break Pursuit Table",
+      "Description": "Reference table used after successfully breaking a target's guard."
     },
     {
       "Field": "guardPursuitActionNo",
-      "Name": "ガード崩れ追撃行動",
-      "Description": ""
+      "Name": "Guard Break Pursuit Action",
+      "Description": "Action executed after a guard break occurs."
     },
     {
       "Field": "backAttackTable",
-      "Name": "背後攻撃テーブル",
-      "Description": ""
+      "Name": "Back Attack Table",
+      "Description": "Reference table used for backstab or rear attack behavior."
     },
     {
       "Field": "backAttackActionNo",
-      "Name": "背後攻撃行動",
-      "Description": ""
+      "Name": "Back Attack Action",
+      "Description": "Action performed during a successful rear attack opportunity."
     },
     {
       "Field": "dummy",
-      "Name": "ダミー",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "itemPursuitDistance",
-      "Name": "アイテム追撃距離",
-      "Description": ""
+      "Name": "Item Pursuit Distance",
+      "Description": "Maximum distance for item-related pursuit behavior."
     },
     {
       "Field": "guardPursuitDistance",
-      "Name": "ガード崩れ追撃距離",
-      "Description": ""
+      "Name": "Guard Break Pursuit Distance",
+      "Description": "Maximum pursuit distance after breaking an enemy's guard."
     },
     {
       "Field": "backAttackDistance",
-      "Name": "背後攻撃距離距離",
-      "Description": ""
+      "Name": "Back Attack Distance",
+      "Description": "Distance threshold for executing rear attack behaviors."
     },
     {
       "Field": "noLOSForgetTime",
-      "Name": "遮蔽されて忘れるまでの時間[s]",
-      "Description": ""
+      "Name": "Line-of-Sight Forget Time",
+      "Description": "Time before the AI loses awareness of a target hidden behind obstacles."
     },
     {
       "Field": "genReturnDist",
-      "Name": "帰還時後退距離[m]",
-      "Description": ""
+      "Name": "Return Retreat Distance",
+      "Description": "Distance the AI retreats when returning to its original area."
     },
     {
       "Field": "genReturnTime",
-      "Name": "帰還時後退時間[s]",
-      "Description": ""
+      "Name": "Return Retreat Time",
+      "Description": "Duration of retreat movement when returning to origin."
     },
     {
       "Field": "healProbabilityTable",
-      "Name": "回復テーブル",
-      "Description": ""
+      "Name": "Healing Probability Table",
+      "Description": "Reference table controlling AI healing behavior probabilities."
     },
     {
       "Field": "healActionNo",
-      "Name": "回復行動",
-      "Description": ""
+      "Name": "Healing Action",
+      "Description": "Action performed when the AI decides to heal."
     },
     {
       "Field": "healHpPerc",
-      "Name": "回復行動をする残ＨＰ[％]",
-      "Description": ""
+      "Name": "Healing HP Percentage Threshold",
+      "Description": "Remaining HP percentage below which the AI attempts healing."
     },
     {
       "Field": "dodgeActionType",
-      "Name": "使用可能な回避行動タイプ",
-      "Description": ""
+      "Name": "Available Dodge Action Type",
+      "Description": "Defines which evasive maneuvers the AI is allowed to use."
     },
     {
       "Field": "autoBreakPower",
-      "Name": "自動ブレーキ強度",
-      "Description": ""
+      "Name": "Automatic Brake Strength",
+      "Description": "Controls automatic movement braking intensity."
     },
     {
       "Field": "returnSoundCheck",
-      "Name": "帰還時音チェック",
-      "Description": ""
+      "Name": "Sound Check During Return",
+      "Description": "Determines whether sound detection remains active while returning to origin."
     },
     {
       "Field": "bTargetHighPos",
-      "Name": "近接攻撃が届かないロック位置も狙う",
-      "Description": ""
+      "Name": "Target Elevated Positions",
+      "Description": "Allows the AI to target lock-on points even if melee attacks cannot currently reach them."
     },
     {
       "Field": "itemAlluringSkullType",
-      "Name": "誘い骸骨タイプ",
-      "Description": ""
+      "Name": "Alluring Skull Type",
+      "Description": "Defines AI reaction behavior to alluring skull-type lure items."
     },
     {
       "Field": "spellNostalgiaType",
-      "Name": "望郷タイプ",
-      "Description": ""
+      "Name": "Yearning Spell Type",
+      "Description": "Defines AI reaction behavior to Yearn or similar distraction spells."
     },
     {
       "Field": "bLongAiCandidate",
-      "Name": "長距離でもAI権を要求するか",
-      "Description": ""
+      "Name": "Request AI Authority at Long Range",
+      "Description": "Determines whether the AI can request active processing authority even at long distances."
     },
     {
       "Field": "pad00",
-      "Name": "予約",
+      "Name": "Padding",
       "Description": ""
     }
   ]

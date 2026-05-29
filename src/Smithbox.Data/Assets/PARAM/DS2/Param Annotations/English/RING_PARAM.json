@@ -2,31 +2,31 @@
   "Param": "RING_PARAM",
   "Type": "RING_PARAM",
   "Name": "RING_PARAM",
-  "Description": "",
+  "Description": "Defines properties and modifiers for rings, including weight, durability, repair cost, and item drop rate effects.",
   "Fields": [
     {
       "Field": "weight",
-      "Name": "重量(kg単位)",
-      "Description": ""
+      "Name": "Weight (kg)",
+      "Description": "Weight of the ring in kilograms."
     },
     {
       "Field": "durability",
-      "Name": "耐久値",
-      "Description": ""
+      "Name": "Durability",
+      "Description": "Durability value of the ring before it breaks or becomes unusable."
     },
     {
       "Field": "repairCost",
-      "Name": "パラメータ 修理コスト [soul]",
-      "Description": ""
+      "Name": "Repair Cost (Souls)",
+      "Description": "Amount of souls required to repair the ring."
     },
     {
       "Field": "itemDropWeight",
-      "Name": "アイテムドロップ率補正[%] x0.01",
-      "Description": ""
+      "Name": "Item Drop Rate Modifier",
+      "Description": "Modifier affecting item drop rate; value is scaled by 0.01."
     },
     {
       "Field": "dummy0",
-      "Name": "ダミー",
+      "Name": "Padding",
       "Description": ""
     }
   ]

@@ -2,47 +2,47 @@
   "Param": "PAD_RUMBLE_PARAM",
   "Type": "PAD_RUMBLE_PARAM",
   "Name": "PAD_RUMBLE_PARAM",
-  "Description": "",
+  "Description": "Defines vibration strength and scaling behavior for the controller's large and small rumble motors.",
   "Fields": [
     {
       "Field": "largeMotorPower",
-      "Name": "大モーターの強さ",
-      "Description": ""
+      "Name": "Large Motor: Power",
+      "Description": "Base vibration strength of the large rumble motor."
     },
     {
       "Field": "largeStartScale",
-      "Name": "大モーターの初期最大スケール",
-      "Description": ""
+      "Name": "Large Motor: Initial Maximum Scale",
+      "Description": "Starting scale multiplier applied to the large motor vibration."
     },
     {
       "Field": "largeMiddleScale",
-      "Name": "大モーターの中間点スケール",
-      "Description": ""
+      "Name": "Large Motor: Midpoint Scale",
+      "Description": "Scale multiplier applied to the large motor at the midpoint of the rumble effect."
     },
     {
       "Field": "largeLastScale",
-      "Name": "大モーターの終点最大スケール",
-      "Description": ""
+      "Name": "Large Motor: Final Maximum Scale",
+      "Description": "Ending scale multiplier applied to the large motor vibration."
     },
     {
       "Field": "smallMotorPower",
-      "Name": "小モーターの強さ",
-      "Description": ""
+      "Name": "Small Motor: Power",
+      "Description": "Base vibration strength of the small rumble motor."
     },
     {
       "Field": "smallStartScale",
-      "Name": "小モーターの初期最大スケール",
-      "Description": ""
+      "Name": "Small Motor: Initial Maximum Scale",
+      "Description": "Starting scale multiplier applied to the small motor vibration."
     },
     {
       "Field": "smallMiddleScale",
-      "Name": "小モーターの中間点スケール",
-      "Description": ""
+      "Name": "Small Motor: Midpoint Scale",
+      "Description": "Scale multiplier applied to the small motor at the midpoint of the rumble effect."
     },
     {
       "Field": "smallLastScale",
-      "Name": "小モーターの終点最大スケール",
-      "Description": ""
+      "Name": "Small Motor: Final Maximum Scale",
+      "Description": "Ending scale multiplier applied to the small motor vibration."
     }
   ]
 }

@@ -1,0 +1,978 @@
+{
+  "Param": "CHR_MOVE_PARAM",
+  "Type": "CHR_MOVE_PARAM",
+  "Name": "CHR_MOVE_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "fParallelWalkAccelerationMax",
+      "Name": "平行移動 加速度 [m/sec^2]",
+      "Description": ""
+    },
+    {
+      "Field": "fParallelWalkSpeedMin",
+      "Name": "平行移動 最低速度 [m/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "fParallelWalkSpeedMax",
+      "Name": "平行移動 最高速度 [m/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "fParallelWalkDeceleration",
+      "Name": "平行移動 減速度 [m/sec^2]",
+      "Description": ""
+    },
+    {
+      "Field": "fParallelWalkBackAngleMax",
+      "Name": "平行移動 後退入力角度 [deg]",
+      "Description": ""
+    },
+    {
+      "Field": "fParallelWalkBackSpeedRateMax",
+      "Name": "平行移動 速度低下割合 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "fWalkAccelerationMax",
+      "Name": "歩行 加速度 [m/sec^2]",
+      "Description": ""
+    },
+    {
+      "Field": "fWalkSpeedMin",
+      "Name": "歩行 最低速度 [m/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "fWalkSpeedMax",
+      "Name": "歩行 最高速度 [m/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "fWalkDeceleration",
+      "Name": "歩行 減速度 [m/sec^2]",
+      "Description": ""
+    },
+    {
+      "Field": "fWalkRotationAcceleration",
+      "Name": "歩行 旋回加速度 [deg/sec^2]",
+      "Description": ""
+    },
+    {
+      "Field": "fWalkRotationSpeedOnLowSpeed",
+      "Name": "歩行 低速旋回速度 [deg/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "fWalkRotationSpeedOnHighSpeed",
+      "Name": "歩行 高速旋回速度 [deg/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "fWalkRotSpeedMinBorder",
+      "Name": "歩行 低速旋回判定速度[m/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "fWalkRotSpeedMaxBorder",
+      "Name": "歩行 高速旋回判定速度[m/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "fDashStartSpeed",
+      "Name": "ダッシュ初速度[m/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "fDashAcceleration",
+      "Name": "ダッシュ 加速度 [m/sec^2]",
+      "Description": ""
+    },
+    {
+      "Field": "fDashSpeedMin",
+      "Name": "ダッシュ 最低速度 [m/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "fDashSpeedMax",
+      "Name": "ダッシュ 最高速度 [m/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "fDashDeceleration",
+      "Name": "ダッシュ 減速度 [m/sec^2]",
+      "Description": ""
+    },
+    {
+      "Field": "fDashRotationAcceleration",
+      "Name": "ダッシュ 旋回加速度 [deg/sec^2]",
+      "Description": ""
+    },
+    {
+      "Field": "fDashRotationSpeedMin",
+      "Name": "ダッシュ 低速旋回速度 [deg/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "fDashRotationSpeedMax",
+      "Name": "ダッシュ 高速旋回速度 [deg/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "fDashRotSpeedMinBorder",
+      "Name": "ダッシュ 低速旋回判定速度[m/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "fDashRotSpeedMaxBorder",
+      "Name": "ダッシュ 高速旋回判定速度[m/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "fLockOnWalkAccelerationMax",
+      "Name": "ロック移動 加速度 [m/sec^2]",
+      "Description": ""
+    },
+    {
+      "Field": "fLockOnWalkSpeedMin",
+      "Name": "ロック移動 最低速度 [m/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "fLockOnWalkSpeedMax",
+      "Name": "ロック移動 最高速度 [m/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "fLockOnWalkDeceleration",
+      "Name": "ロック移動 減速度 [m/sec^2]",
+      "Description": ""
+    },
+    {
+      "Field": "fLockOnWalkRotationAcceleration",
+      "Name": "ロック移動 旋回加速度 [deg/sec^2]",
+      "Description": ""
+    },
+    {
+      "Field": "fLockOnWalkRotationSpeedMax",
+      "Name": "ロック移動 旋回速度 [deg/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "fLockOnWalkAngleMax",
+      "Name": "ロック移動 後退入力角度 [deg]",
+      "Description": ""
+    },
+    {
+      "Field": "fLockOnWalkBackMoveSpeedRateMax",
+      "Name": "ロック移動 速度低下割合 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "fLockOnDashStartSpeed",
+      "Name": "ロックダッシュ 初速度[m/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "fLockOnDashAcceleration",
+      "Name": "ロックダッシュ 加速度[m/sec^2]",
+      "Description": ""
+    },
+    {
+      "Field": "fLockOnDashSpeedMin",
+      "Name": "ロックダッシュ 最低速度[m/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "fLockOnDashSpeedMax",
+      "Name": "ロックダッシュ 最高速度[m/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "fLockOnDashDeceleration",
+      "Name": "ロックダッシュ 減速度[m/sec^2]",
+      "Description": ""
+    },
+    {
+      "Field": "fLockOnDashRotationAcceleration",
+      "Name": "ロックダッシュ 旋回加速度[deg/sec^2]",
+      "Description": ""
+    },
+    {
+      "Field": "fLockOnDashRotationSpeedMin",
+      "Name": "ロックダッシュ 低速旋回速度[deg/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "fLockOnDashRotationSpeedMax",
+      "Name": "ロックダッシュ 高速旋回速度[deg/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "fLockOnDashRotSpeedMinBorder",
+      "Name": "ロックダッシュ 低速旋回判定速度[m/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "fLockOnDashRotSpeedMaxBorder",
+      "Name": "ロックダッシュ 高速旋回判定速度[m/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "fRotationValueMin",
+      "Name": "旋回 旋回量 最小 [deg]",
+      "Description": ""
+    },
+    {
+      "Field": "fRotationValueMax",
+      "Name": "旋回 旋回量 最大 [deg]",
+      "Description": ""
+    },
+    {
+      "Field": "attackAutoPivotRotationSpeed",
+      "Name": "攻撃 旋回ホーミング 速度 [deg/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "attackAutoPivotLimitAngle",
+      "Name": "攻撃 旋回ホーミング 限界角度 [deg]",
+      "Description": ""
+    },
+    {
+      "Field": "attackManualPivotRotationSpeed",
+      "Name": "攻撃 任意旋回 速度 [deg/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "attackManualPivotLimitAngle",
+      "Name": "攻撃 任意旋回 限界角度 [deg]",
+      "Description": ""
+    },
+    {
+      "Field": "attackMoveAcceleration",
+      "Name": "攻撃 向き変更 加速度 [m/sec^2]",
+      "Description": ""
+    },
+    {
+      "Field": "attackMoveMaxSpeed",
+      "Name": "攻撃 向き変更 最大速度 [m/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "attackMoveDeceleration",
+      "Name": "攻撃 向き変更 減速度 [m/sec^2]",
+      "Description": ""
+    },
+    {
+      "Field": "attackMoveRotationSpeed",
+      "Name": "攻撃 向き変更 旋回速度 [deg/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "rangedManualPivotRotationSpeed",
+      "Name": "その場旋回 速度 [deg/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "rangedAutoPivotRotationSpeed",
+      "Name": "自動旋回 速度 [deg/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "shootStanceAnimSpeedScaleMin",
+      "Name": "射撃構えアニメ速度 補正倍率 最小 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "shootStanceAnimSpeedScaleMax",
+      "Name": "射撃構えアニメ速度 補正倍率 最大 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "spellChantingAnimSpeedScaleMin",
+      "Name": "スペル詠唱アニメ速度 補正倍率 最小 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "spellChantingAnimSpeedScaleMax",
+      "Name": "スペル詠唱アニメ速度 補正倍率 最大 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "afterAttackAcceleration",
+      "Name": "攻撃後 歩き出し 加速度 [m/sec^2]",
+      "Description": ""
+    },
+    {
+      "Field": "afterAttackMaxSpeed",
+      "Name": "攻撃後 歩き出し 速度 最大 [m/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "afterAttackDeceleration",
+      "Name": "攻撃後 歩き出し 減速度 [m/sec^2]",
+      "Description": ""
+    },
+    {
+      "Field": "afterAttackRotationSpeed",
+      "Name": "攻撃後 歩き出し 旋回速度 [deg/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "qtRearEnableMasterRotate",
+      "Name": "クイックターン 180度旋回マスター旋回許可",
+      "Description": ""
+    },
+    {
+      "Field": "qtFrontEnableMasterRotate",
+      "Name": "クイックターン 90度旋回マスター旋回許可",
+      "Description": ""
+    },
+    {
+      "Field": "quickTurnPad",
+      "Name": "パディング",
+      "Description": ""
+    },
+    {
+      "Field": "quickTurnRotateSpeed",
+      "Name": "クイックターン 旋回速度[deg/s]",
+      "Description": ""
+    },
+    {
+      "Field": "stepDist",
+      "Name": "回避 ステップ距離 [m]",
+      "Description": ""
+    },
+    {
+      "Field": "stepStaminaEmptyDist",
+      "Name": "回避 スタミナ切れステップ距離 [m]",
+      "Description": ""
+    },
+    {
+      "Field": "stepRotationSpeed",
+      "Name": "回避 ステップ旋回速度[deg/s]",
+      "Description": ""
+    },
+    {
+      "Field": "rollingDist",
+      "Name": "回避 ローリング距離 [m]",
+      "Description": ""
+    },
+    {
+      "Field": "rollingStaminaEmptyDist",
+      "Name": "回避 スタミナ切れローリング距離 [m]",
+      "Description": ""
+    },
+    {
+      "Field": "rollingRotationSpeed",
+      "Name": "回避 ローリング旋回速度[deg/s]",
+      "Description": ""
+    },
+    {
+      "Field": "damageRotationSpeed",
+      "Name": "ダメージ方向 旋回速度 [deg/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "jumpVerticalSpeed",
+      "Name": "ジャンプ 上昇速度 [m/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "standJumpVerticalSpeed",
+      "Name": "スタンドジャンプ 上昇速度 [m/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "jumpRollLandingHeightMax",
+      "Name": "ジャンプ 転がり着地高さ 最大 [m]",
+      "Description": ""
+    },
+    {
+      "Field": "jumpForwardSpeedMin",
+      "Name": "ジャンプ 前方速度 最小 [m/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "jumpForwardSpeedMax",
+      "Name": "ジャンプ 前方速度 最大 [m/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "standJumpForwardSpeedMin",
+      "Name": "スタンドジャンプ 前方速度 最小 [m/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "standJumpForwardSpeedMax",
+      "Name": "スタンドジャンプ 前方速度 最大 [m/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "jumpGravityFactorMin",
+      "Name": "ジャンプ 重力加速度倍率 最小",
+      "Description": ""
+    },
+    {
+      "Field": "jumpGravityFactorMax",
+      "Name": "ジャンプ 重力加速度倍率 最大",
+      "Description": ""
+    },
+    {
+      "Field": "standJumpGravityFactorMin",
+      "Name": "スタンドジャンプ 重力加速度倍率 最小",
+      "Description": ""
+    },
+    {
+      "Field": "standJumpGravityFactorMax",
+      "Name": "スタンドジャンプ 重力加速度倍率 最大",
+      "Description": ""
+    },
+    {
+      "Field": "fallingInertiaStopSpeed",
+      "Name": "落下 停止加速度[m/Sec]",
+      "Description": ""
+    },
+    {
+      "Field": "fallingDeadTimer",
+      "Name": "落下 死亡落下時間[Sec]",
+      "Description": ""
+    },
+    {
+      "Field": "landingRollingHeight",
+      "Name": "落下 転がり着地高さ[m]",
+      "Description": ""
+    },
+    {
+      "Field": "landingRollingSpeed",
+      "Name": "落下 転がり着地速度[m/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "landingJumpRollingHeight",
+      "Name": "ジャンプ 転がり着地高さ[m]",
+      "Description": ""
+    },
+    {
+      "Field": "landingJumpRollingSpeed",
+      "Name": "ジャンプ 転がり着地速度[m/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "landingStandingRate",
+      "Name": "着地 屈伸着地[m/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "landingStandingCrouchRateMin",
+      "Name": "着地 屈伸着地 しゃがみ量 最小[%]",
+      "Description": ""
+    },
+    {
+      "Field": "jumpCrouchRateMin",
+      "Name": "ジャンプ着地 しゃがみ量 最小[%]",
+      "Description": ""
+    },
+    {
+      "Field": "dodgeCrouchRateMin",
+      "Name": "回避 しゃがみ量 最小[%]",
+      "Description": ""
+    },
+    {
+      "Field": "dodgeWaitCrouchRateMin",
+      "Name": "回避 待機しゃがみ量 最小[%]",
+      "Description": ""
+    },
+    {
+      "Field": "stepCrouchRateMin",
+      "Name": "ステップ しゃがみ量 最小[%]",
+      "Description": ""
+    },
+    {
+      "Field": "stepWaitCrouchRateMin",
+      "Name": "ステップ 待機しゃがみ量 最小[%]",
+      "Description": ""
+    },
+    {
+      "Field": "landingCrouchRateMin",
+      "Name": "着地 屈伸着地倍率 最小[倍率]",
+      "Description": ""
+    },
+    {
+      "Field": "landingCrouchRateMax",
+      "Name": "着地 屈伸着地倍率 最大[倍率]",
+      "Description": ""
+    },
+    {
+      "Field": "landingCrouchReturnTimeMin",
+      "Name": "着地 しゃがみ終了時間 最小[Sec]",
+      "Description": ""
+    },
+    {
+      "Field": "landingCrouchReturnTimeMax",
+      "Name": "着地 しゃがみ終了時間 最大[Sec]",
+      "Description": ""
+    },
+    {
+      "Field": "jumpCrouchReturnTimeMin",
+      "Name": "ジャンプ着地 しゃがみ終了時間 最小[Sec]",
+      "Description": ""
+    },
+    {
+      "Field": "jumpCrouchReturnTimeMax",
+      "Name": "ジャンプ着地 しゃがみ終了時間 最大[Sec]",
+      "Description": ""
+    },
+    {
+      "Field": "rollingCrouchReturnTimeMin",
+      "Name": "ローリング しゃがみ終了時間 最小[Sec]",
+      "Description": ""
+    },
+    {
+      "Field": "rollingCrouchReturnTimeMax",
+      "Name": "ローリング しゃがみ終了時間 最大[Sec]",
+      "Description": ""
+    },
+    {
+      "Field": "rollingWaitCrouchReturnTimeMin",
+      "Name": "ローリング 待機しゃがみ終了時間 最小[Sec]",
+      "Description": ""
+    },
+    {
+      "Field": "rollingWaitCrouchReturnTimeMax",
+      "Name": "ローリング 待機しゃがみ終了時間 最大[Sec]",
+      "Description": ""
+    },
+    {
+      "Field": "stepCrouchReturnTimeMin",
+      "Name": "ステップ しゃがみ終了時間 最小[Sec]",
+      "Description": ""
+    },
+    {
+      "Field": "stepCrouchReturnTimeMax",
+      "Name": "ステップ しゃがみ終了時間 最大[Sec]",
+      "Description": ""
+    },
+    {
+      "Field": "stepWaitCrouchReturnTimeMin",
+      "Name": "ステップ 待機しゃがみ終了時間 最小[Sec]",
+      "Description": ""
+    },
+    {
+      "Field": "stepWaitCrouchReturnTimeMax",
+      "Name": "ステップ 待機しゃがみ終了時間 最大[Sec]",
+      "Description": ""
+    },
+    {
+      "Field": "landingWalkinvalidTimeMin",
+      "Name": "着地 遷移不可 時間 最小[Sec]",
+      "Description": ""
+    },
+    {
+      "Field": "landingWalkinvalidTimeMax",
+      "Name": "着地 遷移不可 時間 最大[Sec]",
+      "Description": ""
+    },
+    {
+      "Field": "landingWalkinvalidFallDistMin",
+      "Name": "着地 遷移不可 発生高度 最小[m]",
+      "Description": ""
+    },
+    {
+      "Field": "landingWalkinvalidFallDistMax",
+      "Name": "着地 遷移不可 発生高度 最大[m]",
+      "Description": ""
+    },
+    {
+      "Field": "landingWalkMoveSpeedFallDistMin",
+      "Name": "着地 速度低下 発生高度 最小[m]",
+      "Description": ""
+    },
+    {
+      "Field": "landingWalkMoveSpeedFallDistMax",
+      "Name": "着地 速度低下 発生高度 最大[m]",
+      "Description": ""
+    },
+    {
+      "Field": "landingWalkMoveSpeedMin",
+      "Name": "着地 最大速度 低下割合 最小[%]",
+      "Description": ""
+    },
+    {
+      "Field": "landingWalkMoveSpeedMax",
+      "Name": "着地 最大速度 低下割合 最大[%]",
+      "Description": ""
+    },
+    {
+      "Field": "landingWalkMoveAcceralationMin",
+      "Name": "着地 最大加速度 低下割合 最小[%]",
+      "Description": ""
+    },
+    {
+      "Field": "landingWalkMoveAcceralationMax",
+      "Name": "着地 最大加速度 低下割合 最大[%]",
+      "Description": ""
+    },
+    {
+      "Field": "landingMoveStopAcceralationMin",
+      "Name": "着地 停止加速度 増加割合 最小[%]",
+      "Description": ""
+    },
+    {
+      "Field": "landingMoveStopAcceralationMax",
+      "Name": "着地 停止加速度 増加割合 最大[%]",
+      "Description": ""
+    },
+    {
+      "Field": "landingWalkRotationSpeedMin",
+      "Name": "着地 旋回速度 低下割合 最小[%]",
+      "Description": ""
+    },
+    {
+      "Field": "landingWalkRotationSpeedMax",
+      "Name": "着地 旋回速度 低下割合 最大[%]",
+      "Description": ""
+    },
+    {
+      "Field": "fallingDistNone",
+      "Name": "着地 落下高度 無効[m]",
+      "Description": ""
+    },
+    {
+      "Field": "fallingDistSafety",
+      "Name": "着地 落下高度 安全[m]",
+      "Description": ""
+    },
+    {
+      "Field": "fallingDistNormal",
+      "Name": "着地 落下高度 通常[m]",
+      "Description": ""
+    },
+    {
+      "Field": "fallingDistDanger",
+      "Name": "着地 落下高度 危険[m]",
+      "Description": ""
+    },
+    {
+      "Field": "fallingDistDead",
+      "Name": "着地 落下高度 死亡[m]",
+      "Description": ""
+    },
+    {
+      "Field": "stepUpFeasibleAngleMax",
+      "Name": "段差乗り 角度[deg]",
+      "Description": ""
+    },
+    {
+      "Field": "stepUpFeasibleHeightMin",
+      "Name": "段差乗り 高さ 最小[m]",
+      "Description": ""
+    },
+    {
+      "Field": "stepUpFeasibleHeightMax",
+      "Name": "段差乗り 高さ 最大[m]",
+      "Description": ""
+    },
+    {
+      "Field": "stepUpLightAnimSpeedScale",
+      "Name": "段差乗り 軽量アニメ 速度倍率 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "stepUpHeavyAnimSpeedScale",
+      "Name": "段差乗り 重量アニメ 速度倍率 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "climbStepFeasibleAngleMax",
+      "Name": "段差よじ登り 角度[deg]",
+      "Description": ""
+    },
+    {
+      "Field": "climbStepFeasibleHeightMin",
+      "Name": "段差よじ登り 高さ 最小[m]",
+      "Description": ""
+    },
+    {
+      "Field": "climbStepFeasibleHeightMax",
+      "Name": "段差よじ登り 高さ 最大[m]",
+      "Description": ""
+    },
+    {
+      "Field": "climbStepLightAnimSpeedScale",
+      "Name": "段差よじ登り 軽量アニメ 速度倍率 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "climbStepHeavyAnimSpeedScale",
+      "Name": "段差よじ登り 重量アニメ 速度倍率 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "ladderStartStep",
+      "Name": "はしご 初期段差[段]",
+      "Description": ""
+    },
+    {
+      "Field": "ladderNormalMoveAnimRate",
+      "Name": "はしご 移動 アニメ再生倍率 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "ladderDashMoveAnimRate",
+      "Name": "はしご ダッシュ アニメ再生倍率 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "ladderGetOffMoveAnimRate",
+      "Name": "はしご 滑り降り アニメ再生倍率 [倍]",
+      "Description": ""
+    },
+    {
+      "Field": "posFixMoveSpeed",
+      "Name": "位置修正制御 移動速度[m/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "posFixMoveAngulerSpeed",
+      "Name": "位置修正制御 旋回速度[deg/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "posFixRotationValueMax",
+      "Name": "位置修正制御 角速度使用率最大角度[deg]",
+      "Description": ""
+    },
+    {
+      "Field": "jumpAttackVerticalSpeed",
+      "Name": "ジャンプ攻撃 上昇速度 [m/sec^2]",
+      "Description": ""
+    },
+    {
+      "Field": "jumpAttackSideDistMin",
+      "Name": "ジャンプ攻撃 水平速度 最少距離 [m]",
+      "Description": ""
+    },
+    {
+      "Field": "jumpAttackSideDistMax",
+      "Name": "ジャンプ攻撃 水平速度 最大距離 [m]",
+      "Description": ""
+    },
+    {
+      "Field": "jumpAttackSideSpeedMin",
+      "Name": "ジャンプ攻撃 水平速度 最少 [m/sec^2]",
+      "Description": ""
+    },
+    {
+      "Field": "jumpAttackSideSpeedMax",
+      "Name": "ジャンプ攻撃 水平速度 最大 [m/sec^2]",
+      "Description": ""
+    },
+    {
+      "Field": "jumpFallAttackVerticalSpeed",
+      "Name": "ジャンプ落下攻撃 上昇速度 [m/sec^2]",
+      "Description": ""
+    },
+    {
+      "Field": "jumpFallAttackSideDistMin",
+      "Name": "ジャンプ落下攻撃 水平速度 最少距離 [m]",
+      "Description": ""
+    },
+    {
+      "Field": "jumpFallAttackSideDistMax",
+      "Name": "ジャンプ落下攻撃 水平速度 最大距離 [m]",
+      "Description": ""
+    },
+    {
+      "Field": "jumpFallAttackSideSpeedMin",
+      "Name": "ジャンプ落下攻撃 水平速度 最少 [m/sec^2]",
+      "Description": ""
+    },
+    {
+      "Field": "jumpFallAttackSideSpeedMax",
+      "Name": "ジャンプ落下攻撃 水平速度 最大 [m/sec^2]",
+      "Description": ""
+    },
+    {
+      "Field": "fParallelWalkSlopeAngMin",
+      "Name": "平行移動 斜面判定 最小角度 [deg]",
+      "Description": ""
+    },
+    {
+      "Field": "fParallelWalkSlopeAngMax",
+      "Name": "平行移動 斜面判定 最大角度 [deg]",
+      "Description": ""
+    },
+    {
+      "Field": "fParallelWalkSlopeSpeedRateMax",
+      "Name": "平行移動 斜面移動速度低下割合 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "fParallelWalkSlopeRotRateMax",
+      "Name": "平行移動 斜面旋回速度低下割合 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "fWalkSlopeAngMin",
+      "Name": "歩行 斜面判定 最小角度 [deg]",
+      "Description": ""
+    },
+    {
+      "Field": "fWalkSlopeAngMax",
+      "Name": "歩行 斜面判定 最大角度 [deg]",
+      "Description": ""
+    },
+    {
+      "Field": "fWalkSlopeSpeedRateMax",
+      "Name": "歩行 斜面移動速度低下割合 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "fWalkSlopeRotRateMax",
+      "Name": "歩行 斜面旋回速度低下割合 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "fDashSlopeAngMin",
+      "Name": "ダッシュ 斜面判定 最小角度 [deg]",
+      "Description": ""
+    },
+    {
+      "Field": "fDashSlopeAngMax",
+      "Name": "ダッシュ 斜面判定 最大角度 [deg]",
+      "Description": ""
+    },
+    {
+      "Field": "fDashSlopeSpeedRateMax",
+      "Name": "ダッシュ 斜面移動速度低下割合 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "fDashSlopeRotRateMax",
+      "Name": "ダッシュ 斜面旋回速度低下割合 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "fLockOnWalkSlopeAngMin",
+      "Name": "ロック移動 斜面判定 最小角度 [deg]",
+      "Description": ""
+    },
+    {
+      "Field": "fLockOnWalkSlopeAngMax",
+      "Name": "ロック移動 斜面判定 最大角度 [deg]",
+      "Description": ""
+    },
+    {
+      "Field": "fLockOnWalkSlopeSpeedRateMax",
+      "Name": "ロック移動 斜面移動速度低下割合 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "fLockOnWalkSlopeRotRateMax",
+      "Name": "ロック移動 斜面旋回速度低下割合 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "fLockOnDashSlopeAngMin",
+      "Name": "ロックダッシュ 斜面判定 最小角度 [deg]",
+      "Description": ""
+    },
+    {
+      "Field": "fLockOnDashSlopeAngMax",
+      "Name": "ロックダッシュ 斜面判定 最大角度 [deg]",
+      "Description": ""
+    },
+    {
+      "Field": "fLockOnDashSlopeSpeedRateMax",
+      "Name": "ロックダッシュ 斜面移動速度低下割合 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "fLockOnDashSlopeRotRateMax",
+      "Name": "ロックダッシュ 斜面旋回速度低下割合 [%]",
+      "Description": ""
+    },
+    {
+      "Field": "fDyingMoveAcceralation",
+      "Name": "瀕死移動 加速度[m/sec^2]",
+      "Description": ""
+    },
+    {
+      "Field": "fDyingMoveSpeed",
+      "Name": "瀕死移動 最高速度[m/sec^2]",
+      "Description": ""
+    },
+    {
+      "Field": "fDyingMoveDeceleration",
+      "Name": "瀕死移動 減速度[m/sec^2]",
+      "Description": ""
+    },
+    {
+      "Field": "fDyingMoveRotationSpeed",
+      "Name": "瀕死移動 旋回速度[deg/sec]",
+      "Description": ""
+    },
+    {
+      "Field": "fFloatingUpMoveAcceleration",
+      "Name": "浮遊制御 上昇 加速度 [m/Sec^2]",
+      "Description": ""
+    },
+    {
+      "Field": "fFloatingUpMoveSpeedMax",
+      "Name": "浮遊制御 上昇 最大速度 [m/Sec]",
+      "Description": ""
+    },
+    {
+      "Field": "fFloatingUpMoveDeceleration",
+      "Name": "浮遊制御 上昇 減速度 [m/Sec^2]",
+      "Description": ""
+    },
+    {
+      "Field": "fFloatingDownMoveAcceleration",
+      "Name": "浮遊制御 下降 加速度 [m/Sec^2]",
+      "Description": ""
+    },
+    {
+      "Field": "fFloatingDownMoveSpeedMax",
+      "Name": "浮遊制御 下降 最大速度 [m/Sec]",
+      "Description": ""
+    },
+    {
+      "Field": "fFloatingDownMoveDeceleration",
+      "Name": "浮遊制御 下降 減速度 [m/Sec^2]",
+      "Description": ""
+    },
+    {
+      "Field": "landingSfxHeight",
+      "Name": "着地SFX発生高さ",
+      "Description": ""
+    },
+    {
+      "Field": "landingSfxId",
+      "Name": "着地時足音SFXパラメータID",
+      "Description": ""
+    },
+    {
+      "Field": "landingRagdollSfxId",
+      "Name": "着地時足音SFXパラメータID（ラグドール）",
+      "Description": ""
+    },
+    {
+      "Field": "fMaterialMoveInfluenceRate",
+      "Name": "床材質 移動速度影響倍率 有効割合",
+      "Description": ""
+    },
+    {
+      "Field": "fMaterialTurnInfluenceRate",
+      "Name": "床材質 旋回速度影響倍率 有効割合",
+      "Description": ""
+    },
+    {
+      "Field": "dummy",
+      "Name": "ダミー",
+      "Description": ""
+    }
+  ]
+}

@@ -2,52 +2,52 @@
   "Param": "DAMAGE_WIND_CATE_PARAM",
   "Type": "DAMAGE_WIND_CATE_PARAM",
   "Name": "DAMAGE_WIND_CATE_PARAM",
-  "Description": "",
+  "Description": "Defines how wind effects interact with different object categories and visual/sound effects, including fade behavior and hit response control.",
   "Fields": [
     {
       "Field": "cloth",
-      "Name": "クロス",
-      "Description": ""
+      "Name": "Apply for Cloth",
+      "Description": "Applies wind influence to cloth materials such as capes or garments."
     },
     {
       "Field": "model",
-      "Name": "草",
-      "Description": ""
+      "Name": "Apply for Grass",
+      "Description": "Applies wind influence to grass and similar foliage."
     },
     {
       "Field": "obj",
-      "Name": "オブジェ",
-      "Description": ""
+      "Name": "Apply for Object",
+      "Description": "Applies wind influence to environmental objects."
     },
     {
       "Field": "sfx",
-      "Name": "SFX",
-      "Description": ""
+      "Name": "Apply for SFX",
+      "Description": "Controls wind interaction with general visual effects."
     },
     {
       "Field": "dmgSfx",
-      "Name": "着弾SFX",
-      "Description": ""
+      "Name": "Apply for Impact SFX",
+      "Description": "Special effects triggered on wind-related impact or collision."
     },
     {
       "Field": "eraseSfx",
-      "Name": "SFXヒット時に消去制御に遷移させる",
-      "Description": ""
+      "Name": "Erase SFX on Hit Transition",
+      "Description": "Forces SFX to transition into a removal/clearing state when hit."
     },
     {
       "Field": "dummy0",
-      "Name": "ダミー0",
+      "Name": "Dummy",
       "Description": ""
     },
     {
       "Field": "fadeInTime",
-      "Name": "フェードイン時間[sec]",
-      "Description": ""
+      "Name": "Fade-In Time",
+      "Description": "Time in seconds for wind effect to fade in."
     },
     {
       "Field": "fadeOutTime",
-      "Name": "フェードアウト時間[sec]",
-      "Description": ""
+      "Name": "Fade-Out Time",
+      "Description": "Time in seconds for wind effect to fade out."
     }
   ]
 }

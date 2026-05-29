@@ -10,7 +10,7 @@
         <speedDownHpMinRate />
         <speedDownHpMaxRate />
         <speedDownRate />
-        <entrySfxId />
+        <entrySfxId ParticleAlias="" />
         <entryFullBodySfx />
         <deadType  Refs="DeadTypeParam"/>
         <limitTime />
@@ -18,11 +18,11 @@
         <respawnPosTypeSuccess  Enum="MULT_END_RESPAWN_POS_TYPE"/>
         <respawnPosTypeFaild  Enum="MULT_END_RESPAWN_POS_TYPE"/>
         <respawnPosTypeDead  Enum="MULT_END_RESPAWN_POS_TYPE"/>
-        <pad1 />
+        <pad1 Padding="" />
         <respawnConditionTypeSuccess  Enum="MULT_END_RESPAWN_CONDITION_TYPE"/>
         <respawnConditionTypeFaild  Enum="MULT_END_RESPAWN_CONDITION_TYPE"/>
         <respawnConditionTypeDead  Enum="MULT_END_RESPAWN_CONDITION_TYPE"/>
-        <pad2 />
+        <pad2 Padding="" />
         <voiceChatType />
         <hostReturnWarpEnable  IsBool=""/>
         <ownerReturnWarpEnable  IsBool=""/>

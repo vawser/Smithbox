@@ -12,6 +12,6 @@
         <hpLowerBound1 />
         <hpLowerBound2 />
         <hpUpperBound1 />
-        <padding />
+        <padding Padding="" />
     </Field>
 </PARAMMETA>

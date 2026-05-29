@@ -2,161 +2,161 @@
   "Param": "ITEM_PARAM",
   "Type": "ITEM_PARAM",
   "Name": "ITEM_PARAM",
-  "Description": "",
+  "Description": "Defines general item properties, including visuals, effects, linked equipment or spell data, inventory behavior, pricing, and usage settings.",
   "Fields": [
     {
       "Field": "iconId",
-      "Name": "アイテムアイコンID",
-      "Description": ""
+      "Name": "Item Icon ID",
+      "Description": "ID of the icon displayed for the item in menus and inventory screens."
     },
     {
       "Field": "specialEffectId",
-      "Name": "特殊効果ID",
-      "Description": ""
+      "Name": "Special Effect ID",
+      "Description": "ID of the special effect applied when the item is used or equipped."
     },
     {
       "Field": "startSfxId",
-      "Name": "アイテム開始SFXID",
-      "Description": ""
+      "Name": "Item Start SFX ID",
+      "Description": "Visual or sound effect played when item usage begins."
     },
     {
       "Field": "actionSfxId",
-      "Name": "アイテム発動SFXID",
-      "Description": ""
+      "Name": "Item Activation SFX ID",
+      "Description": "Visual or sound effect played during item activation."
     },
     {
       "Field": "effectSfxId",
-      "Name": "アイテム効果SFXID",
-      "Description": ""
+      "Name": "Item Effect SFX ID",
+      "Description": "Visual or sound effect associated with the item's resulting effect."
     },
     {
       "Field": "weaponParamId",
-      "Name": "武器ID",
-      "Description": ""
+      "Name": "Weapon ID",
+      "Description": "Linked weapon parameter ID if the item represents a weapon."
     },
     {
       "Field": "armorParamId",
-      "Name": "防具ID",
-      "Description": ""
+      "Name": "Armor ID",
+      "Description": "Linked armor parameter ID if the item represents armor."
     },
     {
       "Field": "arrowParamId",
-      "Name": "矢ID",
-      "Description": ""
+      "Name": "Arrow ID",
+      "Description": "Linked arrow or projectile parameter ID."
     },
     {
       "Field": "ringParamId",
-      "Name": "指輪ID",
-      "Description": ""
+      "Name": "Ring ID",
+      "Description": "Linked ring or accessory parameter ID."
     },
     {
       "Field": "spellParamId",
-      "Name": "スペルID",
-      "Description": ""
+      "Name": "Spell ID",
+      "Description": "Linked spell or magic parameter ID."
     },
     {
       "Field": "gestureId",
-      "Name": "ジェスチャーID",
-      "Description": ""
+      "Name": "Gesture ID",
+      "Description": "Gesture unlocked or associated with this item."
     },
     {
       "Field": "sortId",
-      "Name": "デフォルトソートID",
-      "Description": ""
+      "Name": "Default Sort ID",
+      "Description": "Default sorting order used in menus and inventory."
     },
     {
       "Field": "price",
-      "Name": "販売ベース価格",
-      "Description": ""
+      "Name": "Base Purchase Price",
+      "Description": "Default shop purchase price of the item."
     },
     {
       "Field": "salePrice",
-      "Name": "売却ベース価格",
-      "Description": ""
+      "Name": "Base Sell Price",
+      "Description": "Default amount received when selling the item."
     },
     {
       "Field": "motionSpeedRate",
-      "Name": "アイテム使用モーション速度倍率(倍単位)",
-      "Description": ""
+      "Name": "Item Use Animation Speed Multiplier",
+      "Description": "Multiplier applied to the animation speed when using the item."
     },
     {
       "Field": "weight",
-      "Name": "重量(kg単位)",
-      "Description": ""
+      "Name": "Weight (kg)",
+      "Description": "Weight value of the item used for equipment load calculations."
     },
     {
       "Field": "itemTypeParamId",
-      "Name": "アイテムタイプ",
-      "Description": ""
+      "Name": "Item Type",
+      "Description": "Specifies the general category or type of item."
     },
     {
       "Field": "itemUsageParamId",
-      "Name": "使用方法",
-      "Description": ""
+      "Name": "Usage Type",
+      "Description": "Defines how the item is used or activated."
     },
     {
       "Field": "getFrag",
-      "Name": "入手フラグ",
-      "Description": ""
+      "Name": "Acquisition Flag",
+      "Description": "Flag set when the item has been obtained."
     },
     {
       "Field": "maxNum",
-      "Name": "１スロットストック個数",
-      "Description": ""
+      "Name": "Maximum Stack Count",
+      "Description": "Maximum number of this item that can be stored in a single inventory slot."
     },
     {
       "Field": "spEffectTargetRegion",
-      "Name": "特殊効果管理カテゴリ",
-      "Description": ""
+      "Name": "Special Effect Category",
+      "Description": "Category used for managing or grouping special effects."
     },
     {
       "Field": "spEffectDuplication",
-      "Name": "特殊効果の重複判定",
-      "Description": ""
+      "Name": "Special Effect Duplication Rule",
+      "Description": "Determines whether this item's special effect can stack with similar effects."
     },
     {
       "Field": "spEffectSfxPriority",
-      "Name": "効果SFXの優先度",
-      "Description": ""
+      "Name": "Effect SFX Priority",
+      "Description": "Priority level of the item's effect visual or sound effect."
     },
     {
       "Field": "menuIconCategory",
-      "Name": "メニュー用アイコンカテゴリ",
-      "Description": ""
+      "Name": "Menu Icon Category",
+      "Description": "Icon category used for menu grouping and display."
     },
     {
       "Field": "enchantType",
-      "Name": "エンチャントの許可",
-      "Description": ""
+      "Name": "Enchant Permission",
+      "Description": "Determines whether the item can receive enchantments or buffs."
     },
     {
       "Field": "completeTrophy",
-      "Name": "収集トロフィーの種類",
-      "Description": ""
+      "Name": "Collection Trophy Type",
+      "Description": "Associated achievement or collection trophy category."
     },
     {
       "Field": "isOnlyOne",
-      "Name": "１セーブ１個のみ",
-      "Description": ""
+      "Name": "One Per Save",
+      "Description": "If enabled, only one copy of this item can exist per save file."
     },
     {
       "Field": "isOnlyOneUtilGameClear",
-      "Name": "1周回1個のみ",
-      "Description": ""
+      "Name": "One Per Playthrough",
+      "Description": "If enabled, only one copy of this item can be obtained per game cycle."
     },
     {
       "Field": "isTakeOver",
-      "Name": "周回時に所持状態を引き継ぐか？",
-      "Description": ""
+      "Name": "Carry Over to NG+",
+      "Description": "Determines whether the item is retained when starting a new game cycle."
     },
     {
       "Field": "canGet_WhenGetAllItem",
-      "Name": "デバッグ用全アイテム入手で入手可能か？",
-      "Description": ""
+      "Name": "Obtainable via Debug All Items",
+      "Description": "Determines whether the item is included when using debug commands to obtain all items."
     },
     {
       "Field": "padding",
-      "Name": "予約",
+      "Name": "Padding",
       "Description": ""
     }
   ]

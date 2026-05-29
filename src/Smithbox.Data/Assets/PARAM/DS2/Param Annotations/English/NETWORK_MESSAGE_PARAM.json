@@ -2,117 +2,117 @@
   "Param": "NETWORK_MESSAGE_PARAM",
   "Type": "NETWORK_MESSAGE_PARAM",
   "Name": "NETWORK_MESSAGE_PARAM",
-  "Description": "",
+  "Description": "Defines network message and online interaction display categories for different multiplayer roles and phantom types.",
   "Fields": [
     {
       "Field": "host",
-      "Name": "ホスト",
-      "Description": ""
+      "Name": "Host",
+      "Description": "Messages or behavior related to the host player."
     },
     {
       "Field": "white",
-      "Name": "白霊",
-      "Description": ""
+      "Name": "White Phantom",
+      "Description": "Messages associated with standard cooperative white phantoms."
     },
     {
       "Field": "smallWhite",
-      "Name": "小白霊",
-      "Description": ""
+      "Name": "Small White Phantom",
+      "Description": "Messages for smaller-scale or limited white phantom entities."
     },
     {
       "Field": "gold",
-      "Name": "金霊",
-      "Description": ""
+      "Name": "Gold Phantom",
+      "Description": "Messages for golden cooperative phantoms (special co-op roles)."
     },
     {
       "Field": "smallGold",
-      "Name": "小金霊",
-      "Description": ""
+      "Name": "Small Gold Phantom",
+      "Description": "Messages for smaller-scale gold phantom variants."
     },
     {
       "Field": "coopBlue",
-      "Name": "救援青霊",
-      "Description": ""
+      "Name": "Cooperative Blue Phantom",
+      "Description": "Messages for friendly blue phantoms assisting the host."
     },
     {
       "Field": "versusBlue",
-      "Name": "報復青霊",
-      "Description": ""
+      "Name": "Bell Keeper Blue Phantom",
+      "Description": "Messages for blue phantoms in competitive or retaliatory roles."
     },
     {
       "Field": "blackSign",
-      "Name": "黒霊（サイン）",
-      "Description": ""
+      "Name": "Black Phantom (Summon Sign)",
+      "Description": "Messages related to black phantom summon signs."
     },
     {
       "Field": "blackIntrude",
-      "Name": "黒霊（乱入）",
-      "Description": ""
+      "Name": "Black Phantom (Invasion)",
+      "Description": "Messages related to invading black phantoms."
     },
     {
       "Field": "redSign",
-      "Name": "赤霊（サイン）",
-      "Description": ""
+      "Name": "Red Phantom (Summon Sign)",
+      "Description": "Messages related to red phantom summon signs."
     },
     {
       "Field": "redIntrude",
-      "Name": "赤霊（乱入）",
-      "Description": ""
+      "Name": "Red Phantom (Invasion)",
+      "Description": "Messages related to invading red phantoms."
     },
     {
       "Field": "bellGuard",
-      "Name": "鐘守灰霊",
-      "Description": ""
+      "Name": "Bell Keeper Phantom",
+      "Description": "Messages for Bell Keeper covenant phantom activity."
     },
     {
       "Field": "ratKing",
-      "Name": "ねずみの王灰霊",
-      "Description": ""
+      "Name": "Rat King Phantom",
+      "Description": "Messages for Rat King covenant phantom activity."
     },
     {
       "Field": "dragon",
-      "Name": "竜霊",
-      "Description": ""
+      "Name": "Dragon Phantom",
+      "Description": "Messages for dragon covenant phantoms."
     },
     {
       "Field": "mirrorKnightSign",
-      "Name": "ミラーナイト霊（サイン）",
-      "Description": ""
+      "Name": "Mirror Knight Phantom (Summon Sign)",
+      "Description": "Messages for Mirror Knight-related summon signs."
     },
     {
       "Field": "abyssSign",
-      "Name": "深淵霊（サイン）",
-      "Description": ""
+      "Name": "Abyss Phantom (Summon Sign)",
+      "Description": "Messages for Abyss covenant summon signs."
     },
     {
       "Field": "duelBlue",
-      "Name": "決闘青霊",
-      "Description": ""
+      "Name": "Duel Blue Phantom",
+      "Description": "Messages for blue duel-oriented phantom encounters."
     },
     {
       "Field": "duelRed",
-      "Name": "決闘赤霊",
-      "Description": ""
+      "Name": "Duel Red Phantom",
+      "Description": "Messages for red duel-oriented phantom encounters."
     },
     {
       "Field": "dummy01",
-      "Name": "徘徊幻影",
-      "Description": ""
+      "Name": "Wandering Phantom",
+      "Description": "Placeholder or system-used category for wandering ghost-like replays."
     },
     {
       "Field": "dummy02",
-      "Name": "篝火幻影",
-      "Description": ""
+      "Name": "Bonfire Phantom",
+      "Description": "Placeholder or system-used category for bonfire-related ghost replays."
     },
     {
       "Field": "mirrorKnightIntrude",
-      "Name": "ミラーナイト霊(乱入)",
-      "Description": ""
+      "Name": "Mirror Knight Phantom (Invasion)",
+      "Description": "Messages for Mirror Knight invasion-type encounters."
     },
     {
       "Field": "abyssIntrude",
-      "Name": "深淵霊（乱入）",
-      "Description": ""
+      "Name": "Abyss Phantom (Invasion)",
+      "Description": "Messages for Abyss covenant invasion-type encounters."
     }
   ]
 }

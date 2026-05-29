@@ -1,0 +1,18 @@
+{
+  "Param": "DAMAGE_ATTACK_TYPE_RATE_PARAM",
+  "Type": "DAMAGE_ATTACK_TYPE_RATE_PARAM",
+  "Name": "DAMAGE_ATTACK_TYPE_RATE_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "rate",
+      "Name": "倍率",
+      "Description": ""
+    },
+    {
+      "Field": "break_rate",
+      "Name": "破壊時倍率",
+      "Description": ""
+    }
+  ]
+}

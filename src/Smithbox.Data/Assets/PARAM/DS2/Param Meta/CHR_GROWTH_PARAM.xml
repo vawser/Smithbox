@@ -3,7 +3,7 @@
     <Field>
         <soulLevelMax />
         <growthPointsPerLevelUp />
-        <dummy />
+        <dummy Padding="" />
         <enemyOverKillSoulRate />
         <enemyFinishSoulRate />
         <enemyVeryEasySoulRate />

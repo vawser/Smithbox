@@ -2,16 +2,16 @@
   "Name": "ItemLotParam",
   "TotalChanceLot": {
       "ChanceSet": [
-        "chance_lot_0",
-        "chance_lot_1",
-        "chance_lot_2",
-        "chance_lot_3",
-        "chance_lot_4",
-        "chance_lot_5",
-        "chance_lot_6",
-        "chance_lot_7",
-        "chance_lot_8",
-        "chance_lot_9"
+        "itemWeight1",
+        "itemWeight2",
+        "itemWeight3",
+        "itemWeight4",
+        "itemWeight5",
+        "itemWeight6",
+        "itemWeight7",
+        "itemWeight8",
+        "itemWeight9",
+        "itemWeight10"
      ]
   },
   "Groups": [
@@ -24,8 +24,8 @@
         }
       ],
       "Fields": [
-        "lots_dropped_order",
-        "lots_dropped_num"
+        "lotDropType",
+        "lotCount"
       ]
     },
     {
@@ -37,26 +37,26 @@
         }
       ],
       "Fields": [
-        "item_lot_0",
-        "amount_lot_0",
-        "chance_lot_0",
-        "infinite_lot_0",
-        "reinforcement_lot_0",
-        "infusion_lot_0"
+        "itemNum1",
+        "reinforceLevel1",
+        "attribute1",
+        "bExFlag1",
+        "itemId1",
+        "itemWeight1"
       ],
       "ChanceLot": {
-          "TargetField": "chance_lot_0",
+          "TargetField": "itemWeight1",
           "ChanceSet": [
-            "chance_lot_0",
-            "chance_lot_1",
-            "chance_lot_2",
-            "chance_lot_3",
-            "chance_lot_4",
-            "chance_lot_5",
-            "chance_lot_6",
-            "chance_lot_7",
-            "chance_lot_8",
-            "chance_lot_9"
+            "itemWeight1",
+            "itemWeight2",
+            "itemWeight3",
+            "itemWeight4",
+            "itemWeight5",
+            "itemWeight6",
+            "itemWeight7",
+            "itemWeight8",
+            "itemWeight9",
+            "itemWeight10"
          ]
       }
     },
@@ -69,26 +69,26 @@
         }
       ],
       "Fields": [
-        "item_lot_1",
-        "amount_lot_1",
-        "chance_lot_1",
-        "infinite_lot_1",
-        "reinforcement_lot_1",
-        "infusion_lot_1"
+        "itemNum2",
+        "reinforceLevel2",
+        "attribute2",
+        "bExFlag2",
+        "itemId2",
+        "itemWeight2"
       ],
       "ChanceLot": {
-          "TargetField": "chance_lot_1",
+          "TargetField": "itemWeight2",
           "ChanceSet": [
-            "chance_lot_0",
-            "chance_lot_1",
-            "chance_lot_2",
-            "chance_lot_3",
-            "chance_lot_4",
-            "chance_lot_5",
-            "chance_lot_6",
-            "chance_lot_7",
-            "chance_lot_8",
-            "chance_lot_9"
+            "itemWeight1",
+            "itemWeight2",
+            "itemWeight3",
+            "itemWeight4",
+            "itemWeight5",
+            "itemWeight6",
+            "itemWeight7",
+            "itemWeight8",
+            "itemWeight9",
+            "itemWeight10"
          ]
       }
     },
@@ -101,26 +101,26 @@
         }
       ],
       "Fields": [
-        "item_lot_2",
-        "amount_lot_2",
-        "chance_lot_2",
-        "infinite_lot_2",
-        "reinforcement_lot_2",
-        "infusion_lot_2"
+        "itemNum3",
+        "reinforceLevel3",
+        "attribute3",
+        "bExFlag3",
+        "itemId3",
+        "itemWeight3"
       ],
       "ChanceLot": {
-          "TargetField": "chance_lot_2",
+          "TargetField": "itemWeight3",
           "ChanceSet": [
-            "chance_lot_0",
-            "chance_lot_1",
-            "chance_lot_2",
-            "chance_lot_3",
-            "chance_lot_4",
-            "chance_lot_5",
-            "chance_lot_6",
-            "chance_lot_7",
-            "chance_lot_8",
-            "chance_lot_9"
+            "itemWeight1",
+            "itemWeight2",
+            "itemWeight3",
+            "itemWeight4",
+            "itemWeight5",
+            "itemWeight6",
+            "itemWeight7",
+            "itemWeight8",
+            "itemWeight9",
+            "itemWeight10"
          ]
       }
     },
@@ -133,26 +133,26 @@
         }
       ],
       "Fields": [
-        "item_lot_3",
-        "amount_lot_3",
-        "chance_lot_3",
-        "infinite_lot_3",
-        "reinforcement_lot_3",
-        "infusion_lot_3"
+        "itemNum4",
+        "reinforceLevel4",
+        "attribute4",
+        "bExFlag4",
+        "itemId4",
+        "itemWeight4"
       ],
       "ChanceLot": {
-          "TargetField": "chance_lot_3",
+          "TargetField": "itemWeight4",
           "ChanceSet": [
-            "chance_lot_0",
-            "chance_lot_1",
-            "chance_lot_2",
-            "chance_lot_3",
-            "chance_lot_4",
-            "chance_lot_5",
-            "chance_lot_6",
-            "chance_lot_7",
-            "chance_lot_8",
-            "chance_lot_9"
+            "itemWeight1",
+            "itemWeight2",
+            "itemWeight3",
+            "itemWeight4",
+            "itemWeight5",
+            "itemWeight6",
+            "itemWeight7",
+            "itemWeight8",
+            "itemWeight9",
+            "itemWeight10"
          ]
       }
     },
@@ -165,26 +165,26 @@
         }
       ],
       "Fields": [
-        "item_lot_4",
-        "amount_lot_4",
-        "chance_lot_4",
-        "infinite_lot_4",
-        "reinforcement_lot_4",
-        "infusion_lot_4"
+        "itemNum5",
+        "reinforceLevel5",
+        "attribute5",
+        "bExFlag5",
+        "itemId5",
+        "itemWeight5"
       ],
       "ChanceLot": {
-          "TargetField": "chance_lot_4",
+          "TargetField": "itemWeight5",
           "ChanceSet": [
-            "chance_lot_0",
-            "chance_lot_1",
-            "chance_lot_2",
-            "chance_lot_3",
-            "chance_lot_4",
-            "chance_lot_5",
-            "chance_lot_6",
-            "chance_lot_7",
-            "chance_lot_8",
-            "chance_lot_9"
+            "itemWeight1",
+            "itemWeight2",
+            "itemWeight3",
+            "itemWeight4",
+            "itemWeight5",
+            "itemWeight6",
+            "itemWeight7",
+            "itemWeight8",
+            "itemWeight9",
+            "itemWeight10"
          ]
       }
     },
@@ -197,26 +197,26 @@
         }
       ],
       "Fields": [
-        "item_lot_5",
-        "amount_lot_5",
-        "chance_lot_5",
-        "infinite_lot_5",
-        "reinforcement_lot_5",
-        "infusion_lot_5"
+        "itemNum6",
+        "reinforceLevel6",
+        "attribute6",
+        "bExFlag6",
+        "itemId6",
+        "itemWeight6"
       ],
       "ChanceLot": {
-          "TargetField": "chance_lot_5",
+          "TargetField": "itemWeight6",
           "ChanceSet": [
-            "chance_lot_0",
-            "chance_lot_1",
-            "chance_lot_2",
-            "chance_lot_3",
-            "chance_lot_4",
-            "chance_lot_5",
-            "chance_lot_6",
-            "chance_lot_7",
-            "chance_lot_8",
-            "chance_lot_9"
+            "itemWeight1",
+            "itemWeight2",
+            "itemWeight3",
+            "itemWeight4",
+            "itemWeight5",
+            "itemWeight6",
+            "itemWeight7",
+            "itemWeight8",
+            "itemWeight9",
+            "itemWeight10"
          ]
       }
     },
@@ -229,26 +229,26 @@
         }
       ],
       "Fields": [
-        "item_lot_6",
-        "amount_lot_6",
-        "chance_lot_6",
-        "infinite_lot_6",
-        "reinforcement_lot_6",
-        "infusion_lot_6"
+        "itemNum7",
+        "reinforceLevel7",
+        "attribute7",
+        "bExFlag7",
+        "itemId7",
+        "itemWeight7"
       ],
       "ChanceLot": {
-          "TargetField": "chance_lot_6",
+          "TargetField": "itemWeight7",
           "ChanceSet": [
-            "chance_lot_0",
-            "chance_lot_1",
-            "chance_lot_2",
-            "chance_lot_3",
-            "chance_lot_4",
-            "chance_lot_5",
-            "chance_lot_6",
-            "chance_lot_7",
-            "chance_lot_8",
-            "chance_lot_9"
+            "itemWeight1",
+            "itemWeight2",
+            "itemWeight3",
+            "itemWeight4",
+            "itemWeight5",
+            "itemWeight6",
+            "itemWeight7",
+            "itemWeight8",
+            "itemWeight9",
+            "itemWeight10"
          ]
       }
     },
@@ -261,26 +261,26 @@
         }
       ],
       "Fields": [
-        "item_lot_7",
-        "amount_lot_7",
-        "chance_lot_7",
-        "infinite_lot_7",
-        "reinforcement_lot_7",
-        "infusion_lot_7"
+        "itemNum8",
+        "reinforceLevel8",
+        "attribute8",
+        "bExFlag8",
+        "itemId8",
+        "itemWeight8"
       ],
       "ChanceLot": {
-          "TargetField": "chance_lot_7",
+          "TargetField": "itemWeight8",
           "ChanceSet": [
-            "chance_lot_0",
-            "chance_lot_1",
-            "chance_lot_2",
-            "chance_lot_3",
-            "chance_lot_4",
-            "chance_lot_5",
-            "chance_lot_6",
-            "chance_lot_7",
-            "chance_lot_8",
-            "chance_lot_9"
+            "itemWeight1",
+            "itemWeight2",
+            "itemWeight3",
+            "itemWeight4",
+            "itemWeight5",
+            "itemWeight6",
+            "itemWeight7",
+            "itemWeight8",
+            "itemWeight9",
+            "itemWeight10"
          ]
       }
     },
@@ -293,26 +293,26 @@
         }
       ],
       "Fields": [
-        "item_lot_8",
-        "amount_lot_8",
-        "chance_lot_8",
-        "infinite_lot_8",
-        "reinforcement_lot_8",
-        "infusion_lot_8"
+        "itemNum9",
+        "reinforceLevel9",
+        "attribute9",
+        "bExFlag9",
+        "itemId9",
+        "itemWeight9"
       ],
       "ChanceLot": {
-          "TargetField": "chance_lot_8",
+          "TargetField": "itemWeight9",
           "ChanceSet": [
-            "chance_lot_0",
-            "chance_lot_1",
-            "chance_lot_2",
-            "chance_lot_3",
-            "chance_lot_4",
-            "chance_lot_5",
-            "chance_lot_6",
-            "chance_lot_7",
-            "chance_lot_8",
-            "chance_lot_9"
+            "itemWeight1",
+            "itemWeight2",
+            "itemWeight3",
+            "itemWeight4",
+            "itemWeight5",
+            "itemWeight6",
+            "itemWeight7",
+            "itemWeight8",
+            "itemWeight9",
+            "itemWeight10"
          ]
       }
     },
@@ -325,26 +325,26 @@
         }
       ],
       "Fields": [
-        "item_lot_9",
-        "amount_lot_9",
-        "chance_lot_9",
-        "infinite_lot_9",
-        "reinforcement_lot_9",
-        "infusion_lot_9"
+        "itemNum10",
+        "reinforceLevel10",
+        "attribute10",
+        "bExFlag10",
+        "itemId10",
+        "itemWeight10"
       ],
       "ChanceLot": {
-          "TargetField": "chance_lot_9",
+          "TargetField": "itemWeight10",
           "ChanceSet": [
-            "chance_lot_0",
-            "chance_lot_1",
-            "chance_lot_2",
-            "chance_lot_3",
-            "chance_lot_4",
-            "chance_lot_5",
-            "chance_lot_6",
-            "chance_lot_7",
-            "chance_lot_8",
-            "chance_lot_9"
+            "itemWeight1",
+            "itemWeight2",
+            "itemWeight3",
+            "itemWeight4",
+            "itemWeight5",
+            "itemWeight6",
+            "itemWeight7",
+            "itemWeight8",
+            "itemWeight9",
+            "itemWeight10"
          ]
       }
     }

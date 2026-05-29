@@ -7,20 +7,20 @@
         <moveRotateRate />
         <soundLevel />
         <isTorchOff  Enum="MATERIAL_TORCH_OFF_TYPE_ENUM"/>
-        <torchOffParam />
+        <torchOffParam Refs="TorchOffCtrlParam" />
         <isWaterSurface  IsBool=""/>
         <environment  Enum="MATERIAL_ENVIRONMENT_TYPE_ENUM"/>
         <dodgeLimitCategory  Enum="MATERIAL_DODGE_LIMIT_TYPE_ENUM"/>
         <isDisableIdleDamage  IsBool=""/>
-        <damageId />
-        <fallWaterSfxId />
+        <damageId RefGroup="damageparam" />
+        <fallWaterSfxId ParticleAlias="" />
         <dodgeLimitDistanceRateRollLight />
         <dodgeLimitDistanceRateStepLight />
         <dodgeLimitDistanceRateRollHeavy />
         <dodgeLimitDistanceRateStepHeavy />
         <takeWaterParamId />
-        <sfxID0/>
-        <sfxID1/>
+        <sfxID0 ParticleAlias="" />
+        <sfxID1 ParticleAlias="" />
         <sfxDuration/>
     </Field>
 </PARAMMETA>

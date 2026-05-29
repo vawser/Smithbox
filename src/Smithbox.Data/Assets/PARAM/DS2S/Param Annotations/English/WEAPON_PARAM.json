@@ -31,7 +31,7 @@
     },
     {
       "Field": "isAtkAutoHoming",
-      "Name": "Auto Homing Attack",
+      "Name": "Is Auto Homing Attack",
       "Description": "Enables automatic target tracking during attacks."
     },
     {

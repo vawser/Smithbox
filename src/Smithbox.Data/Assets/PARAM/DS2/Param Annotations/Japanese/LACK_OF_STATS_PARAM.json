@@ -1,0 +1,28 @@
+{
+  "Param": "LACK_OF_STATS_PARAM",
+  "Type": "LACK_OF_STATS_PARAM",
+  "Name": "LACK_OF_STATS_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "minValueByStats",
+      "Name": "ST不足 最小値",
+      "Description": ""
+    },
+    {
+      "Field": "maxValueByStats",
+      "Name": "ST不足 最大値",
+      "Description": ""
+    },
+    {
+      "Field": "minValueByStamina",
+      "Name": "スタミナ不足 最小値",
+      "Description": ""
+    },
+    {
+      "Field": "maxValueByStamina",
+      "Name": "スタミナ不足 最大値",
+      "Description": ""
+    }
+  ]
+}

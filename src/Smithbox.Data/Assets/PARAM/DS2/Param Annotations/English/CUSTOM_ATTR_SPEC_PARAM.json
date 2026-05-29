@@ -2,61 +2,61 @@
   "Param": "CUSTOM_ATTR_SPEC_PARAM",
   "Type": "CUSTOM_ATTR_SPEC_PARAM",
   "Name": "CUSTOM_ATTR_SPEC_PARAM",
-  "Description": "",
+  "Description": "Defines the available custom weapon attribute types and infusion categories.",
   "Fields": [
     {
       "Field": "physical",
-      "Name": "物理",
-      "Description": ""
+      "Name": "Physical",
+      "Description": "Standard physical attribute or infusion type."
     },
     {
       "Field": "fire",
-      "Name": "炎",
-      "Description": ""
+      "Name": "Fire",
+      "Description": "Fire elemental attribute or infusion type."
     },
     {
       "Field": "magic",
-      "Name": "魔法",
-      "Description": ""
+      "Name": "Magic",
+      "Description": "Magic elemental attribute or infusion type."
     },
     {
       "Field": "thunder",
-      "Name": "雷",
-      "Description": ""
+      "Name": "Lightning",
+      "Description": "Lightning/thunder elemental attribute or infusion type."
     },
     {
       "Field": "dark",
-      "Name": "闇",
-      "Description": ""
+      "Name": "Dark",
+      "Description": "Dark elemental attribute or infusion type."
     },
     {
       "Field": "poison",
-      "Name": "毒",
-      "Description": ""
+      "Name": "Poison",
+      "Description": "Poison status attribute or infusion type."
     },
     {
       "Field": "bleed",
-      "Name": "出血",
-      "Description": ""
+      "Name": "Bleed",
+      "Description": "Bleed status attribute or infusion type."
     },
     {
       "Field": "physicalByCrude",
-      "Name": "物理(粗製)",
-      "Description": ""
+      "Name": "Raw",
+      "Description": "Raw variant of the physical infusion type."
     },
     {
       "Field": "physicalByEnchanted",
-      "Name": "物理(魔力)",
-      "Description": ""
+      "Name": "Enchanted",
+      "Description": "Enchanted variant of the physical infusion type."
     },
     {
       "Field": "physicalByAbyss",
-      "Name": "物理(深淵)",
-      "Description": ""
+      "Name": "Mundane",
+      "Description": "Mundane variant of the physical infusion type."
     },
     {
       "Field": "padding",
-      "Name": "予約",
+      "Name": "Padding",
       "Description": ""
     }
   ]

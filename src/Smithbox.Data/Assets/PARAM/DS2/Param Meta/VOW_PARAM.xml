@@ -4,6 +4,6 @@
         <requiredContributionLv1 />
         <requiredContributionLv2 />
         <requiredContributionLv3 />
-        <padding0 />
+        <padding0 Padding="" />
     </Field>
 </PARAMMETA>

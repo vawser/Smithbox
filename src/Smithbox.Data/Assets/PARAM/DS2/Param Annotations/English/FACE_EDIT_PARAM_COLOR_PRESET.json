@@ -2,22 +2,22 @@
   "Param": "FACE_EDIT_PARAM_COLOR_PRESET",
   "Type": "FACE_EDIT_PARAM_COLOR_PRESET",
   "Name": "FACE_EDIT_PARAM_COLOR_PRESET",
-  "Description": "",
+  "Description": "Defines an RGB color preset used by the facial customization and character creation system.",
   "Fields": [
     {
       "Field": "red",
-      "Name": "赤",
-      "Description": ""
+      "Name": "Red",
+      "Description": "Red color channel intensity value for the preset."
     },
     {
       "Field": "green",
-      "Name": "緑",
-      "Description": ""
+      "Name": "Green",
+      "Description": "Green color channel intensity value for the preset."
     },
     {
       "Field": "blue",
-      "Name": "青",
-      "Description": ""
+      "Name": "Blue",
+      "Description": "Blue color channel intensity value for the preset."
     }
   ]
 }

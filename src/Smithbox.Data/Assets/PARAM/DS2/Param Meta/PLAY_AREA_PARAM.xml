@@ -10,6 +10,6 @@
         <enableSearchVsBlue  IsBool=""/>
         <enableSearchAbyss  IsBool=""/>
         <enableBossCheck  IsBool=""/>
-        <dummy />
+        <dummy Padding="" />
     </Field>
 </PARAMMETA>

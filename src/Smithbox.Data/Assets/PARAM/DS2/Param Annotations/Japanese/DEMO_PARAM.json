@@ -1,0 +1,118 @@
+{
+  "Param": "DEMO_PARAM",
+  "Type": "DEMO_PARAM",
+  "Name": "DEMO_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "groupMask",
+      "Name": "表示グループマスク",
+      "Description": ""
+    },
+    {
+      "Field": "memoryBlock",
+      "Name": "メモリブロック",
+      "Description": ""
+    },
+    {
+      "Field": "addGroupMask",
+      "Name": "オブジェクト表示グループマスク",
+      "Description": ""
+    },
+    {
+      "Field": "iblTextureId",
+      "Name": "環境マップテクスチャID",
+      "Description": ""
+    },
+    {
+      "Field": "img0MulColorR",
+      "Name": "img0乗算色R",
+      "Description": ""
+    },
+    {
+      "Field": "img0MulColorG",
+      "Name": "img0乗算色G",
+      "Description": ""
+    },
+    {
+      "Field": "img0MulColorB",
+      "Name": "img0乗算色B",
+      "Description": ""
+    },
+    {
+      "Field": "filterId",
+      "Name": "フィルタID",
+      "Description": ""
+    },
+    {
+      "Field": "alpha0Factor",
+      "Name": "α0係数",
+      "Description": ""
+    },
+    {
+      "Field": "img1MulColorR",
+      "Name": "img1乗算色R",
+      "Description": ""
+    },
+    {
+      "Field": "img1MulColorG",
+      "Name": "img1乗算色G",
+      "Description": ""
+    },
+    {
+      "Field": "img1MulColorB",
+      "Name": "img1乗算色B",
+      "Description": ""
+    },
+    {
+      "Field": "reserved0",
+      "Name": "予約領域",
+      "Description": ""
+    },
+    {
+      "Field": "alpha1Factor",
+      "Name": "α1係数",
+      "Description": ""
+    },
+    {
+      "Field": "positionFactor",
+      "Name": "位置係数",
+      "Description": ""
+    },
+    {
+      "Field": "scaleFactor",
+      "Name": "スケール係数",
+      "Description": ""
+    },
+    {
+      "Field": "uvFactor",
+      "Name": "UV係数",
+      "Description": ""
+    },
+    {
+      "Field": "disableLightId0",
+      "Name": "ID1",
+      "Description": ""
+    },
+    {
+      "Field": "disableLightId1",
+      "Name": "ID2",
+      "Description": ""
+    },
+    {
+      "Field": "disableSfxId0",
+      "Name": "ID1",
+      "Description": ""
+    },
+    {
+      "Field": "disableSfxId1",
+      "Name": "ID2",
+      "Description": ""
+    },
+    {
+      "Field": "lodFactorScale",
+      "Name": "LOD係数のスケーラ",
+      "Description": ""
+    }
+  ]
+}

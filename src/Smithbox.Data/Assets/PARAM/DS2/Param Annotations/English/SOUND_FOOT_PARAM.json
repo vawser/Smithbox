@@ -2,21 +2,21 @@
   "Param": "SOUND_FOOT_PARAM",
   "Type": "SOUND_FOOT_PARAM",
   "Name": "SOUND_FOOT_PARAM",
-  "Description": "",
+  "Description": "Defines footstep sound mapping data based on character model and material type.",
   "Fields": [
     {
       "Field": "modelId",
-      "Name": "モデルID",
-      "Description": ""
+      "Name": "Model ID",
+      "Description": "ID of the character or model used to determine footstep sound behavior."
     },
     {
       "Field": "type",
-      "Name": "種類",
-      "Description": ""
+      "Name": "Type",
+      "Description": "Footstep sound type category, used to select appropriate audio effects (e.g., surface or material type)."
     },
     {
       "Field": "aReserved",
-      "Name": "予約領域",
+      "Name": "Padding",
       "Description": ""
     }
   ]

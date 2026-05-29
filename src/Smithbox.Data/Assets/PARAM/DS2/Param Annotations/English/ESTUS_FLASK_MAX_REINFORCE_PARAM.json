@@ -2,21 +2,21 @@
   "Param": "ESTUS_FLASK_MAX_REINFORCE_PARAM",
   "Type": "ESTUS_FLASK_MAX_REINFORCE_PARAM",
   "Name": "ESTUS_FLASK_MAX_REINFORCE_PARAM",
-  "Description": "",
+  "Description": "Defines the minimum starting reinforcement level and maximum reinforcement level allowed for the Estus Flask.",
   "Fields": [
     {
       "Field": "minLv",
-      "Name": "最小値・初期値",
-      "Description": ""
+      "Name": "Minimum Level",
+      "Description": "The starting reinforcement level assigned to the Estus Flask when the game begins or when the flask system is initialized."
     },
     {
       "Field": "maxLv",
-      "Name": "最大値",
-      "Description": ""
+      "Name": "Maximum Level",
+      "Description": "The highest reinforcement level the Estus Flask can reach through upgrades."
     },
     {
       "Field": "padding",
-      "Name": "パディング",
+      "Name": "Padding",
       "Description": ""
     }
   ]

@@ -2,412 +2,412 @@
   "Param": "FACE_EDIT_PARAM_RACE_PRESET",
   "Type": "FACE_EDIT_PARAM_RACE_PRESET",
   "Name": "FACE_EDIT_PARAM_RACE_PRESET",
-  "Description": "",
+  "Description": "Preset parameters for full facial customization including proportions, skin tone, and feature shaping.",
   "Fields": [
     {
       "Field": "Face_age",
-      "Name": "年齢",
-      "Description": ""
+      "Name": "Age",
+      "Description": "Controls perceived age of the character's face."
     },
     {
       "Field": "Face_gender",
-      "Name": "性別",
-      "Description": ""
+      "Name": "Gender",
+      "Description": "Adjusts facial characteristics toward masculine or feminine appearance."
     },
     {
       "Field": "Face_caricature_geometry",
-      "Name": "形状誇張",
-      "Description": ""
+      "Name": "Facial Geometry Exaggeration",
+      "Description": "Controls how strongly facial shape is stylized or exaggerated."
     },
     {
       "Field": "Face_caricature_texture",
-      "Name": "色誇張",
-      "Description": ""
+      "Name": "Texture Exaggeration",
+      "Description": "Adjusts exaggeration of skin and surface detail contrast."
     },
     {
       "Field": "Face_blow_nose_chin_ratio",
-      "Name": "眉、鼻、顎の比率",
-      "Description": ""
+      "Name": "Brow/Nose/Chin Ratio",
+      "Description": "Adjusts proportional balance between brow, nose, and chin regions."
     },
     {
       "Field": "Face_forehead_nose_ratio",
-      "Name": "額付近の比率",
-      "Description": ""
+      "Name": "Forehead/Nose Ratio",
+      "Description": "Controls proportional balance of upper face to midface."
     },
     {
       "Field": "Face_heavy_light",
-      "Name": "顔幅",
-      "Description": ""
+      "Name": "Face Width/Weight",
+      "Description": "Adjusts overall facial fullness and width."
     },
     {
       "Field": "Face_round_gaunt",
-      "Name": "顔の丸み",
-      "Description": ""
+      "Name": "Face Roundness",
+      "Description": "Controls how round or gaunt (hollow) the face appears."
     },
     {
       "Field": "Face_tall_short",
-      "Name": "顔パーツバランス",
-      "Description": ""
+      "Name": "Vertical Facial Proportion",
+      "Description": "Adjusts overall vertical scaling of facial structure."
     },
     {
       "Field": "Face_up_down",
-      "Name": "顔パーツ傾き上下",
-      "Description": ""
+      "Name": "Facial Feature Vertical Shift",
+      "Description": "Moves facial features upward or downward."
     },
     {
       "Field": "Face_wide_thin",
-      "Name": "顔パーツバランス左右",
-      "Description": ""
+      "Name": "Horizontal Facial Proportion",
+      "Description": "Adjusts width balance of facial structure."
     },
     {
       "Field": "Skin_Flushed_Pale",
-      "Name": "肌の色 紅潮 蒼白",
-      "Description": ""
+      "Name": "Skin Flush",
+      "Description": "Controls skin tone between flushed (red) and pale."
     },
     {
       "Field": "Skin_Shade_Dark_Light",
-      "Name": "色 肌色 暗 明",
-      "Description": ""
+      "Name": "Skin Shade",
+      "Description": "Adjusts overall skin brightness from dark to light."
     },
     {
       "Field": "Skin_Tint_Orange_Blue",
-      "Name": "色 肌の色 橙青",
-      "Description": ""
+      "Name": "Skin Tint (Orange/Blue)",
+      "Description": "Adjusts warm/cool tone balance of skin."
     },
     {
       "Field": "Skin_Tint_Purple_Yellow",
-      "Name": "色 肌の色 紫黄",
-      "Description": ""
+      "Name": "Skin Tint (Purple/Yellow)",
+      "Description": "Adjusts secondary skin hue balance."
     },
     {
       "Field": "Skin_Tint_Red_Green",
-      "Name": "色 肌の色 赤緑",
-      "Description": ""
+      "Name": "Skin Tint (Red/Green)",
+      "Description": "Fine adjustment of skin color balance."
     },
     {
       "Field": "Nose_Pale_Red",
-      "Name": "色 鼻筋の色 蒼白 赤",
-      "Description": ""
+      "Name": "Nose Color",
+      "Description": "Adjusts nose coloration between pale and red."
     },
     {
       "Field": "Cheek_Blush_Light_Red",
-      "Name": "色 頬色 光 赤",
-      "Description": ""
+      "Name": "Cheek Blush",
+      "Description": "Controls intensity of cheek redness/blush."
     },
     {
       "Field": "Forehead_small_large",
-      "Name": "眉間の幅",
-      "Description": ""
+      "Name": "Forehead Width",
+      "Description": "Adjusts forehead width from narrow to wide."
     },
     {
       "Field": "Forehead_tall_short",
-      "Name": "眉間の深さ",
-      "Description": ""
+      "Name": "Forehead Height",
+      "Description": "Adjusts forehead vertical size."
     },
     {
       "Field": "Forehead_tilt_foward_back",
-      "Name": "眉間の位置",
-      "Description": ""
+      "Name": "Forehead Tilt",
+      "Description": "Tilts forehead forward or backward."
     },
     {
       "Field": "Nose_sellion_down_up",
-      "Name": "眉間の高さ",
-      "Description": ""
+      "Name": "Nasal Root Height",
+      "Description": "Adjusts height of the nasal root area between eyes."
     },
     {
       "Field": "Nose_sellion_shallow_deep",
-      "Name": "鼻筋、上部の凹凸",
-      "Description": ""
+      "Name": "Upper Nose Bridge Depth",
+      "Description": "Controls depth of upper nasal bridge."
     },
     {
       "Field": "Nose_sellion_shallow_deep2",
-      "Name": "鼻筋、上部の凹凸",
-      "Description": ""
+      "Name": "Upper Nose Bridge Depth (Alt)",
+      "Description": "Secondary control for nasal bridge depth."
     },
     {
       "Field": "Nose_sellion_thin_wide",
-      "Name": "眉間の幅",
-      "Description": ""
+      "Name": "Nasal Bridge Width",
+      "Description": "Adjusts width of upper nose bridge."
     },
     {
       "Field": "Brow_Ridge_high_low",
-      "Name": "眉の高さ",
-      "Description": ""
+      "Name": "Brow Height",
+      "Description": "Adjusts vertical position of eyebrow ridge."
     },
     {
       "Field": "Brow_Ridge_Inner_down_up",
-      "Name": "眉の内端",
-      "Description": ""
+      "Name": "Inner Brow Position",
+      "Description": "Adjusts inner eyebrow height."
     },
     {
       "Field": "Brow_Ridge_Outer_up_down",
-      "Name": "眉の外端",
-      "Description": ""
+      "Name": "Outer Brow Position",
+      "Description": "Adjusts outer eyebrow height."
     },
     {
       "Field": "Eyes_down_up",
-      "Name": "眼の位置",
-      "Description": ""
+      "Name": "Eye Position",
+      "Description": "Moves eyes vertically within face."
     },
     {
       "Field": "Eyes_small_large",
-      "Name": "眼の大きさ",
-      "Description": ""
+      "Name": "Eye Size",
+      "Description": "Controls overall eye size."
     },
     {
       "Field": "Eyes_tilt_inward_outward",
-      "Name": "眼の傾き",
-      "Description": ""
+      "Name": "Eye Tilt",
+      "Description": "Tilts eyes inward or outward."
     },
     {
       "Field": "Eyes_apart_together",
-      "Name": "眼の間隔",
-      "Description": ""
+      "Name": "Eye Spacing",
+      "Description": "Adjusts distance between eyes."
     },
     {
       "Field": "Eye_Sockets_Bruised_Bright",
-      "Name": "色 眼窩の色 アザ 明",
-      "Description": ""
+      "Name": "Eye Socket Tone (Bruised/Bright)",
+      "Description": "Adjusts discoloration or brightness around eye sockets."
     },
     {
       "Field": "Eye_Sockets_Dark_Light",
-      "Name": "色 眼窩の色 暗 明",
-      "Description": ""
+      "Name": "Eye Socket Shade",
+      "Description": "Controls darkness or lightness around eyes."
     },
     {
       "Field": "Eyelids_Light_Dark",
-      "Name": "色 まぶた 明 暗",
-      "Description": ""
+      "Name": "Eyelid Shade",
+      "Description": "Adjusts eyelid darkness or brightness."
     },
     {
       "Field": "Eyelids_Pale_Red",
-      "Name": "色 まぶた 青 赤",
-      "Description": ""
+      "Name": "Eyelid Tint",
+      "Description": "Controls eyelid coloration between pale and red."
     },
     {
       "Field": "Eyeliner_Light_Dark",
-      "Name": "色 アイライナー 明 暗",
-      "Description": ""
+      "Name": "Eyeliner Intensity",
+      "Description": "Adjusts eyeliner darkness."
     },
     {
       "Field": "Eyeshadow_Light_Dark",
-      "Name": "色 アイシャドー 明 暗",
-      "Description": ""
+      "Name": "Eyeshadow Intensity",
+      "Description": "Controls eyeshadow darkness."
     },
     {
       "Field": "Nose_bridge_shallow_deep",
-      "Name": "鼻筋の深さ",
-      "Description": ""
+      "Name": "Nose Bridge Depth",
+      "Description": "Adjusts depth of nasal bridge."
     },
     {
       "Field": "Nose_bridge_short_long",
-      "Name": "鼻筋の長さ",
-      "Description": ""
+      "Name": "Nose Bridge Length",
+      "Description": "Controls length of nasal bridge."
     },
     {
       "Field": "Nose_down_up",
-      "Name": "鼻の長さ",
-      "Description": ""
+      "Name": "Nose Length Position",
+      "Description": "Adjusts vertical nose placement/length effect."
     },
     {
       "Field": "Nose_flat_pointed",
-      "Name": "鼻の高さ",
-      "Description": ""
+      "Name": "Nose Shape",
+      "Description": "Controls flatness or pointedness of nose tip/bridge."
     },
     {
       "Field": "Nose_region_concave_convex",
-      "Name": "鼻の凹凸",
-      "Description": ""
+      "Name": "Nose Contour",
+      "Description": "Adjusts concave or convex shaping of nose region."
     },
     {
       "Field": "Nose_short_long",
-      "Name": "鼻の高さ",
-      "Description": ""
+      "Name": "Nose Length",
+      "Description": "Controls overall nose length."
     },
     {
       "Field": "Nose_tilt_down_up",
-      "Name": "小鼻の上下",
-      "Description": ""
+      "Name": "Nostril Tilt",
+      "Description": "Tilts nose base up or down."
     },
     {
       "Field": "Nose_nostril_tilt_down_up",
-      "Name": "小鼻の傾斜",
-      "Description": ""
+      "Name": "Nostril Angle",
+      "Description": "Adjusts nostril angle."
     },
     {
       "Field": "Nose_nostrils_small_large",
-      "Name": "小鼻の大きさ",
-      "Description": ""
+      "Name": "Nostril Size",
+      "Description": "Controls nostril size."
     },
     {
       "Field": "Nose_nostrils_wide_thin",
-      "Name": "小鼻の幅",
-      "Description": ""
+      "Name": "Nostril Width",
+      "Description": "Adjusts nostril width."
     },
     {
       "Field": "Nares_Small_Large",
-      "Name": "鼻孔の大きさ",
-      "Description": ""
+      "Name": "Nasal Opening Size",
+      "Description": "Controls size of nasal openings."
     },
     {
       "Field": "Cheekbones_low_high",
-      "Name": "頬骨の高さ",
-      "Description": ""
+      "Name": "Cheekbone Height",
+      "Description": "Adjusts vertical position of cheekbones."
     },
     {
       "Field": "Cheekbones_shallow_pronounced",
-      "Name": "頬骨の深み",
-      "Description": ""
+      "Name": "Cheekbone Definition",
+      "Description": "Controls prominence of cheekbones."
     },
     {
       "Field": "Cheekbones_thin_wide",
-      "Name": "頬骨の広さ",
-      "Description": ""
+      "Name": "Cheekbone Width",
+      "Description": "Adjusts cheekbone spread."
     },
     {
       "Field": "Cheeks_concave_convex",
-      "Name": "頬の凹凸",
-      "Description": ""
+      "Name": "Cheek Contour",
+      "Description": "Controls cheek hollowness or fullness."
     },
     {
       "Field": "Cheeks_round_gaunt",
-      "Name": "頬",
-      "Description": ""
+      "Name": "Cheek Fullness",
+      "Description": "Adjusts roundness or gauntness of cheeks."
     },
     {
       "Field": "Naso_Labial_Lines_Light_Dark",
-      "Name": "頬のしわライン",
-      "Description": ""
+      "Name": "Nasolabial Lines",
+      "Description": "Controls visibility of smile lines."
     },
     {
       "Field": "Mouth_drawn_pursed",
-      "Name": "唇の形",
-      "Description": ""
+      "Name": "Mouth Shape",
+      "Description": "Adjusts mouth between relaxed and pursed states."
     },
     {
       "Field": "Mouth_happy_sad",
-      "Name": "口元の表情、喜_悲",
-      "Description": ""
+      "Name": "Mouth Expression",
+      "Description": "Controls basic emotional mouth shape."
     },
     {
       "Field": "Mouth_Lips_deflated_inflated",
-      "Name": "唇の膨らみ",
-      "Description": ""
+      "Name": "Lip Volume",
+      "Description": "Adjusts fullness of lips."
     },
     {
       "Field": "Mouth_Lips_large_small",
-      "Name": "唇の大きさ",
-      "Description": ""
+      "Name": "Lip Size",
+      "Description": "Controls overall lip size."
     },
     {
       "Field": "Mouth_Lips_puckered_retracted",
-      "Name": "唇の形",
-      "Description": ""
+      "Name": "Lip Protrusion",
+      "Description": "Adjusts lips forward or backward."
     },
     {
       "Field": "Mouth_Lips_thin_thicks",
-      "Name": "唇の厚さ",
-      "Description": ""
+      "Name": "Lip Thickness",
+      "Description": "Controls lip thickness."
     },
     {
       "Field": "Mouth_puckered_retracted",
-      "Name": "口の凹凸",
-      "Description": ""
+      "Name": "Mouth Protrusion",
+      "Description": "Adjusts mouth forward/backward position."
     },
     {
       "Field": "Mouth_tilt_up_down",
-      "Name": "口元",
-      "Description": ""
+      "Name": "Mouth Corner Tilt",
+      "Description": "Tilts mouth corners up or down."
     },
     {
       "Field": "Mouth_underbite_overbite",
-      "Name": "唇の形",
-      "Description": ""
+      "Name": "Jaw Bite Alignment",
+      "Description": "Controls underbite/overbite jaw alignment."
     },
     {
       "Field": "Mouth_up_down",
-      "Name": "口の位置",
-      "Description": ""
+      "Name": "Mouth Position",
+      "Description": "Moves mouth vertically on face."
     },
     {
       "Field": "Mouth_wide_thin",
-      "Name": "口の幅",
-      "Description": ""
+      "Name": "Mouth Width",
+      "Description": "Adjusts mouth width."
     },
     {
       "Field": "Mouth_Chin_distance_short_long",
-      "Name": "口から顎の距離",
-      "Description": ""
+      "Name": "Mouth-Chin Distance",
+      "Description": "Controls distance between mouth and chin."
     },
     {
       "Field": "Lips_Flushed_Pale",
-      "Name": "色 唇の色 紅潮 蒼白",
-      "Description": ""
+      "Name": "Lip Color",
+      "Description": "Adjusts lip coloration between flushed and pale."
     },
     {
       "Field": "Lipstick_Dark_Red_Light_Blue",
-      "Name": "色 口紅 黒赤 白青",
-      "Description": ""
+      "Name": "Lipstick Preset A",
+      "Description": "Preset lipstick color variation (dark red to light blue)."
     },
     {
       "Field": "Lipstick_Dark_Blue_Light_Red",
-      "Name": "色 口紅 黒青 白赤",
-      "Description": ""
+      "Name": "Lipstick Preset B",
+      "Description": "Preset lipstick color variation (dark blue to light red)."
     },
     {
       "Field": "Chin_foward_backward",
-      "Name": "顎の前後",
-      "Description": ""
+      "Name": "Chin Forward/Backward",
+      "Description": "Moves chin forward or backward."
     },
     {
       "Field": "Chin_pronounced_recessed",
-      "Name": "顎の縦の長さ_",
-      "Description": ""
+      "Name": "Chin Projection (Vertical)",
+      "Description": "Controls chin prominence."
     },
     {
       "Field": "Chin_retracted_jutting",
-      "Name": "顎の突き出し_",
-      "Description": ""
+      "Name": "Chin Projection (Horizontal)",
+      "Description": "Adjusts chin jutting or retraction."
     },
     {
       "Field": "Chin_shallow_deep",
-      "Name": "顎の深さ",
-      "Description": ""
+      "Name": "Chin Depth",
+      "Description": "Controls chin depth."
     },
     {
       "Field": "Chin_small_large",
-      "Name": "顎の大きさ",
-      "Description": ""
+      "Name": "Chin Size",
+      "Description": "Adjusts overall chin size."
     },
     {
       "Field": "Chin_tall_short",
-      "Name": "顎の高さ",
-      "Description": ""
+      "Name": "Chin Height",
+      "Description": "Controls vertical chin height."
     },
     {
       "Field": "Chin_wide_thin",
-      "Name": "顎の広さ",
-      "Description": ""
+      "Name": "Chin Width",
+      "Description": "Adjusts chin width."
     },
     {
       "Field": "Jaw_retracted_jutting",
-      "Name": "顎の突き出し",
-      "Description": ""
+      "Name": "Jaw Projection",
+      "Description": "Controls jaw forward/back position."
     },
     {
       "Field": "Jaw_wide_thin",
-      "Name": "顎の幅",
-      "Description": ""
+      "Name": "Jaw Width",
+      "Description": "Adjusts jaw width."
     },
     {
       "Field": "Jaw_Neck_slope_high_low",
-      "Name": "顎下部",
-      "Description": ""
+      "Name": "Jaw-Neck Slope",
+      "Description": "Controls transition angle between jaw and neck."
     },
     {
       "Field": "Jawline_concave_convex",
-      "Name": "顎のライン",
-      "Description": ""
+      "Name": "Jawline Shape",
+      "Description": "Adjusts jawline curvature."
     }
   ]
 }

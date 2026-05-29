@@ -2,136 +2,136 @@
   "Param": "PLAYER_LIGHT_PARAM",
   "Type": "PLAYER_LIGHT_PARAM",
   "Name": "PLAYER_LIGHT_PARAM",
-  "Description": "",
+  "Description": "Defines dynamic light settings attached to the player, including color, intensity, shadow behavior, flickering, and environmental interaction.",
   "Fields": [
     {
       "Field": "offsetX",
-      "Name": "位置X",
-      "Description": ""
+      "Name": "Position: X Offset",
+      "Description": "Light position offset along the X axis relative to the player."
     },
     {
       "Field": "offsetY",
-      "Name": "位置Y",
-      "Description": ""
+      "Name": "Position: Y Offset",
+      "Description": "Light position offset along the Y axis relative to the player."
     },
     {
       "Field": "offsetZ",
-      "Name": "位置Z",
-      "Description": ""
+      "Name": "Position: Z Offset",
+      "Description": "Light position offset along the Z axis relative to the player."
     },
     {
       "Field": "diffuseR",
-      "Name": "デフューズR",
-      "Description": ""
+      "Name": "Diffuse: Red",
+      "Description": "Red component of the diffuse light color."
     },
     {
       "Field": "diffuseG",
-      "Name": "デフューズG",
-      "Description": ""
+      "Name": "Diffuse: Green",
+      "Description": "Green component of the diffuse light color."
     },
     {
       "Field": "diffuseB",
-      "Name": "デフューズB",
-      "Description": ""
+      "Name": "Diffuse: Blue",
+      "Description": "Blue component of the diffuse light color."
     },
     {
       "Field": "dummy0",
-      "Name": "ダミー",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "specularR",
-      "Name": "スペキュラR",
-      "Description": ""
+      "Name": "Specular: Red",
+      "Description": "Red component of the specular highlight color."
     },
     {
       "Field": "specularG",
-      "Name": "スペキュラG",
-      "Description": ""
+      "Name": "Specular: Green",
+      "Description": "Green component of the specular highlight color."
     },
     {
       "Field": "specularB",
-      "Name": "スペキュラB",
-      "Description": ""
+      "Name": "Specular: Blue",
+      "Description": "Blue component of the specular highlight color."
     },
     {
       "Field": "dummy1",
-      "Name": "ダミー",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "diffuseA",
-      "Name": "デフューズA",
-      "Description": ""
+      "Name": "Diffuse: Alpha",
+      "Description": "Alpha (intensity) component of the diffuse light."
     },
     {
       "Field": "specularA",
-      "Name": "スペキュラA",
-      "Description": ""
+      "Name": "Specular: Alpha",
+      "Description": "Alpha (intensity) component of the specular light."
     },
     {
       "Field": "radius",
-      "Name": "ライトの半径",
-      "Description": ""
+      "Name": "Light Radius",
+      "Description": "Radius of influence for the light source."
     },
     {
       "Field": "priority",
-      "Name": "優先度",
-      "Description": ""
+      "Name": "Priority",
+      "Description": "Determines rendering or evaluation priority when multiple lights overlap."
     },
     {
       "Field": "depthShadow",
-      "Name": "影の濃さ",
-      "Description": ""
+      "Name": "Shadow Depth",
+      "Description": "Intensity of shadows cast by this light."
     },
     {
       "Field": "blinkTimeMax",
-      "Name": "明滅の時間(最大)",
-      "Description": ""
+      "Name": "Blink Duration Max",
+      "Description": "Maximum duration of light flickering."
     },
     {
       "Field": "blinkTimeMin",
-      "Name": "明滅の時間(最小)",
-      "Description": ""
+      "Name": "Blink Duration Min",
+      "Description": "Minimum duration of light flickering."
     },
     {
       "Field": "blinkPower",
-      "Name": "明滅の強さ",
-      "Description": ""
+      "Name": "Blink Intensity",
+      "Description": "Strength of light flickering effect."
     },
     {
       "Field": "windDepthShadow",
-      "Name": "影響後の影の濃さ",
-      "Description": ""
+      "Name": "Wind-Affected Shadow Depth",
+      "Description": "Shadow depth when influenced by wind effects."
     },
     {
       "Field": "windBlinkTimeMax",
-      "Name": "影響後の明滅の時間(最大)",
-      "Description": ""
+      "Name": "Wind-Affected Blink Duration Max",
+      "Description": "Maximum flicker duration under wind influence."
     },
     {
       "Field": "windBlinkTimeMin",
-      "Name": "影響後の明滅の時間(最小)",
-      "Description": ""
+      "Name": "Wind-Affected Blink Duration Min",
+      "Description": "Minimum flicker duration under wind influence."
     },
     {
       "Field": "windBlinkPower",
-      "Name": "影響後の明滅の強さ",
-      "Description": ""
+      "Name": "Wind-Affected Blink Intensity",
+      "Description": "Flicker intensity when affected by wind."
     },
     {
       "Field": "enableShadow",
-      "Name": "影を落とす",
-      "Description": ""
+      "Name": "Enable Shadow Casting",
+      "Description": "Determines whether this light casts shadows."
     },
     {
       "Field": "enableWind",
-      "Name": "風の影響を受ける",
-      "Description": ""
+      "Name": "Enable Wind Influence",
+      "Description": "Determines whether the light is affected by wind-based effects."
     },
     {
       "Field": "dummy3",
-      "Name": "ダミー",
+      "Name": "Padding",
       "Description": ""
     }
   ]

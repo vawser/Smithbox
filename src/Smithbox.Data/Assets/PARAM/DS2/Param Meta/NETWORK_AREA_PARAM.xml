@@ -13,6 +13,6 @@
         <enableMultiPlay  IsBool=""/>
         <enableRingSearch  IsBool=""/>
         <enableBreakInSearch  IsBool=""/>
-        <dummy />
+        <dummy Padding="" />
     </Field>
 </PARAMMETA>

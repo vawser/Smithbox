@@ -19,6 +19,6 @@
         <repository  IsBool=""/>
         <shop  IsBool=""/>
         <equipWeaponArmor  IsBool=""/>
-        <padding />
+        <padding Padding="" />
     </Field>
 </PARAMMETA>

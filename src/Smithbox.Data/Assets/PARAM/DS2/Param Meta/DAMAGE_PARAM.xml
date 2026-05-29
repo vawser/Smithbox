@@ -2,8 +2,8 @@
 <PARAMMETA XmlVersion="0">
     <Field>
         <damageCategory  Refs="DamageCtrlParam"/>
-        <childDamage  Refs="EnemyDamageParam, PlayerDamageParam, SystemDamageParam"/>
-        <damageGroup  Refs="EnemyDamageParam, PlayerDamageParam, SystemDamageParam"/>
+        <childDamage RefGroup="damageparam"/>
+        <damageGroup />
         <damage01 />
         <damage02 />
         <damage03 />
@@ -24,14 +24,14 @@
         <radius />
         <length />
         <hitDistance />
-        <downAttackFlag />
-        <onceFlag />
-        <hitFlagOwner />
-        <hitFlagFriend />
-        <hitFlagEnemy />
-        <hitFlagNeutral />
-        <hitFlagMap />
-        <hitFlagObj />
+        <downAttackFlag IsBool="" />
+        <onceFlag IsBool="" />
+        <hitFlagOwner IsBool="" />
+        <hitFlagFriend IsBool="" />
+        <hitFlagEnemy IsBool="" />
+        <hitFlagNeutral IsBool="" />
+        <hitFlagMap IsBool="" />
+        <hitFlagObj IsBool="" />
         <directionType  Enum="DAMAGE_DIRECTION_TYPE"/>
         <guardDirectionType  Enum="DAMAGE_DIRECTION_TYPE"/>
         <hitPosType  Enum="DAMAGE_HIT_POS_TYPE"/>
@@ -59,12 +59,12 @@
         <flipHitModelType  Enum="DAMAGE_MODEL_TYPE"/>
         <damagOverwrite  IsBool=""/>
         <disallowInvincible  IsBool=""/>
-        <flipFlagMapFloor />
-        <flipFlagMapWall />
-        <flipFlagObj />
-        <isDoorCheck />
-        <expandSfxDisable />
-        <dummy5 />
+        <flipFlagMapFloor IsBool="" />
+        <flipFlagMapWall IsBool="" />
+        <flipFlagObj IsBool="" />
+        <isDoorCheck IsBool="" />
+        <expandSfxDisable IsBool="" />
+        <dummy5 Padding="" />
         <flipHitRadius />
         <flipHitLength />
         <grabParamId  Refs="GrabParam"/>

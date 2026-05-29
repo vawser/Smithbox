@@ -1,0 +1,203 @@
+{
+  "Name": "WeaponStatsAffectParam",
+  "Groups": [
+    {
+      "Key": "PhysicalStrength",
+      "Names": [
+          {
+            "Language": "English",
+            "Name": "Physical Strength"
+          }
+      ],
+      "Fields": [
+        "physicalByStrength0",
+        "physicalByStrength1",
+        "physicalByStrength2",
+        "physicalByStrength3",
+        "physicalByStrength4",
+        "physicalByStrength5",
+        "physicalByStrength6",
+        "physicalByStrength7",
+        "physicalByStrength8",
+        "physicalByStrength9",
+        "physicalByStrength10"
+      ]
+    },
+    {
+      "Key": "PhysicalDexterity",
+      "Names": [
+          {
+            "Language": "English",
+            "Name": "Physical Dexterity"
+          }
+      ],
+      "Fields": [
+        "physicalByDexterity0",
+        "physicalByDexterity1",
+        "physicalByDexterity2",
+        "physicalByDexterity3",
+        "physicalByDexterity4",
+        "physicalByDexterity5",
+        "physicalByDexterity6",
+        "physicalByDexterity7",
+        "physicalByDexterity8",
+        "physicalByDexterity9",
+        "physicalByDexterity10"
+      ]
+    },
+    {
+      "Key": "Magic",
+      "Names": [
+          {
+            "Language": "English",
+            "Name": "Magic"
+          }
+      ],
+      "Fields": [
+        "magic0",
+        "magic1",
+        "magic2",
+        "magic3",
+        "magic4",
+        "magic5",
+        "magic6",
+        "magic7",
+        "magic8",
+        "magic9",
+        "magic10"
+      ]
+    },
+    {
+      "Key": "Lightning",
+      "Names": [
+          {
+            "Language": "English",
+            "Name": "Lightning"
+          }
+      ],
+      "Fields": [
+        "thunder0",
+        "thunder1",
+        "thunder2",
+        "thunder3",
+        "thunder4",
+        "thunder5",
+        "thunder6",
+        "thunder7",
+        "thunder8",
+        "thunder9",
+        "thunder10"
+      ]
+    },
+    {
+      "Key": "Fire",
+      "Names": [
+          {
+            "Language": "English",
+            "Name": "Fire"
+          }
+      ],
+      "Fields": [
+        "fire0",
+        "fire1",
+        "fire2",
+        "fire3",
+        "fire4",
+        "fire5",
+        "fire6",
+        "fire7",
+        "fire8",
+        "fire9",
+        "fire10"
+      ]
+    },
+    {
+      "Key": "Dark",
+      "Names": [
+          {
+            "Language": "English",
+            "Name": "Dark"
+          }
+      ],
+      "Fields": [
+        "dark0",
+        "dark1",
+        "dark2",
+        "dark3",
+        "dark4",
+        "dark5",
+        "dark6",
+        "dark7",
+        "dark8",
+        "dark9",
+        "dark10"
+      ]
+    },
+    {
+      "Key": "Poison",
+      "Names": [
+          {
+            "Language": "English",
+            "Name": "Poison"
+          }
+      ],
+      "Fields": [
+        "poison0",
+        "poison1",
+        "poison2",
+        "poison3",
+        "poison4",
+        "poison5",
+        "poison6",
+        "poison7",
+        "poison8",
+        "poison9",
+        "poison10"
+      ]
+    },
+    {
+      "Key": "Bleed",
+      "Names": [
+          {
+            "Language": "English",
+            "Name": "Bleed"
+          }
+      ],
+      "Fields": [
+        "bleeding0",
+        "bleeding1",
+        "bleeding2",
+        "bleeding3",
+        "bleeding4",
+        "bleeding5",
+        "bleeding6",
+        "bleeding7",
+        "bleeding8",
+        "bleeding9",
+        "bleeding10"
+      ]
+    },
+    {
+      "Key": "PhysicalEnchanted",
+      "Names": [
+          {
+            "Language": "English",
+            "Name": "Physical Enchanted"
+          }
+      ],
+      "Fields": [
+        "physicalByEnchant0",
+        "physicalByEnchant1",
+        "physicalByEnchant2",
+        "physicalByEnchant3",
+        "physicalByEnchant4",
+        "physicalByEnchant5",
+        "physicalByEnchant6",
+        "physicalByEnchant7",
+        "physicalByEnchant8",
+        "physicalByEnchant9",
+        "physicalByEnchant10"
+      ]
+    }
+  ]
+}

@@ -8,6 +8,6 @@
         <DrawDist />
         <ShadowCastDist />
         <BlurDist />
-        <pading />
+        <pading Padding="" />
     </Field>
 </PARAMMETA>

@@ -2,67 +2,67 @@
   "Param": "KEY_GUIDE_PARAM",
   "Type": "KEY_GUIDE_PARAM",
   "Name": "KEY_GUIDE_PARAM",
-  "Description": "",
+  "Description": "Defines contextual key guide display rules, including spatial trigger volume, orientation constraints, and UI text for in-world interaction prompts.",
   "Fields": [
     {
       "Field": "textId",
-      "Name": "テキストID",
-      "Description": ""
+      "Name": "Text ID",
+      "Description": "ID of the localized text displayed for the key guide prompt."
     },
     {
       "Field": "width_radius",
-      "Name": "X軸半長or半径",
-      "Description": ""
+      "Name": "X-Axis Half Extent / Radius",
+      "Description": "Horizontal size of the interaction trigger area, either as half-width or radius depending on shape type."
     },
     {
       "Field": "height",
-      "Name": "Y軸半長",
-      "Description": ""
+      "Name": "Y-Axis Half Extent",
+      "Description": "Vertical size of the interaction trigger volume."
     },
     {
       "Field": "depth",
-      "Name": "Z軸半長",
-      "Description": ""
+      "Name": "Z-Axis Half Extent",
+      "Description": "Forward/backward size of the interaction trigger volume."
     },
     {
       "Field": "depthOffset",
-      "Name": "Z軸オフセット",
-      "Description": ""
+      "Name": "Z-Axis Offset",
+      "Description": "Offset applied along the Z-axis to shift the trigger volume position."
     },
     {
       "Field": "shapeType",
-      "Name": "形状",
-      "Description": ""
+      "Name": "Shape Type",
+      "Description": "Defines the geometric shape used for the interaction trigger area (e.g., box, sphere)."
     },
     {
       "Field": "angleType",
-      "Name": "ダミポリ方向",
-      "Description": ""
+      "Name": "Dummy Poly Direction Type",
+      "Description": "Determines how the trigger area is oriented based on a reference dummy poly or direction rule."
     },
     {
       "Field": "angleDeg",
-      "Name": "許容角度",
-      "Description": ""
+      "Name": "Allowed Angle",
+      "Description": "Maximum angle tolerance for triggering the key guide based on player orientation."
     },
     {
       "Field": "bFollow",
-      "Name": "追従",
-      "Description": ""
+      "Name": "Follow Target",
+      "Description": "If enabled, the key guide trigger area follows the associated dummy poly or target object."
     },
     {
       "Field": "dummyPolyId",
-      "Name": "ダミポリID",
-      "Description": ""
+      "Name": "Dummy Poly ID",
+      "Description": "Identifier for the reference dummy polygon used for positioning and orientation."
     },
     {
       "Field": "bEnableActing",
-      "Name": "アクション中表示可能",
-      "Description": ""
+      "Name": "Allow During Actions",
+      "Description": "Determines whether the key guide can be displayed while the player is performing actions."
     },
     {
       "Field": "posAngleDeg",
-      "Name": "位置許容角度",
-      "Description": ""
+      "Name": "Position Angle Tolerance",
+      "Description": "Allowed angular deviation for the player's position relative to the trigger before the key guide activates."
     }
   ]
 }

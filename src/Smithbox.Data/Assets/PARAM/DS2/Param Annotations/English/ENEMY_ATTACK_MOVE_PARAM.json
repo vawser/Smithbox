@@ -2,91 +2,91 @@
   "Param": "ENEMY_ATTACK_MOVE_PARAM",
   "Type": "ENEMY_ATTACK_MOVE_PARAM",
   "Name": "ENEMY_ATTACK_MOVE_PARAM",
-  "Description": "",
+  "Description": "Defines movement, rotation, timing, and behavior modifiers used by enemy attacks, including melee dash behavior, ranged movement penalties, and attack tracking adjustments.",
   "Fields": [
     {
       "Field": "fAttackDashAcceleration",
-      "Name": "近接攻撃制御 歩行攻撃移動加速度 [m/sec^2]",
-      "Description": ""
+      "Name": "Melee Attack: Movement Acceleration",
+      "Description": "Acceleration (m/s²) applied when an enemy moves forward during a melee attack."
     },
     {
       "Field": "fAttackDashSpeed",
-      "Name": "近接攻撃制御 歩行攻撃移動速度 [m/sec]",
-      "Description": ""
+      "Name": "Melee Attack: Movement Speed",
+      "Description": "Movement speed (m/s) used during melee attack dash behavior."
     },
     {
       "Field": "fAttackDashRotationLowSpeed",
-      "Name": "攻撃制御 低速旋回速度 [deg/sec]",
-      "Description": ""
+      "Name": "Attack Rotation Speed (Low Speed)",
+      "Description": "Turning speed (deg/s) when the enemy is moving slowly during an attack."
     },
     {
       "Field": "fAttackDashRotationHighSpeed",
-      "Name": "攻撃制御 高速旋回速度 [deg/sec]",
-      "Description": ""
+      "Name": "Attack Rotation Speed (High Speed)",
+      "Description": "Turning speed (deg/s) when the enemy is moving quickly during an attack."
     },
     {
       "Field": "fAttackDashRotSpeedMinBorder",
-      "Name": "攻撃制御 低速旋回判定速度[m/sec]",
-      "Description": ""
+      "Name": "Low-Speed Rotation Threshold",
+      "Description": "Movement speed threshold (m/s) below which low-speed rotation rules are applied."
     },
     {
       "Field": "fAttackDashRotSpeedMaxBorder",
-      "Name": "攻撃制御 高速旋回判定速度[m/sec]",
-      "Description": ""
+      "Name": "High-Speed Rotation Threshold",
+      "Description": "Movement speed threshold (m/s) above which high-speed rotation rules are applied."
     },
     {
       "Field": "fAttackDashRange",
-      "Name": "近接攻撃制御 歩行攻撃攻撃範囲 [m]",
-      "Description": ""
+      "Name": "Melee Attack Range",
+      "Description": "Effective attack range (m) used during melee dash attacks."
     },
     {
       "Field": "fAttackBackSwingSpeed",
-      "Name": "接近攻撃制御 攻撃開始部速度倍率 [倍]",
-      "Description": ""
+      "Name": "Attack Start Speed %",
+      "Description": "Speed multiplier applied during the initial wind-up phase of an attack."
     },
     {
       "Field": "fAttackFollowSwingSpeed",
-      "Name": "接近攻撃制御 攻撃終了部速度倍率 [倍]",
-      "Description": ""
+      "Name": "Attack End Speed %",
+      "Description": "Speed multiplier applied during the follow-through phase of an attack."
     },
     {
       "Field": "fAttackSecondRotationRate",
-      "Name": "攻撃制御 二次旋回倍率 [倍]",
-      "Description": ""
+      "Name": "Secondary Rotation %",
+      "Description": "Multiplier applied to secondary turning adjustments during attack tracking."
     },
     {
       "Field": "fAttackTimeOut",
-      "Name": "接近攻撃制御 タイムアウト時間 [sec]",
-      "Description": ""
+      "Name": "Attack Timeout Duration",
+      "Description": "Maximum duration (sec) allowed for attack movement before timing out."
     },
     {
       "Field": "fAttackEstimateFutureTime",
-      "Name": "攻撃制御 位置予測時間 [sec]",
-      "Description": ""
+      "Name": "Target Prediction Time",
+      "Description": "Time (sec) used to predict target future position for attack tracking."
     },
     {
       "Field": "fShotMoveSpeedRate",
-      "Name": "射撃制御 移動低下倍率 [倍]",
-      "Description": ""
+      "Name": "Ranged Movement Slowdown %",
+      "Description": "Movement speed multiplier applied while performing ranged attacks."
     },
     {
       "Field": "rotationOffsetDummyPoly",
-      "Name": "旋回軸ダミポリ番号",
-      "Description": ""
+      "Name": "Rotation Pivot Dummy Polygon ID",
+      "Description": "Identifier for the dummy polygon used as the rotation pivot axis."
     },
     {
       "Field": "attackDashFailedCancel",
-      "Name": "ブレードダッシュ失敗時キャンセルフラグ",
-      "Description": ""
+      "Name": "Cancel on Failed Attack Dash",
+      "Description": "Flag that cancels attack behavior if a dash attempt fails."
     },
     {
       "Field": "disableCollisionCheck",
-      "Name": "障害物判定をしない",
-      "Description": ""
+      "Name": "Disable Obstacle Collision Check",
+      "Description": "If enabled, ignores obstacle collision detection during attack movement."
     },
     {
       "Field": "dummy1",
-      "Name": "ダミー",
+      "Name": "Padding",
       "Description": ""
     }
   ]

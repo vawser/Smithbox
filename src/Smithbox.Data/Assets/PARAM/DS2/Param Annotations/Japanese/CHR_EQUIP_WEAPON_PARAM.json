@@ -1,0 +1,213 @@
+{
+  "Param": "CHR_EQUIP_WEAPON_PARAM",
+  "Type": "CHR_EQUIP_WEAPON_PARAM",
+  "Name": "CHR_EQUIP_WEAPON_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "behaviorId",
+      "Name": "行動パラメータＩＤ",
+      "Description": ""
+    },
+    {
+      "Field": "cullingId00",
+      "Name": "カリンググループID1",
+      "Description": ""
+    },
+    {
+      "Field": "cullingId01",
+      "Name": "カリンググループID2",
+      "Description": ""
+    },
+    {
+      "Field": "reserved00",
+      "Name": "予備",
+      "Description": ""
+    },
+    {
+      "Field": "durability",
+      "Name": "耐久度",
+      "Description": ""
+    },
+    {
+      "Field": "material",
+      "Name": "材質",
+      "Description": ""
+    },
+    {
+      "Field": "rightBrokenSfxId",
+      "Name": "破損SFXID 右手",
+      "Description": ""
+    },
+    {
+      "Field": "leftBrokenSfxId",
+      "Name": "破損SFXID 左手",
+      "Description": ""
+    },
+    {
+      "Field": "rightBrokenDummyPolyId",
+      "Name": "破損SFXダミポリID 右手",
+      "Description": ""
+    },
+    {
+      "Field": "leftBrokenDummyPolyId",
+      "Name": "破損SFXダミポリID 左手",
+      "Description": ""
+    },
+    {
+      "Field": "emissiveType",
+      "Name": "自己照明種類",
+      "Description": ""
+    },
+    {
+      "Field": "reserved01",
+      "Name": "予備",
+      "Description": ""
+    },
+    {
+      "Field": "brokenSoundType",
+      "Name": "破損サウンドタイプ",
+      "Description": ""
+    },
+    {
+      "Field": "residentSfxId00",
+      "Name": "常駐SFXID",
+      "Description": ""
+    },
+    {
+      "Field": "residentSfxId01",
+      "Name": "常駐SFXID",
+      "Description": ""
+    },
+    {
+      "Field": "residentSfxId02",
+      "Name": "常駐SFXID",
+      "Description": ""
+    },
+    {
+      "Field": "residentSfxId03",
+      "Name": "常駐SFXID",
+      "Description": ""
+    },
+    {
+      "Field": "residentSfxAttachType00",
+      "Name": "常駐SFX追従タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "residentSfxAttachType01",
+      "Name": "常駐SFX追従タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "residentSfxAttachType02",
+      "Name": "常駐SFX追従タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "residentSfxAttachType03",
+      "Name": "常駐SFX追従タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "residentSfxDummyPolyId00",
+      "Name": "常駐SFX開始ID",
+      "Description": ""
+    },
+    {
+      "Field": "residentSfxDummyPolyId01",
+      "Name": "常駐SFX開始ID",
+      "Description": ""
+    },
+    {
+      "Field": "residentSfxDummyPolyId02",
+      "Name": "常駐SFX開始ID",
+      "Description": ""
+    },
+    {
+      "Field": "residentSfxDummyPolyId03",
+      "Name": "常駐SFX開始ID",
+      "Description": ""
+    },
+    {
+      "Field": "residentSfxDummyPolyIdEnd00",
+      "Name": "常駐SFX終了ID",
+      "Description": ""
+    },
+    {
+      "Field": "residentSfxDummyPolyIdEnd01",
+      "Name": "常駐SFX終了ID",
+      "Description": ""
+    },
+    {
+      "Field": "residentSfxDummyPolyIdEnd02",
+      "Name": "常駐SFX終了ID",
+      "Description": ""
+    },
+    {
+      "Field": "residentSfxDummyPolyIdEnd03",
+      "Name": "常駐SFX終了ID",
+      "Description": ""
+    },
+    {
+      "Field": "residentSfxIdInterval00",
+      "Name": "常駐SFX 追従ID間隔",
+      "Description": ""
+    },
+    {
+      "Field": "residentSfxIdInterval01",
+      "Name": "常駐SFX 追従ID間隔",
+      "Description": ""
+    },
+    {
+      "Field": "residentSfxIdInterval02",
+      "Name": "常駐SFX 追従ID間隔",
+      "Description": ""
+    },
+    {
+      "Field": "residentSfxIdInterval03",
+      "Name": "常駐SFX 追従ID間隔",
+      "Description": ""
+    },
+    {
+      "Field": "residentSfxSetType00",
+      "Name": "常駐SFX開始",
+      "Description": ""
+    },
+    {
+      "Field": "residentSfxSetType01",
+      "Name": "常駐SFX開始",
+      "Description": ""
+    },
+    {
+      "Field": "residentSfxSetType02",
+      "Name": "常駐SFX開始",
+      "Description": ""
+    },
+    {
+      "Field": "residentSfxSetType03",
+      "Name": "常駐SFX開始",
+      "Description": ""
+    },
+    {
+      "Field": "residentSfxEndType00",
+      "Name": "常駐SFX終了",
+      "Description": ""
+    },
+    {
+      "Field": "residentSfxEndType01",
+      "Name": "常駐SFX終了",
+      "Description": ""
+    },
+    {
+      "Field": "residentSfxEndType02",
+      "Name": "常駐SFX終了",
+      "Description": ""
+    },
+    {
+      "Field": "residentSfxEndType03",
+      "Name": "常駐SFX終了",
+      "Description": ""
+    }
+  ]
+}

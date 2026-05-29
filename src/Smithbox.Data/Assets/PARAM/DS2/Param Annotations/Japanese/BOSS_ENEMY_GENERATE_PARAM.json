@@ -1,0 +1,43 @@
+{
+  "Param": "BOSS_ENEMY_GENERATE_PARAM",
+  "Type": "BOSS_ENEMY_GENERATE_PARAM",
+  "Name": "BOSS_ENEMY_GENERATE_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "generatorBeginId",
+      "Name": "ジェネレータ開始ＩＤ",
+      "Description": ""
+    },
+    {
+      "Field": "generatorEndId",
+      "Name": "ジェネレータ終了ＩＤ",
+      "Description": ""
+    },
+    {
+      "Field": "dummyPolyBeginId",
+      "Name": "ダミポリ開始ＩＤ",
+      "Description": ""
+    },
+    {
+      "Field": "dummyPolyEndId",
+      "Name": "ダミポリ停止ＩＤ",
+      "Description": ""
+    },
+    {
+      "Field": "isCopyPlayerProtector",
+      "Name": "プレイヤー防具を引き継ぐ",
+      "Description": ""
+    },
+    {
+      "Field": "isAnotherWorld",
+      "Name": "異次元空間生成",
+      "Description": ""
+    },
+    {
+      "Field": "dummy",
+      "Name": "ダミー",
+      "Description": ""
+    }
+  ]
+}

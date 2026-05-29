@@ -1,0 +1,38 @@
+{
+  "Param": "MAP_VOLUME_FOG_PARAM",
+  "Type": "MAP_VOLUME_FOG_PARAM",
+  "Name": "MAP_VOLUME_FOG_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "colorR",
+      "Name": "R",
+      "Description": ""
+    },
+    {
+      "Field": "colorG",
+      "Name": "G",
+      "Description": ""
+    },
+    {
+      "Field": "colorB",
+      "Name": "B",
+      "Description": ""
+    },
+    {
+      "Field": "colorA",
+      "Name": "A",
+      "Description": ""
+    },
+    {
+      "Field": "dist",
+      "Name": "フォグの距離",
+      "Description": ""
+    },
+    {
+      "Field": "density",
+      "Name": "フォグの強さ",
+      "Description": ""
+    }
+  ]
+}

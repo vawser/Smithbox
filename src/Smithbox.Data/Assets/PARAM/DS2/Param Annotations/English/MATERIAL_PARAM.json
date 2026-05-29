@@ -2,21 +2,21 @@
   "Param": "MATERIAL_PARAM",
   "Type": "MATERIAL_PARAM",
   "Name": "MATERIAL_PARAM",
-  "Description": "",
+  "Description": "Defines material properties used for physical and gameplay interactions such as fluid behavior and projectile penetration.",
   "Fields": [
     {
       "Field": "isLiquid",
-      "Name": "液体か？",
-      "Description": ""
+      "Name": "Is Liquid",
+      "Description": "Determines whether the material behaves as a liquid (e.g., water, lava)."
     },
     {
       "Field": "isArrowPenetrate",
-      "Name": "矢が刺さるか？",
-      "Description": ""
+      "Name": "Allows Arrow Penetration",
+      "Description": "Determines whether arrows can stick into or pass through the material."
     },
     {
       "Field": "padding",
-      "Name": "予約",
+      "Name": "Padding",
       "Description": ""
     }
   ]

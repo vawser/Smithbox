@@ -2,112 +2,112 @@
   "Param": "WEAPON_ATTACK_MOTION_PARAM",
   "Type": "WEAPON_ATTACK_MOTION_PARAM",
   "Name": "WEAPON_ATTACK_MOTION_PARAM",
-  "Description": "",
+  "Description": "Defines weapon attack motion behavior, including animation playback, directional control, timing, and linked damage/bullet data for attacks.",
   "Fields": [
     {
       "Field": "attackAnim",
-      "Name": "攻撃アニメ",
-      "Description": ""
+      "Name": "Attack Animation",
+      "Description": "Animation ID used for the weapon attack motion."
     },
     {
       "Field": "controlType",
-      "Name": "制御",
-      "Description": ""
+      "Name": "Control Type",
+      "Description": "Defines how the attack motion is controlled or adjusted during execution."
     },
     {
       "Field": "dummy0",
-      "Name": "ダミー",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "startPlaySpeed",
-      "Name": "アニメ速度 開始部",
-      "Description": ""
+      "Name": "Start Animation Speed",
+      "Description": "Playback speed multiplier at the beginning of the attack animation."
     },
     {
       "Field": "endPlaySpeed",
-      "Name": "アニメ速度 終了部",
-      "Description": ""
+      "Name": "End Animation Speed",
+      "Description": "Playback speed multiplier at the end of the attack animation."
     },
     {
       "Field": "rotationSpeedScale",
-      "Name": "旋回速度 倍率",
-      "Description": ""
+      "Name": "Rotation Speed Scale",
+      "Description": "Multiplier affecting how quickly the character rotates during the attack."
     },
     {
       "Field": "limitAngleScale",
-      "Name": "限界角度 倍率",
-      "Description": ""
+      "Name": "Angle Limit Scale",
+      "Description": "Multiplier controlling maximum allowable rotation angle during attack motion."
     },
     {
       "Field": "predictPositionTime",
-      "Name": "位置予測 時間",
-      "Description": ""
+      "Name": "Position Prediction Time",
+      "Description": "Time used to predict target position for directional attacks."
     },
     {
       "Field": "wristTiltRate",
-      "Name": "手首角度 割合",
-      "Description": ""
+      "Name": "Wrist Tilt Rate",
+      "Description": "Amount of wrist tilt applied during attack animation."
     },
     {
       "Field": "staggerHandMaxBlendWeight",
-      "Name": "攻撃軌跡ブレ 最大ブレンド率",
-      "Description": ""
+      "Name": "Hand Stagger Blend Weight",
+      "Description": "Maximum blend weight applied to hand motion staggering."
     },
     {
       "Field": "staggerPelvisMaxBlendWeight",
-      "Name": "ステータス不足 攻撃よれ 最大ブレンド率",
-      "Description": ""
+      "Name": "Pelvis Stagger Blend Weight",
+      "Description": "Maximum blend weight applied to body/pelvis staggering when stats are insufficient."
     },
     {
       "Field": "attackPushBackRate",
-      "Name": "押し返し反映割合",
-      "Description": ""
+      "Name": "Attack Pushback Rate",
+      "Description": "Amount of pushback applied during attack impact."
     },
     {
       "Field": "damageId01",
-      "Name": "ダメージID_01",
-      "Description": ""
+      "Name": "Damage ID 01",
+      "Description": "Reference to primary damage configuration."
     },
     {
       "Field": "damageId02",
-      "Name": "ダメージID_02",
-      "Description": ""
+      "Name": "Damage ID 02",
+      "Description": "Reference to secondary damage configuration."
     },
     {
       "Field": "damageId03",
-      "Name": "ダメージID_03",
-      "Description": ""
+      "Name": "Damage ID 03",
+      "Description": "Reference to tertiary damage configuration."
     },
     {
       "Field": "bulletId01",
-      "Name": "バレットID_01",
-      "Description": ""
+      "Name": "Bullet ID 01",
+      "Description": "Primary projectile/bullet reference."
     },
     {
       "Field": "bulletDamageId01",
-      "Name": "バレットダメージID_01",
-      "Description": ""
+      "Name": "Bullet Damage ID 01",
+      "Description": "Damage profile linked to bullet 01."
     },
     {
       "Field": "bulletId02",
-      "Name": "バレットID_02",
-      "Description": ""
+      "Name": "Bullet ID 02",
+      "Description": "Secondary projectile/bullet reference."
     },
     {
       "Field": "bulletDamageId02",
-      "Name": "バレットダメージID_02",
-      "Description": ""
+      "Name": "Bullet Damage ID 02",
+      "Description": "Damage profile linked to bullet 02."
     },
     {
       "Field": "bulletId03",
-      "Name": "バレットID_03",
-      "Description": ""
+      "Name": "Bullet ID 03",
+      "Description": "Tertiary projectile/bullet reference."
     },
     {
       "Field": "bulletDamageId03",
-      "Name": "バレットダメージID_03",
-      "Description": ""
+      "Name": "Bullet Damage ID 03",
+      "Description": "Damage profile linked to bullet 03."
     }
   ]
 }

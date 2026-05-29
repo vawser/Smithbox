@@ -11,6 +11,6 @@
         <physicalByCrude  IsBool=""/>
         <physicalByEnchanted  IsBool=""/>
         <physicalByAbyss  IsBool=""/>
-        <padding />
+        <padding Padding="" />
     </Field>
 </PARAMMETA>

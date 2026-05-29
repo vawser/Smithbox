@@ -3,8 +3,8 @@
     <Field>
         <genderType  Enum="PLAYER_GENDER_TYPE"/>
         <livingType  Enum="PLAYER_HUMAN_CONDITIONS_TYPE"/>
-        <bodyType />
-        <pad01 />
+        <bodyType Refs="ChrEditParamBodyScale"/>
+        <pad01 Padding="" />
         <soulLevel />
         <lifeForceLevel />
         <soulPoint />
@@ -19,7 +19,7 @@
         <quicknessLevel />
         <luckLevel />
         <facePresetNo />
-        <pad00 />
+        <pad00 Padding="" />
         <beltItem01  Refs="ItemParam"/>
         <beltItem02  Refs="ItemParam"/>
         <beltItem03  Refs="ItemParam"/>
@@ -66,32 +66,32 @@
         <ringSlot04  Refs="ItemParam"/>
         <rightWeapon01Enhanced />
         <rightWeapon01Attribute  Enum="PLAYER_EQUIP_ATTRIBUTE_TYPE"/>
-        <dummyR1 />
+        <dummyR1 Padding="" />
         <rightWeapon02Enhanced />
         <rightWeapon02Attribute  Enum="PLAYER_EQUIP_ATTRIBUTE_TYPE"/>
-        <dummyR2 />
+        <dummyR2 Padding="" />
         <rightWeapon03Enhanced />
         <rightWeapon03Attribute  Enum="PLAYER_EQUIP_ATTRIBUTE_TYPE"/>
-        <dummyR3 />
+        <dummyR3 Padding="" />
         <leftWeapon01Enhanced />
         <leftWeapon01Attribute  Enum="PLAYER_EQUIP_ATTRIBUTE_TYPE"/>
-        <dummyL1 />
+        <dummyL1 Padding="" />
         <leftWeapon02Enhanced />
         <leftWeapon02Attribute  Enum="PLAYER_EQUIP_ATTRIBUTE_TYPE"/>
-        <dummyL2 />
+        <dummyL2 Padding="" />
         <leftWeapon03Enhanced />
         <leftWeapon03Attribute  Enum="PLAYER_EQUIP_ATTRIBUTE_TYPE"/>
-        <dummyL3 />
+        <dummyL3 Padding="" />
         <headArmorEnhanced />
         <bodyArmorEnhanced />
         <armArmorEnhanced />
         <legArmorEnhanced />
-        <bagItemParam01 />
-        <bagItemParam02 />
-        <bagItemParam03 />
+        <bagItemParam01 Refs="PlayerStatusItemParam" />
+        <bagItemParam02 Refs="PlayerStatusItemParam" />
+        <bagItemParam03 Refs="PlayerStatusItemParam" />
         <estusFlaskLvUsableCount />
         <estusFlaskLvHealPoint />
-        <dummy />
+        <dummy Padding="" />
         <arrowSlot01  Refs="ItemParam"/>
         <arrowSlot02  Refs="ItemParam"/>
         <boltSlot01  Refs="ItemParam"/>

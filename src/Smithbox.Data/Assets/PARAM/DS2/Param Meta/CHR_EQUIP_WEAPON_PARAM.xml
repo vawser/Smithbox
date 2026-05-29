@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PARAMMETA XmlVersion="0">
+    <Self FieldLayout="ChrEquipWeaponParam"/>
     <Field>
         <behaviorId />
         <cullingId00 />
         <cullingId01 />
-        <reserved00 />
+        <reserved00 Padding="" />
         <durability />
         <material  Enum="MATERIAL_TYPE_ENUM"/>
         <rightBrokenSfxId />
@@ -12,12 +13,12 @@
         <rightBrokenDummyPolyId />
         <leftBrokenDummyPolyId />
         <emissiveType  Enum="CHR_EMISSIVE_TYPE"/>
-        <reserved01 />
+        <reserved01 Padding="" />
         <brokenSoundType  Enum="EQUIP_BREAK_SOUND_MATERIAL_TYPE"/>
-        <residentSfxId00 />
-        <residentSfxId01 />
-        <residentSfxId02 />
-        <residentSfxId03 />
+        <residentSfxId00 ParticleAlias="" />
+        <residentSfxId01 ParticleAlias="" />
+        <residentSfxId02 ParticleAlias="" />
+        <residentSfxId03 ParticleAlias="" />
         <residentSfxAttachType00  Enum="CHR_RESIDENT_SFX_ATTACH_TYPE"/>
         <residentSfxAttachType01  Enum="CHR_RESIDENT_SFX_ATTACH_TYPE"/>
         <residentSfxAttachType02  Enum="CHR_RESIDENT_SFX_ATTACH_TYPE"/>

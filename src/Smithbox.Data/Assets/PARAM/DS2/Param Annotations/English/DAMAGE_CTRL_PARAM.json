@@ -2,312 +2,312 @@
   "Param": "DAMAGE_CTRL_PARAM",
   "Type": "DAMAGE_CTRL_PARAM",
   "Name": "DAMAGE_CTRL_PARAM",
-  "Description": "",
+  "Description": "Defines how an attack behaves when dealing damage, including hit reactions, guard interactions, knockback, stagger, environmental effects, vibration feedback, and distance-based damage scaling.",
   "Fields": [
     {
       "Field": "attackType",
-      "Name": "攻撃属性",
-      "Description": ""
+      "Name": "Attack Attribute",
+      "Description": "Specifies the attack or damage attribute type used by this damage entry."
     },
     {
       "Field": "objBreak",
-      "Name": "OBJ破壊",
-      "Description": ""
+      "Name": "Allow Object Destruction",
+      "Description": "Determines whether the attack can destroy breakable world objects."
     },
     {
       "Field": "armorBreak",
-      "Name": "アーマー無効",
-      "Description": ""
+      "Name": "Ignore Armor Attribute",
+      "Description": "Determines whether the attack ignores armor protection."
     },
     {
       "Field": "guardBreak",
-      "Name": "防御アクション無効",
-      "Description": ""
+      "Name": "Ignore Guard Attribute",
+      "Description": "Determines whether the attack ignores guard protection."
     },
     {
       "Field": "negatePoiseRate",
-      "Name": "強靭度無効化割合",
-      "Description": ""
+      "Name": "Poise Negation %",
+      "Description": "Percentage of the target's poise resistance ignored by the attack."
     },
     {
       "Field": "negateCutDamageRate",
-      "Name": "盾カット率無効化割合",
-      "Description": ""
+      "Name": "Shield Damage Reduction Negation %",
+      "Description": "Percentage of shield damage reduction ignored by the attack."
     },
     {
       "Field": "damageWeightType",
-      "Name": "攻撃時ウェイト",
-      "Description": ""
+      "Name": "Attack Weight Type",
+      "Description": "Specifies the weight category used for hit reactions and stagger calculations."
     },
     {
       "Field": "damageMotion",
-      "Name": "ダメージモーション",
-      "Description": ""
+      "Name": "Damage Animation",
+      "Description": "Animation played when the target takes damage."
     },
     {
       "Field": "deadMotion",
-      "Name": "死亡モーション",
-      "Description": ""
+      "Name": "Death Animation",
+      "Description": "Animation played when the target dies."
     },
     {
       "Field": "deadDamageMotion",
-      "Name": "死亡時ダメージモーション",
-      "Description": ""
+      "Name": "Death Damage Animation",
+      "Description": "Damage reaction animation played when the target receives a fatal hit."
     },
     {
       "Field": "isInstantDeath",
-      "Name": "即死フラグ",
-      "Description": ""
+      "Name": "Instant Death Flag",
+      "Description": "Determines whether the attack causes immediate death."
     },
     {
       "Field": "stun",
-      "Name": "気絶値",
-      "Description": ""
+      "Name": "Stun Value",
+      "Description": "Amount of stun buildup inflicted by the attack."
     },
     {
       "Field": "isDamageStaminaAlways",
-      "Name": "スタミナダメージ",
-      "Description": ""
+      "Name": "Always Damages Stamina",
+      "Description": "Determines whether the attack always inflicts stamina damage."
     },
     {
       "Field": "isHollowOnlyDamage",
-      "Name": "亡者ダメージ",
-      "Description": ""
+      "Name": "Hollow-Only Damage",
+      "Description": "Determines whether the damage only affects hollow or undead-type targets."
     },
     {
       "Field": "downStiff",
-      "Name": "ダウン硬直時間[sec]",
-      "Description": ""
+      "Name": "Knockdown Recovery Time [sec]",
+      "Description": "Duration the target remains incapacitated after being knocked down."
     },
     {
       "Field": "downStiffShortCut",
-      "Name": "ダウン硬直時間\u3000短縮時間[sec]",
-      "Description": ""
+      "Name": "Knockdown Recovery Reduction Time [sec]",
+      "Description": "Amount of time removed from the knockdown recovery duration."
     },
     {
       "Field": "damageRotateSpeed",
-      "Name": "ダメージ旋回速度[deg/sec]",
-      "Description": ""
+      "Name": "Damage Rotation Speed [deg/sec]",
+      "Description": "Maximum turning speed allowed while reacting to damage."
     },
     {
       "Field": "blowUpAccel",
-      "Name": "吹き飛び\u3000上昇速度[m/sec]",
-      "Description": ""
+      "Name": "Launch Upward Velocity [m/sec]",
+      "Description": "Initial upward velocity applied when the target is launched."
     },
     {
       "Field": "blowBrake",
-      "Name": "吹き飛び\u3000停止加速度[m/sec^2]",
-      "Description": ""
+      "Name": "Launch Deceleration [m/sec²]",
+      "Description": "Deceleration applied to launched movement."
     },
     {
       "Field": "lowerDmgStartTimeRate",
-      "Name": "下半身ダメージ しゃがみ行き時間 補正倍率[倍]",
-      "Description": ""
+      "Name": "Lower Body Damage Crouch Transition %",
+      "Description": "Multiplier affecting the transition time into a crouched lower-body damage state."
     },
     {
       "Field": "lowerDmgEndTimeRate",
-      "Name": "下半身ダメージ しゃがみ戻り時間 補正倍率[倍]",
-      "Description": ""
+      "Name": "Lower Body Damage Recovery %",
+      "Description": "Multiplier affecting the recovery time from a lower-body damage state."
     },
     {
       "Field": "guardStiffRate",
-      "Name": "ガード硬直 倍率[倍]",
-      "Description": ""
+      "Name": "Guard Stiffness %",
+      "Description": "Multiplier affecting guard stun duration."
     },
     {
       "Field": "guardReactionSpeed",
-      "Name": "ガード反動 速度[m/sec]",
-      "Description": ""
+      "Name": "Guard Reaction Speed [m/sec]",
+      "Description": "Movement speed applied during guard recoil."
     },
     {
       "Field": "guardReactionAddRate",
-      "Name": "ガード反動 加算自補正倍率[倍]",
-      "Description": ""
+      "Name": "Guard Reaction Additive %",
+      "Description": "Additional scaling factor applied to guard recoil."
     },
     {
       "Field": "guardReactionDecelerationSpeed",
-      "Name": "ガード反動 減速速度[m/sec]",
-      "Description": ""
+      "Name": "Guard Reaction Deceleration Speed [m/sec]",
+      "Description": "Rate at which guard recoil movement slows down."
     },
     {
       "Field": "guardReactionDecelerationTime",
-      "Name": "ガード反動 減速開始時間[sec]",
-      "Description": ""
+      "Name": "Guard Reaction Deceleration Speed [m/sec]",
+      "Description": "Rate at which guard recoil movement slows down."
     },
     {
       "Field": "guardRotationSpeed",
-      "Name": "ガード旋回速度[deg/sec]",
-      "Description": ""
+      "Name": "Guard Rotation Speed [deg/sec]",
+      "Description": "Turning speed allowed while in guard recoil."
     },
     {
       "Field": "guardAttackLevelType",
-      "Name": "ガード ガード弾きレベル",
-      "Description": ""
+      "Name": "Guard Deflection Level",
+      "Description": "Specifies the guard impact or deflection strength level."
     },
     {
       "Field": "isForceLower",
-      "Name": "強制下半身ダメージ",
-      "Description": ""
+      "Name": "Force Lower-Body Damage",
+      "Description": "Forces the target into a lower-body damage reaction."
     },
     {
       "Field": "objDamage",
-      "Name": "OBJダメージ値",
-      "Description": ""
+      "Name": "Object Damage Value",
+      "Description": "Damage dealt to destructible objects."
     },
     {
       "Field": "objAttackAttr",
-      "Name": "OBJ攻撃属性",
-      "Description": ""
+      "Name": "Object Attack Attribute",
+      "Description": "Attack attribute used specifically against objects."
     },
     {
       "Field": "cameraRumble",
-      "Name": "カメラノイズパラメータＩＤ",
-      "Description": ""
+      "Name": "Camera Shake Parameter ID",
+      "Description": "Reference ID for the camera shake effect triggered by the attack."
     },
     {
       "Field": "padRumble",
-      "Name": "パッド振動パラメータＩＤ",
-      "Description": ""
+      "Name": "Controller Vibration Parameter ID",
+      "Description": "Reference ID for controller vibration settings triggered by the attack."
     },
     {
       "Field": "rumbleTime",
-      "Name": "振動時間[sec]",
-      "Description": ""
+      "Name": "Vibration Duration [sec]",
+      "Description": "Length of controller or camera vibration."
     },
     {
       "Field": "rumbleDecStartRange",
-      "Name": "振動減衰開始距離[m]",
-      "Description": ""
+      "Name": "Vibration Falloff Start Distance [m]",
+      "Description": "Distance at which vibration intensity begins to decrease."
     },
     {
       "Field": "rumbleDecEndRange",
-      "Name": "振動減衰終了距離[m]",
-      "Description": ""
+      "Name": "Vibration Falloff End Distance [m]",
+      "Description": "Distance at which vibration effect fully fades out."
     },
     {
       "Field": "windPriority",
-      "Name": "風：優先度",
-      "Description": ""
+      "Name": "Wind Priority",
+      "Description": "Priority level of the wind effect generated by the attack."
     },
     {
       "Field": "windRadius",
-      "Name": "風：半径[m]",
-      "Description": ""
+      "Name": "Wind Radius [m]",
+      "Description": "Radius affected by the generated wind effect."
     },
     {
       "Field": "windMinSpeed",
-      "Name": "風：最小風力[m/s]",
-      "Description": ""
+      "Name": "Minimum Wind Speed [m/s]",
+      "Description": "Minimum wind force generated by the attack."
     },
     {
       "Field": "windMaxSpeed",
-      "Name": "風：最大風力[m/s]",
-      "Description": ""
+      "Name": "Maximum Wind Speed [m/s]",
+      "Description": "Maximum wind force generated by the attack."
     },
     {
       "Field": "windFrequency",
-      "Name": "風：周波数",
-      "Description": ""
+      "Name": "Wind Frequency",
+      "Description": "Frequency or oscillation rate of the wind effect."
     },
     {
       "Field": "windGinStartDistance",
-      "Name": "風：減衰開始処理",
-      "Description": ""
+      "Name": "Wind Falloff Start Distance",
+      "Description": "Distance at which wind attenuation processing begins."
     },
     {
       "Field": "windLife",
-      "Name": "風：延長寿命",
-      "Description": ""
+      "Name": "Wind Lifetime Extension",
+      "Description": "Additional lifetime duration for the wind effect."
     },
     {
       "Field": "windCateId",
-      "Name": "風：影響カテゴリ",
-      "Description": ""
+      "Name": "Wind Influence Category",
+      "Description": "Category ID defining which objects or systems are affected by the wind effect."
     },
     {
       "Field": "staggerTime",
-      "Name": "よろけ時間",
-      "Description": ""
+      "Name": "Stagger Duration",
+      "Description": "Amount of time the target remains staggered."
     },
     {
       "Field": "staggerMoveRate",
-      "Name": "よろけ移動倍率",
-      "Description": ""
+      "Name": "Stagger Movement %",
+      "Description": "Movement speed multiplier while staggered."
     },
     {
       "Field": "staggerRotRate",
-      "Name": "よろけ旋回倍率",
-      "Description": ""
+      "Name": "Stagger Rotation %",
+      "Description": "Rotation speed multiplier while staggered."
     },
     {
       "Field": "damageMotionWeightDisable",
-      "Name": "ウェイト計算無効",
-      "Description": ""
+      "Name": "Disable Weight Calculation",
+      "Description": "Disables weight-based hit reaction calculations."
     },
     {
       "Field": "headShotDisable",
-      "Name": "ヘッドショット無効設定",
-      "Description": ""
+      "Name": "Disable Headshots",
+      "Description": "Prevents the attack from triggering headshot effects or bonuses."
     },
     {
       "Field": "isWet",
-      "Name": "濡れる",
-      "Description": ""
+      "Name": "Applies Wet Status",
+      "Description": "Determines whether the attack applies a wet or soaked state."
     },
     {
       "Field": "damageImpactPowerType",
-      "Name": "ダメージ衝撃力タイプ",
-      "Description": ""
+      "Name": "Damage Impact Force Type",
+      "Description": "Specifies the physical impact force category of the attack."
     },
     {
       "Field": "wetId",
-      "Name": "濡れカテゴリ",
-      "Description": ""
+      "Name": "Wet Category",
+      "Description": "Category ID for the wet status effect applied by the attack."
     },
     {
       "Field": "pushBackRate",
-      "Name": "押し返し反映割合[倍]",
-      "Description": ""
+      "Name": "Pushback Application %",
+      "Description": "Multiplier affecting how much pushback force is applied."
     },
     {
       "Field": "poiseDamage",
-      "Name": "強靭度削り値",
-      "Description": ""
+      "Name": "Poise Damage",
+      "Description": "Amount of poise damage inflicted by the attack."
     },
     {
       "Field": "damageDistDecrementStart",
-      "Name": "ダメージ減衰距離 開始",
-      "Description": ""
+      "Name": "Damage Falloff Start Distance",
+      "Description": "Distance at which damage attenuation begins."
     },
     {
       "Field": "damageDistDecrementEnd",
-      "Name": "ダメージ減衰距離 終了",
-      "Description": ""
+      "Name": "Damage Falloff End Distance",
+      "Description": "Distance at which maximum damage attenuation is reached."
     },
     {
       "Field": "damageDecrementHpMaxRate",
-      "Name": "ダメージ値 最大減衰倍率",
-      "Description": ""
+      "Name": "Maximum HP Damage Falloff %",
+      "Description": "Minimum multiplier applied to HP damage after full distance attenuation."
     },
     {
       "Field": "damageDecrementStaminaMaxRate",
-      "Name": "スタミナ奪取量 最大減衰倍率",
-      "Description": ""
+      "Name": "Maximum Stamina Damage Falloff %",
+      "Description": "Minimum multiplier applied to stamina damage after full distance attenuation."
     },
     {
       "Field": "damageDecrementStunMaxRate",
-      "Name": "気絶値 最大減衰倍率",
-      "Description": ""
+      "Name": "Maximum Stun Falloff %",
+      "Description": "Minimum multiplier applied to stun buildup after full distance attenuation."
     },
     {
       "Field": "damageDecrementPoiseMaxRate",
-      "Name": "強靭削り値 最大減衰倍率",
-      "Description": ""
+      "Name": "Maximum Poise Damage Falloff %",
+      "Description": "Minimum multiplier applied to poise damage after full distance attenuation."
     },
     {
       "Field": "damageDecrementKnockBackMaxRate",
-      "Name": "ノックバック距離 最大減衰倍率",
-      "Description": ""
+      "Name": "Maximum Knockback Falloff %",
+      "Description": "Minimum multiplier applied to knockback distance after full distance attenuation."
     }
   ]
 }

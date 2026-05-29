@@ -9,21 +9,21 @@
         <faceType  Enum="NPC_FACE_TYPE"/>
         <skinNo />
         <facePresetNo />
-        <dummy />
+        <dummy Padding="" />
         <skinR />
         <skinG />
         <skinB />
         <faceId />
-        <equipWeaponIdL1 />
-        <equipWeaponIdL2 />
-        <equipWeaponIdL3 />
-        <equipWeaponIdR1 />
-        <equipWeaponIdR2 />
-        <equipWeaponIdR3 />
-        <equipHeadId />
-        <equipBodyId />
-        <equipArmId />
-        <equipLegId />
+        <equipWeaponIdL1 Refs="ItemParam" />
+        <equipWeaponIdL2 Refs="ItemParam" />
+        <equipWeaponIdL3 Refs="ItemParam" />
+        <equipWeaponIdR1 Refs="ItemParam" />
+        <equipWeaponIdR2 Refs="ItemParam" />
+        <equipWeaponIdR3 Refs="ItemParam" />
+        <equipHeadId Refs="ArmorParam" />
+        <equipBodyId Refs="ArmorParam" />
+        <equipArmId Refs="ArmorParam" />
+        <equipLegId Refs="ArmorParam" />
         <equipQuiverId />
         <equipArrowId />
     </Field>

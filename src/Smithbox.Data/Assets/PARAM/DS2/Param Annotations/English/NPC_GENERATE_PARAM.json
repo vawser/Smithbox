@@ -2,132 +2,132 @@
   "Param": "NPC_GENERATE_PARAM",
   "Type": "NPC_GENERATE_PARAM",
   "Name": "NPC_GENERATE_PARAM",
-  "Description": "",
+  "Description": "Defines generated NPC appearance, body type, equipment loadout, and character customization settings.",
   "Fields": [
     {
       "Field": "chrId",
-      "Name": "キャラクターID",
-      "Description": ""
+      "Name": "Character ID",
+      "Description": "References the base character definition used for the NPC."
     },
     {
       "Field": "gender",
-      "Name": "性別",
-      "Description": ""
+      "Name": "Gender",
+      "Description": "Specifies the NPC's gender."
     },
     {
       "Field": "bodyScaleType",
-      "Name": "体型タイプ",
-      "Description": ""
+      "Name": "Body Type",
+      "Description": "Determines the NPC's body size or physique variation."
     },
     {
       "Field": "deceased",
-      "Name": "生者亡者",
-      "Description": ""
+      "Name": "Human/Hollow State",
+      "Description": "Specifies whether the NPC appears human or hollow/undead."
     },
     {
       "Field": "equipType",
-      "Name": "装備タイプ",
-      "Description": ""
+      "Name": "Equipment Type",
+      "Description": "Defines the NPC's equipment configuration category."
     },
     {
       "Field": "faceType",
-      "Name": "顔タイプ",
-      "Description": ""
+      "Name": "Face Type",
+      "Description": "Specifies the facial structure or face generation category."
     },
     {
       "Field": "skinNo",
-      "Name": "肌番号",
-      "Description": ""
+      "Name": "Skin Number",
+      "Description": "Selects the skin texture variation."
     },
     {
       "Field": "facePresetNo",
-      "Name": "FG顔プリセット番号",
-      "Description": ""
+      "Name": "Face Preset Number",
+      "Description": "References a predefined face customization preset."
     },
     {
       "Field": "dummy",
-      "Name": "dummy",
-      "Description": ""
+      "Name": "Dummy",
+      "Description": "Unused placeholder field."
     },
     {
       "Field": "skinR",
-      "Name": "肌Ｒ",
-      "Description": ""
+      "Name": "Skin Red",
+      "Description": "Red color component for skin tone customization."
     },
     {
       "Field": "skinG",
-      "Name": "肌Ｇ",
-      "Description": ""
+      "Name": "Skin Green",
+      "Description": "Green color component for skin tone customization."
     },
     {
       "Field": "skinB",
-      "Name": "肌Ｂ",
-      "Description": ""
+      "Name": "Skin Blue",
+      "Description": "Blue color component for skin tone customization."
     },
     {
       "Field": "faceId",
-      "Name": "顔ＩＤ",
-      "Description": ""
+      "Name": "Face ID",
+      "Description": "References the face model or face data entry."
     },
     {
       "Field": "equipWeaponIdL1",
-      "Name": "左手武器１",
-      "Description": ""
+      "Name": "Left-Hand Weapon 1",
+      "Description": "Primary weapon equipped in the left-hand slot."
     },
     {
       "Field": "equipWeaponIdL2",
-      "Name": "左手武器２",
-      "Description": ""
+      "Name": "Left-Hand Weapon 2",
+      "Description": "Secondary weapon equipped in the left-hand slot."
     },
     {
       "Field": "equipWeaponIdL3",
-      "Name": "左手武器３",
-      "Description": ""
+      "Name": "Left-Hand Weapon 3",
+      "Description": "Tertiary weapon equipped in the left-hand slot."
     },
     {
       "Field": "equipWeaponIdR1",
-      "Name": "右手武器１",
-      "Description": ""
+      "Name": "Right-Hand Weapon 1",
+      "Description": "Primary weapon equipped in the right-hand slot."
     },
     {
       "Field": "equipWeaponIdR2",
-      "Name": "右手武器２",
-      "Description": ""
+      "Name": "Right-Hand Weapon 2",
+      "Description": "Secondary weapon equipped in the right-hand slot."
     },
     {
       "Field": "equipWeaponIdR3",
-      "Name": "右手武器３",
-      "Description": ""
+      "Name": "Right-Hand Weapon 3",
+      "Description": "Tertiary weapon equipped in the right-hand slot."
     },
     {
       "Field": "equipHeadId",
-      "Name": "兜",
-      "Description": ""
+      "Name": "Helmet",
+      "Description": "Head armor equipped by the NPC."
     },
     {
       "Field": "equipBodyId",
-      "Name": "鎧",
-      "Description": ""
+      "Name": "Armor",
+      "Description": "Body armor equipped by the NPC."
     },
     {
       "Field": "equipArmId",
-      "Name": "篭手",
-      "Description": ""
+      "Name": "Gauntlets",
+      "Description": "Arm armor equipped by the NPC."
     },
     {
       "Field": "equipLegId",
-      "Name": "脚絆",
-      "Description": ""
+      "Name": "Leggings",
+      "Description": "Leg armor equipped by the NPC."
     },
     {
       "Field": "equipQuiverId",
-      "Name": "矢筒",
-      "Description": ""
+      "Name": "Quiver",
+      "Description": "Quiver or ammunition holder equipped by the NPC."
     },
     {
       "Field": "equipArrowId",
-      "Name": "矢",
-      "Description": ""
+      "Name": "Arrow",
+      "Description": "Arrow or ammunition item equipped by the NPC."
     }
   ]
 }

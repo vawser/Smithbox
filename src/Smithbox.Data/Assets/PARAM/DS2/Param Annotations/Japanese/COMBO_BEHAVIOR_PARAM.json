@@ -1,0 +1,2248 @@
+{
+  "Param": "COMBO_BEHAVIOR_PARAM",
+  "Type": "COMBO_BEHAVIOR_PARAM",
+  "Name": "COMBO_BEHAVIOR_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "combo0AttackMotionId",
+      "Name": "《コンボ行動0 コンボ一段目》",
+      "Description": ""
+    },
+    {
+      "Field": "combo0ComboAttackRoute1",
+      "Name": "《コンボ行動0 コンボ二段目》",
+      "Description": ""
+    },
+    {
+      "Field": "combo0ComboAttackRoute2",
+      "Name": "《コンボ行動0 コンボ三段目》",
+      "Description": ""
+    },
+    {
+      "Field": "combo0ComboAttackRoute3",
+      "Name": "《コンボ行動0 コンボ四段目》",
+      "Description": ""
+    },
+    {
+      "Field": "combo0BladeCtrlType",
+      "Name": "《コンボ行動0 近接制御タイプ》",
+      "Description": ""
+    },
+    {
+      "Field": "combo0AttackId01",
+      "Name": "《コンボ行動0 攻撃ID1》",
+      "Description": ""
+    },
+    {
+      "Field": "combo0AttackId02",
+      "Name": "《コンボ行動0 攻撃ID2》",
+      "Description": ""
+    },
+    {
+      "Field": "combo0AttackId03",
+      "Name": "《コンボ行動0 攻撃ID3》",
+      "Description": ""
+    },
+    {
+      "Field": "combo0AttackId04",
+      "Name": "《コンボ行動0 攻撃ID4》",
+      "Description": ""
+    },
+    {
+      "Field": "combo0BulletId01",
+      "Name": "《コンボ行動0 BulletID1》",
+      "Description": ""
+    },
+    {
+      "Field": "combo0BulletId02",
+      "Name": "《コンボ行動0 BulletID2》",
+      "Description": ""
+    },
+    {
+      "Field": "combo0BulletId03",
+      "Name": "《コンボ行動0 BulletID3》",
+      "Description": ""
+    },
+    {
+      "Field": "combo0BulletId04",
+      "Name": "《コンボ行動0 BulletID4》",
+      "Description": ""
+    },
+    {
+      "Field": "combo0ShtoStanceTime01",
+      "Name": "《コンボ行動0 射撃構え時間1》",
+      "Description": ""
+    },
+    {
+      "Field": "combo0ShtoStanceTime02",
+      "Name": "《コンボ行動0 射撃構え時間2》",
+      "Description": ""
+    },
+    {
+      "Field": "combo0ShtoStanceTime03",
+      "Name": "《コンボ行動0 射撃構え時間3》",
+      "Description": ""
+    },
+    {
+      "Field": "combo0ShtoStanceTime04",
+      "Name": "《コンボ行動0 射撃構え時間4》",
+      "Description": ""
+    },
+    {
+      "Field": "combo0NonInterruptibleType01",
+      "Name": "《コンボ行動0 割り込み不可タイプ1》",
+      "Description": ""
+    },
+    {
+      "Field": "combo0NonInterruptibleType02",
+      "Name": "《コンボ行動0 割り込み不可タイプ2》",
+      "Description": ""
+    },
+    {
+      "Field": "combo0NonInterruptibleType03",
+      "Name": "《コンボ行動0 割り込み不可タイプ3》",
+      "Description": ""
+    },
+    {
+      "Field": "combo0NonInterruptibleType04",
+      "Name": "《コンボ行動0 割り込み不可タイプ4》",
+      "Description": ""
+    },
+    {
+      "Field": "combo0AttackMoveId01",
+      "Name": "《コンボ行動0 歩行攻撃ID1》",
+      "Description": ""
+    },
+    {
+      "Field": "combo0AttackMoveId02",
+      "Name": "《コンボ行動0 歩行攻撃ID2》",
+      "Description": ""
+    },
+    {
+      "Field": "combo0AttackMoveId03",
+      "Name": "《コンボ行動0 歩行攻撃ID3》",
+      "Description": ""
+    },
+    {
+      "Field": "combo0AttackMoveId04",
+      "Name": "《コンボ行動0 歩行攻撃ID4》",
+      "Description": ""
+    },
+    {
+      "Field": "combo0AttackHomingCancel01",
+      "Name": "《コンボ行動0 ホーミング解除有効設定1》",
+      "Description": ""
+    },
+    {
+      "Field": "combo0AttackHomingCancel02",
+      "Name": "《コンボ行動0 ホーミング解除有効設定2》",
+      "Description": ""
+    },
+    {
+      "Field": "combo0AttackHomingCancel03",
+      "Name": "《コンボ行動0 ホーミング解除有効設定3》",
+      "Description": ""
+    },
+    {
+      "Field": "combo0AttackHomingCancel04",
+      "Name": "《コンボ行動0 ホーミング解除有効設定4》",
+      "Description": ""
+    },
+    {
+      "Field": "combo0AttackRange01",
+      "Name": "《コンボ行動0 歩行攻撃攻撃範囲1》",
+      "Description": ""
+    },
+    {
+      "Field": "combo0AttackRange02",
+      "Name": "《コンボ行動0 歩行攻撃攻撃範囲2》",
+      "Description": ""
+    },
+    {
+      "Field": "combo0AttackRange03",
+      "Name": "《コンボ行動0 歩行攻撃攻撃範囲3》",
+      "Description": ""
+    },
+    {
+      "Field": "combo0AttackRange04",
+      "Name": "《コンボ行動0 歩行攻撃攻撃範囲4》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo0AttackBackSwingSpeed01",
+      "Name": "《コンボ行動0 攻撃開始部速度倍率1》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo0AttackBackSwingSpeed02",
+      "Name": "《コンボ行動0 攻撃開始部速度倍率2》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo0AttackBackSwingSpeed03",
+      "Name": "《コンボ行動0 攻撃開始部速度倍率3》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo0AttackBackSwingSpeed04",
+      "Name": "《コンボ行動0 攻撃開始部速度倍率4》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo0AttackFollowSwingSpeed01",
+      "Name": "《コンボ行動0 攻撃終了部速度倍率1》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo0AttackFollowSwingSpeed02",
+      "Name": "《コンボ行動0 攻撃終了部速度倍率2》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo0AttackFollowSwingSpeed03",
+      "Name": "《コンボ行動0 攻撃終了部速度倍率3》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo0AttackFollowSwingSpeed04",
+      "Name": "《コンボ行動0 攻撃終了部速度倍率4》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo0EstimateFutureTime01",
+      "Name": "《コンボ行動0 位置予測時間1》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo0EstimateFutureTime02",
+      "Name": "《コンボ行動0 位置予測時間2》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo0EstimateFutureTime03",
+      "Name": "《コンボ行動0 位置予測時間3》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo0EstimateFutureTime04",
+      "Name": "《コンボ行動0 位置予測時間4》",
+      "Description": ""
+    },
+    {
+      "Field": "combo0AttackAngle01",
+      "Name": "《コンボ行動0 角度補正1[deg]》",
+      "Description": ""
+    },
+    {
+      "Field": "combo0AttackAngle02",
+      "Name": "《コンボ行動0 角度補正2[deg]》",
+      "Description": ""
+    },
+    {
+      "Field": "combo0AttackAngle03",
+      "Name": "《コンボ行動0 角度補正3[deg]》",
+      "Description": ""
+    },
+    {
+      "Field": "combo0AttackAngle04",
+      "Name": "《コンボ行動0 角度補正4[deg]》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo0AttackRotateHigh01",
+      "Name": "《コンボ行動0 旋回補間開始距離1[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo0AttackRotateHigh02",
+      "Name": "《コンボ行動0 旋回補間開始距離2[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo0AttackRotateHigh03",
+      "Name": "《コンボ行動0 旋回補間開始距離3[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo0AttackRotateHigh04",
+      "Name": "《コンボ行動0 旋回補間開始距離4[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo0AttackRotateLow01",
+      "Name": "《コンボ行動0 旋回補間終了距離1[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo0AttackRotateLow02",
+      "Name": "《コンボ行動0 旋回補間終了距離2[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo0AttackRotateLow03",
+      "Name": "《コンボ行動0 旋回補間終了距離3[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo0AttackRotateLow04",
+      "Name": "《コンボ行動0 旋回補間終了距離4[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "combo0AttackHand01",
+      "Name": "《コンボ行動0 攻撃手1》",
+      "Description": ""
+    },
+    {
+      "Field": "combo0AttackHand02",
+      "Name": "《コンボ行動0 攻撃手2》",
+      "Description": ""
+    },
+    {
+      "Field": "combo0AttackHand03",
+      "Name": "《コンボ行動0 攻撃手3》",
+      "Description": ""
+    },
+    {
+      "Field": "combo0AttackHand04",
+      "Name": "《コンボ行動0 攻撃手4》",
+      "Description": ""
+    },
+    {
+      "Field": "combo0AttackChantSfx",
+      "Name": "《コンボ行動0 詠唱SFX》",
+      "Description": ""
+    },
+    {
+      "Field": "combo0Reload",
+      "Name": "《コンボ行動0 リロード時間[sec]》",
+      "Description": ""
+    },
+    {
+      "Field": "pad00",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "combo1AttackMotionId",
+      "Name": "《コンボ行動1 コンボ一段目》",
+      "Description": ""
+    },
+    {
+      "Field": "combo1ComboAttackRoute1",
+      "Name": "《コンボ行動1 コンボ二段目》",
+      "Description": ""
+    },
+    {
+      "Field": "combo1ComboAttackRoute2",
+      "Name": "《コンボ行動1 コンボ三段目》",
+      "Description": ""
+    },
+    {
+      "Field": "combo1ComboAttackRoute3",
+      "Name": "《コンボ行動1 コンボ四段目》",
+      "Description": ""
+    },
+    {
+      "Field": "combo1BladeCtrlType",
+      "Name": "《コンボ行動1 近接制御タイプ》",
+      "Description": ""
+    },
+    {
+      "Field": "combo1AttackId01",
+      "Name": "《コンボ行動1 攻撃ID1》",
+      "Description": ""
+    },
+    {
+      "Field": "combo1AttackId02",
+      "Name": "《コンボ行動1 攻撃ID2》",
+      "Description": ""
+    },
+    {
+      "Field": "combo1AttackId03",
+      "Name": "《コンボ行動1 攻撃ID3》",
+      "Description": ""
+    },
+    {
+      "Field": "combo1AttackId04",
+      "Name": "《コンボ行動1 攻撃ID4》",
+      "Description": ""
+    },
+    {
+      "Field": "combo1BulletId01",
+      "Name": "《コンボ行動1 BulletID1》",
+      "Description": ""
+    },
+    {
+      "Field": "combo1BulletId02",
+      "Name": "《コンボ行動1 BulletID2》",
+      "Description": ""
+    },
+    {
+      "Field": "combo1BulletId03",
+      "Name": "《コンボ行動1 BulletID3》",
+      "Description": ""
+    },
+    {
+      "Field": "combo1BulletId04",
+      "Name": "《コンボ行動1 BulletID4》",
+      "Description": ""
+    },
+    {
+      "Field": "combo1ShtoStanceTime01",
+      "Name": "《コンボ行動1 射撃構え時間1》",
+      "Description": ""
+    },
+    {
+      "Field": "combo1ShtoStanceTime02",
+      "Name": "《コンボ行動1 射撃構え時間2》",
+      "Description": ""
+    },
+    {
+      "Field": "combo1ShtoStanceTime03",
+      "Name": "《コンボ行動1 射撃構え時間3》",
+      "Description": ""
+    },
+    {
+      "Field": "combo1ShtoStanceTime04",
+      "Name": "《コンボ行動1 射撃構え時間4》",
+      "Description": ""
+    },
+    {
+      "Field": "combo1NonInterruptibleType01",
+      "Name": "《コンボ行動1 割り込み不可タイプ1》",
+      "Description": ""
+    },
+    {
+      "Field": "combo1NonInterruptibleType02",
+      "Name": "《コンボ行動1 割り込み不可タイプ2》",
+      "Description": ""
+    },
+    {
+      "Field": "combo1NonInterruptibleType03",
+      "Name": "《コンボ行動1 割り込み不可タイプ3》",
+      "Description": ""
+    },
+    {
+      "Field": "combo1NonInterruptibleType04",
+      "Name": "《コンボ行動1 割り込み不可タイプ4》",
+      "Description": ""
+    },
+    {
+      "Field": "combo1AttackMoveId01",
+      "Name": "《コンボ行動1 歩行攻撃ID1》",
+      "Description": ""
+    },
+    {
+      "Field": "combo1AttackMoveId02",
+      "Name": "《コンボ行動1 歩行攻撃ID2》",
+      "Description": ""
+    },
+    {
+      "Field": "combo1AttackMoveId03",
+      "Name": "《コンボ行動1 歩行攻撃ID3》",
+      "Description": ""
+    },
+    {
+      "Field": "combo1AttackMoveId04",
+      "Name": "《コンボ行動1 歩行攻撃ID4》",
+      "Description": ""
+    },
+    {
+      "Field": "combo1AttackHomingCancel01",
+      "Name": "《コンボ行動1 ホーミング解除有効設定1》",
+      "Description": ""
+    },
+    {
+      "Field": "combo1AttackHomingCancel02",
+      "Name": "《コンボ行動1 ホーミング解除有効設定2》",
+      "Description": ""
+    },
+    {
+      "Field": "combo1AttackHomingCancel03",
+      "Name": "《コンボ行動1 ホーミング解除有効設定3》",
+      "Description": ""
+    },
+    {
+      "Field": "combo1AttackHomingCancel04",
+      "Name": "《コンボ行動1 ホーミング解除有効設定4》",
+      "Description": ""
+    },
+    {
+      "Field": "combo1AttackRange01",
+      "Name": "《コンボ行動1 歩行攻撃攻撃範囲1》",
+      "Description": ""
+    },
+    {
+      "Field": "combo1AttackRange02",
+      "Name": "《コンボ行動1 歩行攻撃攻撃範囲2》",
+      "Description": ""
+    },
+    {
+      "Field": "combo1AttackRange03",
+      "Name": "《コンボ行動1 歩行攻撃攻撃範囲3》",
+      "Description": ""
+    },
+    {
+      "Field": "combo1AttackRange04",
+      "Name": "《コンボ行動1 歩行攻撃攻撃範囲4》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo1AttackBackSwingSpeed01",
+      "Name": "《コンボ行動1 攻撃開始部速度倍率1》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo1AttackBackSwingSpeed02",
+      "Name": "《コンボ行動1 攻撃開始部速度倍率2》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo1AttackBackSwingSpeed03",
+      "Name": "《コンボ行動1 攻撃開始部速度倍率3》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo1AttackBackSwingSpeed04",
+      "Name": "《コンボ行動1 攻撃開始部速度倍率4》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo1AttackFollowSwingSpeed01",
+      "Name": "《コンボ行動1 攻撃終了部速度倍率1》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo1AttackFollowSwingSpeed02",
+      "Name": "《コンボ行動1 攻撃終了部速度倍率2》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo1AttackFollowSwingSpeed03",
+      "Name": "《コンボ行動1 攻撃終了部速度倍率3》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo1AttackFollowSwingSpeed04",
+      "Name": "《コンボ行動1 攻撃終了部速度倍率4》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo1EstimateFutureTime01",
+      "Name": "《コンボ行動1 位置予測時間1》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo1EstimateFutureTime02",
+      "Name": "《コンボ行動1 位置予測時間2》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo1EstimateFutureTime03",
+      "Name": "《コンボ行動1 位置予測時間3》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo1EstimateFutureTime04",
+      "Name": "《コンボ行動1 位置予測時間4》",
+      "Description": ""
+    },
+    {
+      "Field": "combo1AttackAngle01",
+      "Name": "《コンボ行動1 角度補正1[deg]》",
+      "Description": ""
+    },
+    {
+      "Field": "combo1AttackAngle02",
+      "Name": "《コンボ行動1 角度補正2[deg]》",
+      "Description": ""
+    },
+    {
+      "Field": "combo1AttackAngle03",
+      "Name": "《コンボ行動1 角度補正3[deg]》",
+      "Description": ""
+    },
+    {
+      "Field": "combo1AttackAngle04",
+      "Name": "《コンボ行動1 角度補正4[deg]》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo1AttackRotateHigh01",
+      "Name": "《コンボ行動1 旋回補間開始距離1[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo1AttackRotateHigh02",
+      "Name": "《コンボ行動1 旋回補間開始距離2[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo1AttackRotateHigh03",
+      "Name": "《コンボ行動1 旋回補間開始距離3[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo1AttackRotateHigh04",
+      "Name": "《コンボ行動1 旋回補間開始距離4[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo1AttackRotateLow01",
+      "Name": "《コンボ行動1 旋回補間終了距離1[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo1AttackRotateLow02",
+      "Name": "《コンボ行動1 旋回補間終了距離2[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo1AttackRotateLow03",
+      "Name": "《コンボ行動1 旋回補間終了距離3[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo1AttackRotateLow04",
+      "Name": "《コンボ行動1 旋回補間終了距離4[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "combo1AttackHand01",
+      "Name": "《コンボ行動1 攻撃手1》",
+      "Description": ""
+    },
+    {
+      "Field": "combo1AttackHand02",
+      "Name": "《コンボ行動1 攻撃手2》",
+      "Description": ""
+    },
+    {
+      "Field": "combo1AttackHand03",
+      "Name": "《コンボ行動1 攻撃手3》",
+      "Description": ""
+    },
+    {
+      "Field": "combo1AttackHand04",
+      "Name": "《コンボ行動1 攻撃手4》",
+      "Description": ""
+    },
+    {
+      "Field": "combo1AttackChantSfx",
+      "Name": "《コンボ行動1 詠唱SFX》",
+      "Description": ""
+    },
+    {
+      "Field": "combo1Reload",
+      "Name": "《コンボ行動1 リロード時間[sec]》",
+      "Description": ""
+    },
+    {
+      "Field": "pad01",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "combo2AttackMotionId",
+      "Name": "《コンボ行動2 コンボ一段目》",
+      "Description": ""
+    },
+    {
+      "Field": "combo2ComboAttackRoute1",
+      "Name": "《コンボ行動2 コンボ二段目》",
+      "Description": ""
+    },
+    {
+      "Field": "combo2ComboAttackRoute2",
+      "Name": "《コンボ行動2 コンボ三段目》",
+      "Description": ""
+    },
+    {
+      "Field": "combo2ComboAttackRoute3",
+      "Name": "《コンボ行動2 コンボ四段目》",
+      "Description": ""
+    },
+    {
+      "Field": "combo2BladeCtrlType",
+      "Name": "《コンボ行動2 近接制御タイプ》",
+      "Description": ""
+    },
+    {
+      "Field": "combo2AttackId01",
+      "Name": "《コンボ行動2 攻撃ID1》",
+      "Description": ""
+    },
+    {
+      "Field": "combo2AttackId02",
+      "Name": "《コンボ行動2 攻撃ID2》",
+      "Description": ""
+    },
+    {
+      "Field": "combo2AttackId03",
+      "Name": "《コンボ行動2 攻撃ID3》",
+      "Description": ""
+    },
+    {
+      "Field": "combo2AttackId04",
+      "Name": "《コンボ行動2 攻撃ID4》",
+      "Description": ""
+    },
+    {
+      "Field": "combo2BulletId01",
+      "Name": "《コンボ行動2 BulletID1》",
+      "Description": ""
+    },
+    {
+      "Field": "combo2BulletId02",
+      "Name": "《コンボ行動2 BulletID2》",
+      "Description": ""
+    },
+    {
+      "Field": "combo2BulletId03",
+      "Name": "《コンボ行動2 BulletID3》",
+      "Description": ""
+    },
+    {
+      "Field": "combo2BulletId04",
+      "Name": "《コンボ行動2 BulletID4》",
+      "Description": ""
+    },
+    {
+      "Field": "combo2ShtoStanceTime01",
+      "Name": "《コンボ行動2 射撃構え時間1》",
+      "Description": ""
+    },
+    {
+      "Field": "combo2ShtoStanceTime02",
+      "Name": "《コンボ行動2 射撃構え時間2》",
+      "Description": ""
+    },
+    {
+      "Field": "combo2ShtoStanceTime03",
+      "Name": "《コンボ行動2 射撃構え時間3》",
+      "Description": ""
+    },
+    {
+      "Field": "combo2ShtoStanceTime04",
+      "Name": "《コンボ行動2 射撃構え時間4》",
+      "Description": ""
+    },
+    {
+      "Field": "combo2NonInterruptibleType01",
+      "Name": "《コンボ行動2 割り込み不可タイプ1》",
+      "Description": ""
+    },
+    {
+      "Field": "combo2NonInterruptibleType02",
+      "Name": "《コンボ行動2 割り込み不可タイプ2》",
+      "Description": ""
+    },
+    {
+      "Field": "combo2NonInterruptibleType03",
+      "Name": "《コンボ行動2 割り込み不可タイプ3》",
+      "Description": ""
+    },
+    {
+      "Field": "combo2NonInterruptibleType04",
+      "Name": "《コンボ行動2 割り込み不可タイプ4》",
+      "Description": ""
+    },
+    {
+      "Field": "combo2AttackMoveId01",
+      "Name": "《コンボ行動2 歩行攻撃ID1》",
+      "Description": ""
+    },
+    {
+      "Field": "combo2AttackMoveId02",
+      "Name": "《コンボ行動2 歩行攻撃ID2》",
+      "Description": ""
+    },
+    {
+      "Field": "combo2AttackMoveId03",
+      "Name": "《コンボ行動2 歩行攻撃ID3》",
+      "Description": ""
+    },
+    {
+      "Field": "combo2AttackMoveId04",
+      "Name": "《コンボ行動2 歩行攻撃ID4》",
+      "Description": ""
+    },
+    {
+      "Field": "combo2AttackHomingCancel01",
+      "Name": "《コンボ行動2 ホーミング解除有効設定1》",
+      "Description": ""
+    },
+    {
+      "Field": "combo2AttackHomingCancel02",
+      "Name": "《コンボ行動2 ホーミング解除有効設定2》",
+      "Description": ""
+    },
+    {
+      "Field": "combo2AttackHomingCancel03",
+      "Name": "《コンボ行動2 ホーミング解除有効設定3》",
+      "Description": ""
+    },
+    {
+      "Field": "combo2AttackHomingCancel04",
+      "Name": "《コンボ行動2 ホーミング解除有効設定4》",
+      "Description": ""
+    },
+    {
+      "Field": "combo2AttackRange01",
+      "Name": "《コンボ行動2 歩行攻撃攻撃範囲1》",
+      "Description": ""
+    },
+    {
+      "Field": "combo2AttackRange02",
+      "Name": "《コンボ行動2 歩行攻撃攻撃範囲2》",
+      "Description": ""
+    },
+    {
+      "Field": "combo2AttackRange03",
+      "Name": "《コンボ行動2 歩行攻撃攻撃範囲3》",
+      "Description": ""
+    },
+    {
+      "Field": "combo2AttackRange04",
+      "Name": "《コンボ行動2 歩行攻撃攻撃範囲4》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo2AttackBackSwingSpeed01",
+      "Name": "《コンボ行動2 攻撃開始部速度倍率1》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo2AttackBackSwingSpeed02",
+      "Name": "《コンボ行動2 攻撃開始部速度倍率2》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo2AttackBackSwingSpeed03",
+      "Name": "《コンボ行動2 攻撃開始部速度倍率3》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo2AttackBackSwingSpeed04",
+      "Name": "《コンボ行動2 攻撃開始部速度倍率4》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo2AttackFollowSwingSpeed01",
+      "Name": "《コンボ行動2 攻撃終了部速度倍率1》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo2AttackFollowSwingSpeed02",
+      "Name": "《コンボ行動2 攻撃終了部速度倍率2》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo2AttackFollowSwingSpeed03",
+      "Name": "《コンボ行動2 攻撃終了部速度倍率3》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo2AttackFollowSwingSpeed04",
+      "Name": "《コンボ行動2 攻撃終了部速度倍率4》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo2EstimateFutureTime01",
+      "Name": "《コンボ行動2 位置予測時間1》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo2EstimateFutureTime02",
+      "Name": "《コンボ行動2 位置予測時間2》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo2EstimateFutureTime03",
+      "Name": "《コンボ行動2 位置予測時間3》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo2EstimateFutureTime04",
+      "Name": "《コンボ行動2 位置予測時間4》",
+      "Description": ""
+    },
+    {
+      "Field": "combo2AttackAngle01",
+      "Name": "《コンボ行動2 角度補正1[deg]》",
+      "Description": ""
+    },
+    {
+      "Field": "combo2AttackAngle02",
+      "Name": "《コンボ行動2 角度補正2[deg]》",
+      "Description": ""
+    },
+    {
+      "Field": "combo2AttackAngle03",
+      "Name": "《コンボ行動2 角度補正3[deg]》",
+      "Description": ""
+    },
+    {
+      "Field": "combo2AttackAngle04",
+      "Name": "《コンボ行動2 角度補正4[deg]》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo2AttackRotateHigh01",
+      "Name": "《コンボ行動2 旋回補間開始距離1[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo2AttackRotateHigh02",
+      "Name": "《コンボ行動2 旋回補間開始距離2[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo2AttackRotateHigh03",
+      "Name": "《コンボ行動2 旋回補間開始距離3[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo2AttackRotateHigh04",
+      "Name": "《コンボ行動2 旋回補間開始距離4[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo2AttackRotateLow01",
+      "Name": "《コンボ行動2 旋回補間終了距離1[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo2AttackRotateLow02",
+      "Name": "《コンボ行動2 旋回補間終了距離2[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo2AttackRotateLow03",
+      "Name": "《コンボ行動2 旋回補間終了距離3[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo2AttackRotateLow04",
+      "Name": "《コンボ行動2 旋回補間終了距離4[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "combo2AttackHand01",
+      "Name": "《コンボ行動2 攻撃手1》",
+      "Description": ""
+    },
+    {
+      "Field": "combo2AttackHand02",
+      "Name": "《コンボ行動2 攻撃手2》",
+      "Description": ""
+    },
+    {
+      "Field": "combo2AttackHand03",
+      "Name": "《コンボ行動2 攻撃手3》",
+      "Description": ""
+    },
+    {
+      "Field": "combo2AttackHand04",
+      "Name": "《コンボ行動2 攻撃手4》",
+      "Description": ""
+    },
+    {
+      "Field": "combo2AttackChantSfx",
+      "Name": "《コンボ行動2 詠唱SFX》",
+      "Description": ""
+    },
+    {
+      "Field": "combo2Reload",
+      "Name": "《コンボ行動2 リロード時間[sec]》",
+      "Description": ""
+    },
+    {
+      "Field": "pad02",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "combo3AttackMotionId",
+      "Name": "《コンボ行動3 コンボ一段目》",
+      "Description": ""
+    },
+    {
+      "Field": "combo3ComboAttackRoute1",
+      "Name": "《コンボ行動3 コンボ二段目》",
+      "Description": ""
+    },
+    {
+      "Field": "combo3ComboAttackRoute2",
+      "Name": "《コンボ行動3 コンボ三段目》",
+      "Description": ""
+    },
+    {
+      "Field": "combo3ComboAttackRoute3",
+      "Name": "《コンボ行動3 コンボ四段目》",
+      "Description": ""
+    },
+    {
+      "Field": "combo3BladeCtrlType",
+      "Name": "《コンボ行動3 近接制御タイプ》",
+      "Description": ""
+    },
+    {
+      "Field": "combo3AttackId01",
+      "Name": "《コンボ行動3 攻撃ID1》",
+      "Description": ""
+    },
+    {
+      "Field": "combo3AttackId02",
+      "Name": "《コンボ行動3 攻撃ID2》",
+      "Description": ""
+    },
+    {
+      "Field": "combo3AttackId03",
+      "Name": "《コンボ行動3 攻撃ID3》",
+      "Description": ""
+    },
+    {
+      "Field": "combo3AttackId04",
+      "Name": "《コンボ行動3 攻撃ID4》",
+      "Description": ""
+    },
+    {
+      "Field": "combo3BulletId01",
+      "Name": "《コンボ行動3 BulletID1》",
+      "Description": ""
+    },
+    {
+      "Field": "combo3BulletId02",
+      "Name": "《コンボ行動3 BulletID2》",
+      "Description": ""
+    },
+    {
+      "Field": "combo3BulletId03",
+      "Name": "《コンボ行動3 BulletID3》",
+      "Description": ""
+    },
+    {
+      "Field": "combo3BulletId04",
+      "Name": "《コンボ行動3 BulletID4》",
+      "Description": ""
+    },
+    {
+      "Field": "combo3ShtoStanceTime01",
+      "Name": "《コンボ行動3 射撃構え時間1》",
+      "Description": ""
+    },
+    {
+      "Field": "combo3ShtoStanceTime02",
+      "Name": "《コンボ行動3 射撃構え時間2》",
+      "Description": ""
+    },
+    {
+      "Field": "combo3ShtoStanceTime03",
+      "Name": "《コンボ行動3 射撃構え時間3》",
+      "Description": ""
+    },
+    {
+      "Field": "combo3ShtoStanceTime04",
+      "Name": "《コンボ行動3 射撃構え時間4》",
+      "Description": ""
+    },
+    {
+      "Field": "combo3NonInterruptibleType01",
+      "Name": "《コンボ行動3 割り込み不可タイプ1》",
+      "Description": ""
+    },
+    {
+      "Field": "combo3NonInterruptibleType02",
+      "Name": "《コンボ行動3 割り込み不可タイプ2》",
+      "Description": ""
+    },
+    {
+      "Field": "combo3NonInterruptibleType03",
+      "Name": "《コンボ行動3 割り込み不可タイプ3》",
+      "Description": ""
+    },
+    {
+      "Field": "combo3NonInterruptibleType04",
+      "Name": "《コンボ行動3 割り込み不可タイプ4》",
+      "Description": ""
+    },
+    {
+      "Field": "combo3AttackMoveId01",
+      "Name": "《コンボ行動3 歩行攻撃ID1》",
+      "Description": ""
+    },
+    {
+      "Field": "combo3AttackMoveId02",
+      "Name": "《コンボ行動3 歩行攻撃ID2》",
+      "Description": ""
+    },
+    {
+      "Field": "combo3AttackMoveId03",
+      "Name": "《コンボ行動3 歩行攻撃ID3》",
+      "Description": ""
+    },
+    {
+      "Field": "combo3AttackMoveId04",
+      "Name": "《コンボ行動3 歩行攻撃ID4》",
+      "Description": ""
+    },
+    {
+      "Field": "combo3AttackHomingCancel01",
+      "Name": "《コンボ行動3 ホーミング解除有効設定1》",
+      "Description": ""
+    },
+    {
+      "Field": "combo3AttackHomingCancel02",
+      "Name": "《コンボ行動3 ホーミング解除有効設定2》",
+      "Description": ""
+    },
+    {
+      "Field": "combo3AttackHomingCancel03",
+      "Name": "《コンボ行動3 ホーミング解除有効設定3》",
+      "Description": ""
+    },
+    {
+      "Field": "combo3AttackHomingCancel04",
+      "Name": "《コンボ行動3 ホーミング解除有効設定4》",
+      "Description": ""
+    },
+    {
+      "Field": "combo3AttackRange01",
+      "Name": "《コンボ行動3 歩行攻撃攻撃範囲1》",
+      "Description": ""
+    },
+    {
+      "Field": "combo3AttackRange02",
+      "Name": "《コンボ行動3 歩行攻撃攻撃範囲2》",
+      "Description": ""
+    },
+    {
+      "Field": "combo3AttackRange03",
+      "Name": "《コンボ行動3 歩行攻撃攻撃範囲3》",
+      "Description": ""
+    },
+    {
+      "Field": "combo3AttackRange04",
+      "Name": "《コンボ行動3 歩行攻撃攻撃範囲4》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo3AttackBackSwingSpeed01",
+      "Name": "《コンボ行動3 攻撃開始部速度倍率1》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo3AttackBackSwingSpeed02",
+      "Name": "《コンボ行動3 攻撃開始部速度倍率2》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo3AttackBackSwingSpeed03",
+      "Name": "《コンボ行動3 攻撃開始部速度倍率3》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo3AttackBackSwingSpeed04",
+      "Name": "《コンボ行動3 攻撃開始部速度倍率4》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo3AttackFollowSwingSpeed01",
+      "Name": "《コンボ行動3 攻撃終了部速度倍率1》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo3AttackFollowSwingSpeed02",
+      "Name": "《コンボ行動3 攻撃終了部速度倍率2》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo3AttackFollowSwingSpeed03",
+      "Name": "《コンボ行動3 攻撃終了部速度倍率3》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo3AttackFollowSwingSpeed04",
+      "Name": "《コンボ行動3 攻撃終了部速度倍率4》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo3EstimateFutureTime01",
+      "Name": "《コンボ行動3 位置予測時間1》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo3EstimateFutureTime02",
+      "Name": "《コンボ行動3 位置予測時間2》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo3EstimateFutureTime03",
+      "Name": "《コンボ行動3 位置予測時間3》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo3EstimateFutureTime04",
+      "Name": "《コンボ行動3 位置予測時間4》",
+      "Description": ""
+    },
+    {
+      "Field": "combo3AttackAngle01",
+      "Name": "《コンボ行動3 角度補正1[deg]》",
+      "Description": ""
+    },
+    {
+      "Field": "combo3AttackAngle02",
+      "Name": "《コンボ行動3 角度補正2[deg]》",
+      "Description": ""
+    },
+    {
+      "Field": "combo3AttackAngle03",
+      "Name": "《コンボ行動3 角度補正3[deg]》",
+      "Description": ""
+    },
+    {
+      "Field": "combo3AttackAngle04",
+      "Name": "《コンボ行動3 角度補正4[deg]》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo3AttackRotateHigh01",
+      "Name": "《コンボ行動3 旋回補間開始距離1[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo3AttackRotateHigh02",
+      "Name": "《コンボ行動3 旋回補間開始距離2[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo3AttackRotateHigh03",
+      "Name": "《コンボ行動3 旋回補間開始距離3[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo3AttackRotateHigh04",
+      "Name": "《コンボ行動3 旋回補間開始距離4[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo3AttackRotateLow01",
+      "Name": "《コンボ行動3 旋回補間終了距離1[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo3AttackRotateLow02",
+      "Name": "《コンボ行動3 旋回補間終了距離2[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo3AttackRotateLow03",
+      "Name": "《コンボ行動3 旋回補間終了距離3[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo3AttackRotateLow04",
+      "Name": "《コンボ行動3 旋回補間終了距離4[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "combo3AttackHand01",
+      "Name": "《コンボ行動3 攻撃手1》",
+      "Description": ""
+    },
+    {
+      "Field": "combo3AttackHand02",
+      "Name": "《コンボ行動3 攻撃手2》",
+      "Description": ""
+    },
+    {
+      "Field": "combo3AttackHand03",
+      "Name": "《コンボ行動3 攻撃手3》",
+      "Description": ""
+    },
+    {
+      "Field": "combo3AttackHand04",
+      "Name": "《コンボ行動3 攻撃手4》",
+      "Description": ""
+    },
+    {
+      "Field": "combo3AttackChantSfx",
+      "Name": "《コンボ行動3 詠唱SFX》",
+      "Description": ""
+    },
+    {
+      "Field": "combo3Reload",
+      "Name": "《コンボ行動3 リロード時間[sec]》",
+      "Description": ""
+    },
+    {
+      "Field": "pad03",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "combo4AttackMotionId",
+      "Name": "《コンボ行動4 コンボ一段目》",
+      "Description": ""
+    },
+    {
+      "Field": "combo4ComboAttackRoute1",
+      "Name": "《コンボ行動4 コンボ二段目》",
+      "Description": ""
+    },
+    {
+      "Field": "combo4ComboAttackRoute2",
+      "Name": "《コンボ行動4 コンボ三段目》",
+      "Description": ""
+    },
+    {
+      "Field": "combo4ComboAttackRoute3",
+      "Name": "《コンボ行動4 コンボ四段目》",
+      "Description": ""
+    },
+    {
+      "Field": "combo4BladeCtrlType",
+      "Name": "《コンボ行動4 近接制御タイプ》",
+      "Description": ""
+    },
+    {
+      "Field": "combo4AttackId01",
+      "Name": "《コンボ行動4 攻撃ID1》",
+      "Description": ""
+    },
+    {
+      "Field": "combo4AttackId02",
+      "Name": "《コンボ行動4 攻撃ID2》",
+      "Description": ""
+    },
+    {
+      "Field": "combo4AttackId03",
+      "Name": "《コンボ行動4 攻撃ID3》",
+      "Description": ""
+    },
+    {
+      "Field": "combo4AttackId04",
+      "Name": "《コンボ行動4 攻撃ID4》",
+      "Description": ""
+    },
+    {
+      "Field": "combo4BulletId01",
+      "Name": "《コンボ行動4 BulletID1》",
+      "Description": ""
+    },
+    {
+      "Field": "combo4BulletId02",
+      "Name": "《コンボ行動4 BulletID2》",
+      "Description": ""
+    },
+    {
+      "Field": "combo4BulletId03",
+      "Name": "《コンボ行動4 BulletID3》",
+      "Description": ""
+    },
+    {
+      "Field": "combo4BulletId04",
+      "Name": "《コンボ行動4 BulletID4》",
+      "Description": ""
+    },
+    {
+      "Field": "combo4ShtoStanceTime01",
+      "Name": "《コンボ行動4 射撃構え時間1》",
+      "Description": ""
+    },
+    {
+      "Field": "combo4ShtoStanceTime02",
+      "Name": "《コンボ行動4 射撃構え時間2》",
+      "Description": ""
+    },
+    {
+      "Field": "combo4ShtoStanceTime03",
+      "Name": "《コンボ行動4 射撃構え時間3》",
+      "Description": ""
+    },
+    {
+      "Field": "combo4ShtoStanceTime04",
+      "Name": "《コンボ行動4 射撃構え時間4》",
+      "Description": ""
+    },
+    {
+      "Field": "combo4NonInterruptibleType01",
+      "Name": "《コンボ行動4 割り込み不可タイプ1》",
+      "Description": ""
+    },
+    {
+      "Field": "combo4NonInterruptibleType02",
+      "Name": "《コンボ行動4 割り込み不可タイプ2》",
+      "Description": ""
+    },
+    {
+      "Field": "combo4NonInterruptibleType03",
+      "Name": "《コンボ行動4 割り込み不可タイプ3》",
+      "Description": ""
+    },
+    {
+      "Field": "combo4NonInterruptibleType04",
+      "Name": "《コンボ行動4 割り込み不可タイプ4》",
+      "Description": ""
+    },
+    {
+      "Field": "combo4AttackMoveId01",
+      "Name": "《コンボ行動4 歩行攻撃ID1》",
+      "Description": ""
+    },
+    {
+      "Field": "combo4AttackMoveId02",
+      "Name": "《コンボ行動4 歩行攻撃ID2》",
+      "Description": ""
+    },
+    {
+      "Field": "combo4AttackMoveId03",
+      "Name": "《コンボ行動4 歩行攻撃ID3》",
+      "Description": ""
+    },
+    {
+      "Field": "combo4AttackMoveId04",
+      "Name": "《コンボ行動4 歩行攻撃ID4》",
+      "Description": ""
+    },
+    {
+      "Field": "combo4AttackHomingCancel01",
+      "Name": "《コンボ行動4 ホーミング解除有効設定1》",
+      "Description": ""
+    },
+    {
+      "Field": "combo4AttackHomingCancel02",
+      "Name": "《コンボ行動4 ホーミング解除有効設定2》",
+      "Description": ""
+    },
+    {
+      "Field": "combo4AttackHomingCancel03",
+      "Name": "《コンボ行動4 ホーミング解除有効設定3》",
+      "Description": ""
+    },
+    {
+      "Field": "combo4AttackHomingCancel04",
+      "Name": "《コンボ行動4 ホーミング解除有効設定4》",
+      "Description": ""
+    },
+    {
+      "Field": "combo4AttackRange01",
+      "Name": "《コンボ行動4 歩行攻撃攻撃範囲1》",
+      "Description": ""
+    },
+    {
+      "Field": "combo4AttackRange02",
+      "Name": "《コンボ行動4 歩行攻撃攻撃範囲2》",
+      "Description": ""
+    },
+    {
+      "Field": "combo4AttackRange03",
+      "Name": "《コンボ行動4 歩行攻撃攻撃範囲3》",
+      "Description": ""
+    },
+    {
+      "Field": "combo4AttackRange04",
+      "Name": "《コンボ行動4 歩行攻撃攻撃範囲4》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo4AttackBackSwingSpeed01",
+      "Name": "《コンボ行動4 攻撃開始部速度倍率1》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo4AttackBackSwingSpeed02",
+      "Name": "《コンボ行動4 攻撃開始部速度倍率2》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo4AttackBackSwingSpeed03",
+      "Name": "《コンボ行動4 攻撃開始部速度倍率3》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo4AttackBackSwingSpeed04",
+      "Name": "《コンボ行動4 攻撃開始部速度倍率4》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo4AttackFollowSwingSpeed01",
+      "Name": "《コンボ行動4 攻撃終了部速度倍率1》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo4AttackFollowSwingSpeed02",
+      "Name": "《コンボ行動4 攻撃終了部速度倍率2》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo4AttackFollowSwingSpeed03",
+      "Name": "《コンボ行動4 攻撃終了部速度倍率3》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo4AttackFollowSwingSpeed04",
+      "Name": "《コンボ行動4 攻撃終了部速度倍率4》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo4EstimateFutureTime01",
+      "Name": "《コンボ行動4 位置予測時間1》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo4EstimateFutureTime02",
+      "Name": "《コンボ行動4 位置予測時間2》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo4EstimateFutureTime03",
+      "Name": "《コンボ行動4 位置予測時間3》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo4EstimateFutureTime04",
+      "Name": "《コンボ行動4 位置予測時間4》",
+      "Description": ""
+    },
+    {
+      "Field": "combo4AttackAngle01",
+      "Name": "《コンボ行動4 角度補正1[deg]》",
+      "Description": ""
+    },
+    {
+      "Field": "combo4AttackAngle02",
+      "Name": "《コンボ行動4 角度補正2[deg]》",
+      "Description": ""
+    },
+    {
+      "Field": "combo4AttackAngle03",
+      "Name": "《コンボ行動4 角度補正3[deg]》",
+      "Description": ""
+    },
+    {
+      "Field": "combo4AttackAngle04",
+      "Name": "《コンボ行動4 角度補正4[deg]》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo4AttackRotateHigh01",
+      "Name": "《コンボ行動4 旋回補間開始距離1[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo4AttackRotateHigh02",
+      "Name": "《コンボ行動4 旋回補間開始距離2[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo4AttackRotateHigh03",
+      "Name": "《コンボ行動4 旋回補間開始距離3[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo4AttackRotateHigh04",
+      "Name": "《コンボ行動4 旋回補間開始距離4[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo4AttackRotateLow01",
+      "Name": "《コンボ行動4 旋回補間終了距離1[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo4AttackRotateLow02",
+      "Name": "《コンボ行動4 旋回補間終了距離2[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo4AttackRotateLow03",
+      "Name": "《コンボ行動4 旋回補間終了距離3[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo4AttackRotateLow04",
+      "Name": "《コンボ行動4 旋回補間終了距離4[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "combo4AttackHand01",
+      "Name": "《コンボ行動4 攻撃手1》",
+      "Description": ""
+    },
+    {
+      "Field": "combo4AttackHand02",
+      "Name": "《コンボ行動4 攻撃手2》",
+      "Description": ""
+    },
+    {
+      "Field": "combo4AttackHand03",
+      "Name": "《コンボ行動4 攻撃手3》",
+      "Description": ""
+    },
+    {
+      "Field": "combo4AttackHand04",
+      "Name": "《コンボ行動4 攻撃手4》",
+      "Description": ""
+    },
+    {
+      "Field": "combo4AttackChantSfx",
+      "Name": "《コンボ行動4 詠唱SFX》",
+      "Description": ""
+    },
+    {
+      "Field": "combo4Reload",
+      "Name": "《コンボ行動4 リロード時間[sec]》",
+      "Description": ""
+    },
+    {
+      "Field": "pad04",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "combo5AttackMotionId",
+      "Name": "《コンボ行動5 コンボ一段目》",
+      "Description": ""
+    },
+    {
+      "Field": "combo5ComboAttackRoute1",
+      "Name": "《コンボ行動5 コンボ二段目》",
+      "Description": ""
+    },
+    {
+      "Field": "combo5ComboAttackRoute2",
+      "Name": "《コンボ行動5 コンボ三段目》",
+      "Description": ""
+    },
+    {
+      "Field": "combo5ComboAttackRoute3",
+      "Name": "《コンボ行動5 コンボ四段目》",
+      "Description": ""
+    },
+    {
+      "Field": "combo5BladeCtrlType",
+      "Name": "《コンボ行動5 近接制御タイプ》",
+      "Description": ""
+    },
+    {
+      "Field": "combo5AttackId01",
+      "Name": "《コンボ行動5 攻撃ID1》",
+      "Description": ""
+    },
+    {
+      "Field": "combo5AttackId02",
+      "Name": "《コンボ行動5 攻撃ID2》",
+      "Description": ""
+    },
+    {
+      "Field": "combo5AttackId03",
+      "Name": "《コンボ行動5 攻撃ID3》",
+      "Description": ""
+    },
+    {
+      "Field": "combo5AttackId04",
+      "Name": "《コンボ行動5 攻撃ID4》",
+      "Description": ""
+    },
+    {
+      "Field": "combo5BulletId01",
+      "Name": "《コンボ行動5 BulletID1》",
+      "Description": ""
+    },
+    {
+      "Field": "combo5BulletId02",
+      "Name": "《コンボ行動5 BulletID2》",
+      "Description": ""
+    },
+    {
+      "Field": "combo5BulletId03",
+      "Name": "《コンボ行動5 BulletID3》",
+      "Description": ""
+    },
+    {
+      "Field": "combo5BulletId04",
+      "Name": "《コンボ行動5 BulletID4》",
+      "Description": ""
+    },
+    {
+      "Field": "combo5ShtoStanceTime01",
+      "Name": "《コンボ行動5 射撃構え時間1》",
+      "Description": ""
+    },
+    {
+      "Field": "combo5ShtoStanceTime02",
+      "Name": "《コンボ行動5 射撃構え時間2》",
+      "Description": ""
+    },
+    {
+      "Field": "combo5ShtoStanceTime03",
+      "Name": "《コンボ行動5 射撃構え時間3》",
+      "Description": ""
+    },
+    {
+      "Field": "combo5ShtoStanceTime04",
+      "Name": "《コンボ行動5 射撃構え時間4》",
+      "Description": ""
+    },
+    {
+      "Field": "combo5NonInterruptibleType01",
+      "Name": "《コンボ行動5 割り込み不可タイプ1》",
+      "Description": ""
+    },
+    {
+      "Field": "combo5NonInterruptibleType02",
+      "Name": "《コンボ行動5 割り込み不可タイプ2》",
+      "Description": ""
+    },
+    {
+      "Field": "combo5NonInterruptibleType03",
+      "Name": "《コンボ行動5 割り込み不可タイプ3》",
+      "Description": ""
+    },
+    {
+      "Field": "combo5NonInterruptibleType04",
+      "Name": "《コンボ行動5 割り込み不可タイプ4》",
+      "Description": ""
+    },
+    {
+      "Field": "combo5AttackMoveId01",
+      "Name": "《コンボ行動5 歩行攻撃ID1》",
+      "Description": ""
+    },
+    {
+      "Field": "combo5AttackMoveId02",
+      "Name": "《コンボ行動5 歩行攻撃ID2》",
+      "Description": ""
+    },
+    {
+      "Field": "combo5AttackMoveId03",
+      "Name": "《コンボ行動5 歩行攻撃ID3》",
+      "Description": ""
+    },
+    {
+      "Field": "combo5AttackMoveId04",
+      "Name": "《コンボ行動5 歩行攻撃ID4》",
+      "Description": ""
+    },
+    {
+      "Field": "combo5AttackHomingCancel01",
+      "Name": "《コンボ行動5 ホーミング解除有効設定1》",
+      "Description": ""
+    },
+    {
+      "Field": "combo5AttackHomingCancel02",
+      "Name": "《コンボ行動5 ホーミング解除有効設定2》",
+      "Description": ""
+    },
+    {
+      "Field": "combo5AttackHomingCancel03",
+      "Name": "《コンボ行動5 ホーミング解除有効設定3》",
+      "Description": ""
+    },
+    {
+      "Field": "combo5AttackHomingCancel04",
+      "Name": "《コンボ行動5 ホーミング解除有効設定4》",
+      "Description": ""
+    },
+    {
+      "Field": "combo5AttackRange01",
+      "Name": "《コンボ行動5 歩行攻撃攻撃範囲1》",
+      "Description": ""
+    },
+    {
+      "Field": "combo5AttackRange02",
+      "Name": "《コンボ行動5 歩行攻撃攻撃範囲2》",
+      "Description": ""
+    },
+    {
+      "Field": "combo5AttackRange03",
+      "Name": "《コンボ行動5 歩行攻撃攻撃範囲3》",
+      "Description": ""
+    },
+    {
+      "Field": "combo5AttackRange04",
+      "Name": "《コンボ行動5 歩行攻撃攻撃範囲4》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo5AttackBackSwingSpeed01",
+      "Name": "《コンボ行動5 攻撃開始部速度倍率1》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo5AttackBackSwingSpeed02",
+      "Name": "《コンボ行動5 攻撃開始部速度倍率2》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo5AttackBackSwingSpeed03",
+      "Name": "《コンボ行動5 攻撃開始部速度倍率3》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo5AttackBackSwingSpeed04",
+      "Name": "《コンボ行動5 攻撃開始部速度倍率4》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo5AttackFollowSwingSpeed01",
+      "Name": "《コンボ行動5 攻撃終了部速度倍率1》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo5AttackFollowSwingSpeed02",
+      "Name": "《コンボ行動5 攻撃終了部速度倍率2》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo5AttackFollowSwingSpeed03",
+      "Name": "《コンボ行動5 攻撃終了部速度倍率3》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo5AttackFollowSwingSpeed04",
+      "Name": "《コンボ行動5 攻撃終了部速度倍率4》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo5EstimateFutureTime01",
+      "Name": "《コンボ行動5 位置予測時間1》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo5EstimateFutureTime02",
+      "Name": "《コンボ行動5 位置予測時間2》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo5EstimateFutureTime03",
+      "Name": "《コンボ行動5 位置予測時間3》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo5EstimateFutureTime04",
+      "Name": "《コンボ行動5 位置予測時間4》",
+      "Description": ""
+    },
+    {
+      "Field": "combo5AttackAngle01",
+      "Name": "《コンボ行動5 角度補正1[deg]》",
+      "Description": ""
+    },
+    {
+      "Field": "combo5AttackAngle02",
+      "Name": "《コンボ行動5 角度補正2[deg]》",
+      "Description": ""
+    },
+    {
+      "Field": "combo5AttackAngle03",
+      "Name": "《コンボ行動5 角度補正3[deg]》",
+      "Description": ""
+    },
+    {
+      "Field": "combo5AttackAngle04",
+      "Name": "《コンボ行動5 角度補正4[deg]》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo5AttackRotateHigh01",
+      "Name": "《コンボ行動5 旋回補間開始距離1[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo5AttackRotateHigh02",
+      "Name": "《コンボ行動5 旋回補間開始距離2[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo5AttackRotateHigh03",
+      "Name": "《コンボ行動5 旋回補間開始距離3[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo5AttackRotateHigh04",
+      "Name": "《コンボ行動5 旋回補間開始距離4[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo5AttackRotateLow01",
+      "Name": "《コンボ行動5 旋回補間終了距離1[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo5AttackRotateLow02",
+      "Name": "《コンボ行動5 旋回補間終了距離2[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo5AttackRotateLow03",
+      "Name": "《コンボ行動5 旋回補間終了距離3[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo5AttackRotateLow04",
+      "Name": "《コンボ行動5 旋回補間終了距離4[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "combo5AttackHand01",
+      "Name": "《コンボ行動5 攻撃手1》",
+      "Description": ""
+    },
+    {
+      "Field": "combo5AttackHand02",
+      "Name": "《コンボ行動5 攻撃手2》",
+      "Description": ""
+    },
+    {
+      "Field": "combo5AttackHand03",
+      "Name": "《コンボ行動5 攻撃手3》",
+      "Description": ""
+    },
+    {
+      "Field": "combo5AttackHand04",
+      "Name": "《コンボ行動5 攻撃手4》",
+      "Description": ""
+    },
+    {
+      "Field": "combo5AttackChantSfx",
+      "Name": "《コンボ行動5 詠唱SFX》",
+      "Description": ""
+    },
+    {
+      "Field": "combo5Reload",
+      "Name": "《コンボ行動5 リロード時間[sec]》",
+      "Description": ""
+    },
+    {
+      "Field": "pad05",
+      "Name": "予約",
+      "Description": ""
+    },
+    {
+      "Field": "combo6AttackMotionId",
+      "Name": "《コンボ行動6 コンボ一段目》",
+      "Description": ""
+    },
+    {
+      "Field": "combo6ComboAttackRoute1",
+      "Name": "《コンボ行動6 コンボ二段目》",
+      "Description": ""
+    },
+    {
+      "Field": "combo6ComboAttackRoute2",
+      "Name": "《コンボ行動6 コンボ三段目》",
+      "Description": ""
+    },
+    {
+      "Field": "combo6ComboAttackRoute3",
+      "Name": "《コンボ行動6 コンボ四段目》",
+      "Description": ""
+    },
+    {
+      "Field": "combo6BladeCtrlType",
+      "Name": "《コンボ行動6 近接制御タイプ》",
+      "Description": ""
+    },
+    {
+      "Field": "combo6AttackId01",
+      "Name": "《コンボ行動6 攻撃ID1》",
+      "Description": ""
+    },
+    {
+      "Field": "combo6AttackId02",
+      "Name": "《コンボ行動6 攻撃ID2》",
+      "Description": ""
+    },
+    {
+      "Field": "combo6AttackId03",
+      "Name": "《コンボ行動6 攻撃ID3》",
+      "Description": ""
+    },
+    {
+      "Field": "combo6AttackId04",
+      "Name": "《コンボ行動6 攻撃ID4》",
+      "Description": ""
+    },
+    {
+      "Field": "combo6BulletId01",
+      "Name": "《コンボ行動6 BulletID1》",
+      "Description": ""
+    },
+    {
+      "Field": "combo6BulletId02",
+      "Name": "《コンボ行動6 BulletID2》",
+      "Description": ""
+    },
+    {
+      "Field": "combo6BulletId03",
+      "Name": "《コンボ行動6 BulletID3》",
+      "Description": ""
+    },
+    {
+      "Field": "combo6BulletId04",
+      "Name": "《コンボ行動6 BulletID4》",
+      "Description": ""
+    },
+    {
+      "Field": "combo6ShtoStanceTime01",
+      "Name": "《コンボ行動6 射撃構え時間1》",
+      "Description": ""
+    },
+    {
+      "Field": "combo6ShtoStanceTime02",
+      "Name": "《コンボ行動6 射撃構え時間2》",
+      "Description": ""
+    },
+    {
+      "Field": "combo6ShtoStanceTime03",
+      "Name": "《コンボ行動6 射撃構え時間3》",
+      "Description": ""
+    },
+    {
+      "Field": "combo6ShtoStanceTime04",
+      "Name": "《コンボ行動6 射撃構え時間4》",
+      "Description": ""
+    },
+    {
+      "Field": "combo6NonInterruptibleType01",
+      "Name": "《コンボ行動6 割り込み不可タイプ1》",
+      "Description": ""
+    },
+    {
+      "Field": "combo6NonInterruptibleType02",
+      "Name": "《コンボ行動6 割り込み不可タイプ2》",
+      "Description": ""
+    },
+    {
+      "Field": "combo6NonInterruptibleType03",
+      "Name": "《コンボ行動6 割り込み不可タイプ3》",
+      "Description": ""
+    },
+    {
+      "Field": "combo6NonInterruptibleType04",
+      "Name": "《コンボ行動6 割り込み不可タイプ4》",
+      "Description": ""
+    },
+    {
+      "Field": "combo6AttackMoveId01",
+      "Name": "《コンボ行動6 歩行攻撃ID1》",
+      "Description": ""
+    },
+    {
+      "Field": "combo6AttackMoveId02",
+      "Name": "《コンボ行動6 歩行攻撃ID2》",
+      "Description": ""
+    },
+    {
+      "Field": "combo6AttackMoveId03",
+      "Name": "《コンボ行動6 歩行攻撃ID3》",
+      "Description": ""
+    },
+    {
+      "Field": "combo6AttackMoveId04",
+      "Name": "《コンボ行動6 歩行攻撃ID4》",
+      "Description": ""
+    },
+    {
+      "Field": "combo6AttackHomingCancel01",
+      "Name": "《コンボ行動6 ホーミング解除有効設定1》",
+      "Description": ""
+    },
+    {
+      "Field": "combo6AttackHomingCancel02",
+      "Name": "《コンボ行動6 ホーミング解除有効設定2》",
+      "Description": ""
+    },
+    {
+      "Field": "combo6AttackHomingCancel03",
+      "Name": "《コンボ行動6 ホーミング解除有効設定3》",
+      "Description": ""
+    },
+    {
+      "Field": "combo6AttackHomingCancel04",
+      "Name": "《コンボ行動6 ホーミング解除有効設定4》",
+      "Description": ""
+    },
+    {
+      "Field": "combo6AttackRange01",
+      "Name": "《コンボ行動6 歩行攻撃攻撃範囲1》",
+      "Description": ""
+    },
+    {
+      "Field": "combo6AttackRange02",
+      "Name": "《コンボ行動6 歩行攻撃攻撃範囲2》",
+      "Description": ""
+    },
+    {
+      "Field": "combo6AttackRange03",
+      "Name": "《コンボ行動6 歩行攻撃攻撃範囲3》",
+      "Description": ""
+    },
+    {
+      "Field": "combo6AttackRange04",
+      "Name": "《コンボ行動6 歩行攻撃攻撃範囲4》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo6AttackBackSwingSpeed01",
+      "Name": "《コンボ行動6 攻撃開始部速度倍率1》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo6AttackBackSwingSpeed02",
+      "Name": "《コンボ行動6 攻撃開始部速度倍率2》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo6AttackBackSwingSpeed03",
+      "Name": "《コンボ行動6 攻撃開始部速度倍率3》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo6AttackBackSwingSpeed04",
+      "Name": "《コンボ行動6 攻撃開始部速度倍率4》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo6AttackFollowSwingSpeed01",
+      "Name": "《コンボ行動6 攻撃終了部速度倍率1》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo6AttackFollowSwingSpeed02",
+      "Name": "《コンボ行動6 攻撃終了部速度倍率2》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo6AttackFollowSwingSpeed03",
+      "Name": "《コンボ行動6 攻撃終了部速度倍率3》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo6AttackFollowSwingSpeed04",
+      "Name": "《コンボ行動6 攻撃終了部速度倍率4》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo6EstimateFutureTime01",
+      "Name": "《コンボ行動6 位置予測時間1》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo6EstimateFutureTime02",
+      "Name": "《コンボ行動6 位置予測時間2》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo6EstimateFutureTime03",
+      "Name": "《コンボ行動6 位置予測時間3》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo6EstimateFutureTime04",
+      "Name": "《コンボ行動6 位置予測時間4》",
+      "Description": ""
+    },
+    {
+      "Field": "combo6AttackAngle01",
+      "Name": "《コンボ行動6 角度補正1[deg]》",
+      "Description": ""
+    },
+    {
+      "Field": "combo6AttackAngle02",
+      "Name": "《コンボ行動6 角度補正2[deg]》",
+      "Description": ""
+    },
+    {
+      "Field": "combo6AttackAngle03",
+      "Name": "《コンボ行動6 角度補正3[deg]》",
+      "Description": ""
+    },
+    {
+      "Field": "combo6AttackAngle04",
+      "Name": "《コンボ行動6 角度補正4[deg]》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo6AttackRotateHigh01",
+      "Name": "《コンボ行動6 旋回補間開始距離1[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo6AttackRotateHigh02",
+      "Name": "《コンボ行動6 旋回補間開始距離2[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo6AttackRotateHigh03",
+      "Name": "《コンボ行動6 旋回補間開始距離3[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo6AttackRotateHigh04",
+      "Name": "《コンボ行動6 旋回補間開始距離4[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo6AttackRotateLow01",
+      "Name": "《コンボ行動6 旋回補間終了距離1[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo6AttackRotateLow02",
+      "Name": "《コンボ行動6 旋回補間終了距離2[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo6AttackRotateLow03",
+      "Name": "《コンボ行動6 旋回補間終了距離3[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "fCombo6AttackRotateLow04",
+      "Name": "《コンボ行動6 旋回補間終了距離4[m]》",
+      "Description": ""
+    },
+    {
+      "Field": "combo6AttackHand01",
+      "Name": "《コンボ行動6 攻撃手1》",
+      "Description": ""
+    },
+    {
+      "Field": "combo6AttackHand02",
+      "Name": "《コンボ行動6 攻撃手2》",
+      "Description": ""
+    },
+    {
+      "Field": "combo6AttackHand03",
+      "Name": "《コンボ行動6 攻撃手3》",
+      "Description": ""
+    },
+    {
+      "Field": "combo6AttackHand04",
+      "Name": "《コンボ行動6 攻撃手4》",
+      "Description": ""
+    },
+    {
+      "Field": "combo6AttackChantSfx",
+      "Name": "《コンボ行動6 詠唱SFX》",
+      "Description": ""
+    },
+    {
+      "Field": "combo6Reload",
+      "Name": "《コンボ行動6 リロード時間[sec]》",
+      "Description": ""
+    },
+    {
+      "Field": "pad06",
+      "Name": "予約",
+      "Description": ""
+    }
+  ]
+}

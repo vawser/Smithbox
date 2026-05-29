@@ -90,7 +90,7 @@
         <moveRotationSpeedScale />
         <canPredictShot  IsBool=""/>
         <shotSeCategory  Enum="RANGED_ATK_SHOT_SE_CATEGORY"/>
-        <dummy />
+        <dummy Padding="" />
         <rangedAutoPivotRotationSpeedScale />
         <rangedManualPivotRotationSpeedScale />
         <spellChantTimeScale />
@@ -107,6 +107,6 @@
         <canGuardAttack  IsBool=""/>
         <unk138/>
         <abyssRate />
-        <dummy1 />
+        <dummy1 Padding="" />
     </Field>
 </PARAMMETA>

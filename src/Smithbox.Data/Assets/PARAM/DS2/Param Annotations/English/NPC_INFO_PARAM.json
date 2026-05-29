@@ -2,67 +2,67 @@
   "Param": "NPC_INFO_PARAM",
   "Type": "NPC_INFO_PARAM",
   "Name": "NPC_INFO_PARAM",
-  "Description": "",
+  "Description": "Stores NPC-specific information such as death state tracking, grave generation settings, name text references, and miscellaneous gameplay values.",
   "Fields": [
     {
       "Field": "graveGenerateTime",
-      "Name": "お墓生成時間",
-      "Description": ""
+      "Name": "Grave Generation Time",
+      "Description": "Specifies the time required before the NPC's grave appears after death."
     },
     {
       "Field": "deadTimeValueId",
-      "Name": "死亡時間格納先ID",
-      "Description": ""
+      "Name": "Death Time Storage ID",
+      "Description": "Event value ID used to store the NPC's recorded death time."
     },
     {
       "Field": "deadFlagId",
-      "Name": "死亡フラグID",
-      "Description": ""
+      "Name": "Death Flag ID",
+      "Description": "Event flag indicating whether the NPC has died."
     },
     {
       "Field": "graveSoulValue",
-      "Name": "お墓ソウルコスト",
-      "Description": ""
+      "Name": "Grave Soul Cost",
+      "Description": "Soul cost required to interact with or restore the NPC via their grave."
     },
     {
       "Field": "chrNameTextId",
-      "Name": "キャラテキストID",
-      "Description": ""
+      "Name": "Character Text ID",
+      "Description": "References the text entry used for the NPC's displayed name."
     },
     {
       "Field": "aReserved1",
-      "Name": "予約",
+      "Name": "Reserved",
       "Description": ""
     },
     {
       "Field": "value0",
-      "Name": "汎用値0",
-      "Description": ""
+      "Name": "General Purpose Value: 0",
+      "Description": "Generic configurable value reserved for game logic or scripting."
     },
     {
       "Field": "value1",
-      "Name": "汎用値1",
-      "Description": ""
+      "Name": "General Purpose Value: 1",
+      "Description": "Generic configurable value reserved for game logic or scripting."
     },
     {
       "Field": "value2",
-      "Name": "汎用値2",
-      "Description": ""
+      "Name": "General Purpose Value: 2",
+      "Description": "Generic configurable value reserved for game logic or scripting."
     },
     {
       "Field": "value3",
-      "Name": "汎用値3",
-      "Description": ""
+      "Name": "General Purpose Value: 3",
+      "Description": "Generic configurable value reserved for game logic or scripting."
     },
     {
       "Field": "value4",
-      "Name": "汎用値4",
-      "Description": ""
+      "Name": "General Purpose Value: 4",
+      "Description": "Generic configurable value reserved for game logic or scripting."
     },
     {
       "Field": "value5",
-      "Name": "汎用値5",
-      "Description": ""
+      "Name": "General Purpose Value: 5",
+      "Description": "Generic configurable value reserved for game logic or scripting."
     }
   ]
 }

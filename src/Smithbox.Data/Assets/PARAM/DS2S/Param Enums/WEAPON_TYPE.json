@@ -12,7 +12,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Bare hands"
+          "Text": "Bare Hands"
         }
       ]
     },
@@ -21,7 +21,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "爪"
+          "Text": "Claw"
         }
       ]
     },
@@ -30,7 +30,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "拳"
+          "Text": "Fist"
         }
       ]
     },
@@ -48,7 +48,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Stabbing sword"
+          "Text": "Thrusting Sword"
         }
       ]
     },
@@ -57,7 +57,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "鞭"
+          "Text": "Whip"
         }
       ]
     },
@@ -66,7 +66,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Double-edged sword"
+          "Text": "Twinblade"
         }
       ]
     },
@@ -75,7 +75,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "槍"
+          "Text": "Spear"
         }
       ]
     },
@@ -84,7 +84,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Assault spear"
+          "Text": "Lance"
         }
       ]
     },
@@ -93,7 +93,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Curved sword"
+          "Text": "Curved Sword"
         }
       ]
     },
@@ -102,7 +102,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "刀"
+          "Text": "Katana"
         }
       ]
     },
@@ -111,7 +111,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Straight sword"
+          "Text": "Straight Sword"
         }
       ]
     },
@@ -120,7 +120,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Two-handed sickle"
+          "Text": "Scythe"
         }
       ]
     },
@@ -129,7 +129,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Two-handed sword"
+          "Text": "Greatsword"
         }
       ]
     },
@@ -138,7 +138,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Two-handed oversized sword"
+          "Text": "Ultra Greatsword"
         }
       ]
     },
@@ -147,7 +147,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Two-handed oversized curved sword"
+          "Text": "Curved Greatsword"
         }
       ]
     },
@@ -156,7 +156,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "One-handed hammer"
+          "Text": "Hammer"
         }
       ]
     },
@@ -165,7 +165,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Two-handed hammer"
+          "Text": "Great Hammer"
         }
       ]
     },
@@ -174,7 +174,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "One handed ax"
+          "Text": "Axe"
         }
       ]
     },
@@ -183,7 +183,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Two-handed ax"
+          "Text": "Greataxe"
         }
       ]
     },
@@ -192,7 +192,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Two-handed long ax"
+          "Text": "Halberd"
         }
       ]
     },
@@ -201,7 +201,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "杖"
+          "Text": "Staff"
         }
       ]
     },
@@ -210,7 +210,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "鈴"
+          "Text": "Chime"
         }
       ]
     },
@@ -219,7 +219,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Two-handed bow"
+          "Text": "Bow"
         }
       ]
     },
@@ -228,7 +228,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Two-handed longbow"
+          "Text": "Greatbow"
         }
       ]
     },
@@ -237,7 +237,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "One handed bow"
+          "Text": "Crossbow"
         }
       ]
     },
@@ -246,7 +246,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Small shield"
+          "Text": "Small Shield"
         }
       ]
     },
@@ -255,7 +255,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Medium shield"
+          "Text": "Medium Shield"
         }
       ]
     },
@@ -264,7 +264,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Large shield"
+          "Text": "Greatshield"
         }
       ]
     },
@@ -291,7 +291,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Fire of sorcery"
+          "Text": "Pyromancy Flame"
         }
       ]
     }

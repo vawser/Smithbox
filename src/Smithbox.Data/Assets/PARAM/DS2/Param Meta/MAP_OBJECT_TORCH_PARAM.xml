@@ -4,6 +4,6 @@
         <fireTime />
         <motionDummyPolyId />
         <bFirstEnable  IsBool=""/>
-        <aReserved />
+        <aReserved Padding="" />
     </Field>
 </PARAMMETA>

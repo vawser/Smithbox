@@ -4,7 +4,7 @@
         <gameBright0  Enum="HIT_GAME_BRIGHT_TYPE_ENUM"/>
         <gameBright1  Enum="HIT_GAME_BRIGHT_TYPE_ENUM"/>
         <generateMaxNum />
-        <aReserved />
+        <aReserved Padding="" />
         <groundMaterial240_0 />
         <groundMaterial240_1 />
         <groundMaterial240_2 />

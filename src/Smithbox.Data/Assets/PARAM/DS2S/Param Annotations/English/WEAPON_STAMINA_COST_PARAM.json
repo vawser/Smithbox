@@ -2,327 +2,327 @@
   "Param": "WEAPON_STAMINA_COST_PARAM",
   "Type": "WEAPON_STAMINA_COST_PARAM",
   "Name": "WEAPON_STAMINA_COST_PARAM",
-  "Description": "",
+  "Description": "Defines stamina consumption multipliers for weapon attacks performed in different stances and attack categories.",
   "Fields": [
     {
       "Field": "Nnormal1st1H",
-      "Name": "攻撃消費スタミナ 倍率 片手 弱1 [倍]",
-      "Description": ""
+      "Name": "1H Light Attack 1 Stamina %",
+      "Description": "Multiplier applied to stamina consumption for the first 1H light attack."
     },
     {
       "Field": "normal2nd1H",
-      "Name": "攻撃消費スタミナ 倍率 片手 弱2 [倍]",
-      "Description": ""
+      "Name": "1H Light Attack 2 Stamina %",
+      "Description": "Multiplier applied to stamina consumption for the second 1H light attack."
     },
     {
       "Field": "strong1st1H",
-      "Name": "攻撃消費スタミナ 倍率 片手 強1 [倍]",
-      "Description": ""
+      "Name": "1H Heavy Attack 1 Stamina %",
+      "Description": "Multiplier applied to stamina consumption for the first 1H heavy attack."
     },
     {
       "Field": "strong2nd1H",
-      "Name": "攻撃消費スタミナ 倍率 片手 強2 [倍]",
-      "Description": ""
+      "Name": "1H Heavy Attack 2 Stamina %",
+      "Description": "Multiplier applied to stamina consumption for the second 1H heavy attack."
     },
     {
       "Field": "dash1H",
-      "Name": "攻撃消費スタミナ 倍率 片手 ダッシュ [倍]",
-      "Description": ""
+      "Name": "1H Running Attack Stamina %",
+      "Description": "Multiplier applied to stamina consumption for 1H running attacks."
     },
     {
       "Field": "rolling1H",
-      "Name": "攻撃消費スタミナ 倍率 片手 ローリング [倍]",
-      "Description": ""
+      "Name": "1H Rolling Attack Stamina %",
+      "Description": "Multiplier applied to stamina consumption for 1H rolling attacks."
     },
     {
       "Field": "step1H",
-      "Name": "攻撃消費スタミナ 倍率 片手 ステップ [倍]",
-      "Description": ""
+      "Name": "1H Step Attack Stamina %",
+      "Description": "Multiplier applied to stamina consumption for 1H step attacks."
     },
     {
       "Field": "down1H",
-      "Name": "攻撃消費スタミナ 倍率 片手 ダウン [倍]",
-      "Description": ""
+      "Name": "1H Downed Attack Stamina %",
+      "Description": "Multiplier applied to stamina consumption for 1H attacks performed while downed."
     },
     {
       "Field": "fall1H",
-      "Name": "攻撃消費スタミナ 倍率 片手 落下 [倍]",
-      "Description": ""
+      "Name": "1H Falling Attack Stamina %",
+      "Description": "Multiplier applied to stamina consumption for 1H falling attacks."
     },
     {
       "Field": "jump1H",
-      "Name": "攻撃消費スタミナ 倍率 片手 ジャンプ [倍]",
-      "Description": ""
+      "Name": "1H Jumping Attack Stamina %",
+      "Description": "Multiplier applied to stamina consumption for 1H jumping attacks."
     },
     {
       "Field": "normal1st2H",
-      "Name": "攻撃消費スタミナ 倍率 両手 弱1 [倍]",
-      "Description": ""
+      "Name": "2H Light Attack 1 Stamina %",
+      "Description": "Multiplier applied to stamina consumption for the first 2H light attack."
     },
     {
       "Field": "normal2nd2H",
-      "Name": "攻撃消費スタミナ 倍率 両手 弱2 [倍]",
-      "Description": ""
+      "Name": "2H Light Attack 2 Stamina %",
+      "Description": "Multiplier applied to stamina consumption for the second 2H light attack."
     },
     {
       "Field": "strong1st2H",
-      "Name": "攻撃消費スタミナ 倍率 両手 強1 [倍]",
-      "Description": ""
+      "Name": "2H Heavy Attack 1 Stamina %",
+      "Description": "Multiplier applied to stamina consumption for the first 2H heavy attack."
     },
     {
       "Field": "strong2nd2H",
-      "Name": "攻撃消費スタミナ 倍率 両手 強2 [倍]",
-      "Description": ""
+      "Name": "2H Heavy Attack 2 Stamina %",
+      "Description": "Multiplier applied to stamina consumption for the second 2H heavy attack."
     },
     {
       "Field": "dash2H",
-      "Name": "攻撃消費スタミナ 倍率 両手 ダッシュ [倍]",
-      "Description": ""
+      "Name": "2H Running Attack Stamina %",
+      "Description": "Multiplier applied to stamina consumption for 2H running attacks."
     },
     {
       "Field": "rolling2H",
-      "Name": "攻撃消費スタミナ 倍率 両手 ローリング [倍]",
-      "Description": ""
+      "Name": "2H Rolling Attack Stamina %",
+      "Description": "Multiplier applied to stamina consumption for 2H rolling attacks."
     },
     {
       "Field": "step2H",
-      "Name": "攻撃消費スタミナ 倍率 両手 ステップ [倍]",
-      "Description": ""
+      "Name": "2H Step Attack Stamina %",
+      "Description": "Multiplier applied to stamina consumption for 2H step attacks."
     },
     {
       "Field": "down2H",
-      "Name": "攻撃消費スタミナ 倍率 両手 ダウン [倍]",
-      "Description": ""
+      "Name": "2H Downed Attack Stamina %",
+      "Description": "Multiplier applied to stamina consumption for 2H attacks performed while downed."
     },
     {
       "Field": "fall2H",
-      "Name": "攻撃消費スタミナ 倍率 両手 落下 [倍]",
-      "Description": ""
+      "Name": "2H Falling Attack Stamina %",
+      "Description": "Multiplier applied to stamina consumption for 2H falling attacks."
     },
     {
       "Field": "jump2H",
-      "Name": "攻撃消費スタミナ 倍率 両手 ジャンプ [倍]",
-      "Description": ""
+      "Name": "2H Jumping Attack Stamina %",
+      "Description": "Multiplier applied to stamina consumption for 2H jumping attacks."
     },
     {
       "Field": "normal1stDual1H",
-      "Name": "攻撃消費スタミナ 倍率 二刀流 弱1 [倍]",
-      "Description": ""
+      "Name": "DW Light Attack 1 Stamina %",
+      "Description": "Multiplier applied to stamina consumption for the first DW light attack."
     },
     {
       "Field": "normal2ndDual1H",
-      "Name": "攻撃消費スタミナ 倍率 二刀流 弱2 [倍]",
-      "Description": ""
+      "Name": "DW Light Attack 2 Stamina %",
+      "Description": "Multiplier applied to stamina consumption for the second DW light attack."
     },
     {
       "Field": "strong1stDual1H",
-      "Name": "攻撃消費スタミナ 倍率 二刀流 強1 [倍]",
-      "Description": ""
+      "Name": "DW Heavy Attack 1 Stamina %",
+      "Description": "Multiplier applied to stamina consumption for the first DW heavy attack."
     },
     {
       "Field": "strong2ndDual1H",
-      "Name": "攻撃消費スタミナ 倍率 二刀流 強2 [倍]",
-      "Description": ""
+      "Name": "DW Heavy Attack 2 Stamina %",
+      "Description": "Multiplier applied to stamina consumption for the second DW heavy attack."
     },
     {
       "Field": "dashDual1H",
-      "Name": "攻撃消費スタミナ 倍率 二刀流 ダッシュ [倍]",
-      "Description": ""
+      "Name": "DW Running Attack Stamina %",
+      "Description": "Multiplier applied to stamina consumption for DW running attacks."
     },
     {
       "Field": "rollingDual1H",
-      "Name": "攻撃消費スタミナ 倍率 二刀流 ローリング [倍]",
-      "Description": ""
+      "Name": "DW Rolling Attack Stamina %",
+      "Description": "Multiplier applied to stamina consumption for DW rolling attacks."
     },
     {
       "Field": "stepDual1H",
-      "Name": "攻撃消費スタミナ 倍率 二刀流 ステップ [倍]",
-      "Description": ""
+      "Name": "DW Step Attack Stamina %",
+      "Description": "Multiplier applied to stamina consumption for DW step attacks."
     },
     {
       "Field": "downDual1H",
-      "Name": "攻撃消費スタミナ 倍率 二刀流 ダウン [倍]",
-      "Description": ""
+      "Name": "DW Downed Attack Stamina %",
+      "Description": "Multiplier applied to stamina consumption for DW attacks performed while downed."
     },
     {
       "Field": "fallDual1H",
-      "Name": "攻撃消費スタミナ 倍率 二刀流 落下 [倍]",
-      "Description": ""
+      "Name": "DW Falling Attack Stamina %",
+      "Description": "Multiplier applied to stamina consumption for DW falling attacks."
     },
     {
       "Field": "jumpDual1H",
-      "Name": "攻撃消費スタミナ 倍率 二刀流 ジャンプ [倍]",
-      "Description": ""
+      "Name": "DW Jumping Attack Stamina %",
+      "Description": "Multiplier applied to stamina consumption for DW jumping attacks."
     },
     {
       "Field": "normal1stDual2H",
-      "Name": "攻撃消費スタミナ 倍率 二刀流両手 弱1 [倍]",
-      "Description": ""
+      "Name": "2H DW Light Attack 1 Stamina %",
+      "Description": "Multiplier applied to stamina consumption for the first 2H DW light attack."
     },
     {
       "Field": "normal2ndDual2H",
-      "Name": "攻撃消費スタミナ 倍率 二刀流両手 弱2 [倍]",
-      "Description": ""
+      "Name": "2H DW Light Attack 2 Stamina %",
+      "Description": "Multiplier applied to stamina consumption for the second 2H DW light attack."
     },
     {
       "Field": "strong1stDual2H",
-      "Name": "攻撃消費スタミナ 倍率 二刀流両手 強1 [倍]",
-      "Description": ""
+      "Name": "2H DW Heavy Attack 1 Stamina %",
+      "Description": "Multiplier applied to stamina consumption for the first 2H DW heavy attack."
     },
     {
       "Field": "strong2ndDual2H",
-      "Name": "攻撃消費スタミナ 倍率 二刀流両手 強2 [倍]",
-      "Description": ""
+      "Name": "2H DW Heavy Attack 2 Stamina %",
+      "Description": "Multiplier applied to stamina consumption for the second 2H DW heavy attack."
     },
     {
       "Field": "dashDual2H",
-      "Name": "攻撃消費スタミナ 倍率 二刀流両手 ダッシュ [倍]",
-      "Description": ""
+      "Name": "2H DW Running Attack Stamina %",
+      "Description": "Multiplier applied to stamina consumption for 2H DW running attacks."
     },
     {
       "Field": "rollingDual2H",
-      "Name": "攻撃消費スタミナ 倍率 二刀流両手 ローリング [倍]",
-      "Description": ""
+      "Name": "2H DW Rolling Attack Stamina %",
+      "Description": "Multiplier applied to stamina consumption for 2H DW rolling attacks."
     },
     {
       "Field": "stepDual2H",
-      "Name": "攻撃消費スタミナ 倍率 二刀流両手 ステップ [倍]",
-      "Description": ""
+      "Name": "2H DW Step Attack Stamina %",
+      "Description": "Multiplier applied to stamina consumption for 2H DW step attacks."
     },
     {
       "Field": "downDual2H",
-      "Name": "攻撃消費スタミナ 倍率 二刀流両手 ダウン [倍]",
-      "Description": ""
+      "Name": "2H DW Downed Attack Stamina %",
+      "Description": "Multiplier applied to stamina consumption for 2H DW attacks performed while downed."
     },
     {
       "Field": "fallDual2H",
-      "Name": "攻撃消費スタミナ 倍率 二刀流両手 落下 [倍]",
-      "Description": ""
+      "Name": "2H DW Falling Attack Stamina %",
+      "Description": "Multiplier applied to stamina consumption for 2H DW falling attacks."
     },
     {
       "Field": "jumpDual2H",
-      "Name": "攻撃消費スタミナ 倍率 二刀流両手 ジャンプ [倍]",
-      "Description": ""
+      "Name": "2H DW Jumping Attack Stamina %",
+      "Description": "Multiplier applied to stamina consumption for 2H DW jumping attacks."
     },
     {
       "Field": "normal1stLeft",
-      "Name": "攻撃消費スタミナ 倍率 左手 弱1 [倍]",
-      "Description": ""
+      "Name": "LH Light Attack 1 Stamina %",
+      "Description": "Multiplier applied to stamina consumption for the first LH light attack."
     },
     {
       "Field": "normal2ndLeft",
-      "Name": "攻撃消費スタミナ 倍率 左手 弱2 [倍]",
-      "Description": ""
+      "Name": "LH Light Attack 2 Stamina %",
+      "Description": "Multiplier applied to stamina consumption for the second LH light attack."
     },
     {
       "Field": "strong1stLeft",
-      "Name": "攻撃消費スタミナ 倍率 左手 強1 [倍]",
-      "Description": ""
+      "Name": "LH Heavy Attack 1 Stamina %",
+      "Description": "Multiplier applied to stamina consumption for the first LH heavy attack."
     },
     {
       "Field": "strong2ndLeft",
-      "Name": "攻撃消費スタミナ 倍率 左手 強2 [倍]",
-      "Description": ""
+      "Name": "LH Heavy Attack 2 Stamina %",
+      "Description": "Multiplier applied to stamina consumption for the second LH heavy attack."
     },
     {
       "Field": "dashLeft",
-      "Name": "攻撃消費スタミナ 倍率 左手 ダッシュ [倍]",
-      "Description": ""
+      "Name": "LH Running Attack Stamina %",
+      "Description": "Multiplier applied to stamina consumption for LH running attacks."
     },
     {
       "Field": "rollingLeft",
-      "Name": "攻撃消費スタミナ 倍率 左手 ローリング [倍]",
-      "Description": ""
+      "Name": "LH Rolling Attack Stamina %",
+      "Description": "Multiplier applied to stamina consumption for LH rolling attacks."
     },
     {
       "Field": "stepLeft",
-      "Name": "攻撃消費スタミナ 倍率 左手 ステップ [倍]",
-      "Description": ""
+      "Name": "LH Step Attack Stamina %",
+      "Description": "Multiplier applied to stamina consumption for LH step attacks."
     },
     {
       "Field": "downLeft",
-      "Name": "攻撃消費スタミナ 倍率 左手 ダウン [倍]",
-      "Description": ""
+      "Name": "LH Downed Attack Stamina %",
+      "Description": "Multiplier applied to stamina consumption for LH attacks performed while downed."
     },
     {
       "Field": "fallLeft",
-      "Name": "攻撃消費スタミナ 倍率 左手 落下 [倍]",
-      "Description": ""
+      "Name": "LH Falling Attack Stamina %",
+      "Description": "Multiplier applied to stamina consumption for LH falling attacks."
     },
     {
       "Field": "jumpLeft",
-      "Name": "攻撃消費スタミナ 倍率 左手 ジャンプ [倍]",
-      "Description": ""
+      "Name": "LH Jumping Attack Stamina %",
+      "Description": "Multiplier applied to stamina consumption for LH jumping attacks."
     },
     {
       "Field": "single2HandOppositeNormal",
-      "Name": "攻撃消費スタミナ 倍率 両手逆腕 弱 [倍]",
-      "Description": ""
+      "Name": "Opposite-Arm 2H Light Attack Stamina %",
+      "Description": "Multiplier applied to stamina consumption for light attacks performed while two-handing a weapon in the opposite arm slot."
     },
     {
       "Field": "single2HandOppositeStrong",
-      "Name": "攻撃消費スタミナ 倍率 両手逆腕 強 [倍]",
-      "Description": ""
+      "Name": "Opposite-Arm 2H Heavy Attack Stamina %",
+      "Description": "Multiplier applied to stamina consumption for heavy attacks performed while two-handing a weapon in the opposite arm slot."
     },
     {
       "Field": "dual2HandOppositeNormal1st",
-      "Name": "攻撃消費スタミナ 倍率 二刀流両手逆腕 弱1 [倍]",
-      "Description": ""
+      "Name": "Opposite-Arm 2H DW Light Attack 1 Stamina %",
+      "Description": "Multiplier applied to stamina consumption for the first DW light attack performed while two-handing a weapon in the opposite arm slot."
     },
     {
       "Field": "dual2HandOppositeNormal2nd",
-      "Name": "攻撃消費スタミナ 倍率 二刀流両手逆腕 弱2 [倍]",
-      "Description": ""
+      "Name": "Opposite-Arm 2H DW Light Attack 2 Stamina %",
+      "Description": "Multiplier applied to stamina consumption for the second DW light attack performed while two-handing a weapon in the opposite arm slot."
     },
     {
       "Field": "dual2HandOppositeStrong",
-      "Name": "攻撃消費スタミナ 倍率 二刀流両手逆腕 強 [倍]",
-      "Description": ""
+      "Name": "Opposite-Arm 2H DW Heavy Attack Stamina %",
+      "Description": "Multiplier applied to stamina consumption for DW heavy attacks performed while two-handing a weapon in the opposite arm slot."
     },
     {
       "Field": "guardBreak1Hand",
-      "Name": "攻撃消費スタミナ 倍率 片手 ガード崩し [倍]",
-      "Description": ""
+      "Name": "1H Guard Break Stamina %",
+      "Description": "Multiplier applied to stamina consumption for 1H guard break attacks."
     },
     {
       "Field": "guardBreak2Hand",
-      "Name": "攻撃消費スタミナ 倍率 両手 ガード崩し [倍]",
-      "Description": ""
+      "Name": "2H Guard Break Stamina %",
+      "Description": "Multiplier applied to stamina consumption for 2H guard break attacks."
     },
     {
       "Field": "guardNormal1st",
-      "Name": "攻撃消費スタミナ 倍率 ガード構え 弱1段目 [倍]",
-      "Description": ""
+      "Name": "Guard Stance Light Attack 1 Stamina %",
+      "Description": "Multiplier applied to stamina consumption for the first light attack performed from a guard stance."
     },
     {
       "Field": "guardNormal2nd",
-      "Name": "攻撃消費スタミナ 倍率 ガード構え 弱2段目 [倍]",
-      "Description": ""
+      "Name": "Guard Stance Light Attack 2 Stamina %",
+      "Description": "Multiplier applied to stamina consumption for the second light attack performed from a guard stance."
     },
     {
       "Field": "guardStrong1st",
-      "Name": "攻撃消費スタミナ 倍率 ガード構え 強1段目 [倍]",
-      "Description": ""
+      "Name": "Guard Stance Heavy Attack 1 Stamina %",
+      "Description": "Multiplier applied to stamina consumption for the first heavy attack performed from a guard stance."
     },
     {
       "Field": "guardStrong2nd",
-      "Name": "攻撃消費スタミナ 倍率 ガード構え 強2段目 [倍]",
-      "Description": ""
+      "Name": "Guard Stance Heavy Attack 2 Stamina %",
+      "Description": "Multiplier applied to stamina consumption for the second heavy attack performed from a guard stance."
     },
     {
       "Field": "parryBreakStab",
-      "Name": "攻撃消費スタミナ 倍率 パリィブレイクスタブ [倍]",
-      "Description": ""
+      "Name": "Parry Break Riposte Stamina %",
+      "Description": "Multiplier applied to stamina consumption for critical riposte attacks following a successful parry break."
     },
     {
       "Field": "guardBreakStab",
-      "Name": "攻撃消費スタミナ 倍率 ガードブレイクスタブ [倍]",
-      "Description": ""
+      "Name": "Guard Break Riposte Stamina %",
+      "Description": "Multiplier applied to stamina consumption for critical riposte attacks following a guard break."
     },
     {
       "Field": "backStab",
-      "Name": "攻撃消費スタミナ 倍率 バックスタブ [倍]",
-      "Description": ""
+      "Name": "Backstab Stamina %",
+      "Description": "Multiplier applied to stamina consumption for backstab critical attacks."
     }
   ]
 }

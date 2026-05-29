@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PARAMMETA XmlVersion="0">
+  <ColorEdit>
+    <ColorEditor Name="Color" Fields="colorR,colorG,colorB,colorA" PlacedField="colorA" />
+  </ColorEdit>
     <Field>
         <colorR />
         <colorG />

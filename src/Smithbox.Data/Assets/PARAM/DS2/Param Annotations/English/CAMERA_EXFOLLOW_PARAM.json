@@ -161,8 +161,8 @@
     },
     {
       "Field": "rotHiSpeedRateIncTime",
-      "Name": "High Speed Rotation Increase Time",
-      "Description": "The increase time (in seconds) for high speed rotation rate."
+      "Name": "Fast Turn Speed Increase Time",
+      "Description": "The increase time (in seconds) for fast turn rate."
     },
     {
       "Field": "rotRangeMinX",
@@ -216,23 +216,23 @@
     },
     {
       "Field": "rotHiSpeedX_Min",
-      "Name": "High Speed Rotation: X-Axis - Minimum Speed",
-      "Description": "The minimum speed (in degrees per second) for the high speed x-axis rotation."
+      "Name": "Fast Turn Speed: X-Axis - Minimum Speed",
+      "Description": "The minimum speed (in degrees per second) for the fast turn on the x-axis."
     },
     {
       "Field": "rotHiSpeedX_Max",
-      "Name": "High Speed Rotation: X-Axis - Maximum Speed",
-      "Description": "The maximum speed (in degrees per second) for the high speed x-axis rotation."
+      "Name": "Fast Turn Speed: X-Axis - Maximum Speed",
+      "Description": "The maximum speed (in degrees per second) for the fast turn on the x-axis."
     },
     {
       "Field": "rotHiSpeedY_Min",
-      "Name": "High Speed Rotation: Y-Axis - Minimum Speed",
-      "Description": "The minimum speed (in degrees per second) for the high speed y-axis rotation."
+      "Name": "Fast Turn Speed: Y-Axis - Minimum Speed",
+      "Description": "The minimum speed (in degrees per second) for the fast turn on the y-axis."
     },
     {
       "Field": "rotHiSpeedY_Max",
-      "Name": "High Speed Rotation: Y-Axis - Maximum Speed",
-      "Description": "The maximum speed (in degrees per second) for the high speed y-axis rotation."
+      "Name": "Fast Turn Speed: Y-Axis - Maximum Speed",
+      "Description": "The maximum speed (in degrees per second) for the fast turn on the y-axis."
     },
     {
       "Field": "directPitchAng",
@@ -386,8 +386,8 @@
     },
     {
       "Field": "rotationBrakeAddTimelHighSpeedX",
-      "Name": "Rotation Brake: High Speed X-Axis Rotation Brake Time",
-      "Description": "The braking time (in seconds) for brake action on the high speed x-axis."
+      "Name": "Rotation Brake: Fast Turn X-Axis Brake Time",
+      "Description": "The braking time (in seconds) for brake action for the fast turn on the x-axis."
     },
     {
       "Field": "rotaitionBrakeTimeNormalSpeedY",
@@ -396,8 +396,8 @@
     },
     {
       "Field": "rotationBrakeAddTimelHighSpeedY",
-      "Name": "Rotation Brake: High Speed Y-Axis Rotation Brake Time",
-      "Description": "The braking time (in seconds) for brake action on the high speed y-axis."
+      "Name": "Rotation Brake: Fast Turn Y-Axis Brake Time",
+      "Description": "The braking time (in seconds) for brake action for the fast turn on the y-axis."
     }
   ]
 }

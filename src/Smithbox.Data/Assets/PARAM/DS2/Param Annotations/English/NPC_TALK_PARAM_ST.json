@@ -2,42 +2,42 @@
   "Param": "NPC_TALK_PARAM_ST",
   "Type": "NPC_TALK_PARAM_ST",
   "Name": "NPC_TALK_PARAM_ST",
-  "Description": "",
+  "Description": "Defines dialogue, voice playback, UI behavior, and timing settings for NPC conversations.",
   "Fields": [
     {
       "Field": "msgId",
-      "Name": "メッセージID",
-      "Description": ""
+      "Name": "Message ID",
+      "Description": "ID of the dialogue message text to display."
     },
     {
       "Field": "voiceId",
-      "Name": "ボイスＩD",
-      "Description": ""
+      "Name": "Voice ID",
+      "Description": "ID of the voice audio associated with the dialogue."
     },
     {
       "Field": "actionId",
-      "Name": "行動ID",
-      "Description": ""
+      "Name": "Action ID",
+      "Description": "ID of the action or animation performed during the dialogue."
     },
     {
       "Field": "windowType",
-      "Name": "ウィンドウタイプ",
-      "Description": ""
+      "Name": "Window Type",
+      "Description": "Specifies the type or style of dialogue window used."
     },
     {
       "Field": "bNextPlay",
-      "Name": "連続会話",
-      "Description": ""
+      "Name": "Continuous Conversation",
+      "Description": "Determines whether the next dialogue entry should play automatically."
     },
     {
       "Field": "changeNameNpcId",
-      "Name": "名前差し替えフラグ変更NPCID",
-      "Description": ""
+      "Name": "Name Replacement Flag NPC ID",
+      "Description": "NPC ID used to control or override the displayed speaker name."
     },
     {
       "Field": "endWaitTime",
-      "Name": "待機時間",
-      "Description": ""
+      "Name": "Wait Time",
+      "Description": "Amount of time to wait after the dialogue ends before continuing."
     }
   ]
 }

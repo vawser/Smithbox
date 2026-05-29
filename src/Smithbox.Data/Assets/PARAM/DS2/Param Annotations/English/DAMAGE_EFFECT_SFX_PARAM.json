@@ -2,182 +2,182 @@
   "Param": "DAMAGE_EFFECT_SFX_PARAM",
   "Type": "DAMAGE_EFFECT_SFX_PARAM",
   "Name": "DAMAGE_EFFECT_SFX_PARAM",
-  "Description": "",
+  "Description": "Defines visual effect IDs, sound intensity levels, and blood spatter settings used for damage impact effects of varying sizes and types.",
   "Fields": [
     {
       "Field": "sfxIdSmall0",
-      "Name": "SfxID：小",
-      "Description": ""
+      "Name": "Set 0: SFX ID: Small",
+      "Description": "Visual effect ID used for small impact effects in variation set 0."
     },
     {
       "Field": "sfxIdNormal0",
-      "Name": "SfxID：中",
-      "Description": ""
+      "Name": "Set 0: SFX ID: Medium",
+      "Description": "Visual effect ID used for medium impact effects in variation set 0."
     },
     {
       "Field": "sfxIdLarge0",
-      "Name": "SfxID：大",
-      "Description": ""
+      "Name": "Set 0: SFX ID: Large",
+      "Description": "Visual effect ID used for large impact effects in variation set 0."
     },
     {
       "Field": "sfxIdSuperLarge0",
-      "Name": "SfxID：特大",
-      "Description": ""
+      "Name": "Set 0: SFX ID: Very Large",
+      "Description": "Visual effect ID used for very large impact effects in variation set 0."
     },
     {
       "Field": "sfxIdHyperLarge0",
-      "Name": "SfxID：特特大",
-      "Description": ""
+      "Name": "Set 0: SFX ID: Massive",
+      "Description": "Visual effect ID used for extremely large impact effects in variation set 0."
     },
     {
       "Field": "sfxIdSmall1",
-      "Name": "SfxID：小",
-      "Description": ""
+      "Name": "Set 1: SFX ID: Small",
+      "Description": "Visual effect ID used for small impact effects in variation set 1."
     },
     {
       "Field": "sfxIdNormal1",
-      "Name": "SfxID：中",
-      "Description": ""
+      "Name": "Set 1: SFX ID: Medium",
+      "Description": "Visual effect ID used for medium impact effects in variation set 1."
     },
     {
       "Field": "sfxIdLarge1",
-      "Name": "SfxID：大",
-      "Description": ""
+      "Name": "Set 1: SFX ID: Large",
+      "Description": "Visual effect ID used for large impact effects in variation set 1."
     },
     {
       "Field": "sfxIdSuperLarge1",
-      "Name": "SfxID：特大",
-      "Description": ""
+      "Name": "Set 1: SFX ID: Very Large",
+      "Description": "Visual effect ID used for very large impact effects in variation set 1."
     },
     {
       "Field": "sfxIdHyperLarge1",
-      "Name": "SfxID：特特大",
-      "Description": ""
+      "Name": "Set 1: SFX ID: Massive",
+      "Description": "Visual effect ID used for extremely large impact effects in variation set 1."
     },
     {
       "Field": "sfxIdSmall2",
-      "Name": "SfxID：小",
-      "Description": ""
+      "Name": "Set 2: SFX ID: Small",
+      "Description": "Visual effect ID used for small impact effects in variation set 2."
     },
     {
       "Field": "sfxIdNormal2",
-      "Name": "SfxID：中",
-      "Description": ""
+      "Name": "Set 2: SFX ID: Medium",
+      "Description": "Visual effect ID used for medium impact effects in variation set 2."
     },
     {
       "Field": "sfxIdLarge2",
-      "Name": "SfxID：大",
-      "Description": ""
+      "Name": "Set 2: SFX ID: Large",
+      "Description": "Visual effect ID used for large impact effects in variation set 2."
     },
     {
       "Field": "sfxIdSuperLarge2",
-      "Name": "SfxID：特大",
-      "Description": ""
+      "Name": "Set 2: SFX ID: Very Large",
+      "Description": "Visual effect ID used for very large impact effects in variation set 2."
     },
     {
       "Field": "sfxIdHyperLarge2",
-      "Name": "SfxID：特特大",
-      "Description": ""
+      "Name": "Set 2: SFX ID: Massive",
+      "Description": "Visual effect ID used for extremely large impact effects in variation set 2."
     },
     {
       "Field": "sfxIdSmall3",
-      "Name": "SfxID：小",
-      "Description": ""
+      "Name": "Set 3: SFX ID: Small",
+      "Description": "Visual effect ID used for small impact effects in variation set 3."
     },
     {
       "Field": "sfxIdNormal3",
-      "Name": "SfxID：中",
-      "Description": ""
+      "Name": "Set 3: SFX ID: Medium",
+      "Description": "Visual effect ID used for medium impact effects in variation set 3."
     },
     {
       "Field": "sfxIdLarge3",
-      "Name": "SfxID：大",
-      "Description": ""
+      "Name": "Set 3: SFX ID: Large",
+      "Description": "Visual effect ID used for large impact effects in variation set 3."
     },
     {
       "Field": "sfxIdSuperLarge3",
-      "Name": "SfxID：特大",
-      "Description": ""
+      "Name": "Set 3: SFX ID: Very Large",
+      "Description": "Visual effect ID used for very large impact effects in variation set 3."
     },
     {
       "Field": "sfxIdHyperLarge3",
-      "Name": "SfxID：特特大",
-      "Description": ""
+      "Name": "Set 3: SFX ID: Massive",
+      "Description": "Visual effect ID used for extremely large impact effects in variation set 3."
     },
     {
       "Field": "sfxIdSmall4",
-      "Name": "SfxID：本体小",
-      "Description": ""
+      "Name": "Set 4: SFX ID: Body Small",
+      "Description": "Visual effect ID used for small body impact effects."
     },
     {
       "Field": "sfxIdNormal4",
-      "Name": "SfxID：本体中",
-      "Description": ""
+      "Name": "Set 4: SFX ID: Body Medium",
+      "Description": "Visual effect ID used for medium body impact effects."
     },
     {
       "Field": "sfxIdLarge4",
-      "Name": "SfxID：本体大",
-      "Description": ""
+      "Name": "Set 4: SFX ID: Body Large",
+      "Description": "Visual effect ID used for large body impact effects."
     },
     {
       "Field": "sfxIdSuperLarge4",
-      "Name": "SfxID：本体特大",
-      "Description": ""
+      "Name": "Set 4: SFX ID: Body Very Large",
+      "Description": "Visual effect ID used for very large body impact effects."
     },
     {
       "Field": "sfxIdHyperLarge4",
-      "Name": "SfxID：本体特特大",
-      "Description": ""
+      "Name": "Set 4: SFX ID: Body Massive",
+      "Description": "Visual effect ID used for extremely large body impact effects."
     },
     {
       "Field": "sfxIdCritical",
-      "Name": "SfxID：クリティカル",
-      "Description": ""
+      "Name": "SFX ID: Critical",
+      "Description": "Visual effect ID used for critical hit effects."
     },
     {
       "Field": "isTrace",
-      "Name": "追従フラグ",
-      "Description": ""
+      "Name": "Follow Flag",
+      "Description": "Determines whether the visual effect follows or remains attached to the target."
     },
     {
       "Field": "soundLevelSmall",
-      "Name": "音大きさ：小",
-      "Description": ""
+      "Name": "Sound Level: Small",
+      "Description": "Sound intensity level used for small impact effects."
     },
     {
       "Field": "soundLevelNormal",
-      "Name": "音大きさ：中",
-      "Description": ""
+      "Name": "Sound Level: Medium",
+      "Description": "Sound intensity level used for medium impact effects."
     },
     {
       "Field": "soundLevelLarge",
-      "Name": "音大きさ：大",
-      "Description": ""
+      "Name": "Sound Level: Large",
+      "Description": "Sound intensity level used for large impact effects."
     },
     {
       "Field": "soundLevelSuperLarge",
-      "Name": "音大きさ：特大",
-      "Description": ""
+      "Name": "Sound Level: Very Large",
+      "Description": "Sound intensity level used for very large impact effects."
     },
     {
       "Field": "soundLevelHyperLarge",
-      "Name": "音大きさ：特特大",
-      "Description": ""
+      "Name": "Sound Level: Massive",
+      "Description": "Sound intensity level used for extremely large impact effects."
     },
     {
       "Field": "soundLevelBody",
-      "Name": "音大きさ：本体",
-      "Description": ""
+      "Name": "Sound Level: Body",
+      "Description": "Sound intensity level used for body impact effects."
     },
     {
       "Field": "soundLevelCritical",
-      "Name": "音大きさ：クリティカル",
-      "Description": ""
+      "Name": "Sound Level: Critical",
+      "Description": "Sound intensity level used for critical hit effects."
     },
     {
       "Field": "spatterId",
-      "Name": "血しぶきID",
-      "Description": ""
+      "Name": "Blood Spatter ID",
+      "Description": "Reference ID for the blood spatter effect triggered by the attack."
     }
   ]
 }

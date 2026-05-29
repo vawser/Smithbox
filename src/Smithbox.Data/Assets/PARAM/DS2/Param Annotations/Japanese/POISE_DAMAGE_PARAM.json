@@ -1,0 +1,58 @@
+{
+  "Param": "POISE_DAMAGE_PARAM",
+  "Type": "POISE_DAMAGE_PARAM",
+  "Name": "POISE_DAMAGE_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "damageMinimum",
+      "Name": "ダメージ削り値 発生ダメージ極小",
+      "Description": ""
+    },
+    {
+      "Field": "damageSmall",
+      "Name": "ダメージ削り値 発生ダメージ小",
+      "Description": ""
+    },
+    {
+      "Field": "damageMiddle",
+      "Name": "ダメージ削り値 発生ダメージ中",
+      "Description": ""
+    },
+    {
+      "Field": "damageHeavy",
+      "Name": "ダメージ削り値 発生ダメージ大",
+      "Description": ""
+    },
+    {
+      "Field": "damageSuperHeavy",
+      "Name": "ダメージ削り値 発生ダメージ特大",
+      "Description": ""
+    },
+    {
+      "Field": "addValueMinimum",
+      "Name": "ダメージ削り値 極小",
+      "Description": ""
+    },
+    {
+      "Field": "addValueSmall",
+      "Name": "ダメージ削り値 小",
+      "Description": ""
+    },
+    {
+      "Field": "addValueMiddle",
+      "Name": "ダメージ削り値 中",
+      "Description": ""
+    },
+    {
+      "Field": "addValueHeavy",
+      "Name": "ダメージ削り値 大",
+      "Description": ""
+    },
+    {
+      "Field": "addValueSuperHeavy",
+      "Name": "ダメージ削り値 特大",
+      "Description": ""
+    }
+  ]
+}

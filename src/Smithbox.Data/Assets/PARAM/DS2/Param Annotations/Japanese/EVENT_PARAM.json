@@ -1,0 +1,58 @@
+{
+  "Param": "EVENT_PARAM",
+  "Type": "EVENT_PARAM",
+  "Name": "EVENT_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "stateMapId",
+      "Name": "ステートマップID",
+      "Description": ""
+    },
+    {
+      "Field": "ownerId",
+      "Name": "オーナータイプID",
+      "Description": ""
+    },
+    {
+      "Field": "bonfireId",
+      "Name": "篝火ID",
+      "Description": ""
+    },
+    {
+      "Field": "resourceType",
+      "Name": "リソースタイプ",
+      "Description": ""
+    },
+    {
+      "Field": "bootType",
+      "Name": "起動タイプ",
+      "Description": ""
+    },
+    {
+      "Field": "ownerType",
+      "Name": "オーナータイプ",
+      "Description": ""
+    },
+    {
+      "Field": "bGroupConditionSync",
+      "Name": "グループ条件同期",
+      "Description": ""
+    },
+    {
+      "Field": "bPlayerDeadPlaying",
+      "Name": "プレイヤー死亡時に動作させるか",
+      "Description": ""
+    },
+    {
+      "Field": "bDemoPlaying",
+      "Name": "カットシーン中に動作させるか",
+      "Description": ""
+    },
+    {
+      "Field": "aReserved1",
+      "Name": "予約",
+      "Description": ""
+    }
+  ]
+}

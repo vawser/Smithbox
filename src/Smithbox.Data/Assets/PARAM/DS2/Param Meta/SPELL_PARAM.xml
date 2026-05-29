@@ -4,11 +4,11 @@
         <spellCategory  Enum="SPELL_CATEGORY"/>
         <isDual2HandedSpellAllowed  IsBool=""/>
         <availableCondition  Enum="SPELL_AVAILABLE_CONDITION"/>
-        <dummy0 />
+        <dummy0 Padding="" />
         <intelligence />
         <faith />
-        <baseSpellBulletId  Refs="BulletParam, EnemyBulletParam, SystemBulletParam"/>
-        <baseSpellDamageId  Refs="EnemyDamageParam, PlayerDamageParam, SystemDamageParam"/>
+        <baseSpellBulletId RefGroup="bulletparam" />
+        <baseSpellDamageId RefGroup="damageparam" />
         <single1HNormalChantTimeScale />
         <single1HNormalHoldCastTime />
         <single1HNormalAnimIdSpellChanting  Enum="PLAYER_SPELL_CHANTING_MOTION"/>
@@ -53,7 +53,7 @@
         <canMove  IsBool=""/>
         <canWaitShoot  IsBool=""/>
         <canPredictShot  IsBool=""/>
-        <dummy1 />
+        <dummy1 Padding="" />
         <se0Id />
         <sfx0Id />
         <sfx0AttachTarget  Enum="SPELL_CHANT_SFX_ATTACH_TYPE"/>
@@ -84,9 +84,9 @@
         <usageCountLv8 />
         <usageCountLv9 />
         <usageCountLv10 />
-        <dummy2 />
+        <dummy2 Padding="" />
         <soulConsumeParamId  Refs="SpellSoulConsumeParam"/>
-        <baseLeftHandSpellBulletId />
-        <baseLeftHandSpellDamageId />
+        <baseLeftHandSpellBulletId RefGroup="bulletparam" />
+        <baseLeftHandSpellDamageId RefGroup="damageparam" />
     </Field>
 </PARAMMETA>

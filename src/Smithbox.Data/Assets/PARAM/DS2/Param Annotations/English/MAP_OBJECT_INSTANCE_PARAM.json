@@ -2,192 +2,192 @@
   "Param": "MAP_OBJECT_INSTANCE_PARAM",
   "Type": "MAP_OBJECT_INSTANCE_PARAM",
   "Name": "MAP_OBJECT_INSTANCE_PARAM",
-  "Description": "",
+  "Description": "Defines per-instance configuration for map objects, including interaction rules, multiplayer usage permissions, break behavior, and gameplay-related triggers.",
   "Fields": [
     {
       "Field": "objCtrlId",
-      "Name": "《OBJ制御ID》",
-      "Description": ""
+      "Name": "Object Control ID",
+      "Description": "Identifier used to link this instance to its object controller logic."
     },
     {
       "Field": "bulletId0",
-      "Name": "《バレットID スロット0》",
-      "Description": ""
+      "Name": "Bullet ID Slot 0",
+      "Description": "Projectile or bullet parameter ID used in slot 0 for this object."
     },
     {
       "Field": "damageId0",
-      "Name": "《ダメージID スロット0》",
-      "Description": ""
+      "Name": "Damage ID Slot 0",
+      "Description": "Damage parameter ID used in slot 0 for this object."
     },
     {
       "Field": "touchRegionScale",
-      "Name": "《タッチ領域のスケール》",
-      "Description": ""
+      "Name": "Touch Region Scale",
+      "Description": "Scales the interaction/touch detection area for the object."
     },
     {
       "Field": "movableRange",
-      "Name": "《移動可能距離》",
-      "Description": ""
+      "Name": "Movable Range",
+      "Description": "Maximum distance the object can move or be interacted with."
     },
     {
       "Field": "objType",
-      "Name": "《OBJタイプ》",
-      "Description": ""
+      "Name": "Object Type",
+      "Description": "Defines the category/type of the object instance."
     },
     {
       "Field": "objCtrlType",
-      "Name": "《OBJ制御タイプ》",
-      "Description": ""
+      "Name": "Object Control Type",
+      "Description": "Defines the control behavior type used for this object instance."
     },
     {
       "Field": "objLabbel",
-      "Name": "《ラベル》",
-      "Description": ""
+      "Name": "Label",
+      "Description": "Text label or identifier used for grouping or debugging (note: original field likely misspelled 'objLabel')."
     },
     {
       "Field": "usableWhite",
-      "Name": "《白霊使用可能》",
-      "Description": ""
+      "Name": "Usable by White Phantom",
+      "Description": "Determines whether white phantom players can interact with this object."
     },
     {
       "Field": "usableSmallWhite",
-      "Name": "《半霊使用可能》",
-      "Description": ""
+      "Name": "Usable by Small White Phantom",
+      "Description": "Determines whether small white phantom variants can interact with this object."
     },
     {
       "Field": "usableDragon",
-      "Name": "《竜霊使用可能》",
-      "Description": ""
+      "Name": "Usable by Dragon Phantom",
+      "Description": "Determines whether dragon-form players can interact with this object."
     },
     {
       "Field": "usableCoopBlue",
-      "Name": "《救援青霊使用可能》",
-      "Description": ""
+      "Name": "Usable by Cooperative Blue Phantom",
+      "Description": "Determines whether cooperative blue phantoms can interact with this object."
     },
     {
       "Field": "usableVersusBlue",
-      "Name": "《報復青霊使用可能》",
-      "Description": ""
+      "Name": "Usable by Bell Keeper Blue Phantom",
+      "Description": "Determines whether adversarial blue phantoms can interact with this object."
     },
     {
       "Field": "usableBlack",
-      "Name": "《闇霊使用可能》",
-      "Description": ""
+      "Name": "Usable by Dark Phantom",
+      "Description": "Determines whether invading black phantoms can interact with this object."
     },
     {
       "Field": "usableBellGuard",
-      "Name": "《鐘守灰霊使用可能》",
-      "Description": ""
+      "Name": "Usable by Bell Keeper Phantom",
+      "Description": "Determines whether Bell Keeper covenant phantoms can interact with this object."
     },
     {
       "Field": "usableRatKing",
-      "Name": "《ねずみの王灰霊使用可能》",
-      "Description": ""
+      "Name": "Usable by Rat King Phantom",
+      "Description": "Determines whether Rat King covenant phantoms can interact with this object."
     },
     {
       "Field": "usableMirrorKnight",
-      "Name": "《ミラーナイト霊使用可能》",
-      "Description": ""
+      "Name": "Usable by Mirror Knight Phantom",
+      "Description": "Determines whether Mirror Knight-related phantoms can interact with this object."
     },
     {
       "Field": "usableNoneVow",
-      "Name": "《誓約なし使用可能》",
-      "Description": ""
+      "Name": "Usable with No Covenant",
+      "Description": "Allows interaction when the player has no covenant equipped."
     },
     {
       "Field": "usableSunlightVow",
-      "Name": "《太陽の戦士使用可能》",
-      "Description": ""
+      "Name": "Usable by Sunlight Covenant",
+      "Description": "Allows interaction for Sunlight Warrior covenant members."
     },
     {
       "Field": "usableGuardianVow",
-      "Name": "《守護の騎士使用可能》",
-      "Description": ""
+      "Name": "Usable by Guardian Covenant",
+      "Description": "Allows interaction for Guardian-type covenant members."
     },
     {
       "Field": "usableBloodVow",
-      "Name": "《血の闇霊使用可能》",
-      "Description": ""
+      "Name": "Usable by Blood Covenant",
+      "Description": "Allows interaction for blood-themed invading covenant members."
     },
     {
       "Field": "usableBlueVow",
-      "Name": "《青教使用可能》",
-      "Description": ""
+      "Name": "Usable by Blue Covenant",
+      "Description": "Allows interaction for blue police/protection covenant members."
     },
     {
       "Field": "usableRatKingVow",
-      "Name": "《ねずみの王使用可能》",
-      "Description": ""
+      "Name": "Usable by Rat King Covenant",
+      "Description": "Allows interaction for Rat King covenant members."
     },
     {
       "Field": "usableBellGuardVow",
-      "Name": "《鐘守使用可能》",
-      "Description": ""
+      "Name": "Usable by Bell Keeper Covenant",
+      "Description": "Allows interaction for Bell Keeper covenant members."
     },
     {
       "Field": "usableDragonVow",
-      "Name": "《古竜への道使用可能》",
-      "Description": ""
+      "Name": "Usable by Dragon Covenant",
+      "Description": "Allows interaction for members of the Dragon Path covenant."
     },
     {
       "Field": "usableStrongerVow",
-      "Name": "《強者使用可能》",
-      "Description": ""
+      "Name": "Usable by Champion Covenant",
+      "Description": "Allows interaction for champion covenant members."
     },
     {
       "Field": "usableAbyssVow",
-      "Name": "《深淵の巡礼使用可能》",
-      "Description": ""
+      "Name": "Usable by Abyss Covenant",
+      "Description": "Allows interaction for Abyss-related covenant members."
     },
     {
       "Field": "usableEnemy",
-      "Name": "《敵使用可能》",
-      "Description": ""
+      "Name": "Usable by Enemies",
+      "Description": "Determines whether AI enemies can interact with or affect this object."
     },
     {
       "Field": "onlyEventCanBreak",
-      "Name": "《イベントでしか壊せない》",
-      "Description": ""
+      "Name": "Breakable Only by Event",
+      "Description": "Restricts object destruction to scripted events only."
     },
     {
       "Field": "useAltSfx",
-      "Name": "《SFX切り替え》",
-      "Description": ""
+      "Name": "Use Alternate SFX",
+      "Description": "Enables switching to an alternative sound effect set."
     },
     {
       "Field": "dummy1",
-      "Name": "ダミー",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "breakObjMakeStateId",
-      "Name": "《ブレイクオブジェ生成ステート》",
-      "Description": ""
+      "Name": "Break Object Spawn State ID",
+      "Description": "State ID used when spawning breakable object effects or remnants."
     },
     {
       "Field": "resetType",
-      "Name": "リセットタイプ",
-      "Description": ""
+      "Name": "Reset Type",
+      "Description": "Defines how and when the object resets to its initial state."
     },
     {
       "Field": "tmpBreakObjMakeStateId",
-      "Name": "《(にぎやかし)ブレイクオブジェ生成ステート》",
-      "Description": ""
+      "Name": "Temporary Break Object Spawn State ID",
+      "Description": "Secondary or temporary state used for break object spawning (likely decorative or conditional)."
     },
     {
       "Field": "iblTextureId",
-      "Name": "環境マップテクスチャID",
-      "Description": ""
+      "Name": "IBL Texture ID",
+      "Description": "Identifier for image-based lighting (environment reflection) texture."
     },
     {
       "Field": "dummy2",
-      "Name": "ダミー",
+      "Name": "Padding",
       "Description": ""
     },
     {
       "Field": "itemLotId",
-      "Name": "初週アイテム抽選ID",
-      "Description": ""
+      "Name": "Initial Item Drop ID",
+      "Description": "Item lottery ID used for initial or first-time item rewards."
     }
   ]
 }

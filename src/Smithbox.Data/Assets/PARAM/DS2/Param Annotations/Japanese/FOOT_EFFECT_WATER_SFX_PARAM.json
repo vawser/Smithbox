@@ -1,0 +1,113 @@
+{
+  "Param": "FOOT_EFFECT_WATER_SFX_PARAM",
+  "Type": "FOOT_EFFECT_WATER_SFX_PARAM",
+  "Name": "FOOT_EFFECT_WATER_SFX_PARAM",
+  "Description": "",
+  "Fields": [
+    {
+      "Field": "standbyLowSfxId",
+      "Name": "足首",
+      "Description": ""
+    },
+    {
+      "Field": "standbyMiddleSfxId",
+      "Name": "股下",
+      "Description": ""
+    },
+    {
+      "Field": "standbyHighSfxId",
+      "Name": "腰",
+      "Description": ""
+    },
+    {
+      "Field": "lowSpeedLowSfxId",
+      "Name": "足首",
+      "Description": ""
+    },
+    {
+      "Field": "lowSpeedMiddleSfxId",
+      "Name": "股下",
+      "Description": ""
+    },
+    {
+      "Field": "lowSpeedHighSfxId",
+      "Name": "腰",
+      "Description": ""
+    },
+    {
+      "Field": "middleSpeedLowSfxId",
+      "Name": "足首",
+      "Description": ""
+    },
+    {
+      "Field": "middleSpeedMiddleSfxId",
+      "Name": "股下",
+      "Description": ""
+    },
+    {
+      "Field": "middleSpeedHighSfxId",
+      "Name": "腰",
+      "Description": ""
+    },
+    {
+      "Field": "highSpeedLowSfxId",
+      "Name": "足首",
+      "Description": ""
+    },
+    {
+      "Field": "highSpeedMiddleSfxId",
+      "Name": "股下",
+      "Description": ""
+    },
+    {
+      "Field": "highSpeedHighSfxId",
+      "Name": "腰",
+      "Description": ""
+    },
+    {
+      "Field": "stepLowSfxId",
+      "Name": "足首",
+      "Description": ""
+    },
+    {
+      "Field": "stepSpeedMiddleSfxId",
+      "Name": "股下",
+      "Description": ""
+    },
+    {
+      "Field": "stepSpeedHighSfxId",
+      "Name": "腰",
+      "Description": ""
+    },
+    {
+      "Field": "rollingLowSfxId",
+      "Name": "足首",
+      "Description": ""
+    },
+    {
+      "Field": "rollingMiddleSfxId",
+      "Name": "股下",
+      "Description": ""
+    },
+    {
+      "Field": "rollingHighSfxId",
+      "Name": "腰",
+      "Description": ""
+    },
+    {
+      "Field": "jumpLowSfxId",
+      "Name": "足首",
+      "Description": ""
+    },
+    {
+      "Field": "jumpMiddleSfxId",
+      "Name": "股下",
+      "Description": ""
+    },
+    {
+      "Field": "jumpHighSfxId",
+      "Name": "腰",
+      "Description": ""
+    }
+  ]
+}
