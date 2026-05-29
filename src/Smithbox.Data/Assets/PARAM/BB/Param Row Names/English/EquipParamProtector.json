@@ -4,1435 +4,1435 @@
     {
       "ID": 1000,
       "Entries": [
-        "Skinhead"
+        "Hair"
       ]
     },
     {
       "ID": 1100,
       "Entries": [
-        "M Spot"
+        "Hair"
       ]
     },
     {
       "ID": 1200,
       "Entries": [
-        "short"
+        "Hair"
       ]
     },
     {
       "ID": 1300,
       "Entries": [
-        "Slicked Back Long"
+        "Hair"
       ]
     },
     {
       "ID": 1400,
       "Entries": [
-        "Tail"
+        "Hair"
       ]
     },
     {
       "ID": 1500,
       "Entries": [
-        "Disheveled Long Hair"
+        "Hair"
       ]
     },
     {
       "ID": 1600,
       "Entries": [
-        "Center Part"
+        "Hair"
       ]
     },
     {
       "ID": 1700,
       "Entries": [
-        "Semi-long 7:3 parting"
+        "Hair"
       ]
     },
     {
       "ID": 1800,
       "Entries": [
-        "Wave"
+        "Hair"
       ]
     },
     {
       "ID": 1900,
       "Entries": [
-        "Bob"
+        "Hair"
       ]
     },
     {
       "ID": 3000,
       "Entries": [
-        "skin"
+        "Hair"
       ]
     },
     {
       "ID": 3100,
       "Entries": [
-        "Very Short"
+        "Hair"
       ]
     },
     {
       "ID": 3200,
       "Entries": [
-        "Wavy Short"
+        "Hair"
       ]
     },
     {
       "ID": 3300,
       "Entries": [
-        "Straight Short"
+        "Hair"
       ]
     },
     {
       "ID": 3400,
       "Entries": [
-        "Straight Long"
+        "Hair"
       ]
     },
     {
       "ID": 3500,
       "Entries": [
-        "ponytail A"
+        "Hair"
       ]
     },
     {
       "ID": 3600,
       "Entries": [
-        "ponytail B"
+        "Hair"
       ]
     },
     {
       "ID": 3700,
       "Entries": [
-        "Wave Long"
+        "Hair"
       ]
     },
     {
       "ID": 3800,
       "Entries": [
-        "Chignon"
+        "Hair"
       ]
     },
     {
       "ID": 3900,
       "Entries": [
-        "Braiding"
+        "Hair"
       ]
     },
     {
       "ID": 5000,
       "Entries": [
-        "Wandering hairstyle"
+        "Hair - Ghost"
       ]
     },
     {
       "ID": 10000,
       "Entries": [
-        "Hunter _ head"
+        "Gray Wolf Cap"
       ]
     },
     {
       "ID": 11000,
       "Entries": [
-        "Hunter _ Torso"
+        "Charred Hunter Garb"
       ]
     },
     {
       "ID": 12000,
       "Entries": [
-        "Hunter _ arm"
+        "Charred Hunter Gloves"
       ]
     },
     {
       "ID": 13000,
       "Entries": [
-        "Hunter _ leg"
+        "Charred Hunter Trousers"
       ]
     },
     {
       "ID": 20000,
       "Entries": [
-        "Immortal Pilgrim _ head"
+        "Black Hooded Iron Helm"
       ]
     },
     {
       "ID": 21000,
       "Entries": [
-        "Immortal Pilgrim _ Torso"
+        "Yahar'gul Black Garb"
       ]
     },
     {
       "ID": 22000,
       "Entries": [
-        "Immortal Pilgrim _ arm"
+        "Yahar'gul Black Gloves"
       ]
     },
     {
       "ID": 23000,
       "Entries": [
-        "Immortal Pilgrim _ leg"
+        "Yahar'gul Black Trousers"
       ]
     },
     {
       "ID": 30000,
       "Entries": [
-        "Gravekeeper _ head"
+        "Graveguard Mask"
       ]
     },
     {
       "ID": 31000,
       "Entries": [
-        "Gravekeeper _ Torso"
+        "Graveguard Robe"
       ]
     },
     {
       "ID": 32000,
       "Entries": [
-        "Gravekeeper _ arm"
+        "Graveguard Manchettes"
       ]
     },
     {
       "ID": 33000,
       "Entries": [
-        "Gravekeeper _ leg"
+        "Graveguard Kilt"
       ]
     },
     {
       "ID": 40000,
       "Entries": [
-        "Kin of the Flame of Destruction _ head"
+        "Bone Ash Mask"
       ]
     },
     {
       "ID": 41000,
       "Entries": [
-        "Kin of the Flame of Destruction _ Torso"
+        "Bone Ash Armor"
       ]
     },
     {
       "ID": 42000,
       "Entries": [
-        "Kin of the Flame of Destruction _ arm"
+        "Bone Ash Gauntlets"
       ]
     },
     {
       "ID": 43000,
       "Entries": [
-        "Kin of the Flame of Destruction _ leg"
+        "Bone Ash Leggings"
       ]
     },
     {
       "ID": 50000,
       "Entries": [
-        "Advanced Hunter _ head"
+        "Henryk Hunter's Cap"
       ]
     },
     {
       "ID": 51000,
       "Entries": [
-        "Advanced Hunter _ Torso"
+        "Henryk Hunter's Garb"
       ]
     },
     {
       "ID": 52000,
       "Entries": [
-        "Advanced Hunter _ arm"
+        "Henryk Hunter's Gloves"
       ]
     },
     {
       "ID": 53000,
       "Entries": [
-        "Advanced Hunter _ leg"
+        "Henryk Hunter's Trousers"
       ]
     },
     {
       "ID": 60000,
       "Entries": [
-        "Junior Hunter _ head"
+        "Yharnam Hunter Cap"
       ]
     },
     {
       "ID": 61000,
       "Entries": [
-        "Junior Hunter _ Torso"
+        "Yharnam Hunter Garb"
       ]
     },
     {
       "ID": 62000,
       "Entries": [
-        "Junior Hunter _ arm"
+        "Yharnam Hunter Gloves"
       ]
     },
     {
       "ID": 63000,
       "Entries": [
-        "Junior Hunter _ leg"
+        "Yharnam Hunter Trousers"
       ]
     },
     {
       "ID": 70000,
       "Entries": [
-        "Urban Hunter _ head"
+        "Hunter Hat"
       ]
     },
     {
       "ID": 71000,
       "Entries": [
-        "Urban Hunter _ Torso"
+        "Hunter Garb"
       ]
     },
     {
       "ID": 72000,
       "Entries": [
-        "Urban Hunter _ arm"
+        "Hunter Gloves"
       ]
     },
     {
       "ID": 73000,
       "Entries": [
-        "Urban Hunter _ leg"
+        "Hunter Trousers"
       ]
     },
     {
       "ID": 80000,
       "Entries": [
-        "Vampire _ head"
+        "Knight's Wig"
       ]
     },
     {
       "ID": 81000,
       "Entries": [
-        "Vampire _ Torso"
+        "Knight's Garb"
       ]
     },
     {
       "ID": 82000,
       "Entries": [
-        "Vampire _ arm"
+        "Knight's Gloves"
       ]
     },
     {
       "ID": 83000,
       "Entries": [
-        "Vampire _ leg"
+        "Knight's Trousers/Dress"
       ]
     },
     {
       "ID": 90000,
       "Entries": [
-        "Vampire Princess _ head"
+        "Annalise Hat"
       ]
     },
     {
       "ID": 91000,
       "Entries": [
-        "Vampire Princess _ Torso"
+        "Annalise Body"
       ]
     },
     {
       "ID": 100000,
       "Entries": [
-        "Vampire Knight _ head"
+        "Cainhurst Helmet"
       ]
     },
     {
       "ID": 101000,
       "Entries": [
-        "Vampire Knight _ Torso"
+        "Cainhurst Armor"
       ]
     },
     {
       "ID": 102000,
       "Entries": [
-        "Vampire Knight _ arm"
+        "Cainhurst Gauntlets"
       ]
     },
     {
       "ID": 103000,
       "Entries": [
-        "Vampire Knight _ leg"
+        "Cainhurst Leggings"
       ]
     },
     {
       "ID": 110000,
       "Entries": [
-        "Servant of the Church _ head"
+        "Black Church Hat"
       ]
     },
     {
       "ID": 111000,
       "Entries": [
-        "Servant of the Church _ Torso"
+        "Black Church Garb"
       ]
     },
     {
       "ID": 112000,
       "Entries": [
-        "Servant of the Church _ arm"
+        "Surgical Long Gloves"
       ]
     },
     {
       "ID": 113000,
       "Entries": [
-        "Servant of the Church _ leg"
+        "Black Church Trousers/Dress"
       ]
     },
     {
       "ID": 120000,
       "Entries": [
-        "Choir _ head"
+        "Blindfold Cap"
       ]
     },
     {
       "ID": 121000,
       "Entries": [
-        "Choir _ Torso"
+        "Choir Garb"
       ]
     },
     {
       "ID": 122000,
       "Entries": [
-        "Choir _ arm"
+        "Choir Gloves"
       ]
     },
     {
       "ID": 123000,
       "Entries": [
-        "Choir _ leg"
+        "Choir Trousers"
       ]
     },
     {
       "ID": 130000,
       "Entries": [
-        "Father Gascoigne _ head"
+        "Gascoigne's Cap"
       ]
     },
     {
       "ID": 131000,
       "Entries": [
-        "Father Gascoigne _ Torso"
+        "Gascoigne's Garb"
       ]
     },
     {
       "ID": 132000,
       "Entries": [
-        "Father Gascoigne _ arm"
+        "Gascoigne's Gloves"
       ]
     },
     {
       "ID": 133000,
       "Entries": [
-        "Father Gascoigne _ leg"
+        "Gascoigne's Trousers"
       ]
     },
     {
       "ID": 140000,
       "Entries": [
-        "Church Hunter _ head"
+        "Tomb Prospector Hood"
       ]
     },
     {
       "ID": 141000,
       "Entries": [
-        "Church Hunter _ Torso"
+        "Tomb Prospector Garb"
       ]
     },
     {
       "ID": 142000,
       "Entries": [
-        "Church Hunter _ arm"
+        "Tomb Prospector Gloves"
       ]
     },
     {
       "ID": 143000,
       "Entries": [
-        "Church Hunter _ leg"
+        "Tomb Prospector Trousers"
       ]
     },
     {
       "ID": 150000,
       "Entries": [
-        "Bloodline Hunt _ head"
+        "Gold Ardeo"
       ]
     },
     {
       "ID": 151000,
       "Entries": [
-        "Bloodline Hunt _ Torso"
+        "Executioner Garb"
       ]
     },
     {
       "ID": 152000,
       "Entries": [
-        "Bloodline Hunt _ arm"
+        "Executioner Gauntlets"
       ]
     },
     {
       "ID": 153000,
       "Entries": [
-        "Bloodline Hunt _ leg"
+        "Executioner Trousers"
       ]
     },
     {
       "ID": 180000,
       "Entries": [
-        "Jack the Ripper _ head"
+        "Beak Mask"
       ]
     },
     {
       "ID": 181000,
       "Entries": [
-        "Jack the Ripper_ Torso"
+        "Crowfeather Garb"
       ]
     },
     {
       "ID": 182000,
       "Entries": [
-        "Jack the Ripper _ arm"
+        "Crowfeather Manchettes"
       ]
     },
     {
       "ID": 183000,
       "Entries": [
-        "Jack the Ripper _ leg"
+        "Crowfeather Trousers"
       ]
     },
     {
       "ID": 190000,
       "Entries": [
-        "Lord of Nightmares _ head"
+        "Mensis Cage"
       ]
     },
     {
       "ID": 191000,
       "Entries": [
-        "Lord of Nightmares _ Torso"
+        "Student Uniform"
       ]
     },
     {
       "ID": 193000,
       "Entries": [
-        "Lord of Nightmares _ leg"
+        "Student Trousers"
       ]
     },
     {
       "ID": 200000,
       "Entries": [
-        "Base Elderly _ head"
+        "Gehrman's Hunter Cap"
       ]
     },
     {
       "ID": 201000,
       "Entries": [
-        "Base Elderly _ Torso"
+        "Gehrman's Hunter Garb"
       ]
     },
     {
       "ID": 203000,
       "Entries": [
-        "Base Elderly _ leg"
+        "Gehrman's Hunter Trousers"
       ]
     },
     {
       "ID": 210000,
       "Entries": [
-        "The mad cultist _ head"
+        "Madman Hood"
       ]
     },
     {
       "ID": 211000,
       "Entries": [
-        "The mad cultist _ Torso"
+        "Madman Garb"
       ]
     },
     {
       "ID": 212000,
       "Entries": [
-        "The mad cultist _ arm"
+        "Madman Manchettes"
       ]
     },
     {
       "ID": 213000,
       "Entries": [
-        "The mad cultist _ leg"
+        "Madman Leggings"
       ]
     },
     {
       "ID": 220000,
       "Entries": [
-        "Doll Heroine _ head"
+        "Doll Hat"
       ]
     },
     {
       "ID": 221000,
       "Entries": [
-        "Doll Heroine _ Torso"
+        "Doll Clothes"
       ]
     },
     {
       "ID": 222000,
       "Entries": [
-        "Doll Heroine _ arm"
+        "Doll Gloves"
       ]
     },
     {
       "ID": 223000,
       "Entries": [
-        "Doll Heroine _ leg"
+        "Doll Skirt"
       ]
     },
     {
       "ID": 230000,
       "Entries": [
-        "Starting Equipment _ head"
+        "Black Hood"
       ]
     },
     {
       "ID": 231000,
       "Entries": [
-        "Starting Equipment _ Torso"
+        "Foreign Garb"
       ]
     },
     {
       "ID": 232000,
       "Entries": [
-        "Starting Equipment _ arm"
+        "Sullied Bandage"
       ]
     },
     {
       "ID": 233000,
       "Entries": [
-        "Starting Equipment _ leg"
+        "Foreign Trousers"
       ]
     },
     {
       "ID": 241000,
       "Entries": [
-        "Covert _ Torso"
+        "Ashen Hunter Garb"
       ]
     },
     {
       "ID": 242000,
       "Entries": [
-        "Covert _ arm"
+        "Ashen Hunter Gloves"
       ]
     },
     {
       "ID": 243000,
       "Entries": [
-        "Covert _ leg"
+        "Ashen Hunter Trousers"
       ]
     },
     {
       "ID": 250000,
       "Entries": [
-        "Old Castle Boss _ head"
+        "Crown of Illusions"
       ]
     },
     {
       "ID": 260000,
       "Entries": [
-        "Federation _ head _Text difference"
+        "Master's Iron Helm"
       ]
     },
     {
       "ID": 270000,
       "Entries": [
-        "Immortal Pilgrim (without hood) _ head"
+        "Iron Yahar'gul Helm"
       ]
     },
     {
       "ID": 280000,
       "Entries": [
-        "Old City Hunter _ head"
+        "Top Hat"
       ]
     },
     {
       "ID": 281000,
       "Entries": [
-        "Old City Hunter _ Torso"
+        "Hunter Garb (No Cape)"
       ]
     },
     {
       "ID": 290000,
       "Entries": [
-        "Servant of the Church ( white) _ head"
+        "White Church Hat"
       ]
     },
     {
       "ID": 291000,
       "Entries": [
-        "Servant of the Church ( white) _ Torso"
+        "White Church Garb"
       ]
     },
     {
       "ID": 293000,
       "Entries": [
-        "Servant of the Church ( white) _ leg"
+        "White Church Trousers/Dress"
       ]
     },
     {
       "ID": 301000,
       "Entries": [
-        "Nightmare Lord (without gown) _ Torso"
+        "Student Uniform (Not Red)"
       ]
     },
     {
       "ID": 311000,
       "Entries": [
-        "Prostitute _ Torso"
+        "Noble Dress"
       ]
     },
     {
       "ID": 313000,
       "Entries": [
-        "Prostitute _ leg"
+        "Arianna's Shoes"
       ]
     },
     {
       "ID": 320000,
       "Entries": [
-        "Cranky old man _ head"
+        "Rumpled Yharnam Hat"
       ]
     },
     {
       "ID": 321000,
       "Entries": [
-        "Cranky old man _ Torso"
+        "Sweaty Clothes"
       ]
     },
     {
       "ID": 330000,
       "Entries": [
-        "Executioner _ head"
+        "Butcher Mask"
       ]
     },
     {
       "ID": 331000,
       "Entries": [
-        "Executioner _ Torso"
+        "Butcher Garb"
       ]
     },
     {
       "ID": 332000,
       "Entries": [
-        "Executioner _ arm"
+        "Butcher Gloves"
       ]
     },
     {
       "ID": 333000,
       "Entries": [
-        "Executioner _ leg"
+        "Butcher Trousers"
       ]
     },
     {
       "ID": 340000,
       "Entries": [
-        "Beggar Hunter _ head"
+        "Harrowed Hood"
       ]
     },
     {
       "ID": 341000,
       "Entries": [
-        "Beggar Hunter _ Torso"
+        "Harrowed Garb"
       ]
     },
     {
       "ID": 342000,
       "Entries": [
-        "Beggar Hunter _ arm"
+        "Harrowed Gloves"
       ]
     },
     {
       "ID": 343000,
       "Entries": [
-        "Beggar Hunter _ leg"
+        "Harrowed Trousers"
       ]
     },
     {
       "ID": 350000,
       "Entries": [
-        "Dark Hunter (with cape) _ head"
+        "Old Hunter Cap"
       ]
     },
     {
       "ID": 351000,
       "Entries": [
-        "Dark Hunter (with cape) _ Torso"
+        "Old Hunter Garb"
       ]
     },
     {
       "ID": 352000,
       "Entries": [
-        "Dark Hunter (with cape) _ arm"
+        "Old Hunter Gloves"
       ]
     },
     {
       "ID": 353000,
       "Entries": [
-        "Dark Hunter (with cape) _ leg"
+        "Old Hunter Trousers"
       ]
     },
     {
       "ID": 360000,
       "Entries": [
-        "Dark Hunter (without cape) _ head"
+        "Old Hunter Top Hat"
       ]
     },
     {
       "ID": 361000,
       "Entries": [
-        "Dark Hunter (without cape) _ Torso"
+        "Decorative Old Hunter Garb"
       ]
     },
     {
       "ID": 363000,
       "Entries": [
-        "Dark Hunter (without cape) _ leg"
+        "Decorative Old Hunter Trousers"
       ]
     },
     {
       "ID": 370000,
       "Entries": [
-        "Clock Tower Hunter _ head"
+        "Maria Hunter Cap"
       ]
     },
     {
       "ID": 371000,
       "Entries": [
-        "Clock Tower Hunter _ Torso"
+        "Maria Hunter Garb"
       ]
     },
     {
       "ID": 372000,
       "Entries": [
-        "Clock Tower Hunter _ arm"
+        "Maria Hunter Gloves"
       ]
     },
     {
       "ID": 373000,
       "Entries": [
-        "Clock Tower Hunter _ leg"
+        "Maria Hunter Trousers"
       ]
     },
     {
       "ID": 380000,
       "Entries": [
-        "Federation _ head"
+        "One-eyed Iron Helm"
       ]
     },
     {
       "ID": 381000,
       "Entries": [
-        "Federation _ Torso"
+        "Constable's Garb"
       ]
     },
     {
       "ID": 382000,
       "Entries": [
-        "Federation _ arm"
+        "Constable's Gloves"
       ]
     },
     {
       "ID": 383000,
       "Entries": [
-        "Federation _ leg"
+        "Constable's Trousers"
       ]
     },
     {
       "ID": 390000,
       "Entries": [
-        "Mammoth Man _ head"
+        "Brador's Testimony"
       ]
     },
     {
       "ID": 391000,
       "Entries": [
-        "Mammoth Man _ Torso"
+        "Beast Hide Garb"
       ]
     },
     {
       "ID": 392000,
       "Entries": [
-        "Mammoth Man _ arm"
+        "Bloodied Arm Bands"
       ]
     },
     {
       "ID": 393000,
       "Entries": [
-        "Mammoth Man _ leg"
+        "Bloodied Trousers"
       ]
     },
     {
       "ID": 400000,
       "Entries": [
-        "Japanese clothing _ head"
+        "Yamamura Hunter Hat"
       ]
     },
     {
       "ID": 401000,
       "Entries": [
-        "Japanese clothing _ Torso"
+        "Khaki Haori"
       ]
     },
     {
       "ID": 402000,
       "Entries": [
-        "Japanese clothing _ arm"
+        "Old Hunter Arm Bands"
       ]
     },
     {
       "ID": 403000,
       "Entries": [
-        "Japanese clothing _ leg"
+        "Wine Hakama"
       ]
     },
     {
       "ID": 410000,
       "Entries": [
-        "Beastification _ head"
+        "Beast's Embrace - Head"
       ]
     },
     {
       "ID": 411000,
       "Entries": [
-        "Beastification _ Torso"
+        "Beast's Embrace - Torso"
       ]
     },
     {
       "ID": 412000,
       "Entries": [
-        "Beastification _ arm"
+        "Beast's Embrace - Arms"
       ]
     },
     {
       "ID": 420000,
       "Entries": [
-        "Slug _ head"
+        "Milkweed - Head"
       ]
     },
     {
       "ID": 421000,
       "Entries": [
-        "Slug _ Torso"
+        "Milkweed - Torso"
       ]
     },
     {
       "ID": 422000,
       "Entries": [
-        "Slug _ arm"
+        "Milkweed - Arms"
       ]
     },
     {
       "ID": 430000,
       "Entries": [
-        "Clock Tower Patient _ head"
+        "Enlarged Head"
       ]
     },
     {
       "ID": 440000,
       "Entries": [
-        "Wandering Equipment _ Executioner _ head"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 450000,
       "Entries": [
-        "Wandering Equipment _ Beggar Hunter _ head"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 451000,
       "Entries": [
-        "Wandering Equipment _ Beggar Hunter _ Torso"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 453000,
       "Entries": [
-        "Wandering Equipment _ Beggar Hunter _ leg"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 460000,
       "Entries": [
-        "Wandering Equipment _ Clock Tower Hunter _ head"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 461000,
       "Entries": [
-        "Wandering Equipment _ Clock Tower Hunter _ Torso"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 470000,
       "Entries": [
-        "Wandering Equipment _ Federation _ head"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 471000,
       "Entries": [
-        "Wandering Equipment _ Federation _ Torso"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 480000,
       "Entries": [
-        "[ NPC Exclusive] Bloodline Hunt (Blood Paste) _ head"
+        "Alfred Bloodied - Head"
       ]
     },
     {
       "ID": 481000,
       "Entries": [
-        "[ NPC Exclusive] Bloodline Hunt (Blood Paste) _ Torso"
+        "Alfred Bloodied - Torso"
       ]
     },
     {
       "ID": 482000,
       "Entries": [
-        "[ NPC Exclusive] Bloodline Hunt (Blood Paste) _ arm"
+        "Alfred Bloodied - Arms"
       ]
     },
     {
       "ID": 483000,
       "Entries": [
-        "[ NPC Exclusive] Bloodline Hunt (Blood Paste) _ leg"
+        "Alfred Bloodied - TorsoLegs"
       ]
     },
     {
       "ID": 490000,
       "Entries": [
-        "[ NPCExclusive] Jack the Ripper (fake blood) _ head"
+        "Eileen Bloodied - Head"
       ]
     },
     {
       "ID": 491000,
       "Entries": [
-        "[ NPC Exclusive] Jack the Ripper (fake blood) _ Torso"
+        "Eileen Bloodied - Torso"
       ]
     },
     {
       "ID": 492000,
       "Entries": [
-        "[ NPC Exclusive] Jack the Ripper (fake blood) _ arm"
+        "Eileen Bloodied - Arms"
       ]
     },
     {
       "ID": 493000,
       "Entries": [
-        "[ NPC Exclusive] Jack the Ripper (fake blood) _ leg"
+        "Eileen Bloodied - Legs"
       ]
     },
     {
       "ID": 503000,
       "Entries": [
-        "[ NPC Exclusive] Church Servant (White) No Boots _ leg"
+        "Church Servant - No Boots"
       ]
     },
     {
       "ID": 511000,
       "Entries": [
-        "[ NPC Exclusive】Prostitute (Pregnant) _ Torso"
+        "Arianna - Pregnant"
       ]
     },
     {
       "ID": 521000,
       "Entries": [
-        "[ NPC Exclusive: Lonely old woman _ Torso"
+        "Old Woman - Torso"
       ]
     },
     {
       "ID": 531000,
       "Entries": [
-        "[ NPC Exclusive] Vampire Princess _ Torso"
+        "Annalise - Torso"
       ]
     },
     {
       "ID": 541000,
       "Entries": [
-        "[ NPC Exclusive] Church Servant (Blood Paste) _ Torso"
+        "Church Servant Bloodied - Torso"
       ]
     },
     {
       "ID": 542000,
       "Entries": [
-        "[ NPC Exclusive] Church Servant (Blood Paste) _ arm"
+        "Church Servant Bloodied - Arms"
       ]
     },
     {
       "ID": 543000,
       "Entries": [
-        "[ NPC Exclusive] Church Servant (Blood Paste) _ leg"
+        "Church Servant Bloodied - Legs"
       ]
     },
     {
       "ID": 550000,
       "Entries": [
-        "[ NPC Exclusive: Beggar Hunter (Blood Paste) _ head"
+        "Suspicious Beggar Bloodied - Head"
       ]
     },
     {
       "ID": 563000,
       "Entries": [
-        "[ NPCExclusive: Crazy Cultist (Blood Paste) _ leg"
+        ""
       ]
     },
     {
       "ID": 571000,
       "Entries": [
-        "[ NPC Exclusive: Prostitute (after childbirth) _ Torso"
+        "Arianna After Birth - Torso"
       ]
     },
     {
       "ID": 573000,
       "Entries": [
-        "[ NPC Exclusive: Prostitute (after childbirth) _ leg"
+        "Arianna After Birth - Legs"
       ]
     },
     {
       "ID": 581000,
       "Entries": [
-        "[ NPC Exclusive】Servant of the Church ( white) _ Fake Female Doctor _ Torso"
+        "Iosefka - Torso"
       ]
     },
     {
       "ID": 582000,
       "Entries": [
-        "[System] Before transformation into Fist Beast _ arm"
+        ""
       ]
     },
     {
       "ID": 592000,
       "Entries": [
-        "[System] After transforming into a fist beast _ arm"
+        ""
       ]
     },
     {
       "ID": 600000,
       "Entries": [
-        "Wandering Equipment _ Immortal Pilgrim _ head"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 602000,
       "Entries": [
-        "Wandering Equipment _ Immortal Pilgrim _ arm"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 610000,
       "Entries": [
-        "Wandering Equipment _ Gravekeeper _ head"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 611000,
       "Entries": [
-        "Wandering Equipment _ Gravekeeper _ Torso"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 620000,
       "Entries": [
-        "Wandering Equipment _ Kin of the Flame of Destruction _ head"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 621000,
       "Entries": [
-        "Wandering Equipment _ Kin of the Flame of Destruction _ Torso"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 623000,
       "Entries": [
-        "Wandering Equipment _ Kin of the Flame of Destruction _ leg"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 630000,
       "Entries": [
-        "Wandering Equipment _ Vampire _ head"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 631000,
       "Entries": [
-        "Wandering Equipment_ Vampire _ Torso"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 633000,
       "Entries": [
-        "Wandering Equipment _ Vampire _ leg"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 641000,
       "Entries": [
-        "Wandering Equipment _ Vampire Princess _ Torso"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 650000,
       "Entries": [
-        "Wandering Equipment _ Vampire Knight _ head"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 651000,
       "Entries": [
-        "Wandering Equipment _ Vampire Knight _ Torso"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 653000,
       "Entries": [
-        "Wandering Equipment _ Vampire Knight _ leg"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 660000,
       "Entries": [
-        "Wandering Equipment _ Choir _ head"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 661000,
       "Entries": [
-        "Wandering Equipment _ Choir _ Torso"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 671000,
       "Entries": [
-        "Wandering Equipment _ Church Hunter _ Torso"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 680000,
       "Entries": [
-        "Wandering Equipment _ Bloodline Hunt _ head"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 682000,
       "Entries": [
-        "Wandering Equipment _ Bloodline Hunt _ arm"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 690000,
       "Entries": [
-        "Wandering Equipment _ Executioner _ head"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 700000,
       "Entries": [
-        "Wandering Equipment _ Beggar Hunter _ head"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 701000,
       "Entries": [
-        "Wandering Equipment _ Beggar Hunter _ Torso"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 703000,
       "Entries": [
-        "Wandering Equipment _ Beggar Hunter _ leg"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 710000,
       "Entries": [
-        "Wandering Equipment _ Lord of Nightmares _ head"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 712000,
       "Entries": [
-        "Wandering Equipment _ Lord of Nightmares _ arm"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 723000,
       "Entries": [
-        "Wandering Equipment _ Base Elderly _ leg"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 730000,
       "Entries": [
-        "Wandering Equipment _ The mad cultist _ head"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 732000,
       "Entries": [
-        "Wandering Equipment_ The mad cultist _ arm"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 740000,
       "Entries": [
-        "Wandering Equipment _ Doll Heroine _ head"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 741000,
       "Entries": [
-        "Wandering Equipment _ Doll Heroine _ Torso"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 743000,
       "Entries": [
-        "Wandering Equipment _ Doll Heroine _ leg"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 750000,
       "Entries": [
-        "Wandering Equipment _ Starting Equipment _ head"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 751000,
       "Entries": [
-        "Wandering Equipment _ Starting Equipment _ Torso"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 762000,
       "Entries": [
-        "Wandering Equipment _ Starting Equipment _ arm"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 772000,
       "Entries": [
-        "Wandering Equipment _ Before transforming into Fist Beast _ arm"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 782000,
       "Entries": [
-        "Wandering Equipment _ After transforming into Fist Beast _ arm"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 790000,
       "Entries": [
-        "Wandering Equipment _ Old Castle Boss _ head"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 800000,
       "Entries": [
-        "Wandering Equipment _ Spider Cthulhu _ head"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 811000,
       "Entries": [
-        "Wandering Equipment _ Prostitute _ Torso"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 813000,
       "Entries": [
-        "Wandering Equipment _ Prostitute _ leg"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 820000,
       "Entries": [
-        "Wandering Equipment _ Cranky old man _ head"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 821000,
       "Entries": [
-        "Wandering Equipment _ Cranky old man _ Torso"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 831000,
       "Entries": [
-        "[ NPCExclusive: Wandering Equipment _ Lonely old woman _ Torso"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 840000,
       "Entries": [
-        "Wandering Equipment _ Mammoth Man _ head"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 841000,
       "Entries": [
-        "Wandering Equipment _ Mammoth Man _ Torso"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 851000,
       "Entries": [
-        "Wandering Equipment _ Japanese clothing _ Torso"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 853000,
       "Entries": [
-        "Japanese clothing _ leg"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 860000,
       "Entries": [
-        "Wandering Equipment _ Beastification _ head"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 861000,
       "Entries": [
-        "Wandering Equipment _ Beastification _ Torso"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 862000,
       "Entries": [
-        "Wandering Equipment _ Beastification _ arm"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 870000,
       "Entries": [
-        "Wandering Equipment _ Slug _ head"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 872000,
       "Entries": [
-        "Wandering Equipment _ Slug _ arm"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 880000,
       "Entries": [
-        "Wandering Equipment _ Clock Tower Patient _ head"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 900000,
       "Entries": [
-        "head"
+        "Head"
       ]
     },
     {
@@ -1444,199 +1444,199 @@
     {
       "ID": 902000,
       "Entries": [
-        "arm"
+        "Arms"
       ]
     },
     {
       "ID": 903000,
       "Entries": [
-        "leg"
+        "Legs"
       ]
     },
     {
       "ID": 910000,
       "Entries": [
-        "Wandering Equipment _ Naked _ head"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 911000,
       "Entries": [
-        "Wandering Equipment _ Naked _ Torso"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 912000,
       "Entries": [
-        "Wandering Equipment _ Naked _ arm"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 913000,
       "Entries": [
-        "Wandering Equipment _ Naked _ leg"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 920000,
       "Entries": [
-        "Wandering Equipment _ Old City Hunter _ head"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 921000,
       "Entries": [
-        "Wandering Equipment_ Old City Hunter _ Torso"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 930000,
       "Entries": [
-        "Wandering Equipment _ Immortal Pilgrim (without hood) _ head"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 940000,
       "Entries": [
-        "Wandering Equipment _ Gascoigne _ head"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 950000,
       "Entries": [
-        "Wandering Equipment _ Junior Hunter _ head"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 951000,
       "Entries": [
-        "Wandering Equipment _ Junior Hunter _ Torso"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 952000,
       "Entries": [
-        "Wandering Equipment _ Junior Hunter _ arm"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 961000,
       "Entries": [
-        "Wandering Equipment _ Urban Hunter _ Torso"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 970000,
       "Entries": [
-        "Wandering Equipment _ Jack the Ripper _ head"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 971000,
       "Entries": [
-        "Wandering Equipment _ Jack the Ripper _ Torso"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 980000,
       "Entries": [
-        "Wandering Equipment _ Servant of the Church _ head"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 981000,
       "Entries": [
-        "Wandering Equipment _ Servant of the Church _ Torso"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 982000,
       "Entries": [
-        "Wandering Equipment _ Servant of the Church _ arm"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 983000,
       "Entries": [
-        "Wandering Equipment _ Servant of the Church _ leg"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 990000,
       "Entries": [
-        "Wandering Equipment _ Hunter _ head"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 991000,
       "Entries": [
-        "Wandering Equipment _ Hunter _Torso"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 992000,
       "Entries": [
-        "Wandering Equipment _ Hunter _ arm"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 993000,
       "Entries": [
-        "Wandering Equipment _ Hunter _ leg"
+        "Armor - Ghost"
       ]
     },
     {
       "ID": 1001000,
       "Entries": [
-        "[ NPC Exclusive】Servant of the Church _ Torso _ Nun"
+        "Adella - Torso"
       ]
     },
     {
       "ID": 1003000,
       "Entries": [
-        "[ NPC Exclusive】Servant of the Church _ leg _ Nun"
+        "Adella - Legs"
       ]
     },
     {
       "ID": 1011000,
       "Entries": [
-        "[ NPC Exclusive: Prostitute _ Torso _ Prostitute"
+        "Arianna - Torso"
       ]
     },
     {
       "ID": 1020000,
       "Entries": [
-        "[ NPC 】Beggar Hunter _ head"
+        "Suspicious Beggar - Head"
       ]
     },
     {
       "ID": 1021000,
       "Entries": [
-        "[ NPC 】Beggar Hunter _ Torso"
+        "Suspicious Beggar - Torso"
       ]
     },
     {
       "ID": 1022000,
       "Entries": [
-        "[ NPC 】Beggar Hunter _ arm"
+        "Suspicious Beggar - Arms"
       ]
     },
     {
       "ID": 1023000,
       "Entries": [
-        "[ NPC 】Beggar Hunter _ leg"
+        "Suspicious Beggar - Legs"
       ]
     },
     {
       "ID": 1030000,
       "Entries": [
-        "[ NPC 】Mammoth Man _ head"
+        "Brador - Head"
       ]
     },
     {
       "ID": 1031000,
       "Entries": [
-        "[ NPC 】Mammoth Man _ Torso"
+        "Brador - Torso"
       ]
     }
   ]
