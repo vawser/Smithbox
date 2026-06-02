@@ -62,42 +62,42 @@
     {
       "Field": "correctStrength",
       "Name": "Correction: STR",
-      "Description": "Charapara correction value."
+      "Description": "Strength Scaling value."
     },
     {
       "Field": "correctAgility",
       "Name": "Correction: DEX",
-      "Description": "Charapara correction value."
+      "Description": "Dexterity Scaling value."
     },
     {
       "Field": "correctMagic",
       "Name": "Correction: INT",
-      "Description": "Charapara correction value."
+      "Description": "Intelligence Scaling value."
     },
     {
       "Field": "correctFaith",
       "Name": "Correction: FTH",
-      "Description": "Charapara correction value."
+      "Description": "Faith Scaling value."
     },
     {
       "Field": "physGuardCutRate",
       "Name": "Guard Absorption: Physical",
-      "Description": "Set the damage cut rate when guarding for each attack"
+      "Description": "Sets the damage absorption rate (%) when guarding an attack"
     },
     {
       "Field": "magGuardCutRate",
       "Name": "Guard Absorption: Magic",
-      "Description": "If it is not a guard attack, enter 0"
+      "Description": "Sets the damage absorption rate (%) when guarding a magic attack"
     },
     {
       "Field": "fireGuardCutRate",
       "Name": "Guard Absorption: Fire",
-      "Description": "How much to cut the fire attack?"
+      "Description": "Sets the damage absorption rate (%) when guarding a fire attack"
     },
     {
       "Field": "thunGuardCutRate",
       "Name": "Guard Absorption: Lightning",
-      "Description": "How much to cut the electric shock attack?"
+      "Description": "Sets the damage absorption rate (%) when guarding a lightning attack"
     },
     {
       "Field": "spEffectBehaviorId0",
@@ -247,7 +247,7 @@
     {
       "Field": "saWeaponDamage",
       "Name": "Poise Damage",
-      "Description": "Super Armor Basic Attack Power"
+      "Description": "Super Armor (poise) Basic Attack Power"
     },
     {
       "Field": "equipModelId",
@@ -297,7 +297,7 @@
     {
       "Field": "attackBaseThunder",
       "Name": "Damage: Lightning",
-      "Description": "Basic value of electric shock attribute attack that damages the enemy's HP"
+      "Description": "Basic value of lightning attribute attack that damages the enemy's HP"
     },
     {
       "Field": "attackBaseStamina",
@@ -307,12 +307,12 @@
     {
       "Field": "guardAngle",
       "Name": "Guard Angle",
-      "Description": "Defense occurrence range angle when guarding weapons"
+      "Description": "Defense angle range when guarding weapons"
     },
     {
       "Field": "saDurability",
       "Name": "Poise Durability",
-      "Description": "Additional SA durability used during attack motion"
+      "Description": "Poise durability when attacking"
     },
     {
       "Field": "staminaGuardDef",
@@ -407,22 +407,22 @@
     {
       "Field": "properStrength",
       "Name": "Requirement: STR",
-      "Description": "Equipment appropriate value."
+      "Description": "Required strength to use the equipment."
     },
     {
       "Field": "properAgility",
       "Name": "Requirement: DEX",
-      "Description": "Equipment appropriate value."
+      "Description": "Required dexterity to use the equipment."
     },
     {
       "Field": "properMagic",
       "Name": "Requirement: INT",
-      "Description": "Equipment appropriate value."
+      "Description": "Required intelligence to use the equipment."
     },
     {
       "Field": "properFaith",
       "Name": "Requirement: FTH",
-      "Description": "Equipment appropriate value."
+      "Description": "Required faith to use the equipment."
     },
     {
       "Field": "overStrength",
@@ -452,47 +452,47 @@
     {
       "Field": "guardCutCancelRate",
       "Name": "Guard Bypass %",
-      "Description": "Magnification that invalidates the opponent's guard cut. -100 is completely invalid. Double the defense effect of the opponent at 100."
+      "Description": "Enemy guard absorption modifier when they guard an attack. Negative values make their guarding less effective. Positive values make their guarding more effective (You do less damage)."
     },
     {
       "Field": "guardLevel",
       "Name": "Guard Level",
-      "Description": "When guarding, which guard motion will the enemy attack? Decide"
+      "Description": "How strong this weapon's guarding is."
     },
     {
       "Field": "slashGuardCutRate",
       "Name": "Guard Absorption: Slash",
-      "Description": "Looking at the attack type, what percentage of the damage of the slashing attribute is cut? Specify"
+      "Description": "How much slash damage is negated when guarding (50 would be 50%, half)"
     },
     {
       "Field": "blowGuardCutRate",
       "Name": "Guard Absorption: Strike",
-      "Description": "Looking at the attack type, what percentage of the damage of the hit attribute is cut? Specify"
+      "Description": "How much strike damage is negated when guarding (50 would be 50%, half)"
     },
     {
       "Field": "thrustGuardCutRate",
       "Name": "Guard Absorption: Thrust",
-      "Description": "Looking at the attack type, what percentage of the damage of the piercing attribute is cut? Specify"
+      "Description": "How much thrust damage is negated when guarding (50 would be 50%, half)"
     },
     {
       "Field": "poisonGuardResist",
       "Name": "Guard Resist: Poison",
-      "Description": "How much to cut the attack power to poison (set to the special effect parameter)"
+      "Description": "How much poison buildup is negated when guarding (50 would be 50%, half)"
     },
     {
       "Field": "diseaseGuardResist",
       "Name": "Guard Resist: Scarlet Rot",
-      "Description": "How much to cut the attack power (set as a special effect parameter) to make it a plague"
+      "Description": "How much Scarlet Rot buildup is negated when guarding (50 would be 50%, half)"
     },
     {
       "Field": "bloodGuardResist",
       "Name": "Guard Resist: Blood Loss",
-      "Description": "How much to cut the attack power (set as a special effect parameter) to make bleeding"
+      "Description": "How much blood loss buildup is negated when guarding (50 would be 50%, half)"
     },
     {
       "Field": "curseGuardResist",
       "Name": "Guard Resist: Death Blight",
-      "Description": "How much to cut the attack power (set as a special effect parameter) to curse"
+      "Description": "How much death blight buildup is negated when guarding (50 would be 50%, half)"
     },
     {
       "Field": "atkAttribute",
@@ -502,27 +502,27 @@
     {
       "Field": "rightHandEquipable",
       "Name": "Can wield in Right Hand",
-      "Description": "Is it possible to equip it with the right hand?"
+      "Description": "whether it is possible to equip it with the right hand"
     },
     {
       "Field": "leftHandEquipable",
       "Name": "Can wield in Left Hand",
-      "Description": "Is it possible to equip it with the left hand?"
+      "Description": "whether it is possible to equip it with the left hand"
     },
     {
       "Field": "bothHandEquipable",
       "Name": "Can wield in Both Hands",
-      "Description": "Is it possible to equip with both hands?"
+      "Description": "whether it is possible to equip with both hands"
     },
     {
       "Field": "arrowSlotEquipable",
       "Name": "Can wield in Arrow Slot",
-      "Description": "Is it possible to equip a bow bullet?"
+      "Description": "whether it is possible to equip it on arrow slot"
     },
     {
       "Field": "boltSlotEquipable",
       "Name": "Can wield in Bolt Slot",
-      "Description": "Is it possible to equip a crossbow bullet?"
+      "Description": "whether it is possible to equip it on bolt slot"
     },
     {
       "Field": "enableGuard",
@@ -557,22 +557,22 @@
     {
       "Field": "isNormalAttackType",
       "Name": "Type Display: Normal",
-      "Description": "Attack type for menu display. Is it normal?"
+      "Description": "Wether it counts as a normal, physical attack"
     },
     {
       "Field": "isBlowAttackType",
       "Name": "Type Display: Strike",
-      "Description": "Attack type for menu display. Is it a blow?"
+      "Description": "Wether it counts as a strike attack"
     },
     {
       "Field": "isSlashAttackType",
       "Name": "Type Display: Slash",
-      "Description": "Attack type for menu display. Is it a slash?"
+      "Description": "Wether it counts as a slash attack"
     },
     {
       "Field": "isThrustAttackType",
       "Name": "Type Display: Thrust",
-      "Description": "Attack type for menu display. Is it a piercing?"
+      "Description": "Wether it counts as a thrust attack"
     },
     {
       "Field": "isEnhance",
@@ -632,7 +632,7 @@
     {
       "Field": "isDeposit",
       "Name": "Can Deposit",
-      "Description": "Can you leave it in the warehouse?"
+      "Description": "wether you can store it in your inventory"
     },
     {
       "Field": "disableMultiDropShare",
@@ -642,12 +642,12 @@
     {
       "Field": "isDiscard",
       "Name": "Can Discard",
-      "Description": "Can you throw away the item? TRUE = thrown away"
+      "Description": "Wether this item can be discarded"
     },
     {
       "Field": "isDrop",
       "Name": "Can Drop",
-      "Description": "Can I put the item on the spot? TRUE = can be placed"
+      "Description": "Wether the item can be dropped on the ground"
     },
     {
       "Field": "showLogCondType",
@@ -907,12 +907,12 @@
     {
       "Field": "darkGuardCutRate",
       "Name": "Guard Absorption: Holy",
-      "Description": "How much to cut the dark attack?"
+      "Description": "How much Holy damage is absorbed when guarding"
     },
     {
       "Field": "attackBaseDark",
       "Name": "Damage: Holy",
-      "Description": "Basic value of darkness attack that damages the enemy's HP"
+      "Description": "Basic value of Holy attack that damages the enemy's HP"
     },
     {
       "Field": "correctType_Dark",
@@ -937,12 +937,12 @@
     {
       "Field": "sleepGuardResist",
       "Name": "Guard Resist: Sleep",
-      "Description": "How much to cut the attack power (set as a special effect parameter) to sleep"
+      "Description": "How much sleep buildup is negated when guarding"
     },
     {
       "Field": "madnessGuardResist",
       "Name": "Guard Resist: Madness",
-      "Description": "How much to cut the attack power (set to the special effect parameter) that makes you go mad"
+      "Description": "How much madness buildup is negated when guarding"
     },
     {
       "Field": "correctType_Blood",
@@ -952,12 +952,12 @@
     {
       "Field": "properLuck",
       "Name": "Requirement: ARC",
-      "Description": "Equipment appropriate value."
+      "Description": "How much Arcane is required to equip this weapon"
     },
     {
       "Field": "freezeGuardResist",
       "Name": "Guard Resist: Frostbite",
-      "Description": "How much to cut the attack power (set to the special effect parameter) to cool down"
+      "Description": "How much frostbite buildup is negated when guarding"
     },
     {
       "Field": "autoReplenishType",
@@ -972,7 +972,7 @@
     {
       "Field": "correctLuck",
       "Name": "Correction: ARC",
-      "Description": "Charapara correction value."
+      "Description": "Arcane Scaling value"
     },
     {
       "Field": "arrowBoltEquipId",
@@ -992,7 +992,7 @@
     {
       "Field": "wepType",
       "Name": "Weapon Type",
-      "Description": "Weapon type. Used for linking text and magic stones (* It is now used for other than text)"
+      "Description": "Weapon type."
     },
     {
       "Field": "physGuardCutRate_MaxCorrect",
@@ -1247,7 +1247,7 @@
     {
       "Field": "rarity",
       "Name": "Rarity",
-      "Description": "Rarity used in item acquisition logs"
+      "Description": "How rare this weapon is, goes up to 3 (Legendary)"
     },
     {
       "Field": "gemMountType",
@@ -1337,7 +1337,7 @@
     {
       "Field": "saGuardCutRate",
       "Name": "Poise Damage - Guard Absorption",
-      "Description": "SA damage cut rate when guard is successful"
+      "Description": "Poise damage absorption when guard is successful"
     },
     {
       "Field": "defMaterialVariationValue",
