@@ -12,7 +12,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Extremely low"
+          "Text": "Very Low"
         }
       ]
     },
@@ -48,7 +48,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Extremely high"
+          "Text": "Very High"
         }
       ]
     },
@@ -57,7 +57,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Other 1"
+          "Text": "Other"
         }
       ]
     },

@@ -21,7 +21,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Parry invalid"
+          "Text": "Parry Disabled"
         }
       ]
     },
@@ -30,7 +30,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Guard disabled"
+          "Text": "Guard Disabled"
         }
       ]
     },
@@ -39,7 +39,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Parry, guard invalid"
+          "Text": "Parry and Guard Disabled"
         }
       ]
     }

@@ -63,7 +63,7 @@
         <combo0AttackHand02 />
         <combo0AttackHand03 />
         <combo0AttackHand04 />
-        <combo0AttackChantSfx  Enum="ENEMY_SHOT_SFX_PARAM_ENUM"/>
+        <combo0AttackChantSfx  Refs="EnemyShotSfxParam"/>
         <combo0Reload />
         <pad00 />
         <combo1AttackMotionId />
@@ -127,7 +127,7 @@
         <combo1AttackHand02 />
         <combo1AttackHand03 />
         <combo1AttackHand04 />
-        <combo1AttackChantSfx  Enum="ENEMY_SHOT_SFX_PARAM_ENUM"/>
+        <combo1AttackChantSfx  Refs="EnemyShotSfxParam"/>
         <combo1Reload />
         <pad01 />
         <combo2AttackMotionId />
@@ -191,7 +191,7 @@
         <combo2AttackHand02 />
         <combo2AttackHand03 />
         <combo2AttackHand04 />
-        <combo2AttackChantSfx  Enum="ENEMY_SHOT_SFX_PARAM_ENUM"/>
+        <combo2AttackChantSfx  Refs="EnemyShotSfxParam"/>
         <combo2Reload />
         <pad02 />
         <combo3AttackMotionId />
@@ -255,7 +255,7 @@
         <combo3AttackHand02 />
         <combo3AttackHand03 />
         <combo3AttackHand04 />
-        <combo3AttackChantSfx  Enum="ENEMY_SHOT_SFX_PARAM_ENUM"/>
+        <combo3AttackChantSfx  Refs="EnemyShotSfxParam"/>
         <combo3Reload />
         <pad03 />
         <combo4AttackMotionId />
@@ -319,7 +319,7 @@
         <combo4AttackHand02 />
         <combo4AttackHand03 />
         <combo4AttackHand04 />
-        <combo4AttackChantSfx  Enum="ENEMY_SHOT_SFX_PARAM_ENUM"/>
+        <combo4AttackChantSfx  Refs="EnemyShotSfxParam"/>
         <combo4Reload />
         <pad04 />
         <combo5AttackMotionId />
@@ -383,7 +383,7 @@
         <combo5AttackHand02 />
         <combo5AttackHand03 />
         <combo5AttackHand04 />
-        <combo5AttackChantSfx  Enum="ENEMY_SHOT_SFX_PARAM_ENUM"/>
+        <combo5AttackChantSfx  Refs="EnemyShotSfxParam"/>
         <combo5Reload />
         <pad05 />
         <combo6AttackMotionId />
@@ -447,7 +447,7 @@
         <combo6AttackHand02 />
         <combo6AttackHand03 />
         <combo6AttackHand04 />
-        <combo6AttackChantSfx  Enum="ENEMY_SHOT_SFX_PARAM_ENUM"/>
+        <combo6AttackChantSfx  Refs="EnemyShotSfxParam"/>
         <combo6Reload />
         <pad06 />
     </Field>

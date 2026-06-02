@@ -12,7 +12,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "①"
+          "Text": "Condition 1"
         }
       ]
     },
@@ -21,7 +21,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "①&②"
+          "Text": "Condition 1 AND Condition 2"
         }
       ]
     },
@@ -30,7 +30,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "①｜②"
+          "Text": "Condition 1 OR Condition 2"
         }
       ]
     },
@@ -39,7 +39,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "①&②&③"
+          "Text": "Condition 1 AND Condition 2 AND Condition 3"
         }
       ]
     },
@@ -48,7 +48,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "①|②|③"
+          "Text": "Condition 1 OR Condition 2 OR Condition 3"
         }
       ]
     },
@@ -57,7 +57,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "(①&②)|③"
+          "Text": "(Condition 1 AND Condition 2) OR Condition 3"
         }
       ]
     },
@@ -66,7 +66,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "（①|②）&③"
+          "Text": "(Condition 1 OR Condition 2) AND Condition 3"
         }
       ]
     }

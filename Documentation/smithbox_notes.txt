@@ -2,6 +2,14 @@
 # FEATURES
 #---------------------
 
+- Collision Editor
+ - Basic editing of the HKX collision properties for:
+  - Map Collision
+  - Asset Collision
+  - Character Collision
+  
+  - Map Collision helper that generates a set of basic collision shapes (squares, rectangles, circles, boxes, spheres), producing havok files and placing them in the map collision binder(s).
+
 - Bullet Simulator
  - Add primitive simulation of bullet behavior, making use of the primitive draw elements to display the path and projectiles.
  

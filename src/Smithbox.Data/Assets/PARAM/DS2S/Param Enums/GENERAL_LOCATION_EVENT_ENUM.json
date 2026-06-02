@@ -12,7 +12,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "No setting"
+          "Text": "None"
         }
       ]
     },
@@ -21,7 +21,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Black spirit invasion"
+          "Text": "Black Phantom Invasion"
         }
       ]
     },
@@ -39,7 +39,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Event trigger"
+          "Text": "Event Trigger"
         }
       ]
     },
@@ -48,7 +48,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Bullet firing"
+          "Text": "Bullet Shoot"
         }
       ]
     },
@@ -57,7 +57,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Navigation point"
+          "Text": "Navigation Point"
         }
       ]
     },
@@ -75,7 +75,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Navigation mesh change"
+          "Text": "Navigation Mesh Change"
         }
       ]
     },
@@ -84,7 +84,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Not lockable"
+          "Text": "Lock Unavaliable"
         }
       ]
     },
@@ -93,7 +93,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Generator operating conditions"
+          "Text": "Generator Activation Condition"
         }
       ]
     },
@@ -102,7 +102,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Event judgment"
+          "Text": "Event Judgment"
         }
       ]
     },
@@ -111,7 +111,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Logic intrusion prohibited"
+          "Text": "Logic Invasion Prohibited"
         }
       ]
     },
@@ -120,7 +120,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Resident event blood letter"
+          "Text": "Persistent Event Blood Letter"
         }
       ]
     },
@@ -129,7 +129,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Event blood letter"
+          "Text": "Event Blood Letter"
         }
       ]
     },
@@ -138,7 +138,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Wind generator"
+          "Text": "Wind Generator"
         }
       ]
     },
@@ -147,7 +147,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Slippery floor"
+          "Text": "Slippery Floor"
         }
       ]
     },
@@ -174,7 +174,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Bright area"
+          "Text": "Bright Area"
         }
       ]
     },
@@ -183,7 +183,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "No blood writing allowed"
+          "Text": "Blood Letter Prohibited"
         }
       ]
     },
@@ -192,7 +192,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Blood text hidden"
+          "Text": "Blood Letter Prohibited"
         }
       ]
     },
@@ -201,7 +201,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Petrified statue"
+          "Text": "Petrified Statue"
         }
       ]
     },
@@ -210,7 +210,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Advice blood letters"
+          "Text": "Advice Blood Letter"
         }
       ]
     },
@@ -219,7 +219,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Backread safety between map connections"
+          "Text": "Backread Aafety between Map Connections"
         }
       ]
     }

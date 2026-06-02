@@ -21,7 +21,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Abnormal Status: Poison"
+          "Text": "Status Effect: Poison"
         }
       ]
     },
@@ -30,7 +30,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Abnormal Status: Bleed"
+          "Text": "Status Effect: Bleed"
         }
       ]
     },
@@ -39,7 +39,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Equipment: Leg"
+          "Text": "Equipment: Legs"
         }
       ]
     },
@@ -48,7 +48,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Equipment: Arm"
+          "Text": "Equipment: Arms"
         }
       ]
     },
@@ -75,7 +75,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Abnormal Status: Toxic Poison"
+          "Text": "Status Effect: Toxic"
         }
       ]
     },
@@ -93,7 +93,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Equipment: Left weapon"
+          "Text": "Equipment: Left Weapon"
         }
       ]
     },
@@ -102,7 +102,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Equipment: Right weapon"
+          "Text": "Equipment: Right Weapon"
         }
       ]
     },
@@ -111,7 +111,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Both Legs"
+          "Text": "Both Feet"
         }
       ]
     },
@@ -120,7 +120,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Abnormal Status: Wet"
+          "Text": "Status Effect: Wet"
         }
       ]
     },
@@ -129,7 +129,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Abnormal Status: Spell Seal"
+          "Text": "Status Effect: Spell Seal"
         }
       ]
     },
@@ -147,7 +147,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Automatic hand selection for both hands"
+          "Text": "Automatic Hand Selection for 2H Weapons"
         }
       ]
     },

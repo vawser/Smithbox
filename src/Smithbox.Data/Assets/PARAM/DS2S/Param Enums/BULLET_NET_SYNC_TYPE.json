@@ -12,7 +12,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Not synced"
+          "Text": "Not Synced"
         }
       ]
     },
@@ -21,7 +21,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Emitter synchronization"
+          "Text": "Emitter Synchronization"
         }
       ]
     },
@@ -30,7 +30,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Bullet synchronization"
+          "Text": "Bullet Synchronization"
         }
       ]
     },
@@ -39,7 +39,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Coordinate emitter synchronization"
+          "Text": "Coordinate Emitter Synchronization"
         }
       ]
     },
@@ -48,7 +48,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Placed bullet synchronization"
+          "Text": "Placed Bullet Synchronization"
         }
       ]
     }

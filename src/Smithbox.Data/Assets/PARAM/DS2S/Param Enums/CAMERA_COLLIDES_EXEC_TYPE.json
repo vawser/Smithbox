@@ -12,7 +12,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Do nothing"
+          "Text": "Do Nothing"
         }
       ]
     },
@@ -21,7 +21,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Camera end"
+          "Text": "Turn off Camera"
         }
       ]
     },
@@ -30,7 +30,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Movement stop"
+          "Text": "Stop Movement"
         }
       ]
     },
@@ -39,7 +39,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Move to a safe location"
+          "Text": "Move to Safe Location"
         }
       ]
     }

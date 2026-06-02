@@ -12,7 +12,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Normal direction"
+          "Text": "Normal Direction"
         }
       ]
     },
@@ -21,7 +21,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Trajectory direction"
+          "Text": "Trajectory Direction"
         }
       ]
     },
@@ -30,7 +30,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Manual configuration"
+          "Text": "Manual Configuration"
         }
       ]
     }

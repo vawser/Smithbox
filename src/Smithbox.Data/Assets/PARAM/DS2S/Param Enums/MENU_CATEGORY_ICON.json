@@ -30,7 +30,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Straight sword"
+          "Text": "Straight Sword"
         }
       ]
     },
@@ -39,7 +39,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Two-handed sword"
+          "Text": "Greatsword"
         }
       ]
     },
@@ -48,7 +48,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Curved sword"
+          "Text": "Curved Sword"
         }
       ]
     },
@@ -57,7 +57,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Oversized sword"
+          "Text": "Ultra Greatsword"
         }
       ]
     },
@@ -66,7 +66,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Double-edged sword"
+          "Text": "Curved Greatsword"
         }
       ]
     },
@@ -75,7 +75,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Stabbing sword"
+          "Text": "Thursting sword"
         }
       ]
     },
@@ -84,7 +84,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "斧"
+          "Text": "Axe"
         }
       ]
     },
@@ -93,7 +93,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "槌"
+          "Text": "Hammer"
         }
       ]
     },
@@ -102,7 +102,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "槍"
+          "Text": "Spear"
         }
       ]
     },
@@ -111,7 +111,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "拳"
+          "Text": "Fist"
         }
       ]
     },
@@ -120,7 +120,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "鞭"
+          "Text": "Whip"
         }
       ]
     },
@@ -129,7 +129,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Shooting"
+          "Text": "Shoot"
         }
       ]
     },
@@ -147,7 +147,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "盾"
+          "Text": "Shield"
         }
       ]
     },
@@ -156,7 +156,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "兜"
+          "Text": "Helmet"
         }
       ]
     },
@@ -165,7 +165,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "鎧"
+          "Text": "Armor"
         }
       ]
     },
@@ -174,7 +174,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Kote"
+          "Text": "Gauntlets"
         }
       ]
     },
@@ -183,7 +183,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Armor"
+          "Text": "Leggings"
         }
       ]
     },
@@ -201,7 +201,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Arrows & bolts"
+          "Text": "Arrow & Bolt"
         }
       ]
     },
@@ -210,7 +210,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "[Use prohibited/required to output] Arrow"
+          "Text": "[Usage Forbidden] Arrow"
         }
       ]
     },
@@ -219,7 +219,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "[Use prohibited/output required] Bolt"
+          "Text": "[Usage Forbidden] Bolt"
         }
       ]
     },
@@ -246,7 +246,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Sauce"
+          "Text": "Source"
         }
       ]
     },
@@ -273,7 +273,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Shop weapons"
+          "Text": "Shop: Weapon"
         }
       ]
     },
@@ -282,7 +282,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Shop armor"
+          "Text": "Shop: Armor"
         }
       ]
     },
@@ -291,7 +291,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Shop rings"
+          "Text": "Shop: Ring"
         }
       ]
     },
@@ -300,7 +300,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Shop arrow"
+          "Text": "Shop: Ammunition"
         }
       ]
     },
@@ -309,7 +309,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Shop items"
+          "Text": "Shop: Item"
         }
       ]
     },
@@ -318,7 +318,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Shop spell"
+          "Text": "Shop: Spell"
         }
       ]
     },
@@ -327,7 +327,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Warehouse"
+          "Text": "Repository"
         }
       ]
     }

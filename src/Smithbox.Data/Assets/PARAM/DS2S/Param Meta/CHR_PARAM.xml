@@ -34,7 +34,7 @@
         <equipAccessory03 />
         <equipAccessory04 />
         <equipAccessory05 />
-        <roundDamageCategory  Enum="CHR_ROUND_DAMAGE_CATEGORY"/>
+        <roundDamageCategory Refs="ChrRoundDamageParam" />
         <guardPassiveLevelType  Enum="GUARD_PASSIVE_LEVEL_TYPE"/>
         <parryType  Enum="PARRY_TYPES"/>
         <spellParrySfxId />
@@ -81,7 +81,7 @@
         <changeStunMaxValue />
         <changeStunRecoverValue />
         <fadeInTime />
-        <generateSfx  Enum="CHR_FULLBODY_SFX_PARAM_ENUM"/>
+        <generateSfx Refs="ChrFullBodySfxParam" />
         <partsGuardSpellParryAngle />
         <poiseValue />
         <poiseRecoveryValue />

@@ -21,7 +21,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Unconditionally established"
+          "Text": "Unconditionally Activated"
         }
       ]
     },
@@ -30,7 +30,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "A player invades the event point [event point ID]"
+          "Text": "Player enters Event Point [Event Point ID]"
         }
       ]
     },
@@ -39,7 +39,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Player escapes from event point [event point ID]"
+          "Text": "Player leaves Event Point [Event Point ID]"
         }
       ]
     },
@@ -48,7 +48,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "The distance to the player is [distance] m or more"
+          "Text": "Distance from Player (Equal or Greater) [m]"
         }
       ]
     },
@@ -57,7 +57,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "The distance to the player is within [distance] m"
+          "Text": "Distance from Player (Equal or Less) [m]"
         }
       ]
     },
@@ -66,7 +66,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "The number of permanently stationed enemies on the map is within [specified number]"
+          "Text": "Number of Permanent Enemies on the Map (Equal or Less) [Number]"
         }
       ]
     },
@@ -75,7 +75,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "[Specified ID] event flag is ON"
+          "Text": "Event Flag is ON [Specified ID]"
         }
       ]
     },
@@ -84,7 +84,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "The event flag of [specified ID] is OFF"
+          "Text": "Event Flag is OFF [Specified ID]"
         }
       ]
     },
@@ -93,7 +93,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "More than [specified seconds] have passed since the generated character died."
+          "Text": "During since Character Respawn [Seconds]"
         }
       ]
     },
@@ -102,7 +102,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "An enemy generation trap has been activated."
+          "Text": "Active Enemy Generation Trap"
         }
       ]
     },
@@ -111,7 +111,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Host invades event point [event point ID]"
+          "Text": "Host enters Event Point [Event Point ID]"
         }
       ]
     },
@@ -120,7 +120,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Host escapes from event point [event point ID]"
+          "Text": "Host leaves Event Point [Event Point ID]"
         }
       ]
     },
@@ -129,7 +129,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Event [Event ID] has ended"
+          "Text": "Event has ended [Event ID]"
         }
       ]
     },
@@ -138,7 +138,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Player is not wet with [wetness parameter ID]"
+          "Text": "Player is not wet [Wet Param ID]"
         }
       ]
     },
@@ -147,7 +147,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "The player is wet with [wetness parameter ID]"
+          "Text": "Player is wet [Wet Param ID]"
         }
       ]
     },
@@ -156,7 +156,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Not during a boss fight"
+          "Text": "Not in Boss Fight"
         }
       ]
     },
@@ -165,7 +165,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "During a boss fight"
+          "Text": "Is in Boss Fight"
         }
       ]
     },
@@ -174,7 +174,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "A hostile spirit (against the host) invades [Event Point ID]"
+          "Text": "Hostile Phantom enters Event Point [Event Point ID]"
         }
       ]
     },
@@ -183,7 +183,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Hostile spirit (against the host) leaves to [event point ID]"
+          "Text": "Hostile Phantom leaves Event Point [Event Point ID]"
         }
       ]
     },
@@ -192,7 +192,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Friendly spirits (against the host) invade [event point ID]"
+          "Text": "Friendly Phantom enters Event Point [Event Point ID]"
         }
       ]
     },
@@ -201,7 +201,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Ally spirits (toward the host) leave at [Event Point ID]"
+          "Text": "Friendly Phantom leaves Event Point [Event Point ID]"
         }
       ]
     },
@@ -210,7 +210,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Total number of laps is more than [comparison number of laps]"
+          "Text": "Total Number of Laps (Equal or Greater) [Number]"
         }
       ]
     },
@@ -219,7 +219,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Total number of laps is less than [Comparison number of laps]"
+          "Text": "Total Number of Laps (Equal or Less) [Number]"
         }
       ]
     },
@@ -228,7 +228,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Total number of laps is equal to [number of comparison laps]"
+          "Text": "Total Number of Laps (Equal) [Number]"
         }
       ]
     },
@@ -237,7 +237,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "The number of game laps is more than [Comparison number of laps]"
+          "Text": "Number of Game Laps (Equal or Greater) [Number]"
         }
       ]
     },
@@ -246,7 +246,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "The number of game laps is less than or equal to [Comparison number of laps]"
+          "Text": "Number of Game Laps (Equal or Less) [Number]"
         }
       ]
     },
@@ -255,7 +255,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Number of game laps is equal to [Comparison number of laps]"
+          "Text": "Number of Game Laps (Equal) [Number]"
         }
       ]
     },
@@ -264,7 +264,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Number of laps around the bonfire is greater than [Comparison number of laps]"
+          "Text": "Number of Bonfire Laps (Equal or Greater) [Number]"
         }
       ]
     },
@@ -273,7 +273,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Number of laps around the bonfire is less than or equal to [Comparison number of laps]"
+          "Text": "Number of Bonfire Laps (Equal or Less) [Number]"
         }
       ]
     },
@@ -282,7 +282,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Number of bonfire laps is equal to [comparison number of laps]"
+          "Text": "Number of Bonfire Laps (Equal) [Number]"
         }
       ]
     },
@@ -291,7 +291,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "The distance to all players is [distance] m or more"
+          "Text": "Distance from all Players (Equal or Greater) [m]"
         }
       ]
     },
@@ -300,7 +300,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "The distance to all players is within [distance] m"
+          "Text": "Distance from all Players (Equal or Less) [m]"
         }
       ]
     }

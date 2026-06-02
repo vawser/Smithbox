@@ -12,7 +12,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Disappears when broken"
+          "Text": "Disappears when Broken"
         }
       ]
     },
@@ -21,7 +21,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Only after destruction"
+          "Text": "Only after Destruction"
         }
       ]
     },
@@ -30,7 +30,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Everytime"
+          "Text": "Always"
         }
       ]
     }

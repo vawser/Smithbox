@@ -12,7 +12,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Extremely fast"
+          "Text": "Very Fast"
         }
       ]
     },
@@ -21,7 +21,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "速"
+          "Text": "Fast"
         }
       ]
     },
@@ -30,7 +30,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Quick extension"
+          "Text": "Fast Delay"
         }
       ]
     },
@@ -39,7 +39,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "普"
+          "Text": "Normal"
         }
       ]
     },
@@ -48,7 +48,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Funobe"
+          "Text": "Normal Delay"
         }
       ]
     },
@@ -57,7 +57,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "遅"
+          "Text": "Slow"
         }
       ]
     },
@@ -66,7 +66,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Delay"
+          "Text": "Slow Delay"
         }
       ]
     },
@@ -75,7 +75,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Slowest"
+          "Text": "Very Slow"
         }
       ]
     }

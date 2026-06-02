@@ -12,7 +12,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "From using a bonfire"
+          "Text": "On Bonfire Use"
         }
       ]
     },
@@ -21,7 +21,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "From map refresh"
+          "Text": "On Map Reload"
         }
       ]
     },
@@ -30,7 +30,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "From using the pilot fire"
+          "Text": "On Primal Bonfire Use"
         }
       ]
     },
@@ -39,7 +39,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "From the game round"
+          "Text": "On New Journey"
         }
       ]
     }

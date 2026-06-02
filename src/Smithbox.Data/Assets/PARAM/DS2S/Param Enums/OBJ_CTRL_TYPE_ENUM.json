@@ -21,7 +21,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Wooden treasure box"
+          "Text": "Wooden Treasure Chest"
         }
       ]
     },
@@ -30,7 +30,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Single door"
+          "Text": "Single Door"
         }
       ]
     },
@@ -39,7 +39,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Both doors"
+          "Text": "Double Door"
         }
       ]
     },
@@ -66,7 +66,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "White door"
+          "Text": "Boss Fog"
         }
       ]
     },
@@ -102,7 +102,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Anime hit trap"
+          "Text": "Animated Hit Trap"
         }
       ]
     },
@@ -120,7 +120,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Death count display"
+          "Text": "Death Count Display"
         }
       ]
     },
@@ -129,7 +129,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Display number of bosses defeated"
+          "Text": "Display Number of Bosses Defeated"
         }
       ]
     },
@@ -138,7 +138,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Broken ladder"
+          "Text": "Broken Ladder"
         }
       ]
     },
@@ -147,7 +147,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Floor lever: return automatically"
+          "Text": "Floor Lever: Returns Automatically"
         }
       ]
     },
@@ -156,7 +156,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Floor lever: does not return"
+          "Text": "Floor Lever: No Return"
         }
       ]
     },
@@ -165,7 +165,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Floor lever: Continue thinning while inputting buttons"
+          "Text": "Floor Lever: Hold Down while Button is Pressed"
         }
       ]
     },
@@ -174,7 +174,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Vertical lever: return automatically"
+          "Text": "Vertical Lever: Returns Automatically"
         }
       ]
     },
@@ -183,7 +183,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Vertical lever: does not return"
+          "Text": "Vertical Lever: No Return"
         }
       ]
     },
@@ -192,7 +192,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Hidden door ① (Insect key SFX)"
+          "Text": "Hidden door 1 (Pharros Keystone)"
         }
       ]
     },
@@ -201,7 +201,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Hidden door ② (button press)"
+          "Text": "Hidden door 2 (Button Press)"
         }
       ]
     },
@@ -210,7 +210,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Lowering ladder"
+          "Text": "Lowered Ladder"
         }
       ]
     },
@@ -219,7 +219,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Character transport object"
+          "Text": "Character Transport Object"
         }
       ]
     },
@@ -228,7 +228,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Iron treasure box"
+          "Text": "Iron Treasure Chest"
         }
       ]
     },
@@ -237,7 +237,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Burnable treasure chest"
+          "Text": "Burnable Treasure Chest"
         }
       ]
     },
@@ -246,7 +246,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Insect key (wall)"
+          "Text": "Pharros Keystone (Wall)"
         }
       ]
     },
@@ -255,7 +255,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Insect key (floor)"
+          "Text": "Pharros Keystone (Floor)"
         }
       ]
     },
@@ -264,7 +264,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Wall hole lever"
+          "Text": "Wall Hole Lever"
         }
       ]
     },
@@ -273,7 +273,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Lightweight objects"
+          "Text": "Lightweight Object"
         }
       ]
     },
@@ -282,7 +282,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Mimicry object"
+          "Text": "Mimicry Object"
         }
       ]
     },
@@ -291,7 +291,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Petrified statue"
+          "Text": "Petrified Statue"
         }
       ]
     },
@@ -300,7 +300,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Item distribution treasure chest"
+          "Text": "Item Distribution Treasure Chest"
         }
       ]
     },
@@ -309,7 +309,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Rolling flame barrel"
+          "Text": "Rolling Flame Barrel"
         }
       ]
     },
@@ -318,7 +318,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Destroy a wall with a rolling barrel of fire"
+          "Text": "Wall affected by Rolling Flame Barrel"
         }
       ]
     },
@@ -327,7 +327,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Wall torch"
+          "Text": "Wall Torch"
         }
       ]
     }

@@ -12,7 +12,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Physics"
+          "Text": "Physical"
         }
       ]
     },
@@ -21,7 +21,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Magic power"
+          "Text": "Magic"
         }
       ]
     },
@@ -39,7 +39,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Flame"
+          "Text": "Fire"
         }
       ]
     },
@@ -48,7 +48,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Darkness"
+          "Text": "Dark"
         }
       ]
     },
@@ -75,7 +75,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Bleeding"
+          "Text": "Bleed"
         }
       ]
     },
@@ -84,7 +84,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Weapon destruction"
+          "Text": "Durability"
         }
       ]
     },
@@ -102,7 +102,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Combustion"
+          "Text": "Burn"
         }
       ]
     },
@@ -111,7 +111,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Highly poisonous"
+          "Text": "Toxic"
         }
       ]
     },

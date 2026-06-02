@@ -12,7 +12,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Ground/Air"
+          "Text": "Ground / Air"
         }
       ]
     },
@@ -21,7 +21,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Ground only"
+          "Text": "Ground Only"
         }
       ]
     },
@@ -30,7 +30,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Air only"
+          "Text": "Air Only"
         }
       ]
     }

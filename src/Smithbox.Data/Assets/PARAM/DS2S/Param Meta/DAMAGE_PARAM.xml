@@ -47,7 +47,7 @@
         <materialSize  Enum="DAMAGE_MATERIAL_SIZE"/>
         <material  Refs="MaterialParam"/>
         <traceSfx />
-        <traceSfxColor  Enum="DAMAGE_SFX_TRACE_DP_COLOR_ENUM"/>
+        <traceSfxColor Refs="DamageSfxTraceDummyPolyColorParam" />
         <traceSfxPos />
         <overKilledBlowPower />
         <movementPowerType  Refs="DamageMovementPowerParam"/>

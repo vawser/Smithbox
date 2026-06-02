@@ -12,7 +12,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Super close range"
+          "Text": "Very Close Range"
         }
       ]
     },
@@ -21,7 +21,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Short distance"
+          "Text": "Close Range"
         }
       ]
     },
@@ -30,7 +30,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Medium distance"
+          "Text": "Medium Range"
         }
       ]
     },
@@ -39,7 +39,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Long distance"
+          "Text": "Long Range"
         }
       ]
     },
@@ -48,7 +48,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Super long distance"
+          "Text": "Very Long Range"
         }
       ]
     }

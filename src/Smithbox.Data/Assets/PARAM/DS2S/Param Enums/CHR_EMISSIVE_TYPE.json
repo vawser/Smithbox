@@ -12,7 +12,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "0, most effective"
+          "Text": "None"
         }
       ]
     },
@@ -21,7 +21,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "No. 0 valid"
+          "Text": "0 Valid"
         }
       ]
     },
@@ -30,7 +30,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Most effective"
+          "Text": "1 Valid"
         }
       ]
     },
@@ -39,7 +39,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "None"
+          "Text": "0 and 1 Valid"
         }
       ]
     }

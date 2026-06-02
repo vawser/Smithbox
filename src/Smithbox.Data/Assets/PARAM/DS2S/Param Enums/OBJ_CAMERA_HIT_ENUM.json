@@ -12,7 +12,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Close to PC"
+          "Text": "Approach Player"
         }
       ]
     },
@@ -21,7 +21,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Do nothing"
+          "Text": "Do Nothing"
         }
       ]
     },
@@ -30,7 +30,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Translucency"
+          "Text": "Apply Opacity"
         }
       ]
     }

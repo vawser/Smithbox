@@ -12,7 +12,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Fist_one hand_stance"
+          "Text": "Fist: 1H Stance"
         }
       ]
     },
@@ -21,7 +21,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Fist_One hand_Stance_Torch"
+          "Text": "Fist: 1H Stance - Torch"
         }
       ]
     },
@@ -30,7 +30,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Fist_One hand_Position_Binoculars"
+          "Text": "Fist: 1H Stance - Binoculars"
         }
       ]
     },
@@ -39,7 +39,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Fist_both hands_position"
+          "Text": "Fist - 2H Position"
         }
       ]
     },
@@ -48,7 +48,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Fist_Dual wielding both hands_Position"
+          "Text": "Fist: DW 2H Position"
         }
       ]
     },
@@ -57,7 +57,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Dagger_one hand_position"
+          "Text": "Dagger: 1H Position"
         }
       ]
     },
@@ -66,7 +66,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Dagger_both hands_ready"
+          "Text": "Dagger: 2H Ready"
         }
       ]
     },
@@ -75,7 +75,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Dagger_Two-handed two-handed stance"
+          "Text": "Dagger: DW 2H Stance"
         }
       ]
     },
@@ -84,7 +84,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Double-edged sword_one-handed_position"
+          "Text": "Greatsword: 1H Position"
         }
       ]
     },
@@ -93,7 +93,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Double-edged sword_both hands_stance"
+          "Text": "Greatsword: 2H Position"
         }
       ]
     },
@@ -102,7 +102,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Spear_one hand_stance"
+          "Text": "Spear: 1H Stance"
         }
       ]
     },
@@ -111,7 +111,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Spear_both hands_stance"
+          "Text": "Spear: 2H Stance"
         }
       ]
     },
@@ -120,7 +120,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Spear_Dual wielding both hands_Standing"
+          "Text": "Spear: DW 2H: Stand"
         }
       ]
     },
@@ -129,7 +129,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Straight sword_both hands_stance"
+          "Text": "Straight Sword: 2H Stance"
         }
       ]
     },
@@ -138,7 +138,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Two handed ax _one handed_ stance"
+          "Text": "Greataxe: 1H Stance"
         }
       ]
     },
@@ -147,7 +147,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Two-handed ax_one hand_stance_thick weapon"
+          "Text": "Greataxe: 1H Stance (Thick)" 
         }
       ]
     },
@@ -156,7 +156,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Two-handed ax_two-handed one-handed_position"
+          "Text": "Greataxe: 2H Position" 
         }
       ]
     },
@@ -165,7 +165,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Two-handed ax_both hands_stance"
+          "Text": "Greataxe: 2H Stance" 
         }
       ]
     },
@@ -174,7 +174,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Two-handed ax_two-handed_stance_thick weapon"
+          "Text": "Greataxe: 2H Stance (Thick)" 
         }
       ]
     },
@@ -183,7 +183,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Two-handed ax_two-handed two-handed_stance"
+          "Text": "Greataxe: DW 2H Stance" 
         }
       ]
     },
@@ -192,7 +192,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Two-handed ax_Two-handed two-handed_Stance_Thick weapon"
+          "Text": "Greataxe: DW 2H Stance (Thick)" 
         }
       ]
     },
@@ -201,7 +201,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Two-handed bow_one-handed_position"
+          "Text": "Bow: 1H Position"
         }
       ]
     },
@@ -210,7 +210,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Two-handed bow_both hands_stance"
+          "Text": "Bow: 2H Stance"
         }
       ]
     },
@@ -219,7 +219,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Two-handed longbow _one hand_ stance"
+          "Text": "Greatbow: 1H Stance"
         }
       ]
     },
@@ -228,7 +228,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Two-handed longbow_both hands_stance"
+          "Text": "Greatbow: 2H Stance"
         }
       ]
     },
@@ -237,7 +237,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "One-handed bow_one-handed_stance"
+          "Text": "Crossbow: 1H Stance"
         }
       ]
     },
@@ -246,7 +246,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "One-handed bow_both hands_stance"
+          "Text": "Crossbow: 2H Stance"
         }
       ]
     },
@@ -255,7 +255,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "One-handed bow_two-handed two-handed stance"
+          "Text": "Bow: DW 2H Stance"
         }
       ]
     },
@@ -264,7 +264,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Small shield_both hands_stance"
+          "Text": "Small Shield: 2H Stance"
         }
       ]
     },
@@ -273,7 +273,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Medium shield_one hand_stance"
+          "Text": "Medium Shield: 1H Stance"
         }
       ]
     },
@@ -282,7 +282,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Medium shield_both hands_stance"
+          "Text": "Medium Shield: 2H Stance"
         }
       ]
     },
@@ -291,7 +291,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Large shield_both hands_stance"
+          "Text": "Greatshield: 2H Stance"
         }
       ]
     },
@@ -300,7 +300,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Large shield_two-handed_stance"
+          "Text": "Greatshield: DW 2H Stance"
         }
       ]
     }

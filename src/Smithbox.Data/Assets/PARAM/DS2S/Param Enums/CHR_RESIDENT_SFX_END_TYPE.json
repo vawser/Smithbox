@@ -12,7 +12,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Delete character"
+          "Text": "Character Deletion"
         }
       ]
     },
@@ -30,7 +30,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "HP percentage"
+          "Text": "HP Percentage"
         }
       ]
     }

@@ -12,7 +12,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "無"
+          "Text": "None"
         }
       ]
     },
@@ -21,7 +21,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Normal destruction"
+          "Text": "Normal Destruction"
         }
       ]
     },
@@ -30,7 +30,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Prefab destruction"
+          "Text": "Prefab Destruction"
         }
       ]
     },
@@ -39,7 +39,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Stone statue"
+          "Text": "Stone Statue"
         }
       ]
     }

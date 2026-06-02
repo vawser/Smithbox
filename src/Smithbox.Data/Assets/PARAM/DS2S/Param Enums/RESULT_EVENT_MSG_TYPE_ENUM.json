@@ -12,7 +12,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "No message"
+          "Text": "No Message"
         }
       ]
     },
@@ -21,7 +21,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Text only"
+          "Text": "Text Only"
         }
       ]
     },
@@ -30,7 +30,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Display dead character name"
+          "Text": "Display Dead Character Name"
         }
       ]
     },
@@ -39,7 +39,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Show hostname"
+          "Text": "Show Host Name"
         }
       ]
     },
@@ -48,7 +48,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Message type termination"
+          "Text": "Message Type Termination"
         }
       ]
     }

@@ -12,7 +12,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Compact (dynamic)"
+          "Text": "Compact (Dynamic)"
         }
       ]
     },
@@ -21,7 +21,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Large (dynamic)"
+          "Text": "Large (Dynamic)"
         }
       ]
     },
@@ -30,7 +30,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Large (static)"
+          "Text": "Large (Static)"
         }
       ]
     }

@@ -12,7 +12,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Always breaks"
+          "Text": "Always Break"
         }
       ]
     },
@@ -21,7 +21,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Horizontal movement"
+          "Text": "Break on Horizontal Movement"
         }
       ]
     },
@@ -30,7 +30,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Walking"
+          "Text": "Break on Walk"
         }
       ]
     },
@@ -39,7 +39,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Dash"
+          "Text": "Break on Dash"
         }
       ]
     },
@@ -48,7 +48,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Avoidance"
+          "Text": "Break on Dodge"
         }
       ]
     },
@@ -57,7 +57,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Jump"
+          "Text": "Break on Jump"
         }
       ]
     },
@@ -66,7 +66,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Falling"
+          "Text": "Break on Falling"
         }
       ]
     },
@@ -75,7 +75,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Damage"
+          "Text": "Break on Damage"
         }
       ]
     },
@@ -84,7 +84,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Attack"
+          "Text": "Break on Attack"
         }
       ]
     },
@@ -93,7 +93,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Falling attack"
+          "Text": "Break on Falling Attack"
         }
       ]
     },
@@ -102,7 +102,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Always unbreakable"
+          "Text": "Never Break"
         }
       ]
     }

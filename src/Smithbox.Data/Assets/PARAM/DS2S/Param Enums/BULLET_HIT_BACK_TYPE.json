@@ -12,7 +12,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Disabled"
+          "Text": "Invalid"
         }
       ]
     },
@@ -21,7 +21,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Enabled"
+          "Text": "Valid"
         }
       ]
     },

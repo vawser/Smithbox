@@ -21,7 +21,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "White spirit"
+          "Text": "White Phantom"
         }
       ]
     },
@@ -30,7 +30,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Black spirit"
+          "Text": "Black Phantom"
         }
       ]
     },
@@ -39,7 +39,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Small white spirit"
+          "Text": "Small White Phantom"
         }
       ]
     },
@@ -48,7 +48,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Network player memory usage"
+          "Text": "Network Player Memory Used"
         }
       ]
     },

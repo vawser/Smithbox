@@ -12,7 +12,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "No motion"
+          "Text": "No Motion"
         }
       ]
     },
@@ -21,7 +21,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Minimal damage"
+          "Text": "Minimal Damage"
         }
       ]
     },
@@ -30,7 +30,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Small knockback"
+          "Text": "Small Knockback"
         }
       ]
     },
@@ -39,7 +39,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Big knockback"
+          "Text": "Large Knockback"
         }
       ]
     },
@@ -48,7 +48,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Extra damage"
+          "Text": "Very Large Damage"
         }
       ]
     },
@@ -57,7 +57,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Blow away"
+          "Text": "Knockback"
         }
       ]
     },
@@ -84,7 +84,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Fall down"
+          "Text": "Knockdown"
         }
       ]
     },
@@ -93,7 +93,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Parry break"
+          "Text": "Parry Break"
         }
       ]
     },
@@ -102,7 +102,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Guard break"
+          "Text": "Guard Break"
         }
       ]
     },
@@ -111,7 +111,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Fainting"
+          "Text": "Stun"
         }
       ]
     },
@@ -138,7 +138,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Head shot"
+          "Text": "Headshot"
         }
       ]
     },
@@ -147,7 +147,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Small and medium damage from falling"
+          "Text": "Small Damage from Falling"
         }
       ]
     },
@@ -156,7 +156,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Heavy damage while falling"
+          "Text": "Large Damage from Falling"
         }
       ]
     },
@@ -165,7 +165,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Jump ground collision"
+          "Text": "Jump to Ground Collision"
         }
       ]
     },
@@ -174,7 +174,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Jump mid-air collision"
+          "Text": "Jump to Air Collision"
         }
       ]
     },
@@ -201,7 +201,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "No request"
+          "Text": "No Request"
         }
       ]
     }

@@ -12,7 +12,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "All parts"
+          "Text": "All Parts"
         }
       ]
     },
@@ -21,7 +21,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Torso only"
+          "Text": "Torso Only"
         }
       ]
     },
@@ -30,7 +30,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Helmet only"
+          "Text": "Helmet Only"
         }
       ]
     },
@@ -39,7 +39,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Arm only"
+          "Text": "Arms Only"
         }
       ]
     },
@@ -48,7 +48,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Legs only"
+          "Text": "Legs Only"
         }
       ]
     },
@@ -57,7 +57,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Face (hair) only"
+          "Text": "Hair Only"
         }
       ]
     }

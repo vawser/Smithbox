@@ -12,7 +12,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Extremely small"
+          "Text": "Minimal"
         }
       ]
     },
@@ -21,7 +21,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Small retreat"
+          "Text": "Small Backstep"
         }
       ]
     },
@@ -30,7 +30,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Great retreat"
+          "Text": "Large Backstep"
         }
       ]
     },
@@ -39,7 +39,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Play"
+          "Text": "Parry"
         }
       ]
     },
@@ -48,7 +48,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Shield stance"
+          "Text": "Shield Stance"
         }
       ]
     }

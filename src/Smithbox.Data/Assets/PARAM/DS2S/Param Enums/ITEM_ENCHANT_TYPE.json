@@ -12,7 +12,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Not possible"
+          "Text": "None"
         }
       ]
     },
@@ -21,7 +21,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Pine resin only"
+          "Text": "Pine Resin Only"
         }
       ]
     },
@@ -30,7 +30,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Spell enchantment only"
+          "Text": "Spell Enchantment Only"
         }
       ]
     },
@@ -39,7 +39,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Pine resin and spell enchantment"
+          "Text": "Any"
         }
       ]
     }

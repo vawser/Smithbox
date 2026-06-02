@@ -191,8 +191,8 @@
         <slopeAdjustRollMax />
         <slopeAdjustPitchSpeed />
         <slopeAdjustRollSpeed />
-        <fallStabSlashAnim ProjectEnum="PLAYER_SP_ATTACK_MOTION" />
-        <fallStabStabAnim ProjectEnum="PLAYER_SP_ATTACK_MOTION" />
+        <fallStabSlashAnim Enum="PLAYER_SP_ATTACK_MOTION" />
+        <fallStabStabAnim Enum="PLAYER_SP_ATTACK_MOTION" />
         <fallStabGrabParamId />
         <fallStabDummyPolyId />
         <fallStabDummyPolyReverse />

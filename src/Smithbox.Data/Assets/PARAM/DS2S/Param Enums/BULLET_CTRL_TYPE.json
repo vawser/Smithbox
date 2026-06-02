@@ -12,7 +12,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Damipori"
+          "Text": "Follow Dummy Polygon"
         }
       ]
     },
@@ -21,7 +21,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Follow the person"
+          "Text": "Follow User"
         }
       ]
     },
@@ -30,7 +30,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Foot tracking"
+          "Text": "Follow User Foot"
         }
       ]
     },
@@ -39,7 +39,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Homing target"
+          "Text": "Follow Target"
         }
       ]
     },
@@ -48,7 +48,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Wall crawling"
+          "Text": "Follow Wall"
         }
       ]
     }

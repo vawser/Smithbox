@@ -12,7 +12,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Water wet"
+          "Text": "Water Damage"
         }
       ]
     },
@@ -21,7 +21,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Poison wet"
+          "Text": "Poison Damage"
         }
       ]
     },
@@ -30,7 +30,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Oily"
+          "Text": "Oil Damage"
         }
       ]
     }

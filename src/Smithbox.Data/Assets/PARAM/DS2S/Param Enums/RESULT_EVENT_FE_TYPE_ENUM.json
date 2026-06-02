@@ -30,7 +30,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Multi-defeat (finish by yourself)"
+          "Text": "Multiplayer Death (Self-Kill)"
         }
       ]
     },
@@ -39,7 +39,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Multi achievement (general purpose)"
+          "Text": "Multiplayer Victory (General)"
         }
       ]
     },
@@ -48,7 +48,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Multi achievement (target destruction)"
+          "Text": "Multiplayer Victory (Target Kill)"
         }
       ]
     },
@@ -57,7 +57,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Multi achievement (cooperation completed)"
+          "Text": "Multiplayer Victory (Cooperation End)"
         }
       ]
     },
@@ -66,7 +66,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Defeat the boss"
+          "Text": "Boss Defeat"
         }
       ]
     },
@@ -75,7 +75,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Duel draw"
+          "Text": "Duel Draw"
         }
       ]
     },
@@ -84,7 +84,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Winning the duel"
+          "Text": "Duel Win"
         }
       ]
     },
@@ -93,7 +93,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Lost duel"
+          "Text": "Duel Lost"
         }
       ]
     },
@@ -102,7 +102,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "FE type termination"
+          "Text": "Termination"
         }
       ]
     }

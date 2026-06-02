@@ -12,7 +12,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Cane_Fire_Stand_Stick out in front"
+          "Text": "Staff: Shoot - In Front"
         }
       ]
     },
@@ -21,7 +21,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Cane_Fire_Stand_Draw a circle"
+          "Text": "Staff: Shoot - Draw Circle"
         }
       ]
     },
@@ -30,7 +30,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Staff_Fire_Standing_Slash"
+          "Text": "Staff: Shoot - Slash"
         }
       ]
     },
@@ -39,7 +39,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Cane_Fire_Stand_Turn over head"
+          "Text": "Staff: Shoot - Turn over Head"
         }
       ]
     },
@@ -48,7 +48,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Cane_Fire_Stand_Hold above head"
+          "Text": "Staff: Shoot - Hold over Head"
         }
       ]
     },
@@ -57,7 +57,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Cane_Fire_Stand_Wave_off"
+          "Text": "Staff: Shoot - Wave Off"
         }
       ]
     },
@@ -66,7 +66,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Cane_Fire_Stand_Put on the ground"
+          "Text": "Staff: Shoot - Put in Ground"
         }
       ]
     },
@@ -75,7 +75,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Staff_Fire_Standing_Magic enchantment"
+          "Text": "Staff: Shoot - Magic Enhancement"
         }
       ]
     },
@@ -84,7 +84,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Cane_Fire_Stand_Stick out in front (long)"
+          "Text": "Staff: Shoot - In Front (Long)"
         }
       ]
     },
@@ -93,7 +93,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Staff_Fire_Standing_Magic enchantment (shield)"
+          "Text": "Staff: Shoot - Magic Enhancement (Shield)"
         }
       ]
     },
@@ -102,7 +102,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Fist_Fire_Stand_Push forward"
+          "Text": "FistL Shoot: Push Forward"
         }
       ]
     },
@@ -111,7 +111,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Magic fire_launch_standing_throwing"
+          "Text": "Pyromancy Flame: Shoot - Throw"
         }
       ]
     },
@@ -120,7 +120,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Magical Fire_Fire_Stand_Push forward"
+          "Text": "Pyromancy Flame: Shoot - Push Forward"
         }
       ]
     },
@@ -129,7 +129,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Magical Fire_Fire_Standing_Press it to your chest"
+          "Text": "Pyromancy Flame: Shoot - Press in Chest"
         }
       ]
     },
@@ -138,7 +138,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Magical fire_launch_standing_flame enchantment"
+          "Text": "Pyromancy Flame: Shoot - Fire Enhancement"
         }
       ]
     },
@@ -147,7 +147,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Magic fire_launch_crouching_lower to the ground"
+          "Text": "Pyromancy Flame: Shoot (Crouch) - Lower to Ground"
         }
       ]
     },
@@ -156,7 +156,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Magical Fire_Fire_Standing_Arms out in front"
+          "Text": "Pyromancy Flame: Shoot - In Front"
         }
       ]
     },
@@ -165,7 +165,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Magical Fire_Fire_Stand_Draw a circle in front"
+          "Text": "Pyromancy Flame: Shoot - Draw Circle"
         }
       ]
     },
@@ -174,7 +174,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Cane_Launching_Standing_Sticking out in front_Both hands"
+          "Text": "Staff: Shoot - 2H In Front"
         }
       ]
     },
@@ -183,7 +183,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Bell_Fire_Standing_Push to the front"
+          "Text": "Chime: Shoot - Push to Front"
         }
       ]
     },
@@ -192,7 +192,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Bell_Launching_Bending_In front of chest"
+          "Text": "Chime: Shoot - In Front"
         }
       ]
     },
@@ -201,7 +201,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Bell_launch_standing_slash"
+          "Text": "Chime: Shoot - Slash"
         }
       ]
     },
@@ -210,7 +210,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Bell_Launching_Bending_Opening both hands"
+          "Text": "Chime: Shoot (Crouch) - Open Both Hands"
         }
       ]
     },
@@ -219,7 +219,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Bell_Fire_Rise_Push to the front"
+          "Text": "Chime: Shoot (Rise) - Push to Front"
         }
       ]
     },
@@ -228,7 +228,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Bell_Launching_Bending_In front of the chest"
+          "Text": "Chime: Shoot (Bend) - In Front"
         }
       ]
     },
@@ -237,7 +237,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Bell_launch_standing_miracle enchantment"
+          "Text": "Chime: Shoot - Miracle Enhancement"
         }
       ]
     },
@@ -246,7 +246,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Bell_Departure_Stand_Swing right arm down"
+          "Text": "Chime: Recovery - Swing Right Arm Down"
         }
       ]
     },
@@ -255,7 +255,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Bell_Fire_Stand_Spread both arms"
+          "Text": "Chime: Shoot - Spread Both Arms"
         }
       ]
     },
@@ -264,7 +264,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Bell_Fire_Stand_Push both hands forward"
+          "Text": "Chime: Shoot - Push Both Hands Forward"
         }
       ]
     }

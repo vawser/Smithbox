@@ -12,7 +12,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "-"
+          "Text": "None"
         }
       ]
     },
@@ -21,7 +21,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Small"
+          "Text": "Very Small"
         }
       ]
     },
@@ -30,7 +30,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Medium"
+          "Text": "Small"
         }
       ]
     },
@@ -39,7 +39,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Large"
+          "Text": "Medium "
         }
       ]
     },
@@ -48,7 +48,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Extra large"
+          "Text": "Large"
         }
       ]
     },
@@ -57,7 +57,16 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Extra extra large"
+          "Text": "Very Large"
+        }
+      ]
+    },
+    {
+      "Key": "6",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Enormous"
         }
       ]
     }

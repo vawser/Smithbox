@@ -12,7 +12,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Cane_Chanting_Standing_In front of chest"
+          "Text": "Staff: Standing - In Front of Chest"
         }
       ]
     },
@@ -21,7 +21,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Cane_Chanting_Standing_Hold it up"
+          "Text": "Staff: Standing - Hold Up"
         }
       ]
     },
@@ -30,7 +30,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Fist_Chanting_Pushing forward_Standing"
+          "Text": "Fist: Foward: Standing"
         }
       ]
     },
@@ -39,7 +39,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Magical Fire_Chanting_Standing_Lighting the fire in the palm"
+          "Text": "Pyromancy Flame: Standing - Light Flame in Palm"
         }
       ]
     },
@@ -48,7 +48,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Magical Fire_Chanting_Standing_Raise your arms and light the fire"
+          "Text": "Pyromancy Flame: Standing - Rain Arms and Light Flame"
         }
       ]
     },
@@ -57,7 +57,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Magical Fire_Chanting_Standing_Standing in front"
+          "Text": "Pyromancy Flame: Standing - In Front"
         }
       ]
     },
@@ -66,7 +66,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Magical Fire_Chanting_Standing_Raise your right arm"
+          "Text": "Pyromancy Flame: Standing - Raise Right Arm"
         }
       ]
     },
@@ -75,7 +75,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Cane_Chanting_Standing_In front of chest_Both hands"
+          "Text": "2H Staff: Standing: In Front of Chest"
         }
       ]
     },
@@ -84,7 +84,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Cane_Chanting_Standing_In front of chest_Two swords"
+          "Text": "DW Staff: Standing: In Front of Chest"
         }
       ]
     },
@@ -93,7 +93,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Bell_Chanting_Standing_In front of chest"
+          "Text": "Chime: Standing: In Front of Chest"
         }
       ]
     },
@@ -102,7 +102,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Bell_Chanting_Bending_In front of chest"
+          "Text": "Chime: Bending: In Front of Chest"
         }
       ]
     },
@@ -111,7 +111,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Bell_Chant_Stand_Raise your right arm"
+          "Text": "Chime: Standing: Raise Right Arm"
         }
       ]
     },
@@ -120,7 +120,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Bell_Chanting_Standing_Cross in front of chest"
+          "Text": "Chime: Standing: Cross in Front of Chest"
         }
       ]
     },
@@ -129,7 +129,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Bell_Chanting_Standing_Circle in front of chest"
+          "Text": "Chime: Standing: Circle in Front of Chest"
         }
       ]
     },
@@ -138,7 +138,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Bell_Chanting_Standing_In front of chest_Both hands"
+          "Text": "2H Chime: Standing: In Front of Chest"
         }
       ]
     },
@@ -147,7 +147,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Bell_Chanting_Standing_In front of chest_Two swords"
+          "Text": "DW Chime: Standing: In Front of Chest"
         }
       ]
     }

@@ -12,7 +12,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Extremely small"
+          "Text": "Very Small"
         }
       ]
     },
@@ -30,7 +30,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Normal"
+          "Text": "Medium"
         }
       ]
     },
@@ -48,7 +48,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Extra large"
+          "Text": "Very Large"
         }
       ]
     }

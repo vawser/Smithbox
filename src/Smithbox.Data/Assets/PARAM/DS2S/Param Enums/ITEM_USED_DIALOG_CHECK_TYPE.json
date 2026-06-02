@@ -12,7 +12,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Not set"
+          "Text": "None"
         }
       ]
     },
@@ -21,7 +21,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "No place to check"
+          "Text": "No Confirmation Target"
         }
       ]
     },
@@ -30,7 +30,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Run on host"
+          "Text": "Execute when Host"
         }
       ]
     },
@@ -39,7 +39,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Run as guest"
+          "Text": "Execute when Guest"
         }
       ]
     },
@@ -48,7 +48,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Execute during duel"
+          "Text": "Execute during Duel"
         }
       ]
     }

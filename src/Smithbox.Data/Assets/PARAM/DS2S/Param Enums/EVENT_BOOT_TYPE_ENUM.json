@@ -12,7 +12,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "When loading the map"
+          "Text": "On Map Load"
         }
       ]
     },
@@ -21,7 +21,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Normal time"
+          "Text": "Normal Mode"
         }
       ]
     },
@@ -30,7 +30,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "External launch"
+          "Text": "External Activation"
         }
       ]
     },
@@ -39,7 +39,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "The spark of rebirth"
+          "Text": "On Bonfire Use"
         }
       ]
     }

@@ -12,7 +12,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Do nothing"
+          "Text": "Do Nothing"
         }
       ]
     },
@@ -21,7 +21,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Loincloth OFF"
+          "Text": "Loincloth: OFF"
         }
       ]
     },
@@ -30,7 +30,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Miniskirt OFF"
+          "Text": "Skirt: OFF"
         }
       ]
     },
@@ -39,7 +39,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Long OFF"
+          "Text": "Long Skirt: OFF"
         }
       ]
     },
@@ -48,7 +48,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "No cross"
+          "Text": "No Lining"
         }
       ]
     },
@@ -66,7 +66,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Miniskirt"
+          "Text": "Skirt"
         }
       ]
     },
@@ -75,7 +75,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Long"
+          "Text": "Long Skirt"
         }
       ]
     }

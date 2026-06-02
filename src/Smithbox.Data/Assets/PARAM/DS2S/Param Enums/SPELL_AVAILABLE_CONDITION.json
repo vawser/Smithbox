@@ -12,7 +12,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "No conditions"
+          "Text": "No Conditions"
         }
       ]
     },
@@ -21,7 +21,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Catalyst reverse arm “weapon” equipment"
+          "Text": "Weapon: Equipped in Reverse Arm"
         }
       ]
     },
@@ -30,7 +30,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Equipped with Catalyst Reverse Arm “Shield”"
+          "Text": "Shield: Equipped in Reverse Arm"
         }
       ]
     },
@@ -39,7 +39,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Not during multiplayer"
+          "Text": "Not in Multiplayer"
         }
       ]
     },
@@ -48,7 +48,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Other than client time"
+          "Text": "Not as Client"
         }
       ]
     }

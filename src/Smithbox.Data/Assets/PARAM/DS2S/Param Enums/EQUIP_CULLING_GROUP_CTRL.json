@@ -12,7 +12,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "━"
+          "Text": "None"
         }
       ]
     },
@@ -21,7 +21,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "OFF"
+          "Text": "Off"
         }
       ]
     },
@@ -30,7 +30,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "ON"
+          "Text": "On"
         }
       ]
     },
@@ -39,7 +39,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Number of culling types"
+          "Text": "Number of Culling Types"
         }
       ]
     }

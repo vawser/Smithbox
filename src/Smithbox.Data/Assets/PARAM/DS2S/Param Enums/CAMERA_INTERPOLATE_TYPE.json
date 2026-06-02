@@ -12,7 +12,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "No interpolation"
+          "Text": "No Interpolation"
         }
       ]
     },
@@ -21,7 +21,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Instant switching"
+          "Text": "Instant Switching"
         }
       ]
     },
@@ -30,7 +30,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Linear interpolation"
+          "Text": "Linear Interpolation"
         }
       ]
     },
@@ -39,7 +39,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Quadratic interpolation"
+          "Text": "Quadratic Interpolation"
         }
       ]
     },
@@ -48,7 +48,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Quadratic curve interpolation 2"
+          "Text": "Quadratic Interpolation 2"
         }
       ]
     }

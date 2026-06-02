@@ -12,7 +12,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Not set"
+          "Text": "None"
         }
       ]
     },
@@ -21,7 +21,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Duplicate permission"
+          "Text": "Allow Duplicates"
         }
       ]
     },
@@ -30,7 +30,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Overwrite"
+          "Text": "Overwrite on Duplicate"
         }
       ]
     },
@@ -39,7 +39,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Rejected"
+          "Text": "Reject on Duplicate"
         }
       ]
     },
@@ -48,7 +48,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Overwrite if time is too long"
+          "Text": "Overwrite on Excessive Time"
         }
       ]
     }

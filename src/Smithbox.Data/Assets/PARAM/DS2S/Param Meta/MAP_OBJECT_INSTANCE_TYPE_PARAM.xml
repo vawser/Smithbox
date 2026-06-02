@@ -11,7 +11,7 @@
         <mass />
         <friction />
         <restitution />
-        <objAttackAttr  Enum="DAMAGE_OBJ_ATTACK_ATTR_ENUM"/>
+        <objAttackAttr Refs="DamageObjAttackAttrParam" />
         <rumbleScale />
         <rumbleTime />
     </Field>

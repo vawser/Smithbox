@@ -12,7 +12,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Middle boss"
+          "Text": "Mid-boss"
         }
       ]
     },
@@ -21,7 +21,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "High level weakling"
+          "Text": "High-level Minion"
         }
       ]
     },
@@ -30,7 +30,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Medium level weakling"
+          "Text": "Medium-level Minion"
         }
       ]
     },
@@ -39,7 +39,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Low level weakling"
+          "Text": "Low-level Minion"
         }
       ]
     },

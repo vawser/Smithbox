@@ -31,7 +31,7 @@
         <guardAttackLevelType  Enum="GUARD_ATTACK_LEVEL_TYPE"/>
         <isForceLower  IsBool=""/>
         <objDamage />
-        <objAttackAttr  Enum="DAMAGE_OBJ_ATTACK_ATTR_ENUM"/>
+        <objAttackAttr Refs="DamageObjAttackAttrParam" />
         <cameraRumble />
         <padRumble />
         <rumbleTime />

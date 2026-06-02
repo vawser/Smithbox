@@ -12,7 +12,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Relative position"
+          "Text": "Relative Position"
         }
       ]
     },
@@ -21,7 +21,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Relative position to the bullet"
+          "Text": "Relative Position to Bullet"
         }
       ]
     },
@@ -30,7 +30,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Direction specification"
+          "Text": "Specificed Direction"
         }
       ]
     },
@@ -39,7 +39,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Direction of travel"
+          "Text": "Direction of Travel"
         }
       ]
     }

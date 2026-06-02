@@ -12,7 +12,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Dami poly same direction"
+          "Text": "Dummy Polygon: Same Direction"
         }
       ]
     },
@@ -21,7 +21,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Dummy poly reverse direction"
+          "Text": "Dummy Polygon: Reverse Direction"
         }
       ]
     },
@@ -30,7 +30,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Dummy poly relative position direction"
+          "Text": "Dummy Polygon: Relative Position Direction"
         }
       ]
     }
