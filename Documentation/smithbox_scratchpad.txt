@@ -23,4 +23,5 @@
  - Look into making row merges for tabulated params functional and simple
  - Finish converting the SDT AlternativeOrders into Field Layouts
  - Finish AC6 meta
+ - Pass over DS2 enums for clarity
 

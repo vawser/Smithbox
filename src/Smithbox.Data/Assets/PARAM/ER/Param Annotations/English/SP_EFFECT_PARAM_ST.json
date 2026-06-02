@@ -1200,8 +1200,7 @@
       "Description": "Multiply the piercing attack power by the set value"
     },
     {
-      "Field": "neutral
-        PowerRate",
+      "Field": "neutralPowerRate",
       "Name": "Power %: Standard",
       "Description": "Multiply the non-attribute attack power by the set value"
     },
