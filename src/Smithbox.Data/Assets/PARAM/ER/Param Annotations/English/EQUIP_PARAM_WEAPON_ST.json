@@ -312,7 +312,7 @@
     {
       "Field": "saDurability",
       "Name": "Poise Durability",
-      "Description": "Additional SA durability used during attack motion"
+      "Description": "Poise durability when attacking"
     },
     {
       "Field": "staminaGuardDef",
@@ -452,7 +452,7 @@
     {
       "Field": "guardCutCancelRate",
       "Name": "Guard Bypass %",
-      "Description": "Magnification that invalidates the opponent's guard cut. -100 is completely invalid. Double the defense effect of the opponent at 100."
+      "Description": "Enemy guard absorption modifier when they guard an attack. Negative values make their guarding less effective. Positive values make their guarding more effective (You do less damage)."
     },
     {
       "Field": "guardLevel",
@@ -462,37 +462,37 @@
     {
       "Field": "slashGuardCutRate",
       "Name": "Guard Absorption: Slash",
-      "Description": "How much slash damage is negated when guarding"
+      "Description": "How much slash damage is negated when guarding (50 would be 50%, half)"
     },
     {
       "Field": "blowGuardCutRate",
       "Name": "Guard Absorption: Strike",
-      "Description": "How much strike damage is negated when guarding"
+      "Description": "How much strike damage is negated when guarding (50 would be 50%, half)"
     },
     {
       "Field": "thrustGuardCutRate",
       "Name": "Guard Absorption: Thrust",
-      "Description": "How much thrust damage is negated when guarding"
+      "Description": "How much thrust damage is negated when guarding (50 would be 50%, half)"
     },
     {
       "Field": "poisonGuardResist",
       "Name": "Guard Resist: Poison",
-      "Description": "How much poison buildup is negated when guarding"
+      "Description": "How much poison buildup is negated when guarding (50 would be 50%, half)"
     },
     {
       "Field": "diseaseGuardResist",
       "Name": "Guard Resist: Scarlet Rot",
-      "Description": "How much Scarlet Rot buildup is negated when guarding"
+      "Description": "How much Scarlet Rot buildup is negated when guarding (50 would be 50%, half)"
     },
     {
       "Field": "bloodGuardResist",
       "Name": "Guard Resist: Blood Loss",
-      "Description": "How much blood loss buildup is negated when guarding"
+      "Description": "How much blood loss buildup is negated when guarding (50 would be 50%, half)"
     },
     {
       "Field": "curseGuardResist",
       "Name": "Guard Resist: Death Blight",
-      "Description": "How much death blight buildup is negated when guarding"
+      "Description": "How much death blight buildup is negated when guarding (50 would be 50%, half)"
     },
     {
       "Field": "atkAttribute",
@@ -502,27 +502,27 @@
     {
       "Field": "rightHandEquipable",
       "Name": "Can wield in Right Hand",
-      "Description": "Is it possible to equip it with the right hand?"
+      "Description": "whether it is possible to equip it with the right hand"
     },
     {
       "Field": "leftHandEquipable",
       "Name": "Can wield in Left Hand",
-      "Description": "Is it possible to equip it with the left hand?"
+      "Description": "whether it is possible to equip it with the left hand"
     },
     {
       "Field": "bothHandEquipable",
       "Name": "Can wield in Both Hands",
-      "Description": "Is it possible to equip with both hands?"
+      "Description": "whether it is possible to equip with both hands"
     },
     {
       "Field": "arrowSlotEquipable",
       "Name": "Can wield in Arrow Slot",
-      "Description": "Is it possible to equip it on bow slot?"
+      "Description": "whether it is possible to equip it on arrow slot"
     },
     {
       "Field": "boltSlotEquipable",
       "Name": "Can wield in Bolt Slot",
-      "Description": "Is it possible to equip it on arrow slot?"
+      "Description": "whether it is possible to equip it on bolt slot"
     },
     {
       "Field": "enableGuard",
@@ -557,22 +557,22 @@
     {
       "Field": "isNormalAttackType",
       "Name": "Type Display: Normal",
-      "Description": "Attack type for menu display. Is it normal?"
+      "Description": "Wether it counts as a normal, physical attack"
     },
     {
       "Field": "isBlowAttackType",
       "Name": "Type Display: Strike",
-      "Description": "Attack type for menu display. Is it a blow?"
+      "Description": "Wether it counts as a strike attack"
     },
     {
       "Field": "isSlashAttackType",
       "Name": "Type Display: Slash",
-      "Description": "Attack type for menu display. Is it a slash?"
+      "Description": "Wether it counts as a slash attack"
     },
     {
       "Field": "isThrustAttackType",
       "Name": "Type Display: Thrust",
-      "Description": "Attack type for menu display. Is it a piercing?"
+      "Description": "Wether it counts as a thrust attack"
     },
     {
       "Field": "isEnhance",
@@ -1247,7 +1247,7 @@
     {
       "Field": "rarity",
       "Name": "Rarity",
-      "Description": "Rarity used in item acquisition logs"
+      "Description": "How rare this weapon is, goes up to 3 (Legendary)"
     },
     {
       "Field": "gemMountType",
