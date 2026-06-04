@@ -12,7 +12,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Fist_One-handed throw and grab (medium)"
+          "Text": "Fist: 1H Throw and Grab (Medium)"
         }
       ]
     },
@@ -21,7 +21,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Fist_One-handed throw and grab (large)"
+          "Text": "Fist: 1H Throw and Grab (Large)"
         }
       ]
     },
@@ -30,7 +30,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Fist_One-handed backstab"
+          "Text": "Fist: 1H Backstab"
         }
       ]
     },
@@ -39,7 +39,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Fist_One-handed parry break stab"
+          "Text": "Fist: 1H Parry Break Stab"
         }
       ]
     },
@@ -48,7 +48,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Fist_One-handed guard break stab"
+          "Text": "Fist: 1H Guard Break Stab"
         }
       ]
     },
@@ -57,7 +57,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Dagger_One-handed backstab"
+          "Text": "Dagger: 1H Backstab"
         }
       ]
     },
@@ -66,7 +66,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Dagger_One-handed parry break stab"
+          "Text": "Dagger: 1H Parry Break Stab"
         }
       ]
     },
@@ -75,7 +75,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Dagger_One-handed guard break stab"
+          "Text": "Dagger: 1H Guard Break Stab"
         }
       ]
     },
@@ -84,7 +84,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Spear_One-handed backstab"
+          "Text": "Spear: 1H Backstab"
         }
       ]
     },
@@ -93,7 +93,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Spear_One-handed parry break stab"
+          "Text": "Spear: 1H Parry Break Stab"
         }
       ]
     },
@@ -102,7 +102,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Spear_One-handed guard break stab"
+          "Text": "Spear: 1H Guard Break Stab"
         }
       ]
     },
@@ -111,7 +111,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Spear_One-handed fall stab_Giant junior soldier"
+          "Text": "Spear: 1H Fall Stab (Standard)"
         }
       ]
     },
@@ -120,7 +120,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Spear_One-handed fall stab_Wyvern"
+          "Text": "Spear: 1H Fall Stab (Wyvern)"
         }
       ]
     },
@@ -129,7 +129,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Spear_One-handed fall stab_Titan senior soldier (giant)"
+          "Text": "Spear: 1H Fall Stab (Elite Giant)"
         }
       ]
     },
@@ -138,7 +138,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Spear_One-handed fall stab_Elephant"
+          "Text": "Spear: 1H Fall Stab (Primal Knight)"
         }
       ]
     },
@@ -147,7 +147,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Spear_One-handed fall stab_Salamander"
+          "Text": "Spear: 1H Fall Stab (Flame Lizard)"
         }
       ]
     },
@@ -156,7 +156,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Spear_One-handed Fall Stab_New Titan Advanced Soldier (Living)"
+          "Text": "Spear: 1H Fall Stab (Giant Lord)"
         }
       ]
     },
@@ -165,7 +165,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Straight sword_one-handed backstab"
+          "Text": "Straight Sword: 1H Backstab"
         }
       ]
     },
@@ -174,7 +174,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Straight sword_one-handed parry break stab"
+          "Text": "Straight Sword: 1H Parry Break Stab"
         }
       ]
     },
@@ -183,7 +183,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Straight sword_one-handed guard break stab"
+          "Text": "Straight Sword: 1H Guard Break Stab"
         }
       ]
     },
@@ -192,7 +192,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Straight sword_one-handed fall stab_giant junior soldier"
+          "Text": "Straight Sword: 1H Fall Stab (Standard)"
         }
       ]
     },
@@ -201,7 +201,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Straight sword_one-handed fall stab_wyvern"
+          "Text": "Straight Sword: 1H Fall Stab (Wyvern)"
         }
       ]
     },
@@ -210,7 +210,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Straight sword_one-handed fall stab_giant senior soldier (giant)"
+          "Text": "Straight Sword: 1H Fall Stab (Elite Giant)"
         }
       ]
     },
@@ -219,7 +219,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Straight sword_one-handed fall stab_elephant"
+          "Text": "Straight Sword: 1H Fall Stab (Primal Knight)"
         }
       ]
     },
@@ -228,7 +228,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Straight sword_One-handed fall stab_Salamander"
+          "Text": "Straight Sword: 1H Fall Stab (Flame Lizard)"
         }
       ]
     },
@@ -237,7 +237,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Straight sword_One-handed fall stab_New giant senior soldier (living)"
+          "Text": "Straight Sword: 1H Fall Stab (G)"
         }
       ]
     },
@@ -246,7 +246,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Two-handed oversized sword_one-handed throw and grab (medium)"
+          "Text": "Greatsword: 1H Throw and Grab (Medium)"
         }
       ]
     },
@@ -255,7 +255,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Two-handed oversized sword_one-handed backstab"
+          "Text": "Greatsword: 1H Backstab"
         }
       ]
     },
@@ -264,7 +264,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Two-handed oversized sword_one-handed parry break stab"
+          "Text": "Greatsword: 1H Parry Break Stab"
         }
       ]
     },
@@ -273,7 +273,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Two-handed oversized sword_one-handed guard break stub"
+          "Text": "Greatsword: 1H Guard Break Stab"
         }
       ]
     },
@@ -282,7 +282,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Two-handed ax_one-handed backstab"
+          "Text": "Greataxe: 1H Backstab"
         }
       ]
     },
@@ -291,7 +291,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Two-handed ax_one-handed parry break stab"
+          "Text": "Greataxe: 1H Parry Break Stab"
         }
       ]
     },
@@ -300,7 +300,7 @@
       "Names": [
         {
           "Language": "English",
-          "Text": "Two-handed ax_one-handed guard break stab"
+          "Text": "Greataxe: 1H Guard Break Stab"
         }
       ]
     }

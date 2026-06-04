@@ -13,7 +13,7 @@
  - Add multi-select for the value list (and to duplicate/delete/export)
  
 - Material Editor:
- - Add MATBIN support back
+ - Add MATBIN support back for the params (the value cannot be edited currently)
  
 - Text Editor:
  - Add split ID / Entry Text (similar to Param Editor) for the Entry List
