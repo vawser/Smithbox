@@ -1,6 +1,4 @@
 ﻿using Hexa.NET.ImGui;
-using SoulsFormats;
-using SoulsFormats.KF4;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Keybinds;
@@ -574,7 +572,7 @@ public class MapContentView
 
             var displayName = key;
 
-            if (e.SupportsName && e.PrettyName != null && e.PrettyName != "null")
+            if (e.SupportsName && e.PrettyName != null && e.PrettyName != "null" && e.PrettyName != "")
             {
                 if (CFG.Current.MapEditor_MapContentList_EntryNameDisplayType is EntityNameDisplayType.Internal or EntityNameDisplayType.Internal_FMG or EntityNameDisplayType.Internal_Community)
                 {
