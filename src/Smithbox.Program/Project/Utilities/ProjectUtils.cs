@@ -365,7 +365,7 @@ public class ProjectUtils
     }
     public static bool SupportsMapDataEditor(ProjectType curType)
     {
-        return false;
+        return true;
     }
 
     public static List<string> GetBackupFiles(string rootDirectory)

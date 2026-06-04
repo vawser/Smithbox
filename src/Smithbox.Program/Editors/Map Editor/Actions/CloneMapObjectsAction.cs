@@ -275,37 +275,45 @@ public class CloneMapObjectsAction : ViewportAction
 
     private void GenerateUniqueName(MsbEntity source, MsbEntity clone, Dictionary<string, HashSet<string>> objectnames)
     {
-        Match idmatch = TrailIDRegex.Match(source.Name);
-        if (idmatch.Success)
+        if (source.Name == null)
         {
-            var idstring = idmatch.Result("${id}");
-            var id = int.Parse(idstring);
-            var baseName = source.Name.Substring(0, source.Name.Length - idstring.Length);
-            var newid = idstring;
-
-            while (objectnames[source.MapID].Contains(baseName + newid))
-            {
-                id++;
-                newid = id.ToString("D" + idstring.Length);
-            }
-
-            clone.Name = baseName + newid;
+            clone.Name = "";
             objectnames[source.MapID].Add(clone.Name);
         }
         else
         {
-            var idstring = "0001";
-            var id = int.Parse(idstring);
-            var newid = idstring;
-
-            while (objectnames[source.MapID].Contains(source.Name + "_" + newid))
+            Match idmatch = TrailIDRegex.Match(source.Name);
+            if (idmatch.Success)
             {
-                id++;
-                newid = id.ToString("D" + idstring.Length);
-            }
+                var idstring = idmatch.Result("${id}");
+                var id = int.Parse(idstring);
+                var baseName = source.Name.Substring(0, source.Name.Length - idstring.Length);
+                var newid = idstring;
 
-            clone.Name = source.Name + "_" + newid;
-            objectnames[source.MapID].Add(clone.Name);
+                while (objectnames[source.MapID].Contains(baseName + newid))
+                {
+                    id++;
+                    newid = id.ToString("D" + idstring.Length);
+                }
+
+                clone.Name = baseName + newid;
+                objectnames[source.MapID].Add(clone.Name);
+            }
+            else
+            {
+                var idstring = "0001";
+                var id = int.Parse(idstring);
+                var newid = idstring;
+
+                while (objectnames[source.MapID].Contains(source.Name + "_" + newid))
+                {
+                    id++;
+                    newid = id.ToString("D" + idstring.Length);
+                }
+
+                clone.Name = source.Name + "_" + newid;
+                objectnames[source.MapID].Add(clone.Name);
+            }
         }
     }
 
