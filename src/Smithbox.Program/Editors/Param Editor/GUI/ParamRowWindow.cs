@@ -1211,8 +1211,8 @@ public class ParamRowWindow
                         }
                         UIHelper.Tooltip($"Inherit the name of the referenced Alias connected to via the target field.");
 
-                        ImGui.InputText("Inherit Name Field##targetField", ref TargetField, 255);
-                        UIHelper.Tooltip("The internal name of the field to target for the inherit name actions.");
+                        ImGui.InputText("Target Field##targetField", ref TargetField, 255);
+                        UIHelper.Tooltip("The internal name of the field to target for the name actions.");
 
                         ImGui.EndMenu();
                     }

@@ -1,5 +1,7 @@
 ﻿using Andre.Formats;
+using Hexa.NET.ImGui;
 using Octokit;
+using StudioCore.Application;
 using StudioCore.Editors.TextEditor;
 using System;
 using System.Collections.Generic;
@@ -13,7 +15,7 @@ namespace StudioCore.Editors.ParamEditor;
 
 public static class ParamReferenceResolver
 {
-    public static List<(string, Param.Row, string)> ResolveParamReferences(ParamEditorView curView, List<ParamRef> paramRefs, Param.Row context, dynamic oldval)
+    public static List<(string, Param.Row, string)> ResolveParamReferences(ParamEditorView curView, List<ParamRef> paramRefs, string refGroup, Param.Row context, dynamic oldval)
     {
         List<(string, Param.Row, string)> rows = new();
         if (curView.GetPrimaryBank().Params == null)
@@ -21,87 +23,117 @@ public static class ParamReferenceResolver
             return rows;
         }
 
-        if (paramRefs == null)
-            return rows;
-
         var originalValue = -1;
         var success = int.TryParse($"{oldval}", out originalValue);
 
         if (!success)
             return rows;
 
-        foreach (ParamRef rf in paramRefs)
+        if (paramRefs != null)
         {
-            Param.Cell? c = context?[rf.ConditionField];
-
-            var inactiveRef = false;
-
-            if (c != null && context != null)
+            // ParamRef
+            foreach (ParamRef rf in paramRefs)
             {
-                var fieldValue = c.Value.Value;
-                int intValue = 0;
-                var valueConvertSuccess = int.TryParse($"{fieldValue}", out intValue);
+                Param.Cell? c = context?[rf.ConditionField];
 
-                // Only check if field value is valid uint
-                if (valueConvertSuccess)
+                var inactiveRef = false;
+
+                if (c != null && context != null)
                 {
-                    inactiveRef = intValue != rf.ConditionValue;
-                }
-            }
+                    var fieldValue = c.Value.Value;
+                    int intValue = 0;
+                    var valueConvertSuccess = int.TryParse($"{fieldValue}", out intValue);
 
-            if (inactiveRef)
-            {
-                continue;
-            }
-
-            var rt = rf.ParamName;
-            var hint = "";
-            if (curView.GetPrimaryBank().Params.ContainsKey(rt))
-            {
-                var altval = originalValue;
-                if (rf.Offset != 0)
-                {
-                    altval += rf.Offset;
-                    hint += rf.Offset > 0 ? "+" + rf.Offset : rf.Offset.ToString();
+                    // Only check if field value is valid uint
+                    if (valueConvertSuccess)
+                    {
+                        inactiveRef = intValue != rf.ConditionValue;
+                    }
                 }
 
-                Param param = curView.GetPrimaryBank().Params[rt];
-                var meta = curView.GetParamData().GetParamMeta(curView.GetPrimaryBank().Params[rt].AppliedParamdef);
-                if (meta != null && meta.Row0Dummy && altval == 0)
+                if (inactiveRef)
                 {
                     continue;
                 }
 
-                Param.Row r = param[altval];
-                if (r == null && altval > 0 && meta != null)
+                var rt = rf.ParamName;
+                var hint = "";
+                if (curView.GetPrimaryBank().Params.ContainsKey(rt))
                 {
-                    if (meta.FixedOffset != 0)
+                    var altval = originalValue;
+                    if (rf.Offset != 0)
                     {
-                        altval = originalValue + meta.FixedOffset;
-                        hint += meta.FixedOffset > 0 ? "+" + meta.FixedOffset : meta.FixedOffset.ToString();
+                        altval += rf.Offset;
+                        hint += rf.Offset > 0 ? "+" + rf.Offset : rf.Offset.ToString();
                     }
 
-                    if (meta.OffsetSize > 0)
+                    Param param = curView.GetPrimaryBank().Params[rt];
+                    var meta = curView.GetParamData().GetParamMeta(curView.GetPrimaryBank().Params[rt].AppliedParamdef);
+                    if (meta != null && meta.Row0Dummy && altval == 0)
                     {
-                        altval = altval - (altval % meta.OffsetSize);
-                        hint += "+" + (originalValue % meta.OffsetSize);
+                        continue;
                     }
 
-                    r = curView.GetPrimaryBank().Params[rt][altval];
-                }
+                    Param.Row r = param[altval];
+                    if (r == null && altval > 0 && meta != null)
+                    {
+                        if (meta.FixedOffset != 0)
+                        {
+                            altval = originalValue + meta.FixedOffset;
+                            hint += meta.FixedOffset > 0 ? "+" + meta.FixedOffset : meta.FixedOffset.ToString();
+                        }
 
-                if (r == null)
-                {
-                    continue;
-                }
+                        if (meta.OffsetSize > 0)
+                        {
+                            altval = altval - (altval % meta.OffsetSize);
+                            hint += "+" + (originalValue % meta.OffsetSize);
+                        }
 
-                if (string.IsNullOrWhiteSpace(r.Name))
-                {
-                    rows.Add((rf.ParamName, r, "Unnamed Row" + hint));
+                        r = curView.GetPrimaryBank().Params[rt][altval];
+                    }
+
+                    if (r == null)
+                    {
+                        continue;
+                    }
+
+                    if (string.IsNullOrWhiteSpace(r.Name))
+                    {
+                        rows.Add((rf.ParamName, r, "Unnamed Row" + hint));
+                    }
+                    else
+                    {
+                        rows.Add((rf.ParamName, r, r.Name + hint));
+                    }
                 }
-                else
+            }
+        }
+
+        // RefGroup
+        if(refGroup != "")
+        {
+            GroupReferenceHelper.BuildCache(curView, refGroup, context, oldval);
+            var entries = GroupReferenceHelper.GetCache();
+
+            foreach (var entry in entries)
+            {
+                var hint = "";
+
+                if (entry.Row.ID == oldval)
                 {
-                    rows.Add((rf.ParamName, r, r.Name + hint));
+                    if (entry.Row == null)
+                    {
+                        continue;
+                    }
+
+                    if (string.IsNullOrWhiteSpace(entry.Row.Name))
+                    {
+                        rows.Add((entry.Param, entry.Row, "Unnamed Row" + hint));
+                    }
+                    else
+                    {
+                        rows.Add((entry.Param, entry.Row, entry.Row.Name + hint));
+                    }
                 }
             }
         }

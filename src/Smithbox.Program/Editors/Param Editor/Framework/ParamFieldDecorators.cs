@@ -20,6 +20,7 @@ using System.IO;
 using System.Linq;
 using System.Numerics;
 using System.Reflection;
+using System.Reflection.Metadata.Ecma335;
 
 namespace StudioCore.Editors.ParamEditor;
 public class ParamFieldDecorators
@@ -1195,7 +1196,7 @@ public static class ParamReferenceHelper
         // Add named row and context menu
         // Lists located params
         // May span lines
-        List<(string, Param.Row, string)> matches = ParamReferenceResolver.ResolveParamReferences(curView, paramRefs, context, oldval);
+        List<(string, Param.Row, string)> matches = ParamReferenceResolver.ResolveParamReferences(curView, paramRefs, "", context, oldval);
 
         var entryFound = matches.Count > 0;
 
@@ -1232,7 +1233,7 @@ public static class ParamReferenceHelper
         ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_AliasName_Text);
 
         // Add Goto statements
-        List<(string, Param.Row, string)> refs = ParamReferenceResolver.ResolveParamReferences(curView, reftypes, context, oldval);
+        List<(string, Param.Row, string)> refs = ParamReferenceResolver.ResolveParamReferences(curView, reftypes, "", context, oldval);
 
         int index = 0;
 
@@ -1283,7 +1284,7 @@ public static class ParamReferenceHelper
             if (RefTypes != null)
             {
                 (string, Param.Row, string)? primaryRef =
-                    ParamReferenceResolver.ResolveParamReferences(curView, RefTypes, context, oldval)?.FirstOrDefault();
+                    ParamReferenceResolver.ResolveParamReferences(curView, RefTypes, "", context, oldval)?.FirstOrDefault();
 
                 if (primaryRef?.Item2 != null)
                 {
@@ -1321,7 +1322,7 @@ public static class ParamReferenceHelper
                 {
                     if (InputManager.IsPressed(KeybindID.ParamEditor_RowList_Inherit_Referenced_Row_Name))
                     {
-                        List<(string, Param.Row, string)> refs = ParamReferenceResolver.ResolveParamReferences(curView, context.ParamReferences, row, oldval);
+                        List<(string, Param.Row, string)> refs = ParamReferenceResolver.ResolveParamReferences(curView, context.ParamReferences, "", row, oldval);
 
                         foreach ((string, Param.Row, string) rf in refs)
                         {
@@ -2373,6 +2374,11 @@ public static class FieldColorPicker
 public static class GroupReferenceHelper
 {
     private static List<GroupReferenceState> refCache = new();
+
+    public static List<GroupReferenceState> GetCache()
+    {
+        return refCache;
+    }
 
     public static void BuildCache(ParamEditorView curView, string groupRef, Param.Row context, dynamic oldval)
     {

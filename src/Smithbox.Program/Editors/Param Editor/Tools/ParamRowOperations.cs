@@ -143,7 +143,7 @@ public static class ParamRowOperations
                 continue;
 
             List<(string, Param.Row, string)> refs = ParamReferenceResolver.ResolveParamReferences(
-                curView, fieldMeta.RefTypes, row, targetCell.Value);
+                curView, fieldMeta.RefTypes, fieldMeta.RefGroup, row, targetCell.Value);
 
             foreach ((string, Param.Row, string) rf in refs)
             {
@@ -203,7 +203,7 @@ public static class ParamRowOperations
             if (fieldMeta == null)
                 continue;
 
-            List<(string, Param.Row, string)> refs = ParamReferenceResolver.ResolveParamReferences(curView, fieldMeta.RefTypes, row, targetCell.Value);
+            List<(string, Param.Row, string)> refs = ParamReferenceResolver.ResolveParamReferences(curView, fieldMeta.RefTypes, fieldMeta.RefGroup, row, targetCell.Value);
 
             foreach ((string, Param.Row, string) rf in refs)
             {
