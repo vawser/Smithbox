@@ -588,6 +588,7 @@ public class MapPropertyView
     (string name, Entity entity) editName = ("", null);
     private void PropEditorNameDirect(IEnumerable<MsbEntity> entities)
     {
+        ImGui.AlignTextToFramePadding();
         ImGui.Text("Name");
         ImGui.NextColumn();
         var first = entities.First();
@@ -597,7 +598,7 @@ public class MapPropertyView
 
         ImGui.PushItemWidth(-1);
 
-        var input = new InputTextHandler(editName.name);
+        var input = new DelayedInputTextHandler(editName.name);
 
         if (input.Draw("##value", out string newValue))
         {
@@ -628,6 +629,7 @@ public class MapPropertyView
         var first = entities.First();
         if (first.WrappedObject is not IMsbEntry) return;
 
+        ImGui.AlignTextToFramePadding();
         ImGui.Text("Name");
         ImGui.NextColumn();
 
@@ -648,8 +650,26 @@ public class MapPropertyView
         }
 
         ImGui.NextColumn();
-        if (ImGui.Button("Rename", DPI.StandardButtonSize))
+
+        ImGui.AlignTextToFramePadding();
+        ImGui.Text("Rename");
+        ImGui.SameLine();
+        if(ImGui.Button($"{Icons.Refresh}##resetNameInput", DPI.IconButtonSize))
         {
+            editName.name = first.Name;
+        }
+        UIHelper.Tooltip("Reset the rename input to the current name.");
+
+        ImGui.NextColumn();
+
+        ImGui.PushItemWidth(-1);
+
+        var input = new DelayedInputTextHandler(editName.name);
+
+        if (input.Draw("##ReName", out string newValue))
+        {
+            editName = (newValue, first);
+
             if (single)
             {
                 View.ViewportActionManager.ExecuteAction(new RenameObjectsAction(
@@ -673,11 +693,8 @@ public class MapPropertyView
                 ));
             }
         }
-        ImGui.NextColumn();
-
-        ImGui.PushItemWidth(-1);
-        ImGui.InputText("##Name", ref editName.name, 64);
         ImGui.PopItemWidth();
+
         ImGui.NextColumn();
     }
 
