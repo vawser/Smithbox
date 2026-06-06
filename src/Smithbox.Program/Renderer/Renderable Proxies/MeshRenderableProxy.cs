@@ -308,7 +308,7 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
                     }
                 }
 
-                if (_registered)
+                if (!_registered)
                 {
                     _placeholderProxy.Register();
                 }

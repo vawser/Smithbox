@@ -1605,11 +1605,13 @@ public static class TextReferenceHelper
 
         var language = CFG.Current.TextEditor_Primary_Category;
 
+        int index = 0;
+
         foreach (var result in refs)
         {
             if (result != null && result.Entry != null)
             {
-                if (ImGui.Selectable($@"Go to FMG entry text"))
+                if (ImGui.Selectable($@"Go to FMG entry text##fmgEntryGoTo{index}"))
                 {
                     EditorCommandQueue.AddCommand($@"text/select/{result.ContainerWrapper.ContainerDisplayCategory}/{result.ContainerWrapper.FileEntry.Filename}/{result.FmgName}/{result.Entry.ID}");
                 }
@@ -1622,7 +1624,7 @@ public static class TextReferenceHelper
                 // Set Row Name to X
                 if (!string.IsNullOrWhiteSpace(result.Entry.Text))
                 {
-                    if (ImGui.Selectable($@"Replace row name with referenced FMG entry text"))
+                    if (ImGui.Selectable($@"Replace row name with referenced FMG entry text##replaceRowFmgEntry{index}"))
                     {
                         executor.ExecuteAction(
                             new PropertiesChangedAction(
@@ -1635,7 +1637,7 @@ public static class TextReferenceHelper
                 // Apply Row Name to X
                 if (!string.IsNullOrWhiteSpace(context.Name))
                 {
-                    if (ImGui.Selectable($@"Replace FMG entry text with current row name"))
+                    if (ImGui.Selectable($@"Replace FMG entry text with current row name##replaceFmgRowEntry{index}"))
                     {
                         executor.ExecuteAction(
                             new PropertiesChangedAction(
@@ -1645,6 +1647,13 @@ public static class TextReferenceHelper
                     }
                 }
             }
+
+            if (refs.Count > 1 && index < refs.Count)
+            {
+                ImGui.Separator();
+            }
+
+            index++;
         }
 
         ImGui.PopStyleColor();
