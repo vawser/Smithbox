@@ -653,6 +653,7 @@ public class MapPropertyView
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Rename");
+        UIHelper.Tooltip("Renames the map object, whilst updating any name references that point to it with the new name.");
         ImGui.SameLine();
         if(ImGui.Button($"{Icons.Refresh}##resetNameInput", DPI.IconButtonSize))
         {

@@ -716,6 +716,19 @@ public class ParamEditorPrefs
             Draw = () => {
                 var curProject = Smithbox.Orchestrator.SelectedProject;
                 var index = CFG.Current.ParamReloader_Current_Offsets;
+                var paramData = curProject.Handler.ParamData;
+
+                if (curProject.Descriptor.ProjectType is ProjectType.Undefined)
+                    return;
+
+                if (paramData == null)
+                    return;
+
+                if (paramData.ParamReloaderOffsets == null)
+                    return;
+
+                if (paramData.ParamReloaderOffsets.Groups == null)
+                    return;
 
                 string[] options = curProject.Handler.ParamData.ParamReloaderOffsets.Groups.Select(entry => entry.exeVersion).ToArray();
 
