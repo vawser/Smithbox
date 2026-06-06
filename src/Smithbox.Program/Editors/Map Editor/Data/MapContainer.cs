@@ -536,8 +536,11 @@ public class MapContainer : ObjectContainer
     {
         if (LoadedModels.TryGetValue(name, out var existing))
         {
-            m.Models.Add(LoadedModels[name]);
-            return;
+            if (existing != null)
+            {
+                m.Models.Add(existing);
+                return;
+            }
         }
 
         model.Name = name;
@@ -569,8 +572,11 @@ public class MapContainer : ObjectContainer
     {
         if (LoadedModels.TryGetValue(name, out var existing))
         {
-            m.Models.Add(LoadedModels[name]);
-            return;
+            if (existing != null)
+            {
+                m.Models.Add(existing);
+                return;
+            }
         }
 
         model.Name = name;
@@ -614,8 +620,11 @@ public class MapContainer : ObjectContainer
     {
         if (LoadedModels.TryGetValue(name, out var existing))
         {
-            m.Models.Add(LoadedModels[name]);
-            return;
+            if (existing != null)
+            {
+                m.Models.Add(existing);
+                return;
+            }
         }
 
         var a = $@"A{Name.Substring(1, 2)}";
@@ -661,8 +670,11 @@ public class MapContainer : ObjectContainer
     {
         if (LoadedModels.TryGetValue(name, out var existing))
         {
-            m.Models.Add(LoadedModels[name]);
-            return;
+            if (existing != null)
+            {
+                m.Models.Add(existing);
+                return;
+            }
         }
 
         model.Name = name;
@@ -694,8 +706,11 @@ public class MapContainer : ObjectContainer
     {
         if (LoadedModels.TryGetValue(name, out var existing))
         {
-            m.Models.Add(LoadedModels[name]);
-            return;
+            if (existing != null)
+            {
+                m.Models.Add(existing);
+                return;
+            }
         }
 
         model.Name = name;
@@ -727,8 +742,11 @@ public class MapContainer : ObjectContainer
     {
         if (LoadedModels.TryGetValue(name, out var existing))
         {
-            m.Models.Add(LoadedModels[name]);
-            return;
+            if (existing != null)
+            {
+                m.Models.Add(existing);
+                return;
+            }
         }
 
         model.Name = name;
@@ -759,8 +777,11 @@ public class MapContainer : ObjectContainer
     {
         if (LoadedModels.TryGetValue(name, out var existing))
         {
-            m.Models.Add(LoadedModels[name]);
-            return;
+            if (existing != null)
+            {
+                m.Models.Add(existing);
+                return;
+            }
         }
 
         model.Name = name;
@@ -793,8 +814,11 @@ public class MapContainer : ObjectContainer
     {
         if (LoadedModels.TryGetValue(name, out var existing))
         {
-            m.Models.Add(LoadedModels[name]);
-            return;
+            if (existing != null)
+            {
+                m.Models.Add(existing);
+                return;
+            }
         }
 
         model.Name = name;
