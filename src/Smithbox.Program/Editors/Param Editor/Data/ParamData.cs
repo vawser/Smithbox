@@ -46,6 +46,7 @@ public class ParamData : IDisposable
     public FieldLayouts FieldLayouts;
     public IconConfigurations IconConfigurations;
     public GraphAnnotations GraphAnnotations;
+    public RowFmgAnnotations RowFmgAnnotations;
 
     // Special-case
     public TableGroupNameStore TableGroupNames;
@@ -134,6 +135,19 @@ public class ParamData : IDisposable
         if (!graphLegendsTaskResult)
         {
             Smithbox.LogError(this, $"[Param Editor] Failed to setup the Graph annotations.");
+        }
+        else
+        {
+            Smithbox.Log(this, $"[Param Editor] Setup the Graph annotations.");
+        }
+
+        // Row FMG Annotations
+        Task<bool> rowFmgAnnotationTask = SetupRowFmgAnnotations();
+        bool rowFmgAnnotationTaskResult = await rowFmgAnnotationTask;
+
+        if (!rowFmgAnnotationTaskResult)
+        {
+            Smithbox.LogError(this, $"[Param Editor] Failed to setup the Row FMG annotations.");
         }
         else
         {
@@ -787,6 +801,57 @@ public class ParamData : IDisposable
 
         return true;
     }
+    public async Task<bool> SetupRowFmgAnnotations()
+    {
+        await Task.Yield();
+
+        RowFmgAnnotations = new();
+
+        if (CFG.Current.Param_Editor_Enable_Row_FMG_Annotation_Addition)
+        {
+            // Build project-local first, so it takes precedence over the base versions
+            var projectFolder = Path.Join(Project.Descriptor.ProjectPath, ".smithbox", "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Row FMG Annotations");
+
+            if (Path.Exists(projectFolder))
+            {
+                var fileName = Path.Combine(projectFolder, $"Annotations.json");
+
+                var file = File.ReadAllText(fileName);
+
+                try
+                {
+                    RowFmgAnnotations = JsonSerializer.Deserialize(file, ParamEditorJsonSerializerContext.Default.RowFmgAnnotations);
+                }
+                catch (Exception e)
+                {
+                    Smithbox.LogError(this, $"[Param Editor] Failed to deserialize row FMG annotations: {file}", LogPriority.High, e);
+                }
+            }
+        }
+
+        if (!CFG.Current.Param_Editor_Enable_Row_FMG_Annotation_Override)
+        {
+            var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType), "Row FMG Annotations");
+
+            if (Path.Exists(sourceFolder))
+            {
+                var fileName = Path.Combine(sourceFolder, $"Annotations.json");
+
+                var file = File.ReadAllText(fileName);
+
+                try
+                {
+                    RowFmgAnnotations = JsonSerializer.Deserialize(file, ParamEditorJsonSerializerContext.Default.RowFmgAnnotations);
+                }
+                catch (Exception e)
+                {
+                    Smithbox.LogError(this, $"[Param Editor] Failed to deserialize row FMG annotation groups: {file}", LogPriority.High, e);
+                }
+            }
+        }
+
+        return true;
+    }
 
     public async Task<bool> SetupIconConfigurations()
     {
@@ -1347,6 +1412,7 @@ public class ParamData : IDisposable
         ParamMeta = null;
         ParamTypeInfo = null;
         GraphAnnotations = null;
+        RowFmgAnnotations = null;
         IconConfigurations = null;
         TableParamList = null;
         TableGroupNames = null;

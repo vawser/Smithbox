@@ -71,6 +71,10 @@ namespace StudioCore.Editors.ParamEditor;
 [JsonSerializable(typeof(GraphAnnotations))]
 [JsonSerializable(typeof(GraphAnnotationEntry))]
 
+// Row FMG Annotations
+[JsonSerializable(typeof(RowFmgAnnotations))]
+[JsonSerializable(typeof(RowFmgAnnotationEntry))]
+
 // Delta Patch
 [JsonSerializable(typeof(ParamDeltaPatch))]
 [JsonSerializable(typeof(ParamDelta))]

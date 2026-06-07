@@ -1,0 +1,64 @@
+{
+  "Entries": [
+    {
+      "Param": "NR",
+      "FmgName_Base": "",
+      "FmgName_DLC1": "",
+      "FmgName_DLC2": ""
+    },
+    {
+      "Param": "EquipParamAccessory",
+      "FmgName_Base": "Title_Accessories",
+      "FmgName_DLC1": "Title_Accessories_DLC1",
+      "FmgName_DLC2": ""
+    },
+    {
+      "Param": "EquipParamGoods",
+      "FmgName_Base": "Title_Goods",
+      "FmgName_DLC1": "Title_Goods_DLC1",
+      "FmgName_DLC2": ""
+    },
+    {
+      "Param": "EquipParamWeapon",
+      "FmgName_Base": "Title_Weapons",
+      "FmgName_DLC1": "Title_Weapons_DLC1",
+      "FmgName_DLC2": ""
+    },
+    {
+      "Param": "EquipParamProtector",
+      "FmgName_Base": "Title_Armor",
+      "FmgName_DLC1": "",
+      "FmgName_DLC2": ""
+    },
+    {
+      "Param": "SwordArtsParam",
+      "FmgName_Base": "Title_Skill",
+      "FmgName_DLC1": "Title_Skill_DLC1",
+      "FmgName_DLC2": ""
+    },
+    {
+      "Param": "EquipParamAntique",
+      "FmgName_Base": "Title_Antique",
+      "FmgName_DLC1": "Title_Antique_DLC1",
+      "FmgName_DLC2": ""
+    },
+    {
+      "Param": "AttachEffectParam",
+      "FmgName_Base": "Title_AttachEffect",
+      "FmgName_DLC1": "Title_AttachEffect_DLC1",
+      "FmgName_DLC2": ""
+    },
+    {
+      "Param": "PermanentBuffParam",
+      "FmgName_Base": "Title_PermanentBuff",
+      "FmgName_DLC1": "Title_PermanentBuff_DLC1",
+      "FmgName_DLC2": ""
+    },
+    {
+      "Param": "Magic",
+      "FmgName_Base": "Title_Magic",
+      "FmgName_DLC1": "Title_Magic_DLC1",
+      "FmgName_DLC2": ""
+    }
+  ]
+}

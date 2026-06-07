@@ -45,15 +45,11 @@ public class ParamRowDecorators
 
                 _rowFmgDecorators.Clear();
 
-                foreach (var entry in Project.Handler.ParamData.PrimaryBank.Params)
-                {
-                    var paramName = entry.Key;
-                    var entries = ParamFmgUtils.GetRowDecoratorFmgEntries(Editor, paramName);
+                var entries = ParamFmgUtils.GetRowDecoratorFmgEntries(Editor, CurrentParam);
 
-                    if (entries.Count != 0)
-                    {
-                        _rowFmgDecorators.Add(paramName, new FmgRowDecorator(Editor, paramName));
-                    }
+                if (entries.Count != 0)
+                {
+                    _rowFmgDecorators.Add(CurrentParam, new FmgRowDecorator(Editor, CurrentParam));
                 }
             }
         }

@@ -891,6 +891,25 @@ public class ParamEditorPrefs
             }
         };
     }
+    public static PreferenceItem ParamEditor_Row_List_Row_FMG_Prefer_Base()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 4,
+            Category = PreferenceCategory.ParamEditor,
+            Spacer = true,
+
+            Section = SectionCategory.ParamEditor_Row_List,
+
+            Title = "Display Base over DLC entries for Row FMG Text",
+            Description = "If enabled, FMG entries from the base FMG will be preferred over those of the DLC1/DLC2 FMG.",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Row_List_Row_FMG_Prefer_Base);
+            }
+        };
+    }
+
     #endregion
 
     #region Field List

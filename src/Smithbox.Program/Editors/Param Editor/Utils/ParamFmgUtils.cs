@@ -22,43 +22,70 @@ public static class ParamFmgUtils
 
         List<FMG.Entry> entries = new List<FMG.Entry>();
 
-        var searchStr = GetDomainName(paramName);
-        if (searchStr != "")
+        var annotationEntry = editor.Project.Handler.ParamData.RowFmgAnnotations.Entries.FirstOrDefault(e => e.Param == paramName);
+
+        if(annotationEntry == null)
+            return new List<FMG.Entry>();
+
+        foreach (var (path, entry) in editor.Project.Handler.TextData.PrimaryBank.Containers)
         {
-            foreach (var (path, entry) in editor.Project.Handler.TextData.PrimaryBank.Containers)
+            if (entry.IsContainerUnused())
+                continue;
+
+            if (entry.ContainerDisplayCategory != CFG.Current.TextEditor_Primary_Category)
+                continue;
+
+            if (entry.FmgWrappers == null)
+                continue;
+
+            // Base
+            foreach (var wrapper in entry.FmgWrappers)
             {
-                if (entry.IsContainerUnused())
-                    continue;
+                var internalName = TextUtils.GetFmgInternalName(editor.Project, entry, wrapper.ID, wrapper.Name);
 
-                if (entry.ContainerDisplayCategory != CFG.Current.TextEditor_Primary_Category)
-                    continue;
+                var proceed = false;
 
-                if (entry.FmgWrappers == null)
-                    continue;
+                if (internalName == annotationEntry.FmgName_Base)
+                    proceed = true;
 
-                foreach (var fmgInfo in entry.FmgWrappers)
+                if(proceed)
                 {
-                    var grouping = TextUtils.GetFmgGrouping(editor.Project, entry, fmgInfo.ID, fmgInfo.Name);
-
-                    if (grouping == "Title" || grouping == "Common")
+                    foreach (var fmgEntry in wrapper.File.Entries)
                     {
-                        var enumName = TextUtils.GetFmgInternalName(editor.Project, entry, fmgInfo.ID, fmgInfo.Name);
+                        entries.Add(fmgEntry);
+                    }
+                }
+            }
 
-                        // HACK: to avoid using the effect entries when display weapon FMG refs - fix this when we migrate to the FMG descriptors
-                        if(searchStr == "Weapons")
-                        {
-                            if(enumName == "Effect_Weapons")
-                            {
-                                continue;
-                            }
-                        }
+            // DLC1/DLC2
+            foreach (var wrapper in entry.FmgWrappers)
+            {
+                var internalName = TextUtils.GetFmgInternalName(editor.Project, entry, wrapper.ID, wrapper.Name);
 
-                        if (enumName.Contains(searchStr))
+                var proceed = false;
+
+                if (internalName == annotationEntry.FmgName_DLC1)
+                    proceed = true;
+
+                if (internalName == annotationEntry.FmgName_DLC2)
+                    proceed = true;
+
+                if (proceed)
+                {
+                    foreach (var fmgEntry in wrapper.File.Entries)
+                    {
+                        // If we prefer base over DLC1/DLC2,
+                        // don't add the DLC1/DLC2 entry if a base entry with the same ID already exists
+                        if (CFG.Current.ParamEditor_Row_List_Row_FMG_Prefer_Base)
                         {
-                            foreach (var fmgEntry in fmgInfo.File.Entries)
+                            if (!entries.Any(e => e.ID == fmgEntry.ID))
                             {
                                 entries.Add(fmgEntry);
                             }
+                        }
+                        else
+                        {
+                            entries.Add(fmgEntry);
                         }
                     }
                 }

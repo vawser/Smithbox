@@ -1,0 +1,40 @@
+{
+  "Entries": [
+    {
+      "Param": "DS3",
+      "FmgName_Base": "",
+      "FmgName_DLC1": "",
+      "FmgName_DLC2": ""
+    },
+    {
+      "Param": "EquipParamAccessory",
+      "FmgName_Base": "Title_Accessories",
+      "FmgName_DLC1": "Title_Accessories_DLC1",
+      "FmgName_DLC2": "Title_Accessories_DLC2"
+    },
+    {
+      "Param": "EquipParamGoods",
+      "FmgName_Base": "Title_Goods",
+      "FmgName_DLC1": "Title_Goods_DLC1",
+      "FmgName_DLC2": "Title_Goods_DLC2"
+    },
+    {
+      "Param": "EquipParamWeapon",
+      "FmgName_Base": "Title_Weapons",
+      "FmgName_DLC1": "Title_Weapons_DLC1",
+      "FmgName_DLC2": "Title_Weapons_DLC2"
+    },
+    {
+      "Param": "EquipParamProtector",
+      "FmgName_Base": "Title_Armor",
+      "FmgName_DLC1": "Title_Armor_DLC1",
+      "FmgName_DLC2": "Title_Armor_DLC2"
+    },
+    {
+      "Param": "Magic",
+      "FmgName_Base": "Title_Magic",
+      "FmgName_DLC1": "Title_Magic_DLC1",
+      "FmgName_DLC2": "Title_Magic_DLC2"
+    }
+  ]
+}

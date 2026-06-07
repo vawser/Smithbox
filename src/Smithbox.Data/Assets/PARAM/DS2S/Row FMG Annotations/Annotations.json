@@ -1,0 +1,16 @@
+{
+  "Entries": [
+    {
+      "Param": "DS2",
+      "FmgName_Base": "",
+      "FmgName_DLC1": "",
+      "FmgName_DLC2": ""
+    },
+    {
+      "Param": "ItemParam",
+      "FmgName_Base": "itemname",
+      "FmgName_DLC1": "",
+      "FmgName_DLC2": ""
+    }
+  ]
+}
