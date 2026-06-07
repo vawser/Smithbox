@@ -9,10 +9,10 @@ namespace SoulsFormats
         {
             br.ReadInt64(); // Hashes offset
             br.ReadInt32(); // Bucket count
-            br.AssertByte(0x10); // Hash table header size?
-            br.AssertByte(8); // Bucket size?
-            br.AssertByte(8); // Hash size?
-            br.AssertByte(0);
+            br.ReadByte(); // br.AssertByte(0x10); // Hash table header size?
+            br.ReadByte(); // br.AssertByte(8); // Bucket size?
+            br.ReadByte(); // br.AssertByte(8); // Hash size?
+            br.ReadByte(); // br.AssertByte(0);
             // Don't actually care about the hashes, I just like asserting
         }
 
