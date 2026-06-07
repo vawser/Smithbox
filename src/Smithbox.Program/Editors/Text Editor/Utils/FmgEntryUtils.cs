@@ -30,47 +30,56 @@ public static class FmgEntryUtils
         {
             var fmgEntryGroup = view.EntryGroupManager.GetEntryGroup(entry);
 
-            if(!fmgEntryGroup.SupportsGrouping || fmgEntryGroup.SupportsTitle)
+            // If non-grouped, handle like so.
+            if (!fmgEntryGroup.SupportsGrouping)
             {
-                var titleEntry = fmgEntryGroup.Title;
-                if (titleEntry != null)
-                {
-                    titleFmg = fmgEntryGroup.Title.Parent;
-
-                    titleEntries.Add(titleEntry);
-                }
+                titleFmg = fmg;
+                titleEntries.Add(entry);
             }
-
-            if (fmgEntryGroup.SupportsSummary)
+            else
             {
-                var summarEntry = fmgEntryGroup.Summary;
-                if (summarEntry != null)
+                if (fmgEntryGroup.SupportsTitle)
                 {
-                    summaryFmg = fmgEntryGroup.Summary.Parent;
+                    var titleEntry = fmgEntryGroup.Title;
+                    if (titleEntry != null)
+                    {
+                        titleFmg = fmgEntryGroup.Title.Parent;
 
-                    summaryEntries.Add(summarEntry);
+                        titleEntries.Add(titleEntry);
+                    }
                 }
-            }
 
-            if (fmgEntryGroup.SupportsDescription)
-            {
-                var descriptionEntry = fmgEntryGroup.Description;
-                if (descriptionEntry != null)
+                if (fmgEntryGroup.SupportsSummary)
                 {
-                    descriptionFmg = fmgEntryGroup.Description.Parent;
+                    var summarEntry = fmgEntryGroup.Summary;
+                    if (summarEntry != null)
+                    {
+                        summaryFmg = fmgEntryGroup.Summary.Parent;
 
-                    descriptionEntries.Add(descriptionEntry);
+                        summaryEntries.Add(summarEntry);
+                    }
                 }
-            }
-            
-            if (fmgEntryGroup.SupportsEffect)
-            {
-                var effectEntry = fmgEntryGroup.Effect;
-                if (effectEntry != null)
-                {
-                    effectFmg = fmgEntryGroup.Effect.Parent;
 
-                    effectEntries.Add(effectEntry);
+                if (fmgEntryGroup.SupportsDescription)
+                {
+                    var descriptionEntry = fmgEntryGroup.Description;
+                    if (descriptionEntry != null)
+                    {
+                        descriptionFmg = fmgEntryGroup.Description.Parent;
+
+                        descriptionEntries.Add(descriptionEntry);
+                    }
+                }
+
+                if (fmgEntryGroup.SupportsEffect)
+                {
+                    var effectEntry = fmgEntryGroup.Effect;
+                    if (effectEntry != null)
+                    {
+                        effectFmg = fmgEntryGroup.Effect.Parent;
+
+                        effectEntries.Add(effectEntry);
+                    }
                 }
             }
         }
