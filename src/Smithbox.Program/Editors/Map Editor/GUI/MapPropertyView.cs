@@ -252,10 +252,14 @@ public class MapPropertyView
     private void PropEditorPropCellRow(MapEntityPropertyFieldMeta meta, ParamAnnotationFieldEntry fieldAnnotation, Param.Cell cell, ref int id, Entity nullableSelection, int rowID)
     {
         var fieldName = cell.Def.InternalName;
-        var isMatch = EditorFilters.IsMatch(MapPropFilter, fieldName, ExactMapPropFilter, fieldAnnotation.Name);
 
-        if (!isMatch)
-            return;
+        if (fieldAnnotation != null)
+        {
+            var isMatch = EditorFilters.IsMatch(MapPropFilter, fieldName, ExactMapPropFilter, fieldAnnotation.Name);
+
+            if (!isMatch)
+                return;
+        }
 
         PropEditorPropRow(meta, fieldAnnotation, cell.Value, ref id, cell.Def.InternalName, cell.Value.GetType(), null,
             cell.Def.InternalName, cell.GetType().GetProperty("Value"), cell, nullableSelection, rowID);
