@@ -1,8 +1,12 @@
 ﻿using Hexa.NET.ImGui;
+using Org.BouncyCastle.Asn1.X509;
 using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Editors.ParamEditor;
 using StudioCore.Keybinds;
+using System.Collections.Generic;
+using System.Linq;
 using System.Numerics;
 
 namespace StudioCore.Editors.TextEditor;
@@ -29,116 +33,33 @@ public class TextEntryList
     /// </summary>
     public void Display()
     {
-        DisplayHeader();
+        DisplayTitle();
 
-        ImGui.BeginChild("FmgEntriesList", ImGuiChildFlags.Borders);
-
-        if (Parent.Selection.SelectedFmgWrapper != null && Parent.Selection.SelectedFmgWrapper.File != null)
+        if(Parent.Selection.IsFmgSelected())
         {
-            // Categories
-            for (int i = 0; i < Parent.Selection.SelectedFmgWrapper.File.Entries.Count; i++)
-            {
-                var entry = Parent.Selection.SelectedFmgWrapper.File.Entries[i];
-                var id = entry.ID;
-                var contents = entry.Text;
+            FocusManager.SetFocus(EditorFocusContext.TextEditor_EntryList);
 
-                var isMatch = EditorFilters.IsMatch(
-                    EntryListFilter, entry.ID.ToString(), ExactEntryListFilter, entry.Text);
-
-                // Ignore normal match if a special conditional commands has been used
-                if (UsedMatchCommands(EntryListFilter))
-                {
-                    isMatch = HandleMatchCommands(EntryListFilter, entry);
-                }
-
-                if (isMatch)
-                {
-                    var displayedText = contents;
-
-                    if (contents != null)
-                    {
-                        if (CFG.Current.TextEditor_Text_Entry_List_Truncate_Name)
-                        {
-                            if (contents.Contains("\n"))
-                            {
-                                displayedText = $"{displayedText.Split("\n")[0]} <...>";
-                            }
-                        }
-                    }
-                    else
-                    {
-                        displayedText = "";
-
-                        if (CFG.Current.TextEditor_Text_Entry_List_Display_Null_Text)
-                        {
-                            displayedText = $"<null>";
-                        }
-                    }
-
-                    // Unique rows
-                    if (Parent.DifferenceManager.IsUniqueToProject(entry))
-                    {
-                        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_TextEditor_UniqueTextEntry_Text);
-                    }
-                    // Modified rows
-                    else if (Parent.DifferenceManager.IsDifferentToVanilla(entry))
-                    {
-                        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_TextEditor_ModifiedTextEntry_Text);
-                    }
-
-                    // Script row
-                    if (ImGui.Selectable($"{id} {displayedText}##fmgEntry{id}{i}", Parent.Selection.IsFmgEntrySelected(i)))
-                    {
-                        Parent.Selection.SelectFmgEntry(i, entry);
-                    }
-
-                    if (Parent.DifferenceManager.IsUniqueToProject(entry) ||
-                        Parent.DifferenceManager.IsDifferentToVanilla(entry))
-                    {
-                        ImGui.PopStyleColor(1);
-                    }
-
-                    // Arrow Selection
-                    if (ImGui.IsItemHovered() && Parent.Selection.SelectNextFmgEntry)
-                    {
-                        Parent.Selection.SelectNextFmgEntry = false;
-                        Parent.Selection.SelectFmgEntry(i, entry);
-                    }
-                    if (ImGui.IsItemFocused())
-                    {
-                        if (InputManager.HasArrowSelection())
-                        {
-                            Parent.Selection.SelectNextFmgEntry = true;
-                        }
-                    }
-
-                    // Context Menu / Shortcuts
-                    if (Parent.Selection.IsFmgEntrySelected(i))
-                    {
-                        Parent.ContextMenu.FmgEntryContextMenu(i, Parent.Selection.SelectedFmgWrapper, entry, Parent.Selection.IsFmgEntrySelected(i));
-
-                        Parent.Editor.Shortcuts.HandleSelectAll();
-                        Parent.Editor.Shortcuts.HandleCopyEntryText();
-                    }
-
-                    // Focus Selection
-                    if (Parent.Selection.FocusFmgEntrySelection && Parent.Selection.IsFmgEntrySelected(i))
-                    {
-                        Parent.Selection.FocusFmgEntrySelection = false;
-                        ImGui.SetScrollHereY();
-                    }
-
-                }
-            }
+            DisplayHeader();
+            DisplayEntryTable();
         }
+        else
+        {
+            FocusManager.SetFocus(EditorFocusContext.TextEditor_EntryList);
 
-        ImGui.EndChild();
+            ImGui.Text("Select a FMG to see entries.");
+        }
+    }
+
+
+    public void DisplayTitle()
+    {
+        var title = "Entries";
+
+        UIHelper.SimpleHeader($"{title}", "");
     }
 
     public void DisplayHeader()
     {
-        UIHelper.SimpleHeader("Entries", "");
-
         var searchHeight = new Vector2(0, 36) * DPI.UIScale();
         ImGui.BeginChild($"textEditor_EntryList_Section_Header", searchHeight, ImGuiChildFlags.Borders);
 
@@ -173,6 +94,269 @@ public class TextEntryList
         UIHelper.Tooltip($"Focus the currently selected entry.\nShortcut: {InputManager.GetHint(KeybindID.Jump)}");
 
         ImGui.EndChild();
+    }
+
+    private void ListHeader()
+    {
+        var colFlags = ImGuiTableColumnFlags.WidthStretch;
+
+        ImGui.TableSetupColumn("ID", colFlags, 0.2f);
+        ImGui.TableSetupColumn("Name", colFlags);
+        
+        var columnCount = 2;
+        ImGui.TableSetupScrollFreeze(columnCount, 1);
+
+        // ID
+        ImGui.TableNextRow();
+        ImGui.TableSetColumnIndex(0);
+        ImGui.Text("ID");
+
+        // Name
+        ImGui.TableSetColumnIndex(1);
+        ImGui.Text("Name");
+    }
+
+    public void DisplayEntryTable()
+    {
+        ImGui.BeginChild("FmgEntriesList", ImGuiChildFlags.Borders);
+
+        var tblFlags = ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Resizable | ImGuiTableFlags.ScrollY | ImGuiTableFlags.BordersOuterH | ImGuiTableFlags.BordersOuterV;
+
+        var columnCount = 2;
+
+        if (ImGui.BeginTable($"fullEntryList", columnCount, tblFlags))
+        {
+            ListHeader();
+
+            if (Parent.Selection.SelectedFmgWrapper != null && Parent.Selection.SelectedFmgWrapper.File != null)
+            {
+                DisplayEntryList();
+            }
+
+            ImGui.EndTable();
+        }
+
+        ImGui.EndChild();
+    }
+
+    public void DisplayEntryList()
+    {
+        for (int i = 0; i < Parent.Selection.SelectedFmgWrapper.File.Entries.Count; i++)
+        {
+            var entry = Parent.Selection.SelectedFmgWrapper.File.Entries[i];
+            var id = entry.ID;
+            var contents = entry.Text;
+
+            var isMatch = EditorFilters.IsMatch(
+                EntryListFilter, entry.ID.ToString(), ExactEntryListFilter, entry.Text);
+
+            // Ignore normal match if a special conditional commands has been used
+            if (UsedMatchCommands(EntryListFilter))
+            {
+                isMatch = HandleMatchCommands(EntryListFilter, entry);
+            }
+
+            if (isMatch)
+            {
+                DisplayEntryRow(entry, id, contents, i);
+            }
+        }
+    }
+
+    public void DisplayEntryRow(FMG.Entry entry, int id, string contents, int index)
+    {
+
+        // ID
+        ImGui.TableNextRow();
+        ImGui.TableSetColumnIndex(0);
+        DisplayEntryRowID(entry, id, contents, index);
+
+        // Name
+        ImGui.TableSetColumnIndex(1);
+        DisplayEntryRowName(entry, id, contents, index);
+
+    }
+
+
+    private FMG.Entry DragSourceEntry;
+
+    public void DisplayEntryRowID(FMG.Entry entry, int id, string contents, int index)
+    {
+        var isSelected = Parent.Selection.IsFmgEntrySelected(index);
+
+        // Selectable
+        if (ImGui.Selectable($"{id}##fmgEntryID_{id}{index}", isSelected))
+        {
+            Parent.Selection.SelectFmgEntry(index, entry);
+        }
+
+        // Arrow Selection
+        if (ImGui.IsItemHovered() && Parent.Selection.SelectNextFmgEntry)
+        {
+            Parent.Selection.SelectNextFmgEntry = false;
+            Parent.Selection.SelectFmgEntry(index, entry);
+        }
+        if (ImGui.IsItemFocused())
+        {
+            if (InputManager.HasArrowSelection())
+            {
+                Parent.Selection.SelectNextFmgEntry = true;
+            }
+        }
+
+        // Drag source
+        if (ImGui.BeginDragDropSource(ImGuiDragDropFlags.None))
+        {
+            DragSourceEntry = entry;
+            unsafe
+            {
+                byte dummy = 0;
+                ImGui.SetDragDropPayload("FMG_ENTRY", &dummy, 1);
+            }
+            ImGui.Text($"Entry {entry.ID}");
+            ImGui.EndDragDropSource();
+        }
+
+        // Drop target
+        if (ImGui.BeginDragDropTarget())
+        {
+            unsafe
+            {
+                var fmg = Parent.Selection.SelectedFmgWrapper.File;
+                var payload = ImGui.AcceptDragDropPayload("FMG_ENTRY");
+                if (!payload.IsNull && DragSourceEntry != null && DragSourceEntry != entry)
+                {
+                    int dropTargetIndex = fmg.Entries.IndexOf(entry);
+
+                    if (dropTargetIndex >= 0)
+                    {
+                        List<FMG.Entry> entriesToMove;
+                        var selectedEntries = Parent.Selection.FmgEntryMultiselect.StoredEntries;
+
+                        entriesToMove = selectedEntries.Values.ToList();
+
+                        // If the user is viewing in grouped mode,
+                        // we need to handle each of the possible associated entries
+                        // so the assumed behavior of moving the title moves the other entries too.
+                        if (CFG.Current.TextEditor_Text_Entry_Enable_Grouped_Entries)
+                        {
+                            FmgEntryUtils.ReorderFmgEntryGroup(Parent, Parent.Selection.SelectedFmgWrapper, fmg, entriesToMove, dropTargetIndex);
+                        }
+                        else
+                        {
+                            var action = new ReorderEntryAction(fmg, entriesToMove, dropTargetIndex);
+                            Parent.ActionManager.ExecuteAction(action);
+                        }
+                    }
+
+                    DragSourceEntry = null;
+                }
+            }
+
+            ImGui.EndDragDropTarget();
+        }
+
+        // Context Menu / Shortcuts
+        if (Parent.Selection.IsFmgEntrySelected(index))
+        {
+            Parent.ContextMenu.FmgEntryContextMenu("id", index, Parent.Selection.SelectedFmgWrapper, entry, isSelected);
+
+            Parent.Editor.Shortcuts.HandleSelectAll();
+            Parent.Editor.Shortcuts.HandleCopyEntryText();
+        }
+
+        // Focus Selection
+        if (Parent.Selection.FocusFmgEntrySelection && isSelected)
+        {
+            Parent.Selection.FocusFmgEntrySelection = false;
+            ImGui.SetScrollHereY();
+        }
+    }
+
+    public void DisplayEntryRowName(FMG.Entry entry, int id, string contents, int index)
+    {
+        var displayedText = FormatDisplayName(contents);
+        var isSelected = Parent.Selection.IsFmgEntrySelected(index);
+
+        // Unique rows
+        if (Parent.DifferenceManager.IsUniqueToProject(entry))
+        {
+            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_TextEditor_UniqueTextEntry_Text);
+        }
+        // Modified rows
+        else if (Parent.DifferenceManager.IsDifferentToVanilla(entry))
+        {
+            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_TextEditor_ModifiedTextEntry_Text);
+        }
+
+        // Script row
+        if (ImGui.Selectable($"{displayedText}##fmgEntryName_{id}{index}", isSelected))
+        {
+            Parent.Selection.SelectFmgEntry(index, entry);
+        }
+
+        if (Parent.DifferenceManager.IsUniqueToProject(entry) ||
+            Parent.DifferenceManager.IsDifferentToVanilla(entry))
+        {
+            ImGui.PopStyleColor(1);
+        }
+
+        // Arrow Selection
+        if (ImGui.IsItemHovered() && Parent.Selection.SelectNextFmgEntry)
+        {
+            Parent.Selection.SelectNextFmgEntry = false;
+            Parent.Selection.SelectFmgEntry(index, entry);
+        }
+        if (ImGui.IsItemFocused())
+        {
+            if (InputManager.HasArrowSelection())
+            {
+                Parent.Selection.SelectNextFmgEntry = true;
+            }
+        }
+
+        // Context Menu / Shortcuts
+        if (Parent.Selection.IsFmgEntrySelected(index))
+        {
+            Parent.ContextMenu.FmgEntryContextMenu("name", index, Parent.Selection.SelectedFmgWrapper, entry, isSelected);
+
+            Parent.Editor.Shortcuts.HandleSelectAll();
+            Parent.Editor.Shortcuts.HandleCopyEntryText();
+        }
+
+        // Focus Selection
+        if (Parent.Selection.FocusFmgEntrySelection && isSelected)
+        {
+            Parent.Selection.FocusFmgEntrySelection = false;
+            ImGui.SetScrollHereY();
+        }
+    }
+
+    public string FormatDisplayName(string contents)
+    {
+        var displayedText = contents;
+
+        if (contents != null)
+        {
+            if (CFG.Current.TextEditor_Text_Entry_List_Truncate_Name)
+            {
+                if (contents.Contains("\n"))
+                {
+                    displayedText = $"{displayedText.Split("\n")[0]} <...>";
+                }
+            }
+        }
+        else
+        {
+            displayedText = "";
+
+            if (CFG.Current.TextEditor_Text_Entry_List_Display_Null_Text)
+            {
+                displayedText = $"<null>";
+            }
+        }
+
+        return displayedText;
     }
 
     public bool UsedMatchCommands(string rawInput)

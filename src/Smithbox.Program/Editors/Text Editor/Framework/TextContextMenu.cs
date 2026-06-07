@@ -50,9 +50,9 @@ public class TextContextMenu
     /// <summary>
     /// Context menu for the selection in the FMG entry list
     /// </summary>
-    public void FmgEntryContextMenu(int index, TextFmgWrapper fmgInfo, FMG.Entry entry, bool isMultiselecting)
+    public void FmgEntryContextMenu(string title, int index, TextFmgWrapper fmgInfo, FMG.Entry entry, bool isMultiselecting)
     {
-        if (ImGui.BeginPopupContextItem($"FmgEntryContext##FmgEntryContext{index}"))
+        if (ImGui.BeginPopupContextItem($"FmgEntryContext##FmgEntryContext{title}_{index}"))
         {
             // Create
             if(ImGui.Selectable("Create"))

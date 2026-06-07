@@ -173,6 +173,11 @@ public class TextViewSelection
         }
     }
 
+    public bool IsFmgSelected()
+    {
+        return SelectedFmgWrapper != null && SelectedFmgKey != -1;
+    }
+
     /// <summary>
     /// Check if a dummy poly entry is selected
     /// </summary>
