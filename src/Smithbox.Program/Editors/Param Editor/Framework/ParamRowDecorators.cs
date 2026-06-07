@@ -35,15 +35,17 @@ public class ParamRowDecorators
     /// </summary>
     public void SetupFmgDecorators(string targetParam = "")
     {
+        ClearFmgDecorators();
+        _rowFmgDecorators.Clear();
+
+        if (!CFG.Current.ParamEditor_Row_List_Display_Decorators)
+            return;
+
         if (targetParam != "")
         {
             if (CurrentParam != targetParam)
             {
-                ClearFmgDecorators();
-
                 CurrentParam = targetParam;
-
-                _rowFmgDecorators.Clear();
 
                 var entries = ParamFmgUtils.GetRowDecoratorFmgEntries(Editor, CurrentParam);
 
@@ -55,9 +57,6 @@ public class ParamRowDecorators
         }
         else
         {
-            ClearFmgDecorators();
-            _rowFmgDecorators.Clear();
-
             foreach (var entry in Project.Handler.ParamData.PrimaryBank.Params)
             {
                 var paramName = entry.Key;
@@ -120,6 +119,9 @@ public class FmgRowDecorator
 
     public void DecorateParam(Param.Row row)
     {
+        if (!CFG.Current.ParamEditor_Row_List_Display_Decorators)
+            return;
+
         PopulateDecorator();
         FMG.Entry entry = null;
         _entryCache.TryGetValue(row.ID, out entry);
@@ -134,6 +136,9 @@ public class FmgRowDecorator
     }
     public void DecorateContextMenuItems(Param.Row row)
     {
+        if (!CFG.Current.ParamEditor_Row_List_Display_Decorators)
+            return;
+
         PopulateDecorator();
         if (!_entryCache.ContainsKey(row.ID))
         {

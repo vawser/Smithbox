@@ -175,7 +175,7 @@ public class TextViewSelection
 
     public bool IsFmgSelected()
     {
-        return SelectedFmgWrapper != null && SelectedFmgKey != -1;
+        return SelectedFmgWrapper != null;
     }
 
     /// <summary>

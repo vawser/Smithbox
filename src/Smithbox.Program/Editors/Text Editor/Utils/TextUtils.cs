@@ -641,30 +641,7 @@ public static class TextUtils
                 break;
             case ProjectType.DS2:
             case ProjectType.DS2S:
-                if (IsTalkFolderFmg(info))
-                {
-                    foreach (var entry in Enum.GetValues(typeof(TalkFmgName_DS2)))
-                    {
-                        var enumVal = (TalkFmgName_DS2)entry;
-                        name = enumVal.ToString();
-                    }
-                }
-                else if (IsBloodMessageFolderFmg(info))
-                {
-                    foreach (var entry in Enum.GetValues(typeof(BloodMessageFmgName_DS2)))
-                    {
-                        var enumVal = (BloodMessageFmgName_DS2)entry;
-                        name = enumVal.ToString();
-                    }
-                }
-                else
-                {
-                    foreach (var entry in Enum.GetValues(typeof(CommonFmgName_DS2)))
-                    {
-                        var enumVal = (CommonFmgName_DS2)entry;
-                        name = enumVal.ToString();
-                    }
-                }
+                name = fmgName;
                 break;
             case ProjectType.BB:
                 if (IsItemContainer(info))

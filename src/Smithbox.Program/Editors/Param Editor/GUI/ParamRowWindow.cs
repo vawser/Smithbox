@@ -209,11 +209,27 @@ public class ParamRowWindow
 
         UIHelper.Tooltip($"Toggle the display of the modified background on modified rows.\nCurrent Mode: {rowModifiedBgMode}");
 
+        // Display Decorators
+        ImGui.SameLine();
+
+        if (ImGui.Button($"{Icons.FileText}"))
+        {
+            CFG.Current.ParamEditor_Row_List_Display_Decorators = !CFG.Current.ParamEditor_Row_List_Display_Decorators;
+        }
+
+        var displayDecoratorMode = "Hide FMG Text";
+        if (CFG.Current.ParamEditor_Row_List_Display_Decorators)
+            displayDecoratorMode = "Display FMG Text";
+
+        UIHelper.Tooltip($"Toggle the display of the FMG text on rows.\nCurrent Mode: {displayDecoratorMode}");
+        
+
         // Quick Export
         if (CFG.Current.Developer_Enable_Tools)
         {
             ParamDebugTools.DisplayQuickRowNameExport(Editor, Project);
         }
+
 
         ImGui.EndChild();
     }
