@@ -39,31 +39,34 @@ public class TextEditorPrefs
             Draw = () => {
                 var curProject = Smithbox.Orchestrator.SelectedProject;
 
-                if (curProject.Handler.TextData != null)
+                if (curProject == null)
+                    return;
+
+                if (curProject.Handler.TextData == null)
+                    return;
+
+                var languages = curProject.Handler.TextData.FmgDescriptors.Languages;
+
+                var curLanguage = CFG.Current.TextEditor_Primary_Language_DES;
+
+                DPI.ApplyInputWidth();
+                if (ImGui.BeginCombo("##inputValue", curLanguage))
                 {
-                    var languages = curProject.Handler.TextData.FmgDescriptors.Languages;
-
-                    var curLanguage = CFG.Current.TextEditor_Primary_Language_DES;
-
-                    DPI.ApplyInputWidth();
-                    if (ImGui.BeginCombo("##inputValue", curLanguage))
+                    foreach (var entry in languages)
                     {
-                        foreach (var entry in languages)
+                        if (ImGui.Selectable(entry.Language))
                         {
-                            if (ImGui.Selectable(entry.Language))
-                            {
-                                CFG.Current.TextEditor_Primary_Language_DES = entry.Language;
+                            CFG.Current.TextEditor_Primary_Language_DES = entry.Language;
 
-                                // Refresh the param editor FMG decorators when the category changes.
-                                if (curProject.Handler.ParamEditor != null)
-                                {
-                                    var activeView = curProject.Handler.ParamEditor.ViewHandler.ActiveView;
-                                    activeView.RowDecorators.SetupFmgDecorators();
-                                }
+                            // Refresh the param editor FMG decorators when the category changes.
+                            if (curProject.Handler.ParamEditor != null)
+                            {
+                                var activeView = curProject.Handler.ParamEditor.ViewHandler.ActiveView;
+                                activeView.RowDecorators.SetupFmgDecorators();
                             }
                         }
-                        ImGui.EndCombo();
                     }
+                    ImGui.EndCombo();
                 }
             }
         };
@@ -90,31 +93,34 @@ public class TextEditorPrefs
             Draw = () => {
                 var curProject = Smithbox.Orchestrator.SelectedProject;
 
-                if (curProject.Handler.TextData != null)
+                if (curProject == null)
+                    return;
+
+                if (curProject.Handler.TextData == null)
+                    return;
+
+                var languages = curProject.Handler.TextData.FmgDescriptors.Languages;
+
+                var curLanguage = CFG.Current.TextEditor_Primary_Language_DS1;
+
+                DPI.ApplyInputWidth();
+                if (ImGui.BeginCombo("##inputValue", curLanguage))
                 {
-                    var languages = curProject.Handler.TextData.FmgDescriptors.Languages;
-
-                    var curLanguage = CFG.Current.TextEditor_Primary_Language_DS1;
-
-                    DPI.ApplyInputWidth();
-                    if (ImGui.BeginCombo("##inputValue", curLanguage))
+                    foreach (var entry in languages)
                     {
-                        foreach (var entry in languages)
+                        if (ImGui.Selectable(entry.Language))
                         {
-                            if (ImGui.Selectable(entry.Language))
-                            {
-                                CFG.Current.TextEditor_Primary_Language_DS1 = entry.Language;
+                            CFG.Current.TextEditor_Primary_Language_DS1 = entry.Language;
 
-                                // Refresh the param editor FMG decorators when the category changes.
-                                if (curProject.Handler.ParamEditor != null)
-                                {
-                                    var activeView = curProject.Handler.ParamEditor.ViewHandler.ActiveView;
-                                    activeView.RowDecorators.SetupFmgDecorators();
-                                }
+                            // Refresh the param editor FMG decorators when the category changes.
+                            if (curProject.Handler.ParamEditor != null)
+                            {
+                                var activeView = curProject.Handler.ParamEditor.ViewHandler.ActiveView;
+                                activeView.RowDecorators.SetupFmgDecorators();
                             }
                         }
-                        ImGui.EndCombo();
                     }
+                    ImGui.EndCombo();
                 }
             }
         };
@@ -140,31 +146,34 @@ public class TextEditorPrefs
             Draw = () => {
                 var curProject = Smithbox.Orchestrator.SelectedProject;
 
-                if (curProject.Handler.TextData != null)
+                if (curProject == null)
+                    return;
+
+                if (curProject.Handler.TextData == null)
+                    return;
+
+                var languages = curProject.Handler.TextData.FmgDescriptors.Languages;
+
+                var curLanguage = CFG.Current.TextEditor_Primary_Language_DS1R;
+
+                DPI.ApplyInputWidth();
+                if (ImGui.BeginCombo("##inputValue", curLanguage))
                 {
-                    var languages = curProject.Handler.TextData.FmgDescriptors.Languages;
-
-                    var curLanguage = CFG.Current.TextEditor_Primary_Language_DS1R;
-
-                    DPI.ApplyInputWidth();
-                    if (ImGui.BeginCombo("##inputValue", curLanguage))
+                    foreach (var entry in languages)
                     {
-                        foreach (var entry in languages)
+                        if (ImGui.Selectable(entry.Language))
                         {
-                            if (ImGui.Selectable(entry.Language))
-                            {
-                                CFG.Current.TextEditor_Primary_Language_DS1R = entry.Language;
+                            CFG.Current.TextEditor_Primary_Language_DS1R = entry.Language;
 
-                                // Refresh the param editor FMG decorators when the category changes.
-                                if (curProject.Handler.ParamEditor != null)
-                                {
-                                    var activeView = curProject.Handler.ParamEditor.ViewHandler.ActiveView;
-                                    activeView.RowDecorators.SetupFmgDecorators();
-                                }
+                            // Refresh the param editor FMG decorators when the category changes.
+                            if (curProject.Handler.ParamEditor != null)
+                            {
+                                var activeView = curProject.Handler.ParamEditor.ViewHandler.ActiveView;
+                                activeView.RowDecorators.SetupFmgDecorators();
                             }
                         }
-                        ImGui.EndCombo();
                     }
+                    ImGui.EndCombo();
                 }
             }
         };
@@ -190,31 +199,34 @@ public class TextEditorPrefs
             Draw = () => {
                 var curProject = Smithbox.Orchestrator.SelectedProject;
 
-                if (curProject.Handler.TextData != null)
+                if (curProject == null)
+                    return;
+
+                if (curProject.Handler.TextData == null)
+                    return;
+
+                var languages = curProject.Handler.TextData.FmgDescriptors.Languages;
+
+                var curLanguage = CFG.Current.TextEditor_Primary_Language_DS2;
+
+                DPI.ApplyInputWidth();
+                if (ImGui.BeginCombo("##inputValue", curLanguage))
                 {
-                    var languages = curProject.Handler.TextData.FmgDescriptors.Languages;
-
-                    var curLanguage = CFG.Current.TextEditor_Primary_Language_DS2;
-
-                    DPI.ApplyInputWidth();
-                    if (ImGui.BeginCombo("##inputValue", curLanguage))
+                    foreach (var entry in languages)
                     {
-                        foreach (var entry in languages)
+                        if (ImGui.Selectable(entry.Language))
                         {
-                            if (ImGui.Selectable(entry.Language))
-                            {
-                                CFG.Current.TextEditor_Primary_Language_DS2 = entry.Language;
+                            CFG.Current.TextEditor_Primary_Language_DS2 = entry.Language;
 
-                                // Refresh the param editor FMG decorators when the category changes.
-                                if (curProject.Handler.ParamEditor != null)
-                                {
-                                    var activeView = curProject.Handler.ParamEditor.ViewHandler.ActiveView;
-                                    activeView.RowDecorators.SetupFmgDecorators();
-                                }
+                            // Refresh the param editor FMG decorators when the category changes.
+                            if (curProject.Handler.ParamEditor != null)
+                            {
+                                var activeView = curProject.Handler.ParamEditor.ViewHandler.ActiveView;
+                                activeView.RowDecorators.SetupFmgDecorators();
                             }
                         }
-                        ImGui.EndCombo();
                     }
+                    ImGui.EndCombo();
                 }
             }
         };
@@ -240,31 +252,34 @@ public class TextEditorPrefs
             Draw = () => {
                 var curProject = Smithbox.Orchestrator.SelectedProject;
 
-                if (curProject.Handler.TextData != null)
+                if (curProject == null)
+                    return;
+
+                if (curProject.Handler.TextData == null)
+                    return;
+
+                var languages = curProject.Handler.TextData.FmgDescriptors.Languages;
+
+                var curLanguage = CFG.Current.TextEditor_Primary_Language_DS2S;
+
+                DPI.ApplyInputWidth();
+                if (ImGui.BeginCombo("##inputValue", curLanguage))
                 {
-                    var languages = curProject.Handler.TextData.FmgDescriptors.Languages;
-
-                    var curLanguage = CFG.Current.TextEditor_Primary_Language_DS2S;
-
-                    DPI.ApplyInputWidth();
-                    if (ImGui.BeginCombo("##inputValue", curLanguage))
+                    foreach (var entry in languages)
                     {
-                        foreach (var entry in languages)
+                        if (ImGui.Selectable(entry.Language))
                         {
-                            if (ImGui.Selectable(entry.Language))
-                            {
-                                CFG.Current.TextEditor_Primary_Language_DS2S = entry.Language;
+                            CFG.Current.TextEditor_Primary_Language_DS2S = entry.Language;
 
-                                // Refresh the param editor FMG decorators when the category changes.
-                                if (curProject.Handler.ParamEditor != null)
-                                {
-                                    var activeView = curProject.Handler.ParamEditor.ViewHandler.ActiveView;
-                                    activeView.RowDecorators.SetupFmgDecorators();
-                                }
+                            // Refresh the param editor FMG decorators when the category changes.
+                            if (curProject.Handler.ParamEditor != null)
+                            {
+                                var activeView = curProject.Handler.ParamEditor.ViewHandler.ActiveView;
+                                activeView.RowDecorators.SetupFmgDecorators();
                             }
                         }
-                        ImGui.EndCombo();
                     }
+                    ImGui.EndCombo();
                 }
             }
         };
@@ -290,31 +305,34 @@ public class TextEditorPrefs
             Draw = () => {
                 var curProject = Smithbox.Orchestrator.SelectedProject;
 
-                if (curProject.Handler.TextData != null)
+                if (curProject == null)
+                    return;
+
+                if (curProject.Handler.TextData == null)
+                    return;
+
+                var languages = curProject.Handler.TextData.FmgDescriptors.Languages;
+
+                var curLanguage = CFG.Current.TextEditor_Primary_Language_BB;
+
+                DPI.ApplyInputWidth();
+                if (ImGui.BeginCombo("##inputValue", curLanguage))
                 {
-                    var languages = curProject.Handler.TextData.FmgDescriptors.Languages;
-
-                    var curLanguage = CFG.Current.TextEditor_Primary_Language_BB;
-
-                    DPI.ApplyInputWidth();
-                    if (ImGui.BeginCombo("##inputValue", curLanguage))
+                    foreach (var entry in languages)
                     {
-                        foreach (var entry in languages)
+                        if (ImGui.Selectable(entry.Language))
                         {
-                            if (ImGui.Selectable(entry.Language))
-                            {
-                                CFG.Current.TextEditor_Primary_Language_BB = entry.Language;
+                            CFG.Current.TextEditor_Primary_Language_BB = entry.Language;
 
-                                // Refresh the param editor FMG decorators when the category changes.
-                                if (curProject.Handler.ParamEditor != null)
-                                {
-                                    var activeView = curProject.Handler.ParamEditor.ViewHandler.ActiveView;
-                                    activeView.RowDecorators.SetupFmgDecorators();
-                                }
+                            // Refresh the param editor FMG decorators when the category changes.
+                            if (curProject.Handler.ParamEditor != null)
+                            {
+                                var activeView = curProject.Handler.ParamEditor.ViewHandler.ActiveView;
+                                activeView.RowDecorators.SetupFmgDecorators();
                             }
                         }
-                        ImGui.EndCombo();
                     }
+                    ImGui.EndCombo();
                 }
             }
         };
@@ -340,31 +358,34 @@ public class TextEditorPrefs
             Draw = () => {
                 var curProject = Smithbox.Orchestrator.SelectedProject;
 
-                if (curProject.Handler.TextData != null)
+                if (curProject == null)
+                    return;
+
+                if (curProject.Handler.TextData == null)
+                    return;
+
+                var languages = curProject.Handler.TextData.FmgDescriptors.Languages;
+
+                var curLanguage = CFG.Current.TextEditor_Primary_Language_DS3;
+
+                DPI.ApplyInputWidth();
+                if (ImGui.BeginCombo("##inputValue", curLanguage))
                 {
-                    var languages = curProject.Handler.TextData.FmgDescriptors.Languages;
-
-                    var curLanguage = CFG.Current.TextEditor_Primary_Language_DS3;
-
-                    DPI.ApplyInputWidth();
-                    if (ImGui.BeginCombo("##inputValue", curLanguage))
+                    foreach (var entry in languages)
                     {
-                        foreach (var entry in languages)
+                        if (ImGui.Selectable(entry.Language))
                         {
-                            if (ImGui.Selectable(entry.Language))
-                            {
-                                CFG.Current.TextEditor_Primary_Language_DS3 = entry.Language;
+                            CFG.Current.TextEditor_Primary_Language_DS3 = entry.Language;
 
-                                // Refresh the param editor FMG decorators when the category changes.
-                                if (curProject.Handler.ParamEditor != null)
-                                {
-                                    var activeView = curProject.Handler.ParamEditor.ViewHandler.ActiveView;
-                                    activeView.RowDecorators.SetupFmgDecorators();
-                                }
+                            // Refresh the param editor FMG decorators when the category changes.
+                            if (curProject.Handler.ParamEditor != null)
+                            {
+                                var activeView = curProject.Handler.ParamEditor.ViewHandler.ActiveView;
+                                activeView.RowDecorators.SetupFmgDecorators();
                             }
                         }
-                        ImGui.EndCombo();
                     }
+                    ImGui.EndCombo();
                 }
             }
         };
@@ -390,31 +411,34 @@ public class TextEditorPrefs
             Draw = () => {
                 var curProject = Smithbox.Orchestrator.SelectedProject;
 
-                if (curProject.Handler.TextData != null)
+                if (curProject == null)
+                    return;
+
+                if (curProject.Handler.TextData == null)
+                    return;
+
+                var languages = curProject.Handler.TextData.FmgDescriptors.Languages;
+
+                var curLanguage = CFG.Current.TextEditor_Primary_Language_SDT;
+
+                DPI.ApplyInputWidth();
+                if (ImGui.BeginCombo("##inputValue", curLanguage))
                 {
-                    var languages = curProject.Handler.TextData.FmgDescriptors.Languages;
-
-                    var curLanguage = CFG.Current.TextEditor_Primary_Language_SDT;
-
-                    DPI.ApplyInputWidth();
-                    if (ImGui.BeginCombo("##inputValue", curLanguage))
+                    foreach (var entry in languages)
                     {
-                        foreach (var entry in languages)
+                        if (ImGui.Selectable(entry.Language))
                         {
-                            if (ImGui.Selectable(entry.Language))
-                            {
-                                CFG.Current.TextEditor_Primary_Language_SDT = entry.Language;
+                            CFG.Current.TextEditor_Primary_Language_SDT = entry.Language;
 
-                                // Refresh the param editor FMG decorators when the category changes.
-                                if (curProject.Handler.ParamEditor != null)
-                                {
-                                    var activeView = curProject.Handler.ParamEditor.ViewHandler.ActiveView;
-                                    activeView.RowDecorators.SetupFmgDecorators();
-                                }
+                            // Refresh the param editor FMG decorators when the category changes.
+                            if (curProject.Handler.ParamEditor != null)
+                            {
+                                var activeView = curProject.Handler.ParamEditor.ViewHandler.ActiveView;
+                                activeView.RowDecorators.SetupFmgDecorators();
                             }
                         }
-                        ImGui.EndCombo();
                     }
+                    ImGui.EndCombo();
                 }
             }
         };
@@ -440,31 +464,34 @@ public class TextEditorPrefs
             Draw = () => {
                 var curProject = Smithbox.Orchestrator.SelectedProject;
 
-                if (curProject.Handler.TextData != null)
+                if (curProject == null)
+                    return;
+
+                if (curProject.Handler.TextData == null)
+                    return;
+
+                var languages = curProject.Handler.TextData.FmgDescriptors.Languages;
+
+                var curLanguage = CFG.Current.TextEditor_Primary_Language_ER;
+
+                DPI.ApplyInputWidth();
+                if (ImGui.BeginCombo("##inputValue", curLanguage))
                 {
-                    var languages = curProject.Handler.TextData.FmgDescriptors.Languages;
-
-                    var curLanguage = CFG.Current.TextEditor_Primary_Language_ER;
-
-                    DPI.ApplyInputWidth();
-                    if (ImGui.BeginCombo("##inputValue", curLanguage))
+                    foreach (var entry in languages)
                     {
-                        foreach (var entry in languages)
+                        if (ImGui.Selectable(entry.Language))
                         {
-                            if (ImGui.Selectable(entry.Language))
-                            {
-                                CFG.Current.TextEditor_Primary_Language_ER = entry.Language;
+                            CFG.Current.TextEditor_Primary_Language_ER = entry.Language;
 
-                                // Refresh the param editor FMG decorators when the category changes.
-                                if (curProject.Handler.ParamEditor != null)
-                                {
-                                    var activeView = curProject.Handler.ParamEditor.ViewHandler.ActiveView;
-                                    activeView.RowDecorators.SetupFmgDecorators();
-                                }
+                            // Refresh the param editor FMG decorators when the category changes.
+                            if (curProject.Handler.ParamEditor != null)
+                            {
+                                var activeView = curProject.Handler.ParamEditor.ViewHandler.ActiveView;
+                                activeView.RowDecorators.SetupFmgDecorators();
                             }
                         }
-                        ImGui.EndCombo();
                     }
+                    ImGui.EndCombo();
                 }
             }
         };
@@ -490,31 +517,34 @@ public class TextEditorPrefs
             Draw = () => {
                 var curProject = Smithbox.Orchestrator.SelectedProject;
 
-                if (curProject.Handler.TextData != null)
+                if (curProject == null)
+                    return;
+
+                if (curProject.Handler.TextData == null)
+                    return;
+
+                var languages = curProject.Handler.TextData.FmgDescriptors.Languages;
+
+                var curLanguage = CFG.Current.TextEditor_Primary_Language_AC6;
+
+                DPI.ApplyInputWidth();
+                if (ImGui.BeginCombo("##inputValue", curLanguage))
                 {
-                    var languages = curProject.Handler.TextData.FmgDescriptors.Languages;
-
-                    var curLanguage = CFG.Current.TextEditor_Primary_Language_AC6;
-
-                    DPI.ApplyInputWidth();
-                    if (ImGui.BeginCombo("##inputValue", curLanguage))
+                    foreach (var entry in languages)
                     {
-                        foreach (var entry in languages)
+                        if (ImGui.Selectable(entry.Language))
                         {
-                            if (ImGui.Selectable(entry.Language))
-                            {
-                                CFG.Current.TextEditor_Primary_Language_AC6 = entry.Language;
+                            CFG.Current.TextEditor_Primary_Language_AC6 = entry.Language;
 
-                                // Refresh the param editor FMG decorators when the category changes.
-                                if (curProject.Handler.ParamEditor != null)
-                                {
-                                    var activeView = curProject.Handler.ParamEditor.ViewHandler.ActiveView;
-                                    activeView.RowDecorators.SetupFmgDecorators();
-                                }
+                            // Refresh the param editor FMG decorators when the category changes.
+                            if (curProject.Handler.ParamEditor != null)
+                            {
+                                var activeView = curProject.Handler.ParamEditor.ViewHandler.ActiveView;
+                                activeView.RowDecorators.SetupFmgDecorators();
                             }
                         }
-                        ImGui.EndCombo();
                     }
+                    ImGui.EndCombo();
                 }
             }
         };
@@ -540,31 +570,34 @@ public class TextEditorPrefs
             Draw = () => {
                 var curProject = Smithbox.Orchestrator.SelectedProject;
 
-                if (curProject.Handler.TextData != null)
+                if (curProject == null)
+                    return;
+
+                if (curProject.Handler.TextData == null)
+                    return;
+
+                var languages = curProject.Handler.TextData.FmgDescriptors.Languages;
+
+                var curLanguage = CFG.Current.TextEditor_Primary_Language_NR;
+
+                DPI.ApplyInputWidth();
+                if (ImGui.BeginCombo("##inputValue", curLanguage))
                 {
-                    var languages = curProject.Handler.TextData.FmgDescriptors.Languages;
-
-                    var curLanguage = CFG.Current.TextEditor_Primary_Language_NR;
-
-                    DPI.ApplyInputWidth();
-                    if (ImGui.BeginCombo("##inputValue", curLanguage))
+                    foreach (var entry in languages)
                     {
-                        foreach (var entry in languages)
+                        if (ImGui.Selectable(entry.Language))
                         {
-                            if (ImGui.Selectable(entry.Language))
-                            {
-                                CFG.Current.TextEditor_Primary_Language_NR = entry.Language;
+                            CFG.Current.TextEditor_Primary_Language_NR = entry.Language;
 
-                                // Refresh the param editor FMG decorators when the category changes.
-                                if (curProject.Handler.ParamEditor != null)
-                                {
-                                    var activeView = curProject.Handler.ParamEditor.ViewHandler.ActiveView;
-                                    activeView.RowDecorators.SetupFmgDecorators();
-                                }
+                            // Refresh the param editor FMG decorators when the category changes.
+                            if (curProject.Handler.ParamEditor != null)
+                            {
+                                var activeView = curProject.Handler.ParamEditor.ViewHandler.ActiveView;
+                                activeView.RowDecorators.SetupFmgDecorators();
                             }
                         }
-                        ImGui.EndCombo();
                     }
+                    ImGui.EndCombo();
                 }
             }
         };

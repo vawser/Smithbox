@@ -44,7 +44,6 @@ x
         (i.e. param: g_BlendMode = 6 should filter the list down to all files that contain a parameter called g_BlendMode set to 6)
         (i.e. texture: Path ~ fire should filter the list down to all files that contain a texture with the Path string that contains the string 'fire')
     - add list add/remove actions for the Param/Texture lists in a MTD
-    - implement changes needed for the MATBIN properties
     
 - File Browser:
     - Add File Mover utility to the File Browser: lets you move files from binders into other binders, i.e. from map-specific AI into common AI binder.
