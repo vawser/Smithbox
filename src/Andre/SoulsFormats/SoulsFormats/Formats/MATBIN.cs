@@ -122,6 +122,8 @@ namespace SoulsFormats
         /// </summary>
         public enum ParamType : uint
         {
+            None = 999,
+
             /// <summary>
             /// (bool) A 1-byte boolean.
             /// </summary>

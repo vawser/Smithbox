@@ -13,7 +13,8 @@
  - Add multi-select for the value list (and to duplicate/delete/export)
  
 - Material Editor:
- - Add MATBIN support back for the params (the value cannot be edited currently)
+ - Fix: add new param/sample
+ - Fix: remove param/sample
  
 - Param Editor
  - Look into making row merges for tabulated params functional and simple

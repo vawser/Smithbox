@@ -3,6 +3,7 @@ using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Keybinds;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Numerics;
 
@@ -24,13 +25,47 @@ public class MaterialFileList
         Parent = view;
         Project = project;
     }
+
     public void Draw(float width, float height)
     {
-        UIHelper.SimpleHeader("Files", "");
+        DisplayTitle();
+        DisplayHeader();
+        DisplayFileList(width, height);
 
-        EditorFilters.DisplayFramedListFilter("materialEditor_FileList",
+    }
+
+    public void DisplayTitle()
+    {
+        UIHelper.SimpleHeader($"File List", "");
+    }
+
+    public void DisplayHeader()
+    {
+        var searchHeight = new Vector2(0, 36) * DPI.UIScale();
+        ImGui.BeginChild("MaterialFileListHeaderSection", searchHeight, ImGuiChildFlags.Borders);
+
+        EditorFilters.DisplayListFilter("materialEditor_FileList",
             ref FileListFilter, ref ExactFileListFilter);
 
+        // Display Path
+        ImGui.SameLine();
+
+        if (ImGui.Button($"{Icons.Bars}"))
+        {
+            CFG.Current.MaterialEditor_FileList_DisplayFullPath = !CFG.Current.MaterialEditor_FileList_DisplayFullPath;
+        }
+
+        var displayPathMode = "Hide Full Path";
+        if (CFG.Current.MaterialEditor_FileList_DisplayFullPath)
+            displayPathMode = "Display Full Path";
+
+        UIHelper.Tooltip($"Toggle the display of the full path.\nCurrent Mode: {displayPathMode}");
+
+        ImGui.EndChild();
+    }
+
+    public void DisplayFileList(float width, float height)
+    {
         ImGui.BeginChild("FileList", new Vector2(width, height), ImGuiChildFlags.Borders);
 
         // MTD
@@ -166,6 +201,11 @@ public class MaterialFileList
             {
                 newName = path.Replace(curConfig.CommonPath, "");
             }
+        }
+
+        if(!CFG.Current.MaterialEditor_FileList_DisplayFullPath)
+        {
+            newName = Path.GetFileNameWithoutExtension(newName);
         }
 
         return newName;

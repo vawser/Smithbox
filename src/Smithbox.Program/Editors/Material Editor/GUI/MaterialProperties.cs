@@ -30,9 +30,20 @@ public class MaterialProperties
     {
         var scale = DPI.UIScale();
 
-        UIHelper.SimpleHeader("Properties", "");
+        DisplayTitle();
+        DisplayHeader();
+        DisplayPropertyList();
 
-        // Header
+        ProcessListActions();
+    }
+
+    public void DisplayTitle()
+    {
+        UIHelper.SimpleHeader($"Properties", "");
+    }
+
+    public void DisplayHeader()
+    {
         var searchHeight = new Vector2(0, 36) * DPI.UIScale();
         ImGui.BeginChild("MaterialPropertySectionHeader", searchHeight, ImGuiChildFlags.Borders);
 
@@ -54,7 +65,10 @@ public class MaterialProperties
         UIHelper.Tooltip($"Toggle field name display type between Internal and Community.\nCurrent Mode: {communityFieldNameMode}");
 
         ImGui.EndChild();
+    }
 
+    public void DisplayPropertyList()
+    {
         ImGui.BeginChild("MaterialProperties", ImGuiChildFlags.Borders);
 
         // var meta = Editor.Project.MaterialData.Meta.GetMeta(type, false);
@@ -83,7 +97,7 @@ public class MaterialProperties
             {
                 if (Parent.Selection.SelectedMTD != null)
                 {
-                    PropertyHandler(Parent.Selection.SelectedMTD);
+                    PropertyHandler("MTD", Parent.Selection.SelectedMTD);
                 }
             }
 
@@ -91,7 +105,7 @@ public class MaterialProperties
             {
                 if (Parent.Selection.SelectedMATBIN != null)
                 {
-                    PropertyHandler(Parent.Selection.SelectedMATBIN);
+                    PropertyHandler("MATBIN", Parent.Selection.SelectedMATBIN);
                 }
             }
         }
@@ -99,11 +113,10 @@ public class MaterialProperties
         ImGui.Columns(1);
 
         ImGui.EndChild();
-
-        ProcessListActions();
     }
 
     private void PropertyHandler(
+        string implType,
         object obj,
         int classIndex = -1
     )
@@ -204,7 +217,7 @@ public class MaterialProperties
 
                             if (classOpen)
                             {
-                                PropertyHandler(o, i);
+                                PropertyHandler(implType, o, i);
 
                                 ImGui.TreePop();
                             }
@@ -214,7 +227,15 @@ public class MaterialProperties
                             ImGui.AlignTextToFramePadding();
                             var array = obj as object[];
 
-                            DisplayModelPropertyLine(obj, prop, typ.GetElementType(), a.GetValue(i), $@"{fieldName}[{i}]", i, classIndex);
+                            if (implType == "MTD")
+                            {
+                                DisplayMtdPropertyLine(obj, prop, typ.GetElementType(), a.GetValue(i), $@"{fieldName}[{i}]", i, classIndex);
+                            }
+
+                            if (implType == "MATBIN")
+                            {
+                                DisplayMatbinPropertyLine(obj, prop, typ.GetElementType(), a.GetValue(i), $@"{fieldName}[{i}]", i, classIndex);
+                            }
                         }
 
                         ImGui.PopID();
@@ -281,7 +302,7 @@ public class MaterialProperties
 
                                 if (open)
                                 {
-                                    PropertyHandler(o);
+                                    PropertyHandler(implType, o);
 
                                     ImGui.TreePop();
                                 }
@@ -290,7 +311,16 @@ public class MaterialProperties
                             }
                             else
                             {
-                                DisplayModelPropertyLine(obj, prop, arrtyp, itemprop.GetValue(l, [i]), $@"{fieldName}[{i}]", i, classIndex);
+
+                                if (implType == "MTD")
+                                {
+                                    DisplayMtdPropertyLine(obj, prop, arrtyp, itemprop.GetValue(l, [i]), $@"{fieldName}[{i}]", i, classIndex);
+                                }
+
+                                if (implType == "MATBIN")
+                                {
+                                    DisplayMatbinPropertyLine(obj, prop, arrtyp, itemprop.GetValue(l, [i]), $@"{fieldName}[{i}]", i, classIndex);
+                                }
 
                                 ImGui.PopID();
                             }
@@ -316,7 +346,29 @@ public class MaterialProperties
 
                     var actualParam = (MTD.Param)obj;
 
-                    DisplayModelPropertyLine(obj, prop, actualType, o, $"{fieldName}", classIndex, -1, actualParam.Type);
+                    if (implType == "MTD")
+                    {
+                        DisplayMtdPropertyLine(obj, prop, actualType, o, $"{fieldName}", classIndex, -1, actualParam.Type);
+                    }
+                }
+
+                ImGui.PopID();
+            }
+            // MATBIN Param 'Value' line
+            else if (Parent.Selection.SourceType is MaterialSourceType.MATBIN &&
+                prop.Name == "Value" && typ.IsClass && typ != typeof(string) && !typ.IsArray)
+            {
+                var o = prop.GetValue(obj);
+                if (o != null)
+                {
+                    var actualType = typ;
+
+                    var actualParam = (MATBIN.Param)obj;
+
+                    if (implType == "MATBIN")
+                    {
+                        DisplayMatbinPropertyLine(obj, prop, actualType, o, $"{fieldName}", classIndex, -1, actualParam.Type);
+                    }
                 }
 
                 ImGui.PopID();
@@ -341,7 +393,7 @@ public class MaterialProperties
                     // Class properties
                     if (open)
                     {
-                        PropertyHandler(o);
+                        PropertyHandler(implType, o);
                         ImGui.TreePop();
                     }
                 }
@@ -351,7 +403,15 @@ public class MaterialProperties
             // Property Line
             else
             {
-                DisplayModelPropertyLine(obj, prop, typ, prop.GetValue(obj), $"{fieldName}", classIndex);
+                if (implType == "MTD")
+                {
+                    DisplayMtdPropertyLine(obj, prop, typ, prop.GetValue(obj), $"{fieldName}", classIndex);
+                }
+
+                if (implType == "MATBIN")
+                {
+                    DisplayMatbinPropertyLine(obj, prop, typ, prop.GetValue(obj), $"{fieldName}", classIndex);
+                }
 
                 ImGui.PopID();
             }
@@ -360,7 +420,8 @@ public class MaterialProperties
         }
     }
 
-    private void DisplayModelPropertyLine(
+    // MTD
+    private void DisplayMtdPropertyLine(
         object sourceObj,
         PropertyInfo prop,
         Type type,
@@ -368,7 +429,7 @@ public class MaterialProperties
         string name,
         int arrayIndex = -1,
         int classIndex = -1,
-        ParamType paramType = ParamType.None
+        MTD.ParamType paramType = MTD.ParamType.None
     )
     {
         OpenMaterialPropertyContextMenu();
@@ -407,7 +468,73 @@ public class MaterialProperties
         object newval;
 
         // Property Editor UI
-        (bool, bool) propEditResults = Parent.PropertyInput.HandlePropertyInput(type, oldval, out newval, prop, sourceObj, paramType);
+        (bool, bool) propEditResults = Parent.PropertyInput.HandleMtdPropertyInput(type, oldval, out newval, prop, sourceObj, paramType);
+
+        var changed = propEditResults.Item1;
+        var committed = propEditResults.Item2;
+
+        DisplayMaterialPropertyContextMenu(prop, obj, arrayIndex, fieldName);
+
+        if (ImGui.IsItemActive() && !ImGui.IsWindowFocused())
+        {
+            ImGui.SetItemDefaultFocus();
+        }
+
+        Parent.PropertyInput.UpdateProperty(prop, sourceObj, oldval, newval, changed, committed, arrayIndex, classIndex);
+
+        ImGui.NextColumn();
+    }
+
+
+    // MATBIN
+    private void DisplayMatbinPropertyLine(
+        object sourceObj,
+        PropertyInfo prop,
+        Type type,
+        object obj,
+        string name,
+        int arrayIndex = -1,
+        int classIndex = -1,
+        MATBIN.ParamType paramType = MATBIN.ParamType.None
+    )
+    {
+        OpenMaterialPropertyContextMenu();
+
+        // var meta = Editor.Project.MapData.Meta.GetFieldMeta(prop.Name, prop.ReflectedType);
+
+        // Field Name
+        var fieldName = prop.Name;
+
+        //if (CFG.Current.MapEditor_Enable_Commmunity_Names && !meta.IsEmpty)
+        //{
+        //    fieldName = meta.AltName;
+
+        //    if (meta.ArrayProperty)
+        //    {
+        //        fieldName = $"{meta.AltName}: {arrayIndex}";
+        //    }
+        //}
+
+        // Field Description
+        var fieldDescription = "";
+
+        //if (!meta.IsEmpty)
+        //{
+        //    fieldDescription = meta.Wiki;
+        //}
+
+        ImGui.Text(fieldName);
+
+        ShowFieldHint(obj, prop, fieldDescription);
+
+        ImGui.NextColumn();
+        ImGui.SetNextItemWidth(-1);
+
+        var oldval = obj;
+        object newval;
+
+        // Property Editor UI
+        (bool, bool) propEditResults = Parent.PropertyInput.HandleMatbinPropertyInput(type, oldval, out newval, prop, sourceObj, paramType);
 
         var changed = propEditResults.Item1;
         var committed = propEditResults.Item2;

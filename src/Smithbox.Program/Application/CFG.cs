@@ -919,10 +919,12 @@ public class CFG
     /// Material Editor
     ///------------------------------------------------------------
     // General
-    public bool MaterialEditor_Properties_Display_Community_Names = false;
-
     public float MaterialEditor_Display_ContainerList_Percentage = 0.2f;
     public float MaterialEditor_Display_FileList_Percentage = 0.8f;
+
+    public bool MaterialEditor_FileList_DisplayFullPath = false;
+
+    public bool MaterialEditor_Properties_Display_Community_Names = false;
 
     // Windows
     public bool Interface_MaterialEditor_ToolWindow = true;
