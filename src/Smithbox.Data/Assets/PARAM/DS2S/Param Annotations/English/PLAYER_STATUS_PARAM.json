@@ -76,13 +76,13 @@
     },
     {
       "Field": "enduranceLevel",
-      "Name": "Durability",
-      "Description": "Character durability or equipment degradation resistance stat."
+      "Name": "Adaptability",
+      "Description": "Character agility or quickness-related stat."
     },
     {
       "Field": "quicknessLevel",
-      "Name": "Adaptability",
-      "Description": "Character agility or quickness-related stat."
+      "Name": "Durability",
+      "Description": "Character durability or equipment degradation resistance stat."
     },
     {
       "Field": "luckLevel",
