@@ -45,6 +45,15 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
             }
             )));
 
+        filterList.Add("auxmodified", newCmd(new string[0],
+            "Selects rows which do not match the aux version, or are added. Ignores row name", noArgs(context =>
+            {
+                var paramName = context.Item1.GetKeyForParam(context.Item2);
+                HashSet<int> cache = context.Item1.GetPrimaryDiffRows(paramName);
+                return row => cache.Contains(row.ID);
+            }
+            )));
+
         filterList.Add("named", newCmd(new string[0],
             "Selects rows whose name isn't blank or null", (args, lenient) =>
             {

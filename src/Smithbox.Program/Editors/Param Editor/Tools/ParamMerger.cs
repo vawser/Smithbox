@@ -27,6 +27,9 @@ public class ParamMerger
     public string TargetParamFilter = "";
     public Dictionary<string, bool> TargetParams = new();
 
+    public bool ParamMerge_IncludeAdded = true;
+    public bool ParamMerge_IncludeModified = true;
+
     public ParamMerger(ParamEditorScreen editor, ProjectEntry project)
     {
         Editor = editor;
@@ -90,8 +93,11 @@ public class ParamMerger
             UIHelper.WrappedText("");
             UIHelper.SimpleHeader("Options", "Options to apply when merging.");
 
-            ImGui.Checkbox("Merge Unique Row IDs only", ref ParamMerge_TargetUniqueOnly);
-            UIHelper.Tooltip("If enabled, rows where the ID is unique will be merged.");
+            ImGui.Checkbox("Include Added", ref ParamMerge_IncludeAdded);
+            UIHelper.Tooltip("If enabled, added rows in the target project will be merged into this project.");
+
+            ImGui.Checkbox("Include Modified", ref ParamMerge_IncludeModified);
+            UIHelper.Tooltip("If enabled, modified rows in the target project (compared to this project) will be merged into this project.");
 
             // Target Params
             UIHelper.WrappedText("");
@@ -164,17 +170,19 @@ public class ParamMerger
 
     public void LoadProjectAction()
     {
+        if (ParamMerge_TargetProject == null)
+            return;
+
         var paramData = Project.Handler.ParamData;
 
-        if (!paramData.AuxBanks.ContainsKey(ParamMerge_TargetProject.Descriptor.ProjectName))
-        {
-            Task<bool> loadTask = paramData.SetupAuxBank(ParamMerge_TargetProject, true);
+        Task<bool> loadTask = paramData.SetupAuxBank(ParamMerge_TargetProject, true);
 
-            Task.WaitAll(loadTask);
+        Task.WaitAll(loadTask);
 
-            paramData.RefreshParamDifferenceCacheTask(true);
-            TargetParams = new();
-        }
+        paramData.RefreshParamDifferenceCacheTask(true);
+        TargetParams = new();
+
+        Smithbox.Log<ParamMerger>($"Loaded target project: {ParamMerge_TargetProject.Descriptor.ProjectName} for Param Merge.");
     }
 
     public void MergeParamsAction()
@@ -190,21 +198,39 @@ public class ParamMerger
         // RowSearchEngine: modified && unique ID:
         // MERowOperation: paste
 
-        foreach (var entry in TargetParams)
+        // Added
+        if (ParamMerge_IncludeAdded)
         {
-            if (entry.Value)
+            foreach (var entry in TargetParams)
             {
-                var command = $"auxparam {ParamMerge_TargetProject.Descriptor.ProjectName} {entry.Key}: modified ID: paste;";
-
-                if (ParamMerge_TargetUniqueOnly)
+                if (entry.Value)
                 {
-                    command = $"auxparam {ParamMerge_TargetProject.Descriptor.ProjectName} {entry.Key}: modified && unique ID: paste;";
-                }
+                    var command = $"auxparam {ParamMerge_TargetProject.Descriptor.ProjectName} {entry.Key}: added: paste;";
 
-                Editor.ViewHandler.ActiveView.MassEdit.ApplyMassEdit(command);
+                    Editor.ViewHandler.ActiveView.MassEdit.ApplyMassEdit(command);
+                }
+            }
+        }
+        if (ParamMerge_IncludeModified)
+        {
+            foreach (var entry in TargetParams)
+            {
+                if (entry.Value)
+                {
+                    var command = $"auxparam {ParamMerge_TargetProject.Descriptor.ProjectName} {entry.Key}: auxmodified: paste;";
+
+                    if(!ParamMerge_IncludeAdded)
+                    {
+                        command = $"auxparam {ParamMerge_TargetProject.Descriptor.ProjectName} {entry.Key}: !added && auxmodified: paste;";
+                    }
+
+                    Editor.ViewHandler.ActiveView.MassEdit.ApplyMassEdit(command);
+                }
             }
         }
 
         ParamMerge_InProgress = false;
+
+        Smithbox.Log<ParamMerger>($"Merged target project rows: {ParamMerge_TargetProject.Descriptor.ProjectName} into this project.");
     }
 }
