@@ -28,7 +28,7 @@ public class GparamSelection
     public int _selectedFieldValueKey;
     public int _selectedFieldValueIndex;
 
-    public SortedDictionary<int, int> SelectedFieldValues = new();
+    public SortedDictionary<int, GPARAM.IFieldValue> SelectedFieldValues = new();
 
     public int DuplicateValueID = 0;
     public int DuplicateValueOffset = 0;
@@ -241,19 +241,18 @@ public class GparamSelection
             {
                 if (!SelectedFieldValues.ContainsKey(k) && k < fieldList.Values.Count)
                 {
-                    foreach (var val in fieldList.Values)
-                    {
-                        var isMatch = EditorFilters.IsMatch(
-                            Parent.FieldValueListView.ValueListFilter,
-                            val.ID.ToString(),
-                            Parent.FieldValueListView.ExactValueListFilter);
+                    var curValue = fieldList.Values.ElementAt(k);
 
-                        if (isMatch)
+                    var isMatch = EditorFilters.IsMatch(
+                        Parent.FieldValueListView.ValueListFilter,
+                        curValue.ID.ToString(),
+                        Parent.FieldValueListView.ExactValueListFilter);
+
+                    if (isMatch)
+                    {
+                        if (!SelectedFieldValues.ContainsKey(k))
                         {
-                            if (!SelectedFieldValues.ContainsKey(k))
-                            {
-                                SelectedFieldValues.Add(k, val.ID);
-                            }
+                            SelectedFieldValues.Add(k, curValue);
                         }
                     }
                 }
@@ -276,7 +275,7 @@ public class GparamSelection
 
                         if (!SelectedFieldValues.ContainsKey(currentIndex))
                         {
-                            SelectedFieldValues.Add(currentIndex, curEntry.ID);
+                            SelectedFieldValues.Add(currentIndex, curEntry);
                         }
                     }
                 }
@@ -293,7 +292,7 @@ public class GparamSelection
 
                 if (!SelectedFieldValues.ContainsKey(currentIndex))
                 {
-                    SelectedFieldValues.Add(currentIndex, curEntry.ID);
+                    SelectedFieldValues.Add(currentIndex, curEntry);
                 }
             }
         }
@@ -361,5 +360,10 @@ public class GparamSelection
         }
 
         return null;
+    }
+
+    public List<GPARAM.IFieldValue> GetSelectedValues()
+    {
+        return SelectedFieldValues.Values.ToList();
     }
 }

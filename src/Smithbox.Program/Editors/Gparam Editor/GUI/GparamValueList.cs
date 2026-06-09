@@ -470,20 +470,20 @@ public class GparamValueList
 
     private void Shortcuts(GPARAM data, GPARAM.Param group, IField field)
     {
-        var value = Parent.Selection.GetSelectedValue();
+        var values = Parent.Selection.GetSelectedValues();
 
         if (FocusManager.IsFocus(EditorFocusContext.GparamEditor_Properties))
         {
             // Duplicate
             if (InputManager.IsPressed(KeybindID.Duplicate))
             {
-                AddValues(data, group, field, new List<IFieldValue>() { value }, true);
+                AddValues(data, group, field, values, true);
             }
 
             // Delete
             if (InputManager.IsPressed(KeybindID.Delete))
             {
-                DeleteValues(data, group, field, new List<IFieldValue>() { value });
+                DeleteValues(data, group, field, values);
             }
         }
     }
@@ -508,9 +508,9 @@ public class GparamValueList
         var data = Parent.Selection.GetSelectedGparam();
         var group = Parent.Selection.GetSelectedGroup();
         var field = Parent.Selection.GetSelectedField();
-        var value = Parent.Selection.GetSelectedValue();
+        var values = Parent.Selection.GetSelectedValues();
 
-        AddValues(data, group, field, new List<IFieldValue>() { value }, true);
+        AddValues(data, group, field, values, true);
     }
 
     public void DeleteValuesShortcut()
@@ -518,9 +518,9 @@ public class GparamValueList
         var data = Parent.Selection.GetSelectedGparam();
         var group = Parent.Selection.GetSelectedGroup();
         var field = Parent.Selection.GetSelectedField();
-        var value = Parent.Selection.GetSelectedValue();
+        var values = Parent.Selection.GetSelectedValues();
 
-        DeleteValues(data, group, field, new List<IFieldValue>() { value });
+        DeleteValues(data, group, field, values);
     }
 }
 
