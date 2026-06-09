@@ -132,7 +132,7 @@ public class GlobalSearchTool : IMapQueryEngine
             UIHelper.Spacer();
             UIHelper.SimpleHeader("Value Filter", "Target this specific string when querying the property value. Supports regex.\n\n" + $"Multiple filters can be used by using the '|' symbol between each filter, acting as an OR operator.");
 
-            UIHelper.SinglelineTextInput("PropValueFilter", ref _searchInputProperty);
+            UIHelper.SinglelineTextInput("PropValueFilter", ref _searchInputValue);
 
             if (ImGui.BeginPopupContextItem($"ValueFilterContextMenu"))
             {
@@ -206,7 +206,7 @@ public class GlobalSearchTool : IMapQueryEngine
                     "copyResults", "Copy Results to Clipboard", "", CopyResultsToClipboard);
 
                 UIHelper.Spacer();
-                UIHelper.SimpleHeader("Fitlers", "");
+                UIHelper.SimpleHeader("Filters", "");
 
                 ImGui.Checkbox("Header", ref CFG.Current.GlobalMapSearch_CopyResults_IncludeHeader);
                 UIHelper.Tooltip("Include the map headers in the clipboard text.");
