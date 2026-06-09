@@ -47,7 +47,7 @@ public class EnflEditor
                 View.Selection.SelectedList = entry.Value;
 
                 var loadTask = primaryBank.LoadEntryFileList(entry.Key);
-                if (loadTask.Result)
+                if (loadTask)
                 {
                     Smithbox.Log<MsbEditor>($"Loaded entry file list: {entry.Key.Filename}");
                 }
@@ -61,7 +61,7 @@ public class EnflEditor
                 View.Selection.SelectedList = entry.Value;
 
                 var loadTask = primaryBank.LoadEntryFileList(entry.Key);
-                if (loadTask.Result)
+                if (loadTask)
                 {
                     Smithbox.Log<MsbEditor>($"Loaded entry file list: {entry.Key.Filename}");
                 }

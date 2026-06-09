@@ -32,10 +32,9 @@ public class MapDataHandler : IDisposable
         PrimaryBank_ENFL = new("Primary", Project, Project.VFS.FS);
 
         // Primary Bank (MSB)
-        Task<bool> primaryBankMsbTask = PrimaryBank_MSB.Setup();
-        bool primaryBankMsbTaskResult = await primaryBankMsbTask;
+        bool primaryBankMsbTask = PrimaryBank_MSB.Setup();
 
-        if (!primaryBankMsbTaskResult)
+        if (!primaryBankMsbTask)
         {
             Smithbox.LogError(this, $"[Map Data Editor] Failed to setup the Primary MSB Bank.");
         }
@@ -45,10 +44,9 @@ public class MapDataHandler : IDisposable
         }
 
         // Primary Bank (ENFL)
-        Task<bool> primaryBankEnflTask = PrimaryBank_ENFL.Setup();
-        bool primaryBankEnflTaskResult = await primaryBankEnflTask;
+        bool primaryBankEnflTask = PrimaryBank_ENFL.Setup();
 
-        if (!primaryBankMsbTaskResult)
+        if (!primaryBankEnflTask)
         {
             Smithbox.LogError(this, $"[Map Data Editor] Failed to setup the Primary ENFL Bank.");
         }

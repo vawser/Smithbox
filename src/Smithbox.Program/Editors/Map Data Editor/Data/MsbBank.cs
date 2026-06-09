@@ -30,7 +30,7 @@ public class MsbBank : IDisposable
         TargetFS = targetFs;
     }
 
-    public async Task<bool> Setup()
+    public bool Setup()
     {
         foreach(var entry in Project.Locator.MapFiles.Entries)
         {
@@ -43,7 +43,7 @@ public class MsbBank : IDisposable
         return true;
     }
 
-    public async Task<bool> LoadMap(FileDictionaryEntry fileEntry)
+    public bool LoadMap(FileDictionaryEntry fileEntry)
     {
         IMsb msb;
 
@@ -223,7 +223,7 @@ public class MsbBank : IDisposable
         return true;
     }
 
-    public async Task<bool> SaveMap(MapDataEditorView view, FileDictionaryEntry fileEntry)
+    public bool SaveMap(MapDataEditorView view, FileDictionaryEntry fileEntry)
     {
         if (Maps.ContainsKey(fileEntry))
         {

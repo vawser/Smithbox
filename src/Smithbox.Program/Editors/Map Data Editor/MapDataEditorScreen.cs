@@ -210,7 +210,7 @@ public class MapDataEditorScreen : EditorScreen
         }
     }
 
-    public async void Save(bool autoSave = false)
+    public void Save(bool autoSave = false)
     {
         var mapDataHandler = Project.Handler.MapDataHandler;
         var activeView = ViewHandler.ActiveView;
@@ -234,7 +234,7 @@ public class MapDataEditorScreen : EditorScreen
 
                 // TODO: add dirty check so we only save maps that have been edited
                 var saveTask = mapDataHandler.PrimaryBank_MSB.SaveMap(activeView, entry.Key);
-                if(saveTask.Result)
+                if(saveTask)
                 {
                     Smithbox.Log<MsbEditor>($"Saved map: {entry.Key.Filename}");
                 }
@@ -257,7 +257,7 @@ public class MapDataEditorScreen : EditorScreen
 
                 // TODO: add dirty check so we only save maps that have been edited
                 var saveTask = mapDataHandler.PrimaryBank_ENFL.SaveEntryFileList(activeView, entry.Key);
-                if (saveTask.Result)
+                if (saveTask)
                 {
                     Smithbox.Log<MsbEditor>($"Saved entry file list: {entry.Key.Filename}");
                 }

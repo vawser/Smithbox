@@ -17,8 +17,8 @@ public class GparamValueList
     private GparamEditorView Parent;
     private ProjectEntry Project;
 
-    private string ValueListFilter = "";
-    private bool ExactValueListFilter = false;
+    public string ValueListFilter = "";
+    public bool ExactValueListFilter = false;
 
     public GparamValueList(GparamEditorView view, ProjectEntry project)
     {
@@ -155,7 +155,7 @@ public class GparamValueList
     public void GparamProperty_Row(FileDictionaryEntry fileEntry, GPARAM data, GPARAM.Param group,
         IField field, IFieldValue value, int index)
     {
-        var isSelected = index == Parent.Selection._selectedFieldValueIndex;
+        var isSelected = Parent.Selection.IsValueSelected(index);
 
         ImGui.AlignTextToFramePadding();
         if (ImGui.Selectable($"Row {index}##{index}", isSelected))

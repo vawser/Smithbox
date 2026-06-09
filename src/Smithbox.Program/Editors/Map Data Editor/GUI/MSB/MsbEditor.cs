@@ -75,7 +75,7 @@ public class MsbEditor
                 View.Selection.SelectedMapDescriptor = entry.Key;
 
                 var loadTask = primaryBank.LoadMap(entry.Key);
-                if(loadTask.Result)
+                if(loadTask)
                 {
                     View.Selection.SelectedMap = primaryBank.Maps[entry.Key];
                     View.Selection.ResetMsbSelection();
@@ -96,7 +96,7 @@ public class MsbEditor
                 View.Selection.SelectedMapDescriptor = entry.Key;
 
                 var loadTask = primaryBank.LoadMap(entry.Key);
-                if (loadTask.Result)
+                if (loadTask)
                 {
                     View.Selection.SelectedMap = primaryBank.Maps[entry.Key];
                     View.Selection.ResetMsbSelection();

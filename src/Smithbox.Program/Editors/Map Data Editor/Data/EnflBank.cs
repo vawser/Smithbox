@@ -27,7 +27,7 @@ public class EnflBank : IDisposable
         TargetFS = targetFs;
     }
 
-    public async Task<bool> Setup()
+    public bool Setup()
     {
         foreach (var entry in Project.Locator.EntryFileListFiles.Entries)
         {
@@ -41,7 +41,7 @@ public class EnflBank : IDisposable
     }
 
 
-    public async Task<bool> LoadEntryFileList(FileDictionaryEntry fileEntry)
+    public bool LoadEntryFileList(FileDictionaryEntry fileEntry)
     {
         ENFL entryFileList;
 
@@ -73,7 +73,7 @@ public class EnflBank : IDisposable
         return true;
     }
 
-    public async Task<bool> SaveEntryFileList(MapDataEditorView view, FileDictionaryEntry fileEntry)
+    public bool SaveEntryFileList(MapDataEditorView view, FileDictionaryEntry fileEntry)
     {
         if (EntryFileLists.ContainsKey(fileEntry))
         {

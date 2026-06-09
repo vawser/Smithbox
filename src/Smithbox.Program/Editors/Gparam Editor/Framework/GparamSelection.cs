@@ -1,6 +1,10 @@
-﻿using Hexa.NET.ImGui;
+﻿using Google.Protobuf.WellKnownTypes;
+using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Application;
+using StudioCore.Editors.Common;
+using StudioCore.Keybinds;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace StudioCore.Editors.GparamEditor;
@@ -23,6 +27,8 @@ public class GparamSelection
 
     public int _selectedFieldValueKey;
     public int _selectedFieldValueIndex;
+
+    public SortedDictionary<int, int> SelectedFieldValues = new();
 
     public int DuplicateValueID = 0;
     public int DuplicateValueOffset = 0;
@@ -47,6 +53,8 @@ public class GparamSelection
         ResetGparamGroupSelection();
         ResetGparamFieldSelection();
         ResetGparamFieldValueSelection();
+
+        SelectedFieldValues.Clear();
     }
 
     public bool CanAffectSelection()
@@ -54,7 +62,7 @@ public class GparamSelection
         if(IsFileSelected() && 
             IsGparamGroupSelected() && 
             IsGparamFieldSelected() && 
-            IsGparamFieldValueSelected())
+            HasValidFieldValueSelection())
         {
             return true;
         }
@@ -66,24 +74,32 @@ public class GparamSelection
     {
         _selectedGparam = null;
         _selectedGparamKey = "";
+
+        SelectedFieldValues.Clear();
     }
 
     public void ResetGparamGroupSelection()
     {
         _selectedParamGroupKey = null;
         _selectedParamGroupIndex = -1;
+
+        SelectedFieldValues.Clear();
     }
 
     public void ResetGparamFieldSelection()
     {
         _selectedParamFieldKey = null;
         _selectedParamFieldIndex = -1;
+
+        SelectedFieldValues.Clear();
     }
 
     public void ResetGparamFieldValueSelection()
     {
         _selectedFieldValueKey = -1;
         _selectedFieldValueIndex = -1;
+
+        SelectedFieldValues.Clear();
     }
 
     /// <summary>
@@ -168,12 +184,33 @@ public class GparamSelection
         Parent.QuickEditHandler.targetParamField = entry;
     }
 
-    /// <summary>
-    /// Has the selected GPARAM field value.
-    /// </summary>
-    public bool IsGparamFieldValueSelected()
+    public bool HasSpecificFieldValueSelection(int index)
     {
-        if (_selectedFieldValueKey != -1 && _selectedFieldValueIndex != -1)
+        return SelectedFieldValues.ContainsKey(index);
+    }
+
+    public bool HasValidFieldValueSelection()
+    {
+        if (SelectedFieldValues.Count < 1)
+        {
+            return false;
+        }
+
+        return true;
+    }
+
+    public void SetGparamFieldValue(int index, GPARAM.IFieldValue entry)
+    {
+        HandleMultiselection(_selectedFieldValueIndex, index, entry);
+
+        _selectedFieldValueKey = entry.ID;
+        _selectedFieldValueIndex = index;
+        DuplicateValueID = entry.ID;
+    }
+
+    public bool IsValueSelected(int index)
+    {
+        if (HasSpecificFieldValueSelection(index) || _selectedFieldValueIndex == index)
         {
             return true;
         }
@@ -181,14 +218,85 @@ public class GparamSelection
         return false;
     }
 
-    /// <summary>
-    /// Set the selected GPARAM field value.
-    /// </summary>
-    public void SetGparamFieldValue(int index, GPARAM.IFieldValue entry)
+    public void HandleMultiselection(int currentSelectionIndex, int currentIndex, GPARAM.IFieldValue entry)
     {
-        _selectedFieldValueKey = entry.ID;
-        _selectedFieldValueIndex = index;
-        DuplicateValueID = entry.ID;
+        var fieldList = GetSelectedField();
+
+        if (fieldList == null)
+            return;
+
+        // Multi-Select: Range Select
+        if (InputManager.HasShiftDown())
+        {
+            var start = currentSelectionIndex;
+            var end = currentIndex;
+
+            if (end < start)
+            {
+                start = currentIndex;
+                end = currentSelectionIndex;
+            }
+
+            for (int k = start; k <= end; k++)
+            {
+                if (!SelectedFieldValues.ContainsKey(k) && k < fieldList.Values.Count)
+                {
+                    foreach (var val in fieldList.Values)
+                    {
+                        var isMatch = EditorFilters.IsMatch(
+                            Parent.FieldValueListView.ValueListFilter,
+                            val.ID.ToString(),
+                            Parent.FieldValueListView.ExactValueListFilter);
+
+                        if (isMatch)
+                        {
+                            if (!SelectedFieldValues.ContainsKey(k))
+                            {
+                                SelectedFieldValues.Add(k, val.ID);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        // Multi-Select Mode
+        else if (InputManager.HasCtrlDown())
+        {
+            if (SelectedFieldValues.ContainsKey(currentIndex) && SelectedFieldValues.Count > 1)
+            {
+                SelectedFieldValues.Remove(currentIndex);
+            }
+            else
+            {
+                if (!SelectedFieldValues.ContainsKey(currentIndex))
+                {
+                    if (currentIndex < fieldList.Values.Count)
+                    {
+                        var curEntry = fieldList.Values[currentIndex];
+
+                        if (!SelectedFieldValues.ContainsKey(currentIndex))
+                        {
+                            SelectedFieldValues.Add(currentIndex, curEntry.ID);
+                        }
+                    }
+                }
+            }
+        }
+        // Reset Multi-Selection if normal selection occurs
+        else
+        {
+            SelectedFieldValues.Clear();
+
+            if (currentIndex < fieldList.Values.Count)
+            {
+                var curEntry = fieldList.Values[currentIndex];
+
+                if (!SelectedFieldValues.ContainsKey(currentIndex))
+                {
+                    SelectedFieldValues.Add(currentIndex, curEntry.ID);
+                }
+            }
+        }
     }
 
     /// <summary>
