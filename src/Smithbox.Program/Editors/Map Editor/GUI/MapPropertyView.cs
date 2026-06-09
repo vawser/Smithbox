@@ -1,14 +1,10 @@
 ﻿using Andre.Formats;
 using Hexa.NET.ImGui;
-using Microsoft.AspNetCore.Components.Forms;
-using Microsoft.Extensions.Logging;
-using Octokit;
 using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.Viewport;
-using StudioCore.Logger;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -16,7 +12,6 @@ using System.Drawing;
 using System.Linq;
 using System.Numerics;
 using System.Reflection;
-using static HKLib.hk2018.hkaiUserEdgeUtils;
 
 namespace StudioCore.Editors.MapEditor;
 
@@ -176,6 +171,8 @@ public class MapPropertyView
         PropEditorPropInfoRow(selection.WrappedObject, nameProp, "Name", ref id, selection);
         PropEditorPropInfoRow(selection.WrappedObject, idProp, "ID", ref id, selection);
 
+        var meta = View.Project.Handler.MapData.Meta.GetMeta(selection.WrappedObject.GetType(), false);
+
         if (selection.WrappedObject is MergedParamRow mergedRow)
         {
             var annotations = View.Project.Handler.ParamData.GetParamAnnotations(mergedRow.MetaName);
@@ -183,13 +180,13 @@ public class MapPropertyView
 
             foreach (Param.Cell cell in mergedRow.CellHandles)
             {
-                var meta = View.Project.Handler.MapData.Meta.GetParamFieldMeta(cell.Def.InternalName, metaPrefix);
+                var fieldMeta = View.Project.Handler.MapData.Meta.GetParamFieldMeta(cell.Def.InternalName, metaPrefix);
 
-                if (!CFG.Current.MapEditor_Field_List_Display_Padding && meta.IsPadding)
+                if (!CFG.Current.MapEditor_Field_List_Display_Padding && fieldMeta.IsPadding)
                     continue;
 
                 var fieldAnnotation = View.Project.Handler.ParamData.GetFieldAnnotation(annotations, cell.Def.InternalName);
-                PropEditorPropCellRow(meta, fieldAnnotation, cell, ref id, selection, mergedRow.ID);
+                PropEditorPropCellRow(meta, fieldMeta, fieldAnnotation, cell, ref id, selection, mergedRow.ID);
             }
         }
         else if (selection.WrappedObject is Param.Row row)
@@ -199,43 +196,14 @@ public class MapPropertyView
 
             foreach (Param.Column column in row.Columns)
             {
-                var meta = View.Project.Handler.MapData.Meta.GetParamFieldMeta(column.Def.InternalName, metaPrefix);
+                var fieldMeta = View.Project.Handler.MapData.Meta.GetParamFieldMeta(column.Def.InternalName, metaPrefix);
 
-                if (!CFG.Current.MapEditor_Field_List_Display_Padding && meta.IsPadding)
+                if (!CFG.Current.MapEditor_Field_List_Display_Padding && fieldMeta.IsPadding)
                     continue;
 
                 var fieldAnnotation = View.Project.Handler.ParamData.GetFieldAnnotation(annotations, column.Def.InternalName);
-                PropEditorPropCellRow(meta, fieldAnnotation, row[column], ref id, selection, row.ID);
+                PropEditorPropCellRow(meta, fieldMeta, fieldAnnotation, row[column], ref id, selection, row.ID);
             }
-        }
-
-        ImGui.Columns(1);
-    }
-
-    public void PropEditorParamRow(Param.Row row)
-    {
-        ImGui.Columns(2);
-        ImGui.Separator();
-        var id = 0;
-
-        PropertyInfo nameProp = row.GetType().GetProperty("Name");
-        PropertyInfo idProp = row.GetType().GetProperty("ID");
-
-        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_ParamRow_Text);
-        PropEditorPropInfoRow(row, nameProp, "Name", ref id, null);
-        PropEditorPropInfoRow(row, idProp, "ID", ref id, null);
-        ImGui.PopStyleColor();
-
-        ImGui.Separator();
-
-        var annotations = View.Project.Handler.ParamData.GetParamAnnotations(row.Def.ParamType);
-
-        foreach (Param.Column column in row.Columns)
-        {
-            var meta = View.Project.Handler.MapData.Meta.GetParamFieldMeta(column.Def.InternalName, column.Def.Parent.ParamType);
-            var fieldAnnotation = View.Project.Handler.ParamData.GetFieldAnnotation(annotations, column.Def.InternalName);
-
-            PropEditorPropCellRow(meta, fieldAnnotation, row[column], ref id, null, row.ID);
         }
 
         ImGui.Columns(1);
@@ -245,11 +213,11 @@ public class MapPropertyView
     private void PropEditorPropInfoRow(object rowOrWrappedObject, PropertyInfo prop, string visualName, ref int id,
         Entity nullableSelection)
     {
-        PropEditorPropRow(null, null, prop.GetValue(rowOrWrappedObject), ref id, visualName, prop.PropertyType, null, null,
+        PropEditorPropRow(null, null, null, prop.GetValue(rowOrWrappedObject), ref id, visualName, prop.PropertyType, null, null,
             prop, rowOrWrappedObject, nullableSelection, -1);
     }
 
-    private void PropEditorPropCellRow(MapEntityPropertyFieldMeta meta, ParamAnnotationFieldEntry fieldAnnotation, Param.Cell cell, ref int id, Entity nullableSelection, int rowID)
+    private void PropEditorPropCellRow(MapEntityPropertyMeta meta, MapEntityPropertyFieldMeta fieldMeta, ParamAnnotationFieldEntry fieldAnnotation, Param.Cell cell, ref int id, Entity nullableSelection, int rowID)
     {
         var fieldName = cell.Def.InternalName;
 
@@ -261,7 +229,7 @@ public class MapPropertyView
                 return;
         }
 
-        PropEditorPropRow(meta, fieldAnnotation, cell.Value, ref id, cell.Def.InternalName, cell.Value.GetType(), null,
+        PropEditorPropRow(meta, fieldMeta, fieldAnnotation, cell.Value, ref id, cell.Def.InternalName, cell.Value.GetType(), null,
             cell.Def.InternalName, cell.GetType().GetProperty("Value"), cell, nullableSelection, rowID);
     }
 
@@ -392,7 +360,7 @@ public class MapPropertyView
     /// <summary>
     /// Param MSB Object Field
     /// </summary>
-    private void PropEditorPropRow(MapEntityPropertyFieldMeta meta, ParamAnnotationFieldEntry fieldAnnotation,
+    private void PropEditorPropRow(MapEntityPropertyMeta meta, MapEntityPropertyFieldMeta fieldMeta, ParamAnnotationFieldEntry fieldAnnotation,
         object oldval, ref int id, string visualName, Type propType,
         Entity nullableEntity, string nullableName, PropertyInfo proprow, object paramRowOrCell,
         Entity nullableSelection, int rowID)
@@ -426,12 +394,12 @@ public class MapPropertyView
 
         object newval;
 
-        (bool, bool) propEditResults = PropertyRow(meta, propType, oldval, out newval, proprow, null);
+        (bool, bool) propEditResults = PropertyRow(fieldMeta, propType, oldval, out newval, proprow, null);
 
         var changed = propEditResults.Item1;
         var committed = propEditResults.Item2;
 
-        DisplayParamContextMenu(meta, proprow, oldval, ref newval, visualName);
+        DisplayParamContextMenu(fieldMeta, proprow, oldval, ref newval, visualName);
 
         if (ImGui.IsItemActive() && !ImGui.IsWindowFocused())
         {
@@ -439,41 +407,48 @@ public class MapPropertyView
         }
 
         // Param References
-        if (MapEditorDecorations.ParamRefRow(View, meta, proprow, oldval, ref newval))
+        if (MapEditorDecorations.ParamRefRow(View, fieldMeta, proprow, oldval, ref newval))
         {
             changed = true;
             committed = true;
         }
 
         // Text References
-        if (MapEditorDecorations.FmgRefRow(View, meta, proprow, oldval, ref newval))
+        if (MapEditorDecorations.FmgRefRow(View, fieldMeta, proprow, oldval, ref newval))
         {
             changed = true;
             committed = true;
         }
 
         // Enum List
-        if (MapEditorDecorations.GenericEnumRow(View, meta, proprow, oldval, ref newval))
+        if (MapEditorDecorations.GenericEnumRow(View, fieldMeta, proprow, oldval, ref newval))
+        {
+            changed = true;
+            committed = true;
+        }
+
+        // MSB Enum List
+        if (MapEditorDecorations.MsbEnumRow(View, meta, fieldMeta, proprow, oldval, ref newval))
         {
             changed = true;
             committed = true;
         }
 
         // Alias List
-        if (MapEditorDecorations.AliasEnumRow(View, meta, proprow, oldval, ref newval))
+        if (MapEditorDecorations.AliasEnumRow(View, fieldMeta, proprow, oldval, ref newval))
         {
             changed = true;
             committed = true;
         }
 
         // DS2: Spawn State List
-        if (MapEditorDecorations.SpawnStateListRow(View, meta, proprow, oldval, ref newval, rowID))
+        if (MapEditorDecorations.SpawnStateListRow(View, fieldMeta, proprow, oldval, ref newval, rowID))
         {
             changed = true;
             committed = true;
         }
 
-        UpdateProperty(proprow, nullableSelection, meta, paramRowOrCell, oldval, newval, changed, committed);
+        UpdateProperty(proprow, nullableSelection, fieldMeta, paramRowOrCell, oldval, newval, changed, committed);
         ImGui.NextColumn();
         ImGui.PopID();
         id++;
@@ -495,26 +470,27 @@ public class MapPropertyView
     {
         PropContextRowOpener();
 
-        var meta = View.Project.Handler.MapData.Meta.GetFieldMeta(prop.Name, prop.ReflectedType);
+        var fieldMeta = View.Project.Handler.MapData.Meta.GetFieldMeta(prop.Name, prop.ReflectedType);
+        var meta = fieldMeta._parent;
 
         // Field Name
         var fieldName = prop.Name;
 
-        if (CFG.Current.MapEditor_Properties_Enable_Commmunity_Names && !meta.IsEmpty)
+        if (CFG.Current.MapEditor_Properties_Enable_Commmunity_Names && !fieldMeta.IsEmpty)
         {
-            fieldName = meta.AltName;
+            fieldName = fieldMeta.AltName;
 
-            if (meta.ArrayProperty)
+            if (fieldMeta.ArrayProperty)
             {
-                fieldName = $"{meta.AltName}: {arrayIndex}";
+                fieldName = $"{fieldMeta.AltName}: {arrayIndex}";
             }
         }
 
         // Field Description
         var fieldDescription = "";
-        if (!meta.IsEmpty)
+        if (!fieldMeta.IsEmpty)
         {
-            fieldDescription = meta.Wiki;
+            fieldDescription = fieldMeta.Wiki;
         }
 
         ImGui.Text(fieldName);
@@ -526,11 +502,11 @@ public class MapPropertyView
         object newval;
 
         // Property Editor UI
-        (bool, bool) propEditResults = PropertyRow(meta, type, oldval, out newval, prop, entSelection);
+        (bool, bool) propEditResults = PropertyRow(fieldMeta, type, oldval, out newval, prop, entSelection);
         var changed = propEditResults.Item1;
         var committed = propEditResults.Item2;
 
-        DisplayPropContextMenu(meta, selection, prop, obj, arrayIndex);
+        DisplayPropContextMenu(fieldMeta, selection, prop, obj, arrayIndex);
 
         if (ImGui.IsItemActive() && !ImGui.IsWindowFocused())
         {
@@ -538,38 +514,45 @@ public class MapPropertyView
         }
 
         // Model Link
-        MapEditorDecorations.ModelNameRow(View, meta, entSelection, prop, oldval);
+        MapEditorDecorations.ModelNameRow(View, fieldMeta, entSelection, prop, oldval);
 
         // Param References
-        if (MapEditorDecorations.ParamRefRow(View, meta, prop, oldval, ref newval))
+        if (MapEditorDecorations.ParamRefRow(View, fieldMeta, prop, oldval, ref newval))
         {
             changed = true;
             committed = true;
         }
 
         // Text References
-        if (MapEditorDecorations.FmgRefRow(View, meta, prop, oldval, ref newval))
+        if (MapEditorDecorations.FmgRefRow(View, fieldMeta, prop, oldval, ref newval))
         {
             changed = true;
             committed = true;
         }
 
         // Map References - TODO: this still uses the C# attribute method, change to MSBMETA
-        if (MapEditorDecorations.MsbReferenceRow(View, meta, prop, oldval, ref newval, entSelection))
+        if (MapEditorDecorations.MsbReferenceRow(View, fieldMeta, prop, oldval, ref newval, entSelection))
         {
             changed = true;
             committed = true;
         }
 
         // Enum List
-        if (MapEditorDecorations.GenericEnumRow(View, meta, prop, oldval, ref newval))
+        if (MapEditorDecorations.GenericEnumRow(View, fieldMeta, prop, oldval, ref newval))
+        {
+            changed = true;
+            committed = true;
+        }
+
+        // MSB Enum List
+        if (MapEditorDecorations.MsbEnumRow(View, meta, fieldMeta, prop, oldval, ref newval))
         {
             changed = true;
             committed = true;
         }
 
         // Alias List
-        if (MapEditorDecorations.AliasEnumRow(View, meta, prop, oldval, ref newval))
+        if (MapEditorDecorations.AliasEnumRow(View, fieldMeta, prop, oldval, ref newval))
         {
             changed = true;
             committed = true;
@@ -578,14 +561,14 @@ public class MapPropertyView
         // ER: Mask List - TODO: this still uses the C# attribute method, change to MSBMETA
         if (prop.GetCustomAttribute<EldenRingAssetMask>() != null)
         {
-            if (MapEditorDecorations.EldenRingAssetMaskAndAnimRow(View, meta, prop, oldval, ref newval, selection))
+            if (MapEditorDecorations.EldenRingAssetMaskAndAnimRow(View, fieldMeta, prop, oldval, ref newval, selection))
             {
                 changed = true;
                 committed = true;
             }
         }
 
-        UpdateProperty(prop, entSelection, meta, oldval, newval, changed, committed, arrayIndex, classIndex);
+        UpdateProperty(prop, entSelection, fieldMeta, oldval, newval, changed, committed, arrayIndex, classIndex);
         ImGui.NextColumn();
     }
 

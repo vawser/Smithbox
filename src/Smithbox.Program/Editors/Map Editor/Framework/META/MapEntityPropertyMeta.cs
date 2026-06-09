@@ -49,6 +49,17 @@ public class MapEntityPropertyMeta
             }
         }
 
+        // Enums
+        XmlNode enums = root.SelectSingleNode("Enums");
+        if (enums != null)
+        {
+            foreach (XmlNode entry in enums.ChildNodes)
+            {
+                var newEnum = new MapParamEnum(entry);
+                EnumList.Add(newEnum.Name, newEnum);
+            }
+        }
+
         // Fields
         XmlNode fields = root.SelectSingleNode("Field");
         if (fields != null)

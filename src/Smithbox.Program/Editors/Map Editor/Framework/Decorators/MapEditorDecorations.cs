@@ -209,7 +209,72 @@ public static class MapEditorDecorations
 
             if (ImGui.BeginPopupContextItem($"{propinfo.Name}EnumContextMenu"))
             {
-                var opened = MsbEnumContextMenu(view, meta, propinfo, val, ref newVal, entry.Options);
+                var opened = GenericEnumContextMenu(view, meta, propinfo, val, ref newVal, entry.Options);
+                ImGui.EndPopup();
+                return opened;
+            }
+        }
+
+        return false;
+    }
+
+    public static bool MsbEnumRow(
+        MapEditorView view,
+        MapEntityPropertyMeta meta,
+        MapEntityPropertyFieldMeta fieldMeta,
+        PropertyInfo propinfo,
+        object val,
+        ref object newVal)
+    {
+        if (view.Project.Handler.ParamData == null)
+            return false;
+
+        var enums = fieldMeta.EnumType;
+
+        if (fieldMeta != null && fieldMeta.EnumType != null)
+        {
+            var enumName = fieldMeta.EnumType;
+
+            var entry = meta.EnumList.FirstOrDefault(e => e.Key == enumName);
+
+            if (entry.Value == null)
+                return false;
+
+            ImGui.NextColumn();
+
+            ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(0, ImGui.GetStyle().ItemSpacing.Y));
+            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_EnumName_Text);
+            ImGui.TextUnformatted(@$"    {enumName}");
+            ImGui.PopStyleColor();
+            ImGui.PopStyleVar();
+
+            ImGui.NextColumn();
+
+            string currentEntry = "___";
+
+            var matchedOption = entry.Value.Values.Where(x => x.Key == val.ToString()).FirstOrDefault();
+
+            ImGui.BeginGroup();
+
+            if (matchedOption.Value != null)
+            {
+                currentEntry = matchedOption.Value;
+                ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_ParamRef_Text);
+                ImGui.TextUnformatted(currentEntry);
+                ImGui.PopStyleColor();
+            }
+            else
+            {
+                ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_ParamRefMissing_Text);
+                ImGui.TextUnformatted(currentEntry);
+                ImGui.PopStyleColor();
+            }
+
+            ImGui.EndGroup();
+
+            if (ImGui.BeginPopupContextItem($"{propinfo.Name}EnumContextMenu"))
+            {
+                var opened = MsbEnumContextMenu(view, fieldMeta, propinfo, val, ref newVal, entry.Value.Values);
                 ImGui.EndPopup();
                 return opened;
             }
@@ -220,7 +285,7 @@ public static class MapEditorDecorations
 
     private static string enumSearchStr = "";
 
-    public static bool MsbEnumContextMenu(
+    public static bool GenericEnumContextMenu(
         MapEditorView view,
         MapEntityPropertyFieldMeta meta,
         PropertyInfo propinfo,
@@ -241,6 +306,44 @@ public static class MapEditorDecorations
                         || enumSearchStr == "")
                     {
                         if (ImGui.Selectable($"{entry.Key}: {entry.GetName()}"))
+                        {
+                            newVal = Convert.ChangeType(entry.Key, val.GetType());
+                            ImGui.EndChild();
+                            return true;
+                        }
+                    }
+                }
+            }
+            catch
+            {
+            }
+        }
+
+        ImGui.EndChild();
+        return false;
+    }
+
+    public static bool MsbEnumContextMenu(
+        MapEditorView view,
+        MapEntityPropertyFieldMeta meta,
+        PropertyInfo propinfo,
+        object val,
+        ref object newVal,
+        Dictionary<string, string> options)
+    {
+        ImGui.InputTextMultiline("##enumSearch", ref enumSearchStr, 255, new Vector2(350, 20), ImGuiInputTextFlags.CtrlEnterForNewLine);
+
+        if (ImGui.BeginChild("EnumList", new Vector2(350, ImGui.GetTextLineHeightWithSpacing() * Math.Min(7, options.Count))))
+        {
+            try
+            {
+                foreach (var entry in options)
+                {
+                    if (SearchFilters.IsEditorSearchMatch(enumSearchStr, entry.Key, " ")
+                        || SearchFilters.IsEditorSearchMatch(enumSearchStr, entry.Value, " ")
+                        || enumSearchStr == "")
+                    {
+                        if (ImGui.Selectable($"{entry.Key}: {entry.Value}"))
                         {
                             newVal = Convert.ChangeType(entry.Key, val.GetType());
                             ImGui.EndChild();
