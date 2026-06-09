@@ -517,7 +517,8 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                     if (CurrentView.Project.Handler.TextEditor != null)
                     {
                         List<FMG.Entry> fmgEntries = new();
-                        ParamFmgUtils.GetFmgEntriesByAssociatedParam(CurrentView.Project.Handler.ParamEditor, paramName);
+
+                        fmgEntries = ParamFmgUtils.GetFmgEntriesByAssociatedParam(CurrentView.Editor, paramName, "Title");
 
                         if (fmgEntries.Count == 0)
                         {
@@ -525,6 +526,7 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                         }
 
                         Dictionary<int, FMG.Entry> _cache = new();
+
                         foreach (FMG.Entry fmgEntry in fmgEntries)
                         {
                             _cache[fmgEntry.ID] = fmgEntry;
