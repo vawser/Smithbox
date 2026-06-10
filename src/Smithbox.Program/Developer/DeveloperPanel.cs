@@ -27,6 +27,7 @@ public class DeveloperPanel
     private NvaValidator NvaValidator;
     private MsbValidator MsbValidator;
     private BtlValidator BtlValidator;
+    private GparamValidator GparamValidator;
 
     public DeveloperPanel() 
     {
@@ -41,6 +42,7 @@ public class DeveloperPanel
         NvaValidator = new();
         MsbValidator = new();
         BtlValidator = new();
+        GparamValidator = new();
     }
 
     public void DisplayDropdown()
@@ -178,6 +180,10 @@ public class DeveloperPanel
                 {
                     NvaValidator.Display();
                 }
+                else if (ValidatorType is ValidatorType.GPARAM)
+                {
+                    GparamValidator.Display();
+                }
 
                 ImGui.EndChild();
 
@@ -204,5 +210,7 @@ public enum ValidatorType
     [Display(Name = "MSB")]
     MSB,
     [Display(Name = "BTL")]
-    BTL
+    BTL,
+    [Display(Name = "GPARAM")]
+    GPARAM
 }

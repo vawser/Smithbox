@@ -710,7 +710,7 @@ namespace SoulsFormats
                 if (version is GparamVersion.V2)
                 {
                     Key = br.ReadShiftJIS();
-                    Name = br.ReadShiftJIS();
+                    Name = Key;
                 }
                 else
                 {
@@ -740,8 +740,7 @@ namespace SoulsFormats
                     // String is padded to 8 bytes if it is 4 bytes
                     // String is padded to 16 bytes if it is 12 bytes
 
-                    bw.WriteShiftJIS(Key);
-                    bw.WriteShiftJIS(Name);
+                    bw.WriteShiftJIS(Key, true);
                 }
                 else
                 {
@@ -1102,7 +1101,6 @@ namespace SoulsFormats
                 if (version is GparamVersion.V2)
                 {
                     Key = br.ReadShiftJIS();
-                    Name = br.ReadShiftJIS();
                 }
                 else
                 {
@@ -1156,8 +1154,7 @@ namespace SoulsFormats
                     // String is padded to 8 bytes if it is 4 bytes
                     // String is padded to 16 bytes if it is 12 bytes
 
-                    bw.WriteShiftJIS(Key);
-                    bw.WriteShiftJIS(Name);
+                    bw.WriteShiftJIS(Key, true);
                 }
                 else
                 {

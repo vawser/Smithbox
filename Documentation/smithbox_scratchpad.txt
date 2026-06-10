@@ -3,11 +3,16 @@
 #---------------------
 - Map Editor
  - Check BTL saving (for DS2)
+ - Go over the Meta stuff to bring it in line with the new impl
+  - Note: remember Param and MSB enums are split
  
 - Map Data Editor
  - Implement property edit
  - Port over Local/Global Search and Mass Edit
  - Implement ENFL sub-editor
+ 
+- Gparam Editor
+ - Test DS2 fltparam saving (likely bugged)
  
 - Param Editor
  - Look into making row merges for tabulated params functional and simple
