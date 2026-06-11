@@ -618,7 +618,7 @@ public class CFG
     public bool ParamEditor_Field_List_Enable_Field_Layouts = true;
     public bool ParamEditor_Field_List_Enable_Field_Layout_Category_Names = true;
     public bool ParamEditor_Field_List_Enable_Field_Layout_Chance_Hints = true;
-    public FieldLayoutMode ParamEditor_Field_List_Enable_Field_Layout_Type = FieldLayoutMode.Collapsible;
+    public FieldLayoutMode ParamEditor_Field_List_Field_Layout_Display_Type = FieldLayoutMode.Header;
     public FieldLayoutUnsortedPlacement ParamEditor_Field_List_Unsorted_Field_Placement = FieldLayoutUnsortedPlacement.Bottom;
 
     public ParamTooltipMode ParamEditor_Field_List_Tooltip_Mode = ParamTooltipMode.OnFieldName;

@@ -644,7 +644,7 @@ public class ParamFieldWindow
                 if (layoutFields.Count == 0)
                     continue;
 
-                if (CFG.Current.ParamEditor_Field_List_Enable_Field_Layout_Type is FieldLayoutMode.Collapsible)
+                if (CFG.Current.ParamEditor_Field_List_Field_Layout_Display_Type is FieldLayoutMode.Collapsible)
                 {
                     var name = layout.GetName();
                     if (!CFG.Current.ParamEditor_Field_List_Enable_Field_Layout_Category_Names)
@@ -670,7 +670,7 @@ public class ParamFieldWindow
                         ImGui.EndTable();
                     }
                 }
-                else if (CFG.Current.ParamEditor_Field_List_Enable_Field_Layout_Type is FieldLayoutMode.Header)
+                else if (CFG.Current.ParamEditor_Field_List_Field_Layout_Display_Type is FieldLayoutMode.Header)
                 {
                     if (CFG.Current.ParamEditor_Field_List_Enable_Field_Layout_Category_Names)
                     {
@@ -698,7 +698,7 @@ public class ParamFieldWindow
                         ImGui.Separator();
                     }
                 }
-                else if (CFG.Current.ParamEditor_Field_List_Enable_Field_Layout_Type is FieldLayoutMode.Separator)
+                else if (CFG.Current.ParamEditor_Field_List_Field_Layout_Display_Type is FieldLayoutMode.Separator)
                 {
                     if (hasChanceLot)
                     {
@@ -954,7 +954,7 @@ public class ParamFieldWindow
 
         if (miscFieldOrder.Count > 0)
         {
-            if (CFG.Current.ParamEditor_Field_List_Enable_Field_Layout_Type is FieldLayoutMode.Collapsible)
+            if (CFG.Current.ParamEditor_Field_List_Field_Layout_Display_Type is FieldLayoutMode.Collapsible)
             {
                 bool open = ImGui.CollapsingHeader(
                     $"Unsorted##grp_{activeParam}_misc",
@@ -971,7 +971,7 @@ public class ParamFieldWindow
                     ImGui.EndTable();
                 }
             }
-            else if (CFG.Current.ParamEditor_Field_List_Enable_Field_Layout_Type is FieldLayoutMode.Header)
+            else if (CFG.Current.ParamEditor_Field_List_Field_Layout_Display_Type is FieldLayoutMode.Header)
             {
                 UIHelper.SimpleHeader($"Unsorted", "");
 
@@ -986,7 +986,7 @@ public class ParamFieldWindow
                     ImGui.EndTable();
                 }
             }
-            else if (CFG.Current.ParamEditor_Field_List_Enable_Field_Layout_Type is FieldLayoutMode.Separator)
+            else if (CFG.Current.ParamEditor_Field_List_Field_Layout_Display_Type is FieldLayoutMode.Separator)
             {
                 if (BeginGroupTable($"ParamFieldsG_{activeParam}_misc", columnCount))
                 {

@@ -1332,7 +1332,7 @@ public class ParamEditorPrefs
 
             Draw = () => {
                 DPI.ApplyInputWidth();
-                if (ImGui.BeginCombo("##inputValue", CFG.Current.ParamEditor_Field_List_Enable_Field_Layout_Type.GetDisplayName()))
+                if (ImGui.BeginCombo("##inputValue", CFG.Current.ParamEditor_Field_List_Field_Layout_Display_Type.GetDisplayName()))
                 {
                     foreach (var entry in Enum.GetValues(typeof(FieldLayoutMode)))
                     {
@@ -1340,7 +1340,7 @@ public class ParamEditorPrefs
 
                         if (ImGui.Selectable(type.GetDisplayName()))
                         {
-                            CFG.Current.ParamEditor_Field_List_Enable_Field_Layout_Type = (FieldLayoutMode)entry;
+                            CFG.Current.ParamEditor_Field_List_Field_Layout_Display_Type = (FieldLayoutMode)entry;
                         }
                     }
                     ImGui.EndCombo();

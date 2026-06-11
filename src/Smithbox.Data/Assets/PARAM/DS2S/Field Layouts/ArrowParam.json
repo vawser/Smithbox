@@ -1,0 +1,100 @@
+{
+  "Name": "ArrowParam",
+  "Groups": [
+    {
+      "Key": "Configuration",
+      "Names": [
+          {
+            "Language": "English",
+            "Name": "Configuration"
+          }
+      ],
+      "Fields": [
+        "sfxId",
+        "modelIdInQuiver",
+        "arrowType"
+      ]
+    },
+    {
+      "Key": "Menu Display",
+      "Names": [
+          {
+            "Language": "English",
+            "Name": "Menu Display"
+          }
+      ],
+      "Fields": [
+        "menuAttackCategory1",
+        "menuAttackCategory2",
+        "menuPhysicalAttack",
+        "menuMagicAttack",
+        "menuThunderAttack",
+        "menufireAttack",
+        "menudarkAttack",
+        "menuPoisonAttack",
+        "menuBleedAttack",
+        "menuWeaponBreakAttack"
+      ]
+    },
+    {
+      "Key": "Slot 0",
+      "Names": [
+          {
+            "Language": "English",
+            "Name": "Slot 0"
+          }
+      ],
+      "Fields": [
+        "lightBulletId0",
+        "heavyBulletId0",
+        "lightDamageId0",
+        "heavyDamageId0"
+      ]
+    },
+    {
+      "Key": "Slot 1",
+      "Names": [
+          {
+            "Language": "English",
+            "Name": "Slot 1"
+          }
+      ],
+      "Fields": [
+        "lightBulletId1",
+        "heavyBulletId1",
+        "lightDamageId1",
+        "heavyDamageId1"
+      ]
+    },
+    {
+      "Key": "Slot 2",
+      "Names": [
+          {
+            "Language": "English",
+            "Name": "Slot 2"
+          }
+      ],
+      "Fields": [
+        "lightBulletId2",
+        "heavyBulletId2",
+        "lightDamageId2",
+        "heavyDamageId2"
+      ]
+    },
+    {
+      "Key": "Slot 3",
+      "Names": [
+          {
+            "Language": "English",
+            "Name": "Slot 3"
+          }
+      ],
+      "Fields": [
+        "lightBulletId3",
+        "heavyBulletId3",
+        "lightDamageId3",
+        "heavyDamageId3"
+      ]
+    }
+  ]
+}
