@@ -1,6 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Keybinds;
 using StudioCore.Renderer;
 
 namespace StudioCore.Editors.MapEditor;
@@ -36,6 +37,15 @@ public class MapToolWindow
         if (ImGui.BeginMenu("Tools"))
         {
             DataTransferTool.DisplayDropdown();
+
+            if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
+            {
+                if (ImGui.MenuItem("World Map"))
+                {
+                    activeView.WorldMapTool.DisplayMenuOption();
+                }
+                UIHelper.Tooltip($"Open a world map with a visual representation of the map tiles.\nShortcut: {InputManager.GetHint(KeybindID.MapEditor_Toggle_World_Map_Menu)}");
+            }
 
             if (ImGui.BeginMenu("Miscellaneous"))
             {

@@ -160,6 +160,7 @@ public enum EditorFocusContext
     MapEditor_Properties,
     MapEditor_Tools,
     MapEditor_Viewport,
+    MapEditor_WorldMap,
 
     ModelEditor_None,
     ModelEditor_FileList,

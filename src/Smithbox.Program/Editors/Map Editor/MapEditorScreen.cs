@@ -573,16 +573,6 @@ public class MapEditorScreen : EditorScreen
                 }
                 UIHelper.Tooltip("Select a list filter to narrow the map list down to a pre-defined set of maps.");
 
-                if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
-                {
-                    if (ImGui.MenuItem("World Map"))
-                    {
-                        activeView.WorldMapTool.DisplayMenuOption();
-                    }
-                    UIHelper.Tooltip($"Open a world map with a visual representation of the map tiles.\nShortcut: {InputManager.GetHint(KeybindID.MapEditor_Toggle_World_Map_Menu)}");
-
-                }
-
                 ImGui.EndMenu();
             }
 

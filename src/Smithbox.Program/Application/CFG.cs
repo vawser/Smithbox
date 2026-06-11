@@ -239,6 +239,11 @@ public class CFG
     public bool WorldMapDisplayLargeTiles = false;
     public bool WorldMapLockMovement = false;
 
+    public bool WorldMapFilter_IncludeSmallTiles = true;
+    public bool WorldMapFilter_IncludeMediumTiles = true;
+    public bool WorldMapFilter_IncludeLargeTiles = true;
+    public bool WorldMapFilter_RestrictBySource = false;
+
     public bool QuickView_DisplayTooltip = false;
     public List<string> QuickView_TargetProperties = new List<string>() { "Name" };
 

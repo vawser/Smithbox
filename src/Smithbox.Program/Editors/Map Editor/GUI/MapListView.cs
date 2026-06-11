@@ -47,10 +47,17 @@ public class MapListView : IActionEventHandler
     private string FileListFilter = "";
     private bool ExactFileListFilter = false;
 
+    private List<string> FilteredMapList = new();
+
+    public void ClearMapList()
+    {
+        FilteredMapList.Clear();
+    }
+
     public void UpdateMapList(List<string> mapList)
     {
-        SearchBarText = string.Join("|", mapList);
-        _updateMapList = true;
+        FilteredMapList.Clear();
+        FilteredMapList = mapList;
     }
 
     /// <summary>
@@ -72,6 +79,26 @@ public class MapListView : IActionEventHandler
         {
             ImGui.SameLine();
             DisplayChaliceToggleButton();
+        }
+
+        if (View.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
+        {
+            ImGui.SameLine();
+            if (ImGui.Button($"{Icons.Map}", DPI.IconButtonSize))
+            {
+                View.WorldMapTool.DisplayMenuOption();
+            }
+            UIHelper.Tooltip($"Open a world map with a visual representation of the map tiles.\nShortcut: {InputManager.GetHint(KeybindID.MapEditor_Toggle_World_Map_Menu)}");
+
+            if(FilteredMapList.Count > 0)
+            {
+                ImGui.SameLine();
+                if (ImGui.Button($"{Icons.MapMarker}", DPI.IconButtonSize))
+                {
+                    ClearMapList();
+                }
+                UIHelper.Tooltip($"Clear the pre-filtered map list set by a World Map click.");
+            }
         }
 
         if (_updateMapList)
@@ -124,6 +151,12 @@ public class MapListView : IActionEventHandler
         foreach (var entry in Project.Handler.MapData.PrimaryBank.Maps)
         {
             var wrapper = entry.Value;
+
+            if(FilteredMapList.Count > 0)
+            {
+                if (!FilteredMapList.Contains(wrapper.Name))
+                    continue;
+            }
 
             if (!_cachedSearchMatches.Contains(wrapper.Name) && loadType == MapContentLoadState.Unloaded)
             {

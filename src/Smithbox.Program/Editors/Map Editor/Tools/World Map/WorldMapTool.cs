@@ -186,6 +186,32 @@ public class WorldMapTool : IResourceEventListener
         }
     }
 
+
+    public void MapFilterMenu()
+    {
+        if (ImGui.BeginMenu("Map Filter"))
+        {
+            ImGui.Text("Determine how the map list filter functions.");
+
+            ImGui.Checkbox("Include Small Tiles", ref CFG.Current.WorldMapFilter_IncludeSmallTiles);
+            UIHelper.Tooltip("Small tiles will be included in the map list filter.");
+
+            ImGui.Checkbox("Include Medium Tiles", ref CFG.Current.WorldMapFilter_IncludeMediumTiles);
+            UIHelper.Tooltip("Medium tiles will be included in the map list filter.");
+
+            ImGui.Checkbox("Include Large Tiles", ref CFG.Current.WorldMapFilter_IncludeLargeTiles);
+            UIHelper.Tooltip("Large tiles will be included in the map list filter.");
+
+            if (Project.Descriptor.ProjectType is ProjectType.NR)
+            {
+                ImGui.Checkbox("Restrict by Map Source", ref CFG.Current.WorldMapFilter_RestrictBySource);
+                UIHelper.Tooltip("Restrict the tiles to the current map source.");
+            }
+
+            ImGui.EndMenu();
+        }
+    }
+
     public void SettingsMenu()
     {
         if (ImGui.BeginMenu("Settings"))
@@ -230,6 +256,7 @@ public class WorldMapTool : IResourceEventListener
         {
             ControlsMenu();
             MapSourceMenu();
+            MapFilterMenu();
             SettingsMenu();
 
             if(ImGui.MenuItem("Close"))
@@ -256,20 +283,27 @@ public class WorldMapTool : IResourceEventListener
                                   currentMousePos.X < windowPos.X + windowSize.X &&
                                   currentMousePos.Y < windowPos.Y + windowSize.Y;
 
-        // Start drag on left click in window
-        if (ImGui.IsWindowHovered() && InputManager.IsMousePressed(MousebindID.MapEditor_World_Map_Drag_Start))
+        if (ImGui.IsWindowHovered())
         {
+            FocusManager.SetFocus(EditorFocusContext.MapEditor_WorldMap);
+        }
+
+        // Start drag on left click in window
+        if (FocusManager.IsFocus(EditorFocusContext.MapEditor_WorldMap) && InputManager.IsMousePressed(MousebindID.MapEditor_World_Map_Drag_Start))
+        {
+            FocusManager.SetFocus(EditorFocusContext.MapEditor_WorldMap);
+
             _isDraggingMap = true;
             _lastMousePos = currentMousePos;
         }
 
         // Stop drag on release
-        if (InputManager.IsMouseReleased(MousebindID.MapEditor_World_Map_Drag_End))
+        if (FocusManager.IsFocus(EditorFocusContext.MapEditor_WorldMap) && InputManager.IsMouseReleased(MousebindID.MapEditor_World_Map_Drag_End))
         {
             _isDraggingMap = false;
         }
 
-        if (_isDraggingMap && isMouseInMapWindow)
+        if (_isDraggingMap && FocusManager.IsFocus(EditorFocusContext.MapEditor_WorldMap))
         {
             Vector2 mouseDelta = currentMousePos - _lastMousePos;
 
@@ -420,31 +454,123 @@ public class WorldMapTool : IResourceEventListener
             }
         }
 
-        HandleZoom();
-
-        // Select Maps under Point
-        if (InputManager.IsMousePressed(MousebindID.MapEditor_Select_Map_In_World_Map))
+        if (FocusManager.IsFocus(EditorFocusContext.MapEditor_WorldMap))
         {
-            if (MapCurseRelativePositionInWindow.X > 0 && MapCurseRelativePositionInWindow.X < windowWidth && MapCurseRelativePositionInWindow.Y > 0 && MapCurseRelativePositionInWindow.Y < windowHeight)
-            {
-                if (HoveredMapTiles != null && HoveredMapTiles.Count > 0)
-                {
-                    SelectedMapTiles = HoveredMapTiles;
+            HandleZoom();
 
-                    View.MapListView.UpdateMapList(HoveredMapTiles);
+            // Select Maps under Point
+            if (InputManager.IsMousePressed(MousebindID.MapEditor_Select_Map_In_World_Map))
+            {
+                if (MapCurseRelativePositionInWindow.X > 0 && MapCurseRelativePositionInWindow.X < windowWidth && MapCurseRelativePositionInWindow.Y > 0 && MapCurseRelativePositionInWindow.Y < windowHeight)
+                {
+                    if (HoveredMapTiles != null && HoveredMapTiles.Count > 0)
+                    {
+                        SelectedMapTiles = HoveredMapTiles;
+
+                        HandleMapFilterClick();
+                    }
                 }
             }
-        }
 
-        if (InputManager.IsPressed(KeybindID.MapEditor_Reset_World_Map_Zoom_Level))
-        {
-            MapZoomFactor = GetDefaultZoomLevel();
+            if (InputManager.IsPressed(KeybindID.MapEditor_Reset_World_Map_Zoom_Level))
+            {
+                MapZoomFactor = GetDefaultZoomLevel();
+            }
         }
 
         if (InputManager.IsKeyPressed(Key.Escape))
         {
             IsMapWindowOpen = false;
         }
+    }
+
+    private void HandleMapFilterClick()
+    {
+        List<string> mapFilterList = new();
+        List<WorldMapTile> tileList = new List<WorldMapTile>();
+
+        var hoveredTiles = GetMatchingMaps(MapCurseRelativePosition);
+
+        switch (CurrentMapSource)
+        {
+            case WorldMapImageSource.LandsBetween:
+                tileList = VanillaLayout.Tiles;
+                break;
+
+            case WorldMapImageSource.ShadowOfTheErdtree:
+                tileList = SoteLayout.Tiles;
+                break;
+
+            case WorldMapImageSource.Limveld:
+            case WorldMapImageSource.Limveld_Mountaintops:
+            case WorldMapImageSource.Limveld_Crater:
+            case WorldMapImageSource.Limveld_Rotted_Woods:
+            case WorldMapImageSource.Limveld_Noklateo:
+                tileList = LimveldLayout.Tiles;
+                break;
+        }
+
+        foreach (var tile in tileList)
+        {
+            if (!hoveredTiles.Contains(tile.Name))
+                continue;
+
+            if(CFG.Current.WorldMapFilter_RestrictBySource)
+            {
+                if(CurrentMapSource == WorldMapImageSource.Limveld)
+                {
+                    if (!tile.Name.EndsWith("00") && !tile.Name.EndsWith("01"))
+                        continue;
+                }
+                if (CurrentMapSource == WorldMapImageSource.Limveld_Mountaintops)
+                {
+                    if (!tile.Name.EndsWith("10") && !tile.Name.EndsWith("11"))
+                        continue;
+                }
+                if (CurrentMapSource == WorldMapImageSource.Limveld_Crater)
+                {
+                    if (!tile.Name.EndsWith("20") && !tile.Name.EndsWith("21"))
+                        continue;
+                }
+                if (CurrentMapSource == WorldMapImageSource.Limveld_Rotted_Woods)
+                {
+                    if (!tile.Name.EndsWith("30") && !tile.Name.EndsWith("31"))
+                        continue;
+                }
+                if (CurrentMapSource == WorldMapImageSource.Limveld_Noklateo)
+                {
+                    if (!tile.Name.EndsWith("50") && !tile.Name.EndsWith("51"))
+                        continue;
+                }
+            }
+
+            if (CFG.Current.WorldMapFilter_IncludeSmallTiles)
+            {
+                if (tile.TileType is WorldMapTileType.Small)
+                {
+                    mapFilterList.Add(tile.Name);
+                }
+            }
+
+            if (CFG.Current.WorldMapFilter_IncludeMediumTiles)
+            {
+                if (tile.TileType is WorldMapTileType.Medium)
+                {
+                    mapFilterList.Add(tile.Name);
+                }
+            }
+
+            if (CFG.Current.WorldMapFilter_IncludeLargeTiles)
+            {
+                if (tile.TileType is WorldMapTileType.Large)
+                {
+                    mapFilterList.Add(tile.Name);
+                }
+            }
+
+        }
+
+        View.MapListView.UpdateMapList(mapFilterList);
     }
 
     private void RegisterWorldMapListeners()
