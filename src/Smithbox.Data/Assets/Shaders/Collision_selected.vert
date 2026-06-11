@@ -56,5 +56,6 @@ void main()
 	vec4 p = sceneparam.view * w * vec4(position, 1);
 	p.z -= 0.003;
     gl_Position = sceneparam.projection * p;
-	//gl_Position.z -= 0.003;
+	gl_Position.z -= 0.003;
+    
 }
