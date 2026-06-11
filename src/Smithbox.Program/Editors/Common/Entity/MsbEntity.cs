@@ -295,7 +295,7 @@ public class MsbEntity : Entity
                 break;
         }
 
-        this.RenderSceneMesh.Dispose();
+        this.RenderSceneMesh = null;
 
         IsSwitchingRenderType = false;
     }
@@ -322,7 +322,7 @@ public class MsbEntity : Entity
             {
                 if (this.RenderSceneMesh != null)
                 {
-                    this.RenderSceneMesh.Dispose();
+                    this.RenderSceneMesh = null;
                 }
 
                 this.RenderSceneMesh = DrawableHelper.GetDS2EventLocationDrawable(universe.GetCurrentScene(), ContainingMap, this);
@@ -331,7 +331,7 @@ public class MsbEntity : Entity
             {
                 if (this.RenderSceneMesh != null)
                 {
-                    this.RenderSceneMesh.Dispose();
+                    this.RenderSceneMesh = null;
                 }
 
                 this.RenderSceneMesh = DrawableHelper.GetRegionDrawable(universe.GetCurrentScene(), ContainingMap, this, EntityRenderType);
@@ -340,7 +340,7 @@ public class MsbEntity : Entity
             {
                 if (this.RenderSceneMesh != null)
                 {
-                    this.RenderSceneMesh.Dispose();
+                    this.RenderSceneMesh = null;
                 }
 
                 this.RenderSceneMesh = DrawableHelper.GetLightDrawable(universe.GetCurrentScene(), ContainingMap, this, EntityRenderType);
@@ -349,7 +349,7 @@ public class MsbEntity : Entity
             {
                 if (this.RenderSceneMesh != null)
                 {
-                    this.RenderSceneMesh.Dispose();
+                    this.RenderSceneMesh = null;
                 }
 
                 this.RenderSceneMesh = DrawableHelper.GetAutoInvadeDrawable(universe.GetCurrentScene(), ContainingMap, this, EntityRenderType);
@@ -382,7 +382,7 @@ public class MsbEntity : Entity
                         //model name has been changed or this is the initial check
                         if (this.RenderSceneMesh != null)
                         {
-                            this.RenderSceneMesh.Dispose();
+                            this.RenderSceneMesh = null;
                         }
 
                         CurrentModelName = model;
@@ -413,7 +413,7 @@ public class MsbEntity : Entity
 
             if (this.RenderSceneMesh != null)
             {
-                this.RenderSceneMesh.Dispose();
+                this.RenderSceneMesh = null;
             }
 
             // Get model

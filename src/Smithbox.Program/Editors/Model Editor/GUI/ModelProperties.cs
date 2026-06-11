@@ -1086,7 +1086,6 @@ public class ModelProperties
                         {
                             if (selection.RenderSceneMesh != null)
                             {
-                                selection.RenderSceneMesh.Dispose();
                                 selection.RenderSceneMesh = null;
                             }
                         }

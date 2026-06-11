@@ -88,13 +88,13 @@ public class ModelViewportWindow
 
         foreach (var obj in container.Dummies)
         {
-            obj.RenderSceneMesh.Dispose();
+            obj.RenderSceneMesh = null;
             container.AssignDummyDrawable(obj, wrapper);
         }
 
         foreach (var obj in container.Nodes)
         {
-            obj.RenderSceneMesh.Dispose();
+            obj.RenderSceneMesh = null;
             container.AssignNodeDrawable(obj, wrapper);
         }
     }

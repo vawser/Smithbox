@@ -1013,7 +1013,6 @@ public class MapPropertyView
                             if (firstEnt.RenderSceneMesh != null)
                             {
                                 selected = firstEnt.RenderSceneMesh.RenderSelectionOutline;
-                                firstEnt.RenderSceneMesh.Dispose();
                                 firstEnt.RenderSceneMesh = null;
                             }
 
@@ -1068,7 +1067,6 @@ public class MapPropertyView
                         if (firstEnt.RenderSceneMesh != null)
                         {
                             selected = firstEnt.RenderSceneMesh.RenderSelectionOutline;
-                            firstEnt.RenderSceneMesh.Dispose();
                             firstEnt.RenderSceneMesh = null;
                         }
 
@@ -1709,7 +1707,6 @@ public class MapPropertyView
                         {
                             if (selection.RenderSceneMesh != null)
                             {
-                                selection.RenderSceneMesh.Dispose();
                                 selection.RenderSceneMesh = null;
                             }
                         }
