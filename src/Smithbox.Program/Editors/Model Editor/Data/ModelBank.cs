@@ -703,7 +703,7 @@ public class ModelWrapper
                     binder.Write(out bhdData, out bdtData);
 
                     project.VFS.ProjectFS.WriteFile(writePathBhd, bhdData);
-                    project.VFS.ProjectFS.WriteFile(writePathBhd, bdtData);
+                    project.VFS.ProjectFS.WriteFile(writePathBdt, bdtData);
 
                     Smithbox.Log(this, $"[Model Editor] Saved {containerPath}.");
                 }
@@ -730,7 +730,7 @@ public class ModelWrapper
                     binder.Write(out bhdData, out bdtData);
 
                     project.VFS.ProjectFS.WriteFile(writePathBhd, bhdData);
-                    project.VFS.ProjectFS.WriteFile(writePathBhd, bdtData);
+                    project.VFS.ProjectFS.WriteFile(writePathBdt, bdtData);
 
                     Smithbox.Log(this, $"[Model Editor] Saved {containerPath}.");
                 }
