@@ -11,9 +11,6 @@
  - Port over Local/Global Search and Mass Edit
  - Implement ENFL sub-editor
  
-- Gparam Editor
- - Test DS2 fltparam saving (likely bugged)
- 
 - Param Editor
  - Look into making row merges for tabulated params functional and simple
  - Finish converting the SDT AlternativeOrders into Field Layouts

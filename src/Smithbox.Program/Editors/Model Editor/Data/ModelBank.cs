@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Application;
+using StudioCore.Editors.Common;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -165,6 +166,11 @@ public class ModelContainerWrapper
             if (parts.Length >= 2)
             {
                 MapID = parts[2];
+
+                if(Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+                {
+                    MapID = FilePathUtils.GetPureFilename(parts[3]);
+                }
             }
         }
     }
@@ -193,7 +199,7 @@ public class ModelContainerWrapper
                         var binder = new BND3Reader(fileData.Value);
                         foreach (var file in binder.Files)
                         {
-                            var filename = System.IO.Path.GetFileNameWithoutExtension(file.Name);
+                            var filename = FilePathUtils.GetPureFilename(file.Name);
                             var filepath = file.Name.ToLower();
 
                             if (filepath.Contains(".flver") || filepath.Contains(".flv"))
@@ -219,7 +225,7 @@ public class ModelContainerWrapper
                         var binder = new BND4Reader(fileData.Value);
                         foreach (var file in binder.Files)
                         {
-                            var filename = System.IO.Path.GetFileNameWithoutExtension(file.Name);
+                            var filename = FilePathUtils.GetPureFilename(file.Name);
                             var filepath = file.Name.ToLower();
 
                             if (filepath.Contains(".flver") || (filepath.Contains(".flv") && !filepath.Contains(".flvpwv")))
@@ -272,7 +278,7 @@ public class ModelContainerWrapper
                     var binder = new BXF3Reader(bhd, bdt);
                     foreach (var file in binder.Files)
                     {
-                        var filename = System.IO.Path.GetFileNameWithoutExtension(file.Name);
+                        var filename = FilePathUtils.GetPureFilename(file.Name);
                         var filepath = file.Name.ToLower();
 
                         if (filepath.Contains(".flver") || filepath.Contains(".flv"))
@@ -287,7 +293,7 @@ public class ModelContainerWrapper
                     var binder = new BXF4Reader(bhd, bdt);
                     foreach (var file in binder.Files)
                     {
-                        var filename = System.IO.Path.GetFileNameWithoutExtension(file.Name);
+                        var filename = FilePathUtils.GetPureFilename(file.Name);
                         var filepath = file.Name.ToLower();
 
                         if (filepath.Contains(".flver") || filepath.Contains(".flv"))
@@ -343,7 +349,7 @@ public class ModelWrapper
                         var binder = new BND3Reader(fileData.Value);
                         foreach (var file in binder.Files)
                         {
-                            var filename = System.IO.Path.GetFileNameWithoutExtension(file.Name);
+                            var filename = FilePathUtils.GetPureFilename(file.Name);
                             var filepath = file.Name.ToLower();
 
                             if (filepath.Contains(".flver") || filepath.Contains(".flv"))
@@ -372,7 +378,7 @@ public class ModelWrapper
                         var binder = new BND4Reader(fileData.Value);
                         foreach (var file in binder.Files)
                         {
-                            var filename = System.IO.Path.GetFileNameWithoutExtension(file.Name);
+                            var filename = FilePathUtils.GetPureFilename(file.Name);
                             var filepath = file.Name.ToLower();
 
                             if (filepath.Contains(".flver") || (filepath.Contains(".flv") && !filepath.Contains(".flvpwv")))
@@ -428,7 +434,7 @@ public class ModelWrapper
                     var binder = new BXF3Reader(bhd, bdt);
                     foreach (var file in binder.Files)
                     {
-                        var filename = System.IO.Path.GetFileNameWithoutExtension(file.Name);
+                        var filename = FilePathUtils.GetPureFilename(file.Name);
                         var filepath = file.Name.ToLower();
 
                         if (filepath.Contains(".flver") || filepath.Contains(".flv"))
@@ -446,7 +452,7 @@ public class ModelWrapper
                     var binder = new BXF4Reader(bhd, bdt);
                     foreach (var file in binder.Files)
                     {
-                        var filename = System.IO.Path.GetFileNameWithoutExtension(file.Name);
+                        var filename = FilePathUtils.GetPureFilename(file.Name);
                         var filepath = file.Name.ToLower();
 
                         if (filepath.Contains(".flver") || filepath.Contains(".flv"))

@@ -29,4 +29,17 @@ public static class FilePathUtils
 
         return true;
     }
+
+
+    public static string GetPureFilename(string path)
+    {
+        if(path.Contains(".dcx"))
+        {
+            return Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(path));
+        }
+        else
+        {
+            return Path.GetFileNameWithoutExtension(path);
+        }
+    }
 }
