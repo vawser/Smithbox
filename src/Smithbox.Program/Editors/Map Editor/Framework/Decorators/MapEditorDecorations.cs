@@ -1092,7 +1092,7 @@ public static class MapEditorDecorations
                 var map = (MapContainer)ent.Parent.Container;
                 var mapPieceName = $"{value}".Replace("m", $"{map.Name}_");
 
-                EditorCommandQueue.AddCommand($"model/load/{mapPieceName}/{loadType}/{map.Name}");
+                EditorCommandQueue.AddCommand($"model/load/{mapPieceName}/{loadType}/{map.Name}/{value}");
             }
             else
             {

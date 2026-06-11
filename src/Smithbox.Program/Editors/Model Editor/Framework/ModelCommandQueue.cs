@@ -38,10 +38,31 @@ public class ModelCommandQueue
         if (commands[0] != "load")
             return;
 
-        var filename = commands[1];
+        if (commands.Length <= 1)
+            return;
 
-        var entry = Project.Handler.ModelData.PrimaryBank.Models
+        var filename = commands[1];
+        var modelType = commands.Length > 2 ? commands[2] : "";
+        var modelFilename = commands.Length > 4 ? commands[4] : filename;
+        var modelBank = modelType switch
+        {
+            "Character" => Project.Handler.ModelData.PrimaryBank.Characters,
+            "Asset" => Project.Handler.ModelData.PrimaryBank.Assets,
+            "Part" => Project.Handler.ModelData.PrimaryBank.Parts,
+            "MapPiece" => Project.Handler.ModelData.PrimaryBank.MapPieces,
+            _ => Project.Handler.ModelData.PrimaryBank.Models
+        };
+
+        var entry = modelBank
             .FirstOrDefault(e => e.Key.Filename.Equals(filename, System.StringComparison.OrdinalIgnoreCase));
+
+        // DS2 stores all map-piece FLVERs for a map inside one <map ID>.mapbhd/.mapbdt container.
+        if (entry.Value == null && modelType == "MapPiece" && commands.Length > 3)
+        {
+            var mapID = commands[3];
+            entry = modelBank.FirstOrDefault(e =>
+                e.Key.Filename.Equals(mapID, System.StringComparison.OrdinalIgnoreCase));
+        }
 
         if (entry.Value == null)
             return;
@@ -52,9 +73,20 @@ public class ModelCommandQueue
         if (curView.Selection.SelectedModelContainerWrapper == null)
             return;
 
-        var firstEntry = curView.Selection.SelectedModelContainerWrapper.Models.FirstOrDefault();
+        // Use filename for non-DS2 projects
+        var modelEntry = curView.Selection.SelectedModelContainerWrapper.Models.FirstOrDefault(e =>
+            e.Name.Equals(filename, System.StringComparison.OrdinalIgnoreCase));
 
-        if (firstEntry == null)
+        if (Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        {
+            modelEntry = curView.Selection.SelectedModelContainerWrapper.Models.FirstOrDefault(e =>
+                e.Name.Equals(modelFilename, System.StringComparison.OrdinalIgnoreCase));
+        }
+
+        if (commands.Length <= 4)
+            modelEntry ??= curView.Selection.SelectedModelContainerWrapper.Models.FirstOrDefault();
+
+        if (modelEntry == null)
             return;
 
         if (curView.Selection.SelectedModelWrapper != null)
@@ -62,12 +94,12 @@ public class ModelCommandQueue
             curView.Selection.SelectedModelWrapper.Unload();
         }
 
-        curView.Selection.SelectedModelWrapper = firstEntry;
+        curView.Selection.SelectedModelWrapper = modelEntry;
 
         curView.ViewportActionManager.Clear();
         curView.ActionManager.Clear();
 
-        firstEntry.Load();
+        modelEntry.Load();
     }
 
     public void HandleSelectCommand(ModelEditorView curView, string[] commands)
