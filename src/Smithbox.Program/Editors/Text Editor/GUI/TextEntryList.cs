@@ -37,15 +37,11 @@ public class TextEntryList
 
         if(Parent.Selection.IsFmgSelected())
         {
-            FocusManager.SetFocus(EditorFocusContext.TextEditor_EntryList);
-
             DisplayHeader();
             DisplayEntryTable();
         }
         else
         {
-            FocusManager.SetFocus(EditorFocusContext.TextEditor_EntryList);
-
             ImGui.Text("Select a FMG to see entries.");
         }
     }
