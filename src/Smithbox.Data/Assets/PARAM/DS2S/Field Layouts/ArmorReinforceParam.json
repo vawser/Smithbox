@@ -1,0 +1,177 @@
+{
+  "Name": "ArmorReinforceParam",
+  "Groups": [
+    {
+      "Key": "Configuration",
+      "Names": [
+          {
+            "Language": "English",
+            "Name": "Configuration"
+          }
+      ],
+      "Fields": [
+        "maxLevel",
+        "attrSpec",
+        "attrCost",
+        "reinforceCost",
+        "menuResistanceScale"
+      ]
+    },
+    {
+      "Key": "Slash",
+      "Names": [
+          {
+            "Language": "English",
+            "Name": "Slash"
+          }
+      ],
+      "Fields": [
+        "minSlash",
+        "maxSlash"
+      ]
+    },
+    {
+      "Key": "Thrust",
+      "Names": [
+          {
+            "Language": "English",
+            "Name": "Thrust"
+          }
+      ],
+      "Fields": [
+        "minThrust",
+        "maxThrust"
+      ]
+    },
+    {
+      "Key": "Strike",
+      "Names": [
+          {
+            "Language": "English",
+            "Name": "Strike"
+          }
+      ],
+      "Fields": [
+        "minStrike",
+        "maxStrike"
+      ]
+    },
+    {
+      "Key": "Physical",
+      "Names": [
+          {
+            "Language": "English",
+            "Name": "Physical"
+          }
+      ],
+      "Fields": [
+        "minPhysical",
+        "maxPhysical"
+      ]
+    },
+    {
+      "Key": "Magic",
+      "Names": [
+          {
+            "Language": "English",
+            "Name": "Magic"
+          }
+      ],
+      "Fields": [
+        "minMagic",
+        "maxMagic"
+      ]
+    },
+    {
+      "Key": "Lightning",
+      "Names": [
+          {
+            "Language": "English",
+            "Name": "Lightning"
+          }
+      ],
+      "Fields": [
+        "minThunder",
+        "maxThunder"
+      ]
+    },
+    {
+      "Key": "Fire",
+      "Names": [
+          {
+            "Language": "English",
+            "Name": "Fire"
+          }
+      ],
+      "Fields": [
+        "minFire",
+        "maxFire"
+      ]
+    },
+    {
+      "Key": "Dark",
+      "Names": [
+          {
+            "Language": "English",
+            "Name": "Dark"
+          }
+      ],
+      "Fields": [
+        "minDark",
+        "maxDark"
+      ]
+    },
+    {
+      "Key": "Poison",
+      "Names": [
+          {
+            "Language": "English",
+            "Name": "Poison"
+          }
+      ],
+      "Fields": [
+        "minPoison",
+        "maxPoison"
+      ]
+    },
+    {
+      "Key": "Bleed",
+      "Names": [
+          {
+            "Language": "English",
+            "Name": "Bleed"
+          }
+      ],
+      "Fields": [
+        "minBleeding",
+        "maxBleeding"
+      ]
+    },
+    {
+      "Key": "Petrification",
+      "Names": [
+          {
+            "Language": "English",
+            "Name": "Petrification"
+          }
+      ],
+      "Fields": [
+        "minPetrifaction",
+        "maxPetrifaction"
+      ]
+    },
+    {
+      "Key": "Curse",
+      "Names": [
+          {
+            "Language": "English",
+            "Name": "Curse"
+          }
+      ],
+      "Fields": [
+        "minCurse",
+        "maxCurse"
+      ]
+    }
+  ]
+}

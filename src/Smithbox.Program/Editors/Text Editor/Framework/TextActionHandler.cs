@@ -456,7 +456,8 @@ public class TextActionHandler
                     }
 
                     PlatformUtils.Instance.SetClipboardText(copyText);
-                    PlatformUtils.Instance.MessageBox("Text Entry Contents copied to clipboard", "Clipboard", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    Smithbox.Log<TextActionHandler>("Text Entry Contents copied to clipboard.");
                     IsCurrentlyCopyingContents = false;
                 }
             );
