@@ -176,7 +176,7 @@
     },
     {
       "Field": "guardPassiveLevelType",
-      "Name": "Shield Guard Level",
+      "Name": "Shield: Guard Level",
       "Description": "Defines passive guard strength level for shields."
     },
     {
@@ -191,122 +191,122 @@
     },
     {
       "Field": "shieldMaterialType",
-      "Name": "Shield Material Type",
+      "Name": "Shield: Material Type",
       "Description": "Defines shield material properties."
     },
     {
       "Field": "shieldReceiveValue",
-      "Name": "Shield Guard Strength",
+      "Name": "Shield: Guard Strength",
       "Description": "How much physical impact the shield can absorb."
     },
     {
       "Field": "shieldDefenseValue",
-      "Name": "Shield Physical Defense",
+      "Name": "Shield: Physical Defense",
       "Description": "Physical damage reduction from shield."
     },
     {
       "Field": "shieldMagicDefenseValue",
-      "Name": "Shield Magic Resistance",
+      "Name": "Shield: Magic Resistance",
       "Description": "Magic damage reduction from shield."
     },
     {
       "Field": "shieldMiracleDefenseValue",
-      "Name": "Shield Miracle Resistance",
+      "Name": "Shield: Miracle Resistance",
       "Description": "Faith/miracle damage resistance."
     },
     {
       "Field": "shieldPyromancyDefenseValue",
-      "Name": "Shield Pyromancy Resistance",
+      "Name": "Shield: Pyromancy Resistance",
       "Description": "Fire-based magic resistance."
     },
     {
       "Field": "shieldDarkMagicDefenseValue",
-      "Name": "Shield Dark Resistance",
+      "Name": "Shield: Dark Resistance",
       "Description": "Dark magic resistance."
     },
     {
       "Field": "shieldPoisonDefenseValue",
-      "Name": "Shield Poison Resistance",
+      "Name": "Shield: Poison Resistance",
       "Description": "Resistance to poison buildup."
     },
     {
       "Field": "shieldBleedingDefenseValue",
-      "Name": "Shield Bleed Resistance",
+      "Name": "Shield: Bleed Resistance",
       "Description": "Resistance to bleeding buildup."
     },
     {
       "Field": "shieldDestructionDefenseValue",
-      "Name": "Shield Durability Damage Resistance",
+      "Name": "Shield: Durability Damage Resistance",
       "Description": "Resistance to equipment durability damage."
     },
     {
       "Field": "shieldCurseDefenseValue",
-      "Name": "Shield Curse Resistance",
+      "Name": "Shield: Curse Resistance",
       "Description": "Resistance to curse effects."
     },
     {
       "Field": "armorDefenseValue",
-      "Name": "Armor Physical Defense",
+      "Name": "Armor: Physical Defense",
       "Description": "Physical damage reduction from armor."
     },
     {
       "Field": "armorMagicDefenseValue",
-      "Name": "Armor Magic Resistance",
+      "Name": "Armor: Magic Resistance",
       "Description": "Magic damage reduction from armor."
     },
     {
       "Field": "armorMiracleDefenseValue",
-      "Name": "Armor Miracle Resistance",
+      "Name": "Armor: Miracle Resistance",
       "Description": "Faith/miracle resistance from armor."
     },
     {
       "Field": "armorPyromancyDefenseValue",
-      "Name": "Armor Pyromancy Resistance",
+      "Name": "Armor: Pyromancy Resistance",
       "Description": "Fire resistance from armor."
     },
     {
       "Field": "armorDarkMagicDefenseValue",
-      "Name": "Armor Dark Resistance",
+      "Name": "Armor: Dark Resistance",
       "Description": "Dark magic resistance from armor."
     },
     {
       "Field": "armorPoisonDefenseValue",
-      "Name": "Armor Poison Resistance",
+      "Name": "Armor: Poison Resistance",
       "Description": "Resistance to poison buildup."
     },
     {
       "Field": "armorBleedingDefenseValue",
-      "Name": "Armor Bleed Resistance",
+      "Name": "Armor: Bleed Resistance",
       "Description": "Resistance to bleed buildup."
     },
     {
       "Field": "armorDestructionDefenseValue",
-      "Name": "Armor Durability Damage Resistance",
+      "Name": "Armor: Durability Damage Resistance",
       "Description": "Resistance to durability loss."
     },
     {
       "Field": "armorCurseDefenseValue",
-      "Name": "Armor Curse Resistance",
+      "Name": "Armor: Curse Resistance",
       "Description": "Resistance to curse effects."
     },
     {
       "Field": "armorMaterialType",
-      "Name": "Armor Material Type",
+      "Name": "Armor: Material Type",
       "Description": "Defines material properties of armor."
     },
     {
       "Field": "armorToughValue",
-      "Name": "Armor Poise",
+      "Name": "Armor: Poise",
       "Description": "Resistance to stagger effects."
     },
     {
       "Field": "armorStunBaseValue",
-      "Name": "Armor Stun Gauge (Base)",
+      "Name": "Armor: Stun Gauge (Base)",
       "Description": "Base stun buildup threshold."
     },
     {
       "Field": "armorStunRecoveryRate",
-      "Name": "Armor Stun Recovery Rate",
+      "Name": "Armor: Stun Recovery Rate",
       "Description": "Rate at which stun buildup recovers per second."
     },
     {

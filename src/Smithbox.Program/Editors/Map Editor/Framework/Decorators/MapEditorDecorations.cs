@@ -229,8 +229,6 @@ public static class MapEditorDecorations
         if (view.Project.Handler.ParamData == null)
             return false;
 
-        var enums = fieldMeta.EnumType;
-
         if (fieldMeta != null && fieldMeta.EnumType != null)
         {
             var enumName = fieldMeta.EnumType;
