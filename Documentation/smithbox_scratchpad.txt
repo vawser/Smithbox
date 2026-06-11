@@ -1,11 +1,6 @@
 #---------------------
 # TODO 
 #---------------------
-- Map Editor
- - Check BTL saving (for DS2)
- - Go over the Meta stuff to bring it in line with the new impl
-  - Note: remember Param and MSB enums are split
- 
 - Map Data Editor
  - Implement property edit
  - Port over Local/Global Search and Mass Edit

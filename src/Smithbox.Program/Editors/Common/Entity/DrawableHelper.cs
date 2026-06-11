@@ -294,12 +294,12 @@ public static class DrawableHelper
             }
         }
 
+        if (mesh == null)
+            throw new NotSupportedException($"No region model proxy was specified for {obj.WrappedObject.GetType()}");
+
         mesh.World = obj.GetWorldMatrix();
         mesh.SetSelectable(obj);
         mesh.DrawFilter = RenderFilter.Region;
-
-        if (mesh == null)
-            throw new NotSupportedException($"No region model proxy was specified for {obj.WrappedObject.GetType()}");
 
         return mesh;
     }
@@ -350,12 +350,12 @@ public static class DrawableHelper
             }
         }
 
+        if (mesh == null)
+            throw new Exception($"Unexpected BTL LightType: {light.Type}");
+
         mesh.World = obj.GetWorldMatrix();
         mesh.SetSelectable(obj);
         mesh.DrawFilter = RenderFilter.Light;
-
-        if (mesh == null)
-            throw new Exception($"Unexpected BTL LightType: {light.Type}");
 
         return mesh;
     }
@@ -370,6 +370,9 @@ public static class DrawableHelper
         DebugPrimitiveRenderableProxy mesh = null;
 
         mesh = RenderableHelper.GetAutoInvadeSphereProxy(scene);
+
+        if (mesh == null)
+            throw new Exception($"Unexpected AIP type");
 
         mesh.World = obj.GetWorldMatrix();
         mesh.SetSelectable(obj);
@@ -388,6 +391,9 @@ public static class DrawableHelper
         DebugPrimitiveRenderableProxy mesh = null;
 
         mesh = RenderableHelper.GetLightProbeSphereProxy(scene);
+
+        if (mesh == null)
+            throw new Exception($"Unexpected BTPB type");
 
         mesh.World = obj.GetWorldMatrix();
         mesh.SetSelectable(obj);

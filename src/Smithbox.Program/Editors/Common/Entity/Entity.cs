@@ -12,6 +12,7 @@ using System.Linq;
 using System.Numerics;
 using System.Reflection;
 using System.Xml.Serialization;
+using Veldrid.Utilities;
 using PropertiesChangedAction = StudioCore.Editors.MapEditor.PropertiesChangedAction;
 
 namespace StudioCore.Editors.Common;
@@ -1120,13 +1121,14 @@ public class Entity : ISelectable, IDisposable
         return t;
     }
 
-    /// <summary>
-    /// Gets the bounds of the render scene mesh for this <see cref="Entity"/>.
-    /// </summary>
-    /// <returns>A <see cref="Veldrid.Utilities.BoundingBox"/></returns>
-    public Veldrid.Utilities.BoundingBox GetBounds()
+    public BoundingBox GetBounds()
     {
-        return _renderSceneMesh.GetBounds();
+        if (_renderSceneMesh != null)
+        {
+            return _renderSceneMesh.GetBounds();
+        }
+
+        return new BoundingBox();
     }
 
     /// <summary>

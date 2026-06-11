@@ -1060,8 +1060,8 @@ public class MapUniverse : IUniverse
                     var bdtFile = (Memory<byte>)View.Project.Handler.MapData.PrimaryBank.TargetFS.ReadFile(bdtPath);
                     var bhdFile = (Memory<byte>)View.Project.Handler.MapData.PrimaryBank.TargetFS.ReadFile(bhdPath);
 
-                    using var bdt = BXF4.Read(bhdFile, bdtFile);
-                    BinderFile file = bdt.Files.Find(f => f.Name.EndsWith("light.btl.dcx"));
+                    using var bxf = BXF4.Read(bhdFile, bdtFile);
+                    BinderFile file = bxf.Files.Find(f => f.Name.EndsWith("light.btl.dcx"));
 
                     if (file != null)
                     {
@@ -1069,7 +1069,7 @@ public class MapUniverse : IUniverse
 
                         if (btl != null)
                         {
-                            List<BTL.Light> newLights = map.SerializeBtlLights(file.Name);
+                            List<BTL.Light> newLights = map.SerializeBtlLights(file.Name, true);
 
                             // Only save BTL if it has been modified
                             if (JsonSerializer.Serialize(btl.Lights, BtlLightSerializerContext.Default.ListLight) !=
@@ -1079,8 +1079,13 @@ public class MapUniverse : IUniverse
                                 file.Bytes = btl.Write();
                             }
 
-                            Project.VFS.ProjectFS.WriteFile(bhdPath, bhdFile.ToArray());
-                            Project.VFS.ProjectFS.WriteFile(bdtPath, bdtFile.ToArray());
+                            var bhdData = new byte[0];
+                            var bdtData = new byte[0];
+
+                            bxf.Write(out bhdData, out bdtData);
+
+                            Project.VFS.ProjectFS.WriteFile(bhdPath, bhdData);
+                            Project.VFS.ProjectFS.WriteFile(bdtPath, bdtData);
                         }
                     }
                 }

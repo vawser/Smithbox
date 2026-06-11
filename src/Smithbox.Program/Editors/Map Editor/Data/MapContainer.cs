@@ -1162,13 +1162,13 @@ public class MapContainer : ObjectContainer
     /// <summary>
     ///     Gets all BTL.Light with matching ParentBtlNames.
     /// </summary>
-    public List<BTL.Light> SerializeBtlLights(string btlName)
+    public List<BTL.Light> SerializeBtlLights(string btlName, bool isDS2 = false)
     {
         List<BTL.Light> lights = new();
         foreach (Entity p in BTLParents)
         {
-            var name = (string)p.WrappedObject;
-            if (name == btlName)
+            // For DS2, since there is only one light.btl.dcx within the GI container, skip the btl name checking
+            if (isDS2)
             {
                 foreach (Entity e in p.Children)
                 {
@@ -1179,6 +1179,24 @@ public class MapContainer : ObjectContainer
                     else
                     {
                         throw new Exception($"WrappedObject \"{e.WrappedObject}\" is not a BTL Light.");
+                    }
+                }
+            }
+            else
+            {
+                var name = (string)p.WrappedObject;
+                if (name == btlName)
+                {
+                    foreach (Entity e in p.Children)
+                    {
+                        if (e.WrappedObject != null && e.WrappedObject is BTL.Light light)
+                        {
+                            lights.Add(light);
+                        }
+                        else
+                        {
+                            throw new Exception($"WrappedObject \"{e.WrappedObject}\" is not a BTL Light.");
+                        }
                     }
                 }
             }
