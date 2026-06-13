@@ -843,11 +843,6 @@ public class ParamRowWindow
                 }
             }
 
-            if (popColor)
-            {
-                ImGui.PopStyleColor(1);
-            }
-
             DisplayContextMenu("name", r, selectionCacheIndex, isPinned);
 
             if (Context.FmgRowDecorator != null)
@@ -872,13 +867,20 @@ public class ParamRowWindow
 
             var width = ImGui.GetWindowWidth();
             ImGui.PushItemWidth(width);
-            ImGui.InputText($"##rowNameInput_{r.ID}", ref tempName, 255);
-            if (ImGui.IsItemDeactivatedAfterEdit())
+
+            var input = new DelayedInputTextHandler(tempName);
+
+            if (input.Draw($"##rowNameInput_{r.ID}", out string newValue))
             {
-                var editCommand = $"selection: Name := {tempName}";
+                var editCommand = $"selection: Name := {newValue}";
                 ParentView.Selection.SortSelection();
                 ParentView.MassEdit.ApplyMassEdit(editCommand);
             }
+        }
+
+        if (popColor)
+        {
+            ImGui.PopStyleColor(1);
         }
     }
 

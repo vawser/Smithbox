@@ -945,11 +945,12 @@ public class FmgEntryGroup
         {
             if (fmg.ID == targetBndId)
             {
-                foreach (var entry in fmg.File.Entries)
-                {
-                    if (entry.ID == baseEntry.ID)
+                for(var i = 0; i < fmg.File.Entries.Count; i++)
+                { 
+                    var curEntry = fmg.File.Entries[i];
+                    if (curEntry.ID == baseEntry.ID)
                     {
-                        return entry;
+                        return curEntry;
                     }
                 }
             }

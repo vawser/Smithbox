@@ -1,13 +1,13 @@
 #---------------------
 # TODO 
 #---------------------
-- Map Data Editor
- - Implement property edit
- - Port over Local/Global Search and Mass Edit
- - Implement ENFL sub-editor
- 
 - Param Editor
  - Look into making row merges for tabulated params functional and simple
  - Finish converting the SDT AlternativeOrders into Field Layouts
  - Finish AC6 meta
 
+- Map Data Editor
+ - Implement property edit
+ - Port over Local/Global Search and Mass Edit
+ - Implement ENFL sub-editor
+ 
