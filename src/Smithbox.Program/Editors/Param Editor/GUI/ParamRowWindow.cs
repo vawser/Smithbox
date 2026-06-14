@@ -843,6 +843,11 @@ public class ParamRowWindow
                 }
             }
 
+            if (popColor)
+            {
+                ImGui.PopStyleColor(1);
+            }
+
             DisplayContextMenu("name", r, selectionCacheIndex, isPinned);
 
             if (Context.FmgRowDecorator != null)
@@ -863,6 +868,11 @@ public class ParamRowWindow
         }
         else if(Name_EditRow == r)
         {
+            if (popColor)
+            {
+                ImGui.PopStyleColor(1);
+            }
+
             var tempName = r.Name;
 
             var width = ImGui.GetWindowWidth();
@@ -876,11 +886,6 @@ public class ParamRowWindow
                 ParentView.Selection.SortSelection();
                 ParentView.MassEdit.ApplyMassEdit(editCommand);
             }
-        }
-
-        if (popColor)
-        {
-            ImGui.PopStyleColor(1);
         }
     }
 
