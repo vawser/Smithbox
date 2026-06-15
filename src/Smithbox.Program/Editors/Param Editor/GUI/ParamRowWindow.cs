@@ -304,6 +304,10 @@ public class ParamRowWindow
         {
             var height = 20 + (20 * pinnedRowList.Count);
 
+            // Limit height and enable scrollbar beyond this height
+            if (height > 250)
+                height = 250;
+
             ImGui.BeginChild("PinnedRowSection", new Vector2(0, height), ImGuiChildFlags.None, ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse);
 
             var tblFlags = ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Resizable | ImGuiTableFlags.ScrollY ;
