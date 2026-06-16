@@ -67,6 +67,7 @@ public class ProjectScreen
             if (ImGui.BeginMenuBar())
             {
                 EditMenu();
+                ViewMenu();
                 //OptionsMenu();
 
                 ImGui.EndMenuBar();
@@ -142,31 +143,37 @@ public class ProjectScreen
 
         ImGui.End();
 
-        // Project Aliases
-        ImGui.SetNextWindowDockID(editorDockspaceId, ImGuiCond.FirstUseEver);
-        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ProjectEditorView);
-        if (ImGui.Begin($@"Project Aliases##projectEditor_ProjectAliases", UIHelper.GetInnerWindowFlags()))
+        if (CFG.Current.Interface_ProjectEditor_ProjectAliases)
         {
-            var width = ImGui.GetContentRegionAvail().X;
-            var height = ImGui.GetContentRegionAvail().Y;
+            // Project Aliases
+            ImGui.SetNextWindowDockID(editorDockspaceId, ImGuiCond.FirstUseEver);
+            ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ProjectEditorView);
+            if (ImGui.Begin($@"Project Aliases##projectEditor_ProjectAliases", UIHelper.GetInnerWindowFlags()))
+            {
+                var width = ImGui.GetContentRegionAvail().X;
+                var height = ImGui.GetContentRegionAvail().Y;
 
-            DisplayAliasEditor();
+                DisplayAliasEditor();
+            }
+
+            ImGui.End();
         }
 
-        ImGui.End();
-
-        // Project Enums
-        ImGui.SetNextWindowDockID(editorDockspaceId, ImGuiCond.FirstUseEver);
-        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ProjectEditorView);
-        if (ImGui.Begin($@"Project Enums##projectEditor_ProjectEnums", UIHelper.GetInnerWindowFlags()))
+        if (CFG.Current.Interface_ProjectEditor_ProjectEnums)
         {
-            var width = ImGui.GetContentRegionAvail().X;
-            var height = ImGui.GetContentRegionAvail().Y;
+            // Project Enums
+            ImGui.SetNextWindowDockID(editorDockspaceId, ImGuiCond.FirstUseEver);
+            ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ProjectEditorView);
+            if (ImGui.Begin($@"Project Enums##projectEditor_ProjectEnums", UIHelper.GetInnerWindowFlags()))
+            {
+                var width = ImGui.GetContentRegionAvail().X;
+                var height = ImGui.GetContentRegionAvail().Y;
 
-            DisplayEnumEditor();
+                DisplayEnumEditor();
+            }
+
+            ImGui.End();
         }
-
-        ImGui.End();
     }
 
     public void DisplayActiveProjectList()
@@ -629,6 +636,26 @@ public class ProjectScreen
                     Smithbox.Orchestrator.ActionManager.RedoAction();
                 }
             }
+
+            ImGui.EndMenu();
+        }
+    }
+
+    public void ViewMenu()
+    {
+        if (ImGui.BeginMenu("View"))
+        {
+            if (ImGui.MenuItem("Project Aliases"))
+            {
+                CFG.Current.Interface_ProjectEditor_ProjectAliases = !CFG.Current.Interface_ProjectEditor_ProjectAliases;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_ProjectEditor_ProjectAliases);
+
+            if (ImGui.MenuItem("Project Enums"))
+            {
+                CFG.Current.Interface_ProjectEditor_ProjectEnums = !CFG.Current.Interface_ProjectEditor_ProjectEnums;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_ProjectEditor_ProjectEnums);
 
             ImGui.EndMenu();
         }

@@ -118,6 +118,9 @@ public class CFG
 
     public float Project_Display_LoadedProjectList = 0.2f;
     public float Project_Display_AvailableProjectList = 0.8f;
+
+    public bool Interface_ProjectEditor_ProjectAliases = true;
+    public bool Interface_ProjectEditor_ProjectEnums = true;
     #endregion
 
     #region Interface
