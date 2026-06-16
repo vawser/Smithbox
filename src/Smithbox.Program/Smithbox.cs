@@ -511,7 +511,7 @@ public class Smithbox
 
         uint dockspaceID = ImGui.GetID("MainDockspace");
 
-        ImGui.DockSpace(dockspaceID, Vector2.Zero, dockFlags);
+        ImGui.DockSpace(dockspaceID, Vector2.Zero, dockFlags, ref UIHelper.DockGroup_EditorView);
 
         ImGui.PopStyleVar(1);
         ImGui.End();

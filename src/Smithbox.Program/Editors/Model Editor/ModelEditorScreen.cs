@@ -65,7 +65,7 @@ public class ModelEditorScreen : EditorScreen
         }
 
         var dsid = ImGui.GetID("DockSpace_ModelEdit");
-        ImGui.DockSpace(dsid, new Vector2(0, 0));
+        ImGui.DockSpace(dsid, new Vector2(0, 0), ref UIHelper.DockGroup_ModelEditor);
 
         ViewHandler.HandleViews();
 

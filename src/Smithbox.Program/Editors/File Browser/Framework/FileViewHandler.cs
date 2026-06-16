@@ -125,6 +125,7 @@ public class FileViewHandler
                 displayTitle = "Active View";
             }
 
+            ImGui.SetNextWindowClass(ref UIHelper.DockGroup_FileBrowser);
             if (ImGui.Begin($@"{displayTitle}###FileBrowserView##{view.ViewIndex}", UIHelper.GetInnerWindowFlags()))
             {
                 if (ImGui.IsItemClicked(ImGuiMouseButton.Left))

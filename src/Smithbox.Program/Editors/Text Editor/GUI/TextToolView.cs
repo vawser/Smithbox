@@ -37,6 +37,7 @@ public class TextToolView
 
         var activeView = Editor.ViewHandler.ActiveView;
 
+        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_TextEditor);
         if (ImGui.Begin("Tools##ToolConfigureWindow_TextEditor", UIHelper.GetMainWindowFlags()))
         {
             FocusManager.SetFocus(EditorFocusContext.TextEditor_Tools);

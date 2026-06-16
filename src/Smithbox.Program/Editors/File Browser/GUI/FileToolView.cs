@@ -39,6 +39,7 @@ public class FileToolView
         if (!CFG.Current.Interface_FileBrowser_ToolView)
             return;
 
+        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_FileBrowser);
         ImGui.Begin($"Tools##FileBrowserToolView", ImGuiWindowFlags.MenuBar);
         FocusManager.SetFocus(EditorFocusContext.FileBrowser_Tools);
 

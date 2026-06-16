@@ -104,6 +104,7 @@ public class ParamToolMenu
         if (!CFG.Current.Interface_ParamEditor_ToolWindow)
             return;
 
+        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ParamEditor);
         if (ImGui.Begin("Tools##toolWindow_ParamEditor", UIHelper.GetMainWindowFlags()))
         {
             FocusManager.SetFocus(EditorFocusContext.ParamEditor_Tools);

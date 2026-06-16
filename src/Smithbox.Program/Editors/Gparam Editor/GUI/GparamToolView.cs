@@ -39,6 +39,7 @@ public class GparamToolView
         if (!CFG.Current.Interface_GparamEditor_ToolWindow)
             return;
 
+        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_GparamEditor);
         if (ImGui.Begin("Tools##ToolConfigureWindow_GparamEditor", UIHelper.GetMainWindowFlags()))
         {
             FocusManager.SetFocus(EditorFocusContext.GparamEditor_Tools);

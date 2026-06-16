@@ -72,7 +72,7 @@ public class MapEditorScreen : EditorScreen
         }
 
         var dsid = ImGui.GetID("DockSpace_MapEdit");
-        ImGui.DockSpace(dsid, new Vector2(0, 0));
+        ImGui.DockSpace(dsid, new Vector2(0, 0), ref UIHelper.DockGroup_MapEditor);
 
         ViewHandler.HandleViews();
 
@@ -692,6 +692,9 @@ public class MapEditorScreen : EditorScreen
 
                 foreach(var viewport in view.ViewportHandler.Viewports)
                 {
+                    if (viewport == null)
+                        continue;
+
                     if (viewport.Viewport is VulkanViewport vulkanViewport)
                     {
                         if (vulkanViewport.Visible)

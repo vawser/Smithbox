@@ -61,7 +61,7 @@ public class MaterialEditorScreen : EditorScreen
         }
 
         var dsid = ImGui.GetID("DockSpace_MaterialEditor");
-        ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
+        ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None, ref UIHelper.DockGroup_MaterialEditor);
 
         ViewHandler.HandleViews();
 

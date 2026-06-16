@@ -126,6 +126,7 @@ public class GparamViewHandler
                 displayTitle = "Active View";
             }
 
+            ImGui.SetNextWindowClass(ref UIHelper.DockGroup_GparamEditor);
             if (ImGui.Begin($@"{displayTitle}###GparamEditorView##{view.ViewIndex}", UIHelper.GetInnerWindowFlags()))
             {
                 if (ImGui.IsItemClicked(ImGuiMouseButton.Left))

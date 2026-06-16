@@ -101,6 +101,7 @@ public class ModelEditorView
         if (!CFG.Current.Interface_ModelEditor_ScreenshotMode)
         {
             // FLVER
+            ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ModelEditorView);
             if (ImGui.Begin($@"FLVER##ModelFlverWindow{ViewIndex}", UIHelper.GetInnerWindowFlags()))
             {
                 float width = ImGui.GetContentRegionAvail().X;
@@ -131,6 +132,7 @@ public class ModelEditorView
         if (!CFG.Current.Interface_ModelEditor_ScreenshotMode)
         {
             // Properties
+            ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ModelEditorView);
             if (ImGui.Begin($@"Properties##ModelPropertiesWindow{ViewIndex}", UIHelper.GetInnerWindowFlags()))
             {
                 if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))

@@ -106,6 +106,7 @@ public class MapToolWindow
         activeView.SelectAllAction.OnGui();
         activeView.AdjustToGridAction.OnGui();
 
+        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_MapEditor);
         if (ImGui.Begin("Tools##ToolConfigureWindow_MapEditor", UIHelper.GetMainWindowFlags()))
         {
             FocusManager.SetFocus(EditorFocusContext.MapEditor_Tools);

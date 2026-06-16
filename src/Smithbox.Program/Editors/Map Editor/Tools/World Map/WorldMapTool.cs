@@ -250,6 +250,7 @@ public class WorldMapTool : IResourceEventListener
         ImGui.SetNextWindowPos(center, ImGuiCond.Appearing, new Vector2(0.5f, 0.5f));
         ImGui.SetNextWindowSize(new Vector2(600.0f, 600.0f) * DPI.UIScale(), ImGuiCond.FirstUseEver);
 
+        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_MapEditor);
         ImGui.Begin("World Map##WorldMapImage", flags);
 
         if (ImGui.BeginMenuBar())

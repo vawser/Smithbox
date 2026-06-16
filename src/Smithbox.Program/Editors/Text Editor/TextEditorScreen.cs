@@ -60,7 +60,7 @@ public class TextEditorScreen : EditorScreen
         }
 
         var dsid = ImGui.GetID("DockSpace_TextEditor");
-        ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
+        ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None, ref UIHelper.DockGroup_TextEditor);
 
         ViewHandler.HandleViews();
 

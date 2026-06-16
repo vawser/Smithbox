@@ -1,4 +1,5 @@
-﻿using StudioCore.Application;
+﻿using Hexa.NET.ImGui;
+using StudioCore.Application;
 using StudioCore.Editors.Viewport;
 using StudioCore.Renderer;
 using Veldrid;
@@ -42,6 +43,8 @@ public class ModelViewportWindow
 
     public void Display()
     {
+        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ModelEditorView);
+
         if (Viewport is VulkanViewport vulkanViewport)
         {
             vulkanViewport.Display();

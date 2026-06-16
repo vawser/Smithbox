@@ -46,7 +46,8 @@ public class MapViewportView
                 continue;
             }
 
-            if(viewport.Viewport is VulkanViewport vulkanViewport)
+            ImGui.SetNextWindowClass(ref UIHelper.DockGroup_MapEditorView);
+            if (viewport.Viewport is VulkanViewport vulkanViewport)
             {
                 vulkanViewport.Display();
 

@@ -151,6 +151,7 @@ public class AnimViewHandler
                 displayTitle = "Active View";
             }
 
+            ImGui.SetNextWindowClass(ref UIHelper.DockGroup_AnimEditor);
             if (ImGui.Begin($@"{displayTitle}###AnimEditorView##{view.ViewIndex}", UIHelper.GetDisplayViewWindowFlags()))
             {
                 if (ImGui.IsItemClicked(ImGuiMouseButton.Left))

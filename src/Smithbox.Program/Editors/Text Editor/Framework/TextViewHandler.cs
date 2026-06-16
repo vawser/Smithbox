@@ -125,6 +125,7 @@ public class TextViewHandler
                 displayTitle = "Active View";
             }
 
+            ImGui.SetNextWindowClass(ref UIHelper.DockGroup_TextEditor);
             if (ImGui.Begin($@"{displayTitle}###TextEditorView##{view.ViewIndex}", UIHelper.GetInnerWindowFlags()))
             {
                 if (ImGui.IsItemClicked(ImGuiMouseButton.Left))

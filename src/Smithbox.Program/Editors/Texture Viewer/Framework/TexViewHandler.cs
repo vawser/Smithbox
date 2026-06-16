@@ -128,6 +128,7 @@ public class TexViewHandler
                 displayTitle = "Active View";
             }
 
+            ImGui.SetNextWindowClass(ref UIHelper.DockGroup_TextureViewer);
             if (ImGui.Begin($@"{displayTitle}###TextureEditorView##{view.ViewIndex}", UIHelper.GetInnerWindowFlags()))
             {
                 if (ImGui.IsItemClicked(ImGuiMouseButton.Left))

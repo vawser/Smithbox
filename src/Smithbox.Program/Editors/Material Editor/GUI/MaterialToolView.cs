@@ -31,6 +31,7 @@ public class MaterialToolWindow
         if (!CFG.Current.Interface_MaterialEditor_ToolWindow)
             return;
 
+        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_MaterialEditor);
         if (ImGui.Begin("Tools##ToolConfigureWindow_MaterialEditor", UIHelper.GetMainWindowFlags()))
         {
             FocusManager.SetFocus(EditorFocusContext.MaterialEditor_Tools);

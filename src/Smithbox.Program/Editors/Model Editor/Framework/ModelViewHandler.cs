@@ -125,6 +125,7 @@ public class ModelViewHandler
                 displayTitle = "Active View";
             }
 
+            ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ModelEditor);
             if (ImGui.Begin($@"{displayTitle}###ModelEditorView##{view.ViewIndex}", UIHelper.GetDisplayViewWindowFlags()))
             {
                 if (ImGui.IsItemClicked(ImGuiMouseButton.Left))
@@ -148,7 +149,7 @@ public class ModelViewHandler
             }
 
             var dsid = ImGui.GetID($"DockSpace_ModelEdit_View{view.ViewIndex}");
-            ImGui.DockSpace(dsid, new Vector2(0, 0));
+            ImGui.DockSpace(dsid, new Vector2(0, 0), ref UIHelper.DockGroup_ModelEditorView);
 
             view.Display(Editor.CommandQueue.DoFocus && view == activeView, view == activeView);
 

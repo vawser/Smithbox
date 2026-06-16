@@ -23,6 +23,7 @@ public class MapDataToolView
         if (!CFG.Current.Interface_MapDataEditor_ToolWindow)
             return;
 
+        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_MapDataEditor);
         if (ImGui.Begin("Tools##ToolConfigureWindow_MapDataEditor", UIHelper.GetMainWindowFlags()))
         {
             FocusManager.SetFocus(EditorFocusContext.MapDataEditor_Tools);

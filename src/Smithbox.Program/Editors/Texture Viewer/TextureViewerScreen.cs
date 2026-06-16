@@ -58,7 +58,7 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
         }
 
         var dsid = ImGui.GetID("DockSpace_TextureViewer");
-        ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
+        ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None, ref UIHelper.DockGroup_TextureViewer);
 
         ViewHandler.HandleViews();
 

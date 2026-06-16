@@ -25,6 +25,7 @@ public class AnimToolWindow
         if (activeView == null)
             return;
 
+        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_AnimEditor);
         if (ImGui.Begin("Tool Window##animEditorTools", UIHelper.GetMainWindowFlags()))
         {
             FocusManager.SetFocus(EditorFocusContext.AnimEditor_Tools);

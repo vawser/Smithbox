@@ -1,4 +1,5 @@
-﻿using StudioCore.Application;
+﻿using Hexa.NET.ImGui;
+using StudioCore.Application;
 using StudioCore.Editors.ModelEditor;
 using StudioCore.Editors.Viewport;
 using System;
@@ -47,6 +48,8 @@ public class AnimViewportWindow
 
     public void Display()
     {
+        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_AnimEditor);
+
         if (Viewport is VulkanViewport vulkanViewport)
         {
             vulkanViewport.Display();

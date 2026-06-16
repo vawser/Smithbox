@@ -126,6 +126,7 @@ public class MapDataViewHandler
                 displayTitle = "Active View";
             }
 
+            ImGui.SetNextWindowClass(ref UIHelper.DockGroup_MapDataEditor);
             if (ImGui.Begin($@"{displayTitle}###MapDataEditorView##{view.ViewIndex}", UIHelper.GetInnerWindowFlags()))
             {
                 if (ImGui.IsItemClicked(ImGuiMouseButton.Left))

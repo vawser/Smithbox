@@ -24,6 +24,12 @@
 
  - Add visualisation (via primitive meshes) of enemy AI radiuses (sight, listen, smell)
  
+- Map Data Editor
+ - Implement property edit
+ - Port over Local/Global Search and Mass Edit
+ - Implement ENFL sub-editor
+ 
+ 
 - Model Editor 
     - Add simple JSON export/import for elements of FLVER
     - Rendering experiment (TinyFFR)

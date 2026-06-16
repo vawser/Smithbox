@@ -194,6 +194,7 @@ public class MapEditorView
     public void Display(bool doFocus, bool isActiveView)
     {
         // MSB
+        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_MapEditorView);
         if (ImGui.Begin($@"MSB##MsbWindow{ViewIndex}", UIHelper.GetInnerWindowFlags()))
         {
             var columnCount = 1;
@@ -235,6 +236,7 @@ public class MapEditorView
         ViewportWindow.Display();
 
         // Properties
+        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_MapEditorView);
         if (ImGui.Begin($@"Properties##MapPropertiesWindow{ViewIndex}", UIHelper.GetInnerWindowFlags()))
         {
             var columnCount = 1;

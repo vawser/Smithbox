@@ -54,7 +54,8 @@ public class ProjectScreen
         }
 
         ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(0.0f, 0.0f));
-
+        
+        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_EditorView);
         if (ImGui.Begin("Projects##ProjectEditor", UIHelper.GetMainWindowFlags()))
         {
             ImGui.PopStyleColor(1);
@@ -71,8 +72,9 @@ public class ProjectScreen
             }
 
             var dsid = ImGui.GetID("DockSpace_ProjectEditor");
-            ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
+            ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None, ref UIHelper.DockGroup_ProjectEditor);
 
+            ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ProjectEditor);
             if (ImGui.Begin("Project View##ProjectView", UIHelper.GetInnerWindowFlags()))
             {
                 if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))

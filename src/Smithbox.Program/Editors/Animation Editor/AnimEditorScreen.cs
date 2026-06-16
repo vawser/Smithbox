@@ -71,7 +71,7 @@ public class AnimEditorScreen : EditorScreen
         }
 
         var dsid = ImGui.GetID("DockSpace_AnimEdit");
-        ImGui.DockSpace(dsid, new Vector2(0, 0));
+        ImGui.DockSpace(dsid, new Vector2(0, 0), ref UIHelper.DockGroup_AnimEditor);
 
         ViewHandler.HandleViews();
 

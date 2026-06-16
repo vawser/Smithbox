@@ -11,6 +11,77 @@ using static HKLib.hk2018.hkSerialize.CompatTypeParentInfo;
 namespace StudioCore.Application;
 public static class UIHelper
 {
+    public static uint EDITOR_DOCK_GROUP = 1000;
+    public static uint PROJECT_EDITOR_DOCK_GROUP = 1001;
+    public static uint ANIM_EDITOR_DOCK_GROUP = 1002;
+    public static uint FILE_BROWSER_DOCK_GROUP = 1003;
+    public static uint GPARAM_EDITOR_DOCK_GROUP = 1004;
+    public static uint MAP_DATA_EDITOR_DOCK_GROUP = 1005;
+    public static uint MAP_EDITOR_DOCK_GROUP = 1006;
+    public static uint MATERIAL_EDITOR_DOCK_GROUP = 1007;
+    public static uint MODEL_EDITOR_DOCK_GROUP = 1008;
+    public static uint PARAM_EDITOR_DOCK_GROUP = 1009;
+    public static uint TEXT_EDITOR_DOCK_GROUP = 1010;
+    public static uint TEXTURE_VIEWER_DOCK_GROUP = 1011;
+
+    public static uint MAP_EDITOR_VIEW_DOCK_GROUP = 1100;
+    public static uint MODEL_EDITOR_VIEW_DOCK_GROUP = 1101;
+
+    public static ImGuiWindowClass DockGroup_EditorView = new(
+        classId: EDITOR_DOCK_GROUP, 
+        dockingAllowUnclassed: false);
+
+    public static ImGuiWindowClass DockGroup_ProjectEditor = new(
+        classId: PROJECT_EDITOR_DOCK_GROUP, 
+        dockingAllowUnclassed: false);
+
+    public static ImGuiWindowClass DockGroup_AnimEditor = new(
+        classId: ANIM_EDITOR_DOCK_GROUP,
+        dockingAllowUnclassed: false);
+
+    public static ImGuiWindowClass DockGroup_FileBrowser = new(
+        classId: FILE_BROWSER_DOCK_GROUP,
+        dockingAllowUnclassed: false);
+
+    public static ImGuiWindowClass DockGroup_GparamEditor = new(
+        classId: GPARAM_EDITOR_DOCK_GROUP,
+        dockingAllowUnclassed: false);
+
+    public static ImGuiWindowClass DockGroup_MapDataEditor = new(
+        classId: MAP_DATA_EDITOR_DOCK_GROUP,
+        dockingAllowUnclassed: false);
+
+    public static ImGuiWindowClass DockGroup_MapEditor = new(
+        classId: MAP_EDITOR_DOCK_GROUP,
+        dockingAllowUnclassed: false);
+
+    public static ImGuiWindowClass DockGroup_MaterialEditor = new(
+        classId: MATERIAL_EDITOR_DOCK_GROUP,
+        dockingAllowUnclassed: false);
+
+    public static ImGuiWindowClass DockGroup_ModelEditor = new(
+        classId: MODEL_EDITOR_DOCK_GROUP,
+        dockingAllowUnclassed: false);
+
+    public static ImGuiWindowClass DockGroup_ParamEditor = new(
+        classId: PARAM_EDITOR_DOCK_GROUP, 
+        dockingAllowUnclassed: false);
+
+    public static ImGuiWindowClass DockGroup_TextEditor = new(
+        classId: TEXT_EDITOR_DOCK_GROUP,
+        dockingAllowUnclassed: false);
+
+    public static ImGuiWindowClass DockGroup_TextureViewer = new(
+        classId: TEXTURE_VIEWER_DOCK_GROUP,
+        dockingAllowUnclassed: false);
+
+    public static ImGuiWindowClass DockGroup_MapEditorView = new(
+        classId: MAP_EDITOR_VIEW_DOCK_GROUP,
+        dockingAllowUnclassed: false);
+
+    public static ImGuiWindowClass DockGroup_ModelEditorView = new(
+        classId: MODEL_EDITOR_VIEW_DOCK_GROUP,
+        dockingAllowUnclassed: false);
 
     public static void ApplyBaseStyle()
     {

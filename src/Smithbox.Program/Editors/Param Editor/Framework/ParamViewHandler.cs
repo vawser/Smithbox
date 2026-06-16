@@ -134,6 +134,7 @@ public class ParamViewHandler
                 displayTitle = "Active View";
             }
 
+            ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ParamEditor);
             if (ImGui.Begin($@"{displayTitle}###ParamEditorView##{view.ViewIndex}", UIHelper.GetInnerWindowFlags()))
             {
                 if (ImGui.IsItemClicked(ImGuiMouseButton.Left))
