@@ -34,7 +34,7 @@ public class ModelEditorView
 
     public ModelViewportWindow ViewportWindow;
     public ModelContainerList SourceList;
-    public ModelFileList SelectionList;
+    public ModelFileList FileList;
     public ModelContents Contents;
     public ModelProperties Properties;
 
@@ -73,7 +73,7 @@ public class ModelEditorView
         ViewportFilters = new(this, project);
 
         SourceList = new(this, project);
-        SelectionList = new(this, project);
+        FileList = new(this, project);
         Contents = new(this, project);
         Properties = new(this, project);
 
@@ -96,16 +96,17 @@ public class ModelEditorView
         ModelInsightHelper = new ModelInsightHelper(this, Project);
     }
 
-    public void Display(bool doFocus, bool isActiveView)
+    public void Display(uint dockspaceId, int viewIndex, bool doFocus, bool isActiveView)
     {
+        // Source List
         if (!CFG.Current.Interface_ModelEditor_ScreenshotMode)
         {
-            // FLVER
+            ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
             ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ModelEditorView);
-            if (ImGui.Begin($@"FLVER##ModelFlverWindow{ViewIndex}", UIHelper.GetInnerWindowFlags()))
+            if (ImGui.Begin($@"Source List##modelEditor_SourceList_{viewIndex}", UIHelper.GetInnerWindowFlags()))
             {
-                float width = ImGui.GetContentRegionAvail().X;
-                float height = ImGui.GetContentRegionAvail().Y * CFG.Current.Interace_Editor_Display_Inner_Height_Percent;
+                var width = ImGui.GetContentRegionAvail().X;
+                var height = ImGui.GetContentRegionAvail().Y;
 
                 if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
                 {
@@ -113,31 +114,66 @@ public class ModelEditorView
                     Editor.ViewHandler.ActiveView = this;
                 }
 
-                var adjustmentPercent = 0.78f;
+                SourceList.Display(width, height);
+            }
 
-                SourceList.Display(width, height * CFG.Current.ModelEditor_Display_SourceList_Percentage);
-                SelectionList.Display(width, height * CFG.Current.ModelEditor_Display_SelectionList_Percentage);
-                Contents.Display(width, height * CFG.Current.ModelEditor_Display_Contents_Percentage * adjustmentPercent);
+            ImGui.End();
 
-                // adjustmnetPercent to account for the spacing since this editor
-                // has a separate window rather than a table layout as the other sod.
+            // File List
+            ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
+            ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ModelEditorView);
+            if (ImGui.Begin($@"File List##modelEditor_FileList_{viewIndex}", UIHelper.GetInnerWindowFlags()))
+            {
+                var width = ImGui.GetContentRegionAvail().X;
+                var height = ImGui.GetContentRegionAvail().Y;
+
+                if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+                {
+                    FocusManager.SetFocus(EditorFocusContext.ModelEditor_FileList);
+                    Editor.ViewHandler.ActiveView = this;
+                }
+
+                FileList.Display(width, height);
+            }
+
+            ImGui.End();
+
+            // Contents
+            ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
+            ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ModelEditorView);
+            if (ImGui.Begin($@"Contents##modelEditor_Contents_{viewIndex}", UIHelper.GetInnerWindowFlags()))
+            {
+                var width = ImGui.GetContentRegionAvail().X;
+                var height = ImGui.GetContentRegionAvail().Y;
+
+                if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+                {
+                    FocusManager.SetFocus(EditorFocusContext.ModelEditor_FileList);
+                    Editor.ViewHandler.ActiveView = this;
+                }
+
+                Contents.Display(width, height);
             }
 
             ImGui.End();
         }
 
         // Viewport
-        ViewportWindow.Display();
+        ViewportWindow.Display(dockspaceId);
 
+        // Properties
         if (!CFG.Current.Interface_ModelEditor_ScreenshotMode)
         {
-            // Properties
+            ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
             ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ModelEditorView);
-            if (ImGui.Begin($@"Properties##ModelPropertiesWindow{ViewIndex}", UIHelper.GetInnerWindowFlags()))
+            if (ImGui.Begin($@"Properties##modelEditor_Properties_{viewIndex}", UIHelper.GetInnerWindowFlags()))
             {
+                var width = ImGui.GetContentRegionAvail().X;
+                var height = ImGui.GetContentRegionAvail().Y;
+
                 if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
                 {
-                    FocusManager.SetFocus(EditorFocusContext.ModelEditor_FileList);
+                    FocusManager.SetFocus(EditorFocusContext.ModelEditor_Properties);
                     Editor.ViewHandler.ActiveView = this;
                 }
 
@@ -146,7 +182,6 @@ public class ModelEditorView
 
             ImGui.End();
         }
-
 
         ViewportSelection.ClearGotoTarget();
     }

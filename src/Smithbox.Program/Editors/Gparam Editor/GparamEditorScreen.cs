@@ -66,7 +66,7 @@ public class GparamEditorScreen : EditorScreen
         var dsid = ImGui.GetID("DockSpace_GparamEditor");
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None, ref UIHelper.DockGroup_GparamEditor);
 
-        ViewHandler.HandleViews();
+        ViewHandler.HandleViews(dsid);
 
         if (ViewHandler.ActiveView != null)
         {

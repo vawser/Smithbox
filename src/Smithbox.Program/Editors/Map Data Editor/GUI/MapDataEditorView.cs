@@ -2,6 +2,7 @@
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.MaterialEditor;
+using StudioCore.Editors.TextureViewer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -40,26 +41,15 @@ public class MapDataEditorView
         MsbEditor = new(this, project);
         EnflEditor = new(this, project);
     }
-    public void Display(bool doFocus, bool isActiveView)
+    public void Display(uint dockspaceId, int viewIndex, bool doFocus, bool isActiveView)
     {
-        var columnCount = 2;
-        var windowFlags = ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse;
-
-        if (ImGui.BeginTable("mapDataTable", columnCount,
-            ImGuiTableFlags.Resizable |
-            ImGuiTableFlags.SizingStretchProp |
-            ImGuiTableFlags.BordersInnerV))
+        // Sub-Editor Mode
+        ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
+        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_MapDataEditorView);
+        if (ImGui.Begin($@"Configuration##mapDataEditor_Common_{viewIndex}", UIHelper.GetInnerWindowFlags()))
         {
-            ImGui.TableSetupColumn("##CommonCol", ImGuiTableColumnFlags.WidthStretch, 0.25f);
-            ImGui.TableSetupColumn("##SubEditorCol", ImGuiTableColumnFlags.WidthStretch, 0.5f);
-
-            // --- Column 1 ---
-            ImGui.TableNextColumn();
-
-            float width = ImGui.GetContentRegionAvail().X;
-            float height = ImGui.GetContentRegionAvail().Y * CFG.Current.Interace_Editor_Display_Inner_Height_Percent;
-
-            ImGui.BeginChild("##CommonViewArea", new Vector2(0, 0), windowFlags);
+            var width = ImGui.GetContentRegionAvail().X;
+            var height = ImGui.GetContentRegionAvail().Y;
 
             if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
             {
@@ -68,16 +58,20 @@ public class MapDataEditorView
             }
 
             CommonView.Draw(width, height);
+        }
 
-            ImGui.EndChild();
+        ImGui.End();
 
-            // --- Column 2 ---
-            ImGui.TableNextColumn();
-
-            ImGui.BeginChild("##SubEditorArea", new Vector2(0, 0), windowFlags);
-
-            if (Selection.SubEditorMode is SubEditorType.MSB)
+        // MSB Editor
+        if (Selection.SubEditorMode is SubEditorType.MSB)
+        {
+            ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
+            ImGui.SetNextWindowClass(ref UIHelper.DockGroup_MapDataEditorView);
+            if (ImGui.Begin($@"MSB Editor##mapDataEditor_MsbEditor_{viewIndex}", UIHelper.GetInnerWindowFlags()))
             {
+                var width = ImGui.GetContentRegionAvail().X;
+                var height = ImGui.GetContentRegionAvail().Y;
+
                 if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
                 {
                     FocusManager.SetFocus(EditorFocusContext.MapDataEditor_MsbEditor);
@@ -86,8 +80,20 @@ public class MapDataEditorView
 
                 MsbEditor.Draw();
             }
-            else if (Selection.SubEditorMode is SubEditorType.ENFL)
+
+            ImGui.End();
+        }
+
+        // MSB Editor
+        if (Selection.SubEditorMode is SubEditorType.ENFL)
+        {
+            ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
+            ImGui.SetNextWindowClass(ref UIHelper.DockGroup_MapDataEditorView);
+            if (ImGui.Begin($@"ENFL Editor##mapDataEditor_EnflEditor_{viewIndex}", UIHelper.GetInnerWindowFlags()))
             {
+                var width = ImGui.GetContentRegionAvail().X;
+                var height = ImGui.GetContentRegionAvail().Y;
+
                 if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
                 {
                     FocusManager.SetFocus(EditorFocusContext.MapDataEditor_EnflEditor);
@@ -96,14 +102,8 @@ public class MapDataEditorView
 
                 EnflEditor.Draw();
             }
-            else
-            {
 
-            }
-
-            ImGui.EndChild();
-
-            ImGui.EndTable();
+            ImGui.End();
         }
     }
 }

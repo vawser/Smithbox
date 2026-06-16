@@ -55,7 +55,7 @@ public class MaterialEditorScreen : EditorScreen
             ViewMenu();
             ToolWindow.ToolMenu();
 
-            OptionsMenu();
+            //OptionsMenu();
 
             ImGui.EndMenuBar();
         }
@@ -63,7 +63,7 @@ public class MaterialEditorScreen : EditorScreen
         var dsid = ImGui.GetID("DockSpace_MaterialEditor");
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None, ref UIHelper.DockGroup_MaterialEditor);
 
-        ViewHandler.HandleViews();
+        ViewHandler.HandleViews(dsid);
 
         if (ViewHandler.ActiveView != null)
         {
@@ -189,27 +189,6 @@ public class MaterialEditorScreen : EditorScreen
     {
         if (ImGui.BeginMenu("Options"))
         {
-            if (ImGui.BeginMenu("Display"))
-            {
-                ImGui.SliderFloat("Containers##containerListDisplayPercentage", ref CFG.Current.MaterialEditor_Display_ContainerList_Percentage, 0.01f, 0.99f);
-                if (ImGui.IsItemDeactivatedAfterEdit())
-                {
-                    // Auto-adjust the other var so the ratio remains 100%
-                    CFG.Current.MaterialEditor_Display_FileList_Percentage = 1 - CFG.Current.MaterialEditor_Display_ContainerList_Percentage;
-                }
-                UIHelper.Tooltip("The percentage of the window the Containers section occupies.");
-
-                ImGui.SliderFloat("Files##fileListDisplayPercentage", ref CFG.Current.MaterialEditor_Display_FileList_Percentage, 0.01f, 0.99f);
-                if (ImGui.IsItemDeactivatedAfterEdit())
-                {
-                    // Auto-adjust the other var so the ratio remains 100%
-                    CFG.Current.MaterialEditor_Display_ContainerList_Percentage = 1 - CFG.Current.MaterialEditor_Display_FileList_Percentage;
-                }
-                UIHelper.Tooltip("The percentage of the window the Files section occupies.");
-
-                ImGui.EndMenu();
-            }
-
             ImGui.EndMenu();
         }
     }

@@ -39,7 +39,7 @@ public class MapContentView
 
         DisplaySearchbar();
 
-        ImGui.BeginChild("MapContents", new Vector2(width, height), ImGuiChildFlags.Borders);
+        ImGui.BeginChild("MapContents", new Vector2(0, 0), ImGuiChildFlags.Borders);
 
         if (View.Selection.SelectedMapContainer != null)
         {

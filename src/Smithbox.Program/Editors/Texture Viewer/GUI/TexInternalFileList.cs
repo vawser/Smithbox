@@ -29,7 +29,7 @@ public class TexInternalFileList
 
         EditorFilters.DisplayFramedListFilter("textureViewer_TpfList", ref TpfFileListFilter, ref ExactTpfFileListFilter);
 
-        ImGui.BeginChild("TpfList", new Vector2(width, height), ImGuiChildFlags.Borders);
+        ImGui.BeginChild("TpfList", new Vector2(0, 0), ImGuiChildFlags.Borders);
 
         if (Parent.Selection.SelectedBinder != null)
         {

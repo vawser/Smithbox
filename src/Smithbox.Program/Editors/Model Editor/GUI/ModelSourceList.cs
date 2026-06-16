@@ -46,7 +46,7 @@ public class ModelContainerList
 
         DisplaySearchbar();
 
-        ImGui.BeginChild("ContainerList", new Vector2(width, height), ImGuiChildFlags.Borders);
+        ImGui.BeginChild("ContainerList", new Vector2(0, 0), ImGuiChildFlags.Borders);
 
         ImGui.BeginTabBar("sourceTabs");
 
@@ -54,7 +54,7 @@ public class ModelContainerList
         {
             CurrentTab = ModelListType.Character;
 
-            ImGui.BeginChild($"characterSourceList");
+            ImGui.BeginChild($"characterSourceList", new Vector2(0, 0), ImGuiChildFlags.Borders);
 
             DisplayModelSourceList(ModelListType.Character, Project.Locator.ChrFiles);
 
@@ -72,7 +72,7 @@ public class ModelContainerList
         {
             CurrentTab = ModelListType.Asset;
 
-            ImGui.BeginChild($"assetSourceList");
+            ImGui.BeginChild($"assetSourceList", new Vector2(0, 0), ImGuiChildFlags.Borders);
 
             DisplayModelSourceList(ModelListType.Asset, Project.Locator.AssetFiles);
 
@@ -84,7 +84,7 @@ public class ModelContainerList
         {
             CurrentTab = ModelListType.Part;
 
-            ImGui.BeginChild($"partsSourceList");
+            ImGui.BeginChild($"partsSourceList", new Vector2(0, 0), ImGuiChildFlags.Borders);
 
             DisplayModelSourceList(ModelListType.Part, Project.Locator.PartFiles);
 
@@ -96,7 +96,7 @@ public class ModelContainerList
         {
             CurrentTab = ModelListType.MapPiece;
 
-            ImGui.BeginChild($"mapPieceSourceList");
+            ImGui.BeginChild($"mapPieceSourceList", new Vector2(0, 0), ImGuiChildFlags.Borders);
 
             DisplayModelSourceList(ModelListType.MapPiece, Project.Locator.MapPieceFiles);
 
@@ -214,8 +214,8 @@ public class ModelContainerList
                             // Populates the Files list so we can display the list in select view
                             entry.Value.PopulateModelList();
 
-                            View.SelectionList.ApplyAutoSelectPass = true;
-                            View.SelectionList.ApplyAutoLoadFirst = true;
+                            View.FileList.ApplyAutoSelectPass = true;
+                            View.FileList.ApplyAutoLoadFirst = true;
                         }
                     }
                 }
@@ -247,8 +247,8 @@ public class ModelContainerList
                     // Populates the Files list so we can display the list in select view
                     entry.Value.PopulateModelList();
 
-                    View.SelectionList.ApplyAutoSelectPass = true;
-                    View.SelectionList.ApplyAutoLoadFirst = true;
+                    View.FileList.ApplyAutoSelectPass = true;
+                    View.FileList.ApplyAutoLoadFirst = true;
                 }
             }
 

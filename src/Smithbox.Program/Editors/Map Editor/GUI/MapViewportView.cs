@@ -37,7 +37,7 @@ public class MapViewportView
 
     }
 
-    public void Display()
+    public void Display(uint dockspaceId)
     {
         foreach (var viewport in View.ViewportHandler.Viewports)
         {
@@ -46,7 +46,9 @@ public class MapViewportView
                 continue;
             }
 
+            ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
             ImGui.SetNextWindowClass(ref UIHelper.DockGroup_MapEditorView);
+
             if (viewport.Viewport is VulkanViewport vulkanViewport)
             {
                 vulkanViewport.Display();

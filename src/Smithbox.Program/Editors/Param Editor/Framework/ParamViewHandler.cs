@@ -18,6 +18,7 @@ public class ParamViewHandler
     public List<ParamEditorView> ParamEditorViews;
     public ParamEditorView ActiveView;
 
+    public bool AddNewView = false;
     public ParamEditorView ViewToClose = null;
 
     public ParamViewHandler(ParamEditorScreen editor, ProjectEntry project)
@@ -33,12 +34,13 @@ public class ParamViewHandler
 
     public void DisplayMenu()
     {
-        if (ImGui.MenuItem("New Editor View"))
+        if (ImGui.MenuItem("Add New View", false))
         {
             AddView();
         }
 
-        if (ImGui.MenuItem("Close Current Editor View"))
+        var canClose = CountViews() > 1;
+        if (ImGui.MenuItem("Close Current View", false, canClose))
         {
             if (CountViews() > 1)
             {
@@ -98,7 +100,7 @@ public class ParamViewHandler
         return ParamEditorViews.Where(e => e != null).Count();
     }
 
-    public void HandleViews()
+    public void HandleViews(uint editorDockspaceId)
     {
         var activeView = ActiveView;
 
@@ -134,6 +136,7 @@ public class ParamViewHandler
                 displayTitle = "Active View";
             }
 
+            ImGui.SetNextWindowDockID(editorDockspaceId, ImGuiCond.FirstUseEver);
             ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ParamEditor);
             if (ImGui.Begin($@"{displayTitle}###ParamEditorView##{view.ViewIndex}", UIHelper.GetInnerWindowFlags()))
             {
@@ -142,24 +145,39 @@ public class ParamViewHandler
                     ActiveView = view;
                 }
 
-                // Don't let the user close if their is only 1 view
-                if (CountViews() > 1)
+                if (ImGui.BeginPopupContextItem())
                 {
-                    if (ImGui.BeginPopupContextItem())
+                    if (ImGui.MenuItem("Add View"))
+                    {
+                        AddNewView = true;
+                    }
+
+                    // Don't let the user close if their is only 1 view
+                    if (CountViews() > 1)
                     {
                         if (ImGui.MenuItem("Close View"))
                         {
                             ViewToClose = view;
                         }
-
-                        ImGui.EndMenu();
                     }
+
+                    ImGui.EndMenu();
                 }
             }
 
-            view.Display(Editor.CommandQueue.DoFocus && view == activeView, view == activeView);
+            var dsid = ImGui.GetID($"DockSpace_ParamEditor_View{view.ViewIndex}");
+            ImGui.DockSpace(dsid, new Vector2(0, 0), ref UIHelper.DockGroup_ParamEditorView);
+
+            view.Display(dsid, view.ViewIndex, Editor.CommandQueue.DoFocus && view == activeView, view == activeView);
 
             ImGui.End();
+        }
+
+        if (AddNewView)
+        {
+            AddView();
+
+            AddNewView = false;
         }
 
         if (ViewToClose != null)

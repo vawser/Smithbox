@@ -52,62 +52,96 @@ public class ParamEditorView
         ParamFieldWindow = new ParamFieldWindow(editor, project, this);
     }
 
-    public void Display(bool doFocus, bool isActiveView)
+    public void Display(uint dockspaceId, int viewIndex, bool doFocus, bool isActiveView)
     {
-        var activeParam = Selection.GetActiveParam();
+        var scrollTo = 0f;
 
-        var columnCount = 3;
+        var activeParam = Selection.GetActiveParam();
+        Param.Row activeRow = Selection.GetActiveRow();
 
         if (ParamTableWindow.IsInTableGroupMode(activeParam))
         {
-            columnCount = 4;
+
         }
 
-        if (EditorTableUtils.ImGuiTableStdColumns("paramsT", columnCount, true, true))
+        // Params
+        ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
+        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ParamEditorView);
+        if (ImGui.Begin($@"Params##paramEditor_ParamList_{viewIndex}", UIHelper.GetInnerWindowFlags()))
         {
-            ImGui.TableSetupColumn("paramsCol", ImGuiTableColumnFlags.None, 0.5f);
-            ImGui.TableSetupColumn("paramsCol2", ImGuiTableColumnFlags.None, 0.5f);
+            var width = ImGui.GetContentRegionAvail().X;
+            var height = ImGui.GetContentRegionAvail().Y;
 
-            if (ParamTableWindow.IsInTableGroupMode(activeParam))
-            {
-                ImGui.TableSetupColumn("rowGroupCol", ImGuiTableColumnFlags.None, 0.5f);
-            }
-
-            var scrollTo = 0f;
-            if (ImGui.TableNextColumn())
+            if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
             {
                 FocusManager.SetFocus(EditorFocusContext.ParamEditor_ParamList);
-
-                ParamListWindow.Display(doFocus, isActiveView, scrollTo);
+                Editor.ViewHandler.ActiveView = this;
             }
 
-            if (ParamTableWindow.IsInTableGroupMode(activeParam))
+            ParamListWindow.Display(doFocus, isActiveView, scrollTo);
+        }
+
+        ImGui.End();
+
+        // Tables
+        if (ParamTableWindow.IsInTableGroupMode(activeParam))
+        {
+            ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
+            ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ParamEditorView);
+            if (ImGui.Begin($@"Tables##paramEditor_TableList_{viewIndex}", UIHelper.GetInnerWindowFlags()))
             {
-                if (ImGui.TableNextColumn())
+                var width = ImGui.GetContentRegionAvail().X;
+                var height = ImGui.GetContentRegionAvail().Y;
+
+                if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
                 {
                     FocusManager.SetFocus(EditorFocusContext.ParamEditor_TableList);
-
-                    ParamTableWindow.Display(doFocus, isActiveView, scrollTo, activeParam);
+                    Editor.ViewHandler.ActiveView = this;
                 }
+
+                ParamTableWindow.Display(doFocus, isActiveView, scrollTo, activeParam);
             }
 
-            if (ImGui.TableNextColumn())
+            ImGui.End();
+        }
+
+        // Rows
+        ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
+        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ParamEditorView);
+        if (ImGui.Begin($@"Rows##paramEditor_RowList_{viewIndex}", UIHelper.GetInnerWindowFlags()))
+        {
+            var width = ImGui.GetContentRegionAvail().X;
+            var height = ImGui.GetContentRegionAvail().Y;
+
+            if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
             {
                 FocusManager.SetFocus(EditorFocusContext.ParamEditor_RowList);
-
-                ParamRowWindow.Display(doFocus, isActiveView, scrollTo, activeParam);
+                Editor.ViewHandler.ActiveView = this;
             }
 
-            Param.Row activeRow = Selection.GetActiveRow();
-            if (ImGui.TableNextColumn())
+            ParamRowWindow.Display(doFocus, isActiveView, scrollTo, activeParam);
+        }
+
+        ImGui.End();
+
+        // Fields
+        ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
+        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ParamEditorView);
+        if (ImGui.Begin($@"Fields##paramEditor_FieldList_{viewIndex}", UIHelper.GetInnerWindowFlags()))
+        {
+            var width = ImGui.GetContentRegionAvail().X;
+            var height = ImGui.GetContentRegionAvail().Y;
+
+            if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
             {
                 FocusManager.SetFocus(EditorFocusContext.ParamEditor_FieldList);
-
-                ParamFieldWindow.Display(isActiveView, activeParam, activeRow);
+                Editor.ViewHandler.ActiveView = this;
             }
 
-            ImGui.EndTable();
+            ParamFieldWindow.Display(isActiveView, activeParam, activeRow);
         }
+
+        ImGui.End();
     }
 
     public ParamData GetParamData()

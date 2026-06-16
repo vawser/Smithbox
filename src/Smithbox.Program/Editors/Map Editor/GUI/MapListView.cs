@@ -30,9 +30,7 @@ public class MapListView : IActionEventHandler
 
         DisplaySearchbar();
 
-        ImGui.BeginChild("MapListSection", new Vector2(width, height), ImGuiChildFlags.Borders);
-
-        FocusManager.SetFocus(EditorFocusContext.MapEditor_FileList);
+        ImGui.BeginChild("MapListSection", new Vector2(0, 0), ImGuiChildFlags.Borders);
 
         DisplayMapList(MapContentLoadState.Loaded);
         DisplayMapList(MapContentLoadState.Unloaded);

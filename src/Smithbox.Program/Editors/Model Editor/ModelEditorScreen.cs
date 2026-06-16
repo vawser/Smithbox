@@ -67,7 +67,7 @@ public class ModelEditorScreen : EditorScreen
         var dsid = ImGui.GetID("DockSpace_ModelEdit");
         ImGui.DockSpace(dsid, new Vector2(0, 0), ref UIHelper.DockGroup_ModelEditor);
 
-        ViewHandler.HandleViews();
+        ViewHandler.HandleViews(dsid);
 
         var activeView = ViewHandler.ActiveView;
 
@@ -241,47 +241,6 @@ public class ModelEditorScreen : EditorScreen
                 }
                 UIHelper.Tooltip($"If enabled, the linked node name is displayed in the mesh entry name.");
                 UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_Contents_NodeNameInMeshEntry);
-
-                ImGui.EndMenu();
-            }
-
-            if (ImGui.BeginMenu("Display"))
-            {
-                ImGui.SliderFloat("Containers##containersDisplayPercentage", ref CFG.Current.ModelEditor_Display_SourceList_Percentage, 0.01f, 0.99f);
-                if (ImGui.IsItemDeactivatedAfterEdit())
-                {
-                    var remainder = 1f - CFG.Current.ModelEditor_Display_SourceList_Percentage;
-
-                    StudioMath.Redistribute(
-                        ref CFG.Current.ModelEditor_Display_SelectionList_Percentage,
-                        ref CFG.Current.ModelEditor_Display_Contents_Percentage,
-                        remainder);
-                }
-                UIHelper.Tooltip("The percentage of the window the Containers section occupies.");
-
-                ImGui.SliderFloat("Files##filesDisplayPercentage", ref CFG.Current.ModelEditor_Display_SelectionList_Percentage, 0.01f, 0.99f);
-                if (ImGui.IsItemDeactivatedAfterEdit())
-                {
-                    var remainder = 1f - CFG.Current.ModelEditor_Display_SelectionList_Percentage;
-
-                    StudioMath.Redistribute(
-                        ref CFG.Current.ModelEditor_Display_SourceList_Percentage,
-                        ref CFG.Current.ModelEditor_Display_Contents_Percentage,
-                        remainder);
-                }
-                UIHelper.Tooltip("The percentage of the window the Files section occupies.");
-
-                ImGui.SliderFloat("Contents##contentsDisplayPercentage", ref CFG.Current.ModelEditor_Display_Contents_Percentage, 0.01f, 0.99f);
-                if (ImGui.IsItemDeactivatedAfterEdit())
-                {
-                    var remainder = 1f - CFG.Current.ModelEditor_Display_Contents_Percentage;
-
-                    StudioMath.Redistribute(
-                        ref CFG.Current.ModelEditor_Display_SourceList_Percentage,
-                        ref CFG.Current.ModelEditor_Display_SelectionList_Percentage,
-                        remainder);
-                }
-                UIHelper.Tooltip("The percentage of the window the Contents section occupies.");
 
                 ImGui.EndMenu();
             }

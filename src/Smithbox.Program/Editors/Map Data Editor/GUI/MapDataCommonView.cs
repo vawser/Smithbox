@@ -59,7 +59,7 @@ public class MapDataCommonView
         {
             View.MsbEditor.DisplayHeader();
 
-            ImGui.BeginChild("MsbFileList", new Vector2(width, height), ImGuiChildFlags.Borders);
+            ImGui.BeginChild("MsbFileList", new Vector2(0, 0), ImGuiChildFlags.Borders);
             View.MsbEditor.DisplaySourceList();
             ImGui.EndChild();
         }
@@ -67,7 +67,7 @@ public class MapDataCommonView
         {
             View.EnflEditor.DisplayHeader();
 
-            ImGui.BeginChild("EnflFileList", new Vector2(width, height), ImGuiChildFlags.Borders);
+            ImGui.BeginChild("EnflFileList", new Vector2(0, 0), ImGuiChildFlags.Borders);
             View.EnflEditor.DisplaySourceList();
             ImGui.EndChild();
         }

@@ -27,7 +27,7 @@ public class TexTextureFileList
 
         EditorFilters.DisplayFramedListFilter("textureViewer_TextureList", ref TextureFileListFilter, ref ExactTextureFileListFilter);
 
-        ImGui.BeginChild("TextureList", new Vector2(width, height), ImGuiChildFlags.Borders);
+        ImGui.BeginChild("TextureList", new Vector2(0, 0), ImGuiChildFlags.Borders);
 
         if (Parent.Selection.SelectedTpf != null)
         {

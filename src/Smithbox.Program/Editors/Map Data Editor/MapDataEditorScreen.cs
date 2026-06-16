@@ -62,7 +62,7 @@ public class MapDataEditorScreen : EditorScreen
         var dsid = ImGui.GetID("DockSpace_MapDataEditor");
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None,ref UIHelper.DockGroup_MapDataEditor);
 
-        ViewHandler.HandleViews();
+        ViewHandler.HandleViews(dsid);
 
         if (ViewHandler.ActiveView != null)
         {

@@ -18,8 +18,8 @@ public class TexEditorView
     public TexViewerZoom ZoomState;
 
     public TexContainerList ContainerList;
-    public TexInternalFileList InternalFileList;
-    public TexTextureFileList FileList;
+    public TexInternalFileList FileList;
+    public TexTextureFileList TextureList;
     public TexDisplayViewport DisplayViewport;
     public TexProperties Properties;
 
@@ -37,41 +37,22 @@ public class TexEditorView
         ZoomState = new TexViewerZoom(this, Project);
 
         ContainerList = new TexContainerList(this, Project);
-        InternalFileList = new TexInternalFileList(this, Project);
-        FileList = new TexTextureFileList(this, Project);
+        FileList = new TexInternalFileList(this, Project);
+        TextureList = new TexTextureFileList(this, Project);
 
         DisplayViewport = new TexDisplayViewport(this, Project);
         Properties = new TexProperties(this, Project);
     }
 
-    public void Display(bool doFocus, bool isActiveView)
+    public void Display(uint dockspaceId, int viewIndex, bool doFocus, bool isActiveView)
     {
-        var columnCount = 3;
-        var windowFlags = ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse;
-
-        if (!CFG.Current.Interface_TextureViewer_Properties)
+        // Container List
+        ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
+        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_TextureViewerView);
+        if (ImGui.Begin($@"Container List##textureEditor_ContainerList_{viewIndex}", UIHelper.GetInnerWindowFlags()))
         {
-            columnCount = 2;
-        }
-
-        if (ImGui.BeginTable("textureTable", columnCount,
-            ImGuiTableFlags.Resizable |
-            ImGuiTableFlags.SizingStretchProp |
-            ImGuiTableFlags.BordersInnerV))
-        {
-            ImGui.TableSetupColumn("##FileList", ImGuiTableColumnFlags.WidthStretch, 0.3f);
-            ImGui.TableSetupColumn("##Viewer", ImGuiTableColumnFlags.WidthStretch, 0.5f);
-
-            if (CFG.Current.Interface_TextureViewer_Properties)
-                ImGui.TableSetupColumn("##Properties", ImGuiTableColumnFlags.WidthStretch, 0.2f);
-
-            // --- Column 1 ---
-            ImGui.TableNextColumn();
-
-            float width = ImGui.GetContentRegionAvail().X;
-            float height = ImGui.GetContentRegionAvail().Y * CFG.Current.Interace_Editor_Display_Inner_Height_Percent;
-
-            ImGui.BeginChild("##FileListArea", new Vector2(0, 0), windowFlags);
+            var width = ImGui.GetContentRegionAvail().X;
+            var height = ImGui.GetContentRegionAvail().Y;
 
             if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
             {
@@ -79,16 +60,56 @@ public class TexEditorView
                 Editor.ViewHandler.ActiveView = this;
             }
 
-            ContainerList.Display(width, height * CFG.Current.TextureViewer_Display_ContainerList_Percentage);
-            InternalFileList.Display(width, height * CFG.Current.TextureViewer_Display_InternalFileList_Percentage);
-            FileList.Display(width, height * CFG.Current.TextureViewer_Display_FileList_Percentage);
+            ContainerList.Display(width, height);
+        }
 
-            ImGui.EndChild();
+        ImGui.End();
 
-            // --- Column 2 ---
-            ImGui.TableNextColumn();
+        // File List
+        ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
+        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_TextureViewerView);
+        if (ImGui.Begin($@"File List##textureEditor_FileList_{viewIndex}", UIHelper.GetInnerWindowFlags()))
+        {
+            var width = ImGui.GetContentRegionAvail().X;
+            var height = ImGui.GetContentRegionAvail().Y;
 
-            ImGui.BeginChild("##ViewerArea", new Vector2(0, 0), windowFlags);
+            if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+            {
+                FocusManager.SetFocus(EditorFocusContext.TextureViewer_FileList);
+                Editor.ViewHandler.ActiveView = this;
+            }
+
+            FileList.Display(width, height);
+        }
+
+        ImGui.End();
+
+        // Texture List
+        ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
+        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_TextureViewerView);
+        if (ImGui.Begin($@"Texture List##textureEditor_TextureList_{viewIndex}", UIHelper.GetInnerWindowFlags()))
+        {
+            var width = ImGui.GetContentRegionAvail().X;
+            var height = ImGui.GetContentRegionAvail().Y;
+
+            if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+            {
+                FocusManager.SetFocus(EditorFocusContext.TextureViewer_FileList);
+                Editor.ViewHandler.ActiveView = this;
+            }
+
+            TextureList.Display(width, height);
+        }
+
+        ImGui.End();
+
+        // Texture Viewport
+        ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
+        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_TextureViewerView);
+        if (ImGui.Begin($@"Viewer##textureEditor_Viewer_{viewIndex}", UIHelper.GetInnerWindowFlags()))
+        {
+            var width = ImGui.GetContentRegionAvail().X;
+            var height = ImGui.GetContentRegionAvail().Y;
 
             if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
             {
@@ -97,31 +118,30 @@ public class TexEditorView
             }
 
             DisplayViewport.Display();
-
-            ImGui.EndChild();
-
-            // --- Column 3 ---
-            if (CFG.Current.Interface_TextureViewer_Properties)
-            {
-                ImGui.TableNextColumn();
-
-                ImGui.BeginChild("##PropertiesArea", new Vector2(0, 0), windowFlags);
-
-                if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
-                {
-                    FocusManager.SetFocus(EditorFocusContext.TextureViewer_Properties);
-                    Editor.ViewHandler.ActiveView = this;
-                }
-
-                Properties.Display();
-
-                ImGui.EndChild();
-            }
-
-            ImGui.EndTable();
         }
 
+        ImGui.End();
+
+        // Properties
+        ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
+        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_TextureViewerView);
+        if (ImGui.Begin($@"Properties##textureEditor_Properties_{viewIndex}", UIHelper.GetInnerWindowFlags()))
+        {
+            var width = ImGui.GetContentRegionAvail().X;
+            var height = ImGui.GetContentRegionAvail().Y;
+
+            if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+            {
+                FocusManager.SetFocus(EditorFocusContext.TextureViewer_Properties);
+                Editor.ViewHandler.ActiveView = this;
+            }
+
+            Properties.Display();
+        }
+
+        ImGui.End();
+
         ContainerList.Update();
-        FileList.Update();
+        TextureList.Update();
     }
 }

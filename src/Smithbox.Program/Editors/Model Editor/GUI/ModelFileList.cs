@@ -35,7 +35,7 @@ public class ModelFileList
         EditorFilters.DisplayFramedListFilter("modelEditor_fileList",
             ref FileListFilter, ref ExactFileListFilter);
 
-        ImGui.BeginChild($"FileSection", new Vector2(width, height), ImGuiChildFlags.Borders);
+        ImGui.BeginChild($"FileSection", new Vector2(0, 0), ImGuiChildFlags.Borders);
 
         DisplayModelSelectionList();
 

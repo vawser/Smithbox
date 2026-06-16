@@ -26,6 +26,15 @@ public static class UIHelper
 
     public static uint MAP_EDITOR_VIEW_DOCK_GROUP = 1100;
     public static uint MODEL_EDITOR_VIEW_DOCK_GROUP = 1101;
+    public static uint ANIM_EDITOR_VIEW_DOCK_GROUP = 1102;
+    public static uint FILE_BROWSER_VIEW_DOCK_GROUP = 1103;
+    public static uint GPARAM_EDITOR_VIEW_DOCK_GROUP = 1104;
+    public static uint MAP_DATA_EDITOR_VIEW_DOCK_GROUP = 1105;
+    public static uint MATERIAL_EDITOR_VIEW_DOCK_GROUP = 1106;
+    public static uint PARAM_EDITOR_VIEW_DOCK_GROUP = 1107;
+    public static uint TEXT_EDITOR_VIEW_DOCK_GROUP = 1108;
+    public static uint TEXTURE_VIEWER_VIEW_DOCK_GROUP = 1109;
+    public static uint PROJECT_EDITOR_VIEW_DOCK_GROUP = 1110;
 
     public static ImGuiWindowClass DockGroup_EditorView = new(
         classId: EDITOR_DOCK_GROUP, 
@@ -81,6 +90,42 @@ public static class UIHelper
 
     public static ImGuiWindowClass DockGroup_ModelEditorView = new(
         classId: MODEL_EDITOR_VIEW_DOCK_GROUP,
+        dockingAllowUnclassed: false);
+
+    public static ImGuiWindowClass DockGroup_AnimEditorView = new(
+        classId: ANIM_EDITOR_VIEW_DOCK_GROUP,
+        dockingAllowUnclassed: false);
+
+    public static ImGuiWindowClass DockGroup_FileBrowserView = new(
+        classId: FILE_BROWSER_VIEW_DOCK_GROUP,
+        dockingAllowUnclassed: false);
+
+    public static ImGuiWindowClass DockGroup_GparamEditorView = new(
+        classId: GPARAM_EDITOR_VIEW_DOCK_GROUP,
+        dockingAllowUnclassed: false);
+
+    public static ImGuiWindowClass DockGroup_MapDataEditorView = new(
+        classId: MAP_DATA_EDITOR_VIEW_DOCK_GROUP,
+        dockingAllowUnclassed: false);
+
+    public static ImGuiWindowClass DockGroup_MaterialEditorView = new(
+        classId: MATERIAL_EDITOR_VIEW_DOCK_GROUP,
+        dockingAllowUnclassed: false);
+
+    public static ImGuiWindowClass DockGroup_ParamEditorView = new(
+        classId: PARAM_EDITOR_VIEW_DOCK_GROUP,
+        dockingAllowUnclassed: false);
+
+    public static ImGuiWindowClass DockGroup_TextEditorView = new(
+        classId: TEXT_EDITOR_VIEW_DOCK_GROUP,
+        dockingAllowUnclassed: false);
+
+    public static ImGuiWindowClass DockGroup_TextureViewerView = new(
+        classId: TEXTURE_VIEWER_VIEW_DOCK_GROUP,
+        dockingAllowUnclassed: false);
+
+    public static ImGuiWindowClass DockGroup_ProjectEditorView = new(
+        classId: PROJECT_EDITOR_VIEW_DOCK_GROUP,
         dockingAllowUnclassed: false);
 
     public static void ApplyBaseStyle()

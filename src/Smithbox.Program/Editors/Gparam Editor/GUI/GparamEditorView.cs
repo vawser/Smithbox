@@ -1,16 +1,7 @@
 ﻿using Hexa.NET.ImGui;
-using HKLib.hk2018.hkaiCollisionAvoidance;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
-using StudioCore.Editors.FileBrowser;
-using StudioCore.Editors.ParamEditor;
-using StudioCore.Editors.TextEditor;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.GparamEditor;
 
@@ -52,25 +43,15 @@ public class GparamEditorView
         FieldValueListView = new GparamValueList(this, Project);
     }
 
-    public void Display(bool doFocus, bool isActiveView)
+    public void Display(uint dockspaceId, int viewIndex, bool doFocus, bool isActiveView)
     {
-        var columnCount = 4;
-        var windowFlags = ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse;
-
-        if (ImGui.BeginTable("gparamTable", columnCount,
-            ImGuiTableFlags.Resizable |
-            ImGuiTableFlags.SizingStretchProp |
-            ImGuiTableFlags.BordersInnerV))
+        // Files
+        ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
+        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_GparamEditorView);
+        if (ImGui.Begin($@"Files##gparamEditor_FileList_{viewIndex}", UIHelper.GetInnerWindowFlags()))
         {
-            ImGui.TableSetupColumn("##FileList", ImGuiTableColumnFlags.WidthStretch, 0.25f);
-            ImGui.TableSetupColumn("##GroupList", ImGuiTableColumnFlags.WidthStretch, 0.25f);
-            ImGui.TableSetupColumn("##FieldList", ImGuiTableColumnFlags.WidthStretch, 0.25f);
-            ImGui.TableSetupColumn("##FieldValueList", ImGuiTableColumnFlags.WidthStretch, 0.25f);
-
-            // --- Column 1 ---
-            ImGui.TableNextColumn();
-
-            ImGui.BeginChild("##FileListArea", new Vector2(0, 0), windowFlags);
+            var width = ImGui.GetContentRegionAvail().X;
+            var height = ImGui.GetContentRegionAvail().Y;
 
             if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
             {
@@ -79,14 +60,17 @@ public class GparamEditorView
             }
 
             FileListView.Display();
+        }
 
-            ImGui.EndChild();
+        ImGui.End();
 
-
-            // --- Column 2 ---
-            ImGui.TableNextColumn();
-
-            ImGui.BeginChild("##GroupListArea", new Vector2(0, 0), windowFlags);
+        // Groups
+        ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
+        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_GparamEditorView);
+        if (ImGui.Begin($@"Groups##gparamEditor_GroupList_{viewIndex}", UIHelper.GetInnerWindowFlags()))
+        {
+            var width = ImGui.GetContentRegionAvail().X;
+            var height = ImGui.GetContentRegionAvail().Y;
 
             if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
             {
@@ -95,13 +79,17 @@ public class GparamEditorView
             }
 
             GroupListView.Display();
+        }
 
-            ImGui.EndChild();
+        ImGui.End();
 
-            // --- Column 3 ---
-            ImGui.TableNextColumn();
-
-            ImGui.BeginChild("##FieldListArea", new Vector2(0, 0), windowFlags);
+        // Fields
+        ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
+        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_GparamEditorView);
+        if (ImGui.Begin($@"Fields##gparamEditor_FieldList_{viewIndex}", UIHelper.GetInnerWindowFlags()))
+        {
+            var width = ImGui.GetContentRegionAvail().X;
+            var height = ImGui.GetContentRegionAvail().Y;
 
             if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
             {
@@ -110,13 +98,17 @@ public class GparamEditorView
             }
 
             FieldListView.Display();
+        }
 
-            ImGui.EndChild();
+        ImGui.End();
 
-            // --- Column 4 ---
-            ImGui.TableNextColumn();
-
-            ImGui.BeginChild("##FieldValueListArea", new Vector2(0, 0), windowFlags);
+        // Field Values
+        ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
+        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_GparamEditorView);
+        if (ImGui.Begin($@"Field Values##gparamEditor_FieldValueList_{viewIndex}", UIHelper.GetInnerWindowFlags()))
+        {
+            var width = ImGui.GetContentRegionAvail().X;
+            var height = ImGui.GetContentRegionAvail().Y;
 
             if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
             {
@@ -125,10 +117,8 @@ public class GparamEditorView
             }
 
             FieldValueListView.Display();
-
-            ImGui.EndChild();
-
-            ImGui.EndTable();
         }
+
+        ImGui.End();
     }
 }

@@ -41,8 +41,9 @@ public class ModelViewportWindow
 
     }
 
-    public void Display()
+    public void Display(uint dockspaceId)
     {
+        ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
         ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ModelEditorView);
 
         if (Viewport is VulkanViewport vulkanViewport)

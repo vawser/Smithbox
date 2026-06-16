@@ -47,29 +47,18 @@ public class MaterialEditorView
         Properties = new(this, project);
     }
 
-    public void Display(bool doFocus, bool isActiveView)
+    public void Display(uint dockspaceId, int viewIndex, bool doFocus, bool isActiveView)
     {
         if (Project.Handler.MaterialData.PrimaryBank == null)
             return;
 
-        var columnCount = 2;
-        var windowFlags = ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse;
-
-        if (ImGui.BeginTable("materialTable", columnCount,
-            ImGuiTableFlags.Resizable |
-            ImGuiTableFlags.SizingStretchProp |
-            ImGuiTableFlags.BordersInnerV))
+        // Container List
+        ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
+        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_MaterialEditorView);
+        if (ImGui.Begin($@"Container List##materialEditor_ContainerList_{viewIndex}", UIHelper.GetInnerWindowFlags()))
         {
-            ImGui.TableSetupColumn("##FileList", ImGuiTableColumnFlags.WidthStretch, 0.25f);
-            ImGui.TableSetupColumn("##Properties", ImGuiTableColumnFlags.WidthStretch, 0.5f);
-
-            // --- Column 1 ---
-            ImGui.TableNextColumn();
-
-            float width = ImGui.GetContentRegionAvail().X;
-            float height = ImGui.GetContentRegionAvail().Y * CFG.Current.Interace_Editor_Display_Inner_Height_Percent;
-
-            ImGui.BeginChild("##FileListArea", new Vector2(0, 0), windowFlags);
+            var width = ImGui.GetContentRegionAvail().X;
+            var height = ImGui.GetContentRegionAvail().Y;
 
             if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
             {
@@ -77,15 +66,37 @@ public class MaterialEditorView
                 Editor.ViewHandler.ActiveView = this;
             }
 
-            ContainerList.Draw(width, height * CFG.Current.MaterialEditor_Display_ContainerList_Percentage);
-            FileList.Draw(width, height * CFG.Current.MaterialEditor_Display_FileList_Percentage);
+            ContainerList.Draw(width, height);
+        }
 
-            ImGui.EndChild();
+        ImGui.End();
 
-            // --- Column 2 ---
-            ImGui.TableNextColumn();
+        // File List
+        ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
+        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_MaterialEditorView);
+        if (ImGui.Begin($@"File List##materialEditor_FileList_{viewIndex}", UIHelper.GetInnerWindowFlags()))
+        {
+            var width = ImGui.GetContentRegionAvail().X;
+            var height = ImGui.GetContentRegionAvail().Y;
 
-            ImGui.BeginChild("##PropertiesArea", new Vector2(0, 0), windowFlags);
+            if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+            {
+                FocusManager.SetFocus(EditorFocusContext.MaterialEditor_FileList);
+                Editor.ViewHandler.ActiveView = this;
+            }
+
+            FileList.Draw(width, height);
+        }
+
+        ImGui.End();
+
+        // Properties
+        ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
+        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_MaterialEditorView);
+        if (ImGui.Begin($@"Properties##materialEditor_Properties_{viewIndex}", UIHelper.GetInnerWindowFlags()))
+        {
+            var width = ImGui.GetContentRegionAvail().X;
+            var height = ImGui.GetContentRegionAvail().Y;
 
             if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
             {
@@ -94,10 +105,8 @@ public class MaterialEditorView
             }
 
             Properties.Draw();
-
-            ImGui.EndChild();
-
-            ImGui.EndTable();
         }
+
+        ImGui.End();
     }
 }

@@ -33,7 +33,7 @@ public class TexContainerList
         EditorFilters.DisplayFramedListFilter("textureViewer_ContainerList",
             ref FileListFilter, ref ExactFileListFilter);
 
-        ImGui.BeginChild("ContainerList", new Vector2(width, height), ImGuiChildFlags.Borders);
+        ImGui.BeginChild("ContainerList", new Vector2(0, 0), ImGuiChildFlags.Borders);
 
         ImGui.BeginTabBar("sourceTabs");
 

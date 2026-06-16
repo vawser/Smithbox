@@ -59,7 +59,7 @@ public class FileBrowserScreen : EditorScreen
         var dsid = ImGui.GetID("DockSpace_FileBrowser");
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None, ref UIHelper.DockGroup_FileBrowser);
 
-        ViewHandler.HandleViews();
+        ViewHandler.HandleViews(dsid);
 
         if (ViewHandler.ActiveView != null)
         {

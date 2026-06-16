@@ -105,7 +105,7 @@ public class ParamEditorScreen : EditorScreen
         var dsid = ImGui.GetID("DockSpace_ParamView");
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None, ref UIHelper.DockGroup_ParamEditor);
 
-        ViewHandler.HandleViews();
+        ViewHandler.HandleViews(dsid);
 
         if (ViewHandler.ActiveView != null)
         {

@@ -191,84 +191,65 @@ public class MapEditorView
         ViewportActionManager.AddEventHandler(MapListView);
     }
 
-    public void Display(bool doFocus, bool isActiveView)
+    public void Display(uint dockspaceId, int viewIndex, bool doFocus, bool isActiveView)
     {
-        // MSB
+        // Map List
+        ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
         ImGui.SetNextWindowClass(ref UIHelper.DockGroup_MapEditorView);
-        if (ImGui.Begin($@"MSB##MsbWindow{ViewIndex}", UIHelper.GetInnerWindowFlags()))
+        if (ImGui.Begin($@"Map List##mapEditor_MapList_{viewIndex}", UIHelper.GetInnerWindowFlags()))
         {
-            var columnCount = 1;
-            var windowFlags = ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse;
+            var width = ImGui.GetContentRegionAvail().X;
+            var height = ImGui.GetContentRegionAvail().Y;
 
-            if (ImGui.BeginTable("msbSectionTable", columnCount,
-                ImGuiTableFlags.Resizable |
-                ImGuiTableFlags.SizingStretchProp |
-                ImGuiTableFlags.BordersInnerV))
+            if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
             {
-                ImGui.TableSetupColumn("##MsbSection", ImGuiTableColumnFlags.WidthStretch, 1f);
-
-                // --- Column 1 ---
-                ImGui.TableNextColumn();
-
-                float width = ImGui.GetContentRegionAvail().X;
-                float height = ImGui.GetContentRegionAvail().Y * CFG.Current.Interace_Editor_Display_Inner_Height_Percent;
-
-                ImGui.BeginChild("##MsbSectionArea", new Vector2(0, 0), windowFlags);
-
-                if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
-                {
-                    FocusManager.SetFocus(EditorFocusContext.MapEditor_FileList);
-                    Editor.ViewHandler.ActiveView = this;
-                }
-
-                MapListView.Display(width, height * CFG.Current.MapEditor_Display_MapList_Percentage);
-                MapContentView.Display(width, (height * CFG.Current.MapEditor_Display_Contents_Percentage) * 0.92f);
-
-                ImGui.EndChild();
-
-                ImGui.EndTable();
+                FocusManager.SetFocus(EditorFocusContext.MapEditor_FileList);
+                Editor.ViewHandler.ActiveView = this;
             }
+
+            MapListView.Display(width, height);
         }
 
         ImGui.End();
 
+        // Map Contents
+        ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
+        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_MapEditorView);
+        if (ImGui.Begin($@"Map Contents##mapEditor_MapContents_{viewIndex}", UIHelper.GetInnerWindowFlags()))
+        {
+            var width = ImGui.GetContentRegionAvail().X;
+            var height = ImGui.GetContentRegionAvail().Y;
+
+            if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+            {
+                FocusManager.SetFocus(EditorFocusContext.MapEditor_FileList);
+                Editor.ViewHandler.ActiveView = this;
+            }
+
+            MapContentView.Display(width, height);
+        }
+
+        ImGui.End();
+
+
         // Viewport
-        ViewportWindow.Display();
+        ViewportWindow.Display(dockspaceId);
 
         // Properties
+        ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
         ImGui.SetNextWindowClass(ref UIHelper.DockGroup_MapEditorView);
-        if (ImGui.Begin($@"Properties##MapPropertiesWindow{ViewIndex}", UIHelper.GetInnerWindowFlags()))
+        if (ImGui.Begin($@"Properties##mapEditor_Properties_{viewIndex}", UIHelper.GetInnerWindowFlags()))
         {
-            var columnCount = 1;
-            var windowFlags = ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse;
+            var width = ImGui.GetContentRegionAvail().X;
+            var height = ImGui.GetContentRegionAvail().Y;
 
-            if (ImGui.BeginTable("msbPropSectionTable", columnCount,
-                ImGuiTableFlags.Resizable |
-                ImGuiTableFlags.SizingStretchProp |
-                ImGuiTableFlags.BordersInnerV))
+            if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
             {
-                ImGui.TableSetupColumn("##MsbSection", ImGuiTableColumnFlags.WidthStretch, 1f);
-
-                // --- Column 1 ---
-                ImGui.TableNextColumn();
-
-                float width = ImGui.GetContentRegionAvail().X;
-                float height = ImGui.GetContentRegionAvail().Y * CFG.Current.Interace_Editor_Display_Inner_Height_Percent;
-
-                ImGui.BeginChild("##MsbPropSectionArea", new Vector2(0, 0), windowFlags);
-
-                if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
-                {
-                    FocusManager.SetFocus(EditorFocusContext.MapEditor_Properties);
-                    Editor.ViewHandler.ActiveView = this;
-                }
-
-                MapPropertyView.Display();
-
-                ImGui.EndChild();
-
-                ImGui.EndTable();
+                FocusManager.SetFocus(EditorFocusContext.MapEditor_Properties);
+                Editor.ViewHandler.ActiveView = this;
             }
+
+            MapPropertyView.Display();
         }
 
         ImGui.End();

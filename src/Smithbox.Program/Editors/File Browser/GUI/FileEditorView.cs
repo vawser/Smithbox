@@ -38,23 +38,15 @@ public class FileEditorView
     }
 
 
-    public void Display(bool doFocus, bool isActiveView)
+    public void Display(uint dockspaceId, int viewIndex, bool doFocus, bool isActiveView)
     {
-        var columnCount = 2;
-        var windowFlags = ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse;
-
-        if (ImGui.BeginTable("fileBrowserTable", columnCount,
-            ImGuiTableFlags.Resizable |
-            ImGuiTableFlags.SizingStretchProp |
-            ImGuiTableFlags.BordersInnerV))
+        // File List
+        ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
+        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_FileBrowserView);
+        if (ImGui.Begin($@"File List##fileBrowser_FileList_{viewIndex}", UIHelper.GetInnerWindowFlags()))
         {
-            ImGui.TableSetupColumn("##FileList", ImGuiTableColumnFlags.WidthStretch, 0.25f);
-            ImGui.TableSetupColumn("##FileViewer", ImGuiTableColumnFlags.WidthStretch, 0.25f);
-
-            // --- Column 1 ---
-            ImGui.TableNextColumn();
-
-            ImGui.BeginChild("##FileListArea", new Vector2(0, 0), windowFlags);
+            var width = ImGui.GetContentRegionAvail().X;
+            var height = ImGui.GetContentRegionAvail().Y;
 
             if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
             {
@@ -63,13 +55,17 @@ public class FileEditorView
             }
 
             FileList.Display();
+        }
 
-            ImGui.EndChild();
+        ImGui.End();
 
-            // --- Column 2 ---
-            ImGui.TableNextColumn();
-
-            ImGui.BeginChild("##FileViewerArea", new Vector2(0, 0), windowFlags);
+        // Item Viewer
+        ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
+        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_FileBrowserView);
+        if (ImGui.Begin($@"Item Viewer##fileBrowser_ItemViwwer_{viewIndex}", UIHelper.GetInnerWindowFlags()))
+        {
+            var width = ImGui.GetContentRegionAvail().X;
+            var height = ImGui.GetContentRegionAvail().Y;
 
             if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
             {
@@ -78,10 +74,8 @@ public class FileEditorView
             }
 
             ItemViewer.Display();
-
-            ImGui.EndChild();
-
-            ImGui.EndTable();
         }
+
+        ImGui.End();
     }
 }

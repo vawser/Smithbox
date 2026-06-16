@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.ImGui;
+using Microsoft.AspNetCore.Components.Forms;
 using Octokit;
 using StudioCore.Editors.Common;
 using StudioCore.Keybinds;
@@ -66,7 +67,7 @@ public class ProjectScreen
             if (ImGui.BeginMenuBar())
             {
                 EditMenu();
-                OptionsMenu();
+                //OptionsMenu();
 
                 ImGui.EndMenuBar();
             }
@@ -81,11 +82,14 @@ public class ProjectScreen
                 {
                     FocusManager.SetFocus(EditorFocusContext.Project);
                 }
-
-                Display();
-
-                ImGui.End();
             }
+
+            var viewDockId = ImGui.GetID($"DockSpace_ProjectEditorView");
+            ImGui.DockSpace(viewDockId, new Vector2(0, 0), ref UIHelper.DockGroup_ProjectEditorView);
+
+            Display(viewDockId);
+
+            ImGui.End();
 
             ImGui.End();
         }
@@ -97,77 +101,100 @@ public class ProjectScreen
         }
     }
 
-    public void Display()
+    public void Display(uint editorDockspaceId)
     {
-        var columnCount = 3;
-        var windowFlags = ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse;
-
-        if (ImGui.BeginTable("projectTable", columnCount,
-            ImGuiTableFlags.Resizable |
-            ImGuiTableFlags.SizingStretchProp |
-            ImGuiTableFlags.BordersInnerV))
+        // Active Projects
+        ImGui.SetNextWindowDockID(editorDockspaceId, ImGuiCond.FirstUseEver);
+        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ProjectEditorView);
+        if (ImGui.Begin($@"Active Projects##projectEditor_ActiveProjects", UIHelper.GetInnerWindowFlags()))
         {
-            ImGui.TableSetupColumn("##ProjectList", ImGuiTableColumnFlags.WidthStretch, 0.25f);
+            var width = ImGui.GetContentRegionAvail().X;
+            var height = ImGui.GetContentRegionAvail().Y;
 
-            // --- Column 1 ---
-            ImGui.TableNextColumn();
+            DisplayActiveProjectList();
+        }
 
-            ImGui.BeginChild("##ProjectListArea", new Vector2(0, 0), windowFlags);
+        ImGui.End();
 
-            DisplayProjectList();
+        // Project List
+        ImGui.SetNextWindowDockID(editorDockspaceId, ImGuiCond.FirstUseEver);
+        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ProjectEditorView);
+        if (ImGui.Begin($@"Available Projects##projectEditor_AvaliableProjects", UIHelper.GetInnerWindowFlags()))
+        {
+            var width = ImGui.GetContentRegionAvail().X;
+            var height = ImGui.GetContentRegionAvail().Y;
 
-            ImGui.EndChild();
+            DisplayAvailableProjectList();
+        }
 
-            // --- Column 2 ---
-            ImGui.TableNextColumn();
+        ImGui.End();
 
-            ImGui.BeginChild("##ProjectContentArea", new Vector2(0, 0), windowFlags);
+        // Project Configuration
+        ImGui.SetNextWindowDockID(editorDockspaceId, ImGuiCond.FirstUseEver);
+        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ProjectEditorView);
+        if (ImGui.Begin($@"Project Configuration##projectEditor_ProjectConfiguration", UIHelper.GetInnerWindowFlags()))
+        {
+            var width = ImGui.GetContentRegionAvail().X;
+            var height = ImGui.GetContentRegionAvail().Y;
 
             DisplayProjectCreator();
-
-            ImGui.EndChild();
-
-            // --- Column 3 ---
-            ImGui.TableNextColumn();
-
-            ImGui.BeginChild("##ProjectMetadataArea", new Vector2(0, 0), windowFlags);
-
-            DisplayMetadataEditors();
-
-            ImGui.EndChild();
-
-
-            ImGui.EndTable();
         }
+
+        ImGui.End();
+
+        // Project Aliases
+        ImGui.SetNextWindowDockID(editorDockspaceId, ImGuiCond.FirstUseEver);
+        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ProjectEditorView);
+        if (ImGui.Begin($@"Project Aliases##projectEditor_ProjectAliases", UIHelper.GetInnerWindowFlags()))
+        {
+            var width = ImGui.GetContentRegionAvail().X;
+            var height = ImGui.GetContentRegionAvail().Y;
+
+            DisplayAliasEditor();
+        }
+
+        ImGui.End();
+
+        // Project Enums
+        ImGui.SetNextWindowDockID(editorDockspaceId, ImGuiCond.FirstUseEver);
+        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ProjectEditorView);
+        if (ImGui.Begin($@"Project Enums##projectEditor_ProjectEnums", UIHelper.GetInnerWindowFlags()))
+        {
+            var width = ImGui.GetContentRegionAvail().X;
+            var height = ImGui.GetContentRegionAvail().Y;
+
+            DisplayEnumEditor();
+        }
+
+        ImGui.End();
     }
 
-    public void DisplayProjectList()
+    public void DisplayActiveProjectList()
     {
-        float width = ImGui.GetContentRegionAvail().X;
-        float height = ImGui.GetContentRegionAvail().Y * CFG.Current.Interace_Editor_Display_Inner_Height_Percent;
+        UIHelper.SimpleHeader("Active Projects", "");
 
+        EditorFilters.DisplayFramedListFilter("loadedProjectsFilter", ref LoadedListFilter, ref ExactLoadedListFilter);
+
+        ImGui.BeginChild("loadedProjectList", new Vector2(0, 0), ImGuiChildFlags.Borders);
+
+        DisplayLoadedProjectEntries();
+
+        ImGui.EndChild();
+    }
+
+    public void DisplayAvailableProjectList()
+    {
         UIHelper.SimpleHeader("Actions", "");
 
         UIHelper.MultiButtonInput("globalProjectActions",
             "createNewProject", "Create Project", "", CreateProjectAction,
             "createProjectFromJson", "Create Project from JSON", "", CreateProjectFromJsonAction);
 
-        UIHelper.SimpleHeader("Loaded Projects", "");
-
-        EditorFilters.DisplayFramedListFilter("loadedProjectsFilter", ref LoadedListFilter, ref ExactLoadedListFilter);
-
-        ImGui.BeginChild("loadedProjectList", new Vector2(width, height * CFG.Current.Project_Display_LoadedProjectList), ImGuiChildFlags.Borders);
-
-        DisplayLoadedProjectEntries();
-
-        ImGui.EndChild();
-
         UIHelper.SimpleHeader("Available Projects", "");
-
 
         EditorFilters.DisplayFramedListFilter("availableProjectsFilter", ref AvailableListFilter, ref ExactAvailableListFilter);
 
-        ImGui.BeginChild("availableProjectList", new Vector2(width, height * CFG.Current.Project_Display_AvailableProjectList), ImGuiChildFlags.Borders);
+        ImGui.BeginChild("availableProjectList", new Vector2(0, 0), ImGuiChildFlags.Borders);
 
         DisplayAvailableProjectEntries();
 
@@ -546,31 +573,6 @@ public class ProjectScreen
         ImGui.EndChild();
     }
 
-    public void DisplayMetadataEditors()
-    {
-        ImGui.BeginChild("MetadataEditorsSection", ImGuiChildFlags.Borders);
-
-        ImGui.BeginTabBar($"##projectMetaEditorTabbar");
-
-        if(ImGui.BeginTabItem("Alias Editor"))
-        {
-            DisplayAliasEditor();
-
-            ImGui.EndTabItem();
-        }
-
-        if (ImGui.BeginTabItem("Enum Editor"))
-        {
-            DisplayEnumEditor();
-
-            ImGui.EndTabItem();
-        }
-
-        ImGui.EndTabBar();
-
-        ImGui.EndChild();
-    }
-
     public void DisplayEnumEditor()
     {
         EnumMenu.Draw();
@@ -636,28 +638,6 @@ public class ProjectScreen
     {
         if (ImGui.BeginMenu("Options"))
         {
-            if (ImGui.BeginMenu("Display"))
-            {
-                ImGui.SliderFloat("Loaded Projects##loadedProjectListPercent", ref CFG.Current.Project_Display_LoadedProjectList, 0.01f, 0.99f);
-                if (ImGui.IsItemDeactivatedAfterEdit())
-                {
-                    var remainder = 1f - CFG.Current.Project_Display_LoadedProjectList;
-
-                    CFG.Current.Project_Display_AvailableProjectList = remainder;
-                }
-                UIHelper.Tooltip("The percentage of the window the Loaded Projects section occupies.");
-
-                ImGui.SliderFloat("Available Projects##availableProjectListPercent", ref CFG.Current.Project_Display_AvailableProjectList, 0.01f, 0.99f);
-                if (ImGui.IsItemDeactivatedAfterEdit())
-                {
-                    var remainder = 1f - CFG.Current.Project_Display_AvailableProjectList;
-
-                    CFG.Current.Project_Display_LoadedProjectList = remainder;
-                }
-                UIHelper.Tooltip("The percentage of the window the Available Projects section occupies.");
-
-                ImGui.EndMenu();
-            }
 
             ImGui.EndMenu();
         }

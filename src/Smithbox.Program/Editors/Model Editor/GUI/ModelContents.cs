@@ -48,7 +48,7 @@ public class ModelContents : IActionEventHandler
 
         ImGui.EndChild();
 
-        ImGui.BeginChild("ModelContents", new Vector2(width, height), ImGuiChildFlags.Borders);
+        ImGui.BeginChild("ModelContents", new Vector2(0, 0), ImGuiChildFlags.Borders);
 
         if (View.Selection.SelectedModelWrapper != null && 
             View.Selection.SelectedModelWrapper.FLVER != null)

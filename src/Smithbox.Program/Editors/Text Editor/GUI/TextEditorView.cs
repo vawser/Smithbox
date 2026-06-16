@@ -71,27 +71,15 @@ public class TextEditorView
         FmgDumper = new FmgDumper(this, Project);
     }
 
-    public void Display(bool doFocus, bool isActiveView)
+    public void Display(uint dockspaceId, int viewIndex, bool doFocus, bool isActiveView)
     {
-        var columnCount = 3;
-        var windowFlags = ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse;
-
-        if (ImGui.BeginTable("textTable", columnCount,
-            ImGuiTableFlags.Resizable |
-            ImGuiTableFlags.SizingStretchProp |
-            ImGuiTableFlags.BordersInnerV))
+        // Container List
+        ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
+        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_TextEditorView);
+        if (ImGui.Begin($@"Container List##textEditor_ContainerList_{viewIndex}", UIHelper.GetInnerWindowFlags()))
         {
-            ImGui.TableSetupColumn("##FileList", ImGuiTableColumnFlags.WidthStretch, 0.25f);
-            ImGui.TableSetupColumn("##EntryList", ImGuiTableColumnFlags.WidthStretch, 0.25f);
-            ImGui.TableSetupColumn("##EntryContents", ImGuiTableColumnFlags.WidthStretch, 0.5f);
-
-            // --- Column 1 ---
-            ImGui.TableNextColumn();
-
-            float width = ImGui.GetContentRegionAvail().X;
-            float height = ImGui.GetContentRegionAvail().Y * CFG.Current.Interace_Editor_Display_Inner_Height_Percent;
-
-            ImGui.BeginChild("##FileListArea", new Vector2(0, 0), windowFlags);
+            var width = ImGui.GetContentRegionAvail().X;
+            var height = ImGui.GetContentRegionAvail().Y;
 
             if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
             {
@@ -99,15 +87,37 @@ public class TextEditorView
                 Editor.ViewHandler.ActiveView = this;
             }
 
-            ContainerList.Display(width, height * CFG.Current.TextEditor_Display_ContainerList_Percentage);
-            FileList.Display(width, height * CFG.Current.TextEditor_Display_FileList_Percentage);
+            ContainerList.Display(width, height);
+        }
 
-            ImGui.EndChild();
+        ImGui.End();
 
-            // --- Column 2 ---
-            ImGui.TableNextColumn();
+        // File List
+        ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
+        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_TextEditorView);
+        if (ImGui.Begin($@"File List##textEditor_FileList_{viewIndex}", UIHelper.GetInnerWindowFlags()))
+        {
+            var width = ImGui.GetContentRegionAvail().X;
+            var height = ImGui.GetContentRegionAvail().Y;
 
-            ImGui.BeginChild("##EntryListArea", new Vector2(0, 0), windowFlags);
+            if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+            {
+                FocusManager.SetFocus(EditorFocusContext.TextEditor_FileList);
+                Editor.ViewHandler.ActiveView = this;
+            }
+
+            FileList.Display(width, height);
+        }
+
+        ImGui.End();
+
+        // Text Entry List
+        ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
+        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_TextEditorView);
+        if (ImGui.Begin($@"Text Entries##textEditor_TextEntryList_{viewIndex}", UIHelper.GetInnerWindowFlags()))
+        {
+            var width = ImGui.GetContentRegionAvail().X;
+            var height = ImGui.GetContentRegionAvail().Y;
 
             if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
             {
@@ -116,13 +126,17 @@ public class TextEditorView
             }
 
             TextEntryList.Display();
+        }
 
-            ImGui.EndChild();
+        ImGui.End();
 
-            // --- Column 3 ---
-            ImGui.TableNextColumn();
-
-            ImGui.BeginChild("##EntryContentsArea", new Vector2(0, 0), windowFlags);
+        // Text Contents
+        ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
+        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_TextEditorView);
+        if (ImGui.Begin($@"Text Contents##textEditor_TextContents_{viewIndex}", UIHelper.GetInnerWindowFlags()))
+        {
+            var width = ImGui.GetContentRegionAvail().X;
+            var height = ImGui.GetContentRegionAvail().Y;
 
             if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
             {
@@ -131,11 +145,9 @@ public class TextEditorView
             }
 
             TextContents.Display();
-
-            ImGui.EndChild();
-
-            ImGui.EndTable();
         }
+
+        ImGui.End();
 
         TextEntryCreator.Display();
         TextDuplicatePopup.Display();

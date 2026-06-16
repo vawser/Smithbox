@@ -74,7 +74,7 @@ public class MapEditorScreen : EditorScreen
         var dsid = ImGui.GetID("DockSpace_MapEdit");
         ImGui.DockSpace(dsid, new Vector2(0, 0), ref UIHelper.DockGroup_MapEditor);
 
-        ViewHandler.HandleViews();
+        ViewHandler.HandleViews(dsid);
 
         var activeView = ViewHandler.ActiveView;
 
@@ -655,27 +655,6 @@ public class MapEditorScreen : EditorScreen
             //        ImGui.EndMenu();
             //    }
             //}
-
-            if (ImGui.BeginMenu("Display"))
-            {
-                ImGui.SliderFloat("Map List##mapListDisplayPercentage", ref CFG.Current.MapEditor_Display_MapList_Percentage, 0.01f, 0.99f);
-                if (ImGui.IsItemDeactivatedAfterEdit())
-                {
-                    // Auto-adjust the other var so the ratio remains 100%
-                    CFG.Current.MapEditor_Display_Contents_Percentage = 1 - CFG.Current.MapEditor_Display_MapList_Percentage;
-                }
-                UIHelper.Tooltip("The percentage of the window the Map List section occupies.");
-
-                ImGui.SliderFloat("Contents##mapContentsDisplayPercentage", ref CFG.Current.MapEditor_Display_Contents_Percentage, 0.01f, 0.99f);
-                if (ImGui.IsItemDeactivatedAfterEdit())
-                {
-                    // Auto-adjust the other var so the ratio remains 100%
-                    CFG.Current.MapEditor_Display_MapList_Percentage = 1 - CFG.Current.MapEditor_Display_Contents_Percentage;
-                }
-                UIHelper.Tooltip("The percentage of the window the Contents section occupies.");
-
-                ImGui.EndMenu();
-            }
 
             ImGui.EndMenu();
         }
