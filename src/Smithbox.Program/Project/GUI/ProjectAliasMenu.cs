@@ -44,7 +44,7 @@ public class ProjectAliasMenu
         UIHelper.SimpleHeader("Actions", "");
 
         UIHelper.MultiButtonInput("aliasActions",
-            "saveAliases", "Save Aliases", "", Save);
+            "saveAliases", "Save Aliases", "Commit changes to the aliases to file.", Save);
 
         UIHelper.Spacer();
         UIHelper.SimpleHeader("Options", "");

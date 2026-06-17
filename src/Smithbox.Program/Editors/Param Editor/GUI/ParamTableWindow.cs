@@ -73,33 +73,6 @@ public class ParamTableWindow
         ImGui.AlignTextToFramePadding();
         ImGui.InputText($"##rowGroupSearch", ref CurrentTableGroupSearch, 256);
 
-        // Toggle Row Display Type
-        ImGui.SameLine();
-
-        if (ImGui.Button($"{Icons.Bars}##rowDisplayType"))
-        {
-            if (CFG.Current.ParamEditor_Table_List_Row_Name_Display_Type is ParamTableRowDisplayType.ID)
-            {
-                CFG.Current.ParamEditor_Table_List_Row_Name_Display_Type = ParamTableRowDisplayType.None;
-            }
-            else if (CFG.Current.ParamEditor_Table_List_Row_Name_Display_Type is ParamTableRowDisplayType.None)
-            {
-                CFG.Current.ParamEditor_Table_List_Row_Name_Display_Type = ParamTableRowDisplayType.ID;
-            }
-        }
-
-        var rowDisplayType = "";
-        if (CFG.Current.ParamEditor_Table_List_Row_Name_Display_Type is ParamTableRowDisplayType.ID)
-        {
-            rowDisplayType = "ID";
-        }
-        if (CFG.Current.ParamEditor_Table_List_Row_Name_Display_Type is ParamTableRowDisplayType.None)
-        {
-            rowDisplayType = "None";
-        }
-
-        UIHelper.Tooltip($"Toggle the row display type when in Table mode.\nCurrent Mode: {rowDisplayType}");
-
         if (CFG.Current.Developer_Enable_Tools)
         {
             ParamDebugTools.DisplayQuickTableNameExport(Editor, Project);

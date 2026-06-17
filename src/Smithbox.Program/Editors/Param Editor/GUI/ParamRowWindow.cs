@@ -731,18 +731,6 @@ public class ParamRowWindow
         label = Utils.ImGui_WordWrapString(label, ImGui.GetColumnWidth(),
             !CFG.Current.ParamEditor_Row_List_Enable_Line_Wrapping ? 1 : 3);
 
-        if (ParentView.ParamTableWindow.IsInTableGroupMode(Context.ActiveParam))
-        {
-            if (CFG.Current.ParamEditor_Table_List_Row_Name_Display_Type is ParamTableRowDisplayType.None)
-            {
-                // Ignore the option if the Name is empty
-                if (r.Name != "")
-                {
-                    label = $@"{Utils.ImGuiEscape(r.Name)}";
-                }
-            }
-        }
-
         if (CFG.Current.ParamEditor_Row_List_Display_Modified_Row_Bg)
         {
             if (diffVanilla)

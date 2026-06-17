@@ -194,8 +194,8 @@ public class ProjectScreen
         UIHelper.SimpleHeader("Actions", "");
 
         UIHelper.MultiButtonInput("globalProjectActions",
-            "createNewProject", "Create Project", "", CreateProjectAction,
-            "createProjectFromJson", "Create Project from JSON", "", CreateProjectFromJsonAction);
+            "createNewProject", "Create Project", "Create a new project entry, and set the Project Configuration input to 'Create'.", CreateProjectAction,
+            "createProjectFromJson", "Create Project from JSON", "Create a new project entry from 'project.json' file.", CreateProjectFromJsonAction);
 
         UIHelper.SimpleHeader("Available Projects", "");
 

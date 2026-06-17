@@ -6,3 +6,11 @@
  - Finish converting the SDT AlternativeOrders into Field Layouts
  - Finish AC6 meta
 
+- Alias/Enum Editor 
+ - Improve the editing flow:
+  - Add split table form: Row X - ID - Name - Tags
+   - Allow for direct edit
+  - Add multi-select
+  - Add duplicate/remove for multi-select
+  - Add duplicate/remove shortcuts
+  - Add drag sort + sort action

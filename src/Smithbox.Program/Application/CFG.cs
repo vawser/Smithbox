@@ -588,7 +588,6 @@ public class CFG
 
     // Table List
     public bool ParamEditor_Display_Table_List = true;
-    public ParamTableRowDisplayType ParamEditor_Table_List_Row_Name_Display_Type = ParamTableRowDisplayType.ID;
 
 
     // Row List

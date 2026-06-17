@@ -42,7 +42,7 @@ public class ProjectEnumMenu
         UIHelper.SimpleHeader("Actions", "");
 
         UIHelper.MultiButtonInput("enumActions",
-            "saveEnums", "Save Enums", "", Save);
+            "saveEnums", "Save Enums", "Commit changes to the enums to file.", Save);
 
         UIHelper.Spacer();
         UIHelper.SimpleHeader("Enums", "");
@@ -73,6 +73,12 @@ public class ProjectEnumMenu
 
     private void DrawEnumList()
     {
+        if (Smithbox.Orchestrator.SelectedProject == null)
+            return;
+
+        if (Smithbox.Orchestrator.SelectedProject.Handler == null)
+            return;
+
         ImGui.BeginChild("EnumSidebar", new Vector2(0, 0));
 
         ImGui.Text("Enums");

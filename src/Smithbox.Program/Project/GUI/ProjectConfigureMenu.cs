@@ -129,9 +129,9 @@ public class ProjectConfigureMenu
         else if (EditorMode is ProjectEditorMode.Edit)
         {
             UIHelper.MultiButtonInput("projectEditActions",
-                "editProject", "Update Project", "", UpdateProjectAction,
-                "deleteProject", "Delete Project", "", DeleteProjectAction,
-                "clearProjectBackups", "Delete Backup Files", "", DeleteBackupFilesAction);
+                "editProject", "Update Project", "Update the currently selected project configuration to use the newly configured parameters.", UpdateProjectAction,
+                "deleteProject", "Delete Project", "Delete the currently selected project entry.", DeleteProjectAction,
+                "clearProjectBackups", "Delete Backup Files", "Delete the .prev and .bak files within the currently selected project's directory.", DeleteBackupFilesAction);
         }
 
         if (ModEngineHandler.IsME3Project(Project))
@@ -140,8 +140,8 @@ public class ProjectConfigureMenu
             UIHelper.SimpleHeader("ME3", "");
 
             UIHelper.MultiButtonInput("me3Actions",
-                "launchMod", "Launch Mod", "", LaunchModAction,
-                "createProfile", "Create Profile", "", CreateProfileAction);
+                "launchMod", "Launch Mod", "Launch this project with ME3.", LaunchModAction,
+                "createProfile", "Create Profile", "Create a basic ME3 profile for this project.", CreateProfileAction);
         }
     }
 
@@ -187,6 +187,9 @@ public class ProjectConfigureMenu
     public void DeleteBackupFilesAction()
     {
         var root = Project.Descriptor.ProjectPath;
+
+        if (!Directory.Exists(root))
+            return;
 
         var filesToDelete = ProjectUtils.GetBackupFiles(root);
 
@@ -376,8 +379,8 @@ public class ProjectConfigureMenu
         UIHelper.HintTextInput("ProjectDirPath", ref Descriptor.ProjectPath, "Enter the directory your mod is placed at...");
 
         UIHelper.MultiButtonInput("projectDirActions",
-            "selectDir", "Select Project Directory", "", SelectProjectDirectory,
-            "openDir", "Open Project Directory", "", OpenProjectDirectory);
+            "selectDir", "Select Project Directory", "Select the directory for the project files.", SelectProjectDirectory,
+            "openDir", "Open Project Directory", "Open the current project directory.", OpenProjectDirectory);
 
         // Data Directory
         UIHelper.Spacer();
@@ -386,8 +389,8 @@ public class ProjectConfigureMenu
         UIHelper.HintTextInput("DataDirPath", ref Descriptor.DataPath, "Enter the directory the game data is stored at...");
 
         UIHelper.MultiButtonInput("dataDirActions",
-            "selectDir", "Select Data Directory", "", SelectDataDirectory,
-            "openDir", "Open Data Directory", "", OpenDataDirectory);
+            "selectDir", "Select Data Directory", "Select the directory for the game data files.", SelectDataDirectory,
+            "openDir", "Open Data Directory", "Open the current data directory.", OpenDataDirectory);
 
         // Group Tag
         UIHelper.Spacer();
