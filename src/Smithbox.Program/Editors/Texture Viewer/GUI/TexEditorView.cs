@@ -106,7 +106,7 @@ public class TexEditorView
         // Texture Viewport
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
         ImGui.SetNextWindowClass(ref UIHelper.DockGroup_TextureViewerView);
-        if (ImGui.Begin($@"Viewer##textureEditor_Viewer_{viewIndex}", UIHelper.GetInnerWindowFlags()))
+        if (ImGui.Begin($@"Viewer##textureEditor_Viewer_{viewIndex}", UIHelper.GetTextureViewerFlags()))
         {
             var width = ImGui.GetContentRegionAvail().X;
             var height = ImGui.GetContentRegionAvail().Y;

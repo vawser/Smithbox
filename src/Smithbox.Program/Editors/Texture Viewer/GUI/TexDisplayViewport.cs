@@ -22,8 +22,6 @@ public class TexDisplayViewport
     /// </summary>
     public void Display()
     {
-        ImGui.BeginChild("TexDisplayViewport", new Vector2(0, 0), ImGuiChildFlags.Borders);
-
         Parent.Selection.TextureViewWindowPosition = ImGui.GetWindowPos();
         Parent.Selection.TextureViewScrollPosition = new Vector2(ImGui.GetScrollX(), ImGui.GetScrollY());
 
@@ -39,8 +37,6 @@ public class TexDisplayViewport
                 ImGui.Image(textureId, size);
             }
         }
-
-        ImGui.EndChild();
     }
 
     /// <summary>
