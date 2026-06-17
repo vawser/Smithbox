@@ -142,13 +142,24 @@ public static class FocusManager
 
         return false;
     }
+    public static bool IsInProjectEditor()
+    {
+        if (Focus is EditorFocusContext.Project_None
+            or EditorFocusContext.Project_AliasEditor
+            or EditorFocusContext.Project_EnumEditor)
+            return true;
+
+        return false;
+    }
 }
 
 public enum EditorFocusContext
 {
     None,
 
-    Project,
+    Project_None,
+    Project_AliasEditor,
+    Project_EnumEditor,
 
     FileBrowser_None,
     FileBrowser_FileList,

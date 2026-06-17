@@ -1,25 +1,36 @@
 ﻿using Hexa.NET.ImGui;
+using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.Extensions.Logging;
+using Octokit;
+using StudioCore.Editors.Common;
+using StudioCore.Editors.ParamEditor;
 using StudioCore.Logger;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Numerics;
+using System.Text.Encodings.Web;
 using System.Text.Json;
 
 namespace StudioCore.Application;
 
 public class ProjectAliasMenu
 {
+    public ActionManager ActionManager;
+
     private AliasStore BaseAliases;
 
     private static ProjectAliasType CurrentAliasEditor = ProjectAliasType.None;
     private static string AliasEntryFilter = "";
     private static AliasEntry CurrentAliasEntry;
 
-    public ProjectAliasMenu() { }
+    public ProjectAliasMenu()
+    {
+        ActionManager = new();
+    }
 
     public void Draw()
     {
@@ -41,24 +52,52 @@ public class ProjectAliasMenu
             return;
         }
 
-        UIHelper.SimpleHeader("Actions", "");
+        if (ImGui.BeginMenuBar())
+        {
+            FileMenu();
+            OptionsMenu();
 
-        UIHelper.MultiButtonInput("aliasActions",
-            "saveAliases", "Save Aliases", "Commit changes to the aliases to file.", Save);
+            ImGui.EndMenuBar();
+        }
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader("Options", "");
-
-        ImGui.InputText("##exportDelimiter", ref CFG.Current.Project_Alias_Export_Delimiter, 255);
-        UIHelper.Tooltip("Set the delimiter to use when exporting the alias lists via 'Copy Entries as Text'");
-
-        ImGui.Checkbox("Ignore Empty on Export", ref CFG.Current.Project_Alias_Editor_Export_Ignore_Empty);
-        UIHelper.Tooltip("If enabled, empty entries will be ignored by the 'Copy Entries as Text' action.");
-
-        UIHelper.Spacer();
         UIHelper.SimpleHeader("Aliases", "");
 
         DrawMainLayout();
+    }
+
+    public void FileMenu()
+    {
+        if (ImGui.BeginMenu("File"))
+        {
+            if (ImGui.Selectable("Save Local Aliases"))
+            {
+                SaveLocalAliases();
+            }
+
+            if (CFG.Current.Developer_Enable_Tools)
+            {
+                if (ImGui.Selectable("Save Base Aliases"))
+                {
+                    SaveBaseAliases();
+                }
+            }
+
+            ImGui.EndMenu();
+        }
+    }
+    public void OptionsMenu()
+    {
+        if (ImGui.BeginMenu("Options"))
+        {
+            UIHelper.SimpleHeader("Export Delimiter", "");
+            ImGui.InputText("##exportDelimiter", ref CFG.Current.Project_Alias_Export_Delimiter, 255);
+            UIHelper.Tooltip("Set the delimiter to use when exporting the alias lists via 'Copy Entries as Text'");
+
+            ImGui.Checkbox("Ignore Empty on Export", ref CFG.Current.Project_Alias_Editor_Export_Ignore_Empty);
+            UIHelper.Tooltip("If enabled, empty entries will be ignored by the 'Copy Entries as Text' action.");
+
+            ImGui.EndMenu();
+        }
     }
 
     #region Layout
@@ -456,42 +495,8 @@ public class ProjectAliasMenu
         }
     }
 
-
-    public void Save()
-    {
-        var projectFolder = Path.Join(Smithbox.Orchestrator.SelectedProject.Descriptor.ProjectPath, ".smithbox", "Assets", "Aliases");
-
-        if (!Directory.Exists(projectFolder))
-            Directory.CreateDirectory(projectFolder);
-
-        foreach ((ProjectAliasType aliasType, List<AliasEntry> aliases) in Smithbox.Orchestrator.SelectedProject.Handler.ProjectData.Aliases)
-        {
-            string path = Path.Combine(projectFolder, $"{aliasType}.json");
-
-            List<AliasEntry> baseAliases =
-                (BaseAliases != null && BaseAliases.TryGetValue(aliasType, out List<AliasEntry> bAliases)) ? bAliases : new();
-
-            List<AliasEntry> diffAliases = aliases.Where(a =>
-            {
-                var baseA = baseAliases.FirstOrDefault(b => b.ID == a.ID);
-
-                if (baseA == null)
-                    return true;
-
-                return baseA.Name != a.Name || !baseA.Tags.SequenceEqual(a.Tags);
-            }).ToList();
-
-            if (!diffAliases.Any()) continue;
-
-            var json = JsonSerializer.Serialize(diffAliases, ProjectJsonSerializerContext.Default.ListAliasEntry);
-
-            File.WriteAllText(path, json);
-
-            Smithbox.Log<ProjectEnumMenu>("Saved project aliases.");
-        }
-    }
-
-    public void SaveIndividual(ProjectAliasType targetType)
+    #region Save
+    public void SaveIndividualAlias(ProjectAliasType targetType)
     {
         var projectFolder = Path.Join(Smithbox.Orchestrator.SelectedProject.Descriptor.ProjectPath, ".smithbox", "Assets", "Aliases");
 
@@ -518,13 +523,87 @@ public class ProjectAliasMenu
                 return baseA.Name != a.Name || !baseA.Tags.SequenceEqual(a.Tags);
             }).ToList();
 
-            if (!diffAliases.Any()) continue;
+            if (!diffAliases.Any()) 
+                continue;
 
-            var json = JsonSerializer.Serialize(diffAliases, ProjectJsonSerializerContext.Default.ListAliasEntry);
+            diffAliases.Sort();
+
+            var options = new JsonSerializerOptions
+            {
+                Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
+                WriteIndented = true,
+                IncludeFields = true
+            };
+            var json = JsonSerializer.Serialize(diffAliases, typeof(List<AliasEntry>), options);
 
             File.WriteAllText(path, json);
 
             Smithbox.Log<ProjectEnumMenu>("Saved project aliases.");
         }
     }
+
+
+    public void SaveLocalAliases()
+    {
+        var projectFolder = Path.Join(Smithbox.Orchestrator.SelectedProject.Descriptor.ProjectPath, ".smithbox", "Assets", "Aliases");
+
+        if (!Directory.Exists(projectFolder))
+            Directory.CreateDirectory(projectFolder);
+
+        SaveAliases(projectFolder, "Saved project aliases.");
+
+    }
+    public void SaveBaseAliases()
+    {
+        var curProject = Smithbox.Orchestrator.SelectedProject;
+
+        var dir = Path.Combine(ParamDebugTools.ProjectFolder,
+            "src", "Smithbox.Data", "Assets", "Aliases",
+            ProjectUtils.GetGameDirectory(curProject));
+
+        if (!Directory.Exists(dir))
+            Directory.CreateDirectory(dir);
+
+        SaveAliases(dir, "Saved base aliases.");
+    }
+
+    public void SaveAliases(string targetPath, string saveMessage)
+    {
+        foreach ((ProjectAliasType aliasType, List<AliasEntry> aliases) in Smithbox.Orchestrator.SelectedProject.Handler.ProjectData.Aliases)
+        {
+            string path = Path.Combine(targetPath, $"{aliasType}.json");
+
+            List<AliasEntry> baseAliases =
+                (BaseAliases != null && BaseAliases.TryGetValue(aliasType, out List<AliasEntry> bAliases)) ? bAliases : new();
+
+            List<AliasEntry> diffAliases = aliases.Where(a =>
+            {
+                var baseA = baseAliases.FirstOrDefault(b => b.ID == a.ID);
+
+                if (baseA == null)
+                    return true;
+
+                return baseA.Name != a.Name || !baseA.Tags.SequenceEqual(a.Tags);
+            }).ToList();
+
+            if (!diffAliases.Any()) 
+                continue;
+
+            diffAliases.Sort();
+
+            var options = new JsonSerializerOptions
+            {
+                Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
+                WriteIndented = true,
+                IncludeFields = true
+            };
+            var json = JsonSerializer.Serialize(diffAliases, typeof(List<AliasEntry>), options);
+
+            File.WriteAllText(path, json);
+
+            Smithbox.Log<ProjectEnumMenu>(saveMessage);
+        }
+    }
+
+    #endregion
 }

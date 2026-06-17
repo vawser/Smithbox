@@ -1,6 +1,7 @@
 ﻿using Google.Protobuf.WellKnownTypes;
 using Hexa.NET.ImGui;
 using Octokit;
+using StudioCore.Editors.Common;
 using StudioCore.Editors.ParamEditor;
 using System.Collections.Generic;
 using System.IO;
@@ -12,12 +13,17 @@ namespace StudioCore.Application;
 
 public class ProjectEnumMenu
 {
+    public ActionManager ActionManager;
+
     private ParamEnumEntry CurrentEnum;
     private ParamEnumOption CurrentOption;
 
     private string OptionEntryFilter = "";
 
-    public ProjectEnumMenu() { }
+    public ProjectEnumMenu()
+    {
+        ActionManager = new();
+    }
 
     public void Draw()
     {
@@ -39,15 +45,37 @@ public class ProjectEnumMenu
             return;
         }
 
-        UIHelper.SimpleHeader("Actions", "");
+        if (ImGui.BeginMenuBar())
+        {
+            FileMenu();
 
-        UIHelper.MultiButtonInput("enumActions",
-            "saveEnums", "Save Enums", "Commit changes to the enums to file.", Save);
+            ImGui.EndMenuBar();
+        }
 
-        UIHelper.Spacer();
         UIHelper.SimpleHeader("Enums", "");
 
         DrawMainLayout();
+    }
+
+    public void FileMenu()
+    {
+        if (ImGui.BeginMenu("File"))
+        {
+            if (ImGui.Selectable("Save Local Enums"))
+            {
+                Save();
+            }
+
+            if (CFG.Current.Developer_Enable_Tools)
+            {
+                if (ImGui.Selectable("Save Base Enums"))
+                {
+                    SaveBaseEnums();
+                }
+            }
+
+            ImGui.EndMenu();
+        }
     }
 
     #region Layout
@@ -343,4 +371,9 @@ public class ProjectEnumMenu
     }
 
     #endregion
+
+    public void SaveBaseEnums()
+    {
+
+    }
 }

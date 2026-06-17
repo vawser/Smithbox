@@ -116,9 +116,8 @@ public class CFG
     public bool Param_Editor_Enable_Row_FMG_Annotation_Override = false;
     public bool Param_Editor_Enable_Row_FMG_Annotation_Addition = true;
 
-    public float Project_Display_LoadedProjectList = 0.2f;
-    public float Project_Display_AvailableProjectList = 0.8f;
-
+    public bool Interface_ProjectEditor_ProjectList = true;
+    public bool Interface_ProjectEditor_ProjectConfiguration = true;
     public bool Interface_ProjectEditor_ProjectAliases = true;
     public bool Interface_ProjectEditor_ProjectEnums = true;
     #endregion
@@ -403,9 +402,6 @@ public class CFG
     // Param Properties
     public bool MapEditor_Field_List_Display_Padding = false;
 
-    public float MapEditor_Display_ContainerList_Percentage = 0.3f;
-    public float MapEditor_Display_ContentList_Percentage = 0.7f;
-
     // Windows
     public bool Interface_MapEditor_Viewport_Grid = true;
     public bool Interface_MapEditor_MapList = true;
@@ -468,10 +464,6 @@ public class CFG
     /// Model Editor
     ///------------------------------------------------------------
     // General
-    public float ModelEditor_Display_SourceList_Percentage = 0.2f;
-    public float ModelEditor_Display_SelectionList_Percentage = 0.1f;
-    public float ModelEditor_Display_Contents_Percentage = 0.7f;
-
     public bool ModelEditor_Containers_IncludeAliasInSearch = true;
 
     public bool ModelEditor_Files_AutoLoadFirstEntry = true;
@@ -776,9 +768,6 @@ public class CFG
 
     public bool TextEditor_Include_Vanilla_Cache = true;
 
-    public float TextEditor_Display_ContainerList_Percentage = 0.4f;
-    public float TextEditor_Display_FileList_Percentage = 0.6f;
-
     public bool TextEditor_Container_List_Hide_Unused_Containers = true;
     public bool TextEditor_Container_List_Display_Obsolete_Containers = false;
     public bool TextEditor_Container_List_Display_Primary_Category_Only = false;
@@ -895,10 +884,6 @@ public class CFG
     /// Texture Viewer
     ///------------------------------------------------------------
     // General
-    public float TextureViewer_Display_ContainerList_Percentage = 0.2f;
-    public float TextureViewer_Display_InternalFileList_Percentage = 0.1f;
-    public float TextureViewer_Display_FileList_Percentage = 0.6f;
-
     public bool TextureViewer_File_List_Display_Low_Detail_Entries = true;
 
     public bool TextureViewer_File_List_Display_Character_Aliases = true;
@@ -926,9 +911,6 @@ public class CFG
     /// Material Editor
     ///------------------------------------------------------------
     // General
-    public float MaterialEditor_Display_ContainerList_Percentage = 0.2f;
-    public float MaterialEditor_Display_FileList_Percentage = 0.8f;
-
     public bool MaterialEditor_FileList_DisplayFullPath = false;
 
     public bool MaterialEditor_Properties_Display_Community_Names = false;
@@ -977,9 +959,6 @@ public class CFG
 
     // Windows
     public bool Interface_MapDataEditor_ToolWindow = true;
-
-    public float MapDataEditor_Display_SubeditorList_Percentage = 0.2f;
-    public float MapDataEditor_Display_SourceList_Percentage = 0.8f;
 
     // Tools
 

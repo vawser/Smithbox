@@ -1,4 +1,5 @@
-﻿using Hexa.NET.ImGui;
+﻿using Google.Protobuf.Reflection;
+using Hexa.NET.ImGui;
 using Microsoft.AspNetCore.Components.Forms;
 using Octokit;
 using StudioCore.Editors.Common;
@@ -79,10 +80,6 @@ public class ProjectScreen
             ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ProjectEditor);
             if (ImGui.Begin("Project View##ProjectView", UIHelper.GetInnerWindowFlags()))
             {
-                if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
-                {
-                    FocusManager.SetFocus(EditorFocusContext.Project);
-                }
             }
 
             var viewDockId = ImGui.GetID($"DockSpace_ProjectEditorView");
@@ -104,54 +101,80 @@ public class ProjectScreen
 
     public void Display(uint editorDockspaceId)
     {
-        // Active Projects
-        ImGui.SetNextWindowDockID(editorDockspaceId, ImGuiCond.FirstUseEver);
-        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ProjectEditorView);
-        if (ImGui.Begin($@"Active Projects##projectEditor_ActiveProjects", UIHelper.GetInnerWindowFlags()))
+        if (CFG.Current.Interface_ProjectEditor_ProjectList)
         {
-            var width = ImGui.GetContentRegionAvail().X;
-            var height = ImGui.GetContentRegionAvail().Y;
+            // Active Projects
+            ImGui.SetNextWindowDockID(editorDockspaceId, ImGuiCond.FirstUseEver);
+            ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ProjectEditorView);
+            if (ImGui.Begin($@"Active Projects##projectEditor_ActiveProjects", UIHelper.GetInnerWindowFlags()))
+            {
+                var width = ImGui.GetContentRegionAvail().X;
+                var height = ImGui.GetContentRegionAvail().Y;
 
-            DisplayActiveProjectList();
+                if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+                {
+                    FocusManager.SetFocus(EditorFocusContext.Project_None);
+                }
+
+                DisplayActiveProjectList();
+            }
+
+            ImGui.End();
+
+            // Project List
+            ImGui.SetNextWindowDockID(editorDockspaceId, ImGuiCond.FirstUseEver);
+            ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ProjectEditorView);
+            if (ImGui.Begin($@"Available Projects##projectEditor_AvaliableProjects", UIHelper.GetInnerWindowFlags()))
+            {
+                var width = ImGui.GetContentRegionAvail().X;
+                var height = ImGui.GetContentRegionAvail().Y;
+
+                if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+                {
+                    FocusManager.SetFocus(EditorFocusContext.Project_None);
+                }
+
+                DisplayAvailableProjectList();
+            }
+
+            ImGui.End();
         }
 
-        ImGui.End();
-
-        // Project List
-        ImGui.SetNextWindowDockID(editorDockspaceId, ImGuiCond.FirstUseEver);
-        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ProjectEditorView);
-        if (ImGui.Begin($@"Available Projects##projectEditor_AvaliableProjects", UIHelper.GetInnerWindowFlags()))
+        if (CFG.Current.Interface_ProjectEditor_ProjectConfiguration)
         {
-            var width = ImGui.GetContentRegionAvail().X;
-            var height = ImGui.GetContentRegionAvail().Y;
+            // Project Configuration
+            ImGui.SetNextWindowDockID(editorDockspaceId, ImGuiCond.FirstUseEver);
+            ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ProjectEditorView);
+            if (ImGui.Begin($@"Project Configuration##projectEditor_ProjectConfiguration", UIHelper.GetInnerWindowFlags()))
+            {
+                var width = ImGui.GetContentRegionAvail().X;
+                var height = ImGui.GetContentRegionAvail().Y;
 
-            DisplayAvailableProjectList();
+                if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+                {
+                    FocusManager.SetFocus(EditorFocusContext.Project_None);
+                }
+
+                DisplayProjectCreator();
+            }
+
+            ImGui.End();
         }
-
-        ImGui.End();
-
-        // Project Configuration
-        ImGui.SetNextWindowDockID(editorDockspaceId, ImGuiCond.FirstUseEver);
-        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ProjectEditorView);
-        if (ImGui.Begin($@"Project Configuration##projectEditor_ProjectConfiguration", UIHelper.GetInnerWindowFlags()))
-        {
-            var width = ImGui.GetContentRegionAvail().X;
-            var height = ImGui.GetContentRegionAvail().Y;
-
-            DisplayProjectCreator();
-        }
-
-        ImGui.End();
 
         if (CFG.Current.Interface_ProjectEditor_ProjectAliases)
         {
             // Project Aliases
             ImGui.SetNextWindowDockID(editorDockspaceId, ImGuiCond.FirstUseEver);
             ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ProjectEditorView);
-            if (ImGui.Begin($@"Project Aliases##projectEditor_ProjectAliases", UIHelper.GetInnerWindowFlags()))
+            if (ImGui.Begin($@"Project Aliases##projectEditor_ProjectAliases", UIHelper.GetMainWindowFlags()))
             {
                 var width = ImGui.GetContentRegionAvail().X;
                 var height = ImGui.GetContentRegionAvail().Y;
+
+                if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+                {
+                    FocusManager.SetFocus(EditorFocusContext.Project_AliasEditor);
+                }
 
                 DisplayAliasEditor();
             }
@@ -164,10 +187,15 @@ public class ProjectScreen
             // Project Enums
             ImGui.SetNextWindowDockID(editorDockspaceId, ImGuiCond.FirstUseEver);
             ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ProjectEditorView);
-            if (ImGui.Begin($@"Project Enums##projectEditor_ProjectEnums", UIHelper.GetInnerWindowFlags()))
+            if (ImGui.Begin($@"Project Enums##projectEditor_ProjectEnums", UIHelper.GetMainWindowFlags()))
             {
                 var width = ImGui.GetContentRegionAvail().X;
                 var height = ImGui.GetContentRegionAvail().Y;
+
+                if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+                {
+                    FocusManager.SetFocus(EditorFocusContext.Project_EnumEditor);
+                }
 
                 DisplayEnumEditor();
             }
@@ -470,6 +498,9 @@ public class ProjectScreen
                 }
 
                 ConfigureMenu.SetupForEdit(project);
+
+                AliasMenu.ActionManager.Clear();
+                EnumMenu.ActionManager.Clear();
             }
         }
         else
@@ -590,22 +621,6 @@ public class ProjectScreen
         AliasMenu.Draw();
     }
 
-    public void FileMenu()
-    {
-        var orchestrator = Smithbox.Orchestrator;
-
-        if (ImGui.BeginMenu("File"))
-        {
-            if(ImGui.Selectable("Open Project JSON Directory"))
-            {
-                var storedDir = ProjectUtils.GetProjectsFolder();
-                Process.Start("explorer.exe", storedDir);
-            }
-
-            ImGui.EndMenu();
-        }
-    }
-
     public void EditMenu()
     {
         if(ImGui.BeginMenu("Edit"))
@@ -613,27 +628,60 @@ public class ProjectScreen
             // Undo
             if (ImGui.MenuItem($"Undo", $"{InputManager.GetHint(KeybindID.Undo)} / {InputManager.GetHint(KeybindID.Undo_Repeat)}"))
             {
-                if (Smithbox.Orchestrator.ActionManager.CanUndo())
+                if (FocusManager.IsFocus(EditorFocusContext.Project_AliasEditor))
                 {
-                    Smithbox.Orchestrator.ActionManager.UndoAction();
+                    if (AliasMenu.ActionManager.CanUndo())
+                    {
+                        AliasMenu.ActionManager.UndoAction();
+                    }
+                }
+
+                if (FocusManager.IsFocus(EditorFocusContext.Project_EnumEditor))
+                {
+                    if (EnumMenu.ActionManager.CanUndo())
+                    {
+                        EnumMenu.ActionManager.UndoAction();
+                    }
                 }
             }
 
             // Undo All
             if (ImGui.MenuItem($"Undo All"))
             {
-                if (Smithbox.Orchestrator.ActionManager.CanUndo())
+                if (FocusManager.IsFocus(EditorFocusContext.Project_AliasEditor))
                 {
-                    Smithbox.Orchestrator.ActionManager.UndoAllAction();
+                    if (AliasMenu.ActionManager.CanUndo())
+                    {
+                        AliasMenu.ActionManager.UndoAllAction();
+                    }
+                }
+
+                if (FocusManager.IsFocus(EditorFocusContext.Project_EnumEditor))
+                {
+                    if (EnumMenu.ActionManager.CanUndo())
+                    {
+                        EnumMenu.ActionManager.UndoAllAction();
+                    }
                 }
             }
 
             // Redo
             if (ImGui.MenuItem($"Redo", $"{InputManager.GetHint(KeybindID.Redo)} / {InputManager.GetHint(KeybindID.Redo_Repeat)}"))
             {
-                if (Smithbox.Orchestrator.ActionManager.CanRedo())
+                if (FocusManager.IsFocus(EditorFocusContext.Project_AliasEditor))
                 {
-                    Smithbox.Orchestrator.ActionManager.RedoAction();
+                    if (AliasMenu.ActionManager.CanRedo())
+                    {
+                        AliasMenu.ActionManager.RedoAction();
+                    }
+                }
+
+                if (FocusManager.IsFocus(EditorFocusContext.Project_EnumEditor))
+                {
+                    if (EnumMenu.ActionManager.CanRedo())
+                    {
+                        EnumMenu.ActionManager.RedoAction();
+                    }
                 }
             }
 
@@ -645,6 +693,18 @@ public class ProjectScreen
     {
         if (ImGui.BeginMenu("View"))
         {
+            if (ImGui.MenuItem("Project List"))
+            {
+                CFG.Current.Interface_ProjectEditor_ProjectList = !CFG.Current.Interface_ProjectEditor_ProjectList;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_ProjectEditor_ProjectList);
+
+            if (ImGui.MenuItem("Project Configuration"))
+            {
+                CFG.Current.Interface_ProjectEditor_ProjectConfiguration = !CFG.Current.Interface_ProjectEditor_ProjectConfiguration;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_ProjectEditor_ProjectConfiguration);
+
             if (ImGui.MenuItem("Project Aliases"))
             {
                 CFG.Current.Interface_ProjectEditor_ProjectAliases = !CFG.Current.Interface_ProjectEditor_ProjectAliases;
@@ -661,18 +721,63 @@ public class ProjectScreen
         }
     }
 
-    public void OptionsMenu()
-    {
-        if (ImGui.BeginMenu("Options"))
-        {
-
-            ImGui.EndMenu();
-        }
-    }
-
     public void Shortcuts()
     {
+        if (!FocusManager.IsInProjectEditor())
+            return;
 
+        if (FocusManager.IsFocus(EditorFocusContext.Project_AliasEditor))
+        {
+            // Save
+            if (InputManager.IsPressed(KeybindID.Save))
+            {
+                AliasMenu.SaveLocalAliases();
+            }
+
+            // Undo
+            if (InputManager.IsPressed(KeybindID.Undo))
+            {
+                if (AliasMenu.ActionManager.CanUndo())
+                {
+                    AliasMenu.ActionManager.UndoAction();
+                }
+            }
+
+            // Redo
+            if (InputManager.IsPressed(KeybindID.Redo))
+            {
+                if (AliasMenu.ActionManager.CanRedo())
+                {
+                    AliasMenu.ActionManager.RedoAction();
+                }
+            }
+        }
+
+        if (FocusManager.IsFocus(EditorFocusContext.Project_EnumEditor))
+        {
+            // Save
+            if (InputManager.IsPressed(KeybindID.Save))
+            {
+                EnumMenu.Save();
+            }
+
+            // Undo
+            if (InputManager.IsPressed(KeybindID.Undo))
+            {
+                if (EnumMenu.ActionManager.CanUndo())
+                {
+                    EnumMenu.ActionManager.UndoAction();
+                }
+            }
+
+            // Redo
+            if (InputManager.IsPressed(KeybindID.Redo))
+            {
+                if (EnumMenu.ActionManager.CanRedo())
+                {
+                    EnumMenu.ActionManager.RedoAction();
+                }
+            }
+        }
     }
-
 }
