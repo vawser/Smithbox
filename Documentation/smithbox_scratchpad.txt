@@ -7,8 +7,6 @@
  - Finish AC6 meta
 
 - Alias/Enum Editor 
-  - Add dev button for instant commit to base files
-  
  - Improve the editing flow:
   - Add split table form: Row X - ID - Name - Tags
    - Allow for direct edit

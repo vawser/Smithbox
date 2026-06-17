@@ -659,34 +659,43 @@ public class Smithbox
         if (!CFG.Current.System_Check_Program_Update)
             return;
 
-        try
+        var gitHubClient = new GitHubClient(new ProductHeaderValue("Smithbox"));
+
+        if (gitHubClient != null)
         {
-            GitHubClient gitHubClient = new(new ProductHeaderValue("Smithbox"));
-            Release release = gitHubClient.Repository.Release.GetLatest("vawser", "Smithbox").Result;
-            var isVer = false;
-            var verstring = "";
-            foreach (var c in release.TagName)
+            var release = gitHubClient.Repository.Release.GetLatest("vawser", "Smithbox").Result;
+
+            if (release != null)
             {
-                if (char.IsDigit(c) || (isVer && c == '.'))
+                var isVer = false;
+                var verstring = "";
+                foreach (var c in release.TagName)
                 {
-                    verstring += c;
-                    isVer = true;
+                    if (char.IsDigit(c) || (isVer && c == '.'))
+                    {
+                        verstring += c;
+                        isVer = true;
+                    }
+                    else
+                    {
+                        isVer = false;
+                    }
                 }
-                else
+
+                if (Version.Parse(verstring) > Version.Parse(_version.ToString()))
                 {
-                    isVer = false;
+                    _programUpdateAvailable = true;
+                    _releaseUrl = release.HtmlUrl;
                 }
             }
-
-            if (Version.Parse(verstring) > Version.Parse(_version.ToString()))
+            else
             {
-                _programUpdateAvailable = true;
-                _releaseUrl = release.HtmlUrl;
+                Smithbox.LogError<Smithbox>("Failed to find Smithbox release.");
             }
         }
-        catch (Exception ex)
+        else
         {
-            Smithbox.LogError<Smithbox>("Failed to find Smithbox repository.", ex);
+            Smithbox.LogError<Smithbox>("Failed to find Smithbox repository.");
         }
     }
 
