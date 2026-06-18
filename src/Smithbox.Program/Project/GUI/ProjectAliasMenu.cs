@@ -9,7 +9,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Numerics;
-using System.Reflection.Metadata.Ecma335;
 using System.Text.Encodings.Web;
 using System.Text.Json;
 
@@ -28,6 +27,9 @@ public class ProjectAliasMenu
     private Dictionary<int, AliasEntry> SelectedEntries = new();
 
     private bool ReadOnlyMode = false;
+
+    private int _dragDropSourceIndex = -1;
+
 
     public ProjectAliasMenu()
     {
@@ -257,6 +259,7 @@ public class ProjectAliasMenu
         {
             AddAliasToList();
         }
+        UIHelper.Tooltip("Add new alias entry.");
 
         // Sort
         ImGui.SameLine();
@@ -265,6 +268,7 @@ public class ProjectAliasMenu
         {
             source.Sort();
         }
+        UIHelper.Tooltip("Sort alias list alphanumerically.");
 
         // Read Only Toggle
         ImGui.SameLine();
@@ -310,6 +314,37 @@ public class ProjectAliasMenu
         {
             HandleSelection(_selectedAliasIndex, index, curEntry);
             _selectedAliasIndex = index;
+        }
+
+        if (ImGui.BeginDragDropSource(ImGuiDragDropFlags.None))
+        {
+            _dragDropSourceIndex = index;
+
+            unsafe
+            {
+                byte dummy = 0;
+                ImGui.SetDragDropPayload("ALIAS_ENTRY", &dummy, 1);
+            }
+
+            ImGui.Text($"Move {curEntry.Name}");
+            ImGui.EndDragDropSource();
+        }
+
+        if (ImGui.BeginDragDropTarget())
+        {
+            unsafe
+            {
+                var payload = ImGui.AcceptDragDropPayload("ALIAS_ENTRY");
+
+                if (!payload.IsNull && _dragDropSourceIndex != -1)
+                {
+                    ReorderAlias(_dragDropSourceIndex, index);
+
+                    _dragDropSourceIndex = -1;
+                }
+            }
+
+            ImGui.EndDragDropTarget();
         }
 
         DisplaySelectionContextMenu(index);
@@ -537,6 +572,31 @@ public class ProjectAliasMenu
 
             actions.Add(action);
         }
+
+        ActionManager.ExecuteAction(new CompoundAction(actions));
+
+        SelectedEntries.Clear();
+        _selectedAliasIndex = -1;
+    }
+
+    private void ReorderAlias(int sourceIndex, int targetIndex)
+    {
+        if (sourceIndex < 0 || sourceIndex == targetIndex)
+            return;
+
+        var source = GetAliasList();
+
+        if (sourceIndex >= source.Count || targetIndex < 0 || targetIndex >= source.Count)
+            return;
+
+        var alias = source[sourceIndex];
+        var insertIndex = targetIndex > sourceIndex ? targetIndex - 1 : targetIndex;
+
+        var actions = new List<EditorAction>
+        {
+            new ChangeAliasList(source, alias, null, ProjectAliasListOperation.Remove, sourceIndex),
+            new ChangeAliasList(source, alias, alias, ProjectAliasListOperation.Add, insertIndex)
+        };
 
         ActionManager.ExecuteAction(new CompoundAction(actions));
 

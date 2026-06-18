@@ -6,16 +6,14 @@
  - Finish converting the SDT AlternativeOrders into Field Layouts
  - Finish AC6 meta
  
+- Map Editor
+ - "Follow" toggle / shortcut for camera that allows a selection to be 'followed' by the camera (i.e. keep look-at spot focused on selection centre and adjust camera position if translation occurs)
+ - "Bounding Box" visualisation toggle / shortcut: display the bounding box for the selection using wire box primitives 
+ 
 - Texture Viewer 
  - Add tool to quickly add new shoebox layout entry for supported textures
   - Use the overlay tech from World Map to visualize the placement
 
 - Alias/Enum Editor 
  - Improve the editing flow:
-  - Add split table form: Row X - ID - Name - Tags
-   - Allow for direct edit
-  - Add multi-select
-  - Add duplicate/remove for multi-select
-  - Add duplicate/remove shortcuts
-  - Add drag sort + sort action
-  
+  - Apply alias editor changes to enum editor
