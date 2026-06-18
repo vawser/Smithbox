@@ -43,6 +43,22 @@ public class ProjectData : IDisposable
         return true;
     }
 
+    public async void ReloadAliases()
+    {
+        // Aliases
+        Task<bool> aliasesTask = SetupAliases();
+        bool aliasesSetup = await aliasesTask;
+
+        if (aliasesSetup)
+        {
+            Smithbox.Log(this, $"[Project] Setup aliases for '{Project.Descriptor.ProjectName}'", LogLevel.Information);
+        }
+        else
+        {
+            Smithbox.Log(this, $"[Project] Failed to setup aliases for '{Project.Descriptor.ProjectName}'", LogLevel.Information);
+        }
+    }
+
     /// <summary>
     /// Setup the alias store for this project
     /// </summary>
@@ -53,12 +69,21 @@ public class ProjectData : IDisposable
 
         Aliases = new();
 
-        HashSet<string> sourceDirectories =
-        [
-            Path.Join(AppContext.BaseDirectory, "Assets", "Aliases", 
-            ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType)),
-            Path.Join(Project.Descriptor.ProjectPath,".smithbox","Assets","Aliases")
-        ];
+        HashSet<string> sourceDirectories = new();
+
+        if(CFG.Current.Project_Alias_Editor_Use_Base_Source)
+        {
+            var baseDir = Path.Join(AppContext.BaseDirectory, "Assets", "Aliases", ProjectUtils.GetGameDirectory(Project.Descriptor.ProjectType));
+
+            sourceDirectories.Add(baseDir);
+        }
+
+        if (CFG.Current.Project_Alias_Editor_Use_Project_Source)
+        {
+            var projectDir = Path.Join(Project.Descriptor.ProjectPath, ".smithbox", "Assets", "Aliases");
+
+            sourceDirectories.Add(projectDir);
+        }
 
         List<string> sourceFiles = sourceDirectories.Where(Directory.Exists).Select(dir => Directory.GetFiles(dir, "*.json")).SelectMany(f => f).ToList();
 

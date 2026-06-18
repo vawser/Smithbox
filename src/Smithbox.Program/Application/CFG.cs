@@ -88,6 +88,9 @@ public class CFG
     public string Project_Alias_Export_Delimiter = ";";
     public bool Project_Alias_Editor_Export_Ignore_Empty = false;
 
+    public bool Project_Alias_Editor_Use_Base_Source = true;
+    public bool Project_Alias_Editor_Use_Project_Source = true;
+
     // Metadata (Param Editor)
     public bool Param_Editor_Enable_Param_Meta_Override = false;
     public bool Param_Editor_Enable_Param_Meta_Addition = true;

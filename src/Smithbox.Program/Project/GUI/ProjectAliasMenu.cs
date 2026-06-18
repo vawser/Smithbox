@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.ImGui;
+using Octokit;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Keybinds;
@@ -11,6 +12,7 @@ using System.Linq;
 using System.Numerics;
 using System.Text.Encodings.Web;
 using System.Text.Json;
+using static HKLib.hk2018.hkSerialize.CompatTypeParentInfo;
 
 namespace StudioCore.Application;
 
@@ -60,12 +62,177 @@ public class ProjectAliasMenu
         {
             FileMenu();
             EditMenu();
+            SourceMenu();
             OptionsMenu();
 
             ImGui.EndMenuBar();
         }
 
         DisplayEditor();
+    }
+
+
+    public void FileMenu()
+    {
+        if (ImGui.BeginMenu("File"))
+        {
+            if (ImGui.Selectable("Save Local Aliases"))
+            {
+                SaveLocalAliases();
+            }
+
+            if (CFG.Current.Developer_Enable_Tools)
+            {
+                if (ImGui.Selectable("Save Base Aliases"))
+                {
+                    SaveBaseAliases();
+                }
+            }
+
+            ImGui.EndMenu();
+        }
+    }
+    public void SourceMenu()
+    {
+        var curProject = Smithbox.Orchestrator.SelectedProject;
+
+        if (ImGui.BeginMenu("Data Source"))
+        {
+            if (ImGui.MenuItem("Base Source"))
+            {
+                CFG.Current.Project_Alias_Editor_Use_Base_Source = !CFG.Current.Project_Alias_Editor_Use_Base_Source;
+
+                curProject.Handler.ProjectData.ReloadAliases();
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.Project_Alias_Editor_Use_Base_Source);
+            UIHelper.Tooltip($"If enabled, the source files from Smithbox are included in the Alias Lists.");
+
+            if (ImGui.MenuItem("Project Source"))
+            {
+                CFG.Current.Project_Alias_Editor_Use_Project_Source = !CFG.Current.Project_Alias_Editor_Use_Project_Source;
+
+                curProject.Handler.ProjectData.ReloadAliases();
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.Project_Alias_Editor_Use_Project_Source);
+            UIHelper.Tooltip($"If enabled, the source files unique to this project are included in the Alias Lists.");
+
+            ImGui.EndMenu();
+        }
+    }
+
+    public void OptionsMenu()
+    {
+        var curProject = Smithbox.Orchestrator.SelectedProject;
+
+        if (ImGui.BeginMenu("Options"))
+        {
+            UIHelper.SimpleHeader("Export Delimiter", "");
+            ImGui.InputText("##exportDelimiter", ref CFG.Current.Project_Alias_Export_Delimiter, 255);
+            UIHelper.Tooltip("Set the delimiter to use when exporting the alias lists via 'Copy Entries as Text'");
+
+            ImGui.Checkbox("Ignore Empty on Export", ref CFG.Current.Project_Alias_Editor_Export_Ignore_Empty);
+            UIHelper.Tooltip("If enabled, empty entries will be ignored by the 'Copy Entries as Text' action.");
+
+            if(ImGui.Selectable("Regenerate Project Source"))
+            {
+                var projectDir = Path.Join(curProject.Descriptor.ProjectPath, ".smithbox", "Assets", "Aliases");
+
+                if (Directory.Exists(projectDir))
+                {
+                    var dialog = PlatformUtils.Instance.MessageBox("Delete the current alias source for this project?", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+
+                    if (dialog is DialogResult.OK)
+                    {
+                        foreach (var file in Directory.EnumerateFiles(projectDir))
+                        {
+                            File.Delete(file);
+                        }
+
+                        curProject.Handler.ProjectData.ReloadAliases();
+                    }
+                }
+            }
+            UIHelper.Tooltip("Regenerates the project source associated with this project to use the latest base source. NOTE: this will remove all custom entries unique to the project.");
+
+            ImGui.EndMenu();
+        }
+    }
+
+    public void EditMenu()
+    {
+        if (ImGui.BeginMenu("Edit"))
+        {
+            // Undo
+            if (ImGui.MenuItem($"Undo", $"{InputManager.GetHint(KeybindID.Undo)} / {InputManager.GetHint(KeybindID.Undo_Repeat)}"))
+            {
+                if (ActionManager.CanUndo())
+                {
+                    ActionManager.UndoAction();
+                }
+            }
+
+            // Undo All
+            if (ImGui.MenuItem($"Undo All"))
+            {
+                if (ActionManager.CanUndo())
+                {
+                    ActionManager.UndoAllAction();
+                }
+            }
+
+            // Redo
+            if (ImGui.MenuItem($"Redo", $"{InputManager.GetHint(KeybindID.Redo)} / {InputManager.GetHint(KeybindID.Redo_Repeat)}"))
+            {
+                if (ActionManager.CanRedo())
+                {
+                    ActionManager.RedoAction();
+                }
+            }
+
+            ImGui.EndMenu();
+        }
+    }
+
+    public void Shortcuts()
+    {
+        if (FocusManager.IsFocus(EditorFocusContext.Project_AliasEditor))
+        {
+            // Save
+            if (InputManager.IsPressed(KeybindID.Save))
+            {
+                SaveLocalAliases();
+            }
+
+            // Undo
+            if (InputManager.IsPressed(KeybindID.Undo))
+            {
+                if (ActionManager.CanUndo())
+                {
+                    ActionManager.UndoAction();
+                }
+            }
+
+            // Redo
+            if (InputManager.IsPressed(KeybindID.Redo))
+            {
+                if (ActionManager.CanRedo())
+                {
+                    ActionManager.RedoAction();
+                }
+            }
+
+            // Duplicate
+            if (InputManager.IsPressed(KeybindID.Duplicate))
+            {
+                DuplicateAliases();
+            }
+
+            // Delete
+            if (InputManager.IsPressed(KeybindID.Delete))
+            {
+                DeleteAliases();
+            }
+        }
     }
 
     public void DisplayEditor()
@@ -636,94 +803,6 @@ public class ProjectAliasMenu
             : new List<AliasEntry>();
     }
 
-    public void Setup(ProjectEntry project)
-    {
-        if (BaseAliases != null)
-            return;
-
-        BaseAliases = new();
-
-        var dir = Path.Join(AppContext.BaseDirectory, "Assets", "Aliases",
-            ProjectUtils.GetGameDirectory(project.Descriptor.ProjectType));
-
-        List<string> sourceFiles = Directory.GetFiles(dir, "*.json").ToList();
-
-        foreach (string sourceFile in sourceFiles)
-        {
-            try
-            {
-                if (!Enum.TryParse(Path.GetFileNameWithoutExtension(sourceFile), out ProjectAliasType type)) continue;
-                string text = File.ReadAllText(sourceFile);
-                try
-                {
-                    var entries = JsonSerializer.Deserialize(text, ProjectJsonSerializerContext.Default.ListAliasEntry);
-
-                    if (!BaseAliases.ContainsKey(type))
-                    {
-                        BaseAliases.TryAdd(type, entries);
-                        continue;
-                    }
-                    BaseAliases[type] = entries.UnionBy(BaseAliases[type], e => e.ID).ToList();
-                }
-                catch (Exception e)
-                {
-                    Smithbox.LogError(this, $"Failed to deserialize the aliases: {sourceFile}", LogPriority.High, e);
-                }
-            }
-            catch (Exception e)
-            {
-                Smithbox.LogError(this, $"Failed to read the aliases: {sourceFile}", LogPriority.High, e);
-            }
-        }
-    }
-
-    public void SaveIndividualAlias(ProjectAliasType targetType)
-    {
-        var projectFolder = Path.Join(Smithbox.Orchestrator.SelectedProject.Descriptor.ProjectPath, ".smithbox", "Assets", "Aliases");
-
-        if (!Directory.Exists(projectFolder))
-            Directory.CreateDirectory(projectFolder);
-
-        foreach ((ProjectAliasType aliasType, List<AliasEntry> aliases) in Smithbox.Orchestrator.SelectedProject.Handler.ProjectData.Aliases)
-        {
-            if (targetType != aliasType)
-                continue;
-
-            string path = Path.Combine(projectFolder, $"{aliasType}.json");
-
-            List<AliasEntry> baseAliases =
-                (BaseAliases != null && BaseAliases.TryGetValue(aliasType, out List<AliasEntry> bAliases)) ? bAliases : new();
-
-            List<AliasEntry> diffAliases = aliases.Where(a =>
-            {
-                var baseA = baseAliases.FirstOrDefault(b => b.ID == a.ID);
-
-                if (baseA == null)
-                    return true;
-
-                return baseA.Name != a.Name || !baseA.Tags.SequenceEqual(a.Tags);
-            }).ToList();
-
-            if (!diffAliases.Any()) 
-                continue;
-
-            diffAliases.Sort();
-
-            var options = new JsonSerializerOptions
-            {
-                Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
-                WriteIndented = true,
-                IncludeFields = true
-            };
-            var json = JsonSerializer.Serialize(diffAliases, typeof(List<AliasEntry>), options);
-
-            File.WriteAllText(path, json);
-
-            Smithbox.Log<ProjectEnumMenu>("Saved project aliases.");
-        }
-    }
-
-
     public void SaveLocalAliases()
     {
         var projectFolder = Path.Join(Smithbox.Orchestrator.SelectedProject.Descriptor.ProjectPath, ".smithbox", "Assets", "Aliases");
@@ -786,118 +865,51 @@ public class ProjectAliasMenu
             Smithbox.Log<ProjectEnumMenu>(saveMessage);
         }
     }
-
-    public void FileMenu()
+    public void SaveIndividualAlias(ProjectAliasType targetType)
     {
-        if (ImGui.BeginMenu("File"))
+        var projectFolder = Path.Join(Smithbox.Orchestrator.SelectedProject.Descriptor.ProjectPath, ".smithbox", "Assets", "Aliases");
+
+        if (!Directory.Exists(projectFolder))
+            Directory.CreateDirectory(projectFolder);
+
+        foreach ((ProjectAliasType aliasType, List<AliasEntry> aliases) in Smithbox.Orchestrator.SelectedProject.Handler.ProjectData.Aliases)
         {
-            if (ImGui.Selectable("Save Local Aliases"))
-            {
-                SaveLocalAliases();
-            }
+            if (targetType != aliasType)
+                continue;
 
-            if (CFG.Current.Developer_Enable_Tools)
-            {
-                if (ImGui.Selectable("Save Base Aliases"))
-                {
-                    SaveBaseAliases();
-                }
-            }
+            string path = Path.Combine(projectFolder, $"{aliasType}.json");
 
-            ImGui.EndMenu();
+            List<AliasEntry> baseAliases =
+                (BaseAliases != null && BaseAliases.TryGetValue(aliasType, out List<AliasEntry> bAliases)) ? bAliases : new();
+
+            List<AliasEntry> diffAliases = aliases.Where(a =>
+            {
+                var baseA = baseAliases.FirstOrDefault(b => b.ID == a.ID);
+
+                if (baseA == null)
+                    return true;
+
+                return baseA.Name != a.Name || !baseA.Tags.SequenceEqual(a.Tags);
+            }).ToList();
+
+            if (!diffAliases.Any())
+                continue;
+
+            diffAliases.Sort();
+
+            var options = new JsonSerializerOptions
+            {
+                Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
+                WriteIndented = true,
+                IncludeFields = true
+            };
+            var json = JsonSerializer.Serialize(diffAliases, typeof(List<AliasEntry>), options);
+
+            File.WriteAllText(path, json);
+
+            Smithbox.Log<ProjectEnumMenu>("Saved project aliases.");
         }
     }
 
-    public void OptionsMenu()
-    {
-        if (ImGui.BeginMenu("Options"))
-        {
-            UIHelper.SimpleHeader("Export Delimiter", "");
-            ImGui.InputText("##exportDelimiter", ref CFG.Current.Project_Alias_Export_Delimiter, 255);
-            UIHelper.Tooltip("Set the delimiter to use when exporting the alias lists via 'Copy Entries as Text'");
 
-            ImGui.Checkbox("Ignore Empty on Export", ref CFG.Current.Project_Alias_Editor_Export_Ignore_Empty);
-            UIHelper.Tooltip("If enabled, empty entries will be ignored by the 'Copy Entries as Text' action.");
-
-            ImGui.EndMenu();
-        }
-    }
-
-
-    public void EditMenu()
-    {
-        if (ImGui.BeginMenu("Edit"))
-        {
-            // Undo
-            if (ImGui.MenuItem($"Undo", $"{InputManager.GetHint(KeybindID.Undo)} / {InputManager.GetHint(KeybindID.Undo_Repeat)}"))
-            {
-                if (ActionManager.CanUndo())
-                {
-                    ActionManager.UndoAction();
-                }
-            }
-
-            // Undo All
-            if (ImGui.MenuItem($"Undo All"))
-            {
-                if (ActionManager.CanUndo())
-                {
-                    ActionManager.UndoAllAction();
-                }
-            }
-
-            // Redo
-            if (ImGui.MenuItem($"Redo", $"{InputManager.GetHint(KeybindID.Redo)} / {InputManager.GetHint(KeybindID.Redo_Repeat)}"))
-            {
-                if (ActionManager.CanRedo())
-                {
-                    ActionManager.RedoAction();
-                }
-            }
-
-            ImGui.EndMenu();
-        }
-    }
-
-    public void Shortcuts()
-    {
-        if (FocusManager.IsFocus(EditorFocusContext.Project_AliasEditor))
-        {
-            // Save
-            if (InputManager.IsPressed(KeybindID.Save))
-            {
-                SaveLocalAliases();
-            }
-
-            // Undo
-            if (InputManager.IsPressed(KeybindID.Undo))
-            {
-                if (ActionManager.CanUndo())
-                {
-                    ActionManager.UndoAction();
-                }
-            }
-
-            // Redo
-            if (InputManager.IsPressed(KeybindID.Redo))
-            {
-                if (ActionManager.CanRedo())
-                {
-                    ActionManager.RedoAction();
-                }
-            }
-
-            // Duplicate
-            if (InputManager.IsPressed(KeybindID.Duplicate))
-            {
-                DuplicateAliases();
-            }
-
-            // Delete
-            if (InputManager.IsPressed(KeybindID.Delete))
-            {
-                DeleteAliases();
-            }
-        }
-    }
 }
