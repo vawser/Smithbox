@@ -1,4 +1,5 @@
 ﻿using StudioCore.Editors.Common;
+using System.Collections.Generic;
 
 namespace StudioCore.Application;
 
@@ -30,7 +31,7 @@ public class ChangeAliasField : EditorAction
                 AliasEntry.Name = $"{NewValue}";
                 break;
             case ProjectAliasFieldType.Tags:
-                AliasEntry.Tags[TagIndex] = $"{NewValue}";
+                AliasEntry.Tags = (List<string>)NewValue;
                 break;
         }
 
@@ -48,7 +49,7 @@ public class ChangeAliasField : EditorAction
                 AliasEntry.Name = $"{OldValue}";
                 break;
             case ProjectAliasFieldType.Tags:
-                AliasEntry.Tags[TagIndex] = $"{OldValue}";
+                AliasEntry.Tags = (List<string>)OldValue;
                 break;
         }
 

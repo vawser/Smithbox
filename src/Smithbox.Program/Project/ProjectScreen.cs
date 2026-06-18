@@ -67,9 +67,7 @@ public class ProjectScreen
 
             if (ImGui.BeginMenuBar())
             {
-                EditMenu();
                 ViewMenu();
-                //OptionsMenu();
 
                 ImGui.EndMenuBar();
             }
@@ -613,77 +611,20 @@ public class ProjectScreen
 
     public void DisplayEnumEditor()
     {
-        EnumMenu.Draw();
+        EnumMenu.Display();
     }
 
     public void DisplayAliasEditor()
     {
-        AliasMenu.Draw();
+        AliasMenu.Display();
     }
 
     public void EditMenu()
     {
         if(ImGui.BeginMenu("Edit"))
         {
-            // Undo
-            if (ImGui.MenuItem($"Undo", $"{InputManager.GetHint(KeybindID.Undo)} / {InputManager.GetHint(KeybindID.Undo_Repeat)}"))
-            {
-                if (FocusManager.IsFocus(EditorFocusContext.Project_AliasEditor))
-                {
-                    if (AliasMenu.ActionManager.CanUndo())
-                    {
-                        AliasMenu.ActionManager.UndoAction();
-                    }
-                }
-
-                if (FocusManager.IsFocus(EditorFocusContext.Project_EnumEditor))
-                {
-                    if (EnumMenu.ActionManager.CanUndo())
-                    {
-                        EnumMenu.ActionManager.UndoAction();
-                    }
-                }
-            }
-
-            // Undo All
-            if (ImGui.MenuItem($"Undo All"))
-            {
-                if (FocusManager.IsFocus(EditorFocusContext.Project_AliasEditor))
-                {
-                    if (AliasMenu.ActionManager.CanUndo())
-                    {
-                        AliasMenu.ActionManager.UndoAllAction();
-                    }
-                }
-
-                if (FocusManager.IsFocus(EditorFocusContext.Project_EnumEditor))
-                {
-                    if (EnumMenu.ActionManager.CanUndo())
-                    {
-                        EnumMenu.ActionManager.UndoAllAction();
-                    }
-                }
-            }
-
-            // Redo
-            if (ImGui.MenuItem($"Redo", $"{InputManager.GetHint(KeybindID.Redo)} / {InputManager.GetHint(KeybindID.Redo_Repeat)}"))
-            {
-                if (FocusManager.IsFocus(EditorFocusContext.Project_AliasEditor))
-                {
-                    if (AliasMenu.ActionManager.CanRedo())
-                    {
-                        AliasMenu.ActionManager.RedoAction();
-                    }
-                }
-
-                if (FocusManager.IsFocus(EditorFocusContext.Project_EnumEditor))
-                {
-                    if (EnumMenu.ActionManager.CanRedo())
-                    {
-                        EnumMenu.ActionManager.RedoAction();
-                    }
-                }
-            }
+            AliasMenu.EditMenu();
+            EnumMenu.EditMenu();
 
             ImGui.EndMenu();
         }
@@ -726,58 +667,7 @@ public class ProjectScreen
         if (!FocusManager.IsInProjectEditor())
             return;
 
-        if (FocusManager.IsFocus(EditorFocusContext.Project_AliasEditor))
-        {
-            // Save
-            if (InputManager.IsPressed(KeybindID.Save))
-            {
-                AliasMenu.SaveLocalAliases();
-            }
-
-            // Undo
-            if (InputManager.IsPressed(KeybindID.Undo))
-            {
-                if (AliasMenu.ActionManager.CanUndo())
-                {
-                    AliasMenu.ActionManager.UndoAction();
-                }
-            }
-
-            // Redo
-            if (InputManager.IsPressed(KeybindID.Redo))
-            {
-                if (AliasMenu.ActionManager.CanRedo())
-                {
-                    AliasMenu.ActionManager.RedoAction();
-                }
-            }
-        }
-
-        if (FocusManager.IsFocus(EditorFocusContext.Project_EnumEditor))
-        {
-            // Save
-            if (InputManager.IsPressed(KeybindID.Save))
-            {
-                EnumMenu.Save();
-            }
-
-            // Undo
-            if (InputManager.IsPressed(KeybindID.Undo))
-            {
-                if (EnumMenu.ActionManager.CanUndo())
-                {
-                    EnumMenu.ActionManager.UndoAction();
-                }
-            }
-
-            // Redo
-            if (InputManager.IsPressed(KeybindID.Redo))
-            {
-                if (EnumMenu.ActionManager.CanRedo())
-                {
-                    EnumMenu.ActionManager.RedoAction();
-                }
-            }
-        }
+        AliasMenu.Shortcuts();
+        EnumMenu.Shortcuts();
     }
 }

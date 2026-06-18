@@ -3,6 +3,7 @@ using Hexa.NET.ImGui;
 using Octokit;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.ParamEditor;
+using StudioCore.Keybinds;
 using System.Collections.Generic;
 using System.IO;
 using System.Numerics;
@@ -25,7 +26,7 @@ public class ProjectEnumMenu
         ActionManager = new();
     }
 
-    public void Draw()
+    public void Display()
     {
         if (Smithbox.Orchestrator.IsProjectLoading)
             return;
@@ -48,6 +49,7 @@ public class ProjectEnumMenu
         if (ImGui.BeginMenuBar())
         {
             FileMenu();
+            EditMenu();
 
             ImGui.EndMenuBar();
         }
@@ -56,29 +58,6 @@ public class ProjectEnumMenu
 
         DrawMainLayout();
     }
-
-    public void FileMenu()
-    {
-        if (ImGui.BeginMenu("File"))
-        {
-            if (ImGui.Selectable("Save Local Enums"))
-            {
-                Save();
-            }
-
-            if (CFG.Current.Developer_Enable_Tools)
-            {
-                if (ImGui.Selectable("Save Base Enums"))
-                {
-                    SaveBaseEnums();
-                }
-            }
-
-            ImGui.EndMenu();
-        }
-    }
-
-    #region Layout
 
     private void DrawMainLayout()
     {
@@ -94,10 +73,6 @@ public class ProjectEnumMenu
 
         ImGui.Columns(1);
     }
-
-    #endregion
-
-    #region Enum Sidebar
 
     private void DrawEnumList()
     {
@@ -132,10 +107,6 @@ public class ProjectEnumMenu
 
         ImGui.EndChild();
     }
-
-    #endregion
-
-    #region Option List
 
     private void DrawOptionList()
     {
@@ -242,10 +213,6 @@ public class ProjectEnumMenu
         ImGui.EndChild();
     }
 
-    #endregion
-
-    #region Editor
-
     private void DrawEditor()
     {
         ImGui.BeginChild("EnumEditorPanel", new Vector2(0, 0));
@@ -338,42 +305,137 @@ public class ProjectEnumMenu
         ImGui.NextColumn();
     }
 
-    #endregion
-
-    #region Save
-
-    public void Save()
+    public void SaveLocalEnums()
     {
         var projectFolder = Path.Join(Smithbox.Orchestrator.SelectedProject.Descriptor.ProjectPath, ".smithbox", "Assets", "PARAM", ProjectUtils.GetGameDirectory(Smithbox.Orchestrator.SelectedProject.Descriptor.ProjectType), "Param Enums");
-
-        var enums = Smithbox.Orchestrator.SelectedProject.Handler.ParamData.Enums;
 
         if (!Directory.Exists(projectFolder))
             Directory.CreateDirectory(projectFolder);
 
-        var options = new JsonSerializerOptions
-        {
-            Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
-            WriteIndented = true,
-            IncludeFields = true
-        };
+        SaveEnums(projectFolder, "Saved project enums.");
+    }
+
+    public void SaveBaseEnums()
+    {
+        var curProject = Smithbox.Orchestrator.SelectedProject;
+
+        var dir = Path.Combine(ParamDebugTools.ProjectFolder,
+            "src", "Smithbox.Data", "Assets", "PARAM",
+            ProjectUtils.GetGameDirectory(curProject), "Param Enums");
+
+        if (!Directory.Exists(dir))
+            Directory.CreateDirectory(dir);
+
+        SaveEnums(dir, "Saved base enums.");
+    }
+
+    public void SaveEnums(string targetPath, string saveMessage)
+    {
+        var enums = Smithbox.Orchestrator.SelectedProject.Handler.ParamData.Enums;
 
         foreach (var entry in enums.List)
         {
-            var filePath = Path.Combine(projectFolder, $"{entry.Key}.json");
+            var filePath = Path.Combine(targetPath, $"{entry.Key}.json");
+
+            var options = new JsonSerializerOptions
+            {
+                Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
+                WriteIndented = true,
+                IncludeFields = true
+            };
 
             var json = JsonSerializer.Serialize(entry, typeof(ParamEnumEntry), options);
 
             File.WriteAllText(filePath, json);
 
-            Smithbox.Log<ProjectEnumMenu>("Saved project enums.");
+            Smithbox.Log<ProjectEnumMenu>(saveMessage);
         }
     }
 
-    #endregion
+    public void FileMenu()
+    {
+        if (ImGui.BeginMenu("File"))
+        {
+            if (ImGui.Selectable("Save Local Enums"))
+            {
+                SaveLocalEnums();
+            }
 
-    public void SaveBaseEnums()
+            if (CFG.Current.Developer_Enable_Tools)
+            {
+                if (ImGui.Selectable("Save Base Enums"))
+                {
+                    SaveBaseEnums();
+                }
+            }
+
+            ImGui.EndMenu();
+        }
+    }
+
+    public void EditMenu()
+    {
+        if (ImGui.BeginMenu("Edit"))
+        {
+            // Undo
+            if (ImGui.MenuItem($"Undo", $"{InputManager.GetHint(KeybindID.Undo)} / {InputManager.GetHint(KeybindID.Undo_Repeat)}"))
+            {
+                if (ActionManager.CanUndo())
+                {
+                    ActionManager.UndoAction();
+                }
+            }
+
+            // Undo All
+            if (ImGui.MenuItem($"Undo All"))
+            {
+                if (ActionManager.CanUndo())
+                {
+                    ActionManager.UndoAllAction();
+                }
+            }
+
+            // Redo
+            if (ImGui.MenuItem($"Redo", $"{InputManager.GetHint(KeybindID.Redo)} / {InputManager.GetHint(KeybindID.Redo_Repeat)}"))
+            {
+                if (ActionManager.CanRedo())
+                {
+                    ActionManager.RedoAction();
+                }
+            }
+
+            ImGui.EndMenu();
+        }
+    }
+
+    public void Shortcuts()
     {
 
+        if (FocusManager.IsFocus(EditorFocusContext.Project_EnumEditor))
+        {
+            // Save
+            if (InputManager.IsPressed(KeybindID.Save))
+            {
+                SaveLocalEnums();
+            }
+
+            // Undo
+            if (InputManager.IsPressed(KeybindID.Undo))
+            {
+                if (ActionManager.CanUndo())
+                {
+                    ActionManager.UndoAction();
+                }
+            }
+
+            // Redo
+            if (InputManager.IsPressed(KeybindID.Redo))
+            {
+                if (ActionManager.CanRedo())
+                {
+                    ActionManager.RedoAction();
+                }
+            }
+        }
     }
 }
