@@ -25,7 +25,6 @@
  - "Follow" toggle / shortcut for camera that allows a selection to be 'followed' by the camera (i.e. keep look-at spot focused on selection centre and adjust camera position if translation occurs)
  - "Bounding Box" visualisation toggle / shortcut: display the bounding box for the selection using wire box primitives 
  
-
 - Model Editor 
     - Add simple JSON export/import for elements of FLVER
     - Rendering experiment (TinyFFR)
@@ -59,6 +58,13 @@
  
 - Animation Editor:
  - Add basic HKX editor for DS3
+ 
+- Script Editor:
+ - Code blocks style editor for EMEVD:
+  - Split the file into Functions (group of Statements) and Statements (the individual commands/conditions)
+  - Functions would use the Alias Editor style presentation (drag button + ID + EDD name) 
+  - Statements would use the Alias Editor style presentation (drag button + command title -> right-click enum style selection to switch command), selection would populate property view.
+  
  
 #---------------------
 # BUGS

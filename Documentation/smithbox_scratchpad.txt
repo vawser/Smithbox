@@ -10,6 +10,9 @@
  - Implement property edit
   - Array properties need fixing
   - String property should set null to "" so the input shows
+  - For multi-select, apply change to all
+  
+ - Add automatic add to Models list if ModelName changes for a Part
   
  - Port over Global Search and Mass Edit
  - Implement ENFL sub-editor
