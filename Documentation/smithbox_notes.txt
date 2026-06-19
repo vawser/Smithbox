@@ -21,15 +21,11 @@
     - Add map piece link in BTAB properties 
     - Add progress modal to the prefab import/export
     - Make the prefab import much quicker (so we can support whole map imports)
-
  - Add visualisation (via primitive meshes) of enemy AI radiuses (sight, listen, smell)
+ - "Follow" toggle / shortcut for camera that allows a selection to be 'followed' by the camera (i.e. keep look-at spot focused on selection centre and adjust camera position if translation occurs)
+ - "Bounding Box" visualisation toggle / shortcut: display the bounding box for the selection using wire box primitives 
  
-- Map Data Editor
- - Implement property edit
- - Port over Local/Global Search and Mass Edit
- - Implement ENFL sub-editor
- 
- 
+
 - Model Editor 
     - Add simple JSON export/import for elements of FLVER
     - Rendering experiment (TinyFFR)
@@ -38,13 +34,16 @@
         
 - Param Editor: 
     - Table Group column should have difference highlighting if any of the internal rows are highlighted as different
-x
+
 - Texture Editor 
     - add automated mass export
     - add individual icon export based on subtexture
     - adjust IconConfig to support NR DLC icon setup: add try for DLC variants if initial lookup fails
  (i.e. Item fails to find anything, use Item-DLC01 instead. This means we can list only Item in the meta, but support variants automatically)
  
+ - Add tool to quickly add new shoebox layout entry for supported textures
+  - Use the overlay tech from World Map to visualize the placement
+  
 - Material Editor: 
     - add power search to file list 
         (i.e. param: g_BlendMode = 6 should filter the list down to all files that contain a parameter called g_BlendMode set to 6)

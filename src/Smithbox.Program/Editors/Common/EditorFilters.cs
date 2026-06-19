@@ -15,6 +15,8 @@ public static class EditorFilters
     public static string PartSplitChr = "_";
     public static string AliasSplitChr = " ";
 
+    public static string OR_Chr = "|";
+
     public static void DisplayFramedListFilter(string id, ref string input, ref bool exactBool)
     {
         var searchHeight = new Vector2(0, 36) * DPI.UIScale();
@@ -32,21 +34,46 @@ public static class EditorFilters
         ImGui.SameLine();
 
         ImGui.InputTextWithHint($"##{id}_listFilter", "Search...", ref input, 255);
-        UIHelper.Tooltip($"Enter the search term to filter this list by.\n\nSeparate terms are split via the {SplitChr} character.");
+        UIHelper.Tooltip($"Enter the search term to filter this list by.\n\nSeparate terms that behave as an AND are split with the {SplitChr} character.\n\nSeparate terms that behave as an OR are split with the {OR_Chr} character.");
     }
+
 
     public static bool IsMatch(string rawInput, string rawText, bool exactBool, string rawAliasText = "", bool partSplit = false, bool aliasSplit = false, string rawSecondaryText = "")
     {
-        bool isValid = true;
+        bool isValid = false;
 
         if (rawInput == null)
-            return isValid;
+            return true;
 
         if (rawText == null)
-            return isValid;
+            return true;
 
         if (rawInput == "")
-            return isValid;
+            return true;
+
+        // Allows for multiple terms to be searched for, and returns valid if ANY term is true.
+        var input = rawInput.Trim().ToLower();
+        List<string> terms = new() { input };
+
+        if (input.Contains(OR_Chr))
+        {
+            terms = input.Split(OR_Chr).ToList();
+        }
+
+        foreach(var term in terms)
+        {
+            if(IsMatchInternal(term, rawText, exactBool, rawAliasText, partSplit, aliasSplit, rawSecondaryText))
+            {
+                isValid = true;
+            }
+        }
+
+        return isValid;
+    }
+
+    public static bool IsMatchInternal(string rawInput, string rawText, bool exactBool, string rawAliasText = "", bool partSplit = false, bool aliasSplit = false, string rawSecondaryText = "")
+    {
+        bool isValid = true;
 
         if (rawAliasText == null)
             rawAliasText = "";
