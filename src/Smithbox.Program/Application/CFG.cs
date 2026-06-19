@@ -90,9 +90,11 @@ public class CFG
 
     public bool Project_Alias_Editor_Use_Base_Source = true;
     public bool Project_Alias_Editor_Use_Project_Source = true;
+    public bool Project_Alias_Editor_Save_Applies_To_Base = false;
 
     public bool Project_Enum_Editor_Use_Base_Source = true;
     public bool Project_Enum_Editor_Use_Project_Source = true;
+    public bool Project_Enum_Editor_Save_Applies_To_Base = false;
 
     // Metadata (Param Editor)
     public bool Param_Editor_Enable_Param_Meta_Override = false;

@@ -5,6 +5,7 @@ using Octokit;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Keybinds;
+using StudioCore.Utilities;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -60,6 +61,7 @@ public class ProjectEnumMenu
         {
             FileMenu();
             EditMenu();
+            OptionsMenu();
 
             ImGui.EndMenuBar();
         }
@@ -123,6 +125,26 @@ public class ProjectEnumMenu
         }
     }
 
+    public void OptionsMenu()
+    {
+        var curProject = Smithbox.Orchestrator.SelectedProject;
+
+        if (CFG.Current.Developer_Enable_Tools)
+        {
+            if (ImGui.BeginMenu("Options"))
+            {
+                if (ImGui.BeginMenu("Save"))
+                {
+                    ImGui.Checkbox("Save Shortcut applies to Base Source", ref CFG.Current.Project_Enum_Editor_Save_Applies_To_Base);
+                    UIHelper.Tooltip("If enabled, the save shortcut will save to base aliases, rather than local.");
+
+                    ImGui.EndMenu();
+                }
+
+                ImGui.EndMenu();
+            }
+        }
+    }
     public void Shortcuts()
     {
         if (FocusManager.IsFocus(EditorFocusContext.Project_EnumEditor))
@@ -130,7 +152,14 @@ public class ProjectEnumMenu
             // Save
             if (InputManager.IsPressed(KeybindID.Save))
             {
-                SaveLocalEnums();
+                if(CFG.Current.Project_Enum_Editor_Save_Applies_To_Base)
+                {
+                    SaveBaseEnums();
+                }
+                else
+                {
+                    SaveLocalEnums();
+                }
             }
 
             // Undo

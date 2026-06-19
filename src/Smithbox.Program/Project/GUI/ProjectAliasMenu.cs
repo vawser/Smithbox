@@ -121,6 +121,17 @@ public class ProjectAliasMenu
 
         if (ImGui.BeginMenu("Options"))
         {
+            if (CFG.Current.Developer_Enable_Tools)
+            {
+                if (ImGui.BeginMenu("Save"))
+                {
+                    ImGui.Checkbox("Save Shortcut applies to Base Source", ref CFG.Current.Project_Alias_Editor_Save_Applies_To_Base);
+                    UIHelper.Tooltip("If enabled, the save shortcut will save to base aliases, rather than local.");
+
+                    ImGui.EndMenu();
+                }
+            }
+
             if (ImGui.BeginMenu("List Copy"))
             {
                 UIHelper.SimpleHeader("Export Delimiter", "");
@@ -206,7 +217,14 @@ public class ProjectAliasMenu
             // Save
             if (InputManager.IsPressed(KeybindID.Save))
             {
-                SaveLocalAliases();
+                if (CFG.Current.Project_Alias_Editor_Save_Applies_To_Base)
+                {
+                    SaveBaseAliases();
+                }
+                else
+                {
+                    SaveLocalAliases();
+                }
             }
 
             // Undo

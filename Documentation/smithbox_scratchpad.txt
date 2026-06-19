@@ -13,7 +13,3 @@
 - Texture Viewer 
  - Add tool to quickly add new shoebox layout entry for supported textures
   - Use the overlay tech from World Map to visualize the placement
-
-- Alias/Enum Editor 
- - Improve the editing flow:
-  - Apply alias editor changes to enum editor
