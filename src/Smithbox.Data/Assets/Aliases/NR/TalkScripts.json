@@ -1,1 +1,587 @@
-[]
+[
+  {
+    "ID": "1000",
+    "Name": "Grace",
+    "Tags": []
+  },
+  {
+    "ID": "100401000",
+    "Name": "Priestess (Duchess)",
+    "Tags": []
+  },
+  {
+    "ID": "102001000",
+    "Name": "Duchess",
+    "Tags": []
+  },
+  {
+    "ID": "105001000",
+    "Name": "Unknown",
+    "Tags": []
+  },
+  {
+    "ID": "105101000",
+    "Name": "Unknown",
+    "Tags": []
+  },
+  {
+    "ID": "105201000",
+    "Name": "Unknown",
+    "Tags": []
+  },
+  {
+    "ID": "105301000",
+    "Name": "Unknown",
+    "Tags": []
+  },
+  {
+    "ID": "110401000",
+    "Name": "Duchess",
+    "Tags": []
+  },
+  {
+    "ID": "110701000",
+    "Name": "Recluse",
+    "Tags": []
+  },
+  {
+    "ID": "111001000",
+    "Name": "Unknown (Marionette Soldier)",
+    "Tags": []
+  },
+  {
+    "ID": "115001000",
+    "Name": "Interactable Object: Letter (Recluse)",
+    "Tags": []
+  },
+  {
+    "ID": "115101000",
+    "Name": "Unknown",
+    "Tags": []
+  },
+  {
+    "ID": "115301000",
+    "Name": "Unknown",
+    "Tags": []
+  },
+  {
+    "ID": "115401000",
+    "Name": "Unknown",
+    "Tags": []
+  },
+  {
+    "ID": "115501000",
+    "Name": "Unknown",
+    "Tags": []
+  },
+  {
+    "ID": "115601000",
+    "Name": "Unknown",
+    "Tags": []
+  },
+  {
+    "ID": "115701000",
+    "Name": "Unknown",
+    "Tags": []
+  },
+  {
+    "ID": "115701000",
+    "Name": "Unknown",
+    "Tags": []
+  },
+  {
+    "ID": "115801000",
+    "Name": "Unknown (Coffin)",
+    "Tags": []
+  },
+  {
+    "ID": "115901000",
+    "Name": "Unknown (Coffin)",
+    "Tags": []
+  },
+  {
+    "ID": "116001000",
+    "Name": "Unknown (Coffin)",
+    "Tags": []
+  },
+  {
+    "ID": "120501000",
+    "Name": "Raider",
+    "Tags": []
+  },
+  {
+    "ID": "120701000",
+    "Name": "Recluse",
+    "Tags": []
+  },
+  {
+    "ID": "121001000",
+    "Name": "Unknown (Marionette Soldier)",
+    "Tags": []
+  },
+  {
+    "ID": "121201000",
+    "Name": "Unknown (Wandering Noble)",
+    "Tags": []
+  },
+  {
+    "ID": "125001000",
+    "Name": "Unknown",
+    "Tags": []
+  },
+  {
+    "ID": "125101000",
+    "Name": "Unknown",
+    "Tags": []
+  },
+  {
+    "ID": "130401000",
+    "Name": "Priestess (Duchess)",
+    "Tags": []
+  },
+  {
+    "ID": "131401000",
+    "Name": "Traitor (Ironeye Remembrance)",
+    "Tags": []
+  },
+  {
+    "ID": "135001000",
+    "Name": "Unknown",
+    "Tags": []
+  },
+  {
+    "ID": "140101000",
+    "Name": "Wylder",
+    "Tags": []
+  },
+  {
+    "ID": "140501000",
+    "Name": "Raider",
+    "Tags": []
+  },
+  {
+    "ID": "140601000",
+    "Name": "Revenant",
+    "Tags": []
+  },
+  {
+    "ID": "141001000",
+    "Name": "Unknown (Marionette Soldier)",
+    "Tags": []
+  },
+  {
+    "ID": "145001000",
+    "Name": "Wylder Quest (By Fallen Wall)",
+    "Tags": []
+  },
+  {
+    "ID": "145101000",
+    "Name": "Unknown",
+    "Tags": []
+  },
+  {
+    "ID": "145201000",
+    "Name": "Unknown",
+    "Tags": []
+  },
+  {
+    "ID": "145301000",
+    "Name": "Unknown",
+    "Tags": []
+  },
+  {
+    "ID": "145401000",
+    "Name": "Unknown",
+    "Tags": []
+  },
+  {
+    "ID": "145501000",
+    "Name": "Unknown",
+    "Tags": []
+  },
+  {
+    "ID": "150301000",
+    "Name": "Ironeye",
+    "Tags": []
+  },
+  {
+    "ID": "151001000",
+    "Name": "Unknown (Marionette Soldier)",
+    "Tags": []
+  },
+  {
+    "ID": "155001000",
+    "Name": "Unknown (In Gravestone)",
+    "Tags": []
+  },
+  {
+    "ID": "155101000",
+    "Name": "Unknown (By Gravestone)",
+    "Tags": []
+  },
+  {
+    "ID": "160101000",
+    "Name": "Wylder",
+    "Tags": []
+  },
+  {
+    "ID": "160201000",
+    "Name": "Guardian",
+    "Tags": []
+  },
+  {
+    "ID": "160401000",
+    "Name": "Duchess",
+    "Tags": []
+  },
+  {
+    "ID": "160701000",
+    "Name": "Recluse",
+    "Tags": []
+  },
+  {
+    "ID": "161001000",
+    "Name": "Unknown (Marionette Soldier)",
+    "Tags": []
+  },
+  {
+    "ID": "165001000",
+    "Name": "Unknown",
+    "Tags": []
+  },
+  {
+    "ID": "167101500",
+    "Name": "Revenant (Library)",
+    "Tags": []
+  },
+  {
+    "ID": "167301500",
+    "Name": "Unknown (Library)",
+    "Tags": []
+  },
+  {
+    "ID": "171001000",
+    "Name": "Unknown (Marionette Soldier)",
+    "Tags": []
+  },
+  {
+    "ID": "171101000",
+    "Name": "Witch of the Wheel (Recluse Remembrance)",
+    "Tags": []
+  },
+  {
+    "ID": "175101000",
+    "Name": "Unknown",
+    "Tags": []
+  },
+  {
+    "ID": "175201000",
+    "Name": "Unknown",
+    "Tags": []
+  },
+  {
+    "ID": "180201000",
+    "Name": "Guardian",
+    "Tags": []
+  },
+  {
+    "ID": "180401000",
+    "Name": "Priestess (Duchess)",
+    "Tags": []
+  },
+  {
+    "ID": "181001000",
+    "Name": "Unknown (Marionette Soldier)",
+    "Tags": []
+  },
+  {
+    "ID": "181301000",
+    "Name": "Executor",
+    "Tags": []
+  },
+  {
+    "ID": "181301300",
+    "Name": "Executor's Cry (High Clifftop)",
+    "Tags": []
+  },
+  {
+    "ID": "185001000",
+    "Name": "Interactable Object: Easel (Executor)",
+    "Tags": []
+  },
+  {
+    "ID": "200101000",
+    "Name": "Wylder",
+    "Tags": []
+  },
+  {
+    "ID": "200201000",
+    "Name": "Guardian",
+    "Tags": []
+  },
+  {
+    "ID": "200301000",
+    "Name": "Ironeye",
+    "Tags": []
+  },
+  {
+    "ID": "200501000",
+    "Name": "Raider",
+    "Tags": []
+  },
+  {
+    "ID": "200601000",
+    "Name": "Revenant",
+    "Tags": []
+  },
+  {
+    "ID": "200701000",
+    "Name": "Recluse",
+    "Tags": []
+  },
+  {
+    "ID": "200801000",
+    "Name": "Executor",
+    "Tags": []
+  },
+  {
+    "ID": "201001000",
+    "Name": "Unknown (Marionette Soldier)",
+    "Tags": []
+  },
+  {
+    "ID": "215001100",
+    "Name": "Unknown (Ending)",
+    "Tags": []
+  },
+  {
+    "ID": "302101000",
+    "Name": "Scholar",
+    "Tags": []
+  },
+  {
+    "ID": "302201000",
+    "Name": "Undertaker",
+    "Tags": []
+  },
+  {
+    "ID": "305001000",
+    "Name": "Unknown",
+    "Tags": []
+  },
+  {
+    "ID": "305101000",
+    "Name": "Unknown",
+    "Tags": []
+  },
+  {
+    "ID": "305201000",
+    "Name": "Unknown",
+    "Tags": []
+  },
+  {
+    "ID": "305301000",
+    "Name": "Unknown",
+    "Tags": []
+  },
+  {
+    "ID": "311001000",
+    "Name": "Unknown (Marionette Soldier)",
+    "Tags": []
+  },
+  {
+    "ID": "312201000",
+    "Name": "Undertaker",
+    "Tags": []
+  },
+  {
+    "ID": "315001000",
+    "Name": "Unknown",
+    "Tags": []
+  },
+  {
+    "ID": "315101000",
+    "Name": "Unknown",
+    "Tags": []
+  },
+  {
+    "ID": "315401000",
+    "Name": "Unknown",
+    "Tags": []
+  },
+  {
+    "ID": "315501000",
+    "Name": "Unknown",
+    "Tags": []
+  },
+  {
+    "ID": "315601000",
+    "Name": "Unknown",
+    "Tags": []
+  },
+  {
+    "ID": "315701000",
+    "Name": "Unknown",
+    "Tags": []
+  },
+  {
+    "ID": "320401000",
+    "Name": "Priestess (Duchess)",
+    "Tags": []
+  },
+  {
+    "ID": "321001000",
+    "Name": "Unknown (Marionette Soldier)",
+    "Tags": []
+  },
+  {
+    "ID": "322101000",
+    "Name": "Scholar",
+    "Tags": []
+  },
+  {
+    "ID": "322201000",
+    "Name": "Unknown",
+    "Tags": []
+  },
+  {
+    "ID": "325001000",
+    "Name": "Unknown",
+    "Tags": []
+  },
+  {
+    "ID": "325201000",
+    "Name": "Unknown",
+    "Tags": []
+  },
+  {
+    "ID": "325301000",
+    "Name": "Unknown",
+    "Tags": []
+  },
+  {
+    "ID": "325401000",
+    "Name": "Unknown",
+    "Tags": []
+  },
+  {
+    "ID": "325501000",
+    "Name": "Unknown",
+    "Tags": []
+  },
+  {
+    "ID": "325601000",
+    "Name": "Unknown",
+    "Tags": []
+  },
+  {
+    "ID": "325701000",
+    "Name": "Unknown",
+    "Tags": []
+  },
+  {
+    "ID": "392101000",
+    "Name": "Undertaker",
+    "Tags": []
+  },
+  {
+    "ID": "392201000",
+    "Name": "Undertaker",
+    "Tags": []
+  },
+  {
+    "ID": "600001000",
+    "Name": "Interactable Object: Roundtable Grace",
+    "Tags": []
+  },
+  {
+    "ID": "601001000",
+    "Name": "Interactable Object: Character Selection",
+    "Tags": []
+  },
+  {
+    "ID": "602001200",
+    "Name": "Interactable Object: Smithing Table",
+    "Tags": []
+  },
+  {
+    "ID": "603001000",
+    "Name": "Interactable Object: Visual Codex",
+    "Tags": []
+  },
+  {
+    "ID": "604001000",
+    "Name": "Interactable Object: Relic Selection",
+    "Tags": []
+  },
+  {
+    "ID": "605001000",
+    "Name": "Small Jar Merchant",
+    "Tags": []
+  },
+  {
+    "ID": "606001000",
+    "Name": "Interactable Object: Journal",
+    "Tags": []
+  },
+  {
+    "ID": "607001000",
+    "Name": "Interactable Object: Sparring Chest",
+    "Tags": []
+  },
+  {
+    "ID": "608006000",
+    "Name": "Interactable Object: Unknown (Map Event)",
+    "Tags": []
+  },
+  {
+    "ID": "609001000",
+    "Name": "Interactable Object: Sparring Settings",
+    "Tags": []
+  },
+  {
+    "ID": "610001000",
+    "Name": "Interactable Object: Unknown",
+    "Tags": []
+  },
+  {
+    "ID": "615001000",
+    "Name": "Interactable Object: Skin Selection",
+    "Tags": []
+  },
+  {
+    "ID": "616001100",
+    "Name": "Interactable Object: Offer Nightlord's Rune",
+    "Tags": []
+  },
+  {
+    "ID": "617001000",
+    "Name": "Interactable Object: Bed",
+    "Tags": []
+  },
+  {
+    "ID": "618001000",
+    "Name": "Interactable Object: Shifting Earth Settings (Shield)",
+    "Tags": []
+  },
+  {
+    "ID": "650001000",
+    "Name": "Interactable Object: Conclude Remembrance",
+    "Tags": []
+  },
+  {
+    "ID": "660001000",
+    "Name": "Revenant (Unlock Fight Ghost)",
+    "Tags": []
+  },
+  {
+    "ID": "703001900",
+    "Name": "Libra, Creature of Night (Boss)",
+    "Tags": []
+  },
+  {
+    "ID": "800001200",
+    "Name": "Merchant (Spirit Shelter)",
+    "Tags": []
+  }
+]

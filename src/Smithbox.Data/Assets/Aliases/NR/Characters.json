@@ -6,13 +6,6 @@
       "player",
       "human"
     ]
-  },{
-    "ID": "c0",
-    "Name": "Player",
-    "Tags": [
-      "player",
-      "human"
-    ]
   },
   {
     "ID": "c0010",
@@ -1467,7 +1460,8 @@
     "Tags": [
       "creature"
     ]
-  },{
+  },
+  {
     "ID": "c5160",
     "Name": "Fire Knight",
     "Tags": []
