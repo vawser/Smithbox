@@ -23,7 +23,7 @@ public class ChangeEnumOptionField : EditorAction
     {
         switch (ChangeType)
         {
-            case ProjectEnumOptionFieldType.ID:
+            case ProjectEnumOptionFieldType.Key:
                 OptionEntry.Key = $"{NewValue}";
                 break;
             case ProjectEnumOptionFieldType.Name:
@@ -44,7 +44,7 @@ public class ChangeEnumOptionField : EditorAction
     {
         switch (ChangeType)
         {
-            case ProjectEnumOptionFieldType.ID:
+            case ProjectEnumOptionFieldType.Key:
                 OptionEntry.Key = $"{OldValue}";
                 break;
             case ProjectEnumOptionFieldType.Name:
