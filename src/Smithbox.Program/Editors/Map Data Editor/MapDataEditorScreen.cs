@@ -74,6 +74,9 @@ public class MapDataEditorScreen : EditorScreen
     {
         var activeView = ViewHandler.ActiveView;
 
+        if (!FocusManager.IsInMapDataEditor())
+            return;
+
         // Save
         if (InputManager.IsPressed(KeybindID.Save))
         {

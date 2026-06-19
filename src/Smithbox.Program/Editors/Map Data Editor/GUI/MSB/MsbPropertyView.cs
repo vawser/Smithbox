@@ -1,9 +1,12 @@
-﻿using Hexa.NET.ImGui;
+﻿using Andre.Formats;
+using Hexa.NET.ImGui;
 using Octokit;
 using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.MapEditor;
+using StudioCore.Editors.ParamEditor;
+using StudioCore.Keybinds;
 using StudioCore.Utilities;
 using System;
 using System.Collections;
@@ -14,8 +17,10 @@ using System.Numerics;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using Veldrid.MetalBindings;
 using Vortice.Vulkan;
 using static HKLib.hk2018.hkaiUserEdgeUtils;
+using static SoulsFormats.PARAMDEF;
 
 namespace StudioCore.Editors.MapDataEditor;
 
@@ -254,48 +259,50 @@ public class MsbPropertyView
 
     public void DisplayPropertyEntry(ref int index, Type type, object entry, PropertyInfo prop, string prefix, string postfix, bool isScalar = false)
     {
-        if (CanDisplayPropertyRow(type, entry, prop))
+        var meta = View.Project.Handler.MapData.Meta.GetMeta(type, false);
+        var fieldMeta = View.Project.Handler.MapDataHandler.MsbMeta.GetFieldMeta(prop.Name, type);
+
+        var context = new MsbPropertyContext(index, type, entry, prop, prefix, postfix, isScalar, meta, fieldMeta);
+
+        if (CanDisplayPropertyRow(context))
         {
             ImGui.TableNextRow();
 
             ImGui.TableSetColumnIndex(0);
-            HandlePropertyTitle(index, type, entry, prop, prefix, postfix, isScalar);
+            HandlePropertyTitle(context);
 
             ImGui.TableSetColumnIndex(1);
-            HandlePropertyValue(index, type, entry, prop, prefix, postfix, isScalar);
+            HandlePropertyValue(context);
         }
 
-        // Metadata row
-        //if(true)
-        //{
-        //    ImGui.TableNextRow();
+        if (CanDisplayPropertyRow(context) && HasPropertyMetaRow(context))
+        {
+            ImGui.TableNextRow();
+            ImGui.TableSetColumnIndex(0);
+            HandlePropertyMetaTitle(context);
 
-        //    ImGui.TableSetColumnIndex(0);
-        //    UIHelper.WrappedText("ENUM");
-
-        //    ImGui.TableSetColumnIndex(1);
-        //    UIHelper.WrappedText("TEST");
-        //}
+            ImGui.TableSetColumnIndex(1);
+            HandlePropertyMetaValue(context);
+        }
     }
 
-    public bool CanDisplayPropertyRow(Type type, object entry, PropertyInfo prop)
+    public bool CanDisplayPropertyRow(MsbPropertyContext context)
     {
-        var meta = View.Project.Handler.MapDataHandler.MsbMeta.GetFieldMeta(prop.Name, type);
-        var propName = prop.Name;
+        var propName = context.Prop.Name;
 
         // Automatic conditions that hide the property
 
-        if (!prop.CanWrite && !prop.PropertyType.IsArray)
+        if (!context.Prop.CanWrite && !context.Prop.PropertyType.IsArray)
         {
             return false;
         }
 
         // IMsbEntry.Name needs special handling to keep it unique
-        if (typeof(IMsbEntry).IsAssignableFrom(type) && prop.Name == "Name")
+        if (typeof(IMsbEntry).IsAssignableFrom(context.Type) && context.Prop.Name == "Name")
             return false;
 
         // Index Properties are hidden by default
-        if (meta != null && meta.IndexProperty)
+        if (context.FieldMeta != null && context.FieldMeta.IndexProperty)
             return false;
 
         if (!CFG.Current.MapEditor_Properties_Display_Unknown_Properties)
@@ -308,7 +315,7 @@ public class MsbPropertyView
         }
 
         // Normal filter
-        var isMatch = EditorFilters.IsMatch(PropertyListFilter, propName, ExactPropertyListFilter, meta.AltName);
+        var isMatch = EditorFilters.IsMatch(PropertyListFilter, propName, ExactPropertyListFilter, context.FieldMeta.AltName);
         var isValueMatch = false;
 
         if (PropertyListFilter.StartsWith("val:"))
@@ -322,7 +329,7 @@ public class MsbPropertyView
         {
             var valStr = PropertyListFilter.Replace("val:", "");
 
-            var propVal = prop.GetValue(entry);
+            var propVal = context.Prop.GetValue(context.Entry);
 
             if (propVal != null)
             {
@@ -344,50 +351,51 @@ public class MsbPropertyView
         return true;
     }
 
-    public void HandlePropertyTitle(int index, Type type, object entry, PropertyInfo prop, string prefix, string postfix, bool isScalar = false)
+    public void HandlePropertyTitle(MsbPropertyContext context)
     {
-        var meta = View.Project.Handler.MapDataHandler.MsbMeta.GetFieldMeta(prop.Name, type);
-
         // Field Name — community name replaces only the leaf name; the prefix is always structural.
-        var fieldName = prop.Name;
+        var fieldName = context.Prop.Name;
 
-        if (CFG.Current.MapEditor_Properties_Enable_Commmunity_Names && !meta.IsEmpty)
+        if (CFG.Current.MapEditor_Properties_Enable_Commmunity_Names && context.FieldMeta != null && !context.FieldMeta.IsEmpty)
         {
-            fieldName = meta.AltName;
+            fieldName = context.FieldMeta.AltName;
         }
 
         // Field Description
         var fieldDescription = "";
-        if (!meta.IsEmpty)
+        if (context.FieldMeta != null && !context.FieldMeta.IsEmpty)
         {
-            fieldDescription = meta.Wiki;
+            fieldDescription = context.FieldMeta.Wiki;
         }
 
         ImGui.AlignTextToFramePadding();
-        UIHelper.WrappedText($"{prefix}{fieldName}{postfix}");
+        UIHelper.WrappedText($"{context.Prefix}{fieldName}{context.Postfix}");
         UIHelper.Tooltip(fieldDescription);
     }
 
-    public void HandlePropertyValue(int index, Type type, object entry, PropertyInfo prop, string prefix, string postfix, bool isScalar = false)
+    // FIX: not handling array properties correctly
+    public void HandlePropertyValue(MsbPropertyContext context)
     {
-        if (isScalar)
+        if (context.IsScalar)
         {
-            if (entry != null)
+            if (context.Entry != null)
             {
                 //UIHelper.WrappedText($"{entry.ToString()}");
 
-                object newval;
+                object newValue;
 
-                (bool, bool) propEditResults = PropertyRow(index, type, entry, out newval, prop);
+                (bool, bool) propEditResults = PropertyRow(context.Index, context.Type, context.Entry, out newValue, context.Prop);
 
                 var changed = propEditResults.Item1;
                 var committed = propEditResults.Item2;
+
+                UpdateProperty(context, context.Entry, newValue, changed, committed);
             }
         }
         else
         {
-            var curValue = prop.GetValue(entry);
-            var propType = prop.PropertyType;
+            var curValue = context.Prop.GetValue(context.Entry);
+            var propType = context.Prop.PropertyType;
 
             if (curValue != null)
             {
@@ -395,16 +403,24 @@ public class MsbPropertyView
 
                 object newval;
 
-                (bool, bool) propEditResults = PropertyRow(index, propType, curValue, out newval, prop);
+                (bool, bool) propEditResults = PropertyRow(context.Index, propType, curValue, out newval, context.Prop);
 
                 var changed = propEditResults.Item1;
                 var committed = propEditResults.Item2;
+
+                UpdateProperty(context, curValue, newval, changed, committed);
             }
         }
-
-
     }
 
+    public void UpdateProperty(MsbPropertyContext context, object oldValue, object newValue, bool changed, bool committed)
+    {
+        if (changed)
+        {
+            var action = new MsbPropertyChange(context.Prop, context.Entry, oldValue, newValue, context.Index);
+            View.ActionManager.ExecuteAction(action);
+        }
+    }
 
     private (bool, bool) PropertyRow(int index, Type typ, object oldval, out object newval, PropertyInfo prop)
     {
@@ -821,5 +837,286 @@ public class MsbPropertyView
         ImGui.PopID();
 
         return (isChanged, isDeactivatedAfterEdit);
+    }
+
+    public bool HasPropertyMetaRow(MsbPropertyContext context)
+    {
+        if (context.FieldMeta == null)
+            return false;
+
+        var hasMetaElement = false;
+
+        // Param References
+        if (context.FieldMeta.ParamRef.Count > 0)
+            hasMetaElement = true;
+
+        return hasMetaElement;
+    }
+
+    public void HandlePropertyMetaTitle(MsbPropertyContext context)
+    {
+        HandleParamRefTitle(context);
+    }
+
+    public void HandlePropertyMetaValue(MsbPropertyContext context)
+    {
+        var oldValue = context.Entry;
+        if(!context.IsScalar)
+        {
+            oldValue = context.Prop.GetValue(context.Entry);
+        }
+
+        HandleParamRefHint(context, oldValue);
+        HandleParamRefClick(context, oldValue);
+        HandleParamRefContext(context, oldValue);
+    }
+
+    #region Param References
+    public List<ParamRef> GetParamReferences(MsbPropertyContext context)
+    {
+        List<ParamRef> refs = new();
+
+        if (context.FieldMeta == null)
+            return refs;
+
+        foreach (var pRef in context.FieldMeta.ParamRef)
+        {
+            refs.Add(new ParamRef(null, pRef.ParamName));
+        }
+
+        return refs;
+    }
+
+    public void HandleParamRefTitle(MsbPropertyContext context)
+    {
+        if (context.FieldMeta == null)
+            return;
+
+        if (context.FieldMeta.ParamRef.Count <= 0)
+            return;
+
+        List<ParamRef> refs = GetParamReferences(context);
+
+        ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(0, ImGui.GetStyle().ItemSpacing.Y));
+
+        ImGui.AlignTextToFramePadding();
+        ImGui.TextUnformatted(@"   <");
+
+        List<string> inactiveRefs = new();
+        var first = true;
+        foreach (ParamRef r in refs)
+        {
+            var inactiveRef = false;
+
+            if (inactiveRef)
+            {
+                inactiveRefs.Add(r.ParamName);
+            }
+            else
+            {
+                if (first)
+                {
+                    ImGui.SameLine();
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.TextUnformatted(r.ParamName);
+                }
+                else
+                {
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.TextUnformatted("    " + r.ParamName);
+                }
+
+                first = false;
+            }
+        }
+
+        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_ParamRefInactive_Text);
+
+        foreach (var inactive in inactiveRefs)
+        {
+            ImGui.SameLine();
+            if (first)
+            {
+                ImGui.AlignTextToFramePadding();
+                ImGui.TextUnformatted("!" + inactive);
+            }
+            else
+            {
+                ImGui.AlignTextToFramePadding();
+                ImGui.TextUnformatted("!" + inactive);
+            }
+
+            first = false;
+        }
+
+        ImGui.PopStyleColor();
+
+        ImGui.SameLine();
+
+        ImGui.AlignTextToFramePadding();
+        ImGui.TextUnformatted(">");
+
+        ImGui.PopStyleVar();
+    }
+
+    public void HandleParamRefHint(MsbPropertyContext context, object oldValue)
+    {
+        if (context.FieldMeta == null)
+            return;
+
+        if (context.FieldMeta.ParamRef.Count <= 0)
+            return;
+
+        if (Project.Handler.ParamEditor == null)
+            return;
+
+        var activeView = Project.Handler.ParamEditor.ViewHandler.ActiveView;
+
+        List<ParamRef> refs = GetParamReferences(context);
+
+        List<(string, Param.Row, string)> matches = ParamReferenceResolver.ResolveParamReferences(activeView, refs, "", null, oldValue);
+
+        var entryFound = matches.Count > 0;
+
+        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_ParamRef_Text);
+        ImGui.BeginGroup();
+
+        foreach ((var param, Param.Row row, var adjName) in matches)
+        {
+            ImGui.AlignTextToFramePadding();
+            ImGui.TextUnformatted(adjName);
+        }
+
+        ImGui.PopStyleColor();
+        if (!entryFound)
+        {
+            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_ParamRefMissing_Text);
+
+            ImGui.AlignTextToFramePadding();
+            ImGui.TextUnformatted("---");
+            ImGui.PopStyleColor();
+        }
+
+        ImGui.EndGroup();
+    }
+
+    public void HandleParamRefClick(MsbPropertyContext context, object oldValue)
+    {
+        if (context.FieldMeta == null)
+            return;
+
+        if (context.FieldMeta.ParamRef.Count <= 0)
+            return;
+
+        if (Project.Handler.ParamEditor == null)
+            return;
+
+        List<ParamRef> refs = GetParamReferences(context);
+
+        var activeView = Project.Handler.ParamEditor.ViewHandler.ActiveView;
+
+        if (ImGui.IsItemClicked(ImGuiMouseButton.Left) && InputManager.HasCtrlDown())
+        {
+            if (refs != null)
+            {
+                (string, Param.Row, string)? primaryRef =
+                    ParamReferenceResolver.ResolveParamReferences(activeView, refs, "", null, oldValue)?.FirstOrDefault();
+
+                if (primaryRef?.Item2 != null)
+                {
+                    if (InputManager.HasShiftDown())
+                    {
+                        EditorCommandQueue.AddCommand(
+                            $@"param/select/new/{primaryRef?.Item1}/{primaryRef?.Item2.ID}");
+                    }
+                    else
+                    {
+                        EditorCommandQueue.AddCommand(
+                            $@"param/select/-1/{primaryRef?.Item1}/{primaryRef?.Item2.ID}");
+                    }
+                }
+            }
+        }
+    }
+    public void HandleParamRefContext(MsbPropertyContext context, object oldValue)
+    {
+        if (context.FieldMeta == null)
+            return;
+
+        if (context.FieldMeta.ParamRef.Count <= 0)
+            return;
+
+        if (Project.Handler.ParamEditor == null)
+            return;
+
+        List<ParamRef> refs = GetParamReferences(context);
+
+        var activeView = Project.Handler.ParamEditor.ViewHandler.ActiveView;
+
+        if (ImGui.BeginPopupContextItem($"{context.Prop.Name}EnumContextMenu"))
+        {
+            DisplayParamRefContextMenu(activeView, refs, oldValue);
+
+            ImGui.EndPopup();
+        }
+    }
+
+    public void DisplayParamRefContextMenu(ParamEditorView curView, List<ParamRef> reftypes, object oldValue)
+    {
+        if (curView.GetPrimaryBank().Params == null)
+        {
+            return;
+        }
+
+        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_AliasName_Text);
+
+        // Add Goto statements
+        List<(string, Param.Row, string)> refs = ParamReferenceResolver.ResolveParamReferences(curView, reftypes, "", null, oldValue);
+
+        int index = 0;
+
+        foreach ((string, Param.Row, string) rf in refs)
+        {
+            if (ImGui.Selectable($@"Go to {rf.Item3}##GoToElement{index}"))
+            {
+                EditorCommandQueue.AddCommand($@"param/select/-1/{rf.Item1}/{rf.Item2.ID}");
+            }
+
+            if (ImGui.Selectable($@"Go to {rf.Item3} in new view##GoToElementInView{index}"))
+            {
+                EditorCommandQueue.AddCommand($@"param/select/new/{rf.Item1}/{rf.Item2.ID}");
+            }
+
+            index++;
+        }
+
+        ImGui.PopStyleColor();
+    }
+    #endregion
+}
+
+public class MsbPropertyContext
+{
+    public int Index;
+    public Type Type;
+    public object Entry;
+    public PropertyInfo Prop;
+    public string Prefix;
+    public string Postfix;
+    public bool IsScalar;
+    public MapEntityPropertyMeta Meta;
+    public MapEntityPropertyFieldMeta FieldMeta;
+
+    public MsbPropertyContext(int index, Type type, object entry, PropertyInfo prop, string prefix, string postfix, bool isScalar, MapEntityPropertyMeta meta, MapEntityPropertyFieldMeta fieldMeta)
+    {
+        Index = index;
+        Type = type;
+        Entry = entry;
+        Prop = prop;
+        Prefix = prefix;
+        Postfix = postfix;
+        IsScalar = isScalar;
+        Meta = meta;
+        FieldMeta = fieldMeta;
     }
 }
