@@ -132,6 +132,14 @@ public class ProjectAliasMenu
                 }
             }
 
+            if (ImGui.BeginMenu("Add"))
+            {
+                ImGui.Checkbox("Insert New at Top", ref CFG.Current.Project_Alias_Editor_Add_Insert_At_Top);
+                UIHelper.Tooltip("If enabled, adding a new alias via the icon button will place it at the top of the list, rather than the bottom.");
+
+                ImGui.EndMenu();
+            }
+
             if (ImGui.BeginMenu("List Copy"))
             {
                 UIHelper.SimpleHeader("Export Delimiter", "");
@@ -708,12 +716,18 @@ public class ProjectAliasMenu
             Tags = new List<string>()
         };
 
+        var index = source.Count;
+        if(CFG.Current.Project_Alias_Editor_Add_Insert_At_Top)
+        {
+            index = 0;
+        }
+
         var action = new ChangeAliasList(
             source,
             entry,
             entry,
             ProjectAliasListOperation.Add,
-            source.Count);
+            index);
 
         ActionManager.ExecuteAction(action);
     }
