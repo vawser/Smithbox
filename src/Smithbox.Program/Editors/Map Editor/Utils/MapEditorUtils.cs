@@ -7,28 +7,6 @@ namespace StudioCore.Editors.MapEditor;
 public static class MapEditorUtils
 {
     /// <summary>
-    /// Update the model state for all loaded entities.
-    /// </summary>
-    /// <param name="projectEntry"></param>
-    public static void UpdateAllEntityModels(ProjectEntry projectEntry)
-    {
-        var ents = GetAllEntities(projectEntry);
-
-        var mapEditor = projectEntry.Handler.MapEditor;
-        var activeView = mapEditor.ViewHandler.ActiveView;
-
-        foreach (var ent in ents)
-        {
-            if(ent is MsbEntity entity)
-            {
-                entity.UpdateEntityModel();
-            }
-        }
-
-        activeView.Universe.ScheduleTextureRefresh();
-    }
-
-    /// <summary>
     /// Get the list of entities from all maps that have been loaded.
     /// </summary>
     /// <param name="baseEditor"></param>

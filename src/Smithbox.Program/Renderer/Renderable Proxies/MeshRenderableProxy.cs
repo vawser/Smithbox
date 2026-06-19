@@ -1,6 +1,4 @@
 ﻿#nullable enable
-using CsvHelper;
-using HKX2;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using System;
@@ -9,7 +7,6 @@ using System.Numerics;
 using Veldrid;
 using Veldrid.Utilities;
 using Vortice.Vulkan;
-using static SoapstoneLib.SoapstoneClient;
 
 namespace StudioCore.Renderer;
 
@@ -824,5 +821,11 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
 
             _submeshes.RemoveAt(i);
         };
+    }
+
+    public override void Dispose()
+    {
+        UnregisterAndRelease();
+        base.Dispose();
     }
 }

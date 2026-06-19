@@ -111,8 +111,6 @@ public static class DrawableHelper
                 mesh.DrawFilter = RenderFilter.ConnectCollision;
             }
 
-            obj.RenderSceneMesh = mesh;
-
             if (load && !ResourceManager.IsResourceLoaded(asset.AssetVirtualPath,
                     AccessLevel.AccessGPUOptimizedOnly))
             {
@@ -137,7 +135,6 @@ public static class DrawableHelper
             var mesh = MeshRenderableProxy.MeshRenderableFromNVMResource(
                 scene, asset.AssetVirtualPath, modelMarkerType);
             mesh.World = obj.GetWorldMatrix();
-            obj.RenderSceneMesh = mesh;
             mesh.SetSelectable(obj);
             mesh.DrawFilter = RenderFilter.Navmesh;
             if (load && !ResourceManager.IsResourceLoaded(asset.AssetVirtualPath,
@@ -175,7 +172,6 @@ public static class DrawableHelper
         var model = MeshRenderableProxy.MeshRenderableFromFlverResource(scene, asset.AssetVirtualPath, modelMarkerType, masks);
         model.DrawFilter = filt;
         model.World = obj.GetWorldMatrix();
-        obj.RenderSceneMesh = model;
         model.SetSelectable(obj);
 
         var isResourceLoaded = ResourceManager.IsResourceLoaded(asset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
@@ -410,7 +406,6 @@ public static class DrawableHelper
         DebugPrimitiveRenderableProxy mesh = RenderableHelper.GetBoxRegionProxy(scene);
 
         mesh.World = obj.GetWorldMatrix();
-        obj.RenderSceneMesh = mesh;
         mesh.DrawFilter = RenderFilter.Region;
         mesh.SetSelectable(obj);
 
@@ -446,7 +441,6 @@ public static class DrawableHelper
     {
         DebugPrimitiveRenderableProxy mesh = RenderableHelper.GetDummyPolyForwardUpProxy(scene);
         mesh.World = obj.GetWorldMatrix();
-        obj.RenderSceneMesh = mesh;
         mesh.SetSelectable(obj);
         return mesh;
     }
@@ -458,7 +452,6 @@ public static class DrawableHelper
     {
         SkeletonBoneRenderableProxy mesh = new(scene);
         mesh.World = obj.GetWorldMatrix();
-        obj.RenderSceneMesh = mesh;
         mesh.SetSelectable(obj);
         return mesh;
     }
@@ -470,7 +463,6 @@ public static class DrawableHelper
     {
         var mesh = RenderableHelper.GetPlacementOrbProxy(scene);
         mesh.World = obj.GetWorldMatrix();
-        obj.RenderSceneMesh = mesh;
 
         return mesh;
     }

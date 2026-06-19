@@ -663,34 +663,40 @@ public class Smithbox
 
         if (gitHubClient != null)
         {
-            var release = gitHubClient.Repository.Release.GetLatest("vawser", "Smithbox").Result;
-
-            if (release != null)
+            try
             {
-                var isVer = false;
-                var verstring = "";
-                foreach (var c in release.TagName)
+                var release = gitHubClient.Repository.Release.GetLatest("vawser", "Smithbox").Result;
+
+                if (release != null)
                 {
-                    if (char.IsDigit(c) || (isVer && c == '.'))
+                    var isVer = false;
+                    var verstring = "";
+                    foreach (var c in release.TagName)
                     {
-                        verstring += c;
-                        isVer = true;
+                        if (char.IsDigit(c) || (isVer && c == '.'))
+                        {
+                            verstring += c;
+                            isVer = true;
+                        }
+                        else
+                        {
+                            isVer = false;
+                        }
                     }
-                    else
+
+                    if (Version.Parse(verstring) > Version.Parse(_version.ToString()))
                     {
-                        isVer = false;
+                        _programUpdateAvailable = true;
+                        _releaseUrl = release.HtmlUrl;
                     }
                 }
-
-                if (Version.Parse(verstring) > Version.Parse(_version.ToString()))
+                else
                 {
-                    _programUpdateAvailable = true;
-                    _releaseUrl = release.HtmlUrl;
+                    Smithbox.LogError<Smithbox>("Failed to find Smithbox release.");
                 }
             }
-            else
+            catch(Exception e)
             {
-                Smithbox.LogError<Smithbox>("Failed to find Smithbox release.");
             }
         }
         else

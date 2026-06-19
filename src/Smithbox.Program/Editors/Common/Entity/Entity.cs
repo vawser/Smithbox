@@ -242,9 +242,6 @@ public class Entity : ISelectable, IDisposable
 
     public bool IsSelected { get; set; }
 
-    /// <summary>
-    /// Function executed upon the selection of this entity.
-    /// </summary>
     public void OnSelected()
     {
         IsSelected = true;
@@ -257,9 +254,6 @@ public class Entity : ISelectable, IDisposable
         }
     }
 
-    /// <summary>
-    /// Function executed upon the deselection of this entity.
-    /// </summary>
     public void OnDeselected()
     {
         IsSelected = false;
@@ -351,26 +345,6 @@ public class Entity : ISelectable, IDisposable
     }
 
     /// <summary>
-    /// Clone the render scene mesh upon cloning this entity.
-    /// </summary>
-    private void CloneRenderable(Entity obj)
-    {
-        if (RenderSceneMesh != null)
-        {
-            if (RenderSceneMesh is MeshRenderableProxy m)
-            {
-                obj.RenderSceneMesh = new MeshRenderableProxy(m);
-                obj.RenderSceneMesh.SetSelectable(this);
-            }
-            else if (RenderSceneMesh is DebugPrimitiveRenderableProxy c)
-            {
-                obj.RenderSceneMesh = new DebugPrimitiveRenderableProxy(c);
-                obj.RenderSceneMesh.SetSelectable(this);
-            }
-        }
-    }
-
-    /// <summary>
     /// Return a duplicate of the passed entity.
     /// </summary>
     internal virtual Entity DuplicateEntity(object clone)
@@ -391,16 +365,12 @@ public class Entity : ISelectable, IDisposable
         // use copy constructor if available
         var typs = new Type[1];
         typs[0] = typ;
-        ConstructorInfo constructor = typ.GetConstructor(typs);
-        if (constructor != null)
-        {
-            return constructor.Invoke(new[] { obj });
-        }
+        object clone;
 
         // Try either default constructor or name constructor
         typs[0] = typeof(string);
-        constructor = typ.GetConstructor(typs);
-        object clone;
+        var constructor = typ.GetConstructor(typs);
+
         if (constructor != null)
         {
             clone = constructor.Invoke(new object[] { "" });
@@ -409,7 +379,6 @@ public class Entity : ISelectable, IDisposable
         {
             // Otherwise use standard constructor and abuse reflection
             constructor = typ.GetConstructor(Type.EmptyTypes);
-
             clone = constructor.Invoke(null);
         }
 
@@ -461,7 +430,6 @@ public class Entity : ISelectable, IDisposable
     {
         var clone = DeepCopyObject(WrappedObject);
         Entity obj = DuplicateEntity(clone);
-        CloneRenderable(obj);
         return obj;
     }
 

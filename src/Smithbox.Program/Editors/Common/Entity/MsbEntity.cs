@@ -54,11 +54,6 @@ public class MsbEntity : Entity
         Container = map;
         WrappedObject = msbo;
         Type = type;
-
-        if (!(msbo is Param.Row) && !(msbo is MergedParamRow))
-        {
-            CurrentModelName = GetPropertyValue<string>("ModelName");
-        }
     }
 
     /// <summary>
@@ -295,7 +290,7 @@ public class MsbEntity : Entity
                 break;
         }
 
-        this.RenderSceneMesh = null;
+        RenderSceneMesh = null;
 
         IsSwitchingRenderType = false;
     }
@@ -318,84 +313,82 @@ public class MsbEntity : Entity
             if (Type == MsbEntityType.DS2Generator)
             {
             }
-            else if (Type == MsbEntityType.DS2EventLocation && this.RenderSceneMesh == null)
+            else if (Type == MsbEntityType.DS2EventLocation && RenderSceneMesh == null)
             {
-                if (this.RenderSceneMesh != null)
+                if (RenderSceneMesh != null)
                 {
-                    this.RenderSceneMesh = null;
+                    RenderSceneMesh = null;
                 }
 
-                this.RenderSceneMesh = DrawableHelper.GetDS2EventLocationDrawable(universe.GetCurrentScene(), ContainingMap, this);
+                RenderSceneMesh = DrawableHelper.GetDS2EventLocationDrawable(universe.GetCurrentScene(), ContainingMap, this);
             }
-            else if (Type == MsbEntityType.Region && this.RenderSceneMesh == null)
+            else if (Type == MsbEntityType.Region && RenderSceneMesh == null)
             {
-                if (this.RenderSceneMesh != null)
+                if (RenderSceneMesh != null)
                 {
-                    this.RenderSceneMesh = null;
+                    RenderSceneMesh = null;
                 }
 
-                this.RenderSceneMesh = DrawableHelper.GetRegionDrawable(universe.GetCurrentScene(), ContainingMap, this, EntityRenderType);
+                RenderSceneMesh = DrawableHelper.GetRegionDrawable(universe.GetCurrentScene(), ContainingMap, this, EntityRenderType);
             }
-            else if (Type == MsbEntityType.Light && this.RenderSceneMesh == null)
+            else if (Type == MsbEntityType.Light && RenderSceneMesh == null)
             {
-                if (this.RenderSceneMesh != null)
+                if (RenderSceneMesh != null)
                 {
-                    this.RenderSceneMesh = null;
+                    RenderSceneMesh = null;
                 }
 
-                this.RenderSceneMesh = DrawableHelper.GetLightDrawable(universe.GetCurrentScene(), ContainingMap, this, EntityRenderType);
+                RenderSceneMesh = DrawableHelper.GetLightDrawable(universe.GetCurrentScene(), ContainingMap, this, EntityRenderType);
             }
-            else if (Type == MsbEntityType.AutoInvadePoint && this.RenderSceneMesh == null)
+            else if (Type == MsbEntityType.AutoInvadePoint && RenderSceneMesh == null)
             {
-                if (this.RenderSceneMesh != null)
+                if (RenderSceneMesh != null)
                 {
-                    this.RenderSceneMesh = null;
+                    RenderSceneMesh = null;
                 }
 
-                this.RenderSceneMesh = DrawableHelper.GetAutoInvadeDrawable(universe.GetCurrentScene(), ContainingMap, this, EntityRenderType);
+                RenderSceneMesh = DrawableHelper.GetAutoInvadeDrawable(universe.GetCurrentScene(), ContainingMap, this, EntityRenderType);
             }
             else
             {
                 PropertyInfo modelProp = GetProperty("ModelName");
+
                 if (modelProp != null) // Check if ModelName property exists
                 {
                     var model = (string)modelProp.GetValue(WrappedObject);
 
-                    var modelChanged = CurrentModelName != model;
-
-                    PropertyInfo paramProp = GetProperty("NPCParamID");
-                    if (paramProp != null)
+                    if (model != null)
                     {
-                        var id = (int)paramProp.GetValue(WrappedObject);
+                        var updateMesh = false;
 
-                        if (CurrentNPCParamID != id)
-                            modelChanged = true;
+                        if (_currentModelName != model)
+                            updateMesh = true;
 
-                        ModelMasks = GetModelMasks();
-                        CurrentNPCParamID = id;
-                    }
+                        //if(_currentModelName != "" && _currentModelName != null)
+                        //{
+                        //    if(RenderSceneMesh is MeshRenderableProxy meshProxy)
+                        //    {
+                        //        if(meshProxy.ResourceHandle == null)
+                        //        {
+                        //            updateMesh = true;
+                        //        }
+                        //    }
+                        //}
 
-                    if (modelChanged || ForceModelRefresh)
-                    {
-                        ForceModelRefresh = false;
-
-                        //model name has been changed or this is the initial check
-                        if (this.RenderSceneMesh != null)
+                        if (updateMesh)
                         {
-                            this.RenderSceneMesh = null;
-                        }
+                            _currentModelName = model;
 
-                        CurrentModelName = model;
+                            PropertyInfo paramProp = GetProperty("NPCParamID");
+                            if (paramProp != null)
+                            {
+                                var id = (int)paramProp.GetValue(WrappedObject);
 
-                        // Get model
-                        if (model != null)
-                        {
-                            this.RenderSceneMesh = DrawableHelper.GetModelDrawable(Owner, universe.GetCurrentScene(), ContainingMap, this, model, true, ModelMasks);
-                        }
+                                ModelMasks = GetModelMasks();
+                                CurrentNPCParamID = id;
+                            }
 
-                        if (universe.View.ViewportSelection.IsSelected(this))
-                        {
-                            OnSelected();
+                            RenderSceneMesh = DrawableHelper.GetModelDrawable(Owner, universe.GetCurrentScene(), ContainingMap, this, model, true, ModelMasks);
                         }
                     }
                 }
@@ -405,31 +398,7 @@ public class MsbEntity : Entity
         base.UpdateRenderModel();
     }
 
-    public void UpdateEntityModel()
-    {
-        if (Owner is MapUniverse)
-        {
-            var universe = (MapUniverse)Owner;
-
-            if (this.RenderSceneMesh != null)
-            {
-                this.RenderSceneMesh = null;
-            }
-
-            // Get model
-            if (CurrentModelName != null)
-            {
-                this.RenderSceneMesh = DrawableHelper.GetModelDrawable(Owner, universe.GetCurrentScene(), ContainingMap, this, CurrentModelName, true, ModelMasks, true);
-            }
-
-            if (universe.View.ViewportSelection.IsSelected(this))
-            {
-                OnSelected();
-            }
-        }
-
-        base.UpdateRenderModel();
-    }
+    private string _currentModelName = null;
 
     /// <summary>
     /// Build the reference map for this entity.

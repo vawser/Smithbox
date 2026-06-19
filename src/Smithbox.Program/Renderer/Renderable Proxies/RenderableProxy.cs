@@ -30,7 +30,7 @@ public abstract class RenderableProxy : SceneRenderer.IRendererUpdatable, IDispo
     public abstract DrawGroup DrawGroups { get; set; }
     public virtual bool AutoRegister { get => _autoregister; set => _autoregister = value; }
 
-    public void Dispose()
+    public virtual void Dispose()
     {
         // Do not change this code. Put cleanup code in 'Dispose(bool disposing)' method
         Dispose(true);
