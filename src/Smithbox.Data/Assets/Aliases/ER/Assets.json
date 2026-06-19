@@ -1,11 +1,4 @@
-﻿[
-  {
-    "ID": "default",
-    "Name": "Default",
-    "Tags": [
-      "default"
-    ]
-  },
+[
   {
     "ID": "aeg001_003",
     "Name": "Grass",
@@ -1227,6 +1220,20 @@
   {
     "ID": "aeg001_541",
     "Name": "Tall grain grass",
+    "Tags": [
+      "asset"
+    ]
+  },
+  {
+    "ID": "aeg004_719",
+    "Name": "",
+    "Tags": [
+      "asset"
+    ]
+  },
+  {
+    "ID": "aeg007_415",
+    "Name": "Similar to 410 but placed differently",
     "Tags": [
       "asset"
     ]
@@ -2879,13 +2886,6 @@
   {
     "ID": "aeg020_410",
     "Name": "Cave tunnel segment with wooden supports",
-    "Tags": [
-      "asset"
-    ]
-  },
-  {
-    "ID": "aeg007_415",
-    "Name": "Similar to 410 but placed differently",
     "Tags": [
       "asset"
     ]
@@ -30653,6 +30653,13 @@
     ]
   },
   {
+    "ID": "aeg110_101",
+    "Name": "Another pile of bricks",
+    "Tags": [
+      "asset"
+    ]
+  },
+  {
     "ID": "aeg110_102",
     "Name": "A stone Rise exterior with moss and small pieces crumbled in the wall",
     "Tags": [
@@ -35435,13 +35442,6 @@
   },
   {
     "ID": "aeg210_638",
-    "Name": "",
-    "Tags": [
-      "asset"
-    ]
-  },
-  {
-    "ID": "aeg004_719",
     "Name": "",
     "Tags": [
       "asset"
@@ -48610,13 +48610,6 @@
   {
     "ID": "aeg230_195",
     "Name": "Pile of bricks",
-    "Tags": [
-      "asset"
-    ]
-  },
-  {
-    "ID": "aeg110_101",
-    "Name": "Another pile of bricks",
     "Tags": [
       "asset"
     ]
@@ -77025,6 +77018,13 @@
     "Name": "Medium tall dead tree",
     "Tags": [
       "asset"
+    ]
+  },
+  {
+    "ID": "default",
+    "Name": "Default",
+    "Tags": [
+      "default"
     ]
   }
 ]

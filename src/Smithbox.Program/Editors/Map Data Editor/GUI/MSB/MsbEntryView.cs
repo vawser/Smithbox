@@ -1,6 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Keybinds;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -33,6 +34,8 @@ public class MsbEntryView
     private const string DragDropId = "MSB_ENTRY_DRAG";
     private int _dragSourceRawIndex = -1;
 
+    private bool _arrowKeyPressed = false;
+
     public MsbEntryView(MapDataEditorView view, ProjectEntry project)
     {
         View = view;
@@ -41,6 +44,11 @@ public class MsbEntryView
 
     public void Display()
     {
+        if (InputManager.HasArrowSelection())
+        {
+            _arrowKeyPressed = true;
+        }
+
         if (_lastScannedMap != Selection.SelectedMap)
         {
             RebuildMapEntryCountCache();
@@ -100,6 +108,16 @@ public class MsbEntryView
                         selectedIndex: GetFirstSelectedIndex(),
                         curListIndex: rawIndex,
                         entry: entry);
+                }
+
+                if (_arrowKeyPressed && ImGui.IsItemFocused() && !isSelected)
+                {
+                    Selection.HandleMsbEntrySelection(
+                        selectedIndex: GetFirstSelectedIndex(),
+                        curListIndex: rawIndex,
+                        entry: entry);
+
+                    _arrowKeyPressed = false;
                 }
 
                 if (ImGui.IsItemHovered())

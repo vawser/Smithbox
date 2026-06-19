@@ -779,6 +779,13 @@
     ]
   },
   {
+    "ID": "1000",
+    "Name": "default",
+    "Tags": [
+      "flag"
+    ]
+  },
+  {
     "ID": "6000",
     "Name": "Always OFF",
     "Tags": [
@@ -1001,21 +1008,14 @@
     ]
   },
   {
-    "ID": "9182",
-    "Name": "Defeated Elemer of the Briar",
+    "ID": "9140",
+    "Name": "Defeated Divine Beast Dancing Lion",
     "Tags": [
       "boss",
       "progression",
-      "vanilla"
-    ]
-  },
-  {
-    "ID": "9184",
-    "Name": "Defeated Commander Niall",
-    "Tags": [
-      "boss",
-      "progression",
-      "vanilla"
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
     ]
   },
   {
@@ -1041,63 +1041,8 @@
     ]
   },
   {
-    "ID": "9164",
-    "Name": "Defeated Commander Gaius",
-    "Tags": [
-      "boss",
-      "progression",
-      "shadow of the erdtree",
-      "sote",
-      "dlc"
-    ]
-  },
-  {
-    "ID": "9162",
-    "Name": "Defeated Scadutree Avatar",
-    "Tags": [
-      "boss",
-      "progression",
-      "shadow of the erdtree",
-      "sote",
-      "dlc"
-    ]
-  },
-  {
-    "ID": "9190",
-    "Name": "Defeated Rellana, Twin Moon Knight",
-    "Tags": [
-      "boss",
-      "progression",
-      "shadow of the erdtree",
-      "sote",
-      "dlc"
-    ]
-  },
-  {
-    "ID": "9160",
-    "Name": "Defeated Romina, Saint of the Bud",
-    "Tags": [
-      "boss",
-      "progression",
-      "shadow of the erdtree",
-      "sote",
-      "dlc"
-    ]
-  },
-  {
-    "ID": "9140",
-    "Name": "Defeated Divine Beast Dancing Lion",
-    "Tags": [
-      "boss",
-      "progression",
-      "shadow of the erdtree",
-      "sote",
-      "dlc"
-    ]
-  },
-  {
-    "ID": "9156",
-    "Name": "Defeated Midra, Lord of Frenzied Flame",
+    "ID": "9148",
+    "Name": "Defeated Putrescent Knight",
     "Tags": [
       "boss",
       "progression",
@@ -1118,8 +1063,70 @@
     ]
   },
   {
-    "ID": "9148",
-    "Name": "Defeated Putrescent Knight",
+    "ID": "9156",
+    "Name": "Defeated Midra, Lord of Frenzied Flame",
+    "Tags": [
+      "boss",
+      "progression",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "9160",
+    "Name": "Defeated Romina, Saint of the Bud",
+    "Tags": [
+      "boss",
+      "progression",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "9162",
+    "Name": "Defeated Scadutree Avatar",
+    "Tags": [
+      "boss",
+      "progression",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "9164",
+    "Name": "Defeated Commander Gaius",
+    "Tags": [
+      "boss",
+      "progression",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "9182",
+    "Name": "Defeated Elemer of the Briar",
+    "Tags": [
+      "boss",
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "9184",
+    "Name": "Defeated Commander Niall",
+    "Tags": [
+      "boss",
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "9190",
+    "Name": "Defeated Rellana, Twin Moon Knight",
     "Tags": [
       "boss",
       "progression",
@@ -1657,6 +1664,56 @@
     ]
   },
   {
+    "ID": "62080",
+    "Name": "Reveal Map: Gravesite Plain",
+    "Tags": [
+      "map",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "62081",
+    "Name": "Reveal Map: Scadu Altus",
+    "Tags": [
+      "map",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "62082",
+    "Name": "Reveal Map: Southern Shore",
+    "Tags": [
+      "map",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "62083",
+    "Name": "Reveal Map: Rauh Ruins",
+    "Tags": [
+      "map",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "62084",
+    "Name": "Reveal Map: Abyss",
+    "Tags": [
+      "map",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
     "ID": "63010",
     "Name": "Acquired Map: Limgrave, West",
     "Tags": [
@@ -1817,78 +1874,8 @@
     ]
   },
   {
-    "ID": "62084",
-    "Name": "Reveal Map: Abyss",
-    "Tags": [
-      "map",
-      "shadow of the erdtree",
-      "sote",
-      "dlc"
-    ]
-  },
-  {
-    "ID": "62083",
-    "Name": "Reveal Map: Rauh Ruins",
-    "Tags": [
-      "map",
-      "shadow of the erdtree",
-      "sote",
-      "dlc"
-    ]
-  },
-  {
-    "ID": "62082",
-    "Name": "Reveal Map: Southern Shore",
-    "Tags": [
-      "map",
-      "shadow of the erdtree",
-      "sote",
-      "dlc"
-    ]
-  },
-  {
-    "ID": "62081",
-    "Name": "Reveal Map: Scadu Altus",
-    "Tags": [
-      "map",
-      "shadow of the erdtree",
-      "sote",
-      "dlc"
-    ]
-  },
-  {
-    "ID": "62080",
-    "Name": "Reveal Map: Gravesite Plain",
-    "Tags": [
-      "map",
-      "shadow of the erdtree",
-      "sote",
-      "dlc"
-    ]
-  },
-  {
-    "ID": "63084",
-    "Name": "Acquired Map: Abyss",
-    "Tags": [
-      "map",
-      "shadow of the erdtree",
-      "sote",
-      "dlc"
-    ]
-  },
-  {
-    "ID": "63083",
-    "Name": "Acquired Map: Rauh Ruins",
-    "Tags": [
-      "map",
-      "shadow of the erdtree",
-      "sote",
-      "dlc"
-    ]
-  },
-  {
-    "ID": "63082",
-    "Name": "Acquired Map: Southern Shore",
+    "ID": "63080",
+    "Name": "Acquired Map: Gravesite Plain",
     "Tags": [
       "map",
       "shadow of the erdtree",
@@ -1907,8 +1894,28 @@
     ]
   },
   {
-    "ID": "63080",
-    "Name": "Acquired Map: Gravesite Plain",
+    "ID": "63082",
+    "Name": "Acquired Map: Southern Shore",
+    "Tags": [
+      "map",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "63083",
+    "Name": "Acquired Map: Rauh Ruins",
+    "Tags": [
+      "map",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "63084",
+    "Name": "Acquired Map: Abyss",
     "Tags": [
       "map",
       "shadow of the erdtree",
@@ -4107,32 +4114,8 @@
     ]
   },
   {
-    "ID": "67110",
-    "Name": "Obtained Nomadic Warrior's Cookbook [2]",
-    "Tags": [
-      "cookbook",
-      "vanilla"
-    ]
-  },
-  {
     "ID": "67010",
     "Name": "Obtained Nomadic Warrior's Cookbook [3]",
-    "Tags": [
-      "cookbook",
-      "vanilla"
-    ]
-  },
-  {
-    "ID": "67800",
-    "Name": "Obtained Nomadic Warrior's Cookbook [4]",
-    "Tags": [
-      "cookbook",
-      "vanilla"
-    ]
-  },
-  {
-    "ID": "67830",
-    "Name": "Obtained Nomadic Warrior's Cookbook [5]",
     "Tags": [
       "cookbook",
       "vanilla"
@@ -4147,30 +4130,6 @@
     ]
   },
   {
-    "ID": "67050",
-    "Name": "Obtained Nomadic Warrior's Cookbook [7]",
-    "Tags": [
-      "cookbook",
-      "vanilla"
-    ]
-  },
-  {
-    "ID": "67880",
-    "Name": "Obtained Nomadic Warrior's Cookbook [8]",
-    "Tags": [
-      "cookbook",
-      "vanilla"
-    ]
-  },
-  {
-    "ID": "67430",
-    "Name": "Obtained Nomadic Warrior's Cookbook [9]",
-    "Tags": [
-      "cookbook",
-      "vanilla"
-    ]
-  },
-  {
     "ID": "67030",
     "Name": "Obtained Nomadic Warrior's Cookbook [10]",
     "Tags": [
@@ -4179,8 +4138,8 @@
     ]
   },
   {
-    "ID": "67220",
-    "Name": "Obtained Nomadic Warrior's Cookbook [11]",
+    "ID": "67050",
+    "Name": "Obtained Nomadic Warrior's Cookbook [7]",
     "Tags": [
       "cookbook",
       "vanilla"
@@ -4195,54 +4154,6 @@
     ]
   },
   {
-    "ID": "67080",
-    "Name": "Obtained Nomadic Warrior's Cookbook [13]",
-    "Tags": [
-      "cookbook",
-      "vanilla"
-    ]
-  },
-  {
-    "ID": "67870",
-    "Name": "Obtained Nomadic Warrior's Cookbook [14]",
-    "Tags": [
-      "cookbook",
-      "vanilla"
-    ]
-  },
-  {
-    "ID": "67900",
-    "Name": "Obtained Nomadic Warrior's Cookbook [15]",
-    "Tags": [
-      "cookbook",
-      "vanilla"
-    ]
-  },
-  {
-    "ID": "67290",
-    "Name": "Obtained Nomadic Warrior's Cookbook [16]",
-    "Tags": [
-      "cookbook",
-      "vanilla"
-    ]
-  },
-  {
-    "ID": "67100",
-    "Name": "Obtained Nomadic Warrior's Cookbook [17]",
-    "Tags": [
-      "cookbook",
-      "vanilla"
-    ]
-  },
-  {
-    "ID": "67270",
-    "Name": "Obtained Nomadic Warrior's Cookbook [18]",
-    "Tags": [
-      "cookbook",
-      "vanilla"
-    ]
-  },
-  {
     "ID": "67070",
     "Name": "Obtained Nomadic Warrior's Cookbook [19]",
     "Tags": [
@@ -4251,24 +4162,8 @@
     ]
   },
   {
-    "ID": "67230",
-    "Name": "Obtained Nomadic Warrior's Cookbook [20]",
-    "Tags": [
-      "cookbook",
-      "vanilla"
-    ]
-  },
-  {
-    "ID": "67120",
-    "Name": "Obtained Nomadic Warrior's Cookbook [21]",
-    "Tags": [
-      "cookbook",
-      "vanilla"
-    ]
-  },
-  {
-    "ID": "67890",
-    "Name": "Obtained Nomadic Warrior's Cookbook [22]",
+    "ID": "67080",
+    "Name": "Obtained Nomadic Warrior's Cookbook [13]",
     "Tags": [
       "cookbook",
       "vanilla"
@@ -4283,8 +4178,32 @@
     ]
   },
   {
-    "ID": "67910",
-    "Name": "Obtained Nomadic Warrior's Cookbook [24]",
+    "ID": "67100",
+    "Name": "Obtained Nomadic Warrior's Cookbook [17]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "67110",
+    "Name": "Obtained Nomadic Warrior's Cookbook [2]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "67120",
+    "Name": "Obtained Nomadic Warrior's Cookbook [21]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "67130",
+    "Name": "Obtained Missionary's Cookbook [6]",
     "Tags": [
       "cookbook",
       "vanilla"
@@ -4307,32 +4226,16 @@
     ]
   },
   {
-    "ID": "67280",
-    "Name": "Obtained Armorer's Cookbook [3]",
+    "ID": "67220",
+    "Name": "Obtained Nomadic Warrior's Cookbook [11]",
     "Tags": [
       "cookbook",
       "vanilla"
     ]
   },
   {
-    "ID": "67260",
-    "Name": "Obtained Armorer's Cookbook [4]",
-    "Tags": [
-      "cookbook",
-      "vanilla"
-    ]
-  },
-  {
-    "ID": "67310",
-    "Name": "Obtained Armorer's Cookbook [5]",
-    "Tags": [
-      "cookbook",
-      "vanilla"
-    ]
-  },
-  {
-    "ID": "67300",
-    "Name": "Obtained Armorer's Cookbook [6]",
+    "ID": "67230",
+    "Name": "Obtained Nomadic Warrior's Cookbook [20]",
     "Tags": [
       "cookbook",
       "vanilla"
@@ -4347,24 +4250,48 @@
     ]
   },
   {
-    "ID": "67410",
-    "Name": "Obtained Glintstone Craftsman's Cookbook [1]",
+    "ID": "67260",
+    "Name": "Obtained Armorer's Cookbook [4]",
     "Tags": [
       "cookbook",
       "vanilla"
     ]
   },
   {
-    "ID": "67450",
-    "Name": "Obtained Glintstone Craftsman's Cookbook [2]",
+    "ID": "67270",
+    "Name": "Obtained Nomadic Warrior's Cookbook [18]",
     "Tags": [
       "cookbook",
       "vanilla"
     ]
   },
   {
-    "ID": "67480",
-    "Name": "Obtained Glintstone Craftsman's Cookbook [3]",
+    "ID": "67280",
+    "Name": "Obtained Armorer's Cookbook [3]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "67290",
+    "Name": "Obtained Nomadic Warrior's Cookbook [16]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "67300",
+    "Name": "Obtained Armorer's Cookbook [6]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "67310",
+    "Name": "Obtained Armorer's Cookbook [5]",
     "Tags": [
       "cookbook",
       "vanilla"
@@ -4379,8 +4306,40 @@
     ]
   },
   {
+    "ID": "67410",
+    "Name": "Obtained Glintstone Craftsman's Cookbook [1]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
     "ID": "67420",
     "Name": "Obtained Glintstone Craftsman's Cookbook [5]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "67430",
+    "Name": "Obtained Nomadic Warrior's Cookbook [9]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "67440",
+    "Name": "Obtained Glintstone Craftsman's Cookbook [8]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "67450",
+    "Name": "Obtained Glintstone Craftsman's Cookbook [2]",
     "Tags": [
       "cookbook",
       "vanilla"
@@ -4403,16 +4362,8 @@
     ]
   },
   {
-    "ID": "67440",
-    "Name": "Obtained Glintstone Craftsman's Cookbook [8]",
-    "Tags": [
-      "cookbook",
-      "vanilla"
-    ]
-  },
-  {
-    "ID": "67610",
-    "Name": "Obtained Missionary's Cookbook [1]",
+    "ID": "67480",
+    "Name": "Obtained Glintstone Craftsman's Cookbook [3]",
     "Tags": [
       "cookbook",
       "vanilla"
@@ -4427,16 +4378,8 @@
     ]
   },
   {
-    "ID": "67650",
-    "Name": "Obtained Missionary's Cookbook [3]",
-    "Tags": [
-      "cookbook",
-      "vanilla"
-    ]
-  },
-  {
-    "ID": "67640",
-    "Name": "Obtained Missionary's Cookbook [4]",
+    "ID": "67610",
+    "Name": "Obtained Missionary's Cookbook [1]",
     "Tags": [
       "cookbook",
       "vanilla"
@@ -4451,48 +4394,32 @@
     ]
   },
   {
-    "ID": "67130",
-    "Name": "Obtained Missionary's Cookbook [6]",
+    "ID": "67640",
+    "Name": "Obtained Missionary's Cookbook [4]",
     "Tags": [
       "cookbook",
       "vanilla"
     ]
   },
   {
-    "ID": "68230",
-    "Name": "Obtained Missionary's Cookbook [7]",
+    "ID": "67650",
+    "Name": "Obtained Missionary's Cookbook [3]",
     "Tags": [
       "cookbook",
       "vanilla"
     ]
   },
   {
-    "ID": "68000",
-    "Name": "Obtained Ancient Dragon Apostle's Cookbook [1]",
+    "ID": "67800",
+    "Name": "Obtained Nomadic Warrior's Cookbook [4]",
     "Tags": [
       "cookbook",
       "vanilla"
     ]
   },
   {
-    "ID": "68010",
-    "Name": "Obtained Ancient Dragon Apostle's Cookbook [2]",
-    "Tags": [
-      "cookbook",
-      "vanilla"
-    ]
-  },
-  {
-    "ID": "68030",
-    "Name": "Obtained Ancient Dragon Apostle's Cookbook [3]",
-    "Tags": [
-      "cookbook",
-      "vanilla"
-    ]
-  },
-  {
-    "ID": "68020",
-    "Name": "Obtained Ancient Dragon Apostle's Cookbook [4]",
+    "ID": "67830",
+    "Name": "Obtained Nomadic Warrior's Cookbook [5]",
     "Tags": [
       "cookbook",
       "vanilla"
@@ -4523,8 +4450,80 @@
     ]
   },
   {
+    "ID": "67870",
+    "Name": "Obtained Nomadic Warrior's Cookbook [14]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "67880",
+    "Name": "Obtained Nomadic Warrior's Cookbook [8]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "67890",
+    "Name": "Obtained Nomadic Warrior's Cookbook [22]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "67900",
+    "Name": "Obtained Nomadic Warrior's Cookbook [15]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "67910",
+    "Name": "Obtained Nomadic Warrior's Cookbook [24]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
     "ID": "67920",
     "Name": "Obtained Perfumer's Cookbook [4]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "68000",
+    "Name": "Obtained Ancient Dragon Apostle's Cookbook [1]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "68010",
+    "Name": "Obtained Ancient Dragon Apostle's Cookbook [2]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "68020",
+    "Name": "Obtained Ancient Dragon Apostle's Cookbook [4]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "68030",
+    "Name": "Obtained Ancient Dragon Apostle's Cookbook [3]",
     "Tags": [
       "cookbook",
       "vanilla"
@@ -4539,6 +4538,14 @@
     ]
   },
   {
+    "ID": "68210",
+    "Name": "Obtained Fevor's Cookbook [3]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
     "ID": "68220",
     "Name": "Obtained Fevor's Cookbook [2]",
     "Tags": [
@@ -4547,8 +4554,8 @@
     ]
   },
   {
-    "ID": "68210",
-    "Name": "Obtained Fevor's Cookbook [3]",
+    "ID": "68230",
+    "Name": "Obtained Missionary's Cookbook [7]",
     "Tags": [
       "cookbook",
       "vanilla"
@@ -4571,428 +4578,8 @@
     ]
   },
   {
-    "ID": "68950",
-    "Name": "Obtained St. Trina Disciple's Cookbook [2]",
-    "Tags": [
-      "cookbook",
-      "shadow of the erdtree",
-      "sote",
-      "dlc"
-    ]
-  },
-  {
-    "ID": "68940",
-    "Name": "Obtained Grave Keeper's Cookbook [1]",
-    "Tags": [
-      "cookbook",
-      "shadow of the erdtree",
-      "sote",
-      "dlc"
-    ]
-  },
-  {
-    "ID": "68930",
-    "Name": "Obtained Battlefield Priest's Cookbook [4]",
-    "Tags": [
-      "cookbook",
-      "shadow of the erdtree",
-      "sote",
-      "dlc"
-    ]
-  },
-  {
-    "ID": "68920",
-    "Name": "Obtained Finger-Weaver's Cookbook [1]",
-    "Tags": [
-      "cookbook",
-      "shadow of the erdtree",
-      "sote",
-      "dlc"
-    ]
-  },
-  {
-    "ID": "68910",
-    "Name": "Obtained Antiquity Scholar's Cookbook [1]",
-    "Tags": [
-      "cookbook",
-      "shadow of the erdtree",
-      "sote",
-      "dlc"
-    ]
-  },
-  {
-    "ID": "68900",
-    "Name": "Obtained Fire Knight's Cookbook [2]",
-    "Tags": [
-      "cookbook",
-      "shadow of the erdtree",
-      "sote",
-      "dlc"
-    ]
-  },
-  {
-    "ID": "68890",
-    "Name": "Obtained Battlefield Priest's Cookbook [3]",
-    "Tags": [
-      "cookbook",
-      "shadow of the erdtree",
-      "sote",
-      "dlc"
-    ]
-  },
-  {
-    "ID": "68880",
-    "Name": "Obtained Mad Craftsman's Cookbook [3]",
-    "Tags": [
-      "cookbook",
-      "shadow of the erdtree",
-      "sote",
-      "dlc"
-    ]
-  },
-  {
-    "ID": "68870",
-    "Name": "Obtained Tibia's Cookbook",
-    "Tags": [
-      "cookbook",
-      "shadow of the erdtree",
-      "sote",
-      "dlc"
-    ]
-  },
-  {
-    "ID": "68860",
-    "Name": "Obtained Antiquity Scholar's Cookbook [2]",
-    "Tags": [
-      "cookbook",
-      "shadow of the erdtree",
-      "sote",
-      "dlc"
-    ]
-  },
-  {
-    "ID": "68850",
-    "Name": "Obtained Grave Keeper's Cookbook [2]",
-    "Tags": [
-      "cookbook",
-      "shadow of the erdtree",
-      "sote",
-      "dlc"
-    ]
-  },
-  {
-    "ID": "68840",
-    "Name": "Obtained St. Trina Disciple's Cookbook [3]",
-    "Tags": [
-      "cookbook",
-      "shadow of the erdtree",
-      "sote",
-      "dlc"
-    ]
-  },
-  {
-    "ID": "68830",
-    "Name": "Obtained Forager Brood Cookbook [7]",
-    "Tags": [
-      "cookbook",
-      "shadow of the erdtree",
-      "sote",
-      "dlc"
-    ]
-  },
-  {
-    "ID": "68820",
-    "Name": "Obtained Battlefield Priest's Cookbook [2]",
-    "Tags": [
-      "cookbook",
-      "shadow of the erdtree",
-      "sote",
-      "dlc"
-    ]
-  },
-  {
-    "ID": "68810",
-    "Name": "Obtained Igon's Cookbook [1]",
-    "Tags": [
-      "cookbook",
-      "shadow of the erdtree",
-      "sote",
-      "dlc"
-    ]
-  },
-  {
-    "ID": "68800",
-    "Name": "Obtained Battlefield Priest's Cookbook [1]",
-    "Tags": [
-      "cookbook",
-      "shadow of the erdtree",
-      "sote",
-      "dlc"
-    ]
-  },
-  {
-    "ID": "68790",
-    "Name": "Obtained Loyal Knight's Cookbook",
-    "Tags": [
-      "cookbook",
-      "shadow of the erdtree",
-      "sote",
-      "dlc"
-    ]
-  },
-  {
-    "ID": "68780",
-    "Name": "Obtained Ancient Dragon Knight's Cookbook [2]",
-    "Tags": [
-      "cookbook",
-      "shadow of the erdtree",
-      "sote",
-      "dlc"
-    ]
-  },
-  {
-    "ID": "68770",
-    "Name": "Obtained Fire Knight's Cookbook [1]",
-    "Tags": [
-      "cookbook",
-      "shadow of the erdtree",
-      "sote",
-      "dlc"
-    ]
-  },
-  {
-    "ID": "68760",
-    "Name": "Obtained St. Trina Disciple's Cookbook [1]",
-    "Tags": [
-      "cookbook",
-      "shadow of the erdtree",
-      "sote",
-      "dlc"
-    ]
-  },
-  {
-    "ID": "68750",
-    "Name": "Obtained Mad Craftsman's Cookbook [1]",
-    "Tags": [
-      "cookbook",
-      "shadow of the erdtree",
-      "sote",
-      "dlc"
-    ]
-  },
-  {
-    "ID": "68740",
-    "Name": "Obtained Ancient Dragon Knight's Cookbook [1]",
-    "Tags": [
-      "cookbook",
-      "shadow of the erdtree",
-      "sote",
-      "dlc"
-    ]
-  },
-  {
-    "ID": "68730",
-    "Name": "Obtained Greater Potentate's Cookbook [2]",
-    "Tags": [
-      "cookbook",
-      "shadow of the erdtree",
-      "sote",
-      "dlc"
-    ]
-  },
-  {
-    "ID": "68720",
-    "Name": "Obtained Greater Potentate's Cookbook [6]",
-    "Tags": [
-      "cookbook",
-      "shadow of the erdtree",
-      "sote",
-      "dlc"
-    ]
-  },
-  {
-    "ID": "68710",
-    "Name": "Obtained Greater Potentate's Cookbook [14]",
-    "Tags": [
-      "cookbook",
-      "shadow of the erdtree",
-      "sote",
-      "dlc"
-    ]
-  },
-  {
-    "ID": "68700",
-    "Name": "Obtained Greater Potentate's Cookbook [13]",
-    "Tags": [
-      "cookbook",
-      "shadow of the erdtree",
-      "sote",
-      "dlc"
-    ]
-  },
-  {
-    "ID": "68690",
-    "Name": "Obtained Greater Potentate's Cookbook [3]",
-    "Tags": [
-      "cookbook",
-      "shadow of the erdtree",
-      "sote",
-      "dlc"
-    ]
-  },
-  {
-    "ID": "68680",
-    "Name": "Obtained Greater Potentate's Cookbook [8]",
-    "Tags": [
-      "cookbook",
-      "shadow of the erdtree",
-      "sote",
-      "dlc"
-    ]
-  },
-  {
-    "ID": "68670",
-    "Name": "Obtained Mad Craftsman's Cookbook [2]",
-    "Tags": [
-      "cookbook",
-      "shadow of the erdtree",
-      "sote",
-      "dlc"
-    ]
-  },
-  {
-    "ID": "68660",
-    "Name": "Obtained Greater Potentate's Cookbook [11]",
-    "Tags": [
-      "cookbook",
-      "shadow of the erdtree",
-      "sote",
-      "dlc"
-    ]
-  },
-  {
-    "ID": "68650",
-    "Name": "Obtained Greater Potentate's Cookbook [10]",
-    "Tags": [
-      "cookbook",
-      "shadow of the erdtree",
-      "sote",
-      "dlc"
-    ]
-  },
-  {
-    "ID": "68640",
-    "Name": "Obtained Greater Potentate's Cookbook [9]",
-    "Tags": [
-      "cookbook",
-      "shadow of the erdtree",
-      "sote",
-      "dlc"
-    ]
-  },
-  {
-    "ID": "68630",
-    "Name": "Obtained Greater Potentate's Cookbook [7]",
-    "Tags": [
-      "cookbook",
-      "shadow of the erdtree",
-      "sote",
-      "dlc"
-    ]
-  },
-  {
-    "ID": "68620",
-    "Name": "Obtained Greater Potentate's Cookbook [12]",
-    "Tags": [
-      "cookbook",
-      "shadow of the erdtree",
-      "sote",
-      "dlc"
-    ]
-  },
-  {
-    "ID": "68610",
-    "Name": "Obtained Greater Potentate's Cookbook [5]",
-    "Tags": [
-      "cookbook",
-      "shadow of the erdtree",
-      "sote",
-      "dlc"
-    ]
-  },
-  {
-    "ID": "68600",
-    "Name": "Obtained Greater Potentate's Cookbook [4]",
-    "Tags": [
-      "cookbook",
-      "shadow of the erdtree",
-      "sote",
-      "dlc"
-    ]
-  },
-  {
-    "ID": "68590",
-    "Name": "Obtained Greater Potentate's Cookbook [1]",
-    "Tags": [
-      "cookbook",
-      "shadow of the erdtree",
-      "sote",
-      "dlc"
-    ]
-  },
-  {
-    "ID": "68580",
-    "Name": "Obtained Finger-Weaver's Cookbook [2]",
-    "Tags": [
-      "cookbook",
-      "shadow of the erdtree",
-      "sote",
-      "dlc"
-    ]
-  },
-  {
-    "ID": "68570",
-    "Name": "Obtained Igon's Cookbook [2]",
-    "Tags": [
-      "cookbook",
-      "shadow of the erdtree",
-      "sote",
-      "dlc"
-    ]
-  },
-  {
-    "ID": "68560",
-    "Name": "Obtained Forager Brood Cookbook [5]",
-    "Tags": [
-      "cookbook",
-      "shadow of the erdtree",
-      "sote",
-      "dlc"
-    ]
-  },
-  {
-    "ID": "68550",
-    "Name": "Obtained Forager Brood Cookbook [4]",
-    "Tags": [
-      "cookbook",
-      "shadow of the erdtree",
-      "sote",
-      "dlc"
-    ]
-  },
-  {
-    "ID": "68540",
-    "Name": "Obtained Forager Brood Cookbook [3]",
-    "Tags": [
-      "cookbook",
-      "shadow of the erdtree",
-      "sote",
-      "dlc"
-    ]
-  },
-  {
-    "ID": "68530",
-    "Name": "Obtained Forager Brood Cookbook [2]",
+    "ID": "68510",
+    "Name": "Obtained Forager Brood Cookbook [6]",
     "Tags": [
       "cookbook",
       "shadow of the erdtree",
@@ -5011,8 +4598,428 @@
     ]
   },
   {
-    "ID": "68510",
-    "Name": "Obtained Forager Brood Cookbook [6]",
+    "ID": "68530",
+    "Name": "Obtained Forager Brood Cookbook [2]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68540",
+    "Name": "Obtained Forager Brood Cookbook [3]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68550",
+    "Name": "Obtained Forager Brood Cookbook [4]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68560",
+    "Name": "Obtained Forager Brood Cookbook [5]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68570",
+    "Name": "Obtained Igon's Cookbook [2]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68580",
+    "Name": "Obtained Finger-Weaver's Cookbook [2]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68590",
+    "Name": "Obtained Greater Potentate's Cookbook [1]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68600",
+    "Name": "Obtained Greater Potentate's Cookbook [4]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68610",
+    "Name": "Obtained Greater Potentate's Cookbook [5]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68620",
+    "Name": "Obtained Greater Potentate's Cookbook [12]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68630",
+    "Name": "Obtained Greater Potentate's Cookbook [7]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68640",
+    "Name": "Obtained Greater Potentate's Cookbook [9]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68650",
+    "Name": "Obtained Greater Potentate's Cookbook [10]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68660",
+    "Name": "Obtained Greater Potentate's Cookbook [11]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68670",
+    "Name": "Obtained Mad Craftsman's Cookbook [2]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68680",
+    "Name": "Obtained Greater Potentate's Cookbook [8]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68690",
+    "Name": "Obtained Greater Potentate's Cookbook [3]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68700",
+    "Name": "Obtained Greater Potentate's Cookbook [13]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68710",
+    "Name": "Obtained Greater Potentate's Cookbook [14]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68720",
+    "Name": "Obtained Greater Potentate's Cookbook [6]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68730",
+    "Name": "Obtained Greater Potentate's Cookbook [2]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68740",
+    "Name": "Obtained Ancient Dragon Knight's Cookbook [1]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68750",
+    "Name": "Obtained Mad Craftsman's Cookbook [1]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68760",
+    "Name": "Obtained St. Trina Disciple's Cookbook [1]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68770",
+    "Name": "Obtained Fire Knight's Cookbook [1]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68780",
+    "Name": "Obtained Ancient Dragon Knight's Cookbook [2]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68790",
+    "Name": "Obtained Loyal Knight's Cookbook",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68800",
+    "Name": "Obtained Battlefield Priest's Cookbook [1]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68810",
+    "Name": "Obtained Igon's Cookbook [1]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68820",
+    "Name": "Obtained Battlefield Priest's Cookbook [2]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68830",
+    "Name": "Obtained Forager Brood Cookbook [7]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68840",
+    "Name": "Obtained St. Trina Disciple's Cookbook [3]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68850",
+    "Name": "Obtained Grave Keeper's Cookbook [2]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68860",
+    "Name": "Obtained Antiquity Scholar's Cookbook [2]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68870",
+    "Name": "Obtained Tibia's Cookbook",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68880",
+    "Name": "Obtained Mad Craftsman's Cookbook [3]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68890",
+    "Name": "Obtained Battlefield Priest's Cookbook [3]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68900",
+    "Name": "Obtained Fire Knight's Cookbook [2]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68910",
+    "Name": "Obtained Antiquity Scholar's Cookbook [1]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68920",
+    "Name": "Obtained Finger-Weaver's Cookbook [1]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68930",
+    "Name": "Obtained Battlefield Priest's Cookbook [4]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68940",
+    "Name": "Obtained Grave Keeper's Cookbook [1]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68950",
+    "Name": "Obtained St. Trina Disciple's Cookbook [2]",
     "Tags": [
       "cookbook",
       "shadow of the erdtree",
@@ -5101,6 +5108,14 @@
     ]
   },
   {
+    "ID": "12020390",
+    "Name": "Boss Defeated: Crucible Knight",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
     "ID": "12020800",
     "Name": "Boss Defeated: Valiant Gargoyles",
     "Tags": [
@@ -5119,14 +5134,6 @@
   {
     "ID": "12020850",
     "Name": "Boss Defeated: Mimic Tear",
-    "Tags": [
-      "progression",
-      "vanilla"
-    ]
-  },
-  {
-    "ID": "12020390",
-    "Name": "Boss Defeated: Crucible Knight",
     "Tags": [
       "progression",
       "vanilla"
@@ -5451,14 +5458,6 @@
     ]
   },
   {
-    "ID": "30100800",
-    "Name": "Boss Defeated: Crucible Knight (Auriza Hero's Grave)",
-    "Tags": [
-      "progression",
-      "vanilla"
-    ]
-  },
-  {
     "ID": "30110800",
     "Name": "Boss Defeated: Black Knife Assassin (Deathtouched Catacombs)",
     "Tags": [
@@ -5469,14 +5468,6 @@
   {
     "ID": "30120800",
     "Name": "Boss Defeated: Perfumer Tricia (Unsightly Catacombs)",
-    "Tags": [
-      "progression",
-      "vanilla"
-    ]
-  },
-  {
-    "ID": "30120800",
-    "Name": "Boss Defeated: Misbegotten Warrior (Unsightly Catacombs)",
     "Tags": [
       "progression",
       "vanilla"
@@ -6089,14 +6080,6 @@
     ]
   },
   {
-    "ID": "1043530800",
-    "Name": "Boss Defeated: Bell Bearing Hunter (Hermit Merchant's Shack)",
-    "Tags": [
-      "progression",
-      "vanilla"
-    ]
-  },
-  {
     "ID": "1039540800",
     "Name": "Boss Defeated: Bell Bearing Hunter (Shaded Castle)",
     "Tags": [
@@ -6219,6 +6202,14 @@
   {
     "ID": "1043370800",
     "Name": "Boss Defeated: Night's Cavalry (Agheel Lake North)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1043530800",
+    "Name": "Boss Defeated: Bell Bearing Hunter (Hermit Merchant's Shack)",
     "Tags": [
       "progression",
       "vanilla"
@@ -6425,14 +6416,6 @@
     ]
   },
   {
-    "ID": "1252380800",
-    "Name": "Boss Defeated: Starscourge Radahn",
-    "Tags": [
-      "progression",
-      "vanilla"
-    ]
-  },
-  {
     "ID": "1052410800",
     "Name": "Boss Defeated: Flying Dragon Greyll (Southeast Farum Greatbridge)",
     "Tags": [
@@ -6473,16 +6456,24 @@
     ]
   },
   {
-    "ID": "1254560800",
-    "Name": "Boss Defeated: Borealis the Freezing Fog (Northeast Mountaintops)",
+    "ID": "1248550800",
+    "Name": "Boss Defeated: Night's Cavalry (Southwest Mountaintops)",
     "Tags": [
       "progression",
       "vanilla"
     ]
   },
   {
-    "ID": "1248550800",
-    "Name": "Boss Defeated: Night's Cavalry (Southwest Mountaintops)",
+    "ID": "1252380800",
+    "Name": "Boss Defeated: Starscourge Radahn",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1254560800",
+    "Name": "Boss Defeated: Borealis the Freezing Fog (Northeast Mountaintops)",
     "Tags": [
       "progression",
       "vanilla"
@@ -6756,13 +6747,6 @@
       "shadow of the erd tree",
       "sote",
       "dlc"
-    ]
-  },
-  {
-    "ID": "1000",
-    "Name": "default",
-    "Tags": [
-      "flag"
     ]
   }
 ]

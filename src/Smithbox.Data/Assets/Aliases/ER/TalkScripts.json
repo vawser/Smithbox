@@ -1,1 +1,632 @@
-[]
+[
+  {
+    "ID": "1000",
+    "Name": "Grace",
+    "Tags": []
+  },
+  {
+    "ID": "2000",
+    "Name": "BuddyStone",
+    "Tags": []
+  },
+  {
+    "ID": "101601203",
+    "Name": "Godwyn's Wet Nurse [Deeproot Depths]",
+    "Tags": []
+  },
+  {
+    "ID": "102001110",
+    "Name": "Finger Read Enia [Roundtable Hold]",
+    "Tags": []
+  },
+  {
+    "ID": "106101201",
+    "Name": "Ranni [Ainsel River / Lake of Rot]",
+    "Tags": []
+  },
+  {
+    "ID": "106111201",
+    "Name": "Ranni [Ainsel River / Lake of Rot]",
+    "Tags": []
+  },
+  {
+    "ID": "106901400",
+    "Name": "Ranni [Raya Lucaria]",
+    "Tags": []
+  },
+  {
+    "ID": "106901900",
+    "Name": "Ranni [Stone Platform]",
+    "Tags": []
+  },
+  {
+    "ID": "112001100",
+    "Name": "The Noble Goldmask [Leyndell]",
+    "Tags": []
+  },
+  {
+    "ID": "112001105",
+    "Name": "The Noble Goldmask [Ashen Leyndell]",
+    "Tags": []
+  },
+  {
+    "ID": "200001400",
+    "Name": "Rennala, Queen of the Full Moon [Raya Lucaria]",
+    "Tags": []
+  },
+  {
+    "ID": "200101400",
+    "Name": "Rennala, Queen of the Full Moon [Raya Lucaria]",
+    "Tags": []
+  },
+  {
+    "ID": "200111400",
+    "Name": "Rennala, Queen of the Full Moon [Raya Lucaria]",
+    "Tags": []
+  },
+  {
+    "ID": "201901400",
+    "Name": "Rennala's Children [Raya Lucaria]",
+    "Tags": []
+  },
+  {
+    "ID": "202101300",
+    "Name": "Maliketh [Crumbling Farum Azula]",
+    "Tags": []
+  },
+  {
+    "ID": "202111300",
+    "Name": "Beast Clergyman [Crumbling Farum Azula]",
+    "Tags": []
+  },
+  {
+    "ID": "203101500",
+    "Name": "Malenia, Blade of Miquella [Miquella's Haligtree]",
+    "Tags": []
+  },
+  {
+    "ID": "204111100",
+    "Name": "Morgott, the Omen King [Leyndell]",
+    "Tags": []
+  },
+  {
+    "ID": "204201100",
+    "Name": "Morgott (Dead) [Leyndell]",
+    "Tags": []
+  },
+  {
+    "ID": "206101105",
+    "Name": "Godfrey / Hoarah Loux [Ashen Leyndell]",
+    "Tags": []
+  },
+  {
+    "ID": "213001110",
+    "Name": "Smithing Master Hewg [Roundtable Hold]",
+    "Tags": []
+  },
+  {
+    "ID": "214101600",
+    "Name": "Rykard, Lord of Blasphemy [Volcano Manor]",
+    "Tags": []
+  },
+  {
+    "ID": "216001202",
+    "Name": "Blaidd the Half-Wolf [Siofra River / Nokron]",
+    "Tags": []
+  },
+  {
+    "ID": "223001100",
+    "Name": "Boc the Seamster [Leyndell]",
+    "Tags": []
+  },
+  {
+    "ID": "223001105",
+    "Name": "Boc the Seamster [Ashen Leyndell]",
+    "Tags": []
+  },
+  {
+    "ID": "223001400",
+    "Name": "Boc the Seamster [Raya Lucaria]",
+    "Tags": []
+  },
+  {
+    "ID": "300001600",
+    "Name": "Tanith [Volcano Manor]",
+    "Tags": []
+  },
+  {
+    "ID": "301011205",
+    "Name": "White Mask Varre [Mohgwyn Palace]",
+    "Tags": []
+  },
+  {
+    "ID": "301101205",
+    "Name": "White Mask Varre [Mohgwyn Palace]",
+    "Tags": []
+  },
+  {
+    "ID": "302001000",
+    "Name": "Gatekeeper Gostoc [Stormveil Castle]",
+    "Tags": []
+  },
+  {
+    "ID": "302011000",
+    "Name": "Gatekeeper Gostoc [Stormveil Castle]",
+    "Tags": []
+  },
+  {
+    "ID": "302021000",
+    "Name": "Gatekeeper Gostoc [Stormveil Castle]",
+    "Tags": []
+  },
+  {
+    "ID": "302031000",
+    "Name": "Gatekeeper Gostoc [Stormveil Castle]",
+    "Tags": []
+  },
+  {
+    "ID": "302041000",
+    "Name": "Gatekeeper Gostoc [Stormveil Castle]",
+    "Tags": []
+  },
+  {
+    "ID": "302051000",
+    "Name": "Gatekeeper Gostoc [Stormveil Castle]",
+    "Tags": []
+  },
+  {
+    "ID": "302061000",
+    "Name": "Gatekeeper Gostoc [Stormveil Castle]",
+    "Tags": []
+  },
+  {
+    "ID": "309001600",
+    "Name": "Patches [Volcano Manor]",
+    "Tags": []
+  },
+  {
+    "ID": "312001400",
+    "Name": "Witch-Hunter Jerren [Raya Lucaria]",
+    "Tags": []
+  },
+  {
+    "ID": "312101400",
+    "Name": "Witch-Hunter Jerren [Raya Lucaria]",
+    "Tags": []
+  },
+  {
+    "ID": "312201400",
+    "Name": "Witch-Hunter Jerren [Raya Lucaria]",
+    "Tags": []
+  },
+  {
+    "ID": "313001600",
+    "Name": "Rya / Zorayas the Scout [Volcano Manor]",
+    "Tags": []
+  },
+  {
+    "ID": "314001110",
+    "Name": "Knight Diallos [Roundtable Hold]",
+    "Tags": []
+  },
+  {
+    "ID": "314001600",
+    "Name": "Knight Diallos [Volcano Manor]",
+    "Tags": []
+  },
+  {
+    "ID": "316211400",
+    "Name": "Sorceress Sellen [Raya Lucaria]",
+    "Tags": []
+  },
+  {
+    "ID": "316301400",
+    "Name": "Sorceress Sellen (Graven School) [Raya Lucaria]",
+    "Tags": []
+  },
+  {
+    "ID": "316401400",
+    "Name": "Sorceress Sellen [Raya Lucaria]",
+    "Tags": []
+  },
+  {
+    "ID": "316501400",
+    "Name": "Sorceress Sellen [Raya Lucaria]",
+    "Tags": []
+  },
+  {
+    "ID": "318001110",
+    "Name": "Yura, Hunter of Bloody Fingers [Roundtable Hold]",
+    "Tags": []
+  },
+  {
+    "ID": "319001110",
+    "Name": "D, Hunter of the Dead [Roundtable Hold]",
+    "Tags": []
+  },
+  {
+    "ID": "319201202",
+    "Name": "D, Beholder of Death [Siofra River / Nokron]",
+    "Tags": []
+  },
+  {
+    "ID": "319201203",
+    "Name": "D, Beholder of Death [Deeproot Depths]",
+    "Tags": []
+  },
+  {
+    "ID": "320001110",
+    "Name": "Roderika, Spirit Tuner [Roundtable Hold]",
+    "Tags": []
+  },
+  {
+    "ID": "321001000",
+    "Name": "Kenneth Haight [Stormveil Castle]",
+    "Tags": []
+  },
+  {
+    "ID": "322001110",
+    "Name": "Fia, Deathbed Companion [Roundtable Hold]",
+    "Tags": []
+  },
+  {
+    "ID": "322001203",
+    "Name": "Fia, Deathbed Companion [Deeproot Depths]",
+    "Tags": []
+  },
+  {
+    "ID": "322011203",
+    "Name": "Fia, Deathbed Companion [Deeproot Depths]",
+    "Tags": []
+  },
+  {
+    "ID": "323001110",
+    "Name": "Dung Eater [Roundtable Hold]",
+    "Tags": []
+  },
+  {
+    "ID": "324001105",
+    "Name": "Sir Gideon Ofnir [Ashen Leyndell]",
+    "Tags": []
+  },
+  {
+    "ID": "324001110",
+    "Name": "Sir Gideon Ofnir [Roundtable Hold]",
+    "Tags": []
+  },
+  {
+    "ID": "325001000",
+    "Name": "Sorcerer Rogier [Stormveil Castle]",
+    "Tags": []
+  },
+  {
+    "ID": "325001110",
+    "Name": "Sorcerer Rogier [Roundtable Hold]",
+    "Tags": []
+  },
+  {
+    "ID": "326001600",
+    "Name": "Recusant Bernhal [Volcano Manor]",
+    "Tags": []
+  },
+  {
+    "ID": "326101100",
+    "Name": "Recusant Bernahl [Leyndell]",
+    "Tags": []
+  },
+  {
+    "ID": "326101600",
+    "Name": "Sword of Bernhal [Volcano Manor]",
+    "Tags": []
+  },
+  {
+    "ID": "326201300",
+    "Name": "Recusant Bernahl [Crumbling Farum Azula]",
+    "Tags": []
+  },
+  {
+    "ID": "332001600",
+    "Name": "Rykard-Hating Ghost [Volcano Manor]",
+    "Tags": []
+  },
+  {
+    "ID": "333001400",
+    "Name": "Sorcerer Thops [Raya Lucaria]",
+    "Tags": []
+  },
+  {
+    "ID": "334001000",
+    "Name": "Nepheli Loux [Stormveil Castle]",
+    "Tags": []
+  },
+  {
+    "ID": "334001110",
+    "Name": "Nepheli Loux [Roundtable Hold]",
+    "Tags": []
+  },
+  {
+    "ID": "334011000",
+    "Name": "Nepheli Loux [Stormveil Castle]",
+    "Tags": []
+  },
+  {
+    "ID": "339001110",
+    "Name": "Ensha of the Royal Remains [Roundtable Hold]",
+    "Tags": []
+  },
+  {
+    "ID": "348001500",
+    "Name": "Millicent [Miquella's Haligtree]",
+    "Tags": []
+  },
+  {
+    "ID": "348001500",
+    "Name": "Millicent [Miquella's Haligtree]",
+    "Tags": []
+  },
+  {
+    "ID": "348101500",
+    "Name": "Millicent [Miquella's Haligtree]",
+    "Tags": []
+  },
+  {
+    "ID": "348201500",
+    "Name": "Millicent [Miquella's Haligtree]",
+    "Tags": []
+  },
+  {
+    "ID": "351001100",
+    "Name": "Scribe Corhyn [Leyndell]",
+    "Tags": []
+  },
+  {
+    "ID": "351001110",
+    "Name": "Brother Corhyn [Roundtable Hold]",
+    "Tags": []
+  },
+  {
+    "ID": "401102101",
+    "Name": "Messmer the Impaler [Specimen Storehouse]",
+    "Tags": []
+  },
+  {
+    "ID": "402102000",
+    "Name": "Unknown [Belurat]",
+    "Tags": []
+  },
+  {
+    "ID": "410102001",
+    "Name": "Promised Consort Radahn",
+    "Tags": []
+  },
+  {
+    "ID": "413002100",
+    "Name": "Fire Knight Queelign [Shadow Keep]",
+    "Tags": []
+  },
+  {
+    "ID": "413102000",
+    "Name": "Fire Knight Queelign [Belurat]",
+    "Tags": []
+  },
+  {
+    "ID": "414002001",
+    "Name": "Hornsent [Enir-Ilim]",
+    "Tags": []
+  },
+  {
+    "ID": "414002101",
+    "Name": "Hornsent [Specimen Storehouse]",
+    "Tags": []
+  },
+  {
+    "ID": "414102100",
+    "Name": "Hornsent (Coop) [Shadoe Keep]",
+    "Tags": []
+  },
+  {
+    "ID": "414102101",
+    "Name": "Hornsent (Coop) [Specimen Storehouse]",
+    "Tags": []
+  },
+  {
+    "ID": "414132100",
+    "Name": "Hornsent (Invasion) [Shadow Keep]",
+    "Tags": []
+  },
+  {
+    "ID": "414142100",
+    "Name": "Hornsent (Assisted Spirit) [Shadow Keep]",
+    "Tags": []
+  },
+  {
+    "ID": "414152001",
+    "Name": "Hornsent (Boss) [Enir-Ilim]",
+    "Tags": []
+  },
+  {
+    "ID": "415002001",
+    "Name": "Moore [Enir-Ilim]",
+    "Tags": []
+  },
+  {
+    "ID": "415152001",
+    "Name": "Moore (Boss) [Enir-Ilim]",
+    "Tags": []
+  },
+  {
+    "ID": "416002001",
+    "Name": "Sir Ansbach [Enir-Ilim]",
+    "Tags": []
+  },
+  {
+    "ID": "416002101",
+    "Name": "Sir Ansbach [Specimen Storehouse]",
+    "Tags": []
+  },
+  {
+    "ID": "416112101",
+    "Name": "Sir Ansbach (Invasion) [Specimen Storehouse]",
+    "Tags": []
+  },
+  {
+    "ID": "416122101",
+    "Name": "Sir Ansbach (Assisted Spirit) [Specimen Storehouse]",
+    "Tags": []
+  },
+  {
+    "ID": "416132001",
+    "Name": "Pureblood Knight Ansbach (Coop) [Enir-Ilim]",
+    "Tags": []
+  },
+  {
+    "ID": "416152001",
+    "Name": "Pureblood Knight Ansbach (Helpful Spirit) [Enir-Ilim]",
+    "Tags": []
+  },
+  {
+    "ID": "417002001",
+    "Name": "Redmane Freyja [Enir-Ilim]",
+    "Tags": []
+  },
+  {
+    "ID": "417002101",
+    "Name": "Redmane Freyja [Specimen Storehouse]",
+    "Tags": []
+  },
+  {
+    "ID": "417152001",
+    "Name": "Redmane Freyja (Boss) [Enir-Ilim]",
+    "Tags": []
+  },
+  {
+    "ID": "418001205",
+    "Name": "Needle Knight Leda [Mohgwyn Palace]",
+    "Tags": []
+  },
+  {
+    "ID": "418012001",
+    "Name": "Needle Knight Leda [Enir-Ilim]",
+    "Tags": []
+  },
+  {
+    "ID": "418112101",
+    "Name": "Needle Knight Leda (Helpful Spirit) [Specimen Storehouse]",
+    "Tags": []
+  },
+  {
+    "ID": "418122101",
+    "Name": "Needle Knight Leda (Invasion) [Specimen Storehouse]",
+    "Tags": []
+  },
+  {
+    "ID": "418132100",
+    "Name": "Needle Knight Leda (Coop) [Shadow Keep]",
+    "Tags": []
+  },
+  {
+    "ID": "418142100",
+    "Name": "Needle Knight Leda (Invasion) [Shadow Keep]",
+    "Tags": []
+  },
+  {
+    "ID": "418152001",
+    "Name": "Needle Knight Leda (Boss) [Enir-Ilim]",
+    "Tags": []
+  },
+  {
+    "ID": "419002001",
+    "Name": "Thiollier [Enir-Ilim]",
+    "Tags": []
+  },
+  {
+    "ID": "419122001",
+    "Name": "Thiollier (Coop) [Enir-Ilim]",
+    "Tags": []
+  },
+  {
+    "ID": "419152001",
+    "Name": "Thiollier (Helpful Spirit) [Enir-Ilim]",
+    "Tags": []
+  },
+  {
+    "ID": "425002001",
+    "Name": "Dryleaf Dane [Enir-Ilim]",
+    "Tags": []
+  },
+  {
+    "ID": "425152001",
+    "Name": "Dryleaf Dane (Boss) [Enir-Ilim]",
+    "Tags": []
+  },
+  {
+    "ID": "524160099",
+    "Name": "Sir Ansbach [Specimen Storehouse]",
+    "Tags": []
+  },
+  {
+    "ID": "534170098",
+    "Name": "Redmane Freyja (Coop) [Shadow Keep]",
+    "Tags": []
+  },
+  {
+    "ID": "600001110",
+    "Name": "Twin Maiden Husks [Roundtable Hold]",
+    "Tags": []
+  },
+  {
+    "ID": "603001203",
+    "Name": "Walking Mausoleum [Deeproot Depths]",
+    "Tags": []
+  },
+  {
+    "ID": "607001900",
+    "Name": "Talk Dummy [Stone Platform]",
+    "Tags": []
+  },
+  {
+    "ID": "608001110",
+    "Name": "Clouded Mirror Stand [Roundtable Hold]",
+    "Tags": []
+  },
+  {
+    "ID": "620001100",
+    "Name": "Talk Dummy [Leyndell]",
+    "Tags": []
+  },
+  {
+    "ID": "620001105",
+    "Name": "Unknown [Ashen Leyndell]",
+    "Tags": []
+  },
+  {
+    "ID": "623001110",
+    "Name": "Unknown [Roundtable Hold]",
+    "Tags": []
+  },
+  {
+    "ID": "700221000",
+    "Name": "Commoner (Stranded Soul) [Stormveil Castle]",
+    "Tags": []
+  },
+  {
+    "ID": "706001105",
+    "Name": "Commoner (Stranded Soul) [Ashen Leyndell]",
+    "Tags": []
+  },
+  {
+    "ID": "706011105",
+    "Name": "Commoner (Stranded Soul) [Ashen Leyndell]",
+    "Tags": []
+  },
+  {
+    "ID": "801281201",
+    "Name": "Hermit Merchant [Ainsel River / Lake of Rot]",
+    "Tags": []
+  },
+  {
+    "ID": "801291205",
+    "Name": "Imprisoned Merchant [Mohgwyn Palace]",
+    "Tags": []
+  }
+]

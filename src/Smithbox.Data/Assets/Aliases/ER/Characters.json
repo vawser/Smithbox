@@ -1,12 +1,5 @@
 [
   {
-    "ID": "default",
-    "Name": "Default",
-    "Tags": [
-      "default"
-    ]
-  },
-  {
     "ID": "c0000",
     "Name": "Player",
     "Tags": [

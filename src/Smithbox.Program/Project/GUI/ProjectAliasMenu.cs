@@ -878,6 +878,10 @@ public class ProjectAliasMenu
     {
         foreach ((ProjectAliasType aliasType, List<AliasEntry> aliases) in Smithbox.Orchestrator.SelectedProject.Handler.ProjectData.Aliases)
         {
+            // Only save the currently selected one.
+            if (aliasType != SelectedAliasType)
+                continue;
+
             string path = Path.Combine(targetPath, $"{aliasType}.json");
 
             if (!aliases.Any()) 
