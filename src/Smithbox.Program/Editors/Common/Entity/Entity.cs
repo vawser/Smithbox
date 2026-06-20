@@ -1250,6 +1250,10 @@ public class Entity : ISelectable, IDisposable
         act.SetPostExecutionAction((undo) =>
         {
             UpdateRenderModel();
+            if (this is MsbEntity msbEnt)
+            {
+                msbEnt.AssignDrawable();
+            }
         });
         return act;
     }

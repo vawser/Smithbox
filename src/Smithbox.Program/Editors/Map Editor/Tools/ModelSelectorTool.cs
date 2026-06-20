@@ -476,7 +476,8 @@ public class ModelSelectorTool
                 }
 
                 // ModelName
-                actlist.Add(s.ChangeObjectProperty("ModelName", modelName));
+                var action = s.ChangeObjectProperty("ModelName", modelName);
+                actlist.Add(action);
 
                 if (CFG.Current.MapEditor_Model_Selector_Update_Name)
                 {
@@ -492,7 +493,6 @@ public class ModelSelectorTool
                         actlist.Add(updateInstanceAction);
                     }
                 }
-
             }
         }
 

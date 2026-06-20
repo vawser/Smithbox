@@ -92,19 +92,19 @@ public class MultipleEntityPropertyChangeAction : ViewportAction
             }
         }
 
-        if (ClearName)
+        foreach (Entity e in ChangedEnts)
         {
-            foreach (Entity e in ChangedEnts)
+            if (UpdateRenderModel)
             {
-                if (UpdateRenderModel)
+                e.UpdateRenderModel();
+                if (e is MsbEntity msbEnt)
                 {
-                    e.UpdateRenderModel();
-                    if (e is MsbEntity msbEnt)
-                    {
-                        msbEnt.AssignDrawable();
-                    }
+                    msbEnt.AssignDrawable();
                 }
+            }
 
+            if (ClearName)
+            {
                 // Clear name cache, forcing it to update.
                 e.Name = null;
             }

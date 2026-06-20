@@ -1010,13 +1010,12 @@ public class MapPropertyView
                         action.SetPostExecutionAction(undo =>
                         {
                             var selected = false;
-                            if (firstEnt.RenderSceneMesh != null)
-                            {
-                                selected = firstEnt.RenderSceneMesh.RenderSelectionOutline;
-                                firstEnt.RenderSceneMesh = null;
-                            }
 
                             firstEnt.UpdateRenderModel();
+                            if (firstEnt is MsbEntity msbEnt)
+                            {
+                                msbEnt.AssignDrawable();
+                            }
                             firstEnt.RenderSceneMesh.RenderSelectionOutline = selected;
                         });
 
@@ -1064,13 +1063,13 @@ public class MapPropertyView
                     action.SetPostExecutionAction(undo =>
                     {
                         var selected = false;
-                        if (firstEnt.RenderSceneMesh != null)
-                        {
-                            selected = firstEnt.RenderSceneMesh.RenderSelectionOutline;
-                            firstEnt.RenderSceneMesh = null;
-                        }
 
                         firstEnt.UpdateRenderModel();
+                        if (firstEnt is MsbEntity msbEnt)
+                        {
+                            msbEnt.AssignDrawable();
+                        }
+
                         firstEnt.RenderSceneMesh.RenderSelectionOutline = selected;
                     });
 
