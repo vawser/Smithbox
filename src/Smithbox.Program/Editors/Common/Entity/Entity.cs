@@ -127,7 +127,7 @@ public class Entity : ISelectable, IDisposable
         {
             _renderSceneMesh?.Dispose();
             _renderSceneMesh = value;
-            UpdateRenderModel();
+            ApplyMeshState();
         }
         get => _renderSceneMesh;
     }
@@ -1327,61 +1327,6 @@ public class Entity : ISelectable, IDisposable
     }
 
     /// <summary>
-    /// Update the render model for this entity.
-    /// </summary>
-    public virtual void UpdateRenderModel()
-    {
-        if (!CFG.Current.Viewport_Enable_Rendering)
-        {
-            return;
-        }
-
-        if (!HasTransform)
-        {
-            return;
-        }
-
-        Matrix4x4 t = UseTempTransform ? TempTransform.WorldMatrix : GetLocalTransform().WorldMatrix;
-        Entity p = Parent;
-
-        while (p != null)
-        {
-            t = t * (p.UseTempTransform ? p.TempTransform.WorldMatrix : p.GetLocalTransform().WorldMatrix);
-            p = p.Parent;
-        }
-
-        if (RenderSceneMesh != null)
-        {
-            RenderSceneMesh.World = t;
-        }
-
-        foreach (Entity c in Children)
-        {
-            if (c.HasTransform)
-            {
-                c.UpdateRenderModel();
-            }
-        }
-
-        if (RenderSceneMesh != null)
-        {
-            RenderSceneMesh.Visible = _EditorVisible;
-
-            if (Owner is MapUniverse)
-            {
-                // Render Group management
-                if (HasRenderGroups != false)
-                {
-                    UpdateDispDrawGroups();
-                    RenderSceneMesh.DrawGroups.AlwaysVisible = false;
-                    RenderSceneMesh.DrawGroups.RenderGroups = Drawgroups;
-                }
-            }
-        }
-
-    }
-
-    /// <summary>
     /// Dipose of this entity.
     /// </summary>
     protected virtual void Dispose(bool disposing)
@@ -1401,6 +1346,49 @@ public class Entity : ISelectable, IDisposable
             disposedValue = true;
         }
     }
+    public virtual void UpdateRenderModel()
+    {
+        if (!CFG.Current.Viewport_Enable_Rendering || !HasTransform)
+            return;
+
+        ApplyMeshState();
+
+        foreach (Entity c in Children)
+        {
+            if (c.HasTransform)
+            {
+                c.UpdateRenderModel();
+            }
+        }
+    }
+
+    private void ApplyMeshState()
+    {
+        if (!CFG.Current.Viewport_Enable_Rendering || !HasTransform)
+            return;
+
+        if (_renderSceneMesh == null)
+            return;
+
+        Matrix4x4 t = UseTempTransform ? TempTransform.WorldMatrix : GetLocalTransform().WorldMatrix;
+        Entity p = Parent;
+        while (p != null)
+        {
+            t = t * (p.UseTempTransform ? p.TempTransform.WorldMatrix : p.GetLocalTransform().WorldMatrix);
+            p = p.Parent;
+        }
+
+        _renderSceneMesh.World = t;
+        _renderSceneMesh.Visible = _EditorVisible;
+
+        if (Owner is MapUniverse && HasRenderGroups)
+        {
+            UpdateDispDrawGroups();
+            _renderSceneMesh.DrawGroups.AlwaysVisible = false;
+            _renderSceneMesh.DrawGroups.RenderGroups = Drawgroups;
+        }
+    }
+
 
     /// <summary>
     /// Destructor

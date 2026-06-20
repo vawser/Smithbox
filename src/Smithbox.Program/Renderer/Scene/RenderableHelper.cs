@@ -13,11 +13,17 @@ public static class RenderableHelper
     private static DbgPrimWireBox _regionBox;
     private static DbgPrimSolidBox _regionSolidBox;
 
+    private static DbgPrimSolidBox _regionSolidBox_Enemy;
+    private static DbgPrimSolidBox _regionSolidBox_Player;
+    private static DbgPrimSolidBox _regionSolidBox_Default;
+
     private static DbgPrimWireCylinder _regionCylinder;
     private static DbgPrimSolidCylinder _regionSolidCylinder;
 
     private static DbgPrimWireSphere _regionSphere;
     private static DbgPrimSolidSphere _regionSolidSphere;
+
+    private static DbgPrimSolidSphere _regionSolidSphere_Interactable;
 
     private static DbgPrimWirePoint _regionPoint;
     private static DbgPrimSolidPoint _regionSolidPoint;
@@ -91,6 +97,24 @@ public static class RenderableHelper
             new Vector3(0.5f, 1.0f, 0.5f),
             Color.Blue);
 
+        _regionSolidBox_Default = new DbgPrimSolidBox(
+            Transform.Default,
+            new Vector3(-0.5f, 0.0f, -0.5f),
+            new Vector3(0.5f, 2.0f, 0.5f),
+            Color.Cyan);
+
+        _regionSolidBox_Enemy = new DbgPrimSolidBox(
+            Transform.Default,
+            new Vector3(-0.5f, 0.0f, -0.5f),
+            new Vector3(0.5f, 2.0f, 0.5f),
+            Color.IndianRed);
+
+        _regionSolidBox_Player = new DbgPrimSolidBox(
+            Transform.Default,
+            new Vector3(-0.5f, 0.0f, -0.5f),
+            new Vector3(0.5f, 2.0f, 0.5f),
+            Color.DarkBlue);
+
         _regionBox = new DbgPrimWireBox(
             Transform.Default,
             new Vector3(-0.5f, 0.0f, -0.5f),
@@ -117,6 +141,11 @@ public static class RenderableHelper
             Transform.Default,
             1.0f,
             Color.Blue);
+
+        _regionSolidSphere_Interactable = new DbgPrimSolidSphere(
+            Transform.Default,
+            1.0f,
+            Color.AliceBlue);
 
         _regionSphere = new DbgPrimWireSphere(
             Transform.Default,
@@ -302,6 +331,51 @@ public static class RenderableHelper
         return r;
     }
 
+    public static DebugPrimitiveRenderableProxy GetDefaultBoxProxy(RenderScene scene)
+    {
+        var baseColor = CFG.Current.Viewport_Box_Region_Base_Color;
+        var highlightColor = CFG.Current.Viewport_Box_Region_Highlight_Color;
+        var transparency = CFG.Current.Viewport_Box_Region_Alpha;
+
+        DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _regionSolidBox_Default);
+
+        r.RenderOverlay = true;
+        r.BaseColor = Color.DarkCyan;
+        r.HighlightedColor = Color.Cyan;
+        //ColorHelper.ApplyColorVariance(r);
+
+        return r;
+    }
+    public static DebugPrimitiveRenderableProxy GetPlayerBoxProxy(RenderScene scene)
+    {
+        var baseColor = CFG.Current.Viewport_Box_Region_Base_Color;
+        var highlightColor = CFG.Current.Viewport_Box_Region_Highlight_Color;
+        var transparency = CFG.Current.Viewport_Box_Region_Alpha;
+
+        DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _regionSolidBox_Player);
+
+        r.RenderOverlay = true;
+        r.BaseColor = Color.DarkBlue;
+        r.HighlightedColor = Color.Blue;
+        //ColorHelper.ApplyColorVariance(r);
+
+        return r;
+    }
+    public static DebugPrimitiveRenderableProxy GetEnemyBoxProxy(RenderScene scene)
+    {
+        var baseColor = CFG.Current.Viewport_Box_Region_Base_Color;
+        var highlightColor = CFG.Current.Viewport_Box_Region_Highlight_Color;
+        var transparency = CFG.Current.Viewport_Box_Region_Alpha;
+
+        DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _regionSolidBox_Enemy);
+
+        r.RenderOverlay = true;
+        r.BaseColor = Color.DarkRed;
+        r.HighlightedColor = Color.Red;
+        //ColorHelper.ApplyColorVariance(r);
+
+        return r;
+    }
 
     // CYLINDER REGION
     public static DebugPrimitiveRenderableProxy GetCylinderRegionProxy(RenderScene scene)
@@ -362,6 +436,21 @@ public static class RenderableHelper
         r.RenderOverlay = true;
         r.BaseColor = ColorHelper.GetTransparencyColor(baseColor, transparency);
         r.HighlightedColor = ColorHelper.GetTransparencyColor(highlightColor, transparency);
+        //ColorHelper.ApplyColorVariance(r);
+
+        return r;
+    }
+    public static DebugPrimitiveRenderableProxy GetInteractableSphereProxy(RenderScene scene)
+    {
+        var baseColor = CFG.Current.Viewport_Sphere_Region_Base_Color;
+        var highlightColor = CFG.Current.Viewport_Sphere_Region_Highlight_Color;
+        var transparency = CFG.Current.Viewport_Sphere_Region_Alpha;
+
+        DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _regionSolidSphere_Interactable);
+
+        r.RenderOverlay = true;
+        r.BaseColor = Color.Blue;
+        r.HighlightedColor = Color.LightBlue;
         //ColorHelper.ApplyColorVariance(r);
 
         return r;
@@ -500,47 +589,6 @@ public static class RenderableHelper
         r.BaseColor = ColorHelper.GetTransparencyColor(baseColor, transparency);
         r.HighlightedColor = ColorHelper.GetTransparencyColor(highlightColor, transparency);
         //ColorHelper.ApplyColorVariance(r);
-
-        return r;
-    }
-
-    // MODEL
-    public static DebugPrimitiveRenderableProxy GetModelMarkerProxy(MeshRenderables renderables,
-        ModelMarkerType type)
-    {
-        // Model markers are used as placeholders for meshes that would not otherwise render in the editor
-        IDbgPrim prim;
-        Color baseColor;
-        Color selectColor;
-
-        switch (type)
-        {
-            case ModelMarkerType.Enemy:
-                prim = _modelMarkerChr;
-                baseColor = ColorHelper.GetSolidColor(CFG.Current.Viewport_Character_Marker_Base_Color);
-                selectColor = ColorHelper.GetSolidColor(CFG.Current.Viewport_Character_Marker_Highlight_Color);
-                break;
-            case ModelMarkerType.Object:
-                prim = _modelMarkerObj;
-                baseColor = ColorHelper.GetSolidColor(CFG.Current.Viewport_Object_Marker_Base_Color);
-                selectColor = ColorHelper.GetSolidColor(CFG.Current.Viewport_Object_Marker_Highlight_Color);
-                break;
-            case ModelMarkerType.Player:
-                prim = _modelMarkerPlayer;
-                baseColor = ColorHelper.GetSolidColor(CFG.Current.Viewport_Player_Marker_Base_Color);
-                selectColor = ColorHelper.GetSolidColor(CFG.Current.Viewport_Player_Marker_Highlight_Color);
-                break;
-            case ModelMarkerType.Other:
-            default:
-                prim = _modelMarkerOther;
-                baseColor = ColorHelper.GetSolidColor(CFG.Current.Viewport_Other_Marker_Base_Color);
-                selectColor = ColorHelper.GetSolidColor(CFG.Current.Viewport_Other_Marker_Highlight_Color);
-                break;
-        }
-
-        DebugPrimitiveRenderableProxy r = new(renderables, prim, false);
-        r.BaseColor = baseColor;
-        r.HighlightedColor = selectColor;
 
         return r;
     }

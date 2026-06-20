@@ -99,6 +99,10 @@ public class MultipleEntityPropertyChangeAction : ViewportAction
                 if (UpdateRenderModel)
                 {
                     e.UpdateRenderModel();
+                    if (e is MsbEntity msbEnt)
+                    {
+                        msbEnt.AssignDrawable();
+                    }
                 }
 
                 // Clear name cache, forcing it to update.
@@ -142,6 +146,10 @@ public class MultipleEntityPropertyChangeAction : ViewportAction
             if (UpdateRenderModel)
             {
                 e.UpdateRenderModel();
+                if (e is MsbEntity msbEnt)
+                {
+                    msbEnt.AssignDrawable();
+                }
             }
 
             // Clear name cache, forcing it to update.

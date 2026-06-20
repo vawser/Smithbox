@@ -1068,35 +1068,35 @@ public class ModelProperties
 
         selection.BuildReferenceMap();
 
-        // Undo and redo the last action with a rendering update
-        if (_lastUncommittedAction != null && View.ViewportActionManager.PeekUndoAction() == _lastUncommittedAction)
-        {
-            if (_lastUncommittedAction is PropertiesChangedAction a)
-            {
-                // Kinda a hack to prevent a jumping glitch
-                a.SetPostExecutionAction(null);
+        //// Undo and redo the last action with a rendering update
+        //if (_lastUncommittedAction != null && View.ViewportActionManager.PeekUndoAction() == _lastUncommittedAction)
+        //{
+        //    if (_lastUncommittedAction is PropertiesChangedAction a)
+        //    {
+        //        // Kinda a hack to prevent a jumping glitch
+        //        a.SetPostExecutionAction(null);
 
-                View.ViewportActionManager.UndoAction();
+        //        View.ViewportActionManager.UndoAction();
 
-                if (selection != null)
-                {
-                    a.SetPostExecutionAction(undo =>
-                    {
-                        if (destroyRenderModel)
-                        {
-                            if (selection.RenderSceneMesh != null)
-                            {
-                                selection.RenderSceneMesh = null;
-                            }
-                        }
+        //        if (selection != null)
+        //        {
+        //            a.SetPostExecutionAction(undo =>
+        //            {
+        //                if (destroyRenderModel)
+        //                {
+        //                    if (selection.RenderSceneMesh != null)
+        //                    {
+        //                        selection.RenderSceneMesh = null;
+        //                    }
+        //                }
 
-                        selection.UpdateRenderModel();
-                    });
-                }
+        //                selection.UpdateRenderModel();
+        //            });
+        //        }
 
-                View.ViewportActionManager.ExecuteAction(a);
-            }
-        }
+        //        View.ViewportActionManager.ExecuteAction(a);
+        //    }
+        //}
 
         _lastUncommittedAction = null;
         _changingPropery = null;

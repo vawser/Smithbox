@@ -86,7 +86,7 @@ public class MapContainer : ObjectContainer
 
         var t = new MapTransformNode(mapid);
         RootObject = new MsbEntity(View.Universe, this, t, MsbEntityType.MapRoot);
-        MapOffsetNode = new MsbEntity(View.Universe, this, new MapTransformNode(mapid));
+        MapOffsetNode = new MsbEntity(View.Universe, this, new MapTransformNode(mapid), MsbEntityType.Editor);
 
         RootObject.AddChild(MapOffsetNode);
     }

@@ -44,11 +44,6 @@ public class ModelEntity : Entity
 
     public override void UpdateRenderModel()
     {
-        if (!CFG.Current.Viewport_Enable_Rendering)
-        {
-            return;
-        }
-
         base.UpdateRenderModel();
     }
 

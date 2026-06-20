@@ -3,21 +3,24 @@
     "ID": "c0000",
     "Name": "Player",
     "Tags": [
-      "creature"
+      "creature",
+      "character_placeholder"
     ]
   },
   {
     "ID": "c1000",
     "Name": "Invisible",
     "Tags": [
-      "creature"
+      "creature",
+      "interactable_placeholder"
     ]
   },
   {
     "ID": "c1001",
     "Name": "Invisible",
     "Tags": [
-      "creature"
+      "creature",
+      "interactable_placeholder"
     ]
   },
   {
@@ -651,15 +654,15 @@
     ]
   },
   {
-    "ID": "c7510",
-    "Name": "Blackhat Badger",
+    "ID": "c7500",
+    "Name": "Exiled Memorial Mob",
     "Tags": [
       "creature"
     ]
   },
   {
-    "ID": "c7500",
-    "Name": "Exiled Memorial Mob",
+    "ID": "c7510",
+    "Name": "Blackhat Badger",
     "Tags": [
       "creature"
     ]

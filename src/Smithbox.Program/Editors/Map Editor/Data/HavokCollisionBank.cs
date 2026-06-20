@@ -162,8 +162,11 @@ public class HavokCollisionBank
                 {
                     if(EntityHelper.IsPartCollision(ent) || EntityHelper.IsPartConnectCollision(ent))
                     {
-                        ent.ForceModelRefresh = true;
                         ent.UpdateRenderModel();
+                        if (ent is MsbEntity msbEnt)
+                        {
+                            msbEnt.AssignDrawable();
+                        }
                     }
                 }
 

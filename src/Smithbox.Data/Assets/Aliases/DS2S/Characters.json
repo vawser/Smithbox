@@ -1,16 +1,10 @@
 [
   {
-    "ID": "default",
-    "Name": "Default",
-    "Tags": [
-      "default"
-    ]
-  },
-  {
     "ID": "c0001",
     "Name": "Human NPC/Player",
     "Tags": [
-      "creature"
+      "creature",
+      "character_placeholder"
     ]
   },
   {

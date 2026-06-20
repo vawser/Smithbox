@@ -75,6 +75,8 @@ public class CloneMapObjectsAction : ViewportAction
                 // Create clone
                 MsbEntity newobj = (MsbEntity)Clonables[i].Clone();
 
+                newobj.AssignDrawable();
+
                 // Persist the supports name bool
                 if (!Clonables[i].SupportsName)
                 {
@@ -208,18 +210,6 @@ public class CloneMapObjectsAction : ViewportAction
             }
         }
 
-        // Update render models and register meshes
-        foreach (var record in Records)
-        {
-            record.Clone.UpdateRenderModel();
-            if (record.Clone.RenderSceneMesh != null)
-            {
-                record.Clone.RenderSceneMesh.SetSelectable(record.Clone);
-                record.Clone.RenderSceneMesh.AutoRegister = true;
-                record.Clone.RenderSceneMesh.Register();
-            }
-        }
-
         // Update selection
         if (SetSelection)
         {
@@ -245,12 +235,6 @@ public class CloneMapObjectsAction : ViewportAction
         foreach (var record in mapOrdered)
         {
             record.Map.Objects.Remove(record.Clone);
-
-            if (record.Clone.RenderSceneMesh != null)
-            {
-                record.Clone.RenderSceneMesh.AutoRegister = false;
-                record.Clone.RenderSceneMesh.UnregisterWithScene();
-            }
         }
 
         // Remove from hierarchy

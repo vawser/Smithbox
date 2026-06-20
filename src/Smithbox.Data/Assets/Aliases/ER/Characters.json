@@ -4,7 +4,22 @@
     "Name": "Player",
     "Tags": [
       "player",
-      "human"
+      "human",
+      "character_placeholder"
+    ]
+  },
+  {
+    "ID": "c0100",
+    "Name": "Dummy",
+    "Tags": [
+      "interactable_placeholder"
+    ]
+  },
+  {
+    "ID": "c1000",
+    "Name": "Dummy",
+    "Tags": [
+      "interactable_placeholder"
     ]
   },
   {

@@ -161,6 +161,11 @@ public class DeleteModelObjectAction : ViewportAction
 
         e.BuildReferenceMap();
         e.UpdateRenderModel();
+
+        if (e is MsbEntity msbEnt)
+        {
+            msbEnt.AssignDrawable();
+        }
     }
 
     private bool IsDescendantOf(Entity child, Entity potentialParent)

@@ -218,26 +218,6 @@ public class MapResourceHandler
         }
     }
 
-    public void SetupModelMasks(MapContainer map)
-    {
-        foreach (Entity obj in map.Objects)
-        {
-            if (obj.WrappedObject is IMsbPart mp && mp.ModelName != null && mp.ModelName != string.Empty &&
-                obj.RenderSceneMesh == null)
-            {
-                int[] masks = null;
-                if (obj is MsbEntity msbEnt)
-                {
-                    masks = msbEnt.GetModelMasks();
-                }
-
-                var renderScene = View.Universe.GetCurrentScene();
-
-                DrawableHelper.GetModelDrawable(View.Universe, renderScene, map, obj, mp.ModelName, false, masks);
-            }
-        }
-    }
-
     public List<Task> LoadTextures(List<Task> tasks, MapContainer map)
     {
         if (!CFG.Current.Viewport_Enable_Texturing)

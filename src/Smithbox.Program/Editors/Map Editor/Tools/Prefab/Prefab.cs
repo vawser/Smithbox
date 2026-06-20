@@ -180,7 +180,7 @@ internal class Prefab<T> : Prefab
         {
             foreach (var part in category.GetEntries())
             {
-                var entity = new MsbEntity(View.Universe, targetMap, copy(part)) { Type = type };
+                var entity = new MsbEntity(View.Universe, targetMap, copy(part), type);
                 yield return entity;
             }
         }

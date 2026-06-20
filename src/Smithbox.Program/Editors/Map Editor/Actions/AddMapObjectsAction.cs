@@ -42,16 +42,6 @@ public class AddMapObjectsAction : ViewportAction
                 Map.Objects.Add(Added[i]);
                 Parent.AddChild(Added[i]);
                 Added[i].UpdateRenderModel();
-                if (Added[i].RenderSceneMesh != null)
-                {
-                    Added[i].RenderSceneMesh.SetSelectable(Added[i]);
-                }
-
-                if (Added[i].RenderSceneMesh != null)
-                {
-                    Added[i].RenderSceneMesh.AutoRegister = true;
-                    Added[i].RenderSceneMesh.Register();
-                }
 
                 MsbEntity ent = Added[i];
 
@@ -99,12 +89,6 @@ public class AddMapObjectsAction : ViewportAction
             if (Added[i] != null)
             {
                 Added[i].Parent.RemoveChild(Added[i]);
-            }
-
-            if (Added[i].RenderSceneMesh != null)
-            {
-                Added[i].RenderSceneMesh.AutoRegister = false;
-                Added[i].RenderSceneMesh.UnregisterWithScene();
             }
         }
 

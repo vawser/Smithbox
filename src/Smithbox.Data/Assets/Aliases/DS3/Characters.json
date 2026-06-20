@@ -1,37 +1,18 @@
 [
   {
-    "ID": "default",
-    "Name": "Default",
-    "Tags": [
-      "default"
-    ]
-  },
-  {
     "ID": "c0000",
     "Name": "Human NPC",
     "Tags": [
-      "creature"
-    ]
-  },
-  {
-    "ID": "c0000_0018",
-    "Name": "Cornyx of the Great Swamp",
-    "Tags": [
-      "creature"
-    ]
-  },
-  {
-    "ID": "c0000_0020",
-    "Name": "Greirat of the Undead Settlement",
-    "Tags": [
-      "creature"
+      "creature",
+      "character_placeholder"
     ]
   },
   {
     "ID": "c1000",
     "Name": "Invisible",
     "Tags": [
-      "creature"
+      "creature",
+      "interactable_placeholder"
     ]
   },
   {
@@ -756,6 +737,13 @@
     ]
   },
   {
+    "ID": "c5010",
+    "Name": "Nameless King",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
     "ID": "c5020",
     "Name": "Demon Prince",
     "Tags": [
@@ -772,13 +760,6 @@
   {
     "ID": "c5022",
     "Name": "Demon Prince Helper 2",
-    "Tags": [
-      "creature"
-    ]
-  },
-  {
-    "ID": "c5010",
-    "Name": "Nameless King",
     "Tags": [
       "creature"
     ]

@@ -69,12 +69,6 @@ public class DeleteMapObjectsAction : ViewportAction
                 r.Map.Objects.RemoveAt(r.MapIndex);
             }
 
-            if (r.Entity.RenderSceneMesh != null)
-            {
-                r.Entity.RenderSceneMesh.AutoRegister = false;
-                r.Entity.RenderSceneMesh.UnregisterWithScene();
-            }
-
             if (r.Parent != null)
             {
                 r.Parent.RemoveChild(r.Entity);
@@ -103,12 +97,6 @@ public class DeleteMapObjectsAction : ViewportAction
                 idx = r.Map.Objects.Count;
 
             r.Map.Objects.Insert(idx, r.Entity);
-
-            if (r.Entity.RenderSceneMesh != null)
-            {
-                r.Entity.RenderSceneMesh.AutoRegister = true;
-                r.Entity.RenderSceneMesh.Register();
-            }
         }
 
         // Restore hierarchy SECOND
@@ -129,7 +117,6 @@ public class DeleteMapObjectsAction : ViewportAction
 
                 r.Entity.Parent = r.Parent;
                 r.Parent.AddChild(r.Entity, idx);
-                r.Entity.UpdateRenderModel();
             }
         }
 
@@ -139,8 +126,10 @@ public class DeleteMapObjectsAction : ViewportAction
             sel.ClearSelection();
 
             foreach (var r in Records)
+            {
                 if (r.Entity != null)
                     sel.AddSelection(r.Entity);
+            }
         }
 
         return ActionEvent.ObjectAddedRemoved;

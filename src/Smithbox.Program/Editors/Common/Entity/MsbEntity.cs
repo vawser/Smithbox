@@ -7,10 +7,8 @@ using StudioCore.Renderer;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Numerics;
 using System.Reflection;
-using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
@@ -27,52 +25,16 @@ public class MsbEntity : Entity
     protected int CurrentNPCParamID = 0;
     protected int[] ModelMasks = null;
 
-    /// <summary>
-    /// Constructor
-    /// </summary>
-    public MsbEntity(IUniverse owner) : base(owner)
-    {
-        Owner = owner;
-    }
-
-    /// <summary>
-    /// Constructer: container, object
-    /// </summary>
-    public MsbEntity(IUniverse owner, ObjectContainer map, object msbo) : base(owner, map, msbo)
-    {
-        Owner = owner;
-        Container = map;
-        WrappedObject = msbo;
-    }
-
-    /// <summary>
-    /// Constructer: container, object, entity type
-    /// </summary>
-    public MsbEntity(IUniverse owner, ObjectContainer map, object msbo, MsbEntityType type) : base(owner, map, msbo)
-    {
-        Owner = owner;
-        Container = map;
-        WrappedObject = msbo;
-        Type = type;
-    }
-
-    /// <summary>
-    /// The entity type of this entity.
-    /// </summary>
     public MsbEntityType Type { get; set; }
 
-    /// <summary>
-    /// The map container this entity belongs to.
-    /// </summary>
+    public bool IsSwitchingRenderType = false;
+    private RenderModelType EntityRenderType = RenderModelType.Wireframe;
+
     public MapContainer ContainingMap
     {
         get => (MapContainer)Container;
         set => Container = value;
     }
-
-    /// <summary>
-    /// The Map Editor name for this entity.
-    /// </summary>
     public override string PrettyName
     {
         get
@@ -80,16 +42,11 @@ public class MsbEntity : Entity
             return $@"{Utils.ImGuiEscape(Name, null)}";
         }
     }
+    public override bool HasTransform => 
+        Type != MsbEntityType.Event && 
+        Type != MsbEntityType.DS2GeneratorRegist &&
+        Type != MsbEntityType.DS2Event;
 
-    /// <summary>
-    /// The transform state for this entity.
-    /// </summary>
-    public override bool HasTransform => Type != MsbEntityType.Event && Type != MsbEntityType.DS2GeneratorRegist &&
-                                         Type != MsbEntityType.DS2Event;
-
-    /// <summary>
-    /// The map ID of the parent entity that this entity belongs to.
-    /// </summary>
     [XmlIgnore]
     public string MapID
     {
@@ -110,11 +67,557 @@ public class MsbEntity : Entity
         }
     }
 
-    /// <summary>
-    /// Get the model masks for the current WrappedObject (if it is an enemy)
-    /// Direct references to param fields here, so must be updated if PARAM changes.
-    /// </summary>
-    /// <returns></returns>
+    public MsbEntity(IUniverse owner, ObjectContainer map, object msbo, MsbEntityType type) : base(owner, map, msbo)
+    {
+        Owner = owner;
+        Container = map;
+        WrappedObject = msbo;
+        Type = type;
+
+        AssignDrawable();
+    }
+
+    public void AssignDrawable()
+    {
+        switch(Type)
+        {
+            case MsbEntityType.Part:
+                AssignPartDrawable();
+                break;
+
+            case MsbEntityType.Region:
+                AssignRegionDrawable();
+                break;
+
+            case MsbEntityType.Light:
+                AssignLightDrawable();
+                break;
+
+            case MsbEntityType.DS2Generator:
+                AssignGeneratorDrawable();
+                break;
+
+            case MsbEntityType.DS2EventLocation:
+                AssignEventDrawable();
+                break;
+
+            case MsbEntityType.AutoInvadePoint:
+                AssignInvasionPointDrawable();
+                break;
+
+            case MsbEntityType.Navmesh:
+                AssignNavmeshDrawable();
+                break;
+
+            case MsbEntityType.LightProbeVolume:
+                AssignLightProbeDrawable();
+                break;
+
+            default: break;
+        }
+    }
+
+    public void AssignPartDrawable()
+    {
+        var curUniverse = Owner as MapUniverse;
+        var curProject = curUniverse.Project;
+
+        ResourceDescriptor asset;
+
+        var modelProp = GetProperty("ModelName");
+
+        if (modelProp == null)
+            return;
+
+        var modelName = (string)modelProp.GetValue(WrappedObject);
+        var amapid = PathBuilder.GetAssetMapID(curProject, MapID);
+
+        // Map Piece
+        if (EntityHelper.IsPartMapPiece(this))
+        {
+            var name = ModelLocator.MapModelNameToAssetName(curProject, amapid, modelName);
+            asset = ModelLocator.GetMapModel(curProject, amapid, name, name);
+
+            RenderSceneMesh = CreateMapPieceMesh(asset);
+        }
+
+        // Enemy
+        if (EntityHelper.IsPartEnemy(this) || EntityHelper.IsPartDummyEnemy(this))
+        {
+            asset = ModelLocator.GetChrModel(curProject, modelName, modelName);
+
+            RenderSceneMesh = CreateCharacterMesh(asset);
+
+            if(RenderSceneMesh is MeshRenderableProxy meshProxy)
+            {
+                if(IsCharacterPlaceholder(meshProxy, modelName, ProjectAliasType.Characters))
+                {
+                    RenderSceneMesh = CreateCharacterProxyMesh();
+                }
+                if (IsInteractablePlaceholder(meshProxy, modelName, ProjectAliasType.Characters))
+                {
+                    RenderSceneMesh = CreateInteractableProxyMesh();
+                }
+            }
+        }
+
+        // Player
+        if (EntityHelper.IsPartPlayer(this))
+        {
+            RenderSceneMesh = CreatePlayerProxyMesh();
+        }
+
+        // Asset
+        if (EntityHelper.IsPartAsset(this) || EntityHelper.IsPartDummyAsset(this))
+        {
+            asset = ModelLocator.GetObjModel(curProject, modelName, modelName);
+
+            RenderSceneMesh = CreateObjectMesh(asset);
+
+            if (RenderSceneMesh is MeshRenderableProxy meshProxy)
+            {
+                if (IsAssetPlaceholder(meshProxy, modelName, ProjectAliasType.Assets))
+                {
+                    RenderSceneMesh = CreateObjectProxyMesh();
+                }
+            }
+        }
+
+        // Collision
+        if (EntityHelper.IsPartCollision(this))
+        {
+            var name = ModelLocator.MapModelNameToAssetName(curProject, amapid, modelName);
+            asset = ModelLocator.GetMapCollisionModel(curProject, amapid, name);
+
+            RenderSceneMesh = CreateCollisionMesh(asset, false);
+        }
+
+        // Connect Collision
+        if (EntityHelper.IsPartConnectCollision(this))
+        {
+            var name = ModelLocator.MapModelNameToAssetName(curProject, amapid, modelName);
+            asset = ModelLocator.GetMapCollisionModel(curProject, amapid, name);
+
+            RenderSceneMesh = CreateCollisionMesh(asset, true);
+        }
+
+        // Navmesh
+        if (EntityHelper.IsPartNavmesh(this))
+        {
+            var name = ModelLocator.MapModelNameToAssetName(curProject, amapid, modelName);
+            asset = ModelLocator.GetMapNVMModel(curProject, amapid, name);
+
+            RenderSceneMesh = CreateNavmeshMesh(asset);
+        }
+    }
+
+    public MeshRenderableProxy CreateMapPieceMesh(ResourceDescriptor asset)
+    {
+        var curUniverse = Owner as MapUniverse;
+        var curProject = curUniverse.Project;
+        var scene = curUniverse.GetCurrentScene();
+
+        var mesh = MeshRenderableProxy.MeshRenderableFromFlverResource(scene, 
+            asset.AssetVirtualPath, ModelMarkerType.None, GetModelMasks());
+
+        mesh.World = GetWorldMatrix();
+        mesh.SetSelectable(this);
+        mesh.DrawFilter = RenderFilter.MapPiece;
+
+        LoadAsset(asset, "Loading map piece...");
+
+        return mesh;
+    }
+
+    public MeshRenderableProxy CreateCharacterMesh(ResourceDescriptor asset)
+    {
+        var curUniverse = Owner as MapUniverse;
+        var curProject = curUniverse.Project;
+        var scene = curUniverse.GetCurrentScene();
+
+        var mesh = MeshRenderableProxy.MeshRenderableFromFlverResource(scene,
+            asset.AssetVirtualPath, ModelMarkerType.Enemy, GetModelMasks());
+
+        mesh.World = GetWorldMatrix();
+        mesh.SetSelectable(this);
+        mesh.DrawFilter = RenderFilter.Character;
+
+        LoadAsset(asset, "Loading character...");
+
+        return mesh;
+    }
+
+    public MeshRenderableProxy CreateObjectMesh(ResourceDescriptor asset)
+    {
+        var curUniverse = Owner as MapUniverse;
+        var curProject = curUniverse.Project;
+        var scene = curUniverse.GetCurrentScene();
+
+        var mesh = MeshRenderableProxy.MeshRenderableFromFlverResource(scene,
+            asset.AssetVirtualPath, ModelMarkerType.Object, GetModelMasks());
+
+        mesh.World = GetWorldMatrix();
+        mesh.SetSelectable(this);
+        mesh.DrawFilter = RenderFilter.Object;
+
+        LoadAsset(asset, "Loading object...");
+
+        return mesh;
+    }
+
+    public MeshRenderableProxy CreateCollisionMesh(ResourceDescriptor asset, bool isConnectCollision)
+    {
+        var curUniverse = Owner as MapUniverse;
+        var scene = curUniverse.GetCurrentScene();
+
+        var mesh = MeshRenderableProxy.MeshRenderableFromCollisionResource(
+                scene, asset.AssetVirtualPath, ModelMarkerType.None);
+
+        mesh.World = GetWorldMatrix();
+        mesh.SetSelectable(this);
+        mesh.DrawFilter = RenderFilter.Collision;
+
+        if (isConnectCollision)
+        {
+            mesh.DrawFilter = RenderFilter.ConnectCollision;
+        }
+
+        LoadAsset(asset, "Loading collision...");
+
+        return mesh;
+    }
+
+    public MeshRenderableProxy CreateNavmeshMesh(ResourceDescriptor asset)
+    {
+        var curUniverse = Owner as MapUniverse;
+        var curProject = curUniverse.Project;
+        var scene = curUniverse.GetCurrentScene();
+
+        if (curProject.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+            return null;
+
+        var mesh = MeshRenderableProxy.MeshRenderableFromNVMResource(
+                scene, asset.AssetVirtualPath, ModelMarkerType.None);
+
+        mesh.World = GetWorldMatrix();
+        mesh.SetSelectable(this);
+        mesh.DrawFilter = RenderFilter.Navmesh;
+
+        LoadAsset(asset, "Loading navmesh...");
+
+        return mesh;
+    }
+
+    public void LoadAsset(ResourceDescriptor asset, string jobMessage)
+    {
+        ResourceJobBuilder job = ResourceManager.CreateNewJob(jobMessage);
+
+        if (!ResourceManager.IsResourceLoaded(asset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly))
+        {
+            if (asset.AssetArchiveVirtualPath != null)
+            {
+                job.AddLoadArchiveTask(asset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly,
+                    false);
+            }
+            else if (asset.AssetVirtualPath != null)
+            {
+                job.AddLoadFileTask(asset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
+            }
+
+            Task task = job.Complete();
+        }
+    }
+
+    public DebugPrimitiveRenderableProxy CreateCharacterProxyMesh()
+    {
+        var curUniverse = Owner as MapUniverse;
+        var curProject = curUniverse.Project;
+        var scene = curUniverse.GetCurrentScene();
+
+        var mesh = RenderableHelper.GetEnemyBoxProxy(scene);
+
+        mesh.World = GetWorldMatrix();
+        mesh.SetSelectable(this);
+        mesh.DrawFilter = RenderFilter.Character;
+
+        return mesh;
+    }
+
+    public DebugPrimitiveRenderableProxy CreateInteractableProxyMesh()
+    {
+        var curUniverse = Owner as MapUniverse;
+        var curProject = curUniverse.Project;
+        var scene = curUniverse.GetCurrentScene();
+
+        var mesh = RenderableHelper.GetInteractableSphereProxy(scene);
+
+        mesh.World = GetWorldMatrix();
+        mesh.SetSelectable(this);
+        mesh.DrawFilter = RenderFilter.Character;
+
+        return mesh;
+    }
+
+    public DebugPrimitiveRenderableProxy CreatePlayerProxyMesh()
+    {
+        var curUniverse = Owner as MapUniverse;
+        var curProject = curUniverse.Project;
+        var scene = curUniverse.GetCurrentScene();
+
+        var mesh = RenderableHelper.GetPlayerBoxProxy(scene);
+
+        mesh.World = GetWorldMatrix();
+        mesh.SetSelectable(this);
+        mesh.DrawFilter = RenderFilter.Character;
+
+        return mesh;
+    }
+
+    public DebugPrimitiveRenderableProxy CreateObjectProxyMesh()
+    {
+        var curUniverse = Owner as MapUniverse;
+        var curProject = curUniverse.Project;
+        var scene = curUniverse.GetCurrentScene();
+
+        var mesh = RenderableHelper.GetDefaultBoxProxy(scene);
+
+        mesh.World = GetWorldMatrix();
+        mesh.SetSelectable(this);
+        mesh.DrawFilter = RenderFilter.Object;
+
+        return mesh;
+    }
+
+    public void AssignRegionDrawable()
+    {
+        var curUniverse = Owner as MapUniverse;
+        var curProject = curUniverse.Project;
+        var scene = curUniverse.GetCurrentScene();
+
+        DebugPrimitiveRenderableProxy mesh = null;
+
+        if (WrappedObject is IMsbRegion r)
+        {
+            // SOLID
+            if (EntityRenderType is RenderModelType.Solid)
+            {
+                // BOX
+                if (r.Shape is MSB.Shape.Box)
+                {
+                    mesh = RenderableHelper.GetSolidBoxRegionProxy(scene);
+                }
+                // SPHERE
+                else if (r.Shape is MSB.Shape.Sphere)
+                {
+                    mesh = RenderableHelper.GetSolidSphereRegionProxy(scene);
+                }
+                // CYLINDER
+                else if (r.Shape is MSB.Shape.Cylinder)
+                {
+                    mesh = RenderableHelper.GetSolidCylinderRegionProxy(scene);
+                }
+                // POINT
+                else if (r.Shape is MSB.Shape.Point)
+                {
+                    mesh = RenderableHelper.GetSolidPointRegionProxy(scene);
+                }
+                // RECTANGLE
+                else if (r.Shape is MSB.Shape.Rectangle)
+                {
+                    mesh = RenderableHelper.GetSolidBoxRegionProxy(scene);
+                }
+                // CIRCLE
+                else if (r.Shape is MSB.Shape.Circle)
+                {
+                    mesh = RenderableHelper.GetSolidCylinderRegionProxy(scene);
+                }
+                // COMPOSITE
+                else if (r.Shape is MSB.Shape.Composite)
+                {
+                    mesh = RenderableHelper.GetSolidPointRegionProxy(scene);
+                }
+            }
+            // WIREFRAME
+            else if (EntityRenderType is RenderModelType.Wireframe)
+            {
+                // BOX
+                if (r.Shape is MSB.Shape.Box)
+                {
+                    mesh = RenderableHelper.GetBoxRegionProxy(scene);
+                }
+                // SPHERE
+                else if (r.Shape is MSB.Shape.Sphere)
+                {
+                    mesh = RenderableHelper.GetSphereRegionProxy(scene);
+                }
+                // CYLINDER
+                else if (r.Shape is MSB.Shape.Cylinder)
+                {
+                    mesh = RenderableHelper.GetCylinderRegionProxy(scene);
+                }
+                // POINT
+                else if (r.Shape is MSB.Shape.Point)
+                {
+                    mesh = RenderableHelper.GetPointRegionProxy(scene);
+                }
+                // RECTANGLE
+                else if (r.Shape is MSB.Shape.Rectangle)
+                {
+                    mesh = RenderableHelper.GetBoxRegionProxy(scene);
+                }
+                // CIRCLE
+                else if (r.Shape is MSB.Shape.Circle)
+                {
+                    mesh = RenderableHelper.GetCylinderRegionProxy(scene);
+                }
+                // COMPOSITE
+                else if (r.Shape is MSB.Shape.Composite)
+                {
+                    mesh = RenderableHelper.GetPointRegionProxy(scene);
+                }
+            }
+        }
+
+        if (mesh == null)
+            throw new NotSupportedException($"No region model proxy was specified for {WrappedObject.GetType()}");
+
+        mesh.World = GetWorldMatrix();
+        mesh.SetSelectable(this);
+        mesh.DrawFilter = RenderFilter.Region;
+
+        RenderSceneMesh = mesh;
+    }
+
+    public void AssignLightDrawable()
+    {
+        var curUniverse = Owner as MapUniverse;
+        var curProject = curUniverse.Project;
+        var scene = curUniverse.GetCurrentScene();
+
+        var light = (BTL.Light)WrappedObject;
+
+        DebugPrimitiveRenderableProxy mesh = null;
+
+        // SOLID
+        if (EntityRenderType is RenderModelType.Solid)
+        {
+            if (light.Type is BTL.LightType.Directional)
+            {
+                mesh = RenderableHelper.GetSolidDirectionalLightProxy(this, scene);
+            }
+
+            if (light.Type is BTL.LightType.Point)
+            {
+                mesh = RenderableHelper.GetSolidPointLightProxy(this, scene);
+            }
+
+            if (light.Type is BTL.LightType.Spot)
+            {
+                mesh = RenderableHelper.GetSolidSpotLightProxy(this, scene);
+            }
+        }
+        // WIREFRAME
+        else if (EntityRenderType is RenderModelType.Wireframe)
+        {
+            if (light.Type is BTL.LightType.Directional)
+            {
+                mesh = RenderableHelper.GetDirectionalLightProxy(scene);
+            }
+
+            if (light.Type is BTL.LightType.Point)
+            {
+                mesh = RenderableHelper.GetPointLightProxy(scene);
+            }
+
+            if (light.Type is BTL.LightType.Spot)
+            {
+                mesh = RenderableHelper.GetSpotLightProxy(scene);
+            }
+        }
+
+        if (mesh == null)
+            throw new Exception($"Unexpected BTL LightType: {light.Type}");
+
+        mesh.World = GetWorldMatrix();
+        mesh.SetSelectable(this);
+        mesh.DrawFilter = RenderFilter.Light;
+
+        RenderSceneMesh = mesh;
+    }
+
+    // DS2
+    public void AssignGeneratorDrawable()
+    {
+
+    }
+
+    // DS2
+    public void AssignEventDrawable()
+    {
+        var curUniverse = Owner as MapUniverse;
+        var curProject = curUniverse.Project;
+        var scene = curUniverse.GetCurrentScene();
+
+        DebugPrimitiveRenderableProxy mesh = RenderableHelper.GetBoxRegionProxy(scene);
+
+        mesh.World =GetWorldMatrix();
+        mesh.SetSelectable(this);
+        mesh.DrawFilter = RenderFilter.Region;
+
+        RenderSceneMesh = mesh;
+    }
+
+    public void AssignInvasionPointDrawable()
+    {
+        var curUniverse = Owner as MapUniverse;
+        var curProject = curUniverse.Project;
+        var scene = curUniverse.GetCurrentScene();
+
+        var aip = (AIP.AutoInvadePointInstance)WrappedObject;
+
+        DebugPrimitiveRenderableProxy mesh = null;
+
+        mesh = RenderableHelper.GetAutoInvadeSphereProxy(scene);
+
+        if (mesh == null)
+            throw new Exception($"Unexpected AIP type");
+
+        mesh.World = GetWorldMatrix();
+        mesh.SetSelectable(this);
+        mesh.DrawFilter = RenderFilter.AutoInvade;
+
+        RenderSceneMesh = mesh;
+    }
+
+    public void AssignNavmeshDrawable()
+    {
+        var curUniverse = Owner as MapUniverse;
+        var curProject = curUniverse.Project;
+        var scene = curUniverse.GetCurrentScene();
+    }
+
+    public void AssignLightProbeDrawable()
+    {
+        var curUniverse = Owner as MapUniverse;
+        var curProject = curUniverse.Project;
+        var scene = curUniverse.GetCurrentScene(); 
+        
+        var lightProbe = (BTPB.Probe)WrappedObject;
+
+        DebugPrimitiveRenderableProxy mesh = null;
+
+        mesh = RenderableHelper.GetLightProbeSphereProxy(scene);
+
+        if (mesh == null)
+            throw new Exception($"Unexpected BTPB type");
+
+        mesh.World = GetWorldMatrix();
+        mesh.SetSelectable(this);
+        mesh.DrawFilter = RenderFilter.LightProbe;
+
+        RenderSceneMesh = mesh;
+    }
+
     public int[] GetModelMasks()
     {
         int[] callback(Param.Row row, int count = 32)
@@ -270,12 +773,6 @@ public class MsbEntity : Entity
         return null;
     }
 
-    public bool IsSwitchingRenderType = false;
-    private RenderModelType EntityRenderType = RenderModelType.Wireframe;
-
-    /// <summary>
-    /// Switches the current rendering type for this entity, and forces the mesh to update
-    /// </summary>
     public void SwitchRenderType()
     {
         IsSwitchingRenderType = true;
@@ -295,114 +792,6 @@ public class MsbEntity : Entity
         IsSwitchingRenderType = false;
     }
 
-    /// <summary>
-    /// Update the render model of this entity.
-    /// </summary>
-    public override void UpdateRenderModel()
-    {
-        if (!CFG.Current.Viewport_Enable_Rendering)
-        {
-            return;
-        }
-
-        // Map Editor
-        if (Owner is MapUniverse)
-        {
-            var universe = (MapUniverse)Owner;
-
-            if (Type == MsbEntityType.DS2Generator)
-            {
-            }
-            else if (Type == MsbEntityType.DS2EventLocation && RenderSceneMesh == null)
-            {
-                if (RenderSceneMesh != null)
-                {
-                    RenderSceneMesh = null;
-                }
-
-                RenderSceneMesh = DrawableHelper.GetDS2EventLocationDrawable(universe.GetCurrentScene(), ContainingMap, this);
-            }
-            else if (Type == MsbEntityType.Region && RenderSceneMesh == null)
-            {
-                if (RenderSceneMesh != null)
-                {
-                    RenderSceneMesh = null;
-                }
-
-                RenderSceneMesh = DrawableHelper.GetRegionDrawable(universe.GetCurrentScene(), ContainingMap, this, EntityRenderType);
-            }
-            else if (Type == MsbEntityType.Light && RenderSceneMesh == null)
-            {
-                if (RenderSceneMesh != null)
-                {
-                    RenderSceneMesh = null;
-                }
-
-                RenderSceneMesh = DrawableHelper.GetLightDrawable(universe.GetCurrentScene(), ContainingMap, this, EntityRenderType);
-            }
-            else if (Type == MsbEntityType.AutoInvadePoint && RenderSceneMesh == null)
-            {
-                if (RenderSceneMesh != null)
-                {
-                    RenderSceneMesh = null;
-                }
-
-                RenderSceneMesh = DrawableHelper.GetAutoInvadeDrawable(universe.GetCurrentScene(), ContainingMap, this, EntityRenderType);
-            }
-            else
-            {
-                PropertyInfo modelProp = GetProperty("ModelName");
-
-                if (modelProp != null) // Check if ModelName property exists
-                {
-                    var model = (string)modelProp.GetValue(WrappedObject);
-
-                    if (model != null)
-                    {
-                        var updateMesh = false;
-
-                        if (_currentModelName != model)
-                            updateMesh = true;
-
-                        //if(_currentModelName != "" && _currentModelName != null)
-                        //{
-                        //    if(RenderSceneMesh is MeshRenderableProxy meshProxy)
-                        //    {
-                        //        if(meshProxy.ResourceHandle == null)
-                        //        {
-                        //            updateMesh = true;
-                        //        }
-                        //    }
-                        //}
-
-                        if (updateMesh)
-                        {
-                            _currentModelName = model;
-
-                            PropertyInfo paramProp = GetProperty("NPCParamID");
-                            if (paramProp != null)
-                            {
-                                var id = (int)paramProp.GetValue(WrappedObject);
-
-                                ModelMasks = GetModelMasks();
-                                CurrentNPCParamID = id;
-                            }
-
-                            RenderSceneMesh = DrawableHelper.GetModelDrawable(Owner, universe.GetCurrentScene(), ContainingMap, this, model, true, ModelMasks);
-                        }
-                    }
-                }
-            }
-        }
-
-        base.UpdateRenderModel();
-    }
-
-    private string _currentModelName = null;
-
-    /// <summary>
-    /// Build the reference map for this entity.
-    /// </summary>
     public override void BuildReferenceMap()
     {
         if (Owner is MapUniverse)
@@ -448,9 +837,6 @@ public class MsbEntity : Entity
         }
     }
 
-    /// <summary>
-    /// Return local transform for this entity.
-    /// </summary>
     public override Transform GetLocalTransform()
     {
         Transform t = base.GetLocalTransform();
@@ -537,21 +923,91 @@ public class MsbEntity : Entity
         return t;
     }
 
-    /// <summary>
-    /// Return duplicate of the passed entity.
-    /// </summary>
     internal override Entity DuplicateEntity(object clone)
     {
-        return new MsbEntity(Owner, Container, clone);
+        var curClone = clone;
+
+        return new MsbEntity(Owner, Container, curClone, Type);
     }
 
-    /// <summary>
-    /// Return clone of this entity.
-    /// </summary>
     public override Entity Clone()
     {
         var c = (MsbEntity)base.Clone();
         c.Type = Type;
         return c;
+    }
+
+    public override void UpdateRenderModel()
+    {
+        base.UpdateRenderModel();
+    }
+
+    public bool IsCharacterPlaceholder(MeshRenderableProxy meshProxy, string modelName, ProjectAliasType aliasType)
+    {
+        var curUniverse = Owner as MapUniverse;
+        var curProject = curUniverse.Project;
+        curProject.Handler.ProjectData.Aliases.TryGetValue(aliasType, out var list);
+
+        if(list != null)
+        {
+            foreach(var alias in list)
+            {
+                if (alias.ID == modelName)
+                {
+                    if (alias.Tags.Contains("character_placeholder"))
+                    {
+                        return true;
+                    }
+                }
+            }
+        }
+
+        return false;
+    }
+
+    public bool IsInteractablePlaceholder(MeshRenderableProxy meshProxy, string modelName, ProjectAliasType aliasType)
+    {
+        var curUniverse = Owner as MapUniverse;
+        var curProject = curUniverse.Project;
+        curProject.Handler.ProjectData.Aliases.TryGetValue(aliasType, out var list);
+
+        if(list != null)
+        {
+            foreach(var alias in list)
+            {
+                if (alias.ID == modelName)
+                {
+                    if (alias.Tags.Contains("interactable_placeholder"))
+                    {
+                        return true;
+                    }
+                }
+            }
+        }
+
+        return false;
+    }
+
+    public bool IsAssetPlaceholder(MeshRenderableProxy meshProxy, string modelName, ProjectAliasType aliasType)
+    {
+        var curUniverse = Owner as MapUniverse;
+        var curProject = curUniverse.Project;
+        curProject.Handler.ProjectData.Aliases.TryGetValue(aliasType, out var list);
+
+        if (list != null)
+        {
+            foreach (var alias in list)
+            {
+                if (alias.ID == modelName)
+                {
+                    if (alias.Tags.Contains("asset_placeholder"))
+                    {
+                        return true;
+                    }
+                }
+            }
+        }
+
+        return false;
     }
 }

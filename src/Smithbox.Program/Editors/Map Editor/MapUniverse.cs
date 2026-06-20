@@ -144,10 +144,6 @@ public class MapUniverse : IUniverse
                     using var __texScope = Profiler.TracyZoneAuto();
                     resourceHandler.SetupTextureLoadLists();
                     __texScope.Dispose();
-
-                    using var __maskScope = Profiler.TracyZoneAuto();
-                    resourceHandler.SetupModelMasks(newMap);
-                    __maskScope.Dispose();
                 }
 
                 using var __lightScope = Profiler.TracyZoneAuto();

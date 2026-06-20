@@ -1,17 +1,11 @@
 [
   {
-    "ID": "default",
-    "Name": "Default",
-    "Tags": [
-      "default"
-    ]
-  },
-  {
     "ID": "aeg000_100",
     "Name": "Interaction Box",
     "Tags": [
       "asset",
-      "dummy"
+      "dummy",
+      "asset_placeholder"
     ]
   },
   {
@@ -1016,6 +1010,13 @@
     "Name": "Snowy Rockface (Rectangle)",
     "Tags": [
       "asset"
+    ]
+  },
+  {
+    "ID": "default",
+    "Name": "Default",
+    "Tags": [
+      "default"
     ]
   },
   {

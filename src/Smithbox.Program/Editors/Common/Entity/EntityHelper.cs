@@ -183,6 +183,13 @@ public static class EntityHelper
             ent.WrappedObject is MSB_AC6.Part.ConnectCollision ||
             ent.WrappedObject is MSB_NR.Part.ConnectCollision ? true : false;
     }
+    public static bool IsPartNavmesh(Entity ent)
+    {
+        return ent.WrappedObject is MSB1.Part.Navmesh ||
+            ent.WrappedObject is MSB2.Part.Navmesh ||
+            ent.WrappedObject is MSBB.Part.Navmesh ||
+            ent.WrappedObject is MSBD.Part.Navmesh  ? true : false;
+    }
 
     /// <summary>
     /// Returns true if this entity is an Player

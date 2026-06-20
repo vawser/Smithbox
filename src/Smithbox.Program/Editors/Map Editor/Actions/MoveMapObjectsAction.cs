@@ -126,10 +126,6 @@ public class MoveMapObjectsAction : ViewportAction
 
                 // Update render model
                 Moveables[i].UpdateRenderModel();
-                if (Moveables[i].RenderSceneMesh != null)
-                {
-                    Moveables[i].RenderSceneMesh.SetSelectable(Moveables[i]);
-                }
 
                 // Mark maps as having unsaved changes
                 sourceMap.HasUnsavedChanges = true;
@@ -206,10 +202,6 @@ public class MoveMapObjectsAction : ViewportAction
 
             // Update render model
             Moveables[i].UpdateRenderModel();
-            if (Moveables[i].RenderSceneMesh != null)
-            {
-                Moveables[i].RenderSceneMesh.SetSelectable(Moveables[i]);
-            }
         }
 
         if (SetSelection)

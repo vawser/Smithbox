@@ -273,9 +273,6 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
 
             if (needsPlaceholder)
             {
-                _placeholderProxy =
-                    RenderableHelper.GetModelMarkerProxy(_renderablesSet, _placeholderType);
-
                 if(useTreePlaceholder)
                 {
                     _placeholderProxy =
@@ -288,26 +285,25 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
                         RenderableHelper.GetBushProxy(_renderablesSet);
                     _placeholderProxy.DrawFilter = RenderFilter.SpeedTree;
                 }
-                else
-                {
-                    _placeholderProxy.DrawFilter = _drawfilter;
-                }
 
-                _placeholderProxy.World = World;
-                _placeholderProxy.Visible = Visible;
-                _placeholderProxy.DrawGroups = _drawgroups;
-                if (_selectable != null)
+                if (_placeholderProxy != null)
                 {
-                    _selectable.TryGetTarget(out ISelectable? sel);
-                    if (sel != null)
+                    _placeholderProxy.World = World;
+                    _placeholderProxy.Visible = Visible;
+                    _placeholderProxy.DrawGroups = _drawgroups;
+                    if (_selectable != null)
                     {
-                        _placeholderProxy.SetSelectable(sel);
+                        _selectable.TryGetTarget(out ISelectable? sel);
+                        if (sel != null)
+                        {
+                            _placeholderProxy.SetSelectable(sel);
+                        }
                     }
-                }
 
-                if (!_registered)
-                {
-                    _placeholderProxy.Register();
+                    if (!_registered)
+                    {
+                        _placeholderProxy.Register();
+                    }
                 }
             }
         }

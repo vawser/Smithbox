@@ -3,7 +3,8 @@
     "ID": "c0000",
     "Name": "Human",
     "Tags": [
-      "creature"
+      "creature",
+      "character_placeholder"
     ]
   },
   {

@@ -147,6 +147,10 @@ public class MapObjectPropertyChangeAction : ViewportAction
         }
 
         TargetEntity.UpdateRenderModel();
+        if (TargetEntity is MsbEntity msbEnt)
+        {
+            msbEnt.AssignDrawable();
+        }
 
         return ActionEvent.NoEvent;
     }
@@ -183,6 +187,10 @@ public class MapObjectPropertyChangeAction : ViewportAction
         }
 
         TargetEntity.UpdateRenderModel();
+        if (TargetEntity is MsbEntity msbEnt)
+        {
+            msbEnt.AssignDrawable();
+        }
 
         return ActionEvent.NoEvent;
     }

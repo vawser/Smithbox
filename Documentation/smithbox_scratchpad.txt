@@ -18,3 +18,5 @@
  - Implement ENFL sub-editor
  - Implement the other MSB meta elements
  
+todo: fix the issue with duplicate/delete for the meshes in the Map Editor
+todo: check model masks stuff works
