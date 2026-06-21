@@ -1997,7 +1997,7 @@
     {
       "Field": "syncTotalHp",
       "Name": "Sync to Total HP Bar",
-      "Description": "Determines whether HP change from this SpEffect is synchronized to the team fight’s total HP bar."
+      "Description": "Determines whether HP change from this SpEffect is synchronized to the team fight’s total HP bar (only valid for fights with an extra independent total HP bar, e.g., a lightning ball)."
     },
     {
       "Field": "unknown_241b_6",
