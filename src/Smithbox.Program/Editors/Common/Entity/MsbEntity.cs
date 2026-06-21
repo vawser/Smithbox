@@ -48,24 +48,7 @@ public class MsbEntity : Entity
         Type != MsbEntityType.DS2Event;
 
     [XmlIgnore]
-    public string MapID
-    {
-        get
-        {
-            Entity parent = Parent;
-            while (parent != null && parent is MsbEntity e)
-            {
-                if (e.Type == MsbEntityType.MapRoot)
-                {
-                    return parent.Name;
-                }
-
-                parent = parent.Parent;
-            }
-
-            return null;
-        }
-    }
+    public string MapID { get; set; }
 
     public MsbEntity(IUniverse owner, ObjectContainer map, object msbo, MsbEntityType type) : base(owner, map, msbo)
     {
@@ -73,8 +56,7 @@ public class MsbEntity : Entity
         Container = map;
         WrappedObject = msbo;
         Type = type;
-
-        AssignDrawable();
+        MapID = map.Name;
     }
 
     public void AssignDrawable()
@@ -110,7 +92,7 @@ public class MsbEntity : Entity
                 break;
 
             case MsbEntityType.LightProbeVolume:
-                AssignLightProbeDrawable();
+                //AssignLightProbeDrawable();
                 break;
 
             default: break;
@@ -937,8 +919,17 @@ public class MsbEntity : Entity
         return c;
     }
 
+    private bool SetupRenderMesh = false;
+
     public override void UpdateRenderModel()
     {
+        if(!SetupRenderMesh)
+        {
+            SetupRenderMesh = true;
+
+            AssignDrawable();
+        }
+
         base.UpdateRenderModel();
     }
 

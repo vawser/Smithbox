@@ -206,7 +206,16 @@ public class ProjectEnumMenu
     {
         UIHelper.SimpleHeader("Enums", "");
 
-        DisplayEditorTable();
+        var project = Smithbox.Orchestrator.SelectedProject;
+
+        if (project.Handler.ParamData == null)
+        {
+            ImGui.Text("Param Editor needs to be enabled to view and edit enums.");
+        }
+        else
+        {
+            DisplayEditorTable();
+        }
     }
 
     private void DisplayEditorTable()

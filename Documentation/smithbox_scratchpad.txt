@@ -20,3 +20,10 @@
  
 todo: fix the issue with duplicate/delete for the meshes in the Map Editor
 todo: check model masks stuff works
+
+
+        unsafe
+        {
+            ImGuiStyle* style = ImGui.GetStyle();
+            addition = style->CellPadding.X * 2 + 6f;
+        }
