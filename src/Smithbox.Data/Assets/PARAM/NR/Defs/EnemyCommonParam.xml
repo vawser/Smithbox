@@ -69,36 +69,36 @@
       <SortID>1800</SortID>
     </Field>
     
-    <Field Def="f32 unknown_1" />
-    <Field Def="f32 unknown_2" />
-    <Field Def="f32 unknown_3" />
-    <Field Def="f32 unknown_4" />
-    <Field Def="f32 unknown_5" />
-    <Field Def="f32 unknown_6" />
-    <Field Def="f32 unknown_7" />
-    <Field Def="f32 unknown_8" />
-    <Field Def="f32 unknown_9" />
-    <Field Def="f32 unknown_10" />
-    <Field Def="f32 unknown_11" />
-    <Field Def="f32 unknown_12" />
-    <Field Def="f32 unknown_13" />
-    <Field Def="f32 unknown_14" />
-    <Field Def="f32 unknown_15" />
-    <Field Def="f32 unknown_16" />
-    <Field Def="f32 unknown_17" />
-    <Field Def="f32 unknown_18" />
-    <Field Def="f32 unknown_19" />
-    <Field Def="f32 unknown_20" />
-    <Field Def="f32 unknown_21" />
-    <Field Def="f32 unknown_22" />
-    <Field Def="s32 unknown_23" />
-    <Field Def="s32 unknown_24" />
-    <Field Def="s32 unknown_25" />
-    <Field Def="f32 unknown_26" />
-    <Field Def="s32 unknown_27" />
-    <Field Def="f32 unknown_28" />
-    <Field Def="s32 unknown_29" />
-    <Field Def="s32 unknown_30" />
+    <Field Def="f32 zone1InitialAggro" />
+    <Field Def="f32 zone2InitialAggro" />
+    <Field Def="f32 zone3InitialAggro" />
+    <Field Def="f32 zone4InitialAggro" />
+    <Field Def="f32 distanceThreshold1" />
+    <Field Def="f32 distanceThreshold2" />
+    <Field Def="f32 distanceThreshold3" />
+    <Field Def="f32 dmgLevel0Aggro" />
+    <Field Def="f32 dmgLevel1Aggro" />
+    <Field Def="f32 dmgLevel2Aggro" />
+    <Field Def="f32 dmgLevel3Aggro" />
+    <Field Def="f32 dmgLevel4Aggro" />
+    <Field Def="f32 dmgLevel5Aggro" />
+    <Field Def="f32 dmgLevel6Aggro" />
+    <Field Def="f32 dmgLevel7Aggro" />
+    <Field Def="f32 dmgLevel8Aggro" />
+    <Field Def="f32 dmgLevel9Aggro" />
+    <Field Def="f32 dmgLevel10Aggro" />
+    <Field Def="f32 dmgLevel11Aggro" />
+    <Field Def="f32 offTargetMultiplier1" />
+    <Field Def="f32 offTargetMultiplier2" />
+    <Field Def="f32 offTargetMultiplier3" />
+    <Field Def="s32 offTargetTimePoint1" />
+    <Field Def="s32 offTargetTimePoint2" />
+    <Field Def="s32 offTargetTimePoint3" />
+    <Field Def="f32 aggroTransferAdditionalValue" />
+    <Field Def="s32 aggroTransferAdditionalValueDuration" />
+    <Field Def="f32 playerReviveDamageAggro" />
+    <Field Def="s32 reviveDamageBonusAggroInterval" />
+    <Field Def="s32 reviveDamageBonusAggroDuration" />
     
     <Field Def="dummy8 reserved18[64]">
       <DisplayName>予約</DisplayName>

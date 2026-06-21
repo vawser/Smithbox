@@ -1075,9 +1075,9 @@
       "Description": "Flat amount of revive damage."
     },
     {
-      "Field": "unknown_8",
-      "Name": "",
-      "Description": ""
+      "Field": "overrideAggro",
+      "Name": "Override Aggro Value",
+      "Description": "Aggro value that overrides the default one during calculation."
     },
     {
       "Field": "subCategory3",

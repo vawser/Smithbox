@@ -1403,7 +1403,7 @@
     <Field Def="s16 reviveDamageCorrection" />
     <Field Def="s16 unknown_7" />
     <Field Def="f32 reviveDamage" />
-    <Field Def="f32 unknown_8" />
+    <Field Def="f32 overrideAggro" />
     <Field Def="u8 subCategory3" />
     <Field Def="u8 subCategory4" />
     <Field Def="u8 subCategory5" />

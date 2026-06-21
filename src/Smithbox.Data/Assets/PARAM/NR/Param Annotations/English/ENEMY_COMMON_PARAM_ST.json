@@ -45,154 +45,154 @@
       "Description": "The height that causes an interrupt, which turns out that the enemy is likely to be cut off when going to the end of the path"
     },
     {
-      "Field": "unknown_1",
-      "Name": "",
-      "Description": ""
+      "Field": "zone1InitialAggro",
+      "Name": "Zone 1 Base Aggro",
+      "Description": "Initial aggro value assigned to targets within Distance Threshold 1."
     },
     {
-      "Field": "unknown_2",
-      "Name": "",
-      "Description": ""
+      "Field": "zone2InitialAggro",
+      "Name": "Zone 2 Base Aggro",
+      "Description": "Initial aggro value assigned to targets within Distance Threshold 2."
     },
     {
-      "Field": "unknown_3",
-      "Name": "",
-      "Description": ""
+      "Field": "zone3InitialAggro",
+      "Name": "Zone 3 Base Aggro",
+      "Description": "Initial aggro value assigned to targets within Distance Threshold 3."
     },
     {
-      "Field": "unknown_4",
-      "Name": "",
-      "Description": ""
+      "Field": "zone4InitialAggro",
+      "Name": "Zone 4 Base Aggro",
+      "Description": "Initial aggro value assigned to targets within Distance Threshold 4."
     },
     {
-      "Field": "unknown_5",
-      "Name": "",
-      "Description": ""
+      "Field": "distanceThreshold1",
+      "Name": "Distance Threshold 1",
+      "Description": "Distance threshold separating Zone 1 and Zone 2."
     },
     {
-      "Field": "unknown_6",
-      "Name": "",
-      "Description": ""
+      "Field": "distanceThreshold2",
+      "Name": "Distance Threshold 2",
+      "Description": "Distance threshold separating Zone 2 and Zone 3."
     },
     {
-      "Field": "unknown_7",
-      "Name": "",
-      "Description": ""
+      "Field": "distanceThreshold3",
+      "Name": "Distance Threshold 3",
+      "Description": "Distance threshold separating Zone 3 and Zone 4."
     },
     {
-      "Field": "unknown_8",
-      "Name": "",
-      "Description": ""
+      "Field": "dmgLevel0Aggro",
+      "Name": "DMG Level 0 Aggro",
+      "Description": "Aggro generated when damage is classified as Level 0: No Impact."
     },
     {
-      "Field": "unknown_9",
-      "Name": "",
-      "Description": ""
+      "Field": "dmgLevel1Aggro",
+      "Name": "DMG Level 1 Aggro",
+      "Description": "Aggro generated when damage is classified as Level 1: Small Impact."
     },
     {
-      "Field": "unknown_10",
-      "Name": "",
-      "Description": ""
+      "Field": "dmgLevel2Aggro",
+      "Name": "DMG Level 2 Aggro",
+      "Description": "Aggro generated when damage is classified as Level 2: Medium Impact."
     },
     {
-      "Field": "unknown_11",
-      "Name": "",
-      "Description": ""
+      "Field": "dmgLevel3Aggro",
+      "Name": "DMG Level 3 Aggro",
+      "Description": "Aggro generated when damage is classified as Level 3: Large Impact."
     },
     {
-      "Field": "unknown_12",
-      "Name": "",
-      "Description": ""
+      "Field": "dmgLevel4Aggro",
+      "Name": "DMG Level 4 Aggro",
+      "Description": "Aggro generated when damage is classified as Level 4: Medium Blow."
     },
     {
-      "Field": "unknown_13",
-      "Name": "",
-      "Description": ""
+      "Field": "dmgLevel5Aggro",
+      "Name": "DMG Level 5 Aggro",
+      "Description": "Aggro generated when damage is classified as Level 5: Push."
     },
     {
-      "Field": "unknown_14",
-      "Name": "",
-      "Description": ""
+      "Field": "dmgLevel6Aggro",
+      "Name": "DMG Level 6 Aggro",
+      "Description": "Aggro generated when damage is classified as Level 6: Strike."
     },
     {
-      "Field": "unknown_15",
-      "Name": "",
-      "Description": ""
+      "Field": "dmgLevel7Aggro",
+      "Name": "DMG Level 7 Aggro",
+      "Description": "Aggro generated when damage is classified as Level 7: Small Blow."
     },
     {
-      "Field": "unknown_16",
-      "Name": "",
-      "Description": ""
+      "Field": "dmgLevel8Aggro",
+      "Name": "DMG Level 8 Aggro",
+      "Description": "Aggro generated when damage is classified as Level 8: Minimal."
     },
     {
-      "Field": "unknown_17",
-      "Name": "",
-      "Description": ""
+      "Field": "dmgLevel9Aggro",
+      "Name": "DMG Level 9 Aggro",
+      "Description": "Aggro generated when damage is classified as Level 9: Uppercut."
     },
     {
-      "Field": "unknown_18",
-      "Name": "",
-      "Description": ""
+      "Field": "dmgLevel10Aggro",
+      "Name": "DMG Level 10 Aggro",
+      "Description": "Aggro generated when damage is classified as Level 10: Blow Backward."
     },
     {
-      "Field": "unknown_19",
-      "Name": "",
-      "Description": ""
+      "Field": "dmgLevel11Aggro",
+      "Name": "DMG Level 11 Aggro",
+      "Description": "Aggro generated when damage is classified as Level 11: Breath."
     },
     {
-      "Field": "unknown_20",
-      "Name": "",
-      "Description": ""
+      "Field": "offTargetMultiplier1",
+      "Name": "Off-Target Multiplier 1",
+      "Description": "Attack aggro multiplier applied after Off-Target Time Point 1 is reached."
     },
     {
-      "Field": "unknown_21",
-      "Name": "",
-      "Description": ""
+      "Field": "offTargetMultiplier2",
+      "Name": "Off-Target Multiplier 2",
+      "Description": "Attack aggro multiplier applied after Off-Target Time Point 2 is reached."
     },
     {
-      "Field": "unknown_22",
-      "Name": "",
-      "Description": ""
+      "Field": "offTargetMultiplier3",
+      "Name": "Off-Target Multiplier 3",
+      "Description": "Attack aggro multiplier applied after Off-Target Time Point 3 is reached."
     },
     {
-      "Field": "unknown_23",
-      "Name": "",
-      "Description": ""
+      "Field": "offTargetTimePoint1",
+      "Name": "Off-Target Time Point 1",
+      "Description": "First elapsed time point after the off-target aggro timer begins."
     },
     {
-      "Field": "unknown_24",
-      "Name": "",
-      "Description": ""
+      "Field": "offTargetTimePoint2",
+      "Name": "Off-Target Time Point 2",
+      "Description": "Second elapsed time point after the off-target aggro timer begins."
     },
     {
-      "Field": "unknown_25",
-      "Name": "",
-      "Description": ""
+      "Field": "offTargetTimePoint3",
+      "Name": "Off-Target Time Point 3",
+      "Description": "Third elapsed time point after the off-target aggro timer begins."
     },
     {
-      "Field": "unknown_26",
-      "Name": "",
-      "Description": ""
+      "Field": "aggroTransferAdditionalValue",
+      "Name": "Aggro Transfer Additional Value",
+      "Description": "Additional aggro applied when aggro is transferred to a new target."
     },
     {
-      "Field": "unknown_27",
-      "Name": "",
-      "Description": ""
+      "Field": "aggroTransferAdditionalValueDuration",
+      "Name": "Additional Aggro Duration",
+      "Description": "Time window during which aggro transfer additional value is applied."
     },
     {
-      "Field": "unknown_28",
-      "Name": "",
-      "Description": ""
+      "Field": "playerReviveDamageAggro",
+      "Name": "Revive Damage Extra Aggro",
+      "Description": "Amount of extra aggro generated each interval after player deals Revive Damage."
     },
     {
-      "Field": "unknown_29",
-      "Name": "",
-      "Description": ""
+      "Field": "reviveDamageBonusAggroInterval",
+      "Name": "Revive Damage Extra Aggro Interval",
+      "Description": "Time interval between each extra aggro tick after Revive Damage is triggered."
     },
     {
-      "Field": "unknown_30",
-      "Name": "",
-      "Description": ""
+      "Field": "reviveDamageBonusAggroDuration",
+      "Name": "Revive Damage Extra Aggro Duration",
+      "Description": "Total duration during which periodic extra aggro is generated after player deals Revive Damage."
     },
     {
       "Field": "reserved18",
