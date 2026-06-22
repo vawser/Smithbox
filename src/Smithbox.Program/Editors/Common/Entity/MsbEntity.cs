@@ -20,6 +20,7 @@ namespace StudioCore.Editors.Common;
 /// </summary>
 public class MsbEntity : Entity
 {
+
     protected IUniverse Owner;
 
     protected int CurrentNPCParamID = 0;
@@ -200,7 +201,7 @@ public class MsbEntity : Entity
         var scene = curUniverse.GetCurrentScene();
 
         var mesh = MeshRenderableProxy.MeshRenderableFromFlverResource(scene, 
-            asset.AssetVirtualPath, ModelMarkerType.None, GetModelMasks());
+            asset.AssetVirtualPath, ModelMarkerType.None, EntityCacheUID, GetModelMasks());
 
         mesh.World = GetWorldMatrix();
         mesh.SetSelectable(this);
@@ -218,7 +219,7 @@ public class MsbEntity : Entity
         var scene = curUniverse.GetCurrentScene();
 
         var mesh = MeshRenderableProxy.MeshRenderableFromFlverResource(scene,
-            asset.AssetVirtualPath, ModelMarkerType.Enemy, GetModelMasks());
+            asset.AssetVirtualPath, ModelMarkerType.Enemy, EntityCacheUID, GetModelMasks());
 
         mesh.World = GetWorldMatrix();
         mesh.SetSelectable(this);
@@ -236,7 +237,7 @@ public class MsbEntity : Entity
         var scene = curUniverse.GetCurrentScene();
 
         var mesh = MeshRenderableProxy.MeshRenderableFromFlverResource(scene,
-            asset.AssetVirtualPath, ModelMarkerType.Object, GetModelMasks());
+            asset.AssetVirtualPath, ModelMarkerType.Object, EntityCacheUID, GetModelMasks());
 
         mesh.World = GetWorldMatrix();
         mesh.SetSelectable(this);
@@ -919,7 +920,7 @@ public class MsbEntity : Entity
         return c;
     }
 
-    private bool SetupRenderMesh = false;
+    public bool SetupRenderMesh = false;
 
     public override void UpdateRenderModel()
     {

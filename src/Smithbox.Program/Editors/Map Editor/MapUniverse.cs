@@ -613,7 +613,7 @@ public class MapUniverse : IUniverse
                 {
                     ResourceDescriptor asset = ModelLocator.GetChrModel(View.Project, $@"c{chrid}", $@"c{chrid}");
                     MeshRenderableProxy model = MeshRenderableProxy.MeshRenderableFromFlverResource(
-                        View.ViewportHandler.ActiveViewport.RenderScene, asset.AssetVirtualPath, ModelMarkerType.Enemy, null);
+                        View.ViewportHandler.ActiveViewport.RenderScene, asset.AssetVirtualPath, ModelMarkerType.Enemy, generatorObjs[row.ID].EntityCacheUID, null);
                     model.DrawFilter = RenderFilter.Character;
                     generatorObjs[row.ID].RenderSceneMesh = model;
                     model.SetSelectable(generatorObjs[row.ID]);

@@ -742,9 +742,9 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
                               cameraDistanceInt);
     }
 
-    public static MeshRenderableProxy MeshRenderableFromFlverResource(RenderScene scene, string virtualPath, ModelMarkerType modelType, IEnumerable<int>? masks)
+    public static MeshRenderableProxy MeshRenderableFromFlverResource(RenderScene scene, string virtualPath, ModelMarkerType modelType, string uid, IEnumerable<int>? masks)
     {
-        var meshProvider = MeshProviderCache.GetFlverMeshProvider(virtualPath, masks);
+        var meshProvider = MeshProviderCache.GetFlverMeshProvider(virtualPath, masks, uid);
 
         MeshRenderableProxy renderable = new(scene.OpaqueRenderables, meshProvider, modelType);
 
@@ -822,6 +822,7 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
     public override void Dispose()
     {
         UnregisterAndRelease();
+        _meshProvider.Release();
         base.Dispose();
     }
 }

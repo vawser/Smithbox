@@ -306,7 +306,7 @@ public class ModelContainer : ObjectContainer
     public void LoadMesh(ResourceJobBuilder job, Entity ent, ResourceDescriptor resource, int index = -1)
     {
         MeshRenderableProxy mesh = MeshRenderableProxy.MeshRenderableFromFlverResource(
-                View.RenderScene, resource.AssetVirtualPath, ModelMarkerType.None, null);
+                View.RenderScene, resource.AssetVirtualPath, ModelMarkerType.None, ent.EntityCacheUID, null);
 
         mesh.DrawFilter = RenderFilter.Meshes;
         mesh.World = ent.GetWorldMatrix();

@@ -187,6 +187,12 @@ public class CloneMapObjectsAction : ViewportAction
         {
             foreach (var record in Records)
             {
+                record.Clone.AssignDrawable();
+                record.Clone.UpdateRenderModel();
+
+                if (record.Clone.RenderSceneMesh != null)
+                    record.Clone.RenderSceneMesh.SetSelectable(record.Clone);
+
                 if (CFG.Current.Toolbar_Duplicate_Increment_Entity_ID)
                 {
                     MapEditorActionHelper.SetUniqueEntityID(View, record.Clone, record.Map);
@@ -235,6 +241,10 @@ public class CloneMapObjectsAction : ViewportAction
         foreach (var record in mapOrdered)
         {
             record.Map.Objects.Remove(record.Clone);
+                
+            record.Clone.RenderSceneMesh?.Dispose();
+            record.Clone.RenderSceneMesh = null;
+            record.Clone.SetupRenderMesh = false;
         }
 
         // Remove from hierarchy

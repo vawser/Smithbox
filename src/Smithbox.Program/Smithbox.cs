@@ -695,7 +695,7 @@ public class Smithbox
                     Smithbox.LogError<Smithbox>("Failed to find Smithbox release.");
                 }
             }
-            catch(Exception e)
+            catch(Exception)
             {
             }
         }

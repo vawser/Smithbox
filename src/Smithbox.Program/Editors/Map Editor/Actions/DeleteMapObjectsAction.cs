@@ -74,6 +74,9 @@ public class DeleteMapObjectsAction : ViewportAction
                 r.Parent.RemoveChild(r.Entity);
                 r.Entity.Parent = null;
             }
+
+            r.Entity.RenderSceneMesh?.Dispose();
+            r.Entity.RenderSceneMesh = null;
         }
 
         if (SetSelection)
@@ -118,6 +121,11 @@ public class DeleteMapObjectsAction : ViewportAction
                 r.Entity.Parent = r.Parent;
                 r.Parent.AddChild(r.Entity, idx);
             }
+        }
+
+        foreach (var r in Records)
+        {
+            r.Entity.AssignDrawable();
         }
 
         if (SetSelection)

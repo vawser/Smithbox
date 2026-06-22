@@ -11,6 +11,7 @@
   - Array properties need fixing
   - String property should set null to "" so the input shows
   - For multi-select, apply change to all
+  - Display name field
   
  - Add automatic add to Models list if ModelName changes for a Part
   
@@ -21,5 +22,5 @@
 - Map Editor:
  - Name seem a bit 'sticky', i.e. changing doesn't immediately update the displayed name
  - Character name lookup is 'sticky', goes out of sync with multiple model changes.
- - Duplicate/Remove actions cause mesh issue (mesh provider seems linked in someway, as changing model causes selected to change, but other 'source' entities lose their mesh.
+ - Duplicate/Remove actions cause mesh issue: mesh provider seems linked in someway, as changing model causes selected to change, but other 'source' entities lose their mesh.
 

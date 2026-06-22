@@ -13,6 +13,17 @@ public static class MeshProviderCache
     {
         return $"{virtualResourcePath}+{uid}";
     }
+    public static FlverMeshProvider GetFlverMeshProvider(
+    string virtualResourcePath, IEnumerable<int> masks, string uid)
+    {
+        if (masks == null || !CFG.Current.Viewport_Enable_Model_Masks)
+            return GetFlverMeshProvider(virtualResourcePath, uid);
+
+        var provider = GetFlverMeshProvider(virtualResourcePath,
+            $"{uid}_masks{string.Join("", masks)}");
+        provider.ModelMasks = masks.ToList();
+        return provider;
+    }
 
     public static FlverMeshProvider GetFlverMeshProvider(string virtualResourcePath, IEnumerable<int> masks)
     {

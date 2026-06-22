@@ -199,6 +199,14 @@ public class ReplicateMapObjectsAction : ViewportAction
                             Clones[i].RenderSceneMesh.AutoRegister = true;
                             Clones[i].RenderSceneMesh.Register();
                         }
+                        else
+                        {
+                            Clones[i].AssignDrawable();
+                            Clones[i].UpdateRenderModel();
+
+                            if (Clones[i].RenderSceneMesh != null)
+                                Clones[i].RenderSceneMesh.SetSelectable(Clones[i]);
+                        }
                     }
                 }
             }
@@ -432,8 +440,10 @@ public class ReplicateMapObjectsAction : ViewportAction
 
             if (Clones[i].RenderSceneMesh != null)
             {
-                Clones[i].RenderSceneMesh.AutoRegister = false;
-                Clones[i].RenderSceneMesh.UnregisterWithScene();
+                Clones[i].RenderSceneMesh?.Dispose();
+                Clones[i].RenderSceneMesh = null;
+
+                Clones[i].SetupRenderMesh = false;
             }
         }
 
