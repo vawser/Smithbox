@@ -208,10 +208,11 @@ public class DuplicateToMapAction
             if (mapID == entry.Key.Filename)
             {
                 var map = entry.Value.MapContainer;
+                var lightContainer = map.BTLParents.FirstOrDefault();
 
                 if (map != null)
                 {
-                    var action = new CloneMapObjectsAction(View, StoredSelection, true, map, null);
+                    var action = new CloneMapObjectsAction(View, StoredSelection, true, map, lightContainer);
                     View.ViewportActionManager.ExecuteAction(action);
 
                     break;

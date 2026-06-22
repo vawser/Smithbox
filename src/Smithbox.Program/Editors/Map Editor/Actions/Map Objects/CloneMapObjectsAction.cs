@@ -75,8 +75,6 @@ public class CloneMapObjectsAction : ViewportAction
                 // Create clone
                 MsbEntity newobj = (MsbEntity)Clonables[i].Clone();
 
-                newobj.AssignDrawable();
-
                 // Persist the supports name bool
                 if (!Clonables[i].SupportsName)
                 {
@@ -182,6 +180,12 @@ public class CloneMapObjectsAction : ViewportAction
             }
         }
 
+        foreach (var record in Records)
+        {
+            record.Clone.Container = record.Map;
+            record.Clone.MapID = record.Map.Name;
+        }
+
         // Apply configuration-based updates (only on first execution)
         if (!isRecorded)
         {
@@ -247,11 +251,17 @@ public class CloneMapObjectsAction : ViewportAction
             record.Clone.SetupRenderMesh = false;
         }
 
+        var parentGroups = Records
+            .Where(r => r.Parent != null)
+            .GroupBy(r => r.Parent);
+
         // Remove from hierarchy
-        foreach (var record in Records.Where(r => r.Parent != null))
+        foreach (var group in parentGroups)
         {
-            record.Parent.RemoveChild(record.Clone);
-            record.Clone.Parent = null;
+            foreach (var record in group.OrderByDescending(x => x.ParentInsertIndex))
+            {
+                record.Parent.RemoveChild(record.Clone);
+            }
         }
 
         // Restore selection to original objects

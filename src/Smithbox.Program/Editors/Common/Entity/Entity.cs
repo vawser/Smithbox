@@ -23,7 +23,6 @@ namespace StudioCore.Editors.Common;
 public class Entity : ISelectable, IDisposable
 {
     public readonly string EntityCacheUID = Guid.NewGuid().ToString("N");
-
     /// <summary>
     /// Internal. Visibility of the entity.
     /// </summary>
@@ -1289,33 +1288,36 @@ public class Entity : ISelectable, IDisposable
                 // CollisionName field is not empty
                 RenderGroupRefName = collisionNameValue;
 
-                Entity colNameEnt = Container.GetObjectByName(collisionNameValue); // Get entity referenced by CollisionName
-                if (colNameEnt != null)
+                if (Container != null)
                 {
-                    // Get DrawGroups from CollisionName reference
-                    var colNamePropDraw = PropFinderUtil.FindProperty("DrawGroups", colNameEnt.WrappedObject);
-                    ;
-                    var colNamePropDisp = PropFinderUtil.FindProperty("DisplayGroups", colNameEnt.WrappedObject);
-                    ;
-                    colNamePropDisp ??= PropFinderUtil.FindProperty("DispGroups", colNameEnt.WrappedObject);
-
-                    Drawgroups = (uint[])PropFinderUtil.FindPropertyValue(colNamePropDraw, colNameEnt.WrappedObject);
-                    Dispgroups = (uint[])PropFinderUtil.FindPropertyValue(colNamePropDisp, colNameEnt.WrappedObject);
-                    return;
-                }
-
-                if (Owner is MapUniverse)
-                {
-                    var universe = (MapUniverse)Owner;
-
-                    if (universe.HasProcessedMapLoad)
+                    Entity colNameEnt = Container.GetObjectByName(collisionNameValue); // Get entity referenced by CollisionName
+                    if (colNameEnt != null)
                     {
-                        if (collisionNameValue != "")
+                        // Get DrawGroups from CollisionName reference
+                        var colNamePropDraw = PropFinderUtil.FindProperty("DrawGroups", colNameEnt.WrappedObject);
+                        ;
+                        var colNamePropDisp = PropFinderUtil.FindProperty("DisplayGroups", colNameEnt.WrappedObject);
+                        ;
+                        colNamePropDisp ??= PropFinderUtil.FindProperty("DispGroups", colNameEnt.WrappedObject);
+
+                        Drawgroups = (uint[])PropFinderUtil.FindPropertyValue(colNamePropDraw, colNameEnt.WrappedObject);
+                        Dispgroups = (uint[])PropFinderUtil.FindPropertyValue(colNamePropDisp, colNameEnt.WrappedObject);
+                        return;
+                    }
+
+                    if (Owner is MapUniverse)
+                    {
+                        var universe = (MapUniverse)Owner;
+
+                        if (universe.HasProcessedMapLoad)
                         {
-                            // CollisionName referenced doesn't exist
-                            Smithbox.Log(this,
-                                $"{Container?.Name}: {Name} references to CollisionName {collisionNameValue} which doesn't exist",
-                                LogLevel.Warning);
+                            if (collisionNameValue != "")
+                            {
+                                // CollisionName referenced doesn't exist
+                                Smithbox.Log(this,
+                                    $"{Container?.Name}: {Name} references to CollisionName {collisionNameValue} which doesn't exist",
+                                    LogLevel.Warning);
+                            }
                         }
                     }
                 }
