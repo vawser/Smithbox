@@ -207,19 +207,20 @@ public class MapUniverse : IUniverse
 
                 if (CFG.Current.Viewport_Enable_Rendering)
                 {
-                    tasks = resourceHandler.LoadTextures(tasks, newMap);
-
-                    Profiler.TracyFiberLeave();
-                    await Task.WhenAll(tasks);
-                    Profiler.TracyFiberEnter("loadMapAsync");
-
                     tasks = resourceHandler.LoadModels(tasks, newMap);
 
                     Profiler.TracyFiberLeave();
                     await Task.WhenAll(tasks);
                     Profiler.TracyFiberEnter("loadMapAsync");
 
-                    ScheduleTextureRefresh();
+                    if (CFG.Current.Viewport_Enable_Texturing)
+                    {
+                        tasks = resourceHandler.LoadTextures(tasks, newMap);
+
+                        Profiler.TracyFiberLeave();
+                        await Task.WhenAll(tasks);
+                        Profiler.TracyFiberEnter("loadMapAsync");
+                    }
                 }
 
                 // After everything loads, do some additional checks:
@@ -242,22 +243,13 @@ public class MapUniverse : IUniverse
                 // Check for duplicate EntityIDs
                 CheckDupeEntityIDs(newMap);
 
-                // Set the map transform to the saved position, rotation and scale.
-                //map.LoadMapTransform();
-
-                // HACK: this fixes the weird ghost state between the viewport and content list
-                CloneMapObjectsAction action = new(
-                    View,
-                    new List<MsbEntity>() { (MsbEntity)newMap.RootObject }, false,
-                    null, null, true);
-
-                View.ViewportActionManager.ExecuteAction(action);
-
                 if (selectOnLoad)
                 {
                     View.Selection.SelectedMapID = mapid;
                     View.Selection.SelectedMapContainer = newMap;
                 }
+
+                ScheduleTextureRefresh();
             }
         }
         catch (Exception e)
