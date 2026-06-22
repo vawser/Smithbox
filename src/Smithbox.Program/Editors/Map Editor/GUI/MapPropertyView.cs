@@ -686,11 +686,9 @@ public class MapPropertyView
         ImGui.NextColumn();
     }
 
-    private void PropEditorCommunityName(IEnumerable<MsbEntity> entities)
+    private void PropEditorCommunityName(IEnumerable<Entity> entities)
     {
         var first = entities.First();
-        if (first.WrappedObject is not IMsbEntry) 
-            return;
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Community Name");
@@ -1066,6 +1064,11 @@ public class MapPropertyView
             }
             else if (typ == typeof(BTL.LightType))
             {
+                if(fieldName == "Name")
+                {
+                    PropEditorCommunityName(entSelection);
+                }
+
                 var open = ImGui.TreeNodeEx($"{fieldName}", treeFlags);
                 ShowFieldHint(obj, prop, fieldDescription);
                 ImGui.NextColumn();

@@ -1,0 +1,269 @@
+{
+  "Name": "m01_00_00_00",
+  "Entries": [
+    {
+      "ID": "グッズセット_o1600",
+      "Name": "Goods set_o1600"
+    },
+    {
+      "ID": "グッズセット_o1601",
+      "Name": "Goods set_o1601"
+    },
+    {
+      "ID": "グッズセット_o1602",
+      "Name": "Goods set_o1602"
+    },
+    {
+      "ID": "グッズセット_o1603",
+      "Name": "Goods set_o1603"
+    },
+    {
+      "ID": "グッズセット_o1604",
+      "Name": "Goods set_o1604"
+    },
+    {
+      "ID": "グッズセット_o1605_00",
+      "Name": "Goods set_o1605_00"
+    },
+    {
+      "ID": "グッズセット_o1606",
+      "Name": "Goods set_o1606"
+    },
+    {
+      "ID": "グッズセット_o1607",
+      "Name": "Goods set_o1607"
+    },
+    {
+      "ID": "デモンズソウル",
+      "Name": "demon's souls"
+    },
+    {
+      "ID": "燭台_107",
+      "Name": "Candlestick_107"
+    },
+    {
+      "ID": "燭台_114",
+      "Name": "Candlestick_114"
+    },
+    {
+      "ID": "燭台_115",
+      "Name": "Candlestick_115"
+    },
+    {
+      "ID": "燭台_122",
+      "Name": "Candlestick_122"
+    },
+    {
+      "ID": "燭台_126",
+      "Name": "Candlestick_126"
+    },
+    {
+      "ID": "燭台_135",
+      "Name": "Candlestick_135"
+    },
+    {
+      "ID": "燭台_156",
+      "Name": "Candlestick_156"
+    },
+    {
+      "ID": "燭台_160",
+      "Name": "Candlestick_160"
+    },
+    {
+      "ID": "燭台_169",
+      "Name": "Candlestick_169"
+    },
+    {
+      "ID": "燭台_190",
+      "Name": "Candlestick_190"
+    },
+    {
+      "ID": "燭台_244",
+      "Name": "Candlestick_244"
+    },
+    {
+      "ID": "燭台_245",
+      "Name": "Candlestick_245"
+    },
+    {
+      "ID": "燭台_246",
+      "Name": "Candlestick_246"
+    },
+    {
+      "ID": "燭台_247",
+      "Name": "Candlestick_247"
+    },
+    {
+      "ID": "燭台_248",
+      "Name": "Candlestick_248"
+    },
+    {
+      "ID": "燭台_249",
+      "Name": "Candlestick_249"
+    },
+    {
+      "ID": "燭台_250",
+      "Name": "Candlestick_250"
+    },
+    {
+      "ID": "燭台_251",
+      "Name": "Candlestick_251"
+    },
+    {
+      "ID": "燭台_252",
+      "Name": "Candlestick_252"
+    },
+    {
+      "ID": "燭台_253",
+      "Name": "Candlestick_253"
+    },
+    {
+      "ID": "燭台_254",
+      "Name": "Candlestick_254"
+    },
+    {
+      "ID": "燭台_255",
+      "Name": "Candlestick_255"
+    },
+    {
+      "ID": "燭台_256",
+      "Name": "Candlestick_256"
+    },
+    {
+      "ID": "燭台_257",
+      "Name": "Candlestick_257"
+    },
+    {
+      "ID": "燭台_258",
+      "Name": "Candlestick_258"
+    },
+    {
+      "ID": "燭台_259",
+      "Name": "Candlestick_259"
+    },
+    {
+      "ID": "燭台_260",
+      "Name": "Candlestick_260"
+    },
+    {
+      "ID": "燭台_261",
+      "Name": "Candlestick_261"
+    },
+    {
+      "ID": "燭台_262",
+      "Name": "Candlestick_262"
+    },
+    {
+      "ID": "燭台_68",
+      "Name": "Candlestick_68"
+    },
+    {
+      "ID": "生きていている要人燭台",
+      "Name": "Living VIPs Candlestick"
+    },
+    {
+      "ID": "要人_燭台_00",
+      "Name": "VIP_Candlestick_00"
+    },
+    {
+      "ID": "要人_燭台_05",
+      "Name": "VIP_Candlestick_05"
+    },
+    {
+      "ID": "要人_燭台_08",
+      "Name": "VIP_Candlestick_08"
+    },
+    {
+      "ID": "要人_燭台_13",
+      "Name": "VIP_Candlestick_13"
+    },
+    {
+      "ID": "要人_燭台_18",
+      "Name": "VIP_Candlestick_18"
+    },
+    {
+      "ID": "要人_燭台_21",
+      "Name": "VIP_Candlestick_21"
+    },
+    {
+      "ID": "要人_燭台_25",
+      "Name": "VIP_Candlestick_25"
+    },
+    {
+      "ID": "要人_燭台_30",
+      "Name": "VIP_Candlestick_30"
+    },
+    {
+      "ID": "要人_燭台_34",
+      "Name": "VIP_Candlestick_34"
+    },
+    {
+      "ID": "要人_燭台_41",
+      "Name": "VIP_Candlestick_41"
+    },
+    {
+      "ID": "要人_燭台_46",
+      "Name": "VIP_Candlestick_46"
+    },
+    {
+      "ID": "要人_燭台_50",
+      "Name": "VIP_Candlestick_50"
+    },
+    {
+      "ID": "要人_燭台_53",
+      "Name": "VIP_Candlestick_53"
+    },
+    {
+      "ID": "要人_燭台_57",
+      "Name": "VIP_Candlestick_57"
+    },
+    {
+      "ID": "要人_燭台_60",
+      "Name": "VIP_Candlestick_60"
+    },
+    {
+      "ID": "要人_燭台_66",
+      "Name": "VIP_Candlestick_66"
+    },
+    {
+      "ID": "要人_燭台_69",
+      "Name": "VIP_Candlestick_69"
+    },
+    {
+      "ID": "ヒント血文字 予備",
+      "Name": "Hint: Blood writing (backup)"
+    },
+    {
+      "ID": "ヒント血文字01",
+      "Name": "Hint: Blood writing 01"
+    },
+    {
+      "ID": "ヒント血文字02",
+      "Name": "Hint: Blood writing 02"
+    },
+    {
+      "ID": "ヒント血文字03",
+      "Name": "Hint: Blood writing 03"
+    },
+    {
+      "ID": "ヒント血文字04",
+      "Name": "Hint: Blood writing 04"
+    },
+    {
+      "ID": "ヒント血文字05",
+      "Name": "Hint: Blood writing 05"
+    },
+    {
+      "ID": "宝死体01",
+      "Name": "Treasure Corpse 01"
+    },
+    {
+      "ID": "SFX用の風",
+      "Name": "Wind for SFX"
+    },
+    {
+      "ID": "NPC起立後初期位置01\u3000神の信徒3",
+      "Name": "NPC Initial position after standing up 01: Follower of God 3"
+    }
+  ]
+}

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Editors.MapEditor;
 
+// NOTE: these do not discriminate between different MSB sub-types.
 public class MapObjectNameMapEntry
 {
     public string Name { get; set; }
