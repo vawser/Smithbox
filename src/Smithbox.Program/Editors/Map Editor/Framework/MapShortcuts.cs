@@ -78,6 +78,16 @@ public class MapShortcuts
         // Actions
         if (FocusManager.IsFocus(EditorFocusContext.MapEditor_Viewport) || FocusManager.IsFocus(EditorFocusContext.MapEditor_FileList))
         {
+            if (InputManager.IsPressed(KeybindID.Copy))
+            {
+                activeView.DuplicateToMapAction.OnCopy(activeView);
+            }
+
+            if (InputManager.IsPressed(KeybindID.Paste))
+            {
+                activeView.DuplicateToMapAction.OnPaste(activeView);
+            }
+
             activeView.CreateAction.OnShortcut();
             activeView.DuplicateAction.OnShortcut();
             activeView.DeleteAction.OnShortcut();

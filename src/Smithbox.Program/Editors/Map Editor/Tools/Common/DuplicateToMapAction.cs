@@ -184,4 +184,40 @@ public class DuplicateToMapAction
 
         View.DelayPicking();
     }
+
+    private List<MsbEntity> StoredSelection = new();
+
+    public void OnCopy(MapEditorView activeView)
+    {
+        StoredSelection = new();
+
+        var sel = activeView.ViewportSelection.GetFilteredSelection<MsbEntity>().ToList();
+        foreach(var entry in sel)
+        {
+            var clone = entry.Clone();
+            StoredSelection.Add((MsbEntity)clone);
+        }
+    }
+
+    public void OnPaste(MapEditorView activeView)
+    {
+        var mapID = activeView.Selection.SelectedMapID;
+
+        foreach (var entry in Project.Handler.MapData.PrimaryBank.Maps)
+        {
+            if (mapID == entry.Key.Filename)
+            {
+                var map = entry.Value.MapContainer;
+
+                if (map != null)
+                {
+                    var action = new CloneMapObjectsAction(View, StoredSelection, true, map, null);
+                    View.ViewportActionManager.ExecuteAction(action);
+
+                    break;
+                }
+            }
+        }
+
+    }
 }
