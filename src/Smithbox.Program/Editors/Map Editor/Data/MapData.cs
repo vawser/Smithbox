@@ -6,9 +6,11 @@ using StudioCore.Logger;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
+using System.Formats.Tar;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.Encodings.Web;
 using System.Text.Json;
 using System.Threading.Tasks;
 
@@ -180,9 +182,9 @@ public class MapData : IDisposable
     {
         await Task.Yield();
 
-        var srcDir = Path.Combine(AppContext.BaseDirectory, "Assets", "MSB", ProjectUtils.GetGameDirectory(Project), "Community Map Object Names");
+        var srcDir = Path.Combine(AppContext.BaseDirectory, "Assets", "MSB", ProjectUtils.GetGameDirectory(Project), "Map Object Names");
 
-        var projDir = Path.Combine(Project.Descriptor.ProjectPath, ".smithbox", "Project", "Community Map Object Names");
+        var projDir = Path.Combine(Project.Descriptor.ProjectPath, ".smithbox", "Project", "Map Object Names");
 
         if (Directory.Exists(projDir))
         {
@@ -429,6 +431,106 @@ public class MapData : IDisposable
         }
 
         return true;
+    }
+
+    public string GetMapObjectName(string mapID, string mapObjectKey)
+    {
+        var name = "";
+        var nameLists = Project.Handler.MapData.MapObjectNameLists;
+
+        var entries = nameLists.FirstOrDefault(e => e.Key == mapID);
+        if (entries.Key != null)
+        {
+            foreach (var entry in entries.Value.Entries)
+            {
+                if (entry.ID == mapObjectKey)
+                {
+                    name = entry.Name;
+                }
+            }
+        }
+
+        return name;
+    }
+
+    public void UpdateMapObjectName(string mapID, string mapObjectKey, string mapObjectName)
+    {
+        var srcDir = Path.Combine(ParamDebugTools.ProjectFolder,
+            "src", "Smithbox.Data", "Assets", "MSB",
+            ProjectUtils.GetGameDirectory(Project), "Map Object Names");
+
+        var projDir = Path.Combine(Project.Descriptor.ProjectPath, ".smithbox", "Project", "Map Object Names");
+
+        var targetDir = projDir;
+
+        if(CFG.Current.Developer_Enable_Tools)
+        {
+            targetDir = srcDir;
+        }
+
+        if(!Directory.Exists(targetDir))
+        {
+            Directory.CreateDirectory(targetDir);
+        }
+
+        if (Project.Handler.MapData.MapObjectNameLists.ContainsKey(mapID))
+        {
+            var mapEntry = Project.Handler.MapData.MapObjectNameLists[mapID];
+
+            if (mapEntry.Entries.Any(e => e.ID == mapObjectKey))
+            {
+                for (int i = 0; i < mapEntry.Entries.Count; i++)
+                {
+                    var curEntry = mapEntry.Entries[i];
+
+                    if (curEntry.ID == mapObjectKey)
+                    {
+                        curEntry.Name = mapObjectName;
+                    }
+                }
+            }
+            else
+            {
+                var nameEntry = new MapObjectNameEntry();
+                nameEntry.ID = mapObjectKey;
+                nameEntry.Name = mapObjectName;
+
+                mapEntry.Entries.Add(nameEntry);
+            }
+        }
+        else
+        {
+            var nameEntry = new MapObjectNameEntry();
+            nameEntry.ID = mapObjectKey;
+            nameEntry.Name = mapObjectName;
+
+            var mapEntry = new MapObjectNameMapEntry();
+            mapEntry.Name = mapID;
+            mapEntry.Entries = new() { nameEntry };
+
+            Project.Handler.MapData.MapObjectNameLists.Add(mapID, mapEntry);
+        }
+
+        if (Project.Handler.MapData.MapObjectNameLists.ContainsKey(mapID))
+        {
+            var mapEntry = Project.Handler.MapData.MapObjectNameLists[mapID];
+
+            if (Directory.Exists(targetDir))
+            {
+                var targetFile = Path.Combine(targetDir, $"{mapID}.json");
+
+                var options = new JsonSerializerOptions
+                {
+                    Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
+                    WriteIndented = true,
+                    IncludeFields = true
+                };
+
+                var jsonString = JsonSerializer.Serialize(mapEntry, typeof(MapObjectNameMapEntry), options);
+
+                File.WriteAllText(targetFile, jsonString);
+            }
+        }
     }
 
     #region Dispose

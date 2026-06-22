@@ -20,6 +20,14 @@
     {
       "ID": "会話情報 追跡者シナリオ フェーズ1 召使人形用",
       "Name": "Conversation Information: Servant Doll - Scenario - Phase 1 - For Pursuer"
+    },
+    {
+      "ID": "会話情報 追跡者シナリオ フェーズ3 召使人形用",
+      "Name": "Conversation Information: Servant Doll - Main Scenario - Phase 3"
+    },
+    {
+      "ID": "会話情報 復讐者シナリオ\u3000フェーズ3 戦闘終了後",
+      "Name": "Conversation Information: Avenger - Scenario - Phase 3 - After Battle"
     }
   ]
 }

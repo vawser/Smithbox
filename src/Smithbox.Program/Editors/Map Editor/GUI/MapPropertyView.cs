@@ -686,6 +686,36 @@ public class MapPropertyView
         ImGui.NextColumn();
     }
 
+    private void PropEditorCommunityName(IEnumerable<MsbEntity> entities)
+    {
+        var first = entities.First();
+        if (first.WrappedObject is not IMsbEntry) 
+            return;
+
+        ImGui.AlignTextToFramePadding();
+        ImGui.Text("Community Name");
+        UIHelper.Tooltip("The community alias for this map object name.");
+
+        ImGui.NextColumn();
+
+        var mapId = View.Selection.SelectedMapID;
+        var mapObjectKey = first.Name;
+
+        var mapObjectName = Project.Handler.MapData.GetMapObjectName(mapId, mapObjectKey);
+        var curName = mapObjectName;
+
+        ImGui.AlignTextToFramePadding();
+        ImGui.SetNextItemWidth(-1);
+        ImGui.InputText("##communityNameInput", ref curName, 255);
+        if (ImGui.IsItemDeactivatedAfterEdit())
+        {
+            Project.Handler.MapData.UpdateMapObjectName(mapId, mapObjectKey, curName);
+        }
+
+        ImGui.NextColumn();
+    }
+
+
     private void PropEditorSelectedEntities(ViewportSelection selection, int classIndex = -1)
     {
         var entities = selection.GetFilteredSelection<MsbEntity>();
@@ -750,6 +780,8 @@ public class MapPropertyView
                 PropEditorNameDirect(entities);
             }
         }
+
+        PropEditorCommunityName(entities);
 
         if (types.Count() > 1)
         {

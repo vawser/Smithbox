@@ -599,21 +599,21 @@ public class MapEditorScreen : EditorScreen
 
                 if (ImGui.BeginMenu("Name Display"))
                 {
-                    var curType = CFG.Current.MapEditor_MapContentList_EntryNameDisplayType;
+                    var curType = CFG.Current.MapEditor_MapObjectName_DisplayType;
 
                     if (ImGui.MenuItem("Internal"))
                     {
-                        CFG.Current.MapEditor_MapContentList_EntryNameDisplayType = EntityNameDisplayType.Internal;
+                        CFG.Current.MapEditor_MapObjectName_DisplayType = MapObjectNameDisplayType.Internal;
                     }
                     UIHelper.Tooltip("Display the internal map object name only.");
-                    UIHelper.ShowActiveStatus(curType == EntityNameDisplayType.Internal);
+                    UIHelper.ShowActiveStatus(curType == MapObjectNameDisplayType.Internal);
 
                     if (ImGui.MenuItem("Internal + Text"))
                     {
-                        CFG.Current.MapEditor_MapContentList_EntryNameDisplayType = EntityNameDisplayType.Internal_FMG;
+                        CFG.Current.MapEditor_MapObjectName_DisplayType = MapObjectNameDisplayType.Internal_FMG;
                     }
                     UIHelper.Tooltip("Display the internal map object name with the associated FMG name as the alias.");
-                    UIHelper.ShowActiveStatus(curType == EntityNameDisplayType.Internal_FMG);
+                    UIHelper.ShowActiveStatus(curType == MapObjectNameDisplayType.Internal_FMG);
 
                     ImGui.EndMenu();
                 }

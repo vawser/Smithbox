@@ -7,17 +7,13 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Editors.MapEditor;
 
-public enum EntityNameDisplayType
+public enum MapObjectNameDisplayType
 {
-    [Display(Name = "Name: Internal")]
     Internal = 0,
-    [Display(Name = "Name: Community")]
     Community = 1,
-    [Display(Name = "Name: Internal, Alias: Community")]
     Internal_Community = 2,
-    [Display(Name = "Name: Internal, Alias: FMG")]
     Internal_FMG = 3,
-    [Display(Name = "Name: Community, Alias: FMG")]
-    Community_FMG = 4
+    Community_FMG = 4,
+    Internal_Community_FMG = 5
 }
 

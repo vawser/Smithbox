@@ -208,7 +208,7 @@ public class CFG
     public bool MapEditor_Model_Selector_Update_Instance_ID = true;
     public bool MapEditor_Model_Selector_Update_NpcParams = true;
 
-    public EntityNameDisplayType MapEditor_MapContentList_EntryNameDisplayType = EntityNameDisplayType.Internal_FMG;
+    public MapObjectNameDisplayType MapEditor_MapObjectName_DisplayType = MapObjectNameDisplayType.Internal_Community_FMG;
 
     public int MapEditor_Selection_Position_IncrementType = 0;
     public float MapEditor_Selection_Position_Increment_0 { get; set; } = 0.05f;
