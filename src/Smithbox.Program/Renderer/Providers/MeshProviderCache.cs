@@ -13,6 +13,18 @@ public static class MeshProviderCache
     {
         return $"{virtualResourcePath}+{uid}";
     }
+
+    public static void InvalidateUidEntries(string uid)
+    {
+        var keysToRemove = _cache.Keys
+            .Where(k => k.Contains($"+{uid}"))
+            .ToList();
+
+        foreach (var key in keysToRemove)
+        {
+            _cache.Remove(key);
+        }
+    }
     public static FlverMeshProvider GetFlverMeshProvider(
     string virtualResourcePath, IEnumerable<int> masks, string uid)
     {

@@ -179,33 +179,36 @@ public class MoReplicateAction : ViewportAction
                         MapEditorActionHelper.ClearEntityGroupID(View, newobj, m);
                     }
 
-                    newobj.UpdateRenderModel();
-
-                    if (newobj.RenderSceneMesh != null)
-                    {
-                        newobj.RenderSceneMesh.SetSelectable(newobj);
-                    }
-
                     if (!clonesCached)
                     {
                         Clones.Add(newobj);
                         CloneMaps.Add(m);
-                        m.HasUnsavedChanges = true;
+                        m.HasUnsavedChanges = true; 
+                        
+                        if (newobj is MsbEntity msbEnt)
+                        {
+                            msbEnt.AssignDrawable();
+                        }
+                        newobj.UpdateRenderModel();
+                        newobj.RenderSceneMesh.RenderSelectionOutline = true;
+
+                        if (newobj.RenderSceneMesh != null)
+                        {
+                            newobj.RenderSceneMesh.SetSelectable(newobj);
+                        }
                     }
                     else
                     {
+                        if (Clones[i] is MsbEntity msbEnt)
+                        {
+                            msbEnt.AssignDrawable();
+                        }
+                        Clones[i].UpdateRenderModel();
+                        Clones[i].RenderSceneMesh.RenderSelectionOutline = true;
+
                         if (Clones[i].RenderSceneMesh != null)
                         {
-                            Clones[i].RenderSceneMesh.AutoRegister = true;
-                            Clones[i].RenderSceneMesh.Register();
-                        }
-                        else
-                        {
-                            Clones[i].AssignDrawable();
-                            Clones[i].UpdateRenderModel();
-
-                            if (Clones[i].RenderSceneMesh != null)
-                                Clones[i].RenderSceneMesh.SetSelectable(Clones[i]);
+                            Clones[i].RenderSceneMesh.SetSelectable(Clones[i]);
                         }
                     }
                 }

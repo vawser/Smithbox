@@ -160,12 +160,13 @@ public class DeleteModelObjectAction : ViewportAction
         }
 
         e.BuildReferenceMap();
-        e.UpdateRenderModel();
 
         if (e is MsbEntity msbEnt)
         {
             msbEnt.AssignDrawable();
         }
+        e.UpdateRenderModel();
+        e.RenderSceneMesh.RenderSelectionOutline = true;
     }
 
     private bool IsDescendantOf(Entity child, Entity potentialParent)

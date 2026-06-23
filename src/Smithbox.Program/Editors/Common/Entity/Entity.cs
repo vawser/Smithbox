@@ -1250,11 +1250,11 @@ public class Entity : ISelectable, IDisposable
         var act = new ViewportCompoundAction(actions);
         act.SetPostExecutionAction((undo) =>
         {
-            UpdateRenderModel();
             if (this is MsbEntity msbEnt)
             {
                 msbEnt.AssignDrawable();
             }
+            UpdateRenderModel();
         });
         return act;
     }

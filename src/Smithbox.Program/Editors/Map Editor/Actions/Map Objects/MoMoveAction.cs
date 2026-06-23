@@ -125,7 +125,17 @@ public class MoMoveAction : ViewportAction
                 }
 
                 // Update render model
+                if (Moveables[i] is MsbEntity msbEnt)
+                {
+                    msbEnt.AssignDrawable();
+                }
                 Moveables[i].UpdateRenderModel();
+                Moveables[i].RenderSceneMesh.RenderSelectionOutline = true;
+
+                if (Moveables[i].RenderSceneMesh != null)
+                {
+                    Moveables[i].RenderSceneMesh.SetSelectable(Moveables[i]);
+                }
 
                 // Mark maps as having unsaved changes
                 sourceMap.HasUnsavedChanges = true;
@@ -199,9 +209,6 @@ public class MoMoveAction : ViewportAction
             {
                 sourceMap.RootObject.AddChild(Moveables[i]);
             }
-
-            // Update render model
-            Moveables[i].UpdateRenderModel();
         }
 
         if (SetSelection)

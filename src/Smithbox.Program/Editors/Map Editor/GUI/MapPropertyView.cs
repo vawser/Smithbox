@@ -1041,11 +1041,11 @@ public class MapPropertyView
                         {
                             var selected = false;
 
-                            firstEnt.UpdateRenderModel();
                             if (firstEnt is MsbEntity msbEnt)
                             {
                                 msbEnt.AssignDrawable();
                             }
+                            firstEnt.UpdateRenderModel();
                             firstEnt.RenderSceneMesh.RenderSelectionOutline = selected;
                         });
 
@@ -1099,12 +1099,11 @@ public class MapPropertyView
                     {
                         var selected = false;
 
-                        firstEnt.UpdateRenderModel();
                         if (firstEnt is MsbEntity msbEnt)
                         {
                             msbEnt.AssignDrawable();
                         }
-
+                        firstEnt.UpdateRenderModel();
                         firstEnt.RenderSceneMesh.RenderSelectionOutline = selected;
                     });
 

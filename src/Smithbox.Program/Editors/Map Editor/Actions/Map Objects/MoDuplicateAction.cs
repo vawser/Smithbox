@@ -17,7 +17,6 @@ public class MoDuplicateAction : ViewportAction
     private static readonly Regex TrailIDRegex = new(@"_(?<id>\d+)$");
     private readonly List<MsbEntity> Clonables = new();
     private readonly List<CloneRecord> Records = new();
-    private readonly bool SetSelection;
     private readonly Entity TargetBTL;
     private readonly MapContainer TargetMap;
     private readonly bool Silent = false;
@@ -189,11 +188,17 @@ public class MoDuplicateAction : ViewportAction
         {
             foreach (var record in Records)
             {
-                record.Clone.AssignDrawable();
+                if (record.Clone is MsbEntity msbEnt)
+                {
+                    msbEnt.AssignDrawable();
+                }
                 record.Clone.UpdateRenderModel();
+                record.Clone.RenderSceneMesh.RenderSelectionOutline = true;
 
                 if (record.Clone.RenderSceneMesh != null)
+                {
                     record.Clone.RenderSceneMesh.SetSelectable(record.Clone);
+                }
 
                 if (CFG.Current.Toolbar_Duplicate_Increment_Entity_ID)
                 {
@@ -219,13 +224,10 @@ public class MoDuplicateAction : ViewportAction
         }
 
         // Update selection
-        if (SetSelection)
+        universe.View.ViewportSelection.ClearSelection();
+        foreach (var record in Records)
         {
-            universe.View.ViewportSelection.ClearSelection();
-            foreach (var record in Records)
-            {
-                universe.View.ViewportSelection.AddSelection(record.Clone);
-            }
+            universe.View.ViewportSelection.AddSelection(record.Clone);
         }
 
         return ActionEvent.ObjectAddedRemoved;
@@ -263,13 +265,10 @@ public class MoDuplicateAction : ViewportAction
         }
 
         // Restore selection to original objects
-        if (SetSelection)
+        universe.View.ViewportSelection.ClearSelection();
+        foreach (MsbEntity c in Clonables)
         {
-            universe.View.ViewportSelection.ClearSelection();
-            foreach (MsbEntity c in Clonables)
-            {
-                universe.View.ViewportSelection.AddSelection(c);
-            }
+            universe.View.ViewportSelection.AddSelection(c);
         }
 
         return ActionEvent.ObjectAddedRemoved;

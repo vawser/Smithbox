@@ -41,7 +41,18 @@ public class MoAddAction : ViewportAction
             {
                 Map.Objects.Add(Added[i]);
                 Parent.AddChild(Added[i]);
+
+                if (Added[i] is MsbEntity msbEnt)
+                {
+                    msbEnt.AssignDrawable();
+                }
                 Added[i].UpdateRenderModel();
+                Added[i].RenderSceneMesh.RenderSelectionOutline = true;
+
+                if (Added[i].RenderSceneMesh != null)
+                {
+                    Added[i].RenderSceneMesh.SetSelectable(Added[i]);
+                }
 
                 MsbEntity ent = Added[i];
 

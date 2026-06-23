@@ -62,7 +62,12 @@ public class MsbEntity : Entity
 
     public void AssignDrawable()
     {
-        switch(Type)
+        if (SetupRenderMesh)
+        {
+            MeshProviderCache.InvalidateUidEntries(EntityCacheUID);
+        }
+
+        switch (Type)
         {
             case MsbEntityType.Part:
                 AssignPartDrawable();
@@ -129,18 +134,24 @@ public class MsbEntity : Entity
         {
             asset = ModelLocator.GetChrModel(curProject, modelName, modelName);
 
-            RenderSceneMesh = CreateCharacterMesh(asset);
-
             if(RenderSceneMesh is MeshRenderableProxy meshProxy)
             {
                 if(IsCharacterPlaceholder(meshProxy, modelName, ProjectAliasType.Characters))
                 {
                     RenderSceneMesh = CreateCharacterProxyMesh();
                 }
-                if (IsInteractablePlaceholder(meshProxy, modelName, ProjectAliasType.Characters))
+                else if (IsInteractablePlaceholder(meshProxy, modelName, ProjectAliasType.Characters))
                 {
                     RenderSceneMesh = CreateInteractableProxyMesh();
                 }
+                else
+                {
+                    RenderSceneMesh = CreateCharacterMesh(asset);
+                }
+            }
+            else
+            {
+                RenderSceneMesh = CreateCharacterMesh(asset);
             }
         }
 
@@ -155,14 +166,20 @@ public class MsbEntity : Entity
         {
             asset = ModelLocator.GetObjModel(curProject, modelName, modelName);
 
-            RenderSceneMesh = CreateObjectMesh(asset);
-
             if (RenderSceneMesh is MeshRenderableProxy meshProxy)
             {
                 if (IsAssetPlaceholder(meshProxy, modelName, ProjectAliasType.Assets))
                 {
                     RenderSceneMesh = CreateObjectProxyMesh();
                 }
+                else
+                {
+                    RenderSceneMesh = CreateObjectMesh(asset);
+                }
+            }
+            else
+            {
+                RenderSceneMesh = CreateObjectMesh(asset);
             }
         }
 
@@ -923,11 +940,10 @@ public class MsbEntity : Entity
 
     public override void UpdateRenderModel()
     {
-        if(!SetupRenderMesh)
+        if (!SetupRenderMesh)
         {
-            SetupRenderMesh = true;
-
             AssignDrawable();
+            SetupRenderMesh = true;
         }
 
         base.UpdateRenderModel();

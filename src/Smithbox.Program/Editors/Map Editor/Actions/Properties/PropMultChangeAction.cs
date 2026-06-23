@@ -96,11 +96,12 @@ public class PropMultChangeAction : ViewportAction
         {
             if (UpdateRenderModel)
             {
-                e.UpdateRenderModel();
                 if (e is MsbEntity msbEnt)
                 {
                     msbEnt.AssignDrawable();
                 }
+                e.UpdateRenderModel();
+                e.RenderSceneMesh.RenderSelectionOutline = true;
             }
 
             if (ClearName)
@@ -145,11 +146,12 @@ public class PropMultChangeAction : ViewportAction
         {
             if (UpdateRenderModel)
             {
-                e.UpdateRenderModel();
                 if (e is MsbEntity msbEnt)
                 {
                     msbEnt.AssignDrawable();
                 }
+                e.UpdateRenderModel();
+                e.RenderSceneMesh.RenderSelectionOutline = false;
             }
 
             // Clear name cache, forcing it to update.

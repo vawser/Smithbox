@@ -381,6 +381,10 @@ public class EditorVisibilityAction
                         }
                     }
 
+                    if (obj is MsbEntity msbEnt)
+                    {
+                        msbEnt.AssignDrawable();
+                    }
                     obj.UpdateRenderModel();
                 }
             }
