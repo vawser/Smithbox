@@ -96,6 +96,12 @@ public class HavokCollisionBank
                 }
             }
 
+            if (CompendiumBytes != null)
+            {
+                using MemoryStream memoryStream = new MemoryStream(CompendiumBytes);
+                serializer.LoadCompendium(memoryStream);
+            }
+
             foreach (var file in packedBinder.Files)
             {
                 var parts = file.Name.Split('\\');
@@ -112,12 +118,6 @@ public class HavokCollisionBank
 
                 try
                 {
-                    if (CompendiumBytes != null)
-                    {
-                        using MemoryStream memoryStream = new MemoryStream(CompendiumBytes);
-                        serializer.LoadCompendium(memoryStream);
-                    }
-
                     using (MemoryStream memoryStream = new MemoryStream(FileBytes))
                     {
                         hkRootLevelContainer fileHkx;

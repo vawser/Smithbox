@@ -185,7 +185,6 @@ public class ResourceJob
                     // PIPELINE: add request to pipeline action block
                     pipeline.LoadByteResourceBlock.Post(request);
 
-
                     action._job.IncrementEstimateTaskSize(1);
 
                 }
@@ -218,7 +217,6 @@ public class ResourceJob
 
                         i--;
                     }
-
                 }
             }
         }
@@ -236,30 +234,34 @@ public class ResourceJob
     }
     #endregion
 
-    public void ProcessLoadedResources()
+    internal const int MaxResourceCommitsPerFrame = 64;
+
+    public int ProcessLoadedResources()
     {
-        if (_processedResources.TryReceiveAll(out IList<ResourceLoadedReply> processed))
+        int committed = 0;
+
+        while (committed < MaxResourceCommitsPerFrame &&
+               _processedResources.TryReceive(out ResourceLoadedReply p))
         {
-            Progress += processed.Count;
+            var lPath = p.VirtualPath.ToLower();
 
-            foreach (ResourceLoadedReply p in processed)
+            if (!ResourceManager.ResourceDatabase.ContainsKey(lPath))
             {
-                var lPath = p.VirtualPath.ToLower();
-
-                if (!ResourceManager.ResourceDatabase.ContainsKey(lPath))
-                {
-                    ResourceManager.ResourceDatabase.Add(
-                        lPath,
-                        ResourceManager.ConstructHandle(
-                            p.Resource.GetType(),
-                            p.VirtualPath)
-                        );
-                }
-
-                IResourceHandle reg = ResourceManager.ResourceDatabase[lPath];
-                reg._ResourceLoaded(p.Resource, p.AccessLevel);
+                ResourceManager.ResourceDatabase.Add(
+                    lPath,
+                    ResourceManager.ConstructHandle(
+                        p.Resource.GetType(),
+                        p.VirtualPath)
+                    );
             }
+
+            IResourceHandle reg = ResourceManager.ResourceDatabase[lPath];
+            reg._ResourceLoaded(p.Resource, p.AccessLevel);
+            committed++;
         }
+
+        Progress += committed;
+        return committed;
     }
 
     public Task Complete()

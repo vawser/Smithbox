@@ -192,8 +192,9 @@ public static class ResourceManager
             HashSet<ResourceJob> toRemove = new();
             foreach (KeyValuePair<ResourceJob, int> job in ActiveJobProgress)
             {
-                job.Key.ProcessLoadedResources();
-                if (job.Key.Finished)
+                int committed = job.Key.ProcessLoadedResources();
+
+                if (job.Key.Finished && committed < ResourceJob.MaxResourceCommitsPerFrame)
                 {
                     toRemove.Add(job.Key);
                 }
