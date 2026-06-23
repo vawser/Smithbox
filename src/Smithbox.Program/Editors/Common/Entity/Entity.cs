@@ -636,7 +636,7 @@ public class Entity : ISelectable, IDisposable
             if (pp != null)
             {
                 PropertyInfo pprop = pp.GetType().GetProperty("Value");
-                return new PropertiesChangedAction(pprop, pp, newval);
+                return new PropChangeAction(pprop, pp, newval);
             }
         }
 
@@ -646,14 +646,14 @@ public class Entity : ISelectable, IDisposable
             if (pp != null)
             {
                 PropertyInfo pprop = pp.GetType().GetProperty("Value");
-                return new PropertiesChangedAction(pprop, pp, newval);
+                return new PropChangeAction(pprop, pp, newval);
             }
         }
 
         PropertyInfo p = WrappedObject.GetType().GetProperty(prop);
         if (p != null)
         {
-            return new PropertiesChangedAction(p, WrappedObject, newval);
+            return new PropChangeAction(p, WrappedObject, newval);
         }
 
         return null;
