@@ -770,8 +770,7 @@ public class MsbEntity : Entity
                 break;
         }
 
-        RenderSceneMesh = null;
-
+        SetupRenderMesh = false;
         IsSwitchingRenderType = false;
     }
 
