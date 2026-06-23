@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace StudioCore.Editors.MapEditor;
 
-public class RenameObjectsAction(List<MsbEntity> entities, List<string> newNames, bool reference) : ViewportAction
+public class MoRenameAction(List<MsbEntity> entities, List<string> newNames, bool reference) : ViewportAction
 {
     List<string> oldNames = entities.Select(e => e.Name).ToList();
 

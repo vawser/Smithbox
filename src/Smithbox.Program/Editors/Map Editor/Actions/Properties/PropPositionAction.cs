@@ -7,20 +7,20 @@ using System.Reflection;
 
 namespace StudioCore.Editors.MapEditor;
 
-public static class PropAction_Rotation
+public static class PropPositionAction
 {
-    public static void CopyCurrentRotation(PropertyInfo prop, object obj)
+    public static void CopyCurrentPosition(PropertyInfo prop, object obj)
     {
-        CFG.Current.SavedRotation = (Vector3)obj;
-        //CFG.Current.SavedRotation = (Vector3)prop.GetValue(obj, null);
+        CFG.Current.SavedPosition = (Vector3)obj;
+        //CFG.Current.SavedPosition = (Vector3)prop.GetValue(obj, null);
     }
 
-    public static void PasteSavedRotation(MapEditorView view, ViewportSelection _selection)
+    public static void PasteSavedPosition(MapEditorView view, ViewportSelection _selection)
     {
         List<ViewportAction> actlist = new();
         foreach (Entity sel in _selection.GetFilteredSelection<Entity>())
         {
-            actlist.Add(sel.ApplySavedRotation());
+            actlist.Add(sel.ApplySavedPosition());
         }
 
         var action = new ViewportCompoundAction(actlist);

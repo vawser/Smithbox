@@ -10,7 +10,7 @@ using System.Text.RegularExpressions;
 
 namespace StudioCore.Editors.MapEditor;
 
-public class CloneMapObjectsAction : ViewportAction
+public class MoDuplicateAction : ViewportAction
 {
     private MapEditorView View;
 
@@ -22,14 +22,12 @@ public class CloneMapObjectsAction : ViewportAction
     private readonly MapContainer TargetMap;
     private readonly bool Silent = false;
 
-    public CloneMapObjectsAction(MapEditorView view, List<MsbEntity> objects, bool setSelection, MapContainer targetMap = null, Entity targetBTL = null, bool silent = false)
+    public MoDuplicateAction(MapEditorView view, List<MsbEntity> objects, MapContainer targetMap = null, Entity targetBTL = null)
     {
         View = view;
         Clonables.AddRange(objects);
-        SetSelection = setSelection;
         TargetMap = targetMap;
         TargetBTL = targetBTL;
-        Silent = silent;
     }
 
     public override ActionEvent Execute(bool isRedo = false)

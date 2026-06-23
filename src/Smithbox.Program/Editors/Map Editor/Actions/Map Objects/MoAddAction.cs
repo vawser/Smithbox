@@ -8,7 +8,7 @@ using System.Text.RegularExpressions;
 namespace StudioCore.Editors.MapEditor;
 
 
-public class AddMapObjectsAction : ViewportAction
+public class MoAddAction : ViewportAction
 {
     private MapEditorView View;
 
@@ -20,7 +20,7 @@ public class AddMapObjectsAction : ViewportAction
     private readonly bool SetSelection;
     private MapContainer TargetMap;
 
-    public AddMapObjectsAction(MapEditorView view, MapContainer map, List<MsbEntity> objects,
+    public MoAddAction(MapEditorView view, MapContainer map, List<MsbEntity> objects,
         bool setSelection, Entity parent, MapContainer targetMap = null)
     {
         View = view;

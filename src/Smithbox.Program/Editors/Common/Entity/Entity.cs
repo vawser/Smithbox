@@ -13,7 +13,7 @@ using System.Numerics;
 using System.Reflection;
 using System.Xml.Serialization;
 using Veldrid.Utilities;
-using PropertiesChangedAction = StudioCore.Editors.MapEditor.PropertiesChangedAction;
+using PropChangeAction = StudioCore.Editors.MapEditor.PropChangeAction;
 
 namespace StudioCore.Editors.Common;
 
@@ -623,7 +623,7 @@ public class Entity : ISelectable, IDisposable
     /// <summary>
     /// Return the PropertiesChangedAction of the passed property string and new value.
     /// </summary>
-    public PropertiesChangedAction GetPropertyChangeAction(string prop, object newval)
+    public PropChangeAction GetPropertyChangeAction(string prop, object newval)
     {
         if (WrappedObject == null)
         {
@@ -1148,7 +1148,7 @@ public class Entity : ISelectable, IDisposable
         }
         else
         {
-            PropertiesChangedAction act = new(WrappedObject);
+            PropChangeAction act = new(WrappedObject);
 
             // Position
             PropertyInfo prop = WrappedObject.GetType().GetProperty("Position");
@@ -1204,7 +1204,7 @@ public class Entity : ISelectable, IDisposable
 
     public ViewportAction ApplySavedPosition()
     {
-        PropertiesChangedAction act = new(WrappedObject);
+        PropChangeAction act = new(WrappedObject);
         PropertyInfo prop = WrappedObject.GetType().GetProperty("Position");
         act.AddPropertyChange(prop, CFG.Current.SavedPosition);
 
@@ -1216,7 +1216,7 @@ public class Entity : ISelectable, IDisposable
     }
     public ViewportAction ApplySavedRotation()
     {
-        PropertiesChangedAction act = new(WrappedObject);
+        PropChangeAction act = new(WrappedObject);
         PropertyInfo prop = WrappedObject.GetType().GetProperty("Rotation");
         act.AddPropertyChange(prop, CFG.Current.SavedRotation);
 
@@ -1229,7 +1229,7 @@ public class Entity : ISelectable, IDisposable
 
     public ViewportAction ApplySavedScale()
     {
-        PropertiesChangedAction act = new(WrappedObject);
+        PropChangeAction act = new(WrappedObject);
         PropertyInfo prop = WrappedObject.GetType().GetProperty("Scale");
         act.AddPropertyChange(prop, CFG.Current.SavedScale);
 

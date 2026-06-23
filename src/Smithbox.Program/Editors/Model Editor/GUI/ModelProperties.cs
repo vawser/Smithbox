@@ -973,7 +973,7 @@ public class ModelProperties
         {
             if (_lastUncommittedAction != null && View.ViewportActionManager.PeekUndoAction() == _lastUncommittedAction)
             {
-                if (_lastUncommittedAction is MultipleEntityPropertyChangeAction a)
+                if (_lastUncommittedAction is PropMultChangeAction a)
                 {
                     View.ViewportActionManager.UndoAction();
 
@@ -1040,14 +1040,14 @@ public class ModelProperties
         }
         else
         {
-            PropertiesChangedAction action;
+            PropChangeAction action;
             if (arrayindex != -1)
             {
-                action = new PropertiesChangedAction((PropertyInfo)prop, arrayindex, obj, newval);
+                action = new PropChangeAction((PropertyInfo)prop, arrayindex, obj, newval);
             }
             else
             {
-                action = new PropertiesChangedAction((PropertyInfo)prop, obj, newval);
+                action = new PropChangeAction((PropertyInfo)prop, obj, newval);
             }
 
             View.ViewportActionManager.ExecuteAction(action);

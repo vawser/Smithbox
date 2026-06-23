@@ -132,7 +132,11 @@ public class DuplicateAction
     {
         if (View.ViewportSelection.IsSelection())
         {
-            CloneMapObjectsAction action = new(View, View.ViewportSelection.GetFilteredSelection<MsbEntity>().ToList(), true);
+            var mapObjects = View.ViewportSelection.GetFilteredSelection<MsbEntity>().ToList();
+            var mapContainer = View.Selection.SelectedMapContainer;
+            var btlParent = mapContainer.BTLParents.FirstOrDefault();
+
+            MoDuplicateAction action = new(View, mapObjects, mapContainer, btlParent);
             View.ViewportActionManager.ExecuteAction(action);
         }
         else

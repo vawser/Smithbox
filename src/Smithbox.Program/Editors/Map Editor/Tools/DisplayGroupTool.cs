@@ -195,7 +195,7 @@ public class DisplayGroupTool
         if (InputManager.IsPressed(KeybindID.MapEditor_Apply_Display_Group) && sdispgroups != null)
         {
             IEnumerable<uint[]> selDispGroups = sels.Select(s => s.Dispgroups);
-            ArrayPropertyCopyAction action = new(dg.RenderGroups, selDispGroups);
+            PropArrayCopyAction action = new(dg.RenderGroups, selDispGroups);
 
             View.ViewportActionManager.ExecuteAction(action);
         }
@@ -203,7 +203,7 @@ public class DisplayGroupTool
         if (InputManager.IsPressed(KeybindID.MapEditor_Apply_Draw_Group) && sdispgroups != null)
         {
             IEnumerable<uint[]> selDrawGroups = sels.Select(s => s.Drawgroups);
-            ArrayPropertyCopyAction action = new(dg.RenderGroups, selDrawGroups);
+            PropArrayCopyAction action = new(dg.RenderGroups, selDrawGroups);
 
             View.ViewportActionManager.ExecuteAction(action);
         }
@@ -305,7 +305,7 @@ public class DisplayGroupTool
         }
 
         IEnumerable<uint[]> selDispGroups = sels.Select(s => s.Dispgroups);
-        ArrayPropertyCopyAction action = new(dg.RenderGroups, selDispGroups);
+        PropArrayCopyAction action = new(dg.RenderGroups, selDispGroups);
 
         View.ViewportActionManager.ExecuteAction(action);
     }
@@ -323,7 +323,7 @@ public class DisplayGroupTool
         }
 
         IEnumerable<uint[]> selDrawGroups = sels.Select(s => s.Drawgroups);
-        ArrayPropertyCopyAction action = new(dg.RenderGroups, selDrawGroups);
+        PropArrayCopyAction action = new(dg.RenderGroups, selDrawGroups);
 
         View.ViewportActionManager.ExecuteAction(action);
     }

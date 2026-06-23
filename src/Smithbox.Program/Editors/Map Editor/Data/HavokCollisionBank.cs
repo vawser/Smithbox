@@ -169,14 +169,6 @@ public class HavokCollisionBank
                         }
                     }
                 }
-
-                // HACK: this fixes the weird ghost state between the viewport and content list
-                CloneMapObjectsAction action = new(
-                    View,
-                    new List<MsbEntity>() { (MsbEntity)entry.Value.MapContainer.RootObject }, false,
-                    null, null, true);
-
-                View.ViewportActionManager.ExecuteAction(action);
             }
         }
     }

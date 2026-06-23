@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace StudioCore.Editors.MapEditor;
 
-public class ChangeEntityHierarchyAction : ViewportAction
+public class MoChangeHierarchyAction : ViewportAction
 {
     private MapEditorView View;
 
@@ -14,7 +14,7 @@ public class ChangeEntityHierarchyAction : ViewportAction
     private int[] UndoIndices;
     private Entity[] UndoObjects;
 
-    public ChangeEntityHierarchyAction(MapEditorView view, List<Entity> src, List<Entity> targetEnts, List<int> targets,
+    public MoChangeHierarchyAction(MapEditorView view, List<Entity> src, List<Entity> targetEnts, List<int> targets,
         bool setSelection)
     {
         View = view;

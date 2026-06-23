@@ -7,7 +7,7 @@ using System.Linq;
 namespace StudioCore.Editors.MapEditor;
 
 
-public class OrderMapObjectsAction : ViewportAction
+public class MoReorderAction : ViewportAction
 {
     private MapEditorView View;
 
@@ -16,7 +16,7 @@ public class OrderMapObjectsAction : ViewportAction
 
     private TreeObjectOrderMovementType MoveSelectionDir;
 
-    public OrderMapObjectsAction(MapEditorView view, List<MsbEntity> objects, TreeObjectOrderMovementType moveDir)
+    public MoReorderAction(MapEditorView view, List<MsbEntity> objects, TreeObjectOrderMovementType moveDir)
     {
         View = view;
         selection.AddRange(objects);

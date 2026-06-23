@@ -73,7 +73,7 @@ public class DeleteAction
     {
         if (View.ViewportSelection.IsSelection())
         {
-            DeleteMapObjectsAction action = new(View,
+            MoDeleteAction action = new(View,
             View.ViewportSelection.GetFilteredSelection<MsbEntity>().ToList(), true);
 
             View.ViewportActionManager.ExecuteAction(action);

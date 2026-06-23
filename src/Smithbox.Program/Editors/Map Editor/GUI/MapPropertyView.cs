@@ -291,11 +291,11 @@ public class MapPropertyView
             {
                 if (ImGui.Selectable(@"Copy##CopyPosition"))
                 {
-                    PropAction_Position.CopyCurrentPosition(prop, obj);
+                    PropPositionAction.CopyCurrentPosition(prop, obj);
                 }
                 if (ImGui.Selectable(@"Paste##PastePosition"))
                 {
-                    PropAction_Position.PasteSavedPosition(View, selection);
+                    PropPositionAction.PasteSavedPosition(View, selection);
                 }
             }
 
@@ -304,11 +304,11 @@ public class MapPropertyView
             {
                 if (ImGui.Selectable(@"Copy##CopyRotation"))
                 {
-                    PropAction_Rotation.CopyCurrentRotation(prop, obj);
+                    PropRotationAction.CopyCurrentRotation(prop, obj);
                 }
                 if (ImGui.Selectable(@"Paste##PasteRotation"))
                 {
-                    PropAction_Rotation.PasteSavedRotation(View, selection);
+                    PropRotationAction.PasteSavedRotation(View, selection);
                 }
             }
 
@@ -317,11 +317,11 @@ public class MapPropertyView
             {
                 if (ImGui.Selectable(@"Copy##CopyScale"))
                 {
-                    PropAction_Scale.CopyCurrentScale(prop, obj);
+                    PropScaleAction.CopyCurrentScale(prop, obj);
                 }
                 if (ImGui.Selectable(@"Paste##PasteScale"))
                 {
-                    PropAction_Scale.PasteSavedScale(View, selection);
+                    PropScaleAction.PasteSavedScale(View, selection);
                 }
             }
 
@@ -592,7 +592,7 @@ public class MapPropertyView
             editName = (newValue, first);
             if (entities.Count() == 1)
             {
-                View.ViewportActionManager.ExecuteAction(new RenameObjectsAction(
+                View.ViewportActionManager.ExecuteAction(new MoRenameAction(
                     entities.ToList(),
                     new List<string> { newValue },
                     false
@@ -600,7 +600,7 @@ public class MapPropertyView
             }
             else
             {
-                View.ViewportActionManager.ExecuteAction(new RenameObjectsAction(
+                View.ViewportActionManager.ExecuteAction(new MoRenameAction(
                     entities.ToList(),
                     entities.Select((ent, i) => $"{newValue}_{i}").ToList(),
                     false
@@ -660,7 +660,7 @@ public class MapPropertyView
 
             if (single)
             {
-                View.ViewportActionManager.ExecuteAction(new RenameObjectsAction(
+                View.ViewportActionManager.ExecuteAction(new MoRenameAction(
                     new List<MsbEntity> { first },
                     new List<string> { editName.name },
                     true
@@ -674,7 +674,7 @@ public class MapPropertyView
                         group.Select((ent, index) => $"{editName.name}-{group.Key.Name}"
                     ));
 
-                View.ViewportActionManager.ExecuteAction(new RenameObjectsAction(
+                View.ViewportActionManager.ExecuteAction(new MoRenameAction(
                     entities.ToList(),
                     nameList.ToList(),
                     true
@@ -1036,7 +1036,7 @@ public class MapPropertyView
                                 throw new Exception("Invalid shape");
                         }
 
-                        PropertiesChangedAction action = new(prop, obj, newshape);
+                        PropChangeAction action = new(prop, obj, newshape);
                         action.SetPostExecutionAction(undo =>
                         {
                             var selected = false;
@@ -1094,7 +1094,7 @@ public class MapPropertyView
                             throw new Exception("Invalid BTL LightType");
                     }
 
-                    PropertiesChangedAction action = new(prop, obj, newLight);
+                    PropChangeAction action = new(prop, obj, newLight);
                     action.SetPostExecutionAction(undo =>
                     {
                         var selected = false;
@@ -1693,14 +1693,14 @@ public class MapPropertyView
         }
         else
         {
-            PropertiesChangedAction action;
+            PropChangeAction action;
             if (arrayindex != -1)
             {
-                action = new PropertiesChangedAction((PropertyInfo)prop, arrayindex, obj, newval);
+                action = new PropChangeAction((PropertyInfo)prop, arrayindex, obj, newval);
             }
             else
             {
-                action = new PropertiesChangedAction((PropertyInfo)prop, obj, newval);
+                action = new PropChangeAction((PropertyInfo)prop, obj, newval);
             }
 
             View.ViewportActionManager.ExecuteAction(action);
@@ -1802,7 +1802,7 @@ public class MapPropertyView
         {
             if (_lastUncommittedAction != null && View.ViewportActionManager.PeekUndoAction() == _lastUncommittedAction)
             {
-                if (_lastUncommittedAction is MultipleEntityPropertyChangeAction a)
+                if (_lastUncommittedAction is PropMultChangeAction a)
                 {
                     View.ViewportActionManager.UndoAction();
                     a.UpdateRenderModel = true; // Update render model on commit execution, and update on undo/redo.
@@ -1835,7 +1835,7 @@ public class MapPropertyView
         }
 
         var set = ents.ToHashSet();
-        MultipleEntityPropertyChangeAction action;
+        PropMultChangeAction action;
         foreach (Entity selection in ents)
         {
             if (selection != null && _changingObject != null && !set.SetEquals((HashSet<Entity>)_changingObject))
@@ -1845,7 +1845,7 @@ public class MapPropertyView
             }
         }
 
-        action = new MultipleEntityPropertyChangeAction(View, (PropertyInfo)prop, set, newval, arrayindex, classIndex);
+        action = new PropMultChangeAction(View, (PropertyInfo)prop, set, newval, arrayindex, classIndex);
         View.ViewportActionManager.ExecuteAction(action);
 
         _lastUncommittedAction = action;

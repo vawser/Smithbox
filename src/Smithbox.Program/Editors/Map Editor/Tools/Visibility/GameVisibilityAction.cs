@@ -262,7 +262,7 @@ public class GameVisibilityAction
         }
         List<MsbEntity> sourceList = View.ViewportSelection.GetFilteredSelection<MsbEntity>().ToList();
 
-        ChangeMapObjectType action = new(View, msbclass, sourceList, sourceTypes, targetTypes, "Part", true);
+        MoChangeTypeAction action = new(View, msbclass, sourceList, sourceTypes, targetTypes, "Part", true);
 
         View.ViewportActionManager.ExecuteAction(action);
     }

@@ -130,7 +130,7 @@ public class ReorderAction
     {
         if (View.ViewportSelection.IsSelection())
         {
-            OrderMapObjectsAction action = new(View, View.ViewportSelection.GetFilteredSelection<MsbEntity>().ToList(), direction);
+            MoReorderAction action = new(View, View.ViewportSelection.GetFilteredSelection<MsbEntity>().ToList(), direction);
 
             View.ViewportActionManager.ExecuteAction(action);
         }

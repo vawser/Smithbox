@@ -6,7 +6,7 @@ using System.Reflection;
 
 namespace StudioCore.Editors.MapEditor;
 
-public class ChangeMapObjectType : ViewportAction
+public class MoChangeTypeAction : ViewportAction
 {
     private MapEditorView View;
 
@@ -23,7 +23,7 @@ public class ChangeMapObjectType : ViewportAction
     ///     as Parts or Regions.
     ///     Data for properties absent in targeted type will be lost, but will be restored for undo/redo.
     /// </summary>
-    public ChangeMapObjectType(MapEditorView view, Type msbType, List<MsbEntity> selectedEnts, string[] oldTypes,
+    public MoChangeTypeAction(MapEditorView view, Type msbType, List<MsbEntity> selectedEnts, string[] oldTypes,
         string[] newTypes, string msbParamStr, bool setSelection)
     {
         View = view;

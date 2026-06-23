@@ -7,12 +7,12 @@ namespace StudioCore.Editors.MapEditor;
 /// <summary>
 ///     Copies values from one array to another without affecting references.
 /// </summary>
-public class ArrayPropertyCopyAction : ViewportAction
+public class PropArrayCopyAction : ViewportAction
 {
     private readonly List<PropertyChange> Changes = new();
     private Action<bool> PostExecutionAction;
 
-    public ArrayPropertyCopyAction(Array source, Array target)
+    public PropArrayCopyAction(Array source, Array target)
     {
         for (var i = 0; i < target.Length; i++)
         {
@@ -27,7 +27,7 @@ public class ArrayPropertyCopyAction : ViewportAction
         }
     }
 
-    public ArrayPropertyCopyAction(Array source, IEnumerable<Array> targetList)
+    public PropArrayCopyAction(Array source, IEnumerable<Array> targetList)
     {
         foreach (Array target in targetList)
         {

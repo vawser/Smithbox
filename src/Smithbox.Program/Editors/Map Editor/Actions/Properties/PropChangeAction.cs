@@ -7,7 +7,7 @@ using System.Reflection;
 namespace StudioCore.Editors.MapEditor;
 
 
-public class PropertiesChangedAction : ViewportAction
+public class PropChangeAction : ViewportAction
 {
     private readonly object ChangedObject;
     private readonly List<PropertyChange> Changes = new();
@@ -15,12 +15,12 @@ public class PropertiesChangedAction : ViewportAction
 
     private string EditMessage = "";
 
-    public PropertiesChangedAction(object changed)
+    public PropChangeAction(object changed)
     {
         ChangedObject = changed;
     }
 
-    public PropertiesChangedAction(PropertyInfo prop, object changed, object newval, string entityName = "")
+    public PropChangeAction(PropertyInfo prop, object changed, object newval, string entityName = "")
     {
         ChangedObject = changed;
         var change = new PropertyChange();
@@ -33,7 +33,7 @@ public class PropertiesChangedAction : ViewportAction
         EditMessage = $"{entityName} -> {prop.Name} was changed to {change.NewValue}";
     }
 
-    public PropertiesChangedAction(PropertyInfo prop, int index, object changed, object newval, string entityName = "")
+    public PropChangeAction(PropertyInfo prop, int index, object changed, object newval, string entityName = "")
     {
         ChangedObject = changed;
         var change = new PropertyChange();

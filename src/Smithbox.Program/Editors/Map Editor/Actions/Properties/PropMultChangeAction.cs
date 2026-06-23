@@ -6,7 +6,7 @@ using System.Reflection;
 
 namespace StudioCore.Editors.MapEditor;
 
-public class MultipleEntityPropertyChangeAction : ViewportAction
+public class PropMultChangeAction : ViewportAction
 {
     private MapEditorView View;
 
@@ -16,7 +16,7 @@ public class MultipleEntityPropertyChangeAction : ViewportAction
     public bool UpdateRenderModel = false;
     public bool ClearName { get; set; }
 
-    public MultipleEntityPropertyChangeAction(MapEditorView view, PropertyInfo prop, HashSet<Entity> changedEnts, object newval,
+    public PropMultChangeAction(MapEditorView view, PropertyInfo prop, HashSet<Entity> changedEnts, object newval,
         int index = -1, int classIndex = -1, bool clearName = true)
     {
         View = view;

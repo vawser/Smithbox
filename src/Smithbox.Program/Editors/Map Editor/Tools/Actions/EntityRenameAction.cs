@@ -146,7 +146,7 @@ public class EntityRenameAction
                         newName = name.JapaneseName;
                     }
 
-                    actionList.Add(new RenameObjectsAction(
+                    actionList.Add(new MoRenameAction(
                         new List<MsbEntity> { ent as MsbEntity },
                         new List<string> { $"{ent.Name} -- {newName}" },
                         true
@@ -172,7 +172,7 @@ public class EntityRenameAction
                         newName = name.JapaneseName;
                     }
 
-                    actionList.Add(new RenameObjectsAction(
+                    actionList.Add(new MoRenameAction(
                         new List<MsbEntity> { ent as MsbEntity },
                         new List<string> { $"{ent.Name} -- {newName}" },
                         true
@@ -198,7 +198,7 @@ public class EntityRenameAction
                         newName = name.JapaneseName;
                     }
 
-                    actionList.Add(new RenameObjectsAction(
+                    actionList.Add(new MoRenameAction(
                         new List<MsbEntity> { ent as MsbEntity },
                         new List<string> { $"{ent.Name} -- {newName}" },
                         true

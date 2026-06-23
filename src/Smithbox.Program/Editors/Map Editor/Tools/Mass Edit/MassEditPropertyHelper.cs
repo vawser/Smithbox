@@ -479,7 +479,7 @@ public static class MassEditPropertyHelper
                     }
                 }
 
-                return new PropertiesChangedAction(targetProp, index, curEnt.WrappedObject, result, curEnt.Name);
+                return new PropChangeAction(targetProp, index, curEnt.WrappedObject, result, curEnt.Name);
             }
             else
             {
@@ -559,7 +559,7 @@ public static class MassEditPropertyHelper
                     }
                 }
 
-                return new PropertiesChangedAction(targetProp, index, curEnt.WrappedObject, result, curEnt.Name);
+                return new PropChangeAction(targetProp, index, curEnt.WrappedObject, result, curEnt.Name);
             }
             else
             {
@@ -639,7 +639,7 @@ public static class MassEditPropertyHelper
                     }
                 }
 
-                return new PropertiesChangedAction(targetProp, index, curEnt.WrappedObject, result, curEnt.Name);
+                return new PropChangeAction(targetProp, index, curEnt.WrappedObject, result, curEnt.Name);
             }
             else
             {
@@ -719,7 +719,7 @@ public static class MassEditPropertyHelper
                     }
                 }
 
-                return new PropertiesChangedAction(targetProp, index, curEnt.WrappedObject, result, curEnt.Name);
+                return new PropChangeAction(targetProp, index, curEnt.WrappedObject, result, curEnt.Name);
             }
             else
             {
@@ -799,7 +799,7 @@ public static class MassEditPropertyHelper
                     }
                 }
 
-                return new PropertiesChangedAction(targetProp, index, curEnt.WrappedObject, result, curEnt.Name);
+                return new PropChangeAction(targetProp, index, curEnt.WrappedObject, result, curEnt.Name);
             }
             else
             {
@@ -879,7 +879,7 @@ public static class MassEditPropertyHelper
                     }
                 }
 
-                return new PropertiesChangedAction(targetProp, index, curEnt.WrappedObject, result, curEnt.Name);
+                return new PropChangeAction(targetProp, index, curEnt.WrappedObject, result, curEnt.Name);
             }
             else
             {
@@ -959,7 +959,7 @@ public static class MassEditPropertyHelper
                     }
                 }
 
-                return new PropertiesChangedAction(targetProp, index, curEnt.WrappedObject, result, curEnt.Name);
+                return new PropChangeAction(targetProp, index, curEnt.WrappedObject, result, curEnt.Name);
             }
             else
             {
@@ -1039,7 +1039,7 @@ public static class MassEditPropertyHelper
                     }
                 }
 
-                return new PropertiesChangedAction(targetProp, index, curEnt.WrappedObject, result, curEnt.Name);
+                return new PropChangeAction(targetProp, index, curEnt.WrappedObject, result, curEnt.Name);
             }
             else
             {
@@ -1119,7 +1119,7 @@ public static class MassEditPropertyHelper
                     }
                 }
 
-                return new PropertiesChangedAction(targetProp, index, curEnt.WrappedObject, result, curEnt.Name);
+                return new PropChangeAction(targetProp, index, curEnt.WrappedObject, result, curEnt.Name);
             }
             else
             {
@@ -1155,7 +1155,7 @@ public static class MassEditPropertyHelper
                     }
                 }
 
-                return new PropertiesChangedAction(targetProp, curEnt.WrappedObject, result, curEnt.Name);
+                return new PropChangeAction(targetProp, curEnt.WrappedObject, result, curEnt.Name);
             }
             else
             {
@@ -1167,7 +1167,7 @@ public static class MassEditPropertyHelper
         {
             string result = newValue;
 
-            return new PropertiesChangedAction(targetProp, index, curEnt.WrappedObject, result, curEnt.Name);
+            return new PropChangeAction(targetProp, index, curEnt.WrappedObject, result, curEnt.Name);
         }
 
         return null;

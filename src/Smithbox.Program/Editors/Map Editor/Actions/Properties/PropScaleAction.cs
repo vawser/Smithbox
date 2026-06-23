@@ -7,20 +7,19 @@ using System.Reflection;
 
 namespace StudioCore.Editors.MapEditor;
 
-public static class PropAction_Position
+public static class PropScaleAction
 {
-    public static void CopyCurrentPosition(PropertyInfo prop, object obj)
+    public static void CopyCurrentScale(PropertyInfo prop, object obj)
     {
-        CFG.Current.SavedPosition = (Vector3)obj;
-        //CFG.Current.SavedPosition = (Vector3)prop.GetValue(obj, null);
+        CFG.Current.SavedScale = (Vector3)prop.GetValue(obj, null);
     }
 
-    public static void PasteSavedPosition(MapEditorView view, ViewportSelection _selection)
+    public static void PasteSavedScale(MapEditorView view, ViewportSelection _selection)
     {
         List<ViewportAction> actlist = new();
         foreach (Entity sel in _selection.GetFilteredSelection<Entity>())
         {
-            actlist.Add(sel.ApplySavedPosition());
+            actlist.Add(sel.ApplySavedScale());
         }
 
         var action = new ViewportCompoundAction(actlist);

@@ -1,5 +1,6 @@
 ﻿using Hexa.NET.ImGui;
 using SoulsFormats;
+using SoulsFormats.KF4;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.GparamEditor;
@@ -178,7 +179,7 @@ public class DuplicateToMapAction
     /// </summary>
     public void DuplicateToMap(List<MsbEntity> selection, MapContainer targetMap, Entity targetBtl)
     {
-        var action = new CloneMapObjectsAction(View, selection, true, targetMap, targetBtl);
+        var action = new MoDuplicateAction(View, selection, targetMap, targetBtl);
 
         View.ViewportActionManager.ExecuteAction(action);
 
@@ -201,24 +202,14 @@ public class DuplicateToMapAction
 
     public void OnPaste(MapEditorView activeView)
     {
-        var mapID = activeView.Selection.SelectedMapID;
+        var mapContainer = activeView.Selection.SelectedMapContainer;
 
-        foreach (var entry in Project.Handler.MapData.PrimaryBank.Maps)
-        {
-            if (mapID == entry.Key.Filename)
-            {
-                var map = entry.Value.MapContainer;
-                var lightContainer = map.BTLParents.FirstOrDefault();
+        if (mapContainer == null)
+            return;
 
-                if (map != null)
-                {
-                    var action = new CloneMapObjectsAction(View, StoredSelection, true, map, lightContainer);
-                    View.ViewportActionManager.ExecuteAction(action);
+        var btlParent = mapContainer.BTLParents.FirstOrDefault();
 
-                    break;
-                }
-            }
-        }
-
+        var action = new MoDuplicateAction(View, StoredSelection, mapContainer, btlParent);
+        View.ViewportActionManager.ExecuteAction(action);
     }
 }
