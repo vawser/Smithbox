@@ -21,7 +21,7 @@ public static class ResourceManager
 
     public static readonly Dictionary<string, IResourceHandle> ResourceDatabase = new();
     public static readonly ConcurrentDictionary<ResourceJob, int> ActiveJobProgress = new();
-    public static readonly HashSet<string> InFlightFiles = new();
+    public static readonly ConcurrentDictionary<string, byte> InFlightFiles = new();
 
     public static readonly BufferBlock<AddResourceLoadNotificationRequest> _notificationRequests = new();
 

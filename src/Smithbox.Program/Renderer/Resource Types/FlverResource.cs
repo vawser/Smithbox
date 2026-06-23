@@ -99,6 +99,8 @@ public class FlverResource : IResource, IDisposable
                 BinaryReaderEx br = new(false, bytes);
                 DCX.Type ctype;
                 br = SFUtil.GetDecompressedBR(br, out ctype);
+
+                // Vital for fast map loading
                 ret = LoadInternalFast(br);
             }
             else
@@ -143,7 +145,6 @@ public class FlverResource : IResource, IDisposable
                 }
                 else
                 {
-                    // TOFIX: NR doesn't want to render the meshes with LoadInternalFast
                     if (al == AccessLevel.AccessGPUOptimizedOnly &&
                         curProject.Descriptor.ProjectType != ProjectType.NR &&
                         curProject.Descriptor.ProjectType != ProjectType.DS1R &&
@@ -152,6 +153,8 @@ public class FlverResource : IResource, IDisposable
                         BinaryReaderEx br = new(false, fileData.Value);
                         DCX.Type ctype;
                         br = SFUtil.GetDecompressedBR(br, out ctype);
+
+                        // Vital for fast map loading
                         ret = LoadInternalFast(br);
                     }
                     else
@@ -554,7 +557,7 @@ public class FlverResource : IResource, IDisposable
         dest.VertexLayout = MeshLayoutUtils.GetLayoutDescription(dest.LayoutType);
         dest.VertexSize = MeshLayoutUtils.GetLayoutVertexSize(dest.LayoutType);
 
-        dest.UpdateMaterial();
+        //dest.UpdateMaterial();
     }
 
     private unsafe void ProcessMaterial(FlverMaterial dest, BinaryReaderEx br,
@@ -624,7 +627,7 @@ public class FlverResource : IResource, IDisposable
         dest.VertexLayout = MeshLayoutUtils.GetLayoutDescription(dest.LayoutType);
         dest.VertexSize = MeshLayoutUtils.GetLayoutVertexSize(dest.LayoutType);
 
-        dest.UpdateMaterial();
+        //dest.UpdateMaterial();
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -2108,6 +2111,8 @@ public class FlverResource : IResource, IDisposable
     // Read only flver loader designed to be very fast at reading with low memory usage
     private bool LoadInternalFast(BinaryReaderEx br)
     {
+        // TO FIX: NR flvers don't seem to work with this properly (reads but no rendering)
+
         // Parse header
         br.BigEndian = false;
         br.AssertASCII("FLVER\0");

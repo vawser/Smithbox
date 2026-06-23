@@ -30,12 +30,10 @@ public class ResourceJobBuilder
     public void AddLoadArchiveTask(string virtualPath, AccessLevel al, bool populateOnly,
         HashSet<string> assets = null, bool isPersistent = false)
     {
-        if (ResourceManager.InFlightFiles.Contains(virtualPath))
+        if (!ResourceManager.InFlightFiles.TryAdd(virtualPath, 0))
         {
             return;
         }
-
-        ResourceManager.InFlightFiles.Add(virtualPath);
 
         if (virtualPath == "null")
         {
@@ -61,12 +59,10 @@ public class ResourceJobBuilder
     /// <param name="isPersistent"></param>
     public void AddLoadArchiveTask(string virtualPath, AccessLevel al, bool populateOnly, ResourceType filter, HashSet<string> assets = null, bool isPersistent = false)
     {
-        if (ResourceManager.InFlightFiles.Contains(virtualPath))
+        if (!ResourceManager.InFlightFiles.TryAdd(virtualPath, 0))
         {
             return;
         }
-
-        ResourceManager.InFlightFiles.Add(virtualPath);
 
         if (virtualPath == "null")
         {
@@ -89,12 +85,10 @@ public class ResourceJobBuilder
     /// <param name="isPersistent"></param>
     public void AddLoadFileTask(string virtualPath, AccessLevel al, bool isPersistent = false)
     {
-        if (ResourceManager.InFlightFiles.Contains(virtualPath))
+        if (!ResourceManager.InFlightFiles.TryAdd(virtualPath, 0))
         {
             return;
         }
-
-        ResourceManager.InFlightFiles.Add(virtualPath);
 
         var curProject = Smithbox.Orchestrator.SelectedProject;
         var relativePath = PathBuilder.GetRelativePath(curProject, virtualPath);
@@ -154,12 +148,10 @@ public class ResourceJobBuilder
     public void AddExternalFileTask(string virtualPath, AccessLevel al, bool isPersistent = false)
     {
         // PIPELINE: resource is not already being loaded
-        if (ResourceManager.InFlightFiles.Contains(virtualPath))
+        if (!ResourceManager.InFlightFiles.TryAdd(virtualPath, 0))
         {
             return;
         }
-
-        ResourceManager.InFlightFiles.Add(virtualPath);
 
         var curProject = Smithbox.Orchestrator.SelectedProject;
         var absPath = PathBuilder.GetAbsolutePath(curProject, virtualPath);
