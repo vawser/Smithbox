@@ -46,9 +46,9 @@ public class MapUniverse : IUniverse
         return View.ViewportHandler.ActiveViewport.RenderScene;
     }
 
-    public bool LoadMap(string mapid, bool selectOnLoad = false, bool ignoreHavokLoad = false)
+    public bool LoadMap(string mapid, bool selectOnLoad = false, bool ignoreHavokLoad = false, bool allowConcurrentMapLoad = false)
     {
-        if(IsLoading)
+        if(!allowConcurrentMapLoad && IsLoading)
         {
             Smithbox.LogError<MapUniverse>("A map is already in the process of loading.");
             return false;
@@ -710,7 +710,7 @@ public class MapUniverse : IUniverse
 
         foreach (KeyValuePair<string, MapConnectionRelationType> map in relatedMaps)
         {
-            View.Universe.LoadMap(map.Key);
+            View.Universe.LoadMap(map.Key, false, false, true);
         }
     }
 

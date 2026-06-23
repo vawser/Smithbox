@@ -1,6 +1,10 @@
 #---------------------
 # TODO 
 #---------------------
+- Project:
+ - Check NR file dictionary is up-to-date
+ - Add 'validated' properties to file dictionary entries (check they exist in game files, if they do, 'validated' is true)
+
 - Param Editor
  - Look into making row merges for tabulated params functional and simple
  - Finish converting the SDT AlternativeOrders into Field Layouts
