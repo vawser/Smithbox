@@ -25,6 +25,19 @@
  - "Follow" toggle / shortcut for camera that allows a selection to be 'followed' by the camera (i.e. keep look-at spot focused on selection centre and adjust camera position if translation occurs)
  - "Bounding Box" visualisation toggle / shortcut: display the bounding box for the selection using wire box primitives 
  
+- Map Data Editor
+ - Implement property edit
+  - Array properties need fixing
+  - String property should set null to "" so the input shows
+  - For multi-select, apply change to all
+  - Display name field
+  
+ - Add automatic add to Models list if ModelName changes for a Part
+  
+ - Port over Global Search and Mass Edit
+ - Implement ENFL sub-editor
+ - Implement the other MSB meta elements
+ 
 - Model Editor 
     - Add simple JSON export/import for elements of FLVER
     - Rendering experiment (TinyFFR)

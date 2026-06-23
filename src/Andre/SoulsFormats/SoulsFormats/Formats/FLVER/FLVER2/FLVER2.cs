@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.IO.MemoryMappedFiles;
 using System.Linq;
 using System.Numerics;
 
@@ -54,6 +56,8 @@ namespace SoulsFormats
         /// </summary>
         public SkeletonSet Skeletons { get; set; }
 
+        private FlverCache Cache = null;
+
         /// <summary>
         /// Creates a FLVER with a default header and empty lists.
         /// </summary>
@@ -66,6 +70,18 @@ namespace SoulsFormats
             Nodes = new List<FLVER.Node>();
             Meshes = new List<Mesh>();
             BufferLayouts = new List<BufferLayout>();
+        }
+
+        public static FLVER2 Read(Memory<byte> bytes, FlverCache cache)
+        {
+            BinaryReaderEx br = new BinaryReaderEx(false, bytes);
+            FLVER2 file = new FLVER2();
+            file.Cache = cache;
+            DCX.Type ctype;
+            br = SFUtil.GetDecompressedBR(br, out ctype);
+            file.Compression = ctype;
+            file.Read(br);
+            return file;
         }
 
         /// <summary>

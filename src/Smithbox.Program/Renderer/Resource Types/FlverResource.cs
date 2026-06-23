@@ -1,12 +1,11 @@
 ﻿#nullable enable
-using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using SoulsFormats.Utilities;
 using StudioCore.Application;
 using StudioCore.Developer;
+using StudioCore.Editors.Common;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ModelEditor;
-using StudioCore.Editors.Viewport;
 using StudioCore.Logger;
 using StudioCore.Utilities;
 using System;
@@ -25,38 +24,21 @@ namespace StudioCore.Renderer;
 
 public class FlverResource : IResource, IDisposable
 {
-    public class VertexInfo
-    {
-        public int MeshIndex;
-        public int VertexIndex;
-    }
-
-    //private static ArrayPool<FlverLayout> VerticesPool = ArrayPool<FlverLayout>.Create();
-
     public const bool CaptureMaterialLayouts = false;
-    //private static readonly Stack<FlverCache> FlverCaches = new();
+    private static readonly Stack<FlverCache> FlverCaches = new();
     private static readonly object CacheLock = new();
 
-    /// <summary>
-    ///     Cache of material layouts that can be dumped
-    /// </summary>
     public static Dictionary<string, FLVER2.BufferLayout> MaterialLayouts = new();
-
     public static object _matLayoutLock = new();
+
+    public FLVER0? FlverDeS;
     public FLVER2? Flver;
 
-    /// <summary>
-    ///     Low level access to the flver struct. Use only in modification mode.
-    /// </summary>
-    public FLVER0? FlverDeS;
-
     public FlverMaterial[]? GPUMaterials;
-
     public FlverSubmesh[]? GPUMeshes;
 
-    //public static int CacheCount { get; private set; }
+    public static int CacheCount { get; private set; }
 
-    /*
     public static long CacheFootprint
     {
         get
@@ -73,7 +55,6 @@ public class FlverResource : IResource, IDisposable
             return total;
         }
     }
-    */
 
     public BoundingBox Bounds { get; set; }
 
@@ -81,93 +62,71 @@ public class FlverResource : IResource, IDisposable
     private List<FlverBone>? FBones { get; set; }
     private List<Matrix4x4>? BoneTransforms { get; set; }
 
-    public bool IsSpeedtree = false;
-
     public GPUBufferAllocator.GPUBufferHandle? StaticBoneBuffer { get; private set; }
 
+    public bool IsSpeedtree = false;
     public string? VirtPath { get; set; }
 
-    /// <summary>
-    /// Bytes
-    /// </summary>
     public bool _Load(Memory<byte> bytes, AccessLevel al, string virtPath)
     {
+        var curProject = Smithbox.Orchestrator.SelectedProject;
+
+        VirtPath = virtPath;
+
+        if (curProject == null)
+            return false;
+
         if (CFG.Current.Developer_Enable_Tools)
         {
             ResourceViewer.ProcessedMeshes.Add(virtPath);
             ResourceViewer.MeshConsumptionSize += bytes.Length;
         }
 
-        VirtPath = virtPath;
+        bool ret;
 
-        if (Smithbox.Orchestrator.SelectedProject != null)
+        if (curProject.Descriptor.ProjectType is ProjectType.DES)
         {
-            var curProject = Smithbox.Orchestrator.SelectedProject;
-
-            bool ret;
-
-            if (curProject.Descriptor.ProjectType is ProjectType.DES)
+            FlverDeS = FLVER0.Read(bytes);
+            ret = LoadInternalDeS(al);
+        }
+        else
+        {
+            if (al == AccessLevel.AccessGPUOptimizedOnly &&
+                curProject.Descriptor.ProjectType != ProjectType.NR &&
+                curProject.Descriptor.ProjectType != ProjectType.DS1R &&
+                curProject.Descriptor.ProjectType != ProjectType.DS1 && !FocusManager.IsInModelEditor())
             {
-                FlverDeS = FLVER0.Read(bytes);
-                ret = LoadInternalDeS(al);
+                BinaryReaderEx br = new(false, bytes);
+                DCX.Type ctype;
+                br = SFUtil.GetDecompressedBR(br, out ctype);
+                ret = LoadInternalFast(br);
             }
             else
             {
-                if (al == AccessLevel.AccessGPUOptimizedOnly &&
-                    curProject.Descriptor.ProjectType != ProjectType.DS1R &&
-                    curProject.Descriptor.ProjectType != ProjectType.DS1)
-                {
-                    BinaryReaderEx br = new(false, bytes);
-                    Flver = FLVER2.Read(bytes);
+                FlverCache? cache = al == AccessLevel.AccessGPUOptimizedOnly ? GetCache() : null;
 
-                    ret = LoadInternal(al, virtPath);
+                Flver = FLVER2.Read(bytes, cache);
+                ret = LoadInternal(al, virtPath);
 
-                    //br = SFUtil.GetDecompressedBR(br, out ctype);
-                    //ret = LoadInternalFast(br);
-                }
-                else
-                {
-                    Flver = FLVER2.Read(bytes);
-
-                    ret = LoadInternal(al);
-                }
+                ReleaseCache(cache);
             }
-
-            return ret;
         }
-
-        return false;
-    }
-
-    /// <summary>
-    /// Bytes
-    /// </summary>
-    public bool _Load(Memory<byte> bytes)
-    {
-        bool ret;
-
-        Flver = FLVER2.Read(bytes);
-
-        ret = LoadInternal(AccessLevel.AccessFull);
 
         return ret;
     }
 
-    /// <summary>
-    /// Path
-    /// </summary>
     public bool _Load(string relativePath, AccessLevel al, string virtPath)
     {
+        var curProject = Smithbox.Orchestrator.SelectedProject;
+
         VirtPath = virtPath;
 
-        if (Smithbox.Orchestrator.SelectedProject == null)
+        if (curProject == null)
             return false;
 
         // Small hack so the chrbnd's that are passed here are skipped.
         if (!(relativePath.Contains(".flv")))
             return false;
-
-        var curProject = Smithbox.Orchestrator.SelectedProject;
 
         try
         {
@@ -184,9 +143,11 @@ public class FlverResource : IResource, IDisposable
                 }
                 else
                 {
+                    // TOFIX: NR doesn't want to render the meshes with LoadInternalFast
                     if (al == AccessLevel.AccessGPUOptimizedOnly &&
+                        curProject.Descriptor.ProjectType != ProjectType.NR &&
                         curProject.Descriptor.ProjectType != ProjectType.DS1R &&
-                        curProject.Descriptor.ProjectType != ProjectType.DS1)
+                        curProject.Descriptor.ProjectType != ProjectType.DS1 && !FocusManager.IsInModelEditor())
                     {
                         BinaryReaderEx br = new(false, fileData.Value);
                         DCX.Type ctype;
@@ -195,8 +156,12 @@ public class FlverResource : IResource, IDisposable
                     }
                     else
                     {
-                        Flver = FLVER2.Read(fileData.Value);
-                        ret = LoadInternal(al);
+                        FlverCache? cache = al == AccessLevel.AccessGPUOptimizedOnly ? GetCache() : null;
+
+                        Flver = FLVER2.Read(fileData.Value, cache);
+                        ret = LoadInternal(al, VirtPath);
+
+                        ReleaseCache(cache);
                     }
                 }
             }
@@ -211,13 +176,40 @@ public class FlverResource : IResource, IDisposable
         return false;
     }
 
+    private FlverCache GetCache()
+    {
+        lock (CacheLock)
+        {
+            if (FlverCaches.Count > 0)
+            {
+                return FlverCaches.Pop();
+            }
+
+            CacheCount++;
+        }
+
+        return new FlverCache();
+    }
+
+    private void ReleaseCache(FlverCache cache)
+    {
+        if (cache != null)
+        {
+            cache.ResetUsage();
+            lock (CacheLock)
+            {
+                FlverCaches.Push(cache);
+            }
+        }
+    }
+
     private void LookupTexture(FlverMaterial.TextureType textureType, FlverMaterial dest, string? type, string mpath,
         string mtd)
     {
-        if (Smithbox.Orchestrator.SelectedProject == null)
-            return;
-
         var curProject = Smithbox.Orchestrator.SelectedProject;
+
+        if (curProject == null)
+            return;
 
         if (curProject.Handler.MaterialData == null || curProject.Handler.MaterialData.PrimaryBank == null)
             return;
@@ -2120,20 +2112,8 @@ public class FlverResource : IResource, IDisposable
         br.BigEndian = false;
         br.AssertASCII("FLVER\0");
         br.BigEndian = br.AssertASCII(["L\0", "B\0"]) == "B\0";
-        var version = br.AssertInt32([0x20005,
-            0x20007,
-            0x20009,
-            0x2000C,
-            0x2000D,
-            0x2000E,
-            0x2000F,
-            0x20010,
-            0x20013,
-            0x20014,
-            0x20016,
-            0x2001A,
-            0x2001B,
-            0x20021]);
+        var version = br.AssertInt32(
+                [0x20005, 0x20007, 0x20009, 0x2000B, 0x2000C, 0x2000D, 0x2000E, 0x2000F, 0x20010, 0x20013, 0x20014, 0x20016, 0x20017, 0x2001A, 0x2001B, 0x20021]);
 
         var dataOffset = br.ReadUInt32();
         br.ReadInt32(); // Data length
@@ -2160,10 +2140,13 @@ public class FlverResource : IResource, IDisposable
         var textureCount = br.ReadInt32();
         br.ReadByte(); // unknown
         br.ReadByte(); // unknown
+
         br.AssertByte(0);
         br.AssertByte(0);
+
         br.AssertInt32(0);
         br.AssertInt32(0);
+
         br.AssertInt16([0, 1, 2, 3, 4, 5]);  // unknown
         var specialModifier = br.AssertInt16([0, -32768]);
         IsSpeedtree = specialModifier == -32768;
@@ -2574,7 +2557,7 @@ public class FlverResource : IResource, IDisposable
             boneOffset = br.ReadInt32();
             facesetCount = br.ReadInt32();
             facesetIndicesOffset = br.ReadUInt32();
-            vertexBufferCount = br.AssertInt32([0, 1, 2, 3]);
+            vertexBufferCount = br.ReadInt32();
             vertexBufferIndicesOffset = br.ReadUInt32();
         }
 
@@ -2596,8 +2579,7 @@ public class FlverResource : IResource, IDisposable
             flags = (FLVER2.FaceSet.FSFlags)br.ReadUInt32();
             triangleStrip = br.ReadBoolean();
             cullBackfaces = br.ReadBoolean();
-            br.ReadByte(); // unk
-            br.ReadByte(); // unk
+            br.ReadInt16();
             indexCount = br.ReadInt32();
             indicesOffset = br.ReadUInt32() + dataOffset;
             indexSize = 0;
