@@ -240,11 +240,31 @@ public class ViewportPrefs
     #endregion
 
     #region Selection
-    public static PreferenceItem Viewport_Enable_Selection_Tint()
+
+    public static PreferenceItem Viewport_Enable_Selection_Outline()
     {
         return new PreferenceItem
         {
             OrderID = 0,
+            Category = PreferenceCategory.Viewport,
+            Spacer = true,
+
+            Section = SectionCategory.Selection,
+
+            Title = "Enable Selection Outline",
+            Description = "If enabled, a selection outline will display alongside the selection tint on selected viewport objects.\nNote: the outline is error-prone when hundreds (or more) of viewport objects are selected.",
+
+            Draw = () =>
+            {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Viewport_Enable_Selection_Outline);
+            }
+        };
+    }
+    public static PreferenceItem Viewport_Enable_Selection_Tint()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 1,
             Category = PreferenceCategory.Viewport,
             Spacer = true,
 
@@ -260,32 +280,50 @@ public class ViewportPrefs
         };
     }
 
-    public static PreferenceItem Viewport_Enable_Selection_Outline()
+    public static PreferenceItem Viewport_Enable_Selection_Dithering()
     {
         return new PreferenceItem
         {
-            OrderID = 1,
+            OrderID = 2,
             Category = PreferenceCategory.Viewport,
             Spacer = true,
 
             Section = SectionCategory.Selection,
 
-            Title = "Enable Selection Outline",
-            Description = "If enabled, a selection outline will display alongside the selection tint on selected viewport objects.\nNote: the outline is error-prone when hundreds (or more) of viewport objects are selected.",
+            Title = "Enable Selection Dithering",
+            Description = "If enabled, a selected model will be dithered.",
 
             Draw = () =>
             {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Viewport_Enable_Selection_Outline);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Viewport_Enable_Selection_Dithering);
             }
         };
     }
+    public static PreferenceItem Viewport_Selection_Dither_Opacity()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 3,
+            Category = PreferenceCategory.Viewport,
+            Spacer = true,
 
+            Section = SectionCategory.Selection,
+
+            Title = "Selection Dither Opacity",
+            Description = "Determines the strength of the opacity applied during dithering.",
+
+            Draw = () => {
+                DPI.ApplyInputWidth();
+                ImGui.DragFloat("##inputValue", ref CFG.Current.Viewport_Selection_Dither_Opacity);
+            }
+        };
+    }
 
     public static PreferenceItem Viewport_Enable_Box_Selection()
     {
         return new PreferenceItem
         {
-            OrderID = 2,
+            OrderID = 4,
             Category = PreferenceCategory.Viewport,
             Spacer = true,
 
@@ -305,7 +343,7 @@ public class ViewportPrefs
     {
         return new PreferenceItem
         {
-            OrderID = 3,
+            OrderID = 5,
             Category = PreferenceCategory.Viewport,
             Spacer = true,
 
@@ -325,7 +363,7 @@ public class ViewportPrefs
     {
         return new PreferenceItem
         {
-            OrderID = 4,
+            OrderID = 6,
             Category = PreferenceCategory.Viewport,
             Spacer = true,
 

@@ -87,5 +87,7 @@ void main()
 	{
 		posbase = sceneparam.projection * sceneparam.view * w * vec4(position, 1);
 	}
-    gl_Position = posbase + vec4(ssnormal, 0.0) * posbase.w * 0.005;
+    
+    gl_Position = posbase;
+   // gl_Position = posbase + vec4(ssnormal, 0.0) * posbase.w * 0.005;
 }

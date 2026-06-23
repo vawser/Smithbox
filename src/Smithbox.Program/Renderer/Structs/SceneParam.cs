@@ -21,5 +21,7 @@ public unsafe struct SceneParam
     public float SimpleFlver_Saturation;
     public Vector4 SelectionColor;
     public Vector4 OutlineColor;
-    public fixed uint padding[2];
+    public uint EnableDithering;
+    public uint EnableTinting;
+    public float DitherOpacity;
 }

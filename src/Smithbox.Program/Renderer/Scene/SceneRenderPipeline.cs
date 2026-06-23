@@ -73,6 +73,9 @@ public class SceneRenderPipeline
         SceneParams.SimpleFlver_Saturation = 0.5f;
         SceneParams.SelectionColor = new Vector4(1.0f, 0.5f, 0.0f, 1.0f);
         SceneParams.OutlineColor = new Vector4(1.0f, 0.5f, 0.0f, 1.0f);
+        SceneParams.EnableDithering = 1;
+        SceneParams.EnableTinting = 1;
+        SceneParams.DitherOpacity = 0.5f;
 
         device.UpdateBuffer(SceneParamBuffer, 0, ref SceneParams, (uint)sizeof(SceneParam));
 
@@ -149,6 +152,14 @@ public class SceneRenderPipeline
             CFG.Current.Viewport_Selection_Outline_Color.Z,
             1.0f);
 
+        uint enableDithering = 1;
+        if (!CFG.Current.Viewport_Enable_Selection_Dithering)
+            enableDithering = 0;
+
+        uint enableTinting = 1;
+        if (!CFG.Current.Viewport_Enable_Selection_Tint)
+            enableTinting = 0;
+
         Eye = eye;
         SceneRenderer.AddBackgroundUploadTask((d, cl) =>
         {
@@ -163,6 +174,9 @@ public class SceneRenderPipeline
             SceneParams.SimpleFlver_Saturation = CFG.Current.Viewport_Flat_Model_Saturation;
             SceneParams.SelectionColor = selectionColor;
             SceneParams.OutlineColor = outlineColor;
+            SceneParams.EnableDithering = enableDithering;
+            SceneParams.EnableTinting = enableTinting;
+            SceneParams.DitherOpacity = CFG.Current.Viewport_Selection_Dither_Opacity;
 
             cl.UpdateBuffer(SceneParamBuffer, 0, ref SceneParams, (uint)sizeof(SceneParam));
         });

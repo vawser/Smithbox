@@ -36,19 +36,23 @@ layout(location = 0) out vec4 fsout_color;
 struct sceneParams
 {
 	mat4 projection;
-	mat4 view;
-	vec4 eye;
-	vec4 lightDirection;
-	ivec4 curserPosition;
-	uint envmap;
-	
-	float ambientLightMult;
-	float directLightMult;
-	float indirectLightMult;
-	float emissiveMapMult;
-	float sceneBrightness;
-    
-    vec4 SimpleFlverSelectColor;
+    mat4 view;
+    vec4 eye;
+    vec4 lightDirection;
+    ivec4 curserPosition;
+    uint envmap;
+    float ambientLightMult;
+    float directLightMult;
+    float indirectLightMult;
+    float emissiveMapMult;
+    float sceneBrightness;
+    float simpleFlverBrightness; 
+    float simpleFlverSaturation;  
+    vec4 selectionColor;          
+    vec4 outlineColor;            
+    uint EnableDithering;      
+    uint EnableTinting;
+    float ditherOpacity;
 };
 
 layout(set = 0, binding = 0) uniform SceneParamBuffer
@@ -155,11 +159,33 @@ void main()
 	vec4 diffuseColor = texture(sampler2D(globalTextures[nonuniformEXT(int(matdata[fsin_mat].colorTex))], anisoLinearSampler), fsin_texcoord.xy);
 #endif
 	
-	if (diffuseColor.w < 0.5)
-	{
-		discard;
-	}
+    if (sceneparam.EnableDithering == 1)
+    {
+        // 4x4 Bayer ordered dither
+        mat4 bayerMatrix = mat4(
+             0.0/16.0,  8.0/16.0,  2.0/16.0, 10.0/16.0,
+            12.0/16.0,  4.0/16.0, 14.0/16.0,  6.0/16.0,
+             3.0/16.0, 11.0/16.0,  1.0/16.0,  9.0/16.0,
+            15.0/16.0,  7.0/16.0, 13.0/16.0,  5.0/16.0
+        );
 
+        ivec2 pixelCoord = ivec2(gl_FragCoord.xy) % 4;
+        float threshold = bayerMatrix[pixelCoord.x][pixelCoord.y];
+
+        float opacity = sceneparam.ditherOpacity;
+        if (opacity < threshold)
+        {
+            discard;
+        }
+    }
+    else if(sceneparam.EnableDithering == 0)
+    {
+        if (diffuseColor.w < 0.5)
+        {
+            discard;
+        }
+    }
+    
 	// Do picking after discard
 	if (c_picking)
 	{
@@ -258,8 +284,8 @@ void main()
 		
         vec3 litColor = (direct * sceneparam.directLightMult + indirect * sceneparam.indirectLightMult) * sceneparam.sceneBrightness;
         
-        vec3 tint = sceneparam.SimpleFlverSelectColor.rgb;
-        float strength = sceneparam.SimpleFlverSelectColor.a;
+        vec3 tint = sceneparam.selectionColor.rgb;
+        float strength = sceneparam.selectionColor.a;
         vec3 tintedColor = mix(litColor, litColor * tint, strength);
         
         fsout_color = vec4(tintedColor, 1.0);
@@ -303,11 +329,18 @@ void main()
 		
         vec3 litColor = (direct * sceneparam.directLightMult + indirect * sceneparam.indirectLightMult) * sceneparam.sceneBrightness;
         
-        vec3 tint = sceneparam.SimpleFlverSelectColor.rgb;
-        float strength = sceneparam.SimpleFlverSelectColor.a;
-        vec3 tintedColor = mix(litColor, litColor * tint, strength);
-        
-        fsout_color = vec4(tintedColor, 1.0);
+        if(sceneparam.EnableTinting == 1)
+        {
+            vec3 tint = sceneparam.selectionColor.rgb;
+            float strength = sceneparam.selectionColor.a;
+            vec3 tintedColor = mix(litColor, litColor * tint, strength);
+            
+            fsout_color = vec4(tintedColor, 1.0);
+        }
+        else if(sceneparam.EnableTinting == 0)
+        {
+            fsout_color = vec4(litColor, 1.0);
+        }
 	}
     
 	fsout_color = sqrt(fsout_color);

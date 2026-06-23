@@ -1110,6 +1110,8 @@ public class CFG
     public Vector3 Viewport_Selection_Tint_Color = new(1.0f, 0.5f, 0.0f);
     public Vector3 Viewport_Untextured_Selection_Tint_Color = new(0.85f, 0.0f, 1.0f);
     public float Viewport_Selection_Tint_Strength = 1.0f;
+    public bool Viewport_Enable_Selection_Dithering = true;
+    public float Viewport_Selection_Dither_Opacity = 0.9f;
 
     public bool Viewport_DisplayControls = true;
     public bool Viewport_DisplayRotationIncrement = true;
