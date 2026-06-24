@@ -1,3 +1,7 @@
 #---------------------
 # TODO 
 #---------------------
+
+- Map Editor
+ - First mesh update can hide the mesh (subsequent updates will show it)
+ - Ghost mesh still occurs.

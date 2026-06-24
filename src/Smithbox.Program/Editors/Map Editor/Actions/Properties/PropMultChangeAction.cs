@@ -13,15 +13,18 @@ public class PropMultChangeAction : ViewportAction
     private readonly HashSet<Entity> ChangedEnts = new();
     private readonly List<PropertyChange> Changes = new();
 
-    public bool UpdateRenderModel = false;
-    public bool ClearName { get; set; }
+    private bool UpdateRenderMesh = false;
 
     public PropMultChangeAction(MapEditorView view, PropertyInfo prop, HashSet<Entity> changedEnts, object newval,
-        int index = -1, int classIndex = -1, bool clearName = true)
+        int index = -1, int classIndex = -1)
     {
         View = view;
 
-        ClearName = clearName;
+        if(prop.Name == "ModelName")
+        {
+            UpdateRenderMesh = true;
+        }
+
         ChangedEnts = changedEnts;
         foreach (Entity o in changedEnts)
         {
@@ -97,13 +100,13 @@ public class PropMultChangeAction : ViewportAction
             e.Name = null;
             e.CachedAliasName = null;
 
-            if (UpdateRenderModel)
+            if (UpdateRenderMesh)
             {
+                e.UpdateRenderModel();
                 if (e is MsbEntity msbEnt)
                 {
                     msbEnt.AssignDrawable();
                 }
-                e.UpdateRenderModel();
 
                 if (e.RenderSceneMesh != null)
                 {
@@ -148,13 +151,13 @@ public class PropMultChangeAction : ViewportAction
             e.Name = null;
             e.CachedAliasName = null;
 
-            if (UpdateRenderModel)
+            if (UpdateRenderMesh)
             {
+                e.UpdateRenderModel();
                 if (e is MsbEntity msbEnt)
                 {
                     msbEnt.AssignDrawable();
                 }
-                e.UpdateRenderModel();
                 if (e.RenderSceneMesh != null)
                 {
                     e.RenderSceneMesh.RenderSelectionOutline = true;

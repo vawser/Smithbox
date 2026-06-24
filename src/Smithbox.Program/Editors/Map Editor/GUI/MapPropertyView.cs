@@ -1811,7 +1811,6 @@ public class MapPropertyView
                 if (_lastUncommittedAction is PropMultChangeAction a)
                 {
                     View.ViewportActionManager.UndoAction();
-                    a.UpdateRenderModel = true; // Update render model on commit execution, and update on undo/redo.
                     View.ViewportActionManager.ExecuteAction(a);
                 }
 
