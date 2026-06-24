@@ -62,10 +62,12 @@ public class MsbEntity : Entity
 
     public void AssignDrawable()
     {
-        if (SetupRenderMesh)
-        {
-            MeshProviderCache.InvalidateUidEntries(EntityCacheUID);
-        }
+        MeshProviderCache.InvalidateUidEntries(EntityCacheUID);
+
+        //if (SetupRenderMesh)
+        //{
+        //    MeshProviderCache.InvalidateUidEntries(EntityCacheUID);
+        //}
 
         switch (Type)
         {
