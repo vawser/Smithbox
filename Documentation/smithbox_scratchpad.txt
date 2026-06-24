@@ -7,6 +7,5 @@
  - Finish AC6 meta
  
 - Map Editor:
- - Name seem a bit 'sticky', i.e. changing doesn't immediately update the displayed name
  - Duplicate undo causes orphaned entity
 

@@ -94,6 +94,7 @@ public class PropMultChangeAction : ViewportAction
 
         foreach (Entity e in ChangedEnts)
         {
+            e.Name = null;
             e.CachedAliasName = null;
 
             if (UpdateRenderModel)
@@ -104,12 +105,6 @@ public class PropMultChangeAction : ViewportAction
                 }
                 e.UpdateRenderModel();
                 e.RenderSceneMesh.RenderSelectionOutline = true;
-            }
-
-            if (ClearName)
-            {
-                // Clear name cache, forcing it to update.
-                e.Name = null;
             }
         }
 
@@ -146,6 +141,7 @@ public class PropMultChangeAction : ViewportAction
 
         foreach (Entity e in ChangedEnts)
         {
+            e.Name = null;
             e.CachedAliasName = null;
 
             if (UpdateRenderModel)
@@ -157,10 +153,6 @@ public class PropMultChangeAction : ViewportAction
                 e.UpdateRenderModel();
                 e.RenderSceneMesh.RenderSelectionOutline = false;
             }
-
-            // Clear name cache, forcing it to update.
-            if (ClearName)
-                e.Name = null;
         }
 
         return ActionEvent.NoEvent;
