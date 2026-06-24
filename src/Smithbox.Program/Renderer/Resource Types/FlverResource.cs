@@ -110,7 +110,8 @@ public class FlverResource : IResource, IDisposable
                 Flver = FLVER2.Read(bytes, cache);
                 ret = LoadInternal(al, virtPath);
 
-                ReleaseCache(cache);
+                if(cache != null)
+                    ReleaseCache(cache);
             }
         }
 
@@ -164,7 +165,8 @@ public class FlverResource : IResource, IDisposable
                         Flver = FLVER2.Read(fileData.Value, cache);
                         ret = LoadInternal(al, VirtPath);
 
-                        ReleaseCache(cache);
+                        if (cache != null)
+                            ReleaseCache(cache);
                     }
                 }
             }
