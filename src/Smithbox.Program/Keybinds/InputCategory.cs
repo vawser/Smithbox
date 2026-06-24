@@ -37,5 +37,8 @@ public enum InputCategory
     MaterialEditor,
 
     [Display(Name = "Texture Viewer")]
-    TextureViewer
+    TextureViewer,
+
+    [Display(Name = "Developer")]
+    Developer
 }

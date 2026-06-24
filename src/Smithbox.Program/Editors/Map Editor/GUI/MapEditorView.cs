@@ -97,6 +97,7 @@ public class MapEditorView
     public MapModelInsightHelper ModelInsightTool;
     public AutomaticPreviewTool AutomaticPreviewTool;
     public PatrolDrawManager PatrolDrawManager;
+    public AssetBrowserTool AssetBrowser;
 
     public ResourceListTool ResourceListTool;
 
@@ -185,6 +186,7 @@ public class MapEditorView
         MapModelInsightTool = new MapModelInsightView(this, project);
         ModelInsightTool = new MapModelInsightHelper(this, project);
         PatrolDrawManager = new PatrolDrawManager(this);
+        AssetBrowser = new AssetBrowserTool(this, project);
 
         ResourceListTool = new ResourceListTool();
 

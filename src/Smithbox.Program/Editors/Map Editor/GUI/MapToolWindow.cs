@@ -254,7 +254,13 @@ public class MapToolWindow
                 activeView.ResourceListTool.Display("mapEditor", activeView.Universe);
             }
 
-            // TODO: Rendering tab is we ever overhaul the rendering
+            //if (CFG.Current.Interface_MapEditor_Tool_AssetBrowser)
+            //{
+            //    if (ImGui.CollapsingHeader("Asset Browser"))
+            //    {
+            //        activeView.AssetBrowser.Display();
+            //    }
+            //}
         }
 
         ImGui.End();
@@ -323,6 +329,12 @@ public class MapToolWindow
                 CFG.Current.Interface_MapEditor_Tool_DisplayGroups = !CFG.Current.Interface_MapEditor_Tool_DisplayGroups;
             }
             UIHelper.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_DisplayGroups);
+
+            if (ImGui.MenuItem("Display Groups"))
+            {
+                CFG.Current.Interface_MapEditor_Tool_AssetBrowser = !CFG.Current.Interface_MapEditor_Tool_AssetBrowser;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_AssetBrowser);
 
             ImGui.EndMenu();
         }

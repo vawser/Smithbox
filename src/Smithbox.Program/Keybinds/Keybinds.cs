@@ -160,7 +160,10 @@ public enum KeybindID
 
     // Texture Viewer
     TextureViewer_Export_Texture,
-    TextureViewer_Reset_Zoom_Level
+    TextureViewer_Reset_Zoom_Level,
+
+    // Developer
+    CaptureThumbnailImage
 }
 
 public static class DefaultKeyBindings
@@ -336,6 +339,9 @@ public static class DefaultKeyBindings
         // Texture Viewer
         InputManager.Bind(KeybindID.TextureViewer_Export_Texture, new() { Key = Key.X, Ctrl = true });
         InputManager.Bind(KeybindID.TextureViewer_Reset_Zoom_Level, new() { Key = Key.R, Ctrl = true });
+
+        // Developer
+        InputManager.Bind(KeybindID.CaptureThumbnailImage, new() { Key = Key.F8 });
     }
 }
 
@@ -874,6 +880,12 @@ public static class KeybindMetadata
         { KeybindID.TextureViewer_Reset_Zoom_Level, (
             "Reset Zoom Level",
             ""
+        ) },
+
+        // Developer,
+        { KeybindID.CaptureThumbnailImage, (
+            "Capture Thumbnail",
+            ""
         ) }
     };
 
@@ -1027,5 +1039,8 @@ public static class KeybindMetadata
         // Texture Viewer
         { KeybindID.TextureViewer_Export_Texture, InputCategory.TextureViewer },
         { KeybindID.TextureViewer_Reset_Zoom_Level, InputCategory.TextureViewer },
+
+        // Developer
+        { KeybindID.CaptureThumbnailImage, InputCategory.Developer },
     };
 }

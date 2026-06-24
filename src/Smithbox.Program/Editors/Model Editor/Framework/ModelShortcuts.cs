@@ -80,5 +80,14 @@ public class ModelShortcuts
         activeView.ReorderAction.OnShortcut();
 
         GizmoState.OnShortcut();
+
+        //if(CFG.Current.Developer_Enable_Tools)
+        //{
+        //    if (InputManager.IsPressed(KeybindID.CaptureThumbnailImage))
+        //    {
+        //        var name = activeView.Selection.SelectedModelContainerWrapper.Name;
+        //        ThumbnailCapture.CaptureThumbnail(activeView, name);
+        //    }
+        //}
     }
 }
