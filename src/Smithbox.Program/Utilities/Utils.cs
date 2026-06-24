@@ -1,4 +1,3 @@
-using DotNext;
 using Hexa.NET.ImGui;
 using Microsoft.Win32;
 using SoulsFormats;
@@ -482,7 +481,7 @@ public static class Utils
         return vec;
     }
 
-    public static int GenerateRandomInt(RandomNumberGenerator randomSource, int min, int max)
+    public static int GenerateRandomInt(Random randomSource, int min, int max)
     {
         double randomValue = randomSource.NextDouble();
 
@@ -502,7 +501,7 @@ public static class Utils
         return (int)Math.Round(tResult);
     }
 
-    public static long GenerateRandomLong(RandomNumberGenerator randomSource, long min, long max)
+    public static long GenerateRandomLong(Random randomSource, long min, long max)
     {
         double randomValue = randomSource.NextDouble();
 
@@ -522,7 +521,7 @@ public static class Utils
         return (long)Math.Round(tResult);
     }
 
-    public static ulong GenerateRandomULong(RandomNumberGenerator randomSource, ulong min, ulong max)
+    public static ulong GenerateRandomULong(Random randomSource, ulong min, ulong max)
     {
         double randomValue = randomSource.NextDouble();
 
@@ -542,7 +541,7 @@ public static class Utils
         return (ulong)Math.Round(tResult);
     }
 
-    public static double GenerateRandomDouble(RandomNumberGenerator randomSource, double min, double max)
+    public static double GenerateRandomDouble(Random randomSource, double min, double max)
     {
         double randomValue = randomSource.NextDouble();
 

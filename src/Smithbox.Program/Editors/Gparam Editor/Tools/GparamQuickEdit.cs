@@ -4,6 +4,7 @@ using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Utilities;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -34,13 +35,13 @@ public class GparamQuickEdit
     public GPARAM.Param targetParamGroup;
     public GPARAM.IField targetParamField;
 
-    public RandomNumberGenerator RandomSource;
+    public Random RandomSource;
 
     public GparamQuickEdit(GparamEditorView view, ProjectEntry project)
     {
         Parent = view;
         Project = project;
-        RandomSource = RandomNumberGenerator.Create();
+        RandomSource = new Random();
     }
 
     public void DisplayInputWindow()
