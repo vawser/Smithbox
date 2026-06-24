@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net9.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <LangVersion>12</LangVersion>
     <Platforms>AnyCPU;x64</Platforms>
     <RootNamespace>StudioCore</RootNamespace>
