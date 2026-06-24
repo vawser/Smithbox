@@ -26,8 +26,6 @@ public class EntReplicateAction : ViewportAction
     private readonly Entity TargetBTL;
     private readonly MapContainer TargetMap;
 
-    private int idxCache;
-
     private int iterationCount;
     private float squareTopCount;
     private float squareRightCount;
@@ -44,8 +42,6 @@ public class EntReplicateAction : ViewportAction
 
         TargetMap = targetMap;
         TargetBTL = targetBTL;
-
-        idxCache = -1;
 
         if (CFG.Current.Replicator_Mode_Line)
             iterationCount = CFG.Current.Replicator_Line_Clone_Amount;
@@ -84,7 +80,7 @@ public class EntReplicateAction : ViewportAction
                     continue;
                 }
 
-                MapContainer? map;
+                MapContainer map;
                 if (TargetMap != null)
                 {
                     map = View.Selection.GetMapContainerFromMapID(TargetMap.Name);

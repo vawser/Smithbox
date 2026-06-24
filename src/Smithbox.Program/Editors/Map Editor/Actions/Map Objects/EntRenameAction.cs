@@ -5,11 +5,41 @@ using System.Linq;
 
 namespace StudioCore.Editors.MapEditor;
 
-public class EntRenameAction(List<MsbEntity> entities, List<string> newNames, bool reference) : ViewportAction
+public class EntRenameAction : ViewportAction
 {
-    List<string> oldNames = entities.Select(e => e.Name).ToList();
+    private readonly List<MsbEntity> Entities;
+    private readonly List<string> NewNames;
+    private readonly List<string> OldNames;
 
-    void Rename(MsbEntity entity, string name)
+    private readonly bool ApplyDuplicateHandling;
+
+    public EntRenameAction(List<MsbEntity> entities, List<string> newNames, bool reference)
+    {
+        Entities = entities;
+        OldNames = entities.Select(e => e.Name).ToList();
+        NewNames = newNames;
+        ApplyDuplicateHandling = reference;
+    }
+
+    public override ActionEvent Execute(bool isRedo = false)
+    {
+        foreach (var (entity, name) in Entities.Zip(NewNames))
+        {
+            Rename(entity, name);
+        }
+        return ActionEvent.ObjectAddedRemoved;
+    }
+
+    public override ActionEvent Undo()
+    {
+        foreach (var (entity, name) in Entities.Zip(NewNames))
+        {
+            Rename(entity, name);
+        }
+        return ActionEvent.ObjectAddedRemoved;
+    }
+
+    private void Rename(MsbEntity entity, string name)
     {
         entity.Name = name;
 
@@ -28,24 +58,6 @@ public class EntRenameAction(List<MsbEntity> entities, List<string> newNames, bo
         //{
         //    entity.Name = name;
         //}
-    }
-
-    public override ActionEvent Execute(bool isRedo = false)
-    {
-        foreach (var (entity, name) in entities.Zip(newNames))
-        {
-            Rename(entity, name);
-        }
-        return ActionEvent.ObjectAddedRemoved;
-    }
-
-    public override ActionEvent Undo()
-    {
-        foreach (var (entity, name) in entities.Zip(oldNames))
-        {
-            Rename(entity, name);
-        }
-        return ActionEvent.ObjectAddedRemoved;
     }
 
     public override string GetEditMessage()

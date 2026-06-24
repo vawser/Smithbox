@@ -52,7 +52,7 @@ public class EntDuplicateAction : ViewportAction
                 continue;
             }
 
-            MapContainer? map;
+            MapContainer map;
             if (TargetMap != null)
             {
                 map = View.Selection.GetMapContainerFromMapID(TargetMap.Name);
