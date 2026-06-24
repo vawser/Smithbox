@@ -1046,7 +1046,11 @@ public class MapPropertyView
                                 msbEnt.AssignDrawable();
                             }
                             firstEnt.UpdateRenderModel();
-                            firstEnt.RenderSceneMesh.RenderSelectionOutline = selected;
+
+                            if (firstEnt.RenderSceneMesh != null)
+                            {
+                                firstEnt.RenderSceneMesh.RenderSelectionOutline = selected;
+                            }
                         });
 
                         View.ViewportActionManager.ExecuteAction(action);
@@ -1104,7 +1108,11 @@ public class MapPropertyView
                             msbEnt.AssignDrawable();
                         }
                         firstEnt.UpdateRenderModel();
-                        firstEnt.RenderSceneMesh.RenderSelectionOutline = selected;
+
+                        if (firstEnt.RenderSceneMesh != null)
+                        {
+                            firstEnt.RenderSceneMesh.RenderSelectionOutline = selected;
+                        }
                     });
 
                     View.ViewportActionManager.ExecuteAction(action);

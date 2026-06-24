@@ -166,7 +166,11 @@ public class DeleteModelObjectAction : ViewportAction
             msbEnt.AssignDrawable();
         }
         e.UpdateRenderModel();
-        e.RenderSceneMesh.RenderSelectionOutline = true;
+
+        if (e.RenderSceneMesh != null)
+        {
+            e.RenderSceneMesh.RenderSelectionOutline = true;
+        }
     }
 
     private bool IsDescendantOf(Entity child, Entity potentialParent)

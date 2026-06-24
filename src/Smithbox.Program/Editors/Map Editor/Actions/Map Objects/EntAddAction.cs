@@ -47,10 +47,10 @@ public class EntAddAction : ViewportAction
                     msbEnt.AssignDrawable();
                 }
                 Added[i].UpdateRenderModel();
-                Added[i].RenderSceneMesh.RenderSelectionOutline = true;
 
                 if (Added[i].RenderSceneMesh != null)
                 {
+                    Added[i].RenderSceneMesh.RenderSelectionOutline = true;
                     Added[i].RenderSceneMesh.SetSelectable(Added[i]);
                 }
 

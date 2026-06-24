@@ -104,7 +104,11 @@ public class PropMultChangeAction : ViewportAction
                     msbEnt.AssignDrawable();
                 }
                 e.UpdateRenderModel();
-                e.RenderSceneMesh.RenderSelectionOutline = true;
+
+                if (e.RenderSceneMesh != null)
+                {
+                    e.RenderSceneMesh.RenderSelectionOutline = true;
+                }
             }
         }
 
@@ -151,7 +155,10 @@ public class PropMultChangeAction : ViewportAction
                     msbEnt.AssignDrawable();
                 }
                 e.UpdateRenderModel();
-                e.RenderSceneMesh.RenderSelectionOutline = false;
+                if (e.RenderSceneMesh != null)
+                {
+                    e.RenderSceneMesh.RenderSelectionOutline = true;
+                }
             }
         }
 

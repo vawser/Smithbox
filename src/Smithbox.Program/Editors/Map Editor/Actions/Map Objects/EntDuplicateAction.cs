@@ -193,10 +193,10 @@ public class EntDuplicateAction : ViewportAction
                     msbEnt.AssignDrawable();
                 }
                 record.Clone.UpdateRenderModel();
-                record.Clone.RenderSceneMesh.RenderSelectionOutline = true;
 
                 if (record.Clone.RenderSceneMesh != null)
                 {
+                    record.Clone.RenderSceneMesh.RenderSelectionOutline = true;
                     record.Clone.RenderSceneMesh.SetSelectable(record.Clone);
                 }
 

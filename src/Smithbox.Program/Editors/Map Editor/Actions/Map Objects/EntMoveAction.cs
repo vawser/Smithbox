@@ -130,10 +130,10 @@ public class EntMoveAction : ViewportAction
                     msbEnt.AssignDrawable();
                 }
                 Moveables[i].UpdateRenderModel();
-                Moveables[i].RenderSceneMesh.RenderSelectionOutline = true;
 
                 if (Moveables[i].RenderSceneMesh != null)
                 {
+                    Moveables[i].RenderSceneMesh.RenderSelectionOutline = true;
                     Moveables[i].RenderSceneMesh.SetSelectable(Moveables[i]);
                 }
 

@@ -190,10 +190,10 @@ public class EntReplicateAction : ViewportAction
                             msbEnt.AssignDrawable();
                         }
                         newobj.UpdateRenderModel();
-                        newobj.RenderSceneMesh.RenderSelectionOutline = true;
 
                         if (newobj.RenderSceneMesh != null)
                         {
+                            newobj.RenderSceneMesh.RenderSelectionOutline = true;
                             newobj.RenderSceneMesh.SetSelectable(newobj);
                         }
                     }
@@ -204,10 +204,10 @@ public class EntReplicateAction : ViewportAction
                             msbEnt.AssignDrawable();
                         }
                         Clones[i].UpdateRenderModel();
-                        Clones[i].RenderSceneMesh.RenderSelectionOutline = true;
 
                         if (Clones[i].RenderSceneMesh != null)
                         {
+                            Clones[i].RenderSceneMesh.RenderSelectionOutline = true;
                             Clones[i].RenderSceneMesh.SetSelectable(Clones[i]);
                         }
                     }
