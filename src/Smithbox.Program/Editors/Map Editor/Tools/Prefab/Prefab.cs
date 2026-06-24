@@ -106,7 +106,7 @@ public abstract class Prefab : PrefabAttributes
             MsbUtils.RenameWithRefs(entries, entry, prefixName + entry.Name);
         }
 
-        EntAddAction act = new(view, targetMap, ents, true, parent);
+        EntAddAction act = new(view, targetMap, ents, parent);
         _actionManager.ExecuteAction(act);
     }
 

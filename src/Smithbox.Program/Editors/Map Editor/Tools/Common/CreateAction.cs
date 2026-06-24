@@ -338,7 +338,7 @@ public class CreateAction
 
         parent ??= map.RootObject;
 
-        EntAddAction act = new(View, map, new List<MsbEntity> { obj }, true, parent);
+        EntAddAction act = new(View, map, new List<MsbEntity> { obj }, parent);
         View.ViewportActionManager.ExecuteAction(act);
     }
 

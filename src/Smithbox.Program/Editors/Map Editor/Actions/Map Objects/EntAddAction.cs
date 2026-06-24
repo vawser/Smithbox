@@ -1,4 +1,5 @@
-﻿using StudioCore.Application;
+﻿using HKX2;
+using StudioCore.Application;
 using StudioCore.Editors.Common;
 using System;
 using System.Collections.Generic;
@@ -12,29 +13,23 @@ public class EntAddAction : ViewportAction
 {
     private MapEditorView View;
 
-    private static Regex TrailIDRegex = new(@"_(?<id>\d+)$");
     private readonly List<MsbEntity> Added = new();
     private readonly List<ObjectContainer> AddedMaps = new();
+
     private readonly MapContainer Map;
     private readonly Entity Parent;
-    private readonly bool SetSelection;
-    private MapContainer TargetMap;
 
-    public EntAddAction(MapEditorView view, MapContainer map, List<MsbEntity> objects,
-        bool setSelection, Entity parent, MapContainer targetMap = null)
+    public EntAddAction(MapEditorView view, MapContainer map, List<MsbEntity> objects, Entity parent)
     {
         View = view;
         Map = map;
-        Added.AddRange(objects);
-        SetSelection = setSelection;
         Parent = parent;
-        TargetMap = targetMap;
+
+        Added.AddRange(objects);
     }
 
     public override ActionEvent Execute(bool isRedo = false)
     {
-        var universe = View.Universe;
-
         for (var i = 0; i < Added.Count(); i++)
         {
             if (Map != null)
@@ -52,24 +47,24 @@ public class EntAddAction : ViewportAction
                 {
                     Added[i].RenderSceneMesh.RenderSelectionOutline = true;
                     Added[i].RenderSceneMesh.SetSelectable(Added[i]);
+                    Added[i].RenderSceneMesh.AutoRegister = true;
+                    Added[i].RenderSceneMesh.Register();
                 }
-
-                MsbEntity ent = Added[i];
 
                 AddedMaps.Add(Map);
 
                 // Prefab-specific
                 if (CFG.Current.Prefab_ApplyUniqueInstanceID)
                 {
-                    MapEditorActionHelper.SetUniqueInstanceID(View, ent, Map);
+                    MapEditorActionHelper.SetUniqueInstanceID(View, Added[i], Map);
                 }
                 if (CFG.Current.Prefab_ApplyUniqueEntityID)
                 {
-                    MapEditorActionHelper.SetUniqueEntityID(View, ent, Map);
+                    MapEditorActionHelper.SetUniqueEntityID(View, Added[i], Map);
                 }
                 if (CFG.Current.Prefab_ApplySpecificEntityGroupID)
                 {
-                    MapEditorActionHelper.SetSpecificEntityGroupID(View, ent, Map);
+                    MapEditorActionHelper.SetSpecificEntityGroupID(View, Added[i], Map);
                 }
             }
             else
@@ -78,13 +73,10 @@ public class EntAddAction : ViewportAction
             }
         }
 
-        if (SetSelection)
+        View.ViewportSelection.ClearSelection();
+        foreach (MsbEntity c in Added)
         {
-            universe.View.ViewportSelection.ClearSelection();
-            foreach (MsbEntity c in Added)
-            {
-                universe.View.ViewportSelection.AddSelection(c);
-            }
+            View.ViewportSelection.AddSelection(c);
         }
 
         return ActionEvent.ObjectAddedRemoved;
@@ -92,8 +84,6 @@ public class EntAddAction : ViewportAction
 
     public override ActionEvent Undo()
     {
-        var universe = View.Universe;
-
         for (var i = 0; i < Added.Count(); i++)
         {
             AddedMaps[i].Objects.Remove(Added[i]);
@@ -101,14 +91,15 @@ public class EntAddAction : ViewportAction
             {
                 Added[i].Parent.RemoveChild(Added[i]);
             }
+
+            if (Added[i].RenderSceneMesh != null)
+            {
+                Added[i].RenderSceneMesh.AutoRegister = false;
+                Added[i].RenderSceneMesh.UnregisterWithScene();
+            }
         }
 
-        //Clones.Clear();
-        if (SetSelection)
-        {
-            universe.View.ViewportSelection.ClearSelection();
-        }
-
+        View.ViewportSelection.ClearSelection();
         return ActionEvent.ObjectAddedRemoved;
     }
 

@@ -1,7 +1,10 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using HKX2;
+using Microsoft.Extensions.Logging;
 using SoulsFormats;
+using SoulsFormats.KF4;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Logger;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -15,219 +18,155 @@ public class EntDuplicateAction : ViewportAction
     private MapEditorView View;
 
     private static readonly Regex TrailIDRegex = new(@"_(?<id>\d+)$");
+
     private readonly List<MsbEntity> Clonables = new();
-    private readonly List<CloneRecord> Records = new();
+    private readonly List<ObjectContainer> CloneMaps = new();
+    private readonly List<MsbEntity> Clones = new();
+
     private readonly Entity TargetBTL;
     private readonly MapContainer TargetMap;
-    private readonly bool Silent = false;
 
     public EntDuplicateAction(MapEditorView view, List<MsbEntity> objects, MapContainer targetMap = null, Entity targetBTL = null)
     {
         View = view;
+
         Clonables.AddRange(objects);
+
         TargetMap = targetMap;
         TargetBTL = targetBTL;
     }
 
     public override ActionEvent Execute(bool isRedo = false)
     {
-        var universe = View.Universe;
-        var isRecorded = Records.Count > 0;
+        var clonesCached = Clones.Count() > 0;
 
-        if (!isRecorded)
+        var objectnames = new Dictionary<string, HashSet<string>>();
+        var mapPartEntities = new Dictionary<MapContainer, HashSet<MsbEntity>>();
+
+        for (var i = 0; i < Clonables.Count(); i++)
         {
-            // First execution - create clones and records
-            var objectnames = new Dictionary<string, HashSet<string>>();
-
-            for (var i = 0; i < Clonables.Count; i++)
+            if (Clonables[i].MapID == null)
             {
-                if (Clonables[i].MapID == null)
-                {
-                    if (!Silent)
-                    {
-                        Smithbox.Log(this, $"Failed to dupe {Clonables[i].Name}, as it had no defined MapID",
-                            LogLevel.Warning);
-                    }
-                    continue;
-                }
+                Smithbox.Log(this, $"Failed to dupe {Clonables[i].Name}, as it had no defined MapID",
+                    LogLevel.Warning);
+                continue;
+            }
 
-                MapContainer targetMapContainer = TargetMap != null
-                    ? View.Selection.GetMapContainerFromMapID(TargetMap.Name)
-                    : View.Selection.GetMapContainerFromMapID(Clonables[i].MapID);
+            MapContainer? map;
+            if (TargetMap != null)
+            {
+                map = View.Selection.GetMapContainerFromMapID(TargetMap.Name);
+            }
+            else
+            {
+                map = View.Selection.GetMapContainerFromMapID(Clonables[i].MapID);
+            }
 
-                if (targetMapContainer == null)
-                    continue;
-
-                // Build name set for collision detection
+            if (map != null)
+            {
+                // Get list of names that exist so our duplicate names don't trample over them
                 if (!objectnames.ContainsKey(Clonables[i].MapID))
                 {
                     var nameset = new HashSet<string>();
-                    foreach (Entity n in targetMapContainer.Objects)
+                    foreach (Entity n in map.Objects)
                     {
                         nameset.Add(n.Name);
                     }
+
                     objectnames.Add(Clonables[i].MapID, nameset);
                 }
 
-                // Create clone
-                MsbEntity newobj = (MsbEntity)Clonables[i].Clone();
+                // If this was executed in the past we reused the cloned objects so because redo
+                // actions that follow this may reference the previously cloned object
+                MsbEntity newobj = clonesCached ? Clones[i] : (MsbEntity)Clonables[i].Clone();
 
-                // Persist the supports name bool
-                if (!Clonables[i].SupportsName)
-                {
-                    newobj.SupportsName = false;
-                }
-
-                // Generate unique name
                 GenerateUniqueName(Clonables[i], newobj, objectnames);
 
-                // Determine insertion point
-                int mapInsertIndex = TargetMap == null
-                    ? targetMapContainer.Objects.IndexOf(Clonables[i]) + 1
-                    : targetMapContainer.Objects.Count;
-
-                if(CFG.Current.Toolbar_Duplicate_Place_at_List_End)
+                if (TargetMap == null)
                 {
-                    var curEnt = Clonables[i];
-                    var type = curEnt.WrappedObject.GetType();
-
-                    var categoryList = targetMapContainer.Objects.Where(e => e.WrappedObject.GetType() == type).ToList();
-
-                    if (categoryList.Count > 0)
-                    {
-                        var insertEnt = categoryList.Last();
-
-                        mapInsertIndex = TargetMap == null
-                        ? targetMapContainer.Objects.IndexOf(insertEnt) + 1
-                        : targetMapContainer.Objects.Count;
-                    }
-                    else
-                    {
-                        var insertEnt = targetMapContainer.Objects.Last();
-
-                        mapInsertIndex = TargetMap == null
-                        ? targetMapContainer.Objects.IndexOf(insertEnt) + 1
-                        : targetMapContainer.Objects.Count;
-                    }
+                    map.Objects.Insert(map.Objects.IndexOf(Clonables[i]) + 1, newobj);
                 }
-
-                // Determine parent
-                Entity targetParent = null;
-                int parentInsertIndex = -1;
+                else
+                {
+                    map.Objects.Add(newobj);
+                }
 
                 if (TargetBTL != null && newobj.WrappedObject is BTL.Light)
                 {
-                    targetParent = TargetBTL;
-                    parentInsertIndex = TargetBTL.Children.Count;
+                    TargetBTL.AddChild(newobj);
                 }
                 else if (TargetMap != null)
                 {
-                    targetParent = TargetMap.MapOffsetNode ?? TargetMap.RootObject;
-                    parentInsertIndex = targetParent.Children.Count;
+                    // Duping to a targeted map, update parent.
+                    if (TargetMap.MapOffsetNode != null)
+                    {
+                        TargetMap.MapOffsetNode.AddChild(newobj);
+                    }
+                    else
+                    {
+                        TargetMap.RootObject.AddChild(newobj);
+                    }
                 }
                 else if (Clonables[i].Parent != null)
                 {
-                    targetParent = Clonables[i].Parent;
-                    parentInsertIndex = Clonables[i].Parent.ChildIndex(Clonables[i]) + 1;
+                    var idx = Clonables[i].Parent.ChildIndex(Clonables[i]);
+                    Clonables[i].Parent.AddChild(newobj, idx + 1);
                 }
 
-                // Create record
-                Records.Add(new CloneRecord
-                {
-                    Map = targetMapContainer,
-                    Clone = newobj,
-                    MapInsertIndex = mapInsertIndex,
-                    Parent = (MsbEntity)targetParent,
-                    ParentInsertIndex = parentInsertIndex
-                });
-
-                if (TargetMap != null)
-                {
-                    Smithbox.Log(this, $"Duplicated {newobj.Name} to {TargetMap.Name}");
-                }
-            }
-        }
-
-        // Insert into maps in order
-        foreach (var record in Records.OrderBy(r => r.Map).ThenBy(r => r.MapInsertIndex))
-        {
-            int idx = record.MapInsertIndex;
-            if (idx > record.Map.Objects.Count)
-                idx = record.Map.Objects.Count;
-
-            record.Map.Objects.Insert(idx, record.Clone);
-            record.Map.HasUnsavedChanges = true;
-        }
-
-        // Build hierarchy
-        var parentGroups = Records
-            .Where(r => r.Parent != null && r.ParentInsertIndex >= 0)
-            .GroupBy(r => r.Parent);
-
-        foreach (var group in parentGroups)
-        {
-            foreach (var record in group.OrderBy(x => x.ParentInsertIndex))
-            {
-                int idx = record.ParentInsertIndex;
-                if (idx > record.Parent.Children.Count)
-                    idx = record.Parent.Children.Count;
-
-                record.Parent.AddChild(record.Clone, idx);
-                record.Clone.Parent = record.Parent;
-            }
-        }
-
-        foreach (var record in Records)
-        {
-            record.Clone.Container = record.Map;
-            record.Clone.MapID = record.Map.Name;
-        }
-
-        // Apply configuration-based updates (only on first execution)
-        if (!isRecorded)
-        {
-            foreach (var record in Records)
-            {
-                if (record.Clone is MsbEntity msbEnt)
+                if (newobj is MsbEntity msbEnt)
                 {
                     msbEnt.AssignDrawable();
                 }
-                record.Clone.UpdateRenderModel();
+                newobj.UpdateRenderModel();
 
-                if (record.Clone.RenderSceneMesh != null)
+                if (newobj.RenderSceneMesh != null)
                 {
-                    record.Clone.RenderSceneMesh.RenderSelectionOutline = true;
-                    record.Clone.RenderSceneMesh.SetSelectable(record.Clone);
+                    newobj.RenderSceneMesh.RenderSelectionOutline = true;
+                    newobj.RenderSceneMesh.SetSelectable(newobj);
+                }
+
+                if (!clonesCached)
+                {
+                    Clones.Add(newobj);
+                    CloneMaps.Add(map);
+                    map.HasUnsavedChanges = true;
+                }
+                else
+                {
+                    if (Clones[i].RenderSceneMesh != null)
+                    {
+                        Clones[i].RenderSceneMesh.AutoRegister = true;
+                        Clones[i].RenderSceneMesh.Register();
+                    }
                 }
 
                 if (CFG.Current.Toolbar_Duplicate_Increment_Entity_ID)
                 {
-                    MapEditorActionHelper.SetUniqueEntityID(View, record.Clone, record.Map);
+                    MapEditorActionHelper.SetUniqueEntityID(View, newobj, map);
                 }
                 if (CFG.Current.Toolbar_Duplicate_Increment_InstanceID)
                 {
-                    MapEditorActionHelper.SetUniqueInstanceID(View, record.Clone, record.Map);
+                    MapEditorActionHelper.SetUniqueInstanceID(View, newobj, map);
                 }
                 if (CFG.Current.Toolbar_Duplicate_Increment_PartNames)
                 {
-                    MapEditorActionHelper.SetSelfPartNames(View, record.Clone, record.Map);
+                    MapEditorActionHelper.SetSelfPartNames(View, newobj, map);
                 }
                 if (CFG.Current.Toolbar_Duplicate_Clear_Entity_ID)
                 {
-                    MapEditorActionHelper.ClearEntityID(View, record.Clone, record.Map);
+                    MapEditorActionHelper.ClearEntityID(View, newobj, map);
                 }
                 if (CFG.Current.Toolbar_Duplicate_Clear_Entity_Group_IDs)
                 {
-                    MapEditorActionHelper.ClearEntityGroupID(View, record.Clone, record.Map);
+                    MapEditorActionHelper.ClearEntityGroupID(View, newobj, map);
                 }
             }
         }
 
-        // Update selection
-        universe.View.ViewportSelection.ClearSelection();
-        foreach (var record in Records)
+        View.ViewportSelection.ClearSelection();
+        foreach (MsbEntity c in Clones)
         {
-            universe.View.ViewportSelection.AddSelection(record.Clone);
+            View.ViewportSelection.AddSelection(c);
         }
 
         return ActionEvent.ObjectAddedRemoved;
@@ -235,40 +174,25 @@ public class EntDuplicateAction : ViewportAction
 
     public override ActionEvent Undo()
     {
-        var universe = View.Universe;
-
-        // Remove from maps in reverse order
-        var mapOrdered = Records
-            .OrderByDescending(r => r.Map)
-            .ThenByDescending(r => r.MapInsertIndex);
-
-        foreach (var record in mapOrdered)
+        for (var i = 0; i < Clones.Count(); i++)
         {
-            record.Map.Objects.Remove(record.Clone);
-                
-            record.Clone.RenderSceneMesh?.Dispose();
-            record.Clone.RenderSceneMesh = null;
-            record.Clone.SetupRenderMesh = false;
-        }
-
-        var parentGroups = Records
-            .Where(r => r.Parent != null)
-            .GroupBy(r => r.Parent);
-
-        // Remove from hierarchy
-        foreach (var group in parentGroups)
-        {
-            foreach (var record in group.OrderByDescending(x => x.ParentInsertIndex))
+            CloneMaps[i].Objects.Remove(Clones[i]);
+            if (Clones[i] != null)
             {
-                record.Parent.RemoveChild(record.Clone);
+                Clones[i].Parent.RemoveChild(Clones[i]);
+            }
+
+            if (Clones[i].RenderSceneMesh != null)
+            {
+                Clones[i].RenderSceneMesh.AutoRegister = false;
+                Clones[i].RenderSceneMesh.UnregisterWithScene();
             }
         }
 
-        // Restore selection to original objects
-        universe.View.ViewportSelection.ClearSelection();
-        foreach (MsbEntity c in Clonables)
+        View.ViewportSelection.ClearSelection();
+        foreach (MsbEntity c in Clones)
         {
-            universe.View.ViewportSelection.AddSelection(c);
+            View.ViewportSelection.AddSelection(c);
         }
 
         return ActionEvent.ObjectAddedRemoved;
@@ -321,15 +245,5 @@ public class EntDuplicateAction : ViewportAction
     public override string GetEditMessage()
     {
         return "";
-    }
-
-    private struct CloneRecord
-    {
-        public MapContainer Map;
-        public MsbEntity Clone;
-        public int MapInsertIndex;
-
-        public MsbEntity Parent;
-        public int ParentInsertIndex;
     }
 }
