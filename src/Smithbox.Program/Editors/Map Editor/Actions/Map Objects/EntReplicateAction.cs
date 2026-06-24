@@ -15,11 +15,16 @@ namespace StudioCore.Editors.MapEditor;
 
 public class EntReplicateAction : ViewportAction
 {
+    private MapEditorView View;
+
     private static readonly Regex TrailIDRegex = new(@"_(?<id>\d+)$");
+
     private readonly List<MsbEntity> Clonables = new();
     private readonly List<ObjectContainer> CloneMaps = new();
     private readonly List<MsbEntity> Clones = new();
-    private MapEditorView View;
+
+    private readonly Entity TargetBTL;
+    private readonly MapContainer TargetMap;
 
     private int idxCache;
 
@@ -31,20 +36,14 @@ public class EntReplicateAction : ViewportAction
 
     private ReplicateSquareSideType currentSquareSide;
 
-    public EntReplicateAction(MapEditorView view, List<MsbEntity> objects)
+    public EntReplicateAction(MapEditorView view, List<MsbEntity> objects, MapContainer targetMap = null, Entity targetBTL = null)
     {
         View = view;
+
         Clonables.AddRange(objects);
-    }
 
-    public override ActionEvent Execute(bool isRedo = false)
-    {
-        if (isRedo)
-        {
-            View.ViewportActionManager.Clear();
-
-            return ActionEvent.NoEvent;
-        }
+        TargetMap = targetMap;
+        TargetBTL = targetBTL;
 
         idxCache = -1;
 
@@ -64,11 +63,15 @@ public class EntReplicateAction : ViewportAction
             squareRightCount = CFG.Current.Replicator_Square_Size;
             squareBottomCount = CFG.Current.Replicator_Square_Size;
         }
+    }
+
+    public override ActionEvent Execute(bool isRedo = false)
+    {
+
+        var clonesCached = Clones.Count() > 0;
 
         var objectnames = new Dictionary<string, HashSet<string>>();
         Dictionary<MapContainer, HashSet<MsbEntity>> mapPartEntities = new();
-
-        var clonesCached = Clones.Count() > 0;
 
         for (var k = 0; k < iterationCount; k++)
         {
@@ -81,16 +84,23 @@ public class EntReplicateAction : ViewportAction
                     continue;
                 }
 
-                MapContainer m;
-                m = View.Selection.GetMapContainerFromMapID(Clonables[i].MapID);
+                MapContainer? map;
+                if (TargetMap != null)
+                {
+                    map = View.Selection.GetMapContainerFromMapID(TargetMap.Name);
+                }
+                else
+                {
+                    map = View.Selection.GetMapContainerFromMapID(Clonables[i].MapID);
+                }
 
-                if (m != null)
+                if (map != null)
                 {
                     // Get list of names that exist so our duplicate names don't trample over them
                     if (!objectnames.ContainsKey(Clonables[i].MapID))
                     {
                         var nameset = new HashSet<string>();
-                        foreach (Entity n in m.Objects)
+                        foreach (Entity n in map.Objects)
                         {
                             nameset.Add(n.Name);
                         }
@@ -98,119 +108,95 @@ public class EntReplicateAction : ViewportAction
                         objectnames.Add(Clonables[i].MapID, nameset);
                     }
 
-                    // If this was executed in the past we reused the cloned objects so because redo
-                    // actions that follow this may reference the previously cloned object
                     MsbEntity newobj = clonesCached ? Clones[i] : (MsbEntity)Clonables[i].Clone();
 
-                    // Use pattern matching to attempt renames based on appended ID
-                    Match idmatch = TrailIDRegex.Match(Clonables[i].Name);
-                    if (idmatch.Success)
-                    {
-                        var idstring = idmatch.Result("${id}");
-                        var id = int.Parse(idstring);
-                        var newid = idstring;
-                        while (objectnames[Clonables[i].MapID]
-                               .Contains(Clonables[i].Name.Substring(0, Clonables[i].Name.Length - idstring.Length) +
-                                         newid))
-                        {
-                            id++;
-                            newid = id.ToString("D" + idstring.Length);
-                        }
+                    GenerateUniqueName(Clonables[i], newobj, objectnames);
 
-                        newobj.Name = Clonables[i].Name.Substring(0, Clonables[i].Name.Length - idstring.Length) +
-                                      newid;
-                        objectnames[Clonables[i].MapID].Add(newobj.Name);
+
+                    if (TargetMap == null)
+                    {
+                        map.Objects.Insert(map.Objects.IndexOf(Clonables[i]) + 1, newobj);
                     }
                     else
                     {
-                        var idstring = "0001";
-                        var id = int.Parse(idstring);
-                        var newid = idstring;
-                        while (objectnames[Clonables[i].MapID].Contains(Clonables[i].Name + "_" + newid))
+                        map.Objects.Add(newobj);
+                    }
+
+                    if (TargetBTL != null && newobj.WrappedObject is BTL.Light)
+                    {
+                        TargetBTL.AddChild(newobj);
+                    }
+                    else if (TargetMap != null)
+                    {
+                        // Duping to a targeted map, update parent.
+                        if (TargetMap.MapOffsetNode != null)
                         {
-                            id++;
-                            newid = id.ToString("D" + idstring.Length);
+                            TargetMap.MapOffsetNode.AddChild(newobj);
                         }
-
-                        newobj.Name = Clonables[i].Name + "_" + newid;
-                        objectnames[Clonables[i].MapID].Add(newobj.Name);
+                        else
+                        {
+                            TargetMap.RootObject.AddChild(newobj);
+                        }
                     }
-
-                    if (idxCache == -1)
-                    {
-                        idxCache = m.Objects.IndexOf(Clonables[i]) + 1;
-                    }
-                    else
-                    {
-                        idxCache = idxCache + 1;
-                    }
-
-                    m.Objects.Insert(idxCache, newobj);
-
-                    if (Clonables[i].Parent != null)
+                    else if (Clonables[i].Parent != null)
                     {
                         var idx = Clonables[i].Parent.ChildIndex(Clonables[i]);
                         Clonables[i].Parent.AddChild(newobj, idx + 1);
+                    }
+
+                    if (newobj is MsbEntity msbEnt)
+                    {
+                        msbEnt.AssignDrawable();
+                    }
+                    newobj.UpdateRenderModel();
+
+                    if (newobj.RenderSceneMesh != null)
+                    {
+                        newobj.RenderSceneMesh.RenderSelectionOutline = true;
+                        newobj.RenderSceneMesh.SetSelectable(newobj);
+                    }
+
+                    if (!clonesCached)
+                    {
+                        Clones.Add(newobj);
+                        CloneMaps.Add(map);
+                        map.HasUnsavedChanges = true;
+                    }
+                    else
+                    {
+                        if (Clones[i].RenderSceneMesh != null)
+                        {
+                            Clones[i].RenderSceneMesh.AutoRegister = true;
+                            Clones[i].RenderSceneMesh.Register();
+                        }
+                    }
+
+                    // Apply other property changes
+                    if (CFG.Current.Replicator_Increment_Entity_ID)
+                    {
+                        MapEditorActionHelper.SetUniqueEntityID(View, newobj, map);
+                    }
+                    if (CFG.Current.Replicator_Increment_InstanceID)
+                    {
+                        MapEditorActionHelper.SetUniqueInstanceID(View, newobj, map);
+                    }
+                    if (CFG.Current.Replicator_Increment_PartNames)
+                    {
+                        MapEditorActionHelper.SetSelfPartNames(View, newobj, map);
+                    }
+                    if (CFG.Current.Replicator_Clear_Entity_ID)
+                    {
+                        MapEditorActionHelper.ClearEntityID(View, newobj, map);
+                    }
+                    if (CFG.Current.Replicator_Clear_Entity_Group_IDs)
+                    {
+                        MapEditorActionHelper.ClearEntityGroupID(View, newobj, map);
                     }
 
                     // Apply transform changes
                     ApplyReplicateTransform(newobj, k);
                     ApplyScrambleTransform(newobj);
 
-                    // Apply other property changes
-                    if (CFG.Current.Replicator_Increment_Entity_ID)
-                    {
-                        MapEditorActionHelper.SetUniqueEntityID(View, newobj, m);
-                    }
-                    if (CFG.Current.Replicator_Increment_InstanceID)
-                    {
-                        MapEditorActionHelper.SetUniqueInstanceID(View, newobj, m);
-                    }
-                    if (CFG.Current.Replicator_Increment_PartNames)
-                    {
-                        MapEditorActionHelper.SetSelfPartNames(View, newobj, m);
-                    }
-                    if (CFG.Current.Replicator_Clear_Entity_ID)
-                    {
-                        MapEditorActionHelper.ClearEntityID(View, newobj, m);
-                    }
-                    if (CFG.Current.Replicator_Clear_Entity_Group_IDs)
-                    {
-                        MapEditorActionHelper.ClearEntityGroupID(View, newobj, m);
-                    }
-
-                    if (!clonesCached)
-                    {
-                        Clones.Add(newobj);
-                        CloneMaps.Add(m);
-                        m.HasUnsavedChanges = true; 
-                        
-                        if (newobj is MsbEntity msbEnt)
-                        {
-                            msbEnt.AssignDrawable();
-                        }
-                        newobj.UpdateRenderModel();
-
-                        if (newobj.RenderSceneMesh != null)
-                        {
-                            newobj.RenderSceneMesh.RenderSelectionOutline = true;
-                            newobj.RenderSceneMesh.SetSelectable(newobj);
-                        }
-                    }
-                    else
-                    {
-                        if (Clones[i] is MsbEntity msbEnt)
-                        {
-                            msbEnt.AssignDrawable();
-                        }
-                        Clones[i].UpdateRenderModel();
-
-                        if (Clones[i].RenderSceneMesh != null)
-                        {
-                            Clones[i].RenderSceneMesh.RenderSelectionOutline = true;
-                            Clones[i].RenderSceneMesh.SetSelectable(Clones[i]);
-                        }
-                    }
                 }
             }
         }
@@ -456,5 +442,48 @@ public class EntReplicateAction : ViewportAction
     public override string GetEditMessage()
     {
         return "";
+    }
+    private void GenerateUniqueName(MsbEntity source, MsbEntity clone, Dictionary<string, HashSet<string>> objectnames)
+    {
+        if (source.Name == null)
+        {
+            clone.Name = "";
+            objectnames[source.MapID].Add(clone.Name);
+        }
+        else
+        {
+            Match idmatch = TrailIDRegex.Match(source.Name);
+            if (idmatch.Success)
+            {
+                var idstring = idmatch.Result("${id}");
+                var id = int.Parse(idstring);
+                var baseName = source.Name.Substring(0, source.Name.Length - idstring.Length);
+                var newid = idstring;
+
+                while (objectnames[source.MapID].Contains(baseName + newid))
+                {
+                    id++;
+                    newid = id.ToString("D" + idstring.Length);
+                }
+
+                clone.Name = baseName + newid;
+                objectnames[source.MapID].Add(clone.Name);
+            }
+            else
+            {
+                var idstring = "0001";
+                var id = int.Parse(idstring);
+                var newid = idstring;
+
+                while (objectnames[source.MapID].Contains(source.Name + "_" + newid))
+                {
+                    id++;
+                    newid = id.ToString("D" + idstring.Length);
+                }
+
+                clone.Name = source.Name + "_" + newid;
+                objectnames[source.MapID].Add(clone.Name);
+            }
+        }
     }
 }

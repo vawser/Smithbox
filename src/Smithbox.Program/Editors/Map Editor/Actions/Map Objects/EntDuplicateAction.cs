@@ -76,8 +76,6 @@ public class EntDuplicateAction : ViewportAction
                     objectnames.Add(Clonables[i].MapID, nameset);
                 }
 
-                // If this was executed in the past we reused the cloned objects so because redo
-                // actions that follow this may reference the previously cloned object
                 MsbEntity newobj = clonesCached ? Clones[i] : (MsbEntity)Clonables[i].Clone();
 
                 GenerateUniqueName(Clonables[i], newobj, objectnames);

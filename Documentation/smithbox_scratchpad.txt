@@ -6,6 +6,3 @@
  - Finish converting the SDT AlternativeOrders into Field Layouts
  - Finish AC6 meta
  
-- Map Editor:
- - Duplicate undo causes orphaned entity
-
