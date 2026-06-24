@@ -20,7 +20,8 @@ public class ParamDeltaSelection
     public bool QueueImportListRefresh = false;
 
     // Exporter
-    public DeltaExportMode CurrentExportMode = DeltaExportMode.Modified;
+    public DeltaExportMode CurrentParamMode = DeltaExportMode.Selected;
+    public DeltaSelectionMode CurrentRowMode = DeltaSelectionMode.Selected;
 
     public string ExportName = "";
     public string ExportFileTag = "";

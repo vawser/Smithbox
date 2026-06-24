@@ -343,11 +343,10 @@ public class ParamDeltaPatcher
         UIHelper.SimpleHeader("Tags", "The tags assigned to the delta file.");
         UIHelper.HintTextInput($"inputFileTag", ref Selection.ExportFileTag, "Enter the associated tags for the exported file...");
 
-
-        UIHelper.SimpleHeader("Export Type", "The type of export performed.");
+        UIHelper.SimpleHeader("Param Type", "Which params are selected for export.");
         var width = ImGui.GetWindowWidth() * 0.5f;
         ImGui.PushItemWidth(width);
-        if (ImGui.BeginCombo("##inputValue", Selection.CurrentExportMode.GetDisplayName()))
+        if (ImGui.BeginCombo("##inputValue_ParamType", Selection.CurrentParamMode.GetDisplayName()))
         {
             foreach (var entry in Enum.GetValues(typeof(DeltaExportMode)))
             {
@@ -355,8 +354,26 @@ public class ParamDeltaPatcher
 
                 if (ImGui.Selectable(type.GetDisplayName()))
                 {
-                    Selection.CurrentExportMode = (DeltaExportMode)entry;
+                    Selection.CurrentParamMode = (DeltaExportMode)entry;
                 }
+                UIHelper.Tooltip(type.GetDescription());
+            }
+            ImGui.EndCombo();
+        }
+
+        UIHelper.SimpleHeader("Selection Type", "Which rows are selected for export.");
+        ImGui.PushItemWidth(width);
+        if (ImGui.BeginCombo("##inputValue_SelectionType", Selection.CurrentRowMode.GetDisplayName()))
+        {
+            foreach (var entry in Enum.GetValues(typeof(DeltaSelectionMode)))
+            {
+                var type = (DeltaSelectionMode)entry;
+
+                if (ImGui.Selectable(type.GetDisplayName()))
+                {
+                    Selection.CurrentRowMode = (DeltaSelectionMode)entry;
+                }
+                UIHelper.Tooltip(type.GetDescription());
             }
             ImGui.EndCombo();
         }
@@ -490,10 +507,20 @@ public class DeltaImportEntry
 
 public enum DeltaExportMode
 {
-    [Display(Name = "Modified")]
-    Modified,
-    [Display(Name = "Selected")]
+    [Display(Name = "All", Description ="Export all params.")]
+    All,
+    [Display(Name = "Selected", Description = "Export currently selected params.")]
     Selected
+}
+
+public enum DeltaSelectionMode
+{
+    [Display(Name = "Modified", Description = "Exports all modified rows.")]
+    Modified,
+    [Display(Name = "Selected", Description = "Exports all selected rows.")]
+    Selected,
+    [Display(Name = "All", Description = "Exports all rows.")]
+    All
 }
 
 public enum DeltaImportMode

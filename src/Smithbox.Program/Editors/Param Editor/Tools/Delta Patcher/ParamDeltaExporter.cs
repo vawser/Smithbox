@@ -120,7 +120,7 @@ public class ParamDeltaExporter
                 }
             }
 
-            if (Patcher.Selection.CurrentExportMode is DeltaExportMode.Selected)
+            if (Patcher.Selection.CurrentParamMode is DeltaExportMode.Selected)
             {
                 if (primaryParam.Key != Patcher.Project.Handler.ParamEditor.ViewHandler.ActiveView.Selection.GetActiveParam())
                 {
@@ -135,14 +135,19 @@ public class ParamDeltaExporter
 
             List<RowDelta> rowDeltas = new List<RowDelta>();
 
-            if (Patcher.Selection.CurrentExportMode is DeltaExportMode.Modified)
+            if (Patcher.Selection.CurrentRowMode is DeltaSelectionMode.Modified)
             {
                 rowDeltas = HandleRows(primaryParam.Value, vanillaParam);
             }
 
-            if (Patcher.Selection.CurrentExportMode is DeltaExportMode.Selected)
+            if (Patcher.Selection.CurrentRowMode is DeltaSelectionMode.Selected)
             {
                 rowDeltas = HandleSelectedRows(primaryParam.Value, vanillaParam);
+            }
+
+            if (Patcher.Selection.CurrentRowMode is DeltaSelectionMode.All)
+            {
+                rowDeltas = HandleAllRows(primaryParam.Value, vanillaParam);
             }
 
             foreach (var entry in rowDeltas)
@@ -406,6 +411,29 @@ public class ParamDeltaExporter
         }
 
         return rowDelta;
+    }
+
+    #endregion
+
+    #region All Export
+    public List<RowDelta> HandleAllRows(Param primaryParam, Param vanillaParam)
+    {
+        var rowDeltas = new List<RowDelta>();
+
+        var curRowID = 0;
+        var internalIndex = 0;
+
+        var selectedRows = Patcher.Editor.ViewHandler.ActiveView.Selection.GetSelectedRows();
+
+        for (int i = 0; i < primaryParam.Rows.Count; i++)
+        {
+            Param.Row row = primaryParam.Rows[i];
+
+            var rowDelta = HandleSelectedRow(primaryParam, vanillaParam, row, ref curRowID, ref internalIndex);
+            rowDeltas.Add(rowDelta);
+        }
+
+        return rowDeltas;
     }
 
     #endregion
