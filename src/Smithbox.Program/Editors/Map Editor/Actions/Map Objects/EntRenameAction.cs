@@ -5,27 +5,29 @@ using System.Linq;
 
 namespace StudioCore.Editors.MapEditor;
 
-public class MoRenameAction(List<MsbEntity> entities, List<string> newNames, bool reference) : ViewportAction
+public class EntRenameAction(List<MsbEntity> entities, List<string> newNames, bool reference) : ViewportAction
 {
     List<string> oldNames = entities.Select(e => e.Name).ToList();
 
     void Rename(MsbEntity entity, string name)
     {
-        if (reference)
-        {
-            MapEditorActionHelper.SetNameHandleDuplicate(
-                entity.ContainingMap,
-                entity.ContainingMap.Objects
-                    .Where(e => e.WrappedObject is IMsbEntry)
-                    .Select(e => e as MsbEntity),
-                entity,
-                name
-            );
-        }
-        else
-        {
-            entity.Name = name;
-        }
+        entity.Name = name;
+
+        //if (reference)
+        //{
+        //    MapEditorActionHelper.SetNameHandleDuplicate(
+        //        entity.ContainingMap,
+        //        entity.ContainingMap.Objects
+        //            .Where(e => e.WrappedObject is IMsbEntry)
+        //            .Select(e => e as MsbEntity),
+        //        entity,
+        //        name
+        //    );
+        //}
+        //else
+        //{
+        //    entity.Name = name;
+        //}
     }
 
     public override ActionEvent Execute(bool isRedo = false)

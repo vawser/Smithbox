@@ -533,7 +533,7 @@ public class MassEditTool
 
             if (actionGroups.Count > 0)
             {
-                var compoundAction = new MapActionGroupCompoundAction(View, actionGroups);
+                var compoundAction = new MassEditGroupAction(View, actionGroups);
 
                 View.ViewportActionManager.ExecuteAction(compoundAction);
             }
@@ -578,7 +578,7 @@ public class MassEditTool
 
             if (actionGroups.Count > 0)
             {
-                var compoundAction = new MapActionGroupCompoundAction(View, actionGroups);
+                var compoundAction = new MassEditGroupAction(View, actionGroups);
 
                 View.ViewportActionManager.ExecuteAction(compoundAction);
             }

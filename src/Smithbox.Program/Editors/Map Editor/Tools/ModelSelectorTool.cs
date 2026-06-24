@@ -479,6 +479,7 @@ public class ModelSelectorTool
                 var action = s.ChangeObjectProperty("ModelName", modelName);
                 actlist.Add(action);
 
+
                 if (CFG.Current.MapEditor_Model_Selector_Update_Name)
                 {
                     var updateNameAction = UpdateEntityName(modelName, s);
@@ -509,7 +510,7 @@ public class ModelSelectorTool
         var name = GetUniqueNameString(modelName);
         ent.Name = name;
 
-        return ent.GetPropertyChangeAction("Name", name);
+        return ent.GetPropertyChangeAction(ent, "Name", name);
     }
 
     private ViewportAction UpdateInstanceID(string modelName, MsbEntity ent)
@@ -543,7 +544,7 @@ public class ModelSelectorTool
                 newInstanceID++;
             }
 
-            return ent.GetPropertyChangeAction("InstanceID", newInstanceID);
+            return ent.GetPropertyChangeAction(ent, "InstanceID", newInstanceID);
         }
 
         // AC6
@@ -570,7 +571,7 @@ public class ModelSelectorTool
                 newInstanceID++;
             }
 
-            return ent.GetPropertyChangeAction("TypeIndex", newInstanceID);
+            return ent.GetPropertyChangeAction(ent, "TypeIndex", newInstanceID);
         }
 
         return null;

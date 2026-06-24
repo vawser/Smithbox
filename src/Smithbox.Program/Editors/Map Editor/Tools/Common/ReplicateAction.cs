@@ -292,7 +292,7 @@ public class ReplicateAction
     {
         if (View.ViewportSelection.IsSelection())
         {
-            MoReplicateAction action = new(View, View.ViewportSelection.GetFilteredSelection<MsbEntity>().ToList());
+            EntReplicateAction action = new(View, View.ViewportSelection.GetFilteredSelection<MsbEntity>().ToList());
 
             View.ViewportActionManager.ExecuteAction(action);
         }

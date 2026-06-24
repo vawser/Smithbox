@@ -136,7 +136,7 @@ public class DuplicateAction
             var mapContainer = View.Selection.SelectedMapContainer;
             var btlParent = mapContainer.BTLParents.FirstOrDefault();
 
-            MoDuplicateAction action = new(View, mapObjects, mapContainer, btlParent);
+            EntDuplicateAction action = new(View, mapObjects, mapContainer, btlParent);
             View.ViewportActionManager.ExecuteAction(action);
         }
         else

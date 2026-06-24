@@ -9,7 +9,7 @@ using System.Linq;
 namespace StudioCore.Editors.MapEditor;
 
 
-public class MoMoveAction : ViewportAction
+public class EntMoveAction : ViewportAction
 {
     private MapEditorView View;
 
@@ -22,7 +22,7 @@ public class MoMoveAction : ViewportAction
     private readonly Entity TargetBTL;
     private readonly MapContainer TargetMap;
 
-    public MoMoveAction(MapEditorView view, List<MsbEntity> objects, bool setSelection,
+    public EntMoveAction(MapEditorView view, List<MsbEntity> objects, bool setSelection,
         MapContainer targetMap = null, Entity targetBTL = null)
     {
         View = view;

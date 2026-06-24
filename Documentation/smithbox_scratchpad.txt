@@ -1,9 +1,6 @@
 #---------------------
 # TODO 
 #---------------------
-- Project:
- - Add 'validated' properties to file dictionary entries (check they exist in game files, if they do, 'validated' is true)
-
 - Param Editor
  - Look into making row merges for tabulated params functional and simple
  - Finish converting the SDT AlternativeOrders into Field Layouts
@@ -11,6 +8,5 @@
  
 - Map Editor:
  - Name seem a bit 'sticky', i.e. changing doesn't immediately update the displayed name
- - Character name lookup is 'sticky', goes out of sync with multiple model changes.
  - Duplicate undo causes orphaned entity
 

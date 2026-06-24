@@ -15,13 +15,16 @@ public class PropChangeAction : ViewportAction
 
     private string EditMessage = "";
 
+    private Entity TargetEnt;
+
     public PropChangeAction(object changed)
     {
         ChangedObject = changed;
     }
 
-    public PropChangeAction(PropertyInfo prop, object changed, object newval, string entityName = "")
+    public PropChangeAction(Entity ent, PropertyInfo prop, object changed, object newval, string entityName = "")
     {
+        TargetEnt = ent;
         ChangedObject = changed;
         var change = new PropertyChange();
         change.Property = prop;
@@ -33,8 +36,9 @@ public class PropChangeAction : ViewportAction
         EditMessage = $"{entityName} -> {prop.Name} was changed to {change.NewValue}";
     }
 
-    public PropChangeAction(PropertyInfo prop, int index, object changed, object newval, string entityName = "")
+    public PropChangeAction(Entity ent, PropertyInfo prop, int index, object changed, object newval, string entityName = "")
     {
+        TargetEnt = ent;
         ChangedObject = changed;
         var change = new PropertyChange();
         change.Property = prop;
@@ -93,6 +97,9 @@ public class PropChangeAction : ViewportAction
         change.NewValue = newval;
         change.ArrayIndex = index;
         Changes.Add(change);
+
+        if(TargetEnt != null)
+            TargetEnt.CachedAliasName = null;
     }
 
     public void SetPostExecutionAction(Action<bool> action)
@@ -130,6 +137,9 @@ public class PropChangeAction : ViewportAction
         {
             PostExecutionAction.Invoke(false);
         }
+
+        if (TargetEnt != null)
+            TargetEnt.CachedAliasName = null;
 
         return ActionEvent.NoEvent;
     }

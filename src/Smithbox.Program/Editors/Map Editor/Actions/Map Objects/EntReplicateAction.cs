@@ -13,7 +13,7 @@ using System.Text.RegularExpressions;
 
 namespace StudioCore.Editors.MapEditor;
 
-public class MoReplicateAction : ViewportAction
+public class EntReplicateAction : ViewportAction
 {
     private static readonly Regex TrailIDRegex = new(@"_(?<id>\d+)$");
     private readonly List<MsbEntity> Clonables = new();
@@ -31,7 +31,7 @@ public class MoReplicateAction : ViewportAction
 
     private ReplicateSquareSideType currentSquareSide;
 
-    public MoReplicateAction(MapEditorView view, List<MsbEntity> objects)
+    public EntReplicateAction(MapEditorView view, List<MsbEntity> objects)
     {
         View = view;
         Clonables.AddRange(objects);

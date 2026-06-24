@@ -134,7 +134,9 @@ public class MsbEntity : Entity
         {
             asset = ModelLocator.GetChrModel(curProject, modelName, modelName);
 
-            if(RenderSceneMesh is MeshRenderableProxy meshProxy)
+            RenderSceneMesh = CreateCharacterMesh(asset);
+
+            if (RenderSceneMesh is MeshRenderableProxy meshProxy)
             {
                 if(IsCharacterPlaceholder(meshProxy, modelName, ProjectAliasType.Characters))
                 {
@@ -144,14 +146,6 @@ public class MsbEntity : Entity
                 {
                     RenderSceneMesh = CreateInteractableProxyMesh();
                 }
-                else
-                {
-                    RenderSceneMesh = CreateCharacterMesh(asset);
-                }
-            }
-            else
-            {
-                RenderSceneMesh = CreateCharacterMesh(asset);
             }
         }
 
@@ -166,20 +160,14 @@ public class MsbEntity : Entity
         {
             asset = ModelLocator.GetObjModel(curProject, modelName, modelName);
 
+            RenderSceneMesh = CreateObjectMesh(asset);
+
             if (RenderSceneMesh is MeshRenderableProxy meshProxy)
             {
                 if (IsAssetPlaceholder(meshProxy, modelName, ProjectAliasType.Assets))
                 {
                     RenderSceneMesh = CreateObjectProxyMesh();
                 }
-                else
-                {
-                    RenderSceneMesh = CreateObjectMesh(asset);
-                }
-            }
-            else
-            {
-                RenderSceneMesh = CreateObjectMesh(asset);
             }
         }
 

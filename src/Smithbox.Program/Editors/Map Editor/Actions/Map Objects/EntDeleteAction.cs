@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace StudioCore.Editors.MapEditor;
 
-public class MoDeleteAction : ViewportAction
+public class EntDeleteAction : ViewportAction
 {
     private MapEditorView View;
 
@@ -16,7 +16,7 @@ public class MoDeleteAction : ViewportAction
 
     private readonly List<DeleteRecord> Records = new();
 
-    public MoDeleteAction(MapEditorView view, List<MsbEntity> objects, bool setSelection)
+    public EntDeleteAction(MapEditorView view, List<MsbEntity> objects, bool setSelection)
     {
         View = view;
         Deletables.AddRange(objects);

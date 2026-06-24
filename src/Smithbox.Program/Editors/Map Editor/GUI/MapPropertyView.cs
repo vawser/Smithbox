@@ -592,7 +592,7 @@ public class MapPropertyView
             editName = (newValue, first);
             if (entities.Count() == 1)
             {
-                View.ViewportActionManager.ExecuteAction(new MoRenameAction(
+                View.ViewportActionManager.ExecuteAction(new EntRenameAction(
                     entities.ToList(),
                     new List<string> { newValue },
                     false
@@ -600,7 +600,7 @@ public class MapPropertyView
             }
             else
             {
-                View.ViewportActionManager.ExecuteAction(new MoRenameAction(
+                View.ViewportActionManager.ExecuteAction(new EntRenameAction(
                     entities.ToList(),
                     entities.Select((ent, i) => $"{newValue}_{i}").ToList(),
                     false
@@ -660,7 +660,7 @@ public class MapPropertyView
 
             if (single)
             {
-                View.ViewportActionManager.ExecuteAction(new MoRenameAction(
+                View.ViewportActionManager.ExecuteAction(new EntRenameAction(
                     new List<MsbEntity> { first },
                     new List<string> { editName.name },
                     true
@@ -674,7 +674,7 @@ public class MapPropertyView
                         group.Select((ent, index) => $"{editName.name}-{group.Key.Name}"
                     ));
 
-                View.ViewportActionManager.ExecuteAction(new MoRenameAction(
+                View.ViewportActionManager.ExecuteAction(new EntRenameAction(
                     entities.ToList(),
                     nameList.ToList(),
                     true
@@ -1036,7 +1036,7 @@ public class MapPropertyView
                                 throw new Exception("Invalid shape");
                         }
 
-                        PropChangeAction action = new(prop, obj, newshape);
+                        PropChangeAction action = new(firstEnt, prop, obj, newshape);
                         action.SetPostExecutionAction(undo =>
                         {
                             var selected = false;
@@ -1094,7 +1094,7 @@ public class MapPropertyView
                             throw new Exception("Invalid BTL LightType");
                     }
 
-                    PropChangeAction action = new(prop, obj, newLight);
+                    PropChangeAction action = new(firstEnt, prop, obj, newLight);
                     action.SetPostExecutionAction(undo =>
                     {
                         var selected = false;
@@ -1695,11 +1695,11 @@ public class MapPropertyView
             PropChangeAction action;
             if (arrayindex != -1)
             {
-                action = new PropChangeAction((PropertyInfo)prop, arrayindex, obj, newval);
+                action = new PropChangeAction(selection, (PropertyInfo)prop, arrayindex, obj, newval);
             }
             else
             {
-                action = new PropChangeAction((PropertyInfo)prop, obj, newval);
+                action = new PropChangeAction(selection, (PropertyInfo)prop, obj, newval);
             }
 
             View.ViewportActionManager.ExecuteAction(action);
@@ -1778,7 +1778,6 @@ public class MapPropertyView
         {
             if (changed)
             {
-                ent.CachedAliasName = null;
                 ent.BuildReferenceMap();
 
                 if (meta.EntityIdentifierProperty)

@@ -77,7 +77,7 @@ public class DeveloperPanel
                 ImGui.BeginChild("scriptSection", ImGuiChildFlags.Borders);
 
                 UIHelper.MultiButtonInput("script",
-                    "scriptExecute", "Execute Script", "", Null);
+                    "scriptExecute", "Execute Script", "", ExecuteScript);
 
                 ImGui.EndChild();
 
@@ -196,7 +196,10 @@ public class DeveloperPanel
         ImGui.End();
     }
 
-    public void Null() { }
+    public void ExecuteScript() 
+    { 
+        
+    }
 }
 
 public enum ValidatorType

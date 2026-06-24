@@ -5,14 +5,14 @@ using System.Collections.Generic;
 
 namespace StudioCore.Editors.MapEditor;
 
-public class MapActionGroupCompoundAction : ViewportAction
+public class MassEditGroupAction : ViewportAction
 {
     private MapEditorView View;
     private readonly List<MapActionGroup> Actions;
 
     private Action<bool> PostExecutionAction;
 
-    public MapActionGroupCompoundAction(MapEditorView view, List<MapActionGroup> actions)
+    public MassEditGroupAction(MapEditorView view, List<MapActionGroup> actions)
     {
         View = view;
         Actions = actions;

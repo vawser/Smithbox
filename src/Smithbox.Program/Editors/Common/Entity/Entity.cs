@@ -39,11 +39,6 @@ public class Entity : ISelectable, IDisposable
     public string CachedAliasName;
 
     /// <summary>
-    /// Current model string for the entity.
-    /// </summary>
-    public string CurrentModelName = "";
-
-    /// <summary>
     /// Internal. Bool to track if render scene mesh has been disposed of.
     /// </summary>
     private bool disposedValue;
@@ -62,8 +57,6 @@ public class Entity : ISelectable, IDisposable
     /// Bool to track if Temporary Transform is used.
     /// </summary>
     private bool UseTempTransform;
-
-    public bool ForceModelRefresh = false;
 
     private IUniverse Owner;
 
@@ -623,7 +616,7 @@ public class Entity : ISelectable, IDisposable
     /// <summary>
     /// Return the PropertiesChangedAction of the passed property string and new value.
     /// </summary>
-    public PropChangeAction GetPropertyChangeAction(string prop, object newval)
+    public PropChangeAction GetPropertyChangeAction(Entity ent, string prop, object newval)
     {
         if (WrappedObject == null)
         {
@@ -636,7 +629,7 @@ public class Entity : ISelectable, IDisposable
             if (pp != null)
             {
                 PropertyInfo pprop = pp.GetType().GetProperty("Value");
-                return new PropChangeAction(pprop, pp, newval);
+                return new PropChangeAction(ent, pprop, pp, newval);
             }
         }
 
@@ -646,14 +639,14 @@ public class Entity : ISelectable, IDisposable
             if (pp != null)
             {
                 PropertyInfo pprop = pp.GetType().GetProperty("Value");
-                return new PropChangeAction(pprop, pp, newval);
+                return new PropChangeAction(ent, pprop, pp, newval);
             }
         }
 
         PropertyInfo p = WrappedObject.GetType().GetProperty(prop);
         if (p != null)
         {
-            return new PropChangeAction(p, WrappedObject, newval);
+            return new PropChangeAction(ent, p, WrappedObject, newval);
         }
 
         return null;
@@ -1133,12 +1126,12 @@ public class Entity : ISelectable, IDisposable
         {
             List<ViewportAction> actions = new();
             var roty = newt.EulerRotation.Y * Utils.Rad2Deg - 180.0f;
-            actions.Add(GetPropertyChangeAction("PositionX", newt.Position.X));
-            actions.Add(GetPropertyChangeAction("PositionY", newt.Position.Y));
-            actions.Add(GetPropertyChangeAction("PositionZ", newt.Position.Z));
-            actions.Add(GetPropertyChangeAction("RotationX", newt.EulerRotation.X * Utils.Rad2Deg));
-            actions.Add(GetPropertyChangeAction("RotationY", roty));
-            actions.Add(GetPropertyChangeAction("RotationZ", newt.EulerRotation.Z * Utils.Rad2Deg));
+            actions.Add(GetPropertyChangeAction(this, "PositionX", newt.Position.X));
+            actions.Add(GetPropertyChangeAction(this, "PositionY", newt.Position.Y));
+            actions.Add(GetPropertyChangeAction(this, "PositionZ", newt.Position.Z));
+            actions.Add(GetPropertyChangeAction(this, "RotationX", newt.EulerRotation.X * Utils.Rad2Deg));
+            actions.Add(GetPropertyChangeAction(this, "RotationY", roty));
+            actions.Add(GetPropertyChangeAction(this, "RotationZ", newt.EulerRotation.Z * Utils.Rad2Deg));
             ViewportCompoundAction act = new(actions);
             act.SetPostExecutionAction(undo =>
             {
@@ -1246,7 +1239,7 @@ public class Entity : ISelectable, IDisposable
     public ViewportAction ChangeObjectProperty(string propTarget, string propValue)
     {
         var actions = new List<ViewportAction>();
-        actions.Add(GetPropertyChangeAction(propTarget, propValue));
+        actions.Add(GetPropertyChangeAction(this, propTarget, propValue));
         var act = new ViewportCompoundAction(actions);
         act.SetPostExecutionAction((undo) =>
         {

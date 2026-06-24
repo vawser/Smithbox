@@ -147,7 +147,7 @@ public class MoveToMapAction
     /// </summary>
     public void MoveToMap(List<MsbEntity> selection, MapContainer targetMap, Entity targetBtl)
     {
-        var action = new MoMoveAction(View, selection, true, targetMap, targetBtl);
+        var action = new EntMoveAction(View, selection, true, targetMap, targetBtl);
 
         View.ViewportActionManager.ExecuteAction(action);
     }

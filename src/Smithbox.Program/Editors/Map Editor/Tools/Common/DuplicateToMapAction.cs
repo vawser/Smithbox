@@ -179,7 +179,7 @@ public class DuplicateToMapAction
     /// </summary>
     public void DuplicateToMap(List<MsbEntity> selection, MapContainer targetMap, Entity targetBtl)
     {
-        var action = new MoDuplicateAction(View, selection, targetMap, targetBtl);
+        var action = new EntDuplicateAction(View, selection, targetMap, targetBtl);
 
         View.ViewportActionManager.ExecuteAction(action);
 
@@ -209,7 +209,7 @@ public class DuplicateToMapAction
 
         var btlParent = mapContainer.BTLParents.FirstOrDefault();
 
-        var action = new MoDuplicateAction(View, StoredSelection, mapContainer, btlParent);
+        var action = new EntDuplicateAction(View, StoredSelection, mapContainer, btlParent);
         View.ViewportActionManager.ExecuteAction(action);
     }
 }

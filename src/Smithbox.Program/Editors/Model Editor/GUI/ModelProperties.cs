@@ -1043,11 +1043,11 @@ public class ModelProperties
             PropChangeAction action;
             if (arrayindex != -1)
             {
-                action = new PropChangeAction((PropertyInfo)prop, arrayindex, obj, newval);
+                action = new PropChangeAction(selection, (PropertyInfo)prop, arrayindex, obj, newval);
             }
             else
             {
-                action = new PropChangeAction((PropertyInfo)prop, obj, newval);
+                action = new PropChangeAction(selection, (PropertyInfo)prop, obj, newval);
             }
 
             View.ViewportActionManager.ExecuteAction(action);

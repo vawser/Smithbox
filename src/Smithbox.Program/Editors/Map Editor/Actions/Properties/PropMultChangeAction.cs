@@ -94,6 +94,8 @@ public class PropMultChangeAction : ViewportAction
 
         foreach (Entity e in ChangedEnts)
         {
+            e.CachedAliasName = null;
+
             if (UpdateRenderModel)
             {
                 if (e is MsbEntity msbEnt)
@@ -144,6 +146,8 @@ public class PropMultChangeAction : ViewportAction
 
         foreach (Entity e in ChangedEnts)
         {
+            e.CachedAliasName = null;
+
             if (UpdateRenderModel)
             {
                 if (e is MsbEntity msbEnt)
