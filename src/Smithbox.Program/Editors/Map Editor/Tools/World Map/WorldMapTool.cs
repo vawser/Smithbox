@@ -41,6 +41,18 @@ public class WorldMapTool : IResourceEventListener
     private bool _isDraggingMap = false;
     private Vector2 _lastMousePos = Vector2.Zero;
 
+    public static List<string> TextureExlusions = new List<string>()
+    {
+        "world_map_vanilla",
+        "world_map_sote",
+        "world_map_limveld",
+        "world_map_limveld_mountaintops",
+        "world_map_limveld_crater",
+        "world_map_limveld_rotted_woods",
+        "world_map_limveld_noklateo",
+        "world_map_forsaken_hollows"
+    };
+
     public WorldMapTool(MapEditorView view, ProjectEntry project)
     {
         View = view;
@@ -136,13 +148,13 @@ public class WorldMapTool : IResourceEventListener
         {
             if (Project.Descriptor.ProjectType is ProjectType.ER)
             {
-                if (ImGui.MenuItem("Lands Between", InputManager.GetHint(KeybindID.MapEditor_Toggle_World_Map_Menu)))
+                if (ImGui.MenuItem("Lands Between"))
                 {
                     CurrentMapSource = WorldMapImageSource.LandsBetween;
                 }
                 UIHelper.Tooltip($"Switch the map image to this.");
 
-                if (ImGui.MenuItem("Shadow of the Erdtree", InputManager.GetHint(KeybindID.MapEditor_Toggle_World_Map_Menu)))
+                if (ImGui.MenuItem("Shadow of the Erdtree"))
                 {
                     CurrentMapSource = WorldMapImageSource.ShadowOfTheErdtree;
                 }
@@ -151,33 +163,39 @@ public class WorldMapTool : IResourceEventListener
 
             if (Project.Descriptor.ProjectType is ProjectType.NR)
             {
-                if (ImGui.MenuItem("Limveld", InputManager.GetHint(KeybindID.MapEditor_Toggle_World_Map_Menu)))
+                if (ImGui.MenuItem("Limveld"))
                 {
                     CurrentMapSource = WorldMapImageSource.Limveld;
                 }
                 UIHelper.Tooltip($"Switch the map image to this.");
 
-                if (ImGui.MenuItem("Limveld: Mountaintops", InputManager.GetHint(KeybindID.MapEditor_Toggle_World_Map_Menu)))
+                if (ImGui.MenuItem("Limveld: Mountaintops"))
                 {
                     CurrentMapSource = WorldMapImageSource.Limveld_Mountaintops;
                 }
                 UIHelper.Tooltip($"Switch the map image to this.");
 
-                if (ImGui.MenuItem("Limveld: Crater", InputManager.GetHint(KeybindID.MapEditor_Toggle_World_Map_Menu)))
+                if (ImGui.MenuItem("Limveld: Crater"))
                 {
                     CurrentMapSource = WorldMapImageSource.Limveld_Crater;
                 }
                 UIHelper.Tooltip($"Switch the map image to this.");
 
-                if (ImGui.MenuItem("Limveld: Rotted Woods", InputManager.GetHint(KeybindID.MapEditor_Toggle_World_Map_Menu)))
+                if (ImGui.MenuItem("Limveld: Rotted Woods"))
                 {
                     CurrentMapSource = WorldMapImageSource.Limveld_Rotted_Woods;
                 }
                 UIHelper.Tooltip($"Switch the map image to this.");
 
-                if (ImGui.MenuItem("Limveld: Noklateo", InputManager.GetHint(KeybindID.MapEditor_Toggle_World_Map_Menu)))
+                if (ImGui.MenuItem("Limveld: Noklateo"))
                 {
                     CurrentMapSource = WorldMapImageSource.Limveld_Noklateo;
+                }
+                UIHelper.Tooltip($"Switch the map image to this.");
+
+                if (ImGui.MenuItem("Forsaken Hollows"))
+                {
+                    CurrentMapSource = WorldMapImageSource.Forsaken_Hollows;
                 }
                 UIHelper.Tooltip($"Switch the map image to this.");
             }
@@ -350,6 +368,10 @@ public class WorldMapTool : IResourceEventListener
             case WorldMapImageSource.Limveld_Noklateo:
                 resHandle = GetImageTextureHandle("smithbox/world_map/world_map_limveld_noklateo");
                 break;
+
+            case WorldMapImageSource.Forsaken_Hollows:
+                resHandle = GetImageTextureHandle("smithbox/world_map/world_map_forsaken_hollows");
+                break;
         }
 
         if (resHandle != null)
@@ -389,6 +411,7 @@ public class WorldMapTool : IResourceEventListener
                 case WorldMapImageSource.Limveld_Crater:
                 case WorldMapImageSource.Limveld_Rotted_Woods:
                 case WorldMapImageSource.Limveld_Noklateo:
+                case WorldMapImageSource.Forsaken_Hollows:
                     tileList = LimveldLayout.Tiles;
                     break;
             }
@@ -507,6 +530,7 @@ public class WorldMapTool : IResourceEventListener
             case WorldMapImageSource.Limveld_Crater:
             case WorldMapImageSource.Limveld_Rotted_Woods:
             case WorldMapImageSource.Limveld_Noklateo:
+            case WorldMapImageSource.Forsaken_Hollows:
                 tileList = LimveldLayout.Tiles;
                 break;
         }
@@ -541,6 +565,11 @@ public class WorldMapTool : IResourceEventListener
                 if (CurrentMapSource == WorldMapImageSource.Limveld_Noklateo)
                 {
                     if (!tile.Name.EndsWith("50") && !tile.Name.EndsWith("51"))
+                        continue;
+                }
+                if (CurrentMapSource == WorldMapImageSource.Forsaken_Hollows)
+                {
+                    if (!tile.Name.EndsWith("40") && !tile.Name.EndsWith("41"))
                         continue;
                 }
             }
@@ -594,6 +623,8 @@ public class WorldMapTool : IResourceEventListener
             ResourceManager.AddResourceListener<TextureResource>("smithbox/world_map/world_map_limveld_rotted_woods", this, AccessLevel.AccessGPUOptimizedOnly);
 
             ResourceManager.AddResourceListener<TextureResource>("smithbox/world_map/world_map_limveld_noklateo", this, AccessLevel.AccessGPUOptimizedOnly);
+
+            ResourceManager.AddResourceListener<TextureResource>("smithbox/world_map/world_map_forsaken_hollows", this, AccessLevel.AccessGPUOptimizedOnly);
         }
 
         View.Universe.ScheduleWorldMapRefresh();
@@ -649,7 +680,7 @@ public class WorldMapTool : IResourceEventListener
         var largeRows = new List<int>() { 10, 11 };
         var largeCols = new List<int>() { 9 };
 
-        var variantTileIds = new List<int>() { 0, 10, 20, 30, 50 };
+        var variantTileIds = new List<int>() { 0, 10, 20, 30, 40, 50 };
 
         LimveldLayout = new WorldMapLayout(View, "60", 0, 0);
 
@@ -690,6 +721,7 @@ public class WorldMapTool : IResourceEventListener
             case WorldMapImageSource.Limveld_Crater:
             case WorldMapImageSource.Limveld_Rotted_Woods:
             case WorldMapImageSource.Limveld_Noklateo:
+            case WorldMapImageSource.Forsaken_Hollows:
                 tileList = LimveldLayout.Tiles;
                 break;
         }
@@ -700,6 +732,40 @@ public class WorldMapTool : IResourceEventListener
             var match = false;
 
             (tileName, match) = MatchMousePosToIcon(tile, pos);
+
+            if (CFG.Current.WorldMapFilter_RestrictBySource)
+            {
+                if (CurrentMapSource == WorldMapImageSource.Limveld)
+                {
+                    if (!tile.Name.EndsWith("00") && !tile.Name.EndsWith("01"))
+                        continue;
+                }
+                if (CurrentMapSource == WorldMapImageSource.Limveld_Mountaintops)
+                {
+                    if (!tile.Name.EndsWith("10") && !tile.Name.EndsWith("11"))
+                        continue;
+                }
+                if (CurrentMapSource == WorldMapImageSource.Limveld_Crater)
+                {
+                    if (!tile.Name.EndsWith("20") && !tile.Name.EndsWith("21"))
+                        continue;
+                }
+                if (CurrentMapSource == WorldMapImageSource.Limveld_Rotted_Woods)
+                {
+                    if (!tile.Name.EndsWith("30") && !tile.Name.EndsWith("31"))
+                        continue;
+                }
+                if (CurrentMapSource == WorldMapImageSource.Limveld_Noklateo)
+                {
+                    if (!tile.Name.EndsWith("50") && !tile.Name.EndsWith("51"))
+                        continue;
+                }
+                if (CurrentMapSource == WorldMapImageSource.Forsaken_Hollows)
+                {
+                    if (!tile.Name.EndsWith("40") && !tile.Name.EndsWith("41"))
+                        continue;
+                }
+            }
 
             if (match && !matches.Contains(tileName))
             {

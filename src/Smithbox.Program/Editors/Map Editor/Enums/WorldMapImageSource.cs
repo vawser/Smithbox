@@ -14,5 +14,6 @@ public enum WorldMapImageSource
     Limveld_Mountaintops,
     Limveld_Crater,
     Limveld_Rotted_Woods,
-    Limveld_Noklateo
+    Limveld_Noklateo,
+    Forsaken_Hollows
 }

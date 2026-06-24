@@ -1,6 +1,7 @@
 ﻿using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Developer;
+using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.TextureViewer;
 using StudioCore.Editors.Viewport;
@@ -474,17 +475,6 @@ public class TexturePool
 
             Format = format;
 
-            var exlusions = new List<string>()
-            {
-                "world_map_vanilla",
-                "world_map_sote",
-                "world_map_limveld",
-                "world_map_limveld_mountaintops",
-                "world_map_limveld_crater",
-                "world_map_limveld_rotted_woods",
-                "world_map_limveld_noklateo"
-            };
-
             var curProject = Smithbox.Orchestrator.SelectedProject;
 
             if (curProject != null && curProject.Handler != null)
@@ -492,7 +482,7 @@ public class TexturePool
                 var checkPow = true;
 
                 // Ignore the World Map textures
-                if (exlusions.Contains(tex.Name))
+                if (WorldMapTool.TextureExlusions.Contains(tex.Name))
                 {
                     checkPow = false;
                 }

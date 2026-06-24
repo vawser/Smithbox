@@ -2,7 +2,6 @@
 # TODO 
 #---------------------
 - Project:
- - Check NR file dictionary is up-to-date
  - Add 'validated' properties to file dictionary entries (check they exist in game files, if they do, 'validated' is true)
 
 - Param Editor
