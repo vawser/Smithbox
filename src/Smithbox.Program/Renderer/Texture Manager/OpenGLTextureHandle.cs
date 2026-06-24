@@ -1,12 +1,6 @@
 ﻿using Silk.NET.OpenGL;
-using SixLabors.ImageSharp.ColorSpaces;
 using SoulsFormats;
-using StudioCore.Utilities;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 
 namespace StudioCore.Renderer;
