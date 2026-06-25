@@ -658,8 +658,8 @@ public class ProjectEnumMenu
 
         ActionManager.ExecuteAction(new CompoundAction(actions));
 
-        SelectedEntries.Clear();
-        _selectedEnumIndex = -1;
+        //SelectedEntries.Clear();
+        //_selectedEnumIndex = -1;
     }
 
     public void DeleteEnumOptions()

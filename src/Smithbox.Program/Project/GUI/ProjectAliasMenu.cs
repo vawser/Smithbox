@@ -761,8 +761,8 @@ public class ProjectAliasMenu
 
         ActionManager.ExecuteAction(new CompoundAction(actions)); 
         
-        SelectedEntries.Clear();
-        _selectedAliasIndex = -1;
+        //SelectedEntries.Clear();
+        //_selectedAliasIndex = -1;
     }
 
     public void DeleteAliases()

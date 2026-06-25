@@ -293,10 +293,13 @@ public class FileExtractTool
             return;
         }
 
-        if (Parent.Selection.SelectedInternalFile == "" || Parent.Selection.SelectedInternalTexFile == "")
+        if (Parent.Selection.SelectedInternalTexFile == null)
         {
-            Smithbox.LogError<FileExtractTool>("No internal file has been selected.");
-            return;
+            if (Parent.Selection.SelectedInternalFile == "" || Parent.Selection.SelectedInternalTexFile == "")
+            {
+                Smithbox.LogError<FileExtractTool>("No internal file has been selected.");
+                return;
+            }
         }
 
         var targetFile = Parent.Selection.SelectedVfsFile;
@@ -326,7 +329,7 @@ public class FileExtractTool
             }
         }
 
-        if (binderType is ResourceContainerType.BND)
+        if (internalFile != "" && binderType is ResourceContainerType.BND)
         {
             if (Project.Descriptor.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES)
             {
@@ -400,7 +403,7 @@ public class FileExtractTool
             }
         }
 
-        if (binderType is ResourceContainerType.BXF)
+        if (internalFile != "" && binderType is ResourceContainerType.BXF)
         {
             Memory<byte> bhd = new Memory<byte>();
             Memory<byte> bdt = new Memory<byte>();
@@ -484,7 +487,11 @@ public class FileExtractTool
         if (extractData.Length > 0)
         {
             var extension = "";
-            var filename = Path.GetFileName(internalFile);
+            var filename = "test";
+
+            if(internalFile != "")
+                filename = Path.GetFileName(internalFile);
+
             if (internalTexFile != "")
             {
                 filename = Path.GetFileName(internalTexFile);
