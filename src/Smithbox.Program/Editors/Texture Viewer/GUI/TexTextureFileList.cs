@@ -1,8 +1,11 @@
 ﻿using Hexa.NET.ImGui;
+using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Keybinds;
 using StudioCore.Renderer;
+using System.Formats.Tar;
+using System.IO;
 using System.Numerics;
 
 namespace StudioCore.Editors.TextureViewer;
@@ -84,6 +87,8 @@ public class TexTextureFileList
                     }
                 }
 
+                ContextMenu(entry, index);
+
                 index++;
             }
         }
@@ -91,7 +96,27 @@ public class TexTextureFileList
         ImGui.EndChild();
     }
 
+    private void ContextMenu(TPF.Texture tex, int index)
+    {
+        if (ImGui.BeginPopupContextItem($"context_{tex.Name}{index}"))
+        {
+            if (ImGui.MenuItem("Export"))
+            {
+                _ = Parent.Editor.ToolView.TextureExport.ExportTextureAsync(tex);
+            }
+            UIHelper.Tooltip($"Export this file to your current export directory : {CFG.Current.TextureViewerToolbar_ExportTextureLocation}");
 
+            ImGui.Separator();
+
+            if (ImGui.MenuItem("Copy Name"))
+            {
+                ImGui.SetClipboardText(tex.Name);
+            }
+            UIHelper.Tooltip("Copy the texture name to the clipboard.");
+
+            ImGui.EndPopup();
+        }
+    }
     private int TargetIndex = -1;
     public bool LoadTexture = false;
 

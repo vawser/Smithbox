@@ -1,8 +1,10 @@
 ﻿using Hexa.NET.ImGui;
+using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Keybinds;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Numerics;
 using System.Threading.Tasks;
@@ -187,6 +189,8 @@ public class TexContainerList
                     }
 
                     ImGui.EndGroup();
+
+                    ContextMenu(entry, i, displayCategory);
                 }
             }
 
@@ -194,6 +198,59 @@ public class TexContainerList
 
             ImGui.EndChild();
             ImGui.EndTabItem();
+        }
+    }
+
+    private void ContextMenu(KeyValuePair<FileDictionaryEntry, BinderContents> entry, int index, TextureViewCategory displayCategory)
+    {
+        if (ImGui.BeginPopupContextItem($"context_{entry.Key.Path}{index}"))
+        {
+            if (ImGui.MenuItem("Copy to Project"))
+            {
+                var outputPath = Path.Join(Project.Descriptor.ProjectPath, entry.Key.Path);
+                entry.Value.WriteBinder(outputPath);
+            }
+            UIHelper.Tooltip("Copy this file into your project.");
+
+            if (ImGui.BeginMenu("Export"))
+            {
+                if (ImGui.MenuItem("All TPFs"))
+                {
+                    _ = Parent.Editor.ToolView.TextureExport.ExportTPFsFromContainerAsync(entry.Value);
+                }
+                UIHelper.Tooltip($"Export all the TPFs in this container to your current export directory : {CFG.Current.TextureViewerToolbar_ExportTextureLocation}");
+
+                if (ImGui.MenuItem("All Textures"))
+                {
+                    _ = Parent.Editor.ToolView.TextureExport.ExportTexturesFromContainerAsync(entry.Value);
+                }
+                UIHelper.Tooltip($"Export all textures files within the TPFs in this container to your current export directory: {CFG.Current.TextureViewerToolbar_ExportTextureLocation}");
+
+                ImGui.EndMenu();
+            }
+
+            ImGui.Separator();
+
+            if (ImGui.MenuItem("Copy Path"))
+            {
+                ImGui.SetClipboardText(entry.Key.Path);
+            }
+            UIHelper.Tooltip("Copy the file path to the clipboard.");
+
+            if (ImGui.MenuItem("Copy Filename"))
+            {
+                ImGui.SetClipboardText(entry.Key.Filename);
+            }
+            UIHelper.Tooltip("Copy the file name to the clipboard.");
+
+            if (ImGui.MenuItem("Copy Alias"))
+            {
+                var alias = AliasHelper.GetTextureContainerAliasName(Project, entry.Key.Filename, displayCategory);
+                ImGui.SetClipboardText(alias);
+            }
+            UIHelper.Tooltip("Copy the alias name to the clipboard.");
+
+            ImGui.EndPopup();
         }
     }
 

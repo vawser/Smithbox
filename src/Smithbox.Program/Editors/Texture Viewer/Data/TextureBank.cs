@@ -520,5 +520,27 @@ public class BinderContents
     /// This is to mark a 'fake' binder used for the loose TPF files
     /// </summary>
     public bool Loose { get; set; } = false;
+
+    public void WriteBinder(string outputPath)
+    {
+        if (Binder is BND3 bnd3)
+        {
+            bnd3.Write(outputPath);
+        }
+        else if (Binder is BND4 bnd4)
+        {
+            bnd4.Write(outputPath);
+        }
+        else if (Binder is BXF3 bxf3)
+        {
+            var bdtPath = outputPath.Replace(".tpfbhd", ".tpfbdt");
+            bxf3.Write(bdtPath, outputPath);
+        }
+        else if (Binder is BXF4 bxf4)
+        {
+            var bdtPath = outputPath.Replace(".tpfbhd", ".tpfbdt");
+            bxf4.Write(bdtPath, outputPath);
+        }
+    }
 }
 

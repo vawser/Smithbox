@@ -1,7 +1,10 @@
 ﻿using Hexa.NET.ImGui;
+using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Keybinds;
+using System.Collections.Generic;
+using System.IO;
 using System.Numerics;
 
 namespace StudioCore.Editors.TextureViewer;
@@ -86,10 +89,52 @@ public class TexInternalFileList
                     }
                 }
 
+                ContextMenu(file, tpfEntry, index);
+
                 index++;
             }
         }
 
         ImGui.EndChild();
+    }
+
+    private void ContextMenu(BinderFile entry, TPF tpf, int index)
+    {
+        var filename = Path.GetFileName(entry.Name);
+
+        if (ImGui.BeginPopupContextItem($"context_{entry.Name}{index}"))
+        {
+            if(ImGui.BeginMenu("Export"))
+            {
+                if (ImGui.MenuItem("TPF"))
+                {
+                    _ = Parent.Editor.ToolView.TextureExport.ExportTPFAsync(tpf, filename);
+                }
+                UIHelper.Tooltip($"Export this file to your current export directory : {CFG.Current.TextureViewerToolbar_ExportTextureLocation}");
+
+                if (ImGui.MenuItem("All Textures"))
+                {
+                    _ = Parent.Editor.ToolView.TextureExport.ExportTexturesFromTPFAsync(tpf);
+                }
+                UIHelper.Tooltip($"Export all textures files within this file to your current export directory: {CFG.Current.TextureViewerToolbar_ExportTextureLocation}");
+
+                ImGui.EndMenu();
+            }
+
+            ImGui.Separator();
+
+            if (ImGui.MenuItem("Copy Path"))
+            {
+                ImGui.SetClipboardText(entry.Name);
+            }
+            UIHelper.Tooltip("Copy the file path to the clipboard.");
+
+            if (ImGui.MenuItem("Copy Filename"))
+            {
+                ImGui.SetClipboardText(filename);
+            }
+            UIHelper.Tooltip("Copy the file name to the clipboard.");
+            ImGui.EndPopup();
+        }
     }
 }
