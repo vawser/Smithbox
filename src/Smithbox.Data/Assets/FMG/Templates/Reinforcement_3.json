@@ -1,0 +1,13 @@
+{
+    "OrderID": 10,
+    "Name": "Reinforcement +3",
+    "ApplyAsPrefix": false,
+    "Amount": 3,
+    "IncrementID": 1,
+    "Entries": [
+      "",
+      " +1",
+      " +2",
+      " +3"
+    ]
+}

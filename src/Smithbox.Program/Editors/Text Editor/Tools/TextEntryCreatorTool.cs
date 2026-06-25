@@ -1,9 +1,14 @@
-﻿using Hexa.NET.ImGui;
+﻿using DotNext.Resources;
+using Hexa.NET.ImGui;
+using HKLib.hk2018.hkAsyncThreadPool;
+using Octokit;
 using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Editors.MapEditor;
 using StudioCore.Utilities;
 using System.Collections.Generic;
+using System.Linq;
 using System.Numerics;
 
 namespace StudioCore.Editors.TextEditor;
@@ -15,13 +20,7 @@ public class TextEntryCreatorTool
 
     public bool ShowModal = false;
 
-    private int _newId = -1;
-    private string _newBasicText = "";
-
-    private string _newTitleText = "";
-    private string _newSummaryText = "";
-    private string _newDescriptionText = "";
-    private string _newEffectText = "";
+    private bool DisplayTemplatePopup = false;
 
     public TextEntryCreatorTool(TextEditorView view, ProjectEntry project)
     {
@@ -36,7 +35,13 @@ public class TextEntryCreatorTool
             ImGui.OpenPopup("Text Entry Creator");
         }
 
+        if (DisplayTemplatePopup)
+        {
+            ImGui.OpenPopup("Template Selection");
+        }
+
         EntryCreationMenu();
+        TemplatePopupContextMenu();
     }
 
     public void EntryCreationMenu()
@@ -53,7 +58,6 @@ public class TextEntryCreatorTool
 
         if (ImGui.BeginPopupModal("Text Entry Creator", ref ShowModal, ImGuiWindowFlags.AlwaysAutoResize))
         {
-
             ImGui.BeginChild("TextEntryCreator", new Vector2(600f * DPI.UIScale(), 0f),
                 ImGuiChildFlags.Borders | ImGuiChildFlags.AutoResizeY);
 
@@ -74,6 +78,80 @@ public class TextEntryCreatorTool
         ImGui.EndChild();
     }
 
+    private int NewEntry_BaseID = -1;
+    private int NewEntry_Amount = 12;
+    private int NewEntry_IncrementID = 100;
+
+    private bool NewEntry_CreateTitle = true;
+    private bool NewEntry_CreateSummary = true;
+    private bool NewEntry_CreateDescription = true;
+    private bool NewEntry_CreateEffect = false;
+
+    private string NewEntry_TitleText = "";
+    private string NewEntry_SummaryText = "";
+    private string NewEntry_DescriptionText = "";
+    private string NewEntry_EffectText = "";
+    private string NewEntry_BasicText = "";
+
+    private bool AllowParameterUpdate = true;
+
+    private bool AllowIncrementalTemplate = true;
+    private bool ApplyTemplateAsPrefix = true;
+
+    private List<string> IncrementTemplate = new()
+    {
+        "",
+        "Heavy ",
+        "Keen ",
+        "Quality ",
+        "Fire ",
+        "Flame Art ",
+        "Lightning ",
+        "Sacred ",
+        "Magic ",
+        "Cold ",
+        "Poison ",
+        "Blood ",
+        "Occult "
+    };
+
+    public void UpdateParameters(FMG.Entry entry)
+    {
+        if (entry != null && entry.Text != null)
+        {
+            var fmgEntryGroup = Parent.EntryGroupManager.GetEntryGroup(entry);
+
+            if (AllowParameterUpdate)
+            {
+                NewEntry_BaseID = entry.ID;
+
+                if (fmgEntryGroup.SupportsGrouping)
+                {
+                    NewEntry_CreateTitle = fmgEntryGroup.SupportsTitle;
+                    NewEntry_CreateSummary = fmgEntryGroup.SupportsSummary;
+                    NewEntry_CreateDescription = fmgEntryGroup.SupportsDescription;
+                    NewEntry_CreateEffect = fmgEntryGroup.SupportsEffect;
+
+                    if (fmgEntryGroup.Title != null && fmgEntryGroup.Title.Text != null)
+                        NewEntry_TitleText = fmgEntryGroup.Title.Text;
+
+                    if (fmgEntryGroup.Summary != null && fmgEntryGroup.Summary.Text != null)
+                        NewEntry_SummaryText = fmgEntryGroup.Summary.Text;
+
+                    if (fmgEntryGroup.Description != null && fmgEntryGroup.Description.Text != null)
+                        NewEntry_DescriptionText = fmgEntryGroup.Description.Text;
+
+                    if (fmgEntryGroup.Effect != null && fmgEntryGroup.Effect.Text != null)
+                        NewEntry_EffectText = fmgEntryGroup.Effect.Text;
+                }
+                else
+                {
+                    NewEntry_BasicText = entry.Text;
+                }
+            }
+        }
+    }
+
     public void CreationMenu()
     {
         var entry = Parent.Selection._selectedFmgEntry;
@@ -84,186 +162,237 @@ public class TextEntryCreatorTool
             return;
         }
 
+        if (entry.Text == null)
+        {
+            UIHelper.WrappedText("Select a non-null text entry first.");
+            return;
+        }
+
         var fmgEntryGroup = Parent.EntryGroupManager.GetEntryGroup(entry);
 
         if (fmgEntryGroup == null)
             return;
 
-        UIHelper.SimpleHeader("Number to Create", "The number of entries to create.");
+        var textboxHeight = 30;
 
-        UIHelper.IntInput("CreationCount", ref CFG.Current.TextEditor_CreationModal_CreationCount);
-        if (ImGui.IsItemDeactivatedAfterEdit())
-        {
-            if (CFG.Current.TextEditor_CreationModal_CreationCount < 1)
-            {
-                CFG.Current.TextEditor_CreationModal_CreationCount = 1;
-            }
-        }
+        UIHelper.SimpleHeader("Actions", "");
+
+        UIHelper.MultiButtonInput("creatorActions",
+            "createEntries", "Create Entries", "", CreateEntries);
 
         UIHelper.Spacer();
-        UIHelper.SimpleHeader("ID Increment", "The ID increment applied to entries (after the first).");
+        UIHelper.SimpleHeader("Parameters", "");
 
-        UIHelper.IntInput("IdIncrement", ref CFG.Current.TextEditor_CreationModal_IncrementCount);
-        if (ImGui.IsItemDeactivatedAfterEdit())
-        {
-            if (CFG.Current.TextEditor_CreationModal_IncrementCount < 1)
-            {
-                CFG.Current.TextEditor_CreationModal_IncrementCount = 1;
-            }
-        }
+        UIHelper.SimpleHeader("Base ID", "The base ID to use for the text entry creation.");
+        ImGui.InputInt("##entryBaseID", ref NewEntry_BaseID);
+
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader("Amount", "The number of text entries to create.");
+        ImGui.InputInt("##entryAmount", ref NewEntry_Amount);
+
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader("ID Spacing", "The amount to increment the ID by for each entry (if more than 1 is created).");
+        ImGui.InputInt("##entryIncrementID", ref NewEntry_IncrementID);
 
         UIHelper.Spacer();
         UIHelper.SimpleHeader("Options", "");
 
-        if (ImGui.Checkbox("Enable Incremental Naming", ref CFG.Current.TextEditor_CreationModal_UseIncrementalNaming))
+        ImGui.Checkbox("Allow Update on Selection", ref AllowParameterUpdate);
+        UIHelper.Tooltip("If enabled, the base ID and other parameters are updated when a FMG entry is selected.");
+        
+        UIHelper.Spacer();
+        if (ImGui.CollapsingHeader("Entries", ImGuiTreeNodeFlags.DefaultOpen))
         {
-            if (CFG.Current.TextEditor_CreationModal_UseIncrementalNaming)
+            if (fmgEntryGroup.SupportsGrouping)
             {
-                CFG.Current.TextEditor_CreationModal_UseTemplateNaming = false;
-            }
-        }
-        UIHelper.Tooltip("Whether to use incremental naming, which applies the current creation count number to the end of the text for a Title entry.");
-
-        if (ImGui.Checkbox("Enable Template Naming", ref CFG.Current.TextEditor_CreationModal_UseTemplateNaming))
-        {
-            if (CFG.Current.TextEditor_CreationModal_UseTemplateNaming)
-            {
-                CFG.Current.TextEditor_CreationModal_UseIncrementalNaming = false;
-            }
-        }
-        UIHelper.Tooltip("Whether to use incremental naming, which applies the current creation count number to the end of the text for a Title entry.");
-
-        if (CFG.Current.TextEditor_CreationModal_UseIncrementalNaming)
-        {
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader("Incremental Prefix", "Characters to apply before the current creation number in the title when using incremental naming.");
-
-            UIHelper.SinglelineTextInput("IncrementalPrefix", ref CFG.Current.TextEditor_CreationModal_IncrementalTitling_Prefix);
-
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader("Incremental Postfix", "Characters to apply after the current creation number in the title when using incremental naming.");
-
-            UIHelper.SinglelineTextInput("IncrementalPostfix", ref CFG.Current.TextEditor_CreationModal_IncrementalTitling_Postfix);
-        }
-
-        if (CFG.Current.TextEditor_CreationModal_UseTemplateNaming)
-        {
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader("Naming Template", "The template to use for naming.");
-
-            UIHelper.SetInputWidth();
-            if (ImGui.BeginCombo("##incrementalNamingGeneratorList", CFG.Current.TextEditor_CreationModal_IncrementalNaming_Template))
-            {
-                foreach (var (name, generator) in Parent.NamingTemplateManager.GeneratorDictionary)
+                if (fmgEntryGroup.SupportsTitle)
                 {
-                    if ((ProjectType)generator.ProjectType == Project.Descriptor.ProjectType)
+                    UIHelper.SimpleHeader("Title", "");
+
+                    ImGui.Checkbox("Create Title", ref NewEntry_CreateTitle);
+                    UIHelper.Tooltip("If enabled, a Title entry is created.");
+
+                    var height = (textboxHeight + ImGui.CalcTextSize(NewEntry_TitleText).Y) * DPI.UIScale();
+                    if (ImGui.InputTextMultiline($"##newEntryText_Title", ref NewEntry_TitleText, 2000, new Vector2(-1, height)))
                     {
-                        if (ImGui.Selectable(name))
-                        {
-                            CFG.Current.TextEditor_CreationModal_IncrementalNaming_Template = name;
-                        }
                     }
                 }
 
-                ImGui.EndCombo();
+                if (fmgEntryGroup.SupportsSummary)
+                {
+                    UIHelper.Spacer();
+                    UIHelper.SimpleHeader("Summary", "");
+
+                    ImGui.Checkbox("Create Summary", ref NewEntry_CreateSummary);
+                    UIHelper.Tooltip("If enabled, a Summary entry is created.");
+
+                    var height = (textboxHeight + ImGui.CalcTextSize(NewEntry_SummaryText).Y) * DPI.UIScale();
+                    if (ImGui.InputTextMultiline($"##newEntryText_Summary", ref NewEntry_SummaryText, 2000, new Vector2(-1, height)))
+                    {
+                    }
+                }
+
+                if (fmgEntryGroup.SupportsDescription)
+                {
+                    UIHelper.Spacer();
+                    UIHelper.SimpleHeader("Description", "");
+
+                    ImGui.Checkbox("Create Description", ref NewEntry_CreateDescription);
+                    UIHelper.Tooltip("If enabled, a Description entry is created.");
+
+                    var height = (textboxHeight + ImGui.CalcTextSize(NewEntry_DescriptionText).Y) * DPI.UIScale();
+                    if (ImGui.InputTextMultiline($"##newEntryText_Description", ref NewEntry_DescriptionText, 2000, new Vector2(-1, height)))
+                    {
+                    }
+                }
+
+                if (fmgEntryGroup.SupportsEffect)
+                {
+                    UIHelper.Spacer();
+                    UIHelper.SimpleHeader("Effect", "");
+
+                    ImGui.Checkbox("Create Effect", ref NewEntry_CreateEffect);
+                    UIHelper.Tooltip("If enabled, a Effect entry is created.");
+
+                    var height = (textboxHeight + ImGui.CalcTextSize(NewEntry_EffectText).Y) * DPI.UIScale();
+                    if (ImGui.InputTextMultiline($"##newEntryText_Effect", ref NewEntry_EffectText, 2000, new Vector2(-1, height)))
+                    {
+                    }
+                }
             }
-            UIHelper.Tooltip("The naming template to use.");
+            else
+            {
+                UIHelper.Spacer();
+                UIHelper.SimpleHeader("Text", "");
+
+                var height = (textboxHeight + ImGui.CalcTextSize(NewEntry_BasicText).Y) * DPI.UIScale();
+                if (ImGui.InputTextMultiline($"##newEntryText_BasicText", ref NewEntry_BasicText, 2000, new Vector2(-1, height)))
+                {
+                }
+            }
         }
 
         UIHelper.Spacer();
-        UIHelper.SimpleHeader("Actions", "");
-
-        UIHelper.MultiButtonInput("creatorActions",
-            "fillFromSelection", "Fill Text from Selection", "", FillTextFromSelection,
-            "createEntries", "Create Entries", "", CreateEntries);
-
-        // Grouped
-        if (fmgEntryGroup.SupportsGrouping)
+        if (ImGui.CollapsingHeader("Incremental Template", ImGuiTreeNodeFlags.DefaultOpen))
         {
-            if (fmgEntryGroup.SupportsTitle)
-            {
-                UIHelper.Spacer();
-                UIHelper.SimpleHeader("Title Entry", "");
+            UIHelper.WrappedText("This adjusts the contents of the text for each 'increment'. Allows for easy creation of infusion weapon entries, etc.");
 
-                DisplayEditTable(1, ref _newId, ref _newTitleText);
-            }
-
-            if (fmgEntryGroup.SupportsSummary)
-            {
-                UIHelper.Spacer();
-                UIHelper.SimpleHeader("Summary Entry", "");
-
-                DisplayEditTable(2, ref _newId, ref _newSummaryText);
-            }
-
-            if (fmgEntryGroup.SupportsDescription)
-            {
-                UIHelper.Spacer();
-                UIHelper.SimpleHeader("Description Entry", "");
-
-                DisplayEditTable(3, ref _newId, ref _newDescriptionText);
-            }
-
-            if (fmgEntryGroup.SupportsEffect)
-            {
-                UIHelper.Spacer();
-                UIHelper.SimpleHeader("Effect Entry", "");
-
-                DisplayEditTable(4, ref _newId, ref _newEffectText);
-            }
-        }
-        // Simple
-        else
-        {
             UIHelper.Spacer();
-            UIHelper.SimpleHeader("Entry", "");
+            UIHelper.SimpleHeader("Options", "");
 
-            DisplayEditTable(0, ref _newId, ref _newBasicText);
+            ImGui.Checkbox("Enable Template", ref AllowIncrementalTemplate);
+            UIHelper.Tooltip("If enabled, the incremental template will be used during entry creation.");
+
+            ImGui.Checkbox("Apply as Prefix", ref ApplyTemplateAsPrefix);
+            UIHelper.Tooltip("If enabled, the text is prefixed to the base text. Otherwise, it is postfixed.");
+
+            UIHelper.Spacer();
+            UIHelper.SimpleHeader("Templates", "");
+
+            // Add
+            if (ImGui.Button($"{Icons.Plus}##incrementTemplate_Add", DPI.IconButtonSize))
+            {
+                IncrementTemplate.Add("");
+            }
+            UIHelper.Tooltip("Add new entry to template.");
+
+            ImGui.SameLine();
+
+            // Remove
+            if (IncrementTemplate.Count < 2)
+            {
+                ImGui.BeginDisabled();
+
+                if (ImGui.Button($"{Icons.Minus}##incrementTemplate_Remove_disabled", DPI.IconButtonSize))
+                {
+                    IncrementTemplate.RemoveAt(IncrementTemplate.Count - 1);
+                }
+                UIHelper.Tooltip("Remove last added entry.");
+
+                ImGui.EndDisabled();
+            }
+            else
+            {
+                if (ImGui.Button($"{Icons.Minus}##incrementTemplate_Remove", DPI.IconButtonSize))
+                {
+                    IncrementTemplate.RemoveAt(IncrementTemplate.Count - 1);
+                }
+                UIHelper.Tooltip("Remove last added entry.");
+            }
+
+            ImGui.SameLine();
+
+            // Reset
+            if (ImGui.Button("Reset##incrementTemplate_Reset", DPI.SelectorButtonSize))
+            {
+                IncrementTemplate = new List<string>() { "" };
+            }
+            UIHelper.Tooltip("Reset map selection input rows.");
+
+            ImGui.SameLine();
+
+            if (ImGui.ArrowButton("##templateSelect", ImGuiDir.Right))
+            {
+                DisplayTemplatePopup = true;
+            }
+
+            var tblFlags = ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Borders;
+
+            if (ImGui.BeginTable($"incrementEntryTbl", 2, tblFlags))
+            {
+                ImGui.TableSetupColumn("Title", ImGuiTableColumnFlags.WidthFixed);
+                ImGui.TableSetupColumn("Input", ImGuiTableColumnFlags.WidthStretch);
+
+                for (int i = 0; i < IncrementTemplate.Count; i++)
+                {
+                    var curText = IncrementTemplate[i];
+
+                    ImGui.TableNextRow();
+                    ImGui.TableSetColumnIndex(0);
+
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.Text($"{i}");
+                    UIHelper.Tooltip($"This entry will apply for occurance {i}");
+
+                    ImGui.TableSetColumnIndex(1);
+
+                    UIHelper.SetInputWidth();
+                    if (ImGui.InputText($"##templateEntry_{i}", ref curText, 255))
+                    {
+                        IncrementTemplate[i] = curText;
+                    }
+                }
+
+                ImGui.EndTable();
+            }
         }
     }
 
-    public void FillTextFromSelection()
+    public void TemplatePopupContextMenu()
     {
-        var entry = Parent.Selection._selectedFmgEntry;
-        var fmgEntryGroup = Parent.EntryGroupManager.GetEntryGroup(entry);
-
-        if (entry == null)
+        if (ImGui.BeginPopup("Template Selection", ImGuiWindowFlags.AlwaysAutoResize))
         {
-            return;
-        }
-
-        if (fmgEntryGroup == null)
-        {
-            return;
-        }
-
-        _newId = Parent.Selection._selectedFmgEntry.ID;
-
-        if (fmgEntryGroup.SupportsGrouping)
-        {
-            if (fmgEntryGroup.Title != null)
+            if (ImGui.Selectable("None"))
             {
-                _newTitleText = fmgEntryGroup.Title.Text;
+                DisplayTemplatePopup = false;
             }
 
-            if (fmgEntryGroup.Summary != null)
+            var templates = Project.Handler.TextData.Templates.OrderBy(e => e.OrderID);
+
+            foreach(var entry in templates)
             {
-                _newSummaryText = fmgEntryGroup.Summary.Text;
+                if (ImGui.Selectable(entry.Name))
+                {
+                    IncrementTemplate = entry.Entries;
+                    ApplyTemplateAsPrefix = entry.ApplyAsPrefix;
+                    NewEntry_IncrementID = entry.IncrementID;
+                    NewEntry_Amount = entry.Amount;
+
+                    DisplayTemplatePopup = false;
+                }
             }
 
-            if (fmgEntryGroup.Description != null)
-            {
-                _newDescriptionText = fmgEntryGroup.Description.Text;
-            }
-
-            if (fmgEntryGroup.Effect != null)
-            {
-                _newEffectText = fmgEntryGroup.Effect.Text;
-            }
-        }
-        else
-        {
-            _newBasicText = Parent.Selection._selectedFmgEntry.Text;
+            ImGui.EndPopup();
         }
     }
 
@@ -282,27 +411,17 @@ public class TextEntryCreatorTool
             return;
         }
 
-        var creationCount = CFG.Current.TextEditor_CreationModal_CreationCount;
-        var incrementCount = CFG.Current.TextEditor_CreationModal_IncrementCount;
-        var baseId = _newId;
-
-        FmgEntryGeneratorBase generator = null;
-
-        if (CFG.Current.TextEditor_CreationModal_UseTemplateNaming)
-        {
-            generator = Parent.NamingTemplateManager.GetGenerator(CFG.Current.TextEditor_CreationModal_IncrementalNaming_Template);
-        }
+        var baseId = NewEntry_BaseID;
+        var newID = NewEntry_BaseID;
 
         List<EditorAction> groupedActions = new();
 
-        for (int i = 0; i < creationCount; i++)
+        for (int i = 0; i <= NewEntry_Amount; i++)
         {
-            var offset = 0;
-            if (i > 0)
-                offset = incrementCount * i;
+            var incrementText = IncrementTemplate.ElementAtOrDefault(i);
 
-            var newActionList = CreateNewEntries(entry, fmgEntryGroup, baseId, i, generator, offset);
-            baseId = baseId + incrementCount;
+            var newActionList = CreateNewEntries(entry, fmgEntryGroup, newID, incrementText);
+            newID = newID + NewEntry_IncrementID;
 
             if (newActionList != null)
             {
@@ -325,19 +444,25 @@ public class TextEntryCreatorTool
     /// <summary>
     /// Create new entries based on passed parameters.
     /// </summary>
-    public List<EditorAction> CreateNewEntries(FMG.Entry entry, FmgEntryGroup fmgEntryGroup, int newId, int creationCount, 
-        FmgEntryGeneratorBase generator, int offset)
+    public List<EditorAction> CreateNewEntries(FMG.Entry entry, FmgEntryGroup fmgEntryGroup, int newID, string incrementText)
     {
-        if (IsAvailableID(entry, newId))
+        if (IsAvailableID(entry, newID))
         {
             List<EditorAction> actions = new List<EditorAction>();
 
             if (fmgEntryGroup.SupportsGrouping)
             {
-                HandleNewTitleEntry(entry, fmgEntryGroup, newId, creationCount, generator, offset, actions);
-                HandleNewSummaryEntry(entry, fmgEntryGroup, newId, actions);
-                HandleNewDescriptionEntry(entry, fmgEntryGroup, newId, actions);
-                HandleNewEffectEntry(entry, fmgEntryGroup, newId, actions);
+                if(NewEntry_CreateTitle)
+                    HandleNewTitleEntry(entry, fmgEntryGroup, newID, incrementText, actions);
+
+                if (NewEntry_CreateSummary)
+                    HandleNewSummaryEntry(entry, fmgEntryGroup, newID, actions);
+
+                if (NewEntry_CreateDescription)
+                    HandleNewDescriptionEntry(entry, fmgEntryGroup, newID, actions);
+
+                if (NewEntry_CreateEffect)
+                    HandleNewEffectEntry(entry, fmgEntryGroup, newID, actions);
             }
             else
             {
@@ -345,7 +470,7 @@ public class TextEntryCreatorTool
 
                 if (curFmg != null)
                 {
-                    actions.Add(CreateNewEntry(entry, newId, _newBasicText));
+                    HandleNewBasicEntry(entry, fmgEntryGroup, newID, incrementText, actions);
                 }
             }
 
@@ -358,11 +483,7 @@ public class TextEntryCreatorTool
         // Display error message if ID is already in use by parent FMG
         if (HasIdCollision)
         {
-            PlatformUtils.Instance.MessageBox(
-                "ID is already in use or is invalid.",
-                "Error",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Error);
+            Smithbox.LogError(this, $"ID is already in use or is invalid: {newID}");
 
             HasIdCollision = false;
         }
@@ -373,8 +494,7 @@ public class TextEntryCreatorTool
     /// <summary>
     /// Handle title entry creation
     /// </summary>
-    private void HandleNewTitleEntry(FMG.Entry entry, FmgEntryGroup fmgEntryGroup, int newId, int creationCount,
-        FmgEntryGeneratorBase generator, int offset, List<EditorAction> actions)
+    private void HandleNewTitleEntry(FMG.Entry entry, FmgEntryGroup fmgEntryGroup, int newId, string incrementText, List<EditorAction> actions)
     {
         var selectedFmgWrapper = Parent.Selection.SelectedFmgWrapper;
 
@@ -386,37 +506,17 @@ public class TextEntryCreatorTool
 
             if (IsAvailableID(sourceEntry, newId))
             {
-                var newTitleText = _newTitleText;
+                var newTitleText = NewEntry_TitleText;
 
-                if (CFG.Current.TextEditor_CreationModal_UseIncrementalNaming)
+                if (AllowIncrementalTemplate)
                 {
-                    var prefix = CFG.Current.TextEditor_CreationModal_IncrementalTitling_Prefix;
-                    var postfix = CFG.Current.TextEditor_CreationModal_IncrementalTitling_Postfix;
-
-                    if (creationCount != 0)
+                    if(ApplyTemplateAsPrefix)
                     {
-                        newTitleText = $"{newTitleText} {prefix}{creationCount}{postfix}";
+                        newTitleText = $"{incrementText}{newTitleText}";
                     }
-                }
-
-                if (CFG.Current.TextEditor_CreationModal_UseTemplateNaming && generator != null)
-                {
-                    foreach (var row in generator.DefinitionList)
+                    else
                     {
-                        if (row.Offset == offset)
-                        {
-                            if (row.PossessiveAdjust && newTitleText.Contains("'s"))
-                            {
-                                var owner = newTitleText.Split("'s")[0];
-                                var part = newTitleText.Split("'s")[1];
-
-                                newTitleText = $"{owner}'s {row.PrependText.Trim()}{part}{row.AppendText}";
-                            }
-                            else
-                            {
-                                newTitleText = $"{row.PrependText} {newTitleText}{row.AppendText}";
-                            }
-                        }
+                        newTitleText = $"{newTitleText}{incrementText}";
                     }
                 }
 
@@ -444,7 +544,7 @@ public class TextEntryCreatorTool
 
             if (IsAvailableID(sourceEntry, newId))
             {
-                actions.Add(CreateNewEntry(sourceEntry, newId, _newSummaryText));
+                actions.Add(CreateNewEntry(sourceEntry, newId, NewEntry_SummaryText));
             }
             else
             {
@@ -468,7 +568,7 @@ public class TextEntryCreatorTool
 
             if (IsAvailableID(sourceEntry, newId))
             {
-                actions.Add(CreateNewEntry(sourceEntry, newId, _newDescriptionText));
+                actions.Add(CreateNewEntry(sourceEntry, newId, NewEntry_DescriptionText));
             }
             else
             {
@@ -492,7 +592,7 @@ public class TextEntryCreatorTool
 
             if (IsAvailableID(sourceEntry, newId))
             {
-                actions.Add(CreateNewEntry(sourceEntry, newId, _newEffectText));
+                actions.Add(CreateNewEntry(sourceEntry, newId, NewEntry_EffectText));
             }
             else
             {
@@ -500,53 +600,29 @@ public class TextEntryCreatorTool
             }
         }
     }
-
-    /// <summary>
-    /// Display the input tables for the passed input variables
-    /// </summary>
-    public void DisplayEditTable(int index, ref int newId, ref string newText)
+    private void HandleNewBasicEntry(FMG.Entry entry, FmgEntryGroup fmgEntryGroup, int newId, string incrementText, List<EditorAction> actions)
     {
-        // Fill null entries
-        if(newText == null)
+        if (IsAvailableID(entry, newId))
         {
-            newText = "";
+            var newText = NewEntry_BasicText;
+
+            if (AllowIncrementalTemplate)
+            {
+                if (ApplyTemplateAsPrefix)
+                {
+                    newText = $"{incrementText}{newText}";
+                }
+                else
+                {
+                    newText = $"{newText}{incrementText}";
+                }
+            }
+
+            actions.Add(CreateNewEntry(entry, newId, newText));
         }
-
-        float tableWidth = 520f;
-
-        var textboxHeight = 100;
-        var height = (textboxHeight + ImGui.CalcTextSize(newText).Y) * DPI.UIScale();
-
-        if (ImGui.BeginTable($"fmgNewTable{index}", 2, ImGuiTableFlags.SizingFixedFit))
+        else
         {
-            ImGui.TableSetupColumn("Title", ImGuiTableColumnFlags.WidthFixed);
-            ImGui.TableSetupColumn("Contents", ImGuiTableColumnFlags.WidthStretch);
-            //ImGui.TableHeadersRow();
-
-            ImGui.TableNextRow();
-            ImGui.TableSetColumnIndex(0);
-
-            ImGui.Text("ID");
-
-            ImGui.TableSetColumnIndex(1);
-
-            DPI.ApplyInputWidth(tableWidth);
-            if (ImGui.InputInt($"##newEntryIdInput{index}", ref newId))
-            {
-            }
-
-            ImGui.TableNextRow();
-
-            ImGui.TableSetColumnIndex(0);
-
-            ImGui.Text("Text");
-            ImGui.TableSetColumnIndex(1);
-
-            if (ImGui.InputTextMultiline($"##newEntryTextInput{index}", ref newText, 2000, new Vector2(-1, height)))
-            {
-            }
-
-            ImGui.EndTable();
+            HasIdCollision = true;
         }
     }
 

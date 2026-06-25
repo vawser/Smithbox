@@ -184,6 +184,7 @@ public class TextEntryList
         if (ImGui.Selectable($"{id}##fmgEntryID_{id}{index}", isSelected))
         {
             Parent.Selection.SelectFmgEntry(index, entry);
+            Parent.TextEntryCreator.UpdateParameters(entry);
         }
 
         // Arrow Selection
@@ -191,6 +192,7 @@ public class TextEntryList
         {
             Parent.Selection.SelectNextFmgEntry = false;
             Parent.Selection.SelectFmgEntry(index, entry);
+            Parent.TextEntryCreator.UpdateParameters(entry);
         }
         if (ImGui.IsItemFocused())
         {
@@ -289,6 +291,7 @@ public class TextEntryList
         if (ImGui.Selectable($"{displayedText}##fmgEntryName_{id}{index}", isSelected))
         {
             Parent.Selection.SelectFmgEntry(index, entry);
+            Parent.TextEntryCreator.UpdateParameters(entry);
         }
 
         if (Parent.DifferenceManager.IsUniqueToProject(entry) ||
@@ -302,6 +305,7 @@ public class TextEntryList
         {
             Parent.Selection.SelectNextFmgEntry = false;
             Parent.Selection.SelectFmgEntry(index, entry);
+            Parent.TextEntryCreator.UpdateParameters(entry);
         }
         if (ImGui.IsItemFocused())
         {

@@ -5,6 +5,9 @@
 - Smoke test
 
 - Map Editor
- - First mesh update can hide the mesh (subsequent updates will show it)
- - Ghost mesh still occurs.
+ - DS2 c0000 generators aren't displaying placeholder marker
+ - Mesh doesn't appear on duplicate (for DS2 generator)
+ - Entity on first duplicate doesn't seem to apply map offset (DS3/SDT)
  
+- Param Editor
+ - Item Gib exception for DS3 on unload

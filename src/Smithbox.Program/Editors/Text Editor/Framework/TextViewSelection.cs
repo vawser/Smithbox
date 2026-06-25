@@ -135,6 +135,7 @@ public class TextViewSelection
         if (FocusManager.IsFocus(EditorFocusContext.TextEditor_EntryList))
         {
             FmgEntryMultiselect.HandleMultiselect(_selectedFmgEntryIndex, index);
+            Parent.TextEntryCreator.UpdateParameters(entry);
         }
 
         _selectedFmgEntryIndex = index;
@@ -167,6 +168,7 @@ public class TextViewSelection
                 if (isMatch)
                 {
                     SelectFmgEntry(i, entry);
+                    Parent.TextEntryCreator.UpdateParameters(entry);
                     break;
                 }
             }

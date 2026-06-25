@@ -19,7 +19,9 @@ public class TextData : IDisposable
 
     public FileDictionary FmgFiles = new();
 
-    public FmgDescriptors FmgDescriptors;
+    public FmgDescriptors FmgDescriptors = new();
+
+    public IncrementalTemplates Templates = new();
 
     public TextData(ProjectEntry project)
     {
@@ -44,6 +46,19 @@ public class TextData : IDisposable
         else
         {
             Smithbox.Log(this, $"[Text Editor] Setup the FMG Descriptor data.");
+        }
+
+        // Templates
+        Task<bool> templatesTask = SetupIncrementalTemplates();
+        bool templatesTaskResult = await templatesTask;
+
+        if (!templatesTaskResult)
+        {
+            Smithbox.LogError(this, $"[Text Editor] Failed to setup Incremental Templates.");
+        }
+        else
+        {
+            Smithbox.Log(this, $"[Text Editor] Setup the Incremental Templates.");
         }
 
         // Primary Bank
@@ -103,6 +118,43 @@ public class TextData : IDisposable
 
         return true;
     }
+
+    #region Incremental Templates
+    public async Task<bool> SetupIncrementalTemplates()
+    {
+        await Task.Yield();
+
+        Templates = new();
+
+        var folder = @$"{AppContext.BaseDirectory}/Assets/FMG/Templates";
+
+        foreach(var file in Directory.EnumerateFiles(folder))
+        {
+            try
+            {
+                var newTemplate = new IncrementalTemplateEntry();
+                var filestring = await File.ReadAllTextAsync(file);
+
+                try
+                {
+                    newTemplate = JsonSerializer.Deserialize(filestring, TextEditorJsonSerializerContext.Default.IncrementalTemplateEntry);
+
+                    Templates.Add(newTemplate);
+                }
+                catch (Exception e)
+                {
+                    Smithbox.LogError(this, $"Failed to deserialize incremental template: {file}", e);
+                }
+            }
+            catch (Exception e)
+            {
+                Smithbox.LogError(this, $"Failed to read incremental template {file}", e);
+            }
+        }
+
+        return true;
+    }
+    #endregion
 
     #region FMG Descriptors
 

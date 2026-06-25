@@ -20,6 +20,9 @@ namespace StudioCore.Editors.TextEditor;
 [JsonSerializable(typeof(TextExportList))]
 [JsonSerializable(typeof(TextExportEntry))]
 
+[JsonSerializable(typeof(IncrementalTemplates))]
+[JsonSerializable(typeof(IncrementalTemplateEntry))]
+
 internal partial class TextEditorJsonSerializerContext : JsonSerializerContext
 {
 }

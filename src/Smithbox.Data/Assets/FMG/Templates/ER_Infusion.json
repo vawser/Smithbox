@@ -1,0 +1,22 @@
+{
+    "OrderID": 2,
+    "Name": "Elden Ring Infusions",
+    "ApplyAsPrefix": true,
+    "Amount": 12,
+    "IncrementID": 100,
+    "Entries": [
+      "",
+      "Heavy ",
+      "Keen ",
+      "Quality ",
+      "Fire ",
+      "Flame Art ",
+      "Lightning ",
+      "Sacred ",
+      "Magic ",
+      "Cold ",
+      "Poison ",
+      "Blood ",
+      "Occult "
+    ]
+}
