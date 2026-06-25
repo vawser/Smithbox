@@ -843,7 +843,18 @@ public class ProjectAliasMenu
 
     private List<AliasEntry> GetAliasList()
     {
-        return Smithbox.Orchestrator.SelectedProject.Handler.ProjectData.Aliases
+        var selectedProject = Smithbox.Orchestrator.SelectedProject;
+
+        if (selectedProject == null)
+            return new List<AliasEntry>();
+
+        if(selectedProject.Handler.ProjectData == null)
+            return new List<AliasEntry>();
+
+        if(selectedProject.Handler.ProjectData.Aliases == null)
+            return new List<AliasEntry>();
+
+        return selectedProject.Handler.ProjectData.Aliases
             .TryGetValue(SelectedAliasType, out var list)
             ? list
             : new List<AliasEntry>();
