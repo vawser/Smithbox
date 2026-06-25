@@ -359,12 +359,16 @@ public class Entity : ISelectable, IDisposable
         // use copy constructor if available
         var typs = new Type[1];
         typs[0] = typ;
-        object clone;
+        ConstructorInfo constructor = typ.GetConstructor(typs);
+        if (constructor != null)
+        {
+            return constructor.Invoke(new[] { obj });
+        }
 
         // Try either default constructor or name constructor
         typs[0] = typeof(string);
-        var constructor = typ.GetConstructor(typs);
-
+        constructor = typ.GetConstructor(typs);
+        object clone;
         if (constructor != null)
         {
             clone = constructor.Invoke(new object[] { "" });
@@ -382,22 +386,7 @@ public class Entity : ISelectable, IDisposable
             if (sourceProperty.PropertyType.IsArray)
             {
                 var arr = (Array)sourceProperty.GetValue(obj);
-                var elemType = sourceProperty.PropertyType.GetElementType();
-                var target = (Array)targetProperty.GetValue(clone);
-                if (elemType.IsClass && elemType != typeof(string))
-                {
-                    for (int i = 0; i < arr.Length; i++)
-                    {
-                        target.SetValue(DeepCopyObject(arr.GetValue(i)), i);
-                    }
-                }
-                else
-                {
-                    if (target != null)
-                    {
-                        Array.Copy(arr, target, arr.Length);
-                    }
-                }
+                Array.Copy(arr, (Array)targetProperty.GetValue(clone), arr.Length);
             }
             else if (sourceProperty.CanWrite)
             {
