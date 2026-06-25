@@ -21,6 +21,8 @@ public class TextLanguageSyncTool
     public bool DisplayTargetLanguagesSection = true;
     public bool DisplayOptionsLanguagesSection = true;
 
+    public bool SetupSyncOptions = false;
+
     public TextLanguageSyncTool(TextEditorScreen editor, ProjectEntry project)
     {
         Editor = editor;
@@ -148,7 +150,7 @@ public class TextLanguageSyncTool
         {
             var container = entry.Value;
 
-            if (entry.Value.FmgWrappers == null || entry.Value.FmgWrappers.Count == 0)
+            if (entry.Value.FmgWrappers == null)
             {
                 Project.Handler.TextData.PrimaryBank.LoadFmgWrappers(entry.Value);
             }
@@ -159,7 +161,7 @@ public class TextLanguageSyncTool
                 {
                     var tContainer = tEntry.Value;
 
-                    if (tEntry.Value.FmgWrappers == null || tEntry.Value.FmgWrappers.Count == 0)
+                    if (tEntry.Value.FmgWrappers == null)
                     {
                         Project.Handler.TextData.PrimaryBank.LoadFmgWrappers(tEntry.Value);
                     }
@@ -222,10 +224,13 @@ public class TextLanguageSyncTool
                     }
                 }
 
-                if (entry.Value.FmgWrappers == null || entry.Value.FmgWrappers.Count == 0)
+                if (entry.Value.FmgWrappers == null)
                 {
-                    Project.Handler.TextData.PrimaryBank.LoadFmgWrappers(entry.Value);
+                    _ = Project.Handler.TextData.PrimaryBank.LoadFmgWrappersAsync(entry.Value);
                 }
+
+                if (syncSrcWrapper.FmgWrappers == null)
+                    proceed = false;
 
                 // Not current selection, but the same file in a different category
                 if (proceed)
@@ -252,12 +257,13 @@ public class TextLanguageSyncTool
                         var compandAction = new CompoundAction(actions);
                         activeView.ActionManager.ExecuteAction(compandAction);
                     }
+                    UIHelper.Tooltip($"Bring changes in the {syncSrcWrapper.ContainerDisplayCategory.GetDisplayName()} category into this category.");
                 }
             }
 
             ImGui.EndMenu();
         }
-        UIHelper.Tooltip("Sync all unique changes from another category into this category.");
+        UIHelper.Tooltip("Sync all unique changes from another category into this category.\n\nUse this on the category you want to bring the changes IN TO.");
     }
 
     private List<EditorAction> SyncLanguage(TextContainerWrapper syncTargetContainerWrapper, TextContainerWrapper syncSrcContainerWrapper, int targetFmgId = -1)

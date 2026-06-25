@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.ImGui;
+using HKLib.hk2018.hkAsyncThreadPool;
 using SoulsFormats;
 using StudioCore.Application;
 
@@ -22,6 +23,27 @@ public class TextContextMenu
     {
         if (ImGui.BeginPopupContextItem($"FileContext##FileContext{info.FileEntry.Filename}"))
         {
+            if(ImGui.BeginMenu("Information"))
+            {
+                if(ImGui.Selectable($"Filename: {info.FileEntry.Filename}"))
+                {
+                    ImGui.SetClipboardText(info.FileEntry.Filename);
+                }
+                if (ImGui.Selectable($"Path: {info.FileEntry.Path}"))
+                {
+                    ImGui.SetClipboardText(info.FileEntry.Filename);
+                }
+
+                ImGui.Separator();
+
+                ImGui.Text("Type: " + info.ContainerType.ToString());
+                ImGui.Text("Display Category: " + info.ContainerDisplayCategory.ToString());
+                ImGui.Text("Display Sub-Category: " + info.ContainerDisplaySubCategory.ToString());
+                ImGui.Text("Compression Type: " + info.CompressionType.ToString());
+
+                ImGui.EndMenu();
+            }
+
             Parent.Editor.ToolView.LanguageSyncTool.DisplaySyncOptions();
 
             Parent.FmgImporter.FileContextMenuOptions();
@@ -38,6 +60,21 @@ public class TextContextMenu
     {
         if (ImGui.BeginPopupContextItem($"FmgContext##FmgContext{fmgInfo.ID}"))
         {
+            if (ImGui.BeginMenu("Information"))
+            {
+                if (ImGui.Selectable($"ID: {fmgInfo.ID}"))
+                {
+                    ImGui.SetClipboardText(fmgInfo.ID.ToString());
+                }
+
+                if (ImGui.Selectable($"Name: {fmgInfo.Name}"))
+                {
+                    ImGui.SetClipboardText(fmgInfo.Name);
+                }
+
+                ImGui.EndMenu();
+            }
+
             // TODO: with grouped FMGs, this will only sync the header FMG, not the associated sub-FMGs, should be fixed.
             Parent.Editor.ToolView.LanguageSyncTool.DisplaySyncOptions(Parent.Selection.SelectedFmgKey);
 

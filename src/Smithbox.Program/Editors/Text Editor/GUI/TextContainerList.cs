@@ -88,6 +88,7 @@ public class TextContainerList
         // DS2 
         if (Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
+            var orderedList = Project.Handler.TextData.PrimaryBank.Containers.OrderBy(e => e.Key);
             var name = $"{category.GetDisplayName()}";
 
             UIHelper.SimpleHeader(name, "");
@@ -95,7 +96,7 @@ public class TextContainerList
             // Common Sub-Header
             if (ImGui.CollapsingHeader($"Common##{name}_common", flags))
             {
-                foreach (var (fileEntry, info) in Project.Handler.TextData.PrimaryBank.Containers)
+                foreach (var (fileEntry, info) in orderedList)
                 {
                     var fmgWrapper = info.FmgWrappers.First();
                     var id = fmgWrapper.ID;
@@ -116,7 +117,7 @@ public class TextContainerList
             // Blood Message Sub-Header
             if (ImGui.CollapsingHeader($"Blood Message##{name}_bloodmsg", flags))
             {
-                foreach (var (fileEntry, info) in Project.Handler.TextData.PrimaryBank.Containers)
+                foreach (var (fileEntry, info) in orderedList)
                 {
                     var fmgWrapper = info.FmgWrappers.First();
                     var id = fmgWrapper.ID;
@@ -137,7 +138,7 @@ public class TextContainerList
             // Talk Sub-Header
             if (ImGui.CollapsingHeader($"Talk##{name}_common", flags))
             {
-                foreach (var (fileEntry, info) in Project.Handler.TextData.PrimaryBank.Containers)
+                foreach (var (fileEntry, info) in orderedList)
                 {
                     var fmgWrapper = info.FmgWrappers.First();
                     var id = fmgWrapper.ID;
@@ -158,11 +159,13 @@ public class TextContainerList
         // Normal
         else
         {
+            var orderedList = Project.Handler.TextData.PrimaryBank.Containers.OrderBy(e => e.Key);
+
             // Category Header
             if (ImGui.CollapsingHeader($"{category.GetDisplayName()}", flags))
             {
                 // Get relevant containers for each category
-                foreach (var (fileEntry, info) in Project.Handler.TextData.PrimaryBank.Containers)
+                foreach (var (fileEntry, info) in orderedList)
                 {
                     if (info.ContainerDisplayCategory == category)
                     {

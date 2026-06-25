@@ -117,6 +117,18 @@ public class TextBank : IDisposable
         }
     }
 
+    public async Task LoadFmgWrappersAsync(TextContainerWrapper container)
+    {
+        try
+        {
+            await Task.Run(() => LoadFmgWrappers(container));
+        }
+        catch (Exception ex)
+        {
+            Smithbox.LogError(this, "FMG wrapper load failed", ex);
+        }
+    }
+
     public void LoadFmgWrappers(TextContainerWrapper container)
     {
         // Populate the Text Fmg wrappers with their contents

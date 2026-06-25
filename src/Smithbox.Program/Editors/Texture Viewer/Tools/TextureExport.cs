@@ -216,12 +216,6 @@ public class TextureExport
         }
     }
 
-    private BinderContents TargetBinderContents;
-    private TPF TargetTPF;
-    private string TargetTpfName;
-    private TPF.Texture TargetTex;
-    private bool ProgressTextures = true;
-
     public async Task ExportTPFsFromContainerAsync(BinderContents binderContents)
     {
         ExportModal.DisplayModal = true;
@@ -229,8 +223,7 @@ public class TextureExport
 
         try
         {
-            TargetBinderContents = binderContents;
-            await Task.Run(ExportTPFsFromContainer);
+            await Task.Run(() => ExportTPFsFromContainer(binderContents));
         }
         catch (Exception ex)
         {
@@ -242,16 +235,16 @@ public class TextureExport
         }
     }
 
-    public void ExportTPFsFromContainer()
+    public void ExportTPFsFromContainer(BinderContents binderContents)
     {
         var exportPath = CFG.Current.TextureViewerToolbar_ExportTextureLocation;
 
         int processed = 0;
-        var total = TargetBinderContents.Files.Count;
+        var total = binderContents.Files.Count;
 
         if (Directory.Exists(exportPath))
         {
-            foreach (var file in TargetBinderContents.Files)
+            foreach (var file in binderContents.Files)
             {
                 processed++;
 
@@ -274,9 +267,7 @@ public class TextureExport
 
         try
         {
-            TargetTpfName = filename;
-            TargetTPF = tpf;
-            await Task.Run(ExportTPF);
+            await Task.Run(() => ExportTPF(tpf, filename));
         }
         catch (Exception ex)
         {
@@ -285,20 +276,6 @@ public class TextureExport
         finally
         {
             ExportModal.DisplayModal = false;
-        }
-    }
-
-    public void ExportTPF()
-    {
-        var exportPath = CFG.Current.TextureViewerToolbar_ExportTextureLocation;
-
-        if (Directory.Exists(exportPath))
-        {
-            var filePath = $"{Path.GetFileName(TargetTpfName)}.tpf.dcx";
-            var data = TargetTPF.Write();
-            var filepath = Path.Join(exportPath, filePath);
-
-            File.WriteAllBytes(filepath, data);
         }
     }
 
@@ -323,8 +300,7 @@ public class TextureExport
 
         try
         {
-            TargetBinderContents = binderContents;
-            await Task.Run(ExportTexturesFromContainer);
+            await Task.Run(() => ExportTexturesFromContainer(binderContents));
 
         }
         catch (Exception ex)
@@ -337,32 +313,36 @@ public class TextureExport
         }
     }
 
-    public void ExportTexturesFromContainer()
+    public void ExportTexturesFromContainer(BinderContents binderContents)
     {
         var exportPath = CFG.Current.TextureViewerToolbar_ExportTextureLocation;
 
         int processed = 0;
-        var total = TargetBinderContents.Files.Count;
+        var total = binderContents.Files.Count;
 
         if (Directory.Exists(exportPath))
         {
-            foreach (var file in TargetBinderContents.Files)
+            foreach (var file in binderContents.Files)
             {
                 var tpf = file.Value;
 
                 processed++;
 
-                ExportModal.ReportProgress?.Invoke(new()
+                if(binderContents.Files.Count > 1)
                 {
-                    PhaseLabel = "Processing TPF",
-                    StepLabel = $"{file.Key.Name}",
-                    Percent = processed / (float)total
-                });
+                    ExportModal.ReportProgress?.Invoke(new()
+                    {
+                        PhaseLabel = "Processing TPF",
+                        StepLabel = $"{file.Key.Name}",
+                        Percent = processed / (float)total
+                    });
 
-                TargetTPF = tpf;
-
-                ProgressTextures = false;
-                ExportTexturesFromTPF();
+                    ExportTexturesFromTPF(tpf, false);
+                }
+                else
+                {
+                    ExportTexturesFromTPF(tpf, true);
+                }
             }
         }
     }
@@ -374,9 +354,7 @@ public class TextureExport
 
         try
         {
-            TargetTPF = tpf;
-            ProgressTextures = true;
-            await Task.Run(ExportTexturesFromTPF);
+            await Task.Run(() => ExportTexturesFromTPF(tpf, true));
 
         }
         catch (Exception ex)
@@ -389,16 +367,16 @@ public class TextureExport
         }
     }
 
-    public void ExportTexturesFromTPF()
+    public void ExportTexturesFromTPF(TPF tpf, bool displayProgress)
     {
         int processed = 0;
-        var total = TargetTPF.Textures.Count;
+        var total = tpf.Textures.Count;
 
-        foreach (var tex in TargetTPF.Textures)
+        foreach (var tex in tpf.Textures)
         {
             processed++;
 
-            if (ProgressTextures)
+            if (displayProgress)
             {
                 ExportModal.ReportProgress?.Invoke(new()
                 {
@@ -419,8 +397,7 @@ public class TextureExport
 
         try
         {
-            TargetTex = tex;
-            await Task.Run(ExportTexture);
+            await Task.Run(() => ExportTexture(tex));
         }
         catch (Exception ex)
         {
@@ -429,25 +406,6 @@ public class TextureExport
         finally
         {
             ExportModal.DisplayModal = false;
-        }
-    }
-
-    public void ExportTexture()
-    {
-        var exportPath = CFG.Current.TextureViewerToolbar_ExportTextureLocation;
-
-        var texFilename = TargetTex.Name;
-        var data = TargetTex.Bytes;
-        var filepath = Path.Join(exportPath, $"{texFilename}");
-
-        // For DDS, we can write to file directly (makes it quick).
-        if (CFG.Current.TextureViewerToolbar_ExportTextureType == 0)
-        {
-            File.WriteAllBytes($"{filepath}.dds", data);
-        }
-        else
-        {
-            ExportTextureFile(filepath, data);
         }
     }
 
