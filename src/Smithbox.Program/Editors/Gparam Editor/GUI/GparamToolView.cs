@@ -10,8 +10,7 @@ public class GparamToolView
     private GparamEditorScreen Editor;
     private ProjectEntry Project;
 
-    private GparamDataFinder DataFinder;
-
+    public GparamDataFinder DataFinder;
     public GparamDataTransferTool DataTransferTool;
 
     public GparamToolView(GparamEditorScreen editor, ProjectEntry project)

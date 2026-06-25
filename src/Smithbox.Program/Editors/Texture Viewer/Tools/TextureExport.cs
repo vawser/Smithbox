@@ -56,7 +56,7 @@ public class TextureExport
             {
                 CFG.Current.TextureViewerToolbar_ExportTextureType = index;
             }
-            UIHelper.Tooltip("The file type the exported texture will be saved as.");
+            UIHelper.Tooltip("The file type the exported texture will be saved as. Affects the context menu export functions too.");
 
             UIHelper.WrappedText("");
             UIHelper.SimpleHeader("Options", "");

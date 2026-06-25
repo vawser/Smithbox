@@ -217,15 +217,31 @@ public class GparamFileList
 
             ImGui.Separator();
 
-            // Quick Edit
-            if (ImGui.BeginMenu("Quick Edit"))
+            if (ImGui.MenuItem("Copy Name"))
             {
-                // Target
-                if (ImGui.Selectable("Target"))
+                ImGui.SetClipboardText(fileEntry.Filename);
+            }
+
+            if (ImGui.MenuItem("Copy Path"))
+            {
+                ImGui.SetClipboardText(fileEntry.Path);
+            }
+
+            ImGui.Separator();
+
+            if (ImGui.BeginMenu("Target"))
+            {
+                if (ImGui.Selectable("Quick Edit"))
                 {
                     Parent.QuickEditHandler.UpdateFileFilter(fileEntry.Filename);
                 }
                 UIHelper.Tooltip("Add this file to the File Filter in the Quick Edit window.");
+
+                if (ImGui.Selectable("Data Finder"))
+                {
+                    Parent.Editor.ToolView.DataFinder.UpdateFileFilter(fileEntry.Filename);
+                }
+                UIHelper.Tooltip("Add this file to the File Filter in the Data Finder window.");
 
                 ImGui.EndMenu();
             }

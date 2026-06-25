@@ -435,11 +435,21 @@ public class GparamValueList
 
                 ImGui.Separator();
 
-                // Quick Edit
-                if (ImGui.BeginMenu("Quick Edit"))
+                if (ImGui.MenuItem("Copy ID"))
                 {
-                    // Target
-                    if (ImGui.Selectable("Target"))
+                    ImGui.SetClipboardText($"{value.ID}");
+                }
+
+                if (ImGui.MenuItem("Copy Value"))
+                {
+                    ImGui.SetClipboardText($"{value.Value.ToString()}");
+                }
+
+                ImGui.Separator();
+
+                if (ImGui.BeginMenu("Target"))
+                {
+                    if (ImGui.Selectable("Quick Edit"))
                     {
                         var fieldIndex = -1;
                         for (int i = 0; i < field.Values.Count; i++)
@@ -455,10 +465,27 @@ public class GparamValueList
                         {
                             Parent.QuickEditHandler.UpdateValueRowFilter(fieldIndex);
                         }
-
-                        ImGui.CloseCurrentPopup();
                     }
-                    UIHelper.Tooltip("Add this field to the Field Filter in the Quick Edit window.");
+                    UIHelper.Tooltip("Add this value to the Value Filter in the Quick Edit window.");
+
+                    if (ImGui.Selectable("Data Finder"))
+                    {
+                        var fieldIndex = -1;
+                        for (int i = 0; i < field.Values.Count; i++)
+                        {
+                            if (field.Values[i] == value)
+                            {
+                                fieldIndex = i;
+                                break;
+                            }
+                        }
+
+                        if (fieldIndex != -1)
+                        {
+                            Parent.Editor.ToolView.DataFinder.UpdateValueRowFilter(fieldIndex);
+                        }
+                    }
+                    UIHelper.Tooltip("Add this value to the Value Filter in the Data Finder window.");
 
                     ImGui.EndMenu();
                 }

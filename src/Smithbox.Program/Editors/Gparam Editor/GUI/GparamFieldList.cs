@@ -203,15 +203,32 @@ public class GparamFieldList
 
             ImGui.Separator();
 
-            // Quick Edit
-            if (ImGui.BeginMenu("Quick Edit"))
+            if (ImGui.MenuItem("Copy Key"))
             {
-                // Target
-                if (ImGui.Selectable("Target"))
+                ImGui.SetClipboardText(field.Key);
+            }
+
+            if (ImGui.MenuItem("Copy Name"))
+            {
+                var fieldName = GetFieldName(field);
+                ImGui.SetClipboardText(fieldName);
+            }
+
+            ImGui.Separator();
+
+            if (ImGui.BeginMenu("Target"))
+            {
+                if (ImGui.Selectable("Quick Edit"))
                 {
-                    Parent.QuickEditHandler.UpdateFieldFilter(Parent.Selection._selectedParamFieldKey);
+                    Parent.QuickEditHandler.UpdateFieldFilter(field.Key);
                 }
-                UIHelper.Tooltip("Add this file to the Field Filter in the Quick Edit window.");
+                UIHelper.Tooltip("Add this field to the Field Filter in the Quick Edit window.");
+
+                if (ImGui.Selectable("Data Finder"))
+                {
+                    Parent.Editor.ToolView.DataFinder.UpdateFieldFilter(field.Key);
+                }
+                UIHelper.Tooltip("Add this field to the Field Filter in the Data Finder window.");
 
                 ImGui.EndMenu();
             }

@@ -217,15 +217,32 @@ public class GparamGroupList
 
             ImGui.Separator();
 
-            // Quick Edit
-            if (ImGui.BeginMenu("Quick Edit"))
+            if (ImGui.MenuItem("Copy Key"))
             {
-                // Target
-                if (ImGui.Selectable("Target"))
+                ImGui.SetClipboardText(group.Key);
+            }
+
+            if (ImGui.MenuItem("Copy Name"))
+            {
+                var groupName = GetGroupName(group);
+                ImGui.SetClipboardText(groupName);
+            }
+
+            ImGui.Separator();
+
+            if (ImGui.BeginMenu("Target"))
+            {
+                if (ImGui.Selectable("Quick Edit"))
                 {
-                    Parent.QuickEditHandler.UpdateGroupFilter(Parent.Selection._selectedParamGroupKey);
+                    Parent.QuickEditHandler.UpdateGroupFilter(group.Key);
                 }
-                UIHelper.Tooltip("Add this file to the Group Filter in the Quick Edit window.");
+                UIHelper.Tooltip("Add this group to the Group Filter in the Quick Edit window.");
+
+                if (ImGui.Selectable("Data Finder"))
+                {
+                    Parent.Editor.ToolView.DataFinder.UpdateGroupFilter(group.Key);
+                }
+                UIHelper.Tooltip("Add this group to the Group Filter in the Data Finder window.");
 
                 ImGui.EndMenu();
             }
