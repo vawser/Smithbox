@@ -28,6 +28,8 @@ public class FileExtractTool
         Project = project;
 
         ExtractionPath = project.Descriptor.ProjectPath;
+        if (CFG.Current.ExtractDirectory != "")
+            ExtractionPath = CFG.Current.ExtractDirectory;
     }
 
     public void Display()
@@ -39,11 +41,11 @@ public class FileExtractTool
         UIHelper.HintTextInput("##outputDir", ref ExtractionPath, "Set the output directory...");
 
         UIHelper.MultiButtonInput("extractActions",
-            "setExtractDir", "Set Output Directory", "", SetExtractionDirectory,
-            "openExtractDir", "Open Output Directory", "", OpenExtractionDirectory,
-            "extractMainFile", "Extract Main File", "", ExtractMainFile,
-            "extractInternalFile", "Extract Internal File", "", ExtractInternalFile,
-            "extractTextureFile", "Extract Texture File", "", ExtractTextureFile);
+            "setExtractDir", "Set Output Directory", "Set the directory the files are extracted into.", SetExtractionDirectory,
+            "openExtractDir", "Open Output Directory", "Open the current output directory in a file explorer.", OpenExtractionDirectory,
+            "extractMainFile", "Extract Main File", "Extract the currently selected main file.", ExtractMainFile,
+            "extractInternalFile", "Extract Internal File", "Extract the currently selected internal file.", ExtractInternalFile,
+            "extractTextureFile", "Extract Texture File", "Extract the currently selected texture file.", ExtractTextureFile);
 
         ImGui.EndChild();
     }
@@ -61,6 +63,7 @@ public class FileExtractTool
         if (result)
         {
             ExtractionPath = newOutputDir;
+            CFG.Current.ExtractDirectory = newOutputDir;
         }
     }
 

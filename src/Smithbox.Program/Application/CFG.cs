@@ -954,6 +954,9 @@ public class CFG
     public bool Interface_FileBrowser_Tool_GameUnpacker = true;
     public bool Interface_FileBrowser_Tool_FileExtract = true;
 
+    public string UnpackDirectory = "";
+    public string ExtractDirectory = "";
+
     #endregion
 
 

@@ -43,6 +43,10 @@ public class FileUnpackTool
         Parent = view;
         Project = project;
 
+        UnpackDirectory = project.Descriptor.DataPath;
+        if (CFG.Current.UnpackDirectory != "")
+            UnpackDirectory = CFG.Current.UnpackDirectory;
+
         UpdateBaseFileDictionary();
     }
 
@@ -55,13 +59,20 @@ public class FileUnpackTool
         UIHelper.WrappedText("This is a tool to unpack the base game data for the game this project targets, if it has not already been unpacked.");
         UIHelper.WrappedText("");
 
+        UIHelper.SimpleHeader("Unpack Directory", "");
+        UIHelper.HintTextInput("##unpackDirectory", ref UnpackDirectory, "Set the unpack directory...");
+        if(ImGui.IsItemDeactivatedAfterEdit())
+        {
+            CFG.Current.UnpackDirectory = UnpackDirectory;
+        }
+
         UIHelper.SimpleHeader("Actions", "");
 
         UIHelper.MultiButtonInput("unpackActions",
-            "setUnpackDirectory", "Configure Unpack Directory", "", ConfigureUnpackDirectory,
-            "unpackGame", "Unpack Game Files", "", UnpackGameAction,
-            "rebuildFileDir", "Refresh File Directory", "", UpdateBaseFileDictionary,
-            "deleteUnpackedFiles", "Delete Unpacked Game Files", "", DeleteUnpackedFilesAction);
+            "setUnpackDirectory", "Set Unpack Directory", "Set the directory that the game files are unpacking into.", ConfigureUnpackDirectory,
+            "rebuildFileDir", "Refresh File Directory", "Refresh the file dictionary used for unpacking.", UpdateBaseFileDictionary,
+            "unpackGame", "Unpack Game Files", "Start the unpacking process.", UnpackGameAction,
+            "deleteUnpackedFiles", "Delete Unpacked Game Files", "Delete unpacked files in the current unpack directory.", DeleteUnpackedFilesAction);
 
         UIHelper.WrappedText("");
         UIHelper.SimpleHeader("Selective Unpack", "");
@@ -138,6 +149,7 @@ public class FileUnpackTool
         if (result)
         {
             UnpackDirectory = unpackDirectory;
+            CFG.Current.UnpackDirectory = unpackDirectory;
         }
     }
 
@@ -261,50 +273,48 @@ public class FileUnpackTool
         {
             tasks.Add(Task.Run(async () =>
             {
-                await semaphore.WaitAsync(token);
-
-                if (token.IsCancellationRequested)
-                    return;
-
-                var data = Project.VFS.VanillaFS.ReadFile(entry.Path);
-                if (data != null)
+                await semaphore.WaitAsync(token).ConfigureAwait(false);
+                try
                 {
-                    var unpackPath = Project.Descriptor.DataPath;
-                    if (UnpackDirectory != "")
-                        unpackPath = UnpackDirectory;
+                    if (token.IsCancellationRequested)
+                        return;
 
-                    var rawData = (Memory<byte>)data;
-                    var absFolder = $@"{unpackPath}/{entry.Folder}";
-                    var absPath = $@"{unpackPath}/{entry.Path}";
-
-                    if (!Directory.Exists(absFolder))
+                    var data = Project.VFS.VanillaFS.ReadFile(entry.Path);
+                    if (data != null)
                     {
-                        Directory.CreateDirectory(absFolder);
-                    }
+                        var unpackPath = UnpackDirectory != "" ? UnpackDirectory : Project.Descriptor.DataPath;
 
-                    if (!File.Exists(absPath))
+                        var rawData = (Memory<byte>)data;
+                        var absFolder = $@"{unpackPath}/{entry.Folder}";
+                        var absPath = $@"{unpackPath}/{entry.Path}";
+
+                        if (!Directory.Exists(absFolder))
+                            Directory.CreateDirectory(absFolder);
+
+                        if (!File.Exists(absPath))
+                        {
+                            File.WriteAllBytes(absPath, rawData.ToArray());
+                            data = null;
+                            rawData = null;
+                        }
+
+                        Interlocked.Increment(ref CurrentUnpacked);
+                    }
+                    else
                     {
-                        File.WriteAllBytes(absPath, rawData.ToArray());
-                        data = null;
-                        rawData = null;
-                    }
+                        Smithbox.LogError(this, $"[File Browser] Failed to write file: {entry.Path}", LogPriority.High);
 
-                    Interlocked.Increment(ref CurrentUnpacked);
+                        lock (FailedUnpackEntries)
+                            FailedUnpackEntries.Add((entry.Path, "Failed to add."));
+
+                        Interlocked.Increment(ref CurrentUnpacked);
+                    }
                 }
-                else
+                finally
                 {
-                    Smithbox.LogError(this, $"[File Browser] Failed to write file: {entry.Path}", LogPriority.High);
-
-                    lock (FailedUnpackEntries)
-                    {
-                        FailedUnpackEntries.Add((entry.Path, "Failed to add."));
-                    }
-
-                    Interlocked.Increment(ref CurrentUnpacked);
+                    semaphore.Release();
                 }
-
-                semaphore.Release();
-            }));
+            }, token));
         }
 
         try
@@ -312,6 +322,10 @@ public class FileUnpackTool
             await Task.WhenAll(tasks);
         }
         catch (OperationCanceledException)
+        {
+            Smithbox.Log(this, "[File Browser] Unpacking was cancelled.", LogLevel.Warning);
+        }
+        catch (AggregateException ae) when (ae.InnerExceptions.All(e => e is OperationCanceledException))
         {
             Smithbox.Log(this, "[File Browser] Unpacking was cancelled.", LogLevel.Warning);
         }
@@ -336,26 +350,25 @@ public class FileUnpackTool
         {
             tasks.Add(Task.Run(async () =>
             {
-                await semaphore.WaitAsync(token);
-
-                if (token.IsCancellationRequested)
-                    return;
-
-                var unpackPath = Project.Descriptor.DataPath;
-                if (UnpackDirectory != "")
-                    unpackPath = UnpackDirectory;
-
-                var absPath = $@"{unpackPath}/{entry.Path}";
-
-                if (File.Exists(absPath))
+                await semaphore.WaitAsync(token).ConfigureAwait(false);
+                try
                 {
-                    File.Delete(absPath);
+                    if (token.IsCancellationRequested)
+                        return;
+
+                    var unpackPath = UnpackDirectory != "" ? UnpackDirectory : Project.Descriptor.DataPath;
+                    var absPath = $@"{unpackPath}/{entry.Path}";
+
+                    if (File.Exists(absPath))
+                        File.Delete(absPath);
+
+                    Interlocked.Increment(ref CurrentDeleted);
                 }
-
-                Interlocked.Increment(ref CurrentDeleted);
-
-                semaphore.Release();
-            }));
+                finally
+                {
+                    semaphore.Release();
+                }
+            }, token));
         }
 
         try
@@ -363,6 +376,10 @@ public class FileUnpackTool
             await Task.WhenAll(tasks);
         }
         catch (OperationCanceledException)
+        {
+            Smithbox.Log(this, "[File Browser] Deleting was cancelled.", LogLevel.Warning);
+        }
+        catch (AggregateException ae) when (ae.InnerExceptions.All(e => e is OperationCanceledException))
         {
             Smithbox.Log(this, "[File Browser] Deleting was cancelled.", LogLevel.Warning);
         }
