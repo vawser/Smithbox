@@ -116,6 +116,7 @@ public class MapContainer : ObjectContainer
         {
             if (obj != null)
             {
+                MeshProviderCache.InvalidateUidEntries(obj.EntityCacheUID);
                 obj.Dispose();
             }
         }

@@ -302,6 +302,8 @@ public class MapUniverse : IUniverse
                     View.Selection.SelectedMapContainer = null;
                 }
 
+                View.MapContentView.OnMapUnloaded();
+
                 wrapper.MapContainer.LoadState = MapContentLoadState.Unloaded;
                 wrapper.MapContainer.Unload();
                 wrapper.MapContainer.Clear();

@@ -1024,4 +1024,10 @@ public class MsbEntity : Entity
 
         return false;
     }
+
+    protected override void Dispose(bool disposing)
+    {
+        SetupRenderMesh = false;
+        base.Dispose(disposing);
+    }
 }

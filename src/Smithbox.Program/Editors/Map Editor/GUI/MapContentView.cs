@@ -31,6 +31,12 @@ public class MapContentView
         Project = project;
     }
 
+    public void OnMapUnloaded()
+    {
+        _treeOpenEntities.Clear();
+        _pendingClick = null;
+    }
+
     /// <summary>
     /// Handles the update for each frame
     /// </summary>
