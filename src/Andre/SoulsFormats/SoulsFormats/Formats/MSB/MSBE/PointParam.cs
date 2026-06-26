@@ -1717,7 +1717,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public short UnkT0A { get; set; }
+                public short CommonPlaceType { get; set; }
 
                 /// <summary>
                 /// Unknown.
@@ -1739,7 +1739,7 @@ namespace SoulsFormats
                     UnkT03 = br.ReadByte();
                     WwiseEnvPlaceTypeID = br.ReadInt32();
                     UnkT08 = br.ReadInt16();
-                    UnkT0A = br.ReadInt16();
+                    CommonPlaceType = br.ReadInt16();
                     UnkT0C = br.ReadByte();
                     br.AssertPattern(19, 0x00);
                 }
@@ -1752,7 +1752,7 @@ namespace SoulsFormats
                     bw.WriteByte(UnkT03);
                     bw.WriteInt32(WwiseEnvPlaceTypeID);
                     bw.WriteInt16(UnkT08);
-                    bw.WriteInt16(UnkT0A);
+                    bw.WriteInt16(CommonPlaceType);
                     bw.WriteByte(UnkT0C);
                     bw.WritePattern(19, 0x00);
                 }

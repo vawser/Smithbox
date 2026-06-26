@@ -9,5 +9,3 @@
  - Mesh doesn't appear on duplicate (for DS2 generator)
  - Entity on first duplicate doesn't seem to apply map offset (DS3/SDT)
  
-- Param Editor
- - Item Gib exception for DS3 on unload
