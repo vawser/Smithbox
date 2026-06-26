@@ -26,7 +26,9 @@ public class EntDuplicateAction : ViewportAction
     private readonly Entity TargetBTL;
     private readonly MapContainer TargetMap;
 
-    public EntDuplicateAction(MapEditorView view, List<MsbEntity> objects, MapContainer targetMap = null, Entity targetBTL = null)
+    private readonly bool DuplicateToMap;
+
+    public EntDuplicateAction(MapEditorView view, List<MsbEntity> objects, MapContainer targetMap = null, Entity targetBTL = null, bool duplicateToMap = false)
     {
         View = view;
 
@@ -34,6 +36,8 @@ public class EntDuplicateAction : ViewportAction
 
         TargetMap = targetMap;
         TargetBTL = targetBTL;
+
+        DuplicateToMap = duplicateToMap;
     }
 
     public override ActionEvent Execute(bool isRedo = false)
@@ -94,7 +98,7 @@ public class EntDuplicateAction : ViewportAction
                 {
                     TargetBTL.AddChild(newobj);
                 }
-                else if (TargetMap != null)
+                else if (DuplicateToMap && TargetMap != null)
                 {
                     // Duping to a targeted map, update parent.
                     if (TargetMap.MapOffsetNode != null)
