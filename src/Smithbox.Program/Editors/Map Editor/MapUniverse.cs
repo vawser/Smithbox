@@ -609,29 +609,14 @@ public class MapUniverse : IUniverse
                 Param.Row regist = registParams[registid];
                 var chrid = Project.Handler.ParamData.PrimaryBank.GetChrIDForEnemy(
                     (int)regist.GetCellHandleOrThrow("EnemyId").Value);
+
+
                 if (chrid != null)
                 {
-                    ResourceDescriptor asset = ModelLocator.GetChrModel(View.Project, $@"c{chrid}", $@"c{chrid}");
-                    MeshRenderableProxy model = MeshRenderableProxy.MeshRenderableFromFlverResource(
-                        View.ViewportHandler.ActiveViewport.RenderScene, asset.AssetVirtualPath, ModelMarkerType.Enemy, generatorObjs[row.ID].EntityCacheUID, null);
-                    model.DrawFilter = RenderFilter.Character;
-                    generatorObjs[row.ID].RenderSceneMesh = model;
-                    model.SetSelectable(generatorObjs[row.ID]);
-                    chrsToLoad.Add(asset);
-
-                    if (CFG.Current.Viewport_Enable_Texturing)
+                    generatorObjs[row.ID].ModelName = $"c{chrid}";
+                    if(generatorObjs[row.ID] is MsbEntity msbEnt)
                     {
-                        // TPF
-                        var textureAsset = TextureLocator.GetCharacterTextureVirtualPath(View.Project, $@"c{chrid}", false);
-
-                        if (textureAsset.IsValid())
-                            chrsToLoad.Add(textureAsset);
-
-                        // BND
-                        textureAsset = TextureLocator.GetCharacterTextureVirtualPath(View.Project, $@"c{chrid}", true);
-
-                        if (textureAsset.IsValid())
-                            chrsToLoad.Add(textureAsset);
+                        msbEnt.AssignDrawable();
                     }
                 }
             }

@@ -1,4 +1,5 @@
 ﻿using Andre.Formats;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.MapEditor;
@@ -63,11 +64,6 @@ public class MsbEntity : Entity
     public void AssignDrawable()
     {
         MeshProviderCache.InvalidateUidEntries(EntityCacheUID);
-
-        //if (SetupRenderMesh)
-        //{
-        //    MeshProviderCache.InvalidateUidEntries(EntityCacheUID);
-        //}
 
         switch (Type)
         {
@@ -538,7 +534,27 @@ public class MsbEntity : Entity
     // DS2
     public void AssignGeneratorDrawable()
     {
+        var curUniverse = Owner as MapUniverse;
+        var curProject = curUniverse.Project;
 
+        if (ModelName != "")
+        {
+            var asset = ModelLocator.GetChrModel(curProject, ModelName, ModelName);
+
+            RenderSceneMesh = CreateCharacterMesh(asset);
+
+            if (RenderSceneMesh is MeshRenderableProxy meshProxy)
+            {
+                if (IsCharacterPlaceholder(meshProxy, ModelName, ProjectAliasType.Characters))
+                {
+                    RenderSceneMesh = CreateCharacterProxyMesh();
+                }
+                else if (IsInteractablePlaceholder(meshProxy, ModelName, ProjectAliasType.Characters))
+                {
+                    RenderSceneMesh = CreateInteractableProxyMesh();
+                }
+            }
+        }
     }
 
     // DS2
@@ -923,6 +939,7 @@ public class MsbEntity : Entity
     {
         var c = (MsbEntity)base.Clone();
         c.Type = Type;
+        c.ModelName = ModelName;
         return c;
     }
 

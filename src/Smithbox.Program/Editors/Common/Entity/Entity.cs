@@ -23,6 +23,9 @@ namespace StudioCore.Editors.Common;
 public class Entity : ISelectable, IDisposable
 {
     public readonly string EntityCacheUID = Guid.NewGuid().ToString("N");
+
+    public string ModelName;
+
     /// <summary>
     /// Internal. Visibility of the entity.
     /// </summary>

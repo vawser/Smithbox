@@ -28,6 +28,11 @@ public class PropMultChangeAction : ViewportAction
         ChangedEnts = changedEnts;
         foreach (Entity o in changedEnts)
         {
+            if (prop.Name == "ModelName")
+            {
+                o.ModelName = newval.ToString();
+            }
+
             var propObj = PropFinderUtil.FindPropertyObject(prop, o.WrappedObject, index, classIndex, false);
             if (propObj != null)
             {

@@ -115,7 +115,8 @@ public class EntReplicateAction : ViewportAction
                     }
                     else
                     {
-                        map.Objects.Add(newobj);
+                        map.Objects.Insert(map.Objects.IndexOf(Clonables[i]) + 1, newobj);
+                        //map.Objects.Add(newobj);
                     }
 
                     if (TargetBTL != null && newobj.WrappedObject is BTL.Light)
