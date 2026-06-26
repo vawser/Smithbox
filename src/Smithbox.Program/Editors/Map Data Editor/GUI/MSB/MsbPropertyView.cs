@@ -164,11 +164,11 @@ public class MsbPropertyView
 
         Type type = targetEntry.Value.GetType();
 
-        var index = 0;
-        DisplayObjectProperties(ref index, type, targetEntry.Value, prefix: "", postfix: "");
+        var imGuiIndex = 0;
+        DisplayObjectProperties(ref imGuiIndex, type, targetEntry.Value, prefix: "", postfix: "");
     }
 
-    private void DisplayObjectProperties(ref int index, Type type, object entry, string prefix, string postfix)
+    private void DisplayObjectProperties(ref int imGuiIndex, Type type, object entry, string prefix, string postfix)
     {
         var properties = ReflectionHelper.GetCachedProperties(type);
 
@@ -177,11 +177,11 @@ public class MsbPropertyView
             // Arrays and lists must be checked before IsPropertyClass because List<T> is also a class.
             if (ReflectionHelper.IsPropertyArray(type, entry, prop))
             {
-                DisplayArrayPropertyEntries(ref index, type, entry, prop, prefix, postfix);
+                DisplayArrayPropertyEntries(ref imGuiIndex, type, entry, prop, prefix, postfix);
             }
             else if (ReflectionHelper.IsPropertyList(type, entry, prop))
             {
-                DisplayListPropertyEntries(ref index, type, entry, prop, prefix, postfix);
+                DisplayListPropertyEntries(ref imGuiIndex, type, entry, prop, prefix, postfix);
             }
             else if (ReflectionHelper.IsPropertyClass(type, entry, prop))
             {
@@ -190,19 +190,19 @@ public class MsbPropertyView
                 if (subValue != null)
                 {
                     var subType = subValue.GetType();
-                    DisplayObjectProperties(ref index, subType, subValue, prefix, postfix);
+                    DisplayObjectProperties(ref imGuiIndex, subType, subValue, prefix, postfix);
                 }
             }
             else
             {
-                DisplayPropertyEntry(ref index, type, entry, prop, prefix, postfix);
+                DisplayPropertyEntry(ref imGuiIndex, type, entry, prop, prefix, postfix);
             }
 
-            index++;
+            imGuiIndex++;
         }
     }
 
-    private void DisplayArrayPropertyEntries(ref int index, Type type, object entry, PropertyInfo prop, string prefix, string postfix)
+    private void DisplayArrayPropertyEntries(ref int imGuiIndex, Type type, object entry, PropertyInfo prop, string prefix, string postfix)
     {
         var array = prop.GetValue(entry) as Array;
         if (array == null)
@@ -218,19 +218,19 @@ public class MsbPropertyView
 
             if (ReflectionHelper.IsScalarType(elementType))
             {
-                DisplayPropertyEntry(ref index, elementType, element, prop, prefix, postfix: $"[{i}]", true);
+                DisplayPropertyEntry(ref imGuiIndex, elementType, element, prop, prefix, postfix: $"[{i}]", true, i, entry);
             }
             else
             {
                 // Recurse into the element's own properties.
-                DisplayObjectProperties(ref index, elementType, element, prefix, postfix: $"[{i}]");
+                DisplayObjectProperties(ref imGuiIndex, elementType, element, prefix, postfix: $"[{i}]");
             }
 
-            index++;
+            imGuiIndex++;
         }
     }
 
-    private void DisplayListPropertyEntries(ref int index, Type type, object entry, PropertyInfo prop, string prefix, string postfix)
+    private void DisplayListPropertyEntries(ref int imGuiIndex, Type type, object entry, PropertyInfo prop, string prefix, string postfix)
     {
         var list = prop.GetValue(entry) as IList;
         if (list == null)
@@ -246,23 +246,23 @@ public class MsbPropertyView
 
             if (ReflectionHelper.IsScalarType(elementType))
             {
-                DisplayPropertyEntry(ref index, elementType, element, prop, prefix, postfix: $"[{i}]", true);
+                DisplayPropertyEntry(ref imGuiIndex, elementType, element, prop, prefix, postfix: $"[{i}]", true);
             }
             else
             {
-                DisplayObjectProperties(ref index, elementType, element, prefix, postfix: $"[{i}]");
+                DisplayObjectProperties(ref imGuiIndex, elementType, element, prefix, postfix: $"[{i}]");
             }
 
-            index++;
+            imGuiIndex++;
         }
     }
 
-    public void DisplayPropertyEntry(ref int index, Type type, object entry, PropertyInfo prop, string prefix, string postfix, bool isScalar = false)
+    public void DisplayPropertyEntry(ref int imGuiIndex, Type type, object entry, PropertyInfo prop, string prefix, string postfix, bool isScalar = false, int arrayIndex = -1, object arrayEntry = null)
     {
         var meta = View.Project.Handler.MapData.Meta.GetMeta(type, false);
         var fieldMeta = View.Project.Handler.MapDataHandler.MsbMeta.GetFieldMeta(prop.Name, type);
 
-        var context = new MsbPropertyContext(index, type, entry, prop, prefix, postfix, isScalar, meta, fieldMeta);
+        var context = new MsbPropertyContext(imGuiIndex, type, entry, prop, prefix, postfix, isScalar, meta, fieldMeta, arrayIndex, arrayEntry);
 
         if (CanDisplayPropertyRow(context))
         {
@@ -296,10 +296,6 @@ public class MsbPropertyView
         {
             return false;
         }
-
-        // IMsbEntry.Name needs special handling to keep it unique
-        if (typeof(IMsbEntry).IsAssignableFrom(context.Type) && context.Prop.Name == "Name")
-            return false;
 
         // Index Properties are hidden by default
         if (context.FieldMeta != null && context.FieldMeta.IndexProperty)
@@ -417,8 +413,42 @@ public class MsbPropertyView
     {
         if (changed)
         {
-            var action = new MsbPropertyChange(context.Prop, context.Entry, oldValue, newValue, context.Index);
-            View.ActionManager.ExecuteAction(action);
+            if(context.IsScalar)
+            {
+                var action = new MsbPropertyChange(context.Prop, context.ArrayEntry, oldValue, newValue, context.ArrayIndex);
+
+                action.SetPostExecutionAction(undo =>
+                {
+                    var type = context.Type;
+                    var propName = context.Prop.Name;
+
+                    // Refresh the entry list so the name updates.
+                    if (typeof(IMsbEntry).IsAssignableFrom(type) && propName == "Name")
+                    {
+                        View.MsbEditor.EntryView.RebuildEntryCache();
+                    }
+                });
+
+                View.ActionManager.ExecuteAction(action);
+            }
+            else
+            {
+                var action = new MsbPropertyChange(context.Prop, context.Entry, oldValue, newValue, context.ArrayIndex);
+
+                action.SetPostExecutionAction(undo =>
+                {
+                    var type = context.Type;
+                    var propName = context.Prop.Name;
+
+                    // Refresh the entry list so the name updates.
+                    if (typeof(IMsbEntry).IsAssignableFrom(type) && propName == "Name")
+                    {
+                        View.MsbEditor.EntryView.RebuildEntryCache();
+                    }
+                });
+
+                View.ActionManager.ExecuteAction(action);
+            }
         }
     }
 
@@ -437,7 +467,7 @@ public class MsbPropertyView
             var val = (long)oldval;
             var strval = $@"{val}";
 
-            var input = new InputTextHandler(strval);
+            var input = new DelayedInputTextHandler(strval);
 
             if (input.Draw("##value", out string newValue))
             {
@@ -473,7 +503,8 @@ public class MsbPropertyView
             }
             else
             {
-                if (ImGui.InputInt("##value", ref val))
+                ImGui.InputInt("##value", ref val);
+                if(ImGui.IsItemDeactivatedAfterEdit())
                 {
                     newval = val;
                     isChanged = true;
@@ -505,7 +536,7 @@ public class MsbPropertyView
             }
             else
             {
-                var input = new InputTextHandler(strval);
+                var input = new DelayedInputTextHandler(strval);
 
                 if (input.Draw("##value", out string newValue))
                 {
@@ -542,9 +573,10 @@ public class MsbPropertyView
             }
             else
             {
-                if (ImGui.InputInt("##value", ref val))
+                ImGui.InputInt("##value", ref val);
+                if (ImGui.IsItemDeactivatedAfterEdit())
                 {
-                    newval = (short)val;
+                    newval = val;
                     isChanged = true;
                 }
             }
@@ -574,7 +606,7 @@ public class MsbPropertyView
             }
             else
             {
-                var input = new InputTextHandler(strval);
+                var input = new DelayedInputTextHandler(strval);
 
                 if (input.Draw("##value", out string newValue))
                 {
@@ -611,9 +643,10 @@ public class MsbPropertyView
             }
             else
             {
-                if (ImGui.InputInt("##value", ref val))
+                ImGui.InputInt("##value", ref val);
+                if (ImGui.IsItemDeactivatedAfterEdit())
                 {
-                    newval = (sbyte)val;
+                    newval = val;
                     isChanged = true;
                 }
             }
@@ -643,7 +676,7 @@ public class MsbPropertyView
             }
             else
             {
-                var input = new InputTextHandler(strval);
+                var input = new DelayedInputTextHandler(strval);
 
                 if (input.Draw("##value", out string newValue))
                 {
@@ -668,8 +701,8 @@ public class MsbPropertyView
         else if (typ == typeof(float))
         {
             var val = (float)oldval;
-            if (ImGui.DragFloat("##value", ref val, 0.1f, float.MinValue, float.MaxValue,
-                    Utils.ImGui_InputFloatFormat(val)))
+            ImGui.DragFloat("##value", ref val, 0.1f, float.MinValue, float.MaxValue, Utils.ImGui_InputFloatFormat(val));
+            if(ImGui.IsItemDeactivatedAfterEdit())
             {
                 newval = val;
                 isChanged = true;
@@ -683,7 +716,7 @@ public class MsbPropertyView
                 val = "";
             }
 
-            var input = new InputTextHandler(val);
+            var input = new DelayedInputTextHandler(val);
 
             if (input.Draw("##value", out string newValue))
             {
@@ -694,7 +727,9 @@ public class MsbPropertyView
         else if (typ == typeof(Vector2))
         {
             var val = (Vector2)oldval;
-            if (ImGui.DragFloat2("##value", ref val, 0.1f))
+            ImGui.DragFloat2("##value", ref val, 0.1f);
+
+            if (ImGui.IsItemDeactivatedAfterEdit())
             {
                 newval = val;
                 isChanged = true;
@@ -704,7 +739,8 @@ public class MsbPropertyView
         {
             var val = (Vector3)oldval;
 
-            if (ImGui.DragFloat3("##value", ref val, 0.1f))
+            ImGui.DragFloat3("##value", ref val, 0.1f);
+            if (ImGui.IsItemDeactivatedAfterEdit())
             {
                 newval = val;
                 isChanged = true;
@@ -782,7 +818,9 @@ public class MsbPropertyView
                 {
                     var color = (Color)oldval;
                     Vector3 val = new(color.R / 255.0f, color.G / 255.0f, color.B / 255.0f);
-                    if (ImGui.ColorEdit3("##value", ref val))
+                    ImGui.ColorEdit3("##value", ref val);
+
+                    if (ImGui.IsItemDeactivatedAfterEdit())
                     {
                         Color newColor = Color.FromArgb((int)(val.X * 255.0f), (int)(val.Y * 255.0f),
                             (int)(val.Z * 255.0f));
@@ -797,7 +835,9 @@ public class MsbPropertyView
 
                     var flags = ImGuiColorEditFlags.AlphaOpaque;
 
-                    if (ImGui.ColorEdit4("##value", ref val, flags))
+                    ImGui.ColorEdit4("##value", ref val, flags);
+
+                    if (ImGui.IsItemDeactivatedAfterEdit())
                     {
                         Color newColor = Color.FromArgb((int)(val.W * 255.0f), (int)(val.X * 255.0f),
                             (int)(val.Y * 255.0f), (int)(val.Z * 255.0f));
@@ -818,7 +858,8 @@ public class MsbPropertyView
 
                 var flags = ImGuiColorEditFlags.AlphaOpaque;
 
-                if (ImGui.ColorEdit4("##value", ref val, flags))
+                ImGui.ColorEdit4("##value", ref val, flags);
+                if (ImGui.IsItemDeactivatedAfterEdit())
                 {
                     Color newColor = Color.FromArgb((int)(val.W * 255.0f), (int)(val.X * 255.0f),
                         (int)(val.Y * 255.0f), (int)(val.Z * 255.0f));
@@ -1098,6 +1139,9 @@ public class MsbPropertyView
 public class MsbPropertyContext
 {
     public int Index;
+    public int ArrayIndex;
+    public object ArrayEntry;
+
     public Type Type;
     public object Entry;
     public PropertyInfo Prop;
@@ -1107,9 +1151,11 @@ public class MsbPropertyContext
     public MapEntityPropertyMeta Meta;
     public MapEntityPropertyFieldMeta FieldMeta;
 
-    public MsbPropertyContext(int index, Type type, object entry, PropertyInfo prop, string prefix, string postfix, bool isScalar, MapEntityPropertyMeta meta, MapEntityPropertyFieldMeta fieldMeta)
+    public MsbPropertyContext(int index, Type type, object entry, PropertyInfo prop, string prefix, string postfix, bool isScalar, MapEntityPropertyMeta meta, MapEntityPropertyFieldMeta fieldMeta, int arrayIndex, object arrayEntry)
     {
         Index = index;
+        ArrayIndex = arrayIndex;
+        ArrayEntry = arrayEntry;
         Type = type;
         Entry = entry;
         Prop = prop;

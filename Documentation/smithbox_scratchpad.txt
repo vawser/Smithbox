@@ -4,7 +4,6 @@
 
 - Map Data Editor
  - Implement property edit
-  - Array properties need fixing
   - String property should set null to "" so the input shows
   - For multi-select, apply change to all
   - Display name field

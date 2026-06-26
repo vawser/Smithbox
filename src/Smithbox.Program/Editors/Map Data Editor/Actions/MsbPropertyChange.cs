@@ -82,6 +82,11 @@ public class MsbPropertyChange : EditorAction
             }
         }
 
+        if (PostExecutionAction != null)
+        {
+            PostExecutionAction.Invoke(false);
+        }
+
         return ActionEvent.NoEvent;
     }
 
@@ -113,7 +118,19 @@ public class MsbPropertyChange : EditorAction
             }
         }
 
+        if (PostExecutionAction != null)
+        {
+            PostExecutionAction.Invoke(true);
+        }
+
         return ActionEvent.NoEvent;
+    }
+
+    private Action<bool> PostExecutionAction;
+
+    public void SetPostExecutionAction(Action<bool> action)
+    {
+        PostExecutionAction = action;
     }
 
     private class PropertyChange
