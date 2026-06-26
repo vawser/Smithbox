@@ -285,6 +285,18 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
                         RenderableHelper.GetBushProxy(_renderablesSet);
                     _placeholderProxy.DrawFilter = RenderFilter.SpeedTree;
                 }
+                else if(_placeholderType is ModelMarkerType.Enemy)
+                {
+                    _placeholderProxy = RenderableHelper.GetPartProxy(_renderablesSet);
+                }
+                else if (_placeholderType is ModelMarkerType.Object)
+                {
+                    _placeholderProxy = RenderableHelper.GetPartProxy(_renderablesSet);
+                }
+                else if (_placeholderType is ModelMarkerType.Player)
+                {
+                    //_placeholderProxy = RenderableHelper.GetPartProxy(_renderablesSet);
+                }
 
                 if (_placeholderProxy != null)
                 {

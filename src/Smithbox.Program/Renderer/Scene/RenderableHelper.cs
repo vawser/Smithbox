@@ -670,6 +670,23 @@ public static class RenderableHelper
 
         return r;
     }
+
+    // Asset
+    public static DebugPrimitiveRenderableProxy GetPartProxy(MeshRenderables renderables)
+    {
+        var baseColor = CFG.Current.Viewport_Sphere_Region_Base_Color;
+        var highlightColor = CFG.Current.Viewport_Sphere_Region_Highlight_Color;
+        var transparency = CFG.Current.GFX_Renderable_Default_Wireframe_Alpha;
+
+        DebugPrimitiveRenderableProxy r = new(renderables, _regionSphere);
+
+        r.BaseColor = ColorHelper.GetTransparencyColor(baseColor, transparency);
+        r.HighlightedColor = ColorHelper.GetTransparencyColor(highlightColor, transparency);
+        //ColorHelper.ApplyColorVariance(r);
+
+        return r;
+    }
+
     public static DebugPrimitiveRenderableProxy GetPlacementOrbProxy(RenderScene scene)
     {
         var baseColor = Utils.GetDecimalColor(Color.Purple);
