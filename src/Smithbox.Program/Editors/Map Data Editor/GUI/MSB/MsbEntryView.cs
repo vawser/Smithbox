@@ -1,4 +1,5 @@
-﻿using Hexa.NET.ImGui;
+﻿using Hexa.NET.DirectXTex;
+using Hexa.NET.ImGui;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Keybinds;
@@ -27,7 +28,7 @@ public class MsbEntryView
     private MapDataSelection Selection => View.Selection;
 
     private Type _lastSubType;
-    private List<(int idx, object entry, string label)> _cachedEntries = new();
+    private List<(int idx, object entry, string label, string alias)> _cachedEntries = new();
     private Dictionary<Type, int> _mapEntryCountByType = new();
     private object _lastScannedMap = null;
 
@@ -82,116 +83,140 @@ public class MsbEntryView
         }
         else
         {
-            object paramObject = GetParamObject();
-            IList liveList = paramObject is not null ? FindMutableEntryList(paramObject) : null;
+            var tblFlags = ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Borders | ImGuiTableFlags.Resizable | ImGuiTableFlags.BordersOuter | ImGuiTableFlags.ScrollY;
 
-            int visibleIndex = 0;
-
-            for (int i = 0; i < _cachedEntries.Count; i++)
+            if (ImGui.BeginTable($"msbEntryTable", 2, tblFlags))
             {
-                var rawIndex = _cachedEntries[i].idx;
-                var entry = _cachedEntries[i].entry;
-                var label = _cachedEntries[i].label;
+                ImGui.TableSetupColumn("Name", ImGuiTableColumnFlags.WidthStretch, 0.5f);
+                ImGui.TableSetupColumn("Alias", ImGuiTableColumnFlags.WidthStretch, 0.5f);
 
-                if (!EditorFilters.IsMatch(EntryListFilter, label, ExactEntryListFilter))
+                ImGui.TableSetupScrollFreeze(2, 1);
+                ImGui.TableHeadersRow();
+
+                object paramObject = GetParamObject();
+                IList liveList = paramObject is not null ? FindMutableEntryList(paramObject) : null;
+
+                int visibleIndex = 0;
+
+                for (int i = 0; i < _cachedEntries.Count; i++)
                 {
-                    visibleIndex++;
-                    continue;
-                }
+                    var rawIndex = _cachedEntries[i].idx;
+                    var entry = _cachedEntries[i].entry;
+                    var label = _cachedEntries[i].label;
+                    var alias = _cachedEntries[i].alias;
 
-                bool isSelected = Selection.SelectedEntries.ContainsKey(rawIndex);
-
-                if (ImGui.Selectable($"{label}##{rawIndex}", isSelected,
-                        ImGuiSelectableFlags.AllowDoubleClick))
-                {
-                    Selection.HandleMsbEntrySelection(
-                        selectedIndex: GetFirstSelectedIndex(),
-                        curListIndex: rawIndex,
-                        entry: entry);
-                }
-
-                if (_arrowKeyPressed && ImGui.IsItemFocused() && !isSelected)
-                {
-                    Selection.HandleMsbEntrySelection(
-                        selectedIndex: GetFirstSelectedIndex(),
-                        curListIndex: rawIndex,
-                        entry: entry);
-
-                    _arrowKeyPressed = false;
-                }
-
-                if (ImGui.IsItemHovered())
-                {
-                    ImGui.SetTooltip($"Index: {rawIndex}");
-                }
-
-                bool canReorder = liveList is not null && string.IsNullOrEmpty(EntryListFilter);
-
-                if (canReorder && ImGui.BeginDragDropSource(ImGuiDragDropFlags.None))
-                {
-                    if (!Selection.SelectedEntries.ContainsKey(rawIndex))
+                    if (!EditorFilters.IsMatch(EntryListFilter, label, ExactEntryListFilter))
                     {
-                        Selection.ResetMsbEntrySelection();
-                        Selection.SelectedEntries.Add(rawIndex, entry);
+                        visibleIndex++;
+                        continue;
                     }
 
-                    unsafe
+                    ImGui.TableNextRow();
+                    ImGui.TableSetColumnIndex(0);
+
+                    bool isSelected = Selection.SelectedEntries.ContainsKey(rawIndex);
+
+                    if (ImGui.Selectable($"{label}##{rawIndex}", isSelected,
+                            ImGuiSelectableFlags.AllowDoubleClick))
                     {
-                        int payload = rawIndex;
-                        ImGui.SetDragDropPayload(DragDropId, &payload, sizeof(int));
+                        Selection.HandleMsbEntrySelection(
+                            selectedIndex: GetFirstSelectedIndex(),
+                            curListIndex: rawIndex,
+                            entry: entry);
                     }
-                    _dragSourceRawIndex = rawIndex;
 
-                    int selCount = Selection.SelectedEntries.Count;
-                    ImGui.Text(selCount > 1 ? $"Moving {selCount} entries" : $"Moving: {label}");
-                    ImGui.EndDragDropSource();
-                }
-
-                if (canReorder && ImGui.BeginDragDropTarget())
-                {
-                    unsafe
+                    if (_arrowKeyPressed && ImGui.IsItemFocused() && !isSelected)
                     {
-                        var payload = ImGui.AcceptDragDropPayload(DragDropId);
-                        if (!payload.IsNull && payload.DataSize == sizeof(int))
+                        Selection.HandleMsbEntrySelection(
+                            selectedIndex: GetFirstSelectedIndex(),
+                            curListIndex: rawIndex,
+                            entry: entry);
+
+                        _arrowKeyPressed = false;
+                    }
+
+                    if (ImGui.IsItemHovered())
+                    {
+                        ImGui.SetTooltip($"Index: {rawIndex}");
+                    }
+
+                    bool canReorder = liveList is not null && string.IsNullOrEmpty(EntryListFilter);
+
+                    if (canReorder && ImGui.BeginDragDropSource(ImGuiDragDropFlags.None))
+                    {
+                        if (!Selection.SelectedEntries.ContainsKey(rawIndex))
                         {
-                            int toIndex = rawIndex;
-                            var selectedIndices = Selection.SelectedEntries.Keys.ToList();
-
-                            if (!selectedIndices.Contains(toIndex))
-                            {
-                                var action = new MsbEntryReorder(View, liveList, selectedIndices, toIndex);
-                                View.ActionManager.ExecuteAction(action);
-
-                                RemapSelectionAfterReorder(action);
-
-                                RebuildEntryCache();
-                            }
-
-                            _dragSourceRawIndex = -1;
+                            Selection.ResetMsbEntrySelection();
+                            Selection.SelectedEntries.Add(rawIndex, entry);
                         }
+
+                        unsafe
+                        {
+                            int payload = rawIndex;
+                            ImGui.SetDragDropPayload(DragDropId, &payload, sizeof(int));
+                        }
+                        _dragSourceRawIndex = rawIndex;
+
+                        int selCount = Selection.SelectedEntries.Count;
+                        ImGui.Text(selCount > 1 ? $"Moving {selCount} entries" : $"Moving: {label}");
+                        ImGui.EndDragDropSource();
                     }
 
-                    ImGui.EndDragDropTarget();
+                    if (canReorder && ImGui.BeginDragDropTarget())
+                    {
+                        unsafe
+                        {
+                            var payload = ImGui.AcceptDragDropPayload(DragDropId);
+                            if (!payload.IsNull && payload.DataSize == sizeof(int))
+                            {
+                                int toIndex = rawIndex;
+                                var selectedIndices = Selection.SelectedEntries.Keys.ToList();
+
+                                if (!selectedIndices.Contains(toIndex))
+                                {
+                                    var action = new MsbEntryReorder(View, liveList, selectedIndices, toIndex);
+                                    View.ActionManager.ExecuteAction(action);
+
+                                    RemapSelectionAfterReorder(action);
+
+                                    RebuildEntryCache();
+                                }
+
+                                _dragSourceRawIndex = -1;
+                            }
+                        }
+
+                        ImGui.EndDragDropTarget();
+                    }
+
+                    if (ImGui.BeginPopupContextItem($"##EntryCtx_{rawIndex}"))
+                    {
+                        if (ImGui.Selectable("Duplicate"))
+                        {
+                            var action = new MsbEntryDuplicate(View, Project);
+                            View.ActionManager.ExecuteAction(action);
+                        }
+
+                        if (ImGui.Selectable("Delete"))
+                        {
+                            var action = new MsbEntryDelete(View, Project);
+                            View.ActionManager.ExecuteAction(action);
+                        }
+
+                        ImGui.EndPopup();
+                    }
+
+                    visibleIndex++;
+
+                    ImGui.TableSetColumnIndex(1);
+
+                    if (alias != null && alias != "")
+                    {
+                        ImGui.TextColored(UI.Current.ImGui_AliasName_Text, alias);
+                    }
                 }
 
-                if (ImGui.BeginPopupContextItem($"##EntryCtx_{rawIndex}"))
-                {
-                    if (ImGui.Selectable("Duplicate"))
-                    {
-                        var action = new MsbEntryDuplicate(View, Project);
-                        View.ActionManager.ExecuteAction(action);
-                    }
-
-                    if (ImGui.Selectable("Delete"))
-                    {
-                        var action = new MsbEntryDelete(View, Project);
-                        View.ActionManager.ExecuteAction(action);
-                    }
-
-                    ImGui.EndPopup();
-                }
-
-                visibleIndex++;
+                ImGui.EndTable();
             }
         }
 
@@ -284,7 +309,10 @@ public class MsbEntryView
                 continue;
 
             string label = GetEntryLabel(entry, i);
-            _cachedEntries.Add((i, entry, label));
+            string alias = Project.Handler.MapData.GetMapObjectName(
+                View.Selection.SelectedMapDescriptor.Filename, label);
+
+            _cachedEntries.Add((i, entry, label, alias));
         }
 
         _lastSubType = Selection.SelectedSubCategoryType;

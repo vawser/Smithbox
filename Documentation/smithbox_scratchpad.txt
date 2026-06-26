@@ -3,14 +3,23 @@
 #---------------------
 
 - Map Data Editor
- - Implement property edit
-  - String property should set null to "" so the input shows
-  - For multi-select, apply change to all
-  - Display name field
+ - Property Edit
+    - String property should set null to "" so the input shows
+    - For multi-select, apply change to all
+    - Add 'sticky' selection memory (try and re-select based on previous when switching maps)
+        - Perhaps make it per-map (meaning the selection is remembered for each map)
+    - Implement the other MSB meta elements
+    - Add automatic add to Models list if ModelName changes for a Part
   
- - Add automatic add to Models list if ModelName changes for a Part
+ - Tools
+    - Port over Global Search
+ 
+    - Add Mass Edit:
+        - Three modes: Edit, Add, Delete
+        - Edit: functions like existing impl (map, base type, sub type, prop, value) - secondary stage defines the edit command: =, +, -, *, / applied to value
+        - Add: define which maps to add a set of map objects to (will require menu for user to define this set of map objects)
+        - Delete: define the map objects to delete (map, base type, sub type, prop, value)
   
- - Port over Global Search and Mass Edit
- - Implement ENFL sub-editor
- - Implement the other MSB meta elements
+  - ENFL Editor
+    - Implement ENFL sub-editor
  

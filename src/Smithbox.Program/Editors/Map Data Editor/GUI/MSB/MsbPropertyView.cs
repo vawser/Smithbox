@@ -165,7 +165,51 @@ public class MsbPropertyView
         Type type = targetEntry.Value.GetType();
 
         var imGuiIndex = 0;
+
+        DisplayCommunityNameInput(ref imGuiIndex, type, targetEntry.Value);
         DisplayObjectProperties(ref imGuiIndex, type, targetEntry.Value, prefix: "", postfix: "");
+    }
+
+    private void DisplayCommunityNameInput(ref int imGuiIndex, Type type, object entry)
+    {
+        // Name
+        ImGui.TableNextRow();
+        ImGui.TableSetColumnIndex(0);
+
+        ImGui.AlignTextToFramePadding();
+        ImGui.Text("Community Name");
+        UIHelper.Tooltip("The community alias for this map object name.");
+
+        // Value
+        ImGui.TableSetColumnIndex(1);
+
+        var mapID = View.Selection.SelectedMapDescriptor.Filename;
+        var mapObjectKey = "";
+
+        var nameProp = PropFinderUtil.FindProperty("Name", entry);
+        if (nameProp != null)
+        {
+            var name = PropFinderUtil.FindPropertyValue(nameProp, entry);
+            if(name != null)
+            {
+                mapObjectKey = name.ToString();
+            }
+        }
+
+        if(mapObjectKey != "")
+        {
+            var mapObjectName = Project.Handler.MapData.GetMapObjectName(mapID, mapObjectKey);
+            var curName = mapObjectName;
+
+            ImGui.AlignTextToFramePadding();
+            ImGui.SetNextItemWidth(-1);
+            ImGui.InputText("##communityNameInput", ref curName, 255);
+            if (ImGui.IsItemDeactivatedAfterEdit())
+            {
+                Project.Handler.MapData.UpdateMapObjectName(mapID, mapObjectKey, curName);
+                View.MsbEditor.EntryView.RebuildEntryCache();
+            }
+        }
     }
 
     private void DisplayObjectProperties(ref int imGuiIndex, Type type, object entry, string prefix, string postfix)
@@ -369,7 +413,6 @@ public class MsbPropertyView
         UIHelper.Tooltip(fieldDescription);
     }
 
-    // FIX: not handling array properties correctly
     public void HandlePropertyValue(MsbPropertyContext context)
     {
         if (context.IsScalar)
