@@ -3,5 +3,3 @@
 #---------------------
 
 - Smoke test
-
-- Map Editor
