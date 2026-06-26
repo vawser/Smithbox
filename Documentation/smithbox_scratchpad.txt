@@ -2,4 +2,16 @@
 # TODO 
 #---------------------
 
-- Smoke test
+- Map Data Editor
+ - Implement property edit
+  - Array properties need fixing
+  - String property should set null to "" so the input shows
+  - For multi-select, apply change to all
+  - Display name field
+  
+ - Add automatic add to Models list if ModelName changes for a Part
+  
+ - Port over Global Search and Mass Edit
+ - Implement ENFL sub-editor
+ - Implement the other MSB meta elements
+ 

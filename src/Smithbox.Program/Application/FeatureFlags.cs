@@ -6,8 +6,9 @@
 /// </summary>
 public static class FeatureFlags
 {
-    public static bool EnableResourceLogs = true;
+    // WIP Editors
+    public static bool EnableAnimEditor = false;
+    public static bool EnableMapDataEditor = true;
 
-    // Feature Toggles
-    public static bool EnableNavmeshBuilder = false;
+
 }

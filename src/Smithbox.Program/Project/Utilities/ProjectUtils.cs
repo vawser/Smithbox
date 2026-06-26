@@ -356,16 +356,21 @@ public class ProjectUtils
     {
         return true;
     }
+
+    // WIP Editors
     public static bool SupportsAnimEditor(ProjectType curType)
     {
-        //if (curType is ProjectType.DS3)
-        //    return true;
+        if (!FeatureFlags.EnableAnimEditor)
+            return false;
 
         return false;
     }
     public static bool SupportsMapDataEditor(ProjectType curType)
     {
-        return false;
+        if (!FeatureFlags.EnableMapDataEditor)
+            return false;
+
+        return true;
     }
 
     public static List<string> GetBackupFiles(string rootDirectory)
