@@ -417,7 +417,9 @@ public class MsbPropertyView
     {
         if (context.IsScalar)
         {
-            if (context.Entry != null)
+            var propType = context.Prop.PropertyType;
+
+            if (context.Entry != null || propType == typeof(string))
             {
                 //UIHelper.WrappedText($"{entry.ToString()}");
 
@@ -436,7 +438,7 @@ public class MsbPropertyView
             var curValue = context.Prop.GetValue(context.Entry);
             var propType = context.Prop.PropertyType;
 
-            if (curValue != null)
+            if (curValue != null || propType == typeof(string))
             {
                 //UIHelper.WrappedText($"{curValue.ToString()}");
 

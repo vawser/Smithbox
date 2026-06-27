@@ -70,7 +70,70 @@ public class MsbPropertyChange : EditorAction
             if (change.Property.PropertyType.IsArray && change.ArrayIndex != -1)
             {
                 var a = (Array)value;
-                a.SetValue(change.NewValue, change.ArrayIndex);
+
+                var arrayEntry = a.GetValue(change.ArrayIndex);
+                var arrayType = arrayEntry.GetType();
+
+                if (arrayType == typeof(long))
+                {
+                    if (long.TryParse($"{change.NewValue}", out var longVal))
+                    {
+                        a.SetValue(longVal, change.ArrayIndex);
+                    }
+                }
+                else if (arrayType == typeof(ulong))
+                {
+                    if (ulong.TryParse($"{change.NewValue}", out var ulongVal))
+                    {
+                        a.SetValue(ulongVal, change.ArrayIndex);
+                    }
+                }
+                else if (arrayType == typeof(int))
+                {
+                    if (int.TryParse($"{change.NewValue}", out var intVal))
+                    {
+                        a.SetValue(intVal, change.ArrayIndex);
+                    }
+                }
+                else if (arrayType == typeof(uint))
+                {
+                    if (uint.TryParse($"{change.NewValue}", out var uintVal))
+                    {
+                        a.SetValue(uintVal, change.ArrayIndex);
+                    }
+                }
+                else if (arrayType == typeof(short))
+                {
+                    if (short.TryParse($"{change.NewValue}", out var shortVal))
+                    {
+                        a.SetValue(shortVal, change.ArrayIndex);
+                    }
+                }
+                else if (arrayType == typeof(ushort))
+                {
+                    if (ushort.TryParse($"{change.NewValue}", out var ushortVal))
+                    {
+                        a.SetValue(ushortVal, change.ArrayIndex);
+                    }
+                }
+                else if (arrayType == typeof(byte))
+                {
+                    if (byte.TryParse($"{change.NewValue}", out var byteVal))
+                    {
+                        a.SetValue(byteVal, change.ArrayIndex);
+                    }
+                }
+                else if (arrayType == typeof(sbyte))
+                {
+                    if (sbyte.TryParse($"{change.NewValue}", out var sbyteVal))
+                    {
+                        a.SetValue(sbyteVal, change.ArrayIndex);
+                    }
+                }
+                else
+                {
+                    a.SetValue(change.NewValue, change.ArrayIndex);
+                }
             }
             else if (value != null && valType != null && valType.IsGenericType && change.ArrayIndex != -1 && value is IList list)
             {
@@ -78,7 +141,66 @@ public class MsbPropertyChange : EditorAction
             }
             else
             {
-                change.Property.SetValue(change.ChangedObj, change.NewValue);
+                if (valType == typeof(long))
+                {
+                    if (long.TryParse($"{change.NewValue}", out var longVal))
+                    {
+                        change.Property.SetValue(change.ChangedObj, longVal);
+                    }
+                }
+                else if (valType == typeof(ulong))
+                {
+                    if (ulong.TryParse($"{change.NewValue}", out var ulongVal))
+                    {
+                        change.Property.SetValue(change.ChangedObj, ulongVal);
+                    }
+                }
+                else if (valType == typeof(int))
+                {
+                    if (int.TryParse($"{change.NewValue}", out var intVal))
+                    {
+                        change.Property.SetValue(change.ChangedObj, intVal);
+                    }
+                }
+                else if (valType == typeof(uint))
+                {
+                    if (uint.TryParse($"{change.NewValue}", out var uintVal))
+                    {
+                        change.Property.SetValue(change.ChangedObj, uintVal);
+                    }
+                }
+                else if (valType == typeof(short))
+                {
+                    if (short.TryParse($"{change.NewValue}", out var shortVal))
+                    {
+                        change.Property.SetValue(change.ChangedObj, shortVal);
+                    }
+                }
+                else if (valType == typeof(ushort))
+                {
+                    if (ushort.TryParse($"{change.NewValue}", out var ushortVal))
+                    {
+                        change.Property.SetValue(change.ChangedObj, ushortVal);
+                    }
+                }
+                else if (valType == typeof(byte))
+                {
+                    if (byte.TryParse($"{change.NewValue}", out var byteVal))
+                    {
+                        change.Property.SetValue(change.ChangedObj, byteVal);
+                    }
+                }
+                else if (valType == typeof(sbyte))
+                {
+                    if (sbyte.TryParse($"{change.NewValue}", out var sbyteVal))
+                    {
+                        change.Property.SetValue(change.ChangedObj, sbyteVal);
+                    }
+                }
+                else
+                {
+                    change.Property.SetValue(change.ChangedObj, change.NewValue);
+                }
             }
         }
 
@@ -106,7 +228,70 @@ public class MsbPropertyChange : EditorAction
             if (change.Property.PropertyType.IsArray && change.ArrayIndex != -1)
             {
                 var a = (Array)value;
-                a.SetValue(change.OldValue, change.ArrayIndex);
+
+                var arrayEntry = a.GetValue(change.ArrayIndex);
+                var arrayType = arrayEntry.GetType();
+
+                if (arrayType == typeof(long))
+                {
+                    if (long.TryParse($"{change.OldValue}", out var longVal))
+                    {
+                        a.SetValue(longVal, change.ArrayIndex);
+                    }
+                }
+                else if (arrayType == typeof(ulong))
+                {
+                    if (ulong.TryParse($"{change.OldValue}", out var ulongVal))
+                    {
+                        a.SetValue(ulongVal, change.ArrayIndex);
+                    }
+                }
+                else if (arrayType == typeof(int))
+                {
+                    if (int.TryParse($"{change.OldValue}", out var intVal))
+                    {
+                        a.SetValue(intVal, change.ArrayIndex);
+                    }
+                }
+                else if (arrayType == typeof(uint))
+                {
+                    if (uint.TryParse($"{change.OldValue}", out var uintVal))
+                    {
+                        a.SetValue(uintVal, change.ArrayIndex);
+                    }
+                }
+                else if (arrayType == typeof(short))
+                {
+                    if (short.TryParse($"{change.OldValue}", out var shortVal))
+                    {
+                        a.SetValue(shortVal, change.ArrayIndex);
+                    }
+                }
+                else if (arrayType == typeof(ushort))
+                {
+                    if (ushort.TryParse($"{change.OldValue}", out var ushortVal))
+                    {
+                        a.SetValue(ushortVal, change.ArrayIndex);
+                    }
+                }
+                else if (arrayType == typeof(byte))
+                {
+                    if (byte.TryParse($"{change.OldValue}", out var byteVal))
+                    {
+                        a.SetValue(byteVal, change.ArrayIndex);
+                    }
+                }
+                else if (arrayType == typeof(sbyte))
+                {
+                    if (sbyte.TryParse($"{change.OldValue}", out var sbyteVal))
+                    {
+                        a.SetValue(sbyteVal, change.ArrayIndex);
+                    }
+                }
+                else
+                {
+                    a.SetValue(change.OldValue, change.ArrayIndex);
+                }
             }
             else if (value != null && valType != null && valType.IsGenericType && change.ArrayIndex != -1 && value is IList list)
             {
@@ -114,7 +299,66 @@ public class MsbPropertyChange : EditorAction
             }
             else
             {
-                change.Property.SetValue(change.ChangedObj, change.OldValue);
+                if (valType == typeof(long))
+                {
+                    if (long.TryParse($"{change.OldValue}", out var longVal))
+                    {
+                        change.Property.SetValue(change.ChangedObj, longVal);
+                    }
+                }
+                else if (valType == typeof(ulong))
+                {
+                    if (ulong.TryParse($"{change.OldValue}", out var ulongVal))
+                    {
+                        change.Property.SetValue(change.ChangedObj, ulongVal);
+                    }
+                }
+                else if (valType == typeof(int))
+                {
+                    if (int.TryParse($"{change.OldValue}", out var intVal))
+                    {
+                        change.Property.SetValue(change.ChangedObj, intVal);
+                    }
+                }
+                else if (valType == typeof(uint))
+                {
+                    if (uint.TryParse($"{change.OldValue}", out var uintVal))
+                    {
+                        change.Property.SetValue(change.ChangedObj, uintVal);
+                    }
+                }
+                else if (valType == typeof(short))
+                {
+                    if (short.TryParse($"{change.OldValue}", out var shortVal))
+                    {
+                        change.Property.SetValue(change.ChangedObj, shortVal);
+                    }
+                }
+                else if (valType == typeof(ushort))
+                {
+                    if (ushort.TryParse($"{change.OldValue}", out var ushortVal))
+                    {
+                        change.Property.SetValue(change.ChangedObj, ushortVal);
+                    }
+                }
+                else if (valType == typeof(byte))
+                {
+                    if (byte.TryParse($"{change.OldValue}", out var byteVal))
+                    {
+                        change.Property.SetValue(change.ChangedObj, byteVal);
+                    }
+                }
+                else if (valType == typeof(sbyte))
+                {
+                    if (sbyte.TryParse($"{change.OldValue}", out var sbyteVal))
+                    {
+                        change.Property.SetValue(change.ChangedObj, sbyteVal);
+                    }
+                }
+                else
+                {
+                    change.Property.SetValue(change.ChangedObj, change.OldValue);
+                }
             }
         }
 
