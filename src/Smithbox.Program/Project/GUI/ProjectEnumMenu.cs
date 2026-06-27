@@ -42,18 +42,29 @@ public class ProjectEnumMenu
         if (Smithbox.Orchestrator.IsProjectLoading)
             return;
 
-        if (Smithbox.Orchestrator.SelectedProject == null)
+        var curProject = Smithbox.Orchestrator.SelectedProject;
+
+        if (curProject == null)
+        {
+            UIHelper.WrappedText("A valid project must be selected to use this editor.");
             return;
+        }
+
+        if (curProject.Handler.ProjectData == null)
+        {
+            UIHelper.WrappedText("A valid project must be selected to use this editor.");
+            return;
+        }
+
+        if (curProject.Descriptor == null)
+        {
+            UIHelper.WrappedText("A valid project must be selected to use this editor.");
+            return;
+        }
 
         if (Smithbox.Orchestrator.ProjectEditor.SelectedLoadedEntry == null)
         {
             UIHelper.WrappedText("A loaded project must be selected to use this editor.");
-            return;
-        }
-
-        if (Smithbox.Orchestrator.SelectedProject.Descriptor == null)
-        {
-            UIHelper.WrappedText("A valid project must be selected to use this editor.");
             return;
         }
 
