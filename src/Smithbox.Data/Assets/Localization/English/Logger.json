@@ -1,0 +1,32 @@
+{
+  "Entries": [
+    {
+      "Key": "LOG_Action_Log",
+      "Text": "Event Log"
+    },
+    {
+      "Key": "LOG_Error_Log",
+      "Text": "Error Log"
+    },
+    {
+      "Key": "LOG_Toggle_Display",
+      "Text": "Toggle the display of the {0} logger."
+    },
+    {
+      "Key": "LOG_Clear_Log",
+      "Text": "Clear"
+    },
+    {
+      "Key": "LOG_Clear_Log_TT",
+      "Text": "Clear all log entries."
+    },
+    {
+      "Key": "LOG_Copy_To_Clipboard",
+      "Text": "Copy to Clipboard"
+    },
+    {
+      "Key": "LOG_Copy_To_Clipboard_TT",
+      "Text": "Copy all log entries to clipboard."
+    }
+  ]
+}

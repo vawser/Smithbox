@@ -18,8 +18,8 @@
   Texture Viewer
   Viewport
  ### Interface
- Keybinds
- Logger
+ ### Keybinds
+ ### Logger
  Memory
  Preferences
  ### Project

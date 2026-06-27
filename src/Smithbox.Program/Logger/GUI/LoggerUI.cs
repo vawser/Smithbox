@@ -55,12 +55,12 @@ namespace StudioCore.Logger.GUI
         
         public LoggerUI(string loggerName, Func<LogEvent, bool> filter, Func<(bool enabled, int fadeTime, bool fadeColor)> getSettings)
         {
-            Name = loggerName;
+            Name = LOC.Get(loggerName);
             _getSettings = getSettings;
             _subscription = TaskLogs.Subscribe(filter);
             Id = Interlocked.Increment(ref _nextId);
             ImguiName = $"Logger_{Id}_{Name}";
-            _windowName = $"{Name}##loggerWindow_{ImguiName}";
+            _windowName = $"{Name}###loggerWindow_{ImguiName}";
         }
         
         /// <summary>
@@ -108,7 +108,7 @@ namespace StudioCore.Logger.GUI
             {
                 IsDisplayed = !IsDisplayed;
             }
-            UIHelper.Tooltip($"Toggle the display of the {Name} logger.");
+            UIHelper.Tooltip(LOC.Get("LOG_Toggle_Display", Name));
 
             //fade time was in frames before, but we need milliseconds, so we need to convert it based on 60fps avg
             var last = LastLogEntry;
@@ -139,23 +139,23 @@ namespace StudioCore.Logger.GUI
                 ImGui.PushID(ImguiName);
                 ImGui.PushStyleColor(ImGuiCol.WindowBg, UI.Current.ImGui_ChildBg);
 
-                if (ImGui.Begin(_windowName, ref IsDisplayed, UIHelper.GetPopupWindowFlags()))
+                if (ImGui.Begin(_windowName, ref IsDisplayed, UIHelper.GetLoggerWindowFlags()))
                 {
-                    if (ImGui.Button("Clear"))
+                    if (ImGui.Button($"{LOC.Get("LOG_Clear_Log")}##clearLog"))
                     {
                         LogEntries.Clear();
                         LastLogEntry = null;
                     }
-                    UIHelper.Tooltip("Clear all log entries.");
+                    UIHelper.Tooltip(LOC.Get("LOG_Clear_Log_TT"));
 
                     ImGui.SameLine();
 
-                    if (ImGui.Button("Copy to Clipboard"))
+                    if (ImGui.Button($"{LOC.Get("LOG_Copy_To_Clipboard")}##copyToClipboard"))
                     {
                         var allLogs = string.Join(Environment.NewLine, LogEntries.ConvertAll(le => le.FormattedMessage));
                         PlatformUtils.Instance.SetClipboardText(allLogs);
                     }
-                    UIHelper.Tooltip("Copy all log entries to clipboard.");
+                    UIHelper.Tooltip(LOC.Get("LOG_Copy_To_Clipboard_TT"));
 
                     // Log entries
                     ImGui.Separator();

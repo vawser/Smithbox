@@ -573,6 +573,12 @@ public static class UIHelper
 
         return flags;
     }
+    public static ImGuiWindowFlags GetLoggerWindowFlags()
+    {
+        var flags = ImGuiWindowFlags.NoCollapse | ImGuiWindowFlags.NoDocking;
+
+        return flags;
+    }
 
     public static ImGuiWindowFlags GetToolPaletteWindowFlags()
     {

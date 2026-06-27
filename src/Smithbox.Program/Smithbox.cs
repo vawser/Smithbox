@@ -113,13 +113,13 @@ public class Smithbox
         }
 
         ActionLogger = new(
-            "Action",
+            "LOG_Action_Log",
             evt => evt.Level is not (LogLevel.Warning or LogLevel.Error),
             //fade time is calculated to be the configured fade time in frames, but we need ms.
             () => (enabled: CFG.Current.Logger_Enable_Action_Log, fadeTime: (int)(CFG.Current.Logger_Action_Fade_Time * 1000 / 60f), fadeColor: CFG.Current.Logger_Enable_Color_Fade)
         );
         WarningLogger = new(
-            "Warning",
+            "LOG_Error_Log",
             evt => evt.Level is LogLevel.Warning or LogLevel.Error,
             () => (enabled: CFG.Current.Logger_Enable_Warning_Log, fadeTime: (int)(CFG.Current.Logger_Warning_Fade_Time * 1000 / 60f), fadeColor: CFG.Current.Logger_Enable_Color_Fade)
         );
