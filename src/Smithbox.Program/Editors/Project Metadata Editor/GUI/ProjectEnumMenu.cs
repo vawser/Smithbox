@@ -175,7 +175,7 @@ public class ProjectEnumMenu
     }
     public void Shortcuts()
     {
-        if (FocusManager.IsFocus(EditorFocusContext.Project_EnumEditor))
+        if (FocusManager.IsFocus(EditorFocusContext.Metadata_EnumEditor))
         {
             // Save
             if (InputManager.IsPressed(KeybindID.Save))

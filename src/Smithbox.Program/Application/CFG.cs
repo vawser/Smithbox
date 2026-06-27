@@ -124,8 +124,8 @@ public class CFG
 
     public bool Interface_ProjectEditor_ProjectList = true;
     public bool Interface_ProjectEditor_ProjectConfiguration = true;
-    public bool Interface_ProjectEditor_ProjectAliases = true;
-    public bool Interface_ProjectEditor_ProjectEnums = true;
+    public bool Interface_ProjectMetadataEditor_ProjectAliases = true;
+    public bool Interface_ProjectMetadataEditor_ProjectEnums = true;
     #endregion
 
     #region Interface

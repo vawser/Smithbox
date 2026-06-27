@@ -32,15 +32,18 @@ public class ProjectOrchestrator : IDisposable
 
     public ActionManager ActionManager;
 
-    public ProjectScreen ProjectEditor;
-
     private bool InitExistingProjects = false;
+
+    // Top-Level Editors
+    public ProjectScreen ProjectEditor;
+    public ProjectMetadataScreen ProjectMetadataEditor;
 
     public ProjectOrchestrator()
     {
         ReportProgress = SetProgress;
 
         ProjectEditor = new();
+        ProjectMetadataEditor = new();
 
         ActionManager = new();
 
@@ -50,6 +53,7 @@ public class ProjectOrchestrator : IDisposable
     public void Update(float dt, uint mainDockspaceID)
     {
         ProjectEditor.OnGUI(mainDockspaceID);
+        ProjectMetadataEditor.OnGUI(mainDockspaceID);
 
         // Project Dock
         if (SelectedProject != null && SelectedProject.Initialized)

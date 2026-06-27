@@ -271,7 +271,7 @@ public class ProjectAliasMenu
 
     public void Shortcuts()
     {
-        if (FocusManager.IsFocus(EditorFocusContext.Project_AliasEditor))
+        if (FocusManager.IsFocus(EditorFocusContext.Metadata_AliasEditor))
         {
             // Save
             if (InputManager.IsPressed(KeybindID.Save))

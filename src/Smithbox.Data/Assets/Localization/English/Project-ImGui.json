@@ -5,8 +5,16 @@
       "Text": "Projects"
     },
     {
+      "Key": "PRJ_Window_Project_Metadata_Editor",
+      "Text": "Metadata"
+    },
+    {
       "Key": "PRJ_Window_Project_View",
       "Text": "Project View"
+    },
+    {
+      "Key": "PRJ_Window_Project_Metadata_View",
+      "Text": "Metadata View"
     },
     {
       "Key": "PRJ_Window_Active_Projects",

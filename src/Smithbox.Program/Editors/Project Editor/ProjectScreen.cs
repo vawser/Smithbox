@@ -1,13 +1,6 @@
-﻿using Google.Protobuf.Reflection;
-using Hexa.NET.ImGui;
-using Microsoft.AspNetCore.Components.Forms;
-using Octokit;
+﻿using Hexa.NET.ImGui;
 using StudioCore.Editors.Common;
-using StudioCore.Keybinds;
 using StudioCore.Utilities;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
 using System.Numerics;
 
 namespace StudioCore.Application;
@@ -17,8 +10,6 @@ public class ProjectScreen
     public ActionManager EditorActionManager = new();
 
     public ProjectConfigureMenu ConfigureMenu;
-    public ProjectEnumMenu EnumMenu;
-    public ProjectAliasMenu AliasMenu;
 
     public ProjectEntry SelectedLoadedEntry = null;
     public ProjectEntry SelectedAvaliableEntry = null;
@@ -34,8 +25,6 @@ public class ProjectScreen
     public ProjectScreen()
     {
         ConfigureMenu = new(this);
-        EnumMenu = new();
-        AliasMenu = new();
     }
 
     public unsafe void OnGUI(uint mainDockspaceID)
@@ -156,48 +145,6 @@ public class ProjectScreen
                 }
 
                 DisplayProjectCreator();
-            }
-
-            ImGui.End();
-        }
-
-        if (CFG.Current.Interface_ProjectEditor_ProjectAliases)
-        {
-            // Project Aliases
-            ImGui.SetNextWindowDockID(editorDockspaceId, ImGuiCond.FirstUseEver);
-            ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ProjectEditorView);
-            if (ImGui.Begin($@"{LOC.Get("PRJ_Window_Project_Aliases")}###projectEditor_ProjectAliases", UIHelper.GetMainWindowFlags()))
-            {
-                var width = ImGui.GetContentRegionAvail().X;
-                var height = ImGui.GetContentRegionAvail().Y;
-
-                if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
-                {
-                    FocusManager.SetFocus(EditorFocusContext.Project_AliasEditor);
-                }
-
-                DisplayAliasEditor();
-            }
-
-            ImGui.End();
-        }
-
-        if (CFG.Current.Interface_ProjectEditor_ProjectEnums)
-        {
-            // Project Enums
-            ImGui.SetNextWindowDockID(editorDockspaceId, ImGuiCond.FirstUseEver);
-            ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ProjectEditorView);
-            if (ImGui.Begin($@"{LOC.Get("PRJ_Window_Project_Enums")}###projectEditor_ProjectEnums", UIHelper.GetMainWindowFlags()))
-            {
-                var width = ImGui.GetContentRegionAvail().X;
-                var height = ImGui.GetContentRegionAvail().Y;
-
-                if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
-                {
-                    FocusManager.SetFocus(EditorFocusContext.Project_EnumEditor);
-                }
-
-                DisplayEnumEditor();
             }
 
             ImGui.End();
@@ -512,8 +459,8 @@ public class ProjectScreen
 
                 ConfigureMenu.SetupForEdit(project);
 
-                AliasMenu.ActionManager.Clear();
-                EnumMenu.ActionManager.Clear();
+                Smithbox.Orchestrator.ProjectMetadataEditor.AliasMenu.ActionManager.Clear();
+                Smithbox.Orchestrator.ProjectMetadataEditor.EnumMenu.ActionManager.Clear();
             }
         }
         else
@@ -624,27 +571,6 @@ public class ProjectScreen
         ImGui.EndChild();
     }
 
-    public void DisplayEnumEditor()
-    {
-        EnumMenu.Display();
-    }
-
-    public void DisplayAliasEditor()
-    {
-        AliasMenu.Display();
-    }
-
-    public void EditMenu()
-    {
-        if(ImGui.BeginMenu($"{LOC.Get("PRJ_PCM_Header_Edit")}##editMenuHeader"))
-        {
-            AliasMenu.EditMenu();
-            EnumMenu.EditMenu();
-
-            ImGui.EndMenu();
-        }
-    }
-
     public void ViewMenu()
     {
         if (ImGui.BeginMenu($"{LOC.Get("PRJ_PCM_Header_View")}##viewMenuHeader"))
@@ -661,18 +587,6 @@ public class ProjectScreen
             }
             UIHelper.ShowActiveStatus(CFG.Current.Interface_ProjectEditor_ProjectConfiguration);
 
-            if (ImGui.MenuItem($"{LOC.Get("PRJ_PCM_View_Project_Aliases")}##projectAliasesToggle"))
-            {
-                CFG.Current.Interface_ProjectEditor_ProjectAliases = !CFG.Current.Interface_ProjectEditor_ProjectAliases;
-            }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_ProjectEditor_ProjectAliases);
-
-            if (ImGui.MenuItem($"{LOC.Get("PRJ_PCM_View_Project_Enums")}##projectEnumsToggle"))
-            {
-                CFG.Current.Interface_ProjectEditor_ProjectEnums = !CFG.Current.Interface_ProjectEditor_ProjectEnums;
-            }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_ProjectEditor_ProjectEnums);
-
             ImGui.EndMenu();
         }
     }
@@ -681,8 +595,5 @@ public class ProjectScreen
     {
         if (!FocusManager.IsInProjectEditor())
             return;
-
-        AliasMenu.Shortcuts();
-        EnumMenu.Shortcuts();
     }
 }

@@ -305,7 +305,7 @@ public class ModelContainerList
                 }
 
                 Project.Handler.ProjectData.Aliases[aliasType] = entries;
-                Smithbox.Orchestrator.ProjectEditor.AliasMenu.SaveIndividualAlias(aliasType);
+                Smithbox.Orchestrator.ProjectMetadataEditor.AliasMenu.SaveIndividualAlias(aliasType);
 
                 Smithbox.Log<ModelContainerList>("Updated aliases.");
             }
