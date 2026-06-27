@@ -1,0 +1,61 @@
+{
+  "Entries": [
+    {
+      "Key": "EDC_Short_Project_Type_Undefined",
+      "Text": "Undefined"
+    },
+    {
+      "Key": "EDC_Short_Project_Type_DES",
+      "Text": "DES"
+    },
+    {
+      "Key": "EDC_Short_Project_Type_DS1",
+      "Text": "DS1"
+    },
+    {
+      "Key": "EDC_Short_Project_Type_DS1R",
+      "Text": "DS1R"
+    },
+    {
+      "Key": "EDC_Short_Project_Type_DS2",
+      "Text": "DS2"
+    },
+    {
+      "Key": "EDC_Short_Project_Type_DS2S",
+      "Text": "DS2S"
+    },
+    {
+      "Key": "EDC_Short_Project_Type_DS3",
+      "Text": "DS3"
+    },
+    {
+      "Key": "EDC_Short_Project_Type_BB",
+      "Text": "BB"
+    },
+    {
+      "Key": "EDC_Short_Project_Type_SDT",
+      "Text": "SDT"
+    },
+    {
+      "Key": "EDC_Short_Project_Type_ER",
+      "Text": "ER"
+    },
+    {
+      "Key": "EDC_Short_Project_Type_AC6",
+      "Text": "AC6"
+    },
+    {
+      "Key": "EDC_Short_Project_Type_NR",
+      "Text": "NR"
+    },
+    
+    {
+      "Key": "EDC_List_Filter_Exact_Match_TT",
+      "Text": "Filter will ignore partial matches when enabled."
+    },
+    {
+      "Key": "EDC_List_Filter_Input_TT",
+      "Text": "Enter the search term to filter this list by.\n\nSeparate terms that behave as an AND are split with the {0} character.\n\nSeparate terms that behave as an OR are split with the {1} character."
+    }
+  ]
+}

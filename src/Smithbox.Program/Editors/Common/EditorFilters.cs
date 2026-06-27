@@ -29,14 +29,15 @@ public static class EditorFilters
     public static void DisplayListFilter(string id, ref string input, ref bool exactBool)
     {
         ImGui.Checkbox($"##{id}_listFilter_exactMatch", ref exactBool);
-        UIHelper.Tooltip("Filter will ignore partial matches when enabled.");
+        UIHelper.Tooltip(
+            LOC.Get("EDC_List_Filter_Exact_Match_TT"));
 
         ImGui.SameLine();
 
         ImGui.InputTextWithHint($"##{id}_listFilter", "Search...", ref input, 255);
-        UIHelper.Tooltip($"Enter the search term to filter this list by.\n\nSeparate terms that behave as an AND are split with the {SplitChr} character.\n\nSeparate terms that behave as an OR are split with the {OR_Chr} character.");
+        UIHelper.Tooltip(
+            LOC.Get("EDC_List_Filter_Input_TT", SplitChr, OR_Chr));
     }
-
 
     public static bool IsMatch(string rawInput, string rawText, bool exactBool, string rawAliasText = "", bool partSplit = false, bool aliasSplit = false, string rawSecondaryText = "")
     {

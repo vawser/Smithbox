@@ -11,6 +11,7 @@ namespace StudioCore.Application;
     IncludeFields = true)]
 
 // Program
+[JsonSerializable(typeof(Startup))]
 [JsonSerializable(typeof(CFG))]
 [JsonSerializable(typeof(UI))]
 

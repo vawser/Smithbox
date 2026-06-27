@@ -1,0 +1,100 @@
+{
+  "Entries": [
+    {
+      "Key": "PRJ_DAT_Setup_Aliases_PASS",
+      "Text": "[Project] Setup aliases for '{0}'"
+    },
+    {
+      "Key": "PRJ_DAT_Setup_Aliases_FAIL",
+      "Text": "[Project] Failed to setup aliases for '{0}'"
+    },
+    {
+      "Key": "PRJ_DAT_Reload_Aliases_PASS",
+      "Text": "[Project] Reloaded aliases for '{0}'"
+    },
+    {
+      "Key": "PRJ_DAT_Reload_Aliases_FAIL",
+      "Text": "[Project] Failed to reloaded aliases for '{0}'"
+    },
+    {
+      "Key": "PRJ_DAT_Deseralize_Alias_FAIL",
+      "Text": "[Project] Failed to deserialize the aliases: '{0}'"
+    },
+    {
+      "Key": "PRJ_DAT_Read_Alias_FAIL",
+      "Text": "[Project] Failed to read the aliases: '{0}'"
+    },
+    {
+      "Key": "PRJ_DAT_Setup_Project_Data_PASS",
+      "Text": "[Project] Setup Project Data."
+    },
+    {
+      "Key": "PRJ_DAT_Setup_Project_Data_FAIL",
+      "Text": "[Project] Failed to setup Project Data."
+    },
+    {
+      "Key": "PRJ_DAT_Setup_Map_Data_PASS",
+      "Text": "[Visual Map Editor] Setup Map Data Banks."
+    },
+    {
+      "Key": "PRJ_DAT_Setup_Map_Data_FAIL",
+      "Text": "[Visual Map Editor] Failed to setup Map Data Banks."
+    },
+    {
+      "Key": "PRJ_DAT_Setup_Model_Data_PASS",
+      "Text": "[Model Editor] Setup Model Data Banks."
+    },
+    {
+      "Key": "PRJ_DAT_Setup_Model_Data_FAIL",
+      "Text": "[Model Editor] Failed to setup Model Data Banks."
+    },
+    {
+      "Key": "PRJ_DAT_Setup_Material_Data_PASS",
+      "Text": "[Material Data] Setup Material Data."
+    },
+    {
+      "Key": "PRJ_DAT_Setup_Material_Data_FAIL",
+      "Text": "[Material Data] Failed to setup Material Data."
+    },
+    {
+      "Key": "PRJ_DAT_Setup_Param_Data_PASS",
+      "Text": "[Param Editor] Setup PARAM Banks."
+    },
+    {
+      "Key": "PRJ_DAT_Setup_Param_Data_FAIL",
+      "Text": "[Param Editor] Failed to setup PARAM Banks."
+    },
+    {
+      "Key": "PRJ_DAT_Setup_Text_Data_PASS",
+      "Text": "[Text Editor] Setup FMG Banks.."
+    },
+    {
+      "Key": "PRJ_DAT_Setup_Text_Data_FAIL",
+      "Text": "[Text Editor] Failed to setup FMG Banks."
+    },
+    {
+      "Key": "PRJ_DAT_Setup_Gparam_Data_PASS",
+      "Text": "[Graphics Param Editor] Setup GPARAM Banks."
+    },
+    {
+      "Key": "PRJ_DAT_Setup_Gparam_Data_FAIL",
+      "Text": "[Graphics Param Editor] Failed to setup GPARAM Banks."
+    },
+    {
+      "Key": "PRJ_DAT_Setup_Texture_Data_PASS",
+      "Text": "[Texture Viewer] Setup the Texture Bank."
+    },
+    {
+      "Key": "PRJ_DAT_Setup_Texture_Data_FAIL",
+      "Text": "[Texture Viewer] Failed to setup Texture Bank."
+    },
+    {
+      "Key": "PRJ_DAT_Setup_Anim_Data_PASS",
+      "Text": "[Animation Editor] Setup Animation Bank."
+    },
+    {
+      "Key": "PRJ_DAT_Setup_Anim_Data_FAIL",
+      "Text": "[Animation Editor] Failed to setup Animation Bank."
+    }
+  ]
+}

@@ -1,4 +1,6 @@
 ﻿using StudioCore;
+using StudioCore.Application;
+using StudioCore.Interface;
 using StudioCore.Renderer;
 
 using StudioCore.Utilities;
@@ -25,6 +27,12 @@ public static class Program
     [STAThread]
     static void Main(string[] args)
     {
+        Startup.Setup();
+        Startup.Load();
+
+        LOC.Setup();
+        LOC.Load();
+
         Profiler.Startup();
         #if DEBUG
         IsDebug = true;

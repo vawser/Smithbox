@@ -93,8 +93,8 @@ public class ProjectFileLocator : IDisposable
         {
             reportProgress?.Invoke(new()
             {
-                PhaseLabel = "Initializing Project",
-                StepLabel = "Compiling root file directory",
+                PhaseLabel = LOC.Get("PRJ_STP_Locator_Init_Project"),
+                StepLabel = LOC.Get("PRJ_STP_Locator_Compile_Root_Dir"),
                 Percent = 0.5f
             });
         }
@@ -115,12 +115,12 @@ public class ProjectFileLocator : IDisposable
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, $"Failed to deserialize the file dictionary: {filepath}", e);
+                    Smithbox.LogError(this, LOC.Get("PRJ_STP_File_Directory_Derserialize_FAIL", filepath), e);
                 }
             }
             catch (Exception e)
             {
-                Smithbox.LogError(this, $"Failed to read the file dictionary: {filepath}", e);
+                Smithbox.LogError(this, LOC.Get("PRJ_STP_File_Directory_Read_FAIL", filepath), e);
             }
         }
 
@@ -128,8 +128,8 @@ public class ProjectFileLocator : IDisposable
         {
             reportProgress?.Invoke(new()
             {
-                PhaseLabel = "Initializing Project",
-                StepLabel = "Compiling project file directory",
+                PhaseLabel = LOC.Get("PRJ_STP_Locator_Init_Project"),
+                StepLabel = LOC.Get("PRJ_STP_Locator_Compile_Project_Dir"),
                 Percent = 0.25f
             });
         }
@@ -151,8 +151,8 @@ public class ProjectFileLocator : IDisposable
         {
             reportProgress?.Invoke(new()
             {
-                PhaseLabel = "Initializing Project",
-                StepLabel = "Compiling editor file directories",
+                PhaseLabel = LOC.Get("PRJ_STP_Locator_Init_Project"),
+                StepLabel = LOC.Get("PRJ_STP_Locator_Compile_Editor_Dir"),
                 Percent = 0.3f
             });
         }

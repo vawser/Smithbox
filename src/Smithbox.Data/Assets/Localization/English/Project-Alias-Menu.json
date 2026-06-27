@@ -1,0 +1,200 @@
+{
+  "Entries": [
+    {
+      "Key": "PRJ_ALI_Error_Invalid_Project",
+      "Text": "A valid project must be selected to use this editor."
+    },
+    {
+      "Key": "PRJ_ALI_Error_No_Loaded_Project",
+      "Text": "A loaded project must be selected to use this editor."
+    },
+    {
+      "Key": "PRJ_ALI_Menu_File",
+      "Text": "File"
+    },
+    {
+      "Key": "PRJ_ALI_Menu_Save_Local_Aliases",
+      "Text": "Save Local Aliases"
+    },
+    {
+      "Key": "PRJ_ALI_Menu_Save_Base_Aliases",
+      "Text": "Save Base Aliases"
+    },
+    {
+      "Key": "PRJ_ALI_Menu_Data_Source",
+      "Text": "Data Source"
+    },
+    {
+      "Key": "PRJ_ALI_Menu_Base_Source",
+      "Text": "Base Source"
+    },
+    {
+      "Key": "PRJ_ALI_Menu_Project_Source",
+      "Text": "Project Source"
+    },
+    {
+      "Key": "PRJ_ALI_Menu_Base_Source_TT",
+      "Text": "If enabled, the source files from Smithbox are included in the Alias Lists."
+    },
+    {
+      "Key": "PRJ_ALI_Menu_Project_Source_TT",
+      "Text": "If enabled, the source files unique to this project are included in the Alias Lists."
+    },
+    {
+      "Key": "PRJ_ALI_Menu_Options",
+      "Text": "Options"
+    },
+    {
+      "Key": "PRJ_ALI_Menu_Save",
+      "Text": "Save"
+    },
+    {
+      "Key": "PRJ_ALI_Menu_Save_Shortcut_Saves_To_Base_Source",
+      "Text": "Save Shortcut applies to Base Source"
+    },
+    {
+      "Key": "PRJ_ALI_Menu_Save_Shortcut_Saves_To_Base_Source_TT",
+      "Text": "If enabled, the save shortcut will save to base aliases, rather than local."
+    },
+    {
+      "Key": "PRJ_ALI_Menu_Add",
+      "Text": "Add"
+    },
+    {
+      "Key": "PRJ_ALI_Menu_Insert_New_At_Top",
+      "Text": "Insert New at Top"
+    },
+    {
+      "Key": "PRJ_ALI_Menu_Insert_New_At_Top_TT",
+      "Text": "If enabled, adding a new alias via the icon button will place it at the top of the list, rather than the bottom."
+    },
+    {
+      "Key": "PRJ_ALI_Menu_List_Copy",
+      "Text": "List Copy"
+    },
+    {
+      "Key": "PRJ_ALI_Header_Export_Delimiter",
+      "Text": "Export Delimiter"
+    },
+    {
+      "Key": "PRJ_ALI_Header_Export_Delimiter_TT",
+      "Text": "Set the delimiter to use when exporting the alias lists via 'Copy Entries as Text'"
+    },
+    {
+      "Key": "PRJ_ALI_Checkbox_Ignore_Empty_On_Export",
+      "Text": "Ignore Empty on Export"
+    },
+    {
+      "Key": "PRJ_ALI_Checkbox_Ignore_Empty_On_Export_TT",
+      "Text": "If enabled, empty entries will be ignored by the 'Copy Entries as Text' action."
+    },
+    {
+      "Key": "PRJ_ALI_Menu_Data_Source",
+      "Text": "Save"
+    },
+    {
+      "Key": "PRJ_ALI_Menu_Regenerate_Project_Source",
+      "Text": "Regenerate Project Source"
+    },
+    {
+      "Key": "PRJ_ALI_Dialog_Delete_Current_Alias",
+      "Text": "Delete the current alias source for this project?"
+    },
+    {
+      "Key": "PRJ_ALI_Menu_Regenerate_Project_Source_TT",
+      "Text": "Regenerates the project source associated with this project to use the latest base source. NOTE: this will remove all custom entries unique to the project."
+    },
+    {
+      "Key": "PRJ_ALI_Menu_Edit",
+      "Text": "Edit"
+    },
+    {
+      "Key": "PRJ_ALI_Menu_Undo",
+      "Text": "Undo"
+    },
+    {
+      "Key": "PRJ_ALI_Menu_Undo_All",
+      "Text": "Undo All"
+    },
+    {
+      "Key": "PRJ_ALI_Menu_Redo",
+      "Text": "Redo"
+    },
+    {
+      "Key": "PRJ_ALI_Header_Aliases",
+      "Text": "Aliases"
+    },
+    {
+      "Key": "PRJ_ALI_Header_Aliases_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PRJ_ALI_Action_Copy_Entries_As_Text",
+      "Text": "Copy Entries as Text"
+    },
+    {
+      "Key": "PRJ_ALI_Action_Copy_Entries_As_Table",
+      "Text": "Copy Entries as Table"
+    },
+    {
+      "Key": "PRJ_ALI_Select_Alias_Type",
+      "Text": "Select an alias type."
+    },
+    {
+      "Key": "PRJ_ALI_Action_Add_Alias",
+      "Text": "Add Alias"
+    },
+    {
+      "Key": "PRJ_ALI_Action_Add_Alias_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PRJ_ALI_Alias_Filter_Hint",
+      "Text": "Filter by ID, name, or tag..."
+    },
+    {
+      "Key": "PRJ_ALI_Button_Add_Alias_TT",
+      "Text": "Add new alias entry."
+    },
+    {
+      "Key": "PRJ_ALI_Button_Sort_Aliases_TT",
+      "Text": "Sort alias list alphanumerically."
+    },
+    {
+      "Key": "PRJ_ALI_Button_Read_Only_Toggle_TT",
+      "Text": "Toggle whether the aliases are editable or not.\nCurrent Mode: {0}"
+    },
+    {
+      "Key": "PRJ_ALI_Alias_Read_Only_Active",
+      "Text": "Read-only"
+    },
+    {
+      "Key": "PRJ_ALI_Alias_Read_Only_Inactive",
+      "Text": "Edit"
+    },
+    {
+      "Key": "PRJ_ALI_Alias_Count",
+      "Text": "Entries ({0})"
+    },
+    {
+      "Key": "PRJ_ALI_Drag_Action_TT",
+      "Text": "Move {0}"
+    },
+    {
+      "Key": "PRJ_ALI_Context_Duplicate",
+      "Text": "Duplicate"
+    },
+    {
+      "Key": "PRJ_ALI_Context_Delete",
+      "Text": "Delete"
+    },
+    {
+      "Key": "PRJ_ALI_Saved_Project_Aliases",
+      "Text": "Saved project aliases."
+    },
+    {
+      "Key": "PRJ_ALI_Saved_Base_Aliases",
+      "Text": "Saved base aliases."
+    }
+  ]
+}

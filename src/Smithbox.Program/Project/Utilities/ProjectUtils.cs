@@ -1,16 +1,6 @@
 ﻿using Andre.IO.VFS;
-using DotNext.Collections.Generic;
-using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Editors.ParamEditor;
-using StudioCore.Logger;
-using StudioCore.Utilities;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.IO;
-using System.Linq;
-using ZstdNet;
 
 namespace StudioCore.Application;
 
@@ -51,7 +41,7 @@ public class ProjectUtils
             case ProjectType.NR:
                 return "NR";
             default:
-                throw new Exception("Game type not set");
+                throw new Exception(LOC.Get("PRJ_UTL_Project_Type_Not_Set"));
         }
     }
 
@@ -139,7 +129,7 @@ public class ProjectUtils
         if (curProject.VFS.VanillaRealFS is not EmptyVirtualFileSystem)
             return curProject.VFS.VanillaRealFS;
 
-        throw new InvalidOperationException("No suitable VFS was found for writes");
+        throw new InvalidOperationException(LOC.Get("PRJ_UTL_Missing_Suitable_VFS"));
     }
 
     public static void CreateBackupFolder(ProjectEntry curProject)
@@ -291,7 +281,7 @@ public class ProjectUtils
         }
         catch (Exception e)
         {
-            Smithbox.Log<ProjectUtils>($"[Project] Failed to save: {Path.GetFileName(assetPath)} - {e}");
+            Smithbox.Log<ProjectUtils>(LOC.Get("PRJ_UTL_Failed_To_Save", $"{Path.GetFileName(assetPath)} - {e}"));
         }
     }
 
@@ -376,7 +366,7 @@ public class ProjectUtils
     public static List<string> GetBackupFiles(string rootDirectory)
     {
         if (string.IsNullOrWhiteSpace(rootDirectory) || !Directory.Exists(rootDirectory))
-            throw new DirectoryNotFoundException($"Directory not found: {rootDirectory}");
+            throw new DirectoryNotFoundException(LOC.Get("PRJ_UTL_Missing_Directory_For_Backup", rootDirectory));
 
         var results = new List<string>();
 
@@ -408,7 +398,8 @@ public class ProjectUtils
             catch (Exception ex)
             {
                 // Log or handle as needed
-                Smithbox.Log<ProjectUtils>($"Failed to delete {file}: {ex.Message}");
+                Smithbox.Log<ProjectUtils>(
+                    LOC.Get("PRJ_UTL_Failed_To_Delete", $"{file}: {ex.Message}"));
             }
         }
     }

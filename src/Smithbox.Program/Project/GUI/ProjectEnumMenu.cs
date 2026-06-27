@@ -1,18 +1,10 @@
-﻿using Google.Protobuf.WellKnownTypes;
-using Hexa.NET.DirectXTex;
-using Hexa.NET.ImGui;
-using Octokit;
+﻿using Hexa.NET.ImGui;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Keybinds;
-using StudioCore.Utilities;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Numerics;
 using System.Text.Encodings.Web;
 using System.Text.Json;
-using static SoulsFormats.MQB;
 
 namespace StudioCore.Application;
 
@@ -46,31 +38,31 @@ public class ProjectEnumMenu
 
         if (curProject == null)
         {
-            UIHelper.WrappedText("A valid project must be selected to use this editor.");
+            UIHelper.WrappedText(LOC.Get("PRJ_EUM_Error_Invalid_Project"));
             return;
         }
 
         if (curProject.Handler == null)
         {
-            UIHelper.WrappedText("A valid project must be selected to use this editor.");
+            UIHelper.WrappedText(LOC.Get("PRJ_EUM_Error_Invalid_Project"));
             return;
         }
 
         if (curProject.Handler.ProjectData == null)
         {
-            UIHelper.WrappedText("A valid project must be selected to use this editor.");
+            UIHelper.WrappedText(LOC.Get("PRJ_EUM_Error_Invalid_Project"));
             return;
         }
 
         if (curProject.Descriptor == null)
         {
-            UIHelper.WrappedText("A valid project must be selected to use this editor.");
+            UIHelper.WrappedText(LOC.Get("PRJ_EUM_Error_Invalid_Project"));
             return;
         }
 
         if (Smithbox.Orchestrator.ProjectEditor.SelectedLoadedEntry == null)
         {
-            UIHelper.WrappedText("A loaded project must be selected to use this editor.");
+            UIHelper.WrappedText(LOC.Get("PRJ_EUM_Error_No_Loaded_Project"));
             return;
         }
 
@@ -88,16 +80,16 @@ public class ProjectEnumMenu
 
     public void FileMenu()
     {
-        if (ImGui.BeginMenu("File"))
+        if (ImGui.BeginMenu($"{LOC.Get("PRJ_EUM_Menu_File")}##fileMenuHeader"))
         {
-            if (ImGui.Selectable("Save Local Enums"))
+            if (ImGui.Selectable($"{LOC.Get("PRJ_EUM_Menu_Save_Local_Enums")}##saveLocalEnumsAction"))
             {
                 SaveLocalEnums();
             }
 
             if (CFG.Current.Developer_Enable_Tools)
             {
-                if (ImGui.Selectable("Save Base Enums"))
+                if (ImGui.Selectable($"{LOC.Get("PRJ_EUM_Menu_Save_Base_Enums")}##saveBaseEnumsAction"))
                 {
                     SaveBaseEnums();
                 }
@@ -109,10 +101,10 @@ public class ProjectEnumMenu
 
     public void EditMenu()
     {
-        if (ImGui.BeginMenu("Edit"))
+        if (ImGui.BeginMenu($"{LOC.Get("PRJ_EUM_Menu_Edit")}##editMenuHeader"))
         {
             // Undo
-            if (ImGui.MenuItem($"Undo", $"{InputManager.GetHint(KeybindID.Undo)} / {InputManager.GetHint(KeybindID.Undo_Repeat)}"))
+            if (ImGui.MenuItem($"{LOC.Get("PRJ_EUM_Menu_Undo")}##undoAction", $"{InputManager.GetHint(KeybindID.Undo)} / {InputManager.GetHint(KeybindID.Undo_Repeat)}"))
             {
                 if (ActionManager.CanUndo())
                 {
@@ -121,7 +113,7 @@ public class ProjectEnumMenu
             }
 
             // Undo All
-            if (ImGui.MenuItem($"Undo All"))
+            if (ImGui.MenuItem($"{LOC.Get("PRJ_EUM_Menu_Undo_All")}##undoAllAction"))
             {
                 if (ActionManager.CanUndo())
                 {
@@ -130,7 +122,7 @@ public class ProjectEnumMenu
             }
 
             // Redo
-            if (ImGui.MenuItem($"Redo", $"{InputManager.GetHint(KeybindID.Redo)} / {InputManager.GetHint(KeybindID.Redo_Repeat)}"))
+            if (ImGui.MenuItem($"{LOC.Get("PRJ_EUM_Menu_Redo")}##redoAction", $"{InputManager.GetHint(KeybindID.Redo)} / {InputManager.GetHint(KeybindID.Redo_Repeat)}"))
             {
                 if (ActionManager.CanRedo())
                 {
@@ -146,28 +138,39 @@ public class ProjectEnumMenu
     {
         var curProject = Smithbox.Orchestrator.SelectedProject;
 
-        if (CFG.Current.Developer_Enable_Tools)
+        // Options
+        if (ImGui.BeginMenu($"{LOC.Get("PRJ_EUM_Menu_Options")}##optionsMenuHeader"))
         {
-            if (ImGui.BeginMenu("Options"))
+            if (CFG.Current.Developer_Enable_Tools)
             {
-                if (ImGui.BeginMenu("Save"))
+                // Save Shortcut applies to Base Source
+                if (ImGui.BeginMenu($"{LOC.Get("PRJ_EUM_Menu_Save")}##saveMenuHeader"))
                 {
-                    ImGui.Checkbox("Save Shortcut applies to Base Source", ref CFG.Current.Project_Enum_Editor_Save_Applies_To_Base);
-                    UIHelper.Tooltip("If enabled, the save shortcut will save to base aliases, rather than local.");
+                    // Save Shortcut 
+                    ImGui.Checkbox(
+                        $"{LOC.Get("PRJ_EUM_Menu_Save_Shortcut_Saves_To_Base_Source")}##saveShortcutToggle", ref CFG.Current.Project_Enum_Editor_Save_Applies_To_Base);
+
+                    UIHelper.Tooltip(
+                        LOC.Get("PRJ_EUM_Menu_Save_Shortcut_Saves_To_Base_Source_TT"));
 
                     ImGui.EndMenu();
                 }
+            }
 
-                if (ImGui.BeginMenu("Add"))
-                {
-                    ImGui.Checkbox("Insert New at Top", ref CFG.Current.Project_Enum_Editor_Add_Insert_At_Top);
-                    UIHelper.Tooltip("If enabled, adding a new enum option via the icon button will place it at the top of the list, rather than the bottom.");
+            // Add
+            if (ImGui.BeginMenu($"{LOC.Get("PRJ_EUM_Menu_Add")}##addMenuHEader"))
+            {
+                ImGui.Checkbox(
+                    $"{LOC.Get("PRJ_EUM_Menu_Insert_New_At_Top")}##insertAtTopAction", 
+                    ref CFG.Current.Project_Enum_Editor_Add_Insert_At_Top);
 
-                    ImGui.EndMenu();
-                }
+                UIHelper.Tooltip(
+                    LOC.Get("PRJ_EUM_Menu_Insert_New_At_Top_TT"));
 
                 ImGui.EndMenu();
             }
+
+            ImGui.EndMenu();
         }
     }
     public void Shortcuts()
@@ -221,13 +224,17 @@ public class ProjectEnumMenu
 
     public void DisplayEditor()
     {
-        UIHelper.SimpleHeader("Enums", "");
+        // Enums
+        UIHelper.SimpleHeader(
+            LOC.Get("PRJ_EUM_Header_Enums"),
+            LOC.Get("PRJ_EUM_Header_Enums_TT"));
 
         var project = Smithbox.Orchestrator.SelectedProject;
 
         if (project.Handler != null && project.Handler.ParamData == null)
         {
-            ImGui.Text("Param Editor needs to be enabled to view and edit enums.");
+            ImGui.Text(
+                LOC.Get("PRJ_EUM_Paran_Editor_Enable_Hint"));
         }
         else
         {
@@ -261,7 +268,7 @@ public class ProjectEnumMenu
     {
         ImGui.InputTextWithHint(
             "##enumFilter",
-            "Filter by name.",
+            LOC.Get("PRJ_EUM_Enum_Filter_Hint"),
             ref EnumEntryFilter,
             255
         );
@@ -314,7 +321,7 @@ public class ProjectEnumMenu
 
         ImGui.InputTextWithHint(
             "##enumOptionFilter",
-            "Filter by name or value.",
+            LOC.Get("PRJ_EUM_Enum_Option_Filter_Hint"),
             ref OptionEntryFilter,
             255
         );
@@ -326,7 +333,8 @@ public class ProjectEnumMenu
         {
             AddEnumOption();
         }
-        UIHelper.Tooltip("Add new enum option entry.");
+        UIHelper.Tooltip(
+            LOC.Get("PRJ_EUM_Button_Add_Enum_Option_TT"));
 
         // Sort
         ImGui.SameLine();
@@ -335,7 +343,8 @@ public class ProjectEnumMenu
         {
             CurrentEnum.Options.Sort();
         }
-        UIHelper.Tooltip("Sort enum option list alphanumerically.");
+        UIHelper.Tooltip(
+            LOC.Get("PRJ_EUM_Button_Sort_Enum_Options_TT"));
 
         // Read Only Toggle
         ImGui.SameLine();
@@ -345,25 +354,29 @@ public class ProjectEnumMenu
             ReadOnlyMode = !ReadOnlyMode;
         }
 
-        var readOnlyMode = "Read-only";
+        var readOnlyMode = LOC.Get("PRJ_EUM_Enum_Read_Only_Active");
         if (!ReadOnlyMode)
         {
-            readOnlyMode = "Edit";
+            readOnlyMode = LOC.Get("PRJ_EUM_Enum_Read_Only_Inactive");
         }
-        UIHelper.Tooltip($"Toggle whether the aliases are editable or not.\nCurrent Mode: {readOnlyMode}");
+        UIHelper.Tooltip(
+            LOC.Get("PRJ_EUM_Button_Read_Only_Toggle_TT", readOnlyMode)
+            );
 
         // Entries
         ImGui.SameLine();
 
         ImGui.AlignTextToFramePadding();
-        ImGui.Text($"Entries ({CurrentEnum.Options.Count})");
+        ImGui.Text(
+            LOC.Get("PRJ_EUM_Enum_Count",  $"{CurrentEnum.Options.Count}"));
     }
 
     public void EnumEditor_RowColumn()
     {
         if (CurrentEnum == null)
         {
-            ImGui.TextDisabled("Select an enum.");
+            ImGui.TextDisabled(
+                LOC.Get("PRJ_EUM_Select_Enum"));
             return;
         }
 
@@ -372,7 +385,10 @@ public class ProjectEnumMenu
         if (options.Count == 0)
         {
             UIHelper.MultiButtonInput("enumOptionActions",
-                "addEnumOption", "Add Option", "", AddEnumOption);
+                "addEnumOption", 
+                LOC.Get("PRJ_EUM_Add_Enum_Option"),
+                LOC.Get("PRJ_EUM_Add_Enum_Option_TT"),
+                AddEnumOption);
         }
         else
         {
@@ -446,7 +462,7 @@ public class ProjectEnumMenu
                 ImGui.SetDragDropPayload("ENUM_OPTION_ENTRY", &dummy, 1);
             }
 
-            ImGui.Text($"Move {curEntry.Key}");
+            ImGui.Text(LOC.Get("PRJ_EUM_Drag_Action_TT", $"{curEntry.Key}"));
             ImGui.EndDragDropSource();
         }
 
@@ -473,12 +489,12 @@ public class ProjectEnumMenu
     {
         if (ImGui.BeginPopupContextItem($"entry_ctx_{index}"))
         {
-            if (ImGui.Selectable("Duplicate"))
+            if (ImGui.Selectable($"{LOC.Get("PRJ_EUM_Context_Duplicate")}##duplicateAction"))
             {
                 DuplicateEnumOptions();
             }
 
-            if (ImGui.Selectable("Delete"))
+            if (ImGui.Selectable($"{LOC.Get("PRJ_EUM_Context_Delete")}##deleteAction"))
             {
                 DeleteEnumOptions();
             }
@@ -520,7 +536,9 @@ public class ProjectEnumMenu
 
         if(curLanguageEntry == null)
         {
-            ImGui.Text($"No name for current language ({CFG.Current.ParamEditor_Annotation_Language})");
+            ImGui.Text(
+                LOC.Get("PRJ_EUM_Missing_Language_Entry", CFG.Current.ParamEditor_Annotation_Language));
+
             return;
         }
 
@@ -793,7 +811,7 @@ public class ProjectEnumMenu
         if (!Directory.Exists(projectFolder))
             Directory.CreateDirectory(projectFolder);
 
-        SaveEnums(projectFolder, "Saved project enums.");
+        SaveEnums(projectFolder, LOC.Get("PRJ_EUM_Saved_Project_Aliases"));
     }
 
     public void SaveBaseEnums()
@@ -807,7 +825,7 @@ public class ProjectEnumMenu
         if (!Directory.Exists(dir))
             Directory.CreateDirectory(dir);
 
-        SaveEnums(dir, "Saved base enums.");
+        SaveEnums(dir, LOC.Get("PRJ_EUM_Saved_Base_Aliases"));
     }
 
     public void SaveEnums(string targetPath, string saveMessage)

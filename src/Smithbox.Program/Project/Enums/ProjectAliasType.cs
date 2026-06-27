@@ -9,32 +9,32 @@ namespace StudioCore.Application;
 
 public enum ProjectAliasType
 {
-    [Display(Name = "None")]
+    [Display(Name = "PRJ_ENUM_ProjectAliasType_None")]
     None,
-    [Display(Name = "Assets")]
+    [Display(Name = "PRJ_ENUM_ProjectAliasType_Assets")]
     Assets,
-    [Display(Name = "Characters")]
+    [Display(Name = "PRJ_ENUM_ProjectAliasType_Characters")]
     Characters,
-    [Display(Name = "Cutscenes")]
+    [Display(Name = "PRJ_ENUM_ProjectAliasType_Cutscenes")]
     Cutscenes,
-    [Display(Name = "Event Flags")]
+    [Display(Name = "PRJ_ENUM_ProjectAliasType_Event_Flags")]
     EventFlags,
-    [Display(Name = "Gparams")]
+    [Display(Name = "PRJ_ENUM_ProjectAliasType_Gparams")]
     Gparams,
-    [Display(Name = "Map Pieces")]
+    [Display(Name = "PRJ_ENUM_ProjectAliasType_Map_Pieces")]
     MapPieces,
-    [Display(Name = "Map Names")]
+    [Display(Name = "PRJ_ENUM_ProjectAliasType_Map_Names")]
     MapNames,
-    [Display(Name = "Movies")]
+    [Display(Name = "PRJ_ENUM_ProjectAliasType_Movies")]
     Movies,
-    [Display(Name = "Particles")]
+    [Display(Name = "PRJ_ENUM_ProjectAliasType_Particles")]
     Particles,
-    [Display(Name = "Parts")]
+    [Display(Name = "PRJ_ENUM_ProjectAliasType_Parts")]
     Parts,
-    [Display(Name = "Sounds")]
+    [Display(Name = "PRJ_ENUM_ProjectAliasType_Sounds")]
     Sounds,
-    [Display(Name = "Talk Scripts")]
+    [Display(Name = "PRJ_ENUM_ProjectAliasType_Talk_Scripts")]
     TalkScripts,
-    [Display(Name = "Time Acts")]
+    [Display(Name = "PRJ_ENUM_ProjectAliasType_Time_Acts")]
     TimeActs
 }

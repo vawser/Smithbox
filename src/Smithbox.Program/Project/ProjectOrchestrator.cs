@@ -47,9 +47,9 @@ public class ProjectOrchestrator : IDisposable
         SetupFolders();
     }
 
-    public void Update(float dt)
+    public void Update(float dt, uint mainDockspaceID)
     {
-        ProjectEditor.OnGUI();
+        ProjectEditor.OnGUI(mainDockspaceID);
 
         // Project Dock
         if (SelectedProject != null && SelectedProject.Initialized)
@@ -171,7 +171,7 @@ public class ProjectOrchestrator : IDisposable
 
                     if (curProjectDescriptor == null)
                     {
-                        Smithbox.LogError(this, $"[Project] Failed to load project: {entry}");
+                        Smithbox.LogError(this, LOC.Get("PRJ_STP_Load_Project_FAIL", entry));
                     }
                     else
                     {
@@ -183,7 +183,7 @@ public class ProjectOrchestrator : IDisposable
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, $"[Project] Failed to load project: {entry}", e);
+                    Smithbox.LogError(this, LOC.Get("PRJ_STP_Read_Project_FAIL", entry), e);
                 }
             }
         }
@@ -257,8 +257,8 @@ public class ProjectOrchestrator : IDisposable
 
         SetProgress(new ProjectLoadProgress
         {
-            PhaseLabel = "Starting Project",
-            StepLabel = "Preparing",
+            PhaseLabel = LOC.Get("PRJ_STP_Project_Phase_Start"),
+            StepLabel = LOC.Get("PRJ_STP_Project_Step_Preparing"),
             Percent = 0f
         });
 
@@ -285,7 +285,7 @@ public class ProjectOrchestrator : IDisposable
 
         SetProgress(new ProjectLoadProgress
         {
-            PhaseLabel = "Complete",
+            PhaseLabel = LOC.Get("PRJ_STP_Project_Phase_Complete"),
             StepLabel = "",
             Percent = 1f
         });
@@ -357,8 +357,8 @@ public class ProjectOrchestrator : IDisposable
 
         SetProgress(new ProjectLoadProgress
         {
-            PhaseLabel = "Starting Project",
-            StepLabel = "Preparing",
+            PhaseLabel = LOC.Get("PRJ_STP_Project_Phase_Start"),
+            StepLabel = LOC.Get("PRJ_STP_Project_Step_Preparing"),
             Percent = 0f
         });
 
@@ -380,7 +380,7 @@ public class ProjectOrchestrator : IDisposable
 
         SetProgress(new ProjectLoadProgress
         {
-            PhaseLabel = "Complete",
+            PhaseLabel = LOC.Get("PRJ_STP_Project_Phase_Complete"),
             StepLabel = "",
             Percent = 1f
         });
@@ -438,7 +438,7 @@ public class ProjectOrchestrator : IDisposable
             }
             catch (Exception e)
             {
-                Smithbox.LogError(this, "Failed to read legacy project.json", e);
+                Smithbox.LogError(this, LOC.Get("PRJ_STP_Read_Legacy_Project_FAIL", path), e);
             }
         }
     }
@@ -458,7 +458,7 @@ public class ProjectOrchestrator : IDisposable
         if (!IsProjectLoading)
             return;
 
-        ImGui.OpenPopup("Loading Project##ProjectLoad");
+        ImGui.OpenPopup($"Loading Project##ProjectLoad");
 
         if (!InitialLayout)
         {
@@ -467,7 +467,7 @@ public class ProjectOrchestrator : IDisposable
         }
 
         if (ImGui.BeginPopupModal(
-            "Loading Project##ProjectLoad",
+            $"Loading Project##ProjectLoad",
             ImGuiWindowFlags.AlwaysAutoResize | ImGuiWindowFlags.NoMove))
         {
             ProjectLoadProgress progress;

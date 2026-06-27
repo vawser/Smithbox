@@ -1,8 +1,6 @@
 ﻿using Andre.Formats;
-using Google.Protobuf.WellKnownTypes;
 using Hexa.NET.ImGui;
 using Hexa.NET.ImPlot;
-using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Application;
@@ -10,7 +8,6 @@ using StudioCore.Editors.Common;
 using StudioCore.Editors.TextEditor;
 using StudioCore.Interface;
 using StudioCore.Keybinds;
-using StudioCore.Logger;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
 using System;
@@ -20,7 +17,6 @@ using System.IO;
 using System.Linq;
 using System.Numerics;
 using System.Reflection;
-using System.Reflection.Metadata.Ecma335;
 
 namespace StudioCore.Editors.ParamEditor;
 public class ParamFieldDecorators

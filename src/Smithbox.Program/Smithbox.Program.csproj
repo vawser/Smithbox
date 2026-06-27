@@ -6,6 +6,7 @@
     <Configurations>
       Debug-win;Release-win;Debug-linux;Release-linux;Debug-osx;Release-osx;Debug;Release</Configurations>
     <RootNamespace>StudioCore</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
   <PropertyGroup Condition="$(Configuration.StartsWith('Debug'))">
@@ -135,6 +136,10 @@
     <Folder Include="Editors\File Browser\Utils\" />
     <Folder Include="Editors\Map Data Editor\JSON\" />
     <Folder Include="Editors\Map Data Editor\Tools\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="StudioCore.Interface" />
   </ItemGroup>
 
 </Project>

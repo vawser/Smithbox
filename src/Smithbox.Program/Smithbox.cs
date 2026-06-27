@@ -90,12 +90,12 @@ public class Smithbox
                 Smithbox.LogWarning(this, "Failed to create Vulkan context, falling back to OpenGL", ex);
 
                 _context = new OpenGLCompatGraphicsContext();
-                CFG.Current.System_RenderingBackend = RenderingBackend.OpenGL;
+                Startup.Current.System_RenderingBackend = RenderingBackend.OpenGL;
             }
         }
 
         // Set this so even if the user changes the CFG, the program won't suddenly switch its usage until a restart.
-        CurrentBackend = CFG.Current.System_RenderingBackend;
+        CurrentBackend = Startup.Current.System_RenderingBackend;
 
         //set up logging
         if (LogsProvider is null)
@@ -189,6 +189,7 @@ public class Smithbox
     public void SaveConfiguration()
     {
         using var __tracy = Profiler.TracyZoneAuto();
+        Startup.Save();
         CFG.Save();
         UI.Save();
         InputManager.SaveKeybinds();
@@ -599,7 +600,7 @@ public class Smithbox
             ImGui.SetNextWindowFocus();
         }
 
-        Orchestrator.Update(deltaseconds);
+        Orchestrator.Update(deltaseconds, dockspaceID);
 
         DeveloperPanel.Display();
 
@@ -656,7 +657,7 @@ public class Smithbox
 
     private void CheckProgramUpdate()
     {
-        if (!CFG.Current.System_Check_Program_Update)
+        if (!Startup.Current.System_Check_Program_Update)
             return;
 
         var gitHubClient = new GitHubClient(new ProductHeaderValue("Smithbox"));

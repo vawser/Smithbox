@@ -114,27 +114,27 @@ public class ProjectConfigureMenu
     public void DisplayProjectActions()
     {
         UIHelper.Spacer();
-        UIHelper.SimpleHeader("Actions", "");
+        UIHelper.SimpleHeader(LOC.Get("PRJ_PCM_Header_Actions"), "");
 
         if (!AllowCreation())
         {
             if(EditorMode is ProjectEditorMode.Create)
-                UIHelper.WrappedText("You cannot create a project due to the following issues:");
+                UIHelper.WrappedText(LOC.Get("PRJ_PCM_Project_Creation_Block_Create"));
 
             if (EditorMode is ProjectEditorMode.Edit)
-                UIHelper.WrappedText("You cannot edit a project due to the following issues:");
+                UIHelper.WrappedText(LOC.Get("PRJ_PCM_Project_Creation_Block_Edit"));
 
             if (Descriptor.ProjectName == "")
-                UIHelper.WrappedYellowText("Project Name cannot be empty.");
+                UIHelper.WrappedYellowText(LOC.Get("PRJ_PCM_Invalid_Project_Name"));
 
             if (!Directory.Exists(Descriptor.ProjectPath))
-                UIHelper.WrappedYellowText("Project Path is set to an invalid path.");
+                UIHelper.WrappedYellowText(LOC.Get("PRJ_PCM_Invalid_Project_Path"));
 
             if (!Directory.Exists(Descriptor.DataPath))
-                UIHelper.WrappedYellowText("Data Path is set to an invalid path.");
+                UIHelper.WrappedYellowText(LOC.Get("PRJ_PCM_Invalid_Data_Path"));
 
             if (Descriptor.ProjectType is ProjectType.Undefined)
-                UIHelper.WrappedYellowText("Project type cannot be undefined.");
+                UIHelper.WrappedYellowText(LOC.Get("PRJ_PCM_Invalid_Project_Type"));
 
             UIHelper.Spacer();
         }
@@ -142,24 +142,45 @@ public class ProjectConfigureMenu
         if (EditorMode is ProjectEditorMode.Create)
         {
             UIHelper.ConditionalMultiButtonInput("projectCreateActions",
-                "createProject", "Create Project", "", CreateProjectAction, AllowCreation());
+                "createProject", 
+                LOC.Get("PRJ_PCM_Action_Create_Project"), 
+                LOC.Get("PRJ_PCM_Action_Create_Project_TT"), 
+                CreateProjectAction, AllowCreation());
         }
         else if (EditorMode is ProjectEditorMode.Edit)
         {
             UIHelper.ConditionalMultiButtonInput("projectEditActions",
-                "editProject", "Update Project", "Update the currently selected project configuration to use the newly configured parameters.", UpdateProjectAction, AllowCreation(),
-                "deleteProject", "Delete Project", "Delete the currently selected project entry.", DeleteProjectAction, true,
-                "clearProjectBackups", "Delete Backup Files", "Delete the .prev and .bak files within the currently selected project's directory.", DeleteBackupFilesAction, true);
+                "editProject",
+                LOC.Get("PRJ_PCM_Action_Update_Project"),
+                LOC.Get("PRJ_PCM_Action_Update_Project_TT"), 
+                UpdateProjectAction, AllowCreation(),
+
+                "deleteProject",
+                LOC.Get("PRJ_PCM_Action_Delete_Project"),
+                LOC.Get("PRJ_PCM_Action_Delete_Project_TT"), 
+                DeleteProjectAction, true,
+
+                "clearProjectBackups",
+                LOC.Get("PRJ_PCM_Action_Delete_Backup_Files"),
+                LOC.Get("PRJ_PCM_Action_Delete_Backup_Files_TT"),
+                DeleteBackupFilesAction, true);
         }
 
         if (ModEngineHandler.IsME3Project(Project))
         {
             UIHelper.Spacer();
-            UIHelper.SimpleHeader("ME3", "");
+            UIHelper.SimpleHeader(LOC.Get("PRJ_PCM_Header_ME3"), "");
 
             UIHelper.ConditionalMultiButtonInput("me3Actions",
-                "launchMod", "Launch Mod", "Launch this project with ME3.", LaunchModAction, ModEngineHandler.ME3ProfileExists(Project),
-                "createProfile", "Create Profile", "Create a basic ME3 profile for this project.", CreateProfileAction, !ModEngineHandler.ME3ProfileExists(Project));
+                "launchMod",
+                LOC.Get("PRJ_PCM_Action_Launch_Mod"),
+                LOC.Get("PRJ_PCM_Action_Launch_Mod_TT"), 
+                LaunchModAction, ModEngineHandler.ME3ProfileExists(Project),
+
+                "createProfile",
+                LOC.Get("PRJ_PCM_Action_Create_Mod_Profile"),
+                LOC.Get("PRJ_PCM_Action_Create_Mod_Profile_TT"), 
+                CreateProfileAction, !ModEngineHandler.ME3ProfileExists(Project));
         }
     }
 
@@ -193,7 +214,8 @@ public class ProjectConfigureMenu
         {
             var profilePath = "";
             var result =
-                PlatformUtils.Instance.OpenFolderDialog("Select ME3 Profile Directory", out profilePath);
+                PlatformUtils.Instance.OpenFolderDialog(
+                    LOC.Get("PRJ_PCM_Dialog_Select_ME3_Profile_Dir"), out profilePath);
 
             if (result)
             {
@@ -228,7 +250,9 @@ public class ProjectConfigureMenu
             }
         }
 
-        var dialog = PlatformUtils.Instance.MessageBox($"You will delete the following files:\n{fileList}", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+        var dialog = PlatformUtils.Instance.MessageBox(
+            LOC.Get("PRJ_PCM_Dialog_Delete_Backup_Files_List", fileList), 
+            LOC.Get("SYS_Warning_Header"), MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
 
         if (dialog is DialogResult.OK)
         {
@@ -238,96 +262,152 @@ public class ProjectConfigureMenu
 
     private void DisplayProjectEditorToggles()
     {
-        UIHelper.SimpleHeader("Available Editors", "Which editors this project will use.");
+        UIHelper.SimpleHeader(
+            LOC.Get("PRJ_PCM_Header_Available_Editors"), 
+            LOC.Get("PRJ_PCM_Header_Available_Editors_TT"));
 
         // Map Editor
         if (ProjectUtils.SupportsMapEditor(Descriptor.ProjectType))
         {
-            ImGui.Checkbox("Visual Map Editor", ref Descriptor.EnableMapEditor);
-            UIHelper.Tooltip("If true, the Visual Map Editor and associated data will be initialized for this project.");
+            ImGui.Checkbox(
+                LOC.Get("PRJ_PCM_Checkbox_Visual_Map_Editor"), 
+                ref Descriptor.EnableMapEditor);
+
+            UIHelper.Tooltip(
+                LOC.Get("PRJ_PCM_Checkbox_Visual_Map_Editor_TT"));
         }
 
         // Map Param Editor
         if (ProjectUtils.SupportsMapDataEditor(Descriptor.ProjectType))
         {
-            ImGui.Checkbox("Map Data Editor", ref Descriptor.EnableMapDataEditor);
-            UIHelper.Tooltip("If true, the Map Data Editor and associated data will be initialized for this project.");
+            ImGui.Checkbox(
+                LOC.Get("PRJ_PCM_Checkbox_Map_Data_Editor"), 
+                ref Descriptor.EnableMapDataEditor);
+
+            UIHelper.Tooltip(
+                LOC.Get("PRJ_PCM_Checkbox_Map_Data_Editor_TT"));
         }
 
         // Model Editor
         if (ProjectUtils.SupportsModelEditor(Descriptor.ProjectType))
         {
-            ImGui.Checkbox("Model Editor", ref Descriptor.EnableModelEditor);
-            UIHelper.Tooltip("If true, the Model Editor and associated data will be initialized for this project.");
+            ImGui.Checkbox(
+                LOC.Get("PRJ_PCM_Checkbox_Model_Editor"), 
+                ref Descriptor.EnableModelEditor);
+
+            UIHelper.Tooltip(
+                LOC.Get("PRJ_PCM_Checkbox_Model_Editor_TT"));
         }
 
         // Param Editor
         if (ProjectUtils.SupportsParamEditor(Descriptor.ProjectType))
         {
-            ImGui.Checkbox("Param Editor", ref Descriptor.EnableParamEditor);
-            UIHelper.Tooltip("If true, the Param Editor and associated data will be initialized for this project.");
+            ImGui.Checkbox(
+                LOC.Get("PRJ_PCM_Checkbox_Param_Editor"), 
+                ref Descriptor.EnableParamEditor);
+
+            UIHelper.Tooltip(
+                LOC.Get("PRJ_PCM_Checkbox_Param_Editor_TT"));
         }
 
         // Text Editor
         if (ProjectUtils.SupportsTextEditor(Descriptor.ProjectType))
         {
-            ImGui.Checkbox("Text Editor", ref Descriptor.EnableTextEditor);
-            UIHelper.Tooltip("If true, the Text Editor and associated data will be initialized for this project.");
+            ImGui.Checkbox(
+                LOC.Get("PRJ_PCM_Checkbox_Text_Editor"), 
+                ref Descriptor.EnableTextEditor);
+
+            UIHelper.Tooltip(
+                LOC.Get("PRJ_PCM_Checkbox_Text_Editor_TT"));
         }
 
         // Animation Editor
         if (ProjectUtils.SupportsAnimEditor(Descriptor.ProjectType))
         {
-            ImGui.Checkbox("Animation Editor", ref Descriptor.EnableAnimEditor);
-            UIHelper.Tooltip("If true, the Animation Browser and associated data will be initialized for this project.");
+            ImGui.Checkbox(
+                LOC.Get("PRJ_PCM_Checkbox_Anim_Editor"), 
+                ref Descriptor.EnableAnimEditor);
+
+            UIHelper.Tooltip(
+                LOC.Get("PRJ_PCM_Checkbox_Anim_Editor_TT"));
         }
 
         // Graphics Param Editor
         if (ProjectUtils.SupportsGraphicsParamEditor(Descriptor.ProjectType))
         {
-            ImGui.Checkbox("Graphics Param Editor", ref Descriptor.EnableGparamEditor);
-            UIHelper.Tooltip("If true, the Graphics Param Editor and associated data will be initialized for this project.");
+            ImGui.Checkbox(
+                LOC.Get("PRJ_PCM_Checkbox_Gparam_Editor"), 
+                ref Descriptor.EnableGparamEditor);
+
+            UIHelper.Tooltip(
+                LOC.Get("PRJ_PCM_Checkbox_Gparam_Editor_TT"));
         }
 
         // Material Editor
         if (ProjectUtils.SupportsMaterialEditor(Descriptor.ProjectType))
         {
-            ImGui.Checkbox("Material Editor", ref Descriptor.EnableMaterialEditor);
-            UIHelper.Tooltip("If true, the Material Editor and associated data will be initialized for this project.");
+            ImGui.Checkbox(
+                LOC.Get("PRJ_PCM_Checkbox_Material_Editor"), 
+                ref Descriptor.EnableMaterialEditor);
+
+            UIHelper.Tooltip(
+                LOC.Get("PRJ_PCM_Checkbox_Material_Editor_TT"));
         }
 
         // Texture Viewer
         if (ProjectUtils.SupportsTextureViewer(Descriptor.ProjectType))
         {
-            ImGui.Checkbox("Texture Viewer", ref Descriptor.EnableTextureViewer);
-            UIHelper.Tooltip("If true, the Texture Viewer and associated data will be initialized for this project.");
+            ImGui.Checkbox(
+                LOC.Get("PRJ_PCM_Checkbox_Texture_Viewer"), 
+                ref Descriptor.EnableTextureViewer);
+
+            UIHelper.Tooltip(
+                LOC.Get("PRJ_PCM_Checkbox_Texture_Viewer_TT"));
         }
 
         // File Browser
         if (ProjectUtils.SupportsFileBrowser(Descriptor.ProjectType))
         {
-            ImGui.Checkbox("File Browser", ref Descriptor.EnableFileBrowser);
-            UIHelper.Tooltip("If true, the File Browser and associated data will be initialized for this project.");
+            ImGui.Checkbox(
+                LOC.Get("PRJ_PCM_Checkbox_File_Browser"), 
+                ref Descriptor.EnableFileBrowser);
+
+            UIHelper.Tooltip(
+                LOC.Get("PRJ_PCM_Checkbox_File_Browser_TT"));
         }
 
         // Material Data
-        ImGui.Checkbox("Material Data", ref Descriptor.EnableExternalMaterialData);
-        UIHelper.Tooltip("If true, the Map Editor and Model Editor will load all Material Data, which is required for texturing. Note: this increases RAM usage significantly.");
+        ImGui.Checkbox(
+            LOC.Get("PRJ_PCM_Checkbox_Material_Data"), 
+            ref Descriptor.EnableExternalMaterialData);
+
+        UIHelper.Tooltip(
+            LOC.Get("PRJ_PCM_Checkbox_Material_Data_TT"));
     }
 
     public void DisplayProjectSettings()
     {
         // Project Name
-        UIHelper.SimpleHeader("Project Name", "The name of the project.");
+        UIHelper.SimpleHeader(
+            LOC.Get("PRJ_PCM_Header_Project_Name"),
+            LOC.Get("PRJ_PCM_Header_Project_Name_TT"));
 
-        UIHelper.HintTextInput("ProjectNameInput", ref Descriptor.ProjectName, "Enter the name of the project...");
+        UIHelper.HintTextInput(
+            "ProjectNameInput", 
+            ref Descriptor.ProjectName,
+            LOC.Get("PRJ_PCM_Project_Name_Input_Hint"));
 
         // Project Type
         UIHelper.Spacer();
-        UIHelper.SimpleHeader("Project Type", "The game this project targets.");
+        UIHelper.SimpleHeader(
+            LOC.Get("PRJ_PCM_Header_Project_Type"),
+            LOC.Get("PRJ_PCM_Header_Project_Type_TT"));
 
         UIHelper.SetInputWidth();
-        if (ImGui.BeginCombo("##projectTypePicker", Descriptor.ProjectType.GetDisplayName()))
+
+        var previewName = LOC.Get(Descriptor.ProjectType.GetDisplayName());
+
+        if (ImGui.BeginCombo("##projectTypePicker", previewName))
         {
             // Make the combo-box dropdown bigger so there is no need to scroll
             ImGui.SetNextWindowSize(new Vector2(600.0f, 600.0f) * DPI.UIScale(), ImGuiCond.FirstUseEver);
@@ -336,7 +416,9 @@ public class ProjectConfigureMenu
             {
                 var type = (ProjectType)entry;
 
-                if (ImGui.Selectable(type.GetDisplayName()))
+                var displayName = LOC.Get(type.GetDisplayName());
+
+                if (ImGui.Selectable(displayName))
                 {
                     Descriptor.ProjectType = type;
 
@@ -392,29 +474,56 @@ public class ProjectConfigureMenu
 
         // Project Directory
         UIHelper.Spacer();
-        UIHelper.SimpleHeader("Project Directory", "The location of the project.\nHint: for most mods, this is the folder in which the mod's regulation.bin is stored.");
+        UIHelper.SimpleHeader(
+            LOC.Get("PRJ_PCM_Header_Project_Directory"),
+            LOC.Get("PRJ_PCM_Header_Project_Directory_TT"));
 
-        UIHelper.HintTextInput("ProjectDirPath", ref Descriptor.ProjectPath, "Enter the directory your mod is placed at...");
+        UIHelper.HintTextInput(
+            "ProjectDirPath", 
+            ref Descriptor.ProjectPath,
+            LOC.Get("PRJ_PCM_Project_Directory_Path_Hint"));
 
         UIHelper.MultiButtonInput("projectDirActions",
-            "selectDir", "Select Project Directory", "Select the directory for the project files.", SelectProjectDirectory,
-            "openDir", "Open Project Directory", "Open the current project directory.", OpenProjectDirectory);
+            "selectDir",
+            LOC.Get("PRJ_PCM_Action_Select_Project_Directory"),
+            LOC.Get("PRJ_PCM_Action_Select_Project_Directory_TT"),
+            SelectProjectDirectory,
+
+            "openDir",
+            LOC.Get("PRJ_PCM_Action_Open_Project_Directory"),
+            LOC.Get("PRJ_PCM_Action_Open_Project_Directory_TT"), 
+            OpenProjectDirectory);
 
         // Data Directory
         UIHelper.Spacer();
-        UIHelper.SimpleHeader("Data Directory", GetDataDirectoryTooltip());
+        UIHelper.SimpleHeader(
+            LOC.Get("PRJ_PCM_Header_Data_Directory"), GetDataDirectoryTooltip());
 
-        UIHelper.HintTextInput("DataDirPath", ref Descriptor.DataPath, "Enter the directory the game data is stored at...");
+        UIHelper.HintTextInput("DataDirPath", 
+            ref Descriptor.DataPath,
+            LOC.Get("PRJ_PCM_Data_Directory_Path_Hint"));
 
         UIHelper.MultiButtonInput("dataDirActions",
-            "selectDir", "Select Data Directory", "Select the directory for the game data files.", SelectDataDirectory,
-            "openDir", "Open Data Directory", "Open the current data directory.", OpenDataDirectory);
+            "selectDir",
+            LOC.Get("PRJ_PCM_Action_Select_Data_Directory"),
+            LOC.Get("PRJ_PCM_Action_Select_Data_Directory_TT"),
+            SelectDataDirectory,
+
+            "openDir",
+            LOC.Get("PRJ_PCM_Action_Open_Data_Directory"),
+            LOC.Get("PRJ_PCM_Action_Open_Data_Directory_TT"),
+            OpenDataDirectory);
 
         // Group Tag
         UIHelper.Spacer();
-        UIHelper.SimpleHeader("Group Tag", "A tag to apply to this project. Used to group the project under a collapsible section within the selection lists.");
+        UIHelper.SimpleHeader(
+            LOC.Get("PRJ_PCM_Data_Header_Group_Tag"),
+            LOC.Get("PRJ_PCM_Data_Header_Group_Tag_TT"));
 
-        UIHelper.HintTextInput("FolderTagInput", ref Descriptor.FolderTag, "Enter the tag you wish to assign to this project...");
+        UIHelper.HintTextInput(
+            "FolderTagInput", 
+            ref Descriptor.FolderTag,
+            LOC.Get("PRJ_PCM_Group_Tag_Hint"));
     }
 
     public void SelectProjectDirectory()
@@ -422,7 +531,9 @@ public class ProjectConfigureMenu
         if (CFG.Current.Project_Default_Mod_Directory != "")
         {
             var newProjectPath = "";
-            var result = PlatformUtils.Instance.OpenFolderDialog("Select Project Directory", out newProjectPath, CFG.Current.Project_Default_Mod_Directory);
+            var result = PlatformUtils.Instance.OpenFolderDialog(
+                LOC.Get("PRJ_PCM_Dialog_Select_Project_Directory"), 
+                out newProjectPath, CFG.Current.Project_Default_Mod_Directory);
 
             if (result)
             {
@@ -432,7 +543,8 @@ public class ProjectConfigureMenu
         else
         {
             var newProjectPath = "";
-            var result = PlatformUtils.Instance.OpenFolderDialog("Select Project Directory", out newProjectPath);
+            var result = PlatformUtils.Instance.OpenFolderDialog(
+                LOC.Get("PRJ_PCM_Dialog_Select_Project_Directory"), out newProjectPath);
 
             if (result)
             {
@@ -451,7 +563,8 @@ public class ProjectConfigureMenu
         if (CFG.Current.Project_Default_Data_Directory != "")
         {
             var newDataPath = "";
-            var result = PlatformUtils.Instance.OpenFolderDialog("Select Game Directory", out newDataPath, CFG.Current.Project_Default_Data_Directory);
+            var result = PlatformUtils.Instance.OpenFolderDialog(
+                LOC.Get("PRJ_PCM_Dialog_Select_Game_Directory"), out newDataPath, CFG.Current.Project_Default_Data_Directory);
 
             if (result)
             {
@@ -461,7 +574,8 @@ public class ProjectConfigureMenu
         else
         {
             var newDataPath = "";
-            var result = PlatformUtils.Instance.OpenFolderDialog("Select Game Directory", out newDataPath);
+            var result = PlatformUtils.Instance.OpenFolderDialog(
+                LOC.Get("PRJ_PCM_Dialog_Select_Game_Directory"), out newDataPath);
 
             if (result)
             {
@@ -521,18 +635,18 @@ public class ProjectConfigureMenu
 
     public string GetDataDirectoryTooltip()
     {
-        var tooltip = "The location of the game data.";
+        var tooltip = LOC.Get("PRJ_PCM_Header_Data_Directory_TT_Base");
         if (Descriptor.ProjectType is ProjectType.DES)
         {
-            tooltip = $"{tooltip}\nSelect the USRDIR folder.";
+            tooltip = $"{tooltip}{LOC.Get("PRJ_PCM_Header_Data_Directory_TT_DES")}";
         }
         else if (Descriptor.ProjectType is ProjectType.BB)
         {
-            tooltip = $"{tooltip}\nSelect the dvdroot_ps4 folder.";
+            tooltip = $"{tooltip}{LOC.Get("PRJ_PCM_Header_Data_Directory_TT_BB")}";
         }
         else
         {
-            tooltip = $"{tooltip}\nSelect the folder that contains the game executable.";
+            tooltip = $"{tooltip}{LOC.Get("PRJ_PCM_Header_Data_Directory_TT_Default")}";
         }
 
         return tooltip;

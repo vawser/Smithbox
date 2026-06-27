@@ -1,0 +1,148 @@
+{
+  "Entries": [
+    {
+      "Key": "PRJ_EUM_Error_Invalid_Project",
+      "Text": "A valid project must be selected to use this editor."
+    },
+    {
+      "Key": "PRJ_EUM_Error_No_Loaded_Project",
+      "Text": "A loaded project must be selected to use this editor."
+    },
+    {
+      "Key": "PRJ_EUM_Menu_File",
+      "Text": "File"
+    },
+    {
+      "Key": "PRJ_EUM_Menu_Save_Local_Enums",
+      "Text": "Save Local Enums"
+    },
+    {
+      "Key": "PRJ_EUM_Menu_Save_Base_Enums",
+      "Text": "Save Base Enums"
+    },
+    {
+      "Key": "PRJ_EUM_Menu_Options",
+      "Text": "Options"
+    },
+    {
+      "Key": "PRJ_EUM_Menu_Save",
+      "Text": "Save"
+    },
+    {
+      "Key": "PRJ_EUM_Menu_Save_Shortcut_Saves_To_Base_Source",
+      "Text": "Save Shortcut applies to Base Source"
+    },
+    {
+      "Key": "PRJ_EUM_Menu_Save_Shortcut_Saves_To_Base_Source_TT",
+      "Text": "If enabled, the save shortcut will save to base aliases, rather than local."
+    },
+    {
+      "Key": "PRJ_EUM_Menu_Add",
+      "Text": "Add"
+    },
+    {
+      "Key": "PRJ_EUM_Menu_Insert_New_At_Top",
+      "Text": "Insert New at Top"
+    },
+    {
+      "Key": "PRJ_EUM_Menu_Insert_New_At_Top_TT",
+      "Text": "If enabled, adding a new enum option via the icon button will place it at the top of the list, rather than the bottom."
+    },
+    {
+      "Key": "PRJ_EUM_Menu_Edit",
+      "Text": "Edit"
+    },
+    {
+      "Key": "PRJ_EUM_Menu_Undo",
+      "Text": "Undo"
+    },
+    {
+      "Key": "PRJ_EUM_Menu_Undo_All",
+      "Text": "Undo All"
+    },
+    {
+      "Key": "PRJ_EUM_Menu_Redo",
+      "Text": "Redo"
+    },
+    {
+      "Key": "PRJ_EUM_Header_Enums",
+      "Text": "Enums"
+    },
+    {
+      "Key": "PRJ_EUM_Header_Enums_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PRJ_EUM_Paran_Editor_Enable_Hint",
+      "Text": "Param Editor needs to be enabled to view and edit enums."
+    },
+    {
+      "Key": "PRJ_EUM_Enum_Filter_Hint",
+      "Text": "Filter by name..."
+    },
+    {
+      "Key": "PRJ_EUM_Enum_Option_Filter_Hint",
+      "Text": "Filter by name or value."
+    },
+    {
+      "Key": "PRJ_EUM_Button_Add_Enum_Option_TT",
+      "Text": "Add new enum option entry."
+    },
+    {
+      "Key": "PRJ_EUM_Button_Sort_Enum_Options_TT",
+      "Text": "Sort enum option list alphanumerically."
+    },
+    {
+      "Key": "PRJ_EUM_Button_Read_Only_Toggle_TT",
+      "Text": "Toggle whether the enum options are editable or not.\nCurrent Mode: {0}"
+    },
+    {
+      "Key": "PRJ_EUM_Enum_Read_Only_Active",
+      "Text": "Read-only"
+    },
+    {
+      "Key": "PRJ_EUM_Enum_Read_Only_Inactive",
+      "Text": "Edit"
+    },
+    {
+      "Key": "PRJ_EUM_Enum_Count",
+      "Text": "Entries ({0})"
+    },
+    {
+      "Key": "PRJ_EUM_Select_Enum",
+      "Text": "Select an enum."
+    },
+    {
+      "Key": "PRJ_EUM_Add_Enum_Option",
+      "Text": "Add Option"
+    },
+    {
+      "Key": "PRJ_EUM_Add_Enum_Option_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PRJ_EUM_Drag_Action_TT",
+      "Text": "Move {0}"
+    },
+    {
+      "Key": "PRJ_EUM_Context_Duplicate",
+      "Text": "Duplicate"
+    },
+    {
+      "Key": "PRJ_EUM_Context_Delete",
+      "Text": "Delete"
+    },
+    {
+      "Key": "PRJ_EUM_Missing_Language_Entry",
+      "Text": "No name for current language ({0})"
+    },
+    {
+      "Key": "PRJ_EUM_Saved_Project_Aliases",
+      "Text": "Saved project enums."
+    },
+    {
+      "Key": "PRJ_EUM_Saved_Base_Aliases",
+      "Text": "Saved base enums."
+    }
+  ]
+}

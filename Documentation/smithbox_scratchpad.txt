@@ -2,6 +2,9 @@
 # TODO 
 #---------------------
 
+- Model Editor:
+ - Add HKXPWV edit mode (add sub-editor stuff from Map Data Editor: FLVER, HKXPWV
+
 - Map Data Editor
  - Property Edit
     - For multi-select, apply change to all
@@ -24,3 +27,5 @@
   - ENFL Editor
     - Implement ENFL sub-editor
  
+ 
+ {LOC.Get("PRJ_Popup_Loading_Project")}

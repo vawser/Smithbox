@@ -1,6 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
 using StudioCore.Editors.ParamEditor;
+using StudioCore.Interface;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -19,11 +20,45 @@ public class SystemPrefs
     }
 
     #region General
+    public static PreferenceItem System_Program_Language()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 0,
+            Category = PreferenceCategory.System,
+            Spacer = true,
+            InlineName = false,
+
+            Section = SectionCategory.General,
+
+            Title = "Program Language",
+            Description = "The language used to localize all of the text within Smithbox.",
+
+            Draw = () => {
+                var curLanguage = Startup.Current.Program_Language;
+
+                DPI.ApplyInputWidth();
+                if (ImGui.BeginCombo("##inputValue", curLanguage))
+                {
+                    foreach (var entry in LOC.Languages.Languages)
+                    {
+                        if (ImGui.Selectable(entry.Name))
+                        {
+                            Startup.Current.Program_Language = entry.Name;
+                            LOC.Load(); // Refresh the localization
+                        }
+                    }
+                    ImGui.EndCombo();
+                }
+            }
+        };
+    }
+
     public static PreferenceItem System_Check_Program_Update()
     {
         return new PreferenceItem
         {
-            OrderID = 1,
+            OrderID = 2,
             Category = PreferenceCategory.System,
             Spacer = true,
 
@@ -33,7 +68,7 @@ public class SystemPrefs
             Description = "When enabled Smithbox will automatically check for new versions upon program start.",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.System_Check_Program_Update);
+                ImGui.Checkbox("##inputValue", ref Startup.Current.System_Check_Program_Update);
             }
         };
     }
@@ -42,7 +77,7 @@ public class SystemPrefs
     {
         return new PreferenceItem
         {
-            OrderID = 2,
+            OrderID = 3,
             Category = PreferenceCategory.System,
             Spacer = true,
 
@@ -61,7 +96,7 @@ public class SystemPrefs
     {
         return new PreferenceItem
         {
-            OrderID = 3,
+            OrderID = 4,
             Category = PreferenceCategory.System,
             Spacer = true,
 
@@ -80,7 +115,7 @@ public class SystemPrefs
     {
         return new PreferenceItem
         {
-            OrderID = 4,
+            OrderID = 1,
             Category = PreferenceCategory.System,
             Spacer = true,
             InlineName = false,
@@ -92,7 +127,7 @@ public class SystemPrefs
 
             Draw = () => {
                 DPI.ApplyInputWidth();
-                if (ImGui.BeginCombo("##inputValue", CFG.Current.System_RenderingBackend.GetDisplayName()))
+                if (ImGui.BeginCombo("##inputValue", Startup.Current.System_RenderingBackend.GetDisplayName()))
                 {
                     foreach (var entry in Enum.GetValues(typeof(RenderingBackend)))
                     {
@@ -100,7 +135,7 @@ public class SystemPrefs
 
                         if (ImGui.Selectable(type.GetDisplayName()))
                         {
-                            CFG.Current.System_RenderingBackend = (RenderingBackend)entry;
+                            Startup.Current.System_RenderingBackend = (RenderingBackend)entry;
                         }
                     }
                     ImGui.EndCombo();

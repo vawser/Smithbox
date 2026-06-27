@@ -1,13 +1,8 @@
 ﻿using Hexa.NET.ImGui;
-using HKLib.hk2018.hkHashMapDetail;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Keybinds;
 using StudioCore.Utilities;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Numerics;
 using System.Text.Encodings.Web;
 using System.Text.Json;
@@ -42,31 +37,31 @@ public class ProjectAliasMenu
 
         if (curProject == null)
         {
-            UIHelper.WrappedText("A valid project must be selected to use this editor.");
+            UIHelper.WrappedText(LOC.Get("PRJ_ALI_Error_Invalid_Project"));
             return;
         }
 
         if (curProject.Handler == null)
         {
-            UIHelper.WrappedText("A valid project must be selected to use this editor.");
+            UIHelper.WrappedText(LOC.Get("PRJ_ALI_Error_Invalid_Project"));
             return;
         }
 
         if (curProject.Handler.ProjectData == null)
         {
-            UIHelper.WrappedText("A valid project must be selected to use this editor.");
+            UIHelper.WrappedText(LOC.Get("PRJ_ALI_Error_Invalid_Project"));
             return;
         }
 
         if (curProject.Descriptor == null)
         {
-            UIHelper.WrappedText("A valid project must be selected to use this editor.");
+            UIHelper.WrappedText(LOC.Get("PRJ_ALI_Error_Invalid_Project"));
             return;
         }
 
         if (Smithbox.Orchestrator.ProjectEditor.SelectedLoadedEntry == null)
         {
-            UIHelper.WrappedText("A loaded project must be selected to use this editor.");
+            UIHelper.WrappedText(LOC.Get("PRJ_ALI_Error_No_Loaded_Project"));
             return;
         }
 
@@ -86,16 +81,19 @@ public class ProjectAliasMenu
 
     public void FileMenu()
     {
-        if (ImGui.BeginMenu("File"))
+        // File
+        if (ImGui.BeginMenu($"{LOC.Get("PRJ_ALI_Menu_File")}##fileMenuHeader"))
         {
-            if (ImGui.Selectable("Save Local Aliases"))
+            // Save Local Aliases
+            if (ImGui.Selectable($"{LOC.Get("PRJ_ALI_Menu_Save_Local_Aliases")}##saveLocalAliasesAction"))
             {
                 SaveLocalAliases();
             }
 
+            // Save Base Aliases
             if (CFG.Current.Developer_Enable_Tools)
             {
-                if (ImGui.Selectable("Save Base Aliases"))
+                if (ImGui.Selectable($"{LOC.Get("PRJ_ALI_Menu_Save_Base_Aliases")}##saveBaseAliasesAction"))
                 {
                     SaveBaseAliases();
                 }
@@ -109,25 +107,28 @@ public class ProjectAliasMenu
     {
         var curProject = Smithbox.Orchestrator.SelectedProject;
 
-        if (ImGui.BeginMenu("Data Source"))
+        // Data Source
+        if (ImGui.BeginMenu($"{LOC.Get("PRJ_ALI_Menu_Data_Source")}##dataSourceMenuHeader"))
         {
-            if (ImGui.MenuItem("Base Source"))
+            // Base Source
+            if (ImGui.MenuItem($"{LOC.Get("PRJ_ALI_Menu_Base_Source")}##baseSourceSelect"))
             {
                 CFG.Current.Project_Alias_Editor_Use_Base_Source = !CFG.Current.Project_Alias_Editor_Use_Base_Source;
 
                 curProject.Handler.ProjectData.ReloadAliases();
             }
             UIHelper.ShowActiveStatus(CFG.Current.Project_Alias_Editor_Use_Base_Source);
-            UIHelper.Tooltip($"If enabled, the source files from Smithbox are included in the Alias Lists.");
+            UIHelper.Tooltip(LOC.Get("PRJ_ALI_Menu_Base_Source_TT"));
 
-            if (ImGui.MenuItem("Project Source"))
+            // Project Source
+            if (ImGui.MenuItem($"{LOC.Get("PRJ_ALI_Menu_Project_Source")}##projectSourceSelect"))
             {
                 CFG.Current.Project_Alias_Editor_Use_Project_Source = !CFG.Current.Project_Alias_Editor_Use_Project_Source;
 
                 curProject.Handler.ProjectData.ReloadAliases();
             }
             UIHelper.ShowActiveStatus(CFG.Current.Project_Alias_Editor_Use_Project_Source);
-            UIHelper.Tooltip($"If enabled, the source files unique to this project are included in the Alias Lists.");
+            UIHelper.Tooltip(LOC.Get("PRJ_ALI_Menu_Project_Source_TT"));
 
             ImGui.EndMenu();
         }
@@ -137,49 +138,79 @@ public class ProjectAliasMenu
     {
         var curProject = Smithbox.Orchestrator.SelectedProject;
 
-        if (ImGui.BeginMenu("Options"))
+        // Options
+        if (ImGui.BeginMenu($"{LOC.Get("PRJ_ALI_Menu_Options")}##optionsMenuHeader"))
         {
             if (CFG.Current.Developer_Enable_Tools)
             {
-                if (ImGui.BeginMenu("Save"))
+                // Save Shortcut applies to Base Source
+                if (ImGui.BeginMenu($"{LOC.Get("PRJ_ALI_Menu_Save")}##saveMenuHeader"))
                 {
-                    ImGui.Checkbox("Save Shortcut applies to Base Source", ref CFG.Current.Project_Alias_Editor_Save_Applies_To_Base);
-                    UIHelper.Tooltip("If enabled, the save shortcut will save to base aliases, rather than local.");
+                    // Save Shortcut 
+                    ImGui.Checkbox(
+                        $"{LOC.Get("PRJ_ALI_Menu_Save_Shortcut_Saves_To_Base_Source")}#saveShortcutToggleAction", 
+                        ref CFG.Current.Project_Alias_Editor_Save_Applies_To_Base);
+
+                    UIHelper.Tooltip(
+                        LOC.Get("PRJ_ALI_Menu_Save_Shortcut_Saves_To_Base_Source_TT"));
 
                     ImGui.EndMenu();
                 }
             }
 
-            if (ImGui.BeginMenu("Add"))
+            // Add
+            if (ImGui.BeginMenu($"{LOC.Get("PRJ_ALI_Menu_Add")}##addMenuHeader"))
             {
-                ImGui.Checkbox("Insert New at Top", ref CFG.Current.Project_Alias_Editor_Add_Insert_At_Top);
-                UIHelper.Tooltip("If enabled, adding a new alias via the icon button will place it at the top of the list, rather than the bottom.");
+                // Insert New at Top
+                ImGui.Checkbox(
+                    $"{LOC.Get("PRJ_ALI_Menu_Insert_New_At_Top")}##insertAtTopToggleAction", 
+                    ref CFG.Current.Project_Alias_Editor_Add_Insert_At_Top);
+
+                UIHelper.Tooltip(
+                    LOC.Get("PRJ_ALI_Menu_Insert_New_At_Top_TT"));
 
                 ImGui.EndMenu();
             }
 
-            if (ImGui.BeginMenu("List Copy"))
+            // List Copy
+            if (ImGui.BeginMenu($"{LOC.Get("PRJ_ALI_Menu_List_Copy")}##listCoptMenuHeader"))
             {
-                UIHelper.SimpleHeader("Export Delimiter", "");
-                ImGui.InputText("##exportDelimiter", ref CFG.Current.Project_Alias_Export_Delimiter, 255);
-                UIHelper.Tooltip("Set the delimiter to use when exporting the alias lists via 'Copy Entries as Text'");
+                // Export Delimiter
+                UIHelper.SimpleHeader(
+                    LOC.Get("PRJ_ALI_Header_Export_Delimiter"),
+                    LOC.Get("PRJ_ALI_Header_Export_Delimiter_TT"));
 
-                ImGui.Checkbox("Ignore Empty on Export", ref CFG.Current.Project_Alias_Editor_Export_Ignore_Empty);
-                UIHelper.Tooltip("If enabled, empty entries will be ignored by the 'Copy Entries as Text' action.");
+                ImGui.InputText("##exportDelimiter", 
+                    ref CFG.Current.Project_Alias_Export_Delimiter, 255);
+
+                // Ignore Empty on Export
+                ImGui.Checkbox(
+                    $"{LOC.Get("PRJ_ALI_Checkbox_Ignore_Empty_On_Export")}##ignoreEmptyToggle", 
+                    ref CFG.Current.Project_Alias_Editor_Export_Ignore_Empty);
+
+                UIHelper.Tooltip(
+                    LOC.Get("PRJ_ALI_Checkbox_Ignore_Empty_On_Export_TT"));
 
                 ImGui.EndMenu();
             }
 
-            if (ImGui.BeginMenu("Data Source"))
+            // Data Source
+            if (ImGui.BeginMenu($"{LOC.Get("PRJ_ALI_Menu_Data_Source")}##dataSourceMenuHeader"))
             {
                 // TODO: change this to an auto-merge function that loads both the base and project, and then merges in any changes from base into project.
-                if (ImGui.Selectable("Regenerate Project Source"))
+
+                // Regenerate Project Source
+                if (ImGui.Selectable($"{LOC.Get("PRJ_ALI_Menu_Regenerate_Project_Source")}##regenerateAction"))
                 {
                     var projectDir = Path.Join(curProject.Descriptor.ProjectPath, ".smithbox", "Assets", "Aliases");
 
                     if (Directory.Exists(projectDir))
                     {
-                        var dialog = PlatformUtils.Instance.MessageBox("Delete the current alias source for this project?", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                        // Delete the current alias source for this project?
+                        var dialog = PlatformUtils.Instance.MessageBox(
+                           LOC.Get("PRJ_ALI_Dialog_Delete_Current_Alias"),
+                           LOC.Get("SYS_Warning_Header"),
+                           MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
 
                         if (dialog is DialogResult.OK)
                         {
@@ -192,7 +223,8 @@ public class ProjectAliasMenu
                         }
                     }
                 }
-                UIHelper.Tooltip("Regenerates the project source associated with this project to use the latest base source. NOTE: this will remove all custom entries unique to the project.");
+                UIHelper.Tooltip(
+                    LOC.Get("PRJ_ALI_Menu_Regenerate_Project_Source_TT"));
 
                 ImGui.EndMenu();
             }
@@ -203,10 +235,11 @@ public class ProjectAliasMenu
 
     public void EditMenu()
     {
-        if (ImGui.BeginMenu("Edit"))
+        // Edit
+        if (ImGui.BeginMenu($"{LOC.Get("PRJ_ALI_Menu_Edit")}##editMenuHeader"))
         {
             // Undo
-            if (ImGui.MenuItem($"Undo", $"{InputManager.GetHint(KeybindID.Undo)} / {InputManager.GetHint(KeybindID.Undo_Repeat)}"))
+            if (ImGui.MenuItem($"{LOC.Get("PRJ_ALI_Menu_Undo")}##undoAction", $"{InputManager.GetHint(KeybindID.Undo)} / {InputManager.GetHint(KeybindID.Undo_Repeat)}"))
             {
                 if (ActionManager.CanUndo())
                 {
@@ -215,7 +248,7 @@ public class ProjectAliasMenu
             }
 
             // Undo All
-            if (ImGui.MenuItem($"Undo All"))
+            if (ImGui.MenuItem($"{LOC.Get("PRJ_ALI_Menu_Undo_All")}##undoAllAction"))
             {
                 if (ActionManager.CanUndo())
                 {
@@ -224,7 +257,7 @@ public class ProjectAliasMenu
             }
 
             // Redo
-            if (ImGui.MenuItem($"Redo", $"{InputManager.GetHint(KeybindID.Redo)} / {InputManager.GetHint(KeybindID.Redo_Repeat)}"))
+            if (ImGui.MenuItem($"{LOC.Get("PRJ_ALI_Menu_Redo")}##redoAction", $"{InputManager.GetHint(KeybindID.Redo)} / {InputManager.GetHint(KeybindID.Redo_Repeat)}"))
             {
                 if (ActionManager.CanRedo())
                 {
@@ -287,7 +320,10 @@ public class ProjectAliasMenu
 
     public void DisplayEditor()
     {
-        UIHelper.SimpleHeader("Aliases", "");
+        // Aliases
+        UIHelper.SimpleHeader(
+            LOC.Get("PRJ_ALI_Header_Aliases"),
+            LOC.Get("PRJ_ALI_Header_Aliases_TT"));
 
         DisplayEditorTable();
     }
@@ -319,8 +355,10 @@ public class ProjectAliasMenu
 
             bool selected = entry == SelectedAliasType;
 
+            var displayName = LOC.Get(entry.GetDisplayName());
+
             ImGui.AlignTextToFramePadding();
-            if (ImGui.Selectable($"{Icons.List} {entry.GetDisplayName()}", selected))
+            if (ImGui.Selectable($"{Icons.List} {displayName}", selected))
             {
                 SelectedAliasType = entry;
                 SelectedEntries.Clear();
@@ -335,7 +373,8 @@ public class ProjectAliasMenu
         {
             if (ImGui.BeginPopupContextItem($"AliasTypeContextMenu"))
             {
-                if (ImGui.Selectable($"Copy Entries as Text"))
+                // Copy Entries as Text
+                if (ImGui.Selectable($"{LOC.Get("PRJ_ALI_Action_Copy_Entries_As_Text")}##copyEntriesAsTextAction"))
                 {
                     var entries = new List<string>();
 
@@ -359,7 +398,8 @@ public class ProjectAliasMenu
 
                 if (CFG.Current.Developer_Enable_Tools)
                 {
-                    if (ImGui.Selectable($"Copy Entries as Table"))
+                    // Copy Entries as Table
+                    if (ImGui.Selectable($"{LOC.Get("PRJ_ALI_Action_Copy_Entries_As_Table")}##copyEntriesAsTableAction"))
                     {
                         var entries = new List<string>();
 
@@ -390,7 +430,7 @@ public class ProjectAliasMenu
 
         if (SelectedAliasType == ProjectAliasType.None)
         {
-            ImGui.TextDisabled("Select an alias type.");
+            ImGui.TextDisabled(LOC.Get("PRJ_ALI_Select_Alias_Type"));
             return;
         }
 
@@ -401,7 +441,10 @@ public class ProjectAliasMenu
         if (source.Count == 0)
         {
             UIHelper.MultiButtonInput("aliasActions",
-                "addAlias", "Add Alias", "", AddAliasToList);
+                "addAlias", 
+                LOC.Get("PRJ_ALI_Action_Add_Alias"),
+                LOC.Get("PRJ_ALI_Action_Add_Alias_TT"),
+                AddAliasToList);
         }
         else
         {
@@ -462,7 +505,7 @@ public class ProjectAliasMenu
     {
         ImGui.InputTextWithHint(
             "##aliasFilter",
-            "Filter by ID, name, or tag...",
+            LOC.Get("PRJ_ALI_Alias_Filter_Hint"),
             ref AliasEntryFilter,
             255
         );
@@ -474,7 +517,8 @@ public class ProjectAliasMenu
         {
             AddAliasToList();
         }
-        UIHelper.Tooltip("Add new alias entry.");
+        UIHelper.Tooltip(
+            LOC.Get("PRJ_ALI_Button_Add_Alias_TT"));
 
         // Sort
         ImGui.SameLine();
@@ -483,7 +527,8 @@ public class ProjectAliasMenu
         {
             source.Sort();
         }
-        UIHelper.Tooltip("Sort alias list alphanumerically.");
+        UIHelper.Tooltip(
+            LOC.Get("PRJ_ALI_Button_Sort_Aliases_TT"));
 
         // Read Only Toggle
         ImGui.SameLine();
@@ -493,18 +538,20 @@ public class ProjectAliasMenu
             ReadOnlyMode = !ReadOnlyMode;
         }
 
-        var readOnlyMode = "Read-only";
+        var readOnlyMode = LOC.Get("PRJ_ALI_Alias_Read_Only_Active");
         if (!ReadOnlyMode)
         {
-            readOnlyMode = "Edit";
+            readOnlyMode = LOC.Get("PRJ_ALI_Alias_Read_Only_Inactive");
         }
-        UIHelper.Tooltip($"Toggle whether the aliases are editable or not.\nCurrent Mode: {readOnlyMode}");
+        UIHelper.Tooltip(
+            LOC.Get("PRJ_ALI_Button_Read_Only_Toggle_TT", readOnlyMode));
 
         // Entries
         ImGui.SameLine();
 
         ImGui.AlignTextToFramePadding();
-        ImGui.Text($"Entries ({source.Count})");
+        ImGui.Text(
+            LOC.Get("PRJ_ALI_Alias_Count", $"{source.Count}"));
     }
     #endregion
 
@@ -530,7 +577,9 @@ public class ProjectAliasMenu
                 ImGui.SetDragDropPayload("ALIAS_ENTRY", &dummy, 1);
             }
 
-            ImGui.Text($"Move {curEntry.Name}");
+            ImGui.Text(
+                LOC.Get("PRJ_ALI_Drag_Action_TT", curEntry.Name));
+
             ImGui.EndDragDropSource();
         }
 
@@ -558,12 +607,12 @@ public class ProjectAliasMenu
     {
         if (ImGui.BeginPopupContextItem($"entry_ctx_{index}"))
         {
-            if (ImGui.Selectable("Duplicate"))
+            if (ImGui.Selectable($"{LOC.Get("PRJ_ALI_Context_Duplicate")}##duplicateAction"))
             {
                 DuplicateAliases();
             }
 
-            if (ImGui.Selectable("Delete"))
+            if (ImGui.Selectable($"{LOC.Get("PRJ_ALI_Context_Delete")}##deleteAction"))
             {
                 DeleteAliases();
             }
@@ -885,7 +934,7 @@ public class ProjectAliasMenu
         if (!Directory.Exists(projectFolder))
             Directory.CreateDirectory(projectFolder);
 
-        SaveAliases(projectFolder, "Saved project aliases.");
+        SaveAliases(projectFolder, LOC.Get("PRJ_ALI_Saved_Project_Aliases"));
 
     }
 
@@ -900,7 +949,7 @@ public class ProjectAliasMenu
         if (!Directory.Exists(dir))
             Directory.CreateDirectory(dir);
 
-        SaveAliases(dir, "Saved base aliases.");
+        SaveAliases(dir, LOC.Get("PRJ_ALI_Saved_Base_Aliases"));
     }
 
     public void SaveAliases(string targetPath, string saveMessage)
@@ -989,7 +1038,7 @@ public class ProjectAliasMenu
 
             File.WriteAllText(path, json);
 
-            Smithbox.Log<ProjectAliasMenu>("Saved project aliases.");
+            Smithbox.Log<ProjectAliasMenu>(LOC.Get("PRJ_ALI_Saved_Project_Aliases"));
         }
     }
 

@@ -27,7 +27,8 @@ public static class ModEngineHandler
 
         if (!Directory.Exists(CFG.Current.Project_ME3_Profile_Directory))
         {
-            Smithbox.Log(typeof(ModEngineHandler), "The current ME3 profile directory does not exist. Please configure the ME3 profile directory within the settings to a valid directory.");
+            Smithbox.Log(typeof(ModEngineHandler), 
+                LOC.Get("PRJ_UTL_ME3_Profile_Missing"));
             return;
         }
 
@@ -105,7 +106,7 @@ public static class ModEngineHandler
         }
         else
         {
-            Smithbox.Log(typeof(ModEngineHandler), $"[Project] Failed to find profile: {readPath}");
+            Smithbox.Log(typeof(ModEngineHandler), LOC.Get("PRJ_UTL_ME3_Find_Profile_FAIL", readPath));
         }
     }
 }

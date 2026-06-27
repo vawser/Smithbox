@@ -40,12 +40,8 @@ public class CFG
     /// System
     ///------------------------------------------------------------
     // Preferences
-    public bool System_Check_Program_Update = true;
-    public bool System_Enable_Soapstone_Server = true;
     public bool System_Ignore_Read_Asserts = false;
     public bool System_Apply_DCX_Heuristic = false;
-
-    public RenderingBackend System_RenderingBackend = RenderingBackend.Vulkan;
 
     public bool Logger_Enable_Action_Log = true;
     public bool Logger_Enable_Warning_Log = true;

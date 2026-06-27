@@ -206,54 +206,54 @@ public class ProjectEditorHandler : IDisposable
     public void LogDataResults()
     {
         if (_projectDataTask?.Result == true)
-            Smithbox.Log(this, "[Project] Setup Project Data.");
+            Smithbox.Log(this, LOC.Get("PRJ_DAT_Setup_Project_Data_PASS"));
         else
-            Smithbox.LogError(this, "[Project] Failed to setup Project Data.");
+            Smithbox.LogError(this, LOC.Get("PRJ_DAT_Setup_Project_Data_FAIL"));
 
         if (_mapDataTask != null)
             Smithbox.Log(this, _mapDataTask.Result
-                ? "[Visual Map Editor] Setup Map Data Banks."
-                : "[Visual Map Editor] Failed to setup Map Data Banks.");
+                ? LOC.Get("PRJ_DAT_Setup_Map_Data_PASS")
+                : LOC.Get("PRJ_DAT_Setup_Map_Data_FAIL"));
 
         if (_modelDataTask != null)
             Smithbox.Log(this, _modelDataTask.Result
-                ? "[Model Editor] Setup Model Data Banks."
-                : "[Model Editor] Failed to setup Model Data Banks.");
+                ? LOC.Get("PRJ_DAT_Setup_Model_Data_PASS")
+                : LOC.Get("PRJ_DAT_Setup_Model_Data_FAIL"));
 
         if (_materialDataTask != null)
             Smithbox.Log(this, _materialDataTask.Result
-                ? "[Material Data] Setup Material Data."
-                : "[Material Data] Failed to setup Material Data.");
+                ? LOC.Get("PRJ_DAT_Setup_Material_Data_PASS")
+                : LOC.Get("PRJ_DAT_Setup_Material_Data_FAIL"));
 
         if (_paramDataTask != null)
             Smithbox.Log(this, _paramDataTask.Result
-                ? "[Param Editor] Setup PARAM Banks."
-                : "[Param Editor] Failed to setup PARAM Banks.");
+                ? LOC.Get("PRJ_DAT_Setup_Param_Data_PASS")
+                : LOC.Get("PRJ_DAT_Setup_Param_Data_FAIL"));
 
         if (_textDataTask != null)
             Smithbox.Log(this, _textDataTask.Result
-                ? "[Text Editor] Setup FMG Banks."
-                : "[Text Editor] Failed to setup FMG Banks.");
+                ? LOC.Get("PRJ_DAT_Setup_Text_Data_PASS")
+                : LOC.Get("PRJ_DAT_Setup_Text_Data_FAIL"));
 
         if (_gparamDataTask != null)
             Smithbox.Log(this, _gparamDataTask.Result
-                ? "[Graphics Param Editor] Setup GPARAM Banks."
-                : "[Graphics Param Editor] Failed to setup GPARAM Banks.");
+                ? LOC.Get("PRJ_DAT_Setup_Gparam_Data_PASS")
+                : LOC.Get("PRJ_DAT_Setup_Gparam_Data_FAIL"));
 
         if (_textureDataTask != null)
             Smithbox.Log(this, _textureDataTask.Result
-                ? "[Texture Viewer] Setup the Texture Bank."
-                : "[Texture Viewer] Failed to setup Texture Bank.");
+                ? LOC.Get("PRJ_DAT_Setup_Texture_Data_PASS")
+                : LOC.Get("PRJ_DAT_Setup_Texture_Data_FAIL"));
 
         if (_animDataTask != null)
             Smithbox.Log(this, _animDataTask.Result
-                ? "[Animation Editor] Setup Animation Bank."
-                : "[Animation Editor] Failed to setup Animation Bank.");
+                ? LOC.Get("PRJ_DAT_Setup_Anim_Data_PASS")
+                : LOC.Get("PRJ_DAT_Setup_Anim_Data_FAIL"));
 
         if (_mapDataDataTask != null)
             Smithbox.Log(this, _mapDataDataTask.Result
-                ? "[Map Data Editor] Setup Map Data Banks."
-                : "[Map Data Editor] Failed to setup Map Data Banks.");
+                ? LOC.Get("PRJ_DAT_Setup_Map_Data_PASS")
+                : LOC.Get("PRJ_DAT_Setup_Map_Data_FAIL"));
     }
 
     public void InitializeEditors(ProjectInitType initType)

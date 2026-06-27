@@ -1,0 +1,32 @@
+{
+  "Entries": [
+    {
+      "Key": "PRJ_Window_Project_Editor",
+      "Text": "Projects"
+    },
+    {
+      "Key": "PRJ_Window_Project_View",
+      "Text": "Project View"
+    },
+    {
+      "Key": "PRJ_Window_Active_Projects",
+      "Text": "Active Projects"
+    },
+    {
+      "Key": "PRJ_Window_Available_Projects",
+      "Text": "Available Projects"
+    },
+    {
+      "Key": "PRJ_Window_Project_Configuration",
+      "Text": "Project Configuration"
+    },
+    {
+      "Key": "PRJ_Window_Project_Aliases",
+      "Text": "Project Aliases"
+    },
+    {
+      "Key": "PRJ_Window_Project_Enums",
+      "Text": "Project Enums"
+    }
+  ]
+}
