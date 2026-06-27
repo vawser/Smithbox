@@ -9,36 +9,36 @@ namespace StudioCore.Keybinds;
 
 public enum InputCategory
 {
-    [Display(Name = "Viewport")]
+    [Display(Name = "INPUT_CATEGORY_Viewport")]
     Viewport,
 
-    [Display(Name = "Common")]
+    [Display(Name = "INPUT_CATEGORY_Common")]
     Common,
 
-    [Display(Name = "Contextual")]
+    [Display(Name = "INPUT_CATEGORY_Contextual")]
     Contextual,
 
-    [Display(Name = "Map Editor")]
+    [Display(Name = "INPUT_CATEGORY_Map_Editor")]
     MapEditor,
 
-    [Display(Name = "Model Editor")]
+    [Display(Name = "INPUT_CATEGORY_Model_Editor")]
     ModelEditor,
 
-    [Display(Name = "Param Editor")]
+    [Display(Name = "INPUT_CATEGORY_Param_Editor")]
     ParamEditor,
 
-    [Display(Name = "Text Editor")]
+    [Display(Name = "INPUT_CATEGORY_Text_Editor")]
     TextEditor,
 
-    [Display(Name = "Graphics Param Editor")]
+    [Display(Name = "INPUT_CATEGORY_Graphics_Param_Editor")]
     GparamEditor,
 
-    [Display(Name = "Material Editor")]
+    [Display(Name = "INPUT_CATEGORY_Material_Editor")]
     MaterialEditor,
 
-    [Display(Name = "Texture Viewer")]
+    [Display(Name = "INPUT_CATEGORY_Texture_Viewerr")]
     TextureViewer,
 
-    [Display(Name = "Developer")]
+    [Display(Name = "INPUT_CATEGORY_Developer")]
     Developer
 }

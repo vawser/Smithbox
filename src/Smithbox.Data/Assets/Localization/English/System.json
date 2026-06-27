@@ -1,12 +1,112 @@
 {
   "Entries": [
     {
+      "Key": "PROGRAM_TITLE",
+      "Text": "Smithbox"
+    },
+    {
+      "Key": "GIT_REPO_NAME",
+      "Text": "Smithbox"
+    },
+    {
+      "Key": "GIT_REPO_OWNER",
+      "Text": "vawser"
+    },
+    {
+      "Key": "PROGRAM_Menu_Header_Preferences",
+      "Text": "Preferences"
+    },
+    {
+      "Key": "PROGRAM_Menu_Header_Shortcuts",
+      "Text": "Shortcuts"
+    },
+    {
+      "Key": "PROGRAM_Menu_Header_Help",
+      "Text": "Help"
+    },
+    {
+      "Key": "SYS_VULKAN_CONTEXT_FAILED",
+      "Text": "Failed to create Vulkan context, falling back to OpenGL"
+    },
+    {
+      "Key": "SYS_SOAPSTONE_SERVER_RUNNING",
+      "Text": "Soapstone server is running."
+    },
+    {
+      "Key": "SYS_SOAPSTONE_SERVER_STOPPED",
+      "Text": "Soapstone server is stopped."
+    },
+    {
       "Key": "SYS_Warning_Header",
       "Text": "Warning"
     },
     {
+      "Key": "SYS_Error_Header",
+      "Text": "Error"
+    },
+    {
       "Key": "SYS_Header",
       "Text": "[System]"
+    },
+    {
+      "Key": "SYS_CFG_Failed_To_Deserialize",
+      "Text": "Failed to deserialize CFG file: {0}"
+    },
+    {
+      "Key": "SYS_CFG_Failed_To_Read",
+      "Text": "Failed to read CFG file: {0}\nRestored default configuration."
+    },
+    {
+      "Key": "SYS_FAILED_TO_SAVE_CONFIG",
+      "Text": "Unable to save config during crash recovery.\nIf you continue to crash on startup, delete config in {0}\n\n{1} {2}"
+    },
+    {
+      "Key": "SYS_EXCEPTION_DETAILS",
+      "Text": "Exception Details:"
+    },
+    {
+      "Key": "HELP_Developed_By",
+      "Text": "Developed by Vawser."
+    },
+    {
+      "Key": "HELP_Current_Version",
+      "Text": "Smithbox Version: {0}"
+    },
+    {
+      "Key": "HELP_Action_Go_To_Wiki",
+      "Text": "Go to Wiki"
+    },
+    {
+      "Key": "HELP_Action_Go_To_Wiki_TT",
+      "Text": "Go to the SoulsModding Wiki."
+    },
+    {
+      "Key": "HELP_Wiki_Link",
+      "Text": "https://soulsmodding.com/doku.php?id=smithbox"
+    },
+    {
+      "Key": "HELP_Action_Go_To_Github",
+      "Text": "Go to Github Repository"
+    },
+    {
+      "Key": "HELP_Action_Go_To_Github_TT",
+      "Text": "Go to the Github repository page."
+    },
+    {
+      "Key": "HELP_Github_Link",
+      "Text": "https://github.com/vawser/Smithbox"
+    },
+    {
+      "Key": "SYS_Menu_Header_Update",
+      "Text": "Update"
+    },
+    {
+      "Key": "SYS_Menu_Go_To_Release",
+      "Text": "Go to Release"
+    },
+    {
+      "Key": "SYS_Failed_Smithbox_Release",
+      "Text": "Failed to find Smithbox release."
     }
   ]
 }

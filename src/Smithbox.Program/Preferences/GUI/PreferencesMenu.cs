@@ -72,7 +72,7 @@ public class PreferencesMenu
                 InitialLayout = true;
             }
 
-            if (ImGui.Begin("Preferences##appSettingsMenu", ref IsDisplayed, UIHelper.GetEditorPopupWindowFlags()))
+            if (ImGui.Begin("Preferences##appSettingsMenu", ref IsDisplayed, UIHelper.GetFloatingWindowFlags()))
             {
                 ImGui.BeginMenuBar();
 
@@ -232,6 +232,7 @@ public class PreferencesMenu
         if (!IsDisplayed && _wasDisplayedLastFrame)
         {
             CFG.Save();
+            Startup.Save();
             Smithbox.Log(this, "Preferences saved.", LogLevel.Information);
         }
 

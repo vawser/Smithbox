@@ -1,17 +1,9 @@
 ﻿using Hexa.NET.ImGui;
-using Microsoft.Extensions.Logging;
-using SoulsFormats.Util;
 using StudioCore.Application;
 using StudioCore.Utilities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Veldrid;
 
 namespace StudioCore.Keybinds;
-
 
 public class KeybindsMenu
 {
@@ -39,22 +31,25 @@ public class KeybindsMenu
                 InitialLayout = true;
             }
 
-            if (ImGui.Begin("Shortcuts##keybindsMenu", ref IsDisplayed, UIHelper.GetEditorPopupWindowFlags()))
+            if (ImGui.Begin($"{LOC.Get("INPUT_Window_Shortcuts")}###keybindsMenu", ref IsDisplayed, UIHelper.GetFloatingWindowFlags()))
             {
                 ImGui.BeginMenuBar();
 
-                if(ImGui.BeginMenu("Options"))
+                if(ImGui.BeginMenu($"{LOC.Get("INPUT_Menu_Header_Options")}##optionsMenuHeader"))
                 {
-                    if(ImGui.MenuItem("Save"))
+                    if(ImGui.MenuItem($"{LOC.Get("INPUT_Menu_Save_Action")}##saveAction"))
                     {
                         InputManager.SaveKeybinds();
                         InputManager.SaveMousebinds();
-                        Smithbox.Log(this, "Shortcuts saved.");
+                        Smithbox.Log(this, LOC.Get("INPUT_Saved_Keybinds"));
                     }
 
-                    if (ImGui.MenuItem("Revert All to Default"))
+                    if (ImGui.MenuItem($"{LOC.Get("INPUT_Menu_Revert_All_Action")}##revertAllAction"))
                     {
-                        var dialog = PlatformUtils.Instance.MessageBox("Are you sure?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                        var dialog = PlatformUtils.Instance.MessageBox(
+                            LOC.Get("INPUT_Menu_Revert_All_Confirm"),
+                            LOC.Get("SYS_Warning_Header"), 
+                            MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                         if (dialog is DialogResult.Yes)
                         {
@@ -70,7 +65,7 @@ public class KeybindsMenu
 
                 ImGui.BeginTabBar("shortcutTabs");
 
-                if (ImGui.BeginTabItem("Keybinds"))
+                if (ImGui.BeginTabItem($"{LOC.Get("INPUT_Tab_Keybinds")}##keybindsTab"))
                 {
                     DrawKeybindSearchBar();
 
@@ -85,7 +80,7 @@ public class KeybindsMenu
                     ImGui.EndTabItem();
                 }
 
-                if (ImGui.BeginTabItem("Mousebinds"))
+                if (ImGui.BeginTabItem($"{LOC.Get("INPUT_Tab_Mousebinds")}##mousebindsTab"))
                 {
                     DrawMousebindSearchBar();
 
@@ -109,7 +104,7 @@ public class KeybindsMenu
         {
             InputManager.SaveKeybinds();
             InputManager.SaveMousebinds();
-            Smithbox.Log(this, "Shortcuts saved.");
+            Smithbox.Log(this, LOC.Get("INPUT_Saved_Keybinds"));
         }
 
         _wasDisplayedLastFrame = IsDisplayed;
@@ -149,12 +144,12 @@ public class KeybindsMenu
     private void DrawKeybindSearchBar()
     {
         ImGui.PushItemWidth(-1);
-        ImGui.InputTextWithHint("##ShortcutSearch", "Search shortcuts...", ref _search, 128);
+        ImGui.InputTextWithHint("##ShortcutSearch", LOC.Get("INPUT_Keybinds_Filter_Hint"), ref _search, 128);
         ImGui.PopItemWidth();
 
         ImGui.SameLine();
 
-        if (ImGui.SmallButton("X"))
+        if (ImGui.SmallButton($"{LOC.Get("INPUT_Keybinds_Filter_Clear")}##clearKeybindFilter"))
         {
             _search = "";
         }
@@ -194,7 +189,9 @@ public class KeybindsMenu
 
             var flags = ImGuiTreeNodeFlags.DefaultOpen;
 
-            if (ImGui.CollapsingHeader(categoryGroup.Key.GetDisplayName(), flags))
+            var previewName = LOC.Get(categoryGroup.Key.GetDisplayName());
+
+            if (ImGui.CollapsingHeader(previewName, flags))
             {
                 if (ImGui.BeginTable($"KeybindTable_{categoryGroup.Key}", 4,
                     ImGuiTableFlags.Borders |
@@ -212,7 +209,8 @@ public class KeybindsMenu
                         var name = "Unassigned";
                         var desc = "";
 
-                        var presentation = KeybindMetadata.Presentation[action];
+                        var keybindTitle = action.GetDisplayName();
+                        var keybindDesc = action.GetDescription();
 
                         ImGui.TableNextRow();
 
@@ -227,7 +225,7 @@ public class KeybindsMenu
                                 bindings[i] = defaultBinding.Clone();
                             }
                         }
-                        UIHelper.Tooltip("Reset the binding to its default.");
+                        UIHelper.Tooltip(LOC.Get("INPUT_Action_Revert_Binding"));
 
                         ImGui.SameLine();
 
@@ -240,16 +238,16 @@ public class KeybindsMenu
                                 bindings[i].Key = Key.Unknown;
                             }
                         }
-                        UIHelper.Tooltip("Clear the binding.");
+                        UIHelper.Tooltip(LOC.Get("INPUT_Action_Clear_Binding"));
 
-                        if (presentation.Item1 != null)
+                        if (keybindTitle != null)
                         {
-                            name = presentation.Item1;
+                            name = LOC.Get(keybindTitle);
                         }
 
-                        if (presentation.Item2 != null)
+                        if (keybindDesc != null)
                         {
-                            desc = presentation.Item2;
+                            desc = LOC.Get(keybindDesc);
                         }
 
                         ImGui.TableSetColumnIndex(1);
@@ -269,7 +267,7 @@ public class KeybindsMenu
                                 _listeningIndex == i;
 
                             string label = listening
-                                ? "Press combo..."
+                                ? LOC.Get("INPUT_Action_Press_Combo")
                                 : FormatKeyBinding(b);
 
                             if (ImGui.Button($"{label}##{action}_{i}"))
@@ -323,9 +321,9 @@ public class KeybindsMenu
     private string FormatKeyBinding(InputManager.KeyBinding b)
     {
         string s = "";
-        if (b.Ctrl) s += "Ctrl+";
-        if (b.Shift) s += "Shift+";
-        if (b.Alt) s += "Alt+";
+        if (b.Ctrl) s += LOC.Get("KEY_Modifier_Ctrl_Plus");
+        if (b.Shift) s += LOC.Get("KEY_Modifier_Shift_Plus");
+        if (b.Alt) s += LOC.Get("KEY_Modifier_Alt_Plus");
         s += b.Key.ToString();
         return s;
     }
@@ -336,6 +334,12 @@ public class KeybindsMenu
             return true;
 
         var term = _search.Trim().ToLowerInvariant();
+
+        var keybindTitle = action.GetDisplayName();
+        var keybindDesc = action.GetDescription();
+
+        var locTitle = LOC.Get(keybindTitle);
+        var locDesc = LOC.Get(keybindDesc);
 
         // Action name
         if (action.ToString().ToLowerInvariant().Contains(term))
@@ -349,14 +353,14 @@ public class KeybindsMenu
             return true;
 
         // Keybind Name
-        if (KeybindMetadata.Presentation[action].Item1
+        if (locTitle
             .ToString()
             .ToLowerInvariant()
             .Contains(term))
             return true;
 
         // Keybind Description
-        if (KeybindMetadata.Presentation[action].Item2
+        if (locDesc
             .ToString()
             .ToLowerInvariant()
             .Contains(term))
@@ -377,8 +381,10 @@ public class KeybindsMenu
 
         foreach (var (action, _) in actions)
         {
-            var presentation = KeybindMetadata.Presentation[action];
-            string name = presentation.Item1 ?? action.ToString();
+            var keybindTitle = action.GetDisplayName();
+            var locTitle = LOC.Get(keybindTitle);
+
+            string name = locTitle ?? action.ToString();
 
             float width = ImGui.CalcTextSize(name).X;
             if (width > maxWidth)
@@ -413,12 +419,12 @@ public class KeybindsMenu
     private void DrawMousebindSearchBar()
     {
         ImGui.PushItemWidth(-1);
-        ImGui.InputTextWithHint("##MouseShortcutSearch", "Search shortcuts...", ref _search, 128);
+        ImGui.InputTextWithHint("##MouseShortcutSearch", LOC.Get("INPUT_Mousebinds_Filter_Hint"), ref _search, 128);
         ImGui.PopItemWidth();
 
         ImGui.SameLine();
 
-        if (ImGui.SmallButton("X##mouseX"))
+        if (ImGui.SmallButton($"{LOC.Get("INPUT_Mousebinds_Filter_Clear")}##clearMousebindFilter"))
         {
             _search = "";
         }
@@ -457,7 +463,9 @@ public class KeybindsMenu
 
             var flags = ImGuiTreeNodeFlags.DefaultOpen;
 
-            if (ImGui.CollapsingHeader(categoryGroup.Key.GetDisplayName(), flags))
+            var previewName = LOC.Get(categoryGroup.Key.GetDisplayName());
+
+            if (ImGui.CollapsingHeader(previewName, flags))
             {
                 if (ImGui.BeginTable($"KeybindTable_{categoryGroup.Key}", 4,
                     ImGuiTableFlags.Borders |
@@ -475,7 +483,8 @@ public class KeybindsMenu
                         var name = "Unassigned";
                         var desc = "";
 
-                        var presentation = MousebindMetadata.Presentation[action];
+                        var mousebindTitle = action.GetDisplayName();
+                        var mousebindDesc = action.GetDescription();
 
                         ImGui.TableNextRow();
 
@@ -490,7 +499,7 @@ public class KeybindsMenu
                                 bindings[i] = defaultBinding.Clone();
                             }
                         }
-                        UIHelper.Tooltip("Reset the binding to its default.");
+                        UIHelper.Tooltip(LOC.Get("INPUT_Action_Revert_Binding"));
 
                         ImGui.SameLine();
 
@@ -503,16 +512,16 @@ public class KeybindsMenu
                                 bindings[i].Key = MouseButton.None;
                             }
                         }
-                        UIHelper.Tooltip("Clear the binding.");
+                        UIHelper.Tooltip(LOC.Get("INPUT_Action_Clear_Binding"));
 
-                        if (presentation.Item1 != null)
+                        if (mousebindTitle != null)
                         {
-                            name = presentation.Item1;
+                            name = LOC.Get(mousebindTitle);
                         }
 
-                        if (presentation.Item2 != null)
+                        if (mousebindDesc != null)
                         {
-                            desc = presentation.Item2;
+                            desc = LOC.Get(mousebindDesc);
                         }
 
                         ImGui.TableSetColumnIndex(1);
@@ -532,7 +541,7 @@ public class KeybindsMenu
                                 _mouseListeningIndex == i;
 
                             string label = listening
-                                ? "Press combo..."
+                                ? LOC.Get("INPUT_Action_Press_Combo")
                                 : FormatMouseBinding(b);
 
                             if (ImGui.Button($"{label}##{action}_{i}"))
@@ -583,9 +592,9 @@ public class KeybindsMenu
     private string FormatMouseBinding(InputManager.MouseBinding b)
     {
         string s = "";
-        if (b.Ctrl) s += "Ctrl+";
-        if (b.Shift) s += "Shift+";
-        if (b.Alt) s += "Alt+";
+        if (b.Ctrl) s += LOC.Get("KEY_Modifier_Ctrl_Plus");
+        if (b.Shift) s += LOC.Get("KEY_Modifier_Shift_Plus");
+        if (b.Alt) s += LOC.Get("KEY_Modifier_Alt_Plus");
         s += b.Key.ToString();
         return s;
     }
@@ -596,6 +605,12 @@ public class KeybindsMenu
             return true;
 
         var term = _search.Trim().ToLowerInvariant();
+
+        var mousebindTitle = action.GetDisplayName();
+        var mousebindDesc = action.GetDescription();
+
+        var locName = LOC.Get(mousebindTitle);
+        var locDesc = LOC.Get(mousebindDesc);
 
         // Action name
         if (action.ToString().ToLowerInvariant().Contains(term))
@@ -609,14 +624,14 @@ public class KeybindsMenu
             return true;
 
         // Mousebind Name
-        if (MousebindMetadata.Presentation[action].Item1
+        if (locName
             .ToString()
             .ToLowerInvariant()
             .Contains(term))
             return true;
 
         // Mousebind Description
-        if (MousebindMetadata.Presentation[action].Item2
+        if (locDesc
             .ToString()
             .ToLowerInvariant()
             .Contains(term))
@@ -637,8 +652,10 @@ public class KeybindsMenu
 
         foreach (var (action, _) in actions)
         {
-            var presentation = MousebindMetadata.Presentation[action];
-            string name = presentation.Item1 ?? action.ToString();
+            var mousebindTitle = action.GetDisplayName();
+            var locName = LOC.Get(mousebindTitle);
+
+            string name = locName ?? action.ToString();
 
             float width = ImGui.CalcTextSize(name).X;
             if (width > maxWidth)

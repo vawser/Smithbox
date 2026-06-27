@@ -1,0 +1,32 @@
+{
+  "Entries": [
+    {
+      "Key": "ITF_Theme_Missing_Entry",
+      "Text": "Theme is missing entry, defaulted this vector to 1, 1, 1, 1"
+    },
+    {
+      "Key": "ITF_UI_Failed_Deseralize",
+      "Text": "Failed to derseralize UI JSON."
+    },
+    {
+      "Key": "ITF_UI_Failed_Read",
+      "Text": "Failed to load UI configuration: {0}.\nDefault configuration has been restored."
+    },
+    {
+      "Key": "ITF_Theme_Failed_Deseralize",
+      "Text": "Failed to derseralize Theme JSON."
+    },
+    {
+      "Key": "ITF_Theme_Failed_Read",
+      "Text": "Failed to load Theme configuration: {0}."
+    },
+    {
+      "Key": "ITF_Theme_Already_Exists",
+      "Text": "Theme with this name already exists. Overwrite?"
+    },
+    {
+      "Key": "ITF_Theme_Invalid_Filename",
+      "Text": "Invalid filename for theme."
+    }
+  ]
+}

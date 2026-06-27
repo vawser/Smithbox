@@ -11,10 +11,8 @@ using StudioCore.Logger.GUI;
 using StudioCore.Preferences;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
-using System;
 using System.Diagnostics;
 using System.Globalization;
-using System.IO;
 using System.Numerics;
 using System.Runtime.InteropServices;
 using Tracy;
@@ -66,7 +64,7 @@ public class Smithbox
         Instance = this;
 
         _version = version;
-        _programTitle = $"Smithbox - {_version}";
+        _programTitle = $"{LOC.Get("PROGRAM_TITLE")} - {_version}";
 
         UIHelper.RestoreImguiIfMissing();
         // Hack to make sure dialogs work before the main window is created
@@ -87,7 +85,8 @@ public class Smithbox
             }
             catch (Exception ex)
             {
-                Smithbox.LogWarning(this, "Failed to create Vulkan context, falling back to OpenGL", ex);
+                Smithbox.LogWarning(this, 
+                    LOC.Get("SYS_VULKAN_CONTEXT_FAILED"), ex);
 
                 _context = new OpenGLCompatGraphicsContext();
                 Startup.Current.System_RenderingBackend = RenderingBackend.OpenGL;
@@ -337,9 +336,9 @@ public class Smithbox
         {
             TaskManager.LiveTask task = new(
                 "system_setupSoapstoneServer",
-                "[System]",
-                "Soapstone server is running.",
-                "Soapstone server is not running.",
+                LOC.Get("SYS_Header"),
+                LOC.Get("SYS_SOAPSTONE_SERVER_RUNNING"),
+                LOC.Get("SYS_SOAPSTONE_SERVER_STOPPED"),
                 TaskManager.RequeueType.None,
                 true,
                 () =>
@@ -434,15 +433,17 @@ public class Smithbox
             // Program crashed on initial load, clear recent project to let the user launch the program next time without issue.
             try
             {
+                Startup.Save();
                 CFG.Save();
                 UI.Save();
             }
             catch (Exception e)
             {
-                PlatformUtils.Instance.MessageBox($"Unable to save config during crash recovery.\n" +
-                                                  $"If you continue to crash on startup, delete config in {Path.Join(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Smithbox")}\n\n" +
-                                                  $"{e.Message} {e.StackTrace}",
-                    "Error",
+                var path = Path.Join(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData));
+
+                PlatformUtils.Instance.MessageBox(
+                    LOC.Get("SYS_FAILED_TO_SAVE_CONFIG", path, e.Message, e.StackTrace),
+                    LOC.Get("SYS_Error_Header"),
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
             }
@@ -532,8 +533,12 @@ public class Smithbox
             if (evt.Priority == LogPriority.High && CFG.Current.Logger_Enable_Log_Popups)
             {
                 var popupMessage = evt.Message;
+
                 if (evt.Exception != null)
-                    popupMessage += $"\n\nException Details:\n{evt.Exception}";
+                {
+                    popupMessage += $"\n\n{LOC.Get("SYS_EXCEPTION_DETAILS")}\n{evt.Exception}";
+                }
+
                 PlatformUtils.Instance.MessageBox(popupMessage, evt.Level.ToString(), MessageBoxButtons.OK);
             }
         }
@@ -541,42 +546,44 @@ public class Smithbox
         if (ImGui.BeginMainMenuBar())
         {
             // Preferences
-            if (ImGui.MenuItem("Preferences"))
+            if (ImGui.MenuItem($"{LOC.Get("PROGRAM_Menu_Header_Preferences")}##prefMenuHeader"))
             {
                 PreferencesMenu.IsDisplayed = !PreferencesMenu.IsDisplayed;
             }
 
             // Keybinds
-            if (ImGui.MenuItem("Shortcuts"))
+            if (ImGui.MenuItem($"{LOC.Get("PROGRAM_Menu_Header_Shortcuts")}##shortcutMenuHeader"))
             {
                 KeybindsMenu.IsDisplayed = !KeybindsMenu.IsDisplayed;
             }
 
             // Help
-            if (ImGui.BeginMenu("Help"))
+            if (ImGui.BeginMenu($"{LOC.Get("PROGRAM_Menu_Header_Help")}##helpMenuHeader"))
             {
-                ImGui.Text("Developed by Vawser.");
-                ImGui.Text($"Smithbox Version: {_version}");
+                ImGui.Text(LOC.Get("HELP_Developed_By"));
+                ImGui.Text(LOC.Get("HELP_Current_Version", _version));
 
                 ImGui.Separator();
 
-                if (ImGui.MenuItem("Go to Wiki"))
+                // Go to Wiki
+                if (ImGui.MenuItem($"{LOC.Get("HELP_Action_Go_To_Wiki")}##wikiAction"))
                 {
                     Process myProcess = new();
                     myProcess.StartInfo.UseShellExecute = true;
-                    myProcess.StartInfo.FileName = "https://soulsmodding.com/doku.php?id=smithbox";
+                    myProcess.StartInfo.FileName = LOC.Get("HELP_Wiki_Link");
                     myProcess.Start();
                 }
-                UIHelper.Tooltip("Go to the Github repository page.");
+                UIHelper.Tooltip(LOC.Get("HELP_Action_Go_To_Wiki_TT"));
 
-                if (ImGui.MenuItem("Go to Github Repository"))
+                // Go to Github Repository
+                if (ImGui.MenuItem($"{LOC.Get("HELP_Action_Go_To_Github")}##githubAction"))
                 {
                     Process myProcess = new();
                     myProcess.StartInfo.UseShellExecute = true;
-                    myProcess.StartInfo.FileName = "https://github.com/vawser/Smithbox";
+                    myProcess.StartInfo.FileName = LOC.Get("HELP_Github_Link");
                     myProcess.Start();
                 }
-                UIHelper.Tooltip("Go to the Github repository page.");
+                UIHelper.Tooltip(LOC.Get("HELP_Action_Go_To_Github_TT"));
 
                 if (CFG.Current.Developer_Enable_Tools)
                 {
@@ -617,9 +624,9 @@ public class Smithbox
         {
             ImGui.Separator();
 
-            if (ImGui.BeginMenu("Update"))
+            if (ImGui.BeginMenu($"{LOC.Get("SYS_Menu_Header_Update")}##updateMenuHeader"))
             {
-                if (ImGui.MenuItem("Go to Release"))
+                if (ImGui.MenuItem($"{LOC.Get("SYS_Menu_Go_To_Release")}##releaseAction"))
                 {
                     Process myProcess = new();
                     myProcess.StartInfo.UseShellExecute = true;
@@ -663,13 +670,15 @@ public class Smithbox
         if (!Startup.Current.System_Check_Program_Update)
             return;
 
-        var gitHubClient = new GitHubClient(new ProductHeaderValue("Smithbox"));
+        var gitHubClient = new GitHubClient(new ProductHeaderValue(LOC.Get("GIT_REPO_NAME")));
 
         if (gitHubClient != null)
         {
             try
             {
-                var release = gitHubClient.Repository.Release.GetLatest("vawser", "Smithbox").Result;
+                var release = gitHubClient.Repository.Release.GetLatest(
+                    LOC.Get("GIT_REPO_OWNER"), 
+                    LOC.Get("GIT_REPO_NAME")).Result;
 
                 if (release != null)
                 {
@@ -696,7 +705,7 @@ public class Smithbox
                 }
                 else
                 {
-                    Smithbox.LogError<Smithbox>("Failed to find Smithbox release.");
+                    Smithbox.LogError<Smithbox>(LOC.Get("SYS_Failed_Smithbox_Release"));
                 }
             }
             catch(Exception)
@@ -705,7 +714,7 @@ public class Smithbox
         }
         else
         {
-            Smithbox.LogError<Smithbox>("Failed to find Smithbox repository.");
+            Smithbox.LogError<Smithbox>(LOC.Get("SYS_Failed_Smithbox_Release"));
         }
     }
 

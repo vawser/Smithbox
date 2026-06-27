@@ -69,8 +69,7 @@ public class DeveloperPanel
 
         var curProject = Smithbox.Orchestrator.SelectedProject;
 
-        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_EditorView);
-        if (ImGui.Begin($"{LOC.Get("DEV_Window_Developer_Panel")}###developerPanel", ref Visible))
+        if (ImGui.Begin($"{LOC.Get("DEV_Window_Developer_Panel")}###developerPanel", ref Visible, UIHelper.GetFloatingWindowFlags()))
         {
             ImGui.BeginTabBar("developerTabs");
 

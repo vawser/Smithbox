@@ -1,10 +1,4 @@
-﻿using StudioCore.Keybinds;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 using Veldrid;
 
 namespace StudioCore.Keybinds;
@@ -12,157 +6,411 @@ namespace StudioCore.Keybinds;
 public enum KeybindID
 {
     // Viewport
+    [Display(Name = "KEY_Move_Forward", Description = "KEY_Move_Forward_TT")]
     MoveForward,
+
+    [Display(Name = "KEY_Move_Backward", Description = "KEY_Move_Backward_TT")]
     MoveBackward,
+
+    [Display(Name = "KEY_Move_Left", Description = "KEY_Move_Left_TT")]
     MoveLeft,
+
+    [Display(Name = "KEY_Move_Right", Description = "KEY_Move_Right_TT")]
     MoveRight,
+
+    [Display(Name = "KEY_Move_Up", Description = "KEY_Move_Up_TT")]
     MoveUp,
+
+    [Display(Name = "KEY_Move_Down", Description = "KEY_Move_Down_TT")]
     MoveDown,
+
+    [Display(Name = "KEY_Frame", Description = "KEY_Frame_TT")]
     Frame,
+
+    [Display(Name = "KEY_Pull", Description = "KEY_Pull_TT")]
     Pull,
+
+    [Display(Name = "KEY_Reset", Description = "KEY_Reset_TT")]
     Reset,
+
+    [Display(Name = "KEY_Cycle_Gizmo_Translation_Mode", Description = "KEY_Cycle_Gizmo_Translation_Mode_TT")]
     Cycle_Gizmo_Translation_Mode,
+
+    [Display(Name = "KEY_Cycle_Gizmo_Rotation_Mode", Description = "KEY_Cycle_Gizmo_Rotation_Mode_TT")]
     Cycle_Gizmo_Rotation_Mode,
+
+    [Display(Name = "KEY_Cycle_Gizmo_Scale_Mode", Description = "KEY_Cycle_Gizmo_Scale_Mode_TT")]
     Cycle_Gizmo_Scale_Mode,
+
+    [Display(Name = "KEY_Cycle_Gizmo_Origin_Mode", Description = "KEY_Cycle_Gizmo_Origin_Mode_TT")]
     Cycle_Gizmo_Origin_Mode,
+
+    [Display(Name = "KEY_Cycle_Gizmo_Space_Mode", Description = "KEY_Cycle_Gizmo_Space_Mode_TT")]
     Cycle_Gizmo_Space_Mode,
+
+    [Display(Name = "KEY_Cycle_Render_Outline_Mode", Description = "KEY_Cycle_Render_Outline_Mode_TT")]
     Cycle_Render_Outline_Mode,
 
     // Common Actions
+    [Display(Name = "KEY_Save", Description = "KEY_Save_TT")]
     Save,
+
+    [Display(Name = "KEY_Undo", Description = "KEY_Undo_TT")]
     Undo,
+
+    [Display(Name = "KEY_Redo", Description = "KEY_Redo_TT")]
     Redo,
+
+    [Display(Name = "KEY_Undo_Repeat", Description = "KEY_Undo_Repeat_TT")]
     Undo_Repeat,
+
+    [Display(Name = "KEY_Redo_Repeat", Description = "KEY_Redo_Repeat_TT")]
     Redo_Repeat,
+
+    [Display(Name = "KEY_Up", Description = "KEY_Up_TT")]
     Up,
+
+    [Display(Name = "KEY_Down", Description = "KEY_Down_TT")]
     Down,
+
+    [Display(Name = "KEY_Left", Description = "KEY_Left_TT")]
     Left,
+
+    [Display(Name = "KEY_Right", Description = "KEY_Right_TT")]
     Right,
 
     // Contextual Actions
+    [Display(Name = "KEY_Add", Description = "KEY_Add_TT")]
     Add,
+
+    [Display(Name = "KEY_Select_All", Description = "KEY_Select_All_TT")]
     SelectAll,
+
+    [Display(Name = "KEY_Copy", Description = "KEY_Copy_TT")]
     Copy,
+
+    [Display(Name = "KEY_Paste", Description = "KEY_Paste_TT")]
     Paste,
+
+    [Display(Name = "KEY_Duplicate", Description = "KEY_Duplicate_TT")]
     Duplicate,
+
+    [Display(Name = "KEY_Delete", Description = "KEY_Delete_TT")]
     Delete,
+
+    [Display(Name = "KEY_Jump", Description = "KEY_Jump_TT")]
     Jump,
+
+    [Display(Name = "KEY_Reorder_Up", Description = "KEY_Reorder_Up_TT")]
     Reorder_Up,
+
+    [Display(Name = "KEY_Reorder_Down", Description = "KEY_Reorder_Down_TT")]
     Reorder_Down,
+
+    [Display(Name = "KEY_Reorder_Top", Description = "KEY_Reorder_Top_TT")]
     Reorder_Top,
+
+    [Display(Name = "KEY_Reorder_Bottom", Description = "KEY_Reorder_Bottom_TT")]
     Reorder_Bottom,
+
+    [Display(Name = "KEY_Apply_to_All", Description = "KEY_Apply_to_All_TT")]
     Apply_to_All,
+
+    [Display(Name = "KEY_Toggle_Tools_Menu", Description = "KEY_Toggle_Tools_Menu_TT")]
     Toggle_Tools_Menu,
 
     // Map Editor
+    [Display(Name = "KEY_MapEditor_Toggle_World_Map_Menu", Description = "KEY_MapEditor_Toggle_World_Map_Menu_TT")]
     MapEditor_Toggle_World_Map_Menu,
+
+    [Display(Name = "KEY_MapEditor_Reset_World_Map_Zoom_Level", Description = "KEY_MapEditor_Reset_World_Map_Zoom_Level_TT")]
     MapEditor_Reset_World_Map_Zoom_Level,
+
+    [Display(Name = "KEY_MapEditor_Create_Map_Object", Description = "KEY_MapEditor_Create_Map_Object_TT")]
     MapEditor_Create_Map_Object,
+
+    [Display(Name = "KEY_MapEditor_Duplicate_To_Map", Description = "KEY_MapEditor_Duplicate_To_Map_TT")]
     MapEditor_Duplicate_To_Map,
+
+    [Display(Name = "KEY_MapEditor_Rotate_X_Axis", Description = "KEY_MapEditor_Rotate_X_Axis_TT")]
     MapEditor_Rotate_X_Axis,
+
+    [Display(Name = "KEY_MapEditor_Rotate_Y_Axis", Description = "KEY_MapEditor_Rotate_Y_Axis_TT")]
     MapEditor_Rotate_Y_Axis,
+
+    [Display(Name = "KEY_MapEditor_Rotate_Pivot_Y_Axis", Description = "KEY_MapEditor_Rotate_Pivot_Y_Axis_TT")]
     MapEditor_Rotate_Pivot_Y_Axis,
+
+    [Display(Name = "KEY_MapEditor_Rotate_Minus_X_Axis", Description = "KEY_MapEditor_Rotate_Minus_X_Axis_TT")]
     MapEditor_Rotate_Minus_X_Axis,
+
+    [Display(Name = "KEY_MapEditor_Rotate_Minus_Y_Axis", Description = "KEY_MapEditor_Rotate_Minus_Y_Axis_TT")]
     MapEditor_Rotate_Minus_Y_Axis,
+
+    [Display(Name = "KEY_MapEditor_Rotate_Minus_Pivot_Y_Axis", Description = "KEY_MapEditor_Rotate_Minus_Pivot_Y_Axis_TT")]
     MapEditor_Rotate_Minus_Pivot_Y_Axis,
+
+    [Display(Name = "KEY_MapEditor_Rotate_Fixed_Angle", Description = "KEY_MapEditor_Rotate_Fixed_Angle_TT")]
     MapEditor_Rotate_Fixed_Angle,
+
+    [Display(Name = "KEY_MapEditor_Reset_Rotation", Description = "KEY_MapEditor_Reset_Rotation_TT")]
     MapEditor_Reset_Rotation,
+
+    [Display(Name = "KEY_MapEditor_Scramble", Description = "KEY_MapEditor_Scramble_TT")]
     MapEditor_Scramble,
+
+    [Display(Name = "KEY_MapEditor_Replicate", Description = "KEY_MapEditor_Replicate_TT")]
     MapEditor_Replicate,
+
+    [Display(Name = "KEY_MapEditor_Cycle_Render_Type", Description = "KEY_MapEditor_Cycle_Render_Type_TT")]
     MapEditor_Cycle_Render_Type,
+
+    [Display(Name = "KEY_MapEditor_Make_Dummy_Object", Description = "KEY_MapEditor_Make_Dummy_Object_TT")]
     MapEditor_Make_Dummy_Object,
+
+    [Display(Name = "KEY_MapEditor_Make_Normal_Object", Description = "KEY_MapEditor_Make_Normal_Object_TT")]
     MapEditor_Make_Normal_Object,
+
+    [Display(Name = "KEY_MapEditor_Enable_Game_Presence_Object", Description = "KEY_MapEditor_Enable_Game_Presence_TT")]
     MapEditor_Enable_Game_Presence,
+
+    [Display(Name = "KEY_MapEditor_Disable_Game_Presence_Object", Description = "KEY_MapEditor_Disable_Game_Presence_TT")]
     MapEditor_Disable_Game_Presence,
+
+    [Display(Name = "KEY_MapEditor_Visibility_Flip", Description = "KEY_MapEditor_Visibility_Flip_TT")]
     MapEditor_Visibility_Flip,
+
+    [Display(Name = "KEY_MapEditor_Visibility_Enable", Description = "KEY_MapEditor_Visibility_Enable_TT")]
     MapEditor_Visibility_Enable,
+
+    [Display(Name = "KEY_MapEditor_Visibility_Disable", Description = "KEY_MapEditor_Visibility_Disable_TT")]
     MapEditor_Visibility_Disable,
+
+    [Display(Name = "KEY_MapEditor_Global_Visibility_Flip", Description = "KEY_MapEditor_Global_Visibility_Flip_TT")]
     MapEditor_Global_Visibility_Flip,
+
+    [Display(Name = "KEY_MapEditor_Global_Visibility_Enable", Description = "KEY_MapEditor_Global_Visibility_Enable_TT")]
     MapEditor_Global_Visibility_Enable,
+
+    [Display(Name = "KEY_MapEditor_Global_Visibility_Disable", Description = "KEY_MapEditor_Global_Visibility_Disable_TT")]
     MapEditor_Global_Visibility_Disable,
+
+    [Display(Name = "KEY_MapEditor_Configure_Grid_Placement", Description = "KEY_MapEditor_Configure_Grid_Placement_TT")]
     MapEditor_Configure_Grid_Placement,
+
+    [Display(Name = "KEY_MapEditor_Cycle_Selected_Grid_Type", Description = "KEY_MapEditor_Cycle_Selected_Grid_Type_TT")]
     MapEditor_Cycle_Selected_Grid_Type,
+
+    [Display(Name = "KEY_MapEditor_Move_to_Primary_Grid", Description = "KEY_MapEditor_Move_to_Primary_Grid_TT")]
     MapEditor_Move_to_Primary_Grid,
+
+    [Display(Name = "KEY_MapEditor_Move_to_Secondary_Grid", Description = "KEY_MapEditor_Move_to_Secondary_Grid_TT")]
     MapEditor_Move_to_Secondary_Grid,
+
+    [Display(Name = "KEY_MapEditor_Move_to_Tertiary_Grid", Description = "KEY_MapEditor_Move_to_Tertiary_Grid_TT")]
     MapEditor_Move_to_Tertiary_Grid,
+
+    [Display(Name = "KEY_MapEditor_SelectAll_Configurable", Description = "KEY_MapEditor_SelectAll_Configurable_TT")]
     MapEditor_SelectAll_Configurable,
+
+    [Display(Name = "KEY_MapEditor_SelectAll_ObjectType", Description = "KEY_MapEditor_SelectAll_ObjectType_TT")]
     MapEditor_SelectAll_ObjectType,
+
+    [Display(Name = "KEY_MapEditor_SelectAll_ModelName", Description = "KEY_MapEditor_SelectAll_ModelName_TT")]
     MapEditor_SelectAll_ModelName,
+
+    [Display(Name = "KEY_MapEditor_SelectAll_Ceremony", Description = "KEY_MapEditor_SelectAll_Ceremony_TT")]
     MapEditor_SelectAll_Ceremony,
+
+    [Display(Name = "KEY_MapEditor_Create_Selection_Group", Description = "KEY_MapEditor_Create_Selection_Group_TT")]
     MapEditor_Create_Selection_Group,
+
+    [Display(Name = "KEY_MapEditor_Select_Group_0", Description = "KEY_MapEditor_Select_Group_0_TT")]
     MapEditor_Select_Group_0,
+
+    [Display(Name = "KEY_MapEditor_Select_Group_1", Description = "KEY_MapEditor_Select_Group_1_TT")]
     MapEditor_Select_Group_1,
+
+    [Display(Name = "KEY_MapEditor_Select_Group_2", Description = "KEY_MapEditor_Select_Group_2_TT")]
     MapEditor_Select_Group_2,
+
+    [Display(Name = "KEY_MapEditor_Select_Group_3", Description = "KEY_MapEditor_Select_Group_3_TT")]
     MapEditor_Select_Group_3,
+
+    [Display(Name = "KEY_MapEditor_Select_Group_4", Description = "KEY_MapEditor_Select_Group_4_TT")]
     MapEditor_Select_Group_4,
+
+    [Display(Name = "KEY_MapEditor_Select_Group_5", Description = "KEY_MapEditor_Select_Group_5_TT")]
     MapEditor_Select_Group_5,
+
+    [Display(Name = "KEY_MapEditor_Select_Group_6", Description = "KEY_MapEditor_Select_Group_6_TT")]
     MapEditor_Select_Group_6,
+
+    [Display(Name = "KEY_MapEditor_Select_Group_7", Description = "KEY_MapEditor_Select_Group_7_TT")]
     MapEditor_Select_Group_7,
+
+    [Display(Name = "KEY_MapEditor_Select_Group_8", Description = "KEY_MapEditor_Select_Group_8_TT")]
     MapEditor_Select_Group_8,
+
+    [Display(Name = "KEY_MapEditor_Select_Group_9", Description = "KEY_MapEditor_Select_Group_9_TT")]
     MapEditor_Select_Group_9,
+
+    [Display(Name = "KEY_MapEditor_Select_Group_10", Description = "KEY_MapEditor_Select_Group_10_TT")]
     MapEditor_Select_Group_10,
+
+    [Display(Name = "KEY_MapEditor_Rotation_Increment_Cycle_Type", Description = "KEY_MapEditor_Rotation_Increment_Cycle_Type_TT")]
     MapEditor_Rotation_Increment_Cycle_Type,
+
+    [Display(Name = "KEY_MapEditor_Rotation_Increment_Cycle_Type_Backwards", Description = "KEY_MapEditor_Rotation_Increment_Cycle_Type_Backwards_TT")]
     MapEditor_Rotation_Increment_Cycle_Type_Backwards,
+
+    [Display(Name = "KEY_MapEditor_Position_Increment_Cycle_Type", Description = "KEY_MapEditor_Position_Increment_Cycle_Type_TT")]
     MapEditor_Position_Increment_Cycle_Type,
+
+    [Display(Name = "KEY_MapEditor_Position_Increment_Cycle_Type_Backwards", Description = "KEY_MapEditor_Position_Increment_Cycle_Type_Backwards_TT")]
     MapEditor_Position_Increment_Cycle_Type_Backwards,
+
+    [Display(Name = "KEY_MapEditor_Position_Increment_Toggle_Discrete_Mode", Description = "KEY_MapEditor_Position_Increment_Toggle_Discrete_Mode_TT")]
     MapEditor_Position_Increment_Toggle_Discrete_Mode,
+
+    [Display(Name = "KEY_MapEditor_Position_Increment_Positive_X", Description = "KEY_MapEditor_Position_Increment_Positive_X_TT")]
     MapEditor_Position_Increment_Positive_X,
+
+    [Display(Name = "KEY_MapEditor_Position_Increment_Negative_X", Description = "KEY_MapEditor_Position_Increment_Negative_X_TT")]
     MapEditor_Position_Increment_Negative_X,
+
+    [Display(Name = "KEY_MapEditor_Position_Increment_Positive_Y", Description = "KEY_MapEditor_Position_Increment_Positive_Y_TT")]
     MapEditor_Position_Increment_Positive_Y,
+
+    [Display(Name = "KEY_MapEditor_Position_Increment_Negative_Y", Description = "KEY_MapEditor_Position_Increment_Negative_Y_TT")]
     MapEditor_Position_Increment_Negative_Y,
+
+    [Display(Name = "KEY_MapEditor_Position_Increment_Positive_Z", Description = "KEY_MapEditor_Position_Increment_Positive_Z_TT")]
     MapEditor_Position_Increment_Positive_Z,
+
+    [Display(Name = "KEY_MapEditor_Position_Increment_Negative_Z", Description = "KEY_MapEditor_Position_Increment_Negative_Z_TT")]
     MapEditor_Position_Increment_Negative_Z,
+
+    [Display(Name = "KEY_MapEditor_Toggle_Patrol_Route_Visuals", Description = "KEY_MapEditor_Toggle_Patrol_Route_Visuals_TT")]
     MapEditor_Toggle_Patrol_Route_Visuals,
+
+    [Display(Name = "KEY_MapEditor_View_Display_Group", Description = "KEY_MapEditor_View_Display_Group_TT")]
     MapEditor_View_Display_Group,
+
+    [Display(Name = "KEY_MapEditor_View_Draw_Group", Description = "KEY_MapEditor_View_Draw_Group_TT")]
     MapEditor_View_Draw_Group,
+
+    [Display(Name = "KEY_MapEditor_Apply_Display_Group", Description = "KEY_MapEditor_Apply_Display_Group_TT")]
     MapEditor_Apply_Display_Group,
+
+    [Display(Name = "KEY_MapEditor_Apply_Draw_Group", Description = "KEY_MapEditor_Apply_Draw_Group_TT")]
     MapEditor_Apply_Draw_Group,
+
+    [Display(Name = "KEY_MapEditor_Hide_All_Display_Groups", Description = "KEY_MapEditor_Hide_All_Display_Groups_TT")]
     MapEditor_Hide_All_Display_Groups,
+
+    [Display(Name = "KEY_MapEditor_Show_All_Display_Groups", Description = "KEY_MapEditor_Show_All_Display_Groups_TT")]
     MapEditor_Show_All_Display_Groups,
+
+    [Display(Name = "KEY_MapEditor_Select_Display_Group_Highlights", Description = "KEY_MapEditor_Select_Display_Group_Highlights_TT")]
     MapEditor_Select_Display_Group_Highlights,
+
+    [Display(Name = "KEY_MapEditor_Select_Collision_References", Description = "KEY_MapEditor_Select_Collision_References_TT")]
     MapEditor_Select_Collision_References,
+
+    [Display(Name = "KEY_MapEditor_Select_Referenced_Collision", Description = "KEY_MapEditor_Select_Referenced_Collision_TT")]
     MapEditor_Select_Referenced_Collision,
+
+    [Display(Name = "KEY_MapEditor_Deselect_All", Description = "KEY_MapEditor_Deselect_All_TT")]
     MapEditor_Deselect_All,
 
     // Model Editor
+    [Display(Name = "KEY_ModelEditor_Select_Primitives_Only", Description = "KEY_ModelEditor_Select_Primitives_Only_TT")]
     ModelEditor_Select_Primitives_Only,
 
     // Param Editor
+    [Display(Name = "KEY_ParamEditor_Focus_Searchbar", Description = "KEY_ParamEditor_Focus_Searchbar_TT")]
     ParamEditor_Focus_Searchbar,
+
+    [Display(Name = "KEY_ParamEditor_Apply_Mass_Edit", Description = "KEY_ParamEditor_Apply_Mass_Edit_TT")]
     ParamEditor_Apply_Mass_Edit,
+
+    [Display(Name = "KEY_ParamEditor_View_Mass_Edit", Description = "KEY_ParamEditor_View_Mass_Edit_TT")]
     ParamEditor_View_Mass_Edit,
+
+    [Display(Name = "KEY_ParamEditor_Import_CSV", Description = "KEY_ParamEditor_Import_CSV_TT")]
     ParamEditor_Import_CSV,
+
+    [Display(Name = "KEY_ParamEditor_Export_CSV", Description = "KEY_ParamEditor_Export_CSV_TT")]
     ParamEditor_Export_CSV,
+
+    [Display(Name = "KEY_ParamEditor_Export_CSV_Names", Description = "KEY_ParamEditor_Export_CSV_Names_TT")]
     ParamEditor_Export_CSV_Names,
+
+    [Display(Name = "KEY_ParamEditor_Export_CSV_Param", Description = "KEY_ParamEditor_Export_CSV_Param_TT")]
     ParamEditor_Export_CSV_Param,
+
+    [Display(Name = "KEY_ParamEditor_Export_CSV_All_Rows", Description = "KEY_ParamEditor_Export_CSV_All_Rows_TT")]
     ParamEditor_Export_CSV_All_Rows,
+
+    [Display(Name = "KEY_ParamEditor_Export_CSV_Modified_Rows", Description = "KEY_ParamEditor_Export_CSV_Modified_Rows_TT")]
     ParamEditor_Export_CSV_Modified_Rows,
+
+    [Display(Name = "KEY_ParamEditor_Export_CSV_Selected_Rows", Description = "KEY_ParamEditor_Export_CSV_Selected_Rows_TT")]
     ParamEditor_Export_CSV_Selected_Rows,
+
+    [Display(Name = "KEY_ParamEditor_Reload_All_Params", Description = "KEY_ParamEditor_Reload_All_Params_TT")]
     ParamEditor_Reload_All_Params,
+
+    [Display(Name = "KEY_ParamEditor_Reload_Selected_Param", Description = "KEY_ParamEditor_Reload_Selected_Param_TT")]
     ParamEditor_Reload_Selected_Param,
+
+    [Display(Name = "KEY_ParamEditor_RowList_Sort_Rows", Description = "KEY_ParamEditor_RowList_Sort_Rows_TT")]
     ParamEditor_RowList_Sort_Rows,
+
+    [Display(Name = "KEY_ParamEditor_RowList_Jump_to_Row_ID", Description = "KEY_ParamEditor_RowList_Jump_to_Row_ID_TT")]
     ParamEditor_RowList_Jump_to_Row_ID,
+
+    [Display(Name = "KEY_ParamEditor_RowList_Inherit_Referenced_Row_Name", Description = "KEY_ParamEditor_RowList_Inherit_Referenced_Row_Name_TT")]
     ParamEditor_RowList_Inherit_Referenced_Row_Name,
 
     // Text Editor
+    [Display(Name = "KEY_TextEditor_Focus_Searchbar", Description = "KEY_TextEditor_Focus_Searchbar_TT")]
     TextEditor_Focus_Searchbar,
+
+    [Display(Name = "KEY_TextEditor_Create_New_Entry", Description = "KEY_TextEditor_Create_New_Entry_TT")]
     TextEditor_Create_New_Entry,
+
+    [Display(Name = "KEY_TextEditor_Configurable_Duplicate", Description = "KEY_TextEditor_Configurable_Duplicate_TT")]
     TextEditor_Configurable_Duplicate,
 
     // Gparam Editor
+    [Display(Name = "KEY_GparamEditor_Add_Missing_Groups", Description = "KEY_GparamEditor_Add_Missing_Groups_TT")]
     GparamEditor_Add_Missing_Groups,
+
+    [Display(Name = "KEY_GparamEditor_Add_Missing_Fields", Description = "KEY_GparamEditor_Add_Missing_Fields_TT")]
     GparamEditor_Add_Missing_Fields,
+
+    [Display(Name = "KEY_GparamEditor_Execute_Quick_Edit", Description = "KEY_GparamEditor_Execute_Quick_Edit_TT")]
     GparamEditor_Execute_Quick_Edit,
+
+    [Display(Name = "KEY_GparamEditor_Generate_Quick_Edit", Description = "KEY_GparamEditor_Generate_Quick_Edit_TT")]
     GparamEditor_Generate_Quick_Edit,
+
+    [Display(Name = "KEY_GparamEditor_Clear_Quick_Edit", Description = "KEY_GparamEditor_Clear_Quick_Edit_TT")]
     GparamEditor_Clear_Quick_Edit,
 
     // Material Editor
 
     // Texture Viewer
+    [Display(Name = "KEY_TextureViewer_Export_Texture", Description = "KEY_TextureViewer_Export_Texture_TT")]
     TextureViewer_Export_Texture,
+
+    [Display(Name = "KEY_TextureViewer_Reset_Zoom_Level", Description = "KEY_TextureViewer_Reset_Zoom_Level_TT")]
     TextureViewer_Reset_Zoom_Level,
 
     // Developer
+    [Display(Name = "KEY_CaptureThumbnailImage", Description = "KEY_CaptureThumbnailImage_TT")]
     CaptureThumbnailImage
 }
 
@@ -347,548 +595,6 @@ public static class DefaultKeyBindings
 
 public static class KeybindMetadata
 {
-    public static readonly Dictionary<KeybindID, (string, string)> Presentation
-        = new()
-    {
-        // Viewport
-        { KeybindID.MoveForward, (
-            "Move Forward",
-            "Within the viewport, this will move the camera forward."
-        ) },
-        { KeybindID.MoveBackward, (
-            "Move Backward",
-            "Within the viewport, this will move the camera backward."
-        ) },
-        { KeybindID.MoveLeft, (
-            "Move Left",
-            "Within the viewport, this will move the camera to the left."
-        ) },
-        { KeybindID.MoveRight, (
-            "Move Right",
-            "Within the viewport, this will move the camera to the right."
-        ) },
-        { KeybindID.MoveUp, (
-            "Move Up",
-            "Within the viewport, this will move the camera upwards."
-        ) },
-        { KeybindID.MoveDown, (
-            "Move Down",
-            "Within the viewport, this will move the camera downwards."
-        ) },
-        { KeybindID.Frame, (
-            "Frame",
-            "Within the viewport, this will frame the currently selected viewport object in the centre of the screen."
-        ) },
-        { KeybindID.Pull, (
-            "Pull",
-            "Within the viewport, this will move the currently selected viewport object to the camera's location."
-        ) },
-        { KeybindID.Reset, (
-            "Reset",
-            "Within the viewport, this reset the camera's location."
-        ) },
-        { KeybindID.Cycle_Gizmo_Translation_Mode, (
-            "Set to Gizmo Translation Mode",
-            "Within the viewport, this will switch the viewport object gizmo to 'Translate'."
-        ) },
-        { KeybindID.Cycle_Gizmo_Rotation_Mode, (
-            "Set to Gizmo Rotation Mode",
-            "Within the viewport, this will switch the viewport object gizmo to 'Rotate'."
-        ) },
-        { KeybindID.Cycle_Gizmo_Scale_Mode, (
-            "Set to Gizmo Scale Mode",
-            "Within the viewport, this will switch the viewport object gizmo to 'Scale'."
-        ) },
-        { KeybindID.Cycle_Gizmo_Origin_Mode, (
-            "Cycle Gizmo Origin Mode",
-            "Within the viewport, this will switch the viewport object gizmo origin type."
-        ) },
-        { KeybindID.Cycle_Gizmo_Space_Mode, (
-            "Cycle Gizmo Worldspace Mode",
-            "Within the viewport, this will switch the viewport object gizmo worldspace type."
-        ) },
-        { KeybindID.Cycle_Render_Outline_Mode, (
-            "Cycle Render Outline Mode",
-            "Within the viewport, this will switch the currently selected viewport object's rendering type."
-        ) },
-
-        // Common
-        { KeybindID.Save, (
-            "Save",
-            "This will save within the currently focused editor."
-        ) },
-        { KeybindID.Undo, (
-            "Undo",
-            "This will undo the most recent action."
-        ) },
-        { KeybindID.Redo, (
-            "Redo",
-            "This will redo the most recently undone action."
-        ) },
-        { KeybindID.Undo_Repeat, (
-            "Undo (continuous)",
-            "This will undo the most recent action repeatly whilst held."
-        ) },
-        { KeybindID.Redo_Repeat, (
-            "Redo (continuous)",
-            "This will redo the most recently undone action repeatly whilst held."
-        ) },
-        { KeybindID.Up, (
-            "Up",
-            "Within a list, this will move the selection one space up."
-        ) },
-        { KeybindID.Down, (
-            "Down",
-            "Within a list, this will move the selection one space down."
-        ) },
-        { KeybindID.Left, (
-            "Left",
-            "Within a list, this will move the selection one space to the left."
-        ) },
-        { KeybindID.Right, (
-            "Right",
-            "Within a list, this will move the selection one space to the right."
-        ) },
-
-        // Contextual
-        { KeybindID.Add, (
-            "Add",
-            "This will add a new entry to the list."
-        ) },
-        { KeybindID.SelectAll, (
-            "Select All",
-            "This will select all entries within a list."
-        ) },
-        { KeybindID.Copy, (
-            "Copy",
-            "Copy the currently selected entries into a clipboard."
-        ) },
-        { KeybindID.Paste, (
-            "Paste",
-            "Paste the entries that reside within the clipboard into the list."
-        ) },
-        { KeybindID.Duplicate, (
-            "Duplicate",
-            "When an entry is selected, this will duplicate the entry within the list."
-        ) },
-        { KeybindID.Delete, (
-            "Delete",
-            "When an entry is selected, this will delete the entry from the list."
-        ) },
-        { KeybindID.Jump, (
-            "Jump",
-            "When an entry is selected, this will focus the entry to the centre of the user's screen."
-        ) },
-        { KeybindID.Reorder_Up, (
-            "Move Up",
-            "When in a list, the selected entry is moved up one space."
-        ) },
-        { KeybindID.Reorder_Down, (
-            "Move Down",
-            "When in a list, the selected entry is moved down one space."
-        ) },
-        { KeybindID.Reorder_Top, (
-            "Move to Top",
-            "When in a list, the selected entry is moved to the top of the list."
-        ) },
-        { KeybindID.Reorder_Bottom, (
-            "Move to Bottom",
-            "When in a list, the selected entry is moved to the bottom of the list."
-        ) },
-        { KeybindID.Apply_to_All, (
-            "Apply to All",
-            "When in a list, holding this button will cause the action to apply to all entries."
-        ) },
-        { KeybindID.Toggle_Tools_Menu, (
-            "Toggle Tools Menu",
-            "Toggle the visibility of the Tools menu within the current editor."
-        ) },
-
-        // Map 
-        { KeybindID.MapEditor_Toggle_World_Map_Menu, (
-            "Toggle World Map Menu",
-            ""
-        ) },
-        { KeybindID.MapEditor_Reset_World_Map_Zoom_Level, (
-            "Reset World Map Zoom Level",
-            ""
-        ) },
-        { KeybindID.MapEditor_Create_Map_Object, (
-            "Create Map Object",
-            ""
-        ) },
-        { KeybindID.MapEditor_Duplicate_To_Map, (
-            "Duplicate to Map",
-            ""
-        ) },
-        { KeybindID.MapEditor_Rotate_X_Axis, (
-            "Rotate Selection (+ x-axis)",
-            ""
-        ) },
-        { KeybindID.MapEditor_Rotate_Y_Axis, (
-            "Rotate Selection (+ y-axis)",
-            ""
-        ) },
-        { KeybindID.MapEditor_Rotate_Pivot_Y_Axis, (
-            "Pivot Selection (+ y-axis)",
-            ""
-        ) },
-        { KeybindID.MapEditor_Rotate_Minus_X_Axis, (
-            "Rotate Selection (- x-axis)",
-            ""
-        ) },
-        { KeybindID.MapEditor_Rotate_Minus_Y_Axis, (
-            "Rotate Selection (- y-axis)",
-            ""
-        ) },
-        { KeybindID.MapEditor_Rotate_Minus_Pivot_Y_Axis, (
-            "Pivot Selection (- y-axis)",
-            ""
-        ) },
-        { KeybindID.MapEditor_Rotate_Fixed_Angle, (
-            "Rotate Selection (fixed angle)",
-            ""
-        ) },
-        { KeybindID.MapEditor_Reset_Rotation, (
-            "Reset Selection Rotation",
-            ""
-        ) },
-        { KeybindID.MapEditor_Scramble, (
-            "Scramble Selection",
-            ""
-        ) },
-        { KeybindID.MapEditor_Replicate, (
-            "Replicate Selection",
-            ""
-        ) },
-        { KeybindID.MapEditor_Cycle_Render_Type, (
-            "Cycle Render Type",
-            ""
-        ) },
-        { KeybindID.MapEditor_Make_Dummy_Object, (
-            "Set Map Object to Dummy",
-            ""
-        ) },
-        { KeybindID.MapEditor_Make_Normal_Object, (
-            "Set Map Object to Normal",
-            ""
-        ) },
-        { KeybindID.MapEditor_Enable_Game_Presence, (
-            "Enable Map Object Game Presence",
-            ""
-        ) },
-        { KeybindID.MapEditor_Disable_Game_Presence, (
-            "Disable Map Object Game Presence",
-            ""
-        ) },
-        { KeybindID.MapEditor_Visibility_Flip, (
-            "Flip Selection Visibility",
-            ""
-        ) },
-        { KeybindID.MapEditor_Visibility_Enable, (
-            "Enable Selection Visibility",
-            ""
-        ) },
-        { KeybindID.MapEditor_Visibility_Disable, (
-            "Disable Selection Visibility",
-            ""
-        ) },
-        { KeybindID.MapEditor_Global_Visibility_Flip, (
-            "Flip Visibility for All",
-            ""
-        ) },
-        { KeybindID.MapEditor_Global_Visibility_Enable, (
-            "Enable Visibility for All",
-            ""
-        ) },
-        { KeybindID.MapEditor_Global_Visibility_Disable, (
-            "Disable Visibility for All",
-            ""
-        ) },
-        { KeybindID.MapEditor_Configure_Grid_Placement, (
-            "Configure Grid Placement",
-            ""
-        ) },
-        { KeybindID.MapEditor_Cycle_Selected_Grid_Type, (
-            "Cycle Selected Grid",
-            ""
-        ) },
-        { KeybindID.MapEditor_Move_to_Primary_Grid, (
-            "Move Selection to Primary Grid",
-            ""
-        ) },
-        { KeybindID.MapEditor_Move_to_Secondary_Grid, (
-            "Move Selection to Secondary Grid",
-            ""
-        ) },
-        { KeybindID.MapEditor_Move_to_Tertiary_Grid, (
-            "Move Selection to Tertiary Grid",
-            ""
-        ) },
-        { KeybindID.MapEditor_SelectAll_Configurable, (
-            "Select All (Configurable)",
-            ""
-        ) },
-        { KeybindID.MapEditor_SelectAll_ObjectType, (
-            "Select All (Object Type)",
-            ""
-        ) },
-        { KeybindID.MapEditor_SelectAll_ModelName, (
-            "Select All (Model Name)",
-            ""
-        ) },
-        { KeybindID.MapEditor_SelectAll_Ceremony, (
-            "Select All (Ceremony)",
-            ""
-        ) },
-        { KeybindID.MapEditor_Select_Group_0, (
-            "Select Selection Group 0",
-            ""
-        ) },
-        { KeybindID.MapEditor_Select_Group_1, (
-            "Select Selection Group 1",
-            ""
-        ) },
-        { KeybindID.MapEditor_Select_Group_2, (
-            "Select Selection Group 2",
-            ""
-        ) },
-        { KeybindID.MapEditor_Select_Group_3, (
-            "Select Selection Group 3",
-            ""
-        ) },
-        { KeybindID.MapEditor_Select_Group_4, (
-            "Select Selection Group 4",
-            ""
-        ) },
-        { KeybindID.MapEditor_Select_Group_5, (
-            "Select Selection Group 5",
-            ""
-        ) },
-        { KeybindID.MapEditor_Select_Group_6, (
-            "Select Selection Group 6",
-            ""
-        ) },
-        { KeybindID.MapEditor_Select_Group_7, (
-            "Select Selection Group 7",
-            ""
-        ) },
-        { KeybindID.MapEditor_Select_Group_8, (
-            "Select Selection Group 8",
-            ""
-        ) },
-        { KeybindID.MapEditor_Select_Group_9, (
-            "Select Selection Group 9",
-            ""
-        ) },
-        { KeybindID.MapEditor_Select_Group_10, (
-            "Select Selection Group 10",
-            ""
-        ) },
-        { KeybindID.MapEditor_Rotation_Increment_Cycle_Type, (
-            "Cycle Rotation Increment Type",
-            ""
-        ) },
-        { KeybindID.MapEditor_Rotation_Increment_Cycle_Type_Backwards, (
-            "Cycle Rotation Increment Type Backwards",
-            ""
-        ) },
-        { KeybindID.MapEditor_Position_Increment_Cycle_Type, (
-            "Cycle Position Increment Type",
-            ""
-        ) },
-        { KeybindID.MapEditor_Position_Increment_Cycle_Type_Backwards, (
-            "Cycle Position Increment Type Backwards",
-            ""
-        ) },
-        { KeybindID.MapEditor_Position_Increment_Toggle_Discrete_Mode, (
-            "Toggle Position Increment Discrete Mode",
-            ""
-        ) },
-        { KeybindID.MapEditor_Position_Increment_Positive_X, (
-            "Position Increment Move (+x)",
-            ""
-        ) },
-        { KeybindID.MapEditor_Position_Increment_Negative_X, (
-            "Position Increment Move (-x)",
-            ""
-        ) },
-        { KeybindID.MapEditor_Position_Increment_Positive_Y, (
-            "Position Increment Move (+y)",
-            ""
-        ) },
-        { KeybindID.MapEditor_Position_Increment_Negative_Y, (
-            "Position Increment Move (-y)",
-            ""
-        ) },
-        { KeybindID.MapEditor_Position_Increment_Positive_Z, (
-            "Position Increment Move (+z)",
-            ""
-        ) },
-        { KeybindID.MapEditor_Position_Increment_Negative_Z, (
-            "Position Increment Move (-z)",
-            ""
-        ) },
-        { KeybindID.MapEditor_Toggle_Patrol_Route_Visuals, (
-            "Toggle Patrol Route Visuals",
-            ""
-        ) },
-        { KeybindID.MapEditor_View_Display_Group, (
-            "View Display Group for Selection",
-            ""
-        ) },
-        { KeybindID.MapEditor_View_Draw_Group, (
-            "View Draw Group for Selection",
-            ""
-        ) },
-        { KeybindID.MapEditor_Apply_Display_Group, (
-            "Apply Display Group to Selection",
-            ""
-        ) },
-        { KeybindID.MapEditor_Apply_Draw_Group, (
-            "Apply Draw Group to Selection",
-            ""
-        ) },
-        { KeybindID.MapEditor_Hide_All_Display_Groups, (
-            "Hide All Display Groups",
-            ""
-        ) },
-        { KeybindID.MapEditor_Show_All_Display_Groups, (
-            "Show All Display Groups",
-            ""
-        ) },
-        { KeybindID.MapEditor_Select_Display_Group_Highlights, (
-            "Select Display Group Highlights",
-            ""
-        ) },
-        { KeybindID.MapEditor_Select_Collision_References, (
-            "Select Collision References",
-            "Selects all map objects that reference the currently selected collision(s)."
-        ) },
-        { KeybindID.MapEditor_Select_Referenced_Collision, (
-            "Select Referenced Collision",
-            "Selects the collisions referenced by the currently selected part(s)."
-        ) },
-        { KeybindID.MapEditor_Deselect_All, (
-            "Deselect All",
-            ""
-        ) },
-
-        // Model Editor
-        { KeybindID.ModelEditor_Select_Primitives_Only, (
-            "Primitive Selection Mode",
-            "When held, only dummies and nodes will be selected by a viewport click."
-        ) },
-
-        // Param Editor
-        { KeybindID.ParamEditor_Focus_Searchbar, (
-            "Focus Searchbar",
-            ""
-        ) },
-        { KeybindID.ParamEditor_Apply_Mass_Edit, (
-            "Apply Mass Edit",
-            ""
-        ) },
-        { KeybindID.ParamEditor_View_Mass_Edit, (
-            "View Mass Edit",
-            ""
-        ) },
-        { KeybindID.ParamEditor_Import_CSV, (
-            "Import CSV",
-            ""
-        ) },
-        { KeybindID.ParamEditor_Export_CSV, (
-            "Export CSV",
-            ""
-        ) },
-        { KeybindID.ParamEditor_Export_CSV_Names, (
-            "Export CSV (names)",
-            ""
-        ) },
-        { KeybindID.ParamEditor_Export_CSV_Param, (
-            "Export CSV (param)",
-            ""
-        ) },
-        { KeybindID.ParamEditor_Export_CSV_All_Rows, (
-            "Export CSV (all rows)",
-            ""
-        ) },
-        { KeybindID.ParamEditor_Export_CSV_Modified_Rows, (
-            "Export CSV (modified rows)",
-            ""
-        ) },
-        { KeybindID.ParamEditor_Export_CSV_Selected_Rows, (
-            "Export CSV (selected rows)",
-            ""
-        ) },
-        { KeybindID.ParamEditor_Reload_All_Params, (
-            "Reload All Params",
-            ""
-        ) },
-        { KeybindID.ParamEditor_Reload_Selected_Param, (
-            "Reload Selected Param",
-            ""
-        ) },
-        { KeybindID.ParamEditor_RowList_Sort_Rows, (
-            "Sort Rows",
-            ""
-        ) },
-        { KeybindID.ParamEditor_RowList_Jump_to_Row_ID, (
-            "Jump to Row ID",
-            ""
-        ) },
-        { KeybindID.ParamEditor_RowList_Inherit_Referenced_Row_Name, (
-            "Inherit Referenced Row Name",
-            ""
-        ) },
-
-        // Text Editor
-        { KeybindID.TextEditor_Focus_Searchbar, (
-            "Focus Search Bar",
-            ""
-        ) },
-        { KeybindID.TextEditor_Configurable_Duplicate, (
-            "Configurable Duplicate",
-            ""
-        ) },
-        { KeybindID.TextEditor_Create_New_Entry, (
-            "Create New Entry",
-            ""
-        ) },
-
-        // Gparam Editor
-        { KeybindID.GparamEditor_Execute_Quick_Edit, (
-            "Execute Quick Edit",
-            ""
-        ) },
-        { KeybindID.GparamEditor_Generate_Quick_Edit, (
-            "Generate Quick Edit",
-            ""
-        ) },
-        { KeybindID.GparamEditor_Clear_Quick_Edit, (
-            "Clear Quick Edit",
-            ""
-        ) },
-
-        // Material Editor
-
-        // Texture Viewer
-        { KeybindID.TextureViewer_Export_Texture, (
-            "Export Texture",
-            ""
-        ) },
-        { KeybindID.TextureViewer_Reset_Zoom_Level, (
-            "Reset Zoom Level",
-            ""
-        ) },
-
-        // Developer,
-        { KeybindID.CaptureThumbnailImage, (
-            "Capture Thumbnail",
-            ""
-        ) }
-    };
-
     public static readonly Dictionary<KeybindID, InputCategory> Category
         = new()
     {

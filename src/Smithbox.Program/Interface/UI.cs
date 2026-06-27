@@ -202,12 +202,12 @@ public class UI
 
                 if (Current == null)
                 {
-                    throw new Exception("JsonConvert returned null");
+                    throw new Exception(LOC.Get("ITF_UI_Failed_Deseralize"));
                 }
             }
             catch (Exception e)
             {
-                Smithbox.LogError<UI>("Interface Configuration failed to load, default configuration has been restored.", LogPriority.High, e);
+                Smithbox.LogError<UI>(LOC.Get("ITF_UI_Failed_Read", file), e);
 
                 Current = new UI();
                 Save();
@@ -235,12 +235,12 @@ public class UI
 
                 if (Current == null)
                 {
-                    throw new Exception("JsonConvert returned null");
+                    throw new Exception(LOC.Get("ITF_Theme_Failed_Deseralize"));
                 }
             }
             catch (Exception e)
             {
-                Smithbox.LogError<UI>("Interface Configuration failed to load, default configuration has been restored.", LogPriority.High, e);
+                Smithbox.LogError<UI>(LOC.Get("ITF_Theme_Failed_Read", file), e);
 
                 Current = new UI();
                 Save();
@@ -255,7 +255,10 @@ public class UI
 
         if (File.Exists(file))
         {
-            var result = PlatformUtils.Instance.MessageBox("Theme with this name already exists. Overwrite?", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            var result = PlatformUtils.Instance.MessageBox(
+                LOC.Get("ITF_Theme_Already_Exists"),
+                LOC.Get("SYS_Warning_Header"), 
+                MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
 
             if(result  == DialogResult.OK)
             {
@@ -272,7 +275,10 @@ public class UI
         }
         else
         {
-            PlatformUtils.Instance.MessageBox("Invalid filename.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            PlatformUtils.Instance.MessageBox(
+                LOC.Get("ITF_Theme_Invalid_Filename"),
+                LOC.Get("SYS_Warning_Header"), 
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 

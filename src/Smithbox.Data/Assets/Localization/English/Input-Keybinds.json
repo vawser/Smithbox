@@ -1,0 +1,1060 @@
+{
+  "Entries": [
+    {
+      "Key": "KEY_Move_Forward",
+      "Text": "Move Forward"
+    },
+    {
+      "Key": "KEY_Move_Forward_TT",
+      "Text": "Within the viewport, this will move the camera forward."
+    },
+    {
+      "Key": "KEY_Move_Backward",
+      "Text": "Move Backward"
+    },
+    {
+      "Key": "KEY_Move_Backward_TT",
+      "Text": "Within the viewport, this will move the camera backward."
+    },
+    {
+      "Key": "KEY_Move_Left",
+      "Text": "Move Left"
+    },
+    {
+      "Key": "KEY_Move_Left_TT",
+      "Text": "Within the viewport, this will move the camera to the left."
+    },
+    {
+      "Key": "KEY_Move_Right",
+      "Text": "Move Right"
+    },
+    {
+      "Key": "KEY_Move_Right_TT",
+      "Text": "Within the viewport, this will move the camera to the right."
+    },
+    {
+      "Key": "KEY_Move_Up",
+      "Text": "Move Up"
+    },
+    {
+      "Key": "KEY_Move_Up_TT",
+      "Text": "Within the viewport, this will move the camera upwards."
+    },
+    {
+      "Key": "KEY_Move_Down",
+      "Text": "Move Down"
+    },
+    {
+      "Key": "KEY_Move_Down_TT",
+      "Text": "Within the viewport, this will move the camera downwards."
+    },
+    {
+      "Key": "KEY_Frame",
+      "Text": "Frame"
+    },
+    {
+      "Key": "KEY_Frame_TT",
+      "Text": "Within the viewport, this will frame the currently selected viewport object in the centre of the screen."
+    },
+    {
+      "Key": "KEY_Pull",
+      "Text": "Pull"
+    },
+    {
+      "Key": "KEY_Pull_TT",
+      "Text": "Within the viewport, this will move the currently selected viewport object to the camera's location."
+    },
+    {
+      "Key": "KEY_Reset",
+      "Text": "Reset"
+    },
+    {
+      "Key": "KEY_Reset_TT",
+      "Text": "Within the viewport, this reset the camera's location."
+    },
+    {
+      "Key": "KEY_Cycle_Gizmo_Translation_Mode",
+      "Text": "Set to Gizmo Translation Mode"
+    },
+    {
+      "Key": "KEY_Cycle_Gizmo_Translation_Mode_TT",
+      "Text": "Within the viewport, this will switch the viewport object gizmo to 'Translate'."
+    },
+    {
+      "Key": "KEY_Cycle_Gizmo_Rotation_Mode",
+      "Text": "Set to Gizmo Rotation Mode"
+    },
+    {
+      "Key": "KEY_Cycle_Gizmo_Rotation_Mode_TT",
+      "Text": "Within the viewport, this will switch the viewport object gizmo to 'Rotate'."
+    },
+    {
+      "Key": "KEY_Cycle_Gizmo_Scale_Mode",
+      "Text": "Set to Gizmo Scale Mode"
+    },
+    {
+      "Key": "KEY_Cycle_Gizmo_Scale_Mode_TT",
+      "Text": "Within the viewport, this will switch the viewport object gizmo to 'Scale'."
+    },
+    {
+      "Key": "KEY_Cycle_Gizmo_Origin_Mode",
+      "Text": "Cycle Gizmo Origin Mode"
+    },
+    {
+      "Key": "KEY_Cycle_Gizmo_Origin_Mode_TT",
+      "Text": "Within the viewport, this will switch the viewport object gizmo origin type."
+    },
+    {
+      "Key": "KEY_Cycle_Gizmo_Space_Mode",
+      "Text": "Cycle Gizmo Worldspace Mode"
+    },
+    {
+      "Key": "KEY_Cycle_Gizmo_Space_Mode_TT",
+      "Text": "Within the viewport, this will switch the viewport object gizmo worldspace type."
+    },
+    {
+      "Key": "KEY_Cycle_Render_Outline_Mode",
+      "Text": "Cycle Render Outline Mode"
+    },
+    {
+      "Key": "KEY_Cycle_Render_Outline_Mode_TT",
+      "Text": "Within the viewport, this will switch the currently selected viewport object's rendering type."
+    },
+    {
+      "Key": "KEY_Save",
+      "Text": "Save"
+    },
+    {
+      "Key": "KEY_Save_TT",
+      "Text": "This will save the currently focused editor."
+    },
+    {
+      "Key": "KEY_Undo",
+      "Text": "Undo"
+    },
+    {
+      "Key": "KEY_Undo_TT",
+      "Text": "This will undo the most recent action."
+    },
+    {
+      "Key": "KEY_Redo",
+      "Text": "Redo"
+    },
+    {
+      "Key": "KEY_Redo_TT",
+      "Text": "This will redo the most recently undone action"
+    },
+    {
+      "Key": "KEY_Undo_Repeat",
+      "Text": "Undo (continuous)"
+    },
+    {
+      "Key": "KEY_Undo_Repeat_TT",
+      "Text": "This will undo the most recent action repeatly whilst held."
+    },
+    {
+      "Key": "KEY_Redo_Repeat",
+      "Text": "Redo (continuous)"
+    },
+    {
+      "Key": "KEY_Redo_Repeat_TT",
+      "Text": "This will redo the most recently undone action repeatly whilst held."
+    },
+    {
+      "Key": "KEY_Up",
+      "Text": "Move Up in List"
+    },
+    {
+      "Key": "KEY_Up_TT",
+      "Text": "Within a list, this will move the selection one space up."
+    },
+    {
+      "Key": "KEY_Down",
+      "Text": "Move Down in List"
+    },
+    {
+      "Key": "KEY_Down_TT",
+      "Text": "Within a list, this will move the selection one space down."
+    },
+    {
+      "Key": "KEY_Left",
+      "Text": "Move Left in List"
+    },
+    {
+      "Key": "KEY_Left_TT",
+      "Text": "Within a list, this will move the selection one space to the left."
+    },
+    {
+      "Key": "KEY_Right",
+      "Text": "Move Right in List"
+    },
+    {
+      "Key": "KEY_Right_TT",
+      "Text": "Within a list, this will move the selection one space to the right."
+    },
+    {
+      "Key": "KEY_Add",
+      "Text": "Add New to List"
+    },
+    {
+      "Key": "KEY_Add_TT",
+      "Text": "This will add a new entry to the list."
+    },
+    {
+      "Key": "KEY_Select_All",
+      "Text": "Select All in List"
+    },
+    {
+      "Key": "KEY_Select_All_TT",
+      "Text": "This will select all entries within a list."
+    },
+    {
+      "Key": "KEY_Copy",
+      "Text": "Copy"
+    },
+    {
+      "Key": "KEY_Copy_TT",
+      "Text": "Copy the currently selected entries into a clipboard."
+    },
+    {
+      "Key": "KEY_Paste",
+      "Text": "Paste"
+    },
+    {
+      "Key": "KEY_Paste_TT",
+      "Text": "Paste the entries that reside within the clipboard into the list."
+    },
+    {
+      "Key": "KEY_Duplicate",
+      "Text": "Duplicate"
+    },
+    {
+      "Key": "KEY_Duplicate_TT",
+      "Text": "When an entry is selected, this will duplicate the entry within the list."
+    },
+    {
+      "Key": "KEY_Delete",
+      "Text": "Delete"
+    },
+    {
+      "Key": "KEY_Delete_TT",
+      "Text": "When an entry is selected, this will delete the entry from the list."
+    },
+    {
+      "Key": "KEY_Jump",
+      "Text": "Focus"
+    },
+    {
+      "Key": "KEY_Jump_TT",
+      "Text": "When an entry is selected, this will focus the entry to the centre of the user's screen."
+    },
+    {
+      "Key": "KEY_Reorder_Up",
+      "Text": "Move Up"
+    },
+    {
+      "Key": "KEY_Reorder_Up_TT",
+      "Text": "When in a list, the selected entry is moved up one space."
+    },
+    {
+      "Key": "KEY_Reorder_Down",
+      "Text": "Move Down"
+    },
+    {
+      "Key": "KEY_Reorder_Down_TT",
+      "Text": "When in a list, the selected entry is moved down one space."
+    },
+    {
+      "Key": "KEY_Reorder_Top",
+      "Text": "Move to Top"
+    },
+    {
+      "Key": "KEY_Reorder_Top_TT",
+      "Text": "When in a list, the selected entry is moved to the top of the list."
+    },
+    {
+      "Key": "KEY_Reorder_Bottom",
+      "Text": "Move to Bottom"
+    },
+    {
+      "Key": "KEY_Reorder_Bottom_TT",
+      "Text": "When in a list, the selected entry is moved to the bottom of the list."
+    },
+    {
+      "Key": "KEY_Apply_to_All",
+      "Text": "Apply to All"
+    },
+    {
+      "Key": "KEY_Apply_to_All_TT",
+      "Text": "When in a list, holding this button will cause the action to apply to all entries."
+    },
+    {
+      "Key": "KEY_Toggle_Tools_Menu",
+      "Text": "Toggle Tools Menu"
+    },
+    {
+      "Key": "KEY_Toggle_Tools_Menu_TT",
+      "Text": "Toggle the visibility of the Tools menu within the current editor."
+    },
+    {
+      "Key": "KEY_MapEditor_Toggle_World_Map_Menu",
+      "Text": "Toggle World Map"
+    },
+    {
+      "Key": "KEY_MapEditor_Toggle_World_Map_Menu_TT",
+      "Text": "Toggle the visibility of the World Map tool."
+    },
+    {
+      "Key": "KEY_MapEditor_Reset_World_Map_Zoom_Level",
+      "Text": "Reset World Map Zoom Level"
+    },
+    {
+      "Key": "KEY_MapEditor_Reset_World_Map_Zoom_Level_TT",
+      "Text": "Resets the zoom level within the World Map tool."
+    },
+    {
+      "Key": "KEY_MapEditor_Create_Map_Object",
+      "Text": "Create Map Object"
+    },
+    {
+      "Key": "KEY_MapEditor_Create_Map_Object_TT",
+      "Text": "Creates a new map object."
+    },
+    {
+      "Key": "KEY_MapEditor_Duplicate_To_Map",
+      "Text": "Toggle Duplicate to Map Menu"
+    },
+    {
+      "Key": "KEY_MapEditor_Duplicate_To_Map_TT",
+      "Text": "Opens the 'Duplicate to Map' menu."
+    },
+    {
+      "Key": "KEY_MapEditor_Rotate_X_Axis",
+      "Text": "Rotate Selection (+ x-axis)"
+    },
+    {
+      "Key": "KEY_MapEditor_Rotate_X_Axis_TT",
+      "Text": "Rotates the selection one increment on the positive X-axis."
+    },
+    {
+      "Key": "KEY_MapEditor_Rotate_Y_Axis",
+      "Text": "Rotate Selection (+ y-axis)"
+    },
+    {
+      "Key": "KEY_MapEditor_Rotate_Y_Axis_TT",
+      "Text": "Rotates the selection one increment on the positive Y-axis."
+    },
+    {
+      "Key": "KEY_MapEditor_Rotate_Pivot_Y_Axis",
+      "Text": "Pivot Selection (+ y-axis)"
+    },
+    {
+      "Key": "KEY_MapEditor_Rotate_Pivot_Y_Axis_TT",
+      "Text": "Pivots the selection one increment on the positive Y-axis."
+    },
+    {
+      "Key": "KEY_MapEditor_Rotate_Minus_X_Axis",
+      "Text": "Rotate Selection (- x-axis)"
+    },
+    {
+      "Key": "KEY_MapEditor_Rotate_Minus_X_Axis_TT",
+      "Text": "Rotates the selection one increment on the negative X-axis."
+    },
+    {
+      "Key": "KEY_MapEditor_Rotate_Minus_Y_Axis",
+      "Text": "Rotate Selection (- y-axis)"
+    },
+    {
+      "Key": "KEY_MapEditor_Rotate_Minus_Y_Axis_TT",
+      "Text": "Rotates the selection one increment on the negative Y-axis."
+    },
+    {
+      "Key": "KEY_MapEditor_Rotate_Minus_Pivot_Y_Axis",
+      "Text": "Pivot Selection (- y-axis)"
+    },
+    {
+      "Key": "KEY_MapEditor_Rotate_Minus_Pivot_Y_Axis_TT",
+      "Text": "Pivots the selection one increment on the negative Y-axis."
+    },
+    {
+      "Key": "KEY_MapEditor_Rotate_Fixed_Angle",
+      "Text": "Rotate Selection (fixed angle)"
+    },
+    {
+      "Key": "KEY_MapEditor_Rotate_Fixed_Angle_TT",
+      "Text": "Rotates the selection by the configured fixed angle."
+    },
+    {
+      "Key": "KEY_MapEditor_Reset_Rotation",
+      "Text": "eset Selection Rotation"
+    },
+    {
+      "Key": "KEY_MapEditor_Reset_Rotation_TT",
+      "Text": "Resets the selection's rotation to <0,0,0>"
+    },
+    {
+      "Key": "KEY_MapEditor_Scramble",
+      "Text": "Scramble Selection"
+    },
+    {
+      "Key": "KEY_MapEditor_Scramble_TT",
+      "Text": "Applies the scramble parameters to the selection."
+    },
+    {
+      "Key": "KEY_MapEditor_Replicate",
+      "Text": "Replicate Selection"
+    },
+    {
+      "Key": "KEY_MapEditor_Replicate_TT",
+      "Text": "Applies the replicate parameters to the selection."
+    },
+    {
+      "Key": "KEY_MapEditor_Cycle_Render_Type",
+      "Text": "Cycle Render Type"
+    },
+    {
+      "Key": "KEY_MapEditor_Cycle_Render_Type_TT",
+      "Text": "Cycles through the render types for map objects."
+    },
+    {
+      "Key": "KEY_MapEditor_Make_Dummy_Object",
+      "Text": "Set Map Object to Dummy"
+    },
+    {
+      "Key": "KEY_MapEditor_Make_Dummy_Object_TT",
+      "Text": "Makes the selection a DummyObject or DummyAsset (causes information loss)."
+    },
+    {
+      "Key": "KEY_MapEditor_Make_Normal_Object",
+      "Text": "Set Map Object to Normal"
+    },
+    {
+      "Key": "KEY_MapEditor_Make_Normal_Object_TT",
+      "Text": "Makes the selection an Object or Asset."
+    },
+    {
+      "Key": "KEY_MapEditor_Enable_Game_Presence_Object",
+      "Text": "Enable Map Object Game Presence"
+    },
+    {
+      "Key": "KEY_MapEditor_Enable_Game_Presence_TT",
+      "Text": "Enables the Game Presence boolean for the selection."
+    },
+    {
+      "Key": "KEY_MapEditor_Disable_Game_Presence_Object",
+      "Text": "Disable Map Object Game Presence"
+    },
+    {
+      "Key": "KEY_MapEditor_Disable_Game_Presence_TT",
+      "Text": "Disables the Game Presence boolean for the selection."
+    },
+    {
+      "Key": "KEY_MapEditor_Visibility_Flip",
+      "Text": "Flip Visibility"
+    },
+    {
+      "Key": "KEY_MapEditor_Visibility_Flip_TT",
+      "Text": "Flip the current visibility state for the selection."
+    },
+    {
+      "Key": "KEY_MapEditor_Visibility_Enable",
+      "Text": "Force Visibility"
+    },
+    {
+      "Key": "KEY_MapEditor_Visibility_Enable_TT",
+      "Text": "Forces the selection to be visible."
+    },
+    {
+      "Key": "KEY_MapEditor_Visibility_Disable",
+      "Text": "Force Invisibility"
+    },
+    {
+      "Key": "KEY_MapEditor_Visibility_Disable_TT",
+      "Text": "Forces the selection to be invisible."
+    },
+    {
+      "Key": "KEY_MapEditor_Global_Visibility_Flip",
+      "Text": "Flip Visibility for All"
+    },
+    {
+      "Key": "KEY_MapEditor_Global_Visibility_Flip_TT",
+      "Text": "Flip the current visibility state for all map objects."
+    },
+    {
+      "Key": "KEY_MapEditor_Global_Visibility_Enable",
+      "Text": "Force Visibility for All"
+    },
+    {
+      "Key": "KEY_MapEditor_Global_Visibility_Enable_TT",
+      "Text": "Forces all map objects to be visible."
+    },
+    {
+      "Key": "KEY_MapEditor_Global_Visibility_Disable",
+      "Text": "Force Invisibility for All"
+    },
+    {
+      "Key": "KEY_MapEditor_Global_Visibility_Disable_TT",
+      "Text": "Forces all map objects to be invisible."
+    },
+    {
+      "Key": "KEY_MapEditor_Configure_Grid_Placement",
+      "Text": "Toggle Grid Placement Menu"
+    },
+    {
+      "Key": "KEY_MapEditor_Configure_Grid_Placement_TT",
+      "Text": "Toggle the Grid Placement menu."
+    },
+    {
+      "Key": "KEY_MapEditor_Cycle_Selected_Grid_Type",
+      "Text": "Cycle Selected Grid"
+    },
+    {
+      "Key": "KEY_MapEditor_Cycle_Selected_Grid_Type_TT",
+      "Text": "Cycle through which grid the grid placement tool moves the selection to."
+    },
+    {
+      "Key": "KEY_MapEditor_Move_to_Primary_Grid",
+      "Text": "Move Selection to Primary Grid"
+    },
+    {
+      "Key": "KEY_MapEditor_Move_to_Primary_Grid_TT",
+      "Text": "Moves the selection to the primary grid (based on the grid placment parameters)."
+    },
+    {
+      "Key": "KEY_MapEditor_Move_to_Secondary_Grid",
+      "Text": "Move Selection to Secondary Grid"
+    },
+    {
+      "Key": "KEY_MapEditor_Move_to_Secondary_Grid_TT",
+      "Text": "Moves the selection to the secondary grid (based on the grid placment parameters)."
+    },
+    {
+      "Key": "KEY_MapEditor_Move_to_Tertiary_Grid",
+      "Text": "Move Selection to Tertiary Grid"
+    },
+    {
+      "Key": "KEY_MapEditor_Move_to_Tertiary_Grid_TT",
+      "Text": "Moves the selection to the tertiary grid (based on the grid placment parameters)."
+    },
+    {
+      "Key": "KEY_MapEditor_SelectAll_Configurable",
+      "Text": "Select All (Configurable)"
+    },
+    {
+      "Key": "KEY_MapEditor_SelectAll_Configurable_TT",
+      "Text": "Select all map objects that match the configured parameters."
+    },
+    {
+      "Key": "KEY_MapEditor_SelectAll_ObjectType",
+      "Text": "Select All (Object Type)"
+    },
+    {
+      "Key": "KEY_MapEditor_SelectAll_ObjectType_TT",
+      "Text": "Select all map objects that have the same object type as the current selection."
+    },
+    {
+      "Key": "KEY_MapEditor_SelectAll_ModelName",
+      "Text": "Select All (Model Name)"
+    },
+    {
+      "Key": "KEY_MapEditor_SelectAll_ModelName_TT",
+      "Text": "Select all map objects that have the same model name as the current selection."
+    },
+    {
+      "Key": "KEY_MapEditor_SelectAll_Ceremony",
+      "Text": "Select All (Ceremony)"
+    },
+    {
+      "Key": "KEY_MapEditor_SelectAll_Ceremony_TT",
+      "Text": "Select all map objects that have the same ceremony layer as the current selection."
+    },
+    {
+      "Key": "KEY_MapEditor_Create_Selection_Group",
+      "Text": "Create Selection Group"
+    },
+    {
+      "Key": "KEY_MapEditor_Create_Selection_Group_TT",
+      "Text": "Automatically create a selection group from the current selection."
+    },
+    {
+      "Key": "KEY_MapEditor_Select_Group_0",
+      "Text": "Select Selection Group 0"
+    },
+    {
+      "Key": "KEY_MapEditor_Select_Group_0_TT",
+      "Text": "Select the map objects in a group with the Group 0 shortcut assigned."
+    },
+    {
+      "Key": "KEY_MapEditor_Select_Group_1",
+      "Text": "Select Selection Group 1"
+    },
+    {
+      "Key": "KEY_MapEditor_Select_Group_1_TT",
+      "Text": "Select the map objects in a group with the Group 1 shortcut assigned."
+    },
+    {
+      "Key": "KEY_MapEditor_Select_Group_2",
+      "Text": "Select Selection Group 2"
+    },
+    {
+      "Key": "KEY_MapEditor_Select_Group_2_TT",
+      "Text": "Select the map objects in a group with the Group 2 shortcut assigned."
+    },
+    {
+      "Key": "KEY_MapEditor_Select_Group_3",
+      "Text": "Select Selection Group 3"
+    },
+    {
+      "Key": "KEY_MapEditor_Select_Group_3_TT",
+      "Text": "Select the map objects in a group with the Group 3 shortcut assigned."
+    },
+    {
+      "Key": "KEY_MapEditor_Select_Group_4",
+      "Text": "Select Selection Group 4"
+    },
+    {
+      "Key": "KEY_MapEditor_Select_Group_4_TT",
+      "Text": "Select the map objects in a group with the Group 4 shortcut assigned."
+    },
+    {
+      "Key": "KEY_MapEditor_Select_Group_5",
+      "Text": "Select Selection Group 5"
+    },
+    {
+      "Key": "KEY_MapEditor_Select_Group_5_TT",
+      "Text": "Select the map objects in a group with the Group 5 shortcut assigned."
+    },
+    {
+      "Key": "KEY_MapEditor_Select_Group_6",
+      "Text": "Select Selection Group 6"
+    },
+    {
+      "Key": "KEY_MapEditor_Select_Group_6_TT",
+      "Text": "Select the map objects in a group with the Group 6 shortcut assigned."
+    },
+    {
+      "Key": "KEY_MapEditor_Select_Group_7",
+      "Text": "Select Selection Group 7"
+    },
+    {
+      "Key": "KEY_MapEditor_Select_Group_7_TT",
+      "Text": "Select the map objects in a group with the Group 7 shortcut assigned."
+    },
+    {
+      "Key": "KEY_MapEditor_Select_Group_8",
+      "Text": "Select Selection Group 8"
+    },
+    {
+      "Key": "KEY_MapEditor_Select_Group_8_TT",
+      "Text": "Select the map objects in a group with the Group 8 shortcut assigned."
+    },
+    {
+      "Key": "KEY_MapEditor_Select_Group_9",
+      "Text": "Select Selection Group 9"
+    },
+    {
+      "Key": "KEY_MapEditor_Select_Group_9_TT",
+      "Text": "Select the map objects in a group with the Group 9 shortcut assigned."
+    },
+    {
+      "Key": "KEY_MapEditor_Select_Group_10",
+      "Text": "Select Selection Group 10"
+    },
+    {
+      "Key": "KEY_MapEditor_Select_Group_10_TT",
+      "Text": "Select the map objects in a group with the Group 10 shortcut assigned."
+    },
+    {
+      "Key": "KEY_MapEditor_Rotation_Increment_Cycle_Type",
+      "Text": "Cycle Rotation Increment Type (Forwards)"
+    },
+    {
+      "Key": "KEY_MapEditor_Rotation_Increment_Cycle_Type_TT",
+      "Text": "Cycle forwards through the rotation increment values."
+    },
+    {
+      "Key": "KEY_MapEditor_Rotation_Increment_Cycle_Type_Backwards",
+      "Text": "Cycle Rotation Increment Type (Backwards)"
+    },
+    {
+      "Key": "KEY_MapEditor_Rotation_Increment_Cycle_Type_Backwards_TT",
+      "Text": "Cycle backwards through the rotation increment values."
+    },
+    {
+      "Key": "KEY_MapEditor_Position_Increment_Cycle_Type",
+      "Text": "Cycle Translation Increment Type (Forwards)"
+    },
+    {
+      "Key": "KEY_MapEditor_Position_Increment_Cycle_Type_TT",
+      "Text": "Cycle forwards through the translation increment values."
+    },
+    {
+      "Key": "KEY_MapEditor_Position_Increment_Cycle_Type_Backwards",
+      "Text": "Cycle Translation Increment Type (Backwards)"
+    },
+    {
+      "Key": "KEY_MapEditor_Position_Increment_Cycle_Type_Backwards_TT",
+      "Text": "Cycle backwards through the translation increment values."
+    },
+    {
+      "Key": "KEY_MapEditor_Position_Increment_Toggle_Discrete_Mode",
+      "Text": "Toggle Increment Discrete Mode"
+    },
+    {
+      "Key": "KEY_MapEditor_Position_Increment_Toggle_Discrete_Mode_TT",
+      "Text": "Toggle whether the 'discrete mode' shortcut detection is used for translation increment movements."
+    },
+    {
+      "Key": "KEY_MapEditor_Position_Increment_Positive_X",
+      "Text": "Translate Selection by Increment (+ x-axis)"
+    },
+    {
+      "Key": "KEY_MapEditor_Position_Increment_Positive_X_TT",
+      "Text": "Move the selection on the positive X-axis by the current translation increment."
+    },
+    {
+      "Key": "KEY_MapEditor_Position_Increment_Negative_X",
+      "Text": "Translate Selection by Increment (- x-axis)"
+    },
+    {
+      "Key": "KEY_MapEditor_Position_Increment_Negative_X_TT",
+      "Text": "Move the selection on the negative X-axis by the current translation increment."
+    },
+    {
+      "Key": "KEY_MapEditor_Position_Increment_Positive_Y",
+      "Text": "Translate Selection by Increment (+ y-axis)"
+    },
+    {
+      "Key": "KEY_MapEditor_Position_Increment_Positive_Y_TT",
+      "Text": "Move the selection on the positive Y-axis by the current translation increment."
+    },
+    {
+      "Key": "KEY_MapEditor_Position_Increment_Negative_Y",
+      "Text": "Translate Selection by Increment (- x-axis)"
+    },
+    {
+      "Key": "KEY_MapEditor_Position_Increment_Negative_Y_TT",
+      "Text": "Move the selection on the negative Y-axis by the current translation increment."
+    },
+    {
+      "Key": "KEY_MapEditor_Position_Increment_Positive_Z",
+      "Text": "Translate Selection by Increment (+ z-axis)"
+    },
+    {
+      "Key": "KEY_MapEditor_Position_Increment_Positive_Z_TT",
+      "Text": "Move the selection on the positive Z-axis by the current translation increment."
+    },
+    {
+      "Key": "KEY_MapEditor_Position_Increment_Negative_Z",
+      "Text": "Translate Selection by Increment (- x-axis)"
+    },
+    {
+      "Key": "KEY_MapEditor_Position_Increment_Negative_Z_TT",
+      "Text": "Move the selection on the negative Z-axis by the current translation increment."
+    },
+    {
+      "Key": "KEY_MapEditor_Toggle_Patrol_Route_Visuals",
+      "Text": "Toggle Visibility of Patrol Routes"
+    },
+    {
+      "Key": "KEY_MapEditor_Toggle_Patrol_Route_Visuals_TT",
+      "Text": "Toggles the visibility of patrol routes in the viewport."
+    },
+    {
+      "Key": "KEY_MapEditor_View_Display_Group",
+      "Text": "View Display Group"
+    },
+    {
+      "Key": "KEY_MapEditor_View_Display_Group_TT",
+      "Text": "View all map objects with the same display group as the current selection."
+    },
+    {
+      "Key": "KEY_MapEditor_View_Draw_Group",
+      "Text": "View Draw Group"
+    },
+    {
+      "Key": "KEY_MapEditor_View_Draw_Group_TT",
+      "Text": "View all map objects with the same draw group as the current selection."
+    },
+    {
+      "Key": "KEY_MapEditor_Apply_Display_Group",
+      "Text": "Apply Display Group"
+    },
+    {
+      "Key": "KEY_MapEditor_Apply_Display_Group_TT",
+      "Text": "Apply display group change in the Display Groups tool to the current selection."
+    },
+    {
+      "Key": "KEY_MapEditor_Apply_Draw_Group",
+      "Text": "Apply Draw Group"
+    },
+    {
+      "Key": "KEY_MapEditor_Apply_Draw_Group_TT",
+      "Text": "Apply draw group change in the Display Groups tool to the current selection."
+    },
+    {
+      "Key": "KEY_MapEditor_Hide_All_Display_Groups",
+      "Text": "Hide All Display Groups"
+    },
+    {
+      "Key": "KEY_MapEditor_Hide_All_Display_Groups_TT",
+      "Text": "Hide all display groups in the Display Groups tool."
+    },
+    {
+      "Key": "KEY_MapEditor_Show_All_Display_Groups",
+      "Text": "Show All Display Groups"
+    },
+    {
+      "Key": "KEY_MapEditor_Show_All_Display_Groups_TT",
+      "Text": "Show all display groups in the Display Groups tool."
+    },
+    {
+      "Key": "KEY_MapEditor_Select_Display_Group_Highlights",
+      "Text": "Select Display Group Highlights"
+    },
+    {
+      "Key": "KEY_MapEditor_Select_Display_Group_Highlights_TT",
+      "Text": "Select the display groups that are highlighted."
+    },
+    {
+      "Key": "KEY_MapEditor_Select_Collision_References",
+      "Text": "Select Collision References"
+    },
+    {
+      "Key": "KEY_MapEditor_Select_Collision_References_TT",
+      "Text": "elects all map objects that reference the currently selected collision(s)."
+    },
+    {
+      "Key": "KEY_MapEditor_Select_Referenced_Collision",
+      "Text": "Select Referenced Collision"
+    },
+    {
+      "Key": "KEY_MapEditor_Select_Referenced_Collision_TT",
+      "Text": "Selects the collisions referenced by the currently selected part(s)."
+    },
+    {
+      "Key": "KEY_MapEditor_Deselect_All",
+      "Text": "Deselect All"
+    },
+    {
+      "Key": "KEY_MapEditor_Deselect_All_TT",
+      "Text": "Clear selection."
+    },
+    {
+      "Key": "KEY_ModelEditor_Select_Primitives_Only",
+      "Text": "Enter Primitive Selection Mode"
+    },
+    {
+      "Key": "KEY_ModelEditor_Select_Primitives_Only_TT",
+      "Text": "When held, only dummies and nodes will be selected by a viewport click."
+    },
+    {
+      "Key": "KEY_ParamEditor_Focus_Searchbar",
+      "Text": "Focus Search"
+    },
+    {
+      "Key": "KEY_ParamEditor_Focus_Searchbar_TT",
+      "Text": "Focuses the searchbar input."
+    },
+    {
+      "Key": "KEY_ParamEditor_Apply_Mass_Edit",
+      "Text": "Apply Mass Edit"
+    },
+    {
+      "Key": "KEY_ParamEditor_Apply_Mass_Edit_TT",
+      "Text": "Applies the current mass edit command."
+    },
+    {
+      "Key": "KEY_ParamEditor_View_Mass_Edit",
+      "Text": "View Mass Edit Menu"
+    },
+    {
+      "Key": "KEY_ParamEditor_View_Mass_Edit_TT",
+      "Text": "Toggle the Mass Edit menu."
+    },
+    {
+      "Key": "KEY_ParamEditor_Import_CSV",
+      "Text": "View Import CSV Menu"
+    },
+    {
+      "Key": "KEY_ParamEditor_Import_CSV_TT",
+      "Text": "Toggle the Import CSV menu."
+    },
+    {
+      "Key": "KEY_ParamEditor_Export_CSV",
+      "Text": "View Export CSV Menu"
+    },
+    {
+      "Key": "KEY_ParamEditor_Export_CSV_TT",
+      "Text": "Toggle the Export CSV menu."
+    },
+    {
+      "Key": "KEY_ParamEditor_Export_CSV_Names",
+      "Text": "Export CSV (Row Names)"
+    },
+    {
+      "Key": "KEY_ParamEditor_Export_CSV_Names_TT",
+      "Text": "Open the Export CSV menu, filled with row names for current param."
+    },
+    {
+      "Key": "KEY_ParamEditor_Export_CSV_Param",
+      "Text": "Export CSV (Param)"
+    },
+    {
+      "Key": "KEY_ParamEditor_Export_CSV_Param_TT",
+      "Text": "Open the Export CSV menu, filled with row data for current param."
+    },
+    {
+      "Key": "KEY_ParamEditor_Export_CSV_All_Rows",
+      "Text": "Export CSV (All Rows)"
+    },
+    {
+      "Key": "KEY_ParamEditor_Export_CSV_All_Rows_TT",
+      "Text": "Open the Export CSV menu, filled with row data for current param."
+    },
+    {
+      "Key": "KEY_ParamEditor_Export_CSV_Modified_Rows",
+      "Text": "Export CSV (Modified Rows)"
+    },
+    {
+      "Key": "KEY_ParamEditor_Export_CSV_Modified_Rows_TT",
+      "Text": "Open the Export CSV menu, filled with modified row data for current param."
+    },
+    {
+      "Key": "KEY_ParamEditor_Export_CSV_Selected_Rows",
+      "Text": "Export CSV (Selected Rows)"
+    },
+    {
+      "Key": "KEY_ParamEditor_Export_CSV_Selected_Rows_TT",
+      "Text": "Open the Export CSV menu, filled with selected row data for current param."
+    },
+    {
+      "Key": "KEY_ParamEditor_Reload_All_Params",
+      "Text": "Reload All Params"
+    },
+    {
+      "Key": "KEY_ParamEditor_Reload_All_Params_TT",
+      "Text": "Reload all params, refreshing param data in-game (if supported)."
+    },
+    {
+      "Key": "KEY_ParamEditor_Reload_Selected_Param",
+      "Text": "Reload Selected Param"
+    },
+    {
+      "Key": "KEY_ParamEditor_Reload_Selected_Param_TT",
+      "Text": "Reload selected param, refreshing param data in-game (if supported)."
+    },
+    {
+      "Key": "KEY_ParamEditor_RowList_Sort_Rows",
+      "Text": "Sort Rows"
+    },
+    {
+      "Key": "KEY_ParamEditor_RowList_Sort_Rows_TT",
+      "Text": "Applies row sort to all rows for the current param."
+    },
+    {
+      "Key": "KEY_ParamEditor_RowList_Jump_to_Row_ID",
+      "Text": "Open Jump to Row Menu"
+    },
+    {
+      "Key": "KEY_ParamEditor_RowList_Jump_to_Row_ID_TT",
+      "Text": "Toggles the Jump to Row menu."
+    },
+    {
+      "Key": "KEY_ParamEditor_RowList_Inherit_Referenced_Row_Name",
+      "Text": "Apply Referenced Row Name Inheritance"
+    },
+    {
+      "Key": "KEY_ParamEditor_RowList_Inherit_Referenced_Row_Name_TT",
+      "Text": "Applies the referenced row name inheritance (if configured)."
+    },
+    {
+      "Key": "KEY_TextEditor_Focus_Searchbar",
+      "Text": "Focus Search"
+    },
+    {
+      "Key": "KEY_TextEditor_Focus_Searchbar_TT",
+      "Text": "Focuses the search bar input."
+    },
+    {
+      "Key": "KEY_TextEditor_Create_New_Entry",
+      "Text": "Toggle Text Entry Creator"
+    },
+    {
+      "Key": "KEY_TextEditor_Create_New_Entry_TT",
+      "Text": "Toggles the Text Entry Creator menu."
+    },
+    {
+      "Key": "KEY_TextEditor_Configurable_Duplicate",
+      "Text": "Toggle Configurable Duplicate"
+    },
+    {
+      "Key": "KEY_TextEditor_Configurable_Duplicate_TT",
+      "Text": "Toggles the Configurable Duplicate menu."
+    },
+    {
+      "Key": "KEY_GparamEditor_Add_Missing_Groups",
+      "Text": "Add Missing Groups"
+    },
+    {
+      "Key": "KEY_GparamEditor_Add_Missing_Groups_TT",
+      "Text": "Adds all of the missing groups for the currently selected graphics param."
+    },
+    {
+      "Key": "KEY_GparamEditor_Add_Missing_Fields",
+      "Text": "Add Missing Fields"
+    },
+    {
+      "Key": "KEY_GparamEditor_Add_Missing_Fields_TT",
+      "Text": "Adds all of the missing fields for the currently selected group."
+    },
+    {
+      "Key": "KEY_GparamEditor_Execute_Quick_Edit",
+      "Text": "Apply Quick Edit"
+    },
+    {
+      "Key": "KEY_GparamEditor_Execute_Quick_Edit_TT",
+      "Text": "Applies the current quick edit (if configured)."
+    },
+    {
+      "Key": "KEY_GparamEditor_Generate_Quick_Edit",
+      "Text": "Generate Quick Edit from Selection"
+    },
+    {
+      "Key": "KEY_GparamEditor_Generate_Quick_Edit_TT",
+      "Text": "Fills the Quick Edit tool based on current selection."
+    },
+    {
+      "Key": "KEY_GparamEditor_Clear_Quick_Edit",
+      "Text": "Clear Quick Edit"
+    },
+    {
+      "Key": "KEY_GparamEditor_Clear_Quick_Edit_TT",
+      "Text": "Clears the Quick Edit tool inputs."
+    },
+    {
+      "Key": "KEY_TextureViewer_Export_Texture",
+      "Text": "Export Texture"
+    },
+    {
+      "Key": "KEY_TextureViewer_Export_Texture_TT",
+      "Text": "Exports the currently selected texture."
+    },
+    {
+      "Key": "KEY_TextureViewer_Reset_Zoom_Level",
+      "Text": "Reset Zoom Level"
+    },
+    {
+      "Key": "KEY_TextureViewer_Reset_Zoom_Level_TT",
+      "Text": "Resets the zoom level to default."
+    },
+    {
+      "Key": "KEY_CaptureThumbnailImage",
+      "Text": "Capture Thumbnail"
+    },
+    {
+      "Key": "KEY_CaptureThumbnailImage_TT",
+      "Text": "Captures a thumbnail based on the current viewport."
+    }
+  ]
+}

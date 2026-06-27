@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 using Veldrid;
 
 namespace StudioCore.Keybinds;
@@ -10,16 +6,32 @@ namespace StudioCore.Keybinds;
 public enum MousebindID
 {
     // Viewport
+    [Display(Name = "MOUSE_Viewport_Enable_Viewport_Movement", Description = "MOUSE_Viewport_Enable_Viewport_Movement_TT")]
     Viewport_Enable_Viewport_Movement,
+
+    [Display(Name = "MOUSE_Viewport_Picking_Action", Description = "MOUSE_Viewport_Picking_Action_TT")]
     Viewport_Picking_Action,
+
+    [Display(Name = "MOUSE_Viewport_Gizmo_Interaction_Action", Description = "MOUSE_Viewport_Gizmo_Interaction_Action_TT")]
     Viewport_Gizmo_Interaction_Action,
 
     // Map Editor
+    [Display(Name = "MOUSE_MapEditor_Box_Drag_Start", Description = "MOUSE_MapEditor_Box_Drag_Start_TT")]
     MapEditor_Box_Drag_Start,
+
+    [Display(Name = "MOUSE_MapEditor_Box_Drag_End", Description = "MOUSE_MapEditor_Box_Drag_End_TT")]
     MapEditor_Box_Drag_End,
+
+    [Display(Name = "MOUSE_MapEditor_Display_Viewport_Context_Menu", Description = "MOUSE_MapEditor_Display_Viewport_Context_Menu_TT")]
     MapEditor_Display_Viewport_Context_Menu,
+
+    [Display(Name = "MOUSE_MapEditor_Select_Map_In_World_Map", Description = "MOUSE_MapEditor_Select_Map_In_World_Map_TT")]
     MapEditor_Select_Map_In_World_Map,
+
+    [Display(Name = "MOUSE_MapEditor_World_Map_Drag_Start", Description = "MOUSE_MapEditor_World_Map_Drag_Start_TT")]
     MapEditor_World_Map_Drag_Start,
+
+    [Display(Name = "MOUSE_MapEditor_World_Map_Drag_End", Description = "MOUSE_MapEditor_World_Map_Drag_End_TT")]
     MapEditor_World_Map_Drag_End
 }
 
@@ -60,50 +72,6 @@ public static class DefaultMouseBindings
 
 public static class MousebindMetadata
 {
-    public static readonly Dictionary<MousebindID, (string, string)> Presentation = new()
-    {
-        // Viewport
-        { MousebindID.Viewport_Enable_Viewport_Movement, (
-            "Enable Viewport Movement",
-            "The button that is down to enable viewport movement input."
-        ) },
-        { MousebindID.Viewport_Picking_Action, (
-            "Select Map Object",
-            "The button that is pressed to select a map object in the viewport."
-        ) },
-        { MousebindID.Viewport_Gizmo_Interaction_Action, (
-            "Interact with Gizmo",
-            "The button that is down to interact with a gizmo control."
-        ) },
-
-        // Map Editor
-        { MousebindID.MapEditor_Display_Viewport_Context_Menu, (
-            "Display Viewport Context Menu",
-            "The button that is pressed to open the viewport context menu."
-        ) },
-        { MousebindID.MapEditor_Box_Drag_Start, (
-            "Start Box Drag",
-            "The button that is down to signal the start of the box selection drag."
-        ) },
-        { MousebindID.MapEditor_Box_Drag_End, (
-            "End Box Drag",
-            "The button that is released to signal the end of the box selection drag."
-        ) },
-        { MousebindID.MapEditor_Select_Map_In_World_Map, (
-            "Select Map in World Map",
-            "The button that is pressed to select the maps to filter by when in the World Map menu."
-        ) },
-        { MousebindID.MapEditor_World_Map_Drag_Start, (
-            "Start World Map Drag",
-            "The button that is down to signal the start of the world map drag."
-        ) },
-        { MousebindID.MapEditor_World_Map_Drag_End, (
-            "End World Map Drag",
-            "The button that is released to signal the end of the world map drag."
-        ) },
-    };
-
-
     public static readonly Dictionary<MousebindID, InputCategory> Category = new()
     {
         { MousebindID.Viewport_Enable_Viewport_Movement, InputCategory.Viewport },

@@ -567,6 +567,13 @@ public static class UIHelper
         return flags;
     }
 
+    public static ImGuiWindowFlags GetFloatingWindowFlags()
+    {
+        var flags = ImGuiWindowFlags.NoCollapse | ImGuiWindowFlags.MenuBar | ImGuiWindowFlags.NoDocking;
+
+        return flags;
+    }
+
     public static ImGuiWindowFlags GetToolPaletteWindowFlags()
     {
         var flags = ImGuiWindowFlags.NoCollapse | ImGuiWindowFlags.MenuBar | ImGuiWindowFlags.NoDocking;
