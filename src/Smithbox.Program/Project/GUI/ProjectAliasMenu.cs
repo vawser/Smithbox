@@ -905,7 +905,21 @@ public class ProjectAliasMenu
 
     public void SaveAliases(string targetPath, string saveMessage)
     {
-        foreach ((ProjectAliasType aliasType, List<AliasEntry> aliases) in Smithbox.Orchestrator.SelectedProject.Handler.ProjectData.Aliases)
+        var curProject = Smithbox.Orchestrator.SelectedProject;
+
+        if (curProject == null)
+            return;
+
+        if (curProject.Handler == null)
+            return;
+
+        if (curProject.Handler.ProjectData == null)
+            return;
+
+        if (curProject.Handler.ProjectData.Aliases == null)
+            return;
+
+        foreach ((ProjectAliasType aliasType, List<AliasEntry> aliases) in curProject.Handler.ProjectData.Aliases)
         {
             // Only save the currently selected one.
             if (aliasType != SelectedAliasType)
@@ -934,12 +948,26 @@ public class ProjectAliasMenu
 
     public void SaveIndividualAlias(ProjectAliasType targetType)
     {
+        var curProject = Smithbox.Orchestrator.SelectedProject;
+
+        if (curProject == null)
+            return;
+
+        if (curProject.Handler == null)
+            return;
+
+        if (curProject.Handler.ProjectData == null)
+            return;
+
+        if (curProject.Handler.ProjectData.Aliases == null)
+            return;
+
         var projectFolder = Path.Join(Smithbox.Orchestrator.SelectedProject.Descriptor.ProjectPath, ".smithbox", "Assets", "Aliases");
 
         if (!Directory.Exists(projectFolder))
             Directory.CreateDirectory(projectFolder);
 
-        foreach ((ProjectAliasType aliasType, List<AliasEntry> aliases) in Smithbox.Orchestrator.SelectedProject.Handler.ProjectData.Aliases)
+        foreach ((ProjectAliasType aliasType, List<AliasEntry> aliases) in curProject.Handler.ProjectData.Aliases)
         {
             if (targetType != aliasType)
                 continue;

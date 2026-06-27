@@ -40,49 +40,55 @@ public class ProjectEntry
 
     public void Draw(GraphicsDevice device, CommandList cl)
     {
-        if (Handler.MapEditorStub != null)
-            Handler.MapEditorStub.Draw(device, cl);
+        if (Handler != null)
+        {
+            if (Handler.MapEditorStub != null)
+                Handler.MapEditorStub.Draw(device, cl);
 
-        if (Handler.ModelEditorStub != null)
-            Handler.ModelEditorStub.Draw(device, cl);
+            if (Handler.ModelEditorStub != null)
+                Handler.ModelEditorStub.Draw(device, cl);
 
-        if (Handler.AnimEditorStub != null)
-            Handler.AnimEditorStub.Draw(device, cl);
+            if (Handler.AnimEditorStub != null)
+                Handler.AnimEditorStub.Draw(device, cl);
+        }
     }
 
     public unsafe void Update(float dt)
     {
         var commands = EditorCommandQueue.GetNextCommand();
 
-        if (Handler.MapEditorStub != null)
-            Handler.MapEditorStub.Display(dt, commands);
+        if (Handler != null)
+        {
+            if (Handler.MapEditorStub != null)
+                Handler.MapEditorStub.Display(dt, commands);
 
-        if (Handler.ModelEditorStub != null)
-            Handler.ModelEditorStub.Display(dt, commands);
+            if (Handler.ModelEditorStub != null)
+                Handler.ModelEditorStub.Display(dt, commands);
 
-        if (Handler.TextEditorStub != null)
-            Handler.TextEditorStub.Display(dt, commands);
+            if (Handler.TextEditorStub != null)
+                Handler.TextEditorStub.Display(dt, commands);
 
-        if (Handler.ParamEditorStub != null)
-            Handler.ParamEditorStub.Display(dt, commands);
+            if (Handler.ParamEditorStub != null)
+                Handler.ParamEditorStub.Display(dt, commands);
 
-        if (Handler.GparamEditorStub != null)
-            Handler.GparamEditorStub.Display(dt, commands);
+            if (Handler.GparamEditorStub != null)
+                Handler.GparamEditorStub.Display(dt, commands);
 
-        if (Handler.MaterialEditorStub != null)
-            Handler.MaterialEditorStub.Display(dt, commands);
+            if (Handler.MaterialEditorStub != null)
+                Handler.MaterialEditorStub.Display(dt, commands);
 
-        if (Handler.TextureViewerStub != null)
-            Handler.TextureViewerStub.Display(dt, commands);
+            if (Handler.TextureViewerStub != null)
+                Handler.TextureViewerStub.Display(dt, commands);
 
-        if (Handler.FileBrowserStub != null)
-            Handler.FileBrowserStub.Display(dt, commands);
+            if (Handler.FileBrowserStub != null)
+                Handler.FileBrowserStub.Display(dt, commands);
 
-        if (Handler.AnimEditorStub != null)
-            Handler.AnimEditorStub.Display(dt, commands);
+            if (Handler.AnimEditorStub != null)
+                Handler.AnimEditorStub.Display(dt, commands);
 
-        if (Handler.MapDataEditorStub != null)
-            Handler.MapDataEditorStub.Display(dt, commands);
+            if (Handler.MapDataEditorStub != null)
+                Handler.MapDataEditorStub.Display(dt, commands);
+        }
 
         // Auto-Save
         AutomaticSaveInterval = (int)CFG.Current.Project_Automatic_Save_Interval;
@@ -102,14 +108,17 @@ public class ProjectEntry
 
     public void EditorResized(Sdl2Window window, GraphicsDevice device)
     {
-        if(Handler.MapEditorStub != null)
-            Handler.MapEditorStub.EditorResized(window, device);
+        if (Handler != null)
+        {
+            if (Handler.MapEditorStub != null)
+                Handler.MapEditorStub.EditorResized(window, device);
 
-        if (Handler.ModelEditorStub != null)
-            Handler.ModelEditorStub.EditorResized(window, device);
+            if (Handler.ModelEditorStub != null)
+                Handler.ModelEditorStub.EditorResized(window, device);
 
-        if (Handler.AnimEditorStub != null)
-            Handler.AnimEditorStub.EditorResized(window, device);
+            if (Handler.AnimEditorStub != null)
+                Handler.AnimEditorStub.EditorResized(window, device);
+        }
     }
 
     public async Task<bool> Init(Action<ProjectLoadProgress> reportProgress, bool silent = false, ProjectInitType initType = ProjectInitType.ProjectDefined)
@@ -277,58 +286,61 @@ public class ProjectEntry
     {
         if (CFG.Current.Project_Enable_Automatic_Save)
         {
-            try
+            if (Handler != null)
             {
-                Smithbox.Log(this, $"[Project] Auto-save triggered.");
+                try
+                {
+                    Smithbox.Log(this, $"[Project] Auto-save triggered.");
 
-                if (CFG.Current.Project_Automatic_Save_Include_Map_Editor)
-                {
-                    if (Handler.MapEditor != null && Handler.FocusedEditor is MapEditorScreen)
+                    if (CFG.Current.Project_Automatic_Save_Include_Map_Editor)
                     {
-                        Handler.MapEditor.Save(true);
+                        if (Handler.MapEditor != null && Handler.FocusedEditor is MapEditorScreen)
+                        {
+                            Handler.MapEditor.Save(true);
+                        }
                     }
-                }
 
-                if (CFG.Current.AutomaticSave_ModelEditor)
-                {
-                    if (Handler.ModelEditor != null && Handler.FocusedEditor is ModelEditorScreen)
+                    if (CFG.Current.AutomaticSave_ModelEditor)
                     {
-                        Handler.ModelEditor.Save(true);
+                        if (Handler.ModelEditor != null && Handler.FocusedEditor is ModelEditorScreen)
+                        {
+                            Handler.ModelEditor.Save(true);
+                        }
                     }
-                }
 
-                if (CFG.Current.Project_Automatic_Save_Include_Param_Editor && Handler.FocusedEditor is ParamEditorScreen)
-                {
-                    if (Handler.ParamEditor != null)
+                    if (CFG.Current.Project_Automatic_Save_Include_Param_Editor && Handler.FocusedEditor is ParamEditorScreen)
                     {
-                        Handler.ParamEditor.Save(true);
+                        if (Handler.ParamEditor != null)
+                        {
+                            Handler.ParamEditor.Save(true);
+                        }
+                    }
+                    if (CFG.Current.Project_Automatic_Save_Include_Text_Editor && Handler.FocusedEditor is TextEditorScreen)
+                    {
+                        if (Handler.TextEditor != null)
+                        {
+                            Handler.TextEditor.Save(true);
+                        }
+                    }
+                    if (CFG.Current.Project_Automatic_Save_Include_Gparam_Editor && Handler.FocusedEditor is GparamEditorScreen)
+                    {
+                        if (Handler.GparamEditor != null)
+                        {
+                            Handler.GparamEditor.Save(true);
+                        }
+                    }
+                    if (CFG.Current.Project_Automatic_Save_Include_Material_Editor && Handler.FocusedEditor is MaterialEditorScreen)
+                    {
+                        if (Handler.MaterialEditor != null)
+                        {
+                            Handler.MaterialEditor.Save(true);
+                        }
                     }
                 }
-                if (CFG.Current.Project_Automatic_Save_Include_Text_Editor && Handler.FocusedEditor is TextEditorScreen)
+                catch (Exception ex)
                 {
-                    if (Handler.TextEditor != null)
-                    {
-                        Handler.TextEditor.Save(true);
-                    }
+                    Smithbox.LogError(this, $"[Project] Auto-save failed.", ex);
                 }
-                if (CFG.Current.Project_Automatic_Save_Include_Gparam_Editor && Handler.FocusedEditor is GparamEditorScreen)
-                {
-                    if (Handler.GparamEditor != null)
-                    {
-                        Handler.GparamEditor.Save(true);
-                    }
-                }
-                if (CFG.Current.Project_Automatic_Save_Include_Material_Editor && Handler.FocusedEditor is MaterialEditorScreen)
-                {
-                    if (Handler.MaterialEditor != null)
-                    {
-                        Handler.MaterialEditor.Save(true);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Smithbox.LogError(this, $"[Project] Auto-save failed.", ex);
             }
         }
     }

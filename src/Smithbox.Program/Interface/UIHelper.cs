@@ -287,6 +287,17 @@ public static class UIHelper
             return hint;
     }
 
+    public static void WrappedYellowText(string text)
+    {
+        var size = ImGui.GetWindowSize();
+
+        ImGui.PushTextWrapPos(size.X);
+        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_AliasName_Text);
+        ImGui.TextUnformatted(text);
+        ImGui.PopStyleColor();
+        ImGui.PopTextWrapPos();
+    }
+
     public static void DisplayAlias(string aliasName)
     {
         if (aliasName != "")

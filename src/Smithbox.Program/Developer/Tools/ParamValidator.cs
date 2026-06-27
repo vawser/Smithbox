@@ -26,6 +26,9 @@ public class ParamValidator
         if (project == null)
             return;
 
+        if (project.Handler == null)
+            return;
+
         if (project.Handler.ParamEditor == null)
         {
             ImGui.Text("Param Editor must be enabled to use this tool.");

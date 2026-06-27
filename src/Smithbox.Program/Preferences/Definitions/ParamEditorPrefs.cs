@@ -38,6 +38,9 @@ public class ParamEditorPrefs
                 if (curProject == null)
                     return;
 
+                if (curProject.Handler == null)
+                    return;
+
                 var languages = curProject.Handler.ParamData.ParamAnnotationLanguages;
 
                 DPI.ApplyInputWidth();
@@ -73,6 +76,9 @@ public class ParamEditorPrefs
                 var curProject = Smithbox.Orchestrator.SelectedProject;
 
                 if (curProject == null)
+                    return;
+
+                if (curProject.Handler == null)
                     return;
 
                 var languages = curProject.Handler.ParamData.RowImportLanguages;
@@ -719,8 +725,12 @@ public class ParamEditorPrefs
                 if (curProject == null)
                     return;
 
-                var index = CFG.Current.ParamReloader_Current_Offsets;
+                if (curProject.Handler == null)
+                    return;
+
                 var paramData = curProject.Handler.ParamData;
+
+                var index = CFG.Current.ParamReloader_Current_Offsets;
 
                 if (curProject.Descriptor.ProjectType is ProjectType.Undefined)
                     return;
@@ -1754,6 +1764,12 @@ public class ParamEditorPrefs
 
             Draw = () => {
                 var curProject = Smithbox.Orchestrator.SelectedProject;
+
+                if (curProject == null)
+                    return;
+
+                if (curProject.Handler == null)
+                    return;
 
                 if (ImGui.Checkbox("##inputValue", ref CFG.Current.Param_Editor_Enable_Param_Meta_Override))
                 {

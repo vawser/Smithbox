@@ -23,6 +23,9 @@ public static class ParamMetadata
 
     public static void UpdateAnnotations(ProjectEntry curProject)
     {
+        if (curProject.Handler == null)
+            return;
+
         var type = ProjectUtils.GetGameDirectory(curProject.Descriptor.ProjectType);
 
         var outputFolder = $@"C:\Users\benja\Programming\Reference\Annotations\{type}";
@@ -64,6 +67,9 @@ public static class ParamMetadata
 
     public static void GenerateAnnotations(ProjectEntry curProject)
     {
+        if (curProject.Handler == null)
+            return;
+
         List<string> TypesConsumed = new();
 
         var type = ProjectUtils.GetGameDirectory(curProject.Descriptor.ProjectType);
@@ -128,6 +134,9 @@ public static class ParamMetadata
 
     public static void GenerateFieldLayouts(ProjectEntry curProject)
     {
+        if (curProject.Handler == null)
+            return;
+
         var type = ProjectUtils.GetGameDirectory(curProject.Descriptor.ProjectType);
 
         var outputFolder = $@"C:\Users\benja\Programming\Reference\Meta\{type}";
@@ -204,6 +213,9 @@ public static class ParamMetadata
 
     public static void ConvertEnums(ProjectEntry curProject)
     {
+        if (curProject.Handler == null)
+            return;
+
         var type = ProjectUtils.GetGameDirectory(curProject.Descriptor.ProjectType);
 
         var outputFolder = $@"C:\Users\benja\Programming\Reference\Meta\{type}";
@@ -250,6 +262,9 @@ public static class ParamMetadata
 
     public static void ConvertParamMeta(ProjectEntry curProject)
     {
+        if (curProject.Handler == null)
+            return;
+
         var type = ProjectUtils.GetGameDirectory(curProject.Descriptor.ProjectType);
 
         var outputFolder = $@"C:\Users\benja\Programming\Reference\Meta\{type}";

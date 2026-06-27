@@ -118,7 +118,25 @@ public class ProjectConfigureMenu
 
         if (!AllowCreation())
         {
-            ImGui.Text(GetCreationBlockedTooltip());
+            if(EditorMode is ProjectEditorMode.Create)
+                UIHelper.WrappedText("You cannot create a project due to the following issues:");
+
+            if (EditorMode is ProjectEditorMode.Edit)
+                UIHelper.WrappedText("You cannot edit a project due to the following issues:");
+
+            if (Descriptor.ProjectName == "")
+                UIHelper.WrappedYellowText("Project Name cannot be empty.");
+
+            if (!Directory.Exists(Descriptor.ProjectPath))
+                UIHelper.WrappedYellowText("Project Path is set to an invalid path.");
+
+            if (!Directory.Exists(Descriptor.DataPath))
+                UIHelper.WrappedYellowText("Data Path is set to an invalid path.");
+
+            if (Descriptor.ProjectType is ProjectType.Undefined)
+                UIHelper.WrappedYellowText("Project type cannot be undefined.");
+
+            UIHelper.Spacer();
         }
 
         if (EditorMode is ProjectEditorMode.Create)
@@ -476,25 +494,6 @@ public class ProjectConfigureMenu
             isAllowed = false;
 
         return isAllowed;
-    }
-
-    private string GetCreationBlockedTooltip()
-    {
-        var tooltip = "You cannot create a project due to the following issues:";
-
-        if (Descriptor.ProjectName == "")
-            tooltip = tooltip + "\n" + "Project Name cannot be empty.";
-
-        if (!Directory.Exists(Descriptor.ProjectPath))
-            tooltip = tooltip + "\n" + "Project Path is set to an invalid path.";
-
-        if (!Directory.Exists(Descriptor.DataPath))
-            tooltip = tooltip + "\n" + "Data Path is set to an invalid path.";
-
-        if (Descriptor.ProjectType is ProjectType.Undefined)
-            tooltip = tooltip + "\n" + "Project type cannot be undefined.";
-
-        return tooltip;
     }
 
     public void FindSteamExecutables()

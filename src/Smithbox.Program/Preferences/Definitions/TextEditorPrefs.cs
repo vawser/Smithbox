@@ -42,6 +42,9 @@ public class TextEditorPrefs
                 if (curProject == null)
                     return;
 
+                if (curProject.Handler == null)
+                    return;
+
                 if (curProject.Handler.TextData == null)
                     return;
 
@@ -94,6 +97,9 @@ public class TextEditorPrefs
                 var curProject = Smithbox.Orchestrator.SelectedProject;
 
                 if (curProject == null)
+                    return;
+
+                if (curProject.Handler == null)
                     return;
 
                 if (curProject.Handler.TextData == null)
@@ -149,6 +155,9 @@ public class TextEditorPrefs
                 if (curProject == null)
                     return;
 
+                if (curProject.Handler == null)
+                    return;
+
                 if (curProject.Handler.TextData == null)
                     return;
 
@@ -200,6 +209,9 @@ public class TextEditorPrefs
                 var curProject = Smithbox.Orchestrator.SelectedProject;
 
                 if (curProject == null)
+                    return;
+
+                if (curProject.Handler == null)
                     return;
 
                 if (curProject.Handler.TextData == null)
@@ -255,6 +267,9 @@ public class TextEditorPrefs
                 if (curProject == null)
                     return;
 
+                if (curProject.Handler == null)
+                    return;
+
                 if (curProject.Handler.TextData == null)
                     return;
 
@@ -306,6 +321,9 @@ public class TextEditorPrefs
                 var curProject = Smithbox.Orchestrator.SelectedProject;
 
                 if (curProject == null)
+                    return;
+
+                if (curProject.Handler == null)
                     return;
 
                 if (curProject.Handler.TextData == null)
@@ -361,6 +379,9 @@ public class TextEditorPrefs
                 if (curProject == null)
                     return;
 
+                if (curProject.Handler == null)
+                    return;
+
                 if (curProject.Handler.TextData == null)
                     return;
 
@@ -412,6 +433,9 @@ public class TextEditorPrefs
                 var curProject = Smithbox.Orchestrator.SelectedProject;
 
                 if (curProject == null)
+                    return;
+
+                if (curProject.Handler == null)
                     return;
 
                 if (curProject.Handler.TextData == null)
@@ -467,6 +491,9 @@ public class TextEditorPrefs
                 if (curProject == null)
                     return;
 
+                if (curProject.Handler == null)
+                    return;
+
                 if (curProject.Handler.TextData == null)
                     return;
 
@@ -520,6 +547,9 @@ public class TextEditorPrefs
                 if (curProject == null)
                     return;
 
+                if (curProject.Handler == null)
+                    return;
+
                 if (curProject.Handler.TextData == null)
                     return;
 
@@ -571,6 +601,9 @@ public class TextEditorPrefs
                 var curProject = Smithbox.Orchestrator.SelectedProject;
 
                 if (curProject == null)
+                    return;
+
+                if (curProject.Handler == null)
                     return;
 
                 if (curProject.Handler.TextData == null)

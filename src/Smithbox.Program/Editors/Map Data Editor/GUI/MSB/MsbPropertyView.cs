@@ -1,6 +1,5 @@
 ﻿using Andre.Formats;
 using Hexa.NET.ImGui;
-using Octokit;
 using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
@@ -15,12 +14,6 @@ using System.Drawing;
 using System.Linq;
 using System.Numerics;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using Veldrid.MetalBindings;
-using Vortice.Vulkan;
-using static HKLib.hk2018.hkaiUserEdgeUtils;
-using static SoulsFormats.PARAMDEF;
 
 namespace StudioCore.Editors.MapDataEditor;
 

@@ -16,6 +16,9 @@ public class DokuWikiGenerator
         if (project == null)
             return;
 
+        if (project.Handler == null)
+            return;
+
         if (project.Handler.ParamEditor == null)
             return;
 
@@ -44,7 +47,15 @@ public class DokuWikiGenerator
     {
         var curProject = Smithbox.Orchestrator.SelectedProject;
 
-        var editor = Smithbox.Orchestrator.SelectedProject.Handler.ParamEditor;
+        if (curProject == null)
+            return;
+
+        var handler = curProject.Handler;
+
+        if (handler == null)
+            return;
+
+        var editor = handler.ParamEditor;
 
         var output = "^ Param ^ Description ^\n";
 
@@ -62,7 +73,15 @@ public class DokuWikiGenerator
 
     public void OutputParamInformation(ProjectEntry project, string paramKey)
     {
-        var editor = Smithbox.Orchestrator.SelectedProject.Handler.ParamEditor;
+        if (project == null)
+            return;
+
+        var handler = project.Handler;
+
+        if (handler == null)
+            return;
+
+        var editor = handler.ParamEditor;
 
         var namespacePrefix = "XXX";
 

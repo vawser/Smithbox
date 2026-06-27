@@ -225,7 +225,7 @@ public class ProjectEnumMenu
 
         var project = Smithbox.Orchestrator.SelectedProject;
 
-        if (project.Handler.ParamData == null)
+        if (project.Handler != null && project.Handler.ParamData == null)
         {
             ImGui.Text("Param Editor needs to be enabled to view and edit enums.");
         }
@@ -270,6 +270,22 @@ public class ProjectEnumMenu
     public void EnumEditor_TypeColumn()
     {
         var project = Smithbox.Orchestrator.SelectedProject;
+
+        if (project == null)
+            return;
+
+        if (project.Handler == null)
+            return;
+
+        if (project.Handler.ParamData == null)
+            return;
+
+        if (project.Handler.ParamData.Enums == null)
+            return;
+
+        if (project.Handler.ParamData.Enums.List == null)
+            return;
+
         var enums = project.Handler.ParamData.Enums.List;
 
         foreach (var entry in enums)
@@ -796,6 +812,23 @@ public class ProjectEnumMenu
 
     public void SaveEnums(string targetPath, string saveMessage)
     {
+        var curProject = Smithbox.Orchestrator.SelectedProject;
+
+        if (curProject == null)
+            return;
+
+        if (curProject.Handler == null)
+            return;
+
+        if (curProject.Handler.ParamData == null)
+            return;
+
+        if (curProject.Handler.ParamData.Enums == null)
+            return;
+
+        if (curProject.Handler.ParamData.Enums.List == null)
+            return;
+
         var enums = Smithbox.Orchestrator.SelectedProject.Handler.ParamData.Enums;
 
         foreach (var entry in enums.List)
