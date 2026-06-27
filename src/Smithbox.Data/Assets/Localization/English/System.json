@@ -3,6 +3,10 @@
     {
       "Key": "SYS_Warning_Header",
       "Text": "Warning"
+    },
+    {
+      "Key": "SYS_Header",
+      "Text": "[System]"
     }
   ]
 }

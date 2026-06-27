@@ -40,12 +40,14 @@ public static class GparamExtraction
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError<DeveloperPanel>($"[Graphics Param Editor] Failed to read {entry.Path} as GPARAM for {entry.Filename}.", e);
+                    Smithbox.LogError<DeveloperPanel>(
+                        LOC.Get("DEV_Tool_Gparam_Extract_Failed_Format_Read", entry.Path, entry.Filename), e);
                 }
             }
             catch (Exception e)
             {
-                Smithbox.LogError<DeveloperPanel>($"[Graphics Param Editor] Failed to read {entry.Path} from VFS for {entry.Filename}.", e);
+                Smithbox.LogError<DeveloperPanel>(
+                    LOC.Get("DEV_Tool_GparaDEV_Tool_Gparam_Extract_Failed_VFS_Readm_Extract_Failed_Format_Read", entry.Path, entry.Filename), e);
             }
         }
 

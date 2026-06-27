@@ -11,28 +11,28 @@ public class TaskViewer
 
     public void Display()
     {
-        UIHelper.SimpleHeader("Running Tasks", "");
+        UIHelper.SimpleHeader(
+            LOC.Get("DEV_Tool_Header_Task_Viewer"),
+            LOC.Get("DEV_Tool_Header_Task_Viewer_TT"));
 
         if (TaskManager.GetLiveThreads().Count > 0)
         {
             foreach ((string taskName, TaskManager.LiveTask task) in TaskManager.GetTasks())
             {
-                ImGui.Text("" +
-                    $"ID: {task.TaskId}\n" +
-                    $"Location: {task.TaskName}\n" +
-                    $"Success Message: {task.TaskCompletedMessage}\n" +
-                    $"Failure Message: {task.TaskFailedMessage}");
+                ImGui.Text(LOC.Get("DEV_Tool_Task_Information", 
+                    task.TaskId, task.TaskName, task.TaskCompletedMessage, task.TaskFailedMessage));
             }
         }
 
         UIHelper.Spacer();
-        UIHelper.SimpleHeader("Soapstone Server", "");
+        UIHelper.SimpleHeader(
+            LOC.Get("DEV_Tool_Header_Soapstone_Server"),
+            LOC.Get("DEV_Tool_Header_Soapstone_Server_TT"));
 
         var running = SoapstoneServer.GetRunningPort() is int port
-                ? $"running on port {port}"
-                : "not running";
+                ? LOC.Get("DEV_Tool_Running_On_Port", port)
+                : LOC.Get("DEV_Tool_Not_Running");
 
-        ImGui.Text(
-            $"The server is {running}.\nIt is not accessible over the network, only to other programs on this computer.\nPlease restart the program for changes to take effect.");
+        ImGui.Text(LOC.Get("DEV_Tool_Server_Running", running));
     }
 }

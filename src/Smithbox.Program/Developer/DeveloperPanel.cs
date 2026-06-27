@@ -29,6 +29,8 @@ public class DeveloperPanel
     private BtlValidator BtlValidator;
     private GparamValidator GparamValidator;
 
+    public bool ShowDemoWindow = false;
+
     public DeveloperPanel() 
     {
         ResourceViewer = new();
@@ -49,35 +51,39 @@ public class DeveloperPanel
     {
         ImGui.Separator();
 
-        if (ImGui.MenuItem($"Toggle ImGui Demo"))
+        if (ImGui.MenuItem($"{LOC.Get("DEV_PNL_Toggle_ImGui_Demo")}##toggleImguiDemo"))
         {
-            ImGui.ShowDemoWindow();
+            ShowDemoWindow = !ShowDemoWindow;
         }
 
-        if (ImGui.MenuItem($"Toggle Developer Panel"))
+        if (ImGui.MenuItem($"{LOC.Get("DEV_PNL_Toggle_Developer_Panel")}##toggleDeveloperPanel"))
         {
             Visible = !Visible;
         }
     }
 
-    public void Display()
+    public void Display(uint mainDockspaceID)
     {
         if (!Visible)
             return;
 
         var curProject = Smithbox.Orchestrator.SelectedProject;
 
-        if(ImGui.Begin("Developer Panel", ref Visible))
+        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_EditorView);
+        if (ImGui.Begin($"{LOC.Get("DEV_Window_Developer_Panel")}###developerPanel", ref Visible))
         {
             ImGui.BeginTabBar("developerTabs");
 
             // Quick Script
-            if (ImGui.BeginTabItem("Script"))
+            if (ImGui.BeginTabItem($"{LOC.Get("DEV_PNL_Tab_Script")}##scriptTab"))
             {
                 ImGui.BeginChild("scriptSection", ImGuiChildFlags.Borders);
 
                 UIHelper.MultiButtonInput("script",
-                    "scriptExecute", "Execute Script", "", ExecuteScript);
+                    "scriptExecute",
+                    LOC.Get("DEV_PNL_Action_Execute_Script"),
+                    LOC.Get("DEV_PNL_Action_Execute_Script_TT"),
+                    ExecuteScript);
 
                 ImGui.EndChild();
 
@@ -85,7 +91,7 @@ public class DeveloperPanel
             }
 
             // Task Viewer
-            if (ImGui.BeginTabItem("Task Viewer"))
+            if (ImGui.BeginTabItem($"{LOC.Get("DEV_PNL_Tab_Task_Viewer")}##taskViewerTab"))
             {
                 ImGui.BeginChild("taskViewerSection", ImGuiChildFlags.Borders);
                 TaskViewer.Display();
@@ -95,7 +101,7 @@ public class DeveloperPanel
             }
 
             // Resource Viewer
-            if (ImGui.BeginTabItem("Resource Viewer"))
+            if (ImGui.BeginTabItem($"{LOC.Get("DEV_PNL_Tab_Resource_Viewer")}##resourceViewerTab"))
             {
                 ImGui.BeginChild("resourceViewerSection", ImGuiChildFlags.Borders);
                 ResourceViewer.Display();
@@ -105,7 +111,7 @@ public class DeveloperPanel
             }
 
             // File Dictionary Generator
-            if (ImGui.BeginTabItem("File Dictionary Generator"))
+            if (ImGui.BeginTabItem($"{LOC.Get("DEV_PNL_Tab_File_Dictionary_Generator")}##fileDictionaryGeneratorTab"))
             {
                 ImGui.BeginChild("fileDictSection", ImGuiChildFlags.Borders);
                 FileDictionaryGenerator.Display();
@@ -115,7 +121,7 @@ public class DeveloperPanel
             }
 
             // World Map Layout Generator
-            if (ImGui.BeginTabItem("World Map Generator"))
+            if (ImGui.BeginTabItem($"{LOC.Get("DEV_PNL_Tab_World_Map_Generator")}##worldMapGeneratorTab"))
             {
                 ImGui.BeginChild("worldMapSection", ImGuiChildFlags.Borders);
                 WorldMapLayoutGenerator.Display();
@@ -125,7 +131,7 @@ public class DeveloperPanel
             }
 
             // Doku Wiki Generator
-            if (ImGui.BeginTabItem("Doku Wiki Generator"))
+            if (ImGui.BeginTabItem($"{LOC.Get("DEV_PNL_Tab_Doku_Wiki_Generator")}##dokuWikiTab"))
             {
                 ImGui.BeginChild("dokuSection", ImGuiChildFlags.Borders);
                 DokuWikiGenerator.Display();
@@ -135,21 +141,28 @@ public class DeveloperPanel
             }
 
             // Validators
-            if (ImGui.BeginTabItem("Validators"))
+            if (ImGui.BeginTabItem($"{LOC.Get("DEV_PNL_Tab_Validators")}##validatorsTab"))
             {
                 ImGui.BeginChild("validatorSection", ImGuiChildFlags.Borders);
 
                 UIHelper.Spacer();
-                UIHelper.SimpleHeader("Validator Type", "");
+                UIHelper.SimpleHeader(
+                    LOC.Get("DEV_PNL_Header_Validator_Type"),
+                    LOC.Get("DEV_PNL_Header_Validator_Type_TT"));
 
                 UIHelper.SetInputWidth();
-                if (ImGui.BeginCombo("##validatorType", ValidatorType.GetDisplayName()))
+
+                var previewName = LOC.Get(ValidatorType.GetDisplayName());
+
+                if (ImGui.BeginCombo("##validatorType", previewName))
                 {
                     foreach (var entry in Enum.GetValues(typeof(ValidatorType)))
                     {
                         var curType = (ValidatorType)entry;
 
-                        if (ImGui.Selectable($"{curType.GetDisplayName()}", curType == ValidatorType))
+                        var displayName = LOC.Get(curType.GetDisplayName());
+
+                        if (ImGui.Selectable(displayName, curType == ValidatorType))
                         {
                             ValidatorType = curType;
                         }
@@ -162,7 +175,7 @@ public class DeveloperPanel
 
                 if (ValidatorType is ValidatorType.None)
                 {
-                    ImGui.Text("No validator type has been selected.");
+                    ImGui.Text(LOC.Get("DEV_PNL_No_Validator_Type_Selected"));
                 }
                 else if (ValidatorType is ValidatorType.Param)
                 {
@@ -204,16 +217,16 @@ public class DeveloperPanel
 
 public enum ValidatorType
 {
-    [Display(Name = "None")]
+    [Display(Name = "DEV_ENUM_Validator_Type_None")]
     None,
-    [Display(Name = "Param")]
+    [Display(Name = "DEV_ENUM_Validator_Type_Param")]
     Param,
-    [Display(Name = "NVA")]
+    [Display(Name = "DEV_ENUM_Validator_Type_NVA")]
     NVA,
-    [Display(Name = "MSB")]
+    [Display(Name = "DEV_ENUM_Validator_Type_MSB")]
     MSB,
-    [Display(Name = "BTL")]
+    [Display(Name = "DEV_ENUM_Validator_Type_BTL")]
     BTL,
-    [Display(Name = "GPARAM")]
+    [Display(Name = "DEV_ENUM_Validator_Type_GPARAM")]
     GPARAM
 }

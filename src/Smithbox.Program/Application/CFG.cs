@@ -1342,12 +1342,12 @@ public class CFG
 
                 if (Current == null)
                 {
-                    throw new Exception("JsonConvert returned null");
+                    throw new Exception($"{LOC.Get("SYS_CFG_Failed_To_Deserialize", file)}");
                 }
             }
             catch (Exception e)
             {
-                Smithbox.Log<CFG>("Configuration failed to load, default configuration has been restored.", LogLevel.Error, LogPriority.High, e);
+                Smithbox.LogError<CFG>($"{LOC.Get("SYS_CFG_Failed_To_Read", file)}", e);
 
                 Current = new CFG();
                 Save();

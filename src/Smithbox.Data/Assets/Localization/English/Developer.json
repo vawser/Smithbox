@@ -1,0 +1,376 @@
+{
+  "Entries": [
+    {
+      "Key": "DEV_Tool_Header_Actions",
+      "Text": "Actions"
+    },
+    {
+      "Key": "DEV_Tool_Header_Actions_TT",
+      "Text": ""
+    },
+    {
+      "Key": "DEV_Tool_Header_Options",
+      "Text": "Options"
+    },
+    {
+      "Key": "DEV_Tool_Header_Options_TT",
+      "Text": ""
+    },
+    {
+      "Key": "DEV_Tool_Header_Map",
+      "Text": "Map"
+    },
+    {
+      "Key": "DEV_Tool_Header_Map_TT",
+      "Text": ""
+    },
+    {
+      "Key": "DEV_Tool_Header_Data",
+      "Text": "Data"
+    },
+    {
+      "Key": "DEV_Tool_Header_Data_TT",
+      "Text": ""
+    },
+    {
+      "Key": "DEV_Tool_Header_Entries",
+      "Text": "Entries"
+    },
+    {
+      "Key": "DEV_Tool_Header_Entries_TT",
+      "Text": ""
+    },
+    {
+      "Key": "DEV_Dialog_Flver_Layout_Dump",
+      "Text": "Save FLVER Layout Dump"
+    },
+    {
+      "Key": "DEV_Tool_Gparam_Extract_Failed_Format_Read",
+      "Text": "Failed to read {0} as GPARAM for {1}."
+    },
+    {
+      "Key": "DEV_Tool_Gparam_Extract_Failed_VFS_Read",
+      "Text": "Failed to read {0} from VFS for {1}."
+    },
+    {
+      "Key": "DEV_Tool_Icon_Layout_Invalid_Folder",
+      "Text": "Folder doesn't exist: {0}"
+    },
+    {
+      "Key": "DEV_Tool_Validate_For_BP",
+      "Text": "Validate for Byte-Perfectness"
+    },
+    {
+      "Key": "DEV_Tool_Validate_For_BP_TT",
+      "Text": ""
+    },
+    {
+      "Key": "DEV_Tool_Display_Size_Diffs_Only",
+      "Text": "Display Size Diffs Only"
+    },
+    {
+      "Key": "DEV_Tool_Source_Bytes",
+      "Text": "Source Bytes: {0}"
+    },
+    {
+      "Key": "DEV_Tool_Source_Bytes",
+      "Text": "Source Bytes: {0}"
+    },
+    {
+      "Key": "DEV_Tool_Write_Bytes",
+      "Text": "Write Bytes: {0}"
+    },
+    {
+      "Key": "DEV_Tool_Byte_Difference",
+      "Text": "Byte Difference: {0}"
+    },
+    {
+      "Key": "DEV_Tool_Enable_Param_Editor_Hint",
+      "Text": "Param Editor must be enabled to use this tool."
+    },
+    {
+      "Key": "DEV_Tool_Validate_Paramdef",
+      "Text": "Validate PARAMDEF"
+    },
+    {
+      "Key": "DEV_Tool_Validate_Paramdef_TT",
+      "Text": "Validate that the current PARAMDEF works with the old-style SF PARAM class."
+    },
+    {
+      "Key": "DEV_Tool_Validate_Padding_All",
+      "Text": "Validate Padding (for all params)"
+    },
+    {
+      "Key": "DEV_Tool_Validate_Padding_All_TT",
+      "Text": "Validate that there are no non-zero values within padding fields."
+    },
+    {
+      "Key": "DEV_Tool_Validate_Padding_Selected",
+      "Text": "Validate Padding (for selected param)"
+    },
+    {
+      "Key": "DEV_Tool_Validate_Padding_Selected_TT",
+      "Text": "Validate that there are no non-zero values within padding fields."
+    },
+    {
+      "Key": "DEV_Tool_Validate_Param_Task_PASS",
+      "Text": "The param validation has run."
+    },
+    {
+      "Key": "DEV_Tool_Validate_Param_Task_FAIL",
+      "Text": "The param validation has failed to run."
+    },
+    {
+      "Key": "DEV_Tool_Param_Validation_Non_Zero_Values",
+      "Text": "{0}: {1}: {2} contains non-zero values."
+    },
+    {
+      "Key": "DEV_Tool_Param_Load_Failed",
+      "Text": "Param load failed: {0}: {1}"
+    },
+    {
+      "Key": "DEV_Tool_Regulation_Version_Failed",
+      "Text": "Failed to get regulation version. Params might be corrupt."
+    },
+    {
+      "Key": "DEV_Tool_Param_Def_Missing_For_Type",
+      "Text": "Couldn't find ParamDef for param {0} with ParamType '{1}'."
+    },
+    {
+      "Key": "DEV_Tool_Param_Type_Null",
+      "Text": "Param type is unexpectedly null."
+    },
+    {
+      "Key": "DEV_Tool_Failed_To_Apply_Param_Def",
+      "Text": "Could not apply ParamDef for {0}."
+    },
+    {
+      "Key": "DEV_Tool_Param_Validated",
+      "Text": "{0} validated."
+    },
+    {
+      "Key": "DEV_Tool_Action_Export_Table_Information",
+      "Text": "Export Table Information"
+    },
+    {
+      "Key": "DEV_Tool_Action_Export_Table_Information_TT",
+      "Text": ""
+    },
+    {
+      "Key": "DEV_Tool_Header_Specific_Param_Info",
+      "Text": "Specific Param Information"
+    },
+    {
+      "Key": "DEV_Tool_Header_Specific_Param_Info_TT",
+      "Text": ""
+    },
+    {
+      "Key": "DEV_Tool_Header_File_Path",
+      "Text": "File Path"
+    },
+    {
+      "Key": "DEV_Tool_Header_File_Path_TT",
+      "Text": ""
+    },
+    {
+      "Key": "DEV_Tool_Action_Select_Directory",
+      "Text": "Select Directory"
+    },
+    {
+      "Key": "DEV_Tool_Action_Select_Directory_TT",
+      "Text": ""
+    },
+    {
+      "Key": "DEV_Tool_Action_Generate_File_Dictionary",
+      "Text": "Generate File Dictionary"
+    },
+    {
+      "Key": "DEV_Tool_Action_Generate_File_Dictionary_TT",
+      "Text": ""
+    },
+    {
+      "Key": "DEV_Tool_Dialog_Select_File",
+      "Text": "Select File"
+    },
+    {
+      "Key": "DEV_Tool_File_Path_No_Exist",
+      "Text": "{0} does not exist."
+    },
+    {
+      "Key": "DEV_Tool_Action_Clear_Tracked_Consumption",
+      "Text": "Clear Tracked Consumption"
+    },
+    {
+      "Key": "DEV_Tool_Action_Clear_Tracked_Consumption_TT",
+      "Text": ""
+    },
+    {
+      "Key": "DEV_Tool_Header_Load_Consumption",
+      "Text": "Load Consumption"
+    },
+    {
+      "Key": "DEV_Tool_Header_Load_Consumption_TT",
+      "Text": ""
+    },
+    {
+      "Key": "DEV_Tool_Mesh_Consumption_B",
+      "Text": "Mesh Consumption (B): {0}"
+    },
+    {
+      "Key": "DEV_Tool_Mesh_Consumption_MB",
+      "Text": "Mesh Consumption (MB): {0}"
+    },
+    {
+      "Key": "DEV_Tool_Mesh_Consumption_GB",
+      "Text": "Mesh Consumption (GB): {0}"
+    },
+    {
+      "Key": "DEV_Tool_Texture_Consumption_B",
+      "Text": "Texture Consumption (B): {0}"
+    },
+    {
+      "Key": "DEV_Tool_Texture_Consumption_MB",
+      "Text": "Texture Consumption (MB): {0}"
+    },
+    {
+      "Key": "DEV_Tool_Texture_Consumption_GB",
+      "Text": "Texture Consumption (GB): {0}"
+    },
+    {
+      "Key": "DEV_Tool_Header_Mesh_Load_Instances",
+      "Text": "Mesh Load Instances"
+    },
+    {
+      "Key": "DEV_Tool_Header_Mesh_Load_Instances_TT",
+      "Text": "{0} entries."
+    },
+    {
+      "Key": "DEV_Tool_Header_Texture_Load_Instances",
+      "Text": "Texture Load Instances"
+    },
+    {
+      "Key": "DEV_Tool_Header_Texture_Load_Instances_TT",
+      "Text": "{0} entries."
+    },
+    {
+      "Key": "DEV_Tool_Header_Task_Viewer",
+      "Text": "Running Tasks"
+    },
+    {
+      "Key": "DEV_Tool_Header_Task_Viewer_TT",
+      "Text": ""
+    },
+    {
+      "Key": "DEV_Tool_Task_Information",
+      "Text": "ID: {0}\nLocation: {1}\nSuccess Message: {2}\nFailure Message: {3}"
+    },
+    {
+      "Key": "DEV_Tool_Header_Soapstone_Server",
+      "Text": "Soapstone Server"
+    },
+    {
+      "Key": "DEV_Tool_Header_Soapstone_Server_TT",
+      "Text": ""
+    },
+    {
+      "Key": "DEV_Tool_Running_On_Port",
+      "Text": "running on port {0}"
+    },
+    {
+      "Key": "DEV_Tool_Not_Running",
+      "Text": "not running"
+    },
+    {
+      "Key": "DEV_Tool_Server_Running",
+      "Text": "The server is {0}.\nIt is not accessible over the network, only to other programs on this computer.\nPlease restart the program for changes to take effect."
+    },
+    {
+      "Key": "DEV_Tool_Header_Export_Directory",
+      "Text": "Export Directory"
+    },
+    {
+      "Key": "DEV_Tool_Header_Export_Directory_TT",
+      "Text": ""
+    },
+    {
+      "Key": "DEV_Tool_Action_Select_Export_Directory",
+      "Text": "Select Export Directory"
+    },
+    {
+      "Key": "DEV_Tool_Action_Select_Export_Directory_TT",
+      "Text": ""
+    },
+    {
+      "Key": "DEV_Tool_Checkbox_Generate_DLC_Map",
+      "Text": "Generate DLC Map"
+    },
+    {
+      "Key": "DEV_Tool_Action_Generate_Map",
+      "Text": "Generate Map"
+    },
+    {
+      "Key": "DEV_Tool_Action_Generate_Map_TT",
+      "Text": ""
+    },
+    {
+      "Key": "DEV_Dialog_Select_Export_Folder",
+      "Text": "Select Export Folder"
+    },
+    {
+      "Key": "DEV_PNL_Toggle_ImGui_Demo",
+      "Text": "Toggle ImGui Demo"
+    },
+    {
+      "Key": "DEV_PNL_Toggle_Developer_Panel",
+      "Text": "Toggle Developer Panel"
+    },
+    {
+      "Key": "DEV_PNL_Action_Execute_Script",
+      "Text": "Execute Script"
+    },
+    {
+      "Key": "DEV_PNL_Action_Execute_Script_TT",
+      "Text": ""
+    },
+    {
+      "Key": "DEV_PNL_Tab_Script",
+      "Text": "Script"
+    },
+    {
+      "Key": "DEV_PNL_Tab_Task_Viewer",
+      "Text": "Task Viewer"
+    },
+    {
+      "Key": "DEV_PNL_Tab_Resource_Viewer",
+      "Text": "Resource Viewer"
+    },
+    {
+      "Key": "DEV_PNL_Tab_File_Dictionary_Generator",
+      "Text": "File Dictionary Generator"
+    },
+    {
+      "Key": "DEV_PNL_Tab_World_Map_Generator",
+      "Text": "World Map Generator"
+    },
+    {
+      "Key": "DEV_PNL_Tab_Doku_Wiki_Generator",
+      "Text": "Doku Wiki Generator"
+    },
+    {
+      "Key": "DEV_PNL_Tab_Validators",
+      "Text": "Validators"
+    },
+    {
+      "Key": "DEV_PNL_Header_Validator_Type",
+      "Text": "Validator Type"
+    },
+    {
+      "Key": "DEV_PNL_Header_Validator_Type_TT",
+      "Text": ""
+    },
+    {
+      "Key": "DEV_PNL_No_Validator_Type_Selected",
+      "Text": "No validator type has been selected."
+    }
+  ]
+}

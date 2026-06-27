@@ -22,7 +22,7 @@ public static class FlverMaterialDump
 
     public static void DumpLayout()
     {
-        if (PlatformUtils.Instance.SaveFileDialog("Save Flver layout dump", new[] { FilterStrings.TxtFilter },
+        if (PlatformUtils.Instance.SaveFileDialog(LOC.Get("DEV_Dialog_Flver_Layout_Dump"), new[] { FilterStrings.TxtFilter },
                      out var path))
         {
             using (StreamWriter file = new(path))

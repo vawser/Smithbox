@@ -21,25 +21,35 @@ public class ResourceViewer
 
     public void Display()
     {
-        UIHelper.SimpleHeader("Actions", "");
+        UIHelper.SimpleHeader(
+            LOC.Get("DEV_Tool_Header_Actions"),
+            LOC.Get("DEV_Tool_Header_Actions_TT"));
+
         UIHelper.MultiButtonInput("resourceViewerActions",
-            "clearConsumption", "Clear Tracked Consumption", "", ClearTrackedConsumption);
+            "clearConsumption", 
+            LOC.Get("DEV_Tool_Action_Clear_Tracked_Consumption"),
+            LOC.Get("DEV_Tool_Action_Clear_Tracked_Consumption_TT"),
+            ClearTrackedConsumption);
 
         UIHelper.Spacer();
-        UIHelper.SimpleHeader("Load Consumption", "");
+        UIHelper.SimpleHeader(
+            LOC.Get("DEV_Tool_Header_Load_Consumption"),
+            LOC.Get("DEV_Tool_Header_Load_Consumption_TT"));
 
-        ImGui.Text($@"Mesh Consumption (B): {MeshConsumptionSize}");
-        ImGui.Text($@"Mesh Consumption (MB): {MeshConsumptionSize / 1024}");
-        ImGui.Text($@"Mesh Consumption (GB): {MeshConsumptionSize / 1024 / 1024}");
-
-        UIHelper.Spacer();
-
-        ImGui.Text($@"Texture Consumption (B): {TexConsumptionSize}");
-        ImGui.Text($@"Texture Consumption (MB): {TexConsumptionSize / 1024}");
-        ImGui.Text($@"Texture Consumption (GB): {TexConsumptionSize / 1024 / 1024}");
+        ImGui.Text(LOC.Get("DEV_Tool_Mesh_Consumption_B", MeshConsumptionSize));
+        ImGui.Text(LOC.Get("DEV_Tool_Mesh_Consumption_MB", MeshConsumptionSize / 1024));
+        ImGui.Text(LOC.Get("DEV_Tool_Mesh_Consumption_GB", MeshConsumptionSize / 1024 / 1024));
 
         UIHelper.Spacer();
-        UIHelper.SimpleHeader("Mesh Load Instances", $"{ProcessedMeshes.Count} entries.");
+
+        ImGui.Text(LOC.Get("DEV_Tool_Texture_Consumption_B", TexConsumptionSize));
+        ImGui.Text(LOC.Get("DEV_Tool_Texture_Consumption_MB", TexConsumptionSize / 1024));
+        ImGui.Text(LOC.Get("DEV_Tool_Texture_Consumption_GB", TexConsumptionSize / 1024 / 1024));
+
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader(
+            LOC.Get("DEV_Tool_Header_Mesh_Load_Instances"),
+            LOC.Get("DEV_Tool_Header_Mesh_Load_Instances", ProcessedMeshes.Count));
 
         ImGui.BeginChild("meshLoadSection", new Vector2(0, 200), ImGuiChildFlags.Borders);
         for(int i = 0; i < ProcessedMeshes.Count; i++)
@@ -50,7 +60,9 @@ public class ResourceViewer
         ImGui.EndChild();
 
         UIHelper.Spacer();
-        UIHelper.SimpleHeader("Texture Load Instances", $"{ProcessedTextures.Count} entries.");
+        UIHelper.SimpleHeader(
+            LOC.Get("DEV_Tool_Header_Texture_Load_Instances"),
+            LOC.Get("DEV_Tool_Header_Texture_Load_Instances_TT", ProcessedTextures.Count)); 
 
         ImGui.BeginChild("textureLoadSection", new Vector2(0, 200), ImGuiChildFlags.Borders);
         for (int i = 0; i < ProcessedTextures.Count; i++)

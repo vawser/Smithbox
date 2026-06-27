@@ -22,13 +22,20 @@ public class DokuWikiGenerator
         if (project.Handler.ParamEditor == null)
             return;
 
-        UIHelper.SimpleHeader("Actions", "");
+        UIHelper.SimpleHeader(
+            LOC.Get("DEV_Tool_Header_Actions"),
+            LOC.Get("DEV_Tool_Header_Actions_TT"));
 
         UIHelper.MultiButtonInput("dokuActions",
-            "exportInfo", "Export Table Information", "", OutputParamTableInformation);
+            "exportInfo", 
+            LOC.Get("DEV_Tool_Action_Export_Table_Information"),
+            LOC.Get("DEV_Tool_Action_Export_Table_Information_TT"),
+            OutputParamTableInformation);
 
         UIHelper.Spacer();
-        UIHelper.SimpleHeader("Specific Param Information", "");
+        UIHelper.SimpleHeader(
+            LOC.Get("DEV_Tool_Header_Specific_Param_Info"),
+            LOC.Get("DEV_Tool_Header_Specific_Param_Info_TT"));
 
         ImGui.BeginChild("specificParamSection", new Vector2(0, 200), ImGuiChildFlags.Borders);
         foreach (var param in project.Handler.ParamData.PrimaryBank.Params)

@@ -32,7 +32,7 @@ public static class ThumbnailCapture
             //CaptureViewport(vulkanViewport, filePath);
         }
 
-        Smithbox.Log(typeof(ThumbnailCapture), $"Saved thumbnail for {modelName}");
+        //Smithbox.Log(typeof(ThumbnailCapture), $"Saved thumbnail for {modelName}");
     }
 
 }

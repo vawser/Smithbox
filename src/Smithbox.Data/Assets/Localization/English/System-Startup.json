@@ -1,0 +1,12 @@
+{
+  "Entries": [
+    {
+      "Key": "SYS_CFG_Failed_To_Deserialize",
+      "Text": "Failed to deserialize CFG file: {0}"
+    },
+    {
+      "Key": "SYS_CFG_Failed_To_Read",
+      "Text": "Failed to read CFG file: {0}\nRestored default configuration."
+    }
+  ]
+}

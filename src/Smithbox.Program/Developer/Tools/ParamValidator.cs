@@ -31,27 +31,28 @@ public class ParamValidator
 
         if (project.Handler.ParamEditor == null)
         {
-            ImGui.Text("Param Editor must be enabled to use this tool.");
+            ImGui.Text(LOC.Get("DEV_Tool_Enable_Param_Editor_Hint"));
             return;
         }
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader("Actions", "");
+        UIHelper.SimpleHeader(
+            LOC.Get("DEV_Tool_Header_Actions"),
+            LOC.Get("DEV_Tool_Header_Actions_TT"));
 
         UIHelper.MultiButtonInput("paramActions",
             "validateParamdef",
-            "Validate PARAMDEF",
-            "Validate that the current PARAMDEF works with the old-style SF PARAM class.",
+            LOC.Get("DEV_Tool_Validate_Paramdef"),
+            LOC.Get("DEV_Tool_Validate_Paramdef_TT"),
             ValidateParamdefAction,
 
             "validatePadding_all",
-            "Validate Padding (for all params)",
-            "Validate that there are no non-zero values within padding fields.",
+            LOC.Get("DEV_Tool_Validate_Padding_All"),
+            LOC.Get("DEV_Tool_Validate_Padding_All_TT"),
             ValidateAllPaddingAction,
 
             "validatePadding_selected",
-            "Validate Padding (for selected param)",
-            "Validate that there are no non-zero values within padding fields.",
+            LOC.Get("DEV_Tool_Validate_Padding_Selected"),
+            LOC.Get("DEV_Tool_Validate_Padding_Selected_TT"),
             ValidateSelectedPaddingAction);
     }
 
@@ -100,9 +101,9 @@ public class ParamValidator
 
         TaskManager.LiveTask task = new(
             "system_runParamValidation",
-            "[System]",
-            "The param validation has run.",
-            "The param validation has failed to run.",
+            LOC.Get("SYS_Header"),
+            LOC.Get("DEV_Tool_Validate_Param_Task_PASS"),
+            LOC.Get("DEV_Tool_Validate_Param_Task_FAIL"),
             TaskManager.RequeueType.None,
             false,
             () =>
@@ -126,7 +127,8 @@ public class ParamValidator
                                 {
                                     if (b != 0)
                                     {
-                                        Smithbox.Log(typeof(ParamValidator), $"{selectedParamName}: {currentRow}: {cell.Def.InternalName} contains non-zero values");
+                                        Smithbox.Log(typeof(ParamValidator),
+                                            LOC.Get("DEV_Tool_Param_Validation_Non_Zero_Values", selectedParamName, currentRow, cell.Def.InternalName));
                                     }
                                 }
                             }
@@ -137,7 +139,8 @@ public class ParamValidator
                                 byte b = (byte)cell.Value;
                                 if (b != 0)
                                 {
-                                    Smithbox.Log(typeof(ParamValidator), $"{selectedParamName}: {currentRow}: {cell.Def.InternalName} contains non-zero values");
+                                    Smithbox.Log(typeof(ParamValidator),
+                                        LOC.Get("DEV_Tool_Param_Validation_Non_Zero_Values", selectedParamName, currentRow, cell.Def.InternalName));
                                 }
                             }
                         }
@@ -169,7 +172,10 @@ public class ParamValidator
             }
             catch (Exception e)
             {
-                PlatformUtils.Instance.MessageBox($"Param Load failed: {param}: {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                PlatformUtils.Instance.MessageBox(
+                    LOC.Get("DEV_Tool_Param_Load_Failed", param, e.Message),
+                    LOC.Get("SYS_Warning_Header"),
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -183,7 +189,10 @@ public class ParamValidator
             }
             catch (Exception e)
             {
-                PlatformUtils.Instance.MessageBox($"Param Load failed: {param}: {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                PlatformUtils.Instance.MessageBox(
+                    LOC.Get("DEV_Tool_Param_Load_Failed", param, e.Message),
+                    LOC.Get("SYS_Warning_Header"),
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -199,7 +208,10 @@ public class ParamValidator
             }
             catch (Exception e)
             {
-                PlatformUtils.Instance.MessageBox($"Param Load failed: {param}: {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                PlatformUtils.Instance.MessageBox(
+                    LOC.Get("DEV_Tool_Param_Load_Failed", param, e.Message),
+                    LOC.Get("SYS_Warning_Header"),
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -213,7 +225,10 @@ public class ParamValidator
             }
             catch (Exception e)
             {
-                PlatformUtils.Instance.MessageBox($"Param Load failed: {param}: {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                PlatformUtils.Instance.MessageBox(
+                    LOC.Get("DEV_Tool_Param_Load_Failed", param, e.Message),
+                    LOC.Get("SYS_Warning_Header"),
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
         // ER
@@ -226,7 +241,10 @@ public class ParamValidator
             }
             catch (Exception e)
             {
-                PlatformUtils.Instance.MessageBox($"Param Load failed: {param}: {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                PlatformUtils.Instance.MessageBox(
+                    LOC.Get("DEV_Tool_Param_Load_Failed", param, e.Message),
+                    LOC.Get("SYS_Warning_Header"),
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
         // AC6
@@ -239,7 +257,10 @@ public class ParamValidator
             }
             catch (Exception e)
             {
-                PlatformUtils.Instance.MessageBox($"Param Load failed: {param}: {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                PlatformUtils.Instance.MessageBox(
+                    LOC.Get("DEV_Tool_Param_Load_Failed", param, e.Message),
+                    LOC.Get("SYS_Warning_Header"),
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }
@@ -250,7 +271,7 @@ public class ParamValidator
         var success = ulong.TryParse(parambnd.Version, out version);
         if (checkVersion && !success)
         {
-            throw new Exception(@"Failed to get regulation version. Params might be corrupt.");
+            throw new Exception(LOC.Get("DEV_Tool_Regulation_Version_Failed"));
         }
 
         // Load every param in the regulation
@@ -268,15 +289,14 @@ public class ParamValidator
             p = PARAM.ReadIgnoreCompression(f.Bytes);
             if (!_paramdefs.ContainsKey(p.ParamType ?? ""))
             {
-                Smithbox.Log(typeof(ParamValidator), 
-                    $"Couldn't find ParamDef for param {paramName} with ParamType \"{p.ParamType}\".",
-                    LogLevel.Warning);
+                Smithbox.LogError(typeof(ParamValidator),
+                    LOC.Get("DEV_Tool_Param_Def_Missing_For_Type", paramName, p.ParamType));
                 continue;
             }
 
             if (p.ParamType == null)
             {
-                throw new Exception("Param type is unexpectedly null");
+                throw new Exception(LOC.Get("DEV_Tool_Param_Type_Null"));
             }
 
             PARAMDEF def = _paramdefs[p.ParamType];
@@ -287,13 +307,13 @@ public class ParamValidator
             catch (Exception e)
             {
                 var name = f.Name.Split("\\").Last();
-                var message = $"Could not apply ParamDef for {name}";
 
-                Smithbox.Log(typeof(ParamValidator), message,
-                        LogLevel.Warning, LogPriority.Normal, e);
+                Smithbox.LogError(typeof(ParamValidator),
+                    LOC.Get("DEV_Tool_Failed_To_Apply_Param_Def", name), e);
             }
 
-            Smithbox.Log(typeof(ParamValidator), $"{paramName} validated");
+            Smithbox.Log(typeof(ParamValidator), 
+                LOC.Get("DEV_Tool_Param_Validated", paramName));
         }
     }
 }

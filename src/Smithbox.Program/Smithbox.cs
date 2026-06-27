@@ -602,13 +602,16 @@ public class Smithbox
 
         Orchestrator.Update(deltaseconds, dockspaceID);
 
-        DeveloperPanel.Display();
+        DeveloperPanel.Display(dockspaceID);
+
+        if (DeveloperPanel.ShowDemoWindow)
+        {
+            ImGui.ShowDemoWindow();
+        }
+
 
         KeybindsMenu.Draw();
         PreferencesMenu.Draw();
-
-        // Tool windows
-        ColorPicker.DisplayColorPicker();
 
         if (_programUpdateAvailable)
         {

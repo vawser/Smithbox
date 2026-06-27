@@ -98,7 +98,7 @@ public static class IconLayouts
     {
         if (!Path.Exists(BuildFolder))
         {
-            Smithbox.Log<DeveloperPanel>($"Folder doesn't exist: {BuildFolder}", LogLevel.Error);
+            Smithbox.Log<DeveloperPanel>(LOC.Get("DEV_Tool_Icon_Layout_Invalid_Folder", BuildFolder), LogLevel.Error);
             return;
         }
 

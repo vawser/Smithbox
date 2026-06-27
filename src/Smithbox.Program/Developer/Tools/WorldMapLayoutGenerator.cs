@@ -128,29 +128,42 @@ public class WorldMapLayoutGenerator
 
     public void Display()
     {
-        UIHelper.SimpleHeader("Export Directory", "");
+        UIHelper.SimpleHeader(
+            LOC.Get("DEV_Tool_Header_Export_Directory"),
+            LOC.Get("DEV_Tool_Header_Export_Directory_TT"));
 
         UIHelper.SinglelineTextInput("ExportDirectory", ref _folderPath);
 
         UIHelper.MultiButtonInput("exportActions",
-            "setExportDir", "Select Export Directory", "", SetExportDirectory);
+            "setExportDir", 
+            LOC.Get("DEV_Tool_Action_Select_Export_Directory"),
+            LOC.Get("DEV_Tool_Action_Select_Export_Directory_TT"),
+            SetExportDirectory);
 
         UIHelper.Spacer();
-        UIHelper.SimpleHeader("Options", "");
+        UIHelper.SimpleHeader(
+            LOC.Get("DEV_Tool_Header_Options"),
+            LOC.Get("DEV_Tool_Header_Options_TT"));
 
-        ImGui.Checkbox("Generate DLC Map", ref GenerateDLC);
+        ImGui.Checkbox($"{LOC.Get("DEV_Tool_Checkbox_Generate_DLC_Map")}##generateDlcMap", ref GenerateDLC);
 
         UIHelper.Spacer();
-        UIHelper.SimpleHeader("Actions", "");
+        UIHelper.SimpleHeader(
+            LOC.Get("DEV_Tool_Header_Actions"),
+            LOC.Get("DEV_Tool_Header_Actions_TT"));
 
         UIHelper.MultiButtonInput("genActions",
-            "generateMap", "Generate Map", "", GenerateMap);
+            "generateMap", 
+            LOC.Get("DEV_Tool_Action_Generate_Map"),
+            LOC.Get("DEV_Tool_Action_Generate_Map_TT"),
+            GenerateMap);
     }
 
     public void SetExportDirectory()
     {
         var newFolderPath = "";
-        var result = PlatformUtils.Instance.OpenFolderDialog("Select Export Folder", out newFolderPath);
+        var result = PlatformUtils.Instance.OpenFolderDialog(
+            LOC.Get("DEV_Dialog_Select_Export_Folder"), out newFolderPath);
 
         if (result)
         {

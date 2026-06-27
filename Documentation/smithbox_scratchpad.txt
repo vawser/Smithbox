@@ -3,8 +3,7 @@
 #---------------------
 
 # LOC TO DO:
- Application
- Developer
+ ### Developer
  Editors
   Animation Editor
   Common

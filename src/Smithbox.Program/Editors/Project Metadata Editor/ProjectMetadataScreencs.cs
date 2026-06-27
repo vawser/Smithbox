@@ -92,6 +92,8 @@ public class ProjectMetadataScreen
 
     public void Display(uint editorDockspaceId)
     {
+        // TODO: paramdef XML editor here?
+
         if (CFG.Current.Interface_ProjectMetadataEditor_ProjectEnums)
         {
             // Project Enums

@@ -18,14 +18,22 @@ public class GparamValidator
 
     public void Display()
     {
-        UIHelper.SimpleHeader("Actions", "");
+        UIHelper.SimpleHeader(
+            LOC.Get("DEV_Tool_Header_Actions"),
+            LOC.Get("DEV_Tool_Header_Actions_TT"));
 
         UIHelper.MultiButtonInput("validateActions",
-            "validate", "Validate for Byte-Perfectness", "", Run);
+            "validate",
+            LOC.Get("DEV_Tool_Validate_For_BP"),
+            LOC.Get("DEV_Tool_Validate_For_BP_TT"),
+            Run);
 
         UIHelper.Spacer();
-        UIHelper.SimpleHeader("Options", "");
-        ImGui.Checkbox("Display Size Diffs Only", ref DisplaySizeDiffsOnly);
+        UIHelper.SimpleHeader(
+            LOC.Get("DEV_Tool_Header_Options"),
+            LOC.Get("DEV_Tool_Header_Options_TT"));
+
+        ImGui.Checkbox($"{LOC.Get("DEV_Tool_Display_Size_Diffs_Only")}##sizeDiffsOnly", ref DisplaySizeDiffsOnly);
         ImGui.Separator();
 
         ImGui.Columns(2);
@@ -33,7 +41,10 @@ public class GparamValidator
         int index = 0;
 
         UIHelper.Spacer();
-        UIHelper.SimpleHeader("Entries", "");
+        UIHelper.SimpleHeader(
+            LOC.Get("DEV_Tool_Header_Entries"),
+            LOC.Get("DEV_Tool_Header_Entries_TT"));
+
         ImGui.BeginChild("entrySection", new Vector2(0, 200), ImGuiChildFlags.Borders);
 
         foreach (var entry in MismatchedEntries)
@@ -60,16 +71,19 @@ public class GparamValidator
         ImGui.NextColumn();
 
         UIHelper.Spacer();
-        UIHelper.SimpleHeader("Data", "");
+        UIHelper.SimpleHeader(
+            LOC.Get("DEV_Tool_Header_Data"),
+            LOC.Get("DEV_Tool_Header_Data_TT"));
+
         ImGui.BeginChild("dataSection", new Vector2(0, 200), ImGuiChildFlags.Borders);
 
         if (SelectedMap != -1)
         {
             var curMap = MismatchedEntries[SelectedMap];
 
-            ImGui.Text($"Source Bytes: {curMap.SrcBytes}");
-            ImGui.Text($"Write Bytes: {curMap.WriteBytes}");
-            ImGui.Text($"Byte Difference: {curMap.ByteDiff}");
+            ImGui.Text(LOC.Get("DEV_Tool_Source_Bytes", curMap.SrcBytes));
+            ImGui.Text(LOC.Get("DEV_Tool_Write_Bytes", curMap.WriteBytes));
+            ImGui.Text(LOC.Get("DEV_Tool_Byte_Difference", curMap.ByteDiff));
         }
 
         ImGui.EndChild();

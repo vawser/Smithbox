@@ -14,18 +14,28 @@ public class FileDictionaryGenerator
 
     public void Display()
     {
-        UIHelper.SimpleHeader("File Path", "");
+        UIHelper.SimpleHeader(
+            LOC.Get("DEV_Tool_Header_File_Path"),
+            LOC.Get("DEV_Tool_Header_File_Path_TT"));
+
         UIHelper.SinglelineTextInput("FilePath", ref _filePath);
 
         UIHelper.MultiButtonInput("selectActions",
-            "selectDir", "Select Directory", "", SelectDirectory,
-            "generateDict", "Generate File Dictionary", "", GenerateFileDictionary);
+            "selectDir", 
+            LOC.Get("DEV_Tool_Action_Select_Directory"),
+            LOC.Get("DEV_Tool_Action_Select_Directory_TT"),
+            SelectDirectory,
+
+            "generateDict", 
+            LOC.Get("DEV_Tool_Action_Generate_File_Dictionary"),
+            LOC.Get("DEV_Tool_Action_Generate_File_Dictionary_TT"),
+            GenerateFileDictionary);
     }
 
     public void SelectDirectory()
     {
         var newFilePath = "";
-        var result = PlatformUtils.Instance.OpenFileDialog("Select File", [""], out newFilePath);
+        var result = PlatformUtils.Instance.OpenFileDialog(LOC.Get("DEV_Tool_Dialog_Select_File"), [""], out newFilePath);
 
         if (result)
         {
@@ -41,7 +51,8 @@ public class FileDictionaryGenerator
         }
         else
         {
-            Smithbox.LogError<FileDictionaryGenerator>($"{_filePath} does not exist.");
+            Smithbox.LogError<FileDictionaryGenerator>(
+                LOC.Get("DEV_Tool_File_Path_No_Exist", _filePath));
         }
     }
 
