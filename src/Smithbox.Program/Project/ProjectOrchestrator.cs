@@ -400,32 +400,14 @@ public class ProjectOrchestrator : IDisposable
         // Only create this if it doesn't already exist
         if (firstTime)
         {
-            if (File.Exists(jsonPath))
+            if (!File.Exists(jsonPath) && Directory.Exists(curProject.Descriptor.ProjectPath))
             {
-                string json = File.ReadAllText(jsonPath);
+                var legacyProjectJson = new LegacyProjectDescriptor(curProject);
 
-                try
-                {
-                    LegacyProjectDescriptor project =
-                        JsonSerializer.Deserialize(json, ProjectJsonSerializerContext.Default.LegacyProjectDescriptor);
+                var json = JsonSerializer.Serialize(legacyProjectJson, ProjectJsonSerializerContext.Default.LegacyProjectDescriptor);
 
-                    return;
-                }
-                catch (Exception e)
-                {
-                    Smithbox.LogError(this, $"[Project] Failed to parse existing project.json: {e}",
-                        LogPriority.High, e);
-                }
+                File.WriteAllText(jsonPath, json);
             }
-        }
-
-        if (!File.Exists(jsonPath) && Directory.Exists(curProject.Descriptor.ProjectPath))
-        {
-            var legacyProjectJson = new LegacyProjectDescriptor(curProject);
-
-            var json = JsonSerializer.Serialize(legacyProjectJson, ProjectJsonSerializerContext.Default.LegacyProjectDescriptor);
-
-            File.WriteAllText(jsonPath, json);
         }
     }
     public void CreateProjectFromLegacyJson(string path)

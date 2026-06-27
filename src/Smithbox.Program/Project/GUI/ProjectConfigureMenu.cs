@@ -123,15 +123,15 @@ public class ProjectConfigureMenu
 
         if (EditorMode is ProjectEditorMode.Create)
         {
-            UIHelper.MultiButtonInput("projectCreateActions",
-                "createProject", "Create Project", "", CreateProjectAction);
+            UIHelper.ConditionalMultiButtonInput("projectCreateActions",
+                "createProject", "Create Project", "", CreateProjectAction, AllowCreation());
         }
         else if (EditorMode is ProjectEditorMode.Edit)
         {
-            UIHelper.MultiButtonInput("projectEditActions",
-                "editProject", "Update Project", "Update the currently selected project configuration to use the newly configured parameters.", UpdateProjectAction,
-                "deleteProject", "Delete Project", "Delete the currently selected project entry.", DeleteProjectAction,
-                "clearProjectBackups", "Delete Backup Files", "Delete the .prev and .bak files within the currently selected project's directory.", DeleteBackupFilesAction);
+            UIHelper.ConditionalMultiButtonInput("projectEditActions",
+                "editProject", "Update Project", "Update the currently selected project configuration to use the newly configured parameters.", UpdateProjectAction, AllowCreation(),
+                "deleteProject", "Delete Project", "Delete the currently selected project entry.", DeleteProjectAction, true,
+                "clearProjectBackups", "Delete Backup Files", "Delete the .prev and .bak files within the currently selected project's directory.", DeleteBackupFilesAction, true);
         }
 
         if (ModEngineHandler.IsME3Project(Project))
@@ -139,9 +139,9 @@ public class ProjectConfigureMenu
             UIHelper.Spacer();
             UIHelper.SimpleHeader("ME3", "");
 
-            UIHelper.MultiButtonInput("me3Actions",
-                "launchMod", "Launch Mod", "Launch this project with ME3.", LaunchModAction,
-                "createProfile", "Create Profile", "Create a basic ME3 profile for this project.", CreateProfileAction);
+            UIHelper.ConditionalMultiButtonInput("me3Actions",
+                "launchMod", "Launch Mod", "Launch this project with ME3.", LaunchModAction, ModEngineHandler.ME3ProfileExists(Project),
+                "createProfile", "Create Profile", "Create a basic ME3 profile for this project.", CreateProfileAction, !ModEngineHandler.ME3ProfileExists(Project));
         }
     }
 
@@ -496,6 +496,7 @@ public class ProjectConfigureMenu
 
         return tooltip;
     }
+
     public void FindSteamExecutables()
     {
         SteamExecutable_DS1 = SteamGameLocator.FindGameExecutable(211420, "DATA\\DARKSOULS.exe");

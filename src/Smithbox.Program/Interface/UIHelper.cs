@@ -707,15 +707,26 @@ public static class UIHelper
     }
 
     // Button Input
-    public static void ButtonInputEntry(string buttonId, string buttonTitle, string buttonTooltip, Action buttonFunc)
+    public static void ButtonInputEntry(string buttonId, string buttonTitle, string buttonTooltip, Action buttonFunc, bool allowButtonFunc = true)
     {
         ImGui.TableNextRow();
         ImGui.TableSetColumnIndex(0);
 
         ImGui.PushStyleVar(ImGuiStyleVar.ButtonTextAlign, new Vector2(0.01f, 0.5f));
-        if (ImGui.Button($"{buttonTitle}##{buttonId}", GetButtonSize()))
+        if (allowButtonFunc)
         {
-            buttonFunc.Invoke();
+            if (ImGui.Button($"{buttonTitle}##{buttonId}", GetButtonSize()))
+            {
+                buttonFunc.Invoke();
+            }
+        }
+        else
+        {
+            ImGui.BeginDisabled();
+            if (ImGui.Button($"{buttonTitle}##{buttonId}", GetButtonSize()))
+            {
+            }
+            ImGui.EndDisabled();
         }
         ImGui.PopStyleVar();
         if(buttonTooltip != "")
@@ -746,6 +757,21 @@ public static class UIHelper
         }
     }
 
+    public static void ConditionalMultiButtonInput(string id,
+        string id1, string title1, string tooltip1, Action func1, bool allowFunc1)
+    {
+        var tblFlags = ImGuiTableFlags.SizingFixedFit;
+
+        if (ImGui.BeginTable($"{id}", 1, tblFlags))
+        {
+            ImGui.TableSetupColumn("Title", ImGuiTableColumnFlags.WidthFixed);
+
+            ButtonInputEntry(id1, title1, tooltip1, func1, allowFunc1);
+
+            ImGui.EndTable();
+        }
+    }
+
     public static void MultiButtonInput(string id, 
         string id1, string title1, string tooltip1, Action func1,
         string id2, string title2, string tooltip2, Action func2)
@@ -758,6 +784,23 @@ public static class UIHelper
 
             ButtonInputEntry(id1, title1, tooltip1, func1);
             ButtonInputEntry(id2, title2, tooltip2, func2);
+
+            ImGui.EndTable();
+        }
+    }
+
+    public static void ConditionalMultiButtonInput(string id,
+        string id1, string title1, string tooltip1, Action func1, bool allowFunc1,
+        string id2, string title2, string tooltip2, Action func2, bool allowFunc2)
+    {
+        var tblFlags = ImGuiTableFlags.SizingFixedFit;
+
+        if (ImGui.BeginTable($"{id}", 1, tblFlags))
+        {
+            ImGui.TableSetupColumn("Title", ImGuiTableColumnFlags.WidthFixed);
+
+            ButtonInputEntry(id1, title1, tooltip1, func1, allowFunc1);
+            ButtonInputEntry(id2, title2, tooltip2, func2, allowFunc2);
 
             ImGui.EndTable();
         }
@@ -777,6 +820,25 @@ public static class UIHelper
             ButtonInputEntry(id1, title1, tooltip1, func1);
             ButtonInputEntry(id2, title2, tooltip2, func2);
             ButtonInputEntry(id3, title3, tooltip3, func3);
+
+            ImGui.EndTable();
+        }
+    }
+
+    public static void ConditionalMultiButtonInput(string id,
+        string id1, string title1, string tooltip1, Action func1, bool allowFunc1,
+        string id2, string title2, string tooltip2, Action func2, bool allowFunc2,
+        string id3, string title3, string tooltip3, Action func3, bool allowFunc3)
+    {
+        var tblFlags = ImGuiTableFlags.SizingFixedFit;
+
+        if (ImGui.BeginTable($"{id}", 1, tblFlags))
+        {
+            ImGui.TableSetupColumn("Title", ImGuiTableColumnFlags.WidthFixed);
+
+            ButtonInputEntry(id1, title1, tooltip1, func1, allowFunc1);
+            ButtonInputEntry(id2, title2, tooltip2, func2, allowFunc2);
+            ButtonInputEntry(id3, title3, tooltip3, func3, allowFunc3);
 
             ImGui.EndTable();
         }
@@ -803,6 +865,27 @@ public static class UIHelper
         }
     }
 
+    public static void ConditionalMultiButtonInput(string id,
+        string id1, string title1, string tooltip1, Action func1, bool allowFunc1,
+        string id2, string title2, string tooltip2, Action func2, bool allowFunc2,
+        string id3, string title3, string tooltip3, Action func3, bool allowFunc3,
+        string id4, string title4, string tooltip4, Action func4, bool allowFunc4)
+    {
+        var tblFlags = ImGuiTableFlags.SizingFixedFit;
+
+        if (ImGui.BeginTable($"{id}", 1, tblFlags))
+        {
+            ImGui.TableSetupColumn("Title", ImGuiTableColumnFlags.WidthFixed);
+
+            ButtonInputEntry(id1, title1, tooltip1, func1, allowFunc1);
+            ButtonInputEntry(id2, title2, tooltip2, func2, allowFunc2);
+            ButtonInputEntry(id3, title3, tooltip3, func3, allowFunc3);
+            ButtonInputEntry(id4, title4, tooltip4, func4, allowFunc4);
+
+            ImGui.EndTable();
+        }
+    }
+
     public static void MultiButtonInput(string id,
         string id1, string title1, string tooltip1, Action func1,
         string id2, string title2, string tooltip2, Action func2,
@@ -821,6 +904,29 @@ public static class UIHelper
             ButtonInputEntry(id3, title3, tooltip3, func3);
             ButtonInputEntry(id4, title4, tooltip4, func4);
             ButtonInputEntry(id5, title5, tooltip5, func5);
+
+            ImGui.EndTable();
+        }
+    }
+
+    public static void ConditionalMultiButtonInput(string id,
+        string id1, string title1, string tooltip1, Action func1, bool allowFunc1,
+        string id2, string title2, string tooltip2, Action func2, bool allowFunc2,
+        string id3, string title3, string tooltip3, Action func3, bool allowFunc3,
+        string id4, string title4, string tooltip4, Action func4, bool allowFunc4,
+        string id5, string title5, string tooltip5, Action func5, bool allowFunc5)
+    {
+        var tblFlags = ImGuiTableFlags.SizingFixedFit;
+
+        if (ImGui.BeginTable($"{id}", 1, tblFlags))
+        {
+            ImGui.TableSetupColumn("Title", ImGuiTableColumnFlags.WidthFixed);
+
+            ButtonInputEntry(id1, title1, tooltip1, func1, allowFunc1);
+            ButtonInputEntry(id2, title2, tooltip2, func2, allowFunc2);
+            ButtonInputEntry(id3, title3, tooltip3, func3, allowFunc3);
+            ButtonInputEntry(id4, title4, tooltip4, func4, allowFunc4);
+            ButtonInputEntry(id5, title5, tooltip5, func5, allowFunc5);
 
             ImGui.EndTable();
         }
@@ -851,6 +957,31 @@ public static class UIHelper
         }
     }
 
+    public static void ConditionalMultiButtonInput(string id,
+        string id1, string title1, string tooltip1, Action func1, bool allowFunc1,
+        string id2, string title2, string tooltip2, Action func2, bool allowFunc2,
+        string id3, string title3, string tooltip3, Action func3, bool allowFunc3,
+        string id4, string title4, string tooltip4, Action func4, bool allowFunc4,
+        string id5, string title5, string tooltip5, Action func5, bool allowFunc5,
+        string id6, string title6, string tooltip6, Action func6, bool allowFunc6)
+    {
+        var tblFlags = ImGuiTableFlags.SizingFixedFit;
+
+        if (ImGui.BeginTable($"{id}", 1, tblFlags))
+        {
+            ImGui.TableSetupColumn("Title", ImGuiTableColumnFlags.WidthFixed);
+
+            ButtonInputEntry(id1, title1, tooltip1, func1, allowFunc1);
+            ButtonInputEntry(id2, title2, tooltip2, func2, allowFunc2);
+            ButtonInputEntry(id3, title3, tooltip3, func3, allowFunc3);
+            ButtonInputEntry(id4, title4, tooltip4, func4, allowFunc4);
+            ButtonInputEntry(id5, title5, tooltip5, func5, allowFunc5);
+            ButtonInputEntry(id6, title6, tooltip6, func6, allowFunc6);
+
+            ImGui.EndTable();
+        }
+    }
+
     public static void MultiButtonInput(string id,
         string id1, string title1, string tooltip1, Action func1,
         string id2, string title2, string tooltip2, Action func2,
@@ -873,6 +1004,33 @@ public static class UIHelper
             ButtonInputEntry(id5, title5, tooltip5, func5);
             ButtonInputEntry(id6, title6, tooltip6, func6);
             ButtonInputEntry(id7, title7, tooltip7, func7);
+
+            ImGui.EndTable();
+        }
+    }
+
+    public static void ConditionalMultiButtonInput(string id,
+        string id1, string title1, string tooltip1, Action func1, bool allowFunc1,
+        string id2, string title2, string tooltip2, Action func2, bool allowFunc2,
+        string id3, string title3, string tooltip3, Action func3, bool allowFunc3,
+        string id4, string title4, string tooltip4, Action func4, bool allowFunc4,
+        string id5, string title5, string tooltip5, Action func5, bool allowFunc5,
+        string id6, string title6, string tooltip6, Action func6, bool allowFunc6,
+        string id7, string title7, string tooltip7, Action func7, bool allowFunc7)
+    {
+        var tblFlags = ImGuiTableFlags.SizingFixedFit;
+
+        if (ImGui.BeginTable($"{id}", 1, tblFlags))
+        {
+            ImGui.TableSetupColumn("Title", ImGuiTableColumnFlags.WidthFixed);
+
+            ButtonInputEntry(id1, title1, tooltip1, func1, allowFunc1);
+            ButtonInputEntry(id2, title2, tooltip2, func2, allowFunc2);
+            ButtonInputEntry(id3, title3, tooltip3, func3, allowFunc3);
+            ButtonInputEntry(id4, title4, tooltip4, func4, allowFunc4);
+            ButtonInputEntry(id5, title5, tooltip5, func5, allowFunc5);
+            ButtonInputEntry(id6, title6, tooltip6, func6, allowFunc6);
+            ButtonInputEntry(id7, title7, tooltip7, func7, allowFunc7);
 
             ImGui.EndTable();
         }
@@ -907,6 +1065,34 @@ public static class UIHelper
         }
     }
 
+    public static void ConditionalMultiButtonInput(string id,
+        string id1, string title1, string tooltip1, Action func1, bool allowFunc1,
+        string id2, string title2, string tooltip2, Action func2, bool allowFunc2,
+        string id3, string title3, string tooltip3, Action func3, bool allowFunc3,
+        string id4, string title4, string tooltip4, Action func4, bool allowFunc4,
+        string id5, string title5, string tooltip5, Action func5, bool allowFunc5,
+        string id6, string title6, string tooltip6, Action func6, bool allowFunc6,
+        string id7, string title7, string tooltip7, Action func7, bool allowFunc7,
+        string id8, string title8, string tooltip8, Action func8, bool allowFunc8)
+    {
+        var tblFlags = ImGuiTableFlags.SizingFixedFit;
+
+        if (ImGui.BeginTable($"{id}", 1, tblFlags))
+        {
+            ImGui.TableSetupColumn("Title", ImGuiTableColumnFlags.WidthFixed);
+
+            ButtonInputEntry(id1, title1, tooltip1, func1, allowFunc1);
+            ButtonInputEntry(id2, title2, tooltip2, func2, allowFunc2);
+            ButtonInputEntry(id3, title3, tooltip3, func3, allowFunc3);
+            ButtonInputEntry(id4, title4, tooltip4, func4, allowFunc4);
+            ButtonInputEntry(id5, title5, tooltip5, func5, allowFunc5);
+            ButtonInputEntry(id6, title6, tooltip6, func6, allowFunc6);
+            ButtonInputEntry(id7, title7, tooltip7, func7, allowFunc7);
+            ButtonInputEntry(id8, title8, tooltip8, func8, allowFunc8);
+
+            ImGui.EndTable();
+        }
+    }
 
 }
 

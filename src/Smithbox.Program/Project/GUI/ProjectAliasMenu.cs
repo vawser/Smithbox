@@ -46,6 +46,12 @@ public class ProjectAliasMenu
             return;
         }
 
+        if (curProject.Handler == null)
+        {
+            UIHelper.WrappedText("A valid project must be selected to use this editor.");
+            return;
+        }
+
         if (curProject.Handler.ProjectData == null)
         {
             UIHelper.WrappedText("A valid project must be selected to use this editor.");
