@@ -770,65 +770,107 @@ public class FlverResource : IResource, IDisposable
         if (type == FLVER.LayoutType.Float2)
         {
             v = new Vector3(br.ReadVector2(), 0);
+
+            dest[0] = (short)(v.X * 2048.0f);
+            dest[1] = (short)(v.Y * 2048.0f);
         }
         else if (type == FLVER.LayoutType.Float3)
         {
             v = br.ReadVector3();
+
+            dest[0] = (short)(v.X * 2048.0f);
+            dest[1] = (short)(v.Y * 2048.0f);
         }
         else if (type == FLVER.LayoutType.Float4)
         {
             v = new Vector3(br.ReadVector2(), 0);
             v2 = new Vector3(br.ReadVector2(), 0);
             hasv2 = allowv2;
+
+            dest[0] = (short)(v.X * 2048.0f);
+            dest[1] = (short)(v.Y * 2048.0f);
+            if (hasv2)
+            {
+                dest[3] = (short)(v2.X * 2048.0f);
+                dest[4] = (short)(v2.Y * 2048.0f);
+            }
         }
         else if (type == FLVER.LayoutType.Color)
         {
             v = new Vector3(br.ReadInt16(), br.ReadInt16(), 0) / uvFactor;
+
+            dest[0] = (short)(v.X * 2048.0f);
+            dest[1] = (short)(v.Y * 2048.0f);
         }
         else if (type == FLVER.LayoutType.UByte4)
         {
             v = new Vector3(br.ReadInt16(), br.ReadInt16(), 0) / uvFactor;
+
+            dest[0] = (short)(v.X * 2048.0f);
+            dest[1] = (short)(v.Y * 2048.0f);
         }
         else if (type == FLVER.LayoutType.Byte4)
         {
             v = new Vector3(br.ReadInt16(), br.ReadInt16(), 0) / uvFactor;
+
+            dest[0] = (short)(v.X * 2048.0f);
+            dest[1] = (short)(v.Y * 2048.0f);
         }
         else if (type == FLVER.LayoutType.UByte4Norm)
         {
             v = new Vector3(br.ReadInt16(), br.ReadInt16(), 0) / uvFactor;
+
+            dest[0] = (short)(v.X * 2048.0f);
+            dest[1] = (short)(v.Y * 2048.0f);
         }
         else if (type == FLVER.LayoutType.Short2)
         {
             v = new Vector3(br.ReadInt16(), br.ReadInt16(), 0) / uvFactor;
+
+            dest[0] = (short)(v.X * 2048.0f);
+            dest[1] = (short)(v.Y * 2048.0f);
         }
         else if (type == FLVER.LayoutType.Half2)
         {
-            v = new Vector3(br.ReadInt16(), br.ReadInt16(), 0) / uvFactor;
+            float u = (float)(Half)BitConverter.Int16BitsToHalf(br.ReadInt16());
+            float vCoord = (float)(Half)BitConverter.Int16BitsToHalf(br.ReadInt16());
+            v = new Vector3(u, vCoord, 0) / uvFactor;
+
+            dest[0] = (short)(v.X * 2048.0f);
+            dest[1] = (short)(v.Y * 2048.0f);
         }
         else if (type == FLVER.LayoutType.Short4)
         {
             v = new Vector3(br.ReadInt16(), br.ReadInt16(), 0) / uvFactor;
             v2 = new Vector3(br.ReadInt16(), br.ReadInt16(), 0) / uvFactor;
             hasv2 = allowv2;
+
+            dest[0] = (short)(v.X * 2048.0f);
+            dest[1] = (short)(v.Y * 2048.0f);
+            if (hasv2)
+            {
+                dest[3] = (short)(v2.X * 2048.0f);
+                dest[4] = (short)(v2.Y * 2048.0f);
+            }
         }
         else if (type == FLVER.LayoutType.Half4)
         {
             v = new Vector3(br.ReadInt16(), br.ReadInt16(), 0) / uvFactor;
             v2 = new Vector3(br.ReadInt16(), br.ReadInt16(), 0) / uvFactor;
             hasv2 = allowv2;
+
+            dest[0] = (short)(v.X * 2048.0f);
+            dest[1] = (short)(v.Y * 2048.0f);
+            if (hasv2)
+            {
+                dest[3] = (short)(v2.X * 2048.0f);
+                dest[4] = (short)(v2.Y * 2048.0f);
+            }
         }
         else
         {
             throw new NotImplementedException(
                 LOC.Get("REND_FlverResource_UV_Read_Not_Implemented", type));
-        }
-
-        dest[0] = (short)(v.X * 2048.0f);
-        dest[1] = (short)(v.Y * 2048.0f);
-        if (hasv2)
-        {
-            dest[3] = (short)(v.X * 2048.0f);
-            dest[4] = (short)(v.Y * 2048.0f);
         }
     }
 
