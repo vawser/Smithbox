@@ -1,0 +1,44 @@
+{
+  "Entries": [
+    {
+      "Key": "MEM_No_Process_Found",
+      "Text": "Error: Process '{0}' not found. Please run the game first."
+    },
+    {
+      "Key": "MEM_AOBReader_Init_Failed",
+      "Text": "Failed to initialize AOBReader."
+    },
+    {
+      "Key": "MEM_AOB_Scan_Start",
+      "Text": "Starting AOB scan..."
+    },
+    {
+      "Key": "MEM_AOB_Scan_Find",
+      "Text": "Found at: 0x{0}"
+    },
+    {
+      "Key": "MEM_AOB_Scan_Failed",
+      "Text": "Scan failed."
+    },
+    {
+      "Key": "MEM_AOB_Read_Failed",
+      "Text": "Read failed."
+    },
+    {
+      "Key": "MEM_AOB_Write_Failed",
+      "Text": "Write failed."
+    },
+    {
+      "Key": "MEM_AOB_Unsupported_Param_Def_Type",
+      "Text": "Unsupported type: {0}"
+    },
+    {
+      "Key": "MEM_Exception_Pattern_Mask_Lengths",
+      "Text": "Pattern and mask lengths must be equal."
+    },
+    {
+      "Key": "MEM_Attach_Proc_Error",
+      "Text": "Can't find process {0}. Is it running?"
+    }
+  ]
+}

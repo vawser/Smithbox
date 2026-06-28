@@ -41,10 +41,14 @@ public class AOBScanner
     public IntPtr FindPattern(byte[] pattern, string mask, bool scanFromZero = true)
     {
         int length = pattern.Length;
+
         if (mask.Length != length)
-            throw new ArgumentException("Pattern and mask lengths must be equal");
+            throw new ArgumentException(LOC.Get("MEM_Exception_Pattern_Mask_Lengths"));
+
         IntPtr lpAddress = scanFromZero ? IntPtr.Zero : this.process.MainModule.BaseAddress;
+
         AOBScanner.MEMORY_BASIC_INFORMATION lpBuffer1 = new AOBScanner.MEMORY_BASIC_INFORMATION();
+
         while (AOBScanner.VirtualQueryEx(this.processHandle, lpAddress, out lpBuffer1, Marshal.SizeOf<AOBScanner.MEMORY_BASIC_INFORMATION>(lpBuffer1)) != 0 && lpAddress.ToInt64() < (long)(IntPtr.MaxValue - (IntPtr)(int)lpBuffer1.RegionSize))
         {
             if (((int)lpBuffer1.Protect & 4) != 0 && ((int)lpBuffer1.State & 4096) != 0 && lpBuffer1.Protect != 1U)

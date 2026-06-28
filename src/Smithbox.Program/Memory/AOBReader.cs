@@ -20,7 +20,7 @@ public class AOBReader
             Process[] processesByName = Process.GetProcessesByName(processName);
             if (processesByName.Length == 0)
             {
-                Smithbox.Log(this, $"Error: Process '{processName}' not found. Please run the game first.");
+                Smithbox.LogError(this, LOC.Get("MEM_No_Process_Found", processName));
             }
             else
             {
@@ -30,7 +30,7 @@ public class AOBReader
         }
         catch (Exception ex)
         {
-            Smithbox.Log(this, $"Failed to initialize AOBReader", Microsoft.Extensions.Logging.LogLevel.Error, LogPriority.High, ex);
+            Smithbox.LogError(this, LOC.Get("MEM_AOBReader_Init_Failed"), ex);
         }
     }
 
@@ -38,18 +38,18 @@ public class AOBReader
     {
         try
         {
-            Smithbox.Log(this, "Starting AOB scan...");
+            Smithbox.Log(this, LOC.Get("MEM_AOB_Scan_Start"));
 
             string mask = new string('x', pattern.Length);
             IntPtr pattern1 = _scanner.FindPattern(pattern, mask);
 
-            Smithbox.Log(this, $"Found at: 0x{pattern1}");
+            Smithbox.Log(this, LOC.Get("MEM_AOB_Scan_Find", pattern1));
 
             return pattern1;
         }
         catch (Exception ex)
         {
-            Smithbox.Log(this, $"Scan failed", Microsoft.Extensions.Logging.LogLevel.Error, LogPriority.High, ex);
+            Smithbox.LogError(this, LOC.Get("MEM_AOB_Scan_Failed"), ex);
             return new IntPtr(-1);
         }
     }
@@ -98,7 +98,7 @@ public class AOBReader
         }
         catch (Exception ex)
         {
-            Smithbox.Log(this, $"Read failed", Microsoft.Extensions.Logging.LogLevel.Error, LogPriority.High, ex);
+            Smithbox.LogError(this, LOC.Get("MEM_AOB_Read_Failed"), ex);
             return null;
         }
     }
@@ -138,13 +138,14 @@ public class AOBReader
                     _scanner.WriteDouble(address, Convert.ToDouble(value));
                     break;
                 default:
-                    throw new NotSupportedException($"Unsupported type: {type}");
+                    throw new NotSupportedException(
+                        LOC.Get("MEM_AOB_Unsupported_Param_Def_Type", type));
             }
             return true;
         }
         catch (Exception ex)
         {
-            Smithbox.Log(this, $"Write failed", Microsoft.Extensions.Logging.LogLevel.Error, LogPriority.High, ex);
+            Smithbox.LogError(this, LOC.Get("MEM_AOB_Write_Failed"), ex);
             return false;
         }
     }

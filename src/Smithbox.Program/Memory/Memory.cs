@@ -43,7 +43,8 @@ public class Memory
             return ProcessHandle;
         }
 
-        Smithbox.LogError<Memory>($"Can't find process {procName}. Is it running?");
+        Smithbox.LogError<Memory>(
+            LOC.Get("MEM_Attach_Proc_Error", procName));
         return ZeroRt;
     }
 
