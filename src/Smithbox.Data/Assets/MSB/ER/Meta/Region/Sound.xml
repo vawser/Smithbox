@@ -28,9 +28,22 @@
   
   <Enums>
     <Enum Name="SOUND_TYPE">
-        <Option Value="0" Name="Environment" />
-        <Option Value="6" Name="Boss Fight" />
-        <Option Value="7" Name="Voice" />
+        <Option Value="0" Name="Environment (a)" />
+        <Option Value="1" Name="Character (c)" />
+        <Option Value="2" Name="Menu (f)" />
+        <Option Value="3" Name="Object (o)" />
+        <Option Value="4" Name="CutsceneSe (p)" />
+        <Option Value="5" Name="Sfx (s)" />
+        <Option Value="6" Name="Bgm (m)" />
+        <Option Value="7" Name="Voice (v)" />
+        <Option Value="8" Name="FloorMaterialDetermined (x)" />
+        <Option Value="9" Name="ArmorMaterialDetermined (b)" />
+        <Option Value="10" Name="Phantom (i)" />
+        <Option Value="11" Name="MultiChannelStreaming (y)" />
+        <Option Value="12" Name="MaterialRelated (z)" />
+        <Option Value="13" Name="FootEffect (e)" />
+        <Option Value="14" Name="GeometryAsset (g)" />
+        <Option Value="15" Name="DynamicDialog (d)" />
     </Enum>
   </Enums>
 </MSBMETA>
