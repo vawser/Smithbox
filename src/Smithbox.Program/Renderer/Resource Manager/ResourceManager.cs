@@ -70,7 +70,7 @@ public static class ResourceManager
             return new ResourceHandle<TextureResource>(virtualpath);
         }
 
-        throw new Exception("Unhandled resource type");
+        throw new Exception(LOC.Get("REND_Unhandled_Resource_Type"));
     }
 
     /// <summary>
@@ -216,7 +216,9 @@ public static class ResourceManager
 
             if (_schedulePostTextureLoad)
             {
-                ResourceJobBuilder job = CreateNewJob(@"Loading additional textures");
+                ResourceJobBuilder job = CreateNewJob(
+                    LOC.Get("REND_Job_Additional_Textures"));
+
                 job.AddPostTextureLoadTask();
                 job.Complete();
                 _schedulePostTextureLoad = false;
@@ -224,7 +226,9 @@ public static class ResourceManager
 
             if (_scheduleWorldMapLoad)
             {
-                ResourceJobBuilder job = CreateNewJob(@"Loading world map textures");
+                ResourceJobBuilder job = CreateNewJob(
+                    LOC.Get("REND_Job_World_Map_Textures"));
+
                 job.AddWorldMapLoadTask();
                 job.Complete();
                 _scheduleWorldMapLoad = false;

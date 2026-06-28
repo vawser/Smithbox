@@ -109,7 +109,8 @@ public class HavokCollisionResource : IResource, IDisposable
             }
             catch(Exception e)
             {
-                Smithbox.LogError(this, $"Failed to load {relativePath} during HavokCollisionResource load.", LogPriority.High, e);
+                Smithbox.LogError(this, 
+                    LOC.Get("REND_HavokCollisionResource_Load_Failed", relativePath), e);
             }
         }
         // HKX - BB
@@ -123,7 +124,8 @@ public class HavokCollisionResource : IResource, IDisposable
             }
             catch (Exception e)
             {
-                Smithbox.LogError(this, $"Failed to load {relativePath} during HavokCollisionResource load.", LogPriority.High, e);
+                Smithbox.LogError(this,
+                    LOC.Get("REND_HavokCollisionResource_Load_Failed", relativePath), e);
             }
         }
         // HKX - DS2 / DS1
@@ -143,7 +145,8 @@ public class HavokCollisionResource : IResource, IDisposable
             }
             catch (Exception e)
             {
-                Smithbox.LogError(this, $"Failed to load {relativePath} during HavokCollisionResource load.", LogPriority.High, e);
+                Smithbox.LogError(this,
+                    LOC.Get("REND_HavokCollisionResource_Load_Failed", relativePath), e);
             }
         }
 

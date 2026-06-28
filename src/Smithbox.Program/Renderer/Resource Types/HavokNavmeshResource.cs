@@ -120,7 +120,8 @@ public class HavokNavmeshResource : IResource, IDisposable
         }
         catch (Exception e)
         {
-            Smithbox.LogError(this, $"Failed to load {relativePath} during HavokCollisionResource load.", LogPriority.High, e);
+            Smithbox.LogError(this,
+                LOC.Get("REND_HavokNavmeshResource_Load_Failed", relativePath), e);
         }
 
         return LoadInternal(al);

@@ -83,7 +83,7 @@ public class LoadBinderResourcesAction
                         catch (Exception e)
                         {
                             load = false;
-                            Smithbox.Log(this, $"Failed to read {entry.Path} during resource load.", LogLevel.Warning, LogPriority.Normal, e);
+                            Smithbox.LogError(this, LOC.Get("REND_Resource_Load_Failed", entry.Path), e);
                         }
 
                         break;
@@ -101,7 +101,7 @@ public class LoadBinderResourcesAction
                         catch (Exception e)
                         {
                             load = false;
-                            Smithbox.Log(this, $"Failed to read {entry.Path} during resource load.", LogLevel.Warning, LogPriority.Normal, e);
+                            Smithbox.LogError(this, LOC.Get("REND_Resource_Load_Failed", entry.Path), e);
                         }
 
                         break;
@@ -137,7 +137,7 @@ public class LoadBinderResourcesAction
                         catch (Exception e)
                         {
                             load = false;
-                            Smithbox.Log(this, $"Failed to read {entry.Path} during resource load.", LogLevel.Warning, LogPriority.Normal, e);
+                            Smithbox.LogError(this, LOC.Get("REND_Resource_Load_Failed", entry.Path), e);
                         }
 
                         break;

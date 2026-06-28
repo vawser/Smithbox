@@ -27,6 +27,26 @@
     {
       "Key": "ITF_Theme_Invalid_Filename",
       "Text": "Invalid filename for theme."
+    },
+    {
+      "Key": "ITF_Message_Box_OK",
+      "Text": "OK"
+    },
+    {
+      "Key": "ITF_Message_Box_Cancel",
+      "Text": "Cancel"
+    },
+    {
+      "Key": "ITF_Message_Box_Yes",
+      "Text": "Yes"
+    },
+    {
+      "Key": "ITF_Message_Box_No",
+      "Text": "No"
+    },
+    {
+      "Key": "ITF_ImGui_Binding_Error",
+      "Text": "No registered ImGui binding with id {0}"
     }
   ]
 }

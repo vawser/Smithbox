@@ -58,7 +58,7 @@ public static class MeshProviderCache
                 return fmp;
             }
 
-            throw new Exception("Mesh provider exists but in the wrong form");
+            throw new Exception(LOC.Get("REND_Mesh_Provider_Wrong_Form"));
         }
 
         FlverMeshProvider nfmp = new(virtualResourcePath);
@@ -76,7 +76,7 @@ public static class MeshProviderCache
                 return fmp;
             }
 
-            throw new Exception("Mesh provider exists but in the wrong form");
+            throw new Exception(LOC.Get("REND_Mesh_Provider_Wrong_Form"));
         }
 
         CollisionMeshProvider nfmp = new(virtualResourcePath);
@@ -93,7 +93,7 @@ public static class MeshProviderCache
                 return fmp;
             }
 
-            throw new Exception("Mesh provider exists but in the wrong form");
+            throw new Exception(LOC.Get("REND_Mesh_Provider_Wrong_Form"));
         }
 
         NavmeshProvider nfmp = new(virtualResourcePath);
@@ -110,7 +110,7 @@ public static class MeshProviderCache
                 return fmp;
             }
 
-            throw new Exception("Mesh provider exists but in the wrong form");
+            throw new Exception(LOC.Get("REND_Mesh_Provider_Wrong_Form"));
         }
 
         HavokNavmeshProvider nfmp = new(virtualResourcePath);

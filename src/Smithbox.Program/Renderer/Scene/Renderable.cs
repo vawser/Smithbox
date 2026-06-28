@@ -139,7 +139,7 @@ public class Renderables
         if (renderable < 0 || renderable >= _topIndex)
         {
             throw new ArgumentOutOfRangeException(nameof(renderable),
-                $"Renderable index {renderable} is out of range [0, {_topIndex})");
+                LOC.Get("REND_Renderable_Out_of_Index_Range", renderable, _topIndex));
         }
 
         cVisible[renderable]._valid = false;

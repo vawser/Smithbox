@@ -46,7 +46,7 @@ public static class MeshLayoutUtils
             case MeshLayoutType.LayoutPositionColorNormal:
                 return VertexPositionColorNormal.Layout;
             default:
-                throw new ArgumentException("Invalid layout type");
+                throw new ArgumentException(LOC.Get("REND_Mesh_Layout_Invalid_Type"));
         }
     }
 
@@ -75,7 +75,7 @@ public static class MeshLayoutUtils
             case MeshLayoutType.LayoutPositionColor:
                 return (uint)sizeof(PositionColor);
             default:
-                throw new ArgumentException("Invalid layout type");
+                throw new ArgumentException(LOC.Get("REND_Mesh_Layout_Invalid_Type"));
         }
     }
 }

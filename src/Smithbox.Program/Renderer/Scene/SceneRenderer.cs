@@ -449,7 +449,7 @@ public static class SceneRenderer
 
         private void ResizeBuffers(uint newCapacity)
         {
-            Console.WriteLine($"IndirectDrawEncoder: Resizing from {_currentCapacity} to {newCapacity} draw calls");
+            //Console.WriteLine($"IndirectDrawEncoder: Resizing from {_currentCapacity} to {newCapacity} draw calls");
 
             var oldIndirectBuffer = _indirectBuffer;
             var oldStagingBuffer = _indirectStagingBuffer;
@@ -546,12 +546,12 @@ public static class SceneRenderer
 
             if (p == null)
             {
-                throw new Exception("Pipeline is null");
+                throw new Exception(LOC.Get("REND_SceneRenderer_Null_Pipeline"));
             }
 
             if (buffer == -1)
             {
-                throw new Exception("Invalid buffer index");
+                throw new Exception(LOC.Get("REND_SceneRenderer_Invalid_Buffer_Index"));
             }
 
             _indirectStagingBuffer[_indirectDrawCount[_stagingSet]] = args;
@@ -593,12 +593,12 @@ public static class SceneRenderer
 
             if (pipeline == null)
             {
-                throw new Exception("Pipeline is null");
+                throw new Exception(LOC.Get("REND_SceneRenderer_Null_Pipeline"));
             }
 
             if (drawparams._bufferIndex == -1)
             {
-                throw new Exception("Invalid buffer index");
+                throw new Exception(LOC.Get("REND_SceneRenderer_Invalid_Buffer_Index"));
             }
 
             _indirectStagingBuffer[_indirectDrawCount[_stagingSet]] = drawparams._indirectArgs;

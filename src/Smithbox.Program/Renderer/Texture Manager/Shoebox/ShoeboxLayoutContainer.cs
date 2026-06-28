@@ -40,7 +40,8 @@ public class ShoeboxLayoutContainer
         }
         catch (Exception ex)
         {
-            Smithbox.LogError(this, $"Failed to load Shoebox Layout: {FileEntry.Filename}", LogPriority.High, ex);
+            Smithbox.LogError(this, 
+                LOC.Get("REND_Shoebox_Layout_Load_Failed", FileEntry.Filename), ex);
         }
 
         return true;
@@ -67,7 +68,8 @@ public class ShoeboxLayoutContainer
         }
         catch (Exception e)
         {
-            Smithbox.LogError(this, $"Failed to load Shoebox Layout: {FileEntry.Filename}", LogPriority.High, e);
+            Smithbox.LogError(this,
+                LOC.Get("REND_Shoebox_Layout_Load_Failed", FileEntry.Filename), e);
         }
     }
 

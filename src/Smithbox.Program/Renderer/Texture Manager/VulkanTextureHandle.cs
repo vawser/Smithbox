@@ -29,7 +29,7 @@ public class VulkanTextureHandle : ITextureHandle
 
         if (Handle == null)
         {
-            Smithbox.Log(this, "Unable to allocate texture descriptor");
+            Smithbox.Log(this, LOC.Get("REND_Vulkan_Missing_Texture_Descriptor"));
             return;
         }
 
@@ -56,7 +56,7 @@ public class VulkanTextureHandle : ITextureHandle
                         }
                         catch (Exception ex)
                         {
-                            Smithbox.LogError(this, "Failed to fill TPF", ex);
+                            Smithbox.LogError(this, LOC.Get("REND_Vulkan_TPF_Fill_Fail"), ex);
                         }
                     }
                 }

@@ -55,7 +55,8 @@ public class NVMNavmeshResource : IResource, IDisposable
         }
         catch (Exception e)
         {
-            Smithbox.LogError(this, $"Failed to load {relativePath} during NVMNavmeshResource load.", LogPriority.High, e);
+            Smithbox.LogError(this,
+                LOC.Get("REND_NVMNavmeshResource_Load_Failed", relativePath), e);
         }
 
         return false;

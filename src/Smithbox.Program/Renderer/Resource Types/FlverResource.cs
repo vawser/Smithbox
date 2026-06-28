@@ -175,7 +175,8 @@ public class FlverResource : IResource, IDisposable
         }
         catch (Exception e)
         {
-            Smithbox.LogError(this, $"Failed to load {relativePath} during FlverResource load.", LogPriority.High, e);
+            Smithbox.LogError(this,
+                LOC.Get("REND_FlverResource_Load_Failed", relativePath), e);
         }
 
         return false;
@@ -329,12 +330,15 @@ public class FlverResource : IResource, IDisposable
 
         if (!dest.TextureResourceFilled[(int)textureType])
         {
+            var selectedProject = Smithbox.Orchestrator.SelectedProject;
+            var handler = selectedProject.Handler;
+
             //Smithbox.Log(this, $"LISTENER for {virtualPath}");
 
             // Used to allow for association of models and textures
-            if (Smithbox.Orchestrator.SelectedProject.Handler.FocusedEditor is MapEditorScreen)
+            if (handler.FocusedEditor is MapEditorScreen)
             {
-                var mapEditor = (MapEditorScreen)Smithbox.Orchestrator.SelectedProject.Handler.FocusedEditor;
+                var mapEditor = (MapEditorScreen)handler.FocusedEditor;
 
                 var activeView = mapEditor.ViewHandler.ActiveView;
                 if (activeView != null)
@@ -343,9 +347,9 @@ public class FlverResource : IResource, IDisposable
                 }
             }
 
-            if (Smithbox.Orchestrator.SelectedProject.Handler.FocusedEditor is ModelEditorScreen)
+            if (handler.FocusedEditor is ModelEditorScreen)
             {
-                var modelEditor = (ModelEditorScreen)Smithbox.Orchestrator.SelectedProject.Handler.FocusedEditor;
+                var modelEditor = (ModelEditorScreen)handler.FocusedEditor;
 
                 var activeView = modelEditor.ViewHandler.ActiveView;
                 if (activeView != null)
@@ -652,7 +656,7 @@ public class FlverResource : IResource, IDisposable
         }
         else
         {
-            throw new NotImplementedException($"Read not implemented for {type} vertex.");
+            throw new NotImplementedException(LOC.Get("REND_FlverResource_Vertex_Read_Not_Implemented", type));
         }
 
         // Sanity check position to find bugs
@@ -687,7 +691,7 @@ public class FlverResource : IResource, IDisposable
             nw = (int)w;
             if (w != nw)
             {
-                throw new InvalidDataException($"Float4 Normal W was not a whole number: {w}");
+                throw new InvalidDataException(LOC.Get("REND_FlverResource_Float4_Invalid", w));
             }
         }
         else if (type == FLVER.LayoutType.Color)
@@ -732,7 +736,8 @@ public class FlverResource : IResource, IDisposable
         }
         else
         {
-            throw new NotImplementedException($"Read not implemented for {type} normal.");
+            throw new NotImplementedException(
+                LOC.Get("REND_FlverResource_Normal_Read_Not_Implemented", type));
         }
 
         dest[0] = (sbyte)(n->X * 127.0f);
@@ -814,7 +819,8 @@ public class FlverResource : IResource, IDisposable
         }
         else
         {
-            throw new NotImplementedException($"Read not implemented for {type} UV.");
+            throw new NotImplementedException(
+                LOC.Get("REND_FlverResource_UV_Read_Not_Implemented", type));
         }
 
         dest[0] = (short)(v.X * 2048.0f);
@@ -894,7 +900,8 @@ public class FlverResource : IResource, IDisposable
         }
         else
         {
-            throw new NotImplementedException($"Read not implemented for {type} tangent.");
+            throw new NotImplementedException(
+                LOC.Get("REND_FlverResource_Tangent_Read_Not_Implemented", type));
         }
 
         Vector3 t = Vector3.Normalize(new Vector3(tan.X, tan.Y, tan.Z));
@@ -968,7 +975,8 @@ public class FlverResource : IResource, IDisposable
                 break;
 
             default:
-                throw new NotImplementedException($"No size defined for buffer layout type: {type}");
+                throw new NotImplementedException(
+                    LOC.Get("REND_FlverResource_BufferLayout_Read_Not_Implemented", type));
         }
     }
 

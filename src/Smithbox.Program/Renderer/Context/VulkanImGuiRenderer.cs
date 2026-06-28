@@ -381,7 +381,7 @@ public class VulkanImGuiRenderer : IImguiRenderer, IDisposable
     {
         if (!_viewsById.TryGetValue(imGuiBinding, out ResourceSetInfo rsi))
         {
-            throw new InvalidOperationException("No registered ImGui binding with id " + imGuiBinding);
+            throw new InvalidOperationException(LOC.Get("ITF_ImGui_Binding_Error",  imGuiBinding));
         }
 
         return rsi.ResourceSet;

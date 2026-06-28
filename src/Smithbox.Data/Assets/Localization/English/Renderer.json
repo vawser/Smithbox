@@ -1,0 +1,280 @@
+{
+  "Entries": [
+    {
+      "Key": "REND_WTF",
+      "Text": "WTF"
+    },
+    {
+      "Key": "REND_DbgPrim_Empty",
+      "Text": "DbgPrim geometry is empty and it had no children. Something went wrong..."
+    },
+    {
+      "Key": "REND_Invalid_Axis",
+      "Text": "Select valid axis"
+    },
+    {
+      "Key": "REND_Listener_Tab_Name_Column",
+      "Text": "Name"
+    },
+    {
+      "Key": "REND_Listener_Tab_Name_Column_TT",
+      "Text": "Name of this resource."
+    },
+    {
+      "Key": "REND_Listener_Tab_Load_State_Column",
+      "Text": "Load State"
+    },
+    {
+      "Key": "REND_Listener_Tab_Load_State_Column_TT",
+      "Text": "The load state of this resource."
+    },
+    {
+      "Key": "REND_Listener_Tab_Access_Level_Column",
+      "Text": "Access Level"
+    },
+    {
+      "Key": "REND_Listener_Tab_Access_Level_Column_TT",
+      "Text": "The access level of this resource."
+    },
+    {
+      "Key": "REND_Listener_Tab_Reference_Count_Column",
+      "Text": "Reference Count"
+    },
+    {
+      "Key": "REND_Listener_Tab_Reference_Count_Column_TT",
+      "Text": "The reference count for this resource."
+    },
+    {
+      "Key": "REND_Listener_Tab_Action_Select_TT",
+      "Text": "Select this resource."
+    },
+    {
+      "Key": "REND_Listener_Tab_Loaded_State",
+      "Text": "Loaded"
+    },
+    {
+      "Key": "REND_Listener_Tab_Unloaded_State",
+      "Text": "Unloaded"
+    },
+    {
+      "Key": "REND_Listener_Tab_Action_Unload_TT",
+      "Text": "Unload this resource."
+    },
+    {
+      "Key": "REND_Mesh_Provider_Tab_Name_Column",
+      "Text": "Name"
+    },
+    {
+      "Key": "REND_Mesh_Provider_Tab_Name_Column_TT",
+      "Text": "Name of this resource."
+    },
+    {
+      "Key": "REND_Mesh_Provider_Action_Select_TT",
+      "Text": "Select this resource."
+    },
+    {
+      "Key": "REND_Tool_Resource_Monitor",
+      "Text": "Resource Monitor"
+    },
+    {
+      "Key": "REND_Tool_Listener_Tab",
+      "Text": "Listeners"
+    },
+    {
+      "Key": "REND_Tool_Mesh_Provider_Tab",
+      "Text": "Mesh Providers"
+    },
+    {
+      "Key": "REND_Resource_Load_Tasks",
+      "Text": "Resource Load Tasks"
+    },
+    {
+      "Key": "REND_Path_Builder_Failed_File_VFS",
+      "Text": "Failed to find file in VFS: {0}"
+    },
+    {
+      "Key": "REND_Mesh_Provider_Wrong_Form",
+      "Text": "Mesh provider exists but in the wrong form."
+    },
+    {
+      "Key": "REND_Resource_Load_Failed",
+      "Text": "Failed to read {0} during resource load."
+    },
+    {
+      "Key": "REND_TPF_Load_Failed",
+      "Text": "Failed to load TPF:\nFile path: {0}\nVirtual path: {1}\nAccess Level: {2}"
+    },
+    {
+      "Key": "REND_Binder_TPF_Load_Failed",
+      "Text": "Failed to load Binder TPF:\nName: {0}\nBinder Path: {1}\nBinder Virtual Path: {2}\nAccess Level: {3}"
+    },
+    {
+      "Key": "REND_Binder_Load_Failed",
+      "Text": "Failed to load Binder:\nBinder Path: {0}\nBinder Virtual Path: {1}\nAccess Level: {2}"
+    },
+    {
+      "Key": "REND_Job_Finished",
+      "Text": "Job: {9} - Finished"
+    },
+    {
+      "Key": "REND_Resource_Pipeline_Load_Error_File_Path",
+      "Text": "Resource pipeline load error:\nFile path request\nValue: {0}\nVirtual Path: {1}\nAccess Level: {2}"
+    },
+    {
+      "Key": "REND_Resource_Pipeline_Load_Error_File_Data",
+      "Text": "Resource pipeline load error:\nFile bytes request\nVirtual Path: {0}\nAccess Level: {1}"
+    },
+    {
+      "Key": "REND_Unhandled_Resource_Type",
+      "Text": "Unhandled resource type"
+    },
+    {
+      "Key": "REND_Job_Additional_Textures",
+      "Text": "Loading additional textures"
+    },
+    {
+      "Key": "REND_Job_World_Map_Textures",
+      "Text": "Loading world map textures"
+    },
+    {
+      "Key": "REND_FlverResource_Load_Failed",
+      "Text": "FlverResource: Failed to load {0}"
+    },
+    {
+      "Key": "REND_FlverResource_Vertex_Read_Not_Implemented",
+      "Text": "Read not implemented for {0} vertex."
+    },
+    {
+      "Key": "REND_FlverResource_Float4_Invalid",
+      "Text": "Float4 Normal W was not a whole number: {0}"
+    },
+    {
+      "Key": "REND_FlverResource_Normal_Read_Not_Implemented",
+      "Text": "Read not implemented for {0} normal."
+    },
+    {
+      "Key": "REND_FlverResource_UV_Read_Not_Implemented",
+      "Text": "Read not implemented for {0} UV."
+    },
+    {
+      "Key": "REND_FlverResource_Tangent_Read_Not_Implemented",
+      "Text": "Read not implemented for {0} tangent."
+    },
+    {
+      "Key": "REND_FlverResource_BufferLayout_Read_Not_Implemented",
+      "Text": "Read not implemented for {0} buffer layout type."
+    },
+    {
+      "Key": "REND_HavokCollisionResource_Load_Failed",
+      "Text": "HavokCollisionResource: Failed to load {0}"
+    },
+    {
+      "Key": "REND_HavokNavmeshResource_Load_Failed",
+      "Text": "HavokNavmeshResource: Failed to load {0}"
+    },
+    {
+      "Key": "REND_NVMNavmeshResource_Load_Failed",
+      "Text": "NVMNavmeshResource: Failed to load {0}"
+    },
+    {
+      "Key": "REND_TextureResource_Bad_Init",
+      "Text": "TextureResource: Empty Constructor is invalid."
+    },
+    {
+      "Key": "REND_TextureResource_Missing_Texture_Descriptor",
+      "Text": "Unable to allocate texture descriptor."
+    },
+    {
+      "Key": "REND_Buffer_Failed_Allocation_Migration",
+      "Text": "Failed to migrate allocation at {0} during buffer resize."
+    },
+    {
+      "Key": "REND_Buffer_GPU_Allocation_Failed",
+      "Text": "GPU allocation failed even after resize. Requested: {0} bytes, Buffer size: {1} bytes."
+    },
+    {
+      "Key": "REND_Buffer_Not_Staging",
+      "Text": "FlushIfNeeded called on non-staging buffer."
+    },
+    {
+      "Key": "REND_Buffer_Copy_To_Not_Staging",
+      "Text": "Attempted to copy data to non-staging buffer."
+    },
+    {
+      "Key": "REND_Buffer_Map_Vertex_Non_Staging",
+      "Text": "Attempted to map vertex buffer that isn't staging."
+    },
+    {
+      "Key": "REND_Buffer_Unmap_Vertex_Non_Staging",
+      "Text": "Attempted to unmap vertex buffer that isn't staging."
+    },
+    {
+      "Key": "REND_Buffer_Map_Index_Non_Staging",
+      "Text": "Attempted to map index buffer that isn't staging."
+    },
+    {
+      "Key": "REND_Buffer_Unmap_Index_Non_Staging",
+      "Text": "Attempted to unmap index buffer that isn't staging."
+    },
+    {
+      "Key": "REND_Renderable_Out_of_Index_Range",
+      "Text": "Renderable index {0} is out of range [0, {1})"
+    },
+    {
+      "Key": "REND_SceneRenderer_Null_Pipeline",
+      "Text": "Pipeline is null"
+    },
+    {
+      "Key": "REND_SceneRenderer_Invalid_Buffer_Index",
+      "Text": "Invalid buffer index"
+    },
+    {
+      "Key": "REND_Picking_Results_Not_Ready",
+      "Text": "Can't get selection when picking results aren't ready"
+    },
+    {
+      "Key": "REND_Unknown_DDS_Type",
+      "Text": "Unknown DDS Type: {0}"
+    },
+    {
+      "Key": "REND_Unimplemented_DXGI_Type",
+      "Text": "Unimplemented DXGI Type: {0}"
+    },
+    {
+      "Key": "REND_Invalid_TPF_Texture_BlockSize",
+      "Text": "TPF Texture format {0} BlockSize unknown."
+    },
+    {
+      "Key": "REND_Texture_Load_Error",
+      "Text": "Error loading texture:\nName: {0}\nFormat: {1}\n"
+    },
+    {
+      "Key": "REND_Shoebox_Layout_Load_Failed",
+      "Text": "Failed to load Shoebox Layout: {0}"
+    },
+    {
+      "Key": "REND_IconManager_TPF_Read_Failed",
+      "Text": "Failed to read TPF: {0}"
+    },
+    {
+      "Key": "REND_OpenGL_Texture_Upload_Error",
+      "Text": "OpenGL texture upload error: {0}"
+    },
+    {
+      "Key": "REND_OpenGL_Unsupported_DDS_Format",
+      "Text": "Unsupported DDS format: {0}"
+    },
+    {
+      "Key": "REND_Vulkan_Missing_Texture_Descriptor",
+      "Text": "Unable to allocate texture descriptor."
+    },
+    {
+      "Key": "REND_Vulkan_TPF_Fill_Fail",
+      "Text": "Failed to fill TPF"
+    },
+    {
+      "Key": "REND_Mesh_Layout_Invalid_Type",
+      "Text": "Invalid layout type"
+    }
+  ]
+}

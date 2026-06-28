@@ -55,7 +55,7 @@ public class DbgPrimGizmoTranslateSquare : DbgPrimGizmo
                     d = new Vector3(StartOffset + Length, StartOffset + Length, 0.0f);
                     break;
                 default:
-                    throw new ArgumentException("Select valid axis");
+                    throw new ArgumentException(LOC.Get("REND_Invalid_Axis"));
             }
 
             Color color = Color.FromArgb(0x86, 0xC8, 0x15);

@@ -157,7 +157,7 @@ public abstract class DbgPrim : IDbgPrim, IDisposable
             }
             else
             {
-                throw new Exception("WTF");
+                throw new Exception(LOC.Get("REND_WTF"));
             }
 
             NeedToRecreateGeomBuffer = false;
@@ -203,7 +203,7 @@ public abstract class DbgPrim : IDbgPrim, IDisposable
         {
             //If it's NOT a parent thing, then it shouldn't have empty geometry.
             // Some mistake was made.
-            throw new Exception("DbgPrim geometry is empty and it had no children. Something went wrong...");
+            throw new Exception(LOC.Get("REND_DbgPrim_Empty"));
         }
 
         if (GeometryBuffer.AllocStatus != VertexIndexBufferAllocator.VertexIndexBuffer.Status.Resident)

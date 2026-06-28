@@ -6,6 +6,7 @@ using System.Threading;
 using Tracy;
 using Veldrid;
 using Vortice.Vulkan;
+using static Google.Protobuf.Reflection.SourceCodeInfo.Types;
 
 namespace StudioCore.Renderer;
 
@@ -164,7 +165,8 @@ public class GPUBufferAllocator
             {
                 if (!_allocator.AllocAt(allocation.AllocationStart, allocation.AllocationSize))
                 {
-                    throw new Exception($"Failed to migrate allocation at {allocation.AllocationStart} during buffer resize");
+                    throw new Exception(
+                        LOC.Get("REND_Buffer_Failed_Allocation_Migration", allocation.AllocationStart));
                 }
             }
 
@@ -194,7 +196,7 @@ public class GPUBufferAllocator
                 growthSize = Math.Max(growthSize, (uint)BufferSize + MIN_GROWTH_SIZE);
 
                 // Log the resize
-                Console.WriteLine($"GPUBufferAllocator: Resizing buffer from {BufferSize / (1024.0 * 1024.0):F2}MB to {growthSize / (1024.0 * 1024.0):F2}MB");
+                // Console.WriteLine($"GPUBufferAllocator: Resizing buffer from {BufferSize / (1024.0 * 1024.0):F2}MB to {growthSize / (1024.0 * 1024.0):F2}MB");
 
                 // Resize and try again
                 ResizeBuffer(growthSize);
@@ -202,7 +204,7 @@ public class GPUBufferAllocator
                 if (!_allocator.AlignedAlloc(size, (uint)alignment, out addr))
                 {
                     throw new Exception(
-                        $"GPU allocation failed even after resize. Requested: {size} bytes, Buffer size: {BufferSize} bytes");
+                        LOC.Get("REND_Buffer_GPU_Allocation_Failed", size, BufferSize));
                 }
             }
 
@@ -460,9 +462,9 @@ public class VertexIndexBufferAllocator
             newIndexSize = Math.Max((uint)(newIndexSize * GROWTH_FACTOR), newIndexSize + MIN_INDEX_SIZE);
         }
 
-        Console.WriteLine($"VertexIndexBufferAllocator: Growing buffers");
-        Console.WriteLine($"  Vertex: {_maxVertsSize / (1024.0 * 1024.0):F2}MB → {newVertSize / (1024.0 * 1024.0):F2}MB");
-        Console.WriteLine($"  Index:  {_maxIndicesSize / (1024.0 * 1024.0):F2}MB → {newIndexSize / (1024.0 * 1024.0):F2}MB");
+        //Console.WriteLine($"VertexIndexBufferAllocator: Growing buffers");
+        //Console.WriteLine($"  Vertex: {_maxVertsSize / (1024.0 * 1024.0):F2}MB → {newVertSize / (1024.0 * 1024.0):F2}MB");
+        //Console.WriteLine($"  Index:  {_maxIndicesSize / (1024.0 * 1024.0):F2}MB → {newIndexSize / (1024.0 * 1024.0):F2}MB");
 
         _maxVertsSize = newVertSize;
         _maxIndicesSize = newIndexSize;
@@ -690,7 +692,7 @@ public class VertexIndexBufferAllocator
 
                 if (AllocStatus != Status.Staging)
                 {
-                    throw new Exception("Error: FlushIfNeeded called on non-staging buffer");
+                    throw new Exception(LOC.Get("REND_Buffer_Not_Staging"));
                 }
 
                 AllocStatus = Status.Uploading;
@@ -814,7 +816,7 @@ public class VertexIndexBufferAllocator
                 }
                 else
                 {
-                    throw new Exception("Attempt to copy data to non-staging buffer");
+                    throw new Exception(LOC.Get("REND_Buffer_Copy_To_Not_Staging"));
                 }
 
                 if (completionHandler != null)
@@ -843,7 +845,7 @@ public class VertexIndexBufferAllocator
                 }
                 else
                 {
-                    throw new Exception("Attempt to copy data to non-staging buffer");
+                    throw new Exception(LOC.Get("REND_Buffer_Copy_To_Not_Staging"));
                 }
 
                 if (completionHandler != null)
@@ -860,7 +862,7 @@ public class VertexIndexBufferAllocator
         {
             if (_buffer == null || _buffer.AllocStatus != VertexIndexBuffer.Status.Staging)
             {
-                throw new Exception("Attempt to map vertex buffer that isn't staging");
+                throw new Exception(LOC.Get("REND_Buffer_Map_Vertex_Non_Staging"));
             }
 
             return new IntPtr((byte*)_buffer._mappedStagingBufferVerts.Data.ToPointer() + VAllocationStart);
@@ -870,7 +872,7 @@ public class VertexIndexBufferAllocator
         {
             if (_buffer == null || _buffer.AllocStatus != VertexIndexBuffer.Status.Staging)
             {
-                throw new Exception("Attempt to unmap vertex buffer that isn't staging");
+                throw new Exception(LOC.Get("REND_Buffer_Unmap_Vertex_Non_Staging"));
             }
 
             SetVFilled();
@@ -880,7 +882,7 @@ public class VertexIndexBufferAllocator
         {
             if (_buffer == null || _buffer.AllocStatus != VertexIndexBuffer.Status.Staging)
             {
-                throw new Exception("Attempt to map index buffer that isn't staging");
+                throw new Exception(LOC.Get("REND_Buffer_Map_Index_Non_Staging"));
             }
 
             return new IntPtr((byte*)_buffer._mappedStagingBufferIndices.Data.ToPointer() + IAllocationStart);
@@ -890,7 +892,7 @@ public class VertexIndexBufferAllocator
         {
             if (_buffer == null || _buffer.AllocStatus != VertexIndexBuffer.Status.Staging)
             {
-                throw new Exception("Attempt to unmap index buffer that isn't staging");
+                throw new Exception(LOC.Get("Attempt to map vertex buffer that isn't staging"));
             }
 
             SetIFilled();

@@ -51,7 +51,7 @@ public class OpenGLTextureHandle : ITextureHandle
             var err = gl.GetError();
             if (err != GLEnum.NoError)
             {
-                Smithbox.Log(this, $"OpenGL texture upload error: {err}");
+                Smithbox.LogError(this, LOC.Get("REND_OpenGL_Texture_Upload_Error", err));
             }
         }
         // RGBA
@@ -62,12 +62,12 @@ public class OpenGLTextureHandle : ITextureHandle
             var err = gl.GetError();
             if (err != GLEnum.NoError)
             {
-                Smithbox.Log(this, $"OpenGL texture upload error: {err}");
+                Smithbox.LogError(this, LOC.Get("REND_OpenGL_Texture_Upload_Error", err));
             }
         }
         else
         {
-            Smithbox.Log(this, $"Unsupported DDS format: {tex.Name}");
+            Smithbox.LogError(this, LOC.Get("REND_OpenGL_Unsupported_DDS_Format", tex.Name));
         }
     }
 

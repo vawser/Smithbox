@@ -236,7 +236,7 @@ public class SceneRenderPipeline
     {
         if (!PickingResultsReady)
         {
-            throw new Exception("Can't get selection when picking results aren't ready");
+            throw new Exception(LOC.Get("REND_Picking_Results_Not_Ready"));
         }
 
         PickingResultsReady = false;

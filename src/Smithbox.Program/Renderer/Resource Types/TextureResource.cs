@@ -11,7 +11,7 @@ public class TextureResource : IResource, IDisposable
 
     public TextureResource()
     {
-        throw new Exception("Created wrong");
+        throw new Exception(LOC.Get("REND_TextureResource_Bad_Init"));
     }
 
     public TextureResource(TPF tex, int index)
@@ -47,7 +47,7 @@ public class TextureResource : IResource, IDisposable
 
         if (GPUTexture == null)
         {
-            Smithbox.Log(this, "Unable to allocate texture descriptor");
+            Smithbox.Log(this, LOC.Get("REND_TextureResource_Missing_Texture_Descriptor"));
             return false;
         }
 

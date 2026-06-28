@@ -42,8 +42,8 @@ public class MeshProviderTab
 
             ImGui.TableSetColumnIndex(1);
 
-            ImGui.Text("Name");
-            UIHelper.Tooltip("Name of this resource.");
+            ImGui.Text(LOC.Get("REND_Mesh_Provider_Tab_Name_Column"));
+            UIHelper.Tooltip(LOC.Get("REND_Mesh_Provider_Tab_Name_Column_TT"));
 
             // Contents
             foreach (var item in MeshProviderInspector.Providers.OrderBy(e => e.Value.VirtualPath))
@@ -64,7 +64,7 @@ public class MeshProviderTab
                 {
                     SelectedProviderEntry = context.VirtualPath;
                 }
-                UIHelper.Tooltip("Select this resource.");
+                UIHelper.Tooltip(LOC.Get("REND_Mesh_Provider_Action_Select_TT"));
 
                 ImGui.TableSetColumnIndex(1);
 

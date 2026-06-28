@@ -20,8 +20,8 @@
  ### Interface
  ### Keybinds
  ### Logger
- Memory
+ ### Memory
  Preferences
  ### Project
  Renderer
- Utilities
+ ### Utilities

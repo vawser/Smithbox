@@ -27,7 +27,7 @@ public class ResourceListTool
 
     public void Display(string menuId, IUniverse owner)
     {
-        if (ImGui.CollapsingHeader("Resource Monitor"))
+        if (ImGui.CollapsingHeader($"{LOC.Get("REND_Tool_Resource_Monitor")}##resourceMonitorTool"))
         {
             EditorFilters.DisplayFramedListFilter($"resourceMonitor_{menuId}", ref ResourceListFilter, ref ExactResourceListFilter);
 
@@ -35,14 +35,14 @@ public class ResourceListTool
 
             ImGui.BeginTabBar("##resourceTabs");
 
-            if (ImGui.BeginTabItem("Listeners"))
+            if (ImGui.BeginTabItem($"{LOC.Get("REND_Tool_Listener_Tab")}##listenerTab"))
             {
                 ListenerTab.Display();
 
                 ImGui.EndTabItem();
             }
 
-            if (ImGui.BeginTabItem("Mesh Providers"))
+            if (ImGui.BeginTabItem($"{LOC.Get("REND_Tool_Mesh_Provider_Tab")}##meshProviderTab"))
             {
                 MeshProviderTab.Display();
 

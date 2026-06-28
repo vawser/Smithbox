@@ -82,7 +82,8 @@ public class TexturePool
             case "q\0\0\0":
                 return VkFormat.R16G16B16A16Sfloat;
             default:
-                throw new Exception($"Unknown DDS Type: {str}");
+                throw new Exception(
+                    LOC.Get("REND_Unknown_DDS_Type", str));
         }
     }
 
@@ -143,7 +144,8 @@ public class TexturePool
             case DDS.DXGI_FORMAT.R16G16B16A16_FLOAT:
                 return VkFormat.R16G16B16A16Sfloat;
             default:
-                throw new Exception($"Unimplemented DXGI Type: {fmt.ToString()}");
+                throw new Exception(
+                    LOC.Get("REND_Unimplemented_DXGI_Type", fmt.ToString()));
         }
     }
 
@@ -230,7 +232,8 @@ public class TexturePool
             case 110:
                 return 16;
             default:
-                throw new NotImplementedException($"TPF Texture format {tpfTexFormat} BlockSize unknown.");
+                throw new NotImplementedException(
+                    LOC.Get("REND_Invalid_TPF_Texture_BlockSize", tpfTexFormat));
         }
     }
 
@@ -463,12 +466,8 @@ public class TexturePool
             }
             catch (Exception e)
             {
-                Smithbox.Log(this, "" +
-                    $"Error loading texture:\n" +
-                    $"Name: {tex.Name}\n" +
-                    $"Format: {tex.Format}\n" +
-                    $"{e}",
-                    Microsoft.Extensions.Logging.LogLevel.Warning);
+                Smithbox.LogError(this,
+                    LOC.Get("REND_Texture_Load_Error", tex.Name, tex.Format), e);
 
                 return;
             }
