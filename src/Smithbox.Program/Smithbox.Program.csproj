@@ -139,6 +139,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Using Include="StudioCore.Application" />
     <Using Include="StudioCore.Interface" />
   </ItemGroup>
 

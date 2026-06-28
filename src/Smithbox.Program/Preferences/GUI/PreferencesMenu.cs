@@ -30,6 +30,8 @@ public class PreferencesMenu
     private List<PreferenceItem> GparamEditorPrefList = new();
     private List<PreferenceItem> MaterialEditorPrefList = new();
     private List<PreferenceItem> TextureViewerPrefList = new();
+    private List<PreferenceItem> MapDataEditorPrefList = new();
+    private List<PreferenceItem> AnimEditorPrefList = new();
 
     public PreferencesMenu()
     {
@@ -44,6 +46,8 @@ public class PreferencesMenu
         GparamEditorPrefList = SetupPrefList(GparamEditorPrefs.GetPrefType());
         MaterialEditorPrefList = SetupPrefList(MaterialEditorPrefs.GetPrefType());
         TextureViewerPrefList = SetupPrefList(TextureViewerPrefs.GetPrefType());
+        MapDataEditorPrefList = SetupPrefList(MapDataEditorPrefs.GetPrefType());
+        AnimEditorPrefList = SetupPrefList(AnimEditorPrefs.GetPrefType());
     }
 
     public List<PreferenceItem> SetupPrefList(Type targetPref)
@@ -64,6 +68,8 @@ public class PreferencesMenu
 
     public void Draw()
     {
+        var curProject = Smithbox.Orchestrator.SelectedProject;
+
         if (IsDisplayed)
         {
             if (!InitialLayout)
@@ -72,19 +78,23 @@ public class PreferencesMenu
                 InitialLayout = true;
             }
 
-            if (ImGui.Begin("Preferences##appSettingsMenu", ref IsDisplayed, UIHelper.GetFloatingWindowFlags()))
+            // Preferences
+            if (ImGui.Begin($"{LOC.Get("PREF_Window_Preferences")}###preferencesMenu", ref IsDisplayed, UIHelper.GetFloatingWindowFlags()))
             {
                 ImGui.BeginMenuBar();
 
-                if (ImGui.BeginMenu("Options"))
+                // Options
+                if (ImGui.BeginMenu($"{LOC.Get("PREF_Menu_Header_Options")}##optionsMenuHeader"))
                 {
-                    if (ImGui.MenuItem("Save"))
+                    // Save
+                    if (ImGui.MenuItem($"{LOC.Get("PREF_Menu_Save_Action")}##saveAction"))
                     {
                         CFG.Save();
-                        Smithbox.Log(this, "Preferences saved.", LogLevel.Information);
+                        Smithbox.Log(this, LOC.Get("PREF_Preferences_Saved"), LogLevel.Information);
                     }
 
-                    if(ImGui.BeginMenu("Reset to Default"))
+                    // Reset to Default
+                    if(ImGui.BeginMenu($"{LOC.Get("PREF_Menu_Revert_Action")}##revertAction"))
                     {
                         DisplayRevertOptions();
 
@@ -101,7 +111,7 @@ public class PreferencesMenu
 
                 ImGui.BeginTabBar("settingsTabs");
 
-                if (ImGui.BeginTabItem("System"))
+                if (ImGui.BeginTabItem($"{LOC.Get("PREF_Tab_System")}##systemTab"))
                 {
                     ImGui.BeginChild("systemPrefSection");
 
@@ -112,7 +122,7 @@ public class PreferencesMenu
                     ImGui.EndTabItem();
                 }
 
-                if (ImGui.BeginTabItem("Project"))
+                if (ImGui.BeginTabItem($"{LOC.Get("PREF_Tab_Project")}##projectTab"))
                 {
                     ImGui.BeginChild("projectPrefSection");
 
@@ -123,7 +133,7 @@ public class PreferencesMenu
                     ImGui.EndTabItem();
                 }
 
-                if (ImGui.BeginTabItem("Interface"))
+                if (ImGui.BeginTabItem($"{LOC.Get("PREF_Tab_Interface")}##interfaceTab"))
                 {
                     ImGui.BeginChild("interfacePrefSection");
 
@@ -134,7 +144,7 @@ public class PreferencesMenu
                     ImGui.EndTabItem();
                 }
 
-                if (ImGui.BeginTabItem("Viewport"))
+                if (ImGui.BeginTabItem($"{LOC.Get("PREF_Tab_Viewport")}##viewportTab"))
                 {
                     ImGui.BeginChild("viewportPrefSection");
 
@@ -145,81 +155,202 @@ public class PreferencesMenu
                     ImGui.EndTabItem();
                 }
 
-                if (ImGui.BeginTabItem("Map Editor"))
+                if (curProject != null && curProject.Handler != null && 
+                    curProject.Handler.MapEditor != null)
                 {
-                    ImGui.BeginChild("mapEditorPrefSection");
+                    if (ImGui.BeginTabItem($"{LOC.Get("PREF_Tab_Map_Editor")}##mapEditorTab"))
+                    {
+                        ImGui.BeginChild("mapEditorPrefSection");
 
-                    DisplaySettings(MapEditorPrefList);
+                        if (MapEditorPrefList.Count > 0)
+                        {
+                            DisplaySettings(MapEditorPrefList);
+                        }
+                        else
+                        {
+                            ImGui.Text(LOC.Get("PREF_No_Preferences_Yet"));
+                        }
 
-                    ImGui.EndChild();
+                        ImGui.EndChild();
 
-                    ImGui.EndTabItem();
+                        ImGui.EndTabItem();
+                    }
                 }
 
-                if (ImGui.BeginTabItem("Model Editor"))
+                if (curProject != null && curProject.Handler != null &&
+                    curProject.Handler.MapDataEditor != null)
                 {
-                    ImGui.BeginChild("modelEditorPrefSection");
+                    if (ImGui.BeginTabItem($"{LOC.Get("PREF_Tab_Map_Data_Editor")}##mapDataEditorTab"))
+                    {
+                        ImGui.BeginChild("mapDataEditorPrefSection");
 
-                    DisplaySettings(ModelEditorPrefList);
+                        if (MapDataEditorPrefList.Count > 0)
+                        {
+                            DisplaySettings(MapDataEditorPrefList);
+                        }
+                        else
+                        {
+                            ImGui.Text(LOC.Get("PREF_No_Preferences_Yet"));
+                        }
 
-                    ImGui.EndChild();
+                        ImGui.EndChild();
 
-                    ImGui.EndTabItem();
+                        ImGui.EndTabItem();
+                    }
                 }
 
-                if (ImGui.BeginTabItem("Param Editor"))
+                if (curProject != null && curProject.Handler != null &&
+                    curProject.Handler.ModelEditor != null)
                 {
-                    ImGui.BeginChild("paramEditorPrefSection");
+                    if (ImGui.BeginTabItem($"{LOC.Get("PREF_Tab_Model_Editor")}##modelEditorTab"))
+                    {
+                        ImGui.BeginChild("modelEditorPrefSection");
 
-                    DisplaySettings(ParamEditorPrefList);
+                        if (ModelEditorPrefList.Count > 0)
+                        {
+                            DisplaySettings(ModelEditorPrefList);
+                        }
+                        else
+                        {
+                            ImGui.Text(LOC.Get("PREF_No_Preferences_Yet"));
+                        }
 
-                    ImGui.EndChild();
+                        ImGui.EndChild();
 
-                    ImGui.EndTabItem();
+                        ImGui.EndTabItem();
+                    }
                 }
 
-                if (ImGui.BeginTabItem("Text Editor"))
+                if (curProject != null && curProject.Handler != null &&
+                    curProject.Handler.ParamEditor != null)
                 {
-                    ImGui.BeginChild("textEditorPrefSection");
+                    if (ImGui.BeginTabItem($"{LOC.Get("PREF_Tab_Param_Editor")}##paramEditorTab"))
+                    {
+                        ImGui.BeginChild("paramEditorPrefSection");
 
-                    DisplaySettings(TextEditorPrefList);
+                        if (ParamEditorPrefList.Count > 0)
+                        {
+                            DisplaySettings(ParamEditorPrefList);
+                        }
+                        else
+                        {
+                            ImGui.Text(LOC.Get("PREF_No_Preferences_Yet"));
+                        }
 
-                    ImGui.EndChild();
+                        ImGui.EndChild();
 
-                    ImGui.EndTabItem();
+                        ImGui.EndTabItem();
+                    }
                 }
 
-                if (ImGui.BeginTabItem("Graphics Param Editor"))
+                if (curProject != null && curProject.Handler != null &&
+                    curProject.Handler.TextEditor != null)
                 {
-                    ImGui.BeginChild("gparamEditorPrefSection");
+                    if (ImGui.BeginTabItem($"{LOC.Get("PREF_Tab_Text_Editor")}##textEditorTab"))
+                    {
+                        ImGui.BeginChild("textEditorPrefSection");
 
-                    DisplaySettings(GparamEditorPrefList);
+                        if (TextEditorPrefList.Count > 0)
+                        {
+                            DisplaySettings(TextEditorPrefList);
+                        }
+                        else
+                        {
+                            ImGui.Text(LOC.Get("PREF_No_Preferences_Yet"));
+                        }
 
-                    ImGui.EndChild();
+                        ImGui.EndChild();
 
-                    ImGui.EndTabItem();
+                        ImGui.EndTabItem();
+                    }
                 }
 
-                if (ImGui.BeginTabItem("Material Editor"))
+                if (curProject != null && curProject.Handler != null &&
+                    curProject.Handler.GparamEditor != null)
                 {
-                    ImGui.BeginChild("materialEditorPrefSection");
+                    if (ImGui.BeginTabItem($"{LOC.Get("PREF_Tab_Graphics_Param_Editor")}##gparamEditorTab"))
+                    {
+                        ImGui.BeginChild("gparamEditorPrefSection");
 
-                    DisplaySettings(MaterialEditorPrefList);
+                        if (GparamEditorPrefList.Count > 0)
+                        {
+                            DisplaySettings(GparamEditorPrefList);
+                        }
+                        else
+                        {
+                            ImGui.Text(LOC.Get("PREF_No_Preferences_Yet"));
+                        }
 
-                    ImGui.EndChild();
+                        ImGui.EndChild();
 
-                    ImGui.EndTabItem();
+                        ImGui.EndTabItem();
+                    }
                 }
 
-                if (ImGui.BeginTabItem("Texture Viewer"))
+                if (curProject != null && curProject.Handler != null &&
+                    curProject.Handler.MaterialEditor != null)
                 {
-                    ImGui.BeginChild("textureViewerPrefSection");
+                    if (ImGui.BeginTabItem($"{LOC.Get("PREF_Tab_Material_Editor")}##materialEditorTab"))
+                    {
+                        ImGui.BeginChild("materialEditorPrefSection");
 
-                    DisplaySettings(TextureViewerPrefList);
+                        if (MaterialEditorPrefList.Count > 0)
+                        {
+                            DisplaySettings(MaterialEditorPrefList);
+                        }
+                        else
+                        {
+                            ImGui.Text(LOC.Get("PREF_No_Preferences_Yet"));
+                        }
 
-                    ImGui.EndChild();
+                        ImGui.EndChild();
 
-                    ImGui.EndTabItem();
+                        ImGui.EndTabItem();
+                    }
+                }
+
+                if (curProject != null && curProject.Handler != null &&
+                    curProject.Handler.TextureViewer != null)
+                {
+                    if (ImGui.BeginTabItem($"{LOC.Get("PREF_Tab_Texture_Viewer")}##textureViewerTab"))
+                    {
+                        ImGui.BeginChild("textureViewerPrefSection");
+
+                        if (TextureViewerPrefList.Count > 0)
+                        {
+                            DisplaySettings(TextureViewerPrefList);
+                        }
+                        else
+                        {
+                            ImGui.Text(LOC.Get("PREF_No_Preferences_Yet"));
+                        }
+
+                        ImGui.EndChild();
+
+                        ImGui.EndTabItem();
+                    }
+                }
+
+                if (curProject != null && curProject.Handler != null &&
+                    curProject.Handler.AnimEditor != null)
+                {
+                    if (ImGui.BeginTabItem($"{LOC.Get("PREF_Tab_Anim_Editor")}##animEditorTab"))
+                    {
+                        ImGui.BeginChild("animEditorPrefSection");
+
+                        if (AnimEditorPrefList.Count > 0)
+                        {
+                            DisplaySettings(AnimEditorPrefList);
+                        }
+                        else
+                        {
+                            ImGui.Text(LOC.Get("PREF_No_Preferences_Yet"));
+                        }
+
+                        ImGui.EndChild();
+
+                        ImGui.EndTabItem();
+                    }
                 }
 
                 ImGui.EndTabBar();
@@ -233,7 +364,7 @@ public class PreferencesMenu
         {
             CFG.Save();
             Startup.Save();
-            Smithbox.Log(this, "Preferences saved.", LogLevel.Information);
+            Smithbox.Log(this, LOC.Get("PREF_Preferences_Saved"), LogLevel.Information);
         }
 
         _wasDisplayedLastFrame = IsDisplayed;
@@ -243,7 +374,7 @@ public class PreferencesMenu
 
     private void DisplaySettingsSearch()
     {
-        ImGui.InputTextWithHint("##settingsSearch", "Search preferences...", ref searchFilter, 128);
+        ImGui.InputTextWithHint("##settingsSearch", LOC.Get("PREF_Search_Filter_Hint"), ref searchFilter, 128);
     }
 
     private void DisplaySettings(List<PreferenceItem> prefs)
@@ -276,8 +407,8 @@ public class PreferencesMenu
         // Filter settings in this section based on search
         var filteredSettings = sectionGroup
             .Where(s => string.IsNullOrWhiteSpace(searchFilter) ||
-                        s.Title.Contains(searchFilter, StringComparison.OrdinalIgnoreCase) ||
-                        s.Description.Contains(searchFilter, StringComparison.OrdinalIgnoreCase))
+                        LOC.Get(s.Title).Contains(searchFilter, StringComparison.OrdinalIgnoreCase) ||
+                        LOC.Get(s.Description).Contains(searchFilter, StringComparison.OrdinalIgnoreCase))
             .OrderBy(s => s.OrderID)
             .ToList();
 
@@ -287,8 +418,10 @@ public class PreferencesMenu
 
         // Auto-expand sections if a search filter is active
         bool sectionOpen = string.IsNullOrWhiteSpace(searchFilter)
-            ? ImGui.CollapsingHeader(sectionGroup.Key.GetDisplayName(), ImGuiTreeNodeFlags.DefaultOpen)
-            : ImGui.CollapsingHeader(sectionGroup.Key.GetDisplayName(), ImGuiTreeNodeFlags.DefaultOpen);
+            ? ImGui.CollapsingHeader(
+                $"{LOC.Get(sectionGroup.Key.GetDisplayName())}##{sectionGroup.Key}", ImGuiTreeNodeFlags.DefaultOpen)
+            : ImGui.CollapsingHeader(
+                $"{LOC.Get(sectionGroup.Key.GetDisplayName())}##{sectionGroup.Key}", ImGuiTreeNodeFlags.DefaultOpen);
 
         if (sectionOpen)
         {
@@ -318,13 +451,16 @@ public class PreferencesMenu
                     }
                 }
 
+                var displayName = LOC.Get(setting.Title);
+                var description = LOC.Get(setting.Description);
+
                 ImGui.PushID(setting.Title);
 
                 setting.PreDraw?.Invoke();
 
                 if (!setting.InlineName)
                 {
-                    ImGui.Text($"{setting.Title}");
+                    ImGui.Text(displayName);
                 }
 
                 setting.Draw?.Invoke();
@@ -332,12 +468,12 @@ public class PreferencesMenu
                 if (setting.InlineName)
                 {
                     ImGui.SameLine();
-                    ImGui.Text(setting.Title);
+                    ImGui.Text(displayName);
                 }
 
-                if (!string.IsNullOrEmpty(setting.Description))
+                if (!string.IsNullOrEmpty(description))
                 {
-                    ImGui.TextDisabled(setting.Description);
+                    ImGui.TextDisabled(description);
                 }
 
                 setting.PostDraw?.Invoke();
@@ -352,85 +488,108 @@ public class PreferencesMenu
 
     public void DisplayRevertOptions()
     {
-        if (ImGui.MenuItem("All"))
+        if (ImGui.MenuItem($"{LOC.Get("PREF_Action_Revert_All")}##revertAllAction"))
         {
-            var dialog = PlatformUtils.Instance.MessageBox("Are you sure?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            var dialog = PlatformUtils.Instance.MessageBox(
+                LOC.Get("PREF_Action_Prompt"),
+                LOC.Get("SYS_Warning_Header"),
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
             if (dialog is DialogResult.Yes)
             {
                 CFGHelpers.ResetCurrentToDefault();
             }
         }
-        UIHelper.Tooltip("Reverts all preferences to their default value.");
+        UIHelper.Tooltip(
+            LOC.Get("PREF_Action_Revert_All_TT"));
 
         // Add these to the user can revert these easily without reverting everything
-        if (ImGui.BeginMenu("Viewport"))
+        if (ImGui.BeginMenu($"{LOC.Get("PREF_Menu_Header_Viewport")}##viewportMenuHeader"))
         {
-            if(ImGui.MenuItem("General"))
+            if(ImGui.MenuItem($"{LOC.Get("PREF_Action_Viewport_General")}##viewportGeneralAction"))
             {
-                var dialog = PlatformUtils.Instance.MessageBox("Are you sure?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                var dialog = PlatformUtils.Instance.MessageBox(
+                LOC.Get("PREF_Action_Prompt"),
+                LOC.Get("SYS_Warning_Header"),
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                 if (dialog is DialogResult.Yes)
                 {
                     PreferencesUtil.ResetViewportGeneralCFG();
                 }
             }
-            UIHelper.Tooltip("Reverts all preferences in the Viewport General section to their default value.");
+            UIHelper.Tooltip(
+                LOC.Get("PREF_Action_Viewport_General_TT"));
 
-            if (ImGui.MenuItem("Rendering"))
+            if (ImGui.MenuItem($"{LOC.Get("PREF_Action_Viewport_Rendering")}##viewportRenderingAction"))
             {
-                var dialog = PlatformUtils.Instance.MessageBox("Are you sure?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                var dialog = PlatformUtils.Instance.MessageBox(
+                LOC.Get("PREF_Action_Prompt"),
+                LOC.Get("SYS_Warning_Header"),
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                 if (dialog is DialogResult.Yes)
                 {
                     PreferencesUtil.ResetViewportRenderingCFG();
                 }
             }
-            UIHelper.Tooltip("Reverts all preferences in the Viewport Rendering section to their default value.");
+            UIHelper.Tooltip(LOC.Get("PREF_Action_Viewport_Rendering_TT"));
 
-            if (ImGui.MenuItem("Model Rendering"))
+            if (ImGui.MenuItem($"{LOC.Get("PREF_Action_Viewport_Model_Rendering")}##viewportModelRenderingAction"))
             {
-                var dialog = PlatformUtils.Instance.MessageBox("Are you sure?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                var dialog = PlatformUtils.Instance.MessageBox(
+                LOC.Get("PREF_Action_Prompt"),
+                LOC.Get("SYS_Warning_Header"),
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                 if (dialog is DialogResult.Yes)
                 {
                     PreferencesUtil.ResetViewportModelRenderingCFG();
                 }
             }
-            UIHelper.Tooltip("Reverts all preferences in the Viewport Model Rendering section to their default value.");
+            UIHelper.Tooltip(LOC.Get("PREF_Action_Viewport_Model_Rendering_TT"));
 
-            if (ImGui.MenuItem("Selection"))
+            if (ImGui.MenuItem($"{LOC.Get("PREF_Action_Viewport_Selection")}##viewportSelectionAction"))
             {
-                var dialog = PlatformUtils.Instance.MessageBox("Are you sure?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                var dialog = PlatformUtils.Instance.MessageBox(
+                LOC.Get("PREF_Action_Prompt"),
+                LOC.Get("SYS_Warning_Header"),
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                 if (dialog is DialogResult.Yes)
                 {
                     PreferencesUtil.ResetViewportSelectionCFG();
                 }
             }
-            UIHelper.Tooltip("Reverts all preferences in the Viewport Selection section to their default value.");
+            UIHelper.Tooltip(LOC.Get("PREF_Action_Viewport_Selection_TT"));
 
-            if (ImGui.MenuItem("Coloring"))
+            if (ImGui.MenuItem($"{LOC.Get("PREF_Action_Viewport_Coloring")}##viewportColoringAction"))
             {
-                var dialog = PlatformUtils.Instance.MessageBox("Are you sure?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                var dialog = PlatformUtils.Instance.MessageBox(
+                LOC.Get("PREF_Action_Prompt"),
+                LOC.Get("SYS_Warning_Header"),
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                 if (dialog is DialogResult.Yes)
                 {
                     PreferencesUtil.ResetViewportColoringCFG();
                 }
             }
-            UIHelper.Tooltip("Reverts all preferences in the Viewport Coloring section to their default value.");
+            UIHelper.Tooltip(LOC.Get("PREF_Action_Viewport_Coloring_TT"));
 
-            if (ImGui.MenuItem("Display Preset"))
+            if (ImGui.MenuItem($"{LOC.Get("PREF_Action_Viewport_Display_Preset")}##viewportDpAction"))
             {
-                var dialog = PlatformUtils.Instance.MessageBox("Are you sure?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                var dialog = PlatformUtils.Instance.MessageBox(
+                LOC.Get("PREF_Action_Prompt"),
+                LOC.Get("SYS_Warning_Header"),
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                 if (dialog is DialogResult.Yes)
                 {
                     PreferencesUtil.ResetViewportDisplayPresetCFG();
                 }
             }
-            UIHelper.Tooltip("Reverts all preferences in the Viewport Display Preset section to their default value.");
+            UIHelper.Tooltip(LOC.Get("PREF_Action_Viewport_Display_Preset_TT"));
 
             ImGui.EndMenu();
         }

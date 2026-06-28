@@ -5,6 +5,7 @@ using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Editors.MetadataEditor;
 using StudioCore.Editors.TextEditor;
 using StudioCore.Interface;
 using StudioCore.Keybinds;

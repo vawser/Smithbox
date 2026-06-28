@@ -1,8 +1,10 @@
 ﻿using Andre.Formats;
+using DotNext.Collections.Generic;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.MapEditor;
+using StudioCore.Editors.MetadataEditor;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Renderer;
 using StudioCore.Utilities;

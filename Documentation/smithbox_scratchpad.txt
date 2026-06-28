@@ -2,6 +2,14 @@
 # TODO 
 #---------------------
 
+# Heavy Allocations:
+ - Viewport Grid is memory inefficient: perhaps possible with shader alone?
+ - DbgPrims
+ - GetMapNameAlias
+ - InvalidateUidEntries is string concat
+ - HkLib Read 
+ - Text Container Read 
+
 # LOC TO DO:
  ### Developer
  Editors
@@ -23,5 +31,152 @@
  ### Memory
  Preferences
  ### Project
- Renderer
+ ### Renderer
  ### Utilities
+ 
+ 
+
+    {
+      "Key": "PREF_",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF__TT",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF_",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF__TT",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF_",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF__TT",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF_",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF__TT",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF_",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF__TT",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF_",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF__TT",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF_",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF__TT",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF_",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF__TT",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF_",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF__TT",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF_",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF__TT",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF_",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF__TT",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF_",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF__TT",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF_",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF__TT",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF_",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF__TT",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF_",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF__TT",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF_",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF__TT",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF_",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF__TT",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF_",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF__TT",
+      "Text": "xxx"
+    },

@@ -1,6 +1,7 @@
 ﻿using Andre.Formats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Editors.MetadataEditor;
 using StudioCore.Editors.TextEditor;
 using StudioCore.Utilities;
 using System;

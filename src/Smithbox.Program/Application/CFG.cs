@@ -142,21 +142,15 @@ public class CFG
     public bool Interface_Alias_Wordwrap_Model_Editor = true;
     public bool Interface_Alias_Wordwrap_Animation_Editor = true;
 
-    public bool Interface_Include_Chinese_Symbols = false;
-    public bool Interface_Include_Cyrillic_Symbols = false;
-    public bool Interface_Include_Korean_Symbols = false;
-    public bool Interface_Include_Thai_Symbols = false;
-    public bool Interface_Include_Vietnamese_Symbols = false;
-
-    public string Interface_English_Font_Path = Path.Join("Assets","Fonts","RobotoMono-Light.ttf");
-    public string Interface_Non_English_Font_Path = Path.Join("Assets","Fonts","NotoSansCJKtc-Light.otf");
+    public string English_Font = Path.Join("Assets","Fonts","RobotoMono-Light.ttf");
+    public string Additional_Font_1 = Path.Join("Assets","Fonts","NotoSansCJKtc-Light.otf");
+    public string Additional_Font_2 = "";
+    public string Additional_Font_3 = "";
+    public string Additional_Font_4 = "";
+    public string Additional_Font_5 = "";
 
     public string Interface_Selected_Theme = "";
 
-    public float Interface_Context_Menu_Width = 350f;
-    public float Interface_Context_Menu_List_Height_Multiplier = 1f;
-
-    public float Interace_Editor_Display_Inner_Height_Percent = 0.95f;
     #endregion
 
     #region Map Editor

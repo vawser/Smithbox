@@ -224,107 +224,112 @@ public class Smithbox
 
     private unsafe void SetupFonts()
     {
-        string EnglishFontRelPath = Path.Join("Assets", "Fonts", "RobotoMono-Light.ttf");
-        string NonEnglishFontRelPath = Path.Join("Assets", "Fonts", "NotoSansCJKtc-Light.otf");
-        string IconFontRelPath = Path.Join("Assets", "Fonts", "forkawesome-webfont.ttf");
-
-        if (!string.IsNullOrWhiteSpace(CFG.Current.Interface_English_Font_Path) &&
-            File.Exists(CFG.Current.Interface_English_Font_Path))
-        {
-            EnglishFontRelPath = CFG.Current.Interface_English_Font_Path;
-        }
-
-        if (!string.IsNullOrWhiteSpace(CFG.Current.Interface_Non_English_Font_Path) &&
-            File.Exists(CFG.Current.Interface_Non_English_Font_Path))
-        {
-            NonEnglishFontRelPath = CFG.Current.Interface_Non_English_Font_Path;
-        }
-
-        var englishFontPath = Path.Combine(AppContext.BaseDirectory, EnglishFontRelPath);
-        var englishFontData = File.ReadAllBytes(englishFontPath);
-        var englishFontPtr = ImGui.MemAlloc((uint)englishFontData.Length);
-        Marshal.Copy(englishFontData, 0, (nint)englishFontPtr, englishFontData.Length);
-
-        var nonEnglishFontPath = Path.Combine(AppContext.BaseDirectory, NonEnglishFontRelPath);
-        var nonEnglishFontData = File.ReadAllBytes(nonEnglishFontPath);
-        var nonEnglishFontPtr = ImGui.MemAlloc((uint)nonEnglishFontData.Length);
-        Marshal.Copy(nonEnglishFontData, 0, (nint)nonEnglishFontPtr, nonEnglishFontData.Length);
-
-        var iconFontPath = Path.Combine(AppContext.BaseDirectory, IconFontRelPath);
-        var iconFontData = File.ReadAllBytes(iconFontPath);
-        var iconFontPtr = ImGui.MemAlloc((uint)iconFontData.Length);
-        Marshal.Copy(iconFontData, 0, (nint)iconFontPtr, iconFontData.Length);
-
         ImFontAtlasPtr fonts = ImGui.GetIO().Fonts;
         fonts.Clear();
 
         var scaleFine = (float)Math.Round(CFG.Current.Interface_Font_Size * DPI.UIScale());
-        var scaleLarge = (float)Math.Round((CFG.Current.Interface_Font_Size + 2) * DPI.UIScale());
 
         ImFontConfigPtr cfg = ImGui.ImFontConfig();
 
-        // Base English Font
-        cfg.MergeMode = false;
-        cfg.GlyphMinAdvanceX = 5.0f;
-        cfg.OversampleH = 3;
-        cfg.OversampleV = 2;
-
-        fonts.AddFontFromMemoryTTF(englishFontPtr, englishFontData.Length, scaleFine, cfg,
-            fonts.GetGlyphRangesDefault());
-
-        // Non-English Font
-        cfg.MergeMode = true;
-        cfg.GlyphMinAdvanceX = 7.0f;
-        cfg.OversampleH = 2;
-        cfg.OversampleV = 2;
-
-        ImFontGlyphRangesBuilderPtr glyphRanges = ImGui.ImFontGlyphRangesBuilder();
-        glyphRanges.AddRanges(fonts.GetGlyphRangesJapanese());
-
-        glyphRanges.AddRanges(fonts.GetGlyphRangesChineseFull());
-
-        Array.ForEach(InterfaceUtils.SpecialCharsJP, c => glyphRanges.AddChar(c));
-
-        if (CFG.Current.Interface_Include_Chinese_Symbols)
-            glyphRanges.AddRanges(fonts.GetGlyphRangesChineseFull());
-        if (CFG.Current.Interface_Include_Korean_Symbols)
-            glyphRanges.AddRanges(fonts.GetGlyphRangesKorean());
-        if (CFG.Current.Interface_Include_Thai_Symbols)
-            glyphRanges.AddRanges(fonts.GetGlyphRangesThai());
-        if (CFG.Current.Interface_Include_Vietnamese_Symbols)
-            glyphRanges.AddRanges(fonts.GetGlyphRangesVietnamese());
-        if (CFG.Current.Interface_Include_Cyrillic_Symbols)
-            glyphRanges.AddRanges(fonts.GetGlyphRangesCyrillic());
-
-        ImVector<uint> outGlyphRanges;
-        glyphRanges.BuildRanges(&outGlyphRanges);
-        fonts.AddFontFromMemoryTTF(nonEnglishFontPtr, nonEnglishFontData.Length, scaleFine, cfg, outGlyphRanges.Data);
-        glyphRanges.Destroy();
-
-        // TODO: fix this so it works
-        // Icon Font
-        cfg.MergeMode = true;
-        cfg.GlyphMinAdvanceX = 7.0f;
-        cfg.OversampleH = 3;
-        cfg.OversampleV = 3;
-
-        ImFontGlyphRangesBuilderPtr iconGlyphBuilder = ImGui.ImFontGlyphRangesBuilder();
-
-        const int IconMin = 0xf000;
-        const int IconMax = 0xf339;
-
-        for (int i = IconMin; i <= IconMax; i++)
-        {
-            iconGlyphBuilder.AddChar((char)i);
-        }
-
-        ImVector<uint> iconGlyphRanges;
-        iconGlyphBuilder.BuildRanges(&iconGlyphRanges);
-
-        fonts.AddFontFromMemoryTTF(iconFontPtr, iconFontData.Length, scaleFine, cfg, iconGlyphRanges.Data);
-        iconGlyphBuilder.Destroy();
+        AddEnglishFont(fonts, cfg, CFG.Current.English_Font, scaleFine);
+        AddAdditionaFont(fonts, cfg, CFG.Current.Additional_Font_1, scaleFine);
+        AddAdditionaFont(fonts, cfg, CFG.Current.Additional_Font_2, scaleFine);
+        AddAdditionaFont(fonts, cfg, CFG.Current.Additional_Font_3, scaleFine);
+        AddAdditionaFont(fonts, cfg, CFG.Current.Additional_Font_4, scaleFine);
+        AddAdditionaFont(fonts, cfg, CFG.Current.Additional_Font_5, scaleFine);
+        AddIconFont(fonts, cfg, scaleFine);
 
         _context.ImguiRenderer.RecreateFontDeviceTexture();
+    }
+
+    private unsafe void AddEnglishFont(ImFontAtlasPtr fonts, ImFontConfigPtr cfg, string fontPath, float scale)
+    {
+        var englishFontPath = Path.Combine(AppContext.BaseDirectory, fontPath);
+
+        if (File.Exists(englishFontPath))
+        {
+            var englishFontData = File.ReadAllBytes(englishFontPath);
+            var englishFontPtr = ImGui.MemAlloc((uint)englishFontData.Length);
+            Marshal.Copy(englishFontData, 0, (nint)englishFontPtr, englishFontData.Length);
+
+            cfg.MergeMode = false;
+            cfg.GlyphMinAdvanceX = 5.0f;
+            cfg.OversampleH = 3;
+            cfg.OversampleV = 2;
+
+            fonts.AddFontFromMemoryTTF(englishFontPtr, englishFontData.Length, scale, cfg,
+                fonts.GetGlyphRangesDefault());
+        }
+    }
+
+    private unsafe void AddAdditionaFont(ImFontAtlasPtr fonts, ImFontConfigPtr cfg, string fontPath, float scale)
+    {
+        var additionalFontPath = Path.Combine(AppContext.BaseDirectory, fontPath);
+
+        if (File.Exists(additionalFontPath))
+        {
+            var additionalFontData = File.ReadAllBytes(additionalFontPath);
+            var additionalFontPtr = ImGui.MemAlloc((uint)additionalFontData.Length);
+            Marshal.Copy(additionalFontData, 0, (nint)additionalFontPtr, additionalFontData.Length);
+
+            cfg.MergeMode = true;
+            cfg.GlyphMinAdvanceX = 7.0f;
+            cfg.OversampleH = 2;
+            cfg.OversampleV = 2;
+
+            ImFontGlyphRangesBuilderPtr glyphRanges = ImGui.ImFontGlyphRangesBuilder();
+            glyphRanges.AddRanges(fonts.GetGlyphRangesJapanese());
+            glyphRanges.AddRanges(fonts.GetGlyphRangesChineseFull());
+
+            Array.ForEach(InterfaceUtils.SpecialCharsJP, c => glyphRanges.AddChar(c));
+
+            glyphRanges.AddRanges(fonts.GetGlyphRangesChineseFull());
+            glyphRanges.AddRanges(fonts.GetGlyphRangesKorean());
+            glyphRanges.AddRanges(fonts.GetGlyphRangesThai());
+            glyphRanges.AddRanges(fonts.GetGlyphRangesVietnamese());
+            glyphRanges.AddRanges(fonts.GetGlyphRangesCyrillic());
+
+            ImVector<uint> outGlyphRanges;
+            glyphRanges.BuildRanges(&outGlyphRanges);
+            fonts.AddFontFromMemoryTTF(additionalFontPtr, additionalFontData.Length, scale, cfg, outGlyphRanges.Data);
+            glyphRanges.Destroy();
+        }
+    }
+
+    private unsafe void AddIconFont(ImFontAtlasPtr fonts, ImFontConfigPtr cfg, float scale)
+    {
+        string IconFontRelPath = Path.Join("Assets", "Fonts", "forkawesome-webfont.ttf");
+
+        var iconFontPath = Path.Combine(AppContext.BaseDirectory, IconFontRelPath);
+
+        if (File.Exists(iconFontPath))
+        {
+            var iconFontData = File.ReadAllBytes(iconFontPath);
+            var iconFontPtr = ImGui.MemAlloc((uint)iconFontData.Length);
+            Marshal.Copy(iconFontData, 0, (nint)iconFontPtr, iconFontData.Length);
+
+            // Icon Font
+            cfg.MergeMode = true;
+            cfg.GlyphMinAdvanceX = 7.0f;
+            cfg.OversampleH = 3;
+            cfg.OversampleV = 3;
+
+            ImFontGlyphRangesBuilderPtr iconGlyphBuilder = ImGui.ImFontGlyphRangesBuilder();
+
+            const int IconMin = 0xf000;
+            const int IconMax = 0xf339;
+
+            for (int i = IconMin; i <= IconMax; i++)
+            {
+                iconGlyphBuilder.AddChar((char)i);
+            }
+
+            ImVector<uint> iconGlyphRanges;
+            iconGlyphBuilder.BuildRanges(&iconGlyphRanges);
+
+            fonts.AddFontFromMemoryTTF(iconFontPtr, iconFontData.Length, scale, cfg, iconGlyphRanges.Data);
+            iconGlyphBuilder.Destroy();
+        }
     }
 
     public void Run()

@@ -2,7 +2,7 @@
 using StudioCore.Editors.ParamEditor;
 using System.Linq;
 
-namespace StudioCore.Application;
+namespace StudioCore.Editors.MetadataEditor;
 
 public class ChangeEnumOptionField : EditorAction
 {

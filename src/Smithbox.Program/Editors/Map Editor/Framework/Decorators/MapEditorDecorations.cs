@@ -3,6 +3,7 @@ using HKLib.hk2018.hkReflect.Opt;
 using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Editors.MetadataEditor;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.Viewport;
 using System;

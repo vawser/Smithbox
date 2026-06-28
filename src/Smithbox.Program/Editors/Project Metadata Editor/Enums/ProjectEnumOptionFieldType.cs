@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace StudioCore.Application;
+namespace StudioCore.Editors.MetadataEditor;
 
 public enum ProjectEnumOptionFieldType
 {

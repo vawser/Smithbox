@@ -52,7 +52,7 @@ public class MapDataCommonView
         ImGui.EndChild();
 
         width = ImGui.GetContentRegionAvail().X;
-        height = ImGui.GetContentRegionAvail().Y * CFG.Current.Interace_Editor_Display_Inner_Height_Percent;
+        height = ImGui.GetContentRegionAvail().Y * 0.95f;
 
         // Handle this within the subeditor class itself
         if (View.Selection.SubEditorMode is SubEditorType.MSB)

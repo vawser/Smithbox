@@ -9,10 +9,10 @@ namespace StudioCore.Editors.GparamEditor;
 
 public enum ColorEditDisplayMode
 {
-    [Display(Name = "RGB")]
+    [Display(Name = "GPARAM_ENUM_RGB")]
     RGB,
-    [Display(Name = "Decimal")]
+    [Display(Name = "GPARAM_ENUM_DECIMAL")]
     Decimal,
-    [Display(Name = "HSV")]
+    [Display(Name = "GPARAM_ENUM_HSV")]
     HSV
 }

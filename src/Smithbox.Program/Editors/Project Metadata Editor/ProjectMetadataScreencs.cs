@@ -3,12 +3,13 @@ using StudioCore.Editors.Common;
 using StudioCore.Utilities;
 using System.Numerics;
 
-namespace StudioCore.Application;
+namespace StudioCore.Editors.MetadataEditor;
 
 public class ProjectMetadataScreen
 {
     public ActionManager EditorActionManager = new();
 
+    public ModeSelectionMenu ModeMenu;
     public ProjectEnumMenu EnumMenu;
     public ProjectAliasMenu AliasMenu;
 
@@ -23,8 +24,13 @@ public class ProjectMetadataScreen
 
     public bool RequestFocus = false;
 
+    public MetadataSelection Selection;
+
     public ProjectMetadataScreen()
     {
+        Selection = new(this);
+
+        ModeMenu = new(this);
         EnumMenu = new();
         AliasMenu = new();
     }
@@ -92,48 +98,74 @@ public class ProjectMetadataScreen
 
     public void Display(uint editorDockspaceId)
     {
-        // TODO: paramdef XML editor here?
-
-        if (CFG.Current.Interface_ProjectMetadataEditor_ProjectEnums)
+        // Mode Selection
+        ImGui.SetNextWindowDockID(editorDockspaceId, ImGuiCond.FirstUseEver);
+        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ProjectMetadataEditorView);
+        if (ImGui.Begin($@"{LOC.Get("META_Window_Mode_Selection")}###projectMetadataEditor_ModeSelection", UIHelper.GetInnerWindowFlags()))
         {
-            // Project Enums
-            ImGui.SetNextWindowDockID(editorDockspaceId, ImGuiCond.FirstUseEver);
-            ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ProjectEditorView);
-            if (ImGui.Begin($@"{LOC.Get("PRJ_Window_Project_Enums")}###projectMetadataEditor_ProjectEnums", UIHelper.GetMainWindowFlags()))
+            var width = ImGui.GetContentRegionAvail().X;
+            var height = ImGui.GetContentRegionAvail().Y;
+
+            if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
             {
-                var width = ImGui.GetContentRegionAvail().X;
-                var height = ImGui.GetContentRegionAvail().Y;
-
-                if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
-                {
-                    FocusManager.SetFocus(EditorFocusContext.Metadata_EnumEditor);
-                }
-
-                DisplayEnumEditor();
+                FocusManager.SetFocus(EditorFocusContext.Metadata_ModeSelection);
             }
 
-            ImGui.End();
+            ModeMenu.Display();
         }
 
-        if (CFG.Current.Interface_ProjectMetadataEditor_ProjectAliases)
-        {
-            // Project Aliases
-            ImGui.SetNextWindowDockID(editorDockspaceId, ImGuiCond.FirstUseEver);
-            ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ProjectEditorView);
-            if (ImGui.Begin($@"{LOC.Get("PRJ_Window_Project_Aliases")}###projectMetadataEditor_ProjectAliases", UIHelper.GetMainWindowFlags()))
-            {
-                var width = ImGui.GetContentRegionAvail().X;
-                var height = ImGui.GetContentRegionAvail().Y;
+        ImGui.End();
 
-                if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+        // Project
+        if (Selection.EditorMode is MetadataEditorMode.Project)
+        {
+            if (CFG.Current.Interface_ProjectMetadataEditor_ProjectEnums)
+            {
+                // Project Enums
+                ImGui.SetNextWindowDockID(editorDockspaceId, ImGuiCond.FirstUseEver);
+                ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ProjectMetadataEditorView);
+                if (ImGui.Begin($@"{LOC.Get("META_Window_Project_Enums")}###projectMetadataEditor_ProjectEnums", UIHelper.GetMainWindowFlags()))
                 {
-                    FocusManager.SetFocus(EditorFocusContext.Metadata_AliasEditor);
+                    var width = ImGui.GetContentRegionAvail().X;
+                    var height = ImGui.GetContentRegionAvail().Y;
+
+                    if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+                    {
+                        FocusManager.SetFocus(EditorFocusContext.Metadata_EnumEditor);
+                    }
+
+                    DisplayEnumEditor();
                 }
 
-                DisplayAliasEditor();
+                ImGui.End();
             }
 
-            ImGui.End();
+            if (CFG.Current.Interface_ProjectMetadataEditor_ProjectAliases)
+            {
+                // Project Aliases
+                ImGui.SetNextWindowDockID(editorDockspaceId, ImGuiCond.FirstUseEver);
+                ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ProjectMetadataEditorView);
+                if (ImGui.Begin($@"{LOC.Get("META_Window_Project_Aliases")}###projectMetadataEditor_ProjectAliases", UIHelper.GetMainWindowFlags()))
+                {
+                    var width = ImGui.GetContentRegionAvail().X;
+                    var height = ImGui.GetContentRegionAvail().Y;
+
+                    if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+                    {
+                        FocusManager.SetFocus(EditorFocusContext.Metadata_AliasEditor);
+                    }
+
+                    DisplayAliasEditor();
+                }
+
+                ImGui.End();
+            }
+        }
+
+        // Project
+        if (Selection.EditorMode is MetadataEditorMode.ParamEditor)
+        {
+
         }
     }
 

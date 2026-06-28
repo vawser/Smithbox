@@ -2,6 +2,7 @@
 using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Application;
+using StudioCore.Editors.MetadataEditor;
 using StudioCore.Editors.ModelEditor;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.TextEditor;

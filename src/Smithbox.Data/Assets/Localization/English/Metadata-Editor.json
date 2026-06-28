@@ -1,0 +1,16 @@
+{
+  "Entries": [
+    {
+      "Key": "META_Header_Editor_Mode",
+      "Text": "Current Mode"
+    },
+    {
+      "Key": "META_Header_Editor_Mode_TT",
+      "Text": ""
+    },
+    {
+      "Key": "META_Select_Project_First",
+      "Text": "Select a project first."
+    }
+  ]
+}

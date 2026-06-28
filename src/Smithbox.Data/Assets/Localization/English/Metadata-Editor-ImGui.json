@@ -1,0 +1,16 @@
+{
+  "Entries": [
+    {
+      "Key": "META_Window_Mode_Selection",
+      "Text": "Editor Mode"
+    },
+    {
+      "Key": "META_Window_Project_Aliases",
+      "Text": "Project Aliases"
+    },
+    {
+      "Key": "META_Window_Project_Enums",
+      "Text": "Project Enums"
+    }
+  ]
+}

@@ -1,0 +1,572 @@
+{
+  "Entries": [
+    {
+      "Key": "PREF_Interface_UI_Scale",
+      "Text": "Interface Scale"
+    },
+    {
+      "Key": "PREF_Interface_UI_Scale_TT",
+      "Text": "Adjusts the scaling of the user interface throughout all of Smithbox."
+    },
+    {
+      "Key": "PREF_Interface_Scale_by_DPI",
+      "Text": "Interface Scale affected by DPI"
+    },
+    {
+      "Key": "PREF_Interface_Scale_by_DPI_TT",
+      "Text": "Multiplies the user interface scale by your monitor's DPI setting."
+    },
+    {
+      "Key": "PREF_Interface_Font_Size",
+      "Text": "Font Size"
+    },
+    {
+      "Key": "PREF_Interface_Font_Size_TT",
+      "Text": "Adjusts the size of the font in Smithbox."
+    },
+    {
+      "Key": "PREF_Interface_Alias_Wordwrap_General",
+      "Text": "Enable Alias Word-wrap"
+    },
+    {
+      "Key": "PREF_Interface_Alias_Wordwrap_General_TT",
+      "Text": "If enabled, aliases will word-wrap if they touch a window's boundry. Otherwise, they will truncate."
+    },
+    {
+      "Key": "PREF_Interface_Alias_Wordwrap_Map_Editor",
+      "Text": "Enable Alias Word-wrap (Map Editor)"
+    },
+    {
+      "Key": "PREF_Interface_Alias_Wordwrap_Map_Editor_TT",
+      "Text": "If enabled, aliases will word-wrap if they touch a window's boundry. Otherwise, they will truncate. This affects the Map Editor only."
+    },
+    {
+      "Key": "PREF_Interface_Alias_Wordwrap_Model_Editor",
+      "Text": "Enable Alias Word-wrap (Model Editor)"
+    },
+    {
+      "Key": "PREF_Interface_Alias_Wordwrap_Model_Editor_TT",
+      "Text": "If enabled, aliases will word-wrap if they touch a window's boundry. Otherwise, they will truncate. This affects the Model Editor only."
+    },
+    {
+      "Key": "PREF_Interface_Alias_Wordwrap_Animation_Editor",
+      "Text": "Enable Alias Word-wrap (Animation Editor)"
+    },
+    {
+      "Key": "PREF_Interface_Alias_Wordwrap_Animation_Editor_TT",
+      "Text": "If enabled, aliases will word-wrap if they touch a window's boundry. Otherwise, they will truncate. This affects the Animation Editor only."
+    },
+    {
+      "Key": "PREF_Interface_Allow_Window_Movement",
+      "Text": "Enable Window Movement"
+    },
+    {
+      "Key": "PREF_Interface_Allow_Window_Movement_TT",
+      "Text": "If enabled, the internal windows can be moved and docked freely."
+    },
+    {
+      "Key": "PREF_English_Font",
+      "Text": "English Font"
+    },
+    {
+      "Key": "PREF_English_Font_TT",
+      "Text": "Set the font used for English characters. .ttf and .otf expected."
+    },
+    {
+      "Key": "PREF_Set_Font",
+      "Text": "Set Font"
+    },
+    {
+      "Key": "PREF_Select_Font",
+      "Text": "Select Font"
+    },
+    {
+      "Key": "PREF_Additional_Font_1",
+      "Text": "Additional Font: 1"
+    },
+    {
+      "Key": "PREF_Additional_Font_1_TT",
+      "Text": "Add an additional font for non-english characters. .ttf and .otf expected."
+    },
+    {
+      "Key": "PREF_Additional_Font_2",
+      "Text": "Additional Font: 2"
+    },
+    {
+      "Key": "PREF_Additional_Font_2_TT",
+      "Text": "Add an additional font for non-english characters. .ttf and .otf expected."
+    },
+    {
+      "Key": "PREF_Additional_Font_3",
+      "Text": "Additional Font: 3"
+    },
+    {
+      "Key": "PREF_Additional_Font_3_TT",
+      "Text": "Add an additional font for non-english characters. .ttf and .otf expected."
+    },
+    {
+      "Key": "PREF_Additional_Font_4",
+      "Text": "Additional Font: 4"
+    },
+    {
+      "Key": "PREF_Additional_Font_4_TT",
+      "Text": "Add an additional font for non-english characters. .ttf and .otf expected."
+    },
+    {
+      "Key": "PREF_Additional_Font_5",
+      "Text": "Additional Font: 5"
+    },
+    {
+      "Key": "PREF_Additional_Font_5_TT",
+      "Text": "Add an additional font for non-english characters. .ttf and .otf expected."
+    },
+    {
+      "Key": "PREF_Theme_Selection",
+      "Text": "Theme Selection"
+    },
+    {
+      "Key": "PREF_Theme_Selection_TT",
+      "Text": "Select the interface theme to use for Smithbox."
+    },
+    {
+      "Key": "PREF_Theme_Reset",
+      "Text": "Reset"
+    },
+    {
+      "Key": "PREF_Theme_Open_Folder",
+      "Text": "Open Folder"
+    },
+    {
+      "Key": "PREF_Theme_Builder",
+      "Text": "Theme Builder"
+    },
+    {
+      "Key": "PREF_Theme_Builder_Save",
+      "Text": "Save"
+    },
+    {
+      "Key": "PREF_Theme_Editor",
+      "Text": "Theme Editor"
+    },
+    {
+      "Key": "PREF_Theme_Editor_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PREF_Theme_Editor_Moveable_Window",
+      "Text": "Moveable Window"
+    },
+    {
+      "Key": "PREF_Theme_Editor_Moveable_Window_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PREF_Theme_Editor_Scrollbar",
+      "Text": "Scrollbar"
+    },
+    {
+      "Key": "PREF_Theme_Editor_Scrollbar_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PREF_Theme_Editor_Tab",
+      "Text": "Tab"
+    },
+    {
+      "Key": "PREF_Theme_Editor_Tab_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PREF_Theme_Editor_Button",
+      "Text": "Button"
+    },
+    {
+      "Key": "PREF_Theme_Editor_Button_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PREF_Theme_Editor_Selection",
+      "Text": "Selection"
+    },
+    {
+      "Key": "PREF_Theme_Editor_Selection_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PREF_Theme_Editor_Inputs",
+      "Text": "Inputs"
+    },
+    {
+      "Key": "PREF_Theme_Editor_Inputs_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PREF_Theme_Editor_Backgrounds",
+      "Text": "Inputs"
+    },
+    {
+      "Key": "PREF_Theme_Editor_Backgrounds_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PREF_Theme_Editor_Text",
+      "Text": "Text"
+    },
+    {
+      "Key": "PREF_Theme_Editor_Text_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PREF_Theme_Editor_Logger",
+      "Text": "Logger"
+    },
+    {
+      "Key": "PREF_Theme_Editor_Logger_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PREF_Theme_Editor_Display_Group",
+      "Text": "Display Group Tool"
+    },
+    {
+      "Key": "PREF_Theme_Editor_Display_Group_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PREF_CE_ImGui_MainBg",
+      "Text": "Main Background"
+    },
+    {
+      "Key": "PREF_CE_ImGui_ChildBg",
+      "Text": "Child Background"
+    },
+    {
+      "Key": "PREF_CE_ImGui_PopupBg",
+      "Text": "Popup Background"
+    },
+    {
+      "Key": "PREF_CE_ImGui_Border",
+      "Text": "Borders"
+    },
+    {
+      "Key": "PREF_CE_ImGui_TitleBarBg",
+      "Text": "Title Bar Background"
+    },
+    {
+      "Key": "PREF_CE_ImGui_TitleBarBg_Active",
+      "Text": "Title Bar Background (Active)"
+    },
+    {
+      "Key": "PREF_CE_ImGui_MenuBarBg",
+      "Text": "Menu Bar Background"
+    },
+    {
+      "Key": "PREF_CE_Imgui_Moveable_MainBg",
+      "Text": "Main Background"
+    },
+    {
+      "Key": "PREF_CE_Imgui_Moveable_ChildBg",
+      "Text": "Child Background"
+    },
+    {
+      "Key": "PREF_CE_Imgui_Moveable_ChildBgSecondary",
+      "Text": "Child Background (Secondary)"
+    },
+    {
+      "Key": "PREF_CE_Imgui_Moveable_Header",
+      "Text": "Window Header"
+    },
+    {
+      "Key": "PREF_CE_Imgui_Moveable_TitleBg",
+      "Text": "Title Bar Background"
+    },
+    {
+      "Key": "PREF_CE_Imgui_Moveable_TitleBg_Active",
+      "Text": "Title Bar Background (Active)"
+    },
+    {
+      "Key": "PREF_CE_ImGui_ScrollbarBg",
+      "Text": "Scrollbar Background"
+    },
+    {
+      "Key": "PREF_CE_ImGui_ScrollbarGrab",
+      "Text": "Scrollbar Grab"
+    },
+    {
+      "Key": "PREF_CE_ImGui_ScrollbarGrab_Hover",
+      "Text": "Scrollbar Grab (Hover)"
+    },
+    {
+      "Key": "PREF_CE_ImGui_ScrollbarGrab_Active",
+      "Text": "Scrollbar Grab (Active)"
+    },
+    {
+      "Key": "PREF_CE_ImGui_SliderGrab",
+      "Text": "Slider Grab"
+    },
+    {
+      "Key": "PREF_CE_ImGui_SliderGrab_Active",
+      "Text": "Slider Grab (Active)"
+    },
+    {
+      "Key": "PREF_CE_ImGui_Tab",
+      "Text": "Tab"
+    },
+    {
+      "Key": "PREF_CE_ImGui_Tab_Hover",
+      "Text": "Tab (Hover)"
+    },
+    {
+      "Key": "PREF_CE_ImGui_Tab_Active",
+      "Text": "Tab (Active)"
+    },
+    {
+      "Key": "PREF_CE_ImGui_UnfocusedTab",
+      "Text": "Unfocused Tab"
+    },
+    {
+      "Key": "PREF_CE_ImGui_UnfocusedTab_Active",
+      "Text": "Unfocused Tab (Active)"
+    },
+    {
+      "Key": "PREF_CE_ImGui_Button",
+      "Text": "Button"
+    },
+    {
+      "Key": "PREF_CE_ImGui_Button_Hovered",
+      "Text": "Button (Hover)"
+    },
+    {
+      "Key": "PREF_CE_ImGui_ButtonActive",
+      "Text": "Button (Active)"
+    },
+    {
+      "Key": "PREF_CE_ImGui_Selection",
+      "Text": "Selection"
+    },
+    {
+      "Key": "PREF_CE_ImGui_Selection_Hover",
+      "Text": "Selection (Hover)"
+    },
+    {
+      "Key": "PREF_CE_ImGui_Selection_Active",
+      "Text": "Selection (Active)"
+    },
+    {
+      "Key": "PREF_CE_ImGui_Input_Background",
+      "Text": "Input Background"
+    },
+    {
+      "Key": "PREF_CE_ImGui_Input_Background_Hover",
+      "Text": "Input Background (Hover)"
+    },
+    {
+      "Key": "PREF_CE_ImGui_Input_Background_Active",
+      "Text": "Input Background (Active)"
+    },
+    {
+      "Key": "PREF_CE_ImGui_Input_CheckMark",
+      "Text": "Input Checkmark"
+    },
+    {
+      "Key": "PREF_CE_ImGui_Input_Conflict_Background",
+      "Text": "Input Conflict Background"
+    },
+    {
+      "Key": "PREF_CE_ImGui_Input_Vanilla_Background",
+      "Text": "Input Vanilla Background"
+    },
+    {
+      "Key": "PREF_CE_ImGui_Input_Default_Background",
+      "Text": "Input Default Background"
+    },
+    {
+      "Key": "PREF_CE_ImGui_Input_AuxVanilla_Background",
+      "Text": "Input Auxillary Vanilla Background"
+    },
+    {
+      "Key": "PREF_CE_ImGui_Input_DiffCompare_Background",
+      "Text": "Input Difference Comparison Background"
+    },
+    {
+      "Key": "PREF_CE_",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF_CE_",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF_CE_",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF_CE_",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF_CE_",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF_CE_",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF_CE_",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF_CE_",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF_CE_",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF_CE_",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF_CE_",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF_CE_",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF_CE_",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF_CE_",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF_CE_",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF_CE_",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF_CE_",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF_CE_",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF_CE_",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF_CE_",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF_CE_",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF_CE_",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF_CE_",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF_CE_",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF_CE_",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF_CE_",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF_CE_",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF_CE_",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF_CE_",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF_CE_",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF_CE_",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF_CE_",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF_CE_",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF_CE_",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF_CE_",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF_CE_",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF_CE_",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF_CE_",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF_CE_",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF_CE_",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF_CE_",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF_CE_",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF_CE_",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF_CE_",
+      "Text": "xxx"
+    },
+    {
+      "Key": "PREF_CE_",
+      "Text": "xxx"
+    },
+  ]
+}

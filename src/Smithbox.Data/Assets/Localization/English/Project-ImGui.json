@@ -27,14 +27,6 @@
     {
       "Key": "PRJ_Window_Project_Configuration",
       "Text": "Project Configuration"
-    },
-    {
-      "Key": "PRJ_Window_Project_Aliases",
-      "Text": "Project Aliases"
-    },
-    {
-      "Key": "PRJ_Window_Project_Enums",
-      "Text": "Project Enums"
     }
   ]
 }

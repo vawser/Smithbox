@@ -80,7 +80,11 @@ public static class ParamIO
     public static (string, CompoundAction) ApplyCSV(ProjectEntry project, ParamBank bank, string csvString, string param,
     bool appendOnly, bool mayReplaceRow, char separator)
     {
+        if (!bank.Params.ContainsKey(param))
+            return ("Invalid Param Name", null);
+
         Param p = bank.Params[param];
+
         if (p == null)
             return ("No Param selected", null);
 

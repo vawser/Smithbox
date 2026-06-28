@@ -153,6 +153,7 @@ public static class FocusManager
     public static bool IsInProjectMetadataEditor()
     {
         if (Focus is EditorFocusContext.Metadata_None or
+            EditorFocusContext.Metadata_ModeSelection or
             EditorFocusContext.Metadata_AliasEditor or
             EditorFocusContext.Metadata_EnumEditor)
             return true;
@@ -168,6 +169,7 @@ public enum EditorFocusContext
     Project_None,
 
     Metadata_None,
+    Metadata_ModeSelection,
     Metadata_AliasEditor,
     Metadata_EnumEditor,
 

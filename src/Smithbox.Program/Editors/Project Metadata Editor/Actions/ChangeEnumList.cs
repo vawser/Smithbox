@@ -1,7 +1,7 @@
 ﻿using StudioCore.Editors.Common;
 using StudioCore.Editors.ParamEditor;
 
-namespace StudioCore.Application;
+namespace StudioCore.Editors.MetadataEditor;
 
 public class ChangeEnumList : EditorAction
 {

@@ -1,7 +1,7 @@
 ﻿using StudioCore.Editors.Common;
 using System.Collections.Generic;
 
-namespace StudioCore.Application;
+namespace StudioCore.Editors.MetadataEditor;
 
 public class ChangeAliasTagList : EditorAction
 {

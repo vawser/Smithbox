@@ -1,7 +1,8 @@
-﻿using StudioCore.Editors.Common;
+﻿using StudioCore.Application;
+using StudioCore.Editors.Common;
 using System.Collections.Generic;
 
-namespace StudioCore.Application;
+namespace StudioCore.Editors.MetadataEditor;
 
 public class ChangeAliasField : EditorAction
 {

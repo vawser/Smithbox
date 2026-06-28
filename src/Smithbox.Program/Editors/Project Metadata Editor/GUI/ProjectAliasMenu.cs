@@ -7,7 +7,7 @@ using System.Numerics;
 using System.Text.Encodings.Web;
 using System.Text.Json;
 
-namespace StudioCore.Application;
+namespace StudioCore.Editors.MetadataEditor;
 
 public class ProjectAliasMenu
 {

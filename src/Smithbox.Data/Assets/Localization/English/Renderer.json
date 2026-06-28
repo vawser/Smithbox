@@ -114,7 +114,7 @@
     },
     {
       "Key": "REND_Job_Finished",
-      "Text": "Job: {9} - Finished"
+      "Text": "Job: {0} - Finished"
     },
     {
       "Key": "REND_Resource_Pipeline_Load_Error_File_Path",

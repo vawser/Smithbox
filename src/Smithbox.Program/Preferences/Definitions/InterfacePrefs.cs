@@ -28,8 +28,8 @@ public class InterfacePrefs
 
             Section = SectionCategory.General,
 
-            Title = "Interface Scale",
-            Description = "Adjusts the scaling of the user interface throughout all of Smithbox.",
+            Title = "PREF_Interface_UI_Scale",
+            Description = "PREF_Interface_UI_Scale_TT",
 
             Draw = () => {
                 DPI.ApplyInputWidth();
@@ -64,8 +64,8 @@ public class InterfacePrefs
 
             Section = SectionCategory.General,
 
-            Title = "Interface Scale affected by DPI",
-            Description = "Multiplies the user interface scale by your monitor's DPI setting.",
+            Title = "PREF_Interface_Scale_by_DPI",
+            Description = "PREF_Interface_Scale_by_DPI_TT",
 
             Draw = () => {
                 ImGui.Checkbox($"##inputValue", ref CFG.Current.Interface_Scale_by_DPI);
@@ -94,8 +94,8 @@ public class InterfacePrefs
 
             Section = SectionCategory.General,
 
-            Title = "Font Size",
-            Description = "Adjusts the size of the font in Smithbox.",
+            Title = "PREF_Interface_Font_Size",
+            Description = "PREF_Interface_Font_Size_TT",
 
             Draw = () => {
                 DPI.ApplyInputWidth();
@@ -120,8 +120,8 @@ public class InterfacePrefs
 
             Section = SectionCategory.General,
 
-            Title = "Enable Alias Word-wrap",
-            Description = "If enabled, aliases will word-wrap if they touch a window's boundry. Otherwise, they will truncate.",
+            Title = "PREF_Interface_Alias_Wordwrap_General",
+            Description = "PREF_Interface_Alias_Wordwrap_General_TT",
 
             Draw = () => {
                 ImGui.Checkbox("##inputValue", ref CFG.Current.Interface_Alias_Wordwrap_General);
@@ -139,8 +139,8 @@ public class InterfacePrefs
 
             Section = SectionCategory.General,
 
-            Title = "Enable Alias Word-wrap (Map Editor)",
-            Description = "If enabled, aliases will word-wrap if they touch a window's boundry. Otherwise, they will truncate. This affects the Map Editor only.",
+            Title = "PREF_Interface_Alias_Wordwrap_Map_Editor",
+            Description = "PREF_Interface_Alias_Wordwrap_Map_Editor_TT",
 
             Draw = () => {
                 ImGui.Checkbox("##inputValue", ref CFG.Current.Interface_Alias_Wordwrap_Map_Editor);
@@ -157,8 +157,8 @@ public class InterfacePrefs
 
             Section = SectionCategory.General,
 
-            Title = "Enable Alias Word-wrap (Model Editor)",
-            Description = "If enabled, aliases will word-wrap if they touch a window's boundry. Otherwise, they will truncate. This affects the Model Editor only.",
+            Title = "PREF_Interface_Alias_Wordwrap_Model_Editor",
+            Description = "PREF_Interface_Alias_Wordwrap_Model_Editor_TT",
 
             Draw = () => {
                 ImGui.Checkbox("##inputValue", ref CFG.Current.Interface_Alias_Wordwrap_Model_Editor);
@@ -175,8 +175,8 @@ public class InterfacePrefs
 
             Section = SectionCategory.General,
 
-            Title = "Enable Alias Word-wrap (Animation Editor)",
-            Description = "If enabled, aliases will word-wrap if they touch a window's boundry. Otherwise, they will truncate. This affects the Animation Editor only.",
+            Title = "PREF_Interface_Alias_Wordwrap_Animation_Editor",
+            Description = "PREF_Interface_Alias_Wordwrap_Animation_Editor_TT",
 
             Draw = () => {
                 ImGui.Checkbox("##inputValue", ref CFG.Current.Interface_Alias_Wordwrap_Animation_Editor);
@@ -201,52 +201,11 @@ public class InterfacePrefs
             }
         };
     }
-    public static PreferenceItem Interface_Context_Menu_Width()
-    {
-        return new PreferenceItem
-        {
-            OrderID = 8,
-            Category = PreferenceCategory.Interface,
-            Spacer = true,
-            InlineName = false,
-
-            Section = SectionCategory.General,
-
-            Title = "Popup Context Menu Width",
-            Description = "The width of a popup context menu within an editor.",
-
-            Draw = () => {
-                DPI.ApplyInputWidth();
-                ImGui.DragFloat("##inputValue", ref CFG.Current.Interface_Context_Menu_Width);
-            }
-        };
-    }
-    public static PreferenceItem Interface_Context_Menu_List_Height_Multiplier()
-    {
-        return new PreferenceItem
-        {
-            OrderID = 9,
-            Category = PreferenceCategory.Interface,
-            Spacer = true,
-            InlineName = false,
-
-            Section = SectionCategory.General,
-
-            Title = "Listbox Line Height Multiplier",
-            Description = "The line height multiple to use for a listbox per entry.",
-
-            Draw = () => {
-                DPI.ApplyInputWidth();
-                ImGui.DragFloat("##inputValue", ref CFG.Current.Interface_Context_Menu_List_Height_Multiplier);
-            }
-        };
-    }
-
 
     #endregion
 
     #region Fonts
-    public static PreferenceItem Interface_English_Font_Path()
+    public static PreferenceItem Interface_English_Font()
     {
         return new PreferenceItem
         {
@@ -257,37 +216,29 @@ public class InterfacePrefs
 
             Section = SectionCategory.Fonts,
 
-            Title = "English Font",
-            Description = "Set the font used for English characters. .ttf and .otf expected.",
+            Title = "PREF_English_Font",
+            Description = "PREF_English_Font_TT",
 
             Draw = () => {
                 DPI.ApplyInputWidth();
-                ImGui.InputText("##inputValue", ref CFG.Current.Interface_English_Font_Path, 255);
+                ImGui.InputText("##inputValue", ref CFG.Current.English_Font, 255);
 
                 ImGui.SameLine();
 
-                if (ImGui.Button("Set Font", DPI.SelectorButtonSize))
+                if (ImGui.Button($"{LOC.Get("PREF_Set_Font")}##setFontAction", DPI.SelectorButtonSize))
                 {
-                    PlatformUtils.Instance.OpenFileDialog("Select Font", ["*"], out string path);
+                    PlatformUtils.Instance.OpenFileDialog(LOC.Get("PREF_Select_Font"), ["*"], out string path);
                     if (File.Exists(path))
                     {
-                        CFG.Current.Interface_English_Font_Path = path;
+                        CFG.Current.English_Font = path;
                         Smithbox.FontRebuildRequest = true;
                     }
-                }
-
-                ImGui.SameLine();
-
-                if (ImGui.Button("Reset", DPI.SelectorButtonSize))
-                {
-                    CFG.Current.Interface_English_Font_Path = Path.Join("Assets", "Fonts", "RobotoMono-Light.ttf");
-                    Smithbox.FontRebuildRequest = true;
                 }
             }
         };
     }
 
-    public static PreferenceItem Interface_Non_English_Font_Path()
+    public static PreferenceItem Interface_Additional_Font_1()
     {
         return new PreferenceItem
         {
@@ -298,133 +249,160 @@ public class InterfacePrefs
 
             Section = SectionCategory.Fonts,
 
-            Title = "Non-English Font",
-            Description = "Set the font used for Non-English characters. .ttf and .otf expected.",
+            Title = "PREF_Additional_Font_1",
+            Description = "PREF_Additional_Font_1_TT",
 
             Draw = () => {
                 DPI.ApplyInputWidth();
-                ImGui.InputText("##inputValue", ref CFG.Current.Interface_Non_English_Font_Path, 255);
+                ImGui.InputText("##inputValue", ref CFG.Current.Additional_Font_1, 255);
 
                 ImGui.SameLine();
 
-                if (ImGui.Button("Set Font", DPI.SelectorButtonSize))
+                if (ImGui.Button($"{LOC.Get("PREF_Set_Font")}##setFontAction", DPI.SelectorButtonSize))
                 {
-                    PlatformUtils.Instance.OpenFileDialog("Select Font", ["*"], out string path);
+                    PlatformUtils.Instance.OpenFileDialog(LOC.Get("PREF_Select_Font"), ["*"], out string path);
                     if (File.Exists(path))
                     {
-                        CFG.Current.Interface_Non_English_Font_Path = path;
+                        CFG.Current.Additional_Font_1 = path;
                         Smithbox.FontRebuildRequest = true;
                     }
                 }
-
-                ImGui.SameLine();
-
-                if (ImGui.Button("Reset", DPI.SelectorButtonSize))
-                {
-                    CFG.Current.Interface_Non_English_Font_Path = Path.Join("Assets", "Fonts", "NotoSansCJKtc-Light.otf");
-                    Smithbox.FontRebuildRequest = true;
-                }
             }
         };
     }
 
-    #endregion
-
-    #region Additional Font Symbols
-    public static PreferenceItem Interface_Include_Chinese_Symbols()
-    {
-        return new PreferenceItem
-        {
-            OrderID = 0,
-            Category = PreferenceCategory.Interface,
-            Spacer = true,
-
-            Section = SectionCategory.AdditionalFontSymbols,
-
-            Title = "Enable Chinese",
-            Description = "Include Chinese font.",
-
-            Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Interface_Include_Chinese_Symbols);
-            }
-        };
-    }
-
-    public static PreferenceItem Interface_Include_Korean_Symbols()
-    {
-        return new PreferenceItem
-        {
-            OrderID = 1,
-            Category = PreferenceCategory.Interface,
-            Spacer = true,
-
-            Section = SectionCategory.AdditionalFontSymbols,
-
-            Title = "Enable Korean",
-            Description = "Include Korean font.",
-
-            Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Interface_Include_Korean_Symbols);
-            }
-        };
-    }
-
-    public static PreferenceItem Interface_Include_Thai_Symbols()
+    public static PreferenceItem Interface_Additional_Font_2()
     {
         return new PreferenceItem
         {
             OrderID = 2,
             Category = PreferenceCategory.Interface,
             Spacer = true,
+            InlineName = false,
 
-            Section = SectionCategory.AdditionalFontSymbols,
+            Section = SectionCategory.Fonts,
 
-            Title = "Enable Thai",
-            Description = "Include Thai font.",
+            Title = "PREF_Additional_Font_2",
+            Description = "PREF_Additional_Font_2_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Interface_Include_Thai_Symbols);
+                DPI.ApplyInputWidth();
+                ImGui.InputText("##inputValue", ref CFG.Current.Additional_Font_2, 255);
+
+                ImGui.SameLine();
+
+                if (ImGui.Button($"{LOC.Get("PREF_Set_Font")}##setFontAction", DPI.SelectorButtonSize))
+                {
+                    PlatformUtils.Instance.OpenFileDialog(LOC.Get("PREF_Select_Font"), ["*"], out string path);
+                    if (File.Exists(path))
+                    {
+                        CFG.Current.Additional_Font_2 = path;
+                        Smithbox.FontRebuildRequest = true;
+                    }
+                }
             }
         };
     }
 
-    public static PreferenceItem Interface_Include_Vietnamese_Symbols()
+    public static PreferenceItem Interface_Additional_Font_3()
     {
         return new PreferenceItem
         {
             OrderID = 3,
             Category = PreferenceCategory.Interface,
             Spacer = true,
+            InlineName = false,
 
-            Section = SectionCategory.AdditionalFontSymbols,
+            Section = SectionCategory.Fonts,
 
-            Title = "Enable Vietnamese",
-            Description = "Include Vietnamese font.",
+            Title = "PREF_Additional_Font_3",
+            Description = "PREF_Additional_Font_3_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Interface_Include_Vietnamese_Symbols);
+                DPI.ApplyInputWidth();
+                ImGui.InputText("##inputValue", ref CFG.Current.Additional_Font_3, 255);
+
+                ImGui.SameLine();
+
+                if (ImGui.Button($"{LOC.Get("PREF_Set_Font")}##setFontAction", DPI.SelectorButtonSize))
+                {
+                    PlatformUtils.Instance.OpenFileDialog(LOC.Get("PREF_Select_Font"), ["*"], out string path);
+                    if (File.Exists(path))
+                    {
+                        CFG.Current.Additional_Font_3 = path;
+                        Smithbox.FontRebuildRequest = true;
+                    }
+                }
             }
         };
     }
 
-    public static PreferenceItem Interface_Include_Cyrillic_Symbols()
+    public static PreferenceItem Interface_Additional_Font_4()
     {
         return new PreferenceItem
         {
             OrderID = 4,
             Category = PreferenceCategory.Interface,
             Spacer = true,
+            InlineName = false,
 
-            Section = SectionCategory.AdditionalFontSymbols,
+            Section = SectionCategory.Fonts,
 
-            Title = "Enable Cyrillic",
-            Description = "Include Cyrillic font.",
+            Title = "PREF_Additional_Font_4",
+            Description = "PREF_Additional_Font_4_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Interface_Include_Cyrillic_Symbols);
+                DPI.ApplyInputWidth();
+                ImGui.InputText("##inputValue", ref CFG.Current.Additional_Font_4, 255);
+
+                ImGui.SameLine();
+
+                if (ImGui.Button($"{LOC.Get("PREF_Set_Font")}##setFontAction", DPI.SelectorButtonSize))
+                {
+                    PlatformUtils.Instance.OpenFileDialog(LOC.Get("PREF_Select_Font"), ["*"], out string path);
+                    if (File.Exists(path))
+                    {
+                        CFG.Current.Additional_Font_4 = path;
+                        Smithbox.FontRebuildRequest = true;
+                    }
+                }
             }
         };
     }
+
+    public static PreferenceItem Interface_Additional_Font_5()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 5,
+            Category = PreferenceCategory.Interface,
+            Spacer = true,
+            InlineName = false,
+
+            Section = SectionCategory.Fonts,
+
+            Title = "PREF_Additional_Font_5",
+            Description = "PREF_Additional_Font_5_TT",
+
+            Draw = () => {
+                DPI.ApplyInputWidth();
+                ImGui.InputText("##inputValue", ref CFG.Current.Additional_Font_5, 255);
+
+                ImGui.SameLine();
+
+                if (ImGui.Button($"{LOC.Get("PREF_Set_Font")}##setFontAction", DPI.SelectorButtonSize))
+                {
+                    PlatformUtils.Instance.OpenFileDialog(LOC.Get("PREF_Select_Font"), ["*"], out string path);
+                    if (File.Exists(path))
+                    {
+                        CFG.Current.Additional_Font_5 = path;
+                        Smithbox.FontRebuildRequest = true;
+                    }
+                }
+            }
+        };
+    }
+
     #endregion
 
     #region Theme
@@ -439,8 +417,8 @@ public class InterfacePrefs
 
             Section = SectionCategory.Theme,
 
-            Title = "Theme Selection",
-            Description = "Select the interface theme to use for Smithbox.",
+            Title = "PREF_Theme_Selection",
+            Description = "PREF_Theme_Selection_TT",
 
             Draw = () => {
                 var folder = ProjectUtils.GetThemeFolder();
@@ -470,14 +448,14 @@ public class InterfacePrefs
                     ImGui.EndCombo();
                 }
 
-                if (ImGui.Button("Reset", DPI.SelectorButtonSize))
+                if (ImGui.Button($"{LOC.Get("PREF_Theme_Reset")}##themeReset", DPI.SelectorButtonSize))
                 {
                     UI.LoadDefault();
                 }
 
                 ImGui.SameLine();
 
-                if (ImGui.Button("Open Folder", DPI.SelectorButtonSize))
+                if (ImGui.Button($"{LOC.Get("PREF_Theme_Open_Folder")}##themeOpenFolder", DPI.SelectorButtonSize))
                 {
                     Process.Start("explorer.exe", Path.Join(AppContext.BaseDirectory, "Assets", "Themes")); 
                 }
@@ -498,7 +476,7 @@ public class InterfacePrefs
 
             Section = SectionCategory.ThemeBuilder,
 
-            Title = "New Theme Name",
+            Title = "PREF_Theme_Builder",
             Description = "",
 
             Draw = () => {
@@ -507,84 +485,221 @@ public class InterfacePrefs
 
                 ImGui.SameLine();
 
-                if (ImGui.Button("Save", DPI.SelectorButtonSize))
+                if (ImGui.Button($"{LOC.Get("PREF_Theme_Builder_Save")}##themeBuilderSave", DPI.SelectorButtonSize))
                 {
                     UI.ExportTheme(PreferencesUtil.NewThemeName);
                 }
 
                 var flags = ImGuiColorEditFlags.AlphaOpaque;
 
-                UIHelper.SimpleHeader("Editor Window", "");
+                // Theme Editor
+                UIHelper.SimpleHeader(
+                    LOC.Get("PREF_Theme_Editor"),
+                    LOC.Get("PREF_Theme_Editor_TT"));
 
-                ImGui.ColorEdit4("Main Background##ImGui_MainBg", ref UI.Current.ImGui_MainBg, flags);
-                ImGui.ColorEdit4("Child Background##ImGui_ChildBg", ref UI.Current.ImGui_ChildBg, flags);
-                ImGui.ColorEdit4("Popup Background##ImGui_PopupBg", ref UI.Current.ImGui_PopupBg, flags);
-                ImGui.ColorEdit4("Border##ImGui_Border", ref UI.Current.ImGui_Border, flags);
-                ImGui.ColorEdit4("Title Bar Background##ImGui_TitleBarBg", ref UI.Current.ImGui_TitleBarBg, flags);
-                ImGui.ColorEdit4("Title Bar Background (Active)##ImGui_TitleBarBg_Active", ref UI.Current.ImGui_TitleBarBg_Active, flags);
-                ImGui.ColorEdit4("Menu Bar Background##ImGui_MenuBarBg", ref UI.Current.ImGui_MenuBarBg, flags);
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("ImGui_TitleBarBg_Active")}##ImGui_MainBg", 
+                    ref UI.Current.ImGui_MainBg, flags);
 
-                UIHelper.SimpleHeader("Moveable Window", "");
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_ImGui_ChildBg")}##ImGui_ChildBg", 
+                    ref UI.Current.ImGui_ChildBg, flags);
 
-                ImGui.ColorEdit4("Main Background##Imgui_Moveable_MainBg", ref UI.Current.Imgui_Moveable_MainBg, flags);
-                ImGui.ColorEdit4("Child Background##Imgui_Moveable_ChildBg", ref UI.Current.Imgui_Moveable_ChildBg, flags);
-                ImGui.ColorEdit4("Child Background##Imgui_Moveable_ChildBgSecondary", ref UI.Current.Imgui_Moveable_ChildBgSecondary, flags);
-                ImGui.ColorEdit4("Header##Imgui_Moveable_Header", ref UI.Current.Imgui_Moveable_Header, flags);
-                ImGui.ColorEdit4("Title Bar Background##Imgui_Moveable_TitleBg", ref UI.Current.Imgui_Moveable_TitleBg, flags);
-                ImGui.ColorEdit4("Title Bar Background (Active)##Imgui_Moveable_TitleBg_Active", ref UI.Current.Imgui_Moveable_TitleBg_Active, flags);
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_ImGui_PopupBg")}##ImGui_PopupBg", 
+                    ref UI.Current.ImGui_PopupBg, flags);
 
-                UIHelper.SimpleHeader("Scrollbar", "");
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_ImGui_Border")}##ImGui_Border", 
+                    ref UI.Current.ImGui_Border, flags);
 
-                ImGui.ColorEdit4("Scrollbar Background", ref UI.Current.ImGui_ScrollbarBg, flags);
-                ImGui.ColorEdit4("Scrollbar Grab", ref UI.Current.ImGui_ScrollbarGrab, flags);
-                ImGui.ColorEdit4("Scrollbar Grab (Hover)", ref UI.Current.ImGui_ScrollbarGrab_Hover, flags);
-                ImGui.ColorEdit4("Scrollbar Grab (Active)", ref UI.Current.ImGui_ScrollbarGrab_Active, flags);
-                ImGui.ColorEdit4("Slider Grab", ref UI.Current.ImGui_SliderGrab, flags);
-                ImGui.ColorEdit4("Slider Grab (Active)", ref UI.Current.ImGui_SliderGrab_Active, flags);
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_ImGui_TitleBarBg")}##ImGui_TitleBarBg", 
+                    ref UI.Current.ImGui_TitleBarBg, flags);
 
-                UIHelper.SimpleHeader("Tab", "");
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_ImGui_TitleBarBg_Active")}##ImGui_TitleBarBg_Active", 
+                    ref UI.Current.ImGui_TitleBarBg_Active, flags);
 
-                ImGui.ColorEdit4("Tab", ref UI.Current.ImGui_Tab, flags);
-                ImGui.ColorEdit4("Tab (Hover)", ref UI.Current.ImGui_Tab_Hover, flags);
-                ImGui.ColorEdit4("Tab (Active)", ref UI.Current.ImGui_Tab_Active, flags);
-                ImGui.ColorEdit4("Unfocused Tab", ref UI.Current.ImGui_UnfocusedTab, flags);
-                ImGui.ColorEdit4("Unfocused Tab (Active)", ref UI.Current.ImGui_UnfocusedTab_Active, flags);
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_ImGui_MenuBarBg")}##ImGui_MenuBarBg", 
+                    ref UI.Current.ImGui_MenuBarBg, flags);
 
-                UIHelper.SimpleHeader("Button", "");
+                // Moveable Window
+                UIHelper.SimpleHeader(
+                    LOC.Get("PREF_Theme_Editor_Moveable_Window"),
+                    LOC.Get("PREF_Theme_Editor_Moveable_Window_TT"));
 
-                ImGui.ColorEdit4("Button", ref UI.Current.ImGui_Button, flags);
-                ImGui.ColorEdit4("Button (Hover)", ref UI.Current.ImGui_Button_Hovered, flags);
-                ImGui.ColorEdit4("Button (Active)", ref UI.Current.ImGui_ButtonActive, flags);
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_Imgui_Moveable_MainBg")}##Imgui_Moveable_MainBg", 
+                    ref UI.Current.Imgui_Moveable_MainBg, flags);
 
-                UIHelper.SimpleHeader("Selection", "");
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_Imgui_Moveable_ChildBg")}##Imgui_Moveable_ChildBg", 
+                    ref UI.Current.Imgui_Moveable_ChildBg, flags);
 
-                ImGui.ColorEdit4("Selection", ref UI.Current.ImGui_Selection, flags);
-                ImGui.ColorEdit4("Selection (Hover)", ref UI.Current.ImGui_Selection_Hover, flags);
-                ImGui.ColorEdit4("Selection (Active)", ref UI.Current.ImGui_Selection_Active, flags);
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_Imgui_Moveable_ChildBgSecondary")}##Imgui_Moveable_ChildBgSecondary", 
+                    ref UI.Current.Imgui_Moveable_ChildBgSecondary, flags);
 
-                UIHelper.SimpleHeader("Inputs", "");
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_Imgui_Moveable_Header")}##Imgui_Moveable_Header", 
+                    ref UI.Current.Imgui_Moveable_Header, flags);
 
-                ImGui.ColorEdit4("Input Background", ref UI.Current.ImGui_Input_Background, flags);
-                ImGui.ColorEdit4("Input Background (Hover)", ref UI.Current.ImGui_Input_Background_Hover, flags);
-                ImGui.ColorEdit4("Input Background (Active)", ref UI.Current.ImGui_Input_Background_Active, flags);
-                ImGui.ColorEdit4("Input Checkmark", ref UI.Current.ImGui_Input_CheckMark, flags);
-                ImGui.ColorEdit4("Input Conflict Background", ref UI.Current.ImGui_Input_Conflict_Background, flags);
-                ImGui.ColorEdit4("Input Vanilla Background", ref UI.Current.ImGui_Input_Vanilla_Background, flags);
-                ImGui.ColorEdit4("Input Default Background", ref UI.Current.ImGui_Input_Default_Background, flags);
-                ImGui.ColorEdit4("Input Auxillary Vanilla Background", ref UI.Current.ImGui_Input_AuxVanilla_Background, flags);
-                ImGui.ColorEdit4("Input Difference Comparison Background", ref UI.Current.ImGui_Input_DiffCompare_Background, flags);
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_Imgui_Moveable_TitleBg")}##Imgui_Moveable_TitleBg", 
+                    ref UI.Current.Imgui_Moveable_TitleBg, flags);
 
-                UIHelper.SimpleHeader("Backgrounds", "");
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_Imgui_Moveable_TitleBg_Active")}##Imgui_Moveable_TitleBg_Active", 
+                    ref UI.Current.Imgui_Moveable_TitleBg_Active, flags);
+
+                // Scrollbar
+                UIHelper.SimpleHeader(
+                    LOC.Get("PREF_Theme_Editor_Scrollbar"),
+                    LOC.Get("PREF_Theme_Editor_Scrollbar_TT"));
+
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_ImGui_ScrollbarBg")}##ImGui_ScrollbarBg", 
+                    ref UI.Current.ImGui_ScrollbarBg, flags);
+
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_ImGui_ScrollbarGrab")}##ImGui_ScrollbarGrab", 
+                    ref UI.Current.ImGui_ScrollbarGrab, flags);
+
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_ImGui_ScrollbarGrab_Hover")}##ImGui_ScrollbarGrab_Hover", 
+                    ref UI.Current.ImGui_ScrollbarGrab_Hover, flags);
+
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_ImGui_ScrollbarGrab_Active")}##ImGui_ScrollbarGrab_Active", 
+                    ref UI.Current.ImGui_ScrollbarGrab_Active, flags);
+
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_ImGui_SliderGrab")}##ImGui_SliderGrab", 
+                    ref UI.Current.ImGui_SliderGrab, flags);
+
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_ImGui_SliderGrab_Active")}##ImGui_SliderGrab_Active", 
+                    ref UI.Current.ImGui_SliderGrab_Active, flags);
+
+                // Tab
+                UIHelper.SimpleHeader(
+                    LOC.Get("PREF_Theme_Editor_Tab"),
+                    LOC.Get("PREF_Theme_Editor_Tab_TT"));
+
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_ImGui_Tab")}##ImGui_Tab",
+                    ref UI.Current.ImGui_Tab, flags);
+
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_ImGui_Tab_Hover")}##ImGui_Tab_Hover",
+                    ref UI.Current.ImGui_Tab_Hover, flags);
+
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_ImGui_Tab_Active")}##ImGui_Tab_Active",
+                    ref UI.Current.ImGui_Tab_Active, flags);
+
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_ImGui_UnfocusedTab")}##ImGui_UnfocusedTab",
+                    ref UI.Current.ImGui_UnfocusedTab, flags);
+
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_ImGui_UnfocusedTab_Active")}##ImGui_UnfocusedTab_Active",
+                    ref UI.Current.ImGui_UnfocusedTab_Active, flags);
+
+                // Button
+                UIHelper.SimpleHeader(
+                    LOC.Get("PREF_Theme_Editor_Button"),
+                    LOC.Get("PREF_Theme_Editor_Button_TT"));
+
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_ImGui_Button")}##ImGui_Button",
+                    ref UI.Current.ImGui_Button, flags);
+
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_ImGui_Button_Hovered")}##ImGui_Button_Hovered",
+                    ref UI.Current.ImGui_Button_Hovered, flags);
+
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_ImGui_ButtonActive")}##ImGui_ButtonActive",
+                    ref UI.Current.ImGui_ButtonActive, flags);
+
+                // Selection
+                UIHelper.SimpleHeader(
+                    LOC.Get("PREF_Theme_Editor_Selection"),
+                    LOC.Get("PREF_Theme_Editor_Selection_TT"));
+
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_ImGui_Selection")}##ImGui_Selection",
+                    ref UI.Current.ImGui_Selection, flags);
+
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_ImGui_Selection_Hover")}##ImGui_Selection_Hover",
+                    ref UI.Current.ImGui_Selection_Hover, flags);
+
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_ImGui_Selection_Active")}##ImGui_Selection_Active",
+                    ref UI.Current.ImGui_Selection_Active, flags);
+
+                UIHelper.SimpleHeader(
+                    LOC.Get("PREF_Theme_Editor_Inputs"),
+                    LOC.Get("PREF_Theme_Editor_Inputs_TT"));
+
+                // Inputs
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_ImGui_Input_Background")}##ImGui_Input_Background",
+                    ref UI.Current.ImGui_Input_Background, flags);
+
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_ImGui_Input_Background_Hover")}##ImGui_Input_Background_Hover",
+                    ref UI.Current.ImGui_Input_Background_Hover, flags);
+
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_ImGui_Input_Background_Active")}##ImGui_Input_Background_Active",
+                    ref UI.Current.ImGui_Input_Background_Active, flags);
+
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_ImGui_Input_CheckMark")}##ImGui_Input_CheckMark",
+                    ref UI.Current.ImGui_Input_CheckMark, flags);
+
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_ImGui_Input_Conflict_Background")}##ImGui_Input_Conflict_Background",
+                    ref UI.Current.ImGui_Input_Conflict_Background, flags);
+
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_ImGui_Input_Vanilla_Background")}##ImGui_Input_Vanilla_Background",
+                    ref UI.Current.ImGui_Input_Vanilla_Background, flags);
+
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_ImGui_Input_Default_Background")}##ImGui_Input_Default_Background",
+                    ref UI.Current.ImGui_Input_Default_Background, flags);
+
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_ImGui_Input_AuxVanilla_Background")}##ImGui_Input_AuxVanilla_Background",
+                    ref UI.Current.ImGui_Input_AuxVanilla_Background, flags);
+
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_ImGui_Input_DiffCompare_Background")}##ImGui_Input_DiffCompare_Background",
+                    ref UI.Current.ImGui_Input_DiffCompare_Background, flags);
+
+                // Backgrounds
+                UIHelper.SimpleHeader(
+                    LOC.Get("PREF_Theme_Editor_Backgrounds"),
+                    LOC.Get("PREF_Theme_Editor_Backgrounds_TT"));
+
                 ImGui.ColorEdit4("Modified Row Background", ref UI.Current.ParamRowDiffBackgroundColor, flags);
                 ImGui.ColorEdit4("Modified Field Background", ref UI.Current.ParamDiffBackgroundColor, flags);
 
-                UIHelper.SimpleHeader("Text", "");
+                // Text
+                UIHelper.SimpleHeader(
+                    LOC.Get("PREF_Theme_Editor_Text"),
+                    LOC.Get("PREF_Theme_Editor_Text_TT"));
 
                 ImGui.ColorEdit4("Default Text", ref UI.Current.ImGui_Default_Text_Color, flags);
                 ImGui.ColorEdit4("Warning Text", ref UI.Current.ImGui_Warning_Text_Color, flags);
                 ImGui.ColorEdit4("Beneficial Text", ref UI.Current.ImGui_Benefit_Text_Color, flags);
                 ImGui.ColorEdit4("Invalid Text", ref UI.Current.ImGui_Invalid_Text_Color, flags);
-
                 ImGui.ColorEdit4("Param Reference Text", ref UI.Current.ImGui_ParamRef_Text, flags);
                 ImGui.ColorEdit4("Param Reference Missing Text", ref UI.Current.ImGui_ParamRefMissing_Text, flags);
                 ImGui.ColorEdit4("Param Reference Inactive Text", ref UI.Current.ImGui_ParamRefInactive_Text, flags);
@@ -601,15 +716,22 @@ public class InterfacePrefs
                 ImGui.ColorEdit4("Primary Changed Text", ref UI.Current.ImGui_PrimaryChanged_Text, flags);
                 ImGui.ColorEdit4("Param Row Text", ref UI.Current.ImGui_ParamRow_Text, flags);
                 ImGui.ColorEdit4("Aliased Name Text", ref UI.Current.ImGui_AliasName_Text, flags);
-
                 ImGui.ColorEdit4("Text Editor: Modified Row", ref UI.Current.ImGui_TextEditor_ModifiedTextEntry_Text, flags);
                 ImGui.ColorEdit4("Text Editor: Unique Row", ref UI.Current.ImGui_TextEditor_UniqueTextEntry_Text, flags);
+
+                // Logger
+                UIHelper.SimpleHeader(
+                    LOC.Get("PREF_Theme_Editor_Logger"),
+                    LOC.Get("PREF_Theme_Editor_Logger_TT"));
 
                 ImGui.ColorEdit4("Logger: Information", ref UI.Current.ImGui_Logger_Information_Color, flags);
                 ImGui.ColorEdit4("Logger: Warning", ref UI.Current.ImGui_Logger_Warning_Color, flags);
                 ImGui.ColorEdit4("Logger: Error", ref UI.Current.ImGui_Logger_Error_Color, flags);
 
-                UIHelper.SimpleHeader("Miscellaneous", "");
+                // Display Group Tool
+                UIHelper.SimpleHeader(
+                    LOC.Get("PREF_Theme_Editor_Display_Group"),
+                    LOC.Get("PREF_Theme_Editor_Display_Group_TT"));
 
                 ImGui.ColorEdit4("Display Group: Border Highlight", ref UI.Current.DisplayGroupEditor_Border_Highlight, flags);
                 ImGui.ColorEdit4("Display Group: Active Input Background", ref UI.Current.DisplayGroupEditor_DisplayActive_Frame, flags);

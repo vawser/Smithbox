@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using StudioCore.Application;
+using StudioCore.Editors.MetadataEditor;
 using StudioCore.Logger;
 using StudioCore.Utilities;
 using System;

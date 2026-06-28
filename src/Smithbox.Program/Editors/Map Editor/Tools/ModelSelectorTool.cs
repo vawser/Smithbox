@@ -2,6 +2,7 @@
 using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Editors.MetadataEditor;
 using StudioCore.Keybinds;
 using StudioCore.Utilities;
 using System;

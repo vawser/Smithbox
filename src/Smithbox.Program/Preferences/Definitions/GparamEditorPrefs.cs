@@ -28,8 +28,8 @@ public class GparamEditorPrefs
 
             Section = SectionCategory.GparamEditor_File_List,
 
-            Title = "Display Aliases",
-            Description = "If enabled, aliases are displayed in the file list.",
+            Title = "PREF_GparamEditor_File_List_Display_Aliases",
+            Description = "PREF_GparamEditor_File_List_Display_Aliases_TT",
 
             Draw = () => {
                 ImGui.Checkbox("##inputValue_file", ref CFG.Current.GparamEditor_File_List_Display_Aliases);
@@ -49,8 +49,8 @@ public class GparamEditorPrefs
 
             Section = SectionCategory.GparamEditor_Group_List,
 
-            Title = "Display Group Descriptions",
-            Description = "If enabled, the group descriptions are displayed on hover.",
+            Title = "PREF_GparamEditor_Group_List_Display_Descriptions",
+            Description = "PREF_GparamEditor_Group_List_Display_Descriptions_TT",
 
             Draw = () => {
                 ImGui.Checkbox("##inputValue", ref CFG.Current.GparamEditor_Group_List_Display_Descriptions);
@@ -67,8 +67,8 @@ public class GparamEditorPrefs
 
             Section = SectionCategory.GparamEditor_Group_List,
 
-            Title = "Display Empty Groups",
-            Description = "If enabled, empty groups with no fields are displayed.",
+            Title = "PREF_GparamEditor_Group_List_Display_Empty_Group",
+            Description = "PREF_GparamEditor_Group_List_Display_Empty_Group_TT",
 
             Draw = () => {
                 ImGui.Checkbox("##inputValue", ref CFG.Current.GparamEditor_Group_List_Display_Empty_Group);
@@ -88,8 +88,8 @@ public class GparamEditorPrefs
 
             Section = SectionCategory.GparamEditor_Field_List,
 
-            Title = "Display Field Descriptions",
-            Description = "If enabled, the field descriptions are displayed on hover.",
+            Title = "PREF_GparamEditor_Field_List_Display_Descriptions",
+            Description = "PREF_GparamEditor_Field_List_Display_Descriptions_TT",
 
             Draw = () => {
                 ImGui.Checkbox("##inputValue", ref CFG.Current.GparamEditor_Field_List_Display_Descriptions);
@@ -109,8 +109,8 @@ public class GparamEditorPrefs
 
             Section = SectionCategory.GparamEditor_Value_List,
 
-            Title = "Display Color Edit for 4-digit Properties",
-            Description = "If enabled, the color picker will be displayed on properties with a 4-digit type.",
+            Title = "PREF_GparamEditor_Value_List_Display_Color_Edit_V4",
+            Description = "PREF_GparamEditor_Value_List_Display_Color_Edit_V4_TT",
 
             Draw = () => {
                 ImGui.Checkbox("##inputValue", ref CFG.Current.GparamEditor_Value_List_Display_Color_Edit_V4);
@@ -127,8 +127,8 @@ public class GparamEditorPrefs
 
             Section = SectionCategory.GparamEditor_Value_List,
 
-            Title = "Display Time of Day Column",
-            Description = "If enabled, the time of day column is displayed in the Value section.",
+            Title = "PREF_GparamEditor_Value_List_Display_Time_Of_Day_Column",
+            Description = "PREF_GparamEditor_Value_List_Display_Time_Of_Day_Column_TT",
 
             Draw = () => {
                 ImGui.Checkbox("##inputValue", ref CFG.Current.GparamEditor_Value_List_Display_Time_Of_Day_Column);
@@ -145,8 +145,8 @@ public class GparamEditorPrefs
 
             Section = SectionCategory.GparamEditor_Value_List,
 
-            Title = "Display Information Column",
-            Description = "If enabled, the information column is displayed in the Value section.",
+            Title = "PREF_GparamEditor_Value_List_Display_Information_Column",
+            Description = "PREF_GparamEditor_Value_List_Display_Information_Column_TT",
 
             Draw = () => {
                 ImGui.Checkbox("##inputValue", ref CFG.Current.GparamEditor_Value_List_Display_Information_Column);
@@ -167,20 +167,24 @@ public class GparamEditorPrefs
 
             Section = SectionCategory.GparamEditor_Color_Edit,
 
-            Title = "Color Edit Display Mode",
-            Description = "Determines how the color edit displays the numeric data.",
+            Title = "PREF_GparamEditor_Color_Edit_Mode",
+            Description = "PREF_GparamEditor_Color_Edit_Mode_TT",
 
             Draw = () => {
                 var curMode = CFG.Current.GparamEditor_Color_Edit_Mode;
 
+                var previewName = LOC.Get(curMode.GetDisplayName());
+
                 DPI.ApplyInputWidth();
-                if (ImGui.BeginCombo("##inputValue", curMode.GetDisplayName()))
+                if (ImGui.BeginCombo("##inputValue", previewName))
                 {
                     foreach (var entry in Enum.GetValues(typeof(ColorEditDisplayMode)))
                     {
                         var mode = (ColorEditDisplayMode)entry;
 
-                        if (ImGui.Selectable($"{mode.GetDisplayName()}", curMode == mode))
+                        var displayName = LOC.Get(mode.GetDisplayName());
+
+                        if (ImGui.Selectable(displayName, curMode == mode))
                         {
                             CFG.Current.GparamEditor_Color_Edit_Mode = mode;
                         }

@@ -1,0 +1,68 @@
+{
+  "Entries": [
+    {
+      "Key": "PREF_GparamEditor_File_List_Display_Aliases",
+      "Text": "Display Aliases"
+    },
+    {
+      "Key": "PREF_GparamEditor_File_List_Display_Aliases_TT",
+      "Text": "If enabled, aliases are displayed in the file list."
+    },
+    {
+      "Key": "PREF_GparamEditor_Group_List_Display_Descriptions",
+      "Text": "Display Group Descriptions"
+    },
+    {
+      "Key": "PREF_GparamEditor_Group_List_Display_Descriptions_TT",
+      "Text": "If enabled, the group descriptions are displayed on hover."
+    },
+    {
+      "Key": "PREF_GparamEditor_Group_List_Display_Empty_Group",
+      "Text": "Display Empty Groups"
+    },
+    {
+      "Key": "PREF_GparamEditor_Group_List_Display_Empty_Group_TT",
+      "Text": "If enabled, empty groups with no fields are displayed."
+    },
+    {
+      "Key": "PREF_GparamEditor_Field_List_Display_Descriptions",
+      "Text": "Display Field Descriptions"
+    },
+    {
+      "Key": "PREF_GparamEditor_Field_List_Display_Descriptions_TT",
+      "Text": "If enabled, the field descriptions are displayed on hover."
+    },
+    {
+      "Key": "PREF_GparamEditor_Value_List_Display_Color_Edit_V4",
+      "Text": "Display Color Edit for 4-digit Properties"
+    },
+    {
+      "Key": "PREF_GparamEditor_Value_List_Display_Color_Edit_V4_TT",
+      "Text": "If enabled, the color picker will be displayed on properties with a 4-digit type."
+    },
+    {
+      "Key": "PREF_GparamEditor_Value_List_Display_Time_Of_Day_Column",
+      "Text": "Display Time of Day Column"
+    },
+    {
+      "Key": "PREF_GparamEditor_Value_List_Display_Time_Of_Day_Column_TT",
+      "Text": "If enabled, the time of day column is displayed in the Value section."
+    },
+    {
+      "Key": "PREF_GparamEditor_Value_List_Display_Information_Column",
+      "Text": "Display Information Column"
+    },
+    {
+      "Key": "PREF_GparamEditor_Value_List_Display_Information_Column_TT",
+      "Text": "If enabled, the information column is displayed in the Value section."
+    },
+    {
+      "Key": "PREF_GparamEditor_Color_Edit_Mode",
+      "Text": "Color Edit Display Mode"
+    },
+    {
+      "Key": "PREF_GparamEditor_Color_Edit_Mode_TT",
+      "Text": "Determines how the color edit displays the numeric data."
+    }
+  ]
+}
