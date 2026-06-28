@@ -11,6 +11,22 @@
     {
       "Key": "META_Select_Project_First",
       "Text": "Select a project first."
+    },
+    {
+      "Key": "META_Header_Param_Def",
+      "Text": "PARAMDEF Editor"
+    },
+    {
+      "Key": "META_Header_Param_Def_TT",
+      "Text": ""
+    },
+    {
+      "Key": "META_Header_Param_Meta",
+      "Text": "PARAM Meta Editor"
+    },
+    {
+      "Key": "META_Header_Param_Meta_TT",
+      "Text": ""
     }
   ]
 }

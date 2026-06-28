@@ -155,7 +155,9 @@ public static class FocusManager
         if (Focus is EditorFocusContext.Metadata_None or
             EditorFocusContext.Metadata_ModeSelection or
             EditorFocusContext.Metadata_AliasEditor or
-            EditorFocusContext.Metadata_EnumEditor)
+            EditorFocusContext.Metadata_EnumEditor or
+            EditorFocusContext.Metadata_ParamDefEditor or
+            EditorFocusContext.Metadata_ParamMetaEditor)
             return true;
 
         return false;
@@ -172,6 +174,8 @@ public enum EditorFocusContext
     Metadata_ModeSelection,
     Metadata_AliasEditor,
     Metadata_EnumEditor,
+    Metadata_ParamDefEditor,
+    Metadata_ParamMetaEditor,
 
     FileBrowser_None,
     FileBrowser_FileList,

@@ -11,6 +11,14 @@
     {
       "Key": "META_Window_Project_Enums",
       "Text": "Project Enums"
+    },
+    {
+      "Key": "META_Window_Param_Def_Editor",
+      "Text": "PARAMDEF Editor"
+    },
+    {
+      "Key": "META_Window_Param_Meta_Editor",
+      "Text": "PARAM Meta Editor"
     }
   ]
 }
