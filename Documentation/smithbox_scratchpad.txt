@@ -30,7 +30,7 @@
  ### Keybinds
  ### Logger
  ### Memory
- Preferences
+ ### Preferences
  ### Project
  ### Renderer
  ### Utilities

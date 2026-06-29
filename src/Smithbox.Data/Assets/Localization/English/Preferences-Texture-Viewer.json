@@ -1,8 +1,44 @@
 {
   "Entries": [
     {
-      "Key": "PREF_Section_Category_General",
-      "Text": "General"
+      "Key": "PREF_TextureViewer_File_List_Display_Character_Aliases",
+      "Text": "Display Character Aliases"
+    },
+    {
+      "Key": "PREF_TextureViewer_File_List_Display_Character_Aliases_TT",
+      "Text": "If enabled, character aliases are displayed."
+    },
+    {
+      "Key": "PREF_TextureViewer_File_List_Display_Asset_Aliases",
+      "Text": "Display Asset Aliases"
+    },
+    {
+      "Key": "PREF_TextureViewer_File_List_Display_Asset_Aliases_TT",
+      "Text": "If enabled, asset (object) aliases are displayed."
+    },
+    {
+      "Key": "PREF_TextureViewer_File_List_Display_Part_Aliases",
+      "Text": "Display Part Aliases"
+    },
+    {
+      "Key": "PREF_TextureViewer_File_List_Display_Part_Aliases_TT",
+      "Text": "If enabled, part aliases are displayed."
+    },
+    {
+      "Key": "PREF_TextureViewer_File_List_Display_Low_Detail_Entries",
+      "Text": "Display Low Detail Entries"
+    },
+    {
+      "Key": "PREF_TextureViewer_File_List_Display_Low_Detail_Entries_TT",
+      "Text": "If enabled, low detail entries are displayed."
+    },
+    {
+      "Key": "PREF_TextureViewer_File_List_Display_Particle_Aliases",
+      "Text": "Display Particle Aliases"
+    },
+    {
+      "Key": "PREF_TextureViewer_File_List_Display_Particle_Aliases_TT",
+      "Text": "If enabled, particle aliases are displayed."
     }
   ]
 }

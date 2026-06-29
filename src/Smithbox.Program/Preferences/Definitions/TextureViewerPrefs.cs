@@ -26,8 +26,8 @@ public class TextureViewerPrefs
 
             Section = SectionCategory.TextureViewer_File_List,
 
-            Title = "Display Character Aliases",
-            Description = "If enabled, character aliases are displayed.",
+            Title = "PREF_TextureViewer_File_List_Display_Character_Aliases",
+            Description = "PREF_TextureViewer_File_List_Display_Character_Aliases_TT",
 
             Draw = () => {
                 ImGui.Checkbox("##inputValue", ref CFG.Current.TextureViewer_File_List_Display_Character_Aliases);
@@ -44,8 +44,8 @@ public class TextureViewerPrefs
 
             Section = SectionCategory.TextureViewer_File_List,
 
-            Title = "Display Asset Aliases",
-            Description = "If enabled, asset (object) aliases are displayed.",
+            Title = "PREF_TextureViewer_File_List_Display_Asset_Aliases",
+            Description = "PREF_TextureViewer_File_List_Display_Asset_Aliases_TT",
 
             Draw = () => {
                 ImGui.Checkbox("##inputValue", ref CFG.Current.TextureViewer_File_List_Display_Asset_Aliases);
@@ -62,8 +62,8 @@ public class TextureViewerPrefs
 
             Section = SectionCategory.TextureViewer_File_List,
 
-            Title = "Display Part Aliases",
-            Description = "If enabled, part aliases are displayed.",
+            Title = "PREF_TextureViewer_File_List_Display_Part_Aliases",
+            Description = "PREF_TextureViewer_File_List_Display_Part_Aliases_TT",
 
             Draw = () => {
                 ImGui.Checkbox("##inputValue", ref CFG.Current.TextureViewer_File_List_Display_Part_Aliases);
@@ -80,8 +80,8 @@ public class TextureViewerPrefs
 
             Section = SectionCategory.TextureViewer_File_List,
 
-            Title = "Display Low Detail Entries",
-            Description = "If enabled, low detail entries are displayed.",
+            Title = "PREF_TextureViewer_File_List_Display_Low_Detail_Entries",
+            Description = "PREF_TextureViewer_File_List_Display_Low_Detail_Entries_TT",
 
             Draw = () => {
                 ImGui.Checkbox("##inputValue", ref CFG.Current.TextureViewer_File_List_Display_Low_Detail_Entries);
@@ -101,8 +101,8 @@ public class TextureViewerPrefs
 
             Section = SectionCategory.TextureViewer_Texture_List,
 
-            Title = "Display Particle Aliases",
-            Description = "If enabled, particle aliases are displayed.",
+            Title = "PREF_TextureViewer_File_List_Display_Particle_Aliases",
+            Description = "PREF_TextureViewer_File_List_Display_Particle_Aliases_TT",
 
             Draw = () => {
                 ImGui.Checkbox("##inputValue", ref CFG.Current.TextureViewer_File_List_Display_Particle_Aliases);

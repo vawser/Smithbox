@@ -110,7 +110,7 @@ public static class PreferencesUtil
         CFG.Current.Viewport_Point_Light_Alpha = CFG.Default.Viewport_Point_Light_Alpha;
 
         CFG.Current.Viewport_Spot_Light_Base_Color = CFG.Default.Viewport_Spot_Light_Base_Color;
-        CFG.Current.Viewport_Splot_Light_Highlight_Color = CFG.Default.Viewport_Splot_Light_Highlight_Color;
+        CFG.Current.Viewport_Spot_Light_Highlight_Color = CFG.Default.Viewport_Spot_Light_Highlight_Color;
         CFG.Current.Viewport_Spot_Light_Alpha = CFG.Default.Viewport_Spot_Light_Alpha;
 
         CFG.Current.Viewport_Directional_Light_Base_Color = CFG.Default.Viewport_Directional_Light_Base_Color;

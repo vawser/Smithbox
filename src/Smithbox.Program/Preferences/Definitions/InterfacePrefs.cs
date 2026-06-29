@@ -193,8 +193,8 @@ public class InterfacePrefs
 
             Section = SectionCategory.General,
 
-            Title = "Enable Window Movement",
-            Description = "If enabled, the internal windows can be moved and docked freely.",
+            Title = "PREF_Interface_Allow_Window_Movement",
+            Description = "PREF_Interface_Allow_Window_Movement_TT",
 
             Draw = () => {
                 ImGui.Checkbox("##inputValue", ref CFG.Current.Interface_Allow_Window_Movement);
@@ -477,7 +477,7 @@ public class InterfacePrefs
             Section = SectionCategory.ThemeBuilder,
 
             Title = "PREF_Theme_Builder",
-            Description = "",
+            Description = "SYS_Blank",
 
             Draw = () => {
                 DPI.ApplyInputWidth();

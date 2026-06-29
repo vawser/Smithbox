@@ -1,8 +1,432 @@
 {
   "Entries": [
     {
-      "Key": "PREF_Section_Category_General",
+      "Key": "PREF_Viewport_Frame_Rate",
+      "Text": "Frame Rate"
+    },
+    {
+      "Key": "PREF_Viewport_Frame_Rate_TT",
+      "Text": "Adjusts the frame rate of the viewport."
+    },
+    {
+      "Key": "PREF_Viewport_Enable_Rendering",
+      "Text": "Enable Model Rendering"
+    },
+    {
+      "Key": "PREF_Viewport_Enable_Rendering_TT",
+      "Text": "If enabled, model rendering will occur within the viewport."
+    },
+    {
+      "Key": "PREF_Viewport_Enable_Texturing",
+      "Text": "Enable Texture Rendering"
+    },
+    {
+      "Key": "PREF_Viewport_Enable_Texturing_TT",
+      "Text": "If enabled, texture rendering will occur within the viewport."
+    },
+    {
+      "Key": "PREF_Viewport_Enable_Culling",
+      "Text": "Enable Frustum Culling"
+    },
+    {
+      "Key": "PREF_Viewport_Enable_Culling_TT",
+      "Text": "If enabled, entities outside of the camera frustum to be culled within the viewport."
+    },
+    {
+      "Key": "PREF_Viewport_Limit_Buffer_Indirect_Draw",
+      "Text": "Indirect Draw Buffer"
+    },
+    {
+      "Key": "PREF_Viewport_Limit_Buffer_Indirect_Draw_TT",
+      "Text": "This value constrains the size of the indirect draw buffer. Exceeding this value will throw an exception."
+    },
+    {
+      "Key": "PREF_Viewport_Limit_Buffer_Flver_Bone",
+      "Text": "FLVER Bone Buffer"
+    },
+    {
+      "Key": "PREF_Viewport_Limit_Buffer_Flver_Bone_TT",
+      "Text": "This value constrains the size of the FLVER bone buffer. Exceeding this value will throw an exception."
+    },
+    {
+      "Key": "PREF_Viewport_Enable_Model_Masks",
+      "Text": "Enable Model Masks"
+    },
+    {
+      "Key": "PREF_Viewport_Enable_Model_Masks_TT",
+      "Text": "If enabled, model masks will be accounted for when rendering viewport objects."
+    },
+    {
+      "Key": "PREF_Viewport_Enable_LOD_Facesets",
+      "Text": "Enable LOD Facesets"
+    },
+    {
+      "Key": "PREF_Viewport_Enable_LOD_Facesets_TT",
+      "Text": "If enabled, render all facesets for all FLVER meshes, including LOD ones."
+    },
+    {
+      "Key": "PREF_Viewport_Flat_Model_Brightness",
+      "Text": "Untextured Model Brightness"
+    },
+    {
+      "Key": "PREF_Viewport_Flat_Model_Brightness_TT",
+      "Text": "Change the brightness of untextured models."
+    },
+    {
+      "Key": "PREF_Viewport_Flat_Model_Saturation",
+      "Text": "Untextured Model Saturation"
+    },
+    {
+      "Key": "PREF_Viewport_Flat_Model_Saturation_TT",
+      "Text": "Change the saturation of untextured models."
+    },
+    {
+      "Key": "PREF_Viewport_Enable_Selection_Outline",
+      "Text": "Enable Selection Outline"
+    },
+    {
+      "Key": "PREF_Viewport_Enable_Selection_Outline_TT",
+      "Text": "If enabled, a selection outline will display alongside the selection tint on selected viewport objects.\nNote: the outline is error-prone when hundreds (or more) of viewport objects are selected."
+    },
+    {
+      "Key": "PREF_Viewport_Enable_Selection_Tint",
+      "Text": "Enable Selection Tint"
+    },
+    {
+      "Key": "PREF_Viewport_Enable_Selection_Tint_TT",
+      "Text": "If enabled, selected objects will be tinted."
+    },
+    {
+      "Key": "PREF_Viewport_Enable_Selection_Dithering",
+      "Text": "Enable Selection Dithering"
+    },
+    {
+      "Key": "PREF_Viewport_Enable_Selection_Dithering_TT",
+      "Text": "If enabled, a selected model will be dithered."
+    },
+    {
+      "Key": "PREF_Viewport_Selection_Dither_Opacity",
+      "Text": "Selection Dither Opacity"
+    },
+    {
+      "Key": "PREF_Viewport_Selection_Dither_Opacity_TT",
+      "Text": "Determines the strength of the opacity applied during dithering."
+    },
+    {
+      "Key": "PREF_Viewport_Enable_Box_Selection",
+      "Text": "Enable Box Drag Selection"
+    },
+    {
+      "Key": "PREF_Viewport_Enable_Box_Selection_TT",
+      "Text": "If enabled, you can click and drag the mouse to select multiple objects. (Ctrl: Subtract, Shift: Add)"
+    },
+    {
+      "Key": "PREF_Viewport_Frame_Distance",
+      "Text": "Frame Selection Distance"
+    },
+    {
+      "Key": "PREF_Viewport_Frame_Distance_TT",
+      "Text": "Determine the distance the camera is placed at when framing a selection in the viewport."
+    },
+    {
+      "Key": "PREF_Viewport_Frame_Offset",
+      "Text": "Frame Selection Offset"
+    },
+    {
+      "Key": "PREF_Viewport_Frame_Offset_TT",
+      "Text": "Determine the offset applied to the camera when framing a selection in the viewport."
+    },
+    {
+      "Key": "PREF_Viewport_Wireframe_Color_Variance",
+      "Text": "Wireframe Color Variance"
+    },
+    {
+      "Key": "PREF_Viewport_Wireframe_Color_Variance_TT",
+      "Text": "The variance factor when adjusting the coloring of wireframe viewport objects."
+    },
+    {
+      "Key": "PREF_Viewport_Header_General",
       "Text": "General"
+    },
+    {
+      "Key": "PREF_Viewport_Header_General_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PREF_Viewport_Header_Gizmo",
+      "Text": "Gizmo"
+    },
+    {
+      "Key": "PREF_Viewport_Header_Gizmo_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PREF_Viewport_Header_Parts",
+      "Text": "Parts"
+    },
+    {
+      "Key": "PREF_Viewport_Header_Parts_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PREF_Viewport_Header_Wireframes",
+      "Text": "Wireframes"
+    },
+    {
+      "Key": "PREF_Viewport_Header_Wireframes_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PREF_Viewport_Bg_Color",
+      "Text": "Viewport Background Color"
+    },
+    {
+      "Key": "PREF_Viewport_Selection_Outline_Color",
+      "Text": "Selection Outline Color"
+    },
+    {
+      "Key": "PREF_Viewport_Selection_Tint_Color",
+      "Text": "Selection Tint Color (Textured)"
+    },
+    {
+      "Key": "PREF_Viewport_Untextured_Selection_Tint_Color",
+      "Text": "Selection Tint Color (Untextured)"
+    },
+    {
+      "Key": "PREF_Viewport_Selection_Tint_Strength",
+      "Text": "Selection Tint Strength"
+    },
+    {
+      "Key": "PREF_Viewport_Gizmo_X_Base_Color",
+      "Text": "X-Axis: Base Color"
+    },
+    {
+      "Key": "PREF_Viewport_Gizmo_X_Highlight_Color",
+      "Text": "X-Axis: Highlight Color"
+    },
+    {
+      "Key": "PREF_Viewport_Gizmo_Y_Base_Color",
+      "Text": "Y-Axis: Base Color"
+    },
+    {
+      "Key": "PREF_Viewport_Gizmo_Y_Highlight_Color",
+      "Text": "Y-Axis: Highlight Color"
+    },
+    {
+      "Key": "PREF_Viewport_Gizmo_Z_Base_Color",
+      "Text": "Z-Axis: Base Color"
+    },
+    {
+      "Key": "PREF_Viewport_Gizmo_Z_Highlight_Color",
+      "Text": "Z-Axis: Highlight Color"
+    },
+    {
+      "Key": "PREF_Viewport_Collision_Color",
+      "Text": "Collision: Base Color"
+    },
+    {
+      "Key": "PREF_Viewport_Connect_Collision_Color",
+      "Text": "Connect Collision: Base Color"
+    },
+    {
+      "Key": "PREF_Viewport_Navmesh_Color",
+      "Text": "Navmesh: Base Color"
+    },
+    {
+      "Key": "PREF_Viewport_Navmesh_Gate_Color",
+      "Text": "Navmesh Gate: Base Color"
+    },
+    {
+      "Key": "PREF_Viewport_Box_Region_Base_Color",
+      "Text": "Box Region: Base Color"
+    },
+    {
+      "Key": "PREF_Viewport_Box_Region_Highlight_Color",
+      "Text": "Box Region: Highlight Color"
+    },
+    {
+      "Key": "PREF_Viewport_Box_Region_Alpha",
+      "Text": "Box Region: Transparency"
+    },
+    {
+      "Key": "PREF_Viewport_Cylinder_Region_Base_Color",
+      "Text": "Cylinder Region: Base Color"
+    },
+    {
+      "Key": "PREF_Viewport_Cylinder_Region_Highlight_Color",
+      "Text": "Cylinder Region: Highlight Color"
+    },
+    {
+      "Key": "PREF_Viewport_Cylinder_Region_Alpha",
+      "Text": "Cylinder Region: Transparency"
+    },
+    {
+      "Key": "PREF_Viewport_Sphere_Region_Base_Color",
+      "Text": "Sphere Region: Base Color"
+    },
+    {
+      "Key": "PREF_Viewport_Sphere_Region_Highlight_Color",
+      "Text": "Sphere Region: Highlight Color"
+    },
+    {
+      "Key": "PREF_Viewport_Sphere_Region_Alpha",
+      "Text": "Sphere Region: Transparency"
+    },
+    {
+      "Key": "PREF_Viewport_Point_Region_Base_Color",
+      "Text": "Point Region: Base Color"
+    },
+    {
+      "Key": "PREF_Viewport_Point_Region_Highlight_Color",
+      "Text": "Point Region: Highlight Color"
+    },
+    {
+      "Key": "PREF_Viewport_Point_Region_Alpha",
+      "Text": "Point Region: Transparency"
+    },
+    {
+      "Key": "PREF_Viewport_Dummy_Polygon_Base_Color",
+      "Text": "Dummy Polygon: Base Color"
+    },
+    {
+      "Key": "PREF_Viewport_Dummy_Polygon_Highlight_Color",
+      "Text": "Dummy Polygon: Highlight Color"
+    },
+    {
+      "Key": "PREF_Viewport_Dummy_Polygon_Alpha",
+      "Text": "Dummy Polygon: Transparency"
+    },
+    {
+      "Key": "PREF_Viewport_Bone_Marker_Base_Color",
+      "Text": "Bone Marker: Base Color"
+    },
+    {
+      "Key": "PREF_Viewport_Bone_Marker_Highlight_Color",
+      "Text": "Bone Marker: Highlight Color"
+    },
+    {
+      "Key": "PREF_Viewport_Bone_Marker_Alpha",
+      "Text": "Bone Marker: Transparency"
+    },
+    {
+      "Key": "PREF_Viewport_Character_Marker_Base_Color",
+      "Text": "Character Marker: Base Color"
+    },
+    {
+      "Key": "PREF_Viewport_Character_Marker_Highlight_Color",
+      "Text": "Character Marker: Highlight Color"
+    },
+    {
+      "Key": "PREF_Viewport_Character_Marker_Alpha",
+      "Text": "Character Marker: Transparency"
+    },
+    {
+      "Key": "PREF_Viewport_Object_Marker_Base_Color",
+      "Text": "Object Marker: Base Color"
+    },
+    {
+      "Key": "PREF_Viewport_Object_Marker_Highlight_Color",
+      "Text": "Object Marker: Highlight Color"
+    },
+    {
+      "Key": "PREF_Viewport_Object_Marker_Alpha",
+      "Text": "Object Marker: Transparency"
+    },
+    {
+      "Key": "PREF_Viewport_Player_Marker_Base_Color",
+      "Text": "Player Marker: Base Color"
+    },
+    {
+      "Key": "PREF_Viewport_Player_Marker_Highlight_Color",
+      "Text": "Player Marker: Highlight Color"
+    },
+    {
+      "Key": "PREF_Viewport_Player_Marker_Alpha",
+      "Text": "Player Marker: Transparency"
+    },
+    {
+      "Key": "PREF_Viewport_Other_Marker_Base_Color",
+      "Text": "Other Marker: Base Color"
+    },
+    {
+      "Key": "PREF_Viewport_Other_Marker_Highlight_Color",
+      "Text": "Other Marker: Highlight Color"
+    },
+    {
+      "Key": "PREF_Viewport_Other_Marker_Alpha",
+      "Text": "Other Marker: Transparency"
+    },
+    {
+      "Key": "PREF_Viewport_Point_Light_Base_Color",
+      "Text": "Point Light: Base Color"
+    },
+    {
+      "Key": "PREF_Viewport_Point_Light_Highlight_Color",
+      "Text": "Point Light: Highlight Color"
+    },
+    {
+      "Key": "PREF_Viewport_Point_Light_Alpha",
+      "Text": "Point Light: Transparency"
+    },
+    {
+      "Key": "PREF_Viewport_Spot_Light_Base_Color",
+      "Text": "Spot Light: Base Color"
+    },
+    {
+      "Key": "PREF_Viewport_Spot_Light_Highlight_Color",
+      "Text": "Spot Light: Highlight Color"
+    },
+    {
+      "Key": "PREF_Viewport_Spot_Light_Alpha",
+      "Text": "Spot Light: Transparency"
+    },
+    {
+      "Key": "PREF_Viewport_Directional_Light_Base_Color",
+      "Text": "Directional Light: Base Color"
+    },
+    {
+      "Key": "PREF_Viewport_Directional_Light_Highlight_Color",
+      "Text": "Directional Light: Highlight Color"
+    },
+    {
+      "Key": "PREF_Viewport_Directional_Light_Alpha",
+      "Text": "Directional Light: Transparency"
+    },
+    {
+      "Key": "PREF_Viewport_Auto_Invade_Marker_Base_Color",
+      "Text": "Invasion Spot Marker: Base Color"
+    },
+    {
+      "Key": "PREF_Viewport_Auto_Invade_Marker_Highlight_Color",
+      "Text": "Invasion Spot Marker: Highlight Color"
+    },
+    {
+      "Key": "PREF_Viewport_Level_Connector_Marker_Base_Color",
+      "Text": "Level Connector Marker: Base Color"
+    },
+    {
+      "Key": "PREF_Viewport_Level_Connector_Marker_Highlight_Color",
+      "Text": "Level Connector Marker: Highlight Color"
+    },
+    {
+      "Key": "PREF_FilterPreset_Header",
+      "Text": "Preset {0}"
+    },
+    {
+      "Key": "PREF_FilterPreset_Header_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PREF_FilerPreset_Name",
+      "Text": "Preset Name"
+    },
+    {
+      "Key": "PREF_FilterPreset_Filters_to_Set",
+      "Text": "Filters to Set"
+    },
+    {
+      "Key": "PREF_FilterPreset_Configure_Filters",
+      "Text": "Configure each of the six filter presets available."
     }
   ]
 }

@@ -536,7 +536,7 @@ public static class RenderableHelper
     public static DebugPrimitiveRenderableProxy GetSpotLightProxy(RenderScene scene)
     {
         var baseColor = CFG.Current.Viewport_Spot_Light_Base_Color;
-        var highlightColor = CFG.Current.Viewport_Splot_Light_Highlight_Color;
+        var highlightColor = CFG.Current.Viewport_Spot_Light_Highlight_Color;
         var transparency = CFG.Current.GFX_Renderable_Default_Wireframe_Alpha;
 
         DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _spotLight);
@@ -550,7 +550,7 @@ public static class RenderableHelper
     public static DebugPrimitiveRenderableProxy GetSolidSpotLightProxy(Entity obj, RenderScene scene)
     {
         var baseColor = CFG.Current.Viewport_Spot_Light_Base_Color;
-        var highlightColor = CFG.Current.Viewport_Splot_Light_Highlight_Color;
+        var highlightColor = CFG.Current.Viewport_Spot_Light_Highlight_Color;
         var transparency = CFG.Current.Viewport_Spot_Light_Alpha;
 
         DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _spotLight);

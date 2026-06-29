@@ -9,140 +9,172 @@
       "Text": "Determines which language is treated as the default for other various features."
     },
     {
-      "Key": "PREF_",
-      "Text": "xxx"
+      "Key": "PREF_TextEditor_Include_Vanilla_Cache",
+      "Text": "Enable Difference Checker"
     },
     {
-      "Key": "PREF__TT",
-      "Text": "xxx"
+      "Key": "PREF_TextEditor_Include_Vanilla_Cache_TT",
+      "Text": "If enabled, unique and modified rows will be highlighted."
     },
     {
-      "Key": "PREF_",
-      "Text": "xxx"
+      "Key": "PREF_TextEditor_Container_List_Display_Obsolete_Containers",
+      "Text": "Display Obsolete Containers"
     },
     {
-      "Key": "PREF__TT",
-      "Text": "xxx"
+      "Key": "PREF_TextEditor_Container_List_Display_Obsolete_Containers_TT",
+      "Text": "If enabled, obsolete containers will be displayed in the list. These are containers the game (for the current project type) no longer reads."
     },
     {
-      "Key": "PREF_",
-      "Text": "xxx"
+      "Key": "PREF_TextEditor_Container_List_Display_Primary_Category_Only",
+      "Text": "Display Primary Category Only"
     },
     {
-      "Key": "PREF__TT",
-      "Text": "xxx"
+      "Key": "PREF_TextEditor_Container_List_Display_Primary_Category_Only_TT",
+      "Text": "If enabled, only the primary category containers are displayed in the list."
     },
     {
-      "Key": "PREF_",
-      "Text": "xxx"
+      "Key": "PREF_TextEditor_Container_List_Hide_Unused_Containers",
+      "Text": "Hide Unused Containers"
     },
     {
-      "Key": "PREF__TT",
-      "Text": "xxx"
+      "Key": "PREF_TextEditor_Container_List_Hide_Unused_Containers_TT",
+      "Text": "If enabled, unused containers are no longer displayed in the list."
     },
     {
-      "Key": "PREF_",
-      "Text": "xxx"
+      "Key": "PREF_TextEditor_Container_List_Display_Community_Names",
+      "Text": "Display Community Names"
     },
     {
-      "Key": "PREF__TT",
-      "Text": "xxx"
+      "Key": "PREF_TextEditor_Container_List_Display_Community_Names_TT",
+      "Text": "If enabled, the community names for containers are used instead of their raw filenames."
     },
     {
-      "Key": "PREF_",
-      "Text": "xxx"
+      "Key": "PREF_TextEditor_Container_List_Display_Source_Path",
+      "Text": "Display Source Path"
     },
     {
-      "Key": "PREF__TT",
-      "Text": "xxx"
+      "Key": "PREF_TextEditor_Container_List_Display_Source_Path_TT",
+      "Text": "If enabled, the source path for a container will be displayed withi its tooltip."
     },
     {
-      "Key": "PREF_",
-      "Text": "xxx"
+      "Key": "PREF_TextEditor_Text_File_List_Grouped_Display",
+      "Text": "Enable Grouped Display"
     },
     {
-      "Key": "PREF__TT",
-      "Text": "xxx"
+      "Key": "PREF_TextEditor_Text_File_List_Grouped_Display_TT",
+      "Text": "If enabled, non-title files that belong to a entry group will be hidden."
     },
     {
-      "Key": "PREF_",
-      "Text": "xxx"
+      "Key": "PREF_TextEditor_Text_File_List_Display_ID",
+      "Text": "Display ID"
     },
     {
-      "Key": "PREF__TT",
-      "Text": "xxx"
+      "Key": "PREF_TextEditor_Text_File_List_Display_ID_TT",
+      "Text": "If enabled, the FMG ID of the text file is listed with its name."
     },
     {
-      "Key": "PREF_",
-      "Text": "xxx"
+      "Key": "PREF_TextEditor_Text_File_List_Display_Community_Names",
+      "Text": "Display Community Names"
     },
     {
-      "Key": "PREF__TT",
-      "Text": "xxx"
+      "Key": "PREF_TextEditor_Text_File_List_Display_Community_Names_TT",
+      "Text": "If enabled, the community names for a text file are displayed instead of its raw filename."
     },
     {
-      "Key": "PREF_",
-      "Text": "xxx"
+      "Key": "PREF_TextEditor_Text_Entry_List_Display_Null_Text",
+      "Text": "Display Null"
     },
     {
-      "Key": "PREF__TT",
-      "Text": "xxx"
+      "Key": "PREF_TextEditor_Text_Entry_List_Display_Null_Text_TT",
+      "Text": "If enabled, null text will be represented with the '<null>' text."
     },
     {
-      "Key": "PREF_",
-      "Text": "xxx"
+      "Key": "PREF_TextEditor_Text_Entry_List_Truncate_Name",
+      "Text": "Truncate Name"
     },
     {
-      "Key": "PREF__TT",
-      "Text": "xxx"
+      "Key": "PREF_TextEditor_Text_Entry_List_Truncate_Name_TT",
+      "Text": "If enabled, the entry name will be truncated if it is too long."
     },
     {
-      "Key": "PREF_",
-      "Text": "xxx"
+      "Key": "PREF_TextEditor_Text_Entry_List_Ignore_ID_Check",
+      "Text": "Ignore ID Check on Duplicate"
     },
     {
-      "Key": "PREF__TT",
-      "Text": "xxx"
+      "Key": "PREF_TextEditor_Text_Entry_List_Ignore_ID_Check_TT",
+      "Text": "If enabled, duplicate will produce entries with the same entry ID as the source."
     },
     {
-      "Key": "PREF_",
-      "Text": "xxx"
+      "Key": "PREF_TextEditor_Text_Entry_Enable_Grouped_Entries",
+      "Text": "Enable Grouped Entries"
     },
     {
-      "Key": "PREF__TT",
-      "Text": "xxx"
+      "Key": "PREF_TextEditor_Text_Entry_Enable_Grouped_Entries_TT",
+      "Text": "If enabled, entries that form a Title, Summary, Description and Effect group will display all entries within the Text Entry window."
     },
     {
-      "Key": "PREF_",
-      "Text": "xxx"
+      "Key": "PREF_TextEditor_Text_Entry_Allow_Duplicate_ID",
+      "Text": "Ignore ID Check"
     },
     {
-      "Key": "PREF__TT",
-      "Text": "xxx"
+      "Key": "PREF_TextEditor_Text_Entry_Allow_Duplicate_ID_TT",
+      "Text": "If enabled, an ID change that would result in a duplicate ID will be permitted."
     },
     {
-      "Key": "PREF_",
-      "Text": "xxx"
+      "Key": "PREF_TextEditor_Text_Export_Include_Grouped_Entries",
+      "Text": "Export Grouped Entries"
     },
     {
-      "Key": "PREF__TT",
-      "Text": "xxx"
+      "Key": "PREF_TextEditor_Text_Export_Include_Grouped_Entries_TT",
+      "Text": "If enabled, the other memebers of a grouped source entry will be included upon exporting."
     },
     {
-      "Key": "PREF_",
-      "Text": "xxx"
+      "Key": "PREF_TextEditor_Text_Export_Enable_Quick_Export",
+      "Text": "Enable Quick Export"
     },
     {
-      "Key": "PREF__TT",
-      "Text": "xxx"
+      "Key": "PREF_TextEditor_Text_Export_Enable_Quick_Export_TT",
+      "Text": "If enabled, the export file is automatically named instead of displaying the Export Text prompt for the user. Will overwrite the existing quick export file each time."
     },
     {
-      "Key": "PREF_",
-      "Text": "xxx"
+      "Key": "PREF_TextEditor_Language_Sync_Display_Primary_Only",
+      "Text": "Display Primary Only"
     },
     {
-      "Key": "PREF__TT",
-      "Text": "xxx"
+      "Key": "PREF_TextEditor_Language_Sync_Display_Primary_Only_TT",
+      "Text": "If enabled, only show your primary categoryin the selection dropdown."
     },
+    {
+      "Key": "PREF_TextEditor_Language_Sync_Apply_Prefix",
+      "Text": "Apply Prefix to Synced Text"
+    },
+    {
+      "Key": "PREF_TextEditor_Language_Sync_Apply_Prefix_TT",
+      "Text": "If enabled, a prefix is added to all text in the synced language container."
+    },
+    {
+      "Key": "PREF_TextEditor_Language_Sync_Prefix",
+      "Text": "Prefix to Apply"
+    },
+    {
+      "Key": "PREF_TextEditor_Language_Sync_Prefix_TT",
+      "Text": "The prefix that is added to synced text."
+    },
+    {
+      "Key": "PREF_TextEditor_Text_Clipboard_Include_ID",
+      "Text": "Include ID"
+    },
+    {
+      "Key": "PREF_TextEditor_Text_Clipboard_Include_ID_TT",
+      "Text": "If enabled, the entry ID is included in the saved clipboard text."
+    },
+    {
+      "Key": "PREF_TextEditor_Text_Clipboard_Escape_New_Lines",
+      "Text": "Escape New Lines"
+    },
+    {
+      "Key": "PREF_TextEditor_Text_Clipboard_Escape_New_Lines_TT",
+      "Text": "If enabled, new lines are escaped so the saved clipboard text does not contain actually new lines."
+    }
   ]
 }

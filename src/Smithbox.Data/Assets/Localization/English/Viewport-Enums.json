@@ -1,0 +1,72 @@
+{
+  "Entries": [
+    {
+      "Key": "VIEWPORT_ENUM_RenderFilter_Debug",
+      "Text": "Debug"
+    },
+    {
+      "Key": "VIEWPORT_ENUM_RenderFilter_Editor",
+      "Text": "Editor"
+    },
+    {
+      "Key": "VIEWPORT_ENUM_RenderFilter_MapPiece",
+      "Text": "Map Piece"
+    },
+    {
+      "Key": "VIEWPORT_ENUM_RenderFilter_Collision",
+      "Text": "Collision"
+    },
+    {
+      "Key": "VIEWPORT_ENUM_RenderFilter_Character",
+      "Text": "Character"
+    },
+    {
+      "Key": "VIEWPORT_ENUM_RenderFilter_Object",
+      "Text": "Object"
+    },
+    {
+      "Key": "VIEWPORT_ENUM_RenderFilter_Navmesh",
+      "Text": "Navmesh"
+    },
+    {
+      "Key": "VIEWPORT_ENUM_RenderFilter_Region",
+      "Text": "Region"
+    },
+    {
+      "Key": "VIEWPORT_ENUM_RenderFilter_Light",
+      "Text": "Light"
+    },
+    {
+      "Key": "VIEWPORT_ENUM_RenderFilter_SpeedTree",
+      "Text": "SpeedTree"
+    },
+    {
+      "Key": "VIEWPORT_ENUM_RenderFilter_AutoInvade",
+      "Text": "Invasion Spot"
+    },
+    {
+      "Key": "VIEWPORT_ENUM_RenderFilter_Meshes",
+      "Text": "Mesh"
+    },
+    {
+      "Key": "VIEWPORT_ENUM_RenderFilter_Dummies",
+      "Text": "Dummy Polygon"
+    },
+    {
+      "Key": "VIEWPORT_ENUM_RenderFilter_Nodes",
+      "Text": "Node"
+    },
+    {
+      "Key": "VIEWPORT_ENUM_RenderFilter_LightProbe",
+      "Text": "Light Probe"
+    },
+    {
+      "Key": "VIEWPORT_ENUM_RenderFilter_ConnectCollision",
+      "Text": "Connect Collision"
+    },
+    {
+      "Key": "VIEWPORT_ENUM_RenderFilter_All",
+      "Text": "All"
+    }
+  ]
+}

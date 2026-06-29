@@ -690,8 +690,8 @@ public class TextEditorPrefs
 
             Section = SectionCategory.General,
 
-            Title = "Enable Difference Checker",
-            Description = "If enabled, unique and modified rows will be highlighted.",
+            Title = "PREF_TextEditor_Include_Vanilla_Cache",
+            Description = "PREF_TextEditor_Include_Vanilla_Cache_TT",
 
             Draw = () => {
                 ImGui.Checkbox("##inputValue", ref CFG.Current.TextEditor_Include_Vanilla_Cache);
@@ -712,8 +712,8 @@ public class TextEditorPrefs
 
             Section = SectionCategory.TextEditor_Container_List,
 
-            Title = "Display Obsolete Containers",
-            Description = "If enabled, obsolete containers will be displayed in the list. These are containers the game (for the current project type) no longer reads.",
+            Title = "PREF_TextEditor_Container_List_Display_Obsolete_Containers",
+            Description = "PREF_TextEditor_Container_List_Display_Obsolete_Containers_TT",
 
             Draw = () => {
                 ImGui.Checkbox("##inputValue", ref CFG.Current.TextEditor_Container_List_Display_Obsolete_Containers);
@@ -730,8 +730,8 @@ public class TextEditorPrefs
 
             Section = SectionCategory.TextEditor_Container_List,
 
-            Title = "Display Primary Category Only",
-            Description = "If enabled, only the primary category containers are displayed in the list.",
+            Title = "PREF_TextEditor_Container_List_Display_Primary_Category_Only",
+            Description = "PREF_TextEditor_Container_List_Display_Primary_Category_Only_TT",
 
             Draw = () => {
                 ImGui.Checkbox("##inputValue", ref CFG.Current.TextEditor_Container_List_Display_Primary_Category_Only);
@@ -748,8 +748,8 @@ public class TextEditorPrefs
 
             Section = SectionCategory.TextEditor_Container_List,
 
-            Title = "Hide Unused Containers",
-            Description = "If enabled, unused containers are no longer displayed in the list.",
+            Title = "PREF_TextEditor_Container_List_Hide_Unused_Containers",
+            Description = "PREF_TextEditor_Container_List_Hide_Unused_Containers_TT",
 
             Draw = () => {
                 ImGui.Checkbox("##inputValue", ref CFG.Current.TextEditor_Container_List_Hide_Unused_Containers);
@@ -766,8 +766,8 @@ public class TextEditorPrefs
 
             Section = SectionCategory.TextEditor_Container_List,
 
-            Title = "Display Community Names",
-            Description = "If enabled, the community names for containers are used instead of their raw filenames.",
+            Title = "PREF_TextEditor_Container_List_Display_Community_Names",
+            Description = "PREF_TextEditor_Container_List_Display_Community_Names_TT",
 
             Draw = () => {
                 ImGui.Checkbox("##inputValue", ref CFG.Current.TextEditor_Container_List_Display_Community_Names);
@@ -784,8 +784,8 @@ public class TextEditorPrefs
 
             Section = SectionCategory.TextEditor_Container_List,
 
-            Title = "Display Source Path",
-            Description = "If enabled, the source path for a container will be displayed withi its tooltip.",
+            Title = "PREF_TextEditor_Container_List_Display_Source_Path",
+            Description = "PREF_TextEditor_Container_List_Display_Source_Path_TT",
 
             Draw = () => {
                 ImGui.Checkbox("##inputValue", ref CFG.Current.TextEditor_Container_List_Display_Source_Path);
@@ -806,8 +806,8 @@ public class TextEditorPrefs
 
             Section = SectionCategory.TextEditor_Text_File_List,
 
-            Title = "Enable Grouped Display",
-            Description = "If enabled, non-title files that belong to a entry group will be hidden.",
+            Title = "PREF_TextEditor_Text_File_List_Grouped_Display",
+            Description = "PREF_TextEditor_Text_File_List_Grouped_Display_TT",
 
             Draw = () => {
                 ImGui.Checkbox("##inputValue", ref CFG.Current.TextEditor_Text_File_List_Grouped_Display);
@@ -824,8 +824,8 @@ public class TextEditorPrefs
 
             Section = SectionCategory.TextEditor_Text_File_List,
 
-            Title = "Display ID",
-            Description = "If enabled, the FMG ID of the text file is listed with its name.",
+            Title = "PREF_TextEditor_Text_File_List_Display_ID",
+            Description = "PREF_TextEditor_Text_File_List_Display_ID_TT",
 
             Draw = () => {
                 ImGui.Checkbox("##inputValue", ref CFG.Current.TextEditor_Text_File_List_Display_ID);
@@ -842,8 +842,8 @@ public class TextEditorPrefs
 
             Section = SectionCategory.TextEditor_Text_File_List,
 
-            Title = "Display Community Names",
-            Description = "If enabled, the community names for a text file are displayed instead of its raw filename.",
+            Title = "PREF_TextEditor_Text_File_List_Display_Community_Names",
+            Description = "PREF_TextEditor_Text_File_List_Display_Community_Names_TT",
 
             Draw = () => {
                 ImGui.Checkbox("##inputValue2", ref CFG.Current.TextEditor_Text_File_List_Display_Community_Names);
@@ -863,8 +863,8 @@ public class TextEditorPrefs
 
             Section = SectionCategory.TextEditor_Text_Entry_List,
 
-            Title = "Display Null",
-            Description = "If enabled, null text will be represented with the '<null>' text.",
+            Title = "PREF_TextEditor_Text_Entry_List_Display_Null_Text",
+            Description = "PREF_TextEditor_Text_Entry_List_Display_Null_Text_TT",
 
             Draw = () =>
             {
@@ -882,8 +882,8 @@ public class TextEditorPrefs
 
             Section = SectionCategory.TextEditor_Text_Entry_List,
 
-            Title = "Truncate Name",
-            Description = "If enabled, the entry name will be truncated if it is too long.",
+            Title = "PREF_TextEditor_Text_Entry_List_Truncate_Name",
+            Description = "PREF_TextEditor_Text_Entry_List_Truncate_Name_TT",
 
             Draw = () =>
             {
@@ -901,8 +901,8 @@ public class TextEditorPrefs
 
             Section = SectionCategory.TextEditor_Text_Entry_List,
 
-            Title = "Ignore ID Check on Duplicate",
-            Description = "If enabled, duplicate will produce entries with the same entry ID as the source.",
+            Title = "PREF_TextEditor_Text_Entry_List_Ignore_ID_Check",
+            Description = "PREF_TextEditor_Text_Entry_List_Ignore_ID_Check_TT",
 
             Draw = () =>
             {
@@ -924,8 +924,8 @@ public class TextEditorPrefs
 
             Section = SectionCategory.TextEditor_Text_Entries,
 
-            Title = "Enable Grouped Entries",
-            Description = "If enabled, entries that form a Title, Summary, Description and Effect group will display all entries within the Text Entry window.",
+            Title = "PREF_TextEditor_Text_Entry_Enable_Grouped_Entries",
+            Description = "PREF_TextEditor_Text_Entry_Enable_Grouped_Entries_TT",
 
             Draw = () =>
             {
@@ -943,8 +943,8 @@ public class TextEditorPrefs
 
             Section = SectionCategory.TextEditor_Text_Entries,
 
-            Title = "Ignore ID Check",
-            Description = "If enabled, an ID change that would result in a duplicate ID will be permitted.",
+            Title = "PREF_TextEditor_Text_Entry_Allow_Duplicate_ID",
+            Description = "PREF_TextEditor_Text_Entry_Allow_Duplicate_ID_TT",
 
             Draw = () =>
             {
@@ -966,8 +966,8 @@ public class TextEditorPrefs
 
             Section = SectionCategory.TextEditor_Text_Export,
 
-            Title = "Export Grouped Entries",
-            Description = "If enabled, the other memebers of a grouped source entry will be included upon exporting.",
+            Title = "PREF_TextEditor_Text_Export_Include_Grouped_Entries",
+            Description = "PREF_TextEditor_Text_Export_Include_Grouped_Entries_TT",
 
             Draw = () =>
             {
@@ -985,8 +985,8 @@ public class TextEditorPrefs
 
             Section = SectionCategory.TextEditor_Text_Export,
 
-            Title = "Enable Quick Export",
-            Description = "If enabled, the export file is automatically named instead of displaying the Export Text prompt for the user. Will overwrite the existing quick export file each time.",
+            Title = "PREF_TextEditor_Text_Export_Enable_Quick_Export",
+            Description = "PREF_TextEditor_Text_Export_Enable_Quick_Export_TT",
 
             Draw = () =>
             {
@@ -1008,8 +1008,8 @@ public class TextEditorPrefs
 
             Section = SectionCategory.TextEditor_Language_Sync,
 
-            Title = "Display Primary Only",
-            Description = "If enabled, only show your primary categoryin the selection dropdown.",
+            Title = "PREF_TextEditor_Language_Sync_Display_Primary_Only",
+            Description = "PREF_TextEditor_Language_Sync_Display_Primary_Only_TT",
 
             Draw = () =>
             {
@@ -1027,8 +1027,8 @@ public class TextEditorPrefs
 
             Section = SectionCategory.TextEditor_Language_Sync,
 
-            Title = "Apply Prefix to Synced Text",
-            Description = "If enabled, a prefix is added to all text in the synced language container.",
+            Title = "PREF_TextEditor_Language_Sync_Apply_Prefix",
+            Description = "PREF_TextEditor_Language_Sync_Apply_Prefix_TT",
 
             Draw = () =>
             {
@@ -1047,8 +1047,8 @@ public class TextEditorPrefs
 
             Section = SectionCategory.TextEditor_Language_Sync,
 
-            Title = "Prefix to Apply",
-            Description = "The prefix that is added to synced text.",
+            Title = "PREF_TextEditor_Language_Sync_Prefix",
+            Description = "PREF_TextEditor_Language_Sync_Prefix_TT",
 
             Draw = () =>
             {
@@ -1071,8 +1071,8 @@ public class TextEditorPrefs
 
             Section = SectionCategory.TextEditor_Text_Clipboard,
 
-            Title = "Include ID",
-            Description = "If enabled, the entry ID is included in the saved clipboard text.",
+            Title = "PREF_TextEditor_Text_Clipboard_Include_ID",
+            Description = "PREF_TextEditor_Text_Clipboard_Include_ID_TT",
 
             Draw = () =>
             {
@@ -1090,8 +1090,8 @@ public class TextEditorPrefs
 
             Section = SectionCategory.TextEditor_Text_Clipboard,
 
-            Title = "Escape New Lines",
-            Description = "If enabled, new lines are escaped so the saved clipboard text does not contain actually new lines.",
+            Title = "PREF_TextEditor_Text_Clipboard_Escape_New_Lines",
+            Description = "PREF_TextEditor_Text_Clipboard_Escape_New_Lines_TT",
 
             Draw = () =>
             {

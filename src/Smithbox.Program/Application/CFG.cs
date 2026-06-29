@@ -1067,7 +1067,7 @@ public class CFG
     public float Viewport_Point_Light_Alpha = 75.0f;
 
     public Vector3 Viewport_Spot_Light_Base_Color = Utils.GetDecimalColor(Color.Goldenrod);
-    public Vector3 Viewport_Splot_Light_Highlight_Color = Utils.GetDecimalColor(Color.Violet);
+    public Vector3 Viewport_Spot_Light_Highlight_Color = Utils.GetDecimalColor(Color.Violet);
     public float Viewport_Spot_Light_Alpha = 75.0f;
 
     public Vector3 Viewport_Directional_Light_Base_Color = Utils.GetDecimalColor(Color.Cyan);

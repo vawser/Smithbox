@@ -49,6 +49,10 @@
       "Text": "[System]"
     },
     {
+      "Key": "SYS_Blank",
+      "Text": ""
+    },
+    {
       "Key": "SYS_CFG_Failed_To_Deserialize",
       "Text": "Failed to deserialize CFG file: {0}"
     },

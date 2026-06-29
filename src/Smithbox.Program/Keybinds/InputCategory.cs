@@ -36,7 +36,7 @@ public enum InputCategory
     [Display(Name = "INPUT_CATEGORY_Material_Editor")]
     MaterialEditor,
 
-    [Display(Name = "INPUT_CATEGORY_Texture_Viewerr")]
+    [Display(Name = "INPUT_CATEGORY_Texture_Viewer")]
     TextureViewer,
 
     [Display(Name = "INPUT_CATEGORY_Developer")]
