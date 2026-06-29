@@ -184,7 +184,7 @@ public class TranslateAction
         UIHelper.Spacer();
         UIHelper.SimpleHeader("Options", "");
 
-        ImGui.Checkbox("Display position increment type", ref CFG.Current.Viewport_DisplayPositionIncrement);
+        ImGui.Checkbox("Display position increment type", ref CFG.Current.Viewport_DisplayTranslationIncrement);
         UIHelper.Tooltip("Display the current position increment type you are using in the information panel.");
 
         ImGui.Checkbox("Enable discrete movement", ref CFG.Current.MapEditor_Selection_Position_Increment_DiscreteApplication);

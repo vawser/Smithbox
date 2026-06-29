@@ -1107,7 +1107,7 @@ public class CFG
 
     public bool Viewport_DisplayControls = true;
     public bool Viewport_DisplayRotationIncrement = true;
-    public bool Viewport_DisplayPositionIncrement = true;
+    public bool Viewport_DisplayTranslationIncrement = true;
 
     public bool Viewport_Enable_Box_Selection = true;
     public bool Viewport_Enable_Box_Selection_MapPiece = true;

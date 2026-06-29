@@ -67,6 +67,18 @@
     {
       "Key": "VIEWPORT_ENUM_RenderFilter_All",
       "Text": "All"
+    },
+    {
+      "Key": "VIEWPORT_ENUM_ViewMode_Perspective",
+      "Text": "Perspective"
+    },
+    {
+      "Key": "VIEWPORT_ENUM_ViewMode_Orthographic",
+      "Text": "Orthographic"
+    },
+    {
+      "Key": "VIEWPORT_ENUM_ViewMode_Oblique",
+      "Text": "Oblique"
     }
   ]
 }

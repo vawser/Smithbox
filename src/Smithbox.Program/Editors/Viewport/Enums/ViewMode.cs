@@ -4,10 +4,10 @@ namespace StudioCore.Editors.Viewport;
 
 public enum ViewMode
 {
-    [Display(Name = "Perspective")]
+    [Display(Name = "VIEWPORT_ENUM_ViewMode_Perspective")]
     Perspective,
-    [Display(Name = "Orthographic")]
+    [Display(Name = "VIEWPORT_ENUM_ViewMode_Orthographic")]
     Orthographic,
-    [Display(Name = "Oblique")]
+    [Display(Name = "VIEWPORT_ENUM_ViewMode_Oblique")]
     Oblique
 }

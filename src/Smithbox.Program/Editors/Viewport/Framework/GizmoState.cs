@@ -17,15 +17,15 @@ public static class GizmoState
 
     public static void OnMenu(VulkanViewport viewport)
     {
-        if (ImGui.MenuItem("Display"))
+        if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Gizmo_Menu_Action_Display")}##displayGizmos"))
         {
             CFG.Current.Viewport_Render_Gizmos = !CFG.Current.Viewport_Render_Gizmos;
             viewport.DelayPicking();
         }
         UIHelper.ShowActiveStatus(CFG.Current.Viewport_Render_Gizmos);
-        UIHelper.Tooltip("Toggle the display of gizmos.");
+        UIHelper.Tooltip(LOC.Get("VIEWPORT_Gizmo_Menu_Action_Display_TT"));
 
-        ImGui.SliderFloat("Size##gizmoScale", ref CFG.Current.Viewport_Gizmo_Size_Distance_Scale, 0.01f, 5.0f, ImGuiSliderFlags.AlwaysClamp);
+        ImGui.SliderFloat($"{LOC.Get("VIEWPORT_Gizmo_Menu_Input_Size")}##gizmoScale", ref CFG.Current.Viewport_Gizmo_Size_Distance_Scale, 0.01f, 5.0f, ImGuiSliderFlags.AlwaysClamp);
 
         if (ImGui.IsItemDeactivatedAfterEdit())
         {
@@ -39,66 +39,66 @@ public static class GizmoState
             }
         }
 
-        if (ImGui.BeginMenu("Mode"))
+        if (ImGui.BeginMenu($"{LOC.Get("VIEWPORT_Gizmo_Menu_Header_Mode")}##modeMenuHeader"))
         {
-            if (ImGui.MenuItem("Translate", InputManager.GetHint(KeybindID.Cycle_Gizmo_Translation_Mode)))
+            if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Gizmo_Menu_Action_Translate")}##translateAction", InputManager.GetHint(KeybindID.Cycle_Gizmo_Translation_Mode)))
             {
                 Mode = GizmosMode.Translate;
                 viewport.DelayPicking();
             }
-            UIHelper.Tooltip($"Set the gizmo to Translation mode.");
+            UIHelper.Tooltip(LOC.Get("VIEWPORT_Gizmo_Menu_Action_Translate_TT"));
 
-            if (ImGui.MenuItem("Rotate", InputManager.GetHint(KeybindID.Cycle_Gizmo_Rotation_Mode)))
+            if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Gizmo_Menu_Action_Rotate")}##rotateAction", InputManager.GetHint(KeybindID.Cycle_Gizmo_Rotation_Mode)))
             {
                 Mode = GizmosMode.Rotate;
                 viewport.DelayPicking();
             }
-            UIHelper.Tooltip($"Set the gizmo to Rotation mode.");
+            UIHelper.Tooltip(LOC.Get("VIEWPORT_Gizmo_Menu_Action_Rotate_TT"));
 
-            if (ImGui.MenuItem("Scale", InputManager.GetHint(KeybindID.Cycle_Gizmo_Scale_Mode)))
+            if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Gizmo_Menu_Action_Scale")}##scaleAction", InputManager.GetHint(KeybindID.Cycle_Gizmo_Scale_Mode)))
             {
                 Mode = GizmosMode.Scale;
                 viewport.DelayPicking();
             }
-            UIHelper.Tooltip($"Set the gizmo to Scale mode.");
+            UIHelper.Tooltip(LOC.Get("VIEWPORT_Gizmo_Menu_Action_Scale_TT"));
 
             ImGui.EndMenu();
         }
 
-        if (ImGui.BeginMenu("Space"))
+        if (ImGui.BeginMenu($"{LOC.Get("VIEWPORT_Gizmo_Menu_Header_Space")}##spaceMenuHeader"))
         {
-            if (ImGui.MenuItem("Local", InputManager.GetHint(KeybindID.Cycle_Gizmo_Space_Mode)))
+            if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Gizmo_Menu_Action_Space_Local")}##spaceLocalAction", InputManager.GetHint(KeybindID.Cycle_Gizmo_Space_Mode)))
             {
                 Space = GizmosSpace.Local;
                 viewport.DelayPicking();
             }
-            UIHelper.Tooltip($"Place the gizmo origin based on the selection's local position.");
+            UIHelper.Tooltip(LOC.Get("VIEWPORT_Gizmo_Menu_Action_Space_Local_TT"));
 
-            if (ImGui.MenuItem("World", InputManager.GetHint(KeybindID.Cycle_Gizmo_Space_Mode)))
+            if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Gizmo_Menu_Action_Space_World")}##spaceWorldAction", InputManager.GetHint(KeybindID.Cycle_Gizmo_Space_Mode)))
             {
                 Space = GizmosSpace.World;
                 viewport.DelayPicking();
             }
-            UIHelper.Tooltip($"Place the gizmo origin based on the selection's world position.");
+            UIHelper.Tooltip(LOC.Get("VIEWPORT_Gizmo_Menu_Action_Space_World_TT"));
 
             ImGui.EndMenu();
         }
 
-        if (ImGui.BeginMenu("Origin"))
+        if (ImGui.BeginMenu($"{LOC.Get("VIEWPORT_Gizmo_Menu_Header_Origin")}##originMenuHeader"))
         {
-            if (ImGui.MenuItem("World", InputManager.GetHint(KeybindID.Cycle_Gizmo_Origin_Mode)))
+            if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Gizmo_Menu_Action_Origin_World")}##originWorldAction", InputManager.GetHint(KeybindID.Cycle_Gizmo_Origin_Mode)))
             {
                 Origin = GizmosOrigin.World;
                 viewport.DelayPicking();
             }
-            UIHelper.Tooltip($"Orient the gizmo origin based on the world position.");
+            UIHelper.Tooltip(LOC.Get("VIEWPORT_Gizmo_Menu_Action_Origin_World_TT"));
 
-            if (ImGui.MenuItem("Bounding Box", InputManager.GetHint(KeybindID.Cycle_Gizmo_Origin_Mode)))
+            if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Gizmo_Menu_Action_Origin_Bounding_Box")}##originBoundingBoxAction", InputManager.GetHint(KeybindID.Cycle_Gizmo_Origin_Mode)))
             {
                 Origin = GizmosOrigin.BoundingBox;
                 viewport.DelayPicking();
             }
-            UIHelper.Tooltip($"Orient the gizmo origin based on the bounding box.");
+            UIHelper.Tooltip(LOC.Get("VIEWPORT_Gizmo_Menu_Action_Origin_Bounding_Box_TT"));
 
             ImGui.EndMenu();
         }

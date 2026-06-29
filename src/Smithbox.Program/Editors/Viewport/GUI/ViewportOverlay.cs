@@ -19,21 +19,12 @@ public class ViewportOverlay
         {
             if (Parent.ViewportCamera.ViewMode is ViewMode.Perspective)
             {
-                ImGui.Text("Holding click on the viewport will enable camera controls.");
-                ImGui.Text("Use WASD to navigate.");
-                ImGui.Text("Use right click to rotate the camera.");
-                ImGui.Text("Hold Shift to temporarily speed up and Ctrl to temporarily slow down.");
-                ImGui.Text("Scroll the mouse wheel to adjust overall speed.");
-                ImGui.Text("Hold Ctrl, Alt and left click to make a box selection.");
+                ImGui.Text(LOC.Get("VIEWPORT_Overlay_Perspective_Controls"));
             }
 
             if (Parent.ViewportCamera.ViewMode is ViewMode.Orthographic or ViewMode.Oblique)
             {
-                ImGui.Text("Holding click on the viewport will enable camera controls.");
-                ImGui.Text("Pan the screen with the middle mouse button.");
-                ImGui.Text("Use right click to rotate the camera.");
-                ImGui.Text("Hold right click and scroll the mouse wheel to adjust the zoom.");
-                ImGui.Text("Hold Ctrl, Alt and left click to make a box selection.");
+                ImGui.Text(LOC.Get("VIEWPORT_Overlay_OrthoOblique_Controls"));
             }
         }
 
@@ -44,7 +35,7 @@ public class ViewportOverlay
             {
                 mapUniverse.View.RotateAction.DisplayViewportHint();
             }
-            if (CFG.Current.Viewport_DisplayPositionIncrement)
+            if (CFG.Current.Viewport_DisplayTranslationIncrement)
             {
                 mapUniverse.View.TranslateAction.DisplayViewportHint();
             }
@@ -53,12 +44,15 @@ public class ViewportOverlay
         // Profiling
         if (CFG.Current.Viewport_Display_Profiling)
         {
-            ImGui.Text($@"Cull time: {Parent.RenderScene.OctreeCullTime} ms");
-            ImGui.Text($@"Work creation time: {Parent.RenderScene.CPUDrawTime} ms");
-            ImGui.Text($@"Scene Render CPU time: {Parent.ViewPipeline.CPURenderTime} ms");
-            ImGui.Text($@"Visible objects: {Parent.RenderScene.RenderObjectCount}");
-            ImGui.Text($@"Vertex Buffers Size: {Renderer.SceneRenderer.GeometryBufferAllocator.TotalVertexFootprint / 1024 / 1024} MB");
-            ImGui.Text($@"Index Buffers Size: {Renderer.SceneRenderer.GeometryBufferAllocator.TotalIndexFootprint / 1024 / 1024} MB");
+            var vertexBufferSize = Renderer.SceneRenderer.GeometryBufferAllocator.TotalVertexFootprint / 1024 / 1024;
+            var indexBufferSize = Renderer.SceneRenderer.GeometryBufferAllocator.TotalIndexFootprint / 1024 / 1024;
+
+            ImGui.Text(LOC.Get("VIEWPORT_Overlay_Cull_Time", Parent.RenderScene.OctreeCullTime));
+            ImGui.Text(LOC.Get("VIEWPORT_Overlay_Work_Creation_Time", Parent.RenderScene.CPUDrawTime));
+            ImGui.Text(LOC.Get("VIEWPORT_Overlay_Scene_Render_CPU_Time", Parent.ViewPipeline.CPURenderTime));
+            ImGui.Text(LOC.Get("VIEWPORT_Overlay_Visible_Objects", Parent.RenderScene.RenderObjectCount));
+            ImGui.Text(LOC.Get("VIEWPORT_Overlay_Vertex_Buffers_Size", vertexBufferSize));
+            ImGui.Text(LOC.Get("VIEWPORT_Overlay_Index_Buffers_Size", indexBufferSize));
         }
     }
 }

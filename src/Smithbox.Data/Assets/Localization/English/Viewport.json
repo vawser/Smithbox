@@ -1,0 +1,476 @@
+{
+  "Entries": [
+    {
+      "Key": "VIEWPORT_",
+      "Text": ""
+    },
+    {
+      "Key": "VIEWPORT_Disabled_Window",
+      "Text": "Disabled..."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Scene_Light_Direction",
+      "Text": "Light Direction"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Scene_Direct_Light_Mult",
+      "Text": "Direct Light Multiplier"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Scene_Indirect_Light_Mult",
+      "Text": "Indirect Light Multiplier"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Scene_Light_Brightness",
+      "Text": "Brightness"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Header_Overlay",
+      "Text": "Overlay"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Toggle_Controls",
+      "Text": "Controls"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Toggle_Controls_TT",
+      "Text": "Toggle the display of the Control instructions in the top-left corner."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Toggle_Profiling",
+      "Text": "Profiling"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Toggle_Profiling_TT",
+      "Text": "Toggle the display of the Profiling information in the top-left corner."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Toggle_Translation_Increment",
+      "Text": "Translation Increment"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Toggle_Translation_Increment_TT",
+      "Text": "Toggle the display of the current Translation Increment in the top-left corner."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Toggle_Rotation_Increment",
+      "Text": "Rotation Increment"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Toggle_Rotation_Increment_TT",
+      "Text": "Toggle the display of the current Rotation Increment in the top-left corner."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Toggle_Viewport_Tooltip",
+      "Text": "Viewport Tooltip"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Toggle_Viewport_Tooltip_TT",
+      "Text": "Toggle the display of the viewport tooltip on hover."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Toggle_Placement_Orb",
+      "Text": "Placement Orb"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Toggle_Placement_Orb_TT",
+      "Text": "Toggle the display of the placement orb within the viewport."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Header_Camera",
+      "Text": "Camera"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_View_Mode",
+      "Text": "View Mode"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_View_Mode_TT",
+      "Text": ""
+    },
+    {
+      "Key": "VIEWPORT_Menubar_View_Parameters",
+      "Text": "View Parameters"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_View_Parameters_TT",
+      "Text": ""
+    },
+    {
+      "Key": "VIEWPORT_Menubar_View_Near_Clip",
+      "Text": "Near Clip"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_View_Near_Clip_TT",
+      "Text": "Set the minimum distance at which entities will be rendered within the viewport."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_View_Far_Clip",
+      "Text": "Far Clip"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_View_Far_Clip_TT",
+      "Text": "Set the maximum distance at which entities will be rendered within the viewport."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Camera_FOV",
+      "Text": "Camera Field of View"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Camera_FOV_TT",
+      "Text": "Set the field of view used by the camera."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Camera_Sensitivity",
+      "Text": "Camera Sensitivity"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Camera_Sensitivity_TT",
+      "Text": "Mouse sensitivty for turning the camera."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Camera_Speed_Slow",
+      "Text": "Camera Speed (Slow Mode)"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Camera_Speed_Slow_TT",
+      "Text": "Set the speed at which the camera will move when the Left or Right Shift key is pressed whilst moving."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Camera_Speed_Normal",
+      "Text": "Camera Speed (Default Mode)"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Camera_Speed_Normal_TT",
+      "Text": "Set the speed at which the camera will move whilst moving normally."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Camera_Speed_Fast",
+      "Text": "Camera Speed (Fast Mode)"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Camera_Speed_Fast_TT",
+      "Text": "Set the speed at which the camera will move when the Left or Right Control key is pressed whilst moving."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Ortho_Near_Clip",
+      "Text": "Near Clip"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Ortho_Near_Clip_TT",
+      "Text": "Set the minimum distance at which entities will be rendered within the viewport."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Ortho_Far_Clip",
+      "Text": "Far Clip"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Ortho_Far_Clip_TT",
+      "Text": "Set the maximum distance at which entities will be rendered within the viewport."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Ortho_Pan_Sensitivity",
+      "Text": "Pan Sensitivity"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Ortho_Pan_Sensitivity_TT",
+      "Text": "The sensitivity of the mouse panning."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Ortho_Size",
+      "Text": "Size"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Ortho_Size_TT",
+      "Text": "Set the height of the view in world units."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Oblique_Angle",
+      "Text": "Angle"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Oblique_Angle_TT",
+      "Text": "Set the angle of the view."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Oblique_Scaling",
+      "Text": "Scaling"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Oblique_Scaling_TT",
+      "Text": "Set the scaling of the view."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Action_Reset_Camera_Settings",
+      "Text": "Reset Camera Settings"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Header_Render",
+      "Text": "Render"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Header_Scene_Lighting",
+      "Text": "Scene Lighting"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Header_Environment_Map",
+      "Text": "Environment Map"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Action_Default",
+      "Text": "Default"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Header_Gizmos",
+      "Text": "Gizmos"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Header_Settings",
+      "Text": "Settings"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Header_Quick_View",
+      "Text": "Viewport Tooltip"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Header_Display_Nodes",
+      "Text": "Display Nodes"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Header_Placement_Orb",
+      "Text": "Placement Orb"
+    },
+    {
+      "Key": "VIEWPORT_Gizmo_Menu_Action_Display",
+      "Text": "Display"
+    },
+    {
+      "Key": "VIEWPORT_Gizmo_Menu_Action_Display_TT",
+      "Text": "Toggle the display of gizmos."
+    },
+    {
+      "Key": "VIEWPORT_Gizmo_Menu_Input_Size",
+      "Text": "Size"
+    },
+    {
+      "Key": "VIEWPORT_Gizmo_Menu_Header_Mode",
+      "Text": "Mode"
+    },
+    {
+      "Key": "VIEWPORT_Gizmo_Menu_Action_Translate",
+      "Text": "Translate"
+    },
+    {
+      "Key": "VIEWPORT_Gizmo_Menu_Action_Translate_TT",
+      "Text": "Set the gizmo to Translation mode."
+    },
+    {
+      "Key": "VIEWPORT_Gizmo_Menu_Action_Rotate",
+      "Text": "Rotate"
+    },
+    {
+      "Key": "VIEWPORT_Gizmo_Menu_Action_Rotate_TT",
+      "Text": "Set the gizmo to Rotation mode."
+    },
+    {
+      "Key": "VIEWPORT_Gizmo_Menu_Action_Scale",
+      "Text": "Scale"
+    },
+    {
+      "Key": "VIEWPORT_Gizmo_Menu_Action_Scale_TT",
+      "Text": "Set the gizmo to Scale mode."
+    },
+    {
+      "Key": "VIEWPORT_Gizmo_Menu_Header_Space",
+      "Text": "Space"
+    },
+    {
+      "Key": "VIEWPORT_Gizmo_Menu_Action_Space_Local",
+      "Text": "Local"
+    },
+    {
+      "Key": "VIEWPORT_Gizmo_Menu_Action_Space_Local_TT",
+      "Text": "Place the gizmo origin based on the selection's local position."
+    },
+    {
+      "Key": "VIEWPORT_Gizmo_Menu_Action_Space_World",
+      "Text": "World"
+    },
+    {
+      "Key": "VIEWPORT_Gizmo_Menu_Action_Space_World_TT",
+      "Text": "Place the gizmo origin based on the selection's world position."
+    },
+    {
+      "Key": "VIEWPORT_Gizmo_Menu_Header_Origin",
+      "Text": "Origin"
+    },
+    {
+      "Key": "VIEWPORT_Gizmo_Menu_Action_Origin_World",
+      "Text": "World"
+    },
+    {
+      "Key": "VIEWPORT_Gizmo_Menu_Action_Origin_World_TT",
+      "Text": "Orient the gizmo origin based on the world position."
+    },
+    {
+      "Key": "VIEWPORT_Gizmo_Menu_Action_Origin_Bounding_Box",
+      "Text": "Bounding Box"
+    },
+    {
+      "Key": "VIEWPORT_Gizmo_Menu_Action_Origin_Bounding_Box_TT",
+      "Text": "Orient the gizmo origin based on the bounding box."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Enable_Rendering",
+      "Text": "Enable Rendering"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Enable_Rendering_TT",
+      "Text": "Whether to render objects in the viewport."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Enable_Texturing",
+      "Text": "Enable Texturing"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Enable_Texturing_TT",
+      "Text": "Whether to render textures in the viewport."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Enable_Culling",
+      "Text": "Enable Culling"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Enable_Culling_TT",
+      "Text": "Whether to cull objects in the viewport outside of the camera frustum."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Enable_Model_Masks",
+      "Text": "Enable Model Masks"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Enable_Model_Masks_TT",
+      "Text": "Whether to attempt to hide model masks based on entity NpcParam flags."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Orb_Distance",
+      "Text": "Orb Distance"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Orb_Distance_TT",
+      "Text": "Determines the distance in front of the camera the placement orb is."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Dummy_Size",
+      "Text": "Dummy Size"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Dummy_Size_TT",
+      "Text": "Determines the radius of the dummy polygon mesh."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Node_Size",
+      "Text": "Node Size"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Node_Size_TT",
+      "Text": "Determines the radius of the node mesh."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Model_Load_Header",
+      "Text": "Model Load"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Model_Load_Header_TT",
+      "Text": "Toggle which models are loaded during a map load."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_ML_Map_Pieces",
+      "Text": "Map Pieces"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_ML_Objects",
+      "Text": "Objects"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_ML_Assets",
+      "Text": "Assets"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_ML_Characters",
+      "Text": "Characters"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_ML_Collisions",
+      "Text": "Collisions"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_ML_Navmeshes",
+      "Text": "Navmeshes"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Texture_Load_Header",
+      "Text": "Texture Load"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Texture_Load_Header_TT",
+      "Text": "Toggle which textures are loaded during a map load."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_TL_Map_Pieces",
+      "Text": "Map Pieces"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_TL_Objects",
+      "Text": "Objects"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_TL_Assets",
+      "Text": "Assets"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_TL_Characters",
+      "Text": "Characters"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_TL_Misc",
+      "Text": "Miscellaneous"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_ML_Parts",
+      "Text": "Parts"
+    },
+    {
+      "Key": "VIEWPORT_Overlay_Perspective_Controls",
+      "Text": "Holding click on the viewport will enable camera controls.\nUse WASD to navigate.\nUse right click to rotate the camera.\nHold Shift to temporarily speed up and Ctrl to temporarily slow down.\nScroll the mouse wheel to adjust overall speed.\nHold Ctrl, Alt and left click to make a box selection."
+    },
+    {
+      "Key": "VIEWPORT_Overlay_OrthoOblique_Controls",
+      "Text": "Holding click on the viewport will enable camera controls.\nPan the screen with the middle mouse button.\nUse right click to rotate the camera.\nHold right click and scroll the mouse wheel to adjust the zoom.\nHold Ctrl, Alt and left click to make a box selection."
+    },
+    {
+      "Key": "VIEWPORT_Overlay_Cull_Time",
+      "Text": "Cull time: {0} ms"
+    },
+    {
+      "Key": "VIEWPORT_Overlay_Work_Creation_Time",
+      "Text": "Work creation time: {0} ms"
+    },
+    {
+      "Key": "VIEWPORT_Overlay_Scene_Render_CPU_Time",
+      "Text": "Scene Render CPU time: {0} ms"
+    },
+    {
+      "Key": "VIEWPORT_Overlay_Visible_Objects",
+      "Text": "Visible objects: {0}"
+    },
+    {
+      "Key": "VIEWPORT_Overlay_Vertex_Buffers_Size",
+      "Text": "Vertex Buffers Size: {0} MB"
+    },
+    {
+      "Key": "VIEWPORT_Overlay_Index_Buffers_Size",
+      "Text": "Index Buffers Size: {0} MB"
+    }
+  ]
+}

@@ -44,13 +44,14 @@ public class NullViewport : IViewport
 
     public void Display()
     {
-        if (ImGui.Begin($@"Viewport##{ID}", ImGuiWindowFlags.NoBackground | ImGuiWindowFlags.NoNav))
+        if (ImGui.Begin($@"{LOC.Get("VIEWPORT_Window_Name")}###{ID}", ImGuiWindowFlags.NoBackground | ImGuiWindowFlags.NoNav))
         {
             Vector2 p = ImGui.GetWindowPos();
             Vector2 s = ImGui.GetWindowSize();
             var newvp = new Rectangle((int)p.X, (int)p.Y + 3, (int)s.X, (int)s.Y - 3);
             ResizeViewport(null, newvp);
-            ImGui.Text("Disabled...");
+
+            ImGui.Text(LOC.Get("VIEWPORT_Disabled_Window"));
         }
 
         ImGui.End();

@@ -257,7 +257,7 @@ public class VulkanViewport : IViewport
 
         ImGui.PushStyleColor(ImGuiCol.WindowBg, new Vector4(0, 0, 0, 0)); // Transparent
 
-        if (ImGui.Begin($@"Viewport##{ID}", flags))
+        if (ImGui.Begin($@"{LOC.Get("VIEWPORT_Window_Name")}###{ID}", flags))
         {
             Visible = true;
 
