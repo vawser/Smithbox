@@ -3,87 +3,108 @@
     "Languages": [
         {
             "Abbreviation": "dandk",
-            "Language": "Danish"
+            "Language": "Danish",
+            "LanguageKey": "TEXT_Language_Danish"
         },
         {
             "Abbreviation": "deude",
-            "Language": "German"
+            "Language": "German",
+            "LanguageKey": "TEXT_Language_German"
         },
         {
             "Abbreviation": "enggb",
-            "Language": "English (UK)"
+            "Language": "English (UK)",
+            "LanguageKey": "TEXT_Language_EnglishUK"
         },
         {
             "Abbreviation": "engus",
-            "Language": "English (US)"
+            "Language": "English (US)",
+            "LanguageKey": "TEXT_Language_EnglishUS"
         },
         {
             "Abbreviation": "finfi",
-            "Language": "Finnish"
+            "Language": "Finnish",
+            "LanguageKey": "TEXT_Language_Finnish"
         },
         {
             "Abbreviation": "frafr",
-            "Language": "French"
+            "Language": "French",
+            "LanguageKey": "TEXT_Language_French"
         },
         {
             "Abbreviation": "itait",
-            "Language": "Italian"
+            "Language": "Italian",
+            "LanguageKey": "TEXT_Language_Italian"
         },
         {
             "Abbreviation": "jpnjp",
-            "Language": "Japanese"
+            "Language": "Japanese",
+            "LanguageKey": "TEXT_Language_Japanese"
         },
         {
             "Abbreviation": "korkr",
-            "Language": "Korean"
+            "Language": "Korean",
+            "LanguageKey": "TEXT_Language_Korean"
         },
         {
             "Abbreviation": "nldnl",
-            "Language": "Dutch"
+            "Language": "Dutch",
+            "LanguageKey": "TEXT_Language_Dutch"
         },
         {
             "Abbreviation": "norno",
-            "Language": "Norwegian"
+            "Language": "Norwegian",
+            "LanguageKey": "TEXT_Language_Norwegian"
         },
         {
             "Abbreviation": "polpl",
-            "Language": "Polish"
+            "Language": "Polish",
+            "LanguageKey": "TEXT_Language_Polish"
         },
         {
             "Abbreviation": "porbr",
-            "Language": "Portuguese (Latin)"
+            "Language": "Portuguese (Latin)",
+            "LanguageKey": "TEXT_Language_PortugueseLatin"
         },
         {
             "Abbreviation": "porpt",
-            "Language": "Portuguese"
+            "Language": "Portuguese",
+            "LanguageKey": "TEXT_Language_Portuguese"
         },
         {
             "Abbreviation": "rusru",
-            "Language": "Russian"
+            "Language": "Russian",
+            "LanguageKey": "TEXT_Language_Russian"
         },
         {
             "Abbreviation": "spaar",
-            "Language": "Spanish (Latin)"
+            "Language": "Spanish (Latin)",
+            "LanguageKey": "TEXT_Language_SpanishLatin"
         },
         {
             "Abbreviation": "spaes",
-            "Language": "Spanish"
+            "Language": "Spanish",
+            "LanguageKey": "TEXT_Language_Spanish"
         },
         {
             "Abbreviation": "swese",
-            "Language": "Swedish"
+            "Language": "Swedish",
+            "LanguageKey": "TEXT_Language_Swedish"
         },
         {
             "Abbreviation": "turtr",
-            "Language": "Turkish"
+            "Language": "Turkish",
+            "LanguageKey": "TEXT_Language_Turkish"
         },
         {
             "Abbreviation": "zhocn",
-            "Language": "Simplified Chinese"
+            "Language": "Simplified Chinese",
+            "LanguageKey": "TEXT_Language_SimplifiedChinese"
         },
         {
             "Abbreviation": "zhotw",
-            "Language": "Traditional Chinese"
+            "Language": "Traditional Chinese",
+            "LanguageKey": "TEXT_Language_TraditionalChinese"
         }
     ],
     "Containers": [

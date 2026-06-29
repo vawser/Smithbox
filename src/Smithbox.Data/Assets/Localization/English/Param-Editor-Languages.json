@@ -1,0 +1,104 @@
+{
+  "Entries": [
+    {
+      "Key": "PARAM_Language_English",
+      "Text": "English"
+    },
+    {
+      "Key": "PARAM_Language_French",
+      "Text": "French"
+    },
+    {
+      "Key": "PARAM_Language_German",
+      "Text": "German"
+    },
+    {
+      "Key": "PARAM_Language_Italian",
+      "Text": "Italian"
+    },
+    {
+      "Key": "PARAM_Language_Japanese",
+      "Text": "Japanese"
+    },
+    {
+      "Key": "PARAM_Language_Korean",
+      "Text": "Korean"
+    },
+    {
+      "Key": "PARAM_Language_Polish",
+      "Text": "Polish"
+    },
+    {
+      "Key": "PARAM_Language_Russian",
+      "Text": "Russian"
+    },
+    {
+      "Key": "PARAM_Language_Spanish",
+      "Text": "Spanish"
+    },
+    {
+      "Key": "PARAM_Language_SpanishLatin",
+      "Text": "Spanish (Latin)"
+    },
+    {
+      "Key": "PARAM_Language_TraditionalChinese",
+      "Text": "Traditional Chinese"
+    },
+    {
+      "Key": "PARAM_Language_SimplifiedChinese",
+      "Text": "Simplified Chinese"
+    },
+    {
+      "Key": "PARAM_Language_Thai",
+      "Text": "Thai"
+    },
+    {
+      "Key": "PARAM_Language_Arabic",
+      "Text": "Arabic"
+    },
+    {
+      "Key": "PARAM_Language_Portuguese",
+      "Text": "Portuguese"
+    },
+    {
+      "Key": "PARAM_Language_PortugueseLatin",
+      "Text": "Portuguese (Latin)"
+    },
+    {
+      "Key": "PARAM_Language_SpanishNeutral",
+      "Text": "Spanish (Neutral)"
+    },
+    {
+      "Key": "PARAM_Language_EnglishUK",
+      "Text": "English (UK)"
+    },
+    {
+      "Key": "PARAM_Language_EnglishUS",
+      "Text": "English (US)"
+    },
+    {
+      "Key": "PARAM_Language_Danish",
+      "Text": "Danish"
+    },
+    {
+      "Key": "PARAM_Language_Finnish",
+      "Text": "Finnish"
+    },
+    {
+      "Key": "PARAM_Language_Dutch",
+      "Text": "Dutch"
+    },
+    {
+      "Key": "PARAM_Language_Norwegian",
+      "Text": "Norwegian"
+    },
+    {
+      "Key": "PARAM_Language_Swedish",
+      "Text": "Swedish"
+    },
+    {
+      "Key": "PARAM_Language_Turkish",
+      "Text": "Turkish"
+    }
+  ]
+}

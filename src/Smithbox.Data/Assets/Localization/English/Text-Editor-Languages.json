@@ -1,0 +1,104 @@
+{
+  "Entries": [
+    {
+      "Key": "TEXT_Language_English",
+      "Text": "English"
+    },
+    {
+      "Key": "TEXT_Language_French",
+      "Text": "French"
+    },
+    {
+      "Key": "TEXT_Language_German",
+      "Text": "German"
+    },
+    {
+      "Key": "TEXT_Language_Italian",
+      "Text": "Italian"
+    },
+    {
+      "Key": "TEXT_Language_Japanese",
+      "Text": "Japanese"
+    },
+    {
+      "Key": "TEXT_Language_Korean",
+      "Text": "Korean"
+    },
+    {
+      "Key": "TEXT_Language_Polish",
+      "Text": "Polish"
+    },
+    {
+      "Key": "TEXT_Language_Russian",
+      "Text": "Russian"
+    },
+    {
+      "Key": "TEXT_Language_Spanish",
+      "Text": "Spanish"
+    },
+    {
+      "Key": "TEXT_Language_SpanishLatin",
+      "Text": "Spanish (Latin)"
+    },
+    {
+      "Key": "TEXT_Language_TraditionalChinese",
+      "Text": "Traditional Chinese"
+    },
+    {
+      "Key": "TEXT_Language_SimplifiedChinese",
+      "Text": "Simplified Chinese"
+    },
+    {
+      "Key": "TEXT_Language_Thai",
+      "Text": "Thai"
+    },
+    {
+      "Key": "TEXT_Language_Arabic",
+      "Text": "Arabic"
+    },
+    {
+      "Key": "TEXT_Language_Portuguese",
+      "Text": "Portuguese"
+    },
+    {
+      "Key": "TEXT_Language_PortugueseLatin",
+      "Text": "Portuguese (Latin)"
+    },
+    {
+      "Key": "TEXT_Language_SpanishNeutral",
+      "Text": "Spanish (Neutral)"
+    },
+    {
+      "Key": "TEXT_Language_EnglishUK",
+      "Text": "English (UK)"
+    },
+    {
+      "Key": "TEXT_Language_EnglishUS",
+      "Text": "English (US)"
+    },
+    {
+      "Key": "TEXT_Language_Danish",
+      "Text": "Danish"
+    },
+    {
+      "Key": "TEXT_Language_Finnish",
+      "Text": "Finnish"
+    },
+    {
+      "Key": "TEXT_Language_Dutch",
+      "Text": "Dutch"
+    },
+    {
+      "Key": "TEXT_Language_Norwegian",
+      "Text": "Norwegian"
+    },
+    {
+      "Key": "TEXT_Language_Swedish",
+      "Text": "Swedish"
+    },
+    {
+      "Key": "TEXT_Language_Turkish",
+      "Text": "Turkish"
+    }
+  ]
+}

@@ -33,8 +33,8 @@ public class TextEditorPrefs
 
             Section = SectionCategory.General,
 
-            Title = "Primary Language",
-            Description = "Determines which language is treated as the default for other various features.",
+            Title = "PREF_TextEditor_Primary_Language",
+            Description = "PREF_TextEditor_Primary_Language_TT",
 
             Draw = () => {
                 var curProject = Smithbox.Orchestrator.SelectedProject;
@@ -50,14 +50,18 @@ public class TextEditorPrefs
 
                 var languages = curProject.Handler.TextData.FmgDescriptors.Languages;
 
-                var curLanguage = CFG.Current.TextEditor_Primary_Language_DES;
+                var curLanguage = languages.FirstOrDefault(e => e.Language == CFG.Current.TextEditor_Primary_Language_DES);
+
+                var previewName = LOC.Get(curLanguage.LanguageKey);
 
                 DPI.ApplyInputWidth();
-                if (ImGui.BeginCombo("##inputValue", curLanguage))
+                if (ImGui.BeginCombo("##inputValue", previewName))
                 {
                     foreach (var entry in languages)
                     {
-                        if (ImGui.Selectable(entry.Language))
+                        var displayName = LOC.Get(entry.LanguageKey);
+
+                        if (ImGui.Selectable(displayName))
                         {
                             CFG.Current.TextEditor_Primary_Language_DES = entry.Language;
 
@@ -90,8 +94,8 @@ public class TextEditorPrefs
 
             Section = SectionCategory.General,
 
-            Title = "Primary Language",
-            Description = "Determines which language is treated as the default for other various features.",
+            Title = "PREF_TextEditor_Primary_Language",
+            Description = "PREF_TextEditor_Primary_Language_TT",
 
             Draw = () => {
                 var curProject = Smithbox.Orchestrator.SelectedProject;
@@ -107,14 +111,18 @@ public class TextEditorPrefs
 
                 var languages = curProject.Handler.TextData.FmgDescriptors.Languages;
 
-                var curLanguage = CFG.Current.TextEditor_Primary_Language_DS1;
+                var curLanguage = languages.FirstOrDefault(e => e.Language == CFG.Current.TextEditor_Primary_Language_DS1);
+
+                var previewName = LOC.Get(curLanguage.LanguageKey);
 
                 DPI.ApplyInputWidth();
-                if (ImGui.BeginCombo("##inputValue", curLanguage))
+                if (ImGui.BeginCombo("##inputValue", previewName))
                 {
                     foreach (var entry in languages)
                     {
-                        if (ImGui.Selectable(entry.Language))
+                        var displayName = LOC.Get(entry.LanguageKey);
+
+                        if (ImGui.Selectable(displayName))
                         {
                             CFG.Current.TextEditor_Primary_Language_DS1 = entry.Language;
 
@@ -146,8 +154,8 @@ public class TextEditorPrefs
 
             Section = SectionCategory.General,
 
-            Title = "Primary Language",
-            Description = "Determines which language is treated as the default for other various features.",
+            Title = "PREF_TextEditor_Primary_Language",
+            Description = "PREF_TextEditor_Primary_Language_TT",
 
             Draw = () => {
                 var curProject = Smithbox.Orchestrator.SelectedProject;
@@ -163,14 +171,18 @@ public class TextEditorPrefs
 
                 var languages = curProject.Handler.TextData.FmgDescriptors.Languages;
 
-                var curLanguage = CFG.Current.TextEditor_Primary_Language_DS1R;
+                var curLanguage = languages.FirstOrDefault(e => e.Language == CFG.Current.TextEditor_Primary_Language_DS1R);
+
+                var previewName = LOC.Get(curLanguage.LanguageKey);
 
                 DPI.ApplyInputWidth();
-                if (ImGui.BeginCombo("##inputValue", curLanguage))
+                if (ImGui.BeginCombo("##inputValue", previewName))
                 {
                     foreach (var entry in languages)
                     {
-                        if (ImGui.Selectable(entry.Language))
+                        var displayName = LOC.Get(entry.LanguageKey);
+
+                        if (ImGui.Selectable(displayName))
                         {
                             CFG.Current.TextEditor_Primary_Language_DS1R = entry.Language;
 
@@ -202,8 +214,8 @@ public class TextEditorPrefs
 
             Section = SectionCategory.General,
 
-            Title = "Primary Language",
-            Description = "Determines which language is treated as the default for other various features.",
+            Title = "PREF_TextEditor_Primary_Language",
+            Description = "PREF_TextEditor_Primary_Language_TT",
 
             Draw = () => {
                 var curProject = Smithbox.Orchestrator.SelectedProject;
@@ -219,14 +231,18 @@ public class TextEditorPrefs
 
                 var languages = curProject.Handler.TextData.FmgDescriptors.Languages;
 
-                var curLanguage = CFG.Current.TextEditor_Primary_Language_DS2;
+                var curLanguage = languages.FirstOrDefault(e => e.Language == CFG.Current.TextEditor_Primary_Language_DS2);
+
+                var previewName = LOC.Get(curLanguage.LanguageKey);
 
                 DPI.ApplyInputWidth();
-                if (ImGui.BeginCombo("##inputValue", curLanguage))
+                if (ImGui.BeginCombo("##inputValue", previewName))
                 {
                     foreach (var entry in languages)
                     {
-                        if (ImGui.Selectable(entry.Language))
+                        var displayName = LOC.Get(entry.LanguageKey);
+
+                        if (ImGui.Selectable(displayName))
                         {
                             CFG.Current.TextEditor_Primary_Language_DS2 = entry.Language;
 
@@ -258,8 +274,8 @@ public class TextEditorPrefs
 
             Section = SectionCategory.General,
 
-            Title = "Primary Language",
-            Description = "Determines which language is treated as the default for other various features.",
+            Title = "PREF_TextEditor_Primary_Language",
+            Description = "PREF_TextEditor_Primary_Language_TT",
 
             Draw = () => {
                 var curProject = Smithbox.Orchestrator.SelectedProject;
@@ -275,14 +291,18 @@ public class TextEditorPrefs
 
                 var languages = curProject.Handler.TextData.FmgDescriptors.Languages;
 
-                var curLanguage = CFG.Current.TextEditor_Primary_Language_DS2S;
+                var curLanguage = languages.FirstOrDefault(e => e.Language == CFG.Current.TextEditor_Primary_Language_DS2S);
+
+                var previewName = LOC.Get(curLanguage.LanguageKey);
 
                 DPI.ApplyInputWidth();
-                if (ImGui.BeginCombo("##inputValue", curLanguage))
+                if (ImGui.BeginCombo("##inputValue", previewName))
                 {
                     foreach (var entry in languages)
                     {
-                        if (ImGui.Selectable(entry.Language))
+                        var displayName = LOC.Get(entry.LanguageKey);
+
+                        if (ImGui.Selectable(displayName))
                         {
                             CFG.Current.TextEditor_Primary_Language_DS2S = entry.Language;
 
@@ -314,8 +334,8 @@ public class TextEditorPrefs
 
             Section = SectionCategory.General,
 
-            Title = "Primary Language",
-            Description = "Determines which language is treated as the default for other various features.",
+            Title = "PREF_TextEditor_Primary_Language",
+            Description = "PREF_TextEditor_Primary_Language_TT",
 
             Draw = () => {
                 var curProject = Smithbox.Orchestrator.SelectedProject;
@@ -331,14 +351,18 @@ public class TextEditorPrefs
 
                 var languages = curProject.Handler.TextData.FmgDescriptors.Languages;
 
-                var curLanguage = CFG.Current.TextEditor_Primary_Language_BB;
+                var curLanguage = languages.FirstOrDefault(e => e.Language == CFG.Current.TextEditor_Primary_Language_BB);
+
+                var previewName = LOC.Get(curLanguage.LanguageKey);
 
                 DPI.ApplyInputWidth();
-                if (ImGui.BeginCombo("##inputValue", curLanguage))
+                if (ImGui.BeginCombo("##inputValue", previewName))
                 {
                     foreach (var entry in languages)
                     {
-                        if (ImGui.Selectable(entry.Language))
+                        var displayName = LOC.Get(entry.LanguageKey);
+
+                        if (ImGui.Selectable(displayName))
                         {
                             CFG.Current.TextEditor_Primary_Language_BB = entry.Language;
 
@@ -370,8 +394,8 @@ public class TextEditorPrefs
 
             Section = SectionCategory.General,
 
-            Title = "Primary Language",
-            Description = "Determines which language is treated as the default for other various features.",
+            Title = "PREF_TextEditor_Primary_Language",
+            Description = "PREF_TextEditor_Primary_Language_TT",
 
             Draw = () => {
                 var curProject = Smithbox.Orchestrator.SelectedProject;
@@ -387,14 +411,18 @@ public class TextEditorPrefs
 
                 var languages = curProject.Handler.TextData.FmgDescriptors.Languages;
 
-                var curLanguage = CFG.Current.TextEditor_Primary_Language_DS3;
+                var curLanguage = languages.FirstOrDefault(e => e.Language == CFG.Current.TextEditor_Primary_Language_DS3);
+
+                var previewName = LOC.Get(curLanguage.LanguageKey);
 
                 DPI.ApplyInputWidth();
-                if (ImGui.BeginCombo("##inputValue", curLanguage))
+                if (ImGui.BeginCombo("##inputValue", previewName))
                 {
                     foreach (var entry in languages)
                     {
-                        if (ImGui.Selectable(entry.Language))
+                        var displayName = LOC.Get(entry.LanguageKey);
+
+                        if (ImGui.Selectable(displayName))
                         {
                             CFG.Current.TextEditor_Primary_Language_DS3 = entry.Language;
 
@@ -426,8 +454,8 @@ public class TextEditorPrefs
 
             Section = SectionCategory.General,
 
-            Title = "Primary Language",
-            Description = "Determines which language is treated as the default for other various features.",
+            Title = "PREF_TextEditor_Primary_Language",
+            Description = "PREF_TextEditor_Primary_Language_TT",
 
             Draw = () => {
                 var curProject = Smithbox.Orchestrator.SelectedProject;
@@ -443,14 +471,18 @@ public class TextEditorPrefs
 
                 var languages = curProject.Handler.TextData.FmgDescriptors.Languages;
 
-                var curLanguage = CFG.Current.TextEditor_Primary_Language_SDT;
+                var curLanguage = languages.FirstOrDefault(e => e.Language == CFG.Current.TextEditor_Primary_Language_SDT);
+
+                var previewName = LOC.Get(curLanguage.LanguageKey);
 
                 DPI.ApplyInputWidth();
-                if (ImGui.BeginCombo("##inputValue", curLanguage))
+                if (ImGui.BeginCombo("##inputValue", previewName))
                 {
                     foreach (var entry in languages)
                     {
-                        if (ImGui.Selectable(entry.Language))
+                        var displayName = LOC.Get(entry.LanguageKey);
+
+                        if (ImGui.Selectable(displayName))
                         {
                             CFG.Current.TextEditor_Primary_Language_SDT = entry.Language;
 
@@ -482,8 +514,8 @@ public class TextEditorPrefs
 
             Section = SectionCategory.General,
 
-            Title = "Primary Language",
-            Description = "Determines which language is treated as the default for other various features.",
+            Title = "PREF_TextEditor_Primary_Language",
+            Description = "PREF_TextEditor_Primary_Language_TT",
 
             Draw = () => {
                 var curProject = Smithbox.Orchestrator.SelectedProject;
@@ -499,14 +531,18 @@ public class TextEditorPrefs
 
                 var languages = curProject.Handler.TextData.FmgDescriptors.Languages;
 
-                var curLanguage = CFG.Current.TextEditor_Primary_Language_ER;
+                var curLanguage = languages.FirstOrDefault(e => e.Language == CFG.Current.TextEditor_Primary_Language_ER);
+
+                var previewName = LOC.Get(curLanguage.LanguageKey);
 
                 DPI.ApplyInputWidth();
-                if (ImGui.BeginCombo("##inputValue", curLanguage))
+                if (ImGui.BeginCombo("##inputValue", previewName))
                 {
                     foreach (var entry in languages)
                     {
-                        if (ImGui.Selectable(entry.Language))
+                        var displayName = LOC.Get(entry.LanguageKey);
+
+                        if (ImGui.Selectable(displayName))
                         {
                             CFG.Current.TextEditor_Primary_Language_ER = entry.Language;
 
@@ -538,8 +574,8 @@ public class TextEditorPrefs
 
             Section = SectionCategory.General,
 
-            Title = "Primary Language",
-            Description = "Determines which language is treated as the default for other various features.",
+            Title = "PREF_TextEditor_Primary_Language",
+            Description = "PREF_TextEditor_Primary_Language_TT",
 
             Draw = () => {
                 var curProject = Smithbox.Orchestrator.SelectedProject;
@@ -555,14 +591,18 @@ public class TextEditorPrefs
 
                 var languages = curProject.Handler.TextData.FmgDescriptors.Languages;
 
-                var curLanguage = CFG.Current.TextEditor_Primary_Language_AC6;
+                var curLanguage = languages.FirstOrDefault(e => e.Language == CFG.Current.TextEditor_Primary_Language_AC6);
+
+                var previewName = LOC.Get(curLanguage.LanguageKey);
 
                 DPI.ApplyInputWidth();
-                if (ImGui.BeginCombo("##inputValue", curLanguage))
+                if (ImGui.BeginCombo("##inputValue", previewName))
                 {
                     foreach (var entry in languages)
                     {
-                        if (ImGui.Selectable(entry.Language))
+                        var displayName = LOC.Get(entry.LanguageKey);
+
+                        if (ImGui.Selectable(displayName))
                         {
                             CFG.Current.TextEditor_Primary_Language_AC6 = entry.Language;
 
@@ -594,8 +634,8 @@ public class TextEditorPrefs
 
             Section = SectionCategory.General,
 
-            Title = "Primary Language",
-            Description = "Determines which language is treated as the default for other various features.",
+            Title = "PREF_TextEditor_Primary_Language",
+            Description = "PREF_TextEditor_Primary_Language_TT",
 
             Draw = () => {
                 var curProject = Smithbox.Orchestrator.SelectedProject;
@@ -611,14 +651,18 @@ public class TextEditorPrefs
 
                 var languages = curProject.Handler.TextData.FmgDescriptors.Languages;
 
-                var curLanguage = CFG.Current.TextEditor_Primary_Language_NR;
+                var curLanguage = languages.FirstOrDefault(e => e.Language == CFG.Current.TextEditor_Primary_Language_NR);
+
+                var previewName = LOC.Get(curLanguage.LanguageKey);
 
                 DPI.ApplyInputWidth();
-                if (ImGui.BeginCombo("##inputValue", curLanguage))
+                if (ImGui.BeginCombo("##inputValue", previewName))
                 {
                     foreach (var entry in languages)
                     {
-                        if (ImGui.Selectable(entry.Language))
+                        var displayName = LOC.Get(entry.LanguageKey);
+
+                        if (ImGui.Selectable(displayName))
                         {
                             CFG.Current.TextEditor_Primary_Language_NR = entry.Language;
 

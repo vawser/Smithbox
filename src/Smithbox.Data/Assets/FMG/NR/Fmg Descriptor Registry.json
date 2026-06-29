@@ -3,63 +3,78 @@
     "Languages": [
         {
             "Abbreviation": "engus",
-            "Language": "English"
+            "Language": "English",
+            "LanguageKey": "TEXT_Language_English"
         },
         {
             "Abbreviation": "frafr",
-            "Language": "French"
+            "Language": "French",
+            "LanguageKey": "TEXT_Language_French"
         },
         {
             "Abbreviation": "deude",
-            "Language": "German"
+            "Language": "German",
+            "LanguageKey": "TEXT_Language_German"
         },
         {
             "Abbreviation": "itait",
-            "Language": "Italian"
+            "Language": "Italian",
+            "LanguageKey": "TEXT_Language_Italian"
         },
         {
             "Abbreviation": "jpnjp",
-            "Language": "Japanese"
+            "Language": "Japanese",
+            "LanguageKey": "TEXT_Language_Japanese"
         },
         {
             "Abbreviation": "korkr",
-            "Language": "Korean"
+            "Language": "Korean",
+            "LanguageKey": "TEXT_Language_Korean"
         },
         {
             "Abbreviation": "polpl",
-            "Language": "Polish"
+            "Language": "Polish",
+            "LanguageKey": "TEXT_Language_Polish"
         },
         {
             "Abbreviation": "rusru",
-            "Language": "Russian"
+            "Language": "Russian",
+            "LanguageKey": "TEXT_Language_Russian"
         },
         {
             "Abbreviation": "spaes",
-            "Language": "Spanish"
+            "Language": "Spanish",
+            "LanguageKey": "TEXT_Language_Spanish"
         },
         {
             "Abbreviation": "spaar",
-            "Language": "Spanish (Latin)"
+            "Language": "Spanish (Latin)",
+            "LanguageKey": "TEXT_Language_SpanishLatin"
         },
         {
             "Abbreviation": "zhotw",
-            "Language": "Traditional Chinese"
+            "Language": "Traditional Chinese",
+            "LanguageKey": "TEXT_Language_TraditionalChinese"
         },
         {
             "Abbreviation": "zhocn",
-            "Language": "Simplified Chinese"
+            "Language": "Simplified Chinese",
+            "LanguageKey": "TEXT_Language_SimplifiedChinese"
         },
         {
             "Abbreviation": "thath",
-            "Language": "Thai"
+            "Language": "Thai",
+            "LanguageKey": "TEXT_Language_Thai"
         },
         {
             "Abbreviation": "porbr",
-            "Language": "Portuguese (Latin)"
+            "Language": "Portuguese (Latin)",
+            "LanguageKey": "TEXT_Language_PortugueseLatin"
         },
         {
             "Abbreviation": "araae",
-            "Language": "Arabic"
+            "Language": "Arabic",
+            "LanguageKey": "TEXT_Language_Arabic"
         }
     ],
     "Containers": [

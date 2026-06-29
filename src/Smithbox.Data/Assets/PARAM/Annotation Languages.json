@@ -1,6 +1,7 @@
 {
   "Languages": [
         {
+          "Key": "PARAM_Language_English",
           "Name": "English",
           "Folder": "English"
         }

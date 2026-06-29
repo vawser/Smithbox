@@ -46,8 +46,11 @@ public class LanguageDescriptor
     // The folder abbreviation this language is found in
     public string Abbreviation { get; set; }
 
-    // The display name for the language
+    // The name of the language
     public string Language { get; set; }
+
+    // Localization key for the language display name
+    public string LanguageKey { get; set; }
 }
 
 public class FmgContainerDescriptor

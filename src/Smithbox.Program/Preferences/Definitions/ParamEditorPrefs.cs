@@ -43,12 +43,18 @@ public class ParamEditorPrefs
 
                 var languages = curProject.Handler.ParamData.ParamAnnotationLanguages;
 
+                var curLanguage = languages.Languages.FirstOrDefault(e => e.Name == CFG.Current.ParamEditor_Annotation_Language);
+
+                var previewName = LOC.Get(curLanguage.Key);
+
                 DPI.ApplyInputWidth();
-                if (ImGui.BeginCombo("##inputValue", CFG.Current.ParamEditor_Annotation_Language))
+                if (ImGui.BeginCombo("##inputValue", previewName))
                 {
                     foreach (var entry in languages.Languages)
                     {
-                        if (ImGui.Selectable(entry.Name))
+                        var displayName = LOC.Get(entry.Key);
+
+                        if (ImGui.Selectable(displayName))
                         {
                             CFG.Current.ParamEditor_Annotation_Language = entry.Name;
                         }
@@ -83,12 +89,18 @@ public class ParamEditorPrefs
 
                 var languages = curProject.Handler.ParamData.RowImportLanguages;
 
+                var curLanguage = languages.Options.FirstOrDefault(e => e.Name == CFG.Current.ParamEditor_Import_Language);
+
+                var previewName = LOC.Get(curLanguage.Key);
+
                 DPI.ApplyInputWidth();
-                if (ImGui.BeginCombo("##inputValue", CFG.Current.ParamEditor_Import_Language))
+                if (ImGui.BeginCombo("##inputValue", previewName))
                 {
                     foreach (var entry in languages.Options)
                     {
-                        if (ImGui.Selectable(entry.Name))
+                        var displayName = LOC.Get(entry.Key);
+
+                        if (ImGui.Selectable(displayName))
                         {
                             CFG.Current.ParamEditor_Import_Language = entry.Name;
                         }

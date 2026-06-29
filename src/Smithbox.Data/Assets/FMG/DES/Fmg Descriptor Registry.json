@@ -3,7 +3,8 @@
     "Languages": [
         {
             "Abbreviation": "",
-            "Language": "English"
+            "Language": "English",
+            "LanguageKey": "TEXT_Language_English"
         }
     ],
     "Containers": [

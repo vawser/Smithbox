@@ -1,12 +1,12 @@
 {
   "Entries": [
     {
-      "Key": "PREF_",
-      "Text": "xxx"
+      "Key": "PREF_TextEditor_Primary_Language",
+      "Text": "Primary Language"
     },
     {
-      "Key": "PREF__TT",
-      "Text": "xxx"
+      "Key": "PREF_TextEditor_Primary_Language_TT",
+      "Text": "Determines which language is treated as the default for other various features."
     },
     {
       "Key": "PREF_",

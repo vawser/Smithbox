@@ -12,6 +12,7 @@ public class ParamImportLanguages
 
 public class ParamImportLanguageEntry
 {
+    public string Key { get; set; }
     public string Name { get; set; }
     public string Folder { get; set; }
 }

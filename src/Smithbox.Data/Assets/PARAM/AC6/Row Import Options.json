@@ -1,10 +1,12 @@
 {
   "Options": [
         {
+          "Key": "PARAM_Language_English",
           "Name": "English",
           "Folder": "English"
         },
         {
+          "Key": "PARAM_Language_Japanse",
           "Name": "Japanese",
           "Folder": "Japanese"
         }

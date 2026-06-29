@@ -83,7 +83,12 @@ public static class LOC
     public static string Get(string locKey, params object[] parameters)
     {
         if (!Localization.TryGetValue(locKey, out var template))
+        {
+#if DEBUG
+            Smithbox.LogError<Smithbox>($"Missing Localization: {locKey}");
+#endif
             return locKey;
+        }
 
         return parameters.Length == 0
             ? template
