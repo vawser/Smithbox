@@ -50,7 +50,7 @@ namespace SoulsFormats
             /// <summary>
             /// Unknown.
             /// </summary>
-            public bool Flag1 { get; set; }
+            public bool FollowAttachBone { get; set; }
 
             /// <summary>
             /// If false, the upward vector is not read.
@@ -88,7 +88,7 @@ namespace SoulsFormats
                 ParentBoneIndex = dummy.ParentBoneIndex;
                 AttachBoneIndex = dummy.AttachBoneIndex;
                 Color = dummy.Color;
-                Flag1 = dummy.Flag1;
+                FollowAttachBone = dummy.FollowAttachBone;
                 UseUpwardVector = dummy.UseUpwardVector;
                 Unk30 = dummy.Unk30;
                 Unk34 = dummy.Unk34;
@@ -110,7 +110,7 @@ namespace SoulsFormats
                 ParentBoneIndex = br.ReadInt16();
                 Upward = br.ReadVector3();
                 AttachBoneIndex = br.ReadInt16();
-                Flag1 = br.ReadBoolean();
+                FollowAttachBone = br.ReadBoolean();
                 UseUpwardVector = br.ReadBoolean();
                 Unk30 = br.ReadInt32();
                 Unk34 = br.ReadInt32();
@@ -133,7 +133,7 @@ namespace SoulsFormats
                 bw.WriteInt16(ParentBoneIndex);
                 bw.WriteVector3(Upward);
                 bw.WriteInt16(AttachBoneIndex);
-                bw.WriteBoolean(Flag1);
+                bw.WriteBoolean(FollowAttachBone);
                 bw.WriteBoolean(UseUpwardVector);
                 bw.WriteInt32(Unk30);
                 bw.WriteInt32(Unk34);
