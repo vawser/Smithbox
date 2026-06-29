@@ -113,6 +113,7 @@ public class LocalizationLanguages
 
 public class LocalizationLanguageEntry
 {
+    public string Key { get; set; }
     public string Name { get; set; }
     public string Folder { get; set; }
 }

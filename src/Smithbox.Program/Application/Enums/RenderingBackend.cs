@@ -9,8 +9,8 @@ namespace StudioCore.Application;
 
 public enum RenderingBackend
 {
-    [Display(Name = "OpenGL")]
+    [Display(Name = "SYS_ENUM_Rendering_OpenGL")]
     OpenGL,
-    [Display(Name = "Vulkan")]
+    [Display(Name = "SYS_ENUM_Rendering_Vulkan")]
     Vulkan
 }

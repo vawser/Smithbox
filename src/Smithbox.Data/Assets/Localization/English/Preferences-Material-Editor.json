@@ -1,8 +1,12 @@
 {
   "Entries": [
     {
-      "Key": "PREF_Section_Category_General",
-      "Text": "General"
+      "Key": "PREF_MaterialEditor_Properties_Display_Community_Names",
+      "Text": "Display Community Names"
+    },
+    {
+      "Key": "PREF_MaterialEditor_Properties_Display_Community_Names_TT",
+      "Text": "If enabled, display community names in the properties list."
     }
   ]
 }

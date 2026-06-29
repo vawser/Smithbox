@@ -1,8 +1,228 @@
 {
   "Entries": [
     {
-      "Key": "PREF_Section_Category_General",
-      "Text": "General"
+      "Key": "PREF_MapEditor_SkipHavokLoad",
+      "Text": "Skip Havok Collision / Navmesh Loading"
+    },
+    {
+      "Key": "PREF_MapEditor_SkipHavokLoad_TT",
+      "Text": "If enabled, the havok collisions and navmeshes will not be loaded."
+    },
+    {
+      "Key": "PREF_MapEditor_Map_List_Enable_Load_on_Double_Click",
+      "Text": "Enable Load on Double-click"
+    },
+    {
+      "Key": "PREF_MapEditor_Map_List_Enable_Load_on_Double_Click_TT",
+      "Text": "If enabled, double-clicking a map in the map list will load it."
+    },
+    {
+      "Key": "PREF_MapEditor_Map_List_Display_Map_Aliases",
+      "Text": "Display Map Aliases"
+    },
+    {
+      "Key": "PREF_MapEditor_Map_List_Display_Map_Aliases_TT",
+      "Text": "If enabled, the map aliases for maps will be displayed."
+    },
+    {
+      "Key": "PREF_MapEditor_Map_Contents_Display_Character_Aliases",
+      "Text": "Display Character Aliases"
+    },
+    {
+      "Key": "PREF_MapEditor_Map_Contents_Display_Character_Aliases_TT",
+      "Text": "If enabled, character aliases will be displayed where possible."
+    },
+    {
+      "Key": "PREF_MapEditor_Map_Contents_Display_Asset_Aliases",
+      "Text": "Display Asset Aliases"
+    },
+    {
+      "Key": "PREF_MapEditor_Map_Contents_Display_Asset_Aliases_TT",
+      "Text": "If enabled, asset (object) aliases will be displayed where possible."
+    },
+    {
+      "Key": "PREF_MapEditor_Map_Contents_Display_Map_Piece_Aliases",
+      "Text": "Display Map Piece Aliases"
+    },
+    {
+      "Key": "PREF_MapEditor_Map_Contents_Display_Map_Piece_Aliases_TT",
+      "Text": "If enabled, map piece aliases will be displayed where possible."
+    },
+    {
+      "Key": "PREF_MapEditor_Map_Contents_Display_Treasure_Aliases",
+      "Text": "Display Treasure Aliases"
+    },
+    {
+      "Key": "PREF_MapEditor_Map_Contents_Display_Treasure_Aliases_TT",
+      "Text": "If enabled, itemlot references will be displayed as aliases for treasure events."
+    },
+    {
+      "Key": "PREF_MapEditor_Properties_Enable_Commmunity_Names",
+      "Text": "Enable Community Names"
+    },
+    {
+      "Key": "PREF_MapEditor_Properties_Enable_Commmunity_Names_TT",
+      "Text": "If enabled, community names are used for each map object property name."
+    },
+    {
+      "Key": "PREF_MapEditor_Properties_Display_Unknown_Properties",
+      "Text": "Display Unknown Properties"
+    },
+    {
+      "Key": "PREF_MapEditor_Properties_Display_Unknown_Properties_TT",
+      "Text": "If enabled, unknown properties will be displayed (i.e. any property starting with Unk)."
+    },
+    {
+      "Key": "PREF_MapEditor_Properties_Enable_Referenced_Rename",
+      "Text": "Propagate Name Changes to References"
+    },
+    {
+      "Key": "PREF_MapEditor_Properties_Enable_Referenced_Rename_TT",
+      "Text": "If enabled, renaming a viewport object will propagate the name change to any references it is found in."
+    },
+    {
+      "Key": "PREF_MapEditor_Properties_Display_Property_Attributes",
+      "Text": "Display Property Attributes"
+    },
+    {
+      "Key": "PREF_MapEditor_Properties_Display_Property_Attributes_TT",
+      "Text": "If enabled, data type attributes are displayed in the tooltip for each property."
+    },
+    {
+      "Key": "PREF_MapEditor_Properties_Display_Additional_Information_at_Top",
+      "Text": "Display at the Top"
+    },
+    {
+      "Key": "PREF_MapEditor_Properties_Display_Additional_Information_at_Top_TT",
+      "Text": "If enabled, the additional property information will be displayed at the top of the properties window. By default they will appear at the bottom."
+    },
+    {
+      "Key": "PREF_MapEditor_Properties_Display_Behavior_Information",
+      "Text": "Display Map Object Behavior Information"
+    },
+    {
+      "Key": "PREF_MapEditor_Properties_Display_Behavior_Information_TT",
+      "Text": "If enabled, information about what the map object does is displayed."
+    },
+    {
+      "Key": "PREF_MapEditor_Properties_Display_Reference_Information",
+      "Text": "Display Map Object References"
+    },
+    {
+      "Key": "PREF_MapEditor_Properties_Display_Reference_Information_TT",
+      "Text": "If enabled, references information for the map object is displayed."
+    },
+    {
+      "Key": "PREF_MapEditor_Properties_Display_Reference_Name",
+      "Text": "Display Reference Name"
+    },
+    {
+      "Key": "PREF_MapEditor_Properties_Display_Reference_Name_TT",
+      "Text": "If enabled, map object references will display the name of the map object."
+    },
+    {
+      "Key": "PREF_MapEditor_Properties_Display_Reference_Entity_ID",
+      "Text": "Display Reference Entity ID"
+    },
+    {
+      "Key": "PREF_MapEditor_Properties_Display_Reference_Entity_ID_TT",
+      "Text": "If enabled, map object references will display the Entity ID of the map object."
+    },
+    {
+      "Key": "PREF_MapEditor_Properties_Display_Reference_Alias",
+      "Text": "Display Reference Alias"
+    },
+    {
+      "Key": "PREF_MapEditor_Properties_Display_Reference_Alias_TT",
+      "Text": "If enabled, map object references will display the alias of the map object."
+    },
+    {
+      "Key": "PREF_MapEditor_Enable_Character_Substitution",
+      "Text": "Enable Substitution"
+    },
+    {
+      "Key": "PREF_MapEditor_Enable_Character_Substitution_TT",
+      "Text": "If enabled, the character marker for 'c0000' map objects will be substituted for the character model assigned here."
+    },
+    {
+      "Key": "PREF_MapEditor_Character_Substitution_ID",
+      "Text": "Character Model ID"
+    },
+    {
+      "Key": "PREF_MapEditor_Character_Substitution_ID_TT",
+      "Text": "The character ID of the model you want to use for the substitution."
+    },
+    {
+      "Key": "PREF_MapEditor_Model_Selector_Display_Aliases",
+      "Text": "Display Aliases"
+    },
+    {
+      "Key": "PREF_MapEditor_Model_Selector_Display_Aliases_TT",
+      "Text": "If enabled, aliases for each model entry are displayed where possible."
+    },
+    {
+      "Key": "PREF_MapEditor_Model_Selector_Display_Tags",
+      "Text": "Display Tags"
+    },
+    {
+      "Key": "PREF_MapEditor_Model_Selector_Display_Tags_TT",
+      "Text": "If enabled, the tags associated with an model are displayed."
+    },
+    {
+      "Key": "PREF_MapEditor_Model_Selector_Display_Low_Detail_Entries",
+      "Text": "Include Low Detail Entries"
+    },
+    {
+      "Key": "PREF_MapEditor_Model_Selector_Display_Low_Detail_Entries_TT",
+      "Text": "If enabled, the low detail part entries are displayed."
+    },
+    {
+      "Key": "PREF_MapEditor_Selection_Group_Enable_Shortcuts",
+      "Text": "Enable Shortcuts for Groups"
+    },
+    {
+      "Key": "PREF_MapEditor_Selection_Group_Enable_Shortcuts_TT",
+      "Text": "If enabled, the shortcuts for Selection Groups are enabled."
+    },
+    {
+      "Key": "PREF_MapEditor_Selection_Group_Frame_Selection_On_Use",
+      "Text": "Frame Selection on Use"
+    },
+    {
+      "Key": "PREF_MapEditor_Selection_Group_Frame_Selection_On_Use_TT",
+      "Text": "If enabled, when a selection group is triggered, the contents is framed in the viewport."
+    },
+    {
+      "Key": "PREF_MapEditor_Selection_Group_Enable_Quick_Creation",
+      "Text": "Enable Quick Creation"
+    },
+    {
+      "Key": "PREF_MapEditor_Selection_Group_Enable_Quick_Creation_TT",
+      "Text": "If enabled, the 'Create Selection Group' shortcut will automatically create the group, bypassing the creation prompt."
+    },
+    {
+      "Key": "PREF_MapEditor_Selection_Group_Confirm_Delete",
+      "Text": "Confirm before Deletion"
+    },
+    {
+      "Key": "PREF_MapEditor_Selection_Group_Confirm_Delete_TT",
+      "Text": "If enabled, a confirmation dialog occurs before deletion of a group."
+    },
+    {
+      "Key": "PREF_MapEditor_Selection_Group_Show_Keybind",
+      "Text": "Display Shortcut"
+    },
+    {
+      "Key": "PREF_MapEditor_Selection_Group_Show_Keybind_TT",
+      "Text": "If enabled, the shortcut to select a group is displayed next to its name."
+    },
+    {
+      "Key": "PREF_MapEditor_Selection_Group_Show_Tags",
+      "Text": "Display Tags"
+    },
+    {
+      "Key": "PREF_MapEditor_Selection_Group_Show_Tags_TT",
+      "Text": "If enabled, the tags associated with a group are displayed next to its name."
     }
   ]
 }

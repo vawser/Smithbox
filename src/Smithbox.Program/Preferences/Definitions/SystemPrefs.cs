@@ -31,24 +31,31 @@ public class SystemPrefs
 
             Section = SectionCategory.General,
 
-            Title = "Program Language",
-            Description = "The language used to localize all of the text within Smithbox.",
+            Title = "PREF_Program_Language",
+            Description = "PREF_Program_Language_TT",
 
             Draw = () => {
-                var curLanguage = Startup.Current.Program_Language;
+                var curLanguage = LOC.Languages.Languages.FirstOrDefault(e => e.Name == Startup.Current.Program_Language);
 
-                DPI.ApplyInputWidth();
-                if (ImGui.BeginCombo("##inputValue", curLanguage))
+                if (curLanguage != null)
                 {
-                    foreach (var entry in LOC.Languages.Languages)
+                    var previewName = LOC.Get(curLanguage.Key);
+
+                    DPI.ApplyInputWidth();
+                    if (ImGui.BeginCombo("##inputValue", previewName))
                     {
-                        if (ImGui.Selectable(entry.Name))
+                        foreach (var entry in LOC.Languages.Languages)
                         {
-                            Startup.Current.Program_Language = entry.Name;
-                            LOC.Load(); // Refresh the localization
+                            var displayName = LOC.Get(entry.Key);
+
+                            if (ImGui.Selectable(displayName))
+                            {
+                                Startup.Current.Program_Language = entry.Name;
+                                LOC.Load(); // Refresh the localization
+                            }
                         }
+                        ImGui.EndCombo();
                     }
-                    ImGui.EndCombo();
                 }
             }
         };
@@ -64,8 +71,8 @@ public class SystemPrefs
 
             Section = SectionCategory.General,
 
-            Title = "Check for new versions of Smithbox during startup",
-            Description = "When enabled Smithbox will automatically check for new versions upon program start.",
+            Title = "PREF_System_Check_Program_Update",
+            Description = "PREF_System_Check_Program_Update_TT",
 
             Draw = () => {
                 ImGui.Checkbox("##inputValue", ref Startup.Current.System_Check_Program_Update);
@@ -83,8 +90,8 @@ public class SystemPrefs
 
             Section = SectionCategory.General,
 
-            Title = "Ignore Read Asserts",
-            Description = "If enabled, when attempting to read files, asserts will be ignored.",
+            Title = "PREF_System_Ignore_Read_Asserts",
+            Description = "PREF_System_Ignore_Read_Asserts_TT",
 
             Draw = () => {
                 ImGui.Checkbox("##inputValue", ref CFG.Current.System_Ignore_Read_Asserts);
@@ -102,8 +109,8 @@ public class SystemPrefs
 
             Section = SectionCategory.General,
 
-            Title = "Use DCX Heuristic on Read",
-            Description = "If enabled, if a DCX fails to read its compression type, use a heuristic to guess which it should be instead.",
+            Title = "PREF_System_Apply_DCX_Heuristic",
+            Description = "PREF_System_Apply_DCX_Heuristic_TT",
 
             Draw = () => {
                 ImGui.Checkbox("##inputValue", ref CFG.Current.System_Apply_DCX_Heuristic);
@@ -122,18 +129,22 @@ public class SystemPrefs
 
             Section = SectionCategory.General,
 
-            Title = "Rendering Backend",
-            Description = "Determines which rendering backend to use. Restart is required for changes to take affect.",
+            Title = "PREF_System_RenderingBackend",
+            Description = "PREF_System_RenderingBackend_TT",
 
             Draw = () => {
+                var previewName = LOC.Get(Startup.Current.System_RenderingBackend.GetDisplayName());
+
                 DPI.ApplyInputWidth();
-                if (ImGui.BeginCombo("##inputValue", Startup.Current.System_RenderingBackend.GetDisplayName()))
+                if (ImGui.BeginCombo("##inputValue", previewName))
                 {
                     foreach (var entry in Enum.GetValues(typeof(RenderingBackend)))
                     {
                         var type = (RenderingBackend)entry;
 
-                        if (ImGui.Selectable(type.GetDisplayName()))
+                        var displayName = LOC.Get(type.GetDisplayName());
+
+                        if (ImGui.Selectable(displayName))
                         {
                             Startup.Current.System_RenderingBackend = (RenderingBackend)entry;
                         }
@@ -157,8 +168,8 @@ public class SystemPrefs
 
             Section = SectionCategory.Loggers,
 
-            Title = "Enable Action Log",
-            Description = "If enabled, the action logger will be visible in the menu bar.",
+            Title = "PREF_Logger_Enable_Action_Log",
+            Description = "PREF_Logger_Enable_Action_Log_TT",
 
             Draw = () => {
                 ImGui.Checkbox("##inputValue", ref CFG.Current.Logger_Enable_Action_Log);
@@ -177,8 +188,8 @@ public class SystemPrefs
 
             Section = SectionCategory.Loggers,
 
-            Title = "Action Visibility Duration",
-            Description = "The number of frames for which the action logger message stays visible in the menu bar.\nAlso determines the time it takes for messages to fade colors.\n-1 means the message never disappears or fades.",
+            Title = "PREF_Logger_Action_Fade_Time",
+            Description = "PREF_Logger_Action_Fade_Time_TT",
 
             Draw = () => {
                 DPI.ApplyInputWidth();
@@ -197,8 +208,8 @@ public class SystemPrefs
 
             Section = SectionCategory.Loggers,
 
-            Title = "Enable Warning Log",
-            Description = "If enabled, the warning logger will be visible in the menu bar.",
+            Title = "PREF_Logger_Enable_Warning_Log",
+            Description = "PREF_Logger_Enable_Warning_Log_TT",
 
             Draw = () => {
                 ImGui.Checkbox("##inputValue", ref CFG.Current.Logger_Enable_Warning_Log);
@@ -217,8 +228,8 @@ public class SystemPrefs
 
             Section = SectionCategory.Loggers,
 
-            Title = "Warning Visibility Duration",
-            Description = "The number of frames for which the warning logger message stays visible in the menu bar.\nAlso determines the time it takes for messages to fade colors.\n-1 means the message never disappears or fades.",
+            Title = "PREF_Logger_Warning_Fade_Time",
+            Description = "PREF_Logger_Warning_Fade_Time_TT",
 
             Draw = () => {
                 DPI.ApplyInputWidth();
@@ -235,8 +246,9 @@ public class SystemPrefs
             Category = PreferenceCategory.System,
             Spacer = true,
             Section = SectionCategory.Loggers,
-            Title = "Enable Log Message Color Fade",
-            Description = "If enabled, log messages will slowly fade from their original color to a faded color.",
+
+            Title = "PREF_Logger_Enable_Color_Fade",
+            Description = "PREF_Logger_Enable_Color_Fade_TT",
             Draw = () =>
             {
                 ImGui.Checkbox("##inputValue", ref CFG.Current.Logger_Enable_Color_Fade);
@@ -254,8 +266,8 @@ public class SystemPrefs
             
             Section = SectionCategory.Loggers,
             
-            Title = "Log Popups",
-            Description = "If enabled, high priority log messages will cause a popup message box to appear.",
+            Title = "PREF_Logger_Enable_Log_Popups",
+            Description = "PREF_Logger_Enable_Log_Popups_TT",
             
             Draw = () => {
                 ImGui.Checkbox("##inputValue", ref CFG.Current.Logger_Enable_Log_Popups);
@@ -272,8 +284,8 @@ public class SystemPrefs
 
             Section = SectionCategory.Loggers,
 
-            Title = "Enable Scope Logging",
-            Description = "If enabled, the scope the log message is sent from is included in the log message.",
+            Title = "PREF_Logger_Enable_Scope_Logging",
+            Description = "PREF_Logger_Enable_Scope_Logging_TT",
 
             Draw = () => {
                 ImGui.Checkbox("##inputValue", ref CFG.Current.Logger_Enable_Scope_Logging);
@@ -294,8 +306,8 @@ public class SystemPrefs
 
             Section = SectionCategory.Developer,
 
-            Title = "Enable Developer Tools",
-            Description = "Enables various tools meant for Smithbox developers only.",
+            Title = "PREF_Developer_Enable_Tools",
+            Description = "PREF_Developer_Enable_Tools_TT",
 
             Draw = () => {
                 ImGui.Checkbox("##inputValue", ref CFG.Current.Developer_Enable_Tools);
@@ -314,8 +326,8 @@ public class SystemPrefs
 
             Section = SectionCategory.Developer,
 
-            Title = "Smithbox Build Folder",
-            Description = "Select the build directory for Smithbox (where the Smithbox.sln is placed).",
+            Title = "PREF_Developer_Smithbox_Build_Folder",
+            Description = "PREF_Developer_Smithbox_Build_Folder_TT",
 
             Draw = () => {
                 DPI.ApplyInputWidth();
@@ -323,10 +335,11 @@ public class SystemPrefs
 
                 ImGui.SameLine();
 
-                if (ImGui.Button("Select##smithboxBuildDirSelect", DPI.SelectorButtonSize))
+                if (ImGui.Button($"{LOC.Get("DIALOG_Select")}##smithboxBuildDirSelect", DPI.SelectorButtonSize))
                 {
                     var smithboxBuildDir = "";
-                    var result = PlatformUtils.Instance.OpenFolderDialog("Select Build directory", out smithboxBuildDir);
+                    var result = PlatformUtils.Instance.OpenFolderDialog(
+                        LOC.Get("DIALOG_Select_Directory"), out smithboxBuildDir);
 
                     if (result)
                     {

@@ -1,8 +1,20 @@
 {
   "Entries": [
     {
-      "Key": "PREF_Section_Category_General",
-      "Text": "General"
+      "Key": "PREF_ModelEditor_Properties_Enable_Commmunity_Names",
+      "Text": "Display Community Names"
+    },
+    {
+      "Key": "PREF_ModelEditor_Properties_Enable_Commmunity_Names_TT",
+      "Text": "If enabled, community names are displayed for FLVER property names."
+    },
+    {
+      "Key": "PREF_ModelEditor_Properties_Enable_Commmunity_Descriptions",
+      "Text": "Display Community Descriptions"
+    },
+    {
+      "Key": "PREF_ModelEditor_Properties_Enable_Commmunity_Descriptions_TT",
+      "Text": "If enabled, community descriptions are displayed in the tooltips for FLVER properties."
     }
   ]
 }

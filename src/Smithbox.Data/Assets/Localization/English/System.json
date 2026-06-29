@@ -107,6 +107,22 @@
     {
       "Key": "SYS_Failed_Smithbox_Release",
       "Text": "Failed to find Smithbox release."
+    },
+    {
+      "Key": "DIALOG_Select",
+      "Text": "Select"
+    },
+    {
+      "Key": "DIALOG_Select_Data_Directory",
+      "Text": "Select Data Directory"
+    },
+    {
+      "Key": "DIALOG_Select_Project_Directory",
+      "Text": "Select Project Directory"
+    },
+    {
+      "Key": "DIALOG_Select_Directory",
+      "Text": "Select Directory"
     }
   ]
 }

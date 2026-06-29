@@ -1,10 +1,12 @@
 {
   "Languages": [
         {
+          "Key": "SYS_Language_English",
           "Name": "English",
           "Folder": "English"
         },
         {
+          "Key": "SYS_Language_Test",
           "Name": "Test Language",
           "Folder": "Empty"
         }

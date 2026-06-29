@@ -9,8 +9,8 @@ namespace StudioCore.Editors.ParamEditor;
 
 public enum ParamTooltipMode
 {
-    [Display(Name = "Click on the Icon")]
+    [Display(Name = "PARAM_ENUM_Param_Tooltip_Mode_Click")]
     OnIcon,
-    [Display(Name = "Hover on the Field Name")]
+    [Display(Name = "PARAM_ENUM_Param_Tooltip_Mode_Hover")]
     OnFieldName
 }

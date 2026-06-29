@@ -498,7 +498,7 @@ public class InterfacePrefs
                     LOC.Get("PREF_Theme_Editor_TT"));
 
                 ImGui.ColorEdit4(
-                    $"{LOC.Get("ImGui_TitleBarBg_Active")}##ImGui_MainBg", 
+                    $"{LOC.Get("PREF_CE_ImGui_MainBg")}##ImGui_MainBg", 
                     ref UI.Current.ImGui_MainBg, flags);
 
                 ImGui.ColorEdit4(
@@ -688,58 +688,156 @@ public class InterfacePrefs
                     LOC.Get("PREF_Theme_Editor_Backgrounds"),
                     LOC.Get("PREF_Theme_Editor_Backgrounds_TT"));
 
-                ImGui.ColorEdit4("Modified Row Background", ref UI.Current.ParamRowDiffBackgroundColor, flags);
-                ImGui.ColorEdit4("Modified Field Background", ref UI.Current.ParamDiffBackgroundColor, flags);
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_ParamRowDiffBackgroundColor")}##ParamRowDiffBackgroundColor",
+                    ref UI.Current.ParamRowDiffBackgroundColor, flags);
+
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_ParamDiffBackgroundColor")}##ParamDiffBackgroundColor",
+                    ref UI.Current.ParamDiffBackgroundColor, flags);
 
                 // Text
                 UIHelper.SimpleHeader(
                     LOC.Get("PREF_Theme_Editor_Text"),
                     LOC.Get("PREF_Theme_Editor_Text_TT"));
 
-                ImGui.ColorEdit4("Default Text", ref UI.Current.ImGui_Default_Text_Color, flags);
-                ImGui.ColorEdit4("Warning Text", ref UI.Current.ImGui_Warning_Text_Color, flags);
-                ImGui.ColorEdit4("Beneficial Text", ref UI.Current.ImGui_Benefit_Text_Color, flags);
-                ImGui.ColorEdit4("Invalid Text", ref UI.Current.ImGui_Invalid_Text_Color, flags);
-                ImGui.ColorEdit4("Param Reference Text", ref UI.Current.ImGui_ParamRef_Text, flags);
-                ImGui.ColorEdit4("Param Reference Missing Text", ref UI.Current.ImGui_ParamRefMissing_Text, flags);
-                ImGui.ColorEdit4("Param Reference Inactive Text", ref UI.Current.ImGui_ParamRefInactive_Text, flags);
-                ImGui.ColorEdit4("Enum Name Text", ref UI.Current.ImGui_EnumName_Text, flags);
-                ImGui.ColorEdit4("Enum Value Text", ref UI.Current.ImGui_EnumValue_Text, flags);
-                ImGui.ColorEdit4("FMG Link Text", ref UI.Current.ImGui_FmgLink_Text, flags);
-                ImGui.ColorEdit4("FMG Reference Text", ref UI.Current.ImGui_FmgRef_Text, flags);
-                ImGui.ColorEdit4("FMG Reference Inactive Text", ref UI.Current.ImGui_FmgRefInactive_Text, flags);
-                ImGui.ColorEdit4("Is Reference Text", ref UI.Current.ImGui_IsRef_Text, flags);
-                ImGui.ColorEdit4("Virtual Reference Text", ref UI.Current.ImGui_VirtualRef_Text, flags);
-                ImGui.ColorEdit4("Reference Text", ref UI.Current.ImGui_Ref_Text, flags);
-                ImGui.ColorEdit4("Auxiliary Conflict Text", ref UI.Current.ImGui_AuxConflict_Text, flags);
-                ImGui.ColorEdit4("Auxiliary Added Text", ref UI.Current.ImGui_AuxAdded_Text, flags);
-                ImGui.ColorEdit4("Primary Changed Text", ref UI.Current.ImGui_PrimaryChanged_Text, flags);
-                ImGui.ColorEdit4("Param Row Text", ref UI.Current.ImGui_ParamRow_Text, flags);
-                ImGui.ColorEdit4("Aliased Name Text", ref UI.Current.ImGui_AliasName_Text, flags);
-                ImGui.ColorEdit4("Text Editor: Modified Row", ref UI.Current.ImGui_TextEditor_ModifiedTextEntry_Text, flags);
-                ImGui.ColorEdit4("Text Editor: Unique Row", ref UI.Current.ImGui_TextEditor_UniqueTextEntry_Text, flags);
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_ImGui_Default_Text_Color")}##ImGui_Default_Text_Color",
+                    ref UI.Current.ImGui_Default_Text_Color, flags);
+
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_ImGui_Warning_Text_Color")}##ImGui_Warning_Text_Color",
+                    ref UI.Current.ImGui_Warning_Text_Color, flags);
+
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_ImGui_Benefit_Text_Color")}##ImGui_Benefit_Text_Color",
+                    ref UI.Current.ImGui_Benefit_Text_Color, flags);
+
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_ImGui_Invalid_Text_Color")}##ImGui_Invalid_Text_Color",
+                    ref UI.Current.ImGui_Invalid_Text_Color, flags);
+
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_ImGui_ParamRef_Text")}##ImGui_ParamRef_Text",
+                    ref UI.Current.ImGui_ParamRef_Text, flags);
+
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_ImGui_ParamRefMissing_Text")}##ImGui_ParamRefMissing_Text",
+                    ref UI.Current.ImGui_ParamRefMissing_Text, flags);
+
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_ImGui_ParamRefInactive_Text")}##ImGui_ParamRefInactive_Text",
+                    ref UI.Current.ImGui_ParamRefInactive_Text, flags);
+
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_ImGui_EnumName_Text")}##ImGui_EnumName_Text",
+                    ref UI.Current.ImGui_EnumName_Text, flags);
+
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_ImGui_EnumValue_Text")}##ImGui_EnumValue_Text",
+                    ref UI.Current.ImGui_EnumValue_Text, flags);
+
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_ImGui_FmgLink_Text")}##ImGui_FmgLink_Text",
+                    ref UI.Current.ImGui_FmgLink_Text, flags);
+
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_ImGui_FmgRef_Text")}##ImGui_FmgRef_Text",
+                    ref UI.Current.ImGui_FmgRef_Text, flags);
+
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_ImGui_FmgRefInactive_Text")}##ImGui_FmgRefInactive_Text",
+                    ref UI.Current.ImGui_FmgRefInactive_Text, flags);
+
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_ImGui_IsRef_Text")}##ImGui_IsRef_Text",
+                    ref UI.Current.ImGui_IsRef_Text, flags);
+
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_ImGui_VirtualRef_Text")}##ImGui_VirtualRef_Text",
+                    ref UI.Current.ImGui_VirtualRef_Text, flags);
+
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_ImGui_Ref_Text")}##ImGui_Ref_Text",
+                    ref UI.Current.ImGui_Ref_Text, flags);
+
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_ImGui_AuxConflict_Text")}##ImGui_AuxConflict_Text",
+                    ref UI.Current.ImGui_AuxConflict_Text, flags);
+
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_ImGui_AuxAdded_Text")}##ImGui_AuxAdded_Text",
+                    ref UI.Current.ImGui_AuxAdded_Text, flags);
+
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_ImGui_PrimaryChanged_Text")}##ImGui_PrimaryChanged_Text",
+                    ref UI.Current.ImGui_PrimaryChanged_Text, flags);
+
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_ImGui_ParamRow_Text")}##ImGui_ParamRow_Text",
+                    ref UI.Current.ImGui_ParamRow_Text, flags);
+
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_ImGui_AliasName_Text")}##ImGui_AliasName_Text",
+                    ref UI.Current.ImGui_AliasName_Text, flags);
+
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_ImGui_TextEditor_ModifiedTextEntry_Text")}##ImGui_TextEditor_ModifiedTextEntry_Text",
+                    ref UI.Current.ImGui_TextEditor_ModifiedTextEntry_Text, flags);
+
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_ImGui_TextEditor_UniqueTextEntry_Text")}##ImGui_TextEditor_UniqueTextEntry_Text",
+                    ref UI.Current.ImGui_TextEditor_UniqueTextEntry_Text, flags);
 
                 // Logger
                 UIHelper.SimpleHeader(
                     LOC.Get("PREF_Theme_Editor_Logger"),
                     LOC.Get("PREF_Theme_Editor_Logger_TT"));
 
-                ImGui.ColorEdit4("Logger: Information", ref UI.Current.ImGui_Logger_Information_Color, flags);
-                ImGui.ColorEdit4("Logger: Warning", ref UI.Current.ImGui_Logger_Warning_Color, flags);
-                ImGui.ColorEdit4("Logger: Error", ref UI.Current.ImGui_Logger_Error_Color, flags);
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_ImGui_Logger_Information_Color")}##ImGui_Logger_Information_Color",
+                    ref UI.Current.ImGui_Logger_Information_Color, flags);
+
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_ImGui_Logger_Warning_Color")}##ImGui_Logger_Warning_Color",
+                    ref UI.Current.ImGui_Logger_Warning_Color, flags);
+
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_ImGui_Logger_Error_Color")}##ImGui_Logger_Error_Color",
+                    ref UI.Current.ImGui_Logger_Error_Color, flags);
 
                 // Display Group Tool
                 UIHelper.SimpleHeader(
                     LOC.Get("PREF_Theme_Editor_Display_Group"),
                     LOC.Get("PREF_Theme_Editor_Display_Group_TT"));
 
-                ImGui.ColorEdit4("Display Group: Border Highlight", ref UI.Current.DisplayGroupEditor_Border_Highlight, flags);
-                ImGui.ColorEdit4("Display Group: Active Input Background", ref UI.Current.DisplayGroupEditor_DisplayActive_Frame, flags);
-                ImGui.ColorEdit4("Display Group: Active Checkbox", ref UI.Current.DisplayGroupEditor_DisplayActive_Checkbox, flags);
-                ImGui.ColorEdit4("Draw Group: Active Input Background", ref UI.Current.DisplayGroupEditor_DrawActive_Frame, flags);
-                ImGui.ColorEdit4("Draw Group: Active Checkbox", ref UI.Current.DisplayGroupEditor_DrawActive_Checkbox, flags);
-                ImGui.ColorEdit4("Combined Group: Active Input Background", ref UI.Current.DisplayGroupEditor_CombinedActive_Frame, flags);
-                ImGui.ColorEdit4("Combined Group: Active Checkbox", ref UI.Current.DisplayGroupEditor_CombinedActive_Checkbox, flags);
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_DisplayGroupEditor_Border_Highlight")}##DisplayGroupEditor_Border_Highlight",
+                    ref UI.Current.DisplayGroupEditor_Border_Highlight, flags);
+
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_DisplayGroupEditor_DisplayActive_Frame")}##DisplayGroupEditor_DisplayActive_Frame",
+                    ref UI.Current.DisplayGroupEditor_DisplayActive_Frame, flags);
+
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_DisplayGroupEditor_DisplayActive_Checkbox")}##DisplayGroupEditor_DisplayActive_Checkbox",
+                    ref UI.Current.DisplayGroupEditor_DisplayActive_Checkbox, flags);
+
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_DisplayGroupEditor_DrawActive_Frame")}##DisplayGroupEditor_DrawActive_Frame",
+                    ref UI.Current.DisplayGroupEditor_DrawActive_Frame, flags);
+
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_DisplayGroupEditor_DrawActive_Checkbox")}##DisplayGroupEditor_DrawActive_Checkbox",
+                    ref UI.Current.DisplayGroupEditor_DrawActive_Checkbox, flags);
+
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_DisplayGroupEditor_CombinedActive_Frame")}##DisplayGroupEditor_CombinedActive_Frame",
+                    ref UI.Current.DisplayGroupEditor_CombinedActive_Frame, flags);
+
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_DisplayGroupEditor_CombinedActive_Checkbox")}##DisplayGroupEditor_CombinedActive_Checkbox",
+                    ref UI.Current.DisplayGroupEditor_CombinedActive_Checkbox, flags);
             }
         };
     }

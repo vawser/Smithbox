@@ -26,8 +26,8 @@ public class ModelEditorPrefs
 
             Section = SectionCategory.ModelEditor_Properties,
 
-            Title = "Display Community Names",
-            Description = "If enabled, community names are displayed for FLVER property names.",
+            Title = "PREF_ModelEditor_Properties_Enable_Commmunity_Names",
+            Description = "PREF_ModelEditor_Properties_Enable_Commmunity_Names_TT",
 
             Draw = () => {
                 ImGui.Checkbox("##inputValue", ref CFG.Current.ModelEditor_Properties_Enable_Commmunity_Names);
@@ -44,8 +44,8 @@ public class ModelEditorPrefs
 
             Section = SectionCategory.ModelEditor_Properties,
 
-            Title = "Display Community Descriptions",
-            Description = "If enabled, community descriptions are displayed in the tooltips for FLVER properties.",
+            Title = "PREF_ModelEditor_Properties_Enable_Commmunity_Descriptions",
+            Description = "PREF_ModelEditor_Properties_Enable_Commmunity_Descriptions_TT",
 
             Draw = () => {
                 ImGui.Checkbox("##inputValue", ref CFG.Current.ModelEditor_Properties_Enable_Commmunity_Descriptions);

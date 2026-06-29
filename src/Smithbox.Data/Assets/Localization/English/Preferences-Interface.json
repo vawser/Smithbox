@@ -370,203 +370,159 @@
     },
     {
       "Key": "PREF_CE_ImGui_Input_Conflict_Background",
-      "Text": "Input Conflict Background"
+      "Text": "Input Background (Conflict)"
     },
     {
       "Key": "PREF_CE_ImGui_Input_Vanilla_Background",
-      "Text": "Input Vanilla Background"
+      "Text": "Input Background (Vanilla)"
     },
     {
       "Key": "PREF_CE_ImGui_Input_Default_Background",
-      "Text": "Input Default Background"
+      "Text": "Input Background (Default)"
     },
     {
       "Key": "PREF_CE_ImGui_Input_AuxVanilla_Background",
-      "Text": "Input Auxillary Vanilla Background"
+      "Text": "Input Background (Aux Vanilla)"
     },
     {
       "Key": "PREF_CE_ImGui_Input_DiffCompare_Background",
-      "Text": "Input Difference Comparison Background"
+      "Text": "Input Background (Comparison Difference)"
     },
     {
-      "Key": "PREF_CE_",
-      "Text": "xxx"
+      "Key": "PREF_CE_ParamRowDiffBackgroundColor",
+      "Text": "Row Background (Modified)"
     },
     {
-      "Key": "PREF_CE_",
-      "Text": "xxx"
+      "Key": "PREF_CE_ParamDiffBackgroundColor",
+      "Text": "Field Background (Modified)"
     },
     {
-      "Key": "PREF_CE_",
-      "Text": "xxx"
+      "Key": "PREF_CE_ImGui_Default_Text_Color",
+      "Text": "Default Text"
     },
     {
-      "Key": "PREF_CE_",
-      "Text": "xxx"
+      "Key": "PREF_CE_ImGui_Warning_Text_Color",
+      "Text": "Warning Text"
     },
     {
-      "Key": "PREF_CE_",
-      "Text": "xxx"
+      "Key": "PREF_CE_ImGui_Benefit_Text_Color",
+      "Text": "Beneficial Text"
     },
     {
-      "Key": "PREF_CE_",
-      "Text": "xxx"
+      "Key": "PREF_CE_ImGui_Invalid_Text_Color",
+      "Text": "Invalid Text"
     },
     {
-      "Key": "PREF_CE_",
-      "Text": "xxx"
+      "Key": "PREF_CE_ImGui_ParamRef_Text",
+      "Text": "Param Reference Text"
     },
     {
-      "Key": "PREF_CE_",
-      "Text": "xxx"
+      "Key": "PREF_CE_ImGui_ParamRefMissing_Text",
+      "Text": "Param Reference Text (Missing)"
     },
     {
-      "Key": "PREF_CE_",
-      "Text": "xxx"
+      "Key": "PREF_CE_ImGui_ParamRefInactive_Text",
+      "Text": "Param Reference Text (Inactive)"
     },
     {
-      "Key": "PREF_CE_",
-      "Text": "xxx"
+      "Key": "PREF_CE_ImGui_EnumName_Text",
+      "Text": "Enum Title Text"
     },
     {
-      "Key": "PREF_CE_",
-      "Text": "xxx"
+      "Key": "PREF_CE_ImGui_EnumValue_Text",
+      "Text": "Enum Value Text"
     },
     {
-      "Key": "PREF_CE_",
-      "Text": "xxx"
+      "Key": "PREF_CE_ImGui_FmgLink_Text",
+      "Text": "FMG Link Text"
     },
     {
-      "Key": "PREF_CE_",
-      "Text": "xxx"
+      "Key": "PREF_CE_ImGui_FmgRef_Text",
+      "Text": "FMG Reference Text"
     },
     {
-      "Key": "PREF_CE_",
-      "Text": "xxx"
+      "Key": "PREF_CE_ImGui_FmgRefInactive_Text",
+      "Text": "FMG Reference Text (Inactive)"
     },
     {
-      "Key": "PREF_CE_",
-      "Text": "xxx"
+      "Key": "PREF_CE_ImGui_IsRef_Text",
+      "Text": "Is Reference Text"
     },
     {
-      "Key": "PREF_CE_",
-      "Text": "xxx"
+      "Key": "PREF_CE_ImGui_VirtualRef_Text",
+      "Text": "Virtual Reference Text"
     },
     {
-      "Key": "PREF_CE_",
-      "Text": "xxx"
+      "Key": "PREF_CE_ImGui_Ref_Text",
+      "Text": "Reference Text"
     },
     {
-      "Key": "PREF_CE_",
-      "Text": "xxx"
+      "Key": "PREF_CE_ImGui_AuxConflict_Text",
+      "Text": "Aux Param Row Text (Conflict)"
     },
     {
-      "Key": "PREF_CE_",
-      "Text": "xxx"
+      "Key": "PREF_CE_ImGui_AuxAdded_Text",
+      "Text": "Aux Param Row Text (Added)"
     },
     {
-      "Key": "PREF_CE_",
-      "Text": "xxx"
+      "Key": "PREF_CE_ImGui_PrimaryChanged_Text",
+      "Text": "Primary Param Row Text (Changed)"
     },
     {
-      "Key": "PREF_CE_",
-      "Text": "xxx"
+      "Key": "PREF_CE_ImGui_ParamRow_Text",
+      "Text": "Param Row Text"
     },
     {
-      "Key": "PREF_CE_",
-      "Text": "xxx"
+      "Key": "PREF_CE_ImGui_AliasName_Text",
+      "Text": "Alias Text"
     },
     {
-      "Key": "PREF_CE_",
-      "Text": "xxx"
+      "Key": "PREF_CE_ImGui_TextEditor_ModifiedTextEntry_Text",
+      "Text": "Text Entry Row (Modified)"
     },
     {
-      "Key": "PREF_CE_",
-      "Text": "xxx"
+      "Key": "PREF_CE_ImGui_TextEditor_UniqueTextEntry_Text",
+      "Text": "Text Entry Row (Unique)"
     },
     {
-      "Key": "PREF_CE_",
-      "Text": "xxx"
+      "Key": "PREF_CE_ImGui_Logger_Information_Color",
+      "Text": "Information Text"
     },
     {
-      "Key": "PREF_CE_",
-      "Text": "xxx"
+      "Key": "PREF_CE_ImGui_Logger_Warning_Color",
+      "Text": "Warning Text"
     },
     {
-      "Key": "PREF_CE_",
-      "Text": "xxx"
+      "Key": "PREF_CE_ImGui_Logger_Error_Color",
+      "Text": "Error Text"
     },
     {
-      "Key": "PREF_CE_",
-      "Text": "xxx"
+      "Key": "PREF_CE_DisplayGroupEditor_Border_Highlight",
+      "Text": "Display Group: Border Highlight"
     },
     {
-      "Key": "PREF_CE_",
-      "Text": "xxx"
+      "Key": "PREF_CE_DisplayGroupEditor_DisplayActive_Frame",
+      "Text": "Display Group: Active Input Background"
     },
     {
-      "Key": "PREF_CE_",
-      "Text": "xxx"
+      "Key": "PREF_CE_DisplayGroupEditor_DisplayActive_Checkbox",
+      "Text": "Display Group: Active Checkbox"
     },
     {
-      "Key": "PREF_CE_",
-      "Text": "xxx"
+      "Key": "PREF_CE_DisplayGroupEditor_DrawActive_Frame",
+      "Text": "Draw Group: Active Input Background"
     },
     {
-      "Key": "PREF_CE_",
-      "Text": "xxx"
+      "Key": "PREF_CE_DisplayGroupEditor_DrawActive_Checkbox",
+      "Text": "Draw Group: Active Checkbox"
     },
     {
-      "Key": "PREF_CE_",
-      "Text": "xxx"
+      "Key": "PREF_CE_DisplayGroupEditor_CombinedActive_Frame",
+      "Text": "Combined Group: Active Input Background"
     },
     {
-      "Key": "PREF_CE_",
-      "Text": "xxx"
-    },
-    {
-      "Key": "PREF_CE_",
-      "Text": "xxx"
-    },
-    {
-      "Key": "PREF_CE_",
-      "Text": "xxx"
-    },
-    {
-      "Key": "PREF_CE_",
-      "Text": "xxx"
-    },
-    {
-      "Key": "PREF_CE_",
-      "Text": "xxx"
-    },
-    {
-      "Key": "PREF_CE_",
-      "Text": "xxx"
-    },
-    {
-      "Key": "PREF_CE_",
-      "Text": "xxx"
-    },
-    {
-      "Key": "PREF_CE_",
-      "Text": "xxx"
-    },
-    {
-      "Key": "PREF_CE_",
-      "Text": "xxx"
-    },
-    {
-      "Key": "PREF_CE_",
-      "Text": "xxx"
-    },
-    {
-      "Key": "PREF_CE_",
-      "Text": "xxx"
-    },
-    {
-      "Key": "PREF_CE_",
-      "Text": "xxx"
-    },
+      "Key": "PREF_CE_DisplayGroupEditor_CombinedActive_Checkbox",
+      "Text": "Combined Group: Active Checkbox"
+    }
   ]
 }

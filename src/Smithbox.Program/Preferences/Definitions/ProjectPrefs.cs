@@ -29,8 +29,8 @@ public class ProjectPrefs
 
             Section = SectionCategory.General,
 
-            Title = "Enable Auto-Load on Smithbox Start",
-            Description = "If enabled, a previously loaded project will be loaded automatically upon starting Smithbox.",
+            Title = "PREF_Project_Enable_Auto_Load",
+            Description = "PREF_Project_Enable_Auto_Load_TT",
 
             Draw = () => {
                 ImGui.Checkbox("##inputValue", ref CFG.Current.Project_Enable_Auto_Load);
@@ -47,8 +47,8 @@ public class ProjectPrefs
 
             Section = SectionCategory.General,
 
-            Title = "Enable Automatic Auto-Load Assignment",
-            Description = "If enabled, loading a project will automatically flag it to 'auto-load'.",
+            Title = "PREF_Project_Enable_Automatic_Auto_Load_Assignment",
+            Description = "PREF_Project_Enable_Automatic_Auto_Load_Assignment_TT",
 
             Draw = () => {
                 ImGui.Checkbox("##inputValue", ref CFG.Current.Project_Enable_Automatic_Auto_Load_Assignment);
@@ -67,8 +67,8 @@ public class ProjectPrefs
 
             Section = SectionCategory.General,
 
-            Title = "Default Project Directory",
-            Description = "The default directory to use during the project directory selection when creating a new project.",
+            Title = "PREF_Project_Default_Mod_Directory",
+            Description = "PREF_Project_Default_Mod_Directory_TT",
 
             Draw = () => {
                 DPI.ApplyInputWidth();
@@ -76,10 +76,11 @@ public class ProjectPrefs
 
                 ImGui.SameLine();
 
-                if (ImGui.Button("Select##projectDirSelect", DPI.SelectorButtonSize))
+                if (ImGui.Button($"{LOC.Get("DIALOG_Select")}##projectDirSelect", DPI.SelectorButtonSize))
                 {
                     var newProjectPath = "";
-                    var result = PlatformUtils.Instance.OpenFolderDialog("Select Project Directory", out newProjectPath);
+                    var result = PlatformUtils.Instance.OpenFolderDialog(
+                        LOC.Get("DIALOG_Select_Project_Directory"), out newProjectPath);
 
                     if (result)
                     {
@@ -101,8 +102,8 @@ public class ProjectPrefs
 
             Section = SectionCategory.General,
 
-            Title = "Default Data Directory",
-            Description = "The default directory to use during the data directory selection when creating a new project.",
+            Title = "PREF_Project_Default_Data_Directory",
+            Description = "PREF_Project_Default_Data_Directory_TT",
 
             Draw = () => {
                 DPI.ApplyInputWidth();
@@ -110,10 +111,11 @@ public class ProjectPrefs
 
                 ImGui.SameLine();
 
-                if (ImGui.Button("Select##ProjectDataDirSelect", DPI.SelectorButtonSize))
+                if (ImGui.Button($"{LOC.Get("DIALOG_Select")}##ProjectDataDirSelect", DPI.SelectorButtonSize))
                 {
                     var newDataPath = "";
-                    var result = PlatformUtils.Instance.OpenFolderDialog("Select Data Directory", out newDataPath);
+                    var result = PlatformUtils.Instance.OpenFolderDialog(
+                        LOC.Get("DIALOG_Select_Data_Directory"), out newDataPath);
 
                     if (result)
                     {
@@ -133,8 +135,8 @@ public class ProjectPrefs
 
             Section = SectionCategory.General,
 
-            Title = "Enable Backup Saves",
-            Description = "If enabled, backup files are created during save events (i.e. .bak and .prev files).",
+            Title = "PREF_Project_Enable_Backup_Saves",
+            Description = "PREF_Project_Enable_Backup_Saves_TT",
 
             Draw = () => {
                 ImGui.Checkbox("##inputValue", ref CFG.Current.Project_Enable_Backup_Saves);
@@ -151,8 +153,8 @@ public class ProjectPrefs
 
             Section = SectionCategory.General,
 
-            Title = "Enable Project Directory Addition Detection",
-            Description = "If enabled, new files that only reside in the project directory will be detected. Required if you are working with custom files and wnat them to appear in Smithbox.\nIf disabled, project startup is quicker.",
+            Title = "PREF_Project_Scan_Directory_For_Additions",
+            Description = "PREF_Project_Scan_Directory_For_Additions_TT",
 
             Draw = () => {
                 ImGui.Checkbox("##inputValue", ref CFG.Current.Project_Scan_Directory_For_Additions);
@@ -169,15 +171,14 @@ public class ProjectPrefs
 
             Section = SectionCategory.General,
 
-            Title = "Enable Strict Project Directory Scan",
-            Description = "If enabled, the additional validation will be performed before adding a file to the project's file list.",
+            Title = "PREF_Project_Scan_Directory_Strict_Mode",
+            Description = "PREF_Project_Scan_Directory_Strict_Mode_TT",
 
             Draw = () => {
                 ImGui.Checkbox("##inputValue", ref CFG.Current.Project_Scan_Directory_Strict_Mode);
             }
         };
     }
-
 
     // TODO: enable once the Complete type has been implemented.
     //public static PreferenceItem Project_Backup_Type()
@@ -225,8 +226,8 @@ public class ProjectPrefs
 
             Section = SectionCategory.AutomaticSave,
 
-            Title = "Enable Automatic Save",
-            Description = "If enabled, all enabled editors will automatically save.",
+            Title = "PREF_Project_Enable_Automatic_Save",
+            Description = "PREF_Project_Enable_Automatic_Save_TT",
 
             Draw = () => {
                 ImGui.Checkbox("##inputValue", ref CFG.Current.Project_Enable_Automatic_Save);
@@ -245,8 +246,8 @@ public class ProjectPrefs
 
             Section = SectionCategory.AutomaticSave,
 
-            Title = "Automatic Save Interval",
-            Description = "The rate at which the automatic save occurs. In seconds.",
+            Title = "PREF_Project_Automatic_Save_Interval",
+            Description = "PREF_Project_Automatic_Save_Interval_TT",
 
             Draw = () => {
                 DPI.ApplyInputWidth();
@@ -265,8 +266,8 @@ public class ProjectPrefs
 
             Section = SectionCategory.AutomaticSave,
 
-            Title = "Include Map Editor",
-            Description = "If enabled, the Map Editor is automatically saved.",
+            Title = "PREF_Project_Automatic_Save_Include_Map_Editor",
+            Description = "PREF_Project_Automatic_Save_Include_Map_Editor_TT",
 
             Draw = () => {
                 ImGui.Checkbox("##inputValue", ref CFG.Current.Project_Automatic_Save_Include_Map_Editor);
@@ -284,8 +285,8 @@ public class ProjectPrefs
 
             Section = SectionCategory.AutomaticSave,
 
-            Title = "Include Param Editor",
-            Description = "If enabled, the Param Editor is automatically saved.",
+            Title = "PREF_Project_Automatic_Save_Include_Param_Editor",
+            Description = "PREF_Project_Automatic_Save_Include_Param_Editor_TT",
 
             Draw = () => {
                 ImGui.Checkbox("##inputValue", ref CFG.Current.Project_Automatic_Save_Include_Param_Editor);
@@ -303,8 +304,8 @@ public class ProjectPrefs
 
             Section = SectionCategory.AutomaticSave,
 
-            Title = "Include Text Editor",
-            Description = "If enabled, the Text Editor is automatically saved.",
+            Title = "PREF_Project_Automatic_Save_Include_Text_Editor",
+            Description = "PREF_Project_Automatic_Save_Include_Text_Editor_TT",
 
             Draw = () => {
                 ImGui.Checkbox("##inputValue", ref CFG.Current.Project_Automatic_Save_Include_Text_Editor);
@@ -322,8 +323,8 @@ public class ProjectPrefs
 
             Section = SectionCategory.AutomaticSave,
 
-            Title = "Include Graphics Param Editor",
-            Description = "If enabled, the Graphics Param Editor is automatically saved.",
+            Title = "PREF_Project_Automatic_Save_Include_Gparam_Editor",
+            Description = "PREF_Project_Automatic_Save_Include_Gparam_Editor_TT",
 
             Draw = () => {
                 ImGui.Checkbox("##inputValue", ref CFG.Current.Project_Automatic_Save_Include_Gparam_Editor);
@@ -341,8 +342,8 @@ public class ProjectPrefs
 
             Section = SectionCategory.AutomaticSave,
 
-            Title = "Include Material Editor",
-            Description = "If enabled, the Material Editor is automatically saved.",
+            Title = "PREF_Project_Automatic_Save_Include_Material_Editor",
+            Description = "PREF_Project_Automatic_Save_Include_Material_Editor_TT",
 
             Draw = () => {
                 ImGui.Checkbox("##inputValue", ref CFG.Current.Project_Automatic_Save_Include_Material_Editor);
@@ -363,8 +364,8 @@ public class ProjectPrefs
 
             Section = SectionCategory.ModEngine3,
 
-            Title = "ME3 Profile Directory",
-            Description = "Select the directory you want the generated ME3 profiles to be placed in.",
+            Title = "PREF_Project_ME3_Profile_Directory",
+            Description = "PREF_Project_ME3_Profile_Directory_TT",
 
             Draw = () => {
                 DPI.ApplyInputWidth();
@@ -372,10 +373,11 @@ public class ProjectPrefs
 
                 ImGui.SameLine();
 
-                if (ImGui.Button("Select##me3ProfileDir", DPI.SelectorButtonSize))
+                if (ImGui.Button($"{LOC.Get("DIALOG_Select")}##me3ProfileDir", DPI.SelectorButtonSize))
                 {
                     var newDataPath = "";
-                    var result = PlatformUtils.Instance.OpenFolderDialog("Select Directory", out newDataPath);
+                    var result = PlatformUtils.Instance.OpenFolderDialog(
+                        LOC.Get("DIALOG_Select_Directory"), out newDataPath);
 
                     if (result)
                     {
@@ -400,8 +402,8 @@ public class ProjectPrefs
 
             Section = SectionCategory.DataOverride,
 
-            Title = "Utilise PTDE Collisions in Dark Souls: Remastered Projects",
-            Description = "If enabled, and a Dark Souls: Prepare to Die Edition install exists, the collision files from it will be used for collisions and navmeshes.",
+            Title = "PREF_MapEditor_Use_PTDE_Collisions_In_DS1R_Projects",
+            Description = "PREF_MapEditor_Use_PTDE_Collisions_In_DS1R_Projects_TT",
 
             Draw = () => {
                 ImGui.Checkbox("##inputValue", ref CFG.Current.MapEditor_Use_PTDE_Collisions_In_DS1R_Projects);
@@ -420,18 +422,19 @@ public class ProjectPrefs
 
             Section = SectionCategory.DataOverride,
 
-            Title = "PTDE Install Path",
-            Description = "The install directory for Dark Souls: Prepare to Die Edition.",
+            Title = "PREF_PTDE_Data_Path",
+            Description = "PREF_PTDE_Data_Path_TT",
 
             Draw = () => {
                 ImGui.InputText("##inputValue", ref CFG.Current.PTDE_Data_Path, 255);
 
                 ImGui.SameLine();
 
-                if (ImGui.Button("Select##ptdeGameDirectorySelect", DPI.SelectorButtonSize))
+                if (ImGui.Button($"{LOC.Get("DIALOG_Select")}##ptdeGameDirectorySelect", DPI.SelectorButtonSize))
                 {
                     var ptdeDir = "";
-                    var result = PlatformUtils.Instance.OpenFolderDialog("Select PTDE directory", out ptdeDir);
+                    var result = PlatformUtils.Instance.OpenFolderDialog(
+                        LOC.Get("DIALOG_Select_Directory"), out ptdeDir);
 
                     if (result)
                     {

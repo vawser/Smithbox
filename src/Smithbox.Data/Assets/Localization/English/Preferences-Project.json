@@ -1,8 +1,140 @@
 {
   "Entries": [
     {
-      "Key": "PREF_Section_Category_General",
-      "Text": "General"
+      "Key": "PREF_Project_Enable_Auto_Load",
+      "Text": "Enable Auto-Load on Smithbox Start"
+    },
+    {
+      "Key": "PREF_Project_Enable_Auto_Load_TT",
+      "Text": "If enabled, a previously loaded project will be loaded automatically upon starting Smithbox."
+    },
+    {
+      "Key": "PREF_Project_Enable_Automatic_Auto_Load_Assignment",
+      "Text": "Enable Automatic Auto-Load Assignment"
+    },
+    {
+      "Key": "PREF_Project_Enable_Automatic_Auto_Load_Assignment_TT",
+      "Text": "If enabled, loading a project will automatically flag it to 'auto-load'."
+    },
+    {
+      "Key": "PREF_Project_Default_Mod_Directory",
+      "Text": "Default Project Directory"
+    },
+    {
+      "Key": "PREF_Project_Default_Mod_Directory_TT",
+      "Text": "The default directory to use during the project directory selection when creating a new project."
+    },
+    {
+      "Key": "PREF_Project_Default_Data_Directory",
+      "Text": "Default Data Directory"
+    },
+    {
+      "Key": "PREF_Project_Default_Data_Directory_TT",
+      "Text": "The default directory to use during the data directory selection when creating a new project."
+    },
+    {
+      "Key": "PREF_Project_Enable_Backup_Saves",
+      "Text": "Enable Backup Saves"
+    },
+    {
+      "Key": "PREF_Project_Enable_Backup_Saves_TT",
+      "Text": "If enabled, backup files are created during save events (i.e. .bak and .prev files)."
+    },
+    {
+      "Key": "PREF_Project_Scan_Directory_For_Additions",
+      "Text": "Enable Project Directory Addition Detection"
+    },
+    {
+      "Key": "PREF_Project_Scan_Directory_For_Additions_TT",
+      "Text": "If enabled, new files that only reside in the project directory will be detected. Required if you are working with custom files and wnat them to appear in Smithbox.\nIf disabled, project startup is quicker."
+    },
+    {
+      "Key": "PREF_Project_Scan_Directory_Strict_Mode",
+      "Text": "Enable Strict Project Directory Scan"
+    },
+    {
+      "Key": "PREF_Project_Scan_Directory_Strict_Mode_TT",
+      "Text": "If enabled, the additional validation will be performed before adding a file to the project's file list."
+    },
+    {
+      "Key": "PREF_Project_Enable_Automatic_Save",
+      "Text": "Enable Automatic Save"
+    },
+    {
+      "Key": "PREF_Project_Enable_Automatic_Save_TT",
+      "Text": "If enabled, all enabled editors will automatically save."
+    },
+    {
+      "Key": "PREF_Project_Automatic_Save_Interval",
+      "Text": "Automatic Save Interval"
+    },
+    {
+      "Key": "PREF_Project_Automatic_Save_Interval_TT",
+      "Text": "The rate at which the automatic save occurs. In seconds."
+    },
+    {
+      "Key": "PREF_Project_Automatic_Save_Include_Map_Editor",
+      "Text": "Include Map Editor"
+    },
+    {
+      "Key": "PREF_Project_Automatic_Save_Include_Map_Editor_TT",
+      "Text": "If enabled, the Map Editor is automatically saved."
+    },
+    {
+      "Key": "PREF_Project_Automatic_Save_Include_Param_Editor",
+      "Text": "Include Param Editor"
+    },
+    {
+      "Key": "PREF_Project_Automatic_Save_Include_Param_Editor_TT",
+      "Text": "If enabled, the Param Editor is automatically saved."
+    },
+    {
+      "Key": "PREF_Project_Automatic_Save_Include_Text_Editor",
+      "Text": "Include Text Editor"
+    },
+    {
+      "Key": "PREF_Project_Automatic_Save_Include_Text_Editor_TT",
+      "Text": "If enabled, the Text Editor is automatically saved."
+    },
+    {
+      "Key": "PREF_Project_Automatic_Save_Include_Gparam_Editor",
+      "Text": "Include Graphics Param Editor"
+    },
+    {
+      "Key": "PREF_Project_Automatic_Save_Include_Gparam_Editor_TT",
+      "Text": "If enabled, the Graphics Param Editor is automatically saved."
+    },
+    {
+      "Key": "PREF_Project_Automatic_Save_Include_Material_Editor",
+      "Text": "Include Material Editor"
+    },
+    {
+      "Key": "PREF_Project_Automatic_Save_Include_Material_Editor_TT",
+      "Text": "If enabled, the Material Editor is automatically saved."
+    },
+    {
+      "Key": "PREF_Project_ME3_Profile_Directory",
+      "Text": "ME3 Profile Directory"
+    },
+    {
+      "Key": "PREF_Project_ME3_Profile_Directory_TT",
+      "Text": "Select the directory you want the generated ME3 profiles to be placed in."
+    },
+    {
+      "Key": "PREF_MapEditor_Use_PTDE_Collisions_In_DS1R_Projects",
+      "Text": "Utilise PTDE Collisions in Dark Souls: Remastered Projects"
+    },
+    {
+      "Key": "PREF_MapEditor_Use_PTDE_Collisions_In_DS1R_Projects_TT",
+      "Text": "If enabled, and a Dark Souls: Prepare to Die Edition install exists, the collision files from it will be used for collisions and navmeshes."
+    },
+    {
+      "Key": "PREF_PTDE_Data_Path",
+      "Text": "PTDE Install Path"
+    },
+    {
+      "Key": "PREF_PTDE_Data_Path_TT",
+      "Text": "The install directory for Dark Souls: Prepare to Die Edition."
     }
   ]
 }

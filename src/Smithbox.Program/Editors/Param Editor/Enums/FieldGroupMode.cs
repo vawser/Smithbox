@@ -9,17 +9,17 @@ namespace StudioCore.Editors.ParamEditor;
 
 public enum FieldLayoutMode
 {
-    [Display(Name = "Collapsible Header")]
+    [Display(Name = "PARAM_ENUM_Field_Layout_Mode_Collapsible")]
     Collapsible,
-    [Display(Name = "Simple Header")]
+    [Display(Name = "PARAM_ENUM_Field_Layout_Mode_Simple")]
     Header,
-    [Display(Name = "Separator")]
+    [Display(Name = "PARAM_ENUM_Field_Layout_Mode_Separator")]
     Separator
 }
 public enum FieldLayoutUnsortedPlacement
 {
-    [Display(Name = "Top")]
+    [Display(Name = "PARAM_ENUM_Field_Layout_Placement_Unsorted_Top")]
     Top,
-    [Display(Name = "Bottom")]
+    [Display(Name = "PARAM_ENUM_Field_Layout_Placement_Unsorted_Bottom")]
     Bottom
 }

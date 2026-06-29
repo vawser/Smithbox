@@ -1,0 +1,48 @@
+{
+  "Entries": [
+    {
+      "Key": "PARAM_ENUM_Field_Name_Mode_Source",
+      "Text": "Source"
+    },
+    {
+      "Key": "PARAM_ENUM_Field_Name_Mode_Community",
+      "Text": "Community"
+    },
+    {
+      "Key": "PARAM_ENUM_Field_Name_Mode_Source_Community",
+      "Text": "Source (Community)"
+    },
+    {
+      "Key": "PARAM_ENUM_Field_Name_Mode_Community_Source",
+      "Text": "Community (Source)"
+    },
+    {
+      "Key": "PARAM_ENUM_Param_Tooltip_Mode_Click",
+      "Text": "Click on the Icon"
+    },
+    {
+      "Key": "PARAM_ENUM_Param_Tooltip_Mode_Hover",
+      "Text": "Hover on the Field Name"
+    },
+    {
+      "Key": "PARAM_ENUM_Field_Layout_Mode_Collapsible",
+      "Text": "Collapsible Header"
+    },
+    {
+      "Key": "PARAM_ENUM_Field_Layout_Mode_Simple",
+      "Text": "Simple Header"
+    },
+    {
+      "Key": "PARAM_ENUM_Field_Layout_Mode_Separator",
+      "Text": "Separator"
+    },
+    {
+      "Key": "PARAM_ENUM_Field_Layout_Placement_Unsorted_Top",
+      "Text": "Top"
+    },
+    {
+      "Key": "PARAM_ENUM_Field_Layout_Placement_Unsorted_Bottom",
+      "Text": "Bottom"
+    }
+  ]
+}

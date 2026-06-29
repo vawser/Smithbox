@@ -1,8 +1,116 @@
 {
   "Entries": [
     {
-      "Key": "PREF_Section_Category_General",
-      "Text": "General"
+      "Key": "PREF_Program_Language",
+      "Text": "Program Language"
+    },
+    {
+      "Key": "PREF_Program_Language_TT",
+      "Text": "The language used to localize all of the text within Smithbox."
+    },
+    {
+      "Key": "PREF_System_Check_Program_Update",
+      "Text": "Check for new versions of Smithbox during startup"
+    },
+    {
+      "Key": "PREF_System_Check_Program_Update_TT",
+      "Text": "When enabled Smithbox will automatically check for new versions upon program start."
+    },
+    {
+      "Key": "PREF_System_Ignore_Read_Asserts",
+      "Text": "Ignore Read Asserts"
+    },
+    {
+      "Key": "PREF_System_Ignore_Read_Asserts_TT",
+      "Text": "If enabled, when attempting to read files, asserts will be ignored."
+    },
+    {
+      "Key": "PREF_System_Apply_DCX_Heuristic",
+      "Text": "Use DCX Heuristic on Read"
+    },
+    {
+      "Key": "PREF_System_Apply_DCX_Heuristic_TT",
+      "Text": "If enabled, if a DCX fails to read its compression type, use a heuristic to guess which it should be instead."
+    },
+    {
+      "Key": "PREF_System_RenderingBackend",
+      "Text": "Rendering Backend"
+    },
+    {
+      "Key": "PREF_System_RenderingBackend_TT",
+      "Text": "Determines which rendering backend to use. Restart is required for changes to take affect."
+    },
+    {
+      "Key": "PREF_Logger_Enable_Action_Log",
+      "Text": "Enable Event Log"
+    },
+    {
+      "Key": "PREF_Logger_Enable_Action_Log_TT",
+      "Text": "If enabled, the event logger will be visible in the menu bar."
+    },
+    {
+      "Key": "PREF_Logger_Action_Fade_Time",
+      "Text": "Event Visibility Duration"
+    },
+    {
+      "Key": "PREF_Logger_Action_Fade_Time_TT",
+      "Text": "The number of frames for which the event logger message stays visible in the menu bar.\nAlso determines the time it takes for messages to fade colors.\n-1 means the message never disappears or fades."
+    },
+    {
+      "Key": "PREF_Logger_Enable_Warning_Log",
+      "Text": "Enable Error Log"
+    },
+    {
+      "Key": "PREF_Logger_Enable_Warning_Log_TT",
+      "Text": "If enabled, the error logger will be visible in the menu bar."
+    },
+    {
+      "Key": "PREF_Logger_Warning_Fade_Time",
+      "Text": "Error Visibility Duration"
+    },
+    {
+      "Key": "PREF_Logger_Warning_Fade_Time_TT",
+      "Text": "The number of frames for which the error logger message stays visible in the menu bar.\nAlso determines the time it takes for messages to fade colors.\n-1 means the message never disappears or fades."
+    },
+    {
+      "Key": "PREF_Logger_Enable_Color_Fade",
+      "Text": "Enable Log Message Color Fade"
+    },
+    {
+      "Key": "PREF_Logger_Enable_Color_Fade_TT",
+      "Text": "If enabled, log messages will slowly fade from their original color to a faded color."
+    },
+    {
+      "Key": "PREF_Logger_Enable_Log_Popups",
+      "Text": "Log Popups"
+    },
+    {
+      "Key": "PREF_Logger_Enable_Log_Popups_TT",
+      "Text": "If enabled, high priority log messages will cause a popup message box to appear."
+    },
+    {
+      "Key": "PREF_Logger_Enable_Scope_Logging",
+      "Text": "Enable Scope Logging"
+    },
+    {
+      "Key": "PREF_Logger_Enable_Scope_Logging_TT",
+      "Text": "If enabled, the scope the log message is sent from is included in the log message."
+    },
+    {
+      "Key": "PREF_Developer_Enable_Tools",
+      "Text": "Enable Developer Tools"
+    },
+    {
+      "Key": "PREF_Developer_Enable_Tools_TT",
+      "Text": "Enables various tools meant for Smithbox developers only."
+    },
+    {
+      "Key": "PREF_Developer_Smithbox_Build_Folder",
+      "Text": "Smithbox Build Folder"
+    },
+    {
+      "Key": "PREF_Developer_Smithbox_Build_Folder_TT",
+      "Text": "Select the build directory for Smithbox (where the Smithbox.sln is placed)."
     }
   ]
 }

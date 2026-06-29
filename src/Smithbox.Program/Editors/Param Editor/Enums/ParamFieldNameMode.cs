@@ -9,12 +9,15 @@ namespace StudioCore.Editors.ParamEditor;
 
 public enum ParamFieldNameMode
 {
-    [Display(Name = "Source")]
+    [Display(Name = "PARAM_ENUM_Field_Name_Mode_Source")]
     Source,
-    [Display(Name = "Community")]
+
+    [Display(Name = "PARAM_ENUM_Field_Name_Mode_Community")]
     Community,
-    [Display(Name = "Source (Community)")]
+
+    [Display(Name = "PARAM_ENUM_Field_Name_Mode_Source_Community")]
     Source_Community,
-    [Display(Name = "Community (Source)")]
+
+    [Display(Name = "PARAM_ENUM_Field_Name_Mode_Community_Source")]
     Community_Source
 }

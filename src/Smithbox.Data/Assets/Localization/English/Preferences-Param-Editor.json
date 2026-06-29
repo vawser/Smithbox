@@ -1,8 +1,748 @@
 {
   "Entries": [
     {
-      "Key": "PREF_Section_Category_General",
-      "Text": "General"
+      "Key": "PREF_ParamEditor_Annotation_Language",
+      "Text": "Annotation Language"
+    },
+    {
+      "Key": "PREF_ParamEditor_Annotation_Language_TT",
+      "Text": "Determines the language used for meta annotations (i.e. community field names)."
+    },
+    {
+      "Key": "PREF_ParamEditor_Import_Language",
+      "Text": "Row Import Language"
+    },
+    {
+      "Key": "PREF_ParamEditor_Import_Language_TT",
+      "Text": "Determines the language used for community row imports."
+    },
+    {
+      "Key": "PREF_ParamEditor_Enable_Compact_Mode",
+      "Text": "Enable Compact Presentation"
+    },
+    {
+      "Key": "PREF_ParamEditor_Enable_Compact_Mode_TT",
+      "Text": "If enabled, the line height between elements is reduced, allow more params, rows and fields to be visible."
+    },
+    {
+      "Key": "PREF_ParamEditor_Enable_Table_Borders",
+      "Text": "Enable Data Table Cell Borders"
+    },
+    {
+      "Key": "PREF_ParamEditor_Enable_Table_Borders_TT",
+      "Text": "If enabled, data table cells will be given borders."
+    },
+    {
+      "Key": "PREF_ParamEditor_Loose_Param_Mode_DS2",
+      "Text": "Enable Loose Param Mode"
+    },
+    {
+      "Key": "PREF_ParamEditor_Loose_Param_Mode_DS2_TT",
+      "Text": "If enabled, loose .param files will be considered during the param loading and saving processes."
+    },
+    {
+      "Key": "PREF_ParamEditor_Repack_Loose_Params_DS2",
+      "Text": "Enable Loose Param Repack"
+    },
+    {
+      "Key": "PREF_ParamEditor_Repack_Loose_Params_DS2_TT",
+      "Text": "If enabled, any loose .param files will be repacked into the enc_regulation.bin"
+    },
+    {
+      "Key": "PREF_ParamEditor_Loose_Param_Mode_DS3",
+      "Text": "Enable Loose Param Mode"
+    },
+    {
+      "Key": "PREF_ParamEditor_Loose_Param_Mode_DS3_TT",
+      "Text": "If enabled, loose .param files will be considered during the param loading and saving processes."
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_Name_Strip_DES",
+      "Text": "Strip Row Names on Save"
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_Name_Strip_DES_TT",
+      "Text": "If enabled, row names are stripped upon save, meaning no row names will be stored within the regulation."
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_Name_Strip_DS1",
+      "Text": "Strip Row Names on Save"
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_Name_Strip_DS1_TT",
+      "Text": "If enabled, row names are stripped upon save, meaning no row names will be stored within the regulation."
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_Name_Strip_DS2",
+      "Text": "Strip Row Names on Save"
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_Name_Strip_DS2_TT",
+      "Text": "If enabled, row names are stripped upon save, meaning no row names will be stored within the regulation."
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_Name_Strip_BB",
+      "Text": "Strip Row Names on Save"
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_Name_Strip_BB_TT",
+      "Text": "If enabled, row names are stripped upon save, meaning no row names will be stored within the regulation."
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_Name_Strip_DS3",
+      "Text": "Strip Row Names on Save"
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_Name_Strip_DS3_TT",
+      "Text": "If enabled, row names are stripped upon save, meaning no row names will be stored within the regulation."
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_Name_Strip_SDT",
+      "Text": "Strip Row Names on Save"
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_Name_Strip_SDT_TT",
+      "Text": "If enabled, row names are stripped upon save, meaning no row names will be stored within the regulation."
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_Name_Strip_ER",
+      "Text": "Strip Row Names on Save"
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_Name_Strip_ER_TT",
+      "Text": "If enabled, row names are stripped upon save, meaning no row names will be stored within the regulation."
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_Name_Strip_AC6",
+      "Text": "Strip Row Names on Save"
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_Name_Strip_AC6_TT",
+      "Text": "If enabled, row names are stripped upon save, meaning no row names will be stored within the regulation."
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_Name_Strip_NR",
+      "Text": "Strip Row Names on Save"
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_Name_Strip_NR_TT",
+      "Text": "If enabled, row names are stripped upon save, meaning no row names will be stored within the regulation."
+    },
+    {
+      "Key": "PREF_ParamEditor_Stripped_Row_Name_Load_DES",
+      "Text": "Restore Row Names on Load"
+    },
+    {
+      "Key": "PREF_ParamEditor_Stripped_Row_Name_Load_DES_TT",
+      "Text": "If enabled, and stripped row names have been stored, row names will be re-apply upon loading."
+    },
+    {
+      "Key": "PREF_ParamEditor_Stripped_Row_Name_Load_DS1",
+      "Text": "Restore Row Names on Load"
+    },
+    {
+      "Key": "PREF_ParamEditor_Stripped_Row_Name_Load_DS1_TT",
+      "Text": "If enabled, and stripped row names have been stored, row names will be re-apply upon loading."
+    },
+    {
+      "Key": "PREF_ParamEditor_Stripped_Row_Name_Load_DS2",
+      "Text": "Restore Row Names on Load"
+    },
+    {
+      "Key": "PREF_ParamEditor_Stripped_Row_Name_Load_DS2_TT",
+      "Text": "If enabled, and stripped row names have been stored, row names will be re-apply upon loading."
+    },
+    {
+      "Key": "PREF_ParamEditor_Stripped_Row_Name_Load_BB",
+      "Text": "Restore Row Names on Load"
+    },
+    {
+      "Key": "PREF_ParamEditor_Stripped_Row_Name_Load_BB_TT",
+      "Text": "If enabled, and stripped row names have been stored, row names will be re-apply upon loading."
+    },
+    {
+      "Key": "PREF_ParamEditor_Stripped_Row_Name_Load_DS3",
+      "Text": "Restore Row Names on Load"
+    },
+    {
+      "Key": "PREF_ParamEditor_Stripped_Row_Name_Load_DS3_TT",
+      "Text": "If enabled, and stripped row names have been stored, row names will be re-apply upon loading."
+    },
+    {
+      "Key": "PREF_ParamEditor_Stripped_Row_Name_Load_SDT",
+      "Text": "Restore Row Names on Load"
+    },
+    {
+      "Key": "PREF_ParamEditor_Stripped_Row_Name_Load_SDT_TT",
+      "Text": "If enabled, and stripped row names have been stored, row names will be re-apply upon loading."
+    },
+    {
+      "Key": "PREF_ParamEditor_Stripped_Row_Name_Load_ER",
+      "Text": "Restore Row Names on Load"
+    },
+    {
+      "Key": "PREF_ParamEditor_Stripped_Row_Name_Load_ER_TT",
+      "Text": "If enabled, and stripped row names have been stored, row names will be re-apply upon loading."
+    },
+    {
+      "Key": "PREF_ParamEditor_Stripped_Row_Name_Load_AC6",
+      "Text": "Restore Row Names on Load"
+    },
+    {
+      "Key": "PREF_ParamEditor_Stripped_Row_Name_Load_AC6_TT",
+      "Text": "If enabled, and stripped row names have been stored, row names will be re-apply upon loading."
+    },
+    {
+      "Key": "PREF_ParamEditor_Stripped_Row_Name_Load_NR",
+      "Text": "Restore Row Names on Load"
+    },
+    {
+      "Key": "PREF_ParamEditor_Stripped_Row_Name_Load_NR_TT",
+      "Text": "If enabled, and stripped row names have been stored, row names will be re-apply upon loading."
+    },
+    {
+      "Key": "PREF_ParamEditor_CompressionOverride",
+      "Text": "Param Save Compression"
+    },
+    {
+      "Key": "PREF_ParamEditor_CompressionOverride_TT",
+      "Text": "Determine which form of DCX compression to apply to the saved regulation file."
+    },
+    {
+      "Key": "PREF_ParamReloader_Use_Latest_Offset",
+      "Text": "Automatically Use Latest"
+    },
+    {
+      "Key": "PREF_ParamReloader_Use_Latest_Offset_TT",
+      "Text": "If enabled, the param reloader version will be set to the latest executable version whenever Smithbox is started."
+    },
+    {
+      "Key": "PREF_ParamReloader_Current_Offsets",
+      "Text": "Param Reloader Version"
+    },
+    {
+      "Key": "PREF_ParamReloader_Current_Offsets_TT",
+      "Text": "This should match the executable version you wish to target, otherwise the memory offsets will be incorrect."
+    },
+    {
+      "Key": "PREF_ParamEditor_Param_List_Pinned_Stay_Visible",
+      "Text": "Always Display Pinned Entries"
+    },
+    {
+      "Key": "PREF_ParamEditor_Param_List_Pinned_Stay_Visible_TT",
+      "Text": "If enabled, pinned param entries will always be visible at the top of the list, even when scrolling."
+    },
+    {
+      "Key": "PREF_ParamEditor_Param_List_Sort_Alphabetically",
+      "Text": "Sort List Alphabetically"
+    },
+    {
+      "Key": "PREF_ParamEditor_Param_List_Sort_Alphabetically_TT",
+      "Text": "If enabled, the param list will be sorted alphabetically."
+    },
+    {
+      "Key": "PREF_ParamEditor_Param_List_Display_Community_Names",
+      "Text": "Display Community Names"
+    },
+    {
+      "Key": "PREF_ParamEditor_Param_List_Display_Community_Names_TT",
+      "Text": "If enabled, community names will be used instead of the raw filename."
+    },
+    {
+      "Key": "PREF_ParamEditor_Param_List_Display_Categories",
+      "Text": "Display Categories"
+    },
+    {
+      "Key": "PREF_ParamEditor_Param_List_Display_Categories_TT",
+      "Text": "If enabled, the params will be grouped into collapsible categories."
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_List_Pinned_Stay_Visible",
+      "Text": "Always Display Pinned Entries"
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_List_Pinned_Stay_Visible_TT",
+      "Text": "If enabled, pinned row entries will always be visible at the top of the list, even when scrolling."
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_List_Enable_Line_Wrapping",
+      "Text": "Enable Row Name Word-Wrap"
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_List_Enable_Line_Wrapping_TT",
+      "Text": "If enabled, the row names will be word-wrapped."
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_List_Enable_Row_Grouping",
+      "Text": "Enable Row Grouping for Item Lots"
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_List_Enable_Row_Grouping_TT",
+      "Text": "If enabled, the rows within Item Lot params will be grouped."
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_List_Display_Decorators",
+      "Text": "Display Decorators"
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_List_Display_Decorators_TT",
+      "Text": "If enabled, the row decorators are displayed."
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_List_Row_FMG_Prefer_Base",
+      "Text": "Display Base over DLC entries for Row FMG Text"
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_List_Row_FMG_Prefer_Base_TT",
+      "Text": "If enabled, FMG entries from the base FMG will be preferred over those of the DLC1/DLC2 FMG."
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Pinned_Stay_Visible",
+      "Text": "Always Display Pinned Entries"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Pinned_Stay_Visible_TT",
+      "Text": "If enabled, pinned field entries will always be visible at the top of the list, even when scrolling."
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Allow_Rearrangement",
+      "Text": "Enable Field Rearrangement"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Allow_Rearrangement_TT",
+      "Text": "If enabled, fields will be re-arranged according to the grouping arrangement specified in the Param Meta file."
+    },
+    {
+      "Key": "PREF_ParamEditor_FieldNameMode",
+      "Text": "Field Name Mode"
+    },
+    {
+      "Key": "PREF_ParamEditor_FieldNameMode_TT",
+      "Text": "Determines how the field naming is displayed.\nSource is the original param definition name.\nCommunity is a more readable and descriptive name."
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Display_Offsets",
+      "Text": "Display Offsets"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Display_Offsets_TT",
+      "Text": "If enabled, the data offset for a field will be displayed."
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Display_Color_Picker",
+      "Text": "Display Color Picker"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Display_Color_Picker_TT",
+      "Text": "If enabled, a color picker is displayed (when suitable for the field)."
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Display_Graph",
+      "Text": "Display Graph"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Display_Graph_TT",
+      "Text": "If enabled, a graph is displayed (when suitable for the field)."
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Display_Map_Link",
+      "Text": "Display Map Link"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Display_Map_Link_TT",
+      "Text": "If enabled, a map link button is displayed (when suitable for the field)."
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Display_Model_Link",
+      "Text": "Display Model Link"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Display_Model_Link_TT",
+      "Text": "If enabled, a model link button is displayed (when suitable for the field)."
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Display_Padding",
+      "Text": "Display Padding"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Display_Padding_TT",
+      "Text": "If enabled, padding fields are displayed."
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Display_Decorators",
+      "Text": "Display Decorators"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Display_Decorators_TT",
+      "Text": "If enabled, field decorators are displayed."
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Display_References",
+      "Text": "Display References"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Display_References_TT",
+      "Text": "If enabled, field references are displayed."
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Display_Enums",
+      "Text": "Display Enums"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Display_Enums_TT",
+      "Text": "If enabled, field enums are displayed."
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Display_Field_Attributes",
+      "Text": "Display Attributes"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Display_Field_Attributes_TT",
+      "Text": "If enabled, field attributes are displayed in the tooltip."
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Display_Icon_Preview",
+      "Text": "Display Icon Preview"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Display_Icon_Preview_TT",
+      "Text": "If enabled, a referenced icon will be displayed visually by the field."
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Icon_Preview_Scale",
+      "Text": "Icon Preview Scale"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Icon_Preview_Scale_TT",
+      "Text": "The image scale of the icon preview."
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Tooltip_Mode",
+      "Text": "Field Tooltip Mode"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Tooltip_Mode_TT",
+      "Text": "Determines how the field tooltip is shown."
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_GroupReference_DisplayCommunityName",
+      "Text": "Display Group Reference Community Names"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_GroupReference_DisplayCommunityName_TT",
+      "Text": "If enabled, group references will use community name labels."
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Enable_Field_Layouts",
+      "Text": "Enable Field Layouts"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Enable_Field_Layouts_TT",
+      "Text": "If enabled, fields will be arranged based on field layout data (if applicable)."
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Enable_Field_Layout_Category_Names",
+      "Text": "Enable Group Names"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Enable_Field_Layout_Category_Names_TT",
+      "Text": "If enabled, the grouping headers will have names."
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Enable_Field_Layout_Chance_Hints",
+      "Text": "Enable Chance Hints"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Enable_Field_Layout_Chance_Hints_TT",
+      "Text": "If enabled, the chance percentages for item lots will be displayed."
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Field_Layout_Display_Type",
+      "Text": "Field Layout Mode"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Field_Layout_Display_Type_TT",
+      "Text": "Determines how the field layouts are displayed."
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Unsorted_Field_Placement",
+      "Text": "Unsorted Field Placement"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_List_Unsorted_Field_Placement_TT",
+      "Text": "Determines where the unsorted fields are placed when Field Layouts are active."
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_Input_Display_Traditional_Percentage",
+      "Text": "Display Traditional Percentages"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_Input_Display_Traditional_Percentage_TT",
+      "Text": "If enabled, fields that represent a percentage will be displayed in a normal fashion, with the value representing the percentage. Typically, the value in represented as 1 - <value>."
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_Context_Display_Row_Name_Input",
+      "Text": "Display Row Name Input"
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_Context_Display_Row_Name_Input_TT",
+      "Text": "If enabled, display the row name input box within the context menu."
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_Context_Display_Shortcut_Tools",
+      "Text": "Display Shortcut Tools"
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_Context_Display_Shortcut_Tools_TT",
+      "Text": "If enabled, display the shortcut tools within the context menu."
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_Context_Display_Pin_Options",
+      "Text": "Display Pin Options"
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_Context_Display_Pin_Options_TT",
+      "Text": "If enabled, display the pin options within the context menu."
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_Context_Display_Comparison_Options",
+      "Text": "Display Comparison Options"
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_Context_Display_Comparison_Options_TT",
+      "Text": "If enabled, display the comparison options within the context menu."
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_Context_Display_Reverse_Lookup",
+      "Text": "Display Reverse Lookup Tool"
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_Context_Display_Reverse_Lookup_TT",
+      "Text": "If enabled, display the reverse lookup tool within the context menu."
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_Context_Display_Proliferate_Name",
+      "Text": "Display Proliferate Name Tool"
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_Context_Display_Proliferate_Name_TT",
+      "Text": "If enabled, display the proliferate name tool within the context menu."
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_Context_Display_Inherit_Name",
+      "Text": "Display Inherit Name Tool"
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_Context_Display_Inherit_Name_TT",
+      "Text": "If enabled, display the inherit name tool within the context menu."
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_Context_Display_Row_Name_Tools",
+      "Text": "Display Row Name Tools"
+    },
+    {
+      "Key": "PREF_ParamEditor_Row_Context_Display_Row_Name_Tools_TT",
+      "Text": "If enabled, display the row name tools within the context menu."
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_Context_Display_Field_Name",
+      "Text": "Display Field Name"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_Context_Display_Field_Name_TT",
+      "Text": "If enabled, the field name is displayed in the context menu."
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_Context_Display_Field_Description",
+      "Text": "Display Field Description"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_Context_Display_Field_Description_TT",
+      "Text": "If enabled, the field description is displayed in the context menu."
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_Context_Display_Field_Attributes",
+      "Text": "Display Field Attributes"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_Context_Display_Field_Attributes_TT",
+      "Text": "If enabled, the field attributes are displayed in the context menu."
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_Context_Display_Pin_Options",
+      "Text": "Display Field Pin Options"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_Context_Display_Pin_Options_TT",
+      "Text": "If enabled, the field pin options are displayed in the context menu."
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_Context_Display_Comparison_Options",
+      "Text": "Display Field Comparison Options"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_Context_Display_Comparison_Options_TT",
+      "Text": "If enabled, the field comparison options are displayed in the context menu."
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_Context_Display_Field_Value_Distribution",
+      "Text": "Display Field Value Distribution"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_Context_Display_Field_Value_Distribution_TT",
+      "Text": "If enabled, the field value distribution tool is displayed in the context menu."
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_Context_Display_Searchbar_Options",
+      "Text": "Display Field Searchbar Options"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_Context_Display_Searchbar_Options_TT",
+      "Text": "If enabled, the field searchbar options are displayed in the context menu."
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_Context_Display_References",
+      "Text": "Display Field References"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_Context_Display_References_TT",
+      "Text": "If enabled, the field references are displayed in the context menu."
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_Context_Display_Reference_Search",
+      "Text": "Display Field Reference Search"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_Context_Display_Reference_Search_TT",
+      "Text": "If enabled, the field reference search tool is displayed in the context menu."
+    },
+    {
+      "Key": "PREF_ParamEditor_Show_Advanced_Mass_Edit_Commands",
+      "Text": "Display Advanced Commands in Auto-fill"
+    },
+    {
+      "Key": "PREF_ParamEditor_Show_Advanced_Mass_Edit_Commands_TT",
+      "Text": "If enabled, more complex commands are visible in the auto-fill menu."
+    },
+    {
+      "Key": "PREF_Param_Editor_Enable_Param_Meta_Override",
+      "Text": "Enable Param Meta Override"
+    },
+    {
+      "Key": "PREF_Param_Editor_Enable_Param_Meta_Override_TT",
+      "Text": "If enabled, the Param Editor will use the Param META local to your project's .smithbox folder, instead of the base version."
+    },
+    {
+      "Key": "PREF_Param_Editor_Enable_Param_Enum_Addition",
+      "Text": "Enable Param Enum Addition"
+    },
+    {
+      "Key": "PREF_Param_Editor_Enable_Param_Enum_Addition_TT",
+      "Text": "If enabled, the Param Editor will add param enums from your project's .smithbox folder alongside the base versions."
+    },
+    {
+      "Key": "PREF_Param_Editor_Enable_Param_Enum_Override",
+      "Text": "Enable Param Enum Override"
+    },
+    {
+      "Key": "PREF_Param_Editor_Enable_Param_Enum_Override_TT",
+      "Text": "If enabled, the Param Editor will use the Param Enums local to your project's .smithbox folder, instead of the base version."
+    },
+    {
+      "Key": "PREF_Param_Editor_Enable_Param_Category_Addition",
+      "Text": "Enable Param Category Addition"
+    },
+    {
+      "Key": "PREF_Param_Editor_Enable_Param_Category_Addition_TT",
+      "Text": "If enabled, the Param Editor will add param categories from your project's .smithbox folder alongside the base versions."
+    },
+    {
+      "Key": "PREF_Param_Editor_Enable_Param_Category_Override",
+      "Text": "Enable Param Category Override"
+    },
+    {
+      "Key": "PREF_Param_Editor_Enable_Param_Category_Override_TT",
+      "Text": "If enabled, the Param Editor will only use param categories from your project's .smithbox folder, and ignore the base versions."
+    },
+    {
+      "Key": "PREF_Param_Editor_Enable_Param_Commutativity_Group_Addition",
+      "Text": "Enable Param Commutativity Group Addition"
+    },
+    {
+      "Key": "PREF_Param_Editor_Enable_Param_Commutativity_Group_Addition_TT",
+      "Text": "If enabled, the Param Editor will add param commutativity groups from your project's .smithbox folder alongside the base versions."
+    },
+    {
+      "Key": "PREF_Param_Editor_Enable_Param_Commutativity_Group_Override",
+      "Text": "Enable Param Commutativity Override"
+    },
+    {
+      "Key": "PREF_Param_Editor_Enable_Param_Commutativity_Group_Override_TT",
+      "Text": "If enabled, the Param Editor will only use param commutativity groups from your project's .smithbox folder, and ignore the base versions."
+    },
+    {
+      "Key": "PREF_Param_Editor_Enable_Param_Field_Reference_Group_Addition",
+      "Text": "Enable Param Field Reference Group Addition"
+    },
+    {
+      "Key": "PREF_Param_Editor_Enable_Param_Field_Reference_Group_Addition_TT",
+      "Text": "If enabled, the Param Editor will add param field reference groups from your project's .smithbox folder alongside the base versions."
+    },
+    {
+      "Key": "PREF_Param_Editor_Enable_Param_Field_Reference_Group_Override",
+      "Text": "Enable Param Field Reference Group Override"
+    },
+    {
+      "Key": "PREF_Param_Editor_Enable_Param_Field_Reference_Group_Override_TT",
+      "Text": "If enabled, the Param Editor will only use param field reference groups from your project's .smithbox folder, and ignore the base versions."
+    },
+    {
+      "Key": "PREF_Param_Editor_Enable_Field_Layout_Addition",
+      "Text": "Enable Param Field Layout Addition"
+    },
+    {
+      "Key": "PREF_Param_Editor_Enable_Field_Layout_Addition_TT",
+      "Text": "If enabled, the Param Editor will add param field layouts from your project's .smithbox folder alongside the base versions."
+    },
+    {
+      "Key": "PREF_Param_Editor_Enable_Param_Field_Layout_Override",
+      "Text": "Enable Param Field Layout Override"
+    },
+    {
+      "Key": "PREF_Param_Editor_Enable_Param_Field_Layout_Override_TT",
+      "Text": "If enabled, the Param Editor will only use param field layouts from your project's .smithbox folder, and ignore the base versions."
+    },
+    {
+      "Key": "PREF_Param_Editor_Enable_Icon_Configuration_Addition",
+      "Text": "Enable Param Icon Configuration Addition"
+    },
+    {
+      "Key": "PREF_Param_Editor_Enable_Icon_Configuration_Addition_TT",
+      "Text": "If enabled, the Param Editor will add param icon configurations from your project's .smithbox folder alongside the base versions."
+    },
+    {
+      "Key": "PREF_Param_Editor_Enable_Icon_Configuration_Override",
+      "Text": "Enable Param Icon Configuration Override"
+    },
+    {
+      "Key": "PREF_Param_Editor_Enable_Icon_Configuration_Override_TT",
+      "Text": "If enabled, the Param Editor will only use param icon configurations from your project's .smithbox folder, and ignore the base versions."
+    },
+    {
+      "Key": "PREF_Param_Editor_Enable_Graph_Annotation_Addition",
+      "Text": "Enable Param Graph Annotation Addition"
+    },
+    {
+      "Key": "PREF_Param_Editor_Enable_Graph_Annotation_Addition_TT",
+      "Text": "If enabled, the Param Editor will add param graph annotations from your project's .smithbox folder alongside the base versions."
+    },
+    {
+      "Key": "PREF_Param_Editor_Enable_Graph_Annotation_Override",
+      "Text": "Enable Param Graph Annotation Override"
+    },
+    {
+      "Key": "PREF_Param_Editor_Enable_Graph_Annotation_Override_TT",
+      "Text": "If enabled, the Param Editor will only use param graph annotations from your project's .smithbox folder, and ignore the base versions."
     }
   ]
 }

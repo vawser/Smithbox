@@ -14,7 +14,8 @@ public class MapEditorPrefs
     {
         return typeof(MapEditorPrefs);
     }
-    #region Map List
+
+    #region General
     public static PreferenceItem MapEditor_SkipHavokLoad()
     {
         return new PreferenceItem
@@ -30,8 +31,8 @@ public class MapEditorPrefs
 
             Section = SectionCategory.MapEditor_General,
 
-            Title = "Skip Havok Collision / Navmesh Loading",
-            Description = "If enabled, the havok collisions and navmeshes will not be loaded.",
+            Title = "PREF_MapEditor_SkipHavokLoad",
+            Description = "PREF_MapEditor_SkipHavokLoad_TT",
 
             Draw = () =>
             {
@@ -53,8 +54,8 @@ public class MapEditorPrefs
 
             Section = SectionCategory.MapEditor_Map_List,
 
-            Title = "Enable Load on Double-click",
-            Description = "If enabled, double-clicking a map in the map list will load it.",
+            Title = "PREF_MapEditor_Map_List_Enable_Load_on_Double_Click",
+            Description = "PREF_MapEditor_Map_List_Enable_Load_on_Double_Click_TT",
 
             Draw = () =>
             {
@@ -72,8 +73,8 @@ public class MapEditorPrefs
 
             Section = SectionCategory.MapEditor_Map_List,
 
-            Title = "Display Map Aliases",
-            Description = "If enabled, the map aliases for maps will be displayed.",
+            Title = "PREF_MapEditor_Map_List_Display_Map_Aliases",
+            Description = "PREF_MapEditor_Map_List_Display_Map_Aliases_TT",
 
             Draw = () =>
             {
@@ -95,8 +96,8 @@ public class MapEditorPrefs
 
             Section = SectionCategory.MapEditor_Map_Contents,
 
-            Title = "Display Character Aliases",
-            Description = "If enabled, character aliases will be displayed where possible.",
+            Title = "PREF_MapEditor_Map_Contents_Display_Character_Aliases",
+            Description = "PREF_MapEditor_Map_Contents_Display_Character_Aliases_TT",
 
             Draw = () =>
             {
@@ -114,8 +115,8 @@ public class MapEditorPrefs
 
             Section = SectionCategory.MapEditor_Map_Contents,
 
-            Title = "Display Asset Aliases",
-            Description = "If enabled, asset (object) aliases will be displayed where possible.",
+            Title = "PREF_MapEditor_Map_Contents_Display_Asset_Aliases",
+            Description = "PREF_MapEditor_Map_Contents_Display_Asset_Aliases_TT",
 
             Draw = () =>
             {
@@ -133,8 +134,8 @@ public class MapEditorPrefs
 
             Section = SectionCategory.MapEditor_Map_Contents,
 
-            Title = "Display Map Piece Aliases",
-            Description = "If enabled, map piece aliases will be displayed where possible.",
+            Title = "PREF_MapEditor_Map_Contents_Display_Map_Piece_Aliases",
+            Description = "PREF_MapEditor_Map_Contents_Display_Map_Piece_Aliases_TT",
 
             Draw = () =>
             {
@@ -152,8 +153,8 @@ public class MapEditorPrefs
 
             Section = SectionCategory.MapEditor_Map_Contents,
 
-            Title = "Display Treasure Aliases",
-            Description = "If enabled, itemlot references will be displayed as aliases for treasure events.",
+            Title = "PREF_MapEditor_Map_Contents_Display_Treasure_Aliases",
+            Description = "PREF_MapEditor_Map_Contents_Display_Treasure_Aliases_TT",
 
             Draw = () =>
             {
@@ -175,8 +176,8 @@ public class MapEditorPrefs
 
             Section = SectionCategory.MapEditor_Map_Object_Properties,
 
-            Title = "Enable Community Names",
-            Description = "If enabled, community names are used for each map object property name.",
+            Title = "PREF_MapEditor_Properties_Enable_Commmunity_Names",
+            Description = "PREF_MapEditor_Properties_Enable_Commmunity_Names_TT",
 
             Draw = () =>
             {
@@ -195,8 +196,8 @@ public class MapEditorPrefs
 
             Section = SectionCategory.MapEditor_Map_Object_Properties,
 
-            Title = "Display Unknown Properties",
-            Description = "If enabled, unknown properties will be displayed (i.e. any property starting with Unk).",
+            Title = "PREF_MapEditor_Properties_Display_Unknown_Properties",
+            Description = "PREF_MapEditor_Properties_Display_Unknown_Properties_TT",
 
             Draw = () =>
             {
@@ -215,8 +216,8 @@ public class MapEditorPrefs
 
             Section = SectionCategory.MapEditor_Map_Object_Properties,
 
-            Title = "Propagate Name Changes to References",
-            Description = "If enabled, renaming a viewport object will propagate the name change to any references it is found in.",
+            Title = "PREF_MapEditor_Properties_Enable_Referenced_Rename",
+            Description = "PREF_MapEditor_Properties_Enable_Referenced_Rename_TT",
 
             Draw = () =>
             {
@@ -237,8 +238,8 @@ public class MapEditorPrefs
 
             Section = SectionCategory.MapEditor_Map_Object_Properties,
 
-            Title = "Display Property Attributes",
-            Description = "If enabled, data type attributes are displayed in the tooltip for each property.",
+            Title = "PREF_MapEditor_Properties_Display_Property_Attributes",
+            Description = "PREF_MapEditor_Properties_Display_Property_Attributes_TT",
 
             Draw = () =>
             {
@@ -258,8 +259,8 @@ public class MapEditorPrefs
 
             Section = SectionCategory.MapEditor_Additional_Property_Information,
 
-            Title = "Display at the Top",
-            Description = "If enabled, the additional property information will be displayed at the top of the properties window. By default they will appear at the bottom.",
+            Title = "PREF_MapEditor_Properties_Display_Additional_Information_at_Top",
+            Description = "PREF_MapEditor_Properties_Display_Additional_Information_at_Top_TT",
 
             Draw = () =>
             {
@@ -278,8 +279,8 @@ public class MapEditorPrefs
 
             Section = SectionCategory.MapEditor_Additional_Property_Information,
 
-            Title = "Display Map Object Behavior Information",
-            Description = "If enabled, information about what the map object does is displayed.",
+            Title = "PREF_MapEditor_Properties_Display_Behavior_Information",
+            Description = "PREF_MapEditor_Properties_Display_Behavior_Information_TT",
 
             Draw = () =>
             {
@@ -298,8 +299,8 @@ public class MapEditorPrefs
 
             Section = SectionCategory.MapEditor_Additional_Property_Information,
 
-            Title = "Display Map Object References",
-            Description = "If enabled, references information for the map object is displayed..",
+            Title = "PREF_MapEditor_Properties_Display_Reference_Information",
+            Description = "PREF_MapEditor_Properties_Display_Reference_Information_TT",
 
             Draw = () =>
             {
@@ -318,8 +319,8 @@ public class MapEditorPrefs
 
             Section = SectionCategory.MapEditor_Additional_Property_Information,
 
-            Title = "Display Reference Name",
-            Description = "If enabled, map object references will display the name of the map object.",
+            Title = "PREF_MapEditor_Properties_Display_Reference_Name",
+            Description = "PREF_MapEditor_Properties_Display_Reference_Name_TT",
 
             Draw = () =>
             {
@@ -337,8 +338,8 @@ public class MapEditorPrefs
 
             Section = SectionCategory.MapEditor_Additional_Property_Information,
 
-            Title = "Display Reference Entity ID",
-            Description = "If enabled, map object references will display the Entity ID of the map object.",
+            Title = "PREF_MapEditor_Properties_Display_Reference_Entity_ID",
+            Description = "PREF_MapEditor_Properties_Display_Reference_Entity_ID_TT",
 
             Draw = () =>
             {
@@ -356,8 +357,8 @@ public class MapEditorPrefs
 
             Section = SectionCategory.MapEditor_Additional_Property_Information,
 
-            Title = "Display Reference Alias",
-            Description = "If enabled, map object references will display the alias of the map object.",
+            Title = "PREF_MapEditor_Properties_Display_Reference_Alias",
+            Description = "PREF_MapEditor_Properties_Display_Reference_Alias_TT",
 
             Draw = () =>
             {
@@ -379,8 +380,8 @@ public class MapEditorPrefs
 
             Section = SectionCategory.MapEditor_Character_Substitution,
 
-            Title = "Enable Substitution",
-            Description = "If enabled, the character marker for 'c0000' map objects will be substituted for the character model assigned here.",
+            Title = "PREF_MapEditor_Enable_Character_Substitution",
+            Description = "PREF_MapEditor_Enable_Character_Substitution_TT",
 
             Draw = () =>
             {
@@ -399,8 +400,8 @@ public class MapEditorPrefs
 
             Section = SectionCategory.MapEditor_Character_Substitution,
 
-            Title = "Character Model ID",
-            Description = "The character ID of the model you want to use for the substitution.",
+            Title = "PREF_MapEditor_Character_Substitution_ID",
+            Description = "PREF_MapEditor_Character_Substitution_ID_TT",
 
             Draw = () =>
             {
@@ -423,8 +424,8 @@ public class MapEditorPrefs
 
             Section = SectionCategory.MapEditor_Model_Selector,
 
-            Title = "Display Aliases",
-            Description = "If enabled, aliases for each model entry are displayed where possible.",
+            Title = "PREF_MapEditor_Model_Selector_Display_Aliases",
+            Description = "PREF_MapEditor_Model_Selector_Display_Aliases_TT",
 
             Draw = () =>
             {
@@ -442,8 +443,8 @@ public class MapEditorPrefs
 
             Section = SectionCategory.MapEditor_Model_Selector,
 
-            Title = "Display Tags",
-            Description = "If enabled, the tags associated with an model are displayed.",
+            Title = "PREF_MapEditor_Model_Selector_Display_Tags",
+            Description = "PREF_MapEditor_Model_Selector_Display_Tags_TT",
 
             Draw = () =>
             {
@@ -461,8 +462,8 @@ public class MapEditorPrefs
 
             Section = SectionCategory.MapEditor_Model_Selector,
 
-            Title = "Include Low Detail Entries",
-            Description = "If enabled, the low detail part entries are displayed.",
+            Title = "PREF_MapEditor_Model_Selector_Display_Low_Detail_Entries",
+            Description = "PREF_MapEditor_Model_Selector_Display_Low_Detail_Entries_TT",
 
             Draw = () =>
             {
@@ -484,8 +485,8 @@ public class MapEditorPrefs
 
             Section = SectionCategory.MapEditor_Selection_Groups,
 
-            Title = "Enable Shortcuts for Groups",
-            Description = "If enabled, the shortcuts for Selection Groups are enabled.",
+            Title = "PREF_MapEditor_Selection_Group_Enable_Shortcuts",
+            Description = "PREF_MapEditor_Selection_Group_Enable_Shortcuts_TT",
 
             Draw = () =>
             {
@@ -503,8 +504,8 @@ public class MapEditorPrefs
 
             Section = SectionCategory.MapEditor_Selection_Groups,
 
-            Title = "Frame Selection on Use",
-            Description = "If enabled, when a selection group is triggered, the contents is framed in the viewport.",
+            Title = "PREF_MapEditor_Selection_Group_Frame_Selection_On_Use",
+            Description = "PREF_MapEditor_Selection_Group_Frame_Selection_On_Use_TT",
 
             Draw = () =>
             {
@@ -522,8 +523,8 @@ public class MapEditorPrefs
 
             Section = SectionCategory.MapEditor_Selection_Groups,
 
-            Title = "Enable Quick Creation",
-            Description = "If enabled, the 'Create Selection Group' shortcut will automatically create the group, bypassing the creation prompt.",
+            Title = "PREF_MapEditor_Selection_Group_Enable_Quick_Creation",
+            Description = "PREF_MapEditor_Selection_Group_Enable_Quick_Creation_TT",
 
             Draw = () =>
             {
@@ -541,8 +542,8 @@ public class MapEditorPrefs
 
             Section = SectionCategory.MapEditor_Selection_Groups,
 
-            Title = "Confirm before Deletion",
-            Description = "If enabled, a confirmation dialog occurs before deletion of a group.",
+            Title = "PREF_MapEditor_Selection_Group_Confirm_Delete",
+            Description = "PREF_MapEditor_Selection_Group_Confirm_Delete_TT",
 
             Draw = () =>
             {
@@ -560,8 +561,8 @@ public class MapEditorPrefs
 
             Section = SectionCategory.MapEditor_Selection_Groups,
 
-            Title = "Display Shortcut",
-            Description = "If enabled, the shortcut to select a group is displayed next to its name.",
+            Title = "PREF_MapEditor_Selection_Group_Show_Keybind",
+            Description = "PREF_MapEditor_Selection_Group_Show_Keybind_TT",
 
             Draw = () =>
             {
@@ -579,8 +580,8 @@ public class MapEditorPrefs
 
             Section = SectionCategory.MapEditor_Selection_Groups,
 
-            Title = "Display Tags",
-            Description = "If enabled, the tags associated with a group are displayed next to its name.",
+            Title = "PREF_MapEditor_Selection_Group_Show_Tags",
+            Description = "PREF_MapEditor_Selection_Group_Show_Tags_TT",
 
             Draw = () =>
             {

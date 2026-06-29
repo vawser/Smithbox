@@ -26,8 +26,8 @@ public class MaterialEditorPrefs
 
             Section = SectionCategory.MaterialEditor_Properties,
 
-            Title = "Display Community Names",
-            Description = "If enabled, display community names in the properties list.",
+            Title = "PREF_MaterialEditor_Properties_Display_Community_Names",
+            Description = "PREF_MaterialEditor_Properties_Display_Community_Names_TT",
 
             Draw = () => {
                 ImGui.Checkbox("##inputValue", ref CFG.Current.MaterialEditor_Properties_Display_Community_Names);
