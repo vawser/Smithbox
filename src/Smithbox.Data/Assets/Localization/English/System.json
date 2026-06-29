@@ -127,6 +127,10 @@
     {
       "Key": "DIALOG_Select_Directory",
       "Text": "Select Directory"
-    }
+    },
+    {
+      "Key": "SYS_Editor_Loading",
+      "Text": "Editor is loading..."
+    },
   ]
 }

@@ -49,7 +49,7 @@ public class TexEditorView
         // Container List
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
         ImGui.SetNextWindowClass(ref UIHelper.DockGroup_TextureViewerView);
-        if (ImGui.Begin($@"Container List##textureEditor_ContainerList_{viewIndex}", UIHelper.GetInnerWindowFlags()))
+        if (ImGui.Begin($@"{LOC.Get("TEXVIEW_Window_Container_List")}###textureEditor_ContainerList_{viewIndex}", UIHelper.GetInnerWindowFlags()))
         {
             var width = ImGui.GetContentRegionAvail().X;
             var height = ImGui.GetContentRegionAvail().Y;
@@ -68,7 +68,7 @@ public class TexEditorView
         // File List
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
         ImGui.SetNextWindowClass(ref UIHelper.DockGroup_TextureViewerView);
-        if (ImGui.Begin($@"File List##textureEditor_FileList_{viewIndex}", UIHelper.GetInnerWindowFlags()))
+        if (ImGui.Begin($@"{LOC.Get("TEXVIEW_Window_File_List")}###textureEditor_FileList_{viewIndex}", UIHelper.GetInnerWindowFlags()))
         {
             var width = ImGui.GetContentRegionAvail().X;
             var height = ImGui.GetContentRegionAvail().Y;
@@ -87,7 +87,7 @@ public class TexEditorView
         // Texture List
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
         ImGui.SetNextWindowClass(ref UIHelper.DockGroup_TextureViewerView);
-        if (ImGui.Begin($@"Texture List##textureEditor_TextureList_{viewIndex}", UIHelper.GetInnerWindowFlags()))
+        if (ImGui.Begin($@"{LOC.Get("TEXVIEW_Window_Texture_List")}###textureEditor_TextureList_{viewIndex}", UIHelper.GetInnerWindowFlags()))
         {
             var width = ImGui.GetContentRegionAvail().X;
             var height = ImGui.GetContentRegionAvail().Y;
@@ -106,7 +106,7 @@ public class TexEditorView
         // Texture Viewport
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
         ImGui.SetNextWindowClass(ref UIHelper.DockGroup_TextureViewerView);
-        if (ImGui.Begin($@"Viewer##textureEditor_Viewer_{viewIndex}", UIHelper.GetTextureViewerFlags()))
+        if (ImGui.Begin($@"{LOC.Get("TEXVIEW_Window_Viewer")}###textureEditor_Viewer_{viewIndex}", UIHelper.GetTextureViewerFlags()))
         {
             var width = ImGui.GetContentRegionAvail().X;
             var height = ImGui.GetContentRegionAvail().Y;
@@ -125,7 +125,7 @@ public class TexEditorView
         // Properties
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
         ImGui.SetNextWindowClass(ref UIHelper.DockGroup_TextureViewerView);
-        if (ImGui.Begin($@"Properties##textureEditor_Properties_{viewIndex}", UIHelper.GetInnerWindowFlags()))
+        if (ImGui.Begin($@"{LOC.Get("TEXVIEW_Window_Properties")}###textureEditor_Properties_{viewIndex}", UIHelper.GetInnerWindowFlags()))
         {
             var width = ImGui.GetContentRegionAvail().X;
             var height = ImGui.GetContentRegionAvail().Y;

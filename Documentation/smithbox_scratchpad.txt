@@ -25,7 +25,7 @@
   Project Metadata Editor
   Text Editor
   Texture Viewer
-  Viewport
+  ### Viewport
  ### Interface
  ### Keybinds
  ### Logger

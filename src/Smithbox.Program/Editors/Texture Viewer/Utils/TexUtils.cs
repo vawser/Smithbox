@@ -39,7 +39,7 @@ public static class TexUtils
         }
         else
         {
-            throw new Exception("Unsupported pixel format (" + _image.Format + ")");
+            throw new Exception(LOC.Get("REND_Unsupported_Pixel_Format", _image.Format));
         }
     }
 
@@ -70,7 +70,7 @@ public static class TexUtils
         }
         else
         {
-            throw new Exception("Unsupported pixel format (" + _image.Format + ")");
+            throw new Exception(LOC.Get("REND_Unsupported_Pixel_Format", _image.Format));
         }
     }
 
@@ -101,7 +101,7 @@ public static class TexUtils
         }
         else
         {
-            throw new Exception("Unsupported pixel format (" + _image.Format + ")");
+            throw new Exception(LOC.Get("REND_Unsupported_Pixel_Format", _image.Format));
         }
     }
 
@@ -132,7 +132,7 @@ public static class TexUtils
         }
         else
         {
-            throw new Exception("Unsupported pixel format (" + _image.Format + ")");
+            throw new Exception(LOC.Get("REND_Unsupported_Pixel_Format", _image.Format));
         }
     }
 
@@ -163,7 +163,7 @@ public static class TexUtils
         }
         else
         {
-            throw new Exception("Unsupported pixel format (" + _image.Format + ")");
+            throw new Exception(LOC.Get("REND_Unsupported_Pixel_Format", _image.Format));
         }
     }
 
@@ -194,7 +194,7 @@ public static class TexUtils
         }
         else
         {
-            throw new Exception("Unsupported pixel format (" + _image.Format + ")");
+            throw new Exception(LOC.Get("REND_Unsupported_Pixel_Format", _image.Format));
         }
     }
 

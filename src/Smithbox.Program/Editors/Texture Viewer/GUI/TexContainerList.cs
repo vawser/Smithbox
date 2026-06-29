@@ -30,7 +30,9 @@ public class TexContainerList
     /// </summary>
     public void Display(float width, float height)
     {
-        UIHelper.SimpleHeader("Containers", "");
+        UIHelper.SimpleHeader(
+            LOC.Get("TEXVIEW_ContainerList_Header_Containers"),
+            LOC.Get("TEXVIEW_ContainerList_Header_Containers_TT"));
 
         EditorFilters.DisplayFramedListFilter("textureViewer_ContainerList",
             ref FileListFilter, ref ExactFileListFilter);
@@ -60,11 +62,11 @@ public class TexContainerList
     /// <summary>
     /// The UI for each container category type
     /// </summary>
-    private void DisplayFileSection(string title, TextureViewCategory displayCategory, List<string> pathFilter, Dictionary<FileDictionaryEntry, BinderContents> dict)
+    private void DisplayFileSection(string title, string imguiKey, TextureViewCategory displayCategory, List<string> pathFilter, Dictionary<FileDictionaryEntry, BinderContents> dict)
     {
-        if (ImGui.BeginTabItem($"{title}"))
+        if (ImGui.BeginTabItem($"{title}###tab_{imguiKey}"))
         {
-            ImGui.BeginChild($"texSourceList_{title}");
+            ImGui.BeginChild($"texSourceList_{imguiKey}#");
 
             var filteredEntries = new Dictionary<FileDictionaryEntry, BinderContents>();
 
@@ -205,50 +207,52 @@ public class TexContainerList
     {
         if (ImGui.BeginPopupContextItem($"context_{entry.Key.Path}{index}"))
         {
-            if (ImGui.MenuItem("Copy to Project"))
+            if (ImGui.MenuItem($"{LOC.Get("TEXVIEW_ContainerList_Context_Copy_to_Project")}##copyToProjectAction"))
             {
                 var outputPath = Path.Join(Project.Descriptor.ProjectPath, entry.Key.Path);
                 entry.Value.WriteBinder(outputPath);
             }
-            UIHelper.Tooltip("Copy this file into your project.");
+            UIHelper.Tooltip(LOC.Get("TEXVIEW_ContainerList_Context_Copy_to_Project_TT"));
 
-            if (ImGui.BeginMenu("Export"))
+            if (ImGui.BeginMenu($"{LOC.Get("TEXVIEW_ContainerList_Context_Header_Export")}##exportMenuHeader"))
             {
-                if (ImGui.MenuItem("All TPFs"))
+                if (ImGui.MenuItem($"{LOC.Get("TEXVIEW_ContainerList_Context_All_TPFs")}##allTpfsAction"))
                 {
                     _ = Parent.Editor.ToolView.TextureExport.ExportTPFsFromContainerAsync(entry.Value);
                 }
-                UIHelper.Tooltip($"Export all the TPFs in this container to your current export directory : {CFG.Current.TextureViewerToolbar_ExportTextureLocation}");
+                UIHelper.Tooltip(
+                    LOC.Get("TEXVIEW_ContainerList_Context_All_TPFs_TT", CFG.Current.TextureViewerToolbar_ExportTextureLocation));
 
-                if (ImGui.MenuItem("All Textures"))
+                if (ImGui.MenuItem($"{LOC.Get("TEXVIEW_ContainerList_Context_All_Textures")}##allTexturesAction"))
                 {
                     _ = Parent.Editor.ToolView.TextureExport.ExportTexturesFromContainerAsync(entry.Value);
                 }
-                UIHelper.Tooltip($"Export all textures files within the TPFs in this container to your current export directory: {CFG.Current.TextureViewerToolbar_ExportTextureLocation}");
+                UIHelper.Tooltip(
+                    LOC.Get("TEXVIEW_ContainerList_Context_All_Textures_TT", CFG.Current.TextureViewerToolbar_ExportTextureLocation));
 
                 ImGui.EndMenu();
             }
 
             ImGui.Separator();
 
-            if (ImGui.MenuItem("Copy Path"))
+            if (ImGui.MenuItem($"{LOC.Get("TEXVIEW_ContainerList_Context_Copy_Path")}##copyPath"))
             {
                 ImGui.SetClipboardText(entry.Key.Path);
             }
-            UIHelper.Tooltip("Copy the file path to the clipboard.");
+            UIHelper.Tooltip(LOC.Get("TEXVIEW_ContainerList_Context_Copy_Path_TT"));
 
-            if (ImGui.MenuItem("Copy Filename"))
+            if (ImGui.MenuItem($"{LOC.Get("TEXVIEW_ContainerList_Context_Copy_Filename")}##copyFilename"))
             {
                 ImGui.SetClipboardText(entry.Key.Filename);
             }
-            UIHelper.Tooltip("Copy the file name to the clipboard.");
+            UIHelper.Tooltip(LOC.Get("TEXVIEW_ContainerList_Context_Copy_Filename_TT"));
 
-            if (ImGui.MenuItem("Copy Alias"))
+            if (ImGui.MenuItem($"{LOC.Get("TEXVIEW_ContainerList_Context_Copy_Alias")}##copyAlias"))
             {
                 var alias = AliasHelper.GetTextureContainerAliasName(Project, entry.Key.Filename, displayCategory);
                 ImGui.SetClipboardText(alias);
             }
-            UIHelper.Tooltip("Copy the alias name to the clipboard.");
+            UIHelper.Tooltip(LOC.Get("TEXVIEW_ContainerList_Context_Copy_Alias_TT"));
 
             ImGui.EndPopup();
         }
@@ -293,34 +297,13 @@ public class TexContainerList
         }
     }
 
-    /// <summary>
-    /// List of all the files catelogued
-    /// </summary>
-    public void DisplayDebugSection()
-    {
-        if (ImGui.CollapsingHeader("Texture Files"))
-        {
-            foreach (var entry in Project.Locator.TextureFiles.Entries)
-            {
-                ImGui.Text($"{entry.Path}");
-            }
-        }
-
-        if (ImGui.CollapsingHeader("Packed Texture Files"))
-        {
-            foreach (var entry in Project.Locator.TexturePackedFiles.Entries)
-            {
-                ImGui.Text($"{entry.Path}");
-            }
-        }
-    }
-
     public void DisplayFileCategories_DES()
     {
         if (Project.Descriptor.ProjectType is ProjectType.DES)
         {
             // Chr
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Characters"),
                 "Characters",
                 TextureViewCategory.Characters,
                 new List<string>() { "/chr" },
@@ -328,6 +311,7 @@ public class TexContainerList
 
             // Object
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Objects"),
                 "Objects",
                 TextureViewCategory.Assets,
                 new List<string>() { "/obj" },
@@ -335,6 +319,7 @@ public class TexContainerList
 
             // Parts
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Parts"),
                 "Parts",
                 TextureViewCategory.Parts,
                 new List<string>() { "/parts" },
@@ -342,6 +327,7 @@ public class TexContainerList
 
             // Map
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Map"),
                 "Map",
                 TextureViewCategory.Map,
                 new List<string>() { "/map" },
@@ -349,6 +335,7 @@ public class TexContainerList
 
             // Other
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Other"),
                 "Other",
                 TextureViewCategory.Other,
                 new List<string>() { "/other" },
@@ -356,6 +343,7 @@ public class TexContainerList
 
             // Menu
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Menu"),
                 "Menu",
                 TextureViewCategory.Menu,
                 new List<string>() { "/menu" },
@@ -363,6 +351,7 @@ public class TexContainerList
 
             // SFX
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Particles"),
                 "Particles",
                 TextureViewCategory.Particles,
                 new List<string>() { "/sfx" },
@@ -370,6 +359,7 @@ public class TexContainerList
 
             // Font
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Fonts"),
                 "Fonts",
                 TextureViewCategory.Particles,
                 new List<string>() { "/font" },
@@ -377,6 +367,7 @@ public class TexContainerList
 
             // Facegen
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Facegen"),
                 "Facegen",
                 TextureViewCategory.Particles,
                 new List<string>() { "/facegen" },
@@ -384,6 +375,7 @@ public class TexContainerList
 
             // Item
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Items"),
                 "Items",
                 TextureViewCategory.Particles,
                 new List<string>() { "/item" },
@@ -397,6 +389,7 @@ public class TexContainerList
         {
             // Chr
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Characters"),
                 "Characters",
                 TextureViewCategory.Characters,
                 new List<string>() { "/chr" },
@@ -404,6 +397,7 @@ public class TexContainerList
 
             // Object
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Objects"),
                 "Objects",
                 TextureViewCategory.Assets,
                 new List<string>() { "/obj" },
@@ -411,6 +405,7 @@ public class TexContainerList
 
             // Parts
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Parts"),
                 "Parts",
                 TextureViewCategory.Parts,
                 new List<string>() { "/parts" },
@@ -418,6 +413,7 @@ public class TexContainerList
 
             // Map
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Map"),
                 "Map",
                 TextureViewCategory.Map,
                 new List<string>() { "/map" },
@@ -425,6 +421,7 @@ public class TexContainerList
 
             // Other
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Other"),
                 "Other",
                 TextureViewCategory.Other,
                 new List<string>() { "/other" },
@@ -432,6 +429,7 @@ public class TexContainerList
 
             // Menu
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Menu"),
                 "Menu",
                 TextureViewCategory.Menu,
                 new List<string>() { "/menu" },
@@ -439,6 +437,7 @@ public class TexContainerList
 
             // SFX
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Particles"),
                 "Particles",
                 TextureViewCategory.Particles,
                 new List<string>() { "/sfx" },
@@ -446,6 +445,7 @@ public class TexContainerList
 
             // Font
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Fonts"),
                 "Fonts",
                 TextureViewCategory.Particles,
                 new List<string>() { "/font" },
@@ -453,6 +453,7 @@ public class TexContainerList
 
             // Packed: Map
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Map_Textures"),
                 "Map Textures",
                 TextureViewCategory.MapTextures,
                 new List<string>() { "/map" },
@@ -466,6 +467,7 @@ public class TexContainerList
         {
             // Chr
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Characters"),
                 "Characters",
                 TextureViewCategory.Characters,
                 new List<string>() { "/model/chr", "/model_lq/chr" },
@@ -473,6 +475,7 @@ public class TexContainerList
 
             // Object (model/object)
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Objects"),
                 "Objects",
                 TextureViewCategory.Objects,
                 new List<string>() { "/model/object", "/model_lq/object" },
@@ -480,6 +483,7 @@ public class TexContainerList
 
             // Parts (model/parts)
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Parts"),
                 "Parts",
                 TextureViewCategory.Parts,
                 new List<string>() { "/model/parts", "/model_lq/parts" },
@@ -487,6 +491,7 @@ public class TexContainerList
 
             // Menu (menu)
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Menu"),
                 "Menu",
                 TextureViewCategory.Map,
                 new List<string>() { "/menu" },
@@ -494,6 +499,7 @@ public class TexContainerList
 
             // SFX (sfx)
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Particles"),
                 "Particles",
                 TextureViewCategory.Map,
                 new List<string>() { "/sfx" },
@@ -501,6 +507,7 @@ public class TexContainerList
 
             // Packed: Map (model/map)
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Map_Textures"),
                 "Map Textures",
                 TextureViewCategory.MapTextures,
                 new List<string>() { "/model/map", "/model_lq/map" },
@@ -514,6 +521,7 @@ public class TexContainerList
         {
             // Chr
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Characters"),
                 "Characters",
                 TextureViewCategory.Characters,
                 new List<string>() { "/chr" },
@@ -521,6 +529,7 @@ public class TexContainerList
 
             // Object
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Objects"),
                 "Objects",
                 TextureViewCategory.Assets,
                 new List<string>() { "/obj" },
@@ -528,6 +537,7 @@ public class TexContainerList
 
             // Parts
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Parts"),
                 "Parts",
                 TextureViewCategory.Parts,
                 new List<string>() { "/parts" },
@@ -535,6 +545,7 @@ public class TexContainerList
 
             // Map
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Map"),
                 "Map",
                 TextureViewCategory.Map,
                 new List<string>() { "/map" },
@@ -542,6 +553,7 @@ public class TexContainerList
 
             // Other
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Other"),
                 "Other",
                 TextureViewCategory.Other,
                 new List<string>() { "/other" },
@@ -549,6 +561,7 @@ public class TexContainerList
 
             // Menu
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Menu"),
                 "Menu",
                 TextureViewCategory.Menu,
                 new List<string>() { "/menu" },
@@ -556,6 +569,7 @@ public class TexContainerList
 
             // SFX
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Particles"),
                 "Particles",
                 TextureViewCategory.Particles,
                 new List<string>() { "/sfx" },
@@ -563,6 +577,7 @@ public class TexContainerList
 
             // Font
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Fonts"),
                 "Fonts",
                 TextureViewCategory.Particles,
                 new List<string>() { "/font" },
@@ -570,6 +585,7 @@ public class TexContainerList
 
             // Adhoc
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Adhoc"),
                 "Adhoc",
                 TextureViewCategory.Adhoc,
                 new List<string>() { "/adhoc" },
@@ -577,6 +593,7 @@ public class TexContainerList
 
             // Packed: Map
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Map_Textures"),
                 "Map Textures",
                 TextureViewCategory.MapTextures,
                 new List<string>() { "/map" },
@@ -590,6 +607,7 @@ public class TexContainerList
         {
             // Chr
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Characters"),
                 "Characters",
                 TextureViewCategory.Characters,
                 new List<string>() { "/chr" },
@@ -597,6 +615,7 @@ public class TexContainerList
 
             // Object
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Objects"),
                 "Objects",
                 TextureViewCategory.Assets,
                 new List<string>() { "/obj" },
@@ -604,6 +623,7 @@ public class TexContainerList
 
             // Parts
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Parts"),
                 "Parts",
                 TextureViewCategory.Parts,
                 new List<string>() { "/parts" },
@@ -611,6 +631,7 @@ public class TexContainerList
 
             // Menu
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Menu"),
                 "Menu",
                 TextureViewCategory.Menu,
                 new List<string>() { "/menu" },
@@ -618,6 +639,7 @@ public class TexContainerList
 
             // SFX
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Particles"),
                 "Particles",
                 TextureViewCategory.Particles,
                 new List<string>() { "/sfx" },
@@ -625,6 +647,7 @@ public class TexContainerList
 
             // Packed: Map
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Map_Textures"),
                 "Map Textures",
                 TextureViewCategory.MapTextures,
                 new List<string>() { "/map" },
@@ -638,6 +661,7 @@ public class TexContainerList
         {
             // Chr
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Characters"),
                 "Characters",
                 TextureViewCategory.Characters,
                 new List<string>() { "/chr" },
@@ -645,6 +669,7 @@ public class TexContainerList
 
             // Object
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Objects"),
                 "Objects",
                 TextureViewCategory.Assets,
                 new List<string>() { "/obj" },
@@ -652,6 +677,7 @@ public class TexContainerList
 
             // Parts
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Parts"),
                 "Parts",
                 TextureViewCategory.Parts,
                 new List<string>() { "/parts" },
@@ -659,6 +685,7 @@ public class TexContainerList
 
             // Map
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Map"),
                 "Map",
                 TextureViewCategory.Map,
                 new List<string>() { "/map" },
@@ -666,6 +693,7 @@ public class TexContainerList
 
             // Menu
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Menu"),
                 "Menu",
                 TextureViewCategory.Menu,
                 new List<string>() { "/menu" },
@@ -673,6 +701,7 @@ public class TexContainerList
 
             // SFX
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Particles"),
                 "Particles",
                 TextureViewCategory.Particles,
                 new List<string>() { "/sfx" },
@@ -680,6 +709,7 @@ public class TexContainerList
 
             // Font
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Fonts"),
                 "Fonts",
                 TextureViewCategory.Particles,
                 new List<string>() { "/font" },
@@ -687,6 +717,7 @@ public class TexContainerList
 
             // Packed: Map
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Map_Textures"),
                 "Map Textures",
                 TextureViewCategory.MapTextures,
                 new List<string>() { "/map" },
@@ -700,6 +731,7 @@ public class TexContainerList
         {
             // Chr
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Characters"),
                 "Characters",
                 TextureViewCategory.Characters,
                 new List<string>() { "/chr" },
@@ -707,6 +739,7 @@ public class TexContainerList
 
             // Assets
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Assets"),
                 "Asset",
                 TextureViewCategory.Assets,
                 new List<string>() { "/asset" },
@@ -714,6 +747,7 @@ public class TexContainerList
 
             // Parts
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Parts"),
                 "Parts",
                 TextureViewCategory.Parts,
                 new List<string>() { "/parts" },
@@ -721,6 +755,7 @@ public class TexContainerList
 
             // Map
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Map"),
                 "Map",
                 TextureViewCategory.Map,
                 new List<string>() { "/map" },
@@ -728,6 +763,7 @@ public class TexContainerList
 
             // Menu
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Menu"),
                 "Menu",
                 TextureViewCategory.Menu,
                 new List<string>() { "/menu" },
@@ -735,6 +771,7 @@ public class TexContainerList
 
             // Other
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Other"),
                 "Other",
                 TextureViewCategory.Other,
                 new List<string>() { "/other" },
@@ -742,6 +779,7 @@ public class TexContainerList
 
             // SFX
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Particles"),
                 "Particles",
                 TextureViewCategory.Particles,
                 new List<string>() { "/sfx" },
@@ -749,6 +787,7 @@ public class TexContainerList
 
             // High Definition Icons
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_HD_Icons"),
                 "HD Icons",
                 TextureViewCategory.HighDefinitionIcons,
                 new List<string>() { "solo" },
@@ -756,6 +795,7 @@ public class TexContainerList
 
             // Map Tiles
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Map_Tiles"),
                 "Map Tiles",
                 TextureViewCategory.MapTiles,
                 new List<string>() { "maptile" },
@@ -769,6 +809,7 @@ public class TexContainerList
         {
             // Chr
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Characters"),
                 "Characters",
                 TextureViewCategory.Characters,
                 new List<string>() { "/chr" },
@@ -776,6 +817,7 @@ public class TexContainerList
 
             // Assets
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Assets"),
                 "Asset",
                 TextureViewCategory.Assets,
                 new List<string>() { "/asset" },
@@ -783,6 +825,7 @@ public class TexContainerList
 
             /// Parts
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Parts"),
                 "Parts",
                 TextureViewCategory.Parts,
                 new List<string>() { "/parts" },
@@ -790,6 +833,7 @@ public class TexContainerList
 
             // Map
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Map"),
                 "Map",
                 TextureViewCategory.Map,
                 new List<string>() { "/map" },
@@ -797,6 +841,7 @@ public class TexContainerList
 
             // Menu
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Menu"),
                 "Menu",
                 TextureViewCategory.Menu,
                 new List<string>() { "/menu" },
@@ -804,6 +849,7 @@ public class TexContainerList
 
             // Other
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Other"),
                 "Other",
                 TextureViewCategory.Other,
                 new List<string>() { "/other" },
@@ -811,6 +857,7 @@ public class TexContainerList
 
             /// SFX
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Particles"),
                 "Particles",
                 TextureViewCategory.Particles,
                 new List<string>() { "/sfx" },
@@ -818,6 +865,7 @@ public class TexContainerList
 
             // Map Textures
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Map_Textures"),
                 "Map Textures",
                 TextureViewCategory.MapTextures,
                 new List<string>() { "/map" },
@@ -825,6 +873,7 @@ public class TexContainerList
 
             // High Definition Icons
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_HD_Icons"),
                 "HD Icons",
                 TextureViewCategory.HighDefinitionIcons,
                 new List<string>() { "solo" },
@@ -832,6 +881,7 @@ public class TexContainerList
 
             // Terms of Service
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_TOS"),
                 "Terms of Service",
                 TextureViewCategory.TOS,
                 new List<string>() { "_tos_" },
@@ -845,6 +895,7 @@ public class TexContainerList
         {
             // Chr
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Characters"),
                 "Characters",
                 TextureViewCategory.Characters,
                 new List<string>() { "/chr" },
@@ -852,6 +903,7 @@ public class TexContainerList
 
             // Assets
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Assets"),
                 "Asset",
                 TextureViewCategory.Assets,
                 new List<string>() { "/asset" },
@@ -859,6 +911,7 @@ public class TexContainerList
 
             // Parts
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Parts"),
                 "Parts",
                 TextureViewCategory.Parts,
                 new List<string>() { "/parts" },
@@ -866,6 +919,7 @@ public class TexContainerList
 
             // Map
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Map"),
                 "Map",
                 TextureViewCategory.Map,
                 new List<string>() { "/map" },
@@ -873,6 +927,7 @@ public class TexContainerList
 
             // Menu
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Menu"),
                 "Menu",
                 TextureViewCategory.Menu,
                 new List<string>() { "/menu" },
@@ -880,6 +935,7 @@ public class TexContainerList
 
             // Other
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Other"),
                 "Other",
                 TextureViewCategory.Other,
                 new List<string>() { "/other" },
@@ -887,6 +943,7 @@ public class TexContainerList
 
             // SFX
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_Particles"),
                 "Particles",
                 TextureViewCategory.Particles,
                 new List<string>() { "/sfx" },
@@ -894,6 +951,7 @@ public class TexContainerList
 
             // High Definition Icons
             DisplayFileSection(
+                LOC.Get("TEXVIEW_Category_HD_Icons"),
                 "HD Icons",
                 TextureViewCategory.HighDefinitionIcons,
                 new List<string>() { "solo" },

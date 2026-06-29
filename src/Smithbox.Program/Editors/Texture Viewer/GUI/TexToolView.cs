@@ -26,7 +26,7 @@ public class TexToolView
             return;
 
         ImGui.SetNextWindowClass(ref UIHelper.DockGroup_TextureViewer);
-        if (ImGui.Begin("Tools##ToolConfigureWindow_TextureViewer", UIHelper.GetMainWindowFlags()))
+        if (ImGui.Begin($"{LOC.Get("TEXVIEW_Window_Tools")}###ToolConfigureWindow_TextureViewer", UIHelper.GetMainWindowFlags()))
         {
             FocusManager.SetFocus(EditorFocusContext.TextureViewer_Tools);
 
@@ -51,9 +51,9 @@ public class TexToolView
 
     public void ViewMenu()
     {
-        if (ImGui.BeginMenu("View"))
+        if (ImGui.BeginMenu($"{LOC.Get("TEXVIEW_Tools_Header_View")}##viewMenuHeader"))
         {
-            if (ImGui.MenuItem("Export Texture"))
+            if (ImGui.MenuItem($"{LOC.Get("TEXVIEW_Tools_View_Export_Texture")}##exportTextureToggle"))
             {
                 CFG.Current.Interface_TextureViewer_Tool_ExportTexture = !CFG.Current.Interface_TextureViewer_Tool_ExportTexture;
             }
@@ -65,13 +65,13 @@ public class TexToolView
 
     public void DisplayMenubar()
     {
-        if (ImGui.BeginMenu("Tools"))
+        if (ImGui.BeginMenu($"{LOC.Get("TEXVIEW_Tools_Header_Tools")}##toolsMenuHeader"))
         {
-            if (ImGui.MenuItem("Export Texture", InputManager.GetHint(KeybindID.TextureViewer_Export_Texture)))
+            if (ImGui.MenuItem($"{LOC.Get("TEXVIEW_Tools_Action_Export_Texture")}##exportTextureAction", InputManager.GetHint(KeybindID.TextureViewer_Export_Texture)))
             {
                 TextureExport.ExportTextureHandler();
             }
-            UIHelper.Tooltip($"Export currently selected texture.");
+            UIHelper.Tooltip(LOC.Get("TEXVIEW_Tools_Action_Export_Texture_TT"));
 
             ImGui.EndMenu();
         }

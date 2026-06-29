@@ -275,6 +275,10 @@
     {
       "Key": "REND_Mesh_Layout_Invalid_Type",
       "Text": "Invalid layout type"
+    },
+    {
+      "Key": "REND_Unsupported_Pixel_Format",
+      "Text": "Unsupported pixel format ({0})"
     }
   ]
 }

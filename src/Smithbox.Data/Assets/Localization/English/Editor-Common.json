@@ -1,61 +1,136 @@
 {
   "Entries": [
     {
-      "Key": "EDC_Short_Project_Type_Undefined",
+      "Key": "EDITOR_Short_Project_Type_Undefined",
       "Text": "Undefined"
     },
     {
-      "Key": "EDC_Short_Project_Type_DES",
+      "Key": "EDITOR_Short_Project_Type_DES",
       "Text": "DES"
     },
     {
-      "Key": "EDC_Short_Project_Type_DS1",
+      "Key": "EDITOR_Short_Project_Type_DS1",
       "Text": "DS1"
     },
     {
-      "Key": "EDC_Short_Project_Type_DS1R",
+      "Key": "EDITOR_Short_Project_Type_DS1R",
       "Text": "DS1R"
     },
     {
-      "Key": "EDC_Short_Project_Type_DS2",
+      "Key": "EDITOR_Short_Project_Type_DS2",
       "Text": "DS2"
     },
     {
-      "Key": "EDC_Short_Project_Type_DS2S",
+      "Key": "EDITOR_Short_Project_Type_DS2S",
       "Text": "DS2S"
     },
     {
-      "Key": "EDC_Short_Project_Type_DS3",
+      "Key": "EDITOR_Short_Project_Type_DS3",
       "Text": "DS3"
     },
     {
-      "Key": "EDC_Short_Project_Type_BB",
+      "Key": "EDITOR_Short_Project_Type_BB",
       "Text": "BB"
     },
     {
-      "Key": "EDC_Short_Project_Type_SDT",
+      "Key": "EDITOR_Short_Project_Type_SDT",
       "Text": "SDT"
     },
     {
-      "Key": "EDC_Short_Project_Type_ER",
+      "Key": "EDITOR_Short_Project_Type_ER",
       "Text": "ER"
     },
     {
-      "Key": "EDC_Short_Project_Type_AC6",
+      "Key": "EDITOR_Short_Project_Type_AC6",
       "Text": "AC6"
     },
     {
-      "Key": "EDC_Short_Project_Type_NR",
+      "Key": "EDITOR_Short_Project_Type_NR",
       "Text": "NR"
     },
-    
     {
-      "Key": "EDC_List_Filter_Exact_Match_TT",
+      "Key": "EDITOR_List_Filter_Exact_Match_TT",
       "Text": "Filter will ignore partial matches when enabled."
     },
     {
-      "Key": "EDC_List_Filter_Input_TT",
+      "Key": "EDITOR_List_Filter_Input_TT",
       "Text": "Enter the search term to filter this list by.\n\nSeparate terms that behave as an AND are split with the {0} character.\n\nSeparate terms that behave as an OR are split with the {1} character."
+    },
+    {
+      "Key": "EDITOR_Add_New_View",
+      "Text": "Add New View"
+    },
+    {
+      "Key": "EDITOR_Close_Current_View",
+      "Text": "Close Current View"
+    },
+    {
+      "Key": "EDITOR_Active_View",
+      "Text": "Active View"
+    },
+    {
+      "Key": "EDITOR_Inactive_View",
+      "Text": "Inactive View"
+    },
+    {
+      "Key": "EDITOR_Add_View",
+      "Text": "Add View"
+    },
+    {
+      "Key": "EDITOR_Close_View",
+      "Text": "Close View"
+    },
+    {
+      "Key": "EDITOR_Menubar_Header_File",
+      "Text": "File"
+    },
+    {
+      "Key": "EDITOR_Menubar_Header_Edit",
+      "Text": "Edit"
+    },
+    {
+      "Key": "EDITOR_Menubar_Header_View",
+      "Text": "View"
+    },
+    {
+      "Key": "EDITOR_Menubar_Header_Tools",
+      "Text": "Tools"
+    },
+    {
+      "Key": "EDITOR_Menubar_Header_Options",
+      "Text": "Options"
+    },
+    {
+      "Key": "EDITOR_Menubar_Action_Save",
+      "Text": "Save"
+    },
+    {
+      "Key": "EDITOR_Menubar_Action_Undo",
+      "Text": "Undo"
+    },
+    {
+      "Key": "EDITOR_Menubar_Action_Undo_All",
+      "Text": "Undo All"
+    },
+    {
+      "Key": "EDITOR_Menubar_Action_Redo",
+      "Text": "Redo"
+    },
+    {
+      "Key": "EDITOR_Menubar_Action_Duplicate",
+      "Text": "Duplicate"
+    },
+    {
+      "Key": "EDITOR_Menubar_Action_Delete",
+      "Text": "Delete"
+    },
+    {
+      "Key": "EDITOR_Menubar_Action_Copy",
+      "Text": "Copy"
+    },
+    {
+      "Key": "EDITOR_Menubar_Action_Paste",
+      "Text": "Paste"
     }
   ]
 }

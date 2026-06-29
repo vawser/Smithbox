@@ -28,7 +28,9 @@ public class TexInternalFileList
     /// </summary>
     public void Display(float width, float height)
     {
-        UIHelper.SimpleHeader("Files", "");
+        UIHelper.SimpleHeader(
+            LOC.Get("TEXVIEW_InternalFileList_Header_Files"),
+            LOC.Get("TEXVIEW_InternalFileList_Header_Files_TT"));
 
         EditorFilters.DisplayFramedListFilter("textureViewer_TpfList", ref TpfFileListFilter, ref ExactTpfFileListFilter);
 
@@ -104,36 +106,36 @@ public class TexInternalFileList
 
         if (ImGui.BeginPopupContextItem($"context_{entry.Name}{index}"))
         {
-            if(ImGui.BeginMenu("Export"))
+            if(ImGui.BeginMenu($"{LOC.Get("TEXVIEW_InternalFileList_Context_Header_Export")}##exportMenuHeader"))
             {
-                if (ImGui.MenuItem("TPF"))
+                if (ImGui.MenuItem($"{LOC.Get("TEXVIEW_InternalFileList_Context_TPF")}##tpfAction"))
                 {
                     _ = Parent.Editor.ToolView.TextureExport.ExportTPFAsync(tpf, filename);
                 }
-                UIHelper.Tooltip($"Export this file to your current export directory : {CFG.Current.TextureViewerToolbar_ExportTextureLocation}");
+                UIHelper.Tooltip(LOC.Get("TEXVIEW_InternalFileList_Context_TPF_TT", CFG.Current.TextureViewerToolbar_ExportTextureLocation));
 
-                if (ImGui.MenuItem("All Textures"))
+                if (ImGui.MenuItem($"{LOC.Get("TEXVIEW_InternalFileList_Context_All_Textures")}##allTexturesAction"))
                 {
                     _ = Parent.Editor.ToolView.TextureExport.ExportTexturesFromTPFAsync(tpf);
                 }
-                UIHelper.Tooltip($"Export all textures files within this file to your current export directory: {CFG.Current.TextureViewerToolbar_ExportTextureLocation}");
+                UIHelper.Tooltip(LOC.Get("TEXVIEW_InternalFileList_Context_All_Textures_TT", CFG.Current.TextureViewerToolbar_ExportTextureLocation));
 
                 ImGui.EndMenu();
             }
 
             ImGui.Separator();
 
-            if (ImGui.MenuItem("Copy Path"))
+            if (ImGui.MenuItem($"{LOC.Get("TEXVIEW_InternalFileList_Context_Copy_Path")}##copyPath"))
             {
                 ImGui.SetClipboardText(entry.Name);
             }
-            UIHelper.Tooltip("Copy the file path to the clipboard.");
+            UIHelper.Tooltip(LOC.Get("TEXVIEW_InternalFileList_Context_Copy_Path_TT"));
 
-            if (ImGui.MenuItem("Copy Filename"))
+            if (ImGui.MenuItem($"{LOC.Get("TEXVIEW_InternalFileList_Context_Copy_Filename")}##copyFilename"))
             {
                 ImGui.SetClipboardText(filename);
             }
-            UIHelper.Tooltip("Copy the file name to the clipboard.");
+            UIHelper.Tooltip(LOC.Get("TEXVIEW_InternalFileList_Context_Copy_Filename_TT"));
             ImGui.EndPopup();
         }
     }

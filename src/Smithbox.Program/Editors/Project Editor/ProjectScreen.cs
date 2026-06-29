@@ -235,7 +235,7 @@ public class ProjectScreen
         // Project List
         if (orchestrator.Projects.Any(e => e.Descriptor.ProjectType is ProjectType.DES))
         {
-            if (ImGui.BeginTabItem($"{LOC.Get("EDC_Short_Project_Type_DES")}##tab_DES_{imguiKey}"))
+            if (ImGui.BeginTabItem($"{LOC.Get("EDITOR_Short_Project_Type_DES")}##tab_DES_{imguiKey}"))
             {
                 DisplayProjectListGroup(ProjectType.DES, imguiKey, isLoaded);
                 ImGui.EndTabItem();
@@ -244,7 +244,7 @@ public class ProjectScreen
 
         if (orchestrator.Projects.Any(e => e.Descriptor.ProjectType is ProjectType.DS1))
         {
-            if (ImGui.BeginTabItem($"{LOC.Get("EDC_Short_Project_Type_DS1")}##tab_DS1_{imguiKey}"))
+            if (ImGui.BeginTabItem($"{LOC.Get("EDITOR_Short_Project_Type_DS1")}##tab_DS1_{imguiKey}"))
             {
                 DisplayProjectListGroup(ProjectType.DS1, imguiKey, isLoaded);
                 ImGui.EndTabItem();
@@ -253,7 +253,7 @@ public class ProjectScreen
 
         if (orchestrator.Projects.Any(e => e.Descriptor.ProjectType is ProjectType.DS1R))
         {
-            if (ImGui.BeginTabItem($"{LOC.Get("EDC_Short_Project_Type_DS1R")}##tab_DS1R_{imguiKey}"))
+            if (ImGui.BeginTabItem($"{LOC.Get("EDITOR_Short_Project_Type_DS1R")}##tab_DS1R_{imguiKey}"))
             {
                 DisplayProjectListGroup(ProjectType.DS1R, imguiKey, isLoaded);
                 ImGui.EndTabItem();
@@ -262,7 +262,7 @@ public class ProjectScreen
 
         if (orchestrator.Projects.Any(e => e.Descriptor.ProjectType is ProjectType.DS2))
         {
-            if (ImGui.BeginTabItem($"{LOC.Get("EDC_Short_Project_Type_DS2")}##tab_DS2_{imguiKey}"))
+            if (ImGui.BeginTabItem($"{LOC.Get("EDITOR_Short_Project_Type_DS2")}##tab_DS2_{imguiKey}"))
             {
                 DisplayProjectListGroup(ProjectType.DS2, imguiKey, isLoaded);
                 ImGui.EndTabItem();
@@ -271,7 +271,7 @@ public class ProjectScreen
 
         if (orchestrator.Projects.Any(e => e.Descriptor.ProjectType is ProjectType.DS2S))
         {
-            if (ImGui.BeginTabItem($"{LOC.Get("EDC_Short_Project_Type_DS2S")}##tab_DS2S_{imguiKey}"))
+            if (ImGui.BeginTabItem($"{LOC.Get("EDITOR_Short_Project_Type_DS2S")}##tab_DS2S_{imguiKey}"))
             {
                 DisplayProjectListGroup(ProjectType.DS2S, imguiKey, isLoaded);
                 ImGui.EndTabItem();
@@ -280,7 +280,7 @@ public class ProjectScreen
 
         if (orchestrator.Projects.Any(e => e.Descriptor.ProjectType is ProjectType.DS3))
         {
-            if (ImGui.BeginTabItem($"{LOC.Get("EDC_Short_Project_Type_DS3")}##tab_DS3_{imguiKey}"))
+            if (ImGui.BeginTabItem($"{LOC.Get("EDITOR_Short_Project_Type_DS3")}##tab_DS3_{imguiKey}"))
             {
                 DisplayProjectListGroup(ProjectType.DS3, imguiKey, isLoaded);
                 ImGui.EndTabItem();
@@ -289,7 +289,7 @@ public class ProjectScreen
 
         if (orchestrator.Projects.Any(e => e.Descriptor.ProjectType is ProjectType.BB))
         {
-            if (ImGui.BeginTabItem($"{LOC.Get("EDC_Short_Project_Type_BB")}##tab_BB_{imguiKey}"))
+            if (ImGui.BeginTabItem($"{LOC.Get("EDITOR_Short_Project_Type_BB")}##tab_BB_{imguiKey}"))
             {
                 DisplayProjectListGroup(ProjectType.BB, imguiKey, isLoaded);
                 ImGui.EndTabItem();
@@ -298,7 +298,7 @@ public class ProjectScreen
 
         if (orchestrator.Projects.Any(e => e.Descriptor.ProjectType is ProjectType.SDT))
         {
-            if (ImGui.BeginTabItem($"{LOC.Get("EDC_Short_Project_Type_SDT")}##tab_SDT_{imguiKey}"))
+            if (ImGui.BeginTabItem($"{LOC.Get("EDITOR_Short_Project_Type_SDT")}##tab_SDT_{imguiKey}"))
             {
                 DisplayProjectListGroup(ProjectType.SDT, imguiKey, isLoaded);
                 ImGui.EndTabItem();
@@ -307,7 +307,7 @@ public class ProjectScreen
 
         if (orchestrator.Projects.Any(e => e.Descriptor.ProjectType is ProjectType.ER))
         {
-            if (ImGui.BeginTabItem($"{LOC.Get("EDC_Short_Project_Type_ER")}##tab_ER_{imguiKey}"))
+            if (ImGui.BeginTabItem($"{LOC.Get("EDITOR_Short_Project_Type_ER")}##tab_ER_{imguiKey}"))
             {
                 DisplayProjectListGroup(ProjectType.ER, imguiKey, isLoaded);
                 ImGui.EndTabItem();
@@ -316,7 +316,7 @@ public class ProjectScreen
 
         if (orchestrator.Projects.Any(e => e.Descriptor.ProjectType is ProjectType.AC6))
         {
-            if (ImGui.BeginTabItem($"{LOC.Get("EDC_Short_Project_Type_AC6")}##tab_AC6_{imguiKey}"))
+            if (ImGui.BeginTabItem($"{LOC.Get("EDITOR_Short_Project_Type_AC6")}##tab_AC6_{imguiKey}"))
             {
                 DisplayProjectListGroup(ProjectType.AC6, imguiKey, isLoaded);
                 ImGui.EndTabItem();
@@ -325,7 +325,7 @@ public class ProjectScreen
 
         if (orchestrator.Projects.Any(e => e.Descriptor.ProjectType is ProjectType.NR))
         {
-            if (ImGui.BeginTabItem($"{LOC.Get("EDC_Short_Project_Type_NR")}##tab_NR_{imguiKey}"))
+            if (ImGui.BeginTabItem($"{LOC.Get("EDITOR_Short_Project_Type_NR")}##tab_NR_{imguiKey}"))
             {
                 DisplayProjectListGroup(ProjectType.NR, imguiKey, isLoaded);
                 ImGui.EndTabItem();

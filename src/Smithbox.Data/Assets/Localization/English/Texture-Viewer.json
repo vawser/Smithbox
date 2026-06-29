@@ -1,0 +1,76 @@
+{
+  "Entries": [
+    {
+      "Key": "TEXVIEW_Menubar_Toggle_View_Properties",
+      "Text": "Properties"
+    },
+    {
+      "Key": "TEXVIEW_Menubar_Toggle_View_Tools",
+      "Text": "Tools"
+    },
+    {
+      "Key": "TEXVIEW_Category_Characters",
+      "Text": "Characters"
+    },
+    {
+      "Key": "TEXVIEW_Category_Objects",
+      "Text": "Objects"
+    },
+    {
+      "Key": "TEXVIEW_Category_Assets",
+      "Text": "Assets"
+    },
+    {
+      "Key": "TEXVIEW_Category_Parts",
+      "Text": "Parts"
+    },
+    {
+      "Key": "TEXVIEW_Category_Map",
+      "Text": "Map"
+    },
+    {
+      "Key": "TEXVIEW_Category_Other",
+      "Text": "Other"
+    },
+    {
+      "Key": "TEXVIEW_Category_Menu",
+      "Text": "Menu"
+    },
+    {
+      "Key": "TEXVIEW_Category_Particles",
+      "Text": "Particles"
+    },
+    {
+      "Key": "TEXVIEW_Category_Fonts",
+      "Text": "Fonts"
+    },
+    {
+      "Key": "TEXVIEW_Category_Facegen",
+      "Text": "Facegen"
+    },
+    {
+      "Key": "TEXVIEW_Category_Items",
+      "Text": "Items"
+    },
+    {
+      "Key": "TEXVIEW_Category_Map_Textures",
+      "Text": "Map Textures"
+    },
+    {
+      "Key": "TEXVIEW_Category_Adhoc",
+      "Text": "Adhoc"
+    },
+    {
+      "Key": "TEXVIEW_Category_HD_Icons",
+      "Text": "HD Icons"
+    },
+    {
+      "Key": "TEXVIEW_Category_Map_Tiles",
+      "Text": "Map Tiles"
+    },
+    {
+      "Key": "TEXVIEW_Category_TOS",
+      "Text": "Terms of Service"
+    }
+  ]
+}

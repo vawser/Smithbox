@@ -1,0 +1,32 @@
+{
+  "Entries": [
+    {
+      "Key": "TEXVIEW_Texture_Viewer_Stub",
+      "Text": "Texture Viewer"
+    },
+    {
+      "Key": "TEXVIEW_Window_Container_List",
+      "Text": "Container List"
+    },
+    {
+      "Key": "TEXVIEW_Window_File_List",
+      "Text": "File List"
+    },
+    {
+      "Key": "TEXVIEW_Window_Texture_List",
+      "Text": "Texture List"
+    },
+    {
+      "Key": "TEXVIEW_Window_Viewer",
+      "Text": "Viewer"
+    },
+    {
+      "Key": "TEXVIEW_Window_Properties",
+      "Text": "Properties"
+    },
+    {
+      "Key": "TEXVIEW_Window_Tools",
+      "Text": "Tools"
+    }
+  ]
+}

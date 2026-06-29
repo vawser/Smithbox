@@ -30,13 +30,13 @@ public static class EditorFilters
     {
         ImGui.Checkbox($"##{id}_listFilter_exactMatch", ref exactBool);
         UIHelper.Tooltip(
-            LOC.Get("EDC_List_Filter_Exact_Match_TT"));
+            LOC.Get("EDITOR_List_Filter_Exact_Match_TT"));
 
         ImGui.SameLine();
 
         ImGui.InputTextWithHint($"##{id}_listFilter", "Search...", ref input, 255);
         UIHelper.Tooltip(
-            LOC.Get("EDC_List_Filter_Input_TT", SplitChr, OR_Chr));
+            LOC.Get("EDITOR_List_Filter_Input_TT", SplitChr, OR_Chr));
     }
 
     public static bool IsMatch(string rawInput, string rawText, bool exactBool, string rawAliasText = "", bool partSplit = false, bool aliasSplit = false, string rawSecondaryText = "")
