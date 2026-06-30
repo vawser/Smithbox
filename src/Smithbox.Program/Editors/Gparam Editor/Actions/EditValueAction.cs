@@ -70,11 +70,12 @@ public class EditValueAction : EditorAction
     {
         if (apply)
         {
+            var convertedNewValue = ConvertTo<T>(NewValue);
             foreach (var target in targets)
             {
                 var fieldValue = (FieldValue<T>)target;
                 StoredOldValues.Add(fieldValue.Value);
-                fieldValue.Value = ApplyChange(fieldValue.Value, (T)NewValue);
+                fieldValue.Value = ApplyChange(fieldValue.Value, convertedNewValue);
             }
         }
         else
@@ -82,8 +83,34 @@ public class EditValueAction : EditorAction
             for (int i = 0; i < targets.Count; i++)
             {
                 var fieldValue = (FieldValue<T>)targets[i];
-                fieldValue.Value = (T)StoredOldValues[i];
+                fieldValue.Value = ConvertTo<T>(StoredOldValues[i]);
             }
+        }
+    }
+
+    private static T ConvertTo<T>(object value)
+    {
+        if (value is T typed)
+            return typed;
+
+        if (value == null)
+            return default;
+
+        var targetType = typeof(T);
+        var underlyingType = Nullable.GetUnderlyingType(targetType) ?? targetType;
+
+        try
+        {
+            if (underlyingType.IsEnum)
+                return (T)Enum.ToObject(underlyingType, value);
+
+            return (T)Convert.ChangeType(value, underlyingType);
+        }
+        catch
+        {
+            // Struct types like Vector2/Vector3/Vector4/Color don't support
+            // Convert.ChangeType; fall back to a direct cast for those cases.
+            return (T)value;
         }
     }
 
