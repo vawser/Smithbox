@@ -38,7 +38,7 @@ public class TextToolView
         var activeView = Editor.ViewHandler.ActiveView;
 
         ImGui.SetNextWindowClass(ref UIHelper.DockGroup_TextEditor);
-        if (ImGui.Begin("Tools##ToolConfigureWindow_TextEditor", UIHelper.GetMainWindowFlags()))
+        if (ImGui.Begin($"{LOC.Get("TEXT_Window_Tools")}###ToolConfigureWindow_TextEditor", UIHelper.GetMainWindowFlags()))
         {
             FocusManager.SetFocus(EditorFocusContext.TextEditor_Tools);
 
@@ -52,7 +52,7 @@ public class TextToolView
             // Entry Creator
             if (CFG.Current.Interface_TextEditor_Tool_EntryCreator)
             {
-                if (ImGui.CollapsingHeader("Text Entry Creator"))
+                if (ImGui.CollapsingHeader($"{LOC.Get("TEXT_Tools_Header_Text_Entry_Creator")}##textEntryCreatorSection"))
                 {
                     activeView.TextEntryCreator.DisplayTool();
                 }
@@ -61,16 +61,16 @@ public class TextToolView
             // Data Transfer
             if (CFG.Current.Interface_TextEditor_Tool_DataTransfer)
             {
-                if (ImGui.CollapsingHeader("Data Transfer"))
+                if (ImGui.CollapsingHeader($"{LOC.Get("TEXT_Tools_Header_Data_Transfer")}##dataTransferSection"))
                 {
                     DataTransferTool.Display();
                 }
             }
 
-            // Data Transfer
+            // Language Sync
             if (CFG.Current.Interface_TextEditor_Tool_LanguageSync)
             {
-                if (ImGui.CollapsingHeader("Language Sync"))
+                if (ImGui.CollapsingHeader($"{LOC.Get("TEXT_Tools_Language_Sync")}##languageSyncSection"))
                 {
                     LanguageSyncTool.Display();
                 }
@@ -79,7 +79,7 @@ public class TextToolView
             // Global Text Search
             if (CFG.Current.Interface_TextEditor_Tool_TextSearch)
             {
-                if (ImGui.CollapsingHeader("Text Search"))
+                if (ImGui.CollapsingHeader($"{LOC.Get("TEXT_Tools_Text_Search")}##globalTextSearchSection"))
                 {
                     TextSearch.Display();
                 }
@@ -88,7 +88,7 @@ public class TextToolView
             // Global Text Replacement
             if (CFG.Current.Interface_TextEditor_Tool_TextReplacement)
             {
-                if (ImGui.CollapsingHeader("Text Replacement"))
+                if (ImGui.CollapsingHeader($"{LOC.Get("TEXT_Tools_Text_Replacement")}##globalTextReplacementSection"))
                 {
                     TextReplace.Display();
                 }
@@ -97,7 +97,7 @@ public class TextToolView
             // Text Merge
             if (CFG.Current.Interface_TextEditor_Tool_TextMerge)
             {
-                if (ImGui.CollapsingHeader("Text Merge"))
+                if (ImGui.CollapsingHeader($"{LOC.Get("TEXT_Tools_Text_Merge")}##textMergeSection"))
                 {
                     TextMerge.Display();
                 }
@@ -108,33 +108,39 @@ public class TextToolView
     }
     public void ViewMenu()
     {
-        if (ImGui.BeginMenu("View"))
+        if (ImGui.BeginMenu($"{LOC.Get("TEXT_Tools_Menu_Header_View")}##viewMenuHeader"))
         {
-            if (ImGui.MenuItem("Data Transfer"))
+            if (ImGui.MenuItem($"{LOC.Get("TEXT_Tools_View_Text_Entry_Creator")}##textEntryCreatorViewToggle"))
+            {
+                CFG.Current.Interface_TextEditor_Tool_EntryCreator = !CFG.Current.Interface_TextEditor_Tool_EntryCreator;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_TextEditor_Tool_EntryCreator);
+
+            if (ImGui.MenuItem($"{LOC.Get("TEXT_Tools_View_Data_Transfer")}##dataTransferViewToggle"))
             {
                 CFG.Current.Interface_TextEditor_Tool_DataTransfer = !CFG.Current.Interface_TextEditor_Tool_DataTransfer;
             }
             UIHelper.ShowActiveStatus(CFG.Current.Interface_TextEditor_Tool_DataTransfer);
 
-            if (ImGui.MenuItem("Language Sync"))
+            if (ImGui.MenuItem($"{LOC.Get("TEXT_Tools_View_Language_Sync")}##languageSyncViewToggle"))
             {
                 CFG.Current.Interface_TextEditor_Tool_LanguageSync = !CFG.Current.Interface_TextEditor_Tool_LanguageSync;
             }
             UIHelper.ShowActiveStatus(CFG.Current.Interface_TextEditor_Tool_LanguageSync);
 
-            if (ImGui.MenuItem("Text Search"))
+            if (ImGui.MenuItem($"{LOC.Get("TEXT_Tools_View_Text_Search")}##textSearchViewToggle"))
             {
                 CFG.Current.Interface_TextEditor_Tool_TextSearch = !CFG.Current.Interface_TextEditor_Tool_TextSearch;
             }
             UIHelper.ShowActiveStatus(CFG.Current.Interface_TextEditor_Tool_TextSearch);
 
-            if (ImGui.MenuItem("Text Replacement"))
+            if (ImGui.MenuItem($"{LOC.Get("TEXT_Tools_View_Text_Replacement")}##textReplacementViewToggle"))
             {
                 CFG.Current.Interface_TextEditor_Tool_TextReplacement = !CFG.Current.Interface_TextEditor_Tool_TextReplacement;
             }
             UIHelper.ShowActiveStatus(CFG.Current.Interface_TextEditor_Tool_TextReplacement);
 
-            if (ImGui.MenuItem("Text Merge"))
+            if (ImGui.MenuItem($"{LOC.Get("TEXT_Tools_View_Text_Merge")}##textMergeViewToggle"))
             {
                 CFG.Current.Interface_TextEditor_Tool_TextMerge = !CFG.Current.Interface_TextEditor_Tool_TextMerge;
             }

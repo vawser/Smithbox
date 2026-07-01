@@ -27,7 +27,6 @@ public class TextEditorView
     public TextViewSelection Selection;
     public TextEntryGroupManager EntryGroupManager;
     public TextDifferenceManager DifferenceManager;
-    public TextNamingTemplateManager NamingTemplateManager;
 
     public TextContainerList ContainerList;
     public TextFileList FileList;
@@ -54,7 +53,6 @@ public class TextEditorView
         ActionHandler = new TextActionHandler(this, Project);
         EntryGroupManager = new TextEntryGroupManager(this, Project);
         DifferenceManager = new TextDifferenceManager(this, Project);
-        NamingTemplateManager = new TextNamingTemplateManager(this, Project);
 
         ContainerList = new TextContainerList(this, Project);
         FileList = new TextFileList(this, Project);

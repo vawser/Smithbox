@@ -245,7 +245,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"[FMG Name Error] GetFmgDisplayName(DES): Undefined ID '{id}' for 'Item' container. Enum: {nameof(Item_MsgBndID_DES)}, FMG: '{fmgName}', Source: '{info.FileEntry.Path}'.", LogLevel.Warning);
+                        Smithbox.LogError(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_DisplayName", 
+                            "DES", id, "Item", nameof(Item_MsgBndID_DES), fmgName, info.FileEntry.Path));
                     }
                 }
                 else if (IsMenuContainer(info))
@@ -257,7 +259,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"[FMG Name Error] GetFmgDisplayName(DES): Undefined ID '{id}' for 'Menu' container. Enum: {nameof(Menu_MsgBndID_DES)}, FMG: '{fmgName}', Source: '{info.FileEntry.Path}'.", LogLevel.Warning);
+                        Smithbox.LogError(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_DisplayName",
+                            "DES", id, "Menu", nameof(Menu_MsgBndID_DES), fmgName, info.FileEntry.Path));
                     }
                 }
                 else if (IsSampleContainer(info))
@@ -269,7 +273,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"[FMG Name Error] GetFmgDisplayName(DES): Undefined ID '{id}' for 'Sample' container. Enum: {nameof(Sample_MsgBndID_DES)}, FMG: '{fmgName}', Source: '{info.FileEntry.Path}'.", LogLevel.Warning);
+                        Smithbox.LogError(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_DisplayName",
+                            "DES", id, "Sample", nameof(Sample_MsgBndID_DES), fmgName, info.FileEntry.Path));
                     }
                 }
                 break;
@@ -284,7 +290,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"[FMG Name Error] GetFmgDisplayName(DS1): Undefined ID '{id}' for 'Item' container. Enum: {nameof(Item_MsgBndID_DS1)}, FMG: '{fmgName}', Source: '{info.FileEntry.Path}'.", LogLevel.Warning);
+                        Smithbox.LogError(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_DisplayName",
+                            "DS1", id, "Item", nameof(Item_MsgBndID_DS1), fmgName, info.FileEntry.Path));
                     }
                 }
                 else if (IsMenuContainer(info))
@@ -296,7 +304,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"[FMG Name Error] GetFmgDisplayName(DS1): Undefined ID '{id}' for 'Menu' container. Enum: {nameof(Menu_MsgBndID_DS1)}, FMG: '{fmgName}', Source: '{info.FileEntry.Path}'.", LogLevel.Warning);
+                        Smithbox.LogError(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_DisplayName",
+                            "DS1", id, "Menu", nameof(Menu_MsgBndID_DS1), fmgName, info.FileEntry.Path));
                     }
                 }
                 break;
@@ -352,7 +362,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"[FMG Name Error] GetFmgDisplayName(BB): Undefined ID '{id}' for 'Item' container. Enum: {nameof(Item_MsgBndID_BB)}, FMG: '{fmgName}', Source: '{info.FileEntry.Path}'.", LogLevel.Warning);
+                        Smithbox.LogError(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_DisplayName",
+                            "BB", id, "Item", nameof(Item_MsgBndID_BB), fmgName, info.FileEntry.Path));
                     }
                 }
                 else if (IsMenuContainer(info))
@@ -364,7 +376,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"[FMG Name Error] GetFmgDisplayName(BB): Undefined ID '{id}' for 'Menu' container. Enum: {nameof(Menu_MsgBndID_BB)}, FMG: '{fmgName}', Source: '{info.FileEntry.Path}'.", LogLevel.Warning);
+                        Smithbox.LogError(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_DisplayName",
+                            "BB", id, "Menu", nameof(Menu_MsgBndID_BB), fmgName, info.FileEntry.Path));
                     }
                 }
                 break;
@@ -378,7 +392,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"[FMG Name Error] GetFmgDisplayName(DS3): Undefined ID '{id}' for 'Item' container. Enum: {nameof(Item_MsgBndID_DS3)}, FMG: '{fmgName}', Source: '{info.FileEntry.Path}'.", LogLevel.Warning);
+                        Smithbox.LogError(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_DisplayName",
+                            "DS3", id, "Item", nameof(Item_MsgBndID_DS3), fmgName, info.FileEntry.Path));
                     }
                 }
                 else if (IsMenuContainer(info))
@@ -390,7 +406,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"[FMG Name Error] GetFmgDisplayName(DS3): Undefined ID '{id}' for 'Menu' container. Enum: {nameof(Menu_MsgBndID_DS3)}, FMG: '{fmgName}', Source: '{info.FileEntry.Path}'.", LogLevel.Warning);
+                        Smithbox.LogError(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_DisplayName",
+                            "DS3", id, "Menu", nameof(Menu_MsgBndID_DS3), fmgName, info.FileEntry.Path));
                     }
                 }
                 else if (IsNgWordContainer(info))
@@ -402,7 +420,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"[FMG Name Error] GetFmgDisplayName(DS3): Undefined ID '{id}' for 'NgWord' container. Enum: {nameof(NgWord_MsgBndID_DS3)}, FMG: '{fmgName}', Source: '{info.FileEntry.Path}'.", LogLevel.Warning);
+                        Smithbox.LogError(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_DisplayName",
+                            "DS3", id, "NgWord", nameof(NgWord_MsgBndID_DS3), fmgName, info.FileEntry.Path));
                     }
                 }
                 break;
@@ -416,7 +436,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"[FMG Name Error] GetFmgDisplayName(SDT): Undefined ID '{id}' for 'Item' container. Enum: {nameof(Item_MsgBndID_SDT)}, FMG: '{fmgName}', Source: '{info.FileEntry.Path}'.", LogLevel.Warning);
+                        Smithbox.LogError(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_DisplayName",
+                            "SDT", id, "Item", nameof(Item_MsgBndID_SDT), fmgName, info.FileEntry.Path));
                     }
                 }
                 else if (IsMenuContainer(info))
@@ -428,7 +450,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"[FMG Name Error] GetFmgDisplayName(SDT): Undefined ID '{id}' for 'Menu' container. Enum: {nameof(Menu_MsgBndID_SDT)}, FMG: '{fmgName}', Source: '{info.FileEntry.Path}'.", LogLevel.Warning);
+                        Smithbox.LogError(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_DisplayName",
+                            "SDT", id, "Menu", nameof(Menu_MsgBndID_SDT), fmgName, info.FileEntry.Path));
                     }
                 }
                 else if (IsSellRegionContainer(info))
@@ -440,7 +464,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"[FMG Name Error] GetFmgDisplayName(SDT): Undefined ID '{id}' for 'SellRegion' container. Enum: {nameof(SellRegion_MsgBndID_SDT)}, FMG: '{fmgName}', Source: '{info.FileEntry.Path}'.", LogLevel.Warning);
+                        Smithbox.LogError(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_DisplayName",
+                            "SDT", id, "SellRegion", nameof(SellRegion_MsgBndID_SDT), fmgName, info.FileEntry.Path));
                     }
                 }
                 break;
@@ -454,7 +480,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"[FMG Name Error] GetFmgDisplayName(ER): Undefined ID '{id}' for 'Item' container. Enum: {nameof(Item_MsgBndID_ER)}, FMG: '{fmgName}', Source: '{info.FileEntry.Path}'.", LogLevel.Warning);
+                        Smithbox.LogError(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_DisplayName",
+                            "ER", id, "Item", nameof(Item_MsgBndID_ER), fmgName, info.FileEntry.Path));
                     }
                 }
                 else if (IsMenuContainer(info))
@@ -466,7 +494,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"[FMG Name Error] GetFmgDisplayName(ER): Undefined ID '{id}' for 'Menu' container. Enum: {nameof(Menu_MsgBndID_ER)}, FMG: '{fmgName}', Source: '{info.FileEntry.Path}'.", LogLevel.Warning);
+                        Smithbox.LogError(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_DisplayName",
+                            "ER", id, "Menu", nameof(Menu_MsgBndID_ER), fmgName, info.FileEntry.Path));
                     }
                 }
                 else if (IsNgWordContainer(info))
@@ -478,7 +508,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"[FMG Name Error] GetFmgDisplayName(ER): Undefined ID '{id}' for 'NgWord' container. Enum: {nameof(NgWord_MsgBndID_ER)}, FMG: '{fmgName}', Source: '{info.FileEntry.Path}'.", LogLevel.Warning);
+                        Smithbox.LogError(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_DisplayName",
+                            "ER", id, "NgWord", nameof(NgWord_MsgBndID_ER), fmgName, info.FileEntry.Path));
                     }
                 }
                 else if (IsSellRegionContainer(info))
@@ -490,7 +522,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"[FMG Name Error] GetFmgDisplayName(ER): Undefined ID '{id}' for 'SellRegion' container. Enum: {nameof(SellRegion_MsgBndID_ER)}, FMG: '{fmgName}', Source: '{info.FileEntry.Path}'.", LogLevel.Warning);
+                        Smithbox.LogError(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_DisplayName",
+                            "ER", id, "SellRegion", nameof(SellRegion_MsgBndID_ER), fmgName, info.FileEntry.Path));
                     }
                 }
                 break;
@@ -504,7 +538,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"[FMG Name Error] GetFmgDisplayName(AC6): Undefined ID '{id}' for 'Item' container. Enum: {nameof(Item_MsgBndID_AC6)}, FMG: '{fmgName}', Source: '{info.FileEntry.Path}'.", LogLevel.Warning);
+                        Smithbox.LogError(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_DisplayName",
+                            "AC6", id, "Item", nameof(Item_MsgBndID_AC6), fmgName, info.FileEntry.Path));
                     }
                 }
                 else if (IsMenuContainer(info))
@@ -516,7 +552,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"[FMG Name Error] GetFmgDisplayName(AC6): Undefined ID '{id}' for 'Menu' container. Enum: {nameof(Menu_MsgBndID_AC6)}, FMG: '{fmgName}', Source: '{info.FileEntry.Path}'.", LogLevel.Warning);
+                        Smithbox.LogError(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_DisplayName",
+                            "AC6", id, "Menu", nameof(Menu_MsgBndID_AC6), fmgName, info.FileEntry.Path));
                     }
                 }
                 else if (IsNgWordContainer(info))
@@ -528,7 +566,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"[FMG Name Error] GetFmgDisplayName(AC6): Undefined ID '{id}' for 'NgWord' container. Enum: {nameof(NgWord_MsgBndID_AC6)}, FMG: '{fmgName}', Source: '{info.FileEntry.Path}'.", LogLevel.Warning);
+                        Smithbox.LogError(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_DisplayName",
+                            "AC6", id, "NgWord", nameof(NgWord_MsgBndID_AC6), fmgName, info.FileEntry.Path));
                     }
                 }
                 break;
@@ -542,7 +582,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"[FMG Name Error] GetFmgDisplayName(NR): Undefined ID '{id}' for 'Item' container. Enum: {nameof(Item_MsgBndID_NR)}, FMG: '{fmgName}', Source: '{info.FileEntry.Path}'.", LogLevel.Warning);
+                        Smithbox.LogError(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_DisplayName",
+                            "NR", id, "Item", nameof(Item_MsgBndID_NR), fmgName, info.FileEntry.Path));
                     }
                 }
                 else if (IsMenuContainer(info))
@@ -554,7 +596,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"[FMG Name Error] GetFmgDisplayName(NR): Undefined ID '{id}' for 'Menu' container. Enum: {nameof(Menu_MsgBndID_NR)}, FMG: '{fmgName}', Source: '{info.FileEntry.Path}'.", LogLevel.Warning);
+                        Smithbox.LogError(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_DisplayName",
+                            "NR", id, "Menu", nameof(Menu_MsgBndID_NR), fmgName, info.FileEntry.Path));
                     }
                 }
                 else if (IsNgWordContainer(info))
@@ -566,7 +610,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"[FMG Name Error] GetFmgDisplayName(NR): Undefined ID '{id}' for 'NgWord' container. Enum: {nameof(NgWord_MsgBndID_NR)}, FMG: '{fmgName}', Source: '{info.FileEntry.Path}'.", LogLevel.Warning);
+                        Smithbox.LogError(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_DisplayName",
+                            "NR", id, "NgWord", nameof(NgWord_MsgBndID_NR), fmgName, info.FileEntry.Path));
                     }
                 }
                 break;
@@ -596,7 +642,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"[FMG Name Error] GetFmgInternalName(DES): Undefined ID '{id}' for 'Item' container. Enum: {nameof(Item_MsgBndID_DES)}, FMG: '{fmgName}', Source: '{info.FileEntry.Path}'.", LogLevel.Warning);
+                        Smithbox.LogError(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_InternalName",
+                            "DES", id, "Item", nameof(Item_MsgBndID_DES), fmgName, info.FileEntry.Path));
                     }
                 }
                 else if (IsMenuContainer(info))
@@ -608,7 +656,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"[FMG Name Error] GetFmgInternalName(DES): Undefined ID '{id}' for 'Menu' container. Enum: {nameof(Menu_MsgBndID_DES)}, FMG: '{fmgName}', Source: '{info.FileEntry.Path}'.", LogLevel.Warning);
+                        Smithbox.LogError(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_InternalName",
+                            "DES", id, "Menu", nameof(Menu_MsgBndID_DES), fmgName, info.FileEntry.Path));
                     }
                 }
                 break;
@@ -623,7 +673,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"[FMG Name Error] GetFmgInternalName(DS1): Undefined ID '{id}' for 'Item' container. Enum: {nameof(Item_MsgBndID_DS1)}, FMG: '{fmgName}', Source: '{info.FileEntry.Path}'.", LogLevel.Warning);
+                        Smithbox.LogError(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_InternalName",
+                            "DS1", id, "Item", nameof(Item_MsgBndID_DS1), fmgName, info.FileEntry.Path));
                     }
                 }
                 else if (IsMenuContainer(info))
@@ -635,7 +687,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"[FMG Name Error] GetFmgInternalName(DS1): Undefined ID '{id}' for 'Menu' container. Enum: {nameof(Menu_MsgBndID_DS1)}, FMG: '{fmgName}', Source: '{info.FileEntry.Path}'.", LogLevel.Warning);
+                        Smithbox.LogError(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_InternalName",
+                            "DS1", id, "Menu", nameof(Menu_MsgBndID_DS1), fmgName, info.FileEntry.Path));
                     }
                 }
                 break;
@@ -653,7 +707,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"[FMG Name Error] GetFmgInternalName(BB): Undefined ID '{id}' for 'Item' container. Enum: {nameof(Item_MsgBndID_BB)}, FMG: '{fmgName}', Source: '{info.FileEntry.Path}'.", LogLevel.Warning);
+                        Smithbox.LogError(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_InternalName",
+                            "BB", id, "Item", nameof(Item_MsgBndID_BB), fmgName, info.FileEntry.Path));
                     }
                 }
                 else if (IsMenuContainer(info))
@@ -665,7 +721,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"[FMG Name Error] GetFmgInternalName(BB): Undefined ID '{id}' for 'Menu' container. Enum: {nameof(Menu_MsgBndID_BB)}, FMG: '{fmgName}', Source: '{info.FileEntry.Path}'.", LogLevel.Warning);
+                        Smithbox.LogError(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_InternalName",
+                            "BB", id, "Menu", nameof(Menu_MsgBndID_BB), fmgName, info.FileEntry.Path));
                     }
                 }
                 break;
@@ -679,7 +737,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"[FMG Name Error] GetFmgInternalName(DS3): Undefined ID '{id}' for 'Item' container. Enum: {nameof(Item_MsgBndID_DS3)}, FMG: '{fmgName}', Source: '{info.FileEntry.Path}'.", LogLevel.Warning);
+                        Smithbox.LogError(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_InternalName",
+                            "DS3", id, "Item", nameof(Item_MsgBndID_DS3), fmgName, info.FileEntry.Path));
                     }
                 }
                 else if (IsMenuContainer(info))
@@ -691,7 +751,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"[FMG Name Error] GetFmgInternalName(DS3): Undefined ID '{id}' for 'Menu' container. Enum: {nameof(Menu_MsgBndID_DS3)}, FMG: '{fmgName}', Source: '{info.FileEntry.Path}'.", LogLevel.Warning);
+                        Smithbox.LogError(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_InternalName",
+                            "DS3", id, "Menu", nameof(Menu_MsgBndID_DS3), fmgName, info.FileEntry.Path));
                     }
                 }
                 else if (IsNgWordContainer(info))
@@ -703,7 +765,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"[FMG Name Error] GetFmgInternalName(DS3): Undefined ID '{id}' for 'NgWord' container. Enum: {nameof(NgWord_MsgBndID_DS3)}, FMG: '{fmgName}', Source: '{info.FileEntry.Path}'.", LogLevel.Warning);
+                        Smithbox.LogError(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_InternalName",
+                            "DS3", id, "NgWord", nameof(NgWord_MsgBndID_DS3), fmgName, info.FileEntry.Path));
                     }
                 }
                 break;
@@ -717,7 +781,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"[FMG Name Error] GetFmgInternalName(SDT): Undefined ID '{id}' for 'Item' container. Enum: {nameof(Item_MsgBndID_SDT)}, FMG: '{fmgName}', Source: '{info.FileEntry.Path}'.", LogLevel.Warning);
+                        Smithbox.LogError(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_InternalName",
+                            "SDT", id, "Item", nameof(Item_MsgBndID_SDT), fmgName, info.FileEntry.Path));
                     }
                 }
                 else if (IsMenuContainer(info))
@@ -729,7 +795,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"[FMG Name Error] GetFmgInternalName(SDT): Undefined ID '{id}' for 'Menu' container. Enum: {nameof(Menu_MsgBndID_SDT)}, FMG: '{fmgName}', Source: '{info.FileEntry.Path}'.", LogLevel.Warning);
+                        Smithbox.LogError(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_InternalName",
+                            "SDT", id, "Menu", nameof(Menu_MsgBndID_SDT), fmgName, info.FileEntry.Path));
                     }
                 }
                 else if (IsSellRegionContainer(info))
@@ -741,7 +809,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"[FMG Name Error] GetFmgInternalName(SDT): Undefined ID '{id}' for 'SellRegion' container. Enum: {nameof(SellRegion_MsgBndID_SDT)}, FMG: '{fmgName}', Source: '{info.FileEntry.Path}'.", LogLevel.Warning);
+                        Smithbox.LogError(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_InternalName",
+                            "SDT", id, "SellRegion", nameof(SellRegion_MsgBndID_SDT), fmgName, info.FileEntry.Path));
                     }
                 }
                 break;
@@ -755,7 +825,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"[FMG Name Error] GetFmgInternalName(ER): Undefined ID '{id}' for 'Item' container. Enum: {nameof(Item_MsgBndID_ER)}, FMG: '{fmgName}', Source: '{info.FileEntry.Path}'.", LogLevel.Warning);
+                        Smithbox.LogError(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_InternalName",
+                            "ER", id, "Item", nameof(Item_MsgBndID_ER), fmgName, info.FileEntry.Path));
                     }
                 }
                 else if (IsMenuContainer(info))
@@ -767,7 +839,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"[FMG Name Error] GetFmgInternalName(ER): Undefined ID '{id}' for 'Menu' container. Enum: {nameof(Menu_MsgBndID_ER)}, FMG: '{fmgName}', Source: '{info.FileEntry.Path}'.", LogLevel.Warning);
+                        Smithbox.LogError(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_InternalName",
+                            "ER", id, "Menu", nameof(Menu_MsgBndID_ER), fmgName, info.FileEntry.Path));
                     }
                 }
                 else if (IsNgWordContainer(info))
@@ -779,7 +853,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"[FMG Name Error] GetFmgInternalName(ER): Undefined ID '{id}' for 'NgWord' container. Enum: {nameof(NgWord_MsgBndID_ER)}, FMG: '{fmgName}', Source: '{info.FileEntry.Path}'.", LogLevel.Warning);
+                        Smithbox.LogError(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_InternalName",
+                            "ER", id, "NgWord", nameof(NgWord_MsgBndID_ER), fmgName, info.FileEntry.Path));
                     }
                 }
                 else if (IsSellRegionContainer(info))
@@ -791,7 +867,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"[FMG Name Error] GetFmgInternalName(ER): Undefined ID '{id}' for 'SellRegion' container. Enum: {nameof(SellRegion_MsgBndID_ER)}, FMG: '{fmgName}', Source: '{info.FileEntry.Path}'.", LogLevel.Warning);
+                        Smithbox.LogError(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_InternalName",
+                            "ER", id, "SellRegion", nameof(SellRegion_MsgBndID_ER), fmgName, info.FileEntry.Path));
                     }
                 }
                 break;
@@ -805,7 +883,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"[FMG Name Error] GetFmgInternalName(AC6): Undefined ID '{id}' for 'Item' container. Enum: {nameof(Item_MsgBndID_AC6)}, FMG: '{fmgName}', Source: '{info.FileEntry.Path}'.", LogLevel.Warning);
+                        Smithbox.LogError(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_InternalName",
+                            "AC6", id, "Item", nameof(Item_MsgBndID_AC6), fmgName, info.FileEntry.Path));
                     }
                 }
                 else if (IsMenuContainer(info))
@@ -817,7 +897,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"[FMG Name Error] GetFmgInternalName(AC6): Undefined ID '{id}' for 'Menu' container. Enum: {nameof(Menu_MsgBndID_AC6)}, FMG: '{fmgName}', Source: '{info.FileEntry.Path}'.", LogLevel.Warning);
+                        Smithbox.LogError(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_InternalName",
+                            "AC6", id, "Menu", nameof(Menu_MsgBndID_AC6), fmgName, info.FileEntry.Path));
                     }
                 }
                 else if (IsNgWordContainer(info))
@@ -829,7 +911,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"[FMG Name Error] GetFmgInternalName(AC6): Undefined ID '{id}' for 'NgWord' container. Enum: {nameof(NgWord_MsgBndID_AC6)}, FMG: '{fmgName}', Source: '{info.FileEntry.Path}'.", LogLevel.Warning);
+                        Smithbox.LogError(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_InternalName",
+                            "AC6", id, "NgWord", nameof(NgWord_MsgBndID_AC6), fmgName, info.FileEntry.Path));
                     }
                 }
                 break;
@@ -844,7 +928,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"[FMG Name Error] GetFmgInternalName(NR): Undefined ID '{id}' for 'Item' container. Enum: {nameof(Item_MsgBndID_NR)}, FMG: '{fmgName}', Source: '{info.FileEntry.Path}'.", LogLevel.Warning);
+                        Smithbox.LogError(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_InternalName",
+                            "NR", id, "Item", nameof(Item_MsgBndID_NR), fmgName, info.FileEntry.Path));
                     }
                 }
                 else if (IsMenuContainer(info))
@@ -856,7 +942,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"[FMG Name Error] GetFmgInternalName(NR): Undefined ID '{id}' for 'Menu' container. Enum: {nameof(Menu_MsgBndID_NR)}, FMG: '{fmgName}', Source: '{info.FileEntry.Path}'.", LogLevel.Warning);
+                        Smithbox.LogError(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_InternalName",
+                            "NR", id, "Menu", nameof(Menu_MsgBndID_NR), fmgName, info.FileEntry.Path));
                     }
                 }
                 else if (IsNgWordContainer(info))
@@ -868,7 +956,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"[FMG Name Error] GetFmgInternalName(NR): Undefined ID '{id}' for 'NgWord' container. Enum: {nameof(NgWord_MsgBndID_NR)}, FMG: '{fmgName}', Source: '{info.FileEntry.Path}'.", LogLevel.Warning);
+                        Smithbox.LogError(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_InternalName",
+                            "NR", id, "NgWord", nameof(NgWord_MsgBndID_NR), fmgName, info.FileEntry.Path));
                     }
                 }
                 break;
@@ -897,7 +987,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"[FMG Name Error] GetFmgGrouping(DES): Undefined ID '{id}' for 'Item' container. Enum: {nameof(Item_MsgBndID_DES)}, FMG: '{fmgName}', Source: '{info.FileEntry.Path}'.", LogLevel.Warning);
+                        Smithbox.LogError(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_FmgGrouping",
+                            "DES", id, "Item", nameof(Item_MsgBndID_DES), fmgName, info.FileEntry.Path));
                     }
                 }
                 else if (IsMenuContainer(info))
@@ -909,7 +1001,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"[FMG Name Error] GetFmgGrouping(DES): Undefined ID '{id}' for 'Menu' container. Enum: {nameof(Menu_MsgBndID_DES)}, FMG: '{fmgName}', Source: '{info.FileEntry.Path}'.", LogLevel.Warning);
+                        Smithbox.LogError(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_FmgGrouping",
+                            "DES", id, "Menu", nameof(Menu_MsgBndID_DES), fmgName, info.FileEntry.Path));
                     }
                 }
                 else if (IsSampleContainer(info))
@@ -921,7 +1015,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"[FMG Name Error] GetFmgGrouping(DES): Undefined ID '{id}' for 'Sample' container. Enum: {nameof(Sample_MsgBndID_DES)}, FMG: '{fmgName}', Source: '{info.FileEntry.Path}'.", LogLevel.Warning);
+                        Smithbox.LogError(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_FmgGrouping",
+                            "DES", id, "Sample", nameof(Sample_MsgBndID_DES), fmgName, info.FileEntry.Path));
                     }
                 }
                 break;
@@ -936,7 +1032,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"[FMG Name Error] GetFmgGrouping(DS1): Undefined ID '{id}' for 'Item' container. Enum: {nameof(Item_MsgBndID_DS1)}, FMG: '{fmgName}', Source: '{info.FileEntry.Path}'.", LogLevel.Warning);
+                        Smithbox.LogError(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_FmgGrouping",
+                            "DS1", id, "Item", nameof(Item_MsgBndID_DS1), fmgName, info.FileEntry.Path));
                     }
                 }
                 else if (IsMenuContainer(info))
@@ -948,7 +1046,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"[FMG Name Error] GetFmgGrouping(DS1): Undefined ID '{id}' for 'Menu' container. Enum: {nameof(Menu_MsgBndID_DS1)}, FMG: '{fmgName}', Source: '{info.FileEntry.Path}'.", LogLevel.Warning);
+                        Smithbox.LogError(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_FmgGrouping",
+                            "DS1", id, "Menu", nameof(Menu_MsgBndID_DS1), fmgName, info.FileEntry.Path));
                     }
                 }
                 break;
@@ -1004,7 +1104,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"[FMG Name Error] GetFmgGrouping(BB): Undefined ID '{id}' for 'Item' container. Enum: {nameof(Item_MsgBndID_BB)}, FMG: '{fmgName}', Source: '{info.FileEntry.Path}'.", LogLevel.Warning);
+                        Smithbox.LogError(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_FmgGrouping",
+                            "BB", id, "Item", nameof(Item_MsgBndID_BB), fmgName, info.FileEntry.Path));
                     }
                 }
                 else if (IsMenuContainer(info))
@@ -1016,7 +1118,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"[FMG Name Error] GetFmgGrouping(BB): Undefined ID '{id}' for 'Menu' container. Enum: {nameof(Menu_MsgBndID_BB)}, FMG: '{fmgName}', Source: '{info.FileEntry.Path}'.", LogLevel.Warning);
+                        Smithbox.LogError(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_FmgGrouping",
+                            "BB", id, "Menu", nameof(Menu_MsgBndID_BB), fmgName, info.FileEntry.Path));
                     }
                 }
                 break;
@@ -1030,7 +1134,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"[FMG Name Error] GetFmgGrouping(DS3): Undefined ID '{id}' for 'Item' container. Enum: {nameof(Item_MsgBndID_DS3)}, FMG: '{fmgName}', Source: '{info.FileEntry.Path}'.", LogLevel.Warning);
+                        Smithbox.LogError(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_FmgGrouping",
+                            "DS3", id, "Item", nameof(Item_MsgBndID_DS3), fmgName, info.FileEntry.Path));
                     }
                 }
                 else if (IsMenuContainer(info))
@@ -1042,7 +1148,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"[FMG Name Error] GetFmgGrouping(DS3): Undefined ID '{id}' for 'Menu' container. Enum: {nameof(Menu_MsgBndID_DS3)}, FMG: '{fmgName}', Source: '{info.FileEntry.Path}'.", LogLevel.Warning);
+                        Smithbox.LogError(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_FmgGrouping",
+                            "DS3", id, "Menu", nameof(Menu_MsgBndID_DS3), fmgName, info.FileEntry.Path));
                     }
                 }
                 else if (IsNgWordContainer(info))
@@ -1054,7 +1162,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"[FMG Name Error] GetFmgGrouping(DS3): Undefined ID '{id}' for 'NgWord' container. Enum: {nameof(NgWord_MsgBndID_DS3)}, FMG: '{fmgName}', Source: '{info.FileEntry.Path}'.", LogLevel.Warning);
+                        Smithbox.LogError(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_FmgGrouping",
+                            "DS3", id, "NgWord", nameof(NgWord_MsgBndID_DS3), fmgName, info.FileEntry.Path));
                     }
                 }
                 break;
@@ -1068,7 +1178,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"[FMG Name Error] GetFmgGrouping(SDT): Undefined ID '{id}' for 'Item' container. Enum: {nameof(Item_MsgBndID_SDT)}, FMG: '{fmgName}', Source: '{info.FileEntry.Path}'.", LogLevel.Warning);
+                        Smithbox.LogError(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_FmgGrouping",
+                            "SDT", id, "Item", nameof(Item_MsgBndID_SDT), fmgName, info.FileEntry.Path));
                     }
                 }
                 else if (IsMenuContainer(info))
@@ -1080,7 +1192,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"[FMG Name Error] GetFmgGrouping(SDT): Undefined ID '{id}' for 'Menu' container. Enum: {nameof(Menu_MsgBndID_SDT)}, FMG: '{fmgName}', Source: '{info.FileEntry.Path}'.", LogLevel.Warning);
+                        Smithbox.LogError(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_FmgGrouping",
+                            "SDT", id, "Menu", nameof(Menu_MsgBndID_SDT), fmgName, info.FileEntry.Path));
                     }
                 }
                 else if (IsSellRegionContainer(info))
@@ -1092,7 +1206,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"[FMG Name Error] GetFmgGrouping(SDT): Undefined ID '{id}' for 'SellRegion' container. Enum: {nameof(SellRegion_MsgBndID_SDT)}, FMG: '{fmgName}', Source: '{info.FileEntry.Path}'.", LogLevel.Warning);
+                        Smithbox.LogError(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_FmgGrouping",
+                            "SDT", id, "SellRegion", nameof(SellRegion_MsgBndID_SDT), fmgName, info.FileEntry.Path));
                     }
                 }
                 break;
@@ -1106,7 +1222,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"[FMG Name Error] GetFmgGrouping(ER): Undefined ID '{id}' for 'Item' container. Enum: {nameof(Item_MsgBndID_ER)}, FMG: '{fmgName}', Source: '{info.FileEntry.Path}'.", LogLevel.Warning);
+                        Smithbox.LogError(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_FmgGrouping",
+                            "ER", id, "Item", nameof(Item_MsgBndID_ER), fmgName, info.FileEntry.Path));
                     }
                 }
                 else if (IsMenuContainer(info))
@@ -1118,7 +1236,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"[FMG Name Error] GetFmgGrouping(ER): Undefined ID '{id}' for 'Menu' container. Enum: {nameof(Menu_MsgBndID_ER)}, FMG: '{fmgName}', Source: '{info.FileEntry.Path}'.", LogLevel.Warning);
+                        Smithbox.LogError(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_FmgGrouping",
+                            "ER", id, "Menu", nameof(Menu_MsgBndID_ER), fmgName, info.FileEntry.Path));
                     }
                 }
                 else if (IsNgWordContainer(info))
@@ -1130,7 +1250,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"[FMG Name Error] GetFmgGrouping(ER): Undefined ID '{id}' for 'NgWord' container. Enum: {nameof(NgWord_MsgBndID_ER)}, FMG: '{fmgName}', Source: '{info.FileEntry.Path}'.", LogLevel.Warning);
+                        Smithbox.LogError(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_FmgGrouping",
+                            "ER", id, "NgWord", nameof(NgWord_MsgBndID_ER), fmgName, info.FileEntry.Path));
                     }
                 }
                 else if (IsSellRegionContainer(info))
@@ -1142,7 +1264,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"[FMG Name Error] GetFmgGrouping(ER): Undefined ID '{id}' for 'SellRegion' container. Enum: {nameof(SellRegion_MsgBndID_ER)}, FMG: '{fmgName}', Source: '{info.FileEntry.Path}'.", LogLevel.Warning);
+                        Smithbox.LogError(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_FmgGrouping",
+                            "ER", id, "SellRegion", nameof(SellRegion_MsgBndID_ER), fmgName, info.FileEntry.Path));
                     }
                 }
                 break;
@@ -1156,7 +1280,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"[FMG Name Error] GetFmgGrouping(AC6): Undefined ID '{id}' for 'Item' container. Enum: {nameof(Item_MsgBndID_AC6)}, FMG: '{fmgName}', Source: '{info.FileEntry.Path}'.", LogLevel.Warning);
+                        Smithbox.LogError(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_FmgGrouping",
+                            "AC6", id, "Item", nameof(Item_MsgBndID_AC6), fmgName, info.FileEntry.Path));
                     }
                 }
                 else if (IsMenuContainer(info))
@@ -1168,7 +1294,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"[FMG Name Error] GetFmgGrouping(AC6): Undefined ID '{id}' for 'Menu' container. Enum: {nameof(Menu_MsgBndID_AC6)}, FMG: '{fmgName}', Source: '{info.FileEntry.Path}'.", LogLevel.Warning);
+                        Smithbox.LogError(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_FmgGrouping",
+                            "AC6", id, "Menu", nameof(Menu_MsgBndID_AC6), fmgName, info.FileEntry.Path));
                     }
                 }
                 else if (IsNgWordContainer(info))
@@ -1180,7 +1308,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"[FMG Name Error] GetFmgGrouping(AC6): Undefined ID '{id}' for 'NgWord' container. Enum: {nameof(NgWord_MsgBndID_AC6)}, FMG: '{fmgName}', Source: '{info.FileEntry.Path}'.", LogLevel.Warning);
+                        Smithbox.LogError(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_FmgGrouping",
+                            "AC6", id, "NgWord", nameof(NgWord_MsgBndID_AC6), fmgName, info.FileEntry.Path));
                     }
                 }
                 break;
@@ -1194,7 +1324,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"[FMG Name Error] GetFmgGrouping(NR): Undefined ID '{id}' for 'Item' container. Enum: {nameof(Item_MsgBndID_NR)}, FMG: '{fmgName}', Source: '{info.FileEntry.Path}'.", LogLevel.Warning);
+                        Smithbox.LogError(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_FmgGrouping",
+                            "NR", id, "Item", nameof(Item_MsgBndID_NR), fmgName, info.FileEntry.Path));
                     }
                 }
                 else if (IsMenuContainer(info))
@@ -1206,7 +1338,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"[FMG Name Error] GetFmgGrouping(NR): Undefined ID '{id}' for 'Menu' container. Enum: {nameof(Menu_MsgBndID_NR)}, FMG: '{fmgName}', Source: '{info.FileEntry.Path}'.", LogLevel.Warning);
+                        Smithbox.LogError(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_FmgGrouping",
+                            "NR", id, "Menu", nameof(Menu_MsgBndID_NR), fmgName, info.FileEntry.Path));
                     }
                 }
                 else if (IsNgWordContainer(info))
@@ -1218,7 +1352,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"[FMG Name Error] GetFmgGrouping(NR): Undefined ID '{id}' for 'NgWord' container. Enum: {nameof(NgWord_MsgBndID_NR)}, FMG: '{fmgName}', Source: '{info.FileEntry.Path}'.", LogLevel.Warning);
+                        Smithbox.LogError(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_FmgGrouping",
+                            "NR", id, "NgWord", nameof(NgWord_MsgBndID_NR), fmgName, info.FileEntry.Path));
                     }
                 }
                 break;
@@ -1247,7 +1383,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"Item_MsgBndID_DES: {id} not defined", LogLevel.Warning);
+                        Smithbox.Log(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_DlcGrouping",
+                            "Item_MsgBndID_DES", id));
                     }
                 }
                 else if (IsMenuContainer(info))
@@ -1259,7 +1397,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"Menu_MsgBndID_DS1: {id} not defined", LogLevel.Warning);
+                        Smithbox.Log(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_DlcGrouping",
+                            "Menu_MsgBndID_DES", id));
                     }
                 }
                 else if (IsSampleContainer(info))
@@ -1271,7 +1411,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"Sample_MsgBndID_DES: {id} not defined", LogLevel.Warning);
+                        Smithbox.Log(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_DlcGrouping",
+                            "Sample_MsgBndID_DES", id));
                     }
                 }
                 break;
@@ -1286,7 +1428,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"Item_MsgBndID_DS1: {id} not defined", LogLevel.Warning);
+                        Smithbox.Log(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_DlcGrouping",
+                            "Item_MsgBndID_DS1", id));
                     }
                 }
                 else if (IsMenuContainer(info))
@@ -1298,7 +1442,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"Menu_MsgBndID_DS1: {id} not defined", LogLevel.Warning);
+                        Smithbox.Log(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_DlcGrouping",
+                            "Menu_MsgBndID_DS1", id));
                     }
                 }
                 break;
@@ -1354,7 +1500,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"Item_MsgBndID_BB: {id} not defined", LogLevel.Warning);
+                        Smithbox.Log(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_DlcGrouping",
+                            "Item_MsgBndID_BB", id));
                     }
                 }
                 else if (IsMenuContainer(info))
@@ -1366,7 +1514,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"Menu_MsgBndID_BB: {id} not defined", LogLevel.Warning);
+                        Smithbox.Log(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_DlcGrouping",
+                            "Menu_MsgBndID_BB", id));
                     }
                 }
                 break;
@@ -1380,7 +1530,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"Item_MsgBndID_DS3: {id} not defined", LogLevel.Warning);
+                        Smithbox.Log(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_DlcGrouping",
+                            "Item_MsgBndID_DS3", id));
                     }
                 }
                 else if (IsMenuContainer(info))
@@ -1392,7 +1544,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"Menu_MsgBndID_DS3: {id} not defined", LogLevel.Warning);
+                        Smithbox.Log(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_DlcGrouping",
+                            "Menu_MsgBndID_DS3", id));
                     }
                 }
                 else if (IsNgWordContainer(info))
@@ -1404,7 +1558,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"NgWord_MsgBndID_DS3: {id} not defined", LogLevel.Warning);
+                        Smithbox.Log(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_DlcGrouping",
+                            "NgWord_MsgBndID_DS3", id));
                     }
                 }
                 break;
@@ -1418,7 +1574,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"Item_MsgBndID_SDT: {id} not defined", LogLevel.Warning);
+                        Smithbox.Log(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_DlcGrouping",
+                            "Item_MsgBndID_SDT", id));
                     }
                 }
                 else if (IsMenuContainer(info))
@@ -1430,7 +1588,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"Menu_MsgBndID_SDT: {id} not defined", LogLevel.Warning);
+                        Smithbox.Log(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_DlcGrouping",
+                            "Menu_MsgBndID_SDT", id));
                     }
                 }
                 else if (IsSellRegionContainer(info))
@@ -1442,7 +1602,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"SellRegion_MsgBndID_SDT: {id} not defined", LogLevel.Warning);
+                        Smithbox.Log(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_DlcGrouping",
+                            "SellRegion_MsgBndID_SDT", id));
                     }
                 }
                 break;
@@ -1456,7 +1618,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"Item_MsgBndID_ER: {id} not defined", LogLevel.Warning);
+                        Smithbox.Log(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_DlcGrouping",
+                            "Item_MsgBndID_ER", id));
                     }
                 }
                 else if (IsMenuContainer(info))
@@ -1468,7 +1632,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"Menu_MsgBndID_ER: {id} not defined", LogLevel.Warning);
+                        Smithbox.Log(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_DlcGrouping",
+                            "Menu_MsgBndID_ER", id));
                     }
                 }
                 else if (IsNgWordContainer(info))
@@ -1480,7 +1646,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"NgWord_MsgBndID_ER: {id} not defined", LogLevel.Warning);
+                        Smithbox.Log(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_DlcGrouping",
+                            "NgWord_MsgBndID_ER", id));
                     }
                 }
                 else if (IsSellRegionContainer(info))
@@ -1492,7 +1660,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"SellRegion_MsgBndID_ER: {id} not defined", LogLevel.Warning);
+                        Smithbox.Log(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_DlcGrouping",
+                            "SellRegion_MsgBndID_ER", id));
                     }
                 }
                 break;
@@ -1506,7 +1676,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"Item_MsgBndID_AC6: {id} not defined", LogLevel.Warning);
+                        Smithbox.Log(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_DlcGrouping",
+                            "Item_MsgBndID_AC6", id));
                     }
                 }
                 else if (IsMenuContainer(info))
@@ -1518,7 +1690,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"Menu_MsgBndID_AC6: {id} not defined", LogLevel.Warning);
+                        Smithbox.Log(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_DlcGrouping",
+                            "Menu_MsgBndID_AC6", id));
                     }
                 }
                 else if (IsNgWordContainer(info))
@@ -1530,7 +1704,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"NgWord_MsgBndID_AC6: {id} not defined", LogLevel.Warning);
+                        Smithbox.Log(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_DlcGrouping",
+                            "NgWord_MsgBndID_AC6", id));
                     }
                 }
                 break;
@@ -1544,7 +1720,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"Item_MsgBndID_NR: {id} not defined", LogLevel.Warning);
+                        Smithbox.Log(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_DlcGrouping",
+                            "Item_MsgBndID_NR", id));
                     }
                 }
                 else if (IsMenuContainer(info))
@@ -1556,7 +1734,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"Menu_MsgBndID_NR: {id} not defined", LogLevel.Warning);
+                        Smithbox.Log(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_DlcGrouping",
+                            "Menu_MsgBndID_NR", id));
                     }
                 }
                 else if (IsNgWordContainer(info))
@@ -1568,7 +1748,9 @@ public static class TextUtils
                     }
                     else
                     {
-                        Smithbox.Log(typeof(TextUtils), $"NgWord_MsgBndID_NR: {id} not defined", LogLevel.Warning);
+                        Smithbox.Log(typeof(TextUtils),
+                            LOC.Get("TEXT_Util_Log_Missing_Enum_DlcGrouping",
+                            "NgWord_MsgBndID_NR", id));
                     }
                 }
                 break;

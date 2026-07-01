@@ -34,13 +34,13 @@ public class TextViewHandler
 
     public void DisplayMenu()
     {
-        if (ImGui.MenuItem("Add New View", false))
+        if (ImGui.MenuItem($"{LOC.Get("EDITOR_Add_New_View")}##addNewView", false))
         {
             AddView();
         }
 
         var canClose = CountViews() > 1;
-        if (ImGui.MenuItem("Close Current View", false, canClose))
+        if (ImGui.MenuItem($"{LOC.Get("EDITOR_Close_Current_View")}##closeCurrentView", false, canClose))
         {
             RemoveView(ActiveView);
         }
@@ -108,11 +108,11 @@ public class TextViewHandler
                 continue;
             }
 
-            var displayTitle = "Active View";
+            var displayTitle = LOC.Get("EDITOR_Active_View");
 
             if (view != activeView)
             {
-                displayTitle = "Inactive View";
+                displayTitle = LOC.Get("EDITOR_Inactive_View");
             }
 
             displayTitle = $"{displayTitle} [{view.ViewIndex}]";
@@ -121,7 +121,7 @@ public class TextViewHandler
 
             if (CountViews() == 1)
             {
-                displayTitle = "Active View";
+                displayTitle = LOC.Get("EDITOR_Active_View");
             }
 
             ImGui.SetNextWindowDockID(editorDockspaceId, ImGuiCond.FirstUseEver);
@@ -135,7 +135,7 @@ public class TextViewHandler
 
                 if (ImGui.BeginPopupContextItem())
                 {
-                    if (ImGui.MenuItem("Add View"))
+                    if (ImGui.MenuItem($"{LOC.Get("EDITOR_Add_View")}##addView"))
                     {
                         AddNewView = true;
                     }
@@ -143,7 +143,7 @@ public class TextViewHandler
                     // Don't let the user close if their is only 1 view
                     if (CountViews() > 1)
                     {
-                        if (ImGui.MenuItem("Close View"))
+                        if (ImGui.MenuItem($"{LOC.Get("EDITOR_Close_View")}##closeView"))
                         {
                             ViewToClose = view;
                         }

@@ -15,8 +15,6 @@ public class TextFileList
     private TextEditorView Parent;
     private ProjectEntry Project;
 
-    private List<EntryGroupAssociation> Groupings;
-
     public string FmgListFilter = "";
     public bool ExactFmgListFilter = false;
 
@@ -31,7 +29,9 @@ public class TextFileList
     /// </summary>
     public void Display(float width, float height)
     {
-        UIHelper.SimpleHeader("Files", "");
+        UIHelper.SimpleHeader(
+            LOC.Get("TEXT_FileList_Header_Files"),
+            LOC.Get("TEXT_FileList_Header_Files_TT"));
 
         var searchHeight = new Vector2(0, 36) * DPI.UIScale();
         ImGui.BeginChild($"textEditor_FileList_Header", searchHeight, ImGuiChildFlags.Borders);
@@ -47,11 +47,12 @@ public class TextFileList
             CFG.Current.TextEditor_Text_File_List_Grouped_Display = !CFG.Current.TextEditor_Text_File_List_Grouped_Display;
         }
 
-        var displayMode = "Grouped Display";
+        var displayMode = LOC.Get("TEXT_FileList_Toggle_Grouped_Display");
         if (!CFG.Current.TextEditor_Text_File_List_Grouped_Display)
-            displayMode = "Individual Display";
+            displayMode = LOC.Get("TEXT_FileList_Toggle_Individual_Display");
 
-        UIHelper.Tooltip($"Toggle if all the individual files are displayed, or they are grouped under a common file.\nCurrent Mode: {displayMode}");
+        UIHelper.Tooltip(
+            LOC.Get("TEXT_FileList_Toggle_Display_Type_TT", displayMode));
 
         ImGui.EndChild();
 
@@ -91,7 +92,8 @@ public class TextFileList
             // Common
             if (TextUtils.HasGroupEntries(Project, info, "Common"))
             {
-                if (ImGui.CollapsingHeader("General", ImGuiTreeNodeFlags.DefaultOpen))
+                if (ImGui.CollapsingHeader(
+                    $"{LOC.Get("TEXT_FileList_ListHeader_General")}##generalSection", ImGuiTreeNodeFlags.DefaultOpen))
                 {
                     foreach (var fmgInfo in Parent.Selection.SelectedContainerWrapper.FmgWrappers)
                     {
@@ -110,7 +112,8 @@ public class TextFileList
             // Menu
             if (TextUtils.HasGroupEntries(Project, info, "Menu"))
             {
-                if (ImGui.CollapsingHeader("Menu", ImGuiTreeNodeFlags.DefaultOpen))
+                if (ImGui.CollapsingHeader(
+                    $"{LOC.Get("TEXT_FileList_ListHeader_Menu")}##menuSection", ImGuiTreeNodeFlags.DefaultOpen))
                 {
                     foreach (var fmgInfo in Parent.Selection.SelectedContainerWrapper.FmgWrappers)
                     {
@@ -129,7 +132,8 @@ public class TextFileList
             // Title
             if (TextUtils.HasGroupEntries(Project, info, "Title"))
             {
-                if (ImGui.CollapsingHeader("Titles", ImGuiTreeNodeFlags.DefaultOpen))
+                if (ImGui.CollapsingHeader(
+                    $"{LOC.Get("TEXT_FileList_ListHeader_Title")}##titleSection", ImGuiTreeNodeFlags.DefaultOpen))
                 {
                     foreach (var fmgInfo in Parent.Selection.SelectedContainerWrapper.FmgWrappers)
                     {
@@ -148,7 +152,8 @@ public class TextFileList
             // Summary
             if (TextUtils.HasGroupEntries(Project, info, "Summary"))
             {
-                if (ImGui.CollapsingHeader("Summaries", ImGuiTreeNodeFlags.DefaultOpen))
+                if (ImGui.CollapsingHeader(
+                    $"{LOC.Get("TEXT_FileList_ListHeader_Summary")}##summarySection", ImGuiTreeNodeFlags.DefaultOpen))
                 {
                     foreach (var fmgInfo in Parent.Selection.SelectedContainerWrapper.FmgWrappers)
                     {
@@ -167,7 +172,8 @@ public class TextFileList
             // Description
             if (TextUtils.HasGroupEntries(Project, info, "Description"))
             {
-                if (ImGui.CollapsingHeader("Descriptions", ImGuiTreeNodeFlags.DefaultOpen))
+                if (ImGui.CollapsingHeader(
+                    $"{LOC.Get("TEXT_FileList_ListHeader_Description")}##descriptionSection", ImGuiTreeNodeFlags.DefaultOpen))
                 {
                     foreach (var fmgInfo in Parent.Selection.SelectedContainerWrapper.FmgWrappers)
                     {
@@ -186,7 +192,8 @@ public class TextFileList
             // Effect
             if (TextUtils.HasGroupEntries(Project, info, "Effect"))
             {
-                if (ImGui.CollapsingHeader("Effects", ImGuiTreeNodeFlags.DefaultOpen))
+                if (ImGui.CollapsingHeader(
+                    $"{LOC.Get("TEXT_FileList_ListHeader_Effect")}##effectSection", ImGuiTreeNodeFlags.DefaultOpen))
                 {
                     foreach (var fmgInfo in Parent.Selection.SelectedContainerWrapper.FmgWrappers)
                     {
@@ -205,7 +212,8 @@ public class TextFileList
             // Unknown - Fallback group
             if (TextUtils.HasGroupEntries(Project, info, "Unknown"))
             {
-                if (ImGui.CollapsingHeader("Unknown", ImGuiTreeNodeFlags.DefaultOpen))
+                if (ImGui.CollapsingHeader(
+                    $"{LOC.Get("TEXT_FileList_ListHeader_Unsorted")}##unsortedSection", ImGuiTreeNodeFlags.DefaultOpen))
                 {
                     foreach (var fmgInfo in Parent.Selection.SelectedContainerWrapper.FmgWrappers)
                     {
@@ -229,7 +237,8 @@ public class TextFileList
             // Base
             if (TextUtils.HasDLCEntries(Project, info, ""))
             {
-                if (ImGui.CollapsingHeader("Base", ImGuiTreeNodeFlags.DefaultOpen))
+                if (ImGui.CollapsingHeader(
+                    $"{LOC.Get("TEXT_FileList_ListHeader_Base")}##baseSection", ImGuiTreeNodeFlags.DefaultOpen))
                 {
                     foreach (var fmgInfo in Parent.Selection.SelectedContainerWrapper.FmgWrappers)
                     {
@@ -243,7 +252,7 @@ public class TextFileList
                             HandleFmgView(fmgInfo);
                             if (Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.ER)
                             {
-                                UIHelper.Tooltip("This FMG has the highest priority for new entries, so it is recommended you always add new entries in this section.");
+                                UIHelper.Tooltip(LOC.Get("TEXT_FileList_Base_Priority_TT"));
                             }
                         }
                     }
@@ -252,7 +261,8 @@ public class TextFileList
             // DLC 1
             if (TextUtils.HasDLCEntries(Project, info, "DLC 1"))
             {
-                if (ImGui.CollapsingHeader("DLC 1", ImGuiTreeNodeFlags.DefaultOpen))
+                if (ImGui.CollapsingHeader(
+                    $"{LOC.Get("TEXT_FileList_ListHeader_DLC1")}##dlc1Section", ImGuiTreeNodeFlags.DefaultOpen))
                 {
                     foreach (var fmgInfo in Parent.Selection.SelectedContainerWrapper.FmgWrappers)
                     {
@@ -266,7 +276,7 @@ public class TextFileList
                             HandleFmgView(fmgInfo);
                             if (Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.ER)
                             {
-                                UIHelper.Tooltip("This FMG contains entries associated with DLC 1, edit them here.\n\nHowever, it is NOT recommended to add new entries in this FMG, as any entry with the same ID in the Base section FMG will take precedence.");
+                                UIHelper.Tooltip(LOC.Get("TEXT_FileList_DLC1_Priority_TT"));
                             }
                         }
                     }
@@ -275,7 +285,8 @@ public class TextFileList
             // DLC 2
             if (TextUtils.HasDLCEntries(Project, info, "DLC 2"))
             {
-                if (ImGui.CollapsingHeader("DLC 2", ImGuiTreeNodeFlags.DefaultOpen))
+                if (ImGui.CollapsingHeader(
+                    $"{LOC.Get("TEXT_FileList_ListHeader_DLC2")}##dlc2section", ImGuiTreeNodeFlags.DefaultOpen))
                 {
                     foreach (var fmgInfo in Parent.Selection.SelectedContainerWrapper.FmgWrappers)
                     {
@@ -289,14 +300,13 @@ public class TextFileList
                             HandleFmgView(fmgInfo);
                             if (Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.ER)
                             {
-                                UIHelper.Tooltip("This FMG contains entries associated with DLC 2, edit them here.\n\nHowever, it is NOT recommended to add new entries in this FMG, as any entry with the same ID in the Base or DLC 1 section FMG will take precedence.");
+                                UIHelper.Tooltip(LOC.Get("TEXT_FileList_DLC2_Priority_TT"));
                             }
                         }
                     }
                 }
             }
         }
-
     }
 
     private void HandleFmgView(TextFmgWrapper info)

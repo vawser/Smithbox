@@ -1,0 +1,205 @@
+{
+  "Entries": [
+    {
+      "Key": "TEXT_Util_Log_Missing_Enum_DisplayName",
+      "Text": "GetFmgDisplayName({0}): Undefined ID '{1}' for '{2}' container. Enum: {3}, FMG: '{4}', Source: '{5}'."
+    },
+    {
+      "Key": "TEXT_Util_Log_Missing_Enum_InternalName",
+      "Text": "GetFmgInternalName({0}): Undefined ID '{1}' for '{2}' container. Enum: {3}, FMG: '{4}', Source: '{5}'."
+    },
+    {
+      "Key": "TEXT_Util_Log_Missing_Enum_FmgGrouping",
+      "Text": "GetFmgInternalName({0}): Undefined ID '{1}' for '{2}' container. Enum: {3}, FMG: '{4}', Source: '{5}'."
+    },
+    {
+      "Key": "TEXT_Util_Log_Missing_Enum_DlcGrouping",
+      "Text": "{0}: {1} not defined."
+    },
+    {
+      "Key": "TEXT_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_",
+      "Text": ""
+    },
+    
+  ]
+}

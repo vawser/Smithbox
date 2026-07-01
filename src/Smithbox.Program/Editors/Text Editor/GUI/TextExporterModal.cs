@@ -23,7 +23,7 @@ public class TextExporterModal
     {
         if (ShowModal)
         {
-            ImGui.OpenPopup("Text Exporter");
+            ImGui.OpenPopup($"{LOC.Get("TEXT_Exporter_Modal_Name")}###textExporterModal");
         }
 
         ExportMenu();
@@ -32,18 +32,27 @@ public class TextExporterModal
 
     public void ExportMenu()
     {
-        if (ImGui.BeginPopupModal("Text Exporter", ref ShowModal, ImGuiWindowFlags.AlwaysAutoResize))
+        if (ImGui.BeginPopupModal($"{LOC.Get("TEXT_Exporter_Modal_Name")}###textExporterModal", ref ShowModal, ImGuiWindowFlags.AlwaysAutoResize))
         {
             ImGui.BeginChild("TextExporterSection", new Vector2(200f * DPI.UIScale(), 0f),
                 ImGuiChildFlags.Borders | ImGuiChildFlags.AutoResizeY);
 
-            UIHelper.SimpleHeader("Filename", "");
+            UIHelper.SimpleHeader(
+                LOC.Get("TEXT_Exporter_Header_Filename"),
+                LOC.Get("TEXT_Exporter_Header_Filename_TT"));
 
-            UIHelper.SinglelineTextInput("WrapperFilename", ref WrapperName);
+            UIHelper.SinglelineTextInput("wrapperFilename", ref WrapperName);
 
             UIHelper.MultiButtonInput("exportModalActions",
-                "exportFile", "Export", "", ExportWrapper,
-                "closeModal", "Close", "", CloseModal);
+                "exportFile",
+                LOC.Get("TEXT_Exporter_Modal_Action_Export"),
+                LOC.Get("TEXT_Exporter_Modal_Action_Export_TT"),
+                ExportWrapper,
+
+                "closeModal",
+                LOC.Get("TEXT_Exporter_Modal_Action_Close"),
+                LOC.Get("TEXT_Exporter_Modal_Action_Close_TT"),
+                CloseModal);
 
             ImGui.EndChild();
 
@@ -55,7 +64,7 @@ public class TextExporterModal
     {
         if(WrapperName == "")
         {
-            Smithbox.LogError<TextExporterModal>("Filename is empty");
+            Smithbox.LogError<TextExporterModal>(LOC.Get("TEXT_Exporter_Log_Filename_Empty"));
             return;
         }
 

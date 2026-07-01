@@ -99,6 +99,18 @@
     {
       "Key": "TEXT_Language_Turkish",
       "Text": "Turkish"
+    },
+    {
+      "Key": "TEXT_Language_None",
+      "Text": "None"
+    },
+    {
+      "Key": "TEXT_Language_Common",
+      "Text": "Common"
+    },
+    {
+      "Key": "TEXT_Language_Sell_Region",
+      "Text": "Sell Region"
     }
   ]
 }

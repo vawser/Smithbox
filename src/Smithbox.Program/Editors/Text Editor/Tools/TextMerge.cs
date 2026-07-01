@@ -32,12 +32,12 @@ public class TextMerge
 
         ImGui.BeginChild("TextMergeSection", ImGuiChildFlags.Borders);
 
-        UIHelper.WrappedText("Use this to merge a target project's text files into your current project.");
-        UIHelper.WrappedText("");
-        UIHelper.WrappedText("Merging will bring all unique text from the target project into your project.\nIncludes modified text if enabled.");
+        UIHelper.WrappedText(LOC.Get("TEXT_TextMerge_Hint"));
 
         UIHelper.Spacer();
-        UIHelper.SimpleHeader("Target Project", "The project you want to merge text from.");
+        UIHelper.SimpleHeader(
+            LOC.Get("TEXT_TextMerge_Header_Target_Project"),
+            LOC.Get("TEXT_TextMerge_Header_Target_Project"));
 
         // Project list
         ImGui.BeginChild("mergeProjectListSection", new Vector2(0, 200), ImGuiChildFlags.Borders);
@@ -70,19 +70,27 @@ public class TextMerge
         }
         ImGui.EndChild();
 
-        UIHelper.SimpleHeader("Options", "");
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader(
+            LOC.Get("TEXT_TextMerge_Header_Options"),
+            LOC.Get("TEXT_TextMerge_Header_Options_TT"));
 
-        ImGui.Checkbox("Merge Primary Language Only##primaryLanguageOnly", ref mergePrimaryLanguageOnly);
-        UIHelper.Tooltip("If enabled, then only the primary language FMGs will be merged.");
+        ImGui.Checkbox($"{LOC.Get("TEXT_TextMerge_Checkbox_Merge_Primary_Lang")}##primaryLanguageOnly", ref mergePrimaryLanguageOnly);
+        UIHelper.Tooltip(LOC.Get("TEXT_TextMerge_Checkbox_Merge_Primary_Lang_TT"));
 
-        ImGui.Checkbox("Replace Modified Entries##replaceModified", ref replaceModifiedRows);
-        UIHelper.Tooltip("If enabled, then modified rows from the target will overwrite existing rows in our project. If not, then they will be ignored, and only unique rows will be merged.");
+        ImGui.Checkbox($"{LOC.Get("TEXT_TextMerge_Checkbox_Replace_Modified")}##replaceModified", ref replaceModifiedRows);
+        UIHelper.Tooltip(LOC.Get("TEXT_TextMerge_Checkbox_Replace_Modified_TT"));
 
         UIHelper.Spacer();
-        UIHelper.SimpleHeader("Actions", "");
+        UIHelper.SimpleHeader(
+            LOC.Get("TEXT_TextMerge_Header_Actions"),
+            LOC.Get("TEXT_TextMerge_Header_Actions_TT"));
 
         UIHelper.MultiButtonInput("mergeActions",
-            "mergeText", "Merge", "", MergeText);
+            "mergeText", 
+            LOC.Get("TEXT_TextMerge_Action_Merge"), 
+            LOC.Get("TEXT_TextMerge_Action_Merge_TT"), 
+            MergeText);
 
         ImGui.EndChild();
     }
@@ -91,13 +99,13 @@ public class TextMerge
     {
         if(targetProject == null)
         {
-            Smithbox.LogError<TextMerge>("No project has been targeted.");
+            Smithbox.LogError<TextMerge>(LOC.Get("TEXT_TextMerge_Log_No_Target_Project"));
             return;
         }
 
         if(isMergeInProgress)
         {
-            Smithbox.LogError<TextMerge>("Merge is already in progress.");
+            Smithbox.LogError<TextMerge>(LOC.Get("TEXT_TextMerge_Log_Merge_In_Progress"));
             return;
         }
 
@@ -117,11 +125,13 @@ public class TextMerge
 
         if (mergeTaskResult)
         {
-            Smithbox.Log(typeof(TextMerge), $"[Text Editor] Merged text from {targetProject.Descriptor.ProjectName} into this project.");
+            Smithbox.Log(typeof(TextMerge),
+                LOC.Get("TEXT_TextMerge_Log_Merged_Text_PASS", targetProject.Descriptor.ProjectName));
         }
         else
         {
-            Smithbox.Log(typeof(TextMerge), $"[Text Editor] Failed to merge text from {targetProject.Descriptor.ProjectName}.");
+            Smithbox.Log(typeof(TextMerge),
+                LOC.Get("TEXT_TextMerge_Log_Merged_Text_FAIL", targetProject.Descriptor.ProjectName));
         }
 
         isMergeInProgress = false;
