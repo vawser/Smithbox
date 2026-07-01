@@ -11,8 +11,6 @@ public class TextureExportModal
 {
     private TextureExport Export;
 
-    public string ModalName = "Texture Export";
-
     public DeltaBuildProgress LoadProgress;
     public Action<DeltaBuildProgress> ReportProgress;
     public readonly object _progressLock = new();
@@ -20,9 +18,8 @@ public class TextureExportModal
     public bool DisplayModal = false;
     public bool InitialLayout = false;
 
-    public TextureExportModal(string name, TextureExport export)
+    public TextureExportModal(TextureExport export)
     {
-        ModalName = name;
         Export = export;
 
         ReportProgress = SetProgress;
@@ -41,7 +38,7 @@ public class TextureExportModal
         if (!DisplayModal)
             return;
 
-        var popupName = $"{ModalName}##{ModalName.GetHashCode()}";
+        var popupName = $"{LOC.Get("TEXVIEW_Modal_Texture_Export")}###textureExportModal";
 
         ImGui.OpenPopup(popupName);
 

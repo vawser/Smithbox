@@ -27,6 +27,10 @@
     {
       "Key": "TEXVIEW_Window_Tools",
       "Text": "Tools"
+    },
+    {
+      "Key": "TEXVIEW_Modal_Texture_Export",
+      "Text": "Texture Export"
     }
   ]
 }

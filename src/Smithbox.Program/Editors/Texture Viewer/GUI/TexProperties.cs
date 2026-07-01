@@ -26,11 +26,15 @@ public class TexProperties
     {
         ImGui.BeginChild("TextureProperties", new Vector2(0, 0), ImGuiChildFlags.Borders);
 
-        UIHelper.SimpleHeader($"Properties of {Parent.Selection.SelectedTextureKey}", "");
+        UIHelper.SimpleHeader(
+            LOC.Get("TEXVIEW_Properties_Header_Properties", Parent.Selection.SelectedTextureKey),
+            LOC.Get("TEXVIEW_Properties_Header_Properties_TT"));
 
-        UIHelper.WrappedText($"Hold Left-Control and scroll the mouse wheel to zoom in and out.");
-        UIHelper.WrappedText($"Press {InputManager.GetHint(KeybindID.TextureViewer_Reset_Zoom_Level)} to reset zoom level to 100%.");
-        UIHelper.WrappedText("");
+        UIHelper.WrappedText(
+            LOC.Get("TEXVIEW_Properties_Controls_Hint",
+            InputManager.GetHint(KeybindID.TextureViewer_Reset_Zoom_Level)));
+
+        UIHelper.Spacer();
 
         float sizeX = -1;
         float sizeY = -1;
@@ -101,16 +105,16 @@ public class TexProperties
             // ID
             ImGui.TableNextRow();
             ImGui.TableSetColumnIndex(0);
-            ImGui.Text("ID");
+            ImGui.Text(LOC.Get("TEXVIEW_Properties_Column_Header_ID"));
 
             // Name
             ImGui.TableSetColumnIndex(1);
-            ImGui.Text("Name");
+            ImGui.Text(LOC.Get("TEXVIEW_Properties_Column_Header_Name"));
 
             // Size Y
             ImGui.TableNextRow();
             ImGui.TableSetColumnIndex(0);
-            ImGui.Text($"Size: Y");
+            ImGui.Text(LOC.Get("TEXVIEW_Properties_Column_Header_SizeY"));
 
             ImGui.TableSetColumnIndex(1);
             ImGui.Text($"{sizeY}");
@@ -118,7 +122,7 @@ public class TexProperties
             // Size X
             ImGui.TableNextRow();
             ImGui.TableSetColumnIndex(0);
-            ImGui.Text($"Size: X");
+            ImGui.Text(LOC.Get("TEXVIEW_Properties_Column_Header_SizeX"));
 
             ImGui.TableSetColumnIndex(1);
             ImGui.Text($"{sizeX}");
@@ -126,7 +130,7 @@ public class TexProperties
             // Relative Position: X
             ImGui.TableNextRow();
             ImGui.TableSetColumnIndex(0);
-            ImGui.Text($"Relative Position: X");
+            ImGui.Text(LOC.Get("TEXVIEW_Properties_Column_Header_RelPosX"));
 
             ImGui.TableSetColumnIndex(1);
             ImGui.Text($"{relativePos.X}");
@@ -134,7 +138,7 @@ public class TexProperties
             // Relative Position: Y
             ImGui.TableNextRow();
             ImGui.TableSetColumnIndex(0);
-            ImGui.Text($"Relative Position: Y");
+            ImGui.Text(LOC.Get("TEXVIEW_Properties_Column_Header_RelPosY"));
 
             ImGui.TableSetColumnIndex(1);
             ImGui.Text($"{relativePos.Y}");
@@ -142,7 +146,7 @@ public class TexProperties
             // Format
             ImGui.TableNextRow();
             ImGui.TableSetColumnIndex(0);
-            ImGui.Text($"Format");
+            ImGui.Text(LOC.Get("TEXVIEW_Properties_Column_Header_Format"));
 
             ImGui.TableSetColumnIndex(1);
             ImGui.Text($"{format}");
@@ -152,7 +156,7 @@ public class TexProperties
             {
                 ImGui.TableNextRow();
                 ImGui.TableSetColumnIndex(0);
-                ImGui.Text($"Icon");
+                ImGui.Text(LOC.Get("TEXVIEW_Properties_Column_Header_Icon"));
 
                 ImGui.TableSetColumnIndex(1);
                 ImGui.Text($"{iconName}");

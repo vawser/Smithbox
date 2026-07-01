@@ -26,7 +26,9 @@ public class TexTextureFileList
 
     public void Display(float width, float height)
     {
-        UIHelper.SimpleHeader("Textures", "");
+        UIHelper.SimpleHeader(
+            LOC.Get("TEXVIEW_TextureList_Header_Textures"),
+            LOC.Get("TEXVIEW_TextureList_Header_Textures_TT"));
 
         EditorFilters.DisplayFramedListFilter("textureViewer_TextureList", ref TextureFileListFilter, ref ExactTextureFileListFilter);
 
@@ -100,19 +102,20 @@ public class TexTextureFileList
     {
         if (ImGui.BeginPopupContextItem($"context_{tex.Name}{index}"))
         {
-            if (ImGui.MenuItem("Export"))
+            if (ImGui.MenuItem($"{LOC.Get("TEXVIEW_TextureList_Context_Action_Export")}##exportAction"))
             {
                 _ = Parent.Editor.ToolView.TextureExport.ExportTextureAsync(tex);
             }
-            UIHelper.Tooltip($"Export this file to your current export directory : {CFG.Current.TextureViewerToolbar_ExportTextureLocation}");
+            UIHelper.Tooltip(
+                LOC.Get("TEXVIEW_TextureList_Context_Action_Export_TT", CFG.Current.TextureViewerToolbar_ExportTextureLocation));
 
             ImGui.Separator();
 
-            if (ImGui.MenuItem("Copy Name"))
+            if (ImGui.MenuItem($"{LOC.Get("TEXVIEW_TextureList_Context_Action_Copy_Name")}##copyNameAction"))
             {
                 ImGui.SetClipboardText(tex.Name);
             }
-            UIHelper.Tooltip("Copy the texture name to the clipboard.");
+            UIHelper.Tooltip(LOC.Get("TEXVIEW_TextureList_Context_Action_Copy_Name_TT"));
 
             ImGui.EndPopup();
         }

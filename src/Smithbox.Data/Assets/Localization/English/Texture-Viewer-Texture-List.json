@@ -1,0 +1,28 @@
+{
+  "Entries": [
+    {
+      "Key": "TEXVIEW_TextureList_Header_Textures",
+      "Text": "Textures"
+    },
+    {
+      "Key": "TEXVIEW_TextureList_Header_Textures_TT",
+      "Text": ""
+    },
+    {
+      "Key": "TEXVIEW_TextureList_Context_Action_Export",
+      "Text": "Export"
+    },
+    {
+      "Key": "TEXVIEW_TextureList_Context_Action_Export_TT",
+      "Text": "Export this file to your current export directory: {0}"
+    },
+    {
+      "Key": "TEXVIEW_TextureList_Context_Action_Copy_Name",
+      "Text": "Copy Name"
+    },
+    {
+      "Key": "TEXVIEW_TextureList_Context_Action_Copy_Name_TT",
+      "Text": "Copy the texture name to the clipboard."
+    }
+  ]
+}

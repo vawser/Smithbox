@@ -25,53 +25,87 @@ public class TextureExport
         Editor = editor;
         Project = project;
 
-        ExportModal = new TextureExportModal("Texture Export", this);
+        ExportModal = new TextureExportModal(this);
     }
-
-    public string[] exportTypes = new[] { "DDS", "PNG", "BMP", "TGA", "TIFF", "JPEG", "WEBP" };
 
     public void Display()
     {
         var windowWidth = ImGui.GetWindowWidth();
 
-        if (ImGui.CollapsingHeader("Data Export"))
+        if (ImGui.CollapsingHeader($"{LOC.Get("TEXVIEW_TexExport_Header_Data_Export")}##dataExportHeader"))
         {
             ImGui.BeginChild("TextureExportToolSection", ImGuiChildFlags.Borders);
 
-            UIHelper.WrappedText("Export the currently viewed texture.");
-            UIHelper.WrappedText("");
+            UIHelper.WrappedText(LOC.Get("TEXVIEW_TexExport_Header_Data_Export_Hint"));
 
-            var index = CFG.Current.TextureViewerToolbar_ExportTextureType;
-
-            UIHelper.WrappedText("");
-            UIHelper.SimpleHeader("Export", "");
+            UIHelper.Spacer();
+            UIHelper.SimpleHeader(
+                LOC.Get("TEXVIEW_TexExport_Header_Export_Directory"),
+                LOC.Get("TEXVIEW_TexExport_Header_Export_Directory_TT"));
 
             UIHelper.SinglelineTextInput("exportDestinationInput", ref CFG.Current.TextureViewerToolbar_ExportTextureLocation);
 
-            UIHelper.WrappedText("");
-            UIHelper.SimpleHeader("Export File Type", "");
+            UIHelper.Spacer();
+            UIHelper.SimpleHeader(
+                LOC.Get("TEXVIEW_TexExport_Header_Export_File_Type"),
+                LOC.Get("TEXVIEW_TexExport_Header_Export_File_Type_TT"));
 
-            DPI.ApplyInputWidth(windowWidth * 0.5f);
-            if (ImGui.Combo("##ExportType", ref index, exportTypes, exportTypes.Length))
+            var previewName = LOC.Get(
+                CFG.Current.TextureViewerToolbar_ExportTextureType.GetDisplayName());
+
+            DPI.ApplyInputWidth();
+            if (ImGui.BeginCombo("##ExportType", previewName))
             {
-                CFG.Current.TextureViewerToolbar_ExportTextureType = index;
+                foreach (var entry in Enum.GetValues(typeof(TextureExportType)))
+                {
+                    var type = (TextureExportType)entry;
+
+                    var displayName = LOC.Get(type.GetDisplayName());
+
+                    if (ImGui.Selectable(displayName))
+                    {
+                        CFG.Current.TextureViewerToolbar_ExportTextureType = type;
+                    }
+                }
+                ImGui.EndCombo();
             }
-            UIHelper.Tooltip("The file type the exported texture will be saved as. Affects the context menu export functions too.");
+            UIHelper.Tooltip(LOC.Get("TEXVIEW_TexExport_Export_Type_Select_TT"));
 
-            UIHelper.WrappedText("");
-            UIHelper.SimpleHeader("Options", "");
-            ImGui.Checkbox("Include Container Folder", ref CFG.Current.TextureViewerToolbar_ExportTexture_IncludeFolder);
-            UIHelper.Tooltip("Place the exported texture in a folder with the title of the texture container.");
+            UIHelper.Spacer();
+            UIHelper.SimpleHeader(
+                LOC.Get("TEXVIEW_TexExport_Header_Options"),
+                LOC.Get("TEXVIEW_TexExport_Header_Options_TT"));
 
-            ImGui.Checkbox("Display Export Confirmation", ref CFG.Current.TextureViewerToolbar_ExportTexture_DisplayConfirm);
-            UIHelper.Tooltip("Display the confirmation message box after each export.");
+            ImGui.Checkbox(
+                $"{LOC.Get("TEXVIEW_TexExport_Checkbox_Include_Container_Folder")}##includeContainerFolderToggle", 
+                ref CFG.Current.TextureViewerToolbar_ExportTexture_IncludeFolder);
+            UIHelper.Tooltip(LOC.Get("TEXVIEW_TexExport_Checkbox_Include_Container_Folder_TT"));
 
-            UIHelper.WrappedText("");
-            UIHelper.SimpleHeader("Actions", "");
+            ImGui.Checkbox(
+                $"{LOC.Get("TEXVIEW_TexExport_Checkbox_Display_Export_Confirm")}##exportConfirmToggle", 
+                ref CFG.Current.TextureViewerToolbar_ExportTexture_DisplayConfirm);
+            UIHelper.Tooltip(LOC.Get("TEXVIEW_TexExport_Checkbox_Display_Export_Confirm_TT"));
+
+            UIHelper.Spacer();
+            UIHelper.SimpleHeader(
+                LOC.Get("TEXVIEW_TexExport_Header_Actions"),
+                LOC.Get("TEXVIEW_TexExport_Header_Actions_TT"));
+
             UIHelper.MultiButtonInput("exportDestinationActions",
-                "selectExportDest", "Select Export Folder", "", SelectExportDestination,
-                "openExportDest", "Open Export Folder", "", OpenExportFolder,
-                "export", "Export Texture", "", ExportTextureHandler);
+                "selectExportDest", 
+                LOC.Get("TEXVIEW_TexExport_Action_Select_Export_Folder"),
+                LOC.Get("TEXVIEW_TexExport_Action_Select_Export_Folder_TT"),
+                SelectExportDestination,
+
+                "openExportDest", 
+                LOC.Get("TEXVIEW_TexExport_Action_Open_Export_Folder"),
+                LOC.Get("TEXVIEW_TexExport_Action_Open_Export_Folder_TT"),
+                OpenExportFolder,
+
+                "export", 
+                LOC.Get("TEXVIEW_TexExport_Action_Export_Texture"),
+                LOC.Get("TEXVIEW_TexExport_Action_Export_Texture_TT"),
+                ExportTextureHandler);
 
             ImGui.EndChild();
         }
@@ -82,7 +116,8 @@ public class TextureExport
     public void SelectExportDestination()
     {
         string path;
-        var result = PlatformUtils.Instance.OpenFolderDialog("Select Export Destination", out path);
+        var result = PlatformUtils.Instance.OpenFolderDialog(
+            LOC.Get("TEXVIEW_TexExport_Dialog_Select_Export_Dest"), out path);
         if (result)
         {
             CFG.Current.TextureViewerToolbar_ExportTextureLocation = path;
@@ -116,7 +151,10 @@ public class TextureExport
 
                 if (File.Exists(exportFilePath))
                 {
-                    var result = PlatformUtils.Instance.MessageBox($"Overwrite existing file at {exportFilePath}?", $"Smithbox", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    var result = PlatformUtils.Instance.MessageBox(
+                        LOC.Get("TEXVIEW_TexExport_Dialog_Overwrite_File", exportFilePath), 
+                        LOC.Get("SYS_Warning_Header"), 
+                        MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (result == DialogResult.No)
                     {
                         write = false;
@@ -126,7 +164,7 @@ public class TextureExport
                 if (!Directory.Exists(exportPath))
                 {
                     write = false;
-                    PlatformUtils.Instance.MessageBox($"Directory is not valid.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Smithbox.LogError(this, LOC.Get("TEXVIEW_TexExport_Log_Invalid_Directory"));
                 }
 
                 if (write)
@@ -148,18 +186,18 @@ public class TextureExport
 
                     if (CFG.Current.TextureViewerToolbar_ExportTexture_DisplayConfirm)
                     {
-                        PlatformUtils.Instance.MessageBox($"{filename} exported.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Smithbox.Log(this, LOC.Get("TEXVIEW_TexExport_Log_Exported_Texture", filename));
                     }
                 }
             }
             else
             {
-                PlatformUtils.Instance.MessageBox($"Export Destination is not set.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Smithbox.LogError(this, LOC.Get("TEXVIEW_TexExport_Log_Export_Dir_Not_Set"));
             }
         }
         else
         {
-            PlatformUtils.Instance.MessageBox($"No texture is currently being viewed.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Smithbox.LogError(this, LOC.Get("TEXVIEW_TexExport_Log_No_Texture_Viewed"));
         }
     }
 
@@ -174,43 +212,43 @@ public class TextureExport
     private void ExportTextureFile(string exportFilePath, byte[] bytes)
     {
         // DDS
-        if (CFG.Current.TextureViewerToolbar_ExportTextureType == 0)
+        if (CFG.Current.TextureViewerToolbar_ExportTextureType is TextureExportType.DDS)
         {
             TexUtils.ExportDDSImage(exportFilePath, bytes);
         }
 
         // PNG
-        if (CFG.Current.TextureViewerToolbar_ExportTextureType == 1)
+        if (CFG.Current.TextureViewerToolbar_ExportTextureType is TextureExportType.PNG)
         {
             TexUtils.ExportPNGImage(exportFilePath, bytes);
         }
 
         // BMP
-        if (CFG.Current.TextureViewerToolbar_ExportTextureType == 2)
+        if (CFG.Current.TextureViewerToolbar_ExportTextureType is TextureExportType.BMP)
         {
             TexUtils.ExportBMPImage(exportFilePath, bytes);
         }
 
         // TGA
-        if (CFG.Current.TextureViewerToolbar_ExportTextureType == 3)
+        if (CFG.Current.TextureViewerToolbar_ExportTextureType is TextureExportType.TGA)
         {
             TexUtils.ExportTGAImage(exportFilePath, bytes);
         }
 
         // TIFF
-        if (CFG.Current.TextureViewerToolbar_ExportTextureType == 4)
+        if (CFG.Current.TextureViewerToolbar_ExportTextureType is TextureExportType.TIFF)
         {
             TexUtils.ExportTIFFImage(exportFilePath, bytes);
         }
 
         // JPEG
-        if (CFG.Current.TextureViewerToolbar_ExportTextureType == 5)
+        if (CFG.Current.TextureViewerToolbar_ExportTextureType is TextureExportType.JPEG)
         {
             TexUtils.ExportJPEGImage(exportFilePath, bytes);
         }
 
         // WEBP
-        if (CFG.Current.TextureViewerToolbar_ExportTextureType == 6)
+        if (CFG.Current.TextureViewerToolbar_ExportTextureType is TextureExportType.WEBP)
         {
             TexUtils.ExportWEBPImage(exportFilePath, bytes);
         }
@@ -227,7 +265,7 @@ public class TextureExport
         }
         catch (Exception ex)
         {
-            Smithbox.LogError(this, "Texture export failed", ex);
+            Smithbox.LogError(this, LOC.Get("TEXVIEW_TexExport_Log_Texture_Export_Failed"), ex);
         }
         finally
         {
@@ -250,7 +288,7 @@ public class TextureExport
 
                 ExportModal.ReportProgress?.Invoke(new()
                 {
-                    PhaseLabel = "Processing TPF",
+                    PhaseLabel = LOC.Get("TEXVIEW_TexExport_Phase_Processing_TPF"),
                     StepLabel = $"{file.Key.Name}",
                     Percent = processed / (float)total
                 });
@@ -271,7 +309,7 @@ public class TextureExport
         }
         catch (Exception ex)
         {
-            Smithbox.LogError(this, "Texture export failed", ex);
+            Smithbox.LogError(this, LOC.Get("TEXVIEW_TexExport_Log_Texture_Export_Failed"), ex);
         }
         finally
         {
@@ -305,7 +343,7 @@ public class TextureExport
         }
         catch (Exception ex)
         {
-            Smithbox.LogError(this, "Texture export failed", ex);
+            Smithbox.LogError(this, LOC.Get("TEXVIEW_TexExport_Log_Texture_Export_Failed"), ex);
         }
         finally
         {
@@ -332,7 +370,7 @@ public class TextureExport
                 {
                     ExportModal.ReportProgress?.Invoke(new()
                     {
-                        PhaseLabel = "Processing TPF",
+                        PhaseLabel = LOC.Get("TEXVIEW_TexExport_Phase_Processing_TPF"),
                         StepLabel = $"{file.Key.Name}",
                         Percent = processed / (float)total
                     });
@@ -359,7 +397,7 @@ public class TextureExport
         }
         catch (Exception ex)
         {
-            Smithbox.LogError(this, "Texture export failed", ex);
+            Smithbox.LogError(this, LOC.Get("TEXVIEW_TexExport_Log_Texture_Export_Failed"), ex);
         }
         finally
         {
@@ -380,7 +418,7 @@ public class TextureExport
             {
                 ExportModal.ReportProgress?.Invoke(new()
                 {
-                    PhaseLabel = "Processing Texture",
+                    PhaseLabel = LOC.Get("TEXVIEW_TexExport_Phase_Processing_Texture"),
                     StepLabel = $"{tex.Name}",
                     Percent = processed / (float)total
                 });
@@ -401,7 +439,7 @@ public class TextureExport
         }
         catch (Exception ex)
         {
-            Smithbox.LogError(this, "Texture export failed", ex);
+            Smithbox.LogError(this, LOC.Get("TEXVIEW_TexExport_Log_Texture_Export_Failed"), ex);
         }
         finally
         {
@@ -418,7 +456,7 @@ public class TextureExport
         var filepath = Path.Join(exportPath, $"{texFilename}");
 
         // For DDS, we can write to file directly (makes it quick).
-        if (CFG.Current.TextureViewerToolbar_ExportTextureType == 0)
+        if (CFG.Current.TextureViewerToolbar_ExportTextureType is TextureExportType.DDS)
         {
             File.WriteAllBytes($"{filepath}.dds", data);
         }

@@ -4,6 +4,7 @@ using StudioCore.Editors.GparamEditor;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.TextEditor;
+using StudioCore.Editors.TextureViewer;
 using StudioCore.Logger;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
@@ -894,7 +895,7 @@ public class CFG
     public string TextureViewerToolbar_ExportTextureLocation = "";
     public bool TextureViewerToolbar_ExportTexture_IncludeFolder = true;
     public bool TextureViewerToolbar_ExportTexture_DisplayConfirm = true;
-    public int TextureViewerToolbar_ExportTextureType = 0;
+    public TextureExportType TextureViewerToolbar_ExportTextureType = TextureExportType.DDS;
 
     // Windows
     public bool Interface_TextureViewer_ToolWindow = true;

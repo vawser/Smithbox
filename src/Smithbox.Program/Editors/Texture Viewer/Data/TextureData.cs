@@ -30,11 +30,11 @@ public class TextureData : IDisposable
 
         if (!primaryChrBankTaskResult)
         {
-            Smithbox.LogError(this, $"[Texture Viewer] Failed to setup the Primary Texture bank.");
+            Smithbox.LogError(this, LOC.Get("TEXVIEW_DataSetup_Load_Primary_Bank_FAIL"));
         }
         else
         {
-            Smithbox.Log(this, $"[Texture Viewer] Setup the Primary Texture bank.");
+            Smithbox.Log(this, LOC.Get("TEXVIEW_DataSetup_Load_Primary_Bank_PASS"));
         }
 
         PreviewBank = new("Preview", Project, Project.VFS.FS);
@@ -44,11 +44,11 @@ public class TextureData : IDisposable
 
         if (!previewBankTaskResult)
         {
-            Smithbox.LogError(this, $"[Texture Viewer] Failed to setup the Preview Texture bank.");
+            Smithbox.LogError(this, LOC.Get("TEXVIEW_DataSetup_Load_Preview_Bank_FAIL"));
         }
         else
         {
-            Smithbox.Log(this, $"[Texture Viewer] Setup the Preview Texture bank.");
+            Smithbox.Log(this, LOC.Get("TEXVIEW_DataSetup_Load_Preview_Bank_PASS"));
         }
 
         return true;

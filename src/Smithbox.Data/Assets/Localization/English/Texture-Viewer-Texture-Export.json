@@ -1,0 +1,152 @@
+{
+  "Entries": [
+    {
+      "Key": "TEXVIEW_TexExport_Type_DDS",
+      "Text": "DDS"
+    },
+    {
+      "Key": "TEXVIEW_TexExport_Type_PNG",
+      "Text": "PNG"
+    },
+    {
+      "Key": "TEXVIEW_TexExport_Type_BMP",
+      "Text": "BMP"
+    },
+    {
+      "Key": "TEXVIEW_TexExport_Type_TGA",
+      "Text": "TGA"
+    },
+    {
+      "Key": "TEXVIEW_TexExport_Type_TIFF",
+      "Text": "TIFF"
+    },
+    {
+      "Key": "TEXVIEW_TexExport_Type_JPEG",
+      "Text": "JPEG"
+    },
+    {
+      "Key": "TEXVIEW_TexExport_Type_WEBP",
+      "Text": "WEBP"
+    },
+    {
+      "Key": "TEXVIEW_TexExport_Header_Data_Export",
+      "Text": "Data Export"
+    },
+    {
+      "Key": "TEXVIEW_TexExport_Header_Data_Export_Hint",
+      "Text": "Export the currently viewed texture."
+    },
+    {
+      "Key": "TEXVIEW_TexExport_Header_Export_Directory",
+      "Text": "Export"
+    },
+    {
+      "Key": "TEXVIEW_TexExport_Header_Export_Directory_TT",
+      "Text": ""
+    },
+    {
+      "Key": "TEXVIEW_TexExport_Header_Export_File_Type",
+      "Text": "Export File Type"
+    },
+    {
+      "Key": "TEXVIEW_TexExport_Header_Export_File_Type_TT",
+      "Text": ""
+    },
+    {
+      "Key": "TEXVIEW_TexExport_Export_Type_Select_TT",
+      "Text": "The file type the exported texture will be saved as. Affects the context menu export functions too."
+    },
+    {
+      "Key": "TEXVIEW_TexExport_Header_Options",
+      "Text": "Options"
+    },
+    {
+      "Key": "TEXVIEW_TexExport_Header_Options_TT",
+      "Text": ""
+    },
+    {
+      "Key": "TEXVIEW_TexExport_Checkbox_Include_Container_Folder",
+      "Text": "Include Container Folder"
+    },
+    {
+      "Key": "TEXVIEW_TexExport_Checkbox_Include_Container_Folder_TT",
+      "Text": "Place the exported texture in a folder with the title of the texture container."
+    },
+    {
+      "Key": "TEXVIEW_TexExport_Checkbox_Display_Export_Confirm",
+      "Text": "Display Export Confirmation"
+    },
+    {
+      "Key": "TEXVIEW_TexExport_Checkbox_Display_Export_Confirm_TT",
+      "Text": "Display the confirmation message box after each export."
+    },
+    {
+      "Key": "TEXVIEW_TexExport_Header_Actions",
+      "Text": "Actions"
+    },
+    {
+      "Key": "TEXVIEW_TexExport_Header_Actions_TT",
+      "Text": ""
+    },
+    {
+      "Key": "TEXVIEW_TexExport_Action_Select_Export_Folder",
+      "Text": "Select Output Directory"
+    },
+    {
+      "Key": "TEXVIEW_TexExport_Action_Select_Export_Folder_TT",
+      "Text": "Select the folder in which exported textures are placed."
+    },
+    {
+      "Key": "TEXVIEW_TexExport_Action_Open_Export_Folder",
+      "Text": "Open Output Directory"
+    },
+    {
+      "Key": "TEXVIEW_TexExport_Action_Open_Export_Folder_TT",
+      "Text": "Open the current output directory in a file explorer."
+    },
+    {
+      "Key": "TEXVIEW_TexExport_Action_Export_Texture",
+      "Text": "Export Texture"
+    },
+    {
+      "Key": "TEXVIEW_TexExport_Action_Export_Texture_TT",
+      "Text": "Export the currently viewed texture."
+    },
+    {
+      "Key": "TEXVIEW_TexExport_Dialog_Select_Export_Dest",
+      "Text": "Select Export Destination"
+    },
+    {
+      "Key": "TEXVIEW_TexExport_Dialog_Overwrite_File",
+      "Text": "Overwrite existing file at {0}?"
+    },
+    {
+      "Key": "TEXVIEW_TexExport_Log_Invalid_Directory",
+      "Text": "Directory is not valid."
+    },
+    {
+      "Key": "TEXVIEW_TexExport_Log_Exported_Texture",
+      "Text": "{0} exported."
+    },
+    {
+      "Key": "TEXVIEW_TexExport_Log_Export_Dir_Not_Set",
+      "Text": "Export Destination is not set."
+    },
+    {
+      "Key": "TEXVIEW_TexExport_Log_No_Texture_Viewed",
+      "Text": "No texture is currently being viewed."
+    },
+    {
+      "Key": "TEXVIEW_TexExport_Log_Texture_Export_Failed",
+      "Text": "Texture export failed"
+    },
+    {
+      "Key": "TEXVIEW_TexExport_Phase_Processing_Texture",
+      "Text": "Processing Texture"
+    },
+    {
+      "Key": "TEXVIEW_TexExport_Phase_Processing_TPF",
+      "Text": "Processing TPF"
+    }
+  ]
+}

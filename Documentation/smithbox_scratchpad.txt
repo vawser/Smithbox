@@ -24,7 +24,7 @@
   Param Editor
   Project Metadata Editor
   Text Editor
-  Texture Viewer
+  ### Texture Viewer
   ### Viewport
  ### Interface
  ### Keybinds
