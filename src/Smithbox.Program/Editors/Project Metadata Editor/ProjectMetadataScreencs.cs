@@ -65,7 +65,7 @@ public class ProjectMetadataScreen
 
         ImGui.SetNextWindowDockID(mainDockspaceID, ImGuiCond.FirstUseEver);
         ImGui.SetNextWindowClass(ref UIHelper.DockGroup_EditorView);
-        if (ImGui.Begin($"{LOC.Get("PRJ_Window_Project_Metadata_Editor")}###ProjectMetadataEditor", UIHelper.GetInnerWindowFlags()))
+        if (ImGui.Begin($"{LOC.Get("PROJECT_Window_Project_Metadata_Editor")}###ProjectMetadataEditor", UIHelper.GetInnerWindowFlags()))
         {
             ImGui.PopStyleColor(1);
             ImGui.PopStyleVar(1);
@@ -77,7 +77,7 @@ public class ProjectMetadataScreen
 
             ImGui.SetNextWindowDockID(dsid, ImGuiCond.FirstUseEver);
             ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ProjectMetadataEditor);
-            if (ImGui.Begin($"{LOC.Get("PRJ_Window_Project_Metadata_View")}###ProjectMetadataView", UIHelper.GetInnerWindowFlags()))
+            if (ImGui.Begin($"{LOC.Get("PROJECT_Window_Project_Metadata_View")}###ProjectMetadataView", UIHelper.GetInnerWindowFlags()))
             {
             }
 

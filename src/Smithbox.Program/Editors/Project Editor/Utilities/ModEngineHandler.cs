@@ -28,7 +28,7 @@ public static class ModEngineHandler
         if (!Directory.Exists(CFG.Current.Project_ME3_Profile_Directory))
         {
             Smithbox.Log(typeof(ModEngineHandler), 
-                LOC.Get("PRJ_UTL_ME3_Profile_Missing"));
+                LOC.Get("PROJECT_Util_ME3_Profile_Missing"));
             return;
         }
 
@@ -106,7 +106,7 @@ public static class ModEngineHandler
         }
         else
         {
-            Smithbox.Log(typeof(ModEngineHandler), LOC.Get("PRJ_UTL_ME3_Find_Profile_FAIL", readPath));
+            Smithbox.Log(typeof(ModEngineHandler), LOC.Get("PROJECT_Util_ME3_Find_Profile_FAIL", readPath));
         }
     }
 }

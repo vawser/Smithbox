@@ -1,124 +1,124 @@
 {
   "Entries": [
     {
-      "Key": "PRJ_STP_Failed_Init_Undefined_Type",
-      "Text": "[Project] 项目初始化失败。项目类型未定义。"
+      "Key": "PROJECT_Setup_Failed_Init_Undefined_Type",
+      "Text": "项目初始化失败。项目类型未定义。"
     },
     {
-      "Key": "PRJ_STP_Failed_Init_Bad_Project_Path",
-      "Text": "[Project] 项目初始化失败。项目路径不存在：{0}"
+      "Key": "PROJECT_Setup_Failed_Init_Bad_Project_Path",
+      "Text": "项目初始化失败。项目路径不存在：{0}"
     },
     {
-      "Key": "PRJ_STP_Failed_Init_Bad_Data_Path",
-      "Text": "[Project] 项目初始化失败。数据路径不存在：{0}"
+      "Key": "PROJECT_Setup_Failed_Init_Bad_Data_Path",
+      "Text": "项目初始化失败。数据路径不存在：{0}"
     },
     {
-      "Key": "PRJ_STP_Failed_Init_Failed_DLL_Setup",
-      "Text": "[Project] 安装 DLL 失败"
+      "Key": "PROJECT_Setup_Failed_Init_Failed_DLL_Setup",
+      "Text": "安装 DLL 失败"
     },
     {
-      "Key": "PRJ_STP_Failed_Init_Failed_VFS_Setup",
-      "Text": "[Project] 安装 VFS 失败"
+      "Key": "PROJECT_Setup_Failed_Init_Failed_VFS_Setup",
+      "Text": "安装 VFS 失败"
     },
     {
-      "Key": "PRJ_STP_Failed_Init_Failed_Editor_Stub_Setup",
-      "Text": "[Project] 安装编辑器存根失败"
+      "Key": "PROJECT_Setup_Failed_Init_Failed_Editor_Stub_Setup",
+      "Text": "安装编辑器存根失败"
     },
     {
-      "Key": "PRJ_STP_Failed_Init_Failed_Locator_Setup",
-      "Text": "[Project] 安装文件定位器失败"
+      "Key": "PROJECT_Setup_Failed_Init_Failed_Locator_Setup",
+      "Text": "安装文件定位器失败"
     },
     {
-      "Key": "PRJ_STP_Failed_Init_Failed_Project_Data_Setup",
-      "Text": "[Project] 安装项目数据失败"
+      "Key": "PROJECT_Setup_Failed_Init_Failed_Project_Data_Setup",
+      "Text": "安装项目数据失败"
     },
     {
-      "Key": "PRJ_STP_Failed_Init_Failed_Project_Editor_Setup",
-      "Text": "[Project] 安装编辑器失败"
+      "Key": "PROJECT_Setup_Failed_Init_Failed_Project_Editor_Setup",
+      "Text": "安装编辑器失败"
     },
     {
-      "Key": "PRJ_STP_Progress_Phase_Init_Project",
+      "Key": "PROJECT_Setup_Progress_Phase_Init_Project",
       "Text": "正在初始化项目"
     },
     {
-      "Key": "PRJ_STP_Progress_Step_Setup_VFS",
+      "Key": "PROJECT_Setup_Progress_Step_Setup_VFS",
       "Text": "正在安装 VFS"
     },
     {
-      "Key": "PRJ_STP_Progress_Step_Setup_Editor_Stub",
+      "Key": "PROJECT_Setup_Progress_Step_Setup_Editor_Stub",
       "Text": "正在初始化编辑器存根"
     },
     {
-      "Key": "PRJ_STP_Progress_Step_Index_Project_Files",
+      "Key": "PROJECT_Setup_Progress_Step_Index_Project_Files",
       "Text": "正在索引项目文件"
     },
     {
-      "Key": "PRJ_STP_Progress_Step_Load_Project_Data",
+      "Key": "PROJECT_Setup_Progress_Step_Load_Project_Data",
       "Text": "正在加载项目数据"
     },
     {
-      "Key": "PRJ_STP_Progress_Step_Load_Project_Editors",
+      "Key": "PROJECT_Setup_Progress_Step_Load_Project_Editors",
       "Text": "正在加载项目编辑器"
     },
     {
-      "Key": "PRJ_STP_Progress_Step_Finalizing",
+      "Key": "PROJECT_Setup_Progress_Step_Finalizing",
       "Text": "正在完成"
     },
     {
-      "Key": "PRJ_STP_AutoSave_Triggered",
-      "Text": "[Project] 自动保存已触发。"
+      "Key": "PROJECT_Setup_AutoSave_Triggered",
+      "Text": "自动保存已触发。"
     },
     {
-      "Key": "PRJ_STP_AutoSave_Failed",
-      "Text": "[Project] 自动保存失败。"
+      "Key": "PROJECT_Setup_AutoSave_Failed",
+      "Text": "自动保存失败。"
     },
     {
-      "Key": "PRJ_STP_Locator_Init_Project",
+      "Key": "PROJECT_Setup_Locator_Init_Project",
       "Text": "正在初始化项目"
     },
     {
-      "Key": "PRJ_STP_Locator_Compile_Root_Dir",
+      "Key": "PROJECT_Setup_Locator_Compile_Root_Dir",
       "Text": "正在编译根文件目录"
     },
     {
-      "Key": "PRJ_STP_Locator_Compile_Project_Dir",
+      "Key": "PROJECT_Setup_Locator_Compile_Project_Dir",
       "Text": "正在编译项目文件目录"
     },
     {
-      "Key": "PRJ_STP_Locator_Compile_Editor_Dir",
+      "Key": "PROJECT_Setup_Locator_Compile_Editor_Dir",
       "Text": "正在编译编辑器文件目录"
     },
     {
-      "Key": "PRJ_STP_File_Directory_Derserialize_FAIL",
+      "Key": "PROJECT_Setup_File_Directory_Derserialize_FAIL",
       "Text": "反序列化文件字典：{0} 失败。"
     },
     {
-      "Key": "PRJ_STP_File_Directory_Read_FAIL",
+      "Key": "PROJECT_Setup_File_Directory_Read_FAIL",
       "Text": "读取文件字典：{0} 失败。"
     },
     {
-      "Key": "PRJ_STP_Load_Project_FAIL",
-      "Text": "[Project] 加载项目失败：{0}"
+      "Key": "PROJECT_Setup_Load_Project_FAIL",
+      "Text": "加载项目失败：{0}"
     },
     {
-      "Key": "PRJ_STP_Read_Project_FAIL",
-      "Text": "[Project] 读取项目失败：{0}"
+      "Key": "PROJECT_Setup_Read_Project_FAIL",
+      "Text": "读取项目失败：{0}"
     },
     {
-      "Key": "PRJ_STP_Project_Phase_Start",
+      "Key": "PROJECT_Setup_Project_Phase_Start",
       "Text": "正在启动项目"
     },
     {
-      "Key": "PRJ_STP_Project_Step_Preparing",
+      "Key": "PROJECT_Setup_Project_Step_Preparing",
       "Text": "正在准备"
     },
     {
-      "Key": "PRJ_STP_Project_Phase_Complete",
+      "Key": "PROJECT_Setup_Project_Phase_Complete",
       "Text": "已完成"
     },
     {
-      "Key": "PRJ_STP_Read_Legacy_Project_FAIL",
-      "Text": "[Project] 读取旧版项目 JSON 失败：{0}"
+      "Key": "PROJECT_Setup_Read_Legacy_Project_FAIL",
+      "Text": "读取旧版项目 JSON 失败：{0}"
     }
   ]
 }

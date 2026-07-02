@@ -1,108 +1,108 @@
 {
   "Entries": [
     {
-      "Key": "PRJ_ENUM_ProjectType_Undefined",
+      "Key": "PROJECT_Enum_ProjectType_Undefined",
       "Text": "Undefined"
     },
     {
-      "Key": "PRJ_ENUM_ProjectType_DES",
+      "Key": "PROJECT_Enum_ProjectType_DES",
       "Text": "Demon's Souls"
     },
     {
-      "Key": "PRJ_ENUM_ProjectType_DS1",
+      "Key": "PROJECT_Enum_ProjectType_DS1",
       "Text": "Dark Souls: Prepare to Die"
     },
     {
-      "Key": "PRJ_ENUM_ProjectType_DS1R",
+      "Key": "PROJECT_Enum_ProjectType_DS1R",
       "Text": "Dark Souls: Remastered"
     },
     {
-      "Key": "PRJ_ENUM_ProjectType_DS2",
+      "Key": "PROJECT_Enum_ProjectType_DS2",
       "Text": "Dark Souls II"
     },
     {
-      "Key": "PRJ_ENUM_ProjectType_DS2S",
+      "Key": "PROJECT_Enum_ProjectType_DS2S",
       "Text": "Dark Souls II: Scholar of the First Sin"
     },
     {
-      "Key": "PRJ_ENUM_ProjectType_DS3",
+      "Key": "PROJECT_Enum_ProjectType_DS3",
       "Text": "Dark Souls III"
     },
     {
-      "Key": "PRJ_ENUM_ProjectType_BB",
+      "Key": "PROJECT_Enum_ProjectType_BB",
       "Text": "Bloodborne"
     },
     {
-      "Key": "PRJ_ENUM_ProjectType_SDT",
+      "Key": "PROJECT_Enum_ProjectType_SDT",
       "Text": "Sekiro: Shadows Die Twice"
     },
     {
-      "Key": "PRJ_ENUM_ProjectType_ER",
+      "Key": "PROJECT_Enum_ProjectType_ER",
       "Text": "Elden Ring"
     },
     {
-      "Key": "PRJ_ENUM_ProjectType_AC6",
+      "Key": "PROJECT_Enum_ProjectType_AC6",
       "Text": "Armored Core VI: Fires of Rubicon"
     },
     {
-      "Key": "PRJ_ENUM_ProjectType_NR",
+      "Key": "PROJECT_Enum_ProjectType_NR",
       "Text": "Elden Ring: Nightreign"
     },
     
     {
-      "Key": "PRJ_ENUM_ProjectAliasType_None",
+      "Key": "PROJECT_Enum_ProjectAliasType_None",
       "Text": "None"
     },
     {
-      "Key": "PRJ_ENUM_ProjectAliasType_Assets",
+      "Key": "PROJECT_Enum_ProjectAliasType_Assets",
       "Text": "Assets"
     },
     {
-      "Key": "PRJ_ENUM_ProjectAliasType_Characters",
+      "Key": "PROJECT_Enum_ProjectAliasType_Characters",
       "Text": "Characters"
     },
     {
-      "Key": "PRJ_ENUM_ProjectAliasType_Cutscenes",
+      "Key": "PROJECT_Enum_ProjectAliasType_Cutscenes",
       "Text": "Cutscenes"
     },
     {
-      "Key": "PRJ_ENUM_ProjectAliasType_Event_Flags",
+      "Key": "PROJECT_Enum_ProjectAliasType_Event_Flags",
       "Text": "Event Flags"
     },
     {
-      "Key": "PRJ_ENUM_ProjectAliasType_Gparams",
+      "Key": "PROJECT_Enum_ProjectAliasType_Gparams",
       "Text": "Graphics Params"
     },
     {
-      "Key": "PRJ_ENUM_ProjectAliasType_Map_Pieces",
+      "Key": "PROJECT_Enum_ProjectAliasType_Map_Pieces",
       "Text": "Map Pieces"
     },
     {
-      "Key": "PRJ_ENUM_ProjectAliasType_Map_Names",
+      "Key": "PROJECT_Enum_ProjectAliasType_Map_Names",
       "Text": "Map Names"
     },
     {
-      "Key": "PRJ_ENUM_ProjectAliasType_Movies",
+      "Key": "PROJECT_Enum_ProjectAliasType_Movies",
       "Text": "Movies"
     },
     {
-      "Key": "PRJ_ENUM_ProjectAliasType_Particles",
+      "Key": "PROJECT_Enum_ProjectAliasType_Particles",
       "Text": "Particles"
     },
     {
-      "Key": "PRJ_ENUM_ProjectAliasType_Parts",
+      "Key": "PROJECT_Enum_ProjectAliasType_Parts",
       "Text": "Parts"
     },
     {
-      "Key": "PRJ_ENUM_ProjectAliasType_Sounds",
+      "Key": "PROJECT_Enum_ProjectAliasType_Sounds",
       "Text": "Sounds"
     },
     {
-      "Key": "PRJ_ENUM_ProjectAliasType_Talk_Scripts",
+      "Key": "PROJECT_Enum_ProjectAliasType_Talk_Scripts",
       "Text": "Talk Scripts"
     },
     {
-      "Key": "PRJ_ENUM_ProjectAliasType_Time_Acts",
+      "Key": "PROJECT_Enum_ProjectAliasType_Time_Acts",
       "Text": "Time Acts"
     }
   ]

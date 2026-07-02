@@ -202,12 +202,12 @@ public class UI
 
                 if (Current == null)
                 {
-                    throw new Exception(LOC.Get("ITF_UI_Failed_Deseralize"));
+                    throw new Exception(LOC.Get("INTERFACE_UI_Failed_Deseralize"));
                 }
             }
             catch (Exception e)
             {
-                Smithbox.LogError<UI>(LOC.Get("ITF_UI_Failed_Read", file), e);
+                Smithbox.LogError<UI>(LOC.Get("INTERFACE_UI_Failed_Read", file), e);
 
                 Current = new UI();
                 Save();
@@ -235,12 +235,12 @@ public class UI
 
                 if (Current == null)
                 {
-                    throw new Exception(LOC.Get("ITF_Theme_Failed_Deseralize"));
+                    throw new Exception(LOC.Get("INTERFACE_Theme_Failed_Deseralize"));
                 }
             }
             catch (Exception e)
             {
-                Smithbox.LogError<UI>(LOC.Get("ITF_Theme_Failed_Read", file), e);
+                Smithbox.LogError<UI>(LOC.Get("INTERFACE_Theme_Failed_Read", file), e);
 
                 Current = new UI();
                 Save();
@@ -256,7 +256,7 @@ public class UI
         if (File.Exists(file))
         {
             var result = PlatformUtils.Instance.MessageBox(
-                LOC.Get("ITF_Theme_Already_Exists"),
+                LOC.Get("INTERFACE_Theme_Already_Exists"),
                 LOC.Get("SYS_Warning_Header"), 
                 MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
 
@@ -276,7 +276,7 @@ public class UI
         else
         {
             PlatformUtils.Instance.MessageBox(
-                LOC.Get("ITF_Theme_Invalid_Filename"),
+                LOC.Get("INTERFACE_Theme_Invalid_Filename"),
                 LOC.Get("SYS_Warning_Header"), 
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
         }

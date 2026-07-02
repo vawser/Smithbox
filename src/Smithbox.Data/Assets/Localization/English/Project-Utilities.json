@@ -1,31 +1,31 @@
 {
   "Entries": [
     {
-      "Key": "PRJ_UTL_ME3_Profile_Missing",
+      "Key": "PROJECT_Util_ME3_Profile_Missing",
       "Text": "The current ME3 profile directory does not exist. Please configure the ME3 profile directory within the settings to a valid directory."
     },
     {
-      "Key": "PRJ_UTL_ME3_Find_Profile_FAIL",
+      "Key": "PROJECT_Util_ME3_Find_Profile_FAIL",
       "Text": "[Project] Failed to find profile: {0}"
     },
     {
-      "Key": "PRJ_UTL_Project_Type_Not_Set",
+      "Key": "PROJECT_Util_Project_Type_Not_Set",
       "Text": "Project Type has not been set."
     },
     {
-      "Key": "PRJ_UTL_Missing_Suitable_VFS",
+      "Key": "PROJECT_Util_Missing_Suitable_VFS",
       "Text": "No suitable VFS was found for writes."
     },
     {
-      "Key": "PRJ_UTL_Failed_To_Save",
+      "Key": "PROJECT_Util_Failed_To_Save",
       "Text": "[Project] Failed to save: {0}"
     },
     {
-      "Key": "PRJ_UTL_Missing_Directory_For_Backup",
+      "Key": "PROJECT_Util_Missing_Directory_For_Backup",
       "Text": "Directory not found: {0}"
     },
     {
-      "Key": "PRJ_UTL_Failed_To_Delete",
+      "Key": "PROJECT_Util_Failed_To_Delete",
       "Text": "[Project] Failed to delete: {0}"
     }
   ]

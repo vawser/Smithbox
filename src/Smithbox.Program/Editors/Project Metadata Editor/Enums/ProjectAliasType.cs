@@ -9,32 +9,32 @@ namespace StudioCore.Editors.MetadataEditor;
 
 public enum ProjectAliasType
 {
-    [Display(Name = "PRJ_ENUM_ProjectAliasType_None")]
+    [Display(Name = "PROJECT_Enum_ProjectAliasType_None")]
     None,
-    [Display(Name = "PRJ_ENUM_ProjectAliasType_Assets")]
+    [Display(Name = "PROJECT_Enum_ProjectAliasType_Assets")]
     Assets,
-    [Display(Name = "PRJ_ENUM_ProjectAliasType_Characters")]
+    [Display(Name = "PROJECT_Enum_ProjectAliasType_Characters")]
     Characters,
-    [Display(Name = "PRJ_ENUM_ProjectAliasType_Cutscenes")]
+    [Display(Name = "PROJECT_Enum_ProjectAliasType_Cutscenes")]
     Cutscenes,
-    [Display(Name = "PRJ_ENUM_ProjectAliasType_Event_Flags")]
+    [Display(Name = "PROJECT_Enum_ProjectAliasType_Event_Flags")]
     EventFlags,
-    [Display(Name = "PRJ_ENUM_ProjectAliasType_Gparams")]
+    [Display(Name = "PROJECT_Enum_ProjectAliasType_Gparams")]
     Gparams,
-    [Display(Name = "PRJ_ENUM_ProjectAliasType_Map_Pieces")]
+    [Display(Name = "PROJECT_Enum_ProjectAliasType_Map_Pieces")]
     MapPieces,
-    [Display(Name = "PRJ_ENUM_ProjectAliasType_Map_Names")]
+    [Display(Name = "PROJECT_Enum_ProjectAliasType_Map_Names")]
     MapNames,
-    [Display(Name = "PRJ_ENUM_ProjectAliasType_Movies")]
+    [Display(Name = "PROJECT_Enum_ProjectAliasType_Movies")]
     Movies,
-    [Display(Name = "PRJ_ENUM_ProjectAliasType_Particles")]
+    [Display(Name = "PROJECT_Enum_ProjectAliasType_Particles")]
     Particles,
-    [Display(Name = "PRJ_ENUM_ProjectAliasType_Parts")]
+    [Display(Name = "PROJECT_Enum_ProjectAliasType_Parts")]
     Parts,
-    [Display(Name = "PRJ_ENUM_ProjectAliasType_Sounds")]
+    [Display(Name = "PROJECT_Enum_ProjectAliasType_Sounds")]
     Sounds,
-    [Display(Name = "PRJ_ENUM_ProjectAliasType_Talk_Scripts")]
+    [Display(Name = "PROJECT_Enum_ProjectAliasType_Talk_Scripts")]
     TalkScripts,
-    [Display(Name = "PRJ_ENUM_ProjectAliasType_Time_Acts")]
+    [Display(Name = "PROJECT_Enum_ProjectAliasType_Time_Acts")]
     TimeActs
 }

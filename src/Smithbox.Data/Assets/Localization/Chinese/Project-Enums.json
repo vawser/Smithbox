@@ -1,108 +1,108 @@
 {
   "Entries": [
     {
-      "Key": "PRJ_ENUM_ProjectType_Undefined",
+      "Key": "PROJECT_Enum_ProjectType_Undefined",
       "Text": "未定义"
     },
     {
-      "Key": "PRJ_ENUM_ProjectType_DES",
+      "Key": "PROJECT_Enum_ProjectType_DES",
       "Text": "恶魔之魂"
     },
     {
-      "Key": "PRJ_ENUM_ProjectType_DS1",
+      "Key": "PROJECT_Enum_ProjectType_DS1",
       "Text": "黑暗之魂：受死版"
     },
     {
-      "Key": "PRJ_ENUM_ProjectType_DS1R",
+      "Key": "PROJECT_Enum_ProjectType_DS1R",
       "Text": "黑暗之魂：重制版"
     },
     {
-      "Key": "PRJ_ENUM_ProjectType_DS2",
+      "Key": "PROJECT_Enum_ProjectType_DS2",
       "Text": "黑暗之魂 II"
     },
     {
-      "Key": "PRJ_ENUM_ProjectType_DS2S",
+      "Key": "PROJECT_Enum_ProjectType_DS2S",
       "Text": "黑暗之魂 II：原罪学者"
     },
     {
-      "Key": "PRJ_ENUM_ProjectType_DS3",
+      "Key": "PROJECT_Enum_ProjectType_DS3",
       "Text": "黑暗之魂 III"
     },
     {
-      "Key": "PRJ_ENUM_ProjectType_BB",
+      "Key": "PROJECT_Enum_ProjectType_BB",
       "Text": "血源诅咒"
     },
     {
-      "Key": "PRJ_ENUM_ProjectType_SDT",
+      "Key": "PROJECT_Enum_ProjectType_SDT",
       "Text": "只狼：影逝二度"
     },
     {
-      "Key": "PRJ_ENUM_ProjectType_ER",
+      "Key": "PROJECT_Enum_ProjectType_ER",
       "Text": "艾尔登法环"
     },
     {
-      "Key": "PRJ_ENUM_ProjectType_AC6",
+      "Key": "PROJECT_Enum_ProjectType_AC6",
       "Text": "装甲核心 VI：境界天火"
     },
     {
-      "Key": "PRJ_ENUM_ProjectType_NR",
+      "Key": "PROJECT_Enum_ProjectType_NR",
       "Text": "艾尔登法环：黑夜君临"
     },
 
     {
-      "Key": "PRJ_ENUM_ProjectAliasType_None",
+      "Key": "PROJECT_Enum_ProjectAliasType_None",
       "Text": "无"
     },
     {
-      "Key": "PRJ_ENUM_ProjectAliasType_Assets",
+      "Key": "PROJECT_Enum_ProjectAliasType_Assets",
       "Text": "资源"
     },
     {
-      "Key": "PRJ_ENUM_ProjectAliasType_Characters",
+      "Key": "PROJECT_Enum_ProjectAliasType_Characters",
       "Text": "角色"
     },
     {
-      "Key": "PRJ_ENUM_ProjectAliasType_Cutscenes",
+      "Key": "PROJECT_Enum_ProjectAliasType_Cutscenes",
       "Text": "过场动画"
     },
     {
-      "Key": "PRJ_ENUM_ProjectAliasType_Event_Flags",
+      "Key": "PROJECT_Enum_ProjectAliasType_Event_Flags",
       "Text": "事件标志"
     },
     {
-      "Key": "PRJ_ENUM_ProjectAliasType_Gparams",
+      "Key": "PROJECT_Enum_ProjectAliasType_Gparams",
       "Text": "图形参数"
     },
     {
-      "Key": "PRJ_ENUM_ProjectAliasType_Map_Pieces",
+      "Key": "PROJECT_Enum_ProjectAliasType_Map_Pieces",
       "Text": "地图部件"
     },
     {
-      "Key": "PRJ_ENUM_ProjectAliasType_Map_Names",
+      "Key": "PROJECT_Enum_ProjectAliasType_Map_Names",
       "Text": "地图名称"
     },
     {
-      "Key": "PRJ_ENUM_ProjectAliasType_Movies",
+      "Key": "PROJECT_Enum_ProjectAliasType_Movies",
       "Text": "影片"
     },
     {
-      "Key": "PRJ_ENUM_ProjectAliasType_Particles",
+      "Key": "PROJECT_Enum_ProjectAliasType_Particles",
       "Text": "粒子"
     },
     {
-      "Key": "PRJ_ENUM_ProjectAliasType_Parts",
+      "Key": "PROJECT_Enum_ProjectAliasType_Parts",
       "Text": "零件"
     },
     {
-      "Key": "PRJ_ENUM_ProjectAliasType_Sounds",
+      "Key": "PROJECT_Enum_ProjectAliasType_Sounds",
       "Text": "音效"
     },
     {
-      "Key": "PRJ_ENUM_ProjectAliasType_Talk_Scripts",
+      "Key": "PROJECT_Enum_ProjectAliasType_Talk_Scripts",
       "Text": "对话脚本"
     },
     {
-      "Key": "PRJ_ENUM_ProjectAliasType_Time_Acts",
+      "Key": "PROJECT_Enum_ProjectAliasType_Time_Acts",
       "Text": "时间动作"
     }
   ]

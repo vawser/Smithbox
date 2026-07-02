@@ -71,35 +71,35 @@ public abstract unsafe class PlatformUtils
         {
             case MessageBoxButtons.OK:
                 buttonCount = 1;
-                buttonNames[0] = LOC.Get("ITF_Message_Box_OK");
+                buttonNames[0] = LOC.Get("INTERFACE_Message_Box_OK");
                 buttonResults[0] = DialogResult.OK;
                 returnID = 0;
                 break;
             case MessageBoxButtons.OKCancel:
                 buttonCount = 2;
-                buttonNames[1] = LOC.Get("ITF_Message_Box_OK");
+                buttonNames[1] = LOC.Get("INTERFACE_Message_Box_OK");
                 buttonResults[1] = DialogResult.OK;
-                buttonNames[0] = LOC.Get("ITF_Message_Box_Cancel");
+                buttonNames[0] = LOC.Get("INTERFACE_Message_Box_Cancel");
                 buttonResults[0] = DialogResult.Cancel;
                 returnID = 1;
                 escapeID = 0;
                 break;
             case MessageBoxButtons.YesNoCancel:
                 buttonCount = 3;
-                buttonNames[2] = LOC.Get("ITF_Message_Box_Yes");
+                buttonNames[2] = LOC.Get("INTERFACE_Message_Box_Yes");
                 buttonResults[2] = DialogResult.Yes;
-                buttonNames[1] = LOC.Get("ITF_Message_Box_No");
+                buttonNames[1] = LOC.Get("INTERFACE_Message_Box_No");
                 buttonResults[1] = DialogResult.No;
-                buttonNames[0] = LOC.Get("ITF_Message_Box_Cancel");
+                buttonNames[0] = LOC.Get("INTERFACE_Message_Box_Cancel");
                 buttonResults[0] = DialogResult.Cancel;
                 returnID = 2;
                 escapeID = 0;
                 break;
             case MessageBoxButtons.YesNo:
                 buttonCount = 2;
-                buttonNames[1] = LOC.Get("ITF_Message_Box_Yes");
+                buttonNames[1] = LOC.Get("INTERFACE_Message_Box_Yes");
                 buttonResults[1] = DialogResult.Yes;
-                buttonNames[0] = LOC.Get("ITF_Message_Box_No");
+                buttonNames[0] = LOC.Get("INTERFACE_Message_Box_No");
                 buttonResults[0] = DialogResult.No;
                 returnID = 1;
                 escapeID = 0;

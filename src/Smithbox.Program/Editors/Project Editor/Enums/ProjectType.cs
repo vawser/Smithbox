@@ -9,39 +9,39 @@ namespace StudioCore.Application;
 
 public enum ProjectType
 {
-    [Display(Name = "PRJ_ENUM_ProjectType_Undefined")]
+    [Display(Name = "PROJECT_Enum_ProjectType_Undefined")]
     Undefined = 0,
 
-    [Display(Name = "PRJ_ENUM_ProjectType_DES")]
+    [Display(Name = "PROJECT_Enum_ProjectType_DES")]
     DES = 1, // Demon's Souls
 
-    [Display(Name = "PRJ_ENUM_ProjectType_DS1")]
+    [Display(Name = "PROJECT_Enum_ProjectType_DS1")]
     DS1 = 2, // Dark Souls: Prepare to Die
 
-    [Display(Name = "PRJ_ENUM_ProjectType_DS1R")]
+    [Display(Name = "PROJECT_Enum_ProjectType_DS1R")]
     DS1R = 3, // Dark Souls: Remastered
 
-    [Display(Name = "PRJ_ENUM_ProjectType_DS2S")]
+    [Display(Name = "PROJECT_Enum_ProjectType_DS2S")]
     DS2S = 4, // Dark Souls II: Scholar of the First Sin
 
-    [Display(Name = "PRJ_ENUM_ProjectType_DS3")]
+    [Display(Name = "PROJECT_Enum_ProjectType_DS3")]
     DS3 = 5, // Dark Souls III
 
-    [Display(Name = "PRJ_ENUM_ProjectType_BB")]
+    [Display(Name = "PROJECT_Enum_ProjectType_BB")]
     BB = 6, // Bloodborne
 
-    [Display(Name = "PRJ_ENUM_ProjectType_SDT")]
+    [Display(Name = "PROJECT_Enum_ProjectType_SDT")]
     SDT = 7, // Sekiro: Shadows Die Twice
 
-    [Display(Name = "PRJ_ENUM_ProjectType_ER")]
+    [Display(Name = "PROJECT_Enum_ProjectType_ER")]
     ER = 8, // Elden Ring
 
-    [Display(Name = "PRJ_ENUM_ProjectType_AC6")]
+    [Display(Name = "PROJECT_Enum_ProjectType_AC6")]
     AC6 = 9, // Armored Core VI: Fires of Rubicon
 
-    [Display(Name = "PRJ_ENUM_ProjectType_DS2")]
+    [Display(Name = "PROJECT_Enum_ProjectType_DS2")]
     DS2 = 10, // Dark Souls II
 
-    [Display(Name = "PRJ_ENUM_ProjectType_NR")]
+    [Display(Name = "PROJECT_Enum_ProjectType_NR")]
     NR = 15, // Elden Ring: Nightreign
 }

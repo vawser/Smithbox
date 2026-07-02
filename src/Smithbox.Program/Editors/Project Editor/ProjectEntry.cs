@@ -126,21 +126,21 @@ public class ProjectEntry
         // Sanity checks
         if(Descriptor.ProjectType is ProjectType.Undefined)
         {
-            Smithbox.LogError(this, LOC.Get("PRJ_STP_Failed_Init_Undefined_Type"));
+            Smithbox.LogError(this, LOC.Get("PROJECT_Setup_Failed_Init_Undefined_Type"));
 
             return false;
         }
 
         if(!Directory.Exists(Descriptor.ProjectPath))
         {
-            Smithbox.LogError(this, LOC.Get("PRJ_STP_Failed_Init_Bad_Project_Path", Descriptor.ProjectPath));
+            Smithbox.LogError(this, LOC.Get("PROJECT_Setup_Failed_Init_Bad_Project_Path", Descriptor.ProjectPath));
 
             return false;
         }
 
         if (!Directory.Exists(Descriptor.DataPath))
         {
-            Smithbox.LogError(this, LOC.Get("PRJ_STP_Failed_Init_Bad_Data_Path", Descriptor.DataPath));
+            Smithbox.LogError(this, LOC.Get("PROJECT_Setup_Failed_Init_Bad_Data_Path", Descriptor.DataPath));
 
             return false;
         }
@@ -159,15 +159,15 @@ public class ProjectEntry
         }
         catch (Exception e)
         {
-            Smithbox.LogError(this, LOC.Get("PRJ_STP_Failed_Init_Failed_DLL_Setup"), e);
+            Smithbox.LogError(this, LOC.Get("PROJECT_Setup_Failed_Init_Failed_DLL_Setup"), e);
         }
 
         if (!silent)
         {
             reportProgress?.Invoke(new()
             {
-                PhaseLabel = LOC.Get("PRJ_STP_Progress_Phase_Init_Project"),
-                StepLabel = LOC.Get("PRJ_STP_Progress_Step_Setup_VFS"),
+                PhaseLabel = LOC.Get("PROJECT_Setup_Progress_Phase_Init_Project"),
+                StepLabel = LOC.Get("PROJECT_Setup_Progress_Step_Setup_VFS"),
                 Percent = 0.05f
             });
         }
@@ -178,15 +178,15 @@ public class ProjectEntry
         }
         catch (Exception e)
         {
-            Smithbox.LogError(this, LOC.Get("PRJ_STP_Failed_Init_Failed_VFS_Setup"), e);
+            Smithbox.LogError(this, LOC.Get("PROJECT_Setup_Failed_Init_Failed_VFS_Setup"), e);
         }
 
         if (!silent)
         {
             reportProgress?.Invoke(new()
             {
-                PhaseLabel = LOC.Get("PRJ_STP_Progress_Phase_Init_Project"),
-                StepLabel = LOC.Get("PRJ_STP_Progress_Step_Setup_Editor_Stub"),
+                PhaseLabel = LOC.Get("PROJECT_Setup_Progress_Phase_Init_Project"),
+                StepLabel = LOC.Get("PROJECT_Setup_Progress_Step_Setup_Editor_Stub"),
                 Percent = 0.1f
             });
         }
@@ -197,15 +197,15 @@ public class ProjectEntry
         }
         catch (Exception e)
         {
-            Smithbox.LogError(this, LOC.Get("PRJ_STP_Failed_Init_Failed_Editor_Stub_Setup"), e);
+            Smithbox.LogError(this, LOC.Get("PROJECT_Setup_Failed_Init_Failed_Editor_Stub_Setup"), e);
         }
 
         if (!silent)
         {
             reportProgress?.Invoke(new()
             {
-                PhaseLabel = LOC.Get("PRJ_STP_Progress_Phase_Init_Project"),
-                StepLabel = LOC.Get("PRJ_STP_Progress_Step_Index_Project_Files"),
+                PhaseLabel = LOC.Get("PROJECT_Setup_Progress_Phase_Init_Project"),
+                StepLabel = LOC.Get("PROJECT_Setup_Progress_Step_Index_Project_Files"),
                 Percent = 0.2f
             });
         }
@@ -216,7 +216,7 @@ public class ProjectEntry
         }
         catch (Exception e)
         {
-            Smithbox.LogError(this, LOC.Get("PRJ_STP_Failed_Init_Failed_Locator_Setup"), e);
+            Smithbox.LogError(this, LOC.Get("PROJECT_Setup_Failed_Init_Failed_Locator_Setup"), e);
         }
 
         IsLoadingData = true;
@@ -225,8 +225,8 @@ public class ProjectEntry
         {
             reportProgress?.Invoke(new()
             {
-                PhaseLabel = LOC.Get("PRJ_STP_Progress_Phase_Init_Project"),
-                StepLabel = LOC.Get("PRJ_STP_Progress_Step_Load_Project_Data"),
+                PhaseLabel = LOC.Get("PROJECT_Setup_Progress_Phase_Init_Project"),
+                StepLabel = LOC.Get("PROJECT_Setup_Progress_Step_Load_Project_Data"),
                 Percent = 0.4f
             });
         }
@@ -237,7 +237,7 @@ public class ProjectEntry
         }
         catch (Exception e)
         {
-            Smithbox.LogError(this, LOC.Get("PRJ_STP_Failed_Init_Failed_Project_Data_Setup"), e);
+            Smithbox.LogError(this, LOC.Get("PROJECT_Setup_Failed_Init_Failed_Project_Data_Setup"), e);
         }
 
         IsLoadingData = false;
@@ -247,8 +247,8 @@ public class ProjectEntry
         {
             reportProgress?.Invoke(new()
             {
-                PhaseLabel = LOC.Get("PRJ_STP_Progress_Phase_Init_Project"),
-                StepLabel = LOC.Get("PRJ_STP_Progress_Step_Load_Project_Editors"),
+                PhaseLabel = LOC.Get("PROJECT_Setup_Progress_Phase_Init_Project"),
+                StepLabel = LOC.Get("PROJECT_Setup_Progress_Step_Load_Project_Editors"),
                 Percent = 0.8f
             });
         }
@@ -259,7 +259,7 @@ public class ProjectEntry
         }
         catch (Exception e)
         {
-            Smithbox.LogError(this, LOC.Get("PRJ_STP_Failed_Init_Failed_Project_Editor_Setup"), e);
+            Smithbox.LogError(this, LOC.Get("PROJECT_Setup_Failed_Init_Failed_Project_Editor_Setup"), e);
         }
 
         IsCreatingEditors = false;
@@ -270,8 +270,8 @@ public class ProjectEntry
         {
             reportProgress?.Invoke(new()
             {
-                PhaseLabel = LOC.Get("PRJ_STP_Progress_Phase_Init_Project"),
-                StepLabel = LOC.Get("PRJ_STP_Progress_Step_Finalizing"),
+                PhaseLabel = LOC.Get("PROJECT_Setup_Progress_Phase_Init_Project"),
+                StepLabel = LOC.Get("PROJECT_Setup_Progress_Step_Finalizing"),
                 Percent = 1.0f
             });
         }
@@ -290,7 +290,7 @@ public class ProjectEntry
             {
                 try
                 {
-                    Smithbox.Log(this, LOC.Get("PRJ_STP_AutoSave_Triggered"));
+                    Smithbox.Log(this, LOC.Get("PROJECT_Setup_AutoSave_Triggered"));
 
                     if (CFG.Current.Project_Automatic_Save_Include_Map_Editor)
                     {
@@ -339,7 +339,7 @@ public class ProjectEntry
                 }
                 catch (Exception ex)
                 {
-                    Smithbox.LogError(this, LOC.Get("PRJ_STP_AutoSave_Failed"), ex);
+                    Smithbox.LogError(this, LOC.Get("PROJECT_Setup_AutoSave_Failed"), ex);
                 }
             }
         }

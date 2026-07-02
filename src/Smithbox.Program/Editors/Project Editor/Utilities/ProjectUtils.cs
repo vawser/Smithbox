@@ -41,7 +41,7 @@ public class ProjectUtils
             case ProjectType.NR:
                 return "NR";
             default:
-                throw new Exception(LOC.Get("PRJ_UTL_Project_Type_Not_Set"));
+                throw new Exception(LOC.Get("PROJECT_Util_Project_Type_Not_Set"));
         }
     }
 
@@ -129,7 +129,7 @@ public class ProjectUtils
         if (curProject.VFS.VanillaRealFS is not EmptyVirtualFileSystem)
             return curProject.VFS.VanillaRealFS;
 
-        throw new InvalidOperationException(LOC.Get("PRJ_UTL_Missing_Suitable_VFS"));
+        throw new InvalidOperationException(LOC.Get("PROJECT_Util_Missing_Suitable_VFS"));
     }
 
     public static void CreateBackupFolder(ProjectEntry curProject)
@@ -281,7 +281,7 @@ public class ProjectUtils
         }
         catch (Exception e)
         {
-            Smithbox.Log<ProjectUtils>(LOC.Get("PRJ_UTL_Failed_To_Save", $"{Path.GetFileName(assetPath)} - {e}"));
+            Smithbox.Log<ProjectUtils>(LOC.Get("PROJECT_Util_Failed_To_Save", $"{Path.GetFileName(assetPath)} - {e}"));
         }
     }
 
@@ -366,7 +366,7 @@ public class ProjectUtils
     public static List<string> GetBackupFiles(string rootDirectory)
     {
         if (string.IsNullOrWhiteSpace(rootDirectory) || !Directory.Exists(rootDirectory))
-            throw new DirectoryNotFoundException(LOC.Get("PRJ_UTL_Missing_Directory_For_Backup", rootDirectory));
+            throw new DirectoryNotFoundException(LOC.Get("PROJECT_Util_Missing_Directory_For_Backup", rootDirectory));
 
         var results = new List<string>();
 
@@ -399,7 +399,7 @@ public class ProjectUtils
             {
                 // Log or handle as needed
                 Smithbox.Log<ProjectUtils>(
-                    LOC.Get("PRJ_UTL_Failed_To_Delete", $"{file}: {ex.Message}"));
+                    LOC.Get("PROJECT_Util_Failed_To_Delete", $"{file}: {ex.Message}"));
             }
         }
     }

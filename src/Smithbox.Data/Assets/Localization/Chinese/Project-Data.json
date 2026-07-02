@@ -1,99 +1,99 @@
 {
   "Entries": [
     {
-      "Key": "PRJ_DAT_Setup_Aliases_PASS",
+      "Key": "PROJECT_Data_Setup_Aliases_PASS",
       "Text": "[Project] 为 '{0}' 安装别名"
     },
     {
-      "Key": "PRJ_DAT_Setup_Aliases_FAIL",
+      "Key": "PROJECT_Data_Setup_Aliases_FAIL",
       "Text": "[Project] 为 '{0}' 安装别名失败"
     },
     {
-      "Key": "PRJ_DAT_Reload_Aliases_PASS",
+      "Key": "PROJECT_Data_Reload_Aliases_PASS",
       "Text": "[Project] 已重新加载 '{0}' 的别名"
     },
     {
-      "Key": "PRJ_DAT_Reload_Aliases_FAIL",
+      "Key": "PROJECT_Data_Reload_Aliases_FAIL",
       "Text": "[Project] 重新加载 '{0}' 的别名失败"
     },
     {
-      "Key": "PRJ_DAT_Deseralize_Alias_FAIL",
+      "Key": "PROJECT_Data_Deseralize_Alias_FAIL",
       "Text": "[Project] 反序列化别名时失败：'{0}'"
     },
     {
-      "Key": "PRJ_DAT_Read_Alias_FAIL",
+      "Key": "PROJECT_Data_Read_Alias_FAIL",
       "Text": "[Project] 读取别名时失败：'{0}'"
     },
     {
-      "Key": "PRJ_DAT_Setup_Project_Data_PASS",
+      "Key": "PROJECT_Data_Setup_Project_Data_PASS",
       "Text": "[Project] 安装项目数据。"
     },
     {
-      "Key": "PRJ_DAT_Setup_Project_Data_FAIL",
+      "Key": "PROJECT_Data_Setup_Project_Data_FAIL",
       "Text": "[Project] 安装项目数据失败。"
     },
     {
-      "Key": "PRJ_DAT_Setup_Map_Data_PASS",
+      "Key": "PROJECT_Data_Setup_Map_Data_PASS",
       "Text": "[Visual Map Editor] 安装地图数据库。"
     },
     {
-      "Key": "PRJ_DAT_Setup_Map_Data_FAIL",
+      "Key": "PROJECT_Data_Setup_Map_Data_FAIL",
       "Text": "[Visual Map Editor] 安装地图数据库失败。"
     },
     {
-      "Key": "PRJ_DAT_Setup_Model_Data_PASS",
+      "Key": "PROJECT_Data_Setup_Model_Data_PASS",
       "Text": "[Model Editor] 安装模型数据库。"
     },
     {
-      "Key": "PRJ_DAT_Setup_Model_Data_FAIL",
+      "Key": "PROJECT_Data_Setup_Model_Data_FAIL",
       "Text": "[Model Editor] 安装模型数据库失败。"
     },
     {
-      "Key": "PRJ_DAT_Setup_Material_Data_PASS",
+      "Key": "PROJECT_Data_Setup_Material_Data_PASS",
       "Text": "[Material Data] 安装材质数据。"
     },
     {
-      "Key": "PRJ_DAT_Setup_Material_Data_FAIL",
+      "Key": "PROJECT_Data_Setup_Material_Data_FAIL",
       "Text": "[Material Data] 安装材质数据失败。"
     },
     {
-      "Key": "PRJ_DAT_Setup_Param_Data_PASS",
+      "Key": "PROJECT_Data_Setup_Param_Data_PASS",
       "Text": "[Param Editor] 安装 PARAM 库。"
     },
     {
-      "Key": "PRJ_DAT_Setup_Param_Data_FAIL",
+      "Key": "PROJECT_Data_Setup_Param_Data_FAIL",
       "Text": "[Param Editor] 安装 PARAM 库失败。"
     },
     {
-      "Key": "PRJ_DAT_Setup_Text_Data_PASS",
+      "Key": "PROJECT_Data_Setup_Text_Data_PASS",
       "Text": "[文本编辑器] FMG 库已安装。"
     },
     {
-      "Key": "PRJ_DAT_Setup_Text_Data_FAIL",
+      "Key": "PROJECT_Data_Setup_Text_Data_FAIL",
       "Text": "[文本编辑器] FMG 库安装失败。"
     },
     {
-      "Key": "PRJ_DAT_Setup_Gparam_Data_PASS",
+      "Key": "PROJECT_Data_Setup_Gparam_Data_PASS",
       "Text": "[Graphics Param Editor] 安装 GPARAM 库。"
     },
     {
-      "Key": "PRJ_DAT_Setup_Gparam_Data_FAIL",
+      "Key": "PROJECT_Data_Setup_Gparam_Data_FAIL",
       "Text": "[Graphics Param Editor] 安装 GPARAM 库失败。"
     },
     {
-      "Key": "PRJ_DAT_Setup_Texture_Data_PASS",
+      "Key": "PROJECT_Data_Setup_Texture_Data_PASS",
       "Text": "[Texture Viewer] 安装纹理库。"
     },
     {
-      "Key": "PRJ_DAT_Setup_Texture_Data_FAIL",
+      "Key": "PROJECT_Data_Setup_Texture_Data_FAIL",
       "Text": "[Texture Viewer] 安装纹理库失败。"
     },
     {
-      "Key": "PRJ_DAT_Setup_Anim_Data_PASS",
+      "Key": "PROJECT_Data_Setup_Anim_Data_PASS",
       "Text": "[Animation Editor] 安装动画库。"
     },
     {
-      "Key": "PRJ_DAT_Setup_Anim_Data_FAIL",
+      "Key": "PROJECT_Data_Setup_Anim_Data_FAIL",
       "Text": "[Animation Editor] 安装动画库失败。"
     }
   ]

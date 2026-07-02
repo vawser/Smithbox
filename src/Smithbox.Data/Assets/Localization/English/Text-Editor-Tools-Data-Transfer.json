@@ -45,6 +45,94 @@
       "Text": "Selected file is invalid."
     },
     {
+      "Key": "TEXT_DataTransfer_Header_Import",
+      "Text": "Import"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Header_Import_Container",
+      "Text": "Container"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Import_Container_TT",
+      "Text": "Import the selected text file on the container level, replacing all FMGs and their associated entries (if applicable)."
+    },
+    {
+      "Key": "TEXT_DataTransfer_Header_Import_Text_File",
+      "Text": "Text File"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Import_Text_File_TT",
+      "Text": "Import the selected text file on the FMG level, replacing all associated entries (if applicable)."
+    },
+    {
+      "Key": "TEXT_DataTransfer_Header_Import_Text_Entry",
+      "Text": "Text Entry"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Import_Text_Entry_TT",
+      "Text": "Import the selected text file on the FMG Entry level, replacing all matching entries."
+    },
+    {
+      "Key": "TEXT_DataTransfer_Tab_Export",
+      "Text": "Export"
+    },
+    {
+      "Key": "TEXT_DataTransfer_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_DataTransfer_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_DataTransfer_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_DataTransfer_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_DataTransfer_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_DataTransfer_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_DataTransfer_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_DataTransfer_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_DataTransfer_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_DataTransfer_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_DataTransfer_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_DataTransfer_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_DataTransfer_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_DataTransfer_",
+      "Text": ""
+    },
+    {
       "Key": "TEXT_DataTransfer_",
       "Text": ""
     },

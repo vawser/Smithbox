@@ -114,27 +114,27 @@ public class ProjectConfigureMenu
     public void DisplayProjectActions()
     {
         UIHelper.Spacer();
-        UIHelper.SimpleHeader(LOC.Get("PRJ_PCM_Header_Actions"), "");
+        UIHelper.SimpleHeader(LOC.Get("PROJECT_Configuration_Header_Actions"), "");
 
         if (!AllowCreation())
         {
             if(EditorMode is ProjectEditorMode.Create)
-                UIHelper.WrappedText(LOC.Get("PRJ_PCM_Project_Creation_Block_Create"));
+                UIHelper.WrappedText(LOC.Get("PROJECT_Configuration_Project_Creation_Block_Create"));
 
             if (EditorMode is ProjectEditorMode.Edit)
-                UIHelper.WrappedText(LOC.Get("PRJ_PCM_Project_Creation_Block_Edit"));
+                UIHelper.WrappedText(LOC.Get("PROJECT_Configuration_Project_Creation_Block_Edit"));
 
             if (Descriptor.ProjectName == "")
-                UIHelper.WrappedYellowText(LOC.Get("PRJ_PCM_Invalid_Project_Name"));
+                UIHelper.WrappedYellowText(LOC.Get("PROJECT_Configuration_Invalid_Project_Name"));
 
             if (!Directory.Exists(Descriptor.ProjectPath))
-                UIHelper.WrappedYellowText(LOC.Get("PRJ_PCM_Invalid_Project_Path"));
+                UIHelper.WrappedYellowText(LOC.Get("PROJECT_Configuration_Invalid_Project_Path"));
 
             if (!Directory.Exists(Descriptor.DataPath))
-                UIHelper.WrappedYellowText(LOC.Get("PRJ_PCM_Invalid_Data_Path"));
+                UIHelper.WrappedYellowText(LOC.Get("PROJECT_Configuration_Invalid_Data_Path"));
 
             if (Descriptor.ProjectType is ProjectType.Undefined)
-                UIHelper.WrappedYellowText(LOC.Get("PRJ_PCM_Invalid_Project_Type"));
+                UIHelper.WrappedYellowText(LOC.Get("PROJECT_Configuration_Invalid_Project_Type"));
 
             UIHelper.Spacer();
         }
@@ -143,43 +143,43 @@ public class ProjectConfigureMenu
         {
             UIHelper.ConditionalMultiButtonInput("projectCreateActions",
                 "createProject", 
-                LOC.Get("PRJ_PCM_Action_Create_Project"), 
-                LOC.Get("PRJ_PCM_Action_Create_Project_TT"), 
+                LOC.Get("PROJECT_Configuration_Action_Create_Project"), 
+                LOC.Get("PROJECT_Configuration_Action_Create_Project_TT"), 
                 CreateProjectAction, AllowCreation());
         }
         else if (EditorMode is ProjectEditorMode.Edit)
         {
             UIHelper.ConditionalMultiButtonInput("projectEditActions",
                 "editProject",
-                LOC.Get("PRJ_PCM_Action_Update_Project"),
-                LOC.Get("PRJ_PCM_Action_Update_Project_TT"), 
+                LOC.Get("PROJECT_Configuration_Action_Update_Project"),
+                LOC.Get("PROJECT_Configuration_Action_Update_Project_TT"), 
                 UpdateProjectAction, AllowCreation(),
 
                 "deleteProject",
-                LOC.Get("PRJ_PCM_Action_Delete_Project"),
-                LOC.Get("PRJ_PCM_Action_Delete_Project_TT"), 
+                LOC.Get("PROJECT_Configuration_Action_Delete_Project"),
+                LOC.Get("PROJECT_Configuration_Action_Delete_Project_TT"), 
                 DeleteProjectAction, true,
 
                 "clearProjectBackups",
-                LOC.Get("PRJ_PCM_Action_Delete_Backup_Files"),
-                LOC.Get("PRJ_PCM_Action_Delete_Backup_Files_TT"),
+                LOC.Get("PROJECT_Configuration_Action_Delete_Backup_Files"),
+                LOC.Get("PROJECT_Configuration_Action_Delete_Backup_Files_TT"),
                 DeleteBackupFilesAction, true);
         }
 
         if (ModEngineHandler.IsME3Project(Project))
         {
             UIHelper.Spacer();
-            UIHelper.SimpleHeader(LOC.Get("PRJ_PCM_Header_ME3"), "");
+            UIHelper.SimpleHeader(LOC.Get("PROJECT_Configuration_Header_ME3"), "");
 
             UIHelper.ConditionalMultiButtonInput("me3Actions",
                 "launchMod",
-                LOC.Get("PRJ_PCM_Action_Launch_Mod"),
-                LOC.Get("PRJ_PCM_Action_Launch_Mod_TT"), 
+                LOC.Get("PROJECT_Configuration_Action_Launch_Mod"),
+                LOC.Get("PROJECT_Configuration_Action_Launch_Mod_TT"), 
                 LaunchModAction, ModEngineHandler.ME3ProfileExists(Project),
 
                 "createProfile",
-                LOC.Get("PRJ_PCM_Action_Create_Mod_Profile"),
-                LOC.Get("PRJ_PCM_Action_Create_Mod_Profile_TT"), 
+                LOC.Get("PROJECT_Configuration_Action_Create_Mod_Profile"),
+                LOC.Get("PROJECT_Configuration_Action_Create_Mod_Profile_TT"), 
                 CreateProfileAction, !ModEngineHandler.ME3ProfileExists(Project));
         }
     }
@@ -215,7 +215,7 @@ public class ProjectConfigureMenu
             var profilePath = "";
             var result =
                 PlatformUtils.Instance.OpenFolderDialog(
-                    LOC.Get("PRJ_PCM_Dialog_Select_ME3_Profile_Dir"), out profilePath);
+                    LOC.Get("PROJECT_Configuration_Dialog_Select_ME3_Profile_Dir"), out profilePath);
 
             if (result)
             {
@@ -251,7 +251,7 @@ public class ProjectConfigureMenu
         }
 
         var dialog = PlatformUtils.Instance.MessageBox(
-            LOC.Get("PRJ_PCM_Dialog_Delete_Backup_Files_List", fileList), 
+            LOC.Get("PROJECT_Configuration_Dialog_Delete_Backup_Files_List", fileList), 
             LOC.Get("SYS_Warning_Header"), MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
 
         if (dialog is DialogResult.OK)
@@ -263,145 +263,145 @@ public class ProjectConfigureMenu
     private void DisplayProjectEditorToggles()
     {
         UIHelper.SimpleHeader(
-            LOC.Get("PRJ_PCM_Header_Available_Editors"), 
-            LOC.Get("PRJ_PCM_Header_Available_Editors_TT"));
+            LOC.Get("PROJECT_Configuration_Header_Available_Editors"), 
+            LOC.Get("PROJECT_Configuration_Header_Available_Editors_TT"));
 
         // Map Editor
         if (ProjectUtils.SupportsMapEditor(Descriptor.ProjectType))
         {
             ImGui.Checkbox(
-                LOC.Get("PRJ_PCM_Checkbox_Visual_Map_Editor"), 
+                LOC.Get("PROJECT_Configuration_Checkbox_Visual_Map_Editor"), 
                 ref Descriptor.EnableMapEditor);
 
             UIHelper.Tooltip(
-                LOC.Get("PRJ_PCM_Checkbox_Visual_Map_Editor_TT"));
+                LOC.Get("PROJECT_Configuration_Checkbox_Visual_Map_Editor_TT"));
         }
 
         // Map Param Editor
         if (ProjectUtils.SupportsMapDataEditor(Descriptor.ProjectType))
         {
             ImGui.Checkbox(
-                LOC.Get("PRJ_PCM_Checkbox_Map_Data_Editor"), 
+                LOC.Get("PROJECT_Configuration_Checkbox_Map_Data_Editor"), 
                 ref Descriptor.EnableMapDataEditor);
 
             UIHelper.Tooltip(
-                LOC.Get("PRJ_PCM_Checkbox_Map_Data_Editor_TT"));
+                LOC.Get("PROJECT_Configuration_Checkbox_Map_Data_Editor_TT"));
         }
 
         // Model Editor
         if (ProjectUtils.SupportsModelEditor(Descriptor.ProjectType))
         {
             ImGui.Checkbox(
-                LOC.Get("PRJ_PCM_Checkbox_Model_Editor"), 
+                LOC.Get("PROJECT_Configuration_Checkbox_Model_Editor"), 
                 ref Descriptor.EnableModelEditor);
 
             UIHelper.Tooltip(
-                LOC.Get("PRJ_PCM_Checkbox_Model_Editor_TT"));
+                LOC.Get("PROJECT_Configuration_Checkbox_Model_Editor_TT"));
         }
 
         // Param Editor
         if (ProjectUtils.SupportsParamEditor(Descriptor.ProjectType))
         {
             ImGui.Checkbox(
-                LOC.Get("PRJ_PCM_Checkbox_Param_Editor"), 
+                LOC.Get("PROJECT_Configuration_Checkbox_Param_Editor"), 
                 ref Descriptor.EnableParamEditor);
 
             UIHelper.Tooltip(
-                LOC.Get("PRJ_PCM_Checkbox_Param_Editor_TT"));
+                LOC.Get("PROJECT_Configuration_Checkbox_Param_Editor_TT"));
         }
 
         // Text Editor
         if (ProjectUtils.SupportsTextEditor(Descriptor.ProjectType))
         {
             ImGui.Checkbox(
-                LOC.Get("PRJ_PCM_Checkbox_Text_Editor"), 
+                LOC.Get("PROJECT_Configuration_Checkbox_Text_Editor"), 
                 ref Descriptor.EnableTextEditor);
 
             UIHelper.Tooltip(
-                LOC.Get("PRJ_PCM_Checkbox_Text_Editor_TT"));
+                LOC.Get("PROJECT_Configuration_Checkbox_Text_Editor_TT"));
         }
 
         // Animation Editor
         if (ProjectUtils.SupportsAnimEditor(Descriptor.ProjectType))
         {
             ImGui.Checkbox(
-                LOC.Get("PRJ_PCM_Checkbox_Anim_Editor"), 
+                LOC.Get("PROJECT_Configuration_Checkbox_Anim_Editor"), 
                 ref Descriptor.EnableAnimEditor);
 
             UIHelper.Tooltip(
-                LOC.Get("PRJ_PCM_Checkbox_Anim_Editor_TT"));
+                LOC.Get("PROJECT_Configuration_Checkbox_Anim_Editor_TT"));
         }
 
         // Graphics Param Editor
         if (ProjectUtils.SupportsGraphicsParamEditor(Descriptor.ProjectType))
         {
             ImGui.Checkbox(
-                LOC.Get("PRJ_PCM_Checkbox_Gparam_Editor"), 
+                LOC.Get("PROJECT_Configuration_Checkbox_Gparam_Editor"), 
                 ref Descriptor.EnableGparamEditor);
 
             UIHelper.Tooltip(
-                LOC.Get("PRJ_PCM_Checkbox_Gparam_Editor_TT"));
+                LOC.Get("PROJECT_Configuration_Checkbox_Gparam_Editor_TT"));
         }
 
         // Material Editor
         if (ProjectUtils.SupportsMaterialEditor(Descriptor.ProjectType))
         {
             ImGui.Checkbox(
-                LOC.Get("PRJ_PCM_Checkbox_Material_Editor"), 
+                LOC.Get("PROJECT_Configuration_Checkbox_Material_Editor"), 
                 ref Descriptor.EnableMaterialEditor);
 
             UIHelper.Tooltip(
-                LOC.Get("PRJ_PCM_Checkbox_Material_Editor_TT"));
+                LOC.Get("PROJECT_Configuration_Checkbox_Material_Editor_TT"));
         }
 
         // Texture Viewer
         if (ProjectUtils.SupportsTextureViewer(Descriptor.ProjectType))
         {
             ImGui.Checkbox(
-                LOC.Get("PRJ_PCM_Checkbox_Texture_Viewer"), 
+                LOC.Get("PROJECT_Configuration_Checkbox_Texture_Viewer"), 
                 ref Descriptor.EnableTextureViewer);
 
             UIHelper.Tooltip(
-                LOC.Get("PRJ_PCM_Checkbox_Texture_Viewer_TT"));
+                LOC.Get("PROJECT_Configuration_Checkbox_Texture_Viewer_TT"));
         }
 
         // File Browser
         if (ProjectUtils.SupportsFileBrowser(Descriptor.ProjectType))
         {
             ImGui.Checkbox(
-                LOC.Get("PRJ_PCM_Checkbox_File_Browser"), 
+                LOC.Get("PROJECT_Configuration_Checkbox_File_Browser"), 
                 ref Descriptor.EnableFileBrowser);
 
             UIHelper.Tooltip(
-                LOC.Get("PRJ_PCM_Checkbox_File_Browser_TT"));
+                LOC.Get("PROJECT_Configuration_Checkbox_File_Browser_TT"));
         }
 
         // Material Data
         ImGui.Checkbox(
-            LOC.Get("PRJ_PCM_Checkbox_Material_Data"), 
+            LOC.Get("PROJECT_Configuration_Checkbox_Material_Data"), 
             ref Descriptor.EnableExternalMaterialData);
 
         UIHelper.Tooltip(
-            LOC.Get("PRJ_PCM_Checkbox_Material_Data_TT"));
+            LOC.Get("PROJECT_Configuration_Checkbox_Material_Data_TT"));
     }
 
     public void DisplayProjectSettings()
     {
         // Project Name
         UIHelper.SimpleHeader(
-            LOC.Get("PRJ_PCM_Header_Project_Name"),
-            LOC.Get("PRJ_PCM_Header_Project_Name_TT"));
+            LOC.Get("PROJECT_Configuration_Header_Project_Name"),
+            LOC.Get("PROJECT_Configuration_Header_Project_Name_TT"));
 
         UIHelper.HintTextInput(
             "ProjectNameInput", 
             ref Descriptor.ProjectName,
-            LOC.Get("PRJ_PCM_Project_Name_Input_Hint"));
+            LOC.Get("PROJECT_Configuration_Project_Name_Input_Hint"));
 
         // Project Type
         UIHelper.Spacer();
         UIHelper.SimpleHeader(
-            LOC.Get("PRJ_PCM_Header_Project_Type"),
-            LOC.Get("PRJ_PCM_Header_Project_Type_TT"));
+            LOC.Get("PROJECT_Configuration_Header_Project_Type"),
+            LOC.Get("PROJECT_Configuration_Header_Project_Type_TT"));
 
         UIHelper.SetInputWidth();
 
@@ -475,55 +475,55 @@ public class ProjectConfigureMenu
         // Project Directory
         UIHelper.Spacer();
         UIHelper.SimpleHeader(
-            LOC.Get("PRJ_PCM_Header_Project_Directory"),
-            LOC.Get("PRJ_PCM_Header_Project_Directory_TT"));
+            LOC.Get("PROJECT_Configuration_Header_Project_Directory"),
+            LOC.Get("PROJECT_Configuration_Header_Project_Directory_TT"));
 
         UIHelper.HintTextInput(
             "ProjectDirPath", 
             ref Descriptor.ProjectPath,
-            LOC.Get("PRJ_PCM_Project_Directory_Path_Hint"));
+            LOC.Get("PROJECT_Configuration_Project_Directory_Path_Hint"));
 
         UIHelper.MultiButtonInput("projectDirActions",
             "selectDir",
-            LOC.Get("PRJ_PCM_Action_Select_Project_Directory"),
-            LOC.Get("PRJ_PCM_Action_Select_Project_Directory_TT"),
+            LOC.Get("PROJECT_Configuration_Action_Select_Project_Directory"),
+            LOC.Get("PROJECT_Configuration_Action_Select_Project_Directory_TT"),
             SelectProjectDirectory,
 
             "openDir",
-            LOC.Get("PRJ_PCM_Action_Open_Project_Directory"),
-            LOC.Get("PRJ_PCM_Action_Open_Project_Directory_TT"), 
+            LOC.Get("PROJECT_Configuration_Action_Open_Project_Directory"),
+            LOC.Get("PROJECT_Configuration_Action_Open_Project_Directory_TT"), 
             OpenProjectDirectory);
 
         // Data Directory
         UIHelper.Spacer();
         UIHelper.SimpleHeader(
-            LOC.Get("PRJ_PCM_Header_Data_Directory"), GetDataDirectoryTooltip());
+            LOC.Get("PROJECT_Configuration_Header_Data_Directory"), GetDataDirectoryTooltip());
 
         UIHelper.HintTextInput("DataDirPath", 
             ref Descriptor.DataPath,
-            LOC.Get("PRJ_PCM_Data_Directory_Path_Hint"));
+            LOC.Get("PROJECT_Configuration_Data_Directory_Path_Hint"));
 
         UIHelper.MultiButtonInput("dataDirActions",
             "selectDir",
-            LOC.Get("PRJ_PCM_Action_Select_Data_Directory"),
-            LOC.Get("PRJ_PCM_Action_Select_Data_Directory_TT"),
+            LOC.Get("PROJECT_Configuration_Action_Select_Data_Directory"),
+            LOC.Get("PROJECT_Configuration_Action_Select_Data_Directory_TT"),
             SelectDataDirectory,
 
             "openDir",
-            LOC.Get("PRJ_PCM_Action_Open_Data_Directory"),
-            LOC.Get("PRJ_PCM_Action_Open_Data_Directory_TT"),
+            LOC.Get("PROJECT_Configuration_Action_Open_Data_Directory"),
+            LOC.Get("PROJECT_Configuration_Action_Open_Data_Directory_TT"),
             OpenDataDirectory);
 
         // Group Tag
         UIHelper.Spacer();
         UIHelper.SimpleHeader(
-            LOC.Get("PRJ_PCM_Data_Header_Group_Tag"),
-            LOC.Get("PRJ_PCM_Data_Header_Group_Tag_TT"));
+            LOC.Get("PROJECT_Configuration_Data_Header_Group_Tag"),
+            LOC.Get("PROJECT_Configuration_Data_Header_Group_Tag_TT"));
 
         UIHelper.HintTextInput(
             "FolderTagInput", 
             ref Descriptor.FolderTag,
-            LOC.Get("PRJ_PCM_Group_Tag_Hint"));
+            LOC.Get("PROJECT_Configuration_Group_Tag_Hint"));
     }
 
     public void SelectProjectDirectory()
@@ -532,7 +532,7 @@ public class ProjectConfigureMenu
         {
             var newProjectPath = "";
             var result = PlatformUtils.Instance.OpenFolderDialog(
-                LOC.Get("PRJ_PCM_Dialog_Select_Project_Directory"), 
+                LOC.Get("PROJECT_Configuration_Dialog_Select_Project_Directory"), 
                 out newProjectPath, CFG.Current.Project_Default_Mod_Directory);
 
             if (result)
@@ -544,7 +544,7 @@ public class ProjectConfigureMenu
         {
             var newProjectPath = "";
             var result = PlatformUtils.Instance.OpenFolderDialog(
-                LOC.Get("PRJ_PCM_Dialog_Select_Project_Directory"), out newProjectPath);
+                LOC.Get("PROJECT_Configuration_Dialog_Select_Project_Directory"), out newProjectPath);
 
             if (result)
             {
@@ -564,7 +564,7 @@ public class ProjectConfigureMenu
         {
             var newDataPath = "";
             var result = PlatformUtils.Instance.OpenFolderDialog(
-                LOC.Get("PRJ_PCM_Dialog_Select_Game_Directory"), out newDataPath, CFG.Current.Project_Default_Data_Directory);
+                LOC.Get("PROJECT_Configuration_Dialog_Select_Game_Directory"), out newDataPath, CFG.Current.Project_Default_Data_Directory);
 
             if (result)
             {
@@ -575,7 +575,7 @@ public class ProjectConfigureMenu
         {
             var newDataPath = "";
             var result = PlatformUtils.Instance.OpenFolderDialog(
-                LOC.Get("PRJ_PCM_Dialog_Select_Game_Directory"), out newDataPath);
+                LOC.Get("PROJECT_Configuration_Dialog_Select_Game_Directory"), out newDataPath);
 
             if (result)
             {
@@ -635,18 +635,18 @@ public class ProjectConfigureMenu
 
     public string GetDataDirectoryTooltip()
     {
-        var tooltip = LOC.Get("PRJ_PCM_Header_Data_Directory_TT_Base");
+        var tooltip = LOC.Get("PROJECT_Configuration_Header_Data_Directory_TT_Base");
         if (Descriptor.ProjectType is ProjectType.DES)
         {
-            tooltip = $"{tooltip}{LOC.Get("PRJ_PCM_Header_Data_Directory_TT_DES")}";
+            tooltip = $"{tooltip}{LOC.Get("PROJECT_Configuration_Header_Data_Directory_TT_DES")}";
         }
         else if (Descriptor.ProjectType is ProjectType.BB)
         {
-            tooltip = $"{tooltip}{LOC.Get("PRJ_PCM_Header_Data_Directory_TT_BB")}";
+            tooltip = $"{tooltip}{LOC.Get("PROJECT_Configuration_Header_Data_Directory_TT_BB")}";
         }
         else
         {
-            tooltip = $"{tooltip}{LOC.Get("PRJ_PCM_Header_Data_Directory_TT_Default")}";
+            tooltip = $"{tooltip}{LOC.Get("PROJECT_Configuration_Header_Data_Directory_TT_Default")}";
         }
 
         return tooltip;

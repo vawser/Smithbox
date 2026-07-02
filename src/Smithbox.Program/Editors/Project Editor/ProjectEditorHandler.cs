@@ -206,54 +206,54 @@ public class ProjectEditorHandler : IDisposable
     public void LogDataResults()
     {
         if (_projectDataTask?.Result == true)
-            Smithbox.Log(this, LOC.Get("PRJ_DAT_Setup_Project_Data_PASS"));
+            Smithbox.Log(this, LOC.Get("PROJECT_Data_Setup_Project_Data_PASS"));
         else
-            Smithbox.LogError(this, LOC.Get("PRJ_DAT_Setup_Project_Data_FAIL"));
+            Smithbox.LogError(this, LOC.Get("PROJECT_Data_Setup_Project_Data_FAIL"));
 
         if (_mapDataTask != null)
             Smithbox.Log(this, _mapDataTask.Result
-                ? LOC.Get("PRJ_DAT_Setup_Map_Data_PASS")
-                : LOC.Get("PRJ_DAT_Setup_Map_Data_FAIL"));
+                ? LOC.Get("PROJECT_Data_Setup_Map_Data_PASS")
+                : LOC.Get("PROJECT_Data_Setup_Map_Data_FAIL"));
 
         if (_modelDataTask != null)
             Smithbox.Log(this, _modelDataTask.Result
-                ? LOC.Get("PRJ_DAT_Setup_Model_Data_PASS")
-                : LOC.Get("PRJ_DAT_Setup_Model_Data_FAIL"));
+                ? LOC.Get("PROJECT_Data_Setup_Model_Data_PASS")
+                : LOC.Get("PROJECT_Data_Setup_Model_Data_FAIL"));
 
         if (_materialDataTask != null)
             Smithbox.Log(this, _materialDataTask.Result
-                ? LOC.Get("PRJ_DAT_Setup_Material_Data_PASS")
-                : LOC.Get("PRJ_DAT_Setup_Material_Data_FAIL"));
+                ? LOC.Get("PROJECT_Data_Setup_Material_Data_PASS")
+                : LOC.Get("PROJECT_Data_Setup_Material_Data_FAIL"));
 
         if (_paramDataTask != null)
             Smithbox.Log(this, _paramDataTask.Result
-                ? LOC.Get("PRJ_DAT_Setup_Param_Data_PASS")
-                : LOC.Get("PRJ_DAT_Setup_Param_Data_FAIL"));
+                ? LOC.Get("PROJECT_Data_Setup_Param_Data_PASS")
+                : LOC.Get("PROJECT_Data_Setup_Param_Data_FAIL"));
 
         if (_textDataTask != null)
             Smithbox.Log(this, _textDataTask.Result
-                ? LOC.Get("PRJ_DAT_Setup_Text_Data_PASS")
-                : LOC.Get("PRJ_DAT_Setup_Text_Data_FAIL"));
+                ? LOC.Get("PROJECT_Data_Setup_Text_Data_PASS")
+                : LOC.Get("PROJECT_Data_Setup_Text_Data_FAIL"));
 
         if (_gparamDataTask != null)
             Smithbox.Log(this, _gparamDataTask.Result
-                ? LOC.Get("PRJ_DAT_Setup_Gparam_Data_PASS")
-                : LOC.Get("PRJ_DAT_Setup_Gparam_Data_FAIL"));
+                ? LOC.Get("PROJECT_Data_Setup_Gparam_Data_PASS")
+                : LOC.Get("PROJECT_Data_Setup_Gparam_Data_FAIL"));
 
         if (_textureDataTask != null)
             Smithbox.Log(this, _textureDataTask.Result
-                ? LOC.Get("PRJ_DAT_Setup_Texture_Data_PASS")
-                : LOC.Get("PRJ_DAT_Setup_Texture_Data_FAIL"));
+                ? LOC.Get("PROJECT_Data_Setup_Texture_Data_PASS")
+                : LOC.Get("PROJECT_Data_Setup_Texture_Data_FAIL"));
 
         if (_animDataTask != null)
             Smithbox.Log(this, _animDataTask.Result
-                ? LOC.Get("PRJ_DAT_Setup_Anim_Data_PASS")
-                : LOC.Get("PRJ_DAT_Setup_Anim_Data_FAIL"));
+                ? LOC.Get("PROJECT_Data_Setup_Anim_Data_PASS")
+                : LOC.Get("PROJECT_Data_Setup_Anim_Data_FAIL"));
 
         if (_mapDataDataTask != null)
             Smithbox.Log(this, _mapDataDataTask.Result
-                ? LOC.Get("PRJ_DAT_Setup_Map_Data_PASS")
-                : LOC.Get("PRJ_DAT_Setup_Map_Data_FAIL"));
+                ? LOC.Get("PROJECT_Data_Setup_Map_Data_PASS")
+                : LOC.Get("PROJECT_Data_Setup_Map_Data_FAIL"));
     }
 
     public void InitializeEditors(ProjectInitType initType)

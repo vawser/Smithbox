@@ -48,7 +48,7 @@ public class ProjectScreen
 
         ImGui.SetNextWindowDockID(mainDockspaceID, ImGuiCond.FirstUseEver);
         ImGui.SetNextWindowClass(ref UIHelper.DockGroup_EditorView);
-        if (ImGui.Begin($"{LOC.Get("PRJ_Window_Project_Editor")}###ProjectEditor", UIHelper.GetMainWindowFlags()))
+        if (ImGui.Begin($"{LOC.Get("PROJECT_Window_Project_Editor")}###ProjectEditor", UIHelper.GetMainWindowFlags()))
         {
             ImGui.PopStyleColor(1);
             ImGui.PopStyleVar(1);
@@ -67,7 +67,7 @@ public class ProjectScreen
 
             ImGui.SetNextWindowDockID(dsid, ImGuiCond.FirstUseEver);
             ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ProjectEditor);
-            if (ImGui.Begin($"{LOC.Get("PRJ_Window_Project_View")}###ProjectView", UIHelper.GetInnerWindowFlags()))
+            if (ImGui.Begin($"{LOC.Get("PROJECT_Window_Project_View")}###ProjectView", UIHelper.GetInnerWindowFlags()))
             {
             }
 
@@ -95,7 +95,7 @@ public class ProjectScreen
             // Active Projects
             ImGui.SetNextWindowDockID(editorDockspaceId, ImGuiCond.FirstUseEver);
             ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ProjectEditorView);
-            if (ImGui.Begin($@"{LOC.Get("PRJ_Window_Active_Projects")}###projectEditor_ActiveProjects", UIHelper.GetInnerWindowFlags()))
+            if (ImGui.Begin($@"{LOC.Get("PROJECT_Window_Active_Projects")}###projectEditor_ActiveProjects", UIHelper.GetInnerWindowFlags()))
             {
                 var width = ImGui.GetContentRegionAvail().X;
                 var height = ImGui.GetContentRegionAvail().Y;
@@ -113,7 +113,7 @@ public class ProjectScreen
             // Project List
             ImGui.SetNextWindowDockID(editorDockspaceId, ImGuiCond.FirstUseEver);
             ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ProjectEditorView);
-            if (ImGui.Begin($@"{LOC.Get("PRJ_Window_Available_Projects")}###projectEditor_AvaliableProjects", UIHelper.GetInnerWindowFlags()))
+            if (ImGui.Begin($@"{LOC.Get("PROJECT_Window_Available_Projects")}###projectEditor_AvaliableProjects", UIHelper.GetInnerWindowFlags()))
             {
                 var width = ImGui.GetContentRegionAvail().X;
                 var height = ImGui.GetContentRegionAvail().Y;
@@ -134,7 +134,7 @@ public class ProjectScreen
             // Project Configuration
             ImGui.SetNextWindowDockID(editorDockspaceId, ImGuiCond.FirstUseEver);
             ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ProjectEditorView);
-            if (ImGui.Begin($@"{LOC.Get("PRJ_Window_Project_Configuration")}###projectEditor_ProjectConfiguration", UIHelper.GetInnerWindowFlags()))
+            if (ImGui.Begin($@"{LOC.Get("PROJECT_Window_Project_Configuration")}###projectEditor_ProjectConfiguration", UIHelper.GetInnerWindowFlags()))
             {
                 var width = ImGui.GetContentRegionAvail().X;
                 var height = ImGui.GetContentRegionAvail().Y;
@@ -154,8 +154,8 @@ public class ProjectScreen
     public void DisplayActiveProjectList()
     {
         UIHelper.SimpleHeader(
-            LOC.Get("PRJ_PCM_Header_Active_Projects"), 
-            LOC.Get("PRJ_PCM_Header_Active_Projects_TT"));
+            LOC.Get("PROJECT_Configuration_Header_Active_Projects"), 
+            LOC.Get("PROJECT_Configuration_Header_Active_Projects_TT"));
 
         EditorFilters.DisplayFramedListFilter("loadedProjectsFilter", ref LoadedListFilter, ref ExactLoadedListFilter);
 
@@ -169,23 +169,23 @@ public class ProjectScreen
     public void DisplayAvailableProjectList()
     {
         UIHelper.SimpleHeader(
-            LOC.Get("PRJ_PCM_Header_Global_Actions"),
-            LOC.Get("PRJ_PCM_Header_Global_Actions_TT"));
+            LOC.Get("PROJECT_Configuration_Header_Global_Actions"),
+            LOC.Get("PROJECT_Configuration_Header_Global_Actions_TT"));
 
         UIHelper.MultiButtonInput("globalProjectActions",
             "createNewProject",
-            LOC.Get("PRJ_PCM_Global_Action_Create_Project"), 
-            LOC.Get("PRJ_PCM_Global_Action_Create_Project_TT"),
+            LOC.Get("PROJECT_Configuration_Global_Action_Create_Project"), 
+            LOC.Get("PROJECT_Configuration_Global_Action_Create_Project_TT"),
             CreateProjectAction,
 
             "createProjectFromJson",
-            LOC.Get("PRJ_PCM_Global_Action_Create_Project_From_JSON"),
-            LOC.Get("PRJ_PCM_Global_Action_Create_Project_From_JSON_TT"),
+            LOC.Get("PROJECT_Configuration_Global_Action_Create_Project_From_JSON"),
+            LOC.Get("PROJECT_Configuration_Global_Action_Create_Project_From_JSON_TT"),
             CreateProjectFromJsonAction);
 
         UIHelper.SimpleHeader(
-            LOC.Get("PRJ_PCM_Header_Available_Projects"),
-            LOC.Get("PRJ_PCM_Header_Available_Projects_TT"));
+            LOC.Get("PROJECT_Configuration_Header_Available_Projects"),
+            LOC.Get("PROJECT_Configuration_Header_Available_Projects_TT"));
 
         EditorFilters.DisplayFramedListFilter("availableProjectsFilter", ref AvailableListFilter, ref ExactAvailableListFilter);
 
@@ -484,7 +484,7 @@ public class ProjectScreen
 
         if (ImGui.BeginPopupContextItem($"##contextMenu_{project.Descriptor.ProjectGUID}_{imguiKey}"))
         {
-            if (ImGui.MenuItem($"{LOC.Get("PRJ_PCM_Global_Context_Load")}##loadAction", false, !project.Initialized))
+            if (ImGui.MenuItem($"{LOC.Get("PROJECT_Configuration_Global_Context_Load")}##loadAction", false, !project.Initialized))
             {
                 orchestrator.SelectedProject = project;
 
@@ -497,7 +497,7 @@ public class ProjectScreen
                 ConfigureMenu.EditorMode = ProjectEditorMode.Edit;
             }
 
-            if (ImGui.MenuItem($"{LOC.Get("PRJ_PCM_Global_Context_Reload")}##reloadAction", false, project.Initialized))
+            if (ImGui.MenuItem($"{LOC.Get("PROJECT_Configuration_Global_Context_Reload")}##reloadAction", false, project.Initialized))
             {
                 orchestrator.SelectedProject = project;
 
@@ -507,16 +507,16 @@ public class ProjectScreen
                 }
             }
 
-            if (ImGui.MenuItem($"{LOC.Get("PRJ_PCM_Global_Context_Unload")}##unloadAction", false, project.Initialized))
+            if (ImGui.MenuItem($"{LOC.Get("PROJECT_Configuration_Global_Context_Unload")}##unloadAction", false, project.Initialized))
             {
                 orchestrator.UnloadProject(project);
 
                 ConfigureMenu.EditorMode = ProjectEditorMode.Create;
             }
 
-            if (ImGui.BeginMenu($"{LOC.Get("PRJ_PCM_Global_Context_Header_Information")}##infoHeader"))
+            if (ImGui.BeginMenu($"{LOC.Get("PROJECT_Configuration_Global_Context_Header_Information")}##infoHeader"))
             {
-                if (ImGui.Selectable($"{LOC.Get("PRJ_PCM_Global_Context_Copy_GUID")}##copyGuidAction"))
+                if (ImGui.Selectable($"{LOC.Get("PROJECT_Configuration_Global_Context_Copy_GUID")}##copyGuidAction"))
                 {
                     PlatformUtils.Instance.SetClipboardText($"{project.Descriptor.ProjectGUID}");
                 }
@@ -554,7 +554,7 @@ public class ProjectScreen
         var orchestrator = Smithbox.Orchestrator;
 
         var projectJsonPath = "";
-        var result = PlatformUtils.Instance.OpenFileDialog(LOC.Get("PRJ_PCM_Action_Select_Project_JSON"), out projectJsonPath);
+        var result = PlatformUtils.Instance.OpenFileDialog(LOC.Get("PROJECT_Configuration_Action_Select_Project_JSON"), out projectJsonPath);
 
         if (result)
         {
@@ -573,15 +573,15 @@ public class ProjectScreen
 
     public void ViewMenu()
     {
-        if (ImGui.BeginMenu($"{LOC.Get("PRJ_PCM_Header_View")}##viewMenuHeader"))
+        if (ImGui.BeginMenu($"{LOC.Get("PROJECT_Configuration_Header_View")}##viewMenuHeader"))
         {
-            if (ImGui.MenuItem($"{LOC.Get("PRJ_PCM_View_Project_List")}##projectListToggle"))
+            if (ImGui.MenuItem($"{LOC.Get("PROJECT_Configuration_View_Project_List")}##projectListToggle"))
             {
                 CFG.Current.Interface_ProjectEditor_ProjectList = !CFG.Current.Interface_ProjectEditor_ProjectList;
             }
             UIHelper.ShowActiveStatus(CFG.Current.Interface_ProjectEditor_ProjectList);
 
-            if (ImGui.MenuItem($"{LOC.Get("PRJ_PCM_View_Project_Configuration")}##projectConfigurationToggle"))
+            if (ImGui.MenuItem($"{LOC.Get("PROJECT_Configuration_View_Project_Configuration")}##projectConfigurationToggle"))
             {
                 CFG.Current.Interface_ProjectEditor_ProjectConfiguration = !CFG.Current.Interface_ProjectEditor_ProjectConfiguration;
             }

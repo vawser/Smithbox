@@ -1,383 +1,383 @@
 {
   "Entries": [
     {
-      "Key": "PRJ_PCM_Header_Active_Projects",
+      "Key": "PROJECT_Configuration_Header_Active_Projects",
       "Text": "Active Projects"
     },
     {
-      "Key": "PRJ_PCM_Header_Active_Projects_TT",
+      "Key": "PROJECT_Configuration_Header_Active_Projects_TT",
       "Text": "The projects that have been loaded this session."
     },
     {
-      "Key": "PRJ_PCM_Header_Global_Actions",
+      "Key": "PROJECT_Configuration_Header_Global_Actions",
       "Text": "Actions"
     },
     {
-      "Key": "PRJ_PCM_Header_Available_Projects",
+      "Key": "PROJECT_Configuration_Header_Available_Projects",
       "Text": "Available Projects"
     },
     {
-      "Key": "PRJ_PCM_Header_Available_Projects_TT",
+      "Key": "PROJECT_Configuration_Header_Available_Projects_TT",
       "Text": ""
     },
     {
-      "Key": "PRJ_PCM_Header_Global_Actions_TT",
+      "Key": "PROJECT_Configuration_Header_Global_Actions_TT",
       "Text": ""
     },
     {
-      "Key": "PRJ_PCM_Global_Action_Create_Project",
+      "Key": "PROJECT_Configuration_Global_Action_Create_Project",
       "Text": "Create Project"
     },
     {
-      "Key": "PRJ_PCM_Global_Action_Create_Project_TT",
+      "Key": "PROJECT_Configuration_Global_Action_Create_Project_TT",
       "Text": "Create a new project entry, and set the Project Configuration input to 'Create'."
     },
     {
-      "Key": "PRJ_PCM_Global_Action_Create_Project_From_JSON",
+      "Key": "PROJECT_Configuration_Global_Action_Create_Project_From_JSON",
       "Text": "Create Project from JSON"
     },
     {
-      "Key": "PRJ_PCM_Global_Action_Create_Project_From_JSON_TT",
+      "Key": "PROJECT_Configuration_Global_Action_Create_Project_From_JSON_TT",
       "Text": "Create a new project entry from 'project.json' file."
     },
     {
-      "Key": "PRJ_PCM_Global_Context_Load",
+      "Key": "PROJECT_Configuration_Global_Context_Load",
       "Text": "Load"
     },
     {
-      "Key": "PRJ_PCM_Global_Context_Reload",
+      "Key": "PROJECT_Configuration_Global_Context_Reload",
       "Text": "Reload"
     },
     {
-      "Key": "PRJ_PCM_Global_Context_Unload",
+      "Key": "PROJECT_Configuration_Global_Context_Unload",
       "Text": "Unload"
     },
     {
-      "Key": "PRJ_PCM_Global_Context_Header_Information",
+      "Key": "PROJECT_Configuration_Global_Context_Header_Information",
       "Text": "Information"
     },
     {
-      "Key": "PRJ_PCM_Global_Context_Copy_GUID",
+      "Key": "PROJECT_Configuration_Global_Context_Copy_GUID",
       "Text": "Copy GUID"
     },
     {
-      "Key": "PRJ_PCM_Header_Actions",
+      "Key": "PROJECT_Configuration_Header_Actions",
       "Text": "Actions"
     },
     {
-      "Key": "PRJ_PCM_Project_Creation_Block_Create",
+      "Key": "PROJECT_Configuration_Project_Creation_Block_Create",
       "Text": "You cannot create a project due to the following issues:"
     },
     {
-      "Key": "PRJ_PCM_Project_Creation_Block_Edit",
+      "Key": "PROJECT_Configuration_Project_Creation_Block_Edit",
       "Text": "You cannot edit a project due to the following issues:"
     },
     {
-      "Key": "PRJ_PCM_Invalid_Project_Name",
+      "Key": "PROJECT_Configuration_Invalid_Project_Name",
       "Text": "Project Name cannot be empty."
     },
     {
-      "Key": "PRJ_PCM_Invalid_Project_Path",
+      "Key": "PROJECT_Configuration_Invalid_Project_Path",
       "Text": "Project Path is set to an invalid path."
     },
     {
-      "Key": "PRJ_PCM_Invalid_Data_Path",
+      "Key": "PROJECT_Configuration_Invalid_Data_Path",
       "Text": "Data Path is set to an invalid path."
     },
     {
-      "Key": "PRJ_PCM_Invalid_Project_Type",
+      "Key": "PROJECT_Configuration_Invalid_Project_Type",
       "Text": "Project type cannot be undefined."
     },
     {
-      "Key": "PRJ_PCM_Action_Create_Project",
+      "Key": "PROJECT_Configuration_Action_Create_Project",
       "Text": "Create Project"
     },
     {
-      "Key": "PRJ_PCM_Action_Create_Project_TT",
+      "Key": "PROJECT_Configuration_Action_Create_Project_TT",
       "Text": ""
     },
     {
-      "Key": "PRJ_PCM_Action_Update_Project",
+      "Key": "PROJECT_Configuration_Action_Update_Project",
       "Text": "Update Project"
     },
     {
-      "Key": "PRJ_PCM_Action_Update_Project_TT",
+      "Key": "PROJECT_Configuration_Action_Update_Project_TT",
       "Text": "Update the currently selected project configuration to use the newly configured parameters."
     },
     {
-      "Key": "PRJ_PCM_Action_Delete_Project",
+      "Key": "PROJECT_Configuration_Action_Delete_Project",
       "Text": "Delete Project"
     },
     {
-      "Key": "PRJ_PCM_Action_Delete_Project_TT",
+      "Key": "PROJECT_Configuration_Action_Delete_Project_TT",
       "Text": "Delete the currently selected project entry."
     },
     {
-      "Key": "PRJ_PCM_Action_Delete_Backup_Files",
+      "Key": "PROJECT_Configuration_Action_Delete_Backup_Files",
       "Text": "Delete Backup Files"
     },
     {
-      "Key": "PRJ_PCM_Action_Delete_Backup_Files_TT",
+      "Key": "PROJECT_Configuration_Action_Delete_Backup_Files_TT",
       "Text": "Delete the .prev and .bak files within the currently selected project's directory."
     },
     {
-      "Key": "PRJ_PCM_Header_ME3",
+      "Key": "PROJECT_Configuration_Header_ME3",
       "Text": "ME3"
     },
     {
-      "Key": "PRJ_PCM_Action_Launch_Mod",
+      "Key": "PROJECT_Configuration_Action_Launch_Mod",
       "Text": "Launch Mod"
     },
     {
-      "Key": "PRJ_PCM_Action_Launch_Mod_TT",
+      "Key": "PROJECT_Configuration_Action_Launch_Mod_TT",
       "Text": "Launch this project with ME3."
     },
     {
-      "Key": "PRJ_PCM_Action_Create_Mod_Profile",
+      "Key": "PROJECT_Configuration_Action_Create_Mod_Profile",
       "Text": "Create Profile"
     },
     {
-      "Key": "PRJ_PCM_Action_Create_Mod_Profile_TT",
+      "Key": "PROJECT_Configuration_Action_Create_Mod_Profile_TT",
       "Text": "Create a basic ME3 profile for this project."
     },
     {
-      "Key": "PRJ_PCM_Dialog_Select_ME3_Profile_Dir",
+      "Key": "PROJECT_Configuration_Dialog_Select_ME3_Profile_Dir",
       "Text": "Select ME3 Profile Directory"
     },
     {
-      "Key": "PRJ_PCM_Dialog_Delete_Backup_Files_List",
+      "Key": "PROJECT_Configuration_Dialog_Delete_Backup_Files_List",
       "Text": "You will delete the following files:\n{0}"
     },
     {
-      "Key": "PRJ_PCM_Header_Available_Editors",
+      "Key": "PROJECT_Configuration_Header_Available_Editors",
       "Text": "Available Editors"
     },
     {
-      "Key": "PRJ_PCM_Header_Available_Editors_TT",
+      "Key": "PROJECT_Configuration_Header_Available_Editors_TT",
       "Text": "Which editors this project will use."
     },
     {
-      "Key": "PRJ_PCM_Checkbox_Visual_Map_Editor",
+      "Key": "PROJECT_Configuration_Checkbox_Visual_Map_Editor",
       "Text": "Visual Map Editor"
     },
     {
-      "Key": "PRJ_PCM_Checkbox_Visual_Map_Editor_TT",
+      "Key": "PROJECT_Configuration_Checkbox_Visual_Map_Editor_TT",
       "Text": "If enabled, the Visual Map Editor and associated data will be initialized for this project."
     },
     {
-      "Key": "PRJ_PCM_Checkbox_Map_Data_Editor",
+      "Key": "PROJECT_Configuration_Checkbox_Map_Data_Editor",
       "Text": "Map Data Editor"
     },
     {
-      "Key": "PRJ_PCM_Checkbox_Map_Data_Editor_TT",
+      "Key": "PROJECT_Configuration_Checkbox_Map_Data_Editor_TT",
       "Text": "If enabled, the Map Data  Editor and associated data will be initialized for this project."
     },
     {
-      "Key": "PRJ_PCM_Checkbox_Model_Editor",
+      "Key": "PROJECT_Configuration_Checkbox_Model_Editor",
       "Text": "Model Editor"
     },
     {
-      "Key": "PRJ_PCM_Checkbox_Model_Editor_TT",
+      "Key": "PROJECT_Configuration_Checkbox_Model_Editor_TT",
       "Text": "If enabled, the Model Editor and associated data will be initialized for this project."
     },
     {
-      "Key": "PRJ_PCM_Checkbox_Param_Editor",
+      "Key": "PROJECT_Configuration_Checkbox_Param_Editor",
       "Text": "Param Editor"
     },
     {
-      "Key": "PRJ_PCM_Checkbox_Param_Editor_TT",
+      "Key": "PROJECT_Configuration_Checkbox_Param_Editor_TT",
       "Text": "If enabled, the Param Editor and associated data will be initialized for this project."
     },
     {
-      "Key": "PRJ_PCM_Checkbox_Text_Editor",
+      "Key": "PROJECT_Configuration_Checkbox_Text_Editor",
       "Text": "Text Editor"
     },
     {
-      "Key": "PRJ_PCM_Checkbox_Text_Editor_TT",
+      "Key": "PROJECT_Configuration_Checkbox_Text_Editor_TT",
       "Text": "If enabled, the Text Editor and associated data will be initialized for this project."
     },
     {
-      "Key": "PRJ_PCM_Checkbox_Anim_Editor",
+      "Key": "PROJECT_Configuration_Checkbox_Anim_Editor",
       "Text": "Animation Editor"
     },
     {
-      "Key": "PRJ_PCM_Checkbox_Anim_Editor_TT",
+      "Key": "PROJECT_Configuration_Checkbox_Anim_Editor_TT",
       "Text": "If enabled, the Animation Editor and associated data will be initialized for this project."
     },
     {
-      "Key": "PRJ_PCM_Checkbox_Gparam_Editor",
+      "Key": "PROJECT_Configuration_Checkbox_Gparam_Editor",
       "Text": "Graphics Param Editor"
     },
     {
-      "Key": "PRJ_PCM_Checkbox_Gparam_Editor_TT",
+      "Key": "PROJECT_Configuration_Checkbox_Gparam_Editor_TT",
       "Text": "If enabled, the Graphics Param Editor and associated data will be initialized for this project."
     },
     {
-      "Key": "PRJ_PCM_Checkbox_Material_Editor",
+      "Key": "PROJECT_Configuration_Checkbox_Material_Editor",
       "Text": "Material Editor"
     },
     {
-      "Key": "PRJ_PCM_Checkbox_Material_Editor_TT",
+      "Key": "PROJECT_Configuration_Checkbox_Material_Editor_TT",
       "Text": "If enabled, the Material Editor and associated data will be initialized for this project."
     },
     {
-      "Key": "PRJ_PCM_Checkbox_Texture_Viewer",
+      "Key": "PROJECT_Configuration_Checkbox_Texture_Viewer",
       "Text": "Texture Viewer"
     },
     {
-      "Key": "PRJ_PCM_Checkbox_Texture_Viewer_TT",
+      "Key": "PROJECT_Configuration_Checkbox_Texture_Viewer_TT",
       "Text": "If enabled, the Texture Viewer and associated data will be initialized for this project."
     },
     {
-      "Key": "PRJ_PCM_Checkbox_File_Browser",
+      "Key": "PROJECT_Configuration_Checkbox_File_Browser",
       "Text": "File Browser"
     },
     {
-      "Key": "PRJ_PCM_Checkbox_File_Browser_TT",
+      "Key": "PROJECT_Configuration_Checkbox_File_Browser_TT",
       "Text": "If enabled, the File Browser and associated data will be initialized for this project."
     },
     {
-      "Key": "PRJ_PCM_Checkbox_Material_Data",
+      "Key": "PROJECT_Configuration_Checkbox_Material_Data",
       "Text": "Material Data"
     },
     {
-      "Key": "PRJ_PCM_Checkbox_Material_Data_TT",
+      "Key": "PROJECT_Configuration_Checkbox_Material_Data_TT",
       "Text": "If enabled, the Map Editor and Model Editor will load all Material Data, which is required for texturing."
     },
     {
-      "Key": "PRJ_PCM_Header_Project_Name",
+      "Key": "PROJECT_Configuration_Header_Project_Name",
       "Text": "Project Name"
     },
     {
-      "Key": "PRJ_PCM_Header_Project_Name_TT",
+      "Key": "PROJECT_Configuration_Header_Project_Name_TT",
       "Text": "The name of the project."
     },
     {
-      "Key": "PRJ_PCM_Project_Name_Input_Hint",
+      "Key": "PROJECT_Configuration_Project_Name_Input_Hint",
       "Text": "Enter the name of the project..."
     },
     {
-      "Key": "PRJ_PCM_Header_Project_Type",
+      "Key": "PROJECT_Configuration_Header_Project_Type",
       "Text": "Project Type"
     },
     {
-      "Key": "PRJ_PCM_Header_Project_Type_TT",
+      "Key": "PROJECT_Configuration_Header_Project_Type_TT",
       "Text": "The game this project targets."
     },
     {
-      "Key": "PRJ_PCM_Header_Project_Directory",
+      "Key": "PROJECT_Configuration_Header_Project_Directory",
       "Text": "Project Directory"
     },
     {
-      "Key": "PRJ_PCM_Header_Project_Directory_TT",
+      "Key": "PROJECT_Configuration_Header_Project_Directory_TT",
       "Text": "The location of the project.\nHint: for most mods, this is the folder in which the mod's regulation.bin is stored."
     },
     {
-      "Key": "PRJ_PCM_Project_Directory_Path_Hint",
+      "Key": "PROJECT_Configuration_Project_Directory_Path_Hint",
       "Text": "Enter the directory your mod is placed at..."
     },
     {
-      "Key": "PRJ_PCM_Action_Select_Project_Directory",
+      "Key": "PROJECT_Configuration_Action_Select_Project_Directory",
       "Text": "Select Project Directory"
     },
     {
-      "Key": "PRJ_PCM_Action_Select_Project_Directory_TT",
+      "Key": "PROJECT_Configuration_Action_Select_Project_Directory_TT",
       "Text": "Select the directory for the project files."
     },
     {
-      "Key": "PRJ_PCM_Action_Open_Project_Directory",
+      "Key": "PROJECT_Configuration_Action_Open_Project_Directory",
       "Text": "Open Project Directory"
     },
     {
-      "Key": "PRJ_PCM_Action_Open_Project_Directory_TT",
+      "Key": "PROJECT_Configuration_Action_Open_Project_Directory_TT",
       "Text": "Open the current project directory."
     },
     {
-      "Key": "PRJ_PCM_Action_Select_Data_Directory",
+      "Key": "PROJECT_Configuration_Action_Select_Data_Directory",
       "Text": "Select Data Directory"
     },
     {
-      "Key": "PRJ_PCM_Action_Select_Data_Directory_TT",
+      "Key": "PROJECT_Configuration_Action_Select_Data_Directory_TT",
       "Text": "Select the directory for the game data files."
     },
     {
-      "Key": "PRJ_PCM_Action_Open_Data_Directory",
+      "Key": "PROJECT_Configuration_Action_Open_Data_Directory",
       "Text": "Open Data Directory"
     },
     {
-      "Key": "PRJ_PCM_Action_Open_Data_Directory_TT",
+      "Key": "PROJECT_Configuration_Action_Open_Data_Directory_TT",
       "Text": "Open the current data directory."
     },
     {
-      "Key": "PRJ_PCM_Header_Data_Directory",
+      "Key": "PROJECT_Configuration_Header_Data_Directory",
       "Text": "Data Directory"
     },
     {
-      "Key": "PRJ_PCM_Header_Data_Directory_TT_Base",
+      "Key": "PROJECT_Configuration_Header_Data_Directory_TT_Base",
       "Text": "The location of the game data."
     },
     {
-      "Key": "PRJ_PCM_Header_Data_Directory_TT_DES",
+      "Key": "PROJECT_Configuration_Header_Data_Directory_TT_DES",
       "Text": "\nSelect the USRDIR folder."
     },
     {
-      "Key": "PRJ_PCM_Header_Data_Directory_TT_BB",
+      "Key": "PROJECT_Configuration_Header_Data_Directory_TT_BB",
       "Text": "\nSelect the dvdroot_ps4 folder."
     },
     {
-      "Key": "PRJ_PCM_Header_Data_Directory_TT_Default",
+      "Key": "PROJECT_Configuration_Header_Data_Directory_TT_Default",
       "Text": "\nSelect the folder that contains the game executable."
     },
     {
-      "Key": "PRJ_PCM_Data_Directory_Path_Hint",
+      "Key": "PROJECT_Configuration_Data_Directory_Path_Hint",
       "Text": "Enter the directory the game data is stored at..."
     },
     {
-      "Key": "PRJ_PCM_Data_Header_Group_Tag",
+      "Key": "PROJECT_Configuration_Data_Header_Group_Tag",
       "Text": "Group Tag"
     },
     {
-      "Key": "PRJ_PCM_Data_Header_Group_Tag_TT",
+      "Key": "PROJECT_Configuration_Data_Header_Group_Tag_TT",
       "Text": "A tag to apply to this project. Used to group the project under a collapsible section within the selection lists."
     },
     {
-      "Key": "PRJ_PCM_Group_Tag_Hint",
+      "Key": "PROJECT_Configuration_Group_Tag_Hint",
       "Text": "Enter the tag you wish to assign to this project..."
     },
     {
-      "Key": "PRJ_PCM_Dialog_Select_Project_Directory",
+      "Key": "PROJECT_Configuration_Dialog_Select_Project_Directory",
       "Text": "Select Project Directory"
     },
     {
-      "Key": "PRJ_PCM_Dialog_Select_Game_Directory",
+      "Key": "PROJECT_Configuration_Dialog_Select_Game_Directory",
       "Text": "Select Game Directory"
     },
     {
-      "Key": "PRJ_PCM_Action_Select_Project_JSON",
+      "Key": "PROJECT_Configuration_Action_Select_Project_JSON",
       "Text": "Select Project JSON"
     },
     {
-      "Key": "PRJ_PCM_Header_Edit",
+      "Key": "PROJECT_Configuration_Header_Edit",
       "Text": "Edit"
     },
     {
-      "Key": "PRJ_PCM_Header_View",
+      "Key": "PROJECT_Configuration_Header_View",
       "Text": "View"
     },
     {
-      "Key": "PRJ_PCM_View_Project_List",
+      "Key": "PROJECT_Configuration_View_Project_List",
       "Text": "Project List"
     },
     {
-      "Key": "PRJ_PCM_View_Project_Configuration",
+      "Key": "PROJECT_Configuration_View_Project_Configuration",
       "Text": "Project Configuration"
     },
     {
-      "Key": "PRJ_PCM_View_Project_Aliases",
+      "Key": "PROJECT_Configuration_View_Project_Aliases",
       "Text": "Project Aliases"
     },
     {
-      "Key": "PRJ_PCM_View_Project_Enums",
+      "Key": "PROJECT_Configuration_View_Project_Enums",
       "Text": "Project Enums"
     }
   ]

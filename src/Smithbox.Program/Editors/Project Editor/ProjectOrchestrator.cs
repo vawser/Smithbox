@@ -176,7 +176,7 @@ public class ProjectOrchestrator : IDisposable
 
                     if (curProjectDescriptor == null)
                     {
-                        Smithbox.LogError(this, LOC.Get("PRJ_STP_Load_Project_FAIL", entry));
+                        Smithbox.LogError(this, LOC.Get("PROJECT_Setup_Load_Project_FAIL", entry));
                     }
                     else
                     {
@@ -188,7 +188,7 @@ public class ProjectOrchestrator : IDisposable
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, LOC.Get("PRJ_STP_Read_Project_FAIL", entry), e);
+                    Smithbox.LogError(this, LOC.Get("PROJECT_Setup_Read_Project_FAIL", entry), e);
                 }
             }
         }
@@ -262,8 +262,8 @@ public class ProjectOrchestrator : IDisposable
 
         SetProgress(new ProjectLoadProgress
         {
-            PhaseLabel = LOC.Get("PRJ_STP_Project_Phase_Start"),
-            StepLabel = LOC.Get("PRJ_STP_Project_Step_Preparing"),
+            PhaseLabel = LOC.Get("PROJECT_Setup_Project_Phase_Start"),
+            StepLabel = LOC.Get("PROJECT_Setup_Project_Step_Preparing"),
             Percent = 0f
         });
 
@@ -290,7 +290,7 @@ public class ProjectOrchestrator : IDisposable
 
         SetProgress(new ProjectLoadProgress
         {
-            PhaseLabel = LOC.Get("PRJ_STP_Project_Phase_Complete"),
+            PhaseLabel = LOC.Get("PROJECT_Setup_Project_Phase_Complete"),
             StepLabel = "",
             Percent = 1f
         });
@@ -362,8 +362,8 @@ public class ProjectOrchestrator : IDisposable
 
         SetProgress(new ProjectLoadProgress
         {
-            PhaseLabel = LOC.Get("PRJ_STP_Project_Phase_Start"),
-            StepLabel = LOC.Get("PRJ_STP_Project_Step_Preparing"),
+            PhaseLabel = LOC.Get("PROJECT_Setup_Project_Phase_Start"),
+            StepLabel = LOC.Get("PROJECT_Setup_Project_Step_Preparing"),
             Percent = 0f
         });
 
@@ -385,7 +385,7 @@ public class ProjectOrchestrator : IDisposable
 
         SetProgress(new ProjectLoadProgress
         {
-            PhaseLabel = LOC.Get("PRJ_STP_Project_Phase_Complete"),
+            PhaseLabel = LOC.Get("PROJECT_Setup_Project_Phase_Complete"),
             StepLabel = "",
             Percent = 1f
         });
@@ -443,7 +443,7 @@ public class ProjectOrchestrator : IDisposable
             }
             catch (Exception e)
             {
-                Smithbox.LogError(this, LOC.Get("PRJ_STP_Read_Legacy_Project_FAIL", path), e);
+                Smithbox.LogError(this, LOC.Get("PROJECT_Setup_Read_Legacy_Project_FAIL", path), e);
             }
         }
     }

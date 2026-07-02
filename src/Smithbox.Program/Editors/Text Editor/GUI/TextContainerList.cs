@@ -161,8 +161,9 @@ public class TextContainerList
         {
             var orderedList = Project.Handler.TextData.PrimaryBank.Containers.OrderBy(e => e.Key);
 
+            var displayName = LOC.Get(category.GetDisplayName());
             // Category Header
-            if (ImGui.CollapsingHeader($"{category.GetDisplayName()}", flags))
+            if (ImGui.CollapsingHeader($"{displayName}##{category.GetDisplayName()}", flags))
             {
                 // Get relevant containers for each category
                 foreach (var (fileEntry, info) in orderedList)

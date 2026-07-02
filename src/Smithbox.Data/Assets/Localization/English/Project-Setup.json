@@ -1,124 +1,124 @@
 {
   "Entries": [
     {
-      "Key": "PRJ_STP_Failed_Init_Undefined_Type",
-      "Text": "[Project] Project initialization failed. Project Type is undefined."
+      "Key": "PROJECT_Setup_Failed_Init_Undefined_Type",
+      "Text": "Project initialization failed. Project Type is undefined."
     },
     {
-      "Key": "PRJ_STP_Failed_Init_Bad_Project_Path",
-      "Text": "[Project] Project initialization failed. Project path does not exist: {0}"
+      "Key": "PROJECT_Setup_Failed_Init_Bad_Project_Path",
+      "Text": "Project initialization failed. Project path does not exist: {0}"
     },
     {
-      "Key": "PRJ_STP_Failed_Init_Bad_Data_Path",
-      "Text": "[Project] Project initialization failed. Data path does not exist: {0}"
+      "Key": "PROJECT_Setup_Failed_Init_Bad_Data_Path",
+      "Text": "Project initialization failed. Data path does not exist: {0}"
     },
     {
-      "Key": "PRJ_STP_Failed_Init_Failed_DLL_Setup",
-      "Text": "[Project] Failed to setup DLLs"
+      "Key": "PROJECT_Setup_Failed_Init_Failed_DLL_Setup",
+      "Text": "Failed to setup DLLs"
     },
     {
-      "Key": "PRJ_STP_Failed_Init_Failed_VFS_Setup",
-      "Text": "[Project] Failed to setup VFS"
+      "Key": "PROJECT_Setup_Failed_Init_Failed_VFS_Setup",
+      "Text": "Failed to setup VFS"
     },
     {
-      "Key": "PRJ_STP_Failed_Init_Failed_Editor_Stub_Setup",
-      "Text": "[Project] Failed to setup editor stubs"
+      "Key": "PROJECT_Setup_Failed_Init_Failed_Editor_Stub_Setup",
+      "Text": "Failed to setup editor stubs"
     },
     {
-      "Key": "PRJ_STP_Failed_Init_Failed_Locator_Setup",
-      "Text": "[Project] Failed to setup file locator"
+      "Key": "PROJECT_Setup_Failed_Init_Failed_Locator_Setup",
+      "Text": "Failed to setup file locator"
     },
     {
-      "Key": "PRJ_STP_Failed_Init_Failed_Project_Data_Setup",
-      "Text": "[Project] Failed to setup project data"
+      "Key": "PROJECT_Setup_Failed_Init_Failed_Project_Data_Setup",
+      "Text": "Failed to setup project data"
     },
     {
-      "Key": "PRJ_STP_Failed_Init_Failed_Project_Editor_Setup",
-      "Text": "[Project] Failed to setup editors"
+      "Key": "PROJECT_Setup_Failed_Init_Failed_Project_Editor_Setup",
+      "Text": "Failed to setup editors"
     },
     {
-      "Key": "PRJ_STP_Progress_Phase_Init_Project",
+      "Key": "PROJECT_Setup_Progress_Phase_Init_Project",
       "Text": "Initializing Project"
     },
     {
-      "Key": "PRJ_STP_Progress_Step_Setup_VFS",
+      "Key": "PROJECT_Setup_Progress_Step_Setup_VFS",
       "Text": "Setting up VFS"
     },
     {
-      "Key": "PRJ_STP_Progress_Step_Setup_Editor_Stub",
+      "Key": "PROJECT_Setup_Progress_Step_Setup_Editor_Stub",
       "Text": "Initializing editor stubs"
     },
     {
-      "Key": "PRJ_STP_Progress_Step_Index_Project_Files",
+      "Key": "PROJECT_Setup_Progress_Step_Index_Project_Files",
       "Text": "Indexing project files"
     },
     {
-      "Key": "PRJ_STP_Progress_Step_Load_Project_Data",
+      "Key": "PROJECT_Setup_Progress_Step_Load_Project_Data",
       "Text": "Loading project data"
     },
     {
-      "Key": "PRJ_STP_Progress_Step_Load_Project_Editors",
+      "Key": "PROJECT_Setup_Progress_Step_Load_Project_Editors",
       "Text": "Loading project editors"
     },
     {
-      "Key": "PRJ_STP_Progress_Step_Finalizing",
+      "Key": "PROJECT_Setup_Progress_Step_Finalizing",
       "Text": "Finalizing"
     },
     {
-      "Key": "PRJ_STP_AutoSave_Triggered",
-      "Text": "[Project] Auto-save triggered."
+      "Key": "PROJECT_Setup_AutoSave_Triggered",
+      "Text": "Auto-save triggered."
     },
     {
-      "Key": "PRJ_STP_AutoSave_Failed",
-      "Text": "[Project] Auto-save failed."
+      "Key": "PROJECT_Setup_AutoSave_Failed",
+      "Text": "Auto-save failed."
     },
     {
-      "Key": "PRJ_STP_Locator_Init_Project",
+      "Key": "PROJECT_Setup_Locator_Init_Project",
       "Text": "Initializing Project"
     },
     {
-      "Key": "PRJ_STP_Locator_Compile_Root_Dir",
+      "Key": "PROJECT_Setup_Locator_Compile_Root_Dir",
       "Text": "Compiling root file directory"
     },
     {
-      "Key": "PRJ_STP_Locator_Compile_Project_Dir",
+      "Key": "PROJECT_Setup_Locator_Compile_Project_Dir",
       "Text": "Compiling project file directory"
     },
     {
-      "Key": "PRJ_STP_Locator_Compile_Editor_Dir",
+      "Key": "PROJECT_Setup_Locator_Compile_Editor_Dir",
       "Text": "Compiling editor file directory"
     },
     {
-      "Key": "PRJ_STP_File_Directory_Derserialize_FAIL",
+      "Key": "PROJECT_Setup_File_Directory_Derserialize_FAIL",
       "Text": "Failed to deserialize the file dictionary: {0}"
     },
     {
-      "Key": "PRJ_STP_File_Directory_Read_FAIL",
+      "Key": "PROJECT_Setup_File_Directory_Read_FAIL",
       "Text": "Failed to read the file dictionary: {0}"
     },
     {
-      "Key": "PRJ_STP_Load_Project_FAIL",
-      "Text": "[Project] Failed to load project: {0}"
+      "Key": "PROJECT_Setup_Load_Project_FAIL",
+      "Text": "Failed to load project: {0}"
     },
     {
-      "Key": "PRJ_STP_Read_Project_FAIL",
-      "Text": "[Project] Failed to read project: {0}"
+      "Key": "PROJECT_Setup_Read_Project_FAIL",
+      "Text": "Failed to read project: {0}"
     },
     {
-      "Key": "PRJ_STP_Project_Phase_Start",
+      "Key": "PROJECT_Setup_Project_Phase_Start",
       "Text": "Starting Project"
     },
     {
-      "Key": "PRJ_STP_Project_Step_Preparing",
+      "Key": "PROJECT_Setup_Project_Step_Preparing",
       "Text": "Preparing"
     },
     {
-      "Key": "PRJ_STP_Project_Phase_Complete",
+      "Key": "PROJECT_Setup_Project_Phase_Complete",
       "Text": "Complete"
     },
     {
-      "Key": "PRJ_STP_Read_Legacy_Project_FAIL",
-      "Text": "[Project] Failed to read legacy project JSON: {0}"
+      "Key": "PROJECT_Setup_Read_Legacy_Project_FAIL",
+      "Text": "Failed to read legacy project JSON: {0}"
     }
   ]
 }

@@ -147,31 +147,31 @@ public class TextDataTransferTool
     {
         var curView = Editor.ViewHandler.ActiveView;
 
-        if (ImGui.BeginMenu("Import"))
+        if (ImGui.BeginMenu($"{LOC.Get("TEXT_DataTransfer_Header_Import")}##importMenuHeader"))
         {
-            if (ImGui.BeginMenu("File", curView.Selection.SelectedContainerWrapper != null))
+            if (ImGui.BeginMenu($"{LOC.Get("TEXT_DataTransfer_Header_Import_Container")}##containerImport", curView.Selection.SelectedContainerWrapper != null))
             {
                 curView.FmgImporter.DisplayImportList(FmgImportType.Container);
 
                 ImGui.EndMenu();
             }
-            UIHelper.Tooltip("Import the selected text file on the container level, replacing all FMGs and their associated entries (if applicable).");
+            UIHelper.Tooltip(LOC.Get("TEXT_DataTransfer_Import_Container_TT"));
 
-            if (ImGui.BeginMenu("Text File", curView.Selection.SelectedFmgWrapper != null))
+            if (ImGui.BeginMenu($"{LOC.Get("TEXT_DataTransfer_Header_Import_Text_File")}##textFileImport", curView.Selection.SelectedFmgWrapper != null))
             {
                 curView.FmgImporter.DisplayImportList(FmgImportType.FMG);
 
                 ImGui.EndMenu();
             }
-            UIHelper.Tooltip("Import the selected text file on the FMG level, replacing all associated entries (if applicable).");
+            UIHelper.Tooltip(LOC.Get("TEXT_DataTransfer_Import_Text_File_TT"));
 
-            if (ImGui.BeginMenu("Text Entry", curView.Selection._selectedFmgEntry != null))
+            if (ImGui.BeginMenu($"{LOC.Get("TEXT_DataTransfer_Header_Import_Text_Entry")}##textEntryImport", curView.Selection._selectedFmgEntry != null))
             {
                 curView.FmgImporter.DisplayImportList(FmgImportType.FMG_Entries);
 
                 ImGui.EndMenu();
             }
-            UIHelper.Tooltip("Import the selected text file on the FMG Entry level, replacing all matching entries.");
+            UIHelper.Tooltip(LOC.Get("TEXT_DataTransfer_Import_Text_Entry_TT"));
 
             ImGui.EndMenu();
         }
@@ -181,7 +181,7 @@ public class TextDataTransferTool
     #region Export
     public void ExportTab()
     {
-        if (ImGui.BeginTabItem($"Export"))
+        if (ImGui.BeginTabItem($"{LOC.Get("TEXT_DataTransfer_Tab_Export")}##exportTab"))
         {
             UIHelper.WrappedText("Use this section to export JSON data from your current project.");
 

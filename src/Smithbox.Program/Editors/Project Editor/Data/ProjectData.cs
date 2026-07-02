@@ -35,12 +35,12 @@ public class ProjectData : IDisposable
         if (aliasesSetup)
         {
             Smithbox.Log(this,
-                LOC.Get("PRJ_DAT_Setup_Aliases_PASS", Project.Descriptor.ProjectName));
+                LOC.Get("PROJECT_Data_Setup_Aliases_PASS", Project.Descriptor.ProjectName));
         }
         else
         {
             Smithbox.LogError(this,
-                LOC.Get("PRJ_DAT_Setup_Aliases_FAIL", Project.Descriptor.ProjectName));
+                LOC.Get("PROJECT_Data_Setup_Aliases_FAIL", Project.Descriptor.ProjectName));
         }
 
         return true;
@@ -55,12 +55,12 @@ public class ProjectData : IDisposable
         if (aliasesSetup)
         {
             Smithbox.Log(this,
-                LOC.Get("PRJ_DAT_Reload_Aliases_PASS", Project.Descriptor.ProjectName));
+                LOC.Get("PROJECT_Data_Reload_Aliases_PASS", Project.Descriptor.ProjectName));
         }
         else
         {
             Smithbox.LogError(this,
-                LOC.Get("PRJ_DAT_Reload_Aliases_FAIL", Project.Descriptor.ProjectName));
+                LOC.Get("PROJECT_Data_Reload_Aliases_FAIL", Project.Descriptor.ProjectName));
         }
     }
 
@@ -111,13 +111,13 @@ public class ProjectData : IDisposable
                 catch (Exception e)
                 {
                     Smithbox.LogError(this,
-                        LOC.Get("PRJ_DAT_Deseralize_Alias_FAIL", sourceFile), e);
+                        LOC.Get("PROJECT_Data_Deseralize_Alias_FAIL", sourceFile), e);
                 }
             }
             catch (Exception e)
             {
                 Smithbox.LogError(this,
-                    LOC.Get("PRJ_DAT_Read_Alias_FAIL", sourceFile), e);
+                    LOC.Get("PROJECT_Data_Read_Alias_FAIL", sourceFile), e);
             }
         }
 

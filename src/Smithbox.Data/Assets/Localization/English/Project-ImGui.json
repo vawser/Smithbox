@@ -1,31 +1,31 @@
 {
   "Entries": [
     {
-      "Key": "PRJ_Window_Project_Editor",
+      "Key": "PROJECT_Window_Project_Editor",
       "Text": "Projects"
     },
     {
-      "Key": "PRJ_Window_Project_Metadata_Editor",
+      "Key": "PROJECT_Window_Project_Metadata_Editor",
       "Text": "Metadata"
     },
     {
-      "Key": "PRJ_Window_Project_View",
+      "Key": "PROJECT_Window_Project_View",
       "Text": "Project View"
     },
     {
-      "Key": "PRJ_Window_Project_Metadata_View",
+      "Key": "PROJECT_Window_Project_Metadata_View",
       "Text": "Metadata View"
     },
     {
-      "Key": "PRJ_Window_Active_Projects",
+      "Key": "PROJECT_Window_Active_Projects",
       "Text": "Active Projects"
     },
     {
-      "Key": "PRJ_Window_Available_Projects",
+      "Key": "PROJECT_Window_Available_Projects",
       "Text": "Available Projects"
     },
     {
-      "Key": "PRJ_Window_Project_Configuration",
+      "Key": "PROJECT_Window_Project_Configuration",
       "Text": "Project Configuration"
     }
   ]
