@@ -192,6 +192,13 @@ public class ParamMerger
 
         ParamMerge_InProgress = true;
 
+        if (!Editor.Project.Handler.ParamData.AuxBanks.ContainsKey(ParamMerge_TargetProject.Descriptor.ProjectName))
+        {
+            Smithbox.Log<ParamMerger>($"Target project: {ParamMerge_TargetProject.Descriptor.ProjectName} is not loaded, cannot merge.");
+            ParamMerge_InProgress = false;
+            return;
+        }
+
         var auxBank = Editor.Project.Handler.ParamData.AuxBanks[ParamMerge_TargetProject.Descriptor.ProjectName];
 
         // ParamSearchEngine: auxparam {ParamMerge_TargetProject.ProjectName}
