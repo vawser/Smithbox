@@ -1,0 +1,384 @@
+{
+  "Entries": [
+    {
+      "Key": "PRJ_PCM_Header_Active_Projects",
+      "Text": "活动项目"
+    },
+    {
+      "Key": "PRJ_PCM_Header_Active_Projects_TT",
+      "Text": "此会话中已加载的项目。"
+    },
+    {
+      "Key": "PRJ_PCM_Header_Global_Actions",
+      "Text": "操作"
+    },
+    {
+      "Key": "PRJ_PCM_Header_Available_Projects",
+      "Text": "可用项目"
+    },
+    {
+      "Key": "PRJ_PCM_Header_Available_Projects_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PRJ_PCM_Header_Global_Actions_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PRJ_PCM_Global_Action_Create_Project",
+      "Text": "创建项目"
+    },
+    {
+      "Key": "PRJ_PCM_Global_Action_Create_Project_TT",
+      "Text": "创建新项目条目，并将项目配置输入设置为\"创建\"。"
+    },
+    {
+      "Key": "PRJ_PCM_Global_Action_Create_Project_From_JSON",
+      "Text": "从 JSON 创建项目"
+    },
+    {
+      "Key": "PRJ_PCM_Global_Action_Create_Project_From_JSON_TT",
+      "Text": "从 \"project.json\" 文件创建新项目条目。"
+    },
+    {
+      "Key": "PRJ_PCM_Global_Context_Load",
+      "Text": "加载"
+    },
+    {
+      "Key": "PRJ_PCM_Global_Context_Reload",
+      "Text": "重新加载"
+    },
+    {
+      "Key": "PRJ_PCM_Global_Context_Unload",
+      "Text": "卸载"
+    },
+    {
+      "Key": "PRJ_PCM_Global_Context_Header_Information",
+      "Text": "信息"
+    },
+    {
+      "Key": "PRJ_PCM_Global_Context_Copy_GUID",
+      "Text": "复制 GUID"
+    },
+    {
+      "Key": "PRJ_PCM_Header_Actions",
+      "Text": "操作"
+    },
+    {
+      "Key": "PRJ_PCM_Project_Creation_Block_Create",
+      "Text": "由于以下问题，您无法创建项目："
+    },
+    {
+      "Key": "PRJ_PCM_Project_Creation_Block_Edit",
+      "Text": "由于以下问题，您无法编辑项目："
+    },
+    {
+      "Key": "PRJ_PCM_Invalid_Project_Name",
+      "Text": "项目名称不能为空。"
+    },
+    {
+      "Key": "PRJ_PCM_Invalid_Project_Path",
+      "Text": "项目路径设置为无效路径。"
+    },
+    {
+      "Key": "PRJ_PCM_Invalid_Data_Path",
+      "Text": "数据路径设置为无效路径。"
+    },
+    {
+      "Key": "PRJ_PCM_Invalid_Project_Type",
+      "Text": "项目类型不能为未定义。"
+    },
+    {
+      "Key": "PRJ_PCM_Action_Create_Project",
+      "Text": "创建项目"
+    },
+    {
+      "Key": "PRJ_PCM_Action_Create_Project_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PRJ_PCM_Action_Update_Project",
+      "Text": "更新项目"
+    },
+    {
+      "Key": "PRJ_PCM_Action_Update_Project_TT",
+      "Text": "更新当前选中的项目配置以使用新配置的参数。"
+    },
+    {
+      "Key": "PRJ_PCM_Action_Delete_Project",
+      "Text": "删除项目"
+    },
+    {
+      "Key": "PRJ_PCM_Action_Delete_Project_TT",
+      "Text": "删除当前选中的项目条目。"
+    },
+    {
+      "Key": "PRJ_PCM_Action_Delete_Backup_Files",
+      "Text": "删除备份文件"
+    },
+    {
+      "Key": "PRJ_PCM_Action_Delete_Backup_Files_TT",
+      "Text": "删除当前选中的项目目录中的 .prev 和 .bak 文件。"
+    },
+    {
+      "Key": "PRJ_PCM_Header_ME3",
+      "Text": "ME3"
+    },
+    {
+      "Key": "PRJ_PCM_Action_Launch_Mod",
+      "Text": "启动 Mod"
+    },
+    {
+      "Key": "PRJ_PCM_Action_Launch_Mod_TT",
+      "Text": "使用 ME3 启动此项目。"
+    },
+    {
+      "Key": "PRJ_PCM_Action_Create_Mod_Profile",
+      "Text": "创建配置文件"
+    },
+    {
+      "Key": "PRJ_PCM_Action_Create_Mod_Profile_TT",
+      "Text": "为此项目创建基本的 ME3 配置文件。"
+    },
+    {
+      "Key": "PRJ_PCM_Dialog_Select_ME3_Profile_Dir",
+      "Text": "选择 ME3 配置文件目录"
+    },
+    {
+      "Key": "PRJ_PCM_Dialog_Delete_Backup_Files_List",
+      "Text": "您将删除以下文件：\n{0}"
+    },
+    {
+      "Key": "PRJ_PCM_Header_Available_Editors",
+      "Text": "可用编辑器"
+    },
+    {
+      "Key": "PRJ_PCM_Header_Available_Editors_TT",
+      "Text": "此项目将使用的编辑器。"
+    },
+    {
+      "Key": "PRJ_PCM_Checkbox_Visual_Map_Editor",
+      "Text": "Visual Map 编辑器"
+    },
+    {
+      "Key": "PRJ_PCM_Checkbox_Visual_Map_Editor_TT",
+      "Text": "启用后，Visual Map 编辑器及相关数据将为此项目初始化。"
+    },
+    {
+      "Key": "PRJ_PCM_Checkbox_Map_Data_Editor",
+      "Text": "地图数据编辑器"
+    },
+    {
+      "Key": "PRJ_PCM_Checkbox_Map_Data_Editor_TT",
+      "Text": "启用后，Map Data 编辑器及相关数据将为此项目初始化。"
+    },
+    {
+      "Key": "PRJ_PCM_Checkbox_Model_Editor",
+      "Text": "模型编辑器"
+    },
+    {
+      "Key": "PRJ_PCM_Checkbox_Model_Editor_TT",
+      "Text": "启用后，Model 编辑器及相关数据将为此项目初始化。"
+    },
+    {
+      "Key": "PRJ_PCM_Checkbox_Param_Editor",
+      "Text": "Param 编辑器"
+    },
+    {
+      "Key": "PRJ_PCM_Checkbox_Param_Editor_TT",
+      "Text": "启用后，Param 编辑器及相关数据将为此项目初始化。"
+    },
+    {
+      "Key": "PRJ_PCM_Checkbox_Text_Editor",
+      "Text": "文本编辑器"
+    },
+    {
+      "Key": "PRJ_PCM_Checkbox_Text_Editor_TT",
+      "Text": "启用后，文本编辑器及相关数据将为此项目初始化。"
+    },
+    {
+      "Key": "PRJ_PCM_Checkbox_Anim_Editor",
+      "Text": "动画编辑器"
+    },
+    {
+      "Key": "PRJ_PCM_Checkbox_Anim_Editor_TT",
+      "Text": "启用后，Animation 编辑器及相关数据将为此项目初始化。"
+    },
+    {
+      "Key": "PRJ_PCM_Checkbox_Gparam_Editor",
+      "Text": "Graphics Param 编辑器"
+    },
+    {
+      "Key": "PRJ_PCM_Checkbox_Gparam_Editor_TT",
+      "Text": "启用后，Graphics Param 编辑器及相关数据将为此项目初始化。"
+    },
+    {
+      "Key": "PRJ_PCM_Checkbox_Material_Editor",
+      "Text": "材质编辑器"
+    },
+    {
+      "Key": "PRJ_PCM_Checkbox_Material_Editor_TT",
+      "Text": "启用后，Material 编辑器及相关数据将为此项目初始化。"
+    },
+    {
+      "Key": "PRJ_PCM_Checkbox_Texture_Viewer",
+      "Text": "纹理查看器"
+    },
+    {
+      "Key": "PRJ_PCM_Checkbox_Texture_Viewer_TT",
+      "Text": "启用后，Texture 查看器及相关数据将为此项目初始化。"
+    },
+    {
+      "Key": "PRJ_PCM_Checkbox_File_Browser",
+      "Text": "文件浏览器"
+    },
+    {
+      "Key": "PRJ_PCM_Checkbox_File_Browser_TT",
+      "Text": "启用后，文件浏览器及相关数据将为此项目初始化。"
+    },
+    {
+      "Key": "PRJ_PCM_Checkbox_Material_Data",
+      "Text": "材质数据"
+    },
+    {
+      "Key": "PRJ_PCM_Checkbox_Material_Data_TT",
+      "Text": "启用后，Map 编辑器和 Model 编辑器将加载所有材质数据，这是纹理化所必需的。"
+    },
+    {
+      "Key": "PRJ_PCM_Header_Project_Name",
+      "Text": "项目名称"
+    },
+    {
+      "Key": "PRJ_PCM_Header_Project_Name_TT",
+      "Text": "项目的名称。"
+    },
+    {
+      "Key": "PRJ_PCM_Project_Name_Input_Hint",
+      "Text": "输入项目名称..."
+    },
+    {
+      "Key": "PRJ_PCM_Header_Project_Type",
+      "Text": "项目类型"
+    },
+    {
+      "Key": "PRJ_PCM_Header_Project_Type_TT",
+      "Text": "此项目所针对的游戏。"
+    },
+    {
+      "Key": "PRJ_PCM_Header_Project_Directory",
+      "Text": "项目目录"
+    },
+    {
+      "Key": "PRJ_PCM_Header_Project_Directory_TT",
+      "Text": "项目的位置。\n提示：对于大多数 Mod，这是存储 Mod 的 regulation.bin 的文件夹。"
+    },
+    {
+      "Key": "PRJ_PCM_Project_Directory_Path_Hint",
+      "Text": "输入您的 Mod 所在目录..."
+    },
+    {
+      "Key": "PRJ_PCM_Action_Select_Project_Directory",
+      "Text": "选择项目目录"
+    },
+    {
+      "Key": "PRJ_PCM_Action_Select_Project_Directory_TT",
+      "Text": "选择项目文件的目录。"
+    },
+    {
+      "Key": "PRJ_PCM_Action_Open_Project_Directory",
+      "Text": "打开项目目录"
+    },
+    {
+      "Key": "PRJ_PCM_Action_Open_Project_Directory_TT",
+      "Text": "打开当前项目目录。"
+    },
+    {
+      "Key": "PRJ_PCM_Action_Select_Data_Directory",
+      "Text": "选择数据目录"
+    },
+    {
+      "Key": "PRJ_PCM_Action_Select_Data_Directory_TT",
+      "Text": "选择游戏数据文件的目录。"
+    },
+    {
+      "Key": "PRJ_PCM_Action_Open_Data_Directory",
+      "Text": "打开数据目录"
+    },
+    {
+      "Key": "PRJ_PCM_Action_Open_Data_Directory_TT",
+      "Text": "打开当前数据目录。"
+    },
+    {
+      "Key": "PRJ_PCM_Header_Data_Directory",
+      "Text": "数据目录"
+    },
+    {
+      "Key": "PRJ_PCM_Header_Data_Directory_TT_Base",
+      "Text": "游戏数据的位置。"
+    },
+    {
+      "Key": "PRJ_PCM_Header_Data_Directory_TT_DES",
+      "Text": "\n选择 USRDIR 文件夹。"
+    },
+    {
+      "Key": "PRJ_PCM_Header_Data_Directory_TT_BB",
+      "Text": "\n选择 dvdroot_ps4 文件夹。"
+    },
+    {
+      "Key": "PRJ_PCM_Header_Data_Directory_TT_Default",
+      "Text": "\n选择包含游戏可执行文件的文件夹。"
+    },
+    {
+      "Key": "PRJ_PCM_Data_Directory_Path_Hint",
+      "Text": "输入游戏数据存储的目录..."
+    },
+    {
+      "Key": "PRJ_PCM_Data_Header_Group_Tag",
+      "Text": "组标签"
+    },
+    {
+      "Key": "PRJ_PCM_Data_Header_Group_Tag_TT",
+      "Text": "应用于此项目的标签。用于将项目分组到选择列表中的可折叠部分下。"
+    },
+    {
+      "Key": "PRJ_PCM_Group_Tag_Hint",
+      "Text": "输入您希望分配到此项目的标签..."
+    },
+    {
+      "Key": "PRJ_PCM_Dialog_Select_Project_Directory",
+      "Text": "选择项目目录"
+    },
+    {
+      "Key": "PRJ_PCM_Dialog_Select_Game_Directory",
+      "Text": "选择游戏目录"
+    },
+    {
+      "Key": "PRJ_PCM_Action_Select_Project_JSON",
+      "Text": "选择项目 JSON"
+    },
+    {
+      "Key": "PRJ_PCM_Header_Edit",
+      "Text": "编辑"
+    },
+    {
+      "Key": "PRJ_PCM_Header_View",
+      "Text": "视图"
+    },
+    {
+      "Key": "PRJ_PCM_View_Project_List",
+      "Text": "项目列表"
+    },
+    {
+      "Key": "PRJ_PCM_View_Project_Configuration",
+      "Text": "项目配置"
+    },
+    {
+      "Key": "PRJ_PCM_View_Project_Aliases",
+      "Text": "项目别名"
+    },
+    {
+      "Key": "PRJ_PCM_View_Project_Enums",
+      "Text": "项目枚举"
+    }
+  ]
+}

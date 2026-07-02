@@ -1,0 +1,52 @@
+{
+  "Entries": [
+    {
+      "Key": "ITF_Theme_Missing_Entry",
+      "Text": "主题缺少条目，已将此向量默认设置为 1, 1, 1, 1"
+    },
+    {
+      "Key": "ITF_UI_Failed_Deseralize",
+      "Text": "反序列化 UI JSON 失败。"
+    },
+    {
+      "Key": "ITF_UI_Failed_Read",
+      "Text": "加载 UI 配置失败：{0}。\n已恢复默认配置。"
+    },
+    {
+      "Key": "ITF_Theme_Failed_Deseralize",
+      "Text": "反序列化主题 JSON 失败。"
+    },
+    {
+      "Key": "ITF_Theme_Failed_Read",
+      "Text": "加载主题配置：{0} 失败。"
+    },
+    {
+      "Key": "ITF_Theme_Already_Exists",
+      "Text": "已存在同名的主题。是否覆盖？"
+    },
+    {
+      "Key": "ITF_Theme_Invalid_Filename",
+      "Text": "主题文件名无效。"
+    },
+    {
+      "Key": "ITF_Message_Box_OK",
+      "Text": "确定"
+    },
+    {
+      "Key": "ITF_Message_Box_Cancel",
+      "Text": "取消"
+    },
+    {
+      "Key": "ITF_Message_Box_Yes",
+      "Text": "是"
+    },
+    {
+      "Key": "ITF_Message_Box_No",
+      "Text": "否"
+    },
+    {
+      "Key": "ITF_ImGui_Binding_Error",
+      "Text": "未找到 ID 为 {0} 的已注册 ImGui 绑定"
+    }
+  ]
+}

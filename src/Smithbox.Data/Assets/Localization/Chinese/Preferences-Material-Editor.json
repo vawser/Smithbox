@@ -1,0 +1,12 @@
+{
+  "Entries": [
+    {
+      "Key": "PREF_MaterialEditor_Properties_Display_Community_Names",
+      "Text": "显示社区名称"
+    },
+    {
+      "Key": "PREF_MaterialEditor_Properties_Display_Community_Names_TT",
+      "Text": "启用后，在属性列表中显示社区名称。"
+    }
+  ]
+}

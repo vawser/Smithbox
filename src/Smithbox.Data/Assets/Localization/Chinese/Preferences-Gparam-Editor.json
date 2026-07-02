@@ -1,0 +1,68 @@
+{
+  "Entries": [
+    {
+      "Key": "PREF_GparamEditor_File_List_Display_Aliases",
+      "Text": "显示别名"
+    },
+    {
+      "Key": "PREF_GparamEditor_File_List_Display_Aliases_TT",
+      "Text": "启用后，文件列表中显示别名。"
+    },
+    {
+      "Key": "PREF_GparamEditor_Group_List_Display_Descriptions",
+      "Text": "显示组描述"
+    },
+    {
+      "Key": "PREF_GparamEditor_Group_List_Display_Descriptions_TT",
+      "Text": "启用后，悬停时显示组描述。"
+    },
+    {
+      "Key": "PREF_GparamEditor_Group_List_Display_Empty_Group",
+      "Text": "显示空组"
+    },
+    {
+      "Key": "PREF_GparamEditor_Group_List_Display_Empty_Group_TT",
+      "Text": "启用后，显示没有字段的空组。"
+    },
+    {
+      "Key": "PREF_GparamEditor_Field_List_Display_Descriptions",
+      "Text": "显示字段描述"
+    },
+    {
+      "Key": "PREF_GparamEditor_Field_List_Display_Descriptions_TT",
+      "Text": "启用后，悬停时显示字段描述。"
+    },
+    {
+      "Key": "PREF_GparamEditor_Value_List_Display_Color_Edit_V4",
+      "Text": "显示四位数属性的颜色编辑"
+    },
+    {
+      "Key": "PREF_GparamEditor_Value_List_Display_Color_Edit_V4_TT",
+      "Text": "启用后，四位数类型的属性将显示颜色选择器。"
+    },
+    {
+      "Key": "PREF_GparamEditor_Value_List_Display_Time_Of_Day_Column",
+      "Text": "显示时段列"
+    },
+    {
+      "Key": "PREF_GparamEditor_Value_List_Display_Time_Of_Day_Column_TT",
+      "Text": "启用后，数值部分会显示时段列。"
+    },
+    {
+      "Key": "PREF_GparamEditor_Value_List_Display_Information_Column",
+      "Text": "显示信息列"
+    },
+    {
+      "Key": "PREF_GparamEditor_Value_List_Display_Information_Column_TT",
+      "Text": "启用后，数值部分会显示信息列。"
+    },
+    {
+      "Key": "PREF_GparamEditor_Color_Edit_Mode",
+      "Text": "颜色编辑显示模式"
+    },
+    {
+      "Key": "PREF_GparamEditor_Color_Edit_Mode_TT",
+      "Text": "决定颜色编辑如何显示数值数据。"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "Entries": [
+    {
+      "Key": "PRJ_Window_Project_Editor",
+      "Text": "项目"
+    },
+    {
+      "Key": "PRJ_Window_Project_Metadata_Editor",
+      "Text": "元数据"
+    },
+    {
+      "Key": "PRJ_Window_Project_View",
+      "Text": "项目视图"
+    },
+    {
+      "Key": "PRJ_Window_Project_Metadata_View",
+      "Text": "元数据视图"
+    },
+    {
+      "Key": "PRJ_Window_Active_Projects",
+      "Text": "活动项目"
+    },
+    {
+      "Key": "PRJ_Window_Available_Projects",
+      "Text": "可用项目"
+    },
+    {
+      "Key": "PRJ_Window_Project_Configuration",
+      "Text": "项目配置"
+    }
+  ]
+}

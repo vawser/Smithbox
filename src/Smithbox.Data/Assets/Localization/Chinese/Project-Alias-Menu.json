@@ -1,0 +1,200 @@
+{
+  "Entries": [
+    {
+      "Key": "PRJ_ALI_Error_Invalid_Project",
+      "Text": "必须选择一个有效的项目才能使用此编辑器。"
+    },
+    {
+      "Key": "PRJ_ALI_Error_No_Loaded_Project",
+      "Text": "必须选择一个已加载的项目才能使用此编辑器。"
+    },
+    {
+      "Key": "PRJ_ALI_Menu_File",
+      "Text": "文件"
+    },
+    {
+      "Key": "PRJ_ALI_Menu_Save_Local_Aliases",
+      "Text": "保存本地别名"
+    },
+    {
+      "Key": "PRJ_ALI_Menu_Save_Base_Aliases",
+      "Text": "保存基础别名"
+    },
+    {
+      "Key": "PRJ_ALI_Menu_Data_Source",
+      "Text": "数据源"
+    },
+    {
+      "Key": "PRJ_ALI_Menu_Base_Source",
+      "Text": "基础源"
+    },
+    {
+      "Key": "PRJ_ALI_Menu_Project_Source",
+      "Text": "项目源"
+    },
+    {
+      "Key": "PRJ_ALI_Menu_Base_Source_TT",
+      "Text": "启用后，Smithbox 的源文件将包含在别名列表中。"
+    },
+    {
+      "Key": "PRJ_ALI_Menu_Project_Source_TT",
+      "Text": "启用后，此项目独有的源文件将包含在别名列表中。"
+    },
+    {
+      "Key": "PRJ_ALI_Menu_Options",
+      "Text": "选项"
+    },
+    {
+      "Key": "PRJ_ALI_Menu_Save",
+      "Text": "保存"
+    },
+    {
+      "Key": "PRJ_ALI_Menu_Save_Shortcut_Saves_To_Base_Source",
+      "Text": "保存快捷键应用于基础源"
+    },
+    {
+      "Key": "PRJ_ALI_Menu_Save_Shortcut_Saves_To_Base_Source_TT",
+      "Text": "启用后，保存快捷键将保存到基础别名而非本地别名。"
+    },
+    {
+      "Key": "PRJ_ALI_Menu_Add",
+      "Text": "添加"
+    },
+    {
+      "Key": "PRJ_ALI_Menu_Insert_New_At_Top",
+      "Text": "在顶部插入新项"
+    },
+    {
+      "Key": "PRJ_ALI_Menu_Insert_New_At_Top_TT",
+      "Text": "启用后，通过图标按钮添加新别名将放置在列表顶部而非底部。"
+    },
+    {
+      "Key": "PRJ_ALI_Menu_List_Copy",
+      "Text": "列表复制"
+    },
+    {
+      "Key": "PRJ_ALI_Header_Export_Delimiter",
+      "Text": "导出分隔符"
+    },
+    {
+      "Key": "PRJ_ALI_Header_Export_Delimiter_TT",
+      "Text": "设置通过\"将条目复制为文本\"导出别名列表时使用的分隔符。"
+    },
+    {
+      "Key": "PRJ_ALI_Checkbox_Ignore_Empty_On_Export",
+      "Text": "导出时忽略空项"
+    },
+    {
+      "Key": "PRJ_ALI_Checkbox_Ignore_Empty_On_Export_TT",
+      "Text": "启用后，\"将条目复制为文本\"操作将忽略空条目。"
+    },
+    {
+      "Key": "PRJ_ALI_Menu_Data_Source",
+      "Text": "保存"
+    },
+    {
+      "Key": "PRJ_ALI_Menu_Regenerate_Project_Source",
+      "Text": "重新生成项目源"
+    },
+    {
+      "Key": "PRJ_ALI_Dialog_Delete_Current_Alias",
+      "Text": "是否删除此项目的当前别名源？"
+    },
+    {
+      "Key": "PRJ_ALI_Menu_Regenerate_Project_Source_TT",
+      "Text": "重新生成与此项目关联的项目源以使用最新的基础源。注意：这将删除项目特有的所有自定义条目。"
+    },
+    {
+      "Key": "PRJ_ALI_Menu_Edit",
+      "Text": "编辑"
+    },
+    {
+      "Key": "PRJ_ALI_Menu_Undo",
+      "Text": "撤销"
+    },
+    {
+      "Key": "PRJ_ALI_Menu_Undo_All",
+      "Text": "全部撤销"
+    },
+    {
+      "Key": "PRJ_ALI_Menu_Redo",
+      "Text": "重做"
+    },
+    {
+      "Key": "PRJ_ALI_Header_Aliases",
+      "Text": "别名"
+    },
+    {
+      "Key": "PRJ_ALI_Header_Aliases_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PRJ_ALI_Action_Copy_Entries_As_Text",
+      "Text": "将条目复制为文本"
+    },
+    {
+      "Key": "PRJ_ALI_Action_Copy_Entries_As_Table",
+      "Text": "将条目复制为表格"
+    },
+    {
+      "Key": "PRJ_ALI_Select_Alias_Type",
+      "Text": "请选择别名类型。"
+    },
+    {
+      "Key": "PRJ_ALI_Action_Add_Alias",
+      "Text": "添加别名"
+    },
+    {
+      "Key": "PRJ_ALI_Action_Add_Alias_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PRJ_ALI_Alias_Filter_Hint",
+      "Text": "按 ID、名称或标签筛选..."
+    },
+    {
+      "Key": "PRJ_ALI_Button_Add_Alias_TT",
+      "Text": "添加新的别名条目。"
+    },
+    {
+      "Key": "PRJ_ALI_Button_Sort_Aliases_TT",
+      "Text": "按字母数字顺序排序别名列表。"
+    },
+    {
+      "Key": "PRJ_ALI_Button_Read_Only_Toggle_TT",
+      "Text": "切换别名是否可编辑。\n当前模式：{0}"
+    },
+    {
+      "Key": "PRJ_ALI_Alias_Read_Only_Active",
+      "Text": "只读"
+    },
+    {
+      "Key": "PRJ_ALI_Alias_Read_Only_Inactive",
+      "Text": "编辑"
+    },
+    {
+      "Key": "PRJ_ALI_Alias_Count",
+      "Text": "条目 ({0})"
+    },
+    {
+      "Key": "PRJ_ALI_Drag_Action_TT",
+      "Text": "移动 {0}"
+    },
+    {
+      "Key": "PRJ_ALI_Context_Duplicate",
+      "Text": "复制"
+    },
+    {
+      "Key": "PRJ_ALI_Context_Delete",
+      "Text": "删除"
+    },
+    {
+      "Key": "PRJ_ALI_Saved_Project_Aliases",
+      "Text": "已保存项目别名。"
+    },
+    {
+      "Key": "PRJ_ALI_Saved_Base_Aliases",
+      "Text": "已保存基础别名。"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "Entries": [
+    {
+      "Key": "LOG_Action_Log",
+      "Text": "事件日志"
+    },
+    {
+      "Key": "LOG_Error_Log",
+      "Text": "错误日志"
+    },
+    {
+      "Key": "LOG_Toggle_Display",
+      "Text": "切换 {0} 日志记录器的显示。"
+    },
+    {
+      "Key": "LOG_Clear_Log",
+      "Text": "清除"
+    },
+    {
+      "Key": "LOG_Clear_Log_TT",
+      "Text": "清除所有日志条目。"
+    },
+    {
+      "Key": "LOG_Copy_To_Clipboard",
+      "Text": "复制到剪贴板"
+    },
+    {
+      "Key": "LOG_Copy_To_Clipboard_TT",
+      "Text": "将所有日志条目复制到剪贴板。"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "Entries": [
+    {
+      "Key": "SYS_ENUM_Rendering_OpenGL",
+      "Text": "OpenGL"
+    },
+    {
+      "Key": "SYS_ENUM_Rendering_Vulkan",
+      "Text": "Vulkan"
+    }
+  ]
+}

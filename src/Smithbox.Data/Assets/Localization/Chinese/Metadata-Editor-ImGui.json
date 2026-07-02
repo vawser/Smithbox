@@ -1,0 +1,24 @@
+{
+  "Entries": [
+    {
+      "Key": "META_Window_Mode_Selection",
+      "Text": "编辑器模式"
+    },
+    {
+      "Key": "META_Window_Project_Aliases",
+      "Text": "项目别名"
+    },
+    {
+      "Key": "META_Window_Project_Enums",
+      "Text": "项目枚举"
+    },
+    {
+      "Key": "META_Window_Param_Def_Editor",
+      "Text": "PARAMDEF 编辑器"
+    },
+    {
+      "Key": "META_Window_Param_Meta_Editor",
+      "Text": "PARAM 元数据编辑器"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "Entries": [
+    {
+      "Key": "TEXT_EntryList_Select_FMG_First",
+      "Text": "请先选择一个FMG以查看条目。"
+    },
+    {
+      "Key": "TEXT_EntryList_Header_Entries",
+      "Text": "条目"
+    },
+    {
+      "Key": "TEXT_EntryList_Header_Entries_TT",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_EntryList_Focus_Selection_TT",
+      "Text": "聚焦当前选中的条目。\n快捷键: {0}"
+    },
+    {
+      "Key": "TEXT_EntryList_Column_Header_ID",
+      "Text": "ID"
+    },
+    {
+      "Key": "TEXT_EntryList_Column_Header_Name",
+      "Text": "名称"
+    },
+    {
+      "Key": "TEXT_EntryList_Drag_Drop_Text",
+      "Text": "条目 {0}"
+    }
+  ]
+}

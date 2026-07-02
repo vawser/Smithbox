@@ -1,0 +1,76 @@
+{
+  "Entries": [
+    {
+      "Key": "TEXT_DataTransfer_Menu_Header",
+      "Text": "数据传输"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Tab_Import",
+      "Text": "导入"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Import_Hint",
+      "Text": "使用此部分导入JSON数据，将数据应用到当前项目。"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Header_Import_Type",
+      "Text": "导入类型"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Header_Import_Type_TT",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_DataTransfer_Header_Actions",
+      "Text": "操作"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Header_Actions_TT",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_DataTransfer_Action_Import_From_File",
+      "Text": "从文件导入"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Action_Import_From_File_TT",
+      "Text": "从JSON文件导入文本。"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Select_Text_JSON",
+      "Text": "选择文本JSON"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Invalid_Text_JSON",
+      "Text": "选择的文件无效。"
+    },
+    {
+      "Key": "TEXT_DataTransfer_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_DataTransfer_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_DataTransfer_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_DataTransfer_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_DataTransfer_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_DataTransfer_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_DataTransfer_",
+      "Text": ""
+    }
+  ]
+}

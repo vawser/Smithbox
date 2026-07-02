@@ -1,0 +1,48 @@
+{
+  "Entries": [
+    {
+      "Key": "TEXVIEW_InternalFileList_Header_Files",
+      "Text": "文件"
+    },
+    {
+      "Key": "TEXVIEW_InternalFileList_Header_Files_TT",
+      "Text": ""
+    },
+    {
+      "Key": "TEXVIEW_InternalFileList_Context_Header_Export",
+      "Text": "导出"
+    },
+    {
+      "Key": "TEXVIEW_InternalFileList_Context_TPF",
+      "Text": "TPF"
+    },
+    {
+      "Key": "TEXVIEW_InternalFileList_Context_TPF_TT",
+      "Text": "将此文件导出到当前导出目录: {0}"
+    },
+    {
+      "Key": "TEXVIEW_InternalFileList_Context_All_Textures",
+      "Text": "所有纹理"
+    },
+    {
+      "Key": "TEXVIEW_InternalFileList_Context_All_Textures_TT",
+      "Text": "将此文件中的所有纹理文件导出到当前导出目录: {0}"
+    },
+    {
+      "Key": "TEXVIEW_InternalFileList_Context_Copy_Path",
+      "Text": "复制路径"
+    },
+    {
+      "Key": "TEXVIEW_InternalFileList_Context_Copy_Path_TT",
+      "Text": "复制文件路径到剪贴板。"
+    },
+    {
+      "Key": "TEXVIEW_InternalFileList_Context_Copy_Filename",
+      "Text": "复制文件名"
+    },
+    {
+      "Key": "TEXVIEW_InternalFileList_Context_Copy_Filename_TT",
+      "Text": "复制文件名到剪贴板。"
+    }
+  ]
+}

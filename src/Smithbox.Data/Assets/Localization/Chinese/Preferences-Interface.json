@@ -1,0 +1,528 @@
+{
+  "Entries": [
+    {
+      "Key": "PREF_Interface_UI_Scale",
+      "Text": "界面缩放"
+    },
+    {
+      "Key": "PREF_Interface_UI_Scale_TT",
+      "Text": "调整 Smithbox 所有界面的缩放比例。"
+    },
+    {
+      "Key": "PREF_Interface_Scale_by_DPI",
+      "Text": "界面缩放受 DPI 影响"
+    },
+    {
+      "Key": "PREF_Interface_Scale_by_DPI_TT",
+      "Text": "将界面缩放比例乘以显示器的 DPI 设置。"
+    },
+    {
+      "Key": "PREF_Interface_Font_Size",
+      "Text": "字体大小"
+    },
+    {
+      "Key": "PREF_Interface_Font_Size_TT",
+      "Text": "调整 Smithbox 中的字体大小。"
+    },
+    {
+      "Key": "PREF_Interface_Alias_Wordwrap_General",
+      "Text": "启用别名自动换行"
+    },
+    {
+      "Key": "PREF_Interface_Alias_Wordwrap_General_TT",
+      "Text": "启用后，别名到达窗口边界时会自动换行。否则将被截断。"
+    },
+    {
+      "Key": "PREF_Interface_Alias_Wordwrap_Map_Editor",
+      "Text": "启用别名自动换行（地图编辑器）"
+    },
+    {
+      "Key": "PREF_Interface_Alias_Wordwrap_Map_Editor_TT",
+      "Text": "启用后，别名到达窗口边界时会自动换行。否则将被截断。仅影响地图编辑器。"
+    },
+    {
+      "Key": "PREF_Interface_Alias_Wordwrap_Model_Editor",
+      "Text": "启用别名自动换行（模型编辑器）"
+    },
+    {
+      "Key": "PREF_Interface_Alias_Wordwrap_Model_Editor_TT",
+      "Text": "启用后，别名到达窗口边界时会自动换行。否则将被截断。仅影响模型编辑器。"
+    },
+    {
+      "Key": "PREF_Interface_Alias_Wordwrap_Animation_Editor",
+      "Text": "启用别名自动换行（动画编辑器）"
+    },
+    {
+      "Key": "PREF_Interface_Alias_Wordwrap_Animation_Editor_TT",
+      "Text": "启用后，别名到达窗口边界时会自动换行。否则将被截断。仅影响动画编辑器。"
+    },
+    {
+      "Key": "PREF_Interface_Allow_Window_Movement",
+      "Text": "启用窗口移动"
+    },
+    {
+      "Key": "PREF_Interface_Allow_Window_Movement_TT",
+      "Text": "启用后，内部窗口可以自由移动和停靠。"
+    },
+    {
+      "Key": "PREF_English_Font",
+      "Text": "英文字体"
+    },
+    {
+      "Key": "PREF_English_Font_TT",
+      "Text": "设置用于英文字符的字体。支持 .ttf 和 .otf 格式。"
+    },
+    {
+      "Key": "PREF_Set_Font",
+      "Text": "设置字体"
+    },
+    {
+      "Key": "PREF_Select_Font",
+      "Text": "选择字体"
+    },
+    {
+      "Key": "PREF_Additional_Font_1",
+      "Text": "附加字体：1"
+    },
+    {
+      "Key": "PREF_Additional_Font_1_TT",
+      "Text": "为非英文字符添加附加字体。支持 .ttf 和 .otf 格式。"
+    },
+    {
+      "Key": "PREF_Additional_Font_2",
+      "Text": "附加字体：2"
+    },
+    {
+      "Key": "PREF_Additional_Font_2_TT",
+      "Text": "为非英文字符添加附加字体。支持 .ttf 和 .otf 格式。"
+    },
+    {
+      "Key": "PREF_Additional_Font_3",
+      "Text": "附加字体：3"
+    },
+    {
+      "Key": "PREF_Additional_Font_3_TT",
+      "Text": "为非英文字符添加附加字体。支持 .ttf 和 .otf 格式。"
+    },
+    {
+      "Key": "PREF_Additional_Font_4",
+      "Text": "附加字体：4"
+    },
+    {
+      "Key": "PREF_Additional_Font_4_TT",
+      "Text": "为非英文字符添加附加字体。支持 .ttf 和 .otf 格式。"
+    },
+    {
+      "Key": "PREF_Additional_Font_5",
+      "Text": "附加字体：5"
+    },
+    {
+      "Key": "PREF_Additional_Font_5_TT",
+      "Text": "为非英文字符添加附加字体。支持 .ttf 和 .otf 格式。"
+    },
+    {
+      "Key": "PREF_Theme_Selection",
+      "Text": "主题选择"
+    },
+    {
+      "Key": "PREF_Theme_Selection_TT",
+      "Text": "选择用于 Smithbox 的界面主题。"
+    },
+    {
+      "Key": "PREF_Theme_Reset",
+      "Text": "重置"
+    },
+    {
+      "Key": "PREF_Theme_Open_Folder",
+      "Text": "打开文件夹"
+    },
+    {
+      "Key": "PREF_Theme_Builder",
+      "Text": "主题生成器"
+    },
+    {
+      "Key": "PREF_Theme_Builder_Save",
+      "Text": "保存"
+    },
+    {
+      "Key": "PREF_Theme_Editor",
+      "Text": "主题编辑器"
+    },
+    {
+      "Key": "PREF_Theme_Editor_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PREF_Theme_Editor_Moveable_Window",
+      "Text": "可移动窗口"
+    },
+    {
+      "Key": "PREF_Theme_Editor_Moveable_Window_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PREF_Theme_Editor_Scrollbar",
+      "Text": "滚动条"
+    },
+    {
+      "Key": "PREF_Theme_Editor_Scrollbar_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PREF_Theme_Editor_Tab",
+      "Text": "标签页"
+    },
+    {
+      "Key": "PREF_Theme_Editor_Tab_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PREF_Theme_Editor_Button",
+      "Text": "按钮"
+    },
+    {
+      "Key": "PREF_Theme_Editor_Button_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PREF_Theme_Editor_Selection",
+      "Text": "选择"
+    },
+    {
+      "Key": "PREF_Theme_Editor_Selection_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PREF_Theme_Editor_Inputs",
+      "Text": "输入框"
+    },
+    {
+      "Key": "PREF_Theme_Editor_Inputs_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PREF_Theme_Editor_Backgrounds",
+      "Text": "输入框"
+    },
+    {
+      "Key": "PREF_Theme_Editor_Backgrounds_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PREF_Theme_Editor_Text",
+      "Text": "文本"
+    },
+    {
+      "Key": "PREF_Theme_Editor_Text_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PREF_Theme_Editor_Logger",
+      "Text": "日志"
+    },
+    {
+      "Key": "PREF_Theme_Editor_Logger_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PREF_Theme_Editor_Display_Group",
+      "Text": "显示组工具"
+    },
+    {
+      "Key": "PREF_Theme_Editor_Display_Group_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PREF_CE_ImGui_MainBg",
+      "Text": "主背景"
+    },
+    {
+      "Key": "PREF_CE_ImGui_ChildBg",
+      "Text": "子背景"
+    },
+    {
+      "Key": "PREF_CE_ImGui_PopupBg",
+      "Text": "弹出背景"
+    },
+    {
+      "Key": "PREF_CE_ImGui_Border",
+      "Text": "边框"
+    },
+    {
+      "Key": "PREF_CE_ImGui_TitleBarBg",
+      "Text": "标题栏背景"
+    },
+    {
+      "Key": "PREF_CE_ImGui_TitleBarBg_Active",
+      "Text": "标题栏背景（活动）"
+    },
+    {
+      "Key": "PREF_CE_ImGui_MenuBarBg",
+      "Text": "菜单栏背景"
+    },
+    {
+      "Key": "PREF_CE_Imgui_Moveable_MainBg",
+      "Text": "主背景"
+    },
+    {
+      "Key": "PREF_CE_Imgui_Moveable_ChildBg",
+      "Text": "子背景"
+    },
+    {
+      "Key": "PREF_CE_Imgui_Moveable_ChildBgSecondary",
+      "Text": "子背景（次要）"
+    },
+    {
+      "Key": "PREF_CE_Imgui_Moveable_Header",
+      "Text": "窗口标题"
+    },
+    {
+      "Key": "PREF_CE_Imgui_Moveable_TitleBg",
+      "Text": "标题栏背景"
+    },
+    {
+      "Key": "PREF_CE_Imgui_Moveable_TitleBg_Active",
+      "Text": "标题栏背景（活动）"
+    },
+    {
+      "Key": "PREF_CE_ImGui_ScrollbarBg",
+      "Text": "滚动条背景"
+    },
+    {
+      "Key": "PREF_CE_ImGui_ScrollbarGrab",
+      "Text": "滚动条滑块"
+    },
+    {
+      "Key": "PREF_CE_ImGui_ScrollbarGrab_Hover",
+      "Text": "滚动条滑块（悬停）"
+    },
+    {
+      "Key": "PREF_CE_ImGui_ScrollbarGrab_Active",
+      "Text": "滚动条滑块（活动）"
+    },
+    {
+      "Key": "PREF_CE_ImGui_SliderGrab",
+      "Text": "滑块"
+    },
+    {
+      "Key": "PREF_CE_ImGui_SliderGrab_Active",
+      "Text": "滑块（活动）"
+    },
+    {
+      "Key": "PREF_CE_ImGui_Tab",
+      "Text": "标签页"
+    },
+    {
+      "Key": "PREF_CE_ImGui_Tab_Hover",
+      "Text": "标签页（悬停）"
+    },
+    {
+      "Key": "PREF_CE_ImGui_Tab_Active",
+      "Text": "标签页（活动）"
+    },
+    {
+      "Key": "PREF_CE_ImGui_UnfocusedTab",
+      "Text": "非焦点标签页"
+    },
+    {
+      "Key": "PREF_CE_ImGui_UnfocusedTab_Active",
+      "Text": "非焦点标签页（活动）"
+    },
+    {
+      "Key": "PREF_CE_ImGui_Button",
+      "Text": "按钮"
+    },
+    {
+      "Key": "PREF_CE_ImGui_Button_Hovered",
+      "Text": "按钮（悬停）"
+    },
+    {
+      "Key": "PREF_CE_ImGui_ButtonActive",
+      "Text": "按钮（活动）"
+    },
+    {
+      "Key": "PREF_CE_ImGui_Selection",
+      "Text": "选择"
+    },
+    {
+      "Key": "PREF_CE_ImGui_Selection_Hover",
+      "Text": "选择（悬停）"
+    },
+    {
+      "Key": "PREF_CE_ImGui_Selection_Active",
+      "Text": "选择（活动）"
+    },
+    {
+      "Key": "PREF_CE_ImGui_Input_Background",
+      "Text": "输入框背景"
+    },
+    {
+      "Key": "PREF_CE_ImGui_Input_Background_Hover",
+      "Text": "输入框背景（悬停）"
+    },
+    {
+      "Key": "PREF_CE_ImGui_Input_Background_Active",
+      "Text": "输入框背景（活动）"
+    },
+    {
+      "Key": "PREF_CE_ImGui_Input_CheckMark",
+      "Text": "输入勾选标记"
+    },
+    {
+      "Key": "PREF_CE_ImGui_Input_Conflict_Background",
+      "Text": "输入框背景（冲突）"
+    },
+    {
+      "Key": "PREF_CE_ImGui_Input_Vanilla_Background",
+      "Text": "输入框背景（原版）"
+    },
+    {
+      "Key": "PREF_CE_ImGui_Input_Default_Background",
+      "Text": "输入框背景（默认）"
+    },
+    {
+      "Key": "PREF_CE_ImGui_Input_AuxVanilla_Background",
+      "Text": "输入框背景（辅助原版）"
+    },
+    {
+      "Key": "PREF_CE_ImGui_Input_DiffCompare_Background",
+      "Text": "输入框背景（比较差异）"
+    },
+    {
+      "Key": "PREF_CE_ParamRowDiffBackgroundColor",
+      "Text": "行背景（已修改）"
+    },
+    {
+      "Key": "PREF_CE_ParamDiffBackgroundColor",
+      "Text": "字段背景（已修改）"
+    },
+    {
+      "Key": "PREF_CE_ImGui_Default_Text_Color",
+      "Text": "默认文本"
+    },
+    {
+      "Key": "PREF_CE_ImGui_Warning_Text_Color",
+      "Text": "警告文本"
+    },
+    {
+      "Key": "PREF_CE_ImGui_Benefit_Text_Color",
+      "Text": "增益文本"
+    },
+    {
+      "Key": "PREF_CE_ImGui_Invalid_Text_Color",
+      "Text": "无效文本"
+    },
+    {
+      "Key": "PREF_CE_ImGui_ParamRef_Text",
+      "Text": "Param 引用文本"
+    },
+    {
+      "Key": "PREF_CE_ImGui_ParamRefMissing_Text",
+      "Text": "Param 引用文本（缺失）"
+    },
+    {
+      "Key": "PREF_CE_ImGui_ParamRefInactive_Text",
+      "Text": "Param 引用文本（未激活）"
+    },
+    {
+      "Key": "PREF_CE_ImGui_EnumName_Text",
+      "Text": "枚举标题文本"
+    },
+    {
+      "Key": "PREF_CE_ImGui_EnumValue_Text",
+      "Text": "枚举值文本"
+    },
+    {
+      "Key": "PREF_CE_ImGui_FmgLink_Text",
+      "Text": "FMG 链接文本"
+    },
+    {
+      "Key": "PREF_CE_ImGui_FmgRef_Text",
+      "Text": "FMG 引用文本"
+    },
+    {
+      "Key": "PREF_CE_ImGui_FmgRefInactive_Text",
+      "Text": "FMG 引用文本（未激活）"
+    },
+    {
+      "Key": "PREF_CE_ImGui_IsRef_Text",
+      "Text": "是引用文本"
+    },
+    {
+      "Key": "PREF_CE_ImGui_VirtualRef_Text",
+      "Text": "虚拟引用文本"
+    },
+    {
+      "Key": "PREF_CE_ImGui_Ref_Text",
+      "Text": "引用文本"
+    },
+    {
+      "Key": "PREF_CE_ImGui_AuxConflict_Text",
+      "Text": "辅助 Param 行文本（冲突）"
+    },
+    {
+      "Key": "PREF_CE_ImGui_AuxAdded_Text",
+      "Text": "辅助 Param 行文本（已添加）"
+    },
+    {
+      "Key": "PREF_CE_ImGui_PrimaryChanged_Text",
+      "Text": "主要 Param 行文本（已更改）"
+    },
+    {
+      "Key": "PREF_CE_ImGui_ParamRow_Text",
+      "Text": "Param 行文本"
+    },
+    {
+      "Key": "PREF_CE_ImGui_AliasName_Text",
+      "Text": "别名文本"
+    },
+    {
+      "Key": "PREF_CE_ImGui_TextEditor_ModifiedTextEntry_Text",
+      "Text": "文本条目行（已修改）"
+    },
+    {
+      "Key": "PREF_CE_ImGui_TextEditor_UniqueTextEntry_Text",
+      "Text": "文本条目行（唯一）"
+    },
+    {
+      "Key": "PREF_CE_ImGui_Logger_Information_Color",
+      "Text": "信息文本"
+    },
+    {
+      "Key": "PREF_CE_ImGui_Logger_Warning_Color",
+      "Text": "警告文本"
+    },
+    {
+      "Key": "PREF_CE_ImGui_Logger_Error_Color",
+      "Text": "错误文本"
+    },
+    {
+      "Key": "PREF_CE_DisplayGroupEditor_Border_Highlight",
+      "Text": "显示组：边框高亮"
+    },
+    {
+      "Key": "PREF_CE_DisplayGroupEditor_DisplayActive_Frame",
+      "Text": "显示组：活动输入框背景"
+    },
+    {
+      "Key": "PREF_CE_DisplayGroupEditor_DisplayActive_Checkbox",
+      "Text": "显示组：活动复选框"
+    },
+    {
+      "Key": "PREF_CE_DisplayGroupEditor_DrawActive_Frame",
+      "Text": "绘制组：活动输入框背景"
+    },
+    {
+      "Key": "PREF_CE_DisplayGroupEditor_DrawActive_Checkbox",
+      "Text": "绘制组：活动复选框"
+    },
+    {
+      "Key": "PREF_CE_DisplayGroupEditor_CombinedActive_Frame",
+      "Text": "组合组：活动输入框背景"
+    },
+    {
+      "Key": "PREF_CE_DisplayGroupEditor_CombinedActive_Checkbox",
+      "Text": "组合组：活动复选框"
+    }
+  ]
+}
