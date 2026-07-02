@@ -183,22 +183,37 @@ public class TextDataTransferTool
     {
         if (ImGui.BeginTabItem($"{LOC.Get("TEXT_DataTransfer_Tab_Export")}##exportTab"))
         {
-            UIHelper.WrappedText("Use this section to export JSON data from your current project.");
+            UIHelper.WrappedText(LOC.Get("TEXT_DataTransfer_Export_Hint"));
 
             UIHelper.Spacer();
-            UIHelper.SimpleHeader("Export Directory", "The directory to export the JSON data to.");
+            UIHelper.SimpleHeader(
+                LOC.Get("TEXT_DataTransfer_Header_Export_Directory"),
+                LOC.Get("TEXT_DataTransfer_Header_Export_Directory_TT"));
+
             UIHelper.SinglelineTextInput("textExportDir", ref ExportDirectory);
 
             UIHelper.MultiButtonInput("textExportDir",
-                "setDirectory", "Set Export Directory", "", SetExportDirectory,
-                "openDirectory", "Open Export Directory", "", OpenExportDirectory);
+                "setDirectory", 
+                LOC.Get("TEXT_DataTransfer_Action_Set_Export_Directory"),
+                LOC.Get("TEXT_DataTransfer_Action_Set_Export_Directory_TT"),
+                SetExportDirectory,
+
+                "openDirectory", 
+                LOC.Get("TEXT_DataTransfer_Action_Open_Export_Directory"),
+                LOC.Get("TEXT_DataTransfer_Action_Open_Export_Directory_TT"),
+                OpenExportDirectory);
 
             UIHelper.Spacer();
-            UIHelper.SimpleHeader("Export Filename", "The file to use for the exported file (blank will use an auto-generated name).");
+            UIHelper.SimpleHeader(
+                LOC.Get("TEXT_DataTransfer_Header_Export_Filename"),
+                LOC.Get("TEXT_DataTransfer_Header_Export_Filename_TT"));
+
             UIHelper.SinglelineTextInput("textExportFileName", ref ExportFilename);
 
             UIHelper.Spacer();
-            UIHelper.SimpleHeader("Export Type", "Determines which data is exported.");
+            UIHelper.SimpleHeader(
+                LOC.Get("TEXT_DataTransfer_Header_Export_Type"),
+                LOC.Get("TEXT_DataTransfer_Header_Export_Type_TT"));
 
             UIHelper.SetInputWidth();
             if (ImGui.BeginCombo("##exportType", ExportModifier.GetDisplayName()))
@@ -207,7 +222,9 @@ public class TextDataTransferTool
                 {
                     var curExportType = (ExportModifier)entry;
 
-                    if (ImGui.Selectable($"{curExportType.GetDisplayName()}", curExportType == ExportModifier))
+                    var displayName = LOC.Get(curExportType.GetDisplayName());
+
+                    if (ImGui.Selectable(displayName, curExportType == ExportModifier))
                     {
                         ExportModifier = curExportType;
                     }

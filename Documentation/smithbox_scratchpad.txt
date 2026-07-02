@@ -9,6 +9,10 @@
  - InvalidateUidEntries is string concat
  - HkLib Read 
  - Text Container Read 
+ 
+# LOC: 
+ - After English is done:
+  - Detect user locale and then assign program language if present (do once)
 
 # LOC TO DO:
  ### Developer

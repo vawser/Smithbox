@@ -77,48 +77,48 @@
       "Text": "Export"
     },
     {
-      "Key": "TEXT_DataTransfer_",
-      "Text": ""
+      "Key": "TEXT_DataTransfer_Export_Hint",
+      "Text": "Use this section to export JSON data from your current project."
     },
     {
-      "Key": "TEXT_DataTransfer_",
-      "Text": ""
+      "Key": "TEXT_DataTransfer_Header_Export_Directory",
+      "Text": "Export Directory"
     },
     {
-      "Key": "TEXT_DataTransfer_",
-      "Text": ""
+      "Key": "TEXT_DataTransfer_Header_Export_Directory_TT",
+      "Text": "The directory to export the JSON data to."
     },
     {
-      "Key": "TEXT_DataTransfer_",
-      "Text": ""
+      "Key": "TEXT_DataTransfer_Action_Set_Export_Directory",
+      "Text": "Set Export Directory"
     },
     {
-      "Key": "TEXT_DataTransfer_",
-      "Text": ""
+      "Key": "TEXT_DataTransfer_Action_Set_Export_Directory_TT",
+      "Text": "Set the current export directory for the export JSON file."
     },
     {
-      "Key": "TEXT_DataTransfer_",
-      "Text": ""
+      "Key": "TEXT_DataTransfer_Action_Open_Export_Directory",
+      "Text": "Open Export Directory"
     },
     {
-      "Key": "TEXT_DataTransfer_",
-      "Text": ""
+      "Key": "TEXT_DataTransfer_Action_Open_Export_Directory_TT",
+      "Text": "Open the current export directory in a file explorer."
     },
     {
-      "Key": "TEXT_DataTransfer_",
-      "Text": ""
+      "Key": "TEXT_DataTransfer_Header_Export_Filename",
+      "Text": "Export Filename"
     },
     {
-      "Key": "TEXT_DataTransfer_",
-      "Text": ""
+      "Key": "TEXT_DataTransfer_Header_Export_Filename_TT",
+      "Text": "The file to use for the exported file (blank will use an auto-generated name)"
     },
     {
-      "Key": "TEXT_DataTransfer_",
-      "Text": ""
+      "Key": "TEXT_DataTransfer_Header_Export_Type",
+      "Text": "Export Type"
     },
     {
-      "Key": "TEXT_DataTransfer_",
-      "Text": ""
+      "Key": "TEXT_DataTransfer_Header_Export_Type_TT",
+      "Text": "Determines which data is exported."
     },
     {
       "Key": "TEXT_DataTransfer_",
