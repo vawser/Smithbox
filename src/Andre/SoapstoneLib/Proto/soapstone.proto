@@ -32,4 +32,30 @@ service Soapstone {
 
   // Start a given search in the editor.
   rpc OpenSearch (Internal.OpenSearchRequest) returns (Internal.OpenSearchResponse);
+
+  // Execute a mass edit script on the server's param data.
+  // The script uses the same syntax as the Param Editor's Mass Edit system.
+  rpc ExecuteMassEdit (Internal.ExecuteMassEditRequest) returns (Internal.ExecuteMassEditResponse);
+
+  // Hot-reload param changes to the running game process.
+  // If param_names is empty, all reloadable params are reloaded.
+  rpc ReloadParams (Internal.ReloadParamsRequest) returns (Internal.ReloadParamsResponse);
+
+  // List all available param names in the currently loaded project.
+  rpc ListParams (Internal.ListParamsRequest) returns (Internal.ListParamsResponse);
+
+  // Get detailed information about a specific param: its type, row count, and field definitions.
+  rpc DescribeParam (Internal.DescribeParamRequest) returns (Internal.DescribeParamResponse);
+
+  // Get all field values for a specific row, by row index (position).
+  rpc GetParamRow (Internal.GetParamRowRequest) returns (Internal.GetParamRowResponse);
+
+  // Get all rows that share a given row ID (handles duplicate IDs).
+  rpc GetParamRows (Internal.GetParamRowsRequest) returns (Internal.GetParamRowsResponse);
+
+  // List all rows in a param (ID, Name, and index summary).
+  rpc ListParamRows (Internal.ListParamRowsRequest) returns (Internal.ListParamRowsResponse);
+
+  // Set a single cell value by row index. Handles duplicate-ID params precisely.
+  rpc SetParamCell (Internal.SetParamCellRequest) returns (Internal.SetParamCellResponse);
 }

@@ -53,6 +53,9 @@ public class SoulsMemoryHandler
     {
         NativeWrapper.CloseHandle(memoryHandle);
         memoryHandle = 0;
+        // Clean up the static offset cache for this process.
+        // Once the process handle is closed, cached offsets are no longer valid.
+        ProcessOffsetBank.Remove(gameProcess.Id);
     }
 
     [DllImport("kernel32", EntryPoint = "ReadProcessMemory")]
@@ -204,7 +207,7 @@ public class SoulsMemoryHandler
 
     internal int GetRowCount(ProjectType type, GameOffsetBaseEntry entry, nint paramPtr)
     {
-        if (type is ProjectType.DS3 or ProjectType.SDT or ProjectType.ER or ProjectType.AC6)
+        if (type is ProjectType.DS3 or ProjectType.SDT or ProjectType.ER or ProjectType.NR or ProjectType.AC6)
         {
             return GetRowCountInt(entry, paramPtr);
         }
