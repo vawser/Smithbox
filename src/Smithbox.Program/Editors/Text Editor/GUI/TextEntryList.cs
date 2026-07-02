@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.ImGui;
+using Hexa.NET.ImGuizmo;
 using Org.BouncyCastle.Asn1.X509;
 using SoulsFormats;
 using StudioCore.Application;
@@ -42,16 +43,16 @@ public class TextEntryList
         }
         else
         {
-            ImGui.Text("Select a FMG to see entries.");
+            ImGui.Text(LOC.Get("TEXT_EntryList_Select_FMG_First"));
         }
     }
 
 
     public void DisplayTitle()
     {
-        var title = "Entries";
-
-        UIHelper.SimpleHeader($"{title}", "");
+        UIHelper.SimpleHeader(
+            LOC.Get("TEXT_EntryList_Header_Entries"),
+            LOC.Get("TEXT_EntryList_Header_Entries_TT"));
     }
 
     public void DisplayHeader()
@@ -87,7 +88,8 @@ public class TextEntryList
         {
             Parent.Selection.FocusFmgEntrySelection = true;
         }
-        UIHelper.Tooltip($"Focus the currently selected entry.\nShortcut: {InputManager.GetHint(KeybindID.Jump)}");
+        UIHelper.Tooltip(
+            LOC.Get("TEXT_EntryList_Focus_Selection_TT", InputManager.GetHint(KeybindID.Jump)));
 
         ImGui.EndChild();
     }
@@ -105,11 +107,11 @@ public class TextEntryList
         // ID
         ImGui.TableNextRow();
         ImGui.TableSetColumnIndex(0);
-        ImGui.Text("ID");
+        ImGui.Text(LOC.Get("TEXT_EntryList_Column_Header_ID"));
 
         // Name
         ImGui.TableSetColumnIndex(1);
-        ImGui.Text("Name");
+        ImGui.Text(LOC.Get("TEXT_EntryList_Column_Header_Name"));
     }
 
     public void DisplayEntryTable()
@@ -211,7 +213,7 @@ public class TextEntryList
                 byte dummy = 0;
                 ImGui.SetDragDropPayload("FMG_ENTRY", &dummy, 1);
             }
-            ImGui.Text($"Entry {entry.ID}");
+            ImGui.Text(LOC.Get("TEXT_EntryList_Drag_Drop_Text", entry.ID));
             ImGui.EndDragDropSource();
         }
 

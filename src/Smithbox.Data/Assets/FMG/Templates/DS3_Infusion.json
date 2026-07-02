@@ -1,6 +1,7 @@
 {
     "OrderID": 1,
     "Name": "Dark Souls III Infusions",
+    "LocalizationKey": "TEXT_Template_DS3_Infusions",
     "ApplyAsPrefix": true,
     "Amount": 15,
     "IncrementID": 100,

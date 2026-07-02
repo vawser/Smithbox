@@ -11,6 +11,7 @@ public class IncrementalTemplateEntry
 {
     public int OrderID { get; set; }
     public string Name { get; set; }
+    public string LocalizationKey { get; set; }
 
     public bool ApplyAsPrefix { get; set; }
 

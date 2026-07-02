@@ -1,92 +1,32 @@
 {
   "Entries": [
     {
-      "Key": "TEXT_EntryList_",
+      "Key": "TEXT_EntryList_Select_FMG_First",
+      "Text": "Select a FMG to see entries."
+    },
+    {
+      "Key": "TEXT_EntryList_Header_Entries",
+      "Text": "Entries"
+    },
+    {
+      "Key": "TEXT_EntryList_Header_Entries_TT",
       "Text": ""
     },
     {
-      "Key": "TEXT_EntryList_",
-      "Text": ""
+      "Key": "TEXT_EntryList_Focus_Selection_TT",
+      "Text": "Focus the currently selected entry.\nShortcut: {0}"
     },
     {
-      "Key": "TEXT_EntryList_",
-      "Text": ""
+      "Key": "TEXT_EntryList_Column_Header_ID",
+      "Text": "ID"
     },
     {
-      "Key": "TEXT_EntryList_",
-      "Text": ""
+      "Key": "TEXT_EntryList_Column_Header_Name",
+      "Text": "Name"
     },
     {
-      "Key": "TEXT_EntryList_",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_EntryList_",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_EntryList_",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_EntryList_",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_EntryList_",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_EntryList_",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_EntryList_",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_EntryList_",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_EntryList_",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_EntryList_",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_EntryList_",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_EntryList_",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_EntryList_",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_EntryList_",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_EntryList_",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_EntryList_",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_EntryList_",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_EntryList_",
-      "Text": ""
-    },
+      "Key": "TEXT_EntryList_Drag_Drop_Text",
+      "Text": "Entry {0}"
+    }
   ]
 }

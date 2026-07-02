@@ -1,0 +1,256 @@
+{
+  "Entries": [
+    {
+      "Key": "TEXT_Creator_Modal_Name",
+      "Text": "Text Entry Creator"
+    },
+    {
+      "Key": "TEXT_Creator_Template_Modal_Name",
+      "Text": "Template Selection"
+    },
+    {
+      "Key": "TEXT_Creator_Select_Entry_First",
+      "Text": "Select a text entry first."
+    },
+    {
+      "Key": "TEXT_Creator_Select_Non_Null_First",
+      "Text": "Select a non-null text entry first."
+    },
+    {
+      "Key": "TEXT_Creator_Header_Actions",
+      "Text": "Actions"
+    },
+    {
+      "Key": "TEXT_Creator_Header_Actions_TT",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_Creator_Action_Create_Entries",
+      "Text": "Create Entries"
+    },
+    {
+      "Key": "TEXT_Creator_Action_Create_Entries_TT",
+      "Text": "Create the new text entries based on the specified parameters."
+    },
+    {
+      "Key": "TEXT_Creator_Header_Parameters",
+      "Text": "Parameters"
+    },
+    {
+      "Key": "TEXT_Creator_Header_Parameters_TT",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_Creator_Header_Base_ID",
+      "Text": "Base ID"
+    },
+    {
+      "Key": "TEXT_Creator_Header_Base_ID_TT",
+      "Text": "The base ID to use for the text entry creation."
+    },
+    {
+      "Key": "TEXT_Creator_Header_Amount",
+      "Text": "Amount"
+    },
+    {
+      "Key": "TEXT_Creator_Header_Amount_TT",
+      "Text": "The number of text entries to create."
+    },
+    {
+      "Key": "TEXT_Creator_Header_ID_Spacing",
+      "Text": "ID Spacing"
+    },
+    {
+      "Key": "TEXT_Creator_Header_ID_Spacing_TT",
+      "Text": "The amount to increment the ID by for each entry (if more than 1 is created)."
+    },
+    {
+      "Key": "TEXT_Creator_Header_Options",
+      "Text": "Options"
+    },
+    {
+      "Key": "TEXT_Creator_Header_Options_TT",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_Creator_Checkbox_Update_On_Selection",
+      "Text": "Allow Update on Selection"
+    },
+    {
+      "Key": "TEXT_Creator_Checkbox_Update_On_Selection_TT",
+      "Text": "If enabled, the base ID and other parameters are updated when a FMG entry is selected."
+    },
+    {
+      "Key": "TEXT_Creator_Header_Entries",
+      "Text": "Entries"
+    },
+    {
+      "Key": "TEXT_Creator_Header_Title",
+      "Text": "Title"
+    },
+    {
+      "Key": "TEXT_Creator_Header_Title_TT",
+      "Text": "The text for the created Title entry."
+    },
+    {
+      "Key": "TEXT_Creator_Checkbox_Create_Title",
+      "Text": "Create Title"
+    },
+    {
+      "Key": "TEXT_Creator_Checkbox_Create_Title_TT",
+      "Text": "If enabled, a Title entry is created."
+    },
+    {
+      "Key": "TEXT_Creator_Header_Summary",
+      "Text": "Summary"
+    },
+    {
+      "Key": "TEXT_Creator_Header_Summary_TT",
+      "Text": "The text for the created Summary entry."
+    },
+    {
+      "Key": "TEXT_Creator_Checkbox_Create_Summary",
+      "Text": "Create Summary"
+    },
+    {
+      "Key": "TEXT_Creator_Checkbox_Create_Summary_TT",
+      "Text": "If enabled, a Summary entry is created."
+    },
+    {
+      "Key": "TEXT_Creator_Header_Description",
+      "Text": "Description"
+    },
+    {
+      "Key": "TEXT_Creator_Header_Description_TT",
+      "Text": "The text for the created Description entry."
+    },
+    {
+      "Key": "TEXT_Creator_Checkbox_Create_Description",
+      "Text": "Create Description"
+    },
+    {
+      "Key": "TEXT_Creator_Checkbox_Create_Description_TT",
+      "Text": "If enabled, a Description entry is created."
+    },
+    {
+      "Key": "TEXT_Creator_Header_Effect",
+      "Text": "Effect"
+    },
+    {
+      "Key": "TEXT_Creator_Header_Effect_TT",
+      "Text": "The text for the created Effect entry."
+    },
+    {
+      "Key": "TEXT_Creator_Checkbox_Create_Effect",
+      "Text": "Create Effect"
+    },
+    {
+      "Key": "TEXT_Creator_Checkbox_Create_Effect_TT",
+      "Text": "If enabled, a Effect entry is created."
+    },
+    {
+      "Key": "TEXT_Creator_Header_Basic",
+      "Text": "Basic Text"
+    },
+    {
+      "Key": "TEXT_Creator_Header_Basic_TT",
+      "Text": "The text for the created standalone entry."
+    },
+    {
+      "Key": "TEXT_Creator_Header_Incremental_Template",
+      "Text": "Incremental Template"
+    },
+    {
+      "Key": "TEXT_Creator_Incremental_Template_Hint",
+      "Text": "This adjusts the contents of the text for each 'increment'. Allows for easy creation of infusion weapon entries, etc."
+    },
+    {
+      "Key": "TEXT_Creator_Template_Header_Options",
+      "Text": "Options"
+    },
+    {
+      "Key": "TEXT_Creator_Template_Header_Options_TT",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_Creator_Template_Enable",
+      "Text": "Enable Template"
+    },
+    {
+      "Key": "TEXT_Creator_Template_Enable_TT",
+      "Text": "If enabled, the incremental template will be used during entry creation."
+    },
+    {
+      "Key": "TEXT_Creator_Template_Apply_Prefix",
+      "Text": "Apply as Prefix"
+    },
+    {
+      "Key": "TEXT_Creator_Template_Apply_Prefix_TT",
+      "Text": "If enabled, the text is prefixed to the base text. Otherwise, it is postfixed."
+    },
+    {
+      "Key": "TEXT_Creator_Template_Header_Templates",
+      "Text": "Templates"
+    },
+    {
+      "Key": "TEXT_Creator_Template_Header_Templates_TT",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_Creator_Template_Add_TT",
+      "Text": "Add new entry to template."
+    },
+    {
+      "Key": "TEXT_Creator_Template_Remove_TT",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_Creator_Template_Reset_Action",
+      "Text": "Reset"
+    },
+    {
+      "Key": "TEXT_Creator_Template_Reset_TT",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_Creator_Template_Entry_TT",
+      "Text": "This entry will apply for occurance {0}"
+    },
+    {
+      "Key": "TEXT_Creator_Template_Select_None",
+      "Text": "None"
+    },
+    {
+      "Key": "TEXT_Template_Reinforcement_3",
+      "Text": "Reinforcement +3"
+    },
+    {
+      "Key": "TEXT_Template_Reinforcement_5",
+      "Text": "Reinforcement +5"
+    },
+    {
+      "Key": "TEXT_Template_Reinforcement_10",
+      "Text": "Reinforcement +10"
+    },
+    {
+      "Key": "TEXT_Template_Reinforcement_15",
+      "Text": "Reinforcement +15"
+    },
+    {
+      "Key": "TEXT_Template_ER_Infusions",
+      "Text": "Elden Ring Infusions"
+    },
+    {
+      "Key": "TEXT_Template_DS3_Infusions",
+      "Text": "Dark Souls III Infusions"
+    },
+    {
+      "Key": "TEXT_Template_DS1_Infusions",
+      "Text": "Dark Souls Infusions"
+    },
+    {
+      "Key": "TEXT_Creator_Entries_ID_Collision",
+      "Text": "ID is already in use or is invalid: {0}"
+    }
+  ]
+}

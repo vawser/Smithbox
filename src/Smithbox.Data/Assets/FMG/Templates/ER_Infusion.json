@@ -1,6 +1,7 @@
 {
     "OrderID": 2,
     "Name": "Elden Ring Infusions",
+    "LocalizationKey": "TEXT_Template_ER_Infusions",
     "ApplyAsPrefix": true,
     "Amount": 12,
     "IncrementID": 100,

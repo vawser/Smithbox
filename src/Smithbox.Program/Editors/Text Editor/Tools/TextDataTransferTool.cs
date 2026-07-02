@@ -35,7 +35,7 @@ public class TextDataTransferTool
 
     public void DisplayDropdown()
     {
-        if (ImGui.BeginMenu("Data Transfer"))
+        if (ImGui.BeginMenu($"{LOC.Get("TEXT_DataTransfer_Menu_Header")}##dataTransferMenuHeader"))
         {
             ImportMenu();
             ExportMenu();
@@ -61,12 +61,14 @@ public class TextDataTransferTool
     #region Import
     public void ImportTab()
     {
-        if (ImGui.BeginTabItem($"Import"))
+        if (ImGui.BeginTabItem($"{LOC.Get("TEXT_DataTransfer_Tab_Import")}##importTab"))
         {
-            UIHelper.WrappedText("Use this section to import JSON data, applying the data to your current project.");
+            UIHelper.WrappedText(LOC.Get("TEXT_DataTransfer_Import_Hint"));
 
             UIHelper.Spacer();
-            UIHelper.SimpleHeader("Import Type", "Determines how the data is applied.");
+            UIHelper.SimpleHeader(
+                LOC.Get("TEXT_DataTransfer_Header_Import_Type"),
+                LOC.Get("TEXT_DataTransfer_Header_Import_Type_TT"));
 
             UIHelper.SetInputWidth();
             if (ImGui.BeginCombo("##importType", ImportType.GetDisplayName()))
@@ -75,7 +77,9 @@ public class TextDataTransferTool
                 {
                     var curImportType = (TextImportMode)entry;
 
-                    if (ImGui.Selectable($"{curImportType.GetDisplayName()}", curImportType == ImportType))
+                    var displayName = LOC.Get(curImportType.GetDisplayName());
+
+                    if (ImGui.Selectable(displayName, curImportType == ImportType))
                     {
                         ImportType = curImportType;
                     }
@@ -85,10 +89,15 @@ public class TextDataTransferTool
             }
 
             UIHelper.Spacer();
-            UIHelper.SimpleHeader("Actions", "");
+            UIHelper.SimpleHeader(
+                LOC.Get("TEXT_DataTransfer_Header_Actions"),
+                LOC.Get("TEXT_DataTransfer_Header_Actions_TT"));
 
             UIHelper.MultiButtonInput("importActions",
-                "importTextFromFile", "Import from File", "", ImportTextFromFile);
+                "importTextFromFile", 
+                LOC.Get("TEXT_DataTransfer_Action_Import_From_File"),
+                LOC.Get("TEXT_DataTransfer_Action_Import_From_File_TT"),
+                ImportTextFromFile);
 
             ImGui.EndTabItem();
         }
@@ -117,13 +126,12 @@ public class TextDataTransferTool
         if(ImportType is TextImportMode.Overwrite)
             importBehavior = ImportBehavior.Replace;
 
-        if (PlatformUtils.Instance.OpenFileDialog("Select text JSON", ["json"], out var path))
+        if (PlatformUtils.Instance.OpenFileDialog(
+            LOC.Get("TEXT_DataTransfer_Select_Text_JSON"), ["json"], out var path))
         {
             if (!File.Exists(path))
             {
-                DialogResult message = PlatformUtils.Instance.MessageBox(
-                    "Selected file is invalid.", "Error",
-                    MessageBoxButtons.OK);
+                Smithbox.LogError(this, LOC.Get("TEXT_DataTransfer_Invalid_Text_JSON"));
                 return;
             }
 
@@ -481,8 +489,9 @@ public class TextDataTransferTool
 
 public enum TextImportMode
 {
-    [Display(Name = "Append")]
+    [Display(Name = "TEXT_ENUM_TextImportMode_Append")]
     Append,
-    [Display(Name = "Overwrite")]
+
+    [Display(Name = "TEXT_ENUM_TextImportMode_Overwrite")]
     Overwrite
 }

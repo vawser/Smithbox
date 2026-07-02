@@ -1,0 +1,36 @@
+{
+  "Entries": [
+    {
+      "Key": "TEXT_Exporter_Modal_Name",
+      "Text": "Text Exporter"
+    },
+    {
+      "Key": "TEXT_Exporter_Header_Filename",
+      "Text": "Filename"
+    },
+    {
+      "Key": "TEXT_Exporter_Header_Filename_TT",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_Exporter_Modal_Action_Export",
+      "Text": "Export"
+    },
+    {
+      "Key": "TEXT_Exporter_Modal_Action_Export_TT",
+      "Text": "Export the text."
+    },
+    {
+      "Key": "TEXT_Exporter_Modal_Action_Close",
+      "Text": "Close"
+    },
+    {
+      "Key": "TEXT_Exporter_Modal_Action_Close_TT",
+      "Text": "Close the modal."
+    },
+    {
+      "Key": "TEXT_Exporter_Log_Filename_Empty",
+      "Text": "Filename is empty."
+    }
+  ]
+}

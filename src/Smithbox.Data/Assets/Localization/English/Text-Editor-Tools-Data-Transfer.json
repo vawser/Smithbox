@@ -1,0 +1,76 @@
+{
+  "Entries": [
+    {
+      "Key": "TEXT_DataTransfer_Menu_Header",
+      "Text": "Data Transfer"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Tab_Import",
+      "Text": "Import"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Import_Hint",
+      "Text": "Use this section to import JSON data, applying the data to your current project."
+    },
+    {
+      "Key": "TEXT_DataTransfer_Header_Import_Type",
+      "Text": "Import Type"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Header_Import_Type_TT",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_DataTransfer_Header_Actions",
+      "Text": "Actions"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Header_Actions_TT",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_DataTransfer_Action_Import_From_File",
+      "Text": "Import from File"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Action_Import_From_File_TT",
+      "Text": "Import text from a JSON file."
+    },
+    {
+      "Key": "TEXT_DataTransfer_Select_Text_JSON",
+      "Text": "Select text JSON"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Invalid_Text_JSON",
+      "Text": "Selected file is invalid."
+    },
+    {
+      "Key": "TEXT_DataTransfer_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_DataTransfer_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_DataTransfer_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_DataTransfer_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_DataTransfer_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_DataTransfer_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_DataTransfer_",
+      "Text": ""
+    },
+  ]
+}

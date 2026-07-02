@@ -1,6 +1,7 @@
 {
     "OrderID": 13,
     "Name": "Reinforcement +15",
+    "LocalizationKey": "TEXT_Template_Reinforcement_15",
     "ApplyAsPrefix": false,
     "Amount": 15,
     "IncrementID": 1,

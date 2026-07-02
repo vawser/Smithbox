@@ -17,189 +17,24 @@
       "Text": "{0}: {1} not defined."
     },
     {
-      "Key": "TEXT_",
-      "Text": ""
+      "Key": "TEXT_ENUM_ExportModifier_All",
+      "Text": "All"
     },
     {
-      "Key": "TEXT_",
-      "Text": ""
+      "Key": "TEXT_ENUM_ExportModifier_Modified_Only",
+      "Text": "Modified Only"
     },
     {
-      "Key": "TEXT_",
-      "Text": ""
+      "Key": "TEXT_ENUM_ExportModifier_Unique_Only",
+      "Text": "Unique Only"
     },
     {
-      "Key": "TEXT_",
-      "Text": ""
+      "Key": "TEXT_ENUM_TextImportMode_Append",
+      "Text": "Append"
     },
     {
-      "Key": "TEXT_",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_",
-      "Text": ""
-    },
-    
+      "Key": "TEXT_ENUM_TextImportMode_Overwrite",
+      "Text": "Overwrite"
+    }
   ]
 }

@@ -1,0 +1,116 @@
+{
+  "Entries": [
+    {
+      "Key": "TEXT_LanguageSync_Hint",
+      "Text": "Use this to sync changes made to your source language to all other languages instantly."
+    },
+    {
+      "Key": "TEXT_LanguageSync_Header_Source_Lang",
+      "Text": "Source Language"
+    },
+    {
+      "Key": "TEXT_LanguageSync_Header_Source_Lang_TT",
+      "Text": "The language text to apply to the sync process against the target languages."
+    },
+    {
+      "Key": "TEXT_LanguageSync_Header_Target_Lang",
+      "Text": "Target Languages"
+    },
+    {
+      "Key": "TEXT_LanguageSync_Header_Target_Lang_TT",
+      "Text": "The target languages to sync to."
+    },
+    {
+      "Key": "TEXT_LanguageSync_Select_Source_Lang",
+      "Text": "Select a source language first."
+    },
+    {
+      "Key": "TEXT_LanguageSync_Lang_Select_TT",
+      "Text": "If enabled, this language will be synced to."
+    },
+    {
+      "Key": "TEXT_LanguageSync_Header_Options",
+      "Text": "Options"
+    },
+    {
+      "Key": "TEXT_LanguageSync_Header_Options_TT",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_LanguageSync_Checkbox_Include_Default",
+      "Text": "Include Default Entries"
+    },
+    {
+      "Key": "TEXT_LanguageSync_Checkbox_Include_Default_TT",
+      "Text": "If enabled, all entries will be synced."
+    },
+    {
+      "Key": "TEXT_LanguageSync_Checkbox_Include_Added",
+      "Text": "Include Added Entries"
+    },
+    {
+      "Key": "TEXT_LanguageSync_Checkbox_Include_Added_TT",
+      "Text": "If enabled, added entries will be synced."
+    },
+    {
+      "Key": "TEXT_LanguageSync_Checkbox_Include_Modified",
+      "Text": "Include Modified Entries"
+    },
+    {
+      "Key": "TEXT_LanguageSync_Checkbox_Include_Modified_TT",
+      "Text": "If enabled, modified entries will be synced."
+    },
+    {
+      "Key": "TEXT_LanguageSync_Checkbox_Apply_Prefix",
+      "Text": "Apply Prefix to Synced Text"
+    },
+    {
+      "Key": "TEXT_LanguageSync_Checkbox_Apply_Prefix_TT",
+      "Text": "The prefix to apply to the synced text."
+    },
+    {
+      "Key": "TEXT_LanguageSync_Header_Sync_Prefix",
+      "Text": "Sync Prefix"
+    },
+    {
+      "Key": "TEXT_LanguageSync_Header_Sync_Prefix_TT",
+      "Text": "The prefix to apply to text that has been synced."
+    },
+    {
+      "Key": "TEXT_LanguageSync_Header_Actions",
+      "Text": "Actions"
+    },
+    {
+      "Key": "TEXT_LanguageSync_Header_Actions_TT",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_LanguageSync_Action_Sync",
+      "Text": "Sync"
+    },
+    {
+      "Key": "TEXT_LanguageSync_Action_Sync_TT",
+      "Text": "Apply language sync with specified parameters."
+    },
+    {
+      "Key": "TEXT_LanguageSync_Log_No_Source_Language",
+      "Text": "No source language has been selected."
+    },
+    {
+      "Key": "TEXT_LanguageSync_Header_Sync_With",
+      "Text": "Sync With"
+    },
+    {
+      "Key": "TEXT_LanguageSync_Header_Sync_With_TT",
+      "Text": "Sync all unique changes from another category into this category.\n\nUse this on the category you want to bring the changes IN TO."
+    },
+    {
+      "Key": "TEXT_LanguageSync_Action_Sync_TT",
+      "Text": "Bring changes in the {0} category into this category."
+    },
+    {
+      "Key": "TEXT_LanguageSync_Sync_Operation_PASS",
+      "Text": "Synced {0} {1} with {2} version."
+    }
+  ]
+}
