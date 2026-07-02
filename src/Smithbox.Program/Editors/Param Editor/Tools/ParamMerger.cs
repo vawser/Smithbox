@@ -190,14 +190,19 @@ public class ParamMerger
         if (ParamMerge_InProgress)
             return;
 
-        ParamMerge_InProgress = true;
+        if (ParamMerge_TargetProject == null)
+        {
+            Smithbox.Log<ParamMerger>($"No target project selected. Cannot merge.");
+            return;
+        }
 
         if (!Editor.Project.Handler.ParamData.AuxBanks.ContainsKey(ParamMerge_TargetProject.Descriptor.ProjectName))
         {
             Smithbox.Log<ParamMerger>($"Target project: {ParamMerge_TargetProject.Descriptor.ProjectName} is not loaded, cannot merge.");
-            ParamMerge_InProgress = false;
             return;
         }
+
+        ParamMerge_InProgress = true;
 
         var auxBank = Editor.Project.Handler.ParamData.AuxBanks[ParamMerge_TargetProject.Descriptor.ProjectName];
 
