@@ -14,10 +14,10 @@ namespace StudioCore.Interface;
 // Short name for readability in usage
 public static class LOC
 {
-    public static LocalizationLanguages Languages;
+    private static LocalizationLanguages Languages;
 
-    public static Dictionary<string, string> Localization = new();
-    public static Dictionary<string, string> FallbackLocalization = new();
+    private static Dictionary<string, string> Localization = new();
+    private static Dictionary<string, string> FallbackLocalization = new();
 
     public static void Setup()
     {
@@ -110,6 +110,9 @@ public static class LOC
 
     public static string Get(string locKey, params object[] parameters)
     {
+        if (Startup.Current.Program_Language == "Test Language")
+            return locKey;
+
         if (!Localization.TryGetValue(locKey, out var template))
         {
             // If non-English fails, try fallback English localization
@@ -123,8 +126,8 @@ public static class LOC
             else
             {
                 return parameters.Length == 0
-                    ? template
-                    : string.Format(template, parameters);
+                    ? fallbackTemplate
+                    : string.Format(fallbackTemplate, parameters);
             }
         }
         else
@@ -134,6 +137,10 @@ public static class LOC
                 : string.Format(template, parameters);
         }
     }
+
+    public static LocalizationLanguageEntry CurrentLanguage() => Languages.Languages.FirstOrDefault(e => e.Name == Startup.Current.Program_Language);
+
+    public static List<LocalizationLanguageEntry> LanguageList => Languages.Languages;
 }
 
 #region JSON

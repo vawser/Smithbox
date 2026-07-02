@@ -35,7 +35,7 @@ public class SystemPrefs
             Description = "PREF_Program_Language_TT",
 
             Draw = () => {
-                var curLanguage = LOC.Languages.Languages.FirstOrDefault(e => e.Name == Startup.Current.Program_Language);
+                var curLanguage = LOC.CurrentLanguage();
 
                 if (curLanguage != null)
                 {
@@ -44,7 +44,7 @@ public class SystemPrefs
                     DPI.ApplyInputWidth();
                     if (ImGui.BeginCombo("##inputValue", previewName))
                     {
-                        foreach (var entry in LOC.Languages.Languages)
+                        foreach (var entry in LOC.LanguageList)
                         {
                             var displayName = LOC.Get(entry.Key);
 

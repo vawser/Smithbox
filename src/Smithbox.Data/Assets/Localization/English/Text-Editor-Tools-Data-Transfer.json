@@ -121,6 +121,122 @@
       "Text": "Determines which data is exported."
     },
     {
+      "Key": "TEXT_DataTransfer_Header_Output",
+      "Text": "Export Output"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Header_Output_TT",
+      "Text": "The export string contents."
+    },
+    {
+      "Key": "TEXT_DataTransfer_Action_Copy_To_Clipboard",
+      "Text": "Copy to Clipboard"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Action_Copy_To_Clipboard_TT",
+      "Text": "Copy the output string to clipboard."
+    },
+    {
+      "Key": "TEXT_DataTransfer_Header_Actions",
+      "Text": "Actions"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Header_Actions_TT",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_DataTransfer_Action_Export_Container",
+      "Text": "Export Selected Container"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Action_Export_Container_TT",
+      "Text": "Generate the export string for the currently selected container."
+    },
+    {
+      "Key": "TEXT_DataTransfer_Action_Export_File",
+      "Text": "Export Selected Text File"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Action_Export_File_TT",
+      "Text": "Generate the export string for the currently selected file."
+    },
+    {
+      "Key": "TEXT_DataTransfer_Action_Export_Entry",
+      "Text": "Export Selected Text Entry"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Action_Export_Entry_TT",
+      "Text": "Generate the export string for the currently selected entry."
+    },
+    {
+      "Key": "TEXT_DataTransfer_Dialog_Select_Export_Dest",
+      "Text": "Select Export Destination"
+    },
+    {
+      "Key": "TEXT_DataTransfer_Log_No_Container_Selected",
+      "Text": "No container has been selected."
+    },
+    {
+      "Key": "TEXT_DataTransfer_Log_No_Export_Directory_Defined",
+      "Text": "No export directory has been defined."
+    },
+    {
+      "Key": "TEXT_DataTransfer_Log_Filename_Empty",
+      "Text": "Filename is empty."
+    },
+    {
+      "Key": "TEXT_DataTransfer_Log_No_Text_File_Selected",
+      "Text": "No text file has been selected."
+    },
+    {
+      "Key": "TEXT_DataTransfer_Log_No_Text_Entry_Selected",
+      "Text": "No text entry has been selected."
+    },
+    {
+      "Key": "TEXT_DataTransfer_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_DataTransfer_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_DataTransfer_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_DataTransfer_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_DataTransfer_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_DataTransfer_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_DataTransfer_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_DataTransfer_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_DataTransfer_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_DataTransfer_",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_DataTransfer_",
+      "Text": ""
+    },
+    {
       "Key": "TEXT_DataTransfer_",
       "Text": ""
     },

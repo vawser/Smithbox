@@ -234,7 +234,10 @@ public class TextDataTransferTool
             }
 
             UIHelper.Spacer();
-            UIHelper.SimpleHeader("Output", "");
+            UIHelper.SimpleHeader(
+                LOC.Get("TEXT_DataTransfer_Header_Output"),
+                LOC.Get("TEXT_DataTransfer_Header_Output_TT"));
+
             // Has to use TextUnformatted as the CSV output string can be massive,
             // and it exceeds the internal buffers used by InputTextMultiline
             ImGui.BeginChild("OutputTextSection", new Vector2(0, 250), ImGuiChildFlags.Borders);
@@ -242,15 +245,31 @@ public class TextDataTransferTool
             ImGui.EndChild();
 
             UIHelper.MultiButtonInput("csvOutputActions",
-                "copyToClipboard", "Copy to Clipboard", "Copy the output to the clibpaord", CopyOutputToClipboard);
+                "copyToClipboard", 
+                LOC.Get("TEXT_DataTransfer_Action_Copy_To_Clipboard"),
+                LOC.Get("TEXT_DataTransfer_Action_Copy_To_Clipboard_TT"),
+                CopyOutputToClipboard);
 
             UIHelper.Spacer();
-            UIHelper.SimpleHeader("Actions", "");
+            UIHelper.SimpleHeader(
+                LOC.Get("TEXT_DataTransfer_Header_Actions"),
+                LOC.Get("TEXT_DataTransfer_Header_Actions_TT"));
 
             UIHelper.MultiButtonInput("exportActions",
-                "exportContainer", "Export Selected Container", "", ExportContainerAction,
-                "exportFmg", "Export Selected Text File", "", ExportFmgAction,
-                "exportEntry", "Export Selected Text Entry", "", ExportEntryAction);
+                "exportContainer", 
+                LOC.Get("TEXT_DataTransfer_Action_Export_Container"),
+                LOC.Get("TEXT_DataTransfer_Action_Export_Container_TT"),
+                ExportContainerAction,
+
+                "exportFmg", 
+                LOC.Get("TEXT_DataTransfer_Action_Export_File"),
+                LOC.Get("TEXT_DataTransfer_Action_Export_File_TT"),
+                ExportFmgAction,
+
+                "exportEntry",
+                LOC.Get("TEXT_DataTransfer_Action_Export_Entry"),
+                LOC.Get("TEXT_DataTransfer_Action_Export_Entry_TT"), 
+                ExportEntryAction);
 
             ImGui.EndTabItem();
         }
@@ -259,7 +278,7 @@ public class TextDataTransferTool
     public void SetExportDirectory()
     {
         string path;
-        var result = PlatformUtils.Instance.OpenFolderDialog("Select Export Destination", out path);
+        var result = PlatformUtils.Instance.OpenFolderDialog(LOC.Get("TEXT_DataTransfer_Dialog_Select_Export_Dest"), out path);
         if (result)
         {
             ExportDirectory = path;
@@ -283,13 +302,13 @@ public class TextDataTransferTool
 
         if(wrapper == null)
         {
-            Smithbox.LogError<TextDataTransferTool>("No container has been selected.");
+            Smithbox.LogError<TextDataTransferTool>(LOC.Get("TEXT_DataTransfer_Log_No_Container_Selected"));
             return;
         }
 
         if (ExportDirectory == "")
         {
-            Smithbox.LogError<TextDataTransferTool>("No export directory has been defined.");
+            Smithbox.LogError<TextDataTransferTool>(LOC.Get("TEXT_DataTransfer_Log_No_Export_Directory_Defined"));
             return;
         }
 
@@ -306,7 +325,7 @@ public class TextDataTransferTool
 
         if(filename == "")
         {
-            Smithbox.LogError<TextDataTransferTool>("Filename is empty.");
+            Smithbox.LogError<TextDataTransferTool>(LOC.Get("TEXT_DataTransfer_Log_Filename_Empty"));
             return;
         }
 
@@ -323,19 +342,19 @@ public class TextDataTransferTool
 
         if (wrapper == null)
         {
-            Smithbox.LogError<TextDataTransferTool>("No container has been selected.");
+            Smithbox.LogError<TextDataTransferTool>(LOC.Get("TEXT_DataTransfer_Log_No_Container_Selected"));
             return;
         }
 
         if (selectedFmgWrapper == null)
         {
-            Smithbox.LogError<TextDataTransferTool>("No text file has been selected.");
+            Smithbox.LogError<TextDataTransferTool>(LOC.Get("TEXT_DataTransfer_Log_No_Text_File_Selected"));
             return;
         }
 
         if (ExportDirectory == "")
         {
-            Smithbox.LogError<TextDataTransferTool>("No export directory has been defined.");
+            Smithbox.LogError<TextDataTransferTool>(LOC.Get("TEXT_DataTransfer_Log_No_Export_Directory_Defined"));
             return;
         }
 
@@ -352,7 +371,7 @@ public class TextDataTransferTool
 
         if (filename == "")
         {
-            Smithbox.LogError<TextDataTransferTool>("Filename is empty.");
+            Smithbox.LogError<TextDataTransferTool>(LOC.Get("TEXT_DataTransfer_Log_Filename_Empty"));
             return;
         }
 
@@ -369,25 +388,25 @@ public class TextDataTransferTool
 
         if (wrapper == null)
         {
-            Smithbox.LogError<TextDataTransferTool>("No container has been selected.");
+            Smithbox.LogError<TextDataTransferTool>(LOC.Get("TEXT_DataTransfer_Log_No_Container_Selected"));
             return;
         }
 
         if (selectedFmgWrapper == null)
         {
-            Smithbox.LogError<TextDataTransferTool>("No text file has been selected.");
+            Smithbox.LogError<TextDataTransferTool>(LOC.Get("TEXT_DataTransfer_Log_No_Text_File_Selected"));
             return;
         }
 
         if (selectedEntry == null)
         {
-            Smithbox.LogError<TextDataTransferTool>("No text entry has been selected.");
+            Smithbox.LogError<TextDataTransferTool>(LOC.Get("TEXT_DataTransfer_Log_No_Text_Entry_Selected"));
             return;
         }
 
         if (ExportDirectory == "")
         {
-            Smithbox.LogError<TextDataTransferTool>("No export directory has been defined.");
+            Smithbox.LogError<TextDataTransferTool>(LOC.Get("TEXT_DataTransfer_Log_No_Export_Directory_Defined"));
             return;
         }
 
@@ -404,7 +423,7 @@ public class TextDataTransferTool
 
         if (filename == "")
         {
-            Smithbox.LogError<TextDataTransferTool>("Filename is empty.");
+            Smithbox.LogError<TextDataTransferTool>(LOC.Get("TEXT_DataTransfer_Log_Filename_Empty"));
             return;
         }
 
