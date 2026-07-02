@@ -15,6 +15,8 @@ public class Startup
 
     #region Parameters
 
+    public bool SetProgramLanguage = false;
+
     public string Program_Language = "English";
 
     public RenderingBackend System_RenderingBackend = RenderingBackend.Vulkan;

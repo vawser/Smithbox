@@ -3,17 +3,20 @@
         {
           "Key": "SYS_Language_English",
           "Name": "English",
-          "Folder": "English"
+          "Folder": "English",
+          "UICulture": "en"
         },
         {
           "Key": "SYS_Language_Chinese",
           "Name": "中文",
-          "Folder": "Chinese"
+          "Folder": "Chinese",
+          "UICulture": "zh"
         },
         {
           "Key": "SYS_Language_Test",
           "Name": "Test Language",
-          "Folder": "Empty"
+          "Folder": "Empty",
+          "UICulture": "NONE"
         }
     ]
 }

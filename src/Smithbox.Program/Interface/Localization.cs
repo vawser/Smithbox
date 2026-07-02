@@ -3,6 +3,7 @@ using StudioCore.Application;
 using StudioCore.Editors.MapEditor;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -40,6 +41,21 @@ public static class LOC
                 //Smithbox.LogError(typeof(LOC), "Failed to load localization languages.", e);
             }
         }
+
+        if(!Startup.Current.SetProgramLanguage)
+        {
+            CultureInfo currentUICulture = CultureInfo.CurrentUICulture;
+
+            // Match only the first two letters, as we don't care about the minor variants
+            var userLanguage = Languages.Languages.FirstOrDefault(e => e.UICulture == currentUICulture.Parent.Name);
+            if(userLanguage != null)
+            {
+                Startup.Current.Program_Language = userLanguage.Name;
+            }
+
+            Startup.Current.SetProgramLanguage = true;
+        }
+
     }
 
     // We do it like this for ease of reading the json, then we place the key and text in a dictionary for speed
@@ -168,6 +184,7 @@ public class LocalizationLanguageEntry
     public string Key { get; set; }
     public string Name { get; set; }
     public string Folder { get; set; }
+    public string UICulture { get; set; }
 }
 
 public class LocalizationEntry
