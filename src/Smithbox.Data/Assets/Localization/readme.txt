@@ -3,6 +3,8 @@
 #------------------------------
 To support a new language in Smithbox, add a new entry to the Languages.json
 
+UICultures: https://www.venea.net/web/locale
+
 #------------------------------
 # Adding Localization Entries
 #------------------------------
@@ -19,11 +21,11 @@ Create a folder for your new language. You can then create any number of json fi
 #------------------------------
 When naming the class, the standard pattern is:
 
-1. a three-letter abbreviation of the general code grouping, in CAPS
-(i.e. PRJ for Project code, MAP for Map Editor code, etc)
+1. an all-CAPS term
+(i.e. PROJECT for Project code, MAP for Map Editor code, etc)
 
-2. a three-letter abbreviation of the class, in CAPS
-(i.e. PCM for Project Configure Menu)
+2. a CamelCase term
+(i.e. ConfigureMenu for Project Configure Menu)
 
 3. a short descriptive term for the text, in CamelCase, with underlines for spaces
 (i.e. Create_Mod_Profile

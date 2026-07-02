@@ -2,15 +2,15 @@
   "Entries": [
     {
       "Key": "SYS_Language_English",
-      "Text": "English"
+      "Text": "英语"
     },
     {
       "Key": "SYS_Language_Chinese",
-      "Text": "Chinese"
+      "Text": "中文"
     },
     {
       "Key": "SYS_Language_Test",
-      "Text": "Test"
+      "Text": "试验"
     }
   ]
 }

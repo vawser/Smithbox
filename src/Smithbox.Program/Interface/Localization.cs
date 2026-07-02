@@ -68,8 +68,9 @@ public static class LOC
 
         if (curLang == null)
         {
-            //Smithbox.LogError(typeof(LOC), "Failed to find program language.");
-            return;
+            // Default to English if the selected language is not found
+            curLang = LanguageList.FirstOrDefault(e => e.Name == "English");
+            Startup.Current.Program_Language = curLang.Name;
         }
 
         var languageDir = Path.Combine(AppContext.BaseDirectory, "Assets", "Localization", curLang.Folder);
