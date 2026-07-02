@@ -1,0 +1,76 @@
+{
+  "Entries": [
+    {
+      "Key": "MOUSE_Viewport_Enable_Viewport_Movement",
+      "Text": "启用视口移动"
+    },
+    {
+      "Key": "MOUSE_Viewport_Enable_Viewport_Movement_TT",
+      "Text": "按下以启用视口移动输入的按钮。"
+    },
+    {
+      "Key": "MOUSE_Viewport_Picking_Action",
+      "Text": "选择地图对象"
+    },
+    {
+      "Key": "MOUSE_Viewport_Picking_Action_TT",
+      "Text": "按下以在视口中选择地图对象的按钮。"
+    },
+    {
+      "Key": "MOUSE_Viewport_Gizmo_Interaction_Action",
+      "Text": "与 Gizmo 交互"
+    },
+    {
+      "Key": "MOUSE_Viewport_Gizmo_Interaction_Action_TT",
+      "Text": "按下以与 gizmo 控件交互的按钮。"
+    },
+    {
+      "Key": "MOUSE_MapEditor_Box_Drag_Start",
+      "Text": "开始框选拖拽"
+    },
+    {
+      "Key": "MOUSE_MapEditor_Box_Drag_Start_TT",
+      "Text": "按下以开始框选拖拽的按钮。"
+    },
+    {
+      "Key": "MOUSE_MapEditor_Box_Drag_End",
+      "Text": "结束框选拖拽"
+    },
+    {
+      "Key": "MOUSE_MapEditor_Box_Drag_End_TT",
+      "Text": "释放以结束框选拖拽的按钮。"
+    },
+    {
+      "Key": "MOUSE_MapEditor_Display_Viewport_Context_Menu",
+      "Text": "显示视口上下文菜单"
+    },
+    {
+      "Key": "MOUSE_MapEditor_Display_Viewport_Context_Menu_TT",
+      "Text": "按下以打开视口上下文菜单的按钮。"
+    },
+    {
+      "Key": "MOUSE_MapEditor_Select_Map_In_World_Map",
+      "Text": "在世界地图中选择地图"
+    },
+    {
+      "Key": "MOUSE_MapEditor_Select_Map_In_World_Map_TT",
+      "Text": "按下以在世界地图菜单中选择要筛选的地图的按钮。"
+    },
+    {
+      "Key": "MOUSE_MapEditor_World_Map_Drag_Start",
+      "Text": "开始世界地图拖拽"
+    },
+    {
+      "Key": "MOUSE_MapEditor_World_Map_Drag_Start_TT",
+      "Text": "按下以开始世界地图拖拽的按钮。"
+    },
+    {
+      "Key": "MOUSE_MapEditor_World_Map_Drag_End",
+      "Text": "结束世界地图拖拽"
+    },
+    {
+      "Key": "MOUSE_MapEditor_World_Map_Drag_End_TT",
+      "Text": "释放以结束世界地图拖拽的按钮。"
+    }
+  ]
+}

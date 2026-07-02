@@ -1,0 +1,28 @@
+{
+  "Entries": [
+    {
+      "Key": "TEXVIEW_TextureList_Header_Textures",
+      "Text": "纹理"
+    },
+    {
+      "Key": "TEXVIEW_TextureList_Header_Textures_TT",
+      "Text": ""
+    },
+    {
+      "Key": "TEXVIEW_TextureList_Context_Action_Export",
+      "Text": "导出"
+    },
+    {
+      "Key": "TEXVIEW_TextureList_Context_Action_Export_TT",
+      "Text": "将此文件导出到当前导出目录: {0}"
+    },
+    {
+      "Key": "TEXVIEW_TextureList_Context_Action_Copy_Name",
+      "Text": "复制名称"
+    },
+    {
+      "Key": "TEXVIEW_TextureList_Context_Action_Copy_Name_TT",
+      "Text": "复制纹理名称到剪贴板。"
+    }
+  ]
+}

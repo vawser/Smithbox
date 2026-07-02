@@ -172,6 +172,54 @@ namespace SoapstoneLib
                 return new OpenSearchResponse();
             }
 
+            public override async Task<ExecuteMassEditResponse> ExecuteMassEdit(ExecuteMassEditRequest request, ServerCallContext context)
+            {
+                SoapstoneServiceV1 service = GetService();
+                return await service.ExecuteMassEdit(context, request.Script);
+            }
+
+            public override async Task<ReloadParamsResponse> ReloadParams(ReloadParamsRequest request, ServerCallContext context)
+            {
+                SoapstoneServiceV1 service = GetService();
+                return await service.ReloadParams(context, request.ParamNames.Count > 0 ? request.ParamNames.ToArray() : null);
+            }
+
+            public override async Task<ListParamsResponse> ListParams(ListParamsRequest request, ServerCallContext context)
+            {
+                SoapstoneServiceV1 service = GetService();
+                return await service.ListParams(context);
+            }
+
+            public override async Task<DescribeParamResponse> DescribeParam(DescribeParamRequest request, ServerCallContext context)
+            {
+                SoapstoneServiceV1 service = GetService();
+                return await service.DescribeParam(context, request.ParamName);
+            }
+
+            public override async Task<GetParamRowResponse> GetParamRow(GetParamRowRequest request, ServerCallContext context)
+            {
+                SoapstoneServiceV1 service = GetService();
+                return await service.GetParamRow(context, request.ParamName, request.RowIndex, request.Vanilla);
+            }
+
+            public override async Task<GetParamRowsResponse> GetParamRows(GetParamRowsRequest request, ServerCallContext context)
+            {
+                SoapstoneServiceV1 service = GetService();
+                return await service.GetParamRows(context, request.ParamName, request.RowId, request.Vanilla);
+            }
+
+            public override async Task<SetParamCellResponse> SetParamCell(SetParamCellRequest request, ServerCallContext context)
+            {
+                SoapstoneServiceV1 service = GetService();
+                return await service.SetParamCell(context, request.ParamName, request.RowIndex, request.FieldName, request.Value);
+            }
+
+            public override async Task<ListParamRowsResponse> ListParamRows(ListParamRowsRequest request, ServerCallContext context)
+            {
+                SoapstoneServiceV1 service = GetService();
+                return await service.ListParamRows(context, request.ParamName, request.Vanilla);
+            }
+
             private static T CheckNonNull<T>(T val, string name)
             {
                 if (val == null)
@@ -211,6 +259,9 @@ namespace SoapstoneLib
                         .UseStartup<Startup>()
                         .ConfigureKestrel(serverOptions =>
                         {
+                            // Prevent unbounded connection growth from clients that don't clean up.
+                            serverOptions.Limits.MaxConcurrentConnections = 100;
+                            serverOptions.Limits.KeepAliveTimeout = TimeSpan.FromMinutes(2);
                             serverOptions.ConfigureEndpointDefaults(listenOptions =>
                             {
                                 // Otherwise, with default value (1 and 2), results in "Error starting gRPC call.

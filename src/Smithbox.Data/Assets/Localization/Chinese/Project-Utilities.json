@@ -1,0 +1,32 @@
+{
+  "Entries": [
+    {
+      "Key": "PRJ_UTL_ME3_Profile_Missing",
+      "Text": "当前的 ME3 配置文件目录不存在。请在设置中将 ME3 配置文件目录配置为有效目录。"
+    },
+    {
+      "Key": "PRJ_UTL_ME3_Find_Profile_FAIL",
+      "Text": "[Project] 查找配置文件失败：{0}"
+    },
+    {
+      "Key": "PRJ_UTL_Project_Type_Not_Set",
+      "Text": "项目类型尚未设置。"
+    },
+    {
+      "Key": "PRJ_UTL_Missing_Suitable_VFS",
+      "Text": "未找到适合写入的 VFS。"
+    },
+    {
+      "Key": "PRJ_UTL_Failed_To_Save",
+      "Text": "[Project] 保存失败：{0}"
+    },
+    {
+      "Key": "PRJ_UTL_Missing_Directory_For_Backup",
+      "Text": "未找到目录：{0}"
+    },
+    {
+      "Key": "PRJ_UTL_Failed_To_Delete",
+      "Text": "[Project] 删除失败：{0}"
+    }
+  ]
+}

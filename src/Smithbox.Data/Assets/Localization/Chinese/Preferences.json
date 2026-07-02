@@ -1,0 +1,356 @@
+{
+  "Entries": [
+    {
+      "Key": "PREF_Category_General",
+      "Text": "通用"
+    },
+    {
+      "Key": "PREF_Category_Developer",
+      "Text": "开发者"
+    },
+    {
+      "Key": "PREF_Category_Loggers",
+      "Text": "日志记录器"
+    },
+    {
+      "Key": "PREF_Category_Automatic_Save",
+      "Text": "自动保存"
+    },
+    {
+      "Key": "PREF_Category_ME3",
+      "Text": "ME3"
+    },
+    {
+      "Key": "PREF_Category_Data_Overrides",
+      "Text": "数据覆盖"
+    },
+    {
+      "Key": "PREF_Category_UI_Fonts",
+      "Text": "字体"
+    },
+    {
+      "Key": "PREF_Category_UI_Theme",
+      "Text": "主题"
+    },
+    {
+      "Key": "PREF_Category_UI_Theme_Builder",
+      "Text": "主题生成器"
+    },
+    {
+      "Key": "PREF_Category_Viewport_Rendering",
+      "Text": "渲染"
+    },
+    {
+      "Key": "PREF_Category_Viewport_Model_Rendering",
+      "Text": "模型渲染"
+    },
+    {
+      "Key": "PREF_Category_Viewport_Selection",
+      "Text": "选择"
+    },
+    {
+      "Key": "PREF_Category_Viewport_Coloring",
+      "Text": "着色"
+    },
+    {
+      "Key": "PREF_Category_Viewport_Filter_Presets",
+      "Text": "滤镜预设"
+    },
+    {
+      "Key": "PREF_Category_MapEditor_General",
+      "Text": "通用"
+    },
+    {
+      "Key": "PREF_Category_MapEditor_Map_List",
+      "Text": "地图列表"
+    },
+    {
+      "Key": "PREF_Category_MapEditor_Map_Contents",
+      "Text": "地图内容"
+    },
+    {
+      "Key": "PREF_Category_MapEditor_Map_Object_Properties",
+      "Text": "地图对象属性"
+    },
+    {
+      "Key": "PREF_Category_MapEditor_Additional_Property_Information",
+      "Text": "附加属性信息"
+    },
+    {
+      "Key": "PREF_Category_MapEditor_Character_Substitution",
+      "Text": "角色替换"
+    },
+    {
+      "Key": "PREF_Category_MapEditor_Model_Selector",
+      "Text": "模型选择器"
+    },
+    {
+      "Key": "PREF_Category_MapEditor_Selection_Groups",
+      "Text": "选择组"
+    },
+    {
+      "Key": "PREF_Category_ModelEditor_Properties",
+      "Text": "属性"
+    },
+    {
+      "Key": "PREF_Category_ParamEditor_Regulation",
+      "Text": "规则文件"
+    },
+    {
+      "Key": "PREF_Category_ParamEditor_Param_List",
+      "Text": "Param 列表"
+    },
+    {
+      "Key": "PREF_Category_ParamEditor_Row_List",
+      "Text": "行列表"
+    },
+    {
+      "Key": "PREF_Category_ParamEditor_Field_List",
+      "Text": "字段列表"
+    },
+    {
+      "Key": "PREF_Category_ParamEditor_Field_Input",
+      "Text": "字段输入"
+    },
+    {
+      "Key": "PREF_Category_ParamEditor_Param_Context_Menu",
+      "Text": "Param 右键菜单"
+    },
+    {
+      "Key": "PREF_Category_ParamEditor_Row_Context_Menu",
+      "Text": "行右键菜单"
+    },
+    {
+      "Key": "PREF_Category_ParamEditor_Field_Context_Menu",
+      "Text": "字段右键菜单"
+    },
+    {
+      "Key": "PREF_Category_ParamEditor_Mass_Edit",
+      "Text": "批量编辑"
+    },
+    {
+      "Key": "PREF_Category_ParamEditor_Param_Reloader",
+      "Text": "Param 热加载"
+    },
+    {
+      "Key": "PREF_Category_ParamEditor_Metadata",
+      "Text": "元数据"
+    },
+    {
+      "Key": "PREF_Category_ParamEditor_Field_Layouts",
+      "Text": "字段布局"
+    },
+    {
+      "Key": "PREF_Category_TextEditor_Container_List",
+      "Text": "容器列表"
+    },
+    {
+      "Key": "PREF_Category_TextEditor_Text_File_List",
+      "Text": "文本文件列表"
+    },
+    {
+      "Key": "PREF_Category_TextEditor_Text_Entry_List",
+      "Text": "文本条目列表"
+    },
+    {
+      "Key": "PREF_Category_TextEditor_Text_Entries",
+      "Text": "文本条目"
+    },
+    {
+      "Key": "PREF_Category_TextEditor_Text_Export",
+      "Text": "文本导出"
+    },
+    {
+      "Key": "PREF_Category_TextEditor_Language_Sync",
+      "Text": "语言同步"
+    },
+    {
+      "Key": "PREF_Category_TextEditor_Text_Clipboard",
+      "Text": "文本剪贴板"
+    },
+    {
+      "Key": "PREF_Category_GparamEditor_File_List",
+      "Text": "文件列表"
+    },
+    {
+      "Key": "PREF_Category_GparamEditor_Group_List",
+      "Text": "组列表"
+    },
+    {
+      "Key": "PREF_Category_GparamEditor_Field_List",
+      "Text": "字段列表"
+    },
+    {
+      "Key": "PREF_Category_GparamEditor_Value_List",
+      "Text": "数值列表"
+    },
+    {
+      "Key": "PREF_Category_GparamEditor_Color_Edit",
+      "Text": "颜色编辑"
+    },
+    {
+      "Key": "PREF_Category_TextureViewer_File_List",
+      "Text": "文件列表"
+    },
+    {
+      "Key": "PREF_Category_TextureViewer_Texture_List",
+      "Text": "纹理列表"
+    },
+    {
+      "Key": "PREF_Category_MaterialEditor_Properties",
+      "Text": "属性"
+    },
+    {
+      "Key": "PREF_Category_MapDataEditor_General",
+      "Text": "通用"
+    },
+    {
+      "Key": "PREF_Category_MapDataEditor_General",
+      "Text": "通用"
+    },
+    {
+      "Key": "PREF_Category_AnimEditor_General",
+      "Text": "通用"
+    },
+    {
+      "Key": "PREF_Menu_Header_Options",
+      "Text": "选项"
+    },
+    {
+      "Key": "PREF_Menu_Save_Action",
+      "Text": "保存"
+    },
+    {
+      "Key": "PREF_Menu_Revert_Action",
+      "Text": "重置为默认"
+    },
+    {
+      "Key": "PREF_Preferences_Saved",
+      "Text": "偏好设置已保存。"
+    },
+    {
+      "Key": "PREF_Tab_System",
+      "Text": "系统"
+    },
+    {
+      "Key": "PREF_Tab_Project",
+      "Text": "项目"
+    },
+    {
+      "Key": "PREF_Tab_Interface",
+      "Text": "界面"
+    },
+    {
+      "Key": "PREF_Tab_Viewport",
+      "Text": "视口"
+    },
+    {
+      "Key": "PREF_Tab_Map_Editor",
+      "Text": "地图编辑器"
+    },
+    {
+      "Key": "PREF_Tab_Model_Editor",
+      "Text": "模型编辑器"
+    },
+    {
+      "Key": "PREF_Tab_Param_Editor",
+      "Text": "Param 编辑器"
+    },
+    {
+      "Key": "PREF_Tab_Text_Editor",
+      "Text": "文本编辑器"
+    },
+    {
+      "Key": "PREF_Tab_Graphics_Param_Editor",
+      "Text": "Graphics Param 编辑器"
+    },
+    {
+      "Key": "PREF_Tab_Material_Editor",
+      "Text": "材质编辑器"
+    },
+    {
+      "Key": "PREF_Tab_Texture_Viewer",
+      "Text": "纹理查看器"
+    },
+    {
+      "Key": "PREF_Tab_Map_Data_Editor",
+      "Text": "地图数据编辑器"
+    },
+    {
+      "Key": "PREF_Tab_Anim_Editor",
+      "Text": "动画编辑器"
+    },
+    {
+      "Key": "PREF_Search_Filter_Hint",
+      "Text": "搜索偏好设置..."
+    },
+    {
+      "Key": "PREF_Action_Prompt",
+      "Text": "确定吗？"
+    },
+    {
+      "Key": "PREF_Action_Revert_All",
+      "Text": "全部"
+    },
+    {
+      "Key": "PREF_Action_Revert_All_TT",
+      "Text": "将所有偏好设置恢复为默认值。"
+    },
+    {
+      "Key": "PREF_Menu_Header_Viewport",
+      "Text": "视口"
+    },
+    {
+      "Key": "PREF_Action_Viewport_General",
+      "Text": "通用"
+    },
+    {
+      "Key": "PREF_Action_Viewport_General_TT",
+      "Text": "将视口通用部分中的所有偏好设置恢复为默认值。"
+    },
+    {
+      "Key": "PREF_Action_Viewport_Rendering",
+      "Text": "渲染"
+    },
+    {
+      "Key": "PREF_Action_Viewport_Rendering_TT",
+      "Text": "将视口渲染部分中的所有偏好设置恢复为默认值。"
+    },
+    {
+      "Key": "PREF_Action_Viewport_Model_Rendering",
+      "Text": "模型渲染"
+    },
+    {
+      "Key": "PREF_Action_Viewport_Model_Rendering_TT",
+      "Text": "将视口模型渲染部分中的所有偏好设置恢复为默认值。"
+    },
+    {
+      "Key": "PREF_Action_Viewport_Selection",
+      "Text": "选择"
+    },
+    {
+      "Key": "PREF_Action_Viewport_Selection_TT",
+      "Text": "将视口选择部分中的所有偏好设置恢复为默认值。"
+    },
+    {
+      "Key": "PREF_Action_Viewport_Coloring",
+      "Text": "着色"
+    },
+    {
+      "Key": "PREF_Action_Viewport_Coloring_TT",
+      "Text": "将视口着色部分中的所有偏好设置恢复为默认值。"
+    },
+    {
+      "Key": "PREF_Action_Viewport_Display_Preset",
+      "Text": "显示预设"
+    },
+    {
+      "Key": "PREF_Action_Viewport_Display_Preset_TT",
+      "Text": "将视口显示预设部分中的所有偏好设置恢复为默认值。"
+    },
+    {
+      "Key": "PREF_No_Preferences_Yet",
+      "Text": "此编辑器尚无偏好设置。"
+    }
+  ]
+}

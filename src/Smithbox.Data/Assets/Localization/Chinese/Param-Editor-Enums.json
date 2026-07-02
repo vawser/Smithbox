@@ -1,0 +1,48 @@
+{
+  "Entries": [
+    {
+      "Key": "PARAM_ENUM_Field_Name_Mode_Source",
+      "Text": "来源"
+    },
+    {
+      "Key": "PARAM_ENUM_Field_Name_Mode_Community",
+      "Text": "社区"
+    },
+    {
+      "Key": "PARAM_ENUM_Field_Name_Mode_Source_Community",
+      "Text": "来源（社区）"
+    },
+    {
+      "Key": "PARAM_ENUM_Field_Name_Mode_Community_Source",
+      "Text": "社区（来源）"
+    },
+    {
+      "Key": "PARAM_ENUM_Param_Tooltip_Mode_Click",
+      "Text": "点击图标"
+    },
+    {
+      "Key": "PARAM_ENUM_Param_Tooltip_Mode_Hover",
+      "Text": "悬停在字段名称上"
+    },
+    {
+      "Key": "PARAM_ENUM_Field_Layout_Mode_Collapsible",
+      "Text": "可折叠标题"
+    },
+    {
+      "Key": "PARAM_ENUM_Field_Layout_Mode_Simple",
+      "Text": "简单标题"
+    },
+    {
+      "Key": "PARAM_ENUM_Field_Layout_Mode_Separator",
+      "Text": "分隔符"
+    },
+    {
+      "Key": "PARAM_ENUM_Field_Layout_Placement_Unsorted_Top",
+      "Text": "顶部"
+    },
+    {
+      "Key": "PARAM_ENUM_Field_Layout_Placement_Unsorted_Bottom",
+      "Text": "底部"
+    }
+  ]
+}

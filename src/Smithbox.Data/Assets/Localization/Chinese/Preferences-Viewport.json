@@ -1,0 +1,432 @@
+{
+  "Entries": [
+    {
+      "Key": "PREF_Viewport_Frame_Rate",
+      "Text": "帧率"
+    },
+    {
+      "Key": "PREF_Viewport_Frame_Rate_TT",
+      "Text": "调整视口的帧率。"
+    },
+    {
+      "Key": "PREF_Viewport_Enable_Rendering",
+      "Text": "启用模型渲染"
+    },
+    {
+      "Key": "PREF_Viewport_Enable_Rendering_TT",
+      "Text": "启用后，视口中将进行模型渲染。"
+    },
+    {
+      "Key": "PREF_Viewport_Enable_Texturing",
+      "Text": "启用纹理渲染"
+    },
+    {
+      "Key": "PREF_Viewport_Enable_Texturing_TT",
+      "Text": "启用后，视口中将进行纹理渲染。"
+    },
+    {
+      "Key": "PREF_Viewport_Enable_Culling",
+      "Text": "启用视锥体裁剪"
+    },
+    {
+      "Key": "PREF_Viewport_Enable_Culling_TT",
+      "Text": "启用后，相机视锥体外的实体将在视口中被裁剪。"
+    },
+    {
+      "Key": "PREF_Viewport_Limit_Buffer_Indirect_Draw",
+      "Text": "间接绘制缓冲区"
+    },
+    {
+      "Key": "PREF_Viewport_Limit_Buffer_Indirect_Draw_TT",
+      "Text": "此值约束间接绘制缓冲区的大小。超过此值将引发异常。"
+    },
+    {
+      "Key": "PREF_Viewport_Limit_Buffer_Flver_Bone",
+      "Text": "FLVER 骨骼缓冲区"
+    },
+    {
+      "Key": "PREF_Viewport_Limit_Buffer_Flver_Bone_TT",
+      "Text": "此值约束 FLVER 骨骼缓冲区的大小。超过此值将引发异常。"
+    },
+    {
+      "Key": "PREF_Viewport_Enable_Model_Masks",
+      "Text": "启用模型遮罩"
+    },
+    {
+      "Key": "PREF_Viewport_Enable_Model_Masks_TT",
+      "Text": "启用后，渲染视口对象时会考虑模型遮罩。"
+    },
+    {
+      "Key": "PREF_Viewport_Enable_LOD_Facesets",
+      "Text": "启用 LOD 面集"
+    },
+    {
+      "Key": "PREF_Viewport_Enable_LOD_Facesets_TT",
+      "Text": "启用后，渲染所有 FLVER 网格的所有面集，包括 LOD 面集。"
+    },
+    {
+      "Key": "PREF_Viewport_Flat_Model_Brightness",
+      "Text": "无纹理模型亮度"
+    },
+    {
+      "Key": "PREF_Viewport_Flat_Model_Brightness_TT",
+      "Text": "更改无纹理模型的亮度。"
+    },
+    {
+      "Key": "PREF_Viewport_Flat_Model_Saturation",
+      "Text": "无纹理模型饱和度"
+    },
+    {
+      "Key": "PREF_Viewport_Flat_Model_Saturation_TT",
+      "Text": "更改无纹理模型的饱和度。"
+    },
+    {
+      "Key": "PREF_Viewport_Enable_Selection_Outline",
+      "Text": "启用选择轮廓"
+    },
+    {
+      "Key": "PREF_Viewport_Enable_Selection_Outline_TT",
+      "Text": "启用后，选择的视口对象上除了选择着色外还会显示选择轮廓。\n注意：当选择数百（或更多）个视口对象时，轮廓容易出错。"
+    },
+    {
+      "Key": "PREF_Viewport_Enable_Selection_Tint",
+      "Text": "启用选择着色"
+    },
+    {
+      "Key": "PREF_Viewport_Enable_Selection_Tint_TT",
+      "Text": "启用后，选中的对象将被着色。"
+    },
+    {
+      "Key": "PREF_Viewport_Enable_Selection_Dithering",
+      "Text": "启用选择抖动"
+    },
+    {
+      "Key": "PREF_Viewport_Enable_Selection_Dithering_TT",
+      "Text": "启用后，选中的模型将产生抖动效果。"
+    },
+    {
+      "Key": "PREF_Viewport_Selection_Dither_Opacity",
+      "Text": "选择抖动不透明度"
+    },
+    {
+      "Key": "PREF_Viewport_Selection_Dither_Opacity_TT",
+      "Text": "决定抖动期间应用的不透明度强度。"
+    },
+    {
+      "Key": "PREF_Viewport_Enable_Box_Selection",
+      "Text": "启用框选拖拽"
+    },
+    {
+      "Key": "PREF_Viewport_Enable_Box_Selection_TT",
+      "Text": "启用后，您可以单击并拖动鼠标来选择多个对象。（Ctrl：减去，Shift：添加）"
+    },
+    {
+      "Key": "PREF_Viewport_Frame_Distance",
+      "Text": "框选距离"
+    },
+    {
+      "Key": "PREF_Viewport_Frame_Distance_TT",
+      "Text": "决定在视口中框选时相机放置的距离。"
+    },
+    {
+      "Key": "PREF_Viewport_Frame_Offset",
+      "Text": "框选偏移"
+    },
+    {
+      "Key": "PREF_Viewport_Frame_Offset_TT",
+      "Text": "决定在视口中框选时应用于相机的偏移量。"
+    },
+    {
+      "Key": "PREF_Viewport_Wireframe_Color_Variance",
+      "Text": "线框颜色变化"
+    },
+    {
+      "Key": "PREF_Viewport_Wireframe_Color_Variance_TT",
+      "Text": "调整线框视口对象着色时的变化因子。"
+    },
+    {
+      "Key": "PREF_Viewport_Header_General",
+      "Text": "通用"
+    },
+    {
+      "Key": "PREF_Viewport_Header_General_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PREF_Viewport_Header_Gizmo",
+      "Text": "操控器"
+    },
+    {
+      "Key": "PREF_Viewport_Header_Gizmo_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PREF_Viewport_Header_Parts",
+      "Text": "部件"
+    },
+    {
+      "Key": "PREF_Viewport_Header_Parts_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PREF_Viewport_Header_Wireframes",
+      "Text": "线框"
+    },
+    {
+      "Key": "PREF_Viewport_Header_Wireframes_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PREF_Viewport_Bg_Color",
+      "Text": "视口背景色"
+    },
+    {
+      "Key": "PREF_Viewport_Selection_Outline_Color",
+      "Text": "选择轮廓颜色"
+    },
+    {
+      "Key": "PREF_Viewport_Selection_Tint_Color",
+      "Text": "选择着色颜色（有纹理）"
+    },
+    {
+      "Key": "PREF_Viewport_Untextured_Selection_Tint_Color",
+      "Text": "选择着色颜色（无纹理）"
+    },
+    {
+      "Key": "PREF_Viewport_Selection_Tint_Strength",
+      "Text": "选择着色强度"
+    },
+    {
+      "Key": "PREF_Viewport_Gizmo_X_Base_Color",
+      "Text": "X 轴：基础色"
+    },
+    {
+      "Key": "PREF_Viewport_Gizmo_X_Highlight_Color",
+      "Text": "X 轴：高亮色"
+    },
+    {
+      "Key": "PREF_Viewport_Gizmo_Y_Base_Color",
+      "Text": "Y 轴：基础色"
+    },
+    {
+      "Key": "PREF_Viewport_Gizmo_Y_Highlight_Color",
+      "Text": "Y 轴：高亮色"
+    },
+    {
+      "Key": "PREF_Viewport_Gizmo_Z_Base_Color",
+      "Text": "Z 轴：基础色"
+    },
+    {
+      "Key": "PREF_Viewport_Gizmo_Z_Highlight_Color",
+      "Text": "Z 轴：高亮色"
+    },
+    {
+      "Key": "PREF_Viewport_Collision_Color",
+      "Text": "碰撞体：基础色"
+    },
+    {
+      "Key": "PREF_Viewport_Connect_Collision_Color",
+      "Text": "连接碰撞体：基础色"
+    },
+    {
+      "Key": "PREF_Viewport_Navmesh_Color",
+      "Text": "导航网格：基础色"
+    },
+    {
+      "Key": "PREF_Viewport_Navmesh_Gate_Color",
+      "Text": "导航网格门：基础色"
+    },
+    {
+      "Key": "PREF_Viewport_Box_Region_Base_Color",
+      "Text": "盒区域：基础色"
+    },
+    {
+      "Key": "PREF_Viewport_Box_Region_Highlight_Color",
+      "Text": "盒区域：高亮色"
+    },
+    {
+      "Key": "PREF_Viewport_Box_Region_Alpha",
+      "Text": "盒区域：透明度"
+    },
+    {
+      "Key": "PREF_Viewport_Cylinder_Region_Base_Color",
+      "Text": "圆柱区域：基础色"
+    },
+    {
+      "Key": "PREF_Viewport_Cylinder_Region_Highlight_Color",
+      "Text": "圆柱区域：高亮色"
+    },
+    {
+      "Key": "PREF_Viewport_Cylinder_Region_Alpha",
+      "Text": "圆柱区域：透明度"
+    },
+    {
+      "Key": "PREF_Viewport_Sphere_Region_Base_Color",
+      "Text": "球体区域：基础色"
+    },
+    {
+      "Key": "PREF_Viewport_Sphere_Region_Highlight_Color",
+      "Text": "球体区域：高亮色"
+    },
+    {
+      "Key": "PREF_Viewport_Sphere_Region_Alpha",
+      "Text": "球体区域：透明度"
+    },
+    {
+      "Key": "PREF_Viewport_Point_Region_Base_Color",
+      "Text": "点区域：基础色"
+    },
+    {
+      "Key": "PREF_Viewport_Point_Region_Highlight_Color",
+      "Text": "点区域：高亮色"
+    },
+    {
+      "Key": "PREF_Viewport_Point_Region_Alpha",
+      "Text": "点区域：透明度"
+    },
+    {
+      "Key": "PREF_Viewport_Dummy_Polygon_Base_Color",
+      "Text": "虚拟多边形：基础色"
+    },
+    {
+      "Key": "PREF_Viewport_Dummy_Polygon_Highlight_Color",
+      "Text": "虚拟多边形：高亮色"
+    },
+    {
+      "Key": "PREF_Viewport_Dummy_Polygon_Alpha",
+      "Text": "虚拟多边形：透明度"
+    },
+    {
+      "Key": "PREF_Viewport_Bone_Marker_Base_Color",
+      "Text": "骨骼标记：基础色"
+    },
+    {
+      "Key": "PREF_Viewport_Bone_Marker_Highlight_Color",
+      "Text": "骨骼标记：高亮色"
+    },
+    {
+      "Key": "PREF_Viewport_Bone_Marker_Alpha",
+      "Text": "骨骼标记：透明度"
+    },
+    {
+      "Key": "PREF_Viewport_Character_Marker_Base_Color",
+      "Text": "角色标记：基础色"
+    },
+    {
+      "Key": "PREF_Viewport_Character_Marker_Highlight_Color",
+      "Text": "角色标记：高亮色"
+    },
+    {
+      "Key": "PREF_Viewport_Character_Marker_Alpha",
+      "Text": "角色标记：透明度"
+    },
+    {
+      "Key": "PREF_Viewport_Object_Marker_Base_Color",
+      "Text": "对象标记：基础色"
+    },
+    {
+      "Key": "PREF_Viewport_Object_Marker_Highlight_Color",
+      "Text": "对象标记：高亮色"
+    },
+    {
+      "Key": "PREF_Viewport_Object_Marker_Alpha",
+      "Text": "对象标记：透明度"
+    },
+    {
+      "Key": "PREF_Viewport_Player_Marker_Base_Color",
+      "Text": "玩家标记：基础色"
+    },
+    {
+      "Key": "PREF_Viewport_Player_Marker_Highlight_Color",
+      "Text": "玩家标记：高亮色"
+    },
+    {
+      "Key": "PREF_Viewport_Player_Marker_Alpha",
+      "Text": "玩家标记：透明度"
+    },
+    {
+      "Key": "PREF_Viewport_Other_Marker_Base_Color",
+      "Text": "其他标记：基础色"
+    },
+    {
+      "Key": "PREF_Viewport_Other_Marker_Highlight_Color",
+      "Text": "其他标记：高亮色"
+    },
+    {
+      "Key": "PREF_Viewport_Other_Marker_Alpha",
+      "Text": "其他标记：透明度"
+    },
+    {
+      "Key": "PREF_Viewport_Point_Light_Base_Color",
+      "Text": "点光源：基础色"
+    },
+    {
+      "Key": "PREF_Viewport_Point_Light_Highlight_Color",
+      "Text": "点光源：高亮色"
+    },
+    {
+      "Key": "PREF_Viewport_Point_Light_Alpha",
+      "Text": "点光源：透明度"
+    },
+    {
+      "Key": "PREF_Viewport_Spot_Light_Base_Color",
+      "Text": "聚光灯：基础色"
+    },
+    {
+      "Key": "PREF_Viewport_Spot_Light_Highlight_Color",
+      "Text": "聚光灯：高亮色"
+    },
+    {
+      "Key": "PREF_Viewport_Spot_Light_Alpha",
+      "Text": "聚光灯：透明度"
+    },
+    {
+      "Key": "PREF_Viewport_Directional_Light_Base_Color",
+      "Text": "方向光：基础色"
+    },
+    {
+      "Key": "PREF_Viewport_Directional_Light_Highlight_Color",
+      "Text": "方向光：高亮色"
+    },
+    {
+      "Key": "PREF_Viewport_Directional_Light_Alpha",
+      "Text": "方向光：透明度"
+    },
+    {
+      "Key": "PREF_Viewport_Auto_Invade_Marker_Base_Color",
+      "Text": "入侵点标记：基础色"
+    },
+    {
+      "Key": "PREF_Viewport_Auto_Invade_Marker_Highlight_Color",
+      "Text": "入侵点标记：高亮色"
+    },
+    {
+      "Key": "PREF_Viewport_Level_Connector_Marker_Base_Color",
+      "Text": "关卡连接器标记：基础色"
+    },
+    {
+      "Key": "PREF_Viewport_Level_Connector_Marker_Highlight_Color",
+      "Text": "关卡连接器标记：高亮色"
+    },
+    {
+      "Key": "PREF_FilterPreset_Header",
+      "Text": "预设 {0}"
+    },
+    {
+      "Key": "PREF_FilterPreset_Header_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PREF_FilerPreset_Name",
+      "Text": "预设名称"
+    },
+    {
+      "Key": "PREF_FilterPreset_Filters_to_Set",
+      "Text": "要设置的滤镜"
+    },
+    {
+      "Key": "PREF_FilterPreset_Configure_Filters",
+      "Text": "配置可用的六个滤镜预设中的每一个。"
+    }
+  ]
+}

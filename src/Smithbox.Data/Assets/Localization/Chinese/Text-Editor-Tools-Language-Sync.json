@@ -1,0 +1,116 @@
+{
+  "Entries": [
+    {
+      "Key": "TEXT_LanguageSync_Hint",
+      "Text": "使用此功能将源语言的更改即时同步到所有其他语言。"
+    },
+    {
+      "Key": "TEXT_LanguageSync_Header_Source_Lang",
+      "Text": "源语言"
+    },
+    {
+      "Key": "TEXT_LanguageSync_Header_Source_Lang_TT",
+      "Text": "应用于同步过程以与目标语言进行对比的语言文本。"
+    },
+    {
+      "Key": "TEXT_LanguageSync_Header_Target_Lang",
+      "Text": "目标语言"
+    },
+    {
+      "Key": "TEXT_LanguageSync_Header_Target_Lang_TT",
+      "Text": "要同步到的目标语言。"
+    },
+    {
+      "Key": "TEXT_LanguageSync_Select_Source_Lang",
+      "Text": "请先选择源语言。"
+    },
+    {
+      "Key": "TEXT_LanguageSync_Lang_Select_TT",
+      "Text": "启用后，将同步到此语言。"
+    },
+    {
+      "Key": "TEXT_LanguageSync_Header_Options",
+      "Text": "选项"
+    },
+    {
+      "Key": "TEXT_LanguageSync_Header_Options_TT",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_LanguageSync_Checkbox_Include_Default",
+      "Text": "包含默认条目"
+    },
+    {
+      "Key": "TEXT_LanguageSync_Checkbox_Include_Default_TT",
+      "Text": "启用后，所有条目将被同步。"
+    },
+    {
+      "Key": "TEXT_LanguageSync_Checkbox_Include_Added",
+      "Text": "包含新增条目"
+    },
+    {
+      "Key": "TEXT_LanguageSync_Checkbox_Include_Added_TT",
+      "Text": "启用后，新增条目将被同步。"
+    },
+    {
+      "Key": "TEXT_LanguageSync_Checkbox_Include_Modified",
+      "Text": "包含修改条目"
+    },
+    {
+      "Key": "TEXT_LanguageSync_Checkbox_Include_Modified_TT",
+      "Text": "启用后，修改条目将被同步。"
+    },
+    {
+      "Key": "TEXT_LanguageSync_Checkbox_Apply_Prefix",
+      "Text": "对同步文本应用前缀"
+    },
+    {
+      "Key": "TEXT_LanguageSync_Checkbox_Apply_Prefix_TT",
+      "Text": "要应用于同步文本的前缀。"
+    },
+    {
+      "Key": "TEXT_LanguageSync_Header_Sync_Prefix",
+      "Text": "同步前缀"
+    },
+    {
+      "Key": "TEXT_LanguageSync_Header_Sync_Prefix_TT",
+      "Text": "应用于已同步文本的前缀。"
+    },
+    {
+      "Key": "TEXT_LanguageSync_Header_Actions",
+      "Text": "操作"
+    },
+    {
+      "Key": "TEXT_LanguageSync_Header_Actions_TT",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_LanguageSync_Action_Sync",
+      "Text": "同步"
+    },
+    {
+      "Key": "TEXT_LanguageSync_Action_Sync_TT",
+      "Text": "使用指定参数应用语言同步。"
+    },
+    {
+      "Key": "TEXT_LanguageSync_Log_No_Source_Language",
+      "Text": "尚未选择源语言。"
+    },
+    {
+      "Key": "TEXT_LanguageSync_Header_Sync_With",
+      "Text": "同步对象"
+    },
+    {
+      "Key": "TEXT_LanguageSync_Header_Sync_With_TT",
+      "Text": "将另一个类别的所有独有更改同步到此类别。\n\n在您希望将更改导入到的类别上使用此功能。"
+    },
+    {
+      "Key": "TEXT_LanguageSync_Action_Sync_TT",
+      "Text": "将 {0} 类别的更改带入此类别。"
+    },
+    {
+      "Key": "TEXT_LanguageSync_Sync_Operation_PASS",
+      "Text": "已将 {0} {1} 与 {2} 版本同步。"
+    }
+  ]
+}

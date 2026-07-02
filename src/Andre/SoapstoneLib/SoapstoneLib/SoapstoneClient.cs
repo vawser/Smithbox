@@ -213,8 +213,31 @@ namespace SoapstoneLib
             private KnownServer targetServer;
             private TimeSpan? targetDeadline;
             private SoapstoneClient lastClient;
+            private Task lastShutdownTask;
             private bool findServer;
             private int lastClientPort;
+
+            /// <summary>
+            /// Completes any pending shutdown of a previous client channel.
+            /// Must be called before creating a new channel to ensure old resources (sockets,
+            /// HTTP/2 connections, HPACK state) are fully released and not leaked.
+            /// </summary>
+            private void WaitForPendingShutdown()
+            {
+                if (lastShutdownTask == null || lastShutdownTask.IsCompleted)
+                {
+                    return;
+                }
+                try
+                {
+                    // Shutdown on localhost should be sub-second; cap the wait.
+                    lastShutdownTask.Wait(TimeSpan.FromSeconds(5));
+                }
+                catch (AggregateException)
+                {
+                    // Best-effort: swallow shutdown errors, they don't affect the new connection.
+                }
+            }
 
             internal Provider(KnownServer server = null)
             {
@@ -303,8 +326,8 @@ namespace SoapstoneLib
                 }
                 if (lastClient != null)
                 {
-                    // Clean up in background
-                    lastClient.ShutdownAsync();
+                    WaitForPendingShutdown();
+                    lastShutdownTask = lastClient.ShutdownAsync();
                 }
                 lastClientPort = actualPort;
                 lastClient = new SoapstoneClient("http://localhost:" + actualPort, targetDeadline);

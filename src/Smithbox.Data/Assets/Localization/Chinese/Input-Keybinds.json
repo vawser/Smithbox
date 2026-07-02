@@ -1,0 +1,1060 @@
+{
+  "Entries": [
+    {
+      "Key": "KEY_Move_Forward",
+      "Text": "向前移动"
+    },
+    {
+      "Key": "KEY_Move_Forward_TT",
+      "Text": "在视口中，这将向前移动相机。"
+    },
+    {
+      "Key": "KEY_Move_Backward",
+      "Text": "向后移动"
+    },
+    {
+      "Key": "KEY_Move_Backward_TT",
+      "Text": "在视口中，这将向后移动相机。"
+    },
+    {
+      "Key": "KEY_Move_Left",
+      "Text": "向左移动"
+    },
+    {
+      "Key": "KEY_Move_Left_TT",
+      "Text": "在视口中，这将向左移动相机。"
+    },
+    {
+      "Key": "KEY_Move_Right",
+      "Text": "向右移动"
+    },
+    {
+      "Key": "KEY_Move_Right_TT",
+      "Text": "在视口中，这将向右移动相机。"
+    },
+    {
+      "Key": "KEY_Move_Up",
+      "Text": "向上移动"
+    },
+    {
+      "Key": "KEY_Move_Up_TT",
+      "Text": "在视口中，这将向上移动相机。"
+    },
+    {
+      "Key": "KEY_Move_Down",
+      "Text": "向下移动"
+    },
+    {
+      "Key": "KEY_Move_Down_TT",
+      "Text": "在视口中，这将向下移动相机。"
+    },
+    {
+      "Key": "KEY_Frame",
+      "Text": "框选"
+    },
+    {
+      "Key": "KEY_Frame_TT",
+      "Text": "在视口中，这将在屏幕中央框选当前选中的视口对象。"
+    },
+    {
+      "Key": "KEY_Pull",
+      "Text": "拉取"
+    },
+    {
+      "Key": "KEY_Pull_TT",
+      "Text": "在视口中，这将把当前选中的视口对象移动到相机位置。"
+    },
+    {
+      "Key": "KEY_Reset",
+      "Text": "重置"
+    },
+    {
+      "Key": "KEY_Reset_TT",
+      "Text": "在视口中，这将重置相机位置。"
+    },
+    {
+      "Key": "KEY_Cycle_Gizmo_Translation_Mode",
+      "Text": "设置为 Gizmo 平移模式"
+    },
+    {
+      "Key": "KEY_Cycle_Gizmo_Translation_Mode_TT",
+      "Text": "在视口中，这将把视口对象 gizmo 切换为\"平移\"。"
+    },
+    {
+      "Key": "KEY_Cycle_Gizmo_Rotation_Mode",
+      "Text": "设置为 Gizmo 旋转模式"
+    },
+    {
+      "Key": "KEY_Cycle_Gizmo_Rotation_Mode_TT",
+      "Text": "在视口中，这将把视口对象 gizmo 切换为\"旋转\"。"
+    },
+    {
+      "Key": "KEY_Cycle_Gizmo_Scale_Mode",
+      "Text": "设置为 Gizmo 缩放模式"
+    },
+    {
+      "Key": "KEY_Cycle_Gizmo_Scale_Mode_TT",
+      "Text": "在视口中，这将把视口对象 gizmo 切换为\"缩放\"。"
+    },
+    {
+      "Key": "KEY_Cycle_Gizmo_Origin_Mode",
+      "Text": "循环 Gizmo 原点模式"
+    },
+    {
+      "Key": "KEY_Cycle_Gizmo_Origin_Mode_TT",
+      "Text": "在视口中，这将切换视口对象 gizmo 原点类型。"
+    },
+    {
+      "Key": "KEY_Cycle_Gizmo_Space_Mode",
+      "Text": "循环 Gizmo 世界空间模式"
+    },
+    {
+      "Key": "KEY_Cycle_Gizmo_Space_Mode_TT",
+      "Text": "在视口中，这将切换视口对象 gizmo 世界空间类型。"
+    },
+    {
+      "Key": "KEY_Cycle_Render_Outline_Mode",
+      "Text": "循环渲染轮廓模式"
+    },
+    {
+      "Key": "KEY_Cycle_Render_Outline_Mode_TT",
+      "Text": "在视口中，这将切换当前选中的视口对象的渲染类型。"
+    },
+    {
+      "Key": "KEY_Save",
+      "Text": "保存"
+    },
+    {
+      "Key": "KEY_Save_TT",
+      "Text": "这将保存当前聚焦的编辑器。"
+    },
+    {
+      "Key": "KEY_Undo",
+      "Text": "撤销"
+    },
+    {
+      "Key": "KEY_Undo_TT",
+      "Text": "这将撤销最近的操作。"
+    },
+    {
+      "Key": "KEY_Redo",
+      "Text": "重做"
+    },
+    {
+      "Key": "KEY_Redo_TT",
+      "Text": "这将重做最近撤销的操作。"
+    },
+    {
+      "Key": "KEY_Undo_Repeat",
+      "Text": "撤销（连续）"
+    },
+    {
+      "Key": "KEY_Undo_Repeat_TT",
+      "Text": "按住时将重复撤销最近的操作。"
+    },
+    {
+      "Key": "KEY_Redo_Repeat",
+      "Text": "重做（连续）"
+    },
+    {
+      "Key": "KEY_Redo_Repeat_TT",
+      "Text": "按住时将重复重做最近撤销的操作。"
+    },
+    {
+      "Key": "KEY_Up",
+      "Text": "在列表中向上移动"
+    },
+    {
+      "Key": "KEY_Up_TT",
+      "Text": "在列表中，这将向上移动选择一项。"
+    },
+    {
+      "Key": "KEY_Down",
+      "Text": "在列表中向下移动"
+    },
+    {
+      "Key": "KEY_Down_TT",
+      "Text": "在列表中，这将向下移动选择一项。"
+    },
+    {
+      "Key": "KEY_Left",
+      "Text": "在列表中向左移动"
+    },
+    {
+      "Key": "KEY_Left_TT",
+      "Text": "在列表中，这将向左移动选择一项。"
+    },
+    {
+      "Key": "KEY_Right",
+      "Text": "在列表中向右移动"
+    },
+    {
+      "Key": "KEY_Right_TT",
+      "Text": "在列表中，这将向右移动选择一项。"
+    },
+    {
+      "Key": "KEY_Add",
+      "Text": "向列表添加新项"
+    },
+    {
+      "Key": "KEY_Add_TT",
+      "Text": "这将向列表中添加一个新条目。"
+    },
+    {
+      "Key": "KEY_Select_All",
+      "Text": "全选列表"
+    },
+    {
+      "Key": "KEY_Select_All_TT",
+      "Text": "这将选择列表中的所有条目。"
+    },
+    {
+      "Key": "KEY_Copy",
+      "Text": "复制"
+    },
+    {
+      "Key": "KEY_Copy_TT",
+      "Text": "将当前选中的条目复制到剪贴板。"
+    },
+    {
+      "Key": "KEY_Paste",
+      "Text": "粘贴"
+    },
+    {
+      "Key": "KEY_Paste_TT",
+      "Text": "将剪贴板中的条目粘贴到列表中。"
+    },
+    {
+      "Key": "KEY_Duplicate",
+      "Text": "复制"
+    },
+    {
+      "Key": "KEY_Duplicate_TT",
+      "Text": "选中条目时，这将在列表中复制该条目。"
+    },
+    {
+      "Key": "KEY_Delete",
+      "Text": "删除"
+    },
+    {
+      "Key": "KEY_Delete_TT",
+      "Text": "选中条目时，这将从列表中删除该条目。"
+    },
+    {
+      "Key": "KEY_Jump",
+      "Text": "聚焦"
+    },
+    {
+      "Key": "KEY_Jump_TT",
+      "Text": "选中条目时，这将在用户屏幕中央聚焦该条目。"
+    },
+    {
+      "Key": "KEY_Reorder_Up",
+      "Text": "上移"
+    },
+    {
+      "Key": "KEY_Reorder_Up_TT",
+      "Text": "在列表中，将所选条目上移一个位置。"
+    },
+    {
+      "Key": "KEY_Reorder_Down",
+      "Text": "下移"
+    },
+    {
+      "Key": "KEY_Reorder_Down_TT",
+      "Text": "在列表中，将所选条目下移一个位置。"
+    },
+    {
+      "Key": "KEY_Reorder_Top",
+      "Text": "移至顶部"
+    },
+    {
+      "Key": "KEY_Reorder_Top_TT",
+      "Text": "在列表中，将所选条目移至列表顶部。"
+    },
+    {
+      "Key": "KEY_Reorder_Bottom",
+      "Text": "移到底部"
+    },
+    {
+      "Key": "KEY_Reorder_Bottom_TT",
+      "Text": "在列表中，将所选条目移至列表底部。"
+    },
+    {
+      "Key": "KEY_Apply_to_All",
+      "Text": "应用于全部"
+    },
+    {
+      "Key": "KEY_Apply_to_All_TT",
+      "Text": "在列表中，按住此按钮将使操作应用于所有条目。"
+    },
+    {
+      "Key": "KEY_Toggle_Tools_Menu",
+      "Text": "切换工具菜单"
+    },
+    {
+      "Key": "KEY_Toggle_Tools_Menu_TT",
+      "Text": "切换当前编辑器中工具菜单的可见性。"
+    },
+    {
+      "Key": "KEY_MapEditor_Toggle_World_Map_Menu",
+      "Text": "切换世界地图"
+    },
+    {
+      "Key": "KEY_MapEditor_Toggle_World_Map_Menu_TT",
+      "Text": "切换世界地图工具的可见性。"
+    },
+    {
+      "Key": "KEY_MapEditor_Reset_World_Map_Zoom_Level",
+      "Text": "重置世界地图缩放级别"
+    },
+    {
+      "Key": "KEY_MapEditor_Reset_World_Map_Zoom_Level_TT",
+      "Text": "重置世界地图工具中的缩放级别。"
+    },
+    {
+      "Key": "KEY_MapEditor_Create_Map_Object",
+      "Text": "创建地图对象"
+    },
+    {
+      "Key": "KEY_MapEditor_Create_Map_Object_TT",
+      "Text": "创建一个新的地图对象。"
+    },
+    {
+      "Key": "KEY_MapEditor_Duplicate_To_Map",
+      "Text": "切换复制到地图菜单"
+    },
+    {
+      "Key": "KEY_MapEditor_Duplicate_To_Map_TT",
+      "Text": "打开\"复制到地图\"菜单。"
+    },
+    {
+      "Key": "KEY_MapEditor_Rotate_X_Axis",
+      "Text": "旋转选择（+ x 轴）"
+    },
+    {
+      "Key": "KEY_MapEditor_Rotate_X_Axis_TT",
+      "Text": "沿正 X 轴将选择旋转一个增量。"
+    },
+    {
+      "Key": "KEY_MapEditor_Rotate_Y_Axis",
+      "Text": "旋转选择（+ y 轴）"
+    },
+    {
+      "Key": "KEY_MapEditor_Rotate_Y_Axis_TT",
+      "Text": "沿正 Y 轴将选择旋转一个增量。"
+    },
+    {
+      "Key": "KEY_MapEditor_Rotate_Pivot_Y_Axis",
+      "Text": "枢轴选择（+ y 轴）"
+    },
+    {
+      "Key": "KEY_MapEditor_Rotate_Pivot_Y_Axis_TT",
+      "Text": "沿正 Y 轴将选择枢轴旋转一个增量。"
+    },
+    {
+      "Key": "KEY_MapEditor_Rotate_Minus_X_Axis",
+      "Text": "旋转选择（- x 轴）"
+    },
+    {
+      "Key": "KEY_MapEditor_Rotate_Minus_X_Axis_TT",
+      "Text": "沿负 X 轴将选择旋转一个增量。"
+    },
+    {
+      "Key": "KEY_MapEditor_Rotate_Minus_Y_Axis",
+      "Text": "旋转选择（- y 轴）"
+    },
+    {
+      "Key": "KEY_MapEditor_Rotate_Minus_Y_Axis_TT",
+      "Text": "沿负 Y 轴将选择旋转一个增量。"
+    },
+    {
+      "Key": "KEY_MapEditor_Rotate_Minus_Pivot_Y_Axis",
+      "Text": "枢轴选择（- y 轴）"
+    },
+    {
+      "Key": "KEY_MapEditor_Rotate_Minus_Pivot_Y_Axis_TT",
+      "Text": "沿负 Y 轴将选择枢轴旋转一个增量。"
+    },
+    {
+      "Key": "KEY_MapEditor_Rotate_Fixed_Angle",
+      "Text": "旋转选择（固定角度）"
+    },
+    {
+      "Key": "KEY_MapEditor_Rotate_Fixed_Angle_TT",
+      "Text": "按配置的固定角度旋转选择。"
+    },
+    {
+      "Key": "KEY_MapEditor_Reset_Rotation",
+      "Text": "重置选择旋转"
+    },
+    {
+      "Key": "KEY_MapEditor_Reset_Rotation_TT",
+      "Text": "将选择的旋转重置为 <0,0,0>"
+    },
+    {
+      "Key": "KEY_MapEditor_Scramble",
+      "Text": "打乱选择"
+    },
+    {
+      "Key": "KEY_MapEditor_Scramble_TT",
+      "Text": "将打乱参数应用于选择。"
+    },
+    {
+      "Key": "KEY_MapEditor_Replicate",
+      "Text": "复制选择"
+    },
+    {
+      "Key": "KEY_MapEditor_Replicate_TT",
+      "Text": "将复制参数应用于选择。"
+    },
+    {
+      "Key": "KEY_MapEditor_Cycle_Render_Type",
+      "Text": "循环渲染类型"
+    },
+    {
+      "Key": "KEY_MapEditor_Cycle_Render_Type_TT",
+      "Text": "循环切换地图对象的渲染类型。"
+    },
+    {
+      "Key": "KEY_MapEditor_Make_Dummy_Object",
+      "Text": "将地图对象设置为虚拟对象"
+    },
+    {
+      "Key": "KEY_MapEditor_Make_Dummy_Object_TT",
+      "Text": "将选择设为 DummyObject 或 DummyAsset（会导致信息丢失）。"
+    },
+    {
+      "Key": "KEY_MapEditor_Make_Normal_Object",
+      "Text": "将地图对象设置为正常"
+    },
+    {
+      "Key": "KEY_MapEditor_Make_Normal_Object_TT",
+      "Text": "将选择设为 Object 或 Asset。"
+    },
+    {
+      "Key": "KEY_MapEditor_Enable_Game_Presence_Object",
+      "Text": "启用地图对象游戏存在"
+    },
+    {
+      "Key": "KEY_MapEditor_Enable_Game_Presence_TT",
+      "Text": "为选择启用 Game Presence 布尔值。"
+    },
+    {
+      "Key": "KEY_MapEditor_Disable_Game_Presence_Object",
+      "Text": "禁用地图对象游戏存在"
+    },
+    {
+      "Key": "KEY_MapEditor_Disable_Game_Presence_TT",
+      "Text": "为选择禁用 Game Presence 布尔值。"
+    },
+    {
+      "Key": "KEY_MapEditor_Visibility_Flip",
+      "Text": "翻转可见性"
+    },
+    {
+      "Key": "KEY_MapEditor_Visibility_Flip_TT",
+      "Text": "翻转选择的当前可见性状态。"
+    },
+    {
+      "Key": "KEY_MapEditor_Visibility_Enable",
+      "Text": "强制可见"
+    },
+    {
+      "Key": "KEY_MapEditor_Visibility_Enable_TT",
+      "Text": "强制选择可见。"
+    },
+    {
+      "Key": "KEY_MapEditor_Visibility_Disable",
+      "Text": "强制不可见"
+    },
+    {
+      "Key": "KEY_MapEditor_Visibility_Disable_TT",
+      "Text": "强制选择不可见。"
+    },
+    {
+      "Key": "KEY_MapEditor_Global_Visibility_Flip",
+      "Text": "翻转全部可见性"
+    },
+    {
+      "Key": "KEY_MapEditor_Global_Visibility_Flip_TT",
+      "Text": "翻转所有地图对象的当前可见性状态。"
+    },
+    {
+      "Key": "KEY_MapEditor_Global_Visibility_Enable",
+      "Text": "强制全部可见"
+    },
+    {
+      "Key": "KEY_MapEditor_Global_Visibility_Enable_TT",
+      "Text": "强制所有地图对象可见。"
+    },
+    {
+      "Key": "KEY_MapEditor_Global_Visibility_Disable",
+      "Text": "强制全部不可见"
+    },
+    {
+      "Key": "KEY_MapEditor_Global_Visibility_Disable_TT",
+      "Text": "强制所有地图对象不可见。"
+    },
+    {
+      "Key": "KEY_MapEditor_Configure_Grid_Placement",
+      "Text": "切换网格放置菜单"
+    },
+    {
+      "Key": "KEY_MapEditor_Configure_Grid_Placement_TT",
+      "Text": "切换网格放置菜单。"
+    },
+    {
+      "Key": "KEY_MapEditor_Cycle_Selected_Grid_Type",
+      "Text": "循环选择网格"
+    },
+    {
+      "Key": "KEY_MapEditor_Cycle_Selected_Grid_Type_TT",
+      "Text": "循环切换网格放置工具将选择移动到的网格。"
+    },
+    {
+      "Key": "KEY_MapEditor_Move_to_Primary_Grid",
+      "Text": "将选择移至主网格"
+    },
+    {
+      "Key": "KEY_MapEditor_Move_to_Primary_Grid_TT",
+      "Text": "将选择移至主网格（基于网格放置参数）。"
+    },
+    {
+      "Key": "KEY_MapEditor_Move_to_Secondary_Grid",
+      "Text": "将选择移至辅助网格"
+    },
+    {
+      "Key": "KEY_MapEditor_Move_to_Secondary_Grid_TT",
+      "Text": "将选择移至辅助网格（基于网格放置参数）。"
+    },
+    {
+      "Key": "KEY_MapEditor_Move_to_Tertiary_Grid",
+      "Text": "将选择移至第三网格"
+    },
+    {
+      "Key": "KEY_MapEditor_Move_to_Tertiary_Grid_TT",
+      "Text": "将选择移至第三网格（基于网格放置参数）。"
+    },
+    {
+      "Key": "KEY_MapEditor_SelectAll_Configurable",
+      "Text": "全选（可配置）"
+    },
+    {
+      "Key": "KEY_MapEditor_SelectAll_Configurable_TT",
+      "Text": "选择所有符合配置参数的地图对象。"
+    },
+    {
+      "Key": "KEY_MapEditor_SelectAll_ObjectType",
+      "Text": "全选（对象类型）"
+    },
+    {
+      "Key": "KEY_MapEditor_SelectAll_ObjectType_TT",
+      "Text": "选择所有与当前选择具有相同对象类型的地图对象。"
+    },
+    {
+      "Key": "KEY_MapEditor_SelectAll_ModelName",
+      "Text": "全选（模型名称）"
+    },
+    {
+      "Key": "KEY_MapEditor_SelectAll_ModelName_TT",
+      "Text": "选择所有与当前选择具有相同模型名称的地图对象。"
+    },
+    {
+      "Key": "KEY_MapEditor_SelectAll_Ceremony",
+      "Text": "全选（仪式）"
+    },
+    {
+      "Key": "KEY_MapEditor_SelectAll_Ceremony_TT",
+      "Text": "选择所有与当前选择具有相同仪式图层的地图对象。"
+    },
+    {
+      "Key": "KEY_MapEditor_Create_Selection_Group",
+      "Text": "创建选择组"
+    },
+    {
+      "Key": "KEY_MapEditor_Create_Selection_Group_TT",
+      "Text": "从当前选择自动创建一个选择组。"
+    },
+    {
+      "Key": "KEY_MapEditor_Select_Group_0",
+      "Text": "选择选择组 0"
+    },
+    {
+      "Key": "KEY_MapEditor_Select_Group_0_TT",
+      "Text": "选择已分配组 0 快捷键的组中的地图对象。"
+    },
+    {
+      "Key": "KEY_MapEditor_Select_Group_1",
+      "Text": "选择选择组 1"
+    },
+    {
+      "Key": "KEY_MapEditor_Select_Group_1_TT",
+      "Text": "选择已分配组 1 快捷键的组中的地图对象。"
+    },
+    {
+      "Key": "KEY_MapEditor_Select_Group_2",
+      "Text": "选择选择组 2"
+    },
+    {
+      "Key": "KEY_MapEditor_Select_Group_2_TT",
+      "Text": "选择已分配组 2 快捷键的组中的地图对象。"
+    },
+    {
+      "Key": "KEY_MapEditor_Select_Group_3",
+      "Text": "选择选择组 3"
+    },
+    {
+      "Key": "KEY_MapEditor_Select_Group_3_TT",
+      "Text": "选择已分配组 3 快捷键的组中的地图对象。"
+    },
+    {
+      "Key": "KEY_MapEditor_Select_Group_4",
+      "Text": "选择选择组 4"
+    },
+    {
+      "Key": "KEY_MapEditor_Select_Group_4_TT",
+      "Text": "选择已分配组 4 快捷键的组中的地图对象。"
+    },
+    {
+      "Key": "KEY_MapEditor_Select_Group_5",
+      "Text": "选择选择组 5"
+    },
+    {
+      "Key": "KEY_MapEditor_Select_Group_5_TT",
+      "Text": "选择已分配组 5 快捷键的组中的地图对象。"
+    },
+    {
+      "Key": "KEY_MapEditor_Select_Group_6",
+      "Text": "选择选择组 6"
+    },
+    {
+      "Key": "KEY_MapEditor_Select_Group_6_TT",
+      "Text": "选择已分配组 6 快捷键的组中的地图对象。"
+    },
+    {
+      "Key": "KEY_MapEditor_Select_Group_7",
+      "Text": "选择选择组 7"
+    },
+    {
+      "Key": "KEY_MapEditor_Select_Group_7_TT",
+      "Text": "选择已分配组 7 快捷键的组中的地图对象。"
+    },
+    {
+      "Key": "KEY_MapEditor_Select_Group_8",
+      "Text": "选择选择组 8"
+    },
+    {
+      "Key": "KEY_MapEditor_Select_Group_8_TT",
+      "Text": "选择已分配组 8 快捷键的组中的地图对象。"
+    },
+    {
+      "Key": "KEY_MapEditor_Select_Group_9",
+      "Text": "选择选择组 9"
+    },
+    {
+      "Key": "KEY_MapEditor_Select_Group_9_TT",
+      "Text": "选择已分配组 9 快捷键的组中的地图对象。"
+    },
+    {
+      "Key": "KEY_MapEditor_Select_Group_10",
+      "Text": "选择选择组 10"
+    },
+    {
+      "Key": "KEY_MapEditor_Select_Group_10_TT",
+      "Text": "选择已分配组 10 快捷键的组中的地图对象。"
+    },
+    {
+      "Key": "KEY_MapEditor_Rotation_Increment_Cycle_Type",
+      "Text": "循环旋转增量类型（正向）"
+    },
+    {
+      "Key": "KEY_MapEditor_Rotation_Increment_Cycle_Type_TT",
+      "Text": "正向循环旋转增量值。"
+    },
+    {
+      "Key": "KEY_MapEditor_Rotation_Increment_Cycle_Type_Backwards",
+      "Text": "循环旋转增量类型（反向）"
+    },
+    {
+      "Key": "KEY_MapEditor_Rotation_Increment_Cycle_Type_Backwards_TT",
+      "Text": "反向循环旋转增量值。"
+    },
+    {
+      "Key": "KEY_MapEditor_Position_Increment_Cycle_Type",
+      "Text": "循环平移增量类型（正向）"
+    },
+    {
+      "Key": "KEY_MapEditor_Position_Increment_Cycle_Type_TT",
+      "Text": "正向循环平移增量值。"
+    },
+    {
+      "Key": "KEY_MapEditor_Position_Increment_Cycle_Type_Backwards",
+      "Text": "循环平移增量类型（反向）"
+    },
+    {
+      "Key": "KEY_MapEditor_Position_Increment_Cycle_Type_Backwards_TT",
+      "Text": "反向循环平移增量值。"
+    },
+    {
+      "Key": "KEY_MapEditor_Position_Increment_Toggle_Discrete_Mode",
+      "Text": "切换增量离散模式"
+    },
+    {
+      "Key": "KEY_MapEditor_Position_Increment_Toggle_Discrete_Mode_TT",
+      "Text": "切换是否对平移增量移动使用\"离散模式\"快捷键检测。"
+    },
+    {
+      "Key": "KEY_MapEditor_Position_Increment_Positive_X",
+      "Text": "按增量平移选择（+ x 轴）"
+    },
+    {
+      "Key": "KEY_MapEditor_Position_Increment_Positive_X_TT",
+      "Text": "按当前平移增量沿正 X 轴移动选择。"
+    },
+    {
+      "Key": "KEY_MapEditor_Position_Increment_Negative_X",
+      "Text": "按增量平移选择（- x 轴）"
+    },
+    {
+      "Key": "KEY_MapEditor_Position_Increment_Negative_X_TT",
+      "Text": "按当前平移增量沿负 X 轴移动选择。"
+    },
+    {
+      "Key": "KEY_MapEditor_Position_Increment_Positive_Y",
+      "Text": "按增量平移选择（+ y 轴）"
+    },
+    {
+      "Key": "KEY_MapEditor_Position_Increment_Positive_Y_TT",
+      "Text": "按当前平移增量沿正 Y 轴移动选择。"
+    },
+    {
+      "Key": "KEY_MapEditor_Position_Increment_Negative_Y",
+      "Text": "按增量平移选择（- y 轴）"
+    },
+    {
+      "Key": "KEY_MapEditor_Position_Increment_Negative_Y_TT",
+      "Text": "按当前平移增量沿负 Y 轴移动选择。"
+    },
+    {
+      "Key": "KEY_MapEditor_Position_Increment_Positive_Z",
+      "Text": "按增量平移选择（+ z 轴）"
+    },
+    {
+      "Key": "KEY_MapEditor_Position_Increment_Positive_Z_TT",
+      "Text": "按当前平移增量沿正 Z 轴移动选择。"
+    },
+    {
+      "Key": "KEY_MapEditor_Position_Increment_Negative_Z",
+      "Text": "按增量平移选择（- z 轴）"
+    },
+    {
+      "Key": "KEY_MapEditor_Position_Increment_Negative_Z_TT",
+      "Text": "按当前平移增量沿负 Z 轴移动选择。"
+    },
+    {
+      "Key": "KEY_MapEditor_Toggle_Patrol_Route_Visuals",
+      "Text": "切换巡逻路线可见性"
+    },
+    {
+      "Key": "KEY_MapEditor_Toggle_Patrol_Route_Visuals_TT",
+      "Text": "切换视口中巡逻路线的可见性。"
+    },
+    {
+      "Key": "KEY_MapEditor_View_Display_Group",
+      "Text": "查看显示组"
+    },
+    {
+      "Key": "KEY_MapEditor_View_Display_Group_TT",
+      "Text": "查看与当前选择具有相同显示组的所有地图对象。"
+    },
+    {
+      "Key": "KEY_MapEditor_View_Draw_Group",
+      "Text": "查看绘制组"
+    },
+    {
+      "Key": "KEY_MapEditor_View_Draw_Group_TT",
+      "Text": "查看与当前选择具有相同绘制组的所有地图对象。"
+    },
+    {
+      "Key": "KEY_MapEditor_Apply_Display_Group",
+      "Text": "应用显示组"
+    },
+    {
+      "Key": "KEY_MapEditor_Apply_Display_Group_TT",
+      "Text": "将显示组工具中的显示组更改应用到当前选择。"
+    },
+    {
+      "Key": "KEY_MapEditor_Apply_Draw_Group",
+      "Text": "应用绘制组"
+    },
+    {
+      "Key": "KEY_MapEditor_Apply_Draw_Group_TT",
+      "Text": "将显示组工具中的绘制组更改应用到当前选择。"
+    },
+    {
+      "Key": "KEY_MapEditor_Hide_All_Display_Groups",
+      "Text": "隐藏所有显示组"
+    },
+    {
+      "Key": "KEY_MapEditor_Hide_All_Display_Groups_TT",
+      "Text": "隐藏显示组工具中的所有显示组。"
+    },
+    {
+      "Key": "KEY_MapEditor_Show_All_Display_Groups",
+      "Text": "显示所有显示组"
+    },
+    {
+      "Key": "KEY_MapEditor_Show_All_Display_Groups_TT",
+      "Text": "显示显示组工具中的所有显示组。"
+    },
+    {
+      "Key": "KEY_MapEditor_Select_Display_Group_Highlights",
+      "Text": "选择显示组高亮"
+    },
+    {
+      "Key": "KEY_MapEditor_Select_Display_Group_Highlights_TT",
+      "Text": "选择已高亮的显示组。"
+    },
+    {
+      "Key": "KEY_MapEditor_Select_Collision_References",
+      "Text": "选择碰撞引用"
+    },
+    {
+      "Key": "KEY_MapEditor_Select_Collision_References_TT",
+      "Text": "选择所有引用当前选中碰撞体的地图对象。"
+    },
+    {
+      "Key": "KEY_MapEditor_Select_Referenced_Collision",
+      "Text": "选择引用的碰撞体"
+    },
+    {
+      "Key": "KEY_MapEditor_Select_Referenced_Collision_TT",
+      "Text": "选择当前选中的部件所引用的碰撞体。"
+    },
+    {
+      "Key": "KEY_MapEditor_Deselect_All",
+      "Text": "取消全选"
+    },
+    {
+      "Key": "KEY_MapEditor_Deselect_All_TT",
+      "Text": "清除选择。"
+    },
+    {
+      "Key": "KEY_ModelEditor_Select_Primitives_Only",
+      "Text": "进入基本体选择模式"
+    },
+    {
+      "Key": "KEY_ModelEditor_Select_Primitives_Only_TT",
+      "Text": "按住时，视口点击将只选择虚拟体和节点。"
+    },
+    {
+      "Key": "KEY_ParamEditor_Focus_Searchbar",
+      "Text": "聚焦搜索"
+    },
+    {
+      "Key": "KEY_ParamEditor_Focus_Searchbar_TT",
+      "Text": "聚焦搜索栏输入框。"
+    },
+    {
+      "Key": "KEY_ParamEditor_Apply_Mass_Edit",
+      "Text": "应用批量编辑"
+    },
+    {
+      "Key": "KEY_ParamEditor_Apply_Mass_Edit_TT",
+      "Text": "应用当前的批量编辑命令。"
+    },
+    {
+      "Key": "KEY_ParamEditor_View_Mass_Edit",
+      "Text": "查看批量编辑菜单"
+    },
+    {
+      "Key": "KEY_ParamEditor_View_Mass_Edit_TT",
+      "Text": "切换批量编辑菜单。"
+    },
+    {
+      "Key": "KEY_ParamEditor_Import_CSV",
+      "Text": "查看导入 CSV 菜单"
+    },
+    {
+      "Key": "KEY_ParamEditor_Import_CSV_TT",
+      "Text": "切换导入 CSV 菜单。"
+    },
+    {
+      "Key": "KEY_ParamEditor_Export_CSV",
+      "Text": "查看导出 CSV 菜单"
+    },
+    {
+      "Key": "KEY_ParamEditor_Export_CSV_TT",
+      "Text": "切换导出 CSV 菜单。"
+    },
+    {
+      "Key": "KEY_ParamEditor_Export_CSV_Names",
+      "Text": "导出 CSV（行名称）"
+    },
+    {
+      "Key": "KEY_ParamEditor_Export_CSV_Names_TT",
+      "Text": "打开导出 CSV 菜单，预填当前参数的行名称。"
+    },
+    {
+      "Key": "KEY_ParamEditor_Export_CSV_Param",
+      "Text": "导出 CSV（参数）"
+    },
+    {
+      "Key": "KEY_ParamEditor_Export_CSV_Param_TT",
+      "Text": "打开导出 CSV 菜单，预填当前参数的行数据。"
+    },
+    {
+      "Key": "KEY_ParamEditor_Export_CSV_All_Rows",
+      "Text": "导出 CSV（所有行）"
+    },
+    {
+      "Key": "KEY_ParamEditor_Export_CSV_All_Rows_TT",
+      "Text": "打开导出 CSV 菜单，预填当前参数的行数据。"
+    },
+    {
+      "Key": "KEY_ParamEditor_Export_CSV_Modified_Rows",
+      "Text": "导出 CSV（修改的行）"
+    },
+    {
+      "Key": "KEY_ParamEditor_Export_CSV_Modified_Rows_TT",
+      "Text": "打开导出 CSV 菜单，预填当前参数已修改的行数据。"
+    },
+    {
+      "Key": "KEY_ParamEditor_Export_CSV_Selected_Rows",
+      "Text": "导出 CSV（选中的行）"
+    },
+    {
+      "Key": "KEY_ParamEditor_Export_CSV_Selected_Rows_TT",
+      "Text": "打开导出 CSV 菜单，预填当前参数选中的行数据。"
+    },
+    {
+      "Key": "KEY_ParamEditor_Reload_All_Params",
+      "Text": "重新加载所有参数"
+    },
+    {
+      "Key": "KEY_ParamEditor_Reload_All_Params_TT",
+      "Text": "重新加载所有参数，刷新游戏中的参数数据（如果支持）。"
+    },
+    {
+      "Key": "KEY_ParamEditor_Reload_Selected_Param",
+      "Text": "重新加载所选参数"
+    },
+    {
+      "Key": "KEY_ParamEditor_Reload_Selected_Param_TT",
+      "Text": "重新加载所选参数，刷新游戏中的参数数据（如果支持）。"
+    },
+    {
+      "Key": "KEY_ParamEditor_RowList_Sort_Rows",
+      "Text": "排序行"
+    },
+    {
+      "Key": "KEY_ParamEditor_RowList_Sort_Rows_TT",
+      "Text": "对当前参数的所有行应用行排序。"
+    },
+    {
+      "Key": "KEY_ParamEditor_RowList_Jump_to_Row_ID",
+      "Text": "打开跳转到行菜单"
+    },
+    {
+      "Key": "KEY_ParamEditor_RowList_Jump_to_Row_ID_TT",
+      "Text": "切换跳转到行菜单。"
+    },
+    {
+      "Key": "KEY_ParamEditor_RowList_Inherit_Referenced_Row_Name",
+      "Text": "应用引用的行名称继承"
+    },
+    {
+      "Key": "KEY_ParamEditor_RowList_Inherit_Referenced_Row_Name_TT",
+      "Text": "应用引用的行名称继承（如果已配置）。"
+    },
+    {
+      "Key": "KEY_TextEditor_Focus_Searchbar",
+      "Text": "聚焦搜索"
+    },
+    {
+      "Key": "KEY_TextEditor_Focus_Searchbar_TT",
+      "Text": "聚焦搜索栏输入框。"
+    },
+    {
+      "Key": "KEY_TextEditor_Create_New_Entry",
+      "Text": "切换文本条目创建器"
+    },
+    {
+      "Key": "KEY_TextEditor_Create_New_Entry_TT",
+      "Text": "切换文本条目创建器菜单。"
+    },
+    {
+      "Key": "KEY_TextEditor_Configurable_Duplicate",
+      "Text": "切换可配置复制"
+    },
+    {
+      "Key": "KEY_TextEditor_Configurable_Duplicate_TT",
+      "Text": "切换可配置复制菜单。"
+    },
+    {
+      "Key": "KEY_GparamEditor_Add_Missing_Groups",
+      "Text": "添加缺失的组"
+    },
+    {
+      "Key": "KEY_GparamEditor_Add_Missing_Groups_TT",
+      "Text": "为当前选中的图形参数添加所有缺失的组。"
+    },
+    {
+      "Key": "KEY_GparamEditor_Add_Missing_Fields",
+      "Text": "添加缺失的字段"
+    },
+    {
+      "Key": "KEY_GparamEditor_Add_Missing_Fields_TT",
+      "Text": "为当前选中的组添加所有缺失的字段。"
+    },
+    {
+      "Key": "KEY_GparamEditor_Execute_Quick_Edit",
+      "Text": "应用快速编辑"
+    },
+    {
+      "Key": "KEY_GparamEditor_Execute_Quick_Edit_TT",
+      "Text": "应用当前的快速编辑（如果已配置）。"
+    },
+    {
+      "Key": "KEY_GparamEditor_Generate_Quick_Edit",
+      "Text": "从选择生成快速编辑"
+    },
+    {
+      "Key": "KEY_GparamEditor_Generate_Quick_Edit_TT",
+      "Text": "根据当前选择填充快速编辑工具。"
+    },
+    {
+      "Key": "KEY_GparamEditor_Clear_Quick_Edit",
+      "Text": "清除快速编辑"
+    },
+    {
+      "Key": "KEY_GparamEditor_Clear_Quick_Edit_TT",
+      "Text": "清除快速编辑工具的输入。"
+    },
+    {
+      "Key": "KEY_TextureViewer_Export_Texture",
+      "Text": "导出纹理"
+    },
+    {
+      "Key": "KEY_TextureViewer_Export_Texture_TT",
+      "Text": "导出当前选中的纹理。"
+    },
+    {
+      "Key": "KEY_TextureViewer_Reset_Zoom_Level",
+      "Text": "重置缩放级别"
+    },
+    {
+      "Key": "KEY_TextureViewer_Reset_Zoom_Level_TT",
+      "Text": "将缩放级别重置为默认值。"
+    },
+    {
+      "Key": "KEY_CaptureThumbnailImage",
+      "Text": "捕获缩略图"
+    },
+    {
+      "Key": "KEY_CaptureThumbnailImage_TT",
+      "Text": "基于当前视口捕获缩略图。"
+    }
+  ]
+}

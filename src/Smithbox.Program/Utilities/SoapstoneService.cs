@@ -2,10 +2,13 @@
 using Grpc.Core;
 using SoapstoneLib;
 using SoapstoneLib.Proto;
+using PropertySearch = SoapstoneLib.PropertySearch;
+using SoapstoneLib.Proto.Internal;
 using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.MapEditor;
+using StudioCore.Editors.ParamEditor;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -743,5 +746,387 @@ public class SoapstoneService : SoapstoneServiceV1
                 }
             }
         }
+    }
+
+    public override async Task<ExecuteMassEditResponse> ExecuteMassEdit(ServerCallContext context, string script)
+    {
+        ExecuteMassEditResponse response = new()
+        {
+            Success = false,
+            Result = "No project is currently loaded.",
+            Changes = 0
+        };
+
+        if (Smithbox.Orchestrator.SelectedProject == null)
+        {
+            return response;
+        }
+
+        var curProject = Smithbox.Orchestrator.SelectedProject;
+
+        try
+        {
+            if (curProject.Handler.ParamEditor == null)
+            {
+                response.Result = "Param Editor is not available.";
+                return response;
+            }
+
+            var activeView = curProject.Handler.ParamEditor.ViewHandler.ActiveView;
+            if (activeView == null)
+            {
+                response.Result = "No active param editor view.";
+                return response;
+            }
+
+            var bank = activeView.GetPrimaryBank();
+            if (bank == null || bank.Params == null || bank.Params.Count == 0)
+            {
+                response.Result = "No params are loaded.";
+                return response;
+            }
+
+            // Execute the mass edit script
+            activeView.MassEdit.ExecuteMassEdit(script, bank, activeView.Selection);
+
+            response.Success = true;
+            response.Result = activeView.MassEdit.State.MassEditResult ?? "Script executed.";
+            response.Changes = 0; // MassEdit doesn't expose exact change count, but result string has info
+        }
+        catch (Exception ex)
+        {
+            response.Result = $"Error executing mass edit: {ex.Message}";
+            response.Success = false;
+        }
+
+        return response;
+    }
+
+    public override async Task<ReloadParamsResponse> ReloadParams(ServerCallContext context, string[] paramNames)
+    {
+        ReloadParamsResponse response = new();
+
+        if (Smithbox.Orchestrator.SelectedProject == null)
+        {
+            return response;
+        }
+
+        var curProject = Smithbox.Orchestrator.SelectedProject;
+
+        try
+        {
+            if (curProject.Handler.ParamEditor == null)
+            {
+                return response;
+            }
+
+            var activeView = curProject.Handler.ParamEditor.ViewHandler.ActiveView;
+            if (activeView == null)
+            {
+                return response;
+            }
+
+            var reloader = curProject.Handler.ParamEditor.ToolMenu.ParamReloader;
+
+            if (!reloader.CanReloadMemoryParams(activeView.GetPrimaryBank()))
+            {
+                response.FailedParams.AddRange(paramNames ?? Array.Empty<string>());
+                return response;
+            }
+
+            var reloadableParams = reloader.GetReloadableParams();
+            var bank = activeView.GetPrimaryBank();
+
+            // If no specific params requested, reload all reloadable params
+            if (paramNames == null || paramNames.Length == 0)
+            {
+                var allParams = reloadableParams
+                    .Where(p => bank.Params.ContainsKey(p))
+                    .ToArray();
+                reloader.ReloadMemoryParams(bank, allParams);
+                response.ReloadedParams.AddRange(allParams);
+            }
+            else
+            {
+                foreach (var name in paramNames)
+                {
+                    if (reloadableParams.Contains(name) && bank.Params.ContainsKey(name))
+                    {
+                        response.ReloadedParams.Add(name);
+                    }
+                    else
+                    {
+                        response.FailedParams.Add(name);
+                    }
+                }
+
+                if (response.ReloadedParams.Count > 0)
+                {
+                    reloader.ReloadMemoryParams(bank, response.ReloadedParams.ToArray());
+                    // Wait for the reload task to complete before returning
+                    TaskManager.WaitAll();
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            // Log and continue — reload failed params already tracked
+            Smithbox.LogError(this, $"ReloadParams error: {ex.Message}");
+        }
+
+        return response;
+    }
+
+    public override async Task<ListParamsResponse> ListParams(ServerCallContext context)
+    {
+        ListParamsResponse response = new();
+
+        if (Smithbox.Orchestrator.SelectedProject == null)
+        {
+            return response;
+        }
+
+        var curProject = Smithbox.Orchestrator.SelectedProject;
+
+        if (curProject.Handler.ParamData?.PrimaryBank?.Params != null)
+        {
+            foreach (var key in curProject.Handler.ParamData.PrimaryBank.Params.Keys)
+            {
+                response.ParamNames.Add(key);
+            }
+        }
+
+        return response;
+    }
+
+    public override async Task<DescribeParamResponse> DescribeParam(ServerCallContext context, string paramName)
+    {
+        DescribeParamResponse response = new()
+        {
+            ParamName = paramName
+        };
+
+        if (Smithbox.Orchestrator.SelectedProject == null || string.IsNullOrEmpty(paramName))
+        {
+            return response;
+        }
+
+        var curProject = Smithbox.Orchestrator.SelectedProject;
+
+        if (curProject.Handler.ParamData?.PrimaryBank?.Params == null)
+        {
+            return response;
+        }
+
+        if (!curProject.Handler.ParamData.PrimaryBank.Params.TryGetValue(paramName, out Param param))
+        {
+            return response;
+        }
+
+        response.ParamType = param.ParamType ?? "";
+        response.RowCount = param.Rows?.Count ?? 0;
+
+        if (param.Columns != null)
+        {
+            foreach (var col in param.Columns)
+            {
+                var field = new ParamFieldInfo
+                {
+                    DisplayName = col.Def.DisplayName ?? "",
+                    InternalName = col.Def.InternalName ?? "",
+                    DefType = col.Def.DisplayType.ToString(),
+                    BitSize = col.Def.BitSize,
+                    ArrayLength = (int)(col.Def.ArrayLength),
+                    Description = col.Def.Description ?? "",
+                    SortId = col.Def.SortID
+                };
+                response.Fields.Add(field);
+            }
+        }
+
+        return response;
+    }
+
+    private GetParamRowResponse BuildRowResponse(Param param, Param.Row row, int index)
+    {
+        GetParamRowResponse resp = new()
+        {
+            ParamName = param.ParamType ?? "",
+            RowId = row.ID,
+            RowIndex = index,
+            RowName = row.Name ?? ""
+        };
+
+        foreach (var col in param.Columns)
+        {
+            try
+            {
+                var cell = row[col];
+                resp.Values.Add(new ParamFieldValue
+                {
+                    InternalName = col.Def.InternalName ?? "",
+                    DefType = col.Def.DisplayType.ToString(),
+                    Value = cell.Value?.ToString() ?? ""
+                });
+            }
+            catch
+            {
+                // Skip fields that can't be read
+            }
+        }
+
+        return resp;
+    }
+
+    private ParamBank GetTargetBank(bool vanilla)
+    {
+        var curProject = Smithbox.Orchestrator.SelectedProject;
+        if (curProject == null) return null;
+        return vanilla
+            ? curProject.Handler.ParamData?.VanillaBank
+            : curProject.Handler.ParamData?.PrimaryBank;
+    }
+
+    public override async Task<GetParamRowResponse> GetParamRow(ServerCallContext context, string paramName, int rowIndex, bool vanilla = false)
+    {
+        GetParamRowResponse response = new()
+        {
+            ParamName = paramName,
+            RowIndex = rowIndex
+        };
+
+        var bank = GetTargetBank(vanilla);
+        if (bank?.Params == null || string.IsNullOrEmpty(paramName))
+            return response;
+        if (!bank.Params.TryGetValue(paramName, out Param param))
+            return response;
+        if (rowIndex < 0 || rowIndex >= param.Rows.Count)
+            return response;
+
+        return BuildRowResponse(param, param.Rows[rowIndex], rowIndex);
+    }
+
+    public override async Task<GetParamRowsResponse> GetParamRows(ServerCallContext context, string paramName, int rowId, bool vanilla = false)
+    {
+        GetParamRowsResponse response = new()
+        {
+            ParamName = paramName,
+            RowId = rowId
+        };
+
+        var bank = GetTargetBank(vanilla);
+        if (bank?.Params == null || string.IsNullOrEmpty(paramName))
+            return response;
+        if (!bank.Params.TryGetValue(paramName, out Param param))
+            return response;
+
+        for (int i = 0; i < param.Rows.Count; i++)
+        {
+            var row = param.Rows[i];
+            if (row.ID == rowId)
+            {
+                response.Rows.Add(BuildRowResponse(param, row, i));
+            }
+        }
+        response.Count = response.Rows.Count;
+
+        return response;
+    }
+
+    public override async Task<ListParamRowsResponse> ListParamRows(ServerCallContext context, string paramName, bool vanilla = false)
+    {
+        ListParamRowsResponse response = new()
+        {
+            ParamName = paramName
+        };
+
+        var bank = GetTargetBank(vanilla);
+        if (bank?.Params == null || string.IsNullOrEmpty(paramName))
+            return response;
+        if (!bank.Params.TryGetValue(paramName, out Param param))
+            return response;
+
+        for (int i = 0; i < param.Rows.Count; i++)
+        {
+            var row = param.Rows[i];
+            response.Rows.Add(new ParamRowSummary
+            {
+                Id = row.ID,
+                Name = row.Name ?? "",
+                Index = i
+            });
+        }
+
+        return response;
+    }
+
+    public override async Task<SetParamCellResponse> SetParamCell(
+        ServerCallContext context, string paramName, int rowIndex, string fieldName, string value)
+    {
+        SetParamCellResponse response = new();
+
+        if (Smithbox.Orchestrator.SelectedProject == null || string.IsNullOrEmpty(paramName))
+        {
+            response.Message = "No project loaded";
+            return response;
+        }
+
+        var curProject = Smithbox.Orchestrator.SelectedProject;
+        if (curProject.Handler.ParamData?.PrimaryBank?.Params == null)
+        {
+            response.Message = "No params loaded";
+            return response;
+        }
+        if (!curProject.Handler.ParamData.PrimaryBank.Params.TryGetValue(paramName, out Param param))
+        {
+            response.Message = $"Param '{paramName}' not found";
+            return response;
+        }
+        if (rowIndex < 0 || rowIndex >= param.Rows.Count)
+        {
+            response.Message = $"Row index {rowIndex} out of range (0-{param.Rows.Count - 1})";
+            return response;
+        }
+
+        try
+        {
+            Param.Row row = param.Rows[rowIndex];
+            Param.Cell? nullableCell = row[fieldName];
+            if (!nullableCell.HasValue)
+            {
+                response.Message = $"Field '{fieldName}' not found";
+                return response;
+            }
+
+            Param.Cell cell = nullableCell.Value;
+            object typedValue = ConvertValue(value, cell.Def.DisplayType);
+            cell.Value = typedValue;
+
+            response.Success = true;
+            response.Message = $"Set {paramName}[{rowIndex}].{fieldName} = {value}";
+        }
+        catch (Exception ex)
+        {
+            response.Message = $"Error: {ex.Message}";
+        }
+
+        return response;
+    }
+
+    private static object ConvertValue(string strValue, PARAMDEF.DefType defType)
+    {
+        return defType switch
+        {
+            PARAMDEF.DefType.s8 => sbyte.Parse(strValue),
+            PARAMDEF.DefType.u8 => byte.Parse(strValue),
+            PARAMDEF.DefType.s16 => short.Parse(strValue),
+            PARAMDEF.DefType.u16 => ushort.Parse(strValue),
+            PARAMDEF.DefType.s32 or PARAMDEF.DefType.b32 => int.Parse(strValue),
+            PARAMDEF.DefType.u32 => uint.Parse(strValue),
+            PARAMDEF.DefType.f32 or PARAMDEF.DefType.angle32 => float.Parse(strValue),
+            PARAMDEF.DefType.f64 => double.Parse(strValue),
+            PARAMDEF.DefType.fixstr or PARAMDEF.DefType.fixstrW => strValue,
+            _ => strValue,
+        };
     }
 }

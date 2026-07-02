@@ -1,0 +1,12 @@
+{
+  "Entries": [
+    {
+      "Key": "META_Project_Mode",
+      "Text": "项目"
+    },
+    {
+      "Key": "META_Param_Editor_Mode",
+      "Text": "Param 编辑器"
+    }
+  ]
+}

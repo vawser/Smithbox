@@ -1,0 +1,76 @@
+{
+  "Entries": [
+    {
+      "Key": "TEXT_FileList_Header_Files",
+      "Text": "文件"
+    },
+    {
+      "Key": "TEXT_FileList_Header_Files_TT",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_FileList_Toggle_Grouped_Display",
+      "Text": "分组显示"
+    },
+    {
+      "Key": "TEXT_FileList_Toggle_Individual_Display",
+      "Text": "单独显示"
+    },
+    {
+      "Key": "TEXT_FileList_Toggle_Display_Type_TT",
+      "Text": "切换所有单独文件是否显示，或它们是否分组在同一个文件下。\n当前模式: {0}"
+    },
+    {
+      "Key": "TEXT_FileList_ListHeader_General",
+      "Text": "通用"
+    },
+    {
+      "Key": "TEXT_FileList_ListHeader_Menu",
+      "Text": "菜单"
+    },
+    {
+      "Key": "TEXT_FileList_ListHeader_Title",
+      "Text": "标题"
+    },
+    {
+      "Key": "TEXT_FileList_ListHeader_Summary",
+      "Text": "概要"
+    },
+    {
+      "Key": "TEXT_FileList_ListHeader_Description",
+      "Text": "描述"
+    },
+    {
+      "Key": "TEXT_FileList_ListHeader_Effect",
+      "Text": "效果"
+    },
+    {
+      "Key": "TEXT_FileList_ListHeader_Unsorted",
+      "Text": "未排序"
+    },
+    {
+      "Key": "TEXT_FileList_ListHeader_Base",
+      "Text": "基础"
+    },
+    {
+      "Key": "TEXT_FileList_ListHeader_DLC1",
+      "Text": "DLC 1"
+    },
+    {
+      "Key": "TEXT_FileList_ListHeader_DLC2",
+      "Text": "DLC 2"
+    },
+    {
+      "Key": "TEXT_FileList_Base_Priority_TT",
+      "Text": "此FMG对新条目具有最高优先级，因此建议您始终在此部分添加新条目。"
+    },
+    {
+      "Key": "TEXT_FileList_DLC1_Priority_TT",
+      "Text": "此FMG包含与DLC 1关联的条目，请在此编辑。\n\n但是，不建议在此FMG中添加新条目，因为基础部分的FMG中具有相同ID的条目将优先。"
+    },
+    {
+      "Key": "TEXT_FileList_DLC2_Priority_TT",
+      "Text": "此FMG包含与DLC 2关联的条目，请在此编辑。\n\n但是，不建议在此FMG中添加新条目，因为基础或DLC 1部分的FMG中具有相同ID的条目将优先。"
+    }
+  ]
+}

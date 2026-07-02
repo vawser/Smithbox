@@ -1,0 +1,84 @@
+{
+  "Entries": [
+    {
+      "Key": "VIEWPORT_ENUM_RenderFilter_Debug",
+      "Text": "调试"
+    },
+    {
+      "Key": "VIEWPORT_ENUM_RenderFilter_Editor",
+      "Text": "编辑器"
+    },
+    {
+      "Key": "VIEWPORT_ENUM_RenderFilter_MapPiece",
+      "Text": "地图部件"
+    },
+    {
+      "Key": "VIEWPORT_ENUM_RenderFilter_Collision",
+      "Text": "碰撞"
+    },
+    {
+      "Key": "VIEWPORT_ENUM_RenderFilter_Character",
+      "Text": "角色"
+    },
+    {
+      "Key": "VIEWPORT_ENUM_RenderFilter_Object",
+      "Text": "对象"
+    },
+    {
+      "Key": "VIEWPORT_ENUM_RenderFilter_Navmesh",
+      "Text": "导航网格"
+    },
+    {
+      "Key": "VIEWPORT_ENUM_RenderFilter_Region",
+      "Text": "区域"
+    },
+    {
+      "Key": "VIEWPORT_ENUM_RenderFilter_Light",
+      "Text": "灯光"
+    },
+    {
+      "Key": "VIEWPORT_ENUM_RenderFilter_SpeedTree",
+      "Text": "SpeedTree"
+    },
+    {
+      "Key": "VIEWPORT_ENUM_RenderFilter_AutoInvade",
+      "Text": "入侵点"
+    },
+    {
+      "Key": "VIEWPORT_ENUM_RenderFilter_Meshes",
+      "Text": "网格"
+    },
+    {
+      "Key": "VIEWPORT_ENUM_RenderFilter_Dummies",
+      "Text": "虚拟多边形"
+    },
+    {
+      "Key": "VIEWPORT_ENUM_RenderFilter_Nodes",
+      "Text": "Node"
+    },
+    {
+      "Key": "VIEWPORT_ENUM_RenderFilter_LightProbe",
+      "Text": "光照探针"
+    },
+    {
+      "Key": "VIEWPORT_ENUM_RenderFilter_ConnectCollision",
+      "Text": "连接碰撞"
+    },
+    {
+      "Key": "VIEWPORT_ENUM_RenderFilter_All",
+      "Text": "全部"
+    },
+    {
+      "Key": "VIEWPORT_ENUM_ViewMode_Perspective",
+      "Text": "Perspective"
+    },
+    {
+      "Key": "VIEWPORT_ENUM_ViewMode_Orthographic",
+      "Text": "Orthographic"
+    },
+    {
+      "Key": "VIEWPORT_ENUM_ViewMode_Oblique",
+      "Text": "Oblique"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "Entries": [
+    {
+      "Key": "TEXT_Exporter_Modal_Name",
+      "Text": "文本导出器"
+    },
+    {
+      "Key": "TEXT_Exporter_Header_Filename",
+      "Text": "Filename"
+    },
+    {
+      "Key": "TEXT_Exporter_Header_Filename_TT",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_Exporter_Modal_Action_Export",
+      "Text": "导出"
+    },
+    {
+      "Key": "TEXT_Exporter_Modal_Action_Export_TT",
+      "Text": "导出文本。"
+    },
+    {
+      "Key": "TEXT_Exporter_Modal_Action_Close",
+      "Text": "关闭"
+    },
+    {
+      "Key": "TEXT_Exporter_Modal_Action_Close_TT",
+      "Text": "关闭模态窗口。"
+    },
+    {
+      "Key": "TEXT_Exporter_Log_Filename_Empty",
+      "Text": "文件名为空。"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "Entries": [
+    {
+      "Key": "MEM_No_Process_Found",
+      "Text": "错误：未找到进程 '{0}'。请先运行游戏。"
+    },
+    {
+      "Key": "MEM_AOBReader_Init_Failed",
+      "Text": "初始化 AOBReader 失败。"
+    },
+    {
+      "Key": "MEM_AOB_Scan_Start",
+      "Text": "正在开始 AOB 扫描..."
+    },
+    {
+      "Key": "MEM_AOB_Scan_Find",
+      "Text": "发现于：0x{0}"
+    },
+    {
+      "Key": "MEM_AOB_Scan_Failed",
+      "Text": "扫描失败。"
+    },
+    {
+      "Key": "MEM_AOB_Read_Failed",
+      "Text": "读取失败。"
+    },
+    {
+      "Key": "MEM_AOB_Write_Failed",
+      "Text": "写入失败。"
+    },
+    {
+      "Key": "MEM_AOB_Unsupported_Param_Def_Type",
+      "Text": "不支持的类型：{0}"
+    },
+    {
+      "Key": "MEM_Exception_Pattern_Mask_Lengths",
+      "Text": "模式与掩码的长度必须相等。"
+    },
+    {
+      "Key": "MEM_Attach_Proc_Error",
+      "Text": "找不到进程 {0}。它正在运行吗？"
+    }
+  ]
+}

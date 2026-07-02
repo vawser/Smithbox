@@ -1,0 +1,64 @@
+{
+  "Entries": [
+    {
+      "Key": "TEXVIEW_ContainerList_Header_Containers",
+      "Text": "容器"
+    },
+    {
+      "Key": "TEXVIEW_ContainerList_Header_Containers_TT",
+      "Text": ""
+    },
+    {
+      "Key": "TEXVIEW_ContainerList_Context_Copy_to_Project",
+      "Text": "复制到项目"
+    },
+    {
+      "Key": "TEXVIEW_ContainerList_Context_Copy_to_Project_TT",
+      "Text": "将此文件复制到你的项目。"
+    },
+    {
+      "Key": "TEXVIEW_ContainerList_Context_Header_Export",
+      "Text": "导出"
+    },
+    {
+      "Key": "TEXVIEW_ContainerList_Context_All_TPFs",
+      "Text": "所有 TPF"
+    },
+    {
+      "Key": "TEXVIEW_ContainerList_Context_All_TPFs_TT",
+      "Text": "将此容器中所有 TPF 导出到当前导出目录: {0}"
+    },
+    {
+      "Key": "TEXVIEW_ContainerList_Context_All_Textures",
+      "Text": "所有纹理"
+    },
+    {
+      "Key": "TEXVIEW_ContainerList_Context_All_Textures_TT",
+      "Text": "将此容器中 TPF 内的所有纹理文件导出到当前导出目录: {0}"
+    },
+    {
+      "Key": "TEXVIEW_ContainerList_Context_Copy_Path",
+      "Text": "复制路径"
+    },
+    {
+      "Key": "TEXVIEW_ContainerList_Context_Copy_Path_TT",
+      "Text": "复制文件路径到剪贴板。"
+    },
+    {
+      "Key": "TEXVIEW_ContainerList_Context_Copy_Filename",
+      "Text": "复制文件名"
+    },
+    {
+      "Key": "TEXVIEW_ContainerList_Context_Copy_Filename_TT",
+      "Text": "复制文件名到剪贴板。"
+    },
+    {
+      "Key": "TEXVIEW_ContainerList_Context_Copy_Alias",
+      "Text": "复制别名"
+    },
+    {
+      "Key": "TEXVIEW_ContainerList_Context_Copy_Alias_TT",
+      "Text": "复制别名到剪贴板。"
+    }
+  ]
+}

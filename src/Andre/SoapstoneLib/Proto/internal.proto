@@ -186,3 +186,174 @@ message PropertyCondition {
   string key = 2;
   PropertyValue value = 3;
 }
+
+//
+// ExecuteMassEdit
+//
+
+message ExecuteMassEditRequest {
+  // The mass edit script text, semicolon-delimited commands.
+  string script = 1;
+}
+
+message ExecuteMassEditResponse {
+  // Human-readable result information
+  string result = 1;
+  // Number of changes made
+  int32 changes = 2;
+  // Whether the operation succeeded
+  bool success = 3;
+}
+
+//
+// ReloadParams
+//
+
+message ReloadParamsRequest {
+  // Param names to reload. If empty, all reloadable params are reloaded.
+  repeated string param_names = 1;
+}
+
+message ReloadParamsResponse {
+  // Params that were successfully reloaded to game memory
+  repeated string reloaded_params = 1;
+  // Params that failed to reload (not supported, not found in memory, etc.)
+  repeated string failed_params = 2;
+}
+
+//
+// ListParams
+//
+
+message ListParamsRequest {
+}
+
+message ListParamsResponse {
+  // All param names in the currently loaded project
+  repeated string param_names = 1;
+}
+
+//
+// DescribeParam
+//
+
+message DescribeParamRequest {
+  // The param name, e.g. "EquipParamWeapon"
+  string param_name = 1;
+}
+
+message DescribeParamResponse {
+  // The param name
+  string param_name = 1;
+  // The param type string, e.g. "EQUIP_PARAM_WEAPON_ST"
+  string param_type = 2;
+  // Number of rows in this param
+  int32 row_count = 3;
+  // All columns/fields in this param
+  repeated ParamFieldInfo fields = 4;
+}
+
+message ParamFieldInfo {
+  // Human-readable display name
+  string display_name = 1;
+  // Internal engine name (e.g. "attackBasePhysics" or "weaponId:16" for bitfields)
+  string internal_name = 2;
+  // Data type: s8, u8, s16, u16, s32, u32, b32, f32, angle32, f64, dummy8, fixstr, fixstrW
+  string def_type = 3;
+  // Bit size for bitfields, -1 if not a bitfield
+  int32 bit_size = 4;
+  // Array length for arrays/strings, 1 if not an array
+  int32 array_length = 5;
+  // Optional description text
+  string description = 6;
+  // Sort order in the editor
+  int32 sort_id = 7;
+}
+
+//
+// GetParamRow
+//
+
+message GetParamRowRequest {
+  // The param name, e.g. "EquipParamWeapon"
+  string param_name = 1;
+  // The row index within the param (0-based position, handles duplicate IDs)
+  int32 row_index = 2;
+  // If true, read from vanilla (original game) bank instead of modified
+  bool vanilla = 3;
+}
+
+message GetParamRowResponse {
+  // The param name
+  string param_name = 1;
+  // The row ID
+  int32 row_id = 2;
+  // The row name (may be empty)
+  string row_name = 3;
+  // All field values for this row
+  repeated ParamFieldValue values = 4;
+  // The row index (0-based position in the param, for disambiguation)
+  int32 row_index = 5;
+}
+
+message ParamFieldValue {
+  // Internal engine name of the field
+  string internal_name = 1;
+  // The value as a string (numbers, floats, strings are all string-encoded)
+  string value = 2;
+  // Data type for interpretation
+  string def_type = 3;
+}
+
+//
+// GetParamRows (multiple rows for a given ID)
+//
+
+message GetParamRowsRequest {
+  string param_name = 1;
+  int32 row_id = 2;
+  bool vanilla = 3;
+}
+
+message GetParamRowsResponse {
+  string param_name = 1;
+  int32 row_id = 2;
+  int32 count = 3;
+  repeated GetParamRowResponse rows = 4;
+}
+
+//
+// ListParamRows
+//
+
+message ListParamRowsRequest {
+  string param_name = 1;
+  bool vanilla = 2;
+}
+
+message ListParamRowsResponse {
+  string param_name = 1;
+  repeated ParamRowSummary rows = 2;
+}
+
+message SetParamCellRequest {
+  // The param name, e.g. "AttachEffectTableParam"
+  string param_name = 1;
+  // The row index (0-based position in the param)
+  int32 row_index = 2;
+  // The field internal name, e.g. "chanceWeight"
+  string field_name = 3;
+  // The new value as a string
+  string value = 4;
+}
+
+message SetParamCellResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+message ParamRowSummary {
+  int32 id = 1;
+  string name = 2;
+  int32 index = 3;
+}

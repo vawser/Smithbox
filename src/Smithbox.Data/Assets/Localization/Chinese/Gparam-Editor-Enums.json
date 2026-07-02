@@ -1,0 +1,16 @@
+{
+  "Entries": [
+    {
+      "Key": "GPARAM_ENUM_RGB",
+      "Text": "RGB"
+    },
+    {
+      "Key": "GPARAM_ENUM_DECIMAL",
+      "Text": "Decimal"
+    },
+    {
+      "Key": "GPARAM_ENUM_HSV",
+      "Text": "HSV"
+    }
+  ]
+}

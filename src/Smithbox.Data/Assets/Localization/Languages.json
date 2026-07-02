@@ -6,6 +6,11 @@
           "Folder": "English"
         },
         {
+          "Key": "SYS_Language_Chinese",
+          "Name": "中文",
+          "Folder": "Chinese"
+        },
+        {
           "Key": "SYS_Language_Test",
           "Name": "Test Language",
           "Folder": "Empty"

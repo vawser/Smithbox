@@ -1,0 +1,36 @@
+{
+  "Entries": [
+    {
+      "Key": "TEXVIEW_Texture_Viewer_Stub",
+      "Text": "纹理查看器"
+    },
+    {
+      "Key": "TEXVIEW_Window_Container_List",
+      "Text": "容器列表"
+    },
+    {
+      "Key": "TEXVIEW_Window_File_List",
+      "Text": "文件列表"
+    },
+    {
+      "Key": "TEXVIEW_Window_Texture_List",
+      "Text": "纹理列表"
+    },
+    {
+      "Key": "TEXVIEW_Window_Viewer",
+      "Text": "查看器"
+    },
+    {
+      "Key": "TEXVIEW_Window_Properties",
+      "Text": "属性"
+    },
+    {
+      "Key": "TEXVIEW_Window_Tools",
+      "Text": "工具"
+    },
+    {
+      "Key": "TEXVIEW_Modal_Texture_Export",
+      "Text": "纹理导出"
+    }
+  ]
+}
