@@ -1,8 +1,48 @@
 {
   "Entries": [
     {
-      "Key": "TEXT_",
-      "Text": "xxx"
+      "Key": "TEXT_Save_File_PASS",
+      "Text": "Saved {0}"
+    },
+    {
+      "Key": "TEXT_Save_File_FAIL",
+      "Text": "Failed to save {0}"
+    },
+    {
+      "Key": "TEXT_Save_All_File_PASS",
+      "Text": "Saved all modified text files."
+    },
+    {
+      "Key": "TEXT_Save_All_File_FAIL",
+      "Text": "Failed to save all modified text files"
+    },
+    {
+      "Key": "TEXT_Menubar_Action_Create",
+      "Text": "Create"
+    },
+    {
+      "Key": "TEXT_Menubar_Action_Create_TT",
+      "Text": "Open the Text Entry Creator menu."
+    },
+    {
+      "Key": "TEXT_Menubar_Action_Duplicate",
+      "Text": "Duplicate"
+    },
+    {
+      "Key": "TEXT_Menubar_Action_Duplicate_TT",
+      "Text": "Duplicate the currently selected text entries."
+    },
+    {
+      "Key": "TEXT_Menubar_Action_Delete",
+      "Text": "Delete"
+    },
+    {
+      "Key": "TEXT_Menubar_Action_Delete_TT",
+      "Text": "Delete the currently selected text entries."
+    },
+    {
+      "Key": "TEXT_Menubar_View_Tool_Window",
+      "Text": "Tools"
     },
     {
       "Key": "TEXT_Util_Log_Missing_Enum_DisplayName",

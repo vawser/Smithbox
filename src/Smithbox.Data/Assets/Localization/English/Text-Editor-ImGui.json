@@ -1,8 +1,24 @@
-{
+#{
   "Entries": [
     {
       "Key": "TEXT_Window_TextEditor",
       "Text": "Text Editor"
+    },
+    {
+      "Key": "TEXT_Window_Container_List",
+      "Text": "Container List"
+    },
+    {
+      "Key": "TEXT_Window_File_List",
+      "Text": "File List"
+    },
+    {
+      "Key": "TEXT_Window_Text_Entries",
+      "Text": "Text Entries"
+    },
+    {
+      "Key": "TEXT_Window_Text_Content",
+      "Text": "Text Content"
     },
     {
       "Key": "TEXT_Window_Tools",

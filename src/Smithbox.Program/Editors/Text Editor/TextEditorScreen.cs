@@ -135,7 +135,7 @@ public class TextEditorScreen : EditorScreen
             if (activeView != null)
             {
                 // Undo
-                if (ImGui.MenuItem($"Undo", $"{InputManager.GetHint(KeybindID.Undo)} / {InputManager.GetHint(KeybindID.Undo_Repeat)}"))
+                if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_Undo")}##undoAction", $"{InputManager.GetHint(KeybindID.Undo)} / {InputManager.GetHint(KeybindID.Undo_Repeat)}"))
                 {
                     if (activeView.ActionManager.CanUndo())
                     {
@@ -144,7 +144,7 @@ public class TextEditorScreen : EditorScreen
                 }
 
                 // Undo All
-                if (ImGui.MenuItem($"Undo All"))
+                if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_Undo_All")}##undoAllAction"))
                 {
                     if (activeView.ActionManager.CanUndo())
                     {
@@ -153,7 +153,7 @@ public class TextEditorScreen : EditorScreen
                 }
 
                 // Redo
-                if (ImGui.MenuItem($"Redo", $"{InputManager.GetHint(KeybindID.Redo)} / {InputManager.GetHint(KeybindID.Redo_Repeat)}"))
+                if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_Redo")}##redoAction", $"{InputManager.GetHint(KeybindID.Redo)} / {InputManager.GetHint(KeybindID.Redo_Repeat)}"))
                 {
                     if (activeView.ActionManager.CanRedo())
                     {
@@ -163,25 +163,25 @@ public class TextEditorScreen : EditorScreen
                 ImGui.Separator();
 
                 // Create
-                if (ImGui.MenuItem("Create", InputManager.GetHint(KeybindID.TextEditor_Create_New_Entry)))
+                if (ImGui.MenuItem($"{LOC.Get("TEXT_Menubar_Action_Create")}##createAction", InputManager.GetHint(KeybindID.TextEditor_Create_New_Entry)))
                 {
                     activeView.TextEntryCreator.ShowModal = true;
                 }
-                UIHelper.Tooltip($"Create new text entries.");
+                UIHelper.Tooltip(LOC.Get("TEXT_Menubar_Action_Create_TT"));
 
                 // Duplicate
-                if (ImGui.MenuItem("Duplicate", InputManager.GetHint(KeybindID.Duplicate)))
+                if (ImGui.MenuItem($"{LOC.Get("TEXT_Menubar_Action_Duplicate")}##duplicateAction", InputManager.GetHint(KeybindID.Duplicate)))
                 {
                     activeView.ActionHandler.DuplicateEntries();
                 }
-                UIHelper.Tooltip($"Duplicate the currently selected text entries.");
+                UIHelper.Tooltip(LOC.Get("TEXT_Menubar_Action_Duplicate_TT"));
 
                 // Delete
-                if (ImGui.MenuItem("Delete", InputManager.GetHint(KeybindID.Delete)))
+                if (ImGui.MenuItem($"{LOC.Get("TEXT_Menubar_Action_Delete")}##deleteAction", InputManager.GetHint(KeybindID.Delete)))
                 {
                     activeView.ActionHandler.DeleteEntries();
                 }
-                UIHelper.Tooltip($"Delete the currently selected text entries.");
+                UIHelper.Tooltip(LOC.Get("TEXT_Menubar_Action_Delete_TT"));
             }
 
             ImGui.EndMenu();
@@ -192,7 +192,7 @@ public class TextEditorScreen : EditorScreen
     {
         if (ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Header_View")}##viewMenuHeader"))
         {
-            if (ImGui.MenuItem("Tool Window"))
+            if (ImGui.MenuItem($"{LOC.Get("TEXT_Menubar_View_Tool_Window")}##toolWindowToggle"))
             {
                 CFG.Current.Interface_TextEditor_ToolWindow = !CFG.Current.Interface_TextEditor_ToolWindow;
             }
@@ -259,11 +259,11 @@ public class TextEditorScreen : EditorScreen
                         await Project.Handler.TextData.PrimaryBank.SaveFmgContainer(fileEntry, wrapper);
                     }
 
-                    Smithbox.Log(this, $"[Text Editor] Saved {fileEntry.Path}");
+                    Smithbox.Log(this, LOC.Get("TEXT_Save_File_PASS", fileEntry.Path));
                 }
                 catch (Exception ex)
                 {
-                    Smithbox.Log(this, $"[Text Editor] Failed to save {fileEntry.Path}", Microsoft.Extensions.Logging.LogLevel.Warning, LogPriority.High, ex);
+                    Smithbox.LogError(this, LOC.Get("TEXT_Save_File_FAIL", fileEntry.Path), ex);
                 }
             }
 
@@ -284,11 +284,11 @@ public class TextEditorScreen : EditorScreen
             {
                 await Project.Handler.TextData.PrimaryBank.SaveTextFiles();
 
-                Smithbox.Log(this, $"[Text Editor] Saved all modified text files.");
+                Smithbox.Log(this, LOC.Get("TEXT_Save_All_File_PASS"));
             }
             catch (Exception ex)
             {
-                Smithbox.Log(this, $"[Text Editor] Failed to save all modified text files", Microsoft.Extensions.Logging.LogLevel.Warning, LogPriority.High, ex);
+                Smithbox.LogError(this, LOC.Get("TEXT_Save_All_File_FAIL"), ex);
             }
         }
 

@@ -1,8 +1,6 @@
 ﻿using Hexa.NET.ImGui;
 using SoulsFormats;
-using StudioCore.Application;
 using StudioCore.Editors.Common;
-using System.Collections.Generic;
 using System.Numerics;
 
 namespace StudioCore.Editors.TextEditor;

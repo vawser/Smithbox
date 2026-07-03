@@ -74,7 +74,7 @@ public class TextEditorView
         // Container List
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
         ImGui.SetNextWindowClass(ref UIHelper.DockGroup_TextEditorView);
-        if (ImGui.Begin($@"Container List##textEditor_ContainerList_{viewIndex}", UIHelper.GetInnerWindowFlags()))
+        if (ImGui.Begin($@"{LOC.Get("TEXT_Window_Container_List")}###textEditor_ContainerList_{viewIndex}", UIHelper.GetInnerWindowFlags()))
         {
             var width = ImGui.GetContentRegionAvail().X;
             var height = ImGui.GetContentRegionAvail().Y;
@@ -93,7 +93,7 @@ public class TextEditorView
         // File List
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
         ImGui.SetNextWindowClass(ref UIHelper.DockGroup_TextEditorView);
-        if (ImGui.Begin($@"File List##textEditor_FileList_{viewIndex}", UIHelper.GetInnerWindowFlags()))
+        if (ImGui.Begin($@"{LOC.Get("TEXT_Window_File_List")}###textEditor_FileList_{viewIndex}", UIHelper.GetInnerWindowFlags()))
         {
             var width = ImGui.GetContentRegionAvail().X;
             var height = ImGui.GetContentRegionAvail().Y;
@@ -112,7 +112,7 @@ public class TextEditorView
         // Text Entry List
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
         ImGui.SetNextWindowClass(ref UIHelper.DockGroup_TextEditorView);
-        if (ImGui.Begin($@"Text Entries##textEditor_TextEntryList_{viewIndex}", UIHelper.GetInnerWindowFlags()))
+        if (ImGui.Begin($@"{LOC.Get("TEXT_Window_Text_Entries")}###textEditor_TextEntryList_{viewIndex}", UIHelper.GetInnerWindowFlags()))
         {
             var width = ImGui.GetContentRegionAvail().X;
             var height = ImGui.GetContentRegionAvail().Y;
@@ -131,7 +131,7 @@ public class TextEditorView
         // Text Contents
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
         ImGui.SetNextWindowClass(ref UIHelper.DockGroup_TextEditorView);
-        if (ImGui.Begin($@"Text Contents##textEditor_TextContents_{viewIndex}", UIHelper.GetInnerWindowFlags()))
+        if (ImGui.Begin($@"{LOC.Get("TEXT_Window_Text_Content")}###textEditor_TextContents_{viewIndex}", UIHelper.GetInnerWindowFlags()))
         {
             var width = ImGui.GetContentRegionAvail().X;
             var height = ImGui.GetContentRegionAvail().Y;
