@@ -15,8 +15,6 @@ public class TextContainerWrapper : IComparable<TextContainerWrapper>
 
     private ProjectEntry Project;
 
-    public byte[] ContainerData;
-
     /// <summary>
     /// Whether the contents of this container has been modified
     /// </summary>

@@ -80,7 +80,6 @@ public class TextBank : IDisposable
             containerWrapper.CompressionType = compressionType;
             containerWrapper.ContainerType = containerType;
             containerWrapper.ContainerDisplayCategory = containerCategory;
-            containerWrapper.ContainerData = containerBytes.ToArray();
             containerWrapper.FmgWrappers = new();
 
             if (containerCategory == CFG.Current.TextEditor_Primary_Category)
@@ -131,12 +130,14 @@ public class TextBank : IDisposable
 
     public void LoadFmgWrappers(TextContainerWrapper container)
     {
+        var containerBytes = TargetFS.ReadFileOrThrow(container.FileEntry.Path);
+
         // Populate the Text Fmg wrappers with their contents
         List<TextFmgWrapper> fmgWrappers = new List<TextFmgWrapper>();
 
         if (Project.Descriptor.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES)
         {
-            using (IBinder binder = BND3.Read(container.ContainerData))
+            using (IBinder binder = BND3.Read(containerBytes))
             {
                 foreach (var file in binder.Files)
                 {
@@ -160,7 +161,7 @@ public class TextBank : IDisposable
         }
         else
         {
-            using (IBinder binder = BND4.Read(container.ContainerData))
+            using (IBinder binder = BND4.Read(containerBytes))
             {
                 foreach (var file in binder.Files)
                 {
