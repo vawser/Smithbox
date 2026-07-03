@@ -99,6 +99,110 @@
     {
       "Key": "TEXT_ENUM_SearchMatchType_Text",
       "Text": "Text"
+    },
+    {
+      "Key": "TEXT_Data_FMG_Descriptor_Setup_PASS",
+      "Text": "Setup the FMG Descriptor data."
+    },
+    {
+      "Key": "TEXT_Data_FMG_Descriptor_Setup_FAIL",
+      "Text": "Failed to setup the FMG Descriptor data."
+    },
+    {
+      "Key": "TEXT_Data_Incremental_Templates_Setup_PASS",
+      "Text": "Setup the Incremental Templates."
+    },
+    {
+      "Key": "TEXT_Data_Incremental_Templates_Setup_FAIL",
+      "Text": "Failed to setup Incremental Templates."
+    },
+    {
+      "Key": "TEXT_Data_Primary_Bank_Setup_PASS",
+      "Text": "Setup the Primary Bank."
+    },
+    {
+      "Key": "TEXT_Data_Primary_Bank_Setup_FAIL",
+      "Text": "Failed to setup the Primary Bank."
+    },
+    {
+      "Key": "TEXT_Data_Vanilla_Bank_Setup_PASS",
+      "Text": "Setup the Vanilla Bank."
+    },
+    {
+      "Key": "TEXT_Data_Vanilla_Bank_Setup_FAIL",
+      "Text": "Failed to setup the Vanilla Bank."
+    },
+    {
+      "Key": "TEXT_Data_Aux_Bank_Setup_PASS",
+      "Text": "Setup the Auxiliary Bank for {0}."
+    },
+    {
+      "Key": "TEXT_Data_Aux_Bank_Setup_FAIL",
+      "Text": "Failed to setup the Auxiliary Bank for {0}."
+    },
+    {
+      "Key": "TEXT_Data_Deserialize_Incremental_Template_FAIL",
+      "Text": "Failed to deserialize incremental template: {0}"
+    },
+    {
+      "Key": "TEXT_Data_Read_Incremental_Template_FAIL",
+      "Text": "Failed to read incremental template: {0}"
+    },
+    {
+      "Key": "TEXT_Data_Deserialize_FMG_Descriptors_FAIL",
+      "Text": "Failed to deserialize FMG descriptor registry: {0}"
+    },
+    {
+      "Key": "TEXT_Data_Read_FMG_Descriptors_FAIL",
+      "Text": "Failed to read FMG descriptor registry: {0}"
+    },
+    {
+      "Key": "TEXT_ENUM_TextContainerType_Loose",
+      "Text": "Loose"
+    },
+    {
+      "Key": "TEXT_ENUM_TextContainerType_BND",
+      "Text": "BND"
+    },
+    {
+      "Key": "TEXT_ENUM_ContainerSubCategory_None",
+      "Text": "None"
+    },
+    {
+      "Key": "TEXT_ENUM_ContainerSubCategory_Common",
+      "Text": "Common"
+    },
+    {
+      "Key": "TEXT_ENUM_ContainerSubCategory_Blood_Message",
+      "Text": "Blood Message"
+    },
+    {
+      "Key": "TEXT_ENUM_ContainerSubCategory_Talk",
+      "Text": "Talk"
+    },
+    {
+      "Key": "TEXT_Data_Load_FMG_Container_FAIL",
+      "Text": "Failed to load FMG container: {0} at {1} for {2}"
+    },
+    {
+      "Key": "TEXT_Data_Load_FMG_Wrapper_FAIL",
+      "Text": "FMG Wrapper load failed."
+    },
+    {
+      "Key": "TEXT_Data_Load_FMG_FAIL",
+      "Text": "Failed to load FMG: {0} at {1} for {2}"
+    },
+    {
+      "Key": "TEXT_Data_Read_File_VFS_FAIL",
+      "Text": "Failed to read {0} from VFS for {1}."
+    },
+    {
+      "Key": "TEXT_Data_Write_File_FAIL",
+      "Text": "Failed to write {0} as file for {1}."
+    },
+    {
+      "Key": "TEXT_Data_Write_FMG_FAIL",
+      "Text": "Failed to write FMG file: {0} for {1}."
     }
   ]
 }

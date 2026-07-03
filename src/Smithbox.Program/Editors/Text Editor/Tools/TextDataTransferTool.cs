@@ -70,8 +70,10 @@ public class TextDataTransferTool
                 LOC.Get("TEXT_DataTransfer_Header_Import_Type"),
                 LOC.Get("TEXT_DataTransfer_Header_Import_Type_TT"));
 
+            var previewName = LOC.Get(ImportType.GetDisplayName());
+
             UIHelper.SetInputWidth();
-            if (ImGui.BeginCombo("##importType", ImportType.GetDisplayName()))
+            if (ImGui.BeginCombo("##importType", previewName))
             {
                 foreach (var entry in Enum.GetValues(typeof(TextImportMode)))
                 {
@@ -215,8 +217,10 @@ public class TextDataTransferTool
                 LOC.Get("TEXT_DataTransfer_Header_Export_Type"),
                 LOC.Get("TEXT_DataTransfer_Header_Export_Type_TT"));
 
+            var previewName = LOC.Get(ExportModifier.GetDisplayName());
+
             UIHelper.SetInputWidth();
-            if (ImGui.BeginCombo("##exportType", ExportModifier.GetDisplayName()))
+            if (ImGui.BeginCombo("##exportType", previewName))
             {
                 foreach (var entry in Enum.GetValues(typeof(ExportModifier)))
                 {

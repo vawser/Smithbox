@@ -365,7 +365,7 @@ public class TextFileList
             {
                 if (Parent.Selection.SelectedFmgKey == id)
                 {
-                    Parent.ContextMenu.FmgContextMenu(info);
+                    ContextMenu(info);
                 }
 
                 if (Parent.Selection.FocusFmgSelection && Parent.Selection.SelectedFmgKey == id)
@@ -374,6 +374,35 @@ public class TextFileList
                     ImGui.SetScrollHereY();
                 }
             }
+        }
+    }
+
+    public void ContextMenu(TextFmgWrapper fmgInfo)
+    {
+        if (ImGui.BeginPopupContextItem($"##FmgContext{fmgInfo.ID}"))
+        {
+            if (ImGui.BeginMenu($"{LOC.Get("TEXT_FileList_Context_Header_Information")}##infoMenuHEader"))
+            {
+                if (ImGui.Selectable($"{LOC.Get("TEXT_ContainerList_Context_ID", fmgInfo.ID)}##copyID"))
+                {
+                    ImGui.SetClipboardText(fmgInfo.ID.ToString());
+                }
+
+                if (ImGui.Selectable($"{LOC.Get("TEXT_ContainerList_Context_Name", fmgInfo.ID)}##copyName"))
+                {
+                    ImGui.SetClipboardText(fmgInfo.Name);
+                }
+
+                ImGui.EndMenu();
+            }
+
+            // TODO: with grouped FMGs, this will only sync the header FMG, not the associated sub-FMGs, should be fixed.
+            Parent.Editor.ToolView.LanguageSyncTool.DisplaySyncOptions(Parent.Selection.SelectedFmgKey);
+
+            Parent.FmgImporter.TextFileDropdownOptions();
+            Parent.FmgExporter.TextFileDropdownOptions();
+
+            ImGui.EndPopup();
         }
     }
 }

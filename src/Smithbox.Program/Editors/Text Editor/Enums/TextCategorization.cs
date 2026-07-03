@@ -1619,10 +1619,17 @@ public enum TalkFmgName_DS2
 
 public enum ContainerSubCategory
 {
-    [Display(Name = "None")] None, // Used by all non-DS2 files
-    [Display(Name = "Common")] common,
-    [Display(Name = "Blood Messages")] bloodmes,
-    [Display(Name = "Talk")] talk,
+    [Display(Name = "TEXT_ENUM_ContainerSubCategory_None")] 
+    None, // Used by all non-DS2 files
+
+    [Display(Name = "TEXT_ENUM_ContainerSubCategory_Common")] 
+    common,
+
+    [Display(Name = "TEXT_ENUM_ContainerSubCategory_Blood_Message")] 
+    bloodmes,
+
+    [Display(Name = "TEXT_ENUM_ContainerSubCategory_Talk")] 
+    talk,
 }
 
 /// <summary>

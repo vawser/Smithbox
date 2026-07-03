@@ -1,93 +1,52 @@
 {
   "Entries": [
     {
-      "Key": "TEXT_Contents_",
+      "Key": "TEXT_Contents_Header_Contents",
+      "Text": "Text Content"
+    },
+    {
+      "Key": "TEXT_Contents_Header_Contents_TT",
       "Text": ""
     },
     {
-      "Key": "TEXT_Contents_",
-      "Text": ""
+      "Key": "TEXT_Contents_Column_Header_ID",
+      "Text": "ID"
     },
     {
-      "Key": "TEXT_Contents_",
-      "Text": ""
+      "Key": "TEXT_Contents_Column_Header_Text",
+      "Text": "Text"
     },
     {
-      "Key": "TEXT_Contents_",
-      "Text": ""
+      "Key": "TEXT_Contents_Column_Header_Title",
+      "Text": "Title"
     },
     {
-      "Key": "TEXT_Contents_",
-      "Text": ""
+      "Key": "TEXT_Contents_Add_Title_Entry",
+      "Text": "Add Title Entry"
     },
     {
-      "Key": "TEXT_Contents_",
-      "Text": ""
+      "Key": "TEXT_Contents_Column_Header_Summary",
+      "Text": "Summary"
     },
     {
-      "Key": "TEXT_Contents_",
-      "Text": ""
+      "Key": "TEXT_Contents_Add_Summary_Entry",
+      "Text": "Add Summary Entry"
     },
     {
-      "Key": "TEXT_Contents_",
-      "Text": ""
+      "Key": "TEXT_Contents_Column_Header_Description",
+      "Text": "Description"
     },
     {
-      "Key": "TEXT_Contents_",
-      "Text": ""
+      "Key": "TEXT_Contents_Add_Description_Entry",
+      "Text": "Add Description Entry"
     },
     {
-      "Key": "TEXT_Contents_",
-      "Text": ""
+      "Key": "TEXT_Contents_Column_Header_Effect",
+      "Text": "Effect"
     },
     {
-      "Key": "TEXT_Contents_",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_Contents_",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_Contents_",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_Contents_",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_Contents_",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_Contents_",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_Contents_",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_Contents_",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_Contents_",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_Contents_",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_Contents_",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_Contents_",
-      "Text": ""
-    },
-    
+      "Key": "TEXT_Contents_Add_Effect_Entry",
+      "Text": "Add Effect Entry"
+    }
   ]
 }

@@ -59,7 +59,7 @@ public class GlobalTextReplacement
             LOC.Get("TEXT_TextReplacement_Header_Filter_Type"),
             LOC.Get("TEXT_TextReplacement_Header_Filter_Type_TT"));
 
-        var filterPreviewName = filterType.GetDisplayName();
+        var filterPreviewName = LOC.Get(filterType.GetDisplayName());
 
         UIHelper.SetInputWidth();
         if (ImGui.BeginCombo("##searchFilterType", filterPreviewName))

@@ -46,7 +46,7 @@ public class GlobalTextSearch
             LOC.Get("TEXT_TextSearch_Header_Filter_Type"),
             LOC.Get("TEXT_TextSearch_Header_Filter_Type_TT"));
 
-        var filterPreviewName = filterType.GetDisplayName();
+        var filterPreviewName = LOC.Get(filterType.GetDisplayName());
 
         UIHelper.SetInputWidth();
         if (ImGui.BeginCombo("##searchFilterType", filterPreviewName))
@@ -55,7 +55,7 @@ public class GlobalTextSearch
             {
                 var filterEntry = (SearchFilterType)entry;
 
-                var displayName = filterEntry.GetDisplayName();
+                var displayName = LOC.Get(filterEntry.GetDisplayName());
 
                 if (ImGui.Selectable(displayName))
                 {

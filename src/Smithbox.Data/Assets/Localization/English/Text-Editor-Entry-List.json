@@ -27,6 +27,18 @@
     {
       "Key": "TEXT_EntryList_Drag_Drop_Text",
       "Text": "Entry {0}"
+    },
+    {
+      "Key": "TEXT_ContainerList_Context_Action_Create",
+      "Text": "Create"
+    },
+    {
+      "Key": "TEXT_ContainerList_Context_Action_Duplicate",
+      "Text": "Duplicate"
+    },
+    {
+      "Key": "TEXT_ContainerList_Context_Action_Delete",
+      "Text": "Delete"
     }
   ]
 }

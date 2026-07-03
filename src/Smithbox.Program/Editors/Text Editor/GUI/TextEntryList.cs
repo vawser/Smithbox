@@ -259,7 +259,7 @@ public class TextEntryList
         // Context Menu / Shortcuts
         if (Parent.Selection.IsFmgEntrySelected(index))
         {
-            Parent.ContextMenu.FmgEntryContextMenu("id", index, Parent.Selection.SelectedFmgWrapper, entry, isSelected);
+            ContextMenu("id", index, Parent.Selection.SelectedFmgWrapper, entry, isSelected);
 
             Parent.Editor.Shortcuts.HandleSelectAll();
             Parent.Editor.Shortcuts.HandleCopyEntryText();
@@ -320,7 +320,7 @@ public class TextEntryList
         // Context Menu / Shortcuts
         if (Parent.Selection.IsFmgEntrySelected(index))
         {
-            Parent.ContextMenu.FmgEntryContextMenu("name", index, Parent.Selection.SelectedFmgWrapper, entry, isSelected);
+           ContextMenu("name", index, Parent.Selection.SelectedFmgWrapper, entry, isSelected);
 
             Parent.Editor.Shortcuts.HandleSelectAll();
             Parent.Editor.Shortcuts.HandleCopyEntryText();
@@ -411,5 +411,36 @@ public class TextEntryList
         }
 
         return false;
+    }
+
+    public void ContextMenu(string title, int index, TextFmgWrapper fmgInfo, FMG.Entry entry, bool isMultiselecting)
+    {
+        if (ImGui.BeginPopupContextItem($"##FmgEntryContext{title}_{index}"))
+        {
+            // Create
+            if (ImGui.Selectable($"{LOC.Get("TEXT_ContainerList_Context_Action_Create")}##createAction"))
+            {
+                Parent.TextEntryCreator.ShowModal = true;
+            }
+
+            // Duplicate
+            if (ImGui.Selectable($"{LOC.Get("TEXT_ContainerList_Context_Action_Duplicate")}##duplicateAction"))
+            {
+                Parent.ActionHandler.DuplicateEntries();
+            }
+
+            // Delete
+            if (ImGui.Selectable($"{LOC.Get("TEXT_ContainerList_Context_Action_Delete")}##deleteAction"))
+            {
+                Parent.ActionHandler.DeleteEntries();
+            }
+
+            ImGui.Separator();
+
+            Parent.FmgImporter.TextEntryDropdownOptions();
+            Parent.FmgExporter.TextEntryDropdownOptions();
+
+            ImGui.EndPopup();
+        }
     }
 }

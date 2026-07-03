@@ -23,7 +23,7 @@
   Model Editor
   Param Editor
   Project Metadata Editor
-  Text Editor
+  ### Text Editor
   ### Texture Viewer
   ### Viewport
  ### Interface

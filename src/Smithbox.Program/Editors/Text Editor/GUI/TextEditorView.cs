@@ -22,7 +22,6 @@ public class TextEditorView
     public int ViewIndex;
 
     public TextActionHandler ActionHandler;
-    public TextContextMenu ContextMenu;
 
     public TextViewSelection Selection;
     public TextEntryGroupManager EntryGroupManager;
@@ -49,7 +48,6 @@ public class TextEditorView
         ViewIndex = imguiId;
 
         Selection = new TextViewSelection(this, Project);
-        ContextMenu = new TextContextMenu(this, Project);
         ActionHandler = new TextActionHandler(this, Project);
         EntryGroupManager = new TextEntryGroupManager(this, Project);
         DifferenceManager = new TextDifferenceManager(this, Project);

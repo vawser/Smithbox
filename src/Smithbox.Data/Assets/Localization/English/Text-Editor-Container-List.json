@@ -1,0 +1,76 @@
+{
+  "Entries": [
+    {
+      "Key": "TEXT_ContainerList_Header_Containers",
+      "Text": "Containers"
+    },
+    {
+      "Key": "TEXT_ContainerList_Header_Containers_TT",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_ContainerList_Category_Mode_Primary_Only",
+      "Text": "Primary Category Only"
+    },
+    {
+      "Key": "TEXT_ContainerList_Category_Mode_All",
+      "Text": "All Categories"
+    },
+    {
+      "Key": "TEXT_ContainerList_Category_Mode_TT",
+      "Text": "Toggle which categories appear in the list.\nCurrent Mode: {0}"
+    },
+    {
+      "Key": "TEXT_ContainerList_DS2_Common",
+      "Text": "Common"
+    },
+    {
+      "Key": "TEXT_ContainerList_DS2_Blood_Message",
+      "Text": "Blood Message"
+    },
+    {
+      "Key": "TEXT_ContainerList_DS2_Talk",
+      "Text": "Talk"
+    },
+    {
+      "Key": "TEXT_ContainerList_Is_Primary_Container_TT",
+      "Text": "This container is the only one used by the game.\nOnly use this one."
+    },
+    {
+      "Key": "TEXT_ContainerList_Obsolete_Container_TT",
+      "Text": "This container is no longer used by the game.\nDo not use this one."
+    },
+    {
+      "Key": "TEXT_ContainerList_Source_Path_TT",
+      "Text": "Source File: {0}"
+    },
+    {
+      "Key": "TEXT_ContainerList_Context_Header_Information",
+      "Text": "Information"
+    },
+    {
+      "Key": "TEXT_ContainerList_Context_Filename",
+      "Text": "Filename: {0}"
+    },
+    {
+      "Key": "TEXT_ContainerList_Context_Path",
+      "Text": "Path: {0}"
+    },
+    {
+      "Key": "TEXT_ContainerList_Context_Type",
+      "Text": "Type: {0}"
+    },
+    {
+      "Key": "TEXT_ContainerList_Context_Display_Category",
+      "Text": "Display Category: {0}"
+    },
+    {
+      "Key": "TEXT_ContainerList_Display_Sub_Category",
+      "Text": "Display Sub-Category: {0}"
+    },
+    {
+      "Key": "TEXT_ContainerList_Context_Compression_Type",
+      "Text": "Compression TYpe: {0}"
+    }
+  ]
+}

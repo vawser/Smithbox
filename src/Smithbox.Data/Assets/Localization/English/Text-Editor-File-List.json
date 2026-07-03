@@ -71,6 +71,18 @@
     {
       "Key": "TEXT_FileList_DLC2_Priority_TT",
       "Text": "This FMG contains entries associated with DLC 2, edit them here.\n\nHowever, it is NOT recommended to add new entries in this FMG, as any entry with the same ID in the Base or DLC 1 section FMG will take precedence."
+    },
+    {
+      "Key": "TEXT_FileList_Context_Header_Information",
+      "Text": "Information"
+    },
+    {
+      "Key": "TEXT_ContainerList_Context_ID",
+      "Text": "ID: {0}"
+    },
+    {
+      "Key": "TEXT_ContainerList_Context_Name",
+      "Text": "Name: {0}"
     }
   ]
 }

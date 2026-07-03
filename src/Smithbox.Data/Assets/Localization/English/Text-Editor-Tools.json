@@ -51,6 +51,18 @@
     {
       "Key": "TEXT_Tools_View_Text_Merge",
       "Text": "Text Merge"
+    },
+    {
+      "Key": "TEXT_Tools_Copy_Entry_Text_to_Clipboard_PASS",
+      "Text": "Selected text entry has been copied to the clipboard."
+    },
+    {
+      "Key": "TEXT_Tools_Copy_Entry_Text_to_Clipboard_FAIL",
+      "Text": "Clipboard copy failed."
+    },
+    {
+      "Key": "TEXT_Tools_Copy_Entry_Text_to_Clipboard_Result",
+      "Text": "Text Entry Contents copied to clipboard."
     }
   ]
 }

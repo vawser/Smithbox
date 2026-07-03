@@ -387,9 +387,9 @@ public class TextActionHandler
 
             TaskManager.LiveTask task = new(
                 "textEditor_copyTextEntryContents",
-                "[Text Editor]",
-                "Selected text entry has been copied to the clipboard.",
-                "Clipboard copy failed.",
+                LOC.Get("SYS_Header"),
+                LOC.Get("TEXT_Tools_Copy_Entry_Text_to_Clipboard_PASS"),
+                LOC.Get("TEXT_Tools_Copy_Entry_Text_to_Clipboard_FAIL"),
                 TaskManager.RequeueType.None,
                 false,
                 () =>
@@ -457,7 +457,7 @@ public class TextActionHandler
 
                     PlatformUtils.Instance.SetClipboardText(copyText);
 
-                    Smithbox.Log<TextActionHandler>("Text Entry Contents copied to clipboard.");
+                    Smithbox.Log<TextActionHandler>(LOC.Get("TEXT_Tools_Copy_Entry_Text_to_Clipboard_Result"));
                     IsCurrentlyCopyingContents = false;
                 }
             );

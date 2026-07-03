@@ -31,7 +31,9 @@ public class TextContainerList
     /// </summary>
     public void Display(float width, float height)
     {
-        UIHelper.SimpleHeader("Containers", "");
+        UIHelper.SimpleHeader(
+            LOC.Get("TEXT_ContainerList_Header_Containers"),
+            LOC.Get("TEXT_ContainerList_Header_Containers_TT"));
 
         var searchHeight = new Vector2(0, 36) * DPI.UIScale();
         ImGui.BeginChild($"textEditor_ContainerList_Header", searchHeight, ImGuiChildFlags.Borders);
@@ -47,11 +49,11 @@ public class TextContainerList
             CFG.Current.TextEditor_Container_List_Display_Primary_Category_Only = !CFG.Current.TextEditor_Container_List_Display_Primary_Category_Only;
         }
 
-        var isPrimaryOnly = "Primary Category Only";
+        var categoryMode = LOC.Get("TEXT_ContainerList_Category_Mode_Primary_Only");
         if (!CFG.Current.TextEditor_Container_List_Display_Primary_Category_Only)
-            isPrimaryOnly = "All Categories";
+            categoryMode = LOC.Get("TEXT_ContainerList_Category_Mode_All");
 
-        UIHelper.Tooltip($"Toggle which categories appear in the list.\nCurrent Mode: {isPrimaryOnly}");
+        UIHelper.Tooltip(LOC.Get("TEXT_ContainerList_Category_Mode_TT", categoryMode));
 
         ImGui.EndChild();
 
@@ -94,7 +96,7 @@ public class TextContainerList
             UIHelper.SimpleHeader(name, "");
 
             // Common Sub-Header
-            if (ImGui.CollapsingHeader($"Common##{name}_common", flags))
+            if (ImGui.CollapsingHeader($"{LOC.Get("TEXT_ContainerList_DS2_Common")}##{name}_common", flags))
             {
                 foreach (var (fileEntry, info) in orderedList)
                 {
@@ -115,7 +117,7 @@ public class TextContainerList
             }
 
             // Blood Message Sub-Header
-            if (ImGui.CollapsingHeader($"Blood Message##{name}_bloodmsg", flags))
+            if (ImGui.CollapsingHeader($"{LOC.Get("TEXT_ContainerList_DS2_Blood_Message")}##{name}_bloodmsg", flags))
             {
                 foreach (var (fileEntry, info) in orderedList)
                 {
@@ -136,7 +138,7 @@ public class TextContainerList
             }
 
             // Talk Sub-Header
-            if (ImGui.CollapsingHeader($"Talk##{name}_common", flags))
+            if (ImGui.CollapsingHeader($"{LOC.Get("TEXT_ContainerList_DS2_Talk")}##{name}_common", flags))
             {
                 foreach (var (fileEntry, info) in orderedList)
                 {
@@ -162,6 +164,7 @@ public class TextContainerList
             var orderedList = Project.Handler.TextData.PrimaryBank.Containers.OrderBy(e => e.Key);
 
             var displayName = LOC.Get(category.GetDisplayName());
+
             // Category Header
             if (ImGui.CollapsingHeader($"{displayName}##{category.GetDisplayName()}", flags))
             {
@@ -238,7 +241,7 @@ public class TextContainerList
             {
                 if (Parent.Selection.SelectedContainerKey == index)
                 {
-                    Parent.ContextMenu.FileContextMenu(wrapper);
+                    ContextMenu(wrapper);
                 }
 
                 if (Parent.Selection.FocusFileSelection && Parent.Selection.SelectedContainerKey == index)
@@ -257,22 +260,22 @@ public class TextContainerList
                     {
                         if (wrapper.FileEntry.Filename.Contains("dlc2") || wrapper.FileEntry.Filename.Contains("dlc02"))
                         {
-                            UIHelper.Tooltip("This container is the only one used by the game.\nOnly use this one.");
+                            UIHelper.Tooltip(LOC.Get("TEXT_ContainerList_Is_Primary_Container_TT"));
                         }
                         else if (wrapper.FileEntry.Filename.Contains("dlc1") || wrapper.FileEntry.Filename.Contains("dlc01"))
                         {
-                            UIHelper.Tooltip("This container is no longer used by the game.\nDo not use this one.");
+                            UIHelper.Tooltip(LOC.Get("TEXT_ContainerList_Obsolete_Container_TT"));
                         }
                         else
                         {
-                            UIHelper.Tooltip("This container is no longer used by the game.\nDo not use this one.");
+                            UIHelper.Tooltip(LOC.Get("TEXT_ContainerList_Obsolete_Container_TT"));
                         }
                     }
                 }
             }
             if (CFG.Current.TextEditor_Container_List_Display_Source_Path)
             {
-                UIHelper.Tooltip($"Source File: {wrapper.FileEntry.Path}");
+                UIHelper.Tooltip(LOC.Get("TEXT_ContainerList_Source_Path_TT", wrapper.FileEntry.Path));
             }
         }
     }
@@ -291,6 +294,55 @@ public class TextContainerList
         else
         {
             return true;
+        }
+    }
+
+    public void ContextMenu(TextContainerWrapper info)
+    {
+        if (ImGui.BeginPopupContextItem($"##FileContext{info.FileEntry.Filename}"))
+        {
+            // Information
+            if (ImGui.BeginMenu($"{LOC.Get("TEXT_ContainerList_Context_Header_Information")}##infoMenuHeader"))
+            {
+                // Filename
+                if (ImGui.Selectable($"{LOC.Get("TEXT_ContainerList_Context_Filename", info.FileEntry.Filename)}##copyFilename"))
+                {
+                    ImGui.SetClipboardText(info.FileEntry.Filename);
+                }
+
+                // Path
+                if (ImGui.Selectable($"{LOC.Get("TEXT_ContainerList_Context_Path", info.FileEntry.Path)}##copyPath"))
+                {
+                    ImGui.SetClipboardText(info.FileEntry.Filename);
+                }
+
+                ImGui.Separator();
+
+                // Type
+                ImGui.Text(LOC.Get("TEXT_ContainerList_Context_Type", 
+                    LOC.Get(info.ContainerType.GetDisplayName())));
+
+                // Display Category
+                ImGui.Text(LOC.Get("TEXT_ContainerList_Context_Display_Category",
+                    LOC.Get(info.ContainerDisplayCategory.GetDisplayName())));
+
+                // Display Sub-Category
+                ImGui.Text(LOC.Get("TEXT_ContainerList_Display_Sub_Category",
+                    LOC.Get(info.ContainerDisplaySubCategory.GetDisplayName())));
+
+                // Compression Type
+                ImGui.Text(LOC.Get("TEXT_ContainerList_Context_Compression_Type", 
+                    info.CompressionType.ToString()));
+
+                ImGui.EndMenu();
+            }
+
+            Parent.Editor.ToolView.LanguageSyncTool.DisplaySyncOptions();
+
+            Parent.FmgImporter.ContainerDropdownOptions();
+            Parent.FmgExporter.ContainerDropdownOptions();
+
+            ImGui.EndPopup();
         }
     }
 }

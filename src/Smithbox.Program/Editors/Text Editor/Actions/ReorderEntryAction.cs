@@ -1,10 +1,5 @@
 ﻿using SoulsFormats;
 using StudioCore.Editors.Common;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.TextEditor;
 public class ReorderEntryAction : EditorAction
