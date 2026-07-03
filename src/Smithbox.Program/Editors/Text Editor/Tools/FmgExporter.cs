@@ -26,98 +26,92 @@ public class FmgExporter
         Parent.TextExportModal.Display();
     }
 
-
-    /// <summary>
-    /// Context Menu options in the Container list
-    /// </summary>
-    public void FileContextMenuOptions()
+    public void ContainerDropdownOptions()
     {
-        if (ImGui.BeginMenu("Export Text"))
+        // Export Text
+        if (ImGui.BeginMenu($"{LOC.Get("TEXT_Exporter_Header_Export_Text")}##exportTextMenuHeader"))
         {
-            if (ImGui.Selectable("Export Selected File"))
+            // Export Selected Container
+            if (ImGui.Selectable($"{LOC.Get("TEXT_Exporter_Action_Export_Container")}##exportContainer"))
             {
                 DisplayExportModal(ExportType.Container);
             }
+            UIHelper.Tooltip(LOC.Get("TEXT_Exporter_Action_Export_Container_TT"));
 
             ImGui.Separator();
 
-            if (ImGui.Selectable("Export Modified Text"))
+            // Export Modified Text
+            if (ImGui.Selectable($"{LOC.Get("TEXT_Exporter_Action_Export_Modified")}##exportModified"))
             {
                 DisplayExportModal(ExportType.Container, ExportModifier.ModifiedOnly);
             }
-            UIHelper.Tooltip("Only include Text Entries (and therefore the associated Text Files) that are considered 'modified'.");
+            UIHelper.Tooltip(LOC.Get("TEXT_Exporter_Action_Export_Modified_TT"));
 
-            if (ImGui.Selectable("Export Unique Text"))
+            // Export Unique Text
+            if (ImGui.Selectable($"{LOC.Get("TEXT_Exporter_Action_Export_Unique")}##exportUnique"))
             {
                 DisplayExportModal(ExportType.Container, ExportModifier.UniqueOnly);
             }
-            UIHelper.Tooltip("Only include Text Entries (and therefore the associated Text Files) that are considered 'unique'.");
+            UIHelper.Tooltip(LOC.Get("TEXT_Exporter_Action_Export_Unique_TT"));
 
             ImGui.EndMenu();
         }
-        UIHelper.Tooltip("Export all associated Text Files and the Text Entries within this container.");
     }
 
-    /// <summary>
-    /// Context Menu options in the FMG list
-    /// </summary>
-    public void FmgContextMenuOptions()
+    public void TextFileDropdownOptions()
     {
-        if (ImGui.BeginMenu("Export Text"))
+        if (ImGui.BeginMenu($"{LOC.Get("TEXT_Exporter_Header_Export_Text")}##exportTextMenuHeader"))
         {
-            if (ImGui.Selectable("Export Selected Text File"))
+            if (ImGui.Selectable($"{LOC.Get("TEXT_Exporter_Action_Export_Text_File")}##exportTextFile"))
             {
                 DisplayExportModal(ExportType.FMG);
             }
+            UIHelper.Tooltip(LOC.Get("TEXT_Exporter_Action_Export_Text_File_TT"));
 
             ImGui.Separator();
 
-            if (ImGui.Selectable("Export Modified Text"))
+            if (ImGui.Selectable($"{LOC.Get("TEXT_Exporter_Action_Export_Modified")}##exportModified"))
             {
                 DisplayExportModal(ExportType.FMG, ExportModifier.ModifiedOnly);
             }
-            UIHelper.Tooltip("Only include Text Entries (and therefore the associated Text File) that are considered 'modified'.");
+            UIHelper.Tooltip(LOC.Get("TEXT_Exporter_Action_Export_Modified_TT"));
 
-            if (ImGui.Selectable("Export Unique Text"))
+            if (ImGui.Selectable($"{LOC.Get("TEXT_Exporter_Action_Export_Unique")}##exportUnique"))
             {
                 DisplayExportModal(ExportType.FMG, ExportModifier.UniqueOnly);
             }
-            UIHelper.Tooltip("Only include Text Entries (and therefore the associated Text File) that are considered 'unique'.");
+            UIHelper.Tooltip(LOC.Get("TEXT_Exporter_Action_Export_Unique_TT"));
 
             ImGui.EndMenu();
         }
-        UIHelper.Tooltip("Export all associated entries within this Text File.");
     }
 
-    /// <summary>
-    /// Context Menu options in the FMG Entry list
-    /// </summary>
-    public void FmgEntryContextMenuOptions()
+    public void TextEntryDropdownOptions()
     {
-        if (ImGui.BeginMenu("Export Text"))
+        if (ImGui.BeginMenu($"{LOC.Get("TEXT_Exporter_Header_Export_Text")}##exportTextMenuHeader"))
         {
-            if (ImGui.Selectable("Export Selected Text Entries"))
+            if (ImGui.Selectable($"{LOC.Get("TEXT_Exporter_Action_Export_Text_Entry")}##exportTextEntry"))
             {
                 DisplayExportModal(ExportType.FMG_Entries);
             }
+            UIHelper.Tooltip(LOC.Get("TEXT_Exporter_Action_Export_Text_Entry_TT"));
 
             ImGui.Separator();
 
-            if (ImGui.Selectable("Export Modified Text"))
+            if (ImGui.Selectable($"{LOC.Get("TEXT_Exporter_Action_Export_Modified")}##exportModified"))
             {
                 DisplayExportModal(ExportType.FMG_Entries, ExportModifier.ModifiedOnly);
             }
-            UIHelper.Tooltip("Only include Text Entries that are considered 'modified'.");
+            UIHelper.Tooltip(LOC.Get("TEXT_Exporter_Action_Export_Modified_TextEntry_TT"));
 
-            if (ImGui.Selectable("Export Unique Text"))
+            if (ImGui.Selectable($"{LOC.Get("TEXT_Exporter_Action_Export_Unique")}##exportUnique"))
             {
                 DisplayExportModal(ExportType.FMG_Entries, ExportModifier.UniqueOnly);
             }
-            UIHelper.Tooltip("Only include Text Entries that are considered 'unique'.");
+            UIHelper.Tooltip(LOC.Get("TEXT_Exporter_Action_Export_Unique_TextEntry_TT"));
 
             ImGui.EndMenu();
         }
-        UIHelper.Tooltip("Export all selected Text Entries.");
     }
 
     public void DisplayExportModal(ExportType exportType, ExportModifier exportModifier = ExportModifier.None)
@@ -354,8 +348,8 @@ public class FmgExporter
         if (File.Exists(filename))
         {
             DialogResult result = PlatformUtils.Instance.MessageBox(
-                    $"Exported text already exists under this name. Overwrite?", 
-                    "Warning", 
+                    LOC.Get("TEXT_Exporter_Export_Text_Exists_Overwrite"),
+                    LOC.Get("SYS_Warning_Header"),
                     MessageBoxButtons.YesNo);
 
             if (result == DialogResult.Yes)
@@ -382,11 +376,11 @@ public class FmgExporter
 
                 Parent.Editor.ToolView.DataTransferTool.ExportString = jsonString;
 
-                Smithbox.Log(this, $"Text Exporter: exported text: {wrapper.Name} at {filePath}");
+                Smithbox.Log(this, LOC.Get("TEXT_Exporter_Exported_Text_PASS", wrapper.Name, filePath));
             }
             catch (Exception ex)
             {
-                Smithbox.Log(this, $"Text Exporter: failed to export text: {wrapper.Name} at {filePath}\n{ex}");
+                Smithbox.LogError(this, LOC.Get("TEXT_Exporter_Exported_Text_FAIL", wrapper.Name, filePath), ex);
             }
         }
     }

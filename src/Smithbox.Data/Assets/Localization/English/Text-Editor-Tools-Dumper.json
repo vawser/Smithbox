@@ -1,0 +1,24 @@
+{
+  "Entries": [
+    {
+      "Key": "TEXT_Dumper_Header_Text_Dump",
+      "Text": "Text Dump"
+    },
+    {
+      "Key": "TEXT_Dumper_Action_Dump",
+      "Text": "Dump"
+    },
+    {
+      "Key": "TEXT_Dumper_Action_Dump_TT",
+      "Text": "Dumps all the FMG contents into individual text files for data-mining."
+    },
+    {
+      "Key": "TEXT_Dumper_Dialog_Select_Directory",
+      "Text": "Select Directory"
+    },
+    {
+      "Key": "TEXT_Dumper_Finished_Dump",
+      "Text": "Finished dumping all text entries."
+    }
+  ]
+}

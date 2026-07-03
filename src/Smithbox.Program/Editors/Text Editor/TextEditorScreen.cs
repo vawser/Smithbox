@@ -74,45 +74,52 @@ public class TextEditorScreen : EditorScreen
 
     public void FileMenu()
     {
-        if (ImGui.BeginMenu("File"))
+        // File
+        if (ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Header_File")}##fileMenuHeader"))
         {
-            if (ImGui.MenuItem($"Save", $"{InputManager.GetHint(KeybindID.Save)}"))
+            // Save
+            if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_Save")}##saveAction", $"{InputManager.GetHint(KeybindID.Save)}"))
             {
                 Save();
             }
 
-            if (ImGui.MenuItem($"Save All"))
+            // Save All
+            if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_SaveAll")}##saveAllAction"))
             {
                 SaveAll();
             }
 
             ImGui.Separator();
 
-            if (ImGui.BeginMenu("Output on Manual Save"))
+            // Manual Save Output
+            if (ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Manual_Save_Output")}##manualSaveMenuHeader"))
             {
-                if (ImGui.MenuItem($"FMG"))
+                // FMG
+                if (ImGui.MenuItem($"{LOC.Get("EDITOR_SaveOutput_FMG")}##manualToggle_fmg"))
                 {
                     CFG.Current.TextEditor_ManualSave_IncludeFMG = !CFG.Current.TextEditor_ManualSave_IncludeFMG;
                 }
-                UIHelper.Tooltip("If enabled, the text files are outputted on save.");
+                UIHelper.Tooltip(LOC.Get("EDITOR_SaveOutput_FMG_TT"));
                 UIHelper.ShowActiveStatus(CFG.Current.TextEditor_ManualSave_IncludeFMG);
 
                 ImGui.EndMenu();
             }
-            UIHelper.Tooltip("Determines which files are outputted during the manual saving process.");
+            UIHelper.Tooltip(LOC.Get("EDITOR_Menubar_Manual_Save_Output_TT"));
 
-            if (ImGui.BeginMenu("Output on Automatic Save"))
+            // Automatic Save Output
+            if (ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Auto_Save_Output")}##autoSaveMenuHeader"))
             {
-                if (ImGui.MenuItem($"FMG"))
+                // FMG
+                if (ImGui.MenuItem($"{LOC.Get("EDITOR_SaveOutput_FMG")}##autoToggle_fmg"))
                 {
                     CFG.Current.TextEditor_AutomaticSave_IncludeFMG = !CFG.Current.TextEditor_AutomaticSave_IncludeFMG;
                 }
-                UIHelper.Tooltip("If enabled, the text files are outputted on save.");
+                UIHelper.Tooltip(LOC.Get("EDITOR_SaveOutput_FMG_TT"));
                 UIHelper.ShowActiveStatus(CFG.Current.TextEditor_AutomaticSave_IncludeFMG);
 
                 ImGui.EndMenu();
             }
-            UIHelper.Tooltip("Determines which files are outputted during the automatic saving process.");
+            UIHelper.Tooltip(LOC.Get("EDITOR_Menubar_Auto_Save_Output_TT"));
 
             ImGui.EndMenu();
         }
@@ -122,7 +129,8 @@ public class TextEditorScreen : EditorScreen
     {
         var activeView = ViewHandler.ActiveView;
 
-        if (ImGui.BeginMenu("Edit"))
+        // Edit
+        if (ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Header_Edit")}##editMenuHeader"))
         {
             if (activeView != null)
             {
@@ -182,7 +190,7 @@ public class TextEditorScreen : EditorScreen
 
     public void ViewMenu()
     {
-        if (ImGui.BeginMenu("View"))
+        if (ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Header_View")}##viewMenuHeader"))
         {
             if (ImGui.MenuItem("Tool Window"))
             {
@@ -198,30 +206,20 @@ public class TextEditorScreen : EditorScreen
         }
     }
 
-    /// <summary>
-    /// The editor menubar
-    /// </summary>
     public void ToolMenu()
     {
         var activeView = ViewHandler.ActiveView;
 
         if (activeView != null)
         {
-            if (ImGui.BeginMenu("Tools"))
+            if (ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Header_Tools")}##toolsMenuHeader"))
             {
                 ToolView.DataTransferTool.DisplayDropdown();
 
+                activeView.FmgDumper.DumperDropdownOptions();
+
                 ImGui.EndMenu();
             }
-        }
-    }
-
-    public void OptionsMenu()
-    {
-        if (ImGui.BeginMenu("Options"))
-        {
-
-            ImGui.EndMenu();
         }
     }
 

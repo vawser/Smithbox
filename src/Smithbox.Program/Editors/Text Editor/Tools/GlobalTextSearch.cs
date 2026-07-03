@@ -1,9 +1,6 @@
 ﻿using Hexa.NET.ImGui;
-using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Utilities;
-using System;
-using System.Collections.Generic;
 using System.Numerics;
 using System.Text.Encodings.Web;
 using System.Text.Json;
@@ -37,19 +34,30 @@ public class GlobalTextSearch
 
         ImGui.BeginChild("TextSearchSection", ImGuiChildFlags.Borders);
 
-        UIHelper.SimpleHeader("Search Filter", "");
+        UIHelper.SimpleHeader(
+            LOC.Get("TEXT_TextSearch_Header_Search_Filter"),
+            LOC.Get("TEXT_TextSearch_Header_Search_Filter_TT"));
+
         UIHelper.SinglelineTextInput("textSearchInput", ref searchTerm);
 
-        UIHelper.SimpleHeader("Filter Type", "");
+        // Filter Type
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader(
+            LOC.Get("TEXT_TextSearch_Header_Filter_Type"),
+            LOC.Get("TEXT_TextSearch_Header_Filter_Type_TT"));
+
+        var filterPreviewName = filterType.GetDisplayName();
 
         UIHelper.SetInputWidth();
-        if (ImGui.BeginCombo("##searchFilterType", filterType.GetDisplayName()))
+        if (ImGui.BeginCombo("##searchFilterType", filterPreviewName))
         {
             foreach (var entry in Enum.GetValues(typeof(SearchFilterType)))
             {
                 var filterEntry = (SearchFilterType)entry;
 
-                if (ImGui.Selectable(filterEntry.GetDisplayName()))
+                var displayName = filterEntry.GetDisplayName();
+
+                if (ImGui.Selectable(displayName))
                 {
                     filterType = filterEntry;
                 }
@@ -57,18 +65,25 @@ public class GlobalTextSearch
 
             ImGui.EndCombo();
         }
-        UIHelper.Tooltip("The search filter to use.");
+        UIHelper.Tooltip(LOC.Get("TEXT_TextSearch_Filter_Type_TT"));
 
-        UIHelper.SimpleHeader("Match Type", "");
+        // Match Type
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader(
+            LOC.Get("TEXT_TextSearch_Header_Match_Type"),
+            LOC.Get("TEXT_TextSearch_Header_Match_Type_TT"));
 
+        var matchPreviewName = LOC.Get(matchType.GetDisplayName());
         UIHelper.SetInputWidth();
-        if (ImGui.BeginCombo("##searchMatchType", matchType.GetDisplayName()))
+        if (ImGui.BeginCombo("##searchMatchType", matchPreviewName))
         {
             foreach (var entry in Enum.GetValues(typeof(SearchMatchType)))
             {
                 var matchType = (SearchMatchType)entry;
 
-                if (ImGui.Selectable(matchType.GetDisplayName()))
+                var displayName = LOC.Get(matchType.GetDisplayName());
+
+                if (ImGui.Selectable(displayName))
                 {
                     this.matchType = matchType;
                 }
@@ -76,23 +91,44 @@ public class GlobalTextSearch
 
             ImGui.EndCombo();
         }
-        UIHelper.Tooltip("The contents to match with.");
+        UIHelper.Tooltip(LOC.Get("TEXT_TextSearch_Match_Type_TT"));
 
-        UIHelper.SimpleHeader("Options", "");
-
-        ImGui.Checkbox("Ignore Case##ignoreCase", ref ignoreCase);
-        UIHelper.Tooltip("Ignore case sensitivity if enabled.");
-
+        // Options
         UIHelper.Spacer();
-        UIHelper.SimpleHeader("Actions", "");
+        UIHelper.SimpleHeader(
+            LOC.Get("TEXT_TextSearch_Header_Options"),
+            LOC.Get("TEXT_TextSearch_Header_Options_TT"));
+
+        ImGui.Checkbox($"{LOC.Get("TEXT_TextSearch_Checkbox_Ignore_Case")}##ignoreCase", ref ignoreCase);
+        UIHelper.Tooltip(LOC.Get("TEXT_TextSearch_Checkbox_Ignore_Case_TT"));
+
+        // Actions
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader(
+            LOC.Get("TEXT_TextSearch_Heder_Actions"),
+            LOC.Get("TEXT_TextSearch_Heder_Actions_TT"));
 
         UIHelper.MultiButtonInput("searchActions",
-            "searchText", "Search", "", SearchText,
-            "clearResults", "Clear Results", "", ClearResults,
-            "copyResults", "Copy Results to Clipboard", "", CopyResultsToClipboard);
+            "searchText", 
+            LOC.Get("TEXT_TextSearch_Action_Search"),
+            LOC.Get("TEXT_TextSearch_Action_Search_TT"),
+            SearchText,
 
+            "clearResults",
+            LOC.Get("TEXT_TextSearch_Action_Clear_Result"),
+            LOC.Get("TEXT_TextSearch_Action_Clear_Result_TT"), 
+            ClearResults,
+
+            "copyResults",
+            LOC.Get("TEXT_TextSearch_Action_Copy_Results"),
+            LOC.Get("TEXT_TextSearch_Action_Copy_Results_TT"), 
+            CopyResultsToClipboard);
+
+        // Results
         UIHelper.Spacer();
-        UIHelper.SimpleHeader("Results", "");
+        UIHelper.SimpleHeader(
+            LOC.Get("TEXT_TextSearch_Header_Results"),
+            LOC.Get("TEXT_TextSearch_Header_Results_TT"));
 
         ImGui.BeginChild("resultsSection", new Vector2(0, 0), ImGuiChildFlags.Borders);
 
@@ -149,7 +185,7 @@ public class GlobalTextSearch
         }
         else if(hasAlreadySearched)
         {
-            UIHelper.WrappedText("No text entries found matching the filter.");
+            UIHelper.WrappedText(LOC.Get("TEXT_TextSearch_Already_Searched"));
         }
 
         ImGui.EndChild();
@@ -164,17 +200,18 @@ public class GlobalTextSearch
 
         if (searchTerm == "")
         {
-            Smithbox.LogError<GlobalTextSearch>("No search term specified.");
+            Smithbox.LogError<GlobalTextSearch>(LOC.Get("TEXT_TextSearch_No_Search_Term"));
             return;
         }
 
+        // Check the regex before entering GetGlobalTextResult
         try
         {
             var match = Regex.Match("example", searchTerm);
         }
         catch (Exception ex)
         {
-            Smithbox.LogError<GlobalTextReplacement>("Invalid regex in search filter", ex);
+            Smithbox.LogError<GlobalTextReplacement>(LOC.Get("TEXT_TextSearch_Invalid_Regex"), ex);
             return;
         }
 
@@ -193,7 +230,7 @@ public class GlobalTextSearch
     {
         if (searchResults.Count == 0)
         {
-            Smithbox.LogError<GlobalTextSearch>("No results to copy.");
+            Smithbox.LogError<GlobalTextSearch>(LOC.Get("TEXT_TextSearch_No_Results_To_Copy"));
             return;
         }
 

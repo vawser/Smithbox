@@ -19,19 +19,24 @@ public class FmgDumper
         Project = project;
     }
 
-    public void MenubarOptions()
+    public void DumperDropdownOptions()
     {
-        if (ImGui.MenuItem("Dump"))
+        if (ImGui.BeginMenu($"{LOC.Get("TEXT_Dumper_Header_Text_Dump")}##dumperMenuHeader"))
         {
-            _ = DumpAllFMGsAsync();
+            if (ImGui.MenuItem($"{LOC.Get("TEXT_Dumper_Action_Dump")}##dumpAction"))
+            {
+                _ = DumpAllFMGsAsync();
+            }
+            UIHelper.Tooltip(LOC.Get("TEXT_Dumper_Action_Dump_TT"));
+
+            ImGui.EndMenu();
         }
-        UIHelper.Tooltip("Dumps all the FMG contents into individual text files for data-mining.");
     }
 
     public async Task DumpAllFMGsAsync()
     {
         var dumpLocation = "";
-        if (!PlatformUtils.Instance.OpenFolderDialog("Select Directory", out dumpLocation))
+        if (!PlatformUtils.Instance.OpenFolderDialog(LOC.Get("TEXT_Dumper_Dialog_Select_Directory"), out dumpLocation))
             return;
 
         // Run on background thread
@@ -86,7 +91,7 @@ public class FmgDumper
 
             Task.WaitAll(entryTasks.ToArray());
 
-            Smithbox.Log(this, "Finished dumping all FMGs.");
+            Smithbox.Log(this, LOC.Get("TEXT_Dumper_Finished_Dump"));
         });
     }
 }

@@ -436,85 +436,94 @@ public class TextDataTransferTool
     {
         var curView = Editor.ViewHandler.ActiveView;
 
-        if (ImGui.BeginMenu("Export"))
+        if (ImGui.BeginMenu($"{LOC.Get("TEXT_DataTransfer_Menu_Header_Export")}##exportMenuHeader"))
         {
-            // File
-            if (ImGui.BeginMenu("File", curView.Selection.SelectedContainerWrapper != null))
+            // Container
+            if (ImGui.BeginMenu($"{LOC.Get("TEXT_DataTransfer_Menu_Header_Container")}##containerMenuHeader", curView.Selection.SelectedContainerWrapper != null))
             {
-                if (ImGui.Selectable("Export Selected File"))
+                // Export Selected Container
+                if (ImGui.Selectable($"{LOC.Get("TEXT_DataTransfer_Export_Selected_Container")}##exportContainerText"))
                 {
                     curView.FmgExporter.DisplayExportModal(ExportType.Container);
                 }
 
                 ImGui.Separator();
 
-                if (ImGui.Selectable("Export Modified Text"))
+                // Export Modified Text
+                if (ImGui.Selectable($"{LOC.Get("TEXT_DataTransfer_Export_Modified_Text")}##containerExportModifiedText"))
                 {
                     curView.FmgExporter.DisplayExportModal(ExportType.Container, ExportModifier.ModifiedOnly);
                 }
-                UIHelper.Tooltip("Only include Text Entries (and therefore the associated Text Files)) that are considered 'modified'.");
+                UIHelper.Tooltip(LOC.Get("TEXT_DataTransfer_Export_Modified_Text_TT"));
 
-                if (ImGui.Selectable("Export Unique Text"))
+                // Export Unique Text
+                if (ImGui.Selectable($"{LOC.Get("TEXT_DataTransfer_Export_Unique_Text")}##containerExportUniqueText"))
                 {
                     curView.FmgExporter.DisplayExportModal(ExportType.Container, ExportModifier.UniqueOnly);
                 }
-                UIHelper.Tooltip("Only include Text Entries (and therefore the associated Text Files) that are considered 'unique'.");
+                UIHelper.Tooltip(LOC.Get("TEXT_DataTransfer_Export_Unique_Text_TT"));
 
                 ImGui.EndMenu();
             }
-            UIHelper.Tooltip("Export your currently selected File (including all of its Text Files and their Text Entries) to a export text file.");
+            UIHelper.Tooltip(LOC.Get("TEXT_DataTransfer_Menu_Header_Container_TT"));
 
-            // FMG
-            if (ImGui.BeginMenu("Text File", curView.Selection.SelectedFmgWrapper != null))
+            // Text File
+            if (ImGui.BeginMenu($"{LOC.Get("TEXT_DataTransfer_Menu_Header_Text_File")}##textFileMenuHeader", curView.Selection.SelectedFmgWrapper != null))
             {
-                if (ImGui.Selectable("Export Selected Text File"))
+                // Export Text File
+                if (ImGui.Selectable($"{LOC.Get("TEXT_DataTransfer_Export_Selected_Text_File")}##exportTextFileText"))
                 {
                     curView.FmgExporter.DisplayExportModal(ExportType.FMG);
                 }
 
                 ImGui.Separator();
 
-                if (ImGui.Selectable("Export Modified Text"))
+                // Export Modified Text
+                if (ImGui.Selectable($"{LOC.Get("TEXT_DataTransfer_Export_Modified_Text")}##textFileExportModifiedText"))
                 {
                     curView.FmgExporter.DisplayExportModal(ExportType.FMG, ExportModifier.ModifiedOnly);
                 }
-                UIHelper.Tooltip("Only include Text Entries (and therefore the associated Text Files) that are considered 'modified'.");
+                UIHelper.Tooltip(LOC.Get("TEXT_DataTransfer_Export_Modified_Text_TT"));
 
-                if (ImGui.Selectable("Export Unique Text"))
+                // Export Unique Text
+                if (ImGui.Selectable($"{LOC.Get("TEXT_DataTransfer_Export_Unique_Text")}##textFileExportUniqueText"))
                 {
                     curView.FmgExporter.DisplayExportModal(ExportType.FMG, ExportModifier.UniqueOnly);
                 }
-                UIHelper.Tooltip("Only include Text Entries (and therefore the associated Text Files) that are considered 'unique'.");
+                UIHelper.Tooltip(LOC.Get("TEXT_DataTransfer_Export_Unique_Text_TT"));
 
                 ImGui.EndMenu();
             }
-            UIHelper.Tooltip("Export your currently selected Text File (including all of its entries) to a export text file.");
+            UIHelper.Tooltip(LOC.Get("TEXT_DataTransfer_Menu_Header_Text_File_TT"));
 
-            // FMG Entries
-            if (ImGui.BeginMenu("Text Entry", curView.Selection._selectedFmgEntry != null))
+            // Text Entry
+            if (ImGui.BeginMenu($"{LOC.Get("TEXT_DataTransfer_Menu_Header_Text_Entry")}##textEntryMenuHEader", curView.Selection._selectedFmgEntry != null))
             {
-                if (ImGui.Selectable("Export Selected Text Entries"))
+                // Export Text Entry
+                if (ImGui.Selectable($"{LOC.Get("TEXT_DataTransfer_Export_Selected_Text_Entry")}##exportTextEntryText"))
                 {
                     curView.FmgExporter.DisplayExportModal(ExportType.FMG_Entries);
                 }
 
                 ImGui.Separator();
 
-                if (ImGui.Selectable("Export Modified Text"))
+                // Export Modified Text
+                if (ImGui.Selectable($"{LOC.Get("TEXT_DataTransfer_Export_Modified_Text")}##textEntryExportModifiedText"))
                 {
                     curView.FmgExporter.DisplayExportModal(ExportType.FMG_Entries, ExportModifier.ModifiedOnly);
                 }
-                UIHelper.Tooltip("Only include FMG entries that are considered 'modified'.");
+                UIHelper.Tooltip(LOC.Get("TEXT_DataTransfer_Export_Entry_Modified_Text_TT"));
 
-                if (ImGui.Selectable("Export Unique Text"))
+                // Export Unique Text
+                if (ImGui.Selectable($"{LOC.Get("TEXT_DataTransfer_Export_Unique_Text")}##textEntryExportUniqueText"))
                 {
                     curView.FmgExporter.DisplayExportModal(ExportType.FMG_Entries, ExportModifier.UniqueOnly);
                 }
-                UIHelper.Tooltip("Only include FMG entries that are considered 'unique'.");
+                UIHelper.Tooltip(LOC.Get("TEXT_DataTransfer_Export_Entry_Unique_Text_TT"));
 
                 ImGui.EndMenu();
             }
-            UIHelper.Tooltip("Export your currently selected FMG Entries to a export text file.");
+            UIHelper.Tooltip(LOC.Get("TEXT_DataTransfer_Menu_Header_Text_Entry_TT"));
 
             ImGui.EndMenu();
         }

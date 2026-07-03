@@ -31,6 +31,66 @@
     {
       "Key": "TEXT_Exporter_Log_Filename_Empty",
       "Text": "Filename is empty."
+    },
+    {
+      "Key": "TEXT_Exporter_Header_Export_Text",
+      "Text": "Export Text"
+    },
+    {
+      "Key": "TEXT_Exporter_Action_Export_Container",
+      "Text": "Export Selected Container"
+    },
+    {
+      "Key": "TEXT_Exporter_Action_Export_Container_TT",
+      "Text": "Export all associated Text Files and the Text Entries within this container."
+    },
+    {
+      "Key": "TEXT_Exporter_Action_Export_Text_File",
+      "Text": "Export Selected Text File"
+    },
+    {
+      "Key": "TEXT_Exporter_Action_Export_Text_File_TT",
+      "Text": "Export all associated entries within this Text File."
+    },
+    {
+      "Key": "TEXT_Exporter_Action_Export_Text_Entry",
+      "Text": "Export Selected Text Entry"
+    },
+    {
+      "Key": "TEXT_Exporter_Action_Export_Text_Entry_TT",
+      "Text": "Export all selected Text Entries."
+    },
+    {
+      "Key": "TEXT_Exporter_Action_Export_Modified",
+      "Text": "Export Modified Text"
+    },
+    {
+      "Key": "TEXT_Exporter_Action_Export_Modified_TT",
+      "Text": "Only include Text Entries (and therefore the associated Text Files) that are considered 'modified'."
+    },
+    {
+      "Key": "TEXT_Exporter_Action_Export_Modified_TextEntry_TT",
+      "Text": "OOnly include Text Entries that are considered 'modified'."
+    },
+    {
+      "Key": "TEXT_Exporter_Action_Export_Unique",
+      "Text": "Export Unique Text"
+    },
+    {
+      "Key": "TEXT_Exporter_Action_Export_Unique_TextEntry_TT",
+      "Text": "Only include Text Entries that are considered 'unique'."
+    },
+    {
+      "Key": "TEXT_Exporter_Export_Text_Exists_Overwrite",
+      "Text": "Exported text already exists under this name. Overwrite?"
+    },
+    {
+      "Key": "TEXT_Exporter_Exported_Text_PASS",
+      "Text": "Exported text: {0} at {1}"
+    },
+    {
+      "Key": "TEXT_Exporter_Exported_Text_FAIL",
+      "Text": "Failed to export text: {0} at {1}"
     }
   ]
 }

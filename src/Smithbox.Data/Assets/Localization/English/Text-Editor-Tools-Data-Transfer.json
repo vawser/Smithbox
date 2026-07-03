@@ -193,88 +193,68 @@
       "Text": "No text entry has been selected."
     },
     {
-      "Key": "TEXT_DataTransfer_",
-      "Text": ""
+      "Key": "TEXT_DataTransfer_Menu_Header_Export",
+      "Text": "Export"
     },
     {
-      "Key": "TEXT_DataTransfer_",
-      "Text": ""
+      "Key": "TEXT_DataTransfer_Menu_Header_Container",
+      "Text": "Container"
     },
     {
-      "Key": "TEXT_DataTransfer_",
-      "Text": ""
+      "Key": "TEXT_DataTransfer_Menu_Header_Container_TT",
+      "Text": "Export your currently selected File (including all of its Text Files and their Text Entries) to a export text file."
     },
     {
-      "Key": "TEXT_DataTransfer_",
-      "Text": ""
+      "Key": "TEXT_DataTransfer_Menu_Header_Text_File",
+      "Text": "Text File"
     },
     {
-      "Key": "TEXT_DataTransfer_",
-      "Text": ""
+      "Key": "TEXT_DataTransfer_Menu_Header_Text_File_TT",
+      "Text": "Export your currently selected Text File (including all of its entries) to a export text file."
     },
     {
-      "Key": "TEXT_DataTransfer_",
-      "Text": ""
+      "Key": "TEXT_DataTransfer_Menu_Header_Text_Entry",
+      "Text": "Text Entry"
     },
     {
-      "Key": "TEXT_DataTransfer_",
-      "Text": ""
+      "Key": "TEXT_DataTransfer_Menu_Header_Text_Entry_TT",
+      "Text": "Export your currently selected FMG Entries to a export text file."
     },
     {
-      "Key": "TEXT_DataTransfer_",
-      "Text": ""
+      "Key": "TEXT_DataTransfer_Export_Selected_Container",
+      "Text": "Export Container"
     },
     {
-      "Key": "TEXT_DataTransfer_",
-      "Text": ""
+      "Key": "TEXT_DataTransfer_Export_Selected_Text_File",
+      "Text": "Export Text File"
     },
     {
-      "Key": "TEXT_DataTransfer_",
-      "Text": ""
+      "Key": "TEXT_DataTransfer_Export_Selected_Text_Entry",
+      "Text": "Export Text Entry"
     },
     {
-      "Key": "TEXT_DataTransfer_",
-      "Text": ""
+      "Key": "TEXT_DataTransfer_Export_Modified_Text",
+      "Text": "Export Modified Text"
     },
     {
-      "Key": "TEXT_DataTransfer_",
-      "Text": ""
+      "Key": "TEXT_DataTransfer_Export_Modified_Text_TT",
+      "Text": "Only include Text Entries (and therefore the associated Text Files) that are considered 'modified'."
     },
     {
-      "Key": "TEXT_DataTransfer_",
-      "Text": ""
+      "Key": "TEXT_DataTransfer_Export_Entry_Modified_Text_TT",
+      "Text": "Only include FMG entries that are considered 'modified'."
     },
     {
-      "Key": "TEXT_DataTransfer_",
-      "Text": ""
+      "Key": "TEXT_DataTransfer_Export_Unique_Text",
+      "Text": "Export Unique Text"
     },
     {
-      "Key": "TEXT_DataTransfer_",
-      "Text": ""
+      "Key": "TEXT_DataTransfer_Export_Unique_Text_TT",
+      "Text": "Only include Text Entries (and therefore the associated Text Files) that are considered 'unique'."
     },
     {
-      "Key": "TEXT_DataTransfer_",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_DataTransfer_",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_DataTransfer_",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_DataTransfer_",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_DataTransfer_",
-      "Text": ""
-    },
-    {
-      "Key": "TEXT_DataTransfer_",
-      "Text": ""
-    },
+      "Key": "TEXT_DataTransfer_Export_Entry_Unique_Text_TT",
+      "Text": "Only include FMG entries that are considered 'unique'."
+    }
   ]
 }

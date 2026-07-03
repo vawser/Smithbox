@@ -1,6 +1,10 @@
 {
   "Entries": [
     {
+      "Key": "TEXT_Window_TextEditor",
+      "Text": "Text Editor"
+    },
+    {
       "Key": "TEXT_Window_Tools",
       "Text": "Tools"
     }

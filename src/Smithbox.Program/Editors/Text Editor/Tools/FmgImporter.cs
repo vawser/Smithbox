@@ -28,12 +28,9 @@ public class FmgImporter
     }
     public void InvalidateWrapperCache() => _wrappersLoaded = false;
 
-    /// <summary>
-    /// Context Menu options in the Container list
-    /// </summary>
-    public void FileContextMenuOptions()
+    public void ContainerDropdownOptions()
     {
-        if (ImGui.BeginMenu("Import Text"))
+        if (ImGui.BeginMenu($"{LOC.Get("TEXT_Importer_Header_Import_Text")}##importMenuHeader_Container"))
         {
             DisplayImportList(FmgImportType.Container);
 
@@ -41,12 +38,9 @@ public class FmgImporter
         }
     }
 
-    /// <summary>
-    /// Context Menu options in the FMG list
-    /// </summary>
-    public void FmgContextMenuOptions()
+    public void TextFileDropdownOptions()
     {
-        if (ImGui.BeginMenu("Import Text"))
+        if (ImGui.BeginMenu($"{LOC.Get("TEXT_Importer_Header_Import_Text")}##importMenuHeader_TextFile"))
         {
             DisplayImportList(FmgImportType.FMG);
 
@@ -54,12 +48,9 @@ public class FmgImporter
         }
     }
 
-    /// <summary>
-    /// Context Menu options in the FMG Entry list
-    /// </summary>
-    public void FmgEntryContextMenuOptions()
+    public void TextEntryDropdownOptions()
     {
-        if (ImGui.BeginMenu("Import Text"))
+        if (ImGui.BeginMenu($"{LOC.Get("TEXT_Importer_Header_Import_Text")}##importMenuHeader_TextEntry"))
         {
             DisplayImportList(FmgImportType.FMG_Entries);
 
@@ -72,9 +63,10 @@ public class FmgImporter
     /// </summary>
     public void DisplayImportList(FmgImportType importType)
     {
-        if(ImGui.BeginMenu("Append"))
+        // Append
+        if(ImGui.BeginMenu($"{LOC.Get("TEXT_Importer_Header_Append")}##appendMenuHeader"))
         {
-            if (ImGui.Selectable($"From external file"))
+            if (ImGui.Selectable($"{LOC.Get("TEXT_Importer_Action_From_External_File")}##fromExternalFileAppend"))
             {
                 PromptExternalTextImport(ImportBehavior.Append);
             }
@@ -93,16 +85,17 @@ public class FmgImporter
             }
             else
             {
-                ImGui.Text("No exported text exists yet.");
+                ImGui.Text(LOC.Get("TEXT_Importer_No_Exported_Text"));
             }
 
             ImGui.EndMenu();
         }
-        UIHelper.Tooltip("The selected stored text will be added to the current File.\n\nExisting entries will be NOT modified by the contents of the stored text.");
+        UIHelper.Tooltip(LOC.Get("TEXT_Importer_Header_Append_TT"));
 
-        if (ImGui.BeginMenu("Replace"))
+        // Replace
+        if (ImGui.BeginMenu($"{LOC.Get("TEXT_Importer_Header_Replace")}##replaceMenuHeader"))
         {
-            if (ImGui.Selectable($"From external file"))
+            if (ImGui.Selectable($"{LOC.Get("TEXT_Importer_Action_From_External_File")}##fromExternalFileReplace"))
             {
                 PromptExternalTextImport(ImportBehavior.Replace);
             }
@@ -121,12 +114,12 @@ public class FmgImporter
             }
             else
             {
-                ImGui.Text("No exported text exists yet.");
+                ImGui.Text(LOC.Get("TEXT_Importer_No_Exported_Text"));
             }
 
             ImGui.EndMenu();
         }
-        UIHelper.Tooltip("The selected stored text will be added to the current Text file.\n\nExisting entries WILL be modified by the contents of the stored text.");
+        UIHelper.Tooltip(LOC.Get("TEXT_Importer_Header_Replace_TT"));
     }
 
     private List<EditorAction> ImportActions;
@@ -222,7 +215,7 @@ public class FmgImporter
                 }
                 else
                 {
-                    Smithbox.Log(this, $"Attempted to add stored text with existing key: {filename}");
+                    Smithbox.LogError(this, LOC.Get("TEXT_Importer_Stored_Text_Key_Collision", filename));
                 }
             }
         }
@@ -239,7 +232,7 @@ public class FmgImporter
         }
         catch (Exception e)
         {
-            Smithbox.Log(this, $"Failed to read JSON file string\n{e.Message}", LogLevel.Warning);
+            Smithbox.LogError(this, LOC.Get("TEXT_Importer_Failed_JSON_String_Deserialization"), e);
         }
 
         return wrapper;
@@ -260,7 +253,7 @@ public class FmgImporter
                 }
                 catch(Exception e)
                 {
-                    Smithbox.Log(this, $"Failed to read JSON file: {filename} at {path}\n{e.Message}", LogLevel.Warning);
+                    Smithbox.LogError(this, LOC.Get("TEXT_Importer_Failed_JSON_String_Deserialization", path), e);
                 }
 
                 return wrapper;
@@ -272,13 +265,11 @@ public class FmgImporter
 
     private void PromptExternalTextImport(ImportBehavior type)
     {
-        if (PlatformUtils.Instance.OpenFileDialog("Select stored text JSON", ["json"], out var path))
+        if (PlatformUtils.Instance.OpenFileDialog(LOC.Get("TEXT_Importer_Select_Stored_JSON"), ["json"], out var path))
         {
             if (!File.Exists(path))
             {
-                DialogResult message = PlatformUtils.Instance.MessageBox(
-                    "Selected file is invalid.", "Error",
-                    MessageBoxButtons.OK);
+                Smithbox.LogError(this, LOC.Get("TEXT_Importer_Invalid_Selected_File", path));
                 return;
             }
 

@@ -46,8 +46,8 @@ public class TextContextMenu
 
             Parent.Editor.ToolView.LanguageSyncTool.DisplaySyncOptions();
 
-            Parent.FmgImporter.FileContextMenuOptions();
-            Parent.FmgExporter.FileContextMenuOptions();
+            Parent.FmgImporter.ContainerDropdownOptions();
+            Parent.FmgExporter.ContainerDropdownOptions();
 
             ImGui.EndPopup();
         }
@@ -78,8 +78,8 @@ public class TextContextMenu
             // TODO: with grouped FMGs, this will only sync the header FMG, not the associated sub-FMGs, should be fixed.
             Parent.Editor.ToolView.LanguageSyncTool.DisplaySyncOptions(Parent.Selection.SelectedFmgKey);
 
-            Parent.FmgImporter.FmgContextMenuOptions();
-            Parent.FmgExporter.FmgContextMenuOptions();
+            Parent.FmgImporter.TextFileDropdownOptions();
+            Parent.FmgExporter.TextFileDropdownOptions();
 
             ImGui.EndPopup();
         }
@@ -111,8 +111,8 @@ public class TextContextMenu
 
             ImGui.Separator();
 
-            Parent.FmgImporter.FmgEntryContextMenuOptions();
-            Parent.FmgExporter.FmgEntryContextMenuOptions();
+            Parent.FmgImporter.TextEntryDropdownOptions();
+            Parent.FmgExporter.TextEntryDropdownOptions();
 
             ImGui.EndPopup();
         }

@@ -1,6 +1,10 @@
 {
   "Entries": [
     {
+      "Key": "TEXT_",
+      "Text": "xxx"
+    },
+    {
       "Key": "TEXT_Util_Log_Missing_Enum_DisplayName",
       "Text": "GetFmgDisplayName({0}): Undefined ID '{1}' for '{2}' container. Enum: {3}, FMG: '{4}', Source: '{5}'."
     },
@@ -35,6 +39,26 @@
     {
       "Key": "TEXT_ENUM_TextImportMode_Overwrite",
       "Text": "Overwrite"
+    },
+    {
+      "Key": "TEXT_ENUM_SearchFilterType_Primary_Category",
+      "Text": "Primary Category"
+    },
+    {
+      "Key": "TEXT_ENUM_SearchFilterType_All_Categories",
+      "Text": "All Categories"
+    },
+    {
+      "Key": "TEXT_ENUM_SearchMatchType_All",
+      "Text": "All"
+    },
+    {
+      "Key": "TEXT_ENUM_SearchMatchType_ID",
+      "Text": "ID"
+    },
+    {
+      "Key": "TEXT_ENUM_SearchMatchType_Text",
+      "Text": "Text"
     }
   ]
 }

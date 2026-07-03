@@ -1,9 +1,6 @@
 ﻿using Hexa.NET.ImGui;
-using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Utilities;
-using System;
-using System.Collections.Generic;
 using System.Numerics;
 using System.Text.RegularExpressions;
 
@@ -41,23 +38,39 @@ public class GlobalTextReplacement
 
         ImGui.BeginChild("TextReplaceSection", ImGuiChildFlags.Borders);
 
-        UIHelper.SimpleHeader("Search Filter", "The term to find.\n\nCan use regular expressions.");
+        // Search Filter
+        UIHelper.SimpleHeader(
+            LOC.Get("TEXT_TextReplacement_Header_Search_Filter"),
+            LOC.Get("TEXT_TextReplacement_Header_Search_Filter_TT"));
 
         UIHelper.SinglelineTextInput("textSearchInput", ref searchTerm);
 
-        UIHelper.SimpleHeader("Replacement Filter", "The term the found term is replaced with.\n\nCan use regular expressions.");
+        // Replacement Filter
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader(
+            LOC.Get("TEXT_TextReplacement_Header_Replacement_Filter"),
+            LOC.Get("TEXT_TextReplacement_Header_Replacement_Filter_TT"));
+
         UIHelper.SinglelineTextInput("textReplaceInput", ref replaceTerm);
 
-        UIHelper.SimpleHeader("Filter Type", "");
+        // Filter Type
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader(
+            LOC.Get("TEXT_TextReplacement_Header_Filter_Type"),
+            LOC.Get("TEXT_TextReplacement_Header_Filter_Type_TT"));
+
+        var filterPreviewName = filterType.GetDisplayName();
 
         UIHelper.SetInputWidth();
-        if (ImGui.BeginCombo("##searchFilterType", filterType.GetDisplayName()))
+        if (ImGui.BeginCombo("##searchFilterType", filterPreviewName))
         {
             foreach (var entry in Enum.GetValues(typeof(SearchFilterType)))
             {
                 var filterEntry = (SearchFilterType)entry;
 
-                if (ImGui.Selectable(filterEntry.GetDisplayName()))
+                var displayName = LOC.Get(filterEntry.GetDisplayName());
+
+                if (ImGui.Selectable(displayName))
                 {
                     filterType = filterEntry;
                 }
@@ -65,18 +78,26 @@ public class GlobalTextReplacement
 
             ImGui.EndCombo();
         }
-        UIHelper.Tooltip("The search filter to use.");
+        UIHelper.Tooltip(LOC.Get("TEXT_TextReplacement_Filter_Type_TT"));
 
-        UIHelper.SimpleHeader("Match Type", "");
+        // Match Type
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader(
+            LOC.Get("TEXT_TextReplacement_Header_Match_Type"),
+            LOC.Get("TEXT_TextReplacement_Header_Match_Type_TT"));
+
+        var matchPreviewName = LOC.Get(matchType.GetDisplayName());
 
         UIHelper.SetInputWidth();
-        if (ImGui.BeginCombo("##searchMatchType", matchType.GetDisplayName()))
+        if (ImGui.BeginCombo("##searchMatchType", matchPreviewName))
         {
             foreach (var entry in Enum.GetValues(typeof(SearchMatchType)))
             {
                 var matchType = (SearchMatchType)entry;
 
-                if (ImGui.Selectable(matchType.GetDisplayName()))
+                var displayName = LOC.Get(matchType.GetDisplayName());
+
+                if (ImGui.Selectable(displayName))
                 {
                     this.matchType = matchType;
                 }
@@ -84,38 +105,59 @@ public class GlobalTextReplacement
 
             ImGui.EndCombo();
         }
-        UIHelper.Tooltip("The contents to match with.");
+        UIHelper.Tooltip(LOC.Get("TEXT_TextReplacement_Match_Type_TT"));
 
-        UIHelper.SimpleHeader("Options", "");
-
-        ImGui.Checkbox("Ignore Case##ignoreCase", ref ignoreCase);
-        UIHelper.Tooltip("Specifies case-insensitive matching for regex.");
-
-        ImGui.Checkbox("Use Multi-line Regex##multilineRegex", ref applyMultilineRegex);
-        UIHelper.Tooltip("Multiline mode for regex. Changes the meaning of ^ and $ so they match at the beginning and end, respectively, of any line, and not just the beginning and end of the entire string.");
-
-        ImGui.Checkbox("Use Single-line Regex##singleLineRegex", ref applySinglelineRegex);
-        UIHelper.Tooltip("Specifies single-line mode for regex. Changes the meaning of the dot (.) so it matches every character (instead of every character except \\n).");
-
-        ImGui.Checkbox("Ignore Pattern Whitespace##ignorePatternWhitespace", ref ignorePatternWhitespace);
-        UIHelper.Tooltip("Eliminates unescaped white space from the pattern and enables comments marked with #. However, this value does not affect or eliminate white space in character classes, numeric quantifiers, or tokens that mark the beginning of individual regular expression language elements.");
-
+        // Options
         UIHelper.Spacer();
-        UIHelper.SimpleHeader("Actions", "");
+        UIHelper.SimpleHeader(
+            LOC.Get("TEXT_TextReplacement_Header_Options"),
+            LOC.Get("TEXT_TextReplacement_Header_Options_TT"));
+
+        ImGui.Checkbox($"{LOC.Get("TEXT_TextReplacement_Checkbox_Ignore_Case")}##ignoreCase", ref ignoreCase);
+        UIHelper.Tooltip(LOC.Get("TEXT_TextReplacement_Checkbox_Ignore_Case_TT"));
+
+        ImGui.Checkbox($"{LOC.Get("TEXT_TextReplacement_Checkbox_Multiline_Regex")}##multilineRegex", ref applyMultilineRegex);
+        UIHelper.Tooltip(LOC.Get("TEXT_TextReplacement_Checkbox_Multiline_Regex_TT"));
+
+        ImGui.Checkbox($"{LOC.Get("TEXT_TextReplacement_Checkbox_Singleline_Regex")}##singleLineRegex", ref applySinglelineRegex);
+        UIHelper.Tooltip(LOC.Get("TEXT_TextReplacement_Checkbox_Singleline_Regex_TT"));
+
+        ImGui.Checkbox($"{LOC.Get("TEXT_TextReplacement_Checkbox_Ignore_Pattern_Whitespace")}##ignorePatternWhitespace", ref ignorePatternWhitespace);
+        UIHelper.Tooltip(LOC.Get("TEXT_TextReplacement_Checkbox_Ignore_Pattern_Whitespace_TT"));
+
+        // Actions
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader(
+            LOC.Get("TEXT_TextReplacement_Header_Actions"),
+            LOC.Get("TEXT_TextReplacement_Header_Actions_TT"));
 
         UIHelper.MultiButtonInput("replaceActions",
-            "previewEdit", "Preview Edit", "", PreviewEdit,
-            "clearPreview", "Clear Preview", "", ClearPreview,
-            "applyReplacement", "Apply Replace", "All the entries listed in the list below will have the Replacement Input regex applied to them.", ApplyReplacement);
+            "previewEdit", 
+            LOC.Get("TEXT_TextReplacement_Action_Preview_Edit"),
+            LOC.Get("TEXT_TextReplacement_Action_Preview_Edit_TT"),
+            PreviewEdit,
 
+            "clearPreview",
+            LOC.Get("TEXT_TextReplacement_Action_Clear_Preview"),
+            LOC.Get("TEXT_TextReplacement_Action_Clear_Preview_TT"), 
+            ClearPreview,
+
+            "applyReplacement",
+            LOC.Get("TEXT_TextReplacement_Apply_Replacement"),
+            LOC.Get("TEXT_TextReplacement_Apply_Replacement_TT"), 
+            ApplyReplacement);
+
+        // Preview
         UIHelper.Spacer();
-        UIHelper.SimpleHeader("Entries to Edit", "");
+        UIHelper.SimpleHeader(
+            LOC.Get("TEXT_TextReplacement_Header_Preview_List"),
+            LOC.Get("TEXT_TextReplacement_Header_Preview_List_TT"));
 
         ImGui.BeginChild("previewSection", new Vector2(0, 0), ImGuiChildFlags.Borders);
 
         if (replacementResults.Count > 0)
         {
-            UIHelper.WrappedText("Entries that will be affected:");
+            UIHelper.WrappedText(LOC.Get("TEXT_TextReplacement_Preview_List_Hint"));
 
             foreach (var result in replacementResults)
             {
@@ -168,7 +210,7 @@ public class GlobalTextReplacement
         }
         else if (hasAlreadySearched)
         {
-            UIHelper.WrappedText("No text entries found matching the filter.");
+            UIHelper.WrappedText(LOC.Get("TEXT_TextReplacement_Already_Searched"));
         }
 
         ImGui.EndChild();
@@ -186,7 +228,7 @@ public class GlobalTextReplacement
         }
         catch (Exception ex)
         {
-            Smithbox.LogError<GlobalTextReplacement>("Invalid regex in search filter", ex);
+            Smithbox.LogError<GlobalTextReplacement>(LOC.Get("TEXT_TextReplacement_Invalid_Regex_Search"), ex);
             return;
         }
 
@@ -196,7 +238,7 @@ public class GlobalTextReplacement
         }
         catch (Exception ex)
         {
-            Smithbox.LogError<GlobalTextReplacement>("Invalid regex in replacement filter.", ex);
+            Smithbox.LogError<GlobalTextReplacement>(LOC.Get("TEXT_TextReplacement_Invalid_Regex_Replace"), ex);
             return;
         }
 

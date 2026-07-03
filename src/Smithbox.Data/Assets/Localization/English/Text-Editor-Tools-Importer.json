@@ -1,0 +1,52 @@
+{
+  "Entries": [
+    {
+      "Key": "TEXT_Importer_Header_Import_Text",
+      "Text": ""
+    },
+    {
+      "Key": "TEXT_Importer_Header_Append",
+      "Text": "Append"
+    },
+    {
+      "Key": "TEXT_Importer_Header_Append_TT",
+      "Text": "Append the imported text entries to the existing text entry list."
+    },
+    {
+      "Key": "TEXT_Importer_Action_From_External_File",
+      "Text": "From External File"
+    },
+    {
+      "Key": "TEXT_Importer_Header_Replace",
+      "Text": "Replace"
+    },
+    {
+      "Key": "TEXT_Importer_Header_Replace_TT",
+      "Text": "Replace existing text entries with the imported text entries."
+    },
+    {
+      "Key": "TEXT_Importer_No_Exported_Text",
+      "Text": "No exported text exists yet."
+    },
+    {
+      "Key": "TEXT_Importer_Stored_Text_Key_Collision",
+      "Text": "Attempted to add stored text with existing key: {0}"
+    },
+    {
+      "Key": "TEXT_Importer_Failed_JSON_String_Deserialization",
+      "Text": "Failed to deserialize JSON file string."
+    },
+    {
+      "Key": "TEXT_Importer_Failed_JSON_File_Deserialization",
+      "Text": "Failed to deserialize JSON file: {0}."
+    },
+    {
+      "Key": "TEXT_Importer_Select_Stored_JSON",
+      "Text": "Select stored text JSON"
+    },
+    {
+      "Key": "TEXT_Importer_Invalid_Selected_File",
+      "Text": "Selected file is invalid."
+    }
+  ]
+}
