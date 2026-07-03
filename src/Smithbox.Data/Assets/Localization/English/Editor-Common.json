@@ -163,6 +163,14 @@
     {
       "Key": "EDITOR_SaveOutput_FMG_TT",
       "Text": "If enabled, the text files are outputted on save."
+    },
+    {
+      "Key": "EDITOR_SaveOutput_PARAM",
+      "Text": "PARAM"
+    },
+    {
+      "Key": "EDITOR_SaveOutput_PARAM_TT",
+      "Text": "If enabled, the param files are outputted on save."
     }
   ]
 }

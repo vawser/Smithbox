@@ -67,7 +67,7 @@ public class ParamEditorView
         // Params
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
         ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ParamEditorView);
-        if (ImGui.Begin($@"Params##paramEditor_ParamList_{viewIndex}", UIHelper.GetInnerWindowFlags()))
+        if (ImGui.Begin($@"{LOC.Get("PARAM_Window_Params")}###paramEditor_ParamList_{viewIndex}", UIHelper.GetInnerWindowFlags()))
         {
             var width = ImGui.GetContentRegionAvail().X;
             var height = ImGui.GetContentRegionAvail().Y;
@@ -88,7 +88,7 @@ public class ParamEditorView
         {
             ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
             ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ParamEditorView);
-            if (ImGui.Begin($@"Tables##paramEditor_TableList_{viewIndex}", UIHelper.GetInnerWindowFlags()))
+            if (ImGui.Begin($@"{LOC.Get("PARAM_Window_Tables")}###paramEditor_TableList_{viewIndex}", UIHelper.GetInnerWindowFlags()))
             {
                 var width = ImGui.GetContentRegionAvail().X;
                 var height = ImGui.GetContentRegionAvail().Y;
@@ -108,7 +108,7 @@ public class ParamEditorView
         // Rows
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
         ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ParamEditorView);
-        if (ImGui.Begin($@"Rows##paramEditor_RowList_{viewIndex}", UIHelper.GetInnerWindowFlags()))
+        if (ImGui.Begin($@"{LOC.Get("PARAM_Window_Rows")}###paramEditor_RowList_{viewIndex}", UIHelper.GetInnerWindowFlags()))
         {
             var width = ImGui.GetContentRegionAvail().X;
             var height = ImGui.GetContentRegionAvail().Y;
@@ -127,7 +127,7 @@ public class ParamEditorView
         // Fields
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
         ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ParamEditorView);
-        if (ImGui.Begin($@"Fields##paramEditor_FieldList_{viewIndex}", UIHelper.GetInnerWindowFlags()))
+        if (ImGui.Begin($@"{LOC.Get("PARAM_Window_Fields")}###paramEditor_FieldList_{viewIndex}", UIHelper.GetInnerWindowFlags()))
         {
             var width = ImGui.GetContentRegionAvail().X;
             var height = ImGui.GetContentRegionAvail().Y;

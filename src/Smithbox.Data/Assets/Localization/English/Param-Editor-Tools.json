@@ -1,0 +1,88 @@
+{
+  "Entries": [
+    {
+      "Key": "PARAM_Tools_Header_Tools",
+      "Text": "Tools"
+    },
+    {
+      "Key": "PARAM_Tools_Header_Data_Comparison",
+      "Text": "Data Comparison"
+    },
+    {
+      "Key": "PARAM_Tools_Header_Data_Transfer",
+      "Text": "Data Transfer"
+    },
+    {
+      "Key": "PARAM_Tools_Header_Row_Names",
+      "Text": "Row Names"
+    },
+    {
+      "Key": "PARAM_Tools_Header_Memory",
+      "Text": "Memory"
+    },
+    {
+      "Key": "PARAM_Tools_Header_View",
+      "Text": "View"
+    },
+    {
+      "Key": "PARAM_Tools_View_Sort_Rows",
+      "Text": "Sort Rows"
+    },
+    {
+      "Key": "PARAM_Tools_View_Row_Names",
+      "Text": "Row Names"
+    },
+    {
+      "Key": "PARAM_Tools_View_Data_Transfer",
+      "Text": "Data Transfer"
+    },
+    {
+      "Key": "PARAM_Tools_View_Data_Comparison",
+      "Text": "Data Comparison"
+    },
+    {
+      "Key": "PARAM_Tools_View_Data_Finders",
+      "Text": "Data Finders"
+    },
+    {
+      "Key": "PARAM_Tools_View_Param_Upgrader",
+      "Text": "Param Upgrader"
+    },
+    {
+      "Key": "PARAM_Tools_View_Param_Merger",
+      "Text": "Param Merger"
+    },
+    {
+      "Key": "PARAM_Tools_View_Param_Delta_Patcher",
+      "Text": "Param Delta Patcher"
+    },
+    {
+      "Key": "PARAM_Tools_View_Param_Reloader",
+      "Text": "Param Reloader"
+    },
+    {
+      "Key": "PARAM_Tools_View_Item_Gib",
+      "Text": "Item Gib"
+    },
+    {
+      "Key": "PARAM_Tools_View_Mass_Edit",
+      "Text": "Mass Edit"
+    },
+    {
+      "Key": "PARAM_Tools_View_Param_List_Categories",
+      "Text": "Param List Categories"
+    },
+    {
+      "Key": "PARAM_Tools_View_Pin_Groups",
+      "Text": "Pin Groups"
+    },
+    {
+      "Key": "PARAM_Tools_Header_Data_Finders",
+      "Text": "Data Finders"
+    },
+    {
+      "Key": "PARAM_Tools_Header_Mass_Edit",
+      "Text": "Mass Edit"
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "Entries": [
+    {
+      "Key": "PARAM_RowName_Dialog_Prompt",
+      "Text": "Do you wish to import {0} row names?"
+    },
+    {
+      "Key": "PARAM_Menubar_Header_Param_Row",
+      "Text": "Param Row"
+    },
+    {
+      "Key": "PARAM_Menubar_Action_Duplicate",
+      "Text": "Duplicate"
+    },
+    {
+      "Key": "PARAM_Menubar_Action_Duplicate_TT",
+      "Text": "Duplicates the currently selected rows."
+    },
+    {
+      "Key": "PARAM_Menubar_Action_Duplicate_to_Commutative_Param",
+      "Text": "Duplicate to Commutative Param"
+    },
+    {
+      "Key": "PARAM_Menubar_Action_Duplicate_to_Commutative_Param_TT",
+      "Text": "Duplicates the currently selected rows into another param that shares the same underlying param definition."
+    },
+    {
+      "Key": "PARAM_Menubar_Action_Delete",
+      "Text": "Delete"
+    },
+    {
+      "Key": "PARAM_Menubar_Action_Delete_TT",
+      "Text": "Deletes the currently selected rows."
+    },
+    {
+      "Key": "PARAM_Menubar_Action_Copy",
+      "Text": "Copy"
+    },
+    {
+      "Key": "PARAM_Menubar_Action_Copy_TT",
+      "Text": "Copies the currently selected rows to clipboard."
+    },
+    {
+      "Key": "PARAM_Menubar_Action_Paste",
+      "Text": "Paste"
+    },
+    {
+      "Key": "PARAM_Menubar_Action_Paste_TT",
+      "Text": "Pastes rows within the clipboard into the currently selected param."
+    },
+    {
+      "Key": "PARAM_Menubar_Action_Jump",
+      "Text": "Jump to Selected Row"
+    },
+    {
+      "Key": "PARAM_Menubar_Action_Jump_TT",
+      "Text": "Jumps the editor focus to the currently selected row."
+    },
+    {
+      "Key": "PARAM_Menubar_View_Editor",
+      "Text": "Editor"
+    },
+    {
+      "Key": "PARAM_Menubar_Tool_Window",
+      "Text": "Tools"
+    },
+    {
+      "Key": "PARAM_Params_Saved",
+      "Text": "Params saved."
+    },
+    {
+      "Key": "PARAM_Param_Save_in_Progress",
+      "Text": "Param saving already in progress."
+    },
+    {
+      "Key": "PARAM_",
+      "Text": ""
+    },
+  ]
+}

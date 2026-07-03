@@ -1,0 +1,48 @@
+{
+  "Entries": [
+    {
+      "Key": "PARAM_DataFinder_Tab_Field_Names",
+      "Text": "Field Names"
+    },
+    {
+      "Key": "PARAM_DataFinder_Tab_Field_Values",
+      "Text": "Field Values"
+    },
+    {
+      "Key": "PARAM_DataFinder_Tab_Row_Names",
+      "Text": "Row Names"
+    },
+    {
+      "Key": "PARAM_DataFinder_Tab_Row_IDs",
+      "Text": "Row IDs"
+    },
+    {
+      "Key": "PARAM_DataFinder_Tab_Field_Value_Sets",
+      "Text": "Field Value Sets"
+    },
+    {
+      "Key": "PARAM_DataFinder_Tab_Row_ID_Sets",
+      "Text": "Row ID Sets"
+    },
+    {
+      "Key": "PARAM_DataFinder_",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_DataFinder_",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_DataFinder_",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_DataFinder_",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_DataFinder_",
+      "Text": ""
+    },
+  ]
+}

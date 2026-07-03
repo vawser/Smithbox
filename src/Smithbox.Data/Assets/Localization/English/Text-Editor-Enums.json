@@ -1,0 +1,68 @@
+{
+  "Entries": [
+    {
+      "Key": "TEXT_ENUM_ExportModifier_All",
+      "Text": "All"
+    },
+    {
+      "Key": "TEXT_ENUM_ExportModifier_Modified_Only",
+      "Text": "Modified Only"
+    },
+    {
+      "Key": "TEXT_ENUM_ExportModifier_Unique_Only",
+      "Text": "Unique Only"
+    },
+    {
+      "Key": "TEXT_ENUM_TextImportMode_Append",
+      "Text": "Append"
+    },
+    {
+      "Key": "TEXT_ENUM_TextImportMode_Overwrite",
+      "Text": "Overwrite"
+    },
+    {
+      "Key": "TEXT_ENUM_SearchFilterType_Primary_Category",
+      "Text": "Primary Category"
+    },
+    {
+      "Key": "TEXT_ENUM_SearchFilterType_All_Categories",
+      "Text": "All Categories"
+    },
+    {
+      "Key": "TEXT_ENUM_SearchMatchType_All",
+      "Text": "All"
+    },
+    {
+      "Key": "TEXT_ENUM_SearchMatchType_ID",
+      "Text": "ID"
+    },
+    {
+      "Key": "TEXT_ENUM_SearchMatchType_Text",
+      "Text": "Text"
+    },
+    {
+      "Key": "TEXT_ENUM_TextContainerType_Loose",
+      "Text": "Loose"
+    },
+    {
+      "Key": "TEXT_ENUM_TextContainerType_BND",
+      "Text": "BND"
+    },
+    {
+      "Key": "TEXT_ENUM_ContainerSubCategory_None",
+      "Text": "None"
+    },
+    {
+      "Key": "TEXT_ENUM_ContainerSubCategory_Common",
+      "Text": "Common"
+    },
+    {
+      "Key": "TEXT_ENUM_ContainerSubCategory_Blood_Message",
+      "Text": "Blood Message"
+    },
+    {
+      "Key": "TEXT_ENUM_ContainerSubCategory_Talk",
+      "Text": "Talk"
+    }
+  ]
+}

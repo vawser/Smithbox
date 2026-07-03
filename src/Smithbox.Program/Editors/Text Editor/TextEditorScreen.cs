@@ -190,8 +190,10 @@ public class TextEditorScreen : EditorScreen
 
     public void ViewMenu()
     {
+        // View
         if (ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Header_View")}##viewMenuHeader"))
         {
+            // Tools
             if (ImGui.MenuItem($"{LOC.Get("TEXT_Menubar_View_Tool_Window")}##toolWindowToggle"))
             {
                 CFG.Current.Interface_TextEditor_ToolWindow = !CFG.Current.Interface_TextEditor_ToolWindow;
@@ -212,6 +214,7 @@ public class TextEditorScreen : EditorScreen
 
         if (activeView != null)
         {
+            // Tools
             if (ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Header_Tools")}##toolsMenuHeader"))
             {
                 ToolView.DataTransferTool.DisplayDropdown();

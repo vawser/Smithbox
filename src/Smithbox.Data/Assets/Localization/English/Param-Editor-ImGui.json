@@ -1,0 +1,28 @@
+{
+  "Entries": [
+    {
+      "Key": "PARAM_Window_Param_Editor",
+      "Text": "Param Editor"
+    },
+    {
+      "Key": "PARAM_Window_Params",
+      "Text": "Params"
+    },
+    {
+      "Key": "PARAM_Window_Tables",
+      "Text": "Tables"
+    },
+    {
+      "Key": "PARAM_Window_Rows",
+      "Text": "Rows"
+    },
+    {
+      "Key": "PARAM_Window_Fields",
+      "Text": "Fields"
+    },
+    {
+      "Key": "PARAM_Window_Tool_Window",
+      "Text": "Tools"
+    }
+  ]
+}

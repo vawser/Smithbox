@@ -26,7 +26,7 @@ public class ParamMetaMenu
 
         ImGui.BeginChild("ParamMetaEditorSection", new Vector2(0, 0), ImGuiChildFlags.Borders);
 
-        ImGui.TextDisabled("Coming soon...");
+        ImGui.TextDisabled(LOC.Get("META_Editor_WIP"));
 
         ImGui.EndChild();
     }
