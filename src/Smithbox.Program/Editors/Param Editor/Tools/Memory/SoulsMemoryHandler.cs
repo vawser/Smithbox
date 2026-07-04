@@ -140,7 +140,7 @@ public class SoulsMemoryHandler
             }
         }
 
-        Smithbox.Log(this, $"Unable to find AOB in memory for {offsetName}.", LogLevel.Warning);
+        Smithbox.LogError(this, LOC.Get("PARAM_Tools_Memory_Missing_AOB", offsetName));
         return false;
     }
 
@@ -373,8 +373,8 @@ public class SoulsMemoryHandler
         }
         WriteProcessMemoryArray(statusStructPtr, statusStructBytes);
 
-        var itemGiveFuncPtr = GetBaseAddress() + entry.ERItemGiveFuncOffset ?? throw new InvalidOperationException("ERItemGiveFuncOffset is not set in GameOffsetBaseEntry.");
-        var mapItemManPtr = GetBaseAddress() + entry.ERMapItemManOffset ?? throw new InvalidOperationException("ERMapItemManOffset is not set in GameOffsetBaseEntry.");
+        var itemGiveFuncPtr = GetBaseAddress() + entry.ERItemGiveFuncOffset ?? throw new InvalidOperationException(LOC.Get("PARAM_Tools_Memory_ERItemGiveFuncOffset_Missing"));
+        var mapItemManPtr = GetBaseAddress() + entry.ERMapItemManOffset ?? throw new InvalidOperationException(LOC.Get("PARAM_Tools_Memory_ERMapItemManOffset_Missing"));
 
         var argBuffer = new byte[32];
         BitConverter.GetBytes((long)mapItemManPtr).CopyTo(argBuffer, 0);

@@ -59,7 +59,7 @@ public class ItemGib
         var activeView = Project.Handler.ParamEditor.ViewHandler.ActiveView;
 
         List<ParamRef> refs = new() { new ParamRef(null, paramName) };
-        UIHelper.WrappedText($"{paramName} ID");
+        UIHelper.WrappedText(LOC.Get("PARAM_Tools_ItemGib_Param_ID", paramName));
 
         ImGui.InputInt($"##{paramName}", ref value);
         ParamFieldDecoratorRegisterRightClick($"ItemGib{paramName}ContextMenu");
@@ -106,17 +106,17 @@ public class ItemGib
             return;
         }
 
-        if (ImGui.CollapsingHeader("Item Gib"))
+        if (ImGui.CollapsingHeader($"{LOC.Get("PARAM_Tools_ItemGib_Header")}##itemGibHeader"))
         {
             ImGui.BeginChild("ItemGibSection", ImGuiChildFlags.Borders);
 
-            UIHelper.WrappedText("Use this tool to spawn an item in-game.");
-            UIHelper.WrappedText("");
+            UIHelper.WrappedText(LOC.Get("PARAM_Tools_ItemGib_Hint"));
+            UIHelper.Spacer();
 
             var activeRow = activeView.Selection.GetActiveRow();
             if (activeRow == null)
             {
-                UIHelper.WrappedText("No active row selected. Please select a row in the Param Editor.");
+                UIHelper.WrappedText(LOC.Get("PARAM_Tools_ItemGib_No_Active_Row"));
                 return;
             }
             var paramChanged = lastSelectedParamID != activeRow.ID || lastSelectedParam != activeParam;
@@ -133,7 +133,7 @@ public class ItemGib
                 case "EquipParamGoods":
                 case "Magic":
                 case "EquipParamAccessory":
-                    UIHelper.WrappedText("Number of Spawned Items");
+                    UIHelper.WrappedText(LOC.Get("PARAM_Tools_ItemGib_Number_of_Spawned_Items"));
                     ImGui.InputInt("##spawnItemCount", ref props.Quantity);
 
                     if (paramChanged)
@@ -143,7 +143,7 @@ public class ItemGib
                     }
                     break;
                 case "EquipParamWeapon":
-                    UIHelper.WrappedText("Number of Spawned Items");
+                    UIHelper.WrappedText(LOC.Get("PARAM_Tools_ItemGib_Number_of_Spawned_Items"));
                     ImGui.InputInt("##spawnItemCount", ref props.Quantity);
 
                     if (paramChanged)
@@ -154,7 +154,7 @@ public class ItemGib
                     // check if reinforcement can be changed
                     if (activeRow["reinforceShopCategory"].Value.Value as byte? != 0)
                     {
-                        UIHelper.WrappedText("Reinforcement Level");
+                        UIHelper.WrappedText(LOC.Get("PARAM_Tools_ItemGib_Reinforcement_Level"));
                         ImGui.InputInt("##durability", ref props.ReinforceLvl);
                     }
 
@@ -170,27 +170,27 @@ public class ItemGib
 
                     if (Project.Descriptor.ProjectType == ProjectType.DS3)
                     {
-                        UIHelper.WrappedText("Durability");
+                        UIHelper.WrappedText($"{LOC.Get("PARAM_Tools_ItemGib_Durability")}");
                         ImGui.InputInt("##durability", ref props.Durability);
                     }
                     break;
                 case "EquipParamProtector":
-                    UIHelper.WrappedText("Number of Spawned Items");
+                    UIHelper.WrappedText(LOC.Get("PARAM_Tools_ItemGib_Number_of_Spawned_Items"));
                     ImGui.InputInt("##spawnItemCount", ref props.Quantity);
 
                     if (paramChanged) props.ReinforceLvl = 0;
 
                     if (Project.Descriptor.ProjectType == ProjectType.DS3)
                     {
-                        UIHelper.WrappedText("Reinforcement Level");
+                        UIHelper.WrappedText(LOC.Get("PARAM_Tools_ItemGib_Reinforcement_Level"));
                         ImGui.InputInt("##durability", ref props.ReinforceLvl);
 
-                        UIHelper.WrappedText("Durability");
+                        UIHelper.WrappedText($"{LOC.Get("PARAM_Tools_ItemGib_Durability")}");
                         ImGui.InputInt("##durability", ref props.Durability);
                     }
                     break;
                 case "EquipParamCustomWeapon":
-                    UIHelper.WrappedText("Number of Spawned Items");
+                    UIHelper.WrappedText(LOC.Get("PARAM_Tools_ItemGib_Number_of_Spawned_Items"));
                     ImGui.InputInt("##spawnItemCount", ref props.Quantity);
 
                     props.ReinforceLvl = Convert.ToInt32(activeRow["reinforceLv"].Value.Value);
@@ -201,8 +201,8 @@ public class ItemGib
             }
 
 
-            UIHelper.WrappedText("");
-            if (ImGui.Button("Give Item"))
+            UIHelper.Spacer();
+            if (ImGui.Button($"{LOC.Get("PARAM_Tools_ItemGib_Action_Give_Item")}##giveItemAction"))
             {
                 GiveItem();
             }
@@ -220,7 +220,7 @@ public class ItemGib
         Process[] processArray = Process.GetProcessesByName(name);
         if (!processArray.Any())
         {
-            Smithbox.LogError(this, $"No game process found for {offsets.exeName}. Please start the game first.", LogPriority.High);
+            Smithbox.LogError(this, LOC.Get("PARAM_Tools_Memory_No_Game_Process", offsets.exeName), LogPriority.High);
             return;
         }
         var gameOffsets = offsets.Bases.Find(x =>
@@ -234,7 +234,7 @@ public class ItemGib
         });
         if (gameOffsets == null)
         {
-            Smithbox.LogError(this, $"No ItemGib offsets found.", LogPriority.High);
+            Smithbox.LogError(this, LOC.Get("PARAM_Tools_ItemGib_No_Offsets"), LogPriority.High);
             return;
         }
 
@@ -270,7 +270,7 @@ public class ItemGib
 
         if (string.IsNullOrEmpty(activeParam))
         {
-            Smithbox.Log(this, "No param selected yet for Item Gib.");
+            Smithbox.Log(this, LOC.Get("PARAM_Tools_ItemGib_No_Param"));
             return;
         }
 
@@ -289,7 +289,7 @@ public class ItemGib
                 rowsToGib = activeView.Selection.GetSelectedRows();
                 if (!rowsToGib.Any())
                 {
-                    Smithbox.Log(this, "No rows selected for Item Gib.");
+                    Smithbox.Log(this, LOC.Get("PARAM_Tools_ItemGib_No_Rows"));
                     return;
                 }
                 break;
@@ -305,13 +305,13 @@ public class ItemGib
                 var equipParamWeaponId = activeView.Selection.GetActiveRow()["baseWepId"].Value.Value as int? ?? -1;
                 if (equipParamWeaponId < 0)
                 {
-                    Smithbox.Log(this, "No base weapon ID found for EquipParamCustomWeapon.");
+                    Smithbox.Log(this, LOC.Get("PARAM_Tools_ItemGib_No_Base_Weapon"));
                     return;
                 }
                 var equipParamWeapon = activeView.GetPrimaryBank().GetParamFromName("EquipParamWeapon")[equipParamWeaponId];
                 if (equipParamWeapon == null)
                 {
-                    Smithbox.Log(this, $"EquipParamWeapon with ID {equipParamWeaponId} not found.");
+                    Smithbox.Log(this, LOC.Get("PARAM_Tools_ItemGib_No_EquipParamWeapon", equipParamWeaponId));
                     return;
                 }
                 rowsToGib = new()
@@ -335,7 +335,7 @@ public class ItemGib
             }
             catch (Exception e)
             {
-                Smithbox.LogError(this, "Unable to create GameOffsets for Item Gibber.",
+                Smithbox.LogError(this, LOC.Get("PARAM_Tools_ItemGib_No_Game_Offset"),
                     LogPriority.High, e);
                 return null;
             }

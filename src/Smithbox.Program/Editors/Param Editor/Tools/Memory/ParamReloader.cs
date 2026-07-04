@@ -89,18 +89,30 @@ public class ParamReloader
         // Param Reloader
         if (ParamReloadSupported(Editor.Project.Descriptor.ProjectType))
         {
-            if (ImGui.CollapsingHeader("Param Reloader"))
+            if (ImGui.CollapsingHeader($"{LOC.Get("PARAM_Tools_Reloader_Header")}##reloaderHeader"))
             {
                 ImGui.BeginChild("ParamReloaderSection", ImGuiChildFlags.Borders);
 
-                UIHelper.WrappedText("WARNING: Param Reloader only works for existing row entries.\nGame must be restarted for new rows and modified row IDs.");
-                UIHelper.WrappedText("");
+                UIHelper.WrappedText(LOC.Get("PARAM_Tools_Reloader_Hint"));
 
-                UIHelper.SimpleHeader("Actions", "");
+                UIHelper.Spacer();
+                UIHelper.SimpleHeader(
+                    LOC.Get("PARAM_Tools_Reloader_Header_Actions"),
+                    LOC.Get("PARAM_Tools_Reloader_Header_Actions_TT"));
+
+                var individualShortcut = InputManager.GetHint(KeybindID.ParamEditor_Reload_Selected_Param);
+                var allShortcut = InputManager.GetHint(KeybindID.ParamEditor_Reload_All_Params);
 
                 UIHelper.MultiButtonInput("reloaderActions",
-                    "reloadCurrent", "Reload Currently Selected Param", $"{InputManager.GetHint(KeybindID.ParamEditor_Reload_Selected_Param)}", ReloadCurrentParam,
-                    "reloadAll", "Reload All Params", $"{InputManager.GetHint(KeybindID.ParamEditor_Reload_All_Params)}", ReloadAllParams);
+                    "reloadCurrent", 
+                    LOC.Get("PARAM_Tools_Reloader_Action_Reload_Individual"),
+                    LOC.Get("PARAM_Tools_Reloader_Action_Reload_Individual_TT", individualShortcut),
+                    ReloadCurrentParam,
+
+                    "reloadAll",
+                    LOC.Get("PARAM_Tools_Reloader_Action_Reload_All"),
+                    LOC.Get("PARAM_Tools_Reloader_Action_Reload_All_TT", allShortcut), 
+                    ReloadAllParams);
 
                 ImGui.EndChild();
             }
@@ -109,28 +121,31 @@ public class ParamReloader
 
     public void DisplayDropdown()
     {
+        var individualShortcut = InputManager.GetHint(KeybindID.ParamEditor_Reload_Selected_Param);
+        var allShortcut = InputManager.GetHint(KeybindID.ParamEditor_Reload_All_Params);
+
         if (ParamReloadSupported(Project.Descriptor.ProjectType))
         {
-            if (ImGui.BeginMenu("Param Reloader"))
+            if (ImGui.BeginMenu($"{LOC.Get("PARAM_Tools_Reloader_Header")}##reloaderMenuHeader"))
             {
-                if (ImGui.MenuItem("Current Param"))
+                if (ImGui.MenuItem($"{LOC.Get("PARAM_Tools_Reloader_Action_Current_Param")}##currentParamAction"))
                 {
                     ReloadCurrentParam();
                 }
-                UIHelper.Tooltip($"WARNING: Param Reloader only works for existing row entries.\nGame must be restarted for new rows and modified row IDs.\n{InputManager.GetHint(KeybindID.ParamEditor_Reload_Selected_Param)}");
-
-                if (ImGui.MenuItem("All Params"))
+                UIHelper.Tooltip(LOC.Get("PARAM_Tools_Reloader_Action_Current_Param_TT", individualShortcut));
+                
+                if (ImGui.MenuItem($"{LOC.Get("PARAM_Tools_Reloader_Action_All_Params")}##allParamAction"))
                 {
                     ReloadAllParams();
                 }
-                UIHelper.Tooltip($"WARNING: Param Reloader only works for existing row entries.\nGame must be restarted for new rows and modified row IDs.\n{InputManager.GetHint(KeybindID.ParamEditor_Reload_All_Params)}");
+                UIHelper.Tooltip(LOC.Get("PARAM_Tools_Reloader_Action_All_Params_TT", allShortcut));
 
                 ImGui.EndMenu();
             }
         }
         else
         {
-            ImGui.TextDisabled("No actions avaliable for this project type.");
+            ImGui.TextDisabled(LOC.Get("PARAM_Tools_Reloader_No_Actions"));
         }
     }
 
@@ -139,9 +154,9 @@ public class ParamReloader
     {
         TaskManager.LiveTask task = new(
             "paramEditor_reloadParamData",
-            "[Param Editor]",
-            "Param reloader has updated the in-game params.",
-            "Param reloader has failed.",
+            LOC.Get("SYS_Header"),
+            LOC.Get("PARAM_Tools_Reloader_Task_Success"),
+            LOC.Get("PARAM_Tools_Reloader_Task_Fail"),
             TaskManager.RequeueType.None,
             false,
             () =>
@@ -167,8 +182,7 @@ public class ParamReloader
                 }
                 else
                 {
-                    Smithbox.LogError(this, "Unable to find running game");
-                    //throw new Exception("Unable to find running game");
+                    Smithbox.LogError(this, LOC.Get("PARAM_Tools_Reloader_Missing_Game"));
                 }
             }
         );
@@ -186,7 +200,7 @@ public class ParamReloader
             // Skip these for now: cause it to CTD due to type issue
             if (param == "ThrustersLocomotionParam_PC" || param == "ThrustersParam_NPC")
             {
-                Smithbox.Log(this, $"Cannot reload {param} in Param Reloader.", LogLevel.Warning, LogPriority.Normal);
+                Smithbox.LogError(this, LOC.Get("PARAM_Tools_Reloader_Invalid_Param", param));
                 continue;
             }
 
@@ -207,7 +221,7 @@ public class ParamReloader
                     {
                         if (!handler.TryFindOffsetFromAOB("ParamBase", paramRepo.ParamBaseAobPattern, paramRepo.ParamBaseAobRelativeOffsets, out int paramBase))
                         {
-                            Smithbox.Log(this, $"Param Reloader cannot reload {param} because the given AOB was not found.", LogLevel.Warning, LogPriority.Normal);
+                            Smithbox.LogError(this, LOC.Get("PARAM_Tools_Reloader_Missing_AOB", param));
                             continue;
                         }
 
@@ -229,13 +243,13 @@ public class ParamReloader
                 }
                 catch (Exception ex)
                 {
-                    Smithbox.LogError(this, $"Failed to find base address.", LogPriority.High, ex);
+                    Smithbox.LogError(this, LOC.Get("PARAM_Tools_Reloader_Missing_Base_Address"), LogPriority.High, ex);
                 }
             }
 
             if (!paramFound)
             {
-                Smithbox.Log(this, $"Cannot find param offset for {param} in Param Reloader.", LogLevel.Warning, LogPriority.Normal);
+                Smithbox.LogError(this, LOC.Get("PARAM_Tools_Reloader_Missing_Param_Offset", param));
             }
         }
 
@@ -265,7 +279,7 @@ public class ParamReloader
 
         if (RowCount <= 0)
         {
-            Smithbox.Log(this, $"ParamType {param.ParamType} has invalid offset or no rows for Param Reloader.", LogLevel.Warning, LogPriority.Low);
+            Smithbox.LogError(this, LOC.Get("PARAM_Tools_Reloader_Invalid_Offset", param.ParamType));
             return;
         }
 
@@ -297,7 +311,7 @@ public class ParamReloader
             }
             else
             {
-                Smithbox.Log(this, $"ParamType {param.ParamType}: row {RowId} index {i} is in memory but not in editor during Param Reloader opeation.\nTry saving params and restarting game.", LogLevel.Warning, LogPriority.Normal);
+                Smithbox.Log(this, LOC.Get("PARAM_Tools_Reloader_Missing_In_Editor", param.ParamType, RowId, i));
                 return;
             }
         }
@@ -340,7 +354,7 @@ public class ParamReloader
                 case PARAMDEF.DefType.dummy8:
                     bitSizeTotal = 8; break;
                 default:
-                    throw new Exception("Unexpected BitField Type");
+                    throw new Exception(LOC.Get("PARAM_Tools_Reloader_Missing_Bitfield_Type"));
             }
             if (bitFieldPos == 0)
             {
@@ -476,7 +490,7 @@ public class ParamReloader
             return cell.Def.ArrayLength * (displayType == PARAMDEF.DefType.fixstrW ? 2 : 1);
         }
 
-        throw new Exception("Unexpected Field Type");
+        throw new Exception(LOC.Get("PARAM_Tools_Reloader_Missing_Field_Type"));
     }
 
     private int WriteBitArray(Param.Cell? cell, nint CellDataPtr, ref int bitFieldPos, ref BitArray bits,
@@ -504,7 +518,7 @@ public class ParamReloader
             }
             else
             {
-                throw new Exception("Unknown bitfield length");
+                throw new Exception(LOC.Get("PARAM_Tools_Reloader_Unknown_Bitfield_Length"));
             }
 
             for (var i = 0; i < cell.Value.Def.BitSize; i++)
@@ -546,7 +560,7 @@ public class ParamReloader
             }
             else
             {
-                throw new Exception("Unknown bitfield length");
+                throw new Exception(LOC.Get("PARAM_Tools_Reloader_Unknown_Bitfield_Length"));
             }
 
             var advance = bits.Count / 8;
@@ -569,7 +583,7 @@ public class ParamReloader
             }
             catch (Exception e)
             {
-                Smithbox.LogError(this, "Unable to create GameOffsets for Param Reloader.",
+                Smithbox.LogError(this, LOC.Get("PARAM_Tools_Reloader_Failed_Game_Offset_Creation"),
                     LogPriority.High, e);
                 return null;
             }
@@ -631,12 +645,12 @@ public class ParamReloader
             }
             else
             {
-                Smithbox.Log(this, "No param has been selected yet for the Param Reloder.");
+                Smithbox.LogError(this, LOC.Get("PARAM_Tools_Reloader_No_Param_Selected"));
             }
         }
         else
         {
-            Smithbox.Log(this, "Param Reloader cannot reload for this project.");
+            Smithbox.LogError(this, LOC.Get("PARAM_Tools_Reloader_Cannot_Reload"));
         }
     }
     public void ReloadAllParams()
@@ -652,7 +666,7 @@ public class ParamReloader
         }
         else
         {
-            Smithbox.Log(this, "Param Reloader cannot reload for this project.");
+            Smithbox.LogError(this, LOC.Get("PARAM_Tools_Reloader_Cannot_Reload"));
         }
     }
 }
