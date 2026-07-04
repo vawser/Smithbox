@@ -330,33 +330,33 @@
       "Description": ""
     },
     {
-      "Field": "unknown_0xcc",
-      "Name": "unknown_0xcc",
+      "Field": "duelExtraFlaskRate",
+      "Name": "duelExtraFlaskRate",
       "Description": ""
     },
     {
-      "Field": "unknown_0xd0",
-      "Name": "unknown_0xd0",
+      "Field": "duelExtraFlaskCount",
+      "Name": "duelExtraFlaskCount",
       "Description": ""
     },
     {
-      "Field": "unknown_0xd4",
-      "Name": "unknown_0xd4",
+      "Field": "brawlExtraFlaskRate",
+      "Name": "brawlExtraFlaskRate",
       "Description": ""
     },
     {
-      "Field": "unknown_0xd8",
-      "Name": "unknown_0xd8",
+      "Field": "brawlExtraFlaskCount",
+      "Name": "brawlExtraFlaskCount",
       "Description": ""
     },
     {
-      "Field": "unknown_0xdc",
-      "Name": "unknown_0xdc",
+      "Field": "teamMatchExtraFlaskRate",
+      "Name": "teamMatchExtraFlaskRate",
       "Description": ""
     },
     {
-      "Field": "unknown_0xe0",
-      "Name": "unknown_0xe0",
+      "Field": "teamMatchExtraFlaskCount",
+      "Name": "teamMatchExtraFlaskCount",
       "Description": ""
     },
     {

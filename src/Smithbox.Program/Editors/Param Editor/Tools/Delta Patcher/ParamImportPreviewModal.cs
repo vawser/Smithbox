@@ -143,7 +143,9 @@ public class ParamImportPreviewModal
             if (ImGui.TreeNode($"{param.Name}##paramnode"))
             {
                 foreach (var row in param.Rows)
+                {
                     DrawRow(param.Name, row);
+                }
 
                 ImGui.TreePop();
             }
@@ -231,13 +233,19 @@ public class ParamImportPreviewModal
     private void SetAllToggles(bool enabled)
     {
         foreach (var key in ParamEnabled.Keys.ToList())
+        {
             ParamEnabled[key] = enabled;
+        }
 
         foreach (var key in RowEnabled.Keys.ToList())
+        {
             RowEnabled[key] = enabled;
+        }
 
         foreach (var key in FieldEnabled.Keys.ToList())
+        {
             FieldEnabled[key] = enabled;
+        }
     }
 
     private void SetParamChildren(string paramName, bool enabled)
@@ -249,14 +257,18 @@ public class ParamImportPreviewModal
             RowEnabled[(paramName, row.ID)] = enabled;
 
             foreach (var field in row.Fields)
+            {
                 FieldEnabled[(paramName, row.ID, field.Field)] = enabled;
+            }
         }
     }
 
     private void SetRowChildren(string paramName, RowDelta row, bool enabled)
     {
         foreach (var field in row.Fields)
+        {
             FieldEnabled[(paramName, row.ID, field.Field)] = enabled;
+        }
     }
 
     private void UpdateRowFromFields(string paramName, int rowId)

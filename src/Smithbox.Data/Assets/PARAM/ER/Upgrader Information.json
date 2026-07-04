@@ -910,63 +910,63 @@
     },
     {
       "Version": "11210015",
-      "Message": "1.12.1 - (PlayerCommonParam) Set unknown_0xcc to Vanilla v1.12.1 values",
-      "Command": "param PlayerCommonParam: modified && !added: unknown_0xcc: = vanillafield unknown_0xcc"
+      "Message": "1.12.1 - (PlayerCommonParam) Set duelExtraFlaskRate to Vanilla v1.12.1 values",
+      "Command": "param PlayerCommonParam: modified && !added: duelExtraFlaskRate: = vanillafield duelExtraFlaskRate"
     },
     {
       "Version": "11210015",
-      "Message": "1.12.1 - (PlayerCommonParam) Set unknown_0xcc to Vanilla v1.12.1 values",
-      "Command": "param PlayerCommonParam: added: unknown_0xcc: = vanillafield unknown_0xcc"
+      "Message": "1.12.1 - (PlayerCommonParam) Set duelExtraFlaskRate to Vanilla v1.12.1 values",
+      "Command": "param PlayerCommonParam: added: duelExtraFlaskRate: = vanillafield duelExtraFlaskRate"
     },
     {
       "Version": "11210015",
-      "Message": "1.12.1 - (PlayerCommonParam) Set unknown_0xd0 to Vanilla v1.12.1 values",
-      "Command": "param PlayerCommonParam: modified && !added: unknown_0xd0: = vanillafield unknown_0xd0"
+      "Message": "1.12.1 - (PlayerCommonParam) Set duelExtraFlaskCount to Vanilla v1.12.1 values",
+      "Command": "param PlayerCommonParam: modified && !added: duelExtraFlaskCount: = vanillafield duelExtraFlaskCount"
     },
     {
       "Version": "11210015",
-      "Message": "1.12.1 - (PlayerCommonParam) Set unknown_0xd0 to Vanilla v1.12.1 values",
-      "Command": "param PlayerCommonParam: added: unknown_0xd0: = vanillafield unknown_0xd0"
+      "Message": "1.12.1 - (PlayerCommonParam) Set duelExtraFlaskCount to Vanilla v1.12.1 values",
+      "Command": "param PlayerCommonParam: added: duelExtraFlaskCount: = vanillafield duelExtraFlaskCount"
     },
     {
       "Version": "11210015",
-      "Message": "1.12.1 - (PlayerCommonParam) Set unknown_0xd4 to Vanilla v1.12.1 values",
-      "Command": "param PlayerCommonParam: modified && !added: unknown_0xd4: = vanillafield unknown_0xd4"
+      "Message": "1.12.1 - (PlayerCommonParam) Set brawlExtraFlaskRate to Vanilla v1.12.1 values",
+      "Command": "param PlayerCommonParam: modified && !added: brawlExtraFlaskRate: = vanillafield brawlExtraFlaskRate"
     },
     {
       "Version": "11210015",
-      "Message": "1.12.1 - (PlayerCommonParam) Set unknown_0xd4 to Vanilla v1.12.1 values",
-      "Command": "param PlayerCommonParam: added: unknown_0xd4: = vanillafield unknown_0xd4"
+      "Message": "1.12.1 - (PlayerCommonParam) Set brawlExtraFlaskRate to Vanilla v1.12.1 values",
+      "Command": "param PlayerCommonParam: added: brawlExtraFlaskRate: = vanillafield brawlExtraFlaskRate"
     },
     {
       "Version": "11210015",
-      "Message": "1.12.1 - (PlayerCommonParam) Set unknown_0xd8 to Vanilla v1.12.1 values",
-      "Command": "param PlayerCommonParam: modified && !added: unknown_0xd8: = vanillafield unknown_0xd8"
+      "Message": "1.12.1 - (PlayerCommonParam) Set brawlExtraFlaskCount to Vanilla v1.12.1 values",
+      "Command": "param PlayerCommonParam: modified && !added: brawlExtraFlaskCount: = vanillafield brawlExtraFlaskCount"
     },
     {
       "Version": "11210015",
-      "Message": "1.12.1 - (PlayerCommonParam) Set unknown_0xd8 to Vanilla v1.12.1 values",
-      "Command": "param PlayerCommonParam: added: unknown_0xd8: = vanillafield unknown_0xd8"
+      "Message": "1.12.1 - (PlayerCommonParam) Set brawlExtraFlaskCount to Vanilla v1.12.1 values",
+      "Command": "param PlayerCommonParam: added: brawlExtraFlaskCount: = vanillafield brawlExtraFlaskCount"
     },
     {
       "Version": "11210015",
-      "Message": "1.12.1 - (PlayerCommonParam) Set unknown_0xdc to Vanilla v1.12.1 values",
-      "Command": "param PlayerCommonParam: modified && !added: unknown_0xdc: = vanillafield unknown_0xdc"
+      "Message": "1.12.1 - (PlayerCommonParam) Set teamMatchExtraFlaskRate to Vanilla v1.12.1 values",
+      "Command": "param PlayerCommonParam: modified && !added: teamMatchExtraFlaskRate: = vanillafield teamMatchExtraFlaskRate"
     },
     {
       "Version": "11210015",
-      "Message": "1.12.1 - (PlayerCommonParam) Set unknown_0xdc to Vanilla v1.12.1 values",
-      "Command": "param PlayerCommonParam: added: unknown_0xdc: = vanillafield unknown_0xdc"
+      "Message": "1.12.1 - (PlayerCommonParam) Set teamMatchExtraFlaskRate to Vanilla v1.12.1 values",
+      "Command": "param PlayerCommonParam: added: teamMatchExtraFlaskRate: = vanillafield teamMatchExtraFlaskRate"
     },
     {
       "Version": "11210015",
-      "Message": "1.12.1 - (PlayerCommonParam) Set dlcWorldMapEventFlagForDisplay to Vanilla v1.12.1 values",
-      "Command": "param PlayerCommonParam: modified && !added: unknown_0xe0: = vanillafield unknown_0xe0"
+      "Message": "1.12.1 - (PlayerCommonParam) Set teamMatchExtraFlaskCount to Vanilla v1.12.1 values",
+      "Command": "param PlayerCommonParam: modified && !added: teamMatchExtraFlaskCount: = vanillafield teamMatchExtraFlaskCount"
     },
     {
       "Version": "11210015",
-      "Message": "1.12.1 - (PlayerCommonParam) Set dlcWorldMapEventFlagForDisplay to Vanilla v1.12.1 values",
-      "Command": "param PlayerCommonParam: added: unknown_0xe0: = vanillafield unknown_0xe0"
+      "Message": "1.12.1 - (PlayerCommonParam) Set teamMatchExtraFlaskCount to Vanilla v1.12.1 values",
+      "Command": "param PlayerCommonParam: added: teamMatchExtraFlaskCount: = vanillafield teamMatchExtraFlaskCount"
     },
     {
       "Version": "11210015",

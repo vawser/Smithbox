@@ -330,33 +330,33 @@
       "Description": ""
     },
     {
-      "Field": "unknown_0xcc",
-      "Name": "",
+      "Field": "duelExtraFlaskRate",
+      "Name": "Duel: Extra Flask Rate",
       "Description": ""
     },
     {
-      "Field": "unknown_0xd0",
-      "Name": "",
+      "Field": "duelExtraFlaskCount",
+      "Name": "Duel: Extra Flask Count",
       "Description": ""
     },
     {
-      "Field": "unknown_0xd4",
-      "Name": "",
+      "Field": "brawlExtraFlaskRate",
+      "Name": "Brawl: Extra Flask Rate",
       "Description": ""
     },
     {
-      "Field": "unknown_0xd8",
-      "Name": "",
+      "Field": "brawlExtraFlaskCount",
+      "Name": "Brawl: Extra Flask Rate",
       "Description": ""
     },
     {
-      "Field": "unknown_0xdc",
-      "Name": "",
+      "Field": "teamMatchExtraFlaskRate",
+      "Name": "Team Match: Extra Flask Rate",
       "Description": ""
     },
     {
-      "Field": "unknown_0xe0",
-      "Name": "",
+      "Field": "teamMatchExtraFlaskCount",
+      "Name": "Team Match: Extra Flask Rate",
       "Description": ""
     },
     {
