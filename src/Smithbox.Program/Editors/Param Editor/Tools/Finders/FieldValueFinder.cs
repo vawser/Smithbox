@@ -46,38 +46,41 @@ public class FieldValueFinder
         }
 
         // Header
-        UIHelper.WrappedText("Display all instances of a specified field value.");
-        UIHelper.WrappedText("");
+        UIHelper.WrappedText(LOC.Get("PARAM_FieldValueFinder_Hint"));
 
-        // Search Configuration
-        UIHelper.SimpleHeader("Options", "");
+        // Options
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader(
+            LOC.Get("PARAM_DataFinder_Header_Options"),
+            LOC.Get("PARAM_DataFinder_Header_Options_TT"));
 
-        // Checkbox: Enable Range Search
-        ImGui.Checkbox($"Enable Range Search##rangeMode_{imguiID}", ref UseRangeMatchMode);
+        // Toggle: Enable Range Search
+        ImGui.Checkbox($"{LOC.Get("PARAM_FieldValueFinder_Checkbox_Enable_Range_Search")}##rangeMode_{imguiID}", 
+            ref UseRangeMatchMode);
+        UIHelper.Tooltip(LOC.Get("PARAM_FieldValueFinder_Checkbox_Enable_Range_Search_TT"));
 
-        UIHelper.Tooltip("If enabled, the search will search for matches between a start and end value.");
+        // Toggle: Display First Match Only
+        ImGui.Checkbox($"{LOC.Get("PARAM_FieldValueFinder_Checkbox_Display_First_Match")}##firstMatchOnly_{imguiID}", 
+            ref DisplayFirstMatchOnlyInResult);
+        UIHelper.Tooltip(LOC.Get("PARAM_FieldValueFinder_Checkbox_Display_First_Match_TT"));
 
-        // Checkbox: Display First Match Only
-        ImGui.Checkbox($"Display First Match Only##firstMatchOnly_{imguiID}", ref DisplayFirstMatchOnlyInResult);
-
-        UIHelper.Tooltip("Only display the first match within a param, instead of all matches.");
-
-        // Checkbox: Display Community Name in Result
-        ImGui.Checkbox($"Display Community Names in Result##displayCommunityNames_{imguiID}",
+        // Toggle: Display Community Name in Result
+        ImGui.Checkbox($"{LOC.Get("PARAM_FieldValueFinder_Checkbox_Display_Community_Name")}##displayCommunityNames_{imguiID}",
             ref DisplayCommunityNameInResult);
-        UIHelper.Tooltip("Display the community name for the field instead of the internal name.");
-
-        UIHelper.WrappedText("");
+        UIHelper.Tooltip(LOC.Get("PARAM_FieldValueFinder_Checkbox_Display_Community_Name_TT"));
 
         // Targeted Param
-        UIHelper.SimpleHeader("Targeted Params", "Leave blank to target all params.");
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader(
+            LOC.Get("PARAM_DataFinder_Header_Target_Params"),
+            LOC.Get("PARAM_DataFinder_Header_Target_Params_TT"));
 
         // Add
-        if (ImGui.Button($"{Icons.Plus}##paramTargetAdd_fieldValueFinder"))
+        if (ImGui.Button($"{Icons.Plus}##paramTargetAdd_{imguiID}"))
         {
             TargetedParams.Add("");
         }
-        UIHelper.Tooltip("Add new param target input row.");
+        UIHelper.Tooltip(LOC.Get("PARAM_DataFinder_Action_Add_Param_Target_TT"));
 
         ImGui.SameLine();
 
@@ -86,31 +89,31 @@ public class FieldValueFinder
         {
             ImGui.BeginDisabled();
 
-            if (ImGui.Button($"{Icons.Minus}##paramTargetRemove_fieldValueFinder"))
+            if (ImGui.Button($"{Icons.Minus}##paramTargetRemove_{imguiID}"))
             {
                 TargetedParams.RemoveAt(TargetedParams.Count - 1);
             }
-            UIHelper.Tooltip("Remove last added param target input row.");
+            UIHelper.Tooltip(LOC.Get("PARAM_DataFinder_Action_Remove_Param_Target_TT"));
 
             ImGui.EndDisabled();
         }
         else
         {
-            if (ImGui.Button($"{Icons.Minus}##paramTargetRemove_fieldValueFinder"))
+            if (ImGui.Button($"{Icons.Minus}##paramTargetRemove_{imguiID}"))
             {
                 TargetedParams.RemoveAt(TargetedParams.Count - 1);
-                UIHelper.Tooltip("Remove last added param target input row.");
             }
+            UIHelper.Tooltip(LOC.Get("PARAM_DataFinder_Action_Remove_Param_Target_TT"));
         }
 
         ImGui.SameLine();
 
         // Reset
-        if (ImGui.Button("Reset##paramTargetReset_fieldValueFinder"))
+        if (ImGui.Button($"{LOC.Get("PARAM_DataFinder_Action_Reset_Param_Target")}##paramTargetReset_{imguiID}"))
         {
             TargetedParams = new List<string>();
         }
-        UIHelper.Tooltip("Reset param target input rows.");
+        UIHelper.Tooltip(LOC.Get("PARAM_DataFinder_Action_Reset_Param_Target_TT"));
 
         for (int i = 0; i < TargetedParams.Count; i++)
         {
@@ -122,48 +125,59 @@ public class FieldValueFinder
             {
                 TargetedParams[i] = curText;
             }
-            UIHelper.Tooltip("The param target to include.");
+            UIHelper.Tooltip(LOC.Get("PARAM_DataFinder_Param_Target_Include_TT"));
         }
 
-        UIHelper.WrappedText("");
+        UIHelper.Spacer();
 
         // Search Text
-        UIHelper.SimpleHeader("Search", "");
+        UIHelper.SimpleHeader(
+            LOC.Get("PARAM_DataFinder_Header_Search"),
+            LOC.Get("PARAM_DataFinder_Header_Search_TT"));
 
         if (UseRangeMatchMode)
         {
-            UIHelper.SinglelineTextInput($"startSearchValue_{imguiID}", ref RangeSearchText_Start, "Start Value");
-            UIHelper.Tooltip("The start value in the search range.");
+            UIHelper.SetInputWidth();
+            ImGui.InputTextWithHint($"{LOC.Get("PARAM_FieldValueFinder_Value_Start")}##startSearchValue_{imguiID}", LOC.Get("PARAM_DataFinder_Search_RangeStart_Hint"), ref RangeSearchText_Start, 255);
 
-            UIHelper.SinglelineTextInput($"endSearchValue_{imguiID}", ref RangeSearchText_End, "End Value");
-            UIHelper.Tooltip("The end value in the search range.");
+            UIHelper.SetInputWidth();
+            ImGui.InputTextWithHint($"{LOC.Get("PARAM_FieldValueFinder_Value_End")}##endSearchValue_{imguiID}", LOC.Get("PARAM_DataFinder_Search_RangeEnd_Hint"), ref RangeSearchText_End, 255);
         }
 
         if (!UseRangeMatchMode)
         {
-            UIHelper.SinglelineTextInput($"searchValue_{imguiID}", ref SearchText, "Search Text");
-            UIHelper.Tooltip("The value to search for.");
+            UIHelper.SetInputWidth();
+            ImGui.InputTextWithHint($"{LOC.Get("PARAM_FieldValueFinder_Value")}##searchValue_{imguiID}", LOC.Get("PARAM_DataFinder_Search_Value_Hint"), ref SearchText, 255);
         }
 
         UIHelper.MultiButtonInput("searchActions",
-            "search", "Search", "", ConductSearch,
-            "clearSearch", "Clear", "", ClearSearch);
+            "search",
+            LOC.Get("PARAM_DataFinder_Action_Search"),
+            LOC.Get("PARAM_DataFinder_Action_Search_TT"),
+            ConductSearch,
 
-        UIHelper.WrappedText("");
+            "clearSearch",
+            LOC.Get("PARAM_DataFinder_Action_Clear"),
+            LOC.Get("PARAM_DataFinder_Action_Clear_TT"),
+            ClearSearch);
+
+        UIHelper.Spacer();
 
         // Result List
         if (Results.Count > 0)
         {
-            UIHelper.SimpleHeader("Search Results", "The results of the last search performed.");
+            UIHelper.SimpleHeader(
+                LOC.Get("PARAM_DataFinder_Header_Search_Results"),
+                LOC.Get("PARAM_DataFinder_Header_Search_Results_TT"));
 
-            UIHelper.WrappedText($"Search Term:");
+            UIHelper.WrappedText(LOC.Get("PARAM_DataFinder_Search_Term"));
             UIHelper.DisplayAlias(CachedSearchText);
 
-            UIHelper.WrappedText($"Result Count:");
+            UIHelper.WrappedText(LOC.Get("PARAM_DataFinder_Result_Count"));
             UIHelper.DisplayAlias($"{Results.Count}");
 
-            UIHelper.WrappedText($"");
-            UIHelper.WrappedText($"Param: Row ID: Field Name: Field Value");
+            UIHelper.Spacer();
+            UIHelper.WrappedText(LOC.Get("PARAM_FieldValueFinder_Results_Column_Header"));
 
             ImGui.BeginChild($"##resultSection_{imguiID}",
                 new Vector2(0, ImGui.GetContentRegionAvail().Y * 0.9f), ImGuiChildFlags.Borders);
@@ -181,14 +195,14 @@ public class FieldValueFinder
                 {
                     EditorCommandQueue.AddCommand($@"param/select/-1/{result.ParamName}/{result.RowID}/{result.FieldInternalName}");
                 }
-                if (ImGui.BeginPopupContextItem($"#resultPopup{result.ParamName}{result.RowID}"))
+                if (ImGui.BeginPopupContextItem($"##resultPopup{result.ParamName}{result.RowID}"))
                 {
-                    if (ImGui.Selectable("Copy Row ID"))
+                    if (ImGui.Selectable($"{LOC.Get("PARAM_FieldValueFinder_Context_Action_Copy_Row_ID")}##copyRowIdAction"))
                     {
                         PlatformUtils.Instance.SetClipboardText($"{result.RowID}");
                     }
 
-                    if (ImGui.Selectable("Copy Row Name"))
+                    if (ImGui.Selectable($"{LOC.Get("PARAM_FieldValueFinder_Context_Action_Copy_Row_Name")}##copyRowNameAction"))
                     {
                         if (result.RowName != null)
                         {
@@ -203,7 +217,7 @@ public class FieldValueFinder
         }
         else
         {
-            ImGui.Text("No results to display.");
+            ImGui.Text(LOC.Get("PARAM_DataFinder_No_Results"));
         }
 
         UIHelper.WrappedText("");

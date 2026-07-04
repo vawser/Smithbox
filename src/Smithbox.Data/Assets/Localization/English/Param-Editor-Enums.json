@@ -91,10 +91,6 @@
     {
       "Key": "PARAM_ENUM_DeltaImportMode_Conditional",
       "Text": "Conditional on Row Delta"
-    },
-    {
-      "Key": "PARAM_ENUM_",
-      "Text": ""
-    },
+    }
   ]
 }

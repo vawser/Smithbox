@@ -1,12 +1,6 @@
 ﻿using Hexa.NET.ImGui;
-using StudioCore.Application;
 using StudioCore.Editors.Common;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.ParamEditor;
 
@@ -40,18 +34,20 @@ public class RowNameFinder
 
         var windowWidth = ImGui.GetWindowWidth();
 
-        UIHelper.WrappedText("Display all instances of a specificed row name.");
-        UIHelper.WrappedText("");
+        UIHelper.WrappedText(LOC.Get("PARAM_RowNameFinder_Hint"));
 
         // Targeted Param
-        UIHelper.SimpleHeader("Targeted Params", "Leave blank to target all params.");
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader(
+            LOC.Get("PARAM_DataFinder_Header_Target_Params"),
+            LOC.Get("PARAM_DataFinder_Header_Target_Params_TT"));
 
         // Add
-        if (ImGui.Button($"{Icons.Plus}##paramTargetAdd_rowNameFinder"))
+        if (ImGui.Button($"{Icons.Plus}##paramTargetAdd_{imguiID}"))
         {
             TargetedParams.Add("");
         }
-        UIHelper.Tooltip("Add new param target input row.");
+        UIHelper.Tooltip(LOC.Get("PARAM_DataFinder_Action_Add_Param_Target_TT"));
 
         ImGui.SameLine();
 
@@ -60,31 +56,31 @@ public class RowNameFinder
         {
             ImGui.BeginDisabled();
 
-            if (ImGui.Button($"{Icons.Minus}##paramTargetRemove_rowNameFinder"))
+            if (ImGui.Button($"{Icons.Minus}##paramTargetRemove_{imguiID}"))
             {
                 TargetedParams.RemoveAt(TargetedParams.Count - 1);
             }
-            UIHelper.Tooltip("Remove last added param target input row.");
+            UIHelper.Tooltip(LOC.Get("PARAM_DataFinder_Action_Remove_Param_Target_TT"));
 
             ImGui.EndDisabled();
         }
         else
         {
-            if (ImGui.Button($"{Icons.Minus}##paramTargetRemove_rowNameFinder"))
+            if (ImGui.Button($"{Icons.Minus}##paramTargetRemove_{imguiID}"))
             {
                 TargetedParams.RemoveAt(TargetedParams.Count - 1);
-                UIHelper.Tooltip("Remove last added param target input row.");
             }
+            UIHelper.Tooltip(LOC.Get("PARAM_DataFinder_Action_Remove_Param_Target_TT"));
         }
 
         ImGui.SameLine();
 
         // Reset
-        if (ImGui.Button("Reset##paramTargetReset_rowNameFinder"))
+        if (ImGui.Button($"{LOC.Get("PARAM_DataFinder_Action_Reset_Param_Target")}##paramTargetReset_{imguiID}"))
         {
             TargetedParams = new List<string>();
         }
-        UIHelper.Tooltip("Reset param target input rows.");
+        UIHelper.Tooltip(LOC.Get("PARAM_DataFinder_Action_Reset_Param_Target_TT"));
 
         for (int i = 0; i < TargetedParams.Count; i++)
         {
@@ -96,41 +92,54 @@ public class RowNameFinder
             {
                 TargetedParams[i] = curText;
             }
-            UIHelper.Tooltip("The param target to include.");
+            UIHelper.Tooltip(LOC.Get("PARAM_DataFinder_Param_Target_Include_TT"));
         }
 
-        UIHelper.WrappedText("");
+        UIHelper.Spacer();
 
         // Search Text
-        UIHelper.SimpleHeader("Search", "");
+        UIHelper.SimpleHeader(
+            LOC.Get("PARAM_DataFinder_Header_Search"),
+            LOC.Get("PARAM_DataFinder_Header_Search_TT"));
 
         // Row Index
-        UIHelper.IntInput($"rowIndex_{imguiID}", ref SearchIndex, "Row Index");
-        UIHelper.Tooltip("The row index to search for. -1 for any");
+        UIHelper.SetInputWidth();
+        UIHelper.IntInput($"rowIndex_{imguiID}", ref SearchIndex, LOC.Get("PARAM_RowNameFinder_Input_Row_Index"));
+        UIHelper.Tooltip(LOC.Get("PARAM_RowNameFinder_Input_Row_Index_TT"));
 
         // Search Text
-        UIHelper.SinglelineTextInput($"searchText_{imguiID}", ref SearchText, "Search Text");
-        UIHelper.Tooltip("The row name to search for. Matches loosely.");
+        UIHelper.SetInputWidth();
+        ImGui.InputTextWithHint($"{LOC.Get("PARAM_RowNameFinder_Row_Name")}##searchText_{imguiID}", 
+            LOC.Get("PARAM_DataFinder_Search_Hint"), ref SearchText, 255);
 
         UIHelper.MultiButtonInput("searchActions",
-            "search", "Search", "", ConductSearch,
-            "clearSearch", "Clear", "", ClearSearch);
+            "search",
+            LOC.Get("PARAM_DataFinder_Action_Search"),
+            LOC.Get("PARAM_DataFinder_Action_Search_TT"),
+            ConductSearch,
 
-        UIHelper.WrappedText("");
+            "clearSearch",
+            LOC.Get("PARAM_DataFinder_Action_Clear"),
+            LOC.Get("PARAM_DataFinder_Action_Clear_TT"),
+            ClearSearch);
+
+        UIHelper.Spacer();
 
         // Result List
         if (Results.Count > 0)
         {
-            UIHelper.SimpleHeader("Search Results", "The results of the last search performed.");
+            UIHelper.SimpleHeader(
+                LOC.Get("PARAM_DataFinder_Header_Search_Results"),
+                LOC.Get("PARAM_DataFinder_Header_Search_Results_TT"));
 
-            UIHelper.WrappedText($"Search Term:");
+            UIHelper.WrappedText(LOC.Get("PARAM_DataFinder_Search_Term"));
             UIHelper.DisplayAlias(CachedSearchText);
 
-            UIHelper.WrappedText($"Result Count:");
+            UIHelper.WrappedText(LOC.Get("PARAM_DataFinder_Result_Count"));
             UIHelper.DisplayAlias($"{Results.Count}");
 
-            UIHelper.WrappedText($"");
-            UIHelper.WrappedText($"Param: Row Name");
+            UIHelper.Spacer();
+            UIHelper.WrappedText(LOC.Get("PARAM_RowNameFinder_Results_Column_Header"));
 
             ImGui.BeginChild($"##resultSection_{imguiID}",
                 new Vector2(0, ImGui.GetContentRegionAvail().Y * 0.9f), ImGuiChildFlags.Borders);
@@ -147,7 +156,7 @@ public class RowNameFinder
         }
         else
         {
-            ImGui.Text("No results to display.");
+            ImGui.Text(LOC.Get("PARAM_DataFinder_No_Results"));
         }
 
         UIHelper.WrappedText("");

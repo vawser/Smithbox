@@ -36,34 +36,46 @@ public class IdSetFinder
 
         var windowWidth = ImGui.GetWindowWidth();
 
-        UIHelper.WrappedText("Display param that contains the specified set of rows.");
-        UIHelper.WrappedText("");
+        UIHelper.WrappedText(LOC.Get("PARAM_IdSetFinder_Hint"));
 
         // Search Text
-        UIHelper.SimpleHeader("Search", "");
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader(
+            LOC.Get("PARAM_DataFinder_Header_Search"),
+            LOC.Get("PARAM_DataFinder_Header_Search_TT"));
 
-        UIHelper.SinglelineTextInput($"searchValue_{imguiID}", ref SearchText, "Search Text");
-        UIHelper.Tooltip("The values to search for. Split with a space.");
+        UIHelper.SetInputWidth();
+        ImGui.InputTextWithHint($"{LOC.Get("PARAM_IdSetFinder_ID_Set")}##searchValue_{imguiID}", LOC.Get("PARAM_DataFinder_Search_Hint"), ref SearchText, 255);
+        UIHelper.Tooltip(LOC.Get("PARAM_IdSetFinder_Search_TT"));
 
         UIHelper.MultiButtonInput("searchActions",
-            "search", "Search", "", ConductSearch,
-            "clearSearch", "Clear", "", ClearSearch);
+            "search",
+            LOC.Get("PARAM_DataFinder_Action_Search"),
+            LOC.Get("PARAM_DataFinder_Action_Search_TT"),
+            ConductSearch,
 
-        UIHelper.WrappedText("");
+            "clearSearch",
+            LOC.Get("PARAM_DataFinder_Action_Clear"),
+            LOC.Get("PARAM_DataFinder_Action_Clear_TT"),
+            ClearSearch);
+
+        UIHelper.Spacer();
 
         // Result List
         if (Results.Count > 0)
         {
-            UIHelper.SimpleHeader("Search Results", "The results of the last search performed.");
+            UIHelper.SimpleHeader(
+                LOC.Get("PARAM_DataFinder_Header_Search_Results"),
+                LOC.Get("PARAM_DataFinder_Header_Search_Results_TT"));
 
-            UIHelper.WrappedText($"Search Term:");
+            UIHelper.WrappedText(LOC.Get("PARAM_DataFinder_Search_Term"));
             UIHelper.DisplayAlias(CachedSearchText);
 
-            UIHelper.WrappedText($"Result Count:");
+            UIHelper.WrappedText(LOC.Get("PARAM_DataFinder_Result_Count"));
             UIHelper.DisplayAlias($"{Results.Count}");
 
-            UIHelper.WrappedText($"");
-            UIHelper.WrappedText($"Param: Row ID: Field Name: Field Value");
+            UIHelper.Spacer();
+            UIHelper.WrappedText(LOC.Get("PARAM_IdSetFinder_Results_Column_Header"));
 
             ImGui.BeginChild($"##resultSection_{imguiID}",
                new Vector2(0, ImGui.GetContentRegionAvail().Y * 0.9f), ImGuiChildFlags.Borders);
@@ -79,7 +91,7 @@ public class IdSetFinder
         }
         else
         {
-            ImGui.Text("No results to display.");
+            ImGui.Text(LOC.Get("PARAM_DataFinder_No_Results"));
         }
 
         UIHelper.WrappedText("");

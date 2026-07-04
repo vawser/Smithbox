@@ -71,10 +71,6 @@
     {
       "Key": "PARAM_Param_Save_in_Progress",
       "Text": "Param saving already in progress."
-    },
-    {
-      "Key": "PARAM_",
-      "Text": ""
-    },
+    }
   ]
 }

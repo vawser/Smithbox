@@ -25,24 +25,284 @@
       "Text": "Row ID Sets"
     },
     {
-      "Key": "PARAM_DataFinder_",
+      "Key": "PARAM_DataFinder_Header_Target_Params",
+      "Text": "Target Params"
+    },
+    {
+      "Key": "PARAM_DataFinder_Header_Target_Params_TT",
       "Text": ""
     },
     {
-      "Key": "PARAM_DataFinder_",
+      "Key": "PARAM_DataFinder_Action_Add_Param_Target_TT",
+      "Text": "Add new param target input row."
+    },
+    {
+      "Key": "PARAM_DataFinder_Action_Remove_Param_Target_TT",
+      "Text": "Remove last added param target input row."
+    },
+    {
+      "Key": "PARAM_DataFinder_Action_Reset_Param_Target",
+      "Text": "Reset"
+    },
+    {
+      "Key": "PARAM_DataFinder_Action_Reset_Param_Target_TT",
+      "Text": "Reset param target input rows."
+    },
+    {
+      "Key": "PARAM_DataFinder_Header_Options_TT",
+      "Text": "Which params to search. Leave blank to target all params."
+    },
+    {
+      "Key": "PARAM_DataFinder_Param_Target_Include_TT",
+      "Text": "The param target to include."
+    },
+    {
+      "Key": "PARAM_DataFinder_Header_Options",
+      "Text": "Options"
+    },
+    {
+      "Key": "PARAM_DataFinder_Header_Options_TT",
       "Text": ""
     },
     {
-      "Key": "PARAM_DataFinder_",
+      "Key": "PARAM_DataFinder_Header_Search",
+      "Text": "Search"
+    },
+    {
+      "Key": "PARAM_DataFinder_Header_Search_TT",
       "Text": ""
     },
     {
-      "Key": "PARAM_DataFinder_",
-      "Text": ""
+      "Key": "PARAM_DataFinder_Search_Hint",
+      "Text": "The term to search for..."
     },
     {
-      "Key": "PARAM_DataFinder_",
-      "Text": ""
+      "Key": "PARAM_DataFinder_Search_Value_Hint",
+      "Text": "The value to search for..."
     },
+    {
+      "Key": "PARAM_DataFinder_Search_ID_Set_Hint",
+      "Text": "The ID set to search for..."
+    },
+    {
+      "Key": "PARAM_DataFinder_Search_Value_Set_Hint",
+      "Text": "The value set to search for..."
+    },
+    {
+      "Key": "PARAM_DataFinder_Search_RangeStart_Hint",
+      "Text": "The starting value for the search range..."
+    },
+    {
+      "Key": "PARAM_DataFinder_Search_RangeEnd_Hint",
+      "Text": "The ending value for the search range..."
+    },
+    {
+      "Key": "PARAM_DataFinder_Action_Search",
+      "Text": "Search"
+    },
+    {
+      "Key": "PARAM_DataFinder_Action_Search_TT",
+      "Text": "Execute a search looking for the specified term, within the targeted params (if applicable)."
+    },
+    {
+      "Key": "PARAM_DataFinder_Action_Clear",
+      "Text": "Clear Results"
+    },
+    {
+      "Key": "PARAM_DataFinder_Action_Clear_TT",
+      "Text": "Clear the search results list."
+    },
+    {
+      "Key": "PARAM_DataFinder_Header_Search_Results",
+      "Text": "Search Results"
+    },
+    {
+      "Key": "PARAM_DataFinder_Header_Search_Results_TT",
+      "Text": "The results of the last search performed."
+    },
+    {
+      "Key": "PARAM_DataFinder_Search_Term",
+      "Text": "Search Term:"
+    },
+    {
+      "Key": "PARAM_DataFinder_Result_Count",
+      "Text": "Search Term:"
+    },
+    {
+      "Key": "PARAM_DataFinder_No_Results",
+      "Text": "No results to display."
+    },
+    {
+      "Key": "PARAM_FieldNameFinder_Hint",
+      "Text": "Display all fields and the respective params they appear in based on the search text."
+    },
+    {
+      "Key": "PARAM_FieldNameFinder_Checkbox_Include_Community_Name",
+      "Text": "Include Community Name in Search"
+    },
+    {
+      "Key": "PARAM_FieldNameFinder_Checkbox_Include_Community_Name_TT",
+      "Text": "Include the community name text for a field in the search."
+    },
+    {
+      "Key": "PARAM_FieldNameFinder_Checkbox_Include_Description",
+      "Text": "Include Descriptions in Search"
+    },
+    {
+      "Key": "PARAM_FieldNameFinder_Checkbox_Include_Description_TT",
+      "Text": "Include the description text for a field in the search."
+    },
+    {
+      "Key": "PARAM_FieldNameFinder_Checkbox_Complete_Word_Match",
+      "Text": "Complete Word Match"
+    },
+    {
+      "Key": "PARAM_FieldNameFinder_Checkbox_Complete_Word_Match_TT",
+      "Text": "When matching, ensure the search term is an exact match for a word, not a partial element of the word.\nFor internal names, this will split the string based on capitalization before checking."
+    },
+    {
+      "Key": "PARAM_FieldNameFinder_Checkbox_Display_Community_Name",
+      "Text": "Display Community Name in Results"
+    },
+    {
+      "Key": "PARAM_FieldNameFinder_Checkbox_Display_Community_Name_TT",
+      "Text": "Display the community name for the field instead of the internal name."
+    },
+    {
+      "Key": "PARAM_FieldNameFinder_Results_Column_Header",
+      "Text": "<Param>: <Row Name>"
+    },
+    {
+      "Key": "PARAM_FieldNameFinder_Name",
+      "Text": "Name"
+    },
+    {
+      "Key": "PARAM_FieldValueFinder_Hint",
+      "Text": "Display all instances of a specified field value."
+    },
+    {
+      "Key": "PARAM_FieldValueFinder_Checkbox_Enable_Range_Search",
+      "Text": "Enable Range Searc"
+    },
+    {
+      "Key": "PARAM_FieldValueFinder_Checkbox_Enable_Range_Search_TT",
+      "Text": "If enabled, the search will search for matches between a start and end value."
+    },
+    {
+      "Key": "PARAM_FieldValueFinder_Checkbox_Display_First_Match",
+      "Text": "Display First Match Only"
+    },
+    {
+      "Key": "PARAM_FieldValueFinder_Checkbox_Display_First_Match_TT",
+      "Text": "Only display the first match within a param, instead of all matches."
+    },
+    {
+      "Key": "PARAM_FieldValueFinder_Checkbox_Display_Community_Name",
+      "Text": "Display Community Names in Result"
+    },
+    {
+      "Key": "PARAM_FieldValueFinder_Checkbox_Display_Community_Name_TT",
+      "Text": "Display the community name for the field instead of the internal name."
+    },
+    {
+      "Key": "PARAM_FieldValueFinder_Results_Column_Header",
+      "Text": "<Param>: <Row ID>: <Field Name>: <Field Value>"
+    },
+    {
+      "Key": "PARAM_FieldValueFinder_Context_Action_Copy_Row_ID",
+      "Text": "Copy Row ID"
+    },
+    {
+      "Key": "PARAM_FieldValueFinder_Context_Action_Copy_Row_Name",
+      "Text": "Copy Row Name"
+    },
+    {
+      "Key": "PARAM_FieldValueFinder_Value",
+      "Text": "Value"
+    },
+    {
+      "Key": "PARAM_FieldValueFinder_Value_Start",
+      "Text": "Value Start"
+    },
+    {
+      "Key": "PARAM_FieldValueFinder_Value_End",
+      "Text": "Value End"
+    },
+    {
+      "Key": "PARAM_RowNameFinder_Hint",
+      "Text": "Display all instances of a specificed row name."
+    },
+    {
+      "Key": "PARAM_RowNameFinder_Input_Row_Index",
+      "Text": "Row Index"
+    },
+    {
+      "Key": "PARAM_RowNameFinder_Input_Row_Index_TT",
+      "Text": "The row index to search for. -1 for any row."
+    },
+    {
+      "Key": "PARAM_RowNameFinder_Results_Column_Header",
+      "Text": "<Param>: <Row Name>"
+    },
+    {
+      "Key": "PARAM_RowNameFinder_Row_Name",
+      "Text": "Row Name"
+    },
+    {
+      "Key": "PARAM_RowIdFinder_Hint",
+      "Text": "Display all instances of a specificed row ID."
+    },
+    {
+      "Key": "PARAM_RowIdFinder_Input_Row_Index",
+      "Text": "Row Index"
+    },
+    {
+      "Key": "PARAM_RowIdFinder_Input_Row_Index_TT",
+      "Text": "The row index to search for. -1 for any row."
+    },
+    {
+      "Key": "PARAM_RowIdFinder_Input_Row_ID",
+      "Text": "Row ID"
+    },
+    {
+      "Key": "PARAM_RowIdFinder_Input_Row_ID_TT",
+      "Text": "The row ID to search for."
+    },
+    {
+      "Key": "PARAM_RowIdFinder_Results_Column_Header",
+      "Text": "<Param>"
+    },
+    {
+      "Key": "PARAM_IdSetFinder_Hint",
+      "Text": "Display param that contains the specified set of rows."
+    },
+    {
+      "Key": "PARAM_IdSetFinder_Search_TT",
+      "Text": "The ID set to search for. Split with a space."
+    },
+    {
+      "Key": "PARAM_IdSetFinder_Results_Column_Header",
+      "Text": "<Param>: <Row ID>: <Field Name>: <Field Value>"
+    },
+    {
+      "Key": "PARAM_IdSetFinder_ID_Set",
+      "Text": "ID Set"
+    },
+    {
+      "Key": "PARAM_ValueSetFinder_Hint",
+      "Text": "Display fields that make use of a specified set of values."
+    },
+    {
+      "Key": "PARAM_ValueSetFinder_Search_TT",
+      "Text": "The value set to search for. Split with a space."
+    },
+    {
+      "Key": "PARAM_ValueSetFinder_Results_Column_Header",
+      "Text": "<Param>: <Row ID>: <Field Name>: <Field Value>"
+    },
+    {
+      "Key": "PARAM_ValueSetFinder_Value_Set",
+      "Text": "Value Set"
+    }
   ]
 }
