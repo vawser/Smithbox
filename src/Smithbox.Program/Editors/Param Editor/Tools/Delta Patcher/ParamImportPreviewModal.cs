@@ -15,8 +15,6 @@ public class ParamImportPreviewModal
 {
     private ParamDeltaPatcher Patcher;
 
-    public string ModalName = "Import Preview";
-
     public bool DisplayModal = false;
     public bool InitialLayout = false;
 
@@ -72,7 +70,7 @@ public class ParamImportPreviewModal
         if (!DisplayModal || PatchForImport == null)
             return;
 
-        var popupName = $"{ModalName}##{ModalName.GetHashCode()}";
+        var popupName = $"{LOC.Get("PARAM_DeltaPatcher_Import_Preview_Modal")}###importPreviewModal";
 
         ImGui.OpenPopup(popupName);
 
@@ -101,19 +99,23 @@ public class ParamImportPreviewModal
 
     private void DrawHeader()
     {
-        ImGui.Text($"Project Type: {PatchForImport.ProjectType}");
-        ImGui.Text($"Param Version: {PatchForImport.ParamVersion}");
-        ImGui.Text($"Params Changed: {PatchForImport.Params.Count}");
+        ImGui.Text(LOC.Get("PARAM_DeltaPatcher_Preview_Project_Type", PatchForImport.ProjectType));
+        ImGui.Text(LOC.Get("PARAM_DeltaPatcher_Preview_Param_Version", PatchForImport.ParamVersion));
+        ImGui.Text(LOC.Get("PARAM_DeltaPatcher_Preview_Param_Change_Count", PatchForImport.Params.Count));
 
         ImGui.Spacing();
 
-        if (ImGui.Button("Enable All"))
+        if (ImGui.Button($"{LOC.Get("PARAM_DeltaPatcher_Preview_Action_Enable_All")}##enableAllAction"))
+        {
             SetAllToggles(true);
+        }
 
         ImGui.SameLine();
 
-        if (ImGui.Button("Disable All"))
+        if (ImGui.Button($"{LOC.Get("PARAM_DeltaPatcher_Preview_Action_Disable_All")}##disableAllAction"))
+        {
             SetAllToggles(false);
+        }
 
         ImGui.Spacing();
     }
@@ -136,7 +138,7 @@ public class ParamImportPreviewModal
 
             if (IsParamMixed(param.Name))
             {
-                ImGui.TextColored(new Vector4(1f, 0.8f, 0.3f, 1f), "(Mixed)");
+                ImGui.TextColored(new Vector4(1f, 0.8f, 0.3f, 1f), LOC.Get("PARAM_DeltaPatcher_Preview_Row_State_Mixed"));
                 ImGui.SameLine();
             }
 
@@ -171,19 +173,21 @@ public class ParamImportPreviewModal
 
         if (IsRowMixed(paramName, row))
         {
-            ImGui.TextColored(new Vector4(1f, 0.8f, 0.3f, 1f), "(Mixed)");
+            ImGui.TextColored(new Vector4(1f, 0.8f, 0.3f, 1f), LOC.Get("PARAM_DeltaPatcher_Preview_Row_State_Mixed"));
             ImGui.SameLine();
         }
 
         string stateLabel = row.State switch
         {
-            RowDeltaState.Added => "[Added]",
-            RowDeltaState.Modified => "[Modified]",
-            RowDeltaState.Deleted => "[Deleted]",
-            _ => "[Unknown]"
+            RowDeltaState.Added => LOC.Get("PARAM_DeltaPatcher_Preview_Row_State_Added"),
+            RowDeltaState.Modified => LOC.Get("PARAM_DeltaPatcher_Preview_Row_State_Modified"),
+            RowDeltaState.Deleted => LOC.Get("PARAM_DeltaPatcher_Preview_Row_State_Deleted"),
+            _ => LOC.Get("PARAM_DeltaPatcher_Preview_Row_State_Unknown")
         };
 
-        if (ImGui.TreeNode($"{stateLabel} ID={row.ID} ({row.Name})##rownode"))
+        var displayName = LOC.Get("PARAM_DeltaPatcher_Preview_Row_Display_Name", stateLabel, row.ID, row.Name);
+
+        if (ImGui.TreeNode($"{displayName}##rownode"))
         {
             foreach (var field in row.Fields)
                 DrawField(paramName, row.ID, field);
@@ -211,20 +215,22 @@ public class ParamImportPreviewModal
 
     private void DrawFooterButtons()
     {
-        if (ImGui.Button("Import", new Vector2(120, 0)))
+        // Import
+        if (ImGui.Button($"{LOC.Get("PARAM_DeltaPatcher_Preview_Action_Import")}##importAction", new Vector2(120, 0)))
         {
             var filtered = BuildFilteredPatch();
 
             Patcher.Importer.ImportDelta(Filename, filtered);
 
-            Smithbox.Log(this, "Imported selected param delta patch.");
+            Smithbox.Log(this, LOC.Get("PARAM_DeltaPatcher_Log_Import_PASS", Filename));
 
             Hide();
         }
 
         ImGui.SameLine();
 
-        if (ImGui.Button("Cancel", new Vector2(120, 0)))
+        // Cancel
+        if (ImGui.Button($"{LOC.Get("PARAM_DeltaPatcher_Preview_Action_Cancel")}##cancelAction", new Vector2(120, 0)))
         {
             Hide();
         }

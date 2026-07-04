@@ -12,7 +12,7 @@ public class ParamDeltaProgressModal
 {
     private ParamDeltaPatcher Patcher;
 
-    public string ModalName = "Delta Export";
+    public string ModelNameKey = "NONE";
 
     public DeltaBuildProgress LoadProgress;
     public Action<DeltaBuildProgress> ReportProgress;
@@ -21,9 +21,9 @@ public class ParamDeltaProgressModal
     public bool DisplayModal = false;
     public bool InitialLayout = false;
 
-    public ParamDeltaProgressModal(string name, ParamDeltaPatcher patcher)
+    public ParamDeltaProgressModal(string locKey, ParamDeltaPatcher patcher)
     {
-        ModalName = name;
+        ModelNameKey = locKey;
         Patcher = patcher;
 
         ReportProgress = SetProgress;
@@ -42,7 +42,8 @@ public class ParamDeltaProgressModal
         if (!DisplayModal)
             return;
 
-        var popupName = $"{ModalName}##{ModalName.GetHashCode()}";
+        var displayName = LOC.Get(ModelNameKey);
+        var popupName = $"{displayName}###{ModelNameKey.GetHashCode()}";
 
         ImGui.OpenPopup(popupName);
 

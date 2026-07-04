@@ -39,13 +39,13 @@ public class ParamDeltaImporter
         {
             var success = HandleParamImport(delta);
 
-            Smithbox.Log(this, $"Finished '{filename}' param delta import.");
+            Smithbox.Log(this, LOC.Get("PARAM_DeltaPatcher_Importer_Finished_Import", filename));
 
             Patcher.Project.Handler.ParamData.PrimaryBank.RefreshPrimaryDiffCaches(true);
         }
         catch (Exception ex)
         {
-            Smithbox.LogError(this, $"'{filename}' param delta import failed.", ex);
+            Smithbox.LogError(this, LOC.Get("PARAM_DeltaPatcher_Importer_Failed_Import", filename), ex);
         }
         finally
         {
@@ -69,7 +69,7 @@ public class ParamDeltaImporter
 
             Patcher.ImportProgressModal.ReportProgress?.Invoke(new()
             {
-                PhaseLabel = "Processing",
+                PhaseLabel = LOC.Get("PARAM_DeltaPatcher_Phase_Processing"),
                 StepLabel = $"{curParam.Key}",
                 Percent = processed / (float)total
             });

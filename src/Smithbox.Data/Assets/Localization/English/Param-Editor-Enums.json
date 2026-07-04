@@ -43,6 +43,58 @@
     {
       "Key": "PARAM_ENUM_Field_Layout_Placement_Unsorted_Bottom",
       "Text": "Bottom"
-    }
+    },
+    {
+      "Key": "PARAM_ENUM_DeltaExportMode_All",
+      "Text": "All"
+    },
+    {
+      "Key": "PARAM_ENUM_DeltaExportMode_Selected",
+      "Text": "Selected"
+    },
+    {
+      "Key": "PARAM_ENUM_DeltaExportMode_All_TT",
+      "Text": "Export all params."
+    },
+    {
+      "Key": "PARAM_ENUM_DeltaExportMode_Selected_TT",
+      "Text": "Export currently selected params."
+    },
+    {
+      "Key": "PARAM_ENUM_DeltaSelectionMode_Modified",
+      "Text": "Modified"
+    },
+    {
+      "Key": "PARAM_ENUM_DeltaSelectionMode_Selected",
+      "Text": "Selected"
+    },
+    {
+      "Key": "PARAM_ENUM_DeltaSelectionMode_All",
+      "Text": "All"
+    },
+    {
+      "Key": "PARAM_ENUM_DeltaSelectionMode_Modified_TT",
+      "Text": "Exports all modified rows."
+    },
+    {
+      "Key": "PARAM_ENUM_DeltaSelectionMode_Selected_TT",
+      "Text": "Exports all selected rows."
+    },
+    {
+      "Key": "PARAM_ENUM_DeltaSelectionMode_All_TT",
+      "Text": "Exports all rows."
+    },
+    {
+      "Key": "PARAM_ENUM_DeltaImportMode_Insert_Overwrite",
+      "Text": "Insert and Overwrite"
+    },
+    {
+      "Key": "PARAM_ENUM_DeltaImportMode_Conditional",
+      "Text": "Conditional on Row Delta"
+    },
+    {
+      "Key": "PARAM_ENUM_",
+      "Text": ""
+    },
   ]
 }

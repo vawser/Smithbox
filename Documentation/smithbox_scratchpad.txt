@@ -2,6 +2,9 @@
 # TODO 
 #---------------------
 
+# Param Editor
+ - Add Alt+Up/Down shortcut in Field List for changing Row List selection
+
 # Heavy Allocations:
  - Viewport Grid is memory inefficient: perhaps possible with shader alone?
  - DbgPrims

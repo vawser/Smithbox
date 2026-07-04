@@ -6,14 +6,13 @@ using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
 public class ParamExportPreviewModal
 {
     private ParamDeltaPatcher Patcher;
-
-    public string ModalName = "Export Preview";
 
     public bool DisplayModal = false;
     public bool InitialLayout = false;
@@ -68,7 +67,7 @@ public class ParamExportPreviewModal
         if (!DisplayModal)
             return;
 
-        var popupName = $"{ModalName}##{ModalName.GetHashCode()}";
+        var popupName = $"{LOC.Get("PARAM_DeltaPatcher_Export_Preview_Modal")}###exportPreviewModal";
 
         ImGui.OpenPopup(popupName);
 
@@ -97,20 +96,20 @@ public class ParamExportPreviewModal
 
     private void DrawHeader()
     {
-        ImGui.Text($"Project Type: {PatchForExport.ProjectType}");
-        ImGui.Text($"Param Version: {PatchForExport.ParamVersion}");
-        ImGui.Text($"Params Changed: {PatchForExport.Params.Count}");
+        ImGui.Text(LOC.Get("PARAM_DeltaPatcher_Preview_Project_Type", PatchForExport.ProjectType));
+        ImGui.Text(LOC.Get("PARAM_DeltaPatcher_Preview_Param_Version", PatchForExport.ParamVersion));
+        ImGui.Text(LOC.Get("PARAM_DeltaPatcher_Preview_Param_Change_Count", PatchForExport.Params.Count));
 
         ImGui.Spacing();
 
-        if (ImGui.Button("Enable All"))
+        if (ImGui.Button($"{LOC.Get("PARAM_DeltaPatcher_Preview_Action_Enable_All")}##enableAllAction"))
         {
             SetAllToggles(true);
         }
 
         ImGui.SameLine();
 
-        if (ImGui.Button("Disable All"))
+        if (ImGui.Button($"{LOC.Get("PARAM_DeltaPatcher_Preview_Action_Disable_All")}##disableAllAction"))
         {
             SetAllToggles(false);
         }
@@ -155,21 +154,23 @@ public class ParamExportPreviewModal
                 // Apply to all rows + fields
                 SetParamChildren(param.Name, enabled);
             }
-            UIHelper.Tooltip("Determines if this element is included in the delta export.");
+            UIHelper.Tooltip(LOC.Get("PARAM_DeltaPatcher_Preview_Export_Param_Toggle_TT"));
 
             ImGui.SameLine();
 
             // Mixed indicator
             if (IsParamMixed(param.Name))
             {
-                ImGui.TextColored(new System.Numerics.Vector4(1f, 0.8f, 0.3f, 1f), "(Mixed)");
+                ImGui.TextColored(new Vector4(1f, 0.8f, 0.3f, 1f), LOC.Get("PARAM_DeltaPatcher_Preview_Row_State_Mixed"));
                 ImGui.SameLine();
             }
 
             if (ImGui.TreeNode($"{param.Name}##param"))
             {
                 foreach (var row in param.Rows)
+                {
                     DrawRow(param.Name, row);
+                }
 
                 ImGui.TreePop();
             }
@@ -208,25 +209,27 @@ public class ParamExportPreviewModal
             // Update parent param checkbox
             UpdateParamFromRows(paramName);
         }
-        UIHelper.Tooltip("Determines if this element is included in the delta export.");
+        UIHelper.Tooltip(LOC.Get("PARAM_DeltaPatcher_Preview_Export_Row_Toggle_TT"));
 
         ImGui.SameLine();
 
         if (IsRowMixed(paramName, row))
         {
-            ImGui.TextColored(new System.Numerics.Vector4(1f, 0.8f, 0.3f, 1f), "(Mixed)");
+            ImGui.TextColored(new System.Numerics.Vector4(1f, 0.8f, 0.3f, 1f), LOC.Get("PARAM_DeltaPatcher_Preview_Row_State_Mixed"));
             ImGui.SameLine();
         }
 
         string stateLabel = row.State switch
         {
-            RowDeltaState.Added => "[Added]",
-            RowDeltaState.Modified => "[Modified]",
-            RowDeltaState.Deleted => "[Deleted]",
-            _ => "[Unknown]"
+            RowDeltaState.Added => LOC.Get("PARAM_DeltaPatcher_Preview_Row_State_Added"),
+            RowDeltaState.Modified => LOC.Get("PARAM_DeltaPatcher_Preview_Row_State_Modified"),
+            RowDeltaState.Deleted => LOC.Get("PARAM_DeltaPatcher_Preview_Row_State_Deleted"),
+            _ => LOC.Get("PARAM_DeltaPatcher_Preview_Row_State_Unknown")
         };
 
-        if (ImGui.TreeNode($"{stateLabel} ID={row.ID} ({row.Name})##row"))
+        var displayName = LOC.Get("PARAM_DeltaPatcher_Preview_Row_Display_Name", stateLabel, row.ID, row.Name);
+
+        if (ImGui.TreeNode($"{displayName}##rownode"))
         {
             foreach (var field in row.Fields)
                 DrawField(paramName, row.ID, field);
@@ -257,7 +260,7 @@ public class ParamExportPreviewModal
             // Update param state based on rows
             UpdateParamFromRows(paramName);
         }
-        UIHelper.Tooltip("Determines if this element is included in the delta export.");
+        UIHelper.Tooltip(LOC.Get("PARAM_DeltaPatcher_Preview_Export_Field_Toggle_TT"));
 
         ImGui.SameLine();
         ImGui.Text($"{field.Field}: {field.Value}");
@@ -265,13 +268,13 @@ public class ParamExportPreviewModal
 
     private void DrawFooterButtons()
     {
-        if (ImGui.Button("Export", DPI.StandardButtonSize))
+        if (ImGui.Button($"{LOC.Get("PARAM_DeltaPatcher_Preview_Action_Export")}##exportAction", DPI.StandardButtonSize))
         {
             var filteredPatch = BuildFilteredPatch();
 
             Patcher.WriteDeltaPatch(filteredPatch, Patcher.Selection.ExportName);
 
-            Smithbox.Log(this, $"Saved param delta: {Patcher.Selection.ExportName}.json");
+            Smithbox.Log(this, LOC.Get("PARAM_DeltaPatcher_Log_Export_PASS", Patcher.Selection.ExportName));
 
             Patcher.Selection.QueueImportListRefresh = true;
 
@@ -280,7 +283,7 @@ public class ParamExportPreviewModal
 
         ImGui.SameLine();
 
-        if (ImGui.Button("Cancel", DPI.StandardButtonSize))
+        if (ImGui.Button($"{LOC.Get("PARAM_DeltaPatcher_Preview_Action_Cancel")}##cancelAction", DPI.StandardButtonSize))
         {
             Hide();
         }

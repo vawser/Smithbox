@@ -1,26 +1,11 @@
-﻿using Andre.Formats;
-using Google.Protobuf.WellKnownTypes;
-using Hexa.NET.ImGui;
-using HKLib.hk2018.hkSerialize.Note;
-using Microsoft.Extensions.FileSystemGlobbing;
-using SoulsFormats;
-using StudioCore.Application;
-using StudioCore.Editors.GparamEditor;
-using StudioCore.Editors.TextEditor;
+﻿using Hexa.NET.ImGui;
 using StudioCore.Keybinds;
 using StudioCore.Utilities;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
-using System.Globalization;
-using System.IO;
-using System.Linq;
 using System.Numerics;
 using System.Text;
 using System.Text.Json;
-using System.Threading;
-using System.Threading.Tasks;
 using Enum = System.Enum;
 
 namespace StudioCore.Editors.ParamEditor;
@@ -53,8 +38,8 @@ public class ParamDeltaPatcher
         Importer = new(this);
         Exporter = new(this);
 
-        ImportProgressModal = new("Delta Import", this);
-        ExportProgressModal = new("Delta Export", this);
+        ImportProgressModal = new("PARAM_DeltaPatcher_Import_Modal_Name", this);
+        ExportProgressModal = new("PARAM_DeltaPatcher_Export_Modal_Name", this);
 
         ImportPreviewModal = new(this);
         ExportPreviewModal = new(this);
@@ -70,20 +55,23 @@ public class ParamDeltaPatcher
 
         var paramData = Project.Handler.ParamData;
 
-        if (ImGui.CollapsingHeader("Param Delta Patcher"))
+        // Param Delta Patcher
+        if (ImGui.CollapsingHeader($"{LOC.Get("PARAM_DeltaPatcher_Header_Patcher")}##deltaPatcherHeader"))
         {
             ImGui.BeginChild("ParamDeltaPatcherToolSection", ImGuiChildFlags.Borders);
 
             if (ImGui.BeginTabBar("deltaTabs"))
             {
-                if(ImGui.BeginTabItem("Import"))
+                // Import
+                if(ImGui.BeginTabItem($"{LOC.Get("PARAM_DeltaPatcher_Tab_Import")}##importTab"))
                 {
                     DisplayImportTab();
 
                     ImGui.EndTabItem();
                 }
 
-                if (ImGui.BeginTabItem("Export"))
+                // Export
+                if (ImGui.BeginTabItem($"{LOC.Get("PARAM_DeltaPatcher_Tab_Export")}##exportTab"))
                 {
                     DisplayExportTab();
 
@@ -99,19 +87,27 @@ public class ParamDeltaPatcher
 
     public void DisplayImportTab()
     {
-        UIHelper.WrappedText("Import a param delta file here.");
-        UIHelper.WrappedText("");
+        UIHelper.WrappedText(LOC.Get("PARAM_DeltaPatcher_Import_Hint"));
 
-        UIHelper.SimpleHeader("Import Mode", "Determines the internal logic used during import.");
+        // Import Mode
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader(
+            LOC.Get("PARAM_DeltaPatcher_Header_Import_Mode"),
+            LOC.Get("PARAM_DeltaPatcher_Header_Import_Mode_TT"));
 
+        var previewName = LOC.Get(ImportMode.GetDisplayName());
+
+        // Current Import Mode
         UIHelper.SetInputWidth();
-        if (ImGui.BeginCombo("##importMode", ImportMode.GetDisplayName()))
+        if (ImGui.BeginCombo("##importMode", previewName))
         {
             foreach (var entry in Enum.GetValues(typeof(DeltaImportMode)))
             {
                 var curType = (DeltaImportMode)entry;
 
-                if (ImGui.Selectable($"{curType.GetDisplayName()}", curType == ImportMode))
+                var displayName = LOC.Get(curType.GetDisplayName());
+
+                if (ImGui.Selectable(displayName, curType == ImportMode))
                 {
                     ImportMode = curType;
                 }
@@ -122,44 +118,72 @@ public class ParamDeltaPatcher
 
         // Options
         UIHelper.Spacer();
-        UIHelper.SimpleHeader("Options", "Options to set for the delta import.");
+        UIHelper.SimpleHeader(
+            LOC.Get("PARAM_DeltaPatcher_Header_Options"),
+            LOC.Get("PARAM_DeltaPatcher_Header_Options_TT"));
 
-        ImGui.Checkbox("Display All Entries", ref CFG.Current.ParamEditor_DeltaPatcher_Import_Display_All_Entries);
+        // Toggle: Display All
+        ImGui.Checkbox($"{LOC.Get("PARAM_DeltaPatcher_Checkbox_Display_All")}##displayAllToggle",
+            ref CFG.Current.ParamEditor_DeltaPatcher_Import_Display_All_Entries);
+
         if(ImGui.IsItemDeactivatedAfterEdit())
         {
             Selection.RefreshImportList();
         }
-        UIHelper.Tooltip("If enabled, delta entries for all project types are displayed.");
+        UIHelper.Tooltip(LOC.Get("PARAM_DeltaPatcher_Checkbox_Display_All_TT"));
 
-        ImGui.Checkbox("Include Modified Rows", ref CFG.Current.ParamEditor_DeltaPatcher_Import_Modified_Rows);
-        UIHelper.Tooltip("If enabled, rows considered 'modified' within the delta will be applied. This means the import will modify rows within the primary bank with the same row ID and index as those in the delta.");
+        // Toggle: Include Modified Rows
+        ImGui.Checkbox($"{LOC.Get("PARAM_DeltaPatcher_Checkbox_Include_Modified")}##includeModifiedToggle",
+            ref CFG.Current.ParamEditor_DeltaPatcher_Import_Modified_Rows);
+        UIHelper.Tooltip(LOC.Get("PARAM_DeltaPatcher_Checkbox_Include_Modified_TT"));
 
-        ImGui.Checkbox("Include Added Rows", ref CFG.Current.ParamEditor_DeltaPatcher_Import_Added_Rows);
-        UIHelper.Tooltip("If enabled, rows considered 'added' within the delta will be applied. This means the import will add these rows to the primary bank.");
+        // Toggle: Include Added Rows
+        ImGui.Checkbox($"{LOC.Get("PARAM_DeltaPatcher_Checkbx_Include_Added")}##includeAddedToggle",
+            ref CFG.Current.ParamEditor_DeltaPatcher_Import_Added_Rows);
+        UIHelper.Tooltip(LOC.Get("PARAM_DeltaPatcher_Checkbx_Include_Added_TT"));
 
-        ImGui.Checkbox("Include Deleted Rows", ref CFG.Current.ParamEditor_DeltaPatcher_Import_Deleted_Rows);
-        UIHelper.Tooltip("If enabled, rows considered 'delete' within the delta will be applied. This means the import will delete these rows from the primary bank.");
+        // Toggle: Include Deleted Rows
+        ImGui.Checkbox($"{LOC.Get("PARAM_DeltaPatcher_Checkbox_Include_Deleted")}##includeDeletedToggle",
+            ref CFG.Current.ParamEditor_DeltaPatcher_Import_Deleted_Rows);
+        UIHelper.Tooltip(LOC.Get("PARAM_DeltaPatcher_Checkbox_Include_Deleted_TT"));
 
-        ImGui.Checkbox("Restrict Row Modification", ref CFG.Current.ParamEditor_DeltaPatcher_Import_Restrict_Row_Modify);
-        UIHelper.Tooltip("If enabled, row modifications will only occur if the row hasn't already been modified.");
+        // Toggle: Restrict Row Modification
+        ImGui.Checkbox($"{LOC.Get("PARAM_DeltaPatcher_Checkbox_Restrict_Modify")}##restrictModifyToggle",
+            ref CFG.Current.ParamEditor_DeltaPatcher_Import_Restrict_Row_Modify);
+        UIHelper.Tooltip(LOC.Get("PARAM_DeltaPatcher_Checkbox_Restrict_Modify_TT"));
 
-        ImGui.Checkbox("Restrict Row Addition", ref CFG.Current.ParamEditor_DeltaPatcher_Import_Restrict_Row_Add);
-        UIHelper.Tooltip("If enabled, row additions will only occur if the row ID doesn't already exist in the primary bank.");
+        // Toggle: Restrict Row Addition
+        ImGui.Checkbox($"{LOC.Get("PARAM_DeltaPatcher_Checkbox_Restrict_Addition")}##restrictAddToggle",
+            ref CFG.Current.ParamEditor_DeltaPatcher_Import_Restrict_Row_Add);
+        UIHelper.Tooltip(LOC.Get("PARAM_DeltaPatcher_Checkbox_Restrict_Addition_TT"));
 
-        ImGui.Checkbox("Allow Row Overwrite", ref CFG.Current.ParamEditor_DeltaPatcher_Import_Allow_Row_Overwrite);
-        UIHelper.Tooltip("If enabled, row additions that collide with an existing row ID will overwrite it (rather than being inserted alongside of).");
+        // Toggle: Allow Row Overwrite
+        ImGui.Checkbox($"{LOC.Get("PARAM_DeltaPatcher_Checkbox_Allow_Overwrite")}##allowOverwriteToggle",
+            ref CFG.Current.ParamEditor_DeltaPatcher_Import_Allow_Row_Overwrite);
+        UIHelper.Tooltip(LOC.Get("PARAM_DeltaPatcher_Checkbox_Allow_Overwrite_TT"));
 
-        ImGui.Text("");
-        UIHelper.SimpleHeader("Actions", "");
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader(
+            LOC.Get("PARAM_DeltaPatcher_Header_Actions"),
+            LOC.Get("PARAM_DeltaPatcher_Header_Actions_TT"));
 
         UIHelper.MultiButtonInput("deltaImportActions",
-            "importDelta", "Import Delta", "Import the currently selected import entry.", ImportAction,
-            "refreshDeltaList", "Refresh Delta List", "Refreshes the delta import list.", RefreshImportListAction);
+            "importDelta", 
+            LOC.Get("PARAM_DeltaPatcher_Action_Import_Delta"),
+            LOC.Get("PARAM_DeltaPatcher_Action_Import_Delta_TT"),
+            ImportAction,
+
+            "refreshDeltaList",
+            LOC.Get("PARAM_DeltaPatcher_Action_Refresh_List"),
+            LOC.Get("PARAM_DeltaPatcher_Action_Refresh_List_TT"),
+            RefreshImportListAction);
 
         if (Selection.ImportList.Count > 0)
         {
-            ImGui.Text("");
-            UIHelper.SimpleHeader("Entries", "");
+            UIHelper.Spacer();
+            UIHelper.SimpleHeader(
+                LOC.Get("PARAM_DeltaPatcher_Header_Entries"),
+                LOC.Get("PARAM_DeltaPatcher_Header_Entries_TT"));
 
             ImGui.BeginChild("importEntryList");
 
@@ -217,7 +241,7 @@ public class ParamDeltaPatcher
         // General
         if (Selection.ImportList.Any(e => e.Delta.Tag == ""))
         {
-            if (ImGui.CollapsingHeader($"General##importFolder_General", ImGuiTreeNodeFlags.DefaultOpen))
+            if (ImGui.CollapsingHeader($"{LOC.Get("PARAM_DeltaPatcher_General_Folder")}##importFolder_General", ImGuiTreeNodeFlags.DefaultOpen))
             {
                 foreach (var entry in Selection.ImportList)
                 {
@@ -253,6 +277,7 @@ public class ParamDeltaPatcher
 
         var displayName = $"{entry.Filename} [{version}]";
 
+        // Import Entry
         if (ImGui.Selectable($"{displayName}##curEntry_{entry.Filename.GetHashCode()}", selected))
         {
             Selection.SelectedImport = entry;
@@ -292,12 +317,19 @@ public class ParamDeltaPatcher
         {
             if (ImGui.BeginPopupContextItem($"##curEntryContext_{entry.Filename.GetHashCode()}"))
             {
-                if(ImGui.BeginMenu("Edit"))
+                // Edit
+                if(ImGui.BeginMenu($"{LOC.Get("PARAM_DeltaPatcher_ImportContext_Header_Edit")}##editMenuHEader"))
                 {
-                    ImGui.InputText("Name", ref Selection.Edit_Name, 255);
-                    ImGui.InputText("Tag", ref Selection.Edit_FileTag, 255);
+                    // Name
+                    ImGui.InputText($"{LOC.Get("PARAM_DeltaPatcher_ImportContext_Name")}##nameInput", 
+                        ref Selection.Edit_Name, 255);
 
-                    if(ImGui.Button("Update", DPI.SelectorButtonSize))
+                    // Tag
+                    ImGui.InputText($"{LOC.Get("PARAM_DeltaPatcher_ImportContext_Tag")}##tagInput", 
+                        ref Selection.Edit_FileTag, 255);
+
+                    // Update
+                    if(ImGui.Button($"{LOC.Get("PARAM_DeltaPatcher_ImportContext_Action_Update")}##updateAction", DPI.SelectorButtonSize))
                     {
                         entry.Delta.Tag = Selection.Edit_FileTag;
 
@@ -318,14 +350,15 @@ public class ParamDeltaPatcher
                     ImGui.EndMenu();
                 }
 
-                if (ImGui.Selectable("Delete"))
+                // Delete
+                if (ImGui.Selectable($"{LOC.Get("PARAM_DeltaPatcher_ImportContext_Action_Delete")}##deleteAction"))
                 {
                     DeleteDeltaPatch(entry.Filename);
                     Selection.QueueImportListRefresh = true;
 
                     ImGui.CloseCurrentPopup();
                 }
-                UIHelper.Tooltip("Delete this delta file.");
+                UIHelper.Tooltip(LOC.Get("PARAM_DeltaPatcher_ImportContext_Action_Delete_TT"));
 
                 ImGui.EndPopup();
             }
@@ -334,25 +367,43 @@ public class ParamDeltaPatcher
 
     public void DisplayExportTab()
     {
-        UIHelper.WrappedText("Export a param delta file here.");
-        UIHelper.WrappedText("");
+        UIHelper.WrappedText(LOC.Get("PARAM_DeltaPatcher_Export_Hint"));
 
-        UIHelper.SimpleHeader("Filename", "The name assigned to the delta file.");
-        UIHelper.HintTextInput($"inputFileName", ref Selection.ExportName, "Enter the name for the exported file...");
+        // Filename
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader(
+            LOC.Get("PARAM_DeltaPatcher_Header_Filename"),
+            LOC.Get("PARAM_DeltaPatcher_Header_Filename_TT"));
 
-        UIHelper.SimpleHeader("Tags", "The tags assigned to the delta file.");
-        UIHelper.HintTextInput($"inputFileTag", ref Selection.ExportFileTag, "Enter the associated tags for the exported file...");
+        UIHelper.HintTextInput($"inputFileName", ref Selection.ExportName, LOC.Get("PARAM_DeltaPatcher_Filename_Input_Hint"));
 
-        UIHelper.SimpleHeader("Param Type", "Which params are selected for export.");
+        // Tags
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader(
+            LOC.Get("PARAM_DeltaPatcher_Header_Tags"),
+            LOC.Get("PARAM_DeltaPatcher_Header_Tags_TT"));
+
+        UIHelper.HintTextInput($"inputFileTag", ref Selection.ExportFileTag, LOC.Get("PARAM_DeltaPatcher_Tags_Input_Hint"));
+
+        // Param Type
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader(
+            LOC.Get("PARAM_DeltaPatcher_Header_Param_Type"),
+            LOC.Get("PARAM_DeltaPatcher_Header_Param_Type_TT"));
+
+        var paramType_PreviewName = LOC.Get(Selection.CurrentParamMode.GetDisplayName());
+
         var width = ImGui.GetWindowWidth() * 0.5f;
         ImGui.PushItemWidth(width);
-        if (ImGui.BeginCombo("##inputValue_ParamType", Selection.CurrentParamMode.GetDisplayName()))
+        if (ImGui.BeginCombo("##inputValue_ParamType", paramType_PreviewName))
         {
             foreach (var entry in Enum.GetValues(typeof(DeltaExportMode)))
             {
                 var type = (DeltaExportMode)entry;
 
-                if (ImGui.Selectable(type.GetDisplayName()))
+                var displayName = LOC.Get(type.GetDisplayName());
+
+                if (ImGui.Selectable(displayName, Selection.CurrentParamMode == type))
                 {
                     Selection.CurrentParamMode = (DeltaExportMode)entry;
                 }
@@ -361,15 +412,24 @@ public class ParamDeltaPatcher
             ImGui.EndCombo();
         }
 
-        UIHelper.SimpleHeader("Selection Type", "Which rows are selected for export.");
+        // Selection Type
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader(
+            LOC.Get("PARAM_DeltaPatcher_Header_Selection_Type"),
+            LOC.Get("PARAM_DeltaPatcher_Header_Selection_Type_TT"));
+
+        var selectionType_PreviewName = LOC.Get(Selection.CurrentRowMode.GetDisplayName());
+
         ImGui.PushItemWidth(width);
-        if (ImGui.BeginCombo("##inputValue_SelectionType", Selection.CurrentRowMode.GetDisplayName()))
+        if (ImGui.BeginCombo("##inputValue_SelectionType", selectionType_PreviewName))
         {
             foreach (var entry in Enum.GetValues(typeof(DeltaSelectionMode)))
             {
                 var type = (DeltaSelectionMode)entry;
 
-                if (ImGui.Selectable(type.GetDisplayName()))
+                var displayName = LOC.Get(type.GetDisplayName());
+
+                if (ImGui.Selectable(displayName, Selection.CurrentRowMode == type))
                 {
                     Selection.CurrentRowMode = (DeltaSelectionMode)entry;
                 }
@@ -378,17 +438,30 @@ public class ParamDeltaPatcher
             ImGui.EndCombo();
         }
 
-        ImGui.Text("");
-        UIHelper.SimpleHeader("Options", "Options to set for the delta builder.");
-        ImGui.Checkbox("Ignore Indexed Params", ref CFG.Current.ParamEditor_DeltaPatcher_Export_Ignore_Indexed_Rows);
-        UIHelper.Tooltip("If enabled, indexed params where the rows depending on row index as well as ID will be ignored when producing the delta.");
+        // Options
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader(
+            LOC.Get("PARAM_DeltaPatcher_Header_Options"),
+            LOC.Get("PARAM_DeltaPatcher_Header_Options_TT"));
 
-        ImGui.Text("");
-        UIHelper.SimpleHeader("Actions", "");
+        ImGui.Checkbox($"{LOC.Get("PARAM_DeltaPatcher_Checkbox_Ignore_Indexed")}##ignoreIndexedToggle", ref CFG.Current.ParamEditor_DeltaPatcher_Export_Ignore_Indexed_Rows);
+        UIHelper.Tooltip(LOC.Get("PARAM_DeltaPatcher_Checkbox_Ignore_Indexed_TT"));
+
+        UIHelper.Spacer();
+        UIHelper.SimpleHeader(
+            LOC.Get("PARAM_DeltaPatcher_Header_Actions"),
+            LOC.Get("PARAM_DeltaPatcher_Header_Actions_TT"));
 
         UIHelper.MultiButtonInput("exportDeltaActions",
-            "exportDelta", "Export Delta", "", ExportAction,
-            "openDeltaFolder", "Open Delta Folder", "", OpenDeltaFolder);
+            "exportDelta", 
+            LOC.Get("PARAM_DeltaPatcher_Action_Export_Delta"),
+            LOC.Get("PARAM_DeltaPatcher_Action_Export_Delta_TT"),
+            ExportAction,
+
+            "openDeltaFolder",
+            LOC.Get("PARAM_DeltaPatcher_Action_Open_Delta_Folder"),
+            LOC.Get("PARAM_DeltaPatcher_Action_Open_Delta_Folder_TT"), 
+            OpenDeltaFolder);
 
         ImGui.Text("");
     }
@@ -440,17 +513,17 @@ public class ParamDeltaPatcher
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, "Failed to deserialize delta patch", e);
+                    Smithbox.LogError(this, LOC.Get("PARAM_DeltaPatcher_Deserialize_Patch_FAIL", readPath), e);
                 }
             }
             catch (Exception e)
             {
-                Smithbox.LogError(this, "Failed to read delta patch", e);
+                Smithbox.LogError(this, LOC.Get("PARAM_DeltaPatcher_Read_Patch_FAIL", readPath), e);
             }
         }
         else
         {
-            Smithbox.LogError(this, "Failed to find delta patch");
+            Smithbox.LogError(this, LOC.Get("PARAM_DeltaPatcher_Find_Patch_FAIL", readPath));
         }
 
         return deltaPatch;
@@ -460,7 +533,7 @@ public class ParamDeltaPatcher
     {
         if(name == "" || name == null)
         {
-            Smithbox.LogError(this, "Failed to write delta patch as filename is empty.");
+            Smithbox.LogError(this, LOC.Get("PARAM_DeltaPatcher_Write_Missing_Filename", name));
             return;
         }
 
@@ -485,7 +558,7 @@ public class ParamDeltaPatcher
         }
         catch (Exception ex)
         {
-            Smithbox.LogError(this, "Failed to write delta patch", ex);
+            Smithbox.LogError(this, LOC.Get("PARAM_DeltaPatcher_Write_Patch_FAIL", writePath), ex);
         }
     }
     #endregion
@@ -507,26 +580,26 @@ public class DeltaImportEntry
 
 public enum DeltaExportMode
 {
-    [Display(Name = "All", Description ="Export all params.")]
+    [Display(Name = "PARAM_ENUM_DeltaExportMode_All", Description = "PARAM_ENUM_DeltaExportMode_All_TT")]
     All,
-    [Display(Name = "Selected", Description = "Export currently selected params.")]
+    [Display(Name = "PARAM_ENUM_DeltaExportMode_Selected", Description = "PARAM_ENUM_DeltaExportMode_Selected_TT")]
     Selected
 }
 
 public enum DeltaSelectionMode
 {
-    [Display(Name = "Modified", Description = "Exports all modified rows.")]
+    [Display(Name = "PARAM_ENUM_DeltaSelectionMode_Modified", Description = "PARAM_ENUM_DeltaSelectionMode_Modified_TT")]
     Modified,
-    [Display(Name = "Selected", Description = "Exports all selected rows.")]
+    [Display(Name = "PARAM_ENUM_DeltaSelectionMode_Selected", Description = "PARAM_ENUM_DeltaSelectionMode_Selected_TT")]
     Selected,
-    [Display(Name = "All", Description = "Exports all rows.")]
+    [Display(Name = "PARAM_ENUM_DeltaSelectionMode_All", Description = "PARAM_ENUM_DeltaSelectionMode_All_TT")]
     All
 }
 
 public enum DeltaImportMode
 {
-    [Display(Name = "Insert and Overwrite")]
+    [Display(Name = "PARAM_ENUM_DeltaImportMode_Insert_Overwrite")]
     Simple,
-    [Display(Name = "Conditional on Row Delta")]
+    [Display(Name = "PARAM_ENUM_DeltaImportMode_Conditional")]
     Complex
 }

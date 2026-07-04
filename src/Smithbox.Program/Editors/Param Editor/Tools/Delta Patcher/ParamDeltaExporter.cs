@@ -27,7 +27,7 @@ public class ParamDeltaExporter
     {
         if (string.IsNullOrWhiteSpace(Patcher.Selection.ExportName))
         {
-            Smithbox.LogError(this, "Filename must not be empty.");
+            Smithbox.LogError(this, LOC.Get("PARAM_DeltaPatcher_Exporter_Filename_Empty"));
             return;
         }
 
@@ -42,8 +42,8 @@ public class ParamDeltaExporter
         if (File.Exists(writePath))
         {
             var dialog = PlatformUtils.Instance.MessageBox(
-                $"Do you want to overwrite this delta patch file: {writePath}",
-                "Delta Patcher",
+                LOC.Get("PARAM_DeltaPatcher_Exporter_Overwrite_Patch", writePath),
+                LOC.Get("SYS_Warning_Header"),
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Warning);
 
@@ -75,7 +75,7 @@ public class ParamDeltaExporter
         }
         catch (Exception ex)
         {
-            Smithbox.LogError(this, "Delta build failed", ex);
+            Smithbox.LogError(this, LOC.Get("PARAM_DeltaPatcher_Exporter_Delta_Failed"), ex);
         }
         finally
         {
@@ -103,7 +103,7 @@ public class ParamDeltaExporter
 
             Patcher.ExportProgressModal.ReportProgress?.Invoke(new()
             {
-                PhaseLabel = "Processing",
+                PhaseLabel = LOC.Get("PARAM_DeltaPatcher_Phase_Processing"),
                 StepLabel = $"{primaryParam.Key}",
                 Percent = processed / (float)total
             });
