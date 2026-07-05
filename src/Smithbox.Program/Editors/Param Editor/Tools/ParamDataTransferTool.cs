@@ -1,20 +1,11 @@
 ﻿using Andre.Formats;
 using Hexa.NET.ImGui;
-using Microsoft.AspNetCore.Components.Forms;
 using SoulsFormats;
-using StudioCore.Application;
 using StudioCore.Editors.Common;
-using StudioCore.Editors.GparamEditor;
 using StudioCore.Utilities;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
-using System.IO;
-using System.Linq;
 using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.ParamEditor;
 
