@@ -3,19 +3,13 @@ using Hexa.NET.ImGui;
 using Hexa.NET.ImPlot;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
-using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.MetadataEditor;
 using StudioCore.Editors.TextEditor;
-using StudioCore.Interface;
 using StudioCore.Keybinds;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO;
-using System.Linq;
 using System.Numerics;
 using System.Reflection;
 
@@ -1219,6 +1213,8 @@ public static class ParamReferenceHelper
         ImGui.EndGroup();
     }
 
+    private static string QuickEditTerm = "";
+
     public static bool ContextMenu(ParamEditorView curView, List<ParamRef> reftypes, Param.Row context,
         object oldval, ref object newval, ActionManager executor)
     {
@@ -1270,6 +1266,71 @@ public static class ParamReferenceHelper
         }
 
         ImGui.PopStyleColor();
+
+        ImGui.Separator();
+
+        // Quick Edit
+        ImGui.InputTextWithHint("##value", "Enter term to find row...", ref QuickEditTerm, 128);
+        UIHelper.Tooltip("Quickly find a row in the referenced param by searching for a term in the row's name or ID. Click on a result to set the field's value to that row's ID.");
+
+        if (QuickEditTerm != "")
+        {
+            ImGui.BeginChild("quickEditSection", new Vector2(0, 250), ImGuiChildFlags.Borders);
+
+            foreach (ParamRef rf in reftypes)
+            {
+                var rt = rf.ParamName;
+
+                if (!curView.GetPrimaryBank().Params.ContainsKey(rt))
+                {
+                    continue;
+                }
+
+                var meta = curView.GetParamData().GetParamMeta(curView.GetPrimaryBank().Params[rt].AppliedParamdef);
+
+                var maxResultsPerRefType = 15 / reftypes.Count;
+
+                List<Param.Row> rows = curView.MassEdit.RSE.Search((curView.GetPrimaryBank(), curView.GetPrimaryBank().Params[rt]),
+                    QuickEditTerm, true, true);
+
+                foreach (Param.Row r in rows)
+                {
+                    if (maxResultsPerRefType <= 0)
+                    {
+                        break;
+                    }
+
+                    if (ImGui.Selectable($@"{r.ID}: {r.Name}"))
+                    {
+                        try
+                        {
+                            if (meta != null && meta.FixedOffset != 0)
+                            {
+                                newval = Convert.ChangeType(r.ID - meta.FixedOffset - rf.Offset, oldval.GetType());
+                            }
+                            else
+                            {
+                                newval = Convert.ChangeType(r.ID - rf.Offset, oldval.GetType());
+                            }
+
+                            QuickEditTerm = "";
+                            ImGui.EndChild();
+
+                            return true;
+                        }
+                        catch (Exception e)
+                        {
+                            Smithbox.LogError(typeof(ParamReferenceHelper), "Unable to convert value into param field's type'", e);
+                        }
+                    }
+                    UIHelper.Tooltip($"From {rt}");
+
+                    maxResultsPerRefType--;
+                }
+            }
+
+            ImGui.EndChild();
+        }
 
         return false;
     }
