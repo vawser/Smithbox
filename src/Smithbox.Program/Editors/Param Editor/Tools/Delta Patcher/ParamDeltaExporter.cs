@@ -365,7 +365,7 @@ public class ParamDeltaExporter
         var curRowID = 0;
         var internalIndex = 0;
 
-        var selectedRows = Patcher.Editor.ViewHandler.ActiveView.Selection.GetSelectedRows();
+        var selectedRows = Patcher.View.Selection.GetSelectedRows();
 
         for (int i = 0; i < primaryParam.Rows.Count; i++)
         {
@@ -423,7 +423,7 @@ public class ParamDeltaExporter
         var curRowID = 0;
         var internalIndex = 0;
 
-        var selectedRows = Patcher.Editor.ViewHandler.ActiveView.Selection.GetSelectedRows();
+        var selectedRows = Patcher.View.Selection.GetSelectedRows();
 
         for (int i = 0; i < primaryParam.Rows.Count; i++)
         {

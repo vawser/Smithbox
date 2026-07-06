@@ -17,6 +17,7 @@ public class ParamEditorView
     public ParamTableWindow ParamTableWindow;
     public ParamRowWindow ParamRowWindow;
     public ParamFieldWindow ParamFieldWindow;
+    public ParamToolMenu ToolMenu;
 
     public ParamRowDecorators RowDecorators;
     public ParamFieldDecorators FieldDecorators;
@@ -50,6 +51,7 @@ public class ParamEditorView
         ParamTableWindow = new ParamTableWindow(editor, project, this);
         ParamRowWindow = new ParamRowWindow(editor, project, this);
         ParamFieldWindow = new ParamFieldWindow(editor, project, this);
+        ToolMenu = new ParamToolMenu(this, project);
     }
 
     public void Display(uint dockspaceId, int viewIndex, bool doFocus, bool isActiveView)
@@ -142,6 +144,26 @@ public class ParamEditorView
         }
 
         ImGui.End();
+
+        // Tools
+        ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
+        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ParamEditorView);
+        if (ImGui.Begin($@"{LOC.Get("PARAM_Window_Tool_Window")}###paramEditor_ToolWindow_{viewIndex}", UIHelper.GetMainWindowFlags()))
+        {
+            var width = ImGui.GetContentRegionAvail().X;
+            var height = ImGui.GetContentRegionAvail().Y;
+
+            if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+            {
+                FocusManager.SetFocus(EditorFocusContext.ParamEditor_Tools);
+                Editor.ViewHandler.ActiveView = this;
+            }
+
+            ToolMenu.Draw();
+        }
+
+        ImGui.End();
+
     }
 
     public ParamData GetParamData()

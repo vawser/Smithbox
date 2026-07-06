@@ -10,19 +10,17 @@ namespace StudioCore.Editors.MapEditor;
 
 public class SelectActionTool
 {
-    public MapEditorScreen Editor;
+    public MapEditorView View;
     public ProjectEntry Project;
 
-    public SelectActionTool(MapEditorScreen editor, ProjectEntry project)
+    public SelectActionTool(MapEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 
     public void Display()
     {
-        var activeView = Editor.ViewHandler.ActiveView;
-
         ImGui.BeginChild("SelectActionSection", ImGuiChildFlags.Borders);
 
         ImGui.BeginTabBar("selectActionTabs");
@@ -41,8 +39,7 @@ public class SelectActionTool
     {
         if (ImGui.BeginTabItem("Selection Groups##selectionGroupTab"))
         {
-            var activeView = Editor.ViewHandler.ActiveView;
-            activeView.SelectionGroupTool.OnToolWindow();
+            View.SelectionGroupTool.OnToolWindow();
 
             ImGui.EndTabItem();
         }
@@ -52,8 +49,7 @@ public class SelectActionTool
     {
         if (ImGui.BeginTabItem("Mass Selection##selectAllTab"))
         {
-            var activeView = Editor.ViewHandler.ActiveView;
-            activeView.SelectAllAction.OnToolWindow();
+            View.SelectAllAction.OnToolWindow();
 
             ImGui.EndTabItem();
         }
@@ -65,8 +61,7 @@ public class SelectActionTool
         {
             if (ImGui.BeginTabItem("Collision Selection##selectColRefTab"))
             {
-                var activeView = Editor.ViewHandler.ActiveView;
-                activeView.SelectCollisionRefAction.OnToolWindow();
+                View.SelectCollisionRefAction.OnToolWindow();
 
                 ImGui.EndTabItem();
             }
@@ -77,8 +72,7 @@ public class SelectActionTool
     {
         if (ImGui.BeginTabItem("Box Selection##selectBoxTab"))
         {
-            var activeView = Editor.ViewHandler.ActiveView;
-            activeView.BoxSelectionAction.OnToolWindow();
+            View.BoxSelectionAction.OnToolWindow();
 
             ImGui.EndTabItem();
         }

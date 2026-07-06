@@ -14,7 +14,7 @@ namespace StudioCore.Editors.TextEditor;
 /// </summary>
 public class TextContainerList
 {
-    private TextEditorView Parent;
+    private TextEditorView View;
     private ProjectEntry Project;
 
     private string ContainerListFilter = "";
@@ -22,7 +22,7 @@ public class TextContainerList
 
     public TextContainerList(TextEditorView view, ProjectEntry project)
     {
-        Parent = view;
+        View = view;
         Project = project;
     }
 
@@ -216,37 +216,37 @@ public class TextContainerList
         if (isMatch)
         {
             // Script row
-            if (ImGui.Selectable($"{displayName}##{wrapper.FileEntry.Filename}{index}", index == Parent.Selection.SelectedContainerKey))
+            if (ImGui.Selectable($"{displayName}##{wrapper.FileEntry.Filename}{index}", index == View.Selection.SelectedContainerKey))
             {
-                Parent.Selection.SelectFileContainer(entry, wrapper, index);
+                View.Selection.SelectFileContainer(entry, wrapper, index);
             }
 
             // Arrow Selection
-            if (ImGui.IsItemHovered() && Parent.Selection.SelectNextFileContainer)
+            if (ImGui.IsItemHovered() && View.Selection.SelectNextFileContainer)
             {
-                Parent.Selection.SelectNextFileContainer = false;
-                Parent.Selection.SelectFileContainer(entry, wrapper, index);
+                View.Selection.SelectNextFileContainer = false;
+                View.Selection.SelectFileContainer(entry, wrapper, index);
             }
 
             if(ImGui.IsItemFocused())
             {           
                 if (InputManager.HasArrowSelection())
                 {
-                    Parent.Selection.SelectNextFileContainer = true;
+                    View.Selection.SelectNextFileContainer = true;
                 }
             }
 
             // Only apply to selection
-            if (Parent.Selection.SelectedContainerKey != -1)
+            if (View.Selection.SelectedContainerKey != -1)
             {
-                if (Parent.Selection.SelectedContainerKey == index)
+                if (View.Selection.SelectedContainerKey == index)
                 {
                     ContextMenu(wrapper);
                 }
 
-                if (Parent.Selection.FocusFileSelection && Parent.Selection.SelectedContainerKey == index)
+                if (View.Selection.FocusFileSelection && View.Selection.SelectedContainerKey == index)
                 {
-                    Parent.Selection.FocusFileSelection = false;
+                    View.Selection.FocusFileSelection = false;
                     ImGui.SetScrollHereY();
                 }
             }
@@ -337,10 +337,10 @@ public class TextContainerList
                 ImGui.EndMenu();
             }
 
-            Parent.Editor.ToolView.LanguageSyncTool.DisplaySyncOptions();
+            View.ToolView.LanguageSyncTool.DisplaySyncOptions();
 
-            Parent.FmgImporter.ContainerDropdownOptions();
-            Parent.FmgExporter.ContainerDropdownOptions();
+            View.FmgImporter.ContainerDropdownOptions();
+            View.FmgExporter.ContainerDropdownOptions();
 
             ImGui.EndPopup();
         }

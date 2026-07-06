@@ -37,6 +37,7 @@ public class ModelEditorView
     public ModelFileList FileList;
     public ModelContents Contents;
     public ModelProperties Properties;
+    public ModelToolWindow ToolView;
 
     // Tools
     public ModelGridConfiguration ModelGridTool;
@@ -76,6 +77,7 @@ public class ModelEditorView
         FileList = new(this, project);
         Contents = new(this, project);
         Properties = new(this, project);
+        ToolView = new(this, project);
 
         // Tools
         ModelGridTool = new ModelGridConfiguration(this, Project);
@@ -156,6 +158,26 @@ public class ModelEditorView
             }
 
             ImGui.End();
+
+            // Tools
+            ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
+            ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ModelEditorView);
+            if (ImGui.Begin($@"Tools##modelEditor_ToolWindow_{viewIndex}", UIHelper.GetMainWindowFlags()))
+            {
+                var width = ImGui.GetContentRegionAvail().X;
+                var height = ImGui.GetContentRegionAvail().Y;
+
+                if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+                {
+                    FocusManager.SetFocus(EditorFocusContext.ModelEditor_Tools);
+                    Editor.ViewHandler.ActiveView = this;
+                }
+
+                ToolView.Display();
+            }
+
+            ImGui.End();
+
         }
 
         // Viewport

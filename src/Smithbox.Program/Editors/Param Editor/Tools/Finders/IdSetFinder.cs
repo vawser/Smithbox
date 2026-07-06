@@ -12,7 +12,7 @@ namespace StudioCore.Editors.ParamEditor;
 
 public class IdSetFinder
 {
-    public ParamEditorScreen Editor;
+    public ParamEditorView View;
     public ProjectEntry Project;
 
     public string imguiID = "IdSetFinder";
@@ -22,14 +22,14 @@ public class IdSetFinder
 
     public List<string> Results = new();
 
-    public IdSetFinder(ParamEditorScreen editor, ProjectEntry project)
+    public IdSetFinder(ParamEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
     public void Display()
     {
-        if (Editor.Project.Handler.ParamData.PrimaryBank.Params == null)
+        if (View.Editor.Project.Handler.ParamData.PrimaryBank.Params == null)
         {
             return;
         }
@@ -140,7 +140,7 @@ public class IdSetFinder
             }
         }
 
-        foreach (var p in Editor.Project.Handler.ParamData.PrimaryBank.Params)
+        foreach (var p in View.Editor.Project.Handler.ParamData.PrimaryBank.Params)
         {
             ProcessParam(ref output, p.Key, p.Value, Values);
         }

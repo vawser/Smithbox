@@ -14,7 +14,7 @@ namespace StudioCore.Editors.ParamEditor;
 
 public class FieldValueFinder
 {
-    public ParamEditorScreen Editor;
+    public ParamEditorView View;
     public ProjectEntry Project;
 
     public string imguiID = "FieldValueFinder";
@@ -32,15 +32,15 @@ public class FieldValueFinder
 
     public List<DataSearchResult> Results = new();
 
-    public FieldValueFinder(ParamEditorScreen editor, ProjectEntry project)
+    public FieldValueFinder(ParamEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 
     public void Display()
     {
-        if (Editor.Project.Handler.ParamData.PrimaryBank.Params == null)
+        if (View.Editor.Project.Handler.ParamData.PrimaryBank.Params == null)
         {
             return;
         }
@@ -255,7 +255,7 @@ public class FieldValueFinder
         var startValue = RangeSearchText_Start;
         var endValue = RangeSearchText_End;
 
-        foreach (var p in Editor.Project.Handler.ParamData.PrimaryBank.Params)
+        foreach (var p in View.Editor.Project.Handler.ParamData.PrimaryBank.Params)
         {
             if (TargetedParams.Count > 0)
             {
@@ -265,8 +265,8 @@ public class FieldValueFinder
                 }
             }
 
-            var meta = Editor.Project.Handler.ParamData.GetParamMeta(p.Value.AppliedParamdef);
-            var annotations = Editor.Project.Handler.ParamData.GetParamAnnotations(p.Value.AppliedParamdef.ParamType);
+            var meta = View.Editor.Project.Handler.ParamData.GetParamMeta(p.Value.AppliedParamdef);
+            var annotations = View.Editor.Project.Handler.ParamData.GetParamAnnotations(p.Value.AppliedParamdef.ParamType);
 
             for (var i = 0; i < p.Value.Rows.Count; i++)
             {
@@ -280,8 +280,8 @@ public class FieldValueFinder
                 {
                     PARAMDEF.DefType type = field.Def.DisplayType;
 
-                    var fieldMeta = Editor.Project.Handler.ParamData.GetParamFieldMeta(meta, field.Def);
-                    var fieldAnnotation = Editor.Project.Handler.ParamData.GetFieldAnnotation(annotations, field.Def.InternalName);
+                    var fieldMeta = View.Editor.Project.Handler.ParamData.GetParamFieldMeta(meta, field.Def);
+                    var fieldAnnotation = View.Editor.Project.Handler.ParamData.GetFieldAnnotation(annotations, field.Def.InternalName);
 
                     fieldName = field.Def.InternalName;
                     if (fieldMeta != null && fieldAnnotation != null)

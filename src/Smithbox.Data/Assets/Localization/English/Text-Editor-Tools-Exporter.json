@@ -77,6 +77,10 @@
       "Text": "Export Unique Text"
     },
     {
+      "Key": "TEXT_Exporter_Action_Export_Unique_TT",
+      "Text": "Only include Text Entries (and therefore the associated Text Files) that are considered 'unique'."
+    },
+    {
       "Key": "TEXT_Exporter_Action_Export_Unique_TextEntry_TT",
       "Text": "Only include Text Entries that are considered 'unique'."
     },

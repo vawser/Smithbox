@@ -12,12 +12,12 @@ namespace StudioCore.Editors.MaterialEditor;
 
 public class MatDataTransferTool
 {
-    public MaterialEditorScreen Editor;
+    public MaterialEditorView View;
     public ProjectEntry Project;
 
-    public MatDataTransferTool(MaterialEditorScreen editor, ProjectEntry project)
+    public MatDataTransferTool(MaterialEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 
@@ -60,8 +60,6 @@ public class MatDataTransferTool
 
     public void ImportMenu()
     {
-        var curView = Editor.ViewHandler.ActiveView;
-
         if (ImGui.BeginMenu("Import"))
         {
             // TODO
@@ -86,8 +84,6 @@ public class MatDataTransferTool
 
     public void ExportMenu()
     {
-        var curView = Editor.ViewHandler.ActiveView;
-
         if (ImGui.BeginMenu("Export"))
         {
             // TODO

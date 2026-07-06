@@ -8,7 +8,7 @@ using System.Text;
 namespace StudioCore.Editors.ParamEditor;
 public class ParamComparisonTool
 {
-    public ParamEditorScreen Editor;
+    public ParamEditorView View;
     public ProjectEntry Project;
 
     public bool ShowReportModal = false;
@@ -36,9 +36,9 @@ public class ParamComparisonTool
     public string TargetParamComparison = "";
 
 
-    public ParamComparisonTool(ParamEditorScreen editor, ProjectEntry project)
+    public ParamComparisonTool(ParamEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 
@@ -92,10 +92,10 @@ public class ParamComparisonTool
                 if (proj == null)
                     continue;
 
-                if (proj.Descriptor.ProjectType != Editor.Project.Descriptor.ProjectType)
+                if (proj.Descriptor.ProjectType != View.Project.Descriptor.ProjectType)
                     continue;
 
-                if (proj == Editor.Project)
+                if (proj == View.Project)
                     continue;
 
                 if (!paramData.AuxBanks.ContainsKey(proj.Descriptor.ProjectName))
@@ -144,10 +144,10 @@ public class ParamComparisonTool
                 if (proj == null)
                     continue;
 
-                if (proj.Descriptor.ProjectType != Editor.Project.Descriptor.ProjectType)
+                if (proj.Descriptor.ProjectType != View.Project.Descriptor.ProjectType)
                     continue;
 
-                if (proj == Editor.Project)
+                if (proj == View.Project)
                     continue;
 
                 var isSelected = false;
@@ -199,9 +199,7 @@ public class ParamComparisonTool
 
     public void RowComparisonTab()
     {
-        var activeView = Editor.ViewHandler.ActiveView;
-
-        var compareRow = activeView.Selection.GetCompareRow();
+        var compareRow = View.Selection.GetCompareRow();
 
         // Row Comparison
         if (ImGui.BeginTabItem($"{LOC.Get("PARAM_Comparison_Tab_Row_Compare")}##rowCompareTab"))
@@ -238,9 +236,7 @@ public class ParamComparisonTool
 
     public void FieldComparisonTab()
     {
-        var activeView = Editor.ViewHandler.ActiveView;
-
-        var compareCol = activeView.Selection.GetCompareCol();
+        var compareCol = View.Selection.GetCompareCol();
 
         // Field Comparison
         if (ImGui.BeginTabItem($"{LOC.Get("PARAM_Comparison_Tab_Field_Compare")}##fieldCompareTab"))
@@ -277,7 +273,6 @@ public class ParamComparisonTool
 
     public void DisplayDropdown()
     {
-        var activeView = Editor.ViewHandler.ActiveView;
         var paramData = Project.Handler.ParamData;
 
         // Comparison Report
@@ -403,21 +398,17 @@ public class ParamComparisonTool
 
     public void ClearRowComparison()
     {
-        var activeView = Editor.ViewHandler.ActiveView;
-
-        if (activeView != null && activeView.Selection.GetCompareRow() != null)
+        if (View != null && View.Selection.GetCompareRow() != null)
         {
-            activeView.Selection.SetCompareRow(null);
+            View.Selection.SetCompareRow(null);
         }
     }
 
     public void ClearFieldComparison()
     {
-        var activeView = Editor.ViewHandler.ActiveView;
-
-        if (activeView != null && activeView.Selection.GetCompareCol() != null)
+        if (View != null && View.Selection.GetCompareCol() != null)
         {
-            activeView.Selection.SetCompareCol(null);
+            View.Selection.SetCompareCol(null);
         }
     }
 
@@ -433,7 +424,7 @@ public class ParamComparisonTool
 
     public void GenerateReport()
     {
-        var paramData = Editor.Project.Handler.ParamData;
+        var paramData = View.Project.Handler.ParamData;
 
         IsReportGenerated = false;
         IsGeneratingReport = true;
@@ -603,7 +594,7 @@ public class ParamComparisonTool
 
     public void DisplayComparisonReport(bool isPopup = true)
     {
-        var paramData = Editor.Project.Handler.ParamData;
+        var paramData = View.Project.Handler.ParamData;
 
         UIHelper.SimpleHeader(
             LOC.Get("PARAM_ComparisonReport_Header"),
@@ -648,7 +639,7 @@ public class ParamComparisonTool
             // Special-case for pointing to the vanilla bank
             if (ImGui.Selectable($"{LOC.Get("PARAM_ComparisonReport_Vanilla_Select")}##vanillaSelect", TargetProjectName == "Vanilla"))
             {
-                TargetProject = Editor.Project;
+                TargetProject = View.Project;
                 TargetProjectName = "Vanilla";
             }
 
@@ -657,10 +648,10 @@ public class ParamComparisonTool
                 if (proj == null)
                     continue;
 
-                if (proj.Descriptor.ProjectType != Editor.Project.Descriptor.ProjectType)
+                if (proj.Descriptor.ProjectType != View.Project.Descriptor.ProjectType)
                     continue;
 
-                if (proj == Editor.Project)
+                if (proj == View.Project)
                     continue;
 
                 var isSelected = false;
@@ -867,7 +858,7 @@ public class ParamComparisonTool
 
             AllowGenerate = false;
 
-            await Editor.Project.Handler.ParamData.SetupAuxBank(TargetProject, true);
+            await View.Project.Handler.ParamData.SetupAuxBank(TargetProject, true);
             AllowGenerate = true;
         }
     }

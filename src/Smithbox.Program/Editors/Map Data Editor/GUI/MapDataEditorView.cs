@@ -25,6 +25,7 @@ public class MapDataEditorView
 
     public MsbEditor MsbEditor;
     public EnflEditor EnflEditor;
+    public MapDataToolView ToolView;
 
     public int ViewIndex;
 
@@ -40,6 +41,8 @@ public class MapDataEditorView
         CommonView = new(this, project);
         MsbEditor = new(this, project);
         EnflEditor = new(this, project);
+
+        ToolView = new(this, project);
     }
     public void Display(uint dockspaceId, int viewIndex, bool doFocus, bool isActiveView)
     {
@@ -105,5 +108,24 @@ public class MapDataEditorView
 
             ImGui.End();
         }
+
+        // Tools
+        ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
+        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_MapDataEditorView);
+        if (ImGui.Begin($@"Tools##mapDataEditor_ToolWindow_{viewIndex}", UIHelper.GetMainWindowFlags()))
+        {
+            var width = ImGui.GetContentRegionAvail().X;
+            var height = ImGui.GetContentRegionAvail().Y;
+
+            if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+            {
+                FocusManager.SetFocus(EditorFocusContext.MapDataEditor_Tools);
+                Editor.ViewHandler.ActiveView = this;
+            }
+
+            ToolView.Draw();
+        }
+
+        ImGui.End();
     }
 }

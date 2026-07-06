@@ -46,6 +46,7 @@ public class MapEditorView
     public MapListView MapListView;
     public MapContentView MapContentView;
     public MapPropertyView MapPropertyView;
+    public MapToolWindow ToolView;
 
     public BasicFilters BasicFilters;
     public RegionFilters RegionFilters;
@@ -131,6 +132,7 @@ public class MapEditorView
         MapListView = new MapListView(this, project);
         MapContentView = new MapContentView(this, project);
         MapPropertyView = new MapPropertyView(this, project);
+        ToolView = new MapToolWindow(this, project);
 
         // Optional Views
         BasicFilters = new BasicFilters(this);
@@ -252,6 +254,25 @@ public class MapEditorView
             }
 
             MapPropertyView.Display();
+        }
+
+        ImGui.End();
+
+        // Tools
+        ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
+        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_MapEditorView);
+        if (ImGui.Begin($@"Tools##mapEditor_ToolWindow_{viewIndex}", UIHelper.GetMainWindowFlags()))
+        {
+            var width = ImGui.GetContentRegionAvail().X;
+            var height = ImGui.GetContentRegionAvail().Y;
+
+            if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+            {
+                FocusManager.SetFocus(EditorFocusContext.MapEditor_Tools);
+                Editor.ViewHandler.ActiveView = this;
+            }
+
+            ToolView.Display();
         }
 
         ImGui.End();

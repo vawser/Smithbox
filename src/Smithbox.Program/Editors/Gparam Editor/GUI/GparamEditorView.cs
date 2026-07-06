@@ -24,6 +24,7 @@ public class GparamEditorView
     public GparamGroupList GroupListView;
     public GparamFieldList FieldListView;
     public GparamValueList FieldValueListView;
+    public GparamToolView ToolView;
 
     public GparamEditorView(GparamEditorScreen editor, ProjectEntry project, int imguiId)
     {
@@ -41,6 +42,7 @@ public class GparamEditorView
         GroupListView = new GparamGroupList(this, Project);
         FieldListView = new GparamFieldList(this, Project);
         FieldValueListView = new GparamValueList(this, Project);
+        ToolView = new GparamToolView(this, Project);
     }
 
     public void Display(uint dockspaceId, int viewIndex, bool doFocus, bool isActiveView)
@@ -117,6 +119,25 @@ public class GparamEditorView
             }
 
             FieldValueListView.Display();
+        }
+
+        ImGui.End();
+
+        // Tools
+        ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
+        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_GparamEditorView);
+        if (ImGui.Begin($@"Tools##gparamEditor_ToolWindow_{viewIndex}", UIHelper.GetMainWindowFlags()))
+        {
+            var width = ImGui.GetContentRegionAvail().X;
+            var height = ImGui.GetContentRegionAvail().Y;
+
+            if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+            {
+                FocusManager.SetFocus(EditorFocusContext.GparamEditor_Tools);
+                Editor.ViewHandler.ActiveView = this;
+            }
+
+            ToolView.Display();
         }
 
         ImGui.End();

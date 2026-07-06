@@ -1,19 +1,14 @@
 ﻿using Hexa.NET.ImGui;
 using SoulsFormats;
-using StudioCore.Application;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
 using System.Numerics;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using static HKLib.hk2018.hkSerialize.CompatTypeParentInfo;
 
 namespace StudioCore.Editors.GparamEditor;
 
 public class GparamDataFinder
 {
-    public GparamEditorScreen Editor;
+    public GparamEditorView View;
     public ProjectEntry Project;
 
     private string _targetFileString = "";
@@ -25,16 +20,15 @@ public class GparamDataFinder
 
     private List<GparamSearchResult> _results = new();
     private bool _uniqueValuesOnly = false;
-    public GparamDataFinder(GparamEditorScreen editor, ProjectEntry project)
+
+    public GparamDataFinder(GparamEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 
     public void Display()
     {
-        var view = Editor.ViewHandler.ActiveView;
-
         ImGui.BeginChild("DataFinderSection", ImGuiChildFlags.Borders);
 
         UIHelper.SimpleHeader("File Filter", "");
@@ -104,7 +98,7 @@ public class GparamDataFinder
 
             if (ImGui.Selectable(label))
             {
-                SelectResult(view, result);
+                SelectResult(View, result);
             }
             UIHelper.Tooltip($"File: {result.FileEntry.Filename}\nGroup: {result.Group.Name} ({result.Group.Key})\nField: {result.Field.Name} ({result.Field.Key})\nValue ID: {result.Value.ID}");
         }
@@ -186,32 +180,30 @@ public class GparamDataFinder
 
     public void FillInputs()
     {
-        var view = Editor.ViewHandler.ActiveView;
-
         _targetFileString = "";
         _targetGroupString = "";
         _targetFieldString = "";
         _valueFilterString = "";
 
-        if (view.Selection._selectedGparamKey != null)
-            UpdateFileFilter(view.Selection._selectedGparamKey);
+        if (View.Selection._selectedGparamKey != null)
+            UpdateFileFilter(View.Selection._selectedGparamKey);
         else
             _valueFilterString = "*";
 
-        if (view.Selection._selectedParamGroupKey != null)
-            UpdateGroupFilter(view.Selection._selectedParamGroupKey);
+        if (View.Selection._selectedParamGroupKey != null)
+            UpdateGroupFilter(View.Selection._selectedParamGroupKey);
         else
             _valueFilterString = "*";
 
-        if (view.Selection._selectedParamFieldKey != null)
-            UpdateFieldFilter(view.Selection._selectedParamFieldKey);
+        if (View.Selection._selectedParamFieldKey != null)
+            UpdateFieldFilter(View.Selection._selectedParamFieldKey);
         else
             _valueFilterString = "*";
 
-        if (view.Selection._selectedParamFieldKey != null)
+        if (View.Selection._selectedParamFieldKey != null)
         {
-            var selectedField = view.Selection.GetSelectedField();
-            var selectedValue = view.Selection.GetSelectedValue();
+            var selectedField = View.Selection.GetSelectedField();
+            var selectedValue = View.Selection.GetSelectedValue();
             int fieldIndex = -1;
 
             for (int i = 0; i < selectedField.Values.Count; i++)
@@ -261,15 +253,13 @@ public class GparamDataFinder
 
     public void CollateResults()
     {
-        var view = Editor.ViewHandler.ActiveView;
-
         _results.Clear();
 
         List<Task<bool>> loadTasks = new List<Task<bool>>();
 
         foreach (var entry in Project.Handler.GparamData.PrimaryBank.Entries)
         {
-            if (!IsTargetFile(view, entry.Key))
+            if (!IsTargetFile(View, entry.Key))
                 continue;
 
             if (entry.Value == null)
@@ -291,15 +281,15 @@ public class GparamDataFinder
 
             foreach (GPARAM.Param curEntry in data.Params)
             {
-                if (!IsTargetGroup(view, curEntry))
+                if (!IsTargetGroup(View, curEntry))
                     continue;
 
                 foreach (GPARAM.IField curField in curEntry.Fields)
                 {
-                    if (!IsTargetField(view, curField))
+                    if (!IsTargetField(View, curField))
                         continue;
 
-                    ResolveValues(view, entry.Key, entry.Value, curEntry, curField);
+                    ResolveValues(View, entry.Key, entry.Value, curEntry, curField);
                 }
             }
         }

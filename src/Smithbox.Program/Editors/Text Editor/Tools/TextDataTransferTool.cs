@@ -14,7 +14,7 @@ namespace StudioCore.Editors.TextEditor;
 
 public class TextDataTransferTool
 {
-    public TextEditorScreen Editor;
+    public TextEditorView View;
     public ProjectEntry Project;
 
     public TextImportMode ImportType = TextImportMode.Append;
@@ -27,9 +27,9 @@ public class TextDataTransferTool
 
     public ExportModifier ExportModifier = ExportModifier.None;
 
-    public TextDataTransferTool(TextEditorScreen editor, ProjectEntry project)
+    public TextDataTransferTool(TextEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 
@@ -107,23 +107,19 @@ public class TextDataTransferTool
 
     public void ImportTextFromInput()
     {
-        var curView = Editor.ViewHandler.ActiveView;
-
         var importBehavior = ImportBehavior.Append;
         if (ImportType is TextImportMode.Overwrite)
             importBehavior = ImportBehavior.Replace;
 
-        var generatedStoredFmgContainer = curView.FmgImporter.GenerateStoredFmgContainerFromJson(ImportString);
+        var generatedStoredFmgContainer = View.FmgImporter.GenerateStoredFmgContainerFromJson(ImportString);
         if (generatedStoredFmgContainer != null)
         {
-            curView.FmgImporter.ImportText(generatedStoredFmgContainer, importBehavior);
+            View.FmgImporter.ImportText(generatedStoredFmgContainer, importBehavior);
         }
     }
 
     public void ImportTextFromFile()
     {
-        var curView = Editor.ViewHandler.ActiveView;
-
         var importBehavior = ImportBehavior.Append;
         if(ImportType is TextImportMode.Overwrite)
             importBehavior = ImportBehavior.Replace;
@@ -137,39 +133,37 @@ public class TextDataTransferTool
                 return;
             }
 
-            var generatedStoredFmgContainer = curView.FmgImporter.GenerateStoredFmgContainerFromFile(path);
+            var generatedStoredFmgContainer = View.FmgImporter.GenerateStoredFmgContainerFromFile(path);
             if (generatedStoredFmgContainer != null)
             {
-                curView.FmgImporter.ImportText(generatedStoredFmgContainer, importBehavior);
+                View.FmgImporter.ImportText(generatedStoredFmgContainer, importBehavior);
             }
         }
     }
 
     public void ImportMenu()
     {
-        var curView = Editor.ViewHandler.ActiveView;
-
         if (ImGui.BeginMenu($"{LOC.Get("TEXT_DataTransfer_Header_Import")}##importMenuHeader"))
         {
-            if (ImGui.BeginMenu($"{LOC.Get("TEXT_DataTransfer_Header_Import_Container")}##containerImport", curView.Selection.SelectedContainerWrapper != null))
+            if (ImGui.BeginMenu($"{LOC.Get("TEXT_DataTransfer_Header_Import_Container")}##containerImport", View.Selection.SelectedContainerWrapper != null))
             {
-                curView.FmgImporter.DisplayImportList(FmgImportType.Container);
+                View.FmgImporter.DisplayImportList(FmgImportType.Container);
 
                 ImGui.EndMenu();
             }
             UIHelper.Tooltip(LOC.Get("TEXT_DataTransfer_Import_Container_TT"));
 
-            if (ImGui.BeginMenu($"{LOC.Get("TEXT_DataTransfer_Header_Import_Text_File")}##textFileImport", curView.Selection.SelectedFmgWrapper != null))
+            if (ImGui.BeginMenu($"{LOC.Get("TEXT_DataTransfer_Header_Import_Text_File")}##textFileImport", View.Selection.SelectedFmgWrapper != null))
             {
-                curView.FmgImporter.DisplayImportList(FmgImportType.FMG);
+                View.FmgImporter.DisplayImportList(FmgImportType.FMG);
 
                 ImGui.EndMenu();
             }
             UIHelper.Tooltip(LOC.Get("TEXT_DataTransfer_Import_Text_File_TT"));
 
-            if (ImGui.BeginMenu($"{LOC.Get("TEXT_DataTransfer_Header_Import_Text_Entry")}##textEntryImport", curView.Selection._selectedFmgEntry != null))
+            if (ImGui.BeginMenu($"{LOC.Get("TEXT_DataTransfer_Header_Import_Text_Entry")}##textEntryImport", View.Selection._selectedFmgEntry != null))
             {
-                curView.FmgImporter.DisplayImportList(FmgImportType.FMG_Entries);
+                View.FmgImporter.DisplayImportList(FmgImportType.FMG_Entries);
 
                 ImGui.EndMenu();
             }
@@ -301,8 +295,7 @@ public class TextDataTransferTool
 
     public void ExportContainerAction()
     {
-        var curView = Editor.ViewHandler.ActiveView;
-        var wrapper = curView.Selection.SelectedContainerWrapper;
+        var wrapper = View.Selection.SelectedContainerWrapper;
 
         if(wrapper == null)
         {
@@ -335,14 +328,13 @@ public class TextDataTransferTool
 
         var exportMod = ExportModifier.None;
 
-        curView.FmgExporter.InitializeExport(filename, ExportType.Container, exportMod);
+        View.FmgExporter.InitializeExport(filename, ExportType.Container, exportMod);
 
     }
     public void ExportFmgAction()
     {
-        var curView = Editor.ViewHandler.ActiveView;
-        var wrapper = curView.Selection.SelectedContainerWrapper;
-        var selectedFmgWrapper = curView.Selection.SelectedFmgWrapper;
+        var wrapper = View.Selection.SelectedContainerWrapper;
+        var selectedFmgWrapper = View.Selection.SelectedFmgWrapper;
 
         if (wrapper == null)
         {
@@ -381,14 +373,13 @@ public class TextDataTransferTool
 
         var exportMod = ExportModifier.None;
 
-        curView.FmgExporter.InitializeExport(filename, ExportType.FMG, exportMod);
+        View.FmgExporter.InitializeExport(filename, ExportType.FMG, exportMod);
     }
     public void ExportEntryAction()
     {
-        var curView = Editor.ViewHandler.ActiveView;
-        var wrapper = curView.Selection.SelectedContainerWrapper;
-        var selectedFmgWrapper = curView.Selection.SelectedFmgWrapper;
-        var selectedEntry = curView.Selection._selectedFmgEntry;
+        var wrapper = View.Selection.SelectedContainerWrapper;
+        var selectedFmgWrapper = View.Selection.SelectedFmgWrapper;
+        var selectedEntry = View.Selection._selectedFmgEntry;
 
         if (wrapper == null)
         {
@@ -433,22 +424,20 @@ public class TextDataTransferTool
 
         var exportMod = ExportModifier.None;
 
-        curView.FmgExporter.InitializeExport(filename, ExportType.FMG_Entries, exportMod);
+        View.FmgExporter.InitializeExport(filename, ExportType.FMG_Entries, exportMod);
     }
 
     public void ExportMenu()
     {
-        var curView = Editor.ViewHandler.ActiveView;
-
         if (ImGui.BeginMenu($"{LOC.Get("TEXT_DataTransfer_Menu_Header_Export")}##exportMenuHeader"))
         {
             // Container
-            if (ImGui.BeginMenu($"{LOC.Get("TEXT_DataTransfer_Menu_Header_Container")}##containerMenuHeader", curView.Selection.SelectedContainerWrapper != null))
+            if (ImGui.BeginMenu($"{LOC.Get("TEXT_DataTransfer_Menu_Header_Container")}##containerMenuHeader", View.Selection.SelectedContainerWrapper != null))
             {
                 // Export Selected Container
                 if (ImGui.Selectable($"{LOC.Get("TEXT_DataTransfer_Export_Selected_Container")}##exportContainerText"))
                 {
-                    curView.FmgExporter.DisplayExportModal(ExportType.Container);
+                    View.FmgExporter.DisplayExportModal(ExportType.Container);
                 }
 
                 ImGui.Separator();
@@ -456,14 +445,14 @@ public class TextDataTransferTool
                 // Export Modified Text
                 if (ImGui.Selectable($"{LOC.Get("TEXT_DataTransfer_Export_Modified_Text")}##containerExportModifiedText"))
                 {
-                    curView.FmgExporter.DisplayExportModal(ExportType.Container, ExportModifier.ModifiedOnly);
+                    View.FmgExporter.DisplayExportModal(ExportType.Container, ExportModifier.ModifiedOnly);
                 }
                 UIHelper.Tooltip(LOC.Get("TEXT_DataTransfer_Export_Modified_Text_TT"));
 
                 // Export Unique Text
                 if (ImGui.Selectable($"{LOC.Get("TEXT_DataTransfer_Export_Unique_Text")}##containerExportUniqueText"))
                 {
-                    curView.FmgExporter.DisplayExportModal(ExportType.Container, ExportModifier.UniqueOnly);
+                    View.FmgExporter.DisplayExportModal(ExportType.Container, ExportModifier.UniqueOnly);
                 }
                 UIHelper.Tooltip(LOC.Get("TEXT_DataTransfer_Export_Unique_Text_TT"));
 
@@ -472,12 +461,12 @@ public class TextDataTransferTool
             UIHelper.Tooltip(LOC.Get("TEXT_DataTransfer_Menu_Header_Container_TT"));
 
             // Text File
-            if (ImGui.BeginMenu($"{LOC.Get("TEXT_DataTransfer_Menu_Header_Text_File")}##textFileMenuHeader", curView.Selection.SelectedFmgWrapper != null))
+            if (ImGui.BeginMenu($"{LOC.Get("TEXT_DataTransfer_Menu_Header_Text_File")}##textFileMenuHeader", View.Selection.SelectedFmgWrapper != null))
             {
                 // Export Text File
                 if (ImGui.Selectable($"{LOC.Get("TEXT_DataTransfer_Export_Selected_Text_File")}##exportTextFileText"))
                 {
-                    curView.FmgExporter.DisplayExportModal(ExportType.FMG);
+                    View.FmgExporter.DisplayExportModal(ExportType.FMG);
                 }
 
                 ImGui.Separator();
@@ -485,14 +474,14 @@ public class TextDataTransferTool
                 // Export Modified Text
                 if (ImGui.Selectable($"{LOC.Get("TEXT_DataTransfer_Export_Modified_Text")}##textFileExportModifiedText"))
                 {
-                    curView.FmgExporter.DisplayExportModal(ExportType.FMG, ExportModifier.ModifiedOnly);
+                    View.FmgExporter.DisplayExportModal(ExportType.FMG, ExportModifier.ModifiedOnly);
                 }
                 UIHelper.Tooltip(LOC.Get("TEXT_DataTransfer_Export_Modified_Text_TT"));
 
                 // Export Unique Text
                 if (ImGui.Selectable($"{LOC.Get("TEXT_DataTransfer_Export_Unique_Text")}##textFileExportUniqueText"))
                 {
-                    curView.FmgExporter.DisplayExportModal(ExportType.FMG, ExportModifier.UniqueOnly);
+                    View.FmgExporter.DisplayExportModal(ExportType.FMG, ExportModifier.UniqueOnly);
                 }
                 UIHelper.Tooltip(LOC.Get("TEXT_DataTransfer_Export_Unique_Text_TT"));
 
@@ -501,12 +490,12 @@ public class TextDataTransferTool
             UIHelper.Tooltip(LOC.Get("TEXT_DataTransfer_Menu_Header_Text_File_TT"));
 
             // Text Entry
-            if (ImGui.BeginMenu($"{LOC.Get("TEXT_DataTransfer_Menu_Header_Text_Entry")}##textEntryMenuHEader", curView.Selection._selectedFmgEntry != null))
+            if (ImGui.BeginMenu($"{LOC.Get("TEXT_DataTransfer_Menu_Header_Text_Entry")}##textEntryMenuHEader", View.Selection._selectedFmgEntry != null))
             {
                 // Export Text Entry
                 if (ImGui.Selectable($"{LOC.Get("TEXT_DataTransfer_Export_Selected_Text_Entry")}##exportTextEntryText"))
                 {
-                    curView.FmgExporter.DisplayExportModal(ExportType.FMG_Entries);
+                    View.FmgExporter.DisplayExportModal(ExportType.FMG_Entries);
                 }
 
                 ImGui.Separator();
@@ -514,14 +503,14 @@ public class TextDataTransferTool
                 // Export Modified Text
                 if (ImGui.Selectable($"{LOC.Get("TEXT_DataTransfer_Export_Modified_Text")}##textEntryExportModifiedText"))
                 {
-                    curView.FmgExporter.DisplayExportModal(ExportType.FMG_Entries, ExportModifier.ModifiedOnly);
+                    View.FmgExporter.DisplayExportModal(ExportType.FMG_Entries, ExportModifier.ModifiedOnly);
                 }
                 UIHelper.Tooltip(LOC.Get("TEXT_DataTransfer_Export_Entry_Modified_Text_TT"));
 
                 // Export Unique Text
                 if (ImGui.Selectable($"{LOC.Get("TEXT_DataTransfer_Export_Unique_Text")}##textEntryExportUniqueText"))
                 {
-                    curView.FmgExporter.DisplayExportModal(ExportType.FMG_Entries, ExportModifier.UniqueOnly);
+                    View.FmgExporter.DisplayExportModal(ExportType.FMG_Entries, ExportModifier.UniqueOnly);
                 }
                 UIHelper.Tooltip(LOC.Get("TEXT_DataTransfer_Export_Entry_Unique_Text_TT"));
 

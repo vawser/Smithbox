@@ -21,6 +21,7 @@ public class FileEditorView
 
     public FileListView FileList;
     public FileItemView ItemViewer;
+    public FileToolView ToolView;
 
     public int ViewIndex;
 
@@ -35,6 +36,7 @@ public class FileEditorView
 
         FileList = new(this, project);
         ItemViewer = new(this, project);
+        ToolView = new(this, project);
     }
 
 
@@ -74,6 +76,25 @@ public class FileEditorView
             }
 
             ItemViewer.Display();
+        }
+
+        ImGui.End();
+
+        // Tools
+        ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
+        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_FileBrowserView);
+        if (ImGui.Begin($@"Tools##fileBrowser_ToolWindow_{viewIndex}", UIHelper.GetMainWindowFlags()))
+        {
+            var width = ImGui.GetContentRegionAvail().X;
+            var height = ImGui.GetContentRegionAvail().Y;
+
+            if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+            {
+                FocusManager.SetFocus(EditorFocusContext.FileBrowser_Tools);
+                Editor.ViewHandler.ActiveView = this;
+            }
+
+            ToolView.Display();
         }
 
         ImGui.End();

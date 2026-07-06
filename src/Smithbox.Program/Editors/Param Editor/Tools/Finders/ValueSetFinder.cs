@@ -7,7 +7,7 @@ namespace StudioCore.Editors.ParamEditor;
 
 public class ValueSetFinder
 {
-    public ParamEditorScreen Editor;
+    public ParamEditorView View;
     public ProjectEntry Project;
 
     public string imguiID = "ValueSetFinder";
@@ -17,14 +17,15 @@ public class ValueSetFinder
 
     public List<FieldSearchResult> Results = new();
 
-    public ValueSetFinder(ParamEditorScreen editor, ProjectEntry project)
+    public ValueSetFinder(ParamEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
+
     public void Display()
     {
-        if (Editor.Project.Handler.ParamData.PrimaryBank.Params == null)
+        if (View.Editor.Project.Handler.ParamData.PrimaryBank.Params == null)
         {
             return;
         }
@@ -125,7 +126,7 @@ public class ValueSetFinder
             Values.Add(SearchText);
         }
 
-        foreach (var p in Editor.Project.Handler.ParamData.PrimaryBank.Params)
+        foreach (var p in View.Editor.Project.Handler.ParamData.PrimaryBank.Params)
         {
             ProcessParam(ref output, p.Key, p.Value, Values);
         }

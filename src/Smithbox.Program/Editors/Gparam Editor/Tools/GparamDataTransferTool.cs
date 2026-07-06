@@ -12,7 +12,7 @@ namespace StudioCore.Editors.GparamEditor;
 
 public class GparamDataTransferTool
 {
-    private GparamEditorScreen Editor;
+    private GparamEditorView View;
     private ProjectEntry Project;
 
     public GparamImportType ImportType = GparamImportType.Overwrite;
@@ -20,9 +20,9 @@ public class GparamDataTransferTool
     public string ExportDirectory = "";
     public string ExportString = "";
 
-    public GparamDataTransferTool(GparamEditorScreen editor, ProjectEntry project)
+    public GparamDataTransferTool(GparamEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 
@@ -54,8 +54,7 @@ public class GparamDataTransferTool
     #region Import
     public void ImportTab()
     {
-        var activeView = Editor.ViewHandler.ActiveView;
-        var selection = activeView.Selection;
+        var selection = View.Selection;
         var fileEntry = selection?.SelectedFileEntry;
         var curGparam = selection?.GetSelectedGparam();
         var curParam = selection.GetSelectedGroup();
@@ -100,8 +99,7 @@ public class GparamDataTransferTool
 
     public void ImportGparamAction()
     {
-        var activeView = Editor.ViewHandler.ActiveView;
-        var selection = activeView.Selection;
+        var selection = View.Selection;
         var fileEntry = selection?.SelectedFileEntry;
         var curGparam = selection?.GetSelectedGparam();
 
@@ -111,15 +109,14 @@ public class GparamDataTransferTool
             return;
         }
 
-        ImportGPARAM(Project, activeView, fileEntry, curGparam);
+        ImportGPARAM(Project, View, fileEntry, curGparam);
 
         Smithbox.Log<GparamDataTransferTool>($"Overwritten the contents of {fileEntry.Filename} with the JSON data.");
     }
 
     public void ImportGroupAction()
     {
-        var activeView = Editor.ViewHandler.ActiveView;
-        var selection = activeView.Selection;
+        var selection = View.Selection;
         var fileEntry = selection?.SelectedFileEntry;
         var curGparam = selection?.GetSelectedGparam();
         var curParam = selection.GetSelectedGroup();
@@ -136,15 +133,14 @@ public class GparamDataTransferTool
             return;
         }
 
-        ImportGroup(Project, activeView, fileEntry, curGparam, curParam);
+        ImportGroup(Project, View, fileEntry, curGparam, curParam);
 
         Smithbox.Log<GparamDataTransferTool>($"Overwritten the contents of {curParam.Name} with the JSON data.");
     }
 
     public void ImportFieldAction()
     {
-        var activeView = Editor.ViewHandler.ActiveView;
-        var selection = activeView.Selection;
+        var selection = View.Selection;
         var fileEntry = selection?.SelectedFileEntry;
         var curGparam = selection?.GetSelectedGparam();
         var curParam = selection.GetSelectedGroup();
@@ -168,15 +164,14 @@ public class GparamDataTransferTool
             return;
         }
 
-        ImportField(Project, activeView, fileEntry, curGparam, curParam, curField);
+        ImportField(Project, View, fileEntry, curGparam, curParam, curField);
 
         Smithbox.Log<GparamDataTransferTool>($"Overwritten the contents of {curField.Name} with the JSON data.");
     }
 
     public void ImportValueAction()
     {
-        var activeView = Editor.ViewHandler.ActiveView;
-        var selection = activeView.Selection;
+        var selection = View.Selection;
         var fileEntry = selection?.SelectedFileEntry;
         var curGparam = selection?.GetSelectedGparam();
         var curParam = selection.GetSelectedGroup();
@@ -209,12 +204,12 @@ public class GparamDataTransferTool
 
         if (ImportType is GparamImportType.Overwrite)
         {
-            ImportValue(Project, activeView, fileEntry, curGparam, curParam, curField, curValue, true);
+            ImportValue(Project, View, fileEntry, curGparam, curParam, curField, curValue, true);
             Smithbox.Log<GparamDataTransferTool>($"Overwritten the {curValue.ID} with in the value list of {curField.Name} with the JSON data.");
         }
         else if(ImportType is GparamImportType.Append)
         {
-            ImportValue(Project, activeView, fileEntry, curGparam, curParam, curField, curValue, false);
+            ImportValue(Project, View, fileEntry, curGparam, curParam, curField, curValue, false);
             Smithbox.Log<GparamDataTransferTool>($"Appends the JSON data to the value list of {curField.Name}");
         }
 
@@ -222,8 +217,7 @@ public class GparamDataTransferTool
 
     public void ImportMenu()
     {
-        var activeView = Editor.ViewHandler.ActiveView;
-        var selection = activeView.Selection;
+        var selection = View.Selection;
         var fileEntry = selection?.SelectedFileEntry;
         var curGparam = selection?.GetSelectedGparam();
         var curParam = selection.GetSelectedGroup();
@@ -242,28 +236,28 @@ public class GparamDataTransferTool
             // GPARAM (full file)
             if (ImGui.MenuItem("GPARAM"))
             {
-                ImportGPARAM(Project, activeView, fileEntry, curGparam);
+                ImportGPARAM(Project, View, fileEntry, curGparam);
             }
             UIHelper.Tooltip("Replace the entire GPARAM from a previously exported JSON file.");
 
             // Param
             if (ImGui.MenuItem("Param", hasParam))
             {
-                ImportGroup(Project, activeView, fileEntry, curGparam, curParam);
+                ImportGroup(Project, View, fileEntry, curGparam, curParam);
             }
             UIHelper.Tooltip("Replace the selected Param from a previously exported JSON file.");
 
             // Field
             if (ImGui.MenuItem("Field", hasField))
             {
-                ImportField(Project, activeView, fileEntry, curGparam, curParam, curField);
+                ImportField(Project, View, fileEntry, curGparam, curParam, curField);
             }
             UIHelper.Tooltip("Replace the selected Field from a previously exported JSON file.");
 
             // Field Value
             if (ImGui.MenuItem("Field Value", hasValue))
             {
-                ImportValue(Project, activeView, fileEntry, curGparam, curParam, curField, curValue, overwrite);
+                ImportValue(Project, View, fileEntry, curGparam, curParam, curField, curValue, overwrite);
             }
             UIHelper.Tooltip("Replace the selected Field Value from a previously exported JSON file.");
 
@@ -397,8 +391,7 @@ public class GparamDataTransferTool
 
     public void ExportGparamAction()
     {
-        var activeView = Editor.ViewHandler.ActiveView;
-        var selection = activeView.Selection;
+        var selection = View.Selection;
         var fileEntry = selection?.SelectedFileEntry;
         var curGparam = selection?.GetSelectedGparam();
 
@@ -414,8 +407,7 @@ public class GparamDataTransferTool
     public void ExportGroupAction()
     {
 
-        var activeView = Editor.ViewHandler.ActiveView;
-        var selection = activeView.Selection;
+        var selection = View.Selection;
         var fileEntry = selection?.SelectedFileEntry;
         var curGparam = selection?.GetSelectedGparam();
         var curParam = selection.GetSelectedGroup();
@@ -438,8 +430,7 @@ public class GparamDataTransferTool
     public void ExportFieldAction()
     {
 
-        var activeView = Editor.ViewHandler.ActiveView;
-        var selection = activeView.Selection;
+        var selection = View.Selection;
         var fileEntry = selection?.SelectedFileEntry;
         var curGparam = selection?.GetSelectedGparam();
         var curParam = selection.GetSelectedGroup();
@@ -469,8 +460,7 @@ public class GparamDataTransferTool
     public void ExportValueAction()
     {
 
-        var activeView = Editor.ViewHandler.ActiveView;
-        var selection = activeView.Selection;
+        var selection = View.Selection;
         var fileEntry = selection?.SelectedFileEntry;
         var curGparam = selection?.GetSelectedGparam();
         var curParam = selection.GetSelectedGroup();
@@ -506,8 +496,7 @@ public class GparamDataTransferTool
 
     public void ExportMenu()
     {
-        var activeView = Editor.ViewHandler.ActiveView;
-        var selection = activeView.Selection;
+        var selection = View.Selection;
         var fileEntry = selection?.SelectedFileEntry;
         var curGparam = selection?.GetSelectedGparam();
         var curParam = selection.GetSelectedGroup();

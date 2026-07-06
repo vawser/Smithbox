@@ -17,8 +17,6 @@ public class TextEditorScreen : EditorScreen
     public TextCommandQueue CommandQueue;
     public TextShortcuts Shortcuts;
 
-    public TextToolView ToolView;
-
     public TextEditorScreen(ProjectEntry project)
     {
         Project = project;
@@ -27,8 +25,6 @@ public class TextEditorScreen : EditorScreen
 
         Shortcuts = new TextShortcuts(this, Project);
         CommandQueue = new TextCommandQueue(this, Project);
-
-        ToolView = new TextToolView(this, Project);
     }
 
     public string EditorName => "Text Editor";
@@ -43,6 +39,7 @@ public class TextEditorScreen : EditorScreen
     public void OnGUI(string[] commands)
     {
         var scale = DPI.UIScale();
+        var activeView = ViewHandler.ActiveView;
 
         Shortcuts.Monitor();
 
@@ -53,8 +50,11 @@ public class TextEditorScreen : EditorScreen
             FileMenu();
             EditMenu();
             ViewMenu();
-            ToolMenu();
-            //OptionsMenu();
+
+            if (activeView != null)
+            {
+                activeView.ToolView.DisplayDropdown();
+            }
 
             ImGui.EndMenuBar();
         }
@@ -63,13 +63,6 @@ public class TextEditorScreen : EditorScreen
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None, ref UIHelper.DockGroup_TextEditor);
 
         ViewHandler.HandleViews(dsid);
-
-        if (ViewHandler.ActiveView != null)
-        {
-            ToolView.Display();
-        }
-
-        ToolView.LanguageSyncTool.OnGui();
     }
 
     public void FileMenu()
@@ -205,24 +198,6 @@ public class TextEditorScreen : EditorScreen
             ViewHandler.DisplayMenu();
 
             ImGui.EndMenu();
-        }
-    }
-
-    public void ToolMenu()
-    {
-        var activeView = ViewHandler.ActiveView;
-
-        if (activeView != null)
-        {
-            // Tools
-            if (ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Header_Tools")}##toolsMenuHeader"))
-            {
-                ToolView.DataTransferTool.DisplayDropdown();
-
-                activeView.FmgDumper.DumperDropdownOptions();
-
-                ImGui.EndMenu();
-            }
         }
     }
 

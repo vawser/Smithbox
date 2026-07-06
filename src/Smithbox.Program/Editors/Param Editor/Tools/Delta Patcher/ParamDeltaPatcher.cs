@@ -12,7 +12,7 @@ namespace StudioCore.Editors.ParamEditor;
 
 public class ParamDeltaPatcher
 {
-    public ParamEditorScreen Editor;
+    public ParamEditorView View;
     public ProjectEntry Project;
 
     public ParamDeltaSelection Selection;
@@ -28,9 +28,9 @@ public class ParamDeltaPatcher
 
     public DeltaImportMode ImportMode = DeltaImportMode.Complex;
 
-    public ParamDeltaPatcher(ParamEditorScreen editor, ProjectEntry project)
+    public ParamDeltaPatcher(ParamEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
 
         Selection = new(this);

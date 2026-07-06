@@ -7,20 +7,61 @@ namespace StudioCore.Editors.GparamEditor;
 
 public class GparamToolView
 {
-    private GparamEditorScreen Editor;
+    private GparamEditorView View;
     private ProjectEntry Project;
 
     public GparamDataFinder DataFinder;
     public GparamDataTransferTool DataTransferTool;
 
-    public GparamToolView(GparamEditorScreen editor, ProjectEntry project)
+    public GparamToolView(GparamEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
 
-        DataFinder = new(editor, project);
+        DataFinder = new(view, project);
+        DataTransferTool = new(view, project);
+    }
 
-        DataTransferTool = new(editor, project);
+    public void Display()
+    {
+        if (!CFG.Current.Interface_GparamEditor_ToolWindow)
+            return;
+
+        if (ImGui.BeginMenuBar())
+        {
+            ViewMenu();
+
+            ImGui.EndMenuBar();
+        }
+
+        if (CFG.Current.Interface_GparamEditor_Tool_DataTransfer)
+        {
+            if (ImGui.CollapsingHeader("Data Transfer"))
+            {
+                DataTransferTool.Display();
+            }
+        }
+
+        if (CFG.Current.Interface_GparamEditor_Tool_Finder)
+        {
+            if (ImGui.CollapsingHeader("Data Finder"))
+            {
+                DataFinder.Display();
+            }
+        }
+
+        if (CFG.Current.Interface_GparamEditor_Tool_QuickEdit)
+        {
+            if (ImGui.CollapsingHeader("Quick Edit"))
+            {
+                View.QuickEditHandler.DisplayInputWindow();
+            }
+
+            if (ImGui.CollapsingHeader("Quick Edit Commands"))
+            {
+                QuickEditCheatsheet.Display();
+            }
+        }
     }
 
     public void DisplayDropdown()
@@ -31,65 +72,6 @@ public class GparamToolView
 
             ImGui.EndMenu();
         }
-    }
-
-    public void Display()
-    {
-        if (!CFG.Current.Interface_GparamEditor_ToolWindow)
-            return;
-
-        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_GparamEditor);
-        if (ImGui.Begin("Tools##ToolConfigureWindow_GparamEditor", UIHelper.GetMainWindowFlags()))
-        {
-            FocusManager.SetFocus(EditorFocusContext.GparamEditor_Tools);
-
-            var windowWidth = ImGui.GetWindowWidth();
-
-            if (ImGui.BeginMenuBar())
-            {
-                ViewMenu();
-
-                ImGui.EndMenuBar();
-            }
-
-            var activeView = Editor.ViewHandler.ActiveView;
-
-            if (activeView != null)
-            {
-                if (CFG.Current.Interface_GparamEditor_Tool_DataTransfer)
-                {
-                    if (ImGui.CollapsingHeader("Data Transfer"))
-                    {
-                        DataTransferTool.Display();
-                    }
-                }
-
-                if (CFG.Current.Interface_GparamEditor_Tool_Finder)
-                {
-                    if (ImGui.CollapsingHeader("Data Finder"))
-                    {
-                        DataFinder.Display();
-                    }
-                }
-
-                if (CFG.Current.Interface_GparamEditor_Tool_QuickEdit)
-                {
-                    if (ImGui.CollapsingHeader("Quick Edit"))
-                    {
-                        activeView.QuickEditHandler.DisplayInputWindow();
-                    }
-
-                    if (ImGui.CollapsingHeader("Quick Edit Commands"))
-                    {
-                        QuickEditCheatsheet.Display();
-                    }
-                }
-
-            }
-
-        }
-
-        ImGui.End();
     }
 
     public void ViewMenu()

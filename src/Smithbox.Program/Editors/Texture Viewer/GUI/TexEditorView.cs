@@ -22,6 +22,7 @@ public class TexEditorView
     public TexTextureFileList TextureList;
     public TexDisplayViewport DisplayViewport;
     public TexProperties Properties;
+    public TexToolView ToolView;
 
     public int ViewIndex;
 
@@ -39,6 +40,7 @@ public class TexEditorView
         ContainerList = new TexContainerList(this, Project);
         FileList = new TexInternalFileList(this, Project);
         TextureList = new TexTextureFileList(this, Project);
+        ToolView = new TexToolView(this, Project);
 
         DisplayViewport = new TexDisplayViewport(this, Project);
         Properties = new TexProperties(this, Project);
@@ -137,6 +139,25 @@ public class TexEditorView
             }
 
             Properties.Display();
+        }
+
+        ImGui.End();
+
+        /// Tools
+        ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
+        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_TextureViewerView);
+        if (ImGui.Begin($@"{LOC.Get("TEXVIEW_Window_Tools")}###textureEditor_ToolWindow_{viewIndex}", UIHelper.GetMainWindowFlags()))
+        {
+            var width = ImGui.GetContentRegionAvail().X;
+            var height = ImGui.GetContentRegionAvail().Y;
+
+            if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+            {
+                FocusManager.SetFocus(EditorFocusContext.TextureViewer_Tools);
+                Editor.ViewHandler.ActiveView = this;
+            }
+
+            ToolView.Display();
         }
 
         ImGui.End();

@@ -10,7 +10,7 @@ namespace StudioCore.Editors.TextEditor;
 
 public class GlobalTextSearch
 {
-    public TextEditorScreen Editor;
+    public TextEditorView View;
     public ProjectEntry Project;
 
     private string searchTerm = "";
@@ -22,16 +22,14 @@ public class GlobalTextSearch
 
     private bool hasAlreadySearched = false;
 
-    public GlobalTextSearch(TextEditorScreen editor, ProjectEntry project)
+    public GlobalTextSearch(TextEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 
     public void Display()
     {
-        var curView = Editor.ViewHandler.ActiveView;
-
         ImGui.BeginChild("TextSearchSection", ImGuiChildFlags.Borders);
 
         UIHelper.SimpleHeader(
@@ -196,8 +194,6 @@ public class GlobalTextSearch
 
     public void SearchText()
     {
-        var curView = Editor.ViewHandler.ActiveView;
-
         if (searchTerm == "")
         {
             Smithbox.LogError<GlobalTextSearch>(LOC.Get("TEXT_TextSearch_No_Search_Term"));
@@ -217,7 +213,7 @@ public class GlobalTextSearch
 
 
         hasAlreadySearched = true;
-        searchResults = TextFinder.GetGlobalTextResult(curView, searchTerm, filterType, matchType, ignoreCase);
+        searchResults = TextFinder.GetGlobalTextResult(View, searchTerm, filterType, matchType, ignoreCase);
     }
 
     public void ClearResults()

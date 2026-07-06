@@ -12,7 +12,7 @@ namespace StudioCore.Editors.TextEditor;
 /// </summary>
 public class TextFileList
 {
-    private TextEditorView Parent;
+    private TextEditorView View;
     private ProjectEntry Project;
 
     public string FmgListFilter = "";
@@ -20,7 +20,7 @@ public class TextFileList
 
     public TextFileList(TextEditorView view, ProjectEntry project)
     {
-        Parent = view;
+        View = view;
         Project = project;
     }
 
@@ -65,12 +65,12 @@ public class TextFileList
 
     public void DisplayFmgList()
     {
-        if (Parent.Selection.SelectedContainerWrapper != null && Parent.Selection.SelectedContainerWrapper.FmgWrappers != null)
+        if (View.Selection.SelectedContainerWrapper != null && View.Selection.SelectedContainerWrapper.FmgWrappers != null)
         {
             // Ignore the grouping stuff for DS2 as it happens on the FMG Container level
             if (Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
             {
-                foreach (var fmgInfo in Parent.Selection.SelectedContainerWrapper.FmgWrappers)
+                foreach (var fmgInfo in View.Selection.SelectedContainerWrapper.FmgWrappers)
                 {
                     HandleFmgView(fmgInfo);
                 }
@@ -87,7 +87,7 @@ public class TextFileList
         // If not in Simple mode, display all FMG files fully
         if (!CFG.Current.TextEditor_Text_File_List_Grouped_Display)
         {
-            var info = Parent.Selection.SelectedContainerWrapper;
+            var info = View.Selection.SelectedContainerWrapper;
 
             // Common
             if (TextUtils.HasGroupEntries(Project, info, "Common"))
@@ -95,11 +95,11 @@ public class TextFileList
                 if (ImGui.CollapsingHeader(
                     $"{LOC.Get("TEXT_FileList_ListHeader_General")}##generalSection", ImGuiTreeNodeFlags.DefaultOpen))
                 {
-                    foreach (var fmgInfo in Parent.Selection.SelectedContainerWrapper.FmgWrappers)
+                    foreach (var fmgInfo in View.Selection.SelectedContainerWrapper.FmgWrappers)
                     {
                         var id = fmgInfo.ID;
                         var fmgName = fmgInfo.Name;
-                        var displayGroup = TextUtils.GetFmgGrouping(Project, Parent.Selection.SelectedContainerWrapper, id, fmgName);
+                        var displayGroup = TextUtils.GetFmgGrouping(Project, View.Selection.SelectedContainerWrapper, id, fmgName);
 
                         if (displayGroup == "Common")
                         {
@@ -115,11 +115,11 @@ public class TextFileList
                 if (ImGui.CollapsingHeader(
                     $"{LOC.Get("TEXT_FileList_ListHeader_Menu")}##menuSection", ImGuiTreeNodeFlags.DefaultOpen))
                 {
-                    foreach (var fmgInfo in Parent.Selection.SelectedContainerWrapper.FmgWrappers)
+                    foreach (var fmgInfo in View.Selection.SelectedContainerWrapper.FmgWrappers)
                     {
                         var id = fmgInfo.ID;
                         var fmgName = fmgInfo.Name;
-                        var displayGroup = TextUtils.GetFmgGrouping(Project, Parent.Selection.SelectedContainerWrapper, id, fmgName);
+                        var displayGroup = TextUtils.GetFmgGrouping(Project, View.Selection.SelectedContainerWrapper, id, fmgName);
 
                         if (displayGroup == "Menu")
                         {
@@ -135,11 +135,11 @@ public class TextFileList
                 if (ImGui.CollapsingHeader(
                     $"{LOC.Get("TEXT_FileList_ListHeader_Title")}##titleSection", ImGuiTreeNodeFlags.DefaultOpen))
                 {
-                    foreach (var fmgInfo in Parent.Selection.SelectedContainerWrapper.FmgWrappers)
+                    foreach (var fmgInfo in View.Selection.SelectedContainerWrapper.FmgWrappers)
                     {
                         var id = fmgInfo.ID;
                         var fmgName = fmgInfo.Name;
-                        var displayGroup = TextUtils.GetFmgGrouping(Project, Parent.Selection.SelectedContainerWrapper, id, fmgName);
+                        var displayGroup = TextUtils.GetFmgGrouping(Project, View.Selection.SelectedContainerWrapper, id, fmgName);
 
                         if (displayGroup == "Title")
                         {
@@ -155,11 +155,11 @@ public class TextFileList
                 if (ImGui.CollapsingHeader(
                     $"{LOC.Get("TEXT_FileList_ListHeader_Summary")}##summarySection", ImGuiTreeNodeFlags.DefaultOpen))
                 {
-                    foreach (var fmgInfo in Parent.Selection.SelectedContainerWrapper.FmgWrappers)
+                    foreach (var fmgInfo in View.Selection.SelectedContainerWrapper.FmgWrappers)
                     {
                         var id = fmgInfo.ID;
                         var fmgName = fmgInfo.Name;
-                        var displayGroup = TextUtils.GetFmgGrouping(Project, Parent.Selection.SelectedContainerWrapper, id, fmgName);
+                        var displayGroup = TextUtils.GetFmgGrouping(Project, View.Selection.SelectedContainerWrapper, id, fmgName);
 
                         if (displayGroup == "Summary")
                         {
@@ -175,11 +175,11 @@ public class TextFileList
                 if (ImGui.CollapsingHeader(
                     $"{LOC.Get("TEXT_FileList_ListHeader_Description")}##descriptionSection", ImGuiTreeNodeFlags.DefaultOpen))
                 {
-                    foreach (var fmgInfo in Parent.Selection.SelectedContainerWrapper.FmgWrappers)
+                    foreach (var fmgInfo in View.Selection.SelectedContainerWrapper.FmgWrappers)
                     {
                         var id = fmgInfo.ID;
                         var fmgName = fmgInfo.Name;
-                        var displayGroup = TextUtils.GetFmgGrouping(Project, Parent.Selection.SelectedContainerWrapper, id, fmgName);
+                        var displayGroup = TextUtils.GetFmgGrouping(Project, View.Selection.SelectedContainerWrapper, id, fmgName);
 
                         if (displayGroup == "Description")
                         {
@@ -195,11 +195,11 @@ public class TextFileList
                 if (ImGui.CollapsingHeader(
                     $"{LOC.Get("TEXT_FileList_ListHeader_Effect")}##effectSection", ImGuiTreeNodeFlags.DefaultOpen))
                 {
-                    foreach (var fmgInfo in Parent.Selection.SelectedContainerWrapper.FmgWrappers)
+                    foreach (var fmgInfo in View.Selection.SelectedContainerWrapper.FmgWrappers)
                     {
                         var id = fmgInfo.ID;
                         var fmgName = fmgInfo.Name;
-                        var displayGroup = TextUtils.GetFmgGrouping(Project, Parent.Selection.SelectedContainerWrapper, id, fmgName);
+                        var displayGroup = TextUtils.GetFmgGrouping(Project, View.Selection.SelectedContainerWrapper, id, fmgName);
 
                         if (displayGroup == "Effect")
                         {
@@ -215,11 +215,11 @@ public class TextFileList
                 if (ImGui.CollapsingHeader(
                     $"{LOC.Get("TEXT_FileList_ListHeader_Unsorted")}##unsortedSection", ImGuiTreeNodeFlags.DefaultOpen))
                 {
-                    foreach (var fmgInfo in Parent.Selection.SelectedContainerWrapper.FmgWrappers)
+                    foreach (var fmgInfo in View.Selection.SelectedContainerWrapper.FmgWrappers)
                     {
                         var id = fmgInfo.ID;
                         var fmgName = fmgInfo.Name;
-                        var displayGroup = TextUtils.GetFmgGrouping(Project, Parent.Selection.SelectedContainerWrapper, id, fmgName);
+                        var displayGroup = TextUtils.GetFmgGrouping(Project, View.Selection.SelectedContainerWrapper, id, fmgName);
 
                         if (displayGroup == "Unknown")
                         {
@@ -232,7 +232,7 @@ public class TextFileList
         // Otherwise, display only the Title FMG files and ungrouped FMG files, split by Base/DLC1/DLC2
         else
         {
-            var info = Parent.Selection.SelectedContainerWrapper;
+            var info = View.Selection.SelectedContainerWrapper;
 
             // Base
             if (TextUtils.HasDLCEntries(Project, info, ""))
@@ -240,12 +240,12 @@ public class TextFileList
                 if (ImGui.CollapsingHeader(
                     $"{LOC.Get("TEXT_FileList_ListHeader_Base")}##baseSection", ImGuiTreeNodeFlags.DefaultOpen))
                 {
-                    foreach (var fmgInfo in Parent.Selection.SelectedContainerWrapper.FmgWrappers)
+                    foreach (var fmgInfo in View.Selection.SelectedContainerWrapper.FmgWrappers)
                     {
                         var id = fmgInfo.ID;
                         var fmgName = fmgInfo.Name;
-                        var displayGroup = TextUtils.GetFmgGrouping(Project, Parent.Selection.SelectedContainerWrapper, id, fmgName);
-                        var dlcGroup = TextUtils.GetFmgDlcGrouping(Project, Parent.Selection.SelectedContainerWrapper, id, fmgName);
+                        var displayGroup = TextUtils.GetFmgGrouping(Project, View.Selection.SelectedContainerWrapper, id, fmgName);
+                        var dlcGroup = TextUtils.GetFmgDlcGrouping(Project, View.Selection.SelectedContainerWrapper, id, fmgName);
 
                         if (TextUtils.IsSimpleFmg(displayGroup) && dlcGroup == "")
                         {
@@ -264,12 +264,12 @@ public class TextFileList
                 if (ImGui.CollapsingHeader(
                     $"{LOC.Get("TEXT_FileList_ListHeader_DLC1")}##dlc1Section", ImGuiTreeNodeFlags.DefaultOpen))
                 {
-                    foreach (var fmgInfo in Parent.Selection.SelectedContainerWrapper.FmgWrappers)
+                    foreach (var fmgInfo in View.Selection.SelectedContainerWrapper.FmgWrappers)
                     {
                         var id = fmgInfo.ID;
                         var fmgName = fmgInfo.Name;
-                        var displayGroup = TextUtils.GetFmgGrouping(Project, Parent.Selection.SelectedContainerWrapper, id, fmgName);
-                        var dlcGroup = TextUtils.GetFmgDlcGrouping(Project, Parent.Selection.SelectedContainerWrapper, id, fmgName);
+                        var displayGroup = TextUtils.GetFmgGrouping(Project, View.Selection.SelectedContainerWrapper, id, fmgName);
+                        var dlcGroup = TextUtils.GetFmgDlcGrouping(Project, View.Selection.SelectedContainerWrapper, id, fmgName);
 
                         if (TextUtils.IsSimpleFmg(displayGroup) && dlcGroup == "DLC 1")
                         {
@@ -288,12 +288,12 @@ public class TextFileList
                 if (ImGui.CollapsingHeader(
                     $"{LOC.Get("TEXT_FileList_ListHeader_DLC2")}##dlc2section", ImGuiTreeNodeFlags.DefaultOpen))
                 {
-                    foreach (var fmgInfo in Parent.Selection.SelectedContainerWrapper.FmgWrappers)
+                    foreach (var fmgInfo in View.Selection.SelectedContainerWrapper.FmgWrappers)
                     {
                         var id = fmgInfo.ID;
                         var fmgName = fmgInfo.Name;
-                        var displayGroup = TextUtils.GetFmgGrouping(Project, Parent.Selection.SelectedContainerWrapper, id, fmgName);
-                        var dlcGroup = TextUtils.GetFmgDlcGrouping(Project, Parent.Selection.SelectedContainerWrapper, id, fmgName);
+                        var displayGroup = TextUtils.GetFmgGrouping(Project, View.Selection.SelectedContainerWrapper, id, fmgName);
+                        var dlcGroup = TextUtils.GetFmgDlcGrouping(Project, View.Selection.SelectedContainerWrapper, id, fmgName);
 
                         if (TextUtils.IsSimpleFmg(displayGroup) && dlcGroup == "DLC 2")
                         {
@@ -313,8 +313,8 @@ public class TextFileList
     {
         var id = info.ID;
         var fmgName = info.Name;
-        var displayName = TextUtils.GetFmgDisplayName(Project, Parent.Selection.SelectedContainerWrapper, id, fmgName);
-        var dlcGroupingName = TextUtils.GetFmgDlcGrouping(Project, Parent.Selection.SelectedContainerWrapper, id, fmgName);
+        var displayName = TextUtils.GetFmgDisplayName(Project, View.Selection.SelectedContainerWrapper, id, fmgName);
+        var dlcGroupingName = TextUtils.GetFmgDlcGrouping(Project, View.Selection.SelectedContainerWrapper, id, fmgName);
 
         var isMatch = EditorFilters.IsMatch(
             FmgListFilter, fmgName, ExactFmgListFilter, displayName, false, false, id.ToString());
@@ -340,37 +340,37 @@ public class TextFileList
             }
 
             // Script row
-            if (ImGui.Selectable($"{selectableName}##{id}{selectableName}", id == Parent.Selection.SelectedFmgKey))
+            if (ImGui.Selectable($"{selectableName}##{id}{selectableName}", id == View.Selection.SelectedFmgKey))
             {
-                Parent.Selection.SelectFmg(info);
+                View.Selection.SelectFmg(info);
             }
 
             // Arrow Selection
-            if (ImGui.IsItemHovered() && Parent.Selection.SelectNextFmg)
+            if (ImGui.IsItemHovered() && View.Selection.SelectNextFmg)
             {
-                Parent.Selection.SelectNextFmg = false;
-                Parent.Selection.SelectFmg(info);
+                View.Selection.SelectNextFmg = false;
+                View.Selection.SelectFmg(info);
             }
 
             if (ImGui.IsItemFocused())
             {
                 if (InputManager.HasArrowSelection())
                 {
-                    Parent.Selection.SelectNextFmg = true;
+                    View.Selection.SelectNextFmg = true;
                 }
             }
 
             // Only apply to selection
-            if (Parent.Selection.SelectedFmgKey != -1)
+            if (View.Selection.SelectedFmgKey != -1)
             {
-                if (Parent.Selection.SelectedFmgKey == id)
+                if (View.Selection.SelectedFmgKey == id)
                 {
                     ContextMenu(info);
                 }
 
-                if (Parent.Selection.FocusFmgSelection && Parent.Selection.SelectedFmgKey == id)
+                if (View.Selection.FocusFmgSelection && View.Selection.SelectedFmgKey == id)
                 {
-                    Parent.Selection.FocusFmgSelection = false;
+                    View.Selection.FocusFmgSelection = false;
                     ImGui.SetScrollHereY();
                 }
             }
@@ -397,10 +397,10 @@ public class TextFileList
             }
 
             // TODO: with grouped FMGs, this will only sync the header FMG, not the associated sub-FMGs, should be fixed.
-            Parent.Editor.ToolView.LanguageSyncTool.DisplaySyncOptions(Parent.Selection.SelectedFmgKey);
+            View.ToolView.LanguageSyncTool.DisplaySyncOptions(View.Selection.SelectedFmgKey);
 
-            Parent.FmgImporter.TextFileDropdownOptions();
-            Parent.FmgExporter.TextFileDropdownOptions();
+            View.FmgImporter.TextFileDropdownOptions();
+            View.FmgExporter.TextFileDropdownOptions();
 
             ImGui.EndPopup();
         }

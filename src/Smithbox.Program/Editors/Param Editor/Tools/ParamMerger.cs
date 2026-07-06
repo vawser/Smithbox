@@ -14,7 +14,7 @@ namespace StudioCore.Editors.ParamEditor;
 
 public class ParamMerger
 {
-    public ParamEditorScreen Editor;
+    public ParamEditorView View;
     public ProjectEntry Project;
 
     public ProjectEntry ParamMerge_TargetProject;
@@ -30,9 +30,9 @@ public class ParamMerger
     public bool ParamMerge_IncludeAdded = true;
     public bool ParamMerge_IncludeModified = true;
 
-    public ParamMerger(ParamEditorScreen editor, ProjectEntry project)
+    public ParamMerger(ParamEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 
@@ -64,7 +64,7 @@ public class ParamMerger
                 if (proj == null)
                     continue;
 
-                if (proj.Descriptor.ProjectType != Editor.Project.Descriptor.ProjectType)
+                if (proj.Descriptor.ProjectType != View.Project.Descriptor.ProjectType)
                     continue;
 
                 if (proj == Smithbox.Orchestrator.SelectedProject)
@@ -196,7 +196,7 @@ public class ParamMerger
             return;
         }
 
-        if (!Editor.Project.Handler.ParamData.AuxBanks.ContainsKey(ParamMerge_TargetProject.Descriptor.ProjectName))
+        if (!View.Project.Handler.ParamData.AuxBanks.ContainsKey(ParamMerge_TargetProject.Descriptor.ProjectName))
         {
             Smithbox.Log<ParamMerger>($"Target project: {ParamMerge_TargetProject.Descriptor.ProjectName} is not loaded, cannot merge.");
             return;
@@ -204,7 +204,7 @@ public class ParamMerger
 
         ParamMerge_InProgress = true;
 
-        var auxBank = Editor.Project.Handler.ParamData.AuxBanks[ParamMerge_TargetProject.Descriptor.ProjectName];
+        var auxBank = View.Project.Handler.ParamData.AuxBanks[ParamMerge_TargetProject.Descriptor.ProjectName];
 
         // ParamSearchEngine: auxparam {ParamMerge_TargetProject.ProjectName}
         // RowSearchEngine: modified && unique ID:
@@ -219,7 +219,7 @@ public class ParamMerger
                 {
                     var command = $"auxparam {ParamMerge_TargetProject.Descriptor.ProjectName} {entry.Key}: added: paste;";
 
-                    Editor.ViewHandler.ActiveView.MassEdit.ApplyMassEdit(command);
+                    View.MassEdit.ApplyMassEdit(command);
                 }
             }
         }
@@ -236,7 +236,7 @@ public class ParamMerger
                         command = $"auxparam {ParamMerge_TargetProject.Descriptor.ProjectName} {entry.Key}: !added && auxmodified: paste;";
                     }
 
-                    Editor.ViewHandler.ActiveView.MassEdit.ApplyMassEdit(command);
+                    View.MassEdit.ApplyMassEdit(command);
                 }
             }
         }

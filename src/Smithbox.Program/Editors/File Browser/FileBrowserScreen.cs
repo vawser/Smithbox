@@ -19,8 +19,6 @@ public class FileBrowserScreen : EditorScreen
     public FileCommandQueue CommandQueue;
     public FileShortcuts Shortcuts;
 
-    public FileToolView ToolView;
-
     public string EditorName => "File Browser##fileBrowserEditor";
     public string CommandEndpoint => "file";
     public string SaveType => "File";
@@ -35,8 +33,6 @@ public class FileBrowserScreen : EditorScreen
         CommandQueue = new(this, project);
 
         ViewHandler = new(this, project);
-
-        ToolView = new(this, project);
     }
 
     public void OnGUI(string[] commands)
@@ -60,11 +56,6 @@ public class FileBrowserScreen : EditorScreen
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None, ref UIHelper.DockGroup_FileBrowser);
 
         ViewHandler.HandleViews(dsid);
-
-        if (ViewHandler.ActiveView != null)
-        {
-            ToolView.Display();
-        }
     }
 
 

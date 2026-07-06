@@ -11,7 +11,7 @@ namespace StudioCore.Editors.ParamEditor;
 
 public class ParamDataTransferTool
 {
-    public ParamEditorScreen Editor;
+    public ParamEditorView View;
     public ProjectEntry Project;
 
     public string ImportPath = null;
@@ -28,16 +28,15 @@ public class ParamDataTransferTool
     public string ExportDirectory = "";
     public string ExportFilename = "";
 
-    public ParamDataTransferTool(ParamEditorScreen editor, ProjectEntry project)
+    public ParamDataTransferTool(ParamEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 
     public void DisplayDropdown()
     {
-        var activeView = Editor.ViewHandler.ActiveView;
-        var activeParamExists = activeView.Selection.ActiveParamExists();
+        var activeParamExists = View.Selection.ActiveParamExists();
 
         if (ImGui.BeginMenu("Export CSV", activeParamExists))
         {
@@ -205,8 +204,7 @@ public class ParamDataTransferTool
 
     public void ImportMenu()
     {
-        var curView = Editor.ViewHandler.ActiveView;
-        var primaryBank = curView.Editor.Project.Handler.ParamData.PrimaryBank;
+        var primaryBank = View.Editor.Project.Handler.ParamData.PrimaryBank;
         var delimiter = CFG.Current.Param_Export_Delimiter;
 
         if (ImGui.MenuItem("All fields"))
@@ -221,7 +219,7 @@ public class ParamDataTransferTool
 
         if (ImGui.BeginMenu("Specific Field"))
         {
-            foreach (PARAMDEF.Field field in primaryBank.Params[curView.Selection.GetActiveParam()].AppliedParamdef.Fields)
+            foreach (PARAMDEF.Field field in primaryBank.Params[View.Selection.GetActiveParam()].AppliedParamdef.Fields)
             {
                 if (ImGui.MenuItem(field.InternalName))
                 {
@@ -232,7 +230,7 @@ public class ParamDataTransferTool
             ImGui.EndMenu();
         }
 
-        if (ImGui.BeginMenu("From file...", curView.Selection.ActiveParamExists()))
+        if (ImGui.BeginMenu("From file...", View.Selection.ActiveParamExists()))
         {
             if (ImGui.MenuItem("All fields"))
             {
@@ -257,7 +255,7 @@ public class ParamDataTransferTool
 
             if (ImGui.BeginMenu("Specific Field"))
             {
-                foreach (PARAMDEF.Field field in primaryBank.Params[curView.Selection.GetActiveParam()].AppliedParamdef.Fields)
+                foreach (PARAMDEF.Field field in primaryBank.Params[View.Selection.GetActiveParam()].AppliedParamdef.Fields)
                 {
                     if (ImGui.MenuItem(field.InternalName))
                     {
@@ -282,8 +280,7 @@ public class ParamDataTransferTool
 
     private void ImportAllFields(ImportSourceType importType, string csvPath)
     {
-        var curView = Editor.ViewHandler.ActiveView;
-        var primaryBank = curView.Editor.Project.Handler.ParamData.PrimaryBank;
+        var primaryBank = View.Editor.Project.Handler.ParamData.PrimaryBank;
         var delimiter = CFG.Current.Param_Export_Delimiter;
 
         var csvString = ""; 
@@ -294,14 +291,14 @@ public class ParamDataTransferTool
         }
         else if (importType is ImportSourceType.UserInput)
         {
-            csvString = curView.MassEdit.State.MassEditInput_CSV;
+            csvString = View.MassEdit.State.MassEditInput_CSV;
         }
 
         (var result, CompoundAction action) = ParamIO.ApplyCSV(
                 Project,
                 primaryBank,
                 csvString,
-                curView.Selection.GetActiveParam(),
+                View.Selection.GetActiveParam(),
                 CFG.Current.Param_CSV_Append_Only,
                 CFG.Current.Param_CSV_Replace_Row,
                 delimiter[0]);
@@ -310,10 +307,10 @@ public class ParamDataTransferTool
         {
             if (action.HasActions)
             {
-                curView.Editor.ActionManager.ExecuteAction(action);
+                View.Editor.ActionManager.ExecuteAction(action);
             }
 
-            curView.Editor.Project.Handler.ParamData.RefreshParamDifferenceCacheTask();
+            View.Editor.Project.Handler.ParamData.RefreshParamDifferenceCacheTask();
         }
         else
         {
@@ -322,14 +319,13 @@ public class ParamDataTransferTool
 
         if (importType is ImportSourceType.UserInput)
         {
-            curView.MassEdit.State.MassEditResult_CSV = result;
+            View.MassEdit.State.MassEditResult_CSV = result;
         }
     }
 
     private void ImportSpecificField(ImportSourceType importType, string csvPath, string internalName)
     {
-        var curView = Editor.ViewHandler.ActiveView;
-        var primaryBank = curView.Project.Handler.ParamData.PrimaryBank;
+        var primaryBank = View.Project.Handler.ParamData.PrimaryBank;
         var delimiter = CFG.Current.Param_Export_Delimiter;
 
         var csvString = "";
@@ -340,23 +336,23 @@ public class ParamDataTransferTool
         }
         else if (importType is ImportSourceType.UserInput)
         {
-            csvString = curView.MassEdit.State.MassEditInput_CSV;
+            csvString = View.MassEdit.State.MassEditInput_CSV;
         }
 
         (var result, CompoundAction action) = ParamIO.ApplySingleCSV(
             Project,
             primaryBank,
             csvString,
-            curView.Selection.GetActiveParam(),
+            View.Selection.GetActiveParam(),
             internalName,
             delimiter[0],
             false);
 
         if (action != null)
         {
-            curView.Editor.ActionManager.ExecuteAction(action);
+            View.Editor.ActionManager.ExecuteAction(action);
 
-            curView.Editor.Project.Handler.ParamData.RefreshParamDifferenceCacheTask();
+            View.Editor.Project.Handler.ParamData.RefreshParamDifferenceCacheTask();
         }
         else
         {
@@ -365,7 +361,7 @@ public class ParamDataTransferTool
 
         if (importType is ImportSourceType.UserInput)
         {
-            curView.MassEdit.State.MassEditResult_CSV = result;
+            View.MassEdit.State.MassEditResult_CSV = result;
         }
     }
     #endregion
@@ -373,8 +369,6 @@ public class ParamDataTransferTool
     #region Export
     public void ExportTab()
     {
-        var activeView = Project.Handler.ParamEditor.ViewHandler.ActiveView;
-
         // Only supports a partial set of the dropdown export actions
 
         if (ImGui.BeginTabItem($"Export"))
@@ -466,8 +460,7 @@ public class ParamDataTransferTool
 
     public void ExportMultipleToFile()
     {
-        var curView = Editor.ViewHandler.ActiveView;
-        var primaryBank = curView.Project.Handler.ParamData.PrimaryBank;
+        var primaryBank = View.Project.Handler.ParamData.PrimaryBank;
         var delimiter = CFG.Current.Param_Export_Delimiter;
 
         if (ExportDirectory == "")
@@ -526,11 +519,10 @@ public class ParamDataTransferTool
 
     public void ExportSingleToClipboard()
     {
-        var curView = Editor.ViewHandler.ActiveView;
-        var primaryBank = curView.Project.Handler.ParamData.PrimaryBank;
+        var primaryBank = View.Project.Handler.ParamData.PrimaryBank;
         var delimiter = CFG.Current.Param_Export_Delimiter;
 
-        var activeParam = curView.Selection.GetActiveParam();
+        var activeParam = View.Selection.GetActiveParam();
 
         if (activeParam == null)
         {
@@ -599,11 +591,10 @@ public class ParamDataTransferTool
 
     public void ExportSingleToFile()
     {
-        var curView = Editor.ViewHandler.ActiveView;
-        var primaryBank = curView.Project.Handler.ParamData.PrimaryBank;
+        var primaryBank = View.Project.Handler.ParamData.PrimaryBank;
         var delimiter = CFG.Current.Param_Export_Delimiter;
 
-        var activeParam = curView.Selection.GetActiveParam();
+        var activeParam = View.Selection.GetActiveParam();
 
         if (activeParam == null)
         {
@@ -690,8 +681,7 @@ public class ParamDataTransferTool
 
     public void ExportMenu()
     {
-        var activeView = Editor.ViewHandler.ActiveView;
-        var primaryBank = activeView.Project.Handler.ParamData.PrimaryBank;
+        var primaryBank = View.Project.Handler.ParamData.PrimaryBank;
 
         if (ImGui.BeginMenu("All rows"))
         {
@@ -727,13 +717,13 @@ public class ParamDataTransferTool
             ImGui.EndMenu();
         }
 
-        if (ImGui.BeginMenu("Modified rows", primaryBank.GetVanillaDiffRows(activeView.Selection.GetActiveParam()).Any()))
+        if (ImGui.BeginMenu("Modified rows", primaryBank.GetVanillaDiffRows(View.Selection.GetActiveParam()).Any()))
         {
             CsvExportDisplay(ParamUpgradeRowGetType.ModifiedRows);
             ImGui.EndMenu();
         }
 
-        if (ImGui.BeginMenu("Selected rows", activeView.Selection.RowSelectionExists()))
+        if (ImGui.BeginMenu("Selected rows", View.Selection.RowSelectionExists()))
         {
             CsvExportDisplay(ParamUpgradeRowGetType.SelectedRows);
             ImGui.EndMenu();
@@ -769,8 +759,7 @@ public class ParamDataTransferTool
 
     public void CsvExportDisplay(ParamUpgradeRowGetType rowType)
     {
-        var activeView = Editor.ViewHandler.ActiveView;
-        var primaryBank = Editor.Project.Handler.ParamData.PrimaryBank;
+        var primaryBank = View.Editor.Project.Handler.ParamData.PrimaryBank;
         var delimiter = CFG.Current.Param_Export_Delimiter;
 
         if (ImGui.BeginMenu("Export to window..."))
@@ -787,7 +776,7 @@ public class ParamDataTransferTool
                     EditorCommandQueue.AddCommand($@"param/menu/massEditSingleCSVExport/Name/{rowType}");
                 }
 
-                foreach (PARAMDEF.Field field in primaryBank.Params[activeView.Selection.GetActiveParam()].AppliedParamdef.Fields)
+                foreach (PARAMDEF.Field field in primaryBank.Params[View.Selection.GetActiveParam()].AppliedParamdef.Fields)
                 {
                     if (ImGui.MenuItem(field.InternalName))
                     {
@@ -831,7 +820,7 @@ public class ParamDataTransferTool
                     }
                 }
 
-                foreach (PARAMDEF.Field field in primaryBank.Params[activeView.Selection.GetActiveParam()].AppliedParamdef.Fields)
+                foreach (PARAMDEF.Field field in primaryBank.Params[View.Selection.GetActiveParam()].AppliedParamdef.Fields)
                 {
                     if (ImGui.MenuItem(field.InternalName))
                     {
@@ -857,18 +846,17 @@ public class ParamDataTransferTool
 
     private void ExportEntireParam()
     {
-        var curView = Editor.ViewHandler.ActiveView;
-        var primaryBank = curView.Project.Handler.ParamData.PrimaryBank;
+        var primaryBank = View.Project.Handler.ParamData.PrimaryBank;
         var delimiter = CFG.Current.Param_Export_Delimiter;
 
-        IReadOnlyList<Param.Row> rows = primaryBank.Params[curView.Selection.GetActiveParam()].Rows;
+        IReadOnlyList<Param.Row> rows = primaryBank.Params[View.Selection.GetActiveParam()].Rows;
 
-        var writePath = Path.Combine(ExportPath, $"{curView.Selection.GetActiveParam()}.csv");
+        var writePath = Path.Combine(ExportPath, $"{View.Selection.GetActiveParam()}.csv");
 
         var csvString = ParamIO.GenerateCSV(
             Project,
             rows,
-            primaryBank.Params[curView.Selection.GetActiveParam()],
+            primaryBank.Params[View.Selection.GetActiveParam()],
             delimiter[0]);
 
         TryWriteFile(writePath, csvString);
@@ -876,8 +864,7 @@ public class ParamDataTransferTool
 
     private void ExportAllParams()
     {
-        var curView = Editor.ViewHandler.ActiveView;
-        var primaryBank = curView.Project.Handler.ParamData.PrimaryBank;
+        var primaryBank = View.Project.Handler.ParamData.PrimaryBank;
         var delimiter = CFG.Current.Param_Export_Delimiter;
 
         foreach (KeyValuePair<string, Param> param in primaryBank.Params)
@@ -898,8 +885,7 @@ public class ParamDataTransferTool
 
     private void ExportAllModifiedParams()
     {
-        var curView = Editor.ViewHandler.ActiveView;
-        var primaryBank = curView.Project.Handler.ParamData.PrimaryBank;
+        var primaryBank = View.Project.Handler.ParamData.PrimaryBank;
         var delimiter = CFG.Current.Param_Export_Delimiter;
 
         foreach (KeyValuePair<string, Param> param in primaryBank.Params)
@@ -924,57 +910,53 @@ public class ParamDataTransferTool
     }
     private void ExportAllFields(ParamUpgradeRowGetType rowType)
     {
-        var activeView = Editor.ViewHandler.ActiveView;
-        var primaryBank = Editor.Project.Handler.ParamData.PrimaryBank;
+        var primaryBank = View.Project.Handler.ParamData.PrimaryBank;
         var delimiter = CFG.Current.Param_Export_Delimiter;
 
         IReadOnlyList<Param.Row> rows = CsvExportGetRows(rowType);
 
-        var outputString = ParamIO.GenerateCSV(Project, rows, primaryBank.Params[activeView.Selection.GetActiveParam()], delimiter[0]);
+        var outputString = ParamIO.GenerateCSV(Project, rows, primaryBank.Params[View.Selection.GetActiveParam()], delimiter[0]);
 
-        var writePath = Path.Combine(ExportPath, $"{activeView.Selection.GetActiveParam()}.csv");
+        var writePath = Path.Combine(ExportPath, $"{View.Selection.GetActiveParam()}.csv");
 
         TryWriteFile(writePath, outputString);
     }
 
     private void ExportNameField(ParamUpgradeRowGetType rowType)
     {
-        var activeView = Editor.ViewHandler.ActiveView;
-        var primaryBank = Editor.Project.Handler.ParamData.PrimaryBank;
+        var primaryBank = View.Project.Handler.ParamData.PrimaryBank;
         var delimiter = CFG.Current.Param_Export_Delimiter;
 
         IReadOnlyList<Param.Row> rows = CsvExportGetRows(rowType);
 
-        var outputString = ParamIO.GenerateSingleCSV(rows, primaryBank.Params[activeView.Selection.GetActiveParam()], "Name", delimiter[0]);
+        var outputString = ParamIO.GenerateSingleCSV(rows, primaryBank.Params[View.Selection.GetActiveParam()], "Name", delimiter[0]);
 
-        var writePath = Path.Combine(ExportPath, $"{activeView.Selection.GetActiveParam()}.csv");
+        var writePath = Path.Combine(ExportPath, $"{View.Selection.GetActiveParam()}.csv");
 
         TryWriteFile(writePath, outputString);
     }
 
     private void ExportSpecificField(ParamUpgradeRowGetType rowType)
     {
-        var activeView = Editor.ViewHandler.ActiveView;
-        var primaryBank = Editor.Project.Handler.ParamData.PrimaryBank;
+        var primaryBank = View.Project.Handler.ParamData.PrimaryBank;
         var delimiter = CFG.Current.Param_Export_Delimiter;
 
         IReadOnlyList<Param.Row> rows = CsvExportGetRows(rowType);
 
-        var outputString = ParamIO.GenerateSingleCSV(rows, primaryBank.Params[activeView.Selection.GetActiveParam()], SpecificFieldName, delimiter[0]);
+        var outputString = ParamIO.GenerateSingleCSV(rows, primaryBank.Params[View.Selection.GetActiveParam()], SpecificFieldName, delimiter[0]);
 
-        var writePath = Path.Combine(ExportPath, $"{activeView.Selection.GetActiveParam()}.csv");
+        var writePath = Path.Combine(ExportPath, $"{View.Selection.GetActiveParam()}.csv");
 
         TryWriteFile(writePath, outputString);
     }
 
     public IReadOnlyList<Param.Row> CsvExportGetRows(ParamUpgradeRowGetType rowType)
     {
-        var activeView = Editor.ViewHandler.ActiveView;
-        var primaryBank = Editor.Project.Handler.ParamData.PrimaryBank;
+        var primaryBank = View.Project.Handler.ParamData.PrimaryBank;
 
         IReadOnlyList<Param.Row> rows;
 
-        var activeParam = activeView.Selection.GetActiveParam();
+        var activeParam = View.Selection.GetActiveParam();
 
         if (rowType == ParamUpgradeRowGetType.AllRows)
         {
@@ -993,7 +975,7 @@ public class ParamDataTransferTool
         else if (rowType == ParamUpgradeRowGetType.SelectedRows)
         {
             // Selected rows
-            rows = activeView.Selection.GetSelectedRows();
+            rows = View.Selection.GetSelectedRows();
         }
         else
         {

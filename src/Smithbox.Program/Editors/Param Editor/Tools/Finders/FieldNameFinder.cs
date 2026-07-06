@@ -14,7 +14,7 @@ namespace StudioCore.Editors.ParamEditor;
 
 public class FieldNameFinder
 {
-    public ParamEditorScreen Editor;
+    public ParamEditorView View;
     public ProjectEntry Project;
 
     public string imguiID = "FieldNameFinder";
@@ -30,15 +30,15 @@ public class FieldNameFinder
 
     public List<DataSearchResult> Results = new();
 
-    public FieldNameFinder(ParamEditorScreen editor, ProjectEntry project)
+    public FieldNameFinder(ParamEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 
     public void Display()
     {
-        if (Editor.Project.Handler.ParamData.PrimaryBank.Params == null)
+        if (View.Editor.Project.Handler.ParamData.PrimaryBank.Params == null)
         {
             return;
         }
@@ -204,7 +204,7 @@ public class FieldNameFinder
 
     public void ConductSearch()
     {
-        if (Editor.Project.Handler.ParamData.PrimaryBank.Params != null)
+        if (View.Editor.Project.Handler.ParamData.PrimaryBank.Params != null)
         {
             CachedSearchText = SearchText;
 
@@ -229,7 +229,7 @@ public class FieldNameFinder
 
         var searchComponents = SearchText.ToLower().Split(" ");
 
-        foreach (var p in Editor.Project.Handler.ParamData.PrimaryBank.Params)
+        foreach (var p in View.Editor.Project.Handler.ParamData.PrimaryBank.Params)
         {
             if (TargetedParams.Count > 0)
             {
@@ -240,14 +240,14 @@ public class FieldNameFinder
             }
 
             var def = p.Value.AppliedParamdef;
-            var meta = Editor.Project.Handler.ParamData.GetParamMeta(def);
-            var annotations = Editor.Project.Handler.ParamData.GetParamAnnotations(def.ParamType);
+            var meta = View.Editor.Project.Handler.ParamData.GetParamMeta(def);
+            var annotations = View.Editor.Project.Handler.ParamData.GetParamAnnotations(def.ParamType);
 
             foreach (var field in def.Fields)
             {
                 bool addResult = false;
-                var fieldMeta = Editor.Project.Handler.ParamData.GetParamFieldMeta(meta, field);
-                var fieldAnnotation = Editor.Project.Handler.ParamData.GetFieldAnnotation(annotations, field.InternalName);
+                var fieldMeta = View.Editor.Project.Handler.ParamData.GetParamFieldMeta(meta, field);
+                var fieldAnnotation = View.Editor.Project.Handler.ParamData.GetFieldAnnotation(annotations, field.InternalName);
 
                 foreach (var entry in searchComponents)
                 {

@@ -20,12 +20,12 @@ namespace StudioCore.Editors.ParamEditor;
 
 public class ParamReloader
 {
-    public ParamEditorScreen Editor;
+    public ParamEditorView View;
     public ProjectEntry Project;
 
-    public ParamReloader(ParamEditorScreen editor, ProjectEntry project)
+    public ParamReloader(ParamEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
 
         UpdateSelectedOffset();
@@ -87,7 +87,7 @@ public class ParamReloader
         var windowWidth = ImGui.GetWindowWidth();
 
         // Param Reloader
-        if (ParamReloadSupported(Editor.Project.Descriptor.ProjectType))
+        if (ParamReloadSupported(View.Project.Descriptor.ProjectType))
         {
             if (ImGui.CollapsingHeader($"{LOC.Get("PARAM_Tools_Reloader_Header")}##reloaderHeader"))
             {
@@ -175,7 +175,7 @@ public class ParamReloader
 
                 if (processArray.Any())
                 {
-                    SoulsMemoryHandler memoryHandler = new(Editor, processArray.First());
+                    SoulsMemoryHandler memoryHandler = new(View.Editor, processArray.First());
 
                     ReloadMemoryParamsThreads(bank, offsets, paramNames, memoryHandler);
                     memoryHandler.Terminate();

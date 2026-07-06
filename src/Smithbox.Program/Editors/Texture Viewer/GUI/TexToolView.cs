@@ -7,17 +7,17 @@ namespace StudioCore.Editors.TextureViewer;
 
 public class TexToolView
 {
-    public TextureViewerScreen Editor;
+    public TexEditorView View;
     public ProjectEntry Project;
 
     public TextureExport TextureExport;
 
-    public TexToolView(TextureViewerScreen editor, ProjectEntry project)
+    public TexToolView(TexEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
 
-        TextureExport = new TextureExport(editor, Project);
+        TextureExport = new TextureExport(view, Project);
     }
 
     public void Display()
@@ -25,28 +25,18 @@ public class TexToolView
         if (!CFG.Current.Interface_TextureViewer_ToolWindow)
             return;
 
-        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_TextureViewer);
-        if (ImGui.Begin($"{LOC.Get("TEXVIEW_Window_Tools")}###ToolConfigureWindow_TextureViewer", UIHelper.GetMainWindowFlags()))
+        if (ImGui.BeginMenuBar())
         {
-            FocusManager.SetFocus(EditorFocusContext.TextureViewer_Tools);
+            ViewMenu();
 
-            var windowWidth = ImGui.GetWindowWidth();
-
-            if (ImGui.BeginMenuBar())
-            {
-                ViewMenu();
-
-                ImGui.EndMenuBar();
-            }
-
-            // Export Texture
-            if (CFG.Current.Interface_TextureViewer_Tool_ExportTexture)
-            {
-                TextureExport.Display();
-            }
+            ImGui.EndMenuBar();
         }
 
-        ImGui.End();
+        // Export Texture
+        if (CFG.Current.Interface_TextureViewer_Tool_ExportTexture)
+        {
+            TextureExport.Display();
+        }
     }
 
     public void ViewMenu()

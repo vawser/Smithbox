@@ -17,31 +17,25 @@ namespace StudioCore.Editors.FileBrowser;
 
 public class FileToolView
 {
-    public FileBrowserScreen Editor;
+    public FileEditorView View;
     public ProjectEntry Project;
 
     public FileUnpackTool UnpackTool;
     public FileExtractTool ExtractTool;
 
-    public FileToolView(FileBrowserScreen editor, ProjectEntry project)
+    public FileToolView(FileEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
 
-        var activeView = editor.ViewHandler.ActiveView;
-
-        UnpackTool = new(activeView, project);
-        ExtractTool = new(activeView, project);
+        UnpackTool = new(view, project);
+        ExtractTool = new(view, project);
     }
 
     public void Display()
     {
         if (!CFG.Current.Interface_FileBrowser_ToolView)
             return;
-
-        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_FileBrowser);
-        ImGui.Begin($"Tools##FileBrowserToolView", ImGuiWindowFlags.MenuBar);
-        FocusManager.SetFocus(EditorFocusContext.FileBrowser_Tools);
 
         if (ImGui.BeginMenuBar())
         {
@@ -65,8 +59,6 @@ public class FileToolView
                 ExtractTool.Display();
             }
         }
-
-        ImGui.End();
     }
 
     public void ViewMenu()

@@ -14,7 +14,7 @@ namespace StudioCore.Editors.ParamEditor;
 
 public class ParamListCategories
 {
-    public ParamEditorScreen Editor;
+    public ParamEditorView View;
     public ProjectEntry Project;
 
     private bool isNewEntryMode = false;
@@ -29,9 +29,9 @@ public class ParamListCategories
     private List<string> NewEntryParams = new List<string>();
     private int NewEntryParamsCount = 1;
 
-    public ParamListCategories(ParamEditorScreen editor, ProjectEntry project)
+    public ParamListCategories(ParamEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 

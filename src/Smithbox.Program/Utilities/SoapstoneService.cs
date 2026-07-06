@@ -826,7 +826,7 @@ public class SoapstoneService : SoapstoneServiceV1
                 return response;
             }
 
-            var reloader = curProject.Handler.ParamEditor.ToolMenu.ParamReloader;
+            var reloader = curProject.Handler.ParamEditor.ViewHandler.ActiveView.ToolMenu.ParamReloader;
 
             if (!reloader.CanReloadMemoryParams(activeView.GetPrimaryBank()))
             {

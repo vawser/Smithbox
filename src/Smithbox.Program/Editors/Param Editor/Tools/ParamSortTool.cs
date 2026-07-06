@@ -11,22 +11,20 @@ using System.Threading.Tasks;
 
 public class ParamSortTool
 {
-    public ParamEditorScreen Editor;
+    public ParamEditorView View;
     public ProjectEntry Project;
 
-    public ParamSortTool(ParamEditorScreen editor, ProjectEntry project)
+    public ParamSortTool(ParamEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 
     public void DisplayDropDown()
     {
-        var activeView = Editor.ViewHandler.ActiveView;
-
         if (ImGui.MenuItem("Sort Rows"))
         {
-            if (activeView.Selection.ActiveParamExists())
+            if (View.Selection.ActiveParamExists())
             {
                 SortRows();
             }
@@ -55,19 +53,17 @@ public class ParamSortTool
 
     public void SortRows()
     {
-        var activeView = Editor.ViewHandler.ActiveView;
-
-        if (activeView.Selection.ActiveParamExists())
+        if (View.Selection.ActiveParamExists())
         {
             var action = SortRowsAction(
-                activeView,
-                activeView.GetPrimaryBank(),
-                activeView.Selection.GetActiveParam());
+                View,
+                View.GetPrimaryBank(),
+                View.Selection.GetActiveParam());
 
-            activeView.Editor.ActionManager.ExecuteAction(action);
+            View.Editor.ActionManager.ExecuteAction(action);
 
             Smithbox.Log(typeof(ParamRowTools), $"Param rows sorted for " +
-                $"{activeView.Selection.GetActiveParam()}");
+                $"{View.Selection.GetActiveParam()}");
         }
     }
 

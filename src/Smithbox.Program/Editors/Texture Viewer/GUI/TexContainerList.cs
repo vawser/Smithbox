@@ -13,7 +13,7 @@ namespace StudioCore.Editors.TextureViewer;
 
 public class TexContainerList
 {
-    public TexEditorView Parent;
+    public TexEditorView View;
     public ProjectEntry Project;
 
     private string FileListFilter = "";
@@ -21,7 +21,7 @@ public class TexContainerList
 
     public TexContainerList(TexEditorView view, ProjectEntry project)
     {
-        Parent = view;
+        View = view;
         Project = project;
     }
 
@@ -149,9 +149,9 @@ public class TexContainerList
                     var displayName = entry.Key.Path;
 
                     var isSelected = false;
-                    if (Parent.Selection.SelectedFileEntry != null)
+                    if (View.Selection.SelectedFileEntry != null)
                     {
-                        if (Parent.Selection.SelectedFileEntry.Path == entry.Key.Path)
+                        if (View.Selection.SelectedFileEntry.Path == entry.Key.Path)
                         {
                             isSelected = true;
                         }
@@ -164,13 +164,13 @@ public class TexContainerList
                         TargetDict = dict;
                         TargetTextureBinderEntry = entry.Key;
 
-                        Parent.Editor.ViewHandler.ActiveView = Parent;
+                        View.Editor.ViewHandler.ActiveView = View;
                     }
 
                     // Arrow Selection
-                    if (ImGui.IsItemHovered() && Parent.Selection.SelectFile)
+                    if (ImGui.IsItemHovered() && View.Selection.SelectFile)
                     {
-                        Parent.Selection.SelectFile = false;
+                        View.Selection.SelectFile = false;
                         TargetDict = dict;
                         LoadTextureBinder = true;
                         TargetTextureBinderEntry = entry.Key;
@@ -180,7 +180,7 @@ public class TexContainerList
                     {
                         if (InputManager.HasArrowSelection())
                         {
-                            Parent.Selection.SelectFile = true;
+                            View.Selection.SelectFile = true;
                         }
                     }
 
@@ -218,14 +218,14 @@ public class TexContainerList
             {
                 if (ImGui.MenuItem($"{LOC.Get("TEXVIEW_ContainerList_Context_All_TPFs")}##allTpfsAction"))
                 {
-                    _ = Parent.Editor.ToolView.TextureExport.ExportTPFsFromContainerAsync(entry.Value);
+                    _ = View.ToolView.TextureExport.ExportTPFsFromContainerAsync(entry.Value);
                 }
                 UIHelper.Tooltip(
                     LOC.Get("TEXVIEW_ContainerList_Context_All_TPFs_TT", CFG.Current.TextureViewerToolbar_ExportTextureLocation));
 
                 if (ImGui.MenuItem($"{LOC.Get("TEXVIEW_ContainerList_Context_All_Textures")}##allTexturesAction"))
                 {
-                    _ = Parent.Editor.ToolView.TextureExport.ExportTexturesFromContainerAsync(entry.Value);
+                    _ = View.ToolView.TextureExport.ExportTexturesFromContainerAsync(entry.Value);
                 }
                 UIHelper.Tooltip(
                     LOC.Get("TEXVIEW_ContainerList_Context_All_Textures_TT", CFG.Current.TextureViewerToolbar_ExportTextureLocation));
@@ -272,7 +272,7 @@ public class TexContainerList
 
         if (LoadTextureBinder)
         {
-            Parent.Selection.ResetSelection();
+            View.Selection.ResetSelection();
 
             if (TargetTextureBinderEntry.Extension == "tpfbhd")
             {
@@ -289,11 +289,11 @@ public class TexContainerList
 
             if (targetBinder.Key != null)
             {
-                Parent.Selection.SelectTextureFile(targetBinder.Key, targetBinder.Value);
+                View.Selection.SelectTextureFile(targetBinder.Key, targetBinder.Value);
             }
 
             LoadTextureBinder = false;
-            Parent.Selection.AutoSelectTpf = true;
+            View.Selection.AutoSelectTpf = true;
         }
     }
 

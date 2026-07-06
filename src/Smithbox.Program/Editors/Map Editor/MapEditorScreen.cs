@@ -1,14 +1,12 @@
 ﻿using Hexa.NET.ImGui;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
-using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.Viewport;
 using StudioCore.Keybinds;
 using StudioCore.Logger;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
-using System;
 using System.Numerics;
 using Veldrid;
 using Veldrid.Sdl2;
@@ -27,8 +25,6 @@ public class MapEditorScreen : EditorScreen
     public MapCommandQueue CommandQueue;
     public MapShortcuts Shortcuts;
 
-    public MapToolWindow ToolWindow;
-
     public ResourceLoadWindow LoadingModal;
     public ResourceListTool ResourceList;
 
@@ -43,8 +39,6 @@ public class MapEditorScreen : EditorScreen
 
         CommandQueue = new MapCommandQueue(this, project);
         Shortcuts = new MapShortcuts(this, project);
-
-        ToolWindow = new MapToolWindow(this, project);
     }
 
     public string EditorName => "Visual Map Editor";
@@ -57,6 +51,8 @@ public class MapEditorScreen : EditorScreen
     {
         var scale = DPI.UIScale();
 
+        var activeView = ViewHandler.ActiveView;
+
         Shortcuts.Monitor();
         CommandQueue.Parse(commands);
 
@@ -65,7 +61,12 @@ public class MapEditorScreen : EditorScreen
             FileMenu();
             EditMenu();
             ViewMenu();
-            ToolWindow.DisplayDropdown();
+
+            if(activeView != null)
+            {
+                activeView.ToolView.DisplayDropdown();
+            }
+
             OptionsMenu();
 
             ImGui.EndMenuBar();
@@ -76,12 +77,8 @@ public class MapEditorScreen : EditorScreen
 
         ViewHandler.HandleViews(dsid);
 
-        var activeView = ViewHandler.ActiveView;
-
         if (activeView != null)
         {
-            ToolWindow.Display();
-
             var curViewport = activeView.ViewportHandler.ActiveViewport;
 
             if (curViewport.Viewport != null)

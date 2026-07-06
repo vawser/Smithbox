@@ -12,7 +12,7 @@ using static SoulsFormats.GPARAM;
 namespace StudioCore.Editors.GparamEditor;
 public class GparamFieldList
 {
-    private GparamEditorView Parent;
+    private GparamEditorView View;
     private ProjectEntry Project;
 
     private string FieldListFilter = "";
@@ -20,7 +20,7 @@ public class GparamFieldList
 
     public GparamFieldList(GparamEditorView view, ProjectEntry project)
     {
-        Parent = view;
+        View = view;
         Project = project;
     }
 
@@ -55,13 +55,13 @@ public class GparamFieldList
 
     private void DisplayFieldList()
     {
-        if (!Parent.Selection.IsGparamGroupSelected())
+        if (!View.Selection.IsGparamGroupSelected())
             return;
 
-        var fileEntry = Parent.Selection.SelectedFileEntry;
-        var data = Parent.Selection.GetSelectedGparam();
-        var group = Parent.Selection.GetSelectedGroup();
-        var field = Parent.Selection.GetSelectedField();
+        var fileEntry = View.Selection.SelectedFileEntry;
+        var data = View.Selection.GetSelectedGparam();
+        var group = View.Selection.GetSelectedGroup();
+        var field = View.Selection.GetSelectedField();
 
         if (data == null)
             return;
@@ -86,7 +86,7 @@ public class GparamFieldList
 
     private void DisplayFieldSelectable(FileDictionaryEntry fileEntry, GPARAM data, Param group, IField field, int index)
     {
-        var selected = index == Parent.Selection._selectedParamFieldIndex;
+        var selected = index == View.Selection._selectedParamFieldIndex;
 
         if (field == null)
             return;
@@ -105,7 +105,7 @@ public class GparamFieldList
         // Field row
         if (ImGui.Selectable($@"[{index}] {fieldName}##{field.Key}{index}", selected))
         {
-            Parent.Selection.SetGparamField(index, field);
+            View.Selection.SetGparamField(index, field);
         }
 
         if (CFG.Current.GparamEditor_Field_List_Display_Descriptions)
@@ -117,17 +117,17 @@ public class GparamFieldList
         }
 
         // Arrow Selection
-        if (ImGui.IsItemHovered() && Parent.Selection.SelectGparamField)
+        if (ImGui.IsItemHovered() && View.Selection.SelectGparamField)
         {
-            Parent.Selection.SelectGparamField = false;
-            Parent.Selection.SetGparamField(index, field);
+            View.Selection.SelectGparamField = false;
+            View.Selection.SetGparamField(index, field);
         }
 
         if (ImGui.IsItemFocused())
         {
             if (InputManager.HasArrowSelection())
             {
-                Parent.Selection.SelectGparamField = true;
+                View.Selection.SelectGparamField = true;
             }
         }
 
@@ -155,7 +155,7 @@ public class GparamFieldList
 
     public void ContextMenu(FileDictionaryEntry fileEntry, GPARAM data, GPARAM.Param param, GPARAM.IField field, int index)
     {
-        var fieldIndex = Parent.Selection._selectedParamFieldIndex;
+        var fieldIndex = View.Selection._selectedParamFieldIndex;
 
         if (index != fieldIndex)
             return;
@@ -182,7 +182,7 @@ public class GparamFieldList
             // Import
             if (ImGui.Selectable("Import"))
             {
-                Parent.Editor.ToolView.DataTransferTool.ImportField(Project, Parent, fileEntry, data, param, field);
+                View.ToolView.DataTransferTool.ImportField(Project, View, fileEntry, data, param, field);
             }
             UIHelper.Tooltip("Import a GPARAM Field json to overwrite this entry.");
 
@@ -194,7 +194,7 @@ public class GparamFieldList
 
                 if (ImGui.Selectable("Export File"))
                 {
-                    Parent.Editor.ToolView.DataTransferTool.ExportFieldFile(fileEntry, data, param, field, OverrideFileName);
+                    View.ToolView.DataTransferTool.ExportFieldFile(fileEntry, data, param, field, OverrideFileName);
                 }
 
                 ImGui.EndMenu();
@@ -220,13 +220,13 @@ public class GparamFieldList
             {
                 if (ImGui.Selectable("Quick Edit"))
                 {
-                    Parent.QuickEditHandler.UpdateFieldFilter(field.Key);
+                    View.QuickEditHandler.UpdateFieldFilter(field.Key);
                 }
                 UIHelper.Tooltip("Add this field to the Field Filter in the Quick Edit window.");
 
                 if (ImGui.Selectable("Data Finder"))
                 {
-                    Parent.Editor.ToolView.DataFinder.UpdateFieldFilter(field.Key);
+                    View.ToolView.DataFinder.UpdateFieldFilter(field.Key);
                 }
                 UIHelper.Tooltip("Add this field to the Field Filter in the Data Finder window.");
 
@@ -290,7 +290,7 @@ public class GparamFieldList
     private string GetFieldName(IField entry)
     {
         var name = entry.Key;
-        var groupId = Parent.Selection.GetSelectedGroup().Key;
+        var groupId = View.Selection.GetSelectedGroup().Key;
         var fieldId = entry.Key;
         var fieldName = GparamMetaUtils.GetFieldName(Project, groupId, fieldId);
 
@@ -305,7 +305,7 @@ public class GparamFieldList
     private string GetFieldDescription(IField entry)
     {
         var desc = entry.Key;
-        var groupId = Parent.Selection.GetSelectedGroup().Key;
+        var groupId = View.Selection.GetSelectedGroup().Key;
         var fieldId = entry.Key;
         var fieldDesc = GparamMetaUtils.GetFieldDescription(Project, groupId, fieldId);
 
@@ -451,19 +451,19 @@ public class GparamFieldList
     public void AddFields(GPARAM data, Param group, List<GparamAnnotationFieldEntry> entries)
     {
         var action = new AddFieldAction(Project, data, group, entries);
-        Parent.ActionManager.ExecuteAction(action);
+        View.ActionManager.ExecuteAction(action);
     }
 
     public void DeleteFields(GPARAM data, Param group, List<GPARAM.IField> entries)
     {
         var action = new DeleteFieldAction(Project, data, group, entries);
-        Parent.ActionManager.ExecuteAction(action);
+        View.ActionManager.ExecuteAction(action);
     }
 
     public void AddFieldsShortcut()
     {
-        var data = Parent.Selection.GetSelectedGparam();
-        var group = Parent.Selection.GetSelectedGroup();
+        var data = View.Selection.GetSelectedGparam();
+        var group = View.Selection.GetSelectedGroup();
 
         PopulateAddOptions(group);
 
@@ -491,9 +491,9 @@ public class GparamFieldList
 
     public void DeleteFieldsShortcut()
     {
-        var data = Parent.Selection.GetSelectedGparam();
-        var group = Parent.Selection.GetSelectedGroup();
-        var field = Parent.Selection.GetSelectedField();
+        var data = View.Selection.GetSelectedGparam();
+        var group = View.Selection.GetSelectedGroup();
+        var field = View.Selection.GetSelectedField();
 
         DeleteFields(data, group, new List<GPARAM.IField>() { field });
     }

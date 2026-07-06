@@ -10,12 +10,12 @@ using System.Threading.Tasks;
 namespace StudioCore.Editors.ModelEditor;
 public class ModelDataTransferTool
 {
-    public ModelEditorScreen Editor;
+    public ModelEditorView View;
     public ProjectEntry Project;
 
-    public ModelDataTransferTool(ModelEditorScreen editor, ProjectEntry project)
+    public ModelDataTransferTool(ModelEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 
@@ -58,8 +58,6 @@ public class ModelDataTransferTool
 
     public void ImportMenu()
     {
-        var curView = Editor.ViewHandler.ActiveView;
-
         if (ImGui.BeginMenu("Import"))
         {
             // TODO
@@ -84,8 +82,6 @@ public class ModelDataTransferTool
 
     public void ExportMenu()
     {
-        var curView = Editor.ViewHandler.ActiveView;
-
         if (ImGui.BeginMenu("Export"))
         {
             // TODO

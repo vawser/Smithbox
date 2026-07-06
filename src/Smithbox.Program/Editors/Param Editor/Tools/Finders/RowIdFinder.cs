@@ -6,7 +6,7 @@ namespace StudioCore.Editors.ParamEditor;
 
 public class RowIdFinder
 {
-    public ParamEditorScreen Editor;
+    public ParamEditorView View;
     public ProjectEntry Project;
 
     public string imguiID = "RowIDFinder";
@@ -21,15 +21,15 @@ public class RowIdFinder
 
     public List<DataSearchResult> Results = new();
 
-    public RowIdFinder(ParamEditorScreen editor, ProjectEntry project)
+    public RowIdFinder(ParamEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 
     public void Display()
     {
-        if (Editor.Project.Handler.ParamData.PrimaryBank.Params == null)
+        if (View.Editor.Project.Handler.ParamData.PrimaryBank.Params == null)
         {
             return;
         }
@@ -186,7 +186,7 @@ public class RowIdFinder
     {
         List<DataSearchResult> output = new();
 
-        foreach (var p in Editor.Project.Handler.ParamData.PrimaryBank.Params)
+        foreach (var p in View.Editor.Project.Handler.ParamData.PrimaryBank.Params)
         {
             if (TargetedParams.Count > 0)
             {

@@ -21,7 +21,6 @@ public class GparamEditorScreen : EditorScreen
     public GparamShortcuts Shortcuts;
     public GparamCommandQueue CommandQueue;
 
-    public GparamToolView ToolView;
 
     public GparamEditorScreen(ProjectEntry project)
     {
@@ -31,8 +30,6 @@ public class GparamEditorScreen : EditorScreen
 
         Shortcuts = new GparamShortcuts(this, project);
         CommandQueue = new GparamCommandQueue(this, Project);
-
-        ToolView = new GparamToolView(this, Project);
     }
 
     public string EditorName => "Gparam Editor##GparamEditor";
@@ -58,7 +55,11 @@ public class GparamEditorScreen : EditorScreen
             EditMenu();
             ViewMenu();
 
-            ToolView.DisplayDropdown();
+            var activeView = ViewHandler.ActiveView;
+            if(activeView != null)
+            {
+                activeView.ToolView.DisplayDropdown();
+            }
 
             ImGui.EndMenuBar();
         }
@@ -67,11 +68,6 @@ public class GparamEditorScreen : EditorScreen
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None, ref UIHelper.DockGroup_GparamEditor);
 
         ViewHandler.HandleViews(dsid);
-
-        if (ViewHandler.ActiveView != null)
-        {
-            ToolView.Display();
-        }
     }
 
     public void FileMenu()

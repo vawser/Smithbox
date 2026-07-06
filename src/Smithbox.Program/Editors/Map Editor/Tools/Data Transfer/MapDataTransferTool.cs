@@ -11,12 +11,12 @@ namespace StudioCore.Editors.MapEditor;
 
 public class MapDataTransferTool
 {
-    public MapEditorScreen Editor;
+    public MapEditorView View;
     public ProjectEntry Project;
 
-    public MapDataTransferTool(MapEditorScreen editor, ProjectEntry project)
+    public MapDataTransferTool(MapEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 
@@ -32,8 +32,6 @@ public class MapDataTransferTool
     }
     public void Display()
     {
-        var activeView = Editor.ViewHandler.ActiveView;
-
         ImGui.BeginChild("DataTransferSection", ImGuiChildFlags.Borders);
 
         ImGui.BeginTabBar("dataTransferTabs");
@@ -43,7 +41,7 @@ public class MapDataTransferTool
 
         if (ImGui.BeginTabItem("Extraction"))
         {
-            activeView.MapModelInsightTool.OnToolWindow();
+            View.MapModelInsightTool.OnToolWindow();
 
             ImGui.EndTabItem();
         }
@@ -68,8 +66,6 @@ public class MapDataTransferTool
 
     public void ImportMenu()
     {
-        var curView = Editor.ViewHandler.ActiveView;
-
         if (ImGui.BeginMenu("Import"))
         {
             // TODO
@@ -94,8 +90,6 @@ public class MapDataTransferTool
 
     public void ExportMenu()
     {
-        var curView = Editor.ViewHandler.ActiveView;
-
         if (ImGui.BeginMenu("Export"))
         {
             // TODO

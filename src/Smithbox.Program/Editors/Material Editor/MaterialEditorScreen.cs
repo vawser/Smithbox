@@ -20,8 +20,6 @@ public class MaterialEditorScreen : EditorScreen
     public MaterialCommandQueue CommandQueue;
     public MaterialShortcuts Shortcuts;
 
-    public MaterialToolWindow ToolWindow;
-
     public MaterialEditorScreen(ProjectEntry project)
     {
         Project = project;
@@ -30,8 +28,6 @@ public class MaterialEditorScreen : EditorScreen
 
         CommandQueue = new(this, project);
         Shortcuts = new(this, project);
-
-        ToolWindow = new(this, project);
     }
 
     public string EditorName => "Material Editor##MaterialEditor";
@@ -53,7 +49,12 @@ public class MaterialEditorScreen : EditorScreen
             FileMenu();
             EditMenu();
             ViewMenu();
-            ToolWindow.ToolMenu();
+
+            var activeView = ViewHandler.ActiveView;
+            if(activeView != null)
+            {
+                activeView.ToolView.ToolMenu();
+            }
 
             //OptionsMenu();
 
@@ -64,11 +65,6 @@ public class MaterialEditorScreen : EditorScreen
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None, ref UIHelper.DockGroup_MaterialEditor);
 
         ViewHandler.HandleViews(dsid);
-
-        if (ViewHandler.ActiveView != null)
-        {
-            ToolWindow.Draw();
-        }
     }
 
     public void FileMenu()

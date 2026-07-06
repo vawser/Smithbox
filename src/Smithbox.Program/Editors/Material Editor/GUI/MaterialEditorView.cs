@@ -29,6 +29,7 @@ public class MaterialEditorView
     public MaterialContainerList ContainerList;
     public MaterialFileList FileList;
     public MaterialProperties Properties;
+    public MaterialToolWindow ToolView;
 
     public int ViewIndex;
 
@@ -45,6 +46,8 @@ public class MaterialEditorView
         ContainerList = new(this, project);
         FileList = new(this, project);
         Properties = new(this, project);
+
+        ToolView = new(this, project);
     }
 
     public void Display(uint dockspaceId, int viewIndex, bool doFocus, bool isActiveView)
@@ -105,6 +108,25 @@ public class MaterialEditorView
             }
 
             Properties.Draw();
+        }
+
+        ImGui.End();
+
+        // Tools
+        ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
+        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_MaterialEditorView);
+        if (ImGui.Begin($@"Tools##materialEditor_ToolWindow_{viewIndex}", UIHelper.GetInnerWindowFlags()))
+        {
+            var width = ImGui.GetContentRegionAvail().X;
+            var height = ImGui.GetContentRegionAvail().Y;
+
+            if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+            {
+                FocusManager.SetFocus(EditorFocusContext.MaterialEditor_Tools);
+                Editor.ViewHandler.ActiveView = this;
+            }
+
+            ToolView.Draw();
         }
 
         ImGui.End();

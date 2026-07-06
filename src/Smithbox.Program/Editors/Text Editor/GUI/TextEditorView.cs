@@ -31,6 +31,7 @@ public class TextEditorView
     public TextFileList FileList;
     public TextEntryList TextEntryList;
     public TextContents TextContents;
+    public TextToolView ToolView;
 
     public TextEntryCreatorTool TextEntryCreator;
     public TextExporterModal TextExportModal;
@@ -56,6 +57,7 @@ public class TextEditorView
         FileList = new TextFileList(this, Project);
         TextEntryList = new TextEntryList(this, Project);
         TextContents = new TextContents(this, Project);
+        ToolView = new TextToolView(this, Project);
 
         TextEntryCreator = new TextEntryCreatorTool(this, Project);
         TextExportModal = new TextExporterModal(this, Project);
@@ -141,6 +143,25 @@ public class TextEditorView
             }
 
             TextContents.Display();
+        }
+
+        ImGui.End();
+
+        // Tools
+        ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
+        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_TextEditorView);
+        if (ImGui.Begin($@"{LOC.Get("TEXT_Window_Tools")}###textEditor_ToolWindow_{viewIndex}", UIHelper.GetMainWindowFlags()))
+        {
+            var width = ImGui.GetContentRegionAvail().X;
+            var height = ImGui.GetContentRegionAvail().Y;
+
+            if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+            {
+                FocusManager.SetFocus(EditorFocusContext.TextEditor_Tools);
+                Editor.ViewHandler.ActiveView = this;
+            }
+
+            ToolView.Display();
         }
 
         ImGui.End();

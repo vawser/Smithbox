@@ -1,18 +1,12 @@
 ﻿using Hexa.NET.ImGui;
-using Microsoft.AspNetCore.Components.Forms;
 using SoulsFormats;
-using StudioCore.Application;
-using StudioCore.Utilities;
-using System.Collections.Generic;
-using System.Linq;
 using System.Numerics;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.TextEditor;
 
 public class TextMerge
 {
-    public TextEditorScreen Editor;
+    public TextEditorView View;
     public ProjectEntry Project;
 
     private ProjectEntry targetProject = null;
@@ -20,16 +14,14 @@ public class TextMerge
     private bool isMergeInProgress = false;
     private bool mergePrimaryLanguageOnly = true;
 
-    public TextMerge(TextEditorScreen editor, ProjectEntry project)
+    public TextMerge(TextEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 
     public void Display()
     {
-        var curView = Editor.ViewHandler.ActiveView;
-
         ImGui.BeginChild("TextMergeSection", ImGuiChildFlags.Borders);
 
         UIHelper.WrappedText(LOC.Get("TEXT_TextMerge_Hint"));
@@ -48,7 +40,7 @@ public class TextMerge
             if (proj == null)
                 continue;
 
-            if (proj.Descriptor.ProjectType != curView.Project.Descriptor.ProjectType)
+            if (proj.Descriptor.ProjectType != View.Project.Descriptor.ProjectType)
                 continue;
 
             if (proj == Smithbox.Orchestrator.SelectedProject)
@@ -109,9 +101,7 @@ public class TextMerge
             return;
         }
 
-        var curView = Editor.ViewHandler.ActiveView;
-
-        HandleMergeAction(curView);
+        HandleMergeAction(View);
     }
 
     public async void HandleMergeAction(TextEditorView view)

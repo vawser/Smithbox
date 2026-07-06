@@ -6,7 +6,7 @@ namespace StudioCore.Editors.TextEditor;
 
 public class TextExporterModal
 {
-    private TextEditorView Parent;
+    private TextEditorView View;
     private ProjectEntry Project;
 
     public bool ShowModal = false;
@@ -15,7 +15,7 @@ public class TextExporterModal
 
     public TextExporterModal(TextEditorView view, ProjectEntry project)
     {
-        Parent = view;
+        View = view;
         Project = project;
     }
 
@@ -68,13 +68,13 @@ public class TextExporterModal
             return;
         }
 
-        var outputWrapper = Parent.FmgExporter.ProcessExport(WrapperName);
+        var outputWrapper = View.FmgExporter.ProcessExport(WrapperName);
 
         var exportDir = TextUtils.GetStoredTextDirectory(Project);
-        if (Parent.Editor.ToolView.DataTransferTool.ExportDirectory != "")
-            exportDir = Parent.Editor.ToolView.DataTransferTool.ExportDirectory;
+        if (View.ToolView.DataTransferTool.ExportDirectory != "")
+            exportDir = View.ToolView.DataTransferTool.ExportDirectory;
 
-        Parent.FmgExporter.WriteWrapper(exportDir, WrapperName, outputWrapper);
+        View.FmgExporter.WriteWrapper(exportDir, WrapperName, outputWrapper);
 
         ShowModal = false;
     }

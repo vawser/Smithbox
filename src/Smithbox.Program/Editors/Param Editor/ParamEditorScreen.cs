@@ -31,7 +31,6 @@ public class ParamEditorScreen : EditorScreen
     public ParamShortcuts Shortcuts;
 
     public ParamPasteMenu PasteMenu;
-    public ParamToolMenu ToolMenu;
 
     private bool ImportRowNamesPrompted = false;
 
@@ -45,8 +44,6 @@ public class ParamEditorScreen : EditorScreen
         StatisticsMenu = new(this, project);
         Shortcuts = new(this, project);
 
-        ToolMenu = new(this, project);
-
         PasteMenu = new(this, project);
 
         Project.Handler.ParamData.RefreshParamDifferenceCacheTask();
@@ -55,6 +52,7 @@ public class ParamEditorScreen : EditorScreen
     public void OnGUI(string[] commands)
     {
         var scale = DPI.UIScale();
+        var activeView = ViewHandler.ActiveView;
 
         if (!ImportRowNamesPrompted)
         {
@@ -72,13 +70,15 @@ public class ParamEditorScreen : EditorScreen
             EditMenu();
             ViewMenu();
 
-            ToolMenu.DisplayMenu();
-            ToolMenu.ParamUpgrader.ParamUpgradeWarning();
+            if (activeView != null)
+            {
+                activeView.ToolMenu.DisplayMenu();
+                activeView.ToolMenu.ParamUpgrader.ParamUpgradeWarning();
+            }
 
             ImGui.EndMenuBar();
         }
 
-        var activeView = ViewHandler.ActiveView;
 
         if (activeView != null)
         {
@@ -87,7 +87,11 @@ public class ParamEditorScreen : EditorScreen
 
         PasteMenu.Display();
         StatisticsMenu.Display();
-        ToolMenu.ParamComparisonTool.HandleReportModal();
+
+        if (activeView != null)
+        {
+            activeView.ToolMenu.ParamComparisonTool.HandleReportModal();
+        }
 
         if (CFG.Current.ParamEditor_Enable_Compact_Mode)
         {
@@ -107,11 +111,6 @@ public class ParamEditorScreen : EditorScreen
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None, ref UIHelper.DockGroup_ParamEditor);
 
         ViewHandler.HandleViews(dsid);
-
-        if (ViewHandler.ActiveView != null)
-        {
-            ToolMenu.Draw();
-        }
 
         if (CFG.Current.ParamEditor_Enable_Compact_Mode)
         {

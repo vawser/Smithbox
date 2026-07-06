@@ -7,7 +7,7 @@ namespace StudioCore.Editors.TextEditor;
 
 public class TextToolView
 {
-    private TextEditorScreen Editor;
+    private TextEditorView View;
     private ProjectEntry Project;
 
     public GlobalTextSearch TextSearch;
@@ -17,94 +17,86 @@ public class TextToolView
     public TextLanguageSyncTool LanguageSyncTool;
     public TextDataTransferTool DataTransferTool;
 
-    public TextToolView(TextEditorScreen editor, ProjectEntry project)
+    public TextToolView(TextEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
 
-        TextSearch = new(editor, project);
-        TextReplace = new(editor, project);
-        TextMerge = new(editor, project);
+        TextSearch = new(view, project);
+        TextReplace = new(view, project);
+        TextMerge = new(view, project);
 
-        LanguageSyncTool = new(editor, project);
-        DataTransferTool = new(editor, project);
+        LanguageSyncTool = new(view, project);
+        DataTransferTool = new(view, project);
     }
 
     public void Display()
     {
+        LanguageSyncTool.OnGui();
+
         if (!CFG.Current.Interface_TextEditor_ToolWindow)
             return;
 
-        var activeView = Editor.ViewHandler.ActiveView;
-
-        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_TextEditor);
-        if (ImGui.Begin($"{LOC.Get("TEXT_Window_Tools")}###ToolConfigureWindow_TextEditor", UIHelper.GetMainWindowFlags()))
+        if (ImGui.BeginMenuBar())
         {
-            FocusManager.SetFocus(EditorFocusContext.TextEditor_Tools);
+            ViewMenu();
 
-            if (ImGui.BeginMenuBar())
+            ImGui.EndMenuBar();
+        }
+
+        // Entry Creator
+        if (CFG.Current.Interface_TextEditor_Tool_EntryCreator)
+        {
+            if (ImGui.CollapsingHeader($"{LOC.Get("TEXT_Tools_Header_Text_Entry_Creator")}##textEntryCreatorSection"))
             {
-                ViewMenu();
-
-                ImGui.EndMenuBar();
-            }
-
-            // Entry Creator
-            if (CFG.Current.Interface_TextEditor_Tool_EntryCreator)
-            {
-                if (ImGui.CollapsingHeader($"{LOC.Get("TEXT_Tools_Header_Text_Entry_Creator")}##textEntryCreatorSection"))
-                {
-                    activeView.TextEntryCreator.DisplayTool();
-                }
-            }
-
-            // Data Transfer
-            if (CFG.Current.Interface_TextEditor_Tool_DataTransfer)
-            {
-                if (ImGui.CollapsingHeader($"{LOC.Get("TEXT_Tools_Header_Data_Transfer")}##dataTransferSection"))
-                {
-                    DataTransferTool.Display();
-                }
-            }
-
-            // Language Sync
-            if (CFG.Current.Interface_TextEditor_Tool_LanguageSync)
-            {
-                if (ImGui.CollapsingHeader($"{LOC.Get("TEXT_Tools_Language_Sync")}##languageSyncSection"))
-                {
-                    LanguageSyncTool.Display();
-                }
-            }
-
-            // Global Text Search
-            if (CFG.Current.Interface_TextEditor_Tool_TextSearch)
-            {
-                if (ImGui.CollapsingHeader($"{LOC.Get("TEXT_Tools_Text_Search")}##globalTextSearchSection"))
-                {
-                    TextSearch.Display();
-                }
-            }
-
-            // Global Text Replacement
-            if (CFG.Current.Interface_TextEditor_Tool_TextReplacement)
-            {
-                if (ImGui.CollapsingHeader($"{LOC.Get("TEXT_Tools_Text_Replacement")}##globalTextReplacementSection"))
-                {
-                    TextReplace.Display();
-                }
-            }
-
-            // Text Merge
-            if (CFG.Current.Interface_TextEditor_Tool_TextMerge)
-            {
-                if (ImGui.CollapsingHeader($"{LOC.Get("TEXT_Tools_Text_Merge")}##textMergeSection"))
-                {
-                    TextMerge.Display();
-                }
+                View.TextEntryCreator.DisplayTool();
             }
         }
 
-        ImGui.End();
+        // Data Transfer
+        if (CFG.Current.Interface_TextEditor_Tool_DataTransfer)
+        {
+            if (ImGui.CollapsingHeader($"{LOC.Get("TEXT_Tools_Header_Data_Transfer")}##dataTransferSection"))
+            {
+                DataTransferTool.Display();
+            }
+        }
+
+        // Language Sync
+        if (CFG.Current.Interface_TextEditor_Tool_LanguageSync)
+        {
+            if (ImGui.CollapsingHeader($"{LOC.Get("TEXT_Tools_Language_Sync")}##languageSyncSection"))
+            {
+                LanguageSyncTool.Display();
+            }
+        }
+
+        // Global Text Search
+        if (CFG.Current.Interface_TextEditor_Tool_TextSearch)
+        {
+            if (ImGui.CollapsingHeader($"{LOC.Get("TEXT_Tools_Text_Search")}##globalTextSearchSection"))
+            {
+                TextSearch.Display();
+            }
+        }
+
+        // Global Text Replacement
+        if (CFG.Current.Interface_TextEditor_Tool_TextReplacement)
+        {
+            if (ImGui.CollapsingHeader($"{LOC.Get("TEXT_Tools_Text_Replacement")}##globalTextReplacementSection"))
+            {
+                TextReplace.Display();
+            }
+        }
+
+        // Text Merge
+        if (CFG.Current.Interface_TextEditor_Tool_TextMerge)
+        {
+            if (ImGui.CollapsingHeader($"{LOC.Get("TEXT_Tools_Text_Merge")}##textMergeSection"))
+            {
+                TextMerge.Display();
+            }
+        }
     }
     public void ViewMenu()
     {
@@ -145,6 +137,18 @@ public class TextToolView
                 CFG.Current.Interface_TextEditor_Tool_TextMerge = !CFG.Current.Interface_TextEditor_Tool_TextMerge;
             }
             UIHelper.ShowActiveStatus(CFG.Current.Interface_TextEditor_Tool_TextMerge);
+
+            ImGui.EndMenu();
+        }
+    }
+
+    public void DisplayDropdown()
+    {
+        // Tools
+        if (ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Header_Tools")}##toolsMenuHeader"))
+        {
+            DataTransferTool.DisplayDropdown();
+            View.FmgDumper.DumperDropdownOptions();
 
             ImGui.EndMenu();
         }

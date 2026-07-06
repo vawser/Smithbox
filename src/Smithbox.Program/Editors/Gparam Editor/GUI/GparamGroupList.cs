@@ -1,22 +1,16 @@
 ﻿using Hexa.NET.ImGui;
-using HKLib.hk2018.hkReflect;
-using Microsoft.VisualBasic.FileIO;
-using Octokit;
+using Microsoft.AspNetCore.Mvc.ViewEngines;
 using SoulsFormats;
-using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Keybinds;
-using System.Collections.Generic;
-using System.Linq;
 using System.Numerics;
-using Veldrid.MetalBindings;
 using static SoulsFormats.GPARAM;
 
 namespace StudioCore.Editors.GparamEditor;
 
 public class GparamGroupList
 {
-    private GparamEditorView Parent;
+    private GparamEditorView View;
     private ProjectEntry Project;
 
     private string GroupListFilter = "";
@@ -24,7 +18,7 @@ public class GparamGroupList
 
     public GparamGroupList(GparamEditorView view, ProjectEntry project)
     {
-        Parent = view;
+        View = view;
         Project = project;
     }
 
@@ -73,12 +67,12 @@ public class GparamGroupList
 
     private void DisplayGroupList()
     {
-        if (!Parent.Selection.IsFileSelected())
+        if (!View.Selection.IsFileSelected())
             return;
 
-        var fileEntry = Parent.Selection.SelectedFileEntry;
-        var data = Parent.Selection.GetSelectedGparam();
-        var group = Parent.Selection.GetSelectedGroup();
+        var fileEntry = View.Selection.SelectedFileEntry;
+        var data = View.Selection.GetSelectedGparam();
+        var group = View.Selection.GetSelectedGroup();
 
         if (data == null)
             return;
@@ -101,7 +95,7 @@ public class GparamGroupList
 
     private void DisplayGroupSelectable(FileDictionaryEntry fileEntry, GPARAM data, Param group, int index)
     {
-        var selected = index == Parent.Selection._selectedParamGroupIndex;
+        var selected = index == View.Selection._selectedParamGroupIndex;
         var groupName = GetGroupName(group);
         var groupDesc = GetGroupDescription(group);
 
@@ -118,8 +112,8 @@ public class GparamGroupList
         // Group row
         if (ImGui.Selectable($@" {groupName}##{group.Key}", selected))
         {
-            Parent.Selection.SetGparamGroup(index, group);
-            Parent.FieldListView.InvalidateAddOptions();
+            View.Selection.SetGparamGroup(index, group);
+            View.FieldListView.InvalidateAddOptions();
         }
 
         if (CFG.Current.GparamEditor_Group_List_Display_Descriptions)
@@ -131,18 +125,18 @@ public class GparamGroupList
         }
 
         // Arrow Selection
-        if (ImGui.IsItemHovered() && Parent.Selection.SelectGparamGroup)
+        if (ImGui.IsItemHovered() && View.Selection.SelectGparamGroup)
         {
-            Parent.Selection.SelectGparamGroup = false;
-            Parent.Selection.SetGparamGroup(index, group);
-            Parent.FieldListView.InvalidateAddOptions();
+            View.Selection.SelectGparamGroup = false;
+            View.Selection.SetGparamGroup(index, group);
+            View.FieldListView.InvalidateAddOptions();
         }
 
         if (ImGui.IsItemFocused())
         {
             if (InputManager.HasArrowSelection())
             {
-                Parent.Selection.SelectGparamGroup = true;
+                View.Selection.SelectGparamGroup = true;
             }
         }
 
@@ -170,7 +164,7 @@ public class GparamGroupList
 
     private void ContextMenu(FileDictionaryEntry fileEntry, GPARAM data, GPARAM.Param group, int index)
     {
-        var groupIndex = Parent.Selection._selectedParamGroupIndex;
+        var groupIndex = View.Selection._selectedParamGroupIndex;
         bool overwrite = CFG.Current.GparamEditor_Data_Import_Overwrite;
 
         if (index != groupIndex)
@@ -197,7 +191,7 @@ public class GparamGroupList
 
             if (ImGui.Selectable("Import"))
             {
-                Parent.Editor.ToolView.DataTransferTool.ImportGroup(Project, Parent, fileEntry, data, group);
+                View.ToolView.DataTransferTool.ImportGroup(Project, View, fileEntry, data, group);
             }
             UIHelper.Tooltip("Import a GPARAM Group json to overwrite this entry.");
 
@@ -208,7 +202,7 @@ public class GparamGroupList
 
                 if (ImGui.Selectable("Export File"))
                 {
-                    Parent.Editor.ToolView.DataTransferTool.ExportGroupFile(fileEntry, data, group, OverrideFileName);
+                    View.ToolView.DataTransferTool.ExportGroupFile(fileEntry, data, group, OverrideFileName);
                 }
 
                 ImGui.EndMenu();
@@ -234,13 +228,13 @@ public class GparamGroupList
             {
                 if (ImGui.Selectable("Quick Edit"))
                 {
-                    Parent.QuickEditHandler.UpdateGroupFilter(group.Key);
+                    View.QuickEditHandler.UpdateGroupFilter(group.Key);
                 }
                 UIHelper.Tooltip("Add this group to the Group Filter in the Quick Edit window.");
 
                 if (ImGui.Selectable("Data Finder"))
                 {
-                    Parent.Editor.ToolView.DataFinder.UpdateGroupFilter(group.Key);
+                    View.ToolView.DataFinder.UpdateGroupFilter(group.Key);
                 }
                 UIHelper.Tooltip("Add this group to the Group Filter in the Data Finder window.");
 
@@ -460,18 +454,18 @@ public class GparamGroupList
     public void AddGroups(GPARAM data, List<GparamAnnotationEntry> entries)
     {
         var action = new AddGroupAction(Project, data, entries);
-        Parent.ActionManager.ExecuteAction(action);
+        View.ActionManager.ExecuteAction(action);
     }
 
     public void DeleteGroups(GPARAM data, List<GPARAM.Param> entries)
     {
         var action = new DeleteGroupAction(Project, data, entries);
-        Parent.ActionManager.ExecuteAction(action);
+        View.ActionManager.ExecuteAction(action);
     }
 
     public void AddGroupsShortcut()
     {
-        var data = Parent.Selection.GetSelectedGparam();
+        var data = View.Selection.GetSelectedGparam();
 
         PopulateAddOptions();
 
@@ -492,8 +486,8 @@ public class GparamGroupList
 
     public void DeleteGroupsShortcut()
     {
-        var data = Parent.Selection.GetSelectedGparam();
-        var group = Parent.Selection.GetSelectedGroup();
+        var data = View.Selection.GetSelectedGparam();
+        var group = View.Selection.GetSelectedGroup();
 
         DeleteGroups(data, new List<GPARAM.Param>() { group });
     }

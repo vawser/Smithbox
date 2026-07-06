@@ -29,7 +29,7 @@ public class TexShortcuts
 
         if (InputManager.IsPressed(KeybindID.TextureViewer_Export_Texture))
         {
-            Editor.ToolView.TextureExport.ExportTextureHandler();
+            activeView.ToolView.TextureExport.ExportTextureHandler();
         }
 
         if (InputManager.HasCtrlDown())

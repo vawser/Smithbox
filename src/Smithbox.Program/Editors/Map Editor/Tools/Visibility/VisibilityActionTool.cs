@@ -10,19 +10,17 @@ namespace StudioCore.Editors.MapEditor;
 
 public class VisibilityActionTool
 {
-    public MapEditorScreen Editor;
+    public MapEditorView View;
     public ProjectEntry Project;
 
-    public VisibilityActionTool(MapEditorScreen editor, ProjectEntry project)
+    public VisibilityActionTool(MapEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 
     public void Display()
     {
-        var activeView = Editor.ViewHandler.ActiveView;
-
         ImGui.BeginChild("VisActionSection", ImGuiChildFlags.Borders);
 
         ImGui.BeginTabBar("visActionTabs");
@@ -40,8 +38,7 @@ public class VisibilityActionTool
     {
         if (ImGui.BeginTabItem("Viewport Filters##viewportVisTab"))
         {
-            var activeView = Editor.ViewHandler.ActiveView;
-            activeView.ViewportFiltersAction.OnToolWindow();
+            View.ViewportFiltersAction.OnToolWindow();
 
             ImGui.EndTabItem();
         }
@@ -51,8 +48,7 @@ public class VisibilityActionTool
     {
         if (ImGui.BeginTabItem("Editor Visibility##editorVisTab"))
         {
-            var activeView = Editor.ViewHandler.ActiveView;
-            activeView.EditorVisibilityAction.OnToolWindow();
+            View.EditorVisibilityAction.OnToolWindow();
 
             ImGui.EndTabItem();
         }
@@ -62,8 +58,7 @@ public class VisibilityActionTool
     {
         if (ImGui.BeginTabItem("Game Visibility##gameVisTab"))
         {
-            var activeView = Editor.ViewHandler.ActiveView;
-            activeView.GameVisibilityAction.OnToolWindow();
+            View.GameVisibilityAction.OnToolWindow();
 
             ImGui.EndTabItem();
         }

@@ -14,7 +14,7 @@ namespace StudioCore.Editors.ParamEditor;
 
 public class ParamRowNameTool
 {
-    public ParamEditorScreen Editor;
+    public ParamEditorView View;
     public ProjectEntry Project;
 
     public bool IsSpecificParamForExport = false;
@@ -26,9 +26,9 @@ public class ParamRowNameTool
     public string ImportLanguage = "English";
     public string ImportFolder = "English";
 
-    public ParamRowNameTool(ParamEditorScreen editor, ProjectEntry project)
+    public ParamRowNameTool(ParamEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 

@@ -7,17 +7,17 @@ namespace StudioCore.Editors.ModelEditor;
 
 public class ModelToolWindow
 {
-    public ModelEditorScreen Editor;
+    public ModelEditorView View;
     public ProjectEntry Project;
 
     public ModelDataTransferTool DataTransferTool;
 
-    public ModelToolWindow(ModelEditorScreen editor, ProjectEntry project)
+    public ModelToolWindow(ModelEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
 
-        DataTransferTool = new(editor, project);
+        DataTransferTool = new(view, project);
     }
 
     public void DisplayDropdown()
@@ -38,63 +38,50 @@ public class ModelToolWindow
         if (!CFG.Current.Interface_ModelEditor_ToolWindow)
             return;
 
-        var activeView = Editor.ViewHandler.ActiveView;
-
-        if (activeView == null)
-            return;
-
-        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ModelEditor);
-        if (ImGui.Begin("Tool Window##modelEditorTools", UIHelper.GetMainWindowFlags() & ~(ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse)))
+        if (ImGui.BeginMenuBar())
         {
-            FocusManager.SetFocus(EditorFocusContext.ModelEditor_Tools);
+            ViewMenu();
 
-            if (ImGui.BeginMenuBar())
-            {
-                ViewMenu();
-
-                ImGui.EndMenuBar();
-            }
-
-            //if (CFG.Current.MaterialEditor_Tool_Data_Transfer)
-            //{
-            //    if (ImGui.CollapsingHeader("Data Transfer"))
-            //    {
-            //        DataTransferTool.Display();
-            //    }
-            //}
-
-            if (CFG.Current.Interface_ModelEditor_Tool_CreateAction)
-            {
-                activeView.CreateAction.OnToolWindow();
-            }
-
-            if (CFG.Current.Interface_ModelEditor_Tool_ModelGridConfiguration)
-            {
-                activeView.ModelGridTool.OnToolWindow();
-            }
-
-            if (CFG.Current.Interface_ModelEditor_Tool_ModelInsight)
-            {
-                //activeView.ModelInsightMenu.OnToolWindow();
-            }
-
-            if (CFG.Current.Interface_ModelEditor_Tool_ModelInstanceFinder)
-            {
-                activeView.ModelInstanceFinder.OnToolWindow();
-            }
-
-            if (CFG.Current.Interface_ModelEditor_Tool_ModelMaskToggler)
-            {
-                activeView.ModelMaskToggler.OnToolWindow();
-            }
-
-            if (CFG.Current.Interface_ModelEditor_Tool_ResourceMonitor)
-            {
-                activeView.ResourceListTool.Display("modelEditor", activeView.Universe);
-            }
+            ImGui.EndMenuBar();
         }
 
-        ImGui.End();
+        //if (CFG.Current.MaterialEditor_Tool_Data_Transfer)
+        //{
+        //    if (ImGui.CollapsingHeader("Data Transfer"))
+        //    {
+        //        DataTransferTool.Display();
+        //    }
+        //}
+
+        if (CFG.Current.Interface_ModelEditor_Tool_CreateAction)
+        {
+            View.CreateAction.OnToolWindow();
+        }
+
+        if (CFG.Current.Interface_ModelEditor_Tool_ModelGridConfiguration)
+        {
+            View.ModelGridTool.OnToolWindow();
+        }
+
+        if (CFG.Current.Interface_ModelEditor_Tool_ModelInsight)
+        {
+            //View.ModelInsightMenu.OnToolWindow();
+        }
+
+        if (CFG.Current.Interface_ModelEditor_Tool_ModelInstanceFinder)
+        {
+            View.ModelInstanceFinder.OnToolWindow();
+        }
+
+        if (CFG.Current.Interface_ModelEditor_Tool_ModelMaskToggler)
+        {
+            View.ModelMaskToggler.OnToolWindow();
+        }
+
+        if (CFG.Current.Interface_ModelEditor_Tool_ResourceMonitor)
+        {
+            View.ResourceListTool.Display("modelEditor", View.Universe);
+        }
     }
 
     public void ViewMenu()

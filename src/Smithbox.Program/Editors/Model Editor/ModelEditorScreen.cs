@@ -21,8 +21,6 @@ public class ModelEditorScreen : EditorScreen
     public ModelCommandQueue CommandQueue;
     public ModelShortcuts Shortcuts;
 
-    public ModelToolWindow ToolMenu;
-
     public ResourceLoadWindow LoadingModal;
 
     public ModelEditorScreen(ProjectEntry project)
@@ -35,8 +33,6 @@ public class ModelEditorScreen : EditorScreen
         Shortcuts = new ModelShortcuts(this, project);
 
         LoadingModal = new();
-
-        ToolMenu = new ModelToolWindow(this, project);
     }
 
     public string EditorName => "Model Editor";
@@ -49,6 +45,8 @@ public class ModelEditorScreen : EditorScreen
     {
         var scale = DPI.UIScale();
 
+        var activeView = ViewHandler.ActiveView;
+
         Shortcuts.Monitor();
 
         CommandQueue.Parse(commands);
@@ -58,7 +56,12 @@ public class ModelEditorScreen : EditorScreen
             FileMenu();
             EditMenu();
             ViewMenu();
-            ToolMenu.DisplayDropdown();
+
+            if(activeView != null)
+            {
+                activeView.ToolView.DisplayDropdown();
+            }
+
             OptionsMenu();
 
             ImGui.EndMenuBar();
@@ -69,12 +72,8 @@ public class ModelEditorScreen : EditorScreen
 
         ViewHandler.HandleViews(dsid);
 
-        var activeView = ViewHandler.ActiveView;
-
         if (activeView != null)
         {
-            ToolMenu.Display();
-
             LoadingModal.DisplayWindow(activeView.ViewportWindow.Viewport.Width, activeView.ViewportWindow.Viewport.Height);
         }
     }

@@ -10,7 +10,7 @@ namespace StudioCore.Editors.TextEditor;
 
 public class TextLanguageSyncTool
 {
-    public TextEditorScreen Editor;
+    public TextEditorView View;
     public ProjectEntry Project;
 
     public TextContainerCategory CurrentSourceLanguage = TextContainerCategory.None;
@@ -23,9 +23,9 @@ public class TextLanguageSyncTool
 
     public bool SetupSyncOptions = false;
 
-    public TextLanguageSyncTool(TextEditorScreen editor, ProjectEntry project)
+    public TextLanguageSyncTool(TextEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 
@@ -172,8 +172,6 @@ public class TextLanguageSyncTool
             return; 
         }
 
-        var activeView = Editor.ViewHandler.ActiveView;
-
         List<EditorAction> actions = new();
 
         foreach (var entry in Project.Handler.TextData.PrimaryBank.Containers)
@@ -215,14 +213,12 @@ public class TextLanguageSyncTool
         }
 
         var compandAction = new CompoundAction(actions);
-        activeView.ActionManager.ExecuteAction(compandAction);
+        View.ActionManager.ExecuteAction(compandAction);
     }
 
     public void DisplaySyncOptions(int targetFmgId = -1)
     {
-        var activeView = Editor.ViewHandler.ActiveView;
-
-        var syncTargetWrapper = activeView.Selection.SelectedContainerWrapper;
+        var syncTargetWrapper = View.Selection.SelectedContainerWrapper;
 
         if (syncTargetWrapper == null)
             return;
@@ -287,7 +283,7 @@ public class TextLanguageSyncTool
                         var actions = SyncLanguage(syncTargetWrapper, syncSrcWrapper, targetFmgId);
 
                         var compandAction = new CompoundAction(actions);
-                        activeView.ActionManager.ExecuteAction(compandAction);
+                        View.ActionManager.ExecuteAction(compandAction);
                     }
                     UIHelper.Tooltip(
                         LOC.Get("TEXT_LanguageSync_Action_Sync_TT", selectableName));
@@ -301,8 +297,6 @@ public class TextLanguageSyncTool
 
     private List<EditorAction> SyncLanguage(TextContainerWrapper syncTargetContainerWrapper, TextContainerWrapper syncSrcContainerWrapper, int targetFmgId = -1)
     {
-        var activeView = Editor.ViewHandler.ActiveView;
-
         List<EditorAction> actions = new();
 
         if (syncTargetContainerWrapper.FmgWrappers == null || syncTargetContainerWrapper.FmgWrappers.Count == 0)
@@ -328,7 +322,7 @@ public class TextLanguageSyncTool
 
                     if (vanillaSrcWrapper != null)
                     {
-                        var result = FmgDifferenceFinder.GetFmgDifferenceResult(activeView, vanillaSrcWrapper, syncSrcWrapper);
+                        var result = FmgDifferenceFinder.GetFmgDifferenceResult(View, vanillaSrcWrapper, syncSrcWrapper);
 
                         foreach (var syncSrcEntry in syncSrcWrapper.File.Entries)
                         {
@@ -345,7 +339,7 @@ public class TextLanguageSyncTool
                                     var newEntry = new FMG.Entry(syncTargetWrapper.File, syncSrcEntry.ID, newText);
 
                                     actions.Add(
-                                        new AddFmgEntry(activeView, syncTargetContainerWrapper, parentEntry, newEntry, syncSrcEntry.ID));
+                                        new AddFmgEntry(View, syncTargetContainerWrapper, parentEntry, newEntry, syncSrcEntry.ID));
                                 }
                                 // If already added, handle like a modified entry
                                 else
@@ -355,7 +349,7 @@ public class TextLanguageSyncTool
                                     if (targetEntry != null)
                                     {
                                         actions.Add(
-                                            new ChangeFmgEntryText(activeView, syncTargetContainerWrapper, targetEntry, result.AdditionCache[syncSrcEntry.ID], true));
+                                            new ChangeFmgEntryText(View, syncTargetContainerWrapper, targetEntry, result.AdditionCache[syncSrcEntry.ID], true));
                                     }
                                 }
                             }
@@ -367,7 +361,7 @@ public class TextLanguageSyncTool
                                 if (targetEntry != null)
                                 {
                                     actions.Add(
-                                        new ChangeFmgEntryText(activeView, syncTargetContainerWrapper, targetEntry, result.ModifiedCache[syncSrcEntry.ID], true));
+                                        new ChangeFmgEntryText(View, syncTargetContainerWrapper, targetEntry, result.ModifiedCache[syncSrcEntry.ID], true));
                                 }
                             }
                             // Any
@@ -378,7 +372,7 @@ public class TextLanguageSyncTool
                                 if (targetEntry != null)
                                 {
                                     actions.Add(
-                                        new ChangeFmgEntryText(activeView, syncTargetContainerWrapper, targetEntry, result.DefaultCache[syncSrcEntry.ID], true));
+                                        new ChangeFmgEntryText(View, syncTargetContainerWrapper, targetEntry, result.DefaultCache[syncSrcEntry.ID], true));
                                 }
                             }
                         }

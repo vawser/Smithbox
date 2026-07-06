@@ -8,7 +8,7 @@ namespace StudioCore.Editors.MapEditor;
 
 public class MapToolWindow
 {
-    private MapEditorScreen Editor;
+    private MapEditorView View;
     private ProjectEntry Project;
 
     public CommonActionTool CommonActionTool;
@@ -16,24 +16,19 @@ public class MapToolWindow
     public VisibilityActionTool VisibilityActionTool;
     public MapDataTransferTool DataTransferTool;
 
-    public MapToolWindow(MapEditorScreen editor, ProjectEntry project)
+    public MapToolWindow(MapEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
 
-        CommonActionTool = new(editor, project);
-        SelectActionTool = new(editor, project);
-        VisibilityActionTool = new(editor, project);
-        DataTransferTool = new(editor, project);
+        CommonActionTool = new(view, project);
+        SelectActionTool = new(view, project);
+        VisibilityActionTool = new(view, project);
+        DataTransferTool = new(view, project);
     }
 
     public void DisplayDropdown()
     {
-        var activeView = Editor.ViewHandler.ActiveView;
-
-        if (activeView == null)
-            return;
-
         if (ImGui.BeginMenu("Tools"))
         {
             DataTransferTool.DisplayDropdown();
@@ -42,25 +37,25 @@ public class MapToolWindow
             {
                 if (ImGui.MenuItem("World Map"))
                 {
-                    activeView.WorldMapTool.DisplayMenuOption();
+                    View.WorldMapTool.DisplayMenuOption();
                 }
                 UIHelper.Tooltip($"Open a world map with a visual representation of the map tiles.\nShortcut: {InputManager.GetHint(KeybindID.MapEditor_Toggle_World_Map_Menu)}");
             }
 
             if (ImGui.BeginMenu("Miscellaneous"))
             {
-                activeView.EditorVisibilityAction.OnToolMenu();
+                View.EditorVisibilityAction.OnToolMenu();
 
                 ///--------------------
                 /// Generate Navigation Data
                 ///--------------------
-                if (Editor.Project.Descriptor.ProjectType is ProjectType.DES || Editor.Project.Descriptor.ProjectType is ProjectType.DS1 || Editor.Project.Descriptor.ProjectType is ProjectType.DS1R)
+                if (View.Editor.Project.Descriptor.ProjectType is ProjectType.DES || View.Editor.Project.Descriptor.ProjectType is ProjectType.DS1 || View.Editor.Project.Descriptor.ProjectType is ProjectType.DS1R)
                 {
                     if (ImGui.BeginMenu("Navigation Data"))
                     {
                         if (ImGui.MenuItem("Generate"))
                         {
-                            activeView.ActionHandler.GenerateNavigationData();
+                            View.ActionHandler.GenerateNavigationData();
                         }
 
                         ImGui.EndMenu();
@@ -70,18 +65,18 @@ public class MapToolWindow
                 ///--------------------
                 /// Entity ID Checker
                 ///--------------------
-                if (Editor.Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.SDT or ProjectType.ER or ProjectType.AC6)
+                if (View.Editor.Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.SDT or ProjectType.ER or ProjectType.AC6)
                 {
-                    activeView.EntityIdCheckAction.OnToolMenu();
+                    View.EntityIdCheckAction.OnToolMenu();
                 }
 
                 ///--------------------
                 /// Name Map Objects
                 ///--------------------
                 // Tool for AC6 since its maps come with unnamed Regions and Events
-                if (Editor.Project.Descriptor.ProjectType is ProjectType.AC6)
+                if (View.Editor.Project.Descriptor.ProjectType is ProjectType.AC6)
                 {
-                    activeView.EntityRenameAction.OnToolMenu();
+                    View.EntityRenameAction.OnToolMenu();
                 }
 
                 ImGui.EndMenu();
@@ -93,177 +88,164 @@ public class MapToolWindow
 
     public void Display()
     {
+        View.DuplicateToMapAction.OnGui();
+        View.MoveToMapAction.OnGui();
+        View.SelectAllAction.OnGui();
+        View.AdjustToGridAction.OnGui();
+
         if (!CFG.Current.Interface_MapEditor_ToolWindow)
             return;
 
-        var activeView = Editor.ViewHandler.ActiveView;
-
-        if (activeView == null)
-            return;
-
-        activeView.DuplicateToMapAction.OnGui();
-        activeView.MoveToMapAction.OnGui();
-        activeView.SelectAllAction.OnGui();
-        activeView.AdjustToGridAction.OnGui();
-
-        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_MapEditor);
-        if (ImGui.Begin("Tools##ToolConfigureWindow_MapEditor", UIHelper.GetMainWindowFlags()))
+        if (ImGui.BeginMenuBar())
         {
-            FocusManager.SetFocus(EditorFocusContext.MapEditor_Tools);
+            ViewMenu();
 
-            if (ImGui.BeginMenuBar())
-            {
-                ViewMenu();
-
-                ImGui.EndMenuBar();
-            }
-
-            if(CFG.Current.Interface_MapEditor_Tool_Common_Action)
-            {
-                if (ImGui.CollapsingHeader("Common Actions"))
-                {
-                    CommonActionTool.Display();
-                }
-            }
-
-            if (CFG.Current.Interface_MapEditor_Tool_Select_Action)
-            {
-                if (ImGui.CollapsingHeader("Selection"))
-                {
-                    SelectActionTool.Display();
-                }
-            }
-
-            if (CFG.Current.Interface_MapEditor_Tool_Visbility_Action)
-            {
-                if (ImGui.CollapsingHeader("Visibility"))
-                {
-                    VisibilityActionTool.Display();
-                }
-            }
-
-            if (CFG.Current.Interface_MapEditor_Tool_Search)
-            {
-                if (ImGui.CollapsingHeader("Search"))
-                {
-                    ImGui.BeginChild("searchSection", ImGuiChildFlags.Borders);
-
-                    ImGui.BeginTabBar("searchTabs");
-
-                    if (ImGui.BeginTabItem("Local##localSearch"))
-                    {
-                        activeView.LocalSearchView.OnToolWindow();
-
-                        ImGui.EndTabItem();
-                    }
-
-                    if (ImGui.BeginTabItem("Global##globalSearch"))
-                    {
-                        activeView.GlobalSearchTool.OnToolWindow();
-
-                        ImGui.EndTabItem();
-                    }
-
-                    ImGui.EndTabBar();
-
-                    ImGui.EndChild();
-                }
-            }
-
-            if (CFG.Current.Interface_MapEditor_Tool_PropertyMassEdit)
-            {
-                if (ImGui.CollapsingHeader("Mass Edit"))
-                {
-                    activeView.MassEditTool.OnToolWindow();
-                }
-            }
-
-            if (CFG.Current.Interface_MapEditor_Tool_DisplayGroups)
-            {
-                if (ImGui.CollapsingHeader("Render Groups"))
-                {
-                    activeView.DisplayGroupTool.OnToolWindow();
-                }
-            }
-
-            if (CFG.Current.Interface_MapEditor_Tool_Prefab)
-            {
-                if (ImGui.CollapsingHeader("Prefabs"))
-                {
-                    activeView.PrefabTool.OnToolWindow();
-                }
-            }
-
-            //if (CFG.Current.Interface_MapEditor_Tool_Data_Transfer)
-            //{
-            //    if (ImGui.CollapsingHeader("Data Transfer"))
-            //    {
-            //        DataTransferTool.Display();
-            //    }
-            //}
-
-            if (CFG.Current.Interface_MapEditor_Tool_GridConfiguration)
-            {
-                if (ImGui.CollapsingHeader("Map Grid"))
-                {
-                    activeView.MapGridTool.OnToolWindow();
-                }
-            }
-
-            if (CFG.Current.Interface_MapEditor_Tool_ModelSelector)
-            {
-                if (ImGui.CollapsingHeader("Model Selector"))
-                {
-                    activeView.ModelSelectorTool.OnToolWindow();
-                }
-            }
-
-            if (CFG.Current.Interface_MapEditor_Tool_Validation)
-            {
-                if (ImGui.CollapsingHeader("Validation"))
-                {
-                    ImGui.BeginChild("validationSection", ImGuiChildFlags.Borders);
-
-                    ImGui.BeginTabBar("validationTabs");
-
-                    if (!(activeView.Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S))
-                    {
-                        if (ImGui.BeginTabItem("Entity ID##entityIdSearch"))
-                        {
-                            activeView.EntityIdentifierTool.OnToolWindow();
-
-                            ImGui.EndTabItem();
-                        }
-                    }
-
-                    if (ImGui.BeginTabItem("MSB Validation##msbValidation"))
-                    {
-                        activeView.MapValidatorTool.OnToolWindow();
-
-                        ImGui.EndTabItem();
-                    }
-
-                    ImGui.EndTabBar();
-
-                    ImGui.EndChild();
-                }
-            }
-
-            if (CFG.Current.Interface_MapEditor_ResourceList)
-            {
-                activeView.ResourceListTool.Display("mapEditor", activeView.Universe);
-            }
-
-            //if (CFG.Current.Interface_MapEditor_Tool_AssetBrowser)
-            //{
-            //    if (ImGui.CollapsingHeader("Asset Browser"))
-            //    {
-            //        activeView.AssetBrowser.Display();
-            //    }
-            //}
+            ImGui.EndMenuBar();
         }
 
-        ImGui.End();
+        if(CFG.Current.Interface_MapEditor_Tool_Common_Action)
+        {
+            if (ImGui.CollapsingHeader("Common Actions"))
+            {
+                CommonActionTool.Display();
+            }
+        }
+
+        if (CFG.Current.Interface_MapEditor_Tool_Select_Action)
+        {
+            if (ImGui.CollapsingHeader("Selection"))
+            {
+                SelectActionTool.Display();
+            }
+        }
+
+        if (CFG.Current.Interface_MapEditor_Tool_Visbility_Action)
+        {
+            if (ImGui.CollapsingHeader("Visibility"))
+            {
+                VisibilityActionTool.Display();
+            }
+        }
+
+        if (CFG.Current.Interface_MapEditor_Tool_Search)
+        {
+            if (ImGui.CollapsingHeader("Search"))
+            {
+                ImGui.BeginChild("searchSection", ImGuiChildFlags.Borders);
+
+                ImGui.BeginTabBar("searchTabs");
+
+                if (ImGui.BeginTabItem("Local##localSearch"))
+                {
+                    View.LocalSearchView.OnToolWindow();
+
+                    ImGui.EndTabItem();
+                }
+
+                if (ImGui.BeginTabItem("Global##globalSearch"))
+                {
+                    View.GlobalSearchTool.OnToolWindow();
+
+                    ImGui.EndTabItem();
+                }
+
+                ImGui.EndTabBar();
+
+                ImGui.EndChild();
+            }
+        }
+
+        if (CFG.Current.Interface_MapEditor_Tool_PropertyMassEdit)
+        {
+            if (ImGui.CollapsingHeader("Mass Edit"))
+            {
+                View.MassEditTool.OnToolWindow();
+            }
+        }
+
+        if (CFG.Current.Interface_MapEditor_Tool_DisplayGroups)
+        {
+            if (ImGui.CollapsingHeader("Render Groups"))
+            {
+                View.DisplayGroupTool.OnToolWindow();
+            }
+        }
+
+        if (CFG.Current.Interface_MapEditor_Tool_Prefab)
+        {
+            if (ImGui.CollapsingHeader("Prefabs"))
+            {
+                View.PrefabTool.OnToolWindow();
+            }
+        }
+
+        //if (CFG.Current.Interface_MapEditor_Tool_Data_Transfer)
+        //{
+        //    if (ImGui.CollapsingHeader("Data Transfer"))
+        //    {
+        //        DataTransferTool.Display();
+        //    }
+        //}
+
+        if (CFG.Current.Interface_MapEditor_Tool_GridConfiguration)
+        {
+            if (ImGui.CollapsingHeader("Map Grid"))
+            {
+                View.MapGridTool.OnToolWindow();
+            }
+        }
+
+        if (CFG.Current.Interface_MapEditor_Tool_ModelSelector)
+        {
+            if (ImGui.CollapsingHeader("Model Selector"))
+            {
+                View.ModelSelectorTool.OnToolWindow();
+            }
+        }
+
+        if (CFG.Current.Interface_MapEditor_Tool_Validation)
+        {
+            if (ImGui.CollapsingHeader("Validation"))
+            {
+                ImGui.BeginChild("validationSection", ImGuiChildFlags.Borders);
+
+                ImGui.BeginTabBar("validationTabs");
+
+                if (!(View.Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S))
+                {
+                    if (ImGui.BeginTabItem("Entity ID##entityIdSearch"))
+                    {
+                        View.EntityIdentifierTool.OnToolWindow();
+
+                        ImGui.EndTabItem();
+                    }
+                }
+
+                if (ImGui.BeginTabItem("MSB Validation##msbValidation"))
+                {
+                    View.MapValidatorTool.OnToolWindow();
+
+                    ImGui.EndTabItem();
+                }
+
+                ImGui.EndTabBar();
+
+                ImGui.EndChild();
+            }
+        }
+
+        if (CFG.Current.Interface_MapEditor_ResourceList)
+        {
+            View.ResourceListTool.Display("mapEditor", View.Universe);
+        }
+
+        //if (CFG.Current.Interface_MapEditor_Tool_AssetBrowser)
+        //{
+        //    if (ImGui.CollapsingHeader("Asset Browser"))
+        //    {
+        //        activeView.AssetBrowser.Display();
+        //    }
+        //}
     }
 
     public void ViewMenu()

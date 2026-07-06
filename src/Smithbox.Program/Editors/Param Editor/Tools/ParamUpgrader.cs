@@ -19,12 +19,12 @@ namespace StudioCore.Editors.ParamEditor;
 
 public class ParamUpgrader
 {
-    public ParamEditorScreen Editor;
+    public ParamEditorView View;
     public ProjectEntry Project;
 
-    public ParamUpgrader(ParamEditorScreen editor, ProjectEntry project)
+    public ParamUpgrader(ParamEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 
@@ -329,7 +329,7 @@ public class ParamUpgrader
             commandString = $"{commandString}{cmd.Command};\n";
         }
 
-        Editor.ViewHandler.ActiveView.MassEdit.ApplyMassEdit(commandString);
+        View.MassEdit.ApplyMassEdit(commandString);
 
         Smithbox.Log(this, $"Applied upgrader mass edit commands");
 
@@ -351,7 +351,7 @@ public class ParamUpgrader
                 commandString = $"{commandString}\n{command}";
             }
 
-            Editor.ViewHandler.ActiveView.MassEdit.ApplyMassEdit(commandString);
+            View.MassEdit.ApplyMassEdit(commandString);
         }
 
         await paramData.PrimaryBank.Save();

@@ -8,7 +8,7 @@ namespace StudioCore.Editors.TextEditor;
 
 public class GlobalTextReplacement
 {
-    public TextEditorScreen Editor;
+    public TextEditorView View;
     public ProjectEntry Project;
 
     private string searchTerm = "";
@@ -26,16 +26,14 @@ public class GlobalTextReplacement
 
     private bool hasAlreadySearched = false;
 
-    public GlobalTextReplacement(TextEditorScreen editor, ProjectEntry project)
+    public GlobalTextReplacement(TextEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 
     public void Display()
     {
-        var curView = Editor.ViewHandler.ActiveView;
-
         ImGui.BeginChild("TextReplaceSection", ImGuiChildFlags.Borders);
 
         // Search Filter
@@ -197,7 +195,7 @@ public class GlobalTextReplacement
                 var fmgName = result.FmgName;
                 if (CFG.Current.TextEditor_Text_File_List_Display_Community_Names)
                 {
-                    fmgName = TextUtils.GetFmgDisplayName(curView.Project, result.ContainerWrapper, result.FmgID, result.FmgName);
+                    fmgName = TextUtils.GetFmgDisplayName(View.Project, result.ContainerWrapper, result.FmgID, result.FmgName);
                 }
 
                 var displayText = $"{containerName} - {fmgName} - {result.Entry.ID}: {foundText}";
@@ -220,8 +218,6 @@ public class GlobalTextReplacement
 
     public void PreviewEdit()
     {
-        var curView = Editor.ViewHandler.ActiveView;
-
         try
         {
             var match = Regex.Match("example", searchTerm);
@@ -243,7 +239,7 @@ public class GlobalTextReplacement
         }
 
         hasAlreadySearched = true;
-        replacementResults = TextFinder.GetReplacementResult(curView, searchTerm, filterType, matchType, ignoreCase);
+        replacementResults = TextFinder.GetReplacementResult(View, searchTerm, filterType, matchType, ignoreCase);
     }
 
     public void ClearPreview()
@@ -273,8 +269,6 @@ public class GlobalTextReplacement
             options = options | RegexOptions.IgnorePatternWhitespace;
         }
 
-        var curView = Editor.ViewHandler.ActiveView;
-
         List<EditorAction> actions = new List<EditorAction>();
 
         string searchText = searchTerm;
@@ -283,10 +277,10 @@ public class GlobalTextReplacement
         foreach (var result in replacementResults)
         {
             var newText = Regex.Replace(result.Entry.Text, searchText, replaceText, options);
-            actions.Add(new ChangeFmgEntryText(curView, result.ContainerWrapper, result.Entry, newText));
+            actions.Add(new ChangeFmgEntryText(View, result.ContainerWrapper, result.Entry, newText));
         }
 
         var groupedAction = new FmgGroupedAction(actions);
-        curView.ActionManager.ExecuteAction(groupedAction);
+        View.ActionManager.ExecuteAction(groupedAction);
     }
 }

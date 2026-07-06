@@ -7,7 +7,7 @@ namespace StudioCore.Editors.ParamEditor;
 
 public class RowNameFinder
 {
-    public ParamEditorScreen Editor;
+    public ParamEditorView View;
     public ProjectEntry Project;
 
     public string imguiID = "RowNameFinder";
@@ -19,15 +19,15 @@ public class RowNameFinder
     public List<string> TargetedParams = new();
 
     public List<DataSearchResult> Results = new();
-    public RowNameFinder(ParamEditorScreen editor, ProjectEntry project)
+    public RowNameFinder(ParamEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 
     public void Display()
     {
-        if (Editor.Project.Handler.ParamData.PrimaryBank.Params == null)
+        if (View.Editor.Project.Handler.ParamData.PrimaryBank.Params == null)
         {
             return;
         }
@@ -186,7 +186,7 @@ public class RowNameFinder
 
         var searchElements = SearchText.Split(" ");
 
-        foreach (var p in Editor.Project.Handler.ParamData.PrimaryBank.Params)
+        foreach (var p in View.Editor.Project.Handler.ParamData.PrimaryBank.Params)
         {
             if (TargetedParams.Count > 0)
             {

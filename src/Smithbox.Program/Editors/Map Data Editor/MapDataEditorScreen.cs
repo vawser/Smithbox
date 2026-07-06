@@ -22,8 +22,6 @@ public class MapDataEditorScreen : EditorScreen
 
     public MapDataCommandQueue CommandQueue;
 
-    public MapDataToolView ToolWindow;
-
     public MapDataEditorScreen(ProjectEntry project)
     {
         Project = project;
@@ -31,8 +29,6 @@ public class MapDataEditorScreen : EditorScreen
         ViewHandler = new MapDataViewHandler(this, project);
 
         CommandQueue = new(this, project);
-
-        ToolWindow = new(this, project);
     }
 
     public string EditorName => "Map Data Editor";
@@ -53,7 +49,13 @@ public class MapDataEditorScreen : EditorScreen
             FileMenu();
             EditMenu();
             ViewMenu();
-            ToolWindow.ToolMenu();
+
+            var activeView = ViewHandler.ActiveView;
+            if(activeView != null)
+            {
+                activeView.ToolView.ToolMenu();
+            }
+
             OptionsMenu();
 
             ImGui.EndMenuBar();
@@ -63,11 +65,6 @@ public class MapDataEditorScreen : EditorScreen
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None,ref UIHelper.DockGroup_MapDataEditor);
 
         ViewHandler.HandleViews(dsid);
-
-        if (ViewHandler.ActiveView != null)
-        {
-            ToolWindow.Draw();
-        }
     }
 
     public void Shortcuts()

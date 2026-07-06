@@ -16,8 +16,6 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
     public TexShortcuts Shortcuts;
     public TexCommandQueue CommandQueue;
 
-    public TexToolView ToolView;
-
     public TextureViewerScreen(ProjectEntry project)
     {
         Project = project;
@@ -26,8 +24,6 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
 
         CommandQueue = new TexCommandQueue(this, Project);
         Shortcuts = new TexShortcuts(this, Project);
-
-        ToolView = new TexToolView(this, Project);
     }
 
     public string EditorName => "";
@@ -39,6 +35,7 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
     public void OnGUI(string[] commands)
     {
         var scale = DPI.UIScale();
+        var activeView = ViewHandler.ActiveView;
 
         Shortcuts.Monitor();
 
@@ -50,7 +47,10 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
             EditMenu();
             ViewMenu();
 
-            ToolView.DisplayMenubar();
+            if(activeView != null)
+            {
+                activeView.ToolView.DisplayMenubar();
+            }
 
             //OptionsMenu();
 
@@ -61,11 +61,6 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None, ref UIHelper.DockGroup_TextureViewer);
 
         ViewHandler.HandleViews(dsid);
-
-        if (ViewHandler.ActiveView != null)
-        {
-            ToolView.Display();
-        }
     }
 
     public void FileMenu()

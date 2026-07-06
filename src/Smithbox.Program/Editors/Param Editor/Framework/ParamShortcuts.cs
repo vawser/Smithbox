@@ -124,7 +124,7 @@ public class ParamShortcuts
         // Sort Rows
         if (InputManager.IsPressed(KeybindID.ParamEditor_RowList_Sort_Rows))
         {
-            Editor.ToolMenu.SortTool.SortRows();
+            Editor.ViewHandler.ActiveView.ToolMenu.SortTool.SortRows();
         }
 
         // Apply Mass Edit
@@ -184,7 +184,7 @@ public class ParamShortcuts
         // Reload All Params
         if (InputManager.IsPressed(KeybindID.ParamEditor_Reload_All_Params))
         {
-            Editor.ToolMenu.ParamReloader.ReloadMemoryParams(
+            Editor.ViewHandler.ActiveView.ToolMenu.ParamReloader.ReloadMemoryParams(
                 activeView.GetPrimaryBank(),
                 activeView.GetPrimaryBank().Params.Keys.ToArray());
         }
@@ -194,7 +194,7 @@ public class ParamShortcuts
         {
             if (activeView.Selection.GetActiveParam() != null)
             {
-                Editor.ToolMenu.ParamReloader.ReloadMemoryParam(
+                Editor.ViewHandler.ActiveView.ToolMenu.ParamReloader.ReloadMemoryParam(
                     activeView.GetPrimaryBank(),
                     activeView.Selection.GetActiveParam());
             }

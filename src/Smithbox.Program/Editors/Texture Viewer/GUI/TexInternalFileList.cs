@@ -11,7 +11,7 @@ namespace StudioCore.Editors.TextureViewer;
 
 public class TexInternalFileList
 {
-    public TexEditorView Parent;
+    public TexEditorView View;
     public ProjectEntry Project;
 
     private string TpfFileListFilter = "";
@@ -19,7 +19,7 @@ public class TexInternalFileList
 
     public TexInternalFileList(TexEditorView view, ProjectEntry project)
     {
-        Parent = view;
+        View = view;
         Project = project;
     }
 
@@ -36,11 +36,11 @@ public class TexInternalFileList
 
         ImGui.BeginChild("TpfList", new Vector2(0, 0), ImGuiChildFlags.Borders);
 
-        if (Parent.Selection.SelectedBinder != null)
+        if (View.Selection.SelectedBinder != null)
         {
             int index = 0;
 
-            foreach (var entry in Parent.Selection.SelectedBinder.Files)
+            foreach (var entry in View.Selection.SelectedBinder.Files)
             {
                 var file = entry.Key;
                 var tpfEntry = entry.Value;
@@ -53,7 +53,7 @@ public class TexInternalFileList
                     var displayName = file.Name;
 
                     var isSelected = false;
-                    if(Parent.Selection.SelectedTpfKey == file.Name)
+                    if(View.Selection.SelectedTpfKey == file.Name)
                     {
                         isSelected = true;
                     }
@@ -61,33 +61,33 @@ public class TexInternalFileList
                     // Texture row
                     if (ImGui.Selectable($@"{displayName}", isSelected))
                     {
-                        Parent.Selection.SelectTpfFile(entry.Key, entry.Value);
-                        Parent.Editor.ViewHandler.ActiveView = Parent;
-                        Parent.Selection.AutoSelectTexture = true;
+                        View.Selection.SelectTpfFile(entry.Key, entry.Value);
+                        View.Editor.ViewHandler.ActiveView = View;
+                        View.Selection.AutoSelectTexture = true;
                     }
 
                     // Arrow Selection
-                    if (ImGui.IsItemHovered() && Parent.Selection.SelectTpf)
+                    if (ImGui.IsItemHovered() && View.Selection.SelectTpf)
                     {
-                        Parent.Selection.SelectTpf = false;
-                        Parent.Selection.SelectTpfFile(entry.Key, entry.Value);
-                        Parent.Selection.AutoSelectTexture = true;
+                        View.Selection.SelectTpf = false;
+                        View.Selection.SelectTpfFile(entry.Key, entry.Value);
+                        View.Selection.AutoSelectTexture = true;
                     }
 
                     if (ImGui.IsItemFocused())
                     {
                         if (InputManager.HasArrowSelection())
                         {
-                            Parent.Selection.SelectTpf = true;
+                            View.Selection.SelectTpf = true;
                         }
                     }
 
-                    if (index == 0 && Parent.Selection.AutoSelectTpf)
+                    if (index == 0 && View.Selection.AutoSelectTpf)
                     {
-                        Parent.Selection.AutoSelectTpf = false;
-                        Parent.Selection.SelectTpfFile(entry.Key, entry.Value);
-                        Parent.Editor.ViewHandler.ActiveView = Parent;
-                        Parent.Selection.AutoSelectTexture = true;
+                        View.Selection.AutoSelectTpf = false;
+                        View.Selection.SelectTpfFile(entry.Key, entry.Value);
+                        View.Editor.ViewHandler.ActiveView = View;
+                        View.Selection.AutoSelectTexture = true;
                     }
                 }
 
@@ -110,13 +110,13 @@ public class TexInternalFileList
             {
                 if (ImGui.MenuItem($"{LOC.Get("TEXVIEW_InternalFileList_Context_TPF")}##tpfAction"))
                 {
-                    _ = Parent.Editor.ToolView.TextureExport.ExportTPFAsync(tpf, filename);
+                    _ = View.ToolView.TextureExport.ExportTPFAsync(tpf, filename);
                 }
                 UIHelper.Tooltip(LOC.Get("TEXVIEW_InternalFileList_Context_TPF_TT", CFG.Current.TextureViewerToolbar_ExportTextureLocation));
 
                 if (ImGui.MenuItem($"{LOC.Get("TEXVIEW_InternalFileList_Context_All_Textures")}##allTexturesAction"))
                 {
-                    _ = Parent.Editor.ToolView.TextureExport.ExportTexturesFromTPFAsync(tpf);
+                    _ = View.ToolView.TextureExport.ExportTexturesFromTPFAsync(tpf);
                 }
                 UIHelper.Tooltip(LOC.Get("TEXVIEW_InternalFileList_Context_All_Textures_TT", CFG.Current.TextureViewerToolbar_ExportTextureLocation));
 

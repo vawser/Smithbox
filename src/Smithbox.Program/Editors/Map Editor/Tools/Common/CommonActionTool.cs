@@ -10,19 +10,17 @@ namespace StudioCore.Editors.MapEditor;
 
 public class CommonActionTool
 {
-    public MapEditorScreen Editor;
+    public MapEditorView View;
     public ProjectEntry Project;
 
-    public CommonActionTool(MapEditorScreen editor, ProjectEntry project)
+    public CommonActionTool(MapEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 
     public void Display()
     {
-        var activeView = Editor.ViewHandler.ActiveView;
-
         ImGui.BeginChild("CommonActionSection", ImGuiChildFlags.Borders);
 
         ImGui.BeginTabBar("commonActionTabs");
@@ -45,8 +43,7 @@ public class CommonActionTool
     {
         if (ImGui.BeginTabItem("Create##CreateTab"))
         {
-            var activeView = Editor.ViewHandler.ActiveView;
-            activeView.CreateAction.OnToolWindow();
+            View.CreateAction.OnToolWindow();
 
             ImGui.EndTabItem();
         }
@@ -56,8 +53,7 @@ public class CommonActionTool
     {
         if (ImGui.BeginTabItem("Duplicate##DuplicateTab"))
         {
-            var activeView = Editor.ViewHandler.ActiveView;
-            activeView.DuplicateAction.OnToolWindow();
+            View.DuplicateAction.OnToolWindow();
 
             ImGui.EndTabItem();
         }
@@ -67,8 +63,7 @@ public class CommonActionTool
     {
         if (ImGui.BeginTabItem("Duplicate to Map##DuplicateToMapTab"))
         {
-            var activeView = Editor.ViewHandler.ActiveView;
-            activeView.DuplicateToMapAction.OnToolWindow();
+            View.DuplicateToMapAction.OnToolWindow();
 
             ImGui.EndTabItem();
         }
@@ -78,8 +73,7 @@ public class CommonActionTool
     {
         if (ImGui.BeginTabItem("Pull to Camera##PullToCameraTab"))
         {
-            var activeView = Editor.ViewHandler.ActiveView;
-            activeView.PullToCameraAction.OnToolWindow();
+            View.PullToCameraAction.OnToolWindow();
 
             ImGui.EndTabItem();
         }
@@ -89,8 +83,7 @@ public class CommonActionTool
     {
         if (ImGui.BeginTabItem("Translate##TranslateTab"))
         {
-            var activeView = Editor.ViewHandler.ActiveView;
-            activeView.TranslateAction.OnToolWindow();
+            View.TranslateAction.OnToolWindow();
 
             ImGui.EndTabItem();
         }
@@ -100,8 +93,7 @@ public class CommonActionTool
     {
         if (ImGui.BeginTabItem("Rotate##RotateTab"))
         {
-            var activeView = Editor.ViewHandler.ActiveView;
-            activeView.RotateAction.OnToolWindow();
+            View.RotateAction.OnToolWindow();
 
             ImGui.EndTabItem();
         }
@@ -111,8 +103,7 @@ public class CommonActionTool
     {
         if (ImGui.BeginTabItem("Scramble##ScrambleTab"))
         {
-            var activeView = Editor.ViewHandler.ActiveView;
-            activeView.ScrambleAction.OnToolWindow();
+            View.ScrambleAction.OnToolWindow();
 
             ImGui.EndTabItem();
         }
@@ -122,8 +113,7 @@ public class CommonActionTool
     {
         if (ImGui.BeginTabItem("Replicate##ReplicateTab"))
         {
-            var activeView = Editor.ViewHandler.ActiveView;
-            activeView.ReplicateAction.OnToolWindow();
+            View.ReplicateAction.OnToolWindow();
 
             ImGui.EndTabItem();
         }

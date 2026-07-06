@@ -12,7 +12,7 @@ namespace StudioCore.Editors.TextureViewer;
 
 public class TexTextureFileList
 {
-    public TexEditorView Parent;
+    public TexEditorView View;
     public ProjectEntry Project;
 
     private string TextureFileListFilter = "";
@@ -20,7 +20,7 @@ public class TexTextureFileList
 
     public TexTextureFileList(TexEditorView view, ProjectEntry project)
     {
-        Parent = view;
+        View = view;
         Project = project;
     }
 
@@ -34,11 +34,11 @@ public class TexTextureFileList
 
         ImGui.BeginChild("TextureList", new Vector2(0, 0), ImGuiChildFlags.Borders);
 
-        if (Parent.Selection.SelectedTpf != null)
+        if (View.Selection.SelectedTpf != null)
         {
             int index = 0;
 
-            foreach (var entry in Parent.Selection.SelectedTpf.Textures)
+            foreach (var entry in View.Selection.SelectedTpf.Textures)
             {
                 var isMatch = EditorFilters.IsMatch(
                     TextureFileListFilter, entry.Name, ExactTextureFileListFilter, "", true);
@@ -48,7 +48,7 @@ public class TexTextureFileList
                     var displayName = entry.Name;
 
                     var isSelected = false;
-                    if (Parent.Selection.SelectedTextureKey == entry.Name)
+                    if (View.Selection.SelectedTextureKey == entry.Name)
                     {
                         isSelected = true;
                     }
@@ -56,17 +56,17 @@ public class TexTextureFileList
                     // Texture row
                     if (ImGui.Selectable($@"{displayName}", isSelected))
                     {
-                        Parent.Selection.SelectTextureEntry(entry.Name, entry);
+                        View.Selection.SelectTextureEntry(entry.Name, entry);
                         TargetIndex = index;
                         LoadTexture = true;
-                        Parent.Editor.ViewHandler.ActiveView = Parent;
+                        View.Editor.ViewHandler.ActiveView = View;
                     }
 
                     // Arrow Selection
-                    if (ImGui.IsItemHovered() && Parent.Selection.SelectTexture)
+                    if (ImGui.IsItemHovered() && View.Selection.SelectTexture)
                     {
-                        Parent.Selection.SelectTexture = false;
-                        Parent.Selection.SelectTextureEntry(entry.Name, entry);
+                        View.Selection.SelectTexture = false;
+                        View.Selection.SelectTextureEntry(entry.Name, entry);
                         TargetIndex = index;
                         LoadTexture = true;
                     }
@@ -75,15 +75,15 @@ public class TexTextureFileList
                     {
                         if (InputManager.HasArrowSelection())
                         {
-                            Parent.Selection.SelectTexture = true;
+                            View.Selection.SelectTexture = true;
                         }
                     }
 
-                    if(index == 0 && Parent.Selection.AutoSelectTexture)
+                    if(index == 0 && View.Selection.AutoSelectTexture)
                     {
-                        Parent.Selection.AutoSelectTexture = false;
-                        Parent.Selection.SelectTexture = false;
-                        Parent.Selection.SelectTextureEntry(entry.Name, entry);
+                        View.Selection.AutoSelectTexture = false;
+                        View.Selection.SelectTexture = false;
+                        View.Selection.SelectTextureEntry(entry.Name, entry);
                         TargetIndex = index;
                         LoadTexture = true;
                     }
@@ -104,7 +104,7 @@ public class TexTextureFileList
         {
             if (ImGui.MenuItem($"{LOC.Get("TEXVIEW_TextureList_Context_Action_Export")}##exportAction"))
             {
-                _ = Parent.Editor.ToolView.TextureExport.ExportTextureAsync(tex);
+                _ = View.ToolView.TextureExport.ExportTextureAsync(tex);
             }
             UIHelper.Tooltip(
                 LOC.Get("TEXVIEW_TextureList_Context_Action_Export_TT", CFG.Current.TextureViewerToolbar_ExportTextureLocation));
@@ -127,10 +127,10 @@ public class TexTextureFileList
     {
         if (LoadTexture)
         {
-            if (TargetIndex != -1 && Parent.Selection.SelectedTpf != null)
+            if (TargetIndex != -1 && View.Selection.SelectedTpf != null)
             {
-                Parent.Selection.ViewerTextureResource = new TextureResource(Parent.Selection.SelectedTpf, TargetIndex);
-                Parent.Selection.ViewerTextureResource._LoadTexture(AccessLevel.AccessFull);
+                View.Selection.ViewerTextureResource = new TextureResource(View.Selection.SelectedTpf, TargetIndex);
+                View.Selection.ViewerTextureResource._LoadTexture(AccessLevel.AccessFull);
             }
 
             LoadTexture = false;

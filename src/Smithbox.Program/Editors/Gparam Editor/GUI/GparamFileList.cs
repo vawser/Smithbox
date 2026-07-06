@@ -11,7 +11,7 @@ namespace StudioCore.Editors.GparamEditor;
 
 public class GparamFileList
 {
-    private GparamEditorView Parent;
+    private GparamEditorView View;
     private ProjectEntry Project;
 
     private string FileListFilter = "";
@@ -19,7 +19,7 @@ public class GparamFileList
 
     public GparamFileList(GparamEditorView view, ProjectEntry project)
     {
-        Parent = view;
+        View = view;
         Project = project;
     }
 
@@ -85,9 +85,9 @@ public class GparamFileList
 
     private void DisplayFileList()
     {
-        for(int i = 0; i < Parent.Project.Handler.GparamData.PrimaryBank.Entries.Count; i++)
+        for(int i = 0; i < View.Project.Handler.GparamData.PrimaryBank.Entries.Count; i++)
         {
-            var entry = Parent.Project.Handler.GparamData.PrimaryBank.Entries.ElementAt(i);
+            var entry = View.Project.Handler.GparamData.PrimaryBank.Entries.ElementAt(i);
 
             // For BB, toggle which gparam files are displayed
             if (Project.Descriptor.ProjectType is ProjectType.BB)
@@ -110,7 +110,7 @@ public class GparamFileList
 
     private void DisplayFileSelectable(FileDictionaryEntry fileEntry, GPARAM curGparam, int index)
     {
-        var alias = AliasHelper.GetGparamAliasName(Parent.Project, fileEntry.Filename);
+        var alias = AliasHelper.GetGparamAliasName(View.Project, fileEntry.Filename);
 
         var isMatch = EditorFilters.IsMatch(
             FileListFilter, fileEntry.Filename, ExactFileListFilter, alias, false, true);
@@ -131,24 +131,24 @@ public class GparamFileList
         }
 
         // File row
-        if (ImGui.Selectable($@" {filename}", fileEntry.Filename == Parent.Selection._selectedGparamKey))
+        if (ImGui.Selectable($@" {filename}", fileEntry.Filename == View.Selection._selectedGparamKey))
         {
-            Parent.Selection.SetFileSelection(fileEntry);
+            View.Selection.SetFileSelection(fileEntry);
         }
 
         // Arrow Selection
-        if (ImGui.IsItemHovered() && Parent.Selection.SelectGparamFile)
+        if (ImGui.IsItemHovered() && View.Selection.SelectGparamFile)
         {
-            Parent.Selection.SelectGparamFile = false;
+            View.Selection.SelectGparamFile = false;
 
-            Parent.Selection.SetFileSelection(fileEntry);
+            View.Selection.SetFileSelection(fileEntry);
         }
 
         if (ImGui.IsItemFocused())
         {
             if (InputManager.HasArrowSelection())
             {
-                Parent.Selection.SelectGparamFile = true;
+                View.Selection.SelectGparamFile = true;
             }
         }
 
@@ -166,7 +166,7 @@ public class GparamFileList
 
     public void ContextMenu(FileDictionaryEntry fileEntry, GPARAM curGparam)
     {
-        var fileKey = Parent.Selection._selectedGparamKey;
+        var fileKey = View.Selection._selectedGparamKey;
 
         if (fileEntry.Filename != fileKey)
             return;
@@ -197,7 +197,7 @@ public class GparamFileList
 
             if (ImGui.Selectable("Import"))
             {
-                Parent.Editor.ToolView.DataTransferTool.ImportGPARAM(Project, Parent, fileEntry, curGparam);
+                View.ToolView.DataTransferTool.ImportGPARAM(Project, View, fileEntry, curGparam);
             }
             UIHelper.Tooltip("Import a GPARAM json to overwrite this entry.");
 
@@ -208,7 +208,7 @@ public class GparamFileList
 
                 if (ImGui.Selectable("Export File"))
                 {
-                    Parent.Editor.ToolView.DataTransferTool.ExportGparamFile(fileEntry, curGparam, OverrideFileName);
+                    View.ToolView.DataTransferTool.ExportGparamFile(fileEntry, curGparam, OverrideFileName);
                 }
 
                 ImGui.EndMenu();
@@ -233,13 +233,13 @@ public class GparamFileList
             {
                 if (ImGui.Selectable("Quick Edit"))
                 {
-                    Parent.QuickEditHandler.UpdateFileFilter(fileEntry.Filename);
+                    View.QuickEditHandler.UpdateFileFilter(fileEntry.Filename);
                 }
                 UIHelper.Tooltip("Add this file to the File Filter in the Quick Edit window.");
 
                 if (ImGui.Selectable("Data Finder"))
                 {
-                    Parent.Editor.ToolView.DataFinder.UpdateFileFilter(fileEntry.Filename);
+                    View.ToolView.DataFinder.UpdateFileFilter(fileEntry.Filename);
                 }
                 UIHelper.Tooltip("Add this file to the File Filter in the Data Finder window.");
 
@@ -266,7 +266,7 @@ public class GparamFileList
             else
             {
                 // Then actually copy the file
-                var oldPath = Parent.Selection.SelectedFileEntry.Path;
+                var oldPath = View.Selection.SelectedFileEntry.Path;
                 var srcPath = Path.Join(ProjectFileLocator.NormalizePath(Project.Descriptor.ProjectPath), oldPath);
 
                 // Fallback to the vanilla version if there isn't an existing project-edited version
@@ -282,8 +282,8 @@ public class GparamFileList
                 else
                 {
                     // Add the new file to the internal structures so it is immediately editable
-                    var oldName = Parent.Selection.SelectedFileEntry.Filename;
-                    var newFileEntry = Parent.Selection.SelectedFileEntry.Clone();
+                    var oldName = View.Selection.SelectedFileEntry.Filename;
+                    var newFileEntry = View.Selection.SelectedFileEntry.Clone();
                     newFileEntry.Path = newFileEntry.Path.Replace(oldName, CopyAsFileName);
                     newFileEntry.Filename = newFileEntry.Filename.Replace(oldName, CopyAsFileName);
 

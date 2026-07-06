@@ -7,49 +7,37 @@ namespace StudioCore.Editors.MapDataEditor;
 
 public class MapDataToolView
 {
-    public MapDataEditorScreen Editor;
+    public MapDataEditorView View;
     public ProjectEntry Project;
 
-    public MapDataToolView(MapDataEditorScreen editor, ProjectEntry project)
+    public MapDataToolView(MapDataEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 
     public void Draw()
     {
-        var activeView = Editor.ViewHandler.ActiveView;
-
         if (!CFG.Current.Interface_MapDataEditor_ToolWindow)
             return;
 
-        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_MapDataEditor);
-        if (ImGui.Begin("Tools##ToolConfigureWindow_MapDataEditor", UIHelper.GetMainWindowFlags()))
+        if (ImGui.BeginMenuBar())
         {
-            FocusManager.SetFocus(EditorFocusContext.MapDataEditor_Tools);
+            ViewMenu();
 
-            var windowHeight = ImGui.GetWindowHeight();
-            var windowWidth = ImGui.GetWindowWidth();
-
-            if (ImGui.BeginMenuBar())
-            {
-                ViewMenu();
-
-                ImGui.EndMenuBar();
-            }
-
-            // Data Transfer
-            //if(CFG.Current.MaterialEditor_Tool_Data_Transfer)
-            //{
-            //    if (ImGui.CollapsingHeader("Data Transfer"))
-            //    {
-            //        DataTransferTool.Display();
-            //    }
-            //}
+            ImGui.EndMenuBar();
         }
 
-        ImGui.End();
+        // Data Transfer
+        //if(CFG.Current.MaterialEditor_Tool_Data_Transfer)
+        //{
+        //    if (ImGui.CollapsingHeader("Data Transfer"))
+        //    {
+        //        DataTransferTool.Display();
+        //    }
+        //}
     }
+
     public void ViewMenu()
     {
         if (ImGui.BeginMenu("View"))

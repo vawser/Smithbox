@@ -16,7 +16,7 @@ namespace StudioCore.Editors.ParamEditor;
 
 public class ItemGib
 {
-    public ParamEditorScreen Editor;
+    public ParamEditorView View;
     public ProjectEntry Project;
 
     public ItemGibProperties props = new();
@@ -30,9 +30,9 @@ public class ItemGib
         ProjectType.ER,
     };
 
-    public ItemGib(ParamEditorScreen editor, ProjectEntry project)
+    public ItemGib(ParamEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 
@@ -92,7 +92,7 @@ public class ItemGib
     {
         var windowWidth = ImGui.GetWindowWidth();
 
-        if (!ItemGibSupported(Editor.Project.Descriptor.ProjectType))
+        if (!ItemGibSupported(View.Project.Descriptor.ProjectType))
         {
             return;
         }
@@ -238,7 +238,7 @@ public class ItemGib
             return;
         }
 
-        SoulsMemoryHandler memoryHandler = new(Editor, processArray.First());
+        SoulsMemoryHandler memoryHandler = new(View.Editor, processArray.First());
 
         List<int> finalItemIds = new();
         foreach (var row in rowsToGib)

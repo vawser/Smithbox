@@ -15,14 +15,14 @@ namespace StudioCore.Editors.TextureViewer;
 
 public class TextureExport
 {
-    public TextureViewerScreen Editor;
+    public TexEditorView View;
     public ProjectEntry Project;
 
     private TextureExportModal ExportModal;
 
-    public TextureExport(TextureViewerScreen editor, ProjectEntry project)
+    public TextureExport(TexEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
 
         ExportModal = new TextureExportModal(this);
@@ -131,13 +131,8 @@ public class TextureExport
 
     public void ExportTextureHandler()
     {
-        var activeView = Editor.ViewHandler.ActiveView;
-
-        if (activeView == null)
-            return;
-
-        var currentTexture = activeView.Selection.ViewerTextureResource;
-        var currentTextureName = activeView.Selection.SelectedTextureKey;
+        var currentTexture = View.Selection.ViewerTextureResource;
+        var currentTextureName = View.Selection.SelectedTextureKey;
 
         if (currentTexture != null)
         {
