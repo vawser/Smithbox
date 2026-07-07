@@ -1,0 +1,212 @@
+{
+  "Entries": [
+    {
+      "Key": "PARAM_PinGroups_Header",
+      "Text": "Pin Groups"
+    },
+    {
+      "Key": "PARAM_PinGroups_Hint",
+      "Text": "Create a pin group from your current pinned params, rows or fields, or select an existing pin group to replace your current pinned params, rows or fields."
+    },
+    {
+      "Key": "PARAM_PinGroups_Header_Options",
+      "Text": "Options"
+    },
+    {
+      "Key": "PARAM_PinGroups_Header_Options_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_PinGroups_Checkbox_Pinned_Params_Only",
+      "Text": "Only Show Pinned Params"
+    },
+    {
+      "Key": "PARAM_PinGroups_Checkbox_Pinned_Params_Only_TT",
+      "Text": "When enabled, only pinned params will appear in the param list."
+    },
+    {
+      "Key": "PARAM_PinGroups_Checkbox_Pinned_Rows_Only",
+      "Text": "Only Show Pinned Rows"
+    },
+    {
+      "Key": "PARAM_PinGroups_Checkbox_Pinned_Rows_Only_TT",
+      "Text": "When enabled, only pinned rows will appear in the rows list."
+    },
+    {
+      "Key": "PARAM_PinGroups_Checkbox_Pinned_Fields_Only",
+      "Text": "Only Show Pinned Fields"
+    },
+    {
+      "Key": "PARAM_PinGroups_Checkbox_Pinned_Fields_Only_TT",
+      "Text": "When enabled, only pinned fields will appear in the param list."
+    },
+    {
+      "Key": "PARAM_PinGroups_Header_Display",
+      "Text": "Display"
+    },
+    {
+      "Key": "PARAM_PinGroups_Header_Display_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_PinGroups_Action_Clear_Param_Pins",
+      "Text": "Clear Param Pins"
+    },
+    {
+      "Key": "PARAM_PinGroups_Action_Clear_Param_Pins_TT",
+      "Text": "Clear the current pinned params."
+    },
+    {
+      "Key": "PARAM_PinGroups_Action_Clear_Row_Pins",
+      "Text": "Clear Row Pins"
+    },
+    {
+      "Key": "PARAM_PinGroups_Action_Clear_Row_Pins_TT",
+      "Text": "Clear the current pinned rows."
+    },
+    {
+      "Key": "PARAM_PinGroups_Action_Clear_Field_Pins",
+      "Text": "Clear Field Pins"
+    },
+    {
+      "Key": "PARAM_PinGroups_Action_Clear_Field_Pins_TT",
+      "Text": "Clear the current pinned fields."
+    },
+    {
+      "Key": "PARAM_PinGroups_Header_Creation",
+      "Text": "Creation"
+    },
+    {
+      "Key": "PARAM_PinGroups_Header_Creation_TT",
+      "Text": "Actions for creating new pin groups based on the currently pinned params, rows or fields."
+    },
+    {
+      "Key": "PARAM_PinGroups_Input_Name_Hint",
+      "Text": "Enter the pin group name..."
+    },
+    {
+      "Key": "PARAM_PinGroups_Action_Create_Param_Pin_Group",
+      "Text": "Create Param Pin Group"
+    },
+    {
+      "Key": "PARAM_PinGroups_Action_Create_Param_Pin_Group_TT",
+      "Text": "Create a new pin group based on the currently pinned params."
+    },
+    {
+      "Key": "PARAM_PinGroups_Action_Create_Row_Pin_Group",
+      "Text": "Create Row Pin Group"
+    },
+    {
+      "Key": "PARAM_PinGroups_Action_Create_Row_Pin_Group_TT",
+      "Text": "Create a new pin group based on the currently pinned rows."
+    },
+    {
+      "Key": "PARAM_PinGroups_Action_Create_Field_Pin_Group",
+      "Text": "Create Field Pin Group"
+    },
+    {
+      "Key": "PARAM_PinGroups_Action_Create_Field_Pin_Group_TT",
+      "Text": "Create a new pin group based on the currently pinned fields."
+    },
+    {
+      "Key": "PARAM_PinGroups_Action_Display_Param_Pin_Group",
+      "Text": "Display Param Pin Groups"
+    },
+    {
+      "Key": "PARAM_PinGroups_Action_Display_Param_Pin_Group_TT",
+      "Text": "Display the current param pin groups."
+    },
+    {
+      "Key": "PARAM_PinGroups_Action_Display_Row_Pin_Group",
+      "Text": "Display Row Pin Groups"
+    },
+    {
+      "Key": "PARAM_PinGroups_Action_Display_Row_Pin_Group_TT",
+      "Text": "Display the current row pin groups."
+    },
+    {
+      "Key": "PARAM_PinGroups_Action_Display_Field_Pin_Group",
+      "Text": "Display Field Pin Group"
+    },
+    {
+      "Key": "PARAM_PinGroups_Action_Display_Field_Pin_Group_TT",
+      "Text": "Display the current field pin groups."
+    },
+    {
+      "Key": "PARAM_PinGroups_Header_Param_Groups",
+      "Text": "Param Groups"
+    },
+    {
+      "Key": "PARAM_PinGroups_Header_Param_Groups_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_PinGroups_Header_Row_Groups",
+      "Text": "Row Groups"
+    },
+    {
+      "Key": "PARAM_PinGroups_Header_Row_Groups_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_PinGroups_Header_Field_Groups",
+      "Text": "Field Groups"
+    },
+    {
+      "Key": "PARAM_PinGroups_Header_Field_Groups_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_PinGroups_ParamGroup_Set_TT",
+      "Text": "Double-click to set current param pins to this group."
+    },
+    {
+      "Key": "PARAM_PinGroups_Action_Delete",
+      "Text": "Delete"
+    },
+    {
+      "Key": "PARAM_PinGroups_Action_Delete_TT",
+      "Text": "Delete this pin group."
+    },
+    {
+      "Key": "PARAM_PinGroups_RowGroup_Set_TT",
+      "Text": "Double-click to set current row pins to this group."
+    },
+    {
+      "Key": "PARAM_PinGroups_FieldGroup_Set_TT",
+      "Text": "Double-click to set current field pins to this group."
+    },
+    {
+      "Key": "PARAM_PinGroups_Alias_Params",
+      "Text": "Params: "
+    },
+    {
+      "Key": "PARAM_PinGroups_Alias_Rows",
+      "Text": "Rows: "
+    },
+    {
+      "Key": "PARAM_PinGroups_Alias_Fields",
+      "Text": "Fields: "
+    },
+    {
+      "Key": "PARAM_PinGroups_Empty_Group_Name",
+      "Text": "Group name cannot be empty."
+    },
+    {
+      "Key": "PARAM_PinGroups_Load_Pin_Group_FAIL",
+      "Text": "Failed to load pin group: {0} at {1}"
+    },
+    {
+      "Key": "PARAM_PinGroups_Dialog_Overwrite_Existing_Group",
+      "Text": "{0} already exists as a {1}. Are you sure you want to overwrite it?"
+    },
+    {
+      "Key": "PARAM_PinGroups_Save_Pin_Group_PASS",
+      "Text": "Saved pin group: {0} at {1}"
+    },
+    {
+      "Key": "PARAM_PinGroups_Save_Pin_Group_FAIL",
+      "Text": "Failed to save pin group: {0} at {1}"
+    }
+  ]
+}

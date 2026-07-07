@@ -91,26 +91,6 @@
     {
       "Key": "PARAM_Merger_Log_Merged_Project",
       "Text": "Merged target project rows: {0} into this project."
-    },
-    {
-      "Key": "PARAM_Merger_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_Merger_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_Merger_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_Merger_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_Merger_",
-      "Text": ""
-    },
+    }
   ]
 }
