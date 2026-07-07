@@ -91,6 +91,50 @@
     {
       "Key": "PARAM_ENUM_DeltaImportMode_Conditional",
       "Text": "Conditional on Row Delta"
+    },
+    {
+      "Key": "PARAM_ENUM_ParamUpgradeRowGetType_All",
+      "Text": "All Rows"
+    },
+    {
+      "Key": "PARAM_ENUM_ParamUpgradeRowGetType_Modified",
+      "Text": "Modified Rows"
+    },
+    {
+      "Key": "PARAM_ENUM_ParamUpgradeRowGetType_Selected",
+      "Text": "Selected Rows"
+    },
+    {
+      "Key": "PARAM_ENUM_CsvExportType_All_Params",
+      "Text": "All Params"
+    },
+    {
+      "Key": "PARAM_ENUM_CsvExportType_Modified_Params",
+      "Text": "Modified Params"
+    },
+    {
+      "Key": "PARAM_ENUM_CsvExportType_Selected_Param",
+      "Text": "Selected Param"
+    },
+    {
+      "Key": "PARAM_ENUM_CsvExportType_Modified_Rows",
+      "Text": "Modified Rows"
+    },
+    {
+      "Key": "PARAM_ENUM_CsvExportType_Selected_Rows",
+      "Text": "Selected Rows"
+    },
+    {
+      "Key": "PARAM_ENUM_CsvImportType_All_Fields",
+      "Text": "All Fields"
+    },
+    {
+      "Key": "PARAM_ENUM_CsvImportType_Row_Name",
+      "Text": "Row Name"
+    },
+    {
+      "Key": "PARAM_ENUM_CsvImportType_Specific_Field",
+      "Text": "Specific Field"
     }
   ]
 }

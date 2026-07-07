@@ -1,139 +1,435 @@
 {
   "Entries": [
     {
-      "Key": "PARAM_DataTransfer_",
+      "Key": "PARAM_DataTransfer_Header_Export_CSV",
+      "Text": "Export CSV"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Header_Import_CSV",
+      "Text": "Import CSV"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Header_CSV_Settings",
+      "Text": "CSV Settings"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Header_Data_Transfer",
+      "Text": "Data Transfer"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Tab_Import",
+      "Text": "Import"
+    },
+    {
+      "Key": "PARAM_DataTransfer_ImportTab_Hint",
+      "Text": "Use this section to import comma-separated values, applying the data to your current project."
+    },
+    {
+      "Key": "PARAM_DataTransfer_Header_CSV_Input",
+      "Text": "CSV Input"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Header_CSV_Input_TT",
+      "Text": "The CSV to import as param data."
+    },
+    {
+      "Key": "PARAM_DataTransfer_Header_Import_Type",
+      "Text": "Import Type"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Header_Import_Type_TT",
+      "Text": "The type of import to apply. Determines how the CSV data is interpreted."
+    },
+    {
+      "Key": "PARAM_DataTransfer_Header_Specific_Field",
+      "Text": "Specific Field for Import"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Header_Specific_Field_TT",
+      "Text": "The field to target from the import source."
+    },
+    {
+      "Key": "PARAM_DataTransfer_Specific_Field_Hint",
+      "Text": "The field to target..."
+    },
+    {
+      "Key": "PARAM_DataTransfer_Header_Delimiter",
+      "Text": "Delimiter"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Header_Delimiter_TT",
+      "Text": "The separator character used to split the data into columns."
+    },
+    {
+      "Key": "PARAM_DataTransfer_Header_Options",
+      "Text": "Options"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Header_Options_TT",
       "Text": ""
     },
     {
-      "Key": "PARAM_DataTransfer_",
+      "Key": "PARAM_DataTransfer_Checkbox_Append_Mode",
+      "Text": "Append New Rows"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Checkbox_Append_Mode_TT",
+      "Text": "Append new rows instead of ID based insertion (this will create out-of-order IDs)"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Checkbox_Replace_Existing",
+      "Text": "Replace Existing Rows"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Checkbox_Replace_Existing_TT",
+      "Text": "Replace existing rows instead of updating them (they will be moved to the end)"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Header_Actions",
+      "Text": "Actions"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Header_Actions_TT",
       "Text": ""
     },
     {
-      "Key": "PARAM_DataTransfer_",
+      "Key": "PARAM_DataTransfer_Action_Import",
+      "Text": "Import"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Action_Import_TT",
+      "Text": "Import from the text input above."
+    },
+    {
+      "Key": "PARAM_DataTransfer_Action_File_Import",
+      "Text": "Import from File"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Action_File_Import_TT",
+      "Text": "Import from an external file."
+    },
+    {
+      "Key": "PARAM_DataTransfer_Header_Result",
+      "Text": "Result"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Header_Result_TT",
       "Text": ""
     },
     {
-      "Key": "PARAM_DataTransfer_",
+      "Key": "PARAM_DataTransfer_Log_No_Param_Selected",
+      "Text": "No param has been selected."
+    },
+    {
+      "Key": "PARAM_DataTransfer_Dialog_Select_File",
+      "Text": "Select File"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Import_All_Fields",
+      "Text": "All Fields"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Import_Row_Name",
+      "Text": "Row Name"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Import_Specific_Field",
+      "Text": "Specific Field"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Header_From_File",
+      "Text": "From File"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Log_Failed_CSV_Import",
+      "Text": "Failed to import CSV: {0}"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Tab_Export",
+      "Text": "Export"
+    },
+    {
+      "Key": "PARAM_DataTransfer_ExportTab_Hint",
+      "Text": "Use this section to export comma-separated values from your current project."
+    },
+    {
+      "Key": "PARAM_DataTransfer_Header_Export_Type",
+      "Text": "Export Type"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Header_Export_Type_TT",
+      "Text": "Determines which elements of the param and row data are exported."
+    },
+    {
+      "Key": "PARAM_DataTransfer_Header_Export_Directory",
+      "Text": "Export Directory"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Header_Export_Directory_TT",
+      "Text": "The directory to export the CSV data to."
+    },
+    {
+      "Key": "PARAM_DataTransfer_Export_Dir_Hint",
+      "Text": "Assign the directory..."
+    },
+    {
+      "Key": "PARAM_DataTransfer_Action_Set_Export_Directory",
+      "Text": "Set Export Directory"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Action_Set_Export_Directory_TT",
+      "Text": "Set the export directory for the exported CSV files."
+    },
+    {
+      "Key": "PARAM_DataTransfer_Action_Open_Export_Directory",
+      "Text": "Open Export Directory"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Action_Open_Export_Directory_TT",
+      "Text": "Open the export directory in a file explorer."
+    },
+    {
+      "Key": "PARAM_DataTransfer_Header_Export_Filename",
+      "Text": "Export Filename"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Header_Export_Filename_TT",
+      "Text": "The filename to export the CSV data under (if blank the param name is used)"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Export_Filename_Hint",
+      "Text": "Name of the exported file..."
+    },
+    {
+      "Key": "PARAM_DataTransfer_Header_Export_Output",
+      "Text": "Export Output"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Header_Export_Output_TT",
       "Text": ""
     },
     {
-      "Key": "PARAM_DataTransfer_",
+      "Key": "PARAM_DataTransfer_Action_Copy_to_Clipboard",
+      "Text": "Copy to Clipboard"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Action_Copy_to_Clipboard_TT",
+      "Text": "Copy the export output to the clipboard."
+    },
+    {
+      "Key": "PARAM_DataTransfer_Header_Actions",
+      "Text": "Actions"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Header_Actions_TT",
       "Text": ""
     },
     {
-      "Key": "PARAM_DataTransfer_",
+      "Key": "PARAM_DataTransfer_Action_Export_to_File",
+      "Text": "Export to File"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Action_Export_to_File_TT",
+      "Text": "Export the CSV param data to file."
+    },
+    {
+      "Key": "PARAM_DataTransfer_Dialog_Select_Export_Destination",
+      "Text": "Select Export Destination"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Log_No_Export_Directory",
+      "Text": "Export directory has not been set."
+    },
+    {
+      "Key": "PARAM_DataTransfer_Log_Invalid_Export_Directory",
+      "Text": "Export directory is invalid."
+    },
+    {
+      "Key": "PARAM_DataTransfer_Export_String",
+      "Text": "Not generated when exporting multiple params."
+    },
+    {
+      "Key": "PARAM_DataTransfer_Save_Param_CSV_to_File",
+      "Text": "Saved {0} param CSV to file."
+    },
+    {
+      "Key": "PARAM_DataTransfer_Save_Modified_Param_CSV_to_File",
+      "Text": "Saved modified {0} param CSV to file."
+    },
+    {
+      "Key": "PARAM_DataTransfer_Log_No_Selected_Param",
+      "Text": "No param has been selected."
+    },
+    {
+      "Key": "PARAM_DataTransfer_Log_Missing_Param_Data",
+      "Text": "Failed to find param data."
+    },
+    {
+      "Key": "PARAM_DataTransfer_Saved_Selected_Param_CSV_to_Clipboard",
+      "Text": "Saved selected param CSV to clipboard."
+    },
+    {
+      "Key": "PARAM_DataTransfer_Saved_Modified_Rows_CSV_to_Clipboard",
+      "Text": "Saved modified rows CSV to clipboard."
+    },
+    {
+      "Key": "PARAM_DataTransfer_Saved_Selected_Rows_CSV_to_Clipboard",
+      "Text": "Saved selected rows CSV to clipboard."
+    },
+    {
+      "Key": "PARAM_DataTransfer_Saved_Selected_Param_CSV_to_File",
+      "Text": "Saved selected param CSV to file: {0}"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Saved_Modified_Rows_CSV_to_File",
+      "Text": "Saved modified rows CSV to file: {0}"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Saved_Selected_Rows_CSV_to_File",
+      "Text": "Saved selected rows CSV to file: {0}"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Export_Header_All_Rows",
+      "Text": "All Rows"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Export_Header_Quick_Action",
+      "Text": "Quick Actions"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Action_Export_Selected_Names_Wnd",
+      "Text": "Export Selected Names to Window"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Action_Export_Selected_Param_Wnd",
+      "Text": "Export Selected Param to Window"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Action_Export_Selected_Param_File",
+      "Text": "Export Selected Param to File"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Dialog_Select_Folder",
+      "Text": "Select Folder"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Export_Header_Modified_Rows",
+      "Text": "Modified Rows"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Export_Header_Selected_Rows",
+      "Text": "Selected Rows"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Export_Header_All_Params",
+      "Text": "All Params"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Export_All_Params_to_File",
+      "Text": "Export All Params to File"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Export_All_Modified_Params_to_File",
+      "Text": "Export All Modified Params to File"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Header_Export_to_Window",
+      "Text": "Export to Window"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Export_All_Fields",
+      "Text": "Export All Fields"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Header_Export_Specific_Field",
+      "Text": "Export Specific Field"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Export_Row_Name",
+      "Text": "Row Name"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Header_Export_to_File",
+      "Text": "Export to File"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Write_File_FAIL",
+      "Text": "Failed to write file for CSV: {0}"
+    },
+    {
+      "Key": "PARAM_DataTransfer_Write_file_PASS",
+      "Text": "Exported CSV file: {0}"
+    },
+    {
+      "Key": "PARAM_CSV_Invalid_Param_Name",
+      "Text": "Invalid Param Name."
+    },
+    {
+      "Key": "PARAM_CSV_No_Param_Selected",
+      "Text": "No Param Selected."
+    },
+    {
+      "Key": "PARAM_CSV_Invalid_Data_Type_Parse",
+      "Text": "Unable to parse CSV into correct data types."
+    },
+    {
+      "Key": "PARAM_CSV_Empty_File",
+      "Text": "CSV is empty."
+    },
+    {
+      "Key": "PARAM_CSV_Missing_Header",
+      "Text": "CSV missing expected header row starting with ID and Name."
+    },
+    {
+      "Key": "PARAM_CSV_Failed_to_Assign_Value_To_Field",
+      "Text": "Could not assign {0} to field {1}."
+    },
+    {
+      "Key": "PARAM_CSV_Failed_to_Convert_String_to_Value",
+      "Text": "Failed to convert CSV string to value."
+    },
+    {
+      "Key": "PARAM_CSV_Result_Effect",
+      "Text": "{0} cells affected, {1} rows added."
+    },
+    {
+      "Key": "PARAM_CSV_Wrong_Field_Name",
+      "Text": "CSV has wrong field name."
+    },
+    {
+      "Key": "PARAM_CSV_Wrong_Value_Count",
+      "Text": "CSV has wrong number of values."
+    },
+    {
+      "Key": "PARAM_CSV_Failed_to_Locate_Row",
+      "Text": "Could not locate row {0}"
+    },
+    {
+      "Key": "PARAM_CSV_Failed_to_Locate_Row_Iteration",
+      "Text": "Could not locate row {0}, iteration {1}"
+    },
+    {
+      "Key": "PARAM_CSV_Failed_to_Locate_Field",
+      "Text": "Could not locate field {0}."
+    },
+    {
+      "Key": "PARAM_CSV_Row_Result_Effect",
+      "Text": "{0} rows affected."
+    },
+    {
+      "Key": "PARAM_CSV_",
       "Text": ""
     },
     {
-      "Key": "PARAM_DataTransfer_",
+      "Key": "PARAM_CSV_",
       "Text": ""
     },
     {
-      "Key": "PARAM_DataTransfer_",
+      "Key": "PARAM_CSV_",
       "Text": ""
     },
     {
-      "Key": "PARAM_DataTransfer_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_DataTransfer_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_DataTransfer_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_DataTransfer_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_DataTransfer_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_DataTransfer_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_DataTransfer_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_DataTransfer_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_DataTransfer_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_DataTransfer_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_DataTransfer_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_DataTransfer_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_DataTransfer_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_DataTransfer_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_DataTransfer_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_DataTransfer_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_DataTransfer_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_DataTransfer_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_DataTransfer_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_DataTransfer_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_DataTransfer_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_DataTransfer_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_DataTransfer_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_DataTransfer_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_DataTransfer_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_DataTransfer_",
+      "Key": "PARAM_CSV_",
       "Text": ""
     },
   ]

@@ -732,6 +732,25 @@ public static class UIHelper
             ImGui.EndTable();
         }
     }
+    public static void SinglelineTextInputWithHint(string id, ref string input, string hint)
+    {
+        var tblFlags = ImGuiTableFlags.SizingFixedFit;
+
+        if (ImGui.BeginTable($"{id}", 1, tblFlags))
+        {
+            ImGui.TableSetupColumn("Title", ImGuiTableColumnFlags.WidthFixed);
+
+            ImGui.TableNextRow();
+            ImGui.TableSetColumnIndex(0);
+
+            var width = ImGui.GetWindowWidth() * 0.5f;
+
+            ImGui.PushItemWidth(width);
+            ImGui.InputTextWithHint($"##{id}_input", hint, ref input, 255);
+
+            ImGui.EndTable();
+        }
+    }
 
     public static Vector2 GetMultilineTextSize(float height = 150f)
     {

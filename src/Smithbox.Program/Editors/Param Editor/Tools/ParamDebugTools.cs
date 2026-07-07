@@ -1,18 +1,8 @@
 ﻿using Andre.Formats;
-using Google.Protobuf.Reflection;
 using Hexa.NET.ImGui;
-using Microsoft.AspNetCore.Components.Forms;
-using SoulsFormats;
-using StudioCore.Application;
 using StudioCore.Utilities;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
 using System.Text.Encodings.Web;
 using System.Text.Json;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.ParamEditor;
 
