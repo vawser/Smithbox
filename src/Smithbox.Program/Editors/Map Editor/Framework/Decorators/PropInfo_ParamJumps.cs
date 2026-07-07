@@ -23,7 +23,7 @@ public static class PropInfo_ParamJumps
             ImGui.Separator();
             ImGui.Text("Params:");
             ImGui.Separator();
-            UIHelper.Tooltip("The current selection references these rows in params");
+            GUI.Tooltip("The current selection references these rows in params");
 
             if (ImGui.Button(Icons.Binoculars + "##ParamJump_ViewRef_Asset" + refID, 
                 DPI.IconButtonSize))
@@ -87,7 +87,7 @@ public static class PropInfo_ParamJumps
             ImGui.Separator();
             ImGui.Text("Params:");
             ImGui.Separator();
-            UIHelper.Tooltip("The current selection references these rows in params");
+            GUI.Tooltip("The current selection references these rows in params");
 
             if (ImGui.Button(Icons.Binoculars + "##ParamJump_ViewRef_Enemy" + refID,
                 DPI.IconButtonSize))

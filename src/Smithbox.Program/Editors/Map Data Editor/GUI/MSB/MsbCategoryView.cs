@@ -36,13 +36,13 @@ public class MsbCategoryView
     {
         var baseCategories = MsbCategories.GetBaseCategories(Project);
 
-        UIHelper.SimpleHeader("Base Categories", "");
+        GUI.SimpleHeader("Base Categories", "");
 
         var subCategories = GetSubCategoriesForCurrentBase(baseCategories);
 
         DisplayBaseCategoryList(baseCategories);
 
-        UIHelper.SimpleHeader("Sub Categories", "");
+        GUI.SimpleHeader("Sub Categories", "");
 
         DisplaySubCategoryList(subCategories);
     }
@@ -66,7 +66,7 @@ public class MsbCategoryView
         if (CFG.Current.MapDataEditor_CategoryView_Display_Empty_Base_Categories)
             emptyBaseDisplay = "Display Empty Base Categories";
 
-        UIHelper.Tooltip($"Toggle the display of base categories with no entries.\nCurrent Mode: {emptyBaseDisplay}");
+        GUI.Tooltip($"Toggle the display of base categories with no entries.\nCurrent Mode: {emptyBaseDisplay}");
 
         ImGui.EndChild();
 
@@ -171,7 +171,7 @@ public class MsbCategoryView
         if (CFG.Current.MapDataEditor_CategoryView_Display_Empty_Sub_Categories)
             emptyBaseDisplay = "Display Empty Sub Categories";
 
-        UIHelper.Tooltip($"Toggle the display of base categories with no entries.\nCurrent Mode: {emptyBaseDisplay}");
+        GUI.Tooltip($"Toggle the display of base categories with no entries.\nCurrent Mode: {emptyBaseDisplay}");
 
         ImGui.EndChild();
 

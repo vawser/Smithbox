@@ -26,7 +26,7 @@ public class MapListView : IActionEventHandler
 
     public void Display(float width, float height)
     {
-        UIHelper.SimpleHeader("Map List", "");
+        GUI.SimpleHeader("Map List", "");
 
         DisplaySearchbar();
 
@@ -71,7 +71,7 @@ public class MapListView : IActionEventHandler
         {
             _updateMapList = true;
         }
-        UIHelper.Tooltip("Filter the map list entries.");
+        GUI.Tooltip("Filter the map list entries.");
 
         if (View.Project.Descriptor.ProjectType is ProjectType.BB)
         {
@@ -86,7 +86,7 @@ public class MapListView : IActionEventHandler
             {
                 View.WorldMapTool.DisplayMenuOption();
             }
-            UIHelper.Tooltip($"Open a world map with a visual representation of the map tiles.\nShortcut: {InputManager.GetHint(KeybindID.MapEditor_Toggle_World_Map_Menu)}");
+            GUI.Tooltip($"Open a world map with a visual representation of the map tiles.\nShortcut: {InputManager.GetHint(KeybindID.MapEditor_Toggle_World_Map_Menu)}");
 
             if(FilteredMapList.Count > 0)
             {
@@ -95,7 +95,7 @@ public class MapListView : IActionEventHandler
                 {
                     ClearMapList();
                 }
-                UIHelper.Tooltip($"Clear the pre-filtered map list set by a World Map click.");
+                GUI.Tooltip($"Clear the pre-filtered map list set by a World Map click.");
             }
         }
 
@@ -135,7 +135,7 @@ public class MapListView : IActionEventHandler
         {
             DisplayChaliceDungeons = !DisplayChaliceDungeons;
         }
-        UIHelper.Tooltip("Toggles the display of chalice dungeon maps within the map list.");
+        GUI.Tooltip("Toggles the display of chalice dungeon maps within the map list.");
     }
 
     /// <summary>
@@ -287,11 +287,11 @@ public class MapListView : IActionEventHandler
 
                 if (loadType == MapContentLoadState.Loaded)
                 {
-                    UIHelper.DisplayColoredAlias(displayedName, UI.Current.ImGui_AliasName_Text, CFG.Current.Interface_Alias_Wordwrap_Map_Editor);
+                    GUI.DisplayColoredAlias(displayedName, UI.Current.ImGui_AliasName_Text, CFG.Current.Interface_Alias_Wordwrap_Map_Editor);
                 }
                 else
                 {
-                    UIHelper.DisplayColoredAlias(displayedName, UI.Current.ImGui_Default_Text_Color, CFG.Current.Interface_Alias_Wordwrap_Map_Editor);
+                    GUI.DisplayColoredAlias(displayedName, UI.Current.ImGui_Default_Text_Color, CFG.Current.Interface_Alias_Wordwrap_Map_Editor);
                 }
 
                 // Context Menu

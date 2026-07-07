@@ -28,7 +28,7 @@ public class FileListView
     {
         BuildFolderNodes();
 
-        UIHelper.SimpleHeader("File List", "");
+        GUI.SimpleHeader("File List", "");
 
         DisplayVFS();
     }

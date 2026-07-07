@@ -38,31 +38,31 @@ public class ProjectEnumMenu
 
         if (curProject == null)
         {
-            UIHelper.WrappedText(LOC.Get("META_EnumMenu_Error_Invalid_Project"));
+            GUI.WrappedText(LOC.Get("META_EnumMenu_Error_Invalid_Project"));
             return;
         }
 
         if (curProject.Handler == null)
         {
-            UIHelper.WrappedText(LOC.Get("META_EnumMenu_Error_Invalid_Project"));
+            GUI.WrappedText(LOC.Get("META_EnumMenu_Error_Invalid_Project"));
             return;
         }
 
         if (curProject.Handler.ProjectData == null)
         {
-            UIHelper.WrappedText(LOC.Get("META_EnumMenu_Error_Invalid_Project"));
+            GUI.WrappedText(LOC.Get("META_EnumMenu_Error_Invalid_Project"));
             return;
         }
 
         if (curProject.Descriptor == null)
         {
-            UIHelper.WrappedText(LOC.Get("META_EnumMenu_Error_Invalid_Project"));
+            GUI.WrappedText(LOC.Get("META_EnumMenu_Error_Invalid_Project"));
             return;
         }
 
         if (Smithbox.Orchestrator.ProjectEditor.SelectedLoadedEntry == null)
         {
-            UIHelper.WrappedText(LOC.Get("META_EnumMenu_Error_No_Loaded_Project"));
+            GUI.WrappedText(LOC.Get("META_EnumMenu_Error_No_Loaded_Project"));
             return;
         }
 
@@ -150,7 +150,7 @@ public class ProjectEnumMenu
                     ImGui.Checkbox(
                         $"{LOC.Get("META_EnumMenu_Menu_Save_Shortcut_Saves_To_Base_Source")}##saveShortcutToggle", ref CFG.Current.Project_Enum_Editor_Save_Applies_To_Base);
 
-                    UIHelper.Tooltip(
+                    GUI.Tooltip(
                         LOC.Get("META_EnumMenu_Menu_Save_Shortcut_Saves_To_Base_Source_TT"));
 
                     ImGui.EndMenu();
@@ -164,7 +164,7 @@ public class ProjectEnumMenu
                     $"{LOC.Get("META_EnumMenu_Menu_Insert_New_At_Top")}##insertAtTopAction", 
                     ref CFG.Current.Project_Enum_Editor_Add_Insert_At_Top);
 
-                UIHelper.Tooltip(
+                GUI.Tooltip(
                     LOC.Get("META_EnumMenu_Menu_Insert_New_At_Top_TT"));
 
                 ImGui.EndMenu();
@@ -225,7 +225,7 @@ public class ProjectEnumMenu
     public void DisplayEditor()
     {
         // Enums
-        UIHelper.SimpleHeader(
+        GUI.SimpleHeader(
             LOC.Get("META_EnumMenu_Header_Enums"),
             LOC.Get("META_EnumMenu_Header_Enums_TT"));
 
@@ -333,7 +333,7 @@ public class ProjectEnumMenu
         {
             AddEnumOption();
         }
-        UIHelper.Tooltip(
+        GUI.Tooltip(
             LOC.Get("META_EnumMenu_Button_Add_Enum_Option_TT"));
 
         // Sort
@@ -343,7 +343,7 @@ public class ProjectEnumMenu
         {
             CurrentEnum.Options.Sort();
         }
-        UIHelper.Tooltip(
+        GUI.Tooltip(
             LOC.Get("META_EnumMenu_Button_Sort_Enum_Options_TT"));
 
         // Read Only Toggle
@@ -359,7 +359,7 @@ public class ProjectEnumMenu
         {
             readOnlyMode = LOC.Get("META_EnumMenu_Enum_Read_Only_Inactive");
         }
-        UIHelper.Tooltip(
+        GUI.Tooltip(
             LOC.Get("META_EnumMenu_Button_Read_Only_Toggle_TT", readOnlyMode)
             );
 
@@ -384,7 +384,7 @@ public class ProjectEnumMenu
 
         if (options.Count == 0)
         {
-            UIHelper.MultiButtonInput("enumOptionActions",
+            GUI.MultiButtonInput("enumOptionActions",
                 "addEnumOption", 
                 LOC.Get("META_EnumMenu_Add_Enum_Option"),
                 LOC.Get("META_EnumMenu_Add_Enum_Option_TT"),

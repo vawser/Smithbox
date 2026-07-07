@@ -33,10 +33,10 @@ public class TextLanguageSyncTool
     {
         ImGui.BeginChild("LanguageSync", ImGuiChildFlags.Borders);
 
-        UIHelper.WrappedText(LOC.Get("TEXT_LanguageSync_Hint"));
+        GUI.WrappedText(LOC.Get("TEXT_LanguageSync_Hint"));
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader(
+        GUI.Spacer();
+        GUI.SimpleHeader(
             LOC.Get("TEXT_LanguageSync_Header_Source_Lang"),
             LOC.Get("TEXT_LanguageSync_Header_Source_Lang_TT"));
 
@@ -62,15 +62,15 @@ public class TextLanguageSyncTool
             ImGui.EndCombo();
         }
 
-        UIHelper.Spacer();
-        UIHelper.ConditionalHeader(
+        GUI.Spacer();
+        GUI.ConditionalHeader(
             LOC.Get("TEXT_LanguageSync_Header_Target_Lang"),
             LOC.Get("TEXT_LanguageSync_Header_Target_Lang_TT"),
             ref DisplayTargetLanguagesSection);
 
         if (CurrentSourceLanguage is TextContainerCategory.None)
         {
-            UIHelper.WrappedText(LOC.Get("TEXT_LanguageSync_Select_Source_Lang"));
+            GUI.WrappedText(LOC.Get("TEXT_LanguageSync_Select_Source_Lang"));
         }
         else if (DisplayTargetLanguagesSection)
         {
@@ -89,13 +89,13 @@ public class TextLanguageSyncTool
                     {
                         TargetLanguages[entry.Key] = curState;
                     }
-                    UIHelper.Tooltip(LOC.Get("TEXT_LanguageSync_Lang_Select_TT"));
+                    GUI.Tooltip(LOC.Get("TEXT_LanguageSync_Lang_Select_TT"));
                 }
             }
         }
 
-        UIHelper.Spacer();
-        UIHelper.ConditionalHeader(
+        GUI.Spacer();
+        GUI.ConditionalHeader(
             LOC.Get("TEXT_LanguageSync_Header_Options"),
             LOC.Get("TEXT_LanguageSync_Header_Options_TT"),
             ref DisplayOptionsLanguagesSection);
@@ -105,40 +105,40 @@ public class TextLanguageSyncTool
             ImGui.Checkbox(
                 $"{LOC.Get("TEXT_LanguageSync_Checkbox_Include_Default")}##includeDefault",
                 ref CFG.Current.TextEditor_LanguageSync_IncludeDefaultEntries);
-            UIHelper.Tooltip(LOC.Get("TEXT_LanguageSync_Checkbox_Include_Default_TT"));
+            GUI.Tooltip(LOC.Get("TEXT_LanguageSync_Checkbox_Include_Default_TT"));
 
             ImGui.Checkbox(
                 $"{LOC.Get("TEXT_LanguageSync_Checkbox_Include_Added")}##includeAdded",
                 ref CFG.Current.TextEditor_LanguageSync_IncludeUniqueEntries);
-            UIHelper.Tooltip(LOC.Get("TEXT_LanguageSync_Checkbox_Include_Added_TT"));
+            GUI.Tooltip(LOC.Get("TEXT_LanguageSync_Checkbox_Include_Added_TT"));
 
             ImGui.Checkbox(
                 $"{LOC.Get("TEXT_LanguageSync_Checkbox_Include_Modified")}##includeModified",
                 ref CFG.Current.TextEditor_LanguageSync_IncludeModifiedEntries);
-            UIHelper.Tooltip(LOC.Get("TEXT_LanguageSync_Checkbox_Include_Modified_TT"));
+            GUI.Tooltip(LOC.Get("TEXT_LanguageSync_Checkbox_Include_Modified_TT"));
 
             ImGui.Checkbox(
                 $"{LOC.Get("TEXT_LanguageSync_Checkbox_Apply_Prefix")}##applyPrefix",
                 ref CFG.Current.TextEditor_Language_Sync_Apply_Prefix);
-            UIHelper.Tooltip(LOC.Get("TEXT_LanguageSync_Checkbox_Apply_Prefix_TT"));
+            GUI.Tooltip(LOC.Get("TEXT_LanguageSync_Checkbox_Apply_Prefix_TT"));
         }
 
         if (CFG.Current.TextEditor_Language_Sync_Apply_Prefix)
         {
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader(
+            GUI.Spacer();
+            GUI.SimpleHeader(
                 LOC.Get("TEXT_LanguageSync_Header_Sync_Prefix"),
                 LOC.Get("TEXT_LanguageSync_Header_Sync_Prefix_TT"));
 
-            UIHelper.SinglelineTextInput("##prefixTextInput", ref CFG.Current.TextEditor_Language_Sync_Prefix);
+            GUI.SinglelineTextInput("##prefixTextInput", ref CFG.Current.TextEditor_Language_Sync_Prefix);
         }
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader(
+        GUI.Spacer();
+        GUI.SimpleHeader(
             LOC.Get("TEXT_LanguageSync_Header_Actions"),
             LOC.Get("TEXT_LanguageSync_Header_Actions_TT"));
 
-        UIHelper.MultiButtonInput("languageSyncActions",
+        GUI.MultiButtonInput("languageSyncActions",
             "syncLanguages", 
             LOC.Get("TEXT_LanguageSync_Action_Sync"),
             LOC.Get("TEXT_LanguageSync_Action_Sync_TT"),
@@ -285,14 +285,14 @@ public class TextLanguageSyncTool
                         var compandAction = new CompoundAction(actions);
                         View.ActionManager.ExecuteAction(compandAction);
                     }
-                    UIHelper.Tooltip(
+                    GUI.Tooltip(
                         LOC.Get("TEXT_LanguageSync_Action_Sync_TT", selectableName));
                 }
             }
 
             ImGui.EndMenu();
         }
-        UIHelper.Tooltip(LOC.Get("TEXT_LanguageSync_Header_Sync_With_TT"));
+        GUI.Tooltip(LOC.Get("TEXT_LanguageSync_Header_Sync_With_TT"));
     }
 
     private List<EditorAction> SyncLanguage(TextContainerWrapper syncTargetContainerWrapper, TextContainerWrapper syncSrcContainerWrapper, int targetFmgId = -1)

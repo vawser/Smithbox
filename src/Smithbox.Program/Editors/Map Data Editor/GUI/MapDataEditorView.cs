@@ -48,8 +48,8 @@ public class MapDataEditorView
     {
         // Sub-Editor Mode
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
-        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_MapDataEditorView);
-        if (ImGui.Begin($@"Configuration##mapDataEditor_Common_{viewIndex}", UIHelper.GetInnerWindowFlags()))
+        ImGui.SetNextWindowClass(ref GUI.DockGroup_MapDataEditorView);
+        if (ImGui.Begin($@"Configuration##mapDataEditor_Common_{viewIndex}", GUI.GetInnerWindowFlags()))
         {
             var width = ImGui.GetContentRegionAvail().X;
             var height = ImGui.GetContentRegionAvail().Y;
@@ -69,8 +69,8 @@ public class MapDataEditorView
         if (Selection.SubEditorMode is SubEditorType.MSB)
         {
             ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
-            ImGui.SetNextWindowClass(ref UIHelper.DockGroup_MapDataEditorView);
-            if (ImGui.Begin($@"MSB Editor##mapDataEditor_MsbEditor_{viewIndex}", UIHelper.GetInnerWindowFlags()))
+            ImGui.SetNextWindowClass(ref GUI.DockGroup_MapDataEditorView);
+            if (ImGui.Begin($@"MSB Editor##mapDataEditor_MsbEditor_{viewIndex}", GUI.GetInnerWindowFlags()))
             {
                 var width = ImGui.GetContentRegionAvail().X;
                 var height = ImGui.GetContentRegionAvail().Y;
@@ -91,8 +91,8 @@ public class MapDataEditorView
         if (Selection.SubEditorMode is SubEditorType.ENFL)
         {
             ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
-            ImGui.SetNextWindowClass(ref UIHelper.DockGroup_MapDataEditorView);
-            if (ImGui.Begin($@"ENFL Editor##mapDataEditor_EnflEditor_{viewIndex}", UIHelper.GetInnerWindowFlags()))
+            ImGui.SetNextWindowClass(ref GUI.DockGroup_MapDataEditorView);
+            if (ImGui.Begin($@"ENFL Editor##mapDataEditor_EnflEditor_{viewIndex}", GUI.GetInnerWindowFlags()))
             {
                 var width = ImGui.GetContentRegionAvail().X;
                 var height = ImGui.GetContentRegionAvail().Y;
@@ -111,8 +111,8 @@ public class MapDataEditorView
 
         // Tools
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
-        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_MapDataEditorView);
-        if (ImGui.Begin($@"Tools##mapDataEditor_ToolWindow_{viewIndex}", UIHelper.GetMainWindowFlags()))
+        ImGui.SetNextWindowClass(ref GUI.DockGroup_MapDataEditorView);
+        if (ImGui.Begin($@"Tools##mapDataEditor_ToolWindow_{viewIndex}", GUI.GetMainWindowFlags()))
         {
             var width = ImGui.GetContentRegionAvail().X;
             var height = ImGui.GetContentRegionAvail().Y;

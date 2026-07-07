@@ -70,7 +70,7 @@ public class DuplicateToMapAction
         {
             DisplayPopup = true;
         }
-        UIHelper.Tooltip($"Duplicate the selected map objects into another map.\n\nShortcut: {InputManager.GetHint(KeybindID.MapEditor_Duplicate_To_Map)}");
+        GUI.Tooltip($"Duplicate the selected map objects into another map.\n\nShortcut: {InputManager.GetHint(KeybindID.MapEditor_Duplicate_To_Map)}");
     }
 
     /// <summary>
@@ -84,7 +84,7 @@ public class DuplicateToMapAction
 
             ImGui.EndMenu();
         }
-        UIHelper.Tooltip($"Duplicate the selected map objects into another map.");
+        GUI.Tooltip($"Duplicate the selected map objects into another map.");
     }
 
     /// <summary>
@@ -101,12 +101,12 @@ public class DuplicateToMapAction
     /// </summary>
     public void DisplayMenu()
     {
-        UIHelper.WrappedText("Use this to duplicate an existing map object into a different loaded map.");
+        GUI.WrappedText("Use this to duplicate an existing map object into a different loaded map.");
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader("Target Map", "The target map to duplicate the current selection to.");
+        GUI.Spacer();
+        GUI.SimpleHeader("Target Map", "The target map to duplicate the current selection to.");
 
-        UIHelper.SetInputWidth();
+        GUI.SetInputWidth();
         if (ImGui.BeginCombo("##targetMapSelect", TargetMap.Item1))
         {
             foreach (var entry in Project.Handler.MapData.PrimaryBank.Maps)
@@ -136,7 +136,7 @@ public class DuplicateToMapAction
 
             if (sel.Any(e => e.WrappedObject is BTL.Light))
             {
-                UIHelper.SimpleHeader("Target Lights", "The target BTL to duplicate the current selection to.");
+                GUI.SimpleHeader("Target Lights", "The target BTL to duplicate the current selection to.");
 
                 if (ImGui.BeginCombo("##TargetBTL", TargetBTL.Item1))
                 {
@@ -154,14 +154,14 @@ public class DuplicateToMapAction
 
                 if (TargetBTL.Item2 == null)
                 {
-                    UIHelper.WrappedText("No BTL has been targeted.");
+                    GUI.WrappedText("No BTL has been targeted.");
                 }
             }
 
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader("Actions", "");
+            GUI.Spacer();
+            GUI.SimpleHeader("Actions", "");
 
-            UIHelper.MultiButtonInput("extDuplicateActions",
+            GUI.MultiButtonInput("extDuplicateActions",
                 "duplicateMap", "Duplicate to Map", "", DuplicateToMapActions);
         }
     }

@@ -30,7 +30,7 @@ public class MsbEditor
 
     public void DisplayHeader()
     {
-        UIHelper.SimpleHeader("Maps", "");
+        GUI.SimpleHeader("Maps", "");
 
         var searchHeight = new Vector2(0, 36) * DPI.UIScale();
         ImGui.BeginChild($"framedListFilter_msbEditor_FileList", searchHeight, ImGuiChildFlags.Borders);
@@ -49,7 +49,7 @@ public class MsbEditor
         if (!CFG.Current.MapDataEditor_CacheLoadedMaps)
             curCacheMode = "Loaded maps are re-loaded each time.";
 
-        UIHelper.Tooltip($"Determines whether to re-load a map when a entry is selected, or to cache a load and use that on subsequent selections.\n\nCache Mode:\n{curCacheMode}");
+        GUI.Tooltip($"Determines whether to re-load a map when a entry is selected, or to cache a load and use that on subsequent selections.\n\nCache Mode:\n{curCacheMode}");
 
         ImGui.EndChild();
     }
@@ -86,7 +86,7 @@ public class MsbEditor
 
             if(alias != "")
             {
-                UIHelper.DisplayAlias(alias);
+                GUI.DisplayAlias(alias);
             }
 
             // Arrow Selection
@@ -117,7 +117,7 @@ public class MsbEditor
 
     public void Draw()
     {
-        UIHelper.SimpleHeader("Current Map", "");
+        GUI.SimpleHeader("Current Map", "");
 
         var columnCount = 3;
 

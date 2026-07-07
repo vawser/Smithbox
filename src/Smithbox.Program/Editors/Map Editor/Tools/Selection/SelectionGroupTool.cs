@@ -114,10 +114,10 @@ public class SelectionGroupTool
         if (View.Project.Handler.MapData.MapObjectSelections.Resources == null)
             return;
 
-        UIHelper.WrappedText("Use this to define groups of map objects under a name. You can then quickly re-select the group via this tool.");
+        GUI.WrappedText("Use this to define groups of map objects under a name. You can then quickly re-select the group via this tool.");
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader("Selection Groups", "");
+        GUI.Spacer();
+        GUI.SimpleHeader("Selection Groups", "");
 
         EditorFilters.DisplayFramedListFilter("selectionGroupFilter", ref ListFilter, ref ExactListFilter);
 
@@ -174,10 +174,10 @@ public class SelectionGroupTool
         }
         ImGui.EndChild();
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader("Mode", "Determines if we are creating a new group, or editing an existing one.");
+        GUI.Spacer();
+        GUI.SimpleHeader("Mode", "Determines if we are creating a new group, or editing an existing one.");
 
-        UIHelper.SetInputWidth();
+        GUI.SetInputWidth();
         if (ImGui.BeginCombo("##modeType", Mode.GetDisplayName()))
         {
             foreach (var entry in Enum.GetValues(typeof(SelectionGroupMode)))
@@ -195,47 +195,47 @@ public class SelectionGroupTool
 
         if (Mode is SelectionGroupMode.View)
         {
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader("Actions", "");
+            GUI.Spacer();
+            GUI.SimpleHeader("Actions", "");
 
-            UIHelper.MultiButtonInput("viewActions",
+            GUI.MultiButtonInput("viewActions",
                 "selectGroup", "Select", "", SelectSelectionGroup);
 
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader("Group Contents", "");
+            GUI.Spacer();
+            GUI.SimpleHeader("Group Contents", "");
 
             if (selectedResourceTags.Count > 0)
             {
                 var tagString = string.Join(" ", selectedResourceTags);
                 if (tagString != "")
                 {
-                    UIHelper.WrappedText("");
-                    UIHelper.WrappedText("Tags:");
-                    UIHelper.WrappedTextColored(UI.Current.ImGui_Default_Text_Color, tagString);
-                    UIHelper.WrappedText("");
+                    GUI.WrappedText("");
+                    GUI.WrappedText("Tags:");
+                    GUI.WrappedTextColored(UI.Current.ImGui_Default_Text_Color, tagString);
+                    GUI.WrappedText("");
                 }
             }
 
             foreach (var entry in selectedResourceContents)
             {
-                UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, entry);
+                GUI.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, entry);
             }
         }
 
         if (Mode is SelectionGroupMode.Create)
         {
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader("New Group Name", "");
+            GUI.Spacer();
+            GUI.SimpleHeader("New Group Name", "");
 
-            UIHelper.HintTextInput("Group Name", ref createPromptGroupName, "Enter the name of the group...");
+            GUI.HintTextInput("Group Name", ref createPromptGroupName, "Enter the name of the group...");
 
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader("New Group Tags", "");
+            GUI.Spacer();
+            GUI.SimpleHeader("New Group Tags", "");
 
-            UIHelper.HintTextInput("Tags", ref createPromptTags, "Enter the tags associated with the group, split with the , character...");
+            GUI.HintTextInput("Tags", ref createPromptTags, "Enter the tags associated with the group, split with the , character...");
 
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader("New Group Keybind", "");
+            GUI.Spacer();
+            GUI.SimpleHeader("New Group Keybind", "");
 
             var previewString = GetSelectionGroupKeyBind(currentKeyBindOption);
 
@@ -259,29 +259,29 @@ public class SelectionGroupTool
 
                 ImGui.EndCombo();
             }
-            UIHelper.Tooltip("The keybind to quickly select the contents of this selection group.");
+            GUI.Tooltip("The keybind to quickly select the contents of this selection group.");
 
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader("Actions", "");
+            GUI.Spacer();
+            GUI.SimpleHeader("Actions", "");
 
-            UIHelper.MultiButtonInput("createActions",
+            GUI.MultiButtonInput("createActions",
                 "createGroup", "Create Group", "", CreateSelectionGroup);
         }
 
         if(Mode is SelectionGroupMode.Edit)
         {
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader("Edit Group Name", "");
+            GUI.Spacer();
+            GUI.SimpleHeader("Edit Group Name", "");
 
-            UIHelper.HintTextInput("Group Name", ref editPromptGroupName, "Enter the name of the group...");
+            GUI.HintTextInput("Group Name", ref editPromptGroupName, "Enter the name of the group...");
 
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader("Edit Group Tags", "");
+            GUI.Spacer();
+            GUI.SimpleHeader("Edit Group Tags", "");
 
-            UIHelper.HintTextInput("Tags", ref editPromptTags, "Enter the tags associated with the group, split with the , character...");
+            GUI.HintTextInput("Tags", ref editPromptTags, "Enter the tags associated with the group, split with the , character...");
 
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader("Edit Group Keybind", "");
+            GUI.Spacer();
+            GUI.SimpleHeader("Edit Group Keybind", "");
 
             var previewString = GetSelectionGroupKeyBind(editPromptKeybind);
 
@@ -305,33 +305,33 @@ public class SelectionGroupTool
 
                 ImGui.EndCombo();
             }
-            UIHelper.Tooltip("The keybind to quickly select the contents of this selection group.");
+            GUI.Tooltip("The keybind to quickly select the contents of this selection group.");
 
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader("Actions", "");
+            GUI.Spacer();
+            GUI.SimpleHeader("Actions", "");
 
-            UIHelper.MultiButtonInput("editActions",
+            GUI.MultiButtonInput("editActions",
                 "editGroup", "Finalize Edit", "", EditSelectionGroup,
                 "deleteGroup", "Delete", "", DeleteSelectionGroup);
 
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader("Group Contents", "");
+            GUI.Spacer();
+            GUI.SimpleHeader("Group Contents", "");
 
             if (selectedResourceTags.Count > 0)
             {
                 var tagString = string.Join(" ", selectedResourceTags);
                 if (tagString != "")
                 {
-                    UIHelper.WrappedText("");
-                    UIHelper.WrappedText("Tags:");
-                    UIHelper.WrappedTextColored(UI.Current.ImGui_Default_Text_Color, tagString);
-                    UIHelper.WrappedText("");
+                    GUI.WrappedText("");
+                    GUI.WrappedText("Tags:");
+                    GUI.WrappedTextColored(UI.Current.ImGui_Default_Text_Color, tagString);
+                    GUI.WrappedText("");
                 }
             }
 
             foreach (var entry in selectedResourceContents)
             {
-                UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, entry);
+                GUI.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, entry);
             }
         }
     }

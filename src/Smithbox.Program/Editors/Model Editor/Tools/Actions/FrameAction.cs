@@ -42,7 +42,7 @@ public class FrameAction
         {
             ApplyViewportFrame();
         }
-        UIHelper.Tooltip($"Frames the current selection in the viewport.\n\nShortcut: {InputManager.GetHint(KeybindID.Frame)}");
+        GUI.Tooltip($"Frames the current selection in the viewport.\n\nShortcut: {InputManager.GetHint(KeybindID.Frame)}");
     }
 
     /// <summary>
@@ -54,7 +54,7 @@ public class FrameAction
         {
             ApplyViewportFrame();
         }
-        UIHelper.Tooltip("Frames the current selection in the viewport.");
+        GUI.Tooltip("Frames the current selection in the viewport.");
     }
 
     /// <summary>

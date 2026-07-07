@@ -27,11 +27,11 @@ public class KeybindsMenu
             if (!InitialLayout)
             {
                 ImGui.SetKeyboardFocusHere();
-                UIHelper.SetupPopupWindow();
+                GUI.SetupPopupWindow();
                 InitialLayout = true;
             }
 
-            if (ImGui.Begin($"{LOC.Get("INPUT_Window_Shortcuts")}###keybindsMenu", ref IsDisplayed, UIHelper.GetFloatingWindowFlags()))
+            if (ImGui.Begin($"{LOC.Get("INPUT_Window_Shortcuts")}###keybindsMenu", ref IsDisplayed, GUI.GetFloatingWindowFlags()))
             {
                 ImGui.BeginMenuBar();
 
@@ -225,7 +225,7 @@ public class KeybindsMenu
                                 bindings[i] = defaultBinding.Clone();
                             }
                         }
-                        UIHelper.Tooltip(LOC.Get("INPUT_Action_Revert_Binding"));
+                        GUI.Tooltip(LOC.Get("INPUT_Action_Revert_Binding"));
 
                         ImGui.SameLine();
 
@@ -238,7 +238,7 @@ public class KeybindsMenu
                                 bindings[i].Key = Key.Unknown;
                             }
                         }
-                        UIHelper.Tooltip(LOC.Get("INPUT_Action_Clear_Binding"));
+                        GUI.Tooltip(LOC.Get("INPUT_Action_Clear_Binding"));
 
                         if (keybindTitle != null)
                         {
@@ -499,7 +499,7 @@ public class KeybindsMenu
                                 bindings[i] = defaultBinding.Clone();
                             }
                         }
-                        UIHelper.Tooltip(LOC.Get("INPUT_Action_Revert_Binding"));
+                        GUI.Tooltip(LOC.Get("INPUT_Action_Revert_Binding"));
 
                         ImGui.SameLine();
 
@@ -512,7 +512,7 @@ public class KeybindsMenu
                                 bindings[i].Key = MouseButton.None;
                             }
                         }
-                        UIHelper.Tooltip(LOC.Get("INPUT_Action_Clear_Binding"));
+                        GUI.Tooltip(LOC.Get("INPUT_Action_Clear_Binding"));
 
                         if (mousebindTitle != null)
                         {

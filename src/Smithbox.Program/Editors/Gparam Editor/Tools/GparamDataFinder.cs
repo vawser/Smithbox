@@ -31,42 +31,42 @@ public class GparamDataFinder
     {
         ImGui.BeginChild("DataFinderSection", ImGuiChildFlags.Borders);
 
-        UIHelper.SimpleHeader("File Filter", "");
+        GUI.SimpleHeader("File Filter", "");
 
-        UIHelper.SinglelineTextInput("targetParamString", ref _targetFileString);
-        UIHelper.Tooltip("Enter target file arguments here.");
+        GUI.SinglelineTextInput("targetParamString", ref _targetFileString);
+        GUI.Tooltip("Enter target file arguments here.");
 
-        UIHelper.SimpleHeader("Group Filter", "");
+        GUI.SimpleHeader("Group Filter", "");
 
-        UIHelper.SinglelineTextInput("targetGroupString", ref _targetGroupString);
-        UIHelper.Tooltip("Enter target group arguments here.");
+        GUI.SinglelineTextInput("targetGroupString", ref _targetGroupString);
+        GUI.Tooltip("Enter target group arguments here.");
 
-        UIHelper.SimpleHeader("Field Filter", "");
+        GUI.SimpleHeader("Field Filter", "");
 
-        UIHelper.SinglelineTextInput("targetFieldString", ref _targetFieldString);
-        UIHelper.Tooltip("Enter target field arguments here.");
+        GUI.SinglelineTextInput("targetFieldString", ref _targetFieldString);
+        GUI.Tooltip("Enter target field arguments here.");
 
-        UIHelper.SimpleHeader("Value Filter", "");
+        GUI.SimpleHeader("Value Filter", "");
 
-        UIHelper.SinglelineTextInput("filterString", ref _valueFilterString);
-        UIHelper.Tooltip("Enter value filter arguments here.");
+        GUI.SinglelineTextInput("filterString", ref _valueFilterString);
+        GUI.Tooltip("Enter value filter arguments here.");
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader("Options", "");
+        GUI.Spacer();
+        GUI.SimpleHeader("Options", "");
 
         ImGui.Checkbox("Unique Values Only", ref _uniqueValuesOnly);
-        UIHelper.Tooltip("Only show the first result for each distinct value.");
+        GUI.Tooltip("Only show the first result for each distinct value.");
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader("Actions", "");
+        GUI.Spacer();
+        GUI.SimpleHeader("Actions", "");
 
-        UIHelper.MultiButtonInput("quickEditActions",
+        GUI.MultiButtonInput("quickEditActions",
             "fillFromSelection", "Fill from Selection", "", FillInputs,
             "clearInputs", "Clear", "", ClearInputs,
             "generateResults", "Generate", "", CollateResults);
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader("Results", "");
+        GUI.Spacer();
+        GUI.SimpleHeader("Results", "");
 
         if (_results.Count == 0)
         {
@@ -100,7 +100,7 @@ public class GparamDataFinder
             {
                 SelectResult(View, result);
             }
-            UIHelper.Tooltip($"File: {result.FileEntry.Filename}\nGroup: {result.Group.Name} ({result.Group.Key})\nField: {result.Field.Name} ({result.Field.Key})\nValue ID: {result.Value.ID}");
+            GUI.Tooltip($"File: {result.FileEntry.Filename}\nGroup: {result.Group.Name} ({result.Group.Key})\nField: {result.Field.Name} ({result.Field.Key})\nValue ID: {result.Value.ID}");
         }
         ImGui.EndChild();
 

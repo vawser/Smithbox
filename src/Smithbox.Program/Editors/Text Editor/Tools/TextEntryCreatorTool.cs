@@ -160,13 +160,13 @@ public class TextEntryCreatorTool
 
         if (entry == null)
         {
-            UIHelper.WrappedText(LOC.Get("TEXT_Creator_Select_Entry_First"));
+            GUI.WrappedText(LOC.Get("TEXT_Creator_Select_Entry_First"));
             return;
         }
 
         if (entry.Text == null)
         {
-            UIHelper.WrappedText(LOC.Get("TEXT_Creator_Select_Non_Null_First"));
+            GUI.WrappedText(LOC.Get("TEXT_Creator_Select_Non_Null_First"));
             return;
         }
 
@@ -177,62 +177,62 @@ public class TextEntryCreatorTool
 
         var textboxHeight = 30;
 
-        UIHelper.SimpleHeader(
+        GUI.SimpleHeader(
             LOC.Get("TEXT_Creator_Header_Actions"),
             LOC.Get("TEXT_Creator_Header_Actions_TT"));
 
-        UIHelper.MultiButtonInput("creatorActions",
+        GUI.MultiButtonInput("creatorActions",
             "createEntries", 
             LOC.Get("TEXT_Creator_Action_Create_Entries"),
             LOC.Get("TEXT_Creator_Action_Create_Entries_TT"),
             CreateEntries);
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader(
+        GUI.Spacer();
+        GUI.SimpleHeader(
             LOC.Get("TEXT_Creator_Header_Parameters"),
             LOC.Get("TEXT_Creator_Header_Parameters_TT"));
 
-        UIHelper.SimpleHeader(
+        GUI.SimpleHeader(
             LOC.Get("TEXT_Creator_Header_Base_ID"),
             LOC.Get("TEXT_Creator_Header_Base_ID_TT"));
 
         ImGui.InputInt("##entryBaseID", ref NewEntry_BaseID);
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader(
+        GUI.Spacer();
+        GUI.SimpleHeader(
             LOC.Get("TEXT_Creator_Header_Amount"),
             LOC.Get("TEXT_Creator_Header_Amount_TT"));
 
         ImGui.InputInt("##entryAmount", ref NewEntry_Amount);
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader(
+        GUI.Spacer();
+        GUI.SimpleHeader(
             LOC.Get("TEXT_Creator_Header_ID_Spacing"),
             LOC.Get("TEXT_Creator_Header_ID_Spacing_TT"));
 
         ImGui.InputInt("##entryIncrementID", ref NewEntry_IncrementID);
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader(
+        GUI.Spacer();
+        GUI.SimpleHeader(
             LOC.Get("TEXT_Creator_Header_Options"),
             LOC.Get("TEXT_Creator_Header_Options_TT"));
 
         ImGui.Checkbox($"{LOC.Get("TEXT_Creator_Checkbox_Update_On_Selection")}##allowUpdateOnSelection", ref AllowParameterUpdate);
-        UIHelper.Tooltip(LOC.Get("TEXT_Creator_Checkbox_Update_On_Selection_TT"));
+        GUI.Tooltip(LOC.Get("TEXT_Creator_Checkbox_Update_On_Selection_TT"));
         
-        UIHelper.Spacer();
+        GUI.Spacer();
         if (ImGui.CollapsingHeader($"{LOC.Get("TEXT_Creator_Header_Entries")}##entriesHeader", ImGuiTreeNodeFlags.DefaultOpen))
         {
             if (fmgEntryGroup.SupportsGrouping)
             {
                 if (fmgEntryGroup.SupportsTitle)
                 {
-                    UIHelper.SimpleHeader(
+                    GUI.SimpleHeader(
                         LOC.Get("TEXT_Creator_Header_Title"), 
                         LOC.Get("TEXT_Creator_Header_Title_TT"));
 
                     ImGui.Checkbox($"{LOC.Get("TEXT_Creator_Checkbox_Create_Title")}##createTitle", ref NewEntry_CreateTitle);
-                    UIHelper.Tooltip(LOC.Get("TEXT_Creator_Checkbox_Create_Title_TT"));
+                    GUI.Tooltip(LOC.Get("TEXT_Creator_Checkbox_Create_Title_TT"));
 
                     var height = (textboxHeight + ImGui.CalcTextSize(NewEntry_TitleText).Y) * DPI.UIScale();
                     if (ImGui.InputTextMultiline($"##newEntryText_Title", ref NewEntry_TitleText, 2000, new Vector2(-1, height)))
@@ -242,13 +242,13 @@ public class TextEntryCreatorTool
 
                 if (fmgEntryGroup.SupportsSummary)
                 {
-                    UIHelper.Spacer();
-                    UIHelper.SimpleHeader(
+                    GUI.Spacer();
+                    GUI.SimpleHeader(
                         LOC.Get("TEXT_Creator_Header_Summary"),
                         LOC.Get("TEXT_Creator_Header_Summary_TT"));
 
                     ImGui.Checkbox($"{LOC.Get("TEXT_Creator_Checkbox_Create_Summary")}##createSummary", ref NewEntry_CreateSummary);
-                    UIHelper.Tooltip(LOC.Get("TEXT_Creator_Checkbox_Create_Summary_TT"));
+                    GUI.Tooltip(LOC.Get("TEXT_Creator_Checkbox_Create_Summary_TT"));
 
                     var height = (textboxHeight + ImGui.CalcTextSize(NewEntry_SummaryText).Y) * DPI.UIScale();
                     if (ImGui.InputTextMultiline($"##newEntryText_Summary", ref NewEntry_SummaryText, 2000, new Vector2(-1, height)))
@@ -258,13 +258,13 @@ public class TextEntryCreatorTool
 
                 if (fmgEntryGroup.SupportsDescription)
                 {
-                    UIHelper.Spacer();
-                    UIHelper.SimpleHeader(
+                    GUI.Spacer();
+                    GUI.SimpleHeader(
                         LOC.Get("TEXT_Creator_Header_Description"),
                         LOC.Get("TEXT_Creator_Header_Description_TT"));
 
                     ImGui.Checkbox($"{LOC.Get("TEXT_Creator_Checkbox_Create_Description")}##createDescription", ref NewEntry_CreateDescription);
-                    UIHelper.Tooltip(LOC.Get("TEXT_Creator_Header_Description_TT"));
+                    GUI.Tooltip(LOC.Get("TEXT_Creator_Header_Description_TT"));
 
                     var height = (textboxHeight + ImGui.CalcTextSize(NewEntry_DescriptionText).Y) * DPI.UIScale();
                     if (ImGui.InputTextMultiline($"##newEntryText_Description", ref NewEntry_DescriptionText, 2000, new Vector2(-1, height)))
@@ -274,13 +274,13 @@ public class TextEntryCreatorTool
 
                 if (fmgEntryGroup.SupportsEffect)
                 {
-                    UIHelper.Spacer();
-                    UIHelper.SimpleHeader(
+                    GUI.Spacer();
+                    GUI.SimpleHeader(
                         LOC.Get("TEXT_Creator_Header_Effect"),
                         LOC.Get("TEXT_Creator_Header_Effect_TT"));
 
                     ImGui.Checkbox($"{LOC.Get("TEXT_Creator_Checkbox_Create_Effect")}##createEffect", ref NewEntry_CreateEffect);
-                    UIHelper.Tooltip(LOC.Get("TEXT_Creator_Checkbox_Create_Effect_TT"));
+                    GUI.Tooltip(LOC.Get("TEXT_Creator_Checkbox_Create_Effect_TT"));
 
                     var height = (textboxHeight + ImGui.CalcTextSize(NewEntry_EffectText).Y) * DPI.UIScale();
                     if (ImGui.InputTextMultiline($"##newEntryText_Effect", ref NewEntry_EffectText, 2000, new Vector2(-1, height)))
@@ -290,8 +290,8 @@ public class TextEntryCreatorTool
             }
             else
             {
-                UIHelper.Spacer();
-                UIHelper.SimpleHeader(
+                GUI.Spacer();
+                GUI.SimpleHeader(
                         LOC.Get("TEXT_Creator_Header_Basic"),
                         LOC.Get("TEXT_Creator_Header_Basic_TT"));
 
@@ -302,24 +302,24 @@ public class TextEntryCreatorTool
             }
         }
 
-        UIHelper.Spacer();
+        GUI.Spacer();
         if (ImGui.CollapsingHeader($"{LOC.Get("TEXT_Creator_Header_Incremental_Template")}##incrementalTemplateHeader", ImGuiTreeNodeFlags.DefaultOpen))
         {
-            UIHelper.WrappedText(LOC.Get("TEXT_Creator_Incremental_Template_Hint"));
+            GUI.WrappedText(LOC.Get("TEXT_Creator_Incremental_Template_Hint"));
 
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader(
+            GUI.Spacer();
+            GUI.SimpleHeader(
                 LOC.Get("TEXT_Creator_Template_Header_Options"),
                 LOC.Get("TEXT_Creator_Template_Header_Options_TT"));
 
             ImGui.Checkbox($"{LOC.Get("TEXT_Creator_Template_Enable")}##enableTemplate", ref AllowIncrementalTemplate);
-            UIHelper.Tooltip(LOC.Get("TEXT_Creator_Template_Enable_TT"));
+            GUI.Tooltip(LOC.Get("TEXT_Creator_Template_Enable_TT"));
 
             ImGui.Checkbox($"{LOC.Get("TEXT_Creator_Template_Apply_Prefix")}##applyPrefix", ref ApplyTemplateAsPrefix);
-            UIHelper.Tooltip(LOC.Get("TEXT_Creator_Template_Apply_Prefix_TT"));
+            GUI.Tooltip(LOC.Get("TEXT_Creator_Template_Apply_Prefix_TT"));
 
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader(
+            GUI.Spacer();
+            GUI.SimpleHeader(
                 LOC.Get("TEXT_Creator_Template_Header_Templates"),
                 LOC.Get("TEXT_Creator_Template_Header_Templates_TT"));
 
@@ -328,7 +328,7 @@ public class TextEntryCreatorTool
             {
                 IncrementTemplate.Add("");
             }
-            UIHelper.Tooltip(LOC.Get("TEXT_Creator_Template_Add_TT"));
+            GUI.Tooltip(LOC.Get("TEXT_Creator_Template_Add_TT"));
 
             ImGui.SameLine();
 
@@ -341,7 +341,7 @@ public class TextEntryCreatorTool
                 {
                     IncrementTemplate.RemoveAt(IncrementTemplate.Count - 1);
                 }
-                UIHelper.Tooltip(LOC.Get("TEXT_Creator_Template_Remove_TT"));
+                GUI.Tooltip(LOC.Get("TEXT_Creator_Template_Remove_TT"));
 
                 ImGui.EndDisabled();
             }
@@ -351,7 +351,7 @@ public class TextEntryCreatorTool
                 {
                     IncrementTemplate.RemoveAt(IncrementTemplate.Count - 1);
                 }
-                UIHelper.Tooltip(LOC.Get("TEXT_Creator_Template_Remove_TT"));
+                GUI.Tooltip(LOC.Get("TEXT_Creator_Template_Remove_TT"));
             }
 
             ImGui.SameLine();
@@ -361,7 +361,7 @@ public class TextEntryCreatorTool
             {
                 IncrementTemplate = new List<string>() { "" };
             }
-            UIHelper.Tooltip(LOC.Get("TEXT_Creator_Template_Reset_TT"));
+            GUI.Tooltip(LOC.Get("TEXT_Creator_Template_Reset_TT"));
 
             ImGui.SameLine();
 
@@ -386,11 +386,11 @@ public class TextEntryCreatorTool
 
                     ImGui.AlignTextToFramePadding();
                     ImGui.Text($"{i}");
-                    UIHelper.Tooltip(LOC.Get("TEXT_Creator_Template_Entry_TT", i));
+                    GUI.Tooltip(LOC.Get("TEXT_Creator_Template_Entry_TT", i));
 
                     ImGui.TableSetColumnIndex(1);
 
-                    UIHelper.SetInputWidth();
+                    GUI.SetInputWidth();
                     if (ImGui.InputText($"##templateEntry_{i}", ref curText, 255))
                     {
                         IncrementTemplate[i] = curText;

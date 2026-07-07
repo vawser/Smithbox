@@ -50,7 +50,7 @@ public class TextEntryList
 
     public void DisplayTitle()
     {
-        UIHelper.SimpleHeader(
+        GUI.SimpleHeader(
             LOC.Get("TEXT_EntryList_Header_Entries"),
             LOC.Get("TEXT_EntryList_Header_Entries_TT"));
     }
@@ -88,7 +88,7 @@ public class TextEntryList
         {
             Parent.Selection.FocusFmgEntrySelection = true;
         }
-        UIHelper.Tooltip(
+        GUI.Tooltip(
             LOC.Get("TEXT_EntryList_Focus_Selection_TT", InputManager.GetHint(KeybindID.Jump)));
 
         ImGui.EndChild();

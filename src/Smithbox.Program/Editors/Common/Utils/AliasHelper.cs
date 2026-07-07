@@ -42,7 +42,7 @@ public static class AliasHelper
     public static void AliasTooltip(List<string> aliases, string title)
     {
         var lines = string.Join("\n- ", aliases);
-        UIHelper.Tooltip($"{title}\n- {lines}");
+        GUI.Tooltip($"{title}\n- {lines}");
     }
 
     public static void DisplayTagAlias(string aliasName)

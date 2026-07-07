@@ -66,7 +66,7 @@ public class Smithbox
         _version = version;
         _programTitle = $"{LOC.Get("PROGRAM_TITLE")} - {_version}";
 
-        UIHelper.RestoreImguiIfMissing();
+        GUI.RestoreImguiIfMissing();
         // Hack to make sure dialogs work before the main window is created
         PlatformUtils.InitializeWindows(null);
 
@@ -481,7 +481,7 @@ public class Smithbox
         //    _user32_ShowWindow(_context.Window.Handle, 9);
         //}
 
-        UIHelper.ApplyBaseStyle();
+        GUI.ApplyBaseStyle();
 
         ImGuiViewportPtr viewport = ImGui.GetMainViewport();
 
@@ -518,7 +518,7 @@ public class Smithbox
 
         uint dockspaceID = ImGui.GetID("MainDockspace");
 
-        ImGui.DockSpace(dockspaceID, Vector2.Zero, dockFlags, ref UIHelper.DockGroup_EditorView);
+        ImGui.DockSpace(dockspaceID, Vector2.Zero, dockFlags, ref GUI.DockGroup_EditorView);
 
         ImGui.PopStyleVar(1);
         ImGui.End();
@@ -578,7 +578,7 @@ public class Smithbox
                     myProcess.StartInfo.FileName = LOC.Get("HELP_Wiki_Link");
                     myProcess.Start();
                 }
-                UIHelper.Tooltip(LOC.Get("HELP_Action_Go_To_Wiki_TT"));
+                GUI.Tooltip(LOC.Get("HELP_Action_Go_To_Wiki_TT"));
 
                 // Go to Github Repository
                 if (ImGui.MenuItem($"{LOC.Get("HELP_Action_Go_To_Github")}##githubAction"))
@@ -588,7 +588,7 @@ public class Smithbox
                     myProcess.StartInfo.FileName = LOC.Get("HELP_Github_Link");
                     myProcess.Start();
                 }
-                UIHelper.Tooltip(LOC.Get("HELP_Action_Go_To_Github_TT"));
+                GUI.Tooltip(LOC.Get("HELP_Action_Go_To_Github_TT"));
 
                 if (CFG.Current.Developer_Enable_Tools)
                 {
@@ -647,7 +647,7 @@ public class Smithbox
 
         ImGui.PopStyleVar(2);
 
-        UIHelper.UnapplyBaseStyle();
+        GUI.UnapplyBaseStyle();
 
         ResourceManager.UpdateTasks();
 

@@ -70,7 +70,7 @@ public class AutomaticPreviewTool
             curTargetProperties.Add("");
             CFG.Current.QuickView_TargetProperties = curTargetProperties;
         }
-        UIHelper.Tooltip("Add property input.");
+        GUI.Tooltip("Add property input.");
 
         ImGui.SameLine();
 
@@ -84,7 +84,7 @@ public class AutomaticPreviewTool
                 curTargetProperties.RemoveAt(curTargetProperties.Count - 1);
                 CFG.Current.QuickView_TargetProperties = curTargetProperties;
             }
-            UIHelper.Tooltip("Remove last property input.");
+            GUI.Tooltip("Remove last property input.");
 
             ImGui.EndDisabled();
         }
@@ -95,7 +95,7 @@ public class AutomaticPreviewTool
                 curTargetProperties.RemoveAt(curTargetProperties.Count - 1);
                 CFG.Current.QuickView_TargetProperties = curTargetProperties;
             }
-            UIHelper.Tooltip("Remove last property input.");
+            GUI.Tooltip("Remove last property input.");
         }
 
         ImGui.SameLine();
@@ -106,7 +106,7 @@ public class AutomaticPreviewTool
             curTargetProperties = new List<string>() { "" };
             CFG.Current.QuickView_TargetProperties = curTargetProperties;
         }
-        UIHelper.Tooltip("Reset property inputs.");
+        GUI.Tooltip("Reset property inputs.");
 
         for (int i = 0; i < curTargetProperties.Count; i++)
         {
@@ -114,7 +114,7 @@ public class AutomaticPreviewTool
 
             DPI.ApplyInputWidth();
             ImGui.InputText($"##propInput{i}", ref curProperty, 255);
-            UIHelper.Tooltip("The internal name of the property you want to appear in the Quick View tooltip.");
+            GUI.Tooltip("The internal name of the property you want to appear in the Quick View tooltip.");
             if (ImGui.IsItemDeactivatedAfterEdit())
             {
                 curTargetProperties[i] = curProperty;
@@ -129,7 +129,7 @@ public class AutomaticPreviewTool
                 curTargetProperties.Add("");
                 CFG.Current.QuickView_TargetProperties = curTargetProperties;
             }
-            UIHelper.Tooltip("Add property input.");
+            GUI.Tooltip("Add property input.");
         }
     }
 }

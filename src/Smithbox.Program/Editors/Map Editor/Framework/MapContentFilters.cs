@@ -37,7 +37,7 @@ public class MapContentFilters
         }
 
         EditorFilters.DisplayListFilter("MapContentSearch", ref SearchInput, ref ExactMatch);
-        UIHelper.Tooltip($"Filter the content tree for {mapId}: {mapName}");
+        GUI.Tooltip($"Filter the content tree for {mapId}: {mapName}");
 
         ImGui.SameLine();
 
@@ -45,7 +45,7 @@ public class MapContentFilters
         {
             ImGui.OpenPopup("searchInputHint");
         }
-        UIHelper.Tooltip("View documentation on search commands.");
+        GUI.Tooltip("View documentation on search commands.");
 
         if (ImGui.BeginPopup("searchInputHint"))
         {

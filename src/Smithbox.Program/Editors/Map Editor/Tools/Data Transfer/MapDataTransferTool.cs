@@ -56,7 +56,7 @@ public class MapDataTransferTool
     {
         if (ImGui.BeginTabItem($"Import"))
         {
-            UIHelper.WrappedText("Use this section to import JSON data, applying the data to your current project.");
+            GUI.WrappedText("Use this section to import JSON data, applying the data to your current project.");
 
             // TODO
 
@@ -80,7 +80,7 @@ public class MapDataTransferTool
     {
         if (ImGui.BeginTabItem($"Export"))
         {
-            UIHelper.WrappedText("Use this section to export JSON data from your current project.");
+            GUI.WrappedText("Use this section to export JSON data from your current project.");
 
             // TODO
 

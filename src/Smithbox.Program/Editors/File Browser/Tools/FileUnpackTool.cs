@@ -56,28 +56,28 @@ public class FileUnpackTool
 
         var windowWidth = ImGui.GetWindowWidth() * 0.95f;
 
-        UIHelper.WrappedText("This is a tool to unpack the base game data for the game this project targets, if it has not already been unpacked.");
-        UIHelper.WrappedText("");
+        GUI.WrappedText("This is a tool to unpack the base game data for the game this project targets, if it has not already been unpacked.");
+        GUI.WrappedText("");
 
-        UIHelper.SimpleHeader("Unpack Directory", "");
-        UIHelper.HintTextInput("##unpackDirectory", ref UnpackDirectory, "Set the unpack directory...");
+        GUI.SimpleHeader("Unpack Directory", "");
+        GUI.HintTextInput("##unpackDirectory", ref UnpackDirectory, "Set the unpack directory...");
         if(ImGui.IsItemDeactivatedAfterEdit())
         {
             CFG.Current.UnpackDirectory = UnpackDirectory;
         }
 
-        UIHelper.SimpleHeader("Actions", "");
+        GUI.SimpleHeader("Actions", "");
 
-        UIHelper.MultiButtonInput("unpackActions",
+        GUI.MultiButtonInput("unpackActions",
             "setUnpackDirectory", "Set Unpack Directory", "Set the directory that the game files are unpacking into.", ConfigureUnpackDirectory,
             "rebuildFileDir", "Refresh File Directory", "Refresh the file dictionary used for unpacking.", UpdateBaseFileDictionary,
             "unpackGame", "Unpack Game Files", "Start the unpacking process.", UnpackGameAction,
             "deleteUnpackedFiles", "Delete Unpacked Game Files", "Delete unpacked files in the current unpack directory.", DeleteUnpackedFilesAction);
 
-        UIHelper.WrappedText("");
-        UIHelper.SimpleHeader("Selective Unpack", "");
+        GUI.WrappedText("");
+        GUI.SimpleHeader("Selective Unpack", "");
 
-        UIHelper.MultiButtonInput("selectiveUnpackActions",
+        GUI.MultiButtonInput("selectiveUnpackActions",
             "toggleOptions", "Toggle All", "", ToggleSelectiveUnpackOptions);
 
         // Toggles
@@ -104,7 +104,7 @@ public class FileUnpackTool
             {
                 unpackCts?.Cancel();
             }
-            UIHelper.Tooltip("This will cancel the game data unpack.");
+            GUI.Tooltip("This will cancel the game data unpack.");
         }
 
         if (IsDeleting)
@@ -117,15 +117,15 @@ public class FileUnpackTool
             {
                 unpackCts?.Cancel();
             }
-            UIHelper.Tooltip("This will cancel the delete.");
+            GUI.Tooltip("This will cancel the delete.");
         }
 
         if (!IsUnpacking && FailedUnpackEntries.Count > 0)
         {
             ImGui.BeginChild("FailedFilesChild", new Vector2(0, 0), ImGuiChildFlags.Borders);
 
-            UIHelper.WrappedText("");
-            UIHelper.SimpleHeader("Failed to Unpack", "");
+            GUI.WrappedText("");
+            GUI.SimpleHeader("Failed to Unpack", "");
 
             foreach (var (path, error) in FailedUnpackEntries)
             {

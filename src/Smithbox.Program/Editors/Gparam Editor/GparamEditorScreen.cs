@@ -65,7 +65,7 @@ public class GparamEditorScreen : EditorScreen
         }
 
         var dsid = ImGui.GetID("DockSpace_GparamEditor");
-        ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None, ref UIHelper.DockGroup_GparamEditor);
+        ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None, ref GUI.DockGroup_GparamEditor);
 
         ViewHandler.HandleViews(dsid);
     }
@@ -92,13 +92,13 @@ public class GparamEditorScreen : EditorScreen
                 {
                     CFG.Current.GparamEditor_ManualSave_IncludeGPARAM = !CFG.Current.GparamEditor_ManualSave_IncludeGPARAM;
                 }
-                UIHelper.Tooltip("If enabled, the graphical param files are outputted on save.");
-                UIHelper.ShowActiveStatus(CFG.Current.GparamEditor_ManualSave_IncludeGPARAM);
+                GUI.Tooltip("If enabled, the graphical param files are outputted on save.");
+                GUI.ShowActiveStatus(CFG.Current.GparamEditor_ManualSave_IncludeGPARAM);
 
 
                 ImGui.EndMenu();
             }
-            UIHelper.Tooltip("Determines which files are outputted during the manual saving process.");
+            GUI.Tooltip("Determines which files are outputted during the manual saving process.");
 
             if (ImGui.BeginMenu("Output on Automatic Save"))
             {
@@ -106,12 +106,12 @@ public class GparamEditorScreen : EditorScreen
                 {
                     CFG.Current.GparamEditor_AutomaticSave_IncludeGPARAM = !CFG.Current.GparamEditor_AutomaticSave_IncludeGPARAM;
                 }
-                UIHelper.Tooltip("If enabled, the graphical param files are outputted on save.");
-                UIHelper.ShowActiveStatus(CFG.Current.GparamEditor_AutomaticSave_IncludeGPARAM);
+                GUI.Tooltip("If enabled, the graphical param files are outputted on save.");
+                GUI.ShowActiveStatus(CFG.Current.GparamEditor_AutomaticSave_IncludeGPARAM);
 
                 ImGui.EndMenu();
             }
-            UIHelper.Tooltip("Determines which files are outputted during the automatic saving process.");
+            GUI.Tooltip("Determines which files are outputted during the automatic saving process.");
 
 
             ImGui.EndMenu();
@@ -162,13 +162,13 @@ public class GparamEditorScreen : EditorScreen
                     {
                         activeView.GroupListView.AddGroupsShortcut();
                     }
-                    UIHelper.Tooltip("Adds all missing groups.");
+                    GUI.Tooltip("Adds all missing groups.");
 
                     if (ImGui.MenuItem("Delete", InputManager.GetHint(KeybindID.Delete)))
                     {
                         activeView.GroupListView.DeleteGroupsShortcut();
                     }
-                    UIHelper.Tooltip("Delete the currently selected group.");
+                    GUI.Tooltip("Delete the currently selected group.");
 
                     ImGui.EndMenu();
                 }
@@ -218,7 +218,7 @@ public class GparamEditorScreen : EditorScreen
             {
                 CFG.Current.Interface_GparamEditor_ToolWindow = !CFG.Current.Interface_GparamEditor_ToolWindow;
             }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_GparamEditor_ToolWindow);
+            GUI.ShowActiveStatus(CFG.Current.Interface_GparamEditor_ToolWindow);
 
             ImGui.Separator();
 

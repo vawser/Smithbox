@@ -45,7 +45,7 @@ public static class PropInfo_Region_Connection
             ImGui.Separator();
 
             ImGui.Text(mapString);
-            UIHelper.DisplayAlias(AliasHelper.GetMapNameAlias(view.Project, mapString));
+            GUI.DisplayAlias(AliasHelper.GetMapNameAlias(view.Project, mapString));
             ImGui.Text("");
         }
     }

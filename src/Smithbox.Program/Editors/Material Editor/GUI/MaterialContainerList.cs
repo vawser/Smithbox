@@ -26,7 +26,7 @@ public class MaterialContainerList
 
     public void Draw(float width, float height)
     {
-        UIHelper.SimpleHeader("Containers", "");
+        GUI.SimpleHeader("Containers", "");
 
         EditorFilters.DisplayFramedListFilter("materialEditor_ContainerList",
             ref ContainerListFilter, ref ExactContainerListFilter);

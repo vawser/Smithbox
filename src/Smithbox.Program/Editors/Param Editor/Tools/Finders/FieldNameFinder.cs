@@ -46,37 +46,37 @@ public class FieldNameFinder
         var windowWidth = ImGui.GetWindowWidth();
 
         // Header
-        UIHelper.WrappedText(LOC.Get("PARAM_FieldNameFinder_Hint"));
+        GUI.WrappedText(LOC.Get("PARAM_FieldNameFinder_Hint"));
 
         // Options
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader(
+        GUI.Spacer();
+        GUI.SimpleHeader(
             LOC.Get("PARAM_DataFinder_Header_Options"),
             LOC.Get("PARAM_DataFinder_Header_Options_TT"));
 
         // Toggle: Include Community Name in Search
         ImGui.Checkbox($"{LOC.Get("PARAM_FieldNameFinder_Checkbox_Include_Community_Name")}##includeCommunityName_{imguiID}",
             ref IncludeCommunityNameInSearch);
-        UIHelper.Tooltip(LOC.Get("PARAM_FieldNameFinder_Checkbox_Include_Community_Name_TT"));
+        GUI.Tooltip(LOC.Get("PARAM_FieldNameFinder_Checkbox_Include_Community_Name_TT"));
 
         // Toggle: Include Descriptions in Search
         ImGui.Checkbox($"{LOC.Get("PARAM_FieldNameFinder_Checkbox_Include_Description")}##includeDescriptions_{imguiID}",
             ref IncludeDescriptionInSearch);
-        UIHelper.Tooltip(LOC.Get("PARAM_FieldNameFinder_Checkbox_Include_Description_TT"));
+        GUI.Tooltip(LOC.Get("PARAM_FieldNameFinder_Checkbox_Include_Description_TT"));
 
         // Toggle: Match Exactly
         ImGui.Checkbox($"{LOC.Get("PARAM_FieldNameFinder_Checkbox_Complete_Word_Match")}##matchExact_{imguiID}",
             ref MatchTextExactly);
-        UIHelper.Tooltip(LOC.Get("PARAM_FieldNameFinder_Checkbox_Complete_Word_Match_TT"));
+        GUI.Tooltip(LOC.Get("PARAM_FieldNameFinder_Checkbox_Complete_Word_Match_TT"));
 
         // Toggle: Display Community Name in Results
         ImGui.Checkbox($"{LOC.Get("PARAM_FieldNameFinder_Checkbox_Display_Community_Name")}##useCommunityNames_{imguiID}",
             ref DisplayCommunityNameInResult);
-        UIHelper.Tooltip(LOC.Get("PARAM_FieldNameFinder_Checkbox_Display_Community_Name_TT"));
+        GUI.Tooltip(LOC.Get("PARAM_FieldNameFinder_Checkbox_Display_Community_Name_TT"));
 
         // Targeted Params
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader(
+        GUI.Spacer();
+        GUI.SimpleHeader(
             LOC.Get("PARAM_DataFinder_Header_Target_Params"),
             LOC.Get("PARAM_DataFinder_Header_Target_Params_TT"));
 
@@ -85,7 +85,7 @@ public class FieldNameFinder
         {
             TargetedParams.Add("");
         }
-        UIHelper.Tooltip(LOC.Get("PARAM_DataFinder_Action_Add_Param_Target_TT"));
+        GUI.Tooltip(LOC.Get("PARAM_DataFinder_Action_Add_Param_Target_TT"));
 
         ImGui.SameLine();
 
@@ -98,7 +98,7 @@ public class FieldNameFinder
             {
                 TargetedParams.RemoveAt(TargetedParams.Count - 1);
             }
-            UIHelper.Tooltip(LOC.Get("PARAM_DataFinder_Action_Remove_Param_Target_TT"));
+            GUI.Tooltip(LOC.Get("PARAM_DataFinder_Action_Remove_Param_Target_TT"));
 
             ImGui.EndDisabled();
         }
@@ -108,7 +108,7 @@ public class FieldNameFinder
             {
                 TargetedParams.RemoveAt(TargetedParams.Count - 1);
             }
-            UIHelper.Tooltip(LOC.Get("PARAM_DataFinder_Action_Remove_Param_Target_TT"));
+            GUI.Tooltip(LOC.Get("PARAM_DataFinder_Action_Remove_Param_Target_TT"));
         }
 
         ImGui.SameLine();
@@ -118,7 +118,7 @@ public class FieldNameFinder
         {
             TargetedParams = new List<string>();
         }
-        UIHelper.Tooltip(LOC.Get("PARAM_DataFinder_Action_Reset_Param_Target_TT"));
+        GUI.Tooltip(LOC.Get("PARAM_DataFinder_Action_Reset_Param_Target_TT"));
 
         // Param Target Entries
         for (int i = 0; i < TargetedParams.Count; i++)
@@ -131,21 +131,21 @@ public class FieldNameFinder
             {
                 TargetedParams[i] = curText;
             }
-            UIHelper.Tooltip(LOC.Get("PARAM_DataFinder_Param_Target_Include_TT"));
+            GUI.Tooltip(LOC.Get("PARAM_DataFinder_Param_Target_Include_TT"));
         }
 
-        UIHelper.Spacer();
+        GUI.Spacer();
 
         // Search Text
-        UIHelper.SimpleHeader(
+        GUI.SimpleHeader(
             LOC.Get("PARAM_DataFinder_Header_Search"),
             LOC.Get("PARAM_DataFinder_Header_Search_TT"));
 
-        UIHelper.SetInputWidth();
+        GUI.SetInputWidth();
         ImGui.InputTextWithHint($"{LOC.Get("PARAM_FieldNameFinder_Name")}##searchInput_{imguiID}", LOC.Get("PARAM_DataFinder_Search_Hint"), ref SearchText, 255);
 
         // Actions
-        UIHelper.MultiButtonInput("searchActions",
+        GUI.MultiButtonInput("searchActions",
             "search", 
             LOC.Get("PARAM_DataFinder_Action_Search"),
             LOC.Get("PARAM_DataFinder_Action_Search_TT"),
@@ -156,23 +156,23 @@ public class FieldNameFinder
             LOC.Get("PARAM_DataFinder_Action_Clear_TT"),
             ClearSearch);
 
-        UIHelper.Spacer();
+        GUI.Spacer();
 
         // Results List
         if (Results.Count > 0)
         {
-            UIHelper.SimpleHeader(
+            GUI.SimpleHeader(
                 LOC.Get("PARAM_DataFinder_Header_Search_Results"),
                 LOC.Get("PARAM_DataFinder_Header_Search_Results_TT"));
 
-            UIHelper.WrappedText(LOC.Get("PARAM_DataFinder_Search_Term"));
-            UIHelper.DisplayAlias(CachedSearchText);
+            GUI.WrappedText(LOC.Get("PARAM_DataFinder_Search_Term"));
+            GUI.DisplayAlias(CachedSearchText);
 
-            UIHelper.WrappedText(LOC.Get("PARAM_DataFinder_Result_Count"));
-            UIHelper.DisplayAlias($"{Results.Count}");
+            GUI.WrappedText(LOC.Get("PARAM_DataFinder_Result_Count"));
+            GUI.DisplayAlias($"{Results.Count}");
 
-            UIHelper.Spacer();
-            UIHelper.WrappedText(LOC.Get("PARAM_FieldNameFinder_Results_Column_Header"));
+            GUI.Spacer();
+            GUI.WrappedText(LOC.Get("PARAM_FieldNameFinder_Results_Column_Header"));
 
             ImGui.BeginChild($"##resultSection_{imguiID}",
                 new Vector2(0, ImGui.GetContentRegionAvail().Y * 0.9f), ImGuiChildFlags.Borders);
@@ -199,7 +199,7 @@ public class FieldNameFinder
             ImGui.Text(LOC.Get("PARAM_DataFinder_No_Results"));
         }
 
-        UIHelper.WrappedText("");
+        GUI.WrappedText("");
     }
 
     public void ConductSearch()

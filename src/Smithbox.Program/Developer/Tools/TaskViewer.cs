@@ -11,7 +11,7 @@ public class TaskViewer
 
     public void Display()
     {
-        UIHelper.SimpleHeader(
+        GUI.SimpleHeader(
             LOC.Get("DEV_Tool_Header_Task_Viewer"),
             LOC.Get("DEV_Tool_Header_Task_Viewer_TT"));
 
@@ -24,8 +24,8 @@ public class TaskViewer
             }
         }
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader(
+        GUI.Spacer();
+        GUI.SimpleHeader(
             LOC.Get("DEV_Tool_Header_Soapstone_Server"),
             LOC.Get("DEV_Tool_Header_Soapstone_Server_TT"));
 

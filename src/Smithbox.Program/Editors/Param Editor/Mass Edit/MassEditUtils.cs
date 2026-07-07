@@ -78,7 +78,7 @@ public static class MassEditUtils
             ImGui.AlignTextToFramePadding();
             ImGui.Text($"{title}");
 
-            UIHelper.Tooltip(tooltip);
+            GUI.Tooltip(tooltip);
 
             ImGui.EndTable();
         }

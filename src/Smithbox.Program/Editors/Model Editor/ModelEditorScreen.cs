@@ -68,7 +68,7 @@ public class ModelEditorScreen : EditorScreen
         }
 
         var dsid = ImGui.GetID("DockSpace_ModelEdit");
-        ImGui.DockSpace(dsid, new Vector2(0, 0), ref UIHelper.DockGroup_ModelEditor);
+        ImGui.DockSpace(dsid, new Vector2(0, 0), ref GUI.DockGroup_ModelEditor);
 
         ViewHandler.HandleViews(dsid);
 
@@ -95,13 +95,13 @@ public class ModelEditorScreen : EditorScreen
                 {
                     CFG.Current.ModelEditor_ManualSave_IncludeFLVER = !CFG.Current.ModelEditor_ManualSave_IncludeFLVER;
                 }
-                UIHelper.Tooltip("If enabled, the model container files are outputted on save.");
-                UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_ManualSave_IncludeFLVER);
+                GUI.Tooltip("If enabled, the model container files are outputted on save.");
+                GUI.ShowActiveStatus(CFG.Current.ModelEditor_ManualSave_IncludeFLVER);
 
 
                 ImGui.EndMenu();
             }
-            UIHelper.Tooltip("Determines which files are outputted during the manual saving process.");
+            GUI.Tooltip("Determines which files are outputted during the manual saving process.");
 
             if (ImGui.BeginMenu("Output on Automatic Save"))
             {
@@ -109,12 +109,12 @@ public class ModelEditorScreen : EditorScreen
                 {
                     CFG.Current.ModelEditor_AutomaticSave_IncludeFLVER = !CFG.Current.ModelEditor_AutomaticSave_IncludeFLVER;
                 }
-                UIHelper.Tooltip("If enabled, the model container files are outputted on save.");
-                UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_AutomaticSave_IncludeFLVER);
+                GUI.Tooltip("If enabled, the model container files are outputted on save.");
+                GUI.ShowActiveStatus(CFG.Current.ModelEditor_AutomaticSave_IncludeFLVER);
 
                 ImGui.EndMenu();
             }
-            UIHelper.Tooltip("Determines which files are outputted during the automatic saving process.");
+            GUI.Tooltip("Determines which files are outputted during the automatic saving process.");
 
 
             ImGui.EndMenu();
@@ -186,14 +186,14 @@ public class ModelEditorScreen : EditorScreen
             {
                 CFG.Current.Interface_ModelEditor_ToolWindow = !CFG.Current.Interface_ModelEditor_ToolWindow;
             }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_ModelEditor_ToolWindow);
+            GUI.ShowActiveStatus(CFG.Current.Interface_ModelEditor_ToolWindow);
 
             // Hides the non-Viewport windows
             if (ImGui.MenuItem("Screenshot Mode"))
             {
                 CFG.Current.Interface_ModelEditor_ScreenshotMode = !CFG.Current.Interface_ModelEditor_ScreenshotMode;
             }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_ModelEditor_ScreenshotMode);
+            GUI.ShowActiveStatus(CFG.Current.Interface_ModelEditor_ScreenshotMode);
 
 
             ImGui.Separator();
@@ -214,8 +214,8 @@ public class ModelEditorScreen : EditorScreen
                 {
                     CFG.Current.ModelEditor_Containers_IncludeAliasInSearch = !CFG.Current.ModelEditor_Containers_IncludeAliasInSearch;
                 }
-                UIHelper.Tooltip($"If enabled, when filtering the source list, alias will be included. Can be slower than normal.");
-                UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_Containers_IncludeAliasInSearch);
+                GUI.Tooltip($"If enabled, when filtering the source list, alias will be included. Can be slower than normal.");
+                GUI.ShowActiveStatus(CFG.Current.ModelEditor_Containers_IncludeAliasInSearch);
 
                 ImGui.EndMenu();
             }
@@ -226,8 +226,8 @@ public class ModelEditorScreen : EditorScreen
                 {
                     CFG.Current.ModelEditor_Files_AutoLoadFirstEntry = !CFG.Current.ModelEditor_Files_AutoLoadFirstEntry;
                 }
-                UIHelper.Tooltip($"If enabled, the first entry in the list will be loaded automatically.");
-                UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_Files_AutoLoadFirstEntry);
+                GUI.Tooltip($"If enabled, the first entry in the list will be loaded automatically.");
+                GUI.ShowActiveStatus(CFG.Current.ModelEditor_Files_AutoLoadFirstEntry);
 
                 ImGui.EndMenu();
             }
@@ -238,8 +238,8 @@ public class ModelEditorScreen : EditorScreen
                 {
                     CFG.Current.ModelEditor_Contents_NodeNameInMeshEntry = !CFG.Current.ModelEditor_Contents_NodeNameInMeshEntry;
                 }
-                UIHelper.Tooltip($"If enabled, the linked node name is displayed in the mesh entry name.");
-                UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_Contents_NodeNameInMeshEntry);
+                GUI.Tooltip($"If enabled, the linked node name is displayed in the mesh entry name.");
+                GUI.ShowActiveStatus(CFG.Current.ModelEditor_Contents_NodeNameInMeshEntry);
 
                 ImGui.EndMenu();
             }

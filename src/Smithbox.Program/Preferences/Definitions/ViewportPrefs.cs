@@ -420,7 +420,7 @@ public class ViewportPrefs
 
             Draw = () =>
             {
-                UIHelper.SimpleHeader(
+                GUI.SimpleHeader(
                     LOC.Get("PREF_Viewport_Header_General"),
                     LOC.Get("PREF_Viewport_Header_General_TT"));
 
@@ -478,7 +478,7 @@ public class ViewportPrefs
 
             Draw = () =>
             {
-                UIHelper.SimpleHeader(
+                GUI.SimpleHeader(
                     LOC.Get("PREF_Viewport_Header_Gizmo"),
                     LOC.Get("PREF_Viewport_Header_Gizmo_TT"));
 
@@ -531,7 +531,7 @@ public class ViewportPrefs
 
             Draw = () =>
             {
-                UIHelper.SimpleHeader(
+                GUI.SimpleHeader(
                     LOC.Get("PREF_Viewport_Header_Parts"),
                     LOC.Get("PREF_Viewport_Header_Parts_TT"));
 
@@ -590,7 +590,7 @@ public class ViewportPrefs
 
             Draw = () =>
             {
-                UIHelper.SimpleHeader(
+                GUI.SimpleHeader(
                     LOC.Get("PREF_Viewport_Header_Wireframes"),
                     LOC.Get("PREF_Viewport_Header_Wireframes_TT"));
 
@@ -835,7 +835,7 @@ public class ViewportPrefs
                 {
                     ImGui.PushID($"Preset {id}##PresetEdit");
 
-                    UIHelper.SimpleHeader(
+                    GUI.SimpleHeader(
                         LOC.Get("PREF_FilterPreset_Header", id),
                         LOC.Get("PREF_FilterPreset_Header_TT"));
 

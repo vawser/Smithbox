@@ -39,7 +39,7 @@ public class MapToolWindow
                 {
                     View.WorldMapTool.DisplayMenuOption();
                 }
-                UIHelper.Tooltip($"Open a world map with a visual representation of the map tiles.\nShortcut: {InputManager.GetHint(KeybindID.MapEditor_Toggle_World_Map_Menu)}");
+                GUI.Tooltip($"Open a world map with a visual representation of the map tiles.\nShortcut: {InputManager.GetHint(KeybindID.MapEditor_Toggle_World_Map_Menu)}");
             }
 
             if (ImGui.BeginMenu("Miscellaneous"))
@@ -256,67 +256,67 @@ public class MapToolWindow
             {
                 CFG.Current.Interface_MapEditor_Tool_Common_Action = !CFG.Current.Interface_MapEditor_Tool_Common_Action;
             }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_Common_Action);
+            GUI.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_Common_Action);
 
             if (ImGui.MenuItem("Viewport"))
             {
                 CFG.Current.Interface_MapEditor_Tool_Viewport = !CFG.Current.Interface_MapEditor_Tool_Viewport;
             }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_Viewport);
+            GUI.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_Viewport);
 
             if (ImGui.MenuItem("Data Transfer"))
             {
                 CFG.Current.Interface_MapEditor_Tool_Data_Transfer = !CFG.Current.Interface_MapEditor_Tool_Data_Transfer;
             }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_Data_Transfer);
+            GUI.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_Data_Transfer);
 
             if (ImGui.MenuItem("Prefabs"))
             {
                 CFG.Current.Interface_MapEditor_Tool_Prefab = !CFG.Current.Interface_MapEditor_Tool_Prefab;
             }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_Prefab);
+            GUI.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_Prefab);
 
             if (ImGui.MenuItem("Selection Groups"))
             {
                 CFG.Current.Interface_MapEditor_Tool_SelectionGroups = !CFG.Current.Interface_MapEditor_Tool_SelectionGroups;
             }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_SelectionGroups);
+            GUI.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_SelectionGroups);
 
             if (ImGui.MenuItem("Search"))
             {
                 CFG.Current.Interface_MapEditor_Tool_Search = !CFG.Current.Interface_MapEditor_Tool_Search;
             }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_Search);
+            GUI.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_Search);
 
             if (ImGui.MenuItem("Mass Edit"))
             {
                 CFG.Current.Interface_MapEditor_Tool_PropertyMassEdit = !CFG.Current.Interface_MapEditor_Tool_PropertyMassEdit;
             }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_PropertyMassEdit);
+            GUI.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_PropertyMassEdit);
 
             if (ImGui.MenuItem("Map Grid"))
             {
                 CFG.Current.Interface_MapEditor_Tool_GridConfiguration = !CFG.Current.Interface_MapEditor_Tool_GridConfiguration;
             }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_GridConfiguration);
+            GUI.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_GridConfiguration);
 
             if (ImGui.MenuItem("Model Selector"))
             {
                 CFG.Current.Interface_MapEditor_Tool_ModelSelector = !CFG.Current.Interface_MapEditor_Tool_ModelSelector;
             }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_ModelSelector);
+            GUI.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_ModelSelector);
 
             if (ImGui.MenuItem("Display Groups"))
             {
                 CFG.Current.Interface_MapEditor_Tool_DisplayGroups = !CFG.Current.Interface_MapEditor_Tool_DisplayGroups;
             }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_DisplayGroups);
+            GUI.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_DisplayGroups);
 
             if (ImGui.MenuItem("Display Groups"))
             {
                 CFG.Current.Interface_MapEditor_Tool_AssetBrowser = !CFG.Current.Interface_MapEditor_Tool_AssetBrowser;
             }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_AssetBrowser);
+            GUI.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_AssetBrowser);
 
             ImGui.EndMenu();
         }

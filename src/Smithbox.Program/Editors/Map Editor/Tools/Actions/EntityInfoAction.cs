@@ -33,7 +33,7 @@ public class EntityInfoAction
         {
             CopyEntityNameToClipboard(ent);
         }
-        UIHelper.Tooltip($"Copy the current selection's name to the clipboard. For multi-selections, each name is separated by a comma and space.");
+        GUI.Tooltip($"Copy the current selection's name to the clipboard. For multi-selections, each name is separated by a comma and space.");
     }
 
     /// <summary>

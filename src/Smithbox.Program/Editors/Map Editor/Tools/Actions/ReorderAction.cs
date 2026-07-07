@@ -61,28 +61,28 @@ public class ReorderAction
             {
                 ApplyReorder(TreeObjectOrderMovementType.Up);
             }
-            UIHelper.Tooltip($"Move the currently selected map objects up by one in the map object list  for this object type.\n\nShortcut: {InputManager.GetHint(KeybindID.Reorder_Up)}");
+            GUI.Tooltip($"Move the currently selected map objects up by one in the map object list  for this object type.\n\nShortcut: {InputManager.GetHint(KeybindID.Reorder_Up)}");
 
             // Move Down
             if (ImGui.Selectable("Move Down"))
             {
                 ApplyReorder(TreeObjectOrderMovementType.Down);
             }
-            UIHelper.Tooltip($"Move the currently selected map objects down by one in the map object list  for this object type.\n\nShortcut: {InputManager.GetHint(KeybindID.Reorder_Down)}");
+            GUI.Tooltip($"Move the currently selected map objects down by one in the map object list  for this object type.\n\nShortcut: {InputManager.GetHint(KeybindID.Reorder_Down)}");
 
             // Move Top
             if (ImGui.Selectable("Move to Top"))
             {
                 ApplyReorder(TreeObjectOrderMovementType.Top);
             }
-            UIHelper.Tooltip($"Move the currently selected map objects to the top of the map object list for this object type.\n\nShortcut: {InputManager.GetHint(KeybindID.Reorder_Top)}");
+            GUI.Tooltip($"Move the currently selected map objects to the top of the map object list for this object type.\n\nShortcut: {InputManager.GetHint(KeybindID.Reorder_Top)}");
 
             // Move Bottom
             if (ImGui.Selectable("Move to Bottom"))
             {
                 ApplyReorder(TreeObjectOrderMovementType.Bottom);
             }
-            UIHelper.Tooltip($"Move the currently selected map objects to the bottom of the map object list for this object type.\n\nShortcut: {InputManager.GetHint(KeybindID.Reorder_Bottom)}");
+            GUI.Tooltip($"Move the currently selected map objects to the bottom of the map object list for this object type.\n\nShortcut: {InputManager.GetHint(KeybindID.Reorder_Bottom)}");
 
             ImGui.Separator();
         }

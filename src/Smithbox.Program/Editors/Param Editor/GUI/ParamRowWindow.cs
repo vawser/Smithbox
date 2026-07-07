@@ -112,7 +112,7 @@ public class ParamRowWindow
     {
         var rowListTitle = "Row List";
 
-        UIHelper.SimpleHeader($"{rowListTitle}", "");
+        GUI.SimpleHeader($"{rowListTitle}", "");
     }
 
     private void DisplayHeader()
@@ -144,7 +144,7 @@ public class ParamRowWindow
 
         ImGui.AlignTextToFramePadding();
         ImGui.InputTextWithHint($"##rowSearch", "Search...", ref ParentView.Selection.GetCurrentRowSearchString(), 256);
-        UIHelper.Tooltip($"Search <{InputManager.GetHint(KeybindID.ParamEditor_Focus_Searchbar)}>");
+        GUI.Tooltip($"Search <{InputManager.GetHint(KeybindID.ParamEditor_Focus_Searchbar)}>");
 
         if (!lastRowSearch.ContainsKey(ParentView.Selection.GetActiveParam())
             || !lastRowSearch[ParentView.Selection.GetActiveParam()].Equals(ParentView.Selection.GetCurrentRowSearchString()))
@@ -173,7 +173,7 @@ public class ParamRowWindow
         {
             ParentView.JumpToSelectedRow = true;
         }
-        UIHelper.Tooltip($"Go to selected <{InputManager.GetHint(KeybindID.Jump)}>");
+        GUI.Tooltip($"Go to selected <{InputManager.GetHint(KeybindID.Jump)}>");
 
         ImGui.SameLine();
 
@@ -184,7 +184,7 @@ public class ParamRowWindow
         {
             ImGui.OpenPopup("massEditHint");
         }
-        UIHelper.Tooltip(ParamEditorHints.SearchBarHint);
+        GUI.Tooltip(ParamEditorHints.SearchBarHint);
 
         if (ImGui.BeginPopup("massEditHint"))
         {
@@ -207,7 +207,7 @@ public class ParamRowWindow
         if (CFG.Current.ParamEditor_Row_List_Display_Modified_Row_Bg)
             rowModifiedBgMode = "Display Background";
 
-        UIHelper.Tooltip($"Toggle the display of the modified background on modified rows.\nCurrent Mode: {rowModifiedBgMode}");
+        GUI.Tooltip($"Toggle the display of the modified background on modified rows.\nCurrent Mode: {rowModifiedBgMode}");
 
         // Display Decorators
         ImGui.SameLine();
@@ -221,7 +221,7 @@ public class ParamRowWindow
         if (CFG.Current.ParamEditor_Row_List_Display_Decorators)
             displayDecoratorMode = "Display FMG Text";
 
-        UIHelper.Tooltip($"Toggle the display of the FMG text on rows.\nCurrent Mode: {displayDecoratorMode}");
+        GUI.Tooltip($"Toggle the display of the FMG text on rows.\nCurrent Mode: {displayDecoratorMode}");
         
 
         // Quick Export
@@ -741,7 +741,7 @@ public class ParamRowWindow
                 }
                 else
                 {
-                    UIHelper.ApplyDiffHeaderBackground();
+                    GUI.ApplyDiffHeaderBackground();
                 }
             }
         }
@@ -936,7 +936,7 @@ public class ParamRowWindow
             {
                 Editor.Clipboard.CopySelectionToClipboard(ParentView);
             }
-            UIHelper.Tooltip($"Shortcut: {InputManager.GetHint(KeybindID.Copy)}\n\n" +
+            GUI.Tooltip($"Shortcut: {InputManager.GetHint(KeybindID.Copy)}\n\n" +
                 "Copy the current row selection to the clipboard.");
 
             // Paste
@@ -945,7 +945,7 @@ public class ParamRowWindow
             {
                 EditorCommandQueue.AddCommand(@"param/menu/ctrlVPopup");
             }
-            UIHelper.Tooltip($"Shortcut: {InputManager.GetHint(KeybindID.Paste)}\n\n" +
+            GUI.Tooltip($"Shortcut: {InputManager.GetHint(KeybindID.Paste)}\n\n" +
                 "Paste the current row clipboard into the current param.");
 
             // Delete
@@ -956,7 +956,7 @@ public class ParamRowWindow
             {
                 ParamRowDelete.ApplyDelete(ParentView);
             }
-            UIHelper.Tooltip($"Shortcut: {InputManager.GetHint(KeybindID.Delete)}\n\n" +
+            GUI.Tooltip($"Shortcut: {InputManager.GetHint(KeybindID.Delete)}\n\n" +
                 "Delete the current row selection from the param.");
 
             // Duplicate
@@ -964,11 +964,11 @@ public class ParamRowWindow
             {
                 ImGui.InputInt("Offset##duplicateOffset", ref CFG.Current.Param_Toolbar_Duplicate_Offset);
 
-                UIHelper.Tooltip("The ID offset to apply when duplicating.\nSet to 0 for row indexed params to duplicate as expected.");
+                GUI.Tooltip("The ID offset to apply when duplicating.\nSet to 0 for row indexed params to duplicate as expected.");
 
                 ImGui.InputInt("Amount##duplicateAmount", ref CFG.Current.Param_Toolbar_Duplicate_Amount);
 
-                UIHelper.Tooltip("The number of times the current selection will be duplicated.");
+                GUI.Tooltip("The number of times the current selection will be duplicated.");
 
                 if (ImGui.Selectable(@$"Apply", false,
                     ParentView.Selection.RowSelectionExists()
@@ -977,7 +977,7 @@ public class ParamRowWindow
                 {
                     ParamRowDuplicate.ApplyDuplicate(ParentView);
                 }
-                UIHelper.Tooltip($"Shortcut: {InputManager.GetHint(KeybindID.Duplicate)}\n\n" +
+                GUI.Tooltip($"Shortcut: {InputManager.GetHint(KeybindID.Duplicate)}\n\n" +
                     "Duplicate the current row selection, automatically incrementing the row ID.");
 
                 ImGui.EndMenu();
@@ -990,7 +990,7 @@ public class ParamRowWindow
 
                 ImGui.EndMenu();
             }
-            UIHelper.Tooltip($"Duplicate the current row selection into the chosen target param.");
+            GUI.Tooltip($"Duplicate the current row selection into the chosen target param.");
 
             // Jump
             if (HasJumpOption())
@@ -1018,7 +1018,7 @@ public class ParamRowWindow
                 {
                     ParamRowOperations.SetRowToDefault(ParentView);
                 }
-                UIHelper.Tooltip($"Revert the current row selection field values to the vanilla field values.");
+                GUI.Tooltip($"Revert the current row selection field values to the vanilla field values.");
 
                 ImGui.EndMenu();
             }
@@ -1031,7 +1031,7 @@ public class ParamRowWindow
                     EditorCommandQueue.AddCommand(
                         $@"param/menu/massEditRegex/selection: ");
                 }
-                UIHelper.Tooltip("Open the floating command palette.");
+                GUI.Tooltip("Open the floating command palette.");
 
                 if (ImGui.BeginMenu("Autofill"))
                 {
@@ -1047,7 +1047,7 @@ public class ParamRowWindow
 
                     ImGui.EndMenu();
                 }
-                UIHelper.Tooltip("Open the autofill menu.");
+                GUI.Tooltip("Open the autofill menu.");
 
                 ImGui.EndMenu();
             }
@@ -1074,7 +1074,7 @@ public class ParamRowWindow
                             }
                         }
                     }
-                    UIHelper.Tooltip($"Pin the current row selection to the top of the row list.");
+                    GUI.Tooltip($"Pin the current row selection to the top of the row list.");
                 }
                 // Unpin
                 else if (isPinned)
@@ -1096,7 +1096,7 @@ public class ParamRowWindow
                             }
                         }
                     }
-                    UIHelper.Tooltip($"Unpin the current row selection from top of the row list.");
+                    GUI.Tooltip($"Unpin the current row selection from top of the row list.");
                 }
 
                 if (ImGui.Selectable($"Unpin All"))
@@ -1124,7 +1124,7 @@ public class ParamRowWindow
                 {
                     ParentView.Selection.SetCompareRow(r);
                 }
-                UIHelper.Tooltip($"Set this row as the row comparison target within the field window.");
+                GUI.Tooltip($"Set this row as the row comparison target within the field window.");
 
                 if (ImGui.Selectable("Clear Compare Row"))
                 {
@@ -1148,7 +1148,7 @@ public class ParamRowWindow
                         {
                             ParamRowOperations.AdjustRowName(ParentView, NameAdjustment, ParamRowNameAdjustType.Clear);
                         }
-                        UIHelper.Tooltip($"Prepend text to the names of all currently selected rows.");
+                        GUI.Tooltip($"Prepend text to the names of all currently selected rows.");
 
                         if (ImGui.Selectable(@$"Prepend text to name", false,
                             ParentView.Selection.RowSelectionExists()
@@ -1157,7 +1157,7 @@ public class ParamRowWindow
                         {
                             ParamRowOperations.AdjustRowName(ParentView, NameAdjustment, ParamRowNameAdjustType.Prepend);
                         }
-                        UIHelper.Tooltip($"Prepend text to the names of all currently selected rows.");
+                        GUI.Tooltip($"Prepend text to the names of all currently selected rows.");
 
                         if (ImGui.Selectable(@$"Postpend text to name", false,
                                 ParentView.Selection.RowSelectionExists()
@@ -1166,7 +1166,7 @@ public class ParamRowWindow
                         {
                             ParamRowOperations.AdjustRowName(ParentView, NameAdjustment, ParamRowNameAdjustType.Postpend);
                         }
-                        UIHelper.Tooltip($"Postpend text to the names of all currently selected rows.");
+                        GUI.Tooltip($"Postpend text to the names of all currently selected rows.");
 
                         if (ImGui.Selectable(@$"Remove text from name", false,
                                 ParentView.Selection.RowSelectionExists()
@@ -1175,10 +1175,10 @@ public class ParamRowWindow
                         {
                             ParamRowOperations.AdjustRowName(ParentView, NameAdjustment, ParamRowNameAdjustType.Remove);
                         }
-                        UIHelper.Tooltip($"Remove text from the names of all currently selected rows.");
+                        GUI.Tooltip($"Remove text from the names of all currently selected rows.");
 
                         ImGui.InputText("Text to Apply##nameAdjustment", ref NameAdjustment, 255);
-                        UIHelper.Tooltip("The string to pre or post pend to the existing name.");
+                        GUI.Tooltip("The string to pre or post pend to the existing name.");
 
                         ImGui.EndMenu();
 
@@ -1194,7 +1194,7 @@ public class ParamRowWindow
                         {
                             ParamRowOperations.ProliferateRowName(ParentView, TargetField);
                         }
-                        UIHelper.Tooltip($"Proliferate the name of this row to the references pointed to by the named field within this row.");
+                        GUI.Tooltip($"Proliferate the name of this row to the references pointed to by the named field within this row.");
 
                         // Inherit Name from reference
                         if (ImGui.Selectable(@$"Inherit name from reference", false,
@@ -1204,7 +1204,7 @@ public class ParamRowWindow
                         {
                             ParamRowOperations.InheritRowName(ParentView, TargetField);
                         }
-                        UIHelper.Tooltip($"Inherit the name of the referenced row connected to via the target field.");
+                        GUI.Tooltip($"Inherit the name of the referenced row connected to via the target field.");
 
                         // Inherit Name from text
                         if (ImGui.Selectable(@$"Inherit name from text", false,
@@ -1214,7 +1214,7 @@ public class ParamRowWindow
                         {
                             ParamRowOperations.InheritRowNameFromFMG(ParentView, TargetField);
                         }
-                        UIHelper.Tooltip($"Inherit the name of the referenced FMG connected to via the target field.");
+                        GUI.Tooltip($"Inherit the name of the referenced FMG connected to via the target field.");
 
                         // Inherit Name from alias
                         if (ImGui.Selectable(@$"Inherit name from alias", false,
@@ -1224,10 +1224,10 @@ public class ParamRowWindow
                         {
                             ParamRowOperations.InheritRowNameFromAlias(ParentView, TargetField);
                         }
-                        UIHelper.Tooltip($"Inherit the name of the referenced Alias connected to via the target field.");
+                        GUI.Tooltip($"Inherit the name of the referenced Alias connected to via the target field.");
 
                         ImGui.InputText("Target Field##targetField", ref TargetField, 255);
-                        UIHelper.Tooltip("The internal name of the field to target for the name actions.");
+                        GUI.Tooltip("The internal name of the field to target for the name actions.");
 
                         ImGui.EndMenu();
                     }

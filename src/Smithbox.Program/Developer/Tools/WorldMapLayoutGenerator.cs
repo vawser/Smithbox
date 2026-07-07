@@ -128,31 +128,31 @@ public class WorldMapLayoutGenerator
 
     public void Display()
     {
-        UIHelper.SimpleHeader(
+        GUI.SimpleHeader(
             LOC.Get("DEV_Tool_Header_Export_Directory"),
             LOC.Get("DEV_Tool_Header_Export_Directory_TT"));
 
-        UIHelper.SinglelineTextInput("ExportDirectory", ref _folderPath);
+        GUI.SinglelineTextInput("ExportDirectory", ref _folderPath);
 
-        UIHelper.MultiButtonInput("exportActions",
+        GUI.MultiButtonInput("exportActions",
             "setExportDir", 
             LOC.Get("DEV_Tool_Action_Select_Export_Directory"),
             LOC.Get("DEV_Tool_Action_Select_Export_Directory_TT"),
             SetExportDirectory);
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader(
+        GUI.Spacer();
+        GUI.SimpleHeader(
             LOC.Get("DEV_Tool_Header_Options"),
             LOC.Get("DEV_Tool_Header_Options_TT"));
 
         ImGui.Checkbox($"{LOC.Get("DEV_Tool_Checkbox_Generate_DLC_Map")}##generateDlcMap", ref GenerateDLC);
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader(
+        GUI.Spacer();
+        GUI.SimpleHeader(
             LOC.Get("DEV_Tool_Header_Actions"),
             LOC.Get("DEV_Tool_Header_Actions_TT"));
 
-        UIHelper.MultiButtonInput("genActions",
+        GUI.MultiButtonInput("genActions",
             "generateMap", 
             LOC.Get("DEV_Tool_Action_Generate_Map"),
             LOC.Get("DEV_Tool_Action_Generate_Map_TT"),

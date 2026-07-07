@@ -87,7 +87,7 @@ public class ParamFieldWindow
     {
         var fieldListTable = "Field List";
 
-        UIHelper.SimpleHeader($"{fieldListTable}", "");
+        GUI.SimpleHeader($"{fieldListTable}", "");
     }
 
     public void DisplayFieldTable(Param.Row curRow, Param.Row vanillaRow, List<(string, Param.Row)> auxRows,
@@ -368,7 +368,7 @@ public class ParamFieldWindow
             ImGui.AlignTextToFramePadding();
             ImGui.InputTextWithHint("##fieldSearch", "Search...", ref propSearchString,
                 255);
-            UIHelper.Tooltip($"Search <{InputManager.GetHint(KeybindID.ParamEditor_Focus_Searchbar)}>");
+            GUI.Tooltip($"Search <{InputManager.GetHint(KeybindID.ParamEditor_Focus_Searchbar)}>");
 
             if (ImGui.IsItemEdited())
             {
@@ -398,7 +398,7 @@ public class ParamFieldWindow
                 }
             }
 
-            UIHelper.Tooltip($"Toggle field name display type between Internal and Community.\nCurrent Mode: {CFG.Current.ParamEditor_FieldNameMode.GetDisplayName()}");
+            GUI.Tooltip($"Toggle field name display type between Internal and Community.\nCurrent Mode: {CFG.Current.ParamEditor_FieldNameMode.GetDisplayName()}");
 
             // Toggle Vanilla Columns
             ImGui.SameLine();
@@ -412,7 +412,7 @@ public class ParamFieldWindow
             if (CFG.Current.Param_ShowVanillaColumn)
                 vanillaColumnMode = "Visible";
 
-            UIHelper.Tooltip($"Toggle the display of the vanilla columns.\nCurrent Mode: {vanillaColumnMode}");
+            GUI.Tooltip($"Toggle the display of the vanilla columns.\nCurrent Mode: {vanillaColumnMode}");
 
             // Toggle Auxiliary Columns
             ImGui.SameLine();
@@ -426,7 +426,7 @@ public class ParamFieldWindow
             if (CFG.Current.Param_ShowAuxColumn)
                 auxColumnMode = "Visible";
 
-            UIHelper.Tooltip($"Toggle the display of the auxiliary columns.\nCurrent Mode: {auxColumnMode}");
+            GUI.Tooltip($"Toggle the display of the auxiliary columns.\nCurrent Mode: {auxColumnMode}");
 
             // Toggle Field Layouts
             ImGui.SameLine();
@@ -440,7 +440,7 @@ public class ParamFieldWindow
             if (CFG.Current.ParamEditor_Field_List_Enable_Field_Layouts)
                 fieldLayoutsState = "Use Field Layouts";
 
-            UIHelper.Tooltip($"Toggle the usage of field layouts.\nCurrent Mode: {fieldLayoutsState}");
+            GUI.Tooltip($"Toggle the usage of field layouts.\nCurrent Mode: {fieldLayoutsState}");
 
             // Toggle Field Offset Column
             ImGui.SameLine();
@@ -454,7 +454,7 @@ public class ParamFieldWindow
             if (CFG.Current.ParamEditor_Field_List_Display_Offsets)
                 fieldOffsetColumnMode = "Visible";
 
-            UIHelper.Tooltip($"Toggle the display of the field offset column.\nCurrent Mode: {fieldOffsetColumnMode}");
+            GUI.Tooltip($"Toggle the display of the field offset column.\nCurrent Mode: {fieldOffsetColumnMode}");
 
             // Toggle Field Padding
             ImGui.SameLine();
@@ -468,7 +468,7 @@ public class ParamFieldWindow
             if (!CFG.Current.ParamEditor_Field_List_Display_Padding)
                 fieldPaddingMode = "Hidden";
 
-            UIHelper.Tooltip($"Toggle the display of padding field.\nCurrent Mode: {fieldPaddingMode}");
+            GUI.Tooltip($"Toggle the display of padding field.\nCurrent Mode: {fieldPaddingMode}");
 
             // Toggle Modified Background
             ImGui.SameLine();
@@ -482,7 +482,7 @@ public class ParamFieldWindow
             if (CFG.Current.ParamEditor_Field_List_Display_Modified_Field_Bg)
                 rowModifiedBgMode = "Display Background";
 
-            UIHelper.Tooltip($"Toggle the display of the modified background on modified fields.\nCurrent Mode: {rowModifiedBgMode}");
+            GUI.Tooltip($"Toggle the display of the modified background on modified fields.\nCurrent Mode: {rowModifiedBgMode}");
         }
 
         ImGui.EndChild();
@@ -674,7 +674,7 @@ public class ParamFieldWindow
                 {
                     if (CFG.Current.ParamEditor_Field_List_Enable_Field_Layout_Category_Names)
                     {
-                        UIHelper.SimpleHeader($"{layout.GetName()}", "");
+                        GUI.SimpleHeader($"{layout.GetName()}", "");
                     }
 
                     if (hasChanceLot)
@@ -973,7 +973,7 @@ public class ParamFieldWindow
             }
             else if (CFG.Current.ParamEditor_Field_List_Field_Layout_Display_Type is FieldLayoutMode.Header)
             {
-                UIHelper.SimpleHeader($"Unsorted", "");
+                GUI.SimpleHeader($"Unsorted", "");
 
                 if (BeginGroupTable($"ParamFieldsG_{activeParam}_misc", columnCount))
                 {
@@ -1520,14 +1520,14 @@ public class ParamFieldWindow
             {
                 ParentView.MassEdit.ConstructCommandFromField(internalName);
             }
-            UIHelper.Tooltip("Add this field to the Mass Edit command palette.");
+            GUI.Tooltip("Add this field to the Mass Edit command palette.");
 
             if (ImGui.Selectable("Command Palette"))
             {
                 EditorCommandQueue.AddCommand(
                     $@"param/menu/massEditRegex/selection: {Regex.Escape(internalName)}: ");
             }
-            UIHelper.Tooltip("Open the floating command palette.");
+            GUI.Tooltip("Open the floating command palette.");
 
             if (ImGui.BeginMenu("Autofill"))
             {
@@ -1543,7 +1543,7 @@ public class ParamFieldWindow
 
                 ImGui.EndMenu();
             }
-            UIHelper.Tooltip("Open the autofill menu.");
+            GUI.Tooltip("Open the autofill menu.");
 
             ImGui.EndMenu();
         }

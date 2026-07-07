@@ -61,32 +61,32 @@ public class MassEditTool
 
         ImGui.BeginChild("MassEditToolSection", ImGuiChildFlags.Borders);
 
-        UIHelper.WrappedText("Use this to apply mass edits to MSB properties.");
+        GUI.WrappedText("Use this to apply mass edits to MSB properties.");
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader("Map Target", "Determine which maps will be affected by the mass edit.");
+        GUI.Spacer();
+        GUI.SimpleHeader("Map Target", "Determine which maps will be affected by the mass edit.");
 
         ConfigureMapTarget();
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader("Selection Criteria", "Determine which map objects will be affected by the mass edit.");
+        GUI.Spacer();
+        GUI.SimpleHeader("Selection Criteria", "Determine which map objects will be affected by the mass edit.");
 
         ConfigureSelection();
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader("Edit Commands", "Determine which property to affect and the value change to apply for this mass edit.");
+        GUI.Spacer();
+        GUI.SimpleHeader("Edit Commands", "Determine which property to affect and the value change to apply for this mass edit.");
 
         ConfigureEdit();
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader("Variance", "If enabled, adds random ranges to the edit commands.");
+        GUI.Spacer();
+        GUI.SimpleHeader("Variance", "If enabled, adds random ranges to the edit commands.");
 
         ConfigureVariance();
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader("Actions", "");
+        GUI.Spacer();
+        GUI.SimpleHeader("Actions", "");
 
-        UIHelper.MultiButtonInput("massEditActions",
+        GUI.MultiButtonInput("massEditActions",
             "applyMassEdit", "Apply", "", ApplyMassEdit);
 
         DisplayHintPopups();
@@ -117,7 +117,7 @@ public class MassEditTool
         {
             ImGui.OpenPopup("mapTargetHint");
         }
-        UIHelper.Tooltip("View the documentation on map target commands.");
+        GUI.Tooltip("View the documentation on map target commands.");
 
         ImGui.SameLine();
 
@@ -126,7 +126,7 @@ public class MassEditTool
         {
             MapInputs.Add("");
         }
-        UIHelper.Tooltip("Add new map selection input row.");
+        GUI.Tooltip("Add new map selection input row.");
 
         ImGui.SameLine();
 
@@ -139,7 +139,7 @@ public class MassEditTool
             {
                 MapInputs.RemoveAt(MapInputs.Count - 1);
             }
-            UIHelper.Tooltip("Remove last added map selection input row.");
+            GUI.Tooltip("Remove last added map selection input row.");
 
             ImGui.EndDisabled();
         }
@@ -148,7 +148,7 @@ public class MassEditTool
             if (ImGui.Button($"{Icons.Minus}##mapSelectionRemove", DPI.IconButtonSize))
             {
                 MapInputs.RemoveAt(MapInputs.Count - 1);
-                UIHelper.Tooltip("Remove last added map selection input row.");
+                GUI.Tooltip("Remove last added map selection input row.");
             }
         }
 
@@ -159,7 +159,7 @@ public class MassEditTool
         {
             MapInputs = new List<string>() { "" };
         }
-        UIHelper.Tooltip("Reset map selection input rows.");
+        GUI.Tooltip("Reset map selection input rows.");
 
         ImGui.SameLine();
 
@@ -179,7 +179,7 @@ public class MassEditTool
 
             ImGui.EndCombo();
         }
-        UIHelper.Tooltip("The logic with which to handle the selection inputs." +
+        GUI.Tooltip("The logic with which to handle the selection inputs." +
             "\n\nAll must match means all the selection criteria must be true for the map object to be included." +
             "\n\nOne must match means only one of the selection criteria must be true for the map object to be included.");
 
@@ -201,7 +201,7 @@ public class MassEditTool
 
             ImGui.EndCombo();
         }
-        UIHelper.Tooltip("Determines how the map list is obtained." +
+        GUI.Tooltip("Determines how the map list is obtained." +
             "\n\nLocal means only currently loaded maps will be edited (that match the map selection criteria)." +
             "\n\nGlobal means all maps will be edited (that match the map selection criteria).\nWARNING: editing a large amounts of maps will cause Smithbox to hang until it is finished, which may be several minutes.");
 
@@ -213,12 +213,12 @@ public class MassEditTool
             var curCommand = MapInputs[i];
             var curText = curCommand;
 
-            UIHelper.SetInputWidth();
+            GUI.SetInputWidth();
             if (ImGui.InputText($"##mapSelectionInput{i}", ref curText, 255))
             {
                 MapInputs[i] = curText;
             }
-            UIHelper.Tooltip("The map selection command to process.");
+            GUI.Tooltip("The map selection command to process.");
         }
     }
 
@@ -237,7 +237,7 @@ public class MassEditTool
         {
             ImGui.OpenPopup("selectionInputHint");
         }
-        UIHelper.Tooltip("View documentation on selection commands.");
+        GUI.Tooltip("View documentation on selection commands.");
 
         ImGui.SameLine();
 
@@ -246,7 +246,7 @@ public class MassEditTool
         {
             SelectionInputs.Add("");
         }
-        UIHelper.Tooltip("Add new selection input row.");
+        GUI.Tooltip("Add new selection input row.");
 
         ImGui.SameLine();
 
@@ -259,7 +259,7 @@ public class MassEditTool
             {
                 SelectionInputs.RemoveAt(SelectionInputs.Count - 1);
             }
-            UIHelper.Tooltip("Remove last added selection input row.");
+            GUI.Tooltip("Remove last added selection input row.");
 
             ImGui.EndDisabled();
         }
@@ -268,7 +268,7 @@ public class MassEditTool
             if (ImGui.Button($"{Icons.Minus}##selectionRemove", DPI.IconButtonSize))
             {
                 SelectionInputs.RemoveAt(SelectionInputs.Count - 1);
-                UIHelper.Tooltip("Remove last added selection input row.");
+                GUI.Tooltip("Remove last added selection input row.");
             }
         }
 
@@ -279,7 +279,7 @@ public class MassEditTool
         {
             SelectionInputs = new List<string>() { "" };
         }
-        UIHelper.Tooltip("Reset selection input rows.");
+        GUI.Tooltip("Reset selection input rows.");
 
         ImGui.SameLine();
 
@@ -299,7 +299,7 @@ public class MassEditTool
 
             ImGui.EndCombo();
         }
-        UIHelper.Tooltip("The logic with which to handle the selection inputs." +
+        GUI.Tooltip("The logic with which to handle the selection inputs." +
             "\n\nAll must match means all the selection criteria must be true for the map object to be included." +
             "\n\nOne must match means only one of the selection criteria must be true for the map object to be included.");
 
@@ -333,7 +333,7 @@ public class MassEditTool
                 }
             }
         }
-        UIHelper.Tooltip("Select the targets of this select criteria (for the local map).");
+        GUI.Tooltip("Select the targets of this select criteria (for the local map).");
 
         //--------------
         // Selection Inputs
@@ -343,12 +343,12 @@ public class MassEditTool
             var curCommand = SelectionInputs[i];
             var curText = curCommand;
 
-            UIHelper.SetInputWidth();
+            GUI.SetInputWidth();
             if (ImGui.InputText($"##selectionInput{i}", ref curText, 255))
             {
                 SelectionInputs[i] = curText;
             }
-            UIHelper.Tooltip("The selection command to process.");
+            GUI.Tooltip("The selection command to process.");
         }
 
     }
@@ -368,7 +368,7 @@ public class MassEditTool
         {
             ImGui.OpenPopup("editInputHint");
         }
-        UIHelper.Tooltip("View documentation on edit commands.");
+        GUI.Tooltip("View documentation on edit commands.");
 
         ImGui.SameLine();
 
@@ -377,7 +377,7 @@ public class MassEditTool
         {
             EditInputs.Add("");
         }
-        UIHelper.Tooltip("Add edit input row.");
+        GUI.Tooltip("Add edit input row.");
 
         ImGui.SameLine();
 
@@ -390,7 +390,7 @@ public class MassEditTool
             {
                 EditInputs.RemoveAt(EditInputs.Count - 1);
             }
-            UIHelper.Tooltip("Remove last added edit input row.");
+            GUI.Tooltip("Remove last added edit input row.");
 
             ImGui.EndDisabled();
         }
@@ -400,7 +400,7 @@ public class MassEditTool
             {
                 EditInputs.RemoveAt(EditInputs.Count - 1);
             }
-            UIHelper.Tooltip("Remove last added edit input row.");
+            GUI.Tooltip("Remove last added edit input row.");
         }
 
         ImGui.SameLine();
@@ -410,7 +410,7 @@ public class MassEditTool
         {
             EditInputs = new List<string>() { "" };
         }
-        UIHelper.Tooltip("Reset edit input rows.");
+        GUI.Tooltip("Reset edit input rows.");
 
         //--------------
         // Edit Inputs
@@ -420,12 +420,12 @@ public class MassEditTool
             var curCommand = EditInputs[i];
             var curText = curCommand;
 
-            UIHelper.SetInputWidth();
+            GUI.SetInputWidth();
             if (ImGui.InputText($"##editInput{i}", ref curText, 255))
             {
                 EditInputs[i] = curText;
             }
-            UIHelper.Tooltip("The edit command to process.");
+            GUI.Tooltip("The edit command to process.");
         }
     }
 
@@ -441,15 +441,15 @@ public class MassEditTool
         var windowWidth = ImGui.GetWindowWidth();
 
         ImGui.Checkbox("Enable Random Spread", ref EnableVariance);
-        UIHelper.Tooltip("If enabled, random spread will be applied to numeric edit commands when possible.");
+        GUI.Tooltip("If enabled, random spread will be applied to numeric edit commands when possible.");
 
-        UIHelper.SetInputWidth();
+        GUI.SetInputWidth();
         ImGui.InputFloat("Minimum##varianceMin", ref VarianceMin);
-        UIHelper.Tooltip("The minimum value to apply when determining the random spread for a number.");
+        GUI.Tooltip("The minimum value to apply when determining the random spread for a number.");
 
-        UIHelper.SetInputWidth();
+        GUI.SetInputWidth();
         ImGui.InputFloat("Maximum##varianceMax", ref VarianceMax);
-        UIHelper.Tooltip("The maximum value to apply when determining the random spread for a number.");
+        GUI.Tooltip("The maximum value to apply when determining the random spread for a number.");
     }
 
     private bool MayRunEdit = true;
@@ -914,7 +914,7 @@ public class MassEditTool
         {
             var tableFlags = ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Borders;
 
-            UIHelper.SimpleHeader("Name", "");
+            GUI.SimpleHeader("Name", "");
 
             if (ImGui.BeginTable($"nameSelectionTable", 2, tableFlags))
             {
@@ -949,8 +949,8 @@ public class MassEditTool
                 ImGui.EndTable();
             }
 
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader("Exclude", "");
+            GUI.Spacer();
+            GUI.SimpleHeader("Exclude", "");
 
             if (ImGui.BeginTable($"nameSelectionTable", 2, tableFlags))
             {
@@ -994,8 +994,8 @@ public class MassEditTool
 
             ImGui.Text("Precede the command with ! to select the invert.");
 
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader("Name", "");
+            GUI.Spacer();
+            GUI.SimpleHeader("Name", "");
 
             if (ImGui.BeginTable($"nameSelectionTable", 2, tableFlags))
             {
@@ -1029,8 +1029,8 @@ public class MassEditTool
                 ImGui.EndTable();
             }
 
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader("Property Value", "");
+            GUI.Spacer();
+            GUI.SimpleHeader("Property Value", "");
 
             if (ImGui.BeginTable($"propValueSelectionTable", 2, tableFlags))
             {
@@ -1150,7 +1150,7 @@ public class MassEditTool
         {
             var tableFlags = ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Borders;
 
-            UIHelper.SimpleHeader("Basic Operations", "");
+            GUI.SimpleHeader("Basic Operations", "");
             if (ImGui.BeginTable($"basicOperationEditTable", 2, tableFlags))
             {
                 ImGui.TableSetupColumn("Title", ImGuiTableColumnFlags.WidthFixed);

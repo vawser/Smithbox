@@ -113,35 +113,35 @@ public class ProjectConfigureMenu
 
     public void DisplayProjectActions()
     {
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader(LOC.Get("PROJECT_Configuration_Header_Actions"), "");
+        GUI.Spacer();
+        GUI.SimpleHeader(LOC.Get("PROJECT_Configuration_Header_Actions"), "");
 
         if (!AllowCreation())
         {
             if(EditorMode is ProjectEditorMode.Create)
-                UIHelper.WrappedText(LOC.Get("PROJECT_Configuration_Project_Creation_Block_Create"));
+                GUI.WrappedText(LOC.Get("PROJECT_Configuration_Project_Creation_Block_Create"));
 
             if (EditorMode is ProjectEditorMode.Edit)
-                UIHelper.WrappedText(LOC.Get("PROJECT_Configuration_Project_Creation_Block_Edit"));
+                GUI.WrappedText(LOC.Get("PROJECT_Configuration_Project_Creation_Block_Edit"));
 
             if (Descriptor.ProjectName == "")
-                UIHelper.WrappedYellowText(LOC.Get("PROJECT_Configuration_Invalid_Project_Name"));
+                GUI.WrappedYellowText(LOC.Get("PROJECT_Configuration_Invalid_Project_Name"));
 
             if (!Directory.Exists(Descriptor.ProjectPath))
-                UIHelper.WrappedYellowText(LOC.Get("PROJECT_Configuration_Invalid_Project_Path"));
+                GUI.WrappedYellowText(LOC.Get("PROJECT_Configuration_Invalid_Project_Path"));
 
             if (!Directory.Exists(Descriptor.DataPath))
-                UIHelper.WrappedYellowText(LOC.Get("PROJECT_Configuration_Invalid_Data_Path"));
+                GUI.WrappedYellowText(LOC.Get("PROJECT_Configuration_Invalid_Data_Path"));
 
             if (Descriptor.ProjectType is ProjectType.Undefined)
-                UIHelper.WrappedYellowText(LOC.Get("PROJECT_Configuration_Invalid_Project_Type"));
+                GUI.WrappedYellowText(LOC.Get("PROJECT_Configuration_Invalid_Project_Type"));
 
-            UIHelper.Spacer();
+            GUI.Spacer();
         }
 
         if (EditorMode is ProjectEditorMode.Create)
         {
-            UIHelper.ConditionalMultiButtonInput("projectCreateActions",
+            GUI.ConditionalMultiButtonInput("projectCreateActions",
                 "createProject", 
                 LOC.Get("PROJECT_Configuration_Action_Create_Project"), 
                 LOC.Get("PROJECT_Configuration_Action_Create_Project_TT"), 
@@ -149,7 +149,7 @@ public class ProjectConfigureMenu
         }
         else if (EditorMode is ProjectEditorMode.Edit)
         {
-            UIHelper.ConditionalMultiButtonInput("projectEditActions",
+            GUI.ConditionalMultiButtonInput("projectEditActions",
                 "editProject",
                 LOC.Get("PROJECT_Configuration_Action_Update_Project"),
                 LOC.Get("PROJECT_Configuration_Action_Update_Project_TT"), 
@@ -168,10 +168,10 @@ public class ProjectConfigureMenu
 
         if (ModEngineHandler.IsME3Project(Project))
         {
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader(LOC.Get("PROJECT_Configuration_Header_ME3"), "");
+            GUI.Spacer();
+            GUI.SimpleHeader(LOC.Get("PROJECT_Configuration_Header_ME3"), "");
 
-            UIHelper.ConditionalMultiButtonInput("me3Actions",
+            GUI.ConditionalMultiButtonInput("me3Actions",
                 "launchMod",
                 LOC.Get("PROJECT_Configuration_Action_Launch_Mod"),
                 LOC.Get("PROJECT_Configuration_Action_Launch_Mod_TT"), 
@@ -262,7 +262,7 @@ public class ProjectConfigureMenu
 
     private void DisplayProjectEditorToggles()
     {
-        UIHelper.SimpleHeader(
+        GUI.SimpleHeader(
             LOC.Get("PROJECT_Configuration_Header_Available_Editors"), 
             LOC.Get("PROJECT_Configuration_Header_Available_Editors_TT"));
 
@@ -273,7 +273,7 @@ public class ProjectConfigureMenu
                 LOC.Get("PROJECT_Configuration_Checkbox_Visual_Map_Editor"), 
                 ref Descriptor.EnableMapEditor);
 
-            UIHelper.Tooltip(
+            GUI.Tooltip(
                 LOC.Get("PROJECT_Configuration_Checkbox_Visual_Map_Editor_TT"));
         }
 
@@ -284,7 +284,7 @@ public class ProjectConfigureMenu
                 LOC.Get("PROJECT_Configuration_Checkbox_Map_Data_Editor"), 
                 ref Descriptor.EnableMapDataEditor);
 
-            UIHelper.Tooltip(
+            GUI.Tooltip(
                 LOC.Get("PROJECT_Configuration_Checkbox_Map_Data_Editor_TT"));
         }
 
@@ -295,7 +295,7 @@ public class ProjectConfigureMenu
                 LOC.Get("PROJECT_Configuration_Checkbox_Model_Editor"), 
                 ref Descriptor.EnableModelEditor);
 
-            UIHelper.Tooltip(
+            GUI.Tooltip(
                 LOC.Get("PROJECT_Configuration_Checkbox_Model_Editor_TT"));
         }
 
@@ -306,7 +306,7 @@ public class ProjectConfigureMenu
                 LOC.Get("PROJECT_Configuration_Checkbox_Param_Editor"), 
                 ref Descriptor.EnableParamEditor);
 
-            UIHelper.Tooltip(
+            GUI.Tooltip(
                 LOC.Get("PROJECT_Configuration_Checkbox_Param_Editor_TT"));
         }
 
@@ -317,7 +317,7 @@ public class ProjectConfigureMenu
                 LOC.Get("PROJECT_Configuration_Checkbox_Text_Editor"), 
                 ref Descriptor.EnableTextEditor);
 
-            UIHelper.Tooltip(
+            GUI.Tooltip(
                 LOC.Get("PROJECT_Configuration_Checkbox_Text_Editor_TT"));
         }
 
@@ -328,7 +328,7 @@ public class ProjectConfigureMenu
                 LOC.Get("PROJECT_Configuration_Checkbox_Anim_Editor"), 
                 ref Descriptor.EnableAnimEditor);
 
-            UIHelper.Tooltip(
+            GUI.Tooltip(
                 LOC.Get("PROJECT_Configuration_Checkbox_Anim_Editor_TT"));
         }
 
@@ -339,7 +339,7 @@ public class ProjectConfigureMenu
                 LOC.Get("PROJECT_Configuration_Checkbox_Gparam_Editor"), 
                 ref Descriptor.EnableGparamEditor);
 
-            UIHelper.Tooltip(
+            GUI.Tooltip(
                 LOC.Get("PROJECT_Configuration_Checkbox_Gparam_Editor_TT"));
         }
 
@@ -350,7 +350,7 @@ public class ProjectConfigureMenu
                 LOC.Get("PROJECT_Configuration_Checkbox_Material_Editor"), 
                 ref Descriptor.EnableMaterialEditor);
 
-            UIHelper.Tooltip(
+            GUI.Tooltip(
                 LOC.Get("PROJECT_Configuration_Checkbox_Material_Editor_TT"));
         }
 
@@ -361,7 +361,7 @@ public class ProjectConfigureMenu
                 LOC.Get("PROJECT_Configuration_Checkbox_Texture_Viewer"), 
                 ref Descriptor.EnableTextureViewer);
 
-            UIHelper.Tooltip(
+            GUI.Tooltip(
                 LOC.Get("PROJECT_Configuration_Checkbox_Texture_Viewer_TT"));
         }
 
@@ -372,7 +372,7 @@ public class ProjectConfigureMenu
                 LOC.Get("PROJECT_Configuration_Checkbox_File_Browser"), 
                 ref Descriptor.EnableFileBrowser);
 
-            UIHelper.Tooltip(
+            GUI.Tooltip(
                 LOC.Get("PROJECT_Configuration_Checkbox_File_Browser_TT"));
         }
 
@@ -381,29 +381,29 @@ public class ProjectConfigureMenu
             LOC.Get("PROJECT_Configuration_Checkbox_Material_Data"), 
             ref Descriptor.EnableExternalMaterialData);
 
-        UIHelper.Tooltip(
+        GUI.Tooltip(
             LOC.Get("PROJECT_Configuration_Checkbox_Material_Data_TT"));
     }
 
     public void DisplayProjectSettings()
     {
         // Project Name
-        UIHelper.SimpleHeader(
+        GUI.SimpleHeader(
             LOC.Get("PROJECT_Configuration_Header_Project_Name"),
             LOC.Get("PROJECT_Configuration_Header_Project_Name_TT"));
 
-        UIHelper.HintTextInput(
+        GUI.HintTextInput(
             "ProjectNameInput", 
             ref Descriptor.ProjectName,
             LOC.Get("PROJECT_Configuration_Project_Name_Input_Hint"));
 
         // Project Type
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader(
+        GUI.Spacer();
+        GUI.SimpleHeader(
             LOC.Get("PROJECT_Configuration_Header_Project_Type"),
             LOC.Get("PROJECT_Configuration_Header_Project_Type_TT"));
 
-        UIHelper.SetInputWidth();
+        GUI.SetInputWidth();
 
         var previewName = LOC.Get(Descriptor.ProjectType.GetDisplayName());
 
@@ -473,17 +473,17 @@ public class ProjectConfigureMenu
         }
 
         // Project Directory
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader(
+        GUI.Spacer();
+        GUI.SimpleHeader(
             LOC.Get("PROJECT_Configuration_Header_Project_Directory"),
             LOC.Get("PROJECT_Configuration_Header_Project_Directory_TT"));
 
-        UIHelper.HintTextInput(
+        GUI.HintTextInput(
             "ProjectDirPath", 
             ref Descriptor.ProjectPath,
             LOC.Get("PROJECT_Configuration_Project_Directory_Path_Hint"));
 
-        UIHelper.MultiButtonInput("projectDirActions",
+        GUI.MultiButtonInput("projectDirActions",
             "selectDir",
             LOC.Get("PROJECT_Configuration_Action_Select_Project_Directory"),
             LOC.Get("PROJECT_Configuration_Action_Select_Project_Directory_TT"),
@@ -495,15 +495,15 @@ public class ProjectConfigureMenu
             OpenProjectDirectory);
 
         // Data Directory
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader(
+        GUI.Spacer();
+        GUI.SimpleHeader(
             LOC.Get("PROJECT_Configuration_Header_Data_Directory"), GetDataDirectoryTooltip());
 
-        UIHelper.HintTextInput("DataDirPath", 
+        GUI.HintTextInput("DataDirPath", 
             ref Descriptor.DataPath,
             LOC.Get("PROJECT_Configuration_Data_Directory_Path_Hint"));
 
-        UIHelper.MultiButtonInput("dataDirActions",
+        GUI.MultiButtonInput("dataDirActions",
             "selectDir",
             LOC.Get("PROJECT_Configuration_Action_Select_Data_Directory"),
             LOC.Get("PROJECT_Configuration_Action_Select_Data_Directory_TT"),
@@ -515,12 +515,12 @@ public class ProjectConfigureMenu
             OpenDataDirectory);
 
         // Group Tag
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader(
+        GUI.Spacer();
+        GUI.SimpleHeader(
             LOC.Get("PROJECT_Configuration_Data_Header_Group_Tag"),
             LOC.Get("PROJECT_Configuration_Data_Header_Group_Tag_TT"));
 
-        UIHelper.HintTextInput(
+        GUI.HintTextInput(
             "FolderTagInput", 
             ref Descriptor.FolderTag,
             LOC.Get("PROJECT_Configuration_Group_Tag_Hint"));

@@ -92,37 +92,37 @@ public class ModelToolWindow
             {
                 CFG.Current.MaterialEditor_Tool_Data_Transfer = !CFG.Current.MaterialEditor_Tool_Data_Transfer;
             }
-            UIHelper.ShowActiveStatus(CFG.Current.MaterialEditor_Tool_Data_Transfer);
+            GUI.ShowActiveStatus(CFG.Current.MaterialEditor_Tool_Data_Transfer);
 
             if (ImGui.MenuItem("Create"))
             {
                 CFG.Current.Interface_ModelEditor_Tool_CreateAction = !CFG.Current.Interface_ModelEditor_Tool_CreateAction;
             }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_ModelEditor_Tool_CreateAction);
+            GUI.ShowActiveStatus(CFG.Current.Interface_ModelEditor_Tool_CreateAction);
 
             if (ImGui.MenuItem("Model Grid Configuration"))
             {
                 CFG.Current.Interface_ModelEditor_Tool_ModelGridConfiguration = !CFG.Current.Interface_ModelEditor_Tool_ModelGridConfiguration;
             }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_ModelEditor_Tool_ModelGridConfiguration);
+            GUI.ShowActiveStatus(CFG.Current.Interface_ModelEditor_Tool_ModelGridConfiguration);
 
             if (ImGui.MenuItem("Model Insight"))
             {
                 CFG.Current.Interface_ModelEditor_Tool_ModelInsight = !CFG.Current.Interface_ModelEditor_Tool_ModelInsight;
             }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_ModelEditor_Tool_ModelInsight);
+            GUI.ShowActiveStatus(CFG.Current.Interface_ModelEditor_Tool_ModelInsight);
 
             if (ImGui.MenuItem("Model Instance Finder"))
             {
                 CFG.Current.Interface_ModelEditor_Tool_ModelInstanceFinder = !CFG.Current.Interface_ModelEditor_Tool_ModelInstanceFinder;
             }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_ModelEditor_Tool_ModelInstanceFinder);
+            GUI.ShowActiveStatus(CFG.Current.Interface_ModelEditor_Tool_ModelInstanceFinder);
 
             if (ImGui.MenuItem("Model Mask Toggler"))
             {
                 CFG.Current.Interface_ModelEditor_Tool_ModelMaskToggler = !CFG.Current.Interface_ModelEditor_Tool_ModelMaskToggler;
             }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_ModelEditor_Tool_ModelMaskToggler);
+            GUI.ShowActiveStatus(CFG.Current.Interface_ModelEditor_Tool_ModelMaskToggler);
 
             ImGui.EndMenu();
         }

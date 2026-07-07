@@ -199,8 +199,8 @@ public class MapEditorView
     {
         // Map List
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
-        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_MapEditorView);
-        if (ImGui.Begin($@"Map List##mapEditor_MapList_{viewIndex}", UIHelper.GetInnerWindowFlags()))
+        ImGui.SetNextWindowClass(ref GUI.DockGroup_MapEditorView);
+        if (ImGui.Begin($@"Map List##mapEditor_MapList_{viewIndex}", GUI.GetInnerWindowFlags()))
         {
             var width = ImGui.GetContentRegionAvail().X;
             var height = ImGui.GetContentRegionAvail().Y;
@@ -218,8 +218,8 @@ public class MapEditorView
 
         // Map Contents
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
-        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_MapEditorView);
-        if (ImGui.Begin($@"Map Contents##mapEditor_MapContents_{viewIndex}", UIHelper.GetInnerWindowFlags()))
+        ImGui.SetNextWindowClass(ref GUI.DockGroup_MapEditorView);
+        if (ImGui.Begin($@"Map Contents##mapEditor_MapContents_{viewIndex}", GUI.GetInnerWindowFlags()))
         {
             var width = ImGui.GetContentRegionAvail().X;
             var height = ImGui.GetContentRegionAvail().Y;
@@ -241,8 +241,8 @@ public class MapEditorView
 
         // Properties
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
-        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_MapEditorView);
-        if (ImGui.Begin($@"Properties##mapEditor_Properties_{viewIndex}", UIHelper.GetInnerWindowFlags()))
+        ImGui.SetNextWindowClass(ref GUI.DockGroup_MapEditorView);
+        if (ImGui.Begin($@"Properties##mapEditor_Properties_{viewIndex}", GUI.GetInnerWindowFlags()))
         {
             var width = ImGui.GetContentRegionAvail().X;
             var height = ImGui.GetContentRegionAvail().Y;
@@ -260,8 +260,8 @@ public class MapEditorView
 
         // Tools
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
-        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_MapEditorView);
-        if (ImGui.Begin($@"Tools##mapEditor_ToolWindow_{viewIndex}", UIHelper.GetMainWindowFlags()))
+        ImGui.SetNextWindowClass(ref GUI.DockGroup_MapEditorView);
+        if (ImGui.Begin($@"Tools##mapEditor_ToolWindow_{viewIndex}", GUI.GetMainWindowFlags()))
         {
             var width = ImGui.GetContentRegionAvail().X;
             var height = ImGui.GetContentRegionAvail().Y;

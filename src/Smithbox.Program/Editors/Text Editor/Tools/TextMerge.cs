@@ -24,10 +24,10 @@ public class TextMerge
     {
         ImGui.BeginChild("TextMergeSection", ImGuiChildFlags.Borders);
 
-        UIHelper.WrappedText(LOC.Get("TEXT_TextMerge_Hint"));
+        GUI.WrappedText(LOC.Get("TEXT_TextMerge_Hint"));
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader(
+        GUI.Spacer();
+        GUI.SimpleHeader(
             LOC.Get("TEXT_TextMerge_Header_Target_Project"),
             LOC.Get("TEXT_TextMerge_Header_Target_Project"));
 
@@ -62,23 +62,23 @@ public class TextMerge
         }
         ImGui.EndChild();
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader(
+        GUI.Spacer();
+        GUI.SimpleHeader(
             LOC.Get("TEXT_TextMerge_Header_Options"),
             LOC.Get("TEXT_TextMerge_Header_Options_TT"));
 
         ImGui.Checkbox($"{LOC.Get("TEXT_TextMerge_Checkbox_Merge_Primary_Lang")}##primaryLanguageOnly", ref mergePrimaryLanguageOnly);
-        UIHelper.Tooltip(LOC.Get("TEXT_TextMerge_Checkbox_Merge_Primary_Lang_TT"));
+        GUI.Tooltip(LOC.Get("TEXT_TextMerge_Checkbox_Merge_Primary_Lang_TT"));
 
         ImGui.Checkbox($"{LOC.Get("TEXT_TextMerge_Checkbox_Replace_Modified")}##replaceModified", ref replaceModifiedRows);
-        UIHelper.Tooltip(LOC.Get("TEXT_TextMerge_Checkbox_Replace_Modified_TT"));
+        GUI.Tooltip(LOC.Get("TEXT_TextMerge_Checkbox_Replace_Modified_TT"));
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader(
+        GUI.Spacer();
+        GUI.SimpleHeader(
             LOC.Get("TEXT_TextMerge_Header_Actions"),
             LOC.Get("TEXT_TextMerge_Header_Actions_TT"));
 
-        UIHelper.MultiButtonInput("mergeActions",
+        GUI.MultiButtonInput("mergeActions",
             "mergeText", 
             LOC.Get("TEXT_TextMerge_Action_Merge"), 
             LOC.Get("TEXT_TextMerge_Action_Merge_TT"), 

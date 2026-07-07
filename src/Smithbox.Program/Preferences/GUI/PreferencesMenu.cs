@@ -74,12 +74,12 @@ public class PreferencesMenu
         {
             if (!InitialLayout)
             {
-                UIHelper.SetupPopupWindow();
+                GUI.SetupPopupWindow();
                 InitialLayout = true;
             }
 
             // Preferences
-            if (ImGui.Begin($"{LOC.Get("PREF_Window_Preferences")}###preferencesMenu", ref IsDisplayed, UIHelper.GetFloatingWindowFlags()))
+            if (ImGui.Begin($"{LOC.Get("PREF_Window_Preferences")}###preferencesMenu", ref IsDisplayed, GUI.GetFloatingWindowFlags()))
             {
                 ImGui.BeginMenuBar();
 
@@ -500,7 +500,7 @@ public class PreferencesMenu
                 CFGHelpers.ResetCurrentToDefault();
             }
         }
-        UIHelper.Tooltip(
+        GUI.Tooltip(
             LOC.Get("PREF_Action_Revert_All_TT"));
 
         // Add these to the user can revert these easily without reverting everything
@@ -518,7 +518,7 @@ public class PreferencesMenu
                     PreferencesUtil.ResetViewportGeneralCFG();
                 }
             }
-            UIHelper.Tooltip(
+            GUI.Tooltip(
                 LOC.Get("PREF_Action_Viewport_General_TT"));
 
             if (ImGui.MenuItem($"{LOC.Get("PREF_Action_Viewport_Rendering")}##viewportRenderingAction"))
@@ -533,7 +533,7 @@ public class PreferencesMenu
                     PreferencesUtil.ResetViewportRenderingCFG();
                 }
             }
-            UIHelper.Tooltip(LOC.Get("PREF_Action_Viewport_Rendering_TT"));
+            GUI.Tooltip(LOC.Get("PREF_Action_Viewport_Rendering_TT"));
 
             if (ImGui.MenuItem($"{LOC.Get("PREF_Action_Viewport_Model_Rendering")}##viewportModelRenderingAction"))
             {
@@ -547,7 +547,7 @@ public class PreferencesMenu
                     PreferencesUtil.ResetViewportModelRenderingCFG();
                 }
             }
-            UIHelper.Tooltip(LOC.Get("PREF_Action_Viewport_Model_Rendering_TT"));
+            GUI.Tooltip(LOC.Get("PREF_Action_Viewport_Model_Rendering_TT"));
 
             if (ImGui.MenuItem($"{LOC.Get("PREF_Action_Viewport_Selection")}##viewportSelectionAction"))
             {
@@ -561,7 +561,7 @@ public class PreferencesMenu
                     PreferencesUtil.ResetViewportSelectionCFG();
                 }
             }
-            UIHelper.Tooltip(LOC.Get("PREF_Action_Viewport_Selection_TT"));
+            GUI.Tooltip(LOC.Get("PREF_Action_Viewport_Selection_TT"));
 
             if (ImGui.MenuItem($"{LOC.Get("PREF_Action_Viewport_Coloring")}##viewportColoringAction"))
             {
@@ -575,7 +575,7 @@ public class PreferencesMenu
                     PreferencesUtil.ResetViewportColoringCFG();
                 }
             }
-            UIHelper.Tooltip(LOC.Get("PREF_Action_Viewport_Coloring_TT"));
+            GUI.Tooltip(LOC.Get("PREF_Action_Viewport_Coloring_TT"));
 
             if (ImGui.MenuItem($"{LOC.Get("PREF_Action_Viewport_Display_Preset")}##viewportDpAction"))
             {
@@ -589,7 +589,7 @@ public class PreferencesMenu
                     PreferencesUtil.ResetViewportDisplayPresetCFG();
                 }
             }
-            UIHelper.Tooltip(LOC.Get("PREF_Action_Viewport_Display_Preset_TT"));
+            GUI.Tooltip(LOC.Get("PREF_Action_Viewport_Display_Preset_TT"));
 
             ImGui.EndMenu();
         }

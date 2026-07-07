@@ -66,7 +66,7 @@ public class MsbEntryView
             ? $"{Selection.SelectedBaseCategory} › {Selection.SelectedSubCategory}"
             : Selection.SelectedBaseCategory ?? "";
 
-        UIHelper.SimpleHeader("Entries", "");
+        GUI.SimpleHeader("Entries", "");
 
         EditorFilters.DisplayFramedListFilter("EntryListFilter", ref EntryListFilter, ref ExactEntryListFilter);
 

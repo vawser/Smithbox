@@ -49,42 +49,42 @@ public class ParamPinGroups
 
             UpdateGroupList();
 
-            UIHelper.WrappedText("Create a pin group from your current pinned params, rows or fields, or select an existing pin group to replace your current pinned params, rows or fields.");
-            UIHelper.WrappedText("");
+            GUI.WrappedText("Create a pin group from your current pinned params, rows or fields, or select an existing pin group to replace your current pinned params, rows or fields.");
+            GUI.WrappedText("");
 
-            UIHelper.SimpleHeader("Options", "");
+            GUI.SimpleHeader("Options", "");
 
             ImGui.Checkbox("Show only pinned params exclusively", ref CFG.Current.Param_PinGroups_ShowOnlyPinnedParams);
-            UIHelper.Tooltip($"When enabled, only pinned params will appear in the param list.");
+            GUI.Tooltip($"When enabled, only pinned params will appear in the param list.");
 
             ImGui.Checkbox("Show only pinned rows exclusively", ref CFG.Current.Param_PinGroups_ShowOnlyPinnedRows);
-            UIHelper.Tooltip($"When enabled, only pinned rows will appear in the rows list.");
+            GUI.Tooltip($"When enabled, only pinned rows will appear in the rows list.");
 
             ImGui.Checkbox("Show only pinned fields exclusively", ref CFG.Current.Param_PinGroups_ShowOnlyPinnedFields);
-            UIHelper.Tooltip($"When enabled, only pinned fields will appear in the param list.");
+            GUI.Tooltip($"When enabled, only pinned fields will appear in the param list.");
 
             ImGui.Text("");
-            UIHelper.SimpleHeader("Display", "");
-            UIHelper.MultiButtonInput("pinGroupActions",
+            GUI.SimpleHeader("Display", "");
+            GUI.MultiButtonInput("pinGroupActions",
                 "clearParamPins", "Clear Current Param Pins", "", ClearParamPins,
                 "clearRowPins", "Clear Current Row Pins", "", ClearRowPins,
                 "clearFieldPins", "Clear Current Field Pins", "", ClearFieldPins);
 
             ImGui.Text("");
-            UIHelper.SimpleHeader("Creation", "");
+            GUI.SimpleHeader("Creation", "");
 
-            UIHelper.SinglelineTextInput($"newGroupName", ref _newGroupName, "Name");
-            UIHelper.Tooltip("Name of the new group.");
+            GUI.SinglelineTextInput($"newGroupName", ref _newGroupName, "Name");
+            GUI.Tooltip("Name of the new group.");
 
-            UIHelper.MultiButtonInput("pinGroupActions",
+            GUI.MultiButtonInput("pinGroupActions",
                 "createParamPinGroup", "Create New Param Pin Group", "", CreateParamGroup,
                 "createRowPinGroup", "Create New Row Pin Group", "", CreateRowGroup,
                 "createFieldPinGroup", "Create New Field Pin Group", "", CreateFieldGroup);
 
             ImGui.Text("");
-            UIHelper.SimpleHeader("Lists", "");
+            GUI.SimpleHeader("Lists", "");
 
-            UIHelper.MultiButtonInput("pinGroupActions",
+            GUI.MultiButtonInput("pinGroupActions",
                 "displayParamPinGroups", "Display Param Pin Groups", "", DisplayParamPinGroups,
                 "displayRowPinGroups", "Display Row Pin Groups", "", DisplayRowPinGroups,
                 "displayFieldPinGroups", "Display Field Pin Groups", "", DisplayFieldPinGroups);
@@ -93,15 +93,15 @@ public class ParamPinGroups
 
             if (CurrentDisplayState == ParamPinGroupDisplayState.Param)
             {
-                UIHelper.SimpleHeader("Param Groups", "");
+                GUI.SimpleHeader("Param Groups", "");
             }
             if (CurrentDisplayState == ParamPinGroupDisplayState.Row)
             {
-                UIHelper.SimpleHeader("Row Groups", "");
+                GUI.SimpleHeader("Row Groups", "");
             }
             if (CurrentDisplayState == ParamPinGroupDisplayState.Field)
             {
-                UIHelper.SimpleHeader("Field Groups", "");
+                GUI.SimpleHeader("Field Groups", "");
             }
 
             ImGui.Columns(2);
@@ -224,7 +224,7 @@ public class ParamPinGroups
                 _selectedParamGroup = entry;
                 LoadParamPinGroup(entry);
             }
-            UIHelper.Tooltip("Double-click to set current param pins to this group.");
+            GUI.Tooltip("Double-click to set current param pins to this group.");
 
             if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
             {
@@ -242,7 +242,7 @@ public class ParamPinGroups
                     {
                         DeletePinGroup(entry, ParamGroupPath);
                     }
-                    UIHelper.Tooltip("Delete this group.");
+                    GUI.Tooltip("Delete this group.");
 
                     ImGui.EndPopup();
                 }
@@ -258,7 +258,7 @@ public class ParamPinGroups
                 _selectedRowGroup = entry;
                 LoadRowPinGroup(entry);
             }
-            UIHelper.Tooltip("Double-click to set current row pins to this group.");
+            GUI.Tooltip("Double-click to set current row pins to this group.");
 
             if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
             {
@@ -276,7 +276,7 @@ public class ParamPinGroups
                     {
                         DeletePinGroup(entry, RowGroupPath);
                     }
-                    UIHelper.Tooltip("Delete this group.");
+                    GUI.Tooltip("Delete this group.");
 
                     ImGui.EndPopup();
                 }
@@ -293,7 +293,7 @@ public class ParamPinGroups
                 _selectedFieldGroup = entry;
                 LoadFieldPinGroup(entry);
             }
-            UIHelper.Tooltip("Double-click to set current field pins to this group.");
+            GUI.Tooltip("Double-click to set current field pins to this group.");
 
             if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
             {
@@ -311,7 +311,7 @@ public class ParamPinGroups
                     {
                         DeletePinGroup(entry, FieldGroupPath);
                     }
-                    UIHelper.Tooltip("Delete this group.");
+                    GUI.Tooltip("Delete this group.");
 
                     ImGui.EndPopup();
                 }
@@ -323,11 +323,11 @@ public class ParamPinGroups
     {
         if(_selectedParamPinGroup != null)
         {
-            UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Params:");
+            GUI.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Params:");
 
             foreach (var entry in _selectedParamPinGroup.Pins)
             {
-                UIHelper.WrappedText($"{entry}");
+                GUI.WrappedText($"{entry}");
             }
         }
     }
@@ -336,14 +336,14 @@ public class ParamPinGroups
     {
         if (_selectedRowPinGroup != null)
         {
-            UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Rows:");
+            GUI.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Rows:");
 
             foreach (var entry in _selectedRowPinGroup.Pins)
             {
-                UIHelper.WrappedText($"{entry.Key}:");
+                GUI.WrappedText($"{entry.Key}:");
                 foreach (var listEntry in entry.Value)
                 {
-                    UIHelper.WrappedText($" {listEntry}");
+                    GUI.WrappedText($" {listEntry}");
                 }
             }
         }
@@ -353,14 +353,14 @@ public class ParamPinGroups
     {
         if (_selectedFieldPinGroup != null)
         {
-            UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Fields:");
+            GUI.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Fields:");
 
             foreach (var entry in _selectedFieldPinGroup.Pins)
             {
-                UIHelper.WrappedText($"{entry.Key}:");
+                GUI.WrappedText($"{entry.Key}:");
                 foreach (var listEntry in entry.Value)
                 {
-                    UIHelper.WrappedText($" {listEntry}");
+                    GUI.WrappedText($" {listEntry}");
                 }
             }
         }

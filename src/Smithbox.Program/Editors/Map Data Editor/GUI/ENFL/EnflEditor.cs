@@ -27,7 +27,7 @@ public class EnflEditor
 
     public void DisplayHeader()
     {
-        UIHelper.SimpleHeader("Entry File Lists", "");
+        GUI.SimpleHeader("Entry File Lists", "");
 
         EditorFilters.DisplayFramedListFilter("enflEditor_FileList",
             ref FileListFilter, ref ExactFileListFilter);
@@ -79,7 +79,7 @@ public class EnflEditor
 
     public void Draw()
     {
-        UIHelper.SimpleHeader("Current Entry File List", "");
+        GUI.SimpleHeader("Current Entry File List", "");
 
     }
 }

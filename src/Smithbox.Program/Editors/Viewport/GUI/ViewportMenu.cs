@@ -64,16 +64,16 @@ public class ViewportMenu
                 CFG.Current.Viewport_DisplayControls = !CFG.Current.Viewport_DisplayControls;
                 Parent.DelayPicking();
             }
-            UIHelper.ShowActiveStatus(CFG.Current.Viewport_DisplayControls);
-            UIHelper.Tooltip(LOC.Get("VIEWPORT_Menubar_Toggle_Controls_TT"));
+            GUI.ShowActiveStatus(CFG.Current.Viewport_DisplayControls);
+            GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Toggle_Controls_TT"));
 
             if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_Toggle_Profiling")}##profilingToggle"))
             {
                 CFG.Current.Viewport_Display_Profiling = !CFG.Current.Viewport_Display_Profiling;
                 Parent.DelayPicking();
             }
-            UIHelper.ShowActiveStatus(CFG.Current.Viewport_Display_Profiling);
-            UIHelper.Tooltip(LOC.Get("VIEWPORT_Menubar_Toggle_Profiling_TT"));
+            GUI.ShowActiveStatus(CFG.Current.Viewport_Display_Profiling);
+            GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Toggle_Profiling_TT"));
 
             if (Owner is MapUniverse mapUniverse)
             {
@@ -82,32 +82,32 @@ public class ViewportMenu
                     CFG.Current.Viewport_DisplayTranslationIncrement = !CFG.Current.Viewport_DisplayTranslationIncrement;
                     Parent.DelayPicking();
                 }
-                UIHelper.ShowActiveStatus(CFG.Current.Viewport_DisplayTranslationIncrement);
-                UIHelper.Tooltip(LOC.Get("VIEWPORT_Menubar_Toggle_Translation_Increment_TT"));
+                GUI.ShowActiveStatus(CFG.Current.Viewport_DisplayTranslationIncrement);
+                GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Toggle_Translation_Increment_TT"));
 
                 if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_Toggle_Rotation_Increment")}##rotationIncrementToggle"))
                 {
                     CFG.Current.Viewport_DisplayRotationIncrement = !CFG.Current.Viewport_DisplayRotationIncrement;
                     Parent.DelayPicking();
                 }
-                UIHelper.ShowActiveStatus(CFG.Current.Viewport_DisplayRotationIncrement);
-                UIHelper.Tooltip(LOC.Get("VIEWPORT_Menubar_Toggle_Rotation_Increment_TT"));
+                GUI.ShowActiveStatus(CFG.Current.Viewport_DisplayRotationIncrement);
+                GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Toggle_Rotation_Increment_TT"));
 
                 if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_Toggle_Viewport_Tooltip")}##viewportTooltipToggle"))
                 {
                     CFG.Current.QuickView_DisplayTooltip = !CFG.Current.QuickView_DisplayTooltip;
                     Parent.DelayPicking();
                 }
-                UIHelper.ShowActiveStatus(CFG.Current.QuickView_DisplayTooltip);
-                UIHelper.Tooltip(LOC.Get("VIEWPORT_Menubar_Toggle_Viewport_Tooltip_TT"));
+                GUI.ShowActiveStatus(CFG.Current.QuickView_DisplayTooltip);
+                GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Toggle_Viewport_Tooltip_TT"));
 
                 if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_Toggle_Placement_Orb")}##placementOrbToggle"))
                 {
                     CFG.Current.DisplayPlacementOrb = !CFG.Current.DisplayPlacementOrb;
                     Parent.DelayPicking();
                 }
-                UIHelper.ShowActiveStatus(CFG.Current.DisplayPlacementOrb);
-                UIHelper.Tooltip(LOC.Get("VIEWPORT_Menubar_Toggle_Placement_Orb_TT"));
+                GUI.ShowActiveStatus(CFG.Current.DisplayPlacementOrb);
+                GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Toggle_Placement_Orb_TT"));
             }
 
             ImGui.EndMenu();
@@ -118,7 +118,7 @@ public class ViewportMenu
     {
         if (ImGui.BeginMenu($"{LOC.Get("VIEWPORT_Menubar_Header_Camera")}##cameraMenuHeader"))
         {
-            UIHelper.SimpleHeader(
+            GUI.SimpleHeader(
                 LOC.Get("VIEWPORT_Menubar_View_Mode"),
                 LOC.Get("VIEWPORT_Menubar_View_Mode_TT"));
 
@@ -140,7 +140,7 @@ public class ViewportMenu
                 ImGui.EndCombo();
             }
 
-            UIHelper.SimpleHeader(
+            GUI.SimpleHeader(
                 LOC.Get("VIEWPORT_Menubar_View_Parameters"),
                 LOC.Get("VIEWPORT_Menubar_View_Parameters_TT"));
 
@@ -164,7 +164,7 @@ public class ViewportMenu
 
                     CFG.Current.Viewport_Perspective_Near_Clip = nearClip;
                 }
-                UIHelper.Tooltip(LOC.Get("VIEWPORT_Menubar_View_Near_Clip_TT"));
+                GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_View_Near_Clip_TT"));
 
                 // Far Clipping Distance
                 var farClip = CFG.Current.Viewport_Perspective_Far_Clip;
@@ -183,7 +183,7 @@ public class ViewportMenu
 
                     CFG.Current.Viewport_Perspective_Far_Clip = farClip;
                 }
-                UIHelper.Tooltip(LOC.Get("VIEWPORT_Menubar_View_Far_Clip_TT"));
+                GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_View_Far_Clip_TT"));
 
                 // FOV
                 var cam_fov = CFG.Current.Viewport_Camera_FOV;
@@ -202,7 +202,7 @@ public class ViewportMenu
 
                     CFG.Current.Viewport_Camera_FOV = cam_fov;
                 }
-                UIHelper.Tooltip(LOC.Get("VIEWPORT_Menubar_Camera_FOV_TT"));
+                GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Camera_FOV_TT"));
 
                 // Sensitivity
                 var cam_sensitivity = CFG.Current.Viewport_Camera_Sensitivity;
@@ -221,7 +221,7 @@ public class ViewportMenu
 
                     CFG.Current.Viewport_Camera_Sensitivity = cam_sensitivity;
                 }
-                UIHelper.Tooltip(LOC.Get("VIEWPORT_Menubar_Camera_Sensitivity_TT"));
+                GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Camera_Sensitivity_TT"));
 
                 // Camera Speed (Slow)
                 if (ImGui.SliderFloat(
@@ -241,7 +241,7 @@ public class ViewportMenu
                         CFG.Current.Viewport_Camera_MoveSpeed_Slow = 9999.0f;
                     }
                 }
-                UIHelper.Tooltip(LOC.Get("VIEWPORT_Menubar_Camera_Speed_Slow_TT"));
+                GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Camera_Speed_Slow_TT"));
 
                 // Camera Speed (Normal)
                 if (ImGui.SliderFloat(
@@ -261,7 +261,7 @@ public class ViewportMenu
                         CFG.Current.Viewport_Camera_MoveSpeed_Normal = 9999.0f;
                     }
                 }
-                UIHelper.Tooltip(LOC.Get("VIEWPORT_Menubar_Camera_Speed_Normal_TT"));
+                GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Camera_Speed_Normal_TT"));
 
                 // Camera Speed (Fast)
                 if (ImGui.SliderFloat(
@@ -281,7 +281,7 @@ public class ViewportMenu
                         CFG.Current.Viewport_Camera_MoveSpeed_Fast = 9999.0f;
                     }
                 }
-                UIHelper.Tooltip(LOC.Get("VIEWPORT_Menubar_Camera_Speed_Fast_TT"));
+                GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Camera_Speed_Fast_TT"));
             }
 
             // Orthographic / Oblique
@@ -304,7 +304,7 @@ public class ViewportMenu
 
                     CFG.Current.Viewport_Orthographic_Near_Clip = nearClip;
                 }
-                UIHelper.Tooltip(LOC.Get("VIEWPORT_Menubar_Ortho_Near_Clip_TT"));
+                GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Ortho_Near_Clip_TT"));
 
                 // Far Clipping Distance
                 var farClip = CFG.Current.Viewport_Orthographic_Far_Clip;
@@ -323,7 +323,7 @@ public class ViewportMenu
 
                     CFG.Current.Viewport_Orthographic_Far_Clip = farClip;
                 }
-                UIHelper.Tooltip(LOC.Get("VIEWPORT_Menubar_Ortho_Far_Clip_TT"));
+                GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Ortho_Far_Clip_TT"));
 
                 // Orthographic Size
                 ImGui.SliderFloat(
@@ -340,7 +340,7 @@ public class ViewportMenu
                     // Update the default
                     CFG.Current.Viewport_MousePan_Sensitivity = Parent.ViewportCamera.PanSensitivity;
                 }
-                UIHelper.Tooltip(LOC.Get("VIEWPORT_Menubar_Ortho_Pan_Sensitivity_TT"));
+                GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Ortho_Pan_Sensitivity_TT"));
             }
 
             // Orthographic
@@ -361,7 +361,7 @@ public class ViewportMenu
                     // Update the default
                     CFG.Current.Viewport_DefaultOrthographicSize = Parent.ViewportCamera.OrthographicSize;
                 }
-                UIHelper.Tooltip(LOC.Get("VIEWPORT_Menubar_Ortho_Size_TT"));
+                GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Ortho_Size_TT"));
             }
 
             // Oblique
@@ -382,7 +382,7 @@ public class ViewportMenu
                     // Update the default
                     CFG.Current.Viewport_DefaultObliqueAngle = Parent.ViewportCamera.ObliqueAngle;
                 }
-                UIHelper.Tooltip(LOC.Get("VIEWPORT_Menubar_Oblique_Angle_TT"));
+                GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Oblique_Angle_TT"));
 
                 // Oblique Scaling
                 ImGui.SliderFloat(
@@ -399,7 +399,7 @@ public class ViewportMenu
                     // Update the default
                     CFG.Current.Viewport_DefaultObliqueScaling = Parent.ViewportCamera.ObliqueScaling;
                 }
-                UIHelper.Tooltip(LOC.Get("VIEWPORT_Menubar_Oblique_Scaling_TT"));
+                GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Oblique_Scaling_TT"));
             }
 
             if (ImGui.Selectable($"{LOC.Get("VIEWPORT_Menubar_Action_Reset_Camera_Settings")}##resetAction"))
@@ -494,21 +494,21 @@ public class ViewportMenu
                 CFG.Current.Viewport_Enable_Rendering = !CFG.Current.Viewport_Enable_Rendering;
                 Parent.DelayPicking();
             }
-            UIHelper.Tooltip(LOC.Get("VIEWPORT_Menubar_Setting_Enable_Rendering_TT"));
+            GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Setting_Enable_Rendering_TT"));
 
             if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_Setting_Enable_Texturing")}##textureToggle", CFG.Current.Viewport_Enable_Texturing))
             {
                 CFG.Current.Viewport_Enable_Texturing = !CFG.Current.Viewport_Enable_Texturing;
                 Parent.DelayPicking();
             }
-            UIHelper.Tooltip(LOC.Get("VIEWPORT_Menubar_Setting_Enable_Texturing_TT"));
+            GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Setting_Enable_Texturing_TT"));
 
             if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_Setting_Enable_Culling")}##cullingToggle", CFG.Current.Viewport_Enable_Culling))
             {
                 CFG.Current.Viewport_Enable_Culling = !CFG.Current.Viewport_Enable_Culling;
                 Parent.DelayPicking();
             }
-            UIHelper.Tooltip(LOC.Get("VIEWPORT_Menubar_Setting_Enable_Culling_TT"));
+            GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Setting_Enable_Culling_TT"));
 
             if (Owner is MapUniverse mapUniverse)
             {
@@ -517,7 +517,7 @@ public class ViewportMenu
                     CFG.Current.Viewport_Enable_Model_Masks = !CFG.Current.Viewport_Enable_Model_Masks;
                     Parent.DelayPicking();
                 }
-                UIHelper.Tooltip(LOC.Get("VIEWPORT_Menubar_Setting_Enable_Model_Masks_TT"));
+                GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Setting_Enable_Model_Masks_TT"));
 
                 ImGui.Separator();
 
@@ -539,7 +539,7 @@ public class ViewportMenu
                         $"{LOC.Get("VIEWPORT_Menubar_Setting_Orb_Distance")}##orbDistance", 
                         ref CFG.Current.PlacementOrb_Distance, 0.1f, 1f, 100f);
 
-                    UIHelper.Tooltip(LOC.Get("VIEWPORT_Menubar_Setting_Orb_Distance_TT"));
+                    GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Setting_Orb_Distance_TT"));
 
                     ImGui.EndMenu();
                 }
@@ -560,7 +560,7 @@ public class ViewportMenu
                         $"{LOC.Get("VIEWPORT_Menubar_Setting_Dummy_Size")}##dummyMeshSize",
                         ref CFG.Current.DummyMeshSize, 0.1f, 0.0001f, 1f);
 
-                    UIHelper.Tooltip(LOC.Get("VIEWPORT_Menubar_Setting_Dummy_Size_TT"));
+                    GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Setting_Dummy_Size_TT"));
 
                     if(ImGui.IsItemDeactivatedAfterEdit())
                     {
@@ -572,7 +572,7 @@ public class ViewportMenu
                         $"{LOC.Get("VIEWPORT_Menubar_Setting_Node_Size")}##nodeMeshSize",
                         ref CFG.Current.NodeMeshSize, 0.1f, 0.0001f, 1f);
 
-                    UIHelper.Tooltip(LOC.Get("VIEWPORT_Menubar_Setting_Node_Size_TT"));
+                    GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Setting_Node_Size_TT"));
 
                     if (ImGui.IsItemDeactivatedAfterEdit())
                     {
@@ -597,7 +597,7 @@ public class ViewportMenu
                 CFG.Current.MapEditor_ModelLoad_MapPieces = !CFG.Current.MapEditor_ModelLoad_MapPieces;
                 Parent.DelayPicking();
             }
-            UIHelper.ShowActiveStatus(CFG.Current.MapEditor_ModelLoad_MapPieces);
+            GUI.ShowActiveStatus(CFG.Current.MapEditor_ModelLoad_MapPieces);
 
             var name = LOC.Get("VIEWPORT_Menubar_ML_Objects");
 
@@ -614,33 +614,33 @@ public class ViewportMenu
                 CFG.Current.MapEditor_ModelLoad_Objects = !CFG.Current.MapEditor_ModelLoad_Objects;
                 Parent.DelayPicking();
             }
-            UIHelper.ShowActiveStatus(CFG.Current.MapEditor_ModelLoad_MapPieces);
+            GUI.ShowActiveStatus(CFG.Current.MapEditor_ModelLoad_MapPieces);
 
             if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_ML_Characters")}##characterToggle"))
             {
                 CFG.Current.MapEditor_ModelLoad_Characters = !CFG.Current.MapEditor_ModelLoad_Characters;
                 Parent.DelayPicking();
             }
-            UIHelper.ShowActiveStatus(CFG.Current.MapEditor_ModelLoad_Characters);
+            GUI.ShowActiveStatus(CFG.Current.MapEditor_ModelLoad_Characters);
 
             if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_ML_Collisions")}##collisionToggle"))
             {
                 CFG.Current.MapEditor_ModelLoad_Collisions = !CFG.Current.MapEditor_ModelLoad_Collisions;
                 Parent.DelayPicking();
             }
-            UIHelper.ShowActiveStatus(CFG.Current.MapEditor_ModelLoad_Collisions);
+            GUI.ShowActiveStatus(CFG.Current.MapEditor_ModelLoad_Collisions);
 
             if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_ML_Navmeshes")}##navmeshToggle"))
             {
                 CFG.Current.MapEditor_ModelLoad_Navmeshes = !CFG.Current.MapEditor_ModelLoad_Navmeshes;
                 Parent.DelayPicking();
             }
-            UIHelper.ShowActiveStatus(CFG.Current.MapEditor_ModelLoad_Navmeshes);
+            GUI.ShowActiveStatus(CFG.Current.MapEditor_ModelLoad_Navmeshes);
 
 
             ImGui.EndMenu();
         }
-        UIHelper.Tooltip(LOC.Get("VIEWPORT_Menubar_Model_Load_Header_TT"));
+        GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Model_Load_Header_TT"));
     }
 
     public void MapTextureLoadMenu()
@@ -652,7 +652,7 @@ public class ViewportMenu
                 CFG.Current.MapEditor_TextureLoad_MapPieces = !CFG.Current.MapEditor_TextureLoad_MapPieces;
                 Parent.DelayPicking();
             }
-            UIHelper.ShowActiveStatus(CFG.Current.MapEditor_TextureLoad_MapPieces);
+            GUI.ShowActiveStatus(CFG.Current.MapEditor_TextureLoad_MapPieces);
 
             var name = LOC.Get("VIEWPORT_Menubar_TL_Objects");
 
@@ -669,25 +669,25 @@ public class ViewportMenu
                 CFG.Current.MapEditor_TextureLoad_Objects = !CFG.Current.MapEditor_TextureLoad_Objects;
                 Parent.DelayPicking();
             }
-            UIHelper.ShowActiveStatus(CFG.Current.MapEditor_TextureLoad_Objects);
+            GUI.ShowActiveStatus(CFG.Current.MapEditor_TextureLoad_Objects);
 
             if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_TL_Characters")}##characterToggle"))
             {
                 CFG.Current.MapEditor_TextureLoad_Characters = !CFG.Current.MapEditor_TextureLoad_Characters;
                 Parent.DelayPicking();
             }
-            UIHelper.ShowActiveStatus(CFG.Current.MapEditor_TextureLoad_Characters);
+            GUI.ShowActiveStatus(CFG.Current.MapEditor_TextureLoad_Characters);
 
             if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_TL_Misc")}##miscToggle"))
             {
                 CFG.Current.MapEditor_TextureLoad_Misc = !CFG.Current.MapEditor_TextureLoad_Misc;
                 Parent.DelayPicking();
             }
-            UIHelper.ShowActiveStatus(CFG.Current.MapEditor_TextureLoad_Misc);
+            GUI.ShowActiveStatus(CFG.Current.MapEditor_TextureLoad_Misc);
 
             ImGui.EndMenu();
         }
-        UIHelper.Tooltip(LOC.Get("VIEWPORT_Menubar_Texture_Load_Header_TT"));
+        GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Texture_Load_Header_TT"));
     }
 
     public void ModelModelLoadMenu()
@@ -699,7 +699,7 @@ public class ViewportMenu
                 CFG.Current.ModelEditor_ModelLoad_MapPieces = !CFG.Current.ModelEditor_ModelLoad_MapPieces;
                 Parent.DelayPicking();
             }
-            UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_ModelLoad_MapPieces);
+            GUI.ShowActiveStatus(CFG.Current.ModelEditor_ModelLoad_MapPieces);
 
             var name = LOC.Get("VIEWPORT_Menubar_ML_Objects");
 
@@ -716,25 +716,25 @@ public class ViewportMenu
                 CFG.Current.ModelEditor_ModelLoad_Objects = !CFG.Current.ModelEditor_ModelLoad_Objects;
                 Parent.DelayPicking();
             }
-            UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_ModelLoad_MapPieces);
+            GUI.ShowActiveStatus(CFG.Current.ModelEditor_ModelLoad_MapPieces);
 
             if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_ML_Characters")}##characterToggle"))
             {
                 CFG.Current.ModelEditor_ModelLoad_Characters = !CFG.Current.ModelEditor_ModelLoad_Characters;
                 Parent.DelayPicking();
             }
-            UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_ModelLoad_Characters);
+            GUI.ShowActiveStatus(CFG.Current.ModelEditor_ModelLoad_Characters);
 
             if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_ML_Parts")}##partsToggle"))
             {
                 CFG.Current.ModelEditor_ModelLoad_Parts = !CFG.Current.ModelEditor_ModelLoad_Parts;
                 Parent.DelayPicking();
             }
-            UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_ModelLoad_Parts);
+            GUI.ShowActiveStatus(CFG.Current.ModelEditor_ModelLoad_Parts);
 
             ImGui.EndMenu();
         }
-        UIHelper.Tooltip(LOC.Get("VIEWPORT_Menubar_Model_Load_Header_TT"));
+        GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Model_Load_Header_TT"));
     }
 
     public void ModelTextureLoadMenu()
@@ -746,7 +746,7 @@ public class ViewportMenu
                 CFG.Current.ModelEditor_TextureLoad_MapPieces = !CFG.Current.ModelEditor_TextureLoad_MapPieces;
                 Parent.DelayPicking();
             }
-            UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_TextureLoad_MapPieces);
+            GUI.ShowActiveStatus(CFG.Current.ModelEditor_TextureLoad_MapPieces);
 
             var name = LOC.Get("VIEWPORT_Menubar_TL_Objects");
 
@@ -763,31 +763,31 @@ public class ViewportMenu
                 CFG.Current.ModelEditor_TextureLoad_Objects = !CFG.Current.ModelEditor_TextureLoad_Objects;
                 Parent.DelayPicking();
             }
-            UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_TextureLoad_Objects);
+            GUI.ShowActiveStatus(CFG.Current.ModelEditor_TextureLoad_Objects);
 
             if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_TL_Characters")}##characterToggle"))
             {
                 CFG.Current.ModelEditor_TextureLoad_Characters = !CFG.Current.ModelEditor_TextureLoad_Characters;
                 Parent.DelayPicking();
             }
-            UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_TextureLoad_Characters);
+            GUI.ShowActiveStatus(CFG.Current.ModelEditor_TextureLoad_Characters);
 
             if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_TL_Parts")}##partsToggle"))
             {
                 CFG.Current.ModelEditor_TextureLoad_Parts = !CFG.Current.ModelEditor_TextureLoad_Parts;
                 Parent.DelayPicking();
             }
-            UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_TextureLoad_Parts);
+            GUI.ShowActiveStatus(CFG.Current.ModelEditor_TextureLoad_Parts);
 
             if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_TL_Misc")}##miscToggle"))
             {
                 CFG.Current.ModelEditor_TextureLoad_Misc = !CFG.Current.ModelEditor_TextureLoad_Misc;
                 Parent.DelayPicking();
             }
-            UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_TextureLoad_Misc);
+            GUI.ShowActiveStatus(CFG.Current.ModelEditor_TextureLoad_Misc);
 
             ImGui.EndMenu();
         }
-        UIHelper.Tooltip(LOC.Get("VIEWPORT_Menubar_Texture_Load_Header_TT"));
+        GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Texture_Load_Header_TT"));
     }
 }

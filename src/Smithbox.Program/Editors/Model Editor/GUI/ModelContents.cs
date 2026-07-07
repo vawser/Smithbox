@@ -38,7 +38,7 @@ public class ModelContents : IActionEventHandler
 
     public void Display(float width, float height)
     {
-        UIHelper.SimpleHeader("Contents", "");
+        GUI.SimpleHeader("Contents", "");
 
         var searchHeight = new Vector2(0, 36) * DPI.UIScale();
         ImGui.BeginChild($"framedListFilter_modelEditor_ContentTree", searchHeight, ImGuiChildFlags.Borders);
@@ -99,7 +99,7 @@ public class ModelContents : IActionEventHandler
                 }
             }
         }
-        UIHelper.Tooltip("Force all model objects to be shown.");
+        GUI.Tooltip("Force all model objects to be shown.");
 
         // Hide All
         ImGui.SameLine();
@@ -113,7 +113,7 @@ public class ModelContents : IActionEventHandler
                 }
             }
         }
-        UIHelper.Tooltip("Force all model objects to be hidden.");
+        GUI.Tooltip("Force all model objects to be hidden.");
     }
 
     public void DisplayContentTree(ModelContainer container)
@@ -598,7 +598,7 @@ public class ModelContents : IActionEventHandler
         ImGui.PopItemFlag();
         ImGui.SameLine();
 
-        UIHelper.Tooltip("Toggle visibility state of this model object.");
+        GUI.Tooltip("Toggle visibility state of this model object.");
 
     }
 

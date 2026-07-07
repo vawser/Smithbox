@@ -137,8 +137,8 @@ public class ParamViewHandler
             }
 
             ImGui.SetNextWindowDockID(editorDockspaceId, ImGuiCond.FirstUseEver);
-            ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ParamEditor);
-            if (ImGui.Begin($@"{displayTitle}###ParamEditorView##{view.ViewIndex}", UIHelper.GetInnerWindowFlags()))
+            ImGui.SetNextWindowClass(ref GUI.DockGroup_ParamEditor);
+            if (ImGui.Begin($@"{displayTitle}###ParamEditorView##{view.ViewIndex}", GUI.GetInnerWindowFlags()))
             {
                 if (ImGui.IsItemClicked(ImGuiMouseButton.Left))
                 {
@@ -166,7 +166,7 @@ public class ParamViewHandler
             }
 
             var dsid = ImGui.GetID($"DockSpace_ParamEditor_View{view.ViewIndex}");
-            ImGui.DockSpace(dsid, new Vector2(0, 0), ref UIHelper.DockGroup_ParamEditorView);
+            ImGui.DockSpace(dsid, new Vector2(0, 0), ref GUI.DockGroup_ParamEditorView);
 
             view.Display(dsid, view.ViewIndex, Editor.CommandQueue.DoFocus && view == activeView, view == activeView);
 

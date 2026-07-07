@@ -41,7 +41,7 @@ public class GparamFieldList
 
     public void DisplayHeader()
     {
-        UIHelper.SimpleHeader("Fields", "");
+        GUI.SimpleHeader("Fields", "");
 
         // Search
         var searchHeight = new Vector2(0, 36) * DPI.UIScale();
@@ -112,7 +112,7 @@ public class GparamFieldList
         {
             if (fieldDesc != "")
             {
-                UIHelper.Tooltip(fieldDesc);
+                GUI.Tooltip(fieldDesc);
             }
         }
 
@@ -144,7 +144,7 @@ public class GparamFieldList
         {
 
         }
-        UIHelper.Tooltip("Right-click to add missing fields.");
+        GUI.Tooltip("Right-click to add missing fields.");
 
         ImGui.EndGroup();
 
@@ -175,7 +175,7 @@ public class GparamFieldList
             {
                 DeleteFields(data, param, new List<GPARAM.IField>() { field });
             }
-            UIHelper.Tooltip("Delete the selected field.");
+            GUI.Tooltip("Delete the selected field.");
 
             ImGui.Separator();
 
@@ -184,13 +184,13 @@ public class GparamFieldList
             {
                 View.ToolView.DataTransferTool.ImportField(Project, View, fileEntry, data, param, field);
             }
-            UIHelper.Tooltip("Import a GPARAM Field json to overwrite this entry.");
+            GUI.Tooltip("Import a GPARAM Field json to overwrite this entry.");
 
             // Export
             if (ImGui.BeginMenu("Export"))
             {
                 ImGui.InputText("##overrideFilename", ref OverrideFileName, 255);
-                UIHelper.Tooltip("Define the filename for the exported GPARAM Field file.");
+                GUI.Tooltip("Define the filename for the exported GPARAM Field file.");
 
                 if (ImGui.Selectable("Export File"))
                 {
@@ -199,7 +199,7 @@ public class GparamFieldList
 
                 ImGui.EndMenu();
             }
-            UIHelper.Tooltip("Export this currently selected GPARAM Field to JSON.");
+            GUI.Tooltip("Export this currently selected GPARAM Field to JSON.");
 
             ImGui.Separator();
 
@@ -222,13 +222,13 @@ public class GparamFieldList
                 {
                     View.QuickEditHandler.UpdateFieldFilter(field.Key);
                 }
-                UIHelper.Tooltip("Add this field to the Field Filter in the Quick Edit window.");
+                GUI.Tooltip("Add this field to the Field Filter in the Quick Edit window.");
 
                 if (ImGui.Selectable("Data Finder"))
                 {
                     View.ToolView.DataFinder.UpdateFieldFilter(field.Key);
                 }
-                UIHelper.Tooltip("Add this field to the Field Filter in the Data Finder window.");
+                GUI.Tooltip("Add this field to the Field Filter in the Data Finder window.");
 
                 ImGui.EndMenu();
             }
@@ -332,7 +332,7 @@ public class GparamFieldList
 
         ImGui.BeginChild("##addFieldList", listSize);
 
-        UIHelper.SimpleHeader("Fields to Add", "");
+        GUI.SimpleHeader("Fields to Add", "");
 
         for (int i = 0; i < targetFields.Count; i++)
         {
@@ -360,7 +360,7 @@ public class GparamFieldList
 
                 if (desc != "")
                 {
-                    UIHelper.Tooltip(desc);
+                    GUI.Tooltip(desc);
                 }
             }
         }

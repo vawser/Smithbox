@@ -42,7 +42,7 @@ public class BehaviorContents_HKX2
 
         var root = View.Selection.SelectedFile.Havok.HKX2_Object;
 
-        UIHelper.SimpleHeader("Chosen Type", "Select which havok type to display.");
+        GUI.SimpleHeader("Chosen Type", "Select which havok type to display.");
 
         if (ImGui.BeginCombo("##inputValue", TargetObjectType.GetDisplayName()))
         {

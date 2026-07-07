@@ -110,7 +110,7 @@ public class DisplayGroupTool
             if (ImGui.Button($"{Icons.LightbulbO}##renderGroupHelpText", DPI.IconButtonSize))
             {
             }
-            UIHelper.Tooltip(
+            GUI.Tooltip(
                 "Render Groups are used by the game to determine what should render and what shouldn't.\n" +
                 "They consist of Display Groups and Draw Groups.\n" +
                 //"Display Groups: Determines which DrawGroups should render.\n" +
@@ -216,10 +216,10 @@ public class DisplayGroupTool
 
     public void DisplayFooterSection(DrawGroup dg, uint[] sdrawgroups, uint[] sdispgroups, HashSet<Entity> sels)
     {
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader("Actions", "");
+        GUI.Spacer();
+        GUI.SimpleHeader("Actions", "");
 
-        UIHelper.MultiButtonInput("dispGroupActions",
+        GUI.MultiButtonInput("dispGroupActions",
             "showAll", "Show All", $"Show all display groups.\n{InputManager.GetHint(KeybindID.MapEditor_Show_All_Display_Groups)}", ShowAll,
             "hideAll", "Hide All", $"Hide all display groups.\n{InputManager.GetHint(KeybindID.MapEditor_Hide_All_Display_Groups)}", HideAll,
             "getDisplayGroup", "Get Display Group", $"Get display group for current selection.\n{InputManager.GetHint(KeybindID.MapEditor_View_Display_Group)}", GetDisplayGroup,

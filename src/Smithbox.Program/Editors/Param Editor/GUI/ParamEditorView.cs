@@ -68,8 +68,8 @@ public class ParamEditorView
 
         // Params
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
-        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ParamEditorView);
-        if (ImGui.Begin($@"{LOC.Get("PARAM_Window_Params")}###paramEditor_ParamList_{viewIndex}", UIHelper.GetInnerWindowFlags()))
+        ImGui.SetNextWindowClass(ref GUI.DockGroup_ParamEditorView);
+        if (ImGui.Begin($@"{LOC.Get("PARAM_Window_Params")}###paramEditor_ParamList_{viewIndex}", GUI.GetInnerWindowFlags()))
         {
             var width = ImGui.GetContentRegionAvail().X;
             var height = ImGui.GetContentRegionAvail().Y;
@@ -89,8 +89,8 @@ public class ParamEditorView
         if (ParamTableWindow.IsInTableGroupMode(activeParam))
         {
             ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
-            ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ParamEditorView);
-            if (ImGui.Begin($@"{LOC.Get("PARAM_Window_Tables")}###paramEditor_TableList_{viewIndex}", UIHelper.GetInnerWindowFlags()))
+            ImGui.SetNextWindowClass(ref GUI.DockGroup_ParamEditorView);
+            if (ImGui.Begin($@"{LOC.Get("PARAM_Window_Tables")}###paramEditor_TableList_{viewIndex}", GUI.GetInnerWindowFlags()))
             {
                 var width = ImGui.GetContentRegionAvail().X;
                 var height = ImGui.GetContentRegionAvail().Y;
@@ -109,8 +109,8 @@ public class ParamEditorView
 
         // Rows
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
-        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ParamEditorView);
-        if (ImGui.Begin($@"{LOC.Get("PARAM_Window_Rows")}###paramEditor_RowList_{viewIndex}", UIHelper.GetInnerWindowFlags()))
+        ImGui.SetNextWindowClass(ref GUI.DockGroup_ParamEditorView);
+        if (ImGui.Begin($@"{LOC.Get("PARAM_Window_Rows")}###paramEditor_RowList_{viewIndex}", GUI.GetInnerWindowFlags()))
         {
             var width = ImGui.GetContentRegionAvail().X;
             var height = ImGui.GetContentRegionAvail().Y;
@@ -128,8 +128,8 @@ public class ParamEditorView
 
         // Fields
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
-        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ParamEditorView);
-        if (ImGui.Begin($@"{LOC.Get("PARAM_Window_Fields")}###paramEditor_FieldList_{viewIndex}", UIHelper.GetInnerWindowFlags()))
+        ImGui.SetNextWindowClass(ref GUI.DockGroup_ParamEditorView);
+        if (ImGui.Begin($@"{LOC.Get("PARAM_Window_Fields")}###paramEditor_FieldList_{viewIndex}", GUI.GetInnerWindowFlags()))
         {
             var width = ImGui.GetContentRegionAvail().X;
             var height = ImGui.GetContentRegionAvail().Y;
@@ -147,8 +147,8 @@ public class ParamEditorView
 
         // Tools
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
-        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ParamEditorView);
-        if (ImGui.Begin($@"{LOC.Get("PARAM_Window_Tool_Window")}###paramEditor_ToolWindow_{viewIndex}", UIHelper.GetMainWindowFlags()))
+        ImGui.SetNextWindowClass(ref GUI.DockGroup_ParamEditorView);
+        if (ImGui.Begin($@"{LOC.Get("PARAM_Window_Tool_Window")}###paramEditor_ToolWindow_{viewIndex}", GUI.GetMainWindowFlags()))
         {
             var width = ImGui.GetContentRegionAvail().X;
             var height = ImGui.GetContentRegionAvail().Y;

@@ -36,7 +36,7 @@ public class MsbPropertyView
 
     public void Display()
     {
-        UIHelper.SimpleHeader("Properties", "");
+        GUI.SimpleHeader("Properties", "");
 
         DisplayHeader();
         DisplayProperties();
@@ -69,7 +69,7 @@ public class MsbPropertyView
         if (CFG.Current.MapEditor_Properties_Enable_Commmunity_Names)
             communityFieldNameMode = "Community";
 
-        UIHelper.Tooltip($"Toggle field name display type between Internal and Community.\nCurrent Mode: {communityFieldNameMode}");
+        GUI.Tooltip($"Toggle field name display type between Internal and Community.\nCurrent Mode: {communityFieldNameMode}");
 
         // Toggle Unknown Properties
         ImGui.SameLine();
@@ -84,7 +84,7 @@ public class MsbPropertyView
         if (CFG.Current.MapEditor_Properties_Display_Unknown_Properties)
             unkFieldDisplayMode = "Visible";
 
-        UIHelper.Tooltip($"Toggle the display of unknown fields.\nCurrent Mode: {unkFieldDisplayMode}");
+        GUI.Tooltip($"Toggle the display of unknown fields.\nCurrent Mode: {unkFieldDisplayMode}");
 
         // Toggle Field Padding
         ImGui.SameLine();
@@ -98,7 +98,7 @@ public class MsbPropertyView
         if (!CFG.Current.MapEditor_Field_List_Display_Padding)
             fieldPaddingMode = "Visible";
 
-        UIHelper.Tooltip($"Toggle the display of padding field.\nCurrent Mode: {fieldPaddingMode}");
+        GUI.Tooltip($"Toggle the display of padding field.\nCurrent Mode: {fieldPaddingMode}");
     }
 
     public void DisplayProperties()
@@ -134,13 +134,13 @@ public class MsbPropertyView
             ImGui.TableSetColumnIndex(0);
 
             ImGui.AlignTextToFramePadding();
-            UIHelper.WrappedText($"Property");
+            GUI.WrappedText($"Property");
 
             // Value
             ImGui.TableSetColumnIndex(1);
 
             ImGui.AlignTextToFramePadding();
-            UIHelper.WrappedText($"Value");
+            GUI.WrappedText($"Value");
 
             HandlePropertyEntries();
 
@@ -171,7 +171,7 @@ public class MsbPropertyView
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Community Name");
-        UIHelper.Tooltip("The community alias for this map object name.");
+        GUI.Tooltip("The community alias for this map object name.");
 
         // Value
         ImGui.TableSetColumnIndex(1);
@@ -402,8 +402,8 @@ public class MsbPropertyView
         }
 
         ImGui.AlignTextToFramePadding();
-        UIHelper.WrappedText($"{context.Prefix}{fieldName}{context.Postfix}");
-        UIHelper.Tooltip(fieldDescription);
+        GUI.WrappedText($"{context.Prefix}{fieldName}{context.Postfix}");
+        GUI.Tooltip(fieldDescription);
     }
 
     public void HandlePropertyValue(MsbPropertyContext context)

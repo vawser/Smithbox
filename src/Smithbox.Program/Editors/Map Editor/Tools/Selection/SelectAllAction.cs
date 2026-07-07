@@ -112,13 +112,13 @@ public class SelectAllAction
             {
                 OpenPopup = true;
             }
-            UIHelper.Tooltip($"Select all map objects via a user-defined search filter configuration.\n\nShortcut: {InputManager.GetHint(KeybindID.MapEditor_SelectAll_Configurable)}");
+            GUI.Tooltip($"Select all map objects via a user-defined search filter configuration.\n\nShortcut: {InputManager.GetHint(KeybindID.MapEditor_SelectAll_Configurable)}");
 
             if (ImGui.Selectable("Select All by Type"))
             {
                 SelectAllByMapObjectType();
             }
-            UIHelper.Tooltip($"Select all map objects that share the same internal type as the current selection.\n\nShortcut: {InputManager.GetHint(KeybindID.MapEditor_SelectAll_ObjectType)}");
+            GUI.Tooltip($"Select all map objects that share the same internal type as the current selection.\n\nShortcut: {InputManager.GetHint(KeybindID.MapEditor_SelectAll_ObjectType)}");
 
             if (ent.WrappedObject is IMsbPart)
             {
@@ -126,14 +126,14 @@ public class SelectAllAction
                 {
                     SelectAllByModelName();
                 }
-                UIHelper.Tooltip($"Select all part map objects that share the same model name as the current selection.\n\nShortcut: {InputManager.GetHint(KeybindID.MapEditor_SelectAll_ModelName)}");
+                GUI.Tooltip($"Select all part map objects that share the same model name as the current selection.\n\nShortcut: {InputManager.GetHint(KeybindID.MapEditor_SelectAll_ModelName)}");
             }
 
             if (ImGui.Selectable("Select All by Ceremony"))
             {
                 SelectAllByMapObjectCeremony();
             }
-            UIHelper.Tooltip($"Select all map objects that share the same map layer value.\n\nShortcut: {InputManager.GetHint(KeybindID.MapEditor_SelectAll_Ceremony)}");
+            GUI.Tooltip($"Select all map objects that share the same map layer value.\n\nShortcut: {InputManager.GetHint(KeybindID.MapEditor_SelectAll_Ceremony)}");
 
             ImGui.EndMenu();
         }
@@ -144,12 +144,12 @@ public class SelectAllAction
     /// </summary>
     public void OnToolWindow()
     {
-        UIHelper.WrappedText("Use this to quickly select groups of map objects.");
+        GUI.WrappedText("Use this to quickly select groups of map objects.");
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader("Selection Type", "");
+        GUI.Spacer();
+        GUI.SimpleHeader("Selection Type", "");
 
-        UIHelper.SetInputWidth();
+        GUI.SetInputWidth();
         if (ImGui.BeginCombo("##selectAllType", SelectAllType.GetDisplayName()))
         {
             foreach (var entry in Enum.GetValues(typeof(SelectAllType)))
@@ -173,33 +173,33 @@ public class SelectAllAction
 
         if (SelectAllType is SelectAllType.Configurable)
         {
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader("Configurable Select", "Select all map objects that match the following parameters.");
+            GUI.Spacer();
+            GUI.SimpleHeader("Configurable Select", "Select all map objects that match the following parameters.");
 
             DisplayConfigurableMenu();
         }
         else if (SelectAllType is SelectAllType.Type)
         {
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader("Actions", "Select all map objects that share the same type of the current selection.");
+            GUI.Spacer();
+            GUI.SimpleHeader("Actions", "Select all map objects that share the same type of the current selection.");
 
-            UIHelper.MultiButtonInput("typeSelectActions",
+            GUI.MultiButtonInput("typeSelectActions",
                 "select", "Select", "", SelectByTypeAction);
         }
         else if (SelectAllType is SelectAllType.ModelName)
         {
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader("Actions", "Select all map objects that share the same model name.");
+            GUI.Spacer();
+            GUI.SimpleHeader("Actions", "Select all map objects that share the same model name.");
 
-            UIHelper.MultiButtonInput("modelSelectActions",
+            GUI.MultiButtonInput("modelSelectActions",
                 "select", "Select", "", SelectByModelAction);
         }
         else if (SelectAllType is SelectAllType.Ceremony)
         {
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader("Actions", "Select all map objects that share the same ceremony.");
+            GUI.Spacer();
+            GUI.SimpleHeader("Actions", "Select all map objects that share the same ceremony.");
 
-            UIHelper.MultiButtonInput("ceremonySelectActions",
+            GUI.MultiButtonInput("ceremonySelectActions",
                 "select", "Select", "", SelectByCeremonyAction);
         }
 
@@ -235,7 +235,7 @@ public class SelectAllAction
         {
             ImGui.OpenPopup("selectionInputHint");
         }
-        UIHelper.Tooltip("View documentation on selection commands.");
+        GUI.Tooltip("View documentation on selection commands.");
 
         ImGui.SameLine();
 
@@ -244,7 +244,7 @@ public class SelectAllAction
         {
             SelectionInputs.Add("");
         }
-        UIHelper.Tooltip("Add new selection input row.");
+        GUI.Tooltip("Add new selection input row.");
 
         ImGui.SameLine();
 
@@ -257,7 +257,7 @@ public class SelectAllAction
             {
                 SelectionInputs.RemoveAt(SelectionInputs.Count - 1);
             }
-            UIHelper.Tooltip("Remove last added selection input row.");
+            GUI.Tooltip("Remove last added selection input row.");
 
             ImGui.EndDisabled();
         }
@@ -266,7 +266,7 @@ public class SelectAllAction
             if (ImGui.Button($"{Icons.Minus}##selectionRemove", DPI.IconButtonSize))
             {
                 SelectionInputs.RemoveAt(SelectionInputs.Count - 1);
-                UIHelper.Tooltip("Remove last added selection input row.");
+                GUI.Tooltip("Remove last added selection input row.");
             }
         }
 
@@ -277,7 +277,7 @@ public class SelectAllAction
         {
             SelectionInputs = new List<string>() { "" };
         }
-        UIHelper.Tooltip("Reset selection input rows.");
+        GUI.Tooltip("Reset selection input rows.");
 
         ImGui.SameLine();
 
@@ -297,7 +297,7 @@ public class SelectAllAction
 
             ImGui.EndCombo();
         }
-        UIHelper.Tooltip("The logic with which to handle the selection inputs." +
+        GUI.Tooltip("The logic with which to handle the selection inputs." +
             "\n\nAll must match means all the selection criteria must be true for the map object to be included." +
             "\n\nOne must match means only one of the selection criteria must be true for the map object to be included.");
 
@@ -309,18 +309,18 @@ public class SelectAllAction
             var curCommand = SelectionInputs[i];
             var curText = curCommand;
 
-            UIHelper.SetInputWidth();
+            GUI.SetInputWidth();
             if (ImGui.InputText($"##selectionInput{i}", ref curText, 255))
             {
                 SelectionInputs[i] = curText;
             }
-            UIHelper.Tooltip("The selection command to process.");
+            GUI.Tooltip("The selection command to process.");
         }
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader("Actions", "");
+        GUI.Spacer();
+        GUI.SimpleHeader("Actions", "");
 
-        UIHelper.MultiButtonInput("configuredSelectActions",
+        GUI.MultiButtonInput("configuredSelectActions",
             "select", "Select", "", SelectAll);
     }
 
@@ -503,7 +503,7 @@ public class SelectAllAction
 
         ImGui.Text("Precede the command with ! to select the invert.");
 
-        UIHelper.SimpleHeader("Name", "");
+        GUI.SimpleHeader("Name", "");
 
         if (ImGui.BeginTable($"nameSelectionTable", 2, tableFlags))
         {
@@ -537,7 +537,7 @@ public class SelectAllAction
             ImGui.EndTable();
         }
 
-        UIHelper.SimpleHeader("Property Value", "");
+        GUI.SimpleHeader("Property Value", "");
 
         if (ImGui.BeginTable($"propValueSelectionTable", 2, tableFlags))
         {
@@ -661,7 +661,7 @@ public class SelectAllAction
         {
             DisplayHelp = !DisplayHelp;
         }
-        UIHelper.Tooltip("View documentation on selection commands.");
+        GUI.Tooltip("View documentation on selection commands.");
 
         ImGui.SameLine();
 
@@ -670,7 +670,7 @@ public class SelectAllAction
         {
             SelectionInputs.Add("");
         }
-        UIHelper.Tooltip("Add new selection input row.");
+        GUI.Tooltip("Add new selection input row.");
 
         ImGui.SameLine();
 
@@ -683,7 +683,7 @@ public class SelectAllAction
             {
                 SelectionInputs.RemoveAt(SelectionInputs.Count - 1);
             }
-            UIHelper.Tooltip("Remove last added selection input row.");
+            GUI.Tooltip("Remove last added selection input row.");
 
             ImGui.EndDisabled();
         }
@@ -692,7 +692,7 @@ public class SelectAllAction
             if (ImGui.Button($"{Icons.Minus}##selectionRemove", DPI.IconButtonSize))
             {
                 SelectionInputs.RemoveAt(SelectionInputs.Count - 1);
-                UIHelper.Tooltip("Remove last added selection input row.");
+                GUI.Tooltip("Remove last added selection input row.");
             }
         }
 
@@ -703,7 +703,7 @@ public class SelectAllAction
         {
             SelectionInputs = new List<string>() { "" };
         }
-        UIHelper.Tooltip("Reset selection input rows.");
+        GUI.Tooltip("Reset selection input rows.");
 
         ImGui.SameLine();
 
@@ -722,7 +722,7 @@ public class SelectAllAction
 
             ImGui.EndCombo();
         }
-        UIHelper.Tooltip("The logic with which to handle the selection inputs." +
+        GUI.Tooltip("The logic with which to handle the selection inputs." +
             "\n\nAll must match means all the selection criteria must be true for the map object to be included." +
             "\n\nOne must match means only one of the selection criteria must be true for the map object to be included.");
 
@@ -739,7 +739,7 @@ public class SelectAllAction
             {
                 SelectionInputs[i] = curText;
             }
-            UIHelper.Tooltip("The selection command to process.");
+            GUI.Tooltip("The selection command to process.");
         }
     }
     private bool IsValidMapObject(MapContainer map, MsbEntity mEnt)

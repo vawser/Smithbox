@@ -9,7 +9,7 @@ using System.Text;
 using static HKLib.hk2018.hkSerialize.CompatTypeParentInfo;
 
 namespace StudioCore.Application;
-public static class UIHelper
+public static class GUI
 {
     public static uint EDITOR_DOCK_GROUP = 1000;
     public static uint PROJECT_EDITOR_DOCK_GROUP = 1001;
@@ -401,7 +401,7 @@ public static class UIHelper
 
             if (tooltip != "")
             {
-                UIHelper.Tooltip(tooltip);
+                GUI.Tooltip(tooltip);
             }
 
             ImGui.EndTable();
@@ -424,7 +424,7 @@ public static class UIHelper
 
             if (tooltip != "")
             {
-                UIHelper.Tooltip(tooltip);
+                GUI.Tooltip(tooltip);
             }
 
             ImGui.EndTable();
@@ -460,7 +460,7 @@ public static class UIHelper
             ImGui.PopStyleColor(4);
             ImGui.PopItemFlag();
 
-            UIHelper.Tooltip(tooltip);
+            GUI.Tooltip(tooltip);
 
             ImGui.EndTable();
         }
@@ -496,7 +496,7 @@ public static class UIHelper
             ImGui.PopStyleColor(4);
             ImGui.PopItemFlag();
 
-            UIHelper.Tooltip(tooltip);
+            GUI.Tooltip(tooltip);
 
             ImGui.EndTable();
         }

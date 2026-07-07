@@ -36,7 +36,7 @@ public class FmgExporter
             {
                 DisplayExportModal(ExportType.Container);
             }
-            UIHelper.Tooltip(LOC.Get("TEXT_Exporter_Action_Export_Container_TT"));
+            GUI.Tooltip(LOC.Get("TEXT_Exporter_Action_Export_Container_TT"));
 
             ImGui.Separator();
 
@@ -45,14 +45,14 @@ public class FmgExporter
             {
                 DisplayExportModal(ExportType.Container, ExportModifier.ModifiedOnly);
             }
-            UIHelper.Tooltip(LOC.Get("TEXT_Exporter_Action_Export_Modified_TT"));
+            GUI.Tooltip(LOC.Get("TEXT_Exporter_Action_Export_Modified_TT"));
 
             // Export Unique Text
             if (ImGui.Selectable($"{LOC.Get("TEXT_Exporter_Action_Export_Unique")}##exportUnique"))
             {
                 DisplayExportModal(ExportType.Container, ExportModifier.UniqueOnly);
             }
-            UIHelper.Tooltip(LOC.Get("TEXT_Exporter_Action_Export_Unique_TT"));
+            GUI.Tooltip(LOC.Get("TEXT_Exporter_Action_Export_Unique_TT"));
 
             ImGui.EndMenu();
         }
@@ -66,7 +66,7 @@ public class FmgExporter
             {
                 DisplayExportModal(ExportType.FMG);
             }
-            UIHelper.Tooltip(LOC.Get("TEXT_Exporter_Action_Export_Text_File_TT"));
+            GUI.Tooltip(LOC.Get("TEXT_Exporter_Action_Export_Text_File_TT"));
 
             ImGui.Separator();
 
@@ -74,13 +74,13 @@ public class FmgExporter
             {
                 DisplayExportModal(ExportType.FMG, ExportModifier.ModifiedOnly);
             }
-            UIHelper.Tooltip(LOC.Get("TEXT_Exporter_Action_Export_Modified_TT"));
+            GUI.Tooltip(LOC.Get("TEXT_Exporter_Action_Export_Modified_TT"));
 
             if (ImGui.Selectable($"{LOC.Get("TEXT_Exporter_Action_Export_Unique")}##exportUnique"))
             {
                 DisplayExportModal(ExportType.FMG, ExportModifier.UniqueOnly);
             }
-            UIHelper.Tooltip(LOC.Get("TEXT_Exporter_Action_Export_Unique_TT"));
+            GUI.Tooltip(LOC.Get("TEXT_Exporter_Action_Export_Unique_TT"));
 
             ImGui.EndMenu();
         }
@@ -94,7 +94,7 @@ public class FmgExporter
             {
                 DisplayExportModal(ExportType.FMG_Entries);
             }
-            UIHelper.Tooltip(LOC.Get("TEXT_Exporter_Action_Export_Text_Entry_TT"));
+            GUI.Tooltip(LOC.Get("TEXT_Exporter_Action_Export_Text_Entry_TT"));
 
             ImGui.Separator();
 
@@ -102,13 +102,13 @@ public class FmgExporter
             {
                 DisplayExportModal(ExportType.FMG_Entries, ExportModifier.ModifiedOnly);
             }
-            UIHelper.Tooltip(LOC.Get("TEXT_Exporter_Action_Export_Modified_TextEntry_TT"));
+            GUI.Tooltip(LOC.Get("TEXT_Exporter_Action_Export_Modified_TextEntry_TT"));
 
             if (ImGui.Selectable($"{LOC.Get("TEXT_Exporter_Action_Export_Unique")}##exportUnique"))
             {
                 DisplayExportModal(ExportType.FMG_Entries, ExportModifier.UniqueOnly);
             }
-            UIHelper.Tooltip(LOC.Get("TEXT_Exporter_Action_Export_Unique_TextEntry_TT"));
+            GUI.Tooltip(LOC.Get("TEXT_Exporter_Action_Export_Unique_TextEntry_TT"));
 
             ImGui.EndMenu();
         }

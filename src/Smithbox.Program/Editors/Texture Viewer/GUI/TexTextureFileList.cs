@@ -26,7 +26,7 @@ public class TexTextureFileList
 
     public void Display(float width, float height)
     {
-        UIHelper.SimpleHeader(
+        GUI.SimpleHeader(
             LOC.Get("TEXVIEW_TextureList_Header_Textures"),
             LOC.Get("TEXVIEW_TextureList_Header_Textures_TT"));
 
@@ -106,7 +106,7 @@ public class TexTextureFileList
             {
                 _ = View.ToolView.TextureExport.ExportTextureAsync(tex);
             }
-            UIHelper.Tooltip(
+            GUI.Tooltip(
                 LOC.Get("TEXVIEW_TextureList_Context_Action_Export_TT", CFG.Current.TextureViewerToolbar_ExportTextureLocation));
 
             ImGui.Separator();
@@ -115,7 +115,7 @@ public class TexTextureFileList
             {
                 ImGui.SetClipboardText(tex.Name);
             }
-            UIHelper.Tooltip(LOC.Get("TEXVIEW_TextureList_Context_Action_Copy_Name_TT"));
+            GUI.Tooltip(LOC.Get("TEXVIEW_TextureList_Context_Action_Copy_Name_TT"));
 
             ImGui.EndPopup();
         }

@@ -22,18 +22,18 @@ public class DokuWikiGenerator
         if (project.Handler.ParamEditor == null)
             return;
 
-        UIHelper.SimpleHeader(
+        GUI.SimpleHeader(
             LOC.Get("DEV_Tool_Header_Actions"),
             LOC.Get("DEV_Tool_Header_Actions_TT"));
 
-        UIHelper.MultiButtonInput("dokuActions",
+        GUI.MultiButtonInput("dokuActions",
             "exportInfo", 
             LOC.Get("DEV_Tool_Action_Export_Table_Information"),
             LOC.Get("DEV_Tool_Action_Export_Table_Information_TT"),
             OutputParamTableInformation);
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader(
+        GUI.Spacer();
+        GUI.SimpleHeader(
             LOC.Get("DEV_Tool_Header_Specific_Param_Info"),
             LOC.Get("DEV_Tool_Header_Specific_Param_Info_TT"));
 

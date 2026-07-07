@@ -36,11 +36,11 @@ public class FileExtractTool
     {
         ImGui.BeginChild("FileExtractSection", ImGuiChildFlags.Borders);
 
-        UIHelper.SimpleHeader("Output Directory", "");
+        GUI.SimpleHeader("Output Directory", "");
 
-        UIHelper.HintTextInput("##outputDir", ref ExtractionPath, "Set the output directory...");
+        GUI.HintTextInput("##outputDir", ref ExtractionPath, "Set the output directory...");
 
-        UIHelper.MultiButtonInput("extractActions",
+        GUI.MultiButtonInput("extractActions",
             "setExtractDir", "Set Output Directory", "Set the directory the files are extracted into.", SetExtractionDirectory,
             "openExtractDir", "Open Output Directory", "Open the current output directory in a file explorer.", OpenExtractionDirectory,
             "extractMainFile", "Extract Main File", "Extract the currently selected main file.", ExtractMainFile,

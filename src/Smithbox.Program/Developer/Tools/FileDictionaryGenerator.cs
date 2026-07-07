@@ -14,13 +14,13 @@ public class FileDictionaryGenerator
 
     public void Display()
     {
-        UIHelper.SimpleHeader(
+        GUI.SimpleHeader(
             LOC.Get("DEV_Tool_Header_File_Path"),
             LOC.Get("DEV_Tool_Header_File_Path_TT"));
 
-        UIHelper.SinglelineTextInput("FilePath", ref _filePath);
+        GUI.SinglelineTextInput("FilePath", ref _filePath);
 
-        UIHelper.MultiButtonInput("selectActions",
+        GUI.MultiButtonInput("selectActions",
             "selectDir", 
             LOC.Get("DEV_Tool_Action_Select_Directory"),
             LOC.Get("DEV_Tool_Action_Select_Directory_TT"),

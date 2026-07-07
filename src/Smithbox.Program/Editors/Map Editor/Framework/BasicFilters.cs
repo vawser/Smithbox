@@ -24,8 +24,8 @@ public class BasicFilters
             View.DelayPicking();
         }
         ticked = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.MapPiece);
-        UIHelper.ShowActiveStatus(ticked);
-        UIHelper.Tooltip("Toggle the display of map objects classified as 'Map pieces'.");
+        GUI.ShowActiveStatus(ticked);
+        GUI.Tooltip("Toggle the display of map objects classified as 'Map pieces'.");
 
         var name = "Objects";
         if (View.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
@@ -39,8 +39,8 @@ public class BasicFilters
             View.DelayPicking();
         }
         ticked = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.Object);
-        UIHelper.ShowActiveStatus(ticked);
-        UIHelper.Tooltip($"Toggle the display of map objects classified as '{name}'.");
+        GUI.ShowActiveStatus(ticked);
+        GUI.Tooltip($"Toggle the display of map objects classified as '{name}'.");
 
         // Character
         if (ImGui.MenuItem("Characters"))
@@ -49,8 +49,8 @@ public class BasicFilters
             View.DelayPicking();
         }
         ticked = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.Character);
-        UIHelper.ShowActiveStatus(ticked);
-        UIHelper.Tooltip($"Toggle the display of map objects classified as 'Characters'.");
+        GUI.ShowActiveStatus(ticked);
+        GUI.Tooltip($"Toggle the display of map objects classified as 'Characters'.");
 
         // Region
         if (ImGui.MenuItem("Regions"))
@@ -59,8 +59,8 @@ public class BasicFilters
             View.DelayPicking();
         }
         ticked = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.Region);
-        UIHelper.ShowActiveStatus(ticked);
-        UIHelper.Tooltip($"Toggle the display of map objects classified as 'Regions'.");
+        GUI.ShowActiveStatus(ticked);
+        GUI.Tooltip($"Toggle the display of map objects classified as 'Regions'.");
 
         // Light
         if (ImGui.MenuItem("Lights"))
@@ -69,8 +69,8 @@ public class BasicFilters
             View.DelayPicking();
         }
         ticked = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.Light);
-        UIHelper.ShowActiveStatus(ticked);
-        UIHelper.Tooltip($"Toggle the display of map objects classified as 'Lights'.");
+        GUI.ShowActiveStatus(ticked);
+        GUI.Tooltip($"Toggle the display of map objects classified as 'Lights'.");
 
         // Collision
         if (ImGui.MenuItem("Collisions"))
@@ -79,8 +79,8 @@ public class BasicFilters
             View.DelayPicking();
         }
         ticked = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.Collision);
-        UIHelper.ShowActiveStatus(ticked);
-        UIHelper.Tooltip($"Toggle the display of map objects classified as 'Collisions'.");
+        GUI.ShowActiveStatus(ticked);
+        GUI.Tooltip($"Toggle the display of map objects classified as 'Collisions'.");
 
         // Collision
         if (ImGui.MenuItem("Connect Collisions"))
@@ -89,8 +89,8 @@ public class BasicFilters
             View.DelayPicking();
         }
         ticked = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.ConnectCollision);
-        UIHelper.ShowActiveStatus(ticked);
-        UIHelper.Tooltip($"Toggle the display of map objects classified as 'Connect Collisions'.");
+        GUI.ShowActiveStatus(ticked);
+        GUI.Tooltip($"Toggle the display of map objects classified as 'Connect Collisions'.");
 
 
         // Navmesh
@@ -100,8 +100,8 @@ public class BasicFilters
             View.DelayPicking();
         }
         ticked = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.Navmesh);
-        UIHelper.ShowActiveStatus(ticked);
-        UIHelper.Tooltip($"Toggle the display of map objects classified as 'Navmeshes'.");
+        GUI.ShowActiveStatus(ticked);
+        GUI.Tooltip($"Toggle the display of map objects classified as 'Navmeshes'.");
 
         // Speed Trees
         if (ImGui.MenuItem("Speed Trees"))
@@ -110,8 +110,8 @@ public class BasicFilters
             View.DelayPicking();
         }
         ticked = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.SpeedTree);
-        UIHelper.ShowActiveStatus(ticked);
-        UIHelper.Tooltip($"Toggle the display of map objects classified as 'Speed Trees'.");
+        GUI.ShowActiveStatus(ticked);
+        GUI.Tooltip($"Toggle the display of map objects classified as 'Speed Trees'.");
 
         // AutoInvade
         if (View.Project.Descriptor.ProjectType is ProjectType.ER)
@@ -122,8 +122,8 @@ public class BasicFilters
                 View.DelayPicking();
             }
             ticked = View.ViewportHandler.ActiveViewport.RenderScene.DrawFilter.HasFlag(RenderFilter.AutoInvade);
-            UIHelper.ShowActiveStatus(ticked);
-            UIHelper.Tooltip($"Toggle the display of map objects classified as 'Invasion Points'.");
+            GUI.ShowActiveStatus(ticked);
+            GUI.Tooltip($"Toggle the display of map objects classified as 'Invasion Points'.");
         }
 
         // Light Probe

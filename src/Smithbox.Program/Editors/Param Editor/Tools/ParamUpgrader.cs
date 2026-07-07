@@ -91,16 +91,16 @@ public class ParamUpgrader
         var vanillaBank = Project.Handler.ParamData.VanillaBank;
 
         var tblFlags = ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Borders;
-        UIHelper.WrappedText("Upgrade the param version for this project's params.");
+        GUI.WrappedText("Upgrade the param version for this project's params.");
 
-        UIHelper.WrappedText("");
-        UIHelper.SimpleHeader("Version", "");
+        GUI.WrappedText("");
+        GUI.SimpleHeader("Version", "");
 
         ImGui.Text($"Primary Param Version: {primaryBank.ParamVersion}");
         ImGui.Text($"Source Param Version: {vanillaBank.ParamVersion}");
 
-        UIHelper.WrappedText("");
-        UIHelper.SimpleHeader("Actions", "");
+        GUI.WrappedText("");
+        GUI.SimpleHeader("Actions", "");
 
         // Start
         if (!DisplayActions && primaryBank.ParamVersion < vanillaBank.ParamVersion)
@@ -114,7 +114,7 @@ public class ParamUpgrader
         if (!DisplayActions && primaryBank.ParamVersion >= vanillaBank.ParamVersion
             || DisplayActions && ConflictsChecked && UpgradePerformed && MassEditsPerformed)
         {
-            UIHelper.WrappedText("No need to upgrade params.");
+            GUI.WrappedText("No need to upgrade params.");
         }
 
         // Conflicts
@@ -149,7 +149,7 @@ public class ParamUpgrader
         {
             if (ConflictParams.Count > 0)
             {
-                UIHelper.SimpleHeader("Conflicts", "");
+                GUI.SimpleHeader("Conflicts", "");
 
                 if (ImGui.BeginTable($"conflictTable", 2, tblFlags))
                 {

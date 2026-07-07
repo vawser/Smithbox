@@ -69,13 +69,13 @@ public class FileToolView
             {
                 CFG.Current.Interface_FileBrowser_Tool_GameUnpacker = !CFG.Current.Interface_FileBrowser_Tool_GameUnpacker;
             }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_FileBrowser_Tool_GameUnpacker);
+            GUI.ShowActiveStatus(CFG.Current.Interface_FileBrowser_Tool_GameUnpacker);
 
             if (ImGui.MenuItem("File Extract"))
             {
                 CFG.Current.Interface_FileBrowser_Tool_FileExtract = !CFG.Current.Interface_FileBrowser_Tool_FileExtract;
             }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_FileBrowser_Tool_FileExtract);
+            GUI.ShowActiveStatus(CFG.Current.Interface_FileBrowser_Tool_FileExtract);
 
             ImGui.EndMenu();
         }

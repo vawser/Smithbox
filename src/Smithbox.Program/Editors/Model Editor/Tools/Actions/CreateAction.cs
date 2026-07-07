@@ -98,7 +98,7 @@ public class CreateAction
         if (!display)
             return;
 
-        UIHelper.SimpleHeader("Target Type", "Target Type", "", UI.Current.ImGui_Default_Text_Color);
+        GUI.SimpleHeader("Target Type", "Target Type", "", UI.Current.ImGui_Default_Text_Color);
 
         if (ImGui.Button("Create Object", DPI.WholeWidthButton(sectionWidth, 24)))
         {
@@ -106,7 +106,7 @@ public class CreateAction
         }
 
   
-        UIHelper.SimpleHeader("Type", "Type", "", UI.Current.ImGui_Default_Text_Color);
+        GUI.SimpleHeader("Type", "Type", "", UI.Current.ImGui_Default_Text_Color);
 
         ImGui.BeginChild("flverClassSelection", sectionSize, ImGuiChildFlags.Borders);
 

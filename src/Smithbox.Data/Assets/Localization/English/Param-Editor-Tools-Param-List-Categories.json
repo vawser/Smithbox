@@ -1,8 +1,8 @@
 {
   "Entries": [
     {
-      "Key": "PARAM_ListCategories_",
-      "Text": ""
+      "Key": "PARAM_ListCategories_Header",
+      "Text": "Param List Categories"
     },
     {
       "Key": "PARAM_ListCategories_",

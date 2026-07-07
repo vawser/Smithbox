@@ -42,7 +42,7 @@ public class DeleteAction
         {
             ApplyDelete();
         }
-        UIHelper.Tooltip($"Delete the currently selected model objects.\n\nShortcut: {InputManager.GetHint(KeybindID.Delete)}");
+        GUI.Tooltip($"Delete the currently selected model objects.\n\nShortcut: {InputManager.GetHint(KeybindID.Delete)}");
     }
 
     /// <summary>
@@ -54,7 +54,7 @@ public class DeleteAction
         {
             ApplyDelete();
         }
-        UIHelper.Tooltip($"Delete the currently selected model objects.");
+        GUI.Tooltip($"Delete the currently selected model objects.");
     }
 
     /// <summary>

@@ -62,7 +62,7 @@ public class ParamTableWindow
     {
         var tableListTitle = "Table List";
 
-        UIHelper.SimpleHeader($"{tableListTitle}", "");
+        GUI.SimpleHeader($"{tableListTitle}", "");
     }
 
     private void DisplayHeader(bool isActiveView)
@@ -288,7 +288,7 @@ public class ParamTableWindow
             {
                 ApplyTableGroupDelete = true;
             }
-            UIHelper.Tooltip($"Delete this table group. This will remove the rows that comprise this group.");
+            GUI.Tooltip($"Delete this table group. This will remove the rows that comprise this group.");
 
             ImGui.EndPopup();
         }
@@ -353,21 +353,21 @@ public class ParamTableWindow
     {
         ImGui.InputInt("Offset##duplicateOffset", ref CFG.Current.Param_Toolbar_Duplicate_Offset);
 
-        UIHelper.Tooltip("The ID offset to apply when duplicating.\nSet to 0 for row indexed params to duplicate as expected.");
+        GUI.Tooltip("The ID offset to apply when duplicating.\nSet to 0 for row indexed params to duplicate as expected.");
 
         ImGui.InputInt("Amount##duplicateAmount", ref CFG.Current.Param_Toolbar_Duplicate_Amount);
 
-        UIHelper.Tooltip("The number of times the current selection will be duplicated.");
+        GUI.Tooltip("The number of times the current selection will be duplicated.");
 
         ImGui.Checkbox("Allow Unrestricted Duplicate##allowUnrestrictedDuplicate", ref CFG.Current.Param_TableGroupView_AllowDuplicateInject);
 
-        UIHelper.Tooltip("If enabled, duplicate will allow for ID collisions. A collided duplicate will add the source rows into the collided group with the new ID.");
+        GUI.Tooltip("If enabled, duplicate will allow for ID collisions. A collided duplicate will add the source rows into the collided group with the new ID.");
 
         if (ImGui.Selectable("Apply"))
         {
             ApplyTableGroupDuplicate = true;
         }
-        UIHelper.Tooltip($"Duplicate this table group. This will duplicate the rows that comprise this group.");
+        GUI.Tooltip($"Duplicate this table group. This will duplicate the rows that comprise this group.");
     }
 
     public void Shortcuts()

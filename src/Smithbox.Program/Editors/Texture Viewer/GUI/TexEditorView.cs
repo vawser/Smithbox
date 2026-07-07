@@ -50,8 +50,8 @@ public class TexEditorView
     {
         // Container List
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
-        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_TextureViewerView);
-        if (ImGui.Begin($@"{LOC.Get("TEXVIEW_Window_Container_List")}###textureEditor_ContainerList_{viewIndex}", UIHelper.GetInnerWindowFlags()))
+        ImGui.SetNextWindowClass(ref GUI.DockGroup_TextureViewerView);
+        if (ImGui.Begin($@"{LOC.Get("TEXVIEW_Window_Container_List")}###textureEditor_ContainerList_{viewIndex}", GUI.GetInnerWindowFlags()))
         {
             var width = ImGui.GetContentRegionAvail().X;
             var height = ImGui.GetContentRegionAvail().Y;
@@ -69,8 +69,8 @@ public class TexEditorView
 
         // File List
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
-        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_TextureViewerView);
-        if (ImGui.Begin($@"{LOC.Get("TEXVIEW_Window_File_List")}###textureEditor_FileList_{viewIndex}", UIHelper.GetInnerWindowFlags()))
+        ImGui.SetNextWindowClass(ref GUI.DockGroup_TextureViewerView);
+        if (ImGui.Begin($@"{LOC.Get("TEXVIEW_Window_File_List")}###textureEditor_FileList_{viewIndex}", GUI.GetInnerWindowFlags()))
         {
             var width = ImGui.GetContentRegionAvail().X;
             var height = ImGui.GetContentRegionAvail().Y;
@@ -88,8 +88,8 @@ public class TexEditorView
 
         // Texture List
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
-        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_TextureViewerView);
-        if (ImGui.Begin($@"{LOC.Get("TEXVIEW_Window_Texture_List")}###textureEditor_TextureList_{viewIndex}", UIHelper.GetInnerWindowFlags()))
+        ImGui.SetNextWindowClass(ref GUI.DockGroup_TextureViewerView);
+        if (ImGui.Begin($@"{LOC.Get("TEXVIEW_Window_Texture_List")}###textureEditor_TextureList_{viewIndex}", GUI.GetInnerWindowFlags()))
         {
             var width = ImGui.GetContentRegionAvail().X;
             var height = ImGui.GetContentRegionAvail().Y;
@@ -107,8 +107,8 @@ public class TexEditorView
 
         // Texture Viewport
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
-        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_TextureViewerView);
-        if (ImGui.Begin($@"{LOC.Get("TEXVIEW_Window_Viewer")}###textureEditor_Viewer_{viewIndex}", UIHelper.GetTextureViewerFlags()))
+        ImGui.SetNextWindowClass(ref GUI.DockGroup_TextureViewerView);
+        if (ImGui.Begin($@"{LOC.Get("TEXVIEW_Window_Viewer")}###textureEditor_Viewer_{viewIndex}", GUI.GetTextureViewerFlags()))
         {
             var width = ImGui.GetContentRegionAvail().X;
             var height = ImGui.GetContentRegionAvail().Y;
@@ -126,8 +126,8 @@ public class TexEditorView
 
         // Properties
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
-        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_TextureViewerView);
-        if (ImGui.Begin($@"{LOC.Get("TEXVIEW_Window_Properties")}###textureEditor_Properties_{viewIndex}", UIHelper.GetInnerWindowFlags()))
+        ImGui.SetNextWindowClass(ref GUI.DockGroup_TextureViewerView);
+        if (ImGui.Begin($@"{LOC.Get("TEXVIEW_Window_Properties")}###textureEditor_Properties_{viewIndex}", GUI.GetInnerWindowFlags()))
         {
             var width = ImGui.GetContentRegionAvail().X;
             var height = ImGui.GetContentRegionAvail().Y;
@@ -145,8 +145,8 @@ public class TexEditorView
 
         /// Tools
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
-        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_TextureViewerView);
-        if (ImGui.Begin($@"{LOC.Get("TEXVIEW_Window_Tools")}###textureEditor_ToolWindow_{viewIndex}", UIHelper.GetMainWindowFlags()))
+        ImGui.SetNextWindowClass(ref GUI.DockGroup_TextureViewerView);
+        if (ImGui.Begin($@"{LOC.Get("TEXVIEW_Window_Tools")}###textureEditor_ToolWindow_{viewIndex}", GUI.GetMainWindowFlags()))
         {
             var width = ImGui.GetContentRegionAvail().X;
             var height = ImGui.GetContentRegionAvail().Y;

@@ -56,7 +56,7 @@ public class MaterialToolWindow
             {
                 CFG.Current.MaterialEditor_Tool_Data_Transfer = !CFG.Current.MaterialEditor_Tool_Data_Transfer;
             }
-            UIHelper.ShowActiveStatus(CFG.Current.MaterialEditor_Tool_Data_Transfer);
+            GUI.ShowActiveStatus(CFG.Current.MaterialEditor_Tool_Data_Transfer);
 
             ImGui.EndMenu();
         }

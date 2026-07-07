@@ -121,12 +121,12 @@ public class MapListFilterTool
                 EditFilter_Filters = entry.Entries;
 
                 // Name
-                UIHelper.SimpleHeader("##titleHeader", "Name", "The name of this filter set.", UI.Current.ImGui_AliasName_Text);
+                GUI.SimpleHeader("##titleHeader", "Name", "The name of this filter set.", UI.Current.ImGui_AliasName_Text);
 
                 DPI.ApplyInputWidth(width.X * 0.95f);
                 ImGui.InputText("##filterName", ref EditFilter_Name, 255);
 
-                UIHelper.SimpleHeader("##filterEntries", "Entries", "The entries that comprise this set.", UI.Current.ImGui_AliasName_Text);
+                GUI.SimpleHeader("##filterEntries", "Entries", "The entries that comprise this set.", UI.Current.ImGui_AliasName_Text);
 
                 // Type
                 if (ImGui.BeginCombo($"Match Type##filterType", NewFilter_Type.GetDisplayName()))
@@ -143,14 +143,14 @@ public class MapListFilterTool
 
                     ImGui.EndCombo();
                 }
-                UIHelper.Tooltip("Whether this list should check that a map matches ALL of the entries, or if the map matches ANY of the entries.");
+                GUI.Tooltip("Whether this list should check that a map matches ALL of the entries, or if the map matches ANY of the entries.");
 
                 // Add
                 if (ImGui.Button($"{Icons.Plus}##filterAdd", DPI.IconButtonSize))
                 {
                     EditFilter_Filters.Add("");
                 }
-                UIHelper.Tooltip("Add new filter entry.");
+                GUI.Tooltip("Add new filter entry.");
 
                 ImGui.SameLine();
 
@@ -162,7 +162,7 @@ public class MapListFilterTool
                     if (ImGui.Button($"{Icons.Minus}##filterRemoveDisabled", DPI.IconButtonSize))
                     {
                     }
-                    UIHelper.Tooltip("Remove last filter entry.");
+                    GUI.Tooltip("Remove last filter entry.");
 
                     ImGui.EndDisabled();
                 }
@@ -171,7 +171,7 @@ public class MapListFilterTool
                     if (ImGui.Button($"{Icons.Minus}##filterRemove", DPI.IconButtonSize))
                     {
                         EditFilter_Filters.RemoveAt(EditFilter_Filters.Count - 1);
-                        UIHelper.Tooltip("Remove last filter entry.");
+                        GUI.Tooltip("Remove last filter entry.");
                     }
                 }
 
@@ -185,7 +185,7 @@ public class MapListFilterTool
                     {
                         EditFilter_Filters[i] = curText;
                     }
-                    UIHelper.Tooltip("The filter to add.");
+                    GUI.Tooltip("The filter to add.");
                 }
 
                 if (ImGui.Button("Edit##editFilterSet", DPI.StandardButtonSize))
@@ -199,7 +199,7 @@ public class MapListFilterTool
                     DisplayCreation = false;
                     ImGui.CloseCurrentPopup();
                 }
-                UIHelper.Tooltip("Create this filter set.");
+                GUI.Tooltip("Create this filter set.");
 
                 ImGui.EndMenu();
             }
@@ -224,13 +224,13 @@ public class MapListFilterTool
             NewFilter_Filters = new() { "" };
         }
 
-        UIHelper.SimpleHeader("##titleHeader", "Name", "The name of this filter set.", UI.Current.ImGui_AliasName_Text);
+        GUI.SimpleHeader("##titleHeader", "Name", "The name of this filter set.", UI.Current.ImGui_AliasName_Text);
 
         // Name
         DPI.ApplyInputWidth(width.X * 0.95f);
         ImGui.InputText("##filterName", ref NewFilter_Name, 255);
 
-        UIHelper.SimpleHeader("##filterEntries", "Entries", "The entries that comprise this set.", UI.Current.ImGui_AliasName_Text);
+        GUI.SimpleHeader("##filterEntries", "Entries", "The entries that comprise this set.", UI.Current.ImGui_AliasName_Text);
 
         // Type
         if (ImGui.BeginCombo($"Match Type##filterType", NewFilter_Type.GetDisplayName()))
@@ -247,14 +247,14 @@ public class MapListFilterTool
 
             ImGui.EndCombo();
         }
-        UIHelper.Tooltip("Whether this list should check that a map matches ALL of the entries, or if the map matches ANY of the entries.");
+        GUI.Tooltip("Whether this list should check that a map matches ALL of the entries, or if the map matches ANY of the entries.");
 
         // Add
         if (ImGui.Button($"{Icons.Plus}##filterAdd", DPI.IconButtonSize))
         {
             NewFilter_Filters.Add("");
         }
-        UIHelper.Tooltip("Add new filter entry.");
+        GUI.Tooltip("Add new filter entry.");
 
         ImGui.SameLine();
 
@@ -266,7 +266,7 @@ public class MapListFilterTool
             if (ImGui.Button($"{Icons.Minus}##filterRemoveDisabled", DPI.IconButtonSize))
             {
             }
-            UIHelper.Tooltip("Remove last filter entry.");
+            GUI.Tooltip("Remove last filter entry.");
 
             ImGui.EndDisabled();
         }
@@ -275,7 +275,7 @@ public class MapListFilterTool
             if (ImGui.Button($"{Icons.Minus}##filterRemove", DPI.IconButtonSize))
             {
                 NewFilter_Filters.RemoveAt(NewFilter_Filters.Count - 1);
-                UIHelper.Tooltip("Remove last filter entry.");
+                GUI.Tooltip("Remove last filter entry.");
             }
         }
 
@@ -289,7 +289,7 @@ public class MapListFilterTool
             {
                 NewFilter_Filters[i] = curText;
             }
-            UIHelper.Tooltip("The filter to add.");
+            GUI.Tooltip("The filter to add.");
         }
 
         if (ImGui.Button("Create##createFilterSet", DPI.StandardButtonSize))
@@ -307,7 +307,7 @@ public class MapListFilterTool
             DisplayCreation = false;
             ImGui.CloseCurrentPopup();
         }
-        UIHelper.Tooltip("Create this filter set.");
+        GUI.Tooltip("Create this filter set.");
     }
 
     public void ReadFilterListCollection()

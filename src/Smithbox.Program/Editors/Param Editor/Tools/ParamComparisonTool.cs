@@ -81,7 +81,7 @@ public class ParamComparisonTool
         if (ImGui.BeginTabItem($"{LOC.Get("PARAM_Comparison_Tab_Param_Compare")}##paramCompareTab"))
         {
             // Loaded Projects
-            UIHelper.SimpleHeader(
+            GUI.SimpleHeader(
                 LOC.Get("PARAM_Comparison_Header_Loaded_Projects"),
                 LOC.Get("PARAM_Comparison_Header_Loaded_Projects_TT"));
 
@@ -132,8 +132,8 @@ public class ParamComparisonTool
             ImGui.EndChild();
 
             // Avaliable Porjects
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader(
+            GUI.Spacer();
+            GUI.SimpleHeader(
                 LOC.Get("PARAM_Comparison_Header_Available_Projects"),
                 LOC.Get("PARAM_Comparison_Header_Available_Projects_TT"));
 
@@ -168,8 +168,8 @@ public class ParamComparisonTool
             ImGui.EndChild();
 
             // Options
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader(
+            GUI.Spacer();
+            GUI.SimpleHeader(
                 LOC.Get("PARAM_Comparison_Header_Options"),
                 LOC.Get("PARAM_Comparison_Header_Options_TT"));
 
@@ -182,12 +182,12 @@ public class ParamComparisonTool
                 ref ImportNamesOnGeneration_Compare);
 
             // Actions
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader(
+            GUI.Spacer();
+            GUI.SimpleHeader(
                 LOC.Get("PARAM_Comparison_Header_Actions"),
                 LOC.Get("PARAM_Comparison_Header_Actions_TT"));
 
-            UIHelper.MultiButtonInput("paramComparisonActions",
+            GUI.MultiButtonInput("paramComparisonActions",
                 "clearParamComparisons", 
                 LOC.Get("PARAM_Comparison_Action_Clear_All"),
                 LOC.Get("PARAM_Comparison_Action_Clear_All_TT"),
@@ -205,26 +205,26 @@ public class ParamComparisonTool
         if (ImGui.BeginTabItem($"{LOC.Get("PARAM_Comparison_Tab_Row_Compare")}##rowCompareTab"))
         {
             // Current Row Comparison
-            UIHelper.SimpleHeader(
+            GUI.SimpleHeader(
                 LOC.Get("PARAM_Comparison_Header_Current_Row_Compare"),
                 LOC.Get("PARAM_Comparison_Header_Current_Row_Compare_TT"));
 
             if (compareRow == null)
             {
-                UIHelper.WrappedText(LOC.Get("PARAM_Comparison_No_Row_Compare"));
+                GUI.WrappedText(LOC.Get("PARAM_Comparison_No_Row_Compare"));
             }
             else
             {
-                UIHelper.WrappedText($"{compareRow.ID} {compareRow.Name}");
+                GUI.WrappedText($"{compareRow.ID} {compareRow.Name}");
             }
 
             // Actions
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader(
+            GUI.Spacer();
+            GUI.SimpleHeader(
                 LOC.Get("PARAM_Comparison_Header_Actions"),
                 LOC.Get("PARAM_Comparison_Header_Actions_TT"));
 
-            UIHelper.MultiButtonInput("rowComparisonActions",
+            GUI.MultiButtonInput("rowComparisonActions",
                 "clearRowComparison", 
                 LOC.Get("PARAM_Comparison_Action_Clear_Row_Compare"),
                 LOC.Get("PARAM_Comparison_Action_Clear_Row_Compare_TT"),
@@ -242,26 +242,26 @@ public class ParamComparisonTool
         if (ImGui.BeginTabItem($"{LOC.Get("PARAM_Comparison_Tab_Field_Compare")}##fieldCompareTab"))
         {
             // Current Field Comparison
-            UIHelper.SimpleHeader(
+            GUI.SimpleHeader(
                 LOC.Get("PARAM_Comparison_Header_Current_Field_Compare"),
                 LOC.Get("PARAM_Comparison_Header_Current_Field_Compare_TT"));
 
             if (compareCol == null)
             {
-                UIHelper.WrappedText(LOC.Get("PARAM_Comparison_No_Field_Compare"));
+                GUI.WrappedText(LOC.Get("PARAM_Comparison_No_Field_Compare"));
             }
             else
             {
-                UIHelper.WrappedText($"{compareCol.Def.InternalName}");
+                GUI.WrappedText($"{compareCol.Def.InternalName}");
             }
 
             // Actions
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader(
+            GUI.Spacer();
+            GUI.SimpleHeader(
                 LOC.Get("PARAM_Comparison_Header_Actions"),
                 LOC.Get("PARAM_Comparison_Header_Actions_TT"));
 
-            UIHelper.MultiButtonInput("fieldComparisonActions",
+            GUI.MultiButtonInput("fieldComparisonActions",
                 "clearFieldComparison", 
                 LOC.Get("PARAM_Comparison_Action_Clear_Field_Compare"),
                 LOC.Get("PARAM_Comparison_Action_Clear_Field_Compare_TT"),
@@ -283,7 +283,7 @@ public class ParamComparisonTool
             {
                 ViewReport();
             }
-            UIHelper.Tooltip(LOC.Get("PARAM_Comparison_Menu_View_Report_TT"));
+            GUI.Tooltip(LOC.Get("PARAM_Comparison_Menu_View_Report_TT"));
 
             ImGui.EndMenu();
         }
@@ -343,7 +343,7 @@ public class ParamComparisonTool
             {
                 ClearAllParamComparisons();
             }
-            UIHelper.Tooltip(LOC.Get("PARAM_Comparison_Menu_Clear_All"));
+            GUI.Tooltip(LOC.Get("PARAM_Comparison_Menu_Clear_All"));
 
             ImGui.EndMenu();
         }
@@ -356,7 +356,7 @@ public class ParamComparisonTool
             {
                 ClearRowComparison();
             }
-            UIHelper.Tooltip(LOC.Get("PARAM_Comparison_Menu_Clear_Row_Compare_TT"));
+            GUI.Tooltip(LOC.Get("PARAM_Comparison_Menu_Clear_Row_Compare_TT"));
 
             ImGui.EndMenu();
         }
@@ -369,7 +369,7 @@ public class ParamComparisonTool
             {
                 ClearFieldComparison();
             }
-            UIHelper.Tooltip(LOC.Get("PARAM_Comparison_Menu_Clear_Field_Compare_TT"));
+            GUI.Tooltip(LOC.Get("PARAM_Comparison_Menu_Clear_Field_Compare_TT"));
 
             ImGui.EndMenu();
         }
@@ -596,15 +596,15 @@ public class ParamComparisonTool
     {
         var paramData = View.Project.Handler.ParamData;
 
-        UIHelper.SimpleHeader(
+        GUI.SimpleHeader(
             LOC.Get("PARAM_ComparisonReport_Header"),
             LOC.Get("PARAM_ComparisonReport_Header_TT"));
 
-        UIHelper.WrappedText(LOC.Get("PARAM_ComparisonReport_Primary_Bank_Version", paramData.PrimaryBank.ParamVersion));
+        GUI.WrappedText(LOC.Get("PARAM_ComparisonReport_Primary_Bank_Version", paramData.PrimaryBank.ParamVersion));
 
         if (TargetProjectName == "Vanilla")
         {
-            UIHelper.WrappedText(LOC.Get("PARAM_ComparisonReport_Comparison_Bank_Version", paramData.VanillaBank.ParamVersion));
+            GUI.WrappedText(LOC.Get("PARAM_ComparisonReport_Comparison_Bank_Version", paramData.VanillaBank.ParamVersion));
         }
         else
         {
@@ -613,12 +613,12 @@ public class ParamComparisonTool
                 if (paramData.AuxBanks.ContainsKey(TargetProjectName))
                 {
                     var auxBank = paramData.AuxBanks[TargetProjectName];
-                    UIHelper.WrappedText(LOC.Get("PARAM_ComparisonReport_Comparison_Bank_Version", auxBank.ParamVersion));
+                    GUI.WrappedText(LOC.Get("PARAM_ComparisonReport_Comparison_Bank_Version", auxBank.ParamVersion));
                 }
             }
             else
             {
-                UIHelper.WrappedText(LOC.Get("PARAM_ComparisonReport_Comparison_Bank_No_Load"));
+                GUI.WrappedText(LOC.Get("PARAM_ComparisonReport_Comparison_Bank_No_Load"));
             }
         }
 
@@ -628,12 +628,12 @@ public class ParamComparisonTool
         var projectList = Smithbox.Orchestrator.Projects;
 
         // Project to Compare:
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader(
+        GUI.Spacer();
+        GUI.SimpleHeader(
             LOC.Get("PARAM_ComparisonReport_Header_Project_to_Compare"),
             LOC.Get("PARAM_ComparisonReport_Header_Project_to_Compare_TT"));
 
-        UIHelper.SetInputWidth();
+        GUI.SetInputWidth();
         if (ImGui.BeginCombo("##targetProjectComparison", TargetProjectName))
         {
             // Special-case for pointing to the vanilla bank
@@ -673,8 +673,8 @@ public class ParamComparisonTool
         }
 
         // Options
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader(
+        GUI.Spacer();
+        GUI.SimpleHeader(
             LOC.Get("PARAM_ComparisonReport_Header_Options"),
             LOC.Get("PARAM_ComparisonReport_Header_Options_TT"));
 
@@ -686,8 +686,8 @@ public class ParamComparisonTool
         ImGui.Checkbox($"{LOC.Get("PARAM_Comparison_Checkbox_Comparison_Row_Name_Import")}##importCompareRowName",
             ref ImportNamesOnGeneration_Compare);
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader(
+        GUI.Spacer();
+        GUI.SimpleHeader(
             LOC.Get("PARAM_ComparisonReport_Header_Targeted_Params"),
             LOC.Get("PARAM_ComparisonReport_Header_Targeted_Params_TT"));
 
@@ -696,7 +696,7 @@ public class ParamComparisonTool
         {
             TargetedParams.Add("");
         }
-        UIHelper.Tooltip(LOC.Get("PARAM_ComparisonReport_Param_Target_Add_TT"));
+        GUI.Tooltip(LOC.Get("PARAM_ComparisonReport_Param_Target_Add_TT"));
 
         ImGui.SameLine();
 
@@ -709,7 +709,7 @@ public class ParamComparisonTool
             {
                 TargetedParams.RemoveAt(TargetedParams.Count - 1);
             }
-            UIHelper.Tooltip(LOC.Get("PARAM_ComparisonReport_Param_Target_Remove_TT"));
+            GUI.Tooltip(LOC.Get("PARAM_ComparisonReport_Param_Target_Remove_TT"));
 
             ImGui.EndDisabled();
         }
@@ -719,7 +719,7 @@ public class ParamComparisonTool
             {
                 TargetedParams.RemoveAt(TargetedParams.Count - 1);
             }
-            UIHelper.Tooltip(LOC.Get("PARAM_ComparisonReport_Param_Target_Remove_TT"));
+            GUI.Tooltip(LOC.Get("PARAM_ComparisonReport_Param_Target_Remove_TT"));
         }
 
         ImGui.SameLine();
@@ -729,7 +729,7 @@ public class ParamComparisonTool
         {
             TargetedParams = new List<string>();
         }
-        UIHelper.Tooltip(LOC.Get("PARAM_ComparisonReport_Param_Target_Reset_TT"));
+        GUI.Tooltip(LOC.Get("PARAM_ComparisonReport_Param_Target_Reset_TT"));
 
         for (int i = 0; i < TargetedParams.Count; i++)
         {
@@ -740,19 +740,19 @@ public class ParamComparisonTool
             {
                 TargetedParams[i] = curText;
             }
-            UIHelper.Tooltip(LOC.Get("PARAM_ComparisonReport_Param_to_Include_TT"));
+            GUI.Tooltip(LOC.Get("PARAM_ComparisonReport_Param_to_Include_TT"));
         }
 
         ImGui.Separator();
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader(
+        GUI.Spacer();
+        GUI.SimpleHeader(
             LOC.Get("PARAM_ComparisonReport_Header_Action"),
             LOC.Get("PARAM_ComparisonReport_Header_Action_TT"));
 
         if (isPopup)
         {
-            UIHelper.MultiButtonInput("reportActions",
+            GUI.MultiButtonInput("reportActions",
                 "generateReport", 
                 LOC.Get("PARAM_ComparisonReport_Action_Generate_Report"),
                 LOC.Get("PARAM_ComparisonReport_Action_Generate_Report_TT"),
@@ -770,7 +770,7 @@ public class ParamComparisonTool
         }
         else
         {
-            UIHelper.MultiButtonInput("reportActions",
+            GUI.MultiButtonInput("reportActions",
                 "generateReport",
                 LOC.Get("PARAM_ComparisonReport_Action_Generate_Report"),
                 LOC.Get("PARAM_ComparisonReport_Action_Generate_Report_TT"), 
@@ -784,8 +784,8 @@ public class ParamComparisonTool
 
         if (IsReportGenerated)
         {
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader(
+            GUI.Spacer();
+            GUI.SimpleHeader(
                 LOC.Get("PARAM_ComparisonReport_Header_Report"),
                 LOC.Get("PARAM_ComparisonReport_Header_Report_TT"));
 
@@ -793,7 +793,7 @@ public class ParamComparisonTool
             if (size.Y < 0)
                 size.Y = 250f;
 
-            ImGui.InputTextMultiline("##reportText", ref ReportText, UIHelper.GetTextInputBuffer(ReportText), size, ImGuiInputTextFlags.ReadOnly);
+            ImGui.InputTextMultiline("##reportText", ref ReportText, GUI.GetTextInputBuffer(ReportText), size, ImGuiInputTextFlags.ReadOnly);
         }
         else if (IsGeneratingReport)
         {
@@ -828,7 +828,7 @@ public class ParamComparisonTool
 
     public void HandleReportModal()
     {
-        var size = UIHelper.GetMediumPopupSize();
+        var size = GUI.GetMediumPopupSize();
 
         if (ShowReportModal)
         {

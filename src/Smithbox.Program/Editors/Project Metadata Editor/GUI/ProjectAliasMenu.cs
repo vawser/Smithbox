@@ -37,31 +37,31 @@ public class ProjectAliasMenu
 
         if (curProject == null)
         {
-            UIHelper.WrappedText(LOC.Get("META_AliasMenu_Error_Invalid_Project"));
+            GUI.WrappedText(LOC.Get("META_AliasMenu_Error_Invalid_Project"));
             return;
         }
 
         if (curProject.Handler == null)
         {
-            UIHelper.WrappedText(LOC.Get("META_AliasMenu_Error_Invalid_Project"));
+            GUI.WrappedText(LOC.Get("META_AliasMenu_Error_Invalid_Project"));
             return;
         }
 
         if (curProject.Handler.ProjectData == null)
         {
-            UIHelper.WrappedText(LOC.Get("META_AliasMenu_Error_Invalid_Project"));
+            GUI.WrappedText(LOC.Get("META_AliasMenu_Error_Invalid_Project"));
             return;
         }
 
         if (curProject.Descriptor == null)
         {
-            UIHelper.WrappedText(LOC.Get("META_AliasMenu_Error_Invalid_Project"));
+            GUI.WrappedText(LOC.Get("META_AliasMenu_Error_Invalid_Project"));
             return;
         }
 
         if (Smithbox.Orchestrator.ProjectEditor.SelectedLoadedEntry == null)
         {
-            UIHelper.WrappedText(LOC.Get("META_AliasMenu_Error_No_Loaded_Project"));
+            GUI.WrappedText(LOC.Get("META_AliasMenu_Error_No_Loaded_Project"));
             return;
         }
 
@@ -117,8 +117,8 @@ public class ProjectAliasMenu
 
                 curProject.Handler.ProjectData.ReloadAliases();
             }
-            UIHelper.ShowActiveStatus(CFG.Current.Project_Alias_Editor_Use_Base_Source);
-            UIHelper.Tooltip(LOC.Get("META_AliasMenu_Menu_Base_Source_TT"));
+            GUI.ShowActiveStatus(CFG.Current.Project_Alias_Editor_Use_Base_Source);
+            GUI.Tooltip(LOC.Get("META_AliasMenu_Menu_Base_Source_TT"));
 
             // Project Source
             if (ImGui.MenuItem($"{LOC.Get("META_AliasMenu_Menu_Project_Source")}##projectSourceSelect"))
@@ -127,8 +127,8 @@ public class ProjectAliasMenu
 
                 curProject.Handler.ProjectData.ReloadAliases();
             }
-            UIHelper.ShowActiveStatus(CFG.Current.Project_Alias_Editor_Use_Project_Source);
-            UIHelper.Tooltip(LOC.Get("META_AliasMenu_Menu_Project_Source_TT"));
+            GUI.ShowActiveStatus(CFG.Current.Project_Alias_Editor_Use_Project_Source);
+            GUI.Tooltip(LOC.Get("META_AliasMenu_Menu_Project_Source_TT"));
 
             ImGui.EndMenu();
         }
@@ -151,7 +151,7 @@ public class ProjectAliasMenu
                         $"{LOC.Get("META_AliasMenu_Menu_Save_Shortcut_Saves_To_Base_Source")}#saveShortcutToggleAction", 
                         ref CFG.Current.Project_Alias_Editor_Save_Applies_To_Base);
 
-                    UIHelper.Tooltip(
+                    GUI.Tooltip(
                         LOC.Get("META_AliasMenu_Menu_Save_Shortcut_Saves_To_Base_Source_TT"));
 
                     ImGui.EndMenu();
@@ -166,7 +166,7 @@ public class ProjectAliasMenu
                     $"{LOC.Get("META_AliasMenu_Menu_Insert_New_At_Top")}##insertAtTopToggleAction", 
                     ref CFG.Current.Project_Alias_Editor_Add_Insert_At_Top);
 
-                UIHelper.Tooltip(
+                GUI.Tooltip(
                     LOC.Get("META_AliasMenu_Menu_Insert_New_At_Top_TT"));
 
                 ImGui.EndMenu();
@@ -176,7 +176,7 @@ public class ProjectAliasMenu
             if (ImGui.BeginMenu($"{LOC.Get("META_AliasMenu_Menu_List_Copy")}##listCoptMenuHeader"))
             {
                 // Export Delimiter
-                UIHelper.SimpleHeader(
+                GUI.SimpleHeader(
                     LOC.Get("META_AliasMenu_Header_Export_Delimiter"),
                     LOC.Get("META_AliasMenu_Header_Export_Delimiter_TT"));
 
@@ -188,7 +188,7 @@ public class ProjectAliasMenu
                     $"{LOC.Get("META_AliasMenu_Checkbox_Ignore_Empty_On_Export")}##ignoreEmptyToggle", 
                     ref CFG.Current.Project_Alias_Editor_Export_Ignore_Empty);
 
-                UIHelper.Tooltip(
+                GUI.Tooltip(
                     LOC.Get("META_AliasMenu_Checkbox_Ignore_Empty_On_Export_TT"));
 
                 ImGui.EndMenu();
@@ -223,7 +223,7 @@ public class ProjectAliasMenu
                         }
                     }
                 }
-                UIHelper.Tooltip(
+                GUI.Tooltip(
                     LOC.Get("META_AliasMenu_Menu_Regenerate_Project_Source_TT"));
 
                 ImGui.EndMenu();
@@ -321,7 +321,7 @@ public class ProjectAliasMenu
     public void DisplayEditor()
     {
         // Aliases
-        UIHelper.SimpleHeader(
+        GUI.SimpleHeader(
             LOC.Get("META_AliasMenu_Header_Aliases"),
             LOC.Get("META_AliasMenu_Header_Aliases_TT"));
 
@@ -440,7 +440,7 @@ public class ProjectAliasMenu
 
         if (source.Count == 0)
         {
-            UIHelper.MultiButtonInput("aliasActions",
+            GUI.MultiButtonInput("aliasActions",
                 "addAlias", 
                 LOC.Get("META_AliasMenu_Action_Add_Alias"),
                 LOC.Get("META_AliasMenu_Action_Add_Alias_TT"),
@@ -517,7 +517,7 @@ public class ProjectAliasMenu
         {
             AddAliasToList();
         }
-        UIHelper.Tooltip(
+        GUI.Tooltip(
             LOC.Get("META_AliasMenu_Button_Add_Alias_TT"));
 
         // Sort
@@ -527,7 +527,7 @@ public class ProjectAliasMenu
         {
             source.Sort();
         }
-        UIHelper.Tooltip(
+        GUI.Tooltip(
             LOC.Get("META_AliasMenu_Button_Sort_Aliases_TT"));
 
         // Read Only Toggle
@@ -543,7 +543,7 @@ public class ProjectAliasMenu
         {
             readOnlyMode = LOC.Get("META_AliasMenu_Alias_Read_Only_Inactive");
         }
-        UIHelper.Tooltip(
+        GUI.Tooltip(
             LOC.Get("META_AliasMenu_Button_Read_Only_Toggle_TT", readOnlyMode));
 
         // Entries

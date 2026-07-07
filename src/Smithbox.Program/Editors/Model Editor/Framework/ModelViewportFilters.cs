@@ -27,8 +27,8 @@ public class ModelViewportFilters
                 View.RenderScene.ToggleDrawFilter(RenderFilter.Meshes);
             }
             ticked = View.RenderScene.DrawFilter.HasFlag(RenderFilter.Meshes);
-            UIHelper.ShowActiveStatus(ticked);
-            UIHelper.Tooltip("Toggle the display of meshes.");
+            GUI.ShowActiveStatus(ticked);
+            GUI.Tooltip("Toggle the display of meshes.");
 
             // Dummies
             if (ImGui.MenuItem("Dummy Polygons"))
@@ -36,8 +36,8 @@ public class ModelViewportFilters
                 View.RenderScene.ToggleDrawFilter(RenderFilter.Dummies);
             }
             ticked = View.RenderScene.DrawFilter.HasFlag(RenderFilter.Dummies);
-            UIHelper.ShowActiveStatus(ticked);
-            UIHelper.Tooltip("Toggle the display of dummy polygons.");
+            GUI.ShowActiveStatus(ticked);
+            GUI.Tooltip("Toggle the display of dummy polygons.");
 
 
             // Nodes
@@ -46,8 +46,8 @@ public class ModelViewportFilters
                 View.RenderScene.ToggleDrawFilter(RenderFilter.Nodes);
             }
             ticked = View.RenderScene.DrawFilter.HasFlag(RenderFilter.Nodes);
-            UIHelper.ShowActiveStatus(ticked);
-            UIHelper.Tooltip("Toggle the display of bones.");
+            GUI.ShowActiveStatus(ticked);
+            GUI.Tooltip("Toggle the display of bones.");
 
             // Collision
             if (ImGui.MenuItem("Collision"))
@@ -55,8 +55,8 @@ public class ModelViewportFilters
                 View.RenderScene.ToggleDrawFilter(RenderFilter.Collision);
             }
             ticked = View.RenderScene.DrawFilter.HasFlag(RenderFilter.Collision);
-            UIHelper.ShowActiveStatus(ticked);
-            UIHelper.Tooltip("Toggle the display of collision.");
+            GUI.ShowActiveStatus(ticked);
+            GUI.Tooltip("Toggle the display of collision.");
 
             ImGui.EndMenu();
         }

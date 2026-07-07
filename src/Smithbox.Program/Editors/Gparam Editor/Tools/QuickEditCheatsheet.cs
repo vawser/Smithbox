@@ -20,106 +20,106 @@ public static class QuickEditCheatsheet
     {
         ImGui.BeginChild("CheatSheetSection", ImGuiChildFlags.Borders);
 
-        UIHelper.ConditionalHeader("fileFilterHeader", "File Filters", "", UI.Current.ImGui_AliasName_Text, ref DisplayFileFilters);
+        GUI.ConditionalHeader("fileFilterHeader", "File Filters", "", UI.Current.ImGui_AliasName_Text, ref DisplayFileFilters);
         if (DisplayFileFilters)
         {
-            UIHelper.WrappedText($"File arguments can be chained by using the '+' character.");
-            UIHelper.WrappedText("");
-            UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"*");
-            UIHelper.WrappedText("Targets all files.");
-            UIHelper.WrappedText("");
-            UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"selection");
-            UIHelper.WrappedText("Targets current file selection.");
-            UIHelper.WrappedText("");
-            UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"file:[<name>]");
-            UIHelper.WrappedText("Targets the file with the specified name.");
-            UIHelper.WrappedText("");
+            GUI.WrappedText($"File arguments can be chained by using the '+' character.");
+            GUI.WrappedText("");
+            GUI.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"*");
+            GUI.WrappedText("Targets all files.");
+            GUI.WrappedText("");
+            GUI.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"selection");
+            GUI.WrappedText("Targets current file selection.");
+            GUI.WrappedText("");
+            GUI.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"file:[<name>]");
+            GUI.WrappedText("Targets the file with the specified name.");
+            GUI.WrappedText("");
         }
 
-        UIHelper.ConditionalHeader("groupFilterHeader", "Group Filters", "", UI.Current.ImGui_AliasName_Text, ref DisplayGroupFilters);
+        GUI.ConditionalHeader("groupFilterHeader", "Group Filters", "", UI.Current.ImGui_AliasName_Text, ref DisplayGroupFilters);
         if (DisplayGroupFilters)
         {
-            UIHelper.WrappedText($"Group arguments can be chained by using the '+' character.");
-            UIHelper.WrappedText("");
-            UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"*");
-            UIHelper.WrappedText("Targets all groups.");
-            UIHelper.WrappedText("");
-            UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"selection");
-            UIHelper.WrappedText("Targets current group selection.");
-            UIHelper.WrappedText("");
-            UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"group:[<name>]");
-            UIHelper.WrappedText("Targets the groups with the specified name.");
-            UIHelper.WrappedText("");
+            GUI.WrappedText($"Group arguments can be chained by using the '+' character.");
+            GUI.WrappedText("");
+            GUI.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"*");
+            GUI.WrappedText("Targets all groups.");
+            GUI.WrappedText("");
+            GUI.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"selection");
+            GUI.WrappedText("Targets current group selection.");
+            GUI.WrappedText("");
+            GUI.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"group:[<name>]");
+            GUI.WrappedText("Targets the groups with the specified name.");
+            GUI.WrappedText("");
         }
 
-        UIHelper.ConditionalHeader("fieldFilterHeader", "Field Filters", "", UI.Current.ImGui_AliasName_Text, ref DisplayFieldFilters);
+        GUI.ConditionalHeader("fieldFilterHeader", "Field Filters", "", UI.Current.ImGui_AliasName_Text, ref DisplayFieldFilters);
         if (DisplayFieldFilters)
         {
-            UIHelper.WrappedText($"Field arguments can be chained by using the '+' character.");
-            UIHelper.WrappedText("");
-            UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"*");
-            UIHelper.WrappedText("Targets all fields.");
-            UIHelper.WrappedText("");
-            UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"selection");
-            UIHelper.WrappedText("Targets current field selection.");
-            UIHelper.WrappedText("");
-            UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"field:[<name>]");
-            UIHelper.WrappedText("Targets the fields with the specified name.");
-            UIHelper.WrappedText("");
+            GUI.WrappedText($"Field arguments can be chained by using the '+' character.");
+            GUI.WrappedText("");
+            GUI.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"*");
+            GUI.WrappedText("Targets all fields.");
+            GUI.WrappedText("");
+            GUI.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"selection");
+            GUI.WrappedText("Targets current field selection.");
+            GUI.WrappedText("");
+            GUI.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"field:[<name>]");
+            GUI.WrappedText("Targets the fields with the specified name.");
+            GUI.WrappedText("");
         }
 
-        UIHelper.ConditionalHeader("valueFilterHeader", "Value Filters", "", UI.Current.ImGui_AliasName_Text, ref DisplayValueFilters);
+        GUI.ConditionalHeader("valueFilterHeader", "Value Filters", "", UI.Current.ImGui_AliasName_Text, ref DisplayValueFilters);
         if (DisplayValueFilters)
         {
-            UIHelper.WrappedText($"Filter arguments can be chained by using the '+' character.");
-            UIHelper.WrappedText("");
-            UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"*");
-            UIHelper.WrappedText("Targets all rows.");
-            UIHelper.WrappedText("");
-            UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"selection");
-            UIHelper.WrappedText("Targets current value row selection.");
-            UIHelper.WrappedText("");
-            UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"id:[<x>]");
-            UIHelper.WrappedText("Targets all rows with <x> ID.");
-            UIHelper.WrappedText("");
-            UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"index:[<x>]");
-            UIHelper.WrappedText("Targets all rows with <x> row index.");
-            UIHelper.WrappedText("");
-            UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"tod:[<x>]");
-            UIHelper.WrappedText("Targets all rows with <x> Time of Day.");
-            UIHelper.WrappedText("");
-            UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"value:[<x>]");
-            UIHelper.WrappedText("Targets all rows with <x> Value. For multi-values split them like so: [<x>,<x>]");
-            UIHelper.WrappedText("");
+            GUI.WrappedText($"Filter arguments can be chained by using the '+' character.");
+            GUI.WrappedText("");
+            GUI.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"*");
+            GUI.WrappedText("Targets all rows.");
+            GUI.WrappedText("");
+            GUI.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"selection");
+            GUI.WrappedText("Targets current value row selection.");
+            GUI.WrappedText("");
+            GUI.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"id:[<x>]");
+            GUI.WrappedText("Targets all rows with <x> ID.");
+            GUI.WrappedText("");
+            GUI.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"index:[<x>]");
+            GUI.WrappedText("Targets all rows with <x> row index.");
+            GUI.WrappedText("");
+            GUI.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"tod:[<x>]");
+            GUI.WrappedText("Targets all rows with <x> Time of Day.");
+            GUI.WrappedText("");
+            GUI.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"value:[<x>]");
+            GUI.WrappedText("Targets all rows with <x> Value. For multi-values split them like so: [<x>,<x>]");
+            GUI.WrappedText("");
         }
 
-        UIHelper.ConditionalHeader("valueCommandHeader", "Value Commands", "", UI.Current.ImGui_AliasName_Text, ref DisplayValueCommands);
+        GUI.ConditionalHeader("valueCommandHeader", "Value Commands", "", UI.Current.ImGui_AliasName_Text, ref DisplayValueCommands);
         if (DisplayValueCommands)
         {
-            UIHelper.WrappedText($"Command arguments can be chained by using the '+' character.");
-            UIHelper.WrappedText($"Values with more than one number (such as Vectors) use the , symbol to separate each number.");
-            UIHelper.WrappedText("");
-            UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"set:[<x>]");
-            UIHelper.WrappedText("Sets target rows to <x> Value.");
-            UIHelper.WrappedText("");
-            UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"add:[<x>]");
-            UIHelper.WrappedText("Adds <x> to the Value of the target rows.");
-            UIHelper.WrappedText("");
-            UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"sub:[<x>]");
-            UIHelper.WrappedText("Subtracts <x> from the Value of the target rows.");
-            UIHelper.WrappedText("");
-            UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"mult:[<x>]");
-            UIHelper.WrappedText("Multiplies the Value of the target rows by <x>.");
-            UIHelper.WrappedText("");
-            UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"rowset:[<x>]");
-            UIHelper.WrappedText("Sets target rows to the Value of row ID <x>.");
-            UIHelper.WrappedText("");
-            UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"restore");
-            UIHelper.WrappedText("Sets target rows to their vanilla Value.");
-            UIHelper.WrappedText("");
-            UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"random:[<x>][<y>]");
-            UIHelper.WrappedText("Sets target rows to a random value between <x> and <y>.");
-            UIHelper.WrappedText("");
+            GUI.WrappedText($"Command arguments can be chained by using the '+' character.");
+            GUI.WrappedText($"Values with more than one number (such as Vectors) use the , symbol to separate each number.");
+            GUI.WrappedText("");
+            GUI.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"set:[<x>]");
+            GUI.WrappedText("Sets target rows to <x> Value.");
+            GUI.WrappedText("");
+            GUI.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"add:[<x>]");
+            GUI.WrappedText("Adds <x> to the Value of the target rows.");
+            GUI.WrappedText("");
+            GUI.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"sub:[<x>]");
+            GUI.WrappedText("Subtracts <x> from the Value of the target rows.");
+            GUI.WrappedText("");
+            GUI.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"mult:[<x>]");
+            GUI.WrappedText("Multiplies the Value of the target rows by <x>.");
+            GUI.WrappedText("");
+            GUI.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"rowset:[<x>]");
+            GUI.WrappedText("Sets target rows to the Value of row ID <x>.");
+            GUI.WrappedText("");
+            GUI.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"restore");
+            GUI.WrappedText("Sets target rows to their vanilla Value.");
+            GUI.WrappedText("");
+            GUI.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"random:[<x>][<y>]");
+            GUI.WrappedText("Sets target rows to a random value between <x> and <y>.");
+            GUI.WrappedText("");
         }
 
         ImGui.EndChild();

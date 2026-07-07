@@ -62,7 +62,7 @@ public class MapDataEditorScreen : EditorScreen
         }
 
         var dsid = ImGui.GetID("DockSpace_MapDataEditor");
-        ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None,ref UIHelper.DockGroup_MapDataEditor);
+        ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None,ref GUI.DockGroup_MapDataEditor);
 
         ViewHandler.HandleViews(dsid);
     }
@@ -184,7 +184,7 @@ public class MapDataEditorScreen : EditorScreen
             {
                 CFG.Current.Interface_MapDataEditor_ToolWindow = !CFG.Current.Interface_MapDataEditor_ToolWindow;
             }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_MapDataEditor_ToolWindow);
+            GUI.ShowActiveStatus(CFG.Current.Interface_MapDataEditor_ToolWindow);
 
             ImGui.Separator();
 
@@ -201,7 +201,7 @@ public class MapDataEditorScreen : EditorScreen
             if (ImGui.BeginMenu("Saving"))
             {
                 ImGui.Checkbox("Save Selected Only", ref CFG.Current.MapDataEditor_SaveSelectedOnly);
-                UIHelper.Tooltip("If enabled, only the selected map, entry list, etc will be saved (by default all loaded resources will be saved)");
+                GUI.Tooltip("If enabled, only the selected map, entry list, etc will be saved (by default all loaded resources will be saved)");
 
                 ImGui.EndMenu();
             }

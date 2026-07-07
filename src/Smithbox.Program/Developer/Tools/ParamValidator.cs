@@ -35,11 +35,11 @@ public class ParamValidator
             return;
         }
 
-        UIHelper.SimpleHeader(
+        GUI.SimpleHeader(
             LOC.Get("DEV_Tool_Header_Actions"),
             LOC.Get("DEV_Tool_Header_Actions_TT"));
 
-        UIHelper.MultiButtonInput("paramActions",
+        GUI.MultiButtonInput("paramActions",
             "validateParamdef",
             LOC.Get("DEV_Tool_Validate_Paramdef"),
             LOC.Get("DEV_Tool_Validate_Paramdef_TT"),

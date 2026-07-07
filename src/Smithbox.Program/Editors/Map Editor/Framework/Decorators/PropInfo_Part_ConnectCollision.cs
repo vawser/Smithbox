@@ -50,7 +50,7 @@ public static class PropInfo_Part_ConnectCollision
             ImGui.Separator();
 
             ImGui.Text(mapString);
-            UIHelper.DisplayAlias(AliasHelper.GetMapNameAlias(view.Project, mapString));
+            GUI.DisplayAlias(AliasHelper.GetMapNameAlias(view.Project, mapString));
             ImGui.Text("");
         }
     }

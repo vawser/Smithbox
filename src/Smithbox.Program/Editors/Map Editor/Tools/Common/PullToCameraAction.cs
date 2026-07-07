@@ -48,7 +48,7 @@ public class PullToCameraAction
             {
                 ApplyMoveToCamera();
             }
-            UIHelper.Tooltip($"Move the current selection to the camera position.\n\nShortcut: {InputManager.GetHint(KeybindID.Pull)}");
+            GUI.Tooltip($"Move the current selection to the camera position.\n\nShortcut: {InputManager.GetHint(KeybindID.Pull)}");
         }
     }
 
@@ -61,7 +61,7 @@ public class PullToCameraAction
         {
             ApplyMoveToCamera();
         }
-        UIHelper.Tooltip("Move the current selection to the camera position.");
+        GUI.Tooltip("Move the current selection to the camera position.");
     }
 
     /// <summary>
@@ -69,12 +69,12 @@ public class PullToCameraAction
     /// </summary>
     public void OnToolWindow()
     {
-        UIHelper.WrappedText("Configure how the pull to camera action works.");
+        GUI.WrappedText("Configure how the pull to camera action works.");
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader("Camera Offset Distance", "Camera Offset Distance", "", UI.Current.ImGui_Default_Text_Color);
+        GUI.Spacer();
+        GUI.SimpleHeader("Camera Offset Distance", "Camera Offset Distance", "", UI.Current.ImGui_Default_Text_Color);
 
-        UIHelper.SetInputWidth();
+        GUI.SetInputWidth();
         if (ImGui.SliderFloat("##Offset distance", ref CFG.Current.Toolbar_Move_to_Camera_Offset, 0, 100))
         {
             if (CFG.Current.Toolbar_Move_to_Camera_Offset < 0)
@@ -83,12 +83,12 @@ public class PullToCameraAction
             if (CFG.Current.Toolbar_Move_to_Camera_Offset > 100)
                 CFG.Current.Toolbar_Move_to_Camera_Offset = 100;
         }
-        UIHelper.Tooltip("Press Ctrl+Left Click to input directly.\nSet the distance at which the current selection is offset from the camera when this action is used.");
+        GUI.Tooltip("Press Ctrl+Left Click to input directly.\nSet the distance at which the current selection is offset from the camera when this action is used.");
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader("Actions", "");
+        GUI.Spacer();
+        GUI.SimpleHeader("Actions", "");
 
-        UIHelper.MultiButtonInput("pullToCameraActions",
+        GUI.MultiButtonInput("pullToCameraActions",
             "applyPull", "Pull Selection", "", ApplyMoveToCamera);
     }
 

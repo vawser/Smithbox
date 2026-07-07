@@ -93,17 +93,17 @@ public class ParamReloader
             {
                 ImGui.BeginChild("ParamReloaderSection", ImGuiChildFlags.Borders);
 
-                UIHelper.WrappedText(LOC.Get("PARAM_Tools_Reloader_Hint"));
+                GUI.WrappedText(LOC.Get("PARAM_Tools_Reloader_Hint"));
 
-                UIHelper.Spacer();
-                UIHelper.SimpleHeader(
+                GUI.Spacer();
+                GUI.SimpleHeader(
                     LOC.Get("PARAM_Tools_Reloader_Header_Actions"),
                     LOC.Get("PARAM_Tools_Reloader_Header_Actions_TT"));
 
                 var individualShortcut = InputManager.GetHint(KeybindID.ParamEditor_Reload_Selected_Param);
                 var allShortcut = InputManager.GetHint(KeybindID.ParamEditor_Reload_All_Params);
 
-                UIHelper.MultiButtonInput("reloaderActions",
+                GUI.MultiButtonInput("reloaderActions",
                     "reloadCurrent", 
                     LOC.Get("PARAM_Tools_Reloader_Action_Reload_Individual"),
                     LOC.Get("PARAM_Tools_Reloader_Action_Reload_Individual_TT", individualShortcut),
@@ -132,13 +132,13 @@ public class ParamReloader
                 {
                     ReloadCurrentParam();
                 }
-                UIHelper.Tooltip(LOC.Get("PARAM_Tools_Reloader_Action_Current_Param_TT", individualShortcut));
+                GUI.Tooltip(LOC.Get("PARAM_Tools_Reloader_Action_Current_Param_TT", individualShortcut));
                 
                 if (ImGui.MenuItem($"{LOC.Get("PARAM_Tools_Reloader_Action_All_Params")}##allParamAction"))
                 {
                     ReloadAllParams();
                 }
-                UIHelper.Tooltip(LOC.Get("PARAM_Tools_Reloader_Action_All_Params_TT", allShortcut));
+                GUI.Tooltip(LOC.Get("PARAM_Tools_Reloader_Action_All_Params_TT", allShortcut));
 
                 ImGui.EndMenu();
             }

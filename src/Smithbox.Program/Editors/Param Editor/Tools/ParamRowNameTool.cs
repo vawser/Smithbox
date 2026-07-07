@@ -62,12 +62,12 @@ public class ParamRowNameTool
 
         if (ImGui.BeginTabItem($"Import"))
         {
-            UIHelper.WrappedText("Use this section to import the row names from the internal files supplied by Smithbox, or from an external. These will overwrite the existing row names within the current project.");
+            GUI.WrappedText("Use this section to import the row names from the internal files supplied by Smithbox, or from an external. These will overwrite the existing row names within the current project.");
 
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader("Language", "The source language to draw the names from for the Standard import");
+            GUI.Spacer();
+            GUI.SimpleHeader("Language", "The source language to draw the names from for the Standard import");
 
-            UIHelper.SetInputWidth();
+            GUI.SetInputWidth();
             if (ImGui.BeginCombo("##languageSelection", ImportLanguage))
             {
                 foreach (var language in paramData.RowImportLanguages.Options)
@@ -82,30 +82,30 @@ public class ParamRowNameTool
                 ImGui.EndCombo();
             }
 
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader("Standard", "The row names that are supplied by Smithbox");
+            GUI.Spacer();
+            GUI.SimpleHeader("Standard", "The row names that are supplied by Smithbox");
 
-            UIHelper.MultiButtonInput("standardImportActions",
+            GUI.MultiButtonInput("standardImportActions",
                 "standardImport_SelectedParam", "Import for Selected Param", "", StandardImportSelectedParam,
                 "standardImport_AllParams", "Import for All Params", "", StandardImportAllParams);
 
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader("JSON", "Import row names from a JSON file.");
+            GUI.Spacer();
+            GUI.SimpleHeader("JSON", "Import row names from a JSON file.");
 
-            UIHelper.MultiButtonInput("jsonImportActions",
+            GUI.MultiButtonInput("jsonImportActions",
                 "jsonImport_SelectedParam", "Import for Selected Param", "", JsonImportSelectedParam,
                 "jsonImport_AllParams", "Import for All Params", "", JsonImportAllParams);
 
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader("CSV", "Import row names from a CSV file.");
+            GUI.Spacer();
+            GUI.SimpleHeader("CSV", "Import row names from a CSV file.");
 
-            UIHelper.MultiButtonInput("csvImportActions",
+            GUI.MultiButtonInput("csvImportActions",
                 "csvImport_SelectedParam", "Import for Selected Param", "", CsvImportSelectedParam);
 
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader("Legacy Text", "Import row names from a legacy text file.");
+            GUI.Spacer();
+            GUI.SimpleHeader("Legacy Text", "Import row names from a legacy text file.");
 
-            UIHelper.MultiButtonInput("legacyImportActions",
+            GUI.MultiButtonInput("legacyImportActions",
                 "legacyImport_SelectedParam", "Import for Selected Param", "", LegacyImportSelectedParam,
                 "legacyImport_AllParams", "Import for All Params", "", LegacyImportAllParams);
 
@@ -143,13 +143,13 @@ public class ParamRowNameTool
                 {
                     JsonImportSelectedParam();
                 }
-                UIHelper.Tooltip("Import the row names from the selected folder for the currently selected param.");
+                GUI.Tooltip("Import the row names from the selected folder for the currently selected param.");
 
                 if (ImGui.MenuItem($"All"))
                 {
                     JsonImportAllParams();
                 }
-                UIHelper.Tooltip("Import the row names from the selected folder for all params.");
+                GUI.Tooltip("Import the row names from the selected folder for all params.");
 
                 ImGui.EndMenu();
             }
@@ -160,7 +160,7 @@ public class ParamRowNameTool
                 {
                     CsvImportSelectedParam();
                 }
-                UIHelper.Tooltip("This will import the external names from a CSV file, matching via row ID.");
+                GUI.Tooltip("This will import the external names from a CSV file, matching via row ID.");
 
 
                 ImGui.EndMenu();
@@ -172,13 +172,13 @@ public class ParamRowNameTool
                 {
                     LegacyImportSelectedParam();
                 }
-                UIHelper.Tooltip("This will import the external names from a legacy row name file (Stripped Row Name folder), matching via row index.");
+                GUI.Tooltip("This will import the external names from a legacy row name file (Stripped Row Name folder), matching via row index.");
 
                 if (ImGui.MenuItem($"All"))
                 {
                     LegacyImportAllParams();
                 }
-                UIHelper.Tooltip("This will import the external names from a legacy row name file (older Stripped Row Name folder), matching via row index.");
+                GUI.Tooltip("This will import the external names from a legacy row name file (older Stripped Row Name folder), matching via row index.");
 
                 ImGui.EndMenu();
             }
@@ -186,7 +186,7 @@ public class ParamRowNameTool
 
             ImGui.Checkbox("Replace Empty Names Only", ref CFG.Current.Param_RowNameImport_ReplaceEmptyNamesOnly);
 
-            UIHelper.Tooltip("If enabled, only rows with empty names will have their row names replaced with the import name.");
+            GUI.Tooltip("If enabled, only rows with empty names will have their row names replaced with the import name.");
 
             ImGui.EndMenu();
         }
@@ -251,19 +251,19 @@ public class ParamRowNameTool
 
         if (ImGui.BeginTabItem($"Export"))
         {
-            UIHelper.WrappedText("Use this section to export the row names for the current project into an external file.");
+            GUI.WrappedText("Use this section to export the row names for the current project into an external file.");
 
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader("JSON", "Export row names to a JSON file.");
+            GUI.Spacer();
+            GUI.SimpleHeader("JSON", "Export row names to a JSON file.");
 
-            UIHelper.MultiButtonInput("jsonExportActions",
+            GUI.MultiButtonInput("jsonExportActions",
                 "jsonExport_SelectedParam", "Export for Selected Param", "", JsonExportSelectedParam,
                 "jsonExport_AllParams", "Export for All Params", "", JsonExportAllParams);
 
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader("Text", "Export row names to a text file.");
+            GUI.Spacer();
+            GUI.SimpleHeader("Text", "Export row names to a text file.");
 
-            UIHelper.MultiButtonInput("textExportActions",
+            GUI.MultiButtonInput("textExportActions",
                 "textExport_SelectedParam", "Export for Selected Param", "", LegacyExportSelectedParam,
                 "textExport_AllParams", "Export for All Params", "", LegacyExportAllParams);
 
@@ -309,20 +309,20 @@ public class ParamRowNameTool
                     IsSpecificParamForExport = true;
                     ExportAsJson();
                 }
-                UIHelper.Tooltip("Export the row names for your project to the selected folder.");
+                GUI.Tooltip("Export the row names for your project to the selected folder.");
 
                 if (ImGui.MenuItem($"All"))
                 {
                     IsSpecificParamForExport = false;
                     ExportAsJson();
                 }
-                UIHelper.Tooltip("Export the row names for the currently selected param to the selected folder.");
+                GUI.Tooltip("Export the row names for the currently selected param to the selected folder.");
 
 
 
                 ImGui.EndMenu();
             }
-            UIHelper.Tooltip("Export file will use the JSON storage format.");
+            GUI.Tooltip("Export file will use the JSON storage format.");
 
             if (ImGui.BeginMenu("Text"))
             {
@@ -331,18 +331,18 @@ public class ParamRowNameTool
                     IsSpecificParamForExport = true;
                     ExportAsText();
                 }
-                UIHelper.Tooltip("Export the row names for your project to the selected folder.");
+                GUI.Tooltip("Export the row names for your project to the selected folder.");
 
                 if (ImGui.MenuItem($"All"))
                 {
                     IsSpecificParamForExport = false;
                     ExportAsText();
                 }
-                UIHelper.Tooltip("Export the row names for the currently selected param to the selected folder.");
+                GUI.Tooltip("Export the row names for the currently selected param to the selected folder.");
 
                 ImGui.EndMenu();
             }
-            UIHelper.Tooltip("Export file will use the Text storage format. This format cannot be imported back in.");
+            GUI.Tooltip("Export file will use the Text storage format. This format cannot be imported back in.");
 
             ImGui.EndMenu();
         }

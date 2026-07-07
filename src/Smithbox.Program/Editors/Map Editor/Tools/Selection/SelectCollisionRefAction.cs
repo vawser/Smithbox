@@ -83,10 +83,10 @@ public class SelectCollisionRefAction
     /// </summary>
     public void OnToolWindow()
     {
-        UIHelper.WrappedText("Use this to select referenced collision when a part is selected, or referenced parts when a collision is selected.");
+        GUI.WrappedText("Use this to select referenced collision when a part is selected, or referenced parts when a collision is selected.");
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader("Actions", "");
+        GUI.Spacer();
+        GUI.SimpleHeader("Actions", "");
 
         if (View.ViewportSelection.IsSelection())
         {
@@ -94,24 +94,24 @@ public class SelectCollisionRefAction
 
             if (EntityHelper.IsPartCollision(selection))
             {
-                UIHelper.MultiButtonInput("colRefActions_1",
+                GUI.MultiButtonInput("colRefActions_1",
                 "selectRefParts", "Select Referenced Parts", "", SelectCollisionReferences);
             }
             else if (EntityHelper.IsPart(selection) && 
                 !EntityHelper.IsPartCollision(selection) && 
                 !EntityHelper.IsPartConnectCollision(selection))
             {
-                UIHelper.MultiButtonInput("colRefActions_2",
+                GUI.MultiButtonInput("colRefActions_2",
                 "selectRefCol", "Select Referenced Collision", "", SelectReferencedCollision);
             }
             else
             {
-                UIHelper.WrappedText("No valid map object has been selected.");
+                GUI.WrappedText("No valid map object has been selected.");
             }
         }
         else
         {
-            UIHelper.WrappedText("No map object has been selected.");
+            GUI.WrappedText("No map object has been selected.");
         }
     }
 

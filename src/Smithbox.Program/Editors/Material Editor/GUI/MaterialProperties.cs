@@ -39,7 +39,7 @@ public class MaterialProperties
 
     public void DisplayTitle()
     {
-        UIHelper.SimpleHeader($"Properties", "");
+        GUI.SimpleHeader($"Properties", "");
     }
 
     public void DisplayHeader()
@@ -62,7 +62,7 @@ public class MaterialProperties
         if (CFG.Current.MaterialEditor_Properties_Display_Community_Names)
             communityFieldNameMode = "Community";
 
-        UIHelper.Tooltip($"Toggle field name display type between Internal and Community.\nCurrent Mode: {communityFieldNameMode}");
+        GUI.Tooltip($"Toggle field name display type between Internal and Community.\nCurrent Mode: {communityFieldNameMode}");
 
         ImGui.EndChild();
     }
@@ -287,7 +287,7 @@ public class MaterialProperties
                                     {
                                         DuplicateListEntry(arrtyp, obj, i);
                                     }
-                                    UIHelper.Tooltip("Duplicate this entry");
+                                    GUI.Tooltip("Duplicate this entry");
 
                                     ImGui.SameLine();
 
@@ -295,7 +295,7 @@ public class MaterialProperties
                                     {
                                         RemoveListEntry(arrtyp, obj, i);
                                     }
-                                    UIHelper.Tooltip("Remove this entry");
+                                    GUI.Tooltip("Remove this entry");
                                 }
 
                                 ImGui.NextColumn();
@@ -597,7 +597,7 @@ public class MaterialProperties
         }
 
         // Final description
-        UIHelper.Tooltip(text);
+        GUI.Tooltip(text);
     }
 
     private static void OpenMaterialPropertyContextMenu()

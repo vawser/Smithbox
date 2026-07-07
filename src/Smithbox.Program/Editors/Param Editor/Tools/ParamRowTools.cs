@@ -25,7 +25,7 @@ public static class ParamRowTools
             curView.ToolMenu.FieldValueFinder.Results = curView.ToolMenu.FieldValueFinder.ConstructResults();
             curView.ToolMenu.FieldValueFinder.Results.Sort();
         }
-        UIHelper.Tooltip("Quick use action for searching in 'Find Field Value Instances' tool with this row ID.");
+        GUI.Tooltip("Quick use action for searching in 'Find Field Value Instances' tool with this row ID.");
     }
     #endregion
 

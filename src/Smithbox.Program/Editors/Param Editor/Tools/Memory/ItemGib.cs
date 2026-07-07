@@ -59,7 +59,7 @@ public class ItemGib
         var activeView = Project.Handler.ParamEditor.ViewHandler.ActiveView;
 
         List<ParamRef> refs = new() { new ParamRef(null, paramName) };
-        UIHelper.WrappedText(LOC.Get("PARAM_Tools_ItemGib_Param_ID", paramName));
+        GUI.WrappedText(LOC.Get("PARAM_Tools_ItemGib_Param_ID", paramName));
 
         ImGui.InputInt($"##{paramName}", ref value);
         ParamFieldDecoratorRegisterRightClick($"ItemGib{paramName}ContextMenu");
@@ -110,13 +110,13 @@ public class ItemGib
         {
             ImGui.BeginChild("ItemGibSection", ImGuiChildFlags.Borders);
 
-            UIHelper.WrappedText(LOC.Get("PARAM_Tools_ItemGib_Hint"));
-            UIHelper.Spacer();
+            GUI.WrappedText(LOC.Get("PARAM_Tools_ItemGib_Hint"));
+            GUI.Spacer();
 
             var activeRow = activeView.Selection.GetActiveRow();
             if (activeRow == null)
             {
-                UIHelper.WrappedText(LOC.Get("PARAM_Tools_ItemGib_No_Active_Row"));
+                GUI.WrappedText(LOC.Get("PARAM_Tools_ItemGib_No_Active_Row"));
                 return;
             }
             var paramChanged = lastSelectedParamID != activeRow.ID || lastSelectedParam != activeParam;
@@ -133,7 +133,7 @@ public class ItemGib
                 case "EquipParamGoods":
                 case "Magic":
                 case "EquipParamAccessory":
-                    UIHelper.WrappedText(LOC.Get("PARAM_Tools_ItemGib_Number_of_Spawned_Items"));
+                    GUI.WrappedText(LOC.Get("PARAM_Tools_ItemGib_Number_of_Spawned_Items"));
                     ImGui.InputInt("##spawnItemCount", ref props.Quantity);
 
                     if (paramChanged)
@@ -143,7 +143,7 @@ public class ItemGib
                     }
                     break;
                 case "EquipParamWeapon":
-                    UIHelper.WrappedText(LOC.Get("PARAM_Tools_ItemGib_Number_of_Spawned_Items"));
+                    GUI.WrappedText(LOC.Get("PARAM_Tools_ItemGib_Number_of_Spawned_Items"));
                     ImGui.InputInt("##spawnItemCount", ref props.Quantity);
 
                     if (paramChanged)
@@ -154,7 +154,7 @@ public class ItemGib
                     // check if reinforcement can be changed
                     if (activeRow["reinforceShopCategory"].Value.Value as byte? != 0)
                     {
-                        UIHelper.WrappedText(LOC.Get("PARAM_Tools_ItemGib_Reinforcement_Level"));
+                        GUI.WrappedText(LOC.Get("PARAM_Tools_ItemGib_Reinforcement_Level"));
                         ImGui.InputInt("##durability", ref props.ReinforceLvl);
                     }
 
@@ -170,27 +170,27 @@ public class ItemGib
 
                     if (Project.Descriptor.ProjectType == ProjectType.DS3)
                     {
-                        UIHelper.WrappedText($"{LOC.Get("PARAM_Tools_ItemGib_Durability")}");
+                        GUI.WrappedText($"{LOC.Get("PARAM_Tools_ItemGib_Durability")}");
                         ImGui.InputInt("##durability", ref props.Durability);
                     }
                     break;
                 case "EquipParamProtector":
-                    UIHelper.WrappedText(LOC.Get("PARAM_Tools_ItemGib_Number_of_Spawned_Items"));
+                    GUI.WrappedText(LOC.Get("PARAM_Tools_ItemGib_Number_of_Spawned_Items"));
                     ImGui.InputInt("##spawnItemCount", ref props.Quantity);
 
                     if (paramChanged) props.ReinforceLvl = 0;
 
                     if (Project.Descriptor.ProjectType == ProjectType.DS3)
                     {
-                        UIHelper.WrappedText(LOC.Get("PARAM_Tools_ItemGib_Reinforcement_Level"));
+                        GUI.WrappedText(LOC.Get("PARAM_Tools_ItemGib_Reinforcement_Level"));
                         ImGui.InputInt("##durability", ref props.ReinforceLvl);
 
-                        UIHelper.WrappedText($"{LOC.Get("PARAM_Tools_ItemGib_Durability")}");
+                        GUI.WrappedText($"{LOC.Get("PARAM_Tools_ItemGib_Durability")}");
                         ImGui.InputInt("##durability", ref props.Durability);
                     }
                     break;
                 case "EquipParamCustomWeapon":
-                    UIHelper.WrappedText(LOC.Get("PARAM_Tools_ItemGib_Number_of_Spawned_Items"));
+                    GUI.WrappedText(LOC.Get("PARAM_Tools_ItemGib_Number_of_Spawned_Items"));
                     ImGui.InputInt("##spawnItemCount", ref props.Quantity);
 
                     props.ReinforceLvl = Convert.ToInt32(activeRow["reinforceLv"].Value.Value);
@@ -201,7 +201,7 @@ public class ItemGib
             }
 
 
-            UIHelper.Spacer();
+            GUI.Spacer();
             if (ImGui.Button($"{LOC.Get("PARAM_Tools_ItemGib_Action_Give_Item")}##giveItemAction"))
             {
                 GiveItem();

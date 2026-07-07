@@ -47,7 +47,7 @@ public class ModelContainerList
 
     public void Display(float width, float height)
     {
-        UIHelper.SimpleHeader("Containers", "");
+        GUI.SimpleHeader("Containers", "");
 
         DisplayHeader();
 
@@ -124,7 +124,7 @@ public class ModelContainerList
         bool filterChanged = ImGui.IsItemDeactivatedAfterEdit();
         bool tabChanged = _previousTab != CurrentTab;
 
-        UIHelper.Tooltip("Filter the model list entries.");
+        GUI.Tooltip("Filter the model list entries.");
 
         ImGui.SameLine();
 
@@ -138,7 +138,7 @@ public class ModelContainerList
         {
             CFG.Current.ModelEditor_ModelSourceList_RequireDoubleClick = !CFG.Current.ModelEditor_ModelSourceList_RequireDoubleClick;
         }
-        UIHelper.Tooltip($"Determines the loading behavior in the model source lists.\nLoad Type: {loadMode}");
+        GUI.Tooltip($"Determines the loading behavior in the model source lists.\nLoad Type: {loadMode}");
 
         ImGui.EndChild();
 
@@ -261,7 +261,7 @@ public class ModelContainerList
 
                 if (alias != "")
                 {
-                    UIHelper.DisplayAlias(alias, CFG.Current.Interface_Alias_Wordwrap_Model_Editor);
+                    GUI.DisplayAlias(alias, CFG.Current.Interface_Alias_Wordwrap_Model_Editor);
                 }
 
                 // Context Menu
@@ -336,7 +336,7 @@ public class ModelContainerList
         var entries = Project.Handler.ProjectData.Aliases[aliasType];
         var existing = entries.FirstOrDefault(e => e.ID == fileEntry.Filename);
 
-        UIHelper.SimpleHeader("Alias Name", "");
+        GUI.SimpleHeader("Alias Name", "");
         ImGui.InputText("##aliasName", ref CurrentAliasName, 255);
 
         var tblFlags = ImGuiTableFlags.SizingFixedFit;

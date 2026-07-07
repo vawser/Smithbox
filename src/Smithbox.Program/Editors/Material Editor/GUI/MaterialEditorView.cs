@@ -57,8 +57,8 @@ public class MaterialEditorView
 
         // Container List
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
-        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_MaterialEditorView);
-        if (ImGui.Begin($@"Container List##materialEditor_ContainerList_{viewIndex}", UIHelper.GetInnerWindowFlags()))
+        ImGui.SetNextWindowClass(ref GUI.DockGroup_MaterialEditorView);
+        if (ImGui.Begin($@"Container List##materialEditor_ContainerList_{viewIndex}", GUI.GetInnerWindowFlags()))
         {
             var width = ImGui.GetContentRegionAvail().X;
             var height = ImGui.GetContentRegionAvail().Y;
@@ -76,8 +76,8 @@ public class MaterialEditorView
 
         // File List
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
-        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_MaterialEditorView);
-        if (ImGui.Begin($@"File List##materialEditor_FileList_{viewIndex}", UIHelper.GetInnerWindowFlags()))
+        ImGui.SetNextWindowClass(ref GUI.DockGroup_MaterialEditorView);
+        if (ImGui.Begin($@"File List##materialEditor_FileList_{viewIndex}", GUI.GetInnerWindowFlags()))
         {
             var width = ImGui.GetContentRegionAvail().X;
             var height = ImGui.GetContentRegionAvail().Y;
@@ -95,8 +95,8 @@ public class MaterialEditorView
 
         // Properties
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
-        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_MaterialEditorView);
-        if (ImGui.Begin($@"Properties##materialEditor_Properties_{viewIndex}", UIHelper.GetInnerWindowFlags()))
+        ImGui.SetNextWindowClass(ref GUI.DockGroup_MaterialEditorView);
+        if (ImGui.Begin($@"Properties##materialEditor_Properties_{viewIndex}", GUI.GetInnerWindowFlags()))
         {
             var width = ImGui.GetContentRegionAvail().X;
             var height = ImGui.GetContentRegionAvail().Y;
@@ -114,8 +114,8 @@ public class MaterialEditorView
 
         // Tools
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
-        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_MaterialEditorView);
-        if (ImGui.Begin($@"Tools##materialEditor_ToolWindow_{viewIndex}", UIHelper.GetInnerWindowFlags()))
+        ImGui.SetNextWindowClass(ref GUI.DockGroup_MaterialEditorView);
+        if (ImGui.Begin($@"Tools##materialEditor_ToolWindow_{viewIndex}", GUI.GetInnerWindowFlags()))
         {
             var width = ImGui.GetContentRegionAvail().X;
             var height = ImGui.GetContentRegionAvail().Y;

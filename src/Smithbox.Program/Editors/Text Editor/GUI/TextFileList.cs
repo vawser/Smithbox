@@ -29,7 +29,7 @@ public class TextFileList
     /// </summary>
     public void Display(float width, float height)
     {
-        UIHelper.SimpleHeader(
+        GUI.SimpleHeader(
             LOC.Get("TEXT_FileList_Header_Files"),
             LOC.Get("TEXT_FileList_Header_Files_TT"));
 
@@ -51,7 +51,7 @@ public class TextFileList
         if (!CFG.Current.TextEditor_Text_File_List_Grouped_Display)
             displayMode = LOC.Get("TEXT_FileList_Toggle_Individual_Display");
 
-        UIHelper.Tooltip(
+        GUI.Tooltip(
             LOC.Get("TEXT_FileList_Toggle_Display_Type_TT", displayMode));
 
         ImGui.EndChild();
@@ -252,7 +252,7 @@ public class TextFileList
                             HandleFmgView(fmgInfo);
                             if (Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.ER)
                             {
-                                UIHelper.Tooltip(LOC.Get("TEXT_FileList_Base_Priority_TT"));
+                                GUI.Tooltip(LOC.Get("TEXT_FileList_Base_Priority_TT"));
                             }
                         }
                     }
@@ -276,7 +276,7 @@ public class TextFileList
                             HandleFmgView(fmgInfo);
                             if (Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.ER)
                             {
-                                UIHelper.Tooltip(LOC.Get("TEXT_FileList_DLC1_Priority_TT"));
+                                GUI.Tooltip(LOC.Get("TEXT_FileList_DLC1_Priority_TT"));
                             }
                         }
                     }
@@ -300,7 +300,7 @@ public class TextFileList
                             HandleFmgView(fmgInfo);
                             if (Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.ER)
                             {
-                                UIHelper.Tooltip(LOC.Get("TEXT_FileList_DLC2_Priority_TT"));
+                                GUI.Tooltip(LOC.Get("TEXT_FileList_DLC2_Priority_TT"));
                             }
                         }
                     }

@@ -149,7 +149,7 @@ public class TranslateAction
 
     public void DisplayMenu()
     {
-        UIHelper.WrappedText("Use this to incrementally translate a map object.");
+        GUI.WrappedText("Use this to incrementally translate a map object.");
 
         var currentIncrement = "";
 
@@ -172,87 +172,87 @@ public class TranslateAction
                 break;
         }
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader($"Current Position Increment: {currentIncrement}", $"Press {InputManager.GetHint(KeybindID.MapEditor_Position_Increment_Cycle_Type)} to cycle the position increment used when moving a selection via Keyboard Move.");
+        GUI.Spacer();
+        GUI.SimpleHeader($"Current Position Increment: {currentIncrement}", $"Press {InputManager.GetHint(KeybindID.MapEditor_Position_Increment_Cycle_Type)} to cycle the position increment used when moving a selection via Keyboard Move.");
 
-        UIHelper.MultiButtonInput("posShiftActions",
+        GUI.MultiButtonInput("posShiftActions",
             "cycleIncrementType",
             "Cycle Increment",
             $"Press {InputManager.GetHint(KeybindID.MapEditor_Position_Increment_Cycle_Type)} to cycle the position increment used when moving a selection via Keyboard Move.",
             CycleIncrementTypeAction);
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader("Options", "");
+        GUI.Spacer();
+        GUI.SimpleHeader("Options", "");
 
         ImGui.Checkbox("Display position increment type", ref CFG.Current.Viewport_DisplayTranslationIncrement);
-        UIHelper.Tooltip("Display the current position increment type you are using in the information panel.");
+        GUI.Tooltip("Display the current position increment type you are using in the information panel.");
 
         ImGui.Checkbox("Enable discrete movement", ref CFG.Current.MapEditor_Selection_Position_Increment_DiscreteApplication);
-        UIHelper.Tooltip($"If enabled, the key must be pressed and released for each application.\nShortcut: {InputManager.GetHint(KeybindID.MapEditor_Position_Increment_Toggle_Discrete_Mode)}");
+        GUI.Tooltip($"If enabled, the key must be pressed and released for each application.\nShortcut: {InputManager.GetHint(KeybindID.MapEditor_Position_Increment_Toggle_Discrete_Mode)}");
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader("Position Increment: 0", "");
+        GUI.Spacer();
+        GUI.SimpleHeader("Position Increment: 0", "");
 
-        UIHelper.SetInputWidth();
+        GUI.SetInputWidth();
         var unit0 = CFG.Current.MapEditor_Selection_Position_Increment_0;
         if (ImGui.SliderFloat("##positionIncrement0", ref unit0, 0.0f, 999.0f))
         {
             CFG.Current.MapEditor_Selection_Position_Increment_0 = unit0;
         }
-        UIHelper.Tooltip("Press Ctrl+Left Click to input directly.\nSet the position increment amount used by keyboard move.");
+        GUI.Tooltip("Press Ctrl+Left Click to input directly.\nSet the position increment amount used by keyboard move.");
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader("Position Increment: 1", "");
+        GUI.Spacer();
+        GUI.SimpleHeader("Position Increment: 1", "");
 
-        UIHelper.SetInputWidth();
+        GUI.SetInputWidth();
 
         var unit1 = CFG.Current.MapEditor_Selection_Position_Increment_1;
         if (ImGui.SliderFloat("##positionIncrement1", ref unit1, 0.0f, 999.0f))
         {
             CFG.Current.MapEditor_Selection_Position_Increment_1 = unit1;
         }
-        UIHelper.Tooltip("Press Ctrl+Left Click to input directly.\nSet the position increment amount used by keyboard move.");
+        GUI.Tooltip("Press Ctrl+Left Click to input directly.\nSet the position increment amount used by keyboard move.");
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader("Position Increment: 2", "");
+        GUI.Spacer();
+        GUI.SimpleHeader("Position Increment: 2", "");
 
-        UIHelper.SetInputWidth();
+        GUI.SetInputWidth();
 
         var unit2 = CFG.Current.MapEditor_Selection_Position_Increment_2;
         if (ImGui.SliderFloat("##positionIncrement2", ref unit2, 0.0f, 999.0f))
         {
             CFG.Current.MapEditor_Selection_Position_Increment_2 = unit2;
         }
-        UIHelper.Tooltip("Press Ctrl+Left Click to input directly.\nSet the position increment amount used by keyboard move.");
+        GUI.Tooltip("Press Ctrl+Left Click to input directly.\nSet the position increment amount used by keyboard move.");
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader("Position Increment: 3", "");
+        GUI.Spacer();
+        GUI.SimpleHeader("Position Increment: 3", "");
 
-        UIHelper.SetInputWidth();
+        GUI.SetInputWidth();
 
         var unit3 = CFG.Current.MapEditor_Selection_Position_Increment_3;
         if (ImGui.SliderFloat("##positionIncrement3", ref unit3, 0.0f, 999.0f))
         {
             CFG.Current.MapEditor_Selection_Position_Increment_3 = unit3;
         }
-        UIHelper.Tooltip("Press Ctrl+Left Click to input directly.\nSet the position increment amount used by keyboard move.");
+        GUI.Tooltip("Press Ctrl+Left Click to input directly.\nSet the position increment amount used by keyboard move.");
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader("Position Increment: 4", "");
+        GUI.Spacer();
+        GUI.SimpleHeader("Position Increment: 4", "");
 
-        UIHelper.SetInputWidth();
+        GUI.SetInputWidth();
 
         var unit4 = CFG.Current.MapEditor_Selection_Position_Increment_4;
         if (ImGui.SliderFloat("##positionIncrement4", ref unit4, 0.0f, 999.0f))
         {
             CFG.Current.MapEditor_Selection_Position_Increment_4 = unit4;
         }
-        UIHelper.Tooltip("Press Ctrl+Left Click to input directly.\nSet the position increment amount used by keyboard move.");
+        GUI.Tooltip("Press Ctrl+Left Click to input directly.\nSet the position increment amount used by keyboard move.");
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader("Actions", "");
+        GUI.Spacer();
+        GUI.SimpleHeader("Actions", "");
 
-        UIHelper.MultiButtonInput("incrementalActions",
+        GUI.MultiButtonInput("incrementalActions",
             "incrementMove_PosX", "Move Selection on +X Axis", $"Shortcut: {InputManager.GetHint(KeybindID.MapEditor_Position_Increment_Positive_X)}", MoveSelection_Increment_PositiveX,
             "incrementMove_NegX", "Move Selection on -X Axis", $"Shortcut: {InputManager.GetHint(KeybindID.MapEditor_Position_Increment_Negative_X)}", MoveSelection_Increment_NegativeX,
             "incrementMove_PosY", "Move Selection on +Y Axis", $"Shortcut: {InputManager.GetHint(KeybindID.MapEditor_Position_Increment_Positive_Y)}", MoveSelection_Increment_PositiveY,
@@ -484,21 +484,21 @@ public class TranslateAction
         switch (CFG.Current.MapEditor_Selection_Position_IncrementType)
         {
             case 0:
-                UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Position Increment: {CFG.Current.MapEditor_Selection_Position_Increment_0}");
+                GUI.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Position Increment: {CFG.Current.MapEditor_Selection_Position_Increment_0}");
                 break;
             case 1:
-                UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Position Increment: {CFG.Current.MapEditor_Selection_Position_Increment_1}");
+                GUI.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Position Increment: {CFG.Current.MapEditor_Selection_Position_Increment_1}");
                 break;
             case 2:
-                UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Position Increment: {CFG.Current.MapEditor_Selection_Position_Increment_2}");
+                GUI.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Position Increment: {CFG.Current.MapEditor_Selection_Position_Increment_2}");
                 break;
             case 3:
-                UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Position Increment: {CFG.Current.MapEditor_Selection_Position_Increment_3}");
+                GUI.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Position Increment: {CFG.Current.MapEditor_Selection_Position_Increment_3}");
                 break;
             case 4:
-                UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Position Increment: {CFG.Current.MapEditor_Selection_Position_Increment_4}");
+                GUI.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Position Increment: {CFG.Current.MapEditor_Selection_Position_Increment_4}");
                 break;
         }
-        UIHelper.Tooltip($"Press {InputManager.GetHint(KeybindID.MapEditor_Position_Increment_Cycle_Type)} to cycle the position increment used when moving a selection via Keyboard Move.");
+        GUI.Tooltip($"Press {InputManager.GetHint(KeybindID.MapEditor_Position_Increment_Cycle_Type)} to cycle the position increment used when moving a selection via Keyboard Move.");
     }
 }

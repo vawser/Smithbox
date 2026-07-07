@@ -44,7 +44,7 @@ public class TextureExportModal
 
         if (!InitialLayout)
         {
-            UIHelper.SetupPopupWindow();
+            GUI.SetupPopupWindow();
             InitialLayout = true;
         }
 

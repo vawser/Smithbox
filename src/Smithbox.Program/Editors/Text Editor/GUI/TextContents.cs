@@ -24,7 +24,7 @@ public class TextContents
     /// </summary>
     public void Display()
     {
-        UIHelper.SimpleHeader(
+        GUI.SimpleHeader(
             LOC.Get("TEXT_Contents_Header_Contents"),
             LOC.Get("TEXT_Contents_Header_Contents_TT"));
 

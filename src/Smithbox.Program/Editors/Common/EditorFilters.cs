@@ -29,13 +29,13 @@ public static class EditorFilters
     public static void DisplayListFilter(string id, ref string input, ref bool exactBool)
     {
         ImGui.Checkbox($"##{id}_listFilter_exactMatch", ref exactBool);
-        UIHelper.Tooltip(
+        GUI.Tooltip(
             LOC.Get("EDITOR_List_Filter_Exact_Match_TT"));
 
         ImGui.SameLine();
 
         ImGui.InputTextWithHint($"##{id}_listFilter", "Search...", ref input, 255);
-        UIHelper.Tooltip(
+        GUI.Tooltip(
             LOC.Get("EDITOR_List_Filter_Input_TT", SplitChr, OR_Chr));
     }
 

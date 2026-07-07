@@ -64,7 +64,7 @@ public class MapPropertyView
         if (CFG.Current.MapEditor_Properties_Enable_Commmunity_Names)
             communityFieldNameMode = "Community";
 
-        UIHelper.Tooltip($"Toggle field name display type between Internal and Community.\nCurrent Mode: {communityFieldNameMode}");
+        GUI.Tooltip($"Toggle field name display type between Internal and Community.\nCurrent Mode: {communityFieldNameMode}");
 
         // Toggle Unknown Properties
         ImGui.SameLine();
@@ -79,7 +79,7 @@ public class MapPropertyView
         if (CFG.Current.MapEditor_Properties_Display_Unknown_Properties)
             unkFieldDisplayMode = "Visible";
 
-        UIHelper.Tooltip($"Toggle the display of unknown fields.\nCurrent Mode: {unkFieldDisplayMode}");
+        GUI.Tooltip($"Toggle the display of unknown fields.\nCurrent Mode: {unkFieldDisplayMode}");
 
         // Toggle Field Padding
         ImGui.SameLine();
@@ -93,7 +93,7 @@ public class MapPropertyView
         if (!CFG.Current.MapEditor_Field_List_Display_Padding)
             fieldPaddingMode = "Visible";
 
-        UIHelper.Tooltip($"Toggle the display of padding field.\nCurrent Mode: {fieldPaddingMode}");
+        GUI.Tooltip($"Toggle the display of padding field.\nCurrent Mode: {fieldPaddingMode}");
 
         ImGui.EndChild();
 
@@ -386,7 +386,7 @@ public class MapPropertyView
         // Description
         if (fieldAnnotation != null && fieldAnnotation.Description != "")
         {
-            UIHelper.Tooltip(fieldAnnotation.Description);
+            GUI.Tooltip(fieldAnnotation.Description);
         }
 
         ImGui.NextColumn();
@@ -640,13 +640,13 @@ public class MapPropertyView
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Rename");
-        UIHelper.Tooltip("Renames the map object, whilst updating any name references that point to it with the new name.");
+        GUI.Tooltip("Renames the map object, whilst updating any name references that point to it with the new name.");
         ImGui.SameLine();
         if(ImGui.Button($"{Icons.Refresh}##resetNameInput", DPI.IconButtonSize))
         {
             editName.name = first.Name;
         }
-        UIHelper.Tooltip("Reset the rename input to the current name.");
+        GUI.Tooltip("Reset the rename input to the current name.");
 
         ImGui.NextColumn();
 
@@ -692,7 +692,7 @@ public class MapPropertyView
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Community Name");
-        UIHelper.Tooltip("The community alias for this map object name.");
+        GUI.Tooltip("The community alias for this map object name.");
 
         ImGui.NextColumn();
 
@@ -736,12 +736,12 @@ public class MapPropertyView
 
         if (meta != null)
         {
-            UIHelper.Tooltip(meta.Wiki);
+            GUI.Tooltip(meta.Wiki);
         }
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Map ID");
-        UIHelper.Tooltip("The map ID of the map that the first entry of the current selection is found in.");
+        GUI.Tooltip("The map ID of the map that the first entry of the current selection is found in.");
 
         ImGui.NextColumn();
 
@@ -760,7 +760,7 @@ public class MapPropertyView
             if (mapID != "")
             {
                 var mapAlias = AliasHelper.GetMapNameAlias(View.Project, first.MapID);
-                UIHelper.DisplayAlias(mapAlias);
+                GUI.DisplayAlias(mapAlias);
             }
         }
 
@@ -1226,7 +1226,7 @@ public class MapPropertyView
         }
 
         // Final description
-        UIHelper.Tooltip(text);
+        GUI.Tooltip(text);
     }
 
     private (bool, bool) PropertyRow(MapEntityPropertyFieldMeta meta, Type typ, object oldval, out object newval, PropertyInfo prop, IEnumerable<Entity> entSelection)

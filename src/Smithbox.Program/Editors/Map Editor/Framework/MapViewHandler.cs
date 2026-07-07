@@ -128,8 +128,8 @@ public class MapViewHandler
             }
 
             ImGui.SetNextWindowDockID(editorDockspaceId, ImGuiCond.FirstUseEver);
-            ImGui.SetNextWindowClass(ref UIHelper.DockGroup_MapEditor);
-            if (ImGui.Begin($@"{displayTitle}###MapEditorView##{view.ViewIndex}", UIHelper.GetDisplayViewWindowFlags()))
+            ImGui.SetNextWindowClass(ref GUI.DockGroup_MapEditor);
+            if (ImGui.Begin($@"{displayTitle}###MapEditorView##{view.ViewIndex}", GUI.GetDisplayViewWindowFlags()))
             {
                 if (ImGui.IsItemClicked(ImGuiMouseButton.Left))
                 {
@@ -157,7 +157,7 @@ public class MapViewHandler
             }
 
             var dsid = ImGui.GetID($"DockSpace_MapEdit_View{view.ViewIndex}");
-            ImGui.DockSpace(dsid, new Vector2(0, 0), ref UIHelper.DockGroup_MapEditorView);
+            ImGui.DockSpace(dsid, new Vector2(0, 0), ref GUI.DockGroup_MapEditorView);
 
             view.Display(dsid, view.ViewIndex, Editor.CommandQueue.DoFocus && view == activeView, view == activeView);
 

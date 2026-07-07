@@ -32,7 +32,7 @@ public static class ParamDebugTools
 
             Smithbox.Log(typeof(ParamDebugTools), LOC.Get("DEV_Param_Log_Export_Table_Names", dir));
         }
-        UIHelper.Tooltip(LOC.Get("DEV_Param_Export_Table_Names_TT"));
+        GUI.Tooltip(LOC.Get("DEV_Param_Export_Table_Names_TT"));
     }
 
     public static void DisplayQuickRowNameExport(ParamEditorScreen editor, ProjectEntry project)
@@ -94,7 +94,7 @@ public static class ParamDebugTools
                 Smithbox.Log(typeof(ParamDebugTools), LOC.Get("DEV_Param_Log_Export_Row_Names", fullPath));
             }
         }
-        UIHelper.Tooltip(LOC.Get("DEV_Param_Export_Row_Names_TT"));
+        GUI.Tooltip(LOC.Get("DEV_Param_Export_Row_Names_TT"));
     }
 
 

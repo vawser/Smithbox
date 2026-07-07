@@ -72,12 +72,12 @@ public class PrefabTool
 
     public void DisplayImportMenu()
     {
-        UIHelper.WrappedText("Use this to import a set of pre-defined map objects into the target loaded map.");
+        GUI.WrappedText("Use this to import a set of pre-defined map objects into the target loaded map.");
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader("Target Map", "The target map to duplicate the current selection to.");
+        GUI.Spacer();
+        GUI.SimpleHeader("Target Map", "The target map to duplicate the current selection to.");
 
-        UIHelper.SetInputWidth();
+        GUI.SetInputWidth();
         if (ImGui.BeginCombo("##targetMapSelect", TargetMap.Item1))
         {
             foreach (var entry in Project.Handler.MapData.PrimaryBank.Maps)
@@ -100,25 +100,25 @@ public class PrefabTool
             ImGui.EndCombo();
         }
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader("Options", "");
+        GUI.Spacer();
+        GUI.SimpleHeader("Options", "");
 
         ImGui.Checkbox("Override import name##prefabOverrideImportName", ref CFG.Current.Prefab_ApplyOverrideName);
-        UIHelper.Tooltip("Spawned prefab objects will be prepended with this instead of the prefab name");
+        GUI.Tooltip("Spawned prefab objects will be prepended with this instead of the prefab name");
 
         if (!CFG.Current.Prefab_ApplyOverrideName)
             CFG.Current.Prefab_OverrideName = "";
 
         ImGui.Checkbox("Import on Placement Orb Origin##prefabPlaceAtPlacementOrb", ref CFG.Current.Prefab_PlaceAtPlacementOrb);
-        UIHelper.Tooltip("Spawned prefab objects will be placed at the placement orb origin rather than their original co-ordinates.");
+        GUI.Tooltip("Spawned prefab objects will be placed at the placement orb origin rather than their original co-ordinates.");
 
         ImGui.Checkbox("Apply Unique Entity ID##prefabApplyUniqueEntityID", ref CFG.Current.Prefab_ApplyUniqueEntityID);
-        UIHelper.Tooltip("Spawned prefab objects will be given unique Entity IDs.");
+        GUI.Tooltip("Spawned prefab objects will be given unique Entity IDs.");
 
         if (View.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
         {
             ImGui.Checkbox("Apply Unique Instance ID##prefabApplyUniqueInstanceID", ref CFG.Current.Prefab_ApplyUniqueInstanceID);
-            UIHelper.Tooltip("Spawned prefab objects will be given unique Instance IDs.");
+            GUI.Tooltip("Spawned prefab objects will be given unique Instance IDs.");
         }
 
         if (View.Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.SDT or ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
@@ -128,29 +128,29 @@ public class PrefabTool
             if (!CFG.Current.Prefab_ApplySpecificEntityGroupID)
                 CFG.Current.Prefab_SpecificEntityGroupID = 0;
 
-            UIHelper.Tooltip("Spawned prefab objects will be given this specific Entity Group ID within an empty Entity Group ID slot.");
+            GUI.Tooltip("Spawned prefab objects will be given this specific Entity Group ID within an empty Entity Group ID slot.");
         }
 
         if (CFG.Current.Prefab_ApplyOverrideName)
         {
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader("Override Name", "The name to prepend to the imported map object names.");
+            GUI.Spacer();
+            GUI.SimpleHeader("Override Name", "The name to prepend to the imported map object names.");
 
-            UIHelper.SinglelineTextInput("OverrideName", ref CFG.Current.Prefab_OverrideName);
+            GUI.SinglelineTextInput("OverrideName", ref CFG.Current.Prefab_OverrideName);
         }
 
         if (CFG.Current.Prefab_ApplySpecificEntityGroupID)
         {
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader("Entity Group ID", "The entity group ID to give to the imported map objects.");
+            GUI.Spacer();
+            GUI.SimpleHeader("Entity Group ID", "The entity group ID to give to the imported map objects.");
 
-            UIHelper.IntInput("OverrideEntityGroupID", ref CFG.Current.Prefab_SpecificEntityGroupID);
+            GUI.IntInput("OverrideEntityGroupID", ref CFG.Current.Prefab_SpecificEntityGroupID);
         }
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader("Actions", "");
+        GUI.Spacer();
+        GUI.SimpleHeader("Actions", "");
 
-        UIHelper.MultiButtonInput("importActions",
+        GUI.MultiButtonInput("importActions",
             "importPrefab", "Import", "Import a prefab from the prefab list.", ApplyPrefabImportAction,
             "importPrefabFromFile", "Import from File", "Import a prefab from an external prefab JSON file.", ImportPrefabFromFileAction);
 
@@ -159,31 +159,31 @@ public class PrefabTool
 
     public void DisplayExportMenu()
     {
-        UIHelper.WrappedText("Use this to export a set of pre-defined map objects.");
+        GUI.WrappedText("Use this to export a set of pre-defined map objects.");
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader("Name", "The name of the prefab to save.");
+        GUI.Spacer();
+        GUI.SimpleHeader("Name", "The name of the prefab to save.");
 
-        UIHelper.SinglelineTextInput("ExportedPrefabName", ref Prefab_EditName);
+        GUI.SinglelineTextInput("ExportedPrefabName", ref Prefab_EditName);
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader("Tags", "The tags to associate with the prefab.");
+        GUI.Spacer();
+        GUI.SimpleHeader("Tags", "The tags to associate with the prefab.");
 
-        UIHelper.SinglelineTextInput("ExportedPrefabTags", ref Prefab_EditFlags);
+        GUI.SinglelineTextInput("ExportedPrefabTags", ref Prefab_EditFlags);
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader("Options", "");
+        GUI.Spacer();
+        GUI.SimpleHeader("Options", "");
 
         ImGui.Checkbox("Retain Entity ID##prefabRetainEntityID", ref CFG.Current.Prefab_IncludeEntityID);
-        UIHelper.Tooltip("Saved objects within a prefab will retain their Entity ID. If false, their Entity ID is set to 0.");
+        GUI.Tooltip("Saved objects within a prefab will retain their Entity ID. If false, their Entity ID is set to 0.");
 
         ImGui.Checkbox("Retain Entity Group IDs##prefabRetainGroupEntityIDs", ref CFG.Current.Prefab_IncludeEntityGroupIDs);
-        UIHelper.Tooltip("Saved objects within a prefab will retain their Entity Group IDs. If false, their Entity Group IDs will be set to 0.");
+        GUI.Tooltip("Saved objects within a prefab will retain their Entity Group IDs. If false, their Entity Group IDs will be set to 0.");
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader("Actions", "");
+        GUI.Spacer();
+        GUI.SimpleHeader("Actions", "");
 
-        UIHelper.MultiButtonInput("exportPrefabActions",
+        GUI.MultiButtonInput("exportPrefabActions",
             "exportPrefab", "Export", "Export the current selection as a prefab.", CreateExportedPrefabAction,
             "deletePrefab", "Delete", "Delete the currently selected prefab in the Prefabs list.", DeleteSelectedPrefab,
             "replacePrefab", "Replace", "Replace the contents currently selected prefab in the Prefabs list with the current selection of map objects.", ReplaceSelectedPrefab);
@@ -252,8 +252,8 @@ public class PrefabTool
 
     public void PrefabTree(string imguiKey)
     {
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader("Prefabs", "");
+        GUI.Spacer();
+        GUI.SimpleHeader("Prefabs", "");
 
         if (ImGui.BeginChild($"PrefabEditorTree_{imguiKey}", ImGuiChildFlags.Borders))
         {

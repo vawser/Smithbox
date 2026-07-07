@@ -32,19 +32,19 @@ public class ValueSetFinder
 
         var windowWidth = ImGui.GetWindowWidth();
 
-        UIHelper.WrappedText(LOC.Get("PARAM_ValueSetFinder_Hint"));
+        GUI.WrappedText(LOC.Get("PARAM_ValueSetFinder_Hint"));
 
         // Search Text
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader(
+        GUI.Spacer();
+        GUI.SimpleHeader(
             LOC.Get("PARAM_DataFinder_Header_Search"),
             LOC.Get("PARAM_DataFinder_Header_Search_TT"));
 
-        UIHelper.SetInputWidth();
+        GUI.SetInputWidth();
         ImGui.InputTextWithHint($"{LOC.Get("PARAM_ValueSetFinder_Value_Set")}##searchText_{imguiID}", LOC.Get("PARAM_DataFinder_Search_Hint"), ref SearchText, 255);
-        UIHelper.Tooltip(LOC.Get("PARAM_ValueSetFinder_Search_TT"));
+        GUI.Tooltip(LOC.Get("PARAM_ValueSetFinder_Search_TT"));
 
-        UIHelper.MultiButtonInput("searchActions",
+        GUI.MultiButtonInput("searchActions",
             "search",
             LOC.Get("PARAM_DataFinder_Action_Search"),
             LOC.Get("PARAM_DataFinder_Action_Search_TT"),
@@ -55,23 +55,23 @@ public class ValueSetFinder
             LOC.Get("PARAM_DataFinder_Action_Clear_TT"),
             ClearSearch);
 
-        UIHelper.Spacer();
+        GUI.Spacer();
 
         // Result List
         if (Results.Count > 0)
         {
-            UIHelper.SimpleHeader(
+            GUI.SimpleHeader(
                 LOC.Get("PARAM_DataFinder_Header_Search_Results"),
                 LOC.Get("PARAM_DataFinder_Header_Search_Results_TT"));
 
-            UIHelper.WrappedText(LOC.Get("PARAM_DataFinder_Search_Term"));
-            UIHelper.DisplayAlias(CachedSearchText);
+            GUI.WrappedText(LOC.Get("PARAM_DataFinder_Search_Term"));
+            GUI.DisplayAlias(CachedSearchText);
 
-            UIHelper.WrappedText(LOC.Get("PARAM_DataFinder_Result_Count"));
-            UIHelper.DisplayAlias($"{Results.Count}");
+            GUI.WrappedText(LOC.Get("PARAM_DataFinder_Result_Count"));
+            GUI.DisplayAlias($"{Results.Count}");
 
-            UIHelper.Spacer();
-            UIHelper.WrappedText(LOC.Get("PARAM_ValueSetFinder_Results_Column_Header"));
+            GUI.Spacer();
+            GUI.WrappedText(LOC.Get("PARAM_ValueSetFinder_Results_Column_Header"));
 
             ImGui.BeginChild($"##resultSection_{imguiID}",
                 new Vector2(0, ImGui.GetContentRegionAvail().Y * 0.9f), ImGuiChildFlags.Borders);
@@ -91,7 +91,7 @@ public class ValueSetFinder
             ImGui.Text(LOC.Get("PARAM_DataFinder_No_Results"));
         }
 
-        UIHelper.WrappedText("");
+        GUI.WrappedText("");
 
     }
     public void ConductSearch()

@@ -21,15 +21,15 @@ public class BoxSelectionAction
 
     public void OnToolWindow()
     {
-        UIHelper.WrappedText("Use this to configure how the box selection functions.");
+        GUI.WrappedText("Use this to configure how the box selection functions.");
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader("Options", "");
+        GUI.Spacer();
+        GUI.SimpleHeader("Options", "");
         ImGui.Checkbox("Allow Box Selection", ref CFG.Current.Viewport_Enable_Box_Selection);
-        UIHelper.Tooltip($"Toggle the usage of box selection.\nHold Ctrl, Alt and left click to make a box selection.");
+        GUI.Tooltip($"Toggle the usage of box selection.\nHold Ctrl, Alt and left click to make a box selection.");
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader("Allowed Targets", "Which map objects can be selected by the box selection.");
+        GUI.Spacer();
+        GUI.SimpleHeader("Allowed Targets", "Which map objects can be selected by the box selection.");
 
         ImGui.Checkbox("Map Piece", ref CFG.Current.Viewport_Enable_Box_Selection_MapPiece);
 

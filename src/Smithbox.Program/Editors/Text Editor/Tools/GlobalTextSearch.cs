@@ -32,21 +32,21 @@ public class GlobalTextSearch
     {
         ImGui.BeginChild("TextSearchSection", ImGuiChildFlags.Borders);
 
-        UIHelper.SimpleHeader(
+        GUI.SimpleHeader(
             LOC.Get("TEXT_TextSearch_Header_Search_Filter"),
             LOC.Get("TEXT_TextSearch_Header_Search_Filter_TT"));
 
-        UIHelper.SinglelineTextInput("textSearchInput", ref searchTerm);
+        GUI.SinglelineTextInput("textSearchInput", ref searchTerm);
 
         // Filter Type
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader(
+        GUI.Spacer();
+        GUI.SimpleHeader(
             LOC.Get("TEXT_TextSearch_Header_Filter_Type"),
             LOC.Get("TEXT_TextSearch_Header_Filter_Type_TT"));
 
         var filterPreviewName = LOC.Get(filterType.GetDisplayName());
 
-        UIHelper.SetInputWidth();
+        GUI.SetInputWidth();
         if (ImGui.BeginCombo("##searchFilterType", filterPreviewName))
         {
             foreach (var entry in Enum.GetValues(typeof(SearchFilterType)))
@@ -63,16 +63,16 @@ public class GlobalTextSearch
 
             ImGui.EndCombo();
         }
-        UIHelper.Tooltip(LOC.Get("TEXT_TextSearch_Filter_Type_TT"));
+        GUI.Tooltip(LOC.Get("TEXT_TextSearch_Filter_Type_TT"));
 
         // Match Type
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader(
+        GUI.Spacer();
+        GUI.SimpleHeader(
             LOC.Get("TEXT_TextSearch_Header_Match_Type"),
             LOC.Get("TEXT_TextSearch_Header_Match_Type_TT"));
 
         var matchPreviewName = LOC.Get(matchType.GetDisplayName());
-        UIHelper.SetInputWidth();
+        GUI.SetInputWidth();
         if (ImGui.BeginCombo("##searchMatchType", matchPreviewName))
         {
             foreach (var entry in Enum.GetValues(typeof(SearchMatchType)))
@@ -89,24 +89,24 @@ public class GlobalTextSearch
 
             ImGui.EndCombo();
         }
-        UIHelper.Tooltip(LOC.Get("TEXT_TextSearch_Match_Type_TT"));
+        GUI.Tooltip(LOC.Get("TEXT_TextSearch_Match_Type_TT"));
 
         // Options
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader(
+        GUI.Spacer();
+        GUI.SimpleHeader(
             LOC.Get("TEXT_TextSearch_Header_Options"),
             LOC.Get("TEXT_TextSearch_Header_Options_TT"));
 
         ImGui.Checkbox($"{LOC.Get("TEXT_TextSearch_Checkbox_Ignore_Case")}##ignoreCase", ref ignoreCase);
-        UIHelper.Tooltip(LOC.Get("TEXT_TextSearch_Checkbox_Ignore_Case_TT"));
+        GUI.Tooltip(LOC.Get("TEXT_TextSearch_Checkbox_Ignore_Case_TT"));
 
         // Actions
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader(
+        GUI.Spacer();
+        GUI.SimpleHeader(
             LOC.Get("TEXT_TextSearch_Heder_Actions"),
             LOC.Get("TEXT_TextSearch_Heder_Actions_TT"));
 
-        UIHelper.MultiButtonInput("searchActions",
+        GUI.MultiButtonInput("searchActions",
             "searchText", 
             LOC.Get("TEXT_TextSearch_Action_Search"),
             LOC.Get("TEXT_TextSearch_Action_Search_TT"),
@@ -123,8 +123,8 @@ public class GlobalTextSearch
             CopyResultsToClipboard);
 
         // Results
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader(
+        GUI.Spacer();
+        GUI.SimpleHeader(
             LOC.Get("TEXT_TextSearch_Header_Results"),
             LOC.Get("TEXT_TextSearch_Header_Results_TT"));
 
@@ -183,7 +183,7 @@ public class GlobalTextSearch
         }
         else if(hasAlreadySearched)
         {
-            UIHelper.WrappedText(LOC.Get("TEXT_TextSearch_Already_Searched"));
+            GUI.WrappedText(LOC.Get("TEXT_TextSearch_Already_Searched"));
         }
 
         ImGui.EndChild();

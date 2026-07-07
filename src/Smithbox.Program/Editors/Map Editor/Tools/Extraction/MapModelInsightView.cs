@@ -94,20 +94,20 @@ public class MapModelInsightView
 
         var entry = View.ModelInsightTool.SelectedFlverEntry;
 
-        UIHelper.WrappedText("Use this to extract the currently selected model and/or textures.");
+        GUI.WrappedText("Use this to extract the currently selected model and/or textures.");
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader("Export Directory", "The directory to export the model/texture data to.");
-        UIHelper.SinglelineTextInput("extractDir", ref CFG.Current.MapEditor_ModelDataExtraction_DefaultOutputFolder);
+        GUI.Spacer();
+        GUI.SimpleHeader("Export Directory", "The directory to export the model/texture data to.");
+        GUI.SinglelineTextInput("extractDir", ref CFG.Current.MapEditor_ModelDataExtraction_DefaultOutputFolder);
 
-        UIHelper.MultiButtonInput("extractDirActions",
+        GUI.MultiButtonInput("extractDirActions",
             "setDirectory", "Set Export Directory", "", SetExportDirectory,
             "openDirectory", "Open Export Directory", "", OpenExportDirectory);
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader("Extraction Type", "");
+        GUI.Spacer();
+        GUI.SimpleHeader("Extraction Type", "");
 
-        UIHelper.SetInputWidth();
+        GUI.SetInputWidth();
         if (ImGui.BeginCombo("##extractTypeSelect", CFG.Current.MapEditor_ModelDataExtraction_Type.GetDisplayName()))
         {
             foreach (var typ in Enum.GetValues(typeof(ResourceExtractionType)))
@@ -124,23 +124,23 @@ public class MapModelInsightView
         }
         if (CFG.Current.MapEditor_ModelDataExtraction_Type is ResourceExtractionType.Loose)
         {
-            UIHelper.Tooltip("Files when extracted will be extracted loose and outside of the container files they normally reside in.");
+            GUI.Tooltip("Files when extracted will be extracted loose and outside of the container files they normally reside in.");
         }
         if (CFG.Current.MapEditor_ModelDataExtraction_Type is ResourceExtractionType.Contained)
         {
-            UIHelper.Tooltip("Files when extracted will be contained with the container files they belong to.");
+            GUI.Tooltip("Files when extracted will be contained with the container files they belong to.");
         }
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader("Options", "");
+        GUI.Spacer();
+        GUI.SimpleHeader("Options", "");
 
         ImGui.Checkbox("Include Folder", ref CFG.Current.MapEditor_ModelDataExtraction_IncludeFolder);
-        UIHelper.Tooltip("If enabled, a folder will be created to contain the files, titled with the name of the FLVER model.");
+        GUI.Tooltip("If enabled, a folder will be created to contain the files, titled with the name of the FLVER model.");
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader("Actions", "");
+        GUI.Spacer();
+        GUI.SimpleHeader("Actions", "");
 
-        UIHelper.MultiButtonInput("extractActions",
+        GUI.MultiButtonInput("extractActions",
             "extractModel", "Extract Model", "Extract the FLVER model for the current selection.", ExtractFlverAction,
             "extractTexture", "Extract Textures", "Extract the DDS texture files for the current selection.", ExtractTextureAction,
             "extractMaterial", "Extract Materials", "Extract the MTD or MATBIN that the textures are linked to for this current selection.", ExtractMaterialAction);
@@ -152,8 +152,8 @@ public class MapModelInsightView
     {
         var entry = View.ModelInsightTool.SelectedFlverEntry;
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader("flverHeader", "Model", "", UI.Current.ImGui_AliasName_Text);
+        GUI.Spacer();
+        GUI.SimpleHeader("flverHeader", "Model", "", UI.Current.ImGui_AliasName_Text);
 
         ImGui.Text($"Name: {entry.Name}");
         ImGui.Text($"Virtual Path: {entry.VirtualPath}");
@@ -164,16 +164,16 @@ public class MapModelInsightView
 
             if (listener.IsLoaded())
             {
-                UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, "LOADED");
+                GUI.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, "LOADED");
             }
             else
             {
-                UIHelper.WrappedTextColored(UI.Current.ImGui_Invalid_Text_Color, "UNLOADED");
+                GUI.WrappedTextColored(UI.Current.ImGui_Invalid_Text_Color, "UNLOADED");
             }
         }
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader("texHeader", "Textures", "", UI.Current.ImGui_AliasName_Text);
+        GUI.Spacer();
+        GUI.SimpleHeader("texHeader", "Textures", "", UI.Current.ImGui_AliasName_Text);
 
         foreach (var tex in entry.Entries)
         {
@@ -186,11 +186,11 @@ public class MapModelInsightView
 
                 if (listener.IsLoaded())
                 {
-                    UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, "LOADED");
+                    GUI.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, "LOADED");
                 }
                 else
                 {
-                    UIHelper.WrappedTextColored(UI.Current.ImGui_Invalid_Text_Color, "UNLOADED");
+                    GUI.WrappedTextColored(UI.Current.ImGui_Invalid_Text_Color, "UNLOADED");
                 }
             }
 

@@ -92,25 +92,25 @@ public class ParamDataTransferTool
         // Import
         if (ImGui.BeginTabItem($"{LOC.Get("PARAM_DataTransfer_Tab_Import")}##importTab"))
         {
-            UIHelper.WrappedText(LOC.Get("PARAM_DataTransfer_ImportTab_Hint"));
+            GUI.WrappedText(LOC.Get("PARAM_DataTransfer_ImportTab_Hint"));
 
             // CSV Input
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader(
+            GUI.Spacer();
+            GUI.SimpleHeader(
                 LOC.Get("PARAM_DataTransfer_Header_CSV_Input"),
                 LOC.Get("PARAM_DataTransfer_Header_CSV_Input_TT"));
 
-            UIHelper.MultilineTextInput("csvImportText", ref activeView.MassEdit.State.MassEditInput_CSV);
+            GUI.MultilineTextInput("csvImportText", ref activeView.MassEdit.State.MassEditInput_CSV);
 
             // Import Type
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader(
+            GUI.Spacer();
+            GUI.SimpleHeader(
                 LOC.Get("PARAM_DataTransfer_Header_Import_Type"),
                 LOC.Get("PARAM_DataTransfer_Header_Import_Type_TT"));
 
             var previewName = LOC.Get(ImportType.GetDisplayName());
 
-            UIHelper.SetInputWidth();
+            GUI.SetInputWidth();
             if (ImGui.BeginCombo("##csvImportType", previewName))
             {
                 foreach (var entry in Enum.GetValues(typeof(CsvImportType)))
@@ -131,26 +131,26 @@ public class ParamDataTransferTool
             // Specific Field for Impot
             if (ImportType is CsvImportType.SpecificField)
             {
-                UIHelper.Spacer();
-                UIHelper.SimpleHeader(
+                GUI.Spacer();
+                GUI.SimpleHeader(
                     LOC.Get("PARAM_DataTransfer_Header_Specific_Field"),
                     LOC.Get("PARAM_DataTransfer_Header_Specific_Field_TT"));
 
-                UIHelper.SinglelineTextInputWithHint("SpecificFieldInput", ref SpecificFieldName,
+                GUI.SinglelineTextInputWithHint("SpecificFieldInput", ref SpecificFieldName,
                     LOC.Get("PARAM_DataTransfer_Specific_Field_Hint"));
             }
 
             // Delimiter
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader(
+            GUI.Spacer();
+            GUI.SimpleHeader(
                 LOC.Get("PARAM_DataTransfer_Header_Delimiter"),
                 LOC.Get("PARAM_DataTransfer_Header_Delimiter_TT"));
 
             MassEditUtils.DelimiterInputText();
 
             // Options
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader(
+            GUI.Spacer();
+            GUI.SimpleHeader(
                 LOC.Get("PARAM_DataTransfer_Header_Options"),
                 LOC.Get("PARAM_DataTransfer_Header_Options_TT"));
 
@@ -158,7 +158,7 @@ public class ParamDataTransferTool
             ImGui.Checkbox($"{LOC.Get("PARAM_DataTransfer_Checkbox_Append_Mode")}##toggleAppendMode", 
                 ref CFG.Current.Param_CSV_Append_Only);
 
-            UIHelper.Tooltip(LOC.Get("PARAM_DataTransfer_Checkbox_Append_Mode_TT"));
+            GUI.Tooltip(LOC.Get("PARAM_DataTransfer_Checkbox_Append_Mode_TT"));
 
             if (CFG.Current.Param_CSV_Append_Only)
             {
@@ -166,16 +166,16 @@ public class ParamDataTransferTool
                 ImGui.Checkbox($"{LOC.Get("PARAM_DataTransfer_Checkbox_Replace_Existing")}##toggleReplaceExisting", 
                     ref CFG.Current.Param_CSV_Replace_Row);
 
-                UIHelper.Tooltip(LOC.Get("PARAM_DataTransfer_Checkbox_Replace_Existing_TT"));
+                GUI.Tooltip(LOC.Get("PARAM_DataTransfer_Checkbox_Replace_Existing_TT"));
             }
 
             // ACtions
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader(
+            GUI.Spacer();
+            GUI.SimpleHeader(
                 LOC.Get("PARAM_DataTransfer_Header_Actions"),
                 LOC.Get("PARAM_DataTransfer_Header_Actions_TT"));
 
-            UIHelper.MultiButtonInput("csvImportActions",
+            GUI.MultiButtonInput("csvImportActions",
                 "importCsv", 
                 LOC.Get("PARAM_DataTransfer_Action_Import"),
                 LOC.Get("PARAM_DataTransfer_Action_Import_TT"),
@@ -187,8 +187,8 @@ public class ParamDataTransferTool
                 ImportCsvFromFile);
 
             // Result
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader(
+            GUI.Spacer();
+            GUI.SimpleHeader(
                 LOC.Get("PARAM_DataTransfer_Header_Result"),
                 LOC.Get("PARAM_DataTransfer_Header_Result_TT"));
 
@@ -438,17 +438,17 @@ public class ParamDataTransferTool
         // Export
         if (ImGui.BeginTabItem($"{LOC.Get("PARAM_DataTransfer_Tab_Export")}##exportTab"))
         {
-            UIHelper.WrappedText(LOC.Get("PARAM_DataTransfer_ExportTab_Hint"));
+            GUI.WrappedText(LOC.Get("PARAM_DataTransfer_ExportTab_Hint"));
 
             // Export Type
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader(
+            GUI.Spacer();
+            GUI.SimpleHeader(
                 LOC.Get("PARAM_DataTransfer_Header_Export_Type"),
                 LOC.Get("PARAM_DataTransfer_Header_Export_Type_TT"));
 
             var previewName = LOC.Get(CsvExportType.GetDisplayName());
 
-            UIHelper.SetInputWidth();
+            GUI.SetInputWidth();
             if (ImGui.BeginCombo("##csvExportType", previewName))
             {
                 foreach (var entry in Enum.GetValues(typeof(CsvExportType)))
@@ -467,15 +467,15 @@ public class ParamDataTransferTool
             }
 
             // Export Directory
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader(
+            GUI.Spacer();
+            GUI.SimpleHeader(
                 LOC.Get("PARAM_DataTransfer_Header_Export_Directory"),
                 LOC.Get("PARAM_DataTransfer_Header_Export_Directory_TT"));
 
-            UIHelper.SinglelineTextInputWithHint("csvExportDir", ref ExportDirectory, 
+            GUI.SinglelineTextInputWithHint("csvExportDir", ref ExportDirectory, 
                 LOC.Get("PARAM_DataTransfer_Export_Dir_Hint"));
 
-            UIHelper.MultiButtonInput("csvExportDir",
+            GUI.MultiButtonInput("csvExportDir",
                 "setDirectory", 
                 LOC.Get("PARAM_DataTransfer_Action_Set_Export_Directory"),
                 LOC.Get("PARAM_DataTransfer_Action_Set_Export_Directory_TT"),
@@ -487,16 +487,16 @@ public class ParamDataTransferTool
                 OpenExportDirectory);
 
             // Export Filename
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader(
+            GUI.Spacer();
+            GUI.SimpleHeader(
                 LOC.Get("PARAM_DataTransfer_Header_Export_Filename"),
                 LOC.Get("PARAM_DataTransfer_Header_Export_Filename_TT"));
 
-            UIHelper.SinglelineTextInputWithHint("csvExportFilename", ref ExportFilename, LOC.Get("PARAM_DataTransfer_Export_Filename_Hint"));
+            GUI.SinglelineTextInputWithHint("csvExportFilename", ref ExportFilename, LOC.Get("PARAM_DataTransfer_Export_Filename_Hint"));
 
             // Export Output
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader(
+            GUI.Spacer();
+            GUI.SimpleHeader(
                 LOC.Get("PARAM_DataTransfer_Header_Export_Output"),
                 LOC.Get("PARAM_DataTransfer_Header_Export_Output_TT"));
 
@@ -506,21 +506,21 @@ public class ParamDataTransferTool
             ImGui.TextUnformatted(ExportString);
             ImGui.EndChild();
 
-            UIHelper.MultiButtonInput("csvOutputActions",
+            GUI.MultiButtonInput("csvOutputActions",
                 "copyToClipboard", 
                 LOC.Get("PARAM_DataTransfer_Action_Copy_to_Clipboard"),
                 LOC.Get("PARAM_DataTransfer_Action_Copy_to_Clipboard_TT"),
                 CopyOutputToClipboard);
 
             // Actions
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader(
+            GUI.Spacer();
+            GUI.SimpleHeader(
                 LOC.Get("PARAM_DataTransfer_Header_Actions"),
                 LOC.Get("PARAM_DataTransfer_Header_Actions_TT"));
 
             if(CsvExportType is CsvExportType.AllParams or CsvExportType.ModifiedParams)
             {
-                UIHelper.MultiButtonInput("csvMultipleExportActions",
+                GUI.MultiButtonInput("csvMultipleExportActions",
                     "exportCsvFile", 
                     LOC.Get("PARAM_DataTransfer_Action_Export_to_File"),
                     LOC.Get("PARAM_DataTransfer_Action_Export_to_File_TT"),
@@ -528,7 +528,7 @@ public class ParamDataTransferTool
             }
             else
             {
-                UIHelper.MultiButtonInput("csvSingleExportActions",
+                GUI.MultiButtonInput("csvSingleExportActions",
                     "exportCsvClipboard",
                     LOC.Get("PARAM_DataTransfer_Action_Copy_to_Clipboard"),
                     LOC.Get("PARAM_DataTransfer_Action_Copy_to_Clipboard_TT"),
@@ -1133,12 +1133,12 @@ public class ParamDataTransferTool
         // Toggle: Append New Rows
         ImGui.Checkbox($"{LOC.Get("PARAM_DataTransfer_Checkbox_Append_Mode")}##toggleAppendMode", 
             ref CFG.Current.Param_CSV_Append_Only);
-        UIHelper.Tooltip(LOC.Get("PARAM_DataTransfer_Checkbox_Append_Mode_TT"));
+        GUI.Tooltip(LOC.Get("PARAM_DataTransfer_Checkbox_Append_Mode_TT"));
 
         // Toggle: Replace Existing Rows
         ImGui.Checkbox($"{LOC.Get("PARAM_DataTransfer_Checkbox_Replace_Existing")}##toggleReplaceExisitng", 
             ref CFG.Current.Param_CSV_Replace_Row);
-        UIHelper.Tooltip(LOC.Get("PARAM_DataTransfer_Checkbox_Replace_Existing_TT"));
+        GUI.Tooltip(LOC.Get("PARAM_DataTransfer_Checkbox_Replace_Existing_TT"));
 
         var displayDelimiter = CFG.Current.Param_Export_Delimiter;
         if (displayDelimiter == "\t")
@@ -1147,7 +1147,7 @@ public class ParamDataTransferTool
         }
 
         // Delimiter
-        UIHelper.SimpleHeader(
+        GUI.SimpleHeader(
             LOC.Get("PARAM_DataTransfer_Header_Delimiter"),
             LOC.Get("PARAM_DataTransfer_Header_Delimiter_TT"));
 

@@ -29,7 +29,7 @@ public class ParamSortTool
                 SortRows();
             }
         }
-        UIHelper.Tooltip("This will sort the rows by ID. WARNING: this is not recommended as row index can be important.");
+        GUI.Tooltip("This will sort the rows by ID. WARNING: this is not recommended as row index can be important.");
     }
 
     public void Display()
@@ -38,13 +38,13 @@ public class ParamSortTool
         {
             ImGui.BeginChild("SortRowSection", ImGuiChildFlags.Borders);
 
-            UIHelper.WrappedText("Use this to sort the ordering of the rows within the currently selected param.");
-            UIHelper.WrappedText("This tool will respective row-index ordering for params with multiple rows of the same ID.");
+            GUI.WrappedText("Use this to sort the ordering of the rows within the currently selected param.");
+            GUI.WrappedText("This tool will respective row-index ordering for params with multiple rows of the same ID.");
 
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader("Actions", "");
+            GUI.Spacer();
+            GUI.SimpleHeader("Actions", "");
 
-            UIHelper.MultiButtonInput("sortActions",
+            GUI.MultiButtonInput("sortActions",
                 "sortRows", "Sort Rows", "", SortRows);
 
             ImGui.EndChild();

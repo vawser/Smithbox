@@ -60,7 +60,7 @@ public class ModelProperties
         if (CFG.Current.ModelEditor_Properties_Enable_Commmunity_Names)
             communityFieldNameMode = "Community";
 
-        UIHelper.Tooltip($"Toggle field name display type between Internal and Community.\nCurrent Mode: {communityFieldNameMode}");
+        GUI.Tooltip($"Toggle field name display type between Internal and Community.\nCurrent Mode: {communityFieldNameMode}");
 
         ImGui.EndChild();
 
@@ -397,7 +397,7 @@ public class ModelProperties
         }
 
         // Final description
-        UIHelper.Tooltip(text);
+        GUI.Tooltip(text);
     }
 
     private void DisplayModelPropertyLine(

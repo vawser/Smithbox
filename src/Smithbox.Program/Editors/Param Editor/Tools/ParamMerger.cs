@@ -49,11 +49,11 @@ public class ParamMerger
         {
             ImGui.BeginChild("ParamMergerToolSection", ImGuiChildFlags.Borders);
 
-            UIHelper.WrappedText("Select a compatible project below to merge into your current project.");
-            UIHelper.WrappedText("You will need to create a project for the external mod first, it will then appear below.");
-            UIHelper.WrappedText("");
+            GUI.WrappedText("Select a compatible project below to merge into your current project.");
+            GUI.WrappedText("You will need to create a project for the external mod first, it will then appear below.");
+            GUI.WrappedText("");
 
-            UIHelper.SimpleHeader("Compatible Projects:", "List of projects you can merge into your current project");
+            GUI.SimpleHeader("Compatible Projects:", "List of projects you can merge into your current project");
 
             var projectList = Smithbox.Orchestrator.Projects;
 
@@ -85,23 +85,23 @@ public class ParamMerger
 
             ImGui.EndChild();
 
-            UIHelper.MultiButtonInput("mergeActions",
+            GUI.MultiButtonInput("mergeActions",
                 "loadProject", "Load Selected Project", "", LoadProjectAction,
                 "mergeProject", "Merge Selected Project", "Merges the params from the selected project into our current project.", MergeParamsAction);
 
             // Options
-            UIHelper.WrappedText("");
-            UIHelper.SimpleHeader("Options", "Options to apply when merging.");
+            GUI.WrappedText("");
+            GUI.SimpleHeader("Options", "Options to apply when merging.");
 
             ImGui.Checkbox("Include Added", ref ParamMerge_IncludeAdded);
-            UIHelper.Tooltip("If enabled, added rows in the target project will be merged into this project.");
+            GUI.Tooltip("If enabled, added rows in the target project will be merged into this project.");
 
             ImGui.Checkbox("Include Modified", ref ParamMerge_IncludeModified);
-            UIHelper.Tooltip("If enabled, modified rows in the target project (compared to this project) will be merged into this project.");
+            GUI.Tooltip("If enabled, modified rows in the target project (compared to this project) will be merged into this project.");
 
             // Target Params
-            UIHelper.WrappedText("");
-            UIHelper.ConditionalHeader("Target Params", "The params to merge.", ref DisplayParamToggles);
+            GUI.WrappedText("");
+            GUI.ConditionalHeader("Target Params", "The params to merge.", ref DisplayParamToggles);
 
             // Generate bool dict once
             if (TargetParams.Count == 0)
@@ -114,9 +114,9 @@ public class ParamMerger
 
             if (DisplayParamToggles)
             {
-                UIHelper.HintTextInput("paramToggleFilter", ref TargetParamFilter, "Filter param list...");
+                GUI.HintTextInput("paramToggleFilter", ref TargetParamFilter, "Filter param list...");
 
-                UIHelper.MultiButtonInput("paramToggleActions",
+                GUI.MultiButtonInput("paramToggleActions",
                     "toggleAllParams", "Toggle All Params", "", ToggleParamsAction);
 
                 ImGui.BeginChild("ParamToggleList", new Vector2(0, ImGui.GetContentRegionAvail().Y * 0.9f), ImGuiChildFlags.Borders);

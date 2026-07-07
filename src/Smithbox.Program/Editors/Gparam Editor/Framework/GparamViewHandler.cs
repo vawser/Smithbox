@@ -129,8 +129,8 @@ public class GparamViewHandler
             }
 
             ImGui.SetNextWindowDockID(editorDockspaceId, ImGuiCond.FirstUseEver);
-            ImGui.SetNextWindowClass(ref UIHelper.DockGroup_GparamEditor);
-            if (ImGui.Begin($@"{displayTitle}###GparamEditorView##{view.ViewIndex}", UIHelper.GetInnerWindowFlags()))
+            ImGui.SetNextWindowClass(ref GUI.DockGroup_GparamEditor);
+            if (ImGui.Begin($@"{displayTitle}###GparamEditorView##{view.ViewIndex}", GUI.GetInnerWindowFlags()))
             {
                 if (ImGui.IsItemClicked(ImGuiMouseButton.Left))
                 {
@@ -158,7 +158,7 @@ public class GparamViewHandler
             }
 
             var dsid = ImGui.GetID($"DockSpace_GparamEditor_View{view.ViewIndex}");
-            ImGui.DockSpace(dsid, new Vector2(0, 0), ref UIHelper.DockGroup_GparamEditorView);
+            ImGui.DockSpace(dsid, new Vector2(0, 0), ref GUI.DockGroup_GparamEditorView);
 
             view.Display(dsid, view.ViewIndex, Editor.CommandQueue.DoFocus && view == activeView, view == activeView);
 

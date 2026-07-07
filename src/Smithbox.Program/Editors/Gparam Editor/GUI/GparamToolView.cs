@@ -82,13 +82,13 @@ public class GparamToolView
             {
                 CFG.Current.Interface_GparamEditor_Tool_QuickEdit = !CFG.Current.Interface_GparamEditor_Tool_QuickEdit;
             }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_GparamEditor_Tool_QuickEdit);
+            GUI.ShowActiveStatus(CFG.Current.Interface_GparamEditor_Tool_QuickEdit);
 
             if (ImGui.MenuItem("Finder"))
             {
                 CFG.Current.Interface_GparamEditor_Tool_Finder = !CFG.Current.Interface_GparamEditor_Tool_Finder;
             }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_GparamEditor_Tool_Finder);
+            GUI.ShowActiveStatus(CFG.Current.Interface_GparamEditor_Tool_Finder);
 
             ImGui.EndMenu();
         }

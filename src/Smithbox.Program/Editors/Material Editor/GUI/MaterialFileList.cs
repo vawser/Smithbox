@@ -36,7 +36,7 @@ public class MaterialFileList
 
     public void DisplayTitle()
     {
-        UIHelper.SimpleHeader($"File List", "");
+        GUI.SimpleHeader($"File List", "");
     }
 
     public void DisplayHeader()
@@ -59,7 +59,7 @@ public class MaterialFileList
         if (CFG.Current.MaterialEditor_FileList_DisplayFullPath)
             displayPathMode = "Display Full Path";
 
-        UIHelper.Tooltip($"Toggle the display of the full path.\nCurrent Mode: {displayPathMode}");
+        GUI.Tooltip($"Toggle the display of the full path.\nCurrent Mode: {displayPathMode}");
 
         ImGui.EndChild();
     }

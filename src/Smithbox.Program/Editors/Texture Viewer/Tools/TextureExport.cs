@@ -36,17 +36,17 @@ public class TextureExport
         {
             ImGui.BeginChild("TextureExportToolSection", ImGuiChildFlags.Borders);
 
-            UIHelper.WrappedText(LOC.Get("TEXVIEW_TexExport_Header_Data_Export_Hint"));
+            GUI.WrappedText(LOC.Get("TEXVIEW_TexExport_Header_Data_Export_Hint"));
 
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader(
+            GUI.Spacer();
+            GUI.SimpleHeader(
                 LOC.Get("TEXVIEW_TexExport_Header_Export_Directory"),
                 LOC.Get("TEXVIEW_TexExport_Header_Export_Directory_TT"));
 
-            UIHelper.SinglelineTextInput("exportDestinationInput", ref CFG.Current.TextureViewerToolbar_ExportTextureLocation);
+            GUI.SinglelineTextInput("exportDestinationInput", ref CFG.Current.TextureViewerToolbar_ExportTextureLocation);
 
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader(
+            GUI.Spacer();
+            GUI.SimpleHeader(
                 LOC.Get("TEXVIEW_TexExport_Header_Export_File_Type"),
                 LOC.Get("TEXVIEW_TexExport_Header_Export_File_Type_TT"));
 
@@ -69,29 +69,29 @@ public class TextureExport
                 }
                 ImGui.EndCombo();
             }
-            UIHelper.Tooltip(LOC.Get("TEXVIEW_TexExport_Export_Type_Select_TT"));
+            GUI.Tooltip(LOC.Get("TEXVIEW_TexExport_Export_Type_Select_TT"));
 
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader(
+            GUI.Spacer();
+            GUI.SimpleHeader(
                 LOC.Get("TEXVIEW_TexExport_Header_Options"),
                 LOC.Get("TEXVIEW_TexExport_Header_Options_TT"));
 
             ImGui.Checkbox(
                 $"{LOC.Get("TEXVIEW_TexExport_Checkbox_Include_Container_Folder")}##includeContainerFolderToggle", 
                 ref CFG.Current.TextureViewerToolbar_ExportTexture_IncludeFolder);
-            UIHelper.Tooltip(LOC.Get("TEXVIEW_TexExport_Checkbox_Include_Container_Folder_TT"));
+            GUI.Tooltip(LOC.Get("TEXVIEW_TexExport_Checkbox_Include_Container_Folder_TT"));
 
             ImGui.Checkbox(
                 $"{LOC.Get("TEXVIEW_TexExport_Checkbox_Display_Export_Confirm")}##exportConfirmToggle", 
                 ref CFG.Current.TextureViewerToolbar_ExportTexture_DisplayConfirm);
-            UIHelper.Tooltip(LOC.Get("TEXVIEW_TexExport_Checkbox_Display_Export_Confirm_TT"));
+            GUI.Tooltip(LOC.Get("TEXVIEW_TexExport_Checkbox_Display_Export_Confirm_TT"));
 
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader(
+            GUI.Spacer();
+            GUI.SimpleHeader(
                 LOC.Get("TEXVIEW_TexExport_Header_Actions"),
                 LOC.Get("TEXVIEW_TexExport_Header_Actions_TT"));
 
-            UIHelper.MultiButtonInput("exportDestinationActions",
+            GUI.MultiButtonInput("exportDestinationActions",
                 "selectExportDest", 
                 LOC.Get("TEXVIEW_TexExport_Action_Select_Export_Folder"),
                 LOC.Get("TEXVIEW_TexExport_Action_Select_Export_Folder_TT"),

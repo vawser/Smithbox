@@ -61,8 +61,8 @@ public class LocalSearchTool
     {
         var windowWidth = ImGui.GetWindowWidth();
 
-        UIHelper.WrappedText("Search loaded map for specific property values.");
-        UIHelper.WrappedText("");
+        GUI.WrappedText("Search loaded map for specific property values.");
+        GUI.WrappedText("");
 
         // propcache
         var selection = View.ViewportSelection.GetSingleFilteredSelection<Entity>();
@@ -72,7 +72,7 @@ public class LocalSearchTool
         }
         else
         {
-            UIHelper.SimpleHeader("Target Property", $"The internal type of the current selection is {selection.WrappedObject.GetType().Name}");
+            GUI.SimpleHeader("Target Property", $"The internal type of the current selection is {selection.WrappedObject.GetType().Name}");
 
             if (!ExplicitPropertyInput)
             {
@@ -97,13 +97,13 @@ public class LocalSearchTool
                     }
                     ImGui.EndCombo();
                 }
-                UIHelper.Tooltip("The target property to search across.");
+                GUI.Tooltip("The target property to search across.");
             }
             else if(ExplicitPropertyInput)
             {
-                UIHelper.SinglelineTextInput("PropertyName", ref _propertyNameSearchString, "Property");
+                GUI.SinglelineTextInput("PropertyName", ref _propertyNameSearchString, "Property");
 
-                UIHelper.MultiButtonInput("manualInputAction",
+                GUI.MultiButtonInput("manualInputAction",
                     "populateProperty", "Populate", "", PopulateForProperty);
             }
 
@@ -115,17 +115,17 @@ public class LocalSearchTool
             }
         }
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader("Options", "");
+        GUI.Spacer();
+        GUI.SimpleHeader("Options", "");
 
         if (ImGui.Checkbox("Include properties with same name", ref _propSearchMatchNameOnly))
         {
             newSearch = true;
         }
-        UIHelper.Tooltip("Includes properties that share the same name in the search.");
+        GUI.Tooltip("Includes properties that share the same name in the search.");
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader("Target Property", "");
+        GUI.Spacer();
+        GUI.SimpleHeader("Target Property", "");
 
         if (Property != null)
         {
@@ -136,8 +136,8 @@ public class LocalSearchTool
             ImGui.TextWrapped($"None");
         }
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader("Target Property Type", "");
+        GUI.Spacer();
+        GUI.SimpleHeader("Target Property Type", "");
 
         if (PropertyType != null)
         {
@@ -147,8 +147,8 @@ public class LocalSearchTool
         {
             ImGui.TextWrapped($"None");
         }
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader("Target Value", "");
+        GUI.Spacer();
+        GUI.SimpleHeader("Target Value", "");
 
         if (Property != null && PropertyType != null)
         {
@@ -159,15 +159,15 @@ public class LocalSearchTool
             ImGui.TextWrapped($"No property has been specified yet.");
         }
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader("Actions", "");
+        GUI.Spacer();
+        GUI.SimpleHeader("Actions", "");
 
-        UIHelper.MultiButtonInput("localSearchActions",
+        GUI.MultiButtonInput("localSearchActions",
             "searchProperty", "Search", "", SearchForPropertyValue);
 
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader("Results", "");
+        GUI.Spacer();
+        GUI.SimpleHeader("Results", "");
 
         ImGui.BeginChild("##localSearchResultsList", ImGuiChildFlags.Borders);
 

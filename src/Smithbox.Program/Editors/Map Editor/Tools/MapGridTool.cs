@@ -26,211 +26,211 @@ public class MapGridTool
         // Primary Configuration
         if (CurrentGridType is TargetMapGridType.Primary)
         {
-            UIHelper.SimpleHeader("Current Grid (Primary)", "");
+            GUI.SimpleHeader("Current Grid (Primary)", "");
 
-            UIHelper.MultiButtonInput("primaryActions",
+            GUI.MultiButtonInput("primaryActions",
                 "toggleGrid", "Toggle Grid Visibility", "", TogglePrimaryGrid);
 
             // Position
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader("Grid Position", "The position configuration for the grid.");
+            GUI.Spacer();
+            GUI.SimpleHeader("Grid Position", "The position configuration for the grid.");
 
             ImGui.InputFloat("X##gridPosX", ref CFG.Current.MapEditor_PrimaryGrid_Position_X);
-            UIHelper.Tooltip("The position of the grid on the X-axis.");
+            GUI.Tooltip("The position of the grid on the X-axis.");
 
             ImGui.InputFloat("Y##gridPosY", ref CFG.Current.MapEditor_PrimaryGrid_Position_Y);
-            UIHelper.Tooltip("The position of the grid on the Y-axis.");
+            GUI.Tooltip("The position of the grid on the Y-axis.");
 
             ImGui.InputFloat("Z##gridPosZ", ref CFG.Current.MapEditor_PrimaryGrid_Position_Z);
-            UIHelper.Tooltip("The position of the grid on the Z-axis.");
+            GUI.Tooltip("The position of the grid on the Z-axis.");
 
             // Rotation
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader("Grid Rotation", "The rotation configuration for the grid.");
+            GUI.Spacer();
+            GUI.SimpleHeader("Grid Rotation", "The rotation configuration for the grid.");
 
             ImGui.InputFloat("X##gridRotX", ref CFG.Current.MapEditor_PrimaryGrid_Rotation_X);
-            UIHelper.Tooltip("The rotation of the grid on the X-axis.");
+            GUI.Tooltip("The rotation of the grid on the X-axis.");
 
             ImGui.InputFloat("Y##gridRotY", ref CFG.Current.MapEditor_PrimaryGrid_Rotation_Y);
-            UIHelper.Tooltip("The rotation of the grid on the Y-axis.");
+            GUI.Tooltip("The rotation of the grid on the Y-axis.");
 
             ImGui.InputFloat("Z##gridRotZ", ref CFG.Current.MapEditor_PrimaryGrid_Rotation_Z);
-            UIHelper.Tooltip("The rotation of the grid on the Z-axis.");
+            GUI.Tooltip("The rotation of the grid on the Z-axis.");
 
             // Color
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader("Grid Color", "The color configuration for the grid.");
+            GUI.Spacer();
+            GUI.SimpleHeader("Grid Color", "The color configuration for the grid.");
 
             ImGui.ColorEdit3("##Color", ref CFG.Current.MapEditor_PrimaryGrid_Color);
             if (ImGui.IsItemDeactivatedAfterEdit())
             {
                 CFG.Current.MapEditor_RegeneratePrimaryGrid = true;
             }
-            UIHelper.Tooltip("The color of the grid.");
+            GUI.Tooltip("The color of the grid.");
 
             // Square Size
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader("Square Size", "The size configuration for the grid.");
+            GUI.Spacer();
+            GUI.SimpleHeader("Square Size", "The size configuration for the grid.");
 
             ImGui.InputFloat("##SquareSize", ref CFG.Current.MapEditor_PrimaryGrid_SectionSize);
             if (ImGui.IsItemDeactivatedAfterEdit())
             {
                 CFG.Current.MapEditor_RegeneratePrimaryGrid = true;
             }
-            UIHelper.Tooltip("The size of an individual grid square.");
+            GUI.Tooltip("The size of an individual grid square.");
 
             // Grid Size
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader("Grid Size", "The size configuration for the grid.");
+            GUI.Spacer();
+            GUI.SimpleHeader("Grid Size", "The size configuration for the grid.");
 
             ImGui.InputInt("##GridSize", ref CFG.Current.MapEditor_PrimaryGrid_Size);
             if (ImGui.IsItemDeactivatedAfterEdit())
             {
                 CFG.Current.MapEditor_RegeneratePrimaryGrid = true;
             }
-            UIHelper.Tooltip("The number of grid squares that make up the grid.");
+            GUI.Tooltip("The number of grid squares that make up the grid.");
         }
 
         // Secondary Configuration
         if (CurrentGridType is TargetMapGridType.Secondary)
         {
-            UIHelper.SimpleHeader("Current Grid (Secondary)", "");
+            GUI.SimpleHeader("Current Grid (Secondary)", "");
 
-            UIHelper.MultiButtonInput("secondaryActions",
+            GUI.MultiButtonInput("secondaryActions",
                 "toggleGrid", "Toggle Grid Visibility", "", ToggleSecondaryGrid);
 
             // Position
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader("Grid Position", "The position configuration for the grid.");
+            GUI.Spacer();
+            GUI.SimpleHeader("Grid Position", "The position configuration for the grid.");
 
             ImGui.InputFloat("X##gridPosX", ref CFG.Current.MapEditor_SecondaryGrid_Position_X);
-            UIHelper.Tooltip("The position of the grid on the X-axis.");
+            GUI.Tooltip("The position of the grid on the X-axis.");
 
             ImGui.InputFloat("Y##gridPosY", ref CFG.Current.MapEditor_SecondaryGrid_Position_Y);
-            UIHelper.Tooltip("The position of the grid on the Y-axis.");
+            GUI.Tooltip("The position of the grid on the Y-axis.");
 
             ImGui.InputFloat("Z##gridPosZ", ref CFG.Current.MapEditor_SecondaryGrid_Position_Z);
-            UIHelper.Tooltip("The position of the grid on the Z-axis.");
+            GUI.Tooltip("The position of the grid on the Z-axis.");
 
             // Rotation
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader("Grid Rotation", "The rotation configuration for the grid.");
+            GUI.Spacer();
+            GUI.SimpleHeader("Grid Rotation", "The rotation configuration for the grid.");
 
             ImGui.InputFloat("X##gridRotX", ref CFG.Current.MapEditor_SecondaryGrid_Rotation_X);
-            UIHelper.Tooltip("The rotation of the grid on the X-axis.");
+            GUI.Tooltip("The rotation of the grid on the X-axis.");
 
             ImGui.InputFloat("Y##gridRotY", ref CFG.Current.MapEditor_SecondaryGrid_Rotation_Y);
-            UIHelper.Tooltip("The rotation of the grid on the Y-axis.");
+            GUI.Tooltip("The rotation of the grid on the Y-axis.");
 
             ImGui.InputFloat("Z##gridRotZ", ref CFG.Current.MapEditor_SecondaryGrid_Rotation_Z);
-            UIHelper.Tooltip("The rotation of the grid on the Z-axis.");
+            GUI.Tooltip("The rotation of the grid on the Z-axis.");
 
             // Color
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader("Grid Color", "The color configuration for the grid.");
+            GUI.Spacer();
+            GUI.SimpleHeader("Grid Color", "The color configuration for the grid.");
 
             ImGui.ColorEdit3("##Color", ref CFG.Current.MapEditor_SecondaryGrid_Color);
             if (ImGui.IsItemDeactivatedAfterEdit())
             {
                 CFG.Current.MapEditor_RegenerateSecondaryGrid = true;
             }
-            UIHelper.Tooltip("The color of the grid.");
+            GUI.Tooltip("The color of the grid.");
 
             // Square Size
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader("Square Size", "The size configuration for the grid.");
+            GUI.Spacer();
+            GUI.SimpleHeader("Square Size", "The size configuration for the grid.");
 
             ImGui.InputFloat("##SquareSize", ref CFG.Current.MapEditor_SecondaryGrid_SectionSize);
             if (ImGui.IsItemDeactivatedAfterEdit())
             {
                 CFG.Current.MapEditor_RegenerateSecondaryGrid = true;
             }
-            UIHelper.Tooltip("The size of an individual grid square.");
+            GUI.Tooltip("The size of an individual grid square.");
 
             // Grid Size
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader("Grid Size", "The size configuration for the grid.");
+            GUI.Spacer();
+            GUI.SimpleHeader("Grid Size", "The size configuration for the grid.");
 
             ImGui.InputInt("##GridSize", ref CFG.Current.MapEditor_SecondaryGrid_Size);
             if (ImGui.IsItemDeactivatedAfterEdit())
             {
                 CFG.Current.MapEditor_RegenerateSecondaryGrid = true;
             }
-            UIHelper.Tooltip("The number of grid squares that make up the grid.");
+            GUI.Tooltip("The number of grid squares that make up the grid.");
         }
 
         // Tertiary Configuration
         if (CurrentGridType is TargetMapGridType.Tertiary)
         {
-            UIHelper.SimpleHeader("Current Grid (Tertiary)", "");
+            GUI.SimpleHeader("Current Grid (Tertiary)", "");
 
-            UIHelper.MultiButtonInput("tertiaryActions",
+            GUI.MultiButtonInput("tertiaryActions",
                 "toggleGrid", "Toggle Grid Visibility", "", ToggleTertiaryGrid);
 
             // Position
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader("Grid Position", "The position configuration for the grid.");
+            GUI.Spacer();
+            GUI.SimpleHeader("Grid Position", "The position configuration for the grid.");
 
             ImGui.InputFloat("X##gridPosX", ref CFG.Current.MapEditor_TertiaryGrid_Position_X);
-            UIHelper.Tooltip("The position of the grid on the X-axis.");
+            GUI.Tooltip("The position of the grid on the X-axis.");
 
             ImGui.InputFloat("Y##gridPosY", ref CFG.Current.MapEditor_TertiaryGrid_Position_Y);
-            UIHelper.Tooltip("The position of the grid on the Y-axis.");
+            GUI.Tooltip("The position of the grid on the Y-axis.");
 
             ImGui.InputFloat("Z##gridPosZ", ref CFG.Current.MapEditor_TertiaryGrid_Position_Z);
-            UIHelper.Tooltip("The position of the grid on the Z-axis.");
+            GUI.Tooltip("The position of the grid on the Z-axis.");
 
             // Rotation
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader("Grid Rotation", "The rotation configuration for the grid.");
+            GUI.Spacer();
+            GUI.SimpleHeader("Grid Rotation", "The rotation configuration for the grid.");
 
             ImGui.InputFloat("X##gridRotX", ref CFG.Current.MapEditor_TertiaryGrid_Rotation_X);
-            UIHelper.Tooltip("The rotation of the grid on the X-axis.");
+            GUI.Tooltip("The rotation of the grid on the X-axis.");
 
             ImGui.InputFloat("Y##gridRotY", ref CFG.Current.MapEditor_TertiaryGrid_Rotation_Y);
-            UIHelper.Tooltip("The rotation of the grid on the Y-axis.");
+            GUI.Tooltip("The rotation of the grid on the Y-axis.");
 
             ImGui.InputFloat("Z##gridRotZ", ref CFG.Current.MapEditor_TertiaryGrid_Rotation_Z);
-            UIHelper.Tooltip("The rotation of the grid on the Z-axis.");
+            GUI.Tooltip("The rotation of the grid on the Z-axis.");
 
             // Color
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader("Grid Color", "The color configuration for the grid.");
+            GUI.Spacer();
+            GUI.SimpleHeader("Grid Color", "The color configuration for the grid.");
 
             ImGui.ColorEdit3("##Color", ref CFG.Current.MapEditor_TertiaryGrid_Color);
             if (ImGui.IsItemDeactivatedAfterEdit())
             {
                 CFG.Current.MapEditor_RegenerateTertiaryGrid = true;
             }
-            UIHelper.Tooltip("The color of the grid.");
+            GUI.Tooltip("The color of the grid.");
 
             // Square Size
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader("Square Size", "The size configuration for the grid.");
+            GUI.Spacer();
+            GUI.SimpleHeader("Square Size", "The size configuration for the grid.");
 
             ImGui.InputFloat("##SquareSize", ref CFG.Current.MapEditor_TertiaryGrid_SectionSize);
             if (ImGui.IsItemDeactivatedAfterEdit())
             {
                 CFG.Current.MapEditor_RegenerateTertiaryGrid = true;
             }
-            UIHelper.Tooltip("The size of an individual grid square.");
+            GUI.Tooltip("The size of an individual grid square.");
 
             // Grid Size
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader("Grid Size", "The size configuration for the grid.");
+            GUI.Spacer();
+            GUI.SimpleHeader("Grid Size", "The size configuration for the grid.");
 
             ImGui.InputInt("##GridSize", ref CFG.Current.MapEditor_TertiaryGrid_Size);
             if (ImGui.IsItemDeactivatedAfterEdit())
             {
                 CFG.Current.MapEditor_RegenerateTertiaryGrid = true;
             }
-            UIHelper.Tooltip("The number of grid squares that make up the grid.");
+            GUI.Tooltip("The number of grid squares that make up the grid.");
         }
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader("Actions", "");
+        GUI.Spacer();
+        GUI.SimpleHeader("Actions", "");
 
-        UIHelper.MultiButtonInput("gridActions",
+        GUI.MultiButtonInput("gridActions",
             "setGridToPrimary", "View Primary Grid", "", ViewPrimaryGrid,
             "setGridToSecondary", "View Secondary Grid", "", ViewSecondaryGrid,
             "setGridToTertiary", "View Tertiary Grid", "", ViewTertiaryGrid);

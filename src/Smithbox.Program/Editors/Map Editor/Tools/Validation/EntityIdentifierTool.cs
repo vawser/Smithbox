@@ -32,17 +32,17 @@ public class EntityIdentifierTool
     /// </summary>
     public void OnToolWindow()
     {
-        UIHelper.WrappedText("Use this to determine the entity ids the map objects have for the current loaded map.");
+        GUI.WrappedText("Use this to determine the entity ids the map objects have for the current loaded map.");
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader("Actions", "");
+        GUI.Spacer();
+        GUI.SimpleHeader("Actions", "");
 
-        UIHelper.MultiButtonInput("entityIdActions",
+        GUI.MultiButtonInput("entityIdActions",
             "refreshList", "Refresh", "Refresh the data cache for the currently loaded map.", SetupEntityCache);
 
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader("List", "");
+        GUI.Spacer();
+        GUI.SimpleHeader("List", "");
 
         var searchHeight = new Vector2(0, 36) * DPI.UIScale();
         ImGui.BeginChild($"framedListFilter_EntityIdTool", searchHeight, ImGuiChildFlags.Borders);
@@ -55,7 +55,7 @@ public class EntityIdentifierTool
         {
             HideUnassigned = !HideUnassigned;
         }
-        UIHelper.Tooltip("Toggle the display of unassigned identifiers.");
+        GUI.Tooltip("Toggle the display of unassigned identifiers.");
 
         ImGui.SameLine();
 
@@ -74,7 +74,7 @@ public class EntityIdentifierTool
                 BlockSeperatorType = EntityIdBlockSeperatorType.None;
             }
         }
-        UIHelper.Tooltip("Toggle the block separator display within the list (none, every 1000, every 100).");
+        GUI.Tooltip("Toggle the block separator display within the list (none, every 1000, every 100).");
 
         ImGui.EndChild();
 
@@ -230,7 +230,7 @@ public class EntityIdentifierTool
 
                 if (entity == null)
                 {
-                    UIHelper.DisplayColoredAlias("Not assigned", UI.Current.ImGui_Invalid_Text_Color);
+                    GUI.DisplayColoredAlias("Not assigned", UI.Current.ImGui_Invalid_Text_Color);
                 }
                 else
                 {
@@ -255,7 +255,7 @@ public class EntityIdentifierTool
                         aliasStr = $"{entity.Name} ({actualAlias})";
                     }
 
-                    UIHelper.DisplayAlias(aliasStr);
+                    GUI.DisplayAlias(aliasStr);
                 }
             }
         }

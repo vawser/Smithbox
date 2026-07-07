@@ -46,7 +46,7 @@ public class AssetBrowserTool
         {
             DisplayAlias = !DisplayAlias;
         }
-        UIHelper.Tooltip("Toggle whether the asset alias is displayed.");
+        GUI.Tooltip("Toggle whether the asset alias is displayed.");
 
         ImGui.EndChild();
     }
@@ -145,7 +145,7 @@ public class AssetBrowserTool
 
             if (tooltip != "")
             {
-                UIHelper.Tooltip(tooltip);
+                GUI.Tooltip(tooltip);
             }
 
             ImGui.EndTable();

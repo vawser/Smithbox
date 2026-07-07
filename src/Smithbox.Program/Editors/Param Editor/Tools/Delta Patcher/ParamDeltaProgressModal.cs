@@ -49,7 +49,7 @@ public class ParamDeltaProgressModal
 
         if (!InitialLayout)
         {
-            UIHelper.SetupPopupWindow();
+            GUI.SetupPopupWindow();
             InitialLayout = true;
         }
 

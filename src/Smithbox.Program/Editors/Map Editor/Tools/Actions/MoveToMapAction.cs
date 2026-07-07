@@ -67,7 +67,7 @@ public class MoveToMapAction
 
             ImGui.EndMenu();
         }
-        UIHelper.Tooltip($"Move the selected map objects into another map.");
+        GUI.Tooltip($"Move the selected map objects into another map.");
     }
 
     /// <summary>
@@ -80,7 +80,7 @@ public class MoveToMapAction
         var sectionHeight = windowSize.Y * 0.25f;
         var sectionSize = new Vector2(sectionWidth * DPI.UIScale(), sectionHeight * DPI.UIScale());
 
-        UIHelper.SimpleHeader("Target Map", "Target Map", "The target map to duplicate the current selection to.", UI.Current.ImGui_Default_Text_Color);
+        GUI.SimpleHeader("Target Map", "Target Map", "The target map to duplicate the current selection to.", UI.Current.ImGui_Default_Text_Color);
 
         ImGui.BeginChild("##mapMoveSelectionSection", sectionSize, ImGuiChildFlags.Borders);
 
@@ -97,7 +97,7 @@ public class MoveToMapAction
                 }
 
                 var mapName = AliasHelper.GetMapNameAlias(View.Project, mapID);
-                UIHelper.DisplayAlias(mapName);
+                GUI.DisplayAlias(mapName);
             }
         }
 
@@ -105,7 +105,7 @@ public class MoveToMapAction
 
         if (TargetMap.Item2 == null)
         {
-            UIHelper.WrappedText("No map has been loaded or targeted.");
+            GUI.WrappedText("No map has been loaded or targeted.");
         }
         else
         {
@@ -131,7 +131,7 @@ public class MoveToMapAction
 
                 if (TargetBTL.Item2 == null)
                 {
-                    UIHelper.WrappedText("No BTL has been targeted.");
+                    GUI.WrappedText("No BTL has been targeted.");
                 }
             }
 

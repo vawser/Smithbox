@@ -126,8 +126,8 @@ public class MaterialViewHandler
             }
 
             ImGui.SetNextWindowDockID(editorDockspaceId, ImGuiCond.FirstUseEver);
-            ImGui.SetNextWindowClass(ref UIHelper.DockGroup_MaterialEditor);
-            if (ImGui.Begin($@"{displayTitle}###MaterialEditorView##{view.ViewIndex}", UIHelper.GetInnerWindowFlags()))
+            ImGui.SetNextWindowClass(ref GUI.DockGroup_MaterialEditor);
+            if (ImGui.Begin($@"{displayTitle}###MaterialEditorView##{view.ViewIndex}", GUI.GetInnerWindowFlags()))
             {
                 if (ImGui.IsItemClicked(ImGuiMouseButton.Left))
                 {
@@ -155,7 +155,7 @@ public class MaterialViewHandler
             }
 
             var dsid = ImGui.GetID($"DockSpace_MaterialEditor_View{view.ViewIndex}");
-            ImGui.DockSpace(dsid, new Vector2(0, 0), ref UIHelper.DockGroup_MaterialEditorView);
+            ImGui.DockSpace(dsid, new Vector2(0, 0), ref GUI.DockGroup_MaterialEditorView);
 
             view.Display(dsid, view.ViewIndex, Editor.CommandQueue.DoFocus && view == activeView, view == activeView);
 

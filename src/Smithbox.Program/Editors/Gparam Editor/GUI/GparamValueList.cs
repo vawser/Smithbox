@@ -37,7 +37,7 @@ public class GparamValueList
     }
     public void DisplayHeader()
     {
-        UIHelper.SimpleHeader("Values", "");
+        GUI.SimpleHeader("Values", "");
 
         // Search
         var searchHeight = new Vector2(0, 36) * DPI.UIScale();
@@ -59,7 +59,7 @@ public class GparamValueList
         {
             todColumnMode = "Hiding Time of Day column.";
         }
-        UIHelper.Tooltip($"Toggle the display of the Time of Day column.\nCurrent Mode: {todColumnMode}");
+        GUI.Tooltip($"Toggle the display of the Time of Day column.\nCurrent Mode: {todColumnMode}");
 
         // Information Toggle
         ImGui.SameLine();
@@ -74,7 +74,7 @@ public class GparamValueList
         {
             infoColumnMode = "Hiding Information column.";
         }
-        UIHelper.Tooltip($"Toggle the display of the Information column.\nCurrent Mode: {infoColumnMode}");
+        GUI.Tooltip($"Toggle the display of the Information column.\nCurrent Mode: {infoColumnMode}");
 
         ImGui.EndChild();
 
@@ -123,7 +123,7 @@ public class GparamValueList
     private void DisplayColumn_Row(FileDictionaryEntry fileEntry, GPARAM data, GPARAM.Param group, IField field)
     {
         ImGui.BeginChild("GparamPropList_Row");
-        UIHelper.SimpleHeader("Row", "");
+        GUI.SimpleHeader("Row", "");
 
         for (int i = 0; i < field.Values.Count; i++)
         {
@@ -167,7 +167,7 @@ public class GparamValueList
         ImGui.NextColumn();
 
         ImGui.BeginChild("GparamPropList_ID");
-        UIHelper.SimpleHeader("ID", "");
+        GUI.SimpleHeader("ID", "");
 
         for (int i = 0; i < field.Values.Count; i++)
         {
@@ -202,7 +202,7 @@ public class GparamValueList
         ImGui.NextColumn();
 
         ImGui.BeginChild("GparamPropList_TimeOfDay");
-        UIHelper.SimpleHeader("Time of Day", "");
+        GUI.SimpleHeader("Time of Day", "");
 
         for (int i = 0; i < field.Values.Count; i++)
         {
@@ -232,7 +232,7 @@ public class GparamValueList
         ImGui.NextColumn();
 
         ImGui.BeginChild("GparamPropList_Value");
-        UIHelper.SimpleHeader("Value", "");
+        GUI.SimpleHeader("Value", "");
 
         for (int i = 0; i < field.Values.Count; i++)
         {
@@ -265,7 +265,7 @@ public class GparamValueList
         ImGui.NextColumn();
 
         ImGui.BeginChild("GparamPropList_Info");
-        UIHelper.SimpleHeader("Information", "");
+        GUI.SimpleHeader("Information", "");
 
         GparamProperty_Info(field);
 
@@ -280,13 +280,13 @@ public class GparamValueList
         var fieldId = field.Key;
         var fieldDescription = GparamMetaUtils.GetFieldDescription(Project, groupId, fieldId);
 
-        UIHelper.WrappedText($"Type: {GparamUtils.GetReadableObjectTypeName(field)}");
-        UIHelper.WrappedText($"");
+        GUI.WrappedText($"Type: {GparamUtils.GetReadableObjectTypeName(field)}");
+        GUI.WrappedText($"");
 
         // Skip if empty
         if (fieldDescription != "")
         {
-            UIHelper.WrappedText($"{fieldDescription}");
+            GUI.WrappedText($"{fieldDescription}");
         }
 
         var fieldEnum = GparamMetaUtils.GetFieldEnum(Project, groupId, fieldId);
@@ -305,11 +305,11 @@ public class GparamValueList
 
                     if (name != null)
                     {
-                        UIHelper.WrappedText($"{entry.Key} - {name.Text}");
+                        GUI.WrappedText($"{entry.Key} - {name.Text}");
                     }
                     else
                     {
-                        UIHelper.WrappedText($"{entry.Key}");
+                        GUI.WrappedText($"{entry.Key}");
                     }
                 }
             }
@@ -324,7 +324,7 @@ public class GparamValueList
         {
             AddNewValue(fileEntry, data, group, field);
         }
-        UIHelper.Tooltip("Click to add new value.");
+        GUI.Tooltip("Click to add new value.");
 
         ImGui.EndGroup();
     }
@@ -390,7 +390,7 @@ public class GparamValueList
                     {
                         AddValues(data, group, field, new List<GPARAM.IFieldValue>() { value }, false);
                     }
-                    UIHelper.Tooltip("Duplicate the selected value row, assigning the specified ID below as the new id.");
+                    GUI.Tooltip("Duplicate the selected value row, assigning the specified ID below as the new id.");
 
                     ImGui.EndMenu();
                 }
@@ -402,7 +402,7 @@ public class GparamValueList
 
                     ImGui.CloseCurrentPopup();
                 }
-                UIHelper.Tooltip("Delete the value row.");
+                GUI.Tooltip("Delete the value row.");
 
                 ImGui.Separator();
 
@@ -411,13 +411,13 @@ public class GparamValueList
                 {
                     View.ToolView.DataTransferTool.ImportValue(Project, View, fileEntry, data, group, field, value, overwrite);
                 }
-                UIHelper.Tooltip("Import a GPARAM Value json to overwrite this entry.");
+                GUI.Tooltip("Import a GPARAM Value json to overwrite this entry.");
 
                 // Export
                 if (ImGui.BeginMenu("Export"))
                 {
                     ImGui.InputText("##overrideFilename", ref OverrideFileName, 255);
-                    UIHelper.Tooltip("Define the filename for the exported GPARAM Value file.");
+                    GUI.Tooltip("Define the filename for the exported GPARAM Value file.");
 
                     if (ImGui.Selectable("Export File"))
                     {
@@ -426,7 +426,7 @@ public class GparamValueList
 
                     ImGui.EndMenu();
                 }
-                UIHelper.Tooltip("Export this currently selected GPARAM Value to JSON.");
+                GUI.Tooltip("Export this currently selected GPARAM Value to JSON.");
 
                 ImGui.Separator();
 
@@ -461,7 +461,7 @@ public class GparamValueList
                             View.QuickEditHandler.UpdateValueRowFilter(fieldIndex);
                         }
                     }
-                    UIHelper.Tooltip("Add this value to the Value Filter in the Quick Edit window.");
+                    GUI.Tooltip("Add this value to the Value Filter in the Quick Edit window.");
 
                     if (ImGui.Selectable("Data Finder"))
                     {
@@ -480,7 +480,7 @@ public class GparamValueList
                             View.ToolView.DataFinder.UpdateValueRowFilter(fieldIndex);
                         }
                     }
-                    UIHelper.Tooltip("Add this value to the Value Filter in the Data Finder window.");
+                    GUI.Tooltip("Add this value to the Value Filter in the Data Finder window.");
 
                     ImGui.EndMenu();
                 }

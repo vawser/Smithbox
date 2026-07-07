@@ -34,11 +34,11 @@ public class RowNameFinder
 
         var windowWidth = ImGui.GetWindowWidth();
 
-        UIHelper.WrappedText(LOC.Get("PARAM_RowNameFinder_Hint"));
+        GUI.WrappedText(LOC.Get("PARAM_RowNameFinder_Hint"));
 
         // Targeted Param
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader(
+        GUI.Spacer();
+        GUI.SimpleHeader(
             LOC.Get("PARAM_DataFinder_Header_Target_Params"),
             LOC.Get("PARAM_DataFinder_Header_Target_Params_TT"));
 
@@ -47,7 +47,7 @@ public class RowNameFinder
         {
             TargetedParams.Add("");
         }
-        UIHelper.Tooltip(LOC.Get("PARAM_DataFinder_Action_Add_Param_Target_TT"));
+        GUI.Tooltip(LOC.Get("PARAM_DataFinder_Action_Add_Param_Target_TT"));
 
         ImGui.SameLine();
 
@@ -60,7 +60,7 @@ public class RowNameFinder
             {
                 TargetedParams.RemoveAt(TargetedParams.Count - 1);
             }
-            UIHelper.Tooltip(LOC.Get("PARAM_DataFinder_Action_Remove_Param_Target_TT"));
+            GUI.Tooltip(LOC.Get("PARAM_DataFinder_Action_Remove_Param_Target_TT"));
 
             ImGui.EndDisabled();
         }
@@ -70,7 +70,7 @@ public class RowNameFinder
             {
                 TargetedParams.RemoveAt(TargetedParams.Count - 1);
             }
-            UIHelper.Tooltip(LOC.Get("PARAM_DataFinder_Action_Remove_Param_Target_TT"));
+            GUI.Tooltip(LOC.Get("PARAM_DataFinder_Action_Remove_Param_Target_TT"));
         }
 
         ImGui.SameLine();
@@ -80,7 +80,7 @@ public class RowNameFinder
         {
             TargetedParams = new List<string>();
         }
-        UIHelper.Tooltip(LOC.Get("PARAM_DataFinder_Action_Reset_Param_Target_TT"));
+        GUI.Tooltip(LOC.Get("PARAM_DataFinder_Action_Reset_Param_Target_TT"));
 
         for (int i = 0; i < TargetedParams.Count; i++)
         {
@@ -92,27 +92,27 @@ public class RowNameFinder
             {
                 TargetedParams[i] = curText;
             }
-            UIHelper.Tooltip(LOC.Get("PARAM_DataFinder_Param_Target_Include_TT"));
+            GUI.Tooltip(LOC.Get("PARAM_DataFinder_Param_Target_Include_TT"));
         }
 
-        UIHelper.Spacer();
+        GUI.Spacer();
 
         // Search Text
-        UIHelper.SimpleHeader(
+        GUI.SimpleHeader(
             LOC.Get("PARAM_DataFinder_Header_Search"),
             LOC.Get("PARAM_DataFinder_Header_Search_TT"));
 
         // Row Index
-        UIHelper.SetInputWidth();
-        UIHelper.IntInput($"rowIndex_{imguiID}", ref SearchIndex, LOC.Get("PARAM_RowNameFinder_Input_Row_Index"));
-        UIHelper.Tooltip(LOC.Get("PARAM_RowNameFinder_Input_Row_Index_TT"));
+        GUI.SetInputWidth();
+        GUI.IntInput($"rowIndex_{imguiID}", ref SearchIndex, LOC.Get("PARAM_RowNameFinder_Input_Row_Index"));
+        GUI.Tooltip(LOC.Get("PARAM_RowNameFinder_Input_Row_Index_TT"));
 
         // Search Text
-        UIHelper.SetInputWidth();
+        GUI.SetInputWidth();
         ImGui.InputTextWithHint($"{LOC.Get("PARAM_RowNameFinder_Row_Name")}##searchText_{imguiID}", 
             LOC.Get("PARAM_DataFinder_Search_Hint"), ref SearchText, 255);
 
-        UIHelper.MultiButtonInput("searchActions",
+        GUI.MultiButtonInput("searchActions",
             "search",
             LOC.Get("PARAM_DataFinder_Action_Search"),
             LOC.Get("PARAM_DataFinder_Action_Search_TT"),
@@ -123,23 +123,23 @@ public class RowNameFinder
             LOC.Get("PARAM_DataFinder_Action_Clear_TT"),
             ClearSearch);
 
-        UIHelper.Spacer();
+        GUI.Spacer();
 
         // Result List
         if (Results.Count > 0)
         {
-            UIHelper.SimpleHeader(
+            GUI.SimpleHeader(
                 LOC.Get("PARAM_DataFinder_Header_Search_Results"),
                 LOC.Get("PARAM_DataFinder_Header_Search_Results_TT"));
 
-            UIHelper.WrappedText(LOC.Get("PARAM_DataFinder_Search_Term"));
-            UIHelper.DisplayAlias(CachedSearchText);
+            GUI.WrappedText(LOC.Get("PARAM_DataFinder_Search_Term"));
+            GUI.DisplayAlias(CachedSearchText);
 
-            UIHelper.WrappedText(LOC.Get("PARAM_DataFinder_Result_Count"));
-            UIHelper.DisplayAlias($"{Results.Count}");
+            GUI.WrappedText(LOC.Get("PARAM_DataFinder_Result_Count"));
+            GUI.DisplayAlias($"{Results.Count}");
 
-            UIHelper.Spacer();
-            UIHelper.WrappedText(LOC.Get("PARAM_RowNameFinder_Results_Column_Header"));
+            GUI.Spacer();
+            GUI.WrappedText(LOC.Get("PARAM_RowNameFinder_Results_Column_Header"));
 
             ImGui.BeginChild($"##resultSection_{imguiID}",
                 new Vector2(0, ImGui.GetContentRegionAvail().Y * 0.9f), ImGuiChildFlags.Borders);
@@ -159,7 +159,7 @@ public class RowNameFinder
             ImGui.Text(LOC.Get("PARAM_DataFinder_No_Results"));
         }
 
-        UIHelper.WrappedText("");
+        GUI.WrappedText("");
     }
 
     public void ConductSearch()

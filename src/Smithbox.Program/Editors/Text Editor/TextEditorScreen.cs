@@ -60,7 +60,7 @@ public class TextEditorScreen : EditorScreen
         }
 
         var dsid = ImGui.GetID("DockSpace_TextEditor");
-        ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None, ref UIHelper.DockGroup_TextEditor);
+        ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None, ref GUI.DockGroup_TextEditor);
 
         ViewHandler.HandleViews(dsid);
     }
@@ -92,12 +92,12 @@ public class TextEditorScreen : EditorScreen
                 {
                     CFG.Current.TextEditor_ManualSave_IncludeFMG = !CFG.Current.TextEditor_ManualSave_IncludeFMG;
                 }
-                UIHelper.Tooltip(LOC.Get("EDITOR_SaveOutput_FMG_TT"));
-                UIHelper.ShowActiveStatus(CFG.Current.TextEditor_ManualSave_IncludeFMG);
+                GUI.Tooltip(LOC.Get("EDITOR_SaveOutput_FMG_TT"));
+                GUI.ShowActiveStatus(CFG.Current.TextEditor_ManualSave_IncludeFMG);
 
                 ImGui.EndMenu();
             }
-            UIHelper.Tooltip(LOC.Get("EDITOR_Menubar_Manual_Save_Output_TT"));
+            GUI.Tooltip(LOC.Get("EDITOR_Menubar_Manual_Save_Output_TT"));
 
             // Automatic Save Output
             if (ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Auto_Save_Output")}##autoSaveMenuHeader"))
@@ -107,12 +107,12 @@ public class TextEditorScreen : EditorScreen
                 {
                     CFG.Current.TextEditor_AutomaticSave_IncludeFMG = !CFG.Current.TextEditor_AutomaticSave_IncludeFMG;
                 }
-                UIHelper.Tooltip(LOC.Get("EDITOR_SaveOutput_FMG_TT"));
-                UIHelper.ShowActiveStatus(CFG.Current.TextEditor_AutomaticSave_IncludeFMG);
+                GUI.Tooltip(LOC.Get("EDITOR_SaveOutput_FMG_TT"));
+                GUI.ShowActiveStatus(CFG.Current.TextEditor_AutomaticSave_IncludeFMG);
 
                 ImGui.EndMenu();
             }
-            UIHelper.Tooltip(LOC.Get("EDITOR_Menubar_Auto_Save_Output_TT"));
+            GUI.Tooltip(LOC.Get("EDITOR_Menubar_Auto_Save_Output_TT"));
 
             ImGui.EndMenu();
         }
@@ -160,21 +160,21 @@ public class TextEditorScreen : EditorScreen
                 {
                     activeView.TextEntryCreator.ShowModal = true;
                 }
-                UIHelper.Tooltip(LOC.Get("TEXT_Menubar_Action_Create_TT"));
+                GUI.Tooltip(LOC.Get("TEXT_Menubar_Action_Create_TT"));
 
                 // Duplicate
                 if (ImGui.MenuItem($"{LOC.Get("TEXT_Menubar_Action_Duplicate")}##duplicateAction", InputManager.GetHint(KeybindID.Duplicate)))
                 {
                     activeView.ActionHandler.DuplicateEntries();
                 }
-                UIHelper.Tooltip(LOC.Get("TEXT_Menubar_Action_Duplicate_TT"));
+                GUI.Tooltip(LOC.Get("TEXT_Menubar_Action_Duplicate_TT"));
 
                 // Delete
                 if (ImGui.MenuItem($"{LOC.Get("TEXT_Menubar_Action_Delete")}##deleteAction", InputManager.GetHint(KeybindID.Delete)))
                 {
                     activeView.ActionHandler.DeleteEntries();
                 }
-                UIHelper.Tooltip(LOC.Get("TEXT_Menubar_Action_Delete_TT"));
+                GUI.Tooltip(LOC.Get("TEXT_Menubar_Action_Delete_TT"));
             }
 
             ImGui.EndMenu();
@@ -191,7 +191,7 @@ public class TextEditorScreen : EditorScreen
             {
                 CFG.Current.Interface_TextEditor_ToolWindow = !CFG.Current.Interface_TextEditor_ToolWindow;
             }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_TextEditor_ToolWindow);
+            GUI.ShowActiveStatus(CFG.Current.Interface_TextEditor_ToolWindow);
 
             ImGui.Separator();
 

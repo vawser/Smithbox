@@ -42,30 +42,30 @@ public class ModelInstanceFinder
         {
             ImGui.BeginChild("ModelInstanceFinderToolSection", ImGuiChildFlags.Borders);
 
-            UIHelper.WrappedText("Search through all maps for usage of the specificed model name.");
+            GUI.WrappedText("Search through all maps for usage of the specificed model name.");
 
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader("Model Name", "");
+            GUI.Spacer();
+            GUI.SimpleHeader("Model Name", "");
 
-            UIHelper.SinglelineTextInput("ModelNameInput", ref _searchInput);
+            GUI.SinglelineTextInput("ModelNameInput", ref _searchInput);
 
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader("Options", "");
+            GUI.Spacer();
+            GUI.SimpleHeader("Options", "");
 
             ImGui.Checkbox("Target Project Files", ref _targetProjectFiles);
-            UIHelper.Tooltip("Uses the project map files instead of game root.");
+            GUI.Tooltip("Uses the project map files instead of game root.");
 
             ImGui.Checkbox("Loose Name Match", ref _looseModelNameMatch);
-            UIHelper.Tooltip("Only require the Model Name field to contain the search string, instead of requiring an exact match.");
+            GUI.Tooltip("Only require the Model Name field to contain the search string, instead of requiring an exact match.");
 
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader("Actions", "");
+            GUI.Spacer();
+            GUI.SimpleHeader("Actions", "");
 
-            UIHelper.MultiButtonInput("instanceActions",
+            GUI.MultiButtonInput("instanceActions",
                 "search", "Search", "", SearchMaps);
 
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader("Results", "");
+            GUI.Spacer();
+            GUI.SimpleHeader("Results", "");
 
             DisplayInstances();
 
@@ -87,15 +87,15 @@ public class ModelInstanceFinder
                     EditorCommandQueue.AddCommand($"map/select/{entry.MapName}/{entry.EntityName}/Part");
                 }
                 var aliasName = AliasHelper.GetMapNameAlias(View.Project, entry.MapName);
-                UIHelper.DisplayAlias(aliasName);
-                UIHelper.Tooltip("The value in the [] is the number of instances with the map.");
+                GUI.DisplayAlias(aliasName);
+                GUI.Tooltip("The value in the [] is the number of instances with the map.");
             }
 
             ImGui.EndChild();
         }
         else
         {
-            UIHelper.WrappedText("No results.");
+            GUI.WrappedText("No results.");
         }
     }
 

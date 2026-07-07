@@ -152,13 +152,13 @@ public class WorldMapTool : IResourceEventListener
                 {
                     CurrentMapSource = WorldMapImageSource.LandsBetween;
                 }
-                UIHelper.Tooltip($"Switch the map image to this.");
+                GUI.Tooltip($"Switch the map image to this.");
 
                 if (ImGui.MenuItem("Shadow of the Erdtree"))
                 {
                     CurrentMapSource = WorldMapImageSource.ShadowOfTheErdtree;
                 }
-                UIHelper.Tooltip($"Switch the map image to this.");
+                GUI.Tooltip($"Switch the map image to this.");
             }
 
             if (Project.Descriptor.ProjectType is ProjectType.NR)
@@ -167,37 +167,37 @@ public class WorldMapTool : IResourceEventListener
                 {
                     CurrentMapSource = WorldMapImageSource.Limveld;
                 }
-                UIHelper.Tooltip($"Switch the map image to this.");
+                GUI.Tooltip($"Switch the map image to this.");
 
                 if (ImGui.MenuItem("Limveld: Mountaintops"))
                 {
                     CurrentMapSource = WorldMapImageSource.Limveld_Mountaintops;
                 }
-                UIHelper.Tooltip($"Switch the map image to this.");
+                GUI.Tooltip($"Switch the map image to this.");
 
                 if (ImGui.MenuItem("Limveld: Crater"))
                 {
                     CurrentMapSource = WorldMapImageSource.Limveld_Crater;
                 }
-                UIHelper.Tooltip($"Switch the map image to this.");
+                GUI.Tooltip($"Switch the map image to this.");
 
                 if (ImGui.MenuItem("Limveld: Rotted Woods"))
                 {
                     CurrentMapSource = WorldMapImageSource.Limveld_Rotted_Woods;
                 }
-                UIHelper.Tooltip($"Switch the map image to this.");
+                GUI.Tooltip($"Switch the map image to this.");
 
                 if (ImGui.MenuItem("Limveld: Noklateo"))
                 {
                     CurrentMapSource = WorldMapImageSource.Limveld_Noklateo;
                 }
-                UIHelper.Tooltip($"Switch the map image to this.");
+                GUI.Tooltip($"Switch the map image to this.");
 
                 if (ImGui.MenuItem("Forsaken Hollows"))
                 {
                     CurrentMapSource = WorldMapImageSource.Forsaken_Hollows;
                 }
-                UIHelper.Tooltip($"Switch the map image to this.");
+                GUI.Tooltip($"Switch the map image to this.");
             }
 
             ImGui.EndMenu();
@@ -212,18 +212,18 @@ public class WorldMapTool : IResourceEventListener
             ImGui.Text("Determine how the map list filter functions.");
 
             ImGui.Checkbox("Include Small Tiles", ref CFG.Current.WorldMapFilter_IncludeSmallTiles);
-            UIHelper.Tooltip("Small tiles will be included in the map list filter.");
+            GUI.Tooltip("Small tiles will be included in the map list filter.");
 
             ImGui.Checkbox("Include Medium Tiles", ref CFG.Current.WorldMapFilter_IncludeMediumTiles);
-            UIHelper.Tooltip("Medium tiles will be included in the map list filter.");
+            GUI.Tooltip("Medium tiles will be included in the map list filter.");
 
             ImGui.Checkbox("Include Large Tiles", ref CFG.Current.WorldMapFilter_IncludeLargeTiles);
-            UIHelper.Tooltip("Large tiles will be included in the map list filter.");
+            GUI.Tooltip("Large tiles will be included in the map list filter.");
 
             if (Project.Descriptor.ProjectType is ProjectType.NR)
             {
                 ImGui.Checkbox("Restrict by Map Source", ref CFG.Current.WorldMapFilter_RestrictBySource);
-                UIHelper.Tooltip("Restrict the tiles to the current map source.");
+                GUI.Tooltip("Restrict the tiles to the current map source.");
             }
 
             ImGui.EndMenu();
@@ -235,19 +235,19 @@ public class WorldMapTool : IResourceEventListener
         if (ImGui.BeginMenu("Settings"))
         {
             ImGui.Checkbox("Lock Movement", ref CFG.Current.WorldMapLockMovement);
-            UIHelper.Tooltip($"If enabled, the window cannot be moved. Makes it easier to use the drag move to view the map.");
+            GUI.Tooltip($"If enabled, the window cannot be moved. Makes it easier to use the drag move to view the map.");
 
             ImGui.Checkbox("Display Tiles", ref CFG.Current.WorldMapDisplayTiles);
-            UIHelper.Tooltip($"If enabled, the tile shapes will overlay the map.");
+            GUI.Tooltip($"If enabled, the tile shapes will overlay the map.");
 
             ImGui.Checkbox("Display Small Tiles", ref CFG.Current.WorldMapDisplaySmallTiles);
-            UIHelper.Tooltip($"If enabled, the small tile shapes will overlay the map.");
+            GUI.Tooltip($"If enabled, the small tile shapes will overlay the map.");
 
             ImGui.Checkbox("Display Medium Tiles", ref CFG.Current.WorldMapDisplayMediumTiles);
-            UIHelper.Tooltip($"If enabled, the medium tile shapes will overlay the map.");
+            GUI.Tooltip($"If enabled, the medium tile shapes will overlay the map.");
 
             ImGui.Checkbox("Display Large Tiles", ref CFG.Current.WorldMapDisplayLargeTiles);
-            UIHelper.Tooltip($"If enabled, the large tile shapes will overlay the map.");
+            GUI.Tooltip($"If enabled, the large tile shapes will overlay the map.");
 
             ImGui.EndMenu();
         }
@@ -268,7 +268,7 @@ public class WorldMapTool : IResourceEventListener
         ImGui.SetNextWindowPos(center, ImGuiCond.Appearing, new Vector2(0.5f, 0.5f));
         ImGui.SetNextWindowSize(new Vector2(600.0f, 600.0f) * DPI.UIScale(), ImGuiCond.FirstUseEver);
 
-        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_MapEditor);
+        ImGui.SetNextWindowClass(ref GUI.DockGroup_MapEditor);
         ImGui.Begin("World Map##WorldMapImage", flags);
 
         if (ImGui.BeginMenuBar())

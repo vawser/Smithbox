@@ -128,8 +128,8 @@ public class FileViewHandler
             }
 
             ImGui.SetNextWindowDockID(editorDockspaceId, ImGuiCond.FirstUseEver);
-            ImGui.SetNextWindowClass(ref UIHelper.DockGroup_FileBrowser);
-            if (ImGui.Begin($@"{displayTitle}###FileBrowserView##{view.ViewIndex}", UIHelper.GetInnerWindowFlags()))
+            ImGui.SetNextWindowClass(ref GUI.DockGroup_FileBrowser);
+            if (ImGui.Begin($@"{displayTitle}###FileBrowserView##{view.ViewIndex}", GUI.GetInnerWindowFlags()))
             {
                 if (ImGui.IsItemClicked(ImGuiMouseButton.Left))
                 {
@@ -157,7 +157,7 @@ public class FileViewHandler
             }
 
             var dsid = ImGui.GetID($"DockSpace_fileBrowser_View{view.ViewIndex}");
-            ImGui.DockSpace(dsid, new Vector2(0, 0), ref UIHelper.DockGroup_FileBrowserView);
+            ImGui.DockSpace(dsid, new Vector2(0, 0), ref GUI.DockGroup_FileBrowserView);
 
             view.Display(dsid, view.ViewIndex, Editor.CommandQueue.DoFocus && view == activeView, view == activeView);
 

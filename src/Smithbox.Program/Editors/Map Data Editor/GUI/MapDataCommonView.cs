@@ -21,10 +21,10 @@ public class MapDataCommonView
 
     public void Draw(float width, float height)
     {
-        UIHelper.SimpleHeader("Editor Mode", "");
+        GUI.SimpleHeader("Editor Mode", "");
 
         ImGui.BeginChild("EditorModeSection", new Vector2(0, 40), ImGuiChildFlags.Borders);
-        UIHelper.SetInputWidth();
+        GUI.SetInputWidth();
         if (ImGui.BeginCombo("##subEditorMode", View.Selection.SubEditorMode.GetDisplayName()))
         {
             foreach (var entry in Enum.GetValues(typeof(SubEditorType)))

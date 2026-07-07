@@ -51,7 +51,7 @@ public class AnimEditorStub : IEditorStub
 
         ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(0.0f, 0.0f));
 
-        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_EditorView);
+        ImGui.SetNextWindowClass(ref GUI.DockGroup_EditorView);
         if (ImGui.Begin(EditorName, ImGuiWindowFlags.MenuBar))
         {
             ImGui.PopStyleColor(1);

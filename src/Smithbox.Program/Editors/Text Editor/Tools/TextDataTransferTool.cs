@@ -63,16 +63,16 @@ public class TextDataTransferTool
     {
         if (ImGui.BeginTabItem($"{LOC.Get("TEXT_DataTransfer_Tab_Import")}##importTab"))
         {
-            UIHelper.WrappedText(LOC.Get("TEXT_DataTransfer_Import_Hint"));
+            GUI.WrappedText(LOC.Get("TEXT_DataTransfer_Import_Hint"));
 
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader(
+            GUI.Spacer();
+            GUI.SimpleHeader(
                 LOC.Get("TEXT_DataTransfer_Header_Import_Type"),
                 LOC.Get("TEXT_DataTransfer_Header_Import_Type_TT"));
 
             var previewName = LOC.Get(ImportType.GetDisplayName());
 
-            UIHelper.SetInputWidth();
+            GUI.SetInputWidth();
             if (ImGui.BeginCombo("##importType", previewName))
             {
                 foreach (var entry in Enum.GetValues(typeof(TextImportMode)))
@@ -90,12 +90,12 @@ public class TextDataTransferTool
                 ImGui.EndCombo();
             }
 
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader(
+            GUI.Spacer();
+            GUI.SimpleHeader(
                 LOC.Get("TEXT_DataTransfer_Header_Actions"),
                 LOC.Get("TEXT_DataTransfer_Header_Actions_TT"));
 
-            UIHelper.MultiButtonInput("importActions",
+            GUI.MultiButtonInput("importActions",
                 "importTextFromFile", 
                 LOC.Get("TEXT_DataTransfer_Action_Import_From_File"),
                 LOC.Get("TEXT_DataTransfer_Action_Import_From_File_TT"),
@@ -151,7 +151,7 @@ public class TextDataTransferTool
 
                 ImGui.EndMenu();
             }
-            UIHelper.Tooltip(LOC.Get("TEXT_DataTransfer_Import_Container_TT"));
+            GUI.Tooltip(LOC.Get("TEXT_DataTransfer_Import_Container_TT"));
 
             if (ImGui.BeginMenu($"{LOC.Get("TEXT_DataTransfer_Header_Import_Text_File")}##textFileImport", View.Selection.SelectedFmgWrapper != null))
             {
@@ -159,7 +159,7 @@ public class TextDataTransferTool
 
                 ImGui.EndMenu();
             }
-            UIHelper.Tooltip(LOC.Get("TEXT_DataTransfer_Import_Text_File_TT"));
+            GUI.Tooltip(LOC.Get("TEXT_DataTransfer_Import_Text_File_TT"));
 
             if (ImGui.BeginMenu($"{LOC.Get("TEXT_DataTransfer_Header_Import_Text_Entry")}##textEntryImport", View.Selection._selectedFmgEntry != null))
             {
@@ -167,7 +167,7 @@ public class TextDataTransferTool
 
                 ImGui.EndMenu();
             }
-            UIHelper.Tooltip(LOC.Get("TEXT_DataTransfer_Import_Text_Entry_TT"));
+            GUI.Tooltip(LOC.Get("TEXT_DataTransfer_Import_Text_Entry_TT"));
 
             ImGui.EndMenu();
         }
@@ -179,16 +179,16 @@ public class TextDataTransferTool
     {
         if (ImGui.BeginTabItem($"{LOC.Get("TEXT_DataTransfer_Tab_Export")}##exportTab"))
         {
-            UIHelper.WrappedText(LOC.Get("TEXT_DataTransfer_Export_Hint"));
+            GUI.WrappedText(LOC.Get("TEXT_DataTransfer_Export_Hint"));
 
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader(
+            GUI.Spacer();
+            GUI.SimpleHeader(
                 LOC.Get("TEXT_DataTransfer_Header_Export_Directory"),
                 LOC.Get("TEXT_DataTransfer_Header_Export_Directory_TT"));
 
-            UIHelper.SinglelineTextInput("textExportDir", ref ExportDirectory);
+            GUI.SinglelineTextInput("textExportDir", ref ExportDirectory);
 
-            UIHelper.MultiButtonInput("textExportDir",
+            GUI.MultiButtonInput("textExportDir",
                 "setDirectory", 
                 LOC.Get("TEXT_DataTransfer_Action_Set_Export_Directory"),
                 LOC.Get("TEXT_DataTransfer_Action_Set_Export_Directory_TT"),
@@ -199,21 +199,21 @@ public class TextDataTransferTool
                 LOC.Get("TEXT_DataTransfer_Action_Open_Export_Directory_TT"),
                 OpenExportDirectory);
 
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader(
+            GUI.Spacer();
+            GUI.SimpleHeader(
                 LOC.Get("TEXT_DataTransfer_Header_Export_Filename"),
                 LOC.Get("TEXT_DataTransfer_Header_Export_Filename_TT"));
 
-            UIHelper.SinglelineTextInput("textExportFileName", ref ExportFilename);
+            GUI.SinglelineTextInput("textExportFileName", ref ExportFilename);
 
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader(
+            GUI.Spacer();
+            GUI.SimpleHeader(
                 LOC.Get("TEXT_DataTransfer_Header_Export_Type"),
                 LOC.Get("TEXT_DataTransfer_Header_Export_Type_TT"));
 
             var previewName = LOC.Get(ExportModifier.GetDisplayName());
 
-            UIHelper.SetInputWidth();
+            GUI.SetInputWidth();
             if (ImGui.BeginCombo("##exportType", previewName))
             {
                 foreach (var entry in Enum.GetValues(typeof(ExportModifier)))
@@ -231,8 +231,8 @@ public class TextDataTransferTool
                 ImGui.EndCombo();
             }
 
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader(
+            GUI.Spacer();
+            GUI.SimpleHeader(
                 LOC.Get("TEXT_DataTransfer_Header_Output"),
                 LOC.Get("TEXT_DataTransfer_Header_Output_TT"));
 
@@ -242,18 +242,18 @@ public class TextDataTransferTool
             ImGui.TextUnformatted(ExportString);
             ImGui.EndChild();
 
-            UIHelper.MultiButtonInput("csvOutputActions",
+            GUI.MultiButtonInput("csvOutputActions",
                 "copyToClipboard", 
                 LOC.Get("TEXT_DataTransfer_Action_Copy_To_Clipboard"),
                 LOC.Get("TEXT_DataTransfer_Action_Copy_To_Clipboard_TT"),
                 CopyOutputToClipboard);
 
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader(
+            GUI.Spacer();
+            GUI.SimpleHeader(
                 LOC.Get("TEXT_DataTransfer_Header_Actions"),
                 LOC.Get("TEXT_DataTransfer_Header_Actions_TT"));
 
-            UIHelper.MultiButtonInput("exportActions",
+            GUI.MultiButtonInput("exportActions",
                 "exportContainer", 
                 LOC.Get("TEXT_DataTransfer_Action_Export_Container"),
                 LOC.Get("TEXT_DataTransfer_Action_Export_Container_TT"),
@@ -447,18 +447,18 @@ public class TextDataTransferTool
                 {
                     View.FmgExporter.DisplayExportModal(ExportType.Container, ExportModifier.ModifiedOnly);
                 }
-                UIHelper.Tooltip(LOC.Get("TEXT_DataTransfer_Export_Modified_Text_TT"));
+                GUI.Tooltip(LOC.Get("TEXT_DataTransfer_Export_Modified_Text_TT"));
 
                 // Export Unique Text
                 if (ImGui.Selectable($"{LOC.Get("TEXT_DataTransfer_Export_Unique_Text")}##containerExportUniqueText"))
                 {
                     View.FmgExporter.DisplayExportModal(ExportType.Container, ExportModifier.UniqueOnly);
                 }
-                UIHelper.Tooltip(LOC.Get("TEXT_DataTransfer_Export_Unique_Text_TT"));
+                GUI.Tooltip(LOC.Get("TEXT_DataTransfer_Export_Unique_Text_TT"));
 
                 ImGui.EndMenu();
             }
-            UIHelper.Tooltip(LOC.Get("TEXT_DataTransfer_Menu_Header_Container_TT"));
+            GUI.Tooltip(LOC.Get("TEXT_DataTransfer_Menu_Header_Container_TT"));
 
             // Text File
             if (ImGui.BeginMenu($"{LOC.Get("TEXT_DataTransfer_Menu_Header_Text_File")}##textFileMenuHeader", View.Selection.SelectedFmgWrapper != null))
@@ -476,18 +476,18 @@ public class TextDataTransferTool
                 {
                     View.FmgExporter.DisplayExportModal(ExportType.FMG, ExportModifier.ModifiedOnly);
                 }
-                UIHelper.Tooltip(LOC.Get("TEXT_DataTransfer_Export_Modified_Text_TT"));
+                GUI.Tooltip(LOC.Get("TEXT_DataTransfer_Export_Modified_Text_TT"));
 
                 // Export Unique Text
                 if (ImGui.Selectable($"{LOC.Get("TEXT_DataTransfer_Export_Unique_Text")}##textFileExportUniqueText"))
                 {
                     View.FmgExporter.DisplayExportModal(ExportType.FMG, ExportModifier.UniqueOnly);
                 }
-                UIHelper.Tooltip(LOC.Get("TEXT_DataTransfer_Export_Unique_Text_TT"));
+                GUI.Tooltip(LOC.Get("TEXT_DataTransfer_Export_Unique_Text_TT"));
 
                 ImGui.EndMenu();
             }
-            UIHelper.Tooltip(LOC.Get("TEXT_DataTransfer_Menu_Header_Text_File_TT"));
+            GUI.Tooltip(LOC.Get("TEXT_DataTransfer_Menu_Header_Text_File_TT"));
 
             // Text Entry
             if (ImGui.BeginMenu($"{LOC.Get("TEXT_DataTransfer_Menu_Header_Text_Entry")}##textEntryMenuHEader", View.Selection._selectedFmgEntry != null))
@@ -505,18 +505,18 @@ public class TextDataTransferTool
                 {
                     View.FmgExporter.DisplayExportModal(ExportType.FMG_Entries, ExportModifier.ModifiedOnly);
                 }
-                UIHelper.Tooltip(LOC.Get("TEXT_DataTransfer_Export_Entry_Modified_Text_TT"));
+                GUI.Tooltip(LOC.Get("TEXT_DataTransfer_Export_Entry_Modified_Text_TT"));
 
                 // Export Unique Text
                 if (ImGui.Selectable($"{LOC.Get("TEXT_DataTransfer_Export_Unique_Text")}##textEntryExportUniqueText"))
                 {
                     View.FmgExporter.DisplayExportModal(ExportType.FMG_Entries, ExportModifier.UniqueOnly);
                 }
-                UIHelper.Tooltip(LOC.Get("TEXT_DataTransfer_Export_Entry_Unique_Text_TT"));
+                GUI.Tooltip(LOC.Get("TEXT_DataTransfer_Export_Entry_Unique_Text_TT"));
 
                 ImGui.EndMenu();
             }
-            UIHelper.Tooltip(LOC.Get("TEXT_DataTransfer_Menu_Header_Text_Entry_TT"));
+            GUI.Tooltip(LOC.Get("TEXT_DataTransfer_Menu_Header_Text_Entry_TT"));
 
             ImGui.EndMenu();
         }

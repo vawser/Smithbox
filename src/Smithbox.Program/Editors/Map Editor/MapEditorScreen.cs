@@ -73,7 +73,7 @@ public class MapEditorScreen : EditorScreen
         }
 
         var dsid = ImGui.GetID("DockSpace_MapEdit");
-        ImGui.DockSpace(dsid, new Vector2(0, 0), ref UIHelper.DockGroup_MapEditor);
+        ImGui.DockSpace(dsid, new Vector2(0, 0), ref GUI.DockGroup_MapEditor);
 
         ViewHandler.HandleViews(dsid);
 
@@ -107,15 +107,15 @@ public class MapEditorScreen : EditorScreen
                 {
                     CFG.Current.MapEditor_ManualSave_IncludeMSB = !CFG.Current.MapEditor_ManualSave_IncludeMSB;
                 }
-                UIHelper.Tooltip("If enabled, the map files are outputted on save.");
-                UIHelper.ShowActiveStatus(CFG.Current.MapEditor_ManualSave_IncludeMSB);
+                GUI.Tooltip("If enabled, the map files are outputted on save.");
+                GUI.ShowActiveStatus(CFG.Current.MapEditor_ManualSave_IncludeMSB);
 
                 if (ImGui.MenuItem($"BTL"))
                 {
                     CFG.Current.MapEditor_ManualSave_IncludeBTL = !CFG.Current.MapEditor_ManualSave_IncludeBTL;
                 }
-                UIHelper.Tooltip("If enabled, the light files are outputted on save.");
-                UIHelper.ShowActiveStatus(CFG.Current.MapEditor_ManualSave_IncludeBTL);
+                GUI.Tooltip("If enabled, the light files are outputted on save.");
+                GUI.ShowActiveStatus(CFG.Current.MapEditor_ManualSave_IncludeBTL);
 
                 if (activeView != null)
                 {
@@ -125,8 +125,8 @@ public class MapEditorScreen : EditorScreen
                         {
                             CFG.Current.MapEditor_ManualSave_IncludeAIP = !CFG.Current.MapEditor_ManualSave_IncludeAIP;
                         }
-                        UIHelper.Tooltip("If enabled, the auto invade point files are outputted on save.");
-                        UIHelper.ShowActiveStatus(CFG.Current.MapEditor_ManualSave_IncludeAIP);
+                        GUI.Tooltip("If enabled, the auto invade point files are outputted on save.");
+                        GUI.ShowActiveStatus(CFG.Current.MapEditor_ManualSave_IncludeAIP);
                     }
 
                     if (activeView.HavokNavmeshBank.CanUse())
@@ -135,8 +135,8 @@ public class MapEditorScreen : EditorScreen
                         {
                             CFG.Current.MapEditor_ManualSave_IncludeNVA = !CFG.Current.MapEditor_ManualSave_IncludeNVA;
                         }
-                        UIHelper.Tooltip("If enabled, the navmesh configuration files are outputted on save.");
-                        UIHelper.ShowActiveStatus(CFG.Current.MapEditor_ManualSave_IncludeNVA);
+                        GUI.Tooltip("If enabled, the navmesh configuration files are outputted on save.");
+                        GUI.ShowActiveStatus(CFG.Current.MapEditor_ManualSave_IncludeNVA);
                     }
 
                     if (activeView.LightAtlasBank.CanUse())
@@ -145,8 +145,8 @@ public class MapEditorScreen : EditorScreen
                         {
                             CFG.Current.MapEditor_ManualSave_IncludeBTAB = !CFG.Current.MapEditor_ManualSave_IncludeBTAB;
                         }
-                        UIHelper.Tooltip("If enabled, the light atlas files are outputted on save.");
-                        UIHelper.ShowActiveStatus(CFG.Current.MapEditor_ManualSave_IncludeBTAB);
+                        GUI.Tooltip("If enabled, the light atlas files are outputted on save.");
+                        GUI.ShowActiveStatus(CFG.Current.MapEditor_ManualSave_IncludeBTAB);
                     }
 
                     if (activeView.LightProbeBank.CanUse())
@@ -155,14 +155,14 @@ public class MapEditorScreen : EditorScreen
                         {
                             CFG.Current.MapEditor_ManualSave_IncludeBTPB = !CFG.Current.MapEditor_ManualSave_IncludeBTPB;
                         }
-                        UIHelper.Tooltip("If enabled, the light probe files are outputted on save.");
-                        UIHelper.ShowActiveStatus(CFG.Current.MapEditor_ManualSave_IncludeBTPB);
+                        GUI.Tooltip("If enabled, the light probe files are outputted on save.");
+                        GUI.ShowActiveStatus(CFG.Current.MapEditor_ManualSave_IncludeBTPB);
                     }
                 }
 
                 ImGui.EndMenu();
             }
-            UIHelper.Tooltip("Determines which files are outputted during the manual saving process.");
+            GUI.Tooltip("Determines which files are outputted during the manual saving process.");
 
             if (ImGui.BeginMenu("Output on Automatic Save"))
             {
@@ -170,15 +170,15 @@ public class MapEditorScreen : EditorScreen
                 {
                     CFG.Current.MapEditor_AutomaticSave_IncludeMSB = !CFG.Current.MapEditor_AutomaticSave_IncludeMSB;
                 }
-                UIHelper.Tooltip("If enabled, the map files are outputted on save.");
-                UIHelper.ShowActiveStatus(CFG.Current.MapEditor_AutomaticSave_IncludeMSB);
+                GUI.Tooltip("If enabled, the map files are outputted on save.");
+                GUI.ShowActiveStatus(CFG.Current.MapEditor_AutomaticSave_IncludeMSB);
 
                 if (ImGui.MenuItem($"BTL"))
                 {
                     CFG.Current.MapEditor_AutomaticSave_IncludeBTL = !CFG.Current.MapEditor_AutomaticSave_IncludeBTL;
                 }
-                UIHelper.Tooltip("If enabled, the light files are outputted on save.");
-                UIHelper.ShowActiveStatus(CFG.Current.MapEditor_AutomaticSave_IncludeBTL);
+                GUI.Tooltip("If enabled, the light files are outputted on save.");
+                GUI.ShowActiveStatus(CFG.Current.MapEditor_AutomaticSave_IncludeBTL);
 
                 if (activeView != null)
                 {
@@ -188,8 +188,8 @@ public class MapEditorScreen : EditorScreen
                         {
                             CFG.Current.MapEditor_AutomaticSave_IncludeAIP = !CFG.Current.MapEditor_AutomaticSave_IncludeAIP;
                         }
-                        UIHelper.Tooltip("If enabled, the auto invade point files are outputted on save.");
-                        UIHelper.ShowActiveStatus(CFG.Current.MapEditor_AutomaticSave_IncludeAIP);
+                        GUI.Tooltip("If enabled, the auto invade point files are outputted on save.");
+                        GUI.ShowActiveStatus(CFG.Current.MapEditor_AutomaticSave_IncludeAIP);
                     }
 
                     if (activeView.HavokNavmeshBank.CanUse())
@@ -198,8 +198,8 @@ public class MapEditorScreen : EditorScreen
                         {
                             CFG.Current.MapEditor_AutomaticSave_IncludeNVA = !CFG.Current.MapEditor_AutomaticSave_IncludeNVA;
                         }
-                        UIHelper.Tooltip("If enabled, the navmesh configuration files are outputted on save.");
-                        UIHelper.ShowActiveStatus(CFG.Current.MapEditor_AutomaticSave_IncludeNVA);
+                        GUI.Tooltip("If enabled, the navmesh configuration files are outputted on save.");
+                        GUI.ShowActiveStatus(CFG.Current.MapEditor_AutomaticSave_IncludeNVA);
                     }
 
                     if (activeView.LightAtlasBank.CanUse())
@@ -208,8 +208,8 @@ public class MapEditorScreen : EditorScreen
                         {
                             CFG.Current.MapEditor_AutomaticSave_IncludeBTAB = !CFG.Current.MapEditor_AutomaticSave_IncludeBTAB;
                         }
-                        UIHelper.Tooltip("If enabled, the light atlas files are outputted on save.");
-                        UIHelper.ShowActiveStatus(CFG.Current.MapEditor_AutomaticSave_IncludeBTAB);
+                        GUI.Tooltip("If enabled, the light atlas files are outputted on save.");
+                        GUI.ShowActiveStatus(CFG.Current.MapEditor_AutomaticSave_IncludeBTAB);
                     }
 
                     if (activeView.LightProbeBank.CanUse())
@@ -218,14 +218,14 @@ public class MapEditorScreen : EditorScreen
                         {
                             CFG.Current.MapEditor_AutomaticSave_IncludeBTPB = !CFG.Current.MapEditor_AutomaticSave_IncludeBTPB;
                         }
-                        UIHelper.Tooltip("If enabled, the light probe files are outputted on save.");
-                        UIHelper.ShowActiveStatus(CFG.Current.MapEditor_AutomaticSave_IncludeBTPB);
+                        GUI.Tooltip("If enabled, the light probe files are outputted on save.");
+                        GUI.ShowActiveStatus(CFG.Current.MapEditor_AutomaticSave_IncludeBTPB);
                     }
                 }
 
                 ImGui.EndMenu();
             }
-            UIHelper.Tooltip("Determines which files are outputted during the automatic saving process.");
+            GUI.Tooltip("Determines which files are outputted during the automatic saving process.");
 
             ImGui.EndMenu();
         }
@@ -311,13 +311,13 @@ public class MapEditorScreen : EditorScreen
             {
                 CFG.Current.Interface_MapEditor_ToolWindow = !CFG.Current.Interface_MapEditor_ToolWindow;
             }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_MapEditor_ToolWindow);
+            GUI.ShowActiveStatus(CFG.Current.Interface_MapEditor_ToolWindow);
 
             if (ImGui.MenuItem("Resource List"))
             {
                 CFG.Current.Interface_MapEditor_ResourceList = !CFG.Current.Interface_MapEditor_ResourceList;
             }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_MapEditor_ResourceList);
+            GUI.ShowActiveStatus(CFG.Current.Interface_MapEditor_ResourceList);
 
             ImGui.Separator();
 
@@ -432,14 +432,14 @@ public class MapEditorScreen : EditorScreen
                         activeView.PatrolDrawManager.Generate();
                         activeView.DelayPicking();
                     }
-                    UIHelper.Tooltip("Display the connections between patrol route nodes.");
+                    GUI.Tooltip("Display the connections between patrol route nodes.");
 
                     if (ImGui.MenuItem("Clear"))
                     {
                         activeView.PatrolDrawManager.Clear();
                         activeView.DelayPicking();
                     }
-                    UIHelper.Tooltip("Clear the display of connections between patrol route nodes.");
+                    GUI.Tooltip("Clear the display of connections between patrol route nodes.");
                 }
 
                 ImGui.EndMenu();
@@ -467,8 +467,8 @@ public class MapEditorScreen : EditorScreen
             activeView.HavokCollisionBank.RefreshCollision();
             activeView.DelayPicking();
         }
-        UIHelper.Tooltip("Visible collision will use the low-detail mesh.\nUsed for standard collision.");
-        UIHelper.ShowActiveStatus(activeView.HavokCollisionBank.VisibleCollisionType == HavokCollisionType.Low);
+        GUI.Tooltip("Visible collision will use the low-detail mesh.\nUsed for standard collision.");
+        GUI.ShowActiveStatus(activeView.HavokCollisionBank.VisibleCollisionType == HavokCollisionType.Low);
 
         if (ImGui.MenuItem("High"))
         {
@@ -478,8 +478,8 @@ public class MapEditorScreen : EditorScreen
             activeView.HavokCollisionBank.RefreshCollision();
             activeView.DelayPicking();
         }
-        UIHelper.Tooltip("Visible collision will use the high-detail mesh.\nUsed for IK.");
-        UIHelper.ShowActiveStatus(activeView.HavokCollisionBank.VisibleCollisionType == HavokCollisionType.High);
+        GUI.Tooltip("Visible collision will use the high-detail mesh.\nUsed for IK.");
+        GUI.ShowActiveStatus(activeView.HavokCollisionBank.VisibleCollisionType == HavokCollisionType.High);
 
         if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
         {
@@ -491,8 +491,8 @@ public class MapEditorScreen : EditorScreen
                 activeView.HavokCollisionBank.RefreshCollision();
                 activeView.DelayPicking();
             }
-            UIHelper.Tooltip("Visible collision will use the fall-protection mesh.\nUsed for enemy fall protection.");
-            UIHelper.ShowActiveStatus(activeView.HavokCollisionBank.VisibleCollisionType == HavokCollisionType.FallProtection);
+            GUI.Tooltip("Visible collision will use the fall-protection mesh.\nUsed for enemy fall protection.");
+            GUI.ShowActiveStatus(activeView.HavokCollisionBank.VisibleCollisionType == HavokCollisionType.FallProtection);
         }
     }
 
@@ -515,7 +515,7 @@ public class MapEditorScreen : EditorScreen
                         activeView.Universe.UnloadMap(activeView.Selection.SelectedMapID);
                     }
                 }
-                UIHelper.Tooltip("Unload the currently loaded and selected map.");
+                GUI.Tooltip("Unload the currently loaded and selected map.");
 
                 if (ImGui.MenuItem("Unload All"))
                 {
@@ -526,7 +526,7 @@ public class MapEditorScreen : EditorScreen
                         activeView.Universe.UnloadAllMaps();
                     }
                 }
-                UIHelper.Tooltip("Unload all loaded maps.");
+                GUI.Tooltip("Unload all loaded maps.");
 
                 if (ImGui.BeginMenu("List Filters"))
                 {
@@ -535,13 +535,13 @@ public class MapEditorScreen : EditorScreen
                         activeView.MapListFilterTool.SelectionMenu();
                         ImGui.EndMenu();
                     }
-                    UIHelper.Tooltip("Select an existing list filter to apply to the map list.");
+                    GUI.Tooltip("Select an existing list filter to apply to the map list.");
 
                     if (ImGui.MenuItem("Clear"))
                     {
                         activeView.MapListFilterTool.Clear();
                     }
-                    UIHelper.Tooltip("Clear the current list filter, resetting the filtering of the map list.");
+                    GUI.Tooltip("Clear the current list filter, resetting the filtering of the map list.");
 
                     ImGui.Separator();
 
@@ -550,25 +550,25 @@ public class MapEditorScreen : EditorScreen
                         activeView.MapListFilterTool.CreationMenu();
                         ImGui.EndMenu();
                     }
-                    UIHelper.Tooltip("Create a new list filter. The filter terms support regular expressions.");
+                    GUI.Tooltip("Create a new list filter. The filter terms support regular expressions.");
 
                     if (ImGui.BeginMenu("Edit"))
                     {
                         activeView.MapListFilterTool.EditMenu();
                         ImGui.EndMenu();
                     }
-                    UIHelper.Tooltip("Edit an existing list filter.");
+                    GUI.Tooltip("Edit an existing list filter.");
 
                     if (ImGui.BeginMenu("Delete"))
                     {
                         activeView.MapListFilterTool.DeleteMenu();
                         ImGui.EndMenu();
                     }
-                    UIHelper.Tooltip("Delete an existing list filter.");
+                    GUI.Tooltip("Delete an existing list filter.");
 
                     ImGui.EndMenu();
                 }
-                UIHelper.Tooltip("Select a list filter to narrow the map list down to a pre-defined set of maps.");
+                GUI.Tooltip("Select a list filter to narrow the map list down to a pre-defined set of maps.");
 
                 ImGui.EndMenu();
             }
@@ -581,15 +581,15 @@ public class MapEditorScreen : EditorScreen
                     {
                         activeView.MapContentView.ContentViewType = MapContentViewType.ObjectType;
                     }
-                    UIHelper.Tooltip("Display the content in the object type tree form.");
-                    UIHelper.ShowActiveStatus(activeView.MapContentView.ContentViewType == MapContentViewType.ObjectType);
+                    GUI.Tooltip("Display the content in the object type tree form.");
+                    GUI.ShowActiveStatus(activeView.MapContentView.ContentViewType == MapContentViewType.ObjectType);
 
                     if (ImGui.MenuItem("Flat"))
                     {
                         activeView.MapContentView.ContentViewType = MapContentViewType.Flat;
                     }
-                    UIHelper.Tooltip("Display the content in the flat form.");
-                    UIHelper.ShowActiveStatus(activeView.MapContentView.ContentViewType == MapContentViewType.Flat);
+                    GUI.Tooltip("Display the content in the flat form.");
+                    GUI.ShowActiveStatus(activeView.MapContentView.ContentViewType == MapContentViewType.Flat);
 
                     ImGui.EndMenu();
                 }
@@ -602,15 +602,15 @@ public class MapEditorScreen : EditorScreen
                     {
                         CFG.Current.MapEditor_MapObjectName_DisplayType = MapObjectNameDisplayType.Internal;
                     }
-                    UIHelper.Tooltip("Display the internal map object name only.");
-                    UIHelper.ShowActiveStatus(curType == MapObjectNameDisplayType.Internal);
+                    GUI.Tooltip("Display the internal map object name only.");
+                    GUI.ShowActiveStatus(curType == MapObjectNameDisplayType.Internal);
 
                     if (ImGui.MenuItem("Internal + Text"))
                     {
                         CFG.Current.MapEditor_MapObjectName_DisplayType = MapObjectNameDisplayType.Internal_FMG;
                     }
-                    UIHelper.Tooltip("Display the internal map object name with the associated FMG name as the alias.");
-                    UIHelper.ShowActiveStatus(curType == MapObjectNameDisplayType.Internal_FMG);
+                    GUI.Tooltip("Display the internal map object name with the associated FMG name as the alias.");
+                    GUI.ShowActiveStatus(curType == MapObjectNameDisplayType.Internal_FMG);
 
                     ImGui.EndMenu();
                 }

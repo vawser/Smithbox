@@ -37,13 +37,13 @@ public class TextExporterModal
             ImGui.BeginChild("TextExporterSection", new Vector2(200f * DPI.UIScale(), 0f),
                 ImGuiChildFlags.Borders | ImGuiChildFlags.AutoResizeY);
 
-            UIHelper.SimpleHeader(
+            GUI.SimpleHeader(
                 LOC.Get("TEXT_Exporter_Header_Filename"),
                 LOC.Get("TEXT_Exporter_Header_Filename_TT"));
 
-            UIHelper.SinglelineTextInput("wrapperFilename", ref WrapperName);
+            GUI.SinglelineTextInput("wrapperFilename", ref WrapperName);
 
-            UIHelper.MultiButtonInput("exportModalActions",
+            GUI.MultiButtonInput("exportModalActions",
                 "exportFile",
                 LOC.Get("TEXT_Exporter_Modal_Action_Export"),
                 LOC.Get("TEXT_Exporter_Modal_Action_Export_TT"),

@@ -71,7 +71,7 @@ public class AnimEditorScreen : EditorScreen
         }
 
         var dsid = ImGui.GetID("DockSpace_AnimEdit");
-        ImGui.DockSpace(dsid, new Vector2(0, 0), ref UIHelper.DockGroup_AnimEditor);
+        ImGui.DockSpace(dsid, new Vector2(0, 0), ref GUI.DockGroup_AnimEditor);
 
         ViewHandler.HandleViews();
 
@@ -103,19 +103,19 @@ public class AnimEditorScreen : EditorScreen
                 {
                     CFG.Current.AnimEditor_ManualSave_IncludeTAE = !CFG.Current.AnimEditor_ManualSave_IncludeTAE;
                 }
-                UIHelper.Tooltip("If enabled, the time act container files are outputted on save.");
-                UIHelper.ShowActiveStatus(CFG.Current.AnimEditor_ManualSave_IncludeTAE);
+                GUI.Tooltip("If enabled, the time act container files are outputted on save.");
+                GUI.ShowActiveStatus(CFG.Current.AnimEditor_ManualSave_IncludeTAE);
 
                 if (ImGui.MenuItem($"BEH"))
                 {
                     CFG.Current.AnimEditor_ManualSave_IncludeBEH = !CFG.Current.AnimEditor_ManualSave_IncludeBEH;
                 }
-                UIHelper.Tooltip("If enabled, the behavior container files are outputted on save.");
-                UIHelper.ShowActiveStatus(CFG.Current.AnimEditor_ManualSave_IncludeBEH);
+                GUI.Tooltip("If enabled, the behavior container files are outputted on save.");
+                GUI.ShowActiveStatus(CFG.Current.AnimEditor_ManualSave_IncludeBEH);
 
                 ImGui.EndMenu();
             }
-            UIHelper.Tooltip("Determines which files are outputted during the manual saving process.");
+            GUI.Tooltip("Determines which files are outputted during the manual saving process.");
 
             if (ImGui.BeginMenu("Output on Automatic Save"))
             {
@@ -123,19 +123,19 @@ public class AnimEditorScreen : EditorScreen
                 {
                     CFG.Current.AnimEditor_AutomaticSave_IncludeTAE = !CFG.Current.AnimEditor_AutomaticSave_IncludeTAE;
                 }
-                UIHelper.Tooltip("If enabled, the time act container files are outputted on save.");
-                UIHelper.ShowActiveStatus(CFG.Current.AnimEditor_AutomaticSave_IncludeTAE);
+                GUI.Tooltip("If enabled, the time act container files are outputted on save.");
+                GUI.ShowActiveStatus(CFG.Current.AnimEditor_AutomaticSave_IncludeTAE);
 
                 if (ImGui.MenuItem($"BEH"))
                 {
                     CFG.Current.AnimEditor_AutomaticSave_IncludeBEH = !CFG.Current.AnimEditor_AutomaticSave_IncludeBEH;
                 }
-                UIHelper.Tooltip("If enabled, the behavior container files are outputted on save.");
-                UIHelper.ShowActiveStatus(CFG.Current.AnimEditor_AutomaticSave_IncludeBEH);
+                GUI.Tooltip("If enabled, the behavior container files are outputted on save.");
+                GUI.ShowActiveStatus(CFG.Current.AnimEditor_AutomaticSave_IncludeBEH);
 
                 ImGui.EndMenu();
             }
-            UIHelper.Tooltip("Determines which files are outputted during the automatic saving process.");
+            GUI.Tooltip("Determines which files are outputted during the automatic saving process.");
 
 
             ImGui.EndMenu();
@@ -191,13 +191,13 @@ public class AnimEditorScreen : EditorScreen
             {
                 CFG.Current.Interface_AnimEditor_ToolWindow = !CFG.Current.Interface_AnimEditor_ToolWindow;
             }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_AnimEditor_ToolWindow);
+            GUI.ShowActiveStatus(CFG.Current.Interface_AnimEditor_ToolWindow);
 
             if (ImGui.MenuItem("Resource List"))
             {
                 CFG.Current.Interface_AnimEditor_ResourceList = !CFG.Current.Interface_AnimEditor_ResourceList;
             }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_AnimEditor_ResourceList);
+            GUI.ShowActiveStatus(CFG.Current.Interface_AnimEditor_ResourceList);
 
             ImGui.Separator();
 

@@ -493,7 +493,7 @@ public class InterfacePrefs
                 var flags = ImGuiColorEditFlags.AlphaOpaque;
 
                 // Theme Editor
-                UIHelper.SimpleHeader(
+                GUI.SimpleHeader(
                     LOC.Get("PREF_Theme_Editor"),
                     LOC.Get("PREF_Theme_Editor_TT"));
 
@@ -526,7 +526,7 @@ public class InterfacePrefs
                     ref UI.Current.ImGui_MenuBarBg, flags);
 
                 // Moveable Window
-                UIHelper.SimpleHeader(
+                GUI.SimpleHeader(
                     LOC.Get("PREF_Theme_Editor_Moveable_Window"),
                     LOC.Get("PREF_Theme_Editor_Moveable_Window_TT"));
 
@@ -555,7 +555,7 @@ public class InterfacePrefs
                     ref UI.Current.Imgui_Moveable_TitleBg_Active, flags);
 
                 // Scrollbar
-                UIHelper.SimpleHeader(
+                GUI.SimpleHeader(
                     LOC.Get("PREF_Theme_Editor_Scrollbar"),
                     LOC.Get("PREF_Theme_Editor_Scrollbar_TT"));
 
@@ -584,7 +584,7 @@ public class InterfacePrefs
                     ref UI.Current.ImGui_SliderGrab_Active, flags);
 
                 // Tab
-                UIHelper.SimpleHeader(
+                GUI.SimpleHeader(
                     LOC.Get("PREF_Theme_Editor_Tab"),
                     LOC.Get("PREF_Theme_Editor_Tab_TT"));
 
@@ -609,7 +609,7 @@ public class InterfacePrefs
                     ref UI.Current.ImGui_UnfocusedTab_Active, flags);
 
                 // Button
-                UIHelper.SimpleHeader(
+                GUI.SimpleHeader(
                     LOC.Get("PREF_Theme_Editor_Button"),
                     LOC.Get("PREF_Theme_Editor_Button_TT"));
 
@@ -626,7 +626,7 @@ public class InterfacePrefs
                     ref UI.Current.ImGui_ButtonActive, flags);
 
                 // Selection
-                UIHelper.SimpleHeader(
+                GUI.SimpleHeader(
                     LOC.Get("PREF_Theme_Editor_Selection"),
                     LOC.Get("PREF_Theme_Editor_Selection_TT"));
 
@@ -642,7 +642,7 @@ public class InterfacePrefs
                     $"{LOC.Get("PREF_CE_ImGui_Selection_Active")}##ImGui_Selection_Active",
                     ref UI.Current.ImGui_Selection_Active, flags);
 
-                UIHelper.SimpleHeader(
+                GUI.SimpleHeader(
                     LOC.Get("PREF_Theme_Editor_Inputs"),
                     LOC.Get("PREF_Theme_Editor_Inputs_TT"));
 
@@ -684,7 +684,7 @@ public class InterfacePrefs
                     ref UI.Current.ImGui_Input_DiffCompare_Background, flags);
 
                 // Backgrounds
-                UIHelper.SimpleHeader(
+                GUI.SimpleHeader(
                     LOC.Get("PREF_Theme_Editor_Backgrounds"),
                     LOC.Get("PREF_Theme_Editor_Backgrounds_TT"));
 
@@ -697,7 +697,7 @@ public class InterfacePrefs
                     ref UI.Current.ParamDiffBackgroundColor, flags);
 
                 // Text
-                UIHelper.SimpleHeader(
+                GUI.SimpleHeader(
                     LOC.Get("PREF_Theme_Editor_Text"),
                     LOC.Get("PREF_Theme_Editor_Text_TT"));
 
@@ -790,7 +790,7 @@ public class InterfacePrefs
                     ref UI.Current.ImGui_TextEditor_UniqueTextEntry_Text, flags);
 
                 // Logger
-                UIHelper.SimpleHeader(
+                GUI.SimpleHeader(
                     LOC.Get("PREF_Theme_Editor_Logger"),
                     LOC.Get("PREF_Theme_Editor_Logger_TT"));
 
@@ -807,7 +807,7 @@ public class InterfacePrefs
                     ref UI.Current.ImGui_Logger_Error_Color, flags);
 
                 // Display Group Tool
-                UIHelper.SimpleHeader(
+                GUI.SimpleHeader(
                     LOC.Get("PREF_Theme_Editor_Display_Group"),
                     LOC.Get("PREF_Theme_Editor_Display_Group_TT"));
 

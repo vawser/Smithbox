@@ -28,7 +28,7 @@ public class TexInternalFileList
     /// </summary>
     public void Display(float width, float height)
     {
-        UIHelper.SimpleHeader(
+        GUI.SimpleHeader(
             LOC.Get("TEXVIEW_InternalFileList_Header_Files"),
             LOC.Get("TEXVIEW_InternalFileList_Header_Files_TT"));
 
@@ -112,13 +112,13 @@ public class TexInternalFileList
                 {
                     _ = View.ToolView.TextureExport.ExportTPFAsync(tpf, filename);
                 }
-                UIHelper.Tooltip(LOC.Get("TEXVIEW_InternalFileList_Context_TPF_TT", CFG.Current.TextureViewerToolbar_ExportTextureLocation));
+                GUI.Tooltip(LOC.Get("TEXVIEW_InternalFileList_Context_TPF_TT", CFG.Current.TextureViewerToolbar_ExportTextureLocation));
 
                 if (ImGui.MenuItem($"{LOC.Get("TEXVIEW_InternalFileList_Context_All_Textures")}##allTexturesAction"))
                 {
                     _ = View.ToolView.TextureExport.ExportTexturesFromTPFAsync(tpf);
                 }
-                UIHelper.Tooltip(LOC.Get("TEXVIEW_InternalFileList_Context_All_Textures_TT", CFG.Current.TextureViewerToolbar_ExportTextureLocation));
+                GUI.Tooltip(LOC.Get("TEXVIEW_InternalFileList_Context_All_Textures_TT", CFG.Current.TextureViewerToolbar_ExportTextureLocation));
 
                 ImGui.EndMenu();
             }
@@ -129,13 +129,13 @@ public class TexInternalFileList
             {
                 ImGui.SetClipboardText(entry.Name);
             }
-            UIHelper.Tooltip(LOC.Get("TEXVIEW_InternalFileList_Context_Copy_Path_TT"));
+            GUI.Tooltip(LOC.Get("TEXVIEW_InternalFileList_Context_Copy_Path_TT"));
 
             if (ImGui.MenuItem($"{LOC.Get("TEXVIEW_InternalFileList_Context_Copy_Filename")}##copyFilename"))
             {
                 ImGui.SetClipboardText(filename);
             }
-            UIHelper.Tooltip(LOC.Get("TEXVIEW_InternalFileList_Context_Copy_Filename_TT"));
+            GUI.Tooltip(LOC.Get("TEXVIEW_InternalFileList_Context_Copy_Filename_TT"));
             ImGui.EndPopup();
         }
     }

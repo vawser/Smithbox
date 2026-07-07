@@ -63,12 +63,12 @@ public class GparamDataTransferTool
 
         if (ImGui.BeginTabItem($"Import"))
         {
-            UIHelper.WrappedText("Use this section to import JSON data, applying the data to your current project.");
+            GUI.WrappedText("Use this section to import JSON data, applying the data to your current project.");
 
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader("Value Import Type", "Determines how the data is applied.");
+            GUI.Spacer();
+            GUI.SimpleHeader("Value Import Type", "Determines how the data is applied.");
 
-            UIHelper.SetInputWidth();
+            GUI.SetInputWidth();
             if (ImGui.BeginCombo("##importType", ImportType.GetDisplayName()))
             {
                 foreach (var entry in Enum.GetValues(typeof(GparamImportType)))
@@ -84,10 +84,10 @@ public class GparamDataTransferTool
                 ImGui.EndCombo();
             }
 
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader("Actions", "");
+            GUI.Spacer();
+            GUI.SimpleHeader("Actions", "");
 
-            UIHelper.MultiButtonInput("importActions",
+            GUI.MultiButtonInput("importActions",
                 "importGparam", "Import GPARAM", "", ImportGparamAction,
                 "importGroup", "Import Group", "", ImportGroupAction,
                 "importField", "Import Field", "", ImportFieldAction,
@@ -238,31 +238,31 @@ public class GparamDataTransferTool
             {
                 ImportGPARAM(Project, View, fileEntry, curGparam);
             }
-            UIHelper.Tooltip("Replace the entire GPARAM from a previously exported JSON file.");
+            GUI.Tooltip("Replace the entire GPARAM from a previously exported JSON file.");
 
             // Param
             if (ImGui.MenuItem("Param", hasParam))
             {
                 ImportGroup(Project, View, fileEntry, curGparam, curParam);
             }
-            UIHelper.Tooltip("Replace the selected Param from a previously exported JSON file.");
+            GUI.Tooltip("Replace the selected Param from a previously exported JSON file.");
 
             // Field
             if (ImGui.MenuItem("Field", hasField))
             {
                 ImportField(Project, View, fileEntry, curGparam, curParam, curField);
             }
-            UIHelper.Tooltip("Replace the selected Field from a previously exported JSON file.");
+            GUI.Tooltip("Replace the selected Field from a previously exported JSON file.");
 
             // Field Value
             if (ImGui.MenuItem("Field Value", hasValue))
             {
                 ImportValue(Project, View, fileEntry, curGparam, curParam, curField, curValue, overwrite);
             }
-            UIHelper.Tooltip("Replace the selected Field Value from a previously exported JSON file.");
+            GUI.Tooltip("Replace the selected Field Value from a previously exported JSON file.");
 
             ImGui.Checkbox("Overwrite Value on Import", ref CFG.Current.GparamEditor_Data_Import_Overwrite);
-            UIHelper.Tooltip("If enabled, the imported data will overwrite existing values with the same ID. Only applies to values.");
+            GUI.Tooltip("If enabled, the imported data will overwrite existing values with the same ID. Only applies to values.");
 
 
             ImGui.EndMenu();
@@ -335,31 +335,31 @@ public class GparamDataTransferTool
     {
         if (ImGui.BeginTabItem($"Export"))
         {
-            UIHelper.WrappedText("Use this section to export JSON data from your current project.");
+            GUI.WrappedText("Use this section to export JSON data from your current project.");
 
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader("Export Directory", "The directory to export the CSV data to.");
-            UIHelper.SinglelineTextInput("csvExportDir", ref ExportDirectory);
+            GUI.Spacer();
+            GUI.SimpleHeader("Export Directory", "The directory to export the CSV data to.");
+            GUI.SinglelineTextInput("csvExportDir", ref ExportDirectory);
 
-            UIHelper.MultiButtonInput("csvExportDir",
+            GUI.MultiButtonInput("csvExportDir",
                 "setDirectory", "Set Export Directory", "", SetExportDirectory,
                 "openDirectory", "Open Export Directory", "", OpenExportDirectory);
 
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader("Output", "");
+            GUI.Spacer();
+            GUI.SimpleHeader("Output", "");
             // Has to use TextUnformatted as the CSV output string can be massive,
             // and it exceeds the internal buffers used by InputTextMultiline
             ImGui.BeginChild("OutputTextSection", new Vector2(0, 250), ImGuiChildFlags.Borders);
             ImGui.TextUnformatted(ExportString);
             ImGui.EndChild();
 
-            UIHelper.MultiButtonInput("csvOutputActions",
+            GUI.MultiButtonInput("csvOutputActions",
                 "copyToClipboard", "Copy to Clipboard", "Copy the output to the clibpaord", CopyOutputToClipboard);
 
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader("Actions", "");
+            GUI.Spacer();
+            GUI.SimpleHeader("Actions", "");
 
-            UIHelper.MultiButtonInput("exportActions",
+            GUI.MultiButtonInput("exportActions",
                 "exportGparam", "Export Selected GPARAM", "", ExportGparamAction,
                 "exportGroup", "Export Selected Group", "", ExportGroupAction,
                 "exportField", "Export Selected Field", "", ExportFieldAction,
@@ -516,7 +516,7 @@ public class GparamDataTransferTool
                 ExportDirectory = ""; // Clear this so the user is always prompted to select location 
                 ExportGparamFile(fileEntry, curGparam);
             }
-            UIHelper.Tooltip("Export the entire GPARAM to a JSON file.");
+            GUI.Tooltip("Export the entire GPARAM to a JSON file.");
 
             // Param
             if (ImGui.MenuItem("Param", hasParam))
@@ -524,7 +524,7 @@ public class GparamDataTransferTool
                 ExportDirectory = ""; // Clear this so the user is always prompted to select location
                 ExportGroupFile(fileEntry, curGparam, curParam);
             }
-            UIHelper.Tooltip("Export the selected Param to a JSON file.");
+            GUI.Tooltip("Export the selected Param to a JSON file.");
 
             // Field
             if (ImGui.MenuItem("Field", hasField))
@@ -532,7 +532,7 @@ public class GparamDataTransferTool
                 ExportDirectory = ""; // Clear this so the user is always prompted to select location
                 ExportFieldFile(fileEntry, curGparam, curParam, curField);
             }
-            UIHelper.Tooltip("Export the selected Field to a JSON file.");
+            GUI.Tooltip("Export the selected Field to a JSON file.");
 
             // Field Value
             if (ImGui.MenuItem("Field Value", hasValue))
@@ -540,7 +540,7 @@ public class GparamDataTransferTool
                 ExportDirectory = ""; // Clear this so the user is always prompted to select location
                 ExportValueFile(fileEntry, curGparam, curParam, curField, curValue);
             }
-            UIHelper.Tooltip("Export the selected Field Value to a JSON file.");
+            GUI.Tooltip("Export the selected Field Value to a JSON file.");
 
             ImGui.EndMenu();
         }

@@ -63,7 +63,7 @@ public class CreateAction
 
             ImGui.EndMenu();
         }
-        UIHelper.Tooltip($"Create a new map object.");
+        GUI.Tooltip($"Create a new map object.");
     }
 
     /// <summary>
@@ -79,12 +79,12 @@ public class CreateAction
     /// </summary>
     public void DisplayMenu()
     {
-        UIHelper.WrappedText("Use this to create a new map object within the target loaded map.");
+        GUI.WrappedText("Use this to create a new map object within the target loaded map.");
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader("Target Map", "The target map to duplicate the current selection to.");
+        GUI.Spacer();
+        GUI.SimpleHeader("Target Map", "The target map to duplicate the current selection to.");
 
-        UIHelper.SetInputWidth();
+        GUI.SetInputWidth();
         if (ImGui.BeginCombo("##targetMapSelect", TargetMap.Item1))
         {
             foreach (var entry in Project.Handler.MapData.PrimaryBank.Maps)
@@ -122,10 +122,10 @@ public class CreateAction
         if (map == null)
             return;
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader("Base Type", "The base type of the map object to create.");
+        GUI.Spacer();
+        GUI.SimpleHeader("Base Type", "The base type of the map object to create.");
 
-        UIHelper.SetInputWidth();
+        GUI.SetInputWidth();
         if (ImGui.BeginCombo("##targetBaseType", TargetBaseType.GetDisplayName()))
         {
             foreach (var entry in Enum.GetValues(typeof(CreateTargetType)))
@@ -181,10 +181,10 @@ public class CreateAction
         if (CFG.Current.Toolbar_Create_Light)
             return;
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader("Sub Type", "The sub type of the map object to create.");
+        GUI.Spacer();
+        GUI.SimpleHeader("Sub Type", "The sub type of the map object to create.");
 
-        UIHelper.SetInputWidth();
+        GUI.SetInputWidth();
 
         if (CFG.Current.Toolbar_Create_Part)
         {
@@ -264,10 +264,10 @@ public class CreateAction
         if (map == null)
             return;
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader("Actions", "");
+        GUI.Spacer();
+        GUI.SimpleHeader("Actions", "");
 
-        UIHelper.MultiButtonInput("createActions",
+        GUI.MultiButtonInput("createActions",
             "createObject", "Create Map Object", "", ApplyObjectCreation);
     }
 

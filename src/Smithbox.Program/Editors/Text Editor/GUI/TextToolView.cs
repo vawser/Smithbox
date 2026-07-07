@@ -106,37 +106,37 @@ public class TextToolView
             {
                 CFG.Current.Interface_TextEditor_Tool_EntryCreator = !CFG.Current.Interface_TextEditor_Tool_EntryCreator;
             }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_TextEditor_Tool_EntryCreator);
+            GUI.ShowActiveStatus(CFG.Current.Interface_TextEditor_Tool_EntryCreator);
 
             if (ImGui.MenuItem($"{LOC.Get("TEXT_Tools_View_Data_Transfer")}##dataTransferViewToggle"))
             {
                 CFG.Current.Interface_TextEditor_Tool_DataTransfer = !CFG.Current.Interface_TextEditor_Tool_DataTransfer;
             }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_TextEditor_Tool_DataTransfer);
+            GUI.ShowActiveStatus(CFG.Current.Interface_TextEditor_Tool_DataTransfer);
 
             if (ImGui.MenuItem($"{LOC.Get("TEXT_Tools_View_Language_Sync")}##languageSyncViewToggle"))
             {
                 CFG.Current.Interface_TextEditor_Tool_LanguageSync = !CFG.Current.Interface_TextEditor_Tool_LanguageSync;
             }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_TextEditor_Tool_LanguageSync);
+            GUI.ShowActiveStatus(CFG.Current.Interface_TextEditor_Tool_LanguageSync);
 
             if (ImGui.MenuItem($"{LOC.Get("TEXT_Tools_View_Text_Search")}##textSearchViewToggle"))
             {
                 CFG.Current.Interface_TextEditor_Tool_TextSearch = !CFG.Current.Interface_TextEditor_Tool_TextSearch;
             }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_TextEditor_Tool_TextSearch);
+            GUI.ShowActiveStatus(CFG.Current.Interface_TextEditor_Tool_TextSearch);
 
             if (ImGui.MenuItem($"{LOC.Get("TEXT_Tools_View_Text_Replacement")}##textReplacementViewToggle"))
             {
                 CFG.Current.Interface_TextEditor_Tool_TextReplacement = !CFG.Current.Interface_TextEditor_Tool_TextReplacement;
             }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_TextEditor_Tool_TextReplacement);
+            GUI.ShowActiveStatus(CFG.Current.Interface_TextEditor_Tool_TextReplacement);
 
             if (ImGui.MenuItem($"{LOC.Get("TEXT_Tools_View_Text_Merge")}##textMergeViewToggle"))
             {
                 CFG.Current.Interface_TextEditor_Tool_TextMerge = !CFG.Current.Interface_TextEditor_Tool_TextMerge;
             }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_TextEditor_Tool_TextMerge);
+            GUI.ShowActiveStatus(CFG.Current.Interface_TextEditor_Tool_TextMerge);
 
             ImGui.EndMenu();
         }

@@ -42,7 +42,7 @@ public class DuplicateAction
         {
             ApplyDuplicate();
         }
-        UIHelper.Tooltip($"Duplicate the currently selected map objects.\n\nShortcut: {InputManager.GetHint(KeybindID.Duplicate)}");
+        GUI.Tooltip($"Duplicate the currently selected map objects.\n\nShortcut: {InputManager.GetHint(KeybindID.Duplicate)}");
 
     }
 
@@ -55,7 +55,7 @@ public class DuplicateAction
         {
             ApplyDuplicate();
         }
-        UIHelper.Tooltip($"Duplicate the currently selected map objects.");
+        GUI.Tooltip($"Duplicate the currently selected map objects.");
     }
 
     /// <summary>
@@ -71,10 +71,10 @@ public class DuplicateAction
     /// </summary>
     public void DisplayMenu()
     {
-        UIHelper.WrappedText("Configure how the duplicate action works.");
+        GUI.WrappedText("Configure how the duplicate action works.");
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader("Options", "");
+        GUI.Spacer();
+        GUI.SimpleHeader("Options", "");
 
         if (View.Project.Descriptor.ProjectType != ProjectType.DS2S && View.Project.Descriptor.ProjectType != ProjectType.DS2)
         {
@@ -85,19 +85,19 @@ public class DuplicateAction
                     CFG.Current.Toolbar_Duplicate_Clear_Entity_ID = false;
                 }
             }
-            UIHelper.Tooltip("When enabled, the duplicated entities will be given a new valid Entity ID.");
+            GUI.Tooltip("When enabled, the duplicated entities will be given a new valid Entity ID.");
         }
 
         if (View.Project.Descriptor.ProjectType == ProjectType.ER || View.Project.Descriptor.ProjectType == ProjectType.AC6)
         {
             ImGui.Checkbox("Increment Instance ID", ref CFG.Current.Toolbar_Duplicate_Increment_InstanceID);
-            UIHelper.Tooltip("When enabled, the duplicated entities will be given a new valid Instance ID.");
+            GUI.Tooltip("When enabled, the duplicated entities will be given a new valid Instance ID.");
         }
 
         if (View.Project.Descriptor.ProjectType == ProjectType.ER || View.Project.Descriptor.ProjectType == ProjectType.AC6)
         {
             ImGui.Checkbox("Increment Part Names for Assets", ref CFG.Current.Toolbar_Duplicate_Increment_PartNames);
-            UIHelper.Tooltip("When enabled, the duplicated Asset entities PartNames property will be updated.");
+            GUI.Tooltip("When enabled, the duplicated Asset entities PartNames property will be updated.");
         }
 
         if (View.Project.Descriptor.ProjectType != ProjectType.DS2S && View.Project.Descriptor.ProjectType != ProjectType.DS2)
@@ -109,19 +109,19 @@ public class DuplicateAction
                     CFG.Current.Toolbar_Duplicate_Increment_Entity_ID = false;
                 }
             }
-            UIHelper.Tooltip("When enabled, the Entity ID assigned to the duplicated entities will be set to 0");
+            GUI.Tooltip("When enabled, the Entity ID assigned to the duplicated entities will be set to 0");
 
             ImGui.Checkbox("Clear Entity Group IDs", ref CFG.Current.Toolbar_Duplicate_Clear_Entity_Group_IDs);
-            UIHelper.Tooltip("When enabled, the Entity Group IDs assigned to the duplicated entities will be set to 0");
+            GUI.Tooltip("When enabled, the Entity Group IDs assigned to the duplicated entities will be set to 0");
         }
 
         ImGui.Checkbox("Place at List End", ref CFG.Current.Toolbar_Duplicate_Place_at_List_End);
-        UIHelper.Tooltip("When enabled, a duplicated map object is placed at the end of its category list, rather than after its source map object.");
+        GUI.Tooltip("When enabled, a duplicated map object is placed at the end of its category list, rather than after its source map object.");
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader("Actions", "");
+        GUI.Spacer();
+        GUI.SimpleHeader("Actions", "");
 
-        UIHelper.MultiButtonInput("duplicateActions",
+        GUI.MultiButtonInput("duplicateActions",
             "applyDuplicate", "Duplicate Selection", "", ApplyDuplicate);
     }
 

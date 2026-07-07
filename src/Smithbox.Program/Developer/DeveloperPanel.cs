@@ -69,7 +69,7 @@ public class DeveloperPanel
 
         var curProject = Smithbox.Orchestrator.SelectedProject;
 
-        if (ImGui.Begin($"{LOC.Get("DEV_Window_Developer_Panel")}###developerPanel", ref Visible, UIHelper.GetFloatingWindowFlags()))
+        if (ImGui.Begin($"{LOC.Get("DEV_Window_Developer_Panel")}###developerPanel", ref Visible, GUI.GetFloatingWindowFlags()))
         {
             ImGui.BeginTabBar("developerTabs");
 
@@ -78,7 +78,7 @@ public class DeveloperPanel
             {
                 ImGui.BeginChild("scriptSection", ImGuiChildFlags.Borders);
 
-                UIHelper.MultiButtonInput("script",
+                GUI.MultiButtonInput("script",
                     "scriptExecute",
                     LOC.Get("DEV_PNL_Action_Execute_Script"),
                     LOC.Get("DEV_PNL_Action_Execute_Script_TT"),
@@ -144,12 +144,12 @@ public class DeveloperPanel
             {
                 ImGui.BeginChild("validatorSection", ImGuiChildFlags.Borders);
 
-                UIHelper.Spacer();
-                UIHelper.SimpleHeader(
+                GUI.Spacer();
+                GUI.SimpleHeader(
                     LOC.Get("DEV_PNL_Header_Validator_Type"),
                     LOC.Get("DEV_PNL_Header_Validator_Type_TT"));
 
-                UIHelper.SetInputWidth();
+                GUI.SetInputWidth();
 
                 var previewName = LOC.Get(ValidatorType.GetDisplayName());
 
@@ -170,7 +170,7 @@ public class DeveloperPanel
                     ImGui.EndCombo();
                 }
 
-                UIHelper.Spacer();
+                GUI.Spacer();
 
                 if (ValidatorType is ValidatorType.None)
                 {

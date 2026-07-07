@@ -87,18 +87,18 @@ public class ParamDeltaPatcher
 
     public void DisplayImportTab()
     {
-        UIHelper.WrappedText(LOC.Get("PARAM_DeltaPatcher_Import_Hint"));
+        GUI.WrappedText(LOC.Get("PARAM_DeltaPatcher_Import_Hint"));
 
         // Import Mode
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader(
+        GUI.Spacer();
+        GUI.SimpleHeader(
             LOC.Get("PARAM_DeltaPatcher_Header_Import_Mode"),
             LOC.Get("PARAM_DeltaPatcher_Header_Import_Mode_TT"));
 
         var previewName = LOC.Get(ImportMode.GetDisplayName());
 
         // Current Import Mode
-        UIHelper.SetInputWidth();
+        GUI.SetInputWidth();
         if (ImGui.BeginCombo("##importMode", previewName))
         {
             foreach (var entry in Enum.GetValues(typeof(DeltaImportMode)))
@@ -117,8 +117,8 @@ public class ParamDeltaPatcher
         }
 
         // Options
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader(
+        GUI.Spacer();
+        GUI.SimpleHeader(
             LOC.Get("PARAM_DeltaPatcher_Header_Options"),
             LOC.Get("PARAM_DeltaPatcher_Header_Options_TT"));
 
@@ -130,44 +130,44 @@ public class ParamDeltaPatcher
         {
             Selection.RefreshImportList();
         }
-        UIHelper.Tooltip(LOC.Get("PARAM_DeltaPatcher_Checkbox_Display_All_TT"));
+        GUI.Tooltip(LOC.Get("PARAM_DeltaPatcher_Checkbox_Display_All_TT"));
 
         // Toggle: Include Modified Rows
         ImGui.Checkbox($"{LOC.Get("PARAM_DeltaPatcher_Checkbox_Include_Modified")}##includeModifiedToggle",
             ref CFG.Current.ParamEditor_DeltaPatcher_Import_Modified_Rows);
-        UIHelper.Tooltip(LOC.Get("PARAM_DeltaPatcher_Checkbox_Include_Modified_TT"));
+        GUI.Tooltip(LOC.Get("PARAM_DeltaPatcher_Checkbox_Include_Modified_TT"));
 
         // Toggle: Include Added Rows
         ImGui.Checkbox($"{LOC.Get("PARAM_DeltaPatcher_Checkbx_Include_Added")}##includeAddedToggle",
             ref CFG.Current.ParamEditor_DeltaPatcher_Import_Added_Rows);
-        UIHelper.Tooltip(LOC.Get("PARAM_DeltaPatcher_Checkbx_Include_Added_TT"));
+        GUI.Tooltip(LOC.Get("PARAM_DeltaPatcher_Checkbx_Include_Added_TT"));
 
         // Toggle: Include Deleted Rows
         ImGui.Checkbox($"{LOC.Get("PARAM_DeltaPatcher_Checkbox_Include_Deleted")}##includeDeletedToggle",
             ref CFG.Current.ParamEditor_DeltaPatcher_Import_Deleted_Rows);
-        UIHelper.Tooltip(LOC.Get("PARAM_DeltaPatcher_Checkbox_Include_Deleted_TT"));
+        GUI.Tooltip(LOC.Get("PARAM_DeltaPatcher_Checkbox_Include_Deleted_TT"));
 
         // Toggle: Restrict Row Modification
         ImGui.Checkbox($"{LOC.Get("PARAM_DeltaPatcher_Checkbox_Restrict_Modify")}##restrictModifyToggle",
             ref CFG.Current.ParamEditor_DeltaPatcher_Import_Restrict_Row_Modify);
-        UIHelper.Tooltip(LOC.Get("PARAM_DeltaPatcher_Checkbox_Restrict_Modify_TT"));
+        GUI.Tooltip(LOC.Get("PARAM_DeltaPatcher_Checkbox_Restrict_Modify_TT"));
 
         // Toggle: Restrict Row Addition
         ImGui.Checkbox($"{LOC.Get("PARAM_DeltaPatcher_Checkbox_Restrict_Addition")}##restrictAddToggle",
             ref CFG.Current.ParamEditor_DeltaPatcher_Import_Restrict_Row_Add);
-        UIHelper.Tooltip(LOC.Get("PARAM_DeltaPatcher_Checkbox_Restrict_Addition_TT"));
+        GUI.Tooltip(LOC.Get("PARAM_DeltaPatcher_Checkbox_Restrict_Addition_TT"));
 
         // Toggle: Allow Row Overwrite
         ImGui.Checkbox($"{LOC.Get("PARAM_DeltaPatcher_Checkbox_Allow_Overwrite")}##allowOverwriteToggle",
             ref CFG.Current.ParamEditor_DeltaPatcher_Import_Allow_Row_Overwrite);
-        UIHelper.Tooltip(LOC.Get("PARAM_DeltaPatcher_Checkbox_Allow_Overwrite_TT"));
+        GUI.Tooltip(LOC.Get("PARAM_DeltaPatcher_Checkbox_Allow_Overwrite_TT"));
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader(
+        GUI.Spacer();
+        GUI.SimpleHeader(
             LOC.Get("PARAM_DeltaPatcher_Header_Actions"),
             LOC.Get("PARAM_DeltaPatcher_Header_Actions_TT"));
 
-        UIHelper.MultiButtonInput("deltaImportActions",
+        GUI.MultiButtonInput("deltaImportActions",
             "importDelta", 
             LOC.Get("PARAM_DeltaPatcher_Action_Import_Delta"),
             LOC.Get("PARAM_DeltaPatcher_Action_Import_Delta_TT"),
@@ -180,8 +180,8 @@ public class ParamDeltaPatcher
 
         if (Selection.ImportList.Count > 0)
         {
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader(
+            GUI.Spacer();
+            GUI.SimpleHeader(
                 LOC.Get("PARAM_DeltaPatcher_Header_Entries"),
                 LOC.Get("PARAM_DeltaPatcher_Header_Entries_TT"));
 
@@ -358,7 +358,7 @@ public class ParamDeltaPatcher
 
                     ImGui.CloseCurrentPopup();
                 }
-                UIHelper.Tooltip(LOC.Get("PARAM_DeltaPatcher_ImportContext_Action_Delete_TT"));
+                GUI.Tooltip(LOC.Get("PARAM_DeltaPatcher_ImportContext_Action_Delete_TT"));
 
                 ImGui.EndPopup();
             }
@@ -367,27 +367,27 @@ public class ParamDeltaPatcher
 
     public void DisplayExportTab()
     {
-        UIHelper.WrappedText(LOC.Get("PARAM_DeltaPatcher_Export_Hint"));
+        GUI.WrappedText(LOC.Get("PARAM_DeltaPatcher_Export_Hint"));
 
         // Filename
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader(
+        GUI.Spacer();
+        GUI.SimpleHeader(
             LOC.Get("PARAM_DeltaPatcher_Header_Filename"),
             LOC.Get("PARAM_DeltaPatcher_Header_Filename_TT"));
 
-        UIHelper.HintTextInput($"inputFileName", ref Selection.ExportName, LOC.Get("PARAM_DeltaPatcher_Filename_Input_Hint"));
+        GUI.HintTextInput($"inputFileName", ref Selection.ExportName, LOC.Get("PARAM_DeltaPatcher_Filename_Input_Hint"));
 
         // Tags
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader(
+        GUI.Spacer();
+        GUI.SimpleHeader(
             LOC.Get("PARAM_DeltaPatcher_Header_Tags"),
             LOC.Get("PARAM_DeltaPatcher_Header_Tags_TT"));
 
-        UIHelper.HintTextInput($"inputFileTag", ref Selection.ExportFileTag, LOC.Get("PARAM_DeltaPatcher_Tags_Input_Hint"));
+        GUI.HintTextInput($"inputFileTag", ref Selection.ExportFileTag, LOC.Get("PARAM_DeltaPatcher_Tags_Input_Hint"));
 
         // Param Type
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader(
+        GUI.Spacer();
+        GUI.SimpleHeader(
             LOC.Get("PARAM_DeltaPatcher_Header_Param_Type"),
             LOC.Get("PARAM_DeltaPatcher_Header_Param_Type_TT"));
 
@@ -407,14 +407,14 @@ public class ParamDeltaPatcher
                 {
                     Selection.CurrentParamMode = (DeltaExportMode)entry;
                 }
-                UIHelper.Tooltip(type.GetDescription());
+                GUI.Tooltip(type.GetDescription());
             }
             ImGui.EndCombo();
         }
 
         // Selection Type
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader(
+        GUI.Spacer();
+        GUI.SimpleHeader(
             LOC.Get("PARAM_DeltaPatcher_Header_Selection_Type"),
             LOC.Get("PARAM_DeltaPatcher_Header_Selection_Type_TT"));
 
@@ -433,26 +433,26 @@ public class ParamDeltaPatcher
                 {
                     Selection.CurrentRowMode = (DeltaSelectionMode)entry;
                 }
-                UIHelper.Tooltip(type.GetDescription());
+                GUI.Tooltip(type.GetDescription());
             }
             ImGui.EndCombo();
         }
 
         // Options
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader(
+        GUI.Spacer();
+        GUI.SimpleHeader(
             LOC.Get("PARAM_DeltaPatcher_Header_Options"),
             LOC.Get("PARAM_DeltaPatcher_Header_Options_TT"));
 
         ImGui.Checkbox($"{LOC.Get("PARAM_DeltaPatcher_Checkbox_Ignore_Indexed")}##ignoreIndexedToggle", ref CFG.Current.ParamEditor_DeltaPatcher_Export_Ignore_Indexed_Rows);
-        UIHelper.Tooltip(LOC.Get("PARAM_DeltaPatcher_Checkbox_Ignore_Indexed_TT"));
+        GUI.Tooltip(LOC.Get("PARAM_DeltaPatcher_Checkbox_Ignore_Indexed_TT"));
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader(
+        GUI.Spacer();
+        GUI.SimpleHeader(
             LOC.Get("PARAM_DeltaPatcher_Header_Actions"),
             LOC.Get("PARAM_DeltaPatcher_Header_Actions_TT"));
 
-        UIHelper.MultiButtonInput("exportDeltaActions",
+        GUI.MultiButtonInput("exportDeltaActions",
             "exportDelta", 
             LOC.Get("PARAM_DeltaPatcher_Action_Export_Delta"),
             LOC.Get("PARAM_DeltaPatcher_Action_Export_Delta_TT"),

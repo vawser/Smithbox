@@ -46,7 +46,7 @@ public class RenderTypeAction
                 {
                     ApplyRenderTypeToggle();
                 }
-                UIHelper.Tooltip($"Toggles the rendering style for the current selection.\n\nShortcut: {InputManager.GetHint(KeybindID.MapEditor_Cycle_Render_Type)}");
+                GUI.Tooltip($"Toggles the rendering style for the current selection.\n\nShortcut: {InputManager.GetHint(KeybindID.MapEditor_Cycle_Render_Type)}");
             }
         }
     }
@@ -60,7 +60,7 @@ public class RenderTypeAction
         {
             ApplyRenderTypeToggle();
         }
-        UIHelper.Tooltip("Toggle the render type of the current selection.");
+        GUI.Tooltip("Toggle the render type of the current selection.");
     }
 
     /// <summary>

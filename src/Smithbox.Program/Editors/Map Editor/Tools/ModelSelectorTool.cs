@@ -36,26 +36,26 @@ public class ModelSelectorTool
     {
         ImGui.BeginChild("ModelSelectorToolSection", ImGuiChildFlags.Borders);
 
-        UIHelper.WrappedText("Use this to switch a selected map object to a different model.");
+        GUI.WrappedText("Use this to switch a selected map object to a different model.");
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader("Options", "");
+        GUI.Spacer();
+        GUI.SimpleHeader("Options", "");
 
         ImGui.Checkbox("Update Name on Switch", ref CFG.Current.MapEditor_Model_Selector_Update_Name);
-        UIHelper.Tooltip("When a map object is switched to a new form, update the name to match the new form.");
+        GUI.Tooltip("When a map object is switched to a new form, update the name to match the new form.");
 
         if (View.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6)
         {
             ImGui.Checkbox("Update Instance ID on Switch", ref CFG.Current.MapEditor_Model_Selector_Update_Instance_ID);
-            UIHelper.Tooltip("When a map object is switched to a new form, update the Instance ID to account for the new form.");
+            GUI.Tooltip("When a map object is switched to a new form, update the Instance ID to account for the new form.");
         }
 
         // TOOD
         //ImGui.Checkbox("Update Params on Switch", ref CFG.Current.MapEditor_Model_Selector_Update_NpcParams);
         //UIHelper.Tooltip("When a map object is switched to a new form, update the NpcParam and NpcThinkParam to the closest suitable rows (based on the character ID).");
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader("List", "");
+        GUI.Spacer();
+        GUI.SimpleHeader("List", "");
 
         EditorFilters.DisplayFramedListFilter("modelSelector", ref ModelFilter, ref ExactModelFilter);
 
@@ -193,7 +193,7 @@ public class ModelSelectorTool
             {
                 var displayedMapName = $"{map} - {AliasHelper.GetMapNameAlias(View.Project, map)}";
 
-                UIHelper.SimpleHeader($"{map}_header", $"{displayedMapName}", "", UI.Current.ImGui_Default_Text_Color);
+                GUI.SimpleHeader($"{map}_header", $"{displayedMapName}", "", UI.Current.ImGui_Default_Text_Color);
 
                 var displayedName = $"{map}";
                 var modelName = map.Replace($"{map}_", "m");
@@ -272,7 +272,7 @@ public class ModelSelectorTool
 
         if (CFG.Current.MapEditor_Model_Selector_Display_Aliases)
         {
-            UIHelper.DisplayAlias(entry.Name);
+            GUI.DisplayAlias(entry.Name);
         }
 
         // Tags

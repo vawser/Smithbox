@@ -42,7 +42,7 @@ public class MapContentView
     /// </summary>
     public void Display(float width, float height)
     {
-        UIHelper.SimpleHeader("Contents", "");
+        GUI.SimpleHeader("Contents", "");
 
         DisplaySearchbar();
 
@@ -93,7 +93,7 @@ public class MapContentView
                 }
             }
         }
-        UIHelper.Tooltip("Force all map objects within this map to be shown.");
+        GUI.Tooltip("Force all map objects within this map to be shown.");
 
         // Hide All
         ImGui.SameLine();
@@ -107,7 +107,7 @@ public class MapContentView
                 }
             }
         }
-        UIHelper.Tooltip("Force all map objects within this map to be hidden.");
+        GUI.Tooltip("Force all map objects within this map to be hidden.");
 
         // Toggle Name Display Type
         var curNameDisplayType = CFG.Current.MapEditor_MapObjectName_DisplayType;
@@ -169,7 +169,7 @@ public class MapContentView
             tooltip = "Raw (Community) [FMG]";
         }
 
-        UIHelper.Tooltip($"{tooltipTop}{tooltip}");
+        GUI.Tooltip($"{tooltipTop}{tooltip}");
 
         // Refresh Textures
         //ImGui.SameLine();
@@ -214,7 +214,7 @@ public class MapContentView
             nodeopen = ImGui.TreeNodeEx(treeNodeName, treeflags, treeNodeNameFormat);
 
             var mapName = AliasHelper.GetMapNameAlias(View.Project, map.Name);
-            UIHelper.DisplayAlias(mapName, CFG.Current.Interface_Alias_Wordwrap_Map_Editor);
+            GUI.DisplayAlias(mapName, CFG.Current.Interface_Alias_Wordwrap_Map_Editor);
         }
 
         ImGui.EndGroup();
@@ -606,7 +606,7 @@ public class MapContentView
             ImGui.PopItemFlag();
             ImGui.SameLine();
 
-            UIHelper.Tooltip("Toggle visibility state of this map object.");
+            GUI.Tooltip("Toggle visibility state of this map object.");
         }
 
         if (hierarchial && e.Children.Count > 0)
@@ -691,7 +691,7 @@ public class MapContentView
 
                     if (ImGui.IsItemVisible())
                     {
-                        UIHelper.DisplayAlias(fmgName);
+                        GUI.DisplayAlias(fmgName);
                     }
                     break;
 
@@ -700,7 +700,7 @@ public class MapContentView
 
                     if (ImGui.IsItemVisible())
                     {
-                        UIHelper.DisplayAlias(communityName);
+                        GUI.DisplayAlias(communityName);
                     }
                     break;
 
@@ -712,11 +712,11 @@ public class MapContentView
                     {
                         if (fmgName != "")
                         {
-                            UIHelper.DisplayAlias($"{communityName} [{fmgName}]");
+                            GUI.DisplayAlias($"{communityName} [{fmgName}]");
                         }
                         else
                         {
-                            UIHelper.DisplayAlias($"{communityName}");
+                            GUI.DisplayAlias($"{communityName}");
                         }
                     }
                     break;

@@ -48,24 +48,24 @@ public class ListenerTab
             ImGui.TableSetColumnIndex(1);
 
             ImGui.Text(LOC.Get("REND_Listener_Tab_Name_Column"));
-            UIHelper.Tooltip(LOC.Get("REND_Listener_Tab_Name_Column_TT"));
+            GUI.Tooltip(LOC.Get("REND_Listener_Tab_Name_Column_TT"));
 
             ImGui.TableSetColumnIndex(2);
 
             ImGui.Text(LOC.Get("REND_Listener_Tab_Load_State_Column"));
-            UIHelper.Tooltip(LOC.Get("REND_Listener_Tab_Load_State_Column_TT"));
+            GUI.Tooltip(LOC.Get("REND_Listener_Tab_Load_State_Column_TT"));
 
             ImGui.TableSetColumnIndex(3);
 
             // Access Level
             ImGui.Text(LOC.Get("REND_Listener_Tab_Access_Level_Column"));
-            UIHelper.Tooltip(LOC.Get("REND_Listener_Tab_Access_Level_Column_TT"));
+            GUI.Tooltip(LOC.Get("REND_Listener_Tab_Access_Level_Column_TT"));
 
             ImGui.TableSetColumnIndex(4);
 
             // Reference Count
             ImGui.Text(LOC.Get("REND_Listener_Tab_Reference_Count_Column"));
-            UIHelper.Tooltip(LOC.Get("REND_Listener_Tab_Reference_Count_Column_TT"));
+            GUI.Tooltip(LOC.Get("REND_Listener_Tab_Reference_Count_Column_TT"));
 
             ImGui.TableSetColumnIndex(5);
 
@@ -90,7 +90,7 @@ public class ListenerTab
                 {
                     SelectedListenerEntry = resName;
                 }
-                UIHelper.Tooltip(LOC.Get("REND_Listener_Tab_Action_Select_TT"));
+                GUI.Tooltip(LOC.Get("REND_Listener_Tab_Action_Select_TT"));
 
                 ImGui.TableSetColumnIndex(1);
 
@@ -132,7 +132,7 @@ public class ListenerTab
                 {
                     resHandle.Release(true);
                 }
-                UIHelper.Tooltip(LOC.Get("REND_Listener_Tab_Action_Unload_TT"));
+                GUI.Tooltip(LOC.Get("REND_Listener_Tab_Action_Unload_TT"));
 
                 imguiId++;
             }

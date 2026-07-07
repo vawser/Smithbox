@@ -32,7 +32,7 @@ public class BehaviorContainerList
 
     public void Display(float width, float height)
     {
-        UIHelper.SimpleHeader("Containers", "");
+        GUI.SimpleHeader("Containers", "");
 
         DisplayMenubar();
 
@@ -72,7 +72,7 @@ public class BehaviorContainerList
                 UpdateSourceList = true;
             }
         }
-        UIHelper.Tooltip("Filter the list entries.");
+        GUI.Tooltip("Filter the list entries.");
 
         if (UpdateSourceList)
         {
@@ -145,7 +145,7 @@ public class BehaviorContainerList
 
                 if (alias != "")
                 {
-                    UIHelper.DisplayAlias(alias, CFG.Current.Interface_Alias_Wordwrap_Animation_Editor);
+                    GUI.DisplayAlias(alias, CFG.Current.Interface_Alias_Wordwrap_Animation_Editor);
                 }
 
                 // Context Menu

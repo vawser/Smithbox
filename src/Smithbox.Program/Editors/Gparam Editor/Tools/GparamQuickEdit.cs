@@ -48,35 +48,35 @@ public class GparamQuickEdit
     {
         ImGui.BeginChild("QuickEditSection", ImGuiChildFlags.Borders);
 
-        UIHelper.SimpleHeader("File Filter", "");
+        GUI.SimpleHeader("File Filter", "");
 
-        UIHelper.SinglelineTextInput("targetParamString", ref _targetFileString);
-        UIHelper.Tooltip("Enter target file arguments here.");
+        GUI.SinglelineTextInput("targetParamString", ref _targetFileString);
+        GUI.Tooltip("Enter target file arguments here.");
 
-        UIHelper.SimpleHeader("Group Filter", "");
+        GUI.SimpleHeader("Group Filter", "");
 
-        UIHelper.SinglelineTextInput("targetGroupString", ref _targetGroupString);
-        UIHelper.Tooltip("Enter target group arguments here.");
+        GUI.SinglelineTextInput("targetGroupString", ref _targetGroupString);
+        GUI.Tooltip("Enter target group arguments here.");
 
-        UIHelper.SimpleHeader("Field Filter", "");
+        GUI.SimpleHeader("Field Filter", "");
 
-        UIHelper.SinglelineTextInput("targetFieldString", ref _targetFieldString);
-        UIHelper.Tooltip("Enter target field arguments here.");
+        GUI.SinglelineTextInput("targetFieldString", ref _targetFieldString);
+        GUI.Tooltip("Enter target field arguments here.");
 
-        UIHelper.SimpleHeader("Value Filter", "");
+        GUI.SimpleHeader("Value Filter", "");
 
-        UIHelper.SinglelineTextInput("filterString", ref _valueFilterString);
-        UIHelper.Tooltip("Enter value filter arguments here.");
+        GUI.SinglelineTextInput("filterString", ref _valueFilterString);
+        GUI.Tooltip("Enter value filter arguments here.");
 
-        UIHelper.SimpleHeader("Value Command", "");
+        GUI.SimpleHeader("Value Command", "");
 
-        UIHelper.SinglelineTextInput("commandString", ref _valueCommandString);
-        UIHelper.Tooltip("Enter value command arguments here. For values represented by a vector, separate each digit with the brackets with the , symbol.");
+        GUI.SinglelineTextInput("commandString", ref _valueCommandString);
+        GUI.Tooltip("Enter value command arguments here. For values represented by a vector, separate each digit with the brackets with the , symbol.");
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader("Actions", "");
+        GUI.Spacer();
+        GUI.SimpleHeader("Actions", "");
 
-        UIHelper.MultiButtonInput("quickEditActions",
+        GUI.MultiButtonInput("quickEditActions",
             "fillFromSelection", "Fill from Selection", "", GenerateQuickEditCommands,
             "clearInputs", "Clear", "", ClearQuickEditCommands,
             "executeInputs", "Execute", "", ExecuteQuickEdit);

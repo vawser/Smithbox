@@ -48,7 +48,7 @@ public class AnimViewportWindow
 
     public void Display()
     {
-        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_AnimEditor);
+        ImGui.SetNextWindowClass(ref GUI.DockGroup_AnimEditor);
 
         if (Viewport is VulkanViewport vulkanViewport)
         {

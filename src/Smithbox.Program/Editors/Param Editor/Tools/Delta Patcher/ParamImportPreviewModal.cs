@@ -76,7 +76,7 @@ public class ParamImportPreviewModal
 
         if (!InitialLayout)
         {
-            UIHelper.SetupPopupWindow();
+            GUI.SetupPopupWindow();
             InitialLayout = true;
         }
 

@@ -33,7 +33,7 @@ public class FileItemView
 
     public void Display()
     {
-        UIHelper.SimpleHeader("Item", "");
+        GUI.SimpleHeader("Item", "");
 
         DisplayItemViewer();
     }
@@ -54,7 +54,7 @@ public class FileItemView
         var entry = Parent.Selection.SelectedVfsFile;
 
         // Main Container
-        UIHelper.SimpleHeader("containerFile", "Main File", "", UI.Current.ImGui_Default_Text_Color);
+        GUI.SimpleHeader("containerFile", "Main File", "", UI.Current.ImGui_Default_Text_Color);
 
         ImGui.BeginChild("MainFileSection", new Vector2(0, 70) * DPI.UIScale(), ImGuiChildFlags.Borders);
 
@@ -67,7 +67,7 @@ public class FileItemView
         // Binder Entries
         if (Parent.Selection.InternalFileList.Count > 0)
         {
-            UIHelper.SimpleHeader("internalFiles", "Internal Files", "", UI.Current.ImGui_Default_Text_Color);
+            GUI.SimpleHeader("internalFiles", "Internal Files", "", UI.Current.ImGui_Default_Text_Color);
 
             EditorFilters.DisplayFramedListFilter("fileBrowser_InternalFileList",
                 ref InternalFileListFilter, ref ExactInternalFileListFilter);
@@ -102,7 +102,7 @@ public class FileItemView
         // TPF Entries
         if (Parent.Selection.InternalTextureList.Count > 0)
         {
-            UIHelper.SimpleHeader("internalTexFiles", "Texture Files", "", UI.Current.ImGui_Default_Text_Color);
+            GUI.SimpleHeader("internalTexFiles", "Texture Files", "", UI.Current.ImGui_Default_Text_Color);
 
             EditorFilters.DisplayFramedListFilter("fileBrowser_TextureFileList",
                 ref TextureFileListFilter, ref ExactTextureFileListFilter);

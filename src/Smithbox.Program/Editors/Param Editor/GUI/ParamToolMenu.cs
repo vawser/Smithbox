@@ -117,91 +117,91 @@ public class ParamToolMenu
                 {
                     CFG.Current.ParamEditor_Show_Tool_Sort_Rows = !CFG.Current.ParamEditor_Show_Tool_Sort_Rows;
                 }
-                UIHelper.ShowActiveStatus(CFG.Current.ParamEditor_Show_Tool_Sort_Rows);
+                GUI.ShowActiveStatus(CFG.Current.ParamEditor_Show_Tool_Sort_Rows);
 
                 // Row Names
                 if (ImGui.MenuItem($"{LOC.Get("PARAM_Tools_View_Row_Names")}##viewToggle_RowNames"))
                 {
                     CFG.Current.ParamEditor_Show_Tool_Row_Names = !CFG.Current.ParamEditor_Show_Tool_Row_Names;
                 }
-                UIHelper.ShowActiveStatus(CFG.Current.ParamEditor_Show_Tool_Row_Names);
+                GUI.ShowActiveStatus(CFG.Current.ParamEditor_Show_Tool_Row_Names);
 
                 // Data Transfer
                 if (ImGui.MenuItem($"{LOC.Get("PARAM_Tools_View_Data_Transfer")}##viewToggle_DataTransfer"))
                 {
                     CFG.Current.ParamEditor_Show_Tool_Data_Converter = !CFG.Current.ParamEditor_Show_Tool_Data_Converter;
                 }
-                UIHelper.ShowActiveStatus(CFG.Current.ParamEditor_Show_Tool_Data_Converter);
+                GUI.ShowActiveStatus(CFG.Current.ParamEditor_Show_Tool_Data_Converter);
 
                 // Data Comparison
                 if (ImGui.MenuItem($"{LOC.Get("PARAM_Tools_View_Data_Comparison")}##viewToggle_DataComparison"))
                 {
                     CFG.Current.ParamEditor_Show_Tool_Data_Comparison = !CFG.Current.ParamEditor_Show_Tool_Data_Comparison;
                 }
-                UIHelper.ShowActiveStatus(CFG.Current.ParamEditor_Show_Tool_Data_Comparison);
+                GUI.ShowActiveStatus(CFG.Current.ParamEditor_Show_Tool_Data_Comparison);
 
                 // Data Finders
                 if (ImGui.MenuItem($"{LOC.Get("PARAM_Tools_View_Data_Finders")}##viewToggle_DataFinders"))
                 {
                     CFG.Current.ParamEditor_Show_Tool_Data_Finders = !CFG.Current.ParamEditor_Show_Tool_Data_Finders;
                 }
-                UIHelper.ShowActiveStatus(CFG.Current.ParamEditor_Show_Tool_Data_Finders);
+                GUI.ShowActiveStatus(CFG.Current.ParamEditor_Show_Tool_Data_Finders);
 
                 // Param Upgrader
                 if (ImGui.MenuItem($"{LOC.Get("PARAM_Tools_View_Param_Upgrader")}##viewToggle_ParamUpgrader"))
                 {
                     CFG.Current.ParamEditor_Show_Tool_Param_Upgrader = !CFG.Current.ParamEditor_Show_Tool_Param_Upgrader;
                 }
-                UIHelper.ShowActiveStatus(CFG.Current.ParamEditor_Show_Tool_Param_Upgrader);
+                GUI.ShowActiveStatus(CFG.Current.ParamEditor_Show_Tool_Param_Upgrader);
 
                 // Param Merger
                 if (ImGui.MenuItem($"{LOC.Get("PARAM_Tools_View_Param_Merger")}##viewToggle_ParamMerger"))
                 {
                     CFG.Current.ParamEditor_Show_Tool_Param_Merger = !CFG.Current.ParamEditor_Show_Tool_Param_Merger;
                 }
-                UIHelper.ShowActiveStatus(CFG.Current.ParamEditor_Show_Tool_Param_Merger);
+                GUI.ShowActiveStatus(CFG.Current.ParamEditor_Show_Tool_Param_Merger);
 
                 // Param Delta Patcher
                 if (ImGui.MenuItem($"{LOC.Get("PARAM_Tools_View_Param_Delta_Patcher")}##viewToggle_ParamDeltaPatcher"))
                 {
                     CFG.Current.ParamEditor_Show_Tool_Param_Delta_Patcher = !CFG.Current.ParamEditor_Show_Tool_Param_Delta_Patcher;
                 }
-                UIHelper.ShowActiveStatus(CFG.Current.ParamEditor_Show_Tool_Param_Delta_Patcher);
+                GUI.ShowActiveStatus(CFG.Current.ParamEditor_Show_Tool_Param_Delta_Patcher);
 
                 // Param Reloader
                 if (ImGui.MenuItem($"{LOC.Get("PARAM_Tools_View_Param_Reloader")}##viewToggle_ParamReloader"))
                 {
                     CFG.Current.ParamEditor_Show_Tool_Param_Reloader = !CFG.Current.ParamEditor_Show_Tool_Param_Reloader;
                 }
-                UIHelper.ShowActiveStatus(CFG.Current.ParamEditor_Show_Tool_Param_Reloader);
+                GUI.ShowActiveStatus(CFG.Current.ParamEditor_Show_Tool_Param_Reloader);
 
                 // Item Gib
                 if (ImGui.MenuItem($"{LOC.Get("PARAM_Tools_View_Item_Gib")}##viewToggle_ItemGib"))
                 {
                     CFG.Current.ParamEditor_Show_Tool_Item_Gib = !CFG.Current.ParamEditor_Show_Tool_Item_Gib;
                 }
-                UIHelper.ShowActiveStatus(CFG.Current.ParamEditor_Show_Tool_Item_Gib);
+                GUI.ShowActiveStatus(CFG.Current.ParamEditor_Show_Tool_Item_Gib);
 
                 // Mass Edit
                 if (ImGui.MenuItem($"{LOC.Get("PARAM_Tools_View_Mass_Edit")}##viewToggle_MassEdit"))
                 {
                     CFG.Current.ParamEditor_Show_Tool_Mass_Edit = !CFG.Current.ParamEditor_Show_Tool_Mass_Edit;
                 }
-                UIHelper.ShowActiveStatus(CFG.Current.ParamEditor_Show_Tool_Mass_Edit);
+                GUI.ShowActiveStatus(CFG.Current.ParamEditor_Show_Tool_Mass_Edit);
 
                 // Param List Categories
                 if (ImGui.MenuItem($"{LOC.Get("PARAM_Tools_View_Param_List_Categories")}##viewToggle_ParamListCategories"))
                 {
                     CFG.Current.ParamEditor_Show_Tool_Param_List_Categories = !CFG.Current.ParamEditor_Show_Tool_Param_List_Categories;
                 }
-                UIHelper.ShowActiveStatus(CFG.Current.ParamEditor_Show_Tool_Param_List_Categories);
+                GUI.ShowActiveStatus(CFG.Current.ParamEditor_Show_Tool_Param_List_Categories);
 
                 // Pin Groups
                 if (ImGui.MenuItem($"{LOC.Get("PARAM_Tools_View_Pin_Groups")}##viewToggle_PinGroups"))
                 {
                     CFG.Current.ParamEditor_Show_Tool_Pin_Groups = !CFG.Current.ParamEditor_Show_Tool_Pin_Groups;
                 }
-                UIHelper.ShowActiveStatus(CFG.Current.ParamEditor_Show_Tool_Pin_Groups);
+                GUI.ShowActiveStatus(CFG.Current.ParamEditor_Show_Tool_Pin_Groups);
 
                 ImGui.EndMenu();
             }

@@ -18,18 +18,18 @@ public class GparamValidator
 
     public void Display()
     {
-        UIHelper.SimpleHeader(
+        GUI.SimpleHeader(
             LOC.Get("DEV_Tool_Header_Actions"),
             LOC.Get("DEV_Tool_Header_Actions_TT"));
 
-        UIHelper.MultiButtonInput("validateActions",
+        GUI.MultiButtonInput("validateActions",
             "validate",
             LOC.Get("DEV_Tool_Validate_For_BP"),
             LOC.Get("DEV_Tool_Validate_For_BP_TT"),
             Run);
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader(
+        GUI.Spacer();
+        GUI.SimpleHeader(
             LOC.Get("DEV_Tool_Header_Options"),
             LOC.Get("DEV_Tool_Header_Options_TT"));
 
@@ -40,8 +40,8 @@ public class GparamValidator
 
         int index = 0;
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader(
+        GUI.Spacer();
+        GUI.SimpleHeader(
             LOC.Get("DEV_Tool_Header_Entries"),
             LOC.Get("DEV_Tool_Header_Entries_TT"));
 
@@ -70,8 +70,8 @@ public class GparamValidator
 
         ImGui.NextColumn();
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader(
+        GUI.Spacer();
+        GUI.SimpleHeader(
             LOC.Get("DEV_Tool_Header_Data"),
             LOC.Get("DEV_Tool_Header_Data_TT"));
 

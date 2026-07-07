@@ -150,7 +150,7 @@ public class EditorVisibilityAction
         if (ImGui.BeginMenu("Toggle Editor Visibility by Tag"))
         {
             ImGui.InputText("##targetTag", ref CFG.Current.Toolbar_Tag_Visibility_Target, 255);
-            UIHelper.Tooltip("Specific which tag the map objects will be filtered by.");
+            GUI.Tooltip("Specific which tag the map objects will be filtered by.");
 
             if (ImGui.MenuItem("Enable Visibility"))
             {
@@ -176,31 +176,31 @@ public class EditorVisibilityAction
     /// </summary>
     public void OnToolWindow()
     {
-        UIHelper.WrappedText("Use these actions to adjust the in-editor visibility of map objects.");
+        GUI.WrappedText("Use these actions to adjust the in-editor visibility of map objects.");
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader("Selection", "Actions that affect the current selection of map objects.");
+        GUI.Spacer();
+        GUI.SimpleHeader("Selection", "Actions that affect the current selection of map objects.");
 
-        UIHelper.MultiButtonInput("visActions",
+        GUI.MultiButtonInput("visActions",
             "toggleVis", "Toggle Visibility", "Toggles the current visibility state to the opposite.", ToggleVisLocalAction,
             "enableVis", "Make Visible", "Force the current visibility state to visible.", MakeVisibleLocalAction,
             "disableVis", "Make Invisible", "Force the current visibility state to invisible.", MakeInvisibleLocalAction);
 
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader("Global", "Actions that affect all currently loaded map objects.");
+        GUI.Spacer();
+        GUI.SimpleHeader("Global", "Actions that affect all currently loaded map objects.");
 
-        UIHelper.MultiButtonInput("globalVisActions",
+        GUI.MultiButtonInput("globalVisActions",
             "toggleVis", "Toggle Visibility", "Toggles the current visibility state to the opposite.", ToggleVisGlobalAction,
             "enableVis", "Make Visible", "Force the current visibility state to visible.", MakeVisibleGlobalAction,
             "disableVis", "Make Invisible", "Force the current visibility state to invisible.", MakeInvisibleGlobalAction);
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader("Target Tag", "Toggle the visibility of map objects with the associated alias tag (i.e. LOD).");
+        GUI.Spacer();
+        GUI.SimpleHeader("Target Tag", "Toggle the visibility of map objects with the associated alias tag (i.e. LOD).");
 
-        UIHelper.HintTextInput("TagToggleInput", ref CFG.Current.Toolbar_Tag_Visibility_Target, "Enter the tag you want to target...");
+        GUI.HintTextInput("TagToggleInput", ref CFG.Current.Toolbar_Tag_Visibility_Target, "Enter the tag you want to target...");
 
-        UIHelper.MultiButtonInput("tagActions",
+        GUI.MultiButtonInput("tagActions",
             "enableVis", "Make Visible", "Force the current visibility state to visible.", MakeVisibleTagAction,
             "disableVis", "Make Invisible", "Force the current visibility state to invisible.", MakeInvisibleTagAction);
     }

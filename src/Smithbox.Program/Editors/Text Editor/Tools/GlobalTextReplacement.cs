@@ -37,29 +37,29 @@ public class GlobalTextReplacement
         ImGui.BeginChild("TextReplaceSection", ImGuiChildFlags.Borders);
 
         // Search Filter
-        UIHelper.SimpleHeader(
+        GUI.SimpleHeader(
             LOC.Get("TEXT_TextReplacement_Header_Search_Filter"),
             LOC.Get("TEXT_TextReplacement_Header_Search_Filter_TT"));
 
-        UIHelper.SinglelineTextInput("textSearchInput", ref searchTerm);
+        GUI.SinglelineTextInput("textSearchInput", ref searchTerm);
 
         // Replacement Filter
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader(
+        GUI.Spacer();
+        GUI.SimpleHeader(
             LOC.Get("TEXT_TextReplacement_Header_Replacement_Filter"),
             LOC.Get("TEXT_TextReplacement_Header_Replacement_Filter_TT"));
 
-        UIHelper.SinglelineTextInput("textReplaceInput", ref replaceTerm);
+        GUI.SinglelineTextInput("textReplaceInput", ref replaceTerm);
 
         // Filter Type
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader(
+        GUI.Spacer();
+        GUI.SimpleHeader(
             LOC.Get("TEXT_TextReplacement_Header_Filter_Type"),
             LOC.Get("TEXT_TextReplacement_Header_Filter_Type_TT"));
 
         var filterPreviewName = LOC.Get(filterType.GetDisplayName());
 
-        UIHelper.SetInputWidth();
+        GUI.SetInputWidth();
         if (ImGui.BeginCombo("##searchFilterType", filterPreviewName))
         {
             foreach (var entry in Enum.GetValues(typeof(SearchFilterType)))
@@ -76,17 +76,17 @@ public class GlobalTextReplacement
 
             ImGui.EndCombo();
         }
-        UIHelper.Tooltip(LOC.Get("TEXT_TextReplacement_Filter_Type_TT"));
+        GUI.Tooltip(LOC.Get("TEXT_TextReplacement_Filter_Type_TT"));
 
         // Match Type
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader(
+        GUI.Spacer();
+        GUI.SimpleHeader(
             LOC.Get("TEXT_TextReplacement_Header_Match_Type"),
             LOC.Get("TEXT_TextReplacement_Header_Match_Type_TT"));
 
         var matchPreviewName = LOC.Get(matchType.GetDisplayName());
 
-        UIHelper.SetInputWidth();
+        GUI.SetInputWidth();
         if (ImGui.BeginCombo("##searchMatchType", matchPreviewName))
         {
             foreach (var entry in Enum.GetValues(typeof(SearchMatchType)))
@@ -103,33 +103,33 @@ public class GlobalTextReplacement
 
             ImGui.EndCombo();
         }
-        UIHelper.Tooltip(LOC.Get("TEXT_TextReplacement_Match_Type_TT"));
+        GUI.Tooltip(LOC.Get("TEXT_TextReplacement_Match_Type_TT"));
 
         // Options
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader(
+        GUI.Spacer();
+        GUI.SimpleHeader(
             LOC.Get("TEXT_TextReplacement_Header_Options"),
             LOC.Get("TEXT_TextReplacement_Header_Options_TT"));
 
         ImGui.Checkbox($"{LOC.Get("TEXT_TextReplacement_Checkbox_Ignore_Case")}##ignoreCase", ref ignoreCase);
-        UIHelper.Tooltip(LOC.Get("TEXT_TextReplacement_Checkbox_Ignore_Case_TT"));
+        GUI.Tooltip(LOC.Get("TEXT_TextReplacement_Checkbox_Ignore_Case_TT"));
 
         ImGui.Checkbox($"{LOC.Get("TEXT_TextReplacement_Checkbox_Multiline_Regex")}##multilineRegex", ref applyMultilineRegex);
-        UIHelper.Tooltip(LOC.Get("TEXT_TextReplacement_Checkbox_Multiline_Regex_TT"));
+        GUI.Tooltip(LOC.Get("TEXT_TextReplacement_Checkbox_Multiline_Regex_TT"));
 
         ImGui.Checkbox($"{LOC.Get("TEXT_TextReplacement_Checkbox_Singleline_Regex")}##singleLineRegex", ref applySinglelineRegex);
-        UIHelper.Tooltip(LOC.Get("TEXT_TextReplacement_Checkbox_Singleline_Regex_TT"));
+        GUI.Tooltip(LOC.Get("TEXT_TextReplacement_Checkbox_Singleline_Regex_TT"));
 
         ImGui.Checkbox($"{LOC.Get("TEXT_TextReplacement_Checkbox_Ignore_Pattern_Whitespace")}##ignorePatternWhitespace", ref ignorePatternWhitespace);
-        UIHelper.Tooltip(LOC.Get("TEXT_TextReplacement_Checkbox_Ignore_Pattern_Whitespace_TT"));
+        GUI.Tooltip(LOC.Get("TEXT_TextReplacement_Checkbox_Ignore_Pattern_Whitespace_TT"));
 
         // Actions
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader(
+        GUI.Spacer();
+        GUI.SimpleHeader(
             LOC.Get("TEXT_TextReplacement_Header_Actions"),
             LOC.Get("TEXT_TextReplacement_Header_Actions_TT"));
 
-        UIHelper.MultiButtonInput("replaceActions",
+        GUI.MultiButtonInput("replaceActions",
             "previewEdit", 
             LOC.Get("TEXT_TextReplacement_Action_Preview_Edit"),
             LOC.Get("TEXT_TextReplacement_Action_Preview_Edit_TT"),
@@ -146,8 +146,8 @@ public class GlobalTextReplacement
             ApplyReplacement);
 
         // Preview
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader(
+        GUI.Spacer();
+        GUI.SimpleHeader(
             LOC.Get("TEXT_TextReplacement_Header_Preview_List"),
             LOC.Get("TEXT_TextReplacement_Header_Preview_List_TT"));
 
@@ -155,7 +155,7 @@ public class GlobalTextReplacement
 
         if (replacementResults.Count > 0)
         {
-            UIHelper.WrappedText(LOC.Get("TEXT_TextReplacement_Preview_List_Hint"));
+            GUI.WrappedText(LOC.Get("TEXT_TextReplacement_Preview_List_Hint"));
 
             foreach (var result in replacementResults)
             {
@@ -208,7 +208,7 @@ public class GlobalTextReplacement
         }
         else if (hasAlreadySearched)
         {
-            UIHelper.WrappedText(LOC.Get("TEXT_TextReplacement_Already_Searched"));
+            GUI.WrappedText(LOC.Get("TEXT_TextReplacement_Already_Searched"));
         }
 
         ImGui.EndChild();

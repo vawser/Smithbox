@@ -176,7 +176,7 @@ public static class ParamRowDuplicate
             if (targetGroup == null)
                 return;
 
-            UIHelper.WrappedText("Target Param:");
+            GUI.WrappedText("Target Param:");
 
             foreach (var entry in targetGroup.Params)
             {

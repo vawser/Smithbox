@@ -90,7 +90,7 @@ public class FmgImporter
 
             ImGui.EndMenu();
         }
-        UIHelper.Tooltip(LOC.Get("TEXT_Importer_Header_Append_TT"));
+        GUI.Tooltip(LOC.Get("TEXT_Importer_Header_Append_TT"));
 
         // Replace
         if (ImGui.BeginMenu($"{LOC.Get("TEXT_Importer_Header_Replace")}##replaceMenuHeader"))
@@ -119,7 +119,7 @@ public class FmgImporter
 
             ImGui.EndMenu();
         }
-        UIHelper.Tooltip(LOC.Get("TEXT_Importer_Header_Replace_TT"));
+        GUI.Tooltip(LOC.Get("TEXT_Importer_Header_Replace_TT"));
     }
 
     private List<EditorAction> ImportActions;

@@ -63,32 +63,32 @@ public class MassEditToolMenu
         var windowWidth = ImGui.GetWindowWidth();
 
         // Header
-        UIHelper.WrappedText("Write and execute mass edit commands here.");
+        GUI.WrappedText("Write and execute mass edit commands here.");
 
         // Input
-        UIHelper.WrappedText("");
+        GUI.WrappedText("");
         MassEditUtils.MassEditHeader(Parent, 
             "Input", "Type in the mass edit commands you wish to apply here.");
 
-        UIHelper.MultilineTextInput("massEditInput", ref Parent.State.CurrentMenuInput);
+        GUI.MultilineTextInput("massEditInput", ref Parent.State.CurrentMenuInput);
 
-        UIHelper.MultiButtonInput("massEditActions", 
+        GUI.MultiButtonInput("massEditActions", 
             "massEditApply", "Apply", "Apply this script", ApplyMassEditAction, 
             "massEditClear", "Clear", "Clear this script", ClearMassEditInputAction);
 
         // Templates
-        UIHelper.WrappedText("");
-        UIHelper.SimpleHeader("Templates", "");
+        GUI.WrappedText("");
+        GUI.SimpleHeader("Templates", "");
 
         MassEditUtils.TemplateComboBox("massEditScripts",ref CurrentTemplate, ScriptList);
 
-        UIHelper.MultiButtonInput("massEditScriptActions",
+        GUI.MultiButtonInput("massEditScriptActions",
             "massEditScriptLoad", "Load", "Load this script", LoadMassEditTemplate);
 
         // Output
-        UIHelper.WrappedText("");
-        UIHelper.SimpleHeader("Output", "Success state of the Mass Edit command that was previously used.\n\nRemember to handle clipboard state between edits with the 'clear' command");
-        UIHelper.WrappedText($"{Parent.State.MassEditResult}");
+        GUI.WrappedText("");
+        GUI.SimpleHeader("Output", "Success state of the Mass Edit command that was previously used.\n\nRemember to handle clipboard state between edits with the 'clear' command");
+        GUI.WrappedText($"{Parent.State.MassEditResult}");
     }
 
     public void ApplyMassEditAction()
@@ -110,37 +110,37 @@ public class MassEditToolMenu
         var inputBoxSize = new Vector2(windowWidth * 0.725f, 32);
 
         // Header
-        UIHelper.WrappedText("Create and edit mass edit templates here.");
+        GUI.WrappedText("Create and edit mass edit templates here.");
 
         // Templates
-        UIHelper.WrappedText("");
-        UIHelper.SimpleHeader("Existing Templates", "");
+        GUI.WrappedText("");
+        GUI.SimpleHeader("Existing Templates", "");
 
         MassEditUtils.TemplateComboBox("massEditScripts", ref CurrentTemplate, ScriptList);
 
-        UIHelper.MultiButtonInput("massEditScriptActions",
+        GUI.MultiButtonInput("massEditScriptActions",
             "massEditScriptEdit", "Edit", "Edit this script", EditMassEditTemplate,
             "massEditScriptReload", "Update Template List", "", ReloadScripts,
             "massEditOpenFolder", "Open Template Folder", "", OpenTemplateFolder);
 
         // Template Contents
-        UIHelper.WrappedText("");
-        UIHelper.SimpleHeader("Template Contents", "");
+        GUI.WrappedText("");
+        GUI.SimpleHeader("Template Contents", "");
 
-        UIHelper.MultilineTextInput("massEditContents", ref NewScriptContents);
+        GUI.MultilineTextInput("massEditContents", ref NewScriptContents);
 
-        UIHelper.MultiButtonInput("massEditContentsActions",
+        GUI.MultiButtonInput("massEditContentsActions",
             "massEditScriptSave", "Save", "Save this script", SaveMassEditScript,
             "massEditScriptClear", "Clear", "Clear this script", ClearMassEditContentsAction);
 
         // New Template
-        UIHelper.WrappedText("");
-        UIHelper.SimpleHeader("New Template", "");
+        GUI.WrappedText("");
+        GUI.SimpleHeader("New Template", "");
 
-        UIHelper.SinglelineTextInput("newTemplateName",ref NewScriptName, "Name");
-        UIHelper.Tooltip("The file name used for this template.");
+        GUI.SinglelineTextInput("newTemplateName",ref NewScriptName, "Name");
+        GUI.Tooltip("The file name used for this template.");
 
-        UIHelper.MultiButtonInput("massEditTemplateActions",
+        GUI.MultiButtonInput("massEditTemplateActions",
             "massEditScriptSave", "Save", "Save this script", SaveMassEditScript);
     }
 

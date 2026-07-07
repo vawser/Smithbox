@@ -26,15 +26,15 @@ public class TexProperties
     {
         ImGui.BeginChild("TextureProperties", new Vector2(0, 0), ImGuiChildFlags.Borders);
 
-        UIHelper.SimpleHeader(
+        GUI.SimpleHeader(
             LOC.Get("TEXVIEW_Properties_Header_Properties", Parent.Selection.SelectedTextureKey),
             LOC.Get("TEXVIEW_Properties_Header_Properties_TT"));
 
-        UIHelper.WrappedText(
+        GUI.WrappedText(
             LOC.Get("TEXVIEW_Properties_Controls_Hint",
             InputManager.GetHint(KeybindID.TextureViewer_Reset_Zoom_Level)));
 
-        UIHelper.Spacer();
+        GUI.Spacer();
 
         float sizeX = -1;
         float sizeY = -1;

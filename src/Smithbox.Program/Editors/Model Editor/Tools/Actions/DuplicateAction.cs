@@ -47,7 +47,7 @@ public class DuplicateAction
         {
             ApplyDuplicate();
         }
-        UIHelper.Tooltip($"Duplicate the currently selected map objects.\n\nShortcut: {InputManager.GetHint(KeybindID.Duplicate)}");
+        GUI.Tooltip($"Duplicate the currently selected map objects.\n\nShortcut: {InputManager.GetHint(KeybindID.Duplicate)}");
 
     }
 
@@ -60,7 +60,7 @@ public class DuplicateAction
         {
             ApplyDuplicate();
         }
-        UIHelper.Tooltip($"Duplicate the currently selected map objects.");
+        GUI.Tooltip($"Duplicate the currently selected map objects.");
     }
 
     /// <summary>

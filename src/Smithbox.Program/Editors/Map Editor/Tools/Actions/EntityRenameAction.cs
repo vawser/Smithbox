@@ -102,7 +102,7 @@ public class EntityRenameAction
 
             ImGui.EndMenu();
         }
-        UIHelper.Tooltip("Applies descriptive name for map objects from developer name list.");
+        GUI.Tooltip("Applies descriptive name for map objects from developer name list.");
     }
 
     /// <summary>

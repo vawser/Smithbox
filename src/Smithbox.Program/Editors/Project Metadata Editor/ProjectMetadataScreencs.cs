@@ -64,8 +64,8 @@ public class ProjectMetadataScreen
         ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(0.0f, 0.0f));
 
         ImGui.SetNextWindowDockID(mainDockspaceID, ImGuiCond.FirstUseEver);
-        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_EditorView);
-        if (ImGui.Begin($"{LOC.Get("PROJECT_Window_Project_Metadata_Editor")}###ProjectMetadataEditor", UIHelper.GetInnerWindowFlags()))
+        ImGui.SetNextWindowClass(ref GUI.DockGroup_EditorView);
+        if (ImGui.Begin($"{LOC.Get("PROJECT_Window_Project_Metadata_Editor")}###ProjectMetadataEditor", GUI.GetInnerWindowFlags()))
         {
             ImGui.PopStyleColor(1);
             ImGui.PopStyleVar(1);
@@ -73,16 +73,16 @@ public class ProjectMetadataScreen
             Shortcuts();
 
             var dsid = ImGui.GetID("DockSpace_ProjectMetadataEditor");
-            ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None, ref UIHelper.DockGroup_ProjectMetadataEditor);
+            ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None, ref GUI.DockGroup_ProjectMetadataEditor);
 
             ImGui.SetNextWindowDockID(dsid, ImGuiCond.FirstUseEver);
-            ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ProjectMetadataEditor);
-            if (ImGui.Begin($"{LOC.Get("PROJECT_Window_Project_Metadata_View")}###ProjectMetadataView", UIHelper.GetInnerWindowFlags()))
+            ImGui.SetNextWindowClass(ref GUI.DockGroup_ProjectMetadataEditor);
+            if (ImGui.Begin($"{LOC.Get("PROJECT_Window_Project_Metadata_View")}###ProjectMetadataView", GUI.GetInnerWindowFlags()))
             {
             }
 
             var viewDockId = ImGui.GetID($"DockSpace_ProjectMetadataEditorView");
-            ImGui.DockSpace(viewDockId, new Vector2(0, 0), ref UIHelper.DockGroup_ProjectMetadataEditorView);
+            ImGui.DockSpace(viewDockId, new Vector2(0, 0), ref GUI.DockGroup_ProjectMetadataEditorView);
 
             Display(viewDockId);
 
@@ -102,8 +102,8 @@ public class ProjectMetadataScreen
     {
         // Mode Selection
         ImGui.SetNextWindowDockID(editorDockspaceId, ImGuiCond.FirstUseEver);
-        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ProjectMetadataEditorView);
-        if (ImGui.Begin($@"{LOC.Get("META_Window_Mode_Selection")}###projectMetadataEditor_ModeSelection", UIHelper.GetInnerWindowFlags()))
+        ImGui.SetNextWindowClass(ref GUI.DockGroup_ProjectMetadataEditorView);
+        if (ImGui.Begin($@"{LOC.Get("META_Window_Mode_Selection")}###projectMetadataEditor_ModeSelection", GUI.GetInnerWindowFlags()))
         {
             var width = ImGui.GetContentRegionAvail().X;
             var height = ImGui.GetContentRegionAvail().Y;
@@ -123,8 +123,8 @@ public class ProjectMetadataScreen
         {
             // Project Enums
             ImGui.SetNextWindowDockID(editorDockspaceId, ImGuiCond.FirstUseEver);
-            ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ProjectMetadataEditorView);
-            if (ImGui.Begin($@"{LOC.Get("META_Window_Project_Enums")}###projectMetadataEditor_ProjectEnums", UIHelper.GetMainWindowFlags()))
+            ImGui.SetNextWindowClass(ref GUI.DockGroup_ProjectMetadataEditorView);
+            if (ImGui.Begin($@"{LOC.Get("META_Window_Project_Enums")}###projectMetadataEditor_ProjectEnums", GUI.GetMainWindowFlags()))
             {
                 var width = ImGui.GetContentRegionAvail().X;
                 var height = ImGui.GetContentRegionAvail().Y;
@@ -141,8 +141,8 @@ public class ProjectMetadataScreen
 
             // Project Aliases
             ImGui.SetNextWindowDockID(editorDockspaceId, ImGuiCond.FirstUseEver);
-            ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ProjectMetadataEditorView);
-            if (ImGui.Begin($@"{LOC.Get("META_Window_Project_Aliases")}###projectMetadataEditor_ProjectAliases", UIHelper.GetMainWindowFlags()))
+            ImGui.SetNextWindowClass(ref GUI.DockGroup_ProjectMetadataEditorView);
+            if (ImGui.Begin($@"{LOC.Get("META_Window_Project_Aliases")}###projectMetadataEditor_ProjectAliases", GUI.GetMainWindowFlags()))
             {
                 var width = ImGui.GetContentRegionAvail().X;
                 var height = ImGui.GetContentRegionAvail().Y;
@@ -164,8 +164,8 @@ public class ProjectMetadataScreen
             // PARAMDEF Editor
 
             ImGui.SetNextWindowDockID(editorDockspaceId, ImGuiCond.FirstUseEver);
-            ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ProjectMetadataEditorView);
-            if (ImGui.Begin($@"{LOC.Get("META_Window_Param_Def_Editor")}###projectMetadataEditor_ParamDef", UIHelper.GetMainWindowFlags()))
+            ImGui.SetNextWindowClass(ref GUI.DockGroup_ProjectMetadataEditorView);
+            if (ImGui.Begin($@"{LOC.Get("META_Window_Param_Def_Editor")}###projectMetadataEditor_ParamDef", GUI.GetMainWindowFlags()))
             {
                 var width = ImGui.GetContentRegionAvail().X;
                 var height = ImGui.GetContentRegionAvail().Y;
@@ -182,8 +182,8 @@ public class ProjectMetadataScreen
 
             // PARAM Meta Editor
             ImGui.SetNextWindowDockID(editorDockspaceId, ImGuiCond.FirstUseEver);
-            ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ProjectMetadataEditorView);
-            if (ImGui.Begin($@"{LOC.Get("META_Window_Param_Meta_Editor")}###projectMetadataEditor_ParamMeta", UIHelper.GetMainWindowFlags()))
+            ImGui.SetNextWindowClass(ref GUI.DockGroup_ProjectMetadataEditorView);
+            if (ImGui.Begin($@"{LOC.Get("META_Window_Param_Meta_Editor")}###projectMetadataEditor_ParamMeta", GUI.GetMainWindowFlags()))
             {
                 var width = ImGui.GetContentRegionAvail().X;
                 var height = ImGui.GetContentRegionAvail().Y;

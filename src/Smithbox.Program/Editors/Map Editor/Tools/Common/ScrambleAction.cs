@@ -47,7 +47,7 @@ public class ScrambleAction
             {
                 ApplyScramble();
             }
-            UIHelper.Tooltip($"Apply the scramble configuration to the currently selected map objects.\n\nShortcut: {InputManager.GetHint(KeybindID.MapEditor_Scramble)}");
+            GUI.Tooltip($"Apply the scramble configuration to the currently selected map objects.\n\nShortcut: {InputManager.GetHint(KeybindID.MapEditor_Scramble)}");
         }
     }
 
@@ -60,7 +60,7 @@ public class ScrambleAction
         {
             ApplyScramble();
         }
-        UIHelper.Tooltip($"Apply the scramble configuration to the currently selected map objects.");
+        GUI.Tooltip($"Apply the scramble configuration to the currently selected map objects.");
     }
 
     /// <summary>
@@ -92,143 +92,143 @@ public class ScrambleAction
         var randomOffsetMax_Scale_Y = CFG.Current.Scrambler_OffsetMax_Scale_Y;
         var randomOffsetMax_Scale_Z = CFG.Current.Scrambler_OffsetMax_Scale_Z;
 
-        UIHelper.WrappedText("Configure how the scramble action works.");
+        GUI.WrappedText("Configure how the scramble action works.");
 
-        UIHelper.Spacer();
+        GUI.Spacer();
 
         // Position
-        UIHelper.SimpleHeader("Position", "Position", "", UI.Current.ImGui_Default_Text_Color);
+        GUI.SimpleHeader("Position", "Position", "", UI.Current.ImGui_Default_Text_Color);
 
         ImGui.Checkbox("X##scramblePosX", ref CFG.Current.Scrambler_RandomisePosition_X);
-        UIHelper.Tooltip("Include the X co-ordinate of the selection's Position in the scramble.");
+        GUI.Tooltip("Include the X co-ordinate of the selection's Position in the scramble.");
 
         ImGui.SameLine();
         DPI.ApplyInputWidth(100f);
         ImGui.InputFloat("##offsetMinPosX", ref randomOffsetMin_Pos_X);
-        UIHelper.Tooltip("Minimum amount to add to the position X co-ordinate.");
+        GUI.Tooltip("Minimum amount to add to the position X co-ordinate.");
 
         ImGui.SameLine();
 
         DPI.ApplyInputWidth(100f);
         ImGui.InputFloat("##offsetMaxPosX", ref randomOffsetMax_Pos_X);
-        UIHelper.Tooltip("Maximum amount to add to the position X co-ordinate.");
+        GUI.Tooltip("Maximum amount to add to the position X co-ordinate.");
 
         ImGui.Checkbox("Y##scramblePosY", ref CFG.Current.Scrambler_RandomisePosition_Y);
-        UIHelper.Tooltip("Include the Y co-ordinate of the selection's Position in the scramble.");
+        GUI.Tooltip("Include the Y co-ordinate of the selection's Position in the scramble.");
 
         ImGui.SameLine();
         DPI.ApplyInputWidth(100f);
         ImGui.InputFloat("##offsetMinPosY", ref randomOffsetMin_Pos_Y);
-        UIHelper.Tooltip("Minimum amount to add to the position Y co-ordinate.");
+        GUI.Tooltip("Minimum amount to add to the position Y co-ordinate.");
 
         ImGui.SameLine();
         DPI.ApplyInputWidth(100f);
         ImGui.InputFloat("##offsetMaxPosY", ref randomOffsetMax_Pos_Y);
-        UIHelper.Tooltip("Maximum amount to add to the position Y co-ordinate.");
+        GUI.Tooltip("Maximum amount to add to the position Y co-ordinate.");
 
         ImGui.Checkbox("Z##scramblePosZ", ref CFG.Current.Scrambler_RandomisePosition_Z);
-        UIHelper.Tooltip("Include the Z co-ordinate of the selection's Position in the scramble.");
+        GUI.Tooltip("Include the Z co-ordinate of the selection's Position in the scramble.");
 
         ImGui.SameLine();
         DPI.ApplyInputWidth(100f);
         ImGui.InputFloat("##offsetMinPosZ", ref randomOffsetMin_Pos_Z);
-        UIHelper.Tooltip("Minimum amount to add to the position Z co-ordinate.");
+        GUI.Tooltip("Minimum amount to add to the position Z co-ordinate.");
 
         ImGui.SameLine();
         DPI.ApplyInputWidth(100f);
         ImGui.InputFloat("##offsetMaxPosZ", ref randomOffsetMax_Pos_Z);
-        UIHelper.Tooltip("Maximum amount to add to the position Z co-ordinate.");
+        GUI.Tooltip("Maximum amount to add to the position Z co-ordinate.");
         ImGui.Text("");
 
         // Rotation
-        UIHelper.SimpleHeader("Rotation", "Rotation", "", UI.Current.ImGui_Default_Text_Color);
+        GUI.SimpleHeader("Rotation", "Rotation", "", UI.Current.ImGui_Default_Text_Color);
 
         ImGui.Checkbox("X##scrambleRotX", ref CFG.Current.Scrambler_RandomiseRotation_X);
-        UIHelper.Tooltip("Include the X co-ordinate of the selection's Rotation in the scramble.");
+        GUI.Tooltip("Include the X co-ordinate of the selection's Rotation in the scramble.");
 
         ImGui.SameLine();
         DPI.ApplyInputWidth(100f);
         ImGui.InputFloat("##offsetMinRotX", ref randomOffsetMin_Rot_X);
-        UIHelper.Tooltip("Minimum amount to add to the rotation X co-ordinate.");
+        GUI.Tooltip("Minimum amount to add to the rotation X co-ordinate.");
 
         ImGui.SameLine();
         DPI.ApplyInputWidth(100f);
         ImGui.InputFloat("##offsetMaxRotX", ref randomOffsetMax_Rot_X);
-        UIHelper.Tooltip("Maximum amount to add to the rotation X co-ordinate.");
+        GUI.Tooltip("Maximum amount to add to the rotation X co-ordinate.");
 
         ImGui.Checkbox("Y##scrambleRotY", ref CFG.Current.Scrambler_RandomiseRotation_Y);
-        UIHelper.Tooltip("Include the Y co-ordinate of the selection's Rotation in the scramble.");
+        GUI.Tooltip("Include the Y co-ordinate of the selection's Rotation in the scramble.");
 
         ImGui.SameLine();
         DPI.ApplyInputWidth(100f);
         ImGui.InputFloat("##offsetMinRotY", ref randomOffsetMin_Rot_Y);
-        UIHelper.Tooltip("Minimum amount to add to the rotation Y co-ordinate.");
+        GUI.Tooltip("Minimum amount to add to the rotation Y co-ordinate.");
 
         ImGui.SameLine();
         DPI.ApplyInputWidth(100f);
         ImGui.InputFloat("##offsetMaxRotY", ref randomOffsetMax_Rot_Y);
-        UIHelper.Tooltip("Maximum amount to add to the rotation Y co-ordinate.");
+        GUI.Tooltip("Maximum amount to add to the rotation Y co-ordinate.");
 
         ImGui.Checkbox("Z##scrambleRotZ", ref CFG.Current.Scrambler_RandomiseRotation_Z);
-        UIHelper.Tooltip("Include the Z co-ordinate of the selection's Rotation in the scramble.");
+        GUI.Tooltip("Include the Z co-ordinate of the selection's Rotation in the scramble.");
 
         ImGui.SameLine();
         DPI.ApplyInputWidth(100f);
         ImGui.InputFloat("##offsetMinRotZ", ref randomOffsetMin_Rot_Z);
-        UIHelper.Tooltip("Minimum amount to add to the rotation Z co-ordinate.");
+        GUI.Tooltip("Minimum amount to add to the rotation Z co-ordinate.");
 
         ImGui.SameLine();
         DPI.ApplyInputWidth(100f);
         ImGui.InputFloat("##offsetMaxRotZ", ref randomOffsetMax_Rot_Z);
-        UIHelper.Tooltip("Maximum amount to add to the rotation Z co-ordinate.");
+        GUI.Tooltip("Maximum amount to add to the rotation Z co-ordinate.");
         ImGui.Text("");
 
         // Scale
-        UIHelper.SimpleHeader("Scale", "Scale", "", UI.Current.ImGui_Default_Text_Color);
+        GUI.SimpleHeader("Scale", "Scale", "", UI.Current.ImGui_Default_Text_Color);
 
         ImGui.Checkbox("X##scrambleScaleX", ref CFG.Current.Scrambler_RandomiseScale_X);
-        UIHelper.Tooltip("Include the X co-ordinate of the selection's Scale in the scramble.");
+        GUI.Tooltip("Include the X co-ordinate of the selection's Scale in the scramble.");
 
         ImGui.SameLine();
         DPI.ApplyInputWidth(100f);
         ImGui.InputFloat("##offsetMinScaleX", ref randomOffsetMin_Scale_X);
-        UIHelper.Tooltip("Minimum amount to add to the scale X co-ordinate.");
+        GUI.Tooltip("Minimum amount to add to the scale X co-ordinate.");
 
         ImGui.SameLine();
         DPI.ApplyInputWidth(100f);
         ImGui.InputFloat("##offsetMaxScaleX", ref randomOffsetMax_Scale_X);
-        UIHelper.Tooltip("Maximum amount to add to the scale X co-ordinate.");
+        GUI.Tooltip("Maximum amount to add to the scale X co-ordinate.");
 
         ImGui.Checkbox("Y##scrambleScaleY", ref CFG.Current.Scrambler_RandomiseScale_Y);
-        UIHelper.Tooltip("Include the Y co-ordinate of the selection's Scale in the scramble.");
+        GUI.Tooltip("Include the Y co-ordinate of the selection's Scale in the scramble.");
 
         ImGui.SameLine();
         DPI.ApplyInputWidth(100f);
         ImGui.InputFloat("##offsetMinScaleY", ref randomOffsetMin_Scale_Y);
-        UIHelper.Tooltip("Minimum amount to add to the scale Y co-ordinate.");
+        GUI.Tooltip("Minimum amount to add to the scale Y co-ordinate.");
 
         ImGui.SameLine();
         DPI.ApplyInputWidth(100f);
         ImGui.InputFloat("##offsetMaxScaleY", ref randomOffsetMax_Scale_Y);
-        UIHelper.Tooltip("Maximum amount to add to the scale Y co-ordinate.");
+        GUI.Tooltip("Maximum amount to add to the scale Y co-ordinate.");
 
         ImGui.Checkbox("Z##scrambleScaleZ", ref CFG.Current.Scrambler_RandomiseScale_Z);
-        UIHelper.Tooltip("Include the Z co-ordinate of the selection's Scale in the scramble.");
+        GUI.Tooltip("Include the Z co-ordinate of the selection's Scale in the scramble.");
 
         ImGui.SameLine();
         DPI.ApplyInputWidth(100f);
         ImGui.InputFloat("##offsetMinScaleZ", ref randomOffsetMin_Scale_Z);
-        UIHelper.Tooltip("Minimum amount to add to the scale Z co-ordinate.");
+        GUI.Tooltip("Minimum amount to add to the scale Z co-ordinate.");
 
         ImGui.SameLine();
         DPI.ApplyInputWidth(100f);
         ImGui.InputFloat("##offsetMaxScaleZ", ref randomOffsetMax_Scale_Y);
-        UIHelper.Tooltip("Maximum amount to add to the scale Z co-ordinate.");
+        GUI.Tooltip("Maximum amount to add to the scale Z co-ordinate.");
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader("Options", "");
+        GUI.Spacer();
+        GUI.SimpleHeader("Options", "");
         ImGui.Checkbox("Scale Proportionally##scrambleSharedScale", ref CFG.Current.Scrambler_RandomiseScale_SharedScale);
-        UIHelper.Tooltip("When scrambling the scale, the Y and Z values will follow the X value, making the scaling proportional.");
+        GUI.Tooltip("When scrambling the scale, the Y and Z values will follow the X value, making the scaling proportional.");
 
         // Clamp floats
         randomOffsetMin_Pos_X = Math.Clamp(randomOffsetMin_Pos_X, -10000f, 10000f);
@@ -279,10 +279,10 @@ public class ScrambleAction
         CFG.Current.Scrambler_OffsetMax_Scale_Y = randomOffsetMax_Scale_Y;
         CFG.Current.Scrambler_OffsetMax_Scale_Z = randomOffsetMax_Scale_Z;
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader("Actions", "");
+        GUI.Spacer();
+        GUI.SimpleHeader("Actions", "");
 
-        UIHelper.MultiButtonInput("scrambleActions",
+        GUI.MultiButtonInput("scrambleActions",
             "scramble", "Scramble Selection", "", ApplyScramble);
     }
 

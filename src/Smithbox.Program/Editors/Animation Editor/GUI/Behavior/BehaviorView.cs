@@ -40,7 +40,7 @@ public class BehaviorView : IAnimView
     public void Display()
     {
         // List
-        if (ImGui.Begin($@"Behavior##BehaviorListWindow{View.ViewIndex}", UIHelper.GetMainWindowFlags()))
+        if (ImGui.Begin($@"Behavior##BehaviorListWindow{View.ViewIndex}", GUI.GetMainWindowFlags()))
         {
             float width = ImGui.GetContentRegionAvail().X;
             float height = ImGui.GetContentRegionAvail().Y;
@@ -58,7 +58,7 @@ public class BehaviorView : IAnimView
         ImGui.End();
 
         // Workboard
-        if (ImGui.Begin($@"Workboard##BehaviorWorkboardWindow{View.ViewIndex}", UIHelper.GetMainWindowFlags()))
+        if (ImGui.Begin($@"Workboard##BehaviorWorkboardWindow{View.ViewIndex}", GUI.GetMainWindowFlags()))
         {
             float width = ImGui.GetContentRegionAvail().X;
             float height = ImGui.GetContentRegionAvail().Y;
@@ -88,7 +88,7 @@ public class BehaviorView : IAnimView
         ImGui.End();
 
         // Properties
-        if (ImGui.Begin($@"Properties##BehaviorPropertiesWindow{View.ViewIndex}", UIHelper.GetMainWindowFlags()))
+        if (ImGui.Begin($@"Properties##BehaviorPropertiesWindow{View.ViewIndex}", GUI.GetMainWindowFlags()))
         {
             float width = ImGui.GetContentRegionAvail().X;
             float height = ImGui.GetContentRegionAvail().Y;

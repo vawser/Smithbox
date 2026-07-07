@@ -40,16 +40,16 @@ public class MapValidatorTool
         var sectionHeight = windowSize.Y * 0.25f;
         var sectionSize = new Vector2(sectionWidth * DPI.UIScale(), sectionHeight * DPI.UIScale());
 
-        UIHelper.WrappedText("Validate the currently loaded map.");
-        UIHelper.WrappedText("");
+        GUI.WrappedText("Validate the currently loaded map.");
+        GUI.WrappedText("");
 
-        UIHelper.MultiButtonInput("validateActions",
+        GUI.MultiButtonInput("validateActions",
             "validateMap", "Validate", "", ValidateMap);
 
         if (ValidationEntries.Count > 0)
         {
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader("Results", "");
+            GUI.Spacer();
+            GUI.SimpleHeader("Results", "");
 
             ImGui.BeginChild("ValidationTabs", ImGuiChildFlags.Borders);
 
@@ -98,10 +98,10 @@ public class MapValidatorTool
         }
         else if(FirstValidate && ValidationEntries.Count == 0)
         {
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader("Results", "");
+            GUI.Spacer();
+            GUI.SimpleHeader("Results", "");
 
-            UIHelper.WrappedText("No issues found.");
+            GUI.WrappedText("No issues found.");
         }
     }
 

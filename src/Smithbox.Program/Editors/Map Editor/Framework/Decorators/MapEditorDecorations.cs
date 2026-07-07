@@ -1098,7 +1098,7 @@ public static class MapEditorDecorations
                 EditorCommandQueue.AddCommand($"model/load/{value}/{loadType}");
             }
         }
-        UIHelper.Tooltip("View this model in the Model Editor, loading it automatically.");
+        GUI.Tooltip("View this model in the Model Editor, loading it automatically.");
 
         ImGui.EndGroup();
     }

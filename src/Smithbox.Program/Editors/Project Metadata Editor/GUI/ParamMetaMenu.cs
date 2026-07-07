@@ -20,7 +20,7 @@ public class ParamMetaMenu
     {
         var curProject = Smithbox.Orchestrator.SelectedProject;
 
-        UIHelper.SimpleHeader(
+        GUI.SimpleHeader(
             LOC.Get("META_Header_Param_Meta"),
             LOC.Get("META_Header_Param_Meta_TT"));
 

@@ -33,12 +33,12 @@ public class ModeSelectionMenu
 
         var curMode = Editor.Selection.EditorMode;
 
-        UIHelper.SimpleHeader(
+        GUI.SimpleHeader(
             LOC.Get("META_Header_Editor_Mode"),
             LOC.Get("META_Header_Editor_Mode_TT"));
 
         ImGui.BeginChild("EditorModeSection", new Vector2(0, 40), ImGuiChildFlags.Borders);
-        UIHelper.SetInputWidth();
+        GUI.SetInputWidth();
 
         var previewName = LOC.Get(curMode.GetDisplayName());
 

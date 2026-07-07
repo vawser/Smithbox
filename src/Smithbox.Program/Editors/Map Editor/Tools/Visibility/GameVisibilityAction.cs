@@ -126,21 +126,21 @@ public class GameVisibilityAction
     /// </summary>
     public void OnToolWindow()
     {
-        UIHelper.WrappedText("Use these actions to adjust the in-game visibility of map objects.");
+        GUI.WrappedText("Use these actions to adjust the in-game visibility of map objects.");
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader("Dummy", "Toggle the dummy state type for selected map objects. Note: conversion into a dummy type will cause property data loss.");
+        GUI.Spacer();
+        GUI.SimpleHeader("Dummy", "Toggle the dummy state type for selected map objects. Note: conversion into a dummy type will cause property data loss.");
 
-        UIHelper.MultiButtonInput("dummyActions",
+        GUI.MultiButtonInput("dummyActions",
             "makeDummy", "Convert to Dummy Type", "", MakeObjectDummy,
             "makeNormal", "Convert to Normal Type", "", MakeObjectNormal);
 
         if (Project.Descriptor.ProjectType is ProjectType.ER)
         {
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader("Game Presence", "Toggle the game presence type for selected map objects. Game Presence can be used to hide a map object without losing property data.");
+            GUI.Spacer();
+            GUI.SimpleHeader("Game Presence", "Toggle the game presence type for selected map objects. Game Presence can be used to hide a map object without losing property data.");
 
-            UIHelper.MultiButtonInput("gamePresActions",
+            GUI.MultiButtonInput("gamePresActions",
                 "makeVisible", "Make Visible", "", EnableObjectGamePresence,
                 "makeHidden", "Make Hidden", "", DisableObjectGamePresence);
         }

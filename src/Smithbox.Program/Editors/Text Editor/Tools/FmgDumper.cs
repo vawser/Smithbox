@@ -27,7 +27,7 @@ public class FmgDumper
             {
                 _ = DumpAllFMGsAsync();
             }
-            UIHelper.Tooltip(LOC.Get("TEXT_Dumper_Action_Dump_TT"));
+            GUI.Tooltip(LOC.Get("TEXT_Dumper_Action_Dump_TT"));
 
             ImGui.EndMenu();
         }

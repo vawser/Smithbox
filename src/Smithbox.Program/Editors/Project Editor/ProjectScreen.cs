@@ -47,8 +47,8 @@ public class ProjectScreen
         ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(0.0f, 0.0f));
 
         ImGui.SetNextWindowDockID(mainDockspaceID, ImGuiCond.FirstUseEver);
-        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_EditorView);
-        if (ImGui.Begin($"{LOC.Get("PROJECT_Window_Project_Editor")}###ProjectEditor", UIHelper.GetMainWindowFlags()))
+        ImGui.SetNextWindowClass(ref GUI.DockGroup_EditorView);
+        if (ImGui.Begin($"{LOC.Get("PROJECT_Window_Project_Editor")}###ProjectEditor", GUI.GetMainWindowFlags()))
         {
             ImGui.PopStyleColor(1);
             ImGui.PopStyleVar(1);
@@ -63,16 +63,16 @@ public class ProjectScreen
             }
 
             var dsid = ImGui.GetID("DockSpace_ProjectEditor");
-            ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None, ref UIHelper.DockGroup_ProjectEditor);
+            ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None, ref GUI.DockGroup_ProjectEditor);
 
             ImGui.SetNextWindowDockID(dsid, ImGuiCond.FirstUseEver);
-            ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ProjectEditor);
-            if (ImGui.Begin($"{LOC.Get("PROJECT_Window_Project_View")}###ProjectView", UIHelper.GetInnerWindowFlags()))
+            ImGui.SetNextWindowClass(ref GUI.DockGroup_ProjectEditor);
+            if (ImGui.Begin($"{LOC.Get("PROJECT_Window_Project_View")}###ProjectView", GUI.GetInnerWindowFlags()))
             {
             }
 
             var viewDockId = ImGui.GetID($"DockSpace_ProjectEditorView");
-            ImGui.DockSpace(viewDockId, new Vector2(0, 0), ref UIHelper.DockGroup_ProjectEditorView);
+            ImGui.DockSpace(viewDockId, new Vector2(0, 0), ref GUI.DockGroup_ProjectEditorView);
 
             Display(viewDockId);
 
@@ -94,8 +94,8 @@ public class ProjectScreen
         {
             // Active Projects
             ImGui.SetNextWindowDockID(editorDockspaceId, ImGuiCond.FirstUseEver);
-            ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ProjectEditorView);
-            if (ImGui.Begin($@"{LOC.Get("PROJECT_Window_Active_Projects")}###projectEditor_ActiveProjects", UIHelper.GetInnerWindowFlags()))
+            ImGui.SetNextWindowClass(ref GUI.DockGroup_ProjectEditorView);
+            if (ImGui.Begin($@"{LOC.Get("PROJECT_Window_Active_Projects")}###projectEditor_ActiveProjects", GUI.GetInnerWindowFlags()))
             {
                 var width = ImGui.GetContentRegionAvail().X;
                 var height = ImGui.GetContentRegionAvail().Y;
@@ -112,8 +112,8 @@ public class ProjectScreen
 
             // Project List
             ImGui.SetNextWindowDockID(editorDockspaceId, ImGuiCond.FirstUseEver);
-            ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ProjectEditorView);
-            if (ImGui.Begin($@"{LOC.Get("PROJECT_Window_Available_Projects")}###projectEditor_AvaliableProjects", UIHelper.GetInnerWindowFlags()))
+            ImGui.SetNextWindowClass(ref GUI.DockGroup_ProjectEditorView);
+            if (ImGui.Begin($@"{LOC.Get("PROJECT_Window_Available_Projects")}###projectEditor_AvaliableProjects", GUI.GetInnerWindowFlags()))
             {
                 var width = ImGui.GetContentRegionAvail().X;
                 var height = ImGui.GetContentRegionAvail().Y;
@@ -133,8 +133,8 @@ public class ProjectScreen
         {
             // Project Configuration
             ImGui.SetNextWindowDockID(editorDockspaceId, ImGuiCond.FirstUseEver);
-            ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ProjectEditorView);
-            if (ImGui.Begin($@"{LOC.Get("PROJECT_Window_Project_Configuration")}###projectEditor_ProjectConfiguration", UIHelper.GetInnerWindowFlags()))
+            ImGui.SetNextWindowClass(ref GUI.DockGroup_ProjectEditorView);
+            if (ImGui.Begin($@"{LOC.Get("PROJECT_Window_Project_Configuration")}###projectEditor_ProjectConfiguration", GUI.GetInnerWindowFlags()))
             {
                 var width = ImGui.GetContentRegionAvail().X;
                 var height = ImGui.GetContentRegionAvail().Y;
@@ -153,7 +153,7 @@ public class ProjectScreen
 
     public void DisplayActiveProjectList()
     {
-        UIHelper.SimpleHeader(
+        GUI.SimpleHeader(
             LOC.Get("PROJECT_Configuration_Header_Active_Projects"), 
             LOC.Get("PROJECT_Configuration_Header_Active_Projects_TT"));
 
@@ -168,11 +168,11 @@ public class ProjectScreen
 
     public void DisplayAvailableProjectList()
     {
-        UIHelper.SimpleHeader(
+        GUI.SimpleHeader(
             LOC.Get("PROJECT_Configuration_Header_Global_Actions"),
             LOC.Get("PROJECT_Configuration_Header_Global_Actions_TT"));
 
-        UIHelper.MultiButtonInput("globalProjectActions",
+        GUI.MultiButtonInput("globalProjectActions",
             "createNewProject",
             LOC.Get("PROJECT_Configuration_Global_Action_Create_Project"), 
             LOC.Get("PROJECT_Configuration_Global_Action_Create_Project_TT"),
@@ -183,7 +183,7 @@ public class ProjectScreen
             LOC.Get("PROJECT_Configuration_Global_Action_Create_Project_From_JSON_TT"),
             CreateProjectFromJsonAction);
 
-        UIHelper.SimpleHeader(
+        GUI.SimpleHeader(
             LOC.Get("PROJECT_Configuration_Header_Available_Projects"),
             LOC.Get("PROJECT_Configuration_Header_Available_Projects_TT"));
 
@@ -579,13 +579,13 @@ public class ProjectScreen
             {
                 CFG.Current.Interface_ProjectEditor_ProjectList = !CFG.Current.Interface_ProjectEditor_ProjectList;
             }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_ProjectEditor_ProjectList);
+            GUI.ShowActiveStatus(CFG.Current.Interface_ProjectEditor_ProjectList);
 
             if (ImGui.MenuItem($"{LOC.Get("PROJECT_Configuration_View_Project_Configuration")}##projectConfigurationToggle"))
             {
                 CFG.Current.Interface_ProjectEditor_ProjectConfiguration = !CFG.Current.Interface_ProjectEditor_ProjectConfiguration;
             }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_ProjectEditor_ProjectConfiguration);
+            GUI.ShowActiveStatus(CFG.Current.Interface_ProjectEditor_ProjectConfiguration);
 
             ImGui.EndMenu();
         }

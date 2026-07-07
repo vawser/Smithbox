@@ -467,7 +467,7 @@ public class ProjectOrchestrator : IDisposable
 
         if (!InitialLayout)
         {
-            UIHelper.SetupPopupWindow();
+            GUI.SetupPopupWindow();
             InitialLayout = true;
         }
 

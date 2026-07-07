@@ -83,13 +83,13 @@ public class GlobalSearchTool : IMapQueryEngine
 
         if (Bank.MapBankInitialized)
         {
-            UIHelper.WrappedText("Search through all maps for usage of the specificed property value.");
+            GUI.WrappedText("Search through all maps for usage of the specificed property value.");
 
             // Map Filter
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader("Map Filter", "Target this specific string when querying the map. Supports regex.\n\n" + $"Multiple filters can be used by using the '|' symbol between each filter, acting as an OR operator.");
+            GUI.Spacer();
+            GUI.SimpleHeader("Map Filter", "Target this specific string when querying the map. Supports regex.\n\n" + $"Multiple filters can be used by using the '|' symbol between each filter, acting as an OR operator.");
 
-            UIHelper.SinglelineTextInput("MapFilter", ref _searchInputMap);
+            GUI.SinglelineTextInput("MapFilter", ref _searchInputMap);
 
             if (ImGui.BeginPopupContextItem($"MapFilterContextMenu"))
             {
@@ -98,16 +98,16 @@ public class GlobalSearchTool : IMapQueryEngine
                 {
                     _searchInputMap = $"^{_searchInputMap}$";
                 }
-                UIHelper.Tooltip("Apply regex that makes the current input match exactly.");
+                GUI.Tooltip("Apply regex that makes the current input match exactly.");
 
                 ImGui.EndPopup();
             }
 
             // Property Filter
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader("Property Filter", "Target this specific string when querying the property name. Supports regex.\n\n" + $"Multiple filters can be used by using the '|' symbol between each filter, acting as an OR operator.");
+            GUI.Spacer();
+            GUI.SimpleHeader("Property Filter", "Target this specific string when querying the property name. Supports regex.\n\n" + $"Multiple filters can be used by using the '|' symbol between each filter, acting as an OR operator.");
 
-            UIHelper.SinglelineTextInput("PropNameFilter", ref _searchInputProperty);
+            GUI.SinglelineTextInput("PropNameFilter", ref _searchInputProperty);
 
             // TODO: add arrow button that lets user traverse a tree that displays the MSB structure, allowing them to select properties easily without needing to load a map
 
@@ -118,21 +118,21 @@ public class GlobalSearchTool : IMapQueryEngine
                 {
                     _searchInputProperty = $"^{_searchInputProperty}$";
                 }
-                UIHelper.Tooltip("Apply regex that makes the current input match exactly.");
+                GUI.Tooltip("Apply regex that makes the current input match exactly.");
                 if (ImGui.Selectable("Index"))
                 {
                     _searchInputProperty = @$"{_searchInputProperty}\[0\]";
                 }
-                UIHelper.Tooltip("Escaped square brackets for targeting specific index in array properties.");
+                GUI.Tooltip("Escaped square brackets for targeting specific index in array properties.");
 
                 ImGui.EndPopup();
             }
 
             // Value Filter
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader("Value Filter", "Target this specific string when querying the property value. Supports regex.\n\n" + $"Multiple filters can be used by using the '|' symbol between each filter, acting as an OR operator.");
+            GUI.Spacer();
+            GUI.SimpleHeader("Value Filter", "Target this specific string when querying the property value. Supports regex.\n\n" + $"Multiple filters can be used by using the '|' symbol between each filter, acting as an OR operator.");
 
-            UIHelper.SinglelineTextInput("PropValueFilter", ref _searchInputValue);
+            GUI.SinglelineTextInput("PropValueFilter", ref _searchInputValue);
 
             if (ImGui.BeginPopupContextItem($"ValueFilterContextMenu"))
             {
@@ -141,36 +141,36 @@ public class GlobalSearchTool : IMapQueryEngine
                 {
                     _searchInputValue = $"^{_searchInputValue}$";
                 }
-                UIHelper.Tooltip("Apply regex that makes the current input match exactly.");
+                GUI.Tooltip("Apply regex that makes the current input match exactly.");
                 if (ImGui.Selectable("Non-Zero Number"))
                 {
                     _searchInputValue = "^[1-9]\\d*$";
                 }
-                UIHelper.Tooltip("Apply regex that makes the current input match non-zero numbers.");
+                GUI.Tooltip("Apply regex that makes the current input match non-zero numbers.");
 
                 ImGui.EndPopup();
             }
 
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader("Options", "");
+            GUI.Spacer();
+            GUI.SimpleHeader("Options", "");
 
             ImGui.Checkbox("Target Project Files", ref _targetProjectFiles);
-            UIHelper.Tooltip("Uses the project map files instead of game root.");
+            GUI.Tooltip("Uses the project map files instead of game root.");
 
             ImGui.Checkbox("Ignore Dummy Map Objects", ref _ignoreDummyParts);
-            UIHelper.Tooltip("Excludes DummyObject and DummyEnemy entries from the search.");
+            GUI.Tooltip("Excludes DummyObject and DummyEnemy entries from the search.");
 
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader("Actions", "");
+            GUI.Spacer();
+            GUI.SimpleHeader("Actions", "");
 
-            UIHelper.MultiButtonInput("globalSearchActions",
+            GUI.MultiButtonInput("globalSearchActions",
                 "search", "Search", "", RunMapSearch,
                 "clearSearch", "Clear", "", ClearSearchInputs);
         }
         else if (UserLoadedData)
         {
-            UIHelper.WrappedText("Setting up global map search...");
-            UIHelper.WrappedText("");
+            GUI.WrappedText("Setting up global map search...");
+            GUI.WrappedText("");
         }
     }
 
@@ -197,44 +197,44 @@ public class GlobalSearchTool : IMapQueryEngine
 
         if (Bank.MapBankInitialized)
         {
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader("Search Results", "Result rows are presented as: <entity name>, <name alias>, <matched value>");
+            GUI.Spacer();
+            GUI.SimpleHeader("Search Results", "Result rows are presented as: <entity name>, <name alias>, <matched value>");
 
             if (QueryComplete)
             {
-                UIHelper.MultiButtonInput("resultActions",
+                GUI.MultiButtonInput("resultActions",
                     "copyResults", "Copy Results to Clipboard", "", CopyResultsToClipboard);
 
-                UIHelper.Spacer();
-                UIHelper.SimpleHeader("Filters", "");
+                GUI.Spacer();
+                GUI.SimpleHeader("Filters", "");
 
                 ImGui.Checkbox("Header", ref CFG.Current.GlobalMapSearch_CopyResults_IncludeHeader);
-                UIHelper.Tooltip("Include the map headers in the clipboard text.");
+                GUI.Tooltip("Include the map headers in the clipboard text.");
 
                 ImGui.SameLine();
 
                 ImGui.Checkbox("Index", ref CFG.Current.GlobalMapSearch_CopyResults_IncludeIndex);
-                UIHelper.Tooltip("Include the result index in the clipboard text.");
+                GUI.Tooltip("Include the result index in the clipboard text.");
 
                 ImGui.SameLine();
 
                 ImGui.Checkbox("Entity Name", ref CFG.Current.GlobalMapSearch_CopyResults_IncludeEntityName);
-                UIHelper.Tooltip("Include the entity name in the clipboard text.");
+                GUI.Tooltip("Include the entity name in the clipboard text.");
 
                 ImGui.SameLine();
 
                 ImGui.Checkbox("Entity Alias", ref CFG.Current.GlobalMapSearch_CopyResults_IncludeEntityAlias);
-                UIHelper.Tooltip("Include the entity alias in the clipboard text.");
+                GUI.Tooltip("Include the entity alias in the clipboard text.");
 
                 ImGui.SameLine();
 
                 ImGui.Checkbox("Property Name", ref CFG.Current.GlobalMapSearch_CopyResults_IncludePropertyName);
-                UIHelper.Tooltip("Include the property name in the clipboard text.");
+                GUI.Tooltip("Include the property name in the clipboard text.");
 
                 ImGui.SameLine();
 
                 ImGui.Checkbox("Property Value", ref CFG.Current.GlobalMapSearch_CopyResults_IncludePropertyValue);
-                UIHelper.Tooltip("Include the property value in the clipboard text.");
+                GUI.Tooltip("Include the property value in the clipboard text.");
             }
 
             if (QueryComplete)
@@ -243,7 +243,7 @@ public class GlobalSearchTool : IMapQueryEngine
             }
             else if (!MayRunQuery)
             {
-                UIHelper.WrappedText($"Search query is not yet complete...");
+                GUI.WrappedText($"Search query is not yet complete...");
             }
         }
     }
@@ -520,15 +520,15 @@ public class GlobalSearchTool : IMapQueryEngine
                         {
                             // Entity Name
                             var alias = GetUnknownAlias(entry.EntityName);
-                            UIHelper.DisplayColoredAlias(alias, UI.Current.ImGui_AliasName_Text);
+                            GUI.DisplayColoredAlias(alias, UI.Current.ImGui_AliasName_Text);
 
                             // Value
-                            UIHelper.DisplayColoredAlias($"- {entry.PropertyName}: {entry.PropertyValue}", UI.Current.ImGui_Benefit_Text_Color);
+                            GUI.DisplayColoredAlias($"- {entry.PropertyName}: {entry.PropertyValue}", UI.Current.ImGui_Benefit_Text_Color);
                         }
                         index++;
                     }
                 }
-                UIHelper.Tooltip($"Number of matches: {objectMatches.Count}");
+                GUI.Tooltip($"Number of matches: {objectMatches.Count}");
             }
 
             ImGui.EndChild();

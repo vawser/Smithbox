@@ -31,7 +31,7 @@ public class TextContainerList
     /// </summary>
     public void Display(float width, float height)
     {
-        UIHelper.SimpleHeader(
+        GUI.SimpleHeader(
             LOC.Get("TEXT_ContainerList_Header_Containers"),
             LOC.Get("TEXT_ContainerList_Header_Containers_TT"));
 
@@ -53,7 +53,7 @@ public class TextContainerList
         if (!CFG.Current.TextEditor_Container_List_Display_Primary_Category_Only)
             categoryMode = LOC.Get("TEXT_ContainerList_Category_Mode_All");
 
-        UIHelper.Tooltip(LOC.Get("TEXT_ContainerList_Category_Mode_TT", categoryMode));
+        GUI.Tooltip(LOC.Get("TEXT_ContainerList_Category_Mode_TT", categoryMode));
 
         ImGui.EndChild();
 
@@ -93,7 +93,7 @@ public class TextContainerList
             var orderedList = Project.Handler.TextData.PrimaryBank.Containers.OrderBy(e => e.Key);
             var name = $"{category.GetDisplayName()}";
 
-            UIHelper.SimpleHeader(name, "");
+            GUI.SimpleHeader(name, "");
 
             // Common Sub-Header
             if (ImGui.CollapsingHeader($"{LOC.Get("TEXT_ContainerList_DS2_Common")}##{name}_common", flags))
@@ -260,22 +260,22 @@ public class TextContainerList
                     {
                         if (wrapper.FileEntry.Filename.Contains("dlc2") || wrapper.FileEntry.Filename.Contains("dlc02"))
                         {
-                            UIHelper.Tooltip(LOC.Get("TEXT_ContainerList_Is_Primary_Container_TT"));
+                            GUI.Tooltip(LOC.Get("TEXT_ContainerList_Is_Primary_Container_TT"));
                         }
                         else if (wrapper.FileEntry.Filename.Contains("dlc1") || wrapper.FileEntry.Filename.Contains("dlc01"))
                         {
-                            UIHelper.Tooltip(LOC.Get("TEXT_ContainerList_Obsolete_Container_TT"));
+                            GUI.Tooltip(LOC.Get("TEXT_ContainerList_Obsolete_Container_TT"));
                         }
                         else
                         {
-                            UIHelper.Tooltip(LOC.Get("TEXT_ContainerList_Obsolete_Container_TT"));
+                            GUI.Tooltip(LOC.Get("TEXT_ContainerList_Obsolete_Container_TT"));
                         }
                     }
                 }
             }
             if (CFG.Current.TextEditor_Container_List_Display_Source_Path)
             {
-                UIHelper.Tooltip(LOC.Get("TEXT_ContainerList_Source_Path_TT", wrapper.FileEntry.Path));
+                GUI.Tooltip(LOC.Get("TEXT_ContainerList_Source_Path_TT", wrapper.FileEntry.Path));
             }
         }
     }

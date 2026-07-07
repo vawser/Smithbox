@@ -108,7 +108,7 @@ public class ParamEditorScreen : EditorScreen
 
         // Views
         var dsid = ImGui.GetID("DockSpace_ParamView");
-        ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None, ref UIHelper.DockGroup_ParamEditor);
+        ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None, ref GUI.DockGroup_ParamEditor);
 
         ViewHandler.HandleViews(dsid);
 
@@ -173,13 +173,13 @@ public class ParamEditorScreen : EditorScreen
                 {
                     CFG.Current.ParamEditor_ManualSave_IncludePARAM = !CFG.Current.ParamEditor_ManualSave_IncludePARAM;
                 }
-                UIHelper.Tooltip(LOC.Get("EDITOR_SaveOutput_PARAM_TT"));
-                UIHelper.ShowActiveStatus(CFG.Current.ParamEditor_ManualSave_IncludePARAM);
+                GUI.Tooltip(LOC.Get("EDITOR_SaveOutput_PARAM_TT"));
+                GUI.ShowActiveStatus(CFG.Current.ParamEditor_ManualSave_IncludePARAM);
 
 
                 ImGui.EndMenu();
             }
-            UIHelper.Tooltip(LOC.Get("EDITOR_Menubar_Manual_Save_Output_TT"));
+            GUI.Tooltip(LOC.Get("EDITOR_Menubar_Manual_Save_Output_TT"));
 
             // Automatic Save Output
             if (ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Auto_Save_Output")}##autoSaveMenuHeader"))
@@ -189,12 +189,12 @@ public class ParamEditorScreen : EditorScreen
                 {
                     CFG.Current.ParamEditor_AutomaticSave_IncludePARAM = !CFG.Current.ParamEditor_AutomaticSave_IncludePARAM;
                 }
-                UIHelper.Tooltip(LOC.Get("EDITOR_SaveOutput_FMG_TT"));
-                UIHelper.ShowActiveStatus(CFG.Current.ParamEditor_AutomaticSave_IncludePARAM);
+                GUI.Tooltip(LOC.Get("EDITOR_SaveOutput_FMG_TT"));
+                GUI.ShowActiveStatus(CFG.Current.ParamEditor_AutomaticSave_IncludePARAM);
 
                 ImGui.EndMenu();
             }
-            UIHelper.Tooltip(LOC.Get("EDITOR_Menubar_Auto_Save_Output_TT"));
+            GUI.Tooltip(LOC.Get("EDITOR_Menubar_Auto_Save_Output_TT"));
 
             ImGui.EndMenu();
         }
@@ -242,7 +242,7 @@ public class ParamEditorScreen : EditorScreen
                 {
                     ParamRowDuplicate.ApplyDuplicate(activeView);
                 }
-                UIHelper.Tooltip(LOC.Get("PARAM_Menubar_Action_Duplicate_TT"));
+                GUI.Tooltip(LOC.Get("PARAM_Menubar_Action_Duplicate_TT"));
 
                 // Duplicate to Commutative Param
                 if (ImGui.BeginMenu($"{LOC.Get("PARAM_Menubar_Action_Duplicate_to_Commutative_Param")}##commutativeDuplicateAction", ParamRowDuplicate.IsCommutativeParam(activeView)))
@@ -251,21 +251,21 @@ public class ParamEditorScreen : EditorScreen
 
                     ImGui.EndMenu();
                 }
-                UIHelper.Tooltip(LOC.Get("PARAM_Menubar_Action_Duplicate_to_Commutative_Param_TT"));
+                GUI.Tooltip(LOC.Get("PARAM_Menubar_Action_Duplicate_to_Commutative_Param_TT"));
 
                 // Delete
                 if (ImGui.MenuItem($"{LOC.Get("PARAM_Menubar_Action_Delete")}##deleteAction", InputManager.GetHint(KeybindID.Delete)))
                 {
                     ParamRowDelete.ApplyDelete(activeView);
                 }
-                UIHelper.Tooltip(LOC.Get("PARAM_Menubar_Action_Delete_TT"));
+                GUI.Tooltip(LOC.Get("PARAM_Menubar_Action_Delete_TT"));
 
                 // Copy
                 if (ImGui.MenuItem($"{LOC.Get("PARAM_Menubar_Action_Copy")}##copyAction", InputManager.GetHint(KeybindID.Copy)))
                 {
                     Clipboard.CopySelectionToClipboard(activeView);
                 }
-                UIHelper.Tooltip(LOC.Get("PARAM_Menubar_Action_Copy_TT"));
+                GUI.Tooltip(LOC.Get("PARAM_Menubar_Action_Copy_TT"));
 
                 // Paste
                 if (ImGui.MenuItem($"{LOC.Get("PARAM_Menubar_Action_Paste")}##pasteAction", InputManager.GetHint(KeybindID.Paste)))
@@ -275,7 +275,7 @@ public class ParamEditorScreen : EditorScreen
                         EditorCommandQueue.AddCommand(@"param/menu/ctrlVPopup");
                     }
                 }
-                UIHelper.Tooltip(LOC.Get("PARAM_Menubar_Action_Paste_TT"));
+                GUI.Tooltip(LOC.Get("PARAM_Menubar_Action_Paste_TT"));
 
                 // Jump
                 if (ImGui.MenuItem($"{LOC.Get("PARAM_Menubar_Action_Jump")}##jumpAction", InputManager.GetHint(KeybindID.Jump)))
@@ -285,7 +285,7 @@ public class ParamEditorScreen : EditorScreen
                         activeView.JumpToSelectedRow = true;
                     }
                 }
-                UIHelper.Tooltip(LOC.Get("PARAM_Menubar_Action_Jump_TT"));
+                GUI.Tooltip(LOC.Get("PARAM_Menubar_Action_Jump_TT"));
 
                 ImGui.EndMenu();
             }
@@ -303,13 +303,13 @@ public class ParamEditorScreen : EditorScreen
             {
                 CFG.Current.Interface_ParamEditor_Table = !CFG.Current.Interface_ParamEditor_Table;
             }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_ParamEditor_Table);
+            GUI.ShowActiveStatus(CFG.Current.Interface_ParamEditor_Table);
 
             if (ImGui.MenuItem($"{LOC.Get("PARAM_Menubar_Tool_Window")}##toolsViewToggle"))
             {
                 CFG.Current.Interface_ParamEditor_ToolWindow = !CFG.Current.Interface_ParamEditor_ToolWindow;
             }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_ParamEditor_ToolWindow);
+            GUI.ShowActiveStatus(CFG.Current.Interface_ParamEditor_ToolWindow);
 
             ImGui.Separator();
 

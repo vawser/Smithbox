@@ -58,7 +58,7 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
         }
 
         var dsid = ImGui.GetID("DockSpace_TextureViewer");
-        ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None, ref UIHelper.DockGroup_TextureViewer);
+        ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None, ref GUI.DockGroup_TextureViewer);
 
         ViewHandler.HandleViews(dsid);
     }
@@ -124,13 +124,13 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
             {
                 CFG.Current.Interface_TextureViewer_Properties = !CFG.Current.Interface_TextureViewer_Properties;
             }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_TextureViewer_Properties);
+            GUI.ShowActiveStatus(CFG.Current.Interface_TextureViewer_Properties);
 
             if (ImGui.MenuItem($"{LOC.Get("TEXVIEW_Menubar_Toggle_View_Tools")}##toolsViewToggle"))
             {
                 CFG.Current.Interface_TextureViewer_ToolWindow = !CFG.Current.Interface_TextureViewer_ToolWindow;
             }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_TextureViewer_ToolWindow);
+            GUI.ShowActiveStatus(CFG.Current.Interface_TextureViewer_ToolWindow);
 
             ImGui.Separator();
 

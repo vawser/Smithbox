@@ -39,7 +39,7 @@ public class GparamFileList
     }
     public void DisplayHeader()
     {
-        UIHelper.SimpleHeader("Files", "");
+        GUI.SimpleHeader("Files", "");
 
         // Search
         var searchHeight = new Vector2(0, 36) * DPI.UIScale();
@@ -60,7 +60,7 @@ public class GparamFileList
         {
             aliasMode = "Hiding file aliases.";
         }
-        UIHelper.Tooltip($"Toggle the display of file aliases.\nCurrent Mode: {aliasMode}");
+        GUI.Tooltip($"Toggle the display of file aliases.\nCurrent Mode: {aliasMode}");
 
         // BND File Toggle
         if (Project.Descriptor.ProjectType is ProjectType.BB)
@@ -77,7 +77,7 @@ public class GparamFileList
             {
                 bndMode = "Displaying GPARAM files.";
             }
-            UIHelper.Tooltip($"Toggle the display of GPARAMBND files.\nCurrent Mode: {bndMode}");
+            GUI.Tooltip($"Toggle the display of GPARAMBND files.\nCurrent Mode: {bndMode}");
         }
 
         ImGui.EndChild();
@@ -154,7 +154,7 @@ public class GparamFileList
 
         if (CFG.Current.GparamEditor_File_List_Display_Aliases)
         {
-            UIHelper.DisplayAlias(alias);
+            GUI.DisplayAlias(alias);
         }
 
         ImGui.EndGroup();
@@ -180,7 +180,7 @@ public class GparamFileList
 
                 ImGui.EndMenu();
             }
-            UIHelper.Tooltip("Copy this GPARAM and rename the copied file.");
+            GUI.Tooltip("Copy this GPARAM and rename the copied file.");
 
             // Delete
             if (IsDeletableGparamFile(fileEntry))
@@ -189,7 +189,7 @@ public class GparamFileList
                 {
                     DeleteGparamFile(fileEntry);
                 }
-                UIHelper.Tooltip("Will delete this GPARAM from the project.");
+                GUI.Tooltip("Will delete this GPARAM from the project.");
             }
 
 
@@ -199,12 +199,12 @@ public class GparamFileList
             {
                 View.ToolView.DataTransferTool.ImportGPARAM(Project, View, fileEntry, curGparam);
             }
-            UIHelper.Tooltip("Import a GPARAM json to overwrite this entry.");
+            GUI.Tooltip("Import a GPARAM json to overwrite this entry.");
 
             if (ImGui.BeginMenu("Export"))
             {
                 ImGui.InputText("##overrideFilename", ref OverrideFileName, 255);
-                UIHelper.Tooltip("Define the filename for the exported file.");
+                GUI.Tooltip("Define the filename for the exported file.");
 
                 if (ImGui.Selectable("Export File"))
                 {
@@ -213,7 +213,7 @@ public class GparamFileList
 
                 ImGui.EndMenu();
             }
-            UIHelper.Tooltip("Export this currently selected GPARAM to JSON.");
+            GUI.Tooltip("Export this currently selected GPARAM to JSON.");
 
             ImGui.Separator();
 
@@ -235,13 +235,13 @@ public class GparamFileList
                 {
                     View.QuickEditHandler.UpdateFileFilter(fileEntry.Filename);
                 }
-                UIHelper.Tooltip("Add this file to the File Filter in the Quick Edit window.");
+                GUI.Tooltip("Add this file to the File Filter in the Quick Edit window.");
 
                 if (ImGui.Selectable("Data Finder"))
                 {
                     View.ToolView.DataFinder.UpdateFileFilter(fileEntry.Filename);
                 }
-                UIHelper.Tooltip("Add this file to the File Filter in the Data Finder window.");
+                GUI.Tooltip("Add this file to the File Filter in the Data Finder window.");
 
                 ImGui.EndMenu();
             }
@@ -255,7 +255,7 @@ public class GparamFileList
     public void CopyAsMenu()
     {
         ImGui.InputText("##copyAsFileNameInput", ref CopyAsFileName, 255);
-        UIHelper.Tooltip("Enter the filename this file will be renamed to when copied.");
+        GUI.Tooltip("Enter the filename this file will be renamed to when copied.");
 
         if(ImGui.Selectable("Submit"))
         {

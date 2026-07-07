@@ -108,7 +108,7 @@ namespace StudioCore.Logger.GUI
             {
                 IsDisplayed = !IsDisplayed;
             }
-            UIHelper.Tooltip(LOC.Get("LOG_Toggle_Display", Name));
+            Application.GUI.Tooltip(LOC.Get("LOG_Toggle_Display", Name));
 
             //fade time was in frames before, but we need milliseconds, so we need to convert it based on 60fps avg
             var last = LastLogEntry;
@@ -132,21 +132,21 @@ namespace StudioCore.Logger.GUI
                 var cfg = _getSettings();
                 if (!InitialLayout)
                 {
-                    UIHelper.SetupPopupWindow();
+                    Application.GUI.SetupPopupWindow();
                     InitialLayout = true;
                 }
                 
                 ImGui.PushID(ImguiName);
                 ImGui.PushStyleColor(ImGuiCol.WindowBg, UI.Current.ImGui_ChildBg);
 
-                if (ImGui.Begin(_windowName, ref IsDisplayed, UIHelper.GetLoggerWindowFlags()))
+                if (ImGui.Begin(_windowName, ref IsDisplayed, Application.GUI.GetLoggerWindowFlags()))
                 {
                     if (ImGui.Button($"{LOC.Get("LOG_Clear_Log")}##clearLog"))
                     {
                         LogEntries.Clear();
                         LastLogEntry = null;
                     }
-                    UIHelper.Tooltip(LOC.Get("LOG_Clear_Log_TT"));
+                    Application.GUI.Tooltip(LOC.Get("LOG_Clear_Log_TT"));
 
                     ImGui.SameLine();
 
@@ -155,7 +155,7 @@ namespace StudioCore.Logger.GUI
                         var allLogs = string.Join(Environment.NewLine, LogEntries.ConvertAll(le => le.FormattedMessage));
                         PlatformUtils.Instance.SetClipboardText(allLogs);
                     }
-                    UIHelper.Tooltip(LOC.Get("LOG_Copy_To_Clipboard_TT"));
+                    Application.GUI.Tooltip(LOC.Get("LOG_Copy_To_Clipboard_TT"));
 
                     // Log entries
                     ImGui.Separator();

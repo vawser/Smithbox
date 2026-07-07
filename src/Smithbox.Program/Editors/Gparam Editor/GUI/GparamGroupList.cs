@@ -39,7 +39,7 @@ public class GparamGroupList
 
     public void DisplayHeader()
     {
-        UIHelper.SimpleHeader("Groups", "");
+        GUI.SimpleHeader("Groups", "");
 
         // Search
         var searchHeight = new Vector2(0, 36) * DPI.UIScale();
@@ -60,7 +60,7 @@ public class GparamGroupList
         {
             emptyGroupMode = "Hiding empty groups.";
         }
-        UIHelper.Tooltip($"Toggle the display of empty groups.\nCurrent Mode: {emptyGroupMode}");
+        GUI.Tooltip($"Toggle the display of empty groups.\nCurrent Mode: {emptyGroupMode}");
 
         ImGui.EndChild();
     }
@@ -120,7 +120,7 @@ public class GparamGroupList
         {
             if (groupDesc != "")
             {
-                UIHelper.Tooltip(groupDesc);
+                GUI.Tooltip(groupDesc);
             }
         }
 
@@ -153,7 +153,7 @@ public class GparamGroupList
         {
 
         }
-        UIHelper.Tooltip("Right-click to add missing groups.");
+        GUI.Tooltip("Right-click to add missing groups.");
 
         ImGui.EndGroup();
 
@@ -185,7 +185,7 @@ public class GparamGroupList
             {
                 DeleteGroups(data, new List<GPARAM.Param>() { group });
             }
-            UIHelper.Tooltip("Delete the selected group.");
+            GUI.Tooltip("Delete the selected group.");
 
             ImGui.Separator();
 
@@ -193,12 +193,12 @@ public class GparamGroupList
             {
                 View.ToolView.DataTransferTool.ImportGroup(Project, View, fileEntry, data, group);
             }
-            UIHelper.Tooltip("Import a GPARAM Group json to overwrite this entry.");
+            GUI.Tooltip("Import a GPARAM Group json to overwrite this entry.");
 
             if (ImGui.BeginMenu("Export"))
             {
                 ImGui.InputText("##overrideFilename", ref OverrideFileName, 255);
-                UIHelper.Tooltip("Define the filename for the exported GPARAM Group file.");
+                GUI.Tooltip("Define the filename for the exported GPARAM Group file.");
 
                 if (ImGui.Selectable("Export File"))
                 {
@@ -207,7 +207,7 @@ public class GparamGroupList
 
                 ImGui.EndMenu();
             }
-            UIHelper.Tooltip("Export this currently selected GPARAM Group to JSON.");
+            GUI.Tooltip("Export this currently selected GPARAM Group to JSON.");
 
             ImGui.Separator();
 
@@ -230,13 +230,13 @@ public class GparamGroupList
                 {
                     View.QuickEditHandler.UpdateGroupFilter(group.Key);
                 }
-                UIHelper.Tooltip("Add this group to the Group Filter in the Quick Edit window.");
+                GUI.Tooltip("Add this group to the Group Filter in the Quick Edit window.");
 
                 if (ImGui.Selectable("Data Finder"))
                 {
                     View.ToolView.DataFinder.UpdateGroupFilter(group.Key);
                 }
-                UIHelper.Tooltip("Add this group to the Group Filter in the Data Finder window.");
+                GUI.Tooltip("Add this group to the Group Filter in the Data Finder window.");
 
                 ImGui.EndMenu();
             }
@@ -345,7 +345,7 @@ public class GparamGroupList
 
         ImGui.BeginChild("##addGroupList", listSize);
 
-        UIHelper.SimpleHeader("Groups to Add", "");
+        GUI.SimpleHeader("Groups to Add", "");
 
         if (ImGui.Selectable("Toggle All"))
         {
@@ -389,7 +389,7 @@ public class GparamGroupList
 
                 if (desc != "")
                 {
-                    UIHelper.Tooltip(desc);
+                    GUI.Tooltip(desc);
                 }
             }
         }

@@ -24,7 +24,7 @@ public class BehaviorFileList
 
     public void Display(float width, float height)
     {
-        UIHelper.SimpleHeader("Files", "");
+        GUI.SimpleHeader("Files", "");
 
         DisplayMenubar();
 

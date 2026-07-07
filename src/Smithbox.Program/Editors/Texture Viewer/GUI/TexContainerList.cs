@@ -30,7 +30,7 @@ public class TexContainerList
     /// </summary>
     public void Display(float width, float height)
     {
-        UIHelper.SimpleHeader(
+        GUI.SimpleHeader(
             LOC.Get("TEXVIEW_ContainerList_Header_Containers"),
             LOC.Get("TEXVIEW_ContainerList_Header_Containers_TT"));
 
@@ -187,7 +187,7 @@ public class TexContainerList
                     if (ImGui.IsItemVisible())
                     {
                         var alias = AliasHelper.GetTextureContainerAliasName(Project, entry.Key.Filename, displayCategory);
-                        UIHelper.DisplayAlias(alias);
+                        GUI.DisplayAlias(alias);
                     }
 
                     ImGui.EndGroup();
@@ -212,7 +212,7 @@ public class TexContainerList
                 var outputPath = Path.Join(Project.Descriptor.ProjectPath, entry.Key.Path);
                 entry.Value.WriteBinder(outputPath);
             }
-            UIHelper.Tooltip(LOC.Get("TEXVIEW_ContainerList_Context_Copy_to_Project_TT"));
+            GUI.Tooltip(LOC.Get("TEXVIEW_ContainerList_Context_Copy_to_Project_TT"));
 
             if (ImGui.BeginMenu($"{LOC.Get("TEXVIEW_ContainerList_Context_Header_Export")}##exportMenuHeader"))
             {
@@ -220,14 +220,14 @@ public class TexContainerList
                 {
                     _ = View.ToolView.TextureExport.ExportTPFsFromContainerAsync(entry.Value);
                 }
-                UIHelper.Tooltip(
+                GUI.Tooltip(
                     LOC.Get("TEXVIEW_ContainerList_Context_All_TPFs_TT", CFG.Current.TextureViewerToolbar_ExportTextureLocation));
 
                 if (ImGui.MenuItem($"{LOC.Get("TEXVIEW_ContainerList_Context_All_Textures")}##allTexturesAction"))
                 {
                     _ = View.ToolView.TextureExport.ExportTexturesFromContainerAsync(entry.Value);
                 }
-                UIHelper.Tooltip(
+                GUI.Tooltip(
                     LOC.Get("TEXVIEW_ContainerList_Context_All_Textures_TT", CFG.Current.TextureViewerToolbar_ExportTextureLocation));
 
                 ImGui.EndMenu();
@@ -239,20 +239,20 @@ public class TexContainerList
             {
                 ImGui.SetClipboardText(entry.Key.Path);
             }
-            UIHelper.Tooltip(LOC.Get("TEXVIEW_ContainerList_Context_Copy_Path_TT"));
+            GUI.Tooltip(LOC.Get("TEXVIEW_ContainerList_Context_Copy_Path_TT"));
 
             if (ImGui.MenuItem($"{LOC.Get("TEXVIEW_ContainerList_Context_Copy_Filename")}##copyFilename"))
             {
                 ImGui.SetClipboardText(entry.Key.Filename);
             }
-            UIHelper.Tooltip(LOC.Get("TEXVIEW_ContainerList_Context_Copy_Filename_TT"));
+            GUI.Tooltip(LOC.Get("TEXVIEW_ContainerList_Context_Copy_Filename_TT"));
 
             if (ImGui.MenuItem($"{LOC.Get("TEXVIEW_ContainerList_Context_Copy_Alias")}##copyAlias"))
             {
                 var alias = AliasHelper.GetTextureContainerAliasName(Project, entry.Key.Filename, displayCategory);
                 ImGui.SetClipboardText(alias);
             }
-            UIHelper.Tooltip(LOC.Get("TEXVIEW_ContainerList_Context_Copy_Alias_TT"));
+            GUI.Tooltip(LOC.Get("TEXVIEW_ContainerList_Context_Copy_Alias_TT"));
 
             ImGui.EndPopup();
         }

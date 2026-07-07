@@ -30,7 +30,7 @@ public class ParamListCategories
 
     public void Display()
     {
-        if (ImGui.CollapsingHeader("Param List Categories"))
+        if (ImGui.CollapsingHeader($"{LOC.Get("PARAM_ListCategories_Header")}##paramListCategoriesHeader"))
         {
             ImGui.BeginChild("ParamListCategories", ImGuiChildFlags.Borders);
 
@@ -38,7 +38,7 @@ public class ParamListCategories
 
             if (categories == null)
             {
-                UIHelper.WrappedText("No param categories found.");
+                GUI.WrappedText("No param categories found.");
 
                 return;
             }
@@ -46,18 +46,18 @@ public class ParamListCategories
             var windowWidth = ImGui.GetWindowWidth();
             var sectionHeight = ImGui.GetWindowHeight();
 
-            UIHelper.WrappedText("Create or modify project-specific param categories.");
-            UIHelper.WrappedText("");
+            GUI.WrappedText("Create or modify project-specific param categories.");
+            GUI.WrappedText("");
 
-            UIHelper.SimpleHeader("Actions", "");
+            GUI.SimpleHeader("Actions", "");
 
-            UIHelper.MultiButtonInput("baseActions",
+            GUI.MultiButtonInput("baseActions",
                 "saveEntries", "Save Changes", "Save the current changes made to categories.", SaveEntriesAction,
                 "restoreEntries", "Restore Base Categories", "Restore the base category list.", RestoreEntriesAction);
 
             ImGui.Text("");
 
-            UIHelper.SimpleHeader("List", "");
+            GUI.SimpleHeader("List", "");
 
             ImGui.BeginChild("ParamListCategorySelectionList", new Vector2(0, 250), ImGuiChildFlags.Borders);
             foreach (var category in Project.Handler.ParamData.ParamCategories.Categories)
@@ -71,7 +71,7 @@ public class ParamListCategories
             }
             ImGui.EndChild();
 
-            UIHelper.MultiButtonInput("entryActions",
+            GUI.MultiButtonInput("entryActions",
                 "newEntry", "Create New Entry", "Create a new category.", NewEntryAction,
                 "editEntry", "Edit Selected Entry", "Edit an existing category.", EditEntryAction,
                 "deleteEntry", "Delete Selected Entry", "Delete an existing category.", DeleteEntryAction);
@@ -135,38 +135,38 @@ public class ParamListCategories
 
     public void DisplayNewEntrySection()
     {
-        UIHelper.SimpleHeader("New Entry Name", "");
+        GUI.SimpleHeader("New Entry Name", "");
 
-        UIHelper.SinglelineTextInput("newEntryName", ref NewEntryName);
-        UIHelper.Tooltip("The name of the new param category.");
+        GUI.SinglelineTextInput("newEntryName", ref NewEntryName);
+        GUI.Tooltip("The name of the new param category.");
 
-        UIHelper.MultiButtonInput("newEntryActions",
+        GUI.MultiButtonInput("newEntryActions",
             "finalizeNewEntry", "Finalize", "", FinalizeNewEntry);
 
-        UIHelper.WrappedText("");
-        UIHelper.SimpleHeader("New Entry Options", "");
+        GUI.WrappedText("");
+        GUI.SimpleHeader("New Entry Options", "");
 
         if (ImGui.Checkbox("Force to Top##newEntryforceTop", ref ForceTop))
         {
             ForceBottom = false;
         }
-        UIHelper.Tooltip("If toggled on, this param category will always appear at the top (in alphabetically order with any other categories with the same toggle).");
+        GUI.Tooltip("If toggled on, this param category will always appear at the top (in alphabetically order with any other categories with the same toggle).");
 
         if (ImGui.Checkbox("Force to Bottom##newEntryforceBottom", ref ForceBottom))
         {
             ForceTop = false;
         }
-        UIHelper.Tooltip("If toggled on, this param category will always appear at the bottom (in alphabetically order with any other categories with the same toggle).");
+        GUI.Tooltip("If toggled on, this param category will always appear at the bottom (in alphabetically order with any other categories with the same toggle).");
 
-        UIHelper.WrappedText("");
-        UIHelper.SimpleHeader("New Entry Params", "");
+        GUI.WrappedText("");
+        GUI.SimpleHeader("New Entry Params", "");
 
         // Add
         if (ImGui.Button($"{Icons.Plus}##paramTargetAdd_ParamListCategory"))
         {
             NewEntryParams.Add("");
         }
-        UIHelper.Tooltip("Add new param target input row.");
+        GUI.Tooltip("Add new param target input row.");
 
         ImGui.SameLine();
 
@@ -179,7 +179,7 @@ public class ParamListCategories
             {
                 NewEntryParams.RemoveAt(NewEntryParams.Count - 1);
             }
-            UIHelper.Tooltip("Remove last added param target input row.");
+            GUI.Tooltip("Remove last added param target input row.");
 
             ImGui.EndDisabled();
         }
@@ -188,7 +188,7 @@ public class ParamListCategories
             if (ImGui.Button($"{Icons.Minus}##paramTargetRemove_ParamListCategory"))
             {
                 NewEntryParams.RemoveAt(NewEntryParams.Count - 1);
-                UIHelper.Tooltip("Remove last added param target input row.");
+                GUI.Tooltip("Remove last added param target input row.");
             }
         }
 
@@ -199,7 +199,7 @@ public class ParamListCategories
         {
             NewEntryParams = new List<string>();
         }
-        UIHelper.Tooltip("Reset param target input rows.");
+        GUI.Tooltip("Reset param target input rows.");
 
         for (int i = 0; i < NewEntryParams.Count; i++)
         {
@@ -210,7 +210,7 @@ public class ParamListCategories
             {
                 NewEntryParams[i] = curText;
             }
-            UIHelper.Tooltip("The param to include within this category.");
+            GUI.Tooltip("The param to include within this category.");
         }
     }
 
@@ -246,36 +246,36 @@ public class ParamListCategories
                 NewEntryParams = _selectedUserCategory.Params;
             }
 
-            UIHelper.SimpleHeader("Edit Entry", "");
+            GUI.SimpleHeader("Edit Entry", "");
 
-            UIHelper.MultiButtonInput("editEntryActions",
+            GUI.MultiButtonInput("editEntryActions",
                 "finalizeEditEntry", "Finalize", "", FinalizeEditEntry);
 
-            UIHelper.WrappedText("");
-            UIHelper.SimpleHeader("Edit Entry Options", "");
+            GUI.WrappedText("");
+            GUI.SimpleHeader("Edit Entry Options", "");
 
             // Edit
             if (ImGui.Checkbox("Force to Top##newEntryforceTop", ref ForceTop))
             {
                 ForceBottom = false;
             }
-            UIHelper.Tooltip("If toggled on, this param category will always appear at the top (in alphabetically order with any other categories with the same toggle).");
+            GUI.Tooltip("If toggled on, this param category will always appear at the top (in alphabetically order with any other categories with the same toggle).");
 
             if (ImGui.Checkbox("Force to Bottom##newEntryforceBottom", ref ForceBottom))
             {
                 ForceTop = false;
             }
-            UIHelper.Tooltip("If toggled on, this param category will always appear at the bottom (in alphabetically order with any other categories with the same toggle).");
+            GUI.Tooltip("If toggled on, this param category will always appear at the bottom (in alphabetically order with any other categories with the same toggle).");
 
-            UIHelper.WrappedText("");
-            UIHelper.SimpleHeader("Edit Entry Params", "");
+            GUI.WrappedText("");
+            GUI.SimpleHeader("Edit Entry Params", "");
 
             // Add
             if (ImGui.Button($"{Icons.Plus}##paramTargetAdd_ParamListCategory_edit"))
             {
                 NewEntryParams.Add("");
             }
-            UIHelper.Tooltip("Add new param target input row.");
+            GUI.Tooltip("Add new param target input row.");
 
             ImGui.SameLine();
 
@@ -288,7 +288,7 @@ public class ParamListCategories
                 {
                     NewEntryParams.RemoveAt(NewEntryParams.Count - 1);
                 }
-                UIHelper.Tooltip("Remove last added param target input row.");
+                GUI.Tooltip("Remove last added param target input row.");
 
                 ImGui.EndDisabled();
             }
@@ -297,7 +297,7 @@ public class ParamListCategories
                 if (ImGui.Button($"{Icons.Minus}##paramTargetRemove_ParamListCategory_edit"))
                 {
                     NewEntryParams.RemoveAt(NewEntryParams.Count - 1);
-                    UIHelper.Tooltip("Remove last added param target input row.");
+                    GUI.Tooltip("Remove last added param target input row.");
                 }
             }
 
@@ -308,7 +308,7 @@ public class ParamListCategories
             {
                 NewEntryParams = new List<string>();
             }
-            UIHelper.Tooltip("Reset param target input rows.");
+            GUI.Tooltip("Reset param target input rows.");
 
             for (int i = 0; i < NewEntryParams.Count; i++)
             {
@@ -319,7 +319,7 @@ public class ParamListCategories
                 {
                     NewEntryParams[i] = curText;
                 }
-                UIHelper.Tooltip("The param to include within this category.");
+                GUI.Tooltip("The param to include within this category.");
             }
         }
     }

@@ -104,8 +104,8 @@ public class ModelEditorView
         if (!CFG.Current.Interface_ModelEditor_ScreenshotMode)
         {
             ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
-            ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ModelEditorView);
-            if (ImGui.Begin($@"Source List##modelEditor_SourceList_{viewIndex}", UIHelper.GetInnerWindowFlags()))
+            ImGui.SetNextWindowClass(ref GUI.DockGroup_ModelEditorView);
+            if (ImGui.Begin($@"Source List##modelEditor_SourceList_{viewIndex}", GUI.GetInnerWindowFlags()))
             {
                 var width = ImGui.GetContentRegionAvail().X;
                 var height = ImGui.GetContentRegionAvail().Y;
@@ -123,8 +123,8 @@ public class ModelEditorView
 
             // File List
             ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
-            ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ModelEditorView);
-            if (ImGui.Begin($@"File List##modelEditor_FileList_{viewIndex}", UIHelper.GetInnerWindowFlags()))
+            ImGui.SetNextWindowClass(ref GUI.DockGroup_ModelEditorView);
+            if (ImGui.Begin($@"File List##modelEditor_FileList_{viewIndex}", GUI.GetInnerWindowFlags()))
             {
                 var width = ImGui.GetContentRegionAvail().X;
                 var height = ImGui.GetContentRegionAvail().Y;
@@ -142,8 +142,8 @@ public class ModelEditorView
 
             // Contents
             ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
-            ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ModelEditorView);
-            if (ImGui.Begin($@"Contents##modelEditor_Contents_{viewIndex}", UIHelper.GetInnerWindowFlags()))
+            ImGui.SetNextWindowClass(ref GUI.DockGroup_ModelEditorView);
+            if (ImGui.Begin($@"Contents##modelEditor_Contents_{viewIndex}", GUI.GetInnerWindowFlags()))
             {
                 var width = ImGui.GetContentRegionAvail().X;
                 var height = ImGui.GetContentRegionAvail().Y;
@@ -161,8 +161,8 @@ public class ModelEditorView
 
             // Tools
             ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
-            ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ModelEditorView);
-            if (ImGui.Begin($@"Tools##modelEditor_ToolWindow_{viewIndex}", UIHelper.GetMainWindowFlags()))
+            ImGui.SetNextWindowClass(ref GUI.DockGroup_ModelEditorView);
+            if (ImGui.Begin($@"Tools##modelEditor_ToolWindow_{viewIndex}", GUI.GetMainWindowFlags()))
             {
                 var width = ImGui.GetContentRegionAvail().X;
                 var height = ImGui.GetContentRegionAvail().Y;
@@ -187,8 +187,8 @@ public class ModelEditorView
         if (!CFG.Current.Interface_ModelEditor_ScreenshotMode)
         {
             ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
-            ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ModelEditorView);
-            if (ImGui.Begin($@"Properties##modelEditor_Properties_{viewIndex}", UIHelper.GetInnerWindowFlags()))
+            ImGui.SetNextWindowClass(ref GUI.DockGroup_ModelEditorView);
+            if (ImGui.Begin($@"Properties##modelEditor_Properties_{viewIndex}", GUI.GetInnerWindowFlags()))
             {
                 var width = ImGui.GetContentRegionAvail().X;
                 var height = ImGui.GetContentRegionAvail().Y;

@@ -47,7 +47,7 @@ public class TexToolView
             {
                 CFG.Current.Interface_TextureViewer_Tool_ExportTexture = !CFG.Current.Interface_TextureViewer_Tool_ExportTexture;
             }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_TextureViewer_Tool_ExportTexture);
+            GUI.ShowActiveStatus(CFG.Current.Interface_TextureViewer_Tool_ExportTexture);
 
             ImGui.EndMenu();
         }
@@ -61,7 +61,7 @@ public class TexToolView
             {
                 TextureExport.ExportTextureHandler();
             }
-            UIHelper.Tooltip(LOC.Get("TEXVIEW_Tools_Action_Export_Texture_TT"));
+            GUI.Tooltip(LOC.Get("TEXVIEW_Tools_Action_Export_Texture_TT"));
 
             ImGui.EndMenu();
         }

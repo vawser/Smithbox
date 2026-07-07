@@ -128,8 +128,8 @@ public class ModelViewHandler
             }
 
             ImGui.SetNextWindowDockID(editorDockspaceId, ImGuiCond.FirstUseEver);
-            ImGui.SetNextWindowClass(ref UIHelper.DockGroup_ModelEditor);
-            if (ImGui.Begin($@"{displayTitle}###ModelEditorView##{view.ViewIndex}", UIHelper.GetDisplayViewWindowFlags()))
+            ImGui.SetNextWindowClass(ref GUI.DockGroup_ModelEditor);
+            if (ImGui.Begin($@"{displayTitle}###ModelEditorView##{view.ViewIndex}", GUI.GetDisplayViewWindowFlags()))
             {
                 if (ImGui.IsItemClicked(ImGuiMouseButton.Left))
                 {
@@ -157,7 +157,7 @@ public class ModelViewHandler
             }
 
             var dsid = ImGui.GetID($"DockSpace_ModelEdit_View{view.ViewIndex}");
-            ImGui.DockSpace(dsid, new Vector2(0, 0), ref UIHelper.DockGroup_ModelEditorView);
+            ImGui.DockSpace(dsid, new Vector2(0, 0), ref GUI.DockGroup_ModelEditorView);
 
             view.Display(dsid, view.ViewIndex, Editor.CommandQueue.DoFocus && view == activeView, view == activeView);
 

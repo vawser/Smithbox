@@ -22,8 +22,8 @@ public static class GizmoState
             CFG.Current.Viewport_Render_Gizmos = !CFG.Current.Viewport_Render_Gizmos;
             viewport.DelayPicking();
         }
-        UIHelper.ShowActiveStatus(CFG.Current.Viewport_Render_Gizmos);
-        UIHelper.Tooltip(LOC.Get("VIEWPORT_Gizmo_Menu_Action_Display_TT"));
+        GUI.ShowActiveStatus(CFG.Current.Viewport_Render_Gizmos);
+        GUI.Tooltip(LOC.Get("VIEWPORT_Gizmo_Menu_Action_Display_TT"));
 
         ImGui.SliderFloat($"{LOC.Get("VIEWPORT_Gizmo_Menu_Input_Size")}##gizmoScale", ref CFG.Current.Viewport_Gizmo_Size_Distance_Scale, 0.01f, 5.0f, ImGuiSliderFlags.AlwaysClamp);
 
@@ -46,21 +46,21 @@ public static class GizmoState
                 Mode = GizmosMode.Translate;
                 viewport.DelayPicking();
             }
-            UIHelper.Tooltip(LOC.Get("VIEWPORT_Gizmo_Menu_Action_Translate_TT"));
+            GUI.Tooltip(LOC.Get("VIEWPORT_Gizmo_Menu_Action_Translate_TT"));
 
             if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Gizmo_Menu_Action_Rotate")}##rotateAction", InputManager.GetHint(KeybindID.Cycle_Gizmo_Rotation_Mode)))
             {
                 Mode = GizmosMode.Rotate;
                 viewport.DelayPicking();
             }
-            UIHelper.Tooltip(LOC.Get("VIEWPORT_Gizmo_Menu_Action_Rotate_TT"));
+            GUI.Tooltip(LOC.Get("VIEWPORT_Gizmo_Menu_Action_Rotate_TT"));
 
             if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Gizmo_Menu_Action_Scale")}##scaleAction", InputManager.GetHint(KeybindID.Cycle_Gizmo_Scale_Mode)))
             {
                 Mode = GizmosMode.Scale;
                 viewport.DelayPicking();
             }
-            UIHelper.Tooltip(LOC.Get("VIEWPORT_Gizmo_Menu_Action_Scale_TT"));
+            GUI.Tooltip(LOC.Get("VIEWPORT_Gizmo_Menu_Action_Scale_TT"));
 
             ImGui.EndMenu();
         }
@@ -72,14 +72,14 @@ public static class GizmoState
                 Space = GizmosSpace.Local;
                 viewport.DelayPicking();
             }
-            UIHelper.Tooltip(LOC.Get("VIEWPORT_Gizmo_Menu_Action_Space_Local_TT"));
+            GUI.Tooltip(LOC.Get("VIEWPORT_Gizmo_Menu_Action_Space_Local_TT"));
 
             if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Gizmo_Menu_Action_Space_World")}##spaceWorldAction", InputManager.GetHint(KeybindID.Cycle_Gizmo_Space_Mode)))
             {
                 Space = GizmosSpace.World;
                 viewport.DelayPicking();
             }
-            UIHelper.Tooltip(LOC.Get("VIEWPORT_Gizmo_Menu_Action_Space_World_TT"));
+            GUI.Tooltip(LOC.Get("VIEWPORT_Gizmo_Menu_Action_Space_World_TT"));
 
             ImGui.EndMenu();
         }
@@ -91,14 +91,14 @@ public static class GizmoState
                 Origin = GizmosOrigin.World;
                 viewport.DelayPicking();
             }
-            UIHelper.Tooltip(LOC.Get("VIEWPORT_Gizmo_Menu_Action_Origin_World_TT"));
+            GUI.Tooltip(LOC.Get("VIEWPORT_Gizmo_Menu_Action_Origin_World_TT"));
 
             if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Gizmo_Menu_Action_Origin_Bounding_Box")}##originBoundingBoxAction", InputManager.GetHint(KeybindID.Cycle_Gizmo_Origin_Mode)))
             {
                 Origin = GizmosOrigin.BoundingBox;
                 viewport.DelayPicking();
             }
-            UIHelper.Tooltip(LOC.Get("VIEWPORT_Gizmo_Menu_Action_Origin_Bounding_Box_TT"));
+            GUI.Tooltip(LOC.Get("VIEWPORT_Gizmo_Menu_Action_Origin_Bounding_Box_TT"));
 
             ImGui.EndMenu();
         }

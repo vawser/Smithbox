@@ -53,20 +53,20 @@ public class ModelMaskToggler
     {
         if (Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
-            UIHelper.WrappedText("This project type is not supported by this tool.");
+            GUI.WrappedText("This project type is not supported by this tool.");
             return;
         }
 
         if (View.Project.Handler.ParamEditor == null)
         {
-            UIHelper.WrappedText("The Param Editor must be enabled for this tool to work.");
+            GUI.WrappedText("The Param Editor must be enabled for this tool to work.");
 
             return;
         }
 
         if(View.Selection.SelectedModelWrapper == null)
         {
-            UIHelper.WrappedText("A model must be loaded first for this tool to work.");
+            GUI.WrappedText("A model must be loaded first for this tool to work.");
 
             return;
         }
@@ -76,7 +76,7 @@ public class ModelMaskToggler
 
         if (!View.Project.Handler.ParamData.PrimaryBank.Params.ContainsKey(npcParamKey))
         {
-            UIHelper.WrappedText("Failed to find associated NpcParam entry.");
+            GUI.WrappedText("Failed to find associated NpcParam entry.");
 
             return;
         }
@@ -85,7 +85,7 @@ public class ModelMaskToggler
 
         if (npcParam == null)
         {
-            UIHelper.WrappedText("Failed to find associated NpcParam entry.");
+            GUI.WrappedText("Failed to find associated NpcParam entry.");
 
             return;
         }
@@ -116,7 +116,7 @@ public class ModelMaskToggler
                     }
                 }
 
-                UIHelper.DisplayAlias($"{entry.Name}");
+                GUI.DisplayAlias($"{entry.Name}");
             }
         }
     }

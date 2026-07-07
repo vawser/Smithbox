@@ -91,19 +91,19 @@ public class AdjustToGridAction
             {
                 AdjustSelectionToGrid(ViewportTargetGridType.Primary);
             }
-            UIHelper.Tooltip($"Adjust the current selection to the grid.\n\nShortcut: {InputManager.GetHint(KeybindID.MapEditor_Move_to_Primary_Grid)}");
+            GUI.Tooltip($"Adjust the current selection to the grid.\n\nShortcut: {InputManager.GetHint(KeybindID.MapEditor_Move_to_Primary_Grid)}");
 
             if (ImGui.Selectable("Secondary"))
             {
                 AdjustSelectionToGrid(ViewportTargetGridType.Secondary);
             }
-            UIHelper.Tooltip($"Adjust the current selection to the grid.\n\nShortcut: {InputManager.GetHint(KeybindID.MapEditor_Move_to_Secondary_Grid)}");
+            GUI.Tooltip($"Adjust the current selection to the grid.\n\nShortcut: {InputManager.GetHint(KeybindID.MapEditor_Move_to_Secondary_Grid)}");
 
             if (ImGui.Selectable("Tertiary"))
             {
                 AdjustSelectionToGrid(ViewportTargetGridType.Tertiary);
             }
-            UIHelper.Tooltip($"Adjust the current selection to the grid.\n\nShortcut: {InputManager.GetHint(KeybindID.MapEditor_Move_to_Tertiary_Grid)}");
+            GUI.Tooltip($"Adjust the current selection to the grid.\n\nShortcut: {InputManager.GetHint(KeybindID.MapEditor_Move_to_Tertiary_Grid)}");
 
             ImGui.EndMenu();
         }
@@ -112,7 +112,7 @@ public class AdjustToGridAction
         {
             OpenPopup = true;
         }
-        UIHelper.Tooltip($"Configure the grid placement for the Adjust to Grid action.\n\nShortcut: {InputManager.GetHint(KeybindID.MapEditor_Configure_Grid_Placement)}");
+        GUI.Tooltip($"Configure the grid placement for the Adjust to Grid action.\n\nShortcut: {InputManager.GetHint(KeybindID.MapEditor_Configure_Grid_Placement)}");
     }
 
     /// <summary>
@@ -136,7 +136,7 @@ public class AdjustToGridAction
     /// </summary>
     public void DisplayMenu()
     {
-        UIHelper.SimpleHeader("Target Grid", "Target Grid", "The grid to configure the adjustment against.", UI.Current.ImGui_Default_Text_Color);
+        GUI.SimpleHeader("Target Grid", "Target Grid", "The grid to configure the adjustment against.", UI.Current.ImGui_Default_Text_Color);
 
         if (ImGui.BeginCombo($"##targetGrid", CurrentTargetGrid.GetDisplayName()))
         {
@@ -152,14 +152,14 @@ public class AdjustToGridAction
 
             ImGui.EndCombo();
         }
-        UIHelper.Tooltip("The target grid to adjust against.");
+        GUI.Tooltip("The target grid to adjust against.");
 
         // Primary
         if (CurrentTargetGrid is ViewportTargetGridType.Primary)
         {
             var curRootAxis = CFG.Current.MapEditor_PrimaryGrid_Configure_RootAxis;
 
-            UIHelper.SimpleHeader("Position", "Position", "The position axes to use when adjusting to the grid.", UI.Current.ImGui_Default_Text_Color);
+            GUI.SimpleHeader("Position", "Position", "The position axes to use when adjusting to the grid.", UI.Current.ImGui_Default_Text_Color);
 
             ImGui.Checkbox("X##posX", ref CFG.Current.MapEditor_PrimaryGrid_Configure_ApplyPosition_X);
             ImGui.SameLine();
@@ -169,7 +169,7 @@ public class AdjustToGridAction
 
             ImGui.Checkbox("Z##posZ", ref CFG.Current.MapEditor_PrimaryGrid_Configure_ApplyPosition_Z);
 
-            UIHelper.SimpleHeader("Rotation", "Rotation", "The rotation axes to use when adjusting to the grid.", UI.Current.ImGui_Default_Text_Color);
+            GUI.SimpleHeader("Rotation", "Rotation", "The rotation axes to use when adjusting to the grid.", UI.Current.ImGui_Default_Text_Color);
 
             ImGui.Checkbox("X##rotX", ref CFG.Current.MapEditor_PrimaryGrid_Configure_ApplyRotation_X);
             ImGui.SameLine();
@@ -179,7 +179,7 @@ public class AdjustToGridAction
 
             ImGui.Checkbox("Z##rotZ", ref CFG.Current.MapEditor_PrimaryGrid_Configure_ApplyRotation_Z);
 
-            UIHelper.SimpleHeader("Root Axis", "Root Axis", "The axis to treat as the 'floor'.", UI.Current.ImGui_Default_Text_Color);
+            GUI.SimpleHeader("Root Axis", "Root Axis", "The axis to treat as the 'floor'.", UI.Current.ImGui_Default_Text_Color);
 
             if (ImGui.BeginCombo($"##targetAxis", curRootAxis.GetDisplayName()))
             {
@@ -195,14 +195,14 @@ public class AdjustToGridAction
 
                 ImGui.EndCombo();
             }
-            UIHelper.Tooltip("The target axis to use when rooting the entity. This is the axis that is treated as the 'floor'.");
+            GUI.Tooltip("The target axis to use when rooting the entity. This is the axis that is treated as the 'floor'.");
         }
         // Secondary
         else if (CurrentTargetGrid is ViewportTargetGridType.Secondary)
         {
             var curRootAxis = CFG.Current.MapEditor_SecondaryGrid_Configure_RootAxis;
 
-            UIHelper.SimpleHeader("Position", "Position", "The position axes to use when adjusting to the grid.", UI.Current.ImGui_Default_Text_Color);
+            GUI.SimpleHeader("Position", "Position", "The position axes to use when adjusting to the grid.", UI.Current.ImGui_Default_Text_Color);
 
             ImGui.Checkbox("X##posX", ref CFG.Current.MapEditor_SecondaryGrid_Configure_ApplyPosition_X);
             ImGui.SameLine();
@@ -212,7 +212,7 @@ public class AdjustToGridAction
 
             ImGui.Checkbox("Z##posZ", ref CFG.Current.MapEditor_SecondaryGrid_Configure_ApplyPosition_Z);
 
-            UIHelper.SimpleHeader("Rotation", "Rotation", "The rotation axes to use when adjusting to the grid.", UI.Current.ImGui_Default_Text_Color);
+            GUI.SimpleHeader("Rotation", "Rotation", "The rotation axes to use when adjusting to the grid.", UI.Current.ImGui_Default_Text_Color);
 
             ImGui.Checkbox("X##rotX", ref CFG.Current.MapEditor_SecondaryGrid_Configure_ApplyRotation_X);
             ImGui.SameLine();
@@ -222,7 +222,7 @@ public class AdjustToGridAction
 
             ImGui.Checkbox("Z##rotZ", ref CFG.Current.MapEditor_SecondaryGrid_Configure_ApplyRotation_Z);
 
-            UIHelper.SimpleHeader("Root Axis", "Root Axis", "The axis to treat as the 'floor'.", UI.Current.ImGui_Default_Text_Color);
+            GUI.SimpleHeader("Root Axis", "Root Axis", "The axis to treat as the 'floor'.", UI.Current.ImGui_Default_Text_Color);
 
             if (ImGui.BeginCombo($"##targetAxis", curRootAxis.GetDisplayName()))
             {
@@ -238,14 +238,14 @@ public class AdjustToGridAction
 
                 ImGui.EndCombo();
             }
-            UIHelper.Tooltip("The target axis to use when rooting the entity. This is the axis that is treated as the 'floor'.");
+            GUI.Tooltip("The target axis to use when rooting the entity. This is the axis that is treated as the 'floor'.");
         }
         // Tertiary
         else if (CurrentTargetGrid is ViewportTargetGridType.Tertiary)
         {
             var curRootAxis = CFG.Current.MapEditor_TertiaryGrid_Configure_RootAxis;
 
-            UIHelper.SimpleHeader("Position", "Position", "The position axes to use when adjusting to the grid.", UI.Current.ImGui_Default_Text_Color);
+            GUI.SimpleHeader("Position", "Position", "The position axes to use when adjusting to the grid.", UI.Current.ImGui_Default_Text_Color);
 
             ImGui.Checkbox("X##posX", ref CFG.Current.MapEditor_TertiaryGrid_Configure_ApplyPosition_X);
             ImGui.SameLine();
@@ -255,7 +255,7 @@ public class AdjustToGridAction
 
             ImGui.Checkbox("Z##posZ", ref CFG.Current.MapEditor_TertiaryGrid_Configure_ApplyPosition_Z);
 
-            UIHelper.SimpleHeader("Rotation", "Rotation", "The rotation axes to use when adjusting to the grid.", UI.Current.ImGui_Default_Text_Color);
+            GUI.SimpleHeader("Rotation", "Rotation", "The rotation axes to use when adjusting to the grid.", UI.Current.ImGui_Default_Text_Color);
 
             ImGui.Checkbox("X##rotX", ref CFG.Current.MapEditor_TertiaryGrid_Configure_ApplyRotation_X);
             ImGui.SameLine();
@@ -265,7 +265,7 @@ public class AdjustToGridAction
 
             ImGui.Checkbox("Z##rotZ", ref CFG.Current.MapEditor_TertiaryGrid_Configure_ApplyRotation_Z);
 
-            UIHelper.SimpleHeader("Root Axis", "Root Axis", "The axis to treat as the 'floor'.", UI.Current.ImGui_Default_Text_Color);
+            GUI.SimpleHeader("Root Axis", "Root Axis", "The axis to treat as the 'floor'.", UI.Current.ImGui_Default_Text_Color);
 
             if (ImGui.BeginCombo($"##targetAxis", curRootAxis.GetDisplayName()))
             {
@@ -281,7 +281,7 @@ public class AdjustToGridAction
 
                 ImGui.EndCombo();
             }
-            UIHelper.Tooltip("The target axis to use when rooting the entity. This is the axis that is treated as the 'floor'.");
+            GUI.Tooltip("The target axis to use when rooting the entity. This is the axis that is treated as the 'floor'.");
         }
 
         if (ImGui.Button("Adjust Selection to Grid", DPI.WholeWidthButton(550f * DPI.UIScale(), 24)))

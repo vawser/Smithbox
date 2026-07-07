@@ -24,7 +24,7 @@ public class TextDuplicatePopup
         {
             // Offset
             ImGui.InputText($"{LOC.Get("TEXT_DuplicateModal_Offset_Input")}###offsetInput", ref DuplicateOffset, 255);
-            UIHelper.Tooltip(LOC.Get("TEXT_DuplicateModal_Offset_Input_TT"));
+            GUI.Tooltip(LOC.Get("TEXT_DuplicateModal_Offset_Input_TT"));
 
             // Amount
             ImGui.InputInt($"{LOC.Get("TEXT_DuplicateModal_Amount_Input")}###amountInput", ref DuplicateAmount);
@@ -35,11 +35,11 @@ public class TextDuplicatePopup
                     DuplicateAmount = 1;
                 }
             }
-            UIHelper.Tooltip(LOC.Get("TEXT_DuplicateModal_Amount_Input_TT"));
+            GUI.Tooltip(LOC.Get("TEXT_DuplicateModal_Amount_Input_TT"));
 
             // Auto-Adjust
             ImGui.Checkbox($"{LOC.Get("TEXT_DuplicateModal_Checkbox_Auto_Adjust")}###autoAdjustToggle", ref AutoAdjustOffset);
-            UIHelper.Tooltip(LOC.Get("TEXT_DuplicateModal_Checkbox_Auto_Adjust_TT"));
+            GUI.Tooltip(LOC.Get("TEXT_DuplicateModal_Checkbox_Auto_Adjust_TT"));
 
             // Submit
             if (ImGui.Button($"{LOC.Get("TEXT_DuplicateModal_Action_Submit")}###submitAction", DPI.StandardButtonSize))

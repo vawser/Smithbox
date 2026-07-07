@@ -73,7 +73,7 @@ public class ParamListWindow
             }
         }
 
-        UIHelper.SimpleHeader($"{paramListTitle}", "");
+        GUI.SimpleHeader($"{paramListTitle}", "");
     }
 
     private void DisplayHeader(bool isActiveView)
@@ -105,7 +105,7 @@ public class ParamListWindow
         ImGui.AlignTextToFramePadding();
         ImGui.InputTextWithHint($"##paramSearch", "Search...", ref currentParamSearchString, 256);
 
-        UIHelper.Tooltip($"Search <{InputManager.GetHint(KeybindID.ParamEditor_Focus_Searchbar)}>");
+        GUI.Tooltip($"Search <{InputManager.GetHint(KeybindID.ParamEditor_Focus_Searchbar)}>");
 
         if (!currentParamSearchString.Equals(lastParamSearch))
         {
@@ -127,7 +127,7 @@ public class ParamListWindow
             if (!CFG.Current.ParamEditor_Display_Table_List)
                 tableGroupWindowVis = "Visible";
 
-            UIHelper.Tooltip($"Toggle the display of the Table Group window.\nCurrent Mode: {tableGroupWindowVis}");
+            GUI.Tooltip($"Toggle the display of the Table Group window.\nCurrent Mode: {tableGroupWindowVis}");
         }
 
         // Toggle Param Community Names
@@ -142,7 +142,7 @@ public class ParamListWindow
         if (CFG.Current.ParamEditor_Param_List_Display_Community_Names)
             paramCommunityNamesVis = "Community";
 
-        UIHelper.Tooltip($"Toggle the display of community names for params.\nCurrent Mode: {paramCommunityNamesVis}");
+        GUI.Tooltip($"Toggle the display of community names for params.\nCurrent Mode: {paramCommunityNamesVis}");
 
         // Toggle Param Categories
         ImGui.SameLine();
@@ -156,7 +156,7 @@ public class ParamListWindow
         if (CFG.Current.ParamEditor_Param_List_Display_Categories)
             paramCategoriesVis = "Displayed";
 
-        UIHelper.Tooltip($"Toggle the display of param categories.\nCurrent Mode: {paramCategoriesVis}");
+        GUI.Tooltip($"Toggle the display of param categories.\nCurrent Mode: {paramCategoriesVis}");
 
         ImGui.EndChild();
     }
@@ -475,7 +475,7 @@ public class ParamListWindow
                             pinned.Add(paramKey);
                         }
                     }
-                    UIHelper.Tooltip($"Pin the current param selection to the top of the param list.");
+                    GUI.Tooltip($"Pin the current param selection to the top of the param list.");
                 }
                 else if (isPinnedEntry)
                 {
@@ -488,7 +488,7 @@ public class ParamListWindow
                             pinned.Remove(paramKey);
                         }
                     }
-                    UIHelper.Tooltip($"Unpin the current param selection from the top of the param list.");
+                    GUI.Tooltip($"Unpin the current param selection from the top of the param list.");
                 }
 
                 ImGui.EndMenu();
@@ -501,7 +501,7 @@ public class ParamListWindow
                 {
                     ExportParam(paramKey);
                 }
-                UIHelper.Tooltip($"Extracts this param and saves it as a loose .PARAM file. ");
+                GUI.Tooltip($"Extracts this param and saves it as a loose .PARAM file. ");
 
                 ImGui.EndMenu();
             }
@@ -515,13 +515,13 @@ public class ParamListWindow
                     {
                         ParamDebugTools.OutputParamTableInformation(Editor, Project);
                     }
-                    UIHelper.Tooltip($"Export the param list table for the SoulsModding wiki to the clipboard.");
+                    GUI.Tooltip($"Export the param list table for the SoulsModding wiki to the clipboard.");
 
                     if (ImGui.Selectable("Copy Param Field List"))
                     {
                         ParamDebugTools.OutputParamInformation(Editor, Project, paramKey);
                     }
-                    UIHelper.Tooltip($"Export the param field list table for the SoulsModding wiki for this param to the clipboard.");
+                    GUI.Tooltip($"Export the param field list table for the SoulsModding wiki for this param to the clipboard.");
 
                     ImGui.EndMenu();
                 }

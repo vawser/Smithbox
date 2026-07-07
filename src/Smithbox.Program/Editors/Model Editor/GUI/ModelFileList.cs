@@ -30,7 +30,7 @@ public class ModelFileList
 
     public void Display(float width, float height)
     {
-        UIHelper.SimpleHeader("Files", "");
+        GUI.SimpleHeader("Files", "");
 
         EditorFilters.DisplayFramedListFilter("modelEditor_fileList",
             ref FileListFilter, ref ExactFileListFilter);

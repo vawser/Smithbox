@@ -48,7 +48,7 @@ public class ReplicateAction
             {
                 ApplyReplicate();
             }
-            UIHelper.Tooltip($"Apply the replicate configuration to the currently selected map objects.\n\nShortcut: {InputManager.GetHint(KeybindID.MapEditor_Replicate)}");
+            GUI.Tooltip($"Apply the replicate configuration to the currently selected map objects.\n\nShortcut: {InputManager.GetHint(KeybindID.MapEditor_Replicate)}");
         }
     }
 
@@ -61,7 +61,7 @@ public class ReplicateAction
         {
             ApplyReplicate();
         }
-        UIHelper.Tooltip($"Apply the replicate configuration to the currently selected map objects.");
+        GUI.Tooltip($"Apply the replicate configuration to the currently selected map objects.");
     }
 
     /// <summary>
@@ -69,12 +69,12 @@ public class ReplicateAction
     /// </summary>
     public void OnToolWindow()
     {
-        UIHelper.WrappedText("Configure how the replicate action works.");
+        GUI.WrappedText("Configure how the replicate action works.");
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader("Replicate Style", "The style in which the replication occurs.");
+        GUI.Spacer();
+        GUI.SimpleHeader("Replicate Style", "The style in which the replication occurs.");
 
-        UIHelper.SetInputWidth();
+        GUI.SetInputWidth();
         if (ImGui.BeginCombo("##replicateStyleSelect", ReplicateType.GetDisplayName()))
         {
             foreach (var entry in Enum.GetValues(typeof(ReplicateType)))
@@ -118,24 +118,24 @@ public class ReplicateAction
         // Line
         if (CFG.Current.Replicator_Mode_Line)
         {
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader("Line - Amount to Replicate", "Amount to Replicate", "The amount of replication instances to apply.", UI.Current.ImGui_Default_Text_Color);
+            GUI.Spacer();
+            GUI.SimpleHeader("Line - Amount to Replicate", "Amount to Replicate", "The amount of replication instances to apply.", UI.Current.ImGui_Default_Text_Color);
 
-            UIHelper.SetInputWidth();
+            GUI.SetInputWidth();
             ImGui.InputInt("##Amount", ref CFG.Current.Replicator_Line_Clone_Amount);
-            UIHelper.Tooltip("The amount of new entities to create (from the first selection).");
+            GUI.Tooltip("The amount of new entities to create (from the first selection).");
 
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader("Line - Replicate Offset", "Offset per Replicate", "The offset to apply per each replication instance.", UI.Current.ImGui_Default_Text_Color);
+            GUI.Spacer();
+            GUI.SimpleHeader("Line - Replicate Offset", "Offset per Replicate", "The offset to apply per each replication instance.", UI.Current.ImGui_Default_Text_Color);
 
-            UIHelper.SetInputWidth();
+            GUI.SetInputWidth();
             ImGui.InputInt("##Offset", ref CFG.Current.Replicator_Line_Position_Offset);
-            UIHelper.Tooltip("The distance between each newly created entity.");
+            GUI.Tooltip("The distance between each newly created entity.");
 
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader("Line - Replicate Direction", "Replicate Direction", "The direction in which to replicate.", UI.Current.ImGui_Default_Text_Color);
+            GUI.Spacer();
+            GUI.SimpleHeader("Line - Replicate Direction", "Replicate Direction", "The direction in which to replicate.", UI.Current.ImGui_Default_Text_Color);
 
-            UIHelper.SetInputWidth();
+            GUI.SetInputWidth();
             if (ImGui.BeginCombo("##replicateLineAxisSelect", AxisType.GetDisplayName()))
             {
                 foreach (var entry in Enum.GetValues(typeof(ReplicateLineAxis)))
@@ -174,19 +174,19 @@ public class ReplicateAction
         // Circle
         if (CFG.Current.Replicator_Mode_Circle)
         {
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader("Circle - Size", "Size", "The amount of replication instances to apply to form the circle.", UI.Current.ImGui_Default_Text_Color);
+            GUI.Spacer();
+            GUI.SimpleHeader("Circle - Size", "Size", "The amount of replication instances to apply to form the circle.", UI.Current.ImGui_Default_Text_Color);
 
-            UIHelper.SetInputWidth();
+            GUI.SetInputWidth();
             ImGui.InputInt("##Size", ref CFG.Current.Replicator_Circle_Size);
-            UIHelper.Tooltip("The number of points within the circle on which the entities are placed.");
+            GUI.Tooltip("The number of points within the circle on which the entities are placed.");
 
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader("Circle - Radius", "Circle Radius", "The circle radius to use during the replication process.", UI.Current.ImGui_Default_Text_Color);
+            GUI.Spacer();
+            GUI.SimpleHeader("Circle - Radius", "Circle Radius", "The circle radius to use during the replication process.", UI.Current.ImGui_Default_Text_Color);
 
-            UIHelper.SetInputWidth();
+            GUI.SetInputWidth();
             ImGui.SliderFloat("##Radius", ref CFG.Current.Replicator_Circle_Radius, 0.1f, 100);
-            UIHelper.Tooltip("Press Ctrl+Left Click to input directly.\nThe radius of the circle on which to place the entities.");
+            GUI.Tooltip("Press Ctrl+Left Click to input directly.\nThe radius of the circle on which to place the entities.");
 
             if (CFG.Current.Replicator_Circle_Size < 1)
                 CFG.Current.Replicator_Circle_Size = 1;
@@ -196,26 +196,26 @@ public class ReplicateAction
         // Square
         if (CFG.Current.Replicator_Mode_Square)
         {
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader("Square - Size", "Size", "The amount of replication instances to apply to form the square.", UI.Current.ImGui_Default_Text_Color);
+            GUI.Spacer();
+            GUI.SimpleHeader("Square - Size", "Size", "The amount of replication instances to apply to form the square.", UI.Current.ImGui_Default_Text_Color);
 
-            UIHelper.SetInputWidth();
+            GUI.SetInputWidth();
             ImGui.InputInt("##Size", ref CFG.Current.Replicator_Square_Size);
-            UIHelper.Tooltip("The number of points on one side of the square on which the entities are placed.");
+            GUI.Tooltip("The number of points on one side of the square on which the entities are placed.");
 
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader("Square - Width", "Width", "The amount of replication instances to that form the width of the square.", UI.Current.ImGui_Default_Text_Color);
+            GUI.Spacer();
+            GUI.SimpleHeader("Square - Width", "Width", "The amount of replication instances to that form the width of the square.", UI.Current.ImGui_Default_Text_Color);
 
-            UIHelper.SetInputWidth();
+            GUI.SetInputWidth();
             ImGui.InputFloat("##Width", ref CFG.Current.Replicator_Square_Width);
-            UIHelper.Tooltip("The width of the square on which to place the entities.");
+            GUI.Tooltip("The width of the square on which to place the entities.");
 
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader("Square - Height", "Height", "The amount of replication instances to that form the height of the square.", UI.Current.ImGui_Default_Text_Color);
+            GUI.Spacer();
+            GUI.SimpleHeader("Square - Height", "Height", "The amount of replication instances to that form the height of the square.", UI.Current.ImGui_Default_Text_Color);
 
-            UIHelper.SetInputWidth();
+            GUI.SetInputWidth();
             ImGui.InputFloat("##Depth", ref CFG.Current.Replicator_Square_Depth);
-            UIHelper.Tooltip("The depth of the square on which to place the entities.");
+            GUI.Tooltip("The depth of the square on which to place the entities.");
 
             if (CFG.Current.Replicator_Square_Width < 1)
                 CFG.Current.Replicator_Square_Width = 1;
@@ -227,17 +227,17 @@ public class ReplicateAction
                 CFG.Current.Replicator_Square_Depth = 1;
         }
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader("Options", "Options", "The options for the replication process.", UI.Current.ImGui_Default_Text_Color);
+        GUI.Spacer();
+        GUI.SimpleHeader("Options", "Options", "The options for the replication process.", UI.Current.ImGui_Default_Text_Color);
 
         if (CFG.Current.Replicator_Mode_Line)
         {
             ImGui.Checkbox("Flip Offset Direction", ref CFG.Current.Replicator_Line_Offset_Direction_Flipped);
-            UIHelper.Tooltip("When enabled, the position offset will be applied in the opposite direction.");
+            GUI.Tooltip("When enabled, the position offset will be applied in the opposite direction.");
         }
 
         ImGui.Checkbox("Apply Scramble Configuration", ref CFG.Current.Replicator_Apply_Scramble_Configuration);
-        UIHelper.Tooltip("When enabled, the Scramble configuration settings will be applied to the newly duplicated entities.");
+        GUI.Tooltip("When enabled, the Scramble configuration settings will be applied to the newly duplicated entities.");
 
         if (View.Project.Descriptor.ProjectType != ProjectType.DS2S && View.Project.Descriptor.ProjectType != ProjectType.DS2 && View.Project.Descriptor.ProjectType != ProjectType.AC6)
         {
@@ -248,19 +248,19 @@ public class ReplicateAction
                     CFG.Current.Replicator_Clear_Entity_ID = false;
                 }
             }
-            UIHelper.Tooltip("When enabled, the replicated entities will be given new Entity ID. If disabled, the replicated entity ID will be set to 0.");
+            GUI.Tooltip("When enabled, the replicated entities will be given new Entity ID. If disabled, the replicated entity ID will be set to 0.");
         }
 
         if (View.Project.Descriptor.ProjectType == ProjectType.ER || View.Project.Descriptor.ProjectType == ProjectType.AC6)
         {
             ImGui.Checkbox("Increment Instance ID", ref CFG.Current.Replicator_Increment_InstanceID);
-            UIHelper.Tooltip("When enabled, the duplicated entities will be given a new valid Instance ID.");
+            GUI.Tooltip("When enabled, the duplicated entities will be given a new valid Instance ID.");
         }
 
         if (View.Project.Descriptor.ProjectType == ProjectType.ER || View.Project.Descriptor.ProjectType == ProjectType.AC6)
         {
             ImGui.Checkbox("Increment Part Names for Assets", ref CFG.Current.Replicator_Increment_PartNames);
-            UIHelper.Tooltip("When enabled, the duplicated Asset entities PartNames property will be updated.");
+            GUI.Tooltip("When enabled, the duplicated Asset entities PartNames property will be updated.");
         }
 
         if (View.Project.Descriptor.ProjectType != ProjectType.DS2S && View.Project.Descriptor.ProjectType != ProjectType.DS2)
@@ -272,16 +272,16 @@ public class ReplicateAction
                     CFG.Current.Replicator_Increment_Entity_ID = false;
                 }
             }
-            UIHelper.Tooltip("When enabled, the Entity ID assigned to the duplicated entities will be set to 0");
+            GUI.Tooltip("When enabled, the Entity ID assigned to the duplicated entities will be set to 0");
 
             ImGui.Checkbox("Clear Entity Group IDs", ref CFG.Current.Replicator_Clear_Entity_Group_IDs);
-            UIHelper.Tooltip("When enabled, the Entity Group IDs assigned to the duplicated entities will be set to 0");
+            GUI.Tooltip("When enabled, the Entity Group IDs assigned to the duplicated entities will be set to 0");
         }
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader("Actions", "");
+        GUI.Spacer();
+        GUI.SimpleHeader("Actions", "");
 
-        UIHelper.MultiButtonInput("replicateActions",
+        GUI.MultiButtonInput("replicateActions",
             "replicate", "Replicate Selection", "", ApplyReplicate);
     }
 

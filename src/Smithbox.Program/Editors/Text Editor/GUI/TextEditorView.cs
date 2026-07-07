@@ -73,8 +73,8 @@ public class TextEditorView
     {
         // Container List
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
-        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_TextEditorView);
-        if (ImGui.Begin($@"{LOC.Get("TEXT_Window_Container_List")}###textEditor_ContainerList_{viewIndex}", UIHelper.GetInnerWindowFlags()))
+        ImGui.SetNextWindowClass(ref GUI.DockGroup_TextEditorView);
+        if (ImGui.Begin($@"{LOC.Get("TEXT_Window_Container_List")}###textEditor_ContainerList_{viewIndex}", GUI.GetInnerWindowFlags()))
         {
             var width = ImGui.GetContentRegionAvail().X;
             var height = ImGui.GetContentRegionAvail().Y;
@@ -92,8 +92,8 @@ public class TextEditorView
 
         // File List
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
-        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_TextEditorView);
-        if (ImGui.Begin($@"{LOC.Get("TEXT_Window_File_List")}###textEditor_FileList_{viewIndex}", UIHelper.GetInnerWindowFlags()))
+        ImGui.SetNextWindowClass(ref GUI.DockGroup_TextEditorView);
+        if (ImGui.Begin($@"{LOC.Get("TEXT_Window_File_List")}###textEditor_FileList_{viewIndex}", GUI.GetInnerWindowFlags()))
         {
             var width = ImGui.GetContentRegionAvail().X;
             var height = ImGui.GetContentRegionAvail().Y;
@@ -111,8 +111,8 @@ public class TextEditorView
 
         // Text Entry List
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
-        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_TextEditorView);
-        if (ImGui.Begin($@"{LOC.Get("TEXT_Window_Text_Entries")}###textEditor_TextEntryList_{viewIndex}", UIHelper.GetInnerWindowFlags()))
+        ImGui.SetNextWindowClass(ref GUI.DockGroup_TextEditorView);
+        if (ImGui.Begin($@"{LOC.Get("TEXT_Window_Text_Entries")}###textEditor_TextEntryList_{viewIndex}", GUI.GetInnerWindowFlags()))
         {
             var width = ImGui.GetContentRegionAvail().X;
             var height = ImGui.GetContentRegionAvail().Y;
@@ -130,8 +130,8 @@ public class TextEditorView
 
         // Text Contents
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
-        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_TextEditorView);
-        if (ImGui.Begin($@"{LOC.Get("TEXT_Window_Text_Content")}###textEditor_TextContents_{viewIndex}", UIHelper.GetInnerWindowFlags()))
+        ImGui.SetNextWindowClass(ref GUI.DockGroup_TextEditorView);
+        if (ImGui.Begin($@"{LOC.Get("TEXT_Window_Text_Content")}###textEditor_TextContents_{viewIndex}", GUI.GetInnerWindowFlags()))
         {
             var width = ImGui.GetContentRegionAvail().X;
             var height = ImGui.GetContentRegionAvail().Y;
@@ -149,8 +149,8 @@ public class TextEditorView
 
         // Tools
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
-        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_TextEditorView);
-        if (ImGui.Begin($@"{LOC.Get("TEXT_Window_Tools")}###textEditor_ToolWindow_{viewIndex}", UIHelper.GetMainWindowFlags()))
+        ImGui.SetNextWindowClass(ref GUI.DockGroup_TextEditorView);
+        if (ImGui.Begin($@"{LOC.Get("TEXT_Window_Tools")}###textEditor_ToolWindow_{viewIndex}", GUI.GetMainWindowFlags()))
         {
             var width = ImGui.GetContentRegionAvail().X;
             var height = ImGui.GetContentRegionAvail().Y;

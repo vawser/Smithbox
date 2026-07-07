@@ -41,7 +41,7 @@ public class DeleteAction
         {
             ApplyDelete();
         }
-        UIHelper.Tooltip($"Delete the currently selected map objects.\n\nShortcut: {InputManager.GetHint(KeybindID.Delete)}");
+        GUI.Tooltip($"Delete the currently selected map objects.\n\nShortcut: {InputManager.GetHint(KeybindID.Delete)}");
     }
 
     /// <summary>
@@ -53,7 +53,7 @@ public class DeleteAction
         {
             ApplyDelete();
         }
-        UIHelper.Tooltip($"Delete the currently selected map objects.");
+        GUI.Tooltip($"Delete the currently selected map objects.");
     }
 
     /// <summary>

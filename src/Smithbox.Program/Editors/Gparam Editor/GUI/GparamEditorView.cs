@@ -49,8 +49,8 @@ public class GparamEditorView
     {
         // Files
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
-        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_GparamEditorView);
-        if (ImGui.Begin($@"Files##gparamEditor_FileList_{viewIndex}", UIHelper.GetInnerWindowFlags()))
+        ImGui.SetNextWindowClass(ref GUI.DockGroup_GparamEditorView);
+        if (ImGui.Begin($@"Files##gparamEditor_FileList_{viewIndex}", GUI.GetInnerWindowFlags()))
         {
             var width = ImGui.GetContentRegionAvail().X;
             var height = ImGui.GetContentRegionAvail().Y;
@@ -68,8 +68,8 @@ public class GparamEditorView
 
         // Groups
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
-        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_GparamEditorView);
-        if (ImGui.Begin($@"Groups##gparamEditor_GroupList_{viewIndex}", UIHelper.GetInnerWindowFlags()))
+        ImGui.SetNextWindowClass(ref GUI.DockGroup_GparamEditorView);
+        if (ImGui.Begin($@"Groups##gparamEditor_GroupList_{viewIndex}", GUI.GetInnerWindowFlags()))
         {
             var width = ImGui.GetContentRegionAvail().X;
             var height = ImGui.GetContentRegionAvail().Y;
@@ -87,8 +87,8 @@ public class GparamEditorView
 
         // Fields
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
-        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_GparamEditorView);
-        if (ImGui.Begin($@"Fields##gparamEditor_FieldList_{viewIndex}", UIHelper.GetInnerWindowFlags()))
+        ImGui.SetNextWindowClass(ref GUI.DockGroup_GparamEditorView);
+        if (ImGui.Begin($@"Fields##gparamEditor_FieldList_{viewIndex}", GUI.GetInnerWindowFlags()))
         {
             var width = ImGui.GetContentRegionAvail().X;
             var height = ImGui.GetContentRegionAvail().Y;
@@ -106,8 +106,8 @@ public class GparamEditorView
 
         // Field Values
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
-        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_GparamEditorView);
-        if (ImGui.Begin($@"Field Values##gparamEditor_FieldValueList_{viewIndex}", UIHelper.GetInnerWindowFlags()))
+        ImGui.SetNextWindowClass(ref GUI.DockGroup_GparamEditorView);
+        if (ImGui.Begin($@"Field Values##gparamEditor_FieldValueList_{viewIndex}", GUI.GetInnerWindowFlags()))
         {
             var width = ImGui.GetContentRegionAvail().X;
             var height = ImGui.GetContentRegionAvail().Y;
@@ -125,8 +125,8 @@ public class GparamEditorView
 
         // Tools
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
-        ImGui.SetNextWindowClass(ref UIHelper.DockGroup_GparamEditorView);
-        if (ImGui.Begin($@"Tools##gparamEditor_ToolWindow_{viewIndex}", UIHelper.GetMainWindowFlags()))
+        ImGui.SetNextWindowClass(ref GUI.DockGroup_GparamEditorView);
+        if (ImGui.Begin($@"Tools##gparamEditor_ToolWindow_{viewIndex}", GUI.GetMainWindowFlags()))
         {
             var width = ImGui.GetContentRegionAvail().X;
             var height = ImGui.GetContentRegionAvail().Y;

@@ -47,7 +47,7 @@ public class MapViewportView
             }
 
             ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
-            ImGui.SetNextWindowClass(ref UIHelper.DockGroup_MapEditorView);
+            ImGui.SetNextWindowClass(ref GUI.DockGroup_MapEditorView);
 
             if (viewport.Viewport is VulkanViewport vulkanViewport)
             {

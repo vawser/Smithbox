@@ -53,7 +53,7 @@ public class FileBrowserScreen : EditorScreen
         }
 
         var dsid = ImGui.GetID("DockSpace_FileBrowser");
-        ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None, ref UIHelper.DockGroup_FileBrowser);
+        ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None, ref GUI.DockGroup_FileBrowser);
 
         ViewHandler.HandleViews(dsid);
     }
@@ -125,7 +125,7 @@ public class FileBrowserScreen : EditorScreen
             {
                 CFG.Current.Interface_FileBrowser_ToolView = !CFG.Current.Interface_FileBrowser_ToolView;
             }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_FileBrowser_ToolView);
+            GUI.ShowActiveStatus(CFG.Current.Interface_FileBrowser_ToolView);
 
             ImGui.Separator();
 

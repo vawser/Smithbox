@@ -68,10 +68,10 @@ public class ViewportFiltersAction
             objName = "Asset";
         }
 
-        UIHelper.WrappedText("Configure what types of map objects are rendered within the viewport.");
+        GUI.WrappedText("Configure what types of map objects are rendered within the viewport.");
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader("Basic Filters", "Toggle the display of various basic map object forms.");
+        GUI.Spacer();
+        GUI.SimpleHeader("Basic Filters", "Toggle the display of various basic map object forms.");
 
         if (ImGui.Checkbox("Map Piece", ref RenderMapPiece))
         {
@@ -133,10 +133,10 @@ public class ViewportFiltersAction
             RenderInvasionPoint = scene.DrawFilter.HasFlag(RenderFilter.AutoInvade);
         }
 
-        UIHelper.Spacer();
-        UIHelper.SimpleHeader("Collision Type", "Toggle which type of collision mesh is displayed.");
+        GUI.Spacer();
+        GUI.SimpleHeader("Collision Type", "Toggle which type of collision mesh is displayed.");
 
-        UIHelper.SetInputWidth();
+        GUI.SetInputWidth();
         if (ImGui.BeginCombo("##colType", View.HavokCollisionBank.VisibleCollisionType.GetDisplayName()))
         {
             foreach (var entry in Enum.GetValues(typeof(HavokCollisionType)))
@@ -161,10 +161,10 @@ public class ViewportFiltersAction
 
         if (!(Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S))
         {
-            UIHelper.Spacer();
-            UIHelper.SimpleHeader("Patrol Routes", "Toggle whether patrol routes are displayed.");
+            GUI.Spacer();
+            GUI.SimpleHeader("Patrol Routes", "Toggle whether patrol routes are displayed.");
 
-            UIHelper.SetInputWidth();
+            GUI.SetInputWidth();
             if (ImGui.BeginCombo("##patrolVisType", PatrolVisType.GetDisplayName()))
             {
                 foreach (var entry in Enum.GetValues(typeof(PatrolRouteVisType)))
@@ -190,8 +190,8 @@ public class ViewportFiltersAction
             }
         }
 
-        UIHelper.Spacer();
-        UIHelper.ConditionalHeader("Region Filters", "Toggle individual region types.", ref DisplayRegionFilters);
+        GUI.Spacer();
+        GUI.ConditionalHeader("Region Filters", "Toggle individual region types.", ref DisplayRegionFilters);
 
         if (DisplayRegionFilters)
         {
@@ -323,7 +323,7 @@ public class ViewportFiltersAction
             }
             else
             {
-                UIHelper.WrappedText("Not supported for this project type.");
+                GUI.WrappedText("Not supported for this project type.");
             }
         }
     }
@@ -370,7 +370,7 @@ public class ViewportFiltersAction
 
                 View.DelayPicking();
             }
-            UIHelper.Tooltip($"Toggle the visibility of regions of the {name} type.");
+            GUI.Tooltip($"Toggle the visibility of regions of the {name} type.");
         }
     }
 

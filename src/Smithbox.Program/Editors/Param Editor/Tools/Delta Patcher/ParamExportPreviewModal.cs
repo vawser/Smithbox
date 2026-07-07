@@ -73,7 +73,7 @@ public class ParamExportPreviewModal
 
         if (!InitialLayout)
         {
-            UIHelper.SetupPopupWindow();
+            GUI.SetupPopupWindow();
             InitialLayout = true;
         }
 
@@ -154,7 +154,7 @@ public class ParamExportPreviewModal
                 // Apply to all rows + fields
                 SetParamChildren(param.Name, enabled);
             }
-            UIHelper.Tooltip(LOC.Get("PARAM_DeltaPatcher_Preview_Export_Param_Toggle_TT"));
+            GUI.Tooltip(LOC.Get("PARAM_DeltaPatcher_Preview_Export_Param_Toggle_TT"));
 
             ImGui.SameLine();
 
@@ -209,7 +209,7 @@ public class ParamExportPreviewModal
             // Update parent param checkbox
             UpdateParamFromRows(paramName);
         }
-        UIHelper.Tooltip(LOC.Get("PARAM_DeltaPatcher_Preview_Export_Row_Toggle_TT"));
+        GUI.Tooltip(LOC.Get("PARAM_DeltaPatcher_Preview_Export_Row_Toggle_TT"));
 
         ImGui.SameLine();
 
@@ -260,7 +260,7 @@ public class ParamExportPreviewModal
             // Update param state based on rows
             UpdateParamFromRows(paramName);
         }
-        UIHelper.Tooltip(LOC.Get("PARAM_DeltaPatcher_Preview_Export_Field_Toggle_TT"));
+        GUI.Tooltip(LOC.Get("PARAM_DeltaPatcher_Preview_Export_Field_Toggle_TT"));
 
         ImGui.SameLine();
         ImGui.Text($"{field.Field}: {field.Value}");
