@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.ImGui;
+using SoulsFormats.KF4;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.MetadataEditor;
@@ -48,7 +49,7 @@ public class ModelContainerList
     {
         UIHelper.SimpleHeader("Containers", "");
 
-        DisplaySearchbar();
+        DisplayHeader();
 
         ImGui.BeginChild("ContainerList", new Vector2(0, 0), ImGuiChildFlags.Borders);
 
@@ -113,7 +114,7 @@ public class ModelContainerList
         ImGui.EndChild();
     }
 
-    public void DisplaySearchbar()
+    public void DisplayHeader()
     {
         var searchHeight = new Vector2(0, 36) * DPI.UIScale();
         ImGui.BeginChild($"framedListFilter_modelEditor_SourceList", searchHeight, ImGuiChildFlags.Borders);
@@ -124,6 +125,20 @@ public class ModelContainerList
         bool tabChanged = _previousTab != CurrentTab;
 
         UIHelper.Tooltip("Filter the model list entries.");
+
+        ImGui.SameLine();
+
+        // Load Mode
+        var loadMode = "Load on Select";
+        if (CFG.Current.ModelEditor_ModelSourceList_RequireDoubleClick)
+            loadMode = "Load on Double-Click";
+
+        ImGui.AlignTextToFramePadding();
+        if (ImGui.Button($"{Icons.Bars}"))
+        {
+            CFG.Current.ModelEditor_ModelSourceList_RequireDoubleClick = !CFG.Current.ModelEditor_ModelSourceList_RequireDoubleClick;
+        }
+        UIHelper.Tooltip($"Determines the loading behavior in the model source lists.\nLoad Type: {loadMode}");
 
         ImGui.EndChild();
 
@@ -211,41 +226,35 @@ public class ModelContainerList
                 var alias = ModelEditorUtils.GetAliasForSourceListEntry(Project,
                     displayedName, modelListType);
 
-                if (ImGui.Selectable($"{displayedName}##modelSourceListEntry{modelListType.ToString()}{i}", selected, ImGuiSelectableFlags.AllowDoubleClick))
+                var flags = ImGuiSelectableFlags.None;
+                if (CFG.Current.ModelEditor_ModelSourceList_RequireDoubleClick)
                 {
-                    if (ImGui.IsMouseClicked(ImGuiMouseButton.Left))
+                    flags = ImGuiSelectableFlags.AllowDoubleClick;
+                }
+
+                if (ImGui.Selectable($"{displayedName}##modelSourceListEntry{modelListType.ToString()}{i}", selected, 
+                    flags))
+                {
+                    SelectModel(fileEntry);
+
+                    if (CFG.Current.ModelEditor_ModelSourceList_RequireDoubleClick)
                     {
-                        var entry = Project.Handler.ModelData.PrimaryBank.Models.FirstOrDefault(e => e.Key.Filename == fileEntry.Filename);
-                        if (entry.Value != null)
+                        if (ImGui.IsMouseClicked(ImGuiMouseButton.Left))
                         {
-                            View.Selection.SelectedModelContainerWrapper = entry.Value;
-
-                            // Populates the Files list so we can display the list in select view
-                            entry.Value.PopulateModelList();
-
-                            View.FileList.ApplyAutoSelectPass = true;
-                            View.FileList.ApplyAutoLoadFirst = true;
+                            LoadModel(View.Selection.SelectedModelContainerWrapper);
                         }
+                    }
+                    else
+                    {
+                        LoadModel(View.Selection.SelectedModelContainerWrapper);
                     }
                 }
 
 
                 if (_arrowKeyPressed && ImGui.IsItemFocused() && !selected)
                 {
-                    // Select
-                    var entry = Project.Handler.ModelData.PrimaryBank.Models.FirstOrDefault(
-                        e => e.Key.Filename == fileEntry.Filename);
-
-                    if (entry.Value != null)
-                    {
-                        View.Selection.SelectedModelContainerWrapper = entry.Value;
-
-                        // Populates the Files list so we can display the list in select view
-                        entry.Value.PopulateModelList();
-
-                        View.FileList.ApplyAutoSelectPass = true;
-                        View.FileList.ApplyAutoLoadFirst = true;
-                    }
+                    SelectModel(fileEntry);
+                    LoadModel(View.Selection.SelectedModelContainerWrapper);
 
                     _arrowKeyPressed = false;
                 }
@@ -261,6 +270,24 @@ public class ModelContainerList
         }
 
         clipper.End();
+    }
+
+    private void SelectModel(FileDictionaryEntry fileEntry)
+    {
+        var entry = Project.Handler.ModelData.PrimaryBank.Models.FirstOrDefault(e => e.Key.Filename == fileEntry.Filename);
+        if (entry.Value != null)
+        {
+            View.Selection.SelectedModelContainerWrapper = entry.Value;
+        }
+    }
+
+    private void LoadModel(ModelContainerWrapper entry)
+    {
+        // Populates the Files list so we can display the list in select view
+        entry.PopulateModelList();
+
+        View.FileList.ApplyAutoSelectPass = true;
+        View.FileList.ApplyAutoLoadFirst = true;
     }
 
     private void DisplayContextMenu(FileDictionaryEntry fileEntry, ModelListType modelListType)

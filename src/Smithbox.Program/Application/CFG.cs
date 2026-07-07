@@ -501,6 +501,8 @@ public class CFG
     public float DummyMeshSize = 0.05f;
     public float NodeMeshSize = 0.05f;
 
+    public bool ModelEditor_ModelSourceList_RequireDoubleClick = false;
+
     // Windows
     public bool Interface_ModelEditor_Viewport_Grid = true;
     public bool Interface_ModelEditor_ResourceList = true;

@@ -1,14 +1,7 @@
 ﻿using Hexa.NET.ImGui;
-using StudioCore.Application;
-using StudioCore.Utilities;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Numerics;
 using System.Text;
 using System.Text.Json;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.ParamEditor;
 

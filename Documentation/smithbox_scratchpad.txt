@@ -2,10 +2,6 @@
 # TODO 
 #---------------------
 
-# Model Editor
- - Add arrow key selection to Model Editor / Model Selector
-  - For Model Editor: may already exist: rather add toggle for allowing detection outside of window focus
-
 # Gparam Editor:
  - DS2 fog color values are inverted (BGR, not RGB)
 

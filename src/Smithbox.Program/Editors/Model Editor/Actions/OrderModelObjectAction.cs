@@ -101,6 +101,11 @@ public class OrderModelObjectAction : ViewportAction
                         indexEnd = Container.Objects.Count - 1;
                     }
 
+                    if(indexStart == -1)
+                    {
+                        indexStart = 0;
+                    }
+
                     // Move Up
                     if (MoveSelectionDir == TreeObjectOrderMovementType.Up)
                     {
