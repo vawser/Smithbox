@@ -415,22 +415,6 @@
     {
       "Key": "PARAM_CSV_Row_Result_Effect",
       "Text": "{0} rows affected."
-    },
-    {
-      "Key": "PARAM_CSV_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_CSV_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_CSV_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_CSV_",
-      "Text": ""
-    },
+    }
   ]
 }

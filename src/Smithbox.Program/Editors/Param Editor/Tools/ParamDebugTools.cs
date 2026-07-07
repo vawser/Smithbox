@@ -30,9 +30,9 @@ public static class ParamDebugTools
 
             activeView.ParamTableWindow.WriteTableGroupNames(dir);
 
-            Smithbox.Log(typeof(ParamDebugTools), $"Exported table names to {dir}");
+            Smithbox.Log(typeof(ParamDebugTools), LOC.Get("DEV_Param_Log_Export_Table_Names", dir));
         }
-        UIHelper.Tooltip("Export the current table names for the current param directly to the Smithbox.Data folder.");
+        UIHelper.Tooltip(LOC.Get("DEV_Param_Export_Table_Names_TT"));
     }
 
     public static void DisplayQuickRowNameExport(ParamEditorScreen editor, ProjectEntry project)
@@ -91,10 +91,10 @@ public static class ParamDebugTools
 
                 File.WriteAllText(fullPath, json);
 
-                Smithbox.Log(typeof(ParamDebugTools), $"Exported row names to {fullPath}");
+                Smithbox.Log(typeof(ParamDebugTools), LOC.Get("DEV_Param_Log_Export_Row_Names", fullPath));
             }
         }
-        UIHelper.Tooltip("Export the current row names for the current param directly to the Smithbox.Data folder.");
+        UIHelper.Tooltip(LOC.Get("DEV_Param_Export_Row_Names_TT"));
     }
 
 

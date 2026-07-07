@@ -371,6 +371,22 @@
     {
       "Key": "DEV_PNL_No_Validator_Type_Selected",
       "Text": "No validator type has been selected."
+    },
+    {
+      "Key": "DEV_Param_Log_Export_Table_Names",
+      "Text": "Exported table names to {0}"
+    },
+    {
+      "Key": "DEV_Param_Export_Table_Names_TT",
+      "Text": "Export the current table names for the current param directly to the Smithbox.Data folder."
+    },
+    {
+      "Key": "DEV_Param_Log_Export_Row_Names",
+      "Text": "Exported row names to {0}"
+    },
+    {
+      "Key": "DEV_Param_Export_Row_Names_TT",
+      "Text": "Export the current row names for the current param directly to the Smithbox.Data folder."
     }
   ]
 }
