@@ -2,6 +2,7 @@
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.MetadataEditor;
+using StudioCore.Keybinds;
 using StudioCore.Utilities;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +27,8 @@ public class ModelContainerList
     private ModelListType _previousTab = ModelListType.Character;
 
     private Dictionary<ModelListType, HashSet<string>> CachedSearchMatches = new();
+
+    private bool _arrowKeyPressed = false;
 
     private static readonly Dictionary<ModelListType, ProjectAliasType> AliasTypeMap = new()
     {
@@ -176,6 +179,11 @@ public class ModelContainerList
         if (!CachedSearchMatches.TryGetValue(modelListType, out var matches))
             return;
 
+        if (InputManager.HasArrowSelection())
+        {
+            _arrowKeyPressed = true;
+        }
+
         var filteredEntries = fileDictionary.Entries
             .Where(e => matches.Contains(e.Filename))
             .ToList();
@@ -219,6 +227,27 @@ public class ModelContainerList
                             View.FileList.ApplyAutoLoadFirst = true;
                         }
                     }
+                }
+
+
+                if (_arrowKeyPressed && ImGui.IsItemFocused() && !selected)
+                {
+                    // Select
+                    var entry = Project.Handler.ModelData.PrimaryBank.Models.FirstOrDefault(
+                        e => e.Key.Filename == fileEntry.Filename);
+
+                    if (entry.Value != null)
+                    {
+                        View.Selection.SelectedModelContainerWrapper = entry.Value;
+
+                        // Populates the Files list so we can display the list in select view
+                        entry.Value.PopulateModelList();
+
+                        View.FileList.ApplyAutoSelectPass = true;
+                        View.FileList.ApplyAutoLoadFirst = true;
+                    }
+
+                    _arrowKeyPressed = false;
                 }
 
                 if (alias != "")
