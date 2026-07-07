@@ -1,0 +1,116 @@
+{
+  "Entries": [
+    {
+      "Key": "PARAM_Merger_Header",
+      "Text": "Param Merger"
+    },
+    {
+      "Key": "PARAM_Merger_Hint",
+      "Text": "Select a compatible project below to merge into your current project.\nYou will need to create a project for the external mod first, it will then appear below"
+    },
+    {
+      "Key": "PARAM_Merger_Header_Compatible_Projects",
+      "Text": "Compatible Projects"
+    },
+    {
+      "Key": "PARAM_Merger_Header_Compatible_Projects_TT",
+      "Text": "List of projects you can merge into your current project."
+    },
+    {
+      "Key": "PARAM_Merger_Action_Load_Project",
+      "Text": "Load Project"
+    },
+    {
+      "Key": "PARAM_Merger_Action_Load_Project_TT",
+      "Text": "Load the currently selected project."
+    },
+    {
+      "Key": "PARAM_Merger_Action_Merge_Project",
+      "Text": "Merge Project"
+    },
+    {
+      "Key": "PARAM_Merger_Action_Merge_Project_TT",
+      "Text": "If loaded, merge the currently selected project into this project."
+    },
+    {
+      "Key": "PARAM_Merger_Header_Options",
+      "Text": "Options"
+    },
+    {
+      "Key": "PARAM_Merger_Header_Options_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_Merger_Checkbox_Include_Added",
+      "Text": "Include Added"
+    },
+    {
+      "Key": "PARAM_Merger_Checkbox_Include_Added_TT",
+      "Text": "If enabled, added rows in the target project will be merged into this project."
+    },
+    {
+      "Key": "PARAM_Merger_Checkbox_Include_Modified",
+      "Text": "Include Modified"
+    },
+    {
+      "Key": "PARAM_Merger_Checkbox_Include_Modified_TT",
+      "Text": "If enabled, modified rows in the target project (compared to this project) will be merged into this project."
+    },
+    {
+      "Key": "PARAM_Merger_Header_Target_Params",
+      "Text": "Target Params"
+    },
+    {
+      "Key": "PARAM_Merger_Header_Target_Params_TT",
+      "Text": "Determines which params are merged in."
+    },
+    {
+      "Key": "PARAM_Merger_Param_Filter_Hint",
+      "Text": "Filter the param list..."
+    },
+    {
+      "Key": "PARAM_Merger_Action_Toggle_All_Params",
+      "Text": "Toggle All Params"
+    },
+    {
+      "Key": "PARAM_Merger_Action_Toggle_All_Params_TT",
+      "Text": "Toggle the state of all the target params."
+    },
+    {
+      "Key": "PARAM_Merger_Log_Loaded_Project",
+      "Text": "Loaded target project: {0} for Param Merge."
+    },
+    {
+      "Key": "PARAM_Merger_Log_No_Target_Project",
+      "Text": "No target project selected. Cannot merge."
+    },
+    {
+      "Key": "PARAM_Merger_Log_Project_Not_Loaded",
+      "Text": "Target project: {0} is not loaded, cannot merge."
+    },
+    {
+      "Key": "PARAM_Merger_Log_Merged_Project",
+      "Text": "Merged target project rows: {0} into this project."
+    },
+    {
+      "Key": "PARAM_Merger_",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_Merger_",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_Merger_",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_Merger_",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_Merger_",
+      "Text": ""
+    },
+  ]
+}

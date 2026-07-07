@@ -30,7 +30,7 @@ public class ParamListCategories
 
     public void Display()
     {
-        if (ImGui.CollapsingHeader($"{LOC.Get("PARAM_ListCategories_Header")}##paramListCategoriesHeader"))
+        if (ImGui.CollapsingHeader($"{LOC.Get("PARAM_ListCat_Header")}##paramListCategoriesHeader"))
         {
             ImGui.BeginChild("ParamListCategories", ImGuiChildFlags.Borders);
 
@@ -38,7 +38,7 @@ public class ParamListCategories
 
             if (categories == null)
             {
-                GUI.WrappedText("No param categories found.");
+                GUI.WrappedText(LOC.Get("PARAM_ListCat_No_Categories"));
 
                 return;
             }
@@ -46,18 +46,30 @@ public class ParamListCategories
             var windowWidth = ImGui.GetWindowWidth();
             var sectionHeight = ImGui.GetWindowHeight();
 
-            GUI.WrappedText("Create or modify project-specific param categories.");
-            GUI.WrappedText("");
+            GUI.WrappedText(LOC.Get("PARAM_ListCat_Hint"));
 
-            GUI.SimpleHeader("Actions", "");
+            // Actions
+            GUI.Spacer();
+            GUI.SimpleHeader(
+                LOC.Get("PARAM_ListCat_Header_Actions"),
+                LOC.Get("PARAM_ListCat_Header_Actions_TT"));
 
             GUI.MultiButtonInput("baseActions",
-                "saveEntries", "Save Changes", "Save the current changes made to categories.", SaveEntriesAction,
-                "restoreEntries", "Restore Base Categories", "Restore the base category list.", RestoreEntriesAction);
+                "saveEntries", 
+                LOC.Get("PARAM_ListCat_Action_Save"),
+                LOC.Get("PARAM_ListCat_Action_Save_TT"),
+                SaveEntriesAction,
 
-            ImGui.Text("");
+                "restoreEntries", 
+                LOC.Get("PARAM_ListCat_Action_Restore"),
+                LOC.Get("PARAM_ListCat_Action_Restore_TT"),
+                RestoreEntriesAction);
 
-            GUI.SimpleHeader("List", "");
+            // List
+            GUI.Spacer();
+            GUI.SimpleHeader(
+                LOC.Get("PARAM_ListCat_Header_List"),
+                LOC.Get("PARAM_ListCat_Header_List_TT"));
 
             ImGui.BeginChild("ParamListCategorySelectionList", new Vector2(0, 250), ImGuiChildFlags.Borders);
             foreach (var category in Project.Handler.ParamData.ParamCategories.Categories)
@@ -72,9 +84,20 @@ public class ParamListCategories
             ImGui.EndChild();
 
             GUI.MultiButtonInput("entryActions",
-                "newEntry", "Create New Entry", "Create a new category.", NewEntryAction,
-                "editEntry", "Edit Selected Entry", "Edit an existing category.", EditEntryAction,
-                "deleteEntry", "Delete Selected Entry", "Delete an existing category.", DeleteEntryAction);
+                "newEntry", 
+                LOC.Get("PARAM_ListCat_Action_Create_Entry"),
+                LOC.Get("PARAM_ListCat_Action_Create_Entry_TT"),
+                NewEntryAction,
+
+                "editEntry", 
+                LOC.Get("PARAM_ListCat_Action_Edit_Entry"),
+                LOC.Get("PARAM_ListCat_Action_Edit_Entry_TT"),
+                EditEntryAction,
+
+                "deleteEntry", 
+                LOC.Get("PARAM_ListCat_Action_Delete_Entry"),
+                LOC.Get("PARAM_ListCat_Action_Delete_Entry_TT"),
+                DeleteEntryAction);
 
             ImGui.Text("");
 
@@ -135,38 +158,47 @@ public class ParamListCategories
 
     public void DisplayNewEntrySection()
     {
-        GUI.SimpleHeader("New Entry Name", "");
+        GUI.SimpleHeader(
+            LOC.Get("PARAM_ListCat_NewEntry_Header"),
+            LOC.Get("PARAM_ListCat_NewEntry_Header_TT"));
 
         GUI.SinglelineTextInput("newEntryName", ref NewEntryName);
-        GUI.Tooltip("The name of the new param category.");
+        GUI.Tooltip(LOC.Get("PARAM_ListCat_NewEntry_TT"));
 
         GUI.MultiButtonInput("newEntryActions",
-            "finalizeNewEntry", "Finalize", "", FinalizeNewEntry);
+            "finalizeNewEntry", 
+            LOC.Get("PARAM_ListCat_NewEntry_Action_Finalize"),
+            LOC.Get("PARAM_ListCat_NewEntry_Action_Finalize_TT"),
+            FinalizeNewEntry);
 
-        GUI.WrappedText("");
-        GUI.SimpleHeader("New Entry Options", "");
+        GUI.Spacer();
+        GUI.SimpleHeader(
+            LOC.Get("PARAM_ListCat_Entry_Options"),
+            LOC.Get("PARAM_ListCat_Entry_Options_TT"));
 
-        if (ImGui.Checkbox("Force to Top##newEntryforceTop", ref ForceTop))
+        if (ImGui.Checkbox($"{LOC.Get("PARAM_ListCat_Checkbox_Force_Top")}##newEntryforceTop", ref ForceTop))
         {
             ForceBottom = false;
         }
-        GUI.Tooltip("If toggled on, this param category will always appear at the top (in alphabetically order with any other categories with the same toggle).");
+        GUI.Tooltip(LOC.Get("PARAM_ListCat_Checkbox_Force_Top_TT"));
 
-        if (ImGui.Checkbox("Force to Bottom##newEntryforceBottom", ref ForceBottom))
+        if (ImGui.Checkbox($"{LOC.Get("PARAM_ListCat_Checkbox_Force_Bottom")}##newEntryforceBottom", ref ForceBottom))
         {
             ForceTop = false;
         }
-        GUI.Tooltip("If toggled on, this param category will always appear at the bottom (in alphabetically order with any other categories with the same toggle).");
+        GUI.Tooltip(LOC.Get("PARAM_ListCat_Checkbox_Force_Bottom_TT"));
 
-        GUI.WrappedText("");
-        GUI.SimpleHeader("New Entry Params", "");
+        GUI.Spacer();
+        GUI.SimpleHeader(
+            LOC.Get("PARAM_ListCat_Entry_Header_Parameters"),
+            LOC.Get("PARAM_ListCat_Entry_Header_Parameters_TT"));
 
         // Add
         if (ImGui.Button($"{Icons.Plus}##paramTargetAdd_ParamListCategory"))
         {
             NewEntryParams.Add("");
         }
-        GUI.Tooltip("Add new param target input row.");
+        GUI.Tooltip(LOC.Get("PARAM_ListCat_Add_Param_Target_TT"));
 
         ImGui.SameLine();
 
@@ -179,7 +211,7 @@ public class ParamListCategories
             {
                 NewEntryParams.RemoveAt(NewEntryParams.Count - 1);
             }
-            GUI.Tooltip("Remove last added param target input row.");
+            GUI.Tooltip(LOC.Get("PARAM_ListCat_Remove_Param_Target_TT"));
 
             ImGui.EndDisabled();
         }
@@ -188,18 +220,18 @@ public class ParamListCategories
             if (ImGui.Button($"{Icons.Minus}##paramTargetRemove_ParamListCategory"))
             {
                 NewEntryParams.RemoveAt(NewEntryParams.Count - 1);
-                GUI.Tooltip("Remove last added param target input row.");
             }
+            GUI.Tooltip(LOC.Get("PARAM_ListCat_Remove_Param_Target_TT"));
         }
 
         ImGui.SameLine();
 
         // Reset
-        if (ImGui.Button("Reset##paramTargetReset_ParamListCategory"))
+        if (ImGui.Button($"{LOC.Get("PARAM_ListCat_Reset_Param_Target")}##paramTargetReset_ParamListCategory"))
         {
             NewEntryParams = new List<string>();
         }
-        GUI.Tooltip("Reset param target input rows.");
+        GUI.Tooltip(LOC.Get("PARAM_ListCat_Reset_Param_Target_TT"));
 
         for (int i = 0; i < NewEntryParams.Count; i++)
         {
@@ -210,7 +242,7 @@ public class ParamListCategories
             {
                 NewEntryParams[i] = curText;
             }
-            GUI.Tooltip("The param to include within this category.");
+            GUI.Tooltip(LOC.Get("PARAM_ListCat_Param_Target_Include_TT"));
         }
     }
 
@@ -246,36 +278,45 @@ public class ParamListCategories
                 NewEntryParams = _selectedUserCategory.Params;
             }
 
-            GUI.SimpleHeader("Edit Entry", "");
+            GUI.SimpleHeader(
+                LOC.Get("PARAM_ListCat_EditEntry_Header"),
+                LOC.Get("PARAM_ListCat_EditEntry_Header_TT"));
 
             GUI.MultiButtonInput("editEntryActions",
-                "finalizeEditEntry", "Finalize", "", FinalizeEditEntry);
+                "finalizeEditEntry", 
+                LOC.Get("PARAM_ListCat_EditEntry_Action_Finalize"),
+                LOC.Get("PARAM_ListCat_EditEntry_Action_Finalize_TT"),
+                FinalizeEditEntry);
 
-            GUI.WrappedText("");
-            GUI.SimpleHeader("Edit Entry Options", "");
+            GUI.Spacer();
+            GUI.SimpleHeader(
+                LOC.Get("PARAM_ListCat_Entry_Options"),
+                LOC.Get("PARAM_ListCat_Entry_Options_TT"));
 
             // Edit
-            if (ImGui.Checkbox("Force to Top##newEntryforceTop", ref ForceTop))
+            if (ImGui.Checkbox($"{LOC.Get("PARAM_ListCat_Checkbox_Force_Top")}##newEntryforceTop", ref ForceTop))
             {
                 ForceBottom = false;
             }
-            GUI.Tooltip("If toggled on, this param category will always appear at the top (in alphabetically order with any other categories with the same toggle).");
+            GUI.Tooltip(LOC.Get("PARAM_ListCat_Checkbox_Force_Top_TT"));
 
-            if (ImGui.Checkbox("Force to Bottom##newEntryforceBottom", ref ForceBottom))
+            if (ImGui.Checkbox($"{LOC.Get("PARAM_ListCat_Checkbox_Force_Bottom")}##newEntryforceBottom", ref ForceBottom))
             {
                 ForceTop = false;
             }
-            GUI.Tooltip("If toggled on, this param category will always appear at the bottom (in alphabetically order with any other categories with the same toggle).");
+            GUI.Tooltip(LOC.Get("PARAM_ListCat_Checkbox_Force_Bottom_TT"));
 
-            GUI.WrappedText("");
-            GUI.SimpleHeader("Edit Entry Params", "");
+            GUI.Spacer();
+            GUI.SimpleHeader(
+                LOC.Get("PARAM_ListCat_Entry_Header_Parameters"),
+                LOC.Get("PARAM_ListCat_Entry_Header_Parameters_TT"));
 
             // Add
             if (ImGui.Button($"{Icons.Plus}##paramTargetAdd_ParamListCategory_edit"))
             {
                 NewEntryParams.Add("");
             }
-            GUI.Tooltip("Add new param target input row.");
+            GUI.Tooltip(LOC.Get("PARAM_ListCat_Add_Param_Target_TT"));
 
             ImGui.SameLine();
 
@@ -288,7 +329,7 @@ public class ParamListCategories
                 {
                     NewEntryParams.RemoveAt(NewEntryParams.Count - 1);
                 }
-                GUI.Tooltip("Remove last added param target input row.");
+                GUI.Tooltip(LOC.Get("PARAM_ListCat_Remove_Param_Target_TT"));
 
                 ImGui.EndDisabled();
             }
@@ -297,18 +338,18 @@ public class ParamListCategories
                 if (ImGui.Button($"{Icons.Minus}##paramTargetRemove_ParamListCategory_edit"))
                 {
                     NewEntryParams.RemoveAt(NewEntryParams.Count - 1);
-                    GUI.Tooltip("Remove last added param target input row.");
                 }
+                GUI.Tooltip(LOC.Get("PARAM_ListCat_Remove_Param_Target_TT"));
             }
 
             ImGui.SameLine();
 
             // Reset
-            if (ImGui.Button("Reset##paramTargetReset_ParamListCategory_edit"))
+            if (ImGui.Button($"{LOC.Get("PARAM_ListCat_Reset_Param_Target")}##paramTargetReset_ParamListCategory_edit"))
             {
                 NewEntryParams = new List<string>();
             }
-            GUI.Tooltip("Reset param target input rows.");
+            GUI.Tooltip(LOC.Get("PARAM_ListCat_Reset_Param_Target_TT"));
 
             for (int i = 0; i < NewEntryParams.Count; i++)
             {
@@ -319,7 +360,7 @@ public class ParamListCategories
                 {
                     NewEntryParams[i] = curText;
                 }
-                GUI.Tooltip("The param to include within this category.");
+                GUI.Tooltip(LOC.Get("PARAM_ListCat_Param_Target_Include_TT"));
             }
         }
     }
@@ -327,7 +368,7 @@ public class ParamListCategories
     {
         isEditEntryMode = false;
 
-        var curEntry = Project.Handler.ParamData.ParamCategories.Categories.Where(e => e.GetDisplayName() == NewEntryName).FirstOrDefault();
+        var curEntry = Project.Handler.ParamData.ParamCategories.Categories.FirstOrDefault(e => e.GetDisplayName() == NewEntryName);
 
         if (curEntry != null)
         {
@@ -384,7 +425,7 @@ public class ParamListCategories
         }
         catch (Exception ex)
         {
-            Smithbox.LogError(this, "Failed to write project param categories", ex);
+            Smithbox.LogError(this, LOC.Get("PARAM_ListCat_Failed_Write"), ex);
         }
 
     }

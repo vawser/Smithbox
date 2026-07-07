@@ -45,15 +45,17 @@ public class ParamMerger
         var paramData = Project.Handler.ParamData;
 
         // Merge Params
-        if (ImGui.CollapsingHeader("Param Merger"))
+        if (ImGui.CollapsingHeader($"{LOC.Get("PARAM_Merger_Header")}##paramMergerHeader"))
         {
             ImGui.BeginChild("ParamMergerToolSection", ImGuiChildFlags.Borders);
 
-            GUI.WrappedText("Select a compatible project below to merge into your current project.");
-            GUI.WrappedText("You will need to create a project for the external mod first, it will then appear below.");
-            GUI.WrappedText("");
+            GUI.WrappedText(LOC.Get("PARAM_Merger_Hint"));
+            GUI.Spacer();
 
-            GUI.SimpleHeader("Compatible Projects:", "List of projects you can merge into your current project");
+            // Compatible Projects
+            GUI.SimpleHeader(
+                LOC.Get("PARAM_Merger_Header_Compatible_Projects"),
+                LOC.Get("PARAM_Merger_Header_Compatible_Projects_TT"));
 
             var projectList = Smithbox.Orchestrator.Projects;
 
@@ -86,22 +88,38 @@ public class ParamMerger
             ImGui.EndChild();
 
             GUI.MultiButtonInput("mergeActions",
-                "loadProject", "Load Selected Project", "", LoadProjectAction,
-                "mergeProject", "Merge Selected Project", "Merges the params from the selected project into our current project.", MergeParamsAction);
+                "loadProject", 
+                LOC.Get("PARAM_Merger_Action_Load_Project"),
+                LOC.Get("PARAM_Merger_Action_Load_Project_TT"),
+                LoadProjectAction,
+
+                "mergeProject", 
+                LOC.Get("PARAM_Merger_Action_Merge_Project"),
+                LOC.Get("PARAM_Merger_Action_Merge_Project_TT"),
+                MergeParamsAction);
 
             // Options
-            GUI.WrappedText("");
-            GUI.SimpleHeader("Options", "Options to apply when merging.");
+            GUI.Spacer();
+            GUI.SimpleHeader(
+                LOC.Get("PARAM_Merger_Header_Options"),
+                LOC.Get("PARAM_Merger_Header_Options_TT"));
 
-            ImGui.Checkbox("Include Added", ref ParamMerge_IncludeAdded);
-            GUI.Tooltip("If enabled, added rows in the target project will be merged into this project.");
+            // Include Added
+            ImGui.Checkbox($"{LOC.Get("PARAM_Merger_Checkbox_Include_Added")}##toggleIncludeAdded", 
+                ref ParamMerge_IncludeAdded);
+            GUI.Tooltip(LOC.Get("PARAM_Merger_Checkbox_Include_Added_TT"));
 
-            ImGui.Checkbox("Include Modified", ref ParamMerge_IncludeModified);
-            GUI.Tooltip("If enabled, modified rows in the target project (compared to this project) will be merged into this project.");
+            // Include Modified
+            ImGui.Checkbox($"{LOC.Get("PARAM_Merger_Checkbox_Include_Modified")}##toggleIncludeModified", 
+                ref ParamMerge_IncludeModified);
+            GUI.Tooltip(LOC.Get("PARAM_Merger_Checkbox_Include_Modified_TT"));
 
             // Target Params
-            GUI.WrappedText("");
-            GUI.ConditionalHeader("Target Params", "The params to merge.", ref DisplayParamToggles);
+            GUI.Spacer();
+            GUI.ConditionalHeader(
+                LOC.Get("PARAM_Merger_Header_Target_Params"),
+                LOC.Get("PARAM_Merger_Header_Target_Params_TT"),
+                ref DisplayParamToggles);
 
             // Generate bool dict once
             if (TargetParams.Count == 0)
@@ -114,10 +132,13 @@ public class ParamMerger
 
             if (DisplayParamToggles)
             {
-                GUI.HintTextInput("paramToggleFilter", ref TargetParamFilter, "Filter param list...");
+                GUI.HintTextInput("paramToggleFilter", ref TargetParamFilter, LOC.Get("PARAM_Merger_Param_Filter_Hint"));
 
                 GUI.MultiButtonInput("paramToggleActions",
-                    "toggleAllParams", "Toggle All Params", "", ToggleParamsAction);
+                    "toggleAllParams", 
+                    LOC.Get("PARAM_Merger_Action_Toggle_All_Params"),
+                    LOC.Get("PARAM_Merger_Action_Toggle_All_Params_TT"),
+                    ToggleParamsAction);
 
                 ImGui.BeginChild("ParamToggleList", new Vector2(0, ImGui.GetContentRegionAvail().Y * 0.9f), ImGuiChildFlags.Borders);
 
@@ -182,7 +203,7 @@ public class ParamMerger
         paramData.RefreshParamDifferenceCacheTask(true);
         TargetParams = new();
 
-        Smithbox.Log<ParamMerger>($"Loaded target project: {ParamMerge_TargetProject.Descriptor.ProjectName} for Param Merge.");
+        Smithbox.Log<ParamMerger>(LOC.Get("PARAM_Merger_Log_Loaded_Project", ParamMerge_TargetProject.Descriptor.ProjectName));
     }
 
     public void MergeParamsAction()
@@ -192,13 +213,14 @@ public class ParamMerger
 
         if (ParamMerge_TargetProject == null)
         {
-            Smithbox.Log<ParamMerger>($"No target project selected. Cannot merge.");
+            Smithbox.Log<ParamMerger>(LOC.Get("PARAM_Merger_Log_No_Target_Project"));
             return;
         }
 
         if (!View.Project.Handler.ParamData.AuxBanks.ContainsKey(ParamMerge_TargetProject.Descriptor.ProjectName))
         {
-            Smithbox.Log<ParamMerger>($"Target project: {ParamMerge_TargetProject.Descriptor.ProjectName} is not loaded, cannot merge.");
+            Smithbox.Log<ParamMerger>(LOC.Get("PARAM_Merger_Log_Project_Not_Loaded", ParamMerge_TargetProject.Descriptor.ProjectName));
+
             return;
         }
 
@@ -243,6 +265,6 @@ public class ParamMerger
 
         ParamMerge_InProgress = false;
 
-        Smithbox.Log<ParamMerger>($"Merged target project rows: {ParamMerge_TargetProject.Descriptor.ProjectName} into this project.");
+        Smithbox.Log<ParamMerger>(LOC.Get("PARAM_Merger_Log_Merged_Project", ParamMerge_TargetProject.Descriptor.ProjectName));
     }
 }

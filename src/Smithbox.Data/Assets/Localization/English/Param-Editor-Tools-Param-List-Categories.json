@@ -1,92 +1,164 @@
 {
   "Entries": [
     {
-      "Key": "PARAM_ListCategories_Header",
+      "Key": "PARAM_ListCat_Header",
       "Text": "Param List Categories"
     },
     {
-      "Key": "PARAM_ListCategories_",
+      "Key": "PARAM_ListCat_No_Categories",
+      "Text": "No param categories found."
+    },
+    {
+      "Key": "PARAM_ListCat_Hint",
+      "Text": "Create or modify project-specific param categories."
+    },
+    {
+      "Key": "PARAM_ListCat_Action_Save",
+      "Text": "Save"
+    },
+    {
+      "Key": "PARAM_ListCat_Action_Save_TT",
+      "Text": "Save the current changes made to categories."
+    },
+    {
+      "Key": "PARAM_ListCat_Action_Restore",
+      "Text": "Restore"
+    },
+    {
+      "Key": "PARAM_ListCat_Action_Restore_TT",
+      "Text": "Restore the base category list."
+    },
+    {
+      "Key": "PARAM_ListCat_Header_Actions",
+      "Text": "Actions"
+    },
+    {
+      "Key": "PARAM_ListCat_Header_Actions_TT",
       "Text": ""
     },
     {
-      "Key": "PARAM_ListCategories_",
+      "Key": "PARAM_ListCat_Header_List",
+      "Text": "List"
+    },
+    {
+      "Key": "PARAM_ListCat_Header_List_TT",
       "Text": ""
     },
     {
-      "Key": "PARAM_ListCategories_",
+      "Key": "PARAM_ListCat_Action_Create_Entry",
+      "Text": "Create Category"
+    },
+    {
+      "Key": "PARAM_ListCat_Action_Create_Entry_TT",
+      "Text": "Create a new category."
+    },
+    {
+      "Key": "PARAM_ListCat_Action_Edit_Entry",
+      "Text": "Edit Category"
+    },
+    {
+      "Key": "PARAM_ListCat_Action_Edit_Entry_TT",
+      "Text": "Edit an existing category."
+    },
+    {
+      "Key": "PARAM_ListCat_Action_Delete_Entry",
+      "Text": "Delete Category"
+    },
+    {
+      "Key": "PARAM_ListCat_Action_Delete_Entry_TT",
+      "Text": "Delete an existing category."
+    },
+    {
+      "Key": "PARAM_ListCat_NewEntry_Header",
+      "Text": "New Category"
+    },
+    {
+      "Key": "PARAM_ListCat_NewEntry_Header_TT",
       "Text": ""
     },
     {
-      "Key": "PARAM_ListCategories_",
+      "Key": "PARAM_ListCat_NewEntry_TT",
+      "Text": "The name of the new param category."
+    },
+    {
+      "Key": "PARAM_ListCat_NewEntry_Action_Finalize",
+      "Text": "Finalize"
+    },
+    {
+      "Key": "PARAM_ListCat_NewEntry_Action_Finalize_TT",
+      "Text": "Finalize the creation of this new category."
+    },
+    {
+      "Key": "PARAM_ListCat_Entry_Options",
+      "Text": "Options"
+    },
+    {
+      "Key": "PARAM_ListCat_Entry_Options_TT",
       "Text": ""
     },
     {
-      "Key": "PARAM_ListCategories_",
+      "Key": "PARAM_ListCat_Checkbox_Force_Top",
+      "Text": "Force to Top"
+    },
+    {
+      "Key": "PARAM_ListCat_Checkbox_Force_Top_TT",
+      "Text": "If toggled on, this param category will always appear at the top (in alphabetically order with any other categories with the same toggle)."
+    },
+    {
+      "Key": "PARAM_ListCat_Checkbox_Force_Bottom",
+      "Text": "Force to Bottom"
+    },
+    {
+      "Key": "PARAM_ListCat_Checkbox_Force_Bottom_TT",
+      "Text": "If toggled on, this param category will always appear at the bottom (in alphabetically order with any other categories with the same toggle)."
+    },
+    {
+      "Key": "PARAM_ListCat_Entry_Header_Parameters",
+      "Text": "Parameters"
+    },
+    {
+      "Key": "PARAM_ListCat_Entry_Header_Parameters_TT",
       "Text": ""
     },
     {
-      "Key": "PARAM_ListCategories_",
+      "Key": "PARAM_ListCat_Add_Param_Target_TT",
+      "Text": "Add new param target input row."
+    },
+    {
+      "Key": "PARAM_ListCat_Remove_Param_Target_TT",
+      "Text": "Remove last added param target input row."
+    },
+    {
+      "Key": "PARAM_ListCat_Reset_Param_Target",
+      "Text": "Reset"
+    },
+    {
+      "Key": "PARAM_ListCat_Reset_Param_Target_TT",
+      "Text": "Reset param target input rows."
+    },
+    {
+      "Key": "PARAM_ListCat_Param_Target_Include_TT",
+      "Text": "The param to include within this category."
+    },
+    {
+      "Key": "PARAM_ListCat_EditEntry_Header",
+      "Text": "Edit Entry"
+    },
+    {
+      "Key": "PARAM_ListCat_EditEntry_Header_TT",
       "Text": ""
     },
     {
-      "Key": "PARAM_ListCategories_",
-      "Text": ""
+      "Key": "PARAM_ListCat_EditEntry_Action_Finalize",
+      "Text": "Finalize"
     },
     {
-      "Key": "PARAM_ListCategories_",
-      "Text": ""
+      "Key": "PARAM_ListCat_EditEntry_Action_Finalize_TT",
+      "Text": "Finalize the editing of this category."
     },
     {
-      "Key": "PARAM_ListCategories_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_ListCategories_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_ListCategories_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_ListCategories_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_ListCategories_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_ListCategories_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_ListCategories_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_ListCategories_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_ListCategories_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_ListCategories_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_ListCategories_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_ListCategories_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_ListCategories_",
-      "Text": ""
-    },
+      "Key": "PARAM_ListCat_Failed_Write",
+      "Text": "Failed to write project param categorie."
+    }
   ]
 }
