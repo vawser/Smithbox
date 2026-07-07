@@ -1,4 +1,5 @@
-﻿using StudioCore.Application;
+﻿using DotNext.Collections.Generic;
+using StudioCore.Application;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +9,8 @@ namespace StudioCore.Renderer;
 public static class MeshProviderCache
 {
     private static readonly Dictionary<string, MeshProvider> _cache = new();
+    private static readonly object _lock = new();
+
 
     public static string GetCacheKey(string virtualResourcePath, string uid = "")
     {
@@ -16,15 +19,19 @@ public static class MeshProviderCache
 
     public static void InvalidateUidEntries(string uid)
     {
-        var keysToRemove = _cache.Keys
+        lock (_lock)
+        {
+            var keysToRemove = _cache.Keys
             .Where(k => k.Contains($"+{uid}"))
             .ToList();
 
-        foreach (var key in keysToRemove)
-        {
-            _cache.Remove(key);
+            foreach (var key in keysToRemove)
+            {
+                _cache.TryRemove(key);
+            }
         }
     }
+
     public static FlverMeshProvider GetFlverMeshProvider(
     string virtualResourcePath, IEnumerable<int> masks, string uid)
     {
@@ -51,14 +58,17 @@ public static class MeshProviderCache
     {
         var cacheKey = GetCacheKey(virtualResourcePath, uid);
 
-        if (_cache.ContainsKey(cacheKey))
+        lock (_lock)
         {
-            if (_cache[cacheKey] is FlverMeshProvider fmp)
+            if (_cache.ContainsKey(cacheKey))
             {
-                return fmp;
-            }
+                if (_cache[cacheKey] is FlverMeshProvider fmp)
+                {
+                    return fmp;
+                }
 
-            throw new Exception(LOC.Get("REND_Mesh_Provider_Wrong_Form"));
+                throw new Exception(LOC.Get("REND_Mesh_Provider_Wrong_Form"));
+            }
         }
 
         FlverMeshProvider nfmp = new(virtualResourcePath);
@@ -69,14 +79,17 @@ public static class MeshProviderCache
 
     public static CollisionMeshProvider GetCollisionMeshProvider(string virtualResourcePath)
     {
-        if (_cache.ContainsKey(virtualResourcePath))
+        lock (_lock)
         {
-            if (_cache[virtualResourcePath] is CollisionMeshProvider fmp)
+            if (_cache.ContainsKey(virtualResourcePath))
             {
-                return fmp;
-            }
+                if (_cache[virtualResourcePath] is CollisionMeshProvider fmp)
+                {
+                    return fmp;
+                }
 
-            throw new Exception(LOC.Get("REND_Mesh_Provider_Wrong_Form"));
+                throw new Exception(LOC.Get("REND_Mesh_Provider_Wrong_Form"));
+            }
         }
 
         CollisionMeshProvider nfmp = new(virtualResourcePath);
@@ -86,14 +99,17 @@ public static class MeshProviderCache
 
     public static NavmeshProvider GetNVMMeshProvider(string virtualResourcePath)
     {
-        if (_cache.ContainsKey(virtualResourcePath))
+        lock (_lock)
         {
-            if (_cache[virtualResourcePath] is NavmeshProvider fmp)
+            if (_cache.ContainsKey(virtualResourcePath))
             {
-                return fmp;
-            }
+                if (_cache[virtualResourcePath] is NavmeshProvider fmp)
+                {
+                    return fmp;
+                }
 
-            throw new Exception(LOC.Get("REND_Mesh_Provider_Wrong_Form"));
+                throw new Exception(LOC.Get("REND_Mesh_Provider_Wrong_Form"));
+            }
         }
 
         NavmeshProvider nfmp = new(virtualResourcePath);
@@ -103,14 +119,17 @@ public static class MeshProviderCache
 
     public static HavokNavmeshProvider GetHavokNavMeshProvider(string virtualResourcePath, bool temp = false)
     {
-        if (!temp && _cache.ContainsKey(virtualResourcePath))
+        lock (_lock)
         {
-            if (_cache[virtualResourcePath] is HavokNavmeshProvider fmp)
+            if (!temp && _cache.ContainsKey(virtualResourcePath))
             {
-                return fmp;
-            }
+                if (_cache[virtualResourcePath] is HavokNavmeshProvider fmp)
+                {
+                    return fmp;
+                }
 
-            throw new Exception(LOC.Get("REND_Mesh_Provider_Wrong_Form"));
+                throw new Exception(LOC.Get("REND_Mesh_Provider_Wrong_Form"));
+            }
         }
 
         HavokNavmeshProvider nfmp = new(virtualResourcePath);
@@ -124,9 +143,12 @@ public static class MeshProviderCache
 
     public static void InvalidateMeshProvider(IResourceHandle handle)
     {
-        if (_cache.ContainsKey(handle.AssetVirtualPath))
+        lock (_lock)
         {
-            _cache.Remove(handle.AssetVirtualPath);
+            if (_cache.ContainsKey(handle.AssetVirtualPath))
+            {
+                _cache.Remove(handle.AssetVirtualPath);
+            }
         }
     }
 }
