@@ -24,11 +24,11 @@ public static class RowNameHelper
 
         if (rowNamesImported)
         {
-            Smithbox.Log(typeof(RowNameHelper), $"Imported row names.");
+            Smithbox.Log(typeof(RowNameHelper), LOC.Get("PARAM_RowNames_Log_Imported_Names_PASS"));
         }
         else
         {
-            Smithbox.LogError(typeof(RowNameHelper), $"Failed to import row names.");
+            Smithbox.LogError(typeof(RowNameHelper), LOC.Get("PARAM_RowNames_Log_Imported_Names_FAIL"));
         }
     }
 
@@ -40,11 +40,11 @@ public static class RowNameHelper
 
         if (rowNamesImported)
         {
-            Smithbox.Log(typeof(RowNameHelper), $"Imported row names for {targetParam}");
+            Smithbox.Log(typeof(RowNameHelper), LOC.Get("PARAM_RowNames_Log_Imported_Specific_Names_PASS", targetParam));
         }
         else
         {
-            Smithbox.LogError(typeof(RowNameHelper), $"Failed to import row names for {targetParam}");
+            Smithbox.Log(typeof(RowNameHelper), LOC.Get("PARAM_RowNames_Log_Imported_Specific_Names_FAIL", targetParam));
         }
     }
 
@@ -68,7 +68,7 @@ public static class RowNameHelper
 
         if (!Directory.Exists(sourceDirectory))
         {
-            Smithbox.LogError(typeof(RowNameHelper), $"Failed to find {sourceDirectory}");
+            Smithbox.LogError(typeof(RowNameHelper), LOC.Get("PARAM_RowNames_Failed_To_Find_Row_Name_Dir", sourceDirectory));
             return false;
         }
 
@@ -94,7 +94,8 @@ public static class RowNameHelper
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(typeof(RowNameHelper), $"Failed to load {sourceFile} for row name import.", e);
+                    Smithbox.LogError(typeof(RowNameHelper), 
+                        LOC.Get("PARAM_RowNames_Failed_to_Load_Row_Name_Import", sourceFile), e);
                 }
             }
         }
@@ -115,7 +116,8 @@ public static class RowNameHelper
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(typeof(RowNameHelper), $"Failed to load {file} for row name import.", e);
+                    Smithbox.LogError(typeof(RowNameHelper), 
+                        LOC.Get("PARAM_RowNames_Failed_to_Load_Row_Name_Import", file), e);
                 }
             }
         }
@@ -232,11 +234,11 @@ public static class RowNameHelper
 
         if (rowNamesExported)
         {
-            Smithbox.Log(typeof(RowNameHelper), $"Exported row names to {exportDir}");
+            Smithbox.Log(typeof(RowNameHelper), LOC.Get("PARAM_RowNames_Log_Exported_Names_PASS", exportDir));
         }
         else
         {
-            Smithbox.LogError(typeof(RowNameHelper), $"Failed to export row names to {exportDir}");
+            Smithbox.LogError(typeof(RowNameHelper), LOC.Get("PARAM_RowNames_Log_Exported_Names_FAIL", exportDir));
         }
     }
 
@@ -284,7 +286,7 @@ public static class RowNameHelper
 
                 File.WriteAllText(fullPath, json);
 
-                Smithbox.Log(typeof(RowNameHelper), $"Exported row names to {fullPath}");
+                Smithbox.Log(typeof(RowNameHelper), LOC.Get("PARAM_RowNames_Exported_Names", fullPath));
             }
 
             if (exportType is ParamRowNameExportType.Text)
@@ -402,7 +404,7 @@ public static class RowNameHelper
 
                 if (legacyStore == null)
                 {
-                    Smithbox.LogError(typeof(RowNameHelper), $"Failed to located {importDir} for row name restore.");
+                    Smithbox.LogError(typeof(RowNameHelper), LOC.Get("PARAM_RowNames_Missing_Stripped_Row_Names", importDir));
                 }
                 else
                 {
@@ -425,7 +427,7 @@ public static class RowNameHelper
                         );
                     }
 
-                    Smithbox.Log(typeof(RowNameHelper), $"Restored row names");
+                    Smithbox.Log(typeof(RowNameHelper), LOC.Get("PARAM_RowNames_Restored_Stripped_Row_Names"));
                 }
             }
         }
@@ -446,7 +448,7 @@ public static class RowNameHelper
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(typeof(RowNameHelper), $"Failed to load {file} for row name restore.", e);
+                    Smithbox.LogError(typeof(RowNameHelper), LOC.Get("PARAM_RowNames_Failed_Stripped_Row_Names_Load", file), e);
                 }
             }
 
@@ -469,7 +471,7 @@ public static class RowNameHelper
                 );
             }
 
-            Smithbox.Log(typeof(RowNameHelper), $"Restored row names");
+            Smithbox.Log(typeof(RowNameHelper), LOC.Get("PARAM_RowNames_Restored_Stripped_Row_Names"));
 
             var legacyFile = Path.Combine(ProjectUtils.GetLocalProjectFolder(project), "Stripped Row Names.json");
             if (File.Exists(legacyFile))
@@ -489,11 +491,11 @@ public static class RowNameHelper
 
         if (rowNamesImported)
         {
-            Smithbox.Log(typeof(RowNameHelper), $"Imported row names for {targetParam}");
+            Smithbox.Log(typeof(RowNameHelper), LOC.Get("PARAM_RowNames_Import_Specific_Row_Names_PASS", targetParam));
         }
         else
         {
-            Smithbox.LogError(typeof(RowNameHelper), $"Failed to import row names for {targetParam}");
+            Smithbox.LogError(typeof(RowNameHelper), LOC.Get("PARAM_RowNames_Import_Specific_Row_Names_FAIL", targetParam));
         }
     }
 
@@ -505,7 +507,7 @@ public static class RowNameHelper
 
         if (!File.Exists(sourceFilepath))
         {
-            Smithbox.LogError(typeof(RowNameHelper), $"Failed to find {sourceFilepath}");
+            Smithbox.LogError(typeof(RowNameHelper), LOC.Get("PARAM_RowNames_Failed_Find_Import_Path", sourceFilepath));
             return false;
         }
 
@@ -555,7 +557,7 @@ public static class RowNameHelper
         }
         catch (Exception e)
         {
-            Smithbox.LogError(typeof(RowNameHelper), $"Failed to load {sourceFilepath} for row name import.", e);
+            Smithbox.LogError(typeof(RowNameHelper), LOC.Get("PARAM_RowNames_Failed_Load_Import", sourceFilepath), e);
         }
 
         return true;
@@ -570,11 +572,11 @@ public static class RowNameHelper
 
         if (rowNamesImported)
         {
-            Smithbox.Log(typeof(RowNameHelper), $"Imported row names from legacy row name storage.");
+            Smithbox.Log(typeof(RowNameHelper), LOC.Get("PARAM_RowNames_Legacy_Import_Row_Names_PASS"));
         }
         else
         {
-            Smithbox.LogError(typeof(RowNameHelper), $"Failed to import row names from legacy row name storage.");
+            Smithbox.LogError(typeof(RowNameHelper), LOC.Get("PARAM_RowNames_Legacy_Import_Row_Names_FAIL"));
         }
     }
 
@@ -586,7 +588,7 @@ public static class RowNameHelper
 
         if (!Directory.Exists(sourceFolderPath))
         {
-            Smithbox.LogError(typeof(RowNameHelper), $"Failed to find {sourceFolderPath}");
+            Smithbox.LogError(typeof(RowNameHelper), LOC.Get("PARAM_RowNames_Failed_Find_Import_Path", sourceFolderPath));
             return false;
         }
 
@@ -632,7 +634,7 @@ public static class RowNameHelper
         }
         catch (Exception e)
         {
-            Smithbox.LogError(typeof(RowNameHelper), $"Failed to load {sourceFolderPath} for row name import.", e);
+            Smithbox.LogError(typeof(RowNameHelper), LOC.Get("PARAM_RowNames_Failed_Load_Import", sourceFolderPath), e);
         }
 
         return true;

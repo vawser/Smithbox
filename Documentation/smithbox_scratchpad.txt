@@ -9,6 +9,8 @@
 
 # Gparam Editor:
  - DS2 fog color values are inverted (BGR, not RGB)
+ - Import is mangling the gparam, saving then results in a bad file.
+  - Should just handle the export/import properly like with the other editors
 
 # Param Editor
  - Add Alt+Up/Down shortcut in Field List for changing Row List selection

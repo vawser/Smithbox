@@ -189,116 +189,76 @@
       "Text": "Select Folder"
     },
     {
-      "Key": "PARAM_RowNames_",
-      "Text": ""
+      "Key": "PARAM_RowNames_Log_Imported_Names_PASS",
+      "Text": "Imported row names."
     },
     {
-      "Key": "PARAM_RowNames_",
-      "Text": ""
+      "Key": "PARAM_RowNames_Log_Imported_Names_FAIL",
+      "Text": "Failed to import row names."
     },
     {
-      "Key": "PARAM_RowNames_",
-      "Text": ""
+      "Key": "PARAM_RowNames_Log_Imported_Specific_Names_PASS",
+      "Text": "Imported row names for {0}."
     },
     {
-      "Key": "PARAM_RowNames_",
-      "Text": ""
+      "Key": "PARAM_RowNames_Log_Imported_Specific_Names_FAIL",
+      "Text": "Failed to import row names for {0}."
     },
     {
-      "Key": "PARAM_RowNames_",
-      "Text": ""
+      "Key": "PARAM_RowNames_Failed_To_Find_Row_Name_Dir",
+      "Text": "Failed to find {0}."
     },
     {
-      "Key": "PARAM_RowNames_",
-      "Text": ""
+      "Key": "PARAM_RowNames_Failed_to_Load_Row_Name_Import",
+      "Text": "Failed to load {0} for row name import."
     },
     {
-      "Key": "PARAM_RowNames_",
-      "Text": ""
+      "Key": "PARAM_RowNames_Log_Exported_Names_PASS",
+      "Text": "Exported row names to {0}"
     },
     {
-      "Key": "PARAM_RowNames_",
-      "Text": ""
+      "Key": "PARAM_RowNames_Log_Exported_Names_FAIL",
+      "Text": "Failed to export row names to {0}"
     },
     {
-      "Key": "PARAM_RowNames_",
-      "Text": ""
+      "Key": "PARAM_RowNames_Exported_Names",
+      "Text": "Exported row names to {0}"
     },
     {
-      "Key": "PARAM_RowNames_",
-      "Text": ""
+      "Key": "PARAM_RowNames_Missing_Stripped_Row_Names",
+      "Text": "Failed to locate {0} for row name restore."
     },
     {
-      "Key": "PARAM_RowNames_",
-      "Text": ""
+      "Key": "PARAM_RowNames_Restored_Stripped_Row_Names",
+      "Text": "Restored stripped row names."
     },
     {
-      "Key": "PARAM_RowNames_",
-      "Text": ""
+      "Key": "PARAM_RowNames_Failed_Stripped_Row_Names_Load",
+      "Text": "Failed to load {0} for row name restore."
     },
     {
-      "Key": "PARAM_RowNames_",
-      "Text": ""
+      "Key": "PARAM_RowNames_Import_Specific_Row_Names_PASS",
+      "Text": "Imported row names for {0}."
     },
     {
-      "Key": "PARAM_RowNames_",
-      "Text": ""
+      "Key": "PARAM_RowNames_Import_Specific_Row_Names_FAIL",
+      "Text": "Failed to import row names for {0}."
     },
     {
-      "Key": "PARAM_RowNames_",
-      "Text": ""
+      "Key": "PARAM_RowNames_Failed_Find_Import_Path",
+      "Text": "Failed to find {0}."
     },
     {
-      "Key": "PARAM_RowNames_",
-      "Text": ""
+      "Key": "PARAM_RowNames_Failed_Load_Import",
+      "Text": "Failed to load {0} for row name import."
     },
     {
-      "Key": "PARAM_RowNames_",
-      "Text": ""
+      "Key": "PARAM_RowNames_Legacy_Import_Row_Names_PASS",
+      "Text": "Imported row names from legacy row name storage."
     },
     {
-      "Key": "PARAM_RowNames_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_RowNames_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_RowNames_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_RowNames_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_RowNames_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_RowNames_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_RowNames_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_RowNames_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_RowNames_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_RowNames_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_RowNames_",
-      "Text": ""
+      "Key": "PARAM_RowNames_Legacy_Import_Row_Names_FAIL",
+      "Text": "Failed to import row names from legacy row name storage."
     }
   ]
 }
