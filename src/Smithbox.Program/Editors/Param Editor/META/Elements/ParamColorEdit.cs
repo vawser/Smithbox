@@ -26,7 +26,8 @@ public class ParamColorEdit
         }
         else
         {
-            Smithbox.Log(this, $"PARAM META: {parent.Name} - Unable to populate ParamColorEdit Name property for {colorEditNode.Name}");
+            Smithbox.LogError(this,
+                LOC.Get("PARAM_Meta_Color_Edit_Missing_Name_Property", parent.Name, colorEditNode.Name));
         }
         if (colorEditNode.Attributes["Fields"] != null)
         {
@@ -34,7 +35,8 @@ public class ParamColorEdit
         }
         else
         {
-            Smithbox.Log(this, $"PARAM META: {parent.Name} - Unable to populate ParamColorEdit Fields property for {colorEditNode.Name}");
+            Smithbox.LogError(this,
+                LOC.Get("PARAM_Meta_Color_Edit_Missing_Fields_Property", parent.Name, colorEditNode.Name));
         }
         if (colorEditNode.Attributes["PlacedField"] != null)
         {
@@ -42,7 +44,8 @@ public class ParamColorEdit
         }
         else
         {
-            Smithbox.Log(this, $"PARAM META: {parent.Name} - Unable to populate ParamColorEdit PlacedField property for {colorEditNode.Name}");
+            Smithbox.LogError(this,
+                LOC.Get("PARAM_Meta_Color_Edit_Missing_PlacedField_Property", parent.Name, colorEditNode.Name));
         }
     }
 }

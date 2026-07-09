@@ -21,7 +21,6 @@ public class ParamEditorView
 
     public ParamRowDecorators RowDecorators;
     public ParamFieldDecorators FieldDecorators;
-    public ParamMetaEditor MetaEditor;
     public ParamFieldInput FieldInputHandler;
     public MassEdit MassEdit;
 
@@ -43,7 +42,6 @@ public class ParamEditorView
 
         RowDecorators = new ParamRowDecorators(editor, project, this);
         FieldDecorators = new ParamFieldDecorators(editor, project, this);
-        MetaEditor = new ParamMetaEditor(editor, project, this);
         FieldInputHandler = new ParamFieldInput(editor, project, this);
         MassEdit = new MassEdit(editor, project, this);
 

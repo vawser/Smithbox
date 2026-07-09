@@ -18,7 +18,9 @@ public class ParamRef
     {
         if (refString == "")
         {
-            Smithbox.Log(this, $"PARAM META: {parent.Name} - ParamRef string is empty.");
+            Smithbox.LogError(this,
+                LOC.Get("PARAM_Meta_ParamRef_Missing_String", parent.Name));
+
             return;
         }
 

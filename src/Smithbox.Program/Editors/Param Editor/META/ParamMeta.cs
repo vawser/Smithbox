@@ -143,7 +143,7 @@ public class ParamMeta
             if (xmlVersion != XML_VERSION)
             {
                 throw new InvalidDataException(
-                    $"Mismatched XML version; current version: {XML_VERSION}, file version: {xmlVersion}");
+                    LOC.Get("PARAM_Meta_Mismatched_XML_Version", XML_VERSION, xmlVersion));
             }
 
             XmlNode self = root.SelectSingleNode("Self");

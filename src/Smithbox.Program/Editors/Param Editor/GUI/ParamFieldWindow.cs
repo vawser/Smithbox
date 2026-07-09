@@ -863,26 +863,7 @@ public class ParamFieldWindow
     {
         if (field.Equals("-"))
         {
-            if (ParentView.MetaEditor.IsInEditorMode)
-            {
-                var ncols = ImGui.TableGetColumnCount();
-                ImGui.TableNextRow();
-                for (var i = 0; i < ncols; i++)
-                {
-                    if (ImGui.TableNextColumn())
-                    {
-                        ImGui.Selectable($"---##{idx}{i}", false);
-                        if (ImGui.IsItemClicked(ImGuiMouseButton.Right))
-                        {
-                            ImGui.OpenPopup($"SeparatorContextMenu##{idx}");
-                        }
-                    }
-                }
-            }
-            else
-            {
-                EditorTableUtils.ImguiTableSeparator();
-            }
+            EditorTableUtils.ImguiTableSeparator();
             idx++;
             return;
         }
