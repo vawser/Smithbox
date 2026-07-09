@@ -40,7 +40,7 @@ public class ParamRowNameTool
 
     public void Display()
     {
-        if (ImGui.CollapsingHeader("Row Names"))
+        if (ImGui.CollapsingHeader($"{LOC.Get("PARAM_RowNames_Header")}##rowNamesHeader"))
         {
             ImGui.BeginChild("RowNameSection", ImGuiChildFlags.Borders);
 
@@ -60,19 +60,29 @@ public class ParamRowNameTool
         var paramData = Project.Handler.ParamData;
         var activeView = Project.Handler.ParamEditor.ViewHandler.ActiveView;
 
-        if (ImGui.BeginTabItem($"Import"))
+        // Import
+        if (ImGui.BeginTabItem($"{LOC.Get("PARAM_RowNames_Tab_Import")}##importTab"))
         {
-            GUI.WrappedText("Use this section to import the row names from the internal files supplied by Smithbox, or from an external. These will overwrite the existing row names within the current project.");
+            GUI.WrappedText(LOC.Get("PARAM_RowNames_Import_Hint"));
 
+            // Language
             GUI.Spacer();
-            GUI.SimpleHeader("Language", "The source language to draw the names from for the Standard import");
+            GUI.SimpleHeader(
+                LOC.Get("PARAM_RowNames_Header_Import_Language"),
+                LOC.Get("PARAM_RowNames_Header_Import_Language_TT"));
+
+            var curLanguage = paramData.RowImportLanguages.Options.FirstOrDefault(e => e.Name == ImportLanguage);
+
+            var previewName = LOC.Get(curLanguage.Key);
 
             GUI.SetInputWidth();
-            if (ImGui.BeginCombo("##languageSelection", ImportLanguage))
+            if (ImGui.BeginCombo("##languageSelection", previewName))
             {
                 foreach (var language in paramData.RowImportLanguages.Options)
                 {
-                    if (ImGui.Selectable($"{language.Name}", ImportLanguage == language.Name))
+                    var displayName = LOC.Get(language.Key);
+
+                    if (ImGui.Selectable(displayName, ImportLanguage == language.Name))
                     {
                         ImportLanguage = language.Name;
                         ImportFolder = language.Folder;
@@ -82,32 +92,68 @@ public class ParamRowNameTool
                 ImGui.EndCombo();
             }
 
+            // Standard
             GUI.Spacer();
-            GUI.SimpleHeader("Standard", "The row names that are supplied by Smithbox");
+            GUI.SimpleHeader(
+                LOC.Get("PARAM_RowNames_Header_Standard"),
+                LOC.Get("PARAM_RowNames_Header_Standard_TT"));
 
             GUI.MultiButtonInput("standardImportActions",
-                "standardImport_SelectedParam", "Import for Selected Param", "", StandardImportSelectedParam,
-                "standardImport_AllParams", "Import for All Params", "", StandardImportAllParams);
+                "standardImport_SelectedParam", 
+                LOC.Get("PARAM_RowNames_Action_Import_Selected_Param"),
+                LOC.Get("PARAM_RowNames_Action_Import_Selected_Param_TT"),
+                StandardImportSelectedParam,
 
+                "standardImport_AllParams", 
+                LOC.Get("PARAM_RowNames_Action_Import_All_Params"),
+                LOC.Get("PARAM_RowNames_Action_Import_All_Params_TT"),
+                StandardImportAllParams);
+
+            // JSON
             GUI.Spacer();
-            GUI.SimpleHeader("JSON", "Import row names from a JSON file.");
+            GUI.SimpleHeader(
+                LOC.Get("PARAM_RowNames_Header_JSON"),
+                LOC.Get("PARAM_RowNames_Header_JSON_TT"));
 
             GUI.MultiButtonInput("jsonImportActions",
-                "jsonImport_SelectedParam", "Import for Selected Param", "", JsonImportSelectedParam,
-                "jsonImport_AllParams", "Import for All Params", "", JsonImportAllParams);
+                "jsonImport_SelectedParam",
+                LOC.Get("PARAM_RowNames_Action_Import_Selected_Param"),
+                LOC.Get("PARAM_RowNames_Action_Import_Selected_Param_TT"), 
+                JsonImportSelectedParam,
 
+                "jsonImport_AllParams",
+                LOC.Get("PARAM_RowNames_Action_Import_All_Params"),
+                LOC.Get("PARAM_RowNames_Action_Import_All_Params_TT"), 
+                JsonImportAllParams);
+
+            // CSV
             GUI.Spacer();
-            GUI.SimpleHeader("CSV", "Import row names from a CSV file.");
+            GUI.SimpleHeader(
+                LOC.Get("PARAM_RowNames_Header_CSV"),
+                LOC.Get("PARAM_RowNames_Header_CSV_TT"));
 
             GUI.MultiButtonInput("csvImportActions",
-                "csvImport_SelectedParam", "Import for Selected Param", "", CsvImportSelectedParam);
+                "csvImport_SelectedParam",
+                LOC.Get("PARAM_RowNames_Action_Import_Selected_Param"),
+                LOC.Get("PARAM_RowNames_Action_Import_Selected_Param_TT"), 
+                CsvImportSelectedParam);
 
+            // Legacy Text
             GUI.Spacer();
-            GUI.SimpleHeader("Legacy Text", "Import row names from a legacy text file.");
+            GUI.SimpleHeader(
+                LOC.Get("PARAM_RowNames_Header_Legacy"),
+                LOC.Get("PARAM_RowNames_Header_Legacy_TT"));
 
             GUI.MultiButtonInput("legacyImportActions",
-                "legacyImport_SelectedParam", "Import for Selected Param", "", LegacyImportSelectedParam,
-                "legacyImport_AllParams", "Import for All Params", "", LegacyImportAllParams);
+                "legacyImport_SelectedParam",
+                LOC.Get("PARAM_RowNames_Action_Import_Selected_Param"),
+                LOC.Get("PARAM_RowNames_Action_Import_Selected_Param_TT"), 
+                LegacyImportSelectedParam,
+
+                "legacyImport_AllParams",
+                LOC.Get("PARAM_RowNames_Action_Import_All_Params"),
+                LOC.Get("PARAM_RowNames_Action_Import_All_Params_TT"), 
+                LegacyImportAllParams);
 
             ImGui.EndTabItem();
         }
@@ -118,17 +164,22 @@ public class ParamRowNameTool
         var paramData = Project.Handler.ParamData;
         var activeView = Project.Handler.ParamEditor.ViewHandler.ActiveView;
 
-        if (ImGui.BeginMenu("Import"))
+        // Import
+        if (ImGui.BeginMenu($"{LOC.Get("PARAM_RowNames_Menu_Header_Import")}##importMenuHeader"))
         {
             foreach (var language in paramData.RowImportLanguages.Options)
             {
-                if (ImGui.BeginMenu($"{language.Name} Names##{language.Folder}import"))
+                // <language> Names
+                if (ImGui.BeginMenu($"{LOC.Get("PARAM_RowNames_Language_Names", language.Name)}##{language.Folder}import"))
                 {
-                    if (ImGui.MenuItem($"Selected Param"))
+                    // Selected Params
+                    if (ImGui.MenuItem($"{LOC.Get("PARAM_RowNames_Language_Selected_Param")}##selectedParamsAction"))
                     {
                         StandardImportSelectedParam();
                     }
-                    if (ImGui.MenuItem($"All"))
+
+                    // All Params
+                    if (ImGui.MenuItem($"{LOC.Get("PARAM_RowNames_Language_All_Params")}##allParamsAction"))
                     {
                         StandardImportAllParams();
                     }
@@ -137,56 +188,65 @@ public class ParamRowNameTool
                 }
             }
 
-            if (ImGui.BeginMenu("From JSON File"))
+            // From JSON File
+            if (ImGui.BeginMenu($"{LOC.Get("PARAM_RowNames_Header_From_JSON_File")}##fromJsonFileMenuHeader"))
             {
-                if (ImGui.MenuItem($"Selected Param"))
+                // Selected Param
+                if (ImGui.MenuItem($"{LOC.Get("PARAM_RowNames_Action_Selected_Param")}##selectedParamAction"))
                 {
                     JsonImportSelectedParam();
                 }
-                GUI.Tooltip("Import the row names from the selected folder for the currently selected param.");
+                GUI.Tooltip(LOC.Get("PARAM_RowNames_JSON_Selected_Param_TT"));
 
-                if (ImGui.MenuItem($"All"))
+                // All Params
+                if (ImGui.MenuItem($"{LOC.Get("PARAM_RowNames_Action_All_Params")}##allParamsAction"))
                 {
                     JsonImportAllParams();
                 }
-                GUI.Tooltip("Import the row names from the selected folder for all params.");
+                GUI.Tooltip(LOC.Get("PARAM_RowNames_JSON_All_Params_TT"));
 
                 ImGui.EndMenu();
             }
 
-            if (ImGui.BeginMenu("From CSV File"))
+            // From CSV File
+            if (ImGui.BeginMenu($"{LOC.Get("PARAM_RowNames_Header_From_CSV_File")}##fromCsvFileMenuHeader"))
             {
-                if (ImGui.MenuItem($"Selected Param"))
+                // Selected Param
+                if (ImGui.MenuItem($"{LOC.Get("PARAM_RowNames_Action_Selected_Param")}##selectedParamAction"))
                 {
                     CsvImportSelectedParam();
                 }
-                GUI.Tooltip("This will import the external names from a CSV file, matching via row ID.");
+                GUI.Tooltip(LOC.Get("PARAM_RowNames_CSV_Selected_Param_TT"));
 
 
                 ImGui.EndMenu();
             }
 
-            if (ImGui.BeginMenu("From Legacy Name Folder"))
+            // From Legacy Name Folder
+            if (ImGui.BeginMenu($"{LOC.Get("PARAM_RowNames_Header_From_Legacy_Folder")}##fromLegacyFolderMenuHeader"))
             {
-                if (ImGui.MenuItem($"Selected Param"))
+                // Selected Param
+                if (ImGui.MenuItem($"{LOC.Get("PARAM_RowNames_Action_Selected_Param")}##selectedParamAction"))
                 {
                     LegacyImportSelectedParam();
                 }
-                GUI.Tooltip("This will import the external names from a legacy row name file (Stripped Row Name folder), matching via row index.");
+                GUI.Tooltip(LOC.Get("PARAM_RowNames_Legacy_Selected_Param_TT"));
 
-                if (ImGui.MenuItem($"All"))
+                // All Params
+                if (ImGui.MenuItem($"{LOC.Get("PARAM_RowNames_Action_All_Params")}##allParamsAction"))
                 {
                     LegacyImportAllParams();
                 }
-                GUI.Tooltip("This will import the external names from a legacy row name file (older Stripped Row Name folder), matching via row index.");
+                GUI.Tooltip(LOC.Get("PARAM_RowNames_Legacy_All_Params_TT"));
 
                 ImGui.EndMenu();
             }
             ImGui.Separator();
 
-            ImGui.Checkbox("Replace Empty Names Only", ref CFG.Current.Param_RowNameImport_ReplaceEmptyNamesOnly);
-
-            GUI.Tooltip("If enabled, only rows with empty names will have their row names replaced with the import name.");
+            // Toggle: Replace Empty Names Only
+            ImGui.Checkbox($"{LOC.Get("PARAM_RowNames_Checkbox_Replace_Empty_Names_Only")}##toggleEmptyNameImport", 
+                ref CFG.Current.Param_RowNameImport_ReplaceEmptyNamesOnly);
+            GUI.Tooltip(LOC.Get("PARAM_RowNames_Checkbox_Replace_Empty_Names_Only_TT"));
 
             ImGui.EndMenu();
         }
@@ -249,23 +309,43 @@ public class ParamRowNameTool
         var paramData = Project.Handler.ParamData;
         var activeView = Project.Handler.ParamEditor.ViewHandler.ActiveView;
 
-        if (ImGui.BeginTabItem($"Export"))
+        if (ImGui.BeginTabItem($"{LOC.Get("PARAM_RowNames_Export_Tab")}##exportTab"))
         {
-            GUI.WrappedText("Use this section to export the row names for the current project into an external file.");
+            GUI.WrappedText(LOC.Get("PARAM_RowNames_Export_Tab_Hint"));
 
+            // JSON
             GUI.Spacer();
-            GUI.SimpleHeader("JSON", "Export row names to a JSON file.");
+            GUI.SimpleHeader(
+                LOC.Get("PARAM_RowNames_Header_Export_JSON"),
+                LOC.Get("PARAM_RowNames_Header_Export_JSON_TT"));
 
             GUI.MultiButtonInput("jsonExportActions",
-                "jsonExport_SelectedParam", "Export for Selected Param", "", JsonExportSelectedParam,
-                "jsonExport_AllParams", "Export for All Params", "", JsonExportAllParams);
+                "jsonExport_SelectedParam", 
+                LOC.Get("PARAM_RowNames_Action_Export_Selected_Param"),
+                LOC.Get("PARAM_RowNames_Action_Export_Selected_Param_TT"),
+                JsonExportSelectedParam,
 
+                "jsonExport_AllParams",
+                LOC.Get("PARAM_RowNames_Action_Export_All_Params"),
+                LOC.Get("PARAM_RowNames_Action_Export_All_Params_TT"), 
+                JsonExportAllParams);
+
+            // Text
             GUI.Spacer();
-            GUI.SimpleHeader("Text", "Export row names to a text file.");
+            GUI.SimpleHeader(
+                LOC.Get("PARAM_RowNames_Header_Export_Text"),
+                LOC.Get("PARAM_RowNames_Header_Export_Text_TT"));
 
             GUI.MultiButtonInput("textExportActions",
-                "textExport_SelectedParam", "Export for Selected Param", "", LegacyExportSelectedParam,
-                "textExport_AllParams", "Export for All Params", "", LegacyExportAllParams);
+                "textExport_SelectedParam",
+                LOC.Get("PARAM_RowNames_Action_Export_Selected_Param"),
+                LOC.Get("PARAM_RowNames_Action_Export_Selected_Param_TT"), 
+                LegacyExportSelectedParam,
+
+                "textExport_AllParams",
+                LOC.Get("PARAM_RowNames_Action_Export_All_Params"),
+                LOC.Get("PARAM_RowNames_Action_Export_All_Params_TT"), 
+                LegacyExportAllParams);
 
             ImGui.EndTabItem();
         }
@@ -299,50 +379,54 @@ public class ParamRowNameTool
         var paramData = Project.Handler.ParamData;
         var activeView = Project.Handler.ParamEditor.ViewHandler.ActiveView;
 
-
-        if (ImGui.BeginMenu("Export"))
+        // Export
+        if (ImGui.BeginMenu($"{LOC.Get("PARAM_RowNames_Header_Export")}##exportMenuHeader"))
         {
-            if (ImGui.BeginMenu("JSON"))
+            // JSON
+            if (ImGui.BeginMenu($"{LOC.Get("PARAM_RowNames_Header_Export_JSON")}##exportJsonMenuHeader"))
             {
-                if (ImGui.MenuItem($"Selected Param"))
+                // Selected Param
+                if (ImGui.MenuItem($"{LOC.Get("PARAM_RowNames_Action_Selected_Param")}##exportSelectedParam"))
                 {
                     IsSpecificParamForExport = true;
                     ExportAsJson();
                 }
-                GUI.Tooltip("Export the row names for your project to the selected folder.");
+                GUI.Tooltip(LOC.Get("PARAM_RowNames_Action_Export_Selected_Param_TT"));
 
-                if (ImGui.MenuItem($"All"))
+                // All Params
+                if (ImGui.MenuItem($"{LOC.Get("PARAM_RowNames_Action_All_Params")}##exportAllParams"))
                 {
                     IsSpecificParamForExport = false;
                     ExportAsJson();
                 }
-                GUI.Tooltip("Export the row names for the currently selected param to the selected folder.");
-
-
+                GUI.Tooltip(LOC.Get("PARAM_RowNames_Action_Export_All_Params_TT"));
 
                 ImGui.EndMenu();
             }
-            GUI.Tooltip("Export file will use the JSON storage format.");
+            GUI.Tooltip(LOC.Get("PARAM_RowNames_JSON_Export_TT"));
 
-            if (ImGui.BeginMenu("Text"))
+            // Text
+            if (ImGui.BeginMenu($"{LOC.Get("PARAM_RowNames_Header_Export_Text")}##textMenuHeader"))
             {
-                if (ImGui.MenuItem($"Selected Param"))
+                // Selected Param
+                if (ImGui.MenuItem($"{LOC.Get("PARAM_RowNames_Action_Selected_Param")}##exportSelectedParam"))
                 {
                     IsSpecificParamForExport = true;
                     ExportAsText();
                 }
-                GUI.Tooltip("Export the row names for your project to the selected folder.");
+                GUI.Tooltip(LOC.Get("PARAM_RowNames_Action_Export_Selected_Param_TT"));
 
-                if (ImGui.MenuItem($"All"))
+                // All
+                if (ImGui.MenuItem($"{LOC.Get("PARAM_RowNames_Action_All_Params")}##exportAllParams"))
                 {
                     IsSpecificParamForExport = false;
                     ExportAsText();
                 }
-                GUI.Tooltip("Export the row names for the currently selected param to the selected folder.");
+                GUI.Tooltip(LOC.Get("PARAM_RowNames_Action_Export_All_Params_TT"));
 
                 ImGui.EndMenu();
             }
-            GUI.Tooltip("Export file will use the Text storage format. This format cannot be imported back in.");
+            GUI.Tooltip(LOC.Get("PARAM_RowNames_Text_Export_TT"));
 
             ImGui.EndMenu();
         }
@@ -352,7 +436,8 @@ public class ParamRowNameTool
     {
         var activeView = Project.Handler.ParamEditor.ViewHandler.ActiveView;
 
-        var dialog = PlatformUtils.Instance.OpenFolderDialog("Select Folder", out var path);
+        var dialog = PlatformUtils.Instance.OpenFolderDialog(
+            LOC.Get("PARAM_RowNames_Dialog_Select_Folder"), out var path);
 
         if (dialog)
         {
@@ -385,7 +470,8 @@ public class ParamRowNameTool
     {
         var activeView = Project.Handler.ParamEditor.ViewHandler.ActiveView;
 
-        var dialog = PlatformUtils.Instance.OpenFolderDialog("Select Folder", out var path);
+        var dialog = PlatformUtils.Instance.OpenFolderDialog(
+            LOC.Get("PARAM_RowNames_Dialog_Select_Folder"), out var path);
 
         if (dialog)
         {
@@ -412,7 +498,8 @@ public class ParamRowNameTool
     {
         var activeView = Project.Handler.ParamEditor.ViewHandler.ActiveView;
 
-        var dialog = PlatformUtils.Instance.OpenFolderDialog("Select Folder", out var path);
+        var dialog = PlatformUtils.Instance.OpenFolderDialog(
+            LOC.Get("PARAM_RowNames_Dialog_Select_Folder"), out var path);
 
         if (dialog)
         {
@@ -441,7 +528,8 @@ public class ParamRowNameTool
     {
         var activeView = Project.Handler.ParamEditor.ViewHandler.ActiveView;
 
-        var dialog = PlatformUtils.Instance.OpenFolderDialog("Select Folder", out var path);
+        var dialog = PlatformUtils.Instance.OpenFolderDialog(
+            LOC.Get("PARAM_RowNames_Dialog_Select_Folder"), out var path);
 
         if (dialog)
         {
@@ -472,7 +560,8 @@ public class ParamRowNameTool
     {
         var activeView = Project.Handler.ParamEditor.ViewHandler.ActiveView;
 
-        var dialog = PlatformUtils.Instance.OpenFolderDialog("Select Folder", out var path);
+        var dialog = PlatformUtils.Instance.OpenFolderDialog(
+            LOC.Get("PARAM_RowNames_Dialog_Select_Folder"), out var path);
 
         if (dialog)
         {

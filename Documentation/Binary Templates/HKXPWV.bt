@@ -16,8 +16,8 @@ LittleEndian();
 //------------------------------------------------
 
 typedef struct {
-    int unk00; Assert(unk00 == 1);
-    short unk04; Assert(unk04 == 0);
+    int unk00;
+    short unk04;
     short count06;
     short count08;
     short count0A;
@@ -45,8 +45,8 @@ typedef struct {
 typedef struct {
     int unk00;
     int unk04;
-    int unk08; Assert(unk08 == 0);
-    int unk0C; Assert(unk0C == 0);
+    int unk08;
+    int unk0C;
 } StructC <bgcolor=cLtPurple, optimize=false>;
 
 //------------------------------------------------

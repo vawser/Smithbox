@@ -1,0 +1,192 @@
+{
+  "Entries": [
+    {
+      "Key": "PARAM_RowNames_Header",
+      "Text": "Row Names"
+    },
+    {
+      "Key": "PARAM_RowNames_Tab_Import",
+      "Text": "Import"
+    },
+    {
+      "Key": "PARAM_RowNames_Import_Hint",
+      "Text": "Use this section to import the row names from the internal files supplied by Smithbox, or from an external. These will overwrite the existing row names within the current project."
+    },
+    {
+      "Key": "PARAM_RowNames_Header_Import_Language",
+      "Text": "Language"
+    },
+    {
+      "Key": "PARAM_RowNames_Header_Import_Language_TT",
+      "Text": "The source language to draw the names from for the Standard import"
+    },
+    {
+      "Key": "PARAM_RowNames_Header_Standard",
+      "Text": "Standard"
+    },
+    {
+      "Key": "PARAM_RowNames_Header_Standard_TT",
+      "Text": "The row names that are supplied by Smithbox"
+    },
+    {
+      "Key": "PARAM_RowNames_Header_JSON",
+      "Text": "JSON"
+    },
+    {
+      "Key": "PARAM_RowNames_Header_JSON_TT",
+      "Text": "Import row names from a JSON file."
+    },
+    {
+      "Key": "PARAM_RowNames_Header_CSV",
+      "Text": "CSV"
+    },
+    {
+      "Key": "PARAM_RowNames_Header_CSV_TT",
+      "Text": "Import row names from a CSV file."
+    },
+    {
+      "Key": "PARAM_RowNames_Header_Legacy",
+      "Text": "Legacy Text"
+    },
+    {
+      "Key": "PARAM_RowNames_Header_Legacy_TT",
+      "Text": "Import row names from a legacy text file."
+    },
+    {
+      "Key": "PARAM_RowNames_Action_Import_Selected_Param",
+      "Text": "Import for Selected Param"
+    },
+    {
+      "Key": "PARAM_RowNames_Action_Import_Selected_Param_TT",
+      "Text": "Import row names for selected param."
+    },
+    {
+      "Key": "PARAM_RowNames_Action_Import_All_Params",
+      "Text": "Import for All Param"
+    },
+    {
+      "Key": "PARAM_RowNames_Action_Import_All_Params_TT",
+      "Text": "Import row names for all params."
+    },
+    {
+      "Key": "PARAM_RowNames_Menu_Header_Import",
+      "Text": "Import"
+    },
+    {
+      "Key": "PARAM_RowNames_Language_Names",
+      "Text": "{0} Names"
+    },
+    {
+      "Key": "PARAM_RowNames_Language_Selected_Param",
+      "Text": "Selected Params"
+    },
+    {
+      "Key": "PARAM_RowNames_Language_All_Params",
+      "Text": "All Params"
+    },
+    {
+      "Key": "PARAM_RowNames_Header_From_JSON_File",
+      "Text": "From JSON File"
+    },
+    {
+      "Key": "PARAM_RowNames_Action_Selected_Param",
+      "Text": "Selected Param"
+    },
+    {
+      "Key": "PARAM_RowNames_Action_All_Params",
+      "Text": "All Params"
+    },
+    {
+      "Key": "PARAM_RowNames_JSON_Selected_Param_TT",
+      "Text": "Import the row names from the selected folder for the currently selected param."
+    },
+    {
+      "Key": "PARAM_RowNames_JSON_All_Params_TT",
+      "Text": "Import the row names from the selected folder for all params."
+    },
+    {
+      "Key": "PARAM_RowNames_Header_From_CSV_File",
+      "Text": "From CSV File"
+    },
+    {
+      "Key": "PARAM_RowNames_CSV_Selected_Param_TT",
+      "Text": "This will import the external names from a CSV file, matching via row ID."
+    },
+    {
+      "Key": "PARAM_RowNames_Header_From_Legacy_Folder",
+      "Text": "From Legacy Name Folder"
+    },
+    {
+      "Key": "PARAM_RowNames_Legacy_Selected_Param_TT",
+      "Text": "This will import the external names from a legacy row name file (Stripped Row Name folder), matching via row index."
+    },
+    {
+      "Key": "PARAM_RowNames_Legacy_All_Params_TT",
+      "Text": "This will import the external names from a legacy row name file (older Stripped Row Name folder), matching via row index."
+    },
+    {
+      "Key": "PARAM_RowNames_Checkbox_Replace_Empty_Names_Only",
+      "Text": "Replace Empty Names Only"
+    },
+    {
+      "Key": "PARAM_RowNames_Checkbox_Replace_Empty_Names_Only_TT",
+      "Text": "If enabled, only rows with empty names will have their row names replaced with the import name."
+    },
+    {
+      "Key": "PARAM_RowNames_Export_Tab",
+      "Text": "Export"
+    },
+    {
+      "Key": "PARAM_RowNames_Export_Tab_Hint",
+      "Text": "Use this section to export the row names for the current project into an external file."
+    },
+    {
+      "Key": "PARAM_RowNames_Header_Export_JSON",
+      "Text": "JSON"
+    },
+    {
+      "Key": "PARAM_RowNames_Header_Export_JSON_TT",
+      "Text": "Export row names to a JSON file."
+    },
+    {
+      "Key": "PARAM_RowNames_Header_Export_Text",
+      "Text": "Text"
+    },
+    {
+      "Key": "PARAM_RowNames_Header_Export_Text_TT",
+      "Text": "Export row names to a text file."
+    },
+    {
+      "Key": "PARAM_RowNames_Action_Export_Selected_Param",
+      "Text": "Export for Selected Param"
+    },
+    {
+      "Key": "PARAM_RowNames_Action_Export_Selected_Param_TT",
+      "Text": "Exports the row names for the current selected param."
+    },
+    {
+      "Key": "PARAM_RowNames_Action_Export_All_Params",
+      "Text": "Export for All PArams"
+    },
+    {
+      "Key": "PARAM_RowNames_Action_Export_All_Params_TT",
+      "Text": "Exports the row names for all params."
+    },
+    {
+      "Key": "PARAM_RowNames_Header_Export",
+      "Text": "Export"
+    },
+    {
+      "Key": "PARAM_RowNames_JSON_Export_TT",
+      "Text": "Export file will use the JSON storage format."
+    },
+    {
+      "Key": "PARAM_RowNames_Text_Export_TT",
+      "Text": "Export file will use the Text storage format. This format cannot be imported back in."
+    },
+    {
+      "Key": "PARAM_RowNames_Dialog_Select_Folder",
+      "Text": "Select Folder"
+    }
+  ]
+}

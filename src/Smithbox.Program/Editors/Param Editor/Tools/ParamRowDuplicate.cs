@@ -176,7 +176,7 @@ public static class ParamRowDuplicate
             if (targetGroup == null)
                 return;
 
-            GUI.WrappedText("Target Param:");
+            GUI.WrappedText(LOC.Get("PARAM_DuplicateTool_Target_Param"));
 
             foreach (var entry in targetGroup.Params)
             {

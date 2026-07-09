@@ -2,6 +2,11 @@
 # TODO 
 #---------------------
 
+# Map Editor:
+ - Speed tree placeholders not working
+  - Generate list of 'speedtree' assets to JSON for each project type
+  - Handle the speedtree placeholders on the entity side
+
 # Gparam Editor:
  - DS2 fog color values are inverted (BGR, not RGB)
 
