@@ -43,6 +43,7 @@ public class InsertFieldValueAction : EditorAction
         FileEntry = fileEntry;
 
         CurrentGparam = gparam;
+
         StoredGparam = gparam.Clone();
 
         Param = param;

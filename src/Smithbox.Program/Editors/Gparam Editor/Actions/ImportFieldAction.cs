@@ -36,6 +36,7 @@ public class ImportFieldAction : EditorAction
         FileEntry = fileEntry;
 
         CurrentGparam = gparam;
+
         StoredGparam = gparam.Clone();
 
         Param = param;

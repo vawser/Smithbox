@@ -56,7 +56,7 @@ namespace SoulsFormats
         /// </summary>
         public float Unk50 { get; set; }
 
-        private bool WideStrings { get; set; }
+        public bool WideStrings { get; set; }
         private bool HasComments { get; set; }
 
         public GPARAM()

@@ -33,6 +33,7 @@ public class ImportParamAction : EditorAction
         FileEntry = fileEntry;
 
         CurrentGparam = gparam;
+
         StoredGparam = gparam.Clone();
 
         CurrentGroup = param;

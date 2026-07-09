@@ -278,6 +278,15 @@ public class GparamDataTransferTool
             var json = File.ReadAllText(path);
             var newData = GPARAMJson.FromJson(json);
 
+            if (project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+            {
+                newData.WideStrings = false;
+            }
+            else
+            {
+                newData.WideStrings = true;
+            }
+
             var action = new ImportGparamAction(project, view, fileEntry, curGparam, newData);
             view.ActionManager.ExecuteAction(action);
         }
