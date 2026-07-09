@@ -9,84 +9,60 @@
       "Text": "Failed to find field with internal name of: {0}"
     },
     {
-      "Key": "PARAM_",
+      "Key": "PARAM_QuickSearch_Search_For_References",
+      "Text": "Search for References in Field Value Finder"
+    },
+    {
+      "Key": "PARAM_QuickSearch_Search_For_References_TT",
+      "Text": "Jump to the 'Field Value Finder' tool, searching for this row ID."
+    },
+    {
+      "Key": "PARAM_ReverseLookup_Search_for_References",
+      "Text": "Search for References"
+    },
+    {
+      "Key": "PARAM_ReverseLookup_No_Rows",
+      "Text": "No rows found"
+    },
+    {
+      "Key": "PARAM_ReverseLookup_No_Reference",
+      "Text": "This param is not referenced."
+    },
+    {
+      "Key": "PARAM_RowSort_Sort_Rows",
+      "Text": "Sort Rows"
+    },
+    {
+      "Key": "PARAM_RowSort_Sort_Rows_TT",
       "Text": ""
     },
     {
-      "Key": "PARAM_",
+      "Key": "PARAM_RowSort_Header_Sort_Rows",
+      "Text": "Sort Rows"
+    },
+    {
+      "Key": "PARAM_RowSort_Sort_Rows_Hint",
+      "Text": "Use this to sort the ordering of the rows within the currently selected param.\nThis tool will respective row-index ordering for params with multiple rows of the same ID."
+    },
+    {
+      "Key": "PARAM_RowSort_Header_Actions",
+      "Text": "Actions"
+    },
+    {
+      "Key": "PARAM_RowSort_Header_Actions_TT",
       "Text": ""
     },
     {
-      "Key": "PARAM_",
-      "Text": ""
+      "Key": "PARAM_RowSort_Sort_Rows_Action",
+      "Text": "Sort Rows"
     },
     {
-      "Key": "PARAM_",
-      "Text": ""
+      "Key": "PARAM_RowSort_Sort_Rows_Action_TT",
+      "Text": "Applies the row sorting algorithm."
     },
     {
-      "Key": "PARAM_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_",
-      "Text": ""
+      "Key": "PARAM_RowSort_Log_Sort_Rows",
+      "Text": "Param rows sorted for {0}"
     }
   ]
 }

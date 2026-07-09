@@ -36,7 +36,7 @@ public class ParamUpgrader
         var windowWidth = ImGui.GetWindowWidth();
         var inputBoxSize = new Vector2((windowWidth * 0.725f), 32);
 
-        if (ImGui.CollapsingHeader("Param Upgrader"))
+        if (ImGui.CollapsingHeader($"{LOC.Get("PARAM_Upgrader_Header")}##paramUpgraderHeader"))
         {
             ImGui.BeginChild("ParamUpgraderToolSection", ImGuiChildFlags.Borders);
 
@@ -66,7 +66,7 @@ public class ParamUpgrader
                 var vanillaVersion = ParamUtils.ParseRegulationVersion(paramData.VanillaBank.ParamVersion);
 
                 ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Warning_Text_Color);
-                ImGui.Text($"Project primary bank version is below current game version: {primaryVersion} < {vanillaVersion} -- Open the Param Upgrader category in the Tools window.");
+                ImGui.Text($"{LOC.Get("PARAM_Upgrader_Version_Mismatch_Hint", primaryVersion, vanillaVersion)}");
                 ImGui.PopStyleColor(1);
             }
         }
@@ -91,21 +91,26 @@ public class ParamUpgrader
         var vanillaBank = Project.Handler.ParamData.VanillaBank;
 
         var tblFlags = ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Borders;
-        GUI.WrappedText("Upgrade the param version for this project's params.");
+        GUI.WrappedText(LOC.Get("PARAM_Upgrader_Hint"));
 
-        GUI.WrappedText("");
-        GUI.SimpleHeader("Version", "");
+        GUI.Spacer();
+        GUI.SimpleHeader(
+            LOC.Get("PARAM_Upgrader_Header_Version"),
+            LOC.Get("PARAM_Upgrader_Header_Version_TT"));
 
-        ImGui.Text($"Primary Param Version: {primaryBank.ParamVersion}");
-        ImGui.Text($"Source Param Version: {vanillaBank.ParamVersion}");
+        ImGui.Text(LOC.Get("PARAM_Upgrader_Primary_Version", primaryBank.ParamVersion));
+        ImGui.Text(LOC.Get("PARAM_Upgrader_Source_Version", vanillaBank.ParamVersion));
 
-        GUI.WrappedText("");
-        GUI.SimpleHeader("Actions", "");
+        GUI.Spacer();
+        GUI.SimpleHeader(
+            LOC.Get("PARAM_Upgrader_Header_Actions"), 
+            LOC.Get("PARAM_Upgrader_Header_Actions_TT"));
 
         // Start
         if (!DisplayActions && primaryBank.ParamVersion < vanillaBank.ParamVersion)
         {
-            if (ImGui.Button("Start"))
+            // Start
+            if (ImGui.Button($"{LOC.Get("PARAM_Upgrader_Action_Start")}##startAction"))
             {
                 Start();
             }
@@ -114,13 +119,14 @@ public class ParamUpgrader
         if (!DisplayActions && primaryBank.ParamVersion >= vanillaBank.ParamVersion
             || DisplayActions && ConflictsChecked && UpgradePerformed && MassEditsPerformed)
         {
-            GUI.WrappedText("No need to upgrade params.");
+            GUI.WrappedText(LOC.Get("PARAM_Upgrader_No_Upgrade_Needed"));
         }
 
         // Conflicts
         if (DisplayActions && !ConflictsChecked)
         {
-            if (ImGui.Button("Check for Conflicts"))
+            // Check for Conflicts
+            if (ImGui.Button($"{LOC.Get("PARAM_Upgrader_Action_Check_for_Conflicts")}##checkForConflictsAction"))
             {
                 CheckForConflicts();
             }
@@ -129,7 +135,8 @@ public class ParamUpgrader
         // Apply Upgrade
         if (DisplayActions && ConflictsChecked && !UpgradePerformed)
         {
-            if (ImGui.Button("Apply Upgrade"))
+            // Apply Upgrade
+            if (ImGui.Button($"{LOC.Get("PARAM_Upgrader_Action_Apply_Upgrade")}##applyUpgradeAction"))
             {
                 UpgradeParams();
             }
@@ -138,7 +145,8 @@ public class ParamUpgrader
         // Apply Mass Edit
         if (DisplayActions && ConflictsChecked && UpgradePerformed && !MassEditsPerformed)
         {
-            if (ImGui.Button("Apply Mass Edits"))
+            // Apply Mass Edits
+            if (ImGui.Button($"{LOC.Get("PARAM_Upgrader_Action_Apply_Mass_Edits")}##applyMasseditAction"))
             {
                 ApplyMassEdits();
             }
@@ -149,7 +157,9 @@ public class ParamUpgrader
         {
             if (ConflictParams.Count > 0)
             {
-                GUI.SimpleHeader("Conflicts", "");
+                GUI.SimpleHeader(
+                    LOC.Get("PARAM_Upgrader_Header_Conflicts"),
+                    LOC.Get("PARAM_Upgrader_Header_Conflicts_TT"));
 
                 if (ImGui.BeginTable($"conflictTable", 2, tblFlags))
                 {
@@ -205,7 +215,7 @@ public class ParamUpgrader
 
         if (!upgraderInfoTaskResult)
         {
-            Smithbox.LogError(this, $"Failed to find load upgrader information.");
+            Smithbox.LogError(this, LOC.Get("PARAM_Upgrader_Log_Missing_Upgrader_Info"));
         }
 
         return true;
@@ -218,7 +228,7 @@ public class ParamUpgrader
 
         if (!oldRegTaskFinished)
         {
-            Smithbox.LogError(this, $"Failed to find old regulation file.");
+            Smithbox.LogError(this, LOC.Get("PARAM_Upgrader_Log_Missing_Old_Regulation_File"));
         }
 
         return true;
@@ -243,13 +253,13 @@ public class ParamUpgrader
 
         if (upgradeTaskFinished)
         {
-            Smithbox.Log(this, $"Upgraded primary bank params successfully.");
+            Smithbox.Log(this, LOC.Get("PARAM_Upgrader_Upgraded_Primary_Bank_Params"));
 
             UpgradePerformed = true;
         }
         else
         {
-            Smithbox.Log(this, $"Primary bank is already fully upgraded.");
+            Smithbox.Log(this, LOC.Get("PARAM_Upgrader_Primary_Already_Upgraded"));
         }
 
         CacheBank.ClearCaches();
@@ -266,7 +276,7 @@ public class ParamUpgrader
 
         if (!spEffectTaskResult)
         {
-            Smithbox.LogError(this, $"Failed to store SpEffect data.");
+            Smithbox.LogError(this, LOC.Get("PARAM_Upgrader_Failed_SpEffect_Store"));
         }
 
         return true;
@@ -331,7 +341,7 @@ public class ParamUpgrader
 
         View.MassEdit.ApplyMassEdit(commandString);
 
-        Smithbox.Log(this, $"Applied upgrader mass edit commands");
+        Smithbox.Log(this, LOC.Get("PARAM_Upgrader_Applied_MassEdit_Commands"));
 
         // Special handling for the moved fields in the NR 1.03.1 -> 1.03.2 update
         if (Project.Descriptor.ProjectType is ProjectType.NR && ApplySpecialHandlingForNR)
@@ -426,13 +436,13 @@ public class ParamUpgrader
 
         if (conflictTaskFinished)
         {
-            Smithbox.Log(this, $"Checked for conflicts successfully.");
+            Smithbox.Log(this, LOC.Get("PARAM_Upgrader_Conflict_Check_Passed"));
 
             ConflictsChecked = true;
         }
         else
         {
-            Smithbox.LogError(this, $"Failed to check for conflicts.");
+            Smithbox.LogError(this, LOC.Get("PARAM_Upgrader_Conflict_Check_Failed"));
         }
     }
 
@@ -483,12 +493,12 @@ public class ParamUpgrader
             }
             catch (Exception e)
             {
-                Smithbox.LogError(this, $"Failed to deserialize Upgrader Information.", e);
+                Smithbox.LogError(this, LOC.Get("PARAM_Upgrader_Deserialize_Upgrader_Info_Failed"), e);
             }
         }
         catch (Exception e)
         {
-            Smithbox.LogError(this, $"Failed to load Upgrader Information.", e);
+            Smithbox.LogError(this, LOC.Get("PARAM_Upgrader_Read_Upgrader_Info_Failed"), e);
         }
 
         return true;
@@ -560,7 +570,7 @@ public class ParamUpgrader
 
         if (!success)
         {
-            throw new Exception(@"Failed to get regulation version. Params might be corrupt.");
+            throw new Exception(LOC.Get("PARAM_Data_Failed_Regulation_Load"));
         }
 
         var paramData = Project.Handler.ParamData;
@@ -597,7 +607,7 @@ public class ParamUpgrader
                         else
                         {
                             Smithbox.Log(this, 
-                                $"Couldn't find ParamDef for param {paramName} and no tentative ParamType exists.",
+                                LOC.Get("PARAM_Data_Missing_ParamDef", paramName),
                                 LogLevel.Error);
 
                             successfulLoad = false;
@@ -614,7 +624,7 @@ public class ParamUpgrader
                     else
                     {
                         Smithbox.Log(this, 
-                            $"Couldn't read ParamType for {paramName} and no tentative ParamType exists.",
+                            LOC.Get("PARAM_Data_Missing_ParamType", paramName),
                             LogLevel.Error);
 
                         successfulLoad = false;
@@ -628,7 +638,7 @@ public class ParamUpgrader
                 if (!paramData.ParamDefs.ContainsKey(p.ParamType ?? ""))
                 {
                     Smithbox.Log(this, 
-                        $"Couldn't find ParamDef for param {paramName} with ParamType \"{p.ParamType}\".",
+                        LOC.Get("PARAM_Data_Missing_ParamDef_ParamType", paramName, p.ParamType),
                         LogLevel.Warning);
 
                     successfulLoad = false;
@@ -643,7 +653,9 @@ public class ParamUpgrader
                 if (p.ParamType == "CHR_MODEL_PARAM_ST")
                 {
                     if (p.ExpandParamSize(12, 16))
-                        Smithbox.Log(this, $"CHR_MODEL_PARAM_ST fixed up.");
+                    {
+                        Smithbox.Log(this, LOC.Get("PARAM_Data_Fixed_Up_Param", "CHR_MODEL_PARAM_ST"));
+                    }
                 }
             }
 
@@ -653,23 +665,29 @@ public class ParamUpgrader
                 if (p.ParamType == "GAME_SYSTEM_COMMON_PARAM_ST")
                 {
                     if (p.ExpandParamSize(880, 1024))
-                        Smithbox.Log(this, $"GAME_SYSTEM_COMMON_PARAM_ST fixed up.");
+                    {
+                        Smithbox.Log(this, LOC.Get("PARAM_Data_Fixed_Up_Param", "GAME_SYSTEM_COMMON_PARAM_ST"));
+                    }
                 }
                 if (p.ParamType == "POSTURE_CONTROL_PARAM_WEP_RIGHT_ST")
                 {
                     if (p.ExpandParamSize(112, 144))
-                        Smithbox.Log(this, $"POSTURE_CONTROL_PARAM_WEP_RIGHT_ST fixed up.");
+                    {
+                        Smithbox.Log(this, LOC.Get("PARAM_Data_Fixed_Up_Param", "POSTURE_CONTROL_PARAM_WEP_RIGHT_ST"));
+                    }
                 }
                 if (p.ParamType == "SIGN_PUDDLE_PARAM_ST")
                 {
                     if (p.ExpandParamSize(32, 48))
-                        Smithbox.Log(this, $"SIGN_PUDDLE_PARAM_ST fixed up.");
+                    {
+                        Smithbox.Log(this, LOC.Get("PARAM_Data_Fixed_Up_Param", "SIGN_PUDDLE_PARAM_ST"));
+                    }
                 }
             }
 
             if (p.ParamType == null)
             {
-                throw new Exception("Param type is unexpectedly null");
+                throw new Exception(LOC.Get("PARAM_Data_Param_Type_Null"));
             }
 
             // Skip these for DS1 so the param load is not slowed down by the catching
@@ -677,7 +695,7 @@ public class ParamUpgrader
             {
                 if (paramName is "m99_ToneCorrectBank" or "m99_ToneMapBank" or "default_ToneCorrectBank")
                 {
-                    Smithbox.Log(this, $"Skipped this param: {paramName}");
+                    Smithbox.Log(this, LOC.Get("PARAM_Data_Skipped_Param", paramName));
                     continue;
                 }
             }
@@ -693,10 +711,9 @@ public class ParamUpgrader
             catch (Exception e)
             {
                 var name = f.Name.Split("\\").Last();
-                var message = $"Could not apply ParamDef for {name}";
 
                 successfulLoad = false;
-                Smithbox.Log(this, message, LogLevel.Warning, LogPriority.Normal, e);
+                Smithbox.LogError(this, LOC.Get("PARAM_Data_Failed_to_Apply_ParamDef", name), e);
             }
         }
 

@@ -497,7 +497,7 @@ public class ParamPinGroups
         catch (Exception ex)
         {
             var filename = Path.GetFileNameWithoutExtension(readPath);
-            Smithbox.LogError<ParamPinGroup>(LOC.Get("PARAM_PinGroups_Load_Pin_Group_FAIL", filename, readPath));
+            Smithbox.LogError<ParamPinGroup>(LOC.Get("PARAM_PinGroups_Load_Pin_Group_FAIL", filename, readPath), ex);
         }
     }
     public void LoadRowPinGroup(string groupName)
@@ -514,7 +514,7 @@ public class ParamPinGroups
         catch (Exception ex)
         {
             var filename = Path.GetFileNameWithoutExtension(readPath);
-            Smithbox.LogError<ParamPinGroup>(LOC.Get("PARAM_PinGroups_Load_Pin_Group_FAIL", filename, readPath));
+            Smithbox.LogError<ParamPinGroup>(LOC.Get("PARAM_PinGroups_Load_Pin_Group_FAIL", filename, readPath), ex);
         }
     }
     public void LoadFieldPinGroup(string groupName)
@@ -531,7 +531,7 @@ public class ParamPinGroups
         catch (Exception ex)
         {
             var filename = Path.GetFileNameWithoutExtension(readPath);
-            Smithbox.LogError<ParamPinGroup>(LOC.Get("PARAM_PinGroups_Load_Pin_Group_FAIL", filename, readPath));
+            Smithbox.LogError<ParamPinGroup>(LOC.Get("PARAM_PinGroups_Load_Pin_Group_FAIL", filename, readPath), ex);
         }
     }
 

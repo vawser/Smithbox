@@ -17,7 +17,8 @@ public static class ParamRowTools
     #region Quick Search
     public static void ParamQuickSearch(ParamEditorView curView, string currentParam, int currentID)
     {
-        if (ImGui.MenuItem("Search for references in tool"))
+        // Search for References in Field Value Finder
+        if (ImGui.MenuItem($"{LOC.Get("PARAM_QuickSearch_Search_For_References")}##jumpFieldValueFinder"))
         {
             curView.ToolMenu.FieldValueFinder.SearchText = $"{currentID}";
             curView.ToolMenu.FieldValueFinder.CachedSearchText = curView.ToolMenu.FieldValueFinder.SearchText;
@@ -25,7 +26,7 @@ public static class ParamRowTools
             curView.ToolMenu.FieldValueFinder.Results = curView.ToolMenu.FieldValueFinder.ConstructResults();
             curView.ToolMenu.FieldValueFinder.Results.Sort();
         }
-        GUI.Tooltip("Quick use action for searching in 'Find Field Value Instances' tool with this row ID.");
+        GUI.Tooltip(LOC.Get("PARAM_QuickSearch_Search_For_References_TT"));
     }
     #endregion
 
@@ -33,18 +34,19 @@ public static class ParamRowTools
     public static void ParamReverseLookup_Value(ParamEditorView curView, string currentParam,
         int currentID)
     {
-        if (ImGui.BeginMenu("Search for references"))
+        // Search for References
+        if (ImGui.BeginMenu($"{LOC.Get("PARAM_ReverseLookup_Search_for_References")}##searchForRefs"))
         {
             Dictionary<string, List<(string, ParamRef)>> items = CacheBank.GetCached(curView.Editor, (curView.GetPrimaryBank(), currentParam),
                 () => ParamRefReverseLookupFieldItems(curView, currentParam));
 
             foreach (KeyValuePair<string, List<(string, ParamRef)>> paramitems in items)
             {
-                if (ImGui.BeginMenu($@"in {paramitems.Key}..."))
+                if (ImGui.BeginMenu($@"{paramitems.Key}"))
                 {
                     foreach ((var fieldName, ParamRef pref) in paramitems.Value)
                     {
-                        if (ImGui.BeginMenu($@"in {fieldName}"))
+                        if (ImGui.BeginMenu($@"{fieldName}"))
                         {
                             List<Param.Row> rows = CacheBank.GetCached(curView.Editor, (curView.GetPrimaryBank(), currentParam, currentID, paramitems.Key, fieldName),
                                 () => ParamRefReverseLookupRowItems(curView, paramitems.Key, fieldName, currentID,
@@ -60,7 +62,7 @@ public static class ParamRowTools
 
                             if (rows.Count == 0)
                             {
-                                ImGui.TextUnformatted("No rows found");
+                                ImGui.TextUnformatted(LOC.Get("PARAM_ReverseLookup_No_Rows"));
                             }
 
                             ImGui.EndMenu();
@@ -73,7 +75,7 @@ public static class ParamRowTools
 
             if (items.Count == 0)
             {
-                ImGui.TextUnformatted("This param is not referenced");
+                ImGui.TextUnformatted(LOC.Get("PARAM_ReverseLookup_No_Reference"));
             }
 
             ImGui.EndMenu();

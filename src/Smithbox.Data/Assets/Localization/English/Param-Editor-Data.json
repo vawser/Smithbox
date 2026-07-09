@@ -1,5 +1,36 @@
 {
   "Entries": [
-    
+    {
+      "Key": "PARAM_Data_Failed_Regulation_Load",
+      "Text": "Failed to get regulation version. Params might be corrupt."
+    },
+    {
+      "Key": "PARAM_Data_Missing_ParamDef",
+      "Text": "Couldn't find ParamDef for param {0} and no tentative ParamType exists."
+    },
+    {
+      "Key": "PARAM_Data_Missing_ParamType",
+      "Text": "Couldn't read ParamType for {0} and no tentative ParamType exists."
+    },
+    {
+      "Key": "PARAM_Data_Missing_ParamDef_ParamType",
+      "Text": "Couldn't find ParamDef for param {0} with ParamType '{1}'."
+    },
+    {
+      "Key": "PARAM_Data_Fixed_Up_Param",
+      "Text": "{0} fixed up."
+    },
+    {
+      "Key": "PARAM_Data_Param_Type_Null",
+      "Text": "Param type is unexpectedly null."
+    },
+    {
+      "Key": "PARAM_Data_Skipped_Param",
+      "Text": "Skipped this param: {0}"
+    },
+    {
+      "Key": "PARAM_Data_Failed_to_Apply_ParamDef",
+      "Text": "Could not apply ParamDef for {0}"
+    }
   ]
 }

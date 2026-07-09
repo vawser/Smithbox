@@ -22,30 +22,37 @@ public class ParamSortTool
 
     public void DisplayDropDown()
     {
-        if (ImGui.MenuItem("Sort Rows"))
+        // Sort Rows
+        if (ImGui.MenuItem($"{LOC.Get("PARAM_RowSort_Sort_Rows")}##sortRowsAction"))
         {
             if (View.Selection.ActiveParamExists())
             {
                 SortRows();
             }
         }
-        GUI.Tooltip("This will sort the rows by ID. WARNING: this is not recommended as row index can be important.");
+        GUI.Tooltip(LOC.Get("PARAM_RowSort_Sort_Rows_TT"));
     }
 
     public void Display()
     {
-        if (ImGui.CollapsingHeader("Sort Rows"))
+        // Sort Rows
+        if (ImGui.CollapsingHeader($"{LOC.Get("PARAM_RowSort_Header_Sort_Rows")}##sortRowsHeader"))
         {
             ImGui.BeginChild("SortRowSection", ImGuiChildFlags.Borders);
 
-            GUI.WrappedText("Use this to sort the ordering of the rows within the currently selected param.");
-            GUI.WrappedText("This tool will respective row-index ordering for params with multiple rows of the same ID.");
+            GUI.WrappedText(LOC.Get("PARAM_RowSort_Sort_Rows_Hint"));
 
+            // Actions
             GUI.Spacer();
-            GUI.SimpleHeader("Actions", "");
+            GUI.SimpleHeader(
+                LOC.Get("PARAM_RowSort_Header_Actions"),
+                LOC.Get("PARAM_RowSort_Header_Actions_TT"));
 
             GUI.MultiButtonInput("sortActions",
-                "sortRows", "Sort Rows", "", SortRows);
+                "sortRows", 
+                LOC.Get("PARAM_RowSort_Sort_Rows_Action"),
+                LOC.Get("PARAM_RowSort_Sort_Rows_Action_TT"),
+                SortRows);
 
             ImGui.EndChild();
         }
@@ -62,8 +69,8 @@ public class ParamSortTool
 
             View.Editor.ActionManager.ExecuteAction(action);
 
-            Smithbox.Log(typeof(ParamRowTools), $"Param rows sorted for " +
-                $"{View.Selection.GetActiveParam()}");
+            Smithbox.Log(typeof(ParamRowTools),
+                LOC.Get("PARAM_RowSort_Log_Sort_Rows", View.Selection.GetActiveParam()));
         }
     }
 
