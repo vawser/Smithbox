@@ -78,23 +78,39 @@ public class MassEditPopupMenu
 
     public void DisplayMassEditMenu()
     {
-        GUI.SimpleHeader("Mass Edit", "");
-        ImGui.Text("param PARAM: id VALUE: FIELD: = VALUE;");
+        // Mass Edit
+        GUI.SimpleHeader(
+            LOC.Get("PARAM_MassEdit_Header"),
+            LOC.Get("PARAM_MassEdit_Header_TT"));
+
+        ImGui.Text(LOC.Get("PARAM_MassEdit_Menu_Hint"));
 
         GUI.Spacer();
         MassEditUtils.MassEditHeader(Parent,
-            "Input", "Type in the mass edit commands you wish to apply here.");
+            LOC.Get("PARAM_MassEdit_Menu_Input"),
+            LOC.Get("PARAM_MassEdit_Menu_Input_TT"));
 
         GUI.MultilineTextInput("massEditInput", ref Parent.State.CurrentMenuInput);
 
+        // Output
         GUI.Spacer();
-        GUI.SimpleHeader("Output", "");
+        GUI.SimpleHeader(
+            LOC.Get("PARAM_MassEdit_Header_Output"),
+            LOC.Get("PARAM_MassEdit_Header_Output_TT"));
+
         ImGui.Text(Parent.State.MassEditResult);
 
+        // Actions
         GUI.Spacer();
-        GUI.SimpleHeader("Actions", "");
+        GUI.SimpleHeader(
+            LOC.Get("PARAM_MassEdit_Header_Actions"),
+            LOC.Get("PARAM_MassEdit_Header_Actions_TT"));
+
         GUI.MultiButtonInput("massEditActions",
-            "submitMassEdit", "Submit", "", SubmitMassEdit);
+            "submitMassEdit", 
+            LOC.Get("PARAM_MassEdit_Action_Submit"),
+            LOC.Get("PARAM_MassEdit_Action_Submit_TT"),
+            SubmitMassEdit);
     }
 
     public void SubmitMassEdit()
@@ -106,78 +122,140 @@ public class MassEditPopupMenu
 
     public void DisplayCsvExportMenu()
     {
-        GUI.SimpleHeader("CSV Export", "");
+        // CSV Export
+        GUI.SimpleHeader(
+            LOC.Get("PARAM_MassEdit_Header_CSV_Export"),
+            LOC.Get("PARAM_MassEdit_Header_CSV_Export_TT"));
 
         GUI.MultilineTextInput("csvExportText", ref Parent.State.MassEditOutput_CSV);
 
+        // Actions
         GUI.Spacer();
-        GUI.SimpleHeader("Actions", "");
+        GUI.SimpleHeader(
+            LOC.Get("PARAM_MassEdit_Header_Actions"),
+            LOC.Get("PARAM_MassEdit_Header_Actions_TT"));
+
         GUI.MultiButtonInput("csvExportActions",
-            "copyCsvOutput", "Copy to Clipboard", "", CopyCsvOutput);
+            "copyCsvOutput", 
+            LOC.Get("PARAM_MassEdit_Action_Copy_to_Clipboard"),
+            LOC.Get("PARAM_MassEdit_Action_Copy_to_Clipboard_TT"),
+            CopyCsvOutput);
     }
 
     public void DisplaySingleCsvExportMenu()
     {
-        GUI.SimpleHeader($"CSV Export ({Parent.State.MassEdit_SingleField_CSV})", "");
+        // CSV Export (<field>)
+        GUI.SimpleHeader(
+            LOC.Get("PARAM_MassEdit_Header_CSV_Export_Field", Parent.State.MassEdit_SingleField_CSV),
+            LOC.Get("PARAM_MassEdit_Header_CSV_Export_TT"));
 
         GUI.MultilineTextInput("csvExportText", ref Parent.State.MassEditOutput_CSV);
 
+        // Actions
         GUI.Spacer();
-        GUI.SimpleHeader("Actions", "");
+        GUI.SimpleHeader(
+            LOC.Get("PARAM_MassEdit_Header_Actions"),
+            LOC.Get("PARAM_MassEdit_Header_Actions_TT"));
+
         GUI.MultiButtonInput("csvExportActions",
-            "copyCsvOutput", "Copy to Clipboard", "", CopyCsvOutput);
+            "copyCsvOutput",
+            LOC.Get("PARAM_MassEdit_Action_Copy_to_Clipboard"),
+            LOC.Get("PARAM_MassEdit_Action_Copy_to_Clipboard_TT"), 
+            CopyCsvOutput);
     }
 
     public void DisplayCsvImportMenu()
     {
-        GUI.SimpleHeader("CSV Import", "");
+        // CSV Import
+        GUI.SimpleHeader(
+            LOC.Get("PARAM_MassEdit_Header_CSV_Import"),
+            LOC.Get("PARAM_MassEdit_Header_CSV_Import_TT"));
 
         GUI.MultilineTextInput("csvImportText", ref Parent.State.MassEditInput_CSV);
 
+        // Delimiter
         GUI.Spacer();
-        GUI.SimpleHeader("Delimiter", "");
+        GUI.SimpleHeader(
+            LOC.Get("PARAM_MassEdit_Header_Delimiter"),
+            LOC.Get("PARAM_MassEdit_Header_Delimiter_TT"));
+
         MassEditUtils.DelimiterInputText();
 
+        // Options
         GUI.Spacer();
-        GUI.SimpleHeader("Options", "");
-        ImGui.Checkbox("Append Mode", ref CFG.Current.Param_CSV_Append_Only);
-        GUI.Tooltip("Append new rows instead of ID based insertion (this will create out-of-order IDs)");
+        GUI.SimpleHeader(
+            LOC.Get("PARAM_MassEdit_Header_Options"),
+            LOC.Get("PARAM_MassEdit_Header_Options_TT"));
+
+        // Toggle: Append New ROws
+        ImGui.Checkbox($"{LOC.Get("PARAM_MassEdit_Checkbox_Append_Mode")}##toggleAppendMode", 
+            ref CFG.Current.Param_CSV_Append_Only);
+        GUI.Tooltip(LOC.Get("PARAM_MassEdit_Checkbox_Append_Mode_TT"));
 
         if (CFG.Current.Param_CSV_Append_Only)
         {
-            ImGui.Checkbox("Replace Existing Rows", ref CFG.Current.Param_CSV_Replace_Row);
-            GUI.Tooltip("Replace existing rows instead of updating them (they will be moved to the end)");
+            // Toggle: Replace Existing Rows
+            ImGui.Checkbox($"{LOC.Get("PARAM_MassEdit_Checkbox_Replace_Existing")}##toggleReplaceExisting", 
+                ref CFG.Current.Param_CSV_Replace_Row);
+            GUI.Tooltip(LOC.Get("Replace existing rows instead of updating them (they will be moved to the end)"));
         }
 
+        // Actions
         GUI.Spacer();
-        GUI.SimpleHeader("Actions", "");
+        GUI.SimpleHeader(
+            LOC.Get("PARAM_MassEdit_Header_Actions"),
+            LOC.Get("PARAM_MassEdit_Header_Actions_TT"));
 
         GUI.MultiButtonInput("csvImportActions",
-            "importCsv", "Import", "", ImportCsv);
+            "importCsv", 
+            LOC.Get("PARAM_MassEdit_Action_Import_CSV"),
+            LOC.Get("PARAM_MassEdit_Action_Import_CSV_TT"),
+            ImportCsv);
 
+        // Result
         GUI.Spacer();
-        GUI.SimpleHeader("Result", "");
+        GUI.SimpleHeader(
+            LOC.Get("PARAM_MassEdit_Header_Result"),
+            LOC.Get("PARAM_MassEdit_Header_Result_TT"));
+
         ImGui.Text(Parent.State.MassEditResult_CSV);
     }
 
     public void DisplaySingleCsvImportMenu()
     {
-        GUI.SimpleHeader($"CSV Import ({Parent.State.MassEdit_SingleField_CSV}", "");
+        // CSV Import
+        GUI.SimpleHeader(
+            LOC.Get("PARAM_MassEdit_Header_CSV_Import_Field", Parent.State.MassEdit_SingleField_CSV),
+            LOC.Get("PARAM_MassEdit_Header_CSV_Import_TT"));
 
         GUI.MultilineTextInput("csvImportText", ref Parent.State.MassEditInput_CSV);
 
+        // Delimiter
         GUI.Spacer();
-        GUI.SimpleHeader("Delimiter", "");
+        GUI.SimpleHeader(
+            LOC.Get("PARAM_MassEdit_Header_Delimiter"),
+            LOC.Get("PARAM_MassEdit_Header_Delimiter_TT"));
+
         MassEditUtils.DelimiterInputText();
 
+        // Actions
         GUI.Spacer();
-        GUI.SimpleHeader("Actions", "");
+        GUI.SimpleHeader(
+            LOC.Get("PARAM_MassEdit_Header_Actions"),
+            LOC.Get("PARAM_MassEdit_Header_Actions_TT"));
 
         GUI.MultiButtonInput("csvImportActions",
-            "importCsv", "Import", "", ImportSingleCsv);
+            "importCsv",
+            LOC.Get("PARAM_MassEdit_Action_Import_CSV"),
+            LOC.Get("PARAM_MassEdit_Action_Import_CSV_TT"), 
+            ImportSingleCsv);
 
+        // Result
         GUI.Spacer();
-        GUI.SimpleHeader("Result", "");
+        GUI.SimpleHeader(
+            LOC.Get("PARAM_MassEdit_Header_Result"),
+            LOC.Get("PARAM_MassEdit_Header_Result_TT"));
+
         ImGui.Text(Parent.State.MassEditResult_CSV);
     }
 

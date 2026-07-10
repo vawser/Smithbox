@@ -36,8 +36,11 @@ public class CellSearchEngine : SearchEngine<(string, Param.Row), (ParamEditorPs
             list.AddRange(row.Item2.Columns.Select((cell, i) => (ParamEditorPseudoColumn.None, cell)));
             return list;
         };
-        defaultFilter = newCmd(new[] { "field internalName (regex)" },
-            "Selects cells/fields where the internal name of that field matches the given regex", (args, lenient) =>
+
+        // Default
+        defaultFilter = newCmd(new[] { 
+            LOC.Get("PARAM_CSE_Default_Hint") },
+            LOC.Get("PARAM_CSE_Default_TT"), (args, lenient) =>
             {
                 var matchID = args[0] == "ID";
                 var matchName = args[0] == "Name";
@@ -72,8 +75,11 @@ public class CellSearchEngine : SearchEngine<(string, Param.Row), (ParamEditorPs
                     return false;
                 });
             });
-        filterList.Add("field_value", newCmd(new[] { "field value" },
-            "Selects cells/fields where the cell has the specified value",
+
+        // Field Value
+        filterList.Add("field_value", newCmd(new[] { 
+            LOC.Get("PARAM_CSE_Field_Value_Hint") },
+            LOC.Get("PARAM_CSE_Field_Value_TT"),
             (args, lenient) =>
             {
                 var startValue = args[0];
@@ -84,13 +90,13 @@ public class CellSearchEngine : SearchEngine<(string, Param.Row), (ParamEditorPs
                 {
                     if (row.Item1 == null)
                     {
-                        throw new Exception("Can't check if cell - not part of a param");
+                        throw new Exception(LOC.Get("PARAM_CSE_Field_Value_Cannot_Check_Cell"));
                     }
 
                     Param curParam = bank.Params?[row.Item1];
                     if (curParam == null)
                     {
-                        throw new Exception("Can't check if cell - no param");
+                        throw new Exception(LOC.Get("PARAM_CSE_Field_Value_No_Param"));
                     }
 
                     Param.Row r = curParam[row.Item2.ID];
@@ -119,8 +125,12 @@ public class CellSearchEngine : SearchEngine<(string, Param.Row), (ParamEditorPs
                     };
                 };
             }));
-        filterList.Add("field_range", newCmd(new[] { "field start value", "field end value" },
-            "Selects cells/fields where the cell has a value between the start and end values specified",
+
+        // Field Range
+        filterList.Add("field_range", newCmd(new[] { 
+            LOC.Get("PARAM_CSE_Field_Range_Hint_1"), 
+            LOC.Get("PARAM_CSE_Field_Range_Hint_2")},
+            LOC.Get("PARAM_CSE_Field_Range_TT"),
             (args, lenient) =>
             {
                 var startValue = args[0];
@@ -167,13 +177,15 @@ public class CellSearchEngine : SearchEngine<(string, Param.Row), (ParamEditorPs
                     };
                 };
             }));
+
+        // Modified
         filterList.Add("modified", newCmd(new string[0],
-            "Selects cells/fields where the equivalent cell in the vanilla regulation or parambnd has a different value",
+            LOC.Get("PARAM_CSE_Modified_TT"),
             (args, lenient) => row =>
             {
                 if (row.Item1 == null)
                 {
-                    throw new Exception("Can't check if cell is modified - not part of a param");
+                    throw new Exception(LOC.Get("PARAM_CSE_Modified_Cannot_Check_Cell"));
                 }
 
                 var vBank = CurrentView.GetVanillaBank();
@@ -181,7 +193,7 @@ public class CellSearchEngine : SearchEngine<(string, Param.Row), (ParamEditorPs
                 Param vParam = vBank.Params?[row.Item1];
                 if (vParam == null)
                 {
-                    throw new Exception("Can't check if cell is modified - no vanilla param");
+                    throw new Exception(LOC.Get("PARAM_CSE_Modified_No_Param"));
                 }
 
                 Param.Row r = vParam[row.Item2.ID];
@@ -198,8 +210,11 @@ public class CellSearchEngine : SearchEngine<(string, Param.Row), (ParamEditorPs
                     return ParamUtils.IsValueDiff(ref valA, ref valB, col.GetColumnType());
                 };
             }));
-        filterList.Add("auxmodified", newCmd(new[] { "parambank name" },
-            "Selects cells/fields where the equivalent cell in the specified regulation or parambnd has a different value",
+
+        // Aux Modified
+        filterList.Add("auxmodified", newCmd(new[] { 
+            LOC.Get("PARAM_CSE_AuxModified_Hint")},
+            LOC.Get("PARAM_CSE_AuxModified_TT"),
             (args, lenient) =>
             {
                 var vBank = CurrentView.GetVanillaBank();
@@ -207,7 +222,7 @@ public class CellSearchEngine : SearchEngine<(string, Param.Row), (ParamEditorPs
 
                 if (!auxBank.ContainsKey(args[0]))
                 {
-                    throw new Exception("Can't check if cell is modified - parambank not found");
+                    throw new Exception(LOC.Get("PARAM_CSE_AuxModified_No_ParamBank"));
                 }
 
                 ParamBank bank = auxBank[args[0]];
@@ -215,19 +230,19 @@ public class CellSearchEngine : SearchEngine<(string, Param.Row), (ParamEditorPs
                 {
                     if (row.Item1 == null)
                     {
-                        throw new Exception("Can't check if cell is modified - not part of a param");
+                        throw new Exception(LOC.Get("PARAM_CSE_AuxModified_Not_Part_of_Param"));
                     }
 
                     Param auxParam = bank.Params?[row.Item1];
                     if (auxParam == null)
                     {
-                        throw new Exception("Can't check if cell is modified - no aux param");
+                        throw new Exception(LOC.Get("PARAM_CSE_AuxModified_No_Aux_Param"));
                     }
 
                     Param vParam = vBank.Params?[row.Item1];
                     if (vParam == null)
                     {
-                        throw new Exception("Can't check if cell is modified - no vanilla param");
+                        throw new Exception(LOC.Get("PARAM_CSE_AuxModified_No_Vanilla_Param"));
                     }
 
                     Param.Row r = auxParam[row.Item2.ID];
@@ -253,8 +268,10 @@ public class CellSearchEngine : SearchEngine<(string, Param.Row), (ParamEditorPs
                 };
             }, () => CurrentView.Project.Handler.ParamData.AuxBanks.Count > 0));
 
-        filterList.Add("sftype", newCmd(new[] { "paramdef type" },
-            "Selects cells/fields where the field's data type, as enumerated by soulsformats, matches the given regex",
+        // SoulsFormats Type
+        filterList.Add("sftype", newCmd(new[] { 
+            LOC.Get("PARAM_CSE_SfType_Hint") },
+            LOC.Get("PARAM_CSE_SfType_TT"),
             (args, lenient) =>
             {
                 Regex r = new('^' + args[0] + '$',
@@ -262,8 +279,9 @@ public class CellSearchEngine : SearchEngine<(string, Param.Row), (ParamEditorPs
                 return row => col => r.IsMatch(col.GetColumnSfType());
             }));
 
+        // Default Value
         filterList.Add("default_value", newCmd(new string[0],
-            "Selects cells/fields where the cell value is the same as the 'default' for the field.",
+            LOC.Get("PARAM_CSE_DefaultValue_TT"),
             (args, lenient) =>
             {
                 ParamBank bank = CurrentView.GetPrimaryBank();
@@ -272,13 +290,13 @@ public class CellSearchEngine : SearchEngine<(string, Param.Row), (ParamEditorPs
                 {
                     if (row.Item1 == null)
                     {
-                        throw new Exception("Can't check if cell - not part of a param");
+                        throw new Exception(LOC.Get("PARAM_CSE_DefaultValue_Not_Part_of_Param"));
                     }
 
                     Param curParam = bank.Params?[row.Item1];
                     if (curParam == null)
                     {
-                        throw new Exception("Can't check if cell - no param");
+                        throw new Exception(LOC.Get("PARAM_CSE_DefaultValue_No_Param"));
                     }
 
                     Param.Row r = curParam[row.Item2.ID];

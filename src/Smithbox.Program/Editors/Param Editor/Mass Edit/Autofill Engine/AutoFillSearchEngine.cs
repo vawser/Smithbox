@@ -42,14 +42,19 @@ public class AutoFillSearchEngine<A, B>
         var currentArgIndex = 0;
         if (enableComplexToggles)
         {
-            ImGui.Checkbox("Invert selection?##meautoinputnottoggle" + id, ref _autoFillNotToggle);
+            // Invert Selection?
+            ImGui.Checkbox($"{LOC.Get("PARAM_MassEdit_AutoFill_InvertSelection")}##meautoinputnottoggle" + id, ref _autoFillNotToggle);
+
             ImGui.SameLine();
-            ImGui.Checkbox("Add another condition?##meautoinputadditionalcondition" + id,
+
+            // Add another condition?
+            ImGui.Checkbox($"{LOC.Get("PARAM_MassEdit_AutoFill_AddCondition")}##meautoinputadditionalcondition" + id,
                 ref _useAdditionalCondition);
         }
         else if (multiStageSE != null)
         {
-            ImGui.Checkbox("Add another condition?##meautoinputadditionalcondition" + id,
+            // Add another condition?
+            ImGui.Checkbox($"{LOC.Get("PARAM_MassEdit_AutoFill_AddCondition")}##meautoinputadditionalcondition" + id,
                 ref _useAdditionalCondition);
         }
 
@@ -81,11 +86,13 @@ public class AutoFillSearchEngine<A, B>
 
             string subResult = null;
             var wiki = cmd.Item3;
+
             ParamEditorHints.AddImGuiHintButton(cmd.Item1 == null ? "hintdefault" : "hint" + cmd.Item1, ref wiki, false,
                 true);
+
             if (subMenu != null || _additionalCondition != null)
             {
-                if (ImGui.BeginMenu(cmd.Item1 == null ? "Default filter..." : cmd.Item1, valid))
+                if (ImGui.BeginMenu(cmd.Item1 == null ? LOC.Get("PARAM_MassEdit_AutoFill_DefaultFilter") : cmd.Item1, valid))
                 {
                     var curResult = inheritedCommand + getCurrentStepText(valid, cmd.Item1, argIndices,
                         _additionalCondition != null ? " && " : suffix);
@@ -109,7 +116,7 @@ public class AutoFillSearchEngine<A, B>
             }
             else
             {
-                subResult = ImGui.Selectable(cmd.Item1 == null ? "Default filter..." : cmd.Item1, false,
+                subResult = ImGui.Selectable(cmd.Item1 == null ? LOC.Get("PARAM_MassEdit_AutoFill_DefaultFilter") : cmd.Item1, false,
                     valid ? ImGuiSelectableFlags.None : ImGuiSelectableFlags.Disabled)
                     ? suffix
                     : null;

@@ -39,15 +39,16 @@ public class MassEditToolMenu
         // Tabs
         if (ImGui.BeginTabBar("massEditTabs"))
         {
-            if (ImGui.BeginTabItem("Command Palette"))
+            // Command Palette
+            if (ImGui.BeginTabItem($"{LOC.Get("PARAM_MassEdit_Tab_Command_Palette")}##commandPaletteTab"))
             {
                 DisplayCommandPalette();
 
                 ImGui.EndTabItem();
             }
 
-
-            if (ImGui.BeginTabItem("Templates"))
+            // Templates
+            if (ImGui.BeginTabItem($"{LOC.Get("PARAM_MassEdit_Tab_Templates")}##templatesTab"))
             {
                 DisplayTemplateMenu();
 
@@ -63,31 +64,47 @@ public class MassEditToolMenu
         var windowWidth = ImGui.GetWindowWidth();
 
         // Header
-        GUI.WrappedText("Write and execute mass edit commands here.");
+        GUI.WrappedText(LOC.Get("PARAM_MassEdit_Command_Palette_TT"));
 
         // Input
-        GUI.WrappedText("");
+        GUI.Spacer();
         MassEditUtils.MassEditHeader(Parent, 
-            "Input", "Type in the mass edit commands you wish to apply here.");
+            LOC.Get("PARAM_MassEdit_Header_Input"),
+            LOC.Get("PARAM_MassEdit_Header_Input_TT"));
 
         GUI.MultilineTextInput("massEditInput", ref Parent.State.CurrentMenuInput);
 
         GUI.MultiButtonInput("massEditActions", 
-            "massEditApply", "Apply", "Apply this script", ApplyMassEditAction, 
-            "massEditClear", "Clear", "Clear this script", ClearMassEditInputAction);
+            "massEditApply", 
+            LOC.Get("PARAM_MassEdit_Action_Apply_Script"),
+            LOC.Get("PARAM_MassEdit_Action_Apply_Script_TT"),
+            ApplyMassEditAction, 
+
+            "massEditClear", 
+            LOC.Get("PARAM_MassEdit_Action_Clear_Script"),
+            LOC.Get("PARAM_MassEdit_Action_Clear_Script_TT"),
+            ClearMassEditInputAction);
 
         // Templates
-        GUI.WrappedText("");
-        GUI.SimpleHeader("Templates", "");
+        GUI.Spacer();
+        GUI.SimpleHeader(
+            LOC.Get("PARAM_MassEdit_Header_Templates"),
+            LOC.Get("PARAM_MassEdit_Header_Templates_TT"));
 
         MassEditUtils.TemplateComboBox("massEditScripts",ref CurrentTemplate, ScriptList);
 
         GUI.MultiButtonInput("massEditScriptActions",
-            "massEditScriptLoad", "Load", "Load this script", LoadMassEditTemplate);
+            "massEditScriptLoad", 
+            LOC.Get("PARAM_MassEdit_Action_Load_Script"),
+            LOC.Get("PARAM_MassEdit_Action_Load_Script_TT"),
+            LoadMassEditTemplate);
 
         // Output
-        GUI.WrappedText("");
-        GUI.SimpleHeader("Output", "Success state of the Mass Edit command that was previously used.\n\nRemember to handle clipboard state between edits with the 'clear' command");
+        GUI.Spacer();
+        GUI.SimpleHeader(
+            LOC.Get("PARAM_MassEdit_Header_Output"),
+            LOC.Get("PARAM_MassEdit_Header_Output_Command_Palette"));
+
         GUI.WrappedText($"{Parent.State.MassEditResult}");
     }
 

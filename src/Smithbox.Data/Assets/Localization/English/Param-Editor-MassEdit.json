@@ -1,168 +1,340 @@
 {
   "Entries": [
     {
-      "Key": "PARAM_MassEdit_",
+      "Key": "PARAM_MassEdit_AutoFill_Select_Params",
+      "Text": "Select params..."
+    },
+    {
+      "Key": "PARAM_MassEdit_AutoFill_Select_Rows",
+      "Text": "Select rows..."
+    },
+    {
+      "Key": "PARAM_MassEdit_AutoFill_Select_Fields",
+      "Text": "Select fields..."
+    },
+    {
+      "Key": "PARAM_MassEdit_AutoFill_Add_Command",
+      "Text": "Add command..."
+    },
+    {
+      "Key": "PARAM_MassEdit_AutoFill_Select_Param_And_Rows",
+      "Text": "Select param and rows..."
+    },
+    {
+      "Key": "PARAM_MassEdit_AutoFill_Select_Field_Op",
+      "Text": "Select field operation..."
+    },
+    {
+      "Key": "PARAM_MassEdit_AutoFill_Select_Row_Op",
+      "Text": "Select row operation..."
+    },
+    {
+      "Key": "PARAM_MassEdit_AutoFill_Select_Global_Op",
+      "Text": "Select global operation..."
+    },
+    {
+      "Key": "PARAM_MassEdit_AutoFill_Select_Variables",
+      "Text": "Select variables..."
+    },
+    {
+      "Key": "PARAM_MassEdit_AutoFill_Select_Value_Op",
+      "Text": "Select value operation..."
+    },
+    {
+      "Key": "PARAM_MassEdit_AutoFill_Defined_Variables",
+      "Text": "Defined variables..."
+    },
+    {
+      "Key": "PARAM_MassEdit_AutoFill_Exactly",
+      "Text": "Exactly..."
+    },
+    {
+      "Key": "PARAM_MassEdit_AutoFill_LiteralVal_Hint",
+      "Text": "Literal value..."
+    },
+    {
+      "Key": "PARAM_MassEdit_AutoFill_InvertSelection",
+      "Text": "Invert selection?"
+    },
+    {
+      "Key": "PARAM_MassEdit_AutoFill_AddCondition",
+      "Text": "Add another condition?"
+    },
+    {
+      "Key": "PARAM_MassEdit_AutoFill_DefaultFilter",
+      "Text": "Default filter..."
+    },
+    {
+      "Key": "PARAM_CSE_Default_Hint",
+      "Text": "field internalName (regex)"
+    },
+    {
+      "Key": "PARAM_CSE_Default_TT",
+      "Text": "Selects cells/fields where the internal name of that field matches the given regex."
+    },
+    {
+      "Key": "PARAM_CSE_Field_Value_Hint",
+      "Text": "field value"
+    },
+    {
+      "Key": "PARAM_CSE_Field_Value_TT",
+      "Text": "Selects cells/fields where the cell has the specified value."
+    },
+    {
+      "Key": "PARAM_CSE_Field_Value_Cannot_Check_Cell",
+      "Text": "Can't check if cell - not part of a param."
+    },
+    {
+      "Key": "PARAM_CSE_Field_Value_No_Param",
+      "Text": "Can't check if cell - no param."
+    },
+    {
+      "Key": "PARAM_CSE_Field_Range_Hint_1",
+      "Text": "field start value"
+    },
+    {
+      "Key": "PARAM_CSE_Field_Range_Hint_2",
+      "Text": "field end value"
+    },
+    {
+      "Key": "PARAM_CSE_Field_Range_TT",
+      "Text": "Selects cells/fields where the cell has a value between the start and end values specified."
+    },
+    {
+      "Key": "PARAM_CSE_Modified_TT",
+      "Text": "Selects cells/fields where the equivalent cell in the vanilla regulation or parambnd has a different value."
+    },
+    {
+      "Key": "PARAM_CSE_Modified_Cannot_Check_Cell",
+      "Text": "Can't check if cell is modified - not part of a param."
+    },
+    {
+      "Key": "PARAM_CSE_Modified_No_Param",
+      "Text": "Can't check if cell is modified - no vanilla param."
+    },
+    {
+      "Key": "PARAM_CSE_AuxModified_Hint",
+      "Text": "parambank name"
+    },
+    {
+      "Key": "PARAM_CSE_AuxModified_TT",
+      "Text": "Selects cells/fields where the equivalent cell in the specified regulation or parambnd has a different value."
+    },
+    {
+      "Key": "PARAM_CSE_AuxModified_No_ParamBank",
+      "Text": "Can't check if cell is modified - parambank not found"
+    },
+    {
+      "Key": "PARAM_CSE_AuxModified_Not_Part_of_Param",
+      "Text": "Can't check if cell is modified - not part of a param"
+    },
+    {
+      "Key": "PARAM_CSE_AuxModified_No_Aux_Param",
+      "Text": "Can't check if cell is modified - no aux param"
+    },
+    {
+      "Key": "PARAM_CSE_AuxModified_No_Vanilla_Param",
+      "Text": "Can't check if cell is modified - no vanilla param"
+    },
+    {
+      "Key": "PARAM_CSE_SfType_Hint",
+      "Text": "paramdef type"
+    },
+    {
+      "Key": "PARAM_CSE_SfType_TT",
+      "Text": "Selects cells/fields where the field's data type, as enumerated by soulsformats, matches the given regex"
+    },
+    {
+      "Key": "PARAM_CSE_DefaultValue_TT",
+      "Text": "Selects cells/fields where the cell value is the same as the 'default' for the field."
+    },
+    {
+      "Key": "PARAM_CSE_DefaultValue_Not_Part_of_Param",
+      "Text": "Can't check if cell - not part of a param"
+    },
+    {
+      "Key": "PARAM_CSE_DefaultValue_No_Param",
+      "Text": "Can't check if cell - no param"
+    },
+    {
+      "Key": "PARAM_MassEdit_Header",
+      "Text": "Mass Edit"
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_TT",
       "Text": ""
     },
     {
-      "Key": "PARAM_MassEdit_",
+      "Key": "PARAM_MassEdit_Menu_Hint",
+      "Text": "param PARAM: id VALUE: FIELD: = VALUE;"
+    },
+    {
+      "Key": "PARAM_MassEdit_Menu_Input",
+      "Text": "Input"
+    },
+    {
+      "Key": "PARAM_MassEdit_Menu_Input_TT",
+      "Text": "Type in the mass edit commands you wish to apply here."
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_Output",
+      "Text": "Output"
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_Output_TT",
       "Text": ""
     },
     {
-      "Key": "PARAM_MassEdit_",
+      "Key": "PARAM_MassEdit_Header_Actions",
+      "Text": "Actions"
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_Actions_TT",
       "Text": ""
     },
     {
-      "Key": "PARAM_MassEdit_",
+      "Key": "PARAM_MassEdit_Action_Submit",
+      "Text": "Execute"
+    },
+    {
+      "Key": "PARAM_MassEdit_Action_Submit_TT",
+      "Text": "Execute the current mass edit commands."
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_CSV_Export",
+      "Text": "CSV Export"
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_CSV_Export_TT",
       "Text": ""
     },
     {
-      "Key": "PARAM_MassEdit_",
+      "Key": "PARAM_MassEdit_Action_Copy_to_Clipboard",
+      "Text": "Copy to Clipboard"
+    },
+    {
+      "Key": "PARAM_MassEdit_Action_Copy_to_Clipboard_TT",
+      "Text": "Copy the current output to clipboard."
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_CSV_Export_Field",
+      "Text": "CSV Export ({0})"
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_CSV_Import",
+      "Text": "CSV Import"
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_CSV_Import_TT",
       "Text": ""
     },
     {
-      "Key": "PARAM_MassEdit_",
+      "Key": "PARAM_MassEdit_Header_Delimiter",
+      "Text": "Delimiter"
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_Delimiter_TT",
       "Text": ""
     },
     {
-      "Key": "PARAM_MassEdit_",
+      "Key": "PARAM_MassEdit_Header_Options",
+      "Text": "Options"
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_Options_TT",
       "Text": ""
     },
     {
-      "Key": "PARAM_MassEdit_",
+      "Key": "PARAM_MassEdit_Checkbox_Append_Mode",
+      "Text": "Append New Rows"
+    },
+    {
+      "Key": "PARAM_MassEdit_Checkbox_Append_Mode_TT",
+      "Text": "Append new rows instead of ID based insertion (this will create out-of-order IDs)"
+    },
+    {
+      "Key": "PARAM_MassEdit_Checkbox_Replace_Existing",
+      "Text": "Replace Existing Rows"
+    },
+    {
+      "Key": "PARAM_MassEdit_Checkbox_Replace_Existing_TT",
+      "Text": "Replace existing rows instead of updating them (they will be moved to the end)"
+    },
+    {
+      "Key": "PARAM_MassEdit_Action_Import_CSV",
+      "Text": "Import"
+    },
+    {
+      "Key": "PARAM_MassEdit_Action_Import_CSV_TT",
+      "Text": "Import the current CSV."
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_Result",
+      "Text": "Result"
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_Result_TT",
       "Text": ""
     },
     {
-      "Key": "PARAM_MassEdit_",
+      "Key": "PARAM_MassEdit_Header_CSV_Import_Field",
+      "Text": "CSV Import ({0})"
+    },
+    {
+      "Key": "PARAM_MassEdit_Tab_Command_Palette",
+      "Text": "Command Palette"
+    },
+    {
+      "Key": "PARAM_MassEdit_Tab_Templates",
+      "Text": "Templates"
+    },
+    {
+      "Key": "PARAM_MassEdit_Command_Palette_TT",
+      "Text": "Write and execute mass edit commands here."
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_Input",
+      "Text": "Input"
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_Input_TT",
+      "Text": "Type in the mass edit commands you wish to apply here."
+    },
+    {
+      "Key": "PARAM_MassEdit_Action_Apply_Script",
+      "Text": "Apply"
+    },
+    {
+      "Key": "PARAM_MassEdit_Action_Apply_Script_TT",
+      "Text": "Apply this script."
+    },
+    {
+      "Key": "PARAM_MassEdit_Action_Clear_Script",
+      "Text": "Clear"
+    },
+    {
+      "Key": "PARAM_MassEdit_Action_Clear_Script_TT",
+      "Text": "Clear this script."
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_Templates",
+      "Text": "Templates"
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_Templates_TT",
       "Text": ""
     },
     {
-      "Key": "PARAM_MassEdit_",
-      "Text": ""
+      "Key": "PARAM_MassEdit_Action_Load_Script",
+      "Text": "Load"
     },
     {
-      "Key": "PARAM_MassEdit_",
-      "Text": ""
+      "Key": "PARAM_MassEdit_Action_Load_Script_TT",
+      "Text": "Load this script."
     },
     {
-      "Key": "PARAM_MassEdit_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_MassEdit_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_MassEdit_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_MassEdit_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_MassEdit_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_MassEdit_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_MassEdit_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_MassEdit_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_MassEdit_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_MassEdit_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_MassEdit_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_MassEdit_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_MassEdit_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_MassEdit_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_MassEdit_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_MassEdit_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_MassEdit_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_MassEdit_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_MassEdit_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_MassEdit_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_MassEdit_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_MassEdit_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_MassEdit_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_MassEdit_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_MassEdit_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_MassEdit_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_MassEdit_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_MassEdit_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_MassEdit_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_MassEdit_",
-      "Text": ""
+      "Key": "PARAM_MassEdit_Header_Output_Command_Palette",
+      "Text": "Success state of the Mass Edit command that was previously used.\n\nRemember to handle clipboard state between edits with the 'clear' command"
     },
     {
       "Key": "PARAM_MassEdit_",

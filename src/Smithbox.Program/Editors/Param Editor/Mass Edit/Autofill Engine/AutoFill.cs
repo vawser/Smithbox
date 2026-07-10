@@ -68,7 +68,7 @@ public class AutoFill
 
         if (ImGui.BeginPopupContextItem("##psbautoinputoapopup", ImGuiPopupFlags.MouseButtonLeft))
         {
-            ImGui.TextColored(HINTCOLOUR, "Select params...");
+            ImGui.TextColored(HINTCOLOUR, LOC.Get("PARAM_MassEdit_AutoFill_Select_Params"));
             var result = autoFillPse.Menu(true, false, "", null, null);
             ImGui.EndPopup();
             return result;
@@ -83,7 +83,7 @@ public class AutoFill
 
         if (ImGui.BeginPopupContextItem("##rsbautoinputoapopup", ImGuiPopupFlags.MouseButtonLeft))
         {
-            ImGui.TextColored(HINTCOLOUR, "Select rows...");
+            ImGui.TextColored(HINTCOLOUR, LOC.Get("PARAM_MassEdit_AutoFill_Select_Rows"));
             var result = autoFillRse.Menu(true, false, "", null, null);
             ImGui.EndPopup();
             return result;
@@ -98,7 +98,7 @@ public class AutoFill
 
         if (ImGui.BeginPopupContextItem("##csbautoinputoapopup", ImGuiPopupFlags.MouseButtonLeft))
         {
-            ImGui.TextColored(HINTCOLOUR, "Select fields...");
+            ImGui.TextColored(HINTCOLOUR, LOC.Get("PARAM_MassEdit_AutoFill_Select_Fields"));
             var result = autoFillCse.Menu(true, false, "", null, null);
             ImGui.EndPopup();
             return result;
@@ -109,7 +109,7 @@ public class AutoFill
 
     public string MassEditCompleteAutoFill()
     {
-        ImGui.TextUnformatted("Add command...");
+        ImGui.TextUnformatted(LOC.Get("PARAM_MassEdit_AutoFill_Add_Command"));
         ImGui.SameLine();
         ImGui.Button($@"{Icons.CaretDown}##massEditAutofill");
 
@@ -121,7 +121,7 @@ public class AutoFill
         if (ImGui.BeginPopupContextItem("##meautoinputoapopup", ImGuiPopupFlags.MouseButtonLeft))
         {
             ImGui.PushID("paramrow");
-            ImGui.TextColored(HINTCOLOUR, "Select param and rows...");
+            ImGui.TextColored(HINTCOLOUR, LOC.Get("PARAM_MassEdit_AutoFill_Select_Param_And_Rows"));
             var result1 = autoFillParse.Menu(false, autoFillRse, false, ": ", null, inheritedCommand =>
             {
                 if (inheritedCommand != null)
@@ -129,7 +129,7 @@ public class AutoFill
                     ImGui.TextColored(PREVIEWCOLOUR, inheritedCommand);
                 }
 
-                ImGui.TextColored(HINTCOLOUR, "Select fields...");
+                ImGui.TextColored(HINTCOLOUR, LOC.Get("PARAM_MassEdit_AutoFill_Select_Fields"));
                 var res1 = autoFillCse.Menu(true, true, ": ", inheritedCommand, inheritedCommand2 =>
                 {
                     if (inheritedCommand2 != null)
@@ -137,11 +137,11 @@ public class AutoFill
                         ImGui.TextColored(PREVIEWCOLOUR, inheritedCommand2);
                     }
 
-                    ImGui.TextColored(HINTCOLOUR, "Select field operation...");
+                    ImGui.TextColored(HINTCOLOUR, LOC.Get("PARAM_MassEdit_AutoFill_Select_Field_Op"));
                     return MassEditAutoFillForOperation(CurrentView.MassEdit.FieldOps, ref _autoFillArgsCop, ";", null);
                 });
                 ImGui.Separator();
-                ImGui.TextColored(HINTCOLOUR, "Select row operation...");
+                ImGui.TextColored(HINTCOLOUR, LOC.Get("PARAM_MassEdit_AutoFill_Select_Row_Op"));
                 var res2 = MassEditAutoFillForOperation(CurrentView.MassEdit.RowOps, ref _autoFillArgsRop, ";", null);
                 if (res1 != null)
                 {
@@ -153,7 +153,7 @@ public class AutoFill
             ImGui.PopID();
             ImGui.Separator();
             ImGui.PushID("param");
-            ImGui.TextColored(HINTCOLOUR, "Select params...");
+            ImGui.TextColored(HINTCOLOUR, LOC.Get("PARAM_MassEdit_AutoFill_Select_Params"));
             var result2 = autoFillPse.Menu(true, false, ": ", null, inheritedCommand =>
             {
                 if (inheritedCommand != null)
@@ -161,7 +161,7 @@ public class AutoFill
                     ImGui.TextColored(PREVIEWCOLOUR, inheritedCommand);
                 }
 
-                ImGui.TextColored(HINTCOLOUR, "Select rows...");
+                ImGui.TextColored(HINTCOLOUR, LOC.Get("PARAM_MassEdit_AutoFill_Select_Rows"));
                 return autoFillRse.Menu(true, false, ": ", inheritedCommand, inheritedCommand2 =>
                 {
                     if (inheritedCommand2 != null)
@@ -169,7 +169,7 @@ public class AutoFill
                         ImGui.TextColored(PREVIEWCOLOUR, inheritedCommand2);
                     }
 
-                    ImGui.TextColored(HINTCOLOUR, "Select fields...");
+                    ImGui.TextColored(HINTCOLOUR, LOC.Get("PARAM_MassEdit_AutoFill_Select_Fields"));
                     var res1 = autoFillCse.Menu(true, true, ": ", inheritedCommand2, inheritedCommand3 =>
                     {
                         if (inheritedCommand3 != null)
@@ -177,14 +177,14 @@ public class AutoFill
                             ImGui.TextColored(PREVIEWCOLOUR, inheritedCommand3);
                         }
 
-                        ImGui.TextColored(HINTCOLOUR, "Select field operation...");
+                        ImGui.TextColored(HINTCOLOUR, LOC.Get("PARAM_MassEdit_AutoFill_Select_Field_Op"));
                         return MassEditAutoFillForOperation(CurrentView.MassEdit.FieldOps, ref _autoFillArgsCop, ";",
                             null);
                     });
                     string res2 = null;
 
                     ImGui.Separator();
-                    ImGui.TextColored(HINTCOLOUR, "Select row operation...");
+                    ImGui.TextColored(HINTCOLOUR, LOC.Get("PARAM_MassEdit_AutoFill_Select_Row_Op"));
                     res2 = MassEditAutoFillForOperation(CurrentView.MassEdit.RowOps, ref _autoFillArgsRop, ";", null);
 
                     if (res1 != null)
@@ -201,7 +201,7 @@ public class AutoFill
 
             ImGui.Separator();
             ImGui.PushID("globalop");
-            ImGui.TextColored(HINTCOLOUR, "Select global operation...");
+            ImGui.TextColored(HINTCOLOUR, LOC.Get("PARAM_MassEdit_AutoFill_Select_Global_Op"));
             result3 = MassEditAutoFillForOperation(CurrentView.MassEdit.GlobalOps, ref _autoFillArgsGop, ";",
                 null);
             ImGui.PopID();
@@ -209,7 +209,7 @@ public class AutoFill
             {
                 ImGui.Separator();
                 ImGui.PushID("var");
-                ImGui.TextColored(HINTCOLOUR, "Select variables...");
+                ImGui.TextColored(HINTCOLOUR, LOC.Get("PARAM_MassEdit_AutoFill_Select_Variables"));
                 result4 = autoFillVse.Menu(false, false, ": ", null, inheritedCommand =>
                 {
                     if (inheritedCommand != null)
@@ -217,7 +217,7 @@ public class AutoFill
                         ImGui.TextColored(PREVIEWCOLOUR, inheritedCommand);
                     }
 
-                    ImGui.TextColored(HINTCOLOUR, "Select value operation...");
+                    ImGui.TextColored(HINTCOLOUR, LOC.Get("PARAM_MassEdit_AutoFill_Select_Value_Op"));
                     return MassEditAutoFillForOperation(CurrentView.MassEdit.FieldOps, ref _autoFillArgsCop, ";",
                         null);
                 });
@@ -386,7 +386,7 @@ public class AutoFill
         if (MassParamEdit.massEditVars.Count != 0)
         {
             ImGui.Separator();
-            ImGui.TextUnformatted("Defined variables...");
+            ImGui.TextUnformatted(LOC.Get("PARAM_MassEdit_AutoFill_Defined_Variables"));
             foreach (KeyValuePair<string, object> pair in MassParamEdit.massEditVars)
             {
                 if (ImGui.Selectable(pair.Key + "(" + pair.Value + ")"))
@@ -397,12 +397,12 @@ public class AutoFill
         }
 
         ImGui.Separator();
-        if (ImGui.Selectable("Exactly..."))
+        if (ImGui.Selectable(LOC.Get("PARAM_MassEdit_AutoFill_Exactly")))
         {
             result = '"' + _literalArg + '"';
         }
 
-        ImGui.InputTextWithHint("##meautoinputoaExact", "literal value...", ref _literalArg, 256);
+        ImGui.InputTextWithHint("##meautoinputoaExact", LOC.Get("PARAM_MassEdit_AutoFill_LiteralVal_Hint"), ref _literalArg, 256);
         return result;
     }
 
@@ -417,7 +417,7 @@ public class AutoFill
         ImGui.Button("$");
         if (ImGui.BeginPopupContextItem("##meautoinputvarpopup" + id, ImGuiPopupFlags.MouseButtonLeft))
         {
-            ImGui.TextUnformatted("Defined variables...");
+            ImGui.TextUnformatted(LOC.Get("PARAM_MassEdit_AutoFill_Defined_Variables"));
             ImGui.Separator();
             foreach (KeyValuePair<string, object> pair in MassParamEdit.massEditVars)
             {
