@@ -149,6 +149,9 @@ public class GparamQuickEdit
             if (!IsTargetFile(entry.Key))
                 continue;
 
+            if (entry.Value == null)
+                continue;
+
             TargetFile = entry.Key;
             targetGparam = entry.Value;
             GPARAM data = entry.Value;
