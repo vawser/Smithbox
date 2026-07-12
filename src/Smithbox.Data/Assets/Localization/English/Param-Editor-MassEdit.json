@@ -337,6 +337,130 @@
       "Text": "Success state of the Mass Edit command that was previously used.\n\nRemember to handle clipboard state between edits with the 'clear' command"
     },
     {
+      "Key": "PARAM_MassEdit_Template_Hint",
+      "Text": "Create and edit mass edit templates here."
+    },
+    {
+      "Key": "PARAM_MassEdit_Template_Header_Existing",
+      "Text": "Existing Templates"
+    },
+    {
+      "Key": "PARAM_MassEdit_Template_Header_Existing_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_MassEdit_Action_Edit_Template_Script",
+      "Text": "Edit"
+    },
+    {
+      "Key": "PARAM_MassEdit_Action_Edit_Template_Script_TT",
+      "Text": "Edit the currently selected template script."
+    },
+    {
+      "Key": "PARAM_MassEdit_Action_Update_Template_List",
+      "Text": "Update Template List"
+    },
+    {
+      "Key": "PARAM_MassEdit_Action_Update_Template_List_TT",
+      "Text": "Update the sourcing of the template list to reflect the addition of new scripts."
+    },
+    {
+      "Key": "PARAM_MassEdit_Action_Open_Template_Folder",
+      "Text": "Open Template Directory"
+    },
+    {
+      "Key": "PARAM_MassEdit_Action_Open_Template_Folder_TT",
+      "Text": "Opens the directory that stores the templates with a file explorer."
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_Template_Contents",
+      "Text": "Template Contents"
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_Template_Contents_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_MassEdit_Action_Save_Script",
+      "Text": "Save"
+    },
+    {
+      "Key": "PARAM_MassEdit_Action_Save_Script_TT",
+      "Text": "Save the script."
+    },
+    {
+      "Key": "PARAM_MassEdit_Action_Clear_Script",
+      "Text": "Clear"
+    },
+    {
+      "Key": "PARAM_MassEdit_Action_Clear_Script_TT",
+      "Text": "Clear the script."
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_New_Template",
+      "Text": "New Template"
+    },
+    {
+      "Key": "PARAM_MassEdit_Header_New_Template_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_MassEdit_Input_New_Template",
+      "Text": "Name"
+    },
+    {
+      "Key": "PARAM_MassEdit_Input_New_Template_TT",
+      "Text": "The file name used for this template."
+    },
+    {
+      "Key": "PARAM_MassEdit_Log_Template_Name_Empty",
+      "Text": "Mass Edit Template name must not be empty."
+    },
+    {
+      "Key": "PARAM_MassEdit_Log_Saved_Template",
+      "Text": "Saved Mass Edit Template {0} at {1}"
+    },
+    {
+      "Key": "PARAM_MassEdit_Log_Failed_Save_Template",
+      "Text": "Failed to save Mass Edit Template {0} at {1}"
+    },
+    {
+      "Key": "PARAM_MassEdit_Log_Template_Name_Exists",
+      "Text": "Mass Edit template with this name already exists: {0}."
+    },
+    {
+      "Key": "PARAM_MassEdit_Log_Failed_Template_Load",
+      "Text": "Failed to load Mass Edit template: {0}"
+    },
+    {
+      "Key": "PARAM_MassEdit_Log_Missing_Template_Dir",
+      "Text": "Failed to find Mass Edit template directory: {0}"
+    },
+    {
+      "Key": "PARAM_MassEdit_Delimiter_Hint",
+      "Text": "Define the delimiter symbol..."
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Success_Cells_Affected",
+      "Text": "{0} cells affected."
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Error_Unknown",
+      "Text": "Unknown parsing error on line {0}: {1}"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Error_Global_Op",
+      "Text": "Unknown global operation {0} (line {1})""
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Error_Global_Op_Arg_Count",
+      "Text": "Invalid number of arguments for operation {0} (line {1}) - Read {2} args, expected {3}"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Error_Missing_Variable_Filter",
+      "Text": "Could not find variable filter. Add : and one of {0} (line {1})"
+    },
+    {
       "Key": "PARAM_MassEdit_",
       "Text": ""
     },

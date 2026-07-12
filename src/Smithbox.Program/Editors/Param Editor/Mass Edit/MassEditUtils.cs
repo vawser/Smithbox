@@ -33,7 +33,7 @@ public static class MassEditUtils
             var width = ImGui.GetWindowWidth() * 0.5f;
 
             ImGui.PushItemWidth(width);
-            if (ImGui.InputTextWithHint("##DelimiterText", "Define the delimiter symbol...", ref displayDelimiter, 2))
+            if (ImGui.InputTextWithHint("##DelimiterText", LOC.Get("PARAM_MassEdit_Delimiter_Hint"), ref displayDelimiter, 2))
             {
                 if (displayDelimiter == "\\t")
                     displayDelimiter = "\t";

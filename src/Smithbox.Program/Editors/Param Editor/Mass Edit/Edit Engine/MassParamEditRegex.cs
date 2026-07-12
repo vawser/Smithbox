@@ -103,11 +103,19 @@ public class MassParamEditRegex
                 childManager.ExecuteAction(new CompoundAction(actions));
             }
 
-            return (new MassEditResult(ParamMassEditResultType.SUCCESS, $@"{changeCount} cells affected"), childManager);
+            var finalResult = new MassEditResult(
+                ParamMassEditResultType.SUCCESS,
+                LOC.Get("PARAM_MassEdit_Result_Success_Cells_Affected", changeCount));
+
+            return (finalResult, childManager);
         }
         catch (Exception e)
         {
-            return (new MassEditResult(ParamMassEditResultType.PARSEERROR, $@"Unknown parsing error on line {currentLine}: " + e.ToString()), null);
+            var finalResult = new MassEditResult(
+                ParamMassEditResultType.PARSEERROR,
+                LOC.Get("PARAM_MassEdit_Result_Error_Unknown", currentLine, e.ToString()));
+
+            return (finalResult, null);
         }
     }
 
@@ -117,7 +125,11 @@ public class MassParamEditRegex
         globalOperation = opStage[0].Trim();
         if (!CurrentView.MassEdit.GlobalOps.operations.ContainsKey(globalOperation))
         {
-            return (new MassEditResult(ParamMassEditResultType.PARSEERROR, $@"Unknown global operation {globalOperation} (line {currentLine})"), null);
+            var finalResult = new MassEditResult(
+                ParamMassEditResultType.PARSEERROR,
+                LOC.Get("PARAM_MassEdit_Result_Error_Global_Op", globalOperation, currentLine));
+
+            return (finalResult, null);
         }
 
         string wiki;
@@ -125,7 +137,12 @@ public class MassParamEditRegex
         ExecParamOperationArguments(currentLine, opStage.Length > 1 ? opStage[1] : null);
         if (argc != paramArgFuncs.Length)
         {
-            return (new MassEditResult(ParamMassEditResultType.PARSEERROR, $@"Invalid number of arguments for operation {globalOperation} (line {currentLine})"), null);
+            var finalResult = new MassEditResult(
+                ParamMassEditResultType.PARSEERROR,
+                LOC.Get("PARAM_MassEdit_Result_Error_Global_Op_Arg_Count", 
+                globalOperation, currentLine, argc, paramArgFuncs.Length));
+
+            return (finalResult, null);
         }
 
         return SandboxMassEditExecution(currentLine, partials => ExecGlobalOp(currentLine));
@@ -137,7 +154,12 @@ public class MassParamEditRegex
         varSelector = varstage[0].Trim();
         if (varSelector.Equals(""))
         {
-            return (new MassEditResult(ParamMassEditResultType.PARSEERROR, $@"Could not find variable filter. Add : and one of {String.Join(", ", CurrentView.MassEdit.VSE.AvailableCommandsForHelpText())} (line {currentLine})"), null);
+            var helpText = String.Join(", ", CurrentView.MassEdit.VSE.AvailableCommandsForHelpText());
+            var finalResult = new MassEditResult(
+                ParamMassEditResultType.PARSEERROR, 
+                LOC.Get("PARAM_MassEdit_Result_Error_Missing_Variable_Filter", helpText, currentLine));
+
+            return (finalResult, null);
         }
 
         if (varstage.Length < 2)
