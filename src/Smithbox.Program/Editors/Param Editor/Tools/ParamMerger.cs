@@ -217,16 +217,20 @@ public class ParamMerger
             return;
         }
 
-        if (!View.Project.Handler.ParamData.AuxBanks.ContainsKey(ParamMerge_TargetProject.Descriptor.ProjectName))
+        var paramData = View.Project.Handler.ParamData;
+
+        if(paramData == null)
+        {
+            return;
+        }
+
+        if (!paramData.AuxBanks.TryGetValue(ParamMerge_TargetProject.Descriptor.ProjectName, out var auxBank))
         {
             Smithbox.Log<ParamMerger>(LOC.Get("PARAM_Merger_Log_Project_Not_Loaded", ParamMerge_TargetProject.Descriptor.ProjectName));
-
             return;
         }
 
         ParamMerge_InProgress = true;
-
-        var auxBank = View.Project.Handler.ParamData.AuxBanks[ParamMerge_TargetProject.Descriptor.ProjectName];
 
         // ParamSearchEngine: auxparam {ParamMerge_TargetProject.ProjectName}
         // RowSearchEngine: modified && unique ID:
