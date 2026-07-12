@@ -85,6 +85,10 @@
       "Text": "No target project selected. Cannot merge."
     },
     {
+      "Key": "PARAM_Merger_Log_Param_Data_Not_Loaded",
+      "Text": "Target project has not loaded param data yet."
+    },
+    {
       "Key": "PARAM_Merger_Log_Project_Not_Loaded",
       "Text": "Target project: {0} is not loaded, cannot merge."
     },

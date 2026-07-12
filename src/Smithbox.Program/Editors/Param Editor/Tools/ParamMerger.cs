@@ -83,20 +83,35 @@ public class ParamMerger
                 {
                     ParamMerge_TargetProject = proj;
                 }
+
+                if(isSelected)
+                {
+                    if(ImGui.BeginPopupContextWindow("targetProjectContext"))
+                    {
+                        if(ImGui.Selectable($"{LOC.Get("PARAM_Merger_Action_Load_Project")}##loadProject"))
+                        {
+                            LoadTargetProject(proj);
+                        }
+
+                        ImGui.EndPopup();
+                    }
+                }
             }
 
             ImGui.EndChild();
 
-            GUI.MultiButtonInput("mergeActions",
+            GUI.ConditionalMultiButtonInput("mergeActions",
                 "loadProject", 
                 LOC.Get("PARAM_Merger_Action_Load_Project"),
                 LOC.Get("PARAM_Merger_Action_Load_Project_TT"),
                 LoadProjectAction,
+                true,
 
                 "mergeProject", 
                 LOC.Get("PARAM_Merger_Action_Merge_Project"),
                 LOC.Get("PARAM_Merger_Action_Merge_Project_TT"),
-                MergeParamsAction);
+                MergeParamsAction, 
+                CanMergeProject());
 
             // Options
             GUI.Spacer();
@@ -194,16 +209,48 @@ public class ParamMerger
         if (ParamMerge_TargetProject == null)
             return;
 
+        LoadTargetProject(ParamMerge_TargetProject);
+    }
+
+    public void LoadTargetProject(ProjectEntry project)
+    {
         var paramData = Project.Handler.ParamData;
 
-        Task<bool> loadTask = paramData.SetupAuxBank(ParamMerge_TargetProject, true);
+        if(paramData == null)
+        {
+            Smithbox.LogError<ParamMerger>(LOC.Get("PARAM_Merger_Log_Param_Data_Not_Loaded"));
+            return;
+        }
+
+        Task<bool> loadTask = paramData.SetupAuxBank(project, true);
 
         Task.WaitAll(loadTask);
 
         paramData.RefreshParamDifferenceCacheTask(true);
         TargetParams = new();
 
-        Smithbox.Log<ParamMerger>(LOC.Get("PARAM_Merger_Log_Loaded_Project", ParamMerge_TargetProject.Descriptor.ProjectName));
+        Smithbox.Log<ParamMerger>(LOC.Get("PARAM_Merger_Log_Loaded_Project", project.Descriptor.ProjectName));
+    }
+
+    public bool CanMergeProject()
+    {
+        if (ParamMerge_InProgress)
+            return false;
+
+        if (ParamMerge_TargetProject == null)
+            return false;
+
+        var paramData = View.Project.Handler.ParamData;
+
+        if (paramData == null)
+            return false;
+
+        if (!paramData.AuxBanks.ContainsKey(ParamMerge_TargetProject.Descriptor.ProjectName))
+        {
+            return false;
+        }
+
+        return true;
     }
 
     public void MergeParamsAction()
