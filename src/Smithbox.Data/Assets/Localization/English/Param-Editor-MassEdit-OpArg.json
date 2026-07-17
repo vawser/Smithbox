@@ -166,127 +166,131 @@
     },
     {
       "Key": "PARAM_OpArg_Median_TT",
-      "Text": "Gives the median value of the cells/fields found using the given selector, for the currently selected param"
+      "Text": "Gives the median value of the cells/fields found using the given selector, for the currently selected param."
     },
     {
       "Key": "PARAM_OpArg_Median_Error_Locate_Field",
       "Text": "Could not locate field {0}"
     },
     {
-      "Key": "PARAM_OpArg_",
-      "Text": ""
+      "Key": "PARAM_OpArg_Mode_Hint_1",
+      "Text": "field name"
     },
     {
-      "Key": "PARAM_OpArg_",
-      "Text": ""
+      "Key": "PARAM_OpArg_Mode_Hint_2",
+      "Text": "row selector"
     },
     {
-      "Key": "PARAM_OpArg_",
-      "Text": ""
+      "Key": "PARAM_OpArg_Mode_TT",
+      "Text": "Gives the most common value of the cells/fields found using the given selector, for the currently selected param."
     },
     {
-      "Key": "PARAM_OpArg_",
-      "Text": ""
+      "Key": "PARAM_OpArg_Mode_Error_Locate_Field",
+      "Text": "Could not locate field {0}"
     },
     {
-      "Key": "PARAM_OpArg_",
-      "Text": ""
+      "Key": "PARAM_OpArg_Min_Hint_1",
+      "Text": "field name"
     },
     {
-      "Key": "PARAM_OpArg_",
-      "Text": ""
+      "Key": "PARAM_OpArg_Min_Hint_2",
+      "Text": "row selector"
     },
     {
-      "Key": "PARAM_OpArg_",
-      "Text": ""
+      "Key": "PARAM_OpArg_Min_TT",
+      "Text": "Gives the smallest value from the cells/fields found using the given param, row selector and field."
     },
     {
-      "Key": "PARAM_OpArg_",
-      "Text": ""
+      "Key": "PARAM_OpArg_Min_Error_Locate_Field",
+      "Text": "Could not locate field {0}"
     },
     {
-      "Key": "PARAM_OpArg_",
-      "Text": ""
+      "Key": "PARAM_OpArg_Max_Hint_1",
+      "Text": "field name"
     },
     {
-      "Key": "PARAM_OpArg_",
-      "Text": ""
+      "Key": "PARAM_OpArg_Max_Hint_2",
+      "Text": "row selector"
     },
     {
-      "Key": "PARAM_OpArg_",
-      "Text": ""
+      "Key": "PARAM_OpArg_Max_TT",
+      "Text": "Gives the largest value from the cells/fields found using the given param, row selector and field."
     },
     {
-      "Key": "PARAM_OpArg_",
-      "Text": ""
+      "Key": "PARAM_OpArg_Max_Error_Locate_Field",
+      "Text": "Could not locate field {0}"
     },
     {
-      "Key": "PARAM_OpArg_",
-      "Text": ""
+      "Key": "PARAM_OpArg_Random_Hint_1",
+      "Text": "minimum number (inclusive)"
     },
     {
-      "Key": "PARAM_OpArg_",
-      "Text": ""
+      "Key": "PARAM_OpArg_Random_Hint_2",
+      "Text": "maximum number (exclusive)"
     },
     {
-      "Key": "PARAM_OpArg_",
-      "Text": ""
+      "Key": "PARAM_OpArg_Random_Hint_TT",
+      "Text": "Gives a random decimal number between the given values for each selected value"
     },
     {
-      "Key": "PARAM_OpArg_",
-      "Text": ""
+      "Key": "PARAM_OpArg_Random_Error_Parse_Min_Max_Values",
+      "Text": "Could not parse min and max random values"
     },
     {
-      "Key": "PARAM_OpArg_",
-      "Text": ""
+      "Key": "PARAM_OpArg_Random_Error_Max_Higher_Than_Min",
+      "Text": "Random max must be greater than min"
     },
     {
-      "Key": "PARAM_OpArg_",
-      "Text": ""
+      "Key": "PARAM_OpArg_RandInt_Hint_1",
+      "Text": "minimum integer (inclusive)"
     },
     {
-      "Key": "PARAM_OpArg_",
-      "Text": ""
+      "Key": "PARAM_OpArg_RandInt_Hint_2",
+      "Text": "maximum integer (inclusive)"
     },
     {
-      "Key": "PARAM_OpArg_",
-      "Text": ""
+      "Key": "PARAM_OpArg_RandInt_TT",
+      "Text": "Gives a random integer between the given values for each selected value."
     },
     {
-      "Key": "PARAM_OpArg_",
-      "Text": ""
+      "Key": "PARAM_OpArg_RandInt_Error_Parse_Min_Max_Values",
+      "Text": "Could not parse min and max random values"
     },
     {
-      "Key": "PARAM_OpArg_",
-      "Text": ""
+      "Key": "PARAM_OpArg_RandInt_Error_Max_Higher_Than_Min",
+      "Text": "Random max must be greater than min"
     },
     {
-      "Key": "PARAM_OpArg_",
-      "Text": ""
+      "Key": "PARAM_OpArg_RandFrom_Hint_1",
+      "Text": "param name"
     },
     {
-      "Key": "PARAM_OpArg_",
-      "Text": ""
+      "Key": "PARAM_OpArg_RandFrom_Hint_2",
+      "Text": "field name"
     },
     {
-      "Key": "PARAM_OpArg_",
-      "Text": ""
+      "Key": "PARAM_OpArg_RandFrom_Hint_3",
+      "Text": "row selector"
     },
     {
-      "Key": "PARAM_OpArg_",
-      "Text": ""
+      "Key": "PARAM_OpArg_RandFrom_TT",
+      "Text": "Gives a random value from the cells/fields found using the given param, row selector and field, for each selected value."
     },
     {
-      "Key": "PARAM_OpArg_",
-      "Text": ""
+      "Key": "PARAM_OpArg_ParamIndex_TT",
+      "Text": "Gives an integer for the current selected param, beginning at 0 and increasing by 1 for each param selected."
     },
     {
-      "Key": "PARAM_OpArg_",
-      "Text": ""
+      "Key": "PARAM_OpArg_RowIndex_TT",
+      "Text": "Gives an integer for the current selected row, beginning at 0 and increasing by 1 for each row selected."
     },
     {
-      "Key": "PARAM_OpArg_",
-      "Text": ""
+      "Key": "PARAM_OpArg_FieldIndex_TT",
+      "Text": "Gives an integer for the current selected cell/field, beginning at 0 and increasing by 1 for each cell/field selected."
     },
+    {
+      "Key": "PARAM_OpArg_ContextualArg_Wrong_Arg_Count",
+      "Text": "Contextual value {0} has wrong number of arguments. Expected {1}"
+    }
   ]
 }

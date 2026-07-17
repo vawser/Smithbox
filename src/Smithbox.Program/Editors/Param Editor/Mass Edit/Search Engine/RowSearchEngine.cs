@@ -30,14 +30,16 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
         unpacker = param => new List<Param.Row>(param.Item2.Rows);
 
         filterList.Add("all", newCmd(new string[0],
-            "Selects all rows", noArgs(context =>
+            LOC.Get("PARAM_RSE_All_TT"), 
+            noArgs(context =>
             {
                 return row => true;
             }
             )));
 
         filterList.Add("modified", newCmd(new string[0],
-            "Selects rows which do not match the vanilla version, or are added. Ignores row name", noArgs(context =>
+            LOC.Get("PARAM_RSE_Modified_TT"), 
+            noArgs(context =>
             {
                 var paramName = context.Item1.GetKeyForParam(context.Item2);
                 HashSet<int> cache = context.Item1.GetVanillaDiffRows(paramName);
@@ -46,7 +48,7 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
             )));
 
         filterList.Add("auxmodified", newCmd(new string[0],
-            "Selects rows which do not match the aux version, or are added. Ignores row name", noArgs(context =>
+            LOC.Get("PARAM_RSE_AuxModified_TT"), noArgs(context =>
             {
                 var paramName = context.Item1.GetKeyForParam(context.Item2);
                 HashSet<int> cache = context.Item1.GetPrimaryDiffRows(paramName);
@@ -55,20 +57,21 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
             )));
 
         filterList.Add("named", newCmd(new string[0],
-            "Selects rows whose name isn't blank or null", (args, lenient) =>
+            LOC.Get("PARAM_RSE_Named_TT"), (args, lenient) =>
             {
                 return noContext(row => row.Name != null || row.Name != "");
             }));
 
         filterList.Add("selected", newCmd(new string[0],
-            "Selects rows that are already manually selected", (args, lenient) =>
+            LOC.Get("PARAM_RSE_Selected_TT"), (args, lenient) =>
             {
                 var selectedRows = CurrentView.Selection.GetSelectedRows();
 
                 return noContext(row => selectedRows.Contains(row));
             }));
 
-        filterList.Add("added", newCmd(new string[0], "Selects rows where the ID is not found in the vanilla param",
+        filterList.Add("added", newCmd(new string[0], 
+            LOC.Get("PARAM_RSE_Added_TT"),
             noArgs(context =>
             {
                 var paramName = context.Item1.GetKeyForParam(context.Item2);
@@ -83,7 +86,7 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
             )));
 
         filterList.Add("mergeable", newCmd(new string[0],
-            "Selects rows which are not modified in the primary regulation or parambnd and there is exactly one equivalent row in another regulation or parambnd that is modified",
+            LOC.Get("PARAM_RSE_Mergable"),
             noArgs(context =>
             {
                 var paramName = context.Item1.GetKeyForParam(context.Item2);
@@ -102,7 +105,7 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
             ), () => auxBanks.Count > 0));
 
         filterList.Add("conflicts", newCmd(new string[0],
-            "Selects rows which, among all equivalents in the primary and additional regulations or parambnds, there is more than row 1 which is modified",
+            LOC.Get("PARAM_RSE_Conflicts_TT"),
             noArgs(context =>
             {
                 var paramName = context.Item1.GetKeyForParam(context.Item2);
@@ -115,30 +118,40 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
             }
             ), () => auxBanks.Count > 0));
 
-        filterList.Add("id", newCmd(new[] { "row id (regex)" }, "Selects rows whose ID matches the given regex",
+        filterList.Add("id", newCmd(new[] { 
+            LOC.Get("PARAM_RSE_ID_Hint_1")}, 
+            LOC.Get("PARAM_RSE_ID_Hint"),
             (args, lenient) =>
             {
                 Regex rx = lenient ? new Regex(args[0].ToLower()) : new Regex($@"^{args[0]}$");
                 return noContext(row => rx.IsMatch(row.ID.ToString()));
             }));
 
-        filterList.Add("idrange", newCmd(new[] { "row id minimum (inclusive)", "row id maximum (inclusive)" },
-            "Selects rows whose ID falls in the given numerical range", (args, lenient) =>
+        filterList.Add("idrange", newCmd(new[] { 
+            LOC.Get("PARAM_RSE_IdRange_Hint_1"),
+            LOC.Get("PARAM_RSE_IdRange_Hint_2")},
+            LOC.Get("PARAM_RSE_IdRange_TT"), 
+            (args, lenient) =>
             {
                 var floor = double.Parse(args[0]);
                 var ceil = double.Parse(args[1]);
                 return noContext(row => row.ID >= floor && row.ID <= ceil);
             }));
 
-        filterList.Add("name", newCmd(new[] { "row name (regex)" },
-            "Selects rows whose Name matches the given regex", (args, lenient) =>
+        filterList.Add("name", newCmd(new[] { 
+            LOC.Get("PARAM_RSE_Name_Hint_1")},
+            LOC.Get("PARAM_RSE_Name_TT"), 
+            (args, lenient) =>
             {
                 Regex rx = lenient ? new Regex(args[0], RegexOptions.IgnoreCase) : new Regex($@"^{args[0]}$");
                 return noContext(row => rx.IsMatch(row.Name == null ? "" : row.Name));
             }));
 
-        filterList.Add("prop", newCmd(new[] { "field internalName", "field value (regex)" },
-            "Selects rows where the specified field has a value that matches the given regex", (args, lenient) =>
+        filterList.Add("prop", newCmd(new[] { 
+            LOC.Get("PARAM_RSE_Prop_Hint_1"),
+            LOC.Get("PARAM_RSE_Prop_Hint_2")},
+            LOC.Get("PARAM_RSE_Prop_Hint_TT"), 
+            (args, lenient) =>
             {
                 Regex rx = lenient ? new Regex(args[1], RegexOptions.IgnoreCase) : new Regex($@"^{args[1]}$");
                 var field = args[0];
@@ -156,9 +169,11 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                 });
             }));
 
-        filterList.Add("proprange", newCmd(
-            new[] { "field internalName", "field value minimum (inclusive)", "field value maximum (inclusive)" },
-            "Selects rows where the specified field has a value that falls in the given numerical range",
+        filterList.Add("proprange", newCmd(new[] {
+            LOC.Get("PARAM_RSE_PropRange_Hint_1"),
+            LOC.Get("PARAM_RSE_PropRange_Hint_2"),
+            LOC.Get("PARAM_RSE_PropRange_Hint_3")},
+            LOC.Get("PARAM_RSE_PropRange_TT"),
             (args, lenient) =>
             {
                 var field = args[0];
@@ -176,9 +191,9 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                 });
             }));
 
-        filterList.Add("positive", newCmd(
-            new[] { "field internalName" },
-            "Selects rows where the specified field has a value that is a positive, non-zero number",
+        filterList.Add("positive", newCmd(new[] { 
+            LOC.Get("PARAM_RSE_Positive_Hint_1")},
+            LOC.Get("PARAM_RSE_Positive_TT"),
             (args, lenient) =>
             {
                 var field = args[0];
@@ -197,9 +212,9 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                 });
             }));
 
-        filterList.Add("negative", newCmd(
-            new[] { "field internalName" },
-            "Selects rows where the specified field has a value that is a negative, non-zero number",
+        filterList.Add("negative", newCmd(new[] {
+            LOC.Get("PARAM_RSE_Negative_Hint_1")},
+            LOC.Get("PARAM_RSE_Negative_TT"),
             (args, lenient) =>
             {
                 var field = args[0];
@@ -218,8 +233,10 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                 });
             }));
 
-        filterList.Add("propref", newCmd(new[] { "field internalName", "referenced row name (regex)" },
-            "Selects rows where the specified field that references another param has a value referencing a row whose name matches the given regex",
+        filterList.Add("propref", newCmd(new[] { 
+            LOC.Get("PARAM_RSE_PropRef_Hint_1"),
+            LOC.Get("PARAM_RSE_PropRef_Hint_2")},
+            LOC.Get("PARAM_RSE_PropRef_TT"),
             (args, lenient) =>
             {
                 Regex rx = lenient ? new Regex(args[1], RegexOptions.IgnoreCase) : new Regex($@"^{args[1]}$");
@@ -255,8 +272,10 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                 };
             }));
 
-        filterList.Add("propwhere", newCmd(new[] { "field internalName", "cell/field selector" },
-            "Selects rows where the specified field appears when the given cell/field search is given",
+        filterList.Add("propwhere", newCmd(new[] {
+            LOC.Get("PARAM_RSE_PropWhere_Hint_1"),
+            LOC.Get("PARAM_RSE_PropWhere_Hint_2")},
+            LOC.Get("PARAM_RSE_PropWhere_TT"),
             (args, lenient) =>
             {
                 var field = args[0];
@@ -275,8 +294,9 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                 };
             }));
 
-        filterList.Add("fmg", newCmd(new[] { "fmg title (regex)" },
-            "Selects rows which have an attached FMG and that FMG's text matches the given regex",
+        filterList.Add("fmg", newCmd(new[] { 
+            LOC.Get("PARAM_RSE_Fmg_Hint_1")},
+            LOC.Get("PARAM_RSE_Fmg_TT"),
             (args, lenient) =>
             {
                 Regex rx = lenient ? new Regex(args[0], RegexOptions.IgnoreCase) : new Regex($@"^{args[0]}$");
@@ -306,8 +326,10 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                 };
             }));
 
-        filterList.Add("vanillaprop", newCmd(new[] { "field internalName", "field value (regex)" },
-            "Selects rows where the vanilla equivilent of that row has a value for the given field that matches the given regex",
+        filterList.Add("vanillaprop", newCmd(new[] { 
+            LOC.Get("PARAM_RSE_VanillaProp_Hint_1"),
+            LOC.Get("PARAM_RSE_VanillaProp_Hint_2")},
+            LOC.Get("PARAM_RSE_VanillaProp_TT"),
             (args, lenient) =>
             {
                 Regex rx = lenient ? new Regex(args[1], RegexOptions.IgnoreCase) : new Regex($@"^{args[1]}$");
@@ -336,9 +358,11 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                 };
             }));
 
-        filterList.Add("vanillaproprange", newCmd(
-            new[] { "field internalName", "field value minimum (inclusive)", "field value maximum (inclusive)" },
-            "Selects rows where the vanilla equivilent of that row has a value for the given field that falls in the given numerical range",
+        filterList.Add("vanillaproprange", newCmd(new[] { 
+            LOC.Get("PARAM_RSE_VanillaPropRange_Hint_1"),
+            LOC.Get("PARAM_RSE_VanillaPropRange_Hint_2"),
+            LOC.Get("PARAM_RSE_VanillaPropRange_Hint_3")},
+            LOC.Get("PARAM_RSE_VanillaPropRange_TT"),
             (args, lenient) =>
             {
                 var field = args[0];
@@ -366,8 +390,11 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                 };
             }));
 
-        filterList.Add("auxprop", newCmd(new[] { "parambank name", "field internalName", "field value (regex)" },
-            "Selects rows where the equivilent of that row in the given regulation or parambnd has a value for the given field that matches the given regex.\nCan be used to determine if an aux row exists.",
+        filterList.Add("auxprop", newCmd(new[] { 
+            LOC.Get("PARAM_RSE_AuxProp_Hint_1"),
+            LOC.Get("PARAM_RSE_AuxProp_Hint_2"),
+            LOC.Get("PARAM_RSE_AuxProp_Hint_3")},
+            LOC.Get("PARAM_RSE_AuxProp_TT"),
             (args, lenient) =>
             {
                 Regex rx = lenient ? new Regex(args[2], RegexOptions.IgnoreCase) : new Regex($@"^{args[2]}$");
@@ -375,7 +402,8 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                 ParamBank bank;
                 if (!auxBanks.TryGetValue(args[0], out bank))
                 {
-                    throw new Exception("Unable to find auxbank " + args[0]);
+                    throw new Exception(
+                        LOC.Get("PARAM_RSE_AuxProp_Error_Missing_AuxBank", args[0]));
                 }
 
                 return param =>
@@ -402,13 +430,12 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                 };
             }, () => auxBanks.Count > 0));
 
-        filterList.Add("auxproprange", newCmd(
-            new[]
-            {
-                "parambank name", "field internalName", "field value minimum (inclusive)",
-                "field value maximum (inclusive)"
-            },
-            "Selects rows where the equivilent of that row in the given regulation or parambnd has a value for the given field that falls in the given range",
+        filterList.Add("auxproprange", newCmd(new[] {
+            LOC.Get("PARAM_RSE_AuxPropRange_Hint_1"),
+            LOC.Get("PARAM_RSE_AuxPropRange_Hint_2"),
+            LOC.Get("PARAM_RSE_AuxPropRange_Hint_3"),
+            LOC.Get("PARAM_RSE_AuxPropRange_Hint_4")},
+            LOC.Get("PARAM_RSE_AuxPropRange_TT"),
             (args, lenient) =>
             {
                 var field = args[0];
@@ -417,7 +444,8 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                 ParamBank bank;
                 if (!auxBanks.TryGetValue(args[0], out bank))
                 {
-                    throw new Exception("Unable to find auxbank " + args[0]);
+                    throw new Exception(
+                        LOC.Get("PARAM_RSE_AuxProp_Error_Missing_AuxBank", args[0]));
                 }
 
                 return param =>
@@ -438,13 +466,12 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
             }, () => auxBanks.Count > 0));
 
         filterList.Add("semijoin",
-            newCmd(
-                new[]
-                {
-                    "this field internalName", "other param", "other param field internalName",
-                    "other param row search"
-                },
-                "Selects all rows where the value of a given field is any of the values in the second given field found in the given param using the given row selector",
+            newCmd(new[] {
+                LOC.Get("PARAM_RSE_SemiJoin_Hint_1"),
+                LOC.Get("PARAM_RSE_SemiJoin_Hint_2"),
+                LOC.Get("PARAM_RSE_SemiJoin_Hint_3"),
+                LOC.Get("PARAM_RSE_SemiJoin_Hint_4")},
+                LOC.Get("PARAM_RSE_SemiJoin_TT"),
                 (args, lenient) =>
                 {
                     var thisField = args[0];
@@ -454,7 +481,8 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                     Param otherParamReal;
                     if (!pBank.Params.TryGetValue(otherParam, out otherParamReal))
                     {
-                        throw new Exception("Could not find param " + otherParam);
+                        throw new Exception(
+                            LOC.Get("PARAM_RSE_SemiJoin_Error_Cannot_Find_Param", otherParam));
                     }
 
                     List<Param.Row> rows = CurrentView.MassEdit.RSE.Search((pBank, otherParamReal), otherSearchTerm,
@@ -462,7 +490,8 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                     (ParamEditorPseudoColumn, Param.Column) otherFieldReal = otherParamReal.GetCol(otherField);
                     if (!otherFieldReal.IsColumnValid())
                     {
-                        throw new Exception("Could not find field " + otherField);
+                        throw new Exception(
+                            LOC.Get("PARAM_RSE_SemiJoin_Error_Cannot_Find_Field", otherField));
                     }
 
                     HashSet<string> possibleValues = rows.Select(x => x.Get(otherFieldReal).ToParamEditorString())
@@ -472,7 +501,8 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                         (ParamEditorPseudoColumn, Param.Column) thisFieldReal = param.Item2.GetCol(thisField);
                         if (!thisFieldReal.IsColumnValid())
                         {
-                            throw new Exception("Could not find field " + thisField);
+                            throw new Exception(
+                                LOC.Get("PARAM_RSE_SemiJoin_Error_Cannot_Find_Field", thisField));
                         }
 
                         return row =>
@@ -483,14 +513,21 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                     };
                 }));
 
-        filterList.Add("unique", newCmd(new string[] { "field" }, "Selects all rows where the value in the given field is unique", (args, lenient) =>
+        filterList.Add("unique", newCmd(new string[] {  
+            LOC.Get("PARAM_RSE_Unique_Hint_1")}, 
+            LOC.Get("PARAM_RSE_Unique_TT"), 
+            (args, lenient) =>
         {
             string field = args[0].Replace(@"\s", " ");
             return (param) =>
             {
                 var col = param.Item2.GetCol(field);
                 if (!col.IsColumnValid())
-                    throw new Exception("Could not find field " + field);
+                {
+                    throw new Exception(
+                        LOC.Get("PARAM_RSE_Unique_Error_Cannot_Find_Field", field));
+                }
+
                 var distribution = ParamUtils.GetParamValueDistribution(param.Item2.Rows, col);
                 var setOfDuped = distribution.Where((entry, linqi) => entry.Item2 > 1).Select((entry, linqi) => entry.Item1).ToHashSet();
                 return (row) =>
@@ -500,8 +537,9 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
             };
         }));
 
-        defaultFilter = newCmd(new[] { "row ID or Name (regex)" },
-            "Selects rows where either the ID or Name matches the given regex, except in strict/massedit mode",
+        defaultFilter = newCmd(new[] {
+            LOC.Get("PARAM_RSE_Default_Hint_1")},
+            LOC.Get("PARAM_RSE_Default_TT"),
             (args, lenient) =>
             {
                 if (!lenient)

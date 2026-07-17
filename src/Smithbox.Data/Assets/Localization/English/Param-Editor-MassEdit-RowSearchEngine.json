@@ -1,8 +1,260 @@
 {
   "Entries": [
     {
-      "Key": "PARAM_RSE_",
-      "Text": ""
+      "Key": "PARAM_RSE_All_TT",
+      "Text": "Selects all rows."
     },
+    {
+      "Key": "PARAM_RSE_Modified_TT",
+      "Text": "Selects rows which do not match the vanilla version, or are added. Ignores row name."
+    },
+    {
+      "Key": "PARAM_RSE_AuxModified_TT",
+      "Text": "Selects rows which do not match the aux version, or are added. Ignores row name."
+    },
+    {
+      "Key": "PARAM_RSE_Named_TT",
+      "Text": "Selects rows whose name isn't blank or null."
+    },
+    {
+      "Key": "PARAM_RSE_Selected_TT",
+      "Text": "Selects rows that are already manually selected."
+    },
+    {
+      "Key": "PARAM_RSE_Added_TT",
+      "Text": "Selects rows where the ID is not found in the vanilla param."
+    },
+    {
+      "Key": "PARAM_RSE_Mergable",
+      "Text": "Selects rows which are not modified in the primary regulation or parambnd and there is exactly one equivalent row in another regulation or parambnd that is modified."
+    },
+    {
+      "Key": "PARAM_RSE_Conflicts_TT",
+      "Text": "Selects rows which, among all equivalents in the primary and additional regulations or parambnds, there is more than row 1 which is modified."
+    },
+    {
+      "Key": "PARAM_RSE_ID_Hint_1",
+      "Text": "row id (regex)"
+    },
+    {
+      "Key": "PARAM_RSE_ID_Hint",
+      "Text": "Selects rows whose ID matches the given regex"
+    },
+    {
+      "Key": "PARAM_RSE_IdRange_Hint_1",
+      "Text": "row id minimum (inclusive)"
+    },
+    {
+      "Key": "PARAM_RSE_IdRange_Hint_2",
+      "Text": "row id maximum (inclusive)"
+    },
+    {
+      "Key": "PARAM_RSE_IdRange_TT",
+      "Text": "Selects rows whose ID falls in the given numerical range."
+    },
+    {
+      "Key": "PARAM_RSE_Name_Hint_1",
+      "Text": "row name (regex)"
+    },
+    {
+      "Key": "PARAM_RSE_Name_TT",
+      "Text": "Selects rows whose Name matches the given regex."
+    },
+    {
+      "Key": "PARAM_RSE_Prop_Hint_1",
+      "Text": "field name"
+    },
+    {
+      "Key": "PARAM_RSE_Prop_Hint_2",
+      "Text": "field value (regex)"
+    },
+    {
+      "Key": "PARAM_RSE_Prop_Hint_TT",
+      "Text": "Selects rows where the specified field has a value that matches the given regex."
+    },
+    {
+      "Key": "PARAM_RSE_PropRange_Hint_1",
+      "Text": "field name"
+    },
+    {
+      "Key": "PARAM_RSE_PropRange_Hint_2",
+      "Text": "field value minimum (inclusive)"
+    },
+    {
+      "Key": "PARAM_RSE_PropRange_Hint_3",
+      "Text": "field value maximum (inclusive)"
+    },
+    {
+      "Key": "PARAM_RSE_PropRange_TT",
+      "Text": "Selects rows where the specified field has a value that falls in the given numerical range"
+    },
+    {
+      "Key": "PARAM_RSE_Positive_Hint_1",
+      "Text": "field name"
+    },
+    {
+      "Key": "PARAM_RSE_Positive_TT",
+      "Text": "Selects rows where the specified field has a value that is a positive, non-zero number."
+    },
+    {
+      "Key": "PARAM_RSE_Negative_Hint_1",
+      "Text": "field name"
+    },
+    {
+      "Key": "PARAM_RSE_Negative_TT",
+      "Text": "Selects rows where the specified field has a value that is a negative, non-zero number."
+    },
+    {
+      "Key": "PARAM_RSE_PropRef_Hint_1",
+      "Text": "field name"
+    },
+    {
+      "Key": "PARAM_RSE_PropRef_Hint_2",
+      "Text": "referenced row name (regex)"
+    },
+    {
+      "Key": "PARAM_RSE_PropRef_TT",
+      "Text": "Selects rows where the specified field that references another param has a value referencing a row whose name matches the given regex."
+    },
+    {
+      "Key": "PARAM_RSE_PropWhere_Hint_1",
+      "Text": "field name"
+    },
+    {
+      "Key": "PARAM_RSE_PropWhere_Hint_2",
+      "Text": "cell / field selector"
+    },
+    {
+      "Key": "PARAM_RSE_PropWhere_TT",
+      "Text": "Selects rows where the specified field appears when the given cell/field search is given."
+    },
+    {
+      "Key": "PARAM_RSE_Fmg_Hint_1",
+      "Text": "text (regex)"
+    },
+    {
+      "Key": "PARAM_RSE_Fmg_TT",
+      "Text": "Selects rows which have an attached FMG and that FMG's text matches the given regex."
+    },
+    {
+      "Key": "PARAM_RSE_VanillaProp_Hint_1",
+      "Text": "field name"
+    },
+    {
+      "Key": "PARAM_RSE_VanillaProp_Hint_2",
+      "Text": "field value (regex)"
+    },
+    {
+      "Key": "PARAM_RSE_VanillaProp_TT",
+      "Text": "Selects rows where the vanilla equivilent of that row has a value for the given field that matches the given regex."
+    },
+    {
+      "Key": "PARAM_RSE_VanillaPropRange_Hint_1",
+      "Text": "field name"
+    },
+    {
+      "Key": "PARAM_RSE_VanillaPropRange_Hint_2",
+      "Text": "field value minimum (inclusive)"
+    },
+    {
+      "Key": "PARAM_RSE_VanillaPropRange_Hint_3",
+      "Text": "field value maximum (inclusive)"
+    },
+    {
+      "Key": "PARAM_RSE_VanillaPropRange_TT",
+      "Text": "Selects rows where the vanilla equivilent of that row has a value for the given field that falls in the given numerical range."
+    },
+    {
+      "Key": "PARAM_RSE_AuxProp_Hint_1",
+      "Text": "parambank name"
+    },
+    {
+      "Key": "PARAM_RSE_AuxProp_Hint_2",
+      "Text": "field name"
+    },
+    {
+      "Key": "PARAM_RSE_AuxProp_Hint_3",
+      "Text": "field value (regex)"
+    },
+    {
+      "Key": "PARAM_RSE_AuxProp_TT",
+      "Text": "Selects rows where the equivilent of that row in the given regulation or parambnd has a value for the given field that matches the given regex.\nCan be used to determine if an aux row exists."
+    },
+    {
+      "Key": "PARAM_RSE_AuxProp_Error_Missing_AuxBank",
+      "Text": "Unable to find auxbank: {0}"
+    },
+    {
+      "Key": "PARAM_RSE_AuxPropRange_Hint_1",
+      "Text": "parambank name"
+    },
+    {
+      "Key": "PARAM_RSE_AuxPropRange_Hint_2",
+      "Text": "field name"
+    },
+    {
+      "Key": "PARAM_RSE_AuxPropRange_Hint_3",
+      "Text": "field value minimum (inclusive)"
+    },
+    {
+      "Key": "PARAM_RSE_AuxPropRange_Hint_4",
+      "Text": "field value maximum (inclusive)"
+    },
+    {
+      "Key": "PARAM_RSE_AuxPropRange_TT",
+      "Text": "Selects rows where the equivilent of that row in the given regulation or parambnd has a value for the given field that falls in the given range."
+    },
+    {
+      "Key": "PARAM_RSE_AuxPropRange_Error_Missing_AuxBank",
+      "Text": "Unable to find auxbank: {0}"
+    },
+    {
+      "Key": "PARAM_RSE_SemiJoin_Hint_1",
+      "Text": "field name (current)"
+    },
+    {
+      "Key": "PARAM_RSE_SemiJoin_Hint_2",
+      "Text": "param name (target)"
+    },
+    {
+      "Key": "PARAM_RSE_SemiJoin_Hint_3",
+      "Text": "field name (target)"
+    },
+    {
+      "Key": "PARAM_RSE_SemiJoin_Hint_4",
+      "Text": "row selector (target)"
+    },
+    {
+      "Key": "PARAM_RSE_SemiJoin_TT",
+      "Text": "Selects all rows where the value of a given field is any of the values in the second given field found in the given param using the given row selector."
+    },
+    {
+      "Key": "PARAM_RSE_SemiJoin_Error_Cannot_Find_Param",
+      "Text": "Could not find param: {0}"
+    },
+    {
+      "Key": "PARAM_RSE_SemiJoin_Error_Cannot_Find_Field",
+      "Text": "Could not find field: {0}"
+    },
+    {
+      "Key": "PARAM_RSE_Unique_Hint_1",
+      "Text": "field name"
+    },
+    {
+      "Key": "PARAM_RSE_Unique_TT",
+      "Text": "Selects all rows where the value in the given field is unique."
+    },
+    {
+      "Key": "PARAM_RSE_Unique_Error_Cannot_Find_Field",
+      "Text": "Could not find field: {0}"
+    },
+    {
+      "Key": "PARAM_RSE_Default_Hint_1",
+      "Text": "row ID or Name (regex)"
+    },
+    {
+      "Key": "PARAM_RSE_Default_TT",
+      "Text": "Selects rows where either the ID or Name matches the given regex, except in strict/massedit mode."
+    }
   ]
 }

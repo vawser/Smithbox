@@ -358,7 +358,7 @@
     },
     {
       "Key": "PARAM_MassEdit_Result_Error_Global_Op",
-      "Text": "Unknown global operation {0} (line {1})""
+      "Text": "Unknown global operation {0} (line {1})"
     },
     {
       "Key": "PARAM_MassEdit_Result_Error_Global_Op_Arg_Count",
@@ -370,7 +370,7 @@
     },
     {
       "Key": "PARAM_MassEdit_Result_Error_Cannot_Find_Var_Op",
-      "Text": "Could not find var operation. Check your colon placement. (line {0})""
+      "Text": "Could not find var operation. Check your colon placement. (line {0})"
     },
     {
       "Key": "PARAM_MassEdit_Result_Error_Cannot_Find_Var_Op_Symbol",

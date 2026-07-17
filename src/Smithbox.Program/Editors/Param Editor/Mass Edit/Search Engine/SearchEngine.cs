@@ -20,7 +20,9 @@ public class SearchEngine<A, B>
 
     protected void addExistsFilter()
     {
-        filterList.Add("exists", newCmd(new string[0], "Selects all elements", noArgs(noContext(B => true))));
+        filterList.Add("exists", newCmd(new string[0], 
+            LOC.Get("PARAM_SE_Exists_TT"), 
+            noArgs(noContext(B => true))));
     }
 
     protected Func<string[], bool, Func<A, Func<B, bool>>> noArgs(Func<A, Func<B, bool>> func)
@@ -58,13 +60,14 @@ public class SearchEngine<A, B>
             SearchEngineCommand<A, B> cmd = filterList[op];
             if (cmd.shouldShow == null || cmd.shouldShow())
             {
-                options.Add(op + "(" + filterList[op].args.Length + " args)");
+                options.Add(
+                    LOC.Get("PARAM_SE_CommandsForHelp_Args", op, filterList[op].args.Length));
             }
         }
 
         if (defaultFilter != null && (defaultFilter.shouldShow == null || defaultFilter.shouldShow()))
         {
-            options.Add("or omit specifying and use default (" + defaultFilter.args.Length + "args)");
+            options.Add(LOC.Get("PARAM_SE_CommandsForHelp_Default_Args", defaultFilter.args.Length));
         }
 
         return options;

@@ -360,8 +360,10 @@ public class MEOperationArgument
             }));
 
         // mode <field name> <row selector>
-        argumentGetters.Add("mode", newGetter(new[] { "field internalName", "row selector" },
-            "Gives the most common value of the cells/fields found using the given selector, for the currently selected param",
+        argumentGetters.Add("mode", newGetter(new[] { 
+            LOC.Get("PARAM_OpArg_Mode_Hint_1"),
+            LOC.Get("PARAM_OpArg_Mode_Hint_2")},
+            LOC.Get("PARAM_OpArg_Mode_TT"),
             field => (i, param) =>
             {
                 var pBank = CurrentView.GetPrimaryBank();
@@ -369,7 +371,8 @@ public class MEOperationArgument
                 (ParamEditorPseudoColumn, Param.Column) col = param.GetCol(field[0]);
                 if (!col.IsColumnValid())
                 {
-                    throw new Exception($@"Could not locate field {field[0]}");
+                    throw new Exception(
+                        LOC.Get("PARAM_OpArg_Mode_Error_Locate_Field", field[0]));
                 }
 
                 List<Param.Row> rows = CurrentView.MassEdit.RSE.Search((pBank, param), field[1], false, false);
@@ -380,8 +383,10 @@ public class MEOperationArgument
                 return (j, row) => (k, c) => avg.ToParamEditorString();
             }));
 
-        argumentGetters.Add("min", newGetter(new[] { "field internalName", "row selector" },
-            "Gives the smallest value from the cells/fields found using the given param, row selector and field",
+        argumentGetters.Add("min", newGetter(new[] { 
+            LOC.Get("PARAM_OpArg_Min_Hint_1"),
+            LOC.Get("PARAM_OpArg_Min_Hint_2")},
+            LOC.Get("PARAM_OpArg_Min_TT"),
             field => (i, param) =>
             {
                 var pBank = CurrentView.GetPrimaryBank();
@@ -389,7 +394,8 @@ public class MEOperationArgument
                 (ParamEditorPseudoColumn, Param.Column) col = param.GetCol(field[0]);
                 if (!col.IsColumnValid())
                 {
-                    throw new Exception($@"Could not locate field {field[0]}");
+                    throw new Exception(
+                        LOC.Get("PARAM_OpArg_Min_Error_Locate_Field", field[0]));
                 }
 
                 List<Param.Row> rows = CurrentView.MassEdit.RSE.Search((pBank, param), field[1], false, false);
@@ -399,8 +405,10 @@ public class MEOperationArgument
                 return (j, row) => (k, c) => min.ToParamEditorString();
             }));
 
-        argumentGetters.Add("max", newGetter(new[] { "field internalName", "row selector" },
-            "Gives the largest value from the cells/fields found using the given param, row selector and field",
+        argumentGetters.Add("max", newGetter(new[] { 
+            LOC.Get("PARAM_OpArg_Max_Hint_1"),
+            LOC.Get("PARAM_OpArg_Max_Hint_2")},
+            LOC.Get("PARAM_OpArg_Max_TT"),
             field => (i, param) =>
             {
                 var pBank = CurrentView.GetPrimaryBank();
@@ -408,7 +416,8 @@ public class MEOperationArgument
                 (ParamEditorPseudoColumn, Param.Column) col = param.GetCol(field[0]);
                 if (!col.IsColumnValid())
                 {
-                    throw new Exception($@"Could not locate field {field[0]}");
+                    throw new Exception(
+                        LOC.Get("PARAM_OpArg_Max_Error_Locate_Field", field[0]));
                 }
 
                 List<Param.Row> rows = CurrentView.MassEdit.RSE.Search((pBank, param), field[1], false, false);
@@ -418,47 +427,56 @@ public class MEOperationArgument
                 return (j, row) => (k, c) => max.ToParamEditorString();
             }));
 
-        argumentGetters.Add("random", newGetter(
-            new[] { "minimum number (inclusive)", "maximum number (exclusive)" },
-            "Gives a random decimal number between the given values for each selected value", minAndMax =>
+        argumentGetters.Add("random", newGetter(new[] { 
+            LOC.Get("PARAM_OpArg_Random_Hint_1"),
+            LOC.Get("PARAM_OpArg_Random_Hint_2")},
+            LOC.Get("PARAM_OpArg_Random_Hint_TT"), minAndMax =>
             {
                 double min;
                 double max;
                 if (!double.TryParse(minAndMax[0], out min) || !double.TryParse(minAndMax[1], out max))
                 {
-                    throw new Exception(@"Could not parse min and max random values");
+                    throw new Exception(
+                        LOC.Get("PARAM_OpArg_Random_Error_Parse_Min_Max_Values"));
                 }
 
                 if (max <= min)
                 {
-                    throw new Exception(@"Random max must be greater than min");
+                    throw new Exception(
+                        LOC.Get("PARAM_OpArg_Random_Error_Max_Higher_Than_Min"));
                 }
 
                 var range = max - min;
                 return (i, param) => (j, row) => (k, c) => ((Random.Shared.NextDouble() * range) + min).ToString();
             }));
 
-        argumentGetters.Add("randint", newGetter(
-            new[] { "minimum integer (inclusive)", "maximum integer (inclusive)" },
-            "Gives a random integer between the given values for each selected value", minAndMax =>
+        argumentGetters.Add("randint", newGetter(new[] { 
+            LOC.Get("PARAM_OpArg_RandInt_Hint_1"),
+            LOC.Get("PARAM_OpArg_RandInt_Hint_2")},
+            LOC.Get("PARAM_OpArg_RandInt_TT"), minAndMax =>
             {
                 int min;
                 int max;
                 if (!int.TryParse(minAndMax[0], out min) || !int.TryParse(minAndMax[1], out max))
                 {
-                    throw new Exception(@"Could not parse min and max randint values");
+                    throw new Exception(
+                        LOC.Get("PARAM_OpArg_RandInt_Error_Parse_Min_Max_Values"));
                 }
 
                 if (max <= min)
                 {
-                    throw new Exception(@"Random max must be greater than min");
+                    throw new Exception(
+                        LOC.Get("PARAM_OpArg_RandInt_Error_Max_Higher_Than_Min"));
                 }
 
                 return (i, param) => (j, row) => (k, c) => Random.Shared.NextInt64(min, max + 1).ToString();
             }));
 
-        argumentGetters.Add("randFrom", newGetter(new[] { "param name", "field internalName", "row selector" },
-            "Gives a random value from the cells/fields found using the given param, row selector and field, for each selected value",
+        argumentGetters.Add("randFrom", newGetter(new[] { 
+            LOC.Get("PARAM_OpArg_RandFrom_Hint_1"),
+            LOC.Get("PARAM_OpArg_RandFrom_Hint_2"),
+            LOC.Get("PARAM_OpArg_RandFrom_Hint_3")},
+            LOC.Get("PARAM_OpArg_RandFrom_TT"),
             paramFieldRowSelector =>
             {
                 var pBank = CurrentView.GetPrimaryBank();
@@ -472,21 +490,21 @@ public class MEOperationArgument
             }));
 
         argumentGetters.Add("paramIndex", newGetter(new string[0],
-            "Gives an integer for the current selected param, beginning at 0 and increasing by 1 for each param selected",
+            LOC.Get("PARAM_OpArg_ParamIndex_TT"),
             empty => (i, param) => (j, row) => (k, col) =>
             {
                 return i.ToParamEditorString();
             }));
 
         argumentGetters.Add("rowIndex", newGetter(new string[0],
-            "Gives an integer for the current selected row, beginning at 0 and increasing by 1 for each row selected",
+            LOC.Get("PARAM_OpArg_RowIndex_TT"),
             empty => (i, param) => (j, row) => (k, col) =>
             {
                 return j.ToParamEditorString();
             }));
 
         argumentGetters.Add("fieldIndex", newGetter(new string[0],
-            "Gives an integer for the current selected cell/field, beginning at 0 and increasing by 1 for each cell/field selected",
+            LOC.Get("PARAM_OpArg_FieldIndex_TT"),
             empty => (i, param) => (j, row) => (k, col) =>
             {
                 return k.ToParamEditorString();
@@ -555,7 +573,7 @@ public class MEOperationArgument
             if (opArgArgs.Length != getter.args.Length)
             {
                 throw new Exception(
-                    @$"Contextual value {arg[0]} has wrong number of arguments. Expected {opArgArgs.Length}");
+                    LOC.Get("PARAM_OpArg_ContextualArg_Wrong_Arg_Count", arg[0], opArgArgs.Length));
             }
 
             for (var i = 0; i < opArgArgs.Length; i++)

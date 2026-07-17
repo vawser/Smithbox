@@ -1,8 +1,44 @@
 {
   "Entries": [
     {
-      "Key": "PARAM_RowOp_",
-      "Text": ""
+      "Key": "PARAM_RowOp_Copy_TT",
+      "Text": "Adds the selected rows into clipboard. If the clipboard param is different, the clipboard is emptied first."
     },
+    {
+      "Key": "PARAM_RowOp_Copy_Error_Locate_Param",
+      "Text": "Could not locate param"
+    },
+    {
+      "Key": "PARAM_RowOp_Copy_Error_Locate_Param_Key",
+      "Text": "Could not locate param {0}"
+    },
+    {
+      "Key": "PARAM_RowOp_CopyN_Hint_1",
+      "Text": "count"
+    },
+    {
+      "Key": "PARAM_RowOp_CopyN_TT",
+      "Text": "Adds the selected rows into clipboard the given number of times. If the clipboard param is different, the clipboard is emptied first."
+    },
+    {
+      "Key": "PARAM_RowOp_CopyN_Error_Locate_Param",
+      "Text": "Could not locate param"
+    },
+    {
+      "Key": "PARAM_RowOp_CopyN_Error_Locate_Param_Key",
+      "Text": "Could not locate param {0}"
+    },
+    {
+      "Key": "PARAM_RowOp_Paste_TT",
+      "Text": "Adds the selected rows to the primary regulation or parambnd in the selected param."
+    },
+    {
+      "Key": "PARAM_RowOp_Paste_Error_Locate_Param",
+      "Text": "Could not locate param"
+    },
+    {
+      "Key": "PARAM_RowOp_Paste_Error_Locate_Param_Key",
+      "Text": "Could not locate param {0}"
+    }
   ]
 }

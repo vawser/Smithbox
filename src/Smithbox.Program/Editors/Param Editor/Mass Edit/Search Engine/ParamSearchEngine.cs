@@ -29,7 +29,7 @@ public class ParamSearchEngine : SearchEngine<bool, (ParamBank, Param)>
                 .Aggregate(bank.Params.Values.Select((x, i) => (bank, x)), (o, n) => o.Concat(n)).ToList();
 
         filterList.Add("modified", newCmd(new string[0],
-            "Selects params where any rows do not match the vanilla version, or where any are added. Ignores row names",
+            LOC.Get("PARAM_PSE_Modified_TT"),
             noArgs(noContext(param =>
             {
                 if (param.Item1 != bank)
@@ -41,8 +41,10 @@ public class ParamSearchEngine : SearchEngine<bool, (ParamBank, Param)>
                 return cache.Count > 0;
             }))));
 
-        filterList.Add("param", newCmd(new[] { "param name (regex)" },
-            "Selects all params whose name matches the given regex", (args, lenient) =>
+        filterList.Add("param", newCmd(new[] { 
+            LOC.Get("PARAM_PSE_Param_Hint_1")},
+            LOC.Get("PARAM_PSE_Param_TT"), 
+            (args, lenient) =>
             {
                 Regex rx = lenient ? new Regex(args[0], RegexOptions.IgnoreCase) : new Regex($@"^{args[0]}$");
                 return noContext(param =>
@@ -53,8 +55,10 @@ public class ParamSearchEngine : SearchEngine<bool, (ParamBank, Param)>
                             : bank.GetKeyForParam(param.Item2)));
             }));
 
-        filterList.Add("auxparam", newCmd(new[] { "parambank name", "param name (regex)" },
-            "Selects params from the specified regulation or parambnd where the param name matches the given regex",
+        filterList.Add("auxparam", newCmd(new[] { 
+            LOC.Get("PARAM_PSE_AuxParam_Hint_1"),
+            LOC.Get("PARAM_PSE_AuxParam_Hint_2")},
+            LOC.Get("PARAM_PSE_AuxParam_TT"),
             (args, lenient) =>
             {
                 var auxBanks = CurrentView.GetParamData().AuxBanks;
@@ -69,8 +73,9 @@ public class ParamSearchEngine : SearchEngine<bool, (ParamBank, Param)>
                             : auxBank.GetKeyForParam(param.Item2)));
             }, () => auxBanks.Count > 0));
 
-        filterList.Add("paramtype", newCmd(new[] { "param type (regex)" },
-            "Selects all params whose param type matches the given regex", (args, lenient) =>
+        filterList.Add("paramtype", newCmd(new[] { 
+            LOC.Get("PARAM_PSE_ParamType_Hint_1")},
+            LOC.Get("PARAM_PSE_ParamType_TT"), (args, lenient) =>
             {
                 Regex rx = lenient ? new Regex(args[0], RegexOptions.IgnoreCase) : new Regex($@"^{args[0]}$");
                 return noContext(param =>
@@ -81,8 +86,9 @@ public class ParamSearchEngine : SearchEngine<bool, (ParamBank, Param)>
                             : bank.GetTypeForParam(param.Item2)));
             }));
 
-        defaultFilter = newCmd(new[] { "param name (regex)" },
-            "Selects all params whose name matches the given regex", (args, lenient) =>
+        defaultFilter = newCmd(new[] { 
+            LOC.Get("PARAM_PSE_Default_Hint_1")},
+            LOC.Get("PARAM_PSE_Default_TT"), (args, lenient) =>
             {
                 Regex rx = lenient ? new Regex(args[0], RegexOptions.IgnoreCase) : new Regex($@"^{args[0]}$");
                 return noContext(param =>

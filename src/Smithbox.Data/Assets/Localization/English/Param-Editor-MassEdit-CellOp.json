@@ -1,8 +1,136 @@
 {
   "Entries": [
     {
-      "Key": "PARAM_CellOp_",
-      "Text": ""
+      "Key": "PARAM_CellOp_Equals_Hint_1",
+      "Text": "number or text"
     },
+    {
+      "Key": "PARAM_CellOp_Equals_TT",
+      "Text": "Assigns the given value to the selected values. Will attempt conversion to the value's data type."
+    },
+    {
+      "Key": "PARAM_CellOp_Addition_Hint_1",
+      "Text": "number or text"
+    },
+    {
+      "Key": "PARAM_CellOp_Addition_TT",
+      "Text": "Adds the number to the selected values, or appends text if that is the data type of the values."
+    },
+    {
+      "Key": "PARAM_CellOp_Subtract_Hint_1",
+      "Text": "number"
+    },
+    {
+      "Key": "PARAM_CellOp_Subtract_TT",
+      "Text": "Subtracts the number from the selected values."
+    },
+    {
+      "Key": "PARAM_CellOp_Multiply_Hint_1",
+      "Text": "number"
+    },
+    {
+      "Key": "PARAM_CellOp_Multiply_TT",
+      "Text": "Multiplies selected values by the number."
+    },
+    {
+      "Key": "PARAM_CellOp_Divide_Hint_1",
+      "Text": "number"
+    },
+    {
+      "Key": "PARAM_CellOp_Divide_TT",
+      "Text": "Divides the selected values by the number."
+    },
+    {
+      "Key": "PARAM_CellOp_Modulo_Hint_1",
+      "Text": "number"
+    },
+    {
+      "Key": "PARAM_CellOp_Modulo_TT",
+      "Text": "Gives the remainder when the selected values are divided by the number."
+    },
+    {
+      "Key": "PARAM_CellOp_Scale_Hint_1",
+      "Text": "factor number"
+    },
+    {
+      "Key": "PARAM_CellOp_Scale_Hint_2",
+      "Text": "center number"
+    },
+    {
+      "Key": "PARAM_CellOp_Scale_TT",
+      "Text": "Multiplies the difference between the selected values and the center number by the factor number."
+    },
+    {
+      "Key": "PARAM_CellOp_Replace_Hint_1",
+      "Text": "text to replace"
+    },
+    {
+      "Key": "PARAM_CellOp_Replace_Hint_2",
+      "Text": "new text"
+    },
+    {
+      "Key": "PARAM_CellOp_Replace_TT",
+      "Text": "Interprets the selected values as text and replaces all occurances of the text to replace with the new text"
+    },
+    {
+      "Key": "PARAM_CellOp_ReplaceEx_Hint_1",
+      "Text": "text to replace (regex)"
+    },
+    {
+      "Key": "PARAM_CellOp_ReplaceEx_Hint_2",
+      "Text": "new text (w/ groups)"
+    },
+    {
+      "Key": "PARAM_CellOp_ReplaceEx_TT",
+      "Text": "Interprets the selected values as text and replaces all occurances of the given regex with the replacement, supporting regex groups"
+    },
+    {
+      "Key": "PARAM_CellOp_Max_Hint_1",
+      "Text": "number"
+    },
+    {
+      "Key": "PARAM_CellOp_Max_TT",
+      "Text": "Returns the larger of the current value and number."
+    },
+    {
+      "Key": "PARAM_CellOp_Min_Hint_1",
+      "Text": "number"
+    },
+    {
+      "Key": "PARAM_CellOp_Min_TT",
+      "Text": "Returns the smaller of the current value and number."
+    },
+    {
+      "Key": "PARAM_CellOp_Round_Hint_1",
+      "Text": "number"
+    },
+    {
+      "Key": "PARAM_CellOp_Round_TT",
+      "Text": "Rounds the current value to the specified number of decimals."
+    },
+    {
+      "Key": "PARAM_CellOp_Ceil_Hint_1",
+      "Text": "number"
+    },
+    {
+      "Key": "PARAM_CellOp_Ceil_TT",
+      "Text": "Rounds the current value up to the closest integer."
+    },
+    {
+      "Key": "PARAM_CellOp_Floor_Hint_1",
+      "Text": "number"
+    },
+    {
+      "Key": "PARAM_CellOp_Floor_TT",
+      "Text": "Rounds the current value down to the closest integer."
+    },
+    {
+      "Key": "PARAM_CellOp_Prepend_Hint_1",
+      "Text": "text to prepend"
+    },
+    {
+      "Key": "PARAM_CellOp_Prepend_TT",
+      "Text": "Prepends the text to the current text value."
+    }
   ]
 }

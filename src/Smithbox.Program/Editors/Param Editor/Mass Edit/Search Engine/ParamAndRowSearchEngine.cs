@@ -28,14 +28,14 @@ public class ParamAndRowSearchEngine : MultiStageSearchEngine<ParamSelection, (P
             return list;
         };
 
-        filterList.Add("selection",
-            newCmd(new string[0], "Selects the current param selection and selected rows in that param",
-                noArgs(noContext(row => row.Item1 == ParamMassEditRowSource.Selection))));
+        filterList.Add("selection", newCmd(new string[0], 
+            LOC.Get("PARAM_PARSE_Selection_TT"),
+            noArgs(noContext(row => row.Item1 == ParamMassEditRowSource.Selection))));
 
-        filterList.Add("clipboard",
-            newCmd(new string[0], "Selects the param of the clipboard and the rows in the clipboard",
-                noArgs(noContext(row => row.Item1 == ParamMassEditRowSource.Clipboard)),
-                () => CurrentView.GetPrimaryBank().ClipboardRows?.Count > 0));
+        filterList.Add("clipboard", newCmd(new string[0], 
+            LOC.Get("PARAM_PARSE_Clipboard_TT"),
+            noArgs(noContext(row => row.Item1 == ParamMassEditRowSource.Clipboard)),
+            () => CurrentView.GetPrimaryBank().ClipboardRows?.Count > 0));
 
         contextGetterForMultiStage = (state, exampleItem) => (pBank,
             pBank.Params[

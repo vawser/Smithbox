@@ -23,7 +23,7 @@ public class MERowOperation : MEOperation<(string, Param.Row), (Param, Param.Row
     internal override void Setup()
     {
         operations.Add("copy", (new string[0],
-            "Adds the selected rows into clipboard. If the clipboard param is different, the clipboard is emptied first",
+            LOC.Get("PARAM_RowOp_Copy_TT"),
             (paramAndRow, args) =>
             {
                 var bank = CurrentView.GetPrimaryBank();
@@ -32,12 +32,14 @@ public class MERowOperation : MEOperation<(string, Param.Row), (Param, Param.Row
                 Param.Row row = paramAndRow.Item2;
                 if (paramKey == null)
                 {
-                    throw new Exception(@"Could not locate param");
+                    throw new Exception(
+                        LOC.Get("PARAM_RowOp_Copy_Error_Locate_Param"));
                 }
 
                 if (!bank.Params.ContainsKey(paramKey))
                 {
-                    throw new Exception($@"Could not locate param {paramKey}");
+                    throw new Exception(
+                        LOC.Get("PARAM_RowOp_Copy_Error_Locate_Param_Key", paramKey));
                 }
 
                 Param p = bank.Params[paramKey];
@@ -52,8 +54,10 @@ public class MERowOperation : MEOperation<(string, Param.Row), (Param, Param.Row
                 return (p, null);
             }
         ));
-        operations.Add("copyN", (new[] { "count" },
-            "Adds the selected rows into clipboard the given number of times. If the clipboard param is different, the clipboard is emptied first",
+
+        operations.Add("copyN", (new[] { 
+            LOC.Get("PARAM_RowOp_CopyN_Hint_1")},
+            LOC.Get("PARAM_RowOp_CopyN_TT"),
             (paramAndRow, args) =>
             {
                 var bank = CurrentView.GetPrimaryBank();
@@ -62,12 +66,14 @@ public class MERowOperation : MEOperation<(string, Param.Row), (Param, Param.Row
                 Param.Row row = paramAndRow.Item2;
                 if (paramKey == null)
                 {
-                    throw new Exception(@"Could not locate param");
+                    throw new Exception(
+                        LOC.Get("PARAM_RowOp_CopyN_Error_Locate_Param"));
                 }
 
                 if (!bank.Params.ContainsKey(paramKey))
                 {
-                    throw new Exception($@"Could not locate param {paramKey}");
+                    throw new Exception(
+                        LOC.Get("PARAM_RowOp_CopyN_Error_Locate_Param_Key", paramKey));
                 }
 
                 var count = uint.Parse(args[0]);
@@ -87,8 +93,9 @@ public class MERowOperation : MEOperation<(string, Param.Row), (Param, Param.Row
                 return (p, null);
             }
         ));
+
         operations.Add("paste", (new string[0],
-            "Adds the selected rows to the primary regulation or parambnd in the selected param",
+            LOC.Get("PARAM_RowOp_Paste_TT"),
             (paramAndRow, args) =>
             {
                 var bank = CurrentView.GetPrimaryBank();
@@ -97,12 +104,14 @@ public class MERowOperation : MEOperation<(string, Param.Row), (Param, Param.Row
                 Param.Row row = paramAndRow.Item2;
                 if (paramKey == null)
                 {
-                    throw new Exception(@"Could not locate param");
+                    throw new Exception(
+                        LOC.Get("PARAM_RowOp_Paste_Error_Locate_Param"));
                 }
 
                 if (!bank.Params.ContainsKey(paramKey))
                 {
-                    throw new Exception($@"Could not locate param {paramKey}");
+                    throw new Exception(
+                        LOC.Get("PARAM_RowOp_Paste_Error_Locate_Param_Key", paramKey));
                 }
 
                 Param p = bank.Params[paramKey];

@@ -1,8 +1,44 @@
 {
   "Entries": [
     {
-      "Key": "PARAM_PSE_",
-      "Text": ""
+      "Key": "PARAM_PSE_Modified_TT",
+      "Text": "Selects params where any rows do not match the vanilla version, or where any are added. Ignores row names."
     },
+    {
+      "Key": "PARAM_PSE_Param_Hint_1",
+      "Text": "param name (regex)"
+    },
+    {
+      "Key": "PARAM_PSE_Param_TT",
+      "Text": "Selects all params whose name matches the given regex"
+    },
+    {
+      "Key": "PARAM_PSE_AuxParam_Hint_1",
+      "Text": "parambank name"
+    },
+    {
+      "Key": "PARAM_PSE_AuxParam_Hint_2",
+      "Text": "param name (regex)"
+    },
+    {
+      "Key": "PARAM_PSE_AuxParam_TT",
+      "Text": "Selects params from the specified regulation or parambnd where the param name matches the given regex."
+    },
+    {
+      "Key": "PARAM_PSE_ParamType_Hint_1",
+      "Text": "param type (regex)"
+    },
+    {
+      "Key": "PARAM_PSE_ParamType_TT",
+      "Text": "Selects all params whose param type matches the given regex."
+    },
+    {
+      "Key": "PARAM_PSE_Default_Hint_1",
+      "Text": "param name (regex)"
+    },
+    {
+      "Key": "PARAM_PSE_Default_TT",
+      "Text": "Selects all params whose name matches the given regex."
+    }
   ]
 }

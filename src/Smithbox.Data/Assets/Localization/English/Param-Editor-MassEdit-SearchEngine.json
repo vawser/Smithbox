@@ -1,8 +1,16 @@
 {
   "Entries": [
     {
-      "Key": "PARAM_SE_",
-      "Text": ""
+      "Key": "PARAM_SE_Exists_TT",
+      "Text": "Selects all elements"
     },
+    {
+      "Key": "PARAM_SE_CommandsForHelp_Args",
+      "Text": "{0} ({1} args)"
+    },
+    {
+      "Key": "PARAM_SE_CommandsForHelp_Default_Args",
+      "Text": "or omit specifying and use default ({0} args)"
+    }
   ]
 }

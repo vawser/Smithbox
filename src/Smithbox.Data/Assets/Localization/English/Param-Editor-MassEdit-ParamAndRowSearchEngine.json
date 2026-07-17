@@ -1,8 +1,12 @@
 {
   "Entries": [
     {
-      "Key": "PARAM_PARSE_",
-      "Text": ""
+      "Key": "PARAM_PARSE_Selection_TT",
+      "Text": "Selects the current param selection and selected rows in that param."
     },
+    {
+      "Key": "PARAM_PARSE_Clipboard_TT",
+      "Text": "Selects the param of the clipboard and the rows in the clipboard."
+    }
   ]
 }
