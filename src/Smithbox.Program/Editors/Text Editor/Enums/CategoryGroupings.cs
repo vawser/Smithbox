@@ -133,7 +133,7 @@ public static class CategoryGroupings
         TextContainerCategory.TraditionalChinese,
         TextContainerCategory.SimplifiedChinese,
         TextContainerCategory.Thai,
-        TextContainerCategory.Portuguese,
+        TextContainerCategory.PortugueseLatin,
         TextContainerCategory.Arabic,
     };
 
