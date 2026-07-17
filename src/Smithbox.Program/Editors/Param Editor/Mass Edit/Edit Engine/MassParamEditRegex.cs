@@ -164,7 +164,11 @@ public class MassParamEditRegex
 
         if (varstage.Length < 2)
         {
-            return (new MassEditResult(ParamMassEditResultType.PARSEERROR, $@"Could not find var operation. Check your colon placement. (line {currentLine})"), null);
+            var finalResult = new MassEditResult(
+                ParamMassEditResultType.PARSEERROR,
+                LOC.Get("PARAM_MassEdit_Result_Error_Cannot_Find_Var_Op", currentLine));
+
+            return (finalResult, null);
         }
 
         return ParseVarOpStep(currentLine, varstage[1]);
@@ -176,7 +180,11 @@ public class MassParamEditRegex
         varOperation = operationstage[0].Trim();
         if (varOperation.Equals("") || !CurrentView.MassEdit.FieldOps.operations.ContainsKey(varOperation))
         {
-            return (new MassEditResult(ParamMassEditResultType.PARSEERROR, $@"Could not find operation to perform. Add : and one of + - * / replace (line {currentLine})"), null);
+            var finalResult = new MassEditResult(
+                ParamMassEditResultType.PARSEERROR,
+                LOC.Get("PARAM_MassEdit_Result_Error_Cannot_Find_Var_Op_Symbol", currentLine));
+
+            return (finalResult, null);
         }
 
         string wiki;
@@ -184,7 +192,11 @@ public class MassParamEditRegex
         ExecParamOperationArguments(currentLine, operationstage.Length > 1 ? operationstage[1] : null);
         if (argc != paramArgFuncs.Length)
         {
-            return (new MassEditResult(ParamMassEditResultType.PARSEERROR, $@"Invalid number of arguments for operation {varOperation} (line {currentLine})"), null);
+            var finalResult = new MassEditResult(
+                ParamMassEditResultType.PARSEERROR,
+                LOC.Get("PARAM_MassEdit_Result_Error_Var_Op_Arg_Count", varOperation, currentLine));
+
+            return (finalResult, null);
         }
 
         return SandboxMassEditExecution(currentLine, partials => ExecVarStage(currentLine));
@@ -196,12 +208,21 @@ public class MassParamEditRegex
         paramRowSelector = paramrowstage[0].Trim();
         if (paramRowSelector.Equals(""))
         {
-            return (new MassEditResult(ParamMassEditResultType.PARSEERROR, $@"Could not find paramrow filter. Add : and one of {String.Join(", ", CurrentView.MassEdit.PARSE.AvailableCommandsForHelpText())} (line {currentLine})"), null);
+            var helpText = String.Join(", ", CurrentView.MassEdit.PARSE.AvailableCommandsForHelpText());
+            var finalResult = new MassEditResult(
+                ParamMassEditResultType.PARSEERROR,
+                LOC.Get("PARAM_MassEdit_Result_Error_Param_Row_Filter_Missing", helpText, currentLine));
+
+            return (finalResult, null);
         }
 
         if (paramrowstage.Length < 2)
         {
-            return (new MassEditResult(ParamMassEditResultType.PARSEERROR, $@"Could not find cell filter or row operation. Check your colon placement. (line {currentLine})"), null);
+            var finalResult = new MassEditResult(
+                ParamMassEditResultType.PARSEERROR,
+                LOC.Get("PARAM_MassEdit_Result_Error_Cell_Filter_Row_Op_Missing", currentLine));
+
+            return (finalResult, null);
         }
 
         if (CurrentView.MassEdit.RowOps.HandlesCommand(paramrowstage[1].Trim().Split(" ", 2)[0]))
@@ -218,12 +239,21 @@ public class MassParamEditRegex
         paramSelector = paramstage[0].Trim();
         if (paramSelector.Equals(""))
         {
-            return (new MassEditResult(ParamMassEditResultType.PARSEERROR, $@"Could not find param filter. Add : and one of {String.Join(", ", CurrentView.MassEdit.PSE.AvailableCommandsForHelpText())} (line {currentLine})"), null);
+            var helpText = String.Join(", ", CurrentView.MassEdit.PSE.AvailableCommandsForHelpText());
+            var finalResult = new MassEditResult(
+                ParamMassEditResultType.PARSEERROR,
+                LOC.Get("PARAM_MassEdit_Result_Error_Param_Filter_Missing", helpText, currentLine));
+
+            return (finalResult, null);
         }
 
         if (paramstage.Length < 2)
         {
-            return (new MassEditResult(ParamMassEditResultType.PARSEERROR, $@"Could not find row filter. Check your colon placement. (line {currentLine})"), null);
+            var finalResult = new MassEditResult(
+                ParamMassEditResultType.PARSEERROR,
+                LOC.Get("PARAM_MassEdit_Result_Error_Row_Filter_Missing", currentLine));
+
+            return (finalResult, null);
         }
 
         return ParseRowStep(currentLine, paramstage[1]);
@@ -235,12 +265,21 @@ public class MassParamEditRegex
         rowSelector = rowstage[0].Trim();
         if (rowSelector.Equals(""))
         {
-            return (new MassEditResult(ParamMassEditResultType.PARSEERROR, $@"Could not find row filter. Add : and one of {String.Join(", ", CurrentView.MassEdit.RSE.AvailableCommandsForHelpText())} (line {currentLine})"), null);
+            var helpText = String.Join(", ", CurrentView.MassEdit.RSE.AvailableCommandsForHelpText());
+            var finalResult = new MassEditResult(
+                ParamMassEditResultType.PARSEERROR,
+                LOC.Get("PARAM_MassEdit_Result_Error_Row_Filter_Missing_Op", helpText, currentLine));
+
+            return (finalResult, null);
         }
 
         if (rowstage.Length < 2)
         {
-            return (new MassEditResult(ParamMassEditResultType.PARSEERROR, $@"Could not find cell filter or row operation to perform. Check your colon placement. (line {currentLine})"), null);
+            var finalResult = new MassEditResult(
+                ParamMassEditResultType.PARSEERROR,
+                LOC.Get("PARAM_MassEdit_Result_Error_Cell_Filter_Row_Op_Missing", currentLine));
+
+            return (finalResult, null);
         }
 
         if (CurrentView.MassEdit.RowOps.HandlesCommand(rowstage[1].Trim().Split(" ", 2)[0]))
@@ -257,12 +296,21 @@ public class MassParamEditRegex
         cellSelector = cellstage[0].Trim();
         if (cellSelector.Equals(""))
         {
-            return (new MassEditResult(ParamMassEditResultType.PARSEERROR, $@"Could not find cell/property filter. Add : and one of {String.Join(", ", CurrentView.MassEdit.CSE.AvailableCommandsForHelpText())} or Name (0 args) (line {currentLine})"), null);
+            var helpText = String.Join(", ", CurrentView.MassEdit.CSE.AvailableCommandsForHelpText());
+            var finalResult = new MassEditResult(
+                ParamMassEditResultType.PARSEERROR,
+                LOC.Get("PARAM_MassEdit_Result_Error_Cell_Filter_Missing", helpText, currentLine));
+
+            return (finalResult, null);
         }
 
         if (cellstage.Length < 2)
         {
-            return (new MassEditResult(ParamMassEditResultType.PARSEERROR, $@"Could not find operation to perform. Check your colon placement. (line {currentLine})"), null);
+            var finalResult = new MassEditResult(
+                ParamMassEditResultType.PARSEERROR,
+                LOC.Get("PARAM_MassEdit_Result_Error_Missing_Cell_Op", currentLine));
+
+            return (finalResult, null);
         }
 
         rowOpOrCellStageFunc = ExecCellStage;
@@ -275,7 +323,11 @@ public class MassParamEditRegex
         rowOperation = operationstage[0].Trim();
         if (!CurrentView.MassEdit.RowOps.operations.ContainsKey(rowOperation))
         {
-            return (new MassEditResult(ParamMassEditResultType.PARSEERROR, $@"Unknown row operation {rowOperation} (line {currentLine})"), null);
+            var finalResult = new MassEditResult(
+                ParamMassEditResultType.PARSEERROR,
+                LOC.Get("PARAM_MassEdit_Result_Error_Row_Op_Unknown", rowOperation, currentLine));
+
+            return (finalResult, null);
         }
 
         string wiki;
@@ -283,7 +335,11 @@ public class MassParamEditRegex
         ExecParamOperationArguments(currentLine, operationstage.Length > 1 ? operationstage[1] : null);
         if (argc != paramArgFuncs.Length)
         {
-            return (new MassEditResult(ParamMassEditResultType.PARSEERROR, $@"Invalid number of arguments for operation {rowOperation} (line {currentLine})"), null);
+            var finalResult = new MassEditResult(
+                ParamMassEditResultType.PARSEERROR,
+                LOC.Get("PARAM_MassEdit_Result_Error_Row_Op_Invalid_Arg_Count", rowOperation, currentLine));
+
+            return (finalResult, null);
         }
 
         rowOpOrCellStageFunc = ExecRowOp;
@@ -298,12 +354,20 @@ public class MassParamEditRegex
 
         if (cellOperation.Equals("") || !CurrentView.MassEdit.FieldOps.operations.ContainsKey(cellOperation))
         {
-            return (new MassEditResult(ParamMassEditResultType.PARSEERROR, $@"Could not find operation to perform. Add : and one of + - * / replace (line {currentLine})"), null);
+            var finalResult = new MassEditResult(
+                ParamMassEditResultType.PARSEERROR,
+                LOC.Get("PARAM_MassEdit_Result_Error_Cell_Op_Missing_Symbol", currentLine));
+
+            return (finalResult, null);
         }
 
         if (!CurrentView.MassEdit.FieldOps.operations.ContainsKey(cellOperation))
         {
-            return (new MassEditResult(ParamMassEditResultType.PARSEERROR, $@"Unknown cell operation {cellOperation} (line {currentLine})"), null);
+            var finalResult = new MassEditResult(
+                ParamMassEditResultType.PARSEERROR,
+                LOC.Get("PARAM_MassEdit_Result_Error_Cell_Op_Unknown", cellOperation, currentLine));
+
+            return (finalResult, null);
         }
 
         string wiki;
@@ -311,7 +375,11 @@ public class MassParamEditRegex
         ExecParamOperationArguments(currentLine, operationstage.Length > 1 ? operationstage[1] : null);
         if (argc != paramArgFuncs.Length)
         {
-            return (new MassEditResult(ParamMassEditResultType.PARSEERROR, $@"Invalid number of arguments for operation {cellOperation} (line {currentLine})"), null);
+            var finalResult = new MassEditResult(
+                ParamMassEditResultType.PARSEERROR,
+                LOC.Get("PARAM_MassEdit_Result_Error_Cell_Op_Invalid_Arg_Count", cellOperation, currentLine));
+
+            return (finalResult, null);
         }
 
         return SandboxMassEditExecution(currentLine, partials =>
@@ -335,7 +403,11 @@ public class MassParamEditRegex
         }
         catch (Exception e)
         {
-            return (new MassEditResult(ParamMassEditResultType.OPERATIONERROR, @$"Error on line {currentLine}" + '\n' + e.ToString()), null);
+            var finalResult = new MassEditResult(
+                ParamMassEditResultType.OPERATIONERROR,
+                LOC.Get("PARAM_MassEdit_Result_Error_On_Line", currentLine, e.ToString()));
+
+            return (finalResult, null);
         }
     }
 
@@ -346,7 +418,11 @@ public class MassParamEditRegex
         var result = globalFunc(context, globalArgValues);
         if (!result)
         {
-            return new MassEditResult(ParamMassEditResultType.OPERATIONERROR, $@"Error performing global operation {globalOperation} (line {currentLine})");
+            var finalResult = new MassEditResult(
+                ParamMassEditResultType.OPERATIONERROR,
+                LOC.Get("PARAM_MassEdit_Result_Error_Invalid_Global_Op", globalOperation, currentLine));
+
+            return finalResult;
         }
 
         return new MassEditResult(ParamMassEditResultType.SUCCESS, "");
@@ -375,7 +451,11 @@ public class MassParamEditRegex
         var result = true; // Anything that practicably can go wrong 
         if (!result)
         {
-            return new MassEditResult(ParamMassEditResultType.OPERATIONERROR, $@"Error performing var operation {varOperation} (line {currentLine})");
+            var finalResult = new MassEditResult(
+                ParamMassEditResultType.OPERATIONERROR,
+                LOC.Get("PARAM_MassEdit_Result_Error_Invalid_Var_Op", varOperation, currentLine));
+
+            return finalResult;
         }
 
         return new MassEditResult(ParamMassEditResultType.SUCCESS, "");
@@ -417,7 +497,11 @@ public class MassParamEditRegex
                 paramArgFuncs.Select((func, i) => func(paramEditCount, p));
             if (argc != paramArgFuncs.Length)
             {
-                return new MassEditResult(ParamMassEditResultType.PARSEERROR, $@"Invalid number of arguments for operation {operationForPrint} (line {currentLine})");
+                var finalResult = new MassEditResult(
+                    ParamMassEditResultType.PARSEERROR,
+                    LOC.Get("PARAM_MassEdit_Result_Error_Param_Stage_Invalid_Arg_Count", operationForPrint, currentLine));
+
+                return finalResult;
             }
 
             var paramname = b.GetKeyForParam(p);
@@ -459,7 +543,12 @@ public class MassParamEditRegex
 
         if (p2 == null)
         {
-            return new MassEditResult(ParamMassEditResultType.OPERATIONERROR, $@"Could not perform operation {rowOperation} {String.Join(' ', rowArgValues)} on row (line {currentLine})");
+            var helpText = String.Join(' ', rowArgValues);
+            var finalResult = new MassEditResult(
+                ParamMassEditResultType.OPERATIONERROR,
+                LOC.Get("PARAM_MassEdit_Result_Error_Invalid_Row_Op", rowOperation, helpText, currentLine));
+
+            return finalResult;
         }
 
         if (rs != null)
@@ -500,30 +589,45 @@ public class MassParamEditRegex
         }
         catch (FormatException e)
         {
-            errHelper = $"Type is not correct: {e}";
+            errHelper = LOC.Get("PARAM_MassEdit_Result_Error_Cell_Op_Bad_Type", e);
         }
         catch (InvalidCastException e)
         {
-            errHelper = $"Cannot cast to correct type: {e}";
+            errHelper = LOC.Get("PARAM_MassEdit_Result_Error_Cell_Op_Bad_Cast", e);
         }
         catch (Exception e)
         {
-            errHelper = $"Unknown error: {e}";
+            errHelper = LOC.Get("PARAM_MassEdit_Result_Error_Cell_Op_Unknown_Error", e);
         }
 
         if (res == null && col.Item1 == ParamEditorPseudoColumn.ID)
         {
-            return new MassEditResult(ParamMassEditResultType.OPERATIONERROR, $@"Could not perform operation {cellOperation} {String.Join(' ', cellArgValues)} on ID ({errHelper}) (line {currentLine})");
+            var helpText = String.Join(' ', cellArgValues);
+            var finalResult = new MassEditResult(
+                ParamMassEditResultType.OPERATIONERROR,
+                LOC.Get("PARAM_MassEdit_Result_Error_Invalid_Cell_Op_ID", cellOperation, helpText, errHelper, currentLine));
+
+            return finalResult;
         }
 
         if (res == null && col.Item1 == ParamEditorPseudoColumn.Name)
         {
-            return new MassEditResult(ParamMassEditResultType.OPERATIONERROR, $@"Could not perform operation {cellOperation} {String.Join(' ', cellArgValues)} on Name ({errHelper}) (line {currentLine})");
+            var helpText = String.Join(' ', cellArgValues);
+            var finalResult = new MassEditResult(
+                ParamMassEditResultType.OPERATIONERROR,
+                LOC.Get("PARAM_MassEdit_Result_Error_Invalid_Cell_Op_Name", cellOperation, helpText, errHelper, currentLine));
+
+            return finalResult;
         }
 
         if (res == null)
         {
-            return new MassEditResult(ParamMassEditResultType.OPERATIONERROR, $@"Could not perform operation {cellOperation} {String.Join(' ', cellArgValues)} on field {col.Item2.Def.InternalName} ({errHelper}) (line {currentLine})");
+            var helpText = String.Join(' ', cellArgValues);
+            var finalResult = new MassEditResult(
+                ParamMassEditResultType.OPERATIONERROR,
+                LOC.Get("PARAM_MassEdit_Result_Error_Invalid_Cell_Op_Field", cellOperation, helpText, col.Item2.Def.InternalName, errHelper, currentLine));
+
+            return finalResult;
         }
 
         partialActions.AppendParamEditAction(row, col, res);

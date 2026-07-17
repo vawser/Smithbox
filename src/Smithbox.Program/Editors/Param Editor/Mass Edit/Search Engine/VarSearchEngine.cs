@@ -24,8 +24,9 @@ public class VarSearchEngine : SearchEngine<bool, string>
             return MassParamEdit.massEditVars.Keys.ToList();
         };
 
-        filterList.Add("vars", newCmd(new[] { "variable names (regex)" },
-            "Selects variables whose name matches the given regex", (args, lenient) =>
+        filterList.Add("vars", newCmd(new[] { 
+            LOC.Get("PARAM_VSE_Vars_Hint")},
+            LOC.Get("PARAM_VSE_Vars_TT"), (args, lenient) =>
             {
                 if (args[0].StartsWith('$'))
                 {

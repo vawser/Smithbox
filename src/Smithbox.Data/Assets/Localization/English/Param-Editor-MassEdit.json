@@ -65,98 +65,6 @@
       "Text": "Default filter..."
     },
     {
-      "Key": "PARAM_CSE_Default_Hint",
-      "Text": "field internalName (regex)"
-    },
-    {
-      "Key": "PARAM_CSE_Default_TT",
-      "Text": "Selects cells/fields where the internal name of that field matches the given regex."
-    },
-    {
-      "Key": "PARAM_CSE_Field_Value_Hint",
-      "Text": "field value"
-    },
-    {
-      "Key": "PARAM_CSE_Field_Value_TT",
-      "Text": "Selects cells/fields where the cell has the specified value."
-    },
-    {
-      "Key": "PARAM_CSE_Field_Value_Cannot_Check_Cell",
-      "Text": "Can't check if cell - not part of a param."
-    },
-    {
-      "Key": "PARAM_CSE_Field_Value_No_Param",
-      "Text": "Can't check if cell - no param."
-    },
-    {
-      "Key": "PARAM_CSE_Field_Range_Hint_1",
-      "Text": "field start value"
-    },
-    {
-      "Key": "PARAM_CSE_Field_Range_Hint_2",
-      "Text": "field end value"
-    },
-    {
-      "Key": "PARAM_CSE_Field_Range_TT",
-      "Text": "Selects cells/fields where the cell has a value between the start and end values specified."
-    },
-    {
-      "Key": "PARAM_CSE_Modified_TT",
-      "Text": "Selects cells/fields where the equivalent cell in the vanilla regulation or parambnd has a different value."
-    },
-    {
-      "Key": "PARAM_CSE_Modified_Cannot_Check_Cell",
-      "Text": "Can't check if cell is modified - not part of a param."
-    },
-    {
-      "Key": "PARAM_CSE_Modified_No_Param",
-      "Text": "Can't check if cell is modified - no vanilla param."
-    },
-    {
-      "Key": "PARAM_CSE_AuxModified_Hint",
-      "Text": "parambank name"
-    },
-    {
-      "Key": "PARAM_CSE_AuxModified_TT",
-      "Text": "Selects cells/fields where the equivalent cell in the specified regulation or parambnd has a different value."
-    },
-    {
-      "Key": "PARAM_CSE_AuxModified_No_ParamBank",
-      "Text": "Can't check if cell is modified - parambank not found"
-    },
-    {
-      "Key": "PARAM_CSE_AuxModified_Not_Part_of_Param",
-      "Text": "Can't check if cell is modified - not part of a param"
-    },
-    {
-      "Key": "PARAM_CSE_AuxModified_No_Aux_Param",
-      "Text": "Can't check if cell is modified - no aux param"
-    },
-    {
-      "Key": "PARAM_CSE_AuxModified_No_Vanilla_Param",
-      "Text": "Can't check if cell is modified - no vanilla param"
-    },
-    {
-      "Key": "PARAM_CSE_SfType_Hint",
-      "Text": "paramdef type"
-    },
-    {
-      "Key": "PARAM_CSE_SfType_TT",
-      "Text": "Selects cells/fields where the field's data type, as enumerated by soulsformats, matches the given regex"
-    },
-    {
-      "Key": "PARAM_CSE_DefaultValue_TT",
-      "Text": "Selects cells/fields where the cell value is the same as the 'default' for the field."
-    },
-    {
-      "Key": "PARAM_CSE_DefaultValue_Not_Part_of_Param",
-      "Text": "Can't check if cell - not part of a param"
-    },
-    {
-      "Key": "PARAM_CSE_DefaultValue_No_Param",
-      "Text": "Can't check if cell - no param"
-    },
-    {
       "Key": "PARAM_MassEdit_Header",
       "Text": "Mass Edit"
     },
@@ -461,68 +369,108 @@
       "Text": "Could not find variable filter. Add : and one of {0} (line {1})"
     },
     {
-      "Key": "PARAM_MassEdit_",
-      "Text": ""
+      "Key": "PARAM_MassEdit_Result_Error_Cannot_Find_Var_Op",
+      "Text": "Could not find var operation. Check your colon placement. (line {0})""
     },
     {
-      "Key": "PARAM_MassEdit_",
-      "Text": ""
+      "Key": "PARAM_MassEdit_Result_Error_Cannot_Find_Var_Op_Symbol",
+      "Text": "Could not find operation to perform. Add : and one of + - * / replace (line {0})"
     },
     {
-      "Key": "PARAM_MassEdit_",
-      "Text": ""
+      "Key": "PARAM_MassEdit_Result_Error_Var_Op_Arg_Count",
+      "Text": "Invalid number of arguments for operation {0} (line {1})"
     },
     {
-      "Key": "PARAM_MassEdit_",
-      "Text": ""
+      "Key": "PARAM_MassEdit_Result_Error_Param_Row_Filter_Missing",
+      "Text": "Could not find paramrow filter. Add : and one of {0} (line {1})"
     },
     {
-      "Key": "PARAM_MassEdit_",
-      "Text": ""
+      "Key": "PARAM_MassEdit_Result_Error_Cell_Filter_Row_Op_Missing",
+      "Text": "Could not find cell filter or row operation. Check your colon placement. (line {0})"
     },
     {
-      "Key": "PARAM_MassEdit_",
-      "Text": ""
+      "Key": "PARAM_MassEdit_Result_Error_Param_Filter_Missing",
+      "Text": "Could not find param filter. Add : and one of {0} (line {1})"
     },
     {
-      "Key": "PARAM_MassEdit_",
-      "Text": ""
+      "Key": "PARAM_MassEdit_Result_Error_Row_Filter_Missing",
+      "Text": "Could not find row filter. Check your colon placement. (line {0})"
     },
     {
-      "Key": "PARAM_MassEdit_",
-      "Text": ""
+      "Key": "PARAM_MassEdit_Result_Error_Row_Filter_Missing_Op",
+      "Text": "Could not find row filter. Add : and one of {0} (line {1})"
     },
     {
-      "Key": "PARAM_MassEdit_",
-      "Text": ""
+      "Key": "PARAM_MassEdit_Result_Error_Cell_Filter_Missing",
+      "Text": "Could not find cell/property filter. Add : and one of {0} or Name (0 args) (line {1})"
     },
     {
-      "Key": "PARAM_MassEdit_",
-      "Text": ""
+      "Key": "PARAM_MassEdit_Result_Error_Missing_Cell_Op",
+      "Text": "Could not find operation to perform. Check your colon placement. (line {0})"
     },
     {
-      "Key": "PARAM_MassEdit_",
-      "Text": ""
+      "Key": "PARAM_MassEdit_Result_Error_Row_Op_Unknown",
+      "Text": "Unknown row operation {0} (line {1})"
     },
     {
-      "Key": "PARAM_MassEdit_",
-      "Text": ""
+      "Key": "PARAM_MassEdit_Result_Error_Row_Op_Invalid_Arg_Count",
+      "Text": "Invalid number of arguments for operation {0} (line {1})"
     },
     {
-      "Key": "PARAM_MassEdit_",
-      "Text": ""
+      "Key": "PARAM_MassEdit_Result_Error_Cell_Op_Missing_Symbol",
+      "Text": "Could not find operation to perform. Add : and one of + - * / replace (line {0})"
     },
     {
-      "Key": "PARAM_MassEdit_",
-      "Text": ""
+      "Key": "PARAM_MassEdit_Result_Error_Cell_Op_Unknown",
+      "Text": "Unknown cell operation {0} (line {1})"
     },
     {
-      "Key": "PARAM_MassEdit_",
-      "Text": ""
+      "Key": "PARAM_MassEdit_Result_Error_Cell_Op_Invalid_Arg_Count",
+      "Text": "Invalid number of arguments for operation {0} (line {1})"
     },
     {
-      "Key": "PARAM_MassEdit_",
-      "Text": ""
+      "Key": "PARAM_MassEdit_Result_Error_On_Line",
+      "Text": "Error on line {0}\n{1}"
     },
+    {
+      "Key": "PARAM_MassEdit_Result_Error_Invalid_Global_Op",
+      "Text": "Error performing global operation {0} (line {1})"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Error_Invalid_Var_Op",
+      "Text": "Error performing var operation {0} (line {1})"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Error_Param_Stage_Invalid_Arg_Count",
+      "Text": "Invalid number of arguments for operation {0} (line {1})"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Error_Invalid_Row_Op",
+      "Text": "Could not perform operation {0} {1} on row (line {2})"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Error_Cell_Op_Bad_Type",
+      "Text": "Type is not correct: {0}"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Error_Cell_Op_Bad_Cast",
+      "Text": "Cannot cast to correct type: {0}"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Error_Cell_Op_Unknown_Error",
+      "Text": "Unknown error: {0}"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Error_Invalid_Cell_Op_ID",
+      "Text": "Could not perform operation {0} {1} on ID ({2}) (line {3})"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Error_Invalid_Cell_Op_Name",
+      "Text": "Could not perform operation {0} {1} on Name ({2}) (line {3})"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Error_Invalid_Cell_Op_Field",
+      "Text": "Could not perform operation {0} {1} on field {2} ({3}) (line {4})"
+    }
   ]
 }

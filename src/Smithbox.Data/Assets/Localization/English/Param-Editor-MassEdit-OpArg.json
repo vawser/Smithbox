@@ -1,0 +1,292 @@
+{
+  "Entries": [
+    {
+      "Key": "PARAM_OpArg_Default_TT",
+      "Text": "Gives the specified value."
+    },
+    {
+      "Key": "PARAM_OpArg_Self_TT",
+      "Text": "Gives the value of the currently selected value."
+    },
+    {
+      "Key": "PARAM_OpArg_Field_Hint",
+      "Text": "field name"
+    },
+    {
+      "Key": "PARAM_OpArg_Field_TT",
+      "Text": "Gives the value of the given cell/field for the currently selected row and param."
+    },
+    {
+      "Key": "PARAM_OpArg_Field_Error_Locate_Field",
+      "Text": "Could not locate field {0}."
+    },
+    {
+      "Key": "PARAM_OpArg_Vanilla_TT",
+      "Text": "Gives the value of the equivalent cell/field in the vanilla regulation or parambnd for the currently selected cell/field, row and param.\nWill fail if a row does not have a vanilla equivilent. Consider using && !added."
+    },
+    {
+      "Key": "PARAM_OpArg_Vanilla_Error_Locate_Vanilla_Param",
+      "Text": "Could not locate vanilla param for {0}."
+    },
+    {
+      "Key": "PARAM_OpArg_Vanilla_Error_Locate_Vanilla_Row",
+      "Text": "Could not locate vanilla row {0}."
+    },
+    {
+      "Key": "PARAM_OpArg_Vanilla_Error_Locate_Property",
+      "Text": "Could not locate given field or property."
+    },
+    {
+      "Key": "PARAM_OpArg_Aux_Hint",
+      "Text": "parambank name"
+    },
+    {
+      "Key": "PARAM_OpArg_Aux_TT",
+      "Text": "Gives the value of the equivalent cell/field in the specified regulation or parambnd for the currently selected cell/field, row and param.\nWill fail if a row does not have an aux equivilent. Consider using && auxprop ID .*"
+    },
+    {
+      "Key": "PARAM_OpArg_Aux_Error_Locate_Param_Bank",
+      "Text": "Could not locate paramBank {0}."
+    },
+    {
+      "Key": "PARAM_OpArg_Aux_Error_Locate_Aux_Param",
+      "Text": "Could not locate aux param for {0}."
+    },
+    {
+      "Key": "PARAM_OpArg_Aux_Error_Locate_Aux_Row",
+      "Text": "Could not locate aux row {0}."
+    },
+    {
+      "Key": "PARAM_OpArg_Aux_Error_Locate_Property",
+      "Text": "Could not locate given field or property."
+    },
+    {
+      "Key": "PARAM_OpArg_VanillaField_Hint",
+      "Text": "field name"
+    },
+    {
+      "Key": "PARAM_OpArg_VanillaField_TT",
+      "Text": "Gives the value of the specified cell/field in the vanilla regulation or parambnd for the currently selected row and param.\nWill fail if a row does not have a vanilla equivilent. Consider using && !added"
+    },
+    {
+      "Key": "PARAM_OpArg_VanillaField_Error_Locate_Vanilla_Param",
+      "Text": "Could not locate vanilla param for {0}"
+    },
+    {
+      "Key": "PARAM_OpArg_VanillaField_Error_Locate_Field",
+      "Text": "Could not locate field {0}"
+    },
+    {
+      "Key": "PARAM_OpArg_VanillaField_Error_Locate_Vanilla_Row",
+      "Text": "Could not locate vanilla row {0}"
+    },
+    {
+      "Key": "PARAM_OpArg_AuxField_Hint_1",
+      "Text": "parambank name"
+    },
+    {
+      "Key": "PARAM_OpArg_AuxField_Hint_2",
+      "Text": "field name"
+    },
+    {
+      "Key": "PARAM_OpArg_AuxField_TT",
+      "Text": "Gives the value of the specified cell/field in the specified regulation or parambnd for the currently selected row and param.\nWill fail if a row does not have an aux equivilent. Consider using && auxprop ID .*"
+    },
+    {
+      "Key": "PARAM_OpArg_AuxField_Error_Locate_Param_Bank",
+      "Text": "Could not locate paramBank {0}"
+    },
+    {
+      "Key": "PARAM_OpArg_AuxField_Error_Locate_Aux_Param",
+      "Text": "Could not locate aux param for {0}"
+    },
+    {
+      "Key": "PARAM_OpArg_AuxField_Error_Locate_Field",
+      "Text": "Could not locate field {0}"
+    },
+    {
+      "Key": "PARAM_OpArg_AuxField_Error_Locate_Aux_Row",
+      "Text": "Could not locate aux row {0}"
+    },
+    {
+      "Key": "PARAM_OpArg_ParamLookup_Hint_1",
+      "Text": "param name"
+    },
+    {
+      "Key": "PARAM_OpArg_ParamLookup_Hint_2",
+      "Text": "row id"
+    },
+    {
+      "Key": "PARAM_OpArg_ParamLookup_Hint_3",
+      "Text": "field name"
+    },
+    {
+      "Key": "PARAM_OpArg_ParamLookup_TT",
+      "Text": "Returns the specific value specified by the exact param, row and field."
+    },
+    {
+      "Key": "PARAM_OpArg_ParamLookup_Error_Locate_Param",
+      "Text": "Could not find param {0}"
+    },
+    {
+      "Key": "PARAM_OpArg_ParamLookup_Error_Locate_Field",
+      "Text": "Could not find field {0} in param {1}"
+    },
+    {
+      "Key": "PARAM_OpArg_ParamLookup_Error_Locate_Row",
+      "Text": "Could not find row {0} in param {1}"
+    },
+    {
+      "Key": "PARAM_OpArg_Average_Hint_1",
+      "Text": "field name"
+    },
+    {
+      "Key": "PARAM_OpArg_Average_Hint_2",
+      "Text": "row selector"
+    },
+    {
+      "Key": "PARAM_OpArg_Average_TT",
+      "Text": "Gives the mean value of the cells/fields found using the given selector, for the currently selected param."
+    },
+    {
+      "Key": "PARAM_OpArg_Average_Error_Locate_Field",
+      "Text": "Could not locate field {0}"
+    },
+    {
+      "Key": "PARAM_OpArg_Average_Error_Invalid_Type",
+      "Text": "Cannot average field {0}"
+    },
+    {
+      "Key": "PARAM_OpArg_Median_Hint_1",
+      "Text": "field name"
+    },
+    {
+      "Key": "PARAM_OpArg_Median_Hint_2",
+      "Text": "row selector"
+    },
+    {
+      "Key": "PARAM_OpArg_Median_TT",
+      "Text": "Gives the median value of the cells/fields found using the given selector, for the currently selected param"
+    },
+    {
+      "Key": "PARAM_OpArg_Median_Error_Locate_Field",
+      "Text": "Could not locate field {0}"
+    },
+    {
+      "Key": "PARAM_OpArg_",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_OpArg_",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_OpArg_",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_OpArg_",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_OpArg_",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_OpArg_",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_OpArg_",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_OpArg_",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_OpArg_",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_OpArg_",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_OpArg_",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_OpArg_",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_OpArg_",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_OpArg_",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_OpArg_",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_OpArg_",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_OpArg_",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_OpArg_",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_OpArg_",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_OpArg_",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_OpArg_",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_OpArg_",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_OpArg_",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_OpArg_",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_OpArg_",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_OpArg_",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_OpArg_",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_OpArg_",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_OpArg_",
+      "Text": ""
+    },
+  ]
+}

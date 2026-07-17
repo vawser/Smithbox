@@ -289,25 +289,35 @@ public class MapUniverse : IUniverse
                 var wrapper = entry.Value;
 
                 ResourceManager.ClearUnusedResources();
-                View.ModelInsightTool.ClearEntry(wrapper.MapContainer);
 
-                View.EntityTypeCache.RemoveMapFromCache(wrapper.MapContainer);
+                if (wrapper != null)
+                {
+                    View.ModelInsightTool.ClearEntry(wrapper.MapContainer);
+
+                    View.EntityTypeCache.RemoveMapFromCache(wrapper.MapContainer);
+                }
 
                 View.HavokCollisionBank.OnUnloadMap(curMapID);
                 View.HavokNavmeshBank.OnUnloadMap(curMapID);
 
-                if (View.Selection.SelectedMapContainer == wrapper.MapContainer)
+                if (wrapper != null)
                 {
-                    View.Selection.SelectedMapID = "";
-                    View.Selection.SelectedMapContainer = null;
+                    if (View.Selection.SelectedMapContainer == wrapper.MapContainer)
+                    {
+                        View.Selection.SelectedMapID = "";
+                        View.Selection.SelectedMapContainer = null;
+                    }
                 }
 
                 View.MapContentView.OnMapUnloaded();
 
-                wrapper.MapContainer.LoadState = MapContentLoadState.Unloaded;
-                wrapper.MapContainer.Unload();
-                wrapper.MapContainer.Clear();
-                wrapper.MapContainer = null;
+                if (wrapper != null)
+                {
+                    wrapper.MapContainer.LoadState = MapContentLoadState.Unloaded;
+                    wrapper.MapContainer.Unload();
+                    wrapper.MapContainer.Clear();
+                    wrapper.MapContainer = null;
+                }
             }
         }
 

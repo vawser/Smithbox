@@ -20,15 +20,19 @@ public class MEGlobalOperation : MEOperation<ParamSelection, bool>
 
     internal override void Setup()
     {
-        operations.Add("clear", (new string[0], "Clears clipboard param and rows", (selectionState, args) =>
+        operations.Add("clear", (new string[0],
+            LOC.Get("PARAM_GlobalOp_Clear_TT"), (selectionState, args) =>
         {
             CurrentView.GetPrimaryBank().ClipboardParam = null;
             CurrentView.GetPrimaryBank().ClipboardRows.Clear();
             return true;
         }
         ));
-        operations.Add("newvar", (new[] { "variable name", "value" },
-            "Creates a variable with the given value, and the type of that value", (selectionState, args) =>
+
+        operations.Add("newvar", (new[] { 
+            LOC.Get("PARAM_GlobalOp_NewVar_Hint_1"),
+            LOC.Get("PARAM_GlobalOp_NewVar_Hint_2") },
+            LOC.Get("PARAM_GlobalOp_NewVar_TT"), (selectionState, args) =>
             {
                 int asInt;
                 double asDouble;
@@ -48,7 +52,9 @@ public class MEGlobalOperation : MEOperation<ParamSelection, bool>
                 return true;
             }
         ));
-        operations.Add("clearvars", (new string[0], "Deletes all variables", (selectionState, args) =>
+
+        operations.Add("clearvars", (new string[0], 
+            LOC.Get("PARAM_GlobalOp_ClearVars_Hint"), (selectionState, args) =>
         {
             MassParamEdit.massEditVars.Clear();
             return true;
