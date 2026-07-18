@@ -1293,6 +1293,8 @@ public class CFG
     public float AnimEditor_TertiaryGrid_Rotation_Y = 0;
     public float AnimEditor_TertiaryGrid_Rotation_Z = 90;
 
+    public bool Viewport_BB_Reject_Unsupported_DXGI_Formats = false;
+
     #endregion
 
     ///------------------------------------------------------------

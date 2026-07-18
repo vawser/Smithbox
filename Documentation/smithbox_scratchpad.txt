@@ -7,6 +7,8 @@
   - Generate list of 'speedtree' assets to JSON for each project type
   - Handle the speedtree placeholders on the entity side
 
+ - BB maps not loading due to texture deswizzling error
+ 
 # Gparam Editor:
  - DS2 fog color values are inverted (BGR, not RGB)
 

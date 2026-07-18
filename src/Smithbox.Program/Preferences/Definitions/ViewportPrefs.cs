@@ -42,6 +42,28 @@ public class ViewportPrefs
             }
         };
     }
+    public static PreferenceItem Viewport_BB_Reject_Unsupported_DXGI_Formats()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 1,
+            Category = PreferenceCategory.Viewport,
+            Spacer = true,
+            InlineName = true,
+            DisplayRestrictions = new List<ProjectType>() { ProjectType.BB },
+
+            Section = SectionCategory.General,
+
+            Title = "PREF_Viewport_BB_Reject_Unsupported_DXGI_Formats",
+            Description = "PREF_Viewport_BB_Reject_Unsupported_DXGI_Formats_TT",
+
+            Draw = () =>
+            {
+                DPI.ApplyInputWidth();
+                ImGui.Checkbox("##value", ref CFG.Current.Viewport_BB_Reject_Unsupported_DXGI_Formats);
+            }
+        };
+    }
 
 
     #endregion
