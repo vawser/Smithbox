@@ -428,37 +428,6 @@ public class TexturePool
 
             VkFormat format;
 
-            // Special handling for Bloodborne
-            // Reason: DeswizzleDDSBytesPS4RGBA throws index error when processing this DDS format
-            var curProject = Smithbox.Orchestrator.SelectedProject;
-
-            if (curProject != null && curProject.Descriptor.ProjectType is ProjectType.BB)
-            {
-                if (CFG.Current.Viewport_BB_Reject_Unsupported_DXGI_Formats)
-                {
-                    if (dds.header10 != null)
-                    {
-                        // Format 10
-                        if (dds.header10.dxgiFormat == DDS.DXGI_FORMAT.R16G16B16A16_FLOAT)
-                        {
-                            return;
-                        }
-
-                        // Format 22
-                        if (dds.header10.dxgiFormat == DDS.DXGI_FORMAT.X32_TYPELESS_G8X24_UINT)
-                        {
-                            return;
-                        }
-
-                        // Format 105
-                        if (dds.header10.dxgiFormat == DDS.DXGI_FORMAT.P016)
-                        {
-                            return;
-                        }
-                    }
-                }
-            }
-
             try
             {
                 if (dds.header10 != null)
@@ -504,6 +473,8 @@ public class TexturePool
             }
 
             Format = format;
+
+            var curProject = Smithbox.Orchestrator.SelectedProject;
 
             if (curProject != null && curProject.Handler != null)
             {

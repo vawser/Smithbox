@@ -9,14 +9,6 @@
       "Text": "Adjusts the frame rate of the viewport."
     },
     {
-      "Key": "PREF_Viewport_BB_Reject_Unsupported_DXGI_Formats",
-      "Text": "Reject Unsupported DXGI Formats during Texture Deswizzle"
-    },
-    {
-      "Key": "PREF_Viewport_BB_Reject_Unsupported_DXGI_Formats_TT",
-      "Text": "If enabled, rejects certain DGXI formats when deswizzling PS4 textures."
-    },
-    {
       "Key": "PREF_Viewport_Enable_Rendering",
       "Text": "Enable Model Rendering"
     },
