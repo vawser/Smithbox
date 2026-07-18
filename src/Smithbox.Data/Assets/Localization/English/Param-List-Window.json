@@ -1,0 +1,140 @@
+{
+  "Entries": [
+    {
+      "Key": "PARAM_ParamWindow_Title",
+      "Text": "Param List"
+    },
+    {
+      "Key": "PARAM_ParamWindow_Title_Version",
+      "Text": "Param List - Version {0}"
+    },
+    {
+      "Key": "PARAM_ParamWindow_Title_Version_Out_of_Date",
+      "Text": "Param List - Version {0} (out of date)"
+    },
+    {
+      "Key": "PARAM_ParamWindow_Search_Hint",
+      "Text": "Search..."
+    },
+    {
+      "Key": "PARAM_ParamWindow_Search_Hint_TT",
+      "Text": "Search <{0}>"
+    },
+    {
+      "Key": "PARAM_ParamWindow_ToggleTableGroup_Hidden",
+      "Text": "Hidden"
+    },
+    {
+      "Key": "PARAM_ParamWindow_ToggleTableGroup_Visible",
+      "Text": "Visible"
+    },
+    {
+      "Key": "PARAM_ParamWindow_ToggleTableGroup_Hint",
+      "Text": "Toggle the display of the Table Group window.\nCurrent Mode: {0}"
+    },
+    {
+      "Key": "PARAM_ParamWindow_ToggleCommunityNames_Source",
+      "Text": "Source"
+    },
+    {
+      "Key": "PARAM_ParamWindow_ToggleCommunityNames_Community",
+      "Text": "Community"
+    },
+    {
+      "Key": "PARAM_ParamWindow_ToggleCommunityNames_Hint",
+      "Text": "Toggle the display of community names for params.\nCurrent Mode: {0}"
+    },
+    {
+      "Key": "PARAM_ParamWindow_ToggleCategories_Hidden",
+      "Text": "Hidden"
+    },
+    {
+      "Key": "PARAM_ParamWindow_ToggleCategories_Visible",
+      "Text": "Visible"
+    },
+    {
+      "Key": "PARAM_ParamWindow_ToggleCategories_Hint",
+      "Text": "Toggle the display of param categories.\nCurrent Mode: {0}"
+    },
+    {
+      "Key": "PARAM_ParamWindow_Category_General",
+      "Text": "General"
+    },
+    {
+      "Key": "PARAM_ParamWindow_Context_Info_Header",
+      "Text": "Information"
+    },
+    {
+      "Key": "PARAM_ParamWindow_Context_ParamType",
+      "Text": "Param Type: {0}"
+    },
+    {
+      "Key": "PARAM_ParamWindow_Context_Action_Copy_Name",
+      "Text": "Copy Name"
+    },
+    {
+      "Key": "PARAM_ParamWindow_Context_Action_Copy_Type",
+      "Text": "Copy Param Type"
+    },
+    {
+      "Key": "PARAM_ParamWindow_Context_Pin_Header",
+      "Text": "Pinning"
+    },
+    {
+      "Key": "PARAM_ParamWindow_Context_Action_Pin",
+      "Text": "Pin"
+    },
+    {
+      "Key": "PARAM_ParamWindow_Context_Action_Pin_TT",
+      "Text": "Pin the current param selection to the top of the param list."
+    },
+    {
+      "Key": "PARAM_ParamWindow_Context_Action_Unpin",
+      "Text": "Unpin"
+    },
+    {
+      "Key": "PARAM_ParamWindow_Context_Action_Unpin_TT",
+      "Text": "Unpin the current param selection from the top of the param list."
+    },
+    {
+      "Key": "PARAM_ParamWindow_Context_Export_Header",
+      "Text": "Export"
+    },
+    {
+      "Key": "PARAM_ParamWindow_Context_Action_Export_Loose_Param",
+      "Text": "Expose Param as Loose File"
+    },
+    {
+      "Key": "PARAM_ParamWindow_Context_Action_Export_Loose_Param_TT",
+      "Text": "Extracts this param and saves it as a loose .PARAM file."
+    },
+    {
+      "Key": "PARAM_ParamWindow_Context_Wiki_Header",
+      "Text": "Wiki"
+    },
+    {
+      "Key": "PARAM_ParamWindow_Action_Copy_Param_List",
+      "Text": "Export Param List"
+    },
+    {
+      "Key": "PARAM_ParamWindow_Action_Copy_Param_TT",
+      "Text": "Export the param list table for the SoulsModding wiki to the clipboard."
+    },
+    {
+      "Key": "PARAM_ParamWindow_Action_Copy_Field_List",
+      "Text": "Export Field List"
+    },
+    {
+      "Key": "PARAM_ParamWindow_Action_Copy_Field_TT",
+      "Text": "Export the param field list table for the SoulsModding wiki for this param to the clipboard."
+    },
+    {
+      "Key": "PARAM_ParamWindow_ExportParam_Error_Invalid_ParamData",
+      "Text": "Failed to find valid param data for {0}"
+    },
+    {
+      "Key": "PARAM_ParamWindow_ExportParam_Log",
+      "Text": "Exported param to {0}"
+    }
+  ]
+}

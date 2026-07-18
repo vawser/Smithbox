@@ -44,7 +44,7 @@ public class ParamFieldWindow
             FocusManager.SetFocus(EditorFocusContext.ParamEditor_FieldList);
 
             ImGui.AlignTextToFramePadding();
-            ImGui.Text("Select a row to see properties");
+            ImGui.Text(LOC.Get("PARAM_FieldWindow_SelectRow_Hint"));
             ImGui.EndChild();
         }
         else
@@ -85,7 +85,7 @@ public class ParamFieldWindow
     }
     public void DisplayTitle()
     {
-        var fieldListTable = "Field List";
+        var fieldListTable = LOC.Get("PARAM_FieldWindow_Title");
 
         GUI.SimpleHeader($"{fieldListTable}", "");
     }
@@ -150,14 +150,14 @@ public class ParamFieldWindow
                 if (ImGui.TableNextColumn())
                 {
                     ImGui.AlignTextToFramePadding();
-                    ImGui.Text("Current");
+                    ImGui.Text(LOC.Get("PARAM_FieldWindow_Col_Current"));
                 }
 
                 // Vanilla
                 if (CFG.Current.Param_ShowVanillaColumn && ImGui.TableNextColumn())
                 {
                     ImGui.AlignTextToFramePadding();
-                    ImGui.Text("Vanilla");
+                    ImGui.Text(LOC.Get("PARAM_FieldWindow_Col_Vanilla"));
                 }
 
                 // Aux
@@ -248,14 +248,14 @@ public class ParamFieldWindow
                 if (ImGui.TableNextColumn())
                 {
                     ImGui.AlignTextToFramePadding();
-                    ImGui.Text("Current");
+                    ImGui.Text(LOC.Get("PARAM_FieldWindow_Col_Current"));
                 }
 
                 // Vanilla
                 if (CFG.Current.Param_ShowVanillaColumn && ImGui.TableNextColumn())
                 {
                     ImGui.AlignTextToFramePadding();
-                    ImGui.Text("Vanilla");
+                    ImGui.Text(LOC.Get("PARAM_FieldWindow_Col_Vanilla"));
                 }
 
                 // Aux
@@ -366,9 +366,10 @@ public class ParamFieldWindow
 
             // Field search
             ImGui.AlignTextToFramePadding();
-            ImGui.InputTextWithHint("##fieldSearch", "Search...", ref propSearchString,
+            ImGui.InputTextWithHint("##fieldSearch", LOC.Get("PARAM_FieldWindow_Search_Hint"), ref propSearchString,
                 255);
-            GUI.Tooltip($"Search <{InputManager.GetHint(KeybindID.ParamEditor_Focus_Searchbar)}>");
+            GUI.Tooltip(
+                LOC.Get("PARAM_FieldWindow_Search_TT", InputManager.GetHint(KeybindID.ParamEditor_Focus_Searchbar)));
 
             if (ImGui.IsItemEdited())
             {
@@ -398,7 +399,8 @@ public class ParamFieldWindow
                 }
             }
 
-            GUI.Tooltip($"Toggle field name display type between Internal and Community.\nCurrent Mode: {CFG.Current.ParamEditor_FieldNameMode.GetDisplayName()}");
+            GUI.Tooltip(
+                LOC.Get("PARAM_FieldWindow_FieldNameMode_Hint", CFG.Current.ParamEditor_FieldNameMode.GetDisplayName()));
 
             // Toggle Vanilla Columns
             ImGui.SameLine();
@@ -408,11 +410,11 @@ public class ParamFieldWindow
                 CFG.Current.Param_ShowVanillaColumn = !CFG.Current.Param_ShowVanillaColumn;
             }
 
-            var vanillaColumnMode = "Hidden";
+            var vanillaColumnMode = LOC.Get("PARAM_FieldWindow_VanillaCol_Hidden");
             if (CFG.Current.Param_ShowVanillaColumn)
-                vanillaColumnMode = "Visible";
+                vanillaColumnMode = LOC.Get("PARAM_FieldWindow_VanillaCol_Visible");
 
-            GUI.Tooltip($"Toggle the display of the vanilla columns.\nCurrent Mode: {vanillaColumnMode}");
+            GUI.Tooltip(LOC.Get("PARAM_FieldWindow_VanillaCol_Hint", vanillaColumnMode));
 
             // Toggle Auxiliary Columns
             ImGui.SameLine();
@@ -422,11 +424,11 @@ public class ParamFieldWindow
                 CFG.Current.Param_ShowAuxColumn = !CFG.Current.Param_ShowAuxColumn;
             }
 
-            var auxColumnMode = "Hidden";
+            var auxColumnMode = LOC.Get("PARAM_FieldWindow_AuxCol_Hidden");
             if (CFG.Current.Param_ShowAuxColumn)
-                auxColumnMode = "Visible";
+                auxColumnMode = LOC.Get("PARAM_FieldWindow_AuxCol_Visible");
 
-            GUI.Tooltip($"Toggle the display of the auxiliary columns.\nCurrent Mode: {auxColumnMode}");
+            GUI.Tooltip(LOC.Get("PARAM_FieldWindow_AuxCol_Hint", auxColumnMode));
 
             // Toggle Field Layouts
             ImGui.SameLine();
@@ -436,11 +438,11 @@ public class ParamFieldWindow
                 CFG.Current.ParamEditor_Field_List_Enable_Field_Layouts = !CFG.Current.ParamEditor_Field_List_Enable_Field_Layouts;
             }
 
-            var fieldLayoutsState = "Ignore Field Layouts";
+            var fieldLayoutsState = LOC.Get("PARAM_FieldWindow_FieldLayout_Hidden");
             if (CFG.Current.ParamEditor_Field_List_Enable_Field_Layouts)
-                fieldLayoutsState = "Use Field Layouts";
+                fieldLayoutsState = LOC.Get("PARAM_FieldWindow_FieldLayout_Visible");
 
-            GUI.Tooltip($"Toggle the usage of field layouts.\nCurrent Mode: {fieldLayoutsState}");
+            GUI.Tooltip(LOC.Get("PARAM_FieldWindow_FieldLayout_Hint", fieldLayoutsState));
 
             // Toggle Field Offset Column
             ImGui.SameLine();
@@ -450,11 +452,11 @@ public class ParamFieldWindow
                 CFG.Current.ParamEditor_Field_List_Display_Offsets = !CFG.Current.ParamEditor_Field_List_Display_Offsets;
             }
 
-            var fieldOffsetColumnMode = "Hidden";
+            var fieldOffsetColumnMode = LOC.Get("PARAM_FieldWindow_FieldOffset_Hidden");
             if (CFG.Current.ParamEditor_Field_List_Display_Offsets)
-                fieldOffsetColumnMode = "Visible";
+                fieldOffsetColumnMode = LOC.Get("PARAM_FieldWindow_FieldOffset_Visible");
 
-            GUI.Tooltip($"Toggle the display of the field offset column.\nCurrent Mode: {fieldOffsetColumnMode}");
+            GUI.Tooltip(LOC.Get("PARAM_FieldWindow_FieldOffset_Hint", fieldOffsetColumnMode));
 
             // Toggle Field Padding
             ImGui.SameLine();
@@ -464,11 +466,11 @@ public class ParamFieldWindow
                 CFG.Current.ParamEditor_Field_List_Display_Padding = !CFG.Current.ParamEditor_Field_List_Display_Padding;
             }
 
-            var fieldPaddingMode = "Visible";
+            var fieldPaddingMode = LOC.Get("PARAM_FieldWindow_FieldPadding_Visible");
             if (!CFG.Current.ParamEditor_Field_List_Display_Padding)
-                fieldPaddingMode = "Hidden";
+                fieldPaddingMode = LOC.Get("PARAM_FieldWindow_FieldPadding_Hidden");
 
-            GUI.Tooltip($"Toggle the display of padding field.\nCurrent Mode: {fieldPaddingMode}");
+            GUI.Tooltip(LOC.Get("PARAM_FieldWindow_FieldPadding_Hint", fieldPaddingMode));
 
             // Toggle Modified Background
             ImGui.SameLine();
@@ -478,11 +480,11 @@ public class ParamFieldWindow
                 CFG.Current.ParamEditor_Field_List_Display_Modified_Field_Bg = !CFG.Current.ParamEditor_Field_List_Display_Modified_Field_Bg;
             }
 
-            var rowModifiedBgMode = "Hide Background";
+            var rowModifiedBgMode = LOC.Get("PARAM_FieldWindow_ModifiedBg_Hidden");
             if (CFG.Current.ParamEditor_Field_List_Display_Modified_Field_Bg)
-                rowModifiedBgMode = "Display Background";
+                rowModifiedBgMode = LOC.Get("PARAM_FieldWindow_ModifiedBg_Visible");
 
-            GUI.Tooltip($"Toggle the display of the modified background on modified fields.\nCurrent Mode: {rowModifiedBgMode}");
+            GUI.Tooltip(LOC.Get("PARAM_FieldWindow_ModifiedBg_Hint", rowModifiedBgMode));
         }
 
         ImGui.EndChild();
@@ -517,9 +519,12 @@ public class ParamFieldWindow
         PropertyInfo nameProp = row.GetType().GetProperty("Name");
         PropertyInfo idProp = row.GetType().GetProperty("ID");
 
-        PropEditorPropInfoRow(row, meta, annotations, vrow, auxRows, crow, nameProp, "Name", ref imguiId,
+        PropEditorPropInfoRow(row, meta, annotations, vrow, auxRows, crow, nameProp, 
+            LOC.Get("PARAM_FieldWindow_Name_Prop"), ref imguiId,
             activeParam, 1_000_000);
-        PropEditorPropInfoRow(row, meta, annotations, vrow, auxRows, crow, idProp, "ID", ref imguiId,
+
+        PropEditorPropInfoRow(row, meta, annotations, vrow, auxRows, crow, idProp, 
+            LOC.Get("PARAM_FieldWindow_ID_Prop"), ref imguiId,
             activeParam, 2_000_000);
 
         ImGui.Spacing();
@@ -777,7 +782,7 @@ public class ParamFieldWindow
                 if (value == "3")
                 {
                     ImGui.AlignTextToFramePadding();
-                    ImGui.TextColored(UI.Current.ImGui_AliasName_Text, $"This lot will always occur.");
+                    ImGui.TextColored(UI.Current.ImGui_AliasName_Text, LOC.Get("PARAM_FieldWindow_LotChance_Always"));
                     return;
                 }
             }
@@ -786,14 +791,14 @@ public class ParamFieldWindow
         if (curChance == 0)
         {
             ImGui.AlignTextToFramePadding();
-            ImGui.TextColored(UI.Current.ImGui_AliasName_Text, $"This lot will never occur.");
+            ImGui.TextColored(UI.Current.ImGui_AliasName_Text, LOC.Get("PARAM_FieldWindow_LotChance_Never"));
             return;
         }
 
         var chance = Math.Round((curChance / totalChance) * 100, 2);
 
         ImGui.AlignTextToFramePadding();
-        ImGui.TextColored(UI.Current.ImGui_AliasName_Text, $"This lot has a {chance}%% chance to occur.");
+        ImGui.TextColored(UI.Current.ImGui_AliasName_Text, LOC.Get("PARAM_FieldWindow_LotChance_Percent", chance));
     }
 
     private void DisplayTotalChance(Param.Row row, FieldLayout layout)
@@ -833,7 +838,7 @@ public class ParamFieldWindow
                 if (value == "3")
                 {
                     ImGui.AlignTextToFramePadding();
-                    ImGui.TextColored(UI.Current.ImGui_AliasName_Text, $"This drop will always occur.");
+                    ImGui.TextColored(UI.Current.ImGui_AliasName_Text, LOC.Get("PARAM_FieldWindow_LotChance_Always"));
                     return;
                 }
             }
@@ -842,7 +847,7 @@ public class ParamFieldWindow
         if (totalChance == 0)
         {
             ImGui.AlignTextToFramePadding();
-            ImGui.TextColored(UI.Current.ImGui_AliasName_Text, $"This drop will never occur.");
+            ImGui.TextColored(UI.Current.ImGui_AliasName_Text, LOC.Get("PARAM_FieldWindow_LotChance_Never"));
             return;
         }
 
@@ -850,7 +855,7 @@ public class ParamFieldWindow
             totalChance = 100;
 
         ImGui.AlignTextToFramePadding();
-        ImGui.TextColored(UI.Current.ImGui_AliasName_Text, $"This drop has a {totalChance}%% chance to occur.");
+        ImGui.TextColored(UI.Current.ImGui_AliasName_Text, LOC.Get("PARAM_FieldWindow_LotChance_Percent", totalChance));
     }
 
     private void RenderField(ParamMeta meta, ParamAnnotationEntry annotations,
@@ -954,7 +959,7 @@ public class ParamFieldWindow
             }
             else if (CFG.Current.ParamEditor_Field_List_Field_Layout_Display_Type is FieldLayoutMode.Header)
             {
-                GUI.SimpleHeader($"Unsorted", "");
+                GUI.SimpleHeader($"{LOC.Get("PARAM_FieldWindow_Header_Unsorted")}##unsortedCat", "");
 
                 if (BeginGroupTable($"ParamFieldsG_{activeParam}_misc", columnCount))
                 {
@@ -1403,8 +1408,9 @@ public class ParamFieldWindow
     private void DefaultContextMenu(FieldMetaContext metaContext, string internalName, string activeParam, bool showPinOptions, bool isPinned, Param.Column col, Type propType, dynamic oldval, bool isNameMenu)
     {
         var altName = metaContext.FieldAnnotation?.Name;
-
-        if (ImGui.BeginMenu("Information"))
+    
+        // Information
+        if (ImGui.BeginMenu($"{LOC.Get("PARAM_FieldWindow_Context_Info_Header")}##infoMenuHeader"))
         {
             var displayAttributes = CFG.Current.ParamEditor_Field_Context_Display_Field_Attributes;
             var displayDescription = CFG.Current.ParamEditor_Field_Context_Display_Field_Description;
@@ -1430,7 +1436,7 @@ public class ParamFieldWindow
                     {
                         ImGui.AlignTextToFramePadding();
                         ImGui.TextColored(new Vector4(1.0f, 1.0f, 1.0f, 0.7f),
-                            "Info regarding this field has not been written.");
+                            LOC.Get("PARAM_FieldWindow_Context_No_Desc"));
                     }
                 }
             }
@@ -1440,7 +1446,8 @@ public class ParamFieldWindow
                 ImGui.TextColored(new Vector4(1.0f, 0.7f, 0.4f, 1.0f), Utils.ImGuiEscape(internalName, "", true));
             }
 
-            if (ImGui.MenuItem("Copy Internal Name"))
+            // Copy Field Name
+            if (ImGui.MenuItem($"{LOC.Get("PARAM_FieldWindow_Context_Action_Copy_Field_Name")}##copyFieldNameAction"))
             {
                 PlatformUtils.Instance.SetClipboardText(internalName);
             }
@@ -1449,10 +1456,10 @@ public class ParamFieldWindow
         }
 
         // Search
-        if (ImGui.BeginMenu("Search"))
+        if (ImGui.BeginMenu($"{LOC.Get("PARAM_FieldWindow_Context_Search_Header")}##searchMenuHeader"))
         {
             // Add to Search
-            if (ImGui.MenuItem("Add to Searchbar"))
+            if (ImGui.MenuItem($"{LOC.Get("PARAM_FieldWindow_Context_Action_Add_to_Searchbar")}##addToSearchbarAction"))
             {
                 if (col != null)
                 {
@@ -1467,7 +1474,8 @@ public class ParamFieldWindow
             // Search for Non-Default Values
             if (col != null)
             {
-                if (ImGui.MenuItem("Search for Non-Default Values"))
+                // Search for Non-Default Values
+                if (ImGui.MenuItem($"{LOC.Get("PARAM_FieldWindow_Context_Action_Search_NonDefault_Vals")}##searchNonDefaultValuesAction"))
                 {
                     EditorCommandQueue.AddCommand($@"param/search/proprange {internalName.Replace(" ", "\\s")} 0.01 {int.MaxValue}");
                 }
@@ -1477,16 +1485,16 @@ public class ParamFieldWindow
         }
 
         // Value
-        if (ImGui.BeginMenu("Value"))
+        if (ImGui.BeginMenu($"{LOC.Get("PARAM_FieldWindow_Context_Value_Header")}##valueMenuHeader"))
         {
             // Reset to vanilla
-            if (ImGui.Selectable("Reset to Vanilla"))
+            if (ImGui.Selectable($"{LOC.Get("PARAM_FieldWindow_Context_Action_Reset_to_Vanilla")}##resetToVanillaAction"))
             {
                 ParentView.MassEdit.ApplyMassEdit($"selection && !added: {Regex.Escape(internalName)}: = vanilla;");
             }
 
             // Value Distribution
-            if (ImGui.Selectable("View Value Distribution"))
+            if (ImGui.Selectable($"{LOC.Get("PARAM_FieldWindow_Context_Action_View_Value_Distribution")}##viewValueDistAction"))
             {
                 EditorCommandQueue.AddCommand($@"param/menu/distributionPopup/{internalName}");
             }
@@ -1497,20 +1505,23 @@ public class ParamFieldWindow
         // Mass Edit
         if (ImGui.BeginMenu("Mass Edit"))
         {
-            if (ImGui.MenuItem("Add to Palette"))
+            // Add to Palette
+            if (ImGui.MenuItem($"{LOC.Get("PARAM_FieldWindow_Context_Action_Add_to_Palette")}##addToPaletteAction"))
             {
                 ParentView.MassEdit.ConstructCommandFromField(internalName);
             }
-            GUI.Tooltip("Add this field to the Mass Edit command palette.");
+            GUI.Tooltip(LOC.Get("PARAM_FieldWindow_Context_Action_Add_to_Palette_TT"));
 
-            if (ImGui.Selectable("Command Palette"))
+            // Command Palette
+            if (ImGui.Selectable($"{LOC.Get("PARAM_FieldWindow_Context_Action_View_Command_Palette")}##commandPaletteAction"))
             {
                 EditorCommandQueue.AddCommand(
                     $@"param/menu/massEditRegex/selection: {Regex.Escape(internalName)}: ");
             }
-            GUI.Tooltip("Open the floating command palette.");
+            GUI.Tooltip(LOC.Get("PARAM_FieldWindow_Context_Action_View_Command_Palette_TT"));
 
-            if (ImGui.BeginMenu("Autofill"))
+            // Autofill
+            if (ImGui.BeginMenu($"{LOC.Get("PARAM_FieldWindow_Context_AutoFill_Header")}##autoFillMenuHeader"))
             {
                 if (ParentView.MassEdit.AutoFill != null)
                 {
@@ -1524,7 +1535,7 @@ public class ParamFieldWindow
 
                 ImGui.EndMenu();
             }
-            GUI.Tooltip("Open the autofill menu.");
+            GUI.Tooltip(LOC.Get("PARAM_FieldWindow_Context_AutoFill_TT"));
 
             ImGui.EndMenu();
         }
@@ -1532,9 +1543,11 @@ public class ParamFieldWindow
         // Pin Options
         if (showPinOptions)
         {
-            if (ImGui.BeginMenu("Pinning"))
+            // Pinning
+            if (ImGui.BeginMenu($"{LOC.Get("PARAM_FieldWindow_Context_Pin_Header")}##pinningMenuHeader"))
             {
-                if (ImGui.MenuItem(isPinned ? "Unpin " : "Pin "))
+                // Pin / Unpin
+                if (ImGui.MenuItem(isPinned ? LOC.Get("PARAM_FieldWindow_Context_Action_Unpin") : LOC.Get("PARAM_FieldWindow_Context_Action_Pin")))
                 {
                     if (!Editor.Project.Descriptor.PinnedFields.ContainsKey(activeParam))
                     {
@@ -1559,7 +1572,8 @@ public class ParamFieldWindow
                         internalName);
                 }
 
-                if (ImGui.Selectable("Unpin all"))
+                // Unpin All
+                if (ImGui.Selectable($"{LOC.Get("PARAM_FieldWindow_Context_Action_Unpin_All")}##unpinAllAction"))
                 {
                     Editor.Project.Descriptor.PinnedFields.Clear();
                 }
@@ -1569,17 +1583,19 @@ public class ParamFieldWindow
         }
 
         // Comparison
-        if (ImGui.BeginMenu("Comparison"))
+        if (ImGui.BeginMenu($"{LOC.Get("PARAM_FieldWindow_Context_Comparison_Header")}##comparisonMenuHeader"))
         {
             if (col != null)
             {
-                if (ImGui.Selectable("Set Compare Field"))
+                // Set Compare Field
+                if (ImGui.Selectable($"{LOC.Get("PARAM_FieldWindow_Context_Action_Set_Compare_Field")}##setCompareFieldAction"))
                 {
                     ParentView.Selection.SetCompareCol(col);
                 }
             }
 
-            if (ImGui.Selectable("Clear Compare Field"))
+            // Clear Compare Field
+            if (ImGui.Selectable($"{LOC.Get("PARAM_FieldWindow_Context_Action_Clear_Compare_Field")}##clearCompareFieldAction"))
             {
                 ParentView.Selection.ClearCompareCol();
             }

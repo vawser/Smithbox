@@ -1,0 +1,60 @@
+{
+  "Entries": [
+    {
+      "Key": "PARAM_PasteMenu_",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_PasteMenu_Checkbox_Select_New_Rows",
+      "Text": "Select new rows after paste"
+    },
+    {
+      "Key": "PARAM_PasteMenu_Checkbox_Paste_After_Selection",
+      "Text": "Paste after selection"
+    },
+    {
+      "Key": "PARAM_PasteMenu_Row_Title",
+      "Text": "Row"
+    },
+    {
+      "Key": "PARAM_PasteMenu_Offset_Title",
+      "Text": "Offset"
+    },
+    {
+      "Key": "PARAM_PasteMenu_No_Selection_Exists",
+      "Text": "No selection exists."
+    },
+    {
+      "Key": "PARAM_PasteMenu_Action_Submit",
+      "Text": "Submit"
+    },
+    {
+      "Key": "PARAM_StatisticsMenu_Occurences",
+      "Text": "Occurences of {0}"
+    },
+    {
+      "Key": "PARAM_StatisticsMenu_Action_Sort_Value",
+      "Text": "Sort (value)"
+    },
+    {
+      "Key": "PARAM_StatisticsMenu_Action_Sort_Count",
+      "Text": "Sort (count)"
+    },
+    {
+      "Key": "PARAM_StatisticsMenu_Times",
+      "Text": " times"
+    },
+    {
+      "Key": "PARAM_StatisticsMenu_Failed",
+      "Text": "StatisticPopups buttons failed."
+    },
+    {
+      "Key": "PARAM_StatisticsMenu_Value_Count",
+      "Text": "Value"
+    },
+    {
+      "Key": "PARAM_StatisticsMenu_Count",
+      "Text": "   Count"
+    }
+  ]
+}

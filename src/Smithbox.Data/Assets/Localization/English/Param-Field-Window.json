@@ -1,0 +1,220 @@
+{
+  "Entries": [
+    {
+      "Key": "PARAM_FieldWindow_SelectRow_Hint",
+      "Text": "Select a row to see properties."
+    },
+    {
+      "Key": "PARAM_FieldWindow_Title",
+      "Text": "Field List"
+    },
+    {
+      "Key": "PARAM_FieldWindow_Col_Current",
+      "Text": "Current"
+    },
+    {
+      "Key": "PARAM_FieldWindow_Col_Vanilla",
+      "Text": "Vanilla"
+    },
+    {
+      "Key": "PARAM_FieldWindow_Search_Hint",
+      "Text": "Search..."
+    },
+    {
+      "Key": "PARAM_FieldWindow_Search_TT",
+      "Text": "Search <{0}>"
+    },
+    {
+      "Key": "PARAM_FieldWindow_FieldNameMode_Hint",
+      "Text": "Toggle field name display type between Internal and Community.\nCurrent Mode: {0}"
+    },
+    {
+      "Key": "PARAM_FieldWindow_VanillaCol_Hidden",
+      "Text": "Hidden"
+    },
+    {
+      "Key": "PARAM_FieldWindow_VanillaCol_Visible",
+      "Text": "Visible"
+    },
+    {
+      "Key": "PARAM_FieldWindow_VanillaCol_Hint",
+      "Text": "Toggle the display of the vanilla columns.\nCurrent Mode: {0}"
+    },
+    {
+      "Key": "PARAM_FieldWindow_AuxCol_Hidden",
+      "Text": "Hidden"
+    },
+    {
+      "Key": "PARAM_FieldWindow_AuxCol_Visible",
+      "Text": "Visible"
+    },
+    {
+      "Key": "PARAM_FieldWindow_AuxCol_Hint",
+      "Text": "Toggle the display of the auxiliary columns.\nCurrent Mode: {0}"
+    },
+    {
+      "Key": "PARAM_FieldWindow_FieldLayout_Hidden",
+      "Text": "Hidden"
+    },
+    {
+      "Key": "PARAM_FieldWindow_FieldLayout_Visible",
+      "Text": "Visible"
+    },
+    {
+      "Key": "PARAM_FieldWindow_FieldLayout_Hint",
+      "Text": "Toggle the display of field layouts.\nCurrent Mode: {0}"
+    },
+    {
+      "Key": "PARAM_FieldWindow_FieldOffset_Hidden",
+      "Text": "Hidden"
+    },
+    {
+      "Key": "PARAM_FieldWindow_FieldOffset_Visible",
+      "Text": "Visible"
+    },
+    {
+      "Key": "PARAM_FieldWindow_FieldOffset_Hint",
+      "Text": "Toggle the display of the field offset column.\nCurrent Mode: {0}"
+    },
+    {
+      "Key": "PARAM_FieldWindow_FieldPadding_Hidden",
+      "Text": "Hidden"
+    },
+    {
+      "Key": "PARAM_FieldWindow_FieldPadding_Visible",
+      "Text": "Visible"
+    },
+    {
+      "Key": "PARAM_FieldWindow_FieldPadding_Hint",
+      "Text": "Toggle the display of padding field.\nCurrent Mode: {0}"
+    },
+    {
+      "Key": "PARAM_FieldWindow_ModifiedBg_Visible",
+      "Text": "Visible"
+    },
+    {
+      "Key": "PARAM_FieldWindow_ModifiedBg_Hidden",
+      "Text": "Hidden"
+    },
+    {
+      "Key": "PARAM_FieldWindow_ModifiedBg_Hint",
+      "Text": "Toggle the display of the background color on modified fields.\nCurrent Mode: {0}"
+    },
+    {
+      "Key": "PARAM_FieldWindow_Name_Prop",
+      "Text": "Name"
+    },
+    {
+      "Key": "PARAM_FieldWindow_ID_Prop",
+      "Text": "ID"
+    },
+    {
+      "Key": "PARAM_FieldWindow_LotChance_Always",
+      "Text": "This lot will always occur."
+    },
+    {
+      "Key": "PARAM_FieldWindow_LotChance_Never",
+      "Text": "This lot will never occur."
+    },
+    {
+      "Key": "PARAM_FieldWindow_LotChance_Percent",
+      "Text": "This lot has a {0}%% chance to occur."
+    },
+    {
+      "Key": "PARAM_FieldWindow_Header_Unsorted",
+      "Text": "Unsorted"
+    },
+    {
+      "Key": "PARAM_FieldWindow_Context_Info_Header",
+      "Text": "Information"
+    },
+    {
+      "Key": "PARAM_FieldWindow_Context_No_Desc",
+      "Text": "Info regarding this field has not been written."
+    },
+    {
+      "Key": "PARAM_FieldWindow_Context_Action_Copy_Field_Name",
+      "Text": "Copy Field Name"
+    },
+    {
+      "Key": "PARAM_FieldWindow_Context_Search_Header",
+      "Text": "Search"
+    },
+    {
+      "Key": "PARAM_FieldWindow_Context_Action_Add_to_Searchbar",
+      "Text": "Add to Searchbar"
+    },
+    {
+      "Key": "PARAM_FieldWindow_Context_Action_Search_NonDefault_Vals",
+      "Text": "Search for Non-Default Values"
+    },
+    {
+      "Key": "PARAM_FieldWindow_Context_Value_Header",
+      "Text": "Value"
+    },
+    {
+      "Key": "PARAM_FieldWindow_Context_Action_Reset_to_Vanilla",
+      "Text": "Reset to Vanilla"
+    },
+    {
+      "Key": "PARAM_FieldWindow_Context_Action_View_Value_Distribution",
+      "Text": "View Value Distribution"
+    },
+    {
+      "Key": "PARAM_FieldWindow_Context_MassEdit_Header",
+      "Text": "Mass Edit"
+    },
+    {
+      "Key": "PARAM_FieldWindow_Context_Action_Add_to_Palette",
+      "Text": "Add to Palette"
+    },
+    {
+      "Key": "PARAM_FieldWindow_Context_Action_Add_to_Palette_TT",
+      "Text": "Add this field to the Mass Edit command palette."
+    },
+    {
+      "Key": "PARAM_FieldWindow_Context_Action_View_Command_Palette",
+      "Text": "Command Palette"
+    },
+    {
+      "Key": "PARAM_FieldWindow_Context_Action_View_Command_Palette_TT",
+      "Text": "Open the floating command palette."
+    },
+    {
+      "Key": "PARAM_FieldWindow_Context_AutoFill_Header",
+      "Text": "Autofill"
+    },
+    {
+      "Key": "PARAM_FieldWindow_Context_AutoFill_TT",
+      "Text": "Open the autofill menu."
+    },
+    {
+      "Key": "PARAM_FieldWindow_Context_Pin_Header",
+      "Text": "Pinning"
+    },
+    {
+      "Key": "PARAM_FieldWindow_Context_Action_Pin",
+      "Text": "Pin "
+    },
+    {
+      "Key": "PARAM_FieldWindow_Context_Action_Unpin",
+      "Text": "Unpin "
+    },
+    {
+      "Key": "PARAM_FieldWindow_Context_Action_Unpin_All",
+      "Text": "Unpin All"
+    },
+    {
+      "Key": "PARAM_FieldWindow_Context_Comparison_Header",
+      "Text": "Comparison"
+    },
+    {
+      "Key": "PARAM_FieldWindow_Context_Action_Set_Compare_Field",
+      "Text": "Set Compare Field"
+    },
+    {
+      "Key": "PARAM_FieldWindow_Context_Action_Clear_Compare_Field",
+      "Text": "Clear Compare Field"
+    }
+  ]
+}

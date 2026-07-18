@@ -38,35 +38,38 @@ public class ParamStatisticsMenu
     {
         if (ImGui.BeginPopup("distributionPopup"))
         {
-            ImGui.Text($"Occurences of {_statisticPopupParameter}");
+            ImGui.Text(LOC.Get("PARAM_StatisticsMenu_Occurences", _statisticPopupParameter));
 
             try
             {
-                if (ImGui.Button("Sort (value)"))
+                // Sort Value
+                if (ImGui.Button($"{LOC.Get("PARAM_StatisticsMenu_Action_Sort_Value")}##sortValueAction"))
                 {
                     _distributionOutput = _distributionOutput.OrderBy(g => g.Item1);
                     _statisticPopupOutput = string.Join('\n',
                         _distributionOutput.Select(e =>
-                            e.Item1.ToString().PadLeft(9) + ": " + e.Item2.ToParamEditorString() + " times"));
+                            e.Item1.ToString().PadLeft(9) + ": " + e.Item2.ToParamEditorString() + LOC.Get("PARAM_StatisticsMenu_Times")));
                 }
 
                 ImGui.SameLine();
-                if (ImGui.Button("Sort (count)"))
+
+                // Sort Count
+                if (ImGui.Button($"{LOC.Get("PARAM_StatisticsMenu_Action_Sort_Count")}##sortCountAction"))
                 {
                     _distributionOutput = _distributionOutput.OrderByDescending(g => g.Item2);
                     _statisticPopupOutput = string.Join('\n',
                         _distributionOutput.Select(e =>
-                            e.Item1.ToString().PadLeft(9) + ": " + e.Item2.ToParamEditorString() + " times"));
+                            e.Item1.ToString().PadLeft(9) + ": " + e.Item2.ToParamEditorString() + LOC.Get("PARAM_StatisticsMenu_Times")));
                 }
             }
             catch (Exception e)
             {
                 // Happily ignore exceptions. This is non-mutating code with no critical use.
-                Smithbox.LogError(this, $"StatisticPopups buttons failed.", e);
+                Smithbox.LogError(this, LOC.Get("PARAM_StatisticsMenu_Failed"), e);
             }
 
             ImGui.Separator();
-            ImGui.Text("Value".PadLeft(9) + "   Count");
+            ImGui.Text(LOC.Get("PARAM_StatisticsMenu_Value_Count").PadLeft(9) + LOC.Get("PARAM_StatisticsMenu_Count"));
             ImGui.Separator();
             ImGui.Text(_statisticPopupOutput);
             ImGui.EndPopup();

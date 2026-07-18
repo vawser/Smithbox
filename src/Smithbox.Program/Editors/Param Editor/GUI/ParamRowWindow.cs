@@ -81,7 +81,7 @@ public class ParamRowWindow
         if (!ParentView.Selection.ActiveParamExists())
         {
             FocusManager.SetFocus(EditorFocusContext.ParamEditor_RowList);
-            ImGui.Text("Select a param to see rows");
+            ImGui.Text(LOC.Get("PARAM_RowWindow_Hint"));
         }
         else
         {
@@ -110,7 +110,7 @@ public class ParamRowWindow
 
     public void DisplayTitle()
     {
-        var rowListTitle = "Row List";
+        var rowListTitle = LOC.Get("PARAM_RowWindow_Title");
 
         GUI.SimpleHeader($"{rowListTitle}", "");
     }
@@ -143,8 +143,10 @@ public class ParamRowWindow
         }
 
         ImGui.AlignTextToFramePadding();
-        ImGui.InputTextWithHint($"##rowSearch", "Search...", ref ParentView.Selection.GetCurrentRowSearchString(), 256);
-        GUI.Tooltip($"Search <{InputManager.GetHint(KeybindID.ParamEditor_Focus_Searchbar)}>");
+        ImGui.InputTextWithHint($"##rowSearch", LOC.Get("PARAM_RowWindow_Search_Hint"), 
+            ref ParentView.Selection.GetCurrentRowSearchString(), 256);
+
+        GUI.Tooltip(LOC.Get("PARAM_RowWindow_Search_TT", InputManager.GetHint(KeybindID.ParamEditor_Focus_Searchbar)));
 
         if (!lastRowSearch.ContainsKey(ParentView.Selection.GetActiveParam())
             || !lastRowSearch[ParentView.Selection.GetActiveParam()].Equals(ParentView.Selection.GetCurrentRowSearchString()))
@@ -173,7 +175,7 @@ public class ParamRowWindow
         {
             ParentView.JumpToSelectedRow = true;
         }
-        GUI.Tooltip($"Go to selected <{InputManager.GetHint(KeybindID.Jump)}>");
+        GUI.Tooltip(LOC.Get("PARAM_RowWindow_Action_Go_To_TT", InputManager.GetHint(KeybindID.Jump)));
 
         ImGui.SameLine();
 
@@ -203,11 +205,11 @@ public class ParamRowWindow
             CFG.Current.ParamEditor_Row_List_Display_Modified_Row_Bg = !CFG.Current.ParamEditor_Row_List_Display_Modified_Row_Bg;
         }
 
-        var rowModifiedBgMode = "Hide Background";
+        var rowModifiedBgMode = LOC.Get("PARAM_RowWindow_Toggle_Modified_Background_Hidden");
         if (CFG.Current.ParamEditor_Row_List_Display_Modified_Row_Bg)
-            rowModifiedBgMode = "Display Background";
+            rowModifiedBgMode = LOC.Get("PARAM_RowWindow_Toggle_Modified_Background_Visible");
 
-        GUI.Tooltip($"Toggle the display of the modified background on modified rows.\nCurrent Mode: {rowModifiedBgMode}");
+        GUI.Tooltip(LOC.Get("PARAM_RowWindow_Toggle_Modified_Background_Hint", rowModifiedBgMode));
 
         // Display Decorators
         ImGui.SameLine();
@@ -217,12 +219,11 @@ public class ParamRowWindow
             CFG.Current.ParamEditor_Row_List_Display_Decorators = !CFG.Current.ParamEditor_Row_List_Display_Decorators;
         }
 
-        var displayDecoratorMode = "Hide FMG Text";
+        var displayDecoratorMode = LOC.Get("PARAM_RowWindow_Toggle_Text_Decorator_Hidden");
         if (CFG.Current.ParamEditor_Row_List_Display_Decorators)
-            displayDecoratorMode = "Display FMG Text";
+            displayDecoratorMode = LOC.Get("PARAM_RowWindow_Toggle_Text_Decorator_Visible");
 
-        GUI.Tooltip($"Toggle the display of the FMG text on rows.\nCurrent Mode: {displayDecoratorMode}");
-        
+        GUI.Tooltip(LOC.Get("PARAM_RowWindow_Toggle_Text_Decorator_Hint", displayDecoratorMode));        
 
         // Quick Export
         if (CFG.Current.Developer_Enable_Tools)
@@ -252,11 +253,11 @@ public class ParamRowWindow
         // ID
         ImGui.TableNextRow();
         ImGui.TableSetColumnIndex(0);
-        ImGui.Text("ID");
+        ImGui.Text(LOC.Get("PARAM_RowWindow_Col_ID"));
 
         // Name
         ImGui.TableSetColumnIndex(1);
-        ImGui.Text("Name");
+        ImGui.Text(LOC.Get("PARAM_RowWindow_Col_Name"));
 
         // Comparison Column
         if (Context.CompareColumn != null)
@@ -602,7 +603,7 @@ public class ParamRowWindow
                     byte dummy = 0;
                     ImGui.SetDragDropPayload("PARAM_ROW", &dummy, 1);
                 }
-                ImGui.Text($"Row {r.ID}");
+                ImGui.Text(LOC.Get("PARAM_RowWindow_Row_Drag_TT", r.ID));
                 ImGui.EndDragDropSource();
             }
 
@@ -929,73 +930,77 @@ public class ParamRowWindow
             }
 
             // Copy
-            if (ImGui.Selectable(@$"Copy", false,
+            if (ImGui.Selectable($"{LOC.Get("PARAM_RowWindow_Context_Action_Copy")}##copyAction", false,
                     ParentView.Selection.RowSelectionExists()
                         ? ImGuiSelectableFlags.None
                         : ImGuiSelectableFlags.Disabled))
             {
                 Editor.Clipboard.CopySelectionToClipboard(ParentView);
             }
-            GUI.Tooltip($"Shortcut: {InputManager.GetHint(KeybindID.Copy)}\n\n" +
-                "Copy the current row selection to the clipboard.");
+            GUI.Tooltip(
+                LOC.Get("PARAM_RowWindow_Context_Action_Copy_TT", InputManager.GetHint(KeybindID.Copy)));
 
             // Paste
-            if (ImGui.Selectable(@$"Paste", false,
+            if (ImGui.Selectable($"{LOC.Get("PARAM_RowWindow_Context_Action_Paste")}##pasteAction", false,
                     Editor.Project.Handler.ParamData.PrimaryBank.ClipboardRows.Any() ? ImGuiSelectableFlags.None : ImGuiSelectableFlags.Disabled))
             {
                 EditorCommandQueue.AddCommand(@"param/menu/ctrlVPopup");
             }
-            GUI.Tooltip($"Shortcut: {InputManager.GetHint(KeybindID.Paste)}\n\n" +
-                "Paste the current row clipboard into the current param.");
+            GUI.Tooltip(
+                LOC.Get("PARAM_RowWindow_Context_Action_Paste_TT", InputManager.GetHint(KeybindID.Paste)));
 
             // Delete
-            if (ImGui.Selectable(@$"Delete", false,
+            if (ImGui.Selectable($"{LOC.Get("PARAM_RowWindow_Context_Action_Delete")}##deleteAction", false,
                     ParentView.Selection.RowSelectionExists()
                         ? ImGuiSelectableFlags.None
                         : ImGuiSelectableFlags.Disabled))
             {
                 ParamRowDelete.ApplyDelete(ParentView);
             }
-            GUI.Tooltip($"Shortcut: {InputManager.GetHint(KeybindID.Delete)}\n\n" +
-                "Delete the current row selection from the param.");
+            GUI.Tooltip(LOC.Get("PARAM_RowWindow_Context_Action_Delete_TT", InputManager.GetHint(KeybindID.Delete)));
 
             // Duplicate
-            if (ImGui.BeginMenu("Duplicate"))
+            if (ImGui.BeginMenu($"{LOC.Get("PARAM_RowWindow_Context_Duplicate_Header")}##duplicateMenuHeader"))
             {
-                ImGui.InputInt("Offset##duplicateOffset", ref CFG.Current.Param_Toolbar_Duplicate_Offset);
+                // Offset
+                ImGui.InputInt($"{LOC.Get("PARAM_RowWindow_Context_DuplicateOffset")}##duplicateOffset", 
+                    ref CFG.Current.Param_Toolbar_Duplicate_Offset);
 
-                GUI.Tooltip("The ID offset to apply when duplicating.\nSet to 0 for row indexed params to duplicate as expected.");
+                GUI.Tooltip(LOC.Get("PARAM_RowWindow_Context_DuplicateOffset_TT"));
 
-                ImGui.InputInt("Amount##duplicateAmount", ref CFG.Current.Param_Toolbar_Duplicate_Amount);
+                // Amount
+                ImGui.InputInt($"{LOC.Get("PARAM_RowWindow_Context_DuplicateAmount")}##duplicateAmount", 
+                    ref CFG.Current.Param_Toolbar_Duplicate_Amount);
 
-                GUI.Tooltip("The number of times the current selection will be duplicated.");
+                GUI.Tooltip(LOC.Get("PARAM_RowWindow_Context_DuplicateAmount_TT"));
 
-                if (ImGui.Selectable(@$"Apply", false,
+                // Apply
+                if (ImGui.Selectable($"{LOC.Get("PARAM_RowWindow_Context_DuplicateApply")}##duplicateApplyAction", 
+                    false,
                     ParentView.Selection.RowSelectionExists()
                         ? ImGuiSelectableFlags.None
                         : ImGuiSelectableFlags.Disabled))
                 {
                     ParamRowDuplicate.ApplyDuplicate(ParentView);
                 }
-                GUI.Tooltip($"Shortcut: {InputManager.GetHint(KeybindID.Duplicate)}\n\n" +
-                    "Duplicate the current row selection, automatically incrementing the row ID.");
+                GUI.Tooltip(LOC.Get("PARAM_RowWindow_Context_DuplicateApply_TT", InputManager.GetHint(KeybindID.Duplicate)));
 
                 ImGui.EndMenu();
             }
 
             // Duplicate To
-            if (ImGui.BeginMenu("Duplicate To", ParamRowDuplicate.IsCommutativeParam(ParentView)))
+            if (ImGui.BeginMenu($"{LOC.Get("PARAM_RowWindow_Context_DuplicateTo_Header")}##duplicateToMenuHeader", ParamRowDuplicate.IsCommutativeParam(ParentView)))
             {
                 ParamRowDuplicate.ApplyCommutativeDuplicate(ParentView);
 
                 ImGui.EndMenu();
             }
-            GUI.Tooltip($"Duplicate the current row selection into the chosen target param.");
+            GUI.Tooltip(LOC.Get("PARAM_RowWindow_Context_DuplicateTo_Header_TT"));
 
             // Jump
             if (HasJumpOption())
             {
-                if (ImGui.BeginMenu("Jump"))
+                if (ImGui.BeginMenu($"{LOC.Get("PARAM_RowWindow_Context_Jump_Header")}##jumpMenuHeader"))
                 {
                     // Decorator Options (e.g. Go to Text)
                     if (Context.FmgRowDecorator != null)
@@ -1008,7 +1013,7 @@ public class ParamRowWindow
             }
 
             // Value
-            if (ImGui.BeginMenu("Value"))
+            if (ImGui.BeginMenu($"{LOC.Get("PARAM_RowWindow_Context_Value_Header")}##valueMenuHeader"))
             {
                 // Revert to Default
                 if (ImGui.Selectable(@$"Revert to Default", false,
@@ -1024,8 +1029,9 @@ public class ParamRowWindow
             }
 
             // Mass Edit
-            if (ImGui.BeginMenu("Mass Edit"))
+            if (ImGui.BeginMenu($"{LOC.Get("PARAM_RowWindow_Context_MassEdit_Header")}##massEditMenuHeader"))
             {
+                // Command Palette
                 if (ImGui.Selectable("Command Palette"))
                 {
                     EditorCommandQueue.AddCommand(
@@ -1033,6 +1039,7 @@ public class ParamRowWindow
                 }
                 GUI.Tooltip("Open the floating command palette.");
 
+                // Autofill
                 if (ImGui.BeginMenu("Autofill"))
                 {
                     if (ParentView.MassEdit.AutoFill != null)

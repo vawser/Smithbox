@@ -44,9 +44,12 @@ public class ParamPasteMenu
             {
                 long offset = 0;
 
-                ImGui.Checkbox("Select new rows after paste", ref CFG.Current.Param_PasteThenSelect);
+                ImGui.Checkbox(
+                    $"{LOC.Get("PARAM_PasteMenu_Checkbox_Select_New_Rows")}##selectNewRowsAfterPasteToggle", 
+                    ref CFG.Current.Param_PasteThenSelect);
 
-                ImGui.Checkbox("Paste after selection", ref CFG.Current.Param_PasteAfterSelection);
+                ImGui.Checkbox($"{LOC.Get("PARAM_PasteMenu_Checkbox_Paste_After_Selection")}##pasteAfterSelectionToggle",
+                    ref CFG.Current.Param_PasteAfterSelection);
 
                 var insertIndex = -1;
 
@@ -56,7 +59,8 @@ public class ParamPasteMenu
                 }
                 else
                 {
-                    ImGui.InputText("Row", ref clipboard._currentCtrlVValue, 20);
+                    ImGui.InputText($"{LOC.Get("PARAM_PasteMenu_Row_Title")}##rowTitle", 
+                        ref clipboard._currentCtrlVValue, 20);
                     if (ImGui.IsItemEdited())
                     {
                         offset = long.Parse(clipboard._currentCtrlVValue) - clipboard._clipboardBaseRow;
@@ -64,7 +68,8 @@ public class ParamPasteMenu
                         clipboard._currentCtrlVOffset = offset.ToString();
                     }
 
-                    ImGui.InputText("Offset", ref clipboard._currentCtrlVOffset, 20);
+                    ImGui.InputText($"{ LOC.Get("PARAM_PasteMenu_Offset_Title")}##rowOffset", 
+                        ref clipboard._currentCtrlVOffset, 20);
                     if (ImGui.IsItemEdited())
                     {
                         offset = long.Parse(clipboard._currentCtrlVOffset);
@@ -81,9 +86,9 @@ public class ParamPasteMenu
                                     !activeView.Selection.RowSelectionExists();
                 if (disableSubmit)
                 {
-                    ImGui.TextUnformatted("No selection exists");
+                    ImGui.TextUnformatted(LOC.Get("PARAM_PasteMenu_No_Selection_Exists"));
                 }
-                else if (ImGui.Button("Submit"))
+                else if (ImGui.Button($"{LOC.Get("PARAM_PasteMenu_Action_Submit")}##submitAction"))
                 {
                     List<Param.Row> rowsToInsert = new();
 
