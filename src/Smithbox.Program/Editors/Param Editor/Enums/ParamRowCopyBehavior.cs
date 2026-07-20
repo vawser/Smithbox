@@ -9,10 +9,10 @@ namespace StudioCore.Editors.ParamEditor;
 
 public enum ParamRowCopyBehavior
 {
-    [Display(Name = "ID")]
+    [Display(Name = "PARAM_ENUM_ParamRowCopyBehavior_ID")]
     ID = 0,
-    [Display(Name = "Name")]
+    [Display(Name = "PARAM_ENUM_ParamRowCopyBehavior_Name")]
     Name = 1,
-    [Display(Name = "ID and Name")]
+    [Display(Name = "PARAM_ENUM_ParamRowCopyBehavior_ID_and_Name")]
     ID_Name = 2
 }

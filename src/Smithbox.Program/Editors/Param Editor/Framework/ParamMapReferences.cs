@@ -108,7 +108,8 @@ public static class ParamMapReferences
             {
                 var columnWidth = ImGui.GetColumnWidth();
 
-                if (ImGui.Button($"View in Map", DPI.WholeWidthButton(columnWidth, 24)))
+                // View in Map
+                if (ImGui.Button($"{LOC.Get("PARAM_MapRef_Action_View_In_Map")}##viewInMapAction", DPI.WholeWidthButton(columnWidth, 24)))
                 {
                     if (mapId != "")
                     {
@@ -119,7 +120,7 @@ public static class ParamMapReferences
                         EditorCommandQueue.AddCommand($"map/idselect/enemy/{mapId}/{entityID}");
                     }
                 }
-                GUI.Tooltip("Loads the map this bonfire is located in and selects the bonfire Enemy map object automatically, allowing you to frame it immediately.");
+                GUI.Tooltip(LOC.Get("PARAM_MapRef_Action_View_In_Map_Bonfire_TT"));
             }
         }
     }
@@ -178,7 +179,8 @@ public static class ParamMapReferences
             {
                 var columnWidth = ImGui.GetColumnWidth();
 
-                if (ImGui.Button($"View in Map", DPI.WholeWidthButton(columnWidth, 24)))
+                // View in Map
+                if (ImGui.Button($"{LOC.Get("PARAM_MapRef_Action_View_In_Map")}##viewInMapAction", DPI.WholeWidthButton(columnWidth, 24)))
                 {
                     if (mapId != "")
                     {
@@ -189,7 +191,7 @@ public static class ParamMapReferences
                         EditorCommandQueue.AddCommand($"map/idselect/enemy/{mapId}/{entityID}");
                     }
                 }
-                GUI.Tooltip("Loads the map this lamp is located in and selects the bonfire Enemy map object automatically, allowing you to frame it immediately.");
+                GUI.Tooltip(LOC.Get("PARAM_MapRef_Action_View_In_Map_Lamp_TT"));
             }
         }
     }
@@ -281,7 +283,8 @@ public static class ParamMapReferences
             {
                 var columnWidth = ImGui.GetColumnWidth();
 
-                if (ImGui.Button($"View in Map", DPI.WholeWidthButton(columnWidth, 24)))
+                // View in Map
+                if (ImGui.Button($"{LOC.Get("PARAM_MapRef_Action_View_In_Map")}##viewInMapAction", DPI.WholeWidthButton(columnWidth, 24)))
                 {
                     if (mapId != "")
                     {
@@ -292,7 +295,7 @@ public static class ParamMapReferences
                         EditorCommandQueue.AddCommand($"map/idselect/enemy/{mapId}/{entityID}");
                     }
                 }
-                GUI.Tooltip("Loads the map this boss is located in and selects the boss Enemy map object automatically, allowing you to frame it immediately.");
+                GUI.Tooltip(LOC.Get("PARAM_MapRef_Action_View_In_Map_Boss_TT"));
             }
         }
     }
@@ -355,11 +358,11 @@ public static class ParamMapReferences
     {
         var columnWidth = ImGui.GetColumnWidth();
 
-        if (ImGui.Button($"View Model##{imguiID}_viewModel{assetId}", DPI.WholeWidthButton(columnWidth, 24)))
+        if (ImGui.Button($"{LOC.Get("PARAM_MapRef_Action_View_Model")}##{imguiID}_viewModel{assetId}", DPI.WholeWidthButton(columnWidth, 24)))
         {
             EditorCommandQueue.AddCommand($"model/load/{assetId}/Asset");
         }
-        GUI.Tooltip("View this model in the Model Editor, loading it automatically.");
+        GUI.Tooltip(LOC.Get("PARAM_MapRef_Action_View_Model_TT"));
     }
 
     private static List<FileDictionaryEntry> AssetList;
@@ -426,7 +429,8 @@ public static class ParamMapReferences
                     {
                         var aliasName = AliasHelper.GetAssetAlias(editor.Project, assetID.ToLower());
 
-                        if (ImGui.Button($"View Model: {assetID}", DPI.WholeWidthButton(columnWidth, 24)))
+                        // View Model: X
+                        if (ImGui.Button($"{LOC.Get("PARAM_MapRef_Action_View_Model_ID", assetID)}##viewModelAction", DPI.WholeWidthButton(columnWidth, 24)))
                         {
                             EditorCommandQueue.AddCommand($"model/load/{assetID}/Asset");
                         }
@@ -548,7 +552,8 @@ public static class ParamMapReferences
             {
                 var columnWidth = ImGui.GetColumnWidth();
 
-                if (ImGui.Button($"View in Map", DPI.WholeWidthButton(columnWidth, 24)))
+                // View in Map
+                if (ImGui.Button($"{LOC.Get("PARAM_MapRef_Action_View_In_Map")} ##viewInMapAction", DPI.WholeWidthButton(columnWidth, 24)))
                 {
                     if (mapId != "")
                     {
@@ -559,7 +564,7 @@ public static class ParamMapReferences
                         EditorCommandQueue.AddCommand($"map/idselect/enemy/{mapId}/{entityID}");
                     }
                 }
-                GUI.Tooltip("Loads the map and select the buddy stone Enemy map object.");
+                GUI.Tooltip(LOC.Get("PARAM_MapRef_Action_View_In_Map_BuddyStone_TT"));
             }
         }
     }
@@ -689,11 +694,12 @@ public static class ParamMapReferences
 
                 if (currentField == "assetNo_Hit" || currentField == "assetCreationAssetId")
                 {
-                    if (ImGui.Button($"View Model", DPI.WholeWidthButton(columnWidth, 24)))
+                    // View Model
+                    if (ImGui.Button($"{LOC.Get("PARAM_MapRef_Action_View_Model")}##viewModelAction", DPI.WholeWidthButton(columnWidth, 24)))
                     {
                         EditorCommandQueue.AddCommand($"model/load/{modelString}/Asset");
                     }
-                    GUI.Tooltip("View this model in the Model Editor, loading it automatically.");
+                    GUI.Tooltip(LOC.Get("PARAM_MapRef_Action_View_Model_TT"));
                 }
             }
         }
@@ -745,7 +751,8 @@ public static class ParamMapReferences
     {
         var columnWidth = ImGui.GetColumnWidth();
 
-        if (ImGui.Button($"View in Map", DPI.WholeWidthButton(columnWidth, 24)))
+        // View in Map
+        if (ImGui.Button($"{LOC.Get("PARAM_MapRef_Action_View_In_Map")} ##viewInMapAction", DPI.WholeWidthButton(columnWidth, 24)))
         {
             if (mapId != "")
             {
@@ -756,7 +763,7 @@ public static class ParamMapReferences
                 EditorCommandQueue.AddCommand($"map/select/{mapId}/{AssetName}");
             }
         }
-        GUI.Tooltip("Loads the map and selects the asset that holds this treasure.");
+        GUI.Tooltip(LOC.Get("PARAM_MapRef_Action_View_In_Map_treasure_TT"));
     }
 
     public static void ItemLotParam_DS1(ParamEditorScreen editor, string activeParam, Param.Row row, string currentField)

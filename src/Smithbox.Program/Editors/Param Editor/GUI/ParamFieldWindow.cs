@@ -1602,6 +1602,19 @@ public class ParamFieldWindow
 
             ImGui.EndMenu();
         }
+
+        // Name Manipulation
+        if (ImGui.BeginMenu($"{LOC.Get("PARAM_FieldWindow_Context_Comparison_Name_Manipulation")}##nameManipMenuHeader"))
+        {
+            // Set Target Field
+            if (ImGui.Selectable($"{LOC.Get("PARAM_FieldWindow_Context_Action_Set_Target_Field")}##setTargetFieldAction"))
+            {
+                ParentView.ParamRowWindow.SetNameManpulationTargetField(col.Def.InternalName);
+            }
+            GUI.Tooltip(LOC.Get("PARAM_FieldWindow_Context_Action_Set_Target_Field_TT"));
+
+            ImGui.EndMenu();
+        }
     }
 
     private bool AdditionalElementsForContextMenu(FieldMetaContext metaContext, Param.Row row, string internalName,

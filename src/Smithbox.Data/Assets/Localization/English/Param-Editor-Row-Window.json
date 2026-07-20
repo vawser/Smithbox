@@ -1,0 +1,332 @@
+{
+  "Entries": [
+    {
+      "Key": "PARAM_RowWindow_Hint",
+      "Text": "Select a param to see rows."
+    },
+    {
+      "Key": "PARAM_RowWindow_Title",
+      "Text": "Row List"
+    },
+    {
+      "Key": "PARAM_RowWindow_Search_Hint",
+      "Text": "Search..."
+    },
+    {
+      "Key": "PARAM_RowWindow_Search_TT",
+      "Text": "Search <{0}>"
+    },
+    {
+      "Key": "PARAM_RowWindow_Action_Go_To_TT",
+      "Text": "Go to selected <{0}>"
+    },
+    {
+      "Key": "PARAM_RowWindow_Toggle_Modified_Background_Visible",
+      "Text": "Visible"
+    },
+    {
+      "Key": "PARAM_RowWindow_Toggle_Modified_Background_Hidden",
+      "Text": "Hidden"
+    },
+    {
+      "Key": "PARAM_RowWindow_Toggle_Modified_Background_Hint",
+      "Text": "Toggle the display of the modified background on modified rows.\nCurrent Mode: {0}"
+    },
+    {
+      "Key": "PARAM_RowWindow_Toggle_Text_Decorator_Visible",
+      "Text": "Visible"
+    },
+    {
+      "Key": "PARAM_RowWindow_Toggle_Text_Decorator_Hidden",
+      "Text": "Hidden"
+    },
+    {
+      "Key": "PARAM_RowWindow_Toggle_Text_Decorator_Hint",
+      "Text": "Toggle the display of the FMG text on rows.\nCurrent Mode: {0}"
+    },
+    {
+      "Key": "PARAM_RowWindow_Col_ID",
+      "Text": "Id"
+    },
+    {
+      "Key": "PARAM_RowWindow_Col_Name",
+      "Text": "Name"
+    },
+    {
+      "Key": "PARAM_RowWindow_Row_Drag_TT",
+      "Text": "Row {0}"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Copy",
+      "Text": "Copy"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Copy_TT",
+      "Text": "Shortcut: {0}\n\nCopy the current row selection to the clipboard."
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Paste",
+      "Text": "Paste"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Paste_TT",
+      "Text": "Shortcut: {0}\n\nPaste the current row clipboard into the current param."
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Delete",
+      "Text": "Delete"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Delete_TT",
+      "Text": "Shortcut: {0}\n\nDelete the current row selection from the param."
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Duplicate_Header",
+      "Text": "Duplicate"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_DuplicateOffset",
+      "Text": "Offset"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_DuplicateOffset_TT",
+      "Text": "The ID offset to apply when duplicating.\nSet to 0 for row indexed params to duplicate as expected."
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_DuplicateAmount",
+      "Text": "Amount"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_DuplicateAmount_TT",
+      "Text": "The number of times the current selection will be duplicated."
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_DuplicateApply",
+      "Text": "Apply"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_DuplicateApply_TT",
+      "Text": "Shortcut: {0}\n\nDuplicate the current row selection, automatically incrementing the row ID."
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_DuplicateTo_Header",
+      "Text": "Duplicate To"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_DuplicateTo_Header_TT",
+      "Text": "Duplicate the current row selection into the chosen target param."
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Jump_Header",
+      "Text": "Jump"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Value_Header",
+      "Text": "Value"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_MassEdit_Header",
+      "Text": "Mass Edit"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Revert_to_Default",
+      "Text": "Revert to Default"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Revert_to_Default_TT",
+      "Text": "Revert the current row selection field values to the vanilla field values."
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Command_Palette",
+      "Text": "Command Palette"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Command_Palette_TT",
+      "Text": "Open the floating command palette."
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Autofill_Header",
+      "Text": "Autofill"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Autofill_Header_TT",
+      "Text": "Open the autofill menu."
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Pinning_Header",
+      "Text": "Pinning"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Pin",
+      "Text": "Pin"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Pin_TT",
+      "Text": "Pin the current row selection to the top of the row list."
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Unpin",
+      "Text": "Unpin"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Unpin_TT",
+      "Text": "Unpin the current row selection from top of the row list."
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Unpin_All",
+      "Text": "Unpin All"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Unpin_All_TT",
+      "Text": "Unpin all of the currently pinned rows."
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Search_Header",
+      "Text": "Search"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Comparison_Header",
+      "Text": "Comparison"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Set_Compare_Row",
+      "Text": "Set Compare Row"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Set_Compare_Row_TT",
+      "Text": "Set this row as the row comparison target within the field window."
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Clear_Compare_Row",
+      "Text": "Clear Compare Row"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Clear_Compare_Row_TT",
+      "Text": "Clear the currently set comparison row."
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Name_Manipulation_Header",
+      "Text": "Name Manipulation"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Adjust_Header",
+      "Text": "Adjust"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Inherit_Header",
+      "Text": "Inherit"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Clear_Text_From_Name",
+      "Text": "Clear Text from Name"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Clear_Text_From_Name_TT",
+      "Text": "Clear the text from the names of all currently selected rows."
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Prepend_Text_To_Name",
+      "Text": "Prepend Text to Name"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Prepend_Text_To_Name_TT",
+      "Text": "Prepend text to the names of all currently selected rows."
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Postpend_Text_To_Name",
+      "Text": "Postpend Text to Name"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Postpend_Text_To_Name_TT",
+      "Text": "Postpend text to the names of all currently selected rows."
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Remove_Text_To_Name",
+      "Text": "Remove Text from Name"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Remove_Text_To_Name_TT",
+      "Text": "Remove text from the names of all currently selected rows."
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Text_To_Apply_Input",
+      "Text": "Text to Apply"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Text_To_Apply_Input_TT",
+      "Text": "The string to pre or post pend to the existing name."
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Proliferate_Name",
+      "Text": "Proliferate Name into Param Reference"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Proliferate_Name_TT",
+      "Text": "Proliferate the name of this row to the references pointed to by the named field within this row."
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Inherit_Name_From_Ref",
+      "Text": "Inherit Name from Param Reference"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Inherit_Name_From_Ref_TT",
+      "Text": "Inherit the name of the referenced row connected to via the target field."
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Inherit_Name_From_FMG",
+      "Text": "Inherit Name from FMG Reference"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Inherit_Name_From_FMG_TT",
+      "Text": "Inherit the name of the referenced FMG connected to via the target field."
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Inherit_Name_From_Alias",
+      "Text": "Inherit Name from Alias"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Inherit_Name_From_Alias_TT",
+      "Text": "Inherit the name of the referenced Alias connected to via the target field."
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Target_Field",
+      "Text": "Target Field"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Target_Field_TT",
+      "Text": "The internal name of the field to target for the name actions."
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Info_Header",
+      "Text": "Information"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Copy_ID",
+      "Text": "Copy Row ID"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Copy_ID_TT",
+      "Text": "Copy the row IDs for the currently selected rows to clipboard. Split by new lines."
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Copy_Name",
+      "Text": "Copy Row Name"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Copy_Name_TT",
+      "Text": "Copy the row names for the currently selected rows to clipboard. Split by new lines."
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Copy_ID_And_Name",
+      "Text": "Copy Row ID and Name"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Copy_ID_And_Name_TT",
+      "Text": "Copy the row ID and names for the currently selected rows to clipboard. Split by new lines."
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Row_Selection_Count_TT",
+      "Text": "{0} rows selected currently."
+    }
+  ]
+}

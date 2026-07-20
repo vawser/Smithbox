@@ -135,6 +135,18 @@
     {
       "Key": "PARAM_ENUM_CsvImportType_Specific_Field",
       "Text": "Specific Field"
+    },
+    {
+      "Key": "PARAM_ENUM_ParamRowCopyBehavior_ID",
+      "Text": "ID"
+    },
+    {
+      "Key": "PARAM_ENUM_ParamRowCopyBehavior_Name",
+      "Text": "Name"
+    },
+    {
+      "Key": "PARAM_ENUM_ParamRowCopyBehavior_ID_and_Name",
+      "Text": "ID and Name"
     }
   ]
 }

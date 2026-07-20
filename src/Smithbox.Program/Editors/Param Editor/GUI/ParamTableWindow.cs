@@ -1,18 +1,10 @@
 ﻿using Andre.Formats;
-using Hexa.NET.DirectXTex;
 using Hexa.NET.ImGui;
-using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Keybinds;
-using StudioCore.Utilities;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Numerics;
 using System.Text.Encodings.Web;
 using System.Text.Json;
-using Veldrid;
 
 namespace StudioCore.Editors.ParamEditor;
 
@@ -60,9 +52,9 @@ public class ParamTableWindow
     }
     public void DisplayTitle()
     {
-        var tableListTitle = "Table List";
-
-        GUI.SimpleHeader($"{tableListTitle}", "");
+        GUI.SimpleHeader(
+            LOC.Get("PARAM_TableWindow_Table_List"), 
+            LOC.Get("PARAM_TableWindow_Table_List_TT"));
     }
 
     private void DisplayHeader(bool isActiveView)
@@ -71,7 +63,9 @@ public class ParamTableWindow
         ImGui.BeginChild("ParamTableListHeaderSection", searchHeight, ImGuiChildFlags.Borders);
 
         ImGui.AlignTextToFramePadding();
-        ImGui.InputText($"##rowGroupSearch", ref CurrentTableGroupSearch, 256);
+        ImGui.InputTextWithHint($"##rowGroupSearch", 
+            LOC.Get("PARAM_TableWindow_Search_Hint"),
+            ref CurrentTableGroupSearch, 256);
 
         if (CFG.Current.Developer_Enable_Tools)
         {
@@ -97,11 +91,11 @@ public class ParamTableWindow
             // ID
             ImGui.TableNextRow();
             ImGui.TableSetColumnIndex(0);
-            ImGui.Text("ID");
+            ImGui.Text(LOC.Get("PARAM_TableWindow_Col_ID"));
 
             // Name
             ImGui.TableSetColumnIndex(1);
-            ImGui.Text("Name");
+            ImGui.Text(LOC.Get("PARAM_TableWindow_Col_Name"));
 
             ImGui.EndTable();
         }
@@ -277,18 +271,20 @@ public class ParamTableWindow
                 DisplayEditInput_Name(imguiKey, groupKey);
             }
 
-            if (ImGui.BeginMenu("Duplicate"))
+            // Duplicate
+            if (ImGui.BeginMenu($"{LOC.Get("PARAM_TableWindow_Context_Duplicate_Header")}##duplicateMenuHeader"))
             {
                 DisplayDuplicateMenu();
 
                 ImGui.EndMenu();
             }
 
-            if (ImGui.Selectable("Delete"))
+            // Delete
+            if (ImGui.Selectable($"{LOC.Get("PARAM_TableWindow_Context_Action_Delete")}##deleteAction"))
             {
                 ApplyTableGroupDelete = true;
             }
-            GUI.Tooltip($"Delete this table group. This will remove the rows that comprise this group.");
+            GUI.Tooltip(LOC.Get("PARAM_TableWindow_Context_Action_Delete_TT"));
 
             ImGui.EndPopup();
         }
@@ -351,23 +347,27 @@ public class ParamTableWindow
 
     public void DisplayDuplicateMenu()
     {
-        ImGui.InputInt("Offset##duplicateOffset", ref CFG.Current.Param_Toolbar_Duplicate_Offset);
+        // Offset
+        ImGui.InputInt($"{LOC.Get("PARAM_TableWindow_Duplicate_Offset")}##duplicateOffset", 
+            ref CFG.Current.Param_Toolbar_Duplicate_Offset);
+        GUI.Tooltip(LOC.Get("PARAM_TableWindow_Duplicate_Offset_TT"));
 
-        GUI.Tooltip("The ID offset to apply when duplicating.\nSet to 0 for row indexed params to duplicate as expected.");
+        // Amount
+        ImGui.InputInt($"{LOC.Get("PARAM_TableWindow_Duplicate_Amount")}##duplicateAmount", 
+            ref CFG.Current.Param_Toolbar_Duplicate_Amount);
+        GUI.Tooltip(LOC.Get("PARAM_TableWindow_Duplicate_Amount_TT"));
 
-        ImGui.InputInt("Amount##duplicateAmount", ref CFG.Current.Param_Toolbar_Duplicate_Amount);
+        // Allow Unrestricted Duplicate
+        ImGui.Checkbox($"{LOC.Get("PARAM_TableWindow_Duplicate_Toggle_Unrestricted")}##allowUnrestrictedDuplicate", 
+            ref CFG.Current.Param_TableGroupView_AllowDuplicateInject);
+        GUI.Tooltip(LOC.Get("PARAM_TableWindow_Duplicate_Toggle_Unrestricted_TT"));
 
-        GUI.Tooltip("The number of times the current selection will be duplicated.");
-
-        ImGui.Checkbox("Allow Unrestricted Duplicate##allowUnrestrictedDuplicate", ref CFG.Current.Param_TableGroupView_AllowDuplicateInject);
-
-        GUI.Tooltip("If enabled, duplicate will allow for ID collisions. A collided duplicate will add the source rows into the collided group with the new ID.");
-
-        if (ImGui.Selectable("Apply"))
+        // Apply
+        if (ImGui.Selectable($"{LOC.Get("PARAM_TableWindow_Duplicate_Action_Apply")}##applyAction"))
         {
             ApplyTableGroupDuplicate = true;
         }
-        GUI.Tooltip($"Duplicate this table group. This will duplicate the rows that comprise this group.");
+        GUI.Tooltip(LOC.Get("PARAM_TableWindow_Duplicate_Action_Apply_TT"));
     }
 
     public void Shortcuts()
@@ -411,7 +411,7 @@ public class ParamTableWindow
 
         if (!allowUnrestricted && param.Rows.Any(e => e.ID == newId))
         {
-            Smithbox.LogError(this, "Duplicate aborted. This duplicate would have injected rows into an existing table group.");
+            Smithbox.LogError(this, LOC.Get("PARAM_TableWindow_Duplicate_Error_Abort"));
         }
         else
         {

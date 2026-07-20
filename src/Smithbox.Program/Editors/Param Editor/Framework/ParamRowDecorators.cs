@@ -156,10 +156,12 @@ public class FmgRowDecorator
         {
             if (CommandLine != "")
             {
-                if (ImGui.Selectable($@"Go to Text"))
+                // Go to Text
+                if (ImGui.Selectable($"{LOC.Get("PARAM_RowDecorator_Action_Go_To_Text")}##goToTextAction"))
                 {
                     EditorCommandQueue.AddCommand(CommandLine);
                 }
+                GUI.Tooltip(LOC.Get("PARAM_RowDecorator_Action_Go_To_Text_TT"));
             }
         }
     }

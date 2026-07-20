@@ -622,8 +622,6 @@ public class CFG
     // Mass Edit
     public bool ParamEditor_Show_Advanced_Mass_Edit_Commands = false;
 
-    public ParamFieldMassEditMode ParamEditor_Field_List_Context_Mass_Edit_Display_Mode = ParamFieldMassEditMode.AutoFill;
-
     public bool Param_PasteAfterSelection = false;
     public bool Param_PasteThenSelect = true;
     public ParamRowCopyBehavior Param_RowCopyBehavior = ParamRowCopyBehavior.ID;

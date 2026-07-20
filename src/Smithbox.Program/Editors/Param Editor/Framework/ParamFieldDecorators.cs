@@ -63,7 +63,7 @@ public class ParamFieldDecorators
             // Map FMG reference label
             if (metaContext.DisplayMapTextReference)
             {
-                TextReferenceHelper.Label(ParentView, metaContext.MapTextReferences, row, "MAP FMGS");
+                TextReferenceHelper.Label(ParentView, metaContext.MapTextReferences, row, LOC.Get("PARAM_FieldDecorator_Label_Map_FMGs"));
             }
 
             // Texture reference label
@@ -81,39 +81,39 @@ public class ParamFieldDecorators
             // Particle list
             if (metaContext.DisplayParticleEnum)
             {
-                AliasEnumHelper.Label(ParentView, "PARTICLES");
+                AliasEnumHelper.Label(ParentView, LOC.Get("PARAM_FieldDecorator_Label_Particles"));
             }
 
             // Sound list
             if (metaContext.DisplaySoundEnum)
             {
-                AliasEnumHelper.Label(ParentView, "SOUNDS");
+                AliasEnumHelper.Label(ParentView, LOC.Get("PARAM_FieldDecorator_Label_Sounds"));
             }
 
             // Flag list
             if (metaContext.DisplayEventFlagEnum)
             {
-                ConditionalAliasEnumHelper.Label(ParentView, "FLAGS", row,
+                ConditionalAliasEnumHelper.Label(ParentView, LOC.Get("PARAM_FieldDecorator_Label_Flags"), row,
                     metaContext.EventFlagConditionalField, metaContext.EventFlagConditionalValue);
             }
 
             // Cutscene list
             if (metaContext.DisplayCutsceneEnum)
             {
-                AliasEnumHelper.Label(ParentView, "CUTSCENES");
+                AliasEnumHelper.Label(ParentView, LOC.Get("PARAM_FieldDecorator_Label_Cutscenes"));
             }
 
             // Movie list
             if (metaContext.DisplayMovieEnum)
             {
-                ConditionalAliasEnumHelper.Label(ParentView, "MOVIES", row,
+                ConditionalAliasEnumHelper.Label(ParentView, LOC.Get("PARAM_FieldDecorator_Label_Movies"), row,
                     metaContext.MovieConditionalField, metaContext.MovieConditionalValue);
             }
 
             // Character list
             if (metaContext.DisplayCharacterEnum)
             {
-                AliasEnumHelper.Label(ParentView, "CHARACTERS");
+                AliasEnumHelper.Label(ParentView, LOC.Get("PARAM_FieldDecorator_Label_Characters"));
             }
 
             // Project Enum
@@ -639,10 +639,9 @@ public static class FieldTooltipHelper
                                 "-----\n";
                         }
 
-                        helpIconText = helpIconText +
-                        $"Minimum: {col.Def.Minimum}\n" +
-                        $"Maximum: {col.Def.Maximum}\n" +
-                        $"Increment: {col.Def.Increment}";
+                        helpIconText = LOC.Get("PARAM_FieldDecorator_FieldTooltip_Description",
+                            helpIconText,
+                            col.Def.Minimum, col.Def.Maximum, col.Def.Increment);
                     }
 
                     EditorTableUtils.HelpIcon(context.InternalName, ref helpIconText, true);
@@ -689,10 +688,9 @@ public static class FieldTooltipHelper
                                 "-----\n";
                         }
 
-                        helpIconText = helpIconText +
-                        $"Minimum: {col.Def.Minimum}\n" +
-                        $"Maximum: {col.Def.Maximum}\n" +
-                        $"Increment: {col.Def.Increment}";
+                        helpIconText = LOC.Get("PARAM_FieldDecorator_FieldTooltip_Description",
+                            helpIconText,
+                            col.Def.Minimum, col.Def.Maximum, col.Def.Increment);
                     }
 
                     GUI.Tooltip(helpIconText);
@@ -729,7 +727,7 @@ public static class EnumHelper
             return;
 
         ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_EnumValue_Text);
-        ImGui.TextUnformatted(enumValues.GetValueOrDefault(value, "Not Enumerated"));
+        ImGui.TextUnformatted(enumValues.GetValueOrDefault(value, LOC.Get("PARAM_FieldDecorator_EnumHelper_Not_Enumerated")));
         ImGui.PopStyleColor(1);
     }
 
@@ -783,7 +781,8 @@ public static class ProjectEnumHelper
         if (!CFG.Current.ParamEditor_Field_List_Display_Enums)
             return;
 
-        var enumEntry = curView.Project.Handler.ParamData.Enums.List.Where(e => e.Key == enumType).FirstOrDefault();
+        var enumEntry = curView.Project.Handler.ParamData.Enums.List
+            .FirstOrDefault(e => e.Key == enumType);
 
         if (enumEntry != null)
         {
@@ -799,7 +798,9 @@ public static class ProjectEnumHelper
             return;
 
         var enumEntry = curView.Project.Handler.ParamData.Enums.List
-            .Where(e => e.Key == enumType).FirstOrDefault();
+            .FirstOrDefault(e => e.Key == enumType);
+
+        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_EnumValue_Text);
 
         if (enumEntry != null)
         {
@@ -811,10 +812,14 @@ public static class ProjectEnumHelper
                 enumValueName = enumValue.GetName();
             }
 
-            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_EnumValue_Text);
             ImGui.TextUnformatted(enumValueName);
-            ImGui.PopStyleColor();
         }
+        else
+        {
+            ImGui.TextUnformatted(LOC.Get("PARAM_FieldDecorator_EnumHelper_Not_Enumerated"));
+        }
+
+        ImGui.PopStyleColor();
     }
 
     public static bool ContextMenu(ParamEditorView curView, ParamEnumEntry en, object oldval, ref object newval)
@@ -902,7 +907,7 @@ public static class AliasEnumHelper
                 }
                 else
                 {
-                    ImGui.TextUnformatted("None");
+                    ImGui.TextUnformatted(LOC.Get("PARAM_FieldDecorator_EnumHelper_None"));
                 }
             }
             else
@@ -920,7 +925,7 @@ public static class AliasEnumHelper
                 }
                 else
                 {
-                    ImGui.TextUnformatted("Not Enumerated");
+                    ImGui.TextUnformatted(LOC.Get("PARAM_FieldDecorator_EnumHelper_Not_Enumerated"));
                 }
             }
 
@@ -1021,7 +1026,7 @@ public static class ConditionalAliasEnumHelper
                 }
                 else
                 {
-                    ImGui.TextUnformatted("None");
+                    ImGui.TextUnformatted(LOC.Get("PARAM_FieldDecorator_EnumHelper_None"));
                 }
             }
             else
@@ -1033,7 +1038,7 @@ public static class ConditionalAliasEnumHelper
                 }
                 else
                 {
-                    ImGui.TextUnformatted("Not Enumerated");
+                    ImGui.TextUnformatted(LOC.Get("PARAM_FieldDecorator_EnumHelper_Not_Enumerated"));
                 }
             }
             ImGui.PopStyleColor(1);
@@ -1232,12 +1237,14 @@ public static class ParamReferenceHelper
 
         foreach ((string, Param.Row, string) rf in refs)
         {
-            if (ImGui.Selectable($@"Go to {rf.Item3}##GoToElement{index}"))
+            // Go to X
+            if (ImGui.Selectable($"{LOC.Get("PARAM_FieldDecorator_ParamRef_Go_To_Action", rf.Item3)}##GoToElement{index}"))
             {
                 EditorCommandQueue.AddCommand($@"param/select/-1/{rf.Item1}/{rf.Item2.ID}");
             }
 
-            if (ImGui.Selectable($@"Go to {rf.Item3} in new view##GoToElementInView{index}"))
+            // Go to X in new view
+            if (ImGui.Selectable($"{LOC.Get("PARAM_FieldDecorator_ParamRef_Go_To_New_View_Action", rf.Item3)}##GoToElementInView{index}"))
             {
                 EditorCommandQueue.AddCommand($@"param/select/new/{rf.Item1}/{rf.Item2.ID}");
             }
@@ -1247,16 +1254,18 @@ public static class ParamReferenceHelper
                 continue;
             }
 
+            // Inherit referenced row's name
             if (!string.IsNullOrWhiteSpace(rf.Item2.Name) &&
                 (InputManager.HasCtrlDown() || string.IsNullOrWhiteSpace(context.Name)) &&
-                ImGui.Selectable($@"Inherit referenced row's name ({rf.Item2.Name})##InheritName{index}"))
+                ImGui.Selectable($"{LOC.Get("PARAM_FieldDecorator_ParamRef_Inherit_Ref_Row_Name_Action", rf.Item2.Name)}##InheritName{index}"))
             {
                 executor.ExecuteAction(new PropertiesChangedAction(context.GetType().GetProperty("Name"), context,
                     rf.Item2.Name));
             }
+            // Proliferate name to referenced row
             else if ((InputManager.HasCtrlDown() || string.IsNullOrWhiteSpace(rf.Item2.Name)) &&
                      !string.IsNullOrWhiteSpace(context.Name) &&
-                     ImGui.Selectable($@"Proliferate name to referenced row ({rf.Item1})##ProliferateName{index}"))
+                     ImGui.Selectable($"{LOC.Get("PARAM_FieldDecorator_ParamRef_Proliferate_Name_to_Ref_Action", rf.Item1)}##ProliferateName{index}"))
             {
                 executor.ExecuteAction(new PropertiesChangedAction(rf.Item2.GetType().GetProperty("Name"), rf.Item2,
                     context.Name));
@@ -1270,8 +1279,9 @@ public static class ParamReferenceHelper
         ImGui.Separator();
 
         // Quick Edit
-        ImGui.InputTextWithHint("##value", "Enter term to find row...", ref QuickEditTerm, 128);
-        GUI.Tooltip("Quickly find a row in the referenced param by searching for a term in the row's name or ID. Click on a result to set the field's value to that row's ID.");
+        ImGui.InputTextWithHint("##value", LOC.Get("PARAM_FieldDecorator_ParamRef_EntrySearch_Hint"), 
+            ref QuickEditTerm, 128);
+        GUI.Tooltip(LOC.Get("PARAM_FieldDecorator_ParamRef_EntrySearch_TT"));
 
         if (QuickEditTerm != "")
         {
@@ -1320,10 +1330,11 @@ public static class ParamReferenceHelper
                         }
                         catch (Exception e)
                         {
-                            Smithbox.LogError(typeof(ParamReferenceHelper), "Unable to convert value into param field's type'", e);
+                            Smithbox.LogError(typeof(ParamReferenceHelper), 
+                                LOC.Get("PARAM_FieldDecorator_ParamRef_EntrySearch_Invalid_Convert"), e);
                         }
                     }
-                    GUI.Tooltip($"From {rt}");
+                    GUI.Tooltip(LOC.Get("PARAM_FieldDecorator_ParamRef_EntrySearch_Selectable_TT", rt));
 
                     maxResultsPerRefType--;
                 }
@@ -1432,7 +1443,7 @@ public static class VirtualParamReferenceHelper
                         if (curFieldMeta.VirtualRef != null &&
                             curFieldMeta.VirtualRef.Equals(virtualRefName))
                         {
-                            if (ImGui.Selectable($@"Search in {param.Key} ({f.InternalName})"))
+                            if (ImGui.Selectable($"{LOC.Get("PARAM_FieldDecorator_VirtParamRef_Search_Action", param.Key, f.InternalName)}##virtParamRefSearchAction_{f.InternalName}"))
                             {
                                 EditorCommandQueue.AddCommand($@"param/select/-1/{param.Key}");
                                 EditorCommandQueue.AddCommand(
@@ -1483,7 +1494,7 @@ public static class ExternalReferenceHelper
         var exist = CacheBank.GetCached(curView.Editor, keyRow, $"extRef{menuText}{fieldKey}",
             () => Path.Exists(Path.Join(dir, matchedExtRefPath[0])));
 
-        if (exist && ImGui.Selectable($"Go to {menuText} file..."))
+        if (exist && ImGui.Selectable($"{LOC.Get("PARAM_FieldDecorator_ExtRef_Go_To_File_Action", menuText)}##goToFileAction_{menuText}"))
         {
             var path = ParamReferenceResolver.ResolveExternalReferences(matchedExtRefPath, dir);
 
@@ -1493,8 +1504,8 @@ public static class ExternalReferenceHelper
             }
             else
             {
-                Smithbox.Log(typeof(ExternalReferenceHelper), $"\"{path}\" could not be found. It may be map or chr specific",
-                    LogLevel.Warning);
+                Smithbox.LogError(typeof(ExternalReferenceHelper),
+                    LOC.Get("PARAM_FieldDecorator_ExtRef_Go_To_File_Error", path));
 
                 CacheBank.ClearCaches();
             }
@@ -1607,7 +1618,7 @@ public static class TextReferenceHelper
             if (string.IsNullOrWhiteSpace(text))
             {
                 ImGui.AlignTextToFramePadding();
-                ImGui.TextUnformatted("%null%");
+                ImGui.TextUnformatted(LOC.Get("PARAM_FieldDecorator_FmgRef_Null"));
             }
             else
             {
@@ -1635,25 +1646,6 @@ public static class TextReferenceHelper
         }
     }
 
-    // TODO: restore on FMG descriptor impl
-    //public static void Click(ParamView curView, object oldval, Param.Row context, List<FMGRef> fmgRefs, string roleOverride)
-    //{
-    //    if (ImGui.IsItemClicked(ImGuiMouseButton.Left) && InputManager.HasCtrlDown())
-    //    {
-    //        var language = CFG.Current.TextEditor_Primary_Category;
-
-    //        if (fmgRefs != null)
-    //        {
-    //            TextResult primaryRef = ParamReferenceResolver.ResolveTextReferences(curView, fmgRefs, context, oldval, roleOverride)?.FirstOrDefault();
-
-    //            if (primaryRef != null)
-    //            {
-    //                EditorCommandQueue.AddCommand($@"text/select/{language}/{primaryRef.ContainerWrapper.Descriptor.FileName}/{primaryRef.FmgName}/{primaryRef.Entry.ID}");
-    //            }
-    //        }
-    //    }
-    //}
-
     public static bool ContextMenu(ParamEditorView curView, List<FMGRef> reftypes, Param.Row context, dynamic oldval,
         ActionManager executor, string roleOverride = "")
     {
@@ -1669,20 +1661,22 @@ public static class TextReferenceHelper
         {
             if (result != null && result.Entry != null)
             {
-                if (ImGui.Selectable($@"Go to FMG entry text##fmgEntryGoTo{index}"))
+                // Go to Text Entry
+                if (ImGui.Selectable($"{LOC.Get("PARAM_FieldDecorator_FmgRef_Go_to_Entry_Action")}##fmgEntryGoTo{index}"))
                 {
                     EditorCommandQueue.AddCommand($@"text/select/{result.ContainerWrapper.ContainerDisplayCategory}/{result.ContainerWrapper.FileEntry.Filename}/{result.FmgName}/{result.Entry.ID}");
                 }
+                GUI.Tooltip(LOC.Get("PARAM_FieldDecorator_FmgRef_Go_to_Entry_Action_TT"));
 
                 if (context == null || executor == null)
                 {
                     continue;
                 }
 
-                // Set Row Name to X
                 if (!string.IsNullOrWhiteSpace(result.Entry.Text))
                 {
-                    if (ImGui.Selectable($@"Replace row name with referenced FMG entry text##replaceRowFmgEntry{index}"))
+                    // Replace Row Name with Text Entry Contents
+                    if (ImGui.Selectable($"{LOC.Get("PARAM_FieldDecorator_FmgRef_Replace_Row_Name_Fmg_Entry_Text")}##replaceRowFmgEntry{index}"))
                     {
                         executor.ExecuteAction(
                             new PropertiesChangedAction(
@@ -1690,12 +1684,14 @@ public static class TextReferenceHelper
                                 context,
                                 result.Entry.Text));
                     }
+                    GUI.Tooltip(LOC.Get("PARAM_FieldDecorator_FmgRef_Replace_Row_Name_Fmg_Entry_Text_TT"));
                 }
 
                 // Apply Row Name to X
                 if (!string.IsNullOrWhiteSpace(context.Name))
                 {
-                    if (ImGui.Selectable($@"Replace FMG entry text with current row name##replaceFmgRowEntry{index}"))
+
+                    if (ImGui.Selectable($"{LOC.Get("PARAM_FieldDecorator_FmgRef_Replace_Fmg_Entry_Text_Row_Name")})##replaceFmgRowEntry{index}"))
                     {
                         executor.ExecuteAction(
                             new PropertiesChangedAction(
@@ -1703,6 +1699,7 @@ public static class TextReferenceHelper
                                 result.Entry,
                                 context.Name));
                     }
+                    GUI.Tooltip(LOC.Get("PARAM_FieldDecorator_FmgRef_Replace_Fmg_Entry_Text_Row_Name_TT"));
                 }
             }
 
@@ -1718,59 +1715,6 @@ public static class TextReferenceHelper
 
         return false;
     }
-
-    // TODO: restore on FMG descriptor impl
-    //public static bool ContextMenu(ParamView curView, List<FMGRef> reftypes, Param.Row context, dynamic oldval,
-    //    ActionManager executor, string roleOverride = "")
-    //{
-    //    List<TextResult> refs = ParamReferenceResolver.ResolveTextReferences(curView, reftypes, context, oldval, roleOverride);
-
-    //    var language = CFG.Current.TextEditor_Primary_Category;
-
-    //    foreach (var result in refs)
-    //    {
-    //        if (result != null && result.TextEntry != null)
-    //        {
-    //            if (ImGui.Selectable($@"Go to FMG entry text"))
-    //            {
-    //                EditorCommandQueue.AddCommand($@"text/select/{language}/{result.ContainerWrapper.Descriptor.FileName}/{result.FmgName}/{result.Entry.ID}");
-    //            }
-
-    //            if (context == null || executor == null)
-    //            {
-    //                continue;
-    //            }
-
-    //            // Set Row Name to X
-    //            if (!string.IsNullOrWhiteSpace(result.Entry.Text))
-    //            {
-    //                if (ImGui.Selectable($@"Replace row name with referenced FMG entry text"))
-    //                {
-    //                    executor.ExecuteAction(
-    //                        new PropertiesChangedAction(
-    //                            context.GetType().GetProperty("Name"),
-    //                            context,
-    //                            result.Entry.Text));
-    //                }
-    //            }
-
-    //            // Apply Row Name to X
-    //            if (!string.IsNullOrWhiteSpace(context.Name))
-    //            {
-    //                if (ImGui.Selectable($@"Replace FMG entry text with current row name"))
-    //                {
-    //                    executor.ExecuteAction(
-    //                        new PropertiesChangedAction(
-    //                            result.Entry.GetType().GetProperty("Text"),
-    //                            result.Entry,
-    //                            context.Name));
-    //                }
-    //            }
-    //        }
-    //    }
-
-    //    return false;
-    //}
 }
 #endregion
 
@@ -1789,7 +1733,7 @@ public static class TextureReferenceHelper
 
         ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(0, 0));
         ImGui.AlignTextToFramePadding();
-        ImGui.TextUnformatted(@"   [Icon]");
+        ImGui.TextUnformatted(LOC.Get("PARAM_FieldDecorator_TexRef_Label"));
         ImGui.PopStyleVar();
     }
 
@@ -1834,11 +1778,11 @@ public static class AC6_FieldOffsetHelper
         {
             ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(0, ImGui.GetStyle().ItemSpacing.Y));
             ImGui.AlignTextToFramePadding();
-            ImGui.TextUnformatted(@"   <PARAM>");
+            ImGui.TextUnformatted(LOC.Get("PARAM_FieldDecorator_AC6_FieldOffset_Label_1"));
             ImGui.AlignTextToFramePadding();
-            ImGui.TextUnformatted(@"   <FIELD>");
+            ImGui.TextUnformatted(LOC.Get("PARAM_FieldDecorator_AC6_FieldOffset_Label_2"));
             ImGui.AlignTextToFramePadding();
-            ImGui.TextUnformatted(@"   <NAME>");
+            ImGui.TextUnformatted(LOC.Get("PARAM_FieldDecorator_AC6_FieldOffset_Label_3"));
             ImGui.PopStyleVar();
         }
     }
@@ -1985,7 +1929,7 @@ public static class CalcCorrectGraphHelper
         {
             bool draw = true;
 
-            var graphName = "Graph";
+            var graphName = LOC.Get("PARAM_FieldDecorator_Graph_Title");
             var xAxisTitle = "";
             var yAxisTitle = "";
 
@@ -2045,7 +1989,7 @@ public static class CalcCorrectGraphHelper
                 if (!validAxis_X || !validAxis_Y)
                 {
                     ImGui.AlignTextToFramePadding();
-                    ImGui.Text("Invalid axis limits.");
+                    ImGui.Text(LOC.Get("PARAM_FieldDecorator_Graph_Error_Invalid_Axis_Limits"));
                     ImGui.Unindent();
                     return;
                 }
@@ -2054,7 +1998,7 @@ public static class CalcCorrectGraphHelper
                 if (values.Length != xValues.Length || values.Length < 2)
                 {
                     ImGui.AlignTextToFramePadding();
-                    ImGui.Text("Mismatched graph data.");
+                    ImGui.Text(LOC.Get("PARAM_FieldDecorator_Graph_Error_Mismatched_Data"));
                     ImGui.Unindent();
                     return;
                 }
@@ -2063,7 +2007,7 @@ public static class CalcCorrectGraphHelper
                 if (!ImPlotHelper.SanitizeSeries(values))
                 {
                     ImGui.AlignTextToFramePadding();
-                    ImGui.Text("Graph contains invalid values.");
+                    ImGui.Text(LOC.Get("PARAM_FieldDecorator_Graph_Error_Invalid_Values"));
                     ImGui.Unindent();
                     return;
                 }
@@ -2089,11 +2033,13 @@ public static class CalcCorrectGraphHelper
                     }
                 }
 
-                if (ImGui.Button("Export to CSV##graphCsvExplort"))
+                // Export to CSV
+                if (ImGui.Button($"{LOC.Get("PARAM_FieldDecorator_Graph_Action_Export_To_CSV")}##graphCsvExplort"))
                 {
                     GraphContext = new GraphDataContext(row, xValues, values);
 
-                    var dialog = PlatformUtils.Instance.OpenFolderDialog("Select Folder", out var path);
+                    var dialog = PlatformUtils.Instance.OpenFolderDialog(
+                        LOC.Get("PARAM_FieldDecorator_Graph_Export_Select_Folder"), out var path);
 
                     if(dialog)
                     {
@@ -2105,22 +2051,24 @@ public static class CalcCorrectGraphHelper
 
                             ExportGraphDataToCsv(Path.Combine(ExportPath, fileName), GraphContext.xValues, GraphContext.yValues);
 
-                            Smithbox.Log(typeof(CalcCorrectGraphHelper), $"Exported graph data for row {GraphContext.Row.ID}.");
+                            Smithbox.Log(typeof(CalcCorrectGraphHelper),
+                                LOC.Get("PARAM_FieldDecorator_Graph_Export_Select_Folder", GraphContext.Row.ID));
                         }
                         catch (Exception ex)
                         {
-                            Smithbox.Log(typeof(CalcCorrectGraphHelper), $"Failed to export graph data for row {GraphContext.Row.ID}.", LogLevel.Error, ex);
+                            Smithbox.LogError(typeof(CalcCorrectGraphHelper), 
+                                LOC.Get("PARAM_FieldDecorator_Graph_Export_Data_FAIL", GraphContext.Row.ID), ex);
                         }
                     }
                 }
-                GUI.Tooltip("This will export the graph data for each point on the graph as generated by this row.");
+                GUI.Tooltip(LOC.Get("PARAM_FieldDecorator_Graph_Action_Export_To_CSV_TT"));
 
             }
         }
         catch (Exception e)
         {
             ImGui.AlignTextToFramePadding();
-            ImGui.TextColored(new Vector4(1, 0, 0, 1), "Unable to draw graph");
+            ImGui.TextColored(new Vector4(1, 0, 0, 1), LOC.Get("PARAM_FieldDecorator_Graph_Error_Unable_to_Draw"));
             ImGui.AlignTextToFramePadding();
             ImGui.TextUnformatted(e.Message);
         }
@@ -2164,7 +2112,7 @@ public static class TileReferenceHelper
             return;
 
         ImGui.AlignTextToFramePadding();
-        ImGui.TextUnformatted($@"   <Tile>");
+        ImGui.TextUnformatted(LOC.Get("PARAM_FieldDecorator_TileRef_Label"));
     }
 
     public static void Hint(ParamEditorView curView, string enumType, string value)
@@ -2528,26 +2476,30 @@ public static class GroupReferenceHelper
         {
             if (entry.Row.ID == oldval)
             {
-                if (ImGui.Selectable($@"Go to {entry.Hint}##GoToElement{index}"))
+                // Go to X
+                if (ImGui.Selectable($"{LOC.Get("PARAM_FieldDecorator_ParamRef_Go_To_Action", entry.Hint)}##GoToElement{index}"))
                 {
                     EditorCommandQueue.AddCommand($@"param/select/-1/{entry.Param}/{entry.Row.ID}");
                 }
 
-                if (ImGui.Selectable($@"Go to {entry.Hint} in new view##GoToElementInView{index}"))
+                // Go to X in new view
+                if (ImGui.Selectable($"{LOC.Get("PARAM_FieldDecorator_ParamRef_Go_To_New_View_Action", entry.Hint)}##GoToElementInView{index}"))
                 {
                     EditorCommandQueue.AddCommand($@"param/select/new/{entry.Param}/{entry.Row.ID}");
                 }
 
+                // Inherit referenced row's name
                 if (!string.IsNullOrWhiteSpace(entry.Row.Name) &&
                     (InputManager.HasCtrlDown() || string.IsNullOrWhiteSpace(context.Name)) &&
-                    ImGui.Selectable($@"Inherit referenced row's name ({entry.Row.Name})##InheritName{index}"))
+                    ImGui.Selectable($"{LOC.Get("PARAM_FieldDecorator_ParamRef_Inherit_Ref_Row_Name_Action", entry.Row.Name)}##InheritName{index}"))
                 {
                     executor.ExecuteAction(new PropertiesChangedAction(context.GetType().GetProperty("Name"), context,
                         entry.Row.Name));
                 }
+                // Proliferate name to referenced row
                 else if ((InputManager.HasCtrlDown() || string.IsNullOrWhiteSpace(entry.Row.Name)) &&
                          !string.IsNullOrWhiteSpace(context.Name) &&
-                         ImGui.Selectable($@"Proliferate name to referenced row ({entry.Param})##ProliferateName{index}"))
+                         ImGui.Selectable($"{LOC.Get("PARAM_FieldDecorator_ParamRef_Proliferate_Name_to_Ref_Action", entry.Param)}##ProliferateName{index}"))
                 {
                     executor.ExecuteAction(new PropertiesChangedAction(entry.Row.GetType().GetProperty("Name"), entry.Row, context.Name));
                 }

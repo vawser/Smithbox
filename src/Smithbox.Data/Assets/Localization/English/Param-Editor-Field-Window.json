@@ -215,6 +215,18 @@
     {
       "Key": "PARAM_FieldWindow_Context_Action_Clear_Compare_Field",
       "Text": "Clear Compare Field"
+    },
+    {
+      "Key": "PARAM_FieldWindow_Context_Comparison_Name_Manipulation",
+      "Text": "Name Manipulation"
+    },
+    {
+      "Key": "PARAM_FieldWindow_Context_Action_Set_Target_Field",
+      "Text": "Set Target Field"
+    },
+    {
+      "Key": "PARAM_FieldWindow_Context_Action_Set_Target_Field_TT",
+      "Text": "Set the target field in the Row Context Menu for the Name Manipulation Inherit actions to this field's internal name."
     }
   ]
 }
