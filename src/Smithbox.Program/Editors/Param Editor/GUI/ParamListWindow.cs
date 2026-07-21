@@ -622,7 +622,7 @@ public class ParamListWindow
 
     private void DisplayStayParams(bool doFocus, float scrollTo)
     {
-        ImGui.BeginChild("StayParamFileParamSection", new Vector2(0, 130) * DPI.UIScale(), ImGuiChildFlags.Borders);
+        ImGui.BeginChild("StayParamFileParamSection", new Vector2(0, 110) * DPI.UIScale(), ImGuiChildFlags.Borders);
 
         foreach(var param in Project.Handler.ParamData.PrimaryBank.StayParams)
         {
