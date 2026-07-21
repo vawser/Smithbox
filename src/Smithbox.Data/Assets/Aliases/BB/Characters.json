@@ -631,14 +631,14 @@
   },
   {
     "ID": "c2631",
-    "Name": "Huntsman (Transformed)",
+    "Name": "Large Huntsman (Transformed)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "c2632",
-    "Name": "Huntsman (Transformed)",
+    "Name": "Forest Huntsman (Transformed)",
     "Tags": [
       ""
     ]
@@ -701,14 +701,14 @@
   },
   {
     "ID": "c2800",
-    "Name": "Unknown",
+    "Name": "Skeletal Puppet (Poison)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "c2810",
-    "Name": "Unknown",
+    "Name": "Large Skeletal Puppet",
     "Tags": [
       ""
     ]
@@ -778,14 +778,14 @@
   },
   {
     "ID": "c3110",
-    "Name": "Evil Spirit",
+    "Name": "Evil Spirit (Male)",
     "Tags": [
       ""
     ]
   },
   {
     "ID": "c3111",
-    "Name": "Evil Spirit",
+    "Name": "Evil Spirit (Female)",
     "Tags": [
       ""
     ]
@@ -953,7 +953,7 @@
   },
   {
     "ID": "c4110",
-    "Name": "Nightmare Huntsman",
+    "Name": "Large Nightmare Huntsman",
     "Tags": [
       "DLC"
     ]
@@ -981,7 +981,7 @@
   },
   {
     "ID": "c4150",
-    "Name": "Enlarged Head Patient",
+    "Name": "Enlarged Head Patient (Talk)",
     "Tags": [
       "DLC"
     ]

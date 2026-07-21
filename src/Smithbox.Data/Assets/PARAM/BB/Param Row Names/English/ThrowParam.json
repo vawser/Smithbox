@@ -4,469 +4,469 @@
     {
       "ID": 0,
       "Entries": [
-        "null"
+        "None"
       ]
     },
     {
       "ID": 1,
       "Entries": [
-        "[ SP 】Rear PC → Hammer Demon"
+        "[SP] Backstrike - Player → Mergo's Attendant"
       ]
     },
     {
       "ID": 2,
       "Entries": [
-        "[ SP 】 Parry PC → Hammer Demon"
+        "[SP] Visceral - Player → Mergo's Attendant"
       ]
     },
     {
       "ID": 3,
       "Entries": [
-        "[ SP 】【Enhanced】Parry PC → Hammer Demon"
+        "[SP] Backstrike - Player → Mergo's Attendant (Enhancted)"
       ]
     },
     {
       "ID": 4,
       "Entries": [
-        "[ SP 】 Left side PC → Hammer Demon"
+        "[SP] Backstrike - Player → Mergo's Attendant (Left)"
       ]
     },
     {
       "ID": 100,
       "Entries": [
-        "Rear PC to PC"
+        "Backstrike: Player → Player"
       ]
     },
     {
       "ID": 101,
       "Entries": [
-        "Gun Breaker PC to PC"
+        "Visceral: Player → Player"
       ]
     },
     {
       "ID": 11000,
       "Entries": [
-        "Back collapse PC → Hound"
+        "Backstrike - Player → Wolf Beast"
       ]
     },
     {
       "ID": 11001,
       "Entries": [
-        "Back collapse PC → Sacrificial Hound"
+        "Backstrike - Player → Skeleton-meat Wolf Beast"
       ]
     },
     {
       "ID": 11010,
       "Entries": [
-        "Back collapse PC → Priest"
+        "Backstrike - Player → Loran Cleric"
       ]
     },
     {
       "ID": 11040,
       "Entries": [
-        "Back collapse PC → Burned corpse"
+        "Backstrike - Player → Skeletal Puppet"
       ]
     },
     {
       "ID": 11050,
       "Entries": [
-        "Back collapse PC → Wandering Widow"
+        "Backstrike - Player → Chime Maiden"
       ]
     },
     {
       "ID": 11051,
       "Entries": [
-        "Back collapse PC → Wandering Widow ( Lightweight )"
+        "Backstrike - Player → Chime Maiden (Lightweight)"
       ]
     },
     {
       "ID": 11060,
       "Entries": [
-        "Back collapse PC → Brain Eater"
+        "Backstrike - Player → Brainsucker"
       ]
     },
     {
       "ID": 11090,
       "Entries": [
-        "Back collapse PC → Strange Beast"
+        "Backstrike - Player → Cloaked Beast Patient"
       ]
     },
     {
       "ID": 11091,
       "Entries": [
-        "Back collapse PC → Strange Beast ( NPC )"
+        "Backstrike - Player → Beast Patient"
       ]
     },
     {
       "ID": 11220,
       "Entries": [
-        "Back collapse PC →Young fruit bat"
+        "Backstrike - Player → Cainhurst Gargoyle"
       ]
     },
     {
       "ID": 11270,
       "Entries": [
-        "Back collapse PC → Vampire pig"
+        "Backstrike - Player → Maneater Boar"
       ]
     },
     {
       "ID": 11271,
       "Entries": [
-        "Back collapse PC → Vampire pig (nightmare)"
+        "Backstrike - Player → Maneater Boar (Afflicted)"
       ]
     },
     {
       "ID": 11290,
       "Entries": [
-        "Back collapse PC → Strange Beast (female)"
+        "Backstrike - Player → Cloaked Beast Patient (Female)"
       ]
     },
     {
       "ID": 12000,
       "Entries": [
-        "Back collapse PC → Executioner"
+        "Backstrike - Player → Executioner"
       ]
     },
     {
       "ID": 12010,
       "Entries": [
-        "Back collapse PC → Dungeon Man (Grave Digger)"
+        "Backstrike - Player → Watcher's Gravedigger"
       ]
     },
     {
       "ID": 12020,
       "Entries": [
-        "Back collapse PC → Kidnapper"
+        "Backstrike - Player → Snatcher"
       ]
     },
     {
       "ID": 12040,
       "Entries": [
-        "Back collapse PC → Manipulated Corpse"
+        "Backstrike - Player → Skeletal Puppet"
       ]
     },
     {
       "ID": 12050,
       "Entries": [
-        "Back collapse PC → Crazy Demon"
+        "Backstrike - Player → Crazy Demon"
       ]
     },
     {
       "ID": 12090,
       "Entries": [
-        "Back collapse PC → Bloodthirsty Beast"
+        "Backstrike - Player → Blood Starved Beast"
       ]
     },
     {
       "ID": 12100,
       "Entries": [
-        "Back collapse PC → Eye Collector"
+        "Backstrike - Player → Witch of Hemwick"
       ]
     },
     {
       "ID": 12110,
       "Entries": [
-        "Back collapse PC → Spider Cthulhu"
+        "Backstrike - Player → Garden of Eyes"
       ]
     },
     {
       "ID": 12120,
       "Entries": [
-        "Back collapse PC → Dark Brigade"
+        "Backstrike - Player → Shadow of Yharnam"
       ]
     },
     {
       "ID": 12150,
       "Entries": [
-        "Back collapse PC → The Demon of the Old Castle"
+        "Backstrike - Player → Silver Lady"
       ]
     },
     {
       "ID": 12160,
       "Entries": [
-        "Back collapse PC → Kin of the Flame of Destruction"
+        "Backstrike - Player → Bone Ash Hunter"
       ]
     },
     {
       "ID": 12170,
       "Entries": [
-        "Back collapse PC → Messenger from Snake Swamp"
+        "Backstrike - Player → Vermin Host"
       ]
     },
     {
       "ID": 12180,
       "Entries": [
-        "Back collapse PC → Silver Beast's Kin"
+        "Backstrike - Player → Abhorrent Beast"
       ]
     },
     {
       "ID": 12250,
       "Entries": [
-        "Back collapse PC → Jailer A"
+        "Backstrike - Player → Mergo's Attendant"
       ]
     },
     {
       "ID": 12260,
       "Entries": [
-        "Back collapse PC → Jailer B"
+        "Backstrike - Player → Mergo's Chief Attendant"
       ]
     },
     {
       "ID": 12320,
       "Entries": [
-        "Back collapse PC → King's Reaper"
+        "Backstrike - Player → Matyr Logarius"
       ]
     },
     {
       "ID": 12330,
       "Entries": [
-        "Back collapse PC → The King's Servant"
+        "Backstrike - Player → Cainhurst Servant"
       ]
     },
     {
       "ID": 12400,
       "Entries": [
-        "Back collapse PC → Foundling Giant"
+        "Backstrike - Player → Giant Lost Child"
       ]
     },
     {
       "ID": 12500,
       "Entries": [
-        "Back collapse PC → Messenger from the Moon"
+        "Backstrike - Player → Small Celestial Emissary"
       ]
     },
     {
       "ID": 12560,
       "Entries": [
-        "Back collapse PC → Ground Cherry"
+        "Backstrike - Player → Winter Lantern"
       ]
     },
     {
       "ID": 12600,
       "Entries": [
-        "Back collapse PC → Terrifying crowd"
+        "Backstrike - Player → Large Huntsman"
       ]
     },
     {
       "ID": 12610,
       "Entries": [
-        "Back collapse PC → Crowd Woman"
+        "Backstrike - Player → Hemwick Grave Woman"
       ]
     },
     {
       "ID": 12630,
       "Entries": [
-        "Back collapse PC → crowd A (large)"
+        "Backstrike - Player → Huntsman (Transformed)"
       ]
     },
     {
       "ID": 12631,
       "Entries": [
-        "Back collapse PC → crowd A (Large) Executioner Costume"
+        "Backstrike - Player → Large Huntsman (Transformed)"
       ]
     },
     {
       "ID": 12632,
       "Entries": [
-        "Back collapse PC → crowd A (O) Mori Costume"
+        "Backstrike - Player → Forest Huntsman (Transformed)"
       ]
     },
     {
       "ID": 12640,
       "Entries": [
-        "Back collapse PC → crowd B (large)"
+        "Backstrike - Player → Brick Troll"
       ]
     },
     {
       "ID": 12700,
       "Entries": [
-        "Back collapse PC → Church Emissary"
+        "Backstrike - Player → Church Servant"
       ]
     },
     {
       "ID": 12710,
       "Entries": [
-        "Back collapse PC → Father Gascoigne"
+        "Backstrike - Player → Father Gascoigne"
       ]
     },
     {
       "ID": 12720,
       "Entries": [
-        "Back collapse PC → Father Gascoigne (Beast)"
+        "Backstrike - Player → Father Gascoigne (Beast)"
       ]
     },
     {
       "ID": 12740,
       "Entries": [
-        "Back collapse PC → student"
+        "Backstrike - Player → Slime Scholar"
       ]
     },
     {
       "ID": 12800,
       "Entries": [
-        "Back collapse PC →Burnt corpse variation (poison)"
+        "Backstrike - Player → Skeletal Puppet (Poison)"
       ]
     },
     {
       "ID": 12810,
       "Entries": [
-        "Back collapse PC → Burnt Corpse Warrior (Large)"
+        "Backstrike - Player → Large Skeletal Puppet"
       ]
     },
     {
       "ID": 13000,
       "Entries": [
-        "Back collapse PC → Dungeon Man (Priest)"
+        "Backstrike - Player → Labyrinth Ritekeeper"
       ]
     },
     {
       "ID": 13010,
       "Entries": [
-        "Back collapse PC → Dungeon people (slaves)"
+        "Backstrike - Player → Pthumerian Undead"
       ]
     },
     {
       "ID": 13020,
       "Entries": [
-        "Back collapse PC → Dungeon Guardian"
+        "Backstrike - Player → Tomb Guardian"
       ]
     },
     {
       "ID": 13030,
       "Entries": [
-        "Back collapse PC → Dungeon Man (Madman)"
+        "Backstrike - Player → Mad One"
       ]
     },
     {
       "ID": 13040,
       "Entries": [
-        "Back collapse PC → Dungeon Man (Fat)"
+        "Backstrike - Player → Merciless Watcher"
       ]
     },
     {
       "ID": 13050,
       "Entries": [
-        "Back collapse PC → Dungeon Lord"
+        "Backstrike - Player → Pthumerian Descendant"
       ]
     },
     {
       "ID": 13060,
       "Entries": [
-        "Back collapse PC → Dungeon Person (Bride)"
+        "Backstrike - Player → Yharnam, Pthumerian Queen"
       ]
     },
     {
       "ID": 13110,
       "Entries": [
-        "Back collapse PC → Evil spirit (male)"
+        "Backstrike - Player → Evil Spirit (Male)"
       ]
     },
     {
       "ID": 13120,
       "Entries": [
-        "Back collapse PC → Evil spirit (female)"
+        "Backstrike - Player → Evil Spirit (Female)"
       ]
     },
     {
       "ID": 14000,
       "Entries": [
-        "Back collapse PC → Fallen Hunter"
+        "Backstrike - Player → Nightmare Huntsman"
       ]
     },
     {
       "ID": 14010,
       "Entries": [
-        "Back collapse PC → The Executioner (Nightmare)"
+        "Backstrike - Player → Nightmare Executioner"
       ]
     },
     {
       "ID": 14020,
       "Entries": [
-        "Back collapse PC → patient A"
+        "Backstrike - Player → Enlarged Head Patient"
       ]
     },
     {
       "ID": 14030,
       "Entries": [
-        "Back collapse PC → patient B"
+        "Backstrike - Player → Living Failure"
       ]
     },
     {
       "ID": 14040,
       "Entries": [
-        "Back collapse PC → Fishman A"
+        "Backstrike - Player → Fishwitch"
       ]
     },
     {
       "ID": 14050,
       "Entries": [
-        "Back collapse PC → Fishman B"
+        "Backstrike - Player → Lightning Summoner"
       ]
     },
     {
       "ID": 14060,
       "Entries": [
-        "Back collapse PC → Fishman Large"
+        "Backstrike - Player → Shark-Giant"
       ]
     },
     {
       "ID": 14110,
       "Entries": [
-        "Back collapse PC → crowd A (Great) Saint D"
+        "Backstrike - Player → Large Nightmare Huntsman"
       ]
     },
     {
       "ID": 14120,
       "Entries": [
-        "Back collapse PC → patient A (Blood transfusion table)"
+        "Backstrike - Player → Enlarged Head Patient (Blood transfusion table)"
       ]
     },
     {
       "ID": 14140,
       "Entries": [
-        "Back collapse PC → Strange Beast Saint D"
+        "Backstrike - Player → Cloaked Beast Patient"
       ]
     },
     {
       "ID": 14150,
       "Entries": [
-        "Back collapse PC → patient A (conversation)"
+        "Backstrike - Player → Enlarged Head Patient (Talk)"
       ]
     },
     {
       "ID": 14520,
       "Entries": [
-        "Back collapse PC → Clock Tower Boss"
+        "Backstrike - Player → Lady Maria of the Astral Clocktower"
       ]
     },
     {
       "ID": 14540,
       "Entries": [
-        "Back collapse PC → Final Boss HU before"
+        "Backstrike - Player → Standing Orphan of Kos"
       ]
     },
     {
       "ID": 14541,
       "Entries": [
-        "Back collapse PC → Final Boss HU rear"
+        "Backstrike - Player → Standing Orphan of Kos (Flaps)"
       ]
     },
     {
       "ID": 17010,
       "Entries": [
-        "Back collapse PC → Avatar B"
+        "Backstrike - Player → Cuddly Fat Nose"
       ]
     },
     {
       "ID": 17500,
       "Entries": [
-        "Back collapse PC → Enemy Avatar"
+        "Backstrike - Player → Beast Possessed Soul"
       ]
     },
     {
       "ID": 18050,
       "Entries": [
-        "Back collapse PC → Base Elderly (Awakened)"
+        "Backstrike - Player → Gehrman"
       ]
     },
     {
