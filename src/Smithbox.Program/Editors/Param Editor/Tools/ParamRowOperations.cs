@@ -462,4 +462,48 @@ public static class ParamRowOperations
 
     }
     #endregion
-}
+
+    #region Replace String in Row Name
+    public static void ReplaceStringInRowName(ParamEditorView curView, string targetString, string replaceString)
+    {
+        // Cannot target empty string
+        if (string.IsNullOrEmpty(targetString))
+            return;
+
+        string curParamKey = curView.Selection.GetActiveParam();
+
+        if (string.IsNullOrEmpty(curParamKey))
+            return;
+
+        Param baseParam = curView.GetPrimaryBank().Params[curParamKey];
+
+        if (baseParam == null)
+            return;
+
+        List<Param.Row> rows = curView.Selection.GetSelectedRows();
+
+        var paramMeta = curView.GetParamData().GetParamMeta(baseParam.AppliedParamdef);
+
+        var commands = new List<string>();
+
+        foreach (Param.Row row in rows)
+        {
+            var curName = row.Name;
+            var newName = curName.Replace(targetString, replaceString);
+
+            var command = $"param {curParamKey}: id {row.ID}: Name: = {newName}";
+
+            commands.Add(command);
+        }
+
+        var singleCommand = "";
+        foreach (var entry in commands)
+        {
+            singleCommand = $"{singleCommand}{entry};\n";
+        }
+
+        curView.MassEdit.ExecuteMassEdit(singleCommand, curView.GetPrimaryBank(), curView.Selection);
+    }
+
+    #endregion
+    }

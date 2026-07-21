@@ -54,6 +54,9 @@ public class ParamRowWindow
     public string TargetField = "";
     public string NameAdjustment = "";
 
+    public string TargetString = "";
+    public string ReplaceString = "";
+
     private RowListContext Context;
     private Param.Row ID_EditRow { get; set; }
     private Param.Row Name_EditRow { get; set; }
@@ -1248,6 +1251,30 @@ public class ParamRowWindow
                         // Target Field
                         ImGui.InputText($"{LOC.Get("PARAM_RowWindow_Context_Target_Field")}##targetField", ref TargetField, 255);
                         GUI.Tooltip(LOC.Get("PARAM_RowWindow_Context_Target_Field_TT"));
+
+                        ImGui.EndMenu();
+                    }
+
+                    // Replace
+                    if (ImGui.BeginMenu($"{LOC.Get("PARAM_RowWindow_Context_Replace_Header")}##replaceMenuHeader"))
+                    {
+                        // Target String
+                        ImGui.InputText($"{LOC.Get("PARAM_RowWindow_Context_Target_String")}##targetString", ref TargetString, 255);
+                        GUI.Tooltip(LOC.Get("PARAM_RowWindow_Context_Target_String_TT"));
+
+                        // Replacement String
+                        ImGui.InputText($"{LOC.Get("PARAM_RowWindow_Context_Replace_String")}##replaceString", ref ReplaceString, 255);
+                        GUI.Tooltip(LOC.Get("PARAM_RowWindow_Context_Replace_String_TT"));
+
+                        // Replace
+                        if (ImGui.Selectable($"{LOC.Get("PARAM_RowWindow_Context_Action_Replace")}##replaceStringAction", false,
+                                ParentView.Selection.RowSelectionExists()
+                                    ? ImGuiSelectableFlags.None
+                                    : ImGuiSelectableFlags.Disabled))
+                        {
+                            ParamRowOperations.ReplaceStringInRowName(ParentView, TargetString, ReplaceString);
+                        }
+                        GUI.Tooltip(LOC.Get("PARAM_RowWindow_Context_Action_Replace_TT"));
 
                         ImGui.EndMenu();
                     }

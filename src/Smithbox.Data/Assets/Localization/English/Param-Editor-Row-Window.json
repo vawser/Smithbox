@@ -217,6 +217,10 @@
       "Text": "Inherit"
     },
     {
+      "Key": "PARAM_RowWindow_Context_Replace_Header",
+      "Text": "Replace"
+    },
+    {
       "Key": "PARAM_RowWindow_Context_Action_Clear_Text_From_Name",
       "Text": "Clear Text from Name"
     },
@@ -295,6 +299,30 @@
     {
       "Key": "PARAM_RowWindow_Context_Target_Field_TT",
       "Text": "The internal name of the field to target for the name actions."
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Target_String",
+      "Text": "Target String"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Target_String_TT",
+      "Text": "The string within the row name to target."
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Replace_String",
+      "Text": "Replacement String"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Replace_String_TT",
+      "Text": "The string that replaces the targeted string within the row name."
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Replace",
+      "Text": "Replace"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Replace_TT",
+      "Text": "Replace the target string within the currently selected row's names with the replacement string."
     },
     {
       "Key": "PARAM_RowWindow_Context_Info_Header",
