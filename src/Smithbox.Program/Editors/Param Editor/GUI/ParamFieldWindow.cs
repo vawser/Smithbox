@@ -1615,7 +1615,7 @@ public class ParamFieldWindow
             // Set Target Field
             if (ImGui.Selectable($"{LOC.Get("PARAM_FieldWindow_Context_Action_Set_Target_Field")}##setTargetFieldAction"))
             {
-                ParentView.ParamRowWindow.SetNameManpulationTargetField(col.Def.InternalName);
+                ParentView.ToolMenu.RowNameManipulationTool.SetNameManpulationTargetField(col.Def.InternalName);
             }
             GUI.Tooltip(LOC.Get("PARAM_FieldWindow_Context_Action_Set_Target_Field_TT"));
 

@@ -32,6 +32,7 @@ public class ParamToolMenu
     public ParamListCategories ParamListCategories;
     public ParamPinGroups PinGroups;
     public ParamDeltaPatcher DeltaPatcher;
+    public ParamRowNameManipulationTool RowNameManipulationTool;
 
     public ParamToolMenu(ParamEditorView view, ProjectEntry project)
     {
@@ -57,6 +58,7 @@ public class ParamToolMenu
         ParamListCategories = new(view, project);
         PinGroups = new(view, project);
         DeltaPatcher = new(view, project);
+        RowNameManipulationTool = new(view, project);
     }
 
     public void DisplayMenu()
@@ -203,6 +205,13 @@ public class ParamToolMenu
                 }
                 GUI.ShowActiveStatus(CFG.Current.ParamEditor_Show_Tool_Pin_Groups);
 
+                // Row Name Manipulation
+                if (ImGui.MenuItem($"{LOC.Get("PARAM_Tools_View_Row_Name_Manipulation")}##viewToggle_RowNameManipulation"))
+                {
+                    CFG.Current.ParamEditor_Show_Tool_Row_Name_Manipulation = !CFG.Current.ParamEditor_Show_Tool_Row_Name_Manipulation;
+                }
+                GUI.ShowActiveStatus(CFG.Current.ParamEditor_Show_Tool_Row_Name_Manipulation);
+
                 ImGui.EndMenu();
             }
 
@@ -332,6 +341,18 @@ public class ParamToolMenu
                 ImGui.BeginChild("MassEditToolSection", ImGuiChildFlags.Borders);
 
                 View.MassEdit.ToolMenu.Display();
+
+                ImGui.EndChild();
+            }
+        }
+
+        if(CFG.Current.ParamEditor_Show_Tool_Row_Name_Manipulation)
+        {
+            if (ImGui.CollapsingHeader($"{LOC.Get("PARAM_Tools_Header_Row_Name_Manipulation")}##rowNameManipMenuHeader"))
+            {
+                ImGui.BeginChild("RowNameManipToolSection", ImGuiChildFlags.Borders);
+
+                RowNameManipulationTool.Display();
 
                 ImGui.EndChild();
             }

@@ -464,10 +464,9 @@ public static class ParamRowOperations
     #endregion
 
     #region Replace String in Row Name
-    public static void ReplaceStringInRowName(ParamEditorView curView, string targetString, string replaceString)
+    public static void ReplaceStringInRowName(ParamEditorView curView, List<string> targetStrings, string replaceString)
     {
-        // Cannot target empty string
-        if (string.IsNullOrEmpty(targetString))
+        if (targetStrings.Count == 0)
             return;
 
         string curParamKey = curView.Selection.GetActiveParam();
@@ -489,11 +488,13 @@ public static class ParamRowOperations
         foreach (Param.Row row in rows)
         {
             var curName = row.Name;
-            var newName = curName.Replace(targetString, replaceString);
 
-            var command = $"param {curParamKey}: id {row.ID}: Name: = {newName}";
-
-            commands.Add(command);
+            foreach (var entry in targetStrings)
+            {
+                var newName = curName.Replace(entry, replaceString);
+                var command = $"param {curParamKey}: id {row.ID}: Name: = {newName}";
+                commands.Add(command);
+            }
         }
 
         var singleCommand = "";
@@ -506,4 +507,4 @@ public static class ParamRowOperations
     }
 
     #endregion
-    }
+}

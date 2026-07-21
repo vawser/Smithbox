@@ -712,6 +712,7 @@ public class CFG
     public bool ParamEditor_Show_Tool_Param_Upgrader = true;
     public bool ParamEditor_Show_Tool_Pin_Groups = true;
     public bool ParamEditor_Show_Tool_Param_Delta_Patcher = true;
+    public bool ParamEditor_Show_Tool_Row_Name_Manipulation = true;
 
     // Saving
     public bool Project_Automatic_Save_Include_Param_Editor = true;

@@ -1,0 +1,168 @@
+{
+  "Entries": [
+    {
+      "Key": "PARAM_RowNameManip_Header",
+      "Text": "Row Name Manipulation"
+    },
+    {
+      "Key": "PARAM_RowNameManip_Adjust_Tab",
+      "Text": "Adjust"
+    },
+    {
+      "Key": "PARAM_RowNameManip_Adjust_Tab_Hint",
+      "Text": "Use this tool to quickly add to or remove from the row names of your current row selection."
+    },
+    {
+      "Key": "PARAM_RowNameManip_Inherit_Tab",
+      "Text": "Inherit"
+    },
+    {
+      "Key": "PARAM_RowNameManip_Inherit_Tab_Hint",
+      "Text": "Use this tool to quickly fill in row names based on your current row selection and the parameter references they link to internally."
+    },
+    {
+      "Key": "PARAM_RowNameManip_Replace_Tab",
+      "Text": "Replace"
+    },
+    {
+      "Key": "PARAM_RowNameManip_Replace_Tab_Hint",
+      "Text": "Use this tool to search and replace strings within the row names of your current row selection, allowing for easy standandization."
+    },
+    {
+      "Key": "PARAM_RowNameManip_Text_To_Add_Header",
+      "Text": "Text to Add"
+    },
+    {
+      "Key": "PARAM_RowNameManip_Text_To_Add_Header_TT",
+      "Text": "The string to pre or post pend to the existing name."
+    },
+    {
+      "Key": "PARAM_RowNameManip_Actions_Header",
+      "Text": "Actions"
+    },
+    {
+      "Key": "PARAM_RowNameManip_Actions_Header_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_RowNameManip_Action_Clear_Row_Name",
+      "Text": "Clear Row Name"
+    },
+    {
+      "Key": "PARAM_RowNameManip_Action_Clear_Row_Name_TT",
+      "Text": "Clear the row names from the current row selection."
+    },
+    {
+      "Key": "PARAM_RowNameManip_Action_Prepend_Row_Name",
+      "Text": "Prepend Text to Row Name"
+    },
+    {
+      "Key": "PARAM_RowNameManip_Action_Prepend_Row_Name_TT",
+      "Text": "Prepend the specific text to the row names from the current row selection."
+    },
+    {
+      "Key": "PARAM_RowNameManip_Action_Postpend_Row_Name",
+      "Text": "Postpend Text to Row Name"
+    },
+    {
+      "Key": "PARAM_RowNameManip_Action_Postpend_Row_Name_TT",
+      "Text": "Postpend the specific text to the row names from the current row selection."
+    },
+    {
+      "Key": "PARAM_RowNameManip_Action_Remove_Row_Name",
+      "Text": "Remove Text to Row Name"
+    },
+    {
+      "Key": "PARAM_RowNameManip_Action_Postpend_Row_Name_TT",
+      "Text": "Remove the specific text from the row names from the current row selection."
+    },
+    {
+      "Key": "PARAM_RowNameManip_Target_Field_Header",
+      "Text": "Target Field"
+    },
+    {
+      "Key": "PARAM_RowNameManip_Target_Field_Header_TT",
+      "Text": "The internal name of the field to target for the name actions."
+    },
+    {
+      "Key": "PARAM_RowNameManip_Action_Proliferate_Name",
+      "Text": "Proliferate Name into Param Reference"
+    },
+    {
+      "Key": "PARAM_RowNameManip_Action_Proliferate_Name_TT",
+      "Text": "Proliferate the name of this row to the references pointed to by the named field within this row."
+    },
+    {
+      "Key": "PARAM_RowNameManip_Action_Inherit_Name_From_Ref",
+      "Text": "Inherit Name from Param Reference"
+    },
+    {
+      "Key": "PARAM_RowNameManip_Action_Inherit_Name_From_Ref_TT",
+      "Text": "Inherit the name of the referenced row connected to via the target field."
+    },
+    {
+      "Key": "PARAM_RowNameManip_Action_Inherit_Name_From_FMG",
+      "Text": "Inherit Name from FMG Reference"
+    },
+    {
+      "Key": "PARAM_RowNameManip_Action_Inherit_Name_From_FMG_TT",
+      "Text": "Inherit the name of the referenced FMG connected to via the target field."
+    },
+    {
+      "Key": "PARAM_RowNameManip_Action_Inherit_Name_From_Alias",
+      "Text": "Inherit Name from Alias"
+    },
+    {
+      "Key": "PARAM_RowNameManip_Action_Inherit_Name_From_Alias_TT",
+      "Text": "Inherit the name of the referenced Alias connected to via the target field."
+    },
+    {
+      "Key": "PARAM_RowNameManip_Target_Strings_Header",
+      "Text": "Target Strings"
+    },
+    {
+      "Key": "PARAM_RowNameManip_Target_Strings_Header_TT",
+      "Text": "The strings within the row name to target."
+    },
+    {
+      "Key": "PARAM_RowNameManip_Replacement_String_Header",
+      "Text": "Replacement String"
+    },
+    {
+      "Key": "PARAM_RowNameManip_Replacement_String_Header_TT",
+      "Text": "The string that replaces the targeted string(s) within the row name."
+    },
+    {
+      "Key": "PARAM_RowNameManip_Target_String_Add_TT",
+      "Text": "Add a new target string entry."
+    },
+    {
+      "Key": "PARAM_RowNameManip_Target_String_Remove_TT",
+      "Text": "Remove the last-added target string entry."
+    },
+    {
+      "Key": "PARAM_RowNameManip_Target_String_Add_TT",
+      "Text": "Add a new target string entry."
+    },
+    {
+      "Key": "PARAM_RowNameManip_Target_String_Reset",
+      "Text": "Reset"
+    },
+    {
+      "Key": "PARAM_RowNameManip_Target_String_Reset_TT",
+      "Text": "Teset the target string entry list."
+    },
+    {
+      "Key": "PARAM_RowNameManip_Target_String_Entry_TT",
+      "Text": "A target string to replace in a row name."
+    },
+    {
+      "Key": "PARAM_RowNameManip_Action_Replace",
+      "Text": "Replace"
+    },
+    {
+      "Key": "PARAM_RowNameManip_Action_Replace_TT",
+      "Text": "Replace the target string(s) within the currently selected row's names with the replacement string."
+    }
+  ]
+}

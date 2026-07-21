@@ -51,12 +51,6 @@ public class ParamRowWindow
     public bool _focusRows;
     public int _gotoParamRow = -1;
 
-    public string TargetField = "";
-    public string NameAdjustment = "";
-
-    public string TargetString = "";
-    public string ReplaceString = "";
-
     private RowListContext Context;
     private Param.Row ID_EditRow { get; set; }
     private Param.Row Name_EditRow { get; set; }
@@ -1149,139 +1143,8 @@ public class ParamRowWindow
                 ImGui.EndMenu();
             }
 
-            if (imguiKey == "name")
-            {
-                // Name Manipulation
-                if (ImGui.BeginMenu($"{LOC.Get("PARAM_RowWindow_Context_Name_Manipulation_Header")}##nameManipMenuHeader"))
-                {
-                    // Adjust
-                    if (ImGui.BeginMenu($"{LOC.Get("PARAM_RowWindow_Context_Adjust_Header")}##adjustMenuHeader"))
-                    {
-                        // Clear Text from Name
-                        if (ImGui.Selectable($"{LOC.Get("PARAM_RowWindow_Context_Action_Clear_Text_From_Name")}##clearTextAction", false,
-                            ParentView.Selection.RowSelectionExists()
-                                ? ImGuiSelectableFlags.None
-                                : ImGuiSelectableFlags.Disabled))
-                        {
-                            ParamRowOperations.AdjustRowName(ParentView, NameAdjustment, ParamRowNameAdjustType.Clear);
-                        }
-                        GUI.Tooltip(LOC.Get("PARAM_RowWindow_Context_Action_Clear_Text_From_Name_TT"));
-
-                        // Prepend Text from Name
-                        if (ImGui.Selectable($"{LOC.Get("PARAM_RowWindow_Context_Action_Prepend_Text_To_Name")}##prependTextAction", false,
-                            ParentView.Selection.RowSelectionExists()
-                                ? ImGuiSelectableFlags.None
-                                : ImGuiSelectableFlags.Disabled))
-                        {
-                            ParamRowOperations.AdjustRowName(ParentView, NameAdjustment, ParamRowNameAdjustType.Prepend);
-                        }
-                        GUI.Tooltip(LOC.Get("PARAM_RowWindow_Context_Action_Prepend_Text_To_Name_TT"));
-
-                        // Postpend Text from Name
-                        if (ImGui.Selectable($"{LOC.Get("PARAM_RowWindow_Context_Action_Postpend_Text_To_Name")}##postpendTextAction", false,
-                                ParentView.Selection.RowSelectionExists()
-                                    ? ImGuiSelectableFlags.None
-                                    : ImGuiSelectableFlags.Disabled))
-                        {
-                            ParamRowOperations.AdjustRowName(ParentView, NameAdjustment, ParamRowNameAdjustType.Postpend);
-                        }
-                        GUI.Tooltip(LOC.Get("PARAM_RowWindow_Context_Action_Postpend_Text_To_Name_TT"));
-
-                        // Remove Text from Name
-                        if (ImGui.Selectable($"{LOC.Get("PARAM_RowWindow_Context_Action_Remove_Text_To_Name")}##removeTextAction", false,
-                                ParentView.Selection.RowSelectionExists()
-                                    ? ImGuiSelectableFlags.None
-                                    : ImGuiSelectableFlags.Disabled))
-                        {
-                            ParamRowOperations.AdjustRowName(ParentView, NameAdjustment, ParamRowNameAdjustType.Remove);
-                        }
-                        GUI.Tooltip(LOC.Get("PARAM_RowWindow_Context_Action_Remove_Text_To_Name_TT"));
-
-                        // Text to Apply
-                        ImGui.InputText($"{LOC.Get("PARAM_RowWindow_Context_Text_To_Apply_Input")}##nameAdjustment", ref NameAdjustment, 255);
-                        GUI.Tooltip(LOC.Get("PARAM_RowWindow_Context_Text_To_Apply_Input_TT"));
-
-                        ImGui.EndMenu();
-
-                    }
-
-                    // Inherit
-                    if (ImGui.BeginMenu($"{LOC.Get("PARAM_RowWindow_Context_Inherit_Header")}##inheritMenuHeader"))
-                    {
-                        // Proliferate name into Param Reference
-                        if (ImGui.Selectable($"{LOC.Get("PARAM_RowWindow_Context_Action_Proliferate_Name")}##proliferateNameAction", false,
-                            ParentView.Selection.RowSelectionExists()
-                                ? ImGuiSelectableFlags.None
-                                : ImGuiSelectableFlags.Disabled))
-                        {
-                            ParamRowOperations.ProliferateRowName(ParentView, TargetField);
-                        }
-                        GUI.Tooltip(LOC.Get("PARAM_RowWindow_Context_Action_Proliferate_Name_TT"));
-
-                        // Inherit Name from Param Reference
-                        if (ImGui.Selectable($"{LOC.Get("PARAM_RowWindow_Context_Action_Inherit_Name_From_Ref")}##inheritNameParamRefAction", false,
-                                ParentView.Selection.RowSelectionExists()
-                                    ? ImGuiSelectableFlags.None
-                                    : ImGuiSelectableFlags.Disabled))
-                        {
-                            ParamRowOperations.InheritRowName(ParentView, TargetField);
-                        }
-                        GUI.Tooltip(LOC.Get("PARAM_RowWindow_Context_Action_Inherit_Name_From_Ref_TT"));
-
-                        // Inherit Name from FMG Refernece
-                        if (ImGui.Selectable($"{LOC.Get("PARAM_RowWindow_Context_Action_Inherit_Name_From_FMG")}##inheritNameFmgRefAction", false,
-                                ParentView.Selection.RowSelectionExists()
-                                    ? ImGuiSelectableFlags.None
-                                    : ImGuiSelectableFlags.Disabled))
-                        {
-                            ParamRowOperations.InheritRowNameFromFMG(ParentView, TargetField);
-                        }
-                        GUI.Tooltip(LOC.Get("PARAM_RowWindow_Context_Action_Inherit_Name_From_FMG_TT"));
-
-                        // Inherit Name from Alias
-                        if (ImGui.Selectable($"{LOC.Get("PARAM_RowWindow_Context_Action_Inherit_Name_From_Alias")}##inheritNameAliasRefAction", false,
-                                ParentView.Selection.RowSelectionExists()
-                                    ? ImGuiSelectableFlags.None
-                                    : ImGuiSelectableFlags.Disabled))
-                        {
-                            ParamRowOperations.InheritRowNameFromAlias(ParentView, TargetField);
-                        }
-                        GUI.Tooltip(LOC.Get("PARAM_RowWindow_Context_Action_Inherit_Name_From_Alias_TT"));
-
-                        // Target Field
-                        ImGui.InputText($"{LOC.Get("PARAM_RowWindow_Context_Target_Field")}##targetField", ref TargetField, 255);
-                        GUI.Tooltip(LOC.Get("PARAM_RowWindow_Context_Target_Field_TT"));
-
-                        ImGui.EndMenu();
-                    }
-
-                    // Replace
-                    if (ImGui.BeginMenu($"{LOC.Get("PARAM_RowWindow_Context_Replace_Header")}##replaceMenuHeader"))
-                    {
-                        // Target String
-                        ImGui.InputText($"{LOC.Get("PARAM_RowWindow_Context_Target_String")}##targetString", ref TargetString, 255);
-                        GUI.Tooltip(LOC.Get("PARAM_RowWindow_Context_Target_String_TT"));
-
-                        // Replacement String
-                        ImGui.InputText($"{LOC.Get("PARAM_RowWindow_Context_Replace_String")}##replaceString", ref ReplaceString, 255);
-                        GUI.Tooltip(LOC.Get("PARAM_RowWindow_Context_Replace_String_TT"));
-
-                        // Replace
-                        if (ImGui.Selectable($"{LOC.Get("PARAM_RowWindow_Context_Action_Replace")}##replaceStringAction", false,
-                                ParentView.Selection.RowSelectionExists()
-                                    ? ImGuiSelectableFlags.None
-                                    : ImGuiSelectableFlags.Disabled))
-                        {
-                            ParamRowOperations.ReplaceStringInRowName(ParentView, TargetString, ReplaceString);
-                        }
-                        GUI.Tooltip(LOC.Get("PARAM_RowWindow_Context_Action_Replace_TT"));
-
-                        ImGui.EndMenu();
-                    }
-
-                    ImGui.EndMenu();
-                }
-            }
+            // Row Name Manipulation
+            ParentView.ToolMenu.RowNameManipulationTool.DisplayRowContextMenu(imguiKey);
 
             // Information
             if (ImGui.BeginMenu($"{LOC.Get("PARAM_RowWindow_Context_Info_Header")}##infoMenuHeader"))
@@ -1338,11 +1201,6 @@ public class ParamRowWindow
 
             ImGui.EndPopup();
         }
-    }
-
-    public void SetNameManpulationTargetField(string internalName)
-    {
-        TargetField = internalName;
     }
 
     private bool HasJumpOption()
