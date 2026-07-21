@@ -1,0 +1,7733 @@
+{
+  "Name": "ShopLineupParam",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "Must not be erased"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Nokonata"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "Axe pole"
+      ]
+    },
+    {
+      "ID": 2002,
+      "Entries": [
+        "Cane Whip"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "Workshop pistol"
+      ]
+    },
+    {
+      "ID": 2011,
+      "Entries": [
+        "Workshop Long Gun"
+      ]
+    },
+    {
+      "ID": 100000,
+      "Entries": [
+        "Blood transfusion"
+      ]
+    },
+    {
+      "ID": 100001,
+      "Entries": [
+        "Mercury bullets"
+      ]
+    },
+    {
+      "ID": 100002,
+      "Entries": [
+        "Molotov cocktail"
+      ]
+    },
+    {
+      "ID": 100003,
+      "Entries": [
+        "Stone"
+      ]
+    },
+    {
+      "ID": 100004,
+      "Entries": [
+        "Yharnam Hunting Hat (Junior Hunter _ head)"
+      ]
+    },
+    {
+      "ID": 100005,
+      "Entries": [
+        "Yharnam Hunting Gear (Junior Hunter _ Torso)"
+      ]
+    },
+    {
+      "ID": 100006,
+      "Entries": [
+        "Yharnam Hunting Gloves (Junior Hunter _ arm)"
+      ]
+    },
+    {
+      "ID": 100007,
+      "Entries": [
+        "Yharnam Hunting Pants (Junior Hunter _ leg)"
+      ]
+    },
+    {
+      "ID": 100008,
+      "Entries": [
+        "Ritual Blood 1 】"
+      ]
+    },
+    {
+      "ID": 100009,
+      "Entries": [
+        "Ritual Blood 2 】"
+      ]
+    },
+    {
+      "ID": 100010,
+      "Entries": [
+        "Ritual Blood 3 】"
+      ]
+    },
+    {
+      "ID": 100011,
+      "Entries": [
+        "Ritual Blood 4 】"
+      ]
+    },
+    {
+      "ID": 100012,
+      "Entries": [
+        "Ritual Blood 5 】"
+      ]
+    },
+    {
+      "ID": 100013,
+      "Entries": [
+        "Grave Mold [ 1 】"
+      ]
+    },
+    {
+      "ID": 100014,
+      "Entries": [
+        "Grave Mold [ 2 】"
+      ]
+    },
+    {
+      "ID": 100015,
+      "Entries": [
+        "Grave Mold [ 3 】"
+      ]
+    },
+    {
+      "ID": 100016,
+      "Entries": [
+        "Grave Mold [ 4 】"
+      ]
+    },
+    {
+      "ID": 100017,
+      "Entries": [
+        "Grave Mold [ 5 】"
+      ]
+    },
+    {
+      "ID": 100100,
+      "Entries": [
+        "Saw blade"
+      ]
+    },
+    {
+      "ID": 100101,
+      "Entries": [
+        "Alien Saw Hatchet"
+      ]
+    },
+    {
+      "ID": 100102,
+      "Entries": [
+        "Lost Saw Blade"
+      ]
+    },
+    {
+      "ID": 100103,
+      "Entries": [
+        "Beast hunting axe (axe pole)"
+      ]
+    },
+    {
+      "ID": 100104,
+      "Entries": [
+        "Alien Beast Hunting Axe"
+      ]
+    },
+    {
+      "ID": 100105,
+      "Entries": [
+        "Lost Beast Hunting Axe"
+      ]
+    },
+    {
+      "ID": 100106,
+      "Entries": [
+        "Cane (whip)"
+      ]
+    },
+    {
+      "ID": 100107,
+      "Entries": [
+        "Heterogenous Wand"
+      ]
+    },
+    {
+      "ID": 100108,
+      "Entries": [
+        "Lost Cane"
+      ]
+    },
+    {
+      "ID": 100109,
+      "Entries": [
+        "Saw spear (Nokoyari)"
+      ]
+    },
+    {
+      "ID": 100110,
+      "Entries": [
+        "Alien Saw Spear"
+      ]
+    },
+    {
+      "ID": 100111,
+      "Entries": [
+        "Lost Saw Spear"
+      ]
+    },
+    {
+      "ID": 100112,
+      "Entries": [
+        "Beast hunting pistol (workshop pistol)"
+      ]
+    },
+    {
+      "ID": 100113,
+      "Entries": [
+        "Beast hunting shotgun (workshop long gun)"
+      ]
+    },
+    {
+      "ID": 100114,
+      "Entries": [
+        "Throwing Knife"
+      ]
+    },
+    {
+      "ID": 100115,
+      "Entries": [
+        "Smelling Blood Wine"
+      ]
+    },
+    {
+      "ID": 100200,
+      "Entries": [
+        "Pile hammer (sword pile)"
+      ]
+    },
+    {
+      "ID": 100201,
+      "Entries": [
+        "Heterogenous Pile Hammer"
+      ]
+    },
+    {
+      "ID": 100202,
+      "Entries": [
+        "Lost Pile Hammer"
+      ]
+    },
+    {
+      "ID": 100203,
+      "Entries": [
+        "Gunlance (Gunlance)"
+      ]
+    },
+    {
+      "ID": 100204,
+      "Entries": [
+        "Alien Gunlance"
+      ]
+    },
+    {
+      "ID": 100205,
+      "Entries": [
+        "Lost Gunlance"
+      ]
+    },
+    {
+      "ID": 100206,
+      "Entries": [
+        "Oil bottle"
+      ]
+    },
+    {
+      "ID": 100207,
+      "Entries": [
+        "Molotov cocktail with rope"
+      ]
+    },
+    {
+      "ID": 100300,
+      "Entries": [
+        "Funeral Blade (Scythe)"
+      ]
+    },
+    {
+      "ID": 100301,
+      "Entries": [
+        "Alien Funeral Blade"
+      ]
+    },
+    {
+      "ID": 100302,
+      "Entries": [
+        "Lost Funeral Blade"
+      ]
+    },
+    {
+      "ID": 100303,
+      "Entries": [
+        "Gehrman's Hunting Hat (Base Elderly _ head)"
+      ]
+    },
+    {
+      "ID": 100304,
+      "Entries": [
+        "Gehrman's Hunting Attire (Base Elder _ Torso)"
+      ]
+    },
+    {
+      "ID": 100305,
+      "Entries": [
+        "Gehrman's Hunting Pants (Base Elderly _ leg)"
+      ]
+    },
+    {
+      "ID": 100400,
+      "Entries": [
+        "Blade of Mercy (Dual Swords)"
+      ]
+    },
+    {
+      "ID": 100401,
+      "Entries": [
+        "Alien Mercy Blade"
+      ]
+    },
+    {
+      "ID": 100402,
+      "Entries": [
+        "Lost Blade of Mercy"
+      ]
+    },
+    {
+      "ID": 100403,
+      "Entries": [
+        "Beak Mask (Jack the Ripper _ head)"
+      ]
+    },
+    {
+      "ID": 100404,
+      "Entries": [
+        "Crow Feather Hunting Attire (Jack the Ripper _ Torso)"
+      ]
+    },
+    {
+      "ID": 100405,
+      "Entries": [
+        "Crow Feather Armband (Jack the Ripper _ arm)"
+      ]
+    },
+    {
+      "ID": 100406,
+      "Entries": [
+        "Raven Feather Trousers (Jack the Ripper) _ leg)"
+      ]
+    },
+    {
+      "ID": 100500,
+      "Entries": [
+        "Tonitrus (Bomb Hammer)"
+      ]
+    },
+    {
+      "ID": 100501,
+      "Entries": [
+        "Alien Tonitrus"
+      ]
+    },
+    {
+      "ID": 100502,
+      "Entries": [
+        "The Lost Tonitrus"
+      ]
+    },
+    {
+      "ID": 100503,
+      "Entries": [
+        "Lightning File"
+      ]
+    },
+    {
+      "ID": 100600,
+      "Entries": [
+        "Church Stone Hammer (Sword Hammer)"
+      ]
+    },
+    {
+      "ID": 100601,
+      "Entries": [
+        "Heterogenous Church Stone Hammer"
+      ]
+    },
+    {
+      "ID": 100602,
+      "Entries": [
+        "Lost Church Stone Hammer"
+      ]
+    },
+    {
+      "ID": 100603,
+      "Entries": [
+        "Church pistol (church pistol)"
+      ]
+    },
+    {
+      "ID": 100604,
+      "Entries": [
+        "White pill"
+      ]
+    },
+    {
+      "ID": 100605,
+      "Entries": [
+        "Sure Sign of a Hunter"
+      ]
+    },
+    {
+      "ID": 100606,
+      "Entries": [
+        "Portable lantern"
+      ]
+    },
+    {
+      "ID": 100607,
+      "Entries": [
+        "Hunter's Mark"
+      ]
+    },
+    {
+      "ID": 100700,
+      "Entries": [
+        "Ludwig's Holy Sword (Great Sword)"
+      ]
+    },
+    {
+      "ID": 100701,
+      "Entries": [
+        "Heterogenous Holy Sword"
+      ]
+    },
+    {
+      "ID": 100702,
+      "Entries": [
+        "Lost Holy Sword"
+      ]
+    },
+    {
+      "ID": 100703,
+      "Entries": [
+        "Ludwig's rifle (Church rifle)"
+      ]
+    },
+    {
+      "ID": 100704,
+      "Entries": [
+        "Flamethrower (Flamethrower)"
+      ]
+    },
+    {
+      "ID": 100705,
+      "Entries": [
+        "Ignition File"
+      ]
+    },
+    {
+      "ID": 100706,
+      "Entries": [
+        "Marrow Ash"
+      ]
+    },
+    {
+      "ID": 100707,
+      "Entries": [
+        "Shiny coins"
+      ]
+    },
+    {
+      "ID": 100708,
+      "Entries": [
+        "Bloodstone Shard"
+      ]
+    },
+    {
+      "ID": 100709,
+      "Entries": [
+        "Grave Robber Hood (Church Hunter _ head)"
+      ]
+    },
+    {
+      "ID": 100710,
+      "Entries": [
+        "Grave Raider's Outfit (Church Hunter _Torso)"
+      ]
+    },
+    {
+      "ID": 100711,
+      "Entries": [
+        "Grave Robber's Gloves (Church Hunter _ arm)"
+      ]
+    },
+    {
+      "ID": 100712,
+      "Entries": [
+        "Grave Robber's Pants (Church Hunter _ leg)"
+      ]
+    },
+    {
+      "ID": 100800,
+      "Entries": [
+        "Logarius' Wheel (Wheel)"
+      ]
+    },
+    {
+      "ID": 100801,
+      "Entries": [
+        "Alien Wheels"
+      ]
+    },
+    {
+      "ID": 100802,
+      "Entries": [
+        "The Lost Wheel"
+      ]
+    },
+    {
+      "ID": 100803,
+      "Entries": [
+        "Golden Aldeo (Bloodline Hunter _ head)"
+      ]
+    },
+    {
+      "ID": 100900,
+      "Entries": [
+        "Reiterpallasch (bayonet)"
+      ]
+    },
+    {
+      "ID": 100901,
+      "Entries": [
+        "Different Reiterpallasch"
+      ]
+    },
+    {
+      "ID": 100902,
+      "Entries": [
+        "Lost Reiterpallasch"
+      ]
+    },
+    {
+      "ID": 100903,
+      "Entries": [
+        "Chikage (sword)"
+      ]
+    },
+    {
+      "ID": 100904,
+      "Entries": [
+        "Alien Blood Sword"
+      ]
+    },
+    {
+      "ID": 100905,
+      "Entries": [
+        "Lost Blood Sword"
+      ]
+    },
+    {
+      "ID": 100906,
+      "Entries": [
+        "Evelyn (Vampire pistol)"
+      ]
+    },
+    {
+      "ID": 100907,
+      "Entries": [
+        "Cain's Helmet (Vampire Knight _ head)"
+      ]
+    },
+    {
+      "ID": 100908,
+      "Entries": [
+        "Cain's Armor (Vampire Knight _ Torso)"
+      ]
+    },
+    {
+      "ID": 100909,
+      "Entries": [
+        "Cain's Gauntlets (Vampire Knight _ arm)"
+      ]
+    },
+    {
+      "ID": 100910,
+      "Entries": [
+        "Cain's Leggings (Vampire Knight _ leg)"
+      ]
+    },
+    {
+      "ID": 101000,
+      "Entries": [
+        "Rosmarinus (atomizer)"
+      ]
+    },
+    {
+      "ID": 101001,
+      "Entries": [
+        "Poison Scalpel"
+      ]
+    },
+    {
+      "ID": 101002,
+      "Entries": [
+        "Sedatives"
+      ]
+    },
+    {
+      "ID": 101003,
+      "Entries": [
+        "Two Bloodstone Fragments"
+      ]
+    },
+    {
+      "ID": 101020,
+      "Entries": [
+        "Piercing gun (piercing gun)"
+      ]
+    },
+    {
+      "ID": 101021,
+      "Entries": [
+        "Timed Explosion Bottle"
+      ]
+    },
+    {
+      "ID": 101022,
+      "Entries": [
+        "Timed explosion bottle with rope"
+      ]
+    },
+    {
+      "ID": 101100,
+      "Entries": [
+        "Beast Claws (Fist Beast)"
+      ]
+    },
+    {
+      "ID": 101101,
+      "Entries": [
+        "Alien Beast Claws"
+      ]
+    },
+    {
+      "ID": 101102,
+      "Entries": [
+        "Lost Claws"
+      ]
+    },
+    {
+      "ID": 101103,
+      "Entries": [
+        "Cannon (cannon)"
+      ]
+    },
+    {
+      "ID": 101104,
+      "Entries": [
+        "Beast Hunting Torch (Hunter's Torch)"
+      ]
+    },
+    {
+      "ID": 101110,
+      "Entries": [
+        "Beast hunting curved sword (saw curved sword)"
+      ]
+    },
+    {
+      "ID": 101111,
+      "Entries": [
+        "Alien Beast Hunting Knife"
+      ]
+    },
+    {
+      "ID": 101112,
+      "Entries": [
+        "Lost Beast Hunting Knife"
+      ]
+    },
+    {
+      "ID": 101113,
+      "Entries": [
+        "Cutting off animal meat (saw whip)"
+      ]
+    },
+    {
+      "ID": 101114,
+      "Entries": [
+        "Abstinence from foreign meat"
+      ]
+    },
+    {
+      "ID": 101115,
+      "Entries": [
+        "Lost Flesh Abstinence"
+      ]
+    },
+    {
+      "ID": 101116,
+      "Entries": [
+        "Church Stake (Warpick)"
+      ]
+    },
+    {
+      "ID": 101117,
+      "Entries": [
+        "Heterogenous Church Stakes"
+      ]
+    },
+    {
+      "ID": 101118,
+      "Entries": [
+        "Lost Church Stake"
+      ]
+    },
+    {
+      "ID": 101119,
+      "Entries": [
+        "Simon's Bow Sword (Transformed Bow)"
+      ]
+    },
+    {
+      "ID": 101120,
+      "Entries": [
+        "Alien Bow Sword"
+      ]
+    },
+    {
+      "ID": 101121,
+      "Entries": [
+        "Lost Bow Sword"
+      ]
+    },
+    {
+      "ID": 101122,
+      "Entries": [
+        "Moonlight Holy Sword (Moonlight Sword)"
+      ]
+    },
+    {
+      "ID": 101123,
+      "Entries": [
+        "Heterogeneous Moonlight Holy Sword"
+      ]
+    },
+    {
+      "ID": 101124,
+      "Entries": [
+        "Lost Moonlight Sword"
+      ]
+    },
+    {
+      "ID": 101125,
+      "Entries": [
+        "Fallen leaves (double-edged)"
+      ]
+    },
+    {
+      "ID": 101126,
+      "Entries": [
+        "Alien leaf litter"
+      ]
+    },
+    {
+      "ID": 101127,
+      "Entries": [
+        "Lost leaves"
+      ]
+    },
+    {
+      "ID": 101128,
+      "Entries": [
+        "Circular saw (chain saw)"
+      ]
+    },
+    {
+      "ID": 101129,
+      "Entries": [
+        "Heterogeneous Circular Saw"
+      ]
+    },
+    {
+      "ID": 101130,
+      "Entries": [
+        "Lost Circular Saw"
+      ]
+    },
+    {
+      "ID": 101131,
+      "Entries": [
+        "Explosive hammer (Gunhammer)"
+      ]
+    },
+    {
+      "ID": 101132,
+      "Entries": [
+        "Alien Explosive Hammer"
+      ]
+    },
+    {
+      "ID": 101133,
+      "Entries": [
+        "Lost Explosive Hammer"
+      ]
+    },
+    {
+      "ID": 101134,
+      "Entries": [
+        "Bloodletting Hammer (Cross Mace)"
+      ]
+    },
+    {
+      "ID": 101135,
+      "Entries": [
+        "Alien Bloodletting Hammer"
+      ]
+    },
+    {
+      "ID": 101136,
+      "Entries": [
+        "Lost Bloodletting Hammer"
+      ]
+    },
+    {
+      "ID": 101137,
+      "Entries": [
+        "Arm of Lesser Amun (multi-jointed)"
+      ]
+    },
+    {
+      "ID": 101138,
+      "Entries": [
+        "Heterogeneous Small Amun Arm"
+      ]
+    },
+    {
+      "ID": 101139,
+      "Entries": [
+        "The Lost Lesser Arm of Amun"
+      ]
+    },
+    {
+      "ID": 101140,
+      "Entries": [
+        "Parasites of the Goss (slugs)"
+      ]
+    },
+    {
+      "ID": 101141,
+      "Entries": [
+        "Alien parasites"
+      ]
+    },
+    {
+      "ID": 101142,
+      "Entries": [
+        "The lost parasite"
+      ]
+    },
+    {
+      "ID": 101143,
+      "Entries": [
+        "Gatling gun (Gatling)"
+      ]
+    },
+    {
+      "ID": 101144,
+      "Entries": [
+        "Church Cannon (Grenade)"
+      ]
+    },
+    {
+      "ID": 101145,
+      "Entries": [
+        "Gracia's Fist (Knuckle)"
+      ]
+    },
+    {
+      "ID": 101146,
+      "Entries": [
+        "Lake Shield (Elemental Shield)"
+      ]
+    },
+    {
+      "ID": 110000,
+      "Entries": [
+        "Blood transfusion"
+      ]
+    },
+    {
+      "ID": 110001,
+      "Entries": [
+        "Mercury bullets"
+      ]
+    },
+    {
+      "ID": 110002,
+      "Entries": [
+        "Molotov cocktail"
+      ]
+    },
+    {
+      "ID": 110003,
+      "Entries": [
+        "Stone"
+      ]
+    },
+    {
+      "ID": 110004,
+      "Entries": [
+        "Yharnam Hunting Hat (Junior Hunter _ head)"
+      ]
+    },
+    {
+      "ID": 110005,
+      "Entries": [
+        "Yharnam Hunting Gear (Junior Hunter _ Torso)"
+      ]
+    },
+    {
+      "ID": 110006,
+      "Entries": [
+        "Yharnam Hunting Gloves (Junior Hunter _ arm)"
+      ]
+    },
+    {
+      "ID": 110007,
+      "Entries": [
+        "Yharnam Hunting Pants (Junior Hunter _ leg)"
+      ]
+    },
+    {
+      "ID": 110008,
+      "Entries": [
+        "Ritual Blood 1 】"
+      ]
+    },
+    {
+      "ID": 110009,
+      "Entries": [
+        "Ritual Blood 2 】"
+      ]
+    },
+    {
+      "ID": 110010,
+      "Entries": [
+        "Ritual Blood 3 】"
+      ]
+    },
+    {
+      "ID": 110011,
+      "Entries": [
+        "Ritual Blood 4 】"
+      ]
+    },
+    {
+      "ID": 110012,
+      "Entries": [
+        "Ritual Blood 5 】"
+      ]
+    },
+    {
+      "ID": 110013,
+      "Entries": [
+        "Grave Mold [ 1 】"
+      ]
+    },
+    {
+      "ID": 110014,
+      "Entries": [
+        "Grave Mold [ 2 】"
+      ]
+    },
+    {
+      "ID": 110015,
+      "Entries": [
+        "Grave Mold [ 3 】"
+      ]
+    },
+    {
+      "ID": 110016,
+      "Entries": [
+        "Grave Mold [ 4 】"
+      ]
+    },
+    {
+      "ID": 110017,
+      "Entries": [
+        "Grave Mold [ 5 】"
+      ]
+    },
+    {
+      "ID": 110100,
+      "Entries": [
+        "Saw blade"
+      ]
+    },
+    {
+      "ID": 110101,
+      "Entries": [
+        "Alien Saw Hatchet"
+      ]
+    },
+    {
+      "ID": 110102,
+      "Entries": [
+        "Lost Saw Blade"
+      ]
+    },
+    {
+      "ID": 110103,
+      "Entries": [
+        "Beast hunting axe (axe pole)"
+      ]
+    },
+    {
+      "ID": 110104,
+      "Entries": [
+        "Alien Beast Hunting Axe"
+      ]
+    },
+    {
+      "ID": 110105,
+      "Entries": [
+        "Lost Beast Hunting Axe"
+      ]
+    },
+    {
+      "ID": 110106,
+      "Entries": [
+        "Cane (whip)"
+      ]
+    },
+    {
+      "ID": 110107,
+      "Entries": [
+        "Heterogenous Wand"
+      ]
+    },
+    {
+      "ID": 110108,
+      "Entries": [
+        "Lost Cane"
+      ]
+    },
+    {
+      "ID": 110109,
+      "Entries": [
+        "Saw spear (Nokoyari)"
+      ]
+    },
+    {
+      "ID": 110110,
+      "Entries": [
+        "Alien Saw Spear"
+      ]
+    },
+    {
+      "ID": 110111,
+      "Entries": [
+        "Lost Saw Spear"
+      ]
+    },
+    {
+      "ID": 110112,
+      "Entries": [
+        "Beast hunting pistol (workshop pistol)"
+      ]
+    },
+    {
+      "ID": 110113,
+      "Entries": [
+        "Beast hunting shotgun (workshop long gun)"
+      ]
+    },
+    {
+      "ID": 110114,
+      "Entries": [
+        "Throwing Knife"
+      ]
+    },
+    {
+      "ID": 110115,
+      "Entries": [
+        "Smelling Blood Wine"
+      ]
+    },
+    {
+      "ID": 110200,
+      "Entries": [
+        "Pile hammer (sword pile)"
+      ]
+    },
+    {
+      "ID": 110201,
+      "Entries": [
+        "Heterogenous Pile Hammer"
+      ]
+    },
+    {
+      "ID": 110202,
+      "Entries": [
+        "Lost Pile Hammer"
+      ]
+    },
+    {
+      "ID": 110203,
+      "Entries": [
+        "Gunlance (Gunlance)"
+      ]
+    },
+    {
+      "ID": 110204,
+      "Entries": [
+        "Alien Gunlance"
+      ]
+    },
+    {
+      "ID": 110205,
+      "Entries": [
+        "Lost Gunlance"
+      ]
+    },
+    {
+      "ID": 110206,
+      "Entries": [
+        "Oil bottle"
+      ]
+    },
+    {
+      "ID": 110207,
+      "Entries": [
+        "Molotov cocktail with rope"
+      ]
+    },
+    {
+      "ID": 110300,
+      "Entries": [
+        "Funeral Blade (Scythe)"
+      ]
+    },
+    {
+      "ID": 110301,
+      "Entries": [
+        "Alien Funeral Blade"
+      ]
+    },
+    {
+      "ID": 110302,
+      "Entries": [
+        "Lost Funeral Blade"
+      ]
+    },
+    {
+      "ID": 110303,
+      "Entries": [
+        "Gehrman's Hunting Hat (Base Elderly _ head)"
+      ]
+    },
+    {
+      "ID": 110304,
+      "Entries": [
+        "Gehrman's Hunting Attire (Base Elder _ Torso)"
+      ]
+    },
+    {
+      "ID": 110305,
+      "Entries": [
+        "Gehrman's Hunting Pants (Base Elderly _ leg)"
+      ]
+    },
+    {
+      "ID": 110400,
+      "Entries": [
+        "Blade of Mercy (Dual Swords)"
+      ]
+    },
+    {
+      "ID": 110401,
+      "Entries": [
+        "Alien Mercy Blade"
+      ]
+    },
+    {
+      "ID": 110402,
+      "Entries": [
+        "Lost Blade of Mercy"
+      ]
+    },
+    {
+      "ID": 110403,
+      "Entries": [
+        "Beak Mask (Jack the Ripper _ head)"
+      ]
+    },
+    {
+      "ID": 110404,
+      "Entries": [
+        "Crow Feather Hunting Attire (Jack the Ripper _ Torso)"
+      ]
+    },
+    {
+      "ID": 110405,
+      "Entries": [
+        "Crow Feather Armband (Jack the Ripper _ arm)"
+      ]
+    },
+    {
+      "ID": 110406,
+      "Entries": [
+        "Raven Feather Trousers (Jack the Ripper) _ leg)"
+      ]
+    },
+    {
+      "ID": 110500,
+      "Entries": [
+        "Tonitrus (Bomb Hammer)"
+      ]
+    },
+    {
+      "ID": 110501,
+      "Entries": [
+        "Alien Tonitrus"
+      ]
+    },
+    {
+      "ID": 110502,
+      "Entries": [
+        "The Lost Tonitrus"
+      ]
+    },
+    {
+      "ID": 110503,
+      "Entries": [
+        "Lightning File"
+      ]
+    },
+    {
+      "ID": 110600,
+      "Entries": [
+        "Church Stone Hammer (Sword Hammer)"
+      ]
+    },
+    {
+      "ID": 110601,
+      "Entries": [
+        "Heterogenous Church Stone Hammer"
+      ]
+    },
+    {
+      "ID": 110602,
+      "Entries": [
+        "Lost Church Stone Hammer"
+      ]
+    },
+    {
+      "ID": 110603,
+      "Entries": [
+        "Church pistol (church pistol)"
+      ]
+    },
+    {
+      "ID": 110604,
+      "Entries": [
+        "White pill"
+      ]
+    },
+    {
+      "ID": 110605,
+      "Entries": [
+        "Sure Sign of a Hunter"
+      ]
+    },
+    {
+      "ID": 110606,
+      "Entries": [
+        "Portable lantern"
+      ]
+    },
+    {
+      "ID": 110607,
+      "Entries": [
+        "Hunter's Mark"
+      ]
+    },
+    {
+      "ID": 110700,
+      "Entries": [
+        "Ludwig's Holy Sword (Great Sword)"
+      ]
+    },
+    {
+      "ID": 110701,
+      "Entries": [
+        "Heterogenous Holy Sword"
+      ]
+    },
+    {
+      "ID": 110702,
+      "Entries": [
+        "Lost Holy Sword"
+      ]
+    },
+    {
+      "ID": 110703,
+      "Entries": [
+        "Ludwig's rifle (Church rifle)"
+      ]
+    },
+    {
+      "ID": 110704,
+      "Entries": [
+        "Flamethrower (Flamethrower)"
+      ]
+    },
+    {
+      "ID": 110705,
+      "Entries": [
+        "Ignition File"
+      ]
+    },
+    {
+      "ID": 110706,
+      "Entries": [
+        "Marrow Ash"
+      ]
+    },
+    {
+      "ID": 110707,
+      "Entries": [
+        "Shiny coins"
+      ]
+    },
+    {
+      "ID": 110708,
+      "Entries": [
+        "Bloodstone Shard"
+      ]
+    },
+    {
+      "ID": 110709,
+      "Entries": [
+        "Grave Robber Hood (Church Hunter _ head)"
+      ]
+    },
+    {
+      "ID": 110710,
+      "Entries": [
+        "Grave Raider's Outfit (Church Hunter _Torso)"
+      ]
+    },
+    {
+      "ID": 110711,
+      "Entries": [
+        "Grave Robber's Gloves (Church Hunter _ arm)"
+      ]
+    },
+    {
+      "ID": 110712,
+      "Entries": [
+        "Grave Robber's Pants (Church Hunter _ leg)"
+      ]
+    },
+    {
+      "ID": 110800,
+      "Entries": [
+        "Logarius' Wheel (Wheel)"
+      ]
+    },
+    {
+      "ID": 110801,
+      "Entries": [
+        "Alien Wheels"
+      ]
+    },
+    {
+      "ID": 110802,
+      "Entries": [
+        "The Lost Wheel"
+      ]
+    },
+    {
+      "ID": 110803,
+      "Entries": [
+        "Golden Aldeo (Bloodline Hunter _ head)"
+      ]
+    },
+    {
+      "ID": 110900,
+      "Entries": [
+        "Reiterpallasch (bayonet)"
+      ]
+    },
+    {
+      "ID": 110901,
+      "Entries": [
+        "Different Reiterpallasch"
+      ]
+    },
+    {
+      "ID": 110902,
+      "Entries": [
+        "Lost Reiterpallasch"
+      ]
+    },
+    {
+      "ID": 110903,
+      "Entries": [
+        "Chikage (sword)"
+      ]
+    },
+    {
+      "ID": 110904,
+      "Entries": [
+        "Alien Blood Sword"
+      ]
+    },
+    {
+      "ID": 110905,
+      "Entries": [
+        "Lost Blood Sword"
+      ]
+    },
+    {
+      "ID": 110906,
+      "Entries": [
+        "Evelyn (Vampire pistol)"
+      ]
+    },
+    {
+      "ID": 110907,
+      "Entries": [
+        "Cain's Helmet (Vampire Knight _ head)"
+      ]
+    },
+    {
+      "ID": 110908,
+      "Entries": [
+        "Cain's Armor (Vampire Knight _ Torso)"
+      ]
+    },
+    {
+      "ID": 110909,
+      "Entries": [
+        "Cain's Gauntlets (Vampire Knight _ arm)"
+      ]
+    },
+    {
+      "ID": 110910,
+      "Entries": [
+        "Cain's Leggings (Vampire Knight _ leg)"
+      ]
+    },
+    {
+      "ID": 111000,
+      "Entries": [
+        "Rosmarinus (atomizer)"
+      ]
+    },
+    {
+      "ID": 111001,
+      "Entries": [
+        "Poison Scalpel"
+      ]
+    },
+    {
+      "ID": 111002,
+      "Entries": [
+        "Sedatives"
+      ]
+    },
+    {
+      "ID": 111003,
+      "Entries": [
+        "Two Bloodstone Fragments"
+      ]
+    },
+    {
+      "ID": 111020,
+      "Entries": [
+        "Piercing gun (piercing gun)"
+      ]
+    },
+    {
+      "ID": 111021,
+      "Entries": [
+        "Timed Explosion Bottle"
+      ]
+    },
+    {
+      "ID": 111022,
+      "Entries": [
+        "Timed explosion bottle with rope"
+      ]
+    },
+    {
+      "ID": 111100,
+      "Entries": [
+        "Beast Claws (Fist Beast)"
+      ]
+    },
+    {
+      "ID": 111101,
+      "Entries": [
+        "Alien Beast Claws"
+      ]
+    },
+    {
+      "ID": 111102,
+      "Entries": [
+        "Lost Claws"
+      ]
+    },
+    {
+      "ID": 111103,
+      "Entries": [
+        "Cannon (cannon)"
+      ]
+    },
+    {
+      "ID": 111104,
+      "Entries": [
+        "Beast Hunting Torch (Hunter's Torch)"
+      ]
+    },
+    {
+      "ID": 111110,
+      "Entries": [
+        "Beast hunting curved sword (saw curved sword)"
+      ]
+    },
+    {
+      "ID": 111111,
+      "Entries": [
+        "Alien Beast Hunting Knife"
+      ]
+    },
+    {
+      "ID": 111112,
+      "Entries": [
+        "Lost Beast Hunting Knife"
+      ]
+    },
+    {
+      "ID": 111113,
+      "Entries": [
+        "Cutting off animal meat (saw whip)"
+      ]
+    },
+    {
+      "ID": 111114,
+      "Entries": [
+        "Abstinence from foreign meat"
+      ]
+    },
+    {
+      "ID": 111115,
+      "Entries": [
+        "Lost Flesh Abstinence"
+      ]
+    },
+    {
+      "ID": 111116,
+      "Entries": [
+        "Church Stake (Warpick)"
+      ]
+    },
+    {
+      "ID": 111117,
+      "Entries": [
+        "Heterogenous Church Stakes"
+      ]
+    },
+    {
+      "ID": 111118,
+      "Entries": [
+        "Lost Church Stake"
+      ]
+    },
+    {
+      "ID": 111119,
+      "Entries": [
+        "Simon's Bow Sword (Transformed Bow)"
+      ]
+    },
+    {
+      "ID": 111120,
+      "Entries": [
+        "Alien Bow Sword"
+      ]
+    },
+    {
+      "ID": 111121,
+      "Entries": [
+        "Lost Bow Sword"
+      ]
+    },
+    {
+      "ID": 111122,
+      "Entries": [
+        "Moonlight Holy Sword (Moonlight Sword)"
+      ]
+    },
+    {
+      "ID": 111123,
+      "Entries": [
+        "Heterogeneous Moonlight Holy Sword"
+      ]
+    },
+    {
+      "ID": 111124,
+      "Entries": [
+        "Lost Moonlight Sword"
+      ]
+    },
+    {
+      "ID": 111125,
+      "Entries": [
+        "Fallen leaves (double-edged)"
+      ]
+    },
+    {
+      "ID": 111126,
+      "Entries": [
+        "Alien leaf litter"
+      ]
+    },
+    {
+      "ID": 111127,
+      "Entries": [
+        "Lost leaves"
+      ]
+    },
+    {
+      "ID": 111128,
+      "Entries": [
+        "Circular saw (chain saw)"
+      ]
+    },
+    {
+      "ID": 111129,
+      "Entries": [
+        "Heterogeneous Circular Saw"
+      ]
+    },
+    {
+      "ID": 111130,
+      "Entries": [
+        "Lost Circular Saw"
+      ]
+    },
+    {
+      "ID": 111131,
+      "Entries": [
+        "Explosive hammer (Gunhammer)"
+      ]
+    },
+    {
+      "ID": 111132,
+      "Entries": [
+        "Alien Explosive Hammer"
+      ]
+    },
+    {
+      "ID": 111133,
+      "Entries": [
+        "Lost Explosive Hammer"
+      ]
+    },
+    {
+      "ID": 111134,
+      "Entries": [
+        "Bloodletting Hammer (Cross Mace)"
+      ]
+    },
+    {
+      "ID": 111135,
+      "Entries": [
+        "Alien Bloodletting Hammer"
+      ]
+    },
+    {
+      "ID": 111136,
+      "Entries": [
+        "Lost Bloodletting Hammer"
+      ]
+    },
+    {
+      "ID": 111137,
+      "Entries": [
+        "Arm of Lesser Amun (multi-jointed)"
+      ]
+    },
+    {
+      "ID": 111138,
+      "Entries": [
+        "Heterogeneous Small Amun Arm"
+      ]
+    },
+    {
+      "ID": 111139,
+      "Entries": [
+        "The Lost Lesser Arm of Amun"
+      ]
+    },
+    {
+      "ID": 111140,
+      "Entries": [
+        "Parasites of the Goss (slugs)"
+      ]
+    },
+    {
+      "ID": 111141,
+      "Entries": [
+        "Alien parasites"
+      ]
+    },
+    {
+      "ID": 111142,
+      "Entries": [
+        "The lost parasite"
+      ]
+    },
+    {
+      "ID": 111143,
+      "Entries": [
+        "Gatling gun (Gatling)"
+      ]
+    },
+    {
+      "ID": 111144,
+      "Entries": [
+        "Church Cannon (Grenade)"
+      ]
+    },
+    {
+      "ID": 111145,
+      "Entries": [
+        "Gracia's Fist (Knuckle)"
+      ]
+    },
+    {
+      "ID": 111146,
+      "Entries": [
+        "Lake Shield (Elemental Shield)"
+      ]
+    },
+    {
+      "ID": 120000,
+      "Entries": [
+        "Blood transfusion"
+      ]
+    },
+    {
+      "ID": 120001,
+      "Entries": [
+        "Mercury bullets"
+      ]
+    },
+    {
+      "ID": 120002,
+      "Entries": [
+        "Molotov cocktail"
+      ]
+    },
+    {
+      "ID": 120003,
+      "Entries": [
+        "Stone"
+      ]
+    },
+    {
+      "ID": 120004,
+      "Entries": [
+        "Yharnam Hunting Hat (Junior Hunter _ head)"
+      ]
+    },
+    {
+      "ID": 120005,
+      "Entries": [
+        "Yharnam Hunting Gear (Junior Hunter _ Torso)"
+      ]
+    },
+    {
+      "ID": 120006,
+      "Entries": [
+        "Yharnam Hunting Gloves (Junior Hunter _ arm)"
+      ]
+    },
+    {
+      "ID": 120007,
+      "Entries": [
+        "Yharnam Hunting Pants (Junior Hunter _ leg)"
+      ]
+    },
+    {
+      "ID": 120008,
+      "Entries": [
+        "Ritual Blood 1 】"
+      ]
+    },
+    {
+      "ID": 120009,
+      "Entries": [
+        "Ritual Blood 2 】"
+      ]
+    },
+    {
+      "ID": 120010,
+      "Entries": [
+        "Ritual Blood 3 】"
+      ]
+    },
+    {
+      "ID": 120011,
+      "Entries": [
+        "Ritual Blood 4 】"
+      ]
+    },
+    {
+      "ID": 120012,
+      "Entries": [
+        "Ritual Blood 5 】"
+      ]
+    },
+    {
+      "ID": 120013,
+      "Entries": [
+        "Grave Mold [ 1 】"
+      ]
+    },
+    {
+      "ID": 120014,
+      "Entries": [
+        "Grave Mold [ 2 】"
+      ]
+    },
+    {
+      "ID": 120015,
+      "Entries": [
+        "Grave Mold [ 3 】"
+      ]
+    },
+    {
+      "ID": 120016,
+      "Entries": [
+        "Grave Mold [ 4 】"
+      ]
+    },
+    {
+      "ID": 120017,
+      "Entries": [
+        "Grave Mold [ 5 】"
+      ]
+    },
+    {
+      "ID": 120100,
+      "Entries": [
+        "Saw blade"
+      ]
+    },
+    {
+      "ID": 120101,
+      "Entries": [
+        "Alien Saw Hatchet"
+      ]
+    },
+    {
+      "ID": 120102,
+      "Entries": [
+        "Lost Saw Blade"
+      ]
+    },
+    {
+      "ID": 120103,
+      "Entries": [
+        "Beast hunting axe (axe pole)"
+      ]
+    },
+    {
+      "ID": 120104,
+      "Entries": [
+        "Alien Beast Hunting Axe"
+      ]
+    },
+    {
+      "ID": 120105,
+      "Entries": [
+        "Lost Beast Hunting Axe"
+      ]
+    },
+    {
+      "ID": 120106,
+      "Entries": [
+        "Cane (whip)"
+      ]
+    },
+    {
+      "ID": 120107,
+      "Entries": [
+        "Heterogenous Wand"
+      ]
+    },
+    {
+      "ID": 120108,
+      "Entries": [
+        "Lost Cane"
+      ]
+    },
+    {
+      "ID": 120109,
+      "Entries": [
+        "Saw spear (Nokoyari)"
+      ]
+    },
+    {
+      "ID": 120110,
+      "Entries": [
+        "Alien Saw Spear"
+      ]
+    },
+    {
+      "ID": 120111,
+      "Entries": [
+        "Lost Saw Spear"
+      ]
+    },
+    {
+      "ID": 120112,
+      "Entries": [
+        "Beast hunting pistol (workshop pistol)"
+      ]
+    },
+    {
+      "ID": 120113,
+      "Entries": [
+        "Beast hunting shotgun (workshop long gun)"
+      ]
+    },
+    {
+      "ID": 120114,
+      "Entries": [
+        "Throwing Knife"
+      ]
+    },
+    {
+      "ID": 120115,
+      "Entries": [
+        "Smelling Blood Wine"
+      ]
+    },
+    {
+      "ID": 120200,
+      "Entries": [
+        "Pile hammer (sword pile)"
+      ]
+    },
+    {
+      "ID": 120201,
+      "Entries": [
+        "Heterogenous Pile Hammer"
+      ]
+    },
+    {
+      "ID": 120202,
+      "Entries": [
+        "Lost Pile Hammer"
+      ]
+    },
+    {
+      "ID": 120203,
+      "Entries": [
+        "Gunlance (Gunlance)"
+      ]
+    },
+    {
+      "ID": 120204,
+      "Entries": [
+        "Alien Gunlance"
+      ]
+    },
+    {
+      "ID": 120205,
+      "Entries": [
+        "Lost Gunlance"
+      ]
+    },
+    {
+      "ID": 120206,
+      "Entries": [
+        "Oil bottle"
+      ]
+    },
+    {
+      "ID": 120207,
+      "Entries": [
+        "Molotov cocktail with rope"
+      ]
+    },
+    {
+      "ID": 120300,
+      "Entries": [
+        "Funeral Blade (Scythe)"
+      ]
+    },
+    {
+      "ID": 120301,
+      "Entries": [
+        "Alien Funeral Blade"
+      ]
+    },
+    {
+      "ID": 120302,
+      "Entries": [
+        "Lost Funeral Blade"
+      ]
+    },
+    {
+      "ID": 120303,
+      "Entries": [
+        "Gehrman's Hunting Hat (Base Elderly _ head)"
+      ]
+    },
+    {
+      "ID": 120304,
+      "Entries": [
+        "Gehrman's Hunting Attire (Base Elder _ Torso)"
+      ]
+    },
+    {
+      "ID": 120305,
+      "Entries": [
+        "Gehrman's Hunting Pants (Base Elderly _ leg)"
+      ]
+    },
+    {
+      "ID": 120400,
+      "Entries": [
+        "Blade of Mercy (Dual Swords)"
+      ]
+    },
+    {
+      "ID": 120401,
+      "Entries": [
+        "Alien Mercy Blade"
+      ]
+    },
+    {
+      "ID": 120402,
+      "Entries": [
+        "Lost Blade of Mercy"
+      ]
+    },
+    {
+      "ID": 120403,
+      "Entries": [
+        "Beak Mask (Jack the Ripper _ head)"
+      ]
+    },
+    {
+      "ID": 120404,
+      "Entries": [
+        "Crow Feather Hunting Attire (Jack the Ripper _ Torso)"
+      ]
+    },
+    {
+      "ID": 120405,
+      "Entries": [
+        "Crow Feather Armband (Jack the Ripper _ arm)"
+      ]
+    },
+    {
+      "ID": 120406,
+      "Entries": [
+        "Raven Feather Trousers (Jack the Ripper) _ leg)"
+      ]
+    },
+    {
+      "ID": 120500,
+      "Entries": [
+        "Tonitrus (Bomb Hammer)"
+      ]
+    },
+    {
+      "ID": 120501,
+      "Entries": [
+        "Alien Tonitrus"
+      ]
+    },
+    {
+      "ID": 120502,
+      "Entries": [
+        "The Lost Tonitrus"
+      ]
+    },
+    {
+      "ID": 120503,
+      "Entries": [
+        "Lightning File"
+      ]
+    },
+    {
+      "ID": 120600,
+      "Entries": [
+        "Church Stone Hammer (Sword Hammer)"
+      ]
+    },
+    {
+      "ID": 120601,
+      "Entries": [
+        "Heterogenous Church Stone Hammer"
+      ]
+    },
+    {
+      "ID": 120602,
+      "Entries": [
+        "Lost Church Stone Hammer"
+      ]
+    },
+    {
+      "ID": 120603,
+      "Entries": [
+        "Church pistol (church pistol)"
+      ]
+    },
+    {
+      "ID": 120604,
+      "Entries": [
+        "White pill"
+      ]
+    },
+    {
+      "ID": 120605,
+      "Entries": [
+        "Sure Sign of a Hunter"
+      ]
+    },
+    {
+      "ID": 120606,
+      "Entries": [
+        "Portable lantern"
+      ]
+    },
+    {
+      "ID": 120607,
+      "Entries": [
+        "Hunter's Mark"
+      ]
+    },
+    {
+      "ID": 120700,
+      "Entries": [
+        "Ludwig's Holy Sword (Great Sword)"
+      ]
+    },
+    {
+      "ID": 120701,
+      "Entries": [
+        "Heterogenous Holy Sword"
+      ]
+    },
+    {
+      "ID": 120702,
+      "Entries": [
+        "Lost Holy Sword"
+      ]
+    },
+    {
+      "ID": 120703,
+      "Entries": [
+        "Ludwig's rifle (Church rifle)"
+      ]
+    },
+    {
+      "ID": 120704,
+      "Entries": [
+        "Flamethrower (Flamethrower)"
+      ]
+    },
+    {
+      "ID": 120705,
+      "Entries": [
+        "Ignition File"
+      ]
+    },
+    {
+      "ID": 120706,
+      "Entries": [
+        "Marrow Ash"
+      ]
+    },
+    {
+      "ID": 120707,
+      "Entries": [
+        "Shiny coins"
+      ]
+    },
+    {
+      "ID": 120708,
+      "Entries": [
+        "Bloodstone Shard"
+      ]
+    },
+    {
+      "ID": 120709,
+      "Entries": [
+        "Grave Robber Hood (Church Hunter _ head)"
+      ]
+    },
+    {
+      "ID": 120710,
+      "Entries": [
+        "Grave Raider's Outfit (Church Hunter _Torso)"
+      ]
+    },
+    {
+      "ID": 120711,
+      "Entries": [
+        "Grave Robber's Gloves (Church Hunter _ arm)"
+      ]
+    },
+    {
+      "ID": 120712,
+      "Entries": [
+        "Grave Robber's Pants (Church Hunter _ leg)"
+      ]
+    },
+    {
+      "ID": 120800,
+      "Entries": [
+        "Logarius' Wheel (Wheel)"
+      ]
+    },
+    {
+      "ID": 120801,
+      "Entries": [
+        "Alien Wheels"
+      ]
+    },
+    {
+      "ID": 120802,
+      "Entries": [
+        "The Lost Wheel"
+      ]
+    },
+    {
+      "ID": 120803,
+      "Entries": [
+        "Golden Aldeo (Bloodline Hunter _ head)"
+      ]
+    },
+    {
+      "ID": 120900,
+      "Entries": [
+        "Reiterpallasch (bayonet)"
+      ]
+    },
+    {
+      "ID": 120901,
+      "Entries": [
+        "Different Reiterpallasch"
+      ]
+    },
+    {
+      "ID": 120902,
+      "Entries": [
+        "Lost Reiterpallasch"
+      ]
+    },
+    {
+      "ID": 120903,
+      "Entries": [
+        "Chikage (sword)"
+      ]
+    },
+    {
+      "ID": 120904,
+      "Entries": [
+        "Alien Blood Sword"
+      ]
+    },
+    {
+      "ID": 120905,
+      "Entries": [
+        "Lost Blood Sword"
+      ]
+    },
+    {
+      "ID": 120906,
+      "Entries": [
+        "Evelyn (Vampire pistol)"
+      ]
+    },
+    {
+      "ID": 120907,
+      "Entries": [
+        "Cain's Helmet (Vampire Knight _ head)"
+      ]
+    },
+    {
+      "ID": 120908,
+      "Entries": [
+        "Cain's Armor (Vampire Knight _ Torso)"
+      ]
+    },
+    {
+      "ID": 120909,
+      "Entries": [
+        "Cain's Gauntlets (Vampire Knight _ arm)"
+      ]
+    },
+    {
+      "ID": 120910,
+      "Entries": [
+        "Cain's Leggings (Vampire Knight _ leg)"
+      ]
+    },
+    {
+      "ID": 121000,
+      "Entries": [
+        "Rosmarinus (atomizer)"
+      ]
+    },
+    {
+      "ID": 121001,
+      "Entries": [
+        "Poison Scalpel"
+      ]
+    },
+    {
+      "ID": 121002,
+      "Entries": [
+        "Sedatives"
+      ]
+    },
+    {
+      "ID": 121003,
+      "Entries": [
+        "Two Bloodstone Fragments"
+      ]
+    },
+    {
+      "ID": 121020,
+      "Entries": [
+        "Piercing gun (piercing gun)"
+      ]
+    },
+    {
+      "ID": 121021,
+      "Entries": [
+        "Timed Explosion Bottle"
+      ]
+    },
+    {
+      "ID": 121022,
+      "Entries": [
+        "Timed explosion bottle with rope"
+      ]
+    },
+    {
+      "ID": 121100,
+      "Entries": [
+        "Beast Claws (Fist Beast)"
+      ]
+    },
+    {
+      "ID": 121101,
+      "Entries": [
+        "Alien Beast Claws"
+      ]
+    },
+    {
+      "ID": 121102,
+      "Entries": [
+        "Lost Claws"
+      ]
+    },
+    {
+      "ID": 121103,
+      "Entries": [
+        "Cannon (cannon)"
+      ]
+    },
+    {
+      "ID": 121104,
+      "Entries": [
+        "Beast Hunting Torch (Hunter's Torch)"
+      ]
+    },
+    {
+      "ID": 121110,
+      "Entries": [
+        "Beast hunting curved sword (saw curved sword)"
+      ]
+    },
+    {
+      "ID": 121111,
+      "Entries": [
+        "Alien Beast Hunting Knife"
+      ]
+    },
+    {
+      "ID": 121112,
+      "Entries": [
+        "Lost Beast Hunting Knife"
+      ]
+    },
+    {
+      "ID": 121113,
+      "Entries": [
+        "Cutting off animal meat (saw whip)"
+      ]
+    },
+    {
+      "ID": 121114,
+      "Entries": [
+        "Abstinence from foreign meat"
+      ]
+    },
+    {
+      "ID": 121115,
+      "Entries": [
+        "Lost Flesh Abstinence"
+      ]
+    },
+    {
+      "ID": 121116,
+      "Entries": [
+        "Church Stake (Warpick)"
+      ]
+    },
+    {
+      "ID": 121117,
+      "Entries": [
+        "Heterogenous Church Stakes"
+      ]
+    },
+    {
+      "ID": 121118,
+      "Entries": [
+        "Lost Church Stake"
+      ]
+    },
+    {
+      "ID": 121119,
+      "Entries": [
+        "Simon's Bow Sword (Transformed Bow)"
+      ]
+    },
+    {
+      "ID": 121120,
+      "Entries": [
+        "Alien Bow Sword"
+      ]
+    },
+    {
+      "ID": 121121,
+      "Entries": [
+        "Lost Bow Sword"
+      ]
+    },
+    {
+      "ID": 121122,
+      "Entries": [
+        "Moonlight Holy Sword (Moonlight Sword)"
+      ]
+    },
+    {
+      "ID": 121123,
+      "Entries": [
+        "Heterogeneous Moonlight Holy Sword"
+      ]
+    },
+    {
+      "ID": 121124,
+      "Entries": [
+        "Lost Moonlight Sword"
+      ]
+    },
+    {
+      "ID": 121125,
+      "Entries": [
+        "Fallen leaves (double-edged)"
+      ]
+    },
+    {
+      "ID": 121126,
+      "Entries": [
+        "Alien leaf litter"
+      ]
+    },
+    {
+      "ID": 121127,
+      "Entries": [
+        "Lost leaves"
+      ]
+    },
+    {
+      "ID": 121128,
+      "Entries": [
+        "Circular saw (chain saw)"
+      ]
+    },
+    {
+      "ID": 121129,
+      "Entries": [
+        "Heterogeneous Circular Saw"
+      ]
+    },
+    {
+      "ID": 121130,
+      "Entries": [
+        "Lost Circular Saw"
+      ]
+    },
+    {
+      "ID": 121131,
+      "Entries": [
+        "Explosive hammer (Gunhammer)"
+      ]
+    },
+    {
+      "ID": 121132,
+      "Entries": [
+        "Alien Explosive Hammer"
+      ]
+    },
+    {
+      "ID": 121133,
+      "Entries": [
+        "Lost Explosive Hammer"
+      ]
+    },
+    {
+      "ID": 121134,
+      "Entries": [
+        "Bloodletting Hammer (Cross Mace)"
+      ]
+    },
+    {
+      "ID": 121135,
+      "Entries": [
+        "Alien Bloodletting Hammer"
+      ]
+    },
+    {
+      "ID": 121136,
+      "Entries": [
+        "Lost Bloodletting Hammer"
+      ]
+    },
+    {
+      "ID": 121137,
+      "Entries": [
+        "Arm of Lesser Amun (multi-jointed)"
+      ]
+    },
+    {
+      "ID": 121138,
+      "Entries": [
+        "Heterogeneous Small Amun Arm"
+      ]
+    },
+    {
+      "ID": 121139,
+      "Entries": [
+        "The Lost Lesser Arm of Amun"
+      ]
+    },
+    {
+      "ID": 121140,
+      "Entries": [
+        "Parasites of the Goss (slugs)"
+      ]
+    },
+    {
+      "ID": 121141,
+      "Entries": [
+        "Alien parasites"
+      ]
+    },
+    {
+      "ID": 121142,
+      "Entries": [
+        "The lost parasite"
+      ]
+    },
+    {
+      "ID": 121143,
+      "Entries": [
+        "Gatling gun (Gatling)"
+      ]
+    },
+    {
+      "ID": 121144,
+      "Entries": [
+        "Church Cannon (Grenade)"
+      ]
+    },
+    {
+      "ID": 121145,
+      "Entries": [
+        "Gracia's Fist (Knuckle)"
+      ]
+    },
+    {
+      "ID": 121146,
+      "Entries": [
+        "Lake Shield (Elemental Shield)"
+      ]
+    },
+    {
+      "ID": 130000,
+      "Entries": [
+        "Blood transfusion"
+      ]
+    },
+    {
+      "ID": 130001,
+      "Entries": [
+        "Mercury bullets"
+      ]
+    },
+    {
+      "ID": 130002,
+      "Entries": [
+        "Molotov cocktail"
+      ]
+    },
+    {
+      "ID": 130003,
+      "Entries": [
+        "Stone"
+      ]
+    },
+    {
+      "ID": 130004,
+      "Entries": [
+        "Yharnam Hunting Hat (Junior Hunter _ head)"
+      ]
+    },
+    {
+      "ID": 130005,
+      "Entries": [
+        "Yharnam Hunting Gear (Junior Hunter _ Torso)"
+      ]
+    },
+    {
+      "ID": 130006,
+      "Entries": [
+        "Yharnam Hunting Gloves (Junior Hunter _ arm)"
+      ]
+    },
+    {
+      "ID": 130007,
+      "Entries": [
+        "Yharnam Hunting Pants (Junior Hunter _ leg)"
+      ]
+    },
+    {
+      "ID": 130008,
+      "Entries": [
+        "Ritual Blood 1 】"
+      ]
+    },
+    {
+      "ID": 130009,
+      "Entries": [
+        "Ritual Blood 2 】"
+      ]
+    },
+    {
+      "ID": 130010,
+      "Entries": [
+        "Ritual Blood 3 】"
+      ]
+    },
+    {
+      "ID": 130011,
+      "Entries": [
+        "Ritual Blood 4 】"
+      ]
+    },
+    {
+      "ID": 130012,
+      "Entries": [
+        "Ritual Blood 5 】"
+      ]
+    },
+    {
+      "ID": 130013,
+      "Entries": [
+        "Grave Mold [ 1 】"
+      ]
+    },
+    {
+      "ID": 130014,
+      "Entries": [
+        "Grave Mold [ 2 】"
+      ]
+    },
+    {
+      "ID": 130015,
+      "Entries": [
+        "Grave Mold [ 3 】"
+      ]
+    },
+    {
+      "ID": 130016,
+      "Entries": [
+        "Grave Mold [ 4 】"
+      ]
+    },
+    {
+      "ID": 130017,
+      "Entries": [
+        "Grave Mold [ 5 】"
+      ]
+    },
+    {
+      "ID": 130100,
+      "Entries": [
+        "Saw blade"
+      ]
+    },
+    {
+      "ID": 130101,
+      "Entries": [
+        "Alien Saw Hatchet"
+      ]
+    },
+    {
+      "ID": 130102,
+      "Entries": [
+        "Lost Saw Blade"
+      ]
+    },
+    {
+      "ID": 130103,
+      "Entries": [
+        "Beast hunting axe (axe pole)"
+      ]
+    },
+    {
+      "ID": 130104,
+      "Entries": [
+        "Alien Beast Hunting Axe"
+      ]
+    },
+    {
+      "ID": 130105,
+      "Entries": [
+        "Lost Beast Hunting Axe"
+      ]
+    },
+    {
+      "ID": 130106,
+      "Entries": [
+        "Cane (whip)"
+      ]
+    },
+    {
+      "ID": 130107,
+      "Entries": [
+        "Heterogenous Wand"
+      ]
+    },
+    {
+      "ID": 130108,
+      "Entries": [
+        "Lost Cane"
+      ]
+    },
+    {
+      "ID": 130109,
+      "Entries": [
+        "Saw spear (Nokoyari)"
+      ]
+    },
+    {
+      "ID": 130110,
+      "Entries": [
+        "Alien Saw Spear"
+      ]
+    },
+    {
+      "ID": 130111,
+      "Entries": [
+        "Lost Saw Spear"
+      ]
+    },
+    {
+      "ID": 130112,
+      "Entries": [
+        "Beast hunting pistol (workshop pistol)"
+      ]
+    },
+    {
+      "ID": 130113,
+      "Entries": [
+        "Beast hunting shotgun (workshop long gun)"
+      ]
+    },
+    {
+      "ID": 130114,
+      "Entries": [
+        "Throwing Knife"
+      ]
+    },
+    {
+      "ID": 130115,
+      "Entries": [
+        "Smelling Blood Wine"
+      ]
+    },
+    {
+      "ID": 130200,
+      "Entries": [
+        "Pile hammer (sword pile)"
+      ]
+    },
+    {
+      "ID": 130201,
+      "Entries": [
+        "Heterogenous Pile Hammer"
+      ]
+    },
+    {
+      "ID": 130202,
+      "Entries": [
+        "Lost Pile Hammer"
+      ]
+    },
+    {
+      "ID": 130203,
+      "Entries": [
+        "Gunlance (Gunlance)"
+      ]
+    },
+    {
+      "ID": 130204,
+      "Entries": [
+        "Alien Gunlance"
+      ]
+    },
+    {
+      "ID": 130205,
+      "Entries": [
+        "Lost Gunlance"
+      ]
+    },
+    {
+      "ID": 130206,
+      "Entries": [
+        "Oil bottle"
+      ]
+    },
+    {
+      "ID": 130207,
+      "Entries": [
+        "Molotov cocktail with rope"
+      ]
+    },
+    {
+      "ID": 130300,
+      "Entries": [
+        "Funeral Blade (Scythe)"
+      ]
+    },
+    {
+      "ID": 130301,
+      "Entries": [
+        "Alien Funeral Blade"
+      ]
+    },
+    {
+      "ID": 130302,
+      "Entries": [
+        "Lost Funeral Blade"
+      ]
+    },
+    {
+      "ID": 130303,
+      "Entries": [
+        "Gehrman's Hunting Hat (Base Elderly _ head)"
+      ]
+    },
+    {
+      "ID": 130304,
+      "Entries": [
+        "Gehrman's Hunting Attire (Base Elder _ Torso)"
+      ]
+    },
+    {
+      "ID": 130305,
+      "Entries": [
+        "Gehrman's Hunting Pants (Base Elderly _ leg)"
+      ]
+    },
+    {
+      "ID": 130400,
+      "Entries": [
+        "Blade of Mercy (Dual Swords)"
+      ]
+    },
+    {
+      "ID": 130401,
+      "Entries": [
+        "Alien Mercy Blade"
+      ]
+    },
+    {
+      "ID": 130402,
+      "Entries": [
+        "Lost Blade of Mercy"
+      ]
+    },
+    {
+      "ID": 130403,
+      "Entries": [
+        "Beak Mask (Jack the Ripper _ head)"
+      ]
+    },
+    {
+      "ID": 130404,
+      "Entries": [
+        "Crow Feather Hunting Attire (Jack the Ripper _ Torso)"
+      ]
+    },
+    {
+      "ID": 130405,
+      "Entries": [
+        "Crow Feather Armband (Jack the Ripper _ arm)"
+      ]
+    },
+    {
+      "ID": 130406,
+      "Entries": [
+        "Raven Feather Trousers (Jack the Ripper) _ leg)"
+      ]
+    },
+    {
+      "ID": 130500,
+      "Entries": [
+        "Tonitrus (Bomb Hammer)"
+      ]
+    },
+    {
+      "ID": 130501,
+      "Entries": [
+        "Alien Tonitrus"
+      ]
+    },
+    {
+      "ID": 130502,
+      "Entries": [
+        "The Lost Tonitrus"
+      ]
+    },
+    {
+      "ID": 130503,
+      "Entries": [
+        "Lightning File"
+      ]
+    },
+    {
+      "ID": 130600,
+      "Entries": [
+        "Church Stone Hammer (Sword Hammer)"
+      ]
+    },
+    {
+      "ID": 130601,
+      "Entries": [
+        "Heterogenous Church Stone Hammer"
+      ]
+    },
+    {
+      "ID": 130602,
+      "Entries": [
+        "Lost Church Stone Hammer"
+      ]
+    },
+    {
+      "ID": 130603,
+      "Entries": [
+        "Church pistol (church pistol)"
+      ]
+    },
+    {
+      "ID": 130604,
+      "Entries": [
+        "White pill"
+      ]
+    },
+    {
+      "ID": 130605,
+      "Entries": [
+        "Sure Sign of a Hunter"
+      ]
+    },
+    {
+      "ID": 130606,
+      "Entries": [
+        "Portable lantern"
+      ]
+    },
+    {
+      "ID": 130607,
+      "Entries": [
+        "Hunter's Mark"
+      ]
+    },
+    {
+      "ID": 130700,
+      "Entries": [
+        "Ludwig's Holy Sword (Great Sword)"
+      ]
+    },
+    {
+      "ID": 130701,
+      "Entries": [
+        "Heterogenous Holy Sword"
+      ]
+    },
+    {
+      "ID": 130702,
+      "Entries": [
+        "Lost Holy Sword"
+      ]
+    },
+    {
+      "ID": 130703,
+      "Entries": [
+        "Ludwig's rifle (Church rifle)"
+      ]
+    },
+    {
+      "ID": 130704,
+      "Entries": [
+        "Flamethrower (Flamethrower)"
+      ]
+    },
+    {
+      "ID": 130705,
+      "Entries": [
+        "Ignition File"
+      ]
+    },
+    {
+      "ID": 130706,
+      "Entries": [
+        "Marrow Ash"
+      ]
+    },
+    {
+      "ID": 130707,
+      "Entries": [
+        "Shiny coins"
+      ]
+    },
+    {
+      "ID": 130708,
+      "Entries": [
+        "Bloodstone Shard"
+      ]
+    },
+    {
+      "ID": 130709,
+      "Entries": [
+        "Grave Robber Hood (Church Hunter _ head)"
+      ]
+    },
+    {
+      "ID": 130710,
+      "Entries": [
+        "Grave Raider's Outfit (Church Hunter _Torso)"
+      ]
+    },
+    {
+      "ID": 130711,
+      "Entries": [
+        "Grave Robber's Gloves (Church Hunter _ arm)"
+      ]
+    },
+    {
+      "ID": 130712,
+      "Entries": [
+        "Grave Robber's Pants (Church Hunter _ leg)"
+      ]
+    },
+    {
+      "ID": 130800,
+      "Entries": [
+        "Logarius' Wheel (Wheel)"
+      ]
+    },
+    {
+      "ID": 130801,
+      "Entries": [
+        "Alien Wheels"
+      ]
+    },
+    {
+      "ID": 130802,
+      "Entries": [
+        "The Lost Wheel"
+      ]
+    },
+    {
+      "ID": 130803,
+      "Entries": [
+        "Golden Aldeo (Bloodline Hunter _ head)"
+      ]
+    },
+    {
+      "ID": 130900,
+      "Entries": [
+        "Reiterpallasch (bayonet)"
+      ]
+    },
+    {
+      "ID": 130901,
+      "Entries": [
+        "Different Reiterpallasch"
+      ]
+    },
+    {
+      "ID": 130902,
+      "Entries": [
+        "Lost Reiterpallasch"
+      ]
+    },
+    {
+      "ID": 130903,
+      "Entries": [
+        "Chikage (sword)"
+      ]
+    },
+    {
+      "ID": 130904,
+      "Entries": [
+        "Alien Blood Sword"
+      ]
+    },
+    {
+      "ID": 130905,
+      "Entries": [
+        "Lost Blood Sword"
+      ]
+    },
+    {
+      "ID": 130906,
+      "Entries": [
+        "Evelyn (Vampire pistol)"
+      ]
+    },
+    {
+      "ID": 130907,
+      "Entries": [
+        "Cain's Helmet (Vampire Knight _ head)"
+      ]
+    },
+    {
+      "ID": 130908,
+      "Entries": [
+        "Cain's Armor (Vampire Knight _ Torso)"
+      ]
+    },
+    {
+      "ID": 130909,
+      "Entries": [
+        "Cain's Gauntlets (Vampire Knight _ arm)"
+      ]
+    },
+    {
+      "ID": 130910,
+      "Entries": [
+        "Cain's Leggings (Vampire Knight _ leg)"
+      ]
+    },
+    {
+      "ID": 131000,
+      "Entries": [
+        "Rosmarinus (atomizer)"
+      ]
+    },
+    {
+      "ID": 131001,
+      "Entries": [
+        "Poison Scalpel"
+      ]
+    },
+    {
+      "ID": 131002,
+      "Entries": [
+        "Sedatives"
+      ]
+    },
+    {
+      "ID": 131003,
+      "Entries": [
+        "Two Bloodstone Fragments"
+      ]
+    },
+    {
+      "ID": 131020,
+      "Entries": [
+        "Piercing gun (piercing gun)"
+      ]
+    },
+    {
+      "ID": 131021,
+      "Entries": [
+        "Timed Explosion Bottle"
+      ]
+    },
+    {
+      "ID": 131022,
+      "Entries": [
+        "Timed explosion bottle with rope"
+      ]
+    },
+    {
+      "ID": 131100,
+      "Entries": [
+        "Beast Claws (Fist Beast)"
+      ]
+    },
+    {
+      "ID": 131101,
+      "Entries": [
+        "Alien Beast Claws"
+      ]
+    },
+    {
+      "ID": 131102,
+      "Entries": [
+        "Lost Claws"
+      ]
+    },
+    {
+      "ID": 131103,
+      "Entries": [
+        "Cannon (cannon)"
+      ]
+    },
+    {
+      "ID": 131104,
+      "Entries": [
+        "Beast Hunting Torch (Hunter's Torch)"
+      ]
+    },
+    {
+      "ID": 131110,
+      "Entries": [
+        "Beast hunting curved sword (saw curved sword)"
+      ]
+    },
+    {
+      "ID": 131111,
+      "Entries": [
+        "Alien Beast Hunting Knife"
+      ]
+    },
+    {
+      "ID": 131112,
+      "Entries": [
+        "Lost Beast Hunting Knife"
+      ]
+    },
+    {
+      "ID": 131113,
+      "Entries": [
+        "Cutting off animal meat (saw whip)"
+      ]
+    },
+    {
+      "ID": 131114,
+      "Entries": [
+        "Abstinence from foreign meat"
+      ]
+    },
+    {
+      "ID": 131115,
+      "Entries": [
+        "Lost Flesh Abstinence"
+      ]
+    },
+    {
+      "ID": 131116,
+      "Entries": [
+        "Church Stake (Warpick)"
+      ]
+    },
+    {
+      "ID": 131117,
+      "Entries": [
+        "Heterogenous Church Stakes"
+      ]
+    },
+    {
+      "ID": 131118,
+      "Entries": [
+        "Lost Church Stake"
+      ]
+    },
+    {
+      "ID": 131119,
+      "Entries": [
+        "Simon's Bow Sword (Transformed Bow)"
+      ]
+    },
+    {
+      "ID": 131120,
+      "Entries": [
+        "Alien Bow Sword"
+      ]
+    },
+    {
+      "ID": 131121,
+      "Entries": [
+        "Lost Bow Sword"
+      ]
+    },
+    {
+      "ID": 131122,
+      "Entries": [
+        "Moonlight Holy Sword (Moonlight Sword)"
+      ]
+    },
+    {
+      "ID": 131123,
+      "Entries": [
+        "Heterogeneous Moonlight Holy Sword"
+      ]
+    },
+    {
+      "ID": 131124,
+      "Entries": [
+        "Lost Moonlight Sword"
+      ]
+    },
+    {
+      "ID": 131125,
+      "Entries": [
+        "Fallen leaves (double-edged)"
+      ]
+    },
+    {
+      "ID": 131126,
+      "Entries": [
+        "Alien leaf litter"
+      ]
+    },
+    {
+      "ID": 131127,
+      "Entries": [
+        "Lost leaves"
+      ]
+    },
+    {
+      "ID": 131128,
+      "Entries": [
+        "Circular saw (chain saw)"
+      ]
+    },
+    {
+      "ID": 131129,
+      "Entries": [
+        "Heterogeneous Circular Saw"
+      ]
+    },
+    {
+      "ID": 131130,
+      "Entries": [
+        "Lost Circular Saw"
+      ]
+    },
+    {
+      "ID": 131131,
+      "Entries": [
+        "Explosive hammer (Gunhammer)"
+      ]
+    },
+    {
+      "ID": 131132,
+      "Entries": [
+        "Alien Explosive Hammer"
+      ]
+    },
+    {
+      "ID": 131133,
+      "Entries": [
+        "Lost Explosive Hammer"
+      ]
+    },
+    {
+      "ID": 131134,
+      "Entries": [
+        "Bloodletting Hammer (Cross Mace)"
+      ]
+    },
+    {
+      "ID": 131135,
+      "Entries": [
+        "Alien Bloodletting Hammer"
+      ]
+    },
+    {
+      "ID": 131136,
+      "Entries": [
+        "Lost Bloodletting Hammer"
+      ]
+    },
+    {
+      "ID": 131137,
+      "Entries": [
+        "Arm of Lesser Amun (multi-jointed)"
+      ]
+    },
+    {
+      "ID": 131138,
+      "Entries": [
+        "Heterogeneous Small Amun Arm"
+      ]
+    },
+    {
+      "ID": 131139,
+      "Entries": [
+        "The Lost Lesser Arm of Amun"
+      ]
+    },
+    {
+      "ID": 131140,
+      "Entries": [
+        "Parasites of the Goss (slugs)"
+      ]
+    },
+    {
+      "ID": 131141,
+      "Entries": [
+        "Alien parasites"
+      ]
+    },
+    {
+      "ID": 131142,
+      "Entries": [
+        "The lost parasite"
+      ]
+    },
+    {
+      "ID": 131143,
+      "Entries": [
+        "Gatling gun (Gatling)"
+      ]
+    },
+    {
+      "ID": 131144,
+      "Entries": [
+        "Church Cannon (Grenade)"
+      ]
+    },
+    {
+      "ID": 131145,
+      "Entries": [
+        "Gracia's Fist (Knuckle)"
+      ]
+    },
+    {
+      "ID": 131146,
+      "Entries": [
+        "Lake Shield (Elemental Shield)"
+      ]
+    },
+    {
+      "ID": 140000,
+      "Entries": [
+        "Blood transfusion"
+      ]
+    },
+    {
+      "ID": 140001,
+      "Entries": [
+        "Mercury bullets"
+      ]
+    },
+    {
+      "ID": 140002,
+      "Entries": [
+        "Molotov cocktail"
+      ]
+    },
+    {
+      "ID": 140003,
+      "Entries": [
+        "Stone"
+      ]
+    },
+    {
+      "ID": 140004,
+      "Entries": [
+        "Yharnam Hunting Hat (Junior Hunter _ head)"
+      ]
+    },
+    {
+      "ID": 140005,
+      "Entries": [
+        "Yharnam Hunting Gear (Junior Hunter _ Torso)"
+      ]
+    },
+    {
+      "ID": 140006,
+      "Entries": [
+        "Yharnam Hunting Gloves (Junior Hunter _ arm)"
+      ]
+    },
+    {
+      "ID": 140007,
+      "Entries": [
+        "Yharnam Hunting Pants (Junior Hunter _ leg)"
+      ]
+    },
+    {
+      "ID": 140008,
+      "Entries": [
+        "Ritual Blood 1 】"
+      ]
+    },
+    {
+      "ID": 140009,
+      "Entries": [
+        "Ritual Blood 2 】"
+      ]
+    },
+    {
+      "ID": 140010,
+      "Entries": [
+        "Ritual Blood 3 】"
+      ]
+    },
+    {
+      "ID": 140011,
+      "Entries": [
+        "Ritual Blood 4 】"
+      ]
+    },
+    {
+      "ID": 140012,
+      "Entries": [
+        "Ritual Blood 5 】"
+      ]
+    },
+    {
+      "ID": 140013,
+      "Entries": [
+        "Grave Mold [ 1 】"
+      ]
+    },
+    {
+      "ID": 140014,
+      "Entries": [
+        "Grave Mold [ 2 】"
+      ]
+    },
+    {
+      "ID": 140015,
+      "Entries": [
+        "Grave Mold [ 3 】"
+      ]
+    },
+    {
+      "ID": 140016,
+      "Entries": [
+        "Grave Mold [ 4 】"
+      ]
+    },
+    {
+      "ID": 140017,
+      "Entries": [
+        "Grave Mold [ 5 】"
+      ]
+    },
+    {
+      "ID": 140100,
+      "Entries": [
+        "Saw blade"
+      ]
+    },
+    {
+      "ID": 140101,
+      "Entries": [
+        "Alien Saw Hatchet"
+      ]
+    },
+    {
+      "ID": 140102,
+      "Entries": [
+        "Lost Saw Blade"
+      ]
+    },
+    {
+      "ID": 140103,
+      "Entries": [
+        "Beast hunting axe (axe pole)"
+      ]
+    },
+    {
+      "ID": 140104,
+      "Entries": [
+        "Alien Beast Hunting Axe"
+      ]
+    },
+    {
+      "ID": 140105,
+      "Entries": [
+        "Lost Beast Hunting Axe"
+      ]
+    },
+    {
+      "ID": 140106,
+      "Entries": [
+        "Cane (whip)"
+      ]
+    },
+    {
+      "ID": 140107,
+      "Entries": [
+        "Heterogenous Wand"
+      ]
+    },
+    {
+      "ID": 140108,
+      "Entries": [
+        "Lost Cane"
+      ]
+    },
+    {
+      "ID": 140109,
+      "Entries": [
+        "Saw spear (Nokoyari)"
+      ]
+    },
+    {
+      "ID": 140110,
+      "Entries": [
+        "Alien Saw Spear"
+      ]
+    },
+    {
+      "ID": 140111,
+      "Entries": [
+        "Lost Saw Spear"
+      ]
+    },
+    {
+      "ID": 140112,
+      "Entries": [
+        "Beast hunting pistol (workshop pistol)"
+      ]
+    },
+    {
+      "ID": 140113,
+      "Entries": [
+        "Beast hunting shotgun (workshop long gun)"
+      ]
+    },
+    {
+      "ID": 140114,
+      "Entries": [
+        "Throwing Knife"
+      ]
+    },
+    {
+      "ID": 140115,
+      "Entries": [
+        "Smelling Blood Wine"
+      ]
+    },
+    {
+      "ID": 140200,
+      "Entries": [
+        "Pile hammer (sword pile)"
+      ]
+    },
+    {
+      "ID": 140201,
+      "Entries": [
+        "Heterogenous Pile Hammer"
+      ]
+    },
+    {
+      "ID": 140202,
+      "Entries": [
+        "Lost Pile Hammer"
+      ]
+    },
+    {
+      "ID": 140203,
+      "Entries": [
+        "Gunlance (Gunlance)"
+      ]
+    },
+    {
+      "ID": 140204,
+      "Entries": [
+        "Alien Gunlance"
+      ]
+    },
+    {
+      "ID": 140205,
+      "Entries": [
+        "Lost Gunlance"
+      ]
+    },
+    {
+      "ID": 140206,
+      "Entries": [
+        "Oil bottle"
+      ]
+    },
+    {
+      "ID": 140207,
+      "Entries": [
+        "Molotov cocktail with rope"
+      ]
+    },
+    {
+      "ID": 140300,
+      "Entries": [
+        "Funeral Blade (Scythe)"
+      ]
+    },
+    {
+      "ID": 140301,
+      "Entries": [
+        "Alien Funeral Blade"
+      ]
+    },
+    {
+      "ID": 140302,
+      "Entries": [
+        "Lost Funeral Blade"
+      ]
+    },
+    {
+      "ID": 140303,
+      "Entries": [
+        "Gehrman's Hunting Hat (Base Elderly _ head)"
+      ]
+    },
+    {
+      "ID": 140304,
+      "Entries": [
+        "Gehrman's Hunting Attire (Base Elder _ Torso)"
+      ]
+    },
+    {
+      "ID": 140305,
+      "Entries": [
+        "Gehrman's Hunting Pants (Base Elderly _ leg)"
+      ]
+    },
+    {
+      "ID": 140400,
+      "Entries": [
+        "Blade of Mercy (Dual Swords)"
+      ]
+    },
+    {
+      "ID": 140401,
+      "Entries": [
+        "Alien Mercy Blade"
+      ]
+    },
+    {
+      "ID": 140402,
+      "Entries": [
+        "Lost Blade of Mercy"
+      ]
+    },
+    {
+      "ID": 140403,
+      "Entries": [
+        "Beak Mask (Jack the Ripper _ head)"
+      ]
+    },
+    {
+      "ID": 140404,
+      "Entries": [
+        "Crow Feather Hunting Attire (Jack the Ripper _ Torso)"
+      ]
+    },
+    {
+      "ID": 140405,
+      "Entries": [
+        "Crow Feather Armband (Jack the Ripper _ arm)"
+      ]
+    },
+    {
+      "ID": 140406,
+      "Entries": [
+        "Raven Feather Trousers (Jack the Ripper) _ leg)"
+      ]
+    },
+    {
+      "ID": 140500,
+      "Entries": [
+        "Tonitrus (Bomb Hammer)"
+      ]
+    },
+    {
+      "ID": 140501,
+      "Entries": [
+        "Alien Tonitrus"
+      ]
+    },
+    {
+      "ID": 140502,
+      "Entries": [
+        "The Lost Tonitrus"
+      ]
+    },
+    {
+      "ID": 140503,
+      "Entries": [
+        "Lightning File"
+      ]
+    },
+    {
+      "ID": 140600,
+      "Entries": [
+        "Church Stone Hammer (Sword Hammer)"
+      ]
+    },
+    {
+      "ID": 140601,
+      "Entries": [
+        "Heterogenous Church Stone Hammer"
+      ]
+    },
+    {
+      "ID": 140602,
+      "Entries": [
+        "Lost Church Stone Hammer"
+      ]
+    },
+    {
+      "ID": 140603,
+      "Entries": [
+        "Church pistol (church pistol)"
+      ]
+    },
+    {
+      "ID": 140604,
+      "Entries": [
+        "White pill"
+      ]
+    },
+    {
+      "ID": 140605,
+      "Entries": [
+        "Sure Sign of a Hunter"
+      ]
+    },
+    {
+      "ID": 140606,
+      "Entries": [
+        "Portable lantern"
+      ]
+    },
+    {
+      "ID": 140607,
+      "Entries": [
+        "Hunter's Mark"
+      ]
+    },
+    {
+      "ID": 140700,
+      "Entries": [
+        "Ludwig's Holy Sword (Great Sword)"
+      ]
+    },
+    {
+      "ID": 140701,
+      "Entries": [
+        "Heterogenous Holy Sword"
+      ]
+    },
+    {
+      "ID": 140702,
+      "Entries": [
+        "Lost Holy Sword"
+      ]
+    },
+    {
+      "ID": 140703,
+      "Entries": [
+        "Ludwig's rifle (Church rifle)"
+      ]
+    },
+    {
+      "ID": 140704,
+      "Entries": [
+        "Flamethrower (Flamethrower)"
+      ]
+    },
+    {
+      "ID": 140705,
+      "Entries": [
+        "Ignition File"
+      ]
+    },
+    {
+      "ID": 140706,
+      "Entries": [
+        "Marrow Ash"
+      ]
+    },
+    {
+      "ID": 140707,
+      "Entries": [
+        "Shiny coins"
+      ]
+    },
+    {
+      "ID": 140708,
+      "Entries": [
+        "Bloodstone Shard"
+      ]
+    },
+    {
+      "ID": 140709,
+      "Entries": [
+        "Grave Robber Hood (Church Hunter _ head)"
+      ]
+    },
+    {
+      "ID": 140710,
+      "Entries": [
+        "Grave Raider's Outfit (Church Hunter _Torso)"
+      ]
+    },
+    {
+      "ID": 140711,
+      "Entries": [
+        "Grave Robber's Gloves (Church Hunter _ arm)"
+      ]
+    },
+    {
+      "ID": 140712,
+      "Entries": [
+        "Grave Robber's Pants (Church Hunter _ leg)"
+      ]
+    },
+    {
+      "ID": 140800,
+      "Entries": [
+        "Logarius' Wheel (Wheel)"
+      ]
+    },
+    {
+      "ID": 140801,
+      "Entries": [
+        "Alien Wheels"
+      ]
+    },
+    {
+      "ID": 140802,
+      "Entries": [
+        "The Lost Wheel"
+      ]
+    },
+    {
+      "ID": 140803,
+      "Entries": [
+        "Golden Aldeo (Bloodline Hunter _ head)"
+      ]
+    },
+    {
+      "ID": 140900,
+      "Entries": [
+        "Reiterpallasch (bayonet)"
+      ]
+    },
+    {
+      "ID": 140901,
+      "Entries": [
+        "Different Reiterpallasch"
+      ]
+    },
+    {
+      "ID": 140902,
+      "Entries": [
+        "Lost Reiterpallasch"
+      ]
+    },
+    {
+      "ID": 140903,
+      "Entries": [
+        "Chikage (sword)"
+      ]
+    },
+    {
+      "ID": 140904,
+      "Entries": [
+        "Alien Blood Sword"
+      ]
+    },
+    {
+      "ID": 140905,
+      "Entries": [
+        "Lost Blood Sword"
+      ]
+    },
+    {
+      "ID": 140906,
+      "Entries": [
+        "Evelyn (Vampire pistol)"
+      ]
+    },
+    {
+      "ID": 140907,
+      "Entries": [
+        "Cain's Helmet (Vampire Knight _ head)"
+      ]
+    },
+    {
+      "ID": 140908,
+      "Entries": [
+        "Cain's Armor (Vampire Knight _ Torso)"
+      ]
+    },
+    {
+      "ID": 140909,
+      "Entries": [
+        "Cain's Gauntlets (Vampire Knight _ arm)"
+      ]
+    },
+    {
+      "ID": 140910,
+      "Entries": [
+        "Cain's Leggings (Vampire Knight _ leg)"
+      ]
+    },
+    {
+      "ID": 141000,
+      "Entries": [
+        "Rosmarinus (atomizer)"
+      ]
+    },
+    {
+      "ID": 141001,
+      "Entries": [
+        "Poison Scalpel"
+      ]
+    },
+    {
+      "ID": 141002,
+      "Entries": [
+        "Sedatives"
+      ]
+    },
+    {
+      "ID": 141003,
+      "Entries": [
+        "Two Bloodstone Fragments"
+      ]
+    },
+    {
+      "ID": 141020,
+      "Entries": [
+        "Piercing gun (piercing gun)"
+      ]
+    },
+    {
+      "ID": 141021,
+      "Entries": [
+        "Timed Explosion Bottle"
+      ]
+    },
+    {
+      "ID": 141022,
+      "Entries": [
+        "Timed explosion bottle with rope"
+      ]
+    },
+    {
+      "ID": 141100,
+      "Entries": [
+        "Beast Claws (Fist Beast)"
+      ]
+    },
+    {
+      "ID": 141101,
+      "Entries": [
+        "Alien Beast Claws"
+      ]
+    },
+    {
+      "ID": 141102,
+      "Entries": [
+        "Lost Claws"
+      ]
+    },
+    {
+      "ID": 141103,
+      "Entries": [
+        "Cannon (cannon)"
+      ]
+    },
+    {
+      "ID": 141104,
+      "Entries": [
+        "Beast Hunting Torch (Hunter's Torch)"
+      ]
+    },
+    {
+      "ID": 141110,
+      "Entries": [
+        "Beast hunting curved sword (saw curved sword)"
+      ]
+    },
+    {
+      "ID": 141111,
+      "Entries": [
+        "Alien Beast Hunting Knife"
+      ]
+    },
+    {
+      "ID": 141112,
+      "Entries": [
+        "Lost Beast Hunting Knife"
+      ]
+    },
+    {
+      "ID": 141113,
+      "Entries": [
+        "Cutting off animal meat (saw whip)"
+      ]
+    },
+    {
+      "ID": 141114,
+      "Entries": [
+        "Abstinence from foreign meat"
+      ]
+    },
+    {
+      "ID": 141115,
+      "Entries": [
+        "Lost Flesh Abstinence"
+      ]
+    },
+    {
+      "ID": 141116,
+      "Entries": [
+        "Church Stake (Warpick)"
+      ]
+    },
+    {
+      "ID": 141117,
+      "Entries": [
+        "Heterogenous Church Stakes"
+      ]
+    },
+    {
+      "ID": 141118,
+      "Entries": [
+        "Lost Church Stake"
+      ]
+    },
+    {
+      "ID": 141119,
+      "Entries": [
+        "Simon's Bow Sword (Transformed Bow)"
+      ]
+    },
+    {
+      "ID": 141120,
+      "Entries": [
+        "Alien Bow Sword"
+      ]
+    },
+    {
+      "ID": 141121,
+      "Entries": [
+        "Lost Bow Sword"
+      ]
+    },
+    {
+      "ID": 141122,
+      "Entries": [
+        "Moonlight Holy Sword (Moonlight Sword)"
+      ]
+    },
+    {
+      "ID": 141123,
+      "Entries": [
+        "Heterogeneous Moonlight Holy Sword"
+      ]
+    },
+    {
+      "ID": 141124,
+      "Entries": [
+        "Lost Moonlight Sword"
+      ]
+    },
+    {
+      "ID": 141125,
+      "Entries": [
+        "Fallen leaves (double-edged)"
+      ]
+    },
+    {
+      "ID": 141126,
+      "Entries": [
+        "Alien leaf litter"
+      ]
+    },
+    {
+      "ID": 141127,
+      "Entries": [
+        "Lost leaves"
+      ]
+    },
+    {
+      "ID": 141128,
+      "Entries": [
+        "Circular saw (chain saw)"
+      ]
+    },
+    {
+      "ID": 141129,
+      "Entries": [
+        "Heterogeneous Circular Saw"
+      ]
+    },
+    {
+      "ID": 141130,
+      "Entries": [
+        "Lost Circular Saw"
+      ]
+    },
+    {
+      "ID": 141131,
+      "Entries": [
+        "Explosive hammer (Gunhammer)"
+      ]
+    },
+    {
+      "ID": 141132,
+      "Entries": [
+        "Alien Explosive Hammer"
+      ]
+    },
+    {
+      "ID": 141133,
+      "Entries": [
+        "Lost Explosive Hammer"
+      ]
+    },
+    {
+      "ID": 141134,
+      "Entries": [
+        "Bloodletting Hammer (Cross Mace)"
+      ]
+    },
+    {
+      "ID": 141135,
+      "Entries": [
+        "Alien Bloodletting Hammer"
+      ]
+    },
+    {
+      "ID": 141136,
+      "Entries": [
+        "Lost Bloodletting Hammer"
+      ]
+    },
+    {
+      "ID": 141137,
+      "Entries": [
+        "Arm of Lesser Amun (multi-jointed)"
+      ]
+    },
+    {
+      "ID": 141138,
+      "Entries": [
+        "Heterogeneous Small Amun Arm"
+      ]
+    },
+    {
+      "ID": 141139,
+      "Entries": [
+        "The Lost Lesser Arm of Amun"
+      ]
+    },
+    {
+      "ID": 141140,
+      "Entries": [
+        "Parasites of the Goss (slugs)"
+      ]
+    },
+    {
+      "ID": 141141,
+      "Entries": [
+        "Alien parasites"
+      ]
+    },
+    {
+      "ID": 141142,
+      "Entries": [
+        "The lost parasite"
+      ]
+    },
+    {
+      "ID": 141143,
+      "Entries": [
+        "Gatling gun (Gatling)"
+      ]
+    },
+    {
+      "ID": 141144,
+      "Entries": [
+        "Church Cannon (Grenade)"
+      ]
+    },
+    {
+      "ID": 141145,
+      "Entries": [
+        "Gracia's Fist (Knuckle)"
+      ]
+    },
+    {
+      "ID": 141146,
+      "Entries": [
+        "Lake Shield (Elemental Shield)"
+      ]
+    },
+    {
+      "ID": 200000,
+      "Entries": [
+        "Resonating Small Bell"
+      ]
+    },
+    {
+      "ID": 200001,
+      "Entries": [
+        "Resonating Ominous Bell"
+      ]
+    },
+    {
+      "ID": 200002,
+      "Entries": [
+        "Smelling Blood Wine"
+      ]
+    },
+    {
+      "ID": 200003,
+      "Entries": [
+        "Ignition File"
+      ]
+    },
+    {
+      "ID": 200004,
+      "Entries": [
+        "Beast Blood Pill"
+      ]
+    },
+    {
+      "ID": 200005,
+      "Entries": [
+        "Blue Elixir"
+      ]
+    },
+    {
+      "ID": 200006,
+      "Entries": [
+        "Lightning File"
+      ]
+    },
+    {
+      "ID": 200007,
+      "Entries": [
+        "Numbing Fog"
+      ]
+    },
+    {
+      "ID": 200008,
+      "Entries": [
+        "Bloodstone Shard"
+      ]
+    },
+    {
+      "ID": 200009,
+      "Entries": [
+        "Lead Elixir"
+      ]
+    },
+    {
+      "ID": 200010,
+      "Entries": [
+        "Two Bloodstone Fragments"
+      ]
+    },
+    {
+      "ID": 200011,
+      "Entries": [
+        "Ritualist Bone Blade"
+      ]
+    },
+    {
+      "ID": 200012,
+      "Entries": [
+        "Sprouting of the Blood Flower"
+      ]
+    },
+    {
+      "ID": 200013,
+      "Entries": [
+        "Bloody Flower Bud"
+      ]
+    },
+    {
+      "ID": 200014,
+      "Entries": [
+        "Large Blood-Flower"
+      ]
+    },
+    {
+      "ID": 200015,
+      "Entries": [
+        "Pearl Slug"
+      ]
+    },
+    {
+      "ID": 200016,
+      "Entries": [
+        "Red Jelly"
+      ]
+    },
+    {
+      "ID": 200017,
+      "Entries": [
+        "Saint's Wrist"
+      ]
+    },
+    {
+      "ID": 200018,
+      "Entries": [
+        "Saint's Skull"
+      ]
+    },
+    {
+      "ID": 200019,
+      "Entries": [
+        "Organ of involvement"
+      ]
+    },
+    {
+      "ID": 200020,
+      "Entries": [
+        "Yellow spine"
+      ]
+    },
+    {
+      "ID": 200021,
+      "Entries": [
+        "Laurent's Baby"
+      ]
+    },
+    {
+      "ID": 200022,
+      "Entries": [
+        "Bloodshot eyes"
+      ]
+    },
+    {
+      "ID": 200023,
+      "Entries": [
+        "Living String"
+      ]
+    },
+    {
+      "ID": 200024,
+      "Entries": [
+        "Bloodstone Chunk"
+      ]
+    },
+    {
+      "ID": 200025,
+      "Entries": [
+        "血の岩"
+      ]
+    },
+    {
+      "ID": 200030,
+      "Entries": [
+        "Henrik's Hunting Hat (Advanced Hunter _ head)"
+      ]
+    },
+    {
+      "ID": 200031,
+      "Entries": [
+        "Henrik's Hunting Attire (Advanced Hunter _ Torso)"
+      ]
+    },
+    {
+      "ID": 200032,
+      "Entries": [
+        "Henrik's Hunting Gloves (Advanced Hunter _ arm)"
+      ]
+    },
+    {
+      "ID": 200033,
+      "Entries": [
+        "Henrik's Hunting Pants (Advanced Hunter _ leg)"
+      ]
+    },
+    {
+      "ID": 200040,
+      "Entries": [
+        "Priest's Hunting Hat (Father Gascoigne _ head)"
+      ]
+    },
+    {
+      "ID": 200041,
+      "Entries": [
+        "Priest's Hunting Attire (Father Gascoigne _ Torso)"
+      ]
+    },
+    {
+      "ID": 200042,
+      "Entries": [
+        "Father Gascoigne's Hunting Gloves _ arm)"
+      ]
+    },
+    {
+      "ID": 200043,
+      "Entries": [
+        "Priest's Hunting Trousers (Father Gascoigne _ leg)"
+      ]
+    },
+    {
+      "ID": 200050,
+      "Entries": [
+        "Grey Wolf Hat (Wolf Hat)"
+      ]
+    },
+    {
+      "ID": 200051,
+      "Entries": [
+        "Ash Hunting Attire (Stealth _ Torso)"
+      ]
+    },
+    {
+      "ID": 200052,
+      "Entries": [
+        "Ash Hunting Gloves (Stealth _ arm)"
+      ]
+    },
+    {
+      "ID": 200053,
+      "Entries": [
+        "Ash Hunting Pants (Stealth _ leg)"
+      ]
+    },
+    {
+      "ID": 200060,
+      "Entries": [
+        "Bone Charcoal Mask (Family of the Ruined Flame _ head)"
+      ]
+    },
+    {
+      "ID": 200061,
+      "Entries": [
+        "Bone Charcoal Armor (Family of the Ruined Flame _ Torso)"
+      ]
+    },
+    {
+      "ID": 200062,
+      "Entries": [
+        "Bone Charcoal Gauntlets (Family of the Ruined Flame _ arm)"
+      ]
+    },
+    {
+      "ID": 200063,
+      "Entries": [
+        "Bone Charcoal Leggings (Family of the Ruined Flame _ leg)"
+      ]
+    },
+    {
+      "ID": 200064,
+      "Entries": [
+        "The Hood of the Madman (Mad Cultist) _ head)"
+      ]
+    },
+    {
+      "ID": 200065,
+      "Entries": [
+        "Abnormal Costume (Mad Cultist _Torso)"
+      ]
+    },
+    {
+      "ID": 200066,
+      "Entries": [
+        "Abnormal Armband (Mad Cultist _ arm)"
+      ]
+    },
+    {
+      "ID": 200067,
+      "Entries": [
+        "The Madman's Leg Belt (Mad Heretic _ leg)"
+      ]
+    },
+    {
+      "ID": 200070,
+      "Entries": [
+        "Informal Ritual Universal Chalice"
+      ]
+    },
+    {
+      "ID": 200090,
+      "Entries": [
+        "Maria's Hunting Hat (Female Hunter _ head)"
+      ]
+    },
+    {
+      "ID": 200091,
+      "Entries": [
+        "Maria's Hunting Attire (Female Hunter _ Torso)"
+      ]
+    },
+    {
+      "ID": 200092,
+      "Entries": [
+        "Maria's Hunting Gloves (Female Hunter _ arm)"
+      ]
+    },
+    {
+      "ID": 200093,
+      "Entries": [
+        "Maria's Hunting Pants (Female Hunter _ leg)"
+      ]
+    },
+    {
+      "ID": 210000,
+      "Entries": [
+        "Resonating Small Bell"
+      ]
+    },
+    {
+      "ID": 210001,
+      "Entries": [
+        "Resonating Ominous Bell"
+      ]
+    },
+    {
+      "ID": 210002,
+      "Entries": [
+        "Smelling Blood Wine"
+      ]
+    },
+    {
+      "ID": 210003,
+      "Entries": [
+        "Ignition File"
+      ]
+    },
+    {
+      "ID": 210004,
+      "Entries": [
+        "Beast Blood Pill"
+      ]
+    },
+    {
+      "ID": 210005,
+      "Entries": [
+        "Blue Elixir"
+      ]
+    },
+    {
+      "ID": 210006,
+      "Entries": [
+        "Lightning File"
+      ]
+    },
+    {
+      "ID": 210007,
+      "Entries": [
+        "Numbing Fog"
+      ]
+    },
+    {
+      "ID": 210008,
+      "Entries": [
+        "Bloodstone Shard"
+      ]
+    },
+    {
+      "ID": 210009,
+      "Entries": [
+        "Lead Elixir"
+      ]
+    },
+    {
+      "ID": 210010,
+      "Entries": [
+        "Two Bloodstone Fragments"
+      ]
+    },
+    {
+      "ID": 210011,
+      "Entries": [
+        "Ritualist Bone Blade"
+      ]
+    },
+    {
+      "ID": 210012,
+      "Entries": [
+        "Sprouting of the Blood Flower"
+      ]
+    },
+    {
+      "ID": 210013,
+      "Entries": [
+        "Bloody Flower Bud"
+      ]
+    },
+    {
+      "ID": 210014,
+      "Entries": [
+        "Large Blood-Flower"
+      ]
+    },
+    {
+      "ID": 210015,
+      "Entries": [
+        "Pearl Slug"
+      ]
+    },
+    {
+      "ID": 210016,
+      "Entries": [
+        "Red Jelly"
+      ]
+    },
+    {
+      "ID": 210017,
+      "Entries": [
+        "Saint's Wrist"
+      ]
+    },
+    {
+      "ID": 210018,
+      "Entries": [
+        "Saint's Skull"
+      ]
+    },
+    {
+      "ID": 210019,
+      "Entries": [
+        "Organ of involvement"
+      ]
+    },
+    {
+      "ID": 210020,
+      "Entries": [
+        "Yellow spine"
+      ]
+    },
+    {
+      "ID": 210021,
+      "Entries": [
+        "Laurent's Baby"
+      ]
+    },
+    {
+      "ID": 210022,
+      "Entries": [
+        "Bloodshot eyes"
+      ]
+    },
+    {
+      "ID": 210023,
+      "Entries": [
+        "Living String"
+      ]
+    },
+    {
+      "ID": 210024,
+      "Entries": [
+        "Bloodstone Chunk"
+      ]
+    },
+    {
+      "ID": 210025,
+      "Entries": [
+        "血の岩"
+      ]
+    },
+    {
+      "ID": 210030,
+      "Entries": [
+        "Henrik's Hunting Hat (Advanced Hunter _ head)"
+      ]
+    },
+    {
+      "ID": 210031,
+      "Entries": [
+        "Henrik's Hunting Attire (Advanced Hunter _ Torso)"
+      ]
+    },
+    {
+      "ID": 210032,
+      "Entries": [
+        "Henrik's Hunting Gloves (Advanced Hunter _ arm)"
+      ]
+    },
+    {
+      "ID": 210033,
+      "Entries": [
+        "Henrik's Hunting Pants (Advanced Hunter _ leg)"
+      ]
+    },
+    {
+      "ID": 210040,
+      "Entries": [
+        "Priest's Hunting Hat (Father Gascoigne _ head)"
+      ]
+    },
+    {
+      "ID": 210041,
+      "Entries": [
+        "Priest's Hunting Attire (Father Gascoigne _ Torso)"
+      ]
+    },
+    {
+      "ID": 210042,
+      "Entries": [
+        "Father Gascoigne's Hunting Gloves _ arm)"
+      ]
+    },
+    {
+      "ID": 210043,
+      "Entries": [
+        "Priest's Hunting Trousers (Father Gascoigne _ leg)"
+      ]
+    },
+    {
+      "ID": 210050,
+      "Entries": [
+        "Grey Wolf Hat (Wolf Hat)"
+      ]
+    },
+    {
+      "ID": 210051,
+      "Entries": [
+        "Ash Hunting Attire (Stealth _ Torso)"
+      ]
+    },
+    {
+      "ID": 210052,
+      "Entries": [
+        "Ash Hunting Gloves (Stealth _ arm)"
+      ]
+    },
+    {
+      "ID": 210053,
+      "Entries": [
+        "Ash Hunting Pants (Stealth _ leg)"
+      ]
+    },
+    {
+      "ID": 210060,
+      "Entries": [
+        "Bone Charcoal Mask (Family of the Ruined Flame _ head)"
+      ]
+    },
+    {
+      "ID": 210061,
+      "Entries": [
+        "Bone Charcoal Armor (Family of the Ruined Flame _ Torso)"
+      ]
+    },
+    {
+      "ID": 210062,
+      "Entries": [
+        "Bone Charcoal Gauntlets (Family of the Ruined Flame _ arm)"
+      ]
+    },
+    {
+      "ID": 210063,
+      "Entries": [
+        "Bone Charcoal Leggings (Family of the Ruined Flame _ leg)"
+      ]
+    },
+    {
+      "ID": 210064,
+      "Entries": [
+        "The Hood of the Madman (Mad Cultist) _ head)"
+      ]
+    },
+    {
+      "ID": 210065,
+      "Entries": [
+        "Abnormal Costume (Mad Cultist _Torso)"
+      ]
+    },
+    {
+      "ID": 210066,
+      "Entries": [
+        "Abnormal Armband (Mad Cultist _ arm)"
+      ]
+    },
+    {
+      "ID": 210067,
+      "Entries": [
+        "The Madman's Leg Belt (Mad Heretic _ leg)"
+      ]
+    },
+    {
+      "ID": 210070,
+      "Entries": [
+        "Informal Ritual Universal Chalice"
+      ]
+    },
+    {
+      "ID": 210090,
+      "Entries": [
+        "Maria's Hunting Hat (Female Hunter _ head)"
+      ]
+    },
+    {
+      "ID": 210091,
+      "Entries": [
+        "Maria's Hunting Attire (Female Hunter _ Torso)"
+      ]
+    },
+    {
+      "ID": 210092,
+      "Entries": [
+        "Maria's Hunting Gloves (Female Hunter _ arm)"
+      ]
+    },
+    {
+      "ID": 210093,
+      "Entries": [
+        "Maria's Hunting Pants (Female Hunter _ leg)"
+      ]
+    },
+    {
+      "ID": 220000,
+      "Entries": [
+        "Resonating Small Bell"
+      ]
+    },
+    {
+      "ID": 220001,
+      "Entries": [
+        "Resonating Ominous Bell"
+      ]
+    },
+    {
+      "ID": 220002,
+      "Entries": [
+        "Smelling Blood Wine"
+      ]
+    },
+    {
+      "ID": 220003,
+      "Entries": [
+        "Ignition File"
+      ]
+    },
+    {
+      "ID": 220004,
+      "Entries": [
+        "Beast Blood Pill"
+      ]
+    },
+    {
+      "ID": 220005,
+      "Entries": [
+        "Blue Elixir"
+      ]
+    },
+    {
+      "ID": 220006,
+      "Entries": [
+        "Lightning File"
+      ]
+    },
+    {
+      "ID": 220007,
+      "Entries": [
+        "Numbing Fog"
+      ]
+    },
+    {
+      "ID": 220008,
+      "Entries": [
+        "Bloodstone Shard"
+      ]
+    },
+    {
+      "ID": 220009,
+      "Entries": [
+        "Lead Elixir"
+      ]
+    },
+    {
+      "ID": 220010,
+      "Entries": [
+        "Two Bloodstone Fragments"
+      ]
+    },
+    {
+      "ID": 220011,
+      "Entries": [
+        "Ritualist Bone Blade"
+      ]
+    },
+    {
+      "ID": 220012,
+      "Entries": [
+        "Sprouting of the Blood Flower"
+      ]
+    },
+    {
+      "ID": 220013,
+      "Entries": [
+        "Bloody Flower Bud"
+      ]
+    },
+    {
+      "ID": 220014,
+      "Entries": [
+        "Large Blood-Flower"
+      ]
+    },
+    {
+      "ID": 220015,
+      "Entries": [
+        "Pearl Slug"
+      ]
+    },
+    {
+      "ID": 220016,
+      "Entries": [
+        "Red Jelly"
+      ]
+    },
+    {
+      "ID": 220017,
+      "Entries": [
+        "Saint's Wrist"
+      ]
+    },
+    {
+      "ID": 220018,
+      "Entries": [
+        "Saint's Skull"
+      ]
+    },
+    {
+      "ID": 220019,
+      "Entries": [
+        "Organ of involvement"
+      ]
+    },
+    {
+      "ID": 220020,
+      "Entries": [
+        "Yellow spine"
+      ]
+    },
+    {
+      "ID": 220021,
+      "Entries": [
+        "Laurent's Baby"
+      ]
+    },
+    {
+      "ID": 220022,
+      "Entries": [
+        "Bloodshot eyes"
+      ]
+    },
+    {
+      "ID": 220023,
+      "Entries": [
+        "Living String"
+      ]
+    },
+    {
+      "ID": 220024,
+      "Entries": [
+        "Bloodstone Chunk"
+      ]
+    },
+    {
+      "ID": 220025,
+      "Entries": [
+        "血の岩"
+      ]
+    },
+    {
+      "ID": 220030,
+      "Entries": [
+        "Advanced Hunter _ head"
+      ]
+    },
+    {
+      "ID": 220031,
+      "Entries": [
+        "Advanced Hunter _ Torso"
+      ]
+    },
+    {
+      "ID": 220032,
+      "Entries": [
+        "Advanced Hunter _ arm"
+      ]
+    },
+    {
+      "ID": 220033,
+      "Entries": [
+        "Advanced Hunter _ leg"
+      ]
+    },
+    {
+      "ID": 220040,
+      "Entries": [
+        "Father Gascoigne _ head"
+      ]
+    },
+    {
+      "ID": 220041,
+      "Entries": [
+        "Father Gascoigne _ Torso"
+      ]
+    },
+    {
+      "ID": 220042,
+      "Entries": [
+        "Father Gascoigne _ arm"
+      ]
+    },
+    {
+      "ID": 220043,
+      "Entries": [
+        "Father Gascoigne _ leg"
+      ]
+    },
+    {
+      "ID": 220050,
+      "Entries": [
+        "Wolf hat"
+      ]
+    },
+    {
+      "ID": 220051,
+      "Entries": [
+        "Covert _ Torso"
+      ]
+    },
+    {
+      "ID": 220052,
+      "Entries": [
+        "Covert _ arm"
+      ]
+    },
+    {
+      "ID": 220053,
+      "Entries": [
+        "Covert _ leg"
+      ]
+    },
+    {
+      "ID": 220060,
+      "Entries": [
+        "Kin of the Flame of Destruction _ head"
+      ]
+    },
+    {
+      "ID": 220061,
+      "Entries": [
+        "Kin of the Flame of Destruction _ Torso"
+      ]
+    },
+    {
+      "ID": 220062,
+      "Entries": [
+        "Kin of the Flame of Destruction _ arm"
+      ]
+    },
+    {
+      "ID": 220063,
+      "Entries": [
+        "Kin of the Flame of Destruction _ leg"
+      ]
+    },
+    {
+      "ID": 220064,
+      "Entries": [
+        "The mad cultist _ head"
+      ]
+    },
+    {
+      "ID": 220065,
+      "Entries": [
+        "The mad cultist _ Torso"
+      ]
+    },
+    {
+      "ID": 220066,
+      "Entries": [
+        "The mad cultist _ arm"
+      ]
+    },
+    {
+      "ID": 220067,
+      "Entries": [
+        "The mad cultist _ leg"
+      ]
+    },
+    {
+      "ID": 220070,
+      "Entries": [
+        "Informal Ritual Universal Chalice"
+      ]
+    },
+    {
+      "ID": 220090,
+      "Entries": [
+        "Female Hunter _ head"
+      ]
+    },
+    {
+      "ID": 220091,
+      "Entries": [
+        "Female Hunter _ Torso"
+      ]
+    },
+    {
+      "ID": 220092,
+      "Entries": [
+        "Female Hunter _ arm"
+      ]
+    },
+    {
+      "ID": 220093,
+      "Entries": [
+        "Female Hunter _ leg"
+      ]
+    },
+    {
+      "ID": 230000,
+      "Entries": [
+        "Resonating Small Bell"
+      ]
+    },
+    {
+      "ID": 230001,
+      "Entries": [
+        "Resonating Ominous Bell"
+      ]
+    },
+    {
+      "ID": 230002,
+      "Entries": [
+        "Smelling Blood Wine"
+      ]
+    },
+    {
+      "ID": 230003,
+      "Entries": [
+        "Ignition File"
+      ]
+    },
+    {
+      "ID": 230004,
+      "Entries": [
+        "Beast Blood Pill"
+      ]
+    },
+    {
+      "ID": 230005,
+      "Entries": [
+        "Blue Elixir"
+      ]
+    },
+    {
+      "ID": 230006,
+      "Entries": [
+        "Lightning File"
+      ]
+    },
+    {
+      "ID": 230007,
+      "Entries": [
+        "Numbing Fog"
+      ]
+    },
+    {
+      "ID": 230008,
+      "Entries": [
+        "Bloodstone Shard"
+      ]
+    },
+    {
+      "ID": 230009,
+      "Entries": [
+        "Lead Elixir"
+      ]
+    },
+    {
+      "ID": 230010,
+      "Entries": [
+        "Two Bloodstone Fragments"
+      ]
+    },
+    {
+      "ID": 230011,
+      "Entries": [
+        "Ritualist Bone Blade"
+      ]
+    },
+    {
+      "ID": 230012,
+      "Entries": [
+        "Sprouting of the Blood Flower"
+      ]
+    },
+    {
+      "ID": 230013,
+      "Entries": [
+        "Bloody Flower Bud"
+      ]
+    },
+    {
+      "ID": 230014,
+      "Entries": [
+        "Large Blood-Flower"
+      ]
+    },
+    {
+      "ID": 230015,
+      "Entries": [
+        "Pearl Slug"
+      ]
+    },
+    {
+      "ID": 230016,
+      "Entries": [
+        "Red Jelly"
+      ]
+    },
+    {
+      "ID": 230017,
+      "Entries": [
+        "Saint's Wrist"
+      ]
+    },
+    {
+      "ID": 230018,
+      "Entries": [
+        "Saint's Skull"
+      ]
+    },
+    {
+      "ID": 230019,
+      "Entries": [
+        "Organ of involvement"
+      ]
+    },
+    {
+      "ID": 230020,
+      "Entries": [
+        "Yellow spine"
+      ]
+    },
+    {
+      "ID": 230021,
+      "Entries": [
+        "Laurent's Baby"
+      ]
+    },
+    {
+      "ID": 230022,
+      "Entries": [
+        "Bloodshot eyes"
+      ]
+    },
+    {
+      "ID": 230023,
+      "Entries": [
+        "Living String"
+      ]
+    },
+    {
+      "ID": 230024,
+      "Entries": [
+        "Bloodstone Chunk"
+      ]
+    },
+    {
+      "ID": 230025,
+      "Entries": [
+        "血の岩"
+      ]
+    },
+    {
+      "ID": 230030,
+      "Entries": [
+        "Advanced Hunter _ head"
+      ]
+    },
+    {
+      "ID": 230031,
+      "Entries": [
+        "Advanced Hunter _ Torso"
+      ]
+    },
+    {
+      "ID": 230032,
+      "Entries": [
+        "Advanced Hunter _ arm"
+      ]
+    },
+    {
+      "ID": 230033,
+      "Entries": [
+        "Advanced Hunter _ leg"
+      ]
+    },
+    {
+      "ID": 230040,
+      "Entries": [
+        "Father Gascoigne _ head"
+      ]
+    },
+    {
+      "ID": 230041,
+      "Entries": [
+        "Father Gascoigne _ Torso"
+      ]
+    },
+    {
+      "ID": 230042,
+      "Entries": [
+        "Father Gascoigne _ arm"
+      ]
+    },
+    {
+      "ID": 230043,
+      "Entries": [
+        "Father Gascoigne _ leg"
+      ]
+    },
+    {
+      "ID": 230050,
+      "Entries": [
+        "Wolf hat"
+      ]
+    },
+    {
+      "ID": 230051,
+      "Entries": [
+        "Covert _ Torso"
+      ]
+    },
+    {
+      "ID": 230052,
+      "Entries": [
+        "Covert _ arm"
+      ]
+    },
+    {
+      "ID": 230053,
+      "Entries": [
+        "Covert _ leg"
+      ]
+    },
+    {
+      "ID": 230060,
+      "Entries": [
+        "Kin of the Flame of Destruction _ head"
+      ]
+    },
+    {
+      "ID": 230061,
+      "Entries": [
+        "Kin of the Flame of Destruction _ Torso"
+      ]
+    },
+    {
+      "ID": 230062,
+      "Entries": [
+        "Kin of the Flame of Destruction _ arm"
+      ]
+    },
+    {
+      "ID": 230063,
+      "Entries": [
+        "Kin of the Flame of Destruction _ leg"
+      ]
+    },
+    {
+      "ID": 230064,
+      "Entries": [
+        "The mad cultist _ head"
+      ]
+    },
+    {
+      "ID": 230065,
+      "Entries": [
+        "The mad cultist _ Torso"
+      ]
+    },
+    {
+      "ID": 230066,
+      "Entries": [
+        "The mad cultist _ arm"
+      ]
+    },
+    {
+      "ID": 230067,
+      "Entries": [
+        "The mad cultist _ leg"
+      ]
+    },
+    {
+      "ID": 230070,
+      "Entries": [
+        "Informal Ritual Universal Chalice"
+      ]
+    },
+    {
+      "ID": 230090,
+      "Entries": [
+        "Female Hunter _ head"
+      ]
+    },
+    {
+      "ID": 230091,
+      "Entries": [
+        "Female Hunter _ Torso"
+      ]
+    },
+    {
+      "ID": 230092,
+      "Entries": [
+        "Female Hunter _ arm"
+      ]
+    },
+    {
+      "ID": 230093,
+      "Entries": [
+        "Female Hunter _ leg"
+      ]
+    },
+    {
+      "ID": 240000,
+      "Entries": [
+        "Resonating Small Bell"
+      ]
+    },
+    {
+      "ID": 240001,
+      "Entries": [
+        "Resonating Ominous Bell"
+      ]
+    },
+    {
+      "ID": 240002,
+      "Entries": [
+        "Smelling Blood Wine"
+      ]
+    },
+    {
+      "ID": 240003,
+      "Entries": [
+        "Ignition File"
+      ]
+    },
+    {
+      "ID": 240004,
+      "Entries": [
+        "Beast Blood Pill"
+      ]
+    },
+    {
+      "ID": 240005,
+      "Entries": [
+        "Blue Elixir"
+      ]
+    },
+    {
+      "ID": 240006,
+      "Entries": [
+        "Lightning File"
+      ]
+    },
+    {
+      "ID": 240007,
+      "Entries": [
+        "Numbing Fog"
+      ]
+    },
+    {
+      "ID": 240008,
+      "Entries": [
+        "Bloodstone Shard"
+      ]
+    },
+    {
+      "ID": 240009,
+      "Entries": [
+        "Lead Elixir"
+      ]
+    },
+    {
+      "ID": 240010,
+      "Entries": [
+        "Two Bloodstone Fragments"
+      ]
+    },
+    {
+      "ID": 240011,
+      "Entries": [
+        "Ritualist Bone Blade"
+      ]
+    },
+    {
+      "ID": 240012,
+      "Entries": [
+        "Sprouting of the Blood Flower"
+      ]
+    },
+    {
+      "ID": 240013,
+      "Entries": [
+        "Bloody Flower Bud"
+      ]
+    },
+    {
+      "ID": 240014,
+      "Entries": [
+        "Large Blood-Flower"
+      ]
+    },
+    {
+      "ID": 240015,
+      "Entries": [
+        "Pearl Slug"
+      ]
+    },
+    {
+      "ID": 240016,
+      "Entries": [
+        "Red Jelly"
+      ]
+    },
+    {
+      "ID": 240017,
+      "Entries": [
+        "Saint's Wrist"
+      ]
+    },
+    {
+      "ID": 240018,
+      "Entries": [
+        "Saint's Skull"
+      ]
+    },
+    {
+      "ID": 240019,
+      "Entries": [
+        "Organ of involvement"
+      ]
+    },
+    {
+      "ID": 240020,
+      "Entries": [
+        "Yellow spine"
+      ]
+    },
+    {
+      "ID": 240021,
+      "Entries": [
+        "Laurent's Baby"
+      ]
+    },
+    {
+      "ID": 240022,
+      "Entries": [
+        "Bloodshot eyes"
+      ]
+    },
+    {
+      "ID": 240023,
+      "Entries": [
+        "Living String"
+      ]
+    },
+    {
+      "ID": 240024,
+      "Entries": [
+        "Bloodstone Chunk"
+      ]
+    },
+    {
+      "ID": 240025,
+      "Entries": [
+        "血の岩"
+      ]
+    },
+    {
+      "ID": 240030,
+      "Entries": [
+        "Advanced Hunter _ head"
+      ]
+    },
+    {
+      "ID": 240031,
+      "Entries": [
+        "Advanced Hunter _ Torso"
+      ]
+    },
+    {
+      "ID": 240032,
+      "Entries": [
+        "Advanced Hunter _ arm"
+      ]
+    },
+    {
+      "ID": 240033,
+      "Entries": [
+        "Advanced Hunter _ leg"
+      ]
+    },
+    {
+      "ID": 240040,
+      "Entries": [
+        "Father Gascoigne _ head"
+      ]
+    },
+    {
+      "ID": 240041,
+      "Entries": [
+        "Father Gascoigne _ Torso"
+      ]
+    },
+    {
+      "ID": 240042,
+      "Entries": [
+        "Father Gascoigne _ arm"
+      ]
+    },
+    {
+      "ID": 240043,
+      "Entries": [
+        "Father Gascoigne _ leg"
+      ]
+    },
+    {
+      "ID": 240050,
+      "Entries": [
+        "Wolf hat"
+      ]
+    },
+    {
+      "ID": 240051,
+      "Entries": [
+        "Covert _ Torso"
+      ]
+    },
+    {
+      "ID": 240052,
+      "Entries": [
+        "Covert _ arm"
+      ]
+    },
+    {
+      "ID": 240053,
+      "Entries": [
+        "Covert _ leg"
+      ]
+    },
+    {
+      "ID": 240060,
+      "Entries": [
+        "Kin of the Flame of Destruction _ head"
+      ]
+    },
+    {
+      "ID": 240061,
+      "Entries": [
+        "Kin of the Flame of Destruction _ Torso"
+      ]
+    },
+    {
+      "ID": 240062,
+      "Entries": [
+        "Kin of the Flame of Destruction _ arm"
+      ]
+    },
+    {
+      "ID": 240063,
+      "Entries": [
+        "Kin of the Flame of Destruction _ leg"
+      ]
+    },
+    {
+      "ID": 240064,
+      "Entries": [
+        "The mad cultist _ head"
+      ]
+    },
+    {
+      "ID": 240065,
+      "Entries": [
+        "The mad cultist _ Torso"
+      ]
+    },
+    {
+      "ID": 240066,
+      "Entries": [
+        "The mad cultist _ arm"
+      ]
+    },
+    {
+      "ID": 240067,
+      "Entries": [
+        "The mad cultist _ leg"
+      ]
+    },
+    {
+      "ID": 240070,
+      "Entries": [
+        "Informal Ritual Universal Chalice"
+      ]
+    },
+    {
+      "ID": 240090,
+      "Entries": [
+        "Female Hunter _ head"
+      ]
+    },
+    {
+      "ID": 240091,
+      "Entries": [
+        "Female Hunter _ Torso"
+      ]
+    },
+    {
+      "ID": 240092,
+      "Entries": [
+        "Female Hunter _ arm"
+      ]
+    },
+    {
+      "ID": 240093,
+      "Entries": [
+        "Female Hunter _ leg"
+      ]
+    },
+    {
+      "ID": 510000,
+      "Entries": [
+        "Blood transfusion"
+      ]
+    },
+    {
+      "ID": 510001,
+      "Entries": [
+        "bullet"
+      ]
+    },
+    {
+      "ID": 510002,
+      "Entries": [
+        "Antidotes"
+      ]
+    },
+    {
+      "ID": 510003,
+      "Entries": [
+        "Molotov cocktail"
+      ]
+    },
+    {
+      "ID": 510004,
+      "Entries": [
+        "Oil bottle"
+      ]
+    },
+    {
+      "ID": 510005,
+      "Entries": [
+        "Molotov cocktail behind"
+      ]
+    },
+    {
+      "ID": 510006,
+      "Entries": [
+        "Throwing Knife"
+      ]
+    },
+    {
+      "ID": 510007,
+      "Entries": [
+        "Poison Knife"
+      ]
+    },
+    {
+      "ID": 510008,
+      "Entries": [
+        "Stone"
+      ]
+    },
+    {
+      "ID": 510009,
+      "Entries": [
+        "Return"
+      ]
+    },
+    {
+      "ID": 510010,
+      "Entries": [
+        "Signpost"
+      ]
+    },
+    {
+      "ID": 510011,
+      "Entries": [
+        "The Ominous Universal Grail of Thumel (3)"
+      ]
+    },
+    {
+      "ID": 510012,
+      "Entries": [
+        "The Holy Grail of the Sinister Tomb (3)"
+      ]
+    },
+    {
+      "ID": 510013,
+      "Entries": [
+        "The Ominous Universal Grail of Tumer-Il (5)"
+      ]
+    },
+    {
+      "ID": 510014,
+      "Entries": [
+        "The Holy Grail of the Ominous Sick Roland (5)"
+      ]
+    },
+    {
+      "ID": 510015,
+      "Entries": [
+        "The Holy Grail of Ominous Izu (5)"
+      ]
+    },
+    {
+      "ID": 510100,
+      "Entries": [
+        "Alien Beast Hunting Knife"
+      ]
+    },
+    {
+      "ID": 510101,
+      "Entries": [
+        "Lost Beast Hunting Knife"
+      ]
+    },
+    {
+      "ID": 510102,
+      "Entries": [
+        "Abstinence from foreign meat"
+      ]
+    },
+    {
+      "ID": 510103,
+      "Entries": [
+        "Lost Flesh Abstinence"
+      ]
+    },
+    {
+      "ID": 510104,
+      "Entries": [
+        "Heterogenous Church Stakes"
+      ]
+    },
+    {
+      "ID": 510105,
+      "Entries": [
+        "Lost Church Stake"
+      ]
+    },
+    {
+      "ID": 510106,
+      "Entries": [
+        "Alien Bow Sword"
+      ]
+    },
+    {
+      "ID": 510107,
+      "Entries": [
+        "Lost Bow Sword"
+      ]
+    },
+    {
+      "ID": 510108,
+      "Entries": [
+        "Heterogeneous Moonlight Holy Sword"
+      ]
+    },
+    {
+      "ID": 510109,
+      "Entries": [
+        "Lost Moonlight Sword"
+      ]
+    },
+    {
+      "ID": 510110,
+      "Entries": [
+        "Alien leaf litter"
+      ]
+    },
+    {
+      "ID": 510111,
+      "Entries": [
+        "Lost leaves"
+      ]
+    },
+    {
+      "ID": 510112,
+      "Entries": [
+        "Heterogeneous Circular Saw"
+      ]
+    },
+    {
+      "ID": 510113,
+      "Entries": [
+        "Lost Circular Saw"
+      ]
+    },
+    {
+      "ID": 510114,
+      "Entries": [
+        "Alien Explosive Hammer"
+      ]
+    },
+    {
+      "ID": 510115,
+      "Entries": [
+        "Lost Explosive Hammer"
+      ]
+    },
+    {
+      "ID": 510116,
+      "Entries": [
+        "Alien Bloodletting Hammer"
+      ]
+    },
+    {
+      "ID": 510117,
+      "Entries": [
+        "Lost Bloodletting Hammer"
+      ]
+    },
+    {
+      "ID": 510118,
+      "Entries": [
+        "Heterogeneous Small Amun Arm"
+      ]
+    },
+    {
+      "ID": 510119,
+      "Entries": [
+        "The Lost Lesser Arm of Amun"
+      ]
+    },
+    {
+      "ID": 510120,
+      "Entries": [
+        "Alien parasites"
+      ]
+    },
+    {
+      "ID": 510121,
+      "Entries": [
+        "The lost parasite"
+      ]
+    },
+    {
+      "ID": 520000,
+      "Entries": [
+        "Blood transfusion"
+      ]
+    },
+    {
+      "ID": 520001,
+      "Entries": [
+        "bullet"
+      ]
+    },
+    {
+      "ID": 520002,
+      "Entries": [
+        "Antidotes"
+      ]
+    },
+    {
+      "ID": 520003,
+      "Entries": [
+        "Molotov cocktail"
+      ]
+    },
+    {
+      "ID": 520004,
+      "Entries": [
+        "Oil bottle"
+      ]
+    },
+    {
+      "ID": 520005,
+      "Entries": [
+        "Molotov cocktail behind"
+      ]
+    },
+    {
+      "ID": 520006,
+      "Entries": [
+        "Throwing Knife"
+      ]
+    },
+    {
+      "ID": 520007,
+      "Entries": [
+        "Poison Knife"
+      ]
+    },
+    {
+      "ID": 520008,
+      "Entries": [
+        "Stone"
+      ]
+    },
+    {
+      "ID": 520009,
+      "Entries": [
+        "Return"
+      ]
+    },
+    {
+      "ID": 520010,
+      "Entries": [
+        "Signpost"
+      ]
+    },
+    {
+      "ID": 520011,
+      "Entries": [
+        "The Ominous Universal Grail of Thumel (3)"
+      ]
+    },
+    {
+      "ID": 520012,
+      "Entries": [
+        "The Holy Grail of the Sinister Tomb (3)"
+      ]
+    },
+    {
+      "ID": 520013,
+      "Entries": [
+        "The Ominous Universal Grail of Tumer-Il (5)"
+      ]
+    },
+    {
+      "ID": 520014,
+      "Entries": [
+        "The Holy Grail of the Ominous Sick Roland (5)"
+      ]
+    },
+    {
+      "ID": 520015,
+      "Entries": [
+        "The Holy Grail of Ominous Izu (5)"
+      ]
+    },
+    {
+      "ID": 520100,
+      "Entries": [
+        "Alien Beast Hunting Knife"
+      ]
+    },
+    {
+      "ID": 520101,
+      "Entries": [
+        "Lost Beast Hunting Knife"
+      ]
+    },
+    {
+      "ID": 520102,
+      "Entries": [
+        "Abstinence from foreign meat"
+      ]
+    },
+    {
+      "ID": 520103,
+      "Entries": [
+        "Lost Flesh Abstinence"
+      ]
+    },
+    {
+      "ID": 520104,
+      "Entries": [
+        "Heterogenous Church Stakes"
+      ]
+    },
+    {
+      "ID": 520105,
+      "Entries": [
+        "Lost Church Stake"
+      ]
+    },
+    {
+      "ID": 520106,
+      "Entries": [
+        "Alien Bow Sword"
+      ]
+    },
+    {
+      "ID": 520107,
+      "Entries": [
+        "Lost Bow Sword"
+      ]
+    },
+    {
+      "ID": 520108,
+      "Entries": [
+        "Heterogeneous Moonlight Holy Sword"
+      ]
+    },
+    {
+      "ID": 520109,
+      "Entries": [
+        "Lost Moonlight Sword"
+      ]
+    },
+    {
+      "ID": 520110,
+      "Entries": [
+        "Alien leaf litter"
+      ]
+    },
+    {
+      "ID": 520111,
+      "Entries": [
+        "Lost leaves"
+      ]
+    },
+    {
+      "ID": 520112,
+      "Entries": [
+        "Heterogeneous Circular Saw"
+      ]
+    },
+    {
+      "ID": 520113,
+      "Entries": [
+        "Lost Circular Saw"
+      ]
+    },
+    {
+      "ID": 520114,
+      "Entries": [
+        "Alien Explosive Hammer"
+      ]
+    },
+    {
+      "ID": 520115,
+      "Entries": [
+        "Lost Explosive Hammer"
+      ]
+    },
+    {
+      "ID": 520116,
+      "Entries": [
+        "Alien Bloodletting Hammer"
+      ]
+    },
+    {
+      "ID": 520117,
+      "Entries": [
+        "Lost Bloodletting Hammer"
+      ]
+    },
+    {
+      "ID": 520118,
+      "Entries": [
+        "Heterogeneous Small Amun Arm"
+      ]
+    },
+    {
+      "ID": 520119,
+      "Entries": [
+        "The Lost Lesser Arm of Amun"
+      ]
+    },
+    {
+      "ID": 520120,
+      "Entries": [
+        "Alien parasites"
+      ]
+    },
+    {
+      "ID": 520121,
+      "Entries": [
+        "The lost parasite"
+      ]
+    },
+    {
+      "ID": 530000,
+      "Entries": [
+        "Blood transfusion"
+      ]
+    },
+    {
+      "ID": 530001,
+      "Entries": [
+        "bullet"
+      ]
+    },
+    {
+      "ID": 530002,
+      "Entries": [
+        "Antidotes"
+      ]
+    },
+    {
+      "ID": 530003,
+      "Entries": [
+        "Molotov cocktail"
+      ]
+    },
+    {
+      "ID": 530004,
+      "Entries": [
+        "Oil bottle"
+      ]
+    },
+    {
+      "ID": 530005,
+      "Entries": [
+        "Molotov cocktail behind"
+      ]
+    },
+    {
+      "ID": 530006,
+      "Entries": [
+        "Throwing Knife"
+      ]
+    },
+    {
+      "ID": 530007,
+      "Entries": [
+        "Poison Knife"
+      ]
+    },
+    {
+      "ID": 530008,
+      "Entries": [
+        "Stone"
+      ]
+    },
+    {
+      "ID": 530009,
+      "Entries": [
+        "Return"
+      ]
+    },
+    {
+      "ID": 530010,
+      "Entries": [
+        "Signpost"
+      ]
+    },
+    {
+      "ID": 530011,
+      "Entries": [
+        "The Ominous Universal Grail of Thumel (3)"
+      ]
+    },
+    {
+      "ID": 530012,
+      "Entries": [
+        "The Holy Grail of the Sinister Tomb (3)"
+      ]
+    },
+    {
+      "ID": 530013,
+      "Entries": [
+        "The Ominous Universal Grail of Tumer-Il (5)"
+      ]
+    },
+    {
+      "ID": 530014,
+      "Entries": [
+        "The Holy Grail of the Ominous Sick Roland (5)"
+      ]
+    },
+    {
+      "ID": 530015,
+      "Entries": [
+        "The Holy Grail of Ominous Izu (5)"
+      ]
+    },
+    {
+      "ID": 530100,
+      "Entries": [
+        "Alien Beast Hunting Knife"
+      ]
+    },
+    {
+      "ID": 530101,
+      "Entries": [
+        "Lost Beast Hunting Knife"
+      ]
+    },
+    {
+      "ID": 530102,
+      "Entries": [
+        "Abstinence from foreign meat"
+      ]
+    },
+    {
+      "ID": 530103,
+      "Entries": [
+        "Lost Flesh Abstinence"
+      ]
+    },
+    {
+      "ID": 530104,
+      "Entries": [
+        "Heterogenous Church Stakes"
+      ]
+    },
+    {
+      "ID": 530105,
+      "Entries": [
+        "Lost Church Stake"
+      ]
+    },
+    {
+      "ID": 530106,
+      "Entries": [
+        "Alien Bow Sword"
+      ]
+    },
+    {
+      "ID": 530107,
+      "Entries": [
+        "Lost Bow Sword"
+      ]
+    },
+    {
+      "ID": 530108,
+      "Entries": [
+        "Heterogeneous Moonlight Holy Sword"
+      ]
+    },
+    {
+      "ID": 530109,
+      "Entries": [
+        "Lost Moonlight Sword"
+      ]
+    },
+    {
+      "ID": 530110,
+      "Entries": [
+        "Alien leaf litter"
+      ]
+    },
+    {
+      "ID": 530111,
+      "Entries": [
+        "Lost leaves"
+      ]
+    },
+    {
+      "ID": 530112,
+      "Entries": [
+        "Heterogeneous Circular Saw"
+      ]
+    },
+    {
+      "ID": 530113,
+      "Entries": [
+        "Lost Circular Saw"
+      ]
+    },
+    {
+      "ID": 530114,
+      "Entries": [
+        "Alien Explosive Hammer"
+      ]
+    },
+    {
+      "ID": 530115,
+      "Entries": [
+        "Lost Explosive Hammer"
+      ]
+    },
+    {
+      "ID": 530116,
+      "Entries": [
+        "Alien Bloodletting Hammer"
+      ]
+    },
+    {
+      "ID": 530117,
+      "Entries": [
+        "Lost Bloodletting Hammer"
+      ]
+    },
+    {
+      "ID": 530118,
+      "Entries": [
+        "Heterogeneous Small Amun Arm"
+      ]
+    },
+    {
+      "ID": 530119,
+      "Entries": [
+        "The Lost Lesser Arm of Amun"
+      ]
+    },
+    {
+      "ID": 530120,
+      "Entries": [
+        "Alien parasites"
+      ]
+    },
+    {
+      "ID": 530121,
+      "Entries": [
+        "The lost parasite"
+      ]
+    },
+    {
+      "ID": 540000,
+      "Entries": [
+        "Blood transfusion"
+      ]
+    },
+    {
+      "ID": 540001,
+      "Entries": [
+        "bullet"
+      ]
+    },
+    {
+      "ID": 540002,
+      "Entries": [
+        "Antidotes"
+      ]
+    },
+    {
+      "ID": 540003,
+      "Entries": [
+        "Molotov cocktail"
+      ]
+    },
+    {
+      "ID": 540004,
+      "Entries": [
+        "Oil bottle"
+      ]
+    },
+    {
+      "ID": 540005,
+      "Entries": [
+        "Molotov cocktail behind"
+      ]
+    },
+    {
+      "ID": 540006,
+      "Entries": [
+        "Throwing Knife"
+      ]
+    },
+    {
+      "ID": 540007,
+      "Entries": [
+        "Poison Knife"
+      ]
+    },
+    {
+      "ID": 540008,
+      "Entries": [
+        "Stone"
+      ]
+    },
+    {
+      "ID": 540009,
+      "Entries": [
+        "Return"
+      ]
+    },
+    {
+      "ID": 540010,
+      "Entries": [
+        "Signpost"
+      ]
+    },
+    {
+      "ID": 540011,
+      "Entries": [
+        "The Ominous Universal Grail of Thumel (3)"
+      ]
+    },
+    {
+      "ID": 540012,
+      "Entries": [
+        "The Holy Grail of the Sinister Tomb (3)"
+      ]
+    },
+    {
+      "ID": 540013,
+      "Entries": [
+        "The Ominous Universal Grail of Tumer-Il (5)"
+      ]
+    },
+    {
+      "ID": 540014,
+      "Entries": [
+        "The Holy Grail of the Ominous Sick Roland (5)"
+      ]
+    },
+    {
+      "ID": 540015,
+      "Entries": [
+        "The Holy Grail of Ominous Izu (5)"
+      ]
+    },
+    {
+      "ID": 540100,
+      "Entries": [
+        "Alien Beast Hunting Knife"
+      ]
+    },
+    {
+      "ID": 540101,
+      "Entries": [
+        "Lost Beast Hunting Knife"
+      ]
+    },
+    {
+      "ID": 540102,
+      "Entries": [
+        "Abstinence from foreign meat"
+      ]
+    },
+    {
+      "ID": 540103,
+      "Entries": [
+        "Lost Flesh Abstinence"
+      ]
+    },
+    {
+      "ID": 540104,
+      "Entries": [
+        "Heterogenous Church Stakes"
+      ]
+    },
+    {
+      "ID": 540105,
+      "Entries": [
+        "Lost Church Stake"
+      ]
+    },
+    {
+      "ID": 540106,
+      "Entries": [
+        "Alien Bow Sword"
+      ]
+    },
+    {
+      "ID": 540107,
+      "Entries": [
+        "Lost Bow Sword"
+      ]
+    },
+    {
+      "ID": 540108,
+      "Entries": [
+        "Heterogeneous Moonlight Holy Sword"
+      ]
+    },
+    {
+      "ID": 540109,
+      "Entries": [
+        "Lost Moonlight Sword"
+      ]
+    },
+    {
+      "ID": 540110,
+      "Entries": [
+        "Alien leaf litter"
+      ]
+    },
+    {
+      "ID": 540111,
+      "Entries": [
+        "Lost leaves"
+      ]
+    },
+    {
+      "ID": 540112,
+      "Entries": [
+        "Heterogeneous Circular Saw"
+      ]
+    },
+    {
+      "ID": 540113,
+      "Entries": [
+        "Lost Circular Saw"
+      ]
+    },
+    {
+      "ID": 540114,
+      "Entries": [
+        "Alien Explosive Hammer"
+      ]
+    },
+    {
+      "ID": 540115,
+      "Entries": [
+        "Lost Explosive Hammer"
+      ]
+    },
+    {
+      "ID": 540116,
+      "Entries": [
+        "Alien Bloodletting Hammer"
+      ]
+    },
+    {
+      "ID": 540117,
+      "Entries": [
+        "Lost Bloodletting Hammer"
+      ]
+    },
+    {
+      "ID": 540118,
+      "Entries": [
+        "Heterogeneous Small Amun Arm"
+      ]
+    },
+    {
+      "ID": 540119,
+      "Entries": [
+        "The Lost Lesser Arm of Amun"
+      ]
+    },
+    {
+      "ID": 540120,
+      "Entries": [
+        "Alien parasites"
+      ]
+    },
+    {
+      "ID": 540121,
+      "Entries": [
+        "The lost parasite"
+      ]
+    },
+    {
+      "ID": 610000,
+      "Entries": [
+        "Blood transfusion"
+      ]
+    },
+    {
+      "ID": 610001,
+      "Entries": [
+        "bullet"
+      ]
+    },
+    {
+      "ID": 610002,
+      "Entries": [
+        "Antidotes"
+      ]
+    },
+    {
+      "ID": 610003,
+      "Entries": [
+        "Molotov cocktail"
+      ]
+    },
+    {
+      "ID": 610004,
+      "Entries": [
+        "Oil bottle"
+      ]
+    },
+    {
+      "ID": 610005,
+      "Entries": [
+        "Molotov cocktail behind"
+      ]
+    },
+    {
+      "ID": 610006,
+      "Entries": [
+        "Throwing Knife"
+      ]
+    },
+    {
+      "ID": 610007,
+      "Entries": [
+        "Poison Knife"
+      ]
+    },
+    {
+      "ID": 610008,
+      "Entries": [
+        "Madness Recovery"
+      ]
+    },
+    {
+      "ID": 610009,
+      "Entries": [
+        "Stone"
+      ]
+    },
+    {
+      "ID": 610010,
+      "Entries": [
+        "Return"
+      ]
+    },
+    {
+      "ID": 610011,
+      "Entries": [
+        "Signpost"
+      ]
+    },
+    {
+      "ID": 610012,
+      "Entries": [
+        "Enchantment [Fire]"
+      ]
+    },
+    {
+      "ID": 610013,
+      "Entries": [
+        "Enchantment [Lightning]"
+      ]
+    },
+    {
+      "ID": 610014,
+      "Entries": [
+        "Gun power up"
+      ]
+    },
+    {
+      "ID": 610015,
+      "Entries": [
+        "Beast Seduction"
+      ]
+    },
+    {
+      "ID": 610100,
+      "Entries": [
+        "Alien Beast Hunting Knife"
+      ]
+    },
+    {
+      "ID": 610101,
+      "Entries": [
+        "Lost Beast Hunting Knife"
+      ]
+    },
+    {
+      "ID": 610102,
+      "Entries": [
+        "Abstinence from foreign meat"
+      ]
+    },
+    {
+      "ID": 610103,
+      "Entries": [
+        "Lost Flesh Abstinence"
+      ]
+    },
+    {
+      "ID": 610104,
+      "Entries": [
+        "Heterogenous Church Stakes"
+      ]
+    },
+    {
+      "ID": 610105,
+      "Entries": [
+        "Lost Church Stake"
+      ]
+    },
+    {
+      "ID": 610106,
+      "Entries": [
+        "Alien Bow Sword"
+      ]
+    },
+    {
+      "ID": 610107,
+      "Entries": [
+        "Lost Bow Sword"
+      ]
+    },
+    {
+      "ID": 610108,
+      "Entries": [
+        "Heterogeneous Moonlight Holy Sword"
+      ]
+    },
+    {
+      "ID": 610109,
+      "Entries": [
+        "Lost Moonlight Sword"
+      ]
+    },
+    {
+      "ID": 610110,
+      "Entries": [
+        "Alien leaf litter"
+      ]
+    },
+    {
+      "ID": 610111,
+      "Entries": [
+        "Lost leaves"
+      ]
+    },
+    {
+      "ID": 610112,
+      "Entries": [
+        "Heterogeneous Circular Saw"
+      ]
+    },
+    {
+      "ID": 610113,
+      "Entries": [
+        "Lost Circular Saw"
+      ]
+    },
+    {
+      "ID": 610114,
+      "Entries": [
+        "Alien Explosive Hammer"
+      ]
+    },
+    {
+      "ID": 610115,
+      "Entries": [
+        "Lost Explosive Hammer"
+      ]
+    },
+    {
+      "ID": 610116,
+      "Entries": [
+        "Alien Bloodletting Hammer"
+      ]
+    },
+    {
+      "ID": 610117,
+      "Entries": [
+        "Lost Bloodletting Hammer"
+      ]
+    },
+    {
+      "ID": 610118,
+      "Entries": [
+        "Heterogeneous Small Amun Arm"
+      ]
+    },
+    {
+      "ID": 610119,
+      "Entries": [
+        "The Lost Lesser Arm of Amun"
+      ]
+    },
+    {
+      "ID": 610120,
+      "Entries": [
+        "Alien parasites"
+      ]
+    },
+    {
+      "ID": 610121,
+      "Entries": [
+        "The lost parasite"
+      ]
+    },
+    {
+      "ID": 620000,
+      "Entries": [
+        "Blood transfusion"
+      ]
+    },
+    {
+      "ID": 620001,
+      "Entries": [
+        "bullet"
+      ]
+    },
+    {
+      "ID": 620002,
+      "Entries": [
+        "Antidotes"
+      ]
+    },
+    {
+      "ID": 620003,
+      "Entries": [
+        "Molotov cocktail"
+      ]
+    },
+    {
+      "ID": 620004,
+      "Entries": [
+        "Oil bottle"
+      ]
+    },
+    {
+      "ID": 620005,
+      "Entries": [
+        "Molotov cocktail behind"
+      ]
+    },
+    {
+      "ID": 620006,
+      "Entries": [
+        "Throwing Knife"
+      ]
+    },
+    {
+      "ID": 620007,
+      "Entries": [
+        "Poison Knife"
+      ]
+    },
+    {
+      "ID": 620008,
+      "Entries": [
+        "Madness Recovery"
+      ]
+    },
+    {
+      "ID": 620009,
+      "Entries": [
+        "Stone"
+      ]
+    },
+    {
+      "ID": 620010,
+      "Entries": [
+        "Return"
+      ]
+    },
+    {
+      "ID": 620011,
+      "Entries": [
+        "Signpost"
+      ]
+    },
+    {
+      "ID": 620012,
+      "Entries": [
+        "Enchantment [Fire]"
+      ]
+    },
+    {
+      "ID": 620013,
+      "Entries": [
+        "Enchantment [Lightning]"
+      ]
+    },
+    {
+      "ID": 620014,
+      "Entries": [
+        "Gun power up"
+      ]
+    },
+    {
+      "ID": 620015,
+      "Entries": [
+        "Beast Seduction"
+      ]
+    },
+    {
+      "ID": 620100,
+      "Entries": [
+        "Alien Beast Hunting Knife"
+      ]
+    },
+    {
+      "ID": 620101,
+      "Entries": [
+        "Lost Beast Hunting Knife"
+      ]
+    },
+    {
+      "ID": 620102,
+      "Entries": [
+        "Abstinence from foreign meat"
+      ]
+    },
+    {
+      "ID": 620103,
+      "Entries": [
+        "Lost Flesh Abstinence"
+      ]
+    },
+    {
+      "ID": 620104,
+      "Entries": [
+        "Heterogenous Church Stakes"
+      ]
+    },
+    {
+      "ID": 620105,
+      "Entries": [
+        "Lost Church Stake"
+      ]
+    },
+    {
+      "ID": 620106,
+      "Entries": [
+        "Alien Bow Sword"
+      ]
+    },
+    {
+      "ID": 620107,
+      "Entries": [
+        "Lost Bow Sword"
+      ]
+    },
+    {
+      "ID": 620108,
+      "Entries": [
+        "Heterogeneous Moonlight Holy Sword"
+      ]
+    },
+    {
+      "ID": 620109,
+      "Entries": [
+        "Lost Moonlight Sword"
+      ]
+    },
+    {
+      "ID": 620110,
+      "Entries": [
+        "Alien leaf litter"
+      ]
+    },
+    {
+      "ID": 620111,
+      "Entries": [
+        "Lost leaves"
+      ]
+    },
+    {
+      "ID": 620112,
+      "Entries": [
+        "Heterogeneous Circular Saw"
+      ]
+    },
+    {
+      "ID": 620113,
+      "Entries": [
+        "Lost Circular Saw"
+      ]
+    },
+    {
+      "ID": 620114,
+      "Entries": [
+        "Alien Explosive Hammer"
+      ]
+    },
+    {
+      "ID": 620115,
+      "Entries": [
+        "Lost Explosive Hammer"
+      ]
+    },
+    {
+      "ID": 620116,
+      "Entries": [
+        "Alien Bloodletting Hammer"
+      ]
+    },
+    {
+      "ID": 620117,
+      "Entries": [
+        "Lost Bloodletting Hammer"
+      ]
+    },
+    {
+      "ID": 620118,
+      "Entries": [
+        "Heterogeneous Small Amun Arm"
+      ]
+    },
+    {
+      "ID": 620119,
+      "Entries": [
+        "The Lost Lesser Arm of Amun"
+      ]
+    },
+    {
+      "ID": 620120,
+      "Entries": [
+        "Alien parasites"
+      ]
+    },
+    {
+      "ID": 620121,
+      "Entries": [
+        "The lost parasite"
+      ]
+    },
+    {
+      "ID": 630000,
+      "Entries": [
+        "Blood transfusion"
+      ]
+    },
+    {
+      "ID": 630001,
+      "Entries": [
+        "bullet"
+      ]
+    },
+    {
+      "ID": 630002,
+      "Entries": [
+        "Antidotes"
+      ]
+    },
+    {
+      "ID": 630003,
+      "Entries": [
+        "Molotov cocktail"
+      ]
+    },
+    {
+      "ID": 630004,
+      "Entries": [
+        "Oil bottle"
+      ]
+    },
+    {
+      "ID": 630005,
+      "Entries": [
+        "Molotov cocktail behind"
+      ]
+    },
+    {
+      "ID": 630006,
+      "Entries": [
+        "Throwing Knife"
+      ]
+    },
+    {
+      "ID": 630007,
+      "Entries": [
+        "Poison Knife"
+      ]
+    },
+    {
+      "ID": 630008,
+      "Entries": [
+        "Madness Recovery"
+      ]
+    },
+    {
+      "ID": 630009,
+      "Entries": [
+        "Stone"
+      ]
+    },
+    {
+      "ID": 630010,
+      "Entries": [
+        "Return"
+      ]
+    },
+    {
+      "ID": 630011,
+      "Entries": [
+        "Signpost"
+      ]
+    },
+    {
+      "ID": 630012,
+      "Entries": [
+        "Enchantment [Fire]"
+      ]
+    },
+    {
+      "ID": 630013,
+      "Entries": [
+        "Enchantment [Lightning]"
+      ]
+    },
+    {
+      "ID": 630014,
+      "Entries": [
+        "Gun power up"
+      ]
+    },
+    {
+      "ID": 630015,
+      "Entries": [
+        "Beast Seduction"
+      ]
+    },
+    {
+      "ID": 630100,
+      "Entries": [
+        "Alien Beast Hunting Knife"
+      ]
+    },
+    {
+      "ID": 630101,
+      "Entries": [
+        "Lost Beast Hunting Knife"
+      ]
+    },
+    {
+      "ID": 630102,
+      "Entries": [
+        "Abstinence from foreign meat"
+      ]
+    },
+    {
+      "ID": 630103,
+      "Entries": [
+        "Lost Flesh Abstinence"
+      ]
+    },
+    {
+      "ID": 630104,
+      "Entries": [
+        "Heterogenous Church Stakes"
+      ]
+    },
+    {
+      "ID": 630105,
+      "Entries": [
+        "Lost Church Stake"
+      ]
+    },
+    {
+      "ID": 630106,
+      "Entries": [
+        "Alien Bow Sword"
+      ]
+    },
+    {
+      "ID": 630107,
+      "Entries": [
+        "Lost Bow Sword"
+      ]
+    },
+    {
+      "ID": 630108,
+      "Entries": [
+        "Heterogeneous Moonlight Holy Sword"
+      ]
+    },
+    {
+      "ID": 630109,
+      "Entries": [
+        "Lost Moonlight Sword"
+      ]
+    },
+    {
+      "ID": 630110,
+      "Entries": [
+        "Alien leaf litter"
+      ]
+    },
+    {
+      "ID": 630111,
+      "Entries": [
+        "Lost leaves"
+      ]
+    },
+    {
+      "ID": 630112,
+      "Entries": [
+        "Heterogeneous Circular Saw"
+      ]
+    },
+    {
+      "ID": 630113,
+      "Entries": [
+        "Lost Circular Saw"
+      ]
+    },
+    {
+      "ID": 630114,
+      "Entries": [
+        "Alien Explosive Hammer"
+      ]
+    },
+    {
+      "ID": 630115,
+      "Entries": [
+        "Lost Explosive Hammer"
+      ]
+    },
+    {
+      "ID": 630116,
+      "Entries": [
+        "Alien Bloodletting Hammer"
+      ]
+    },
+    {
+      "ID": 630117,
+      "Entries": [
+        "Lost Bloodletting Hammer"
+      ]
+    },
+    {
+      "ID": 630118,
+      "Entries": [
+        "Heterogeneous Small Amun Arm"
+      ]
+    },
+    {
+      "ID": 630119,
+      "Entries": [
+        "The Lost Lesser Arm of Amun"
+      ]
+    },
+    {
+      "ID": 630120,
+      "Entries": [
+        "Alien parasites"
+      ]
+    },
+    {
+      "ID": 630121,
+      "Entries": [
+        "The lost parasite"
+      ]
+    },
+    {
+      "ID": 640000,
+      "Entries": [
+        "Blood transfusion"
+      ]
+    },
+    {
+      "ID": 640001,
+      "Entries": [
+        "bullet"
+      ]
+    },
+    {
+      "ID": 640002,
+      "Entries": [
+        "Antidotes"
+      ]
+    },
+    {
+      "ID": 640003,
+      "Entries": [
+        "Molotov cocktail"
+      ]
+    },
+    {
+      "ID": 640004,
+      "Entries": [
+        "Oil bottle"
+      ]
+    },
+    {
+      "ID": 640005,
+      "Entries": [
+        "Molotov cocktail behind"
+      ]
+    },
+    {
+      "ID": 640006,
+      "Entries": [
+        "Throwing Knife"
+      ]
+    },
+    {
+      "ID": 640007,
+      "Entries": [
+        "Poison Knife"
+      ]
+    },
+    {
+      "ID": 640008,
+      "Entries": [
+        "Madness Recovery"
+      ]
+    },
+    {
+      "ID": 640009,
+      "Entries": [
+        "Stone"
+      ]
+    },
+    {
+      "ID": 640010,
+      "Entries": [
+        "Return"
+      ]
+    },
+    {
+      "ID": 640011,
+      "Entries": [
+        "Signpost"
+      ]
+    },
+    {
+      "ID": 640012,
+      "Entries": [
+        "Enchantment [Fire]"
+      ]
+    },
+    {
+      "ID": 640013,
+      "Entries": [
+        "Enchantment [Lightning]"
+      ]
+    },
+    {
+      "ID": 640014,
+      "Entries": [
+        "Gun power up"
+      ]
+    },
+    {
+      "ID": 640015,
+      "Entries": [
+        "Beast Seduction"
+      ]
+    },
+    {
+      "ID": 640100,
+      "Entries": [
+        "Alien Beast Hunting Knife"
+      ]
+    },
+    {
+      "ID": 640101,
+      "Entries": [
+        "Lost Beast Hunting Knife"
+      ]
+    },
+    {
+      "ID": 640102,
+      "Entries": [
+        "Abstinence from foreign meat"
+      ]
+    },
+    {
+      "ID": 640103,
+      "Entries": [
+        "Lost Flesh Abstinence"
+      ]
+    },
+    {
+      "ID": 640104,
+      "Entries": [
+        "Heterogenous Church Stakes"
+      ]
+    },
+    {
+      "ID": 640105,
+      "Entries": [
+        "Lost Church Stake"
+      ]
+    },
+    {
+      "ID": 640106,
+      "Entries": [
+        "Alien Bow Sword"
+      ]
+    },
+    {
+      "ID": 640107,
+      "Entries": [
+        "Lost Bow Sword"
+      ]
+    },
+    {
+      "ID": 640108,
+      "Entries": [
+        "Heterogeneous Moonlight Holy Sword"
+      ]
+    },
+    {
+      "ID": 640109,
+      "Entries": [
+        "Lost Moonlight Sword"
+      ]
+    },
+    {
+      "ID": 640110,
+      "Entries": [
+        "Alien leaf litter"
+      ]
+    },
+    {
+      "ID": 640111,
+      "Entries": [
+        "Lost leaves"
+      ]
+    },
+    {
+      "ID": 640112,
+      "Entries": [
+        "Heterogeneous Circular Saw"
+      ]
+    },
+    {
+      "ID": 640113,
+      "Entries": [
+        "Lost Circular Saw"
+      ]
+    },
+    {
+      "ID": 640114,
+      "Entries": [
+        "Alien Explosive Hammer"
+      ]
+    },
+    {
+      "ID": 640115,
+      "Entries": [
+        "Lost Explosive Hammer"
+      ]
+    },
+    {
+      "ID": 640116,
+      "Entries": [
+        "Alien Bloodletting Hammer"
+      ]
+    },
+    {
+      "ID": 640117,
+      "Entries": [
+        "Lost Bloodletting Hammer"
+      ]
+    },
+    {
+      "ID": 640118,
+      "Entries": [
+        "Heterogeneous Small Amun Arm"
+      ]
+    },
+    {
+      "ID": 640119,
+      "Entries": [
+        "The Lost Lesser Arm of Amun"
+      ]
+    },
+    {
+      "ID": 640120,
+      "Entries": [
+        "Alien parasites"
+      ]
+    },
+    {
+      "ID": 640121,
+      "Entries": [
+        "The lost parasite"
+      ]
+    },
+    {
+      "ID": 900000,
+      "Entries": [
+        "Nokonata _ Slot Type 1"
+      ]
+    },
+    {
+      "ID": 900001,
+      "Entries": [
+        "Nokonata _Slot Type 2"
+      ]
+    },
+    {
+      "ID": 900002,
+      "Entries": [
+        "Nokonata _ Slot Type 3"
+      ]
+    }
+  ]
+}

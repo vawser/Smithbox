@@ -1,0 +1,1301 @@
+{
+  "Name": "NewMenuColorTableParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Character creation: For ○○"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Character Makeup: Skin Type: Caucasian"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Black"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Yellow"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 115,
+      "Entries": [
+        "India"
+      ]
+    },
+    {
+      "ID": 116,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 117,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 118,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 119,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Red face"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 122,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 123,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 124,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 125,
+      "Entries": [
+        "Dull color"
+      ]
+    },
+    {
+      "ID": 126,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 127,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 128,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 129,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "Monochrome"
+      ]
+    },
+    {
+      "ID": 131,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 132,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 133,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 134,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 135,
+      "Entries": [
+        "special"
+      ]
+    },
+    {
+      "ID": 136,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 137,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 138,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 139,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Character Makeup: Eyes (shared eyes right eye left eye)"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 204,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 205,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 206,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 207,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 208,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 209,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 211,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 212,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 213,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 214,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 215,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 216,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 217,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 218,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 219,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 220,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 221,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 222,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 223,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 224,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 225,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 226,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 227,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 228,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 229,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 230,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 231,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 232,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 233,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 234,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 235,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 236,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 237,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 238,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 239,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "Character Makeup: For hair (brows hair beard eyelashes)"
+      ]
+    },
+    {
+      "ID": 301,
+      "Entries": [
+        "Monochrome"
+      ]
+    },
+    {
+      "ID": 302,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 303,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 304,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 305,
+      "Entries": [
+        "tea"
+      ]
+    },
+    {
+      "ID": 306,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 307,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 308,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 309,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 310,
+      "Entries": [
+        "gold"
+      ]
+    },
+    {
+      "ID": 311,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 312,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 313,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 314,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 315,
+      "Entries": [
+        "red"
+      ]
+    },
+    {
+      "ID": 316,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 317,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 318,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 319,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 320,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 321,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 322,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 323,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 324,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 325,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 326,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 327,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 328,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 329,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 330,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 331,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 332,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 333,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 334,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 335,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 336,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 337,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 338,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 339,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "Character Creation: Accessories"
+      ]
+    },
+    {
+      "ID": 401,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 402,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 403,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 404,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 405,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 406,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 407,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 408,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 409,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 410,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 411,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 412,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 413,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 414,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 415,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 416,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 417,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 418,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 419,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 420,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 421,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 422,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 423,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 424,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 425,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 426,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 427,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 428,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 429,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 430,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 431,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 432,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 433,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 434,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 435,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 436,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 437,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 438,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 439,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "Character Make: For Decals"
+      ]
+    },
+    {
+      "ID": 501,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 502,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 503,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 504,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 505,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 506,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 507,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 508,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 509,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 510,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 511,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 512,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 513,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 514,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 515,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 516,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 517,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 518,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 519,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 520,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 521,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 522,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 523,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 524,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 525,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 526,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 527,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 528,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 529,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 530,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 531,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 532,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 533,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 534,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 535,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 536,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 537,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 538,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 539,
+      "Entries": [
+        "null"
+      ]
+    }
+  ]
+}

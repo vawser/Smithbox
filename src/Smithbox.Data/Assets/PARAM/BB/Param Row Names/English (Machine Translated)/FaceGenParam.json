@@ -1,0 +1,887 @@
+{
+  "Name": "FaceGenParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "testData"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "male _ Prototype 1"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "male _ Prototype 2"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "male _ Prototype 3"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "male _ Prototype 4"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "male _ Prototype 5"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "male _ Prototype 6"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "male _ Prototype 7"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "male _ Prototype 8"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "male _ Prototype 9"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "male _ Prototype 10"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "male _ Prototype 11"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "male _ Prototype 12"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "male _ Prototype 13"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "male _ Prototype 14"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "woman _ Prototype 1"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "woman _ Prototype 2"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "4th Edition Warrior _ man"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "4th Edition Knight _ man"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "4th Edition Wizard _ woman"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "4th Edition Sorcerer _ man"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "E3 Sun Knight _ man"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Default face test _01"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Default face test _02"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Default face test _03"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Default face test _04"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Default face test _05"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Default face test _06"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "Default face test _07"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "Default face test _08"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "Default face test _09"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "Default face test _10"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Default face test _11"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Default face test _12"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "Default face test _13"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "Default face test _14"
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        "Default face test _15"
+      ]
+    },
+    {
+      "ID": 115,
+      "Entries": [
+        "Default face test _16"
+      ]
+    },
+    {
+      "ID": 116,
+      "Entries": [
+        "Default face test _17"
+      ]
+    },
+    {
+      "ID": 117,
+      "Entries": [
+        "Default face test _18"
+      ]
+    },
+    {
+      "ID": 118,
+      "Entries": [
+        "Default face test _19"
+      ]
+    },
+    {
+      "ID": 119,
+      "Entries": [
+        "Default face test _20"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Default face test _twenty one"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "Default face test _twenty two"
+      ]
+    },
+    {
+      "ID": 122,
+      "Entries": [
+        "Default face test _twenty three"
+      ]
+    },
+    {
+      "ID": 123,
+      "Entries": [
+        "Default face test _twenty four"
+      ]
+    },
+    {
+      "ID": 124,
+      "Entries": [
+        "Default face test _twenty five"
+      ]
+    },
+    {
+      "ID": 125,
+      "Entries": [
+        "Default face test _26"
+      ]
+    },
+    {
+      "ID": 126,
+      "Entries": [
+        "Default face test _27"
+      ]
+    },
+    {
+      "ID": 127,
+      "Entries": [
+        "Default face test _28"
+      ]
+    },
+    {
+      "ID": 128,
+      "Entries": [
+        "Default face test _29"
+      ]
+    },
+    {
+      "ID": 129,
+      "Entries": [
+        "Default face test _30"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "Default face test _31"
+      ]
+    },
+    {
+      "ID": 131,
+      "Entries": [
+        "Default face test _32"
+      ]
+    },
+    {
+      "ID": 132,
+      "Entries": [
+        "Default face test _33"
+      ]
+    },
+    {
+      "ID": 133,
+      "Entries": [
+        "Default face test _34"
+      ]
+    },
+    {
+      "ID": 134,
+      "Entries": [
+        "Default face test _35"
+      ]
+    },
+    {
+      "ID": 135,
+      "Entries": [
+        "Default face test _36"
+      ]
+    },
+    {
+      "ID": 136,
+      "Entries": [
+        "Default face test _37"
+      ]
+    },
+    {
+      "ID": 137,
+      "Entries": [
+        "Default face test _38"
+      ]
+    },
+    {
+      "ID": 138,
+      "Entries": [
+        "Default face test _39"
+      ]
+    },
+    {
+      "ID": 139,
+      "Entries": [
+        "Default face test _40"
+      ]
+    },
+    {
+      "ID": 140,
+      "Entries": [
+        "Default face test _41"
+      ]
+    },
+    {
+      "ID": 141,
+      "Entries": [
+        "Default face test _42"
+      ]
+    },
+    {
+      "ID": 142,
+      "Entries": [
+        "Default face test _43"
+      ]
+    },
+    {
+      "ID": 143,
+      "Entries": [
+        "Default face test _44"
+      ]
+    },
+    {
+      "ID": 144,
+      "Entries": [
+        "Default face test _45"
+      ]
+    },
+    {
+      "ID": 145,
+      "Entries": [
+        "Default face test _46"
+      ]
+    },
+    {
+      "ID": 146,
+      "Entries": [
+        "Default face test _47"
+      ]
+    },
+    {
+      "ID": 147,
+      "Entries": [
+        "Default face test _48"
+      ]
+    },
+    {
+      "ID": 148,
+      "Entries": [
+        "Default face test _49"
+      ]
+    },
+    {
+      "ID": 149,
+      "Entries": [
+        "Default face test _50"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "The Grey Saint"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Commoner face"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "Farmers' faces in Wuzhihe"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "Astra's noble face"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "Dragon Academy Student Face"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "The Saint's Face of Solrond"
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        "Katarina's cheerful face"
+      ]
+    },
+    {
+      "ID": 1006,
+      "Entries": [
+        "Karim's Gloomy Face"
+      ]
+    },
+    {
+      "ID": 1007,
+      "Entries": [
+        "Xena's Old Face"
+      ]
+    },
+    {
+      "ID": 1008,
+      "Entries": [
+        "The strange appearance of Onuma"
+      ]
+    },
+    {
+      "ID": 1009,
+      "Entries": [
+        "Foreigner's Face in the East"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Commoner face"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "Farmers' faces in Wuzhihe"
+      ]
+    },
+    {
+      "ID": 2002,
+      "Entries": [
+        "Astra's noble face"
+      ]
+    },
+    {
+      "ID": 2003,
+      "Entries": [
+        "Dragon Academy Student Face"
+      ]
+    },
+    {
+      "ID": 2004,
+      "Entries": [
+        "The Saint's Face of Solrond"
+      ]
+    },
+    {
+      "ID": 2005,
+      "Entries": [
+        "Katarina's cheerful face"
+      ]
+    },
+    {
+      "ID": 2006,
+      "Entries": [
+        "Karim's Gloomy Face"
+      ]
+    },
+    {
+      "ID": 2007,
+      "Entries": [
+        "Xena's Old Face"
+      ]
+    },
+    {
+      "ID": 2008,
+      "Entries": [
+        "The strange appearance of Onuma"
+      ]
+    },
+    {
+      "ID": 2009,
+      "Entries": [
+        "Foreigner's Face in the East"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "Sun Knight"
+      ]
+    },
+    {
+      "ID": 6001,
+      "Entries": [
+        "Knight of the Sun (Sun Bug) Ver )"
+      ]
+    },
+    {
+      "ID": 6002,
+      "Entries": [
+        "Knight of the Sun (Dead)"
+      ]
+    },
+    {
+      "ID": 6010,
+      "Entries": [
+        "Darkmoon Knight"
+      ]
+    },
+    {
+      "ID": 6020,
+      "Entries": [
+        "Knight Ostra"
+      ]
+    },
+    {
+      "ID": 6021,
+      "Entries": [
+        "Knight Ostra (enemy)"
+      ]
+    },
+    {
+      "ID": 6030,
+      "Entries": [
+        "\"Big Hat\" Rogan"
+      ]
+    },
+    {
+      "ID": 6031,
+      "Entries": [
+        "\"Big Hat\" Rogan (Dead)"
+      ]
+    },
+    {
+      "ID": 6040,
+      "Entries": [
+        "Rogann's Apprentice"
+      ]
+    },
+    {
+      "ID": 6041,
+      "Entries": [
+        "Rogann's disciple (dead)"
+      ]
+    },
+    {
+      "ID": 6050,
+      "Entries": [
+        "Exiled Princess"
+      ]
+    },
+    {
+      "ID": 6060,
+      "Entries": [
+        "The Grey Saint"
+      ]
+    },
+    {
+      "ID": 6070,
+      "Entries": [
+        "White Saint"
+      ]
+    },
+    {
+      "ID": 6071,
+      "Entries": [
+        "White Saint (Dead)"
+      ]
+    },
+    {
+      "ID": 6080,
+      "Entries": [
+        "Saint Knight A"
+      ]
+    },
+    {
+      "ID": 6090,
+      "Entries": [
+        "Saint Knight B"
+      ]
+    },
+    {
+      "ID": 6091,
+      "Entries": [
+        "Saint Knight B (Dead)"
+      ]
+    },
+    {
+      "ID": 6100,
+      "Entries": [
+        "Saint Knight C"
+      ]
+    },
+    {
+      "ID": 6101,
+      "Entries": [
+        "Saint Knight C (Dead)"
+      ]
+    },
+    {
+      "ID": 6130,
+      "Entries": [
+        "Pot Sorcerer"
+      ]
+    },
+    {
+      "ID": 6131,
+      "Entries": [
+        "Pot Sorcerer (Dead)"
+      ]
+    },
+    {
+      "ID": 6170,
+      "Entries": [
+        "Wandering Chaos"
+      ]
+    },
+    {
+      "ID": 6180,
+      "Entries": [
+        "Healer"
+      ]
+    },
+    {
+      "ID": 6220,
+      "Entries": [
+        "Blacksmith Rickert"
+      ]
+    },
+    {
+      "ID": 6250,
+      "Entries": [
+        "Broken-hearted Merchant"
+      ]
+    },
+    {
+      "ID": 6260,
+      "Entries": [
+        "Trickster"
+      ]
+    },
+    {
+      "ID": 6270,
+      "Entries": [
+        "Broken-hearted Warrior"
+      ]
+    },
+    {
+      "ID": 6271,
+      "Entries": [
+        "Broken-hearted Warrior (Dead)"
+      ]
+    },
+    {
+      "ID": 6280,
+      "Entries": [
+        "Onion Knight"
+      ]
+    },
+    {
+      "ID": 6290,
+      "Entries": [
+        "Onion Knight's Daughter"
+      ]
+    },
+    {
+      "ID": 6300,
+      "Entries": [
+        "Embraced Knight Lautrec"
+      ]
+    },
+    {
+      "ID": 6310,
+      "Entries": [
+        "Samurai"
+      ]
+    },
+    {
+      "ID": 6320,
+      "Entries": [
+        "Graveyard Coward Patch"
+      ]
+    },
+    {
+      "ID": 6370,
+      "Entries": [
+        "Dragon Priest"
+      ]
+    },
+    {
+      "ID": 6390,
+      "Entries": [
+        "Tarkus the Black Knight"
+      ]
+    },
+    {
+      "ID": 6400,
+      "Entries": [
+        "Belka Knight"
+      ]
+    },
+    {
+      "ID": 6410,
+      "Entries": [
+        "Witch Maros"
+      ]
+    },
+    {
+      "ID": 6420,
+      "Entries": [
+        "ninja"
+      ]
+    },
+    {
+      "ID": 6490,
+      "Entries": [
+        "Lautrec's Companion 1"
+      ]
+    },
+    {
+      "ID": 6500,
+      "Entries": [
+        "Lautrec's Companion 2"
+      ]
+    },
+    {
+      "ID": 6530,
+      "Entries": [
+        "Swamp Woman ( NPC Multi)"
+      ]
+    },
+    {
+      "ID": 6550,
+      "Entries": [
+        "Temple Knight ( NPC Multi)"
+      ]
+    },
+    {
+      "ID": 6560,
+      "Entries": [
+        "Thorn Knight ( NPC Multi)"
+      ]
+    },
+    {
+      "ID": 6570,
+      "Entries": [
+        "Yellow Robe ( NPC Multi)"
+      ]
+    },
+    {
+      "ID": 6580,
+      "Entries": [
+        "Castle Tower NPC (Hubbell)"
+      ]
+    },
+    {
+      "ID": 6600,
+      "Entries": [
+        "Royal Castle 1 Tower NPC (Ricard)"
+      ]
+    },
+    {
+      "ID": 6610,
+      "Entries": [
+        "Crystal Knight"
+      ]
+    },
+    {
+      "ID": 6801,
+      "Entries": [
+        "Bandit A Gatekeeper"
+      ]
+    },
+    {
+      "ID": 6802,
+      "Entries": [
+        "Bandit B Warrior"
+      ]
+    },
+    {
+      "ID": 6803,
+      "Entries": [
+        "Bandit C Archer"
+      ]
+    },
+    {
+      "ID": 6804,
+      "Entries": [
+        "Bandit DMagic (Attack)"
+      ]
+    },
+    {
+      "ID": 6805,
+      "Entries": [
+        "Bandit E Magic (Recovery)"
+      ]
+    },
+    {
+      "ID": 6806,
+      "Entries": [
+        "Bandit F Covert"
+      ]
+    },
+    {
+      "ID": 9999,
+      "Entries": [
+        "Phantom (without face)"
+      ]
+    }
+  ]
+}

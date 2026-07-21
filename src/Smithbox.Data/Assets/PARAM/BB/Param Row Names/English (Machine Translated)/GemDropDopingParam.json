@@ -1,0 +1,887 @@
+{
+  "Name": "GemDropDopingParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Defaults"
+      ]
+    },
+    {
+      "ID": 6100,
+      "Entries": [
+        "Automatically generated chalice [Level 1 】Thumel"
+      ]
+    },
+    {
+      "ID": 6109,
+      "Entries": [
+        "Fixed Grail [Level 1 】Thumel"
+      ]
+    },
+    {
+      "ID": 6200,
+      "Entries": [
+        "Automatically generated chalice [Level 2 】Thumel"
+      ]
+    },
+    {
+      "ID": 6209,
+      "Entries": [
+        "Fixed Grail [Level 2 】Thumel"
+      ]
+    },
+    {
+      "ID": 6210,
+      "Entries": [
+        "Automatically generated chalice [Level 2 】 Remote Grave"
+      ]
+    },
+    {
+      "ID": 6219,
+      "Entries": [
+        "Fixed Grail [Level 2 】 Remote Grave"
+      ]
+    },
+    {
+      "ID": 6300,
+      "Entries": [
+        "Automatically generated chalice [Level 3 】Thumel"
+      ]
+    },
+    {
+      "ID": 6302,
+      "Entries": [
+        "Automatically generated chalice [Level 3 】Thumel _ Multi"
+      ]
+    },
+    {
+      "ID": 6309,
+      "Entries": [
+        "Fixed Grail [Level 3 】Thumel"
+      ]
+    },
+    {
+      "ID": 6310,
+      "Entries": [
+        "Automatically generated chalice [Level 3 】 Remote Grave"
+      ]
+    },
+    {
+      "ID": 6312,
+      "Entries": [
+        "Automatically generated chalice [Level 3 】 Remote Grave _ Multi"
+      ]
+    },
+    {
+      "ID": 6319,
+      "Entries": [
+        "Fixed Grail [Level 3 】 Remote Grave"
+      ]
+    },
+    {
+      "ID": 6401,
+      "Entries": [
+        "Automatically generated chalice [Level 4 】Thumel _ curse"
+      ]
+    },
+    {
+      "ID": 6409,
+      "Entries": [
+        "Fixed Grail [Level 4 】Thumel _ curse"
+      ]
+    },
+    {
+      "ID": 6420,
+      "Entries": [
+        "Automatically generated chalice [Level 4 】 Laurent"
+      ]
+    },
+    {
+      "ID": 6429,
+      "Entries": [
+        "Fixed Grail [Level 4 】 Laurent"
+      ]
+    },
+    {
+      "ID": 6500,
+      "Entries": [
+        "Automatically generated chalice [Level 5 】Thumel"
+      ]
+    },
+    {
+      "ID": 6502,
+      "Entries": [
+        "Automatically generated chalice [Level 5 】Thumel _ Multi"
+      ]
+    },
+    {
+      "ID": 6509,
+      "Entries": [
+        "Fixed Grail [Level 5 】Thumel"
+      ]
+    },
+    {
+      "ID": 6520,
+      "Entries": [
+        "Automatically generated chalice [Level 5 】 Laurent"
+      ]
+    },
+    {
+      "ID": 6522,
+      "Entries": [
+        "Automatically generated chalice [Level 5 】 Laurent _ Multi"
+      ]
+    },
+    {
+      "ID": 6529,
+      "Entries": [
+        "Fixed Grail [Level 5 】 Laurent"
+      ]
+    },
+    {
+      "ID": 6530,
+      "Entries": [
+        "Automatically generated chalice [Level 5 】Is"
+      ]
+    },
+    {
+      "ID": 6532,
+      "Entries": [
+        "Automatically generated chalice [Level 5 】Is _ Multi"
+      ]
+    },
+    {
+      "ID": 6539,
+      "Entries": [
+        "Fixed Grail [Level 5 】Is"
+      ]
+    },
+    {
+      "ID": 21000000,
+      "Entries": [
+        "Location"
+      ]
+    },
+    {
+      "ID": 21010000,
+      "Entries": [
+        "Base (Reality)"
+      ]
+    },
+    {
+      "ID": 22000000,
+      "Entries": [
+        "Cemetery Street"
+      ]
+    },
+    {
+      "ID": 23000000,
+      "Entries": [
+        "ruins"
+      ]
+    },
+    {
+      "ID": 24000000,
+      "Entries": [
+        "Cathedral Quarter A"
+      ]
+    },
+    {
+      "ID": 24010000,
+      "Entries": [
+        "Cathedral Quarter B"
+      ]
+    },
+    {
+      "ID": 24020000,
+      "Entries": [
+        "Cathedral Quarter C (Second half)"
+      ]
+    },
+    {
+      "ID": 25000000,
+      "Entries": [
+        "Old castle"
+      ]
+    },
+    {
+      "ID": 26000000,
+      "Entries": [
+        "Trap Lord"
+      ]
+    },
+    {
+      "ID": 27000000,
+      "Entries": [
+        "forest"
+      ]
+    },
+    {
+      "ID": 28000000,
+      "Entries": [
+        "City of Sacrifice ( 1 th time)"
+      ]
+    },
+    {
+      "ID": 32000000,
+      "Entries": [
+        "University (Nightmare Classroom)"
+      ]
+    },
+    {
+      "ID": 33000000,
+      "Entries": [
+        "hometown"
+      ]
+    },
+    {
+      "ID": 34000000,
+      "Entries": [
+        "Cathedral Quarter D"
+      ]
+    },
+    {
+      "ID": 35000000,
+      "Entries": [
+        "Clock Tower"
+      ]
+    },
+    {
+      "ID": 36000000,
+      "Entries": [
+        "fishing village"
+      ]
+    },
+    {
+      "ID": 99850205,
+      "Entries": [
+        "Kitazaki test map 6"
+      ]
+    },
+    {
+      "ID": 99850301,
+      "Entries": [
+        "Gimmick action test"
+      ]
+    },
+    {
+      "ID": 99861000,
+      "Entries": [
+        "Nakajima test map"
+      ]
+    },
+    {
+      "ID": 99861001,
+      "Entries": [
+        "Nakajima test map 2"
+      ]
+    },
+    {
+      "ID": 99861002,
+      "Entries": [
+        "Nakajima test map 3"
+      ]
+    },
+    {
+      "ID": 900000010,
+      "Entries": [
+        "slot A /Rank 1"
+      ]
+    },
+    {
+      "ID": 900000020,
+      "Entries": [
+        "slot A /Rank 2"
+      ]
+    },
+    {
+      "ID": 900000030,
+      "Entries": [
+        "slot A /Rank 3"
+      ]
+    },
+    {
+      "ID": 900000040,
+      "Entries": [
+        "slot A /Rank 4"
+      ]
+    },
+    {
+      "ID": 900000050,
+      "Entries": [
+        "slot A /Rank 5"
+      ]
+    },
+    {
+      "ID": 900000060,
+      "Entries": [
+        "slot A /Rank 6"
+      ]
+    },
+    {
+      "ID": 900000070,
+      "Entries": [
+        "slot A /Rank 7"
+      ]
+    },
+    {
+      "ID": 900000080,
+      "Entries": [
+        "slot A /Rank 8"
+      ]
+    },
+    {
+      "ID": 900000090,
+      "Entries": [
+        "slot A /Rank 9"
+      ]
+    },
+    {
+      "ID": 900000100,
+      "Entries": [
+        "slot A /Rank 10"
+      ]
+    },
+    {
+      "ID": 900000110,
+      "Entries": [
+        "slot A /Rank 11"
+      ]
+    },
+    {
+      "ID": 900000120,
+      "Entries": [
+        "slot A /Rank 12"
+      ]
+    },
+    {
+      "ID": 900000130,
+      "Entries": [
+        "slot A /Rank 13"
+      ]
+    },
+    {
+      "ID": 900000140,
+      "Entries": [
+        "slot A/Rank 14"
+      ]
+    },
+    {
+      "ID": 900000150,
+      "Entries": [
+        "slot A /Rank 15"
+      ]
+    },
+    {
+      "ID": 900000160,
+      "Entries": [
+        "slot A /Rank 16"
+      ]
+    },
+    {
+      "ID": 900000170,
+      "Entries": [
+        "slot A /Rank 17"
+      ]
+    },
+    {
+      "ID": 900000180,
+      "Entries": [
+        "slot A /Rank 18"
+      ]
+    },
+    {
+      "ID": 900000190,
+      "Entries": [
+        "slot A /Rank 19"
+      ]
+    },
+    {
+      "ID": 900000200,
+      "Entries": [
+        "slot A /Rank 20"
+      ]
+    },
+    {
+      "ID": 900001010,
+      "Entries": [
+        "slot B /Rank 1"
+      ]
+    },
+    {
+      "ID": 900001020,
+      "Entries": [
+        "slot B /Rank 2"
+      ]
+    },
+    {
+      "ID": 900001030,
+      "Entries": [
+        "slot B /Rank 3"
+      ]
+    },
+    {
+      "ID": 900001040,
+      "Entries": [
+        "slot B /Rank 4"
+      ]
+    },
+    {
+      "ID": 900001050,
+      "Entries": [
+        "slot B /Rank 5"
+      ]
+    },
+    {
+      "ID": 900001060,
+      "Entries": [
+        "slot B /Rank 6"
+      ]
+    },
+    {
+      "ID": 900001070,
+      "Entries": [
+        "slot B /Rank 7"
+      ]
+    },
+    {
+      "ID": 900001080,
+      "Entries": [
+        "slot B /Rank 8"
+      ]
+    },
+    {
+      "ID": 900001090,
+      "Entries": [
+        "slot B /Rank 9"
+      ]
+    },
+    {
+      "ID": 900001100,
+      "Entries": [
+        "slot B /Rank 10"
+      ]
+    },
+    {
+      "ID": 900001110,
+      "Entries": [
+        "slot B /Rank 11"
+      ]
+    },
+    {
+      "ID": 900001120,
+      "Entries": [
+        "slot B /Rank 12"
+      ]
+    },
+    {
+      "ID": 900001130,
+      "Entries": [
+        "slotB /Rank 13"
+      ]
+    },
+    {
+      "ID": 900001140,
+      "Entries": [
+        "slot B /Rank 14"
+      ]
+    },
+    {
+      "ID": 900001150,
+      "Entries": [
+        "slot B /Rank 15"
+      ]
+    },
+    {
+      "ID": 900001160,
+      "Entries": [
+        "slot B /Rank 16"
+      ]
+    },
+    {
+      "ID": 900001170,
+      "Entries": [
+        "slot B /Rank 17"
+      ]
+    },
+    {
+      "ID": 900001180,
+      "Entries": [
+        "slot B /Rank 18"
+      ]
+    },
+    {
+      "ID": 900001190,
+      "Entries": [
+        "slot B /Rank 19"
+      ]
+    },
+    {
+      "ID": 900001200,
+      "Entries": [
+        "slot B /Rank 20"
+      ]
+    },
+    {
+      "ID": 900002010,
+      "Entries": [
+        "slot C /Rank 1"
+      ]
+    },
+    {
+      "ID": 900002020,
+      "Entries": [
+        "slot C /Rank 2"
+      ]
+    },
+    {
+      "ID": 900002030,
+      "Entries": [
+        "slot C /Rank 3"
+      ]
+    },
+    {
+      "ID": 900002040,
+      "Entries": [
+        "slot C /Rank 4"
+      ]
+    },
+    {
+      "ID": 900002050,
+      "Entries": [
+        "slot C /Rank 5"
+      ]
+    },
+    {
+      "ID": 900002060,
+      "Entries": [
+        "slot C /Rank 6"
+      ]
+    },
+    {
+      "ID": 900002070,
+      "Entries": [
+        "slot C /Rank 7"
+      ]
+    },
+    {
+      "ID": 900002080,
+      "Entries": [
+        "slot C /Rank 8"
+      ]
+    },
+    {
+      "ID": 900002090,
+      "Entries": [
+        "slot C /Rank 9"
+      ]
+    },
+    {
+      "ID": 900002100,
+      "Entries": [
+        "slot C /Rank 10"
+      ]
+    },
+    {
+      "ID": 900002110,
+      "Entries": [
+        "slot C /Rank 11"
+      ]
+    },
+    {
+      "ID": 900002120,
+      "Entries": [
+        "slot C /Rank 12"
+      ]
+    },
+    {
+      "ID": 900002130,
+      "Entries": [
+        "slot C /Rank 13"
+      ]
+    },
+    {
+      "ID": 900002140,
+      "Entries": [
+        "slot C /Rank 14"
+      ]
+    },
+    {
+      "ID": 900002150,
+      "Entries": [
+        "slot C /Rank 15"
+      ]
+    },
+    {
+      "ID": 900002160,
+      "Entries": [
+        "slot C /Rank 16"
+      ]
+    },
+    {
+      "ID": 900002170,
+      "Entries": [
+        "slot C /Rank 17"
+      ]
+    },
+    {
+      "ID": 900002180,
+      "Entries": [
+        "slot C /Rank 18"
+      ]
+    },
+    {
+      "ID": 900002190,
+      "Entries": [
+        "slot C /Rank 19"
+      ]
+    },
+    {
+      "ID": 900002200,
+      "Entries": [
+        "slot C /Rank 20"
+      ]
+    },
+    {
+      "ID": 900003010,
+      "Entries": [
+        "slot D /Rank 1"
+      ]
+    },
+    {
+      "ID": 900003020,
+      "Entries": [
+        "slot D /Rank 2"
+      ]
+    },
+    {
+      "ID": 900003030,
+      "Entries": [
+        "slot D /Rank 3"
+      ]
+    },
+    {
+      "ID": 900003040,
+      "Entries": [
+        "slot D /Rank 4"
+      ]
+    },
+    {
+      "ID": 900003050,
+      "Entries": [
+        "slot D /Rank 5"
+      ]
+    },
+    {
+      "ID": 900003060,
+      "Entries": [
+        "slot D /Rank 6"
+      ]
+    },
+    {
+      "ID": 900003070,
+      "Entries": [
+        "slot D /Rank 7"
+      ]
+    },
+    {
+      "ID": 900003080,
+      "Entries": [
+        "slot D /Rank 8"
+      ]
+    },
+    {
+      "ID": 900003090,
+      "Entries": [
+        "slot D /Rank 9"
+      ]
+    },
+    {
+      "ID": 900003100,
+      "Entries": [
+        "slot D /Rank10"
+      ]
+    },
+    {
+      "ID": 900003110,
+      "Entries": [
+        "slot D /Rank 11"
+      ]
+    },
+    {
+      "ID": 900003120,
+      "Entries": [
+        "slot D /Rank 12"
+      ]
+    },
+    {
+      "ID": 900003130,
+      "Entries": [
+        "slot D /Rank 13"
+      ]
+    },
+    {
+      "ID": 900003140,
+      "Entries": [
+        "slot D /Rank 14"
+      ]
+    },
+    {
+      "ID": 900003150,
+      "Entries": [
+        "slot D /Rank 15"
+      ]
+    },
+    {
+      "ID": 900003160,
+      "Entries": [
+        "slot D /Rank 16"
+      ]
+    },
+    {
+      "ID": 900003170,
+      "Entries": [
+        "slot D /Rank 17"
+      ]
+    },
+    {
+      "ID": 900003180,
+      "Entries": [
+        "slot D /Rank 18"
+      ]
+    },
+    {
+      "ID": 900003190,
+      "Entries": [
+        "slot D /Rank 19"
+      ]
+    },
+    {
+      "ID": 900003200,
+      "Entries": [
+        "slot D /Rank 20"
+      ]
+    },
+    {
+      "ID": 900004010,
+      "Entries": [
+        "slot F /Rank 1"
+      ]
+    },
+    {
+      "ID": 900004020,
+      "Entries": [
+        "slot F /Rank 2"
+      ]
+    },
+    {
+      "ID": 900004030,
+      "Entries": [
+        "slot F /Rank 3"
+      ]
+    },
+    {
+      "ID": 900004040,
+      "Entries": [
+        "slot F /Rank 4"
+      ]
+    },
+    {
+      "ID": 900004050,
+      "Entries": [
+        "slot F /Rank 5"
+      ]
+    },
+    {
+      "ID": 900004060,
+      "Entries": [
+        "slot F /Rank 6"
+      ]
+    },
+    {
+      "ID": 900004070,
+      "Entries": [
+        "slot F /Rank 7"
+      ]
+    },
+    {
+      "ID": 900004080,
+      "Entries": [
+        "slot F /Rank 8"
+      ]
+    },
+    {
+      "ID": 900004090,
+      "Entries": [
+        "slot F/Rank 9"
+      ]
+    },
+    {
+      "ID": 900004100,
+      "Entries": [
+        "slot F /Rank 10"
+      ]
+    },
+    {
+      "ID": 900004110,
+      "Entries": [
+        "slot F /Rank 11"
+      ]
+    },
+    {
+      "ID": 900004120,
+      "Entries": [
+        "slot F /Rank 12"
+      ]
+    },
+    {
+      "ID": 900004130,
+      "Entries": [
+        "slot F /Rank 13"
+      ]
+    },
+    {
+      "ID": 900004140,
+      "Entries": [
+        "slot F /Rank 14"
+      ]
+    },
+    {
+      "ID": 900004150,
+      "Entries": [
+        "slot F /Rank 15"
+      ]
+    },
+    {
+      "ID": 900004160,
+      "Entries": [
+        "slot F /Rank 16"
+      ]
+    },
+    {
+      "ID": 900004170,
+      "Entries": [
+        "slot F /Rank 17"
+      ]
+    },
+    {
+      "ID": 900004180,
+      "Entries": [
+        "slot F /Rank 18"
+      ]
+    },
+    {
+      "ID": 900004190,
+      "Entries": [
+        "slot F /Rank 19"
+      ]
+    },
+    {
+      "ID": 900004200,
+      "Entries": [
+        "slot F /Rank 20"
+      ]
+    }
+  ]
+}

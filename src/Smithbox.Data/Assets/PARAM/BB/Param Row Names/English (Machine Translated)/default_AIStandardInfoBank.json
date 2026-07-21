@@ -1,0 +1,235 @@
+{
+  "Name": "default_AIStandardInfoBank",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Do nothing"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Crocodile"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Snake Soldier"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Snake soldier licking meat"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Snakebow Soldier (Outside the Fort 0000 )"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Snake Bow Soldier (Fort Yagura 0001 0002 )"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "Snake Bow Soldier (Fort Bay Window) 0003 )"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "Snake Bow Soldier (Lava Square)"
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "Intern Knight 1-1"
+      ]
+    },
+    {
+      "ID": 8010,
+      "Entries": [
+        "Intern Knight 1-2"
+      ]
+    },
+    {
+      "ID": 8020,
+      "Entries": [
+        "Intern Knight 1-3"
+      ]
+    },
+    {
+      "ID": 8030,
+      "Entries": [
+        "Intern Knight 1-4"
+      ]
+    },
+    {
+      "ID": 8040,
+      "Entries": [
+        "Intern Knight 2-1"
+      ]
+    },
+    {
+      "ID": 8050,
+      "Entries": [
+        "Intern Knight 2-2"
+      ]
+    },
+    {
+      "ID": 8060,
+      "Entries": [
+        "Intern Knight 2-3"
+      ]
+    },
+    {
+      "ID": 8070,
+      "Entries": [
+        "Intern Knight 3-1"
+      ]
+    },
+    {
+      "ID": 8080,
+      "Entries": [
+        "Intern Knight 3-4",
+        "Intern Knight 3-4"
+      ]
+    },
+    {
+      "ID": 8090,
+      "Entries": [
+        "Intern Knight 3-5",
+        "Intern Knight 3-5"
+      ]
+    },
+    {
+      "ID": 8100,
+      "Entries": [
+        "Intern Knight 4-1"
+      ]
+    },
+    {
+      "ID": 8110,
+      "Entries": [
+        "Intern Knight 4-2"
+      ]
+    },
+    {
+      "ID": 8120,
+      "Entries": [
+        "Intern Knight 4-3"
+      ]
+    },
+    {
+      "ID": 8130,
+      "Entries": [
+        "Intern Knight 4-4"
+      ]
+    },
+    {
+      "ID": 8140,
+      "Entries": [
+        "Interns Archery Soldier 1-1"
+      ]
+    },
+    {
+      "ID": 8150,
+      "Entries": [
+        "Interns Archery Soldier 1-2"
+      ]
+    },
+    {
+      "ID": 8160,
+      "Entries": [
+        "Interns Archery Soldier 1-3"
+      ]
+    },
+    {
+      "ID": 8170,
+      "Entries": [
+        "Interns Archery Soldier 2-1"
+      ]
+    },
+    {
+      "ID": 8180,
+      "Entries": [
+        "Interns Archery Soldier 2-2"
+      ]
+    },
+    {
+      "ID": 8190,
+      "Entries": [
+        "Interns Archery Soldier 2-3"
+      ]
+    },
+    {
+      "ID": 8200,
+      "Entries": [
+        "Interns Archery Soldier 3-1"
+      ]
+    },
+    {
+      "ID": 8210,
+      "Entries": [
+        "Interns Archery Soldier 3-2"
+      ]
+    },
+    {
+      "ID": 8220,
+      "Entries": [
+        "Interns Archery Soldier 3-3"
+      ]
+    },
+    {
+      "ID": 8230,
+      "Entries": [
+        "Interns Archery Soldier 4-1"
+      ]
+    },
+    {
+      "ID": 8240,
+      "Entries": [
+        "Interns Archery Soldier 4-2"
+      ]
+    },
+    {
+      "ID": 8250,
+      "Entries": [
+        "Interns Archery Soldier 4-3"
+      ]
+    },
+    {
+      "ID": 8260,
+      "Entries": [
+        "[ For interns ] Fleeing Enemy"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "Prototype Fat Mid-Boss"
+      ]
+    },
+    {
+      "ID": 9010,
+      "Entries": [
+        "Prototype Dragon Demon"
+      ]
+    },
+    {
+      "ID": 9501,
+      "Entries": [
+        "Test map waiting enemies"
+      ]
+    }
+  ]
+}

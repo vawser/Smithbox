@@ -1,0 +1,6545 @@
+{
+  "Name": "EquipParamWeapon",
+  "Entries": [
+    {
+      "ID": 1000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "Choir Bell"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "Augur of Ebrietas"
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "A Call Beyond"
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "Tiny Tonitrus"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "Executioner's Gloves"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "Throwing Knife"
+      ]
+    },
+    {
+      "ID": 12000,
+      "Entries": [
+        "Molotov Cocktail"
+      ]
+    },
+    {
+      "ID": 13000,
+      "Entries": [
+        "Oil Urn"
+      ]
+    },
+    {
+      "ID": 14000,
+      "Entries": [
+        "Pebble"
+      ]
+    },
+    {
+      "ID": 15000,
+      "Entries": [
+        "Nondamaging Spell"
+      ]
+    },
+    {
+      "ID": 16000,
+      "Entries": [
+        "Ability Bonus \"-\" for Goods"
+      ]
+    },
+    {
+      "ID": 17000,
+      "Entries": [
+        "Madaras Whistle"
+      ]
+    },
+    {
+      "ID": 900000,
+      "Entries": [
+        "Adella's Dagger"
+      ]
+    },
+    {
+      "ID": 1000000,
+      "Entries": [
+        "Bare Fists"
+      ]
+    },
+    {
+      "ID": 1090000,
+      "Entries": [
+        "Fists - Ghost"
+      ]
+    },
+    {
+      "ID": 2000000,
+      "Entries": [
+        "Chikage"
+      ]
+    },
+    {
+      "ID": 2000100,
+      "Entries": [
+        "Chikage +1"
+      ]
+    },
+    {
+      "ID": 2000200,
+      "Entries": [
+        "Chikage +2"
+      ]
+    },
+    {
+      "ID": 2000300,
+      "Entries": [
+        "Chikage +3"
+      ]
+    },
+    {
+      "ID": 2000400,
+      "Entries": [
+        "Chikage +4"
+      ]
+    },
+    {
+      "ID": 2000500,
+      "Entries": [
+        "Chikage +5"
+      ]
+    },
+    {
+      "ID": 2000600,
+      "Entries": [
+        "Chikage +6"
+      ]
+    },
+    {
+      "ID": 2000700,
+      "Entries": [
+        "Chikage +7"
+      ]
+    },
+    {
+      "ID": 2000800,
+      "Entries": [
+        "Chikage +8"
+      ]
+    },
+    {
+      "ID": 2000900,
+      "Entries": [
+        "Chikage +9"
+      ]
+    },
+    {
+      "ID": 2001000,
+      "Entries": [
+        "Chikage +10"
+      ]
+    },
+    {
+      "ID": 2010000,
+      "Entries": [
+        "Uncanny Chikage"
+      ]
+    },
+    {
+      "ID": 2010100,
+      "Entries": [
+        "Uncanny Chikage +1"
+      ]
+    },
+    {
+      "ID": 2010200,
+      "Entries": [
+        "Uncanny Chikage +2"
+      ]
+    },
+    {
+      "ID": 2010300,
+      "Entries": [
+        "Uncanny Chikage +3"
+      ]
+    },
+    {
+      "ID": 2010400,
+      "Entries": [
+        "Uncanny Chikage +4"
+      ]
+    },
+    {
+      "ID": 2010500,
+      "Entries": [
+        "Uncanny Chikage +5"
+      ]
+    },
+    {
+      "ID": 2010600,
+      "Entries": [
+        "Uncanny Chikage +6"
+      ]
+    },
+    {
+      "ID": 2010700,
+      "Entries": [
+        "Uncanny Chikage +7"
+      ]
+    },
+    {
+      "ID": 2010800,
+      "Entries": [
+        "Uncanny Chikage +8"
+      ]
+    },
+    {
+      "ID": 2010900,
+      "Entries": [
+        "Uncanny Chikage +9"
+      ]
+    },
+    {
+      "ID": 2011000,
+      "Entries": [
+        "Uncanny Chikage +10"
+      ]
+    },
+    {
+      "ID": 2020000,
+      "Entries": [
+        "Lost Chikage"
+      ]
+    },
+    {
+      "ID": 2020100,
+      "Entries": [
+        "Lost Chikage +1"
+      ]
+    },
+    {
+      "ID": 2020200,
+      "Entries": [
+        "Lost Chikage +2"
+      ]
+    },
+    {
+      "ID": 2020300,
+      "Entries": [
+        "Lost Chikage +3"
+      ]
+    },
+    {
+      "ID": 2020400,
+      "Entries": [
+        "Lost Chikage +4"
+      ]
+    },
+    {
+      "ID": 2020500,
+      "Entries": [
+        "Lost Chikage +5"
+      ]
+    },
+    {
+      "ID": 2020600,
+      "Entries": [
+        "Lost Chikage +6"
+      ]
+    },
+    {
+      "ID": 2020700,
+      "Entries": [
+        "Lost Chikage +7"
+      ]
+    },
+    {
+      "ID": 2020800,
+      "Entries": [
+        "Lost Chikage +8"
+      ]
+    },
+    {
+      "ID": 2020900,
+      "Entries": [
+        "Lost Chikage +9"
+      ]
+    },
+    {
+      "ID": 2021000,
+      "Entries": [
+        "Lost Chikage +10"
+      ]
+    },
+    {
+      "ID": 2090000,
+      "Entries": [
+        "Chikage - Ghost"
+      ]
+    },
+    {
+      "ID": 4000000,
+      "Entries": [
+        "Blade of Mercy"
+      ]
+    },
+    {
+      "ID": 4000100,
+      "Entries": [
+        "Blade of Mercy +1"
+      ]
+    },
+    {
+      "ID": 4000200,
+      "Entries": [
+        "Blade of Mercy +2"
+      ]
+    },
+    {
+      "ID": 4000300,
+      "Entries": [
+        "Blade of Mercy +3"
+      ]
+    },
+    {
+      "ID": 4000400,
+      "Entries": [
+        "Blade of Mercy +4"
+      ]
+    },
+    {
+      "ID": 4000500,
+      "Entries": [
+        "Blade of Mercy +5"
+      ]
+    },
+    {
+      "ID": 4000600,
+      "Entries": [
+        "Blade of Mercy +6"
+      ]
+    },
+    {
+      "ID": 4000700,
+      "Entries": [
+        "Blade of Mercy +7"
+      ]
+    },
+    {
+      "ID": 4000800,
+      "Entries": [
+        "Blade of Mercy +8"
+      ]
+    },
+    {
+      "ID": 4000900,
+      "Entries": [
+        "Blade of Mercy +9"
+      ]
+    },
+    {
+      "ID": 4001000,
+      "Entries": [
+        "Blade of Mercy +10"
+      ]
+    },
+    {
+      "ID": 4010000,
+      "Entries": [
+        "Uncanny Blade of Mercy"
+      ]
+    },
+    {
+      "ID": 4010100,
+      "Entries": [
+        "Uncanny Blade of Mercy +1"
+      ]
+    },
+    {
+      "ID": 4010200,
+      "Entries": [
+        "Uncanny Blade of Mercy +2"
+      ]
+    },
+    {
+      "ID": 4010300,
+      "Entries": [
+        "Uncanny Blade of Mercy +3"
+      ]
+    },
+    {
+      "ID": 4010400,
+      "Entries": [
+        "Uncanny Blade of Mercy +4"
+      ]
+    },
+    {
+      "ID": 4010500,
+      "Entries": [
+        "Uncanny Blade of Mercy +5"
+      ]
+    },
+    {
+      "ID": 4010600,
+      "Entries": [
+        "Uncanny Blade of Mercy +6"
+      ]
+    },
+    {
+      "ID": 4010700,
+      "Entries": [
+        "Uncanny Blade of Mercy +7"
+      ]
+    },
+    {
+      "ID": 4010800,
+      "Entries": [
+        "Uncanny Blade of Mercy +8"
+      ]
+    },
+    {
+      "ID": 4010900,
+      "Entries": [
+        "Uncanny Blade of Mercy +9"
+      ]
+    },
+    {
+      "ID": 4011000,
+      "Entries": [
+        "Uncanny Blade of Mercy +10"
+      ]
+    },
+    {
+      "ID": 4020000,
+      "Entries": [
+        "Lost Blade of Mercy"
+      ]
+    },
+    {
+      "ID": 4020100,
+      "Entries": [
+        "Lost Blade of Mercy +1"
+      ]
+    },
+    {
+      "ID": 4020200,
+      "Entries": [
+        "Lost Blade of Mercy +2"
+      ]
+    },
+    {
+      "ID": 4020300,
+      "Entries": [
+        "Lost Blade of Mercy +3"
+      ]
+    },
+    {
+      "ID": 4020400,
+      "Entries": [
+        "Lost Blade of Mercy +4"
+      ]
+    },
+    {
+      "ID": 4020500,
+      "Entries": [
+        "Lost Blade of Mercy +5"
+      ]
+    },
+    {
+      "ID": 4020600,
+      "Entries": [
+        "Lost Blade of Mercy +6"
+      ]
+    },
+    {
+      "ID": 4020700,
+      "Entries": [
+        "Lost Blade of Mercy +7"
+      ]
+    },
+    {
+      "ID": 4020800,
+      "Entries": [
+        "Lost Blade of Mercy +8"
+      ]
+    },
+    {
+      "ID": 4020900,
+      "Entries": [
+        "Lost Blade of Mercy +9"
+      ]
+    },
+    {
+      "ID": 4021000,
+      "Entries": [
+        "Lost Blade of Mercy +10"
+      ]
+    },
+    {
+      "ID": 4090000,
+      "Entries": [
+        "Blade of Mercy - Ghost"
+      ]
+    },
+    {
+      "ID": 5000000,
+      "Entries": [
+        "Hunter Axe"
+      ]
+    },
+    {
+      "ID": 5000100,
+      "Entries": [
+        "Hunter Axe +1"
+      ]
+    },
+    {
+      "ID": 5000200,
+      "Entries": [
+        "Hunter Axe +2"
+      ]
+    },
+    {
+      "ID": 5000300,
+      "Entries": [
+        "Hunter Axe +3"
+      ]
+    },
+    {
+      "ID": 5000400,
+      "Entries": [
+        "Hunter Axe +4"
+      ]
+    },
+    {
+      "ID": 5000500,
+      "Entries": [
+        "Hunter Axe +5"
+      ]
+    },
+    {
+      "ID": 5000600,
+      "Entries": [
+        "Hunter Axe +6"
+      ]
+    },
+    {
+      "ID": 5000700,
+      "Entries": [
+        "Hunter Axe +7"
+      ]
+    },
+    {
+      "ID": 5000800,
+      "Entries": [
+        "Hunter Axe +8"
+      ]
+    },
+    {
+      "ID": 5000900,
+      "Entries": [
+        "Hunter Axe +9"
+      ]
+    },
+    {
+      "ID": 5001000,
+      "Entries": [
+        "Hunter Axe +10"
+      ]
+    },
+    {
+      "ID": 5010000,
+      "Entries": [
+        "Uncanny Hunter Axe"
+      ]
+    },
+    {
+      "ID": 5010100,
+      "Entries": [
+        "Uncanny Hunter Axe +1"
+      ]
+    },
+    {
+      "ID": 5010200,
+      "Entries": [
+        "Uncanny Hunter Axe +2"
+      ]
+    },
+    {
+      "ID": 5010300,
+      "Entries": [
+        "Uncanny Hunter Axe +3"
+      ]
+    },
+    {
+      "ID": 5010400,
+      "Entries": [
+        "Uncanny Hunter Axe +4"
+      ]
+    },
+    {
+      "ID": 5010500,
+      "Entries": [
+        "Uncanny Hunter Axe +5"
+      ]
+    },
+    {
+      "ID": 5010600,
+      "Entries": [
+        "Uncanny Hunter Axe +6"
+      ]
+    },
+    {
+      "ID": 5010700,
+      "Entries": [
+        "Uncanny Hunter Axe +7"
+      ]
+    },
+    {
+      "ID": 5010800,
+      "Entries": [
+        "Uncanny Hunter Axe +8"
+      ]
+    },
+    {
+      "ID": 5010900,
+      "Entries": [
+        "Uncanny Hunter Axe +9"
+      ]
+    },
+    {
+      "ID": 5011000,
+      "Entries": [
+        "Uncanny Hunter Axe +10"
+      ]
+    },
+    {
+      "ID": 5020000,
+      "Entries": [
+        "Lost Hunter Axe"
+      ]
+    },
+    {
+      "ID": 5020100,
+      "Entries": [
+        "Lost Hunter Axe +1"
+      ]
+    },
+    {
+      "ID": 5020200,
+      "Entries": [
+        "Lost Hunter Axe +2"
+      ]
+    },
+    {
+      "ID": 5020300,
+      "Entries": [
+        "Lost Hunter Axe +3"
+      ]
+    },
+    {
+      "ID": 5020400,
+      "Entries": [
+        "Lost Hunter Axe +4"
+      ]
+    },
+    {
+      "ID": 5020500,
+      "Entries": [
+        "Lost Hunter Axe +5"
+      ]
+    },
+    {
+      "ID": 5020600,
+      "Entries": [
+        "Lost Hunter Axe +6"
+      ]
+    },
+    {
+      "ID": 5020700,
+      "Entries": [
+        "Lost Hunter Axe +7"
+      ]
+    },
+    {
+      "ID": 5020800,
+      "Entries": [
+        "Lost Hunter Axe +8"
+      ]
+    },
+    {
+      "ID": 5020900,
+      "Entries": [
+        "Lost Hunter Axe +9"
+      ]
+    },
+    {
+      "ID": 5021000,
+      "Entries": [
+        "Lost Hunter Axe +10"
+      ]
+    },
+    {
+      "ID": 5090000,
+      "Entries": [
+        "Hunter Axe - Ghost"
+      ]
+    },
+    {
+      "ID": 5100000,
+      "Entries": [
+        "Burial Blade"
+      ]
+    },
+    {
+      "ID": 5100100,
+      "Entries": [
+        "Burial Blade +1"
+      ]
+    },
+    {
+      "ID": 5100200,
+      "Entries": [
+        "Burial Blade +2"
+      ]
+    },
+    {
+      "ID": 5100300,
+      "Entries": [
+        "Burial Blade +3"
+      ]
+    },
+    {
+      "ID": 5100400,
+      "Entries": [
+        "Burial Blade +4"
+      ]
+    },
+    {
+      "ID": 5100500,
+      "Entries": [
+        "Burial Blade +5"
+      ]
+    },
+    {
+      "ID": 5100600,
+      "Entries": [
+        "Burial Blade +6"
+      ]
+    },
+    {
+      "ID": 5100700,
+      "Entries": [
+        "Burial Blade +7"
+      ]
+    },
+    {
+      "ID": 5100800,
+      "Entries": [
+        "Burial Blade +8"
+      ]
+    },
+    {
+      "ID": 5100900,
+      "Entries": [
+        "Burial Blade +9"
+      ]
+    },
+    {
+      "ID": 5101000,
+      "Entries": [
+        "Burial Blade +10"
+      ]
+    },
+    {
+      "ID": 5110000,
+      "Entries": [
+        "Uncanny Burial Blade"
+      ]
+    },
+    {
+      "ID": 5110100,
+      "Entries": [
+        "Uncanny Burial Blade +1"
+      ]
+    },
+    {
+      "ID": 5110200,
+      "Entries": [
+        "Uncanny Burial Blade +2"
+      ]
+    },
+    {
+      "ID": 5110300,
+      "Entries": [
+        "Uncanny Burial Blade +3"
+      ]
+    },
+    {
+      "ID": 5110400,
+      "Entries": [
+        "Uncanny Burial Blade +4"
+      ]
+    },
+    {
+      "ID": 5110500,
+      "Entries": [
+        "Uncanny Burial Blade +5"
+      ]
+    },
+    {
+      "ID": 5110600,
+      "Entries": [
+        "Uncanny Burial Blade +6"
+      ]
+    },
+    {
+      "ID": 5110700,
+      "Entries": [
+        "Uncanny Burial Blade +7"
+      ]
+    },
+    {
+      "ID": 5110800,
+      "Entries": [
+        "Uncanny Burial Blade +8"
+      ]
+    },
+    {
+      "ID": 5110900,
+      "Entries": [
+        "Uncanny Burial Blade +9"
+      ]
+    },
+    {
+      "ID": 5111000,
+      "Entries": [
+        "Uncanny Burial Blade +10"
+      ]
+    },
+    {
+      "ID": 5120000,
+      "Entries": [
+        "Lost Burial Blade"
+      ]
+    },
+    {
+      "ID": 5120100,
+      "Entries": [
+        "Lost Burial Blade +1"
+      ]
+    },
+    {
+      "ID": 5120200,
+      "Entries": [
+        "Lost Burial Blade +2"
+      ]
+    },
+    {
+      "ID": 5120300,
+      "Entries": [
+        "Lost Burial Blade +3"
+      ]
+    },
+    {
+      "ID": 5120400,
+      "Entries": [
+        "Lost Burial Blade +4"
+      ]
+    },
+    {
+      "ID": 5120500,
+      "Entries": [
+        "Lost Burial Blade +5"
+      ]
+    },
+    {
+      "ID": 5120600,
+      "Entries": [
+        "Lost Burial Blade +6"
+      ]
+    },
+    {
+      "ID": 5120700,
+      "Entries": [
+        "Lost Burial Blade +7"
+      ]
+    },
+    {
+      "ID": 5120800,
+      "Entries": [
+        "Lost Burial Blade +8"
+      ]
+    },
+    {
+      "ID": 5120900,
+      "Entries": [
+        "Lost Burial Blade +9"
+      ]
+    },
+    {
+      "ID": 5121000,
+      "Entries": [
+        "Lost Burial Blade +10"
+      ]
+    },
+    {
+      "ID": 5190000,
+      "Entries": [
+        "Burial Blade - Ghost"
+      ]
+    },
+    {
+      "ID": 6000000,
+      "Entries": [
+        "Hunter Blunderbuss"
+      ]
+    },
+    {
+      "ID": 6000100,
+      "Entries": [
+        "Hunter Blunderbuss +1"
+      ]
+    },
+    {
+      "ID": 6000200,
+      "Entries": [
+        "Hunter Blunderbuss +2"
+      ]
+    },
+    {
+      "ID": 6000300,
+      "Entries": [
+        "Hunter Blunderbuss +3"
+      ]
+    },
+    {
+      "ID": 6000400,
+      "Entries": [
+        "Hunter Blunderbuss +4"
+      ]
+    },
+    {
+      "ID": 6000500,
+      "Entries": [
+        "Hunter Blunderbuss +5"
+      ]
+    },
+    {
+      "ID": 6000600,
+      "Entries": [
+        "Hunter Blunderbuss +6"
+      ]
+    },
+    {
+      "ID": 6000700,
+      "Entries": [
+        "Hunter Blunderbuss +7"
+      ]
+    },
+    {
+      "ID": 6000800,
+      "Entries": [
+        "Hunter Blunderbuss +8"
+      ]
+    },
+    {
+      "ID": 6000900,
+      "Entries": [
+        "Hunter Blunderbuss +9"
+      ]
+    },
+    {
+      "ID": 6001000,
+      "Entries": [
+        "Hunter Blunderbuss +10"
+      ]
+    },
+    {
+      "ID": 6090000,
+      "Entries": [
+        "Hunter Blunderbuss - Ghost"
+      ]
+    },
+    {
+      "ID": 6100000,
+      "Entries": [
+        "Ludwig's Rifle"
+      ]
+    },
+    {
+      "ID": 6100100,
+      "Entries": [
+        "Ludwig's Rifle +1"
+      ]
+    },
+    {
+      "ID": 6100200,
+      "Entries": [
+        "Ludwig's Rifle +2"
+      ]
+    },
+    {
+      "ID": 6100300,
+      "Entries": [
+        "Ludwig's Rifle +3"
+      ]
+    },
+    {
+      "ID": 6100400,
+      "Entries": [
+        "Ludwig's Rifle +4"
+      ]
+    },
+    {
+      "ID": 6100500,
+      "Entries": [
+        "Ludwig's Rifle +5"
+      ]
+    },
+    {
+      "ID": 6100600,
+      "Entries": [
+        "Ludwig's Rifle +6"
+      ]
+    },
+    {
+      "ID": 6100700,
+      "Entries": [
+        "Ludwig's Rifle +7"
+      ]
+    },
+    {
+      "ID": 6100800,
+      "Entries": [
+        "Ludwig's Rifle +8"
+      ]
+    },
+    {
+      "ID": 6100900,
+      "Entries": [
+        "Ludwig's Rifle +9"
+      ]
+    },
+    {
+      "ID": 6101000,
+      "Entries": [
+        "Ludwig's Rifle +10"
+      ]
+    },
+    {
+      "ID": 6180000,
+      "Entries": [
+        "Alfred's Ludwig's Rifle"
+      ]
+    },
+    {
+      "ID": 6180100,
+      "Entries": [
+        "Alfred's Ludwig's Rifle +1"
+      ]
+    },
+    {
+      "ID": 6180200,
+      "Entries": [
+        "Alfred's Ludwig's Rifle +2"
+      ]
+    },
+    {
+      "ID": 6180300,
+      "Entries": [
+        "Alfred's Ludwig's Rifle +3"
+      ]
+    },
+    {
+      "ID": 6180400,
+      "Entries": [
+        "Alfred's Ludwig's Rifle +4"
+      ]
+    },
+    {
+      "ID": 6180500,
+      "Entries": [
+        "Alfred's Ludwig's Rifle +5"
+      ]
+    },
+    {
+      "ID": 6180600,
+      "Entries": [
+        "Alfred's Ludwig's Rifle +6"
+      ]
+    },
+    {
+      "ID": 6180700,
+      "Entries": [
+        "Alfred's Ludwig's Rifle +7"
+      ]
+    },
+    {
+      "ID": 6180800,
+      "Entries": [
+        "Alfred's Ludwig's Rifle +8"
+      ]
+    },
+    {
+      "ID": 6180900,
+      "Entries": [
+        "Alfred's Ludwig's Rifle +9"
+      ]
+    },
+    {
+      "ID": 6181000,
+      "Entries": [
+        "Alfred's Ludwig's Rifle +10"
+      ]
+    },
+    {
+      "ID": 6190000,
+      "Entries": [
+        "Ludwig's Rifle - Ghost"
+      ]
+    },
+    {
+      "ID": 7000000,
+      "Entries": [
+        "Saw Cleaver"
+      ]
+    },
+    {
+      "ID": 7000100,
+      "Entries": [
+        "Saw Cleaver +1"
+      ]
+    },
+    {
+      "ID": 7000200,
+      "Entries": [
+        "Saw Cleaver +2"
+      ]
+    },
+    {
+      "ID": 7000300,
+      "Entries": [
+        "Saw Cleaver +3"
+      ]
+    },
+    {
+      "ID": 7000400,
+      "Entries": [
+        "Saw Cleaver +4"
+      ]
+    },
+    {
+      "ID": 7000500,
+      "Entries": [
+        "Saw Cleaver +5"
+      ]
+    },
+    {
+      "ID": 7000600,
+      "Entries": [
+        "Saw Cleaver +6"
+      ]
+    },
+    {
+      "ID": 7000700,
+      "Entries": [
+        "Saw Cleaver +7"
+      ]
+    },
+    {
+      "ID": 7000800,
+      "Entries": [
+        "Saw Cleaver +8"
+      ]
+    },
+    {
+      "ID": 7000900,
+      "Entries": [
+        "Saw Cleaver +9"
+      ]
+    },
+    {
+      "ID": 7001000,
+      "Entries": [
+        "Saw Cleaver +10"
+      ]
+    },
+    {
+      "ID": 7010000,
+      "Entries": [
+        "Uncanny Saw Cleaver"
+      ]
+    },
+    {
+      "ID": 7010100,
+      "Entries": [
+        "Uncanny Saw Cleaver +1"
+      ]
+    },
+    {
+      "ID": 7010200,
+      "Entries": [
+        "Uncanny Saw Cleaver +2"
+      ]
+    },
+    {
+      "ID": 7010300,
+      "Entries": [
+        "Uncanny Saw Cleaver +3"
+      ]
+    },
+    {
+      "ID": 7010400,
+      "Entries": [
+        "Uncanny Saw Cleaver +4"
+      ]
+    },
+    {
+      "ID": 7010500,
+      "Entries": [
+        "Uncanny Saw Cleaver +5"
+      ]
+    },
+    {
+      "ID": 7010600,
+      "Entries": [
+        "Uncanny Saw Cleaver +6"
+      ]
+    },
+    {
+      "ID": 7010700,
+      "Entries": [
+        "Uncanny Saw Cleaver +7"
+      ]
+    },
+    {
+      "ID": 7010800,
+      "Entries": [
+        "Uncanny Saw Cleaver +8"
+      ]
+    },
+    {
+      "ID": 7010900,
+      "Entries": [
+        "Uncanny Saw Cleaver +9"
+      ]
+    },
+    {
+      "ID": 7011000,
+      "Entries": [
+        "Uncanny Saw Cleaver +10"
+      ]
+    },
+    {
+      "ID": 7020000,
+      "Entries": [
+        "Lost Saw Cleaver"
+      ]
+    },
+    {
+      "ID": 7020100,
+      "Entries": [
+        "Lost Saw Cleaver +1"
+      ]
+    },
+    {
+      "ID": 7020200,
+      "Entries": [
+        "Lost Saw Cleaver +2"
+      ]
+    },
+    {
+      "ID": 7020300,
+      "Entries": [
+        "Lost Saw Cleaver +3"
+      ]
+    },
+    {
+      "ID": 7020400,
+      "Entries": [
+        "Lost Saw Cleaver +4"
+      ]
+    },
+    {
+      "ID": 7020500,
+      "Entries": [
+        "Lost Saw Cleaver +5"
+      ]
+    },
+    {
+      "ID": 7020600,
+      "Entries": [
+        "Lost Saw Cleaver +6"
+      ]
+    },
+    {
+      "ID": 7020700,
+      "Entries": [
+        "Lost Saw Cleaver +7"
+      ]
+    },
+    {
+      "ID": 7020800,
+      "Entries": [
+        "Lost Saw Cleaver +8"
+      ]
+    },
+    {
+      "ID": 7020900,
+      "Entries": [
+        "Lost Saw Cleaver +9"
+      ]
+    },
+    {
+      "ID": 7021000,
+      "Entries": [
+        "Lost Saw Cleaver +10"
+      ]
+    },
+    {
+      "ID": 7090000,
+      "Entries": [
+        "Saw Cleaver - Ghost"
+      ]
+    },
+    {
+      "ID": 7100000,
+      "Entries": [
+        "Saw Spear"
+      ]
+    },
+    {
+      "ID": 7100100,
+      "Entries": [
+        "Saw Spear +1"
+      ]
+    },
+    {
+      "ID": 7100200,
+      "Entries": [
+        "Saw Spear +2"
+      ]
+    },
+    {
+      "ID": 7100300,
+      "Entries": [
+        "Saw Spear +3"
+      ]
+    },
+    {
+      "ID": 7100400,
+      "Entries": [
+        "Saw Spear +4"
+      ]
+    },
+    {
+      "ID": 7100500,
+      "Entries": [
+        "Saw Spear +5"
+      ]
+    },
+    {
+      "ID": 7100600,
+      "Entries": [
+        "Saw Spear +6"
+      ]
+    },
+    {
+      "ID": 7100700,
+      "Entries": [
+        "Saw Spear +7"
+      ]
+    },
+    {
+      "ID": 7100800,
+      "Entries": [
+        "Saw Spear +8"
+      ]
+    },
+    {
+      "ID": 7100900,
+      "Entries": [
+        "Saw Spear +9"
+      ]
+    },
+    {
+      "ID": 7101000,
+      "Entries": [
+        "Saw Spear +10"
+      ]
+    },
+    {
+      "ID": 7110000,
+      "Entries": [
+        "Uncanny Saw Spear"
+      ]
+    },
+    {
+      "ID": 7110100,
+      "Entries": [
+        "Uncanny Saw Spear +1"
+      ]
+    },
+    {
+      "ID": 7110200,
+      "Entries": [
+        "Uncanny Saw Spear +2"
+      ]
+    },
+    {
+      "ID": 7110300,
+      "Entries": [
+        "Uncanny Saw Spear +3"
+      ]
+    },
+    {
+      "ID": 7110400,
+      "Entries": [
+        "Uncanny Saw Spear +4"
+      ]
+    },
+    {
+      "ID": 7110500,
+      "Entries": [
+        "Uncanny Saw Spear +5"
+      ]
+    },
+    {
+      "ID": 7110600,
+      "Entries": [
+        "Uncanny Saw Spear +6"
+      ]
+    },
+    {
+      "ID": 7110700,
+      "Entries": [
+        "Uncanny Saw Spear +7"
+      ]
+    },
+    {
+      "ID": 7110800,
+      "Entries": [
+        "Uncanny Saw Spear +8"
+      ]
+    },
+    {
+      "ID": 7110900,
+      "Entries": [
+        "Uncanny Saw Spear +9"
+      ]
+    },
+    {
+      "ID": 7111000,
+      "Entries": [
+        "Uncanny Saw Spear +10"
+      ]
+    },
+    {
+      "ID": 7120000,
+      "Entries": [
+        "Lost Saw Spear"
+      ]
+    },
+    {
+      "ID": 7120100,
+      "Entries": [
+        "Lost Saw Spear +1"
+      ]
+    },
+    {
+      "ID": 7120200,
+      "Entries": [
+        "Lost Saw Spear +2"
+      ]
+    },
+    {
+      "ID": 7120300,
+      "Entries": [
+        "Lost Saw Spear +3"
+      ]
+    },
+    {
+      "ID": 7120400,
+      "Entries": [
+        "Lost Saw Spear +4"
+      ]
+    },
+    {
+      "ID": 7120500,
+      "Entries": [
+        "Lost Saw Spear +5"
+      ]
+    },
+    {
+      "ID": 7120600,
+      "Entries": [
+        "Lost Saw Spear +6"
+      ]
+    },
+    {
+      "ID": 7120700,
+      "Entries": [
+        "Lost Saw Spear +7"
+      ]
+    },
+    {
+      "ID": 7120800,
+      "Entries": [
+        "Lost Saw Spear +8"
+      ]
+    },
+    {
+      "ID": 7120900,
+      "Entries": [
+        "Lost Saw Spear +9"
+      ]
+    },
+    {
+      "ID": 7121000,
+      "Entries": [
+        "Lost Saw Spear +10"
+      ]
+    },
+    {
+      "ID": 7190000,
+      "Entries": [
+        "Saw Spear - Ghost"
+      ]
+    },
+    {
+      "ID": 8000000,
+      "Entries": [
+        "Kirkhammer"
+      ]
+    },
+    {
+      "ID": 8000100,
+      "Entries": [
+        "Kirkhammer +1"
+      ]
+    },
+    {
+      "ID": 8000200,
+      "Entries": [
+        "Kirkhammer +2"
+      ]
+    },
+    {
+      "ID": 8000300,
+      "Entries": [
+        "Kirkhammer +3"
+      ]
+    },
+    {
+      "ID": 8000400,
+      "Entries": [
+        "Kirkhammer +4"
+      ]
+    },
+    {
+      "ID": 8000500,
+      "Entries": [
+        "Kirkhammer +5"
+      ]
+    },
+    {
+      "ID": 8000600,
+      "Entries": [
+        "Kirkhammer +6"
+      ]
+    },
+    {
+      "ID": 8000700,
+      "Entries": [
+        "Kirkhammer +7"
+      ]
+    },
+    {
+      "ID": 8000800,
+      "Entries": [
+        "Kirkhammer +8"
+      ]
+    },
+    {
+      "ID": 8000900,
+      "Entries": [
+        "Kirkhammer +9"
+      ]
+    },
+    {
+      "ID": 8001000,
+      "Entries": [
+        "Kirkhammer +10"
+      ]
+    },
+    {
+      "ID": 8010000,
+      "Entries": [
+        "Uncanny Kirkhammer"
+      ]
+    },
+    {
+      "ID": 8010100,
+      "Entries": [
+        "Uncanny Kirkhammer +1"
+      ]
+    },
+    {
+      "ID": 8010200,
+      "Entries": [
+        "Uncanny Kirkhammer +2"
+      ]
+    },
+    {
+      "ID": 8010300,
+      "Entries": [
+        "Uncanny Kirkhammer +3"
+      ]
+    },
+    {
+      "ID": 8010400,
+      "Entries": [
+        "Uncanny Kirkhammer +4"
+      ]
+    },
+    {
+      "ID": 8010500,
+      "Entries": [
+        "Uncanny Kirkhammer +5"
+      ]
+    },
+    {
+      "ID": 8010600,
+      "Entries": [
+        "Uncanny Kirkhammer +6"
+      ]
+    },
+    {
+      "ID": 8010700,
+      "Entries": [
+        "Uncanny Kirkhammer +7"
+      ]
+    },
+    {
+      "ID": 8010800,
+      "Entries": [
+        "Uncanny Kirkhammer +8"
+      ]
+    },
+    {
+      "ID": 8010900,
+      "Entries": [
+        "Uncanny Kirkhammer +9"
+      ]
+    },
+    {
+      "ID": 8011000,
+      "Entries": [
+        "Uncanny Kirkhammer +10"
+      ]
+    },
+    {
+      "ID": 8020000,
+      "Entries": [
+        "Lost Kirkhammer"
+      ]
+    },
+    {
+      "ID": 8020100,
+      "Entries": [
+        "Lost Kirkhammer +1"
+      ]
+    },
+    {
+      "ID": 8020200,
+      "Entries": [
+        "Lost Kirkhammer +2"
+      ]
+    },
+    {
+      "ID": 8020300,
+      "Entries": [
+        "Lost Kirkhammer +3"
+      ]
+    },
+    {
+      "ID": 8020400,
+      "Entries": [
+        "Lost Kirkhammer +4"
+      ]
+    },
+    {
+      "ID": 8020500,
+      "Entries": [
+        "Lost Kirkhammer +5"
+      ]
+    },
+    {
+      "ID": 8020600,
+      "Entries": [
+        "Lost Kirkhammer +6"
+      ]
+    },
+    {
+      "ID": 8020700,
+      "Entries": [
+        "Lost Kirkhammer +7"
+      ]
+    },
+    {
+      "ID": 8020800,
+      "Entries": [
+        "Lost Kirkhammer +8"
+      ]
+    },
+    {
+      "ID": 8020900,
+      "Entries": [
+        "Lost Kirkhammer +9"
+      ]
+    },
+    {
+      "ID": 8021000,
+      "Entries": [
+        "Lost Kirkhammer +10"
+      ]
+    },
+    {
+      "ID": 8090000,
+      "Entries": [
+        "Kirkhammer - Ghost"
+      ]
+    },
+    {
+      "ID": 8100000,
+      "Entries": [
+        "Ludwig's Holy Blade"
+      ]
+    },
+    {
+      "ID": 8100100,
+      "Entries": [
+        "Ludwig's Holy Blade +1"
+      ]
+    },
+    {
+      "ID": 8100200,
+      "Entries": [
+        "Ludwig's Holy Blade +2"
+      ]
+    },
+    {
+      "ID": 8100300,
+      "Entries": [
+        "Ludwig's Holy Blade +3"
+      ]
+    },
+    {
+      "ID": 8100400,
+      "Entries": [
+        "Ludwig's Holy Blade +4"
+      ]
+    },
+    {
+      "ID": 8100500,
+      "Entries": [
+        "Ludwig's Holy Blade +5"
+      ]
+    },
+    {
+      "ID": 8100600,
+      "Entries": [
+        "Ludwig's Holy Blade +6"
+      ]
+    },
+    {
+      "ID": 8100700,
+      "Entries": [
+        "Ludwig's Holy Blade +7"
+      ]
+    },
+    {
+      "ID": 8100800,
+      "Entries": [
+        "Ludwig's Holy Blade +8"
+      ]
+    },
+    {
+      "ID": 8100900,
+      "Entries": [
+        "Ludwig's Holy Blade +9"
+      ]
+    },
+    {
+      "ID": 8101000,
+      "Entries": [
+        "Ludwig's Holy Blade +10"
+      ]
+    },
+    {
+      "ID": 8110000,
+      "Entries": [
+        "Ludwig's Uncanny Holy Blade"
+      ]
+    },
+    {
+      "ID": 8110100,
+      "Entries": [
+        "Ludwig's Uncanny Holy Blade +1"
+      ]
+    },
+    {
+      "ID": 8110200,
+      "Entries": [
+        "Ludwig's Uncanny Holy Blade +2"
+      ]
+    },
+    {
+      "ID": 8110300,
+      "Entries": [
+        "Ludwig's Uncanny Holy Blade +3"
+      ]
+    },
+    {
+      "ID": 8110400,
+      "Entries": [
+        "Ludwig's Uncanny Holy Blade +4"
+      ]
+    },
+    {
+      "ID": 8110500,
+      "Entries": [
+        "Ludwig's Uncanny Holy Blade +5"
+      ]
+    },
+    {
+      "ID": 8110600,
+      "Entries": [
+        "Ludwig's Uncanny Holy Blade +6"
+      ]
+    },
+    {
+      "ID": 8110700,
+      "Entries": [
+        "Ludwig's Uncanny Holy Blade +7"
+      ]
+    },
+    {
+      "ID": 8110800,
+      "Entries": [
+        "Ludwig's Uncanny Holy Blade +8"
+      ]
+    },
+    {
+      "ID": 8110900,
+      "Entries": [
+        "Ludwig's Uncanny Holy Blade +9"
+      ]
+    },
+    {
+      "ID": 8111000,
+      "Entries": [
+        "Ludwig's Uncanny Holy Blade +10"
+      ]
+    },
+    {
+      "ID": 8120000,
+      "Entries": [
+        "Ludwig's Lost Holy Blade"
+      ]
+    },
+    {
+      "ID": 8120100,
+      "Entries": [
+        "Ludwig's Lost Holy Blade +1"
+      ]
+    },
+    {
+      "ID": 8120200,
+      "Entries": [
+        "Ludwig's Lost Holy Blade +2"
+      ]
+    },
+    {
+      "ID": 8120300,
+      "Entries": [
+        "Ludwig's Lost Holy Blade +3"
+      ]
+    },
+    {
+      "ID": 8120400,
+      "Entries": [
+        "Ludwig's Lost Holy Blade +4"
+      ]
+    },
+    {
+      "ID": 8120500,
+      "Entries": [
+        "Ludwig's Lost Holy Blade +5"
+      ]
+    },
+    {
+      "ID": 8120600,
+      "Entries": [
+        "Ludwig's Lost Holy Blade +6"
+      ]
+    },
+    {
+      "ID": 8120700,
+      "Entries": [
+        "Ludwig's Lost Holy Blade +7"
+      ]
+    },
+    {
+      "ID": 8120800,
+      "Entries": [
+        "Ludwig's Lost Holy Blade +8"
+      ]
+    },
+    {
+      "ID": 8120900,
+      "Entries": [
+        "Ludwig's Lost Holy Blade +9"
+      ]
+    },
+    {
+      "ID": 8121000,
+      "Entries": [
+        "Ludwig's Lost Holy Blade +10"
+      ]
+    },
+    {
+      "ID": 8190000,
+      "Entries": [
+        "Ludwig's Holy Blade - Ghost"
+      ]
+    },
+    {
+      "ID": 9000000,
+      "Entries": [
+        "Beast Claw"
+      ]
+    },
+    {
+      "ID": 9000100,
+      "Entries": [
+        "Beast Claw +1"
+      ]
+    },
+    {
+      "ID": 9000200,
+      "Entries": [
+        "Beast Claw +2"
+      ]
+    },
+    {
+      "ID": 9000300,
+      "Entries": [
+        "Beast Claw +3"
+      ]
+    },
+    {
+      "ID": 9000400,
+      "Entries": [
+        "Beast Claw +4"
+      ]
+    },
+    {
+      "ID": 9000500,
+      "Entries": [
+        "Beast Claw +5"
+      ]
+    },
+    {
+      "ID": 9000600,
+      "Entries": [
+        "Beast Claw +6"
+      ]
+    },
+    {
+      "ID": 9000700,
+      "Entries": [
+        "Beast Claw +7"
+      ]
+    },
+    {
+      "ID": 9000800,
+      "Entries": [
+        "Beast Claw +8"
+      ]
+    },
+    {
+      "ID": 9000900,
+      "Entries": [
+        "Beast Claw +9"
+      ]
+    },
+    {
+      "ID": 9001000,
+      "Entries": [
+        "Beast Claw +10"
+      ]
+    },
+    {
+      "ID": 9010000,
+      "Entries": [
+        "Uncanny Beast Claw"
+      ]
+    },
+    {
+      "ID": 9010100,
+      "Entries": [
+        "Uncanny Beast Claw +1"
+      ]
+    },
+    {
+      "ID": 9010200,
+      "Entries": [
+        "Uncanny Beast Claw +2"
+      ]
+    },
+    {
+      "ID": 9010300,
+      "Entries": [
+        "Uncanny Beast Claw +3"
+      ]
+    },
+    {
+      "ID": 9010400,
+      "Entries": [
+        "Uncanny Beast Claw +4"
+      ]
+    },
+    {
+      "ID": 9010500,
+      "Entries": [
+        "Uncanny Beast Claw +5"
+      ]
+    },
+    {
+      "ID": 9010600,
+      "Entries": [
+        "Uncanny Beast Claw +6"
+      ]
+    },
+    {
+      "ID": 9010700,
+      "Entries": [
+        "Uncanny Beast Claw +7"
+      ]
+    },
+    {
+      "ID": 9010800,
+      "Entries": [
+        "Uncanny Beast Claw +8"
+      ]
+    },
+    {
+      "ID": 9010900,
+      "Entries": [
+        "Uncanny Beast Claw +9"
+      ]
+    },
+    {
+      "ID": 9011000,
+      "Entries": [
+        "Uncanny Beast Claw +10"
+      ]
+    },
+    {
+      "ID": 9020000,
+      "Entries": [
+        "Lost Beast Claw"
+      ]
+    },
+    {
+      "ID": 9020100,
+      "Entries": [
+        "Lost Beast Claw +1"
+      ]
+    },
+    {
+      "ID": 9020200,
+      "Entries": [
+        "Lost Beast Claw +2"
+      ]
+    },
+    {
+      "ID": 9020300,
+      "Entries": [
+        "Lost Beast Claw +3"
+      ]
+    },
+    {
+      "ID": 9020400,
+      "Entries": [
+        "Lost Beast Claw +4"
+      ]
+    },
+    {
+      "ID": 9020500,
+      "Entries": [
+        "Lost Beast Claw +5"
+      ]
+    },
+    {
+      "ID": 9020600,
+      "Entries": [
+        "Lost Beast Claw +6"
+      ]
+    },
+    {
+      "ID": 9020700,
+      "Entries": [
+        "Lost Beast Claw +7"
+      ]
+    },
+    {
+      "ID": 9020800,
+      "Entries": [
+        "Lost Beast Claw +8"
+      ]
+    },
+    {
+      "ID": 9020900,
+      "Entries": [
+        "Lost Beast Claw +9"
+      ]
+    },
+    {
+      "ID": 9021000,
+      "Entries": [
+        "Lost Beast Claw +10"
+      ]
+    },
+    {
+      "ID": 9090000,
+      "Entries": [
+        "Beast Claw - Ghost"
+      ]
+    },
+    {
+      "ID": 10000000,
+      "Entries": [
+        "Rifle Spear"
+      ]
+    },
+    {
+      "ID": 10000100,
+      "Entries": [
+        "Rifle Spear +1"
+      ]
+    },
+    {
+      "ID": 10000200,
+      "Entries": [
+        "Rifle Spear +2"
+      ]
+    },
+    {
+      "ID": 10000300,
+      "Entries": [
+        "Rifle Spear +3"
+      ]
+    },
+    {
+      "ID": 10000400,
+      "Entries": [
+        "Rifle Spear +4"
+      ]
+    },
+    {
+      "ID": 10000500,
+      "Entries": [
+        "Rifle Spear +5"
+      ]
+    },
+    {
+      "ID": 10000600,
+      "Entries": [
+        "Rifle Spear +6"
+      ]
+    },
+    {
+      "ID": 10000700,
+      "Entries": [
+        "Rifle Spear +7"
+      ]
+    },
+    {
+      "ID": 10000800,
+      "Entries": [
+        "Rifle Spear +8"
+      ]
+    },
+    {
+      "ID": 10000900,
+      "Entries": [
+        "Rifle Spear +9"
+      ]
+    },
+    {
+      "ID": 10001000,
+      "Entries": [
+        "Rifle Spear +10"
+      ]
+    },
+    {
+      "ID": 10010000,
+      "Entries": [
+        "Uncanny Rifle Spear"
+      ]
+    },
+    {
+      "ID": 10010100,
+      "Entries": [
+        "Uncanny Rifle Spear +1"
+      ]
+    },
+    {
+      "ID": 10010200,
+      "Entries": [
+        "Uncanny Rifle Spear +2"
+      ]
+    },
+    {
+      "ID": 10010300,
+      "Entries": [
+        "Uncanny Rifle Spear +3"
+      ]
+    },
+    {
+      "ID": 10010400,
+      "Entries": [
+        "Uncanny Rifle Spear +4"
+      ]
+    },
+    {
+      "ID": 10010500,
+      "Entries": [
+        "Uncanny Rifle Spear +5"
+      ]
+    },
+    {
+      "ID": 10010600,
+      "Entries": [
+        "Uncanny Rifle Spear +6"
+      ]
+    },
+    {
+      "ID": 10010700,
+      "Entries": [
+        "Uncanny Rifle Spear +7"
+      ]
+    },
+    {
+      "ID": 10010800,
+      "Entries": [
+        "Uncanny Rifle Spear +8"
+      ]
+    },
+    {
+      "ID": 10010900,
+      "Entries": [
+        "Uncanny Rifle Spear +9"
+      ]
+    },
+    {
+      "ID": 10011000,
+      "Entries": [
+        "Uncanny Rifle Spear +10"
+      ]
+    },
+    {
+      "ID": 10020000,
+      "Entries": [
+        "Lost Rifle Spear"
+      ]
+    },
+    {
+      "ID": 10020100,
+      "Entries": [
+        "Lost Rifle Spear +1"
+      ]
+    },
+    {
+      "ID": 10020200,
+      "Entries": [
+        "Lost Rifle Spear +2"
+      ]
+    },
+    {
+      "ID": 10020300,
+      "Entries": [
+        "Lost Rifle Spear +3"
+      ]
+    },
+    {
+      "ID": 10020400,
+      "Entries": [
+        "Lost Rifle Spear +4"
+      ]
+    },
+    {
+      "ID": 10020500,
+      "Entries": [
+        "Lost Rifle Spear +5"
+      ]
+    },
+    {
+      "ID": 10020600,
+      "Entries": [
+        "Lost Rifle Spear +6"
+      ]
+    },
+    {
+      "ID": 10020700,
+      "Entries": [
+        "Lost Rifle Spear +7"
+      ]
+    },
+    {
+      "ID": 10020800,
+      "Entries": [
+        "Lost Rifle Spear +8"
+      ]
+    },
+    {
+      "ID": 10020900,
+      "Entries": [
+        "Lost Rifle Spear +9"
+      ]
+    },
+    {
+      "ID": 10021000,
+      "Entries": [
+        "Lost Rifle Spear +10"
+      ]
+    },
+    {
+      "ID": 10090000,
+      "Entries": [
+        "Rifle Spear - Ghost"
+      ]
+    },
+    {
+      "ID": 10100000,
+      "Entries": [
+        "Reiterpallasch"
+      ]
+    },
+    {
+      "ID": 10100100,
+      "Entries": [
+        "Reiterpallasch +1"
+      ]
+    },
+    {
+      "ID": 10100200,
+      "Entries": [
+        "Reiterpallasch +2"
+      ]
+    },
+    {
+      "ID": 10100300,
+      "Entries": [
+        "Reiterpallasch +3"
+      ]
+    },
+    {
+      "ID": 10100400,
+      "Entries": [
+        "Reiterpallasch +4"
+      ]
+    },
+    {
+      "ID": 10100500,
+      "Entries": [
+        "Reiterpallasch +5"
+      ]
+    },
+    {
+      "ID": 10100600,
+      "Entries": [
+        "Reiterpallasch +6"
+      ]
+    },
+    {
+      "ID": 10100700,
+      "Entries": [
+        "Reiterpallasch +7"
+      ]
+    },
+    {
+      "ID": 10100800,
+      "Entries": [
+        "Reiterpallasch +8"
+      ]
+    },
+    {
+      "ID": 10100900,
+      "Entries": [
+        "Reiterpallasch +9"
+      ]
+    },
+    {
+      "ID": 10101000,
+      "Entries": [
+        "Reiterpallasch +10"
+      ]
+    },
+    {
+      "ID": 10110000,
+      "Entries": [
+        "Uncanny Reiterpallasch"
+      ]
+    },
+    {
+      "ID": 10110100,
+      "Entries": [
+        "Uncanny Reiterpallasch +1"
+      ]
+    },
+    {
+      "ID": 10110200,
+      "Entries": [
+        "Uncanny Reiterpallasch +2"
+      ]
+    },
+    {
+      "ID": 10110300,
+      "Entries": [
+        "Uncanny Reiterpallasch +3"
+      ]
+    },
+    {
+      "ID": 10110400,
+      "Entries": [
+        "Uncanny Reiterpallasch +4"
+      ]
+    },
+    {
+      "ID": 10110500,
+      "Entries": [
+        "Uncanny Reiterpallasch +5"
+      ]
+    },
+    {
+      "ID": 10110600,
+      "Entries": [
+        "Uncanny Reiterpallasch +6"
+      ]
+    },
+    {
+      "ID": 10110700,
+      "Entries": [
+        "Uncanny Reiterpallasch +7"
+      ]
+    },
+    {
+      "ID": 10110800,
+      "Entries": [
+        "Uncanny Reiterpallasch +8"
+      ]
+    },
+    {
+      "ID": 10110900,
+      "Entries": [
+        "Uncanny Reiterpallasch +9"
+      ]
+    },
+    {
+      "ID": 10111000,
+      "Entries": [
+        "Uncanny Reiterpallasch +10"
+      ]
+    },
+    {
+      "ID": 10120000,
+      "Entries": [
+        "Lost Reiterpallasch"
+      ]
+    },
+    {
+      "ID": 10120100,
+      "Entries": [
+        "Lost Reiterpallasch +1"
+      ]
+    },
+    {
+      "ID": 10120200,
+      "Entries": [
+        "Lost Reiterpallasch +2"
+      ]
+    },
+    {
+      "ID": 10120300,
+      "Entries": [
+        "Lost Reiterpallasch +3"
+      ]
+    },
+    {
+      "ID": 10120400,
+      "Entries": [
+        "Lost Reiterpallasch +4"
+      ]
+    },
+    {
+      "ID": 10120500,
+      "Entries": [
+        "Lost Reiterpallasch +5"
+      ]
+    },
+    {
+      "ID": 10120600,
+      "Entries": [
+        "Lost Reiterpallasch +6"
+      ]
+    },
+    {
+      "ID": 10120700,
+      "Entries": [
+        "Lost Reiterpallasch +7"
+      ]
+    },
+    {
+      "ID": 10120800,
+      "Entries": [
+        "Lost Reiterpallasch +8"
+      ]
+    },
+    {
+      "ID": 10120900,
+      "Entries": [
+        "Lost Reiterpallasch +9"
+      ]
+    },
+    {
+      "ID": 10121000,
+      "Entries": [
+        "Lost Reiterpallasch +10"
+      ]
+    },
+    {
+      "ID": 10190000,
+      "Entries": [
+        "Reiterpallasch - Ghost"
+      ]
+    },
+    {
+      "ID": 11000000,
+      "Entries": [
+        "Stake Driver"
+      ]
+    },
+    {
+      "ID": 11000100,
+      "Entries": [
+        "Stake Driver +1"
+      ]
+    },
+    {
+      "ID": 11000200,
+      "Entries": [
+        "Stake Driver +2"
+      ]
+    },
+    {
+      "ID": 11000300,
+      "Entries": [
+        "Stake Driver +3"
+      ]
+    },
+    {
+      "ID": 11000400,
+      "Entries": [
+        "Stake Driver +4"
+      ]
+    },
+    {
+      "ID": 11000500,
+      "Entries": [
+        "Stake Driver +5"
+      ]
+    },
+    {
+      "ID": 11000600,
+      "Entries": [
+        "Stake Driver +6"
+      ]
+    },
+    {
+      "ID": 11000700,
+      "Entries": [
+        "Stake Driver +7"
+      ]
+    },
+    {
+      "ID": 11000800,
+      "Entries": [
+        "Stake Driver +8"
+      ]
+    },
+    {
+      "ID": 11000900,
+      "Entries": [
+        "Stake Driver +9"
+      ]
+    },
+    {
+      "ID": 11001000,
+      "Entries": [
+        "Stake Driver +10"
+      ]
+    },
+    {
+      "ID": 11010000,
+      "Entries": [
+        "Uncanny Stake Driver"
+      ]
+    },
+    {
+      "ID": 11010100,
+      "Entries": [
+        "Uncanny Stake Driver +1"
+      ]
+    },
+    {
+      "ID": 11010200,
+      "Entries": [
+        "Uncanny Stake Driver +2"
+      ]
+    },
+    {
+      "ID": 11010300,
+      "Entries": [
+        "Uncanny Stake Driver +3"
+      ]
+    },
+    {
+      "ID": 11010400,
+      "Entries": [
+        "Uncanny Stake Driver +4"
+      ]
+    },
+    {
+      "ID": 11010500,
+      "Entries": [
+        "Uncanny Stake Driver +5"
+      ]
+    },
+    {
+      "ID": 11010600,
+      "Entries": [
+        "Uncanny Stake Driver +6"
+      ]
+    },
+    {
+      "ID": 11010700,
+      "Entries": [
+        "Uncanny Stake Driver +7"
+      ]
+    },
+    {
+      "ID": 11010800,
+      "Entries": [
+        "Uncanny Stake Driver +8"
+      ]
+    },
+    {
+      "ID": 11010900,
+      "Entries": [
+        "Uncanny Stake Driver +9"
+      ]
+    },
+    {
+      "ID": 11011000,
+      "Entries": [
+        "Uncanny Stake Driver +10"
+      ]
+    },
+    {
+      "ID": 11020000,
+      "Entries": [
+        "Lost Stake Driver"
+      ]
+    },
+    {
+      "ID": 11020100,
+      "Entries": [
+        "Lost Stake Driver +1"
+      ]
+    },
+    {
+      "ID": 11020200,
+      "Entries": [
+        "Lost Stake Driver +2"
+      ]
+    },
+    {
+      "ID": 11020300,
+      "Entries": [
+        "Lost Stake Driver +3"
+      ]
+    },
+    {
+      "ID": 11020400,
+      "Entries": [
+        "Lost Stake Driver +4"
+      ]
+    },
+    {
+      "ID": 11020500,
+      "Entries": [
+        "Lost Stake Driver +5"
+      ]
+    },
+    {
+      "ID": 11020600,
+      "Entries": [
+        "Lost Stake Driver +6"
+      ]
+    },
+    {
+      "ID": 11020700,
+      "Entries": [
+        "Lost Stake Driver +7"
+      ]
+    },
+    {
+      "ID": 11020800,
+      "Entries": [
+        "Lost Stake Driver +8"
+      ]
+    },
+    {
+      "ID": 11020900,
+      "Entries": [
+        "Lost Stake Driver +9"
+      ]
+    },
+    {
+      "ID": 11021000,
+      "Entries": [
+        "Lost Stake Driver +10"
+      ]
+    },
+    {
+      "ID": 11090000,
+      "Entries": [
+        "Stake Driver - Ghost"
+      ]
+    },
+    {
+      "ID": 12000000,
+      "Entries": [
+        "Logarius's Wheel"
+      ]
+    },
+    {
+      "ID": 12000100,
+      "Entries": [
+        "Logarius's Wheel +1"
+      ]
+    },
+    {
+      "ID": 12000200,
+      "Entries": [
+        "Logarius' Wheel +2"
+      ]
+    },
+    {
+      "ID": 12000300,
+      "Entries": [
+        "Logarius' Wheel +3"
+      ]
+    },
+    {
+      "ID": 12000400,
+      "Entries": [
+        "Logarius' Wheel +4"
+      ]
+    },
+    {
+      "ID": 12000500,
+      "Entries": [
+        "Logarius' Wheel +5"
+      ]
+    },
+    {
+      "ID": 12000600,
+      "Entries": [
+        "Logarius' Wheel +6"
+      ]
+    },
+    {
+      "ID": 12000700,
+      "Entries": [
+        "Logarius' Wheel +7"
+      ]
+    },
+    {
+      "ID": 12000800,
+      "Entries": [
+        "Logarius' Wheel +8"
+      ]
+    },
+    {
+      "ID": 12000900,
+      "Entries": [
+        "Logarius's Wheel +9"
+      ]
+    },
+    {
+      "ID": 12001000,
+      "Entries": [
+        "Logarius' Wheel +10"
+      ]
+    },
+    {
+      "ID": 12010000,
+      "Entries": [
+        "Logarius's Uncanny Wheel"
+      ]
+    },
+    {
+      "ID": 12010100,
+      "Entries": [
+        "Logarius's Uncanny Wheel +1"
+      ]
+    },
+    {
+      "ID": 12010200,
+      "Entries": [
+        "Logarius' Uncanny Wheel +2"
+      ]
+    },
+    {
+      "ID": 12010300,
+      "Entries": [
+        "Logarius' Uncanny Wheel +3"
+      ]
+    },
+    {
+      "ID": 12010400,
+      "Entries": [
+        "Logarius' Uncanny Wheel +4"
+      ]
+    },
+    {
+      "ID": 12010500,
+      "Entries": [
+        "Logarius' Uncanny Wheel +5"
+      ]
+    },
+    {
+      "ID": 12010600,
+      "Entries": [
+        "Logarius' Uncanny Wheel +6"
+      ]
+    },
+    {
+      "ID": 12010700,
+      "Entries": [
+        "Logarius' Uncanny Wheel +7"
+      ]
+    },
+    {
+      "ID": 12010800,
+      "Entries": [
+        "Logarius' Uncanny Wheel +8"
+      ]
+    },
+    {
+      "ID": 12010900,
+      "Entries": [
+        "Logarius's Uncanny Wheel +9"
+      ]
+    },
+    {
+      "ID": 12011000,
+      "Entries": [
+        "Logarius' Uncanny Wheel +10"
+      ]
+    },
+    {
+      "ID": 12020000,
+      "Entries": [
+        "Logarius's Lost Wheel"
+      ]
+    },
+    {
+      "ID": 12020100,
+      "Entries": [
+        "Logarius's Lost Wheel +1"
+      ]
+    },
+    {
+      "ID": 12020200,
+      "Entries": [
+        "Logarius' Lost Wheel +2"
+      ]
+    },
+    {
+      "ID": 12020300,
+      "Entries": [
+        "Logarius' Lost Wheel +3"
+      ]
+    },
+    {
+      "ID": 12020400,
+      "Entries": [
+        "Logarius' Lost Wheel +4"
+      ]
+    },
+    {
+      "ID": 12020500,
+      "Entries": [
+        "Logarius' Lost Wheel +5"
+      ]
+    },
+    {
+      "ID": 12020600,
+      "Entries": [
+        "Logarius' Lost Wheel +6"
+      ]
+    },
+    {
+      "ID": 12020700,
+      "Entries": [
+        "Logarius' Lost Wheel +7"
+      ]
+    },
+    {
+      "ID": 12020800,
+      "Entries": [
+        "Logarius' Lost Wheel +8"
+      ]
+    },
+    {
+      "ID": 12020900,
+      "Entries": [
+        "Logarius's Lost Wheel +9"
+      ]
+    },
+    {
+      "ID": 12021000,
+      "Entries": [
+        "Logarius' Lost Wheel +10"
+      ]
+    },
+    {
+      "ID": 12080000,
+      "Entries": [
+        "Alfred's Logarius' Wheel"
+      ]
+    },
+    {
+      "ID": 12080100,
+      "Entries": [
+        "Alfred's Logarius' Wheel +1"
+      ]
+    },
+    {
+      "ID": 12080200,
+      "Entries": [
+        "Alfred's Logarius' Wheel +2"
+      ]
+    },
+    {
+      "ID": 12080300,
+      "Entries": [
+        "Alfred's Logarius' Wheel +3"
+      ]
+    },
+    {
+      "ID": 12080400,
+      "Entries": [
+        "Alfred's Logarius' Wheel +4"
+      ]
+    },
+    {
+      "ID": 12080500,
+      "Entries": [
+        "Alfred's Logarius' Wheel +5"
+      ]
+    },
+    {
+      "ID": 12080600,
+      "Entries": [
+        "Alfred's Logarius' Wheel +6"
+      ]
+    },
+    {
+      "ID": 12080700,
+      "Entries": [
+        "Alfred's Logarius' Wheel +7"
+      ]
+    },
+    {
+      "ID": 12080800,
+      "Entries": [
+        "Alfred's Logarius' Wheel +8"
+      ]
+    },
+    {
+      "ID": 12080900,
+      "Entries": [
+        "Alfred's Logarius' Wheel +9"
+      ]
+    },
+    {
+      "ID": 12081000,
+      "Entries": [
+        "Alfred's Logarius' Wheel +10"
+      ]
+    },
+    {
+      "ID": 12090000,
+      "Entries": [
+        "Logarius' Wheel - Ghost"
+      ]
+    },
+    {
+      "ID": 13000000,
+      "Entries": [
+        "Tonitrus"
+      ]
+    },
+    {
+      "ID": 13000100,
+      "Entries": [
+        "Tonitrus +1"
+      ]
+    },
+    {
+      "ID": 13000200,
+      "Entries": [
+        "Tonitrus +2"
+      ]
+    },
+    {
+      "ID": 13000300,
+      "Entries": [
+        "Tonitrus +3"
+      ]
+    },
+    {
+      "ID": 13000400,
+      "Entries": [
+        "Tonitrus +4"
+      ]
+    },
+    {
+      "ID": 13000500,
+      "Entries": [
+        "Tonitrus +5"
+      ]
+    },
+    {
+      "ID": 13000600,
+      "Entries": [
+        "Tonitrus +6"
+      ]
+    },
+    {
+      "ID": 13000700,
+      "Entries": [
+        "Tonitrus +7"
+      ]
+    },
+    {
+      "ID": 13000800,
+      "Entries": [
+        "Tonitrus +8"
+      ]
+    },
+    {
+      "ID": 13000900,
+      "Entries": [
+        "Tonitrus +9"
+      ]
+    },
+    {
+      "ID": 13001000,
+      "Entries": [
+        "Tonitrus +10"
+      ]
+    },
+    {
+      "ID": 13010000,
+      "Entries": [
+        "Uncanny Tonitrus"
+      ]
+    },
+    {
+      "ID": 13010100,
+      "Entries": [
+        "Uncanny Tonitrus +1"
+      ]
+    },
+    {
+      "ID": 13010200,
+      "Entries": [
+        "Uncanny Tonitrus +2"
+      ]
+    },
+    {
+      "ID": 13010300,
+      "Entries": [
+        "Uncanny Tonitrus +3"
+      ]
+    },
+    {
+      "ID": 13010400,
+      "Entries": [
+        "Uncanny Tonitrus +4"
+      ]
+    },
+    {
+      "ID": 13010500,
+      "Entries": [
+        "Uncanny Tonitrus +5"
+      ]
+    },
+    {
+      "ID": 13010600,
+      "Entries": [
+        "Uncanny Tonitrus +6"
+      ]
+    },
+    {
+      "ID": 13010700,
+      "Entries": [
+        "Uncanny Tonitrus +7"
+      ]
+    },
+    {
+      "ID": 13010800,
+      "Entries": [
+        "Uncanny Tonitrus +8"
+      ]
+    },
+    {
+      "ID": 13010900,
+      "Entries": [
+        "Uncanny Tonitrus +9"
+      ]
+    },
+    {
+      "ID": 13011000,
+      "Entries": [
+        "Uncanny Tonitrus +10"
+      ]
+    },
+    {
+      "ID": 13020000,
+      "Entries": [
+        "Lost Tonitrus"
+      ]
+    },
+    {
+      "ID": 13020100,
+      "Entries": [
+        "Lost Tonitrus +1"
+      ]
+    },
+    {
+      "ID": 13020200,
+      "Entries": [
+        "Lost Tonitrus +2"
+      ]
+    },
+    {
+      "ID": 13020300,
+      "Entries": [
+        "Lost Tonitrus +3"
+      ]
+    },
+    {
+      "ID": 13020400,
+      "Entries": [
+        "Lost Tonitrus +4"
+      ]
+    },
+    {
+      "ID": 13020500,
+      "Entries": [
+        "Lost Tonitrus +5"
+      ]
+    },
+    {
+      "ID": 13020600,
+      "Entries": [
+        "Lost Tonitrus +6"
+      ]
+    },
+    {
+      "ID": 13020700,
+      "Entries": [
+        "Lost Tonitrus +7"
+      ]
+    },
+    {
+      "ID": 13020800,
+      "Entries": [
+        "Lost Tonitrus +8"
+      ]
+    },
+    {
+      "ID": 13020900,
+      "Entries": [
+        "Lost Tonitrus +9"
+      ]
+    },
+    {
+      "ID": 13021000,
+      "Entries": [
+        "Lost Tonitrus +10"
+      ]
+    },
+    {
+      "ID": 13090000,
+      "Entries": [
+        "Tonitrus - Ghost"
+      ]
+    },
+    {
+      "ID": 14000000,
+      "Entries": [
+        "Hunter Pistol"
+      ]
+    },
+    {
+      "ID": 14000100,
+      "Entries": [
+        "Hunter Pistol +1"
+      ]
+    },
+    {
+      "ID": 14000200,
+      "Entries": [
+        "Hunter Pistol +2"
+      ]
+    },
+    {
+      "ID": 14000300,
+      "Entries": [
+        "Hunter Pistol +3"
+      ]
+    },
+    {
+      "ID": 14000400,
+      "Entries": [
+        "Hunter Pistol +4"
+      ]
+    },
+    {
+      "ID": 14000500,
+      "Entries": [
+        "Hunter Pistol +5"
+      ]
+    },
+    {
+      "ID": 14000600,
+      "Entries": [
+        "Hunter Pistol +6"
+      ]
+    },
+    {
+      "ID": 14000700,
+      "Entries": [
+        "Hunter Pistol +7"
+      ]
+    },
+    {
+      "ID": 14000800,
+      "Entries": [
+        "Hunter Pistol +8"
+      ]
+    },
+    {
+      "ID": 14000900,
+      "Entries": [
+        "Hunter Pistol +9"
+      ]
+    },
+    {
+      "ID": 14001000,
+      "Entries": [
+        "Hunter Pistol +10"
+      ]
+    },
+    {
+      "ID": 14090000,
+      "Entries": [
+        "Hunter Pistol - Ghost"
+      ]
+    },
+    {
+      "ID": 14100000,
+      "Entries": [
+        "Evelyn"
+      ]
+    },
+    {
+      "ID": 14100100,
+      "Entries": [
+        "Evelyn +1"
+      ]
+    },
+    {
+      "ID": 14100200,
+      "Entries": [
+        "Evelyn +2"
+      ]
+    },
+    {
+      "ID": 14100300,
+      "Entries": [
+        "Evelyn +3"
+      ]
+    },
+    {
+      "ID": 14100400,
+      "Entries": [
+        "Evelyn +4"
+      ]
+    },
+    {
+      "ID": 14100500,
+      "Entries": [
+        "Evelyn +5"
+      ]
+    },
+    {
+      "ID": 14100600,
+      "Entries": [
+        "Evelyn +6"
+      ]
+    },
+    {
+      "ID": 14100700,
+      "Entries": [
+        "Evelyn +7"
+      ]
+    },
+    {
+      "ID": 14100800,
+      "Entries": [
+        "Evelyn +8"
+      ]
+    },
+    {
+      "ID": 14100900,
+      "Entries": [
+        "Evelyn +9"
+      ]
+    },
+    {
+      "ID": 14101000,
+      "Entries": [
+        "Evelyn +10"
+      ]
+    },
+    {
+      "ID": 14190000,
+      "Entries": [
+        "Evelyn - Ghost"
+      ]
+    },
+    {
+      "ID": 14200000,
+      "Entries": [
+        "Repeating Pistol"
+      ]
+    },
+    {
+      "ID": 14200100,
+      "Entries": [
+        "Repeating Pistol +1"
+      ]
+    },
+    {
+      "ID": 14200200,
+      "Entries": [
+        "Repeating Pistol +2"
+      ]
+    },
+    {
+      "ID": 14200300,
+      "Entries": [
+        "Repeating Pistol +3"
+      ]
+    },
+    {
+      "ID": 14200400,
+      "Entries": [
+        "Repeating Pistol +4"
+      ]
+    },
+    {
+      "ID": 14200500,
+      "Entries": [
+        "Repeating Pistol +5"
+      ]
+    },
+    {
+      "ID": 14200600,
+      "Entries": [
+        "Repeating Pistol +6"
+      ]
+    },
+    {
+      "ID": 14200700,
+      "Entries": [
+        "Repeating Pistol +7"
+      ]
+    },
+    {
+      "ID": 14200800,
+      "Entries": [
+        "Repeating Pistol +8"
+      ]
+    },
+    {
+      "ID": 14200900,
+      "Entries": [
+        "Repeating Pistol +9"
+      ]
+    },
+    {
+      "ID": 14201000,
+      "Entries": [
+        "Repeating Pistol +10"
+      ]
+    },
+    {
+      "ID": 14290000,
+      "Entries": [
+        "Repeating Pistol - Ghost"
+      ]
+    },
+    {
+      "ID": 15000000,
+      "Entries": [
+        "Cannon"
+      ]
+    },
+    {
+      "ID": 15000100,
+      "Entries": [
+        "Cannon +1"
+      ]
+    },
+    {
+      "ID": 15000200,
+      "Entries": [
+        "Cannon +2"
+      ]
+    },
+    {
+      "ID": 15000300,
+      "Entries": [
+        "Cannon +3"
+      ]
+    },
+    {
+      "ID": 15000400,
+      "Entries": [
+        "Cannon +4"
+      ]
+    },
+    {
+      "ID": 15000500,
+      "Entries": [
+        "Cannon +5"
+      ]
+    },
+    {
+      "ID": 15000600,
+      "Entries": [
+        "Cannon +6"
+      ]
+    },
+    {
+      "ID": 15000700,
+      "Entries": [
+        "Cannon +7"
+      ]
+    },
+    {
+      "ID": 15000800,
+      "Entries": [
+        "Cannon +8"
+      ]
+    },
+    {
+      "ID": 15000900,
+      "Entries": [
+        "Cannon +9"
+      ]
+    },
+    {
+      "ID": 15001000,
+      "Entries": [
+        "Cannon +10"
+      ]
+    },
+    {
+      "ID": 15090000,
+      "Entries": [
+        "Cannon - Ghost"
+      ]
+    },
+    {
+      "ID": 18000000,
+      "Entries": [
+        "Rosmarinus"
+      ]
+    },
+    {
+      "ID": 18000100,
+      "Entries": [
+        "Rosmarinus +1"
+      ]
+    },
+    {
+      "ID": 18000200,
+      "Entries": [
+        "Rosmarinus +2"
+      ]
+    },
+    {
+      "ID": 18000300,
+      "Entries": [
+        "Rosmarinus +3"
+      ]
+    },
+    {
+      "ID": 18000400,
+      "Entries": [
+        "Rosmarinus +4"
+      ]
+    },
+    {
+      "ID": 18000500,
+      "Entries": [
+        "Rosmarinus +5"
+      ]
+    },
+    {
+      "ID": 18000600,
+      "Entries": [
+        "Rosmarinus +6"
+      ]
+    },
+    {
+      "ID": 18000700,
+      "Entries": [
+        "Rosmarinus +7"
+      ]
+    },
+    {
+      "ID": 18000800,
+      "Entries": [
+        "Rosmarinus +8"
+      ]
+    },
+    {
+      "ID": 18000900,
+      "Entries": [
+        "Rosmarinus +9"
+      ]
+    },
+    {
+      "ID": 18001000,
+      "Entries": [
+        "Rosmarinus +10"
+      ]
+    },
+    {
+      "ID": 18090000,
+      "Entries": [
+        "Rosmarinus - Ghost"
+      ]
+    },
+    {
+      "ID": 18100000,
+      "Entries": [
+        "Flamesprayer"
+      ]
+    },
+    {
+      "ID": 18100100,
+      "Entries": [
+        "Flamesprayer +1"
+      ]
+    },
+    {
+      "ID": 18100200,
+      "Entries": [
+        "Flamesprayer +2"
+      ]
+    },
+    {
+      "ID": 18100300,
+      "Entries": [
+        "Flamesprayer +3"
+      ]
+    },
+    {
+      "ID": 18100400,
+      "Entries": [
+        "Flamesprayer +4"
+      ]
+    },
+    {
+      "ID": 18100500,
+      "Entries": [
+        "Flamesprayer +5"
+      ]
+    },
+    {
+      "ID": 18100600,
+      "Entries": [
+        "Flamesprayer +6"
+      ]
+    },
+    {
+      "ID": 18100700,
+      "Entries": [
+        "Flamesprayer +7"
+      ]
+    },
+    {
+      "ID": 18100800,
+      "Entries": [
+        "Flamesprayer +8"
+      ]
+    },
+    {
+      "ID": 18100900,
+      "Entries": [
+        "Flamesprayer +9"
+      ]
+    },
+    {
+      "ID": 18101000,
+      "Entries": [
+        "Flamesprayer +10"
+      ]
+    },
+    {
+      "ID": 18190000,
+      "Entries": [
+        "Flamesprayer - Ghost"
+      ]
+    },
+    {
+      "ID": 19000000,
+      "Entries": [
+        "Wooden Shield"
+      ]
+    },
+    {
+      "ID": 19090000,
+      "Entries": [
+        "Wooden Shield - Ghost"
+      ]
+    },
+    {
+      "ID": 19100000,
+      "Entries": [
+        "Loch Shield"
+      ]
+    },
+    {
+      "ID": 19190000,
+      "Entries": [
+        "Loch Shield - Ghost"
+      ]
+    },
+    {
+      "ID": 20000000,
+      "Entries": [
+        "Hunter's Torch"
+      ]
+    },
+    {
+      "ID": 20000100,
+      "Entries": [
+        "Hunter's Torch +1"
+      ]
+    },
+    {
+      "ID": 20000200,
+      "Entries": [
+        "Hunter's Torch +2"
+      ]
+    },
+    {
+      "ID": 20000300,
+      "Entries": [
+        "Hunter's Torch +3"
+      ]
+    },
+    {
+      "ID": 20000400,
+      "Entries": [
+        "Hunter's Torch +4"
+      ]
+    },
+    {
+      "ID": 20000500,
+      "Entries": [
+        "Hunter's Torch +5"
+      ]
+    },
+    {
+      "ID": 20000600,
+      "Entries": [
+        "Hunter's Torch +6"
+      ]
+    },
+    {
+      "ID": 20000700,
+      "Entries": [
+        "Hunter's Torch +7"
+      ]
+    },
+    {
+      "ID": 20000800,
+      "Entries": [
+        "Hunter's Torch +8"
+      ]
+    },
+    {
+      "ID": 20000900,
+      "Entries": [
+        "Hunter's Torch +9"
+      ]
+    },
+    {
+      "ID": 20001000,
+      "Entries": [
+        "Hunter's Torch +10"
+      ]
+    },
+    {
+      "ID": 20090000,
+      "Entries": [
+        "Torch - Ghost"
+      ]
+    },
+    {
+      "ID": 20100000,
+      "Entries": [
+        "Torch"
+      ]
+    },
+    {
+      "ID": 22000000,
+      "Entries": [
+        "Threaded Cane"
+      ]
+    },
+    {
+      "ID": 22000100,
+      "Entries": [
+        "Threaded Cane +1"
+      ]
+    },
+    {
+      "ID": 22000200,
+      "Entries": [
+        "Threaded Cane +2"
+      ]
+    },
+    {
+      "ID": 22000300,
+      "Entries": [
+        "Threaded Cane +3"
+      ]
+    },
+    {
+      "ID": 22000400,
+      "Entries": [
+        "Threaded Cane +4"
+      ]
+    },
+    {
+      "ID": 22000500,
+      "Entries": [
+        "Threaded Cane +5"
+      ]
+    },
+    {
+      "ID": 22000600,
+      "Entries": [
+        "Threaded Cane +6"
+      ]
+    },
+    {
+      "ID": 22000700,
+      "Entries": [
+        "Threaded Cane +7"
+      ]
+    },
+    {
+      "ID": 22000800,
+      "Entries": [
+        "Threaded Cane +8"
+      ]
+    },
+    {
+      "ID": 22000900,
+      "Entries": [
+        "Threaded Cane +9"
+      ]
+    },
+    {
+      "ID": 22001000,
+      "Entries": [
+        "Threaded Cane +10"
+      ]
+    },
+    {
+      "ID": 22010000,
+      "Entries": [
+        "Uncanny Threaded Cane"
+      ]
+    },
+    {
+      "ID": 22010100,
+      "Entries": [
+        "Uncanny Threaded Cane +1"
+      ]
+    },
+    {
+      "ID": 22010200,
+      "Entries": [
+        "Uncanny Threaded Cane +2"
+      ]
+    },
+    {
+      "ID": 22010300,
+      "Entries": [
+        "Uncanny Threaded Cane +3"
+      ]
+    },
+    {
+      "ID": 22010400,
+      "Entries": [
+        "Uncanny Threaded Cane +4"
+      ]
+    },
+    {
+      "ID": 22010500,
+      "Entries": [
+        "Uncanny Threaded Cane +5"
+      ]
+    },
+    {
+      "ID": 22010600,
+      "Entries": [
+        "Uncanny Threaded Cane +6"
+      ]
+    },
+    {
+      "ID": 22010700,
+      "Entries": [
+        "Uncanny Threaded Cane +7"
+      ]
+    },
+    {
+      "ID": 22010800,
+      "Entries": [
+        "Uncanny Threaded Cane +8"
+      ]
+    },
+    {
+      "ID": 22010900,
+      "Entries": [
+        "Uncanny Threaded Cane +9"
+      ]
+    },
+    {
+      "ID": 22011000,
+      "Entries": [
+        "Uncanny Threaded Cane +10"
+      ]
+    },
+    {
+      "ID": 22020000,
+      "Entries": [
+        "Lost Threaded Cane"
+      ]
+    },
+    {
+      "ID": 22020100,
+      "Entries": [
+        "Lost Threaded Cane +1"
+      ]
+    },
+    {
+      "ID": 22020200,
+      "Entries": [
+        "Lost Threaded Cane +2"
+      ]
+    },
+    {
+      "ID": 22020300,
+      "Entries": [
+        "Lost Threaded Cane +3"
+      ]
+    },
+    {
+      "ID": 22020400,
+      "Entries": [
+        "Lost Threaded Cane +4"
+      ]
+    },
+    {
+      "ID": 22020500,
+      "Entries": [
+        "Lost Threaded Cane +5"
+      ]
+    },
+    {
+      "ID": 22020600,
+      "Entries": [
+        "Lost Threaded Cane +6"
+      ]
+    },
+    {
+      "ID": 22020700,
+      "Entries": [
+        "Lost Threaded Cane +7"
+      ]
+    },
+    {
+      "ID": 22020800,
+      "Entries": [
+        "Lost Threaded Cane +8"
+      ]
+    },
+    {
+      "ID": 22020900,
+      "Entries": [
+        "Lost Threaded Cane +9"
+      ]
+    },
+    {
+      "ID": 22021000,
+      "Entries": [
+        "Lost Threaded Cane +10"
+      ]
+    },
+    {
+      "ID": 22090000,
+      "Entries": [
+        "Threade Cane - Ghost"
+      ]
+    },
+    {
+      "ID": 23000000,
+      "Entries": [
+        "Beasthunter Saif"
+      ]
+    },
+    {
+      "ID": 23000100,
+      "Entries": [
+        "Beasthunter Saif +1"
+      ]
+    },
+    {
+      "ID": 23000200,
+      "Entries": [
+        "Beasthunter Saif +2"
+      ]
+    },
+    {
+      "ID": 23000300,
+      "Entries": [
+        "Beasthunter Saif +3"
+      ]
+    },
+    {
+      "ID": 23000400,
+      "Entries": [
+        "Beasthunter Saif +4"
+      ]
+    },
+    {
+      "ID": 23000500,
+      "Entries": [
+        "Beasthunter Saif +5"
+      ]
+    },
+    {
+      "ID": 23000600,
+      "Entries": [
+        "Beasthunter Saif +6"
+      ]
+    },
+    {
+      "ID": 23000700,
+      "Entries": [
+        "Beasthunter Saif +7"
+      ]
+    },
+    {
+      "ID": 23000800,
+      "Entries": [
+        "Beasthunter Saif +8"
+      ]
+    },
+    {
+      "ID": 23000900,
+      "Entries": [
+        "Beasthunter Saif +9"
+      ]
+    },
+    {
+      "ID": 23001000,
+      "Entries": [
+        "Beasthunter Saif +10"
+      ]
+    },
+    {
+      "ID": 23010000,
+      "Entries": [
+        "Uncanny Beasthunter Saif"
+      ]
+    },
+    {
+      "ID": 23010100,
+      "Entries": [
+        "Uncanny Beasthunter Saif +1"
+      ]
+    },
+    {
+      "ID": 23010200,
+      "Entries": [
+        "Uncanny Beasthunter Saif +2"
+      ]
+    },
+    {
+      "ID": 23010300,
+      "Entries": [
+        "Uncanny Beasthunter Saif +3"
+      ]
+    },
+    {
+      "ID": 23010400,
+      "Entries": [
+        "Uncanny Beasthunter Saif +4"
+      ]
+    },
+    {
+      "ID": 23010500,
+      "Entries": [
+        "Uncanny Beasthunter Saif +5"
+      ]
+    },
+    {
+      "ID": 23010600,
+      "Entries": [
+        "Uncanny Beasthunter Saif +6"
+      ]
+    },
+    {
+      "ID": 23010700,
+      "Entries": [
+        "Uncanny Beasthunter Saif +7"
+      ]
+    },
+    {
+      "ID": 23010800,
+      "Entries": [
+        "Uncanny Beasthunter Saif +8"
+      ]
+    },
+    {
+      "ID": 23010900,
+      "Entries": [
+        "Uncanny Beasthunter Saif +9"
+      ]
+    },
+    {
+      "ID": 23011000,
+      "Entries": [
+        "Uncanny Beasthunter Saif +10"
+      ]
+    },
+    {
+      "ID": 23020000,
+      "Entries": [
+        "Lost Beasthunter Saif"
+      ]
+    },
+    {
+      "ID": 23020100,
+      "Entries": [
+        "Lost Beasthunter Saif +1"
+      ]
+    },
+    {
+      "ID": 23020200,
+      "Entries": [
+        "Lost Beasthunter Saif +2"
+      ]
+    },
+    {
+      "ID": 23020300,
+      "Entries": [
+        "Lost Beasthunter Saif +3"
+      ]
+    },
+    {
+      "ID": 23020400,
+      "Entries": [
+        "Lost Beasthunter Saif +4"
+      ]
+    },
+    {
+      "ID": 23020500,
+      "Entries": [
+        "Lost Beasthunter Saif +5"
+      ]
+    },
+    {
+      "ID": 23020600,
+      "Entries": [
+        "Lost Beasthunter Saif +6"
+      ]
+    },
+    {
+      "ID": 23020700,
+      "Entries": [
+        "Lost Beasthunter Saif +7"
+      ]
+    },
+    {
+      "ID": 23020800,
+      "Entries": [
+        "Lost Beasthunter Saif +8"
+      ]
+    },
+    {
+      "ID": 23020900,
+      "Entries": [
+        "Lost Beasthunter Saif +9"
+      ]
+    },
+    {
+      "ID": 23021000,
+      "Entries": [
+        "Lost Beasthunter Saif +10"
+      ]
+    },
+    {
+      "ID": 23090000,
+      "Entries": [
+        "Beasthunter Saif - Ghost"
+      ]
+    },
+    {
+      "ID": 24000000,
+      "Entries": [
+        "Beast Cutter"
+      ]
+    },
+    {
+      "ID": 24000100,
+      "Entries": [
+        "Beast Cutter +1"
+      ]
+    },
+    {
+      "ID": 24000200,
+      "Entries": [
+        "Beast Cutter +2"
+      ]
+    },
+    {
+      "ID": 24000300,
+      "Entries": [
+        "Beast Cutter +3"
+      ]
+    },
+    {
+      "ID": 24000400,
+      "Entries": [
+        "Beast Cutter +4"
+      ]
+    },
+    {
+      "ID": 24000500,
+      "Entries": [
+        "Beast Cutter +5"
+      ]
+    },
+    {
+      "ID": 24000600,
+      "Entries": [
+        "Beast Cutter +6"
+      ]
+    },
+    {
+      "ID": 24000700,
+      "Entries": [
+        "Beast Cutter +7"
+      ]
+    },
+    {
+      "ID": 24000800,
+      "Entries": [
+        "Beast Cutter +8"
+      ]
+    },
+    {
+      "ID": 24000900,
+      "Entries": [
+        "Beast Cutter +9"
+      ]
+    },
+    {
+      "ID": 24001000,
+      "Entries": [
+        "Beast Cutter +10"
+      ]
+    },
+    {
+      "ID": 24010000,
+      "Entries": [
+        "Uncanny Beast Cutter"
+      ]
+    },
+    {
+      "ID": 24010100,
+      "Entries": [
+        "Uncanny Beast Cutter +1"
+      ]
+    },
+    {
+      "ID": 24010200,
+      "Entries": [
+        "Uncanny Beast Cutter +2"
+      ]
+    },
+    {
+      "ID": 24010300,
+      "Entries": [
+        "Uncanny Beast Cutter +3"
+      ]
+    },
+    {
+      "ID": 24010400,
+      "Entries": [
+        "Uncanny Beast Cutter +4"
+      ]
+    },
+    {
+      "ID": 24010500,
+      "Entries": [
+        "Uncanny Beast Cutter +5"
+      ]
+    },
+    {
+      "ID": 24010600,
+      "Entries": [
+        "Uncanny Beast Cutter +6"
+      ]
+    },
+    {
+      "ID": 24010700,
+      "Entries": [
+        "Uncanny Beast Cutter +7"
+      ]
+    },
+    {
+      "ID": 24010800,
+      "Entries": [
+        "Uncanny Beast Cutter +8"
+      ]
+    },
+    {
+      "ID": 24010900,
+      "Entries": [
+        "Uncanny Beast Cutter +9"
+      ]
+    },
+    {
+      "ID": 24011000,
+      "Entries": [
+        "Uncanny Beast Cutter +10"
+      ]
+    },
+    {
+      "ID": 24020000,
+      "Entries": [
+        "Lost Beast Cutter"
+      ]
+    },
+    {
+      "ID": 24020100,
+      "Entries": [
+        "Lost Beast Cutter +1"
+      ]
+    },
+    {
+      "ID": 24020200,
+      "Entries": [
+        "Lost Beast Cutter +2"
+      ]
+    },
+    {
+      "ID": 24020300,
+      "Entries": [
+        "Lost Beast Cutter +3"
+      ]
+    },
+    {
+      "ID": 24020400,
+      "Entries": [
+        "Lost Beast Cutter +4"
+      ]
+    },
+    {
+      "ID": 24020500,
+      "Entries": [
+        "Lost Beast Cutter +5"
+      ]
+    },
+    {
+      "ID": 24020600,
+      "Entries": [
+        "Lost Beast Cutter +6"
+      ]
+    },
+    {
+      "ID": 24020700,
+      "Entries": [
+        "Lost Beast Cutter +7"
+      ]
+    },
+    {
+      "ID": 24020800,
+      "Entries": [
+        "Lost Beast Cutter +8"
+      ]
+    },
+    {
+      "ID": 24020900,
+      "Entries": [
+        "Lost Beast Cutter +9"
+      ]
+    },
+    {
+      "ID": 24021000,
+      "Entries": [
+        "Lost Beast Cutter +10"
+      ]
+    },
+    {
+      "ID": 24090000,
+      "Entries": [
+        "Beast Cutter - Ghost"
+      ]
+    },
+    {
+      "ID": 25000000,
+      "Entries": [
+        "Amygdalan Arm"
+      ]
+    },
+    {
+      "ID": 25000100,
+      "Entries": [
+        "Amygdalan Arm +1"
+      ]
+    },
+    {
+      "ID": 25000200,
+      "Entries": [
+        "Amygdalan Arm +2"
+      ]
+    },
+    {
+      "ID": 25000300,
+      "Entries": [
+        "Amygdalan Arm +3"
+      ]
+    },
+    {
+      "ID": 25000400,
+      "Entries": [
+        "Amygdalan Arm +4"
+      ]
+    },
+    {
+      "ID": 25000500,
+      "Entries": [
+        "Amygdalan Arm +5"
+      ]
+    },
+    {
+      "ID": 25000600,
+      "Entries": [
+        "Amygdalan Arm +6"
+      ]
+    },
+    {
+      "ID": 25000700,
+      "Entries": [
+        "Amygdalan Arm +7"
+      ]
+    },
+    {
+      "ID": 25000800,
+      "Entries": [
+        "Amygdalan Arm +8"
+      ]
+    },
+    {
+      "ID": 25000900,
+      "Entries": [
+        "Amygdalan Arm +9"
+      ]
+    },
+    {
+      "ID": 25001000,
+      "Entries": [
+        "Amygdalan Arm +10"
+      ]
+    },
+    {
+      "ID": 25010000,
+      "Entries": [
+        "Uncanny Amygdalan Arm"
+      ]
+    },
+    {
+      "ID": 25010100,
+      "Entries": [
+        "Uncanny Amygdalan Arm +1"
+      ]
+    },
+    {
+      "ID": 25010200,
+      "Entries": [
+        "Uncanny Amygdalan Arm +2"
+      ]
+    },
+    {
+      "ID": 25010300,
+      "Entries": [
+        "Uncanny Amygdalan Arm +3"
+      ]
+    },
+    {
+      "ID": 25010400,
+      "Entries": [
+        "Uncanny Amygdalan Arm +4"
+      ]
+    },
+    {
+      "ID": 25010500,
+      "Entries": [
+        "Uncanny Amygdalan Arm +5"
+      ]
+    },
+    {
+      "ID": 25010600,
+      "Entries": [
+        "Uncanny Amygdalan Arm +6"
+      ]
+    },
+    {
+      "ID": 25010700,
+      "Entries": [
+        "Uncanny Amygdalan Arm +7"
+      ]
+    },
+    {
+      "ID": 25010800,
+      "Entries": [
+        "Uncanny Amygdalan Arm +8"
+      ]
+    },
+    {
+      "ID": 25010900,
+      "Entries": [
+        "Uncanny Amygdalan Arm +9"
+      ]
+    },
+    {
+      "ID": 25011000,
+      "Entries": [
+        "Uncanny Amygdalan Arm +10"
+      ]
+    },
+    {
+      "ID": 25020000,
+      "Entries": [
+        "Lost Amygdalan Arm"
+      ]
+    },
+    {
+      "ID": 25020100,
+      "Entries": [
+        "Lost Amygdalan Arm +1"
+      ]
+    },
+    {
+      "ID": 25020200,
+      "Entries": [
+        "Lost Amygdalan Arm +2"
+      ]
+    },
+    {
+      "ID": 25020300,
+      "Entries": [
+        "Lost Amygdalan Arm +3"
+      ]
+    },
+    {
+      "ID": 25020400,
+      "Entries": [
+        "Lost Amygdalan Arm +4"
+      ]
+    },
+    {
+      "ID": 25020500,
+      "Entries": [
+        "Lost Amygdalan Arm +5"
+      ]
+    },
+    {
+      "ID": 25020600,
+      "Entries": [
+        "Lost Amygdalan Arm +6"
+      ]
+    },
+    {
+      "ID": 25020700,
+      "Entries": [
+        "Lost Amygdalan Arm +7"
+      ]
+    },
+    {
+      "ID": 25020800,
+      "Entries": [
+        "Lost Amygdalan Arm +8"
+      ]
+    },
+    {
+      "ID": 25020900,
+      "Entries": [
+        "Lost Amygdalan Arm +9"
+      ]
+    },
+    {
+      "ID": 25021000,
+      "Entries": [
+        "Lost Amygdalan Arm +10"
+      ]
+    },
+    {
+      "ID": 25090000,
+      "Entries": [
+        "Amygdalan Arm - Ghost"
+      ]
+    },
+    {
+      "ID": 26000000,
+      "Entries": [
+        "Holy Moonlight Sword"
+      ]
+    },
+    {
+      "ID": 26000100,
+      "Entries": [
+        "Holy Moonlight Sword +1"
+      ]
+    },
+    {
+      "ID": 26000200,
+      "Entries": [
+        "Holy Moonlight Sword +2"
+      ]
+    },
+    {
+      "ID": 26000300,
+      "Entries": [
+        "Holy Moonlight Sword +3"
+      ]
+    },
+    {
+      "ID": 26000400,
+      "Entries": [
+        "Holy Moonlight Sword +4"
+      ]
+    },
+    {
+      "ID": 26000500,
+      "Entries": [
+        "Holy Moonlight Sword +5"
+      ]
+    },
+    {
+      "ID": 26000600,
+      "Entries": [
+        "Holy Moonlight Sword +6"
+      ]
+    },
+    {
+      "ID": 26000700,
+      "Entries": [
+        "Holy Moonlight Sword +7"
+      ]
+    },
+    {
+      "ID": 26000800,
+      "Entries": [
+        "Holy Moonlight Sword +8"
+      ]
+    },
+    {
+      "ID": 26000900,
+      "Entries": [
+        "Holy Moonlight Sword +9"
+      ]
+    },
+    {
+      "ID": 26001000,
+      "Entries": [
+        "Holy Moonlight Sword +10"
+      ]
+    },
+    {
+      "ID": 26010000,
+      "Entries": [
+        "Uncanny Holy Moonlight Sword"
+      ]
+    },
+    {
+      "ID": 26010100,
+      "Entries": [
+        "Uncanny Holy Moonlight Sword +1"
+      ]
+    },
+    {
+      "ID": 26010200,
+      "Entries": [
+        "Uncanny Holy Moonlight Sword +2"
+      ]
+    },
+    {
+      "ID": 26010300,
+      "Entries": [
+        "Uncanny Holy Moonlight Sword +3"
+      ]
+    },
+    {
+      "ID": 26010400,
+      "Entries": [
+        "Uncanny Holy Moonlight Sword +4"
+      ]
+    },
+    {
+      "ID": 26010500,
+      "Entries": [
+        "Uncanny Holy Moonlight Sword +5"
+      ]
+    },
+    {
+      "ID": 26010600,
+      "Entries": [
+        "Uncanny Holy Moonlight Sword +6"
+      ]
+    },
+    {
+      "ID": 26010700,
+      "Entries": [
+        "Uncanny Holy Moonlight Sword +7"
+      ]
+    },
+    {
+      "ID": 26010800,
+      "Entries": [
+        "Uncanny Holy Moonlight Sword +8"
+      ]
+    },
+    {
+      "ID": 26010900,
+      "Entries": [
+        "Uncanny Holy Moonlight Sword +9"
+      ]
+    },
+    {
+      "ID": 26011000,
+      "Entries": [
+        "Uncanny Holy Moonlight Sword +10"
+      ]
+    },
+    {
+      "ID": 26020000,
+      "Entries": [
+        "Lost Holy Moonlight Sword"
+      ]
+    },
+    {
+      "ID": 26020100,
+      "Entries": [
+        "Lost Holy Moonlight Sword +1"
+      ]
+    },
+    {
+      "ID": 26020200,
+      "Entries": [
+        "Lost Holy Moonlight Sword +2"
+      ]
+    },
+    {
+      "ID": 26020300,
+      "Entries": [
+        "Lost Holy Moonlight Sword +3"
+      ]
+    },
+    {
+      "ID": 26020400,
+      "Entries": [
+        "Lost Holy Moonlight Sword +4"
+      ]
+    },
+    {
+      "ID": 26020500,
+      "Entries": [
+        "Lost Holy Moonlight Sword +5"
+      ]
+    },
+    {
+      "ID": 26020600,
+      "Entries": [
+        "Lost Holy Moonlight Sword +6"
+      ]
+    },
+    {
+      "ID": 26020700,
+      "Entries": [
+        "Lost Holy Moonlight Sword +7"
+      ]
+    },
+    {
+      "ID": 26020800,
+      "Entries": [
+        "Lost Holy Moonlight Sword +8"
+      ]
+    },
+    {
+      "ID": 26020900,
+      "Entries": [
+        "Lost Holy Moonlight Sword +9"
+      ]
+    },
+    {
+      "ID": 26021000,
+      "Entries": [
+        "Lost Holy Moonlight Sword +10"
+      ]
+    },
+    {
+      "ID": 26090000,
+      "Entries": [
+        "Holy Moonlight Sword - Ghost"
+      ]
+    },
+    {
+      "ID": 27000000,
+      "Entries": [
+        "Rakuyo"
+      ]
+    },
+    {
+      "ID": 27000100,
+      "Entries": [
+        "Rakuyo +1"
+      ]
+    },
+    {
+      "ID": 27000200,
+      "Entries": [
+        "Rakuyo +2"
+      ]
+    },
+    {
+      "ID": 27000300,
+      "Entries": [
+        "Rakuyo +3"
+      ]
+    },
+    {
+      "ID": 27000400,
+      "Entries": [
+        "Rakuyo +4"
+      ]
+    },
+    {
+      "ID": 27000500,
+      "Entries": [
+        "Rakuyo +5"
+      ]
+    },
+    {
+      "ID": 27000600,
+      "Entries": [
+        "Rakuyo +6"
+      ]
+    },
+    {
+      "ID": 27000700,
+      "Entries": [
+        "Rakuyo +7"
+      ]
+    },
+    {
+      "ID": 27000800,
+      "Entries": [
+        "Rakuyo +8"
+      ]
+    },
+    {
+      "ID": 27000900,
+      "Entries": [
+        "Rakuyo +9"
+      ]
+    },
+    {
+      "ID": 27001000,
+      "Entries": [
+        "Rakuyo +10"
+      ]
+    },
+    {
+      "ID": 27010000,
+      "Entries": [
+        "Uncanny Rakuyo"
+      ]
+    },
+    {
+      "ID": 27010100,
+      "Entries": [
+        "Uncanny Rakuyo +1"
+      ]
+    },
+    {
+      "ID": 27010200,
+      "Entries": [
+        "Uncanny Rakuyo +2"
+      ]
+    },
+    {
+      "ID": 27010300,
+      "Entries": [
+        "Uncanny Rakuyo +3"
+      ]
+    },
+    {
+      "ID": 27010400,
+      "Entries": [
+        "Uncanny Rakuyo +4"
+      ]
+    },
+    {
+      "ID": 27010500,
+      "Entries": [
+        "Uncanny Rakuyo +5"
+      ]
+    },
+    {
+      "ID": 27010600,
+      "Entries": [
+        "Uncanny Rakuyo +6"
+      ]
+    },
+    {
+      "ID": 27010700,
+      "Entries": [
+        "Uncanny Rakuyo +7"
+      ]
+    },
+    {
+      "ID": 27010800,
+      "Entries": [
+        "Uncanny Rakuyo +8"
+      ]
+    },
+    {
+      "ID": 27010900,
+      "Entries": [
+        "Uncanny Rakuyo +9"
+      ]
+    },
+    {
+      "ID": 27011000,
+      "Entries": [
+        "Uncanny Rakuyo +10"
+      ]
+    },
+    {
+      "ID": 27020000,
+      "Entries": [
+        "Lost Rakuyo"
+      ]
+    },
+    {
+      "ID": 27020100,
+      "Entries": [
+        "Lost Rakuyo +1"
+      ]
+    },
+    {
+      "ID": 27020200,
+      "Entries": [
+        "Lost Rakuyo +2"
+      ]
+    },
+    {
+      "ID": 27020300,
+      "Entries": [
+        "Lost Rakuyo +3"
+      ]
+    },
+    {
+      "ID": 27020400,
+      "Entries": [
+        "Lost Rakuyo +4"
+      ]
+    },
+    {
+      "ID": 27020500,
+      "Entries": [
+        "Lost Rakuyo +5"
+      ]
+    },
+    {
+      "ID": 27020600,
+      "Entries": [
+        "Lost Rakuyo +6"
+      ]
+    },
+    {
+      "ID": 27020700,
+      "Entries": [
+        "Lost Rakuyo +7"
+      ]
+    },
+    {
+      "ID": 27020800,
+      "Entries": [
+        "Lost Rakuyo +8"
+      ]
+    },
+    {
+      "ID": 27020900,
+      "Entries": [
+        "Lost Rakuyo +9"
+      ]
+    },
+    {
+      "ID": 27021000,
+      "Entries": [
+        "Lost Rakuyo +10"
+      ]
+    },
+    {
+      "ID": 27090000,
+      "Entries": [
+        "Rakuyo - Ghost"
+      ]
+    },
+    {
+      "ID": 28000000,
+      "Entries": [
+        "Boom Hammer"
+      ]
+    },
+    {
+      "ID": 28000100,
+      "Entries": [
+        "Boom Hammer +1"
+      ]
+    },
+    {
+      "ID": 28000200,
+      "Entries": [
+        "Boom Hammer +2"
+      ]
+    },
+    {
+      "ID": 28000300,
+      "Entries": [
+        "Boom Hammer +3"
+      ]
+    },
+    {
+      "ID": 28000400,
+      "Entries": [
+        "Boom Hammer +4"
+      ]
+    },
+    {
+      "ID": 28000500,
+      "Entries": [
+        "Boom Hammer +5"
+      ]
+    },
+    {
+      "ID": 28000600,
+      "Entries": [
+        "Boom Hammer +6"
+      ]
+    },
+    {
+      "ID": 28000700,
+      "Entries": [
+        "Boom Hammer +7"
+      ]
+    },
+    {
+      "ID": 28000800,
+      "Entries": [
+        "Boom Hammer +8"
+      ]
+    },
+    {
+      "ID": 28000900,
+      "Entries": [
+        "Boom Hammer +9"
+      ]
+    },
+    {
+      "ID": 28001000,
+      "Entries": [
+        "Boom Hammer +10"
+      ]
+    },
+    {
+      "ID": 28010000,
+      "Entries": [
+        "Uncanny Boom Hammer"
+      ]
+    },
+    {
+      "ID": 28010100,
+      "Entries": [
+        "Uncanny Boom Hammer +1"
+      ]
+    },
+    {
+      "ID": 28010200,
+      "Entries": [
+        "Uncanny Boom Hammer +2"
+      ]
+    },
+    {
+      "ID": 28010300,
+      "Entries": [
+        "Uncanny Boom Hammer +3"
+      ]
+    },
+    {
+      "ID": 28010400,
+      "Entries": [
+        "Uncanny Boom Hammer +4"
+      ]
+    },
+    {
+      "ID": 28010500,
+      "Entries": [
+        "Uncanny Boom Hammer +5"
+      ]
+    },
+    {
+      "ID": 28010600,
+      "Entries": [
+        "Uncanny Boom Hammer +6"
+      ]
+    },
+    {
+      "ID": 28010700,
+      "Entries": [
+        "Uncanny Boom Hammer +7"
+      ]
+    },
+    {
+      "ID": 28010800,
+      "Entries": [
+        "Uncanny Boom Hammer +8"
+      ]
+    },
+    {
+      "ID": 28010900,
+      "Entries": [
+        "Uncanny Boom Hammer +9"
+      ]
+    },
+    {
+      "ID": 28011000,
+      "Entries": [
+        "Uncanny Boom Hammer +10"
+      ]
+    },
+    {
+      "ID": 28020000,
+      "Entries": [
+        "Lost Boom Hammer"
+      ]
+    },
+    {
+      "ID": 28020100,
+      "Entries": [
+        "Lost Boom Hammer +1"
+      ]
+    },
+    {
+      "ID": 28020200,
+      "Entries": [
+        "Lost Boom Hammer +2"
+      ]
+    },
+    {
+      "ID": 28020300,
+      "Entries": [
+        "Lost Boom Hammer +3"
+      ]
+    },
+    {
+      "ID": 28020400,
+      "Entries": [
+        "Lost Boom Hammer +4"
+      ]
+    },
+    {
+      "ID": 28020500,
+      "Entries": [
+        "Lost Boom Hammer +5"
+      ]
+    },
+    {
+      "ID": 28020600,
+      "Entries": [
+        "Lost Boom Hammer +6"
+      ]
+    },
+    {
+      "ID": 28020700,
+      "Entries": [
+        "Lost Boom Hammer +7"
+      ]
+    },
+    {
+      "ID": 28020800,
+      "Entries": [
+        "Lost Boom Hammer +8"
+      ]
+    },
+    {
+      "ID": 28020900,
+      "Entries": [
+        "Lost Boom Hammer +9"
+      ]
+    },
+    {
+      "ID": 28021000,
+      "Entries": [
+        "Lost Boom Hammer +10"
+      ]
+    },
+    {
+      "ID": 28090000,
+      "Entries": [
+        "Boom Hammer - Ghost"
+      ]
+    },
+    {
+      "ID": 29000000,
+      "Entries": [
+        "Bloodletter"
+      ]
+    },
+    {
+      "ID": 29000100,
+      "Entries": [
+        "Bloodletter +1"
+      ]
+    },
+    {
+      "ID": 29000200,
+      "Entries": [
+        "Bloodletter +2"
+      ]
+    },
+    {
+      "ID": 29000300,
+      "Entries": [
+        "Bloodletter +3"
+      ]
+    },
+    {
+      "ID": 29000400,
+      "Entries": [
+        "Bloodletter +4"
+      ]
+    },
+    {
+      "ID": 29000500,
+      "Entries": [
+        "Bloodletter +5"
+      ]
+    },
+    {
+      "ID": 29000600,
+      "Entries": [
+        "Bloodletter +6"
+      ]
+    },
+    {
+      "ID": 29000700,
+      "Entries": [
+        "Bloodletter +7"
+      ]
+    },
+    {
+      "ID": 29000800,
+      "Entries": [
+        "Bloodletter +8"
+      ]
+    },
+    {
+      "ID": 29000900,
+      "Entries": [
+        "Bloodletter +9"
+      ]
+    },
+    {
+      "ID": 29001000,
+      "Entries": [
+        "Bloodletter +10"
+      ]
+    },
+    {
+      "ID": 29010000,
+      "Entries": [
+        "Uncanny Bloodletter"
+      ]
+    },
+    {
+      "ID": 29010100,
+      "Entries": [
+        "Uncanny Bloodletter +1"
+      ]
+    },
+    {
+      "ID": 29010200,
+      "Entries": [
+        "Uncanny Bloodletter +2"
+      ]
+    },
+    {
+      "ID": 29010300,
+      "Entries": [
+        "Uncanny Bloodletter +3"
+      ]
+    },
+    {
+      "ID": 29010400,
+      "Entries": [
+        "Uncanny Bloodletter +4"
+      ]
+    },
+    {
+      "ID": 29010500,
+      "Entries": [
+        "Uncanny Bloodletter +5"
+      ]
+    },
+    {
+      "ID": 29010600,
+      "Entries": [
+        "Uncanny Bloodletter +6"
+      ]
+    },
+    {
+      "ID": 29010700,
+      "Entries": [
+        "Uncanny Bloodletter +7"
+      ]
+    },
+    {
+      "ID": 29010800,
+      "Entries": [
+        "Uncanny Bloodletter +8"
+      ]
+    },
+    {
+      "ID": 29010900,
+      "Entries": [
+        "Uncanny Bloodletter +9"
+      ]
+    },
+    {
+      "ID": 29011000,
+      "Entries": [
+        "Uncanny Bloodletter +10"
+      ]
+    },
+    {
+      "ID": 29020000,
+      "Entries": [
+        "Lost Bloodletter"
+      ]
+    },
+    {
+      "ID": 29020100,
+      "Entries": [
+        "Lost Bloodletter +1"
+      ]
+    },
+    {
+      "ID": 29020200,
+      "Entries": [
+        "Lost Bloodletter +2"
+      ]
+    },
+    {
+      "ID": 29020300,
+      "Entries": [
+        "Lost Bloodletter +3"
+      ]
+    },
+    {
+      "ID": 29020400,
+      "Entries": [
+        "Lost Bloodletter +4"
+      ]
+    },
+    {
+      "ID": 29020500,
+      "Entries": [
+        "Lost Bloodletter +5"
+      ]
+    },
+    {
+      "ID": 29020600,
+      "Entries": [
+        "Lost Bloodletter +6"
+      ]
+    },
+    {
+      "ID": 29020700,
+      "Entries": [
+        "Lost Bloodletter +7"
+      ]
+    },
+    {
+      "ID": 29020800,
+      "Entries": [
+        "Lost Bloodletter +8"
+      ]
+    },
+    {
+      "ID": 29020900,
+      "Entries": [
+        "Lost Bloodletter +9"
+      ]
+    },
+    {
+      "ID": 29021000,
+      "Entries": [
+        "Lost Bloodletter +10"
+      ]
+    },
+    {
+      "ID": 29090000,
+      "Entries": [
+        "Bloodletter - Ghost"
+      ]
+    },
+    {
+      "ID": 30000000,
+      "Entries": [
+        "Church Pick"
+      ]
+    },
+    {
+      "ID": 30000100,
+      "Entries": [
+        "Church Pick +1"
+      ]
+    },
+    {
+      "ID": 30000200,
+      "Entries": [
+        "Church Pick +2"
+      ]
+    },
+    {
+      "ID": 30000300,
+      "Entries": [
+        "Church Pick +3"
+      ]
+    },
+    {
+      "ID": 30000400,
+      "Entries": [
+        "Church Pick +4"
+      ]
+    },
+    {
+      "ID": 30000500,
+      "Entries": [
+        "Church Pick +5"
+      ]
+    },
+    {
+      "ID": 30000600,
+      "Entries": [
+        "Church Pick +6"
+      ]
+    },
+    {
+      "ID": 30000700,
+      "Entries": [
+        "Church Pick +7"
+      ]
+    },
+    {
+      "ID": 30000800,
+      "Entries": [
+        "Church Pick +8"
+      ]
+    },
+    {
+      "ID": 30000900,
+      "Entries": [
+        "Church Pick +9"
+      ]
+    },
+    {
+      "ID": 30001000,
+      "Entries": [
+        "Church Pick +10"
+      ]
+    },
+    {
+      "ID": 30010000,
+      "Entries": [
+        "Uncanny Church Pick"
+      ]
+    },
+    {
+      "ID": 30010100,
+      "Entries": [
+        "Uncanny Church Pick +1"
+      ]
+    },
+    {
+      "ID": 30010200,
+      "Entries": [
+        "Uncanny Church Pick +2"
+      ]
+    },
+    {
+      "ID": 30010300,
+      "Entries": [
+        "Uncanny Church Pick +3"
+      ]
+    },
+    {
+      "ID": 30010400,
+      "Entries": [
+        "Uncanny Church Pick +4"
+      ]
+    },
+    {
+      "ID": 30010500,
+      "Entries": [
+        "Uncanny Church Pick +5"
+      ]
+    },
+    {
+      "ID": 30010600,
+      "Entries": [
+        "Uncanny Church Pick +6"
+      ]
+    },
+    {
+      "ID": 30010700,
+      "Entries": [
+        "Uncanny Church Pick +7"
+      ]
+    },
+    {
+      "ID": 30010800,
+      "Entries": [
+        "Uncanny Church Pick +8"
+      ]
+    },
+    {
+      "ID": 30010900,
+      "Entries": [
+        "Uncanny Church Pick +9"
+      ]
+    },
+    {
+      "ID": 30011000,
+      "Entries": [
+        "Uncanny Church Pick +10"
+      ]
+    },
+    {
+      "ID": 30020000,
+      "Entries": [
+        "Lost Church Pick"
+      ]
+    },
+    {
+      "ID": 30020100,
+      "Entries": [
+        "Lost Church Pick +1"
+      ]
+    },
+    {
+      "ID": 30020200,
+      "Entries": [
+        "Lost Church Pick +2"
+      ]
+    },
+    {
+      "ID": 30020300,
+      "Entries": [
+        "Lost Church Pick +3"
+      ]
+    },
+    {
+      "ID": 30020400,
+      "Entries": [
+        "Lost Church Pick +4"
+      ]
+    },
+    {
+      "ID": 30020500,
+      "Entries": [
+        "Lost Church Pick +5"
+      ]
+    },
+    {
+      "ID": 30020600,
+      "Entries": [
+        "Lost Church Pick +6"
+      ]
+    },
+    {
+      "ID": 30020700,
+      "Entries": [
+        "Lost Church Pick +7"
+      ]
+    },
+    {
+      "ID": 30020800,
+      "Entries": [
+        "Lost Church Pick +8"
+      ]
+    },
+    {
+      "ID": 30020900,
+      "Entries": [
+        "Lost Church Pick +9"
+      ]
+    },
+    {
+      "ID": 30021000,
+      "Entries": [
+        "Lost Church Pick +10"
+      ]
+    },
+    {
+      "ID": 30090000,
+      "Entries": [
+        "Church Pick - Ghost"
+      ]
+    },
+    {
+      "ID": 31000000,
+      "Entries": [
+        "Whirligig Saw"
+      ]
+    },
+    {
+      "ID": 31000100,
+      "Entries": [
+        "Whirligig Saw + 1"
+      ]
+    },
+    {
+      "ID": 31000200,
+      "Entries": [
+        "Whirligig Saw + 2"
+      ]
+    },
+    {
+      "ID": 31000300,
+      "Entries": [
+        "Whirligig Saw +3"
+      ]
+    },
+    {
+      "ID": 31000400,
+      "Entries": [
+        "Whirligig Saw +4"
+      ]
+    },
+    {
+      "ID": 31000500,
+      "Entries": [
+        "Whirligig Saw +5"
+      ]
+    },
+    {
+      "ID": 31000600,
+      "Entries": [
+        "Whirligig Saw +6"
+      ]
+    },
+    {
+      "ID": 31000700,
+      "Entries": [
+        "Whirligig Saw +7"
+      ]
+    },
+    {
+      "ID": 31000800,
+      "Entries": [
+        "Whirligig Saw +8"
+      ]
+    },
+    {
+      "ID": 31000900,
+      "Entries": [
+        "Whirligig Saw +9"
+      ]
+    },
+    {
+      "ID": 31001000,
+      "Entries": [
+        "Whirligig Saw +10"
+      ]
+    },
+    {
+      "ID": 31010000,
+      "Entries": [
+        "Uncanny Whirligig Saw"
+      ]
+    },
+    {
+      "ID": 31010100,
+      "Entries": [
+        "Uncanny Whirligig Saw + 1"
+      ]
+    },
+    {
+      "ID": 31010200,
+      "Entries": [
+        "Uncanny Whirligig Saw + 2"
+      ]
+    },
+    {
+      "ID": 31010300,
+      "Entries": [
+        "Uncanny Whirligig Saw +3"
+      ]
+    },
+    {
+      "ID": 31010400,
+      "Entries": [
+        "Uncanny Whirligig Saw +4"
+      ]
+    },
+    {
+      "ID": 31010500,
+      "Entries": [
+        "Uncanny Whirligig Saw +5"
+      ]
+    },
+    {
+      "ID": 31010600,
+      "Entries": [
+        "Uncanny Whirligig Saw +6"
+      ]
+    },
+    {
+      "ID": 31010700,
+      "Entries": [
+        "Uncanny Whirligig Saw +7"
+      ]
+    },
+    {
+      "ID": 31010800,
+      "Entries": [
+        "Uncanny Whirligig Saw +8"
+      ]
+    },
+    {
+      "ID": 31010900,
+      "Entries": [
+        "Uncanny Whirligig Saw +9"
+      ]
+    },
+    {
+      "ID": 31011000,
+      "Entries": [
+        "Uncanny Whirligig Saw +10"
+      ]
+    },
+    {
+      "ID": 31020000,
+      "Entries": [
+        "Lost Whirligig Saw"
+      ]
+    },
+    {
+      "ID": 31020100,
+      "Entries": [
+        "Lost Whirligig Saw + 1"
+      ]
+    },
+    {
+      "ID": 31020200,
+      "Entries": [
+        "Lost Whirligig Saw + 2"
+      ]
+    },
+    {
+      "ID": 31020300,
+      "Entries": [
+        "Lost Whirligig Saw +3"
+      ]
+    },
+    {
+      "ID": 31020400,
+      "Entries": [
+        "Lost Whirligig Saw +4"
+      ]
+    },
+    {
+      "ID": 31020500,
+      "Entries": [
+        "Lost Whirligig Saw +5"
+      ]
+    },
+    {
+      "ID": 31020600,
+      "Entries": [
+        "Lost Whirligig Saw +6"
+      ]
+    },
+    {
+      "ID": 31020700,
+      "Entries": [
+        "Lost Whirligig Saw +7"
+      ]
+    },
+    {
+      "ID": 31020800,
+      "Entries": [
+        "Lost Whirligig Saw +8"
+      ]
+    },
+    {
+      "ID": 31020900,
+      "Entries": [
+        "Lost Whirligig Saw +9"
+      ]
+    },
+    {
+      "ID": 31021000,
+      "Entries": [
+        "Lost Whirligig Saw +10"
+      ]
+    },
+    {
+      "ID": 31090000,
+      "Entries": [
+        "Whirligig Saw - Ghost"
+      ]
+    },
+    {
+      "ID": 32000000,
+      "Entries": [
+        "Simon's Bowblade"
+      ]
+    },
+    {
+      "ID": 32000100,
+      "Entries": [
+        "Simon's Bowblade +1"
+      ]
+    },
+    {
+      "ID": 32000200,
+      "Entries": [
+        "Simon's Bowblade +2"
+      ]
+    },
+    {
+      "ID": 32000300,
+      "Entries": [
+        "Simon's Bowblade +3"
+      ]
+    },
+    {
+      "ID": 32000400,
+      "Entries": [
+        "Simon's Bowblade +4"
+      ]
+    },
+    {
+      "ID": 32000500,
+      "Entries": [
+        "Simon's Bowblade +5"
+      ]
+    },
+    {
+      "ID": 32000600,
+      "Entries": [
+        "Simon's Bowblade +6"
+      ]
+    },
+    {
+      "ID": 32000700,
+      "Entries": [
+        "Simon's Bowblade +7"
+      ]
+    },
+    {
+      "ID": 32000800,
+      "Entries": [
+        "Simon's Bowblade +8"
+      ]
+    },
+    {
+      "ID": 32000900,
+      "Entries": [
+        "Simon's Bowblade +9"
+      ]
+    },
+    {
+      "ID": 32001000,
+      "Entries": [
+        "Simon's Bowblade +10"
+      ]
+    },
+    {
+      "ID": 32010000,
+      "Entries": [
+        "Uncanny Simon's Bowblade"
+      ]
+    },
+    {
+      "ID": 32010100,
+      "Entries": [
+        "Uncanny Simon's Bowblade +1"
+      ]
+    },
+    {
+      "ID": 32010200,
+      "Entries": [
+        "Uncanny Simon's Bowblade +2"
+      ]
+    },
+    {
+      "ID": 32010300,
+      "Entries": [
+        "Uncanny Simon's Bowblade +3"
+      ]
+    },
+    {
+      "ID": 32010400,
+      "Entries": [
+        "Uncanny Simon's Bowblade +4"
+      ]
+    },
+    {
+      "ID": 32010500,
+      "Entries": [
+        "Uncanny Simon's Bowblade +5"
+      ]
+    },
+    {
+      "ID": 32010600,
+      "Entries": [
+        "Uncanny Simon's Bowblade +6"
+      ]
+    },
+    {
+      "ID": 32010700,
+      "Entries": [
+        "Uncanny Simon's Bowblade +7"
+      ]
+    },
+    {
+      "ID": 32010800,
+      "Entries": [
+        "Uncanny Simon's Bowblade +8"
+      ]
+    },
+    {
+      "ID": 32010900,
+      "Entries": [
+        "Uncanny Simon's Bowblade +9"
+      ]
+    },
+    {
+      "ID": 32011000,
+      "Entries": [
+        "Uncanny Simon's Bowblade +10"
+      ]
+    },
+    {
+      "ID": 32020000,
+      "Entries": [
+        "Lost Simon's Bowblade"
+      ]
+    },
+    {
+      "ID": 32020100,
+      "Entries": [
+        "Lost Simon's Bowblade +1"
+      ]
+    },
+    {
+      "ID": 32020200,
+      "Entries": [
+        "Lost Simon's Bowblade +2"
+      ]
+    },
+    {
+      "ID": 32020300,
+      "Entries": [
+        "Lost Simon's Bowblade +3"
+      ]
+    },
+    {
+      "ID": 32020400,
+      "Entries": [
+        "Lost Simon's Bowblade +4"
+      ]
+    },
+    {
+      "ID": 32020500,
+      "Entries": [
+        "Lost Simon's Bowblade +5"
+      ]
+    },
+    {
+      "ID": 32020600,
+      "Entries": [
+        "Lost Simon's Bowblade +6"
+      ]
+    },
+    {
+      "ID": 32020700,
+      "Entries": [
+        "Lost Simon's Bowblade +7"
+      ]
+    },
+    {
+      "ID": 32020800,
+      "Entries": [
+        "Lost Simon's Bowblade +8"
+      ]
+    },
+    {
+      "ID": 32020900,
+      "Entries": [
+        "Lost Simon's Bowblade +9"
+      ]
+    },
+    {
+      "ID": 32021000,
+      "Entries": [
+        "Lost Simon's Bowblade +10"
+      ]
+    },
+    {
+      "ID": 32090000,
+      "Entries": [
+        "Simon's Bowblade - Ghost"
+      ]
+    },
+    {
+      "ID": 33000000,
+      "Entries": [
+        "Gatling Gun"
+      ]
+    },
+    {
+      "ID": 33000100,
+      "Entries": [
+        "Gatling Gun +1"
+      ]
+    },
+    {
+      "ID": 33000200,
+      "Entries": [
+        "Gatling Gun +2"
+      ]
+    },
+    {
+      "ID": 33000300,
+      "Entries": [
+        "Gatling Gun +3"
+      ]
+    },
+    {
+      "ID": 33000400,
+      "Entries": [
+        "Gatling Gun +4"
+      ]
+    },
+    {
+      "ID": 33000500,
+      "Entries": [
+        "Gatling Gun +5"
+      ]
+    },
+    {
+      "ID": 33000600,
+      "Entries": [
+        "Gatling Gun +6"
+      ]
+    },
+    {
+      "ID": 33000700,
+      "Entries": [
+        "Gatling Gun +7"
+      ]
+    },
+    {
+      "ID": 33000800,
+      "Entries": [
+        "Gatling Gun +8"
+      ]
+    },
+    {
+      "ID": 33000900,
+      "Entries": [
+        "Gatling Gun +9"
+      ]
+    },
+    {
+      "ID": 33001000,
+      "Entries": [
+        "Gatling Gun +10"
+      ]
+    },
+    {
+      "ID": 33090000,
+      "Entries": [
+        "Gatling Gun - Ghost"
+      ]
+    },
+    {
+      "ID": 34000000,
+      "Entries": [
+        "Fist of Gratia"
+      ]
+    },
+    {
+      "ID": 34000100,
+      "Entries": [
+        "Fist of Gratia +1"
+      ]
+    },
+    {
+      "ID": 34000200,
+      "Entries": [
+        "Fist of Gratia +2"
+      ]
+    },
+    {
+      "ID": 34000300,
+      "Entries": [
+        "Fist of Gratia +3"
+      ]
+    },
+    {
+      "ID": 34000400,
+      "Entries": [
+        "Fist of Gratia +4"
+      ]
+    },
+    {
+      "ID": 34000500,
+      "Entries": [
+        "Fist of Gratia +5"
+      ]
+    },
+    {
+      "ID": 34000600,
+      "Entries": [
+        "Fist of Gratia +6"
+      ]
+    },
+    {
+      "ID": 34000700,
+      "Entries": [
+        "Fist of Gratia +7"
+      ]
+    },
+    {
+      "ID": 34000800,
+      "Entries": [
+        "Fist of Gratia +8"
+      ]
+    },
+    {
+      "ID": 34000900,
+      "Entries": [
+        "Fist of Gratia +9"
+      ]
+    },
+    {
+      "ID": 34001000,
+      "Entries": [
+        "Fist of Gratia +10"
+      ]
+    },
+    {
+      "ID": 34090000,
+      "Entries": [
+        "Fist of Gratia - Ghost"
+      ]
+    },
+    {
+      "ID": 35000000,
+      "Entries": [
+        "Church Cannon"
+      ]
+    },
+    {
+      "ID": 35000100,
+      "Entries": [
+        "Church Cannon +1"
+      ]
+    },
+    {
+      "ID": 35000200,
+      "Entries": [
+        "Church Cannon +2"
+      ]
+    },
+    {
+      "ID": 35000300,
+      "Entries": [
+        "Church Cannon +3"
+      ]
+    },
+    {
+      "ID": 35000400,
+      "Entries": [
+        "Church Cannon +4"
+      ]
+    },
+    {
+      "ID": 35000500,
+      "Entries": [
+        "Church Cannon +5"
+      ]
+    },
+    {
+      "ID": 35000600,
+      "Entries": [
+        "Church Cannon +6"
+      ]
+    },
+    {
+      "ID": 35000700,
+      "Entries": [
+        "Church Cannon +7"
+      ]
+    },
+    {
+      "ID": 35000800,
+      "Entries": [
+        "Church Cannon +8"
+      ]
+    },
+    {
+      "ID": 35000900,
+      "Entries": [
+        "Church Cannon +9"
+      ]
+    },
+    {
+      "ID": 35001000,
+      "Entries": [
+        "Church Cannon +10"
+      ]
+    },
+    {
+      "ID": 35090000,
+      "Entries": [
+        "Church Cannon - Ghost"
+      ]
+    },
+    {
+      "ID": 36000000,
+      "Entries": [
+        "Piercing Rifle"
+      ]
+    },
+    {
+      "ID": 36000100,
+      "Entries": [
+        "Piercing Rifle +1"
+      ]
+    },
+    {
+      "ID": 36000200,
+      "Entries": [
+        "Piercing Rifle +2"
+      ]
+    },
+    {
+      "ID": 36000300,
+      "Entries": [
+        "Piercing Rifle +3"
+      ]
+    },
+    {
+      "ID": 36000400,
+      "Entries": [
+        "Piercing Rifle +4"
+      ]
+    },
+    {
+      "ID": 36000500,
+      "Entries": [
+        "Piercing Rifle +5"
+      ]
+    },
+    {
+      "ID": 36000600,
+      "Entries": [
+        "Piercing Rifle +6"
+      ]
+    },
+    {
+      "ID": 36000700,
+      "Entries": [
+        "Piercing Rifle +7"
+      ]
+    },
+    {
+      "ID": 36000800,
+      "Entries": [
+        "Piercing Rifle +8"
+      ]
+    },
+    {
+      "ID": 36000900,
+      "Entries": [
+        "Piercing Rifle +9"
+      ]
+    },
+    {
+      "ID": 36001000,
+      "Entries": [
+        "Piercing Rifle +10"
+      ]
+    },
+    {
+      "ID": 36090000,
+      "Entries": [
+        "Piercing Rifle - Ghost"
+      ]
+    },
+    {
+      "ID": 37000000,
+      "Entries": [
+        "Beast Claw - with Beast's Embrace"
+      ]
+    },
+    {
+      "ID": 38000000,
+      "Entries": [
+        "Kos Parasite"
+      ]
+    },
+    {
+      "ID": 38000100,
+      "Entries": [
+        "Kos Parasite +1"
+      ]
+    },
+    {
+      "ID": 38000200,
+      "Entries": [
+        "Kos Parasite +2"
+      ]
+    },
+    {
+      "ID": 38000300,
+      "Entries": [
+        "Kos Parasite +3"
+      ]
+    },
+    {
+      "ID": 38000400,
+      "Entries": [
+        "Kos Parasite +4"
+      ]
+    },
+    {
+      "ID": 38000500,
+      "Entries": [
+        "Kos Parasite +5"
+      ]
+    },
+    {
+      "ID": 38000600,
+      "Entries": [
+        "Kos Parasite +6"
+      ]
+    },
+    {
+      "ID": 38000700,
+      "Entries": [
+        "Kos Parasite +7"
+      ]
+    },
+    {
+      "ID": 38000800,
+      "Entries": [
+        "Kos Parasite +8"
+      ]
+    },
+    {
+      "ID": 38000900,
+      "Entries": [
+        "Kos Parasite +9"
+      ]
+    },
+    {
+      "ID": 38001000,
+      "Entries": [
+        "Kos Parasite +10"
+      ]
+    },
+    {
+      "ID": 38010000,
+      "Entries": [
+        "Uncanny Parasite"
+      ]
+    },
+    {
+      "ID": 38010100,
+      "Entries": [
+        "Uncanny Parasite +1"
+      ]
+    },
+    {
+      "ID": 38010200,
+      "Entries": [
+        "Uncanny Parasite +2"
+      ]
+    },
+    {
+      "ID": 38010300,
+      "Entries": [
+        "Uncanny Parasite +3"
+      ]
+    },
+    {
+      "ID": 38010400,
+      "Entries": [
+        "Uncanny Parasite +4"
+      ]
+    },
+    {
+      "ID": 38010500,
+      "Entries": [
+        "Uncanny Parasite +5"
+      ]
+    },
+    {
+      "ID": 38010600,
+      "Entries": [
+        "Uncanny Parasite +6"
+      ]
+    },
+    {
+      "ID": 38010700,
+      "Entries": [
+        "Uncanny Parasite +7"
+      ]
+    },
+    {
+      "ID": 38010800,
+      "Entries": [
+        "Uncanny Parasite +8"
+      ]
+    },
+    {
+      "ID": 38010900,
+      "Entries": [
+        "Uncanny Parasite +9"
+      ]
+    },
+    {
+      "ID": 38011000,
+      "Entries": [
+        "Uncanny Parasite +10"
+      ]
+    },
+    {
+      "ID": 38020000,
+      "Entries": [
+        "Lost Parasite"
+      ]
+    },
+    {
+      "ID": 38020100,
+      "Entries": [
+        "Lost Parasite +1"
+      ]
+    },
+    {
+      "ID": 38020200,
+      "Entries": [
+        "Lost Parasite +2"
+      ]
+    },
+    {
+      "ID": 38020300,
+      "Entries": [
+        "Lost Parasite +3"
+      ]
+    },
+    {
+      "ID": 38020400,
+      "Entries": [
+        "Lost Parasite +4"
+      ]
+    },
+    {
+      "ID": 38020500,
+      "Entries": [
+        "Lost Parasite +5"
+      ]
+    },
+    {
+      "ID": 38020600,
+      "Entries": [
+        "Lost Parasite +6"
+      ]
+    },
+    {
+      "ID": 38020700,
+      "Entries": [
+        "Lost Parasite +7"
+      ]
+    },
+    {
+      "ID": 38020800,
+      "Entries": [
+        "Lost Parasite +8"
+      ]
+    },
+    {
+      "ID": 38020900,
+      "Entries": [
+        "Lost Parasite +9"
+      ]
+    },
+    {
+      "ID": 38021000,
+      "Entries": [
+        "Lost Parasite +10"
+      ]
+    },
+    {
+      "ID": 38090000,
+      "Entries": [
+        "Kos Parasite - Ghost"
+      ]
+    },
+    {
+      "ID": 39000000,
+      "Entries": [
+        "Beast Claw - with Beast's Embrace (Transformed)"
+      ]
+    },
+    {
+      "ID": 40000000,
+      "Entries": [
+        "Kos Parasite - with Milkweed"
+      ]
+    },
+    {
+      "ID": 41000000,
+      "Entries": [
+        "Kos Parasite - with Milkweed (Transformed)"
+      ]
+    }
+  ]
+}

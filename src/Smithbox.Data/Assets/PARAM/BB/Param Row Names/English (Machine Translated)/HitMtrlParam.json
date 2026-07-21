@@ -1,0 +1,257 @@
+{
+  "Name": "HitMtrlParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "dummy"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Stone (outdoors)"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Stone (indoor)"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "soil"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "tree"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "grass"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "gravel"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "snow"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "ice"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "iron"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "sand"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "bone"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "ash"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Fallen leaves"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "stone _ Blood Element"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "stone _ Storm Attribute"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "Stone with a lot of sand"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "Snow (no footprints)"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "Oil and water"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "Water (slide)"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Water (from soles of feet to ankles)"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Water (up to your ankles and waist)"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "mucus"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Poisonous coal tar"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "mud"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "Coal tar"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "Corrosive liquid"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "cadaver"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "carpet"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "Empty"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Old wood"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "puddle"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "Stone (outdoors / wet)"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "Poison Swamp"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "mercury"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "River of blood (from sole of foot to ankle)"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        "Seawater in a fishing village (from sole of the foot to ankle height)"
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        "Fishing village swamp (foot to ankle height)"
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        "Old Tree (Sound Radius Standard Edition)"
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        "Blood pool"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Splash SFX For"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "River of Blood (non-water surface)"
+      ]
+    }
+  ]
+}

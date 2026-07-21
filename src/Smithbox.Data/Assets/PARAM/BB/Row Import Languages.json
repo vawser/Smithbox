@@ -6,7 +6,12 @@
           "Folder": "English"
         },
         {
-          "Key": "PARAM_Language_Japanse",
+          "Key": "PARAM_Language_English_MT",
+          "Name": "English (Machine Translated)",
+          "Folder": "English (Machine Translated)"
+        },
+        {
+          "Key": "PARAM_Language_Japanese",
           "Name": "Japanese",
           "Folder": "Japanese"
         }

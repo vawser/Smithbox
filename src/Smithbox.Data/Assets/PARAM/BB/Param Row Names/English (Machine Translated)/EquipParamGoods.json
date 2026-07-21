@@ -1,0 +1,1775 @@
+{
+  "Name": "EquipParamGoods",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Hunter's Mark"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Silencing Blank"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Notebook"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "Vileblood Register"
+      ]
+    },
+    {
+      "ID": 131,
+      "Entries": [
+        "League Staff"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Beckoning Bell"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "Summon Request Not Available"
+      ]
+    },
+    {
+      "ID": 205,
+      "Entries": [
+        "Small Resonant Bell"
+      ]
+    },
+    {
+      "ID": 206,
+      "Entries": [
+        "Be Summoned Request Not Available"
+      ]
+    },
+    {
+      "ID": 225,
+      "Entries": [
+        "Sinister Resonant Bell"
+      ]
+    },
+    {
+      "ID": 226,
+      "Entries": [
+        "Invasion Request Not Available"
+      ]
+    },
+    {
+      "ID": 700,
+      "Entries": [
+        "Tiny Music Box"
+      ]
+    },
+    {
+      "ID": 701,
+      "Entries": [
+        "Blood of Arianna"
+      ]
+    },
+    {
+      "ID": 702,
+      "Entries": [
+        "Blood of Adella"
+      ]
+    },
+    {
+      "ID": 703,
+      "Entries": [
+        "Iosefka's Blood Vial"
+      ]
+    },
+    {
+      "ID": 704,
+      "Entries": [
+        "Blood Dreg"
+      ]
+    },
+    {
+      "ID": 705,
+      "Entries": [
+        "Queenly Blood"
+      ]
+    },
+    {
+      "ID": 706,
+      "Entries": [
+        "Blood of Adeline"
+      ]
+    },
+    {
+      "ID": 800,
+      "Entries": [
+        "Point Forward"
+      ]
+    },
+    {
+      "ID": 801,
+      "Entries": [
+        "Hunter's Salutation"
+      ]
+    },
+    {
+      "ID": 802,
+      "Entries": [
+        "Conviction"
+      ]
+    },
+    {
+      "ID": 803,
+      "Entries": [
+        "Joy"
+      ]
+    },
+    {
+      "ID": 804,
+      "Entries": [
+        "Shake off Cape"
+      ]
+    },
+    {
+      "ID": 805,
+      "Entries": [
+        "Church Bow (Male)"
+      ]
+    },
+    {
+      "ID": 806,
+      "Entries": [
+        "Curtsy"
+      ]
+    },
+    {
+      "ID": 807,
+      "Entries": [
+        "Church Bow (Female)"
+      ]
+    },
+    {
+      "ID": 808,
+      "Entries": [
+        "Wave"
+      ]
+    },
+    {
+      "ID": 809,
+      "Entries": [
+        "Pray"
+      ]
+    },
+    {
+      "ID": 810,
+      "Entries": [
+        "Wait"
+      ]
+    },
+    {
+      "ID": 811,
+      "Entries": [
+        "Shh!"
+      ]
+    },
+    {
+      "ID": 812,
+      "Entries": [
+        "Hunter's Rally"
+      ]
+    },
+    {
+      "ID": 813,
+      "Entries": [
+        "Triumph"
+      ]
+    },
+    {
+      "ID": 814,
+      "Entries": [
+        "Approval"
+      ]
+    },
+    {
+      "ID": 815,
+      "Entries": [
+        "Roar"
+      ]
+    },
+    {
+      "ID": 816,
+      "Entries": [
+        "Beg for Life"
+      ]
+    },
+    {
+      "ID": 817,
+      "Entries": [
+        "Brush off Dust"
+      ]
+    },
+    {
+      "ID": 818,
+      "Entries": [
+        "Respect"
+      ]
+    },
+    {
+      "ID": 819,
+      "Entries": [
+        "Deep Respect"
+      ]
+    },
+    {
+      "ID": 820,
+      "Entries": [
+        "Make Contact"
+      ]
+    },
+    {
+      "ID": 821,
+      "Entries": [
+        "Sit Down"
+      ]
+    },
+    {
+      "ID": 822,
+      "Entries": [
+        "League Oath"
+      ]
+    },
+    {
+      "ID": 900,
+      "Entries": [
+        "Quicksilver Bullets"
+      ]
+    },
+    {
+      "ID": 901,
+      "Entries": [
+        "Blood Bullets"
+      ]
+    },
+    {
+      "ID": 910,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 999,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Blood Vial"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "Antidote"
+      ]
+    },
+    {
+      "ID": 1101,
+      "Entries": [
+        "Sedative"
+      ]
+    },
+    {
+      "ID": 1110,
+      "Entries": [
+        "Beast Blood Pellet"
+      ]
+    },
+    {
+      "ID": 1120,
+      "Entries": [
+        "Blue Elixir"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "Molotov Cocktail"
+      ]
+    },
+    {
+      "ID": 1201,
+      "Entries": [
+        "Delayed Molotov"
+      ]
+    },
+    {
+      "ID": 1210,
+      "Entries": [
+        "Poison Knife"
+      ]
+    },
+    {
+      "ID": 1220,
+      "Entries": [
+        "Oil Urn"
+      ]
+    },
+    {
+      "ID": 1230,
+      "Entries": [
+        "Pebble"
+      ]
+    },
+    {
+      "ID": 1240,
+      "Entries": [
+        "Throwing Knife"
+      ]
+    },
+    {
+      "ID": 1250,
+      "Entries": [
+        "Rope Molotov Cocktail"
+      ]
+    },
+    {
+      "ID": 1251,
+      "Entries": [
+        "Delayed Rope Molotov"
+      ]
+    },
+    {
+      "ID": 1260,
+      "Entries": [
+        "Pungent Blood Cocktail"
+      ]
+    },
+    {
+      "ID": 1270,
+      "Entries": [
+        "Numbing Mist"
+      ]
+    },
+    {
+      "ID": 1300,
+      "Entries": [
+        "Fire Paper"
+      ]
+    },
+    {
+      "ID": 1310,
+      "Entries": [
+        "Empty Phantasm Shell"
+      ]
+    },
+    {
+      "ID": 1320,
+      "Entries": [
+        "Bolt Paper"
+      ]
+    },
+    {
+      "ID": 1330,
+      "Entries": [
+        "Bone Marrow Ash"
+      ]
+    },
+    {
+      "ID": 1400,
+      "Entries": [
+        "Bold Hunter's Mark"
+      ]
+    },
+    {
+      "ID": 1410,
+      "Entries": [
+        "Shining Coins"
+      ]
+    },
+    {
+      "ID": 1411,
+      "Entries": [
+        "Monocular"
+      ]
+    },
+    {
+      "ID": 1412,
+      "Entries": [
+        "Hand Lantern"
+      ]
+    },
+    {
+      "ID": 1500,
+      "Entries": [
+        "Madman's Knowledge"
+      ]
+    },
+    {
+      "ID": 1501,
+      "Entries": [
+        "Great One's Wisdom"
+      ]
+    },
+    {
+      "ID": 1510,
+      "Entries": [
+        "Coldblood Dew (1)"
+      ]
+    },
+    {
+      "ID": 1511,
+      "Entries": [
+        "Coldblood Dew (2)"
+      ]
+    },
+    {
+      "ID": 1512,
+      "Entries": [
+        "Coldblood Dew (3)"
+      ]
+    },
+    {
+      "ID": 1513,
+      "Entries": [
+        "Thick Coldblood (4)"
+      ]
+    },
+    {
+      "ID": 1514,
+      "Entries": [
+        "Thick Coldblood (5)"
+      ]
+    },
+    {
+      "ID": 1515,
+      "Entries": [
+        "Thick Coldblood (6)"
+      ]
+    },
+    {
+      "ID": 1516,
+      "Entries": [
+        "Frenzied Coldblood (7)"
+      ]
+    },
+    {
+      "ID": 1517,
+      "Entries": [
+        "Frenzied Coldblood (8)"
+      ]
+    },
+    {
+      "ID": 1518,
+      "Entries": [
+        "Frenzied Coldblood (9)"
+      ]
+    },
+    {
+      "ID": 1519,
+      "Entries": [
+        "Kin Coldblood (10)"
+      ]
+    },
+    {
+      "ID": 1590,
+      "Entries": [
+        "Kin Coldblood (11)"
+      ]
+    },
+    {
+      "ID": 1591,
+      "Entries": [
+        "Kin Coldblood (12)"
+      ]
+    },
+    {
+      "ID": 1592,
+      "Entries": [
+        "Great One Coldblood"
+      ]
+    },
+    {
+      "ID": 1593,
+      "Entries": [
+        "Old Great One Coldblood"
+      ]
+    },
+    {
+      "ID": 1594,
+      "Entries": [
+        "Revered Great One Coldblood"
+      ]
+    },
+    {
+      "ID": 1600,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1601,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1602,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1603,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1604,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1605,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1606,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1607,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1608,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1609,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1610,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1611,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1612,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1650,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1651,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1652,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1653,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1654,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1655,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1656,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1657,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1658,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1659,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1660,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1661,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1662,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1663,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1664,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1665,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1666,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1667,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1668,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1669,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1670,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1671,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1672,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1673,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1674,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1675,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1676,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1677,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1678,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1679,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1680,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1681,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1682,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1683,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1684,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1700,
+      "Entries": [
+        "Vermin"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Augur of Ebrietas"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "A Call Beyond"
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        "Beast Roar"
+      ]
+    },
+    {
+      "ID": 2030,
+      "Entries": [
+        "Lead Elixir"
+      ]
+    },
+    {
+      "ID": 2050,
+      "Entries": [
+        "Choir Bell"
+      ]
+    },
+    {
+      "ID": 2060,
+      "Entries": [
+        "Old Hunter Bone"
+      ]
+    },
+    {
+      "ID": 2070,
+      "Entries": [
+        "Tiny Tonitrus"
+      ]
+    },
+    {
+      "ID": 2080,
+      "Entries": [
+        "Executioner's Gloves"
+      ]
+    },
+    {
+      "ID": 2090,
+      "Entries": [
+        "Shaman Bone Blade"
+      ]
+    },
+    {
+      "ID": 2110,
+      "Entries": [
+        "Messenger's Gift"
+      ]
+    },
+    {
+      "ID": 2120,
+      "Entries": [
+        "Blacksky Eye"
+      ]
+    },
+    {
+      "ID": 2130,
+      "Entries": [
+        "Accursed Brew"
+      ]
+    },
+    {
+      "ID": 2140,
+      "Entries": [
+        "Madaras Whistle"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "Blood Stone Shard"
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        "Twin Blood Stone Shards"
+      ]
+    },
+    {
+      "ID": 3020,
+      "Entries": [
+        "Blood Stone Chunk"
+      ]
+    },
+    {
+      "ID": 3030,
+      "Entries": [
+        "Blood Rock"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "Oedon Tomb Key"
+      ]
+    },
+    {
+      "ID": 4001,
+      "Entries": [
+        "Gold Pendant"
+      ]
+    },
+    {
+      "ID": 4003,
+      "Entries": [
+        "Cainhurst Summons"
+      ]
+    },
+    {
+      "ID": 4006,
+      "Entries": [
+        "Orphanage Key"
+      ]
+    },
+    {
+      "ID": 4009,
+      "Entries": [
+        "Iron Door Key"
+      ]
+    },
+    {
+      "ID": 4010,
+      "Entries": [
+        "Upper Cathedral Key"
+      ]
+    },
+    {
+      "ID": 4011,
+      "Entries": [
+        "Hunter Chief Emblem"
+      ]
+    },
+    {
+      "ID": 4012,
+      "Entries": [
+        "Lecture Theatre Key"
+      ]
+    },
+    {
+      "ID": 4013,
+      "Entries": [
+        "Lunarium Key"
+      ]
+    },
+    {
+      "ID": 4014,
+      "Entries": [
+        "Laurence's Skull"
+      ]
+    },
+    {
+      "ID": 4015,
+      "Entries": [
+        "Underground Cell Inner Chamber Key"
+      ]
+    },
+    {
+      "ID": 4016,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4017,
+      "Entries": [
+        "Eye Pendant"
+      ]
+    },
+    {
+      "ID": 4018,
+      "Entries": [
+        "Underground Cell Key"
+      ]
+    },
+    {
+      "ID": 4019,
+      "Entries": [
+        "Balcony Key"
+      ]
+    },
+    {
+      "ID": 4020,
+      "Entries": [
+        "Astral Clocktower Key"
+      ]
+    },
+    {
+      "ID": 4021,
+      "Entries": [
+        "Celestial Dial"
+      ]
+    },
+    {
+      "ID": 4102,
+      "Entries": [
+        "Workshop Haze Extractor"
+      ]
+    },
+    {
+      "ID": 4103,
+      "Entries": [
+        "Blood Gem Workshop Tool"
+      ]
+    },
+    {
+      "ID": 4104,
+      "Entries": [
+        "Rune Workshop Tool"
+      ]
+    },
+    {
+      "ID": 4105,
+      "Entries": [
+        "Short Ritual Root Chalice"
+      ]
+    },
+    {
+      "ID": 4110,
+      "Entries": [
+        "Saw Hunter Badge"
+      ]
+    },
+    {
+      "ID": 4111,
+      "Entries": [
+        "Crown Hunter Badge"
+      ]
+    },
+    {
+      "ID": 4112,
+      "Entries": [
+        "Powder Keg Hunter Badge"
+      ]
+    },
+    {
+      "ID": 4113,
+      "Entries": [
+        "Old Hunter Badge"
+      ]
+    },
+    {
+      "ID": 4114,
+      "Entries": [
+        "Sword Hunter Badge"
+      ]
+    },
+    {
+      "ID": 4115,
+      "Entries": [
+        "Radiant Sword Hunter Badge"
+      ]
+    },
+    {
+      "ID": 4116,
+      "Entries": [
+        "Wheel Hunter Badge"
+      ]
+    },
+    {
+      "ID": 4117,
+      "Entries": [
+        "Cainhurst Badge"
+      ]
+    },
+    {
+      "ID": 4118,
+      "Entries": [
+        "Spark Hunter Badge"
+      ]
+    },
+    {
+      "ID": 4119,
+      "Entries": [
+        "Cosmic Eye Watcher Badge"
+      ]
+    },
+    {
+      "ID": 4120,
+      "Entries": [
+        "Firing Hammer Badge"
+      ]
+    },
+    {
+      "ID": 4121,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4300,
+      "Entries": [
+        "Small Hair Ornament"
+      ]
+    },
+    {
+      "ID": 4301,
+      "Entries": [
+        "Tear Stone"
+      ]
+    },
+    {
+      "ID": 4304,
+      "Entries": [
+        "Ring of Betrothal"
+      ]
+    },
+    {
+      "ID": 4305,
+      "Entries": [
+        "Queenly Flesh"
+      ]
+    },
+    {
+      "ID": 4306,
+      "Entries": [
+        "Red Jeweled Brooch"
+      ]
+    },
+    {
+      "ID": 4308,
+      "Entries": [
+        "Unopened Summons"
+      ]
+    },
+    {
+      "ID": 4310,
+      "Entries": [
+        "Tonsil Stone"
+      ]
+    },
+    {
+      "ID": 4311,
+      "Entries": [
+        "Eye of a Blood-drunk Hunter"
+      ]
+    },
+    {
+      "ID": 4312,
+      "Entries": [
+        "Old Hunter Bell"
+      ]
+    },
+    {
+      "ID": 4313,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4320,
+      "Entries": [
+        "One Third of Umbilical Cord (Workshop)"
+      ]
+    },
+    {
+      "ID": 4321,
+      "Entries": [
+        "One Third of Umbilical Cord (Arianna)"
+      ]
+    },
+    {
+      "ID": 4322,
+      "Entries": [
+        "One Third of Umbilical Cord (Iosefka)"
+      ]
+    },
+    {
+      "ID": 4323,
+      "Entries": [
+        "One Third of Umbilical Cord (Mergo)"
+      ]
+    },
+    {
+      "ID": 4330,
+      "Entries": [
+        "Yharnam Stone"
+      ]
+    },
+    {
+      "ID": 4340,
+      "Entries": [
+        "Brain Fluid"
+      ]
+    },
+    {
+      "ID": 4341,
+      "Entries": [
+        "Brain Fluid"
+      ]
+    },
+    {
+      "ID": 4342,
+      "Entries": [
+        "Brain Fluid"
+      ]
+    },
+    {
+      "ID": 4900,
+      "Entries": [
+        "Yharnam Messenger Hat"
+      ]
+    },
+    {
+      "ID": 4901,
+      "Entries": [
+        "Worn Messenger Top Hat"
+      ]
+    },
+    {
+      "ID": 4902,
+      "Entries": [
+        "Messenger Head Bandage"
+      ]
+    },
+    {
+      "ID": 4903,
+      "Entries": [
+        "White Messenger Ribbon"
+      ]
+    },
+    {
+      "ID": 4904,
+      "Entries": [
+        "Red Messenger Ribbon"
+      ]
+    },
+    {
+      "ID": 4905,
+      "Entries": [
+        "Messenger Top Hat"
+      ]
+    },
+    {
+      "ID": 4906,
+      "Entries": [
+        "Black Messenger Hat"
+      ]
+    },
+    {
+      "ID": 4907,
+      "Entries": [
+        "Bloody Messenger Head Bandage"
+      ]
+    },
+    {
+      "ID": 4908,
+      "Entries": [
+        "Messenger Urn Festival"
+      ]
+    },
+    {
+      "ID": 6100,
+      "Entries": [
+        "Pthumeru Root Chalice"
+      ]
+    },
+    {
+      "ID": 6109,
+      "Entries": [
+        "Pthumeru Chalice"
+      ]
+    },
+    {
+      "ID": 6200,
+      "Entries": [
+        "Central Pthumeru Root Chalice"
+      ]
+    },
+    {
+      "ID": 6209,
+      "Entries": [
+        "Central Pthumeru Chalice"
+      ]
+    },
+    {
+      "ID": 6210,
+      "Entries": [
+        "Huntertomb Root Chalice"
+      ]
+    },
+    {
+      "ID": 6219,
+      "Entries": [
+        "Hintertomb Chalice"
+      ]
+    },
+    {
+      "ID": 6300,
+      "Entries": [
+        "Lower Pthumeru Root Chalice"
+      ]
+    },
+    {
+      "ID": 6302,
+      "Entries": [
+        "Sinister Lower Pthumeru Root Chalice"
+      ]
+    },
+    {
+      "ID": 6309,
+      "Entries": [
+        "Lower Pthumeru Chalice"
+      ]
+    },
+    {
+      "ID": 6310,
+      "Entries": [
+        "Lower Hintertomb Root Chalice"
+      ]
+    },
+    {
+      "ID": 6312,
+      "Entries": [
+        "Sinister Hintertomb Root Chalice"
+      ]
+    },
+    {
+      "ID": 6319,
+      "Entries": [
+        "Lower Hintertomb Root Chalice"
+      ]
+    },
+    {
+      "ID": 6401,
+      "Entries": [
+        "Cursed and Defiled Root Chalice"
+      ]
+    },
+    {
+      "ID": 6409,
+      "Entries": [
+        "Defiled Chalice"
+      ]
+    },
+    {
+      "ID": 6420,
+      "Entries": [
+        "Ailing Loran Root Chalice"
+      ]
+    },
+    {
+      "ID": 6429,
+      "Entries": [
+        "Ailing Loran Chalice"
+      ]
+    },
+    {
+      "ID": 6500,
+      "Entries": [
+        "Pthumeru Ihyll Root Chalice"
+      ]
+    },
+    {
+      "ID": 6502,
+      "Entries": [
+        "Sinister Pthumeru Ihyll Root Chalice"
+      ]
+    },
+    {
+      "ID": 6509,
+      "Entries": [
+        "Great Pthumeru Ihyll Root Chalice"
+      ]
+    },
+    {
+      "ID": 6520,
+      "Entries": [
+        "Lower Ailing Loran Root Chalice"
+      ]
+    },
+    {
+      "ID": 6522,
+      "Entries": [
+        "Sinister Lower Loran Root Chalice"
+      ]
+    },
+    {
+      "ID": 6529,
+      "Entries": [
+        "Lower Loran Chalice"
+      ]
+    },
+    {
+      "ID": 6530,
+      "Entries": [
+        "Isz Root Chalice"
+      ]
+    },
+    {
+      "ID": 6532,
+      "Entries": [
+        "Sinister Isz Root Chalice"
+      ]
+    },
+    {
+      "ID": 6539,
+      "Entries": [
+        "Great Isz Chalice"
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "Ritual Blood (1)"
+      ]
+    },
+    {
+      "ID": 7001,
+      "Entries": [
+        "Ritual Blood (2)"
+      ]
+    },
+    {
+      "ID": 7002,
+      "Entries": [
+        "Ritual Blood (3)"
+      ]
+    },
+    {
+      "ID": 7003,
+      "Entries": [
+        "Ritual Blood (4)"
+      ]
+    },
+    {
+      "ID": 7004,
+      "Entries": [
+        "Ritual Blood (5)"
+      ]
+    },
+    {
+      "ID": 7012,
+      "Entries": [
+        "Coldblood Flowerbud"
+      ]
+    },
+    {
+      "ID": 7013,
+      "Entries": [
+        "Coldblood Flower Bulb"
+      ]
+    },
+    {
+      "ID": 7014,
+      "Entries": [
+        "Blooming Coldblood Flower"
+      ]
+    },
+    {
+      "ID": 7020,
+      "Entries": [
+        "Tomb Mold (1)"
+      ]
+    },
+    {
+      "ID": 7021,
+      "Entries": [
+        "Tomb Mold (2)"
+      ]
+    },
+    {
+      "ID": 7022,
+      "Entries": [
+        "Tomb Mold (3)"
+      ]
+    },
+    {
+      "ID": 7023,
+      "Entries": [
+        "Tomb Mold (4)"
+      ]
+    },
+    {
+      "ID": 7024,
+      "Entries": [
+        "Tomb Mold (5)"
+      ]
+    },
+    {
+      "ID": 7050,
+      "Entries": [
+        "Arcane Haze"
+      ]
+    },
+    {
+      "ID": 7100,
+      "Entries": [
+        "Pearl Slug"
+      ]
+    },
+    {
+      "ID": 7110,
+      "Entries": [
+        "Red Jelly"
+      ]
+    },
+    {
+      "ID": 7120,
+      "Entries": [
+        "Sage's Wrist"
+      ]
+    },
+    {
+      "ID": 7121,
+      "Entries": [
+        "Sage's Hair"
+      ]
+    },
+    {
+      "ID": 7130,
+      "Entries": [
+        "Inflicted Organ"
+      ]
+    },
+    {
+      "ID": 7131,
+      "Entries": [
+        "Yellow Backbone"
+      ]
+    },
+    {
+      "ID": 7140,
+      "Entries": [
+        "Bastard of Loran"
+      ]
+    },
+    {
+      "ID": 7150,
+      "Entries": [
+        "Bloodshot Eyeball"
+      ]
+    },
+    {
+      "ID": 7200,
+      "Entries": [
+        "Living String"
+      ]
+    },
+    {
+      "ID": 10900,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10910,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 11000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 11100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 11101,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 11110,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 11130,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 11200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 11201,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 11210,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 11220,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 11230,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 11240,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 11250,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 11251,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 11260,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 11270,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 11300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 11310,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 11320,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 11330,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 12000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 12010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 12020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 12030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 12050,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 12060,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 12070,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 12080,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 12090,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 12110,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 12120,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 12130,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 12140,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

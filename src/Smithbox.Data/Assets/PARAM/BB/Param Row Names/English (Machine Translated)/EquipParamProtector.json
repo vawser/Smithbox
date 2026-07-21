@@ -1,0 +1,1643 @@
+{
+  "Name": "EquipParamProtector",
+  "Entries": [
+    {
+      "ID": 1000,
+      "Entries": [
+        "Hair"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "Hair"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "Hair"
+      ]
+    },
+    {
+      "ID": 1300,
+      "Entries": [
+        "Hair"
+      ]
+    },
+    {
+      "ID": 1400,
+      "Entries": [
+        "Hair"
+      ]
+    },
+    {
+      "ID": 1500,
+      "Entries": [
+        "Hair"
+      ]
+    },
+    {
+      "ID": 1600,
+      "Entries": [
+        "Hair"
+      ]
+    },
+    {
+      "ID": 1700,
+      "Entries": [
+        "Hair"
+      ]
+    },
+    {
+      "ID": 1800,
+      "Entries": [
+        "Hair"
+      ]
+    },
+    {
+      "ID": 1900,
+      "Entries": [
+        "Hair"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "Hair"
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        "Hair"
+      ]
+    },
+    {
+      "ID": 3200,
+      "Entries": [
+        "Hair"
+      ]
+    },
+    {
+      "ID": 3300,
+      "Entries": [
+        "Hair"
+      ]
+    },
+    {
+      "ID": 3400,
+      "Entries": [
+        "Hair"
+      ]
+    },
+    {
+      "ID": 3500,
+      "Entries": [
+        "Hair"
+      ]
+    },
+    {
+      "ID": 3600,
+      "Entries": [
+        "Hair"
+      ]
+    },
+    {
+      "ID": 3700,
+      "Entries": [
+        "Hair"
+      ]
+    },
+    {
+      "ID": 3800,
+      "Entries": [
+        "Hair"
+      ]
+    },
+    {
+      "ID": 3900,
+      "Entries": [
+        "Hair"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "Hair - Ghost"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "Gray Wolf Cap"
+      ]
+    },
+    {
+      "ID": 11000,
+      "Entries": [
+        "Charred Hunter Garb"
+      ]
+    },
+    {
+      "ID": 12000,
+      "Entries": [
+        "Charred Hunter Gloves"
+      ]
+    },
+    {
+      "ID": 13000,
+      "Entries": [
+        "Charred Hunter Trousers"
+      ]
+    },
+    {
+      "ID": 20000,
+      "Entries": [
+        "Black Hooded Iron Helm"
+      ]
+    },
+    {
+      "ID": 21000,
+      "Entries": [
+        "Yahar'gul Black Garb"
+      ]
+    },
+    {
+      "ID": 22000,
+      "Entries": [
+        "Yahar'gul Black Gloves"
+      ]
+    },
+    {
+      "ID": 23000,
+      "Entries": [
+        "Yahar'gul Black Trousers"
+      ]
+    },
+    {
+      "ID": 30000,
+      "Entries": [
+        "Graveguard Mask"
+      ]
+    },
+    {
+      "ID": 31000,
+      "Entries": [
+        "Graveguard Robe"
+      ]
+    },
+    {
+      "ID": 32000,
+      "Entries": [
+        "Graveguard Manchettes"
+      ]
+    },
+    {
+      "ID": 33000,
+      "Entries": [
+        "Graveguard Kilt"
+      ]
+    },
+    {
+      "ID": 40000,
+      "Entries": [
+        "Bone Ash Mask"
+      ]
+    },
+    {
+      "ID": 41000,
+      "Entries": [
+        "Bone Ash Armor"
+      ]
+    },
+    {
+      "ID": 42000,
+      "Entries": [
+        "Bone Ash Gauntlets"
+      ]
+    },
+    {
+      "ID": 43000,
+      "Entries": [
+        "Bone Ash Leggings"
+      ]
+    },
+    {
+      "ID": 50000,
+      "Entries": [
+        "Henryk Hunter's Cap"
+      ]
+    },
+    {
+      "ID": 51000,
+      "Entries": [
+        "Henryk Hunter's Garb"
+      ]
+    },
+    {
+      "ID": 52000,
+      "Entries": [
+        "Henryk Hunter's Gloves"
+      ]
+    },
+    {
+      "ID": 53000,
+      "Entries": [
+        "Henryk Hunter's Trousers"
+      ]
+    },
+    {
+      "ID": 60000,
+      "Entries": [
+        "Yharnam Hunter Cap"
+      ]
+    },
+    {
+      "ID": 61000,
+      "Entries": [
+        "Yharnam Hunter Garb"
+      ]
+    },
+    {
+      "ID": 62000,
+      "Entries": [
+        "Yharnam Hunter Gloves"
+      ]
+    },
+    {
+      "ID": 63000,
+      "Entries": [
+        "Yharnam Hunter Trousers"
+      ]
+    },
+    {
+      "ID": 70000,
+      "Entries": [
+        "Hunter Hat"
+      ]
+    },
+    {
+      "ID": 71000,
+      "Entries": [
+        "Hunter Garb"
+      ]
+    },
+    {
+      "ID": 72000,
+      "Entries": [
+        "Hunter Gloves"
+      ]
+    },
+    {
+      "ID": 73000,
+      "Entries": [
+        "Hunter Trousers"
+      ]
+    },
+    {
+      "ID": 80000,
+      "Entries": [
+        "Knight's Wig"
+      ]
+    },
+    {
+      "ID": 81000,
+      "Entries": [
+        "Knight's Garb"
+      ]
+    },
+    {
+      "ID": 82000,
+      "Entries": [
+        "Knight's Gloves"
+      ]
+    },
+    {
+      "ID": 83000,
+      "Entries": [
+        "Knight's Trousers/Dress"
+      ]
+    },
+    {
+      "ID": 90000,
+      "Entries": [
+        "Annalise Hat"
+      ]
+    },
+    {
+      "ID": 91000,
+      "Entries": [
+        "Annalise Body"
+      ]
+    },
+    {
+      "ID": 100000,
+      "Entries": [
+        "Cainhurst Helmet"
+      ]
+    },
+    {
+      "ID": 101000,
+      "Entries": [
+        "Cainhurst Armor"
+      ]
+    },
+    {
+      "ID": 102000,
+      "Entries": [
+        "Cainhurst Gauntlets"
+      ]
+    },
+    {
+      "ID": 103000,
+      "Entries": [
+        "Cainhurst Leggings"
+      ]
+    },
+    {
+      "ID": 110000,
+      "Entries": [
+        "Black Church Hat"
+      ]
+    },
+    {
+      "ID": 111000,
+      "Entries": [
+        "Black Church Garb"
+      ]
+    },
+    {
+      "ID": 112000,
+      "Entries": [
+        "Surgical Long Gloves"
+      ]
+    },
+    {
+      "ID": 113000,
+      "Entries": [
+        "Black Church Trousers/Dress"
+      ]
+    },
+    {
+      "ID": 120000,
+      "Entries": [
+        "Blindfold Cap"
+      ]
+    },
+    {
+      "ID": 121000,
+      "Entries": [
+        "Choir Garb"
+      ]
+    },
+    {
+      "ID": 122000,
+      "Entries": [
+        "Choir Gloves"
+      ]
+    },
+    {
+      "ID": 123000,
+      "Entries": [
+        "Choir Trousers"
+      ]
+    },
+    {
+      "ID": 130000,
+      "Entries": [
+        "Gascoigne's Cap"
+      ]
+    },
+    {
+      "ID": 131000,
+      "Entries": [
+        "Gascoigne's Garb"
+      ]
+    },
+    {
+      "ID": 132000,
+      "Entries": [
+        "Gascoigne's Gloves"
+      ]
+    },
+    {
+      "ID": 133000,
+      "Entries": [
+        "Gascoigne's Trousers"
+      ]
+    },
+    {
+      "ID": 140000,
+      "Entries": [
+        "Tomb Prospector Hood"
+      ]
+    },
+    {
+      "ID": 141000,
+      "Entries": [
+        "Tomb Prospector Garb"
+      ]
+    },
+    {
+      "ID": 142000,
+      "Entries": [
+        "Tomb Prospector Gloves"
+      ]
+    },
+    {
+      "ID": 143000,
+      "Entries": [
+        "Tomb Prospector Trousers"
+      ]
+    },
+    {
+      "ID": 150000,
+      "Entries": [
+        "Gold Ardeo"
+      ]
+    },
+    {
+      "ID": 151000,
+      "Entries": [
+        "Executioner Garb"
+      ]
+    },
+    {
+      "ID": 152000,
+      "Entries": [
+        "Executioner Gauntlets"
+      ]
+    },
+    {
+      "ID": 153000,
+      "Entries": [
+        "Executioner Trousers"
+      ]
+    },
+    {
+      "ID": 180000,
+      "Entries": [
+        "Beak Mask"
+      ]
+    },
+    {
+      "ID": 181000,
+      "Entries": [
+        "Crowfeather Garb"
+      ]
+    },
+    {
+      "ID": 182000,
+      "Entries": [
+        "Crowfeather Manchettes"
+      ]
+    },
+    {
+      "ID": 183000,
+      "Entries": [
+        "Crowfeather Trousers"
+      ]
+    },
+    {
+      "ID": 190000,
+      "Entries": [
+        "Mensis Cage"
+      ]
+    },
+    {
+      "ID": 191000,
+      "Entries": [
+        "Student Uniform"
+      ]
+    },
+    {
+      "ID": 193000,
+      "Entries": [
+        "Student Trousers"
+      ]
+    },
+    {
+      "ID": 200000,
+      "Entries": [
+        "Gehrman's Hunter Cap"
+      ]
+    },
+    {
+      "ID": 201000,
+      "Entries": [
+        "Gehrman's Hunter Garb"
+      ]
+    },
+    {
+      "ID": 203000,
+      "Entries": [
+        "Gehrman's Hunter Trousers"
+      ]
+    },
+    {
+      "ID": 210000,
+      "Entries": [
+        "Madman Hood"
+      ]
+    },
+    {
+      "ID": 211000,
+      "Entries": [
+        "Madman Garb"
+      ]
+    },
+    {
+      "ID": 212000,
+      "Entries": [
+        "Madman Manchettes"
+      ]
+    },
+    {
+      "ID": 213000,
+      "Entries": [
+        "Madman Leggings"
+      ]
+    },
+    {
+      "ID": 220000,
+      "Entries": [
+        "Doll Hat"
+      ]
+    },
+    {
+      "ID": 221000,
+      "Entries": [
+        "Doll Clothes"
+      ]
+    },
+    {
+      "ID": 222000,
+      "Entries": [
+        "Doll Gloves"
+      ]
+    },
+    {
+      "ID": 223000,
+      "Entries": [
+        "Doll Skirt"
+      ]
+    },
+    {
+      "ID": 230000,
+      "Entries": [
+        "Black Hood"
+      ]
+    },
+    {
+      "ID": 231000,
+      "Entries": [
+        "Foreign Garb"
+      ]
+    },
+    {
+      "ID": 232000,
+      "Entries": [
+        "Sullied Bandage"
+      ]
+    },
+    {
+      "ID": 233000,
+      "Entries": [
+        "Foreign Trousers"
+      ]
+    },
+    {
+      "ID": 241000,
+      "Entries": [
+        "Ashen Hunter Garb"
+      ]
+    },
+    {
+      "ID": 242000,
+      "Entries": [
+        "Ashen Hunter Gloves"
+      ]
+    },
+    {
+      "ID": 243000,
+      "Entries": [
+        "Ashen Hunter Trousers"
+      ]
+    },
+    {
+      "ID": 250000,
+      "Entries": [
+        "Crown of Illusions"
+      ]
+    },
+    {
+      "ID": 260000,
+      "Entries": [
+        "Master's Iron Helm"
+      ]
+    },
+    {
+      "ID": 270000,
+      "Entries": [
+        "Iron Yahar'gul Helm"
+      ]
+    },
+    {
+      "ID": 280000,
+      "Entries": [
+        "Top Hat"
+      ]
+    },
+    {
+      "ID": 281000,
+      "Entries": [
+        "Hunter Garb (No Cape)"
+      ]
+    },
+    {
+      "ID": 290000,
+      "Entries": [
+        "White Church Hat"
+      ]
+    },
+    {
+      "ID": 291000,
+      "Entries": [
+        "White Church Garb"
+      ]
+    },
+    {
+      "ID": 293000,
+      "Entries": [
+        "White Church Trousers/Dress"
+      ]
+    },
+    {
+      "ID": 301000,
+      "Entries": [
+        "Student Uniform (Not Red)"
+      ]
+    },
+    {
+      "ID": 311000,
+      "Entries": [
+        "Noble Dress"
+      ]
+    },
+    {
+      "ID": 313000,
+      "Entries": [
+        "Arianna's Shoes"
+      ]
+    },
+    {
+      "ID": 320000,
+      "Entries": [
+        "Rumpled Yharnam Hat"
+      ]
+    },
+    {
+      "ID": 321000,
+      "Entries": [
+        "Sweaty Clothes"
+      ]
+    },
+    {
+      "ID": 330000,
+      "Entries": [
+        "Butcher Mask"
+      ]
+    },
+    {
+      "ID": 331000,
+      "Entries": [
+        "Butcher Garb"
+      ]
+    },
+    {
+      "ID": 332000,
+      "Entries": [
+        "Butcher Gloves"
+      ]
+    },
+    {
+      "ID": 333000,
+      "Entries": [
+        "Butcher Trousers"
+      ]
+    },
+    {
+      "ID": 340000,
+      "Entries": [
+        "Harrowed Hood"
+      ]
+    },
+    {
+      "ID": 341000,
+      "Entries": [
+        "Harrowed Garb"
+      ]
+    },
+    {
+      "ID": 342000,
+      "Entries": [
+        "Harrowed Gloves"
+      ]
+    },
+    {
+      "ID": 343000,
+      "Entries": [
+        "Harrowed Trousers"
+      ]
+    },
+    {
+      "ID": 350000,
+      "Entries": [
+        "Old Hunter Cap"
+      ]
+    },
+    {
+      "ID": 351000,
+      "Entries": [
+        "Old Hunter Garb"
+      ]
+    },
+    {
+      "ID": 352000,
+      "Entries": [
+        "Old Hunter Gloves"
+      ]
+    },
+    {
+      "ID": 353000,
+      "Entries": [
+        "Old Hunter Trousers"
+      ]
+    },
+    {
+      "ID": 360000,
+      "Entries": [
+        "Old Hunter Top Hat"
+      ]
+    },
+    {
+      "ID": 361000,
+      "Entries": [
+        "Decorative Old Hunter Garb"
+      ]
+    },
+    {
+      "ID": 363000,
+      "Entries": [
+        "Decorative Old Hunter Trousers"
+      ]
+    },
+    {
+      "ID": 370000,
+      "Entries": [
+        "Maria Hunter Cap"
+      ]
+    },
+    {
+      "ID": 371000,
+      "Entries": [
+        "Maria Hunter Garb"
+      ]
+    },
+    {
+      "ID": 372000,
+      "Entries": [
+        "Maria Hunter Gloves"
+      ]
+    },
+    {
+      "ID": 373000,
+      "Entries": [
+        "Maria Hunter Trousers"
+      ]
+    },
+    {
+      "ID": 380000,
+      "Entries": [
+        "One-eyed Iron Helm"
+      ]
+    },
+    {
+      "ID": 381000,
+      "Entries": [
+        "Constable's Garb"
+      ]
+    },
+    {
+      "ID": 382000,
+      "Entries": [
+        "Constable's Gloves"
+      ]
+    },
+    {
+      "ID": 383000,
+      "Entries": [
+        "Constable's Trousers"
+      ]
+    },
+    {
+      "ID": 390000,
+      "Entries": [
+        "Brador's Testimony"
+      ]
+    },
+    {
+      "ID": 391000,
+      "Entries": [
+        "Beast Hide Garb"
+      ]
+    },
+    {
+      "ID": 392000,
+      "Entries": [
+        "Bloodied Arm Bands"
+      ]
+    },
+    {
+      "ID": 393000,
+      "Entries": [
+        "Bloodied Trousers"
+      ]
+    },
+    {
+      "ID": 400000,
+      "Entries": [
+        "Yamamura Hunter Hat"
+      ]
+    },
+    {
+      "ID": 401000,
+      "Entries": [
+        "Khaki Haori"
+      ]
+    },
+    {
+      "ID": 402000,
+      "Entries": [
+        "Old Hunter Arm Bands"
+      ]
+    },
+    {
+      "ID": 403000,
+      "Entries": [
+        "Wine Hakama"
+      ]
+    },
+    {
+      "ID": 410000,
+      "Entries": [
+        "Beast's Embrace - Head"
+      ]
+    },
+    {
+      "ID": 411000,
+      "Entries": [
+        "Beast's Embrace - Torso"
+      ]
+    },
+    {
+      "ID": 412000,
+      "Entries": [
+        "Beast's Embrace - Arms"
+      ]
+    },
+    {
+      "ID": 420000,
+      "Entries": [
+        "Milkweed - Head"
+      ]
+    },
+    {
+      "ID": 421000,
+      "Entries": [
+        "Milkweed - Torso"
+      ]
+    },
+    {
+      "ID": 422000,
+      "Entries": [
+        "Milkweed - Arms"
+      ]
+    },
+    {
+      "ID": 430000,
+      "Entries": [
+        "Enlarged Head"
+      ]
+    },
+    {
+      "ID": 440000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 450000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 451000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 453000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 460000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 461000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 470000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 471000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 480000,
+      "Entries": [
+        "Alfred Bloodied - Head"
+      ]
+    },
+    {
+      "ID": 481000,
+      "Entries": [
+        "Alfred Bloodied - Torso"
+      ]
+    },
+    {
+      "ID": 482000,
+      "Entries": [
+        "Alfred Bloodied - Arms"
+      ]
+    },
+    {
+      "ID": 483000,
+      "Entries": [
+        "Alfred Bloodied - TorsoLegs"
+      ]
+    },
+    {
+      "ID": 490000,
+      "Entries": [
+        "Eileen Bloodied - Head"
+      ]
+    },
+    {
+      "ID": 491000,
+      "Entries": [
+        "Eileen Bloodied - Torso"
+      ]
+    },
+    {
+      "ID": 492000,
+      "Entries": [
+        "Eileen Bloodied - Arms"
+      ]
+    },
+    {
+      "ID": 493000,
+      "Entries": [
+        "Eileen Bloodied - Legs"
+      ]
+    },
+    {
+      "ID": 503000,
+      "Entries": [
+        "Church Servant - No Boots"
+      ]
+    },
+    {
+      "ID": 511000,
+      "Entries": [
+        "Arianna - Pregnant"
+      ]
+    },
+    {
+      "ID": 521000,
+      "Entries": [
+        "Old Woman - Torso"
+      ]
+    },
+    {
+      "ID": 531000,
+      "Entries": [
+        "Annalise - Torso"
+      ]
+    },
+    {
+      "ID": 541000,
+      "Entries": [
+        "Church Servant Bloodied - Torso"
+      ]
+    },
+    {
+      "ID": 542000,
+      "Entries": [
+        "Church Servant Bloodied - Arms"
+      ]
+    },
+    {
+      "ID": 543000,
+      "Entries": [
+        "Church Servant Bloodied - Legs"
+      ]
+    },
+    {
+      "ID": 550000,
+      "Entries": [
+        "Suspicious Beggar Bloodied - Head"
+      ]
+    },
+    {
+      "ID": 563000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 571000,
+      "Entries": [
+        "Arianna After Birth - Torso"
+      ]
+    },
+    {
+      "ID": 573000,
+      "Entries": [
+        "Arianna After Birth - Legs"
+      ]
+    },
+    {
+      "ID": 581000,
+      "Entries": [
+        "Iosefka - Torso"
+      ]
+    },
+    {
+      "ID": 582000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 592000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 600000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 602000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 610000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 611000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 620000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 621000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 623000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 630000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 631000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 633000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 641000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 650000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 651000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 653000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 660000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 661000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 671000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 680000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 682000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 690000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 700000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 701000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 703000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 710000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 712000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 723000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 730000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 732000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 740000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 741000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 743000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 750000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 751000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 762000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 772000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 782000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 790000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 800000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 811000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 813000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 820000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 821000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 831000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 840000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 841000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 851000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 853000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 860000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 861000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 862000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 870000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 872000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 880000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 900000,
+      "Entries": [
+        "Head"
+      ]
+    },
+    {
+      "ID": 901000,
+      "Entries": [
+        "Body"
+      ]
+    },
+    {
+      "ID": 902000,
+      "Entries": [
+        "Arms"
+      ]
+    },
+    {
+      "ID": 903000,
+      "Entries": [
+        "Legs"
+      ]
+    },
+    {
+      "ID": 910000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 911000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 912000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 913000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 920000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 921000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 930000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 940000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 950000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 951000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 952000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 961000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 970000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 971000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 980000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 981000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 982000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 983000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 990000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 991000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 992000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 993000,
+      "Entries": [
+        "Armor - Ghost"
+      ]
+    },
+    {
+      "ID": 1001000,
+      "Entries": [
+        "Adella - Torso"
+      ]
+    },
+    {
+      "ID": 1003000,
+      "Entries": [
+        "Adella - Legs"
+      ]
+    },
+    {
+      "ID": 1011000,
+      "Entries": [
+        "Arianna - Torso"
+      ]
+    },
+    {
+      "ID": 1020000,
+      "Entries": [
+        "Suspicious Beggar - Head"
+      ]
+    },
+    {
+      "ID": 1021000,
+      "Entries": [
+        "Suspicious Beggar - Torso"
+      ]
+    },
+    {
+      "ID": 1022000,
+      "Entries": [
+        "Suspicious Beggar - Arms"
+      ]
+    },
+    {
+      "ID": 1023000,
+      "Entries": [
+        "Suspicious Beggar - Legs"
+      ]
+    },
+    {
+      "ID": 1030000,
+      "Entries": [
+        "Brador - Head"
+      ]
+    },
+    {
+      "ID": 1031000,
+      "Entries": [
+        "Brador - Torso"
+      ]
+    }
+  ]
+}

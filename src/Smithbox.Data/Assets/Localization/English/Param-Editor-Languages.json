@@ -5,6 +5,10 @@
       "Text": "English"
     },
     {
+      "Key": "PARAM_Language_English_MT",
+      "Text": "English (Machine Translated)"
+    },
+    {
       "Key": "PARAM_Language_French",
       "Text": "French"
     },

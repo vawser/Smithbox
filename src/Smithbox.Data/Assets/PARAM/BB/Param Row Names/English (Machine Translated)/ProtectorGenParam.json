@@ -1,0 +1,35 @@
+{
+  "Name": "ProtectorGenParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Cloth"
+      ]
+    },
+    {
+      "ID": 770000,
+      "Entries": [
+        "[Prototype] Hunter _ head _ New joint"
+      ]
+    },
+    {
+      "ID": 771000,
+      "Entries": [
+        "[Prototype] Hunter _ Torso _ New joint"
+      ]
+    },
+    {
+      "ID": 772000,
+      "Entries": [
+        "[Prototype] Hunter _ arm _ New joint"
+      ]
+    },
+    {
+      "ID": 773000,
+      "Entries": [
+        "[Prototype] Hunter _ leg _ New joint"
+      ]
+    }
+  ]
+}

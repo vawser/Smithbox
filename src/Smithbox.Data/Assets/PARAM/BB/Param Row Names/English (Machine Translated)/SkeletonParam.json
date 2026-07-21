@@ -1,0 +1,359 @@
+{
+  "Name": "SkeletonParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Not working"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "NPC Common Neck"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "NPC Common Torso 1"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "NPC Common Torso 2"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "4 Legs Common Neck"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "General purpose humanoid left leg"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Universal humanoid right leg"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "copy _ Test right leg"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "copy _ Test left leg"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "heroine"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "VIP"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "Blacksmith Edo"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "Slave Soldier"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "Former noblewoman"
+      ]
+    },
+    {
+      "ID": 600,
+      "Entries": [
+        "Puppeteer"
+      ]
+    },
+    {
+      "ID": 700,
+      "Entries": [
+        "Beggar Woman"
+      ]
+    },
+    {
+      "ID": 800,
+      "Entries": [
+        "Baldwin"
+      ]
+    },
+    {
+      "ID": 900,
+      "Entries": [
+        "Beggar Man"
+      ]
+    },
+    {
+      "ID": 998,
+      "Entries": [
+        "copy _ Old general-purpose left foot"
+      ]
+    },
+    {
+      "ID": 999,
+      "Entries": [
+        "copy _ Old general-purpose right foot"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Hound _ Left hind leg"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "Hound _ Right hind leg"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "Hound _ Left front leg"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "Hound _ Right front leg"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "Priest _ left foot"
+      ]
+    },
+    {
+      "ID": 1011,
+      "Entries": [
+        "Priest _ Right Foot"
+      ]
+    },
+    {
+      "ID": 1022,
+      "Entries": [
+        "Crowd A _ Swing setting"
+      ]
+    },
+    {
+      "ID": 1030,
+      "Entries": [
+        "Crowd B _ left foot"
+      ]
+    },
+    {
+      "ID": 1031,
+      "Entries": [
+        "Crowd B _ Right Foot"
+      ]
+    },
+    {
+      "ID": 1090,
+      "Entries": [
+        "Strange Beast _ left foot"
+      ]
+    },
+    {
+      "ID": 1091,
+      "Entries": [
+        "Strange Beast _ Right Foot"
+      ]
+    },
+    {
+      "ID": 1092,
+      "Entries": [
+        "Strange Beast_ Swing setting"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Centipede Right Leg"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "Centipede left leg"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "Gargoyle right leg"
+      ]
+    },
+    {
+      "ID": 2011,
+      "Entries": [
+        "Gargoyle left leg"
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        "Iron Golem Right Leg"
+      ]
+    },
+    {
+      "ID": 2021,
+      "Entries": [
+        "Iron Golem Left Leg"
+      ]
+    },
+    {
+      "ID": 2022,
+      "Entries": [
+        "Iron Golem Right Hand"
+      ]
+    },
+    {
+      "ID": 2030,
+      "Entries": [
+        "Hammer Demon Left Leg"
+      ]
+    },
+    {
+      "ID": 2031,
+      "Entries": [
+        "Hammer Demon Right Leg"
+      ]
+    },
+    {
+      "ID": 5010,
+      "Entries": [
+        "Flame Beast _ Left front leg"
+      ]
+    },
+    {
+      "ID": 5011,
+      "Entries": [
+        "Flame Beast _ Right front leg"
+      ]
+    },
+    {
+      "ID": 5012,
+      "Entries": [
+        "Flame Beast _ Left hind leg"
+      ]
+    },
+    {
+      "ID": 5013,
+      "Entries": [
+        "Flame Beast _ Right hind leg"
+      ]
+    },
+    {
+      "ID": 5014,
+      "Entries": [
+        "Flame Beast _ Shaking Head _ head"
+      ]
+    },
+    {
+      "ID": 5015,
+      "Entries": [
+        "Flame Beast _ Shaking Head _ neck 1"
+      ]
+    },
+    {
+      "ID": 5016,
+      "Entries": [
+        "Flame Beast _ Shaking Head _ neck 2"
+      ]
+    },
+    {
+      "ID": 5017,
+      "Entries": [
+        "Flame Beast _ Shaking Head _ neck 3"
+      ]
+    },
+    {
+      "ID": 5018,
+      "Entries": [
+        "Flame Beast _ Shaking Head _ neck 4"
+      ]
+    },
+    {
+      "ID": 3004,
+      "Entries": [
+        "Crag Foot ⑤"
+      ]
+    },
+    {
+      "ID": 3005,
+      "Entries": [
+        "Crag Foot ⑥"
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        "Crag Foot ⑦"
+      ]
+    },
+    {
+      "ID": 3101,
+      "Entries": [
+        "Crag Leg 8"
+      ]
+    },
+    {
+      "ID": 3102,
+      "Entries": [
+        "Crag Foot ⑨"
+      ]
+    },
+    {
+      "ID": 3103,
+      "Entries": [
+        "Crag Leg 10"
+      ]
+    },
+    {
+      "ID": 3104,
+      "Entries": [
+        "Crag Leg ⑪"
+      ]
+    },
+    {
+      "ID": 3105,
+      "Entries": [
+        "Crag Leg ⑫"
+      ]
+    },
+    {
+      "ID": 3106,
+      "Entries": [
+        "Krag Legs ⑬"
+      ]
+    }
+  ]
+}

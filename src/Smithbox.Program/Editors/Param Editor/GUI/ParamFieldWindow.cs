@@ -959,7 +959,7 @@ public class ParamFieldWindow
             }
             else if (CFG.Current.ParamEditor_Field_List_Field_Layout_Display_Type is FieldLayoutMode.Header)
             {
-                GUI.SimpleHeader($"{LOC.Get("PARAM_FieldWindow_Header_Unsorted")}##unsortedCat", "");
+                GUI.SimpleHeader($"{LOC.Get("PARAM_FieldWindow_Header_Unsorted")}", "");
 
                 if (BeginGroupTable($"ParamFieldsG_{activeParam}_misc", columnCount))
                 {

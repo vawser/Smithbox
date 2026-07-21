@@ -1,0 +1,161 @@
+{
+  "Name": "EquipMtrlSetParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Standard"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Standard +1"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Standard +2"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "Standard +3"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "Standard +4"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "Standard +5"
+      ]
+    },
+    {
+      "ID": 600,
+      "Entries": [
+        "Standard +6"
+      ]
+    },
+    {
+      "ID": 700,
+      "Entries": [
+        "Standard +7"
+      ]
+    },
+    {
+      "ID": 800,
+      "Entries": [
+        "Standard +8"
+      ]
+    },
+    {
+      "ID": 900,
+      "Entries": [
+        "Standard +9"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Standard +10"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2040,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2050,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2060,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2070,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2080,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2090,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2110,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2600,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2700,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

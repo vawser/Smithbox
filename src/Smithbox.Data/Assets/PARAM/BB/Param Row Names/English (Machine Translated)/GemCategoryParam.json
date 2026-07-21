@@ -1,0 +1,2669 @@
+{
+  "Name": "GemCategoryParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Default Category"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Attack Categories _ Down effect"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Defense Categories _ Up effect"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Defense Categories _ Down effect"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Recovery Category"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Status Category"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "1 Category to pin to frame"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Categories that are no longer excluded"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Priority A Categories"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Priority B Categories"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "Priority C Categories"
+      ]
+    },
+    {
+      "ID": 40100,
+      "Entries": [
+        "Attack power [Gun] (fixed value) Cost 1 Sub"
+      ]
+    },
+    {
+      "ID": 40200,
+      "Entries": [
+        "Attack power [Gun] (fixed value) Cost 2 Sub"
+      ]
+    },
+    {
+      "ID": 40300,
+      "Entries": [
+        "Attack power [Gun] (fixed value) Cost 3 Sub"
+      ]
+    },
+    {
+      "ID": 40400,
+      "Entries": [
+        "Attack power [Gun] (fixed value) Cost 4 Sub"
+      ]
+    },
+    {
+      "ID": 40500,
+      "Entries": [
+        "Attack power [Gun] (fixed value) Cost 5 Sub"
+      ]
+    },
+    {
+      "ID": 40600,
+      "Entries": [
+        "Attack power [Gun] (fixed value) Cost 6 Sub"
+      ]
+    },
+    {
+      "ID": 50100,
+      "Entries": [
+        "Attack power [Magic] (fixed value) Cost1 Sub"
+      ]
+    },
+    {
+      "ID": 50200,
+      "Entries": [
+        "Attack power [Magic] (fixed value) Cost 2 Sub"
+      ]
+    },
+    {
+      "ID": 50300,
+      "Entries": [
+        "Attack power [Magic] (fixed value) Cost 3 Sub"
+      ]
+    },
+    {
+      "ID": 50400,
+      "Entries": [
+        "Attack power [Magic] (fixed value) Cost 4 Sub"
+      ]
+    },
+    {
+      "ID": 50500,
+      "Entries": [
+        "Attack power [Magic] (fixed value) Cost 5 Sub"
+      ]
+    },
+    {
+      "ID": 50600,
+      "Entries": [
+        "Attack power [Magic] (fixed value) Cost 6 Sub"
+      ]
+    },
+    {
+      "ID": 60100,
+      "Entries": [
+        "Attack power [Fire] (fixed value) Cost 1 Sub"
+      ]
+    },
+    {
+      "ID": 60200,
+      "Entries": [
+        "Attack power [Fire] (fixed value) Cost 2 Sub"
+      ]
+    },
+    {
+      "ID": 60300,
+      "Entries": [
+        "Attack power [Fire] (fixed value) Cost 3 Sub"
+      ]
+    },
+    {
+      "ID": 60400,
+      "Entries": [
+        "Attack power [Fire] (fixed value) Cost 4 Sub"
+      ]
+    },
+    {
+      "ID": 60500,
+      "Entries": [
+        "Attack power [Fire] (fixed value) Cost 5 Sub"
+      ]
+    },
+    {
+      "ID": 60600,
+      "Entries": [
+        "Attack power [Fire] (fixed value) Cost 6 Sub"
+      ]
+    },
+    {
+      "ID": 70100,
+      "Entries": [
+        "Attack power [Lightning] (fixed value) Cost 1 Sub"
+      ]
+    },
+    {
+      "ID": 70200,
+      "Entries": [
+        "Attack power [Lightning] (fixed value) Cost 2 Sub"
+      ]
+    },
+    {
+      "ID": 70300,
+      "Entries": [
+        "Attack power [Lightning] (fixed value) Cost 3 Sub"
+      ]
+    },
+    {
+      "ID": 70400,
+      "Entries": [
+        "Attack power [Lightning] (fixed value) Cost 4 Sub"
+      ]
+    },
+    {
+      "ID": 70500,
+      "Entries": [
+        "Attack power [Lightning] (fixed value) Cost 5 Sub"
+      ]
+    },
+    {
+      "ID": 70600,
+      "Entries": [
+        "Attack power [Lightning] (fixed value) Cost 6 Sub"
+      ]
+    },
+    {
+      "ID": 79100,
+      "Entries": [
+        "Attack power [Physical] (fixed value) Cost 1 Sub-dungeon A'"
+      ]
+    },
+    {
+      "ID": 79200,
+      "Entries": [
+        "Attack power [Physical] (fixed value) Cost 2 Sub-dungeon A'"
+      ]
+    },
+    {
+      "ID": 79300,
+      "Entries": [
+        "Attack power [Physical] (fixed value) Cost 3 Sub-dungeon A'"
+      ]
+    },
+    {
+      "ID": 79400,
+      "Entries": [
+        "Attack power [Physical] (fixed value) Cost 4 Sub-dungeon A'"
+      ]
+    },
+    {
+      "ID": 79500,
+      "Entries": [
+        "Attack power [Physical] (fixed value) Cost 5 Sub-dungeon A'"
+      ]
+    },
+    {
+      "ID": 79600,
+      "Entries": [
+        "Attack power [Physical] (fixed value) Cost 6 Sub-dungeon A'"
+      ]
+    },
+    {
+      "ID": 80100,
+      "Entries": [
+        "Attack power [Physical] (fixed value) Cost 1Sub"
+      ]
+    },
+    {
+      "ID": 80200,
+      "Entries": [
+        "Attack power [Physical] (fixed value) Cost 2 Sub"
+      ]
+    },
+    {
+      "ID": 80300,
+      "Entries": [
+        "Attack power [Physical] (fixed value) Cost 3 Sub"
+      ]
+    },
+    {
+      "ID": 80400,
+      "Entries": [
+        "Attack power [Physical] (fixed value) Cost 4 Sub"
+      ]
+    },
+    {
+      "ID": 80500,
+      "Entries": [
+        "Attack power [Physical] (fixed value) Cost 5 Sub"
+      ]
+    },
+    {
+      "ID": 80600,
+      "Entries": [
+        "Attack power [Physical] (fixed value) Cost 6 Sub"
+      ]
+    },
+    {
+      "ID": 111100,
+      "Entries": [
+        "Attack power [Strike] (multiplier) Cost 1 main"
+      ]
+    },
+    {
+      "ID": 111200,
+      "Entries": [
+        "Attack power [Strike] (multiplier) Cost 2 main"
+      ]
+    },
+    {
+      "ID": 111300,
+      "Entries": [
+        "Attack power [Strike] (multiplier) Cost 3 main"
+      ]
+    },
+    {
+      "ID": 111400,
+      "Entries": [
+        "Attack power [Strike] (multiplier) Cost 4 main"
+      ]
+    },
+    {
+      "ID": 111500,
+      "Entries": [
+        "Attack power [Strike] (multiplier) Cost 5 main"
+      ]
+    },
+    {
+      "ID": 111600,
+      "Entries": [
+        "Attack power [Strike] (multiplier) Cost 6 main"
+      ]
+    },
+    {
+      "ID": 121100,
+      "Entries": [
+        "Attack power [pierce] (multiplier) Cost 1 main"
+      ]
+    },
+    {
+      "ID": 121200,
+      "Entries": [
+        "Attack power [pierce] (multiplier) Cost 2main"
+      ]
+    },
+    {
+      "ID": 121300,
+      "Entries": [
+        "Attack power [pierce] (multiplier) Cost 3 main"
+      ]
+    },
+    {
+      "ID": 121400,
+      "Entries": [
+        "Attack power [pierce] (multiplier) Cost 4 main"
+      ]
+    },
+    {
+      "ID": 121500,
+      "Entries": [
+        "Attack power [pierce] (multiplier) Cost 5 main"
+      ]
+    },
+    {
+      "ID": 121600,
+      "Entries": [
+        "Attack power [pierce] (multiplier) Cost 6 main"
+      ]
+    },
+    {
+      "ID": 131100,
+      "Entries": [
+        "Attack power [Gun] (multiplier) Cost 1 main"
+      ]
+    },
+    {
+      "ID": 131200,
+      "Entries": [
+        "Attack power [Gun] (multiplier) Cost 2 main"
+      ]
+    },
+    {
+      "ID": 131300,
+      "Entries": [
+        "Attack power [Gun] (multiplier) Cost 3 main"
+      ]
+    },
+    {
+      "ID": 131400,
+      "Entries": [
+        "Attack power [Gun] (multiplier) Cost 4 main"
+      ]
+    },
+    {
+      "ID": 131500,
+      "Entries": [
+        "Attack power [Gun] (multiplier) Cost 5 main"
+      ]
+    },
+    {
+      "ID": 131600,
+      "Entries": [
+        "Attack power [Gun] (multiplier) Cost 6 main"
+      ]
+    },
+    {
+      "ID": 141100,
+      "Entries": [
+        "Attack power [Magic] (multiplier) Cost 1 main"
+      ]
+    },
+    {
+      "ID": 141200,
+      "Entries": [
+        "Attack power [Magic] (multiplier) Cost 2 main"
+      ]
+    },
+    {
+      "ID": 141300,
+      "Entries": [
+        "Attack power [Magic] (multiplier) Cost 3 main"
+      ]
+    },
+    {
+      "ID": 141400,
+      "Entries": [
+        "Attack power [Magic] (multiplier) Cost 4 main"
+      ]
+    },
+    {
+      "ID": 141500,
+      "Entries": [
+        "Attack power [Magic] (multiplier) Cost 5 main"
+      ]
+    },
+    {
+      "ID": 141600,
+      "Entries": [
+        "Attack power [Magic] (multiplier) Cost 6 main"
+      ]
+    },
+    {
+      "ID": 151100,
+      "Entries": [
+        "Attack power [Fire] (multiplier) Cost 1 main"
+      ]
+    },
+    {
+      "ID": 151200,
+      "Entries": [
+        "Attack power [Fire] (multiplier) Cost 2 main"
+      ]
+    },
+    {
+      "ID": 151300,
+      "Entries": [
+        "Attack power [Fire] (multiplier) Cost 3 main"
+      ]
+    },
+    {
+      "ID": 151400,
+      "Entries": [
+        "Attack power [Fire] (multiplier) Cost 4 main"
+      ]
+    },
+    {
+      "ID": 151500,
+      "Entries": [
+        "Attack power [Fire] (multiplier) Cost 5 main"
+      ]
+    },
+    {
+      "ID": 151600,
+      "Entries": [
+        "Attack power [Fire] (multiplier) Cost 6 main"
+      ]
+    },
+    {
+      "ID": 152100,
+      "Entries": [
+        "Attack power [Fire] (multiplier) Cost 1 Main Dungeon C"
+      ]
+    },
+    {
+      "ID": 152200,
+      "Entries": [
+        "Attack power [Fire] (multiplier) Cost 2 Main Dungeon C"
+      ]
+    },
+    {
+      "ID": 152300,
+      "Entries": [
+        "Attack power [Fire] (multiplier) Cost 3 Main Dungeon C"
+      ]
+    },
+    {
+      "ID": 152400,
+      "Entries": [
+        "Attack power [Fire] (multiplier) Cost 4 Main Dungeon C"
+      ]
+    },
+    {
+      "ID": 152500,
+      "Entries": [
+        "Attack power [Fire] (multiplier) Cost 5 Main Dungeon C"
+      ]
+    },
+    {
+      "ID": 152600,
+      "Entries": [
+        "Attack power [Fire] (multiplier) Cost 6 Main Dungeon C"
+      ]
+    },
+    {
+      "ID": 161100,
+      "Entries": [
+        "Attack power [Lightning] (multiplier) Cost 1 main"
+      ]
+    },
+    {
+      "ID": 161200,
+      "Entries": [
+        "Attack power [Lightning] (multiplier) Cost 2 main"
+      ]
+    },
+    {
+      "ID": 161300,
+      "Entries": [
+        "Attack power [Lightning] (multiplier) Cost 3 main"
+      ]
+    },
+    {
+      "ID": 161400,
+      "Entries": [
+        "Attack power [Lightning] (multiplier) Cost 4 main"
+      ]
+    },
+    {
+      "ID": 161500,
+      "Entries": [
+        "Attack power [Lightning] (multiplier) Cost 5 main"
+      ]
+    },
+    {
+      "ID": 161600,
+      "Entries": [
+        "Attack power [Lightning] (multiplier) Cost 6 main"
+      ]
+    },
+    {
+      "ID": 162100,
+      "Entries": [
+        "Attack power [Lightning] (multiplier) Cost 1 Main Dungeon C"
+      ]
+    },
+    {
+      "ID": 162200,
+      "Entries": [
+        "Attack power [Lightning] (multiplier) Cost 2 Main Dungeon C"
+      ]
+    },
+    {
+      "ID": 162300,
+      "Entries": [
+        "Attack power [Lightning] (multiplier) Cost 3Main Dungeon C"
+      ]
+    },
+    {
+      "ID": 162400,
+      "Entries": [
+        "Attack power [Lightning] (multiplier) Cost 4 Main Dungeon C"
+      ]
+    },
+    {
+      "ID": 162500,
+      "Entries": [
+        "Attack power [Lightning] (multiplier) Cost 5 Main Dungeon C"
+      ]
+    },
+    {
+      "ID": 162600,
+      "Entries": [
+        "Attack power [Lightning] (multiplier) Cost 6 Main Dungeon C"
+      ]
+    },
+    {
+      "ID": 171100,
+      "Entries": [
+        "Attack power [Physical] (multiplier) Cost 1 main"
+      ]
+    },
+    {
+      "ID": 171200,
+      "Entries": [
+        "Attack power [Physical] (multiplier) Cost 2 main"
+      ]
+    },
+    {
+      "ID": 171300,
+      "Entries": [
+        "Attack power [Physical] (multiplier) Cost 3 main"
+      ]
+    },
+    {
+      "ID": 171400,
+      "Entries": [
+        "Attack power [Physical] (multiplier) Cost 4 main"
+      ]
+    },
+    {
+      "ID": 171500,
+      "Entries": [
+        "Attack power [Physical] (multiplier) Cost 5 main"
+      ]
+    },
+    {
+      "ID": 171600,
+      "Entries": [
+        "Attack power [Physical] (multiplier) Cost 6 main"
+      ]
+    },
+    {
+      "ID": 172100,
+      "Entries": [
+        "Attack power [Physical] (multiplier) Cost 1 Main Dungeon A'"
+      ]
+    },
+    {
+      "ID": 172200,
+      "Entries": [
+        "Attack power [Physical] (multiplier) Cost 2 Main DungeonA'"
+      ]
+    },
+    {
+      "ID": 172300,
+      "Entries": [
+        "Attack power [Physical] (multiplier) Cost 3 Main Dungeon A'"
+      ]
+    },
+    {
+      "ID": 172400,
+      "Entries": [
+        "Attack power [Physical] (multiplier) Cost 4 Main Dungeon A'"
+      ]
+    },
+    {
+      "ID": 172500,
+      "Entries": [
+        "Attack power [Physical] (multiplier) Cost 5 Main Dungeon A'"
+      ]
+    },
+    {
+      "ID": 172600,
+      "Entries": [
+        "Attack power [Physical] (multiplier) Cost 6 Main Dungeon A'"
+      ]
+    },
+    {
+      "ID": 173100,
+      "Entries": [
+        "Attack power [Physical] (multiplier) Cost 1 Main Dungeon B"
+      ]
+    },
+    {
+      "ID": 173200,
+      "Entries": [
+        "Attack power [Physical] (multiplier) Cost 2 Main Dungeon B"
+      ]
+    },
+    {
+      "ID": 173300,
+      "Entries": [
+        "Attack power [Physical] (multiplier) Cost 3 Main Dungeon B"
+      ]
+    },
+    {
+      "ID": 173400,
+      "Entries": [
+        "Attack power [Physical] (multiplier) Cost 4 Main Dungeon B"
+      ]
+    },
+    {
+      "ID": 173500,
+      "Entries": [
+        "Attack power [Physical] (multiplier) Cost 5 Main Dungeon B"
+      ]
+    },
+    {
+      "ID": 173600,
+      "Entries": [
+        "Attack power [Physical] (multiplier) Cost 6Main Dungeon B"
+      ]
+    },
+    {
+      "ID": 174100,
+      "Entries": [
+        "Attack power [Physical] (multiplier) Cost 1 Main Dungeon C"
+      ]
+    },
+    {
+      "ID": 174200,
+      "Entries": [
+        "Attack power [Physical] (multiplier) Cost 2 Main Dungeon C"
+      ]
+    },
+    {
+      "ID": 174300,
+      "Entries": [
+        "Attack power [Physical] (multiplier) Cost 3 Main Dungeon C"
+      ]
+    },
+    {
+      "ID": 174400,
+      "Entries": [
+        "Attack power [Physical] (multiplier) Cost 4 Main Dungeon C"
+      ]
+    },
+    {
+      "ID": 174500,
+      "Entries": [
+        "Attack power [Physical] (multiplier) Cost 5 Main Dungeon C"
+      ]
+    },
+    {
+      "ID": 174600,
+      "Entries": [
+        "Attack power [Physical] (multiplier) Cost 6 Main Dungeon C"
+      ]
+    },
+    {
+      "ID": 181100,
+      "Entries": [
+        "Attack power [all] (multiplier) + cost 1 main"
+      ]
+    },
+    {
+      "ID": 181200,
+      "Entries": [
+        "Attack power [all] (multiplier) + cost 2 main"
+      ]
+    },
+    {
+      "ID": 181300,
+      "Entries": [
+        "Attack power [all] (multiplier) + cost 3 main"
+      ]
+    },
+    {
+      "ID": 181400,
+      "Entries": [
+        "Attack power [all] (multiplier) + cost 4 main"
+      ]
+    },
+    {
+      "ID": 181500,
+      "Entries": [
+        "Attack power [all] (multiplier) + cost 5 main"
+      ]
+    },
+    {
+      "ID": 181600,
+      "Entries": [
+        "Attack power [all] (multiplier) + cost 6 main"
+      ]
+    },
+    {
+      "ID": 190100,
+      "Entries": [
+        "Attack power [all] (multiplier) - cost 1 Sub"
+      ]
+    },
+    {
+      "ID": 190200,
+      "Entries": [
+        "Attack power [all] (multiplier) - cost 2 Sub"
+      ]
+    },
+    {
+      "ID": 190300,
+      "Entries": [
+        "Attack power [all] (multiplier) - cost 3 Sub"
+      ]
+    },
+    {
+      "ID": 190400,
+      "Entries": [
+        "Attack power [all] (multiplier) - cost 4 Sub"
+      ]
+    },
+    {
+      "ID": 190500,
+      "Entries": [
+        "Attack power [all] (multiplier) - cost 5 Sub"
+      ]
+    },
+    {
+      "ID": 190600,
+      "Entries": [
+        "Attack power [all] (multiplier) - cost 6 Sub"
+      ]
+    },
+    {
+      "ID": 201100,
+      "Entries": [
+        "Attack power correction [Strength] (multiplier) Cost 1 main"
+      ]
+    },
+    {
+      "ID": 201200,
+      "Entries": [
+        "Attack power correction [Strength] (multiplier) Cost 2 main"
+      ]
+    },
+    {
+      "ID": 201300,
+      "Entries": [
+        "Attack power correction [Strength] (multiplier) Cost 3 main"
+      ]
+    },
+    {
+      "ID": 201400,
+      "Entries": [
+        "Attack power correction [Strength] (multiplier) Cost4 main"
+      ]
+    },
+    {
+      "ID": 201500,
+      "Entries": [
+        "Attack power correction [Strength] (multiplier) Cost 5 main"
+      ]
+    },
+    {
+      "ID": 201600,
+      "Entries": [
+        "Attack power correction [Strength] (multiplier) Cost 6 main"
+      ]
+    },
+    {
+      "ID": 202100,
+      "Entries": [
+        "Attack power correction [Strength] (multiplier) Cost 1 Main Dungeon A'"
+      ]
+    },
+    {
+      "ID": 202200,
+      "Entries": [
+        "Attack power correction [Strength] (multiplier) Cost 2 Main Dungeon A'"
+      ]
+    },
+    {
+      "ID": 202300,
+      "Entries": [
+        "Attack power correction [Strength] (multiplier) Cost 3 Main Dungeon A'"
+      ]
+    },
+    {
+      "ID": 202400,
+      "Entries": [
+        "Attack power correction [Strength] (multiplier) Cost 4 Main Dungeon A'"
+      ]
+    },
+    {
+      "ID": 202500,
+      "Entries": [
+        "Attack power correction [Strength] (multiplier) Cost 5 Main Dungeon A'"
+      ]
+    },
+    {
+      "ID": 202600,
+      "Entries": [
+        "Attack power correction [Strength] (multiplier) Cost 6 Main Dungeon A'"
+      ]
+    },
+    {
+      "ID": 211100,
+      "Entries": [
+        "Attack power correction [skill] (multiplier) Cost 1 main"
+      ]
+    },
+    {
+      "ID": 211200,
+      "Entries": [
+        "Attack power correction [skill] (multiplier) Cost2 main"
+      ]
+    },
+    {
+      "ID": 211300,
+      "Entries": [
+        "Attack power correction [skill] (multiplier) Cost 3 main"
+      ]
+    },
+    {
+      "ID": 211400,
+      "Entries": [
+        "Attack power correction [skill] (multiplier) Cost 4 main"
+      ]
+    },
+    {
+      "ID": 211500,
+      "Entries": [
+        "Attack power correction [skill] (multiplier) Cost 5 main"
+      ]
+    },
+    {
+      "ID": 211600,
+      "Entries": [
+        "Attack power correction [skill] (multiplier) Cost 6 main"
+      ]
+    },
+    {
+      "ID": 212100,
+      "Entries": [
+        "Attack power correction [skill] (multiplier) Cost 1 Main Dungeon A'"
+      ]
+    },
+    {
+      "ID": 212200,
+      "Entries": [
+        "Attack power correction [skill] (multiplier) Cost 2 Main Dungeon A'"
+      ]
+    },
+    {
+      "ID": 212300,
+      "Entries": [
+        "Attack power correction [skill] (multiplier) Cost 3 Main Dungeon A'"
+      ]
+    },
+    {
+      "ID": 212400,
+      "Entries": [
+        "Attack power correction [skill] (multiplier) Cost 4 Main Dungeon A'"
+      ]
+    },
+    {
+      "ID": 212500,
+      "Entries": [
+        "Attack power correction [skill] (multiplier) Cost 5 Main Dungeon A'"
+      ]
+    },
+    {
+      "ID": 212600,
+      "Entries": [
+        "Attack power correction [skill] (multiplier) Cost 6Main Dungeon A'"
+      ]
+    },
+    {
+      "ID": 221100,
+      "Entries": [
+        "Attack power correction [Shooting] (multiplier) Cost 1 main"
+      ]
+    },
+    {
+      "ID": 221200,
+      "Entries": [
+        "Attack power correction [Shooting] (multiplier) Cost 2 main"
+      ]
+    },
+    {
+      "ID": 221300,
+      "Entries": [
+        "Attack power correction [Shooting] (multiplier) Cost 3 main"
+      ]
+    },
+    {
+      "ID": 221400,
+      "Entries": [
+        "Attack power correction [Shooting] (multiplier) Cost 4 main"
+      ]
+    },
+    {
+      "ID": 221500,
+      "Entries": [
+        "Attack power correction [Shooting] (multiplier) Cost 5 main"
+      ]
+    },
+    {
+      "ID": 221600,
+      "Entries": [
+        "Attack power correction [Shooting] (multiplier) Cost 6 main"
+      ]
+    },
+    {
+      "ID": 231100,
+      "Entries": [
+        "Attack power correction [Magic] (multiplier) Cost 1 main"
+      ]
+    },
+    {
+      "ID": 231200,
+      "Entries": [
+        "Attack power correction [Magic] (multiplier) Cost 2 main"
+      ]
+    },
+    {
+      "ID": 231300,
+      "Entries": [
+        "Attack power correction [Magic] (multiplier) Cost 3 main"
+      ]
+    },
+    {
+      "ID": 231400,
+      "Entries": [
+        "Attack power correction [Magic] (multiplier) Cost 4 main"
+      ]
+    },
+    {
+      "ID": 231500,
+      "Entries": [
+        "Attack power correction [Magic] (multiplier) Cost 5 main"
+      ]
+    },
+    {
+      "ID": 231600,
+      "Entries": [
+        "Attack power correction [Magic] (multiplier) Cost 6 main"
+      ]
+    },
+    {
+      "ID": 239100,
+      "Entries": [
+        "Special Attack Damage [Beast] (Multiplier) + cost 1 Sub-dungeon B"
+      ]
+    },
+    {
+      "ID": 239200,
+      "Entries": [
+        "Special Attack Damage [Beast] (Multiplier) + cost 2 Sub-dungeon B"
+      ]
+    },
+    {
+      "ID": 239300,
+      "Entries": [
+        "Special Attack Damage [Beast] (Multiplier) + cost 3 Sub-dungeon B"
+      ]
+    },
+    {
+      "ID": 239400,
+      "Entries": [
+        "Special Attack Damage [Beast] (Multiplier) + cost 4 Sub-dungeon B"
+      ]
+    },
+    {
+      "ID": 239500,
+      "Entries": [
+        "Special Attack Damage [Beast] (Multiplier) + cost 5 Sub-dungeon B"
+      ]
+    },
+    {
+      "ID": 239600,
+      "Entries": [
+        "Special Attack Damage [Beast] (Multiplier) + cost 6 Sub-dungeon B"
+      ]
+    },
+    {
+      "ID": 240100,
+      "Entries": [
+        "Special Attack Damage [Beast] (Multiplier) + cost 1 Sub"
+      ]
+    },
+    {
+      "ID": 240200,
+      "Entries": [
+        "Special Attack Damage [Beast] (Multiplier) + cost 2 Sub"
+      ]
+    },
+    {
+      "ID": 240300,
+      "Entries": [
+        "Special Attack Damage [Beast] (Multiplier) + cost 3 Sub"
+      ]
+    },
+    {
+      "ID": 240400,
+      "Entries": [
+        "Special Attack Damage [Beast] (Multiplier) + cost 4 Sub"
+      ]
+    },
+    {
+      "ID": 240500,
+      "Entries": [
+        "Special Attack Damage [Beast] (Multiplier) + cost 5 Sub"
+      ]
+    },
+    {
+      "ID": 240600,
+      "Entries": [
+        "Special Attack Damage [Beast] (Multiplier) + cost 6 Sub"
+      ]
+    },
+    {
+      "ID": 241100,
+      "Entries": [
+        "Special Attack Damage [Beast] (Multiplier) + cost 1 main"
+      ]
+    },
+    {
+      "ID": 241200,
+      "Entries": [
+        "Special Attack Damage [Beast] (Multiplier) + cost 2 main"
+      ]
+    },
+    {
+      "ID": 241300,
+      "Entries": [
+        "Special Attack Damage [Beast] (Multiplier) + cost 3 main"
+      ]
+    },
+    {
+      "ID": 241400,
+      "Entries": [
+        "Special Attack Damage [Beast] (Multiplier) + cost 4 main"
+      ]
+    },
+    {
+      "ID": 241500,
+      "Entries": [
+        "Special Attack Damage [Beast] (Multiplier) + cost 5 main"
+      ]
+    },
+    {
+      "ID": 241600,
+      "Entries": [
+        "Special Attack Damage [Beast] (Multiplier) + cost 6 main"
+      ]
+    },
+    {
+      "ID": 242100,
+      "Entries": [
+        "Special Attack Damage [Beast] (Multiplier) + cost 1 Main Dungeon B"
+      ]
+    },
+    {
+      "ID": 242200,
+      "Entries": [
+        "Special Attack Damage [Beast] (Multiplier) + cost 2 Main Dungeon B"
+      ]
+    },
+    {
+      "ID": 242300,
+      "Entries": [
+        "Special Attack Damage [Beast] (Multiplier) + cost 3 Main Dungeon B"
+      ]
+    },
+    {
+      "ID": 242400,
+      "Entries": [
+        "Special Attack Damage [Beast] (Multiplier) + cost 4 Main Dungeon B"
+      ]
+    },
+    {
+      "ID": 242500,
+      "Entries": [
+        "Special Attack Damage [Beast] (Multiplier) + cost 5 Main Dungeon B"
+      ]
+    },
+    {
+      "ID": 242600,
+      "Entries": [
+        "Special Attack Damage [Beast] (Multiplier) + cost 6 Main Dungeon B"
+      ]
+    },
+    {
+      "ID": 250100,
+      "Entries": [
+        "Special Attack Damage [Beast] (Multiplier) - cost 1 Sub"
+      ]
+    },
+    {
+      "ID": 250200,
+      "Entries": [
+        "Special Attack Damage [Beast] (Multiplier) - cost 2 Sub"
+      ]
+    },
+    {
+      "ID": 250300,
+      "Entries": [
+        "Special Attack Damage [Beast] (Multiplier) - cost 3Sub"
+      ]
+    },
+    {
+      "ID": 250400,
+      "Entries": [
+        "Special Attack Damage [Beast] (Multiplier) - cost 4 Sub"
+      ]
+    },
+    {
+      "ID": 250500,
+      "Entries": [
+        "Special Attack Damage [Beast] (Multiplier) - cost 5 Sub"
+      ]
+    },
+    {
+      "ID": 250600,
+      "Entries": [
+        "Special Attack Damage [Beast] (Multiplier) - cost 6 Sub"
+      ]
+    },
+    {
+      "ID": 259100,
+      "Entries": [
+        "Special Attack Damage [Moon] (Multiplier) + cost 1 Sub-dungeon B"
+      ]
+    },
+    {
+      "ID": 259200,
+      "Entries": [
+        "Special Attack Damage [Moon] (Multiplier) + cost 2 Sub-dungeon B"
+      ]
+    },
+    {
+      "ID": 259300,
+      "Entries": [
+        "Special Attack Damage [Moon] (Multiplier) + cost 3 Sub-dungeon B"
+      ]
+    },
+    {
+      "ID": 259400,
+      "Entries": [
+        "Special Attack Damage [Moon] (Multiplier) + cost 4 Sub-dungeon B"
+      ]
+    },
+    {
+      "ID": 259500,
+      "Entries": [
+        "Special Attack Damage [Moon] (Multiplier) + cost 5 Sub-dungeon B"
+      ]
+    },
+    {
+      "ID": 259600,
+      "Entries": [
+        "Special Attack Damage [Moon] (Multiplier) + cost 6 Sub-dungeonB"
+      ]
+    },
+    {
+      "ID": 260100,
+      "Entries": [
+        "Special Attack Damage [Moon] (Multiplier) + cost 1 Sub"
+      ]
+    },
+    {
+      "ID": 260200,
+      "Entries": [
+        "Special Attack Damage [Moon] (Multiplier) + cost 2 Sub"
+      ]
+    },
+    {
+      "ID": 260300,
+      "Entries": [
+        "Special Attack Damage [Moon] (Multiplier) + cost 3 Sub"
+      ]
+    },
+    {
+      "ID": 260400,
+      "Entries": [
+        "Special Attack Damage [Moon] (Multiplier) + cost 4 Sub"
+      ]
+    },
+    {
+      "ID": 260500,
+      "Entries": [
+        "Special Attack Damage [Moon] (Multiplier) + cost 5 Sub"
+      ]
+    },
+    {
+      "ID": 260600,
+      "Entries": [
+        "Special Attack Damage [Moon] (Multiplier) + cost 6 Sub"
+      ]
+    },
+    {
+      "ID": 261100,
+      "Entries": [
+        "Special Attack Damage [Moon] (Multiplier) + cost 1 main"
+      ]
+    },
+    {
+      "ID": 261200,
+      "Entries": [
+        "Special Attack Damage [Moon] (Multiplier) + cost 2 main"
+      ]
+    },
+    {
+      "ID": 261300,
+      "Entries": [
+        "Special Attack Damage [Moon] (Multiplier) + cost 3 main"
+      ]
+    },
+    {
+      "ID": 261400,
+      "Entries": [
+        "Special Attack Damage [Moon] (Multiplier) + cost 4 main"
+      ]
+    },
+    {
+      "ID": 261500,
+      "Entries": [
+        "Special Attack Damage [Moon] (Multiplier) + cost 5 main"
+      ]
+    },
+    {
+      "ID": 261600,
+      "Entries": [
+        "Special Attack Damage [Moon] (Multiplier) + cost 6 main"
+      ]
+    },
+    {
+      "ID": 262100,
+      "Entries": [
+        "Special Attack Damage [Moon] (Multiplier) + cost 1 Main Dungeon B"
+      ]
+    },
+    {
+      "ID": 262200,
+      "Entries": [
+        "Special Attack Damage [Moon] (Multiplier) + cost 2 Main Dungeon B"
+      ]
+    },
+    {
+      "ID": 262300,
+      "Entries": [
+        "Special Attack Damage [Moon] (Multiplier) + cost 3 Main Dungeon B"
+      ]
+    },
+    {
+      "ID": 262400,
+      "Entries": [
+        "Special Attack Damage [Moon] (Multiplier) + cost 4 Main Dungeon B"
+      ]
+    },
+    {
+      "ID": 262500,
+      "Entries": [
+        "Special Attack Damage [Moon] (Multiplier) + cost 5 Main Dungeon B"
+      ]
+    },
+    {
+      "ID": 262600,
+      "Entries": [
+        "Special Attack Damage [Moon] (Multiplier) + cost 6 Main Dungeon B"
+      ]
+    },
+    {
+      "ID": 270100,
+      "Entries": [
+        "Special Attack Damage [Moon] (Multiplier) - cost 1Sub"
+      ]
+    },
+    {
+      "ID": 270200,
+      "Entries": [
+        "Special Attack Damage [Moon] (Multiplier) - cost 2 Sub"
+      ]
+    },
+    {
+      "ID": 270300,
+      "Entries": [
+        "Special Attack Damage [Moon] (Multiplier) - cost 3 Sub"
+      ]
+    },
+    {
+      "ID": 270400,
+      "Entries": [
+        "Special Attack Damage [Moon] (Multiplier) - cost 4 Sub"
+      ]
+    },
+    {
+      "ID": 270500,
+      "Entries": [
+        "Special Attack Damage [Moon] (Multiplier) - cost 5 Sub"
+      ]
+    },
+    {
+      "ID": 270600,
+      "Entries": [
+        "Special Attack Damage [Moon] (Multiplier) - cost 6 Sub"
+      ]
+    },
+    {
+      "ID": 279100,
+      "Entries": [
+        "Status Abnormality Attack Power [Poison] (Fixed Value) Cost 1 Sub-dungeon B"
+      ]
+    },
+    {
+      "ID": 279200,
+      "Entries": [
+        "Status Abnormality Attack Power [Poison] (Fixed Value) Cost 2 Sub-dungeon B"
+      ]
+    },
+    {
+      "ID": 279300,
+      "Entries": [
+        "Status Abnormality Attack Power [Poison] (Fixed Value) Cost 3 Sub-dungeon B"
+      ]
+    },
+    {
+      "ID": 279400,
+      "Entries": [
+        "Status Abnormality Attack Power [Poison] (Fixed Value) Cost 4 Sub-dungeon B"
+      ]
+    },
+    {
+      "ID": 279500,
+      "Entries": [
+        "Status Abnormality Attack Power [Poison] (Fixed Value) Cost 5Sub-dungeon B"
+      ]
+    },
+    {
+      "ID": 279600,
+      "Entries": [
+        "Status Abnormality Attack Power [Poison] (Fixed Value) Cost 6 Sub-dungeon B"
+      ]
+    },
+    {
+      "ID": 280100,
+      "Entries": [
+        "Status Abnormality Attack Power [Poison] (Fixed Value) Cost 1 Sub"
+      ]
+    },
+    {
+      "ID": 280200,
+      "Entries": [
+        "Status Abnormality Attack Power [Poison] (Fixed Value) Cost 2 Sub"
+      ]
+    },
+    {
+      "ID": 280300,
+      "Entries": [
+        "Status Abnormality Attack Power [Poison] (Fixed Value) Cost 3 Sub"
+      ]
+    },
+    {
+      "ID": 280400,
+      "Entries": [
+        "Status Abnormality Attack Power [Poison] (Fixed Value) Cost 4 Sub"
+      ]
+    },
+    {
+      "ID": 280500,
+      "Entries": [
+        "Status Abnormality Attack Power [Poison] (Fixed Value) Cost 5 Sub"
+      ]
+    },
+    {
+      "ID": 280600,
+      "Entries": [
+        "Status Abnormality Attack Power [Poison] (Fixed Value) Cost 6 Sub"
+      ]
+    },
+    {
+      "ID": 281100,
+      "Entries": [
+        "Status Abnormality Attack Power [Poison] (Fixed Value) Cost 1 main"
+      ]
+    },
+    {
+      "ID": 281200,
+      "Entries": [
+        "Status Abnormality Attack Power [Poison] (Fixed Value) Cost 2 main"
+      ]
+    },
+    {
+      "ID": 281300,
+      "Entries": [
+        "Status Abnormality Attack Power [Poison] (Fixed Value) Cost 3 main"
+      ]
+    },
+    {
+      "ID": 281400,
+      "Entries": [
+        "Status Abnormality Attack Power [Poison] (Fixed Value) Cost 4main"
+      ]
+    },
+    {
+      "ID": 281500,
+      "Entries": [
+        "Status Abnormality Attack Power [Poison] (Fixed Value) Cost 5 main"
+      ]
+    },
+    {
+      "ID": 281600,
+      "Entries": [
+        "Status Abnormality Attack Power [Poison] (Fixed Value) Cost 6 main"
+      ]
+    },
+    {
+      "ID": 282100,
+      "Entries": [
+        "Status Abnormality Attack Power [Poison] (Fixed Value) Cost 1 Main Dungeon B"
+      ]
+    },
+    {
+      "ID": 282200,
+      "Entries": [
+        "Status Abnormality Attack Power [Poison] (Fixed Value) Cost 2 Main Dungeon B"
+      ]
+    },
+    {
+      "ID": 282300,
+      "Entries": [
+        "Status Abnormality Attack Power [Poison] (Fixed Value) Cost 3 Main Dungeon B"
+      ]
+    },
+    {
+      "ID": 282400,
+      "Entries": [
+        "Status Abnormality Attack Power [Poison] (Fixed Value) Cost 4 Main Dungeon B"
+      ]
+    },
+    {
+      "ID": 282500,
+      "Entries": [
+        "Status Abnormality Attack Power [Poison] (Fixed Value) Cost 5 Main Dungeon B"
+      ]
+    },
+    {
+      "ID": 282600,
+      "Entries": [
+        "Status Abnormality Attack Power [Poison] (Fixed Value) Cost 6 Main Dungeon B"
+      ]
+    },
+    {
+      "ID": 289100,
+      "Entries": [
+        "Abnormal Status Attack Power [Bleeding] (Fixed Value) Cost 1 Sub-dungeon B"
+      ]
+    },
+    {
+      "ID": 289200,
+      "Entries": [
+        "Abnormal Status Attack Power [Bleeding] (Fixed Value) Cost 2 Sub-dungeon B"
+      ]
+    },
+    {
+      "ID": 289300,
+      "Entries": [
+        "Abnormal Status Attack Power [Bleeding] (Fixed Value) Cost 3 Sub-dungeon B"
+      ]
+    },
+    {
+      "ID": 289400,
+      "Entries": [
+        "Abnormal Status Attack Power [Bleeding] (Fixed Value) Cost 4 Sub-dungeon B"
+      ]
+    },
+    {
+      "ID": 289500,
+      "Entries": [
+        "Abnormal Status Attack Power [Bleeding] (Fixed Value) Cost 5 Sub-dungeon B"
+      ]
+    },
+    {
+      "ID": 289600,
+      "Entries": [
+        "Abnormal Status Attack Power [Bleeding] (Fixed Value) Cost 6 Sub-dungeon B"
+      ]
+    },
+    {
+      "ID": 290100,
+      "Entries": [
+        "Abnormal Status Attack Power [Bleeding] (Fixed Value) Cost 1 Sub"
+      ]
+    },
+    {
+      "ID": 290200,
+      "Entries": [
+        "Abnormal Status Attack Power [Bleeding] (Fixed Value) Cost 2 Sub"
+      ]
+    },
+    {
+      "ID": 290300,
+      "Entries": [
+        "Abnormal Status Attack Power [Bleeding] (Fixed Value) Cost 3 Sub"
+      ]
+    },
+    {
+      "ID": 290400,
+      "Entries": [
+        "Abnormal Status Attack Power [Bleeding] (Fixed Value) Cost 4 Sub"
+      ]
+    },
+    {
+      "ID": 290500,
+      "Entries": [
+        "Abnormal Status Attack Power [Bleeding] (Fixed Value) Cost 5 Sub"
+      ]
+    },
+    {
+      "ID": 290600,
+      "Entries": [
+        "Abnormal Status Attack Power [Bleeding] (Fixed Value) Cost 6 Sub"
+      ]
+    },
+    {
+      "ID": 291100,
+      "Entries": [
+        "Abnormal Status Attack Power [Bleeding] (Fixed Value) Cost 1 main"
+      ]
+    },
+    {
+      "ID": 291200,
+      "Entries": [
+        "Abnormal Status Attack Power [Bleeding] (Fixed Value) Cost 2 main"
+      ]
+    },
+    {
+      "ID": 291300,
+      "Entries": [
+        "Abnormal Status Attack Power [Bleeding] (Fixed Value) Cost 3 main"
+      ]
+    },
+    {
+      "ID": 291400,
+      "Entries": [
+        "Abnormal Status Attack Power [Bleeding] (Fixed Value) Cost 4 main"
+      ]
+    },
+    {
+      "ID": 291500,
+      "Entries": [
+        "Abnormal Status Attack Power [Bleeding] (Fixed Value) Cost 5 main"
+      ]
+    },
+    {
+      "ID": 291600,
+      "Entries": [
+        "Abnormal Status Attack Power [Bleeding] (Fixed Value) Cost 6 main"
+      ]
+    },
+    {
+      "ID": 292100,
+      "Entries": [
+        "Abnormal Status Attack Power [Bleeding] (Fixed Value) Cost 1 Main Dungeon B"
+      ]
+    },
+    {
+      "ID": 292200,
+      "Entries": [
+        "Abnormal Status Attack Power [Bleeding] (Fixed Value) Cost 2 Main Dungeon B"
+      ]
+    },
+    {
+      "ID": 292300,
+      "Entries": [
+        "Abnormal Status Attack Power [Bleeding] (Fixed Value) Cost 3 Main Dungeon B"
+      ]
+    },
+    {
+      "ID": 292400,
+      "Entries": [
+        "Abnormal Status Attack Power [Bleeding] (Fixed Value) Cost 4 Main Dungeon B"
+      ]
+    },
+    {
+      "ID": 292500,
+      "Entries": [
+        "Abnormal Status Attack Power [Bleeding] (Fixed Value) Cost 5 Main Dungeon B"
+      ]
+    },
+    {
+      "ID": 292600,
+      "Entries": [
+        "Abnormal Status Attack Power [Bleeding] (Fixed Value) Cost 6 Main Dungeon B"
+      ]
+    },
+    {
+      "ID": 300100,
+      "Entries": [
+        "Counter Damage (Multiplier) Cost 1 Sub"
+      ]
+    },
+    {
+      "ID": 300200,
+      "Entries": [
+        "Counter Damage (Multiplier) Cost 2 Sub"
+      ]
+    },
+    {
+      "ID": 300300,
+      "Entries": [
+        "Counter Damage (Multiplier) Cost 3 Sub"
+      ]
+    },
+    {
+      "ID": 300400,
+      "Entries": [
+        "Counter Damage (Multiplier) Cost 4 Sub"
+      ]
+    },
+    {
+      "ID": 300500,
+      "Entries": [
+        "Counter Damage (Multiplier) Cost 5 Sub"
+      ]
+    },
+    {
+      "ID": 300600,
+      "Entries": [
+        "Counter Damage (Multiplier) Cost 6 Sub"
+      ]
+    },
+    {
+      "ID": 310100,
+      "Entries": [
+        "Stamina consumption when attacking (multiplier) + cost 1 Sub"
+      ]
+    },
+    {
+      "ID": 310200,
+      "Entries": [
+        "Stamina consumption when attacking (multiplier) + cost 2Sub"
+      ]
+    },
+    {
+      "ID": 310300,
+      "Entries": [
+        "Stamina consumption when attacking (multiplier) + cost 3 Sub"
+      ]
+    },
+    {
+      "ID": 310400,
+      "Entries": [
+        "Stamina consumption when attacking (multiplier) + cost 4 Sub"
+      ]
+    },
+    {
+      "ID": 310500,
+      "Entries": [
+        "Stamina consumption when attacking (multiplier) + cost 5 Sub"
+      ]
+    },
+    {
+      "ID": 310600,
+      "Entries": [
+        "Stamina consumption when attacking (multiplier) + cost 6 Sub"
+      ]
+    },
+    {
+      "ID": 311100,
+      "Entries": [
+        "Stamina consumption when attacking (multiplier) + cost 1 main"
+      ]
+    },
+    {
+      "ID": 311200,
+      "Entries": [
+        "Stamina consumption when attacking (multiplier) + cost 2 main"
+      ]
+    },
+    {
+      "ID": 311300,
+      "Entries": [
+        "Stamina consumption when attacking (multiplier) + cost 3 main"
+      ]
+    },
+    {
+      "ID": 311400,
+      "Entries": [
+        "Stamina consumption when attacking (multiplier) + cost 4 main"
+      ]
+    },
+    {
+      "ID": 311500,
+      "Entries": [
+        "Stamina consumption when attacking (multiplier) + cost 5 main"
+      ]
+    },
+    {
+      "ID": 311600,
+      "Entries": [
+        "Stamina consumption when attacking (multiplier) + cost 6 main"
+      ]
+    },
+    {
+      "ID": 320100,
+      "Entries": [
+        "Stamina consumption when attacking (multiplier) - cost 1 Sub"
+      ]
+    },
+    {
+      "ID": 320200,
+      "Entries": [
+        "Stamina consumption when attacking (multiplier) - cost 2 Sub"
+      ]
+    },
+    {
+      "ID": 320300,
+      "Entries": [
+        "Stamina consumption when attacking (multiplier) - cost 3 Sub"
+      ]
+    },
+    {
+      "ID": 320400,
+      "Entries": [
+        "Stamina consumption when attacking (multiplier) - cost 4 Sub"
+      ]
+    },
+    {
+      "ID": 320500,
+      "Entries": [
+        "Stamina consumption when attacking (multiplier) - cost 5 Sub"
+      ]
+    },
+    {
+      "ID": 320600,
+      "Entries": [
+        "Stamina consumption when attacking (multiplier) - cost 6 Sub"
+      ]
+    },
+    {
+      "ID": 330100,
+      "Entries": [
+        "Charged attack power (multiplier) Cost 1 Sub"
+      ]
+    },
+    {
+      "ID": 330200,
+      "Entries": [
+        "Charged attack power (multiplier) Cost 2 Sub"
+      ]
+    },
+    {
+      "ID": 330300,
+      "Entries": [
+        "Charged attack power (multiplier) Cost 3 Sub"
+      ]
+    },
+    {
+      "ID": 330400,
+      "Entries": [
+        "Charged attack power (multiplier) Cost 4 Sub"
+      ]
+    },
+    {
+      "ID": 330500,
+      "Entries": [
+        "Charged attack power (multiplier) Cost 5 Sub"
+      ]
+    },
+    {
+      "ID": 330600,
+      "Entries": [
+        "Charged attack power (multiplier) Cost 6 Sub"
+      ]
+    },
+    {
+      "ID": 331100,
+      "Entries": [
+        "Charged attack power (multiplier) Cost 1 main"
+      ]
+    },
+    {
+      "ID": 331200,
+      "Entries": [
+        "Charged attack power (multiplier) Cost 2 main"
+      ]
+    },
+    {
+      "ID": 331300,
+      "Entries": [
+        "Charged attack power (multiplier) Cost 3 main"
+      ]
+    },
+    {
+      "ID": 331400,
+      "Entries": [
+        "Charged attack power (multiplier) Cost 4 main"
+      ]
+    },
+    {
+      "ID": 331500,
+      "Entries": [
+        "Charged attack power (multiplier) Cost 5 main"
+      ]
+    },
+    {
+      "ID": 331600,
+      "Entries": [
+        "Charged attack power (multiplier) Cost 6 main"
+      ]
+    },
+    {
+      "ID": 340100,
+      "Entries": [
+        "HP Regenerate + cost 1 Sub"
+      ]
+    },
+    {
+      "ID": 340200,
+      "Entries": [
+        "HP Regenerate + cost 2 Sub"
+      ]
+    },
+    {
+      "ID": 340300,
+      "Entries": [
+        "HP Regenerate + cost 3 Sub"
+      ]
+    },
+    {
+      "ID": 340400,
+      "Entries": [
+        "HP Regenerate + cost 4 Sub"
+      ]
+    },
+    {
+      "ID": 340500,
+      "Entries": [
+        "HP Regenerate + cost 5 Sub"
+      ]
+    },
+    {
+      "ID": 340600,
+      "Entries": [
+        "HP Regenerate + cost 6 Sub"
+      ]
+    },
+    {
+      "ID": 341100,
+      "Entries": [
+        "HP Regenerate + cost 1 main"
+      ]
+    },
+    {
+      "ID": 341200,
+      "Entries": [
+        "HP Regenerate +cost 2 main"
+      ]
+    },
+    {
+      "ID": 341300,
+      "Entries": [
+        "HP Regenerate + cost 3 main"
+      ]
+    },
+    {
+      "ID": 341400,
+      "Entries": [
+        "HP Regenerate + cost 4 main"
+      ]
+    },
+    {
+      "ID": 341500,
+      "Entries": [
+        "HP Regenerate + cost 5 main"
+      ]
+    },
+    {
+      "ID": 341600,
+      "Entries": [
+        "HP Regenerate + cost 6 main"
+      ]
+    },
+    {
+      "ID": 350100,
+      "Entries": [
+        "HP Regenerate - cost 1 Sub"
+      ]
+    },
+    {
+      "ID": 350200,
+      "Entries": [
+        "HP Regenerate - cost 2 Sub"
+      ]
+    },
+    {
+      "ID": 350300,
+      "Entries": [
+        "HP Regenerate - cost 3 Sub"
+      ]
+    },
+    {
+      "ID": 350400,
+      "Entries": [
+        "HP Regenerate - cost 4 Sub"
+      ]
+    },
+    {
+      "ID": 350500,
+      "Entries": [
+        "HP Regenerate - cost 5 Sub"
+      ]
+    },
+    {
+      "ID": 350600,
+      "Entries": [
+        "HP Regenerate - cost 6 Sub"
+      ]
+    },
+    {
+      "ID": 360100,
+      "Entries": [
+        "Regain Recovery Amount (Multiplier) Cost 1 Sub"
+      ]
+    },
+    {
+      "ID": 360200,
+      "Entries": [
+        "Regain Recovery Amount (Multiplier) Cost 2 Sub"
+      ]
+    },
+    {
+      "ID": 360300,
+      "Entries": [
+        "Regain Recovery Amount (Multiplier) Cost 3 Sub"
+      ]
+    },
+    {
+      "ID": 360400,
+      "Entries": [
+        "Regain Recovery Amount (Multiplier) Cost 4 Sub"
+      ]
+    },
+    {
+      "ID": 360500,
+      "Entries": [
+        "Regain Recovery Amount (Multiplier) Cost 5 Sub"
+      ]
+    },
+    {
+      "ID": 360600,
+      "Entries": [
+        "Regain Recovery Amount (Multiplier) Cost 6 Sub"
+      ]
+    },
+    {
+      "ID": 370100,
+      "Entries": [
+        "Weapon durability (fixed value) + cost 1 Sub"
+      ]
+    },
+    {
+      "ID": 370200,
+      "Entries": [
+        "Weapon durability (fixed value) + cost 2 Sub"
+      ]
+    },
+    {
+      "ID": 370300,
+      "Entries": [
+        "Weapon durability (fixed value) + cost 3 Sub"
+      ]
+    },
+    {
+      "ID": 370400,
+      "Entries": [
+        "Weapon durability (fixed value) + cost 4 Sub"
+      ]
+    },
+    {
+      "ID": 370500,
+      "Entries": [
+        "Weapon durability (fixed value) + cost 5 Sub"
+      ]
+    },
+    {
+      "ID": 370600,
+      "Entries": [
+        "Weapon durability (fixed value) + cost 6 Sub"
+      ]
+    },
+    {
+      "ID": 380100,
+      "Entries": [
+        "Weapon durability (fixed value) - cost 1 Sub"
+      ]
+    },
+    {
+      "ID": 380200,
+      "Entries": [
+        "Weapon durability (fixed value) - cost 2 Sub"
+      ]
+    },
+    {
+      "ID": 380300,
+      "Entries": [
+        "Weapon durability (fixed value) - cost 3 Sub"
+      ]
+    },
+    {
+      "ID": 380400,
+      "Entries": [
+        "Weapon durability (fixed value) - cost 4 Sub"
+      ]
+    },
+    {
+      "ID": 380500,
+      "Entries": [
+        "Weapon durability (fixed value) - cost 5 Sub"
+      ]
+    },
+    {
+      "ID": 380600,
+      "Entries": [
+        "Weapon durability (fixed value) - cost 6 Sub"
+      ]
+    },
+    {
+      "ID": 390100,
+      "Entries": [
+        "Attack power [Physical] HP Maximum (multiplier) Cost 1 Sub"
+      ]
+    },
+    {
+      "ID": 390200,
+      "Entries": [
+        "Attack power [Physical] HP Maximum (multiplier) Cost 2 Sub"
+      ]
+    },
+    {
+      "ID": 390300,
+      "Entries": [
+        "Attack power [Physical] HP Maximum (multiplier) Cost 3 Sub"
+      ]
+    },
+    {
+      "ID": 390400,
+      "Entries": [
+        "Attack power [Physical] HP Maximum (multiplier) Cost 4 Sub"
+      ]
+    },
+    {
+      "ID": 390500,
+      "Entries": [
+        "Attack power [Physical] HP Maximum (multiplier) Cost 5 Sub"
+      ]
+    },
+    {
+      "ID": 390600,
+      "Entries": [
+        "Attack power [Physical] HP Maximum (multiplier) Cost 6 Sub"
+      ]
+    },
+    {
+      "ID": 391100,
+      "Entries": [
+        "Attack power [Physical]HP Maximum (multiplier) Cost 1 main"
+      ]
+    },
+    {
+      "ID": 391200,
+      "Entries": [
+        "Attack power [Physical] HP Maximum (multiplier) Cost 2 main"
+      ]
+    },
+    {
+      "ID": 391300,
+      "Entries": [
+        "Attack power [Physical] HP Maximum (multiplier) Cost 3 main"
+      ]
+    },
+    {
+      "ID": 391400,
+      "Entries": [
+        "Attack power [Physical] HP Maximum (multiplier) Cost 4 main"
+      ]
+    },
+    {
+      "ID": 391500,
+      "Entries": [
+        "Attack power [Physical] HP Maximum (multiplier) Cost 5 main"
+      ]
+    },
+    {
+      "ID": 391600,
+      "Entries": [
+        "Attack power [Physical] HP Maximum (multiplier) Cost 6 main"
+      ]
+    },
+    {
+      "ID": 399100,
+      "Entries": [
+        "Attack power [Physical] HP When near death: (multiplier) Cost 1 Sub-dungeon A'"
+      ]
+    },
+    {
+      "ID": 399200,
+      "Entries": [
+        "Attack power [Physical] HP When near death: (multiplier) Cost 2 Sub-dungeon A'"
+      ]
+    },
+    {
+      "ID": 399300,
+      "Entries": [
+        "Attack power [Physical] HP When near death: (multiplier) Cost 3 Sub-dungeonA'"
+      ]
+    },
+    {
+      "ID": 399400,
+      "Entries": [
+        "Attack power [Physical] HP When near death: (multiplier) Cost 4 Sub-dungeon A'"
+      ]
+    },
+    {
+      "ID": 399500,
+      "Entries": [
+        "Attack power [Physical] HP When near death: (multiplier) Cost 5 Sub-dungeon A'"
+      ]
+    },
+    {
+      "ID": 399600,
+      "Entries": [
+        "Attack power [Physical] HP When near death: (multiplier) Cost 6 Sub-dungeon A'"
+      ]
+    },
+    {
+      "ID": 400100,
+      "Entries": [
+        "Attack power [Physical] HP When near death: (multiplier) Cost 1 Sub"
+      ]
+    },
+    {
+      "ID": 400200,
+      "Entries": [
+        "Attack power [Physical] HP When near death: (multiplier) Cost 2 Sub"
+      ]
+    },
+    {
+      "ID": 400300,
+      "Entries": [
+        "Attack power [Physical] HP When near death: (multiplier) Cost 3 Sub"
+      ]
+    },
+    {
+      "ID": 400400,
+      "Entries": [
+        "Attack power [Physical] HP When near death: (multiplier) Cost 4 Sub"
+      ]
+    },
+    {
+      "ID": 400500,
+      "Entries": [
+        "Attack power [Physical] HP When near death: (multiplier) Cost 5 Sub"
+      ]
+    },
+    {
+      "ID": 400600,
+      "Entries": [
+        "Attack power [Physical] HPWhen near death: (multiplier) Cost 6 Sub"
+      ]
+    },
+    {
+      "ID": 401100,
+      "Entries": [
+        "Attack power [Physical] HP When near death: (multiplier) Cost 1 main"
+      ]
+    },
+    {
+      "ID": 401200,
+      "Entries": [
+        "Attack power [Physical] HP When near death: (multiplier) Cost 2 main"
+      ]
+    },
+    {
+      "ID": 401300,
+      "Entries": [
+        "Attack power [Physical] HP When near death: (multiplier) Cost 3 main"
+      ]
+    },
+    {
+      "ID": 401400,
+      "Entries": [
+        "Attack power [Physical] HP When near death: (multiplier) Cost 4 main"
+      ]
+    },
+    {
+      "ID": 401500,
+      "Entries": [
+        "Attack power [Physical] HP When near death: (multiplier) Cost 5 main"
+      ]
+    },
+    {
+      "ID": 401600,
+      "Entries": [
+        "Attack power [Physical] HP When near death: (multiplier) Cost 6 main"
+      ]
+    },
+    {
+      "ID": 402100,
+      "Entries": [
+        "Attack power [Physical] HP When near death: (multiplier) Cost 1 Main Dungeon A'"
+      ]
+    },
+    {
+      "ID": 402200,
+      "Entries": [
+        "Attack power [Physical] HP When near death: (multiplier) Cost 2 Main Dungeon A'"
+      ]
+    },
+    {
+      "ID": 402300,
+      "Entries": [
+        "Attack power [Physical] HP When near death: (multiplier) Cost 3 Main Dungeon A'"
+      ]
+    },
+    {
+      "ID": 402400,
+      "Entries": [
+        "Attack power [Physical] HP When near death: (multiplier) Cost 4 Main Dungeon A'"
+      ]
+    },
+    {
+      "ID": 402500,
+      "Entries": [
+        "Attack power [Physical] HP When near death: (multiplier) Cost 5 Main Dungeon A'"
+      ]
+    },
+    {
+      "ID": 402600,
+      "Entries": [
+        "Attack power [Physical] HP When near death: (multiplier) Cost 6 Main Dungeon A'"
+      ]
+    },
+    {
+      "ID": 420100,
+      "Entries": [
+        "Attack power [all] HP Maximum (multiplier) Cost 1 Sub"
+      ]
+    },
+    {
+      "ID": 420200,
+      "Entries": [
+        "Attack power [all] HP Maximum (multiplier) Cost 2 Sub"
+      ]
+    },
+    {
+      "ID": 420300,
+      "Entries": [
+        "Attack power [all] HP Maximum (multiplier) Cost 3 Sub"
+      ]
+    },
+    {
+      "ID": 420400,
+      "Entries": [
+        "Attack power [all] HP Maximum (multiplier) Cost 4 Sub"
+      ]
+    },
+    {
+      "ID": 420500,
+      "Entries": [
+        "Attack power [all] HPMaximum (multiplier) Cost 5 Sub"
+      ]
+    },
+    {
+      "ID": 420600,
+      "Entries": [
+        "Attack power [all] HP Maximum (multiplier) Cost 6 Sub"
+      ]
+    },
+    {
+      "ID": 421100,
+      "Entries": [
+        "Attack power [all] HP Maximum (multiplier) Cost 1 main"
+      ]
+    },
+    {
+      "ID": 421200,
+      "Entries": [
+        "Attack power [all] HP Maximum (multiplier) Cost 2 main"
+      ]
+    },
+    {
+      "ID": 421300,
+      "Entries": [
+        "Attack power [all] HP Maximum (multiplier) Cost 3 main"
+      ]
+    },
+    {
+      "ID": 421400,
+      "Entries": [
+        "Attack power [all] HP Maximum (multiplier) Cost 4 main"
+      ]
+    },
+    {
+      "ID": 421500,
+      "Entries": [
+        "Attack power [all] HP Maximum (multiplier) Cost 5 main"
+      ]
+    },
+    {
+      "ID": 421600,
+      "Entries": [
+        "Attack power [all] HP Maximum (multiplier) Cost 6 main"
+      ]
+    },
+    {
+      "ID": 430100,
+      "Entries": [
+        "Attack power [all] HP When near death: (multiplier) Cost 1 Sub"
+      ]
+    },
+    {
+      "ID": 430200,
+      "Entries": [
+        "Attack power [all] HP When near death: (multiplier) Cost 2 Sub"
+      ]
+    },
+    {
+      "ID": 430300,
+      "Entries": [
+        "Attack power [all] HP When near death: (multiplier) Cost 3 Sub"
+      ]
+    },
+    {
+      "ID": 430400,
+      "Entries": [
+        "Attack power [all] HP When near death: (multiplier) Cost 4 Sub"
+      ]
+    },
+    {
+      "ID": 430500,
+      "Entries": [
+        "Attack power [all] HP When near death: (multiplier) Cost 5 Sub"
+      ]
+    },
+    {
+      "ID": 430600,
+      "Entries": [
+        "Attack power [all] HP When near death: (multiplier) Cost 6 Sub"
+      ]
+    },
+    {
+      "ID": 431100,
+      "Entries": [
+        "Attack power [all] HP When near death: (multiplier) Cost 1 main"
+      ]
+    },
+    {
+      "ID": 431200,
+      "Entries": [
+        "Attack power [all] HP When near death: (multiplier) Cost 2 main"
+      ]
+    },
+    {
+      "ID": 431300,
+      "Entries": [
+        "Attack power [all] HP When near death: (multiplier) Cost 3 main"
+      ]
+    },
+    {
+      "ID": 431400,
+      "Entries": [
+        "Attack power [all] HP When near death: (multiplier) Cost 4 main"
+      ]
+    },
+    {
+      "ID": 431500,
+      "Entries": [
+        "Attack power [all] HP When near death: (multiplier) Cost 5 main"
+      ]
+    },
+    {
+      "ID": 431600,
+      "Entries": [
+        "Attack power [all] HPWhen near death: (multiplier) Cost 6 main"
+      ]
+    },
+    {
+      "ID": 1000000,
+      "Entries": [
+        "Souls acquired +"
+      ]
+    },
+    {
+      "ID": 1000001,
+      "Entries": [
+        "Souls acquired -"
+      ]
+    },
+    {
+      "ID": 1000002,
+      "Entries": [
+        "Item Drop Rate"
+      ]
+    },
+    {
+      "ID": 1000003,
+      "Entries": [
+        "maximum HP"
+      ]
+    },
+    {
+      "ID": 1000005,
+      "Entries": [
+        "Max Stamina"
+      ]
+    },
+    {
+      "ID": 1000007,
+      "Entries": [
+        "Throw [Damage]"
+      ]
+    },
+    {
+      "ID": 1000008,
+      "Entries": [
+        "Throw [ HP recovery】"
+      ]
+    },
+    {
+      "ID": 1000010,
+      "Entries": [
+        "Throw [Bullet Recovery]"
+      ]
+    },
+    {
+      "ID": 1000012,
+      "Entries": [
+        "Throw [Soul Acquisition]"
+      ]
+    },
+    {
+      "ID": 1000014,
+      "Entries": [
+        "Damage Cut [Slash]"
+      ]
+    },
+    {
+      "ID": 1000015,
+      "Entries": [
+        "Damage Cut [Strike]"
+      ]
+    },
+    {
+      "ID": 1000016,
+      "Entries": [
+        "Damage Cut [Pierce]"
+      ]
+    },
+    {
+      "ID": 1000017,
+      "Entries": [
+        "Damage Cut [Gun]"
+      ]
+    },
+    {
+      "ID": 1000018,
+      "Entries": [
+        "Damage Cut [Magic]"
+      ]
+    },
+    {
+      "ID": 1000019,
+      "Entries": [
+        "Damage Cut [Fire] +"
+      ]
+    },
+    {
+      "ID": 1000020,
+      "Entries": [
+        "Damage Cut [Fire] -"
+      ]
+    },
+    {
+      "ID": 1000021,
+      "Entries": [
+        "Damage Cut [Lightning]"
+      ]
+    },
+    {
+      "ID": 1000022,
+      "Entries": [
+        "Damage Cut [Physical]"
+      ]
+    },
+    {
+      "ID": 1000023,
+      "Entries": [
+        "Damage Cut [All] +"
+      ]
+    },
+    {
+      "ID": 1000024,
+      "Entries": [
+        "Damage Cut [All] -"
+      ]
+    },
+    {
+      "ID": 1000025,
+      "Entries": [
+        "Resistance Value [Poison]"
+      ]
+    },
+    {
+      "ID": 1000026,
+      "Entries": [
+        "Resistance value [bleeding]"
+      ]
+    },
+    {
+      "ID": 1000027,
+      "Entries": [
+        "Resistance Value [Madness]"
+      ]
+    },
+    {
+      "ID": 1000028,
+      "Entries": [
+        "Resistance Value [All]"
+      ]
+    },
+    {
+      "ID": 1000029,
+      "Entries": [
+        "Beast Transformation Extension"
+      ]
+    },
+    {
+      "ID": 1000030,
+      "Entries": [
+        "Poison Reduction"
+      ]
+    },
+    {
+      "ID": 1000031,
+      "Entries": [
+        "Relief of bleeding"
+      ]
+    },
+    {
+      "ID": 1000032,
+      "Entries": [
+        "Transfusion recovery amount +"
+      ]
+    },
+    {
+      "ID": 1000033,
+      "Entries": [
+        "Transfusion recovery amount-"
+      ]
+    },
+    {
+      "ID": 1000034,
+      "Entries": [
+        "Blood transfusion possession limit +"
+      ]
+    },
+    {
+      "ID": 1000035,
+      "Entries": [
+        "Blood transfusion possession limit -"
+      ]
+    },
+    {
+      "ID": 1000036,
+      "Entries": [
+        "Ammunition possession limit +"
+      ]
+    },
+    {
+      "ID": 1000037,
+      "Entries": [
+        "Ammunition possession limit -"
+      ]
+    },
+    {
+      "ID": 1000038,
+      "Entries": [
+        "Stamina recovery speed +"
+      ]
+    },
+    {
+      "ID": 1000039,
+      "Entries": [
+        "Stamina recovery speed -"
+      ]
+    },
+    {
+      "ID": 1000040,
+      "Entries": [
+        "Landing damage reduction"
+      ]
+    },
+    {
+      "ID": 1000041,
+      "Entries": [
+        "Regain recovery amount (multiplier)"
+      ]
+    }
+  ]
+}

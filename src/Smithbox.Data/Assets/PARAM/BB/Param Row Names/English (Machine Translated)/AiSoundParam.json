@@ -1,0 +1,377 @@
+{
+  "Name": "AiSoundParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Default (Do not edit)"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Walking"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "Running"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "dash"
+      ]
+    },
+    {
+      "ID": 1030,
+      "Entries": [
+        "rolling"
+      ]
+    },
+    {
+      "ID": 1040,
+      "Entries": [
+        "Back Steps"
+      ]
+    },
+    {
+      "ID": 1050,
+      "Entries": [
+        "Landing (normal)"
+      ]
+    },
+    {
+      "ID": 1060,
+      "Entries": [
+        "Landing (Strong)"
+      ]
+    },
+    {
+      "ID": 1070,
+      "Entries": [
+        "Landing (Collapse)"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Attack generation [small]"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "Attack occurrence [large]"
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        "Attack occurs [Bullet]"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "Attack hit [small]"
+      ]
+    },
+    {
+      "ID": 2110,
+      "Entries": [
+        "Attack hit [large]"
+      ]
+    },
+    {
+      "ID": 2120,
+      "Entries": [
+        "Attack hit [Bullet]"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "Small object destruction sound"
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        "Object destruction sound"
+      ]
+    },
+    {
+      "ID": 3020,
+      "Entries": [
+        "Medium object destruction sound (for clock tower)"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "Soul Coin (normal)"
+      ]
+    },
+    {
+      "ID": 4001,
+      "Entries": [
+        "Soul Coin (Beast)"
+      ]
+    },
+    {
+      "ID": 4002,
+      "Entries": [
+        "Soul Coin (Immortality)"
+      ]
+    },
+    {
+      "ID": 4003,
+      "Entries": [
+        "Auditory hallucinations"
+      ]
+    },
+    {
+      "ID": 4010,
+      "Entries": [
+        "Stone"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "cannon OBJ_ Impact sound"
+      ]
+    },
+    {
+      "ID": 5100,
+      "Entries": [
+        "Dungeons _ Bell for attracting people 5m"
+      ]
+    },
+    {
+      "ID": 5101,
+      "Entries": [
+        "Dungeons _ Bell for attracting people 10m"
+      ]
+    },
+    {
+      "ID": 5102,
+      "Entries": [
+        "Dungeons _ Bell for attracting people 15m"
+      ]
+    },
+    {
+      "ID": 5103,
+      "Entries": [
+        "Dungeons _ Bell for attracting people 20m"
+      ]
+    },
+    {
+      "ID": 5104,
+      "Entries": [
+        "Dungeons _ Bell for attracting people 25m"
+      ]
+    },
+    {
+      "ID": 5105,
+      "Entries": [
+        "Dungeons _ Bell for attracting people 30m"
+      ]
+    },
+    {
+      "ID": 5106,
+      "Entries": [
+        "Dungeons _ Bell for attracting people 40m"
+      ]
+    },
+    {
+      "ID": 5107,
+      "Entries": [
+        "Dungeons _ Bell for attracting people 50m"
+      ]
+    },
+    {
+      "ID": 5108,
+      "Entries": [
+        "Dungeons _ Bell for attracting people 60m"
+      ]
+    },
+    {
+      "ID": 5109,
+      "Entries": [
+        "Dungeons _ Bell for attracting people 70m"
+      ]
+    },
+    {
+      "ID": 5110,
+      "Entries": [
+        "Dungeons _ Bell for attracting people 80m"
+      ]
+    },
+    {
+      "ID": 5111,
+      "Entries": [
+        "Dungeons _ Bell for attracting people 90m"
+      ]
+    },
+    {
+      "ID": 5112,
+      "Entries": [
+        "Dungeons _ Bell for attracting people 100m"
+      ]
+    },
+    {
+      "ID": 5200,
+      "Entries": [
+        "Dungeons _ Rusty Door 1/3"
+      ]
+    },
+    {
+      "ID": 5201,
+      "Entries": [
+        "Dungeons _ Rusty Door 2/3"
+      ]
+    },
+    {
+      "ID": 5202,
+      "Entries": [
+        "Dungeons _ Rusty Door 3/3"
+      ]
+    },
+    {
+      "ID": 5210,
+      "Entries": [
+        "Dungeons _ Rusty treasure chest 1/2"
+      ]
+    },
+    {
+      "ID": 5211,
+      "Entries": [
+        "Dungeons _ Rusty treasure chest 2/2"
+      ]
+    },
+    {
+      "ID": 5220,
+      "Entries": [
+        "Dungeons _ Explosion of gunpowder barrel"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "Cathedral Quarter A_ Bell for attracting people 2m"
+      ]
+    },
+    {
+      "ID": 6001,
+      "Entries": [
+        "Cathedral Quarter A_ Bell for attracting people 10m"
+      ]
+    },
+    {
+      "ID": 6002,
+      "Entries": [
+        "Cathedral Quarter A_ Bell for attracting people20m"
+      ]
+    },
+    {
+      "ID": 6003,
+      "Entries": [
+        "Cathedral Quarter A_ Bell for attracting people 30m"
+      ]
+    },
+    {
+      "ID": 6004,
+      "Entries": [
+        "Cathedral Quarter A_ Bell for attracting people 40m"
+      ]
+    },
+    {
+      "ID": 6005,
+      "Entries": [
+        "Cathedral Quarter A_ Bell for attracting people 40m (Long life)"
+      ]
+    },
+    {
+      "ID": 6100,
+      "Entries": [
+        "ruins _ Alarm sounds"
+      ]
+    },
+    {
+      "ID": 6200,
+      "Entries": [
+        "University _PC Discovery sound"
+      ]
+    },
+    {
+      "ID": 6300,
+      "Entries": [
+        "forest _ Trap sound"
+      ]
+    },
+    {
+      "ID": 6400,
+      "Entries": [
+        "Cathedral Quarter D_ Command"
+      ]
+    },
+    {
+      "ID": 6410,
+      "Entries": [
+        "Cathedral Quarter D_ Small command"
+      ]
+    },
+    {
+      "ID": 6500,
+      "Entries": [
+        "fishing village _ Command"
+      ]
+    },
+    {
+      "ID": 6510,
+      "Entries": [
+        "fishing village _ Slug Flame Pot Destruction"
+      ]
+    },
+    {
+      "ID": 6520,
+      "Entries": [
+        "fishing village _ Water landing"
+      ]
+    },
+    {
+      "ID": 102000,
+      "Entries": [
+        "c1020_ crowd A_ Sonic Bomb"
+      ]
+    },
+    {
+      "ID": 114000,
+      "Entries": [
+        "c1140_ Fanatic Beast _ Barking"
+      ]
+    },
+    {
+      "ID": 116000,
+      "Entries": [
+        "c1160_ Demon Dog _ Barking"
+      ]
+    },
+    {
+      "ID": 124000,
+      "Entries": [
+        "c1240_ Mad dog _ Barking"
+      ]
+    },
+    {
+      "ID": 301000,
+      "Entries": [
+        "c3010_ Dungeon people (slaves) _ Calling allies"
+      ]
+    }
+  ]
+}
