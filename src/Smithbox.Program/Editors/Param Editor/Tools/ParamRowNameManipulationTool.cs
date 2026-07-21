@@ -504,7 +504,10 @@ public class ParamRowNameManipulationTool
             // Reset
             if (ImGui.Button($"{LOC.Get("PARAM_RowNameManip_Target_String_Reset")}##replaceRowName_ResetTargetStrings"))
             {
-                TargetStrings = new List<string>();
+                TargetStrings = new List<string>()
+                {
+                    ""
+                };
             }
             GUI.Tooltip(LOC.Get("PARAM_RowNameManip_Target_String_Reset_TT"));
 

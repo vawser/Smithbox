@@ -10,115 +10,115 @@
     {
       "ID": 1001,
       "Entries": [
-        "【system】【 gamescom Edition】【Maximum MP Up Magic Stone Equipment: Dummy weapon for creating magic stone slots on the body"
+        "[System] Gamescom Edition: Maximum MP Up Magic Stone Equipment: Dummy weapon for creating magic stone slots on the body"
       ]
     },
     {
       "ID": 1002,
       "Entries": [
-        "【debug】【 DLC For confirmation] Dummy weapon for attaching the beast transformation Karel rune"
+        "[Debug] DLC: Dummy weapon for attaching the beast transformation Caryll rune"
       ]
     },
     {
       "ID": 1003,
       "Entries": [
-        "【debug】【 DLC For confirmation] Dummy weapon for slug transformation Karel rune attachment"
+        "[Debug] DLC: Dummy weapon for slug transformation Caryll rune attachment"
       ]
     },
     {
       "ID": 1004,
       "Entries": [
-        "【debug】【 DLC For confirmation] Karel included ( HP/HP/ Stamina) + Federation Karel"
+        "[Debug] DLC: Caryll included (HP/HP/ Stamina) + Federation Covenant"
       ]
     },
     {
       "ID": 1005,
       "Entries": [
-        "【debug】【 DLC For confirmation] Karel included ( HP/HP/ stamina) + beast"
+        "[Debug] DLC: Caryll included (HP/HP/Stamina) + Beast Covenant"
       ]
     },
     {
       "ID": 1006,
       "Entries": [
-        "【debug】【 DLC For confirmation] Karel included ( HP/HP/ stamina) + Slug"
+        "[Debug] DLC: Caryll included (HP/HP/Stamina) + Slug Covenant"
       ]
     },
     {
       "ID": 1010,
       "Entries": [
-        "【debug】【 DLC For confirmation: LV75 Alliance (First week (playing from the beginning character at current expected level)"
+        "[Debug] DLC: Level 75 - Beginner + Federation Covenant"
       ]
     },
     {
       "ID": 1011,
       "Entries": [
-        "【debug】【 DLC For confirmation: LV75 + First week of the beast (playing from the beginning character at current expected level)"
+        "[Debug] DLC: Level 75 - Beginner + Beast Covenant"
       ]
     },
     {
       "ID": 1012,
       "Entries": [
-        "【debug】【 DLC For confirmation: LV75 + First week of slugs (playing from the beginning with a character at the expected level)"
+        "[Debug] DLC: Level 75 - Beginner + Slug Covenant"
       ]
     },
     {
       "ID": 1020,
       "Entries": [
-        "【debug】【 DLC For confirmation: LV96 + Federation standard (characters after clearing the game)"
+        "[Debug] DLC: Level 96 - Intermediate + Federation Covenant"
       ]
     },
     {
       "ID": 1021,
       "Entries": [
-        "【debug】【 DLC For confirmation: LV96 + Beast standard (characters after clearing the game)"
+        "[Debug] DLC: Level 96 - Intermediate + Beast Covenant"
       ]
     },
     {
       "ID": 1022,
       "Entries": [
-        "【debug】【 DLC For confirmation: LV96 + Slug standard (characters after clearing the game)"
+        "[Debug] DLC: Level 96 - Intermediate + Slug Covenant"
       ]
     },
     {
       "ID": 1030,
       "Entries": [
-        "【debug】【 DLC For confirmation: LV120 + Federation battle addicts (people who play PvP)"
+        "[Debug] DLC: Level 120 - Expert + Federation Covenant"
       ]
     },
     {
       "ID": 1031,
       "Entries": [
-        "【debug】【 DLC For confirmation: LV120 Beast 1st week battle addict (people who play PvP)"
+        "[Debug] DLC: Level 120 - Expert + Beast Covenant"
       ]
     },
     {
       "ID": 1032,
       "Entries": [
-        "【debug】【 DLC For confirmation: LV120 + Slug first week battle addict (people who play PvP)"
+        "[Debug] DLC: Level 120 - Expert + Slug Covenant"
       ]
     },
     {
       "ID": 1990,
       "Entries": [
-        "[For debugging] Dummy weapon for attaching pledge body gems (bloodline)"
+        "[Debug] Dummy weapon for attaching pledge body gems (bloodline)"
       ]
     },
     {
       "ID": 1991,
       "Entries": [
-        "[For debugging] Dummy weapon for attaching Pledge Body Gem (Bloodline Hunting)"
+        "[Debug] Dummy weapon for attaching Pledge Body Gem (Bloodline Hunting)"
       ]
     },
     {
       "ID": 1992,
       "Entries": [
-        "[For debugging] Dummy weapon for attaching Pledge Body Gem (Hunter Hunt)"
+        "[Debug] Dummy weapon for attaching Pledge Body Gem (Hunter Hunt)"
       ]
     },
     {
       "ID": 1993,
       "Entries": [
-        "[For debugging purposes] Dummy weapon for attaching pledge body gems (federation)"
+        "[Debug] Dummy weapon for attaching pledge body gems (federation)"
       ]
     },
     {
@@ -136,1981 +136,1981 @@
     {
       "ID": 10000,
       "Entries": [
-        "Japanese Sword +9 _LV75_ First week (playing from the beginning character at current expected level)"
+        "Chikage +9 - Level 75 - Beginner"
       ]
     },
     {
       "ID": 10100,
       "Entries": [
-        "Japanese Sword +9 _LV96_ Standard (character after clearing the game)"
+        "Chikage +9 - Level 96 - Intermediate"
       ]
     },
     {
       "ID": 10200,
       "Entries": [
-        "Japanese Sword +10 _LV120_People who play PvP"
+        "Chikage +10 - Level 120 - Expert"
       ]
     },
     {
       "ID": 11000,
       "Entries": [
-        "Dual Swords +9 _LV75_ First week (playing from the beginning character at current expected level)"
+        "Blade of Mercy +9 - Level 75 - Beginner"
       ]
     },
     {
       "ID": 11100,
       "Entries": [
-        "Dual Swords +9 _LV96_ Standard (character after clearing the game)"
+        "Blade of Mercy +9 - Level 96 - Intermediate"
       ]
     },
     {
       "ID": 11200,
       "Entries": [
-        "Dual Swords +10 _LV120_ People who play PvP"
+        "Blade of Mercy +10 - Level 120 - Expert"
       ]
     },
     {
       "ID": 12000,
       "Entries": [
-        "Axe Pole +9 _LV75_ First week (playing from the beginning character at current expected level)"
+        "Hunter Axe +9 - Level 75 - Beginner"
       ]
     },
     {
       "ID": 12100,
       "Entries": [
-        "Axe Pole +9 _LV96_ Standard (character after clearing the game)"
+        "Hunter Axe +9 - Level 96 - Intermediate"
       ]
     },
     {
       "ID": 12200,
       "Entries": [
-        "Axe Pole +10 _LV120_ People who play PvP"
+        "Hunter Axe +10 - Level 120 - Expert"
       ]
     },
     {
       "ID": 13000,
       "Entries": [
-        "Sword Sickle +9 _LV75_ First week (playing from the beginning character at current expected level)"
+        "Burial Blade +9 - Level 75 - Beginner"
       ]
     },
     {
       "ID": 13100,
       "Entries": [
-        "Sword Sickle +9 _LV96_ Standard (character after clearing the game)"
+        "Burial Blade +9 - Level 96 - Intermediate"
       ]
     },
     {
       "ID": 13200,
       "Entries": [
-        "Sword Sickle +10 _LV120_ People who play PvP"
+        "Burial Blade +10 - Level 120 - Expert"
       ]
     },
     {
       "ID": 14000,
       "Entries": [
-        "Workshop Long Gun +9 _LV75_ First week (playing from the beginning character at current expected level)"
+        "Hunter Blunderbuss +9 - Level 75 - Beginner"
       ]
     },
     {
       "ID": 14100,
       "Entries": [
-        "Workshop Long Gun +9 _LV96_ Standard (character after clearing the game)"
+        "Hunter Blunderbuss +9 - Level 96 - Intermediate"
       ]
     },
     {
       "ID": 14200,
       "Entries": [
-        "Workshop Long Gun +10 _LV120_ People who play PvP"
+        "Hunter Blunderbuss +10 - Level 120 - Expert"
       ]
     },
     {
       "ID": 15000,
       "Entries": [
-        "Church Rifle +9 _LV75_ First week (playing from the beginning character at current expected level)"
+        "Ludwig's Rifle +9 - Level 75 - Beginner"
       ]
     },
     {
       "ID": 15100,
       "Entries": [
-        "Church Rifle +9 _LV96_ Standard (character after clearing the game)"
+        "Ludwig's Rifle +9 - Level 96 - Intermediate"
       ]
     },
     {
       "ID": 15200,
       "Entries": [
-        "Church Rifle +10 _LV120_ People who play PvP"
+        "Ludwig's Rifle +10 - Level 120 - Expert"
       ]
     },
     {
       "ID": 16000,
       "Entries": [
-        "Nokonata +9 _LV75_ First week (playing from the beginning character at current expected level)"
+        "Saw Cleaver +9 - Level 75 - Beginner"
       ]
     },
     {
       "ID": 16100,
       "Entries": [
-        "Nokonata +9 _LV96_ Standard (character after clearing the game)"
+        "Saw Cleaver +9 - Level 96 - Intermediate"
       ]
     },
     {
       "ID": 16200,
       "Entries": [
-        "Nokonata +10 _LV120_ People who play PvP"
+        "Saw Cleaver +10 - Level 120 - Expert"
       ]
     },
     {
       "ID": 17000,
       "Entries": [
-        "Saw Spear +9 _LV75_ First week (playing from the beginning character at current expected level)"
+        "Saw Spear +9 - Level 75 - Beginner"
       ]
     },
     {
       "ID": 17100,
       "Entries": [
-        "Saw Spear +9 _LV96_ Standard (character after clearing the game)"
+        "Saw Spear +9 - Level 96 - Intermediate"
       ]
     },
     {
       "ID": 17200,
       "Entries": [
-        "Saw Spear +10_LV120_ Battle addicts (people who play against other people)"
+        "Saw Spear +10 - Level 120 - Expert"
       ]
     },
     {
       "ID": 18000,
       "Entries": [
-        "Sword Hammer +9 _LV75_ First week (playing from the beginning character at current expected level)"
+        "Kirkhammer +9 - Level 75 - Beginner"
       ]
     },
     {
       "ID": 18100,
       "Entries": [
-        "Sword Hammer +9 _LV96_ Standard (character after clearing the game)"
+        "Kirkhammer +9 - Level 96 - Intermediate"
       ]
     },
     {
       "ID": 18200,
       "Entries": [
-        "Sword Hammer +10 _LV120_ People who play PvP"
+        "Kirkhammer +10 - Level 120 - Expert"
       ]
     },
     {
       "ID": 19000,
       "Entries": [
-        "Hammer Sword +9 _LV75_ First week (playing from the beginning character at current expected level)"
+        "Ludwig's Holy Blade +9 - Level 75 - Beginner"
       ]
     },
     {
       "ID": 19100,
       "Entries": [
-        "Hammer Sword +9 _LV96_ Standard (character after clearing the game)"
+        "Ludwig's Holy Blade +9 - Level 96 - Intermediate"
       ]
     },
     {
       "ID": 19200,
       "Entries": [
-        "Hammer Sword +10 _LV120_ People who play PvP"
+        "Ludwig's Holy Blade +10 - Level 120 - Expert"
       ]
     },
     {
       "ID": 20000,
       "Entries": [
-        "Fist Beast +9 _LV75_ First week (playing from the beginning character at current expected level)"
+        "Beast Claw +9 - Level 75 - Beginner"
       ]
     },
     {
       "ID": 20100,
       "Entries": [
-        "Fist Beast +9 _LV96_ Standard (character after clearing the game)"
+        "Beast Claw +9 - Level 96 - Intermediate"
       ]
     },
     {
       "ID": 20200,
       "Entries": [
-        "Fist Beast +10 _LV120_ People who play PvP"
+        "Beast Claw +10 - Level 120 - Expert"
       ]
     },
     {
       "ID": 21000,
       "Entries": [
-        "Gunlance +9 _LV75_First week (playing from the beginning character at current expected level)"
+        "Rifle Spear +9 - Level 75 - Beginner"
       ]
     },
     {
       "ID": 21100,
       "Entries": [
-        "Gunlance +9 _LV96_ Standard (character after clearing the game)"
+        "Rifle Spear +9 - Level 96 - Intermediate"
       ]
     },
     {
       "ID": 21200,
       "Entries": [
-        "Gunlance +10 _LV120_ People who play PvP"
+        "Rifle Spear +10 - Level 120 - Expert"
       ]
     },
     {
       "ID": 22000,
       "Entries": [
-        "Bayonet +9 _LV75_ First week (playing from the beginning character at current expected level)"
+        "Reiterpallasch +9 - Level 75 - Beginner"
       ]
     },
     {
       "ID": 22100,
       "Entries": [
-        "Bayonet +9 _LV96_ Standard (character after clearing the game)"
+        "Reiterpallasch +9 - Level 96 - Intermediate"
       ]
     },
     {
       "ID": 22200,
       "Entries": [
-        "Bayonet +10 _LV120_ People who play PvP"
+        "Reiterpallasch +10 - Level 120 - Expert"
       ]
     },
     {
       "ID": 23000,
       "Entries": [
-        "Pile Bunker +9 _LV75_ First week (playing from the beginning character at current expected level)"
+        "Stake Driver +9 - Level 75 - Beginner"
       ]
     },
     {
       "ID": 23100,
       "Entries": [
-        "Pile Bunker +9 _LV96_ Standard (character after clearing the game)"
+        "Stake Driver +9 - Level 96 - Intermediate"
       ]
     },
     {
       "ID": 23200,
       "Entries": [
-        "Pile Bunker +10 _LV120_ People who play PvP"
+        "Stake Driver +10 - Level 120 - Expert"
       ]
     },
     {
       "ID": 24000,
       "Entries": [
-        "Wheel +9 _LV75_ First week (playing from the beginning character at current expected level)"
+        "Logarius's Wheel +9 - Level 75 - Beginner"
       ]
     },
     {
       "ID": 24100,
       "Entries": [
-        "Wheel +9 _LV96_Standard (character after clearing the game)"
+        "Logarius's Wheel +9 - Level 96 - Intermediate"
       ]
     },
     {
       "ID": 24200,
       "Entries": [
-        "Wheels +10 _LV120_ People who play PvP"
+        "Logarius's Wheel +10 - Level 120 - Expert"
       ]
     },
     {
       "ID": 25000,
       "Entries": [
-        "Explosive Hammer +9 _LV75_ First week (playing from the beginning character at current expected level)"
+        "Tonitrus +9 - Level 75 - Beginner"
       ]
     },
     {
       "ID": 25100,
       "Entries": [
-        "Explosive Hammer +9 _LV96_ Standard (character after clearing the game)"
+        "Tonitrus +9 - Level 96 - Intermediate"
       ]
     },
     {
       "ID": 25200,
       "Entries": [
-        "Explosive Hammer +10 _LV120_ People who play PvP"
+        "Tonitrus +10 - Level 120 - Expert"
       ]
     },
     {
       "ID": 26000,
       "Entries": [
-        "Workshop Pistol +9 _LV75_ First week (playing from the beginning character at current expected level)"
+        "Hunter Pistol +9 - Level 75 - Beginner"
       ]
     },
     {
       "ID": 26100,
       "Entries": [
-        "Workshop Pistol +9 _LV96_ Standard (character after clearing the game)"
+        "Hunter Pistol +9 - Level 96 - Intermediate"
       ]
     },
     {
       "ID": 26200,
       "Entries": [
-        "Workshop pistol +10 _LV120_ People who play PvP"
+        "Hunter Pistol +10 - Level 120 - Expert"
       ]
     },
     {
       "ID": 27000,
       "Entries": [
-        "Vampire pistol +9 _LV75_ First week (playing from the beginning character at current expected level)"
+        "Evelyn +9 - Level 75 - Beginner"
       ]
     },
     {
       "ID": 27100,
       "Entries": [
-        "Vampire pistol +9 _LV96_ Standard (character after clearing the game)"
+        "Evelyn +9 - Level 96 - Intermediate"
       ]
     },
     {
       "ID": 27200,
       "Entries": [
-        "Vampire pistol +10 _LV120_People who play PvP"
+        "Evelyn +10 - Level 120 - Expert"
       ]
     },
     {
       "ID": 28000,
       "Entries": [
-        "Church Pistol +9 _LV75_ First week (playing from the beginning character at current expected level)"
+        "Repeating Pistol +9 - Level 75 - Beginner"
       ]
     },
     {
       "ID": 28100,
       "Entries": [
-        "Church Pistol +9 _LV96_ Standard (character after clearing the game)"
+        "Repeating Pistol +9 - Level 96 - Intermediate"
       ]
     },
     {
       "ID": 28200,
       "Entries": [
-        "Church Pistol +10 _LV120_ People who play PvP"
+        "Repeating Pistol +10 - Level 120 - Expert"
       ]
     },
     {
       "ID": 29000,
       "Entries": [
-        "Cannon +9 _LV75_ First week (playing from the beginning character at current expected level)"
+        "Cannon +9 - Level 75 - Beginner"
       ]
     },
     {
       "ID": 29100,
       "Entries": [
-        "Cannon +9 _LV96_ Standard (character after clearing the game)"
+        "Cannon +9 - Level 96 - Intermediate"
       ]
     },
     {
       "ID": 29200,
       "Entries": [
-        "Cannon +10 _LV120_ People who play PvP"
+        "Cannon +10 - Level 120 - Expert"
       ]
     },
     {
       "ID": 30000,
       "Entries": [
-        "Sprayer +9 _LV75_ First week (playing from the beginning character at current expected level)"
+        "Rosmarinus +9 - Level 75 - Beginner"
       ]
     },
     {
       "ID": 30100,
       "Entries": [
-        "Sprayer +9 _LV96_ Standard (character after clearing the game)"
+        "Rosmarinus +9 - Level 96 - Intermediate"
       ]
     },
     {
       "ID": 30200,
       "Entries": [
-        "Sprayer +10 _LV120_ People who play PvP"
+        "Rosmarinus +10 - Level 120 - Expert"
       ]
     },
     {
       "ID": 31000,
       "Entries": [
-        "Sprayer _ Flamethrower +9 _LV75_First week (playing from the beginning character at current expected level)"
+        "Flamesprayer +9 - Level 75 - Beginner"
       ]
     },
     {
       "ID": 31100,
       "Entries": [
-        "Sprayer _ Flamethrower +9 _LV96_ Standard (character after clearing the game)"
+        "Flamesprayer +9 - Level 96 - Intermediate"
       ]
     },
     {
       "ID": 31200,
       "Entries": [
-        "Sprayer _ Flamethrower +10 _LV120_ People who play PvP"
+        "Flamesprayer +10 - Level 120 - Expert"
       ]
     },
     {
       "ID": 32000,
       "Entries": [
-        "Shield first playthrough (playing from the beginning character at current expected level)"
+        "Wooden Shield - Level 75 - Beginner"
       ]
     },
     {
       "ID": 33000,
       "Entries": [
-        "Elemental Shield 1st Week (Playing from the beginning character at current expected level)"
+        "Loch Shield - Level 75 - Beginner"
       ]
     },
     {
       "ID": 34000,
       "Entries": [
-        "Hunter's Torch +9 _LV75_ First week (playing from the beginning character at current expected level)"
+        "Hunter's Torch +9 - Level 75 - Beginner"
       ]
     },
     {
       "ID": 34100,
       "Entries": [
-        "Hunter's Torch +9 _LV96_ Standard (character after clearing the game)"
+        "Hunter's Torch +9 - Level 96 - Intermediate"
       ]
     },
     {
       "ID": 34200,
       "Entries": [
-        "Hunter's Torch +10 _LV120_ People who play PvP"
+        "Hunter's Torch +10 - Level 120 - Expert"
       ]
     },
     {
       "ID": 35000,
       "Entries": [
-        "Cane Whip +9 _LV75_ First week (playing from the beginning character at current expected level)"
+        "Threaded Cane +9 - Level 75 - Beginner"
       ]
     },
     {
       "ID": 35100,
       "Entries": [
-        "Cane Whip +9 _LV96_ Standard (character after clearing the game)"
+        "Threaded Cane +9 - Level 96 - Intermediate"
       ]
     },
     {
       "ID": 35200,
       "Entries": [
-        "Cane Whip +10 _LV120_ People who play PvP"
+        "Threaded Cane +10 - Level 120 - Expert"
       ]
     },
     {
       "ID": 36000,
       "Entries": [
-        "Sawtooth Curved Sword +9 _LV75_ First week (playing from the beginning character at current expected level)"
+        "Beasthunter Saif +9 - Level 75 - Beginner"
       ]
     },
     {
       "ID": 36100,
       "Entries": [
-        "Sawtooth Curved Sword +9 _LV96_ Standard (character after clearing the game)"
+        "Beasthunter Saif +9 - Level 96 - Intermediate"
       ]
     },
     {
       "ID": 36200,
       "Entries": [
-        "Sawtooth Curved Sword +10 _LV120_ People who play PvP"
+        "Beasthunter Saif +10 - Level 120 - Expert"
       ]
     },
     {
       "ID": 37000,
       "Entries": [
-        "Saw Whip +9 _LV75_ First week (playing from the beginning character at current expected level)"
+        "Beast Cutter +9 - Level 75 - Beginner"
       ]
     },
     {
       "ID": 37100,
       "Entries": [
-        "Saw Whip +9 _LV96_ Standard (character after clearing the game)"
+        "Beast Cutter +9 - Level 96 - Intermediate"
       ]
     },
     {
       "ID": 37200,
       "Entries": [
-        "Saw Whip +10 _LV120_ People who play PvP"
+        "Beast Cutter +10 - Level 120 - Expert"
       ]
     },
     {
       "ID": 38000,
       "Entries": [
-        "Multi-joint +9 _LV75_ First week (playing from the beginning character at current expected level)"
+        "Amygdalan Arm +9 - Level 75 - Beginner"
       ]
     },
     {
       "ID": 38100,
       "Entries": [
-        "Multi-joint +9 _LV96_ Standard (character after clearing the game)"
+        "Amygdalan Arm +9 - Level 96 - Intermediate"
       ]
     },
     {
       "ID": 38200,
       "Entries": [
-        "Multi-joint +10 _LV120_ People who play PvP"
+        "Amygdalan Arm +10 - Level 120 - Expert"
       ]
     },
     {
       "ID": 39000,
       "Entries": [
-        "Moonlight Sword +9 _LV75_ First week (playing from the beginning character at current expected level)"
+        "Holy Moonlight Sword +9 - Level 75 - Beginner"
       ]
     },
     {
       "ID": 39100,
       "Entries": [
-        "Moonlight Sword +9 _LV96_ Standard (character after clearing the game)"
+        "Holy Moonlight Sword +9 - Level 96 - Intermediate"
       ]
     },
     {
       "ID": 39200,
       "Entries": [
-        "Moonlight Sword +10 _LV120_ People who play PvP"
+        "Holy Moonlight Sword +10 - Level 120 - Expert"
       ]
     },
     {
       "ID": 40000,
       "Entries": [
-        "Double Blade +9 _LV75_ First week (playing from the beginning character at current expected level)"
+        "Rakuyo +9 - Level 75 - Beginner"
       ]
     },
     {
       "ID": 40100,
       "Entries": [
-        "Double Blade +9 _LV96_ Standard (character after clearing the game)"
+        "Rakuyo +9 - Level 96 - Intermediate"
       ]
     },
     {
       "ID": 40200,
       "Entries": [
-        "Double Blade +10 _LV120_ People who play PvP"
+        "Rakuyo +10 - Level 120 - Expert"
       ]
     },
     {
       "ID": 41000,
       "Entries": [
-        "Gunhammer +9 _LV75_ First week (playing from the beginning character at current expected level)"
+        "Boom Hammer +9 - Level 75 - Beginner"
       ]
     },
     {
       "ID": 41100,
       "Entries": [
-        "Gunhammer +9 _LV96_ Standard (character after clearing the game)"
+        "Boom Hammer +9 - Level 96 - Intermediate"
       ]
     },
     {
       "ID": 41200,
       "Entries": [
-        "Gun Hammer +10 _LV120_ People who play PvP"
+        "Boom Hammer +10 - Level 120 - Expert"
       ]
     },
     {
       "ID": 42000,
       "Entries": [
-        "Cross Mace +9 _LV75_ First week (playing from the beginning character at current expected level)"
+        "Bloodletter +9 - Level 75 - Beginner"
       ]
     },
     {
       "ID": 42100,
       "Entries": [
-        "Cross Mace +9 _LV96_ Standard (character after clearing the game)"
+        "Bloodletter +9 - Level 96 - Intermediate"
       ]
     },
     {
       "ID": 42200,
       "Entries": [
-        "Cross Mace +10 _LV120_ People who play PvP"
+        "Bloodletter +10 - Level 120 - Expert"
       ]
     },
     {
       "ID": 43000,
       "Entries": [
-        "War Pick +9 _LV75_ First week (playing from the beginning character at current expected level)"
+        "Church Pick +9 - Level 75 - Beginner"
       ]
     },
     {
       "ID": 43100,
       "Entries": [
-        "War Pick +9 _LV96_ Standard (character after clearing the game)"
+        "Church Pick +9 - Level 96 - Intermediate"
       ]
     },
     {
       "ID": 43200,
       "Entries": [
-        "War Pick +10 _LV120_ People who play PvP"
+        "Church Pick +10 - Level 120 - Expert"
       ]
     },
     {
       "ID": 44000,
       "Entries": [
-        "Circular saw chainsaw +9 _LV75_ First week (playing from the beginning character at current expected level)"
+        "Whirligig Saw +9 - Level 75 - Beginner"
       ]
     },
     {
       "ID": 44100,
       "Entries": [
-        "Circular saw chainsaw +9 _LV96_ Standard (character after clearing the game)"
+        "Whirligig Saw +9 - Level 96 - Intermediate"
       ]
     },
     {
       "ID": 44200,
       "Entries": [
-        "Circular saw chainsaw +10 _LV120_ People who play PvP"
+        "Whirligig Saw +10 - Level 120 - Expert"
       ]
     },
     {
       "ID": 45000,
       "Entries": [
-        "Transform Bow +9 _LV75_ First week (playing from the beginning character at current expected level)"
+        "Simon's Bowblade +9 - Level 75 - Beginner"
       ]
     },
     {
       "ID": 45001,
       "Entries": [
-        "Transform Bow +9 _LV75__ Charged Blood Crystal Equipment"
+        "Simon's Bowblade +9 - Level 75 - Beginner"
       ]
     },
     {
       "ID": 45100,
       "Entries": [
-        "Transform Bow +9 _LV96_ Standard (character after clearing the game)"
+        "Simon's Bowblade +9 - Level 96 - Intermediate"
       ]
     },
     {
       "ID": 45200,
       "Entries": [
-        "Transform Bow +10 _LV120_ People who play PvP"
+        "Simon's Bowblade +10 - Level 120 - Expert"
       ]
     },
     {
       "ID": 46000,
       "Entries": [
-        "Gatling +9 _LV75_ First week (playing from the beginning character at current expected level)"
+        "Gatling Gun +9 - Level 75 - Beginner"
       ]
     },
     {
       "ID": 46100,
       "Entries": [
-        "Gatling +9 _LV96_ Standard (character after clearing the game)"
+        "Gatling Gun +9 - Level 96 - Intermediate"
       ]
     },
     {
       "ID": 46200,
       "Entries": [
-        "Gatling +10 _LV120_ People who play PvP"
+        "Gatling Gun +10 - Level 120 - Expert"
       ]
     },
     {
       "ID": 47000,
       "Entries": [
-        "Knuckle +9 _LV75_ First week (playing from the beginning character at current expected level)"
+        "Fist of Gratia +9 - Level 75 - Beginner"
       ]
     },
     {
       "ID": 47100,
       "Entries": [
-        "Knuckle +9 _LV96_ Standard (character after clearing the game)"
+        "Fist of Gratia +9 - Level 96 - Intermediate"
       ]
     },
     {
       "ID": 47200,
       "Entries": [
-        "Knuckle +10 _LV120_ People who play PvP"
+        "Fist of Gratia +10 - Level 120 - Expert"
       ]
     },
     {
       "ID": 48000,
       "Entries": [
-        "Grenade Launcher +9 _LV75_ First week (playing from the beginning character at current expected level)"
+        "Church Cannon +9 - Level 75 - Beginner"
       ]
     },
     {
       "ID": 48100,
       "Entries": [
-        "Grenade Launcher +9 _LV96_Standard (character after clearing the game)"
+        "Church Cannon +9 - Level 96 - Intermediate"
       ]
     },
     {
       "ID": 48200,
       "Entries": [
-        "Grenade Launcher +10 _LV120_ People who play PvP"
+        "Church Cannon +10 - Level 120 - Expert"
       ]
     },
     {
       "ID": 49000,
       "Entries": [
-        "Piercing Gun +9 _LV75_ First week (playing from the beginning character at current expected level)"
+        "Piercing Rifle +9 - Level 75 - Beginner"
       ]
     },
     {
       "ID": 49100,
       "Entries": [
-        "Piercing Gun +9 _LV96_ Standard (character after clearing the game)"
+        "Piercing Rifle +9 - Level 96 - Intermediate"
       ]
     },
     {
       "ID": 49200,
       "Entries": [
-        "Piercing gun +10 _LV120_ People who play PvP"
+        "Piercing Rifle +10 - Level 120 - Expert"
       ]
     },
     {
       "ID": 50000,
       "Entries": [
-        "Slug +9 _LV75_ First week (playing from the beginning character at current expected level)"
+        "Kos Parasite +9 - Level 75 - Beginner"
       ]
     },
     {
       "ID": 50100,
       "Entries": [
-        "Slug +9 _LV96_ Standard (character after clearing the game)"
+        "Kos Parasite +9 - Level 96 - Intermediate"
       ]
     },
     {
       "ID": 50200,
       "Entries": [
-        "Slug +10 _LV120_ People who play PvP"
+        "Kos Parasite +10 - Level 120 - Expert"
       ]
     },
     {
       "ID": 100000,
       "Entries": [
-        "Axe Pole +10"
+        "Hunter's Axe +10"
       ]
     },
     {
       "ID": 110000,
       "Entries": [
-        "Sword Hammer +10"
+        "Kirkhammer +10"
       ]
     },
     {
       "ID": 900000,
       "Entries": [
-        "Nun's Dagger"
+        "Adella's Dagger"
       ]
     },
     {
       "ID": 1000000,
       "Entries": [
-        "bare hands"
+        "Bare Fists"
       ]
     },
     {
       "ID": 1990000,
       "Entries": [
-        "Wandering Fist"
+        "Bare Fists (Ghost)"
       ]
     },
     {
       "ID": 2000000,
       "Entries": [
-        "Japanese sword"
+        "Chikage"
       ]
     },
     {
       "ID": 2000100,
       "Entries": [
-        "Japanese Sword +1"
+        "Chikage +1"
       ]
     },
     {
       "ID": 2000200,
       "Entries": [
-        "Japanese Sword +2"
+        "Chikage +2"
       ]
     },
     {
       "ID": 2000300,
       "Entries": [
-        "Japanese Sword +3"
+        "Chikage +3"
       ]
     },
     {
       "ID": 2000400,
       "Entries": [
-        "Japanese Sword +4"
+        "Chikage +4"
       ]
     },
     {
       "ID": 2000500,
       "Entries": [
-        "Japanese Sword +5"
+        "Chikage +5"
       ]
     },
     {
       "ID": 2000600,
       "Entries": [
-        "Japanese Sword +6"
+        "Chikage +6"
       ]
     },
     {
       "ID": 2000700,
       "Entries": [
-        "Japanese Sword +7"
+        "Chikage +7"
       ]
     },
     {
       "ID": 2000800,
       "Entries": [
-        "Japanese Sword +8"
+        "Chikage +8"
       ]
     },
     {
       "ID": 2000900,
       "Entries": [
-        "Japanese Sword +9"
+        "Chikage +9"
       ]
     },
     {
       "ID": 2001000,
       "Entries": [
-        "Japanese Sword +10"
+        "Chikage +10"
       ]
     },
     {
       "ID": 2010000,
       "Entries": [
-        "Japanese sword"
+        "Uncanny Chikage"
       ]
     },
     {
       "ID": 2010100,
       "Entries": [
-        "Japanese Sword +1"
+        "Uncanny Chikage +1"
       ]
     },
     {
       "ID": 2010200,
       "Entries": [
-        "Japanese Sword +2"
+        "Uncanny Chikage +2"
       ]
     },
     {
       "ID": 2010300,
       "Entries": [
-        "Japanese Sword +3"
+        "Uncanny Chikage +3"
       ]
     },
     {
       "ID": 2010400,
       "Entries": [
-        "Japanese Sword +4"
+        "Uncanny Chikage +4"
       ]
     },
     {
       "ID": 2010500,
       "Entries": [
-        "Japanese Sword +5"
+        "Uncanny Chikage +5"
       ]
     },
     {
       "ID": 2010600,
       "Entries": [
-        "Japanese Sword +6"
+        "Uncanny Chikage +6"
       ]
     },
     {
       "ID": 2010700,
       "Entries": [
-        "Japanese Sword +7"
+        "Uncanny Chikage +7"
       ]
     },
     {
       "ID": 2010800,
       "Entries": [
-        "Japanese Sword +8"
+        "Uncanny Chikage +8"
       ]
     },
     {
       "ID": 2010900,
       "Entries": [
-        "Japanese Sword +9"
+        "Uncanny Chikage +9"
       ]
     },
     {
       "ID": 2011000,
       "Entries": [
-        "Japanese Sword +10"
+        "Uncanny Chikage +10"
       ]
     },
     {
       "ID": 2020000,
       "Entries": [
-        "Japanese sword"
+        "Lost Chikage"
       ]
     },
     {
       "ID": 2020100,
       "Entries": [
-        "Japanese Sword +1"
+        "Lost Chikage +1"
       ]
     },
     {
       "ID": 2020200,
       "Entries": [
-        "Japanese Sword +2"
+        "Lost Chikage +2"
       ]
     },
     {
       "ID": 2020300,
       "Entries": [
-        "Japanese Sword +3"
+        "Lost Chikage +3"
       ]
     },
     {
       "ID": 2020400,
       "Entries": [
-        "Japanese Sword +4"
+        "Lost Chikage +4"
       ]
     },
     {
       "ID": 2020500,
       "Entries": [
-        "Japanese Sword +5"
+        "Lost Chikage +5"
       ]
     },
     {
       "ID": 2020600,
       "Entries": [
-        "Japanese Sword +6"
+        "Lost Chikage +6"
       ]
     },
     {
       "ID": 2020700,
       "Entries": [
-        "Japanese Sword +7"
+        "Lost Chikage +7"
       ]
     },
     {
       "ID": 2020800,
       "Entries": [
-        "Japanese Sword +8"
+        "Lost Chikage +8"
       ]
     },
     {
       "ID": 2020900,
       "Entries": [
-        "Japanese Sword +9"
+        "Lost Chikage +9"
       ]
     },
     {
       "ID": 2021000,
       "Entries": [
-        "Japanese Sword +10"
+        "Lost Chikage +10"
       ]
     },
     {
       "ID": 2090000,
       "Entries": [
-        "Wandering Sword"
+        "Chikage (Ghost)"
       ]
     },
     {
       "ID": 4000000,
       "Entries": [
-        "Dual Swords"
+        "Blade of Mercy"
       ]
     },
     {
       "ID": 4000100,
       "Entries": [
-        "Dual Swords +1"
+        "Blade of Mercy +1"
       ]
     },
     {
       "ID": 4000200,
       "Entries": [
-        "Dual Swords +2"
+        "Blade of Mercy +2"
       ]
     },
     {
       "ID": 4000300,
       "Entries": [
-        "Dual Swords +3"
+        "Blade of Mercy +3"
       ]
     },
     {
       "ID": 4000400,
       "Entries": [
-        "Dual Swords +4"
+        "Blade of Mercy +4"
       ]
     },
     {
       "ID": 4000500,
       "Entries": [
-        "Dual Swords +5"
+        "Blade of Mercy +5"
       ]
     },
     {
       "ID": 4000600,
       "Entries": [
-        "Dual Swords +6"
+        "Blade of Mercy +6"
       ]
     },
     {
       "ID": 4000700,
       "Entries": [
-        "Dual Swords +7"
+        "Blade of Mercy +7"
       ]
     },
     {
       "ID": 4000800,
       "Entries": [
-        "Dual Swords +8"
+        "Blade of Mercy +8"
       ]
     },
     {
       "ID": 4000900,
       "Entries": [
-        "Dual Swords +9"
+        "Blade of Mercy +9"
       ]
     },
     {
       "ID": 4001000,
       "Entries": [
-        "Dual Swords +10"
+        "Blade of Mercy +10"
       ]
     },
     {
       "ID": 4010000,
       "Entries": [
-        "Dual Swords"
+        "Uncanny Blade of Mercy"
       ]
     },
     {
       "ID": 4010100,
       "Entries": [
-        "Dual Swords +1"
+        "Uncanny Blade of Mercy +1"
       ]
     },
     {
       "ID": 4010200,
       "Entries": [
-        "Dual Swords +2"
+        "Uncanny Blade of Mercy +2"
       ]
     },
     {
       "ID": 4010300,
       "Entries": [
-        "Dual Swords +3"
+        "Uncanny Blade of Mercy +3"
       ]
     },
     {
       "ID": 4010400,
       "Entries": [
-        "Dual Swords +4"
+        "Uncanny Blade of Mercy +4"
       ]
     },
     {
       "ID": 4010500,
       "Entries": [
-        "Dual Swords +5"
+        "Uncanny Blade of Mercy +5"
       ]
     },
     {
       "ID": 4010600,
       "Entries": [
-        "Dual Swords +6"
+        "Uncanny Blade of Mercy +6"
       ]
     },
     {
       "ID": 4010700,
       "Entries": [
-        "Dual Swords +7"
+        "Uncanny Blade of Mercy +7"
       ]
     },
     {
       "ID": 4010800,
       "Entries": [
-        "Dual Swords +8"
+        "Uncanny Blade of Mercy +8"
       ]
     },
     {
       "ID": 4010900,
       "Entries": [
-        "Dual Swords +9"
+        "Uncanny Blade of Mercy +9"
       ]
     },
     {
       "ID": 4011000,
       "Entries": [
-        "Dual Swords +10"
+        "Uncanny Blade of Mercy +10"
       ]
     },
     {
       "ID": 4020000,
       "Entries": [
-        "Dual Swords"
+        "Lost Blade of Mercy"
       ]
     },
     {
       "ID": 4020100,
       "Entries": [
-        "Dual Swords +1"
+        "Lost Blade of Mercy +1"
       ]
     },
     {
       "ID": 4020200,
       "Entries": [
-        "Dual Swords +2"
+        "Lost Blade of Mercy +2"
       ]
     },
     {
       "ID": 4020300,
       "Entries": [
-        "Dual Swords +3"
+        "Lost Blade of Mercy +3"
       ]
     },
     {
       "ID": 4020400,
       "Entries": [
-        "Dual Swords +4"
+        "Lost Blade of Mercy +4"
       ]
     },
     {
       "ID": 4020500,
       "Entries": [
-        "Dual Swords +5"
+        "Lost Blade of Mercy +5"
       ]
     },
     {
       "ID": 4020600,
       "Entries": [
-        "Dual Swords +6"
+        "Lost Blade of Mercy +6"
       ]
     },
     {
       "ID": 4020700,
       "Entries": [
-        "Dual Swords +7"
+        "Lost Blade of Mercy +7"
       ]
     },
     {
       "ID": 4020800,
       "Entries": [
-        "Dual Swords +8"
+        "Lost Blade of Mercy +8"
       ]
     },
     {
       "ID": 4020900,
       "Entries": [
-        "Dual Swords +9"
+        "Lost Blade of Mercy +9"
       ]
     },
     {
       "ID": 4021000,
       "Entries": [
-        "Dual Swords +10"
+        "Lost Blade of Mercy +10"
       ]
     },
     {
       "ID": 4090000,
       "Entries": [
-        "Wandering Dual Swords"
+        "Blade of Mercy (Ghost)"
       ]
     },
     {
       "ID": 5000000,
       "Entries": [
-        "Axe pole"
+        "Hunter Axe"
       ]
     },
     {
       "ID": 5000100,
       "Entries": [
-        "Axe Pole +1"
+        "Hunter Axe +1"
       ]
     },
     {
       "ID": 5000200,
       "Entries": [
-        "Axe Pole +2"
+        "Hunter Axe +2"
       ]
     },
     {
       "ID": 5000300,
       "Entries": [
-        "Axe Pole +3"
+        "Hunter Axe +3"
       ]
     },
     {
       "ID": 5000400,
       "Entries": [
-        "Axe Pole +4"
+        "Hunter Axe +4"
       ]
     },
     {
       "ID": 5000500,
       "Entries": [
-        "Axe Pole +5"
+        "Hunter Axe +5"
       ]
     },
     {
       "ID": 5000600,
       "Entries": [
-        "Axe Pole +6"
+        "Hunter Axe +6"
       ]
     },
     {
       "ID": 5000700,
       "Entries": [
-        "Axe Pole +7"
+        "Hunter Axe +7"
       ]
     },
     {
       "ID": 5000800,
       "Entries": [
-        "Axe Pole +8"
+        "Hunter Axe +8"
       ]
     },
     {
       "ID": 5000900,
       "Entries": [
-        "Axe Pole +9"
+        "Hunter Axe +9"
       ]
     },
     {
       "ID": 5001000,
       "Entries": [
-        "Axe Pole +10"
+        "Hunter Axe +10"
       ]
     },
     {
       "ID": 5010000,
       "Entries": [
-        "Axe pole"
+        "Uncanny Hunter Axe"
       ]
     },
     {
       "ID": 5010100,
       "Entries": [
-        "Axe Pole +1"
+        "Uncanny Hunter Axe +1"
       ]
     },
     {
       "ID": 5010200,
       "Entries": [
-        "Axe Pole +2"
+        "Uncanny Hunter Axe +2"
       ]
     },
     {
       "ID": 5010300,
       "Entries": [
-        "Axe Pole +3"
+        "Uncanny Hunter Axe +3"
       ]
     },
     {
       "ID": 5010400,
       "Entries": [
-        "Axe Pole +4"
+        "Uncanny Hunter Axe +4"
       ]
     },
     {
       "ID": 5010500,
       "Entries": [
-        "Axe Pole +5"
+        "Uncanny Hunter Axe +5"
       ]
     },
     {
       "ID": 5010600,
       "Entries": [
-        "Axe Pole +6"
+        "Uncanny Hunter Axe +6"
       ]
     },
     {
       "ID": 5010700,
       "Entries": [
-        "Axe Pole +7"
+        "Uncanny Hunter Axe +7"
       ]
     },
     {
       "ID": 5010800,
       "Entries": [
-        "Axe Pole +8"
+        "Uncanny Hunter Axe +8"
       ]
     },
     {
       "ID": 5010900,
       "Entries": [
-        "Axe Pole +9"
+        "Uncanny Hunter Axe +9"
       ]
     },
     {
       "ID": 5011000,
       "Entries": [
-        "Axe Pole +10"
+        "Uncanny Hunter Axe +10"
       ]
     },
     {
       "ID": 5020000,
       "Entries": [
-        "Axe pole"
+        "Lost Hunter Axe"
       ]
     },
     {
       "ID": 5020100,
       "Entries": [
-        "Axe Pole +1"
+        "Lost Hunter Axe +1"
       ]
     },
     {
       "ID": 5020200,
       "Entries": [
-        "Axe Pole +2"
+        "Lost Hunter Axe +2"
       ]
     },
     {
       "ID": 5020300,
       "Entries": [
-        "Axe Pole +3"
+        "Lost Hunter Axe +3"
       ]
     },
     {
       "ID": 5020400,
       "Entries": [
-        "Axe Pole +4"
+        "Lost Hunter Axe +4"
       ]
     },
     {
       "ID": 5020500,
       "Entries": [
-        "Axe Pole +5"
+        "Lost Hunter Axe +5"
       ]
     },
     {
       "ID": 5020600,
       "Entries": [
-        "Axe Pole +6"
+        "Lost Hunter Axe +6"
       ]
     },
     {
       "ID": 5020700,
       "Entries": [
-        "Axe Pole +7"
+        "Lost Hunter Axe +7"
       ]
     },
     {
       "ID": 5020800,
       "Entries": [
-        "Axe Pole +8"
+        "Lost Hunter Axe +8"
       ]
     },
     {
       "ID": 5020900,
       "Entries": [
-        "Axe Pole +9"
+        "Lost Hunter Axe +9"
       ]
     },
     {
       "ID": 5021000,
       "Entries": [
-        "Axe Pole +10"
+        "Lost Hunter Axe +10"
       ]
     },
     {
       "ID": 5090000,
       "Entries": [
-        "Wandering Axe"
+        "Hunter Axe (Ghost)"
       ]
     },
     {
       "ID": 5100000,
       "Entries": [
-        "Sickle and sword"
+        "Burial Blade"
       ]
     },
     {
       "ID": 5100100,
       "Entries": [
-        "Sword Sickle +1"
+        "Burial Blade +1"
       ]
     },
     {
       "ID": 5100200,
       "Entries": [
-        "Sword Sickle +2"
+        "Burial Blade +2"
       ]
     },
     {
       "ID": 5100300,
       "Entries": [
-        "Sword Sickle +3"
+        "Burial Blade +3"
       ]
     },
     {
       "ID": 5100400,
       "Entries": [
-        "Sword Sickle +4"
+        "Burial Blade +4"
       ]
     },
     {
       "ID": 5100500,
       "Entries": [
-        "Sword Sickle +5"
+        "Burial Blade +5"
       ]
     },
     {
       "ID": 5100600,
       "Entries": [
-        "Sword Sickle +6"
+        "Burial Blade +6"
       ]
     },
     {
       "ID": 5100700,
       "Entries": [
-        "Sword Sickle +7"
+        "Burial Blade +7"
       ]
     },
     {
       "ID": 5100800,
       "Entries": [
-        "Sword Sickle +8"
+        "Burial Blade +8"
       ]
     },
     {
       "ID": 5100900,
       "Entries": [
-        "Sword Sickle +9"
+        "Burial Blade +9"
       ]
     },
     {
       "ID": 5101000,
       "Entries": [
-        "Sword Sickle +10"
+        "Burial Blade +10"
       ]
     },
     {
       "ID": 5110000,
       "Entries": [
-        "Sickle and sword"
+        "Uncanny Burial Blade"
       ]
     },
     {
       "ID": 5110100,
       "Entries": [
-        "Sword Sickle +1"
+        "Uncanny Burial Blade +1"
       ]
     },
     {
       "ID": 5110200,
       "Entries": [
-        "Sword Sickle +2"
+        "Uncanny Burial Blade +2"
       ]
     },
     {
       "ID": 5110300,
       "Entries": [
-        "Sword Sickle +3"
+        "Uncanny Burial Blade +3"
       ]
     },
     {
       "ID": 5110400,
       "Entries": [
-        "Sword Sickle +4"
+        "Uncanny Burial Blade +4"
       ]
     },
     {
       "ID": 5110500,
       "Entries": [
-        "Sword Sickle +5"
+        "Uncanny Burial Blade +5"
       ]
     },
     {
       "ID": 5110600,
       "Entries": [
-        "Sword Sickle +6"
+        "Uncanny Burial Blade +6"
       ]
     },
     {
       "ID": 5110700,
       "Entries": [
-        "Sword Sickle +7"
+        "Uncanny Burial Blade +7"
       ]
     },
     {
       "ID": 5110800,
       "Entries": [
-        "Sword Sickle +8"
+        "Uncanny Burial Blade +8"
       ]
     },
     {
       "ID": 5110900,
       "Entries": [
-        "Sword Sickle +9"
+        "Uncanny Burial Blade +9"
       ]
     },
     {
       "ID": 5111000,
       "Entries": [
-        "Sword Sickle +10"
+        "Uncanny Burial Blade +10"
       ]
     },
     {
       "ID": 5120000,
       "Entries": [
-        "Sickle and sword"
+        "Lost Burial Blade"
       ]
     },
     {
       "ID": 5120100,
       "Entries": [
-        "Sword Sickle +1"
+        "Lost Burial Blade +1"
       ]
     },
     {
       "ID": 5120200,
       "Entries": [
-        "Sword Sickle +2"
+        "Lost Burial Blade +2"
       ]
     },
     {
       "ID": 5120300,
       "Entries": [
-        "Sword Sickle +3"
+        "Lost Burial Blade +3"
       ]
     },
     {
       "ID": 5120400,
       "Entries": [
-        "Sword Sickle +4"
+        "Lost Burial Blade +4"
       ]
     },
     {
       "ID": 5120500,
       "Entries": [
-        "Sword Sickle +5"
+        "Lost Burial Blade +5"
       ]
     },
     {
       "ID": 5120600,
       "Entries": [
-        "Sword Sickle +6"
+        "Lost Burial Blade +6"
       ]
     },
     {
       "ID": 5120700,
       "Entries": [
-        "Sword Sickle +7"
+        "Lost Burial Blade +7"
       ]
     },
     {
       "ID": 5120800,
       "Entries": [
-        "Sword Sickle +8"
+        "Lost Burial Blade +8"
       ]
     },
     {
       "ID": 5120900,
       "Entries": [
-        "Sword Sickle +9"
+        "Lost Burial Blade +9"
       ]
     },
     {
       "ID": 5121000,
       "Entries": [
-        "Sword Sickle +10"
+        "Lost Burial Blade +10"
       ]
     },
     {
       "ID": 5190000,
       "Entries": [
-        "Wandering Sword Scythe"
+        "Burial Blade (Ghost)"
       ]
     },
     {
       "ID": 6000000,
       "Entries": [
-        "Workshop Long Gun"
+        "Hunter Blunderbuss"
       ]
     },
     {
       "ID": 6000100,
       "Entries": [
-        "Workshop Long Gun +1"
+        "Hunter Blunderbuss +1"
       ]
     },
     {
       "ID": 6000200,
       "Entries": [
-        "Workshop Long Gun +2"
+        "Hunter Blunderbuss +2"
       ]
     },
     {
       "ID": 6000300,
       "Entries": [
-        "Workshop Long Gun +3"
+        "Hunter Blunderbuss +3"
       ]
     },
     {
       "ID": 6000400,
       "Entries": [
-        "Workshop Long Gun +4"
+        "Hunter Blunderbuss +4"
       ]
     },
     {
       "ID": 6000500,
       "Entries": [
-        "Workshop Long Gun +5"
+        "Hunter Blunderbuss +5"
       ]
     },
     {
       "ID": 6000600,
       "Entries": [
-        "Workshop Long Gun +6"
+        "Hunter Blunderbuss +6"
       ]
     },
     {
       "ID": 6000700,
       "Entries": [
-        "Workshop Long Gun +7"
+        "Hunter Blunderbuss +7"
       ]
     },
     {
       "ID": 6000800,
       "Entries": [
-        "Workshop Long Gun +8"
+        "Hunter Blunderbuss +8"
       ]
     },
     {
       "ID": 6000900,
       "Entries": [
-        "Workshop Long Gun +9"
+        "Hunter Blunderbuss +9"
       ]
     },
     {
       "ID": 6001000,
       "Entries": [
-        "Workshop Long Gun +10"
+        "Hunter Blunderbuss +10"
       ]
     },
     {
       "ID": 6090000,
       "Entries": [
-        "Wandering Workshop Long Gun"
+        "Hunter Blunderbuss (Ghost)"
       ]
     },
     {
       "ID": 6100000,
       "Entries": [
-        "Church rifle"
+        "Ludwig's Rifle"
       ]
     },
     {
       "ID": 6100100,
       "Entries": [
-        "Church Rifle +1"
+        "Ludwig's Rifle +1"
       ]
     },
     {
       "ID": 6100200,
       "Entries": [
-        "Church Rifle +2"
+        "Ludwig's Rifle +2"
       ]
     },
     {
       "ID": 6100300,
       "Entries": [
-        "Church Rifle +3"
+        "Ludwig's Rifle +3"
       ]
     },
     {
       "ID": 6100400,
       "Entries": [
-        "Church Rifle +4"
+        "Ludwig's Rifle +4"
       ]
     },
     {
       "ID": 6100500,
       "Entries": [
-        "Church Rifle +5"
+        "Ludwig's Rifle +5"
       ]
     },
     {
       "ID": 6100600,
       "Entries": [
-        "Church Rifle +6"
+        "Ludwig's Rifle +6"
       ]
     },
     {
       "ID": 6100700,
       "Entries": [
-        "Church Rifle +7"
+        "Ludwig's Rifle +7"
       ]
     },
     {
       "ID": 6100800,
       "Entries": [
-        "Church Rifle +8"
+        "Ludwig's Rifle +8"
       ]
     },
     {
       "ID": 6100900,
       "Entries": [
-        "Church Rifle +9"
+        "Ludwig's Rifle +9"
       ]
     },
     {
       "ID": 6101000,
       "Entries": [
-        "Church Rifle +10"
+        "Ludwig's Rifle +10"
       ]
     },
     {
       "ID": 6180000,
       "Entries": [
-        "[ NPC Exclusive] Church Gun (Blood Paste)"
+        "[NPC Only] Alfred's Ludwig's Rifle"
       ]
     },
     {
       "ID": 6180100,
       "Entries": [
-        "[ NPC Exclusive: Church Gun (Blood Paste) +1"
+        "[NPC Only] Alfred's Ludwig's Rifle +1"
       ]
     },
     {
       "ID": 6180200,
       "Entries": [
-        "[ NPC Exclusive: Church Gun (Blood Paste) +2"
+        "[NPC Only] Alfred's Ludwig's Rifle +2"
       ]
     },
     {
       "ID": 6180300,
       "Entries": [
-        "[ NPC Exclusive: Church Gun (Blood Paste) +3"
+        "[NPC Only] Alfred's Ludwig's Rifle +3"
       ]
     },
     {
       "ID": 6180400,
       "Entries": [
-        "[ NPC Exclusive: Church Gun (Blood Paste) +4"
+        "[NPC Only] Alfred's Ludwig's Rifle +4"
       ]
     },
     {
       "ID": 6180500,
       "Entries": [
-        "[ NPC Exclusive: Church Gun (Blood Paste) +5"
+        "[NPC Only] Alfred's Ludwig's Rifle +5"
       ]
     },
     {
       "ID": 6180600,
       "Entries": [
-        "[ NPC Exclusive: Church Gun (Blood Paste) +6"
+        "[NPC Only] Alfred's Ludwig's Rifle +6"
       ]
     },
     {
       "ID": 6180700,
       "Entries": [
-        "[ NPC Exclusive: Church Gun (Blood Paste) +7"
+        "[NPC Only] Alfred's Ludwig's Rifle +7"
       ]
     },
     {
       "ID": 6180800,
       "Entries": [
-        "[ NPC Exclusive: Church Gun (Blood Paste) +8"
+        "[NPC Only] Alfred's Ludwig's Rifle +8"
       ]
     },
     {
       "ID": 6180900,
       "Entries": [
-        "[ NPC Exclusive: Church Gun (Blood Paste) +9"
+        "[NPC Only] Alfred's Ludwig's Rifle +9"
       ]
     },
     {
       "ID": 6181000,
       "Entries": [
-        "[ NPC Exclusive: Church Gun (Blood Paste) +10"
+        "[NPC Only] Alfred's Ludwig's Rifle +10"
       ]
     },
     {
       "ID": 6190000,
       "Entries": [
-        "Wandering Church Long Gun"
+        "Ludwig's Rifle (Ghost)"
       ]
     },
     {
       "ID": 7000000,
       "Entries": [
-        "Nokonata"
+        "Saw Cleaver"
       ]
     },
     {
       "ID": 7000100,
       "Entries": [
-        "Nokonata +1"
+        "Saw Cleaver +1"
       ]
     },
     {
       "ID": 7000200,
       "Entries": [
-        "Nokonata +2"
+        "Saw Cleaver +2"
       ]
     },
     {
       "ID": 7000300,
       "Entries": [
-        "Nokonata +3"
+        "Saw Cleaver +3"
       ]
     },
     {
       "ID": 7000400,
       "Entries": [
-        "Nokonata +4"
+        "Saw Cleaver +4"
       ]
     },
     {
       "ID": 7000500,
       "Entries": [
-        "Nokonata +5"
+        "Saw Cleaver +5"
       ]
     },
     {
       "ID": 7000600,
       "Entries": [
-        "Nokonata +6"
+        "Saw Cleaver +6"
       ]
     },
     {
       "ID": 7000700,
       "Entries": [
-        "Nokonata +7"
+        "Saw Cleaver +7"
       ]
     },
     {
       "ID": 7000800,
       "Entries": [
-        "Nokonata +8"
+        "Saw Cleaver +8"
       ]
     },
     {
       "ID": 7000900,
       "Entries": [
-        "Nokonata +9"
+        "Saw Cleaver +9"
       ]
     },
     {
       "ID": 7001000,
       "Entries": [
-        "Nokonata +10"
+        "Saw Cleaver +10"
       ]
     },
     {
       "ID": 7010000,
       "Entries": [
-        "Nokonata"
+        "Uncanny Saw Cleaver"
       ]
     },
     {
       "ID": 7010100,
       "Entries": [
-        "Nokonata +1"
+        "Uncanny Saw Cleaver +1"
       ]
     },
     {
       "ID": 7010200,
       "Entries": [
-        "Nokonata +2"
+        "Uncanny Saw Cleaver +2"
       ]
     },
     {
       "ID": 7010300,
       "Entries": [
-        "Nokonata +3"
+        "Uncanny Saw Cleaver +3"
       ]
     },
     {
       "ID": 7010400,
       "Entries": [
-        "Nokonata +4"
+        "Uncanny Saw Cleaver +4"
       ]
     },
     {
       "ID": 7010500,
       "Entries": [
-        "Nokonata +5"
+        "Uncanny Saw Cleaver +5"
       ]
     },
     {
       "ID": 7010600,
       "Entries": [
-        "Nokonata +6"
+        "Uncanny Saw Cleaver +6"
       ]
     },
     {
       "ID": 7010700,
       "Entries": [
-        "Nokonata +7"
+        "Uncanny Saw Cleaver +7"
       ]
     },
     {
       "ID": 7010800,
       "Entries": [
-        "Nokonata +8"
+        "Uncanny Saw Cleaver +8"
       ]
     },
     {
       "ID": 7010900,
       "Entries": [
-        "Nokonata +9"
+        "Uncanny Saw Cleaver +9"
       ]
     },
     {
       "ID": 7011000,
       "Entries": [
-        "Nokonata +10"
+        "Uncanny Saw Cleaver +10"
       ]
     },
     {
       "ID": 7020000,
       "Entries": [
-        "Nokonata"
+        "Lost Saw Cleaver"
       ]
     },
     {
       "ID": 7020100,
       "Entries": [
-        "Nokonata +1"
+        "Lost Saw Cleaver +1"
       ]
     },
     {
       "ID": 7020200,
       "Entries": [
-        "Nokonata +2"
+        "Lost Saw Cleaver +2"
       ]
     },
     {
       "ID": 7020300,
       "Entries": [
-        "Nokonata +3"
+        "Lost Saw Cleaver +3"
       ]
     },
     {
       "ID": 7020400,
       "Entries": [
-        "Nokonata +4"
+        "Lost Saw Cleaver +4"
       ]
     },
     {
       "ID": 7020500,
       "Entries": [
-        "Nokonata +5"
+        "Lost Saw Cleaver +5"
       ]
     },
     {
       "ID": 7020600,
       "Entries": [
-        "Nokonata +6"
+        "Lost Saw Cleaver +6"
       ]
     },
     {
       "ID": 7020700,
       "Entries": [
-        "Nokonata +7"
+        "Lost Saw Cleaver +7"
       ]
     },
     {
       "ID": 7020800,
       "Entries": [
-        "Nokonata +8"
+        "Lost Saw Cleaver +8"
       ]
     },
     {
       "ID": 7020900,
       "Entries": [
-        "Nokonata +9"
+        "Lost Saw Cleaver +9"
       ]
     },
     {
       "ID": 7021000,
       "Entries": [
-        "Nokonata +10"
+        "Lost Saw Cleaver +10"
       ]
     },
     {
       "ID": 7090000,
       "Entries": [
-        "Wandering Nokonata"
+        "Nokonata (Ghost)"
       ]
     },
     {
@@ -2182,2059 +2182,2059 @@
     {
       "ID": 7110000,
       "Entries": [
-        "Saw Spear"
+        "Uncanny Saw Spear"
       ]
     },
     {
       "ID": 7110100,
       "Entries": [
-        "Saw Spear +1"
+        "Uncanny Saw Spear +1"
       ]
     },
     {
       "ID": 7110200,
       "Entries": [
-        "Saw Spear +2"
+        "Uncanny Saw Spear +2"
       ]
     },
     {
       "ID": 7110300,
       "Entries": [
-        "Saw Spear +3"
+        "Uncanny Saw Spear +3"
       ]
     },
     {
       "ID": 7110400,
       "Entries": [
-        "Saw Spear +4"
+        "Uncanny Saw Spear +4"
       ]
     },
     {
       "ID": 7110500,
       "Entries": [
-        "Saw Spear +5"
+        "Uncanny Saw Spear +5"
       ]
     },
     {
       "ID": 7110600,
       "Entries": [
-        "Saw Spear +6"
+        "Uncanny Saw Spear +6"
       ]
     },
     {
       "ID": 7110700,
       "Entries": [
-        "Saw Spear +7"
+        "Uncanny Saw Spear +7"
       ]
     },
     {
       "ID": 7110800,
       "Entries": [
-        "Saw Spear +8"
+        "Uncanny Saw Spear +8"
       ]
     },
     {
       "ID": 7110900,
       "Entries": [
-        "Saw Spear +9"
+        "Uncanny Saw Spear +9"
       ]
     },
     {
       "ID": 7111000,
       "Entries": [
-        "Saw Spear +10"
+        "Uncanny Saw Spear +10"
       ]
     },
     {
       "ID": 7120000,
       "Entries": [
-        "Saw Spear"
+        "Lost Saw Spear"
       ]
     },
     {
       "ID": 7120100,
       "Entries": [
-        "Saw Spear +1"
+        "Lost Saw Spear +1"
       ]
     },
     {
       "ID": 7120200,
       "Entries": [
-        "Saw Spear +2"
+        "Lost Saw Spear +2"
       ]
     },
     {
       "ID": 7120300,
       "Entries": [
-        "Saw Spear +3"
+        "Lost Saw Spear +3"
       ]
     },
     {
       "ID": 7120400,
       "Entries": [
-        "Saw Spear +4"
+        "Lost Saw Spear +4"
       ]
     },
     {
       "ID": 7120500,
       "Entries": [
-        "Saw Spear +5"
+        "Lost Saw Spear +5"
       ]
     },
     {
       "ID": 7120600,
       "Entries": [
-        "Saw Spear +6"
+        "Lost Saw Spear +6"
       ]
     },
     {
       "ID": 7120700,
       "Entries": [
-        "Saw Spear +7"
+        "Lost Saw Spear +7"
       ]
     },
     {
       "ID": 7120800,
       "Entries": [
-        "Saw Spear +8"
+        "Lost Saw Spear +8"
       ]
     },
     {
       "ID": 7120900,
       "Entries": [
-        "Saw Spear +9"
+        "Lost Saw Spear +9"
       ]
     },
     {
       "ID": 7121000,
       "Entries": [
-        "Saw Spear +10"
+        "Lost Saw Spear +10"
       ]
     },
     {
       "ID": 7190000,
       "Entries": [
-        "Wandering Saw Spear"
+        "Saw Spear (Ghost)"
       ]
     },
     {
       "ID": 8000000,
       "Entries": [
-        "Sword Hammer"
+        "Kirkhammer"
       ]
     },
     {
       "ID": 8000100,
       "Entries": [
-        "Sword Hammer +1"
+        "Kirkhammer +1"
       ]
     },
     {
       "ID": 8000200,
       "Entries": [
-        "Sword Hammer +2"
+        "Kirkhammer +2"
       ]
     },
     {
       "ID": 8000300,
       "Entries": [
-        "Sword Hammer +3"
+        "Kirkhammer +3"
       ]
     },
     {
       "ID": 8000400,
       "Entries": [
-        "Sword Hammer +4"
+        "Kirkhammer +4"
       ]
     },
     {
       "ID": 8000500,
       "Entries": [
-        "Sword Hammer +5"
+        "Kirkhammer +5"
       ]
     },
     {
       "ID": 8000600,
       "Entries": [
-        "Sword Hammer +6"
+        "Kirkhammer +6"
       ]
     },
     {
       "ID": 8000700,
       "Entries": [
-        "Sword Hammer +7"
+        "Kirkhammer +7"
       ]
     },
     {
       "ID": 8000800,
       "Entries": [
-        "Sword Hammer +8"
+        "Kirkhammer +8"
       ]
     },
     {
       "ID": 8000900,
       "Entries": [
-        "Sword Hammer +9"
+        "Kirkhammer +9"
       ]
     },
     {
       "ID": 8001000,
       "Entries": [
-        "Sword Hammer +10"
+        "Kirkhammer +10"
       ]
     },
     {
       "ID": 8010000,
       "Entries": [
-        "Sword Hammer"
+        "Uncanny Kirkhammer"
       ]
     },
     {
       "ID": 8010100,
       "Entries": [
-        "Sword Hammer +1"
+        "Uncanny Kirkhammer +1"
       ]
     },
     {
       "ID": 8010200,
       "Entries": [
-        "Sword Hammer +2"
+        "Uncanny Kirkhammer +2"
       ]
     },
     {
       "ID": 8010300,
       "Entries": [
-        "Sword Hammer +3"
+        "Uncanny Kirkhammer +3"
       ]
     },
     {
       "ID": 8010400,
       "Entries": [
-        "Sword Hammer +4"
+        "Uncanny Kirkhammer +4"
       ]
     },
     {
       "ID": 8010500,
       "Entries": [
-        "Sword Hammer +5"
+        "Uncanny Kirkhammer +5"
       ]
     },
     {
       "ID": 8010600,
       "Entries": [
-        "Sword Hammer +6"
+        "Uncanny Kirkhammer +6"
       ]
     },
     {
       "ID": 8010700,
       "Entries": [
-        "Sword Hammer +7"
+        "Uncanny Kirkhammer +7"
       ]
     },
     {
       "ID": 8010800,
       "Entries": [
-        "Sword Hammer +8"
+        "Uncanny Kirkhammer +8"
       ]
     },
     {
       "ID": 8010900,
       "Entries": [
-        "Sword Hammer +9"
+        "Uncanny Kirkhammer +9"
       ]
     },
     {
       "ID": 8011000,
       "Entries": [
-        "Sword Hammer +10"
+        "Uncanny Kirkhammer +10"
       ]
     },
     {
       "ID": 8020000,
       "Entries": [
-        "Sword Hammer"
+        "Lost Kirkhammer"
       ]
     },
     {
       "ID": 8020100,
       "Entries": [
-        "Sword Hammer +1"
+        "Lost Kirkhammer +1"
       ]
     },
     {
       "ID": 8020200,
       "Entries": [
-        "Sword Hammer +2"
+        "Lost Kirkhammer +2"
       ]
     },
     {
       "ID": 8020300,
       "Entries": [
-        "Sword Hammer +3"
+        "Lost Kirkhammer +3"
       ]
     },
     {
       "ID": 8020400,
       "Entries": [
-        "Sword Hammer +4"
+        "Lost Kirkhammer +4"
       ]
     },
     {
       "ID": 8020500,
       "Entries": [
-        "Sword Hammer +5"
+        "Lost Kirkhammer +5"
       ]
     },
     {
       "ID": 8020600,
       "Entries": [
-        "Sword Hammer +6"
+        "Lost Kirkhammer +6"
       ]
     },
     {
       "ID": 8020700,
       "Entries": [
-        "Sword Hammer +7"
+        "Lost Kirkhammer +7"
       ]
     },
     {
       "ID": 8020800,
       "Entries": [
-        "Sword Hammer +8"
+        "Lost Kirkhammer +8"
       ]
     },
     {
       "ID": 8020900,
       "Entries": [
-        "Sword Hammer +9"
+        "Lost Kirkhammer +9"
       ]
     },
     {
       "ID": 8021000,
       "Entries": [
-        "Sword Hammer +10"
+        "Lost Kirkhammer +10"
       ]
     },
     {
       "ID": 8090000,
       "Entries": [
-        "Wandering Sword Hammer"
+        "Kirkhammer (Ghost)"
       ]
     },
     {
       "ID": 8100000,
       "Entries": [
-        "Hammer Sword"
+        "Ludwig's Holy Blade"
       ]
     },
     {
       "ID": 8100100,
       "Entries": [
-        "Hammer Sword +1"
+        "Ludwig's Holy Blade +1"
       ]
     },
     {
       "ID": 8100200,
       "Entries": [
-        "Hammer Sword +2"
+        "Ludwig's Holy Blade +2"
       ]
     },
     {
       "ID": 8100300,
       "Entries": [
-        "Hammer Sword +3"
+        "Ludwig's Holy Blade +3"
       ]
     },
     {
       "ID": 8100400,
       "Entries": [
-        "Hammer Sword +4"
+        "Ludwig's Holy Blade +4"
       ]
     },
     {
       "ID": 8100500,
       "Entries": [
-        "Hammer Sword +5"
+        "Ludwig's Holy Blade +5"
       ]
     },
     {
       "ID": 8100600,
       "Entries": [
-        "Hammer Sword +6"
+        "Ludwig's Holy Blade +6"
       ]
     },
     {
       "ID": 8100700,
       "Entries": [
-        "Hammer Sword +7"
+        "Ludwig's Holy Blade +7"
       ]
     },
     {
       "ID": 8100800,
       "Entries": [
-        "Hammer Great Sword +8"
+        "Ludwig's Holy Blade +8"
       ]
     },
     {
       "ID": 8100900,
       "Entries": [
-        "Hammer Sword +9"
+        "Ludwig's Holy Blade +9"
       ]
     },
     {
       "ID": 8101000,
       "Entries": [
-        "Hammer Sword +10"
+        "Ludwig's Holy Blade +10"
       ]
     },
     {
       "ID": 8110000,
       "Entries": [
-        "Hammer Sword"
+        "Ludwig's Uncanny Holy Blade"
       ]
     },
     {
       "ID": 8110100,
       "Entries": [
-        "Hammer Sword +1"
+        "Ludwig's Uncanny Holy Blade +1"
       ]
     },
     {
       "ID": 8110200,
       "Entries": [
-        "Hammer Sword +2"
+        "Ludwig's Uncanny Holy Blade +2"
       ]
     },
     {
       "ID": 8110300,
       "Entries": [
-        "Hammer Sword +3"
+        "Ludwig's Uncanny Holy Blade +3"
       ]
     },
     {
       "ID": 8110400,
       "Entries": [
-        "Hammer Sword +4"
+        "Ludwig's Uncanny Holy Blade +4"
       ]
     },
     {
       "ID": 8110500,
       "Entries": [
-        "Hammer Sword +5"
+        "Ludwig's Uncanny Holy Blade +5"
       ]
     },
     {
       "ID": 8110600,
       "Entries": [
-        "Hammer Sword +6"
+        "Ludwig's Uncanny Holy Blade +6"
       ]
     },
     {
       "ID": 8110700,
       "Entries": [
-        "Hammer Sword +7"
+        "Ludwig's Uncanny Holy Blade +7"
       ]
     },
     {
       "ID": 8110800,
       "Entries": [
-        "Hammer Great Sword +8"
+        "Ludwig's Uncanny Holy Blade +8"
       ]
     },
     {
       "ID": 8110900,
       "Entries": [
-        "Hammer Sword +9"
+        "Ludwig's Uncanny Holy Blade +9"
       ]
     },
     {
       "ID": 8111000,
       "Entries": [
-        "Hammer Sword +10"
+        "Ludwig's Uncanny Holy Blade +10"
       ]
     },
     {
       "ID": 8120000,
       "Entries": [
-        "Hammer Sword"
+        "Ludwig's Lost Holy Blade"
       ]
     },
     {
       "ID": 8120100,
       "Entries": [
-        "Hammer Sword +1"
+        "Ludwig's Lost Holy Blade +1"
       ]
     },
     {
       "ID": 8120200,
       "Entries": [
-        "Hammer Sword +2"
+        "Ludwig's Lost Holy Blade +2"
       ]
     },
     {
       "ID": 8120300,
       "Entries": [
-        "Hammer Sword +3"
+        "Ludwig's Lost Holy Blade +3"
       ]
     },
     {
       "ID": 8120400,
       "Entries": [
-        "Hammer Sword +4"
+        "Ludwig's Lost Holy Blade +4"
       ]
     },
     {
       "ID": 8120500,
       "Entries": [
-        "Hammer Sword +5"
+        "Ludwig's Lost Holy Blade +5"
       ]
     },
     {
       "ID": 8120600,
       "Entries": [
-        "Hammer Sword +6"
+        "Ludwig's Lost Holy Blade +6"
       ]
     },
     {
       "ID": 8120700,
       "Entries": [
-        "Hammer Sword +7"
+        "Ludwig's Lost Holy Blade +7"
       ]
     },
     {
       "ID": 8120800,
       "Entries": [
-        "Hammer Great Sword +8"
+        "Ludwig's Lost Holy Blade +8"
       ]
     },
     {
       "ID": 8120900,
       "Entries": [
-        "Hammer Sword +9"
+        "Ludwig's Lost Holy Blade +9"
       ]
     },
     {
       "ID": 8121000,
       "Entries": [
-        "Hammer Sword +10"
+        "Ludwig's Lost Holy Blade +10"
       ]
     },
     {
       "ID": 8190000,
       "Entries": [
-        "Wandering Hammer Great Sword"
+        "Ludwig's Holy Blade (Ghost)"
       ]
     },
     {
       "ID": 9000000,
       "Entries": [
-        "Fist Beast"
+        "Beast Claw"
       ]
     },
     {
       "ID": 9000100,
       "Entries": [
-        "Fist Beast +1"
+        "Beast Claw +1"
       ]
     },
     {
       "ID": 9000200,
       "Entries": [
-        "Fist Beast +2"
+        "Beast Claw +2"
       ]
     },
     {
       "ID": 9000300,
       "Entries": [
-        "Fist Beast +3"
+        "Beast Claw +3"
       ]
     },
     {
       "ID": 9000400,
       "Entries": [
-        "Fist Beast +4"
+        "Beast Claw +4"
       ]
     },
     {
       "ID": 9000500,
       "Entries": [
-        "Fist Beast +5"
+        "Beast Claw +5"
       ]
     },
     {
       "ID": 9000600,
       "Entries": [
-        "Fist Beast +6"
+        "Beast Claw +6"
       ]
     },
     {
       "ID": 9000700,
       "Entries": [
-        "Fist Beast +7"
+        "Beast Claw +7"
       ]
     },
     {
       "ID": 9000800,
       "Entries": [
-        "Fist Beast +8"
+        "Beast Claw +8"
       ]
     },
     {
       "ID": 9000900,
       "Entries": [
-        "Fist Beast +9"
+        "Beast Claw +9"
       ]
     },
     {
       "ID": 9001000,
       "Entries": [
-        "Fist Beast +10"
+        "Beast Claw +10"
       ]
     },
     {
       "ID": 9010000,
       "Entries": [
-        "Fist Beast"
+        "Uncanny Beast Claw"
       ]
     },
     {
       "ID": 9010100,
       "Entries": [
-        "Fist Beast +1"
+        "Uncanny Beast Claw +1"
       ]
     },
     {
       "ID": 9010200,
       "Entries": [
-        "Fist Beast +2"
+        "Uncanny Beast Claw +2"
       ]
     },
     {
       "ID": 9010300,
       "Entries": [
-        "Fist Beast +3"
+        "Uncanny Beast Claw +3"
       ]
     },
     {
       "ID": 9010400,
       "Entries": [
-        "Fist Beast +4"
+        "Uncanny Beast Claw +4"
       ]
     },
     {
       "ID": 9010500,
       "Entries": [
-        "Fist Beast +5"
+        "Uncanny Beast Claw +5"
       ]
     },
     {
       "ID": 9010600,
       "Entries": [
-        "Fist Beast +6"
+        "Uncanny Beast Claw +6"
       ]
     },
     {
       "ID": 9010700,
       "Entries": [
-        "Fist Beast +7"
+        "Uncanny Beast Claw +7"
       ]
     },
     {
       "ID": 9010800,
       "Entries": [
-        "Fist Beast +8"
+        "Uncanny Beast Claw +8"
       ]
     },
     {
       "ID": 9010900,
       "Entries": [
-        "Fist Beast +9"
+        "Uncanny Beast Claw +9"
       ]
     },
     {
       "ID": 9011000,
       "Entries": [
-        "Fist Beast +10"
+        "Uncanny Beast Claw +10"
       ]
     },
     {
       "ID": 9020000,
       "Entries": [
-        "Fist Beast"
+        "Lost Beast Claw"
       ]
     },
     {
       "ID": 9020100,
       "Entries": [
-        "Fist Beast +1"
+        "Lost Beast Claw +1"
       ]
     },
     {
       "ID": 9020200,
       "Entries": [
-        "Fist Beast +2"
+        "Lost Beast Claw +2"
       ]
     },
     {
       "ID": 9020300,
       "Entries": [
-        "Fist Beast +3"
+        "Lost Beast Claw +3"
       ]
     },
     {
       "ID": 9020400,
       "Entries": [
-        "Fist Beast +4"
+        "Lost Beast Claw +4"
       ]
     },
     {
       "ID": 9020500,
       "Entries": [
-        "Fist Beast +5"
+        "Lost Beast Claw +5"
       ]
     },
     {
       "ID": 9020600,
       "Entries": [
-        "Fist Beast +6"
+        "Lost Beast Claw +6"
       ]
     },
     {
       "ID": 9020700,
       "Entries": [
-        "Fist Beast +7"
+        "Lost Beast Claw +7"
       ]
     },
     {
       "ID": 9020800,
       "Entries": [
-        "Fist Beast +8"
+        "Lost Beast Claw +8"
       ]
     },
     {
       "ID": 9020900,
       "Entries": [
-        "Fist Beast +9"
+        "Lost Beast Claw +9"
       ]
     },
     {
       "ID": 9021000,
       "Entries": [
-        "Fist Beast +10"
+        "Lost Beast Claw +10"
       ]
     },
     {
       "ID": 9090000,
       "Entries": [
-        "Wandering Fist Beast"
+        "Beast Claw (Ghost)"
       ]
     },
     {
       "ID": 10000000,
       "Entries": [
-        "Gunlance"
+        "Rifle Spear"
       ]
     },
     {
       "ID": 10000100,
       "Entries": [
-        "Gunlance +1"
+        "Rifle Spear +1"
       ]
     },
     {
       "ID": 10000200,
       "Entries": [
-        "Gunlance +2"
+        "Rifle Spear +2"
       ]
     },
     {
       "ID": 10000300,
       "Entries": [
-        "Gunlance +3"
+        "Rifle Spear +3"
       ]
     },
     {
       "ID": 10000400,
       "Entries": [
-        "Gunlance +4"
+        "Rifle Spear +4"
       ]
     },
     {
       "ID": 10000500,
       "Entries": [
-        "Gunlance +5"
+        "Rifle Spear +5"
       ]
     },
     {
       "ID": 10000600,
       "Entries": [
-        "Gunlance +6"
+        "Rifle Spear +6"
       ]
     },
     {
       "ID": 10000700,
       "Entries": [
-        "Gunlance +7"
+        "Rifle Spear +7"
       ]
     },
     {
       "ID": 10000800,
       "Entries": [
-        "Gunlance +8"
+        "Rifle Spear +8"
       ]
     },
     {
       "ID": 10000900,
       "Entries": [
-        "Gunlance +9"
+        "Rifle Spear +9"
       ]
     },
     {
       "ID": 10001000,
       "Entries": [
-        "Gunlance +10"
+        "Rifle Spear +10"
       ]
     },
     {
       "ID": 10010000,
       "Entries": [
-        "Gunlance"
+        "Uncanny Rifle Spear"
       ]
     },
     {
       "ID": 10010100,
       "Entries": [
-        "Gunlance +1"
+        "Uncanny Rifle Spear +1"
       ]
     },
     {
       "ID": 10010200,
       "Entries": [
-        "Gunlance +2"
+        "Uncanny Rifle Spear +2"
       ]
     },
     {
       "ID": 10010300,
       "Entries": [
-        "Gunlance +3"
+        "Uncanny Rifle Spear +3"
       ]
     },
     {
       "ID": 10010400,
       "Entries": [
-        "Gunlance +4"
+        "Uncanny Rifle Spear +4"
       ]
     },
     {
       "ID": 10010500,
       "Entries": [
-        "Gunlance +5"
+        "Uncanny Rifle Spear +5"
       ]
     },
     {
       "ID": 10010600,
       "Entries": [
-        "Gunlance +6"
+        "Uncanny Rifle Spear +6"
       ]
     },
     {
       "ID": 10010700,
       "Entries": [
-        "Gunlance +7"
+        "Uncanny Rifle Spear +7"
       ]
     },
     {
       "ID": 10010800,
       "Entries": [
-        "Gunlance +8"
+        "Uncanny Rifle Spear +8"
       ]
     },
     {
       "ID": 10010900,
       "Entries": [
-        "Gunlance +9"
+        "Uncanny Rifle Spear +9"
       ]
     },
     {
       "ID": 10011000,
       "Entries": [
-        "Gunlance +10"
+        "Uncanny Rifle Spear +10"
       ]
     },
     {
       "ID": 10020000,
       "Entries": [
-        "Gunlance"
+        "Lost Rifle Spear"
       ]
     },
     {
       "ID": 10020100,
       "Entries": [
-        "Gunlance +1"
+        "Lost Rifle Spear +1"
       ]
     },
     {
       "ID": 10020200,
       "Entries": [
-        "Gunlance +2"
+        "Lost Rifle Spear +2"
       ]
     },
     {
       "ID": 10020300,
       "Entries": [
-        "Gunlance +3"
+        "Lost Rifle Spear +3"
       ]
     },
     {
       "ID": 10020400,
       "Entries": [
-        "Gunlance +4"
+        "Lost Rifle Spear +4"
       ]
     },
     {
       "ID": 10020500,
       "Entries": [
-        "Gunlance +5"
+        "Lost Rifle Spear +5"
       ]
     },
     {
       "ID": 10020600,
       "Entries": [
-        "Gunlance +6"
+        "Lost Rifle Spear +6"
       ]
     },
     {
       "ID": 10020700,
       "Entries": [
-        "Gunlance +7"
+        "Lost Rifle Spear +7"
       ]
     },
     {
       "ID": 10020800,
       "Entries": [
-        "Gunlance +8"
+        "Lost Rifle Spear +8"
       ]
     },
     {
       "ID": 10020900,
       "Entries": [
-        "Gunlance +9"
+        "Lost Rifle Spear +9"
       ]
     },
     {
       "ID": 10021000,
       "Entries": [
-        "Gunlance +10"
+        "Lost Rifle Spear +10"
       ]
     },
     {
       "ID": 10090000,
       "Entries": [
-        "Prowling Gunlance"
+        "Rifle Spear (Ghost)"
       ]
     },
     {
       "ID": 10100000,
       "Entries": [
-        "bayonet"
+        "Reiterpallasch"
       ]
     },
     {
       "ID": 10100100,
       "Entries": [
-        "Bayonet +1"
+        "Reiterpallasch +1"
       ]
     },
     {
       "ID": 10100200,
       "Entries": [
-        "Bayonet +2"
+        "Reiterpallasch +2"
       ]
     },
     {
       "ID": 10100300,
       "Entries": [
-        "Bayonet +3"
+        "Reiterpallasch +3"
       ]
     },
     {
       "ID": 10100400,
       "Entries": [
-        "Bayonet +4"
+        "Reiterpallasch +4"
       ]
     },
     {
       "ID": 10100500,
       "Entries": [
-        "Bayonet +5"
+        "Reiterpallasch +5"
       ]
     },
     {
       "ID": 10100600,
       "Entries": [
-        "Bayonet +6"
+        "Reiterpallasch +6"
       ]
     },
     {
       "ID": 10100700,
       "Entries": [
-        "Bayonet +7"
+        "Reiterpallasch +7"
       ]
     },
     {
       "ID": 10100800,
       "Entries": [
-        "Bayonet +8"
+        "Reiterpallasch +8"
       ]
     },
     {
       "ID": 10100900,
       "Entries": [
-        "Bayonet +9"
+        "Reiterpallasch +9"
       ]
     },
     {
       "ID": 10101000,
       "Entries": [
-        "Bayonet +10"
+        "Reiterpallasch +10"
       ]
     },
     {
       "ID": 10110000,
       "Entries": [
-        "bayonet"
+        "Uncanny Reiterpallasch"
       ]
     },
     {
       "ID": 10110100,
       "Entries": [
-        "Bayonet +1"
+        "Uncanny Reiterpallasch +1"
       ]
     },
     {
       "ID": 10110200,
       "Entries": [
-        "Bayonet +2"
+        "Uncanny Reiterpallasch +2"
       ]
     },
     {
       "ID": 10110300,
       "Entries": [
-        "Bayonet +3"
+        "Uncanny Reiterpallasch +3"
       ]
     },
     {
       "ID": 10110400,
       "Entries": [
-        "Bayonet +4"
+        "Uncanny Reiterpallasch +4"
       ]
     },
     {
       "ID": 10110500,
       "Entries": [
-        "Bayonet +5"
+        "Uncanny Reiterpallasch +5"
       ]
     },
     {
       "ID": 10110600,
       "Entries": [
-        "Bayonet +6"
+        "Uncanny Reiterpallasch +6"
       ]
     },
     {
       "ID": 10110700,
       "Entries": [
-        "Bayonet +7"
+        "Uncanny Reiterpallasch +7"
       ]
     },
     {
       "ID": 10110800,
       "Entries": [
-        "Bayonet +8"
+        "Uncanny Reiterpallasch +8"
       ]
     },
     {
       "ID": 10110900,
       "Entries": [
-        "Bayonet +9"
+        "Uncanny Reiterpallasch +9"
       ]
     },
     {
       "ID": 10111000,
       "Entries": [
-        "Bayonet +10"
+        "Uncanny Reiterpallasch +10"
       ]
     },
     {
       "ID": 10120000,
       "Entries": [
-        "bayonet"
+        "Lost Reiterpallasch"
       ]
     },
     {
       "ID": 10120100,
       "Entries": [
-        "Bayonet +1"
+        "Lost Reiterpallasch +1"
       ]
     },
     {
       "ID": 10120200,
       "Entries": [
-        "Bayonet +2"
+        "Lost Reiterpallasch +2"
       ]
     },
     {
       "ID": 10120300,
       "Entries": [
-        "Bayonet +3"
+        "Lost Reiterpallasch +3"
       ]
     },
     {
       "ID": 10120400,
       "Entries": [
-        "Bayonet +4"
+        "Lost Reiterpallasch +4"
       ]
     },
     {
       "ID": 10120500,
       "Entries": [
-        "Bayonet +5"
+        "Lost Reiterpallasch +5"
       ]
     },
     {
       "ID": 10120600,
       "Entries": [
-        "Bayonet +6"
+        "Lost Reiterpallasch +6"
       ]
     },
     {
       "ID": 10120700,
       "Entries": [
-        "Bayonet +7"
+        "Lost Reiterpallasch +7"
       ]
     },
     {
       "ID": 10120800,
       "Entries": [
-        "Bayonet +8"
+        "Lost Reiterpallasch +8"
       ]
     },
     {
       "ID": 10120900,
       "Entries": [
-        "Bayonet +9"
+        "Lost Reiterpallasch +9"
       ]
     },
     {
       "ID": 10121000,
       "Entries": [
-        "Bayonet +10"
+        "Lost Reiterpallasch +10"
       ]
     },
     {
       "ID": 10190000,
       "Entries": [
-        "Wandering Bayonet"
+        "Reiterpallasch (Ghost)"
       ]
     },
     {
       "ID": 11000000,
       "Entries": [
-        "Pile Bunker"
+        "Stake Driver"
       ]
     },
     {
       "ID": 11000100,
       "Entries": [
-        "Pile Bunker +1"
+        "Stake Driver +1"
       ]
     },
     {
       "ID": 11000200,
       "Entries": [
-        "Pile Bunker +2"
+        "Stake Driver +2"
       ]
     },
     {
       "ID": 11000300,
       "Entries": [
-        "Pile Bunker +3"
+        "Stake Driver +3"
       ]
     },
     {
       "ID": 11000400,
       "Entries": [
-        "Pile Bunker +4"
+        "Stake Driver +4"
       ]
     },
     {
       "ID": 11000500,
       "Entries": [
-        "Pile Bunker +5"
+        "Stake Driver +5"
       ]
     },
     {
       "ID": 11000600,
       "Entries": [
-        "Pile Bunker +6"
+        "Stake Driver +6"
       ]
     },
     {
       "ID": 11000700,
       "Entries": [
-        "Pile Bunker +7"
+        "Stake Driver +7"
       ]
     },
     {
       "ID": 11000800,
       "Entries": [
-        "Pile Bunker +8"
+        "Stake Driver +8"
       ]
     },
     {
       "ID": 11000900,
       "Entries": [
-        "Pile Bunker +9"
+        "Stake Driver +9"
       ]
     },
     {
       "ID": 11001000,
       "Entries": [
-        "Pile Bunker +10"
+        "Stake Driver +10"
       ]
     },
     {
       "ID": 11010000,
       "Entries": [
-        "Pile Bunker"
+        "Uncanny Stake Driver"
       ]
     },
     {
       "ID": 11010100,
       "Entries": [
-        "Pile Bunker +1"
+        "Uncanny Stake Driver +1"
       ]
     },
     {
       "ID": 11010200,
       "Entries": [
-        "Pile Bunker +2"
+        "Uncanny Stake Driver +2"
       ]
     },
     {
       "ID": 11010300,
       "Entries": [
-        "Pile Bunker +3"
+        "Uncanny Stake Driver +3"
       ]
     },
     {
       "ID": 11010400,
       "Entries": [
-        "Pile Bunker +4"
+        "Uncanny Stake Driver +4"
       ]
     },
     {
       "ID": 11010500,
       "Entries": [
-        "Pile Bunker +5"
+        "Uncanny Stake Driver +5"
       ]
     },
     {
       "ID": 11010600,
       "Entries": [
-        "Pile Bunker +6"
+        "Uncanny Stake Driver +6"
       ]
     },
     {
       "ID": 11010700,
       "Entries": [
-        "Pile Bunker +7"
+        "Uncanny Stake Driver +7"
       ]
     },
     {
       "ID": 11010800,
       "Entries": [
-        "Pile Bunker +8"
+        "Uncanny Stake Driver +8"
       ]
     },
     {
       "ID": 11010900,
       "Entries": [
-        "Pile Bunker +9"
+        "Uncanny Stake Driver +9"
       ]
     },
     {
       "ID": 11011000,
       "Entries": [
-        "Pile Bunker +10"
+        "Uncanny Stake Driver +10"
       ]
     },
     {
       "ID": 11020000,
       "Entries": [
-        "Pile Bunker"
+        "Lost Stake Driver"
       ]
     },
     {
       "ID": 11020100,
       "Entries": [
-        "Pile Bunker +1"
+        "Lost Stake Driver +1"
       ]
     },
     {
       "ID": 11020200,
       "Entries": [
-        "Pile Bunker +2"
+        "Lost Stake Driver +2"
       ]
     },
     {
       "ID": 11020300,
       "Entries": [
-        "Pile Bunker +3"
+        "Lost Stake Driver +3"
       ]
     },
     {
       "ID": 11020400,
       "Entries": [
-        "Pile Bunker +4"
+        "Lost Stake Driver +4"
       ]
     },
     {
       "ID": 11020500,
       "Entries": [
-        "Pile Bunker +5"
+        "Lost Stake Driver +5"
       ]
     },
     {
       "ID": 11020600,
       "Entries": [
-        "Pile Bunker +6"
+        "Lost Stake Driver +6"
       ]
     },
     {
       "ID": 11020700,
       "Entries": [
-        "Pile Bunker +7"
+        "Lost Stake Driver +7"
       ]
     },
     {
       "ID": 11020800,
       "Entries": [
-        "Pile Bunker +8"
+        "Lost Stake Driver +8"
       ]
     },
     {
       "ID": 11020900,
       "Entries": [
-        "Pile Bunker +9"
+        "Lost Stake Driver +9"
       ]
     },
     {
       "ID": 11021000,
       "Entries": [
-        "Pile Bunker +10"
+        "Lost Stake Driver +10"
       ]
     },
     {
       "ID": 11090000,
       "Entries": [
-        "Wandering Pile Bunker"
+        "Stake Driver (Ghost)"
       ]
     },
     {
       "ID": 12000000,
       "Entries": [
-        "wheel"
+        "Logarius's Wheel"
       ]
     },
     {
       "ID": 12000100,
       "Entries": [
-        "Wheel +1"
+        "Logarius's Wheel +1"
       ]
     },
     {
       "ID": 12000200,
       "Entries": [
-        "Wheels +2"
+        "Logarius's Wheel +2"
       ]
     },
     {
       "ID": 12000300,
       "Entries": [
-        "Wheels +3"
+        "Logarius's Wheel +3"
       ]
     },
     {
       "ID": 12000400,
       "Entries": [
-        "Wheels +4"
+        "Logarius's Wheel +4"
       ]
     },
     {
       "ID": 12000500,
       "Entries": [
-        "Wheels +5"
+        "Logarius's Wheel +5"
       ]
     },
     {
       "ID": 12000600,
       "Entries": [
-        "Wheels +6"
+        "Logarius's Wheel +6"
       ]
     },
     {
       "ID": 12000700,
       "Entries": [
-        "Wheels +7"
+        "Logarius's Wheel +7"
       ]
     },
     {
       "ID": 12000800,
       "Entries": [
-        "Wheels +8"
+        "Logarius's Wheel +8"
       ]
     },
     {
       "ID": 12000900,
       "Entries": [
-        "Wheel +9"
+        "Logarius's Wheel +9"
       ]
     },
     {
       "ID": 12001000,
       "Entries": [
-        "Wheels +10"
+        "Logarius's Wheel +10"
       ]
     },
     {
       "ID": 12010000,
       "Entries": [
-        "wheel"
+        "Logarius's Uncanny Wheel"
       ]
     },
     {
       "ID": 12010100,
       "Entries": [
-        "Wheel +1"
+        "Logarius's Uncanny Wheel +1"
       ]
     },
     {
       "ID": 12010200,
       "Entries": [
-        "Wheels +2"
+        "Logarius's Uncanny Wheel +2"
       ]
     },
     {
       "ID": 12010300,
       "Entries": [
-        "Wheels +3"
+        "Logarius's Uncanny Wheel +3"
       ]
     },
     {
       "ID": 12010400,
       "Entries": [
-        "Wheels +4"
+        "Logarius's Uncanny Wheel +4"
       ]
     },
     {
       "ID": 12010500,
       "Entries": [
-        "Wheels +5"
+        "Logarius's Uncanny Wheel +5"
       ]
     },
     {
       "ID": 12010600,
       "Entries": [
-        "Wheels +6"
+        "Logarius's Uncanny Wheel +6"
       ]
     },
     {
       "ID": 12010700,
       "Entries": [
-        "Wheels +7"
+        "Logarius's Uncanny Wheel +7"
       ]
     },
     {
       "ID": 12010800,
       "Entries": [
-        "Wheels +8"
+        "Logarius's Uncanny Wheel +8"
       ]
     },
     {
       "ID": 12010900,
       "Entries": [
-        "Wheel +9"
+        "Logarius's Uncanny Wheel +9"
       ]
     },
     {
       "ID": 12011000,
       "Entries": [
-        "Wheels +10"
+        "Logarius's Uncanny Wheel +10"
       ]
     },
     {
       "ID": 12020000,
       "Entries": [
-        "wheel"
+        "Logarius's Lost Wheel"
       ]
     },
     {
       "ID": 12020100,
       "Entries": [
-        "Wheel +1"
+        "Logarius's Lost Wheel +1"
       ]
     },
     {
       "ID": 12020200,
       "Entries": [
-        "Wheels +2"
+        "Logarius's Lost Wheel +2"
       ]
     },
     {
       "ID": 12020300,
       "Entries": [
-        "Wheels +3"
+        "Logarius's Lost Wheel +3"
       ]
     },
     {
       "ID": 12020400,
       "Entries": [
-        "Wheels +4"
+        "Logarius's Lost Wheel +4"
       ]
     },
     {
       "ID": 12020500,
       "Entries": [
-        "Wheels +5"
+        "Logarius's Lost Wheel +5"
       ]
     },
     {
       "ID": 12020600,
       "Entries": [
-        "Wheels +6"
+        "Logarius's Lost Wheel +6"
       ]
     },
     {
       "ID": 12020700,
       "Entries": [
-        "Wheels +7"
+        "Logarius's Lost Wheel +7"
       ]
     },
     {
       "ID": 12020800,
       "Entries": [
-        "Wheels +8"
+        "Logarius's Lost Wheel +8"
       ]
     },
     {
       "ID": 12020900,
       "Entries": [
-        "Wheel +9"
+        "Logarius's Lost Wheel +9"
       ]
     },
     {
       "ID": 12021000,
       "Entries": [
-        "Wheels +10"
+        "Logarius's Lost Wheel +10"
       ]
     },
     {
       "ID": 12080000,
       "Entries": [
-        "wheel"
+        "Alfred's Logarius' Wheel"
       ]
     },
     {
       "ID": 12080100,
       "Entries": [
-        "Wheel +1"
+        "Alfred's Logarius' Wheel +1"
       ]
     },
     {
       "ID": 12080200,
       "Entries": [
-        "Wheels +2"
+        "Alfred's Logarius' Wheel +2"
       ]
     },
     {
       "ID": 12080300,
       "Entries": [
-        "Wheels +3"
+        "Alfred's Logarius' Wheel +3"
       ]
     },
     {
       "ID": 12080400,
       "Entries": [
-        "Wheels +4"
+        "Alfred's Logarius' Wheel +4"
       ]
     },
     {
       "ID": 12080500,
       "Entries": [
-        "Wheels +5"
+        "Alfred's Logarius' Wheel +5"
       ]
     },
     {
       "ID": 12080600,
       "Entries": [
-        "Wheels +6"
+        "Alfred's Logarius' Wheel +6"
       ]
     },
     {
       "ID": 12080700,
       "Entries": [
-        "Wheels +7"
+        "Alfred's Logarius' Wheel +7"
       ]
     },
     {
       "ID": 12080800,
       "Entries": [
-        "Wheels +8"
+        "Alfred's Logarius' Wheel +8"
       ]
     },
     {
       "ID": 12080900,
       "Entries": [
-        "Wheel +9"
+        "Alfred's Logarius' Wheel +9"
       ]
     },
     {
       "ID": 12081000,
       "Entries": [
-        "Wheels +10"
+        "Alfred's Logarius' Wheel +10"
       ]
     },
     {
       "ID": 12090000,
       "Entries": [
-        "Wandering Wheel"
+        "Logarius's Wheel (Ghost)"
       ]
     },
     {
       "ID": 13000000,
       "Entries": [
-        "Explosive Hammer"
+        "Tonitrus"
       ]
     },
     {
       "ID": 13000100,
       "Entries": [
-        "Explosive Hammer +1"
+        "Tonitrus +1"
       ]
     },
     {
       "ID": 13000200,
       "Entries": [
-        "Explosive Hammer +2"
+        "Tonitrus +2"
       ]
     },
     {
       "ID": 13000300,
       "Entries": [
-        "Explosive Hammer +3"
+        "Tonitrus +3"
       ]
     },
     {
       "ID": 13000400,
       "Entries": [
-        "Explosive Hammer +4"
+        "Tonitrus +4"
       ]
     },
     {
       "ID": 13000500,
       "Entries": [
-        "Explosive Hammer +5"
+        "Tonitrus +5"
       ]
     },
     {
       "ID": 13000600,
       "Entries": [
-        "Explosive Hammer +6"
+        "Tonitrus +6"
       ]
     },
     {
       "ID": 13000700,
       "Entries": [
-        "Explosive Hammer +7"
+        "Tonitrus +7"
       ]
     },
     {
       "ID": 13000800,
       "Entries": [
-        "Explosive Hammer +8"
+        "Tonitrus +8"
       ]
     },
     {
       "ID": 13000900,
       "Entries": [
-        "Explosive Hammer +9"
+        "Tonitrus +9"
       ]
     },
     {
       "ID": 13001000,
       "Entries": [
-        "Explosive Hammer +10"
+        "Tonitrus +10"
       ]
     },
     {
       "ID": 13010000,
       "Entries": [
-        "Explosive Hammer"
+        "Uncanny Tonitrus"
       ]
     },
     {
       "ID": 13010100,
       "Entries": [
-        "Explosive Hammer +1"
+        "Uncanny Tonitrus +1"
       ]
     },
     {
       "ID": 13010200,
       "Entries": [
-        "Explosive Hammer +2"
+        "Uncanny Tonitrus +2"
       ]
     },
     {
       "ID": 13010300,
       "Entries": [
-        "Explosive Hammer +3"
+        "Uncanny Tonitrus +3"
       ]
     },
     {
       "ID": 13010400,
       "Entries": [
-        "Explosive Hammer +4"
+        "Uncanny Tonitrus +4"
       ]
     },
     {
       "ID": 13010500,
       "Entries": [
-        "Explosive Hammer +5"
+        "Uncanny Tonitrus +5"
       ]
     },
     {
       "ID": 13010600,
       "Entries": [
-        "Explosive Hammer +6"
+        "Uncanny Tonitrus +6"
       ]
     },
     {
       "ID": 13010700,
       "Entries": [
-        "Explosive Hammer +7"
+        "Uncanny Tonitrus +7"
       ]
     },
     {
       "ID": 13010800,
       "Entries": [
-        "Explosive Hammer +8"
+        "Uncanny Tonitrus +8"
       ]
     },
     {
       "ID": 13010900,
       "Entries": [
-        "Explosive Hammer +9"
+        "Uncanny Tonitrus +9"
       ]
     },
     {
       "ID": 13011000,
       "Entries": [
-        "Explosive Hammer +10"
+        "Uncanny Tonitrus +10"
       ]
     },
     {
       "ID": 13020000,
       "Entries": [
-        "Explosive Hammer"
+        "Lost Tonitrus"
       ]
     },
     {
       "ID": 13020100,
       "Entries": [
-        "Explosive Hammer +1"
+        "Lost Tonitrus +1"
       ]
     },
     {
       "ID": 13020200,
       "Entries": [
-        "Explosive Hammer +2"
+        "Lost Tonitrus +2"
       ]
     },
     {
       "ID": 13020300,
       "Entries": [
-        "Explosive Hammer +3"
+        "Lost Tonitrus +3"
       ]
     },
     {
       "ID": 13020400,
       "Entries": [
-        "Explosive Hammer +4"
+        "Lost Tonitrus +4"
       ]
     },
     {
       "ID": 13020500,
       "Entries": [
-        "Explosive Hammer +5"
+        "Lost Tonitrus +5"
       ]
     },
     {
       "ID": 13020600,
       "Entries": [
-        "Explosive Hammer +6"
+        "Lost Tonitrus +6"
       ]
     },
     {
       "ID": 13020700,
       "Entries": [
-        "Explosive Hammer +7"
+        "Lost Tonitrus +7"
       ]
     },
     {
       "ID": 13020800,
       "Entries": [
-        "Explosive Hammer +8"
+        "Lost Tonitrus +8"
       ]
     },
     {
       "ID": 13020900,
       "Entries": [
-        "Explosive Hammer +9"
+        "Lost Tonitrus +9"
       ]
     },
     {
       "ID": 13021000,
       "Entries": [
-        "Explosive Hammer +10"
+        "Lost Tonitrus +10"
       ]
     },
     {
       "ID": 13090000,
       "Entries": [
-        "Wandering Explosive Hammer"
+        "Tonitrus (Ghost)"
       ]
     },
     {
       "ID": 14000000,
       "Entries": [
-        "Workshop pistol"
+        "Hunter Pistol"
       ]
     },
     {
       "ID": 14000100,
       "Entries": [
-        "Workshop pistol +1"
+        "Hunter Pistol +1"
       ]
     },
     {
       "ID": 14000200,
       "Entries": [
-        "Workshop Pistol +2"
+        "Hunter Pistol +2"
       ]
     },
     {
       "ID": 14000300,
       "Entries": [
-        "Workshop Pistol +3"
+        "Hunter Pistol +3"
       ]
     },
     {
       "ID": 14000400,
       "Entries": [
-        "Workshop Pistol +4"
+        "Hunter Pistol +4"
       ]
     },
     {
       "ID": 14000500,
       "Entries": [
-        "Workshop Pistol +5"
+        "Hunter Pistol +5"
       ]
     },
     {
       "ID": 14000600,
       "Entries": [
-        "Workshop pistol +6"
+        "Hunter Pistol +6"
       ]
     },
     {
       "ID": 14000700,
       "Entries": [
-        "Workshop Pistol +7"
+        "Hunter Pistol +7"
       ]
     },
     {
       "ID": 14000800,
       "Entries": [
-        "Workshop pistol +8"
+        "Hunter Pistol +8"
       ]
     },
     {
       "ID": 14000900,
       "Entries": [
-        "Workshop Pistol +9"
+        "Hunter Pistol +9"
       ]
     },
     {
       "ID": 14001000,
       "Entries": [
-        "Workshop pistol +10"
+        "Hunter Pistol +10"
       ]
     },
     {
       "ID": 14090000,
       "Entries": [
-        "Wandering Workshop Pistol"
+        "Hunter Pistol (Ghost)"
       ]
     },
     {
       "ID": 14100000,
       "Entries": [
-        "Vampire Pistol"
+        "Evelyn"
       ]
     },
     {
       "ID": 14100100,
       "Entries": [
-        "Vampire pistol +1"
+        "Evelyn +1"
       ]
     },
     {
       "ID": 14100200,
       "Entries": [
-        "Vampire pistol +2"
+        "Evelyn +2"
       ]
     },
     {
       "ID": 14100300,
       "Entries": [
-        "Vampire pistol +3"
+        "Evelyn +3"
       ]
     },
     {
       "ID": 14100400,
       "Entries": [
-        "Vampire pistol +4"
+        "Evelyn +4"
       ]
     },
     {
       "ID": 14100500,
       "Entries": [
-        "Vampire pistol +5"
+        "Evelyn +5"
       ]
     },
     {
       "ID": 14100600,
       "Entries": [
-        "Vampire pistol +6"
+        "Evelyn +6"
       ]
     },
     {
       "ID": 14100700,
       "Entries": [
-        "Vampire pistol +7"
+        "Evelyn +7"
       ]
     },
     {
       "ID": 14100800,
       "Entries": [
-        "Vampire pistol +8"
+        "Evelyn +8"
       ]
     },
     {
       "ID": 14100900,
       "Entries": [
-        "Vampire pistol +9"
+        "Evelyn +9"
       ]
     },
     {
       "ID": 14101000,
       "Entries": [
-        "Vampire pistol +10"
+        "Evelyn +10"
       ]
     },
     {
       "ID": 14190000,
       "Entries": [
-        "Wandering Vampire Pistol"
+        "Evelyn (Ghost)"
       ]
     },
     {
       "ID": 14200000,
       "Entries": [
-        "Church pistol"
+        "Repeating Pistol"
       ]
     },
     {
       "ID": 14200100,
       "Entries": [
-        "Church Pistol +1"
+        "Repeating Pistol +1"
       ]
     },
     {
       "ID": 14200200,
       "Entries": [
-        "Church Pistol +2"
+        "Repeating Pistol +2"
       ]
     },
     {
       "ID": 14200300,
       "Entries": [
-        "Church Pistol +3"
+        "Repeating Pistol +3"
       ]
     },
     {
       "ID": 14200400,
       "Entries": [
-        "Church Pistol +4"
+        "Repeating Pistol +4"
       ]
     },
     {
       "ID": 14200500,
       "Entries": [
-        "Church Pistol +5"
+        "Repeating Pistol +5"
       ]
     },
     {
       "ID": 14200600,
       "Entries": [
-        "Church Pistol +6"
+        "Repeating Pistol +6"
       ]
     },
     {
       "ID": 14200700,
       "Entries": [
-        "Church Pistol +7"
+        "Repeating Pistol +7"
       ]
     },
     {
       "ID": 14200800,
       "Entries": [
-        "Church Pistol +8"
+        "Repeating Pistol +8"
       ]
     },
     {
       "ID": 14200900,
       "Entries": [
-        "Church Pistol +9"
+        "Repeating Pistol +9"
       ]
     },
     {
       "ID": 14201000,
       "Entries": [
-        "Church Pistol +10"
+        "Repeating Pistol +10"
       ]
     },
     {
       "ID": 14290000,
       "Entries": [
-        "Wandering Church Pistol"
+        "Repeating Pistol (Ghost)"
       ]
     },
     {
       "ID": 15000000,
       "Entries": [
-        "Large canister"
+        "Cannon"
       ]
     },
     {
@@ -4300,175 +4300,175 @@
     {
       "ID": 15090000,
       "Entries": [
-        "Wandering Cannon"
+        "Cannon (Ghost)"
       ]
     },
     {
       "ID": 18000000,
       "Entries": [
-        "Sprayer"
+        "Rosmarinus"
       ]
     },
     {
       "ID": 18000100,
       "Entries": [
-        "Sprayer +1"
+        "Rosmarinus +1"
       ]
     },
     {
       "ID": 18000200,
       "Entries": [
-        "Sprayer +2"
+        "Rosmarinus +2"
       ]
     },
     {
       "ID": 18000300,
       "Entries": [
-        "Sprayer +3"
+        "Rosmarinus +3"
       ]
     },
     {
       "ID": 18000400,
       "Entries": [
-        "Sprayer +4"
+        "Rosmarinus +4"
       ]
     },
     {
       "ID": 18000500,
       "Entries": [
-        "Sprayer +5"
+        "Rosmarinus +5"
       ]
     },
     {
       "ID": 18000600,
       "Entries": [
-        "Sprayer +6"
+        "Rosmarinus +6"
       ]
     },
     {
       "ID": 18000700,
       "Entries": [
-        "Sprayer +7"
+        "Rosmarinus +7"
       ]
     },
     {
       "ID": 18000800,
       "Entries": [
-        "Sprayer +8"
+        "Rosmarinus +8"
       ]
     },
     {
       "ID": 18000900,
       "Entries": [
-        "Sprayer +9"
+        "Rosmarinus +9"
       ]
     },
     {
       "ID": 18001000,
       "Entries": [
-        "Sprayer +10"
+        "Rosmarinus +10"
       ]
     },
     {
       "ID": 18090000,
       "Entries": [
-        "Wandering Sprayer"
+        "Rosmarinus (Ghost)"
       ]
     },
     {
       "ID": 18100000,
       "Entries": [
-        "Sprayer _ Flamethrower"
+        "Flamesprayer"
       ]
     },
     {
       "ID": 18100100,
       "Entries": [
-        "Sprayer _ Flamethrower +1"
+        "Flamesprayer +1"
       ]
     },
     {
       "ID": 18100200,
       "Entries": [
-        "Sprayer _ Flamethrower +2"
+        "Flamesprayer +2"
       ]
     },
     {
       "ID": 18100300,
       "Entries": [
-        "Sprayer _ Flamethrower +3"
+        "Flamesprayer +3"
       ]
     },
     {
       "ID": 18100400,
       "Entries": [
-        "Sprayer _ Flamethrower +4"
+        "Flamesprayer +4"
       ]
     },
     {
       "ID": 18100500,
       "Entries": [
-        "Sprayer _ Flamethrower +5"
+        "Flamesprayer +5"
       ]
     },
     {
       "ID": 18100600,
       "Entries": [
-        "Sprayer _ Flamethrower +6"
+        "Flamesprayer +6"
       ]
     },
     {
       "ID": 18100700,
       "Entries": [
-        "Sprayer _ Flamethrower +7"
+        "Flamesprayer +7"
       ]
     },
     {
       "ID": 18100800,
       "Entries": [
-        "Sprayer _ Flamethrower +8"
+        "Flamesprayer +8"
       ]
     },
     {
       "ID": 18100900,
       "Entries": [
-        "Sprayer _ Flamethrower +9"
+        "Flamesprayer +9"
       ]
     },
     {
       "ID": 18101000,
       "Entries": [
-        "Sprayer _ Flamethrower +10"
+        "Flamesprayer +10"
       ]
     },
     {
       "ID": 18190000,
       "Entries": [
-        "Wandering Sprayer _ Flamethrower"
+        "Flamesprayer (Ghost)"
       ]
     },
     {
       "ID": 19000000,
       "Entries": [
-        "shield"
+        "Wooden Shield"
       ]
     },
     {
       "ID": 19090000,
       "Entries": [
-        "Wandering Shield"
+        "Wooden Shield (Ghost)"
       ]
     },
     {
       "ID": 19100000,
       "Entries": [
-        "Elemental Shield"
+        "Loch Shield"
       ]
     },
     {
       "ID": 19190000,
       "Entries": [
-        "Wandering Attribute Shield"
+        "Loch Shield (Ghost)"
       ]
     },
     {
@@ -4540,637 +4540,637 @@
     {
       "ID": 20090000,
       "Entries": [
-        "Wandering Hunter Torch"
+        "Hunter's Torch (Ghost)"
       ]
     },
     {
       "ID": 20100000,
       "Entries": [
-        "Just a torch"
+        "Torch"
       ]
     },
     {
       "ID": 22000000,
       "Entries": [
-        "Cane Whip"
+        "Threaded Cane"
       ]
     },
     {
       "ID": 22000100,
       "Entries": [
-        "Cane Whip +1"
+        "Threaded Cane +1"
       ]
     },
     {
       "ID": 22000200,
       "Entries": [
-        "Cane Whip +2"
+        "Threaded Cane +2"
       ]
     },
     {
       "ID": 22000300,
       "Entries": [
-        "Cane Whip +3"
+        "Threaded Cane +3"
       ]
     },
     {
       "ID": 22000400,
       "Entries": [
-        "Cane Whip +4"
+        "Threaded Cane +4"
       ]
     },
     {
       "ID": 22000500,
       "Entries": [
-        "Cane Whip +5"
+        "Threaded Cane +5"
       ]
     },
     {
       "ID": 22000600,
       "Entries": [
-        "Cane Whip +6"
+        "Threaded Cane +6"
       ]
     },
     {
       "ID": 22000700,
       "Entries": [
-        "Cane Whip +7"
+        "Threaded Cane +7"
       ]
     },
     {
       "ID": 22000800,
       "Entries": [
-        "Cane Whip +8"
+        "Threaded Cane +8"
       ]
     },
     {
       "ID": 22000900,
       "Entries": [
-        "Cane Whip +9"
+        "Threaded Cane +9"
       ]
     },
     {
       "ID": 22001000,
       "Entries": [
-        "Cane Whip +10"
+        "Threaded Cane +10"
       ]
     },
     {
       "ID": 22010000,
       "Entries": [
-        "Cane Whip"
+        "Uncanny Threaded Cane"
       ]
     },
     {
       "ID": 22010100,
       "Entries": [
-        "Cane Whip +1"
+        "Uncanny Threaded Cane +1"
       ]
     },
     {
       "ID": 22010200,
       "Entries": [
-        "Cane Whip +2"
+        "Uncanny Threaded Cane +2"
       ]
     },
     {
       "ID": 22010300,
       "Entries": [
-        "Cane Whip +3"
+        "Uncanny Threaded Cane +3"
       ]
     },
     {
       "ID": 22010400,
       "Entries": [
-        "Cane Whip +4"
+        "Uncanny Threaded Cane +4"
       ]
     },
     {
       "ID": 22010500,
       "Entries": [
-        "Cane Whip +5"
+        "Uncanny Threaded Cane +5"
       ]
     },
     {
       "ID": 22010600,
       "Entries": [
-        "Cane Whip +6"
+        "Uncanny Threaded Cane +6"
       ]
     },
     {
       "ID": 22010700,
       "Entries": [
-        "Cane Whip +7"
+        "Uncanny Threaded Cane +7"
       ]
     },
     {
       "ID": 22010800,
       "Entries": [
-        "Cane Whip +8"
+        "Uncanny Threaded Cane +8"
       ]
     },
     {
       "ID": 22010900,
       "Entries": [
-        "Cane Whip +9"
+        "Uncanny Threaded Cane +9"
       ]
     },
     {
       "ID": 22011000,
       "Entries": [
-        "Cane Whip +10"
+        "Uncanny Threaded Cane +10"
       ]
     },
     {
       "ID": 22020000,
       "Entries": [
-        "Cane Whip"
+        "Lost Threaded Cane"
       ]
     },
     {
       "ID": 22020100,
       "Entries": [
-        "Cane Whip +1"
+        "Lost Threaded Cane +1"
       ]
     },
     {
       "ID": 22020200,
       "Entries": [
-        "Cane Whip +2"
+        "Lost Threaded Cane +2"
       ]
     },
     {
       "ID": 22020300,
       "Entries": [
-        "Cane Whip +3"
+        "Lost Threaded Cane +3"
       ]
     },
     {
       "ID": 22020400,
       "Entries": [
-        "Cane Whip +4"
+        "Lost Threaded Cane +4"
       ]
     },
     {
       "ID": 22020500,
       "Entries": [
-        "Cane Whip +5"
+        "Lost Threaded Cane +5"
       ]
     },
     {
       "ID": 22020600,
       "Entries": [
-        "Cane Whip +6"
+        "Lost Threaded Cane +6"
       ]
     },
     {
       "ID": 22020700,
       "Entries": [
-        "Cane Whip +7"
+        "Lost Threaded Cane +7"
       ]
     },
     {
       "ID": 22020800,
       "Entries": [
-        "Cane Whip +8"
+        "Lost Threaded Cane +8"
       ]
     },
     {
       "ID": 22020900,
       "Entries": [
-        "Cane Whip +9"
+        "Lost Threaded Cane +9"
       ]
     },
     {
       "ID": 22021000,
       "Entries": [
-        "Cane Whip +10"
+        "Lost Threaded Cane +10"
       ]
     },
     {
       "ID": 22090000,
       "Entries": [
-        "Wandering Stick Whip"
+        "Threaded Cane (Ghost)"
       ]
     },
     {
       "ID": 23000000,
       "Entries": [
-        "Sawtooth Curved Sword"
+        "Beasthunter Saif"
       ]
     },
     {
       "ID": 23000100,
       "Entries": [
-        "Sawtooth Curved Sword +1"
+        "Beasthunter Saif +1"
       ]
     },
     {
       "ID": 23000200,
       "Entries": [
-        "Sawtooth Curved Sword +2"
+        "Beasthunter Saif +2"
       ]
     },
     {
       "ID": 23000300,
       "Entries": [
-        "Sawtooth Curved Sword +3"
+        "Beasthunter Saif +3"
       ]
     },
     {
       "ID": 23000400,
       "Entries": [
-        "Sawtooth Curved Sword +4"
+        "Beasthunter Saif +4"
       ]
     },
     {
       "ID": 23000500,
       "Entries": [
-        "Sawtooth Curved Sword +5"
+        "Beasthunter Saif +5"
       ]
     },
     {
       "ID": 23000600,
       "Entries": [
-        "Sawtooth Curved Sword +6"
+        "Beasthunter Saif +6"
       ]
     },
     {
       "ID": 23000700,
       "Entries": [
-        "Sawtooth Curved Sword +7"
+        "Beasthunter Saif +7"
       ]
     },
     {
       "ID": 23000800,
       "Entries": [
-        "Sawtooth Curved Sword +8"
+        "Beasthunter Saif +8"
       ]
     },
     {
       "ID": 23000900,
       "Entries": [
-        "Sawtooth Curved Sword +9"
+        "Beasthunter Saif +9"
       ]
     },
     {
       "ID": 23001000,
       "Entries": [
-        "Sawtooth Curved Sword +10"
+        "Beasthunter Saif +10"
       ]
     },
     {
       "ID": 23010000,
       "Entries": [
-        "Sawtooth Curved Sword"
+        "Uncanny Beasthunter Saif"
       ]
     },
     {
       "ID": 23010100,
       "Entries": [
-        "Sawtooth Curved Sword +1"
+        "Uncanny Beasthunter Saif +1"
       ]
     },
     {
       "ID": 23010200,
       "Entries": [
-        "Sawtooth Curved Sword +2"
+        "Uncanny Beasthunter Saif +2"
       ]
     },
     {
       "ID": 23010300,
       "Entries": [
-        "Sawtooth Curved Sword +3"
+        "Uncanny Beasthunter Saif +3"
       ]
     },
     {
       "ID": 23010400,
       "Entries": [
-        "Sawtooth Curved Sword +4"
+        "Uncanny Beasthunter Saif +4"
       ]
     },
     {
       "ID": 23010500,
       "Entries": [
-        "Sawtooth Curved Sword +5"
+        "Uncanny Beasthunter Saif +5"
       ]
     },
     {
       "ID": 23010600,
       "Entries": [
-        "Sawtooth Curved Sword +6"
+        "Uncanny Beasthunter Saif +6"
       ]
     },
     {
       "ID": 23010700,
       "Entries": [
-        "Sawtooth Curved Sword +7"
+        "Uncanny Beasthunter Saif +7"
       ]
     },
     {
       "ID": 23010800,
       "Entries": [
-        "Sawtooth Curved Sword +8"
+        "Uncanny Beasthunter Saif +8"
       ]
     },
     {
       "ID": 23010900,
       "Entries": [
-        "Sawtooth Curved Sword +9"
+        "Uncanny Beasthunter Saif +9"
       ]
     },
     {
       "ID": 23011000,
       "Entries": [
-        "Sawtooth Curved Sword +10"
+        "Uncanny Beasthunter Saif +10"
       ]
     },
     {
       "ID": 23020000,
       "Entries": [
-        "Sawtooth Curved Sword"
+        "Lost Beasthunter Saif"
       ]
     },
     {
       "ID": 23020100,
       "Entries": [
-        "Sawtooth Curved Sword +1"
+        "Lost Beasthunter Saif +1"
       ]
     },
     {
       "ID": 23020200,
       "Entries": [
-        "Sawtooth Curved Sword +2"
+        "Lost Beasthunter Saif +2"
       ]
     },
     {
       "ID": 23020300,
       "Entries": [
-        "Sawtooth Curved Sword +3"
+        "Lost Beasthunter Saif +3"
       ]
     },
     {
       "ID": 23020400,
       "Entries": [
-        "Sawtooth Curved Sword +4"
+        "Lost Beasthunter Saif +4"
       ]
     },
     {
       "ID": 23020500,
       "Entries": [
-        "Sawtooth Curved Sword +5"
+        "Lost Beasthunter Saif +5"
       ]
     },
     {
       "ID": 23020600,
       "Entries": [
-        "Sawtooth Curved Sword +6"
+        "Lost Beasthunter Saif +6"
       ]
     },
     {
       "ID": 23020700,
       "Entries": [
-        "Sawtooth Curved Sword +7"
+        "Lost Beasthunter Saif +7"
       ]
     },
     {
       "ID": 23020800,
       "Entries": [
-        "Sawtooth Curved Sword +8"
+        "Lost Beasthunter Saif +8"
       ]
     },
     {
       "ID": 23020900,
       "Entries": [
-        "Sawtooth Curved Sword +9"
+        "Lost Beasthunter Saif +9"
       ]
     },
     {
       "ID": 23021000,
       "Entries": [
-        "Sawtooth Curved Sword +10"
+        "Lost Beasthunter Saif +10"
       ]
     },
     {
       "ID": 23090000,
       "Entries": [
-        "Wandering Saw Curved Sword"
+        "Beasthunter Saif (Ghost)"
       ]
     },
     {
       "ID": 23099000,
       "Entries": [
-        "[For events] Saw-tooth curved sword"
+        "Beasthunter Saif (Event)"
       ]
     },
     {
       "ID": 24000000,
       "Entries": [
-        "Saw Whip"
+        "Beast Cutter"
       ]
     },
     {
       "ID": 24000100,
       "Entries": [
-        "Saw Whip +1"
+        "Beast Cutter +1"
       ]
     },
     {
       "ID": 24000200,
       "Entries": [
-        "Saw Whip +2"
+        "Beast Cutter +2"
       ]
     },
     {
       "ID": 24000300,
       "Entries": [
-        "Saw Whip +3"
+        "Beast Cutter +3"
       ]
     },
     {
       "ID": 24000400,
       "Entries": [
-        "Saw Whip +4"
+        "Beast Cutter +4"
       ]
     },
     {
       "ID": 24000500,
       "Entries": [
-        "Saw Whip +5"
+        "Beast Cutter +5"
       ]
     },
     {
       "ID": 24000600,
       "Entries": [
-        "Saw Whip +6"
+        "Beast Cutter +6"
       ]
     },
     {
       "ID": 24000700,
       "Entries": [
-        "Saw Whip +7"
+        "Beast Cutter +7"
       ]
     },
     {
       "ID": 24000800,
       "Entries": [
-        "Saw Whip +8"
+        "Beast Cutter +8"
       ]
     },
     {
       "ID": 24000900,
       "Entries": [
-        "Saw Whip +9"
+        "Beast Cutter +9"
       ]
     },
     {
       "ID": 24001000,
       "Entries": [
-        "Saw Whip +10"
+        "Beast Cutter +10"
       ]
     },
     {
       "ID": 24010000,
       "Entries": [
-        "Saw Whip"
+        "Uncanny Beast Cutter"
       ]
     },
     {
       "ID": 24010100,
       "Entries": [
-        "Saw Whip +1"
+        "Uncanny Beast Cutter +1"
       ]
     },
     {
       "ID": 24010200,
       "Entries": [
-        "Saw Whip +2"
+        "Uncanny Beast Cutter +2"
       ]
     },
     {
       "ID": 24010300,
       "Entries": [
-        "Saw Whip +3"
+        "Uncanny Beast Cutter +3"
       ]
     },
     {
       "ID": 24010400,
       "Entries": [
-        "Saw Whip +4"
+        "Uncanny Beast Cutter +4"
       ]
     },
     {
       "ID": 24010500,
       "Entries": [
-        "Saw Whip +5"
+        "Uncanny Beast Cutter +5"
       ]
     },
     {
       "ID": 24010600,
       "Entries": [
-        "Saw Whip +6"
+        "Uncanny Beast Cutter +6"
       ]
     },
     {
       "ID": 24010700,
       "Entries": [
-        "Saw Whip +7"
+        "Uncanny Beast Cutter +7"
       ]
     },
     {
       "ID": 24010800,
       "Entries": [
-        "Saw Whip +8"
+        "Uncanny Beast Cutter +8"
       ]
     },
     {
       "ID": 24010900,
       "Entries": [
-        "Saw Whip +9"
+        "Uncanny Beast Cutter +9"
       ]
     },
     {
       "ID": 24011000,
       "Entries": [
-        "Saw Whip +10"
+        "Uncanny Beast Cutter +10"
       ]
     },
     {
       "ID": 24020000,
       "Entries": [
-        "Saw Whip"
+        "Lost Beast Cutter"
       ]
     },
     {
       "ID": 24020100,
       "Entries": [
-        "Saw Whip +1"
+        "Lost Beast Cutter +1"
       ]
     },
     {
       "ID": 24020200,
       "Entries": [
-        "Saw Whip +2"
+        "Lost Beast Cutter +2"
       ]
     },
     {
       "ID": 24020300,
       "Entries": [
-        "Saw Whip +3"
+        "Lost Beast Cutter +3"
       ]
     },
     {
       "ID": 24020400,
       "Entries": [
-        "Saw Whip +4"
+        "Lost Beast Cutter +4"
       ]
     },
     {
       "ID": 24020500,
       "Entries": [
-        "Saw Whip +5"
+        "Lost Beast Cutter +5"
       ]
     },
     {
       "ID": 24020600,
       "Entries": [
-        "Saw Whip +6"
+        "Lost Beast Cutter +6"
       ]
     },
     {
       "ID": 24020700,
       "Entries": [
-        "Saw Whip +7"
+        "Lost Beast Cutter +7"
       ]
     },
     {
       "ID": 24020800,
       "Entries": [
-        "Saw Whip +8"
+        "Lost Beast Cutter +8"
       ]
     },
     {
       "ID": 24020900,
       "Entries": [
-        "Saw Whip +9"
+        "Lost Beast Cutter +9"
       ]
     },
     {
       "ID": 24021000,
       "Entries": [
-        "Saw Whip +10"
+        "Lost Beast Cutter +10"
       ]
     },
     {
       "ID": 24090000,
       "Entries": [
-        "Wandering Saw Whip"
+        "Beast Cutter (Ghost)"
       ]
     },
     {
       "ID": 24099000,
       "Entries": [
-        "[For events] Saw whip"
+        "Beast Cutter (Event)"
       ]
     },
     {
