@@ -85,9 +85,9 @@ public class ParamFieldWindow
     }
     public void DisplayTitle()
     {
-        var fieldListTable = LOC.Get("PARAM_FieldWindow_Title");
-
-        GUI.SimpleHeader($"{fieldListTable}", "");
+        GUI.SimpleHeader(
+            LOC.Get("PARAM_FieldWindow_Title"),
+            LOC.Get("PARAM_FieldWindow_Title_TT"));
     }
 
     public void DisplayFieldTable(Param.Row curRow, Param.Row vanillaRow, List<(string, Param.Row)> auxRows,
@@ -400,7 +400,7 @@ public class ParamFieldWindow
             }
 
             GUI.Tooltip(
-                LOC.Get("PARAM_FieldWindow_FieldNameMode_Hint", CFG.Current.ParamEditor_FieldNameMode.GetDisplayName()));
+                LOC.Get("PARAM_FieldWindow_FieldNameMode_Hint", LOC.Get(CFG.Current.ParamEditor_FieldNameMode.GetDisplayName())));
 
             // Toggle Vanilla Columns
             ImGui.SameLine();
@@ -1069,12 +1069,18 @@ public class ParamFieldWindow
                 ImGui.Separator();
             }
 
-            FieldTooltipHelper.IconTooltip(ParentView, metaContext, col);
+            if(col != null)
+            {
+                FieldTooltipHelper.IconTooltip(ParentView, metaContext, col.Def);
+            }
 
             // Field selection
             ImGui.Selectable("", false, ImGuiSelectableFlags.AllowOverlap);
 
-            FieldTooltipHelper.HoverTooltip(ParentView, metaContext, col);
+            if (col != null)
+            {
+                FieldTooltipHelper.HoverTooltip(ParentView, metaContext, col.Def);
+            }
 
             if (ImGui.IsItemClicked(ImGuiMouseButton.Right))
             {

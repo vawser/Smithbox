@@ -1,0 +1,393 @@
+{
+  "Param": "TENTATIVE_PLAYER_PARAM_ST",
+  "Type": "TENTATIVE_PLAYER_PARAM_ST",
+  "Name": "TENTATIVE_PLAYER_PARAM_ST",
+  "Description": "Stay Param. Handles various elements relating to the player state.",
+  "Fields": [
+    {
+      "Field": "PlayerFootEffect_bySFX",
+      "Name": "Player Automatic Foot Effect SFX Identifier",
+      "Description": "Identifier used for foot effect SFX IDs. Corresponds to the ZZZ portion of the XYYZZZ SFX ID."
+    },
+    {
+      "Field": "SnipeModeDrawAlpha_FadeTime",
+      "Name": "Sniping Mode Player Hide Fade Time",
+      "Description": "Time, in seconds, taken to fade the player out when entering precision aiming mode."
+    },
+    {
+      "Field": "ToughnessRecoverCorrection",
+      "Name": "Player Poise Recovery Time Correction",
+      "Description": "Correction value used when calculating the player's poise recovery time."
+    },
+    {
+      "Field": "DeceasedThreshold",
+      "Name": "Hollowing Threshold",
+      "Description": "If the player's Hollowing value is at or above this threshold when they die, they become Hollow."
+    },
+    {
+      "Field": "Reserved03",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "GiantNutGetRand_MaxProbability",
+      "Name": "Seed of a Giant Tree Drop Maximum Chance When Invaded",
+      "Description": "Maximum probability of obtaining a Seed of a Giant Tree after being invaded."
+    },
+    {
+      "Field": "AnimeID_DropItemPick",
+      "Name": "Dropped Item Pickup Animation ID",
+      "Description": "Animation ID played when picking up a dropped item."
+    },
+    {
+      "Field": "AnimeID_CofferItemPick",
+      "Name": "Chest Item Pickup Animation ID",
+      "Description": "Animation ID played when obtaining an item from a treasure chest. Appears to be unused."
+    },
+    {
+      "Field": "LoadOfCinderSpEffectId1",
+      "Name": "Lord of Cinder Special Effect 1",
+      "Description": "Special effect applied when entering the Lord of Cinder state. Applied only once upon initial activation."
+    },
+    {
+      "Field": "LoadOfCinderSpEffectId2",
+      "Name": "Lord of Cinder Special Effect 2",
+      "Description": "Special effect applied when entering the Lord of Cinder state. Applied only once upon initial activation."
+    },
+    {
+      "Field": "LoadOfCinderSpEffectId3",
+      "Name": "Lord of Cinder Special Effect 3",
+      "Description": "Special effect applied when entering the Lord of Cinder state. Applied only once upon initial activation."
+    },
+    {
+      "Field": "LoadOfCinderSpEffectId4",
+      "Name": "Lord of Cinder Special Effect 4",
+      "Description": "Special effect applied when entering the Lord of Cinder state. Applied only once upon initial activation."
+    },
+    {
+      "Field": "LoadOfCinderSpEffectId5",
+      "Name": "Lord of Cinder Special Effect 5",
+      "Description": "Special effect applied when entering the Lord of Cinder state. Applied only once upon initial activation."
+    },
+    {
+      "Field": "LowStatus_AtkPowDown",
+      "Name": "Insufficient Stats Base Attack Power Reduction",
+      "Description": "Reduction applied to base attack power when weapon stat requirements are not met."
+    },
+    {
+      "Field": "LowStatus_ConsumeStaminaRate",
+      "Name": "Insufficient Stats Stamina Consumption Multiplier",
+      "Description": "Multiplier applied to stamina consumption when weapon stat requirements are not met."
+    },
+    {
+      "Field": "LowStatus_AtkGuardBreak",
+      "Name": "Insufficient Stats Guard Break Power",
+      "Description": "Guard break power used when weapon stat requirements are not met."
+    },
+    {
+      "Field": "GuardStatusCorrect_MaxStatusVal",
+      "Name": "Shield Scaling Maximum Stat Value",
+      "Description": "Maximum stat value considered when calculating shield scaling bonuses."
+    },
+    {
+      "Field": "HeroAmongSinnersSpEffectId1",
+      "Name": "Multiplayer Inherited Lord of Cinder Special Effect 1",
+      "Description": "Special effect applied in multiplayer if the player is a Lord of Cinder and the state is inherited based on multiplayer role or summon type. Applied only once upon initial activation."
+    },
+    {
+      "Field": "HeroAmongSinnersSpEffectId2",
+      "Name": "Multiplayer Inherited Lord of Cinder Special Effect 2",
+      "Description": "Special effect applied in multiplayer if the player is a Lord of Cinder and the state is inherited based on multiplayer role or summon type. Applied only once upon initial activation."
+    },
+    {
+      "Field": "HeroAmongSinnersSpEffectId3",
+      "Name": "Multiplayer Inherited Lord of Cinder Special Effect 3",
+      "Description": "Special effect applied in multiplayer if the player is a Lord of Cinder and the state is inherited based on multiplayer role or summon type. Applied only once upon initial activation."
+    },
+    {
+      "Field": "HeroAmongSinnersSpEffectId4",
+      "Name": "Multiplayer Inherited Lord of Cinder Special Effect 4",
+      "Description": "Special effect applied in multiplayer if the player is a Lord of Cinder and the state is inherited based on multiplayer role or summon type. Applied only once upon initial activation."
+    },
+    {
+      "Field": "HeroAmongSinnersSpEffectId5",
+      "Name": "Multiplayer Inherited Lord of Cinder Special Effect 5",
+      "Description": "Special effect applied in multiplayer if the player is a Lord of Cinder and the state is inherited based on multiplayer role or summon type. Applied only once upon initial activation."
+    },
+    {
+      "Field": "DebtSp",
+      "Name": "Maximum Negative Stamina",
+      "Description": "Maximum amount of negative stamina that can be accumulated."
+    },
+    {
+      "Field": "WetOverrideInterpolateTime",
+      "Name": "Wet Material Override Blend Time",
+      "Description": "Interpolation time used when transitioning between overlapping wet material states."
+    },
+    {
+      "Field": "EstusFlaskAllocateRate",
+      "Name": "Multiplayer Client Estus Multiplier",
+      "Description": "Multiplier applied to a client's Estus Flask count in multiplayer. For example, 0.5 halves the number of flasks."
+    },
+    {
+      "Field": "GiantNutGetRand_Base",
+      "Name": "Seed of a Giant Tree Base Drop Chance",
+      "Description": "Base probability, in percent, of obtaining a Seed of a Giant Tree after being invaded."
+    },
+    {
+      "Field": "GiantNutGetRand_Bonus",
+      "Name": "Seed of a Giant Tree Bonus Drop Chance",
+      "Description": "Bonus probability, in percent, of obtaining a Seed of a Giant Tree after being invaded."
+    },
+    {
+      "Field": "KickAcceptanceDeg",
+      "Name": "Kick Input Angle",
+      "Description": "Maximum angle from the player's forward direction within which a kick input is accepted."
+    },
+    {
+      "Field": "NpcPlayerAnalogWeightRate_Light",
+      "Name": "NPC Player Analog Weight Ratio - Light",
+      "Description": "Analog movement weight ratio, in percent, used by NPC players while in the light equip load category."
+    },
+    {
+      "Field": "NpcPlayerAnalogWeightRate_Normal",
+      "Name": "NPC Player Analog Weight Ratio - Medium",
+      "Description": "Analog movement weight ratio, in percent, used by NPC players while in the medium equip load category."
+    },
+    {
+      "Field": "NpcPlayerAnalogWeightRate_Heavy",
+      "Name": "NPC Player Analog Weight Ratio - Heavy",
+      "Description": "Analog movement weight ratio, in percent, used by NPC players while in the heavy equip load category."
+    },
+    {
+      "Field": "NpcPlayerAnalogWeightRate_WeightOver",
+      "Name": "NPC Player Analog Weight Ratio - Overloaded",
+      "Description": "Analog movement weight ratio, in percent, used by NPC players while overloaded."
+    },
+    {
+      "Field": "NpcPlayerAnalogWeightRate_SuperLight",
+      "Name": "NPC Player Analog Weight Ratio - Very Light",
+      "Description": "Analog movement weight ratio, in percent, used by NPC players while in the very light equip load category."
+    },
+    {
+      "Field": "GiantNutClientEffectId",
+      "Name": "Seed of a Giant Tree Invader Special Effect ID",
+      "Description": "Special effect ID applied to invading dark spirits when the Seed of a Giant Tree is active."
+    },
+    {
+      "Field": "ClearCountCorrectBaseSpEffectId",
+      "Name": "NG+ Scaling Base Special Effect ID",
+      "Description": "Base special effect ID used to apply New Game cycle scaling bonuses."
+    },
+    {
+      "Field": "ArrowBoltModelIdOffset",
+      "Name": "Arrow/Bolt Model ID Offset",
+      "Description": "Offset added to the equipped slot 1 arrow or bolt model ID when displaying the projectile model."
+    },
+    {
+      "Field": "ArrowBoltRemainingNumModelMaskThreshold1",
+      "Name": "Arrow/Bolt Remaining Model Mask Threshold 1",
+      "Description": "First percentage threshold used to determine the visible arrow or bolt model based on the remaining ammunition count."
+    },
+    {
+      "Field": "ArrowBoltRemainingNumModelMaskThreshold2",
+      "Name": "Arrow/Bolt Remaining Model Mask Threshold 2",
+      "Description": "Second percentage threshold used to determine the visible arrow or bolt model based on the remaining ammunition count."
+    },
+    {
+      "Field": "Reserved27",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "ResistRecoverPoint_Poision_Player",
+      "Name": "Player Poison Resistance Recovery",
+      "Description": "Rate, in points per second, at which the player's poison buildup naturally decreases."
+    },
+    {
+      "Field": "ResistRecoverPoint_Desease_Player",
+      "Name": "Player Toxic Resistance Recovery",
+      "Description": "Rate, in points per second, at which the player's toxic buildup naturally decreases."
+    },
+    {
+      "Field": "ResistRecoverPoint_Blood_Player",
+      "Name": "Player Bleed Resistance Recovery",
+      "Description": "Rate, in points per second, at which the player's bleed buildup naturally decreases."
+    },
+    {
+      "Field": "ResistRecoverPoint_Curse_Player",
+      "Name": "Player Curse Resistance Recovery",
+      "Description": "Rate, in points per second, at which the player's curse buildup naturally decreases."
+    },
+    {
+      "Field": "ResistRecoverPoint_Freeze_Player",
+      "Name": "Player Frost Resistance Recovery",
+      "Description": "Rate, in points per second, at which the player's frost buildup naturally decreases."
+    },
+    {
+      "Field": "ResistRecoverPoint_Poision_Enemy",
+      "Name": "Enemy Poison Resistance Recovery",
+      "Description": "Rate, in points per second, at which an enemy's poison buildup naturally decreases."
+    },
+    {
+      "Field": "ResistRecoverPoint_Desease_Enemy",
+      "Name": "Enemy Toxic Resistance Recovery",
+      "Description": "Rate, in points per second, at which an enemy's toxic buildup naturally decreases."
+    },
+    {
+      "Field": "ResistRecoverPoint_Blood_Enemy",
+      "Name": "Enemy Bleed Resistance Recovery",
+      "Description": "Rate, in points per second, at which an enemy's bleed buildup naturally decreases."
+    },
+    {
+      "Field": "ResistRecoverPoint_Curse_Enemy",
+      "Name": "Enemy Curse Resistance Recovery",
+      "Description": "Rate, in points per second, at which an enemy's curse buildup naturally decreases."
+    },
+    {
+      "Field": "ResistRecoverPoint_Freeze_Enemy",
+      "Name": "Enemy Frost Resistance Recovery",
+      "Description": "Rate, in points per second, at which an enemy's frost buildup naturally decreases."
+    },
+    {
+      "Field": "DyingHp",
+      "Name": "Critical Health Threshold",
+      "Description": "If the player's current HP is at or below this value, they enter the critical health state."
+    },
+    {
+      "Field": "SystemEnchant_LoadOfCinder",
+      "Name": "System Lord of Cinder Special Effect ID",
+      "Description": "Special effect ID invoked by the game system when transforming the player into a Lord of Cinder."
+    },
+    {
+      "Field": "EstusFlaskAllocateRateForBattleRoyalDuel",
+      "Name": "Arena Duel Client Estus Multiplier",
+      "Description": "Multiplier applied to a multiplayer client's Estus Flask count during Arena Duel matches."
+    },
+    {
+      "Field": "EstusFlaskAllocateOffsetForBattleRoyalDuel",
+      "Name": "Arena Duel Client Estus Offset",
+      "Description": "Flat offset applied to a multiplayer client's Estus Flask count during Arena Duel matches."
+    },
+    {
+      "Field": "EstusFlaskAllocateRateForBattleRoyalFree",
+      "Name": "Arena Brawl Client Estus Multiplier",
+      "Description": "Multiplier applied to a multiplayer client's Estus Flask count during Arena Brawl matches."
+    },
+    {
+      "Field": "EstusFlaskAllocateOffsetForBattleRoyalFree",
+      "Name": "Arena Brawl Client Estus Offset",
+      "Description": "Flat offset applied to a multiplayer client's Estus Flask count during Arena Brawl matches."
+    },
+    {
+      "Field": "EstusFlaskAllocateRateForBattleRoyalTeam",
+      "Name": "Arena Team Client Estus Multiplier",
+      "Description": "Multiplier applied to a multiplayer client's Estus Flask count during Arena Team matches."
+    },
+    {
+      "Field": "EstusFlaskAllocateOffsetForBattleRoyalTeam",
+      "Name": "Arena Team Client Estus Offset",
+      "Description": "Flat offset applied to a multiplayer client's Estus Flask count during Arena Team matches."
+    },
+    {
+      "Field": "HpEstusFlaskAllocateRateForYellowMonk",
+      "Name": "Spear of the Church HP Estus Multiplier",
+      "Description": "Multiplier applied to HP Estus Flask allocation for the Spear of the Church (Yellow Monk) boss role."
+    },
+    {
+      "Field": "HpEstusFlaskAllocateOffsetForYellowMonk",
+      "Name": "Spear of the Church HP Estus Offset",
+      "Description": "Flat offset applied to HP Estus Flask allocation for the Spear of the Church (Yellow Monk) boss role."
+    },
+    {
+      "Field": "MpEstusFlaskAllocateRateForYellowMonk",
+      "Name": "Spear of the Church FP Estus Multiplier",
+      "Description": "Multiplier applied to FP Estus Flask allocation for the Spear of the Church (Yellow Monk) boss role."
+    },
+    {
+      "Field": "MpEstusFlaskAllocateOffsetForYellowMonk",
+      "Name": "Spear of the Church FP Estus Offset",
+      "Description": "Flat offset applied to FP Estus Flask allocation for the Spear of the Church (Yellow Monk) boss role."
+    },
+    {
+      "Field": "Reserved49",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved50",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved51",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved52",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved53",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved54",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved55",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved56",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved57",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved58",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved59",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved60",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved61",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved62",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved63",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved64",
+      "Name": "Reserved64",
+      "Description": "Reserved. Purpose unknown."
+    }
+  ]
+}

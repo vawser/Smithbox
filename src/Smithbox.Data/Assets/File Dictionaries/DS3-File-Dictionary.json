@@ -83778,6 +83778,13 @@
     },
     {
       "Archive": "",
+      "Path": "/param/stayparam/stayparam.parambnd.dcx",
+      "Folder": "/param/stayparam",
+      "Filename": "stayparam",
+      "Extension": "parambnd"
+    },
+    {
+      "Archive": "",
       "Path": "/param/drawparam/eclipse.gparam.dcx",
       "Folder": "/param/drawparam",
       "Filename": "eclipse",

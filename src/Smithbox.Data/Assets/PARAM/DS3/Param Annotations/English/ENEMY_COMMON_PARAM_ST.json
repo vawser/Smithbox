@@ -1,0 +1,328 @@
+{
+  "Param": "ENEMY_COMMON_PARAM_ST",
+  "Type": "ENEMY_COMMON_PARAM_ST",
+  "Name": "ENEMY_COMMON_PARAM_ST",
+  "Description": "Stay Param. Handles various elements relating to enemy AI.",
+  "Fields": [
+    {
+      "Field": "TargetNoForget_TargetEne0_LadderHeight",
+      "Name": "Do Not Forget TARGET_ENE_0 Within Ladder Height",
+      "Description": "If TARGET_ENE_0 is on a ladder and the height difference between the enemy and the target is within this value, the target will not be forgotten."
+    },
+    {
+      "Field": "IsIntegrateWithRaycast_CheckRoofLength",
+      "Name": "Player Distance to Enable Ceiling Check During Ground Integration",
+      "Description": "Only when the local player is within this distance is the ground integration lift height calculated while taking the ceiling height into account."
+    },
+    {
+      "Field": "Reserved02",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved03",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved04",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved05",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved06",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved07",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved08",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved09",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved10",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved11",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved12",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved13",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved14",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved15",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved16",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved17",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved18",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved19",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved20",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved21",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved22",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved23",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved24",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved25",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved26",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved27",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved28",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved29",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved30",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved31",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved32",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved33",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved34",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved35",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved36",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved37",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved38",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved39",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved40",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved41",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved42",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved43",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved44",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved45",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved46",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved47",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved48",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved49",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved50",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved51",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved52",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved53",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved54",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved55",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved56",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved57",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved58",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved59",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved60",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved61",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved62",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    },
+    {
+      "Field": "Reserved63",
+      "Name": "Reserved",
+      "Description": "Reserved. Purpose unknown."
+    }
+  ]
+}

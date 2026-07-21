@@ -97,6 +97,10 @@
       "Text": "Failed to load stay param: {0}"
     },
     {
+      "Key": "PARAM_Data_Failed_to_Write_StayParam",
+      "Text": "Failed to write stay params: {0}"
+    },
+    {
       "Key": "PARAM_Data_Setup_ParamDefs_PASS",
       "Text": "Setup the PARAM definitions."
     },
@@ -204,5 +208,49 @@
       "Key": "PARAM_Data_",
       "Text": ""
     },
+    {
+      "Key": "PARAM_Data_",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_Data_",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_Data_",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_Data_",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_Data_",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_Data_",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_Data_",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_Data_",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_Data_",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_Data_",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_Data_",
+      "Text": ""
+    }
   ]
 }

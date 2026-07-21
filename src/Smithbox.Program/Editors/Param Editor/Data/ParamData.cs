@@ -69,11 +69,11 @@ public class ParamData : IDisposable
 
         if (!paramDefTaskResult)
         {
-            Smithbox.LogError(this, $"[Param Editor] Failed to setup the PARAM definitions.");
+            Smithbox.LogError(this, LOC.Get("PARAM_Data_Setup_ParamDefs_FAIL"));
         }
         else
         {
-            Smithbox.Log(this, $"[Param Editor] Setup the PARAM definitions.");
+            Smithbox.Log(this, LOC.Get("PARAM_Data_Setup_ParamDefs_PASS"));
         }
 
         // Param Meta
@@ -82,11 +82,11 @@ public class ParamData : IDisposable
 
         if (!paramMetaTaskResult)
         {
-            Smithbox.LogError(this, $"[Param Editor] Failed to setup the PARAM meta.");
+            Smithbox.LogError(this, LOC.Get("PARAM_Data_Setup_ParamMeta_FAIL"));
         }
         else
         {
-            Smithbox.Log(this, $"[Param Editor] Setup the PARAM meta.");
+            Smithbox.Log(this, LOC.Get("PARAM_Data_Setup_ParamMeta_PASS"));
         }
 
         // Param Annotations
@@ -95,11 +95,11 @@ public class ParamData : IDisposable
 
         if (!paramAnnotationTaskResult)
         {
-            Smithbox.LogError(this, $"[Param Editor] Failed to setup the PARAM annotations.");
+            Smithbox.LogError(this, LOC.Get("PARAM_Data_Setup_ParamAnnotations_FAIL"));
         }
         else
         {
-            Smithbox.Log(this, $"[Param Editor] Setup the PARAM annotations.");
+            Smithbox.Log(this, LOC.Get("PARAM_Data_Setup_ParamAnnotations_PASS"));
         }
 
         // Param Enums

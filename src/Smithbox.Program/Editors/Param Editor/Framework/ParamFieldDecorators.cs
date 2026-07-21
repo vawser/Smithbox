@@ -6,6 +6,7 @@ using SoulsFormats;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.MetadataEditor;
 using StudioCore.Editors.TextEditor;
+using StudioCore.Formats;
 using StudioCore.Keybinds;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
@@ -605,11 +606,8 @@ public class FieldMetaContext
 #region Field Tooltip Helper
 public static class FieldTooltipHelper
 {
-    public static void IconTooltip(ParamEditorView curView, FieldMetaContext context, Param.Column col)
+    public static void IconTooltip(ParamEditorView curView, FieldMetaContext context, PARAMDEF.Field fieldDef)
     {
-        if (col == null)
-            return;
-
         var tooltipMode = CFG.Current.ParamEditor_Field_List_Tooltip_Mode;
         var displayDescription = true;
         var displayAttributes = CFG.Current.ParamEditor_Field_List_Display_Field_Attributes;
@@ -641,7 +639,7 @@ public static class FieldTooltipHelper
 
                         helpIconText = LOC.Get("PARAM_FieldDecorator_FieldTooltip_Description",
                             helpIconText,
-                            col.Def.Minimum, col.Def.Maximum, col.Def.Increment);
+                            fieldDef.Minimum, fieldDef.Maximum, fieldDef.Increment);
                     }
 
                     EditorTableUtils.HelpIcon(context.InternalName, ref helpIconText, true);
@@ -657,11 +655,8 @@ public static class FieldTooltipHelper
         }
     }
 
-    public static void HoverTooltip(ParamEditorView curView, FieldMetaContext context, Param.Column col)
+    public static void HoverTooltip(ParamEditorView curView, FieldMetaContext context, PARAMDEF.Field fieldDef)
     {
-        if (col == null)
-            return;
-
         var tooltipMode = CFG.Current.ParamEditor_Field_List_Tooltip_Mode;
         var displayDescription = true;
         var displayAttributes = CFG.Current.ParamEditor_Field_List_Display_Field_Attributes;
@@ -690,7 +685,7 @@ public static class FieldTooltipHelper
 
                         helpIconText = LOC.Get("PARAM_FieldDecorator_FieldTooltip_Description",
                             helpIconText,
-                            col.Def.Minimum, col.Def.Maximum, col.Def.Increment);
+                            fieldDef.Minimum, fieldDef.Maximum, fieldDef.Increment);
                     }
 
                     GUI.Tooltip(helpIconText);

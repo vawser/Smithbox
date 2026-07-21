@@ -90,12 +90,12 @@ public static class ParamMetadata
             IncludeFields = true
         };
 
-        foreach (var entry in paramData.PrimaryBank.Params)
+        foreach (var entry in paramData.ParamDefs)
         {
             var key = entry.Key;
 
-            var def = entry.Value.AppliedParamdef;
-            var meta = paramData.GetParamMeta(entry.Value.AppliedParamdef);
+            var def = entry.Value;
+            var meta = paramData.GetParamMeta(def);
 
             if (TypesConsumed.Contains(def.ParamType))
                 continue;

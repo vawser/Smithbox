@@ -21,6 +21,10 @@
       "Text": "Fields"
     },
     {
+      "Key": "PARAM_Window_StayParam_Fields",
+      "Text": "Fields"
+    },
+    {
       "Key": "PARAM_Window_Tool_Window",
       "Text": "Tools"
     }

@@ -18,6 +18,8 @@ public class ParamSelection
     private readonly List<(string, Param.Row)> pastStack = new();
     private string _activeParam;
 
+    public string ActiveStayParam;
+
     public ParamSelection(ParamEditorScreen editor, ProjectEntry project)
     {
         Editor = editor;

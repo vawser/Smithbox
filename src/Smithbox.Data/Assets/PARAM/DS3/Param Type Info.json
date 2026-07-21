@@ -97,7 +97,12 @@
     "WepAbsorpPosParam": "WEP_ABSORP_POS_PARAM_ST",
     "WetAspectParam": "WET_ASPECT_PARAM_ST",
     "WhiteSignCoolTimeParam": "WHITE_SIGN_COOL_TIME_PARAM_ST",
-    "Wind": "WIND_PARAM_ST"
+    "Wind": "WIND_PARAM_ST",
+    "EnemyCommonParam": "ENEMY_COMMON_PARAM_ST",
+    "GameSystemParam": "GAME_SYSTEM_PARAM_ST",
+    "GraphicsParam": "GRAPHICS_PARAM_ST",
+    "MenuParam": "MENU_PARAM_ST",
+    "TentativePlayerParam": "TENTATIVE_PLAYER_PARAM_ST"
   },
   "Exceptions": []
 }

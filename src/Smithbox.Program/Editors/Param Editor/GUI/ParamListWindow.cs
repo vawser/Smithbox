@@ -16,7 +16,6 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Editors.ParamEditor;
 
-
 public class ParamListWindow
 {
     public ParamEditorScreen Editor;
@@ -51,6 +50,15 @@ public class ParamListWindow
         if (!CFG.Current.ParamEditor_Param_List_Pinned_Stay_Visible)
         {
             DisplayPinnedParams();
+        }
+
+        // Stay Params
+        if(Project.Descriptor.ProjectType is ProjectType.DS3)
+        {
+            if (Project.Handler.ParamData.PrimaryBank.StayParams.Count > 0)
+            {
+                DisplayStayParams(doFocus, scrollTo);
+            }
         }
 
         DisplayParams(doFocus, scrollTo);
@@ -530,7 +538,7 @@ public class ParamListWindow
                     {
                         ParamDebugTools.OutputParamInformation(Editor, Project, paramKey);
                     }
-                    GUI.Tooltip(LOC.Get("PARAM_ParamWindow_Action_Copy_Field_TT2)"));
+                    GUI.Tooltip(LOC.Get("PARAM_ParamWindow_Action_Copy_Field_TT2"));
 
                     ImGui.EndMenu();
                 }
@@ -542,6 +550,8 @@ public class ParamListWindow
 
     private void SelectParam(string paramKey)
     {
+        ParentView.Selection.ActiveStayParam = null; // Clear this so we know to hide the StayParam Field window
+
         EditorCommandQueue.AddCommand($@"param/view/{ParentView.ViewIndex}/{paramKey}");
 
         ParentView.ParamTableWindow.UpdateTableSelection(paramKey);
@@ -549,6 +559,14 @@ public class ParamListWindow
         Editor.Project.Handler.ParamData.RefreshParamDifferenceCacheTask(true);
 
         ParentView.RowDecorators.SetupFmgDecorators(paramKey);
+
+        Smithbox.TextureManager.IconManager.PurgeCache();
+    }
+
+    private void SelectStayParam(string paramKey)
+    {
+        ParentView.Selection.CleanAllSelectionState();
+        ParentView.Selection.ActiveStayParam = paramKey;
 
         Smithbox.TextureManager.IconManager.PurgeCache();
     }
@@ -579,4 +597,36 @@ public class ParamListWindow
 
         Smithbox.Log<ParamListWindow>(LOC.Get("PARAM_ParamWindow_ExportParam_Log", savePath));
     }
+
+    #region Stay Params
+
+    private void DisplayStayParams(bool doFocus, float scrollTo)
+    {
+        ImGui.BeginChild("StayParamFileParamSection", new Vector2(0, 110) * DPI.UIScale(), ImGuiChildFlags.Borders);
+
+        foreach(var param in Project.Handler.ParamData.PrimaryBank.StayParams)
+        {
+            var paramKey = param.Key;
+            var meta = Editor.Project.Handler.ParamData.GetParamMeta(param.Value.Def);
+            var annotations = Editor.Project.Handler.ParamData.GetParamAnnotations(param.Value.Def.ParamType);
+
+            var Wiki = annotations?.Description;
+            if (Wiki != null)
+            {
+                EditorTableUtils.HelpIcon(paramKey + "wiki", ref Wiki, true);
+            }
+
+            ImGui.Indent(15.0f);
+            if (ImGui.Selectable($"{paramKey}##selectStayParam{paramKey}", paramKey == ParentView.Selection.ActiveStayParam))
+            {
+                SelectStayParam(paramKey);
+            }
+
+            ImGui.Unindent(15.0f);
+        }
+
+        ImGui.EndChild();
+    }
+
+    #endregion
 }

@@ -210,6 +210,7 @@ public class DeveloperPanel
 
     public void ExecuteScript() 
     {
+        ParamMetadata.GenerateAnnotations(Smithbox.Orchestrator.SelectedProject);
     }
 }
 

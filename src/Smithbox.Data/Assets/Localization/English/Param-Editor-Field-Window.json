@@ -9,6 +9,10 @@
       "Text": "Field List"
     },
     {
+      "Key": "PARAM_FieldWindow_Title_TT",
+      "Text": ""
+    },
+    {
       "Key": "PARAM_FieldWindow_Col_Current",
       "Text": "Current"
     },

@@ -69,6 +69,14 @@ namespace SoulsFormats
         }
 
         /// <summary>
+        /// Loads file data from a BinaryReaderEx.
+        /// </summary>
+        protected virtual void Read(BinaryReaderEx br, PARAMDEF def)
+        {
+            throw new NotImplementedException("Read is not implemented for this format.");
+        }
+
+        /// <summary>
         /// Loads a file from a byte array, automatically decompressing it if necessary.
         /// </summary>
         public static TFormat Read(Memory<byte> bytes)
@@ -91,6 +99,16 @@ namespace SoulsFormats
             br = SFUtil.GetDecompressedBR(br, out DCX.Type compression);
             file.Compression = compression;
             file.Read(br, filename);
+            return file;
+        }
+
+        public static TFormat Read(Memory<byte> bytes, PARAMDEF def)
+        {
+            BinaryReaderEx br = new BinaryReaderEx(false, bytes);
+            TFormat file = new TFormat();
+            br = SFUtil.GetDecompressedBR(br, out DCX.Type compression);
+            file.Compression = compression;
+            file.Read(br, def);
             return file;
         }
 

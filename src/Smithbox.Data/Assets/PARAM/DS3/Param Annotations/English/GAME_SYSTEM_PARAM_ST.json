@@ -1,0 +1,838 @@
+{
+  "Param": "GAME_SYSTEM_PARAM_ST",
+  "Type": "GAME_SYSTEM_PARAM_ST",
+  "Name": "GAME_SYSTEM_PARAM_ST",
+  "Description": "Stay Param. Handles various elements relating to in-game systems.",
+  "Fields": [
+    {
+      "Field": "BaseToughnessRecoverTime",
+      "Name": "Base Poise Recovery Time",
+      "Description": "The base value for poise recovery time. (seconds)"
+    },
+    {
+      "Field": "ChrEventTrun_byLeft90",
+      "Name": "Character Event Turn Animation (Left 90°)",
+      "Description": "The left 90° turn animation used for the 'Character Turn' event."
+    },
+    {
+      "Field": "ChrEventTrun_byRight90",
+      "Name": "Character Event Turn Animation (Right 90°)",
+      "Description": "The right 90° turn animation used for the 'Character Turn' event."
+    },
+    {
+      "Field": "ChrEventTrun_byLeft180",
+      "Name": "Character Event Turn Animation (Left 180°)",
+      "Description": "The left 180° turn animation used for the 'Character Turn' event."
+    },
+    {
+      "Field": "ChrEventTrun_byRight180",
+      "Name": "Character Event Turn Animation (Right 180°)",
+      "Description": "The right 180° turn animation used for the 'Character Turn' event."
+    },
+    {
+      "Field": "ChrEventTrun_90TurnStartAngle",
+      "Name": "Character Event 90° Turn Animation Start Angle",
+      "Description": "The starting angle at which the 90° turn animation is applied for the 'Character Turn' event. If the event begins at an angle smaller than this, a system turn is performed instead."
+    },
+    {
+      "Field": "ChrEventTrun_180TurnStartAngle",
+      "Name": "Character Event 180° Turn Animation Start Angle",
+      "Description": "The starting angle at which the 180° turn animation is applied for the 'Character Turn' event."
+    },
+    {
+      "Field": "DeptDeceasedItemId",
+      "Name": "Debt Hollowing-Level Item ID",
+      "Description": "The item ID used to determine the debt hollowing level. If 0 or less, it is treated as an invalid value and debt is not applied."
+    },
+    {
+      "Field": "FlickDamageCutRateSuccessGurad",
+      "Name": "Damage Cut Rate on Successful Guard During Deflect",
+      "Description": "The damage cut rate applied on a successful guard during a deflect (parry-like knockback). Multiplied against the final damage."
+    },
+    {
+      "Field": "NpcTalkAnimBeginDiffAngle",
+      "Name": "NPC Conversation Animation Start Angle Difference",
+      "Description": "The angle difference at which the in-conversation motion animation begins playing during NPC dialogue."
+    },
+    {
+      "Field": "NpcTalkAnimEndDiffAngle",
+      "Name": "NPC Conversation Animation End Angle Difference",
+      "Description": "The angle difference at which the in-conversation motion animation stops playing during NPC dialogue."
+    },
+    {
+      "Field": "CultDeadSpEffectId_Optional",
+      "Name": "Ritual Corpse Special Effect - Optional",
+      "Description": "The special effect applied when becoming a ritual corpse, determined by the ritual sword the player has equipped."
+    },
+    {
+      "Field": "CultDeadSpEffectId_LevelUp",
+      "Name": "Ritual Corpse Special Effect - Level Up",
+      "Description": "The special effect applied for the Level Up ritual corpse."
+    },
+    {
+      "Field": "CultDeadSpEffectId_StatusReroll",
+      "Name": "Ritual Corpse Special Effect - Stat Reallocation",
+      "Description": "The special effect applied for the Stat Reallocation ritual corpse."
+    },
+    {
+      "Field": "CultDeadSpEffectId_DeadLevelReset",
+      "Name": "Ritual Corpse Special Effect - Hollowing Level Reset",
+      "Description": "The special effect applied for the Hollowing Level Reset ritual corpse."
+    },
+    {
+      "Field": "CultDeadSpEffectId_Atonement",
+      "Name": "Ritual Corpse Special Effect - Atonement",
+      "Description": "The special effect applied for the Atonement ritual corpse."
+    },
+    {
+      "Field": "CultDeadSpEffectId_NpcWhiteGhost",
+      "Name": "Ritual Corpse Special Effect - NPC White Phantom Summon",
+      "Description": "The special effect applied for the NPC White Phantom Summon ritual corpse."
+    },
+    {
+      "Field": "CultDeadSpEffectId_Bomb",
+      "Name": "Ritual Corpse Special Effect - Bomb",
+      "Description": "The special effect applied for the Bomb ritual corpse."
+    },
+    {
+      "Field": "CultDeadSpEffectId_NoInvasion",
+      "Name": "Ritual Corpse Special Effect - Invasion Prohibited",
+      "Description": "The special effect applied for the Invasion Prohibited ritual corpse."
+    },
+    {
+      "Field": "CultSwordItemId_LevelUp",
+      "Name": "Level Up Ritual Sword Item ID",
+      "Description": "The item Param ID of the ritual sword corresponding to the Level Up ritual."
+    },
+    {
+      "Field": "CultSwordItemId_StatusReroll",
+      "Name": "Stat Reallocation Ritual Sword Item ID",
+      "Description": "The item Param ID of the ritual sword corresponding to the Stat Reallocation ritual."
+    },
+    {
+      "Field": "CultSwordItemId_DeadLevelReset",
+      "Name": "Hollowing Level Reset Ritual Sword Item ID",
+      "Description": "The item Param ID of the ritual sword corresponding to the Hollowing Level Reset ritual."
+    },
+    {
+      "Field": "CultSwordItemId_Atonement",
+      "Name": "Atonement Ritual Sword Item ID",
+      "Description": "The item Param ID of the ritual sword corresponding to the Atonement ritual."
+    },
+    {
+      "Field": "CultSwordItemId_NpcWhiteGhost",
+      "Name": "NPC White Phantom Summon Ritual Sword Item ID",
+      "Description": "The item Param ID of the ritual sword corresponding to the NPC White Phantom Summon ritual."
+    },
+    {
+      "Field": "CultSwordItemId_Bomb",
+      "Name": "Bomb Ritual Sword Item ID",
+      "Description": "The item Param ID of the ritual sword corresponding to the Bomb ritual."
+    },
+    {
+      "Field": "CultSwordItemId_NoInvasion",
+      "Name": "Invasion Prohibited Ritual Sword Item ID",
+      "Description": "The item Param ID of the ritual sword corresponding to the Invasion Prohibited ritual."
+    },
+    {
+      "Field": "ImpossibleCultDialogId_LevelUp",
+      "Name": "Level Up Ritual Impossible Dialog ID",
+      "Description": "The dialog ID displayed when the Level Up ritual cannot be performed."
+    },
+    {
+      "Field": "ImpossibleCultDialogId_StatusReroll",
+      "Name": "Stat Reallocation Ritual Impossible Dialog ID",
+      "Description": "The dialog ID displayed when the Stat Reallocation ritual cannot be performed."
+    },
+    {
+      "Field": "ImpossibleCultDialogId_DeadLevelReset",
+      "Name": "Hollowing Level Reset Ritual Impossible Dialog ID",
+      "Description": "The dialog ID displayed when the Hollowing Level Reset ritual cannot be performed."
+    },
+    {
+      "Field": "ImpossibleCultDialogId_Atonement",
+      "Name": "Atonement Ritual Impossible Dialog ID",
+      "Description": "The dialog ID displayed when the Atonement ritual cannot be performed."
+    },
+    {
+      "Field": "ImpossibleCultDialogId_NpcWhiteGhost_MaxChr",
+      "Name": "NPC White Phantom Summon Ritual Impossible Dialog ID (No Open Slots)",
+      "Description": "The dialog ID displayed when the NPC White Phantom Summon ritual cannot be performed because there are no open character slots."
+    },
+    {
+      "Field": "ImpossibleCultDialogId_NpcWhiteGhost_AreaOut",
+      "Name": "NPC White Phantom Summon Ritual Impossible Dialog ID (Outside Area)",
+      "Description": "The dialog ID displayed when the NPC White Phantom Summon ritual cannot be performed because the player is outside the valid area."
+    },
+    {
+      "Field": "ImpossibleCultDialogId_NpcWhiteGhost_AreaClear",
+      "Name": "NPC White Phantom Summon Ritual Impossible Dialog ID (Area Cleared)",
+      "Description": "The dialog ID displayed when the NPC White Phantom Summon ritual cannot be performed because the area has already been cleared."
+    },
+    {
+      "Field": "ImpossibleCultDialogId_Bomb",
+      "Name": "Bomb Ritual Impossible Dialog ID",
+      "Description": "The dialog ID displayed when the Bomb ritual cannot be performed."
+    },
+    {
+      "Field": "ImpossibleCultDialogId_NoInvasion",
+      "Name": "Invasion Prohibited Ritual Impossible Dialog ID",
+      "Description": "The dialog ID displayed when the Invasion Prohibited ritual cannot be performed."
+    },
+    {
+      "Field": "AcquittalTargetNpcEventFlagId",
+      "Name": "Is There an NPC Eligible for Acquittal? Event Flag ID",
+      "Description": "The event flag ID indicating whether there is an NPC eligible for acquittal."
+    },
+    {
+      "Field": "ActiveCultAtonementEventFlagId",
+      "Name": "Atonement Ritual Activation Event Flag ID",
+      "Description": "The event flag ID used to notify the event system that the Atonement ritual has been performed."
+    },
+    {
+      "Field": "RecoverBelowMaxHpCompletionNoticeSpEffectId",
+      "Name": "'Heal Below Max HP' Completion Notice Special Effect ID",
+      "Description": "The special effect ID that notifies when 'Heal Below Max HP' has completed. Mainly used for multiplayer synchronization."
+    },
+    {
+      "Field": "EstusFlaskRecovery_AbsorptionProductionSfxId_byHp",
+      "Name": "HP Estus Absorption Effect SFX ID",
+      "Description": "The SFX ID for the absorption effect played when recovering HP Estus Flask uses, such as upon defeating an invader."
+    },
+    {
+      "Field": "EstusFlaskRecovery_AbsorptionProductionSfxId_byMp",
+      "Name": "MP Estus Absorption Effect SFX ID",
+      "Description": "The SFX ID for the absorption effect played when recovering MP Estus Flask uses, such as upon defeating an invader."
+    },
+    {
+      "Field": "RespawnSpecialEffectActiveCheckerSpEffectId",
+      "Name": "Respawn Special Effect Activation Checker Special Effect ID",
+      "Description": "The special effect ID that notifies when the respawn special effect has activated. Mainly used for multiplayer synchronization."
+    },
+    {
+      "Field": "DefeatHostilityGhostOfSoulCorrectRate_byHost",
+      "Name": "Souls Gained Correction Rate on Defeating Hostile Phantom - Host",
+      "Description": "The correction value for the amount of souls the host gains when defeating a hostile phantom in multiplayer."
+    },
+    {
+      "Field": "DefeatHostilityGhostOfSoulCorrectRate_byTeamGhost",
+      "Name": "Souls Gained Correction Rate on Defeating Hostile Phantom - Cooperative Phantom",
+      "Description": "The correction value for the amount of souls the cooperative phantom gains when defeating a hostile phantom in multiplayer."
+    },
+    {
+      "Field": "DefeatMultiModeEnemyOfSoulCorrectRate_byHost",
+      "Name": "Souls Gained Correction Rate on Defeating Enemy in Multiplayer - Host",
+      "Description": "The correction value for the amount of souls the host gains when defeating a regular enemy in multiplayer."
+    },
+    {
+      "Field": "DefeatMultiModeEnemyOfSoulCorrectRate_byTeamGhost",
+      "Name": "Souls Gained Correction Rate on Defeating Enemy in Multiplayer - Cooperative Phantom",
+      "Description": "The correction value for the amount of souls the cooperative phantom gains when defeating a regular enemy in multiplayer."
+    },
+    {
+      "Field": "DefeatMultiModeBossOfSoulCorrectRate_byHost",
+      "Name": "Souls Gained Correction Rate on Defeating Boss in Multiplayer - Host",
+      "Description": "The correction value for the amount of souls the host gains when defeating a boss in multiplayer."
+    },
+    {
+      "Field": "DefeatMultiModeBossOfSoulCorrectRate_byTeamGhost",
+      "Name": "Souls Gained Correction Rate on Defeating Boss in Multiplayer - Cooperative Phantom",
+      "Description": "The correction value for the amount of souls the cooperative phantom gains when defeating a boss in multiplayer."
+    },
+    {
+      "Field": "EnemyHpGaugeScreenOffset_byUp",
+      "Name": "Enemy HP Gauge Screen Offset (Upward)",
+      "Description": "The offset value (in pixels, based on Full HD) used to keep an enemy's HP gauge from being cut off at the top of the screen."
+    },
+    {
+      "Field": "Reserved46",
+      "Name": "Reserved46",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_ShootBulletDummypolyId",
+      "Name": "'Enemy Detection' Bullet Firing Position Dummy Poly ID",
+      "Description": "The dummy poly ID for the firing position of the detection bullet."
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_MaxDetectionNum",
+      "Name": "'Enemy Detection' Maximum Number of Detections",
+      "Description": "The maximum number of enemies that can be detected simultaneously (the upper limit of bullets fired)."
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_MaxDetectionLength",
+      "Name": "'Enemy Detection' Maximum Detection Distance",
+      "Description": "The maximum distance at which detection is possible."
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_BulletId_byCoopHost",
+      "Name": "'Enemy Detection' Fired Bullet ID - Co-op Host",
+      "Description": "The bullet ID fired, determined by the enemy's faction/type."
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_BulletId_byCoopSign_None",
+      "Name": "'Enemy Detection' Fired Bullet ID - Co-op Sign: None",
+      "Description": "The bullet ID fired, determined by the enemy's faction/type."
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_BulletId_byCoopSign_Umbasa",
+      "Name": "'Enemy Detection' Fired Bullet ID - Co-op Sign: Sun",
+      "Description": "The bullet ID fired, determined by the enemy's faction/type."
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_BulletId_byCoopSign_Berserker",
+      "Name": "'Enemy Detection' Fired Bullet ID - Co-op Sign: Berserker",
+      "Description": "The bullet ID fired, determined by the enemy's faction/type."
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_BulletId_byCoopSign_Sinners",
+      "Name": "'Enemy Detection' Fired Bullet ID - Co-op Sign: Sinners",
+      "Description": "The bullet ID fired, determined by the enemy's faction/type."
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_BulletId_byCoopRing_RedHunter",
+      "Name": "'Enemy Detection' Fired Bullet ID - Co-op Ring: Red Hunter",
+      "Description": "The bullet ID fired, determined by the enemy's faction/type (also used for automatic multiplayer firing)."
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_BulletId_byInvadeOrb_None",
+      "Name": "'Enemy Detection' Fired Bullet ID - Invasion Orb: None",
+      "Description": "The bullet ID fired, determined by the enemy's faction/type (also used for automatic multiplayer firing)."
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_BulletId_byInvadeOrb_Umbasa",
+      "Name": "'Enemy Detection' Fired Bullet ID - Invasion Orb: Sun",
+      "Description": "The bullet ID fired, determined by the enemy's faction/type."
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_BulletId_byInvadeOrb_Berserker",
+      "Name": "'Enemy Detection' Fired Bullet ID - Invasion Orb: Berserker",
+      "Description": "The bullet ID fired, determined by the enemy's faction/type."
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_BulletId_byInvadeOrb_Sinners",
+      "Name": "'Enemy Detection' Fired Bullet ID - Invasion Orb: Sinners",
+      "Description": "The bullet ID fired, determined by the enemy's faction/type."
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_BulletId_byInvadeSign_None",
+      "Name": "'Enemy Detection' Fired Bullet ID - Invasion Sign: None",
+      "Description": "The bullet ID fired, determined by the enemy's faction/type."
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_BulletId_byInvadeSign_Umbasa",
+      "Name": "'Enemy Detection' Fired Bullet ID - Invasion Sign: Sun",
+      "Description": "The bullet ID fired, determined by the enemy's faction/type."
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_BulletId_byInvadeSign_Berserker",
+      "Name": "'Enemy Detection' Fired Bullet ID - Invasion Sign: Berserker",
+      "Description": "The bullet ID fired, determined by the enemy's faction/type."
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_BulletId_byInvadeSign_Sinners",
+      "Name": "'Enemy Detection' Fired Bullet ID - Invasion Sign: Sinners",
+      "Description": "The bullet ID fired, determined by the enemy's faction/type."
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_BulletId_byInvadeRing_Sinners",
+      "Name": "'Enemy Detection' Fired Bullet ID - Invasion Ring: Sinners",
+      "Description": "The bullet ID fired, determined by the enemy's faction/type."
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_BulletId_byInvadeRing_GuardianOfBoss",
+      "Name": "'Enemy Detection' Fired Bullet ID - Invasion Ring: Boss Guardian",
+      "Description": "The bullet ID fired, determined by the enemy's faction/type."
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_BulletId_byInvadeRing_GuardianOfMap",
+      "Name": "'Enemy Detection' Fired Bullet ID - Invasion Ring: Map Guardian",
+      "Description": "The bullet ID fired, determined by the enemy's faction/type."
+    },
+    {
+      "Field": "ActivityOfDeadSpEffect_BulletId",
+      "Name": "'Activation of the Dead' Bullet ID on Special Effect Trigger",
+      "Description": "The bullet ID fired when the 'Activation of the Dead' special effect triggers."
+    },
+    {
+      "Field": "ActivityOfDeadSpEffect_ShootBulletDummypolyId",
+      "Name": "'Activation of the Dead' Bullet Spawn Position Dummy Poly ID",
+      "Description": "The dummy poly ID for the position where the bullet spawns when the 'Activation of the Dead' special effect triggers."
+    },
+    {
+      "Field": "ActivityOfDeadSpEffect_DeadFadeOutTime",
+      "Name": "'Activation of the Dead' Corpse Fade-Out Time on Trigger",
+      "Description": "The fade time for the corpse fading out when the 'Activation of the Dead' special effect triggers."
+    },
+    {
+      "Field": "IgnorNetStateSyncTime_ForThrow",
+      "Name": "Ignore Network State Sync Time on Throw Start",
+      "Description": "The duration for which state transitions caused by network information are ignored when a throw begins."
+    },
+    {
+      "Field": "NetPenaltyPointLanDisconnect",
+      "Name": "Multiplayer Penalty: LAN Disconnect",
+      "Description": "Multiplayer penalty points applied for a LAN disconnection."
+    },
+    {
+      "Field": "NetPenaltyPointProfileSignout",
+      "Name": "Multiplayer Penalty: Profile Sign-Out",
+      "Description": "Multiplayer penalty points applied when a player's profile signs out."
+    },
+    {
+      "Field": "NetPenaltyPointReboot",
+      "Name": "Multiplayer Penalty: Power Off",
+      "Description": "Multiplayer penalty points applied when a player's console loses power."
+    },
+    {
+      "Field": "NetPnaltyPointSuspend",
+      "Name": "Multiplayer Penalty: Suspend / Pause",
+      "Description": "Multiplayer penalty points applied when a player suspends or pauses the game."
+    },
+    {
+      "Field": "NetPenaltyForgiveItemLimitTime",
+      "Name": "Multiplayer Penalty: Bone of Order Generation (Sale) Start Wait Time",
+      "Description": "Multiplayer penalty: the wait time (in seconds) before the Bone of Order begins to be generated (made available for sale)."
+    },
+    {
+      "Field": "NetPenaltyPointThreshold",
+      "Name": "Multiplayer Penalty: Penalty Judgment Point Threshold",
+      "Description": "Multiplayer penalty: the point threshold used to determine whether a penalty is applied."
+    },
+    {
+      "Field": "UncontrolledMoveThresholdTime",
+      "Name": "Idle / No-Input Detection Time",
+      "Description": "Used to remove a player from multiplayer after a set period with no input. Measured in seconds."
+    },
+    {
+      "Field": "EnemyDetectionSpEffect_BulletId_byNpcEnemy",
+      "Name": "'Enemy Detection' Fired Bullet ID - Hostile NPC / Enemy Character",
+      "Description": "The bullet ID fired at hostile NPCs/enemy characters when hostility detection fails."
+    },
+    {
+      "Field": "ActivityOfDeadTargetSearchSpEffect_OnHitSpEffect",
+      "Name": "'Activation of the Dead Target Search' On-Hit Special Effect ID",
+      "Description": "The special effect applied to the target found by the search."
+    },
+    {
+      "Field": "ActivityOfDeadTargetSearchSpEffect_MaxLength",
+      "Name": "'Activation of the Dead Target Search' Distance",
+      "Description": "The maximum distance at which a search can be performed."
+    },
+    {
+      "Field": "NetFpsCheck_fpsThreshold",
+      "Name": "Low FPS Check - FPS Threshold",
+      "Description": "The FPS value used as the threshold for the low FPS check."
+    },
+    {
+      "Field": "NetFpsCheck_lowfpsTImeThreshold",
+      "Name": "Low FPS Check - Sustained Duration",
+      "Description": "The duration for which FPS must remain low to trigger the low FPS check."
+    },
+    {
+      "Field": "SoloBreakInMaxPoint",
+      "Name": "Solo Invasion Max Point",
+      "Description": "The maximum value of the solo invasion point. Once this value is exceeded, solo invasions become possible."
+    },
+    {
+      "Field": "NpcTalkTimeOutThreshold",
+      "Name": "NPC Conversation Voice Playback Timeout",
+      "Description": "The timeout duration for NPC dialogue voice playback. If voice playback has not finished after this time elapses, the dialogue advances to the next message."
+    },
+    {
+      "Field": "SendPlayLogIntervalTime",
+      "Name": "Play Log Send Interval",
+      "Description": "The interval at which play logs, such as item usage logs, are sent to the server."
+    },
+    {
+      "Field": "Item370_MaxSfxNum",
+      "Name": "Rainbow Stone Maximum Placement Count",
+      "Description": "The maximum number of Rainbow Stones that can be placed at once."
+    },
+    {
+      "Field": "Reserved_83",
+      "Name": "Reserved_83",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "SummonDataCoopMatchingLevelUpperAbs",
+      "Name": "Multiplayer Weakening Level Correction Coefficient 1",
+      "Description": "Stat weakening applied in multiplayer. An additive correction based on the host's level."
+    },
+    {
+      "Field": "SummonDataCoopMatchingLevelUpperRel",
+      "Name": "Multiplayer Weakening Level Correction Coefficient 2",
+      "Description": "Stat weakening applied in multiplayer. A multiplicative correction based on the host's level."
+    },
+    {
+      "Field": "SummonDataCoopMatchingWepLevelMul",
+      "Name": "Multiplayer Weakening Max Weapon Level Correction Coefficient",
+      "Description": "Stat weakening applied in multiplayer. A correction based on the maximum weapon upgrade level."
+    },
+    {
+      "Field": "PickUpBerserkerSignSpEffectBulletId",
+      "Name": "Bullet ID for Catnip Effect on Picking Up Berserker Sign",
+      "Description": "The bullet ID used to spawn a special-effect bullet at the sign's location."
+    },
+    {
+      "Field": "SucceedBerserkerSelfKillingEffectId",
+      "Name": "Special Effect ID for Berserker Successful Solo Kill Presentation",
+      "Description": "The special effect that plays a dedicated presentation when a Berserker successfully kills the player character unaided."
+    },
+    {
+      "Field": "MachingLevelWhiteSignUpperRel",
+      "Name": "Level Sync Application Judgment Coefficient 1 - White",
+      "Description": "The soul level coefficient used to determine whether level sync is applied."
+    },
+    {
+      "Field": "MachingLevelWhiteSignUpperAbs",
+      "Name": "Level Sync Application Judgment Coefficient 2 - White",
+      "Description": "The soul level coefficient used to determine whether level sync is applied."
+    },
+    {
+      "Field": "MachingLevelRedSignUpperRel",
+      "Name": "Level Sync Application Judgment Coefficient 1 - Red",
+      "Description": "The soul level coefficient used to determine whether level sync is applied."
+    },
+    {
+      "Field": "MachingLevelRedSignUpperAbs",
+      "Name": "Level Sync Application Judgment Coefficient 2 - Red",
+      "Description": "The soul level coefficient used to determine whether level sync is applied."
+    },
+    {
+      "Field": "MachingWeaponLevelUpperWhiteSign_0",
+      "Name": "Level Sync Application Judgment Max Weapon Upgrade Level Coefficient 0 - White",
+      "Description": "The maximum weapon upgrade level coefficient used to determine whether level sync is applied."
+    },
+    {
+      "Field": "MachingWeaponLevelUpperWhiteSign_1",
+      "Name": "Level Sync Application Judgment Max Weapon Upgrade Level Coefficient 1 - White",
+      "Description": "The maximum weapon upgrade level coefficient used to determine whether level sync is applied."
+    },
+    {
+      "Field": "MachingWeaponLevelUpperWhiteSign_2",
+      "Name": "Level Sync Application Judgment Max Weapon Upgrade Level Coefficient 2 - White",
+      "Description": "The maximum weapon upgrade level coefficient used to determine whether level sync is applied."
+    },
+    {
+      "Field": "MachingWeaponLevelUpperWhiteSign_3",
+      "Name": "Level Sync Application Judgment Max Weapon Upgrade Level Coefficient 3 - White",
+      "Description": "The maximum weapon upgrade level coefficient used to determine whether level sync is applied."
+    },
+    {
+      "Field": "MachingWeaponLevelUpperWhiteSign_4",
+      "Name": "Level Sync Application Judgment Max Weapon Upgrade Level Coefficient 4 - White",
+      "Description": "The maximum weapon upgrade level coefficient used to determine whether level sync is applied."
+    },
+    {
+      "Field": "MachingWeaponLevelUpperWhiteSign_5",
+      "Name": "Level Sync Application Judgment Max Weapon Upgrade Level Coefficient 5 - White",
+      "Description": "The maximum weapon upgrade level coefficient used to determine whether level sync is applied."
+    },
+    {
+      "Field": "MachingWeaponLevelUpperWhiteSign_6",
+      "Name": "Level Sync Application Judgment Max Weapon Upgrade Level Coefficient 6 - White",
+      "Description": "The maximum weapon upgrade level coefficient used to determine whether level sync is applied."
+    },
+    {
+      "Field": "MachingWeaponLevelUpperWhiteSign_7",
+      "Name": "Level Sync Application Judgment Max Weapon Upgrade Level Coefficient 7 - White",
+      "Description": "The maximum weapon upgrade level coefficient used to determine whether level sync is applied."
+    },
+    {
+      "Field": "MachingWeaponLevelUpperWhiteSign_8",
+      "Name": "Level Sync Application Judgment Max Weapon Upgrade Level Coefficient 8 - White",
+      "Description": "The maximum weapon upgrade level coefficient used to determine whether level sync is applied."
+    },
+    {
+      "Field": "MachingWeaponLevelUpperWhiteSign_9",
+      "Name": "Level Sync Application Judgment Max Weapon Upgrade Level Coefficient 9 - White",
+      "Description": "The maximum weapon upgrade level coefficient used to determine whether level sync is applied."
+    },
+    {
+      "Field": "MachingWeaponLevelUpperWhiteSign_10",
+      "Name": "Level Sync Application Judgment Max Weapon Upgrade Level Coefficient 10 - White",
+      "Description": "The maximum weapon upgrade level coefficient used to determine whether level sync is applied."
+    },
+    {
+      "Field": "MachingWeaponLevelUpperRedSign_0",
+      "Name": "Level Sync Application Judgment Max Weapon Upgrade Level Coefficient 0 - Red",
+      "Description": "The maximum weapon upgrade level coefficient used to determine whether level sync is applied."
+    },
+    {
+      "Field": "MachingWeaponLevelUpperRedSign_1",
+      "Name": "Level Sync Application Judgment Max Weapon Upgrade Level Coefficient 1 - Red",
+      "Description": "The maximum weapon upgrade level coefficient used to determine whether level sync is applied."
+    },
+    {
+      "Field": "MachingWeaponLevelUpperRedSign_2",
+      "Name": "Level Sync Application Judgment Max Weapon Upgrade Level Coefficient 2 - Red",
+      "Description": "The maximum weapon upgrade level coefficient used to determine whether level sync is applied."
+    },
+    {
+      "Field": "MachingWeaponLevelUpperRedSign_3",
+      "Name": "Level Sync Application Judgment Max Weapon Upgrade Level Coefficient 3 - Red",
+      "Description": "The maximum weapon upgrade level coefficient used to determine whether level sync is applied."
+    },
+    {
+      "Field": "MachingWeaponLevelUpperRedSign_4",
+      "Name": "Level Sync Application Judgment Max Weapon Upgrade Level Coefficient 4 - Red",
+      "Description": "The maximum weapon upgrade level coefficient used to determine whether level sync is applied."
+    },
+    {
+      "Field": "MachingWeaponLevelUpperRedSign_5",
+      "Name": "Level Sync Application Judgment Max Weapon Upgrade Level Coefficient 5 - Red",
+      "Description": "The maximum weapon upgrade level coefficient used to determine whether level sync is applied."
+    },
+    {
+      "Field": "MachingWeaponLevelUpperRedSign_6",
+      "Name": "Level Sync Application Judgment Max Weapon Upgrade Level Coefficient 6 - Red",
+      "Description": "The maximum weapon upgrade level coefficient used to determine whether level sync is applied."
+    },
+    {
+      "Field": "MachingWeaponLevelUpperRedSign_7",
+      "Name": "Level Sync Application Judgment Max Weapon Upgrade Level Coefficient 7 - Red",
+      "Description": "The maximum weapon upgrade level coefficient used to determine whether level sync is applied."
+    },
+    {
+      "Field": "MachingWeaponLevelUpperRedSign_8",
+      "Name": "Level Sync Application Judgment Max Weapon Upgrade Level Coefficient 8 - Red",
+      "Description": "The maximum weapon upgrade level coefficient used to determine whether level sync is applied."
+    },
+    {
+      "Field": "MachingWeaponLevelUpperRedSign_9",
+      "Name": "Level Sync Application Judgment Max Weapon Upgrade Level Coefficient 9 - Red",
+      "Description": "The maximum weapon upgrade level coefficient used to determine whether level sync is applied."
+    },
+    {
+      "Field": "MachingWeaponLevelUpperRedSign_10",
+      "Name": "Level Sync Application Judgment Max Weapon Upgrade Level Coefficient 10 - Red",
+      "Description": "The maximum weapon upgrade level coefficient used to determine whether level sync is applied."
+    },
+    {
+      "Field": "Reserved_94",
+      "Name": "Reserved_94",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "SendGlobalEventLogIntervalTime",
+      "Name": "Global Event Log Send Interval",
+      "Description": "The interval at which global event logs are sent to the server."
+    },
+    {
+      "Field": "AddSoloBreakInPoint_White",
+      "Name": "Solo Invasion Point Addition Value - White Sign",
+      "Description": "The amount added to the solo invasion point when a white sign is used."
+    },
+    {
+      "Field": "AddSoloBreakInPoint_Black",
+      "Name": "Solo Invasion Point Addition Value - Red Sign",
+      "Description": "The amount added to the solo invasion point when a red sign is used."
+    },
+    {
+      "Field": "AddSoloBreakInPoint_ForceJoin",
+      "Name": "Solo Invasion Point Addition Value - Forced Invasion",
+      "Description": "The amount added to the solo invasion point for a forced invasion (uninvited intrusion)."
+    },
+    {
+      "Field": "AddSoloBreakInPoint_VisitorGuardian",
+      "Name": "Solo Invasion Point Addition Value - Map Guardian Visit",
+      "Description": "The amount added to the solo invasion point for a Map Guardian visit."
+    },
+    {
+      "Field": "AddSoloBreakInPoint_VisitorRedHunter",
+      "Name": "Solo Invasion Point Addition Value - Red Hunter Visit",
+      "Description": "The amount added to the solo invasion point for a Red Hunter visit."
+    },
+    {
+      "Field": "Reserved_98",
+      "Name": "Reserved_98",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "RedHunter_HostBossAreaGetSoulRate",
+      "Name": "[Red Hunter] Soul Rate Received When Host Passes Through the White Door",
+      "Description": "When the host passes through the white door, the Red Hunter receives souls equal to the amount needed for the Red Hunter to advance from their previous level to their current level, multiplied by this rate."
+    },
+    {
+      "Field": "Unk00",
+      "Name": "Unk00",
+      "Description": "Unknown/unresearched parameter; purpose not yet identified."
+    },
+    {
+      "Field": "Unk01",
+      "Name": "Unk01",
+      "Description": "Unknown/unresearched parameter; purpose not yet identified."
+    },
+    {
+      "Field": "Unk02",
+      "Name": "Unk02",
+      "Description": "Unknown/unresearched parameter; purpose not yet identified."
+    },
+    {
+      "Field": "Unk03",
+      "Name": "Unk03",
+      "Description": "Unknown/unresearched parameter; purpose not yet identified."
+    },
+    {
+      "Field": "Unk04",
+      "Name": "Unk04",
+      "Description": "Unknown/unresearched parameter; purpose not yet identified."
+    },
+    {
+      "Field": "Unk05",
+      "Name": "Unk05",
+      "Description": "Unknown/unresearched parameter; purpose not yet identified."
+    },
+    {
+      "Field": "Unk06",
+      "Name": "Unk06",
+      "Description": "Unknown/unresearched parameter; purpose not yet identified."
+    },
+    {
+      "Field": "Unk07",
+      "Name": "Unk07",
+      "Description": "Unknown/unresearched parameter; purpose not yet identified."
+    },
+    {
+      "Field": "Unk08",
+      "Name": "Unk08",
+      "Description": "Unknown/unresearched parameter; purpose not yet identified."
+    },
+    {
+      "Field": "Unk09",
+      "Name": "Unk09",
+      "Description": "Unknown/unresearched parameter; purpose not yet identified."
+    },
+    {
+      "Field": "Unk10",
+      "Name": "Unk10",
+      "Description": "Unknown/unresearched parameter; purpose not yet identified."
+    },
+    {
+      "Field": "Unk11",
+      "Name": "Unk11",
+      "Description": "Unknown/unresearched parameter; purpose not yet identified."
+    },
+    {
+      "Field": "Unk12",
+      "Name": "Unk12",
+      "Description": "Unknown/unresearched parameter; purpose not yet identified."
+    },
+    {
+      "Field": "Unk13",
+      "Name": "Unk13",
+      "Description": "Unknown/unresearched parameter; purpose not yet identified."
+    },
+    {
+      "Field": "Unk14",
+      "Name": "Unk14",
+      "Description": "Unknown/unresearched parameter; purpose not yet identified."
+    },
+    {
+      "Field": "Unk15",
+      "Name": "Unk15",
+      "Description": "Unknown/unresearched parameter; purpose not yet identified."
+    },
+    {
+      "Field": "Unk16",
+      "Name": "Unk16",
+      "Description": "Unknown/unresearched parameter; purpose not yet identified."
+    },
+    {
+      "Field": "Reserved100",
+      "Name": "Reserved100",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved101",
+      "Name": "Reserved101",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved102",
+      "Name": "Reserved102",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved103",
+      "Name": "Reserved103",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved104",
+      "Name": "Reserved104",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved105",
+      "Name": "Reserved105",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved106",
+      "Name": "Reserved106",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved107",
+      "Name": "Reserved107",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved108",
+      "Name": "Reserved108",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved109",
+      "Name": "Reserved109",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved110",
+      "Name": "Reserved110",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved111",
+      "Name": "Reserved111",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved112",
+      "Name": "Reserved112",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved113",
+      "Name": "Reserved113",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved114",
+      "Name": "Reserved114",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved115",
+      "Name": "Reserved115",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved116",
+      "Name": "Reserved116",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved117",
+      "Name": "Reserved117",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved118",
+      "Name": "Reserved118",
+      "Description": "Reserved for future use; currently unused."
+    }
+  ]
+}

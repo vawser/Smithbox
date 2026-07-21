@@ -66,6 +66,7 @@ public static class FocusManager
             or EditorFocusContext.ParamEditor_TableList
             or EditorFocusContext.ParamEditor_RowList
             or EditorFocusContext.ParamEditor_FieldList
+            or EditorFocusContext.ParamEditor_StayParamFieldList
             or EditorFocusContext.ParamEditor_Tools)
             return true;
 
@@ -200,6 +201,7 @@ public enum EditorFocusContext
     ParamEditor_TableList,
     ParamEditor_RowList,
     ParamEditor_FieldList,
+    ParamEditor_StayParamFieldList,
     ParamEditor_Tools,
 
     TextEditor_None,

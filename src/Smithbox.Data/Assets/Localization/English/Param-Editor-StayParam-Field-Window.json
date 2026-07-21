@@ -1,0 +1,36 @@
+{
+  "Entries": [
+    {
+      "Key": "PARAM_SP_FieldWindow_Title",
+      "Text": "Field List"
+    },
+    {
+      "Key": "PARAM_SP_FieldWindow_Title_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_SP_FieldWindow_Search_Hint",
+      "Text": "Search..."
+    },
+    {
+      "Key": "PARAM_SP_FieldWindow_Search_TT",
+      "Text": "Search <{0}>"
+    },
+    {
+      "Key": "PARAM_SP_FieldWindow_FieldNameMode_Hint",
+      "Text": "Toggle field name display type between Internal and Community.\nCurrent Mode: {0}"
+    },
+    {
+      "Key": "PARAM_SP_FieldWindow_FieldPadding_Hidden",
+      "Text": "Hidden"
+    },
+    {
+      "Key": "PARAM_SP_FieldWindow_FieldPadding_Visible",
+      "Text": "Visible"
+    },
+    {
+      "Key": "PARAM_SP_FieldWindow_FieldPadding_Hint",
+      "Text": "Toggle the display of padding field.\nCurrent Mode: {0}"
+    }
+  ]
+}

@@ -1,0 +1,333 @@
+{
+  "Param": "GRAPHICS_PARAM_ST",
+  "Type": "GRAPHICS_PARAM_ST",
+  "Name": "GRAPHICS_PARAM_ST",
+  "Description": "Stay Param. Handles various elements relating to in-game graphical effects.",
+  "Fields": [
+    {
+      "Field": "HitBulletDecalOffset_HitIns",
+      "Name": "Decal Spawn Position Offset When a Bullet Hits HIT INS",
+      "Description": "Offsets the spawn position of the decal generated when a bullet hits HIT INS, by this amount along the normal direction."
+    },
+    {
+      "Field": "TorchEmissiveIntensity",
+      "Name": "Torch Emissive Intensity",
+      "Description": "The maximum value of the torch's emissive intensity. It reaches this value over the specified number of frames."
+    },
+    {
+      "Field": "TorchEmissiveFadeFrame",
+      "Name": "Torch Emissive Intensity Fade Frames",
+      "Description": "The fade duration when the torch's emissive intensity changes. 60 frames is equivalent to 1 second."
+    },
+    {
+      "Field": "Reserved02",
+      "Name": "Reserved02",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "CharaWetDecalFadeRange",
+      "Name": "Character Wet Decal Fade Range",
+      "Description": "The fade range used to remove decals when the character becomes wet."
+    },
+    {
+      "Field": "ClothGravityYInWater",
+      "Name": "Cloth Gravity in Water (Y-Axis)",
+      "Description": "The cloth gravity (Y-axis) applied while underwater. For real-world gravity, this would be -9.8."
+    },
+    {
+      "Field": "ClothDampingInWater",
+      "Name": "Cloth Damping in Water",
+      "Description": "The cloth damping applied while underwater."
+    },
+    {
+      "Field": "Reserved06",
+      "Name": "Reserved06",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved07",
+      "Name": "Reserved07",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved08",
+      "Name": "Reserved08",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved09",
+      "Name": "Reserved09",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved10",
+      "Name": "Reserved10",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved11",
+      "Name": "Reserved11",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved12",
+      "Name": "Reserved12",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved13",
+      "Name": "Reserved13",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved14",
+      "Name": "Reserved14",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved15",
+      "Name": "Reserved15",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved16",
+      "Name": "Reserved16",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved17",
+      "Name": "Reserved17",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved18",
+      "Name": "Reserved18",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved19",
+      "Name": "Reserved19",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved20",
+      "Name": "Reserved20",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved21",
+      "Name": "Reserved21",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved22",
+      "Name": "Reserved22",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved23",
+      "Name": "Reserved23",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved24",
+      "Name": "Reserved24",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved25",
+      "Name": "Reserved25",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved26",
+      "Name": "Reserved26",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved27",
+      "Name": "Reserved27",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved28",
+      "Name": "Reserved28",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved29",
+      "Name": "Reserved29",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved30",
+      "Name": "Reserved30",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved31",
+      "Name": "Reserved31",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved32",
+      "Name": "Reserved32",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved33",
+      "Name": "Reserved33",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved34",
+      "Name": "Reserved34",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved35",
+      "Name": "Reserved35",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved36",
+      "Name": "Reserved36",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved37",
+      "Name": "Reserved37",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved38",
+      "Name": "Reserved38",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved39",
+      "Name": "Reserved39",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved40",
+      "Name": "Reserved40",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved41",
+      "Name": "Reserved41",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved42",
+      "Name": "Reserved42",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved43",
+      "Name": "Reserved43",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved44",
+      "Name": "Reserved44",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved45",
+      "Name": "Reserved45",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved46",
+      "Name": "Reserved46",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved47",
+      "Name": "Reserved47",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved48",
+      "Name": "Reserved48",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved49",
+      "Name": "Reserved49",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved50",
+      "Name": "Reserved50",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved51",
+      "Name": "Reserved51",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved52",
+      "Name": "Reserved52",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved53",
+      "Name": "Reserved53",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved54",
+      "Name": "Reserved54",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved55",
+      "Name": "Reserved55",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved56",
+      "Name": "Reserved56",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved57",
+      "Name": "Reserved57",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved58",
+      "Name": "Reserved58",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved59",
+      "Name": "Reserved59",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved60",
+      "Name": "Reserved60",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved61",
+      "Name": "Reserved61",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved62",
+      "Name": "Reserved62",
+      "Description": "Reserved for future use; currently unused."
+    },
+    {
+      "Field": "Reserved63",
+      "Name": "Reserved63",
+      "Description": "Reserved for future use; currently unused."
+    }
+  ]
+}
