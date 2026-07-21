@@ -1,0 +1,53 @@
+{
+  "Name": "WeaponGenParam",
+  "Groups": [
+    {
+      "Key": "Weapon",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Weapon"
+        }
+      ],
+      "Fields": [
+        "wepParamId"
+      ]
+    },
+    {
+      "Key": "Blood Gem",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Blood Gem"
+        }
+      ],
+      "Fields": [
+        "gemSlotType_0",
+        "gemSlotType_1",
+        "gemSlotType_2",
+        "gemSlotType_3",
+        "gemSlotType_4",
+        "reserveGemSlotNo_0",
+        "reserveGemSlotNo_1",
+        "reserveGemSlotNo_2",
+        "equipableGemSegmentMask"
+      ]
+    },
+    {
+      "Key": "Pre-defined Effects",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Pre-defined Effects"
+        }
+      ],
+      "Fields": [
+        "gemGenId_0",
+        "gemGenId_1",
+        "gemGenId_2",
+        "gemGenId_3",
+        "gemGenId_4"
+      ]
+    }
+  ]
+}

@@ -4,259 +4,265 @@
     {
       "ID": 0,
       "Entries": [
-        "Defaults"
+        "Default"
       ]
     },
     {
       "ID": 6109,
       "Entries": [
-        "Fixed Grail [Level 1 】Thumel"
+        "Fixed Chalice [Depth 1] - Pthumerian Labyrinth"
       ]
     },
     {
       "ID": 6209,
       "Entries": [
-        "Fixed Grail [Level 2 】Thumel"
+        "Fixed Chalice [Depth 2] - Central Pthumerian Labyrinth"
       ]
     },
     {
       "ID": 6219,
       "Entries": [
-        "Fixed Grail [Level 2 】 Remote Grave"
+        "Fixed Chalice [Depth 2] - Hintertomb"
       ]
     },
     {
       "ID": 6309,
       "Entries": [
-        "Fixed Grail [Level 3 】Thumel"
+        "Fixed Chalice [Depth 3] - Lower Pthumerian Labyrinth"
       ]
     },
     {
       "ID": 6319,
       "Entries": [
-        "Fixed Grail [Level 3 】 Remote Grave"
+        "Fixed Chalice [Depth 3] - Lower Hintertomb"
       ]
     },
     {
       "ID": 6409,
       "Entries": [
-        "Fixed Grail [Level 4 】Thumel _ curse"
+        "Fixed Chalice [Depth 4] - Pthumerian Defilement"
       ]
     },
     {
       "ID": 6429,
       "Entries": [
-        "Fixed Grail [Level 4 】 Laurent"
+        "Fixed Chalice [Depth 4] - Ailing Loran"
       ]
     },
     {
       "ID": 6509,
       "Entries": [
-        "Fixed Grail [Level 5 ] Tumer-Il"
+        "Fixed Chalice [Depth 5] - Pthumeru Ihyll"
       ]
     },
     {
       "ID": 6529,
       "Entries": [
-        "Fixed Grail [Level 5 】 Laurent"
+        "Fixed Chalice [Depth 5] - Lower Loran"
       ]
     },
     {
       "ID": 6539,
       "Entries": [
-        "Fixed Grail [Level 5 】Is"
+        "Fixed Chalice [Depth 5] - Isz Gravestone"
       ]
     },
     {
       "ID": 6629,
       "Entries": [
-        "Fixed Grail [Level 6 】 Laurent"
+        "Fixed Chalice [Depth 6] - Loran Type"
       ]
     },
     {
       "ID": 6639,
       "Entries": [
-        "Fixed Grail [Level 6 】Is"
+        "Fixed Chalice [Depth 6] - Isz Type"
       ]
     },
     {
       "ID": 6809,
       "Entries": [
-        "Fixed Grail [Level 8 】Thumel"
+        "Fixed Chalice [Depth 8] - Pthumerian Type"
       ]
     },
     {
       "ID": 6100,
       "Entries": [
-        "Automatically generated chalice [Level 1 】Thumel"
+        "Root Chalice [Depth 1] - Pthumerian Labyrinth"
       ]
     },
     {
       "ID": 6200,
       "Entries": [
-        "Automatically generated chalice [Level 2 】Thumel"
+        "Root Chalice [Depth 2] - Central Pthumerian Labyrinth"
       ]
     },
     {
       "ID": 6210,
       "Entries": [
-        "Automatically generated chalice [Level 2】 Remote Grave"
+        "Root Chalice [Depth 2] - Hintertomb"
       ]
     },
     {
       "ID": 6300,
       "Entries": [
-        "Automatically generated chalice [Level 3 】Thumel"
+        "Root Chalice [Depth 3] - Lower Pthumerian Labyrinth"
       ]
     },
     {
       "ID": 6302,
       "Entries": [
-        "Automatically generated chalice [Level 3 】Thumel _ Multi"
+        "Root Chalice [Depth 3] - Lower Pthumerian Labyrinth (Multi)"
       ]
     },
     {
       "ID": 6310,
       "Entries": [
-        "Automatically generated chalice [Level 3 】 Remote Grave"
+        "Root Chalice [Depth 3] - Lower Hintertomb"
       ]
     },
     {
       "ID": 6312,
       "Entries": [
-        "Automatically generated chalice [Level 3 】 Remote Grave _ Multi"
+        "Root Chalice [Depth 3] - Lower Hintertomb (Multi)"
       ]
     },
     {
       "ID": 6401,
       "Entries": [
-        "Automatically generated chalice [Level 4 】Thumel _ curse"
+        "Root Chalice [Depth 4] - Pthumerian Defilement"
       ]
     },
     {
       "ID": 6420,
       "Entries": [
-        "Automatically generated chalice [Level 4 】 Laurent"
+        "Root Chalice [Depth 4] - Ailing Loran"
       ]
     },
     {
       "ID": 6500,
       "Entries": [
-        "Automatically generated chalice [Level 5 】Thumel"
+        "Root Chalice [Depth 5] - Pthumeru Ihyll"
+      ]
+    },
+    {
+      "ID": 6504,
+      "Entries": [
+        "Root Chalice [Depth 5] - Lake of Mud (Great One Beast Chalice)"
       ]
     },
     {
       "ID": 6502,
       "Entries": [
-        "Automatically generated chalice [Level 5 】Thumel _ Multi"
+        "Root Chalice [Depth 5] - Pthumeru Ihyll (Multi)"
       ]
     },
     {
       "ID": 6520,
       "Entries": [
-        "Automatically generated chalice [Level 5 】 Laurent"
+        "Root Chalice [Depth 5] - Lower Loran"
       ]
     },
     {
       "ID": 6522,
       "Entries": [
-        "Automatically generated chalice [Level 5 】 Laurent _ Multi"
+        "Root Chalice [Depth 5] - Lower Loran (Multi)"
       ]
     },
     {
       "ID": 6530,
       "Entries": [
-        "Automatically generated chalice [Level 5 】Is"
+        "Root Chalice [Depth 5] - Isz Gravestone"
       ]
     },
     {
       "ID": 6532,
       "Entries": [
-        "Automatically generated chalice [Level 5 】Is _ Multi"
+        "Root Chalice [Depth 5] - Isz Gravestone (Multi)"
       ]
     },
     {
       "ID": 6601,
       "Entries": [
-        "Automatically generated chalice [Level 6 】Thumel _ curse"
+        "Root Chalice [Depth 6] - Pthumerian Type (Curse)"
       ]
     },
     {
       "ID": 6621,
       "Entries": [
-        "Automatically generated chalice [Level 6 】 Laurent _ curse"
+        "Root Chalice [Depth 6] - Loran Type (Curse)"
       ]
     },
     {
       "ID": 6631,
       "Entries": [
-        "Automatically generated chalice [Level 6 】Is _ curse"
+        "Root Chalice [Depth 6] - Isz Type (Curse)"
       ]
     },
     {
       "ID": 6701,
       "Entries": [
-        "Automatically generated chalice [Level 7 】Thumel _ curse"
+        "Root Chalice [Depth 7] - Pthumerian Type (Curse)"
       ]
     },
     {
       "ID": 6702,
       "Entries": [
-        "Automatically generated chalice [Level 7 】Thumel _ Multi"
+        "Root Chalice [Depth 7] - Pthumerian Type (Curse) (Multi)"
       ]
     },
     {
       "ID": 6703,
       "Entries": [
-        "Automatically generated chalice [Level 7 】Thumel _ A terrible curse"
+        "Root Chalice [Depth 7] - Pthumerian Type (Curse)"
       ]
     },
     {
       "ID": 6721,
       "Entries": [
-        "Automatically generated chalice [Level 7 】 Laurent _ curse"
+        "Root Chalice [Depth 7] - Loran Type (Curse)"
       ]
     },
     {
       "ID": 6722,
       "Entries": [
-        "Automatically generated chalice [Level 7 】 Laurent _ Multi"
+        "Root Chalice [Depth 7] - Loran Type (Curse) (Multi)"
       ]
     },
     {
       "ID": 6723,
       "Entries": [
-        "Automatically generated chalice [Level 7 】 Laurent _ A terrible curse"
+        "Root Chalice [Depth 7] - Loran Type (Curse)"
       ]
     },
     {
       "ID": 6731,
       "Entries": [
-        "Automatically generated chalice [Level 7 】Is _ curse"
+        "Root Chalice [Depth 7] - Isz Type (Curse)"
       ]
     },
     {
       "ID": 6732,
       "Entries": [
-        "Automatically generated chalice [Level 7 】Is _ Multi"
+        "Root Chalice [Depth 7] - Isz Type (Curse) (Multi)"
       ]
     },
     {
       "ID": 6733,
       "Entries": [
-        "Automatically generated chalice [Level 7 】Is _ A terrible curse"
+        "Root Chalice [Depth 7] - Isz Type (Curse)"
       ]
     },
     {
       "ID": 6900,
       "Entries": [
-        "For character debugging 1"
+        "For Character Debugging 1"
       ]
     },
     {
       "ID": 6901,
       "Entries": [
-        "For character debugging 2"
+        "For Character Debugging 2"
       ]
     }
   ]

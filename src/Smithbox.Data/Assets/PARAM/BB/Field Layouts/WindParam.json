@@ -1,0 +1,64 @@
+{
+  "Name": "WindParam",
+  "Groups": [
+    {
+      "Key": "Common Capsule",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Common Capsule"
+        }
+      ],
+      "Fields": [
+        "commonCapsuleBeginDmyId",
+        "commonCapsuleEndDmyId",
+        "commonCapsuleRadius"
+      ]
+    },
+    {
+      "Key": "VFX",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "VFX"
+        }
+      ],
+      "Fields": [
+        "sfxWindEnable",
+        "sfxIgnorePlayerSfx",
+        "sfxIsCollision",
+        "sfxDirPitchMin",
+        "sfxDirPitchMax",
+        "sfxDirYawMin",
+        "sfxDirYawMax",
+        "sfxCycleMin",
+        "sfxCycleMax",
+        "sfxSpeedMin",
+        "sfxSpeedMax",
+        "sfxMaximumDrag"
+      ]
+    },
+    {
+      "Key": "Cloth",
+      "Names": [
+        {
+          "Language": "English",
+          "Name": "Cloth"
+        }
+      ],
+      "Fields": [
+        "clothWindEnable",
+        "clothVertexWind",
+        "clothDirPitchMin",
+        "clothDirPitchMax",
+        "clothDirYawMin",
+        "clothDirYawMax",
+        "clothCycleMin",
+        "clothCycleMax",
+        "clothSpeedMin",
+        "clothSpeedMax",
+        "clothMaximumDrag"
+      ]
+    }
+  ]
+}

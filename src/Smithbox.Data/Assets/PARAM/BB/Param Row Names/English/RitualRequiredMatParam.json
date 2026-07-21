@@ -10,595 +10,601 @@
     {
       "ID": 109,
       "Entries": [
-        "Fixed Grail [Level 1 】 A : Tumer"
+        "Cost for Fixed Chalice [Depth 1] - Pthumerian Labyrinth"
       ]
     },
     {
       "ID": 209,
       "Entries": [
-        "Fixed Grail [Level 2 】 A : Tumer"
+        "Cost for Fixed Chalice [Depth 2] - Central Pthumerian Labyrinth"
       ]
     },
     {
       "ID": 219,
       "Entries": [
-        "Fixed Grail [Level 2 】 B : Remote tomb"
+        "Cost for Fixed Chalice [Depth 2] - Hintertomb"
       ]
     },
     {
       "ID": 309,
       "Entries": [
-        "Fixed Grail [Level 3 】 A : Tumer"
+        "Cost for Fixed Chalice [Depth 3] - Lower Pthumerian Labyrinth"
       ]
     },
     {
       "ID": 319,
       "Entries": [
-        "Fixed Grail [Level 3 】 B : Remote tomb"
+        "Cost for Fixed Chalice [Depth 3] - Lower Hintertomb"
       ]
     },
     {
       "ID": 409,
       "Entries": [
-        "Fixed Grail [Level 4 】 A : Tumer _ curse"
+        "Cost for Fixed Chalice [Depth 4] - Pthumerian Defilement"
       ]
     },
     {
       "ID": 429,
       "Entries": [
-        "Fixed Grail [Level 4 】 C : Laurent"
+        "Cost for Fixed Chalice [Depth 4] - Ailing Loran"
       ]
     },
     {
       "ID": 509,
       "Entries": [
-        "Fixed Grail [Level 5 】 A : Tumer"
+        "Cost for Fixed Chalice [Depth 5] - Pthumeru Ihyll"
       ]
     },
     {
       "ID": 529,
       "Entries": [
-        "Fixed Grail [Level 5 】 C : Laurent"
+        "Cost for Fixed Chalice [Depth 5] - Lower Loran"
       ]
     },
     {
       "ID": 539,
       "Entries": [
-        "Fixed Grail [Level 5 】 D ：Is"
+        "Cost for Fixed Chalice [Depth 5] - Isz Gravestone"
       ]
     },
     {
       "ID": 629,
       "Entries": [
-        "Fixed Grail [Level 6 】 C : Laurent"
+        "Cost for Fixed Chalice [Depth 6] - Loran Type"
       ]
     },
     {
       "ID": 639,
       "Entries": [
-        "Fixed Grail [Level 6 】 D ：Is"
+        "Cost for Fixed Chalice [Depth 6] - Isz Type"
       ]
     },
     {
       "ID": 809,
       "Entries": [
-        "Fixed Grail [Level8 】 A : Tumer"
+        "Cost for Fixed Chalice [Depth 8] - Pthumerian Type"
       ]
     },
     {
       "ID": 1809,
       "Entries": [
-        "Fixed Grail [Level 8 】 A : Tumer _ Additional Materials"
+        "Cost for Fixed Chalice [Depth 8] - Pthumerian Type (Additional Materials)"
       ]
     },
     {
       "ID": 10000,
       "Entries": [
-        "Automatically generated chalice [Level 1 】 A : Tumer"
+        "Cost for Root Chalice [Depth 1] - Pthumerian Labyrinth"
       ]
     },
     {
       "ID": 20000,
       "Entries": [
-        "Automatically generated chalice [Level 2 】 A : Tumer"
+        "Cost for Root Chalice [Depth 2] - Central Pthumerian Labyrinth"
       ]
     },
     {
       "ID": 20010,
       "Entries": [
-        "Automatically generated chalice [Level 2 】 A :Thumel: Enemy Strengthening"
+        "Cost for Root Chalice [Depth 2] - Central Pthumerian Labyrinth [Rite: Fetid]"
       ]
     },
     {
       "ID": 21000,
       "Entries": [
-        "Automatically generated chalice [Level 2 】 B : Remote tomb"
+        "Cost for Root Chalice [Depth 2] - Hintertomb"
       ]
     },
     {
       "ID": 21010,
       "Entries": [
-        "Automatically generated chalice [Level 2 】 B : Remote Tomb: Enemy Strengthening"
+        "Cost for Root Chalice [Depth 2] - Hintertomb [Rite: Fetid]"
       ]
     },
     {
       "ID": 30000,
       "Entries": [
-        "Automatically generated chalice [Level 3 】 A : Tumer"
+        "Cost for Root Chalice [Depth 3] - Lower Pthumerian Labyrinth"
       ]
     },
     {
       "ID": 30010,
       "Entries": [
-        "Automatically generated chalice [Level 3 】 A :Thumel: Enemy Strengthening"
+        "Cost for Root Chalice [Depth 3] - Lower Pthumerian Labyrinth [Rite: Fetid]"
       ]
     },
     {
       "ID": 30020,
       "Entries": [
-        "Automatically generated chalice [Level 3 】 A : Tumer: Special strong enemy"
+        "Cost for Root Chalice [Depth 3] - Lower Pthumerian Labyrinth [Rite: Rotted]"
       ]
     },
     {
       "ID": 30200,
       "Entries": [
-        "Automatically generated chalice [Level 3 】 A : Tumer _ Multi"
+        "Cost for Root Chalice [Depth 3] - Lower Pthumerian Labyrinth (Multi)"
       ]
     },
     {
       "ID": 30240,
       "Entries": [
-        "Automatically generated chalice [Level3 】 A : Tumer _ Multiplayer: Hostile Multiplayer"
+        "Cost for Root Chalice [Depth 3] - Lower Pthumerian Labyrinth (PVP)"
       ]
     },
     {
       "ID": 31000,
       "Entries": [
-        "Automatically generated chalice [Level 3 】 B : Remote tomb"
+        "Cost for Root Chalice [Depth 3] - Lower Hintertomb"
       ]
     },
     {
       "ID": 31010,
       "Entries": [
-        "Automatically generated chalice [Level 3 】 B : Remote Tomb: Enemy Strengthening"
+        "Cost for Root Chalice [Depth 3] - Lower Hintertomb [Rite: Fetid]"
       ]
     },
     {
       "ID": 31020,
       "Entries": [
-        "Automatically generated chalice [Level 3 】 B : Remote Tomb: Special Strong Enemy"
+        "Cost for Root Chalice [Depth 3] - Lower Hintertomb [Rite: Rotted]"
       ]
     },
     {
       "ID": 31200,
       "Entries": [
-        "Automatically generated chalice [Level 3 】 B : Remote tomb _ Multi"
+        "Cost for Root Chalice [Depth 3] - Lower Hintertomb (Multi)"
       ]
     },
     {
       "ID": 31240,
       "Entries": [
-        "Automatically generated chalice [Level 3 】 B : Remote tomb _ Multiplayer: Hostile Multiplayer"
+        "Cost for Root Chalice [Depth 3] - Lower Hintertomb (PVP)"
       ]
     },
     {
       "ID": 40100,
       "Entries": [
-        "Automatically generated chalice [Level 4 】 A : Tumer _ curse"
+        "Cost for Root Chalice [Depth 4] - Pthumerian Defilement"
       ]
     },
     {
       "ID": 40110,
       "Entries": [
-        "Automatically generated chalice [Level 4 】 A : Tumer _ Curse: Enemy Strengthening"
+        "Cost for Root Chalice [Depth 4] - Pthumerian Defilement [Rite: Fetid]"
       ]
     },
     {
       "ID": 40120,
       "Entries": [
-        "Automatically generated chalice [Level 4 】 A : Tumer _ Curse: Special Strong Enemy"
+        "Cost for Root Chalice [Depth 4] - Pthumerian Defilement [Rite: Rotted]"
       ]
     },
     {
       "ID": 40170,
       "Entries": [
-        "Automatically generated chalice [Level 4 】 A : Tumer _Curse: Curse"
+        "Cost for Root Chalice [Depth 4] - Pthumerian Defilement [Rite: Cursed]"
       ]
     },
     {
       "ID": 42000,
       "Entries": [
-        "Automatically generated chalice [Level 4 】 C : Laurent"
+        "Cost for Root Chalice [Depth 4] - Ailing Loran"
       ]
     },
     {
       "ID": 42010,
       "Entries": [
-        "Automatically generated chalice [Level 4 】 C : Roland: Enemy Strengthening"
+        "Cost for Root Chalice [Depth 4] - Ailing Loran [Rite: Fetid]"
       ]
     },
     {
       "ID": 42020,
       "Entries": [
-        "Automatically generated chalice [Level 4 】 C : Laurent: Special strong enemy"
+        "Cost for Root Chalice [Depth 4] - Ailing Loran [Rite: Rotted]"
       ]
     },
     {
       "ID": 50000,
       "Entries": [
-        "Automatically generated chalice [Level 5 】 A : Tumer"
+        "Cost for Root Chalice [Depth 5] - Pthumeru Ihyll"
       ]
     },
     {
       "ID": 50010,
       "Entries": [
-        "Automatically generated chalice [Level 5 】 A :Thumel: Enemy Strengthening"
+        "Cost for Root Chalice [Depth 5] - Pthumeru Ihyll [Rite: Fetid]"
       ]
     },
     {
       "ID": 50020,
       "Entries": [
-        "Automatically generated chalice [Level 5 】 A : Tumer: Special strong enemy"
+        "Cost for Root Chalice [Depth 5] - Pthumeru Ihyll [Rite: Rotted]"
+      ]
+    },
+    {
+      "ID": 50040,
+      "Entries": [
+        "Cost for Root Chalice [Depth 5] - Lake of Mud"
       ]
     },
     {
       "ID": 50070,
       "Entries": [
-        "Automatically generated chalice [Level 5 】 A :Thumel:Curse"
+        "Cost for Root Chalice [Depth 5] - Pthumeru Ihyll [Rite: Cursed]"
       ]
     },
     {
       "ID": 50200,
       "Entries": [
-        "Automatically generated chalice [Level 5 】 A : Tumer _ Multi"
+        "Cost for Root Chalice [Depth 5] - Pthumeru Ihyll (Multi)"
       ]
     },
     {
       "ID": 50240,
       "Entries": [
-        "Automatically generated chalice [Level 5 】 A : Tumer _ Multiplayer: Hostile Multiplayer"
+        "Cost for Root Chalice [Depth 5] - Pthumeru Ihyll (PVP)"
       ]
     },
     {
       "ID": 52000,
       "Entries": [
-        "Automatically generated chalice [Level 5 】 C : Laurent"
+        "Cost for Root Chalice [Depth 5] - Lower Loran"
       ]
     },
     {
       "ID": 52010,
       "Entries": [
-        "Automatically generated chalice [Level 5 】 C : Roland: Enemy Strengthening"
+        "Cost for Root Chalice [Depth 5] - Lower Loran [Rite: Fetid]"
       ]
     },
     {
       "ID": 52020,
       "Entries": [
-        "Automatically generated chalice [Level 5 】 C : Laurent: Special Strong Enemy"
+        "Cost for Root Chalice [Depth 5] - Lower Loran [Rite: Rotted]"
       ]
     },
     {
       "ID": 52070,
       "Entries": [
-        "Automatically generated chalice [Level 5 】 C : Laurent: Curse"
+        "Cost for Root Chalice [Depth 5] - Lower Loran [Rite: Cursed]"
       ]
     },
     {
       "ID": 52200,
       "Entries": [
-        "Automatically generated chalice [Level 5 】 C : Laurent _ Multi"
+        "Cost for Root Chalice [Depth 5] - Lower Loran (Multi)"
       ]
     },
     {
       "ID": 52240,
       "Entries": [
-        "Automatically generated chalice [Level 5 】 C : Laurent _ Multiplayer: Hostile Multiplayer"
+        "Cost for Root Chalice [Depth 5] - Lower Loran (PVP)"
       ]
     },
     {
       "ID": 53000,
       "Entries": [
-        "Automatically generated chalice [Level 5 】 D ：Is"
+        "Cost for Root Chalice [Depth 5] - Isz Gravestone"
       ]
     },
     {
       "ID": 53010,
       "Entries": [
-        "Automatically generated chalice [Level 5 】 D :Izu: Enemy Strengthening"
+        "Cost for Root Chalice [Depth 5] - Isz Gravestone [Rite: Fetid]"
       ]
     },
     {
       "ID": 53020,
       "Entries": [
-        "Automatically generated chalice [Level 5 】 D :Izu: Special strong enemy"
+        "Cost for Root Chalice [Depth 5] - Isz Gravestone [Rite: Rotted]"
       ]
     },
     {
       "ID": 53070,
       "Entries": [
-        "Automatically generated chalice [Level 5 】 D :Izu:Curse"
+        "Cost for Root Chalice [Depth 5] - Isz Gravestone [Rite: Cursed]"
       ]
     },
     {
       "ID": 53200,
       "Entries": [
-        "Automatically generated chalice [Level 5 】 D ：Is _ Multi"
+        "Cost for Root Chalice [Depth 5] - Isz Gravestone (Multi)"
       ]
     },
     {
       "ID": 53240,
       "Entries": [
-        "Automatically generated chalice [Level5 】 D ：Is _ Multiplayer: Hostile Multiplayer"
+        "Cost for Root Chalice [Depth 5] - Isz Gravestone (PVP)"
       ]
     },
     {
       "ID": 60100,
       "Entries": [
-        "Automatically generated chalice [Level 6 】 A : Tumer _ curse"
+        "Cost for Root Chalice [Depth 6] - Pthumerian Type"
       ]
     },
     {
       "ID": 60110,
       "Entries": [
-        "Automatically generated chalice [Level 6 】 A : Tumer _ Curse: Enemy Strengthening"
+        "Cost for Root Chalice [Depth 6] - Pthumerian Type [Rite: Fetid]"
       ]
     },
     {
       "ID": 60120,
       "Entries": [
-        "Automatically generated chalice [Level 6 】 A : Tumer _ Curse: Special Strong Enemy"
+        "Cost for Root Chalice [Depth 6] - Pthumerian Type [Rite: Rotted]"
       ]
     },
     {
       "ID": 60170,
       "Entries": [
-        "Automatically generated chalice [Level 6 】 A : Tumer _ Curse: Curse"
+        "Cost for Root Chalice [Depth 6] - Pthumerian Type [Rite: Cursed]"
       ]
     },
     {
       "ID": 62100,
       "Entries": [
-        "Automatically generated chalice [Level 6 】 C : Laurent _ curse"
+        "Cost for Root Chalice [Depth 6] - Loran Type"
       ]
     },
     {
       "ID": 62110,
       "Entries": [
-        "Automatically generated chalice [Level 6 】 C : Laurent _ Curse: Enemy Strengthening"
+        "Cost for Root Chalice [Depth 6] - Loran Type [Rite: Fetid]"
       ]
     },
     {
       "ID": 62120,
       "Entries": [
-        "Automatically generated chalice [Level 6 】 C : Laurent _ Curse: Special Strong Enemy"
+        "Cost for Root Chalice [Depth 6] - Loran Type [Rite: Rotted]"
       ]
     },
     {
       "ID": 62170,
       "Entries": [
-        "Automatically generated chalice [Level 6 】 C : Laurent _ Curse: Curse"
+        "Cost for Root Chalice [Depth 6] - Loran Type [Rite: Cursed]"
       ]
     },
     {
       "ID": 63100,
       "Entries": [
-        "Automatically generated chalice [Level 6 】 D ：Is _ curse"
+        "Cost for Root Chalice [Depth 6] - Isz Type"
       ]
     },
     {
       "ID": 63110,
       "Entries": [
-        "Automatically generated chalice [Level 6 】 D ：Is _ Curse: Enemy Strengthening"
+        "Cost for Root Chalice [Depth 6] - Isz Type [Rite: Fetid]"
       ]
     },
     {
       "ID": 63120,
       "Entries": [
-        "Automatically generated chalice [Level 6 】 D ：Is _ Curse: Special Strong Enemy"
+        "Cost for Root Chalice [Depth 6] - Isz Type [Rite: Rotted]"
       ]
     },
     {
       "ID": 63170,
       "Entries": [
-        "Automatically generated chalice [Level 6 】 D ：Is _ Curse: Curse"
+        "Cost for Root Chalice [Depth 6] - Isz Type [Rite: Cursed]"
       ]
     },
     {
       "ID": 70100,
       "Entries": [
-        "Automatically generated chalice [Level 7 】 A : Tumer _ curse"
+        "Cost for Root Chalice [Depth 7] - Pthumerian Type"
       ]
     },
     {
       "ID": 70110,
       "Entries": [
-        "Automatically generated chalice [Level 7 】 A : Tumer _ Curse: Enemy Strengthening"
+        "Cost for Root Chalice [Depth 7] - Pthumerian Type [Rite: Fetid]"
       ]
     },
     {
       "ID": 70120,
       "Entries": [
-        "Automatically generated chalice [Level 7 】 A : Tumer _ Curse: Special Strong Enemy"
+        "Cost for Root Chalice [Depth 7] - Pthumerian Type [Rite: Rotted]"
       ]
     },
     {
       "ID": 70170,
       "Entries": [
-        "Automatically generated chalice [Level 7 】 A : Tumer _ Curse: Curse"
+        "Cost for Root Chalice [Depth 7] - Pthumerian Type [Rite: Cursed]"
       ]
     },
     {
       "ID": 70200,
       "Entries": [
-        "Automatically generated chalice [Level 7 】 A : Tumer _ Multi"
+        "Cost for Root Chalice [Depth 7] - Pthumerian Type (Multi)"
       ]
     },
     {
       "ID": 70240,
       "Entries": [
-        "Automatically generated chalice [Level 7 】 A : Tumer _ Multiplayer: Hostile Multiplayer"
+        "Cost for Root Chalice [Depth 7] - Pthumerian Type (PVP)"
       ]
     },
     {
       "ID": 70300,
       "Entries": [
-        "Automatically generated chalice [Level 7 】 A : Tumer _ A terrible curse"
+        "Cost for Root Chalice [Depth 7] - Cursed Pthumerian Type"
       ]
     },
     {
       "ID": 70310,
       "Entries": [
-        "Automatically generated chalice [Level 7 】 A : Tumer _ Terrible Curse: Enemy Strengthening"
+        "Cost for Root Chalice [Depth 7] - Cursed Pthumerian Type [Rite: Fetid]"
       ]
     },
     {
       "ID": 70320,
       "Entries": [
-        "Automatically generated chalice [Level 7 】 A : Tumer _ Terrible Curse: Special Strong Enemy"
+        "Cost for Root Chalice [Depth 7] - Cursed Pthumerian Type [Rite: Rotted]"
       ]
     },
     {
       "ID": 70370,
       "Entries": [
-        "Automatically generated chalice [Level 7 】 A : Tumer _ Terrible Curse: Curse"
+        "Cost for Root Chalice [Depth 7] - Cursed Pthumerian Type [Rite: Cursed]"
       ]
     },
     {
       "ID": 70380,
       "Entries": [
-        "Automatically generated chalice [Level 7 】 A : Tumer _ Terrible Curse: Terrible Curse"
+        "Cost for Root Chalice [Depth 7] - Cursed Pthumerian Type"
       ]
     },
     {
       "ID": 72100,
       "Entries": [
-        "Automatically generated chalice [Level 7 】 C : Laurent _ curse"
+        "Cost for Root Chalice [Depth 7] - Loran Type"
       ]
     },
     {
       "ID": 72110,
       "Entries": [
-        "Automatically generated chalice [Level 7 】 C : Laurent _ Curse: Enemy Strengthening"
+        "Cost for Root Chalice [Depth 7] - Loran Type [Rite: Fetid]"
       ]
     },
     {
       "ID": 72120,
       "Entries": [
-        "Automatically generated chalice [Level7 】 C : Laurent _ Curse: Special Strong Enemy"
+        "Cost for Root Chalice [Depth 7] - Loran Type [Rite: Rotted]"
       ]
     },
     {
       "ID": 72170,
       "Entries": [
-        "Automatically generated chalice [Level 7 】 C : Laurent _ Curse: Curse"
+        "Cost for Root Chalice [Depth 7] - Loran Type [Rite: Cursed]"
       ]
     },
     {
       "ID": 72200,
       "Entries": [
-        "Automatically generated chalice [Level 7 】 C : Laurent _ Multi"
+        "Cost for Root Chalice [Depth 7] - Loran Type (Multi)"
       ]
     },
     {
       "ID": 72240,
       "Entries": [
-        "Automatically generated chalice [Level 7 】 C : Laurent _ Multiplayer: Hostile Multiplayer"
+        "Cost for Root Chalice [Depth 7] - Loran Type (PVP)"
       ]
     },
     {
       "ID": 72300,
       "Entries": [
-        "Automatically generated chalice [Level 7 】 C : Laurent _ A terrible curse"
+        "Cost for Root Chalice [Depth 7] - Cursed Loran Type"
       ]
     },
     {
       "ID": 72310,
       "Entries": [
-        "Automatically generated chalice [Level 7 】 C : Laurent _ Terrible Curse: Enemy Strengthening"
+        "Cost for Root Chalice [Depth 7] - Cursed Loran Type [Rite: Fetid]"
       ]
     },
     {
       "ID": 72320,
       "Entries": [
-        "Automatically generated chalice [Level 7 】 C : Laurent _ Terrible Curse: Special Strong Enemy"
+        "Cost for Root Chalice [Depth 7] - Cursed Loran Type [Rite: Rotted]"
       ]
     },
     {
       "ID": 72370,
       "Entries": [
-        "Automatically generated chalice [Level 7 】 C : Laurent _ Terrible Curse: Curse"
+        "Cost for Root Chalice [Depth 7] - Cursed Loran Type [Rite: Cursed]"
       ]
     },
     {
       "ID": 72380,
       "Entries": [
-        "Automatically generated chalice [Level 7 】 C : Laurent_ Terrible Curse: Terrible Curse"
+        "Cost for Root Chalice [Depth 7] - Cursed Loran Type"
       ]
     },
     {
       "ID": 73100,
       "Entries": [
-        "Automatically generated chalice [Level 7 】 D ：Is _ curse"
+        "Cost for Root Chalice [Depth 7] - Isz Type"
       ]
     },
     {
       "ID": 73110,
       "Entries": [
-        "Automatically generated chalice [Level 7 】 D ：Is _ Curse: Enemy Strengthening"
+        "Cost for Root Chalice [Depth 7] - Isz Type [Rite: Fetid]"
       ]
     },
     {
       "ID": 73120,
       "Entries": [
-        "Automatically generated chalice [Level 7 】 D ：Is _ Curse: Special Strong Enemy"
+        "Cost for Root Chalice [Depth 7] - Isz Type [Rotted]"
       ]
     },
     {
       "ID": 73170,
       "Entries": [
-        "Automatically generated chalice [Level 7 】 D ：Is _ Curse: Curse"
+        "Cost for Root Chalice [Depth 7] - Isz Type [Rite: Cursed]"
       ]
     },
     {
       "ID": 73200,
       "Entries": [
-        "Automatically generated chalice [Level 7 】 D ：Is _ Multi"
+        "Cost for Root Chalice [Depth 7] - Isz Type (Multi)"
       ]
     },
     {
       "ID": 73240,
       "Entries": [
-        "Automatically generated chalice [Level 7 】 D ：Is _ Multiplayer: Hostile Multiplayer"
+        "Cost for Root Chalice [Depth 7] - Isz Type (PVP)"
       ]
     },
     {
       "ID": 73300,
       "Entries": [
-        "Automatically generated chalice [Level 7 】 D ：Is _ A terrible curse"
+        "Cost for Root Chalice [Depth 7] - Cursed Isz Type"
       ]
     },
     {
       "ID": 73310,
       "Entries": [
-        "Automatically generated chalice [Level 7 】 D ：Is _ Terrible Curse: Enemy Strengthening"
+        "Cost for Root Chalice [Depth 7] - Cursed Isz Type [Rite: Fetid]"
       ]
     },
     {
       "ID": 73320,
       "Entries": [
-        "Automatically generated chalice [Level 7 】 D ：Is_ Terrible Curse: Special Strong Enemy"
+        "Cost for Root Chalice [Depth 7] - Cursed Isz Type [Rite: Rotted]"
       ]
     },
     {
       "ID": 73370,
       "Entries": [
-        "Automatically generated chalice [Level 7 】 D ：Is _ Terrible Curse: Curse"
+        "Cost for Root Chalice [Depth 7] - Cursed Isz Type [Rite: Cursed]"
       ]
     },
     {
       "ID": 73380,
       "Entries": [
-        "Automatically generated chalice [Level 7 】 D ：Is _ Terrible Curse: Terrible Curse"
+        "Cost for Root Chalice [Depth 7] - Cursed Isz Type"
       ]
     }
   ]

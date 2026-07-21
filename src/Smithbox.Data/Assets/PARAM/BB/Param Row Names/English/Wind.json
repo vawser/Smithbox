@@ -274,61 +274,61 @@
     {
       "ID": 350000100,
       "Entries": [
-        "Parishioner _ front _ wind"
+        "Cleric Beast - Wind (Front)"
       ]
     },
     {
       "ID": 350000101,
       "Entries": [
-        "Parishioner _ Left front _ wind"
+        "Cleric Beast - Wind (Left-Front)"
       ]
     },
     {
       "ID": 350000102,
       "Entries": [
-        "Parishioner _ Right front _ wind"
+        "Cleric Beast - Wind (Right-Front)"
       ]
     },
     {
       "ID": 350000103,
       "Entries": [
-        "Parishioner _ Left rear _ wind"
+        "Cleric Beast - Wind (Left-Back)"
       ]
     },
     {
       "ID": 350000104,
       "Entries": [
-        "Parishioner _ Right rear _ wind"
+        "Cleric Beast - Wind (Right-Back)"
       ]
     },
     {
       "ID": 350000810,
       "Entries": [
-        "Parishioner _ body _ before _ wind"
+        "Cleric Beast - Wind (Behind Body)"
       ]
     },
     {
       "ID": 350000811,
       "Entries": [
-        "Parishioner _ body _ rear _ wind"
+        "Cleric Beast - Wind (Back Body)"
       ]
     },
     {
       "ID": 350000812,
       "Entries": [
-        "Parishioner _ body _ left _ wind"
+        "Cleric Beast - Wind (Left Body)"
       ]
     },
     {
       "ID": 350000813,
       "Entries": [
-        "Parishioner _ body _ right _ wind"
+        "Cleric Beast - Wind (Right Body)"
       ]
     },
     {
       "ID": 350000900,
       "Entries": [
-        "Parishioner _ foot"
+        "Cleric Beast - Wind (Feet)"
       ]
     }
   ]

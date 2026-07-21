@@ -83,6 +83,14 @@
     {
       "Key": "PARAM_Tools_Header_Mass_Edit",
       "Text": "Mass Edit"
+    },
+    {
+      "Key": "PARAM_Tools_View_Row_Name_Manipulation",
+      "Text": "Row Name Manipulation"
+    },
+    {
+      "Key": "PARAM_Tools_Header_Row_Name_Manipulation",
+      "Text": "Row Name Manipulation"
     }
   ]
 }

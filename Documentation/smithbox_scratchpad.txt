@@ -12,7 +12,6 @@
 
 # Param Editor
  - Add Alt+Up/Down shortcut in Field List for changing Row List selection
- - Add DS3 stay param editor
 
 # Heavy Allocations:
  - Viewport Grid is memory inefficient: perhaps possible with shader alone?

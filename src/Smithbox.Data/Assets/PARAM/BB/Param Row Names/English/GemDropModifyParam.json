@@ -4,7 +4,7 @@
     {
       "ID": 0,
       "Entries": [
-        "Nothing happens"
+        "None"
       ]
     },
     {
@@ -16,55 +16,55 @@
     {
       "ID": 1011,
       "Entries": [
-        "Dungeons A [Thumel] Ritual level 1"
+        "Pthumerian Labyrinth - Depth 1"
       ]
     },
     {
       "ID": 1012,
       "Entries": [
-        "Dungeons A [Thumel] Ritual level 2"
+        "Central Pthumerian Labyrinth - Depth 2"
       ]
     },
     {
       "ID": 1013,
       "Entries": [
-        "Dungeons A [Thumel] Ritual level 3"
+        "Lower Pthumerian Labyrinth - Depth 3"
       ]
     },
     {
       "ID": 1014,
       "Entries": [
-        "Dungeons A [Thumel] Ritual level 4"
+        "Pthumerian Defilement - Depth 4"
       ]
     },
     {
       "ID": 1022,
       "Entries": [
-        "Dungeons A' [Remote Tomb] Ritual Level 2"
+        "Hintertomb - Depth 2"
       ]
     },
     {
       "ID": 1023,
       "Entries": [
-        "Dungeons A' [Remote Tomb] Ritual Level 3"
+        "Lower Hintertomb - Depth 3"
       ]
     },
     {
       "ID": 1034,
       "Entries": [
-        "Dungeons B [Roland] Ritual level 4"
+        "Ailing Loran - Depth 4"
       ]
     },
     {
       "ID": 1035,
       "Entries": [
-        "Dungeons B [Roland] Ritual level 5"
+        "Lower Loran - Depth 5"
       ]
     },
     {
       "ID": 1045,
       "Entries": [
-        "Dungeons C [Izu] Ritual level 5"
+        "Isz Gravestone - Depth 5"
       ]
     }
   ]
