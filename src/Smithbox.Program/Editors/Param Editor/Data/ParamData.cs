@@ -678,6 +678,7 @@ public class ParamData : IDisposable
         {
             // Default to English if the file is missing
             var english = new ParamImportLanguageEntry();
+            english.Key = "PARAM_Language_English";
             english.Name = "English";
             english.Folder = "English";
 
