@@ -491,9 +491,12 @@ public static class ParamRowOperations
 
             foreach (var entry in targetStrings)
             {
-                var newName = curName.Replace(entry, replaceString);
-                var command = $"param {curParamKey}: id {row.ID}: Name: = {newName}";
-                commands.Add(command);
+                if (curName.Contains(entry))
+                {
+                    var newName = curName.Replace(entry, replaceString);
+                    var command = $"param {curParamKey}: id {row.ID}: Name: = {newName}";
+                    commands.Add(command);
+                }
             }
         }
 
