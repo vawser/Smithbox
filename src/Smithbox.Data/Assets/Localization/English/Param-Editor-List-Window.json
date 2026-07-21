@@ -57,6 +57,18 @@
       "Text": "Toggle the display of param categories.\nCurrent Mode: {0}"
     },
     {
+      "Key": "PARAM_ParamWindow_ToggleStayParams_Hidden",
+      "Text": "Hidden"
+    },
+    {
+      "Key": "PARAM_ParamWindow_ToggleStayParams_Visible",
+      "Text": "Visible"
+    },
+    {
+      "Key": "PARAM_ParamWindow_ToggleStayParams_Hint",
+      "Text": "Toggle the display of stay params.\nCurrent Mode: {0}"
+    },
+    {
       "Key": "PARAM_ParamWindow_Category_General",
       "Text": "General"
     },

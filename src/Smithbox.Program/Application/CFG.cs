@@ -579,6 +579,7 @@ public class CFG
     public bool ParamEditor_Param_List_Sort_Alphabetically = true;
     public bool ParamEditor_Param_List_Display_Community_Names = false;
     public bool ParamEditor_Param_List_Display_Categories = true;
+    public bool ParamEditor_Param_List_Display_StayParams = true;
 
     // Table List
     public bool ParamEditor_Display_Table_List = true;

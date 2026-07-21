@@ -55,9 +55,12 @@ public class ParamListWindow
         // Stay Params
         if(Project.Descriptor.ProjectType is ProjectType.DS3)
         {
-            if (Project.Handler.ParamData.PrimaryBank.StayParams.Count > 0)
+            if (CFG.Current.ParamEditor_Param_List_Display_StayParams)
             {
-                DisplayStayParams(doFocus, scrollTo);
+                if (Project.Handler.ParamData.PrimaryBank.StayParams.Count > 0)
+                {
+                    DisplayStayParams(doFocus, scrollTo);
+                }
             }
         }
 
@@ -166,6 +169,23 @@ public class ParamListWindow
             paramCategoriesVis = LOC.Get("PARAM_ParamWindow_ToggleCategories_Visible");
 
         GUI.Tooltip(LOC.Get("PARAM_ParamWindow_ToggleCategories_Hint", paramCategoriesVis));
+
+        // Toggle Stay Params
+        if (Project.Descriptor.ProjectType is ProjectType.DS3)
+        {
+            ImGui.SameLine();
+
+            if (ImGui.Button($"{Icons.AddressBook}##stayParamToggle"))
+            {
+                CFG.Current.ParamEditor_Param_List_Display_StayParams = !CFG.Current.ParamEditor_Param_List_Display_StayParams;
+            }
+
+            var stayParamVis = LOC.Get("PARAM_ParamWindow_ToggleStayParams_Hidden");
+            if (CFG.Current.ParamEditor_Param_List_Display_StayParams)
+                stayParamVis = LOC.Get("PARAM_ParamWindow_ToggleStayParams_Visible");
+
+            GUI.Tooltip(LOC.Get("PARAM_ParamWindow_ToggleStayParams_Hint", stayParamVis));
+        }
 
         ImGui.EndChild();
     }
@@ -602,7 +622,7 @@ public class ParamListWindow
 
     private void DisplayStayParams(bool doFocus, float scrollTo)
     {
-        ImGui.BeginChild("StayParamFileParamSection", new Vector2(0, 110) * DPI.UIScale(), ImGuiChildFlags.Borders);
+        ImGui.BeginChild("StayParamFileParamSection", new Vector2(0, 130) * DPI.UIScale(), ImGuiChildFlags.Borders);
 
         foreach(var param in Project.Handler.ParamData.PrimaryBank.StayParams)
         {
