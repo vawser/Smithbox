@@ -16,12 +16,12 @@
   },
   {
     "ID": "bd_m_5020",
-    "Name": "Ironeye (with Quiver)",
+    "Name": "Ironeye (Default)",
     "Tags": []
   },
   {
     "ID": "bd_m_5025",
-    "Name": "Ironeye (without Quiver)",
+    "Name": "Ironeye (Traitor)",
     "Tags": []
   },
   {
@@ -31,12 +31,7 @@
   },
   {
     "ID": "bd_m_5031",
-    "Name": "Duchess (Firekeeper)",
-    "Tags": []
-  },
-  {
-    "ID": "bd_m_5032",
-    "Name": "Duchess (Veil)",
+    "Name": "Duchess (Priestess)",
     "Tags": []
   },
   {
@@ -322,6 +317,256 @@
   {
     "ID": "bd_m_5690",
     "Name": "Undertaker (Lord's Blade)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_6050",
+    "Name": "Revenant Head (Chloe) (for Cutscene)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_6051",
+    "Name": "Revenant Head (Doll) (for Cutscene)",
+    "Tags": []
+  },
+  {
+    "ID": "fc_f_0003",
+    "Name": "Duchess' Head (for Cutscene)",
+    "Tags": []
+  },
+  {
+    "ID": "hd_m_0300",
+    "Name": "Parasitic Egg Head ",
+    "Tags": []
+  },
+  {
+    "ID": "hd_m_0310",
+    "Name": "Parasitic Egg Head (Hatched)",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5000",
+    "Name": "Wylder's Greatsword",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5001",
+    "Name": "Wylder's Small Shield",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5002",
+    "Name": "Claw Shot",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5003",
+    "Name": "Onslaught Stake",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5010",
+    "Name": "Guardian's Halberd",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5011",
+    "Name": "Guardian's Greatshield",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5020",
+    "Name": "Ironeye's Bow",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5021",
+    "Name": "Unused Crossbow",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5022",
+    "Name": "Single Shot",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5023",
+    "Name": "Stowed Single Shot",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5024",
+    "Name": "Marking",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5030",
+    "Name": "Duchess' Dagger",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5031",
+    "Name": "Restage",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5032",
+    "Name": "Finale",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5040",
+    "Name": "Raider's Greataxe",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5041",
+    "Name": "Totem Stela",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5050",
+    "Name": "Immortal March / Cursed Claw Helper (Right)",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5051",
+    "Name": "Summon Spirit",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5052",
+    "Name": "Revenant's Cursed Claws",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5053",
+    "Name": "Cursed Claw Helper (Left)",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5060",
+    "Name": "Recluse's Staff",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5061",
+    "Name": "Magic Cocktail",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5062",
+    "Name": "Soulblood Song",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5070",
+    "Name": "Executor's Blade",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5071",
+    "Name": "Cursed Sword / Suncatcher",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5080",
+    "Name": "Scholar's Thrusting Sword",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5081",
+    "Name": "Analyze",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5082",
+    "Name": "Communion",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5090",
+    "Name": "Undertaker's Hammer ",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5091",
+    "Name": "Trance",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5092",
+    "Name": "Loathsome Hex",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5180",
+    "Name": "Scholar's Thrusting Sword (Dawn)",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5191",
+    "Name": "Trance (Dawn)",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5271",
+    "Name": "Cursed Sword (Dark)",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5280",
+    "Name": "Scholar's Thrusting Sword (Darkness)",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5291",
+    "Name": "Trance (Darkness)",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5324",
+    "Name": "Marking (Remembrance)",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5580",
+    "Name": "Scholar's Thrusting Sword (Pardoner)",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5591",
+    "Name": "Trance (Brass)",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_5691",
+    "Name": "Trance (Lord's Blade)",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_6000",
+    "Name": "Spectral Hawk",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_6012",
+    "Name": "Wings of Salvation",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_8900",
+    "Name": "Suncatcher",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_8901",
+    "Name": "The Nighlord's Body",
+    "Tags": []
+  },
+  {
+    "ID": "wp_a_8902",
+    "Name": "The Nighlord's Head",
     "Tags": []
   }
 ]
