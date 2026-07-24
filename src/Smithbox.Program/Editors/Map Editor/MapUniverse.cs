@@ -133,7 +133,7 @@ public class MapUniverse : IUniverse
             {
                 newMap.LoadMSB(resourceHandler.Msb);
 
-                if (CFG.Current.Viewport_Enable_Rendering)
+                if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan || CFG.Current.Viewport_Enable_Rendering)
                 {
                     resourceHandler.SetupHumanEnemySubstitute();
 
@@ -159,7 +159,7 @@ public class MapUniverse : IUniverse
                 View.HavokNavmeshBank.LoadHavokNVA(newMap, resourceHandler);
                 __navScope.Dispose();
 
-                if (CFG.Current.Viewport_Enable_Rendering)
+                if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan && CFG.Current.Viewport_Enable_Rendering)
                 {
                     // Handle the map offsets for games that use a tile system
                     // This is what adjusts the map position/rotation so they are presented in the same way they appear in-game.
@@ -187,7 +187,7 @@ public class MapUniverse : IUniverse
                 Project.Handler.MapData.PrimaryBank.Maps[fileEntry].MapContainer = newMap;
                 newMap.LoadState = MapContentLoadState.Loaded;
 
-                if (CFG.Current.Viewport_Enable_Rendering)
+                if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan && CFG.Current.Viewport_Enable_Rendering)
                 {
                     // Intervene in the UI to change selection if requested.
                     // We want to do this as soon as the RootObject is available, rather than at the end of all jobs.
@@ -205,7 +205,7 @@ public class MapUniverse : IUniverse
 
                 var tasks = new List<Task>();
 
-                if (CFG.Current.Viewport_Enable_Rendering)
+                if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan && CFG.Current.Viewport_Enable_Rendering)
                 {
                     tasks = resourceHandler.LoadModels(tasks, newMap);
 
@@ -229,7 +229,7 @@ public class MapUniverse : IUniverse
                 Profiler.TracyFiberEnter("loadMapAsync");
                 HasProcessedMapLoad = true;
 
-                if (CFG.Current.Viewport_Enable_Rendering)
+                if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan && CFG.Current.Viewport_Enable_Rendering)
                 {
                     // Update models (For checking meshes for Model Markers. & updates `CollisionName` field reference info)
                     foreach (Entity obj in newMap.Objects)

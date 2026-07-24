@@ -33,6 +33,9 @@ public class MapShortcuts
             ImGui.IsAnyItemActive())
             return;
 
+        if (activeView.ViewportHandler.ActiveViewport.Viewport == null)
+            return;
+
         if (activeView.ViewportHandler.ActiveViewport.Viewport.ViewportCamera.RightMousePressed)
             return;
 

@@ -2026,6 +2026,9 @@ public class FlverResource : IResource, IDisposable
 
     private bool LoadInternalDeS(AccessLevel al)
     {
+        if (Smithbox.Instance.CurrentBackend is RenderingBackend.OpenGL)
+            return false;
+
         if (!CFG.Current.Viewport_Enable_Rendering)
         {
             return true;
@@ -2100,6 +2103,9 @@ public class FlverResource : IResource, IDisposable
 
     private bool LoadInternal(AccessLevel al, string virtPath = "")
     {
+        if (Smithbox.Instance.CurrentBackend is RenderingBackend.OpenGL)
+            return false;
+
         if (!CFG.Current.Viewport_Enable_Rendering)
         {
             return true;

@@ -118,43 +118,6 @@ public class SystemPrefs
         };
     }
 
-    public static PreferenceItem System_RenderingBackend()
-    {
-        return new PreferenceItem
-        {
-            OrderID = 1,
-            Category = PreferenceCategory.System,
-            Spacer = true,
-            InlineName = false,
-
-            Section = SectionCategory.General,
-
-            Title = "PREF_System_RenderingBackend",
-            Description = "PREF_System_RenderingBackend_TT",
-
-            Draw = () => {
-                var previewName = LOC.Get(Startup.Current.System_RenderingBackend.GetDisplayName());
-
-                DPI.ApplyInputWidth();
-                if (ImGui.BeginCombo("##inputValue", previewName))
-                {
-                    foreach (var entry in Enum.GetValues(typeof(RenderingBackend)))
-                    {
-                        var type = (RenderingBackend)entry;
-
-                        var displayName = LOC.Get(type.GetDisplayName());
-
-                        if (ImGui.Selectable(displayName))
-                        {
-                            Startup.Current.System_RenderingBackend = (RenderingBackend)entry;
-                        }
-                    }
-                    ImGui.EndCombo();
-                }
-            }
-        };
-    }
-
     #endregion
 
     #region Loggers

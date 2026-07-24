@@ -40,7 +40,12 @@ public class PlacementEntity : Entity
     /// </summary>
     public override void UpdateRenderModel()
     {
-        if (!CFG.Current.Viewport_Enable_Rendering)
+        if(!CFG.Current.Viewport_Enable_Rendering)
+        {
+            return;
+        }
+
+        if(Smithbox.Instance.CurrentBackend is RenderingBackend.OpenGL)
         {
             return;
         }

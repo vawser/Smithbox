@@ -65,6 +65,9 @@ public class MsbEntity : Entity
 
     public void AssignDrawable()
     {
+        if (Smithbox.Instance.CurrentBackend is RenderingBackend.OpenGL)
+            return;
+
         MeshProviderCache.InvalidateUidEntries(EntityCacheUID);
 
         switch (Type)
@@ -949,6 +952,9 @@ public class MsbEntity : Entity
 
     public override void UpdateRenderModel()
     {
+        if (Smithbox.Instance.CurrentBackend is RenderingBackend.OpenGL)
+            return;
+
         if (!SetupRenderMesh)
         {
             AssignDrawable();

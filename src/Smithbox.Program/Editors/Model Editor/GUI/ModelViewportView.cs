@@ -59,7 +59,10 @@ public class ModelViewportWindow
 
     public void Update(float deltatime)
     {
-        ViewportUsingKeyboard = Viewport.Update(View.Window, deltatime);
+        if(Viewport != null)
+        {
+            ViewportUsingKeyboard = Viewport.Update(View.Window, deltatime);
+        }
     }
 
     public void EditorResized(Sdl2Window window, GraphicsDevice device)

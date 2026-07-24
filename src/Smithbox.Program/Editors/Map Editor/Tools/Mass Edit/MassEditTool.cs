@@ -548,7 +548,7 @@ public class MassEditTool
         {
             var restoreRendering = false;
 
-            if(CFG.Current.Viewport_Enable_Rendering)
+            if(Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan && CFG.Current.Viewport_Enable_Rendering)
             {
                 CFG.Current.Viewport_Enable_Rendering = false;
                 restoreRendering = true;

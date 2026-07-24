@@ -59,8 +59,10 @@ public class Smithbox
 
     public RenderingBackend CurrentBackend = RenderingBackend.Vulkan;
 
-    public unsafe Smithbox(string version)
+    public unsafe Smithbox(string version, RenderingBackend backendType)
     {
+        CurrentBackend = backendType;
+
         Instance = this;
 
         _version = version;
@@ -89,12 +91,9 @@ public class Smithbox
                     LOC.Get("SYS_VULKAN_CONTEXT_FAILED"), ex);
 
                 _context = new OpenGLCompatGraphicsContext();
-                Startup.Current.System_RenderingBackend = RenderingBackend.OpenGL;
+                CurrentBackend = RenderingBackend.OpenGL;
             }
         }
-
-        // Set this so even if the user changes the CFG, the program won't suddenly switch its usage until a restart.
-        CurrentBackend = Startup.Current.System_RenderingBackend;
 
         //set up logging
         if (LogsProvider is null)

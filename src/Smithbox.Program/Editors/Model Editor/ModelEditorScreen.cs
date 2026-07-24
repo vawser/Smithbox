@@ -74,7 +74,10 @@ public class ModelEditorScreen : EditorScreen
 
         if (activeView != null)
         {
-            LoadingModal.DisplayWindow(activeView.ViewportWindow.Viewport.Width, activeView.ViewportWindow.Viewport.Height);
+            if (activeView.ViewportWindow.Viewport != null)
+            {
+                LoadingModal.DisplayWindow(activeView.ViewportWindow.Viewport.Width, activeView.ViewportWindow.Viewport.Height);
+            }
         }
     }
 

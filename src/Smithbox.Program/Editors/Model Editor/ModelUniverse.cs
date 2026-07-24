@@ -86,13 +86,13 @@ public class ModelUniverse : IUniverse
 
         modelWrapper.Container = newContainer;
 
-        if (CFG.Current.Viewport_Enable_Rendering)
+        if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan && CFG.Current.Viewport_Enable_Rendering)
         {
             Selection.ClearSelection();
             Selection.AddSelection(newContainer.RootObject);
         }
 
-        if (CFG.Current.Viewport_Enable_Rendering)
+        if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan && CFG.Current.Viewport_Enable_Rendering)
         {
             Tasks = LoadTextures(Tasks, newContainer);
             await Task.WhenAll(Tasks);

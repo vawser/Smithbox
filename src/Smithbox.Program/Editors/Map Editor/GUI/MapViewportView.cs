@@ -80,13 +80,16 @@ public class MapViewportView
             if (viewport == null)
                 continue;
 
-            if (viewport == View.ViewportHandler.ActiveViewport)
+            if (viewport.Viewport != null)
             {
-                ViewportUsingKeyboard = viewport.Viewport.Update(View.Window, deltatime);
-            }
-            else
-            {
-                viewport.Viewport.Update(View.Window, deltatime);
+                if (viewport == View.ViewportHandler.ActiveViewport)
+                {
+                    ViewportUsingKeyboard = viewport.Viewport.Update(View.Window, deltatime);
+                }
+                else
+                {
+                    viewport.Viewport.Update(View.Window, deltatime);
+                }
             }
         }
     }

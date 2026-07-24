@@ -307,15 +307,18 @@ public class MapContainer : ObjectContainer
             var navid = $@"n{curNavmesh.ModelID:D6}";
             var navname = "n" + ModelLocator.MapModelNameToAssetName(View.Project, mapName, navid).Substring(1);
 
-            ResourceDescriptor nasset = ModelLocator.GetHavokNavmeshModel(View.Project, mapName, navname);
+            if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan)
+            {
+                ResourceDescriptor nasset = ModelLocator.GetHavokNavmeshModel(View.Project, mapName, navname);
 
-            var mesh = MeshRenderableProxy.MeshRenderableFromHavokNavmeshResource(
-                View.Universe.GetCurrentScene(), nasset.AssetVirtualPath, ModelMarkerType.Other);
+                var mesh = MeshRenderableProxy.MeshRenderableFromHavokNavmeshResource(
+                    View.Universe.GetCurrentScene(), nasset.AssetVirtualPath, ModelMarkerType.Other);
 
-            mesh.World = newEntity.GetWorldMatrix();
-            mesh.SetSelectable(newEntity);
-            mesh.DrawFilter = RenderFilter.Navmesh;
-            newEntity.RenderSceneMesh = mesh;
+                mesh.World = newEntity.GetWorldMatrix();
+                mesh.SetSelectable(newEntity);
+                mesh.DrawFilter = RenderFilter.Navmesh;
+                newEntity.RenderSceneMesh = mesh;
+            }
 
             Objects.Add(newEntity);
             nvaParent.AddChild(newEntity);
@@ -361,12 +364,15 @@ public class MapContainer : ObjectContainer
 
             newEntity.SupportsName = false;
 
-            var mesh = RenderableHelper.GetLevelConnectorSphereProxy(View.ViewportHandler.ActiveViewport.RenderScene);
+            if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan)
+            {
+                var mesh = RenderableHelper.GetLevelConnectorSphereProxy(View.ViewportHandler.ActiveViewport.RenderScene);
 
-            mesh.World = newEntity.GetWorldMatrix();
-            mesh.SetSelectable(newEntity);
-            mesh.DrawFilter = RenderFilter.Navmesh;
-            newEntity.RenderSceneMesh = mesh;
+                mesh.World = newEntity.GetWorldMatrix();
+                mesh.SetSelectable(newEntity);
+                mesh.DrawFilter = RenderFilter.Navmesh;
+                newEntity.RenderSceneMesh = mesh;
+            }
 
             Objects.Add(newEntity);
             nvaParent.AddChild(newEntity);
@@ -428,15 +434,18 @@ public class MapContainer : ObjectContainer
             var navid = $@"n{curNavmesh.ModelID:D6}";
             var navname = "n" + ModelLocator.MapModelNameToAssetName(View.Project, mapName, navid).Substring(1);
 
-            ResourceDescriptor nasset = ModelLocator.GetHavokNavmeshModel(View.Project, mapName, navname);
+            if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan)
+            {
+                ResourceDescriptor nasset = ModelLocator.GetHavokNavmeshModel(View.Project, mapName, navname);
 
-            var mesh = MeshRenderableProxy.MeshRenderableFromHavokNavmeshResource(
-                View.Universe.GetCurrentScene(), nasset.AssetVirtualPath, ModelMarkerType.Other);
+                var mesh = MeshRenderableProxy.MeshRenderableFromHavokNavmeshResource(
+                    View.Universe.GetCurrentScene(), nasset.AssetVirtualPath, ModelMarkerType.Other);
 
-            mesh.World = newEntity.GetWorldMatrix();
-            mesh.SetSelectable(newEntity);
-            mesh.DrawFilter = RenderFilter.Navmesh;
-            newEntity.RenderSceneMesh = mesh;
+                mesh.World = newEntity.GetWorldMatrix();
+                mesh.SetSelectable(newEntity);
+                mesh.DrawFilter = RenderFilter.Navmesh;
+                newEntity.RenderSceneMesh = mesh;
+            }
 
             Objects.Add(newEntity);
             nvaParent.AddChild(newEntity);
@@ -482,12 +491,15 @@ public class MapContainer : ObjectContainer
 
             newEntity.SupportsName = false;
 
-            var mesh = RenderableHelper.GetLevelConnectorSphereProxy(View.ViewportHandler.ActiveViewport.RenderScene);
+            if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan)
+            {
+                var mesh = RenderableHelper.GetLevelConnectorSphereProxy(View.ViewportHandler.ActiveViewport.RenderScene);
 
-            mesh.World = newEntity.GetWorldMatrix();
-            mesh.SetSelectable(newEntity);
-            mesh.DrawFilter = RenderFilter.Navmesh;
-            newEntity.RenderSceneMesh = mesh;
+                mesh.World = newEntity.GetWorldMatrix();
+                mesh.SetSelectable(newEntity);
+                mesh.DrawFilter = RenderFilter.Navmesh;
+                newEntity.RenderSceneMesh = mesh;
+            }
 
             Objects.Add(newEntity);
             nvaParent.AddChild(newEntity);

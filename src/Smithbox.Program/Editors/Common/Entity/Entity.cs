@@ -1341,6 +1341,9 @@ public class Entity : ISelectable, IDisposable
     }
     public virtual void UpdateRenderModel()
     {
+        if (Smithbox.Instance.CurrentBackend is RenderingBackend.OpenGL)
+            return;
+
         if (!CFG.Current.Viewport_Enable_Rendering || !HasTransform)
             return;
 
@@ -1357,6 +1360,9 @@ public class Entity : ISelectable, IDisposable
 
     private void ApplyMeshState()
     {
+        if (Smithbox.Instance.CurrentBackend is RenderingBackend.OpenGL)
+            return;
+
         if (!CFG.Current.Viewport_Enable_Rendering || !HasTransform)
             return;
 
