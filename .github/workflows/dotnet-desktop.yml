@@ -8,6 +8,7 @@ permissions:
   contents: write   # needed to create tags/releases
 jobs:
   build:
+    if: github.event_name == 'push' && contains(github.event.head_commit.message, '[Release]')
     runs-on: windows-latest
     name: "Build"
     env:
@@ -32,22 +33,18 @@ jobs:
       - name: Build
         run: dotnet build --configuration Release-win --no-restore
       - name: Generate timestamp tag
-        if: github.event_name == 'push' && contains(github.event.head_commit.message, '[Release]')
         id: tag
         shell: bash
         run: echo "name=build-$(date -u +'%Y%m%d-%H%M%S')" >> "$GITHUB_OUTPUT"
       - name: Upload artifacts
-        if: steps.tag.outcome == 'success'
         uses: actions/upload-artifact@v6
         with:
           name: "Smithbox-SHA${{ github.sha }}"
           path: "${{ github.workspace }}/Smithbox.Release/Output"
       - name: Zip release output
-        if: steps.tag.outcome == 'success'
         shell: pwsh
         run: Compress-Archive -Path "${{ github.workspace }}/Smithbox.Release/Output/*" -DestinationPath "Smithbox-${{ steps.tag.outputs.name }}-win-x64.zip"
       - name: Create GitHub Release
-        if: steps.tag.outcome == 'success'
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ steps.tag.outputs.name }}
