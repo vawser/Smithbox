@@ -31,11 +31,11 @@ jobs:
         run: dotnet restore /p:Configuration=Release-win
       - name: Build
         run: dotnet build --configuration Release-win --no-restore
-      - name: Upload artifacts
+      -- name: Upload artifacts
         uses: actions/upload-artifact@v6
         with:
           name: "Smithbox-SHA${{ github.sha }}"
-          path: "${{ runner.workspace }}/Smithbox/Smithbox.Release/Output"
+          path: "${{ github.workspace }}/Smithbox.Release/Output"
       - name: Generate timestamp tag
         if: github.event_name == 'push' && contains(github.event.head_commit.message, '[Release]')
         id: tag
@@ -44,7 +44,7 @@ jobs:
       - name: Zip release output
         if: steps.tag.outcome == 'success'
         shell: pwsh
-        run: Compress-Archive -Path "${{ runner.workspace }}/Smithbox/Smithbox.Release/Output/*" -DestinationPath "Smithbox-${{ steps.tag.outputs.name }}-win-x64.zip"
+        run: Compress-Archive -Path "${{ github.workspace }}/Smithbox.Release/Output/*" -DestinationPath "Smithbox-${{ steps.tag.outputs.name }}-win-x64.zip"
       - name: Create GitHub Release
         if: steps.tag.outcome == 'success'
         uses: softprops/action-gh-release@v2
