@@ -4,10 +4,8 @@ on:
     branches:
       - main
   pull_request:
-
 permissions:
   contents: write   # needed to create tags/releases
-
 jobs:
   build:
     runs-on: windows-latest
@@ -33,25 +31,20 @@ jobs:
         run: dotnet restore /p:Configuration=Release-win
       - name: Build
         run: dotnet build --configuration Release-win --no-restore
-      - name: Publish
-        run: dotnet publish '${{ runner.workspace }}/Smithbox/Smithbox.Release/Smithbox.Release.csproj' --configuration Release-win -o deploy
       - name: Upload artifacts
         uses: actions/upload-artifact@v6
         with:
           name: "Smithbox-SHA${{ github.sha }}"
-          path: "${{ runner.workspace }}/Smithbox/deploy"
-
+          path: "${{ runner.workspace }}/Smithbox/Smithbox.Release/Output"
       - name: Generate timestamp tag
         if: github.event_name == 'push' && contains(github.event.head_commit.message, '[Release]')
         id: tag
         shell: bash
         run: echo "name=build-$(date -u +'%Y%m%d-%H%M%S')" >> "$GITHUB_OUTPUT"
-
-      - name: Zip deploy output
+      - name: Zip release output
         if: steps.tag.outcome == 'success'
         shell: pwsh
-        run: Compress-Archive -Path "${{ runner.workspace }}/Smithbox/deploy/*" -DestinationPath "Smithbox-${{ steps.tag.outputs.name }}-win-x64.zip"
-
+        run: Compress-Archive -Path "${{ runner.workspace }}/Smithbox/Smithbox.Release/Output/*" -DestinationPath "Smithbox-${{ steps.tag.outputs.name }}-win-x64.zip"
       - name: Create GitHub Release
         if: steps.tag.outcome == 'success'
         uses: softprops/action-gh-release@v2

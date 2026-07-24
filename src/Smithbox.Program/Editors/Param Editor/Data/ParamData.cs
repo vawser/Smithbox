@@ -398,7 +398,7 @@ public class ParamData : IDisposable
             }
             catch (Exception e)
             {
-                Smithbox.LogError(this, LOC.Get("PARAM_Data_Log_Failed_Derseralize_ParamDef", f), e);
+                Smithbox.LogError(this, LOC.Get("PARAM_Data_Log_Failed_Deseralize_ParamDef", f), e);
             }
         }
 
@@ -424,7 +424,7 @@ public class ParamData : IDisposable
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, LOC.Get("Failed to deserialize Param Type Info: {paramTypeInfoPath}", paramTypeInfoPath), e);
+                    Smithbox.LogError(this, LOC.Get("PARAM_Data_Log_Failed_Deseralize_ParamTypeInfo", paramTypeInfoPath), e);
                 }
             }
             catch (Exception e)
@@ -583,7 +583,7 @@ public class ParamData : IDisposable
             }
             catch (Exception e)
             {
-                Smithbox.LogError(this, LOC.Get("PARAM_Data_Log_Failed_Derseralize_PARAM_META", fName), e);
+                Smithbox.LogError(this, LOC.Get("PARAM_Data_Log_Failed_Deseralize_PARAM_META", fName), e);
             }
         }
 
@@ -608,7 +608,7 @@ public class ParamData : IDisposable
             }
             catch (Exception e)
             {
-                Smithbox.LogError(this, $"[Param Editor] Failed to deserialize param annotation languages: {file}", LogPriority.High, e);
+                Smithbox.LogError(this, LOC.Get("PARAM_Data_Log_Failed_Deseralize_Param_Annotation_Languages", file), LogPriority.High, e);
             }
         }
         else
@@ -647,7 +647,7 @@ public class ParamData : IDisposable
                     }
                     catch (Exception e)
                     {
-                        Smithbox.LogError(this, $"[Param Editor] Failed to deserialize param annotation entry: {file}", LogPriority.High, e);
+                        Smithbox.LogError(this, LOC.Get("PARAM_Data_Log_Failed_Deseralize_Param_Annotation_Entry", file), LogPriority.High, e);
                     }
                 }
             }
@@ -675,7 +675,7 @@ public class ParamData : IDisposable
             }
             catch (Exception e)
             {
-                Smithbox.LogError(this, $"[Param Editor] Failed to deserialize param import languages: {file}", LogPriority.High, e);
+                Smithbox.LogError(this, LOC.Get("PARAM_Data_Log_Failed_Deseralize_Row_Name_Import_Languages", file), LogPriority.High, e);
             }
         }
         else
@@ -719,7 +719,7 @@ public class ParamData : IDisposable
                     }
                     catch (Exception e)
                     {
-                        Smithbox.LogError(this, $"[Param Editor] Failed to deserialize param enum entry: {file}", LogPriority.High, e);
+                        Smithbox.LogError(this, LOC.Get("PARAM_Data_Log_Failed_Deseralize_Param_Enum_Entry", file), LogPriority.High, e);
                     }
                 }
             }
@@ -745,7 +745,7 @@ public class ParamData : IDisposable
                     }
                     catch (Exception e)
                     {
-                        Smithbox.LogError(this, $"[Param Editor] Failed to deserialize param enum entry: {file}", LogPriority.High, e);
+                        Smithbox.LogError(this, LOC.Get("PARAM_Data_Log_Failed_Deseralize_Param_Enum_Entry", file), LogPriority.High, e);
                     }
                 }
             }
