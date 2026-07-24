@@ -32,7 +32,7 @@
   Map Editor
   Material Editor
   Model Editor
-  Param Editor
+  ### Param Editor
   ### Project Metadata Editor
   ### Text Editor
   ### Texture Viewer

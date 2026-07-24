@@ -885,7 +885,7 @@ public class ParamData : IDisposable
                     }
                     catch (Exception e)
                     {
-                        Smithbox.LogError(this, $"[Param Editor] Failed to deserialize icon configuration group: {file}", LogPriority.High, e);
+                        Smithbox.LogError(this, LOC.Get("PARAM_Data_Log_Failed_Deseralize_Icon_Configuration", file), LogPriority.High, e);
                     }
                 }
             }
@@ -911,7 +911,7 @@ public class ParamData : IDisposable
                     }
                     catch (Exception e)
                     {
-                        Smithbox.LogError(this, $"[Param Editor] Failed to deserialize icon configuration group: {file}", LogPriority.High, e);
+                        Smithbox.LogError(this, LOC.Get("PARAM_Data_Log_Failed_Deseralize_Icon_Configuration", file), LogPriority.High, e);
                     }
                 }
             }
@@ -944,7 +944,7 @@ public class ParamData : IDisposable
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, $"[Param Editor] Failed to deserialize param reloader offset data: {file}", LogPriority.High, e);
+                    Smithbox.LogError(this, LOC.Get("PARAM_Data_Log_Failed_Deseralize_Param_Reloader_Offsets", file), LogPriority.High, e);
                 }
             }
         }
@@ -978,7 +978,7 @@ public class ParamData : IDisposable
                     }
                     catch (Exception e)
                     {
-                        Smithbox.LogError(this, $"[Param Editor] Failed to deserialize param category group: {file}", LogPriority.High, e);
+                        Smithbox.LogError(this, LOC.Get("PARAM_Data_Log_Failed_Deseralize_Param_Categories", file), LogPriority.High, e);
                     }
                 }
             }
@@ -1004,7 +1004,7 @@ public class ParamData : IDisposable
                     }
                     catch (Exception e)
                     {
-                        Smithbox.LogError(this, $"[Param Editor] Failed to deserialize param category group: {file}", LogPriority.High, e);
+                        Smithbox.LogError(this, LOC.Get("PARAM_Data_Log_Failed_Deseralize_Param_Categories", file), LogPriority.High, e);
                     }
                 }
             }
@@ -1040,7 +1040,7 @@ public class ParamData : IDisposable
                     }
                     catch (Exception e)
                     {
-                        Smithbox.LogError(this, $"[Param Editor] Failed to deserialize param commutativity group: {file}", LogPriority.High, e);
+                        Smithbox.LogError(this, LOC.Get("PARAM_Data_Log_Failed_Deseralize_Param_Commutative_Groups", file), LogPriority.High, e);
                     }
                 }
             }
@@ -1066,7 +1066,7 @@ public class ParamData : IDisposable
                     }
                     catch (Exception e)
                     {
-                        Smithbox.LogError(this, $"[Param Editor] Failed to deserialize param commutativity group: {file}", LogPriority.High, e);
+                        Smithbox.LogError(this, LOC.Get("PARAM_Data_Log_Failed_Deseralize_Param_Commutative_Groups", file), LogPriority.High, e);
                     }
                 }
             }
@@ -1102,7 +1102,7 @@ public class ParamData : IDisposable
                     }
                     catch (Exception e)
                     {
-                        Smithbox.LogError(this, $"[Param Editor] Failed to deserialize field reference group: {file}", LogPriority.High, e);
+                        Smithbox.LogError(this, LOC.Get("PARAM_Data_Log_Failed_Deseralize_Param_Field_Reference_Group", file), LogPriority.High, e);
                     }
                 }
             }
@@ -1128,7 +1128,7 @@ public class ParamData : IDisposable
                     }
                     catch (Exception e)
                     {
-                        Smithbox.LogError(this, $"[Param Editor] Failed to deserialize field reference group: {file}", LogPriority.High, e);
+                        Smithbox.LogError(this, LOC.Get("PARAM_Data_Log_Failed_Deseralize_Param_Field_Reference_Group", file), LogPriority.High, e);
                     }
                 }
             }
@@ -1164,7 +1164,7 @@ public class ParamData : IDisposable
                     }
                     catch (Exception e)
                     {
-                        Smithbox.LogError(this, $"[Param Editor] Failed to deserialize field layout: {file}", LogPriority.High, e);
+                        Smithbox.LogError(this, LOC.Get("PARAM_Data_Log_Failed_Deseralize_Param_Field_Layouts", file), LogPriority.High, e);
                     }
                 }
             }
@@ -1190,7 +1190,7 @@ public class ParamData : IDisposable
                     }
                     catch (Exception e)
                     {
-                        Smithbox.LogError(this, $"[Param Editor] Failed to deserialize field layout: {file}", LogPriority.High, e);
+                        Smithbox.LogError(this, LOC.Get("PARAM_Data_Log_Failed_Deseralize_Param_Field_Layouts", file), LogPriority.High, e);
                     }
                 }
             }
@@ -1234,7 +1234,7 @@ public class ParamData : IDisposable
             }
             catch (Exception e)
             {
-                Smithbox.LogError(this, $"[Param Editor] Failed to load {file} for table group name import during Base Store step.", e);
+                Smithbox.LogError(this, LOC.Get("PARAM_Data_Log_Failed_Table_Group_Load", file), e);
             }
         }
 
@@ -1261,7 +1261,7 @@ public class ParamData : IDisposable
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, $"[Param Editor] Failed to load {file} for table group name import during Project Store step.", e);
+                    Smithbox.LogError(this, LOC.Get("PARAM_Data_Log_Failed_Table_Group_Load_Project", file), e);
                 }
             }
         }
@@ -1345,7 +1345,7 @@ public class ParamData : IDisposable
         }
         catch (Exception e)
         {
-            Smithbox.LogError(this, $"[Param Editor] Failed to load table param list.", e);
+            Smithbox.LogError(this, LOC.Get("PARAM_Data_Log_Failed_Table_Param_List"), e);
         }
 
         return true;

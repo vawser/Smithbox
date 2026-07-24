@@ -293,56 +293,40 @@
       "Text": "Failed to deserialize row FMG annotations: {0}"
     },
     {
-      "Key": "PARAM_Data_",
-      "Text": ""
+      "Key": "PARAM_Data_Log_Failed_Deseralize_Icon_Configuration",
+      "Text": "Failed to deserialize icon configuration group: {0}"
     },
     {
-      "Key": "PARAM_Data_",
-      "Text": ""
+      "Key": "PARAM_Data_Log_Failed_Deseralize_Param_Reloader_Offsets",
+      "Text": "Failed to deserialize param reloader offset data: {0}"
     },
     {
-      "Key": "PARAM_Data_",
-      "Text": ""
+      "Key": "PARAM_Data_Log_Failed_Deseralize_Param_Categories",
+      "Text": "Failed to deserialize param category group: {0}"
     },
     {
-      "Key": "PARAM_Data_",
-      "Text": ""
+      "Key": "PARAM_Data_Log_Failed_Deseralize_Param_Commutative_Groups",
+      "Text": "Failed to deserialize param commutativity group: {0}"
     },
     {
-      "Key": "PARAM_Data_",
-      "Text": ""
+      "Key": "PARAM_Data_Log_Failed_Deseralize_Param_Field_Reference_Group",
+      "Text": "Failed to deserialize field reference group: {0}"
     },
     {
-      "Key": "PARAM_Data_",
-      "Text": ""
+      "Key": "PARAM_Data_Log_Failed_Deseralize_Param_Field_Layouts",
+      "Text": "Failed to deserialize field layout: {0}"
     },
     {
-      "Key": "PARAM_Data_",
-      "Text": ""
+      "Key": "PARAM_Data_Log_Failed_Table_Group_Load",
+      "Text": "Failed to load {0} for table group name import during Base Store step."
     },
     {
-      "Key": "PARAM_Data_",
-      "Text": ""
+      "Key": "PARAM_Data_Log_Failed_Table_Group_Load_Project",
+      "Text": "Failed to load {0} for table group name import during Project Store step."
     },
     {
-      "Key": "PARAM_Data_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_Data_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_Data_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_Data_",
-      "Text": ""
-    },
-    {
-      "Key": "PARAM_Data_",
-      "Text": ""
+      "Key": "PARAM_Data_Log_Failed_Table_Param_List",
+      "Text": "Failed to load table param list."
     }
   ]
 }
